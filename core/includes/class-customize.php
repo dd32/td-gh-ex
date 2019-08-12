@@ -39,10 +39,6 @@ if( !class_exists( 'anna_lite_customize' ) ) {
 				wp_enqueue_script( 'anna-lite-script', $file_dir . 'js/panel.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs'),'1.0.0',TRUE ); 
 			}
 			
-			if ( !get_option( 'anna-lite-dismissed-notice') ) {
-				wp_enqueue_style ( 'anna-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
-			}
-
 		}
 		
 		public function customize_scripts() {

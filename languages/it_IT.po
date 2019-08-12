@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-14 19:23+0200\n"
-"PO-Revision-Date: 2019-04-14 19:24+0200\n"
+"POT-Creation-Date: 2019-08-12 14:45+0200\n"
+"PO-Revision-Date: 2019-08-12 14:45+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -70,7 +70,7 @@ msgctxt "Comment field textarea."
 msgid "Comment"
 msgstr "Commenta"
 
-#: core/admin/customize/customize.php:13 core/includes/class-notice.php:78
+#: core/admin/customize/customize.php:13 core/includes/class-notice.php:82
 msgid "Upgrade to Anna Premium"
 msgstr "Aggiorna a Anna Premium"
 
@@ -933,11 +933,11 @@ msgstr ""
 msgid "Footer Sidebar"
 msgstr "Sidebar per il piè di pagina"
 
-#: core/includes/class-customize.php:418
+#: core/includes/class-customize.php:414
 msgid "Anna premium version"
 msgstr "Aggiorna a Anna Premium"
 
-#: core/includes/class-customize.php:420 core/includes/class-notice.php:72
+#: core/includes/class-customize.php:416
 msgid ""
 "Upgrade to the premium version of Anna, to enable 600+ Google Fonts, "
 "unlimited sidebars, portfolio section and much more."
@@ -945,34 +945,38 @@ msgstr ""
 "Aggiorna alla versione premium di Anna, per attivare oltre 600 Google Fonts, "
 "barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/includes/class-customize.php:424
+#: core/includes/class-customize.php:420
 msgid "Upgrade to Anna premium"
 msgstr "Aggiorna a Anna Premium"
 
-#: core/includes/class-customize.php:432
+#: core/includes/class-customize.php:428
 msgid "Become a supporter"
 msgstr "Diventa un supporter"
 
-#: core/includes/class-customize.php:434
+#: core/includes/class-customize.php:430
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, è gradita una delle "
 "seguenti azioni:"
 
-#: core/includes/class-customize.php:438
+#: core/includes/class-customize.php:434
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/includes/class-customize.php:439
+#: core/includes/class-customize.php:435
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/includes/class-customize.php:440
-msgid "Download our free WordPress themes"
-msgstr "Scarica i nostri temi gratuiti per WordPress"
+#: core/includes/class-notice.php:67
+msgid ""
+"Upgrade to the premium version of Anna, to enable 600+ Google Fonts, "
+"unlimited sidebars, portfolio section and much more. "
+msgstr ""
+"Aggiorna alla versione premium di Anna, per attivare oltre 600 Google Fonts, "
+"barre laterali illimitate, sezione Portfolio e molto altro. "
 
-#: core/includes/class-notice.php:74
+#: core/includes/class-notice.php:70
 #: core/includes/class-plugin-activation.php:395
 msgid "Dismiss this notice"
 msgstr "Nascondi questo avviso"
@@ -1511,18 +1515,27 @@ msgstr "Cerca"
 msgid "results for"
 msgstr "risultati per"
 
-#: footer.php:21
-msgid "Copyright"
-msgstr "Copyright"
+#: footer.php:26
+msgid "Copyright "
+msgstr "Copyright "
 
-#: footer.php:23
-msgid "Theme by"
-msgstr "Tema da"
+#: footer.php:28
+msgid " Y"
+msgstr " Y"
 
-#: footer.php:24
+#: footer.php:34
 #, php-format
-msgid "Proudly powered by %s"
-msgstr "Offerto orgogliosamente da %s"
+msgid " | Theme by %s"
+msgstr " | Tema da %s"
+
+#: footer.php:35
+#, php-format
+msgid " | Proudly powered by %s"
+msgstr " | Offerto orgogliosamente da %s"
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "Salta al contenuto"
 
 #: layouts/archive-classic.php:28
 msgid "Sorry, no posts matched into "
@@ -1607,74 +1620,74 @@ msgstr "Se disponi di un codice promozionale, inseriscilo di seguito."
 msgid "Apply coupon"
 msgstr "Applica sconto"
 
-#: woocommerce/single-product-reviews.php:37
+#: woocommerce/single-product-reviews.php:36
 msgid "Reviews"
 msgstr "Recensioni"
 
-#: woocommerce/single-product-reviews.php:59
+#: woocommerce/single-product-reviews.php:58
 msgid "There are no reviews yet."
 msgstr "Non ci sono ancora recensioni"
 
-#: woocommerce/single-product-reviews.php:72
+#: woocommerce/single-product-reviews.php:71
 msgid "Add a review"
 msgstr "Aggiungi una revisione"
 
-#: woocommerce/single-product-reviews.php:72
+#: woocommerce/single-product-reviews.php:71
 #, php-format
 msgid "Be the first to review &ldquo;%s&rdquo;"
 msgstr "Sii il primo a recensire &ldquo;%s&rdquo;"
 
-#: woocommerce/single-product-reviews.php:73
+#: woocommerce/single-product-reviews.php:72
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Lascia una risposta a %s"
 
-#: woocommerce/single-product-reviews.php:76
+#: woocommerce/single-product-reviews.php:75
 msgid "Name"
 msgstr "Nome"
 
-#: woocommerce/single-product-reviews.php:78
+#: woocommerce/single-product-reviews.php:77
 msgid "Email"
 msgstr "Email"
 
-#: woocommerce/single-product-reviews.php:87
+#: woocommerce/single-product-reviews.php:86
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
 msgstr "Devi essere <a href=“%s”>loggato</a> per lasciare il tuo voto."
 
-#: woocommerce/single-product-reviews.php:91
+#: woocommerce/single-product-reviews.php:90
 msgid "Your Rating"
 msgstr "La tua valutazione"
 
-#: woocommerce/single-product-reviews.php:92
+#: woocommerce/single-product-reviews.php:91
 msgid "Rate&hellip;"
 msgstr "Valutazione&hellip;"
 
-#: woocommerce/single-product-reviews.php:93
+#: woocommerce/single-product-reviews.php:92
 msgid "Perfect"
 msgstr "Perfetto"
 
-#: woocommerce/single-product-reviews.php:94
+#: woocommerce/single-product-reviews.php:93
 msgid "Good"
 msgstr "Ottimo"
 
-#: woocommerce/single-product-reviews.php:95
+#: woocommerce/single-product-reviews.php:94
 msgid "Average"
 msgstr "Media"
 
-#: woocommerce/single-product-reviews.php:96
+#: woocommerce/single-product-reviews.php:95
 msgid "Not that bad"
 msgstr "Non così male"
 
-#: woocommerce/single-product-reviews.php:97
+#: woocommerce/single-product-reviews.php:96
 msgid "Very Poor"
 msgstr "Molto povero"
 
-#: woocommerce/single-product-reviews.php:101
+#: woocommerce/single-product-reviews.php:100
 msgid "Your review"
 msgstr "Il tuo voto"
 
-#: woocommerce/single-product-reviews.php:109
+#: woocommerce/single-product-reviews.php:108
 msgid ""
 "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
@@ -1709,6 +1722,18 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Download our free WordPress themes"
+#~ msgstr "Scarica i nostri temi gratuiti per WordPress"
+
+#~ msgid "Copyright"
+#~ msgstr "Copyright"
+
+#~ msgid "Theme by"
+#~ msgstr "Tema da"
+
+#~ msgid "Proudly powered by %s"
+#~ msgstr "Offerto orgogliosamente da %s"
 
 #~ msgid "Comment"
 #~ msgstr "Commenta"
