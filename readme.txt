@@ -4,7 +4,7 @@ Contributors: postmagthemes
 Tags: blog, news, entertainment, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, theme-options, threaded-comments
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.0.5
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.5 - August 12 2019 =
+* min height CSS adjusted in small news and others
+
 = 1.0.4 - June 23 2019 =
 * Footer special link bug fixed, sidebar widget CSS adjusted
 
@@ -45,6 +48,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.5 - August 12 2019 =
+* min height CSS adjusted in small news and others
 
 = 1.0.4 - June 23 2019 =
 * Footer special link bug fixed, sidebar widget CSS adjusted

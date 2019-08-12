@@ -1,6 +1,20 @@
 /*==================================
 	Reset CSS
 ====================================*/ 
+
+
+.news-column .small-post .single-post,
+.news-big .small-post .single-post {
+	min-height: 82px;
+}
+.news-tabs .tab-others .single-news {
+	min-height: 100px;
+}
+.footer .latest-news .single-news {
+	min-height: 45px;
+}
+/********* Rest Sidebar ********/
+
 aside .col-lg-2,
 aside .col-lg-3,
 aside .col-lg-4,
