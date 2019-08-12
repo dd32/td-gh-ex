@@ -56,26 +56,32 @@ if( !class_exists( 'avventura_lite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice avventura_lite-notice">
+            <div class="notice notice-warning is-dismissible">
             
-            	<div class="avventura_lite-noticedescription">
-					
-					<strong><?php esc_html_e( 'Upgrade to the premium version of Avventura, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more.', 'avventura-lite' ); ?></strong><br/>
+            	<p>
+            
+            		<strong>
 
-					<?php 
-					
-						printf( 
-							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'avventura-lite' ) . '</a>', 
-							esc_url( wp_nonce_url( add_query_arg( 'avventura-lite-dismiss', '1' ), 'avventura-lite-dismiss-action'))
-						);
-					
-					?>
+						<?php
+                        
+                            esc_html_e( 'Upgrade to the premium version of Avventura, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more. ', 'avventura-lite' ); 
+                            
+							printf( 
+								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'avventura-lite' ) . '</a>', 
+								esc_url( wp_nonce_url( add_query_arg( 'avventura-lite-dismiss', '1' ), 'avventura-lite-dismiss-action'))
+							);
+                            
+                        ?>
+                    
+                    </strong>
+                    
+            	</p>
+                    
+            	<p>
+            		
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/avventura-elegant-beauty-wordpress-shop-theme/?ref=2&campaign=avventura-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Upgrade to Avventura Premium', 'avventura-lite' ); ?></a>
                 
-                </div>
-                
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/avventura-elegant-beauty-wordpress-shop-theme/?ref=2&campaign=avventura-notice' ); ?>" class="button"><?php esc_html_e( 'Upgrade to Avventura Premium', 'avventura-lite' ); ?></a>
-                
-                <div class="clear"></div>
+            	</p>
 
             </div>
 		

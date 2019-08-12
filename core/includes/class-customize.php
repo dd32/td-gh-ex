@@ -38,10 +38,6 @@ if( !class_exists( 'avventura_lite_customize' ) ) {
 				wp_enqueue_style ( 'avventura-lite-panel',  $file_dir . 'css/panel.css', array(), '1.0.0' ); 
 				wp_enqueue_script( 'avventura-lite-script', $file_dir . 'js/panel.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs'),'1.0.0', TRUE ); 
 			}
-			
-			if ( !get_option( 'avventura-lite-dismissed-notice') ) {
-				wp_enqueue_style ( 'avventura-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
-			}
 
 		}
 		
