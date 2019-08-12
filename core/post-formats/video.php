@@ -9,7 +9,7 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-novalite_thumbnail('blog'); 
+novalite_thumbnail('nova_lite_blog'); 
 
 ?>
 

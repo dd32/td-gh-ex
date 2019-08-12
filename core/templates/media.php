@@ -25,7 +25,7 @@ function novalite_thumbnail($id) {
 
 	} else {
 	
-		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'blog');
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'nova_lite_blog');
 		
 		if (!empty($thumb)) :
 		

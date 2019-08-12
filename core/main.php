@@ -328,10 +328,10 @@ if (!function_exists('novalite_scripts_styles')) {
 		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/prettyPhoto.js' , array('jquery'), '1.3', TRUE ); 
 		wp_enqueue_script( 'nova-lite-template', get_template_directory_uri() . '/assets/js/template.js' , array('jquery'), '1.0.0', TRUE ); 
 
-		wp_enqueue_script('nova-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
-		wp_script_add_data('nova-lite-html5shiv', 'conditional', 'IE 8' );
-		wp_enqueue_script('nova-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
-		wp_script_add_data('nova-lite-selectivizr', 'conditional', 'IE 8' );
+		wp_enqueue_script('html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
+		wp_script_add_data('html5shiv', 'conditional', 'IE 8' );
+		wp_enqueue_script('selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
+		wp_script_add_data('selectivizr', 'conditional', 'IE 8' );
 
 	}
 	
@@ -359,17 +359,14 @@ if (!function_exists('novalite_setup')) {
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'cccccc'
 		) );
-	
-		add_image_size( 'blog', 1170,429, TRUE ); 
-		add_image_size( 'slide', 1170,429, TRUE ); 
-		
-		add_image_size( 'large', 449,304, TRUE ); 
-		add_image_size( 'medium', 290,220, TRUE ); 
-		add_image_size( 'small', 211,150, TRUE ); 
 
-		register_nav_menu( 'main-menu', 'Main menu' );
-	
 		load_theme_textdomain('nova-lite', get_template_directory() . '/languages');
+
+		add_image_size( 'nova_lite_blog', 1170,429, TRUE ); 
+
+		register_nav_menu(
+			'main-menu', esc_html__( 'Main menu', 'nova-lite' )
+		);
 		
 		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-customize.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-metaboxes.php' );

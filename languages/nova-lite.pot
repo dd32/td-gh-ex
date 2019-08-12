@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-11 21:30+0100\n"
+"POT-Creation-Date: 2019-08-12 18:48+0200\n"
 "PO-Revision-Date: 2015-08-20 14:57+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Comment"
 msgstr ""
 
-#: core/admin/customize/customize.php:13 core/classes/class-notice.php:62
+#: core/admin/customize/customize.php:13 core/classes/class-notice.php:82
 msgid "Upgrade to Nova Premium"
 msgstr ""
 
@@ -365,7 +365,7 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
-#: core/admin/customize/customize.php:376 header.php:32
+#: core/admin/customize/customize.php:376 header.php:42
 msgid "Logo"
 msgstr ""
 
@@ -447,36 +447,32 @@ msgstr ""
 msgid "Insert a size, for H6 elements (For example, 14px) "
 msgstr ""
 
-#: core/classes/class-customize.php:322
+#: core/classes/class-customize.php:338
 msgid "Nova premium version"
 msgstr ""
 
-#: core/classes/class-customize.php:324
+#: core/classes/class-customize.php:340
 msgid "Upgrade to the premium version of Nova, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more."
 msgstr ""
 
-#: core/classes/class-customize.php:328
+#: core/classes/class-customize.php:344
 msgid "Upgrade to Nova premium"
 msgstr ""
 
-#: core/classes/class-customize.php:336
+#: core/classes/class-customize.php:352
 msgid "Become a supporter"
 msgstr ""
 
-#: core/classes/class-customize.php:338
+#: core/classes/class-customize.php:354
 msgid "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 
-#: core/classes/class-customize.php:342
+#: core/classes/class-customize.php:358
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/classes/class-customize.php:343
+#: core/classes/class-customize.php:359
 msgid "Subscribe our newsletter"
-msgstr ""
-
-#: core/classes/class-customize.php:344
-msgid "Download our free WordPress themes"
 msgstr ""
 
 #: core/classes/class-metaboxes.php:185
@@ -487,11 +483,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: core/classes/class-notice.php:58
-msgid "Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more."
+#: core/classes/class-notice.php:67
+msgid "Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more. "
 msgstr ""
 
-#: core/classes/class-notice.php:59
+#: core/classes/class-notice.php:70
 msgid "Dismiss this notice"
 msgstr ""
 
@@ -519,7 +515,16 @@ msgstr ""
 msgid "This sidebar will be shown after the content."
 msgstr ""
 
-#: core/main.php:157
+#: core/main.php:44
+msgid "You need to update your PHP version to run this theme."
+msgstr ""
+
+#: core/main.php:47
+#, php-format
+msgid "Actual version is: %1$s, required version is: %2$s."
+msgstr ""
+
+#: core/main.php:205
 msgid "Read More"
 msgstr ""
 
@@ -579,6 +584,10 @@ msgstr ""
 #: footer.php:25
 #, php-format
 msgid "Proudly powered by %s"
+msgstr ""
+
+#: header.php:22
+msgid "Skip to content"
 msgstr ""
 
 #: home-blog.php:28

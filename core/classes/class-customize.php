@@ -41,10 +41,6 @@ if( !class_exists( 'novalite_customize' ) ) {
 				wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 			}
 				
-			if ( !get_option( 'nova-lite-dismissed-notice') ) {
-				wp_enqueue_style ( 'nova-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
-			}
-	
 		}
 	
 		public function customize_scripts() {
@@ -361,7 +357,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 
                     <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','nova-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','nova-lite');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','nova-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','nova-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php esc_attr_e('Download our free WordPress themes','nova-lite');?>" target="_blank"><?php esc_html_e('Download our free WordPress themes','nova-lite');?></a></li>
                 
                 </ul>
     

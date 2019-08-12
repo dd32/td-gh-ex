@@ -56,26 +56,32 @@ if( !class_exists( 'nova_lite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice nova_lite-notice">
+            <div class="notice notice-warning is-dismissible">
             
-            	<div class="nova_lite-noticedescription">
-					
-					<strong><?php esc_html_e( 'Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more.', 'nova-lite' ); ?></strong><br/>
+            	<p>
+            
+            		<strong>
 
-					<?php 
-					
-						printf( 
-							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'nova-lite' ) . '</a>', 
-							esc_url( wp_nonce_url( add_query_arg( 'nova-lite-dismiss', '1' ), 'nova-lite-dismiss-action'))
-						);
-					
-					?>
+						<?php
+                        
+                            esc_html_e( 'Upgrade to the premium version of Nova, to enable 600+ Google Fonts, Unlimited sidebars, WooCommerce support, Portfolio section and much more. ', 'nova-lite' ); 
+                            
+							printf( 
+								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'nova-lite' ) . '</a>', 
+								esc_url( wp_nonce_url( add_query_arg( 'nova-lite-dismiss', '1' ), 'nova-lite-dismiss-action'))
+							);
+                            
+                        ?>
+                    
+                    </strong>
+                    
+            	</p>
+                    
+            	<p>
+            		
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=2&campaign=nova-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Upgrade to Nova Premium', 'nova-lite' ); ?></a>
                 
-                </div>
-                
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/nova-free-responsive-portfolio-blogging-wordpress-theme/?ref=2&campaign=nova-notice' ); ?>" class="button"><?php esc_html_e( 'Upgrade to Nova Premium', 'nova-lite' ); ?></a>
-                
-                <div class="clear"></div>
+            	</p>
 
             </div>
 		
