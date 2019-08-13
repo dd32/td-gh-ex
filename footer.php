@@ -23,7 +23,7 @@
 
 		<?php 
 			// sidebar count.
-			$bam_footer_sidebar_count = get_theme_mod( 'bam_footer_sidebar_count', 'bam' ); 
+			$bam_footer_sidebar_count = get_theme_mod( 'bam_footer_sidebar_count', '3' ); 
 
 			// widget area class.
 			$bam_widget_area_class = 'th-columns-' . $bam_footer_sidebar_count;

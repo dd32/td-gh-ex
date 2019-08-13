@@ -4,11 +4,11 @@ Contributors: pubudu-malalasekara
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Bam is a simple yet a very customizable WordPress theme.
+Bam WordPress theme is a great flexible theme for blogging sites. Even this is a free theme you will find most of the advanced theme customizer options that you may find only on premium themes like, typography options, header layout options, advanced color options, blog layout options, social media options, etc. Just install the theme and customize it as you like.
 
 == Description ==
 
@@ -54,6 +54,9 @@ Bam supports all the major plugins.
 * Changed screenshot.
 * Added image licenses into readme.txt.
 * Changed headings font.
+
+= 1.0.4 =
+* Fixed default value for footer widget count.
 
 == Resources ==
 
