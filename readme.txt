@@ -4,6 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +48,13 @@ Bam supports all the major plugins.
 * Fixed licensing issues.
 * Removed woocommmerce.css and sass shop folder.
 
+= 1.0.3 =
+* Fixed site description escaping issue.
+* Added Stable tag into readme.txt.
+* Changed screenshot.
+* Added image licenses into readme.txt.
+* Changed headings font.
+
 == Resources ==
 
 * Based on Underscores, (C) 2012-2017 Automattic, Inc., GPLv2 or later
@@ -55,4 +63,35 @@ Bam supports all the major plugins.
 * Font Awesome Fonts, (C) 2018 Dave Gandy, SIL OFL 1.1
 * main-navigation.js based on Twenty Seventeen theme, (C) 2016 WordPress.org, GPLv2 or later
 * Slider Control slider.js based on Kirki Customizer Framework, (C) 2019 Ari Stathopoulos, MIT
-* All images shown in the screenshot.png, (C) 2019 Stocksnap.io, CC0
+
+Image 1 shown in screenshot.png, Copyright Bruce Mars
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/RRSDBIHUMS
+
+Image 2 shown in screenshot.png, Copyright Burst
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/IM7VXWHJAP
+
+Image 3 shown in screenshot.png, Copyright Chris Hayashi
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/ZHC95L56RT
+
+Image 4 shown in screenshot.png, Copyright Negative Space
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/XR731ZM77K
+
+Image 5 shown in screenshot.png, Copyright Travel Photographer
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/D30GWQGAIO
+
+Image 6 shown in screenshot.png, Copyright Jay Mantri
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/787C29E6B6
+
+Image 7 shown in screenshot.png, Copyright Dhyamis Kleber
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/TXGIMQSM8D
+
+Image 8 shown in screenshot.png, Copyright SpaceX
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/7V1JEO2YXQ

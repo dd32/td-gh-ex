@@ -26,7 +26,7 @@ if ( ! class_exists( 'Bam_Typography_Customizer' ) ) :
             return apply_filters( 'bam_typography_elements', array (
                 'body'  => array(
                     'title'     => esc_html__( 'Body', 'bam' ),
-                    'target'    => 'body, button, input, select, optgroup, textarea',
+                    'target'    => 'body, button, input, select, optgroup, textarea, .cat-links a:hover, .site-title',
                     'defaults'  => array(
                         'font-family'   => 'Source Sans Pro',
                         'font-size'     => array(
@@ -41,6 +41,7 @@ if ( ! class_exists( 'Bam_Typography_Customizer' ) ) :
                     'title'     => esc_html__( 'All Headings', 'bam' ),
                     'target'    => 'h1, h2, h3, h4, h5, h6, .site-title, .bam-entry .entry-title a, .widget-title, .entry-title, .related-section-title, .related-post-title a, .single .entry-title, .archive .page-title',
                     'defaults'  => array(
+                        'font-family'   => 'Roboto Condensed',
                         'line-height'   => 1.3,
                         'color'         => '#000000'
                     ),

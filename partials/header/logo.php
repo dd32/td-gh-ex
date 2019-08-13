@@ -19,7 +19,7 @@
             $bam_description = get_bloginfo( 'description', 'display' );
             if ( $bam_description || is_customize_preview() ) :
                 ?>
-                <p class="site-description"><?php echo $bam_description; /* WPCS: xss ok. */ ?></p>
+                <p class="site-description"><?php echo esc_html( $bam_description ); ?></p>
             <?php endif; ?>
         </div><!-- .site-branding-text -->
 
