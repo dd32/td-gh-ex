@@ -15,7 +15,7 @@
 			'operation-demo-importer' => array(
 				'slug' => 'operation-demo-importer',
 				'name' => esc_html__('Operation Demo Importer', 'arrival'),
-				'filename' =>'operation-demo-importer',
+				'filename' =>'operation-demo-importer.php',
 				'host_type' => 'wordpress', // Use either bundled, remote, wordpress
 				'class' => 'WOPDI',
 				'info' => esc_html__('Adds ability to theme with one click demo import feature, which will help to publish your websies within few minutes.', 'arrival'),
