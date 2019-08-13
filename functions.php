@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', '1.12' );
+define( 'SITEORIGIN_THEME_VERSION', '1.13' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 define( 'SITEORIGIN_THEME_CSS_PREFIX', '.min' );
 
@@ -29,11 +29,7 @@ include get_template_directory() . '/inc/menu.php';
 include get_template_directory() . '/inc/breadcrumbs.php';
 include get_template_directory() . '/inc/customizer.php';
 include get_template_directory() . '/inc/legacy.php';
-
-// include get_template_directory() . '/tour/tour.php';
-
 include get_template_directory() . '/fontawesome/icon-migration.php';
-
 
 if ( ! function_exists( 'vantage_setup' ) ) :
 /**
