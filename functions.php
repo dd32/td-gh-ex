@@ -151,14 +151,16 @@ add_action( 'after_setup_theme', 'attesa_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function attesa_widgets_init() {
+	$attesa_widgets_heading = apply_filters( 'attesa_widgets_heading', attesa_options('_widgets_heading', 'h3') );
+	
 	register_sidebar( array(
 		'name'          => esc_html__( 'Classic Sidebar', 'attesa' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'attesa' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="widget-title"><'.$attesa_widgets_heading.' class="widgets-heading">',
+		'after_title'   => '</'.$attesa_widgets_heading.'></div>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Push Sidebar', 'attesa' ),
@@ -166,8 +168,8 @@ function attesa_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'attesa' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="widget-title"><'.$attesa_widgets_heading.' class="widgets-heading">',
+		'after_title'   => '</'.$attesa_widgets_heading.'></div>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 1', 'attesa' ),
@@ -175,8 +177,8 @@ function attesa_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'attesa' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="widget-title"><'.$attesa_widgets_heading.' class="widgets-heading">',
+		'after_title'   => '</'.$attesa_widgets_heading.'></div>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 2', 'attesa' ),
@@ -184,8 +186,8 @@ function attesa_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'attesa' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="widget-title"><'.$attesa_widgets_heading.' class="widgets-heading">',
+		'after_title'   => '</'.$attesa_widgets_heading.'></div>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 3', 'attesa' ),
@@ -193,8 +195,8 @@ function attesa_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'attesa' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="widget-title"><'.$attesa_widgets_heading.' class="widgets-heading">',
+		'after_title'   => '</'.$attesa_widgets_heading.'></div>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer 4', 'attesa' ),
@@ -202,8 +204,8 @@ function attesa_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'attesa' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget-title"><h3>',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="widget-title"><'.$attesa_widgets_heading.' class="widgets-heading">',
+		'after_title'   => '</'.$attesa_widgets_heading.'></div>',
 	) );
 }
 add_action( 'widgets_init', 'attesa_widgets_init' );
@@ -343,7 +345,7 @@ function attesa_recommended_plugins() {
             'slug'               => 'attesa-extra',
             'required'           => false,
             'force_activation'   => false,
-            'force_deactivation' => true,
+            'force_deactivation' => false,
         ),
 	);
 	$config = array(

@@ -291,6 +291,28 @@ function attesa_customize_register( $wp_customize ) {
 			'sepia' => __( 'Sepia', 'attesa'),
 		),
     ) );
+	/* Widgets title heading */
+	$wp_customize->add_setting('attesa_theme_options[_widgets_heading]', array(
+        'default'    => 'h3',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_select'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_widgets_heading]', array(
+        'label'      => __( 'Widgets title heading', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_general',
+        'settings'   => 'attesa_theme_options[_widgets_heading]',
+        'type'       => 'select',
+		'priority' => 3,
+		'choices' => array(
+			'h1' => __( 'H1', 'attesa'),
+			'h2' => __( 'H2', 'attesa'),
+			'h3' => __( 'H3', 'attesa'),
+			'h4' => __( 'H4', 'attesa'),
+			'h5' => __( 'H5', 'attesa'),
+			'h6' => __( 'H6', 'attesa'),
+		),
+    ) );
 	/* Heading width section */
 	$wp_customize->add_setting('attesa_theme_options[_heading_width_content]', array(
 		'sanitize_callback' => 'sanitize_text_field',

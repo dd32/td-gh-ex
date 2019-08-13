@@ -338,7 +338,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			}
 			if ($widgettitle_font_size != '19px') {
 				$attesa_custom_css .= '
-				.widget .widget-title h3 {
+				.widget .widget-title .widgets-heading {
 					font-size: '.esc_html($widgettitle_font_size).';
 				}';
 			}
@@ -378,7 +378,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			}
 			if ($widgettitle_line_height != '1.5') {
 				$attesa_custom_css .= '
-				.widget .widget-title h3 {
+				.widget .widget-title .widgets-heading {
 					line-height: '.esc_html($widgettitle_line_height).';
 				}';
 			}
@@ -398,7 +398,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			}
 			if ($widgettitle_font_weight != 'bold') {
 				$attesa_custom_css .= '
-				.widget .widget-title h3 {
+				.widget .widget-title .widgets-heading {
 					font-weight: '.esc_html($widgettitle_font_weight).';
 				}';
 			}
@@ -1223,7 +1223,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				$classicSidebarBorderColor = apply_filters( 'attesa_classicsidebar_border_color', attesa_options('_classicsidebar_border_color', '#ececec') );
 				$attesa_custom_css .='
 				#secondary.widget-area .sidebar-container,
-				#secondary.widget-area .widget .widget-title h3,
+				#secondary.widget-area .widget .widget-title .widgets-heading,
 				#secondary.widget-area input[type="text"],
 				#secondary.widget-area input[type="email"],
 				#secondary.widget-area input[type="url"],
@@ -1421,7 +1421,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				$pushSidebarBorderColor = apply_filters( 'attesa_pushsidebar_border_color', attesa_options('_pushsidebar_border_color', '#ececec') );
 				$attesa_custom_css .='
 				#tertiary.widget-area,
-				#tertiary.widget-area .widget .widget-title h3,
+				#tertiary.widget-area .widget .widget-title .widgets-heading,
 				#tertiary.widget-area input[type="text"],
 				#tertiary.widget-area input[type="email"],
 				#tertiary.widget-area input[type="url"],
@@ -1611,7 +1611,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				/* Choose footer border color */
 				$footerBorderColor = apply_filters( 'attesa_footer_border_color', attesa_options('_footer_border_color', '#bcbcbc') );
 				$attesa_custom_css .='
-				.footerArea .widget .widget-title h3,
+				.footerArea .widget .widget-title .widgets-heading,
 				.footerArea input[type="text"],
 				.footerArea input[type="email"],
 				.footerArea input[type="url"],
