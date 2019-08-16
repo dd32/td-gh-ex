@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/admiral/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Admiral is a beautiful and stylish Magazine WordPress theme featuring a unique and responsive two sidebar layout. The theme comes with several awesome features, including a featured posts slideshow, a magazine homepage template, a widgetized header area, two different post layouts and support for infinite scroll.
-Version: 1.5.2
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: admiral
@@ -1366,6 +1366,52 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+## 11.3 - Magazine Blocks
+--------------------------------------------------------------*/
+:root {
+	--tz-column-gap: 1.5em;
+}
+
+.tz-magazine-block .tz-entry-title {
+    font-size: 20px;
+    font-size: 1.25rem;
+}
+
+.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title,
+.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
+    font-size: 15px;
+    font-size: 0.9375rem;
+}
+
+.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title {
+    font-size: 14px;
+    font-size: 0.875rem;
+}
+
+.tz-magazine-block .tz-entry-meta {
+	margin: 0 0 0.2em;
+    font-size: 14px;
+    font-size: 0.875rem;
+}
+
+.tz-magazine-block .tz-meta-field {
+	margin-right: 0;
+}
+
+.tz-magazine-block .tz-meta-field a {
+	text-decoration: none;
+}
+
+.tz-magazine-block .tz-entry-content {
+	font-size: 16px;
+    font-size: 1rem;
+}
+
+.tz-magazine-block .tz-read-more {
+	margin-top: -0.5em;
+}
+
+/*--------------------------------------------------------------
 # 12.0 - Posts and pages
 --------------------------------------------------------------*/
 .type-post,
@@ -1474,24 +1520,24 @@ textarea {
 }
 
 /* Hide post meta if they are deactivated in settings */
-body.date-hidden .entry-meta .meta-date,
-body.comments-hidden .entry-meta .meta-comments,
-body.categories-hidden .entry-meta .meta-category,
+body.date-hidden .type-post .entry-meta .meta-date,
+body.comments-hidden .type-post .entry-meta .meta-comments,
+body.categories-hidden .type-post .entry-meta .meta-category,
 body.author-hidden .type-post .posted-by {
 	 position: absolute;
 	 clip: rect(1px, 1px, 1px, 1px);
 }
 
-body.comments-hidden.categories-hidden .entry-meta .meta-date:after,
-body.categories-hidden .entry-meta .meta-comments:after {
+body.comments-hidden.categories-hidden .type-post .entry-meta .meta-date:after,
+body.categories-hidden .type-post .entry-meta .meta-comments:after {
 	display: none;
 }
 
-body.date-hidden.comments-hidden .content-archive .entry-meta {
+body.date-hidden.comments-hidden .content-archive .type-post .entry-meta {
 	display: none;
 }
 
-body.date-hidden.comments-hidden.categories-hidden .content-single .entry-meta {
+body.date-hidden.comments-hidden.categories-hidden .content-single .type-post .entry-meta {
 	display: none;
 }
 
