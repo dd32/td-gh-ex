@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/beetle/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Beetle is a fast & elegant Lifestyle Magazine WordPress theme. It comes with a clean typography, subtle colors and works great with strong pictures. Beetle makes use of the Customizer and a few widget areas which allow you to easily set up your online magazine in just a few minutes.
-Version: 1.5.3
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beetle
@@ -1255,6 +1255,60 @@ textarea {
 }
 
 /*--------------------------------------------------------------
+## 11.3 - Magazine Blocks
+--------------------------------------------------------------*/
+:root {
+	--tz-column-gap: 2em;
+}
+
+.tz-magazine-block .tz-entry-image {
+	margin-bottom: 0.5em;
+}
+
+.tz-magazine-block .tz-entry-image .wp-post-image {
+	margin: 0;
+}
+
+.tz-magazine-block .tz-entry-title {
+	font-size: 20px;
+    font-size: 1.25rem;
+}
+
+.tz-magazine-block .tz-magazine-grid-columns-3 .tz-entry-title {
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.tz-magazine-block .tz-magazine-grid-columns-4 .tz-entry-title,
+.tz-magazine-block .tz-magazine-thumbnail-list .tz-entry-title {
+    font-size: 15px;
+    font-size: 0.9375rem;
+}
+
+.tz-magazine-block .tz-entry-meta {
+	margin: 0.5em 0 0.25em;
+	font-size: 13px;
+    font-size: 0.8125rem;
+}
+
+.tz-magazine-block .tz-meta-field {
+	margin-right: 0.2em;
+}
+
+.tz-magazine-block .tz-meta-field a {
+	text-decoration: none;
+}
+
+.tz-magazine-block .tz-entry-content {
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.tz-magazine-block .tz-more-link {
+	text-decoration: none;
+}
+
+/*--------------------------------------------------------------
 # 12.0 - Posts and pages
 --------------------------------------------------------------*/
 .type-post,
@@ -1397,21 +1451,21 @@ textarea {
 }
 
 /* Hide post meta if they are deactivated in settings */
-body.date-hidden .entry-meta .meta-date,
-body.author-hidden .entry-meta .meta-author,
-body.categories-hidden .entry-meta .meta-category {
+body.date-hidden .type-post .entry-meta .meta-date,
+body.author-hidden .type-post .entry-meta .meta-author,
+body.categories-hidden .type-post .entry-meta .meta-category {
 	 position: absolute;
 	 clip: rect(1px, 1px, 1px, 1px);
 }
 
-body.author-hidden.categories-hidden .entry-meta .meta-date:after,
-body.categories-hidden .entry-meta .meta-author:after,
-body.author-hidden .widget-magazine-posts .entry-meta .meta-date:after {
+body.author-hidden.categories-hidden .type-post .entry-meta .meta-date:after,
+body.categories-hidden .type-post .entry-meta .meta-author:after,
+body.author-hidden .widget-magazine-posts .type-post .entry-meta .meta-date:after {
 	display: none;
 }
 
-body.date-hidden.author-hidden.categories-hidden .content-area .entry-meta,
-body.date-hidden.author-hidden .widget-magazine-posts .entry-meta {
+body.date-hidden.author-hidden.categories-hidden .content-area .type-post .entry-meta,
+body.date-hidden.author-hidden .widget-magazine-posts .type-post .entry-meta {
 	display: none;
 }
 
