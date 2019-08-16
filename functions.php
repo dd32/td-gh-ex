@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'RESPONSIVE_THEME_VERSION', '3.14' );
+define( 'RESPONSIVE_THEME_VERSION', '3.16.2' );
 define( 'RESPONSIVE_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'RESPONSIVE_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 /**
@@ -23,27 +23,24 @@ define( 'RESPONSIVE_THEME_URI', trailingslashit( esc_url( get_template_directory
 global $responsive_blog_layout_columns;
 $responsive_blog_layout_columns = array( 'blog-2-col', 'blog-3-col', 'blog-4-col' );
 
-$template_directory = get_template_directory();
-require $template_directory . '/core/includes/functions.php';
-require $template_directory . '/core/includes/functions-update.php';
-require $template_directory . '/core/includes/functions-about.php';
-require $template_directory . '/core/includes/functions-sidebar.php';
-require $template_directory . '/core/includes/functions-install.php';
-require $template_directory . '/core/includes/functions-admin.php';
-require $template_directory . '/core/includes/functions-extras.php';
-require $template_directory . '/core/includes/functions-extentions.php';
-require $template_directory . '/core/includes/theme-options/theme-options.php';
-require $template_directory . '/core/includes/functions-feedback.php';
-require $template_directory . '/core/includes/post-custom-meta.php';
-require $template_directory . '/core/includes/tha-theme-hooks.php';
-require $template_directory . '/core/includes/hooks.php';
-require $template_directory . '/core/includes/version.php';
-require $template_directory . '/core/includes/upsell/theme-upsell.php';
-require $template_directory . '/core/includes/customizer/controls/typography/webfonts.php';
-require $template_directory . '/core/includes/customizer/helper.php';
-require $template_directory . '/core/includes/customizer/customizer.php';
-require $template_directory . '/core/includes/customizer/custom-styles.php';
-require $template_directory . '/core/includes/compatibility/woocommerce/class-responsive-woocommerce.php';
+$responsive_template_directory = get_template_directory();
+require $responsive_template_directory . '/core/includes/functions.php';
+require $responsive_template_directory . '/core/includes/functions-update.php';
+require $responsive_template_directory . '/core/includes/functions-about.php';
+require $responsive_template_directory . '/core/includes/functions-sidebar.php';
+require $responsive_template_directory . '/core/includes/functions-install.php';
+require $responsive_template_directory . '/core/includes/functions-admin.php';
+require $responsive_template_directory . '/core/includes/functions-extras.php';
+require $responsive_template_directory . '/core/includes/functions-extentions.php';
+require $responsive_template_directory . '/core/includes/theme-options/theme-options.php';
+require $responsive_template_directory . '/core/includes/post-custom-meta.php';
+require $responsive_template_directory . '/core/includes/hooks.php';
+require $responsive_template_directory . '/core/includes/version.php';
+require $responsive_template_directory . '/core/includes/customizer/controls/typography/webfonts.php';
+require $responsive_template_directory . '/core/includes/customizer/helper.php';
+require $responsive_template_directory . '/core/includes/customizer/customizer.php';
+require $responsive_template_directory . '/core/includes/customizer/custom-styles.php';
+require $responsive_template_directory . '/core/includes/compatibility/woocommerce/class-responsive-woocommerce.php';
 
 // Return value of the supplied responsive free theme option.
 function responsive_free_get_option( $option, $default = false ) {
@@ -63,15 +60,6 @@ function responsive_free_setup() {
 	add_theme_support( 'align-wide' );
 }
 add_action( 'after_setup_theme', 'responsive_free_setup' );
-
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function responsive_free_render_title() {
-		?>
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'responsive_free_render_title' );
-endif;
 
 add_filter( 'body_class', 'responsive_add_site_layout_classes' );
 
@@ -361,28 +349,31 @@ function responsive_exclude_post_cat( $query ) {
 endif;
 add_action( 'pre_get_posts', 'responsive_exclude_post_cat', 10 );
 
-if (!function_exists('responsive_get_attachment_id_from_url')) :
-function responsive_get_attachment_id_from_url($attachment_url = '')
-{
-global $wpdb;
-$attachment_id = false;
-// If there is no url, return.
-if ('' == $attachment_url) {
-  return;
-}
-// Get the upload directory paths.
-$upload_dir_paths = wp_upload_dir();
-// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
-if (false !== strpos($attachment_url, $upload_dir_paths['baseurl'])) {
-  // If this is the URL of an auto-generated thumbnail, get the URL of the original image.
-  $attachment_url = preg_replace('/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url);
-  // Remove the upload path base directory from the attachment URL.
-  $attachment_url = str_replace($upload_dir_paths['baseurl'] . '/', '', $attachment_url);
-  // Finally, run a custom database query to get the attachment ID from the modified attachment URL.
-  $attachment_id = $wpdb->get_var($wpdb->prepare("SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url));
-}
-return $attachment_id;
-}
+if ( ! function_exists( 'responsive_get_attachment_id_from_url' ) ) :
+	function responsive_get_attachment_id_from_url( $attachment_url = '' ) {
+		global $wpdb;
+		$attachment_id = false;
+		// If there is no url, return.
+		if ( '' == $attachment_url ) {
+			return;
+		}
+		// Get the upload directory paths.
+		$upload_dir_paths = wp_upload_dir();
+
+		// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image.
+		if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+
+			// If this is the URL of an auto-generated thumbnail, get the URL of the original image.
+			$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+
+			// Remove the upload path base directory from the attachment URL.
+			$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+
+			// Finally, run a custom database query to get the attachment ID from the modified attachment URL.
+			$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = %s AND wposts.post_type = 'attachment'", $attachment_url ) );
+		}
+		return $attachment_id;
+	}
 endif;
 
 

@@ -25,10 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $responsive_options = responsive_get_options();
 
-/**
- * Add plugin automation file
- */
-require_once dirname( __FILE__ ) . '/classes/class-tgm-plugin-activation.php';
 /** Function to load controls */
 function responsive_load_customize_controls() {
 
@@ -40,7 +36,6 @@ add_action( 'customize_register', 'responsive_load_customize_controls', 0 );
  * Hook options
  */
 add_action( 'admin_init', 'responsive_theme_options_init' );
-add_action( 'admin_menu', 'responsive_theme_options_add_page' );
 
 /**
  * Retrieve Theme option settings
@@ -333,12 +328,6 @@ if ( ! function_exists( 'responsive_css' ) ) {
 		$theme              = wp_get_theme();
 		$responsive         = wp_get_theme( 'responsive' );
 		$responsive_options = responsive_get_options();
-		/**
- 		 * Load WooCommerce compatibility file.
- 	 	*/
-		if ( class_exists( 'WooCommerce' ) ) {
-			//wp_enqueue_style( 'responsive-woocommerce', get_template_directory_uri() . '/core/css/woocommerce.css', false, $responsive['Version'] );
-		}
 
 		if ( 1 == $responsive_options['minified_css'] ) {
 			wp_enqueue_style( 'responsive-style', get_template_directory_uri() . '/core/css/style.min.css', false, $responsive['Version'] );

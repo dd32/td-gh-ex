@@ -35,28 +35,24 @@ get_header();
 	?>
 
 	<?php
-	global $wp_query, $paged;
 	if ( get_query_var( 'paged' ) ) {
-		$paged = get_query_var( 'paged' );
+		$responsive_paged = get_query_var( 'paged' );
 	} elseif ( get_query_var( 'page' ) ) {
-		$paged = get_query_var( 'page' );
+		$responsive_paged = get_query_var( 'page' );
 	} else {
-		$paged = 1;
+		$responsive_paged = 1;
 	}
-	$blog_query = new WP_Query(
+	$responsive_blog_query = new WP_Query(
 		array(
 			'post_type' => 'post',
-			'paged'     => $paged,
+			'paged'     => $responsive_paged,
 		)
 	);
-	$temp_query = $wp_query;
-	$wp_query   = null;
-	$wp_query   = $blog_query;
 
-	if ( $blog_query->have_posts() ) :
+	if ( $responsive_blog_query->have_posts() ) :
 
-		while ( $blog_query->have_posts() ) :
-			$blog_query->the_post();
+		while ( $responsive_blog_query->have_posts() ) :
+			$responsive_blog_query->the_post();
 			?>
 
 			<?php responsive_entry_before(); ?>
@@ -91,11 +87,11 @@ get_header();
 			<?php
 		endwhile;
 
-		if ( $wp_query->max_num_pages > 1 ) :
+		if ( $responsive_blog_query->max_num_pages > 1 ) :
 			?>
 			<div class="navigation">
-				<div class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ), $wp_query->max_num_pages ); ?></div>
-				<div class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ), $wp_query->max_num_pages ); ?></div>
+				<div class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ), $responsive_blog_query->max_num_pages ); ?></div>
+				<div class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ), $responsive_blog_query->max_num_pages ); ?></div>
 			</div><!-- end of .navigation -->
 			<?php
 		endif;
@@ -105,7 +101,6 @@ get_header();
 			get_template_part( 'loop-no-posts', get_post_type() );
 
 	endif;
-		$wp_query = $temp_query;
 		wp_reset_postdata();
 		?>
 

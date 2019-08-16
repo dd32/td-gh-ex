@@ -47,12 +47,6 @@ function responsive_theme_options_init() {
 	register_setting( 'responsive_options', 'responsive_theme_options', 'responsive_theme_options_validate' );
 }
 
-/**
- * Load up the menu page
- */
-function responsive_theme_options_add_page() {
-	add_theme_page( __( 'Theme Options', 'responsive' ), __( 'Theme Options', 'responsive' ), 'edit_theme_options', 'theme_options', 'responsive_theme_options_do_page' );
-}
 
 function responsive_inline_css() {
 	global $responsive_options;
@@ -113,7 +107,7 @@ function responsive_theme_options_do_page() {
 
 
 	<?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
-		<div class="updated fade"><p><strong><?php _e( 'Options Saved', 'responsive' ); ?></strong></p></div>
+		<div class="updated fade"><p><strong><?php esc_html_e( 'Options Saved', 'responsive' ); ?></strong></p></div>
 	<?php endif; ?>
 
 	<?php responsive_theme_options(); // Theme Options Hook ?>
