@@ -2,15 +2,10 @@
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
 Tested up to: 5.2.2
-Stable tag: 3.6
+Stable tag: 3.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-
-Reference themes: 
-http://demo.roadthemes.com/makalidemo/
-http://demo.uix.store/sober/home-page-2/?header_text_color=light&topbar_enable=1&topbar_left=switchers&topbar_color=dark&utm_source=landing
-https://flatsome3.uxthemes.com/demos/shop-demos/classic-shop/
 
 == Bundled Resources ==
 * Font Awesome: http://fortawesome.github.io/Font-Awesome/
@@ -24,7 +19,7 @@ https://flatsome3.uxthemes.com/demos/shop-demos/classic-shop/
 == Description ==
 
 Ascent is a fully responsive WordPress theme that looks elegant on any devices. It is suitable for blogs, business, and personal portfolio websites. This fully customizable and lighting fast theme is built with SEO in mind. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
-If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at https://ascenttheme.com/ and get pro version at: https://zetamatic.com/downloads/ascent-pro/.
+If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at https://ascenttheme.com/
 
 
 * Fully Bootstrap Power
@@ -93,6 +88,9 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 
 = Changelog =
+
+### Version 3.5.0
+- Fixed CSS issue
 
 ### Version 3.4
 - Chnaged Theme options to Customizer
