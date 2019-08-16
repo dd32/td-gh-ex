@@ -356,7 +356,3 @@ if ($dynamic_css_options == "do-not-reset" || $dynamic_css_options == "") {
 */
 require get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.php';
 
-/**
- * Dummy File Load 
-*/
-require get_template_directory() . '/inc/dummy-data/dummy-file.php';

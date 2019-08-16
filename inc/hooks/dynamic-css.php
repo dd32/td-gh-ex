@@ -88,7 +88,9 @@ if ( !function_exists('better_health_dynamic_css') ):
       .section-contact-full, 
       .scrollup,
       .section-2-box-right .readmore, 
-      a.readmore
+      a.readmore,.make-booking .makebooking,.line-middle,.line-middle:before, .line-middle:after,.portfolioFilter a.current,.portfolioFilter a.current,
+      .portfolioFilter a:hover,.section-margine .nav-links .nav-previous a:hover, .section-margine .nav-links .nav-next a:hover,.btn-primary:hover,.overlay i
+
      {
          background-color: " . $better_health_primary_color . ";
      }
@@ -109,7 +111,7 @@ if ( !function_exists('better_health_dynamic_css') ):
                   .icon-box--description .fa,
                   .front-blog-date .publish-date,
                   a.contact-us:hover,
-                  .better-health-info .contact-detail2 li a:hover
+                  .better-health-info .contact-detail2 li a:hover,.section-4 .section li.left,.portfolioFilter a
                   {
                       color: " . $better_health_primary_color . ";
                    }
@@ -132,9 +134,33 @@ if ( !function_exists('better_health_dynamic_css') ):
    .widget .widget-title,
    .btn-primary,
    #quote-carousel .carousel-control.left, 
-   #quote-carousel .carousel-control.right{
+   #quote-carousel .carousel-control.right,.btn-primary:hover{
         border-color: " . $better_health_primary_color . ";}
     ";
+
+     $custom_css .= "#secondary .widget-title
+    {
+        border-bottom: 2px solid". $better_health_primary_color ." ;}
+    ";
+
+     $custom_css .= ".line-heading .line-left, .line-heading .line-right
+    {
+        border-top: 1px dashed". $better_health_primary_color ." ;}
+    ";
+
+    $custom_css .= ".portfolioFilter a
+    {
+        border: 1px solid". $better_health_primary_color ." ;}
+    ";
+
+     $custom_css .= ".post blockquote
+    {
+        border-left: 5px solid". $better_health_primary_color ." ;}
+    ";
+
+
+
+   
     /*------------------------------------------------------------------------------------------------- */
 
     /*custom css*/

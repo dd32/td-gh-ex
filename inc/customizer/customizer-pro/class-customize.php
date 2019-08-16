@@ -75,7 +75,7 @@ final class Better_Health_Customize {
 				array(
 					'title'    => esc_html__( 'Premium Verison', 'better-health' ),
 					'pro_text' => esc_html__( 'Upgrade To Pro',         'better-health' ),
-					'pro_url'  => 'https://www.templatesell.com/item/better-health-pro/',
+					'pro_url'  => 'https://www.canyonthemes.com/downloads/better-health-pro/',
 					'priority' => 0
 				)
 			)
