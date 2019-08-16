@@ -70,11 +70,7 @@ function ashe_setup() {
 	add_theme_support( 'wc-product-gallery-slider' );
 
 	// Theme Activation Notice
-	global $pagenow;
-	
-	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
-		add_action( 'admin_notices', 'ashe_activation_notice' );
-	}
+	add_action( 'admin_notices', 'ashe_activation_notice' );
 	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
@@ -84,22 +80,56 @@ add_action( 'after_setup_theme', 'ashe_setup' );
 ** Notice after Theme Activation and Update.
 */
 function ashe_activation_notice() {
+	global $pagenow;
+	global $current_user;
+
+	$user_id	 = $current_user->ID;
 	$theme_data	 = wp_get_theme();
-	
-	echo '<div class="ashe-activation-notice updated notice notice-success is-dismissible">';
-	
-		echo '<p>';
-			/* translators: %1$s: theme name, %2$s link */
-			printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-ashe' ) ) );
-		echo '</p>';
+	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
 
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary">';
-			/* translators: %s theme name */
-			printf( esc_html__( 'Get started with %s', 'ashe' ), esc_html( $theme_data->Name ) );
-		echo '</a></p>';
+	if ( ! get_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ) ) {
 
-	echo '</div>';
+		echo '<div class="notice notice-success ashe-activation-notice">';
+
+			printf( '<a href="%1$s" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>', '?' . esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore=0' );
+		
+			echo '<p>';
+				/* translators: %1$s: theme name, %2$s link */
+				printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-ashe' ) ) );
+			echo '</p>';
+
+			echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary">';
+				/* translators: %s theme name */
+				printf( esc_html__( 'Get started with %s', 'ashe' ), esc_html( $theme_data->Name ) );
+			echo '</a></p>';
+
+		echo '</div>';
+
+	}
 }
+
+function ashe_notice_ignore() {
+	global $current_user;
+	$theme_data	 = wp_get_theme();
+	$user_id	 = $current_user->ID;
+	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
+
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) && '0' == $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) {
+		add_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore', 'true', true );
+	}
+}
+add_action( 'admin_init', 'ashe_notice_ignore' );
+
+function ashe_erase_ignored_notice() {
+	global $current_user;
+	$theme_data	 = wp_get_theme();
+	$user_id	 = $current_user->ID;
+	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
+	
+	delete_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' );
+}
+add_action('after_switch_theme', 'ashe_erase_ignored_notice');
 
 function ashe_admin_scripts() {
 	
