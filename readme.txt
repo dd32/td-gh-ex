@@ -1,1 +1,0 @@
-Atreus is a simple WordPress blog theme created based on the Bulma framework.

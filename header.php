@@ -2,37 +2,38 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta name="description" content="<?php echo get_bloginfo('description'); ?>">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
-    <script defer src="<?php echo esc_url(get_template_directory_uri()); ?>/js/fontawesome.js"></script>
-    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/bulma.min.css">
-	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/style.css ?>">
-	<link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.png" />
+    <meta charset="<?php bloginfo('charset'); ?>" />
 	
 	<?php wp_head(); ?> 
 </head>
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <!-- Header -->
-    <section class="hero <?php if(get_theme_mod('atreus_theme_colour_setting')==false){echo 'is-link';}else{echo esc_html(get_theme_mod('atreus_theme_colour_setting'));} ?>">
+    <section class="hero <?php if(get_theme_mod('atreus_theme_colour_setting')==false){echo esc_html('is-link');}else{echo esc_html(get_theme_mod('atreus_theme_colour_setting'));} ?>">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="<?php echo esc_url(site_url());?>">
+                        <a class="navbar-item" href="<?php echo esc_url(home_url());?>">
                             <?php
                                 $custom_logo_id = get_theme_mod('custom_logo');
                                 $logo = wp_get_attachment_image_src($custom_logo_id , 'full');
 
                                 if (has_custom_logo()) 
                                 {
-                                    echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '">';
+                            ?>
+
+                            <img src="<?php echo esc_url($logo[0]); ?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>">
+
+                            <?php
                                 } 
                                 else 
                                 {
-                                    echo get_bloginfo( 'name' );
+                                    echo esc_html(get_bloginfo('name'));
                                 }
                             ?>
                         </a>
@@ -71,10 +72,10 @@
                 {
                     ?>
                     <h1 class="title">
-                        <?php echo get_bloginfo('name'); ?>
+                        <?php echo esc_html(get_bloginfo('name')); ?>
                     </h1>
                     <h2 class="subtitle">
-                        <?php echo get_bloginfo('description'); ?>
+                        <?php echo esc_html(get_bloginfo('description')); ?>
                     </h2>
                     <?php                          
                 }

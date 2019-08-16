@@ -1,14 +1,18 @@
 /*
+
 Theme Name: Atreus
-Theme URI: http://sitesbyjam.co.uk/dev/atreus/
 Author: Jamie Malcolm
 Author URI: http://sitesbyJAM.co.uk/
 Description: A simplistic, yet beautiful, blog theme created using the Bulma framework.
-Version: 1.1.1
+Version: 1.1.10
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: right-sidebar, custom-menu, editor-style
+Tags: two-columns, right-sidebar, theme-options, custom-menu, blog, custom-logo, featured-images, threaded-comments
 Text Domain: atreus
+
+Atreus Wordpress Theme, Copyright (C) 2019, Jamie Malcolm
+Atreus is distributed under the terms of the GNU GPL
+
 */
 
 .post
@@ -72,6 +76,42 @@ Text Domain: atreus
 .pagination li
 {
     list-style: none;
+}
+
+.column
+{
+    overflow: hidden;
+}
+
+.post h1
+{
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.post-single h1
+{
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.post-img
+{
+    background-size: cover;
+    background-position: center;
+}
+
+.post-single-img
+{
+    min-height: 250px;
+    max-height: 750px;
+    background-size: cover;
+    background-position: center;
+}
+
+.single-margin
+{
+    margin-top: 25px;
 }
 
 /* =WordPress Core

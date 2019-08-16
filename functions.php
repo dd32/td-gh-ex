@@ -1,6 +1,6 @@
 <?php
 
-require_once get_parent_theme_file_path( '/functions/better-comments.php' );
+require_once get_parent_theme_file_path( '/functions/atreus-comments.php' );
 
 if ( ! isset( $content_width ) ) 
 {
@@ -74,7 +74,7 @@ function atreus_get_search_form($form)
                 <input class="input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'. __('Search this site', 'atreus') .'">
             </div>
             <div class="control">
-                <input type="submit" class="button '. get_theme_mod('atreus_theme_colour_setting') . '" id="searchsubmit" value="'. __('Search', 'atreus') .'">
+                <input type="submit" class="button '. esc_attr(get_theme_mod('atreus_theme_colour_setting')) . '" id="searchsubmit" value="'. __('Search', 'atreus') .'">
             </div>
         </div>
     </form>';
@@ -94,9 +94,15 @@ function atreus_comment_form_before()
 
 add_action( 'comment_form_before', 'atreus_comment_form_before' );
 
+function atreus_enqueue_scripts() 
+{
+    wp_enqueue_script('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.9.0', 'all');
+    wp_enqueue_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', false, '0.7.4', 'all');
+    wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_script('atreus_main', get_template_directory_uri() . '/js/main.js', false, '1.0', 'all');
+}
 
-
-add_action( 'customize_register', 'atreus_customize_register' );
+add_action( 'wp_enqueue_scripts', 'atreus_enqueue_scripts' );
 
 function atreus_customize_register($wp_customize) 
 {
@@ -121,18 +127,13 @@ function atreus_customize_register($wp_customize)
        'section'     => 'atreus_theme_colour_section',
        'type'        => 'select',
        'choices'     => array(
-            'is-link'    => 'Blue',
-            'is-success' => 'Green',
-            'is-danger'  => 'Red',
-            'is-warning' => 'Yellow',
-            'is-primary' => 'Turqoise'
+            'is-link'    => __('Blue', 'atreus'),
+            'is-success' => __('Green', 'atreus'),
+            'is-danger'  => __('Red', 'atreus'),
+            'is-warning' => __('Yellow', 'atreus'),
+            'is-primary' => __('Turqoise', 'atreus')
         )
    )));
 }
 
-function atreus_the_post_thumbnail()
-{
-    
-}
-
-add_action( 'the_post_thumbnail', 'atreus_the_post_thumbnail' );
+add_action( 'customize_register', 'atreus_customize_register' );

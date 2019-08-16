@@ -3,11 +3,33 @@
 <div id="comments" class="comments">
     <?php if ( have_comments() ) : ?>
 		<p>
-            <?php printf(_nx('One comment on "%2$s"', '%1$s comments on "%2$s"', get_comments_number(), 'comments title', 'atreus'), number_format_i18n(get_comments_number()), get_the_title() ); ?>
-		</p>
+            <?php
+                if ('1' == get_comments_number()) 
+                {
+                    /* translators: %s: post title */
+                    printf( _x( 'One comment on "%s"', 'comments title', 'atreus' ), get_the_title() );
+                } 
+                else 
+                {
+                    printf(
+                            /* translators: 1: number of comments, 2: post title */
+                            _nx(
+                                    '%1$s comment on "%2$s"',
+                                    '%1$s comments on "%2$s"',
+                                    get_comments_number(),
+                                    'comments title',
+                                    'atreus'
+                            ),
+                            number_format_i18n(get_comments_number()),
+                            get_the_title()
+                    );
+                }
+
+            ?>
+        </p>
         
         <?php wp_list_comments( array(
-            'callback' => 'better_comments'
+            'callback' => 'atreus_comments'
         ) ); ?>
 	<?php endif; ?>
 
@@ -28,7 +50,7 @@
             'email' => '<div class="field"> <label class="label">' . __('Email', 'atreus') . ' *</label> <div class="control"><input id="email" name="email" class="input" type="email" value="' . esc_attr( $commenter['comment_author_email']) . '" ' . $aria_req . ' /></div></div>'
         )),
         'comment_field' => '<div class="field"><label class="label">' . __('Comment', 'atreus') . ' *</label><div class="control"><textarea id="comment" name="comment" class="textarea" aria-required="true"></textarea></div></div>',
-        'class_submit' => 'button ' . get_theme_mod('atreus_theme_colour_setting')
+        'class_submit' => 'button ' . esc_html(get_theme_mod('atreus_theme_colour_setting'))
         );
 
     comment_form($args); ?>

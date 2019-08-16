@@ -1,3 +1,7 @@
+/*!
+ * main.js version 1.0
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 

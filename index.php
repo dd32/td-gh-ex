@@ -4,7 +4,7 @@
     <div class="container">
         <div class="content">
             <div class="columns">
-                <div class="column is-three-quarters">
+                <div class="column">
 					<?php 
 					if (have_posts()) : while (have_posts()) : the_post();
 						get_template_part('content', get_post_format());
@@ -20,9 +20,15 @@
 					?>
                 </div>
 
-				<div class="column">
+				<?php 
+				if (is_active_sidebar('custom-side-bar')) :
+				?>
+				<div class="column is-one-quarter">
 					<?php get_sidebar(); ?>
 				</div>
+				<?php
+				endif; 
+				?>
 			</div>
         </div>
 	</div>

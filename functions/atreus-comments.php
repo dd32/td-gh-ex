@@ -1,4 +1,4 @@
-<?php function better_comments( $comment, $args, $depth ) { ?>
+<?php function atreus_comments( $comment, $args, $depth ) { ?>
     <div class="card" id="comment-<?php comment_ID() ?>">
         <div class="card-content">
             <div class="media">
