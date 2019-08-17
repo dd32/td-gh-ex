@@ -26,6 +26,12 @@ Yes, this theme supports the following plugins:
 
 == Changelog ==
 
+= 1.6.3 =
+
+* remove prefixes from the popper and bootstrap wp_enqueue_script() functions
+* add correct license URL
+* update README.txt with correct license description
+
 = 1.6.2 =
 
 * fixed issue where "recent post" widget links were not breaking correctly
@@ -101,12 +107,13 @@ Yes, this theme supports the following plugins:
 == Copyright Information ==
 
 A Starting Point, Copyright 2019 Cresencio Cantu
+
 A Starting Point is distributed under the terms of the GNU GPL
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -114,7 +121,8 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see .
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 A Starting Point WordPress Theme is derived from Underscores WordPress Theme, Copyright 2012-2016 Automattic, Inc.
 Underscores WordPress Theme is distributed under the terms of the GNU GPL
