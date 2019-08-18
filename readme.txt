@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.0 =
+* main menu: Add Keyboard navigation
+
 = 1.1.9 =
 * screen readers: Add Skip Link
 * add highlighting of form fields, submit buttons and text links
