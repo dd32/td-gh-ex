@@ -4,7 +4,7 @@ Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.2.4
+Version: 1.2.5
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -25,6 +25,7 @@ body {
 #body-content-wrapper {
 	position:relative;
 	overflow:hidden;
+	background-color:#FFFFFF;
 }
 
 input, select, textarea, button, #main .button {
@@ -1164,7 +1165,7 @@ img.wp-post-image {
 	position: fixed;
 	bottom: 0;
 	right:2%;
-	display:none;
+	z-index:-1;
 	color:#CBC8B5;
 	background-color:#555555 !important;
 	z-index:5001;
@@ -2543,24 +2544,32 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		margin:0;
 		padding:0;
 		position:absolute;
-		z-index:5000;
-		display:none;
+		z-index:-1;
 		color:#333333 !important;
 		background-color:#FAFAFA;
 	}
+
+	
 
 	#navmain ul ul:not(.cart_list) {
         opacity:0;
     }
 
-	#navmain ul li:hover > ul {
-       display:block;
+	#navmain ul li:hover > ul,
+	#navmain ul li:focus-within > ul {
+       z-index:5000;
        opacity:1;
        animation: opacity 700ms ease-in-out normal;
        -moz-animation: opacity 700ms ease-in-out normal;
        -ms-animation: opacity 700ms ease-in-out normal;
        -o-animation: opacity 700ms ease-in-out normal;
        -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    /* add support of browsers which don't support focus-within */
+    #navmain ul li.menu-item-focused > ul {
+       z-index:5000;
+       opacity:1;    
     }
 
     @keyframes opacity {
@@ -2794,7 +2803,8 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 @media screen and (max-width: 799px) {
 
 	#navmain ul ul {
-        display:none;
+        z-index:-1;
+        position:absolute;
     }
 
     #navmain .sub-menu-item-toggle {
@@ -2898,16 +2908,19 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	#navmain ul {
 		padding:0;
 	}
+
+	#navmain div ul,
+	#navmain div li {
+		background-color: #fafafa;
+	}
 				
 	#navmain div > ul {
 		color:#000000 !important;
-		background-color: #fafafa;
-		display:none;
+		z-index:-1;
 		list-style:none;
 		margin:0 0 0 2px;
 		padding:0 0 5px 0;
 		position:absolute;
-		z-index:5000;
 		overflow:hidden;
 		width:280px;
 		-webkit-border-radius:3px;
