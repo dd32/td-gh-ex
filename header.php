@@ -17,6 +17,20 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+/**
+ * New wp_body_open Theme Hook - WordPress 5.2
+ * Backward Compatibility
+ * This can be removed at the launch of WordPress 5.4
+ *
+ * @see https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
+ */
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}
+?>
 <div id="page" class="site-wrapper site">
 
 	<header id="masthead" class="site-header">

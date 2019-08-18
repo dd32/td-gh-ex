@@ -1,10 +1,12 @@
 === Bezel ===
-Contributors: SimpleFreeThemes.com
-Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.7
+Contributors: SimpleFreeThemes
+Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, holiday
+Requires at least: WordPress 5.0
+Tested up to: WordPress 5.2.2
+Requires PHP: 5.6
+Stable tag: 0.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
 
 == Description ==
 Bezel is a beautiful, light and elegant WordPress theme that allows your reader to focus on your content. Theme is based on Bootstrap framework grid and is perfect WordPress theme for personal blogs, product reviews, newspapers and magazines. It is simple and flexible theme with easy to use theme options. Bezel is packed with useful features such as responsive design, clean code, site logo, custom menu, translation ready, SEO friendly, Google fonts and easy to customize.
@@ -16,10 +18,6 @@ Bezel is a beautiful, light and elegant WordPress theme that allows your reader 
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
 For more information about Bezel please go to https://simplefreethemes.com/bezel.
-
-== Notes ==
-
-Primary Menu supports up to three levels.
 
 == Installation ==
 
@@ -88,6 +86,12 @@ Source: https://unsplash.com/
 - https://unsplash.com/photos/BmsmOjGQegU
 
 == Changelog ==
+
+= 0.1.6 =
+Released: August 18, 2019
+
+* New `wp_body_open` theme hook added.
+* Readme file updated.
 
 = 0.1.5 =
 Released: July 24, 2018
