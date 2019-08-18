@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.4 =
+* main menu: Add Keyboard navigation
+
 = 1.1.3 =
 * screen readers: Add Skip Link
 * add highlighting of form fields, submit buttons and text links

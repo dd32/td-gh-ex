@@ -4,7 +4,7 @@ Description: AyaWild is a fully responsive WordPress Theme. Features include a B
 Theme URI: https://ayatemplates.com/product/ayawild
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.3
+Version: 1.1.4
 Text Domain: ayawild
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -376,12 +376,15 @@ ul {
 	float:right;
 }
 
+#cart-popup-content ul {
+	z-index:0 !important;
+}
+
 #cart-popup-content {
 	max-width:280px;
-	display:none;
+	z-index:-1;
 	position:fixed;
 	top:18px;
-	z-index:5000;
 	background-color:#ffffff;
 	color:#000000;
 	padding:10px !important;
@@ -419,10 +422,9 @@ ul {
 }
 
 #search-popup-content {
-	display:none;
+	z-index:-1;
 	position:fixed;
 	top:18px;
-	z-index:5000;
 	background-color:#ffffff;
 	padding:10px !important;
 	border:1px solid #f5f5f5;
@@ -1689,7 +1691,7 @@ img.wp-post-image {
 	position: fixed;
 	bottom: 0;
 	right:2%;
-	display:none;
+	z-index:-1;
 	color:#CBC8B5;
 	background-color:#a1ac1f !important;
 	z-index:5001;
@@ -3206,24 +3208,32 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		margin:0;
 		padding:0;
 		position:absolute;
-		z-index:5000;
-		display:none;
+		z-index:-1;
 		color:#527731;
 		background-color:#b7c235;
 	}
+
+	
 
 	#navmain ul ul:not(.cart_list) {
         opacity:0;
     }
 
-	#navmain ul li:hover > ul {
-       display:block;
+	#navmain ul li:hover > ul,
+	#navmain ul li:focus-within > ul {
+       z-index:5000;
        opacity:1;
        animation: opacity 700ms ease-in-out normal;
        -moz-animation: opacity 700ms ease-in-out normal;
        -ms-animation: opacity 700ms ease-in-out normal;
        -o-animation: opacity 700ms ease-in-out normal;
        -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    /* add support of browsers which don't support focus-within */
+    #navmain ul li.menu-item-focused > ul {
+       z-index:5000;
+       opacity:1;    
     }
 
     @keyframes opacity {
@@ -3460,7 +3470,8 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 @media screen and (max-width: 799px) {
 
 	#navmain ul ul {
-        display:none;
+        z-index:-1;
+        position:absolute;
     }
 
     #navmain .sub-menu-item-toggle {
@@ -3614,19 +3625,22 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		text-align:left;
 	}
 
-#navmain ul {
+	#navmain ul {
 		padding:0;
+	}
+
+	#navmain div ul,
+	#navmain div li {
+		background-color: #b7c235;
 	}
 				
 	#navmain div > ul {
 		color:#000000 !important;
-		background-color: #b7c235;
-		display:none;
+		z-index:-1;
 		list-style:none;
 		margin:0 0 0 2px;
 		padding:0 0 5px 0;
 		position:absolute;
-		z-index:5000;
 		overflow:hidden;
 		width:280px;
 		-webkit-border-radius:3px;
