@@ -46,6 +46,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.3.0 =
+* add Mobile Keyboard navigation for Main Menu
+
 = 1.2.9 =
 * add Skip links for screen readers
 * add highlighting of form fields, submit buttons and text links

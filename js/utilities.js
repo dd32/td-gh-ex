@@ -4,7 +4,48 @@ jQuery( document ).ready(function() {
 	if (fcorpo_IsLargeResolution()) {
 	
 		jQuery('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
-		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
+		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');
+
+    // add support of browsers which don't support focus-within
+    jQuery('#navmain > div > ul > li a')
+      .focus(function() {
+        jQuery(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
+        jQuery(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
+
+        // hide cart mini cart popup content when focus menu links if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#cart-popup-content').length == 0 && jQuery('#cart-popup-content').css('right') != '-99999px')
+          jQuery('#cart-popup-content').css('right', '-99999px');
+
+        // hide cart login popup content when focus menu links if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#login-popup-content').length == 0 && jQuery('#login-popup-content').css('right') != '-99999px')
+          jQuery('#login-popup-content').css('right', '-99999px');
+
+        // hide search popup content when focus menu links if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#search-popup-content').length == 0 && jQuery('#search-popup-content').css('right') != '-99999px')
+          jQuery('#search-popup-content').css('right', '-99999px');
+
+        // show cart popup content when focus on mini cart popup link if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#cart-popup-content').length && jQuery('#cart-popup-content').css('right') == '-99999px') {
+          
+          var rootLi = jQuery(this).closest('#navmain > div > ul > li');
+          var rightPos = (jQuery(window).width() - (rootLi.offset().left + rootLi.outerWidth()));
+          var topPos = rootLi.offset().top - jQuery(window).scrollTop() + rootLi.outerHeight();
+
+          jQuery('#cart-popup-content').css('right', rightPos).css('top', topPos);
+        }
+
+        // show login popup content when focus on login popup link if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#login-popup-content').length && jQuery('#login-popup-content').css('right') == '-99999px')
+          jQuery('#login-popup-content').css('right', 'auto');
+
+        // show search popup content when focus on search popup link if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#search-popup-content').length && jQuery('#search-popup-content').css('right') == '-99999px')
+          jQuery('#search-popup-content').css('right', 'auto');
+      })
+      .blur(function() {
+        jQuery(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
+        jQuery(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
+    });										
 	} else {
 
     jQuery('#header-main-fixed .cart-contents-icon').appendTo(jQuery('#header-main-fixed'));
@@ -19,17 +60,37 @@ jQuery( document ).ready(function() {
        }
      );
 
+   jQuery('#navmain').on('focusin', function(){
+
+      if (jQuery('#navmain > div > ul').css('right') == '-99999px') {
+
+        jQuery('#navmain > div > ul').css({'right': 'auto'});
+        jQuery('#navmain ul ul').css({'right': 'auto'}).css({'position': 'relative'});
+
+        jQuery('.sub-menu-item-toggle').addClass('sub-menu-item-toggle-expanded');
+      }
+    });
+
    jQuery('.sub-menu-item-toggle').on('click', function(e) {
 
 	e.stopPropagation();
 
      var subMenu = jQuery(this).parent().find('> ul.sub-menu');
 
-     jQuery('#navmain ul ul.sub-menu').not(subMenu).hide();
+     jQuery('#navmain ul ul.sub-menu').not(subMenu).css('right', '-99999px').css('position', 'absolute');
       jQuery('#navmain span.sub-menu-item-toggle').not(this).removeClass('sub-menu-item-toggle-expanded');
      jQuery(this).toggleClass('sub-menu-item-toggle-expanded');
-     subMenu.toggle();
-     subMenu.find('ul.sub-menu').toggle();
+     
+     if (subMenu.css('right') == '-99999px') {
+
+        subMenu.css({'right': 'auto'}).css({'position': 'relative'});
+        subMenu.find('ul.sub-menu').css({'right': 'auto'}).css({'position': 'relative'});
+
+     } else {
+
+        subMenu.css({'right': '-99999px'}).css({'position': 'absolute'});
+        subMenu.find('ul.sub-menu').css({'right': '-99999px'}).css({'position': 'absolute'});
+     }
    });
   }
 
@@ -52,7 +113,14 @@ jQuery( document ).ready(function() {
 		
 			if (relY < 36) {
 			
-				jQuery('ul:first-child', this).toggle(400).parent().toggleClass('mobile-menu-expanded');
+				var firstChild = jQuery('ul:first-child', this);
+
+        if (firstChild.css('right') == '-99999px')
+            firstChild.css({'right': 'auto'});
+        else
+            firstChild.css({'right': '-99999px'});
+
+        firstChild.parent().toggleClass('mobile-menu-expanded');
 			}
 		}
 	});
@@ -170,21 +238,32 @@ function fcorpo_init_loading_effects() {
 
 function fcorpo_initHeaderIconsEvents() {
 
-    jQuery('a.cart-contents-icon').mouseenter(function(){
+    jQuery('a.cart-contents-icon').on('mouseenter focusin', function(){
     
       // display mini-cart if it's not visible
-      if ( !jQuery('#cart-popup-content').is(":visible") ) {
+      if ( jQuery('#cart-popup-content').css('right') == '-99999px' ) {
 
         var rightPos = (jQuery(window).width() - (jQuery(this).offset().left + jQuery(this).outerWidth()));
         var topPos = jQuery(this).offset().top - jQuery(window).scrollTop() + jQuery(this).outerHeight(); 
 
-        jQuery('#cart-popup-content').css('right', rightPos).css('top', topPos).fadeIn();
+        jQuery('#cart-popup-content').css('right', rightPos).css('top', topPos);
       }
     });
     
-    jQuery('#cart-popup-content').mouseleave(function(){
+    jQuery('#cart-popup-content').on('mouseleave', function(){
     
-      jQuery('#cart-popup-content').fadeOut();
+      jQuery('#cart-popup-content').css('right', '-99999px');
+    });
+
+    jQuery('#main-content-wrapper, #home-content-wrapper').on('focusin', function(){
+    
+      if (jQuery('#cart-popup-content').css('right') != '-99999px')
+        jQuery('#cart-popup-content').css('right', '-99999px');
+
+      if (jQuery('#navmain > div > ul').css('right') != '-99999px') {
+        jQuery('#navmain > div > ul').css({'right': ''});  
+      }
+
     });
   }
 
