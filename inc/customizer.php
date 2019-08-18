@@ -10,6 +10,9 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
+require_once( get_template_directory() . '/inc/sanitize.php' );
+
 function articlepress_customize_register( $wp_customize ) {
 
 	// Footer Social Icon
@@ -22,13 +25,15 @@ function articlepress_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_socail_icon_show_hide', array(
 		'default'  	=>	0,
 		'transport'	=>	'refresh',
-		'sanitize_callback'  => 'esc_url_raw'
+		'sanitize_callback'  => 'footer_socail_icon_show_hide_sanitize'
 	));
 	$wp_customize->add_control( 'footer_socail_icon_show_hide', array(
 		'section'	=> 	'footer_socail_icon',
 		'label'		=>	esc_html__( 'Icon Show / Hide', 'articlepress' ),
 		'type'		=>	'checkbox'
 	));
+
+
 
 	// Facebook
 	$wp_customize->add_setting( 'footer_socail_icon_facebook', array(
