@@ -63,7 +63,7 @@ function avid_magazine_customize_register_category_display( $wp_customize ) {
         'category' => array(
           'type'        => 'select',
           'label'       => esc_attr__( 'Category', 'avid-magazine' ),
-          'choices'     => get_dropdown_categories(),
+          'choices'     =>  get_dropdown_categories()
         ),
         'layout' => array(
           'type'      => 'select',

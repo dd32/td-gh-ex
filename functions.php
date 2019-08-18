@@ -377,6 +377,8 @@ function avid_magazine_numeric_posts_nav() {
         printf( '<li>%s</li>' . "\n", get_next_posts_link() );
  
     echo '</ul></div>' . "\n";
+
+    wp_reset_query();
  
 }
 

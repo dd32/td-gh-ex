@@ -26,7 +26,7 @@
                        
                     
                 <?php if( $title ) : ?>
-                    <h5 class="section-heading"><?php echo esc_html( $title ); ?></h5>
+                    <h4 class="section-heading"><?php echo esc_html( $title ); ?></h4>
                 <?php endif; ?>
             	<div class="<?php echo esc_attr( $view ); ?> blog-list-block">                                         
                   

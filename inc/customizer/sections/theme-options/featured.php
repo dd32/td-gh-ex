@@ -66,7 +66,7 @@ function avid_magazine_customize_register_featured_lifestyle( $wp_customize ) {
         'settings' => 'avid_magazine_featured_layouts',
         'type'=> 'radio-image',
         'choices'     => array(
-            'three'   => get_template_directory_uri() . '/images/homepage/featured-layouts/featured-layout-three.jpg',
+            'three'   => get_stylesheet_directory_uri() . '/images/homepage/featured-layouts/featured-layout-three.jpg',
         ),
     ) ) );
 

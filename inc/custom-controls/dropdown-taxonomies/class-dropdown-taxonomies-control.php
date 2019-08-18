@@ -38,9 +38,6 @@ class Avid_Magazine_Customize_Dropdown_Taxonomies_Control extends WP_Customize_C
     <label>
       <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
          <select <?php echo $this->link(); ?>>
-            <?php
-              printf('<option value="%s" %s>%s</option>', '', selected($this->value(), '', false),__('Select', 'avid-magazine') );
-             ?>
             <?php if ( ! empty( $all_taxonomies ) ): ?>
               <?php foreach ( $all_taxonomies as $key => $tax ): ?>
                 <?php

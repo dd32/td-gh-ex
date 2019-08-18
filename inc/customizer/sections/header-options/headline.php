@@ -83,7 +83,7 @@ function avid_magazine_theme_headline_section( $wp_customize ) {
         'settings' => 'avid_magazine_headline_layouts',
         'type'=> 'radio-image',
         'choices'     => array(
-            'one'   => get_template_directory_uri() . '/images/homepage/headline-layouts/headline-layout-one.jpg',
+            'one'   => get_stylesheet_directory_uri() . '/images/homepage/headline-layouts/headline-layout-one.jpg',
         ),
     ) ) );
 

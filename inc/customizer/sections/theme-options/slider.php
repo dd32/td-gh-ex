@@ -68,7 +68,7 @@ function avid_magazine_customize_register_slider_section( $wp_customize ) {
         'settings' => 'avid_magazine_slider_layouts',
         'type'=> 'radio-image',
         'choices'     => array(
-            'two'   => get_template_directory_uri() . '/images/homepage/slider-layouts/slider-layout-two.jpg',
+            'two'   => get_stylesheet_directory_uri() . '/images/homepage/slider-layouts/slider-layout-two.jpg',
         ),
     ) ) );
     

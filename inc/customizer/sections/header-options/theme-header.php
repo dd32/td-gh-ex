@@ -55,7 +55,7 @@ function avid_magazine_theme_header_layout_section( $wp_customize ) {
         'settings' => 'avid_magazine_header_layouts',
         'type'=> 'radio-image',
         'choices'     => array(
-            'four'   => get_template_directory_uri() . '/images/homepage/header-layouts/header-layout-four.jpg'
+            'four'   => get_stylesheet_directory_uri() . '/images/homepage/header-layouts/header-layout-four.jpg'
         ),
     ) ) );
 

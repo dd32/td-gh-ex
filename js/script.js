@@ -53,12 +53,6 @@ if ( ! isNaN( stickyOffset ) ) {
 }
 
 
-
-
-
-
-
-
 $('#owl-slider').owlCarousel({
       loop:false,
       margin:15,
@@ -99,6 +93,29 @@ $('#owl-heading').owlCarousel({
               items:3
           }
       }
+  })
+
+
+
+  $('#owl-heading-1').owlCarousel({
+    loop: $('.headline-wrapper .item').size() > 4 ? true : false,
+    margin:20,
+    nav:true,
+    dots:false,
+    autoplay:true,
+    autoplayTimeout:4000,
+    autoplayHoverPause:true,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:2
+      },
+      1000:{
+        items:4
+      }
+    }
   })
 
 
