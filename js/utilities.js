@@ -4,7 +4,48 @@ jQuery( document ).ready(function() {
 	if (ayaspirit_IsLargeResolution()) {
 	
 		jQuery('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
-		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
+		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');
+
+    // add support of browsers which don't support focus-within
+    jQuery('#navmain > div > ul > li a')
+      .focus(function() {
+        jQuery(this).closest('li.level-one-sub-menu').addClass('menu-item-focused');
+        jQuery(this).closest('li.level-two-sub-menu').addClass('menu-item-focused');
+
+        // hide cart mini cart popup content when focus menu links if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#cart-popup-content').length == 0 && jQuery('#cart-popup-content').css('z-index') != '-1')
+          jQuery('#cart-popup-content').css('z-index', '-1');
+
+        // hide cart login popup content when focus menu links if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#login-popup-content').length == 0 && jQuery('#login-popup-content').css('z-index') != '-1')
+          jQuery('#login-popup-content').css('z-index', '-1');
+
+        // hide search popup content when focus menu links if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#search-popup-content').length == 0 && jQuery('#search-popup-content').css('z-index') != '-1')
+          jQuery('#search-popup-content').css('z-index', '-1');
+
+        // show cart popup content when focus on mini cart popup link if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#cart-popup-content').length && jQuery('#cart-popup-content').css('z-index') == '-1') {
+          
+          var rootLi = jQuery(this).closest('#navmain > div > ul > li');
+          var rightPos = (jQuery(window).width() - (rootLi.offset().left + rootLi.outerWidth()));
+          var topPos = rootLi.offset().top - jQuery(window).scrollTop() + rootLi.outerHeight();
+
+          jQuery('#cart-popup-content').css('z-index', '5000').css('right', rightPos).css('top', topPos);
+        }
+
+        // show login popup content when focus on login popup link if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#login-popup-content').length && jQuery('#login-popup-content').css('z-index') == '-1')
+          jQuery('#login-popup-content').css('z-index', '5000');
+
+        // show search popup content when focus on search popup link if hidden on iterate back (shift + tab)
+        if (jQuery(this).closest('#navmain > div > ul > li').find('#search-popup-content').length && jQuery('#search-popup-content').css('z-index') == '-1')
+          jQuery('#search-popup-content').css('z-index', '5000');
+      })
+      .blur(function() {
+        jQuery(this).closest('li.level-one-sub-menu').removeClass('menu-item-focused');
+        jQuery(this).closest('li.level-two-sub-menu').removeClass('menu-item-focused');
+    });										
 	}
 
 	if (ayaspirit_options && ayaspirit_options.loading_effect) {
@@ -22,17 +63,44 @@ jQuery( document ).ready(function() {
 		       }
 		     );
 
-		   jQuery('.sub-menu-item-toggle').on('click', function(e) {
+		   jQuery('#navmain').on('focusin', function(){
+
+      if (jQuery('#navmain > div > ul').css('z-index') == '-1') {
+
+        jQuery('#navmain > div > ul').css({'z-index': '5000'});
+        jQuery('#navmain ul ul').css({'z-index': '5000'}).css({'position': 'relative'});
+
+        jQuery('.sub-menu-item-toggle').addClass('sub-menu-item-toggle-expanded');
+      }
+    });
+
+    jQuery('#main-content-wrapper, #home-content-wrapper').on('focusin', function(){
+
+      if (jQuery('#navmain > div > ul').css('z-index') != '-1') {
+        jQuery('#navmain > div > ul').css({'z-index': '-1'});  
+      }
+
+    });
+
+   jQuery('.sub-menu-item-toggle').on('click', function(e) {
 
 		     e.stopPropagation();
 
 		     var subMenu = jQuery(this).parent().find('> ul.sub-menu');
 
-		     jQuery('#navmain ul ul.sub-menu').not(subMenu).hide();
+		     jQuery('#navmain ul ul.sub-menu').not(subMenu).css('z-index', '-1').css('position', 'absolute');
       jQuery('#navmain span.sub-menu-item-toggle').not(this).removeClass('sub-menu-item-toggle-expanded');
 		     jQuery(this).toggleClass('sub-menu-item-toggle-expanded');
-		     subMenu.toggle();
-		     subMenu.find('ul.sub-menu').toggle();
+		     if (subMenu.css('z-index') == '-1') {
+
+        subMenu.css({'z-index': '5000'}).css({'position': 'relative'});
+        subMenu.find('ul.sub-menu').css({'z-index': '5000'}).css({'position': 'relative'});
+
+     } else {
+
+        subMenu.css({'z-index': '-1'}).css({'position': 'absolute'});
+        subMenu.find('ul.sub-menu').css({'z-index': '-1'}).css({'position': 'absolute'});
+     }
 		   });
 
 		}
@@ -50,7 +118,14 @@ jQuery( document ).ready(function() {
 		
 			if (relY < 36) {
 			
-				jQuery('ul:first-child', this).toggle(400).parent().toggleClass('mobile-menu-expanded');
+				var firstChild = jQuery('ul:first-child', this);
+
+        if (firstChild.css('z-index') == '-1')
+            firstChild.css({'z-index': '5000'});
+        else
+            firstChild.css({'z-index': '-1'});
+
+        firstChild.parent().toggleClass('mobile-menu-expanded');
 			}
 		}
 	});
