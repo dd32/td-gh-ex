@@ -17,18 +17,54 @@ body.woocommerce-cart {
       width: 100%;
       text-align: center;
       color: #fff;
-      font-weight:600;
+      font-weight: 600;
     }
   }
+
+  &.ae-cart-tmpl-1 {
+
+    .cart-collaterals {
+      .cross-sells {
+        ul.products {
+          li.product {
+            width: 100%;
+
+          }
+        }
+      }
+    }
+  }
+
 }
 
 @media (min-width: 768px) {
   body.woocommerce-cart {
+
+    .cart-collaterals {
+      .cross-sells {
+        ul.products {
+          li.product {
+            width: 30.75%;
+            &:first-child {
+              clear: none;
+            }
+
+          }
+        }
+      }
+    }
     &.ae-cart-tmpl-1 {
       .woocommerce-cart-form {
         width: 72%;
         float: left;
 
+        .cross-sells {
+          .products {
+            product {
+              width: 100%;
+            }
+          }
+        }
       }
       .cart-collaterals {
         width: 28%;

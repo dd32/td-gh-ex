@@ -49,7 +49,7 @@ $product_category_class = count($term_ids) > 0 ? ' ae-cat-id-' . join(' ae-cat-i
     <div class="ae-woo-block-wrap<?php echo esc_attr($product_category_class); ?>">
         <div class="<?php echo esc_attr($product_wrap) ?>">
             <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>"
-               class="ae-product-link"><?php echo the_title() ?></a>
+               class="ae-product-link"><?php the_title() ?></a>
             <?php
             /**
              * woocommerce_before_shop_loop_item_title hook.

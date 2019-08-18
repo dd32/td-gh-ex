@@ -45,6 +45,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
     public function hooks()
     {
+
         // Remove actions
         remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
         remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
@@ -70,6 +71,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
         add_action('woocommerce_sidebar', array($this, 'woocommerce_sidebar'), 10);
         add_filter('loop_shop_per_page', array($this, 'new_loop_shop_per_page'), 20);
         add_filter('woocommerce_add_to_cart_fragments', array($this, 'header_add_to_cart_fragment'));
+        add_filter('woocommerce_cross_sells_columns', array($this, 'woocommerce_cross_sells_columns'));
 
 
         $hide_list_grid_view = (boolean)agency_ecommerce_get_option('hide_list_grid_view');
@@ -99,6 +101,11 @@ class Agency_Ecommerce_WooCommerce_Hooks
         add_action('woocommerce_proceed_to_checkout', array($this, 'woocommerce_continue_shopping'), 25);
 
 
+    }
+
+    public function woocommerce_cross_sells_columns()
+    {
+        return 3;
     }
 
     public function woocommerce_continue_shopping()

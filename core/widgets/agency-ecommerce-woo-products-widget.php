@@ -280,7 +280,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
                     $term = get_term_by('id', $cat_id, 'product_cat');
 
-                    if (count($term) > 0) {
+                    if (count($term) > 0 && is_array($term)) {
 
                         array_push($categories, $term);
                     }

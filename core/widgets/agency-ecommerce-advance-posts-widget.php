@@ -168,7 +168,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
 
                                                 $content = agency_ecommerce_get_the_excerpt();
 
-                                                echo $content ? wpautop(wp_kses_post($content)) : '';
+                                                echo $content ? wp_kses_post(wpautop($content)) : '';
 
                                                 remove_filter('excerpt_length', array($this, 'excerpt_length'));
                                                 ?>

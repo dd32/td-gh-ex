@@ -279,7 +279,7 @@ if (!function_exists('agency_ecommerce_selected_category')) {
     function agency_ecommerce_selected_category($catname)
     {
 
-        $q_var = (isset($_GET['product_cat'])) ? esc_html($_GET['product_cat']) : '';
+        $q_var = (isset($_GET['product_cat'])) ? esc_html(wp_unslash($_GET['product_cat'])) : '';
 
         if ($q_var === $catname) {
 
