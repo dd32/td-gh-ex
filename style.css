@@ -4,7 +4,7 @@ Description: AyaMagazine is Fully Responsive Magazine WordPress Theme perfect fo
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamagazine
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: ayamagazine
 Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -339,9 +339,13 @@ ul {
 	float:right;
 }
 
+#cart-popup-content ul {
+	right:auto !important;
+}
+
 #cart-popup-content {
 	max-width:280px;
-	display:none;
+	right:-99999px;
 	position:fixed;
 	top:18px;
 	z-index:5000;
@@ -352,7 +356,7 @@ ul {
 }
 
 #search-popup-content {
-	display:none;
+	right:-99999px;
 	position:fixed;
 	top:18px;
 	z-index:5000;
@@ -1170,7 +1174,7 @@ img.wp-post-image {
 	position: fixed;
 	bottom: 0;
 	right:2%;
-	display:none;
+	right:-99999px;
 	color:#CBC8B5;
 	background-color:#555555 !important;
 	z-index:5001;
@@ -2520,22 +2524,31 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		padding:0;
 		position:absolute;
 		z-index:5000;
-		display:none;
+		right:-99999px;
 		background-color:#222222;
 	}
+
+	
 
 	#navmain ul ul:not(.cart_list) {
         opacity:0;
     }
 
-	#navmain ul li:hover > ul {
-       display:block;
+	#navmain ul li:hover > ul,
+	#navmain ul li:focus-within > ul {
+       right:auto;
        opacity:1;
        animation: opacity 700ms ease-in-out normal;
        -moz-animation: opacity 700ms ease-in-out normal;
        -ms-animation: opacity 700ms ease-in-out normal;
        -o-animation: opacity 700ms ease-in-out normal;
        -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    /* add support of browsers which don't support focus-within */
+    #navmain ul li.menu-item-focused > ul {
+       right:auto;
+       opacity:1;    
     }
 
     @keyframes opacity {
@@ -2694,7 +2707,8 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 @media screen and (max-width: 799px) {
 
 	#navmain ul ul {
-        display:none;
+        right:-99999px;
+        position:absolute;
     }
 
     #navmain .sub-menu-item-toggle {
@@ -2818,13 +2832,17 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		text-align:left;
 	}
 
-#navmain ul {
+	#navmain ul {
 		padding:0;
+	}
+
+	#navmain div ul,
+	#navmain div li {
+		background-color: #222222;
 	}
 				
 	#navmain div > ul {
-		background-color: #222222;
-		display:none;
+		right:-99999px;
 		list-style:none;
 		margin:0 0 0 2px;
 		padding:0 0 5px 0;
