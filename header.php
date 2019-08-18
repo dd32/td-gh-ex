@@ -28,9 +28,6 @@
         wp_body_open();
     }
 ?>
-<a class="skip-link screen-reader-text" href="#content">
-    <?php esc_html_e( 'Skip to content', 'articlepress' ); ?>
-</a>
 
 <div id="page" class="site">
 
@@ -52,7 +49,7 @@
                 	<?php
                 		wp_nav_menu(array(
                             'theme_location'    => 'main-menu',
-                            'menu_class'        => 'navbar-nav ml-auto main-menu'
+                            'menu_class'   => 'navbar-nav ml-auto articlepress-menu'
                 		));
 
                 	?>

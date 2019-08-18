@@ -11,9 +11,6 @@
  */
 function articlepress_scripts(){
 
-	// Font
-	wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,700i,900&display=swap' );
-
 	// Normalize Css
 	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.min.css' );
 
@@ -25,9 +22,6 @@ function articlepress_scripts(){
 
 	// Main StyleSheet
 	wp_enqueue_style( 'articlepress-style', get_stylesheet_uri() );
-
-	// Responsive Css
-	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css' );
 	
 	// jQuery v3.3.1 -ajax,-aja
 	wp_enqueue_script( 'articlepress-jquery', get_template_directory_uri() . '/assets/js/jquery-3.3.1.slim.min.js', '', '3.3.1', true );
@@ -37,7 +31,6 @@ function articlepress_scripts(){
 
 	// Bootstrap Script
 	wp_enqueue_script( 'articlepress-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', 'articlepress-popper', '4.1.1', true );
-
 
 	// Comment Reply Scripts
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
