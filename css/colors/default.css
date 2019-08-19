@@ -35,6 +35,8 @@ input[type="submit"]:focus {
 a {
 	color: #008ec2;
 }
+
+blockquote { border-left: 4px solid #008ec2; }
 /*==================== top-bar ====================*/
 
 .mt-head-bar { background-color: #02071b; }
