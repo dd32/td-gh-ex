@@ -2,11 +2,13 @@
 
 Contributors: unitedtheme
 
-Requires at least: 4.0
-Tested up to: 4.9.4
-Stable tag: 1.0.1
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Requires at least: 4.5
+Tested up to: 5.2.2
+Requires PHP: 5.5
+Stable tag: 1.0.2
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
 
 A starter theme called Adventure Blog.
 
@@ -48,12 +50,18 @@ Unless otherwise specified, all the theme files and scripts are licensed under G
    Copyright Kimberly Geswein
 
 * Slick, Copyright (c) Ken Wheeler, Licensed under MIT,  http://github.com/kenwheeler/slick/
+* Theia Sticky Sidebar v1.7.0  MIT License (MIT) https://github.com/WeCodePixels/theia-sticky-sidebar
 * normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal Licensed under MIT, https://necolas.github.io/normalize.css/
 
 Image Used from pexels.com and is released under CC0 Creative Commons, https://www.pexels.com/photo/action-adventure-beach-dawn-390051/
 
 
 == Changelog ==
+= 1.0.2 - Aug 18 2019 =
+* Added Theia Sticky Sidebar
+* Added the wp_body_open action.
+* Added skip links TRT requirement.
+* Managed RTL compatibility and added the rtl-language-support tag.
 
 = 1.0.1 - Jul 05 2018 =
 * Update some fixings

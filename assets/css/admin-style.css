@@ -26,9 +26,12 @@ body #accordion-section-theme_upsell {
 }
 
 body #accordion-section-theme_upsell h3 {
-    background: #FFC107 !important;
+    background: #ff6c29 !important;
+    background: linear-gradient(141deg,#ff6c29,#d21b46,#7a1ba6) !important;
     color: #fff !important;
     border-left: 0 !important;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,calc(100% - 10px) 100%,0 100%);
+    clip-path: polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,calc(100% - 10px) 100%,0 100%);
 }

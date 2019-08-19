@@ -21,7 +21,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+    <?php if ( function_exists( 'wp_body_open' ) ) {
+        wp_body_open();
+    }
+    ?>
 <div id="page" class="site <?php if (adventure_blog_get_option('enable_featured_page_section') == 1) {
     echo "content-block";
 } ?>">

@@ -70,7 +70,11 @@ if (!function_exists('adventure_blog_banner_slider')):
         $i = 0;
         ?>
         <div class="slider">
-            <div id="mainslider">
+            <?php $rtl_class = 'false';
+            if(is_rtl()){ 
+                $rtl_class = 'true';
+            }?>
+            <div id="mainslider" data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
                 <?php
                 if ($adventure_blog_banner_slider_query->have_posts()) :
                     while ($adventure_blog_banner_slider_query->have_posts()) : $adventure_blog_banner_slider_query->the_post();

@@ -14,8 +14,7 @@ jQuery(document).ready(function ($) {
             nextArrow: $('.next'),
         });
 
-
-        $(".gallery-columns-1").each(function () {
+        $(".gallery-columns-1, .wp-block-gallery.columns-1").each(function () {
             $(this).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -28,7 +27,12 @@ jQuery(document).ready(function ($) {
                 prevArrow: '<i class="nav icon-left"></i>',
             });
         });
+    });
 
+    $(function () {
+        jQuery('.widget-area').theiaStickySidebar({
+            additionalMarginTop: 30
+        });
     });
 
     $(function () {
@@ -40,33 +44,20 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    $("div.zoom-gallery").each(function () {
-        $(this).magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            closeOnContentClick: false,
-            closeBtnInside: false,
-            mainClass: 'mfp-with-zoom mfp-img-mobile',
-            image: {
-                verticalFit: true,
-                titleSrc: function (item) {
-                    return item.el.attr('title');
-                }
-            },
-            gallery: {
-                enabled: true
-            },
-            zoom: {
-                enabled: true,
-                duration: 300,
-                opener: function (element) {
-                    return element.find('img');
-                }
-            }
-        });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.scroll-up').fadeIn();
+        } else {
+            $('.scroll-up').fadeOut();
+        }
     });
 
-    $("div.gallery-icon").each(function () {
+    $('.scroll-up').on("click", function (e) {
+        $("html, body").animate({scrollTop: 0}, 600);
+        return false;
+    });
+
+    $("div.gallery-icon, .blocks-gallery-item, div.zoom-gallery").each(function () {
         $(this).magnificPopup({
             delegate: 'a',
             type: 'image',

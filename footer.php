@@ -74,6 +74,7 @@
 			</div>
 		</div>
 	</footer>
+    <button class="scroll-up"><span><?php echo esc_html('Scroll up','adventure-blog'); ?></span></button>
 </div>
 
 <?php wp_footer(); ?>
