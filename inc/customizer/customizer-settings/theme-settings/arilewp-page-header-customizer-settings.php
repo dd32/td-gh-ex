@@ -47,7 +47,7 @@ if ( ! class_exists( 'ArileWP_Customize_Page_Header_Option' ) ) :
 				
 				'arilewp_page_header_background_color' => array(
 					'setting' => array(
-						'default'           => '',
+						'default'           => 'rgba(0, 123, 255, 1)',
 						'sanitize_callback' => array( 'ArileWP_Customizer_Sanitize', 'sanitize_alpha_color' ),
 					),
 					'control' => array(

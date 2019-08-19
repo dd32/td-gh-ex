@@ -10,7 +10,6 @@ require ARILEWP_PARENT_INC_DIR . '/customizer/webfont.php';
 require ARILEWP_PARENT_INC_DIR . '/customizer/controls/code/arilewp-customize-typography-control.php';
 require ARILEWP_PARENT_INC_DIR . '/customizer/controls/code/arilewp-customize-category-control.php';
 require ARILEWP_PARENT_INC_DIR . '/customizer/controls/code/arilewp-customize-plugin-control.php';
-require ARILEWP_PARENT_INC_DIR . '/customizer/customizer-notify/arilewp-customizer-notify.php';
 $repeater_file_path = trailingslashit( get_template_directory() ) . '/inc/customizer/customizer-repeater/functions.php';
 if ( file_exists( $repeater_file_path ) ) { require_once( $repeater_file_path ); }
 function arilewp_customizer_theme_settings( $wp_customize ){
@@ -38,7 +37,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 		));			
 		$wp_customize->add_setting( 'arilewp_typography_base_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Open Sans',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_base_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -65,7 +64,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 
         $wp_customize->add_setting( 'arilewp_typography_h1_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Source Sans Pro',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_h1_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -78,7 +77,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 
         $wp_customize->add_setting( 'arilewp_typography_h2_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Source Sans Pro',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_h2_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -91,7 +90,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 
         $wp_customize->add_setting( 'arilewp_typography_h3_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Source Sans Pro',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_h3_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -104,7 +103,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 		
 		$wp_customize->add_setting( 'arilewp_typography_h4_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Source Sans Pro',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_h4_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -117,7 +116,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 
         $wp_customize->add_setting( 'arilewp_typography_h5_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Source Sans Pro',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_h5_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -130,7 +129,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 
         $wp_customize->add_setting( 'arilewp_typography_h6_font_family', array(
 			'sanitize_callback' => 'sanitize_text_field',
-			'default' => '',
+			'default' => 'Source Sans Pro',
 		) );
 		$wp_customize->add_control( new ArileWP_Customizer_Typography_Control( $wp_customize,'arilewp_typography_h6_font_family', array(
 			'label' 			=> esc_html__( 'Font Family', 'arilewp' ),
@@ -145,7 +144,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 			'arilewp_footer_copright_text',
 			array(
 				'sanitize_callback' =>  'arilewp_sanitize_text',
-				'default' => __('Copyright © 2019 <a href="http://wordpress.org/">WordPress</a> <span class="sep"> | </span> ArileWP by <a target="_blank" href="https://themearile.com/">ThemeArile</a>', 'arilewp'),
+				'default' => __('Copyright © 2019 | Powered by <a href="http://wordpress.org/">WordPress</a> <span class="sep"> | </span> ArileWP theme by <a target="_blank" href="https://themearile.com/">ThemeArile</a>', 'arilewp'),
 				'transport'         => $selective_refresh,
 			)	
 		);
@@ -179,19 +178,3 @@ function arilewp_recommended_plugin_section( $manager ) {
 		)
 	);	
 }
-
-$notify_config_customizer = array(
-	'recommended_plugins'       => array(
-		'arile-extra' => array(
-			'recommended' => true,
-			'description' => wp_kses_post('Activate by installing <strong>Arile Extra</strong> plugin to use front page and all theme features.', 'arilewp'),
-		),
-	),
-	'recommended_actions'       => array(),
-	'recommended_actions_title' => esc_html__( 'Recommended Actions', 'arilewp' ),
-	'recommended_plugins_title' => esc_html__( 'Recommended Plugin', 'arilewp' ),
-	'install_button_label'      => esc_html__( 'Install and Activate', 'arilewp' ),
-	'activate_button_label'     => esc_html__( 'Activate', 'arilewp' ),
-	'deactivate_button_label'   => esc_html__( 'Deactivate', 'arilewp' ),
-);
-ArileWP_Customizer_Notify::init( apply_filters( 'arilewp_customizer_notify_array', $notify_config_customizer ) );

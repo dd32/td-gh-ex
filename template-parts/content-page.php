@@ -9,7 +9,7 @@
 
 ?>
 
-<article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="post" id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 	<?php arilewp_post_thumbnail(); ?>
 

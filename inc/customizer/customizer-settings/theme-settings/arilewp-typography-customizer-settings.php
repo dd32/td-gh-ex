@@ -29,7 +29,7 @@ if ( ! class_exists( 'ArileWP_Customize_Theme_Typography_Option' ) ) :
 					'control' => array(
 						'type'     => 'toggle',
 						'priority' => 2,
-						'label'    => esc_html__( 'Enable/Disable Typography', 'arilewp' ),
+						'label'    => esc_html__( 'Enable Typography', 'arilewp' ),
 						'section'  => 'arilewp_enable_disable_typography',
 					),
 				),	

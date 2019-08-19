@@ -142,62 +142,82 @@ function arilewp_theme_page_header_title(){
 	}
 }
 
+function arilewp_bootstrap_menu_notitle( $menu ){
+  return $menu = preg_replace('/ title=\"(.*?)\"/', '', $menu );
+}
+add_filter( 'wp_nav_menu', 'arilewp_bootstrap_menu_notitle' );
+
+// theme page header Url functions
+function arilewp_curPageURL() {
+	$page_url = 'http';
+	if ( key_exists("HTTPS", $_SERVER) && ( $_SERVER["HTTPS"] == "on" ) ){
+		$page_url .= "s";
+	}
+	$page_url .= "://";
+	if ($_SERVER["SERVER_PORT"] != "80") {
+		$page_url .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+	} else {
+		$page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+ }
+ return $page_url;
+}
+
 // theme page header breadcrumbs functions
 if( !function_exists('arilewp_page_header_breadcrumbs') ):
 	function arilewp_page_header_breadcrumbs() { 	
 		global $post;
 		$home_Link = home_url();
-		echo '<ul class="page-breadcrumb text-center">';						
-			if (is_home() || is_front_page()) :
-				echo '<li><a href="'.esc_url( $home_Link ) .'">'.esc_html__('Home','arilewp').'</a></li>';
-	            echo '<li class="active">'; echo single_post_title(); echo '</li>';
-			else:
-				echo '<li><a href="'.esc_url( $home_Link ).'">'.esc_html__('Home','arilewp').'</a></li>';
-				if ( is_category() ) {
-				    echo '<li class="active">' . esc_html__('Archive by category','arilewp').' "' . single_cat_title('', false) . '"</li>';
-				} elseif ( is_day() ) {
-					echo '<li class="active"><a href="'. esc_url( get_year_link(get_the_time('Y')) ) . '">'. esc_html ( get_the_time('Y') ).'</a>';
-					echo '<li class="active"><a href="'. esc_url( get_month_link(get_the_time('Y'),get_the_time('m')) ) .'">'.esc_html ( get_the_time('F') ).'</a>';
-					echo '<li class="active">'. esc_html ( get_the_time('d') ).'</li>';
-				} elseif ( is_month() ) {
-					echo '<li class="active"><a href="' . esc_url( get_year_link(get_the_time('Y')) ) . '">' . esc_html ( get_the_time('Y') ). '</a>';
-					echo '<li class="active">'. esc_html ( get_the_time('F') ) .'</li>';
-				} elseif ( is_year() ) {
-				    echo '<li class="active">'. esc_html ( get_the_time('Y') ) .'</li>';
-				} elseif ( is_single() && !is_attachment() && is_page('single-product') ) {					
-				if ( get_post_type() != 'post' ) {
-					$cat = get_the_category(); 
-					$cat = $cat[0];
-					echo '<li>';
-					echo esc_html ( get_category_parents($cat, TRUE, '') );
-					echo '</li>';
-					echo '<li class="active">'. wp_title( '',false ) .'</li>';
-				} }  
-					elseif ( is_page() && $post->post_parent ) {
-				    $parent_id  = $post->post_parent;
-					$breadcrumbs = array();
-					while ($parent_id) {
-						$page = get_page($parent_id);
-						$breadcrumbs[] = '<li class="active"><a href="' . esc_url( get_permalink($page->ID) ). '">' . get_the_title($page->ID) . '</a>';
-					$parent_id  = $page->post_parent;
-					}
-					$breadcrumbs = array_reverse($breadcrumbs);
-					foreach ($breadcrumbs as $crumb) echo esc_html( $crumb );
-					    echo '<li class="active">'. esc_html( get_the_title() ) .'</li>';
-                    }
-					elseif( is_search() )
-					{
-					    echo '<li class="active">'. get_search_query() .'</li>';
-					}
-					elseif( is_404() )
-					{
-						echo '<li class="active">'.esc_html__('Error 404','arilewp').'</li>';
-					}
-					else { 
-					    echo '<li class="active">'. esc_html( get_the_title() ) .'</li>';
-					}
-				endif;
-		    echo '</ul>';
+	    echo '<ul class="page-breadcrumb text-center">';			
+				if (is_home() || is_front_page()) :
+					echo '<li><a href="'.esc_url($home_Link).'">'.esc_html__('Home','arilewp').'</a></li>';
+					    echo '<li class="active">'; echo single_post_title(); echo '</li>';
+						else:
+						echo '<li><a href="'.esc_url($home_Link).'">'.esc_html__('Home','arilewp').'</a></li>';
+						if ( is_category() ) {
+							echo '<li class="active"><a href="'. arilewp_curPageURL() .'">' . esc_html__('Archive by category','arilewp').' "' . single_cat_title('', false) . '"</a></li>';
+						} elseif ( is_day() ) {
+							echo '<li class="active"><a href="'. esc_url(get_year_link(esc_attr(get_the_time('Y')))) . '">'. esc_html(get_the_time('Y')) .'</a>';
+							echo '<li class="active"><a href="'. esc_url(get_month_link(esc_attr(get_the_time('Y')),esc_attr(get_the_time('m')))) .'">'. esc_html(get_the_time('F')) .'</a>';
+							echo '<li class="active"><a href="'. arilewp_curPageURL() .'">'. esc_html(get_the_time('d')) .'</a></li>';
+						} elseif ( is_month() ) {
+							echo '<li class="active"><a href="' . get_year_link(esc_attr(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a>';
+							echo '<li class="active"><a href="'. arilewp_curPageURL() .'">'. esc_html(get_the_time('F')) .'</a></li>';
+						} elseif ( is_year() ) {
+							echo '<li class="active"><a href="'. arilewp_curPageURL() .'">'. esc_html(get_the_time('Y')) .'</a></li>';
+                        } elseif ( is_single() && !is_attachment() && is_page('single-product') ) {
+						if ( get_post_type() != 'post' ) {
+							$cat = get_the_category(); 
+							$cat = $cat[0];
+							echo '<li>';
+								echo get_category_parents($cat, TRUE, '');
+							echo '</li>';
+							echo '<li class="active"><a href="' . arilewp_curPageURL() . '">'. wp_title( '',false ) .'</a></li>';
+						} }  
+						elseif ( is_page() && $post->post_parent ) {
+							$parent_id  = $post->post_parent;
+							$breadcrumbs = array();
+							while ($parent_id) {
+							$page = get_page($parent_id);
+							$breadcrumbs[] = '<li class="active"><a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a>';
+							$parent_id  = $page->post_parent;
+                            }
+							$breadcrumbs = array_reverse($breadcrumbs);
+							foreach ($breadcrumbs as $crumb) echo $crumb;
+							echo '<li class="active"><a href="' . arilewp_curPageURL() . '">'. get_the_title().'</a></li>';
+                        }
+						elseif( is_search() )
+						{
+							echo '<li class="active"><a href="' . arilewp_curPageURL() . '">'. get_search_query() .'</a></li>';
+						}
+						elseif( is_404() )
+						{
+							echo '<li class="active"><a href="' . arilewp_curPageURL() . '">'.esc_html__('Error 404','arilewp').'</a></li>';
+						}
+						else { 
+						    echo '<li class="active"><a href="' . arilewp_curPageURL() . '">'. get_the_title() .'</a></li>';
+						}
+					endif;
+			echo '</ul>';
         }
 endif;
  
@@ -219,37 +239,48 @@ function arilewp_sanitize_text( $input ) {
 		return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function arilewp_custom_customizer_options() {
-$arilewp_testomonial_background_image = get_theme_mod('arilewp_testomonial_background_image');
-$arilewp_page_header_background_image = get_theme_mod('arilewp_page_header_background_image');
-$arilewp_sticky_bar_logo = get_theme_mod('arilewp_sticky_bar_logo');
-?>
-    <style type="text/css">
-		<?php if($arilewp_testomonial_background_image != null){ ?>
-		.theme-testimonial { 
-		    background-image: url(<?php echo esc_url($arilewp_testomonial_background_image); ?>);
-            background-size: cover;
-            background-position: center center;
-		}
-		<?php } ?>
+if( ! function_exists( 'arilewp_custom_customizer_options' ) ):
+    function arilewp_custom_customizer_options() {
 
-		<?php if ( has_header_image() ) : ?>
-			.theme-page-header-area {
-				background: #17212c url(<?php echo esc_url( get_header_image() ); ?>);
+        $arilewp_testomonial_background_image = get_theme_mod('arilewp_testomonial_background_image');
+		$arilewp_page_header_background_image = get_theme_mod('arilewp_page_header_background_image');
+		$arilewp_sticky_bar_logo = get_theme_mod('arilewp_sticky_bar_logo');
+        
+        $output_css = '';
+		if($arilewp_testomonial_background_image != null){ 
+			$output_css .="	.theme-testimonial { 
+				background-image: url( " .esc_url($arilewp_testomonial_background_image). ");
+				background-size: cover;
+				background-position: center center;
+			}\n";
+        }
+
+		if ( has_header_image() ) :
+			$output_css .=".theme-page-header-area {
+				background: #17212c url(" .esc_url( get_header_image() ). ");
 				background-attachment: scroll;
 				background-position: top center;
 				background-repeat: no-repeat;
 				background-size: cover;
-			}
-		<?php endif; ?>		
-		<?php if($arilewp_sticky_bar_logo != null) : ?>
-			.header-fixed-top .navbar-brand {
+			}\n";
+		endif; 
+
+        if($arilewp_sticky_bar_logo != null) :
+            $output_css .=".header-fixed-top .navbar-brand {
 				display: none !important;
 			}
             .not-sticky .sticky-navbar-brand {
 				display: none !important;
-			}
-		<?php endif; ?>
-   </style>
-<?php }
-add_action('wp_footer','arilewp_custom_customizer_options');
+			}\n";
+        endif;
+		
+		if ( is_user_logged_in() && is_admin_bar_showing() ) {
+            $output_css .="@media (min-width: 600px){
+                .navbar.header-fixed-top{top:32px;}
+            }\n";
+        }
+
+        wp_add_inline_style( 'arilewp-style', $output_css );
+    }
+endif;
+add_action( 'wp_enqueue_scripts', 'arilewp_custom_customizer_options' );

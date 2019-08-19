@@ -80,7 +80,7 @@ if ( ! class_exists( 'ArileWP_Customize_Menu_Bar_Option' ) ) :
 					
 					'arilewp_cart_icon_disabled' => array(
 						'setting' => array(
-							'default'           => true,
+							'default'           => false,
 							'sanitize_callback' => array( 'ArileWP_Customizer_Sanitize', 'sanitize_checkbox' ),
 						),
 						'control' => array(

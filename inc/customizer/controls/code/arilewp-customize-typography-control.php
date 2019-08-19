@@ -33,7 +33,6 @@ class ArileWP_Customizer_Typography_Control extends WP_Customize_Control {
 			<?php endif; ?>
 
 			<select class="arilewp-typography-select" <?php $this->link(); ?>>
-			<option value="" <?php if ( ! $this_val ) echo 'selected="selected"'; ?>><?php esc_html_e( 'Default', 'arilewp' ); ?></option>
 				<?php
 				// Get Standard font options
 				if ( $std_fonts = arilewp_standard_fonts() ) { ?>

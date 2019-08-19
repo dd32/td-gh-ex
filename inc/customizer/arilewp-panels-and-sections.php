@@ -81,7 +81,7 @@ $wp_customize->add_panel( new ArileWP_Customize_Panel( $wp_customize, 'arilewp_t
 
     // Section Enable/Disable Typography.
 	$wp_customize->add_section( new ArileWP_Customize_Section( $wp_customize, 'arilewp_enable_disable_typography', array(
-		'title'    => esc_html__( 'Enable/Disable', 'arilewp' ),
+		'title'    => esc_html__( 'Enable Typography', 'arilewp' ),
 		'panel'    => 'arilewp_theme_typography',
 		'priority' => 5,
 	) ) );

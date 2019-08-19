@@ -21,6 +21,9 @@ $blog_content_ordering = get_theme_mod( 'arilewp_general_blog_arcive_single_cont
 			<?php foreach ( $blog_content_ordering as $blog_content_order ) : ?>	
 			   <?php if ( 'meta-one' === $blog_content_order ) : ?>
 				<div class="entry-meta">
+					<?php if(is_sticky()) : ?>
+						<span class="sticky-post"><?php esc_html_e('Featured', 'arilewp'); ?></span>
+						<?php endif; ?>
 					<?php $category_data = get_the_category_list();
 					if(!empty($category_data)) { ?>
 					<span class="cat-links"><a href="<?php the_permalink(); ?>"><?php the_category(', '); ?></a></span>
@@ -33,6 +36,7 @@ $blog_content_ordering = get_theme_mod( 'arilewp_general_blog_arcive_single_cont
 					?>
 				</header>
 				<?php elseif ( 'meta-two' === $blog_content_order ) : ?>
+			<?php if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta pb-2">
 					<span class="author">
 						<a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' )) );?>"><span class="grey"><?php esc_html_e('by ','arilewp');?></span><?php echo esc_html(get_the_author());?></a>	
@@ -42,6 +46,7 @@ $blog_content_ordering = get_theme_mod( 'arilewp_general_blog_arcive_single_cont
 					<?php echo esc_html(get_the_date()); ?></time></a>
 					</span>
 				</div>	
+			<?php endif; ?>
 			<?php  endif; endforeach; ?>	
 				<div class="entry-content">
 					<?php the_content( __('Read More','arilewp') ); ?>

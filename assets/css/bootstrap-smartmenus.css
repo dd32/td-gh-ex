@@ -164,6 +164,12 @@ a.bg-light:focus, a.bg-light:hover {
 }
 
 @media (max-width: 1199px) { 
+	/*When we add more menus then show vertical scroll in mobiles*/
+	.navbar-collapse{
+		max-height: 400px;
+		overflow-x: hidden;
+	}
+
 	.navbar .nav .menu-item {
 		margin-right: 28px;
 	}

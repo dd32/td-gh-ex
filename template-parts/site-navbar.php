@@ -30,7 +30,7 @@ $arilewp_search_icon_disabled = get_theme_mod('arilewp_search_icon_disabled', tr
 								    $wooshop_cart .= '<i class="fa fa-shopping-basket" aria-hidden="true"></i>'; }   
 									$wooshop_cart .= '</a>';
 									$wooshop_cart .= '<a href="'.$link.'" ><span class="cart-total">
-										'. /* translators: %d: cart items */ sprintf( '%d', '%d', $woocommerce->cart->cart_contents_count , $woocommerce->cart->cart_contents_count).'</span></a>'; $wooshop_cart .= '</div>'; }
+										'.sprintf(_n('%d item', $woocommerce->cart->cart_contents_count, 'arilewp'), $woocommerce->cart->cart_contents_count).'</span></a>'; $wooshop_cart .= '</div>'; }
 					endif;					
 					    $wooshop_cart .= '</ul>';
 								wp_nav_menu( array(

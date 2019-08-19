@@ -4,7 +4,7 @@ Theme URI: https://themearile.com/arilewp-theme/
 Author: ThemeArile
 Author URI: https://themearile.com
 Description: ArileWP is a powerful, modern and professional multipurpose WordPress theme with pixel perfect design and outstanding functionality. As well as sophisticated plus it has some exotic features like customization and clean code, advanced typography, sticky menu, logo upload, header image, Bootstrap 4 framework, built with SEO in mind, and theme info area besides being Mobile ready, translation ready (WPML, Polylang) and it's built to be beautiful on all screen sizes. The theme perfectly suited for business, consultant, finance, corporate, freelancer, agency, business promotion, electrician, industries, education, SEO, construction, fashion, online shop, health & medical, Beauty & spa salons, wedding, photography, gym, cafe, music, architecture, lawyer, restaurant, hotel, blog, magazine, travel agency and many other websites compatible. This theme supports the best Elementor page builder to create, edit and updates page designs as per the requirement. ArileWP also supports popular free and premium WordPress plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, Google Analytics and much more.
-Version: 0.3
+Version: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arilewp
@@ -74,7 +74,6 @@ blockquote cite {
 	font-weight: 600; 
 	margin-top: 0.5rem; 
 }
-
 q { quotes: "“" "”" "‘" "’"; }
 
 blockquote:before, 
@@ -184,7 +183,7 @@ select {
 	color: #545454;
 	background: #fff !important;
 	background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-	border: 1px solid #f2f2f2 !important;
+	border: 1px solid #e5e5e5 !important;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	display: block;
@@ -214,7 +213,7 @@ select:focus {
     box-shadow: 0 0 0 0.063rem rgba(84, 84, 84,.25) !important;
 }
 /* select { */
-	/* border: 1px solid #f2f2f2; */
+	/* border: 1px solid #e5e5e5; */
 	/* -webkit-border-radius: 0px; */
 	/* border-radius: 0px; */
 	/* height: 3em; */
@@ -350,8 +349,9 @@ table { border-collapse: collapse; margin: 0 0 1.5em; width: 100%; word-wrap: br
 thead th { border-bottom: 2px solid #e9e9e9; }
 th { background: #f6f6f6; color: #01012f;padding: 0.5rem 0.7rem; text-align: left; }
 td { padding: 0.5rem 0.7rem; }
+th a,
 td a {
-	box-shadow: 0 1px 0 0 currentColor;
+	box-shadow: none !important;
 }
 td a:hover, 
 td a:focus {
@@ -1146,25 +1146,9 @@ a:hover, a:active { color: #01012f; outline: 0; }
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 .post-content { padding: 1.563rem 1.375rem 2.000rem; }
+.entry-content { overflow: hidden; }
 .theme-blog .post-thumbnail { position: relative; overflow: hidden; margin: 0; }
-.theme-blog .post-thumbnail img { width: 100%; opacity: 1; }
-.theme-blog .post-thumbnail img {
-    -webkit-transition: transform 2s, filter 1.5s ease-in-out;
-    -moz-transition: transform 2s, filter 1.5s ease-in-out;
-    -o-transition: transform 2s, filter 1.5s ease-in-out;
-    -ms-transition: transform 2s, filter 1.5s ease-in-out;
-    transition: transform 2s, filter 1.5s ease-in-out;
-    transform-origin: center center;
-}
-.theme-blog .post:hover .post-thumbnail img {
-	-webkit-transform: translateY(0px);
-	transform: translateY(0px);
-	transform: scale(1.15,1.15);
-    -webkit-transform: scale(1.15,1.15);
-    -moz-transform: scale(1.15,1.15);
-    -ms-transform: scale(1.15,1.15);
-    -o-transform: scale(1.15,1.15);
-}
+.theme-blog .post-thumbnail img { opacity: 1; }
 .theme-blog .post .entry-header { position: relative; margin: 0 0 2.188rem; }
 .theme-blog .post .entry-header::before { 
 	position: absolute;
@@ -1175,7 +1159,8 @@ a:hover, a:active { color: #01012f; outline: 0; }
     background-color: #ddd;
     content: '';
 }
-.theme-blog .post .entry-title { margin: 0; font-size: 1.375rem; font-weight: 600; }
+.theme-blog .post .entry-title { margin: 0; font-size: 1.375rem; font-weight: 600; word-break: break-word;
+    white-space: normal; }
 .entry-content img { max-width: 100%; height: auto; display: block; }
 .entry-content figure { width: auto !important; }
 .entry-content a {  
@@ -1233,6 +1218,17 @@ a:hover, a:active { color: #01012f; outline: 0; }
 	color: #878e94; 
 	padding-right: 0.313rem;
 }
+/*Meta Sticky*/
+.entry-meta .sticky-post { 
+	background: #01012f;
+    color: #fff;
+	padding: 0.125rem 0.438rem;
+    margin-right: 0.438rem;
+	border-radius: 1px;
+}
+.entry-meta .sticky-post:after { 
+	display: none;
+}
 /*Meta Comments*/
 .entry-meta .cat-links::before, 
 .entry-meta .posted-on::before, 
@@ -1289,7 +1285,10 @@ a:hover, a:active { color: #01012f; outline: 0; }
 	padding: 0; 
 	text-align: center; 
 }
-.pagination a {
+.pagination a, 
+.page-links a, 
+.post-nav-links a, 
+.post-nav-links .post-page-numbers.current {
 	background-color: #ffffff;
     border: 1px solid #e9e9e9; 
 	color: #01012f;
@@ -1297,18 +1296,23 @@ a:hover, a:active { color: #01012f; outline: 0; }
 	display: inline-block;
 	line-height: 1.5;
 	font-weight: 600;
+	text-align: center;
 	transition: all 0.3s ease 0s;
 	font-size: 1.125rem;
-	border-radius: 50px;
+	border-radius: 5px;
 	margin: 0 0.125rem 0.625rem;
 	padding: 0.625rem;
 	vertical-align: baseline;
 	white-space: nowrap;
 	width: 3.125rem;
 	height: 3.125rem;
+	box-shadow: none;
 }
 .pagination a:hover, 
-.pagination a.active { 
+.pagination a.active,
+.page-links a:hover, 
+.post-nav-links a:hover, 
+.post-nav-links .post-page-numbers.current { 
 	color: #fff; 
 }
 .pagination .nav-links .page-numbers.current {
@@ -1319,6 +1323,7 @@ a:hover, a:active { color: #01012f; outline: 0; }
 	border: 1px solid #e9e9e9; 
 	cursor: pointer;
 	display: inline-block;
+	text-align: center;
 	line-height: 1.5;
 	font-weight: 600;
 	transition: all 0.3s ease 0s;
@@ -1357,6 +1362,10 @@ a:hover, a:active { color: #01012f; outline: 0; }
 }
 .theme-blog.theme-blog-large .theme-related-posts .post .entry-header::before {
     display: none;
+}
+body.single-post .theme-blog.theme-blog-large .post .entry-title {
+    font-size: 2.3rem;
+    line-height: 1.3;
 }
 
 /*Blog Author*/
@@ -1730,24 +1739,6 @@ a:hover, a:active { color: #01012f; outline: 0; }
    margin: 0;
 }
 .blocks-gallery-item figure { position: relative; overflow: hidden; margin: 0; }
-.blocks-gallery-item figure img { width: 100%; opacity: 1; }
-.blocks-gallery-item figure img {
-   -webkit-transition: transform 1s, filter 1.2s ease-in-out;
-   -moz-transition: transform 1s, filter 1.2s ease-in-out;
-   -o-transition: transform 1s, filter 1.2s ease-in-out;
-   -ms-transition: transform 1s, filter 1.2s ease-in-out;
-   transition: transform 1s, filter 1.2s ease-in-out;
-   transform-origin: center center;
-}
-.blocks-gallery-item:hover figure img {
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-    transform: scale(1.15,1.15);
-   -webkit-transform: scale(1.15,1.15);
-   -moz-transform: scale(1.15,1.15);
-   -ms-transform: scale(1.15,1.15);
-   -o-transform: scale(1.15,1.15);
-}
 /*Address*/
 address i { 
 	width: 1.563rem;
@@ -1778,6 +1769,7 @@ address i {
   text-align: center;
 }
 .wp-caption-text a:hover { color: #01012f; }
+.wp-caption, .gallery-caption { max-width: 100%; }
 
 /*--------------------------------------------------------------
 =>> Alignments
@@ -1804,8 +1796,62 @@ address i {
     img.alignleft { float: left; }
     img.alignright { float: right; }    
 }
-
 body.page-template-default .theme-blog .post .post-content { overflow: hidden; }
+
+/*--------------------------------------------------
+=>> Theme Unit Data Css
+--------------------------------------------------*/
+
+.entry-content .wp-block-button a {
+	color: #fff;
+}
+.wp-block-button.is-style-outline a {
+	color: #32373c;
+}
+.entry-content .wp-block-pullquote p, 
+.entry-content .wp-block-pullquote.is-style-solid-color blockquote p {
+	padding: 0;
+}
+.entry-content blockquote cite a { 
+	color: #01012f;
+	box-shadow: none;
+}
+.entry-content p.has-background {
+	margin-bottom: 1.563rem;
+}
+.entry-content .wp-block-file .wp-block-file__button {
+    font-size: 14px;
+    padding: 0.7rem 2rem;
+}
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper iframe {
+	
+	position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+embed, iframe, object {
+    max-width: 100%;
+}
+.entry-content .wp-block-archives.wp-block-archives-dropdown select {
+	width: auto;
+}
+.entry-content .wp-block-latest-comments__comment-meta a {
+	color: #01012f;
+	box-shadow: none;
+	font-size: 1rem;
+    font-weight: 600;
+}
+.entry-content .wp-block-latest-comments__comment-meta a:hover {
+	box-shadow: 0 1px 0 0 currentColor;
+}
+.wp-block-latest-comments article {
+    margin-bottom: 2rem;
+}
+
 
 /*--------------------------------------------------
 =>> Site Footer Area
@@ -2325,7 +2371,7 @@ body.page-template-default .theme-blog .post .post-content { overflow: hidden; }
 	width: 100%;
 }
 .woocommerce form .form-row span.select2-selection.select2-selection--single {
-	border: 1px solid #f2f2f2 !important;
+	border: 1px solid #e5e5e5 !important;
 	padding: 0.825rem 1rem;
 	height: 50px;
 }

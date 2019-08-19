@@ -222,7 +222,10 @@ td a {
 }
 
 .pagination a:hover, 
-.pagination a.active { 
+.pagination a.active, 
+.page-links a:hover, 
+.post-nav-links a:hover, 
+.post-nav-links .post-page-numbers.current { 
 	background-color: #007bff; 
 	border: 1px solid #007bff; 
 }

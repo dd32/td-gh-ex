@@ -106,7 +106,7 @@ add_action( 'after_setup_theme', 'arilewp_setup' );
 
 function arilewp_widgets_init() {
 	$sidebars = apply_filters( 'arilewp_sidebars_data', array(
-	    'sidebar-main'            => esc_html__( 'Sidebar', 'arilewp' ),
+	    'sidebar-main'            => esc_html__( 'Sidebar Widget Area', 'arilewp' ),
 		'footer-sidebar-one'         => esc_html__( 'Footer Sidebar One', 'arilewp' ),
 		'footer-sidebar-two'         => esc_html__( 'Footer Sidebar Two', 'arilewp' ),
 		'footer-sidebar-three'         => esc_html__( 'Footer Sidebar Three', 'arilewp' ),
@@ -118,11 +118,12 @@ function arilewp_widgets_init() {
 	}
 
 	foreach ( $sidebars as $id => $name ) :
+	
 
 		register_sidebar( array(
 			'id'            => $id,
 			'name'          => $name,
-			'description'   => esc_html__( 'Add widgets here.', 'arilewp' ),
+			'description'   => $name,
 			'before_widget' => '<aside id="%1$s" class="widget text_widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widget-title">',
