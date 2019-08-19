@@ -15,17 +15,17 @@ function rv_custom_dashboard_widget() {
 
 	<div id="fastest-dashboard" class="welcome-panel" style="display: none;">
 		<div class="welcome-panel-content">
-			<h2>Clean Blogging Theme</h2>
-			<p class="about-description">Thank you for deciding to use the <strong>Clean Blogging</strong> Wordpress theme. Below are the recommended products to be used with <strong>Clean Blogging</strong>:
+			<h2>Best Minimalist Theme</h2>
+			<p class="about-description">Thank you for deciding to use the <strong>Best Minimalist</strong> Wordpress theme. Below are the recommended products to be used with <strong>Best Minimalist</strong>:
 			</p>
 			<div class="welcome-panel-column-container">
 				<div class="welcome-panel-column">
 					<h3>Speed</h3>
 					<ul>
 						<li>
-							<a href="https://wpvkp.com/go/uwso-clean" target="_blank"><img style="display:none;" src="https://wpvkp.com/go/uwso-clean">Ultimate Wordpress Speed Optimizer</a>
+							<a href="https://wpvkp.com/go/uwso-minimalist" target="_blank"><img style="display:none;" src="https://wpvkp.com/go/uwso-minimalist">Ultimate Wordpress Speed Optimizer</a>
 						</li>
-						<li><a target="_blank" href="https://wpvkp.com/go/clean-rocket">WP Rocket</a>
+						<li><a target="_blank" href="https://wpvkp.com/go/minimalist-rocket">WP Rocket</a>
 						</li>
 					</ul>
 				</div>
@@ -33,7 +33,7 @@ function rv_custom_dashboard_widget() {
 					<h3>Hosting</h3>
 					<ul>
 						<li>
-							<a href="https://wpvkp.com/go/clean-bluehost" target="_blank">BlueHost</a>
+							<a href="https://wpvkp.com/go/minimalist-bluehost" target="_blank">BlueHost</a>
             </li>
 						<li>
 							<a target="_blank" href="https://wpvkp.com/go/siteground-fastest/">SiteGround</a>
@@ -44,7 +44,7 @@ function rv_custom_dashboard_widget() {
 					<h3>Marketing</h3>
 					<ul>
 						<li>
-							<a target="_blank" href="https://wpvkp.com/go/clean-semrush"><img src="https://wpvkp.com/go/clean-semrush" style="display:none;"><strong>SEMrush</strong> - Spy on Your Competitors</a>
+							<a target="_blank" href="https://wpvkp.com/go/minimalist-semrush"><img src="https://wpvkp.com/go/minimalist-semrush" style="display:none;"><strong>SEMrush</strong> - Spy on Your Competitors</a>
 						</li>
 					</ul>
 			</div>

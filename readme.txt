@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, threaded-comments, translatio
 
 Requires at least: 4.5
 Tested up to: 5.2.2
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
