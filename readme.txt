@@ -4,7 +4,7 @@ Contributors: designgrande
 Tags: custom-background, custom-logo, custom-menu, threaded-comments, translation-ready, two-columns, right-sidebar, flexible-header, featured-images, blog, theme-options
 
 Requires at least: 4.5
-Tested up to: 4.9.7
+Tested up to: 5.2.2
 Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
