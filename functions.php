@@ -116,7 +116,8 @@ function atreus_customize_register($wp_customize)
     $wp_customize -> add_setting('atreus_theme_colour_setting', array(
         'default'    => 'is-link',
         'type'       => 'theme_mod',
-        'capability' => 'edit_theme_options'
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'esc_html'
     ));
 
     $wp_customize -> add_control(new WP_Customize_Control($wp_customize, 'atreus_them_colour_control', array(

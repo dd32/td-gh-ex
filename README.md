@@ -3,10 +3,10 @@
 **Contributors:** bigjaymalcolm
 **Requires at least:** 5.2
 **Tested up to:** 5.2.1
-**Stable tag:** 1.1.10
+**Stable tag:** 1.1.11
 **Requires PHP:** 7.0
 
-**Version:** 1.1.10
+**Version:** 1.1.11
 **License:** GNU General Public License v3 or later
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.en.html
 **Tags:** two-columns, right-sidebar, theme-options, custom-menu, blog, custom-logo, featured-images, threaded-comments
@@ -101,3 +101,6 @@ Atreus bundles the following third-party resources:
 * Added custom-menu, custom-logo, featured-images, threaded-comments, and blog to theme tags.
 * Updated Copyright notices.
 * Minor php fixes for final check errors.
+
+### 1.1.11
+* Added sanitize_callback to atreus_theme_colour_setting.
