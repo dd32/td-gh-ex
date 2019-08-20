@@ -48,7 +48,9 @@ final class Bam_Theme {
 		require_once( $dir . 'template-functions.php' );
 		require_once( $dir . 'customizer/custom-controls/fonts/fonts.php' );
 		require_once( $dir . 'customizer/customizer.php' );
+		require_once( $dir . 'customizer/section-pro/class-upsell-customize.php' );
 		require_once( $dir . 'class-bam-admin.php' );
+		require_once( $dir . 'theme-info-page.php' );
 		require_once( $dir . 'class-bam-gutenberg.php' );
 		require_once( $dir . 'widgets/class-tabs-widget.php' );
 		require_once( $dir . 'widgets/class-sidebar-posts.php' );

@@ -4,7 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,8 +28,27 @@ Bam supports all the major plugins.
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial release
+= 1.0.5 =
+* Added top menu dropdown support.
+* Fixed ignore sticky posts issue on sidebar posts widget.
+* Added Theme Upsell button.
+* Added Theme info page.
+* Removed "About" part in the author name on Author details box.
+
+= 1.0.4 =
+* Fixed default value for footer widget count.
+
+= 1.0.3 =
+* Fixed site description escaping issue.
+* Added Stable tag into readme.txt.
+* Changed screenshot.
+* Added image licenses into readme.txt.
+* Changed headings font.
+
+= 1.0.2 =
+* Fixed focus links not showing issue on main navigation.
+* Fixed licensing issues.
+* Removed woocommmerce.css and sass shop folder.
 
 = 1.0.1 =
 * Added sidebar posts widget.
@@ -43,20 +62,9 @@ Bam supports all the major plugins.
 * Fixed top bar skype, email issue.
 * Changed author-box.php to authorbox.php
 
-= 1.0.2 =
-* Fixed focus links not showing issue on main navigation.
-* Fixed licensing issues.
-* Removed woocommmerce.css and sass shop folder.
+= 1.0.0 =
+* Initial release
 
-= 1.0.3 =
-* Fixed site description escaping issue.
-* Added Stable tag into readme.txt.
-* Changed screenshot.
-* Added image licenses into readme.txt.
-* Changed headings font.
-
-= 1.0.4 =
-* Fixed default value for footer widget count.
 
 == Resources ==
 
@@ -66,6 +74,7 @@ Bam supports all the major plugins.
 * Font Awesome Fonts, (C) 2018 Dave Gandy, SIL OFL 1.1
 * main-navigation.js based on Twenty Seventeen theme, (C) 2016 WordPress.org, GPLv2 or later
 * Slider Control slider.js based on Kirki Customizer Framework, (C) 2019 Ari Stathopoulos, MIT
+* TRT Customizer Pro (C) 2016 Justin Tadlock, GPLv2 or later
 
 Image 1 shown in screenshot.png, Copyright Bruce Mars
 License: CC0 1.0 Universal (CC0 1.0)

@@ -44,3 +44,25 @@ ul.th-responsive-switches li {
 .customize-control-bam-responsive-number {
     margin: 15px 0;
 }
+
+#customize-controls .control-section-bam-upsell .accordion-section-title:hover,
+#customize-controls .control-section-bam-upsell .accordion-section-title:focus {
+	background-color: #ffffff;
+}
+
+.control-section-bam-upsell .accordion-section-title .button {
+	margin-top: -3px;
+	margin-left: 8px;
+}
+
+.rtl .control-section-bam-upsell .accordion-section-title .button {
+	margin-left:  0;
+	margin-right: 8px;
+}
+
+#accordion-section-bam_upsell a.button.button-secondary {
+    background: #00A388;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+}

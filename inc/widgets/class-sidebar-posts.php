@@ -72,7 +72,7 @@ class Bam_Sidebar_Posts extends WP_Widget {
 		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );	
 		$instance[ 'category' ]	= absint( $new_instance[ 'category' ] );
 		$instance[ 'number_posts' ] = (int)$new_instance[ 'number_posts' ];
-		$instance[ 'sticky_posts' ] = (bool)$new_instance[ 'sticky_posts' ];
+		$instance[ 'sticky_posts' ] = isset( $new_instance['sticky_posts'] ) ? (bool) $new_instance['sticky_posts'] : false;
 		return $instance;
 	}
 
@@ -93,7 +93,7 @@ class Bam_Sidebar_Posts extends WP_Widget {
         $title = apply_filters( 'widget_title', $title , $instance, $this->id_base );
 		$category = ( ! empty( $instance['category'] ) ) ? absint( $instance['category'] ) : 0;
 		$number_posts = ( ! empty( $instance['number_posts'] ) ) ? absint( $instance['number_posts'] ) : 5; 
-		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : false;
+		$sticky_posts = ( isset( $instance['sticky_posts'] ) ) ? $instance['sticky_posts'] : true;
 
 		// Latest Posts
 		$latest_posts = new WP_Query( 
