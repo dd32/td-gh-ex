@@ -5,7 +5,7 @@
 ?>
 
 <div class="col-lg-4 col-md-4">
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="blogger">
 			<?php if(has_post_thumbnail()) { ?>
 				<div class="post-image">
@@ -23,5 +23,5 @@
 		  		<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_attr_e( 'READ MORE','aagaz-startup' ); ?></a>
 		  	</div>
 		</div>
-	</div>
+	</article>
 </div>

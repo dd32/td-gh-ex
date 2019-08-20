@@ -7,7 +7,7 @@
 	<div class="row m-0">
 		<div class="col-lg-11 col-md-11">
 			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'aagaz-startup' ); ?>">
-				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+				<button role="tab" class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 					<?php
 						esc_html_e( 'Menu', 'aagaz-startup' );
 					?>

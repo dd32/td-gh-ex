@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-
 Requires at least: 4.7
 Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,10 +28,14 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Added Theme Color option.
   * Added POT File.
 
-= 0.3,1 =
+= 0.3.1 =
   * Added typography.
   * Updated POT File.
   * Resolved theme error.
+
+= 0.3.2 =
+  * Added skip to content part in the theme.
+  * Updated POT file.
 
 == Resources ==
 

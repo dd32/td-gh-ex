@@ -4,7 +4,7 @@ Theme URI: https://www.themeseye.com/wordpress/free-startup-wordpress-theme/
 Author: ThemesEye
 Author URI: https://www.themeseye.com/
 Description: Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, IT companies, web development agencies, digital marketing agencies, business startups, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen. The theme offers multiple options in most of the elements be it header and footer layout, menu style, blog formats or gallery layout. It comes with several premium features that make the website modern and put you on front seat in handling the website. This startup WordPress theme has super performing SEO and its pages load brilliantly everywhere. It has several predesigned inner pages, many sections, unlimited colours and numerous Google fonts which make this theme a complete package of awesomeness. Demo: https://themeseye.com/demo/aagaz-startup-pro/
-Version: 0.3.1
+Version: 0.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aagaz-startup
@@ -325,7 +325,6 @@ input[type="submit"] {
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
-    letter-spacing: 1px;
     font-weight: 800;
     line-height: 1;
     padding: 15px 20px;
@@ -451,6 +450,10 @@ a {
 }
 a:focus {
 	outline: thin dotted;
+}
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
 }
 a:hover,
 a:active {
@@ -739,6 +742,35 @@ input.search-field {
 #mastheader .search-submit span .screen-reader-text{
 	position: static !important;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
 .search-box span i {
     color: #fff;
     background: #252424;
@@ -826,7 +858,6 @@ span.carousel-control-next-icon i  {
   height: auto;
 }
 #slider .inner_carousel h2 {
-    letter-spacing: 1px;
     color: #262525;
     padding: 0px;
     font-size: 40px;
@@ -873,7 +904,6 @@ span.carousel-control-next-icon i  {
 }
 #about .about-text h4{
 	font-weight: 700;
-    letter-spacing: 1px;
     font-size: 25px;
     text-transform: uppercase;
 }
@@ -933,7 +963,6 @@ span.posted_in {
 h2.woocommerce-loop-product__title,
 .woocommerce div.product .product_title {
     color: #000;
-    letter-spacing: 1px;
     font-weight: 500;
 }
 .woocommerce ul.products li.product .price,
@@ -999,7 +1028,6 @@ nav.woocommerce-MyAccount-navigation ul li a{
 }
 .category a {
     text-transform: uppercase;
-    letter-spacing: 1px;
     font-size: 13px;
     color: #707070;
     border-bottom: 1px solid rgba(0,0,0,.09);
@@ -1020,7 +1048,6 @@ nav.woocommerce-MyAccount-navigation ul li a{
 }
 .blogger p {
     font-size: 13px;
-    letter-spacing: 1px;
     margin: 0;
     line-height: 1.8;
 }
@@ -1076,7 +1103,6 @@ nav.woocommerce-MyAccount-navigation ul li a{
     background: #9fcd55;
     font-size: 20px;
     font-weight: 700;
-    letter-spacing: 1px;
     text-transform: capitalize;
     color: #fff;
     text-align: center;
@@ -1087,15 +1113,13 @@ nav.woocommerce-MyAccount-navigation ul li a{
 .site-footer h2 {
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 1px;
     color: #ffffff;
     border-bottom: 1px solid #fff;
     padding: 15px 0;
     margin-bottom: 15px;
 }
 #sidebox ul li{
-    font-size: 12px;
-    letter-spacing: 0.1em;    
+    font-size: 12px;   
     border-top: none;
     color: #707070;
     padding: 10px 0;
@@ -1106,7 +1130,6 @@ nav.woocommerce-MyAccount-navigation ul li a{
 }
 .site-footer ul li {
     font-size: 11px;
-    letter-spacing: 0.1em;
     border-top: none;
     padding-bottom: 6px;
     color: #707070;
@@ -1214,7 +1237,6 @@ body {
 	font-size: 24px;
 	font-weight: 800;
 	line-height: 1.25;
-	letter-spacing: 0.08em;
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
@@ -1473,7 +1495,6 @@ body.page:not(.aagaz-startup-front-page) .entry-title {
 	color: #767676;
 	font-size: 11px;
 	font-weight: 800;
-	letter-spacing: 0.1818em;
 	padding-bottom: 0.25em;
 	text-transform: uppercase;
 }
@@ -1642,7 +1663,6 @@ body:not(.aagaz-startup-front-page) .entry-header {
 	display: block;
 	font-size: 11px;
 	font-weight: 800;
-	letter-spacing: 0.1818em;
 	padding-left: 2.5em;
 	position: relative;
 	text-transform: uppercase;
@@ -1726,7 +1746,6 @@ body:not(.aagaz-startup-front-page) .entry-header {
 	color: #767676;
 	display: block;
 	font-size: 11px;
-	letter-spacing: 0.1818em;
 	margin-bottom: 1em;
 	text-transform: uppercase;
 }
@@ -1879,7 +1898,6 @@ button.search-submit {
 	color: #767676;
 	font-size: 10px;
 	font-weight: 800;
-	letter-spacing: 0.1818em;
 	text-transform: uppercase;
 }
 .comment-metadata a {
@@ -2070,7 +2088,6 @@ button.search-submit {
 	font-size: 10px;
 	font-style: normal;
 	font-weight: 800;
-	letter-spacing: 0.18em;
 	line-height: 1.5;
 }
 .widget_rss .rss-date {
@@ -2317,7 +2334,6 @@ p > object:only-child {
 .site-content .wp-playlist-current-item .wp-playlist-item-artist {
 	font-size: 10px;
 	font-weight: 800;
-	letter-spacing: 0.1818em;
 	text-transform: uppercase;
 }
 .site-content .wp-playlist-item {
@@ -2422,7 +2438,6 @@ p > object:only-child {
 	display: block;
 	font-size: 14px;
 	font-weight: 700;
-	letter-spacing: 1px;
 	padding: 3em;
 	text-transform: uppercase;
 	text-align: center;

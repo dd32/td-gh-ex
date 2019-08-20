@@ -13,7 +13,7 @@
   }
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="blogger">
     <div class="post-image">
       <?php
@@ -40,4 +40,4 @@
       <a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_attr_e( 'READ MORE','aagaz-startup' ); ?></a>
     </div>
   </div>
-</div>
+</article>
