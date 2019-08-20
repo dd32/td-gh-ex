@@ -536,7 +536,7 @@ class ArileWP_Repeater extends WP_Customize_Control {
                 <?php
                 echo sprintf(
 	                esc_html__( 'Note: Some icons may not be displayed here. You can see the full list of icons at %1$s.', 'arilewp' ),
-	                sprintf( '<a href="http://fontawesome.io/icons/" rel="nofollow">%s</a>', esc_html__( 'http://fontawesome.io/icons/', 'arilewp' ) )
+	                sprintf( '<a href="//fontawesome.io/icons/" rel="nofollow">%s</a>', esc_html__( '//fontawesome.io/icons/', 'arilewp' ) )
                 ); ?>
             </span>
 			<div class="input-group icp-container">

@@ -1,11 +1,6 @@
 <?php
 function arilewp_repeater_register( $wp_customize ) {
-
-	$repeater_path = get_template_directory() . '/inc/customizer/customizer-repeater/class/customizer-repeater-control.php';
-	if( file_exists( $repeater_path ) ){
-		require_once( $repeater_path );
-	}
-
+	require ARILEWP_PARENT_INC_DIR . '/customizer/customizer-repeater/class/customizer-repeater-control.php';
 }
 add_action( 'customize_register', 'arilewp_repeater_register' );
 

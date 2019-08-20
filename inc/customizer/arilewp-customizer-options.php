@@ -10,8 +10,8 @@ require ARILEWP_PARENT_INC_DIR . '/customizer/webfont.php';
 require ARILEWP_PARENT_INC_DIR . '/customizer/controls/code/arilewp-customize-typography-control.php';
 require ARILEWP_PARENT_INC_DIR . '/customizer/controls/code/arilewp-customize-category-control.php';
 require ARILEWP_PARENT_INC_DIR . '/customizer/controls/code/arilewp-customize-plugin-control.php';
-$repeater_file_path = trailingslashit( get_template_directory() ) . '/inc/customizer/customizer-repeater/functions.php';
-if ( file_exists( $repeater_file_path ) ) { require_once( $repeater_file_path ); }
+require ARILEWP_PARENT_INC_DIR . '/customizer/customizer-repeater/functions.php';
+
 function arilewp_customizer_theme_settings( $wp_customize ){
 	
 	$active_callback    	= isset( $array['active_callback'] ) ? $array['active_callback'] : null;
@@ -144,7 +144,7 @@ function arilewp_customizer_theme_settings( $wp_customize ){
 			'arilewp_footer_copright_text',
 			array(
 				'sanitize_callback' =>  'arilewp_sanitize_text',
-				'default' => __('Copyright © 2019 | Powered by <a href="http://wordpress.org/">WordPress</a> <span class="sep"> | </span> ArileWP theme by <a target="_blank" href="https://themearile.com/">ThemeArile</a>', 'arilewp'),
+				'default' => __('Copyright &copy; 2019 | Powered by <a href="//wordpress.org/">WordPress</a> <span class="sep"> | </span> ArileWP theme by <a target="_blank" href="//themearile.com/">ThemeArile</a>', 'arilewp'),
 				'transport'         => $selective_refresh,
 			)	
 		);
@@ -173,7 +173,7 @@ function arilewp_recommended_plugin_section( $manager ) {
 				'title'    => esc_html__( 'Ready for more?', 'arilewp' ),
                 'priority' => 1000, 
 				'plugin_text' => esc_html__( 'Get ArileWP Pro', 'arilewp' ),
-				'plugin_url'  => 'https://themearile.com/arilewp-pro-theme/'
+				'plugin_url'  => '//themearile.com/arilewp-pro-theme/'
 			)
 		)
 	);	

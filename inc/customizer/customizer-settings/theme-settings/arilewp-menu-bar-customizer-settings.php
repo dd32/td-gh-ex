@@ -65,31 +65,7 @@ if ( ! class_exists( 'ArileWP_Customize_Menu_Bar_Option' ) ) :
 								'container-full' => esc_html__( 'Container Full', 'arilewp' ),
 							),
 						),
-			     	),
-					
-				  
-			    'arilewp_main_menu_item_heading' => array(
-					'setting' => array(),
-					'control' => array(
-						'type'    => 'heading',
-				   		'priority'        => 20,
-						'label'   => esc_html__( 'Menu Items', 'arilewp' ),
-						'section' => 'arilewp_theme_menu_bar',
-					),
-				),
-					
-					'arilewp_cart_icon_disabled' => array(
-						'setting' => array(
-							'default'           => false,
-							'sanitize_callback' => array( 'ArileWP_Customizer_Sanitize', 'sanitize_checkbox' ),
-						),
-						'control' => array(
-							'type'     => 'toggle',
-							'priority' => 30,
-							'label'    => esc_html__( 'Cart Icon Enable/Disable', 'arilewp' ),
-							'section'  => 'arilewp_theme_menu_bar',
-						),
-					),
+			     	),	
 
 			);
 
