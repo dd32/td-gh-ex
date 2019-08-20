@@ -64,7 +64,7 @@ if ($better_health_slider_section_option != 'hide') {
                                                 <?php if(!empty($better_health_slider_view_more_txt)){ ?>
                                                 <a href="<?php the_permalink(); ?>" class="slider btn btn-secondary">
                                                     <?php  
-                                                        echo esc_html_e($better_health_slider_view_more_txt); ?>
+                                                        echo esc_html($better_health_slider_view_more_txt); ?>
                                                 </a>
                                                 <?php    } ?>
                                             </p>

@@ -41,7 +41,7 @@ get_header();
     </section>
 <?php } ?>    
     <section id="section14" class="section-margine">
-        <div class="container">
+        <div id="content" class="container">
             <div class="row">
                 <div class="col-sm-<?php if ($better_health_designlayout == 'no-sidebar') {
                     echo "12";

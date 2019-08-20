@@ -30,6 +30,11 @@ $appointment_text = better_health_get_option('better_health_appointment_text_fie
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+  if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+}
+?>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text"
        href="#content"><?php esc_html_e('Skip to content', 'better-health'); ?></a>
@@ -136,7 +141,7 @@ $appointment_text = better_health_get_option('better_health_appointment_text_fie
              {
             ?>  
                     <div class="make-booking">
-                            <a data-toggle="modal" href="#appointment" class="btn btn-default makebooking"><?php esc_html_e($appointment_text);?></a>
+                            <a data-toggle="modal" href="#appointment" class="btn btn-default makebooking"><?php echo esc_html($appointment_text);?></a>
                     </div>
                  
                     <!-- Make appointment model -->
