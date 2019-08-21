@@ -22,6 +22,9 @@ function articlepress_scripts(){
 
 	// Main StyleSheet
 	wp_enqueue_style( 'articlepress-style', get_stylesheet_uri() );
+
+	// Responsive Css
+	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css' );
 	
 	// jQuery v3.3.1 -ajax,-aja
 	wp_enqueue_script( 'articlepress-jquery', get_template_directory_uri() . '/assets/js/jquery-3.3.1.slim.min.js', '', '3.3.1', true );

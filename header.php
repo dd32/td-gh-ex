@@ -49,7 +49,7 @@
                 	<?php
                 		wp_nav_menu(array(
                             'theme_location'    => 'main-menu',
-                            'menu_class'   => 'navbar-nav ml-auto articlepress-menu'
+                            'menu_class'        => 'navbar-nav ml-auto main-menu'
                 		));
 
                 	?>

@@ -3,12 +3,12 @@ Theme Name: ArticlePress
 Theme URI: https://item.themeasia.net/articlepress/
 Author: ThemeAsia
 Author URI: https://profiles.wordpress.org/themeasia
-Description: ArticlePress WordPress Blog Theme
-Version: 1.1.2
+Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
+Version: 1.1.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: Blog, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -65,7 +65,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /**
  * Remove the margin in all browsers.
  */
-
+:root {
+    --primary-color: #7660ff;
+}
 body {
 	margin: 0;
 }
@@ -645,7 +647,6 @@ a:hover, a:active {
 }
 
 .main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
@@ -1036,10 +1037,14 @@ img {
 ==========================================
 */
 header.header {
-    background-color: #7660ff;
+    background-color: var( --primary-color );
     padding: 6px 0;
 }
-.menu-main-menu-container ul.articlepress-menu li a {
+.main-menu {
+    float: right;
+    display: inline-block;
+}
+.main-menu li a {
     color: #fff;
     font-weight: 500;
     font-size: 17px;
@@ -1048,22 +1053,44 @@ header.header {
     text-transform: uppercase;
     transition: .3s;
 }
-.menu-main-menu-container ul.articlepress-menu li {
+.main-menu li {
     margin-left: 26px;
 }
 
-.menu-main-menu-container ul.articlepress-menu li:first-child {
+.main-menu li:first-child {
     margin-left: 0;
 }
 
-.menu-main-menu-container {margin-left: auto !important;}
+.main-menu {
+    margin-left: auto !important;
+}
 
-.menu-main-menu-container ul.articlepress-menu li a:hover {
+.main-menu li a:hover {
     color: #5bd5e8;
+}
+.main-navigation div.menu-main-menu-container {
+    display: block;
+    width: 100%;
+}
+.main-menu li ul {
+    background: var( --primary-color );
+}
+
+.main-menu li ul li {
+    margin-left: 0;
+}
+
+.main-menu li ul li a {
+    padding: 10px 16px;
+    display: inline-block;
+    font-size: 14px;
 }
 a.articlepress-logo-text {
 	color: #fff;
 	text-decoration: none;
+}
+.navbar button.navbar-toggler {
+    color: #fff;
 }
 /*
 ==========================================
@@ -1100,6 +1127,19 @@ section.blog-section {
 .blog-section .blog {
     margin-bottom: 30px;
 }
+.comment-author a {
+    color: var( --primary-color );
+}
+
+.comment-metadata a {
+    color: var( --primary-color );
+}
+p.logged-in-as a {
+    color: #717b98;
+}
+p.logged-in-as {
+    margin-bottom: 18px;
+}
 /*
 	Comments area
 */
@@ -1112,7 +1152,7 @@ nav.navigation.post-navigation .nav-links a {
 }
 
 nav.navigation.post-navigation .nav-links a:hover {
-    background: #7660ff;
+    background: var( --primary-color );
 }
 .comments-area {
     padding: 0 24px;
@@ -1318,7 +1358,7 @@ button.search-btn i {
 }
 
 h2.widget-title {
-    background-color: #7660ff;
+    background-color: var( --primary-color );
     padding: 20px 0;
     font-size: 20px;
     padding-left: 20px;
@@ -1439,7 +1479,7 @@ button.btn.btn-blog.form-btn:hover i {
     left: 0;
     width: 70px;
     height: 70px;
-    background: #7660ff;
+    background: var( --primary-color );
     border-radius: 50%;
     transition: all 1s;
     z-index: 6;
@@ -1489,7 +1529,7 @@ button.btn.btn-blog.form-btn:hover i {
     height: 50px;
     outline: none;
     border: none;
-    background: #7660ff;
+    background: var( --primary-color );
     color: white;
     padding: 0 80px 0 20px;
     border-radius: 30px;
@@ -1540,7 +1580,7 @@ footer section
 
 -------------------------------- */
 .footer {
-    background-color: #7660ff;
+    background-color: var( --primary-color );
     padding: 60px 0;
 }
 .footer__copy--right {
@@ -1563,7 +1603,7 @@ footer section
     }
 .footer__icon--link {
     font-size: 16px;
-    color: #7660ff !important;
+    color: var( --primary-color ) !important;
     width: 42px;
     height: 42px;
     background-color: #ffffff;
@@ -1750,8 +1790,8 @@ nav.navigation.pagination a, nav.navigation.pagination span {
 }
 
 nav.navigation.pagination a:hover, nav.navigation.pagination span:hover {
-    background: #7660ff;
-    border-color: #7660ff;
+    background: var( --primary-color );
+    border-color: var( --primary-color );
 }
 
 nav.navigation.pagination span:hover {
@@ -1812,7 +1852,7 @@ footer.site-footer a:hover {
     line-height: 3;
 }
 .footer-sociaal-icon ul li a:hover {
-    background: #7660ff;
+    background: var( --primary-color );
     color: #fff;
 }
 p.site-copyright {
@@ -1827,3 +1867,5 @@ p.site-copyright {
 .widget-area .form-grop {
     position: relative;
 }
+
+
