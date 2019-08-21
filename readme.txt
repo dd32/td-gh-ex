@@ -24,6 +24,10 @@ AeonBlog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.5 - August 21 2019 =
+Fixed an issue with the left sidebar post template.
+
+
 = 1.0.4 - August 17 2019 =
 Updated HTML markup.
 Updated CSS, removed a large amount of unused CSS.

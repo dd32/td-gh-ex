@@ -4,7 +4,7 @@ Theme URI:
 Author: aeontheme
 Author URI: https://aeonwp.com/
 Description: Simple and clean accessibility ready blog theme. It comes with easy to use customizer based theme options, copyright text, post templates, sidebar options, meta options, featured image option, excerpt length option, read more text, sticky sidebar, font preview and many more. AeonBlog has soft green and blue colors, and many color options. This is a complete WordPress theme for bloggers.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aeonblog
@@ -1934,6 +1934,14 @@ object {
 
 .post-template-post-right-sidebar .right-sidebar {
 	display: inline-block;
+}
+
+.post-template-post-left-sidebar .left-sidebar {
+	display: inline-block;
+}
+
+.post-template-post-left-sidebar .right-sidebar {
+	display: none;
 }
 
 .no-sidebar #primary {
