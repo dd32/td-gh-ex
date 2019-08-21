@@ -19,18 +19,13 @@
  */
 
 get_header();
+/** Left sidebar */
+get_sidebar( 'left' );
 ?>
-
-	<div class="breadcrumb">
-		<div class="container">
-			<?php do_action( 'aeonblog_breadcrumb_hook' ); ?>
-		</div>
-	</div>
-	<div id="primary" class="col-md-8 col-sm-8">
-		<div class="content-area" role="main">
-			<div class="page-header">
+	<main id="primary" role="main">
+			<header class="page-header">
 				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			</div><!-- .entry-header -->
+			</header><!-- .entry-header -->
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -44,9 +39,7 @@ get_header();
 
 			endwhile; // End of the loop.
 			?>
-		</div><!-- #main -->
-	</div><!-- #primary -->
-
+		</main><!-- #primary -->
 <?php
 get_sidebar();
 get_footer();

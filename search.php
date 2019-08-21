@@ -13,9 +13,10 @@
  */
 
 get_header();
+/** Left sidebar */
+get_sidebar( 'left' );
 ?>
-<div id="primary" class="col-md-12 col-sm-12">
-	<div class="content-area" role="main">
+	<main id="primary" role="main">
 	<?php
 	if ( have_posts() ) {
 		?>
@@ -52,9 +53,7 @@ get_header();
 		get_template_part( 'template-parts/content', 'none' );
 	}
 	?>
-		</div><!-- #main -->
-	</div><!-- #primary -->
-
+	</main><!-- #primary -->
 <?php
 get_sidebar();
 get_footer();

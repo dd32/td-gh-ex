@@ -1,7 +1,7 @@
 <?php
 /**
  * File aeonblog.
- * @package   AeonBlog
+ *
  * @author    AeonWP <info@aeonwp.com>
  * @copyright Copyright (c) 2019, AeonWP
  * @link      https://aeonwp.com/aeonblog
@@ -15,18 +15,18 @@
  */
 
 get_header();
+/** Left sidebar */
+get_sidebar( 'left' );
 ?>
-
-<div class="error-page-wrapper">
-	<div class="container">
-			<div class="error-message text-center">
-				<h1 class="page-title"><?php esc_html_e( '404', 'aeonblog' ); ?></h1>
-				<br><br>
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'aeonblog' ); ?></p>	
-			</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-		</div><!-- #main -->
-	</div><!-- #primary -->
-
+<main id="primary" role="main">
+	<header class="page-header">
+		<h1 class="page-title"><?php esc_html_e( '404: Not Found', 'aeonblog' ); ?></h1>
+	</header>
+	<article <?php post_class( 'post-wrapper' ); ?>>
+		<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'aeonblog' ); ?></p>
+		<?php get_search_form(); ?>
+	</article>
+</main><!-- #primary -->
 <?php
+get_sidebar();
 get_footer();

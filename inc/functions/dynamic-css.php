@@ -19,20 +19,28 @@ if ( ! function_exists( 'aeonblog_dynamic_css' ) ) {
 	 *  @since AeonBlog 1.0.0
 	 */
 	function aeonblog_dynamic_css() {
-		global $aeonblog_theme_options;
-		$aeonblog_font_family         = wp_kses_post( $aeonblog_theme_options['aeonblog-font-family'] );
-		$aeonblog_font_size           = absint( $aeonblog_theme_options['aeonblog-font-size'] );
-		$aeonblog_font_line_height    = esc_attr( $aeonblog_theme_options['aeonblog-font-line-height'] );
-		$aeonblog_font_letter_spacing = absint( $aeonblog_theme_options['aeonblog-letter-spacing'] );
-		$aeonblog_primary_color       = esc_attr( $aeonblog_theme_options['aeonblog-primary-color'] );
-		$aeonblog_dark_accent_color   = esc_attr( $aeonblog_theme_options['aeonblog-dark-accent-color'] );
-		$aeonblog_light_accent_color  = esc_attr( $aeonblog_theme_options['aeonblog-light-accent-color'] );
-		$aeonblog_about_gravatar      = esc_attr( $aeonblog_theme_options['aeonblog-about-gravatar'] );
+
+		$aeonblog_body_font           = esc_attr( get_theme_mod( 'aeonblog_body_font', 'Open Sans' ) );
+		$aeonblog_title_font          = esc_attr( get_theme_mod( 'aeonblog_title_font', 'Josefin Sans' ) );
+		$aeonblog_font_size           = absint( get_theme_mod( 'aeonblog-font-size', 18 ) );
+		$aeonblog_font_line_height    = esc_attr( get_theme_mod( 'aeonblog-font-line-height', 2 ) );
+		$aeonblog_font_letter_spacing = absint( get_theme_mod( 'aeonblog-letter-spacing', 0 ) );
+
+		$aeonblog_about_gravatar      = esc_attr( get_theme_mod( 'aeonblog-about-gravatar', 'circle' ) );
+
+		$aeonblog_accent_color        = esc_attr( get_theme_mod( 'aeonblog-accent-color', '#021634' ) );
+		$aeonblog_button_color        = esc_attr( get_theme_mod( 'aeonblog-button-color', '#4ea371' ) );
+
 		$custom_css                   = '';
 
 		/* Typography Section */
-		if ( ! empty( $aeonblog_font_family ) ) {
-			$custom_css .= "body { font-family: {$aeonblog_font_family}; }";
+
+		if ( ! empty( $aeonblog_body_font ) ) {
+			$custom_css .= "body { font-family: '{$aeonblog_body_font}', BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }";
+		}
+
+		if ( ! empty( $aeonblog_title_font ) ) {
+			$custom_css .= ".site-title { font-family: '{$aeonblog_title_font}', BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }";
 		}
 
 		if ( ! empty( $aeonblog_font_size ) ) {
@@ -40,43 +48,89 @@ if ( ! function_exists( 'aeonblog_dynamic_css' ) ) {
 		}
 
 		if ( ! empty( $aeonblog_font_line_height ) ) {
-			$custom_css .= "body { line-height : {$aeonblog_font_line_height}; }";
+			$custom_css .= "body { line-height: {$aeonblog_font_line_height}; }";
 		}
 
 		if ( ! empty( $aeonblog_font_letter_spacing ) ) {
-			$custom_css .= "body { letter-spacing : {$aeonblog_font_letter_spacing}px; }";
-		}
-
-		/* Primary Color Section */
-		if ( ! empty( $aeonblog_primary_color ) ) {
-			$custom_css .= ".breadcrumbs span.breadcrumb, .search-form input[type=submit], #toTop, .comments-wrapper .form-submit input, .post-password-form input[type=submit]{ background : {$aeonblog_primary_color}; }";
-			$custom_css .= ".search-form input.search-field, .sticky .p-15, .entry-footer .more-link { border-color : {$aeonblog_primary_color}; }";
-			$custom_css .= ".error-404 h1, .no-results h1, .related-post-entries .title:hover, .entry-title a:hover, .featured-post-title a:hover, .entry-meta.entry-category a,.widget li a:hover, .widget h1 a:hover, .widget h2 a:hover, .widget h3 a:hover, .main-navigation ul li a:hover, .single .nav-links .nav-next:after, .single .nav-links .nav-previous:after { color : {$aeonblog_primary_color}; }";
-			$custom_css .= ".btn-primary { border: 2px solid {$aeonblog_primary_color};}";
-		}
-
-		/* Dark Accent Color Section */
-		if ( ! empty( $aeonblog_dark_accent_color ) ) {
-			$custom_css .= ".site-footer, .entry-footer .more-link:hover, .entry-footer .more-link:focus,
-			.widget_search form input[type='submit']:focus, .widget_search form input[type='submit']:hover,
-			.entry-header .entry-meta li .posted-in a:focus, .entry-header .entry-meta li .posted-in a:hover,
-			.comments-wrapper .form-submit input:focus, .post-password-form input[type=submit]:focus, 
-			.comments-wrapper .form-submit input:hover, .post-password-form input[type=submit]:hover
-			{background-color: {$aeonblog_dark_accent_color}; }";
-			$custom_css .= ".search-form input.search-field:focus, .search-form input.search-field:hover { border-color: {$aeonblog_dark_accent_color}; }";
-		}
-
-		/* Light Accent Color Section */
-		if ( ! empty( $aeonblog_light_accent_color ) ) {
-			$custom_css .= ".breadcrumb, .single .navigation.post-navigation { background: {$aeonblog_light_accent_color}; }";
+			$custom_css .= "body { letter-spacing: {$aeonblog_font_letter_spacing}px; }";
 		}
 
 		/* About section */
-		// testing, remove this line echo $aeonblog_about_gravatar;
 		if ( $aeonblog_about_gravatar == 'square' ) {
-			$custom_css .= ".about-me-description a img { border-radius:2px;}";
+			$custom_css .= '.about-me-description a img { border-radius: 2px; }';
 		} elseif ( $aeonblog_about_gravatar == 'hide' ) {
-			$custom_css .= ".about-me-description a { display:none;}";
+			$custom_css .= '.about-me-description a { display: none; }';
+		}
+
+		if ( ! empty( $aeonblog_accent_color ) ) {
+			$custom_css .= ' button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				button:active,
+				button:focus,
+				input[type="button"]:active,
+				input[type="button"]:focus,
+				input[type="reset"]:active,
+				input[type="reset"]:focus,
+				input[type="submit"]:active,
+				input[type="submit"]:focus,
+				#mobile-menu-toggle:hover, #mobile-menu-toggle:focus,
+				.aeonblog-pagination .page-numbers.current,	.aeonblog-pagination .page-numbers:hover,
+				.posts-navigation a:hover, .posts-navigation a:focus,
+				.entry-header .entry-meta li .posted-in a:focus,
+				.entry-header .entry-meta li .posted-in a:hover,
+				.entry-footer .more-link:hover,	.entry-footer .more-link:focus,
+				.site-footer {
+					background: ' . $aeonblog_accent_color . ';
+				}';
+
+				$custom_css .= ' .aeonblog-pagination .page-numbers,
+				.posts-navigation a,
+				#mobile-menu-toggle,
+				.entry-footer .more-link, .entry-footer .more-link:hover, .entry-footer .more-link:focus,
+				.widget_search .search-field:focus, .widget_search .search-field:hover,
+				input[type="text"]:focus,
+				input[type="email"]:focus,
+				input[type="url"]:focus,
+				input[type="password"]:focus,
+				input[type="search"]:focus,
+				input[type="number"]:focus,
+				input[type="tel"]:focus,
+				input[type="range"]:focus,
+				input[type="date"]:focus,
+				input[type="month"]:focus,
+				input[type="week"]:focus,
+				input[type="time"]:focus,
+				input[type="datetime"]:focus,
+				input[type="datetime-local"]:focus,
+				input[type="color"]:focus,
+				textarea:focus,
+				input[type="text"]:hover,
+				input[type="email"]:hover,
+				input[type="url"]:hover,
+				input[type="password"]:hover,
+				input[type="search"]:hover,
+				input[type="number"]:hover,
+				input[type="tel"]:hover,
+				input[type="range"]:hover,
+				input[type="date"]:hover,
+				input[type="month"]:hover,
+				input[type="week"]:hover,
+				input[type="time"]:hover,
+				input[type="datetime"]:hover,
+				input[type="datetime-local"]:hover,
+				input[type="color"]:hover,
+				textarea:hover
+				{
+					border-color: ' . $aeonblog_accent_color . ';
+				}';
+		}
+
+		if ( ! empty( $aeonblog_button_color ) ) {
+			$custom_css .= ' button, input[type="button"], input[type="reset"], input[type="submit"], #toTop {
+				background: ' . $aeonblog_button_color . ';
+			}';
 		}
 
 		wp_add_inline_style( 'aeonblog-style', $custom_css );

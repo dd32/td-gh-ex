@@ -15,56 +15,51 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
-global $aeonblog_theme_options;
-$copyright = wp_kses_post( $aeonblog_theme_options['aeonblog-copyright-text'] );
 ?>
-		</div><!-- #row -->
-	</div><!-- #container -->
 </div><!-- #content -->
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-	<div class="container">
 	<?php
 	if ( has_nav_menu( 'social' ) ) {
 		?>
 		<div class="social-icons-footer">
 			<nav class="footer-social-menu-navigation">
-				<ul class="social-menu">
-					<li class="social-link">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'social',
-								'menu_class'     => 'aeonblog-menu-social',
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>',
-								'depth'          => 0,
-								'fallback_cb'    => false,
-							)
-						);
-						?>
-					</li>
-				</ul>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'social',
+						'menu_class'     => 'aeonblog-menu-social',
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span>' . aeonblog_get_svg( array( 'icon' => 'chain' ) ),
+						'container'      => false,
+					)
+				);
+				?>
 			</nav>
 		</div>
 		<?php
 	}
 	?>
 		<div class="copyright">
-			<?php echo $copyright; ?>
+			<?php echo wp_kses_post( get_theme_mod( 'aeonblog-copyright-text', __( 'All Right Reserved', 'aeonblog' ) ) ); ?>
 		</div>
-		<div class="site-info text-center">
+
+		<div class="site-info">
+			<div class="wp-credits">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aeonblog' ) ); ?>">
 			<?php
 			/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'aeonblog' ), 'WordPress' );
 			?>
 			</a>
-
+			</div>
+			<div class="author-credits">
 			<?php
 			/* translators: 1: Theme name, 2: Theme author. */
 			printf( esc_html__( 'Theme: %1$s by %2$s.', 'aeonblog' ), 'AeonBlog', '<a href="https://aeonwp.com/">AeonWP</a>' );
 			?>
+			</div>
 		</div><!-- .site-info -->
 		<?php
 		/**
@@ -72,7 +67,6 @@ $copyright = wp_kses_post( $aeonblog_theme_options['aeonblog-copyright-text'] );
 		 */
 		do_action( 'aeonblog_go_to_top_hook' );
 		?>
-	</div>
 </footer><!-- #colophon -->
 <?php wp_footer(); ?>
 </body>

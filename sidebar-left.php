@@ -17,7 +17,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside role="complementary" class="secondary right-sidebar">
+<aside role="complementary" class="secondary left-sidebar">
 	<?php
 	aeonblog_about_user();
 	dynamic_sidebar( 'sidebar-1' );

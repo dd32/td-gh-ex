@@ -1,7 +1,7 @@
 === Aeon Blog ===
 Contributors: aeontheme
-Requires at least: 4.5
-Tested up to: 5.2.1
+Requires at least: 5.0
+Tested up to: 5.2.2
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License:      GNU General Public License v2 or later
@@ -23,7 +23,23 @@ Simple and Clean Accessibility Ready Blog Theme. It comes with easy to use custo
 AeonBlog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
-= 1.0.3 - August 08 2019 =
+
+= 1.0.4 - August 17 2019 =
+Updated HTML markup.
+Updated CSS, removed a large amount of unused CSS.
+Updated the customizer options.
+Updated the font option.
+Updated the color options.
+Updated the social navigation.
+Updated the sidebar so that it shows below the content on smaller screens.
+Reduced the number of font sizes and colors used, increased font size.
+Removed aeonblog_excerpt_more, increased the default excerpt size to 45, removed the upper excerpt size limit.
+Removed Bootstrap.
+Removed animate.
+Removed Font Awesome font files and CSS, replaced with Font Awesome SVG file.
+Removed hard coded date.
+
+= 1.0.3 = 
 * Reviewer Issues Fixed
 
 = 1.0.2 - July 07 2019 =
@@ -56,8 +72,6 @@ AeonBlog is distributed under the terms of the GNU General Public License v2 or 
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * Google Fonts - Apache License, version 2.0
 * Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
-* Bootstrap http://getbootstrap.com/ [MIT](http://opensource.org/licenses/MIT) Copyright 2011-2015 Twitter, Inc.
-* Animate CSS - Copyright (c) 2013 Daniel Eden http://daneden.me/animate [ Licensed under the MIT license ]
 * theia-sticky-sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT](http://opensource.org/licenses/MIT)
 * BreadcrumbTrail Copyright (c) 2008 - 2017, Justin Tadlock https://themehybrid.com/plugins/breadcrumb-trail http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 * Sanitization Copyright (c) 2015, WordPress Theme Review Team, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html) https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php 

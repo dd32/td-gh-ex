@@ -17,32 +17,27 @@
  */
 
 get_header();
-?>	
-	<div class="col-sm-12">
-		<div class="breadcrumb">
-			<?php do_action( 'aeonblog_breadcrumb_hook' ); ?>
-		</div>
-	</div>
-	<?php get_sidebar(); ?>
-	<div id="primary" class="col-md-8 col-sm-8">
-		<div class="content-area" role="main">
-			<?php
-			while ( have_posts() ) :
-				the_post();
+/** Left sidebar */
+get_sidebar( 'left' );
+?>
+	<main id="primary" role="main">
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-				get_template_part( 'template-parts/content', 'single' );
+			get_template_part( 'template-parts/content', 'single' );
 
-				the_post_navigation();
+			the_post_navigation();
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-			endwhile; // End of the loop.
-			?>
-		</div><!-- #main -->
-	</div><!-- #primary -->
-
+		endwhile; // End of the loop.
+		?>
+	</main><!-- #primary -->
 <?php
+/** Show the sidebar below the content on small widths. */
+get_sidebar();
 get_footer();

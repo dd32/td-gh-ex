@@ -52,7 +52,7 @@ if ( ! function_exists( 'aeonblog_setup' ) ) {
 		register_nav_menus(
 			array(
 				'primary' => esc_html__( 'Primary Menu', 'aeonblog' ),
-				'social' => esc_html__( 'Social Menu', 'aeonblog' ),
+				'social'  => esc_html__( 'Social Menu', 'aeonblog' ),
 			)
 		);
 
@@ -82,9 +82,6 @@ if ( ! function_exists( 'aeonblog_setup' ) ) {
 			)
 		);
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -97,6 +94,51 @@ if ( ! function_exists( 'aeonblog_setup' ) ) {
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
+			)
+		);
+
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add support for default block styles.
+		add_theme_support( 'wp-block-styles' );
+
+		/*
+		 * Add support custom font sizes.
+		 *
+		 * Add the line below to disable the custom color picker in the editor.
+		 * add_theme_support( 'disable-custom-font-sizes' );
+		 */
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => __( 'Small', 'aeonblog' ),
+					'shortName' => __( 'S', 'aeonblog' ),
+					'size'      => 16,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => __( 'Medium', 'aeonblog' ),
+					'shortName' => __( 'M', 'aeonblog' ),
+					'size'      => 25,
+					'slug'      => 'medium',
+				),
+				array(
+					'name'      => __( 'Large', 'aeonblog' ),
+					'shortName' => __( 'L', 'aeonblog' ),
+					'size'      => 31,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => __( 'Larger', 'aeonblog' ),
+					'shortName' => __( 'XL', 'aeonblog' ),
+					'size'      => 39,
+					'slug'      => 'larger',
+				),
 			)
 		);
 	}
@@ -138,39 +180,67 @@ function aeonblog_widgets_init() {
 }
 add_action( 'widgets_init', 'aeonblog_widgets_init' );
 
+
+if ( ! function_exists( 'aeonblog_fonts_url' ) ) {
+	/**
+	 * Register custom fonts.
+	 * Credits:
+	 * Twenty Seventeen WordPress Theme, Copyright 2016 WordPress.org
+	 * Twenty Seventeen is distributed under the terms of the GNU GPL
+	 */
+	function aeonblog_fonts_url() {
+		$fonts_url = '';
+
+		$font_families   = array();
+		$font_families[] = get_theme_mod( 'aeonblog_body_font', 'Open Sans' );
+		$font_families[] = get_theme_mod( 'aeonblog_title_font', 'Josefin Sans' );
+
+		$font_families = array_unique( $font_families );
+
+		$query_args = array(
+			'family' => rawurlencode( implode( '|', $font_families ) ),
+			'subset' => rawurlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+		return esc_url_raw( $fonts_url );
+	}
+}
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function aeonblog_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'aeonblog-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'aeonblog_resource_hints', 10, 2 );
+
 /**
  * Enqueue scripts and styles.
  */
 function aeonblog_scripts() {
 	/*google font  */
+	wp_enqueue_style( 'aeonblog-fonts', aeonblog_fonts_url(), array(), null );
 
-	global $aeonblog_theme_options;
-	$aeonblog_name_font_url   = esc_url( $aeonblog_theme_options['aeonblog-font-url'] );
-
-	if ( $aeonblog_name_font_url != '' ) {
-		wp_enqueue_style( 'aeonblog-googleapis', $aeonblog_name_font_url, null, false, 'all' );
-	}
-
-	wp_enqueue_style( 'googleapis', '//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800', array(), null );
-
-	/*Font-Awesome-master*/
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.5.0' );
-
-	/*Bootstrap CSS*/
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.5.0' );
-
-	/*Animited CSS*/
-	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '4.5.0' );
 	wp_enqueue_style( 'aeonblog-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'aeonblog-menu-style', get_template_directory_uri() . '/css/menu.css');
 	wp_enqueue_script( 'aeonblog-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '4.6.0', true );
 	wp_enqueue_script( 'aeonblog-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '4.5.0', true );
 	wp_enqueue_script( 'aeonblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	global $aeonblog_theme_options;
-	$sticky_sidebar = absint( $aeonblog_theme_options['aeonblog-sticky-sidebar'] );
-	if ( $sticky_sidebar == 1 ) {
+	if ( get_theme_mod( 'aeonblog-sticky-sidebar', 1 ) == 1 ) {
 		wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array(), '20151215', true );
 		wp_enqueue_script( 'aeonblog-sticky-sidebar', get_template_directory_uri() . '/js/sticky-sidebar.js', array(), '20151215', true );
 	}
@@ -180,6 +250,17 @@ function aeonblog_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'aeonblog_scripts' );
+
+if ( ! function_exists( 'aeonblog_editor_assets' ) ) {
+	/**
+	 * Add styles and fonts for the editor.
+	 */
+	function aeonblog_editor_assets() {
+		wp_enqueue_style( 'aeonblog-fonts', aeonblog_fonts_url(), array(), null );
+		wp_enqueue_style( 'aeonblog-blocks', get_theme_file_uri( '/css/block-editor.css' ), false );
+	}
+	add_action( 'enqueue_block_editor_assets', 'aeonblog_editor_assets' );
+}
 
 /**
  * Implement the Custom Header feature.
@@ -200,11 +281,18 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer-fonts.php';
+require get_template_directory() . '/inc/sanitize-functions.php';
 
 /**
  * Custom Function Templates
  */
 require get_template_directory() . '/inc/custom-functions.php';
+
+/**
+ * SVG icons functions and filters.
+ */
+require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 /**
  * Load Jetpack compatibility file.

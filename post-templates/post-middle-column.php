@@ -18,13 +18,9 @@
 
 get_header();
 ?>	
-	<div class="breadcrumb">
-		<div class="container">
-			<?php do_action( 'aeonblog_breadcrumb_hook' ); ?>
-		</div>
-	</div>
+
 	<div id="primary" class="col-md-8 col-sm-8 col-sm-push-2">	
-		<div class="content-area" role="main">
+		<div class="content-area">
 			<?php
 			while ( have_posts() ) :
 				the_post();
@@ -40,7 +36,7 @@ get_header();
 
 			endwhile; // End of the loop.
 			?>
-		</div><!-- #main -->
+		</div><!-- content-area -->
 	</div><!-- #primary -->
 
 <?php

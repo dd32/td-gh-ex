@@ -15,9 +15,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
-$GLOBALS['aeonblog_theme_options'] = aeonblog_get_theme_options();
-global $aeonblog_theme_options;
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -36,31 +33,30 @@ if ( function_exists( 'wp_body_open' ) ) {
 ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aeonblog' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="container">
-			<!-- Start Header Branding -->
-			<div class="navbar-header site-branding">
-				<?php
-				the_custom_logo();
+		<!-- Start Header Branding -->
+		<div class="site-branding">
+			<?php
+			the_custom_logo();
 
-				if ( is_front_page() && is_home() ) {
-					?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php
-				} else {
-					?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-				}
-				$aeonblog_description = get_bloginfo( 'description', 'display' );
-				if ( $aeonblog_description || is_customize_preview() ) {
-					?>
-					<p class="site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo $aeonblog_description; /* WPCS: xss ok. */ ?></a></p>
-					<?php
-				}
+			if ( is_front_page() && is_home() ) {
 				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			} else {
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			}
+
+			$aeonblog_description = get_bloginfo( 'description', 'display' );
+			if ( $aeonblog_description || is_customize_preview() ) {
+				?>
+				<p class="site-description"><?php echo $aeonblog_description; /* WPCS: xss ok. */ ?></p>
+				<?php
+			}
+			?>
 		</div>
 		<!-- End Header Branding -->
-	</div>
 	<?php
 	if ( has_nav_menu( 'primary' ) ) {
 		?>
@@ -73,7 +69,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				'theme_location' => 'primary',
 				'menu_id'        => 'main-menu',
 				'depth'          => 2,
-				'container'      => false,
+				'container'      => 'ul',
 			)
 		);
 		?>
@@ -83,15 +79,12 @@ if ( function_exists( 'wp_body_open' ) ) {
 	?>
 </header><!-- #masthead -->
 <?php
-if ( has_header_image() || is_front_page() ) {
-	?>
-	<div class="row">
-		<?php aeonblog_header_image(); ?>
-	</div>
-	<?php
+if ( has_header_image() ) {
+	the_custom_header_markup();
 }
+
+do_action( 'aeonblog_breadcrumb_hook' );
 ?>
-	<div id="content" class="blog-wrapper">
-		<div class="container">
-			<div class="row">
+
+<div id="content" class="blog-wrapper">
 

@@ -16,9 +16,9 @@
 ?>
 
 <section class="no-results not-found post-wrapper">
-	<div class="page-header">
+	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'aeonblog' ); ?></h1>
-	</div><!-- .page-header -->
+	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php

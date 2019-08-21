@@ -14,11 +14,11 @@
 
        if(at_body.hasClass('pt-sticky-sidebar')){
                 if(at_body.hasClass('right-sidebar')){
-                    jQuery('#secondary, #primary').theiaStickySidebar();
+                    jQuery('.secondary, #primary').theiaStickySidebar();
                 }
                 else{
-                    jQuery('#secondary, #primary').theiaStickySidebar();
+                    jQuery('.secondary, #primary').theiaStickySidebar();
                 }
-            }			
+            }
 
 });

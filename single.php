@@ -14,41 +14,40 @@
  */
 
 get_header();
+/** Left sidebar */
+get_sidebar( 'left' );
 ?>
-	<div class="breadcrumb">
-		<div class="container">
-			<?php do_action( 'aeonblog_breadcrumb_hook' ); ?>
-		</div>
-	</div>
-	<div id="primary" class="col-md-8 col-sm-8">
-		<div class="content-area" role="main">
-			<?php
-			while ( have_posts() ) :
-				the_post();
+	<main id="primary" role="main">
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-				get_template_part( 'template-parts/content', 'single' );
+			get_template_part( 'template-parts/content', 'single' );
 
-				the_post_navigation();
+			the_post_navigation(
+				array(
+					'prev_text' => __( '&laquo;', 'aeonblog') . ' %title',
+					'next_text' => '%title ' . __( '&raquo;', 'aeonblog' ),
+				)
+			);
 
-				/**
-				* Aeonblog_related_posts hook
-				*
-				* @since AeonBlog 1.0.0
-				*
-				* @hooked aeonblog_related_posts -  10
-				*/
-				do_action( 'aeonblog_related_posts', get_the_ID() );
+			/**
+			* Aeonblog_related_posts hook
+			*
+			* @since AeonBlog 1.0.0
+			*
+			* @hooked aeonblog_related_posts -  10
+			*/
+			do_action( 'aeonblog_related_posts', get_the_ID() );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-			endwhile; // End of the loop.
-			?>
-		</div><!-- #main -->
-	</div><!-- #primary -->
-
+		endwhile; // End of the loop.
+		?>
+	</main><!-- #primary -->
 <?php
 get_sidebar();
 get_footer();

@@ -15,10 +15,21 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-wrapper' ); ?>>
-	<div class="entry-header">
-		<ul class="entry-meta list-inline clearfix">
-			<li><span class="author vcard"><i class="fa fa-user" aria-hidden="true"></i> <?php aeonblog_posted_by(); ?></span></li>
-			<li><i class="fa fa-clock-o" aria-hidden="true"></i><?php aeonblog_posted_on(); ?></li>
+	<header class="entry-header">
+		<ul class="entry-meta clearfix">
+			<li><span class="author vcard">
+				<?php
+				echo aeonblog_get_svg( array( 'icon' => 'user' ) );
+				?>
+				<i class="fa fa-user" aria-hidden="true"></i> 
+				<?php aeonblog_posted_by(); ?></span>
+			</li>
+			<li>
+				<?php
+				echo aeonblog_get_svg( array( 'icon' => 'clock' ) );
+				aeonblog_posted_on();
+				?>
+			</li>
 		</ul>
 		<?php
 		if ( is_singular() ) :
@@ -26,23 +37,20 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-		<?php endif; ?>
-		<ul class="entry-meta list-inline clearfix">
+		?>
+		<ul class="entry-meta clearfix">
 			<li>
 				<span class="posted-in">
 					<?php
 					$categories = get_the_category();
 					if ( ! empty( $categories ) ) {
-						echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '"rel="category tag">'.esc_html( $categories[0]->name ) . '</a>';
+						echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . ' "rel="category tag">' . esc_html( $categories[0]->name ) . '</a>';
 					}
 					?>
 				</span>
 			</li>
 		</ul>
-	</div>
+	</header>
 	<?php
 	if ( has_post_thumbnail() ) {
 		?>
@@ -50,7 +58,7 @@
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail( 'small' ); ?>
 			</div>
-		</div><!-- .entry-header -->
+		</div>
 		<?php
 	}
 	?>
@@ -69,7 +77,7 @@
 
 		<?php if ( has_tag() ) { ?>
 			<footer class="entry-footer">
-				<ul class="entry-meta list-inline clearfix">
+				<ul class="entry-meta clearfix">
 					<li><?php the_tags(); ?></li>
 				</ul>
 			</footer><!-- .entry-footer -->
