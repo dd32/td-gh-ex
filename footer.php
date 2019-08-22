@@ -7,12 +7,14 @@
  * @package advance-fitness-gym
  */
 ?>
+
+<footer>
     <div id="footer" class="copyright-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                <?php dynamic_sidebar('footer-1');?>
-                    </div>
+                    <?php dynamic_sidebar('footer-1');?>
+                </div>
                 <div class="col-lg-3 col-md-3">
                     <?php dynamic_sidebar('footer-2');?>
                 </div>
@@ -28,6 +30,8 @@
     <div class="copyright">
         <p><?php echo esc_html(get_theme_mod('advance_fitness_gym_footer_copy', __('Copyright 2018 ', 'advance-fitness-gym')));?> <?php advance_fitness_gym_credit();?></p>
     </div>
+</footer>
+
     <?php wp_footer();?>
     </body>
 </html>

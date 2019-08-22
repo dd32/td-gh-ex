@@ -11,7 +11,6 @@ body{
   word-wrap:break-word;
   background-color:#fff;
   color:#5b5b5b;
-  letter-spacing: 1px;
   font-family: 'Ubuntu', sans-serif;
 }
 img{
@@ -88,10 +87,10 @@ input[type='submit']:hover{
   text-align:center;
   margin-bottom:40px;
 }
-.middle-align{
+/*.middle-align{
   margin:0 auto;
   padding:20px 0 20px;
-}
+}*/
 .wp-caption{
   margin:0;
   padding:0;
@@ -106,6 +105,35 @@ input[type='submit']:hover{
   position: absolute;
   top:-9999em;
   right:-9999em;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+border: 0;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: inset(50%);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+background-color: #eee;
+clip: auto !important;
+clip-path: none;
+color: #444;
+display: block;
+font-size: 1em;
+height: auto;
+right: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
   margin:0;
@@ -231,10 +259,9 @@ a.button{
 /* ---------Middle Header--------- */
 .logo{
   margin:0;
-  letter-spacing: 1px;
 }
 .logo h1{
-  font-size:20px;
+  font-size:29px;
   font-weight:bold;
   text-align:right;
 }
@@ -296,6 +323,7 @@ a.button{
   font-size:14px;
   text-transform: uppercase;
   font-weight:bold;
+  text-align: right;
 }
 #header .nav ul li{
   display:inline-block;
@@ -403,7 +431,6 @@ a.button{
 #slider .inner_carousel h2 {
   margin: 0;
   font-size: 39px;
-  letter-spacing: 1px;
   color: #fe5e24;
   padding: 6px 2px;
 }
@@ -477,8 +504,8 @@ a.button{
   margin: 0 0 20px 0;
 }
 #fitness-togym .single-content h4 {
-    text-transform: uppercase;
-    font-size: 22px;
+  text-transform: uppercase;
+  font-size: 22px;
 }
 /*----------------- Homepage ----------------*/
 .page-box {
@@ -494,7 +521,7 @@ a.button{
   font-size:15px;
   margin:10px 0;
   line-height: 25px;
-  color: #999;
+  color: #5b5b5b;
 }
 .box-image{
   margin:0;
@@ -503,10 +530,10 @@ a.button{
   width:100%;
   opacity: 0.7;
 }
-#our-services img{
+.our-services img{
   width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
   margin:40px 0 20px 0;
 }
 .second-border a {
@@ -588,6 +615,9 @@ section .innerlightbox{
   padding-top: 15%;
   padding-bottom: 5%;
 }
+h3.widget-title a {
+    color: #fe5e24;
+}
 .tagcloud a {
   color: #fff;
 }
@@ -649,6 +679,9 @@ table#wp-calendar {
   color: #fff;
   font-size: 15px;
 }
+#footer li a:hover{
+  color: #fe5e24;
+}
 #footer ul li {
   list-style: none;
   padding: 5px 0;
@@ -691,16 +724,20 @@ table#wp-calendar {
 }
 .copyright p {
   font-size: 15px;
-  color: #fff;
+  color: #000;
   margin-bottom: 0;
+  padding: 2px;
 }
 .copyright p a{
-  color: #fff;
+  color: #000;
 }
 .copyright {
   background: #fe5e24;
   padding: 15px 0px;
   text-align:center;
+}
+table#wp-calendar td a {
+    color: #fff;
 }
 #footer .tagcloud a {
   border: outset 2px #999;
@@ -760,7 +797,7 @@ table#wp-calendar {
 }
 #comments input[type="submit"].submit{
   background:#fe5e24 !important;
-  padding:10px 50px;
+  /*padding:10px 50px;*/
   text-transform:normal;
   font-weight:bold;
   color: #000;
@@ -782,20 +819,20 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 40px 0 0;
 }
-#comments .reply{
+.comments .reply{
   float:left;
 }
-#comments .comment-author{
+.comments .comment-author{
   width:100%;
 }  
 #comments .comment-metadata{
@@ -814,7 +851,7 @@ table#wp-calendar {
 }
 /*------------- Woocommerce --------------*/
 .woocommerce .products li {
-  width: 30% !important;
+  width: 29% !important;
   text-align: center;
   margin: 0px 0 20px 22px !important;
 }
@@ -823,23 +860,22 @@ table#wp-calendar {
 }
 a.showcoupon,
 .woocommerce-message::before{
-  color: #fe5e24;
+  color: #000;
 }
 .woocommerce-message {
   border-top-color: #fe5e24;
 }
 .woocommerce span.onsale {
   background: #fe5e24;
-  color: #fff;
+  color: #000;
   padding: 0;
   border-radius: 0;
   margin: 0 !important;
 }
 h2.woocommerce-loop-product__title{
-  color: #999;
-  letter-spacing: 1px;
+  color: #000;
   font-weight: 500;
-  font-size: 15px !important;
+  font-size: 22px !important;
 }
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
@@ -850,8 +886,11 @@ h2.woocommerce-loop-product__title{
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
   background: #fe5e24;
-  color: #fff;
+  color: #000 !important;
   border-radius: 0;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+  color: #fff !important;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
   background: #000;
@@ -876,7 +915,7 @@ nav.woocommerce-MyAccount-navigation ul li {
   margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
 .posted_in {
@@ -894,6 +933,13 @@ span.woocommerce-input-wrapper,
     float: right;
     padding: 9.7px;
 }
+.woocommerce form .form-row .required{
+  color: #000;
+}
+.woocommerce .woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a{
+  color: #5b5b5b;
+}
+
 /*------------- Sidebar -------------*/
 #sidebar caption{
   color: #000;
@@ -907,7 +953,7 @@ span.woocommerce-input-wrapper,
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   background: #fe5e24;
   padding: 10px;
 }
@@ -927,7 +973,6 @@ span.woocommerce-input-wrapper,
   border: none;
   color: #fff;
   padding: 10px 0;
-  letter-spacing: 2px;
   width: 100%;
   font-size: 18px;
   margin: 0;
@@ -979,19 +1024,19 @@ h1.page-title {
   margin-bottom: 10px;
   color: #fe5e24;
 }
-#content-ts p{
+.content-ts p{
   text-align:justify;
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
   margin:35px 0;
   clear:both;
 }
-#content-ts h2{
+.content-ts h2{
   font-size:32px;
   font-weight:normal;
   margin:0;
@@ -999,7 +1044,7 @@ h1.page-title {
   color:#000;
   margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
   font-size:36px;
   font-weight:normal;
   margin:0;
@@ -1007,7 +1052,7 @@ h1.page-title {
   color:#000;
   margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
   font-size:20px;
   font-weight:bold;
   margin:0;
@@ -1015,31 +1060,31 @@ h1.page-title {
   color:#333;
   margin:0 0 25px;
 }
-#content-ts ul{list-style:none;
+.content-ts ul{list-style:none;
   margin:0 10px 0 0;
   padding:10px 0 0;
   font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
   padding:0;
   margin:0 0 20px 0;
   line-height:25px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
   padding:10px 0 0 0;
   font-size:16px;
   counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
   padding:0 0 0 0;
   margin:0 0 20px 0;
 }
 
 /* Pagination */
 .nav-previous {
-    float: right;
-    width: 50%;
-    font-size: 15px;
+  float: right;
+  width: 50%;
+  font-size: 15px;
 }
 .nav-next {
     float: left;
@@ -1057,31 +1102,33 @@ h1.page-title {
 .pagination span,
 .pagination a {
   display:block;
-    float:right;
-    margin: 2px 0 2px 2px;
-    padding:10px 15px;
-    text-decoration:none;
-    width:auto;
-    color:#fff;
-    background: #000 ;
-    -webkit-transition: background .15s ease-in-out;
-    -moz-transition: background .15s ease-in-out;
-    -ms-transition: background .15s ease-in-out;
-    -o-transition: background .15s ease-in-out;
-    transition: background .15s ease-in-out;
+  float:right;
+  margin: 2px 0 2px 2px;
+  padding:10px 15px;
+  text-decoration:none;
+  width:auto;
+  color:#fff;
+  background: #000 ;
+  -webkit-transition: background .15s ease-in-out;
+  -moz-transition: background .15s ease-in-out;
+  -ms-transition: background .15s ease-in-out;
+  -o-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
 }
 .pagination a:hover{
   color:#000;
-    background: #fe5e24;
+  background: #fe5e24;
 }
 .pagination .current{
   padding:10px 15px;
-    background: #fe5e24;
-    color:#000;
+  background: #fe5e24;
+  color:#000;
   font-weight:bold;
 }
-
 iframe{
+  width: 100%;
+}
+.entry-audio audio {
   width: 100%;
 }
 
@@ -1109,6 +1156,9 @@ iframe{
     right: 10%;
     left: 10%;
   }
+  .logo a {
+    font-size: 21px;
+  }
 }
 @media screen and (max-width:720px) { 
   .contentbox{
@@ -1125,13 +1175,13 @@ iframe{
     display: inline-block;
     margin: 0;
   }
-  #comments input[type="submit"].submit{
+  /*#comments input[type="submit"].submit{
     width: 100% !important;
-  }
+  }*/
   section .innerlightbox {
     padding: 0;
   }
-  #our-services{
+  .our-services{
     margin-top: 0;
   }
   .toggleMenu,
@@ -1160,7 +1210,7 @@ iframe{
     overflow-x:hidden;
     width: 100%;
     right: 0;
-    top:-152px;
+    top:-171px;
   }
   #header .nav ul{
     width:100%;
@@ -1204,7 +1254,6 @@ iframe{
   #slider .inner_carousel h2 {
     margin: 0;
     font-size: 20px;
-    letter-spacing: 1px;
     font-weight: 700;
     color: #fe5e24;
     text-transform: uppercase;

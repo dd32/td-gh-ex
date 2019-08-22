@@ -16,8 +16,8 @@
     $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
   }
 ?>
-<div class="page-box">
-  <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
+<article class="page-box">
+  <h4><a href="<?php echo esc_url( get_permalink() ); ?>" alt="<?php the_title(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
   <div class="metabox">
     <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
     <span class="entry-date"><i class="fas fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>       
@@ -40,8 +40,8 @@
   <div class="new-text">
     <p><?php the_excerpt();?></p>
     <div class="second-border">
-      <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-fitness-gym' ); ?>"><?php esc_html_e('Read More','advance-fitness-gym'); ?></a>
+      <a href="<?php echo esc_url( get_permalink() );?>" alt="<?php esc_html_e( 'READ MORE','advance-fitness-gym' );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','advance-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span></a>
     </div>
   </div>
   <div class="clearfix"></div>
-</div>
+</article>

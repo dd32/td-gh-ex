@@ -12,7 +12,7 @@
 
 get_header(); ?>
 <?php /** post section **/ ?>
-  <section id="our-services">
+  <main id="maincontent" class="our-services">
     <div class="innerlightbox">
 		  <div class="container">
         <?php
@@ -41,7 +41,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
       	    </div>
           </div>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
@@ -199,6 +199,6 @@ get_header(); ?>
   		  <div class="clearfix"></div>
       </div>
     </div>
-  </section>
+  </main>
 
 <?php get_footer(); ?>

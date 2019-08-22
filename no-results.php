@@ -20,6 +20,6 @@
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-fitness-gym' ); ?></p><br />
 		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-fitness-gym' ); ?></a>
+			<a href="<?php echo esc_url(home_url()); ?>" alt="<?php esc_html_e( 'Go Back', 'advance-fitness-gym' ); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-fitness-gym' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-fitness-gym' ); ?></span></a>
 		</div>
 <?php endif; ?>

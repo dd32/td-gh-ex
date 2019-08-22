@@ -10,7 +10,7 @@
 		$custom_css .='}';
 	}
 	if($advance_fitness_gym_theme_color != false){
-		$custom_css .='input[type="submit"], #slider .inner_carousel h2, #footer h3, a.showcoupon,.woocommerce-message::before, h1.entry-title,h1.page-title, #slider .inner_carousel h2, input[type="submit"],#header .top-contact i, h3.widget-title a{';
+		$custom_css .='input[type="submit"], #slider .inner_carousel h2, #footer h3, .woocommerce-message::before, h1.entry-title,h1.page-title, #slider .inner_carousel h2, input[type="submit"],#header .top-contact i, h3.widget-title a, #footer li a:hover{';
 			$custom_css .='color: '.esc_html($advance_fitness_gym_theme_color).';';
 		$custom_css .='}';
 	}

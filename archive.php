@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<section id="our-services">
+<main id="maincontent" class="our-services">
     <div class="innerlightbox">
         <div class="container">
             <?php
@@ -69,7 +69,7 @@ get_header(); ?>
                                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-fitness-gym' ) . ' </span>',
                                 ) );
                             ?>
-                         </div> 
+                        </div> 
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
@@ -241,6 +241,6 @@ get_header(); ?>
             <div class="clearfix"></div>
         </div>
     </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

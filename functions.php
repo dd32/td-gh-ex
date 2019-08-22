@@ -150,19 +150,6 @@ function advance_fitness_gym_widgets_init() {
 
 add_action('widgets_init', 'advance_fitness_gym_widgets_init');
 
-// /* Theme Font URL */
-// function advance_fitness_gym_font_url() {
-// 	$font_url      = '';
-// 	$font_family   = array();
-// 	$font_family[] = 'Ubuntu:300,300i,400,400i,500,500i,700,700i';
-
-// 	$query_args = array(
-// 		'family' => rawurlencode(implode('|', $font_family)),
-// 	);
-// 	$font_url = add_query_arg($query_args, '//fonts.googleapis.com/css');
-// 	return $font_url;
-// }
-
 /* Theme Font URL */
 function advance_fitness_gym_font_url(){
 	$font_url = '';
@@ -271,7 +258,6 @@ function advance_fitness_gym_font_url(){
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
 }
-
 
 /* Theme enqueue scripts */
 
@@ -415,7 +401,7 @@ define('ADVANCE_FITNESS_GYM_CREDIT', 'https://www.themeshopy.com/themes/free-wor
 
 if (!function_exists('advance_fitness_gym_credit')) {
 	function advance_fitness_gym_credit() {
-		echo "<a href=".esc_url(ADVANCE_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Fitness WordPress Theme', 'advance-fitness-gym')."</a>";
+		echo "<a href=".esc_url(ADVANCE_FITNESS_GYM_CREDIT)." target='_blank' alt='".esc_html__('Fitness WordPress Theme','advance-fitness-gym')."''>".esc_html__('Fitness WordPress Theme', 'advance-fitness-gym')."</a>";
 	}
 }
 
