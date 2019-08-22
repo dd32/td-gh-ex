@@ -251,6 +251,8 @@ final class Bam_Theme {
 
 		wp_enqueue_style( 'bam-style', get_stylesheet_uri() );
 
+		wp_style_add_data( 'bam-style', 'rtl', 'replace' );
+
 		wp_enqueue_script( 'bam-scripts', $dir_uri . 'js/scripts.js', array( 'jquery' ), '', true );
 
 		wp_enqueue_script( 'bam-main-navigation', $dir_uri . 'js/main-navigation.js', array( 'jquery' ), '', true );

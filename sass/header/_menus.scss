@@ -98,6 +98,11 @@
 	font-weight: normal;
 }
 
+.rtl .main-navigation .menu-item-has-children .menu-item-has-children > a:after,
+.rtl .main-navigation .page_item_has_children .menu-item-has-children > a:after {
+	content: "\f104";
+}
+
 /**
  * Default style
  */
@@ -389,6 +394,14 @@ button.dropdown-toggle.toggled-on::after {
 	}
 
 }
+
+.rtl .posts-navigation .nav-previous a::before {
+	content: "\f105";
+}
+
+.rtl .posts-navigation .nav-next a::after {
+	content: "\f104";
+} 
 
 .post-navigation {
 	.nav-previous, 
