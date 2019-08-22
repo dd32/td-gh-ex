@@ -98,7 +98,7 @@ function atreus_enqueue_scripts()
 {
     wp_enqueue_script('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.9.0', 'all');
     wp_enqueue_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', false, '0.7.4', 'all');
-    wp_enqueue_style('style', get_stylesheet_uri());
+    wp_enqueue_style('atreus_style', get_stylesheet_uri());
     wp_enqueue_script('atreus_main', get_template_directory_uri() . '/js/main.js', false, '1.0', 'all');
 }
 
