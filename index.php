@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <!-- Main Content -->
-    <div class="container">
+    <div id="content" class="container">
         <div class="content">
             <div class="columns">
                 <div class="column">

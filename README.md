@@ -3,10 +3,10 @@
 **Contributors:** bigjaymalcolm
 **Requires at least:** 5.2
 **Tested up to:** 5.2.1
-**Stable tag:** 1.1.11
+**Stable tag:** 1.1.12
 **Requires PHP:** 7.0
 
-**Version:** 1.1.11
+**Version:** 1.1.12
 **License:** GNU General Public License v3 or later
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.en.html
 **Tags:** two-columns, right-sidebar, theme-options, custom-menu, blog, custom-logo, featured-images, threaded-comments
@@ -104,3 +104,6 @@ Atreus bundles the following third-party resources:
 
 ### 1.1.11
 * Added sanitize_callback to atreus_theme_colour_setting.
+
+### 1.1.12
+* Added skip link.

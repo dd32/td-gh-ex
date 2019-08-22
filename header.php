@@ -12,6 +12,7 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'atreus' ); ?></a>
     <!-- Header -->
     <section class="hero <?php if(get_theme_mod('atreus_theme_colour_setting')==false){echo esc_html('is-link');}else{echo esc_html(get_theme_mod('atreus_theme_colour_setting'));} ?>">
         <div class="hero-head">
