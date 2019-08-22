@@ -13,6 +13,7 @@
 	
 	
 	//Customizer 
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
@@ -20,17 +21,8 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-social.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-post-type-slugs.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-layout.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-heading.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-feature.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-typography.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-help.php');
 	
 	
 	
@@ -171,6 +163,13 @@ function webriti_scripts()
 	wp_enqueue_script('wallstreet-menu', WEBRITI_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
 	wp_enqueue_script('wallstreet-bootstrap', WEBRITI_TEMPLATE_DIR_URI .'/js/bootstrap.min.js');
 }	
+
+
+add_action( 'admin_init', 'wallstreet_customizer_css' );
+	function wallstreet_customizer_css() {
+		wp_enqueue_style( 'wallstreet-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	}
+
 		// code for comment
 		if ( ! function_exists( 'wallstreet_comment' ) ) {
 		function wallstreet_comment( $comment, $args, $depth ) 

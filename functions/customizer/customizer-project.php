@@ -277,44 +277,6 @@ function wallstreet_project_customizer( $wp_customize ) {
 			)
 		)
 	);
-	
-	
-	$wp_customize->add_section( 'more_project' , array(
-		'title'      => __('Add More Projects', 'wallstreet'),
-		'panel'  => 'wallstreet_project_setting',
-		'priority'   => 400,
-   	) );
-	
-	class WP_project_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-    public function render_content() {
-    ?>
-     <div class="pro-vesrion">
-	 <P><?php _e('Want to add more projects and categorizations? Then upgrade to Pro.','wallstreet');?></P>
-	 </div>
-	  <div class="pro-box">
-	 <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to Pro','wallstreet' ); ?></a>
-	 <div>
-    <?php
-    }
-}
-
-$wp_customize->add_setting(
-    'project_pro',
-    array(
-        'default' => '',
-		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-    )	
-);
-$wp_customize->add_control( new WP_project_Customize_Control( $wp_customize, 'project_pro', array(	
-		'section' => 'more_project',
-		'setting' => 'project_pro',
-    ))
-);
 }		
 	add_action( 'customize_register', 'wallstreet_project_customizer' );
 ?>

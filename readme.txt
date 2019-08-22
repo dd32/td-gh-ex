@@ -50,7 +50,10 @@ Site Title and its description in not shown on home page besides this both are u
 	
 Support
 -------
+
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.8
+1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 @Version 1.7.9.1
 1. Issue fixed with bluestreet child theme fixed
 @Version 1.7.9
