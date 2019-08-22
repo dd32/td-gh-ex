@@ -9,9 +9,9 @@
 ?>
 
 <div class="col-lg-4 col-md-4">
-    <div class="page-box">
+    <article class="page-box">
         <div class="box-img">
-            <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+            <?php the_post_thumbnail();?>
         </div>
         <div class="new-text">
             <h4><?php the_title();?></h4>
@@ -22,9 +22,9 @@
             </div>
             <p><?php the_excerpt();?></p>        
             <div class="read-more-btn">
-                <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-startup'); ?><i class="fas fa-angle-right"></i></a>
+                <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-startup' );?>"><?php echo esc_html_e('READ MORE','advance-startup'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-startup' );?></span></a>
             </div>
         </div>
         <div class="clearfix"></div>
-    </div>
+    </article>
 </div>

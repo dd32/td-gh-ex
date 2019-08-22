@@ -24,6 +24,7 @@ function advance_startup_customize_register($wp_customize) {
 	$wp_customize->add_section( 'advance_startup_theme_color_option', 
 		array( 'panel' => 'advance_startup_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-startup' ) )
 	);
+
   	$wp_customize->add_setting( 'advance_startup_theme_color_first', array(
 	    'default' => '#e9413a',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -177,7 +178,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
@@ -265,7 +265,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_h1_font_size',array(
 		'label'	=> __('H1 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
@@ -303,7 +302,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_h2_font_size',array(
 		'label'	=> __('h2 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
@@ -341,7 +339,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_h3_font_size',array(
 		'label'	=> __('h3 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
@@ -379,7 +376,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_h4_font_size',array(
 		'label'	=> __('h4 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
@@ -417,7 +413,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_h5_font_size',array(
 		'label'	=> __('h5 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',
@@ -455,7 +450,6 @@ function advance_startup_customize_register($wp_customize) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_startup_h6_font_size',array(
 		'label'	=> __('h6 Font Size','advance-startup'),
 		'section'	=> 'advance_startup_typography',

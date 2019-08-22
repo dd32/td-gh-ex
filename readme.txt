@@ -5,7 +5,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 4.8
 Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.3
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,11 @@ Advance Startup is a resourceful, feature-rich, stylish and versatile startup Wo
 * Added Theme color option.
 * Added Typography.
 * Updated POT File.
+
+= 0.3.1 =
+* Changed the notice design in dashboard.
+* Updated POT file.
+* Resolved theme error.
 
 == Resources ==
 

@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="sidebar">    
+<div id="sidebar">
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
         <aside id="archives" class="widget">
             <h3 class="widget-title"><?php esc_html_e( 'Archives', 'advance-startup' ); ?></h3>

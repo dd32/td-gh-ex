@@ -11,7 +11,7 @@
 		$custom_css .='}';
 	}
 	if($advance_startup_theme_color_first != false){
-		$custom_css .='#slider .carousel-control-next-icon i,#slider .carousel-control-prev-icon i, #header .nav ul li a:hover,#header .nav ul li.current-menu-item a{';
+		$custom_css .='#slider .carousel-control-next-icon i,#slider .carousel-control-prev-icon i, #header .nav ul li a:hover{';
 			$custom_css .='color: '.esc_html($advance_startup_theme_color_first).';';
 		$custom_css .='}';
 	}
@@ -25,7 +25,7 @@
 	$advance_startup_theme_color_second = get_theme_mod('advance_startup_theme_color_second');
 
 	if($advance_startup_theme_color_second != false){
-		$custom_css .='.read-moresec a:hover, .read-moresec a:hover, .talk-btn a:hover, span.meta-nav, #footer input[type="submit"], #footer .tagcloud a:hover, .woocommerce span.onsale, #sidebar .tagcloud a:hover, .pagination a:hover, .page-template-custom-front-page .main-menu .menu-color, #header .nav ul li:hover > ul, input[type="submit"]{';
+		$custom_css .='.read-moresec a:hover, .read-moresec a:hover, .talk-btn a:hover,  #footer input[type="submit"], #footer .tagcloud a:hover, .woocommerce span.onsale, #sidebar .tagcloud a:hover,.page-template-custom-front-page .main-menu .menu-color, #header .nav ul li:hover > ul, input[type="submit"]{';
 			$custom_css .='background-color: '.esc_html($advance_startup_theme_color_second).';';
 		$custom_css .='}';
 	}
@@ -35,7 +35,7 @@
 		$custom_css .='}';
 	}
 	if($advance_startup_theme_color_second != false){
-		$custom_css .='h1,h2,h3,h4,h5,h6, input[type="search"],.read-moresec a,.social-icons i:hover, .mail i,.phone i,.time i, .search-box i, .metabox i, section h4, #footer h3, #comments a.comment-reply-link, #comments a time, a.showcoupon,.woocommerce-message::before, .woocommerce ul.products li.product .price,.woocommerce div.product p.price, .woocommerce div.product span.price, .woocommerce .quantity .qty, #sidebar caption, #sidebar h3, h1.entry-title,h1.page-title, .pagination span,.pagination a, .pagination .current, .new-text p a, h3.widget-title a, .woocommerce a, .middle-align a{';
+		$custom_css .='h4,h5,h6, input[type="search"],.read-moresec a,.social-icons i:hover, .mail i,.phone i,.time i, .search-box i, .metabox i, section h4, #footer h3, #comments a.comment-reply-link, #comments a time,.woocommerce-message::before,.woocommerce .quantity .qty, #sidebar caption, h1.entry-title,.new-text p a, h3.widget-title a, table#wp-calendar td a, #footer li a:hover{';
 			$custom_css .='color: '.esc_html($advance_startup_theme_color_second).';';
 		$custom_css .='}';
 	}
@@ -50,12 +50,12 @@
 		$custom_css .='}';
 	}
 	if($advance_startup_theme_color_second != false){
-		$custom_css .='.talk-btn a:hover, .serach_inner form.search-form, #footer input[type="search"], .woocommerce .quantity .qty, .pagination a:hover, .pagination .current {';
+		$custom_css .='.talk-btn a:hover, .serach_inner form.search-form, #footer input[type="search"], .woocommerce .quantity .qty{';
 			$custom_css .='border-color: '.esc_html($advance_startup_theme_color_second).';';
 		$custom_css .='}';
 	}
 	if($advance_startup_theme_color_second != false){
-		$custom_css .='.page-box-single h3, #sidebar ul li a:hover,#sidebar ul li:active, #sidebar ul li:focus {';
+		$custom_css .='#sidebar ul li a:hover,#sidebar ul li:active, #sidebar ul li:focus {';
 			$custom_css .='color: '.esc_html($advance_startup_theme_color_second).'!important;';
 		$custom_css .='}';
 	}

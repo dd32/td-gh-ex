@@ -12,9 +12,9 @@
       <div class="menu-color">
         <div class="row ">
           <div class="col-lg-11 col-md-11 ">
-            <div class="nav">
+            <nav class="nav">
               <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-            </div>
+            </nav>
           </div>
           <div class="col-lg-1 col-md-1 search-box">
             <i class="fas fa-search"></i>

@@ -40,7 +40,6 @@ function advance_startup_setup() {
 	*/
 	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
-
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
@@ -48,8 +47,23 @@ function advance_startup_setup() {
 	add_editor_style(array('css/editor-style.css', advance_startup_font_url()));
 }
 
+// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'advance_startup_activation_notice' );
+	}
+
 endif;
 add_action('after_setup_theme', 'advance_startup_setup');
+
+// Notice after Theme Activation
+function advance_startup_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible get-started">';
+		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-startup' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_startup_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-startup' ) .'</a></p>';
+	echo '</div>';
+}
 
 // Theme Widgets Setup
 function advance_startup_widgets_init() {
@@ -265,7 +279,7 @@ define('ADVANCE_STARTUP_CREDIT', 'https://www.themeshopy.com/themes/free-startup
 
 if (!function_exists('advance_startup_credit')) {
 	function advance_startup_credit() {
-		echo "<a href=".esc_url(ADVANCE_STARTUP_CREDIT)." target='_blank'>".esc_html__('Startup WordPress Theme', 'advance-startup')."</a>";
+		echo "<a href=".esc_url(ADVANCE_STARTUP_CREDIT)." target='_blank' alt='".esc_html__('Automobile WordPress Theme','advance-startup')."''>".esc_html__('Startup WordPress Theme', 'advance-startup')."</a>";
 	}
 }
 

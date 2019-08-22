@@ -116,7 +116,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:29
+#: footer.php:30
 msgid 'Copyright 2018 -'
 msgstr ""
 
@@ -124,55 +124,63 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:57
+#: functions.php:63
+msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
+msgstr ""
+
+#: functions.php:64
+msgid 'Click here...'
+msgstr ""
+
+#: functions.php:71
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:58
+#: functions.php:72
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:67
+#: functions.php:81
 msgid 'page sidebar'
 msgstr ""
 
-#: functions.php:78
-#: functions.php:68
+#: functions.php:82
+#: functions.php:92
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:77
+#: functions.php:91
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:87
+#: functions.php:101
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:88
-#: functions.php:98
-#: functions.php:108
-#: functions.php:118
+#: functions.php:102
+#: functions.php:112
+#: functions.php:122
+#: functions.php:132
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:97
+#: functions.php:111
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:107
+#: functions.php:121
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:117
+#: functions.php:131
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:268
+#: functions.php:282
 msgid 'Startup WordPress Theme'
 msgstr ""
 
-#: header.php:92
+#: header.php:67
 msgid 'Menu'
 msgstr ""
 
@@ -200,8 +208,8 @@ msgstr ""
 msgid 'Results For: %s'
 msgstr ""
 
-#: searchform.php:10 
-#: searchform.php:12
+#: searchform.php:11
+#: searchform.php:13
 msgid 'Search'
 msgstr ""
 
