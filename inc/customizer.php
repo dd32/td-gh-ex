@@ -25,6 +25,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	$wp_customize->add_section( 'advance_pet_care_theme_color_option', 
 		array( 'panel' => 'advance_pet_care_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-pet-care' ) )
 	);
+
   	$wp_customize->add_setting( 'advance_pet_care_theme_color_first', array(
 	    'default' => '#ff896d',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -35,6 +36,7 @@ function advance_pet_care_customize_register($wp_customize) {
 	    'section' => 'advance_pet_care_theme_color_option',
 	    'settings' => 'advance_pet_care_theme_color_first',
   	)));
+
   	$wp_customize->add_setting( 'advance_pet_care_theme_color_second', array(
 	    'default' => '#4bd6c5',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -176,7 +178,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -264,7 +265,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_h1_font_size',array(
 		'label'	=> __('H1 Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -302,7 +302,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_h2_font_size',array(
 		'label'	=> __('h2 Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -340,7 +339,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_h3_font_size',array(
 		'label'	=> __('h3 Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -378,7 +376,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_h4_font_size',array(
 		'label'	=> __('h4 Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -416,7 +413,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_h5_font_size',array(
 		'label'	=> __('h5 Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -454,7 +450,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_pet_care_h6_font_size',array(
 		'label'	=> __('h6 Font Size','advance-pet-care'),
 		'section'	=> 'advance_pet_care_typography',
@@ -469,7 +464,7 @@ function advance_pet_care_customize_register($wp_customize) {
 		'priority'	=> null,
 		'panel' => 'advance_pet_care_panel_id',
 	));
-
+	
 	$wp_customize->add_setting('advance_pet_care_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',

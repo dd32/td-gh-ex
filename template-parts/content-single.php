@@ -7,9 +7,9 @@
  * @since advance-pet-care 1.0
  */
 ?>  
-<div class="page-box-single">
+<article class="page-box-single">
     <div class="box-img">
-        <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+        <?php the_post_thumbnail(); ?>
     </div>
     <div class="new-text">
         <h3><?php the_title();?></h3>
@@ -21,4 +21,4 @@
         <p><?php the_content();?></p>
     </div>
     <div class="clearfix"></div>
-</div>
+</article>

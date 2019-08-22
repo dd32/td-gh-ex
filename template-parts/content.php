@@ -6,10 +6,11 @@
  * @subpackage advance-pet-care
  * @since advance-pet-care 1.0
  */
-?>  
-<div class="page-box">
+?>
+
+<article class="page-box">
     <div class="box-img">
-        <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+        <?php the_post_thumbnail();?>
     </div>
     <div class="new-text">
         <h4><?php the_title();?></h4>
@@ -19,10 +20,10 @@
             <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
         </div>
         <p><?php the_excerpt();?></p>
-        <p><?php the_tags(); ?></p>     
+        <p><?php the_tags(); ?></p>
         <div class="read-more-btn">
-            <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-pet-care'); ?></a>
+            <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-pet-care' );?>"><?php echo esc_html_e('READ MORE','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-pet-care' );?></span></a>
         </div>
     </div>
     <div class="clearfix"></div>
-</div>
+</article>

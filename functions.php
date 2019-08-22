@@ -280,7 +280,7 @@ define('ADVANCE_PET_CARE_CREDIT', 'https://www.themeshopy.com/themes/free-pet-wo
 
 if (!function_exists('advance_pet_care_credit')) {
 	function advance_pet_care_credit() {
-		echo "<a href=".esc_url(ADVANCE_PET_CARE_CREDIT)." target='_blank'>".esc_html__('Pet WordPress Theme', 'advance-pet-care')."</a>";
+		echo "<a href=".esc_url(ADVANCE_PET_CARE_CREDIT)." target='_blank' alt='".esc_html__('Pet WordPress Theme','advance-pet-care')."''>".esc_html__('Pet WordPress Theme', 'advance-pet-care')."</a>";
 	}
 }
 

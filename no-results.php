@@ -7,6 +7,7 @@
  * @package advance-pet-care
  */
 ?>
+
 <header>
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-pet-care' ); ?></h1>
 </header>
@@ -20,6 +21,6 @@
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-pet-care' ); ?></p><br />
 		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-pet-care' ); ?></a>
+			<a href="<?php echo esc_url(home_url()); ?>" alt="<?php esc_html_e( 'Go Back', 'advance-pet-care' ); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-pet-care' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-pet-care' ); ?></span></a>
 		</div>
 <?php endif; ?>

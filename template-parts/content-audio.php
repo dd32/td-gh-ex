@@ -10,13 +10,12 @@
 <?php
   $content = apply_filters( 'the_content', get_the_content() );
   $audio = false;
-
   // Only get audio from the content if a playlist isn't present.
   if ( false === strpos( $content, 'wp-playlist-script' ) ) {
     $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
   }
-?> 
-<div class="page-box">
+?>
+<article class="page-box">
   <div class="box-img">
     <?php
       if ( ! is_single() ) {
@@ -41,8 +40,8 @@
     <p><?php the_excerpt();?></p>
     <p><?php the_tags(); ?></p>     
     <div class="read-more-btn">
-      <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-pet-care'); ?></a>
+      <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-pet-care' );?>"><?php echo esc_html_e('READ MORE','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-pet-care' );?></span></a>
     </div>
   </div>
   <div class="clearfix"></div>
-</div>
+</article>
