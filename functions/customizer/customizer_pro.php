@@ -17,7 +17,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     }
 }
 $wp_customize->add_section( 'corpbiz_pro_section' , array(
-		'title'      => __('Upgrade to pro','corpbiz'),
+		'title'      => __('Important Links','corpbiz'),
 		'priority'   => 1000,
    	) );
 

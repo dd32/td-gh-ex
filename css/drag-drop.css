@@ -1,4 +1,4 @@
-#accordion-section-appointment_pro_section h3
+#accordion-section-corpbiz_pro_section h3
 {background-color: #f5f5f5!important;
 color:#555 !important;
 font-size:14px !important;
@@ -109,6 +109,9 @@ list-style-type: none;
  
  li#accordion-section-corpbiz_pro_section h3.accordion-section-title{ background-color: #66d1b9; color:#fff;}
  
+ #accordion-section-corpbiz_pro_section h3:hover {
+    color: #0073aa !important;
+}
  .course{
   background-color: #0d6db8;
   border-color: #ef9c28;

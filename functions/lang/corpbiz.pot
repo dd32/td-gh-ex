@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Corpbiz\n"
-"POT-Creation-Date: 2018-07-31 18:55+0530\n"
+"POT-Creation-Date: 2019-08-22 18:39+0530\n"
 "PO-Revision-Date: 2018-07-31 18:26+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -107,15 +107,15 @@ msgstr ""
 msgid "Posted by"
 msgstr ""
 
-#: functions.php:54
+#: functions.php:50
 msgid "Page"
 msgstr ""
 
-#: functions.php:65
+#: functions.php:66
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:67
 msgid "Footer Menu"
 msgstr ""
 
@@ -148,179 +148,145 @@ msgstr ""
 msgid "JOIN COURSE"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:8
-msgid "Template settings"
+#: functions/customizer/customizer-pro-feature.php:13
+#: functions/customizer/customizer-pro-feature.php:17
+#: functions/customizer/customizer-pro-feature.php:21
+#: functions/customizer/customizer-pro-feature.php:25
+#: functions/customizer/customizer-pro-feature.php:29
+#: functions/customizer/customizer-pro-feature.php:33
+#: functions/customizer/customizer-pro-feature.php:37
+#: functions/customizer/customizer-pro-feature.php:41
+#: functions/customizer/customizer-pro-feature.php:45
+#: functions/customizer/customizer-pro-feature.php:49
+#: functions/customizer/customizer-pro-feature.php:53
+#: functions/customizer/customizer-pro-feature.php:57
+#: functions/customizer/customizer-pro-feature.php:61
+msgid "PRO"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:15
-msgid "About us page setting"
+#: functions/customizer/customizer-pro-feature.php:14
+msgid "Advance Theme Style Settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:30
-msgid "Want to add about page template than upgrade to pro"
+#: functions/customizer/customizer-pro-feature.php:18
+msgid "Slider Settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:33
-#: functions/customizer/customizer-template.php:176
-#: functions/customizer/customizer-template.php:288
-#: functions/customizer/customizer-template.php:348
-#: functions/customizer/customizer_home_page.php:278
-#: functions/customizer/customizer_home_page.php:867
-#: functions/customizer/customizer_home_page.php:909
-#: functions/customizer/customizer_home_page.php:1265
-#: functions/customizer/customizer_home_page.php:1306
-#: functions/customizer/customizer_home_page.php:1428
-#: functions/customizer/customizer_home_page.php:1782
-#: functions/customizer/customizer_layout_manager.php:66
-#: functions/customizer/customizer_pro.php:13
-#: functions/customizer/customizer_pro.php:20
-#: functions/customizer/customizer_texonomy_archive.php:33
-#: functions/customizer/customizer_theme_style.php:43
-#: functions/customizer/customizer_typography.php:33
-msgid "Upgrade to pro"
+#: functions/customizer/customizer-pro-feature.php:22
+msgid "Create unlimited Services"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:66
-#: functions/customizer/customizer-template.php:210
-msgid "Hide service section"
+#: functions/customizer/customizer-pro-feature.php:26
+msgid "Project Slider Settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:85
-msgid "Hide team section"
+#: functions/customizer/customizer-pro-feature.php:30
+msgid "Portfolio Management"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:94
-msgid "Our staff"
+#: functions/customizer/customizer-pro-feature.php:34
+msgid "Client Section"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:101
-msgid "Team section title"
+#: functions/customizer/customizer-pro-feature.php:38
+msgid "Theme Support Section"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:114
-msgid "Click here to add team member"
+#: functions/customizer/customizer-pro-feature.php:42
+msgid "Footer Callout Settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:146
-#: functions/customizer/customizer-template.php:245
-msgid "Hide client section"
+#: functions/customizer/customizer-pro-feature.php:46
+msgid "Typography settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:157
-msgid "Service page setting"
+#: functions/customizer/customizer-pro-feature.php:50
+msgid "Taxonomy Archive Portfolio Settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:172
-msgid "Want to add service page template than upgrade to pro"
+#: functions/customizer/customizer-pro-feature.php:54
+msgid "Template Settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:228
-msgid "Hide project slider section"
+#: functions/customizer/customizer-pro-feature.php:58
+msgid "Section Reordering"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:263
-msgid "Hide footer callout section"
+#: functions/customizer/customizer-pro-feature.php:62
+msgid "Quality Support"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:272
-msgid "Blog page setting"
+#: functions/customizer/customizer-pro-feature.php:65
+msgid "UPGRADE TO PRO"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:285
-msgid "Want to add blog page template than upgrade to pro"
+#: functions/customizer/customizer-pro-feature.php:72
+msgid "View PRO Details"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:322
-msgid "Enable blog meta"
+#: functions/customizer/customizer-pro-feature.php:99
+msgid ""
+"Select among predefined color skins, you can even create yours without "
+"writing any CSS code."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:331
-msgid "Contact page setting"
+#: functions/customizer/customizer-pro-feature.php:102
+msgid ""
+"Pro version theme comes with add multiple slides in slider and you can "
+"select the slider enable / disable option, slider animation etc."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:344
-msgid "Want to add contact page template than upgrade to pro"
+#: functions/customizer/customizer-pro-feature.php:105
+msgid ""
+"Add as many services you like. You can even display all the services on a "
+"separate page and manage the how many services shown on frontpage."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:371 theme_setup_data.php:178
-msgid "Contact us"
+#: functions/customizer/customizer-pro-feature.php:108
+msgid "Show all your projects details in slider format on the frontpage"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:378
-msgid "Contact us text"
+#: functions/customizer/customizer-pro-feature.php:111
+msgid "Portfolio section, templates , archives with 3 possible layouts."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:395
-msgid "Enable contact info in contact page"
+#: functions/customizer/customizer-pro-feature.php:114
+msgid ""
+"Show all your clients and manage number of clients showing on the frontpage."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:403 theme_setup_data.php:176
-msgid "Contact info"
+#: functions/customizer/customizer-pro-feature.php:117
+msgid "Pro version theme comes with Theme Support Section."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:410
-#: functions/customizer/customizer_home_page.php:195
-#: functions/customizer/customizer_home_page.php:471
-#: functions/customizer/customizer_home_page.php:559
-#: functions/customizer/customizer_home_page.php:649
-#: functions/customizer/customizer_home_page.php:742
-#: functions/customizer/customizer_home_page.php:832
-#: functions/customizer/customizer_home_page.php:965
-#: functions/customizer/customizer_home_page.php:1337
-#: functions/customizer/customizer_home_page.php:1470
-#: functions/customizer/customizer_home_page.php:1515
-#: functions/customizer/customizer_home_page.php:1604
-#: functions/customizer/customizer_home_page.php:1694
-#: functions/customizer/customizer_home_page.php:1813
-#: functions/customizer/customizer_home_page.php:1899
-msgid "Title"
+#: functions/customizer/customizer-pro-feature.php:120
+msgid ""
+"In footer callout settings you can manage the title. description and button "
+"text."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:426
-#: functions/customizer/customizer_home_page.php:209
-#: functions/customizer/customizer_home_page.php:340
-#: functions/customizer/customizer_home_page.php:488
-#: functions/customizer/customizer_home_page.php:577
-#: functions/customizer/customizer_home_page.php:667
-#: functions/customizer/customizer_home_page.php:760
-#: functions/customizer/customizer_home_page.php:850
-#: functions/customizer/customizer_home_page.php:979
-#: functions/customizer/customizer_home_page.php:1352
-#: functions/customizer/customizer_home_page.php:1485
-#: functions/customizer/customizer_home_page.php:1530
-#: functions/customizer/customizer_home_page.php:1619
-#: functions/customizer/customizer_home_page.php:1709
-#: functions/customizer/customizer_home_page.php:1828
-#: functions/customizer/customizer_home_page.php:1912
-msgid "Description"
+#: functions/customizer/customizer-pro-feature.php:123
+msgid ""
+"Typography will helps you to manage custom fonts like paragraph font, menu "
+"font etc."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:445
-msgid "Address one"
+#: functions/customizer/customizer-pro-feature.php:126
+msgid ""
+"Manage the portfolio category page layout like 2c/3c/4c using taxonomy "
+"archive portfolio settings"
 msgstr ""
 
-#: functions/customizer/customizer-template.php:461
-msgid "Address two"
+#: functions/customizer/customizer-pro-feature.php:129
+msgid "Theme comes with multiple page settings like about us, service, etc."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:477
-msgid "Phone"
+#: functions/customizer/customizer-pro-feature.php:132
+msgid "Theme Layout manager will helps you to rearrange the sections."
 msgstr ""
 
-#: functions/customizer/customizer-template.php:493
-msgid "Email"
-msgstr ""
-
-#: functions/customizer/customizer-template.php:512
-msgid "Enable Google map in contact page"
-msgstr ""
-
-#: functions/customizer/customizer-template.php:527
-msgid "Google map URL"
-msgstr ""
-
-#: functions/customizer/customizer-template.php:547
-msgid "Hide footer contact callout section"
+#: functions/customizer/customizer-pro-feature.php:135
+msgid "Dedicated support, various widget and sidebar management."
 msgstr ""
 
 #: functions/customizer/customizer_footer_customization.php:11
@@ -383,18 +349,37 @@ msgstr ""
 msgid "Built your website"
 msgstr ""
 
+#: functions/customizer/customizer_home_page.php:195
+#: functions/customizer/customizer_home_page.php:440
+#: functions/customizer/customizer_home_page.php:528
+#: functions/customizer/customizer_home_page.php:618
+#: functions/customizer/customizer_home_page.php:711
+#: functions/customizer/customizer_home_page.php:801
+#: functions/customizer/customizer_home_page.php:862
+#: functions/customizer/customizer_home_page.php:1168
+msgid "Title"
+msgstr ""
+
 #: functions/customizer/customizer_home_page.php:203 theme_setup_data.php:37
 msgid ""
 "Corpbiz is extremely clean in each code line, intensely awesome in very "
 "homepage, supper easy to use, highly flexible with responsive feature."
 msgstr ""
 
+#: functions/customizer/customizer_home_page.php:209
+#: functions/customizer/customizer_home_page.php:309
+#: functions/customizer/customizer_home_page.php:457
+#: functions/customizer/customizer_home_page.php:546
+#: functions/customizer/customizer_home_page.php:636
+#: functions/customizer/customizer_home_page.php:729
+#: functions/customizer/customizer_home_page.php:819
+#: functions/customizer/customizer_home_page.php:876
+#: functions/customizer/customizer_home_page.php:1181
+msgid "Description"
+msgstr ""
+
 #: functions/customizer/customizer_home_page.php:217
-#: functions/customizer/customizer_home_page.php:348
-#: functions/customizer/customizer_home_page.php:1539
-#: functions/customizer/customizer_home_page.php:1628
-#: functions/customizer/customizer_home_page.php:1718
-#: functions/customizer/customizer_home_page.php:1837
+#: functions/customizer/customizer_home_page.php:317
 #: functions/excerpt/excerpt.php:14 theme_setup_data.php:38
 #: theme_setup_data.php:50 theme_setup_data.php:135 theme_setup_data.php:142
 #: theme_setup_data.php:149 theme_setup_data.php:163
@@ -402,290 +387,167 @@ msgid "Read More"
 msgstr ""
 
 #: functions/customizer/customizer_home_page.php:227
-#: functions/customizer/customizer_home_page.php:354
-#: functions/customizer/customizer_home_page.php:396
-#: functions/customizer/customizer_home_page.php:1545
-#: functions/customizer/customizer_home_page.php:1634
-#: functions/customizer/customizer_home_page.php:1724
-#: functions/customizer/customizer_home_page.php:1843
+#: functions/customizer/customizer_home_page.php:323
+#: functions/customizer/customizer_home_page.php:365
 msgid "Button Text"
 msgstr ""
 
 #: functions/customizer/customizer_home_page.php:244
-#: functions/customizer/customizer_home_page.php:382
-#: functions/customizer/customizer_home_page.php:424
-#: functions/customizer/customizer_home_page.php:1574
-#: functions/customizer/customizer_home_page.php:1664
-#: functions/customizer/customizer_home_page.php:1754
-#: functions/customizer/customizer_home_page.php:1872
+#: functions/customizer/customizer_home_page.php:351
+#: functions/customizer/customizer_home_page.php:393
 msgid "Button Link"
 msgstr ""
 
 #: functions/customizer/customizer_home_page.php:261
-#: functions/customizer/customizer_home_page.php:368
-#: functions/customizer/customizer_home_page.php:410
-#: functions/customizer/customizer_home_page.php:542
-#: functions/customizer/customizer_home_page.php:632
-#: functions/customizer/customizer_home_page.php:724
-#: functions/customizer/customizer_home_page.php:814
-#: functions/customizer/customizer_home_page.php:1045
-#: functions/customizer/customizer_home_page.php:1111
-#: functions/customizer/customizer_home_page.php:1179
-#: functions/customizer/customizer_home_page.php:1248
-#: functions/customizer/customizer_home_page.php:1560
-#: functions/customizer/customizer_home_page.php:1649
-#: functions/customizer/customizer_home_page.php:1739
-#: functions/customizer/customizer_home_page.php:1858
+#: functions/customizer/customizer_home_page.php:337
+#: functions/customizer/customizer_home_page.php:379
+#: functions/customizer/customizer_home_page.php:511
+#: functions/customizer/customizer_home_page.php:601
+#: functions/customizer/customizer_home_page.php:693
+#: functions/customizer/customizer_home_page.php:783
+#: functions/customizer/customizer_home_page.php:942
+#: functions/customizer/customizer_home_page.php:1008
+#: functions/customizer/customizer_home_page.php:1076
+#: functions/customizer/customizer_home_page.php:1145
 msgid "Open link in new tab"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:275
-msgid "Add more slider than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:299
+#: functions/customizer/customizer_home_page.php:268
 msgid "Siteinfo setting"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:312
+#: functions/customizer/customizer_home_page.php:281
 msgid "Title One"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:320 theme_setup_data.php:48
+#: functions/customizer/customizer_home_page.php:289 theme_setup_data.php:48
 msgid "Sample pages"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:326
+#: functions/customizer/customizer_home_page.php:295
 msgid "Title Two"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:390 theme_setup_data.php:52
+#: functions/customizer/customizer_home_page.php:359 theme_setup_data.php:52
 msgid "View portfolio"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:433
+#: functions/customizer/customizer_home_page.php:402
 msgid "Service settings"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:453
+#: functions/customizer/customizer_home_page.php:422
 msgid "Enable service section on homepage."
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:462 theme_setup_data.php:76
+#: functions/customizer/customizer_home_page.php:431 theme_setup_data.php:76
 msgid "Our nice services"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:506
-#: functions/customizer/customizer_home_page.php:596
-#: functions/customizer/customizer_home_page.php:686
-#: functions/customizer/customizer_home_page.php:778
-#: functions/customizer/customizer_home_page.php:1500
-#: functions/customizer/customizer_home_page.php:1589
-#: functions/customizer/customizer_home_page.php:1679
+#: functions/customizer/customizer_home_page.php:475
+#: functions/customizer/customizer_home_page.php:565
+#: functions/customizer/customizer_home_page.php:655
+#: functions/customizer/customizer_home_page.php:747
 msgid "Icon"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:525
-#: functions/customizer/customizer_home_page.php:615
-#: functions/customizer/customizer_home_page.php:706
-#: functions/customizer/customizer_home_page.php:797
+#: functions/customizer/customizer_home_page.php:494
+#: functions/customizer/customizer_home_page.php:584
+#: functions/customizer/customizer_home_page.php:675
+#: functions/customizer/customizer_home_page.php:766
 msgid "Link"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:550 theme_setup_data.php:83
+#: functions/customizer/customizer_home_page.php:519 theme_setup_data.php:83
 msgid "Responsive design"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:640 theme_setup_data.php:89
+#: functions/customizer/customizer_home_page.php:609 theme_setup_data.php:89
 msgid "Power full admin"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:733 theme_setup_data.php:95
+#: functions/customizer/customizer_home_page.php:702 theme_setup_data.php:95
 msgid "Great support"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:823 theme_setup_data.php:101
+#: functions/customizer/customizer_home_page.php:792 theme_setup_data.php:101
 msgid "Clean minimal design"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:864
-msgid "Want to add more service than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:892
-msgid "Project slider settings"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:906
-msgid "Want to add project slider than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:932
+#: functions/customizer/customizer_home_page.php:829
 msgid "Portfolio settings"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:951
+#: functions/customizer/customizer_home_page.php:848
 msgid "Enable portfolio section on homepage"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:959 theme_setup_data.php:66
+#: functions/customizer/customizer_home_page.php:856 theme_setup_data.php:66
 msgid "Our work speaks thousand words"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:973 theme_setup_data.php:67
+#: functions/customizer/customizer_home_page.php:870 theme_setup_data.php:67
 msgid ""
 "We have successfully completed over 2500 projects in mobile and web. Here "
 "are few of them."
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:987
-#: functions/customizer/customizer_home_page.php:993 theme_setup_data.php:107
+#: functions/customizer/customizer_home_page.php:884
+#: functions/customizer/customizer_home_page.php:890 theme_setup_data.php:107
 msgid "Portfolio one"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1006
-#: functions/customizer/customizer_home_page.php:1072
-#: functions/customizer/customizer_home_page.php:1140
-#: functions/customizer/customizer_home_page.php:1209
+#: functions/customizer/customizer_home_page.php:903
+#: functions/customizer/customizer_home_page.php:969
+#: functions/customizer/customizer_home_page.php:1037
+#: functions/customizer/customizer_home_page.php:1106
 msgid "Image"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1028
-#: functions/customizer/customizer_home_page.php:1094
-#: functions/customizer/customizer_home_page.php:1162
-#: functions/customizer/customizer_home_page.php:1231
+#: functions/customizer/customizer_home_page.php:925
+#: functions/customizer/customizer_home_page.php:991
+#: functions/customizer/customizer_home_page.php:1059
+#: functions/customizer/customizer_home_page.php:1128
 msgid "Icon Link"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1054
-#: functions/customizer/customizer_home_page.php:1060 theme_setup_data.php:112
+#: functions/customizer/customizer_home_page.php:951
+#: functions/customizer/customizer_home_page.php:957 theme_setup_data.php:112
 msgid "Portfolio two"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1119
-#: functions/customizer/customizer_home_page.php:1125 theme_setup_data.php:117
+#: functions/customizer/customizer_home_page.php:1016
+#: functions/customizer/customizer_home_page.php:1022 theme_setup_data.php:117
 msgid "Portfolio three"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1188
-#: functions/customizer/customizer_home_page.php:1194 theme_setup_data.php:122
+#: functions/customizer/customizer_home_page.php:1085
+#: functions/customizer/customizer_home_page.php:1091 theme_setup_data.php:122
 msgid "Portfolio four"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1261
-msgid "Want to add more portfolios and categorization than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1289
-msgid "Client settings"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1303
-msgid "Want to add client than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1331
-msgid "What our clients says"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1367
-msgid "Number of client on client section"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1383
-msgid "Click here to add client"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1410
-msgid "Theme support settings"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1425
-msgid "Want to add theme support setting section than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1456
-msgid "Background Image"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1464 theme_setup_data.php:128
-msgid "We are here to help you"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1479 theme_setup_data.php:129
-msgid "24+7 hours support by us"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1509 theme_setup_data.php:133
-msgid "Need Support"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1598 theme_setup_data.php:140
-msgid "Check our forum"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1688 theme_setup_data.php:147
-msgid "Get updated"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1764
-msgid "Footer callout"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1779
-msgid "Want to add footer callout than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1807 theme_setup_data.php:161
-msgid "Get your app ideas transformed into reality"
-msgstr ""
-
-#: functions/customizer/customizer_home_page.php:1884
+#: functions/customizer/customizer_home_page.php:1153
 msgid "Blog settings"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1893 theme_setup_data.php:156
+#: functions/customizer/customizer_home_page.php:1162 theme_setup_data.php:156
 msgid "From blog"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1928
+#: functions/customizer/customizer_home_page.php:1197
 msgid "Select category for latest blog"
 msgstr ""
 
-#: functions/customizer/customizer_home_page.php:1945
+#: functions/customizer/customizer_home_page.php:1214
 msgid "Select number of post"
 msgstr ""
 
-#: functions/customizer/customizer_layout_manager.php:18
-#: functions/customizer/customizer_layout_manager.php:111
-msgid "Enable"
+#: functions/customizer/customizer_pro.php:13
+msgid "Upgrade to pro"
 msgstr ""
 
-#: functions/customizer/customizer_layout_manager.php:26
-msgid "Disable"
-msgstr ""
-
-#: functions/customizer/customizer_layout_manager.php:33
-msgid "Slider section always top on the home page"
-msgstr ""
-
-#: functions/customizer/customizer_layout_manager.php:34
-msgid "Note"
-msgstr ""
-
-#: functions/customizer/customizer_layout_manager.php:34
-msgid ""
-"By default all the section are enable on homepage. If you do not want to "
-"display any section just drag that section to the disabled box."
-msgstr ""
-
-#: functions/customizer/customizer_layout_manager.php:42
-#: functions/customizer/customizer_layout_manager.php:47
-msgid "Theme layout manager"
-msgstr ""
-
-#: functions/customizer/customizer_layout_manager.php:62
-msgid "Use homepage layout section setting drag & drop than upgrade to pro"
+#: functions/customizer/customizer_pro.php:20
+msgid "Important Links"
 msgstr ""
 
 #: functions/customizer/customizer_pro.php:46
@@ -704,114 +566,6 @@ msgid ""
 "make effective about us page, have to introduce team members, etc etc . The "
 "pro version will give it all. Buy the pro version and give us a chance to "
 "serve you better."
-msgstr ""
-
-#: functions/customizer/customizer_texonomy_archive.php:11
-#: functions/customizer/customizer_texonomy_archive.php:16
-msgid "Texonomy archive portfolio"
-msgstr ""
-
-#: functions/customizer/customizer_texonomy_archive.php:29
-msgid "Add taxonomy portfolio category template than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_texonomy_archive.php:63
-msgid "Number of taxonomy archive portfolio"
-msgstr ""
-
-#: functions/customizer/customizer_theme_style.php:27
-msgid "Theme style setting"
-msgstr ""
-
-#: functions/customizer/customizer_theme_style.php:40
-msgid "Use below default color skin & custom color skin than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_theme_style.php:74
-msgid "Predefined colors"
-msgstr ""
-
-#: functions/customizer/customizer_theme_style.php:104
-msgid "Skin color enable"
-msgstr ""
-
-#: functions/customizer/customizer_theme_style.php:123
-msgid "Skin color"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:11
-msgid "Typography settings"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:16
-msgid "Typography Enable / Disable"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:29
-msgid ""
-"Use typography to chnage font size, font family etc. than upgrade to pro"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:63
-msgid "Enable custom typography"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:82
-msgid "General paragraph"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:96
-#: functions/customizer/customizer_typography.php:152
-#: functions/customizer/customizer_typography.php:209
-#: functions/customizer/customizer_typography.php:264
-#: functions/customizer/customizer_typography.php:319
-#: functions/customizer/customizer_typography.php:375
-#: functions/customizer/customizer_typography.php:431
-msgid "Font size"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:113
-#: functions/customizer/customizer_typography.php:169
-#: functions/customizer/customizer_typography.php:226
-#: functions/customizer/customizer_typography.php:281
-#: functions/customizer/customizer_typography.php:336
-#: functions/customizer/customizer_typography.php:392
-#: functions/customizer/customizer_typography.php:448
-msgid "Font family"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:129
-#: functions/customizer/customizer_typography.php:185
-#: functions/customizer/customizer_typography.php:241
-#: functions/customizer/customizer_typography.php:296
-#: functions/customizer/customizer_typography.php:352
-#: functions/customizer/customizer_typography.php:408
-#: functions/customizer/customizer_typography.php:464
-msgid "Font style"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:138
-msgid "Menu"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:195
-msgid "Post Title"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:250
-msgid "Service Title"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:305
-msgid "Widget Title"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:361
-msgid "Callout Title"
-msgstr ""
-
-#: functions/customizer/customizer_typography.php:417
-msgid "Callout Description"
 msgstr ""
 
 #: functions/widget/custom-sidebar.php:7 functions/widget/custom-sidebar.php:9
@@ -861,12 +615,44 @@ msgstr ""
 msgid "Tag Archive %s"
 msgstr ""
 
+#: theme_setup_data.php:128
+msgid "We are here to help you"
+msgstr ""
+
+#: theme_setup_data.php:129
+msgid "24+7 hours support by us"
+msgstr ""
+
+#: theme_setup_data.php:133
+msgid "Need Support"
+msgstr ""
+
+#: theme_setup_data.php:140
+msgid "Check our forum"
+msgstr ""
+
+#: theme_setup_data.php:147
+msgid "Get updated"
+msgstr ""
+
+#: theme_setup_data.php:161
+msgid "Get your app ideas transformed into reality"
+msgstr ""
+
 #: theme_setup_data.php:170
 msgid "What our clients say"
 msgstr ""
 
 #: theme_setup_data.php:171
 msgid "lets see what we hear from our valuable clients"
+msgstr ""
+
+#: theme_setup_data.php:176
+msgid "Contact info"
+msgstr ""
+
+#: theme_setup_data.php:178
+msgid "Contact us"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -883,4 +669,12 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://webriti.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Fullwidth"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page"
 msgstr ""

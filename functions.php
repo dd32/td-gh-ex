@@ -13,13 +13,9 @@
 	
 	// Adding customizer files
 	//require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_home_page.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_home_page.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_typography.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_footer_customization.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_texonomy_archive.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_layout_manager.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro.php');
 	
@@ -55,6 +51,11 @@
 		return $title;
 	}	
 	add_filter( 'wp_title', 'webriti_head', 10, 2);
+
+	function corpbiz_customizer_css() {
+		wp_enqueue_style( 'corpbiz-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	}
+	add_action( 'admin_init', 'corpbiz_customizer_css' );
 	
 	add_action( 'after_setup_theme', 'webriti_setup' ); 	
 	function webriti_setup()
@@ -71,7 +72,6 @@
 		
 		//Add Title Tag Support
 		add_theme_support( 'title-tag' );
-
 		
 	} 
 	function add_to_author_profile( $contactmethods ) {
