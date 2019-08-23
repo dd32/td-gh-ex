@@ -38,5 +38,20 @@ function graphene_customizer_advanced_options( $wp_customize ){
 	) ) );
 
 
+	/* =Scripts
+	--------------------------------------------------------------------------------------*/
+	$wp_customize->add_section( 'graphene-advanced-scripts', array(
+		'title'	=> __( 'Scripts Options', 'graphene' ),
+		'panel'	=> 'graphene-advanced',
+	) );
+
+	$wp_customize->add_control( 'graphene_settings[host_scripts_locally]', array(
+		'type' 		=> 'checkbox',
+		'section' 	=> 'graphene-advanced-scripts',
+		'label' 	=> __( 'Host theme fonts and scripts locally', 'graphene' ),
+		'priority'	=> 1,
+	) );
+
+
 	do_action( 'graphene_customizer_advanced_options', $wp_customize );
 }

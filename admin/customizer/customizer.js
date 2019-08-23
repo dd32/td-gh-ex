@@ -337,7 +337,7 @@ jQuery(document).ready(function ($) {
 
 		html = '<li class="graphene-social-profile graphene-sortable ui-sortable-handle">\
                     <span class="customize-control-title">\<i class="fa fa-' + profileType + '"></i>' + profileType + '</span>\
-                	<input type="hidden" name="social-profile-data" data-type="' + profileType + '" data-name="' + profileType + '" data-title="' + profileType + '" data-url="' + profileUrl + '" data-icon-url="' + profileIconUrl + '" data-icon-name="' + profileIconName + '">\
+                	<input type="hidden" name="social-profile-data" data-type="' + profileType + '" data-name="' + profileType + '" data-title="' + profileDesc + '" data-url="' + profileUrl + '" data-icon-url="' + profileIconUrl + '" data-icon-name="' + profileIconName + '">\
                     <div class="inline-field">\
                     	<label>Description</label>\
                     	<input type="text" data-key="title" value="' + profileDesc + '">\

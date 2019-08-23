@@ -496,7 +496,7 @@ function graphene_get_best_post_image( $post_id = '', $size = 'thumbnail' ){
 		foreach ( $media as $image ) {
 			$image_id = $image->ID;
 			$image = wp_get_attachment_image_src( $image_id, $size );
-			if ( $image ) {
+			if ( $image && $image[1] && $image[2] ) {
 				$images[] = array(
 					'id'			=> $image_id,
 					'featured'		=> false,
@@ -1253,7 +1253,7 @@ function graphene_column_mode( $post_id = NULL ){
 	
     /* Switch to one-column mode if wide- or full-width block in used in content */
     $is_wide = false;
-    if ( $post || $post_id ) {
+    if ( is_singular() && ( $post || $post_id ) ) {
     	if ( ! $post ) $post = get_post( $post_id );
     	if ( stripos( $post->post_content, 'alignwide' ) !== false || stripos( $post->post_content, 'alignfull' ) !== false ) {
 	    	$column_mode = 'one_column';

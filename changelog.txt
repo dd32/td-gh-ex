@@ -4,6 +4,13 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.6.4
+	* Fixed: Description text for custom social profile icon ignored when the custom profile is first added
+	* Fixed: HTML tags and continue reading button appearing in links shared on Facebook
+	* Fixed: Auto layout switch when using wide or full-width blocks can sometimes be triggered on the blog listing page
+	* Fixed: Error importing theme options due to WP recognizing the import file as text/html
+	* Fixed: Division by zero error in loop.php
+
 Version 2.6.3
 	* Added: append.infinitescroll event 
 	* Added: wp_body_open() function call

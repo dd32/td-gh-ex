@@ -290,6 +290,7 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 	/* Advanced options */
 	'widget_hooks' 				=> array(),
 	'head_tags'					=> '',
+	'host_scripts_locally'		=> false,
 
 	/* Utilities */
 	'reset_settings'			=> false,

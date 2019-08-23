@@ -163,6 +163,71 @@ function graphene_google_fonts_uri(){
 
 
 /**
+ * Load Google Fonts locally
+ */
+function graphene_google_fonts_local( $fonts ){
+	global $graphene_settings;
+	if ( ! $graphene_settings['host_scripts_locally'] ) return;
+
+	/* Get supplied local fonts */
+	$local_fonts = apply_filters( 'graphene_local_fonts', array(
+		'Lato' => '400,400i,700,700i',
+	) );
+
+	$fonts['family'] = str_replace( 'regular', '400', $fonts['family'] );
+	$fonts['family'] = str_replace( 'italic', 'i', $fonts['family'] );
+	$fonts['family'] = str_replace( ',i', ',400i', $fonts['family'] );
+
+	/* Print scripts for locally-hosted fonts */
+	$css = '';
+	$font_families = explode( '|', $fonts['family'] );
+	foreach ( $font_families as $i => $font ) {
+		$font = explode( ':', $font );
+		$family = $font[0];
+		$variants = $font[1];
+
+		if ( isset( $local_fonts[$family] ) && $local_fonts[$family] == $variants ) {
+			unset( $font_families[$i] );
+			foreach ( explode( ',', $variants ) as $variant ) {
+
+				$style = ( stripos( $variant, 'i' ) === 3 ) ? 'italic' : 'normal';
+				$weight = str_replace( 'i', '', $variant );
+				
+				$name = $family;
+				if ( $weight == 700 ) $name .= ' Bold';
+				if ( $style == 'italic' ) $name .= ' Italic';
+				if ( $weight == 400 && $style == 'normal' ) $name .= ' Regular';
+				$name_hyphened = str_replace( ' ', '-', $name );
+
+				$filename = GRAPHENE_ROOTURI . '/fonts/' . $family . '/' . $family . '-';
+				if ( $weight == 700 ) $filename .= 'Bold';
+				if ( $style == 'italic' ) $filename .= 'Italic';
+				if ( $weight == 400 && $style == 'normal' ) $filename .= 'Regular';
+				$filename .= '.woff2';
+
+				$css .= "@font-face {
+						  	font-family: '$family';
+							font-style: $style;
+							font-weight: $weight;
+							src: local('$name'), local('$name_hyphened'), url($filename) format('woff2');
+unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+						}";
+			}
+		}
+	}
+
+	/* Print the stylesheet */
+	if ( $css ) echo '<style type="text/css">' . "\n" . graphene_minify_css( apply_filters( 'graphene_local_fonts_style', $css ) ) . "\n" . '</style>' . "\n";
+
+	/* Load locally-unavailable fonts from Google */
+	$fonts['family'] = implode( ',', $font_families );
+	return $fonts;
+
+}
+add_filter( 'graphene_google_fonts', 'graphene_google_fonts_local', 20 );
+
+
+/**
  * Ensure correct ordering of stylesheets when using a child theme
  * @since Graphene 2.0.3
  */

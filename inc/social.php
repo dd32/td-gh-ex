@@ -93,10 +93,13 @@ function graphene_print_open_graph(){
 		'og:site_name'		=> get_bloginfo( 'blog_name' ),
 	);
 
-	$excerpt = apply_filters( 'the_excerpt', $post->post_excerpt );
+	remove_action( 'the_excerpt', 'graphene_manual_excerpt_more' );
+	$excerpt = strip_tags( apply_filters( 'the_excerpt', $post->post_excerpt ) );
+	add_action( 'the_excerpt', 'graphene_manual_excerpt_more' );
+
 	if ( ! $excerpt ) {
 		$excerpt = preg_replace("~(?:\[/?)[^/\]]+/?\]~s", '', $post->post_content);
-		$excerpt = wp_trim_words( strip_shortcodes( $excerpt ), 55, ' ...' );
+		$excerpt = wp_trim_words( strip_tags( strip_shortcodes( $excerpt ) ), 55, ' ...' );
 	}
 	$open_graph['og:description'] = $excerpt;
 

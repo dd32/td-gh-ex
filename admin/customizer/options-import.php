@@ -134,7 +134,9 @@ function graphene_import_file() {
 	if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
 	$file = $_FILES['graphene-import-file'];
 
+	add_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
 	$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/html' ) ) );
+	remove_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
 	if ( isset( $import_file['error'] ) ) wp_die( $import_file['error'] );
 
 	/* Get filesystem credentials to read the file */
@@ -162,4 +164,13 @@ function graphene_import_file() {
 	update_option( 'graphene_settings', $settings );
 	$graphene_settings = graphene_get_settings();
 }
-add_action( 'init', 'graphene_import_file' ); 
+add_action( 'init', 'graphene_import_file' );
+
+
+/**
+ * Temporarily allow text/html file type when importing settings
+ */
+function graphene_import_file_mime( $mimes, $user ){
+	$mimes['txt'] = 'text/html';
+	return $mimes;
+}
