@@ -243,44 +243,9 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'section' => 'project_settings',
 			'type' => 'text',
 		));
-		
-		
-		
-		//Upgrade to Pro
-		class WP_Projects_Customize_Control extends WP_Customize_Control {
-		public $type = 'new_menu';
-		/**
-		* Render the control's content.
-		*/
-		public function render_content() {
-		?>
-		 <div class="pro-vesrion">
-		 <P><?php _e('Want to add more projects and categorisations? Then upgrade to Pro.','rambo');?></P>
-		 </div>
-		  <div class="pro-box">
-		 <a href="<?php echo esc_url('http://webriti.com/rambo/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','rambo' ); ?></a>
-		 </div>
-		<?php
+		 function rambo_project_sanitize_html( $input ) {
+			return force_balance_tags( $input );
 		}
-		}
-
-		$wp_customize->add_setting(
-			'Projects_pro',
-			array(
-				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field',
-			)	
-		);
-		$wp_customize->add_control( new WP_Projects_Customize_Control( $wp_customize, 'Projects_pro', array(	
-				'section' => 'project_settings',
-				'setting' => 'Projects_pro',
-			))
-		); 
-				 
-				
-				 function rambo_project_sanitize_html( $input ) {
-					return force_balance_tags( $input );
-				}
 
 }
 add_action( 'customize_register', 'rambo_project_customizer' );

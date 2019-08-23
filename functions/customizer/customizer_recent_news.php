@@ -41,38 +41,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	'label'   => __('Title','rambo'),
 	'section' => 'news_settings',
 	 'type' => 'text',)  );
-	 
-	 
-	//Upgrade to Pro
-		class WP_recent_News_Customize_Control extends WP_Customize_Control {
-		public $type = 'new_menu';
-		/**
-		* Render the control's content.
-		*/
-		public function render_content() {
-		?>
-		 <div class="pro-vesrion">
-		 <P><?php _e('Want to use more settings? Then upgrade to Pro.','rambo');?></P>
-		 </div>
-		  <div class="pro-box">
-		 <a href="<?php echo esc_url('http://webriti.com/rambo/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','rambo' ); ?></a>
-		 </div>
-		<?php
-		}
-		}
-
-		$wp_customize->add_setting(
-			'Recent_news_pro',
-			array(
-				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field',
-			)	
-		);
-		$wp_customize->add_control( new WP_recent_News_Customize_Control( $wp_customize, 'Recent_news_pro', array(	
-				'section' => 'news_settings',
-				'setting' => 'Recent_news_pro',
-			))
-		); 
 }
 add_action( 'customize_register', 'customizer_recent_news_panel' );
 

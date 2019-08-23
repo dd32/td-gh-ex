@@ -133,6 +133,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.9
+Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 @version 1.8
 Update customizer and added upgrade to pro link. 
 @version 1.7.3.2

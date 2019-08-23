@@ -32,7 +32,7 @@
 	
 	
 	//Customizer
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_color.php' );
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro_feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_slider_panel.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_site_intro.php');
@@ -45,14 +45,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_emailcourse.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_team.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_shop.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_site_intro_bottom.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_client.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_template_settings.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_typography.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_layout.php' );
 	
 	
 	// Rambo Info Page
@@ -81,6 +74,11 @@
 		return $title;
 	}	
 	add_filter( 'wp_title', 'webriti_head', 10,2 );
+
+	function rambo_customizer_css() {
+		wp_enqueue_style( 'rambo-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	}
+	add_action( 'admin_init', 'rambo_customizer_css' );
 	
 		add_action( 'after_setup_theme', 'webriti_setup' ); 	
 		function webriti_setup()

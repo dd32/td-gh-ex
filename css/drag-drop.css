@@ -140,11 +140,9 @@ list-style-type: none;
 #accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
 #accordion-section-rambo_help_section .accordion-section-title, #accordion-section-rambo_help_section .accordion-section-title:hover  { background: #db2723 !important; color:#fff !important; }
 
-#accordion-section-rambo_help_section .accordion-section-title:after, #accordion-section-rambo_pro_section .accordion-section-title:after, 
+#accordion-section-rambo_help_section .accordion-section-title:after, 
 #accordion-section-rambo_email_course_section.accordion-section-title:after {color:#fff !important; }
 
-
-#accordion-section-rambo_pro_section .accordion-section-title, #accordion-section-rambo_pro_section .accordion-section-title:hover { background: #7aa228 !important; color:#fff !important; }
 
 .button.button-blue-secondary {
     background: #0085ba;
@@ -166,5 +164,6 @@ list-style-type: none;
 
 #accordion-section-rambo_email_course_section h3{ font-size: 14px;font-weight: 700;  background-color: #0d6db8 !important;border-color: #ef9c28;
 color: #fff !important;}
+ #accordion-section-rambo_email_course_section h3:after{ color: #fff !important; }
 .upsell-feature-list li{line-height: 24px;margin-bottom: 20px;font-size:14px; }
 .upsell-pro-badge{font-weight: bold;background: #a7a7a7;color: #fff;text-transform: uppercase;padding: 2px 6px 2px 7px;letter-spacing: .1px;font-size: 12px;border-radius: 3px;margin-right: 10px;}
