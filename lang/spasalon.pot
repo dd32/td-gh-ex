@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2018-08-01 12:55+0530\n"
+"POT-Creation-Date: 2019-08-23 14:26+0530\n"
 "PO-Revision-Date: 2018-08-01 12:55+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -100,7 +100,7 @@ msgid ""
 "It seems we can't find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: content.php:24 functions.php:213 functions.php:231
+#: content.php:24 functions.php:223 functions.php:241
 #: functions/widget/wbr-news-widget.php:108 index-news.php:88
 msgid "Read More"
 msgstr ""
@@ -109,11 +109,11 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:105
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:107
 msgid "Footer Menu"
 msgstr ""
 
@@ -330,13 +330,192 @@ msgstr ""
 msgid "JOIN COURSE"
 msgstr ""
 
+#: functions/customizer/customizer-pro-feature.php:13
+#: functions/customizer/customizer-pro-feature.php:17
+#: functions/customizer/customizer-pro-feature.php:21
+#: functions/customizer/customizer-pro-feature.php:25
+#: functions/customizer/customizer-pro-feature.php:29
+#: functions/customizer/customizer-pro-feature.php:33
+#: functions/customizer/customizer-pro-feature.php:37
+#: functions/customizer/customizer-pro-feature.php:41
+#: functions/customizer/customizer-pro-feature.php:45
+#: functions/customizer/customizer-pro-feature.php:49
+#: functions/customizer/customizer-pro-feature.php:53
+#: functions/customizer/customizer-pro-feature.php:57
+#: functions/customizer/customizer-pro-feature.php:61
+#: functions/customizer/customizer-pro-feature.php:65
+#: functions/customizer/customizer-pro-feature.php:69
+#: functions/customizer/customizer-pro-feature.php:73
+#: functions/customizer/customizer-pro-feature.php:77
+#: functions/customizer/customizer-pro-feature.php:81
+#: functions/customizer/customizer-pro-feature.php:85
+msgid "PRO"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:14
+msgid "Advance Theme Style Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:18
+msgid "Page Banner Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:22
+msgid "Slider Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:26
+msgid "Product Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:30
+msgid "Testimonial Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:34
+msgid "Latest News Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:38
+msgid "Team Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:42
+msgid "Gallery Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:46
+msgid "Client Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:50
+msgid "Callout Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:54
+msgid "Additional Section Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:58
+msgid "About us Page Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:62
+msgid "Service Page Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:66
+msgid "Contact Page Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:70
+msgid "Section Reordering"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:74
+msgid "Typography Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:78
+msgid "SEO Friendly URL Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:82
+msgid "Support for WPML / Polylang"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:86
+msgid "Quality Support"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:89
+msgid "UPGRADE TO PRO"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:96
+msgid "View PRO Details"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:123
+msgid ""
+"Select among predefined color skins, you can even create yours without "
+"writing any CSS code."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:126
+msgid ""
+"Using page banner settings manage page banner content and enable/disable "
+"page banner."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:129
+msgid ""
+"Pro version theme comes with add multiple slides in slider and you can "
+"select the slider enable / disable option, manage slider caption color etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:132
+msgid "Add multiple products and you can show product by category, etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:135
+msgid ""
+"Add multiple testimonials, show all your testimonials on the frontpage, "
+"change background of testimonial section, etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:138
+msgid "In Pro version you can show the latest news by category."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:141
+msgid ""
+"Show all your team members, gallery, clients and callout details on the "
+"frontpage."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:144
+msgid ""
+"Pro version comes with additional settings section, you can add content "
+"using widgets in this section."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:147
+msgid "Theme comes with about-us page, service page and contact page settings."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:150
+msgid "Theme Layout manager will helps you to rearrange the sections."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:153
+msgid ""
+"Typography will helps you to manage custom fonts like paragraph font, menu "
+"font etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:156
+msgid "You can change the URL slug using SEO friendly URL settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:159
+msgid "Translation ready supporting popular plugins WPML / Polylang."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:162
+msgid "Dedicated support, various widget and sidebar management."
+msgstr ""
+
 #: functions/customizer/customizer-pro.php:15
 msgid "View Demo"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:44
-#: functions/customizer/customizer-pro.php:51
 msgid "Upgrade to pro"
+msgstr ""
+
+#: functions/customizer/customizer-pro.php:51
+msgid "Important Links"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:77
@@ -960,7 +1139,7 @@ msgid "WBR: Page widget"
 msgstr ""
 
 #: functions/widget/wbr-register-page-widget.php:24
-msgid "Feature page item widget"
+msgid "Featured page item widget"
 msgstr ""
 
 #: functions/widget/wbr-register-page-widget.php:125
@@ -996,240 +1175,10 @@ msgstr ""
 msgid "https://www.webriti.com"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "https://webriti.com/spasalon-lite-description/"
+#. Template Name of the plugin/theme
+msgid "Page Full Width"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://www.webriti.com"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://www.webriti.com"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:8
-msgid "Project settings"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:29
-msgid "Enable Home Project section"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:39
-#: inc/spasalon/sections/spasalon-portfolio-section.php:14
-msgid "Spasalon Our Product Range"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:46
-#: inc/spasalon/features/feature-project-section.php:94
-#: inc/spasalon/features/feature-project-section.php:143
-#: inc/spasalon/features/feature-project-section.php:190
-#: inc/spasalon/features/feature-project-section.php:238
-#: inc/spasalon/features/feature-project-section.php:285
-#: inc/spasalon/features/feature-service-section.php:34
-msgid "Title"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:61
-#: inc/spasalon/features/feature-project-section.php:108
-#: inc/spasalon/features/feature-project-section.php:157
-#: inc/spasalon/features/feature-project-section.php:204
-#: inc/spasalon/features/feature-project-section.php:252
-#: inc/spasalon/features/feature-project-section.php:299
-#: inc/spasalon/features/feature-service-section.php:45
-msgid "Description"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:77
-#: inc/spasalon/features/feature-project-section.php:125
-#: inc/spasalon/features/feature-project-section.php:173
-#: inc/spasalon/features/feature-project-section.php:219
-#: inc/spasalon/features/feature-project-section.php:268
-msgid "Image"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:88
-msgid "Make-up Products"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:137
-msgid "Golden Cream"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:184
-msgid "Facial Toner"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:232
-msgid "Premium Cleanser"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:279
-msgid "Silver Cleanser"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:8
-msgid "Service Settings"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:20
-msgid "Enable Home service section"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:29
-#: inc/spasalon/sections/spasalon-features-section.php:12
-msgid "Treatment we are offering"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:41
-#: inc/spasalon/sections/spasalon-features-section.php:13
-msgid ""
-"In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
-"turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
-"ullamcorper vitae accumsan eu,congue in nulla. Cras hendrerit mi quis nisi "
-"semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit."
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:56
-msgid "Service content"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:58
-msgid "Add new service"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:59
-msgid "Service"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:9
-msgid "Slider settings"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:30
-msgid "Enable Home slider section"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:50
-msgid "Enable Banner strip section"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:62
-#: inc/spasalon/sections/spasalon-slider-section.php:58
-msgid "Producing"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:69
-msgid "Banner title"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:77
-#: inc/spasalon/sections/spasalon-slider-section.php:59
-msgid "Experience"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:85
-msgid "Banner subtitle"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:101
-msgid "Banner description"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:109
-#: inc/spasalon/sections/spasalon-slider-section.php:61
-msgid "Call us on"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:117
-msgid "Banner call title"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:126
-#: inc/spasalon/sections/spasalon-slider-section.php:62
-msgid "201 567 89785"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:134
-msgid "Banner call number"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:154
-msgid "Slider Image"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:177
-msgid "Enable Thumbnail section"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:195
-#: inc/spasalon/features/feature-slider-section.php:215
-#: inc/spasalon/features/feature-slider-section.php:236
-msgid "Thumbnail Image"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:205
-msgid "Spa Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:215
-msgid "Detox Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:225
-msgid "Facial Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:235
-msgid "Other Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-portfolio-section.php:15
-msgid ""
-"A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
-"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
-"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
-"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
-"quam eu ante ornare hendrerit."
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-portfolio-section.php:164
-#: inc/spasalon/sections/spasalon-portfolio-section.php:168
-#: inc/spasalon/sections/spasalon-portfolio-section.php:172
-#: inc/spasalon/sections/spasalon-portfolio-section.php:176
-#: inc/spasalon/sections/spasalon-portfolio-section.php:180
-msgid "Business cards"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-slider-section.php:60
-msgid ""
-"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
-"Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue "
-"sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet "
-"mauris."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Webriti Companion"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Enhances Webriti themes with extra functionality."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://github.com"
+#. Template Name of the plugin/theme
+msgid "Business Template"
 msgstr ""

@@ -48,7 +48,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     }
 }
 $wp_customize->add_section( 'spasalon_pro_section' , array(
-		'title'      => __('Upgrade to pro', 'spasalon'),
+		'title'      => __('Important Links', 'spasalon'),
 		'priority'   => 1150,
    	) );
 

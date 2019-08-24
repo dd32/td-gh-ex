@@ -124,6 +124,8 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 2.0
+1. Create list of features mentioned in View PRO details tab.
 @Version 1.9.9
 1. Fixed dropdown issue on mobile menu.
 2. Fixed WooCommerce missing banner error.
