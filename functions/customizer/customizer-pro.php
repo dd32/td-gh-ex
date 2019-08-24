@@ -17,7 +17,7 @@ class WP_PRO_Customize_Control extends WP_Customize_Control {
     }
 }
 $wp_customize->add_section( 'quality_pro_section' , array(
-		'title'      => __('Upgrade to PRO', 'quality'),
+		'title'      => __('Important Links', 'quality'),
 		'priority'   => 1100,
    	) );
 

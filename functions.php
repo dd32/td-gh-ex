@@ -17,6 +17,7 @@
   	require( QUALITY_THEME_FUNCTIONS_PATH . '/widget/custom-sidebar.php'); //Sidebar Registration
 	
 	//Customizer
+	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-general.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( QUALITY_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
@@ -105,10 +106,12 @@
 		return '<p><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"more-link\">" .__('Read More','quality')."</a></p>";
 	}
 	add_filter( 'the_content_more_link', 'quality_new_content_more' );
-	
-	
-	
-	
+
+	function quality_customizer_css() {
+		wp_enqueue_style( 'quality-customizer-info', QUALITY_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	}
+	add_action( 'admin_init', 'quality_customizer_css' );
+
 	add_filter( "the_excerpt", "quality_add_class_to_excerpt" );
 	function quality_add_class_to_excerpt( $excerpt ) {
     return str_replace('<p', '<p class="qua-blog-post-description"', $excerpt);

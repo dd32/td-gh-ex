@@ -23,9 +23,7 @@ function quality_scripts()
 	wp_enqueue_script('bootstrap', QUALITY_TEMPLATE_DIR_URI .'/js/bootstrap.min.js',array('jquery'));
 	wp_enqueue_script('menu', QUALITY_TEMPLATE_DIR_URI .'/js/menu/menu.js',array('jquery'));
 	wp_enqueue_style('lightbox-css', QUALITY_TEMPLATE_DIR_URI . '/css/lightbox.css');
-	wp_enqueue_script('lightbox', QUALITY_TEMPLATE_DIR_URI .'/js/lightbox/lightbox-2.6.min.js');
-	
-		
+	wp_enqueue_script('lightbox', QUALITY_TEMPLATE_DIR_URI .'/js/lightbox/lightbox-2.6.min.js');	
 }
 add_action('wp_enqueue_scripts', 'quality_scripts');
 

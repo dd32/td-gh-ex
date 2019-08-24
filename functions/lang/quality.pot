@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2019-04-09 19:27+0530\n"
+"POT-Creation-Date: 2019-08-21 18:59+0530\n"
 "PO-Revision-Date: 2019-04-09 19:27+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -377,6 +377,7 @@ msgid "Show user's feedback in the Homepage."
 msgstr ""
 
 #: admin/tab-pages/free_vs_pro.php:62
+#: functions/customizer/customizer-pro-feature.php:54
 msgid "Typography Settings"
 msgstr ""
 
@@ -708,7 +709,7 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:31 functions.php:105 index-blog.php:48
+#: content.php:31 functions.php:106 index-blog.php:48
 msgid "Read More"
 msgstr ""
 
@@ -716,15 +717,15 @@ msgstr ""
 msgid "In"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:56
 msgid "Page"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:70
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:129
 msgid ""
 "Important Notice: We hope you are enjoying this theme, and we thank you for "
 "updating it. Please install our Webriti Companion plugin to manage your "
@@ -733,7 +734,7 @@ msgid ""
 "plugin from there."
 msgstr ""
 
-#: functions.php:127
+#: functions.php:130
 msgid "Go To Customizer"
 msgstr ""
 
@@ -1034,16 +1035,6 @@ msgstr ""
 msgid "General setting"
 msgstr ""
 
-#: functions/customizer/customizer-general.php:57
-msgid ""
-"Want to use theme predefined colors and custom color? Then upgrade to Pro."
-msgstr ""
-
-#: functions/customizer/customizer-general.php:60
-#: functions/customizer/customizer-slider.php:151
-msgid "Upgrade to Pro"
-msgstr ""
-
 #: functions/customizer/customizer-home.php:8
 msgid "Header settings"
 msgstr ""
@@ -1089,9 +1080,135 @@ msgstr ""
 msgid "Custom CSS"
 msgstr ""
 
+#: functions/customizer/customizer-pro-feature.php:13
+#: functions/customizer/customizer-pro-feature.php:17
+#: functions/customizer/customizer-pro-feature.php:21
+#: functions/customizer/customizer-pro-feature.php:25
+#: functions/customizer/customizer-pro-feature.php:29
+#: functions/customizer/customizer-pro-feature.php:33
+#: functions/customizer/customizer-pro-feature.php:37
+#: functions/customizer/customizer-pro-feature.php:41
+#: functions/customizer/customizer-pro-feature.php:45
+#: functions/customizer/customizer-pro-feature.php:49
+#: functions/customizer/customizer-pro-feature.php:53
+#: functions/customizer/customizer-pro-feature.php:57
+#: functions/customizer/customizer-pro-feature.php:61
+msgid "PRO"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:14
+msgid "Advance Theme Style Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:18
+msgid "Slider Settings"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:22
+msgid "Portfolio Management"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:26
+msgid "Testimonial Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:30
+msgid "Team Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:34
+msgid "Client Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:38
+msgid "Shop Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:42
+msgid "Footer Callout Section"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:46
+msgid "Section Reordering"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:50
+msgid "Multiple Page Templates"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:58
+msgid "Support for WPML / Polylang"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:62
+msgid "Quality Support"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:65
+msgid "UPGRADE TO PRO"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:72
+msgid "View PRO Details"
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:99
+msgid ""
+"Select among predefined color skins, you can even create yours without "
+"writing any CSS code."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:102
+msgid ""
+"Pro version theme comes with add multiple slides in slider and you can "
+"select the slider enable / disable option, slider animation etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:105
+msgid "Portfolio section, templates , archives with 3 possible layouts."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:108
+msgid ""
+"Show all your testimonials, team members, clients and Shop products on the "
+"frontpage."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:111
+msgid ""
+"Pro version theme comes with footer callout section, In this section you can "
+"manage the section and button setting."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:114
+msgid "Theme Layout manager will helps you to rearrange the sections."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:117
+msgid ""
+"Theme comes with multiple page settings like about us, service, contact etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:120
+msgid ""
+"Typography will helps you to manage custom fonts like paragraph font, menu "
+"font etc."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:123
+msgid "Translation ready supporting popular plugins WPML / Polylang."
+msgstr ""
+
+#: functions/customizer/customizer-pro-feature.php:126
+msgid "Dedicated support, various widget and sidebar management."
+msgstr ""
+
 #: functions/customizer/customizer-pro.php:13
-#: functions/customizer/customizer-pro.php:20
 msgid "Upgrade to PRO"
+msgstr ""
+
+#: functions/customizer/customizer-pro.php:20
+msgid "Important Links"
 msgstr ""
 
 #: functions/customizer/customizer-pro.php:48
@@ -1147,10 +1264,6 @@ msgstr ""
 
 #: functions/customizer/customizer-slider.php:133
 msgid "Button Link"
-msgstr ""
-
-#: functions/customizer/customizer-slider.php:148
-msgid "To add more slides and animation effects click to upgrade to pro"
 msgstr ""
 
 #: functions/customizer/customizer_recommended_plugin.php:17
@@ -1283,706 +1396,3 @@ msgstr ""
 #. Template Name of the plugin/theme
 msgid "Business Template"
 msgstr ""
-
-#, fuzzy
-msgid ""
-msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Webriti Companion\n"
-"POT-Creation-Date: 2019-04-09 19:30+0530\n"
-"PO-Revision-Date: 2019-04-09 19:30+0530\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: webriti-companion.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-
-#: inc/quality/features/customizer-client.php:13
-msgid "Clients settings"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:24
-msgid ""
-"Want to add client? <a href='http://webriti.com/quality' "
-"target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:49
-msgid "Enable Home Client section"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:53
-msgid "ON"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:54
-msgid "OFF"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:68
-msgid "Clients content"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:70
-msgid "Add new client"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:71
-msgid "Clients"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:95
-#: inc/quality/features/feature-shop.php:115
-#: inc/quality/features/feature-team.php:113
-msgid "Animation speed"
-msgstr ""
-
-#: inc/quality/features/customizer-client.php:118
-#: inc/quality/features/feature-shop.php:138
-#: inc/quality/features/feature-team.php:136
-msgid "Smooth speed"
-msgstr ""
-
-#: inc/quality/features/customizer-layout.php:18
-#: inc/quality/features/customizer-layout.php:121
-msgid "Enabled"
-msgstr ""
-
-#: inc/quality/features/customizer-layout.php:26
-#: inc/quality/features/customizer-layout.php:138
-msgid "Disabled"
-msgstr ""
-
-#: inc/quality/features/customizer-layout.php:33
-msgid "Slider has fixed position on homepage."
-msgstr ""
-
-#: inc/quality/features/customizer-layout.php:34
-msgid "Note"
-msgstr ""
-
-#: inc/quality/features/customizer-layout.php:34
-msgid ""
-"By default, all sections are enabled on homepage. If you wish not to display "
-"a section, just drag it onto the \"disabled\" box."
-msgstr ""
-
-#: inc/quality/features/customizer-layout.php:84
-#: inc/quality/features/customizer-layout.php:89
-msgid "Theme Layout Manager"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:8
-msgid "Template settings"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:16
-msgid "About Us page settings"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:27
-msgid ""
-"Want to use about us template and settings. Then? <a href='http://webriti."
-"com/quality' target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:60
-#: inc/quality/features/customizer-template.php:222
-msgid "Enable funfact section"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:77
-msgid "Enable team section"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:95
-#: inc/quality/features/customizer-template.php:276
-msgid "Enable Footer Callout section"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:103
-msgid "Blog meta settings"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:114
-msgid ""
-"Want to use blog template and settings. Then? <a href='http://webriti.com/"
-"quality' target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:148
-msgid "Hide post meta from blog pages."
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:166
-msgid "Hide post meta from archive pages."
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:177
-msgid "Service page settings"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:189
-msgid ""
-"Want to use service template and settings. Then? <a href='http://webriti.com/"
-"quality' target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:239
-msgid "Enable testimonial section"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:258
-msgid "Enable client section"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:285
-msgid "Post type slug setting"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:298
-msgid ""
-"Want to use project slug setting. Then? <a href='http://webriti.com/quality' "
-"target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:331
-msgid "Project slug"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:343
-msgid "Contact page setting"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:355
-msgid ""
-"Want to use contact page and setting. Then? <a href='http://webriti.com/"
-"quality' target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:380
-#: inc/quality/features/customizer-template.php:388
-msgid "Address title"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:406
-msgid "Address"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:416
-#: inc/quality/features/customizer-template.php:424
-msgid "Email title"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:442
-msgid "Email"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:452
-msgid "Support title"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:460
-msgid "Phone title"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:479
-msgid "Phone"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:498
-msgid "Enter Contact Form 7 Shortcode"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:510
-msgid "Google Maps"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:522
-msgid ""
-"Want to show Google maps. Then? <a href='http://webriti.com/quality' "
-"target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:556
-msgid "Enable Google Maps"
-msgstr ""
-
-#: inc/quality/features/customizer-template.php:574
-msgid "Google Maps URL"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:8
-msgid "Typography settings"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:13
-msgid "Custom typography"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:27
-msgid "Enable custom typography"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:46
-msgid "General Paragraph"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:60
-#: inc/quality/features/customizer-typography.php:117
-#: inc/quality/features/customizer-typography.php:174
-#: inc/quality/features/customizer-typography.php:230
-#: inc/quality/features/customizer-typography.php:286
-#: inc/quality/features/customizer-typography.php:343
-#: inc/quality/features/customizer-typography.php:399
-#: inc/quality/features/customizer-typography.php:455
-#: inc/quality/features/customizer-typography.php:511
-msgid "Font size"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:65
-#: inc/quality/features/customizer-typography.php:122
-#: inc/quality/features/customizer-typography.php:179
-#: inc/quality/features/customizer-typography.php:235
-#: inc/quality/features/customizer-typography.php:291
-#: inc/quality/features/customizer-typography.php:348
-#: inc/quality/features/customizer-typography.php:404
-#: inc/quality/features/customizer-typography.php:460
-#: inc/quality/features/customizer-typography.php:516
-msgid "Pixels"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:77
-#: inc/quality/features/customizer-typography.php:134
-#: inc/quality/features/customizer-typography.php:191
-#: inc/quality/features/customizer-typography.php:247
-#: inc/quality/features/customizer-typography.php:303
-#: inc/quality/features/customizer-typography.php:360
-#: inc/quality/features/customizer-typography.php:416
-#: inc/quality/features/customizer-typography.php:472
-#: inc/quality/features/customizer-typography.php:528
-msgid "Font family"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:93
-#: inc/quality/features/customizer-typography.php:150
-#: inc/quality/features/customizer-typography.php:207
-#: inc/quality/features/customizer-typography.php:263
-#: inc/quality/features/customizer-typography.php:319
-#: inc/quality/features/customizer-typography.php:376
-#: inc/quality/features/customizer-typography.php:432
-#: inc/quality/features/customizer-typography.php:488
-#: inc/quality/features/customizer-typography.php:544
-msgid "Font style"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:103
-msgid "Menus"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:160
-msgid "Post / Page title"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:216
-msgid "Home section title"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:272
-msgid "Home section description"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:329
-msgid "Widget heading title"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:385
-msgid "Call to action title"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:441
-msgid "Call to action description"
-msgstr ""
-
-#: inc/quality/features/customizer-typography.php:497
-msgid "Call to action button"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:7
-msgid "Footer callout settings"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:16
-msgid ""
-"Want to add CTA at the bottom? <a href='http://webriti.com/quality' "
-"target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:32
-#: inc/quality/features/feature-project-section.php:34
-#: inc/quality/features/feature-testimonial-section.php:37
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:44
-msgid "Are You Ready To Enjoy? Get This Perfect Theme Now!"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:51
-#: inc/quality/features/feature-project-section.php:84
-#: inc/quality/features/feature-project-section.php:132
-#: inc/quality/features/feature-project-section.php:179
-#: inc/quality/features/feature-project-section.php:227
-#: inc/quality/features/feature-project-section.php:276
-#: inc/quality/features/feature-project-section.php:323
-#: inc/quality/features/feature-service-section.php:51
-#: inc/quality/features/feature-shop.php:49
-#: inc/quality/features/feature-team.php:48
-#: inc/quality/features/feature-testimonial-section.php:80
-msgid "Title"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:66
-#: inc/quality/features/feature-project-section.php:98
-#: inc/quality/features/feature-project-section.php:146
-#: inc/quality/features/feature-project-section.php:193
-#: inc/quality/features/feature-project-section.php:241
-#: inc/quality/features/feature-project-section.php:290
-#: inc/quality/features/feature-project-section.php:337
-#: inc/quality/features/feature-service-section.php:67
-#: inc/quality/features/feature-shop.php:65
-#: inc/quality/features/feature-team.php:64
-#: inc/quality/features/feature-testimonial-section.php:94
-msgid "Description"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:74
-msgid "Purchase Now"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:84
-msgid "Button Text"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:101
-msgid "Button Link"
-msgstr ""
-
-#: inc/quality/features/feature-footer-callout.php:118
-msgid "Open link in new tab"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:13
-msgid "Funfact settings"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:26
-msgid "Enable Funfact on homepage."
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:38
-#: inc/quality/features/feature-testimonial-section.php:65
-msgid "Background Image"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:50
-msgid "Enable funfact image overlay"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:65
-msgid "Funfact image overlay color"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:78
-msgid "Funfact content"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:81
-msgid "Add new funfact"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:82
-msgid "Funfact"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:117
-msgid "2500"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:124
-msgid "550"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:130
-msgid "90%"
-msgstr ""
-
-#: inc/quality/features/feature-funfact-section.php:138
-msgid "1350"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:14
-msgid "Project settings"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:31
-msgid ""
-"Want to add more project and use animation effect in slider? Then upgrade to "
-"Pro."
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:68
-msgid "Enable Home Project section"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:78
-#: inc/quality/sections/quality-portfolio-section.php:14
-msgid "Featured portfolio projects"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:92
-#: inc/quality/sections/quality-portfolio-section.php:15
-msgid "Look <b>At Our</b> Projects"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:113
-#: inc/quality/features/feature-project-section.php:161
-#: inc/quality/features/feature-project-section.php:209
-#: inc/quality/features/feature-project-section.php:257
-#: inc/quality/features/feature-project-section.php:306
-#: inc/quality/features/feature-testimonial-section.php:136
-msgid "Image"
-msgstr ""
-
-#: inc/quality/features/feature-project-section.php:126
-#: inc/quality/features/feature-project-section.php:173
-#: inc/quality/features/feature-project-section.php:221
-#: inc/quality/features/feature-project-section.php:270
-#: inc/quality/features/feature-project-section.php:317
-#: inc/quality/sections/quality-portfolio-section.php:136
-#: inc/quality/sections/quality-portfolio-section.php:139
-#: inc/quality/sections/quality-portfolio-section.php:143
-#: inc/quality/sections/quality-portfolio-section.php:147
-#: inc/quality/sections/quality-portfolio-section.php:151
-msgid "Business cards"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:12
-msgid "Service settings"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:34
-msgid "Enable Services on homepage."
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:43
-#: inc/quality/sections/quality-features-section.php:12
-msgid "Our services"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:60
-#: inc/quality/sections/quality-features-section.php:13
-msgid "Our <b>Awesome</b> Services"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:80
-msgid "Service content"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:82
-msgid "Add new service"
-msgstr ""
-
-#: inc/quality/features/feature-service-section.php:83
-msgid "Service"
-msgstr ""
-
-#: inc/quality/features/feature-shop.php:8
-msgid "Shop settings"
-msgstr ""
-
-#: inc/quality/features/feature-shop.php:17
-msgid ""
-"Want to sell products? <a href='http://webriti.com/quality' "
-"target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/feature-shop.php:43
-msgid "Best Shop"
-msgstr ""
-
-#: inc/quality/features/feature-shop.php:59
-msgid "Our <b>Featured</b> Products"
-msgstr ""
-
-#: inc/quality/features/feature-shop.php:79
-msgid "To have access to a shop section please install and configure"
-msgstr ""
-
-#: inc/quality/features/feature-shop.php:80
-msgid "WooCommerce Plugin"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:8
-msgid "Team settings"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:17
-msgid ""
-"Want to add team? <a href='http://webriti.com/quality' "
-"target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:42
-msgid "Our Team"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:58
-msgid "The <b>Best</b> Team"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:80
-msgid "Team content"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:83
-msgid "Add new Team Member"
-msgstr ""
-
-#: inc/quality/features/feature-team.php:84
-msgid "Team Member"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:8
-msgid "Testimonial settings"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:20
-msgid ""
-"Want to add more testimonials and animation effects? <a href='http://webriti."
-"com/quality' target='_blank'>Upgrade to Pro</a>"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:53
-msgid "Enable Testimonail on homepage."
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:74
-#: inc/quality/sections/quality-testimonial-section.php:79
-msgid "Client's Feedback"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:88
-#: inc/quality/sections/quality-testimonial-section.php:80
-msgid "What <b>People</b> Say"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:102
-msgid "Sed ut Perspiciatis Unde Omnis Iste"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:108
-msgid "Testimonial title"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:125
-msgid "Testimonial description"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:150
-msgid "Name"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:157
-#: inc/quality/sections/quality-testimonial-section.php:24
-msgid "Developer"
-msgstr ""
-
-#: inc/quality/features/feature-testimonial-section.php:163
-msgid "Designation"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:219
-#: inc/quality/sections/quality-features-section.php:283
-msgid "Highly Customizable"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:227
-#: inc/quality/sections/quality-features-section.php:284
-msgid "Fully Responsive Layout"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:235
-#: inc/quality/sections/quality-features-section.php:285
-msgid "User Experience"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:243
-#: inc/quality/sections/quality-features-section.php:286
-msgid "Creative Web Design"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:252
-#: inc/quality/sections/quality-features-section.php:287
-msgid "Unique and Clean"
-msgstr ""
-
-#: inc/quality/sections/quality-features-section.php:261
-#: inc/quality/sections/quality-features-section.php:288
-msgid "Creative Ideas"
-msgstr ""
-
-#: inc/quality/sections/quality-funfact-section.php:57
-msgid "Happy Customer"
-msgstr ""
-
-#: inc/quality/sections/quality-funfact-section.php:64
-msgid "Finish Projects"
-msgstr ""
-
-#: inc/quality/sections/quality-funfact-section.php:71
-msgid "Business Growth"
-msgstr ""
-
-#: inc/quality/sections/quality-funfact-section.php:78
-msgid "Cups of Coffee"
-msgstr ""
-
-#: inc/quality/sections/quality-portfolio-section.php:16
-msgid "View All Portfolios"
-msgstr ""
-
-#: inc/quality/sections/quality-portfolio-section.php:153
-#: inc/quality/sections/quality-portfolio-section.php:154
-#: inc/quality/sections/quality-portfolio-section.php:155
-#: inc/quality/sections/quality-portfolio-section.php:156
-#: inc/quality/sections/quality-portfolio-section.php:157
-msgid "Branding, Illustrator"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Webriti Companion"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Enhances Webriti themes with extra functionality."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://github.com"
-msgstr ""
-
