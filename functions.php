@@ -16,7 +16,6 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_home_page.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_footer_customization.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_pro.php');
 	
 	

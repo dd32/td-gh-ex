@@ -83,6 +83,8 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.8.1
+1. Remove Create Trustworthy Websites tab from customizer.
 @Version 1.8
 1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 @Version 1.7
