@@ -771,7 +771,7 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 		wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/jquery.slick.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'jquery-swipebox', get_template_directory_uri() . '/assets/js/jquery.swipebox.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'jquery-tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
-		wp_enqueue_script( 'bazaar-lite-template',get_template_directory_uri() . '/assets/js/template',array('jquery', 'imagesloaded', 'masonry'), '1.0.0', TRUE ); 
+		wp_enqueue_script( 'bazaar-lite-template',get_template_directory_uri() . '/assets/js/template.js',array('jquery', 'imagesloaded', 'masonry'), '1.0.0', TRUE ); 
 
 		$wip_vars = array(
 			'slick_autoplay' => bazaarlite_setting('wip_slick_autoplay', 'false'),
