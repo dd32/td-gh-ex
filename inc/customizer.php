@@ -15,6 +15,31 @@ function best_minimalist_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	$wp_customize->add_section( 'best_minimalist_featured' , array(
+		'title'      => __('Featured Images on Posts?','best-minimalist'),
+		'priority'   => 30,
+	) );
+
+	$wp_customize->add_setting(
+		'best_minimalist_featured',
+		array(
+			'default'  => false,
+			'sanitize_callback' => 'wp_strip_all_tags',
+
+		)
+	);
+	$wp_customize->add_control(
+			'best_minimalist_featured', array(
+				'type' => 'checkbox',
+				'label'       => esc_html__( 'Add featured images on posts?', 'best-minimalist' ),
+				'section'     => 'best_minimalist_featured',
+				'settings'    => 'best_minimalist_featured',
+				'priority'    => 1,
+			)
+	);
+
+
+
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
 			'blogname', array(

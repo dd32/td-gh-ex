@@ -65,6 +65,14 @@ if ( ! is_single() ) {
 	<div class="entry-content">
 		<?php
 		if ( is_single() ) {
+			//$featured = get_theme_mod("best_minimalist_featured");
+			if (get_theme_mod("best_minimalist_featured")):
+		    ?>
+            <div class="featured_post_image">
+                <?php the_post_thumbnail(); ?>
+            </div>
+        <?php
+            endif;
 			the_content(
 				sprintf(
 					wp_kses(

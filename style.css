@@ -4,7 +4,7 @@ Theme URI: https://wpvkp.com/minimalist/
 Author: designgrande
 Author URI:
 Description: Best Minimalist WordPress theme for professional bloggers and content marketers. It comes with inbuilt support for Jetpack, Breadcrumb navXT and Related Post With Thumbnail Plugin. If the suggested extensions are not installed then the default in-build widgets will be used. This templates comes with default featured image in-case your post doesn't have any post-thumbnail. You can change the default featured image by replacing the image inside assets/images folder.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: best-minimalist
@@ -1030,6 +1030,9 @@ article.single {
 .single .entry-content p {
 	line-height: 1.725;
 }
+.single .featured_post_image{
+	text-align: center;
+}
 
 .sticky {
 	display: block;
@@ -1551,18 +1554,9 @@ object {
 		right: 0;
 		top: -70px;
 		display: block;
-		font-size: 14px;
+		font-size: 19px;
 	}
-	button.menu-toggle:before {
-		font-family: minimalist;
-		content: '\66';
-		font-weight: normal;
-		font-size: 12px;
-		padding: 0 5px 0 0;
-		vertical-align: middle;
-		display: inline-block;
-		margin: -3px 0 0;
-	}
+
 	.dropdown-toggle.toggled-on .icon-down.dropdownsymbol:before {
 		-webkit-transform: rotate(180deg);
 		-moz-transform: rotate(180deg);
