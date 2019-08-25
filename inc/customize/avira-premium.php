@@ -38,6 +38,8 @@ function avira_premium_setting( $wp_customize ) {
 					<li><a href="https://specia.ticksy.com/submit/#100011007" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/support.png"></a></li>
 					
 					<li><a href="https://wordpress.org/support/theme/avira/reviews/#new-post" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rating.png"></a></li>
+					
+					<li><a href="https://speciatheme.com/avira-premium/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/upgrade-pro.jpg"></a></li>
 				</ul>
 			</div>
 		<?php
