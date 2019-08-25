@@ -6,7 +6,7 @@ theme-options, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
 Requires PHP: 5.6.0
-Stable tag: 1.0.6
+Stable tag: 1.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.6 =
+* fix issue with content display
 
 = 1.2.5 =
 * main menu: Add Keyboard navigation
