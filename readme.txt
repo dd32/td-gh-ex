@@ -6,7 +6,7 @@ theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.5
 Requires PHP: 5.6.0
-Stable tag: 1.0.0
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.1.4 =
+* fix issue with header height on Desktop
 
 = 1.1.3 =
 * main menu: Add Keyboard navigation
