@@ -17,6 +17,6 @@
 <?php else : ?>
 	<p><?php esc_html_e( 'Dont worry it happens to the best of us.', 'automobile-car-dealer' ); ?></p><br />
 	<div class="read-moresec">
-		<a href="<?php echo esc_url( home_url() ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?></a>
+		<a href="<?php echo esc_url( home_url() ); ?>" alt="<?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?></span></a>
 	</div>
 <?php endif; ?>

@@ -6,6 +6,7 @@
 get_header(); 
 ?>
 <?php /** post section **/ ?>
+
 <div class="container">
   <?php
     $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');

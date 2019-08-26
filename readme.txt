@@ -2,9 +2,9 @@
 Contributors: Buywptemplates
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats , translation-ready, rtl-language-support, blog, portfolio, e-commerce
 Requires at least: 4.7
-Tested up to: 5.2.1
+Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.5
+Stable tag: 0.3.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time.
@@ -58,6 +58,10 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 
 = 0.3.5 =
   * Added content limit.
+  * Updated POT file.
+
+= 0.3.6 =
+  * Update the theme code.
   * Updated POT file.
 
 == Resources ==

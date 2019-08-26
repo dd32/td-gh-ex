@@ -22,6 +22,7 @@ function automobile_car_dealer_setup() {
 		'flex-height' => true,
 	) );
 	add_image_size('automobile-car-dealer-homepage-thumb',240,145,true);
+
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'automobile-car-dealer' ),
 	) );
@@ -48,13 +49,8 @@ function automobile_car_dealer_setup() {
 	 */
 	add_editor_style( array( 'css/editor-style.css', automobile_car_dealer_font_url() ) );
 }
-
-
-
 endif; // automobile_car_dealer_setup
 add_action( 'after_setup_theme', 'automobile_car_dealer_setup' );
-
-
 
 /*radio button sanitization*/
  function automobile_car_dealer_sanitize_choices( $input, $setting ) {
@@ -379,7 +375,7 @@ define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/','automob
 
 if ( ! function_exists( 'automobile_car_dealer_credit' ) ) {
 	function automobile_car_dealer_credit(){
-		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT)." target='_blank'>".esc_html__('Buywptemplate','automobile-car-dealer')."</a>";
+		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT)." target='_blank' alt='".esc_html__('Buywptemplate','automobile-car-dealer')."''>".esc_html__('Buywptemplate','automobile-car-dealer')."</a>";
 	}
 }
 

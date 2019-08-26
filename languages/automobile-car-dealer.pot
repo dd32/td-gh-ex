@@ -53,7 +53,7 @@ msgstr ""
 #: search.php:140
 #: search.php:166
 #: search.php:193
-#: template-parts/single-post.php:45
+#: template-parts/single-post.php:46
 msgid "Previous page"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 #: search.php:141
 #: search.php:167
 #: search.php:194
-#: template-parts/single-post.php:42
+#: template-parts/single-post.php:43
 msgid "Next page"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 #: search.php:168
 #: search.php:195
 #: page.php:27
-#: template-parts/single-post.php:30
+#: template-parts/single-post.php:31
 msgid "page"
 msgstr ""
 
@@ -120,7 +120,7 @@ msgstr ""
 msgid 'Comments are closed.'
 msgstr ""
 
-#: footer.php:47
+#: footer.php:48
 msgid 'Theme Design & Developed By'
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr ""
 #: image.php:177
 #: image.php:214
 #: image.php:251
-#: page.php:23
+#: page.php:24
 #: template-parts/single-post.php:26
 msgid "Pages:"
 msgstr ""
@@ -213,6 +213,7 @@ msgstr ""
 #: search.php:96
 #: search.php:126
 #: search.php:152
+#: search.php:179
 msgid 'Search Results for: %s'
 msgstr ""
 
@@ -228,16 +229,16 @@ msgstr ""
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: searchform.php:9
-#: searchform.php:11
+#: searchform.php:10
+#: searchform.php:12
 msgid "Search"
 msgstr ""
 
-#: searchform.php:9
+#: searchform.php:10
 msgid "placeholder"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgid "submit button"
 msgstr ""
 
@@ -247,47 +248,6 @@ msgstr ""
 
 #: sidebar.php:16
 msgid "Meta"
-msgstr ""
-
-#: page-template/custom-home-page.php:40
-msgid 'READ MORE'
-msgstr ""
-
-#: template-parts/content-audio.php:40
-#: template-parts/content-gallery.php:29
-#: template-parts/content-image.php:22
-#: template-parts/content-video.php:40
-#: template-parts/content.php:22
-#: template-parts/grid-layout.php:23
-msgid "View More"
-msgstr ""
-
-#: template-parts/single-post.php:14
-msgid '0 Comment'
-msgstr ""
-
-#: template-parts/single-post.php:13
-msgid "% Comment"
-msgstr ""
-
-#: template-parts/single-post.php:37
-msgid 'Parent post link'
-msgstr ""
-
-#: template-parts/single-post.php:43
-msgid 'Next post:'
-msgstr ""
-
-#: template-parts/single-post.php:46
-msgid 'Previous post:'
-msgstr ""
-
-#: woocommerce/checkout/form-checkout.php:26
-msgid 'You must be logged in to checkout.'
-msgstr ""
-
-#: woocommerce/checkout/form-checkout.php:52
-msgid 'Your order'
 msgstr ""
 
 #: inc/customizer.php:18
@@ -523,50 +483,95 @@ msgstr ""
 msgid "Project Content Limit"
 msgstr ""
 
-#: inc/customizer.php:689
+#: inc/customizer.php:696
+msgid "Category Content Limit"
+msgstr ""
+
+#: inc/customizer.php:709
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:699
+#: inc/customizer.php:719
 msgid "Footer widget area"
 msgstr ""
 
-#: inc/customizer.php:701
+#: inc/customizer.php:721
 msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets"
 msgstr ""
 
-#: inc/customizer.php:703
-#: inc/customizer.php:824
+#: inc/customizer.php:723
+#: inc/customizer.php:844
 msgid "One"
 msgstr ""
 
-#: inc/customizer.php:704
-#: inc/customizer.php:825
+#: inc/customizer.php:724
+#: inc/customizer.php:845
 msgid "Two"
 msgstr ""
 
-#: inc/customizer.php:705
-#: inc/customizer.php:826
+#: inc/customizer.php:725
+#: inc/customizer.php:846
 msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:706
-#: inc/customizer.php:827
+#: inc/customizer.php:726
+#: inc/customizer.php:847
 msgid "Four"
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:735
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:717
+#: inc/customizer.php:737
 msgid "Add some text for footer like copyright etc."
 msgstr ""
 
-#: inc/customizer.php:798
+#: inc/customizer.php:818
 msgid "Automobile Pro"
 msgstr ""
 
-#: inc/customizer.php:799
+#: inc/customizer.php:819
 msgid "Go Pro"
+msgstr ""
+
+#: page-template/custom-home-page.php:40
+msgid 'READ MORE'
+msgstr ""
+
+#: template-parts/content-audio.php:40
+#: template-parts/content-gallery.php:29
+#: template-parts/content-image.php:22
+#: template-parts/content-video.php:40
+#: template-parts/content.php:22
+#: template-parts/grid-layout.php:23
+msgid "View More"
+msgstr ""
+
+#: template-parts/single-post.php:15
+msgid '0 Comment'
+msgstr ""
+
+#: template-parts/single-post.php:15
+msgid "% Comment"
+msgstr ""
+
+#: template-parts/single-post.php:38
+msgid 'Parent post link'
+msgstr ""
+
+#: template-parts/single-post.php:44
+msgid 'Next post:'
+msgstr ""
+
+#: template-parts/single-post.php:47
+msgid 'Previous post:'
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid 'You must be logged in to checkout.'
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:52
+msgid 'Your order'
 msgstr ""
