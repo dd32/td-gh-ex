@@ -68,6 +68,16 @@ class TGM_Activation {
 				'slug'     => 'mailoptin',
 				'required' => false,
 			],
+			[
+				'name'     => 'WP Gallery Enhancer',
+				'slug'     => 'wp-gallery-enhancer',
+				'required' => false,
+			],
+			[
+				'name'     => 'Display Post Types',
+				'slug'     => 'display-post-types',
+				'required' => false,
+			],
 		];
 
 		$config = [

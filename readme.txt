@@ -3,7 +3,7 @@
 Contributors: vedathemes
 tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.2
+Tested up to: WordPress 5.2.2
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,9 +19,13 @@ Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPr
 PHP 5.4+, IE11+, WordPress 4.7+
 
 = How to disable google fonts? =
-Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
+Aamla WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
+
+= 1.2.3 =
+* Modify: Minor CSS styling improvements.
+* Add recommendations for WP Gallery Enhancer and Display post types plugin.
 
 = 1.2.2 =
 * Add: Option to add related posts at the end of single posts.

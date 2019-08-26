@@ -21,21 +21,8 @@
 	border-top: 1px solid #e6e6e6;
 }
 
-.home .widgetlayer + .site-content {
-	padding-top: 0;
-	border-top-width: 0;
-}
-
-.home .widgetlayer + .site-content .content-area {
-	padding-top: 0;
-}
-
 .home .site-content + .widgetlayer {
-	padding-top: 0;
-}
-
-.home .site-content + .widgetlayer .brick:first-of-type {
-	padding-top: 0;
+	border-top: 1px solid #e6e6e6;
 }
 
 .widgetlayer .only-title .textwidget {
