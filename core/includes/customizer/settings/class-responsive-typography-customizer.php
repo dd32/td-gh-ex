@@ -100,8 +100,8 @@ if ( ! class_exists( 'Responsive_Typography_Customizer' ) ) :
 			$wp_customize->add_panel(
 				'responsive_typography_panel',
 				array(
-					'title'    => esc_html__( 'Typography', 'responsive' ),
-					'priority' => 22,
+					'title'    => esc_html__( 'General Typography', 'responsive' ),
+					'priority' => 16,
 				)
 			);
 
