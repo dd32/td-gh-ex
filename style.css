@@ -4,11 +4,11 @@ Theme URI: https://item.themeasia.net/articlepress/
 Author: ThemeAsia
 Author URI: https://profiles.wordpress.org/themeasia
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.1.6
+Version: 1.1.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
-Tags: Blog, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: Blog, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, editor-style, flexible-header
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -114,7 +114,8 @@ pre {
  */
 
 a {
-	background-color: transparent;
+    background-color: transparent;
+    outline: none;
 }
 
 /**
@@ -1392,6 +1393,7 @@ section#search-2 {margin-bottom: 70px;}
     display: block;
     text-decoration: none;
     transition: .3s;
+    outline: none;
 }
 .widget ul li:last-child {
     margin-bottom: 0;
@@ -1410,6 +1412,16 @@ section#search-2 {margin-bottom: 70px;}
 
 .widget ul li a:hover {
     color: #5bd5e8;
+}
+.widget ul li:before {
+    content: '›';
+    position: absolute;
+    font-size: 23px;
+    line-height: 21px;
+    color: #5bd5e8;
+}
+.widget ul li a, .widget ul li span {
+    margin-left: 15px;
 }
 section.single-page-section {
     padding: 80px 0;
