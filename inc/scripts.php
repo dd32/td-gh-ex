@@ -167,7 +167,7 @@ function graphene_google_fonts_uri(){
  */
 function graphene_google_fonts_local( $fonts ){
 	global $graphene_settings;
-	if ( ! $graphene_settings['host_scripts_locally'] ) return;
+	if ( ! $graphene_settings['host_scripts_locally'] ) return $fonts;
 
 	/* Get supplied local fonts */
 	$local_fonts = apply_filters( 'graphene_local_fonts', array(

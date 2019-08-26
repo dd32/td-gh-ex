@@ -4,7 +4,11 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.6.5
+	* Fixed: Custom Google Fonts not loaded if not hosting the fonts locally
+
 Version 2.6.4
+	* Added: Option to host Google Fonts locally
 	* Fixed: Description text for custom social profile icon ignored when the custom profile is first added
 	* Fixed: HTML tags and continue reading button appearing in links shared on Facebook
 	* Fixed: Auto layout switch when using wide or full-width blocks can sometimes be triggered on the blog listing page
