@@ -1,0 +1,79 @@
+=== Article Lite ===
+
+Contributors: blazethemes
+Requires at least: 4.7
+Tested up to: 5.0.0
+Stable tag: 1.0.0
+Tags: right-sidebar, custom-background, custom-header, custom-logo, portfolio, blog, education, custom-colors,featured-images, footer-widgets, theme-options, threaded-comments, post-formats
+
+A starter theme called Article.
+
+== Description ==
+
+Article Lite is a mimimal WordPress Theme design specially for bloggers. Providing all the loved featured by bloggers like stiky post, post formats like audio, video, gallary, Easy access to social share, and clean and attractive blog layout.
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+* Bazzinga theme support for Woocommerce Plugin
+* Bazzinga theme support for Contact Form 7
+* Bazzinga theme support for Simple Share Buttons Adder
+* Bazzinga theme support for Newsletter
+* Bazzinga theme support for Slider and Carousel Plus Widget for Social Media
+* Bazzinga theme support for Breadcrumb NavXT
+
+== Changelog ==
+
+= 1.0 - Aug 25 2019 =
+* Initial release
+
+
+
+== License ==
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
+License: GNU General Public License v2 or later
+License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2 (or later)
+Bazzinga WordPress Theme, Copyright 2018 BlazeThemes
+Bazzinga is distributed under the terms of the GNU GPL.
+
+Screenshot Image
+	* License: CC0 Public Domain
+	* License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+	* Image url: https://pxhere.com/en/photo/180399
+	* https://pxhere.com/en/photo/1451437
+	* https://pxhere.com/en/photo/1428661
+	* https://pxhere.com/en/photo/1428623
+
+Font awesome
+	*Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ 	* License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+
+Bootstrap (v4.0.0):
+	License: MIT license
+	License url: https://v4-alpha.getbootstrap.com/about/license/
+	Url: https://getbootstrap.com/
+
+Tgm plugin activation
+	License: GNU General Public License v2.0
+	License url: https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
+	Url: https://github.com/TGMPA/TGM-Plugin-Activation
+
+theia-sticky-sidebar:
+	License: MIT license
+	License url: https://github.com/WeCodePixels/theia-sticky-sidebar/blob/master/LICENSE.txt
+	Url: https://github.com/WeCodePixels/theia-sticky-sidebar
+
+
+
+
+== Credits ==
+
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
