@@ -61,6 +61,20 @@ function bc_business_consulting_register_required_plugins() {
 			'slug'      => 'variation-swatches-style',
 			'required'  => false,
 		),
+		
+		array(
+			'name'      => 'Advanced Product Search For WooCommerce',
+			'slug'      => 'advanced-product-search-for-woo',
+			'required'  => false,
+		),
+
+
+		array(
+			'name'      => 'Advanced Product Wishlist for Woocommerce',
+			'slug'      => 'advanced-product-wishlist-for-woo',
+			'required'  => false,
+		),
+
 
 	);
 
