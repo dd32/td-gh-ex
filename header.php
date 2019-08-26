@@ -20,11 +20,16 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'best-hotel' ); ?></a>
 
 	<div class="mobile-menu-wrap">
-		<a id="mobile-menu-control" href="#mobile-menu"><?php echo esc_html_e( 'Menu', 'best-hotel' ); ?></a>
+		<a id="mobile-menu-control" href="#mobile-menu"><?php esc_html_e( 'Menu', 'best-hotel' ); ?></a>
 	</div><!-- .mobile-menu-wrap -->
 
 	<div id="mobile-menu">

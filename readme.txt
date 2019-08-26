@@ -3,8 +3,10 @@
 Contributors: lumberthemes
 Requires at least: 5.0
 Tested up to: 5.2
-Requires PHP: 5.6
-Stable tag: 1.0.0
+Requires PHP: 5.6.20
+Stable tag: 1.0.1
+License: GPLv3
+License URI: URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 A simple theme.
 
@@ -19,6 +21,10 @@ Best Hotel is a simple and elegant WordPress theme. It is mainly focused for hot
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.1 - Aug 15 2019 =
+* Update Font Awesome
+* Minor bug fixes
 
 = 1.0.0 - Jul 11 2019 =
 * Initial release

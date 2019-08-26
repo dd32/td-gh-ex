@@ -33,6 +33,9 @@ require_once trailingslashit( get_template_directory() ) . 'inc/metabox.php';
 // Customizer additions.
 require_once trailingslashit( get_template_directory() ) . 'inc/customizer.php';
 
+// Admin page.
+require_once trailingslashit( get_template_directory() ) . 'inc/admin-page.php';
+
 // Demo import.
 require_once trailingslashit( get_template_directory() ) . 'inc/demo.php';
 

@@ -7,7 +7,7 @@
  * @package Best_Hotel
  */
 
-define( 'BEST_HOTEL_VERSION', '1.0.0' );
+define( 'BEST_HOTEL_VERSION', '1.0.1' );
 
 if ( ! function_exists( 'best_hotel_setup' ) ) :
 	/**
@@ -159,7 +159,7 @@ function best_hotel_scripts() {
 
 	wp_enqueue_style( 'best-hotel-google-fonts', best_hotel_fonts_url(), array(), BEST_HOTEL_VERSION );
 
-	wp_enqueue_style( 'best-hotel-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
+	wp_enqueue_style( 'best-hotel-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/all' . $min . '.css', '', '5.9.0' );
 
 	wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/third-party/sidr/css/jquery.sidr.dark' . $min . '.css', '', '2.2.1' );
 	wp_enqueue_style( 'best-hotel-style', get_stylesheet_uri(), array(), BEST_HOTEL_VERSION );

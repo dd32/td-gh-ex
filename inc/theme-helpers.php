@@ -197,7 +197,7 @@ if ( ! function_exists( 'best_hotel_get_rooms' ) ) :
 				$item['slug']               = sanitize_title_with_dashes( $room['name'] );
 				$item['price']              = $room['pricePreset'];
 				$item['page_id']            = $room['infoPage'];
-				$item['descripion']         = $room['infoText'];
+				$item['description']        = $room['infoText'];
 				$item['max_units']          = $room['maxUnits'];
 				$item['max_availabilities'] = $room['maxAvailabilities'];
 				$item['min_stay']           = $room['minimumStayPreset'];
@@ -206,7 +206,7 @@ if ( ! function_exists( 'best_hotel_get_rooms' ) ) :
 				$item['attachment_id'] = null;
 
 				if ( ! empty( $item['page_id'] ) ) {
-					$item['attachment_id']      = get_post_thumbnail_id( absint( $item['page_id'] ) );
+					$item['attachment_id'] = get_post_thumbnail_id( absint( $item['page_id'] ) );
 				}
 
 				$output[] = $item;
