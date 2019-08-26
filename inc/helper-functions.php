@@ -128,8 +128,8 @@ if ( ! function_exists( 'arya_multipurpose_recommended_plugins' ) ) :
                 'required' => false,
             ),
             array(
-                'name'     => esc_html__( 'Contact Form 7', 'arya-multipurpose' ),
-                'slug'     => 'contact-form-7',
+                'name'     => esc_html__( 'Contact Form by WPForms – Drag & Drop Form Builder for WordPress', 'arya-multipurpose' ),
+                'slug'     => 'wpforms-lite',
                 'required' => false,
             ),
         );

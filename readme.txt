@@ -1,10 +1,10 @@
 === Arya Multipurpose ===
 
 Contributors: everestthemes
-Requires PHP: 5.4
+Requires PHP: 5.6
 Requires at least: 4.8.0
-Tested up to: 5.1.1
-Stable tag: 1.0.1
+Tested up to: 5.2.2
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, custom-colors, featured-images, threaded-comments, translation-ready, post-formats, one-column, two-columns, left-sidebar, right-sidebar, footer-widgets, full-width-template, theme-options, blog, portfolio
@@ -81,6 +81,16 @@ Arya Multipurpose includes support for Infinite Scroll in Jetpack.
 
 
 == Changelog ==
+
+= 1.0.2 - August 23, 2019 =
+
+- Required php version updated to 5.6
+- Tested upto 5.2.2 WordPress version
+- Added wp_body_open function
+- Removed contact form 7 recommendation
+- Added recommendation for Contact Form by WPForms
+- Updated language file
+- Changed site title markup to span
 
 = 1.0.1 - March 14, 2019 =
 

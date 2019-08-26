@@ -1,39 +1,27 @@
-# <!=Copyright (C) 2019 everestthemes
-# This file is distributed under the GNU General Public License v2 or later.=!>
+# Copyright (C) 2019 arya-multipurpose
+# This file is distributed under the same license as the arya-multipurpose package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Arya Multipurpose 1.0.1\n"
-"Report-Msgid-Bugs-To: https://everestthemes.com/support\n"
-"POT-Creation-Date: 2019-03-14 08:04:50+00:00\n"
+"Project-Id-Version: arya-multipurpose\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
-"Last-Translator: everestthemes <themeseverest@gmail.com>\n"
-"Language-Team: everestthemes <themeseverest@gmail.com>\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_"
-"e;esc_html_x;_n_noop;_nx_noop;translate_nooped_plural;\n"
-"X-Textdomain-Support: yes\n"
-
-#: inc/template-functions.php:117
-msgid "404"
-msgstr ""
+"Language-Team: Everestthemes.com <contact@everestthemes.com>\n"
+"Last-Translator: Everestthemes <contact@everestthemes.com>\n"
+"Report-Msgid-Bugs-To: https://everestthemes.com/support-forum/\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:25
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: 404.php:29
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the "
-"links below or a search?"
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
 #: comments.php:27
@@ -128,30 +116,19 @@ msgstr ""
 msgid "Blog Page"
 msgstr ""
 
-#: customizer/functions/options/page-options.php:38
-#: customizer/functions/options/page-options.php:131
-#: customizer/functions/options/page-options.php:224
-#: customizer/functions/options/page-options.php:318
+#: customizer/functions/options/page-options.php:38, customizer/functions/options/page-options.php:131, customizer/functions/options/page-options.php:224, customizer/functions/options/page-options.php:318
 msgid "Display Post Category"
 msgstr ""
 
-#: customizer/functions/options/page-options.php:58
-#: customizer/functions/options/page-options.php:151
-#: customizer/functions/options/page-options.php:244
-#: customizer/functions/options/page-options.php:338
+#: customizer/functions/options/page-options.php:58, customizer/functions/options/page-options.php:151, customizer/functions/options/page-options.php:244, customizer/functions/options/page-options.php:338
 msgid "Display Post Author & Date"
 msgstr ""
 
-#: customizer/functions/options/page-options.php:78
-#: customizer/functions/options/page-options.php:171
-#: customizer/functions/options/page-options.php:264
+#: customizer/functions/options/page-options.php:78, customizer/functions/options/page-options.php:171, customizer/functions/options/page-options.php:264
 msgid "Display Post Excerpt"
 msgstr ""
 
-#: customizer/functions/options/page-options.php:98
-#: customizer/functions/options/page-options.php:191
-#: customizer/functions/options/page-options.php:284
-#: customizer/functions/options/page-options.php:378
+#: customizer/functions/options/page-options.php:98, customizer/functions/options/page-options.php:191, customizer/functions/options/page-options.php:284, customizer/functions/options/page-options.php:378
 msgid "Display Post Featured Image"
 msgstr ""
 
@@ -180,9 +157,7 @@ msgid "Excerpt Length"
 msgstr ""
 
 #: customizer/functions/options/page-options.php:411
-msgid ""
-"Excerpt is short content of post. Excerpt length controls the number of "
-"words to display."
+msgid "Excerpt is short content of post. Excerpt length controls the number of words to display."
 msgstr ""
 
 #: customizer/functions/options/sidebar-options.php:9
@@ -197,8 +172,7 @@ msgstr ""
 msgid "Global sidebar position is applied only for blog, archive and search pages."
 msgstr ""
 
-#: customizer/functions/options/woocommerce-options.php:8
-#: widgets/widgets-init.php:63
+#: customizer/functions/options/woocommerce-options.php:8, widgets/widgets-init.php:63
 msgid "Woocommerce Sidebar"
 msgstr ""
 
@@ -210,7 +184,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: header.php:25
+#: header.php:30
 msgid "Skip to content"
 msgstr ""
 
@@ -230,7 +204,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: inc/custom-fields/single-sidebar.php:48 widgets/theme/recent-posts.php:111
+#: inc/custom-fields/single-sidebar.php:48, widgets/theme/recent-posts.php:111
 msgid "checked"
 msgstr ""
 
@@ -247,16 +221,20 @@ msgid "Elementor Page Builder"
 msgstr ""
 
 #: inc/helper-functions.php:131
-msgid "Contact Form 7"
+msgid "Contact Form by WPForms – Drag & Drop Form Builder for WordPress"
 msgstr ""
 
-#: inc/template-functions.php:99
 #. translators: %s: search query.
+#: inc/template-functions.php:99
 msgid "Search Results for: %s"
 msgstr ""
 
 #: inc/template-functions.php:111
 msgid "Recent Blog Posts"
+msgstr ""
+
+#: inc/template-functions.php:117
+msgid "404"
 msgstr ""
 
 #: inc/template-functions.php:160
@@ -267,14 +245,20 @@ msgstr ""
 msgid "Prev"
 msgstr ""
 
-#: inc/template-functions.php:194
 #. translators: %s: CMS name, i.e. WordPress.
+#: inc/template-functions.php:194
 msgid "Proudly powered by %s."
 msgstr ""
 
-#: inc/template-functions.php:216
 #. translators: %1$s: theme name, %2$s: theme author
+#: inc/template-functions.php:216
 msgid "%1$s by %2$s."
+msgstr ""
+
+#. translators: If there are characters in your language that are not supported by Barlow, translate this to 'off'. Do not translate into your own language.
+#: inc/theme-functions.php:21
+msgctxt "Sarabun: on or off"
+msgid "on"
 msgstr ""
 
 #: inc/theme-functions.php:50
@@ -289,14 +273,13 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-template-functions.php:186
-#: inc/woocommerce/woocommerce.php:243
+#: inc/woocommerce/woocommerce-template-functions.php:186, inc/woocommerce/woocommerce.php:243
 msgid "View your shopping cart"
 msgstr ""
 
-#: inc/woocommerce/woocommerce-template-functions.php:190
-#: inc/woocommerce/woocommerce.php:247
 #. translators: number of items in the mini cart.
+#. translators: number of items in the mini cart.
+#: inc/woocommerce/woocommerce-template-functions.php:190, inc/woocommerce/woocommerce.php:247
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
@@ -306,30 +289,26 @@ msgstr[1] ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:24
 #. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:37
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
 #: template-parts/content-none.php:44
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:26 template-parts/content-single.php:55
-#: tmpl-pagebuilder.php:19
+#: template-parts/content-page.php:26, template-parts/content-single.php:55, tmpl-pagebuilder.php:19
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-page.php:36 template-parts/content-single.php:69
 #. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:36, template-parts/content-single.php:69
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
@@ -341,13 +320,13 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:337
 #. translators: %s: plugin name.
+#: third-party/class-tgm-plugin-activation.php:337
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:339
 #. translators: %s: plugin name.
+#: third-party/class-tgm-plugin-activation.php:339
 msgid "Updating Plugin: %s"
 msgstr ""
 
@@ -355,8 +334,43 @@ msgstr ""
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
+#: third-party/class-tgm-plugin-activation.php:341
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:347
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:353
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:359
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:365
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:371
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
 #: third-party/class-tgm-plugin-activation.php:377
-#. translators: 1: plugin name(s).
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
@@ -378,37 +392,32 @@ msgstr[1] ""
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:393
-#: third-party/class-tgm-plugin-activation.php:923
-#: third-party/class-tgm-plugin-activation.php:2647
-#: third-party/class-tgm-plugin-activation.php:3696
+#: third-party/class-tgm-plugin-activation.php:393, third-party/class-tgm-plugin-activation.php:923, third-party/class-tgm-plugin-activation.php:2647, third-party/class-tgm-plugin-activation.php:3696
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:394
-#: third-party/class-tgm-plugin-activation.php:3275
+#: third-party/class-tgm-plugin-activation.php:394, third-party/class-tgm-plugin-activation.php:3275
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:395
-#: third-party/class-tgm-plugin-activation.php:3068
+#: third-party/class-tgm-plugin-activation.php:395, third-party/class-tgm-plugin-activation.php:3068
 msgid "The following plugin was activated successfully:"
-msgstr ""
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
 
-#: third-party/class-tgm-plugin-activation.php:397
 #. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:397
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:399
 #. translators: 1: plugin name.
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+#: third-party/class-tgm-plugin-activation.php:399
+msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:401
 #. translators: 1: dashboard link.
+#: third-party/class-tgm-plugin-activation.php:401
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
@@ -417,9 +426,7 @@ msgid "Dismiss this notice"
 msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
+msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:404
@@ -439,26 +446,24 @@ msgid "Set the parent_slug config variable instead."
 msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:1030
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:1030
-#: third-party/class-tgm-plugin-activation.php:1033
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
+#: third-party/class-tgm-plugin-activation.php:1030, third-party/class-tgm-plugin-activation.php:1033
+msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:1033
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:2078
+#: third-party/class-tgm-plugin-activation.php:1217, third-party/class-tgm-plugin-activation.php:3064
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
 #. translators: %s: version number
+#: third-party/class-tgm-plugin-activation.php:2078
 msgid "TGMPA v%s"
 msgstr ""
 
@@ -506,26 +511,45 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:2506
+#. translators: 1: install status, 2: update status
+#: third-party/class-tgm-plugin-activation.php:2456
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
 #. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2502
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2506
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: third-party/class-tgm-plugin-activation.php:2510
 #. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2510
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: third-party/class-tgm-plugin-activation.php:2514
 #. translators: 1: number of plugins.
+#: third-party/class-tgm-plugin-activation.php:2514
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+
+#: third-party/class-tgm-plugin-activation.php:2596
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:2604
 msgid "Installed version:"
@@ -563,18 +587,18 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:2717
 #. translators: %2$s: plugin name in screen reader markup
+#: third-party/class-tgm-plugin-activation.php:2717
 msgid "Install %2$s"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:2722
 #. translators: %2$s: plugin name in screen reader markup
+#: third-party/class-tgm-plugin-activation.php:2722
 msgid "Update %2$s"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:2728
 #. translators: %2$s: plugin name in screen reader markup
+#: third-party/class-tgm-plugin-activation.php:2728
 msgid "Activate %2$s"
 msgstr ""
 
@@ -622,39 +646,35 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3614
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: third-party/class-tgm-plugin-activation.php:3614
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3617
 #. translators: 1: plugin name, 2: error message.
+#: third-party/class-tgm-plugin-activation.php:3617
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3619
 #. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3619
 msgid "The installation of %1$s failed."
 msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:3623
-msgid ""
-"The installation and activation process is starting. This process may take "
-"a while on some hosts, so please be patient."
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3625
 #. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3625
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3625
-#: third-party/class-tgm-plugin-activation.php:3633
+#: third-party/class-tgm-plugin-activation.php:3625, third-party/class-tgm-plugin-activation.php:3633
 msgid "Show Details"
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3625
-#: third-party/class-tgm-plugin-activation.php:3633
+#: third-party/class-tgm-plugin-activation.php:3625, third-party/class-tgm-plugin-activation.php:3633
 msgid "Hide Details"
 msgstr ""
 
@@ -662,19 +682,17 @@ msgstr ""
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3628
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: third-party/class-tgm-plugin-activation.php:3628
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: third-party/class-tgm-plugin-activation.php:3631
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3633
 #. translators: 1: plugin name.
+#: third-party/class-tgm-plugin-activation.php:3633
 msgid "%1$s installed successfully."
 msgstr ""
 
@@ -682,9 +700,13 @@ msgstr ""
 msgid "All installations have been completed."
 msgstr ""
 
-#: third-party/class-tgm-plugin-activation.php:3636
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: third-party/class-tgm-plugin-activation.php:3636
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: tmpl-pagebuilder.php:3
+msgid "AM - Pagebuilder Template"
 msgstr ""
 
 #: widgets/theme/recent-posts.php:9
@@ -743,9 +765,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: widgets/widgets-init.php:13 widgets/widgets-init.php:23
-#: widgets/widgets-init.php:33 widgets/widgets-init.php:43
-#: widgets/widgets-init.php:53 widgets/widgets-init.php:65
+#: widgets/widgets-init.php:13, widgets/widgets-init.php:23, widgets/widgets-init.php:33, widgets/widgets-init.php:43, widgets/widgets-init.php:53, widgets/widgets-init.php:65
 msgid "Add widgets here."
 msgstr ""
 
@@ -763,73 +783,4 @@ msgstr ""
 
 #: widgets/widgets-init.php:51
 msgid "Footer 4"
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Arya Multipurpose"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "https://everestthemes.com/arya-multipurpose-theme/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid ""
-"Arya Multipurpose theme is simple, clean, user-friendly well organized, "
-"elementor as page builder and live customizer as a theme options,  which "
-"enables flawless and work in an amazing way  for any website such as "
-"Businesses, Agencies, Apps landing, Freelancers, crypto business, "
-"Portfolio, Photographers, eCommerce Stores, Consulting, Architects, "
-"bloggers, Personal and many more. Arya multipurpose landing page theme "
-"built for various types of websites. You can create your amazing website "
-"without having knowledge of single line of code. Elementor drag and drop "
-"features will extend your website to the next level. It comes with numerous "
-"elements and features that have been created and chosen for the needs of "
-"software, startup, app landing and mobile app businesses. If any issue "
-"arise during theme setup – our reliable support team always ready to give "
-"support."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "everestthemes"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://everestthemes.com"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "AM - Pagebuilder Template"
-msgstr ""
-
-#: inc/theme-functions.php:21
-#. translators: If there are characters in your language that are not supported
-#. by Barlow, translate this to 'off'. Do not translate into your own language.
-msgctxt "Sarabun: on or off"
-msgid "on"
-msgstr ""
-
-#: third-party/class-tgm-plugin-activation.php:1217
-#: third-party/class-tgm-plugin-activation.php:3064
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: third-party/class-tgm-plugin-activation.php:2456
-#. translators: 1: install status, 2: update status
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: third-party/class-tgm-plugin-activation.php:2502
-#. translators: 1: number of plugins.
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: third-party/class-tgm-plugin-activation.php:2596
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
 msgstr ""

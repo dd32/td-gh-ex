@@ -21,6 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+if( class_exists( 'wp_body_open' ) ) { 
+    wp_body_open(); 
+}
+?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arya-multipurpose' ); ?></a>
 
@@ -53,9 +58,9 @@
 	                        	the_custom_logo();
 	                        else :
 	                        	?>
-	                        	<h1 class="site-title">
+	                        	<span class="site-title">
 	                        		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-	                        	</h1>
+	                        	</span>
 	                        	<?php
 	                        	$arya_multipurpose_description = get_bloginfo( 'description', 'display' );
 								if ( $arya_multipurpose_description || is_customize_preview() ) :
