@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.21' );
+define( 'AVANT_THEME_VERSION' , '1.1.22' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -375,8 +375,8 @@ function avant_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'Meta Slider', 'avant' ),
-			'slug'      => 'ml-slider',
+			'name'      => __( 'Linkt', 'avant' ),
+			'slug'      => 'linkt',
 			'required'  => false,
 		)
 	);
@@ -523,7 +523,7 @@ function avant_add_license_notice() {
 				<span>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Premium is currently on a %1$s for only $17', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/go/notice-purchase/" target="_blank">flash sale</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Premium is currently on a %1$s for only $19', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/go/notice-purchase/" target="_blank">35% flash sale</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</span>
 			</h4>

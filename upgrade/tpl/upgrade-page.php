@@ -10,10 +10,10 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/go/page-purchase/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Avant Premium </span><em>$17</em>', 'avant' ) ); ?>
+                    <?php printf( __( '<span>Avant Premium </span><em>$29</em>', 'avant' ) ); ?>
                 </a>
                 <div class="upgrade-order-offer">
-                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/go/page-purchase/" target="_blank">once off payment of $17 for lifetime updates</a></b>', 'avant' ); ?>
+                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/go/page-purchase/" target="_blank">once off payment of $29 for lifetime updates</a></b>', 'avant' ); ?>
                 </div>
             </div>
             

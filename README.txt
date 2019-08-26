@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.22
+* Added CSS fix for Catalogue Mode plugin
+* Style tweaks/fixes
+Premium: Added WhatssApp to theme social links
+
 #### 1.1.21
 * Updated Font Awesome - v5.9.0
 * Added dashboard help links

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-07-31 15:02+0200\n"
+"POT-Creation-Date: 2019-08-26 13:00+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1255,7 +1255,7 @@ msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: functions.php:378
-msgid "Meta Slider"
+msgid "Linkt"
 msgstr ""
 
 #: functions.php:522
@@ -1264,13 +1264,14 @@ msgstr ""
 
 #: functions.php:526
 #, php-format
-msgid "Premium is currently on a %1$s for only $17"
+msgid "Premium is currently on a %1$s for only $19"
 msgstr ""
 
 #: functions.php:526
+#, php-format
 msgid ""
-"<a href=\"https://kairaweb.com/go/notice-purchase/\" target=\"_blank\">flash "
-"sale</a>"
+"<a href=\"https://kairaweb.com/go/notice-purchase/\" target=\"_blank"
+"\">35% flash sale</a>"
 msgstr ""
 
 #: functions.php:530
@@ -1937,14 +1938,14 @@ msgid "About Avant"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:13
-msgid "<span>Avant Premium </span><em>$17</em>"
+msgid "<span>Avant Premium </span><em>$29</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:16
 msgid ""
 "<b>Time limited offer, only advertised here</b>... Get Avant Premium now for "
 "a <b><a href=\"https://kairaweb.com/go/page-purchase/\" target=\"_blank"
-"\">once off payment of $17 for lifetime updates</a></b>"
+"\">once off payment of $29 for lifetime updates</a></b>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:21
