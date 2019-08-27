@@ -27,6 +27,7 @@ class rambo_screen {
 		add_action( 'rambo_info_screen', array( $this, 'rambo_welcome_free_pro' ), 		50 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_child_themes' ), 		    50 );
 		add_action( 'rambo_info_screen', array( $this, 'rambo_import_data' ), 			60 );
+		add_action( 'rambo_info_screen', array( $this, 'rambo_email_course' ), 			70 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_rambo_dismiss_required_action', array( $this, 'rambo_dismiss_required_action_callback') );
@@ -233,7 +234,7 @@ class rambo_screen {
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','rambo'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','rambo'); ?></a></li>
 			<li role="presentation"><a href="#demo_import" aria-controls="demo_import" role="tab" data-toggle="tab"><?php esc_html_e( 'One Click Demo Import','rambo'); ?></a></li>
-			
+			<li role="presentation"><a href="#trustworthy_website" aria-controls="trustworthy_website" role="tab" data-toggle="tab"><?php esc_html_e( 'CREATE TRUSTWORTHY WEBSITES','rambo'); ?></a></li>
 			
 		</ul>
 		</div>
@@ -291,7 +292,13 @@ class rambo_screen {
 	}
 	
 	
-	
+	/**
+	 * Email Courses
+	 * 
+	 */
+	public function rambo_email_course() {
+		require_once( get_template_directory() . '/functions/rambo-info/sections/email_course.php' );
+	}
 }
 
 $GLOBALS['rambo_screen'] = new rambo_screen();

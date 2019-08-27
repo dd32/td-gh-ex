@@ -133,16 +133,19 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.9.1
+1. Move Trustworthy Websites Course tab from customizer into the About Rambo Theme option.
+2. Move HELP tab into the Important Links tab.
 @version 1.9
-Remove Lock Icons and Create list of features mentioned in View PRO details tab.
+1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 @version 1.8
-Update customizer and added upgrade to pro link. 
+1. Update customizer and added upgrade to pro link. 
 @version 1.7.3.2
-Fixed service image style issue
+1. Fixed service image style issue
 @version 1.7.3.1
-Update Settings
+1. Update Settings
 @version 1.7.3
-Updated settings
+1. Updated settings
 @version 1.7.2
 1. Fixed slider issue.
 @version 1.7.1

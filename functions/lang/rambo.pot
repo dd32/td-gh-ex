@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rambo\n"
-"POT-Creation-Date: 2019-08-22 18:57+0530\n"
+"POT-Creation-Date: 2019-08-26 13:46+0530\n"
 "PO-Revision-Date: 2019-04-06 13:50+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -145,15 +145,15 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:71
 msgid "Page"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:112
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:137
+#: functions.php:135
 msgid ""
 "Click the big blue button to start the dummy data import process.</br></"
 "br>Please be patient while WordPress imports all the content.</br></br>\n"
@@ -410,35 +410,6 @@ msgid ""
 "\"nofollow\" target=\"_blank\"> Webriti</a>"
 msgstr ""
 
-#: functions/customizer/customizer_emailcourse.php:5
-msgid "CREATE TRUSTWORTHY WEBSITES"
-msgstr ""
-
-#: functions/customizer/customizer_emailcourse.php:20
-msgid "A website exists for one and ONLY one reason:"
-msgstr ""
-
-#: functions/customizer/customizer_emailcourse.php:21
-msgid "To bring you more business."
-msgstr ""
-
-#: functions/customizer/customizer_emailcourse.php:23
-msgid ""
-"Think of your website as a hardworking salesman who works 24/7 and never "
-"asks for a raise!"
-msgstr ""
-
-#: functions/customizer/customizer_emailcourse.php:25
-msgid ""
-"In this email course I deliver 4 highly actionable tips on how you can build "
-"a website which is trustworthy and which, in turn, brings more business to "
-"you."
-msgstr ""
-
-#: functions/customizer/customizer_emailcourse.php:29
-msgid "JOIN COURSE"
-msgstr ""
-
 #: functions/customizer/customizer_header.php:8
 msgid "Header settings"
 msgstr ""
@@ -447,18 +418,6 @@ msgstr ""
 #: functions/customizer/customizer_header.php:25
 #: functions/customizer/customizer_header.php:39
 msgid "Custom CSS"
-msgstr ""
-
-#: functions/customizer/customizer_help.php:12
-msgid "DOWNLOAD IMPORT FILE"
-msgstr ""
-
-#: functions/customizer/customizer_help.php:19
-msgid "HELP"
-msgstr ""
-
-#: functions/customizer/customizer_help.php:46
-msgid "THEME SUPPORT"
 msgstr ""
 
 #: functions/customizer/customizer_pro.php:13
@@ -473,11 +432,19 @@ msgstr ""
 msgid "ADD YOUR REVIEW"
 msgstr ""
 
-#: functions/customizer/customizer_pro.php:75
+#: functions/customizer/customizer_pro.php:73
+msgid "DOWNLOAD IMPORT FILE"
+msgstr ""
+
+#: functions/customizer/customizer_pro.php:103
+msgid "THEME SUPPORT"
+msgstr ""
+
+#: functions/customizer/customizer_pro.php:134
 msgid "PRO DOCUMENTATION"
 msgstr ""
 
-#: functions/customizer/customizer_pro.php:79
+#: functions/customizer/customizer_pro.php:138
 msgid ""
 "The Pro Version gives you more opportunities to enhance your site and "
 "business. In order to create effective online presence one have to showcase "
@@ -822,6 +789,35 @@ msgstr ""
 msgid "workPress - Current theme"
 msgstr ""
 
+#: functions/rambo-info/sections/email_course.php:11
+msgid "Trustworthy Websites Details"
+msgstr ""
+
+#: functions/rambo-info/sections/email_course.php:18
+msgid "A website exists for one and ONLY one reason:"
+msgstr ""
+
+#: functions/rambo-info/sections/email_course.php:19
+msgid "To bring you more business."
+msgstr ""
+
+#: functions/rambo-info/sections/email_course.php:22
+msgid ""
+"Think of your website as a hardworking salesman who works 24/7 and never "
+"asks for a raise!"
+msgstr ""
+
+#: functions/rambo-info/sections/email_course.php:25
+msgid ""
+"In this email course I deliver 4 highly actionable tips on how you can build "
+"a website which is trustworthy and which, in turn, brings more business to "
+"you."
+msgstr ""
+
+#: functions/rambo-info/sections/email_course.php:32
+msgid "JOIN COURSE"
+msgstr ""
+
 #: functions/rambo-info/sections/free_pro.php:14
 msgid "Features"
 msgstr ""
@@ -1032,7 +1028,7 @@ msgid ""
 msgstr ""
 
 #: functions/rambo-info/sections/getting-started.php:28
-#: functions/rambo-info/welcome-screen.php:231
+#: functions/rambo-info/welcome-screen.php:232
 msgid "Getting Started"
 msgstr ""
 
@@ -1112,7 +1108,7 @@ msgid "After activation go to Appreance >> Import Demo Data."
 msgstr ""
 
 #: functions/rambo-info/sections/upgrade.php:11
-#: functions/rambo-info/welcome-screen.php:232
+#: functions/rambo-info/welcome-screen.php:233
 msgid "Why Upgrade Pro"
 msgstr ""
 
@@ -1265,12 +1261,12 @@ msgid ""
 "this support you can create website in multiple languages."
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:58
+#: functions/rambo-info/welcome-screen.php:59
 #, php-format
 msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:60
+#: functions/rambo-info/welcome-screen.php:61
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Webriti's Rambo WordPress theme. To take "
@@ -1278,28 +1274,32 @@ msgid ""
 "page%s."
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:61
+#: functions/rambo-info/welcome-screen.php:62
 msgid "Get started with Rambo"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:124
+#: functions/rambo-info/welcome-screen.php:125
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:161
+#: functions/rambo-info/welcome-screen.php:162
 msgid "View Theme Info"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:233
+#: functions/rambo-info/welcome-screen.php:234
 msgid "Free VS PRO"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:234
+#: functions/rambo-info/welcome-screen.php:235
 msgid "Child Themes"
 msgstr ""
 
-#: functions/rambo-info/welcome-screen.php:235
+#: functions/rambo-info/welcome-screen.php:236
 msgid "One Click Demo Import"
+msgstr ""
+
+#: functions/rambo-info/welcome-screen.php:237
+msgid "CREATE TRUSTWORTHY WEBSITES"
 msgstr ""
 
 #: functions/template-tags.php:9
