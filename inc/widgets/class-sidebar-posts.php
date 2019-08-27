@@ -100,6 +100,7 @@ class Bam_Sidebar_Posts extends WP_Widget {
 			array(
 				'cat' 					=>	$category,
 				'posts_per_page' 		=>	$number_posts,
+				'no_found_rows' 		=>  true,
 				'ignore_sticky_posts' 	=>  $sticky_posts
 			)
 		);	

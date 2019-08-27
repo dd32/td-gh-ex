@@ -88,7 +88,7 @@ class Bam_Tabbed_Widget extends WP_Widget {
 		<div class="tab-content clearfix">
 			<div id="bam-popular">
 				<?php 
-					$args = array( 'ignore_sticky_posts' => 1, 'posts_per_page' => $nop, 'post_status' => 'publish', 'orderby' => 'comment_count', 'order' => 'desc' );
+					$args = array( 'ignore_sticky_posts' => 1, 'posts_per_page' => $nop, 'post_status' => 'publish', 'no_found_rows' => true, 'orderby' => 'comment_count', 'order' => 'desc' );
 					$popular = new WP_Query( $args );
 
 					if ( $popular->have_posts() ) :
@@ -113,7 +113,7 @@ class Bam_Tabbed_Widget extends WP_Widget {
 
 			<div id="bam-recent">
 				<?php 
-					$args = array( 'ignore_sticky_posts' => 1, 'posts_per_page' => $nop, 'post_status' => 'publish' );
+					$args = array( 'ignore_sticky_posts' => 1, 'posts_per_page' => $nop, 'no_found_rows' => true, 'post_status' => 'publish' );
 					$popular = new WP_Query( $args );
 
 					if ( $popular->have_posts() ) :

@@ -4,7 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.2
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,11 @@ Bam is a great flexible theme for blogging sites.
 Bam supports all the major plugins.
 
 == Changelog ==
+
+= 1.0.7 =
+* Added Spanish translation.
+* Changed stylings of Tag Cloud Widget.
+* Added 'no_found_rows' => true parameter to sidebar widgets WP Queries to improve performance.
 
 = 1.0.6 =
 * Added Right to left language (RTL) support.

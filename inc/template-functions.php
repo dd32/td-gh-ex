@@ -72,3 +72,13 @@ function bam_excerpt_more( $more ) {
 	return ' &hellip; ';
 }
 add_filter( 'excerpt_more', 'bam_excerpt_more' );
+
+/**
+ * Changes tag font size.
+ */
+function bam_tag_cloud_sizes($args) {
+	$args['smallest']	= 10;
+	$args['largest'] 	= 10;
+	return $args; 
+}
+add_filter('widget_tag_cloud_args','bam_tag_cloud_sizes');

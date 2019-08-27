@@ -3,9 +3,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bam 1.0.1\n"
+"Project-Id-Version: Bam 1.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-08-02 20:38+0530\n"
+"POT-Creation-Date: 2019-08-26 21:59+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;_n;"
-"_nx\n"
+"_nx;esc_html_x\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -51,40 +51,40 @@ msgstr ""
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: functions.php:125 inc/customizer/settings/typography.php:111
+#: functions.php:127 inc/customizer/settings/typography.php:112
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:128
 msgid "Top Bar Menu"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:178
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:178 functions.php:187 functions.php:196 functions.php:205
-#: functions.php:214 functions.php:223
+#: functions.php:180 functions.php:189 functions.php:198 functions.php:207
+#: functions.php:216 functions.php:225
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:185
+#: functions.php:187
 msgid "Header Sidebar"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:196
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:205
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:214
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:223
 msgid "Footer 4"
 msgstr ""
 
@@ -118,9 +118,9 @@ msgid "Full Width Content Centered."
 msgstr ""
 
 #: inc/customizer/custom-controls/fonts/class-fonts-control.php:26
-#: inc/customizer/settings/typography.php:365
-#: inc/customizer/settings/typography.php:405
-#: inc/customizer/settings/typography.php:439
+#: inc/customizer/settings/typography.php:366
+#: inc/customizer/settings/typography.php:406
+#: inc/customizer/settings/typography.php:440
 msgid "Default"
 msgstr ""
 
@@ -132,6 +132,14 @@ msgstr ""
 
 #: inc/customizer/custom-controls/fonts/fonts.php:858
 msgid "Google Fonts"
+msgstr ""
+
+#: inc/customizer/section-pro/class-upsell-customize.php:76
+msgid "Ready for more?"
+msgstr ""
+
+#: inc/customizer/section-pro/class-upsell-customize.php:77
+msgid "Get Bam Pro"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:34
@@ -458,7 +466,7 @@ msgid "Header"
 msgstr ""
 
 #: inc/customizer/settings/header.php:42 inc/customizer/settings/topbar.php:42
-#: inc/customizer/settings/typography.php:221
+#: inc/customizer/settings/typography.php:222
 msgid "General"
 msgstr ""
 
@@ -684,179 +692,179 @@ msgstr ""
 msgid "All Headings"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:51
+#: inc/customizer/settings/typography.php:52
 msgid "Heading 1 (h1)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:63
+#: inc/customizer/settings/typography.php:64
 msgid "Heading 2 (h2)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:75
+#: inc/customizer/settings/typography.php:76
 msgid "Heading 3 (h3)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:87
+#: inc/customizer/settings/typography.php:88
 msgid "Heading 4 (h4)"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:99
+#: inc/customizer/settings/typography.php:100
 msgid "Logo"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:122
+#: inc/customizer/settings/typography.php:123
 msgid "Main Menu ( Drop Down )"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:134
+#: inc/customizer/settings/typography.php:135
 msgid "Blog Entry Title"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:146
+#: inc/customizer/settings/typography.php:147
 msgid "Single Post Entry Title"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:158
+#: inc/customizer/settings/typography.php:159
 msgid "Single Post Content"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:170
+#: inc/customizer/settings/typography.php:171
 msgid "Page Title"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:182
+#: inc/customizer/settings/typography.php:183
 msgid "Widget Title"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:211
+#: inc/customizer/settings/typography.php:212
 msgid "Typography"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:242
+#: inc/customizer/settings/typography.php:243
 msgid "Disable Google Fonts"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:262
+#: inc/customizer/settings/typography.php:263
 msgid "Font Subsets"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:264
+#: inc/customizer/settings/typography.php:265
 msgid "latin"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:265
+#: inc/customizer/settings/typography.php:266
 msgid "latin-ext"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:266
+#: inc/customizer/settings/typography.php:267
 msgid "cyrillic"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:267
+#: inc/customizer/settings/typography.php:268
 msgid "cyrillic-ext"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:268
+#: inc/customizer/settings/typography.php:269
 msgid "greek"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:269
+#: inc/customizer/settings/typography.php:270
 msgid "greek-ext"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:270
+#: inc/customizer/settings/typography.php:271
 msgid "vietnamese"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:333
+#: inc/customizer/settings/typography.php:334
 msgid "Font Family"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:363
+#: inc/customizer/settings/typography.php:364
 msgid "Font Weight"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:366
+#: inc/customizer/settings/typography.php:367
 msgid "Thin: 100"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:367
+#: inc/customizer/settings/typography.php:368
 msgid "Extra Light: 200"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:368
+#: inc/customizer/settings/typography.php:369
 msgid "Light: 300"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:369
+#: inc/customizer/settings/typography.php:370
 msgid "Normal: 400"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:370
+#: inc/customizer/settings/typography.php:371
 msgid "Medium: 500"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:371
+#: inc/customizer/settings/typography.php:372
 msgid "Semi Bold: 600"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:372
+#: inc/customizer/settings/typography.php:373
 msgid "Bold: 700"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:373
+#: inc/customizer/settings/typography.php:374
 msgid "Extra Bold: 800"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:374
+#: inc/customizer/settings/typography.php:375
 msgid "Black: 900"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:403
+#: inc/customizer/settings/typography.php:404
 msgid "Font Style"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:406
+#: inc/customizer/settings/typography.php:407
 msgid "Normal"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:407
+#: inc/customizer/settings/typography.php:408
 msgid "Italic"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:437
+#: inc/customizer/settings/typography.php:438
 msgid "Text Transform"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:440
+#: inc/customizer/settings/typography.php:441
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:441
+#: inc/customizer/settings/typography.php:442
 msgid "Capitalize"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:442
+#: inc/customizer/settings/typography.php:443
 msgid "Lowercase"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:443
+#: inc/customizer/settings/typography.php:444
 msgid "None"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:493
+#: inc/customizer/settings/typography.php:494
 msgid "Font Size"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:494
+#: inc/customizer/settings/typography.php:495
 msgid "You can add: px-em-rem"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:522
+#: inc/customizer/settings/typography.php:523
 msgid "Line Height"
 msgstr ""
 
-#: inc/customizer/settings/typography.php:556
+#: inc/customizer/settings/typography.php:557
 msgid "Color"
 msgstr ""
 
@@ -932,6 +940,11 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
+#: inc/template-tags.php:55
+#, php-format
+msgid "by %s"
+msgstr ""
+
 #: inc/template-tags.php:92
 msgid " / "
 msgstr ""
@@ -943,6 +956,64 @@ msgstr ""
 #: inc/template-tags.php:147 partials/content-page.php:41
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/theme-info-page.php:16 inc/theme-info-page.php:18
+msgid "Bam Theme"
+msgstr ""
+
+#: inc/theme-info-page.php:30
+msgid "Welcome to Bam WordPress Theme"
+msgstr ""
+
+#: inc/theme-info-page.php:39
+msgid "Theme Settings"
+msgstr ""
+
+#: inc/theme-info-page.php:40
+msgid ""
+"All the Bam theme settings are located at the customizer. Start customizing "
+"your website with customizer."
+msgstr ""
+
+#: inc/theme-info-page.php:41
+msgid "Go to customizer"
+msgstr ""
+
+#: inc/theme-info-page.php:48
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/theme-info-page.php:49
+msgid "Need to learn all about Bam? Read the theme documentation carefully."
+msgstr ""
+
+#: inc/theme-info-page.php:50
+msgid "Read the documentation."
+msgstr ""
+
+#: inc/theme-info-page.php:57
+msgid "Theme Info"
+msgstr ""
+
+#: inc/theme-info-page.php:58
+msgid "Know all the details about Bam theme."
+msgstr ""
+
+#: inc/theme-info-page.php:59
+msgid "Theme Details."
+msgstr ""
+
+#: inc/theme-info-page.php:66
+msgid "Theme Demo"
+msgstr ""
+
+#: inc/theme-info-page.php:67
+msgid "See the theme preview of free version."
+msgstr ""
+
+#: inc/theme-info-page.php:68
+msgid "Theme Preview"
 msgstr ""
 
 #: inc/widgets/class-sidebar-posts.php:14
@@ -1028,12 +1099,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: partials/single/authorbox.php:9
-#, php-format
-msgid "About %s"
-msgstr ""
-
-#: partials/single/authorbox.php:14
+#: partials/single/authorbox.php:13
 #, php-format
 msgid "View all posts by %s &rarr;"
 msgstr ""
