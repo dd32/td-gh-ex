@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ascent 3.4.0\n"
+"Project-Id-Version: Ascent 3.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ascent\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-08-05T08:09:32+00:00\n"
+"POT-Creation-Date: 2019-08-27T17:57:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: ascent\n"
@@ -23,7 +23,7 @@ msgid "https://ascenttheme.com/"
 msgstr ""
 
 #. Description of the theme
-msgid "Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. You can check out the demo at http://ascenttheme.com/ and get pro version at https://zetamatic.com/downloads/ascent-pro/."
+msgid "Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. You can check out the demo at http://ascenttheme.com/."
 msgstr ""
 
 #. Author of the theme
@@ -182,10 +182,6 @@ msgstr ""
 msgid "Post Comment"
 msgstr ""
 
-#: comments.php:105
-msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes:"
-msgstr ""
-
 #: content-page.php:23
 #: includes/template-tags.php:85
 #: image.php:37
@@ -225,240 +221,248 @@ msgstr ""
 msgid "Provide the email address."
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:207
+#: includes/customizer/class-ascent-customizer.php:208
 msgid "Other Settings"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:217
+#: includes/customizer/class-ascent-customizer.php:218
 msgid "Do you want to enable the Swipebox plugin?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:229
+#: includes/customizer/class-ascent-customizer.php:230
 msgid "Do you want to enable the sticky header?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:241
+#: includes/customizer/class-ascent-customizer.php:242
 msgid "Do you want to enable scroll to top feature?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:258
+#: includes/customizer/class-ascent-customizer.php:259
 msgid "Select Google Font"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:259
+#: includes/customizer/class-ascent-customizer.php:260
 msgid "Open Sans"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:260
+#: includes/customizer/class-ascent-customizer.php:261
 msgid "Raleway"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:261
+#: includes/customizer/class-ascent-customizer.php:262
 msgid "Roboto"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:262
+#: includes/customizer/class-ascent-customizer.php:263
 msgid "PT Sans"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:274
+#: includes/customizer/class-ascent-customizer.php:275
 msgid "Select Font Style"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:275
+#: includes/customizer/class-ascent-customizer.php:276
 msgid "Configure Font Style."
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:287
+#: includes/customizer/class-ascent-customizer.php:288
 msgid "Body Text Color"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:300
+#: includes/customizer/class-ascent-customizer.php:301
 msgid "Body Link Color"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:313
+#: includes/customizer/class-ascent-customizer.php:314
 msgid "Footer Top Border Color"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:326
+#: includes/customizer/class-ascent-customizer.php:327
 msgid "Footer Background Color"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:339
+#: includes/customizer/class-ascent-customizer.php:340
 msgid "Footer Bottom Background Color"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:358
+#: includes/customizer/class-ascent-customizer.php:359
 msgid "Theme Color Scheme"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:383
+#: includes/customizer/class-ascent-customizer.php:384
 msgid "Custom Theme Color"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:384
+#: includes/customizer/class-ascent-customizer.php:385
 msgid "User can customize the theme color. <em>(Note: If you wants to use the above \"Theme Color Scheme\" option, you should be clear this \"Custom Theme Color\" option. Otherwise this \"Custom Theme Color\" option will override the \"Theme Color Scheme\" option.)</em>."
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:394
+#: includes/customizer/class-ascent-customizer.php:395
 msgid "Social Media"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:404
+#: includes/customizer/class-ascent-customizer.php:405
 msgid "Facebook URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:415
+#: includes/customizer/class-ascent-customizer.php:416
 msgid "Twitter URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:426
+#: includes/customizer/class-ascent-customizer.php:427
 msgid "LinkedIn URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:438
+#: includes/customizer/class-ascent-customizer.php:439
 msgid "Google Plus URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:449
+#: includes/customizer/class-ascent-customizer.php:450
 msgid "Instagram URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:460
+#: includes/customizer/class-ascent-customizer.php:461
 msgid "YouTube URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:471
+#: includes/customizer/class-ascent-customizer.php:472
 msgid "Skype URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:482
+#: includes/customizer/class-ascent-customizer.php:483
 msgid "Dribbble URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:493
+#: includes/customizer/class-ascent-customizer.php:494
 msgid "Digg URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:504
+#: includes/customizer/class-ascent-customizer.php:505
 msgid "Github URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:515
+#: includes/customizer/class-ascent-customizer.php:516
 msgid "Delicious URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:526
+#: includes/customizer/class-ascent-customizer.php:527
 msgid "Reddit URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:537
+#: includes/customizer/class-ascent-customizer.php:538
 msgid "Pinterest URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:548
+#: includes/customizer/class-ascent-customizer.php:549
 msgid "RSS URL"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:559
+#: includes/customizer/class-ascent-customizer.php:560
 msgid "Home Page Slider"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:560
+#: includes/customizer/class-ascent-customizer.php:561
 msgid "In this Slider section, you can upload image or video, only one thing will populate in the Home page slider"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:570
+#: includes/customizer/class-ascent-customizer.php:571
 msgid "Do you want to display slider on homepage?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:582
+#: includes/customizer/class-ascent-customizer.php:583
 msgid "Do you want to display the static banner image ?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:594
+#: includes/customizer/class-ascent-customizer.php:595
 msgid "Do you want to enable slider overlay dotted bg ?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:606
+#: includes/customizer/class-ascent-customizer.php:607
 msgid "Do you want to enable slider dotted pagination?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:618
+#: includes/customizer/class-ascent-customizer.php:619
 msgid "Do you want to enable slider left/right navigation?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:632
+#: includes/customizer/class-ascent-customizer.php:633
 msgid "Enter the Video Height in Pixel"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:646
+#: includes/customizer/class-ascent-customizer.php:647
 msgid "Slider Image 1"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:649
-#: includes/customizer/class-ascent-customizer.php:690
-#: includes/customizer/class-ascent-customizer.php:732
-#: includes/customizer/class-ascent-customizer.php:775
-#: includes/customizer/class-ascent-customizer.php:817
+#: includes/customizer/class-ascent-customizer.php:650
+#: includes/customizer/class-ascent-customizer.php:691
+#: includes/customizer/class-ascent-customizer.php:733
+#: includes/customizer/class-ascent-customizer.php:776
+#: includes/customizer/class-ascent-customizer.php:818
 msgid "Upload image for first slider in sequence."
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:660
+#: includes/customizer/class-ascent-customizer.php:661
 msgid "Enter the Slider Video URL 1"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:674
+#: includes/customizer/class-ascent-customizer.php:675
 msgid "Slider description 1"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:687
+#: includes/customizer/class-ascent-customizer.php:688
 msgid "Slider Image 2"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:700
+#: includes/customizer/class-ascent-customizer.php:701
 msgid "Enter the Slider Video URL 2"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:714
+#: includes/customizer/class-ascent-customizer.php:715
 msgid "Slider description 2"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:729
+#: includes/customizer/class-ascent-customizer.php:730
 msgid "Slider Image 3"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:744
+#: includes/customizer/class-ascent-customizer.php:745
 msgid "Enter the Slider Video URL 3"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:758
+#: includes/customizer/class-ascent-customizer.php:759
 msgid "Slider description 3"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:772
+#: includes/customizer/class-ascent-customizer.php:773
 msgid "Slider Image 4"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:786
+#: includes/customizer/class-ascent-customizer.php:787
 msgid "Enter the Slider Video URL 4"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:800
+#: includes/customizer/class-ascent-customizer.php:801
 msgid "Slider description 4"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:814
+#: includes/customizer/class-ascent-customizer.php:815
 msgid "Slider Image 5"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:828
+#: includes/customizer/class-ascent-customizer.php:829
 msgid "Enter the Slider Video URL 5"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:842
+#: includes/customizer/class-ascent-customizer.php:843
 msgid "Slider description 5"
+msgstr ""
+
+#: includes/customizer/class-ascent-customizer.php:853
+msgid "Footer Settings"
+msgstr ""
+
+#: includes/customizer/class-ascent-customizer.php:865
+msgid "Copyright"
 msgstr ""
 
 #: includes/extras.php:67
@@ -680,24 +684,24 @@ msgstr ""
 msgid "Please provide valid video URL."
 msgstr ""
 
-#: footer.php:28
+#: footer.php:32
 msgid "A Semantic Personal Publishing Platform"
 msgstr ""
 
-#: footer.php:28
+#: footer.php:32
 msgid "&copy; %u Ascent. All rights reserved"
 msgstr ""
 
-#: footer.php:30
+#: footer.php:34
 msgid "%1$s  "
 msgstr ""
 
-#: footer.php:30
-msgid "http://nettantra.com/"
+#: footer.php:34
+msgid "http://zetamatic.com/"
 msgstr ""
 
-#: footer.php:30
-msgid "NetTantra"
+#: footer.php:34
+msgid "ZetaMatic"
 msgstr ""
 
 #: sidebar.php:23

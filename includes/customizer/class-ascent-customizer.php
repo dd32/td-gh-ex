@@ -201,6 +201,7 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 				'description' => __( 'Provide the email address.', 'ascent' ),
 			) );
 
+			
 			/*  Other Settings
 			============================================================================================*/
 			$wp_customize->add_section( 'ascent_other_settings', array(
@@ -844,6 +845,28 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 			        'type' => 'textarea'
 			    )
 			);
+
+
+			/* Footer Section*/
+
+			$wp_customize->add_section( 'ascent_footer', array(
+					'title' => __( 'Footer Settings', 'ascent' ),
+					'priority' => 8,
+			));
+
+			$wp_customize->add_setting( 'ascent_theme_options[asc_copyright]', array(
+				'capability' => 'edit_theme_options',
+				'default' => '',
+				'sanitize_callback' => 'sanitize_text_field'
+			) );
+			$wp_customize->add_control(
+		      'ascent_theme_options[asc_copyright]',
+		      array(
+		          'label' => esc_html__( 'Copyright', 'ascent' ),
+		          'section' => 'ascent_footer',
+		          'type' => 'textarea'
+		       )
+		    );
 		}
 
 

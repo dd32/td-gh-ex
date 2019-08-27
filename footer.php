@@ -7,6 +7,7 @@
  * @package ascent
  */
  $enable_scroll_to_top = ascent_get_options('asc_enable_scroll_to_top');
+ $asc_copyright = ascent_get_options('asc_copyright');
 
 ?>
         </div><!-- close .*-inner (main-content) -->
@@ -25,9 +26,14 @@
         <div class="container">
             <div class="site-info">
                 <?php do_action( 'ascent_credits' ); ?>
-                <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'ascent' ); ?>" ><?php printf( __( '&copy; %u Ascent. All rights reserved', 'ascent' ),  date("Y") ); ?></a>
-                <span class="sep"> | </span>
-                <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'http://zetamatic.com/', 'ascent' ) ); ?>" target="_blank"><?php printf( __( 'ZetaMatic', 'ascent' ), 'ZetaMatic' ); ?></a>
+                <?php if( $asc_copyright ): ?>
+                    <?php echo $asc_copyright; ?>
+                <?php else: ?>
+                    <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'ascent' ); ?>" ><?php printf( __( '&copy; %u Ascent. All rights reserved', 'ascent' ),  date("Y") ); ?></a>
+                    <span class="sep"> | </span>
+                    <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'http://zetamatic.com/', 'ascent' ) ); ?>" target="_blank"><?php printf( __( 'ZetaMatic', 'ascent' ), 'ZetaMatic' ); ?></a>
+                <?php endif; ?>
+                
             </div><!-- close .site-info -->
         </div>
     </div>

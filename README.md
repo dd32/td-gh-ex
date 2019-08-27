@@ -2,7 +2,7 @@
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
 Tested up to: 5.2.2
-Stable tag: 3.5.0
+Stable tag: 3.6.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,7 +47,7 @@ If you are looking for a clean professional space, which accommodates your visua
 == Frequently Asked Questions ==
 
 
-= Does Ascent support Theme Options?  =
+= Does Ascent support Cutomizer Options?  =
 
 Yes! these are the following options
 * Header settings
@@ -72,11 +72,9 @@ Ascent supports Aside, Image, Video, Quote and Link post formats.
 
 You can add Slider following these steps:
 
-* In your admin panel, go to Appearance -> Theme Options
-* Open the Home Page Slider Tab
+* In your admin panel, go to Customizer -> Home Page Option -> Home Page Slider
 * Enable the 'Do you want to display slider on homepage ?' checkbox.
 * Provide the require Images and Description.
-* Save the Options.
 
 = Does Ascent use featured images? =
 
@@ -84,10 +82,14 @@ Featured Images look best at 732 pixels wide or larger.
 
 = Does Ascent support multiple color scheme? =
 
-Yes! You can choose your color scheme under Appearance -> Theme Options -> Styling(Tab).
+Yes! You can choose your color scheme under Customizer -> Styling section
 
 
 = Changelog =
+
+### Version 3.6.0
+- Removed HTML allowed_tags
+- Added customizer option for footer copyright section
 
 ### Version 3.5.0
 - Fixed CSS issue
