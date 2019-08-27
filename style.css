@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-base/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-base/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-base/
-Version: 3.2.1
+Version: 3.3
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-base
@@ -299,10 +299,13 @@ big {
     line-height: 40px;
 }
 
+.sidebar .entry-title,
 .widget-title {
+	font-size: 20px;
 	line-height: 1.4;
 }
 
+.sidebar-header-right .entry-title,
 .sidebar-header-right .widget-title,
 #infinite-handle span {
     font-size: 16px;
@@ -363,6 +366,10 @@ a:active {
 	text-decoration: underline;
 }
 
+a:focus {
+	outline: thin dotted;
+}
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -410,8 +417,10 @@ figure {
 table {
 	border-top: 1px solid #eee;
 	border-left: 1px solid #eee;
+	display: table;
 	font-weight: bold;
 	margin: 0 0 2em;
+	table-layout: fixed;
 	width: 100%;
 }
 
@@ -567,6 +576,7 @@ blockquote:before {
 #promotion-message .section,
 #content .wrapper,
 .hentry,
+.woocommerce-wrap,
 .no-results,
 .not-found,
 .sidebar,
@@ -616,6 +626,10 @@ blockquote:before {
 
 .archive-post-wrap {
 	padding-bottom: 20px;
+}
+
+.widget figure {
+	margin-bottom: 15px;
 }
 
 .page-content,
@@ -817,10 +831,6 @@ textarea {
 /*--------------------------------------------------------------
 6. Navigation
 --------------------------------------------------------------*/
-.menu-toggle {
-	display: none;
-}
-
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -980,8 +990,11 @@ textarea {
 }
 
 .catchbase-nav-menu .menu-item:hover > .sub-menu,
+.catchbase-nav-menu .menu-item.focus > .sub-menu,
 .catchbase-nav-menu .page_item:hover > .children,
-.sidebar-header-right .widget_nav_menu .menu-item:hover > .sub-menu {
+.catchbase-nav-menu .page_item.focus > .children,
+.sidebar-header-right .widget_nav_menu .menu-item:hover > .sub-menu,
+.sidebar-header-right .widget_nav_menu .menu-item.focus > .sub-menu {
 	left: auto;
 	opacity: 1;
 }
@@ -1056,7 +1069,7 @@ textarea {
 	border: none;
 	float: left;
 	height: 28px;
-	color: #000;
+	color: #21759b;
 	text-align: center;
 	display: block;
 	padding: 0 10px;
@@ -1087,7 +1100,7 @@ textarea {
 
 #nav-below .wp-pagenavi a,
 #nav-below .wp-pagenavi span {
-	background-color: #f2f2f2;
+	background-color: #eee;
 	margin: 0 0 0 10px;
 }
 
@@ -1213,6 +1226,7 @@ textarea {
 .archive-post-wrap:after,
 .wrapper:after,
 .catchbase-nav-menu:after,
+.nav-header-right:after,
 .featured-content-wrap:after,
 #content_sidebar_wrap:after,
 .widget:after,
@@ -1461,6 +1475,23 @@ textarea {
 	width: 240px;
 }
 
+/* Three Columns ( Primary Sidebar, Content, Secondary Sidebar ) */
+.three-columns.primary #content_sidebar_wrap {
+	float:  left;
+}
+
+.three-columns.primary .sidebar-secondary {
+	float: right;
+}
+
+.three-columns.primary #main {
+	float: right;
+}
+
+.three-columns.primary .sidebar-primary {
+    float: right;
+}
+
 /* Three Columns (Equal Sidebars) */
 .three-columns.equal-sidebars #content_sidebar_wrap {
 	width:  820px;
@@ -1650,6 +1681,11 @@ textarea {
 /* Search widget */
 .widget_search .search-submit {
 	display: none;
+}
+
+.widget figure a {
+	display: block;
+	line-height: 0;
 }
 
 /* Calender widget */
@@ -1923,9 +1959,9 @@ caption {
 }
 
 #breadcrumb-list span.sep {
-	float: right;
-	margin-left: 0;
-	padding: 0 0 0 5px;
+       float: right;
+       margin-left: 0;
+       padding: 0 0 0 5px;
 }
 
 #breadcrumb-list span.sep,
@@ -1933,7 +1969,7 @@ caption {
 #breadcrumb-list span.search-text,
 #breadcrumb-list span.tag-text,
 #breadcrumb-list span.author-text {
-	border: none;
+       border: none;
 }
 
 #breadcrumb-list a,
@@ -2130,7 +2166,10 @@ caption {
 	background-color: #000;
 	border-color: #000;
     color: #fff;
-    text-decoration: none;
+}
+
+.site .widget_catchbase_social_icons a:hover {
+	text-decoration: none;
 }
 
 .site .widget_catchbase_social_icons a.genericon-facebook-alt:hover {
@@ -2290,4 +2329,26 @@ caption {
 	border: none;
 	background: transparent;
 	padding: 0;
+}
+
+.site .widget_catchbase_social_icons .icon-hover,
+.site .widget_catchbase_social_icons .has-hover:hover .icon-static {
+	display: none;
+}
+
+.site .widget_catchbase_social_icons .has-hover:hover .icon-hover {
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+}
+
+/* WooCommerce */
+.woocommerce .products ul,
+.woocommerce ul.products {
+	margin-bottom: 0;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    margin-bottom: 20px;
 }

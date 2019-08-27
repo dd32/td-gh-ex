@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: blog, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.8
-Tested up to: 5.0.3
-Stable tag: 3.2.1
+Tested up to: 5.2.2
+Stable tag: 3.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -139,6 +139,10 @@ Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.3 (Released: August 26, 2019) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Keyboard navigation accessibility issue
 
 = 3.2.1 (Released: January 30, 2019 ) =
 * Bug Fixed: get_privacy_policy_link() issue on old WP versions
@@ -383,7 +387,7 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Copyright ==
 
-Catch Base WordPress Theme, Copyright 2012-2018 Catchthemes.com
+Catch Base WordPress Theme, Copyright 2012-2019 Catchthemes.com
 Catch Base is distributed under the terms of the GNU GPL
 
 == Resources ==

@@ -22,7 +22,7 @@ if ( ! function_exists( 'catchbase_primary_menu' ) ) :
  */
 function catchbase_primary_menu() {
     ?>
-	<nav class="nav-primary search-enabled" role="navigation">
+	<nav class="site-navigation nav-primary search-enabled" role="navigation">
         <div class="wrapper">
             <h3 class="assistive-text"><?php _e( 'Primary Menu', 'catch-base' ); ?></h3>
             <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-base' ); ?>"><?php _e( 'Skip to content', 'catch-base' ); ?></a></div>
@@ -64,7 +64,7 @@ if ( ! function_exists( 'catchbase_secondary_menu' ) ) :
 function catchbase_secondary_menu() {
     if ( has_nav_menu( 'secondary' ) ) {
 	?>
-    	<nav class="nav-secondary" role="navigation">
+    	<nav class="site-navigation nav-secondary" role="navigation">
             <div class="wrapper">
                 <h3 class="assistive-text"><?php _e( 'Secondary Menu', 'catch-base' ); ?></h3>
                 <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-base' ); ?>"><?php _e( 'Skip to content', 'catch-base' ); ?></a></div>
