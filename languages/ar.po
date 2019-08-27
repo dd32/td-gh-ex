@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box theme\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-08-05 17:56-0700\n"
+"POT-Creation-Date: 2019-08-26 20:22-0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: www.ed3s.com <master@ed3s.com>\n"
@@ -404,111 +404,111 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:803
+#: ../functions.php:800
 msgid "Name"
 msgstr "الاسم"
 
-#: ../functions.php:805 ../functions.php:955
+#: ../functions.php:802 ../functions.php:952
 msgid "Email"
 msgstr "البريد الالكتروني"
 
-#: ../functions.php:861
+#: ../functions.php:858
 msgid "Footer Social Links Menu"
 msgstr ""
 
-#: ../functions.php:865
+#: ../functions.php:862
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions.php:870
+#: ../functions.php:867
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions.php:875
+#: ../functions.php:872
 msgid "Google Plus"
 msgstr "‏Google Plus"
 
-#: ../functions.php:880
+#: ../functions.php:877
 msgid "Linkedin"
 msgstr "‏Linkedin"
 
-#: ../functions.php:885
+#: ../functions.php:882
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:890
+#: ../functions.php:887
 msgid "YouTube"
 msgstr "‏YouTube"
 
-#: ../functions.php:895
+#: ../functions.php:892
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../functions.php:900
+#: ../functions.php:897
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:905
+#: ../functions.php:902
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:910
+#: ../functions.php:907
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:915
+#: ../functions.php:912
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:920
+#: ../functions.php:917
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:925
+#: ../functions.php:922
 msgid "AIM"
 msgstr "‏AIM"
 
-#: ../functions.php:930
+#: ../functions.php:927
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:935
+#: ../functions.php:932
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:940
+#: ../functions.php:937
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:945
+#: ../functions.php:942
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:950
+#: ../functions.php:947
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:960
+#: ../functions.php:957
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:965
+#: ../functions.php:962
 msgid "Meetup"
 msgstr "‏Meetup"
 
-#: ../functions.php:971
+#: ../functions.php:968
 msgid "Goodreads"
 msgstr ""
 
-#: ../functions.php:977
+#: ../functions.php:974
 msgid "Github"
 msgstr ""
 
-#: ../functions.php:983
+#: ../functions.php:980
 msgid "VK"
 msgstr ""
 
-#: ../functions.php:988
+#: ../functions.php:985
 msgid "Spotify"
 msgstr ""
 

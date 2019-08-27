@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box 4.7.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 17:56-0700\n"
-"PO-Revision-Date: 2019-08-05 17:56-0700\n"
+"POT-Creation-Date: 2019-08-26 20:23-0700\n"
+"PO-Revision-Date: 2019-08-26 20:23-0700\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: D'CLIC, L Capronnier <contact@dclic.info, lcapronnier@yahoo."
 "Com>\n"
@@ -452,121 +452,121 @@ msgstr "ouvrir le menu enfant"
 msgid "collapse child menu"
 msgstr "refermer le menu enfant"
 
-#: ../functions.php:803
+#: ../functions.php:800
 msgid "Name"
 msgstr "Nom"
 
-#: ../functions.php:805 ../functions.php:955
+#: ../functions.php:802 ../functions.php:952
 #: ../inc/customizer/customizer.php:612
 msgid "Email"
 msgstr "E-mail"
 
-#: ../functions.php:861
+#: ../functions.php:858
 msgid "Footer Social Links Menu"
 msgstr "Menu pour les liens sociaux dans le pied de page"
 
-#: ../functions.php:865 ../inc/customizer/customizer.php:432
+#: ../functions.php:862 ../inc/customizer/customizer.php:432
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions.php:870 ../inc/customizer/customizer.php:442
+#: ../functions.php:867 ../inc/customizer/customizer.php:442
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions.php:875
+#: ../functions.php:872
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: ../functions.php:880
+#: ../functions.php:877
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions.php:885 ../inc/customizer/customizer.php:472
+#: ../functions.php:882 ../inc/customizer/customizer.php:472
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:890
+#: ../functions.php:887
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../functions.php:895
+#: ../functions.php:892
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../functions.php:900
+#: ../functions.php:897
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:905 ../inc/customizer/customizer.php:512
+#: ../functions.php:902 ../inc/customizer/customizer.php:512
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:910 ../inc/customizer/customizer.php:522
+#: ../functions.php:907 ../inc/customizer/customizer.php:522
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:915 ../inc/customizer/customizer.php:532
+#: ../functions.php:912 ../inc/customizer/customizer.php:532
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:920 ../inc/customizer/customizer.php:542
+#: ../functions.php:917 ../inc/customizer/customizer.php:542
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:925
+#: ../functions.php:922
 msgid "AIM"
 msgstr "AIM"
 
-#: ../functions.php:930 ../inc/customizer/customizer.php:562
+#: ../functions.php:927 ../inc/customizer/customizer.php:562
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:935 ../inc/customizer/customizer.php:572
+#: ../functions.php:932 ../inc/customizer/customizer.php:572
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:940 ../inc/customizer/customizer.php:582
+#: ../functions.php:937 ../inc/customizer/customizer.php:582
 #: ../inc/widgets.php:64
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:945 ../inc/customizer/customizer.php:592
+#: ../functions.php:942 ../inc/customizer/customizer.php:592
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:950 ../inc/customizer/customizer.php:602
+#: ../functions.php:947 ../inc/customizer/customizer.php:602
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:960 ../inc/customizer/customizer.php:622
+#: ../functions.php:957 ../inc/customizer/customizer.php:622
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:965 ../inc/customizer/customizer.php:632
+#: ../functions.php:962 ../inc/customizer/customizer.php:632
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../functions.php:971 ../inc/customizer/customizer.php:642
+#: ../functions.php:968 ../inc/customizer/customizer.php:642
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../functions.php:977 ../inc/customizer/customizer.php:652
+#: ../functions.php:974 ../inc/customizer/customizer.php:652
 msgid "Github"
 msgstr "Github"
 
-#: ../functions.php:983 ../inc/customizer/customizer.php:662
+#: ../functions.php:980 ../inc/customizer/customizer.php:662
 msgid "VK"
 msgstr "VK"
 
-#: ../functions.php:988 ../inc/customizer/customizer.php:672
+#: ../functions.php:985 ../inc/customizer/customizer.php:672
 msgid "Spotify"
 msgstr ""
 
-#: ../functions.php:1069
+#: ../functions.php:1066
 msgid "Scroll Up"
 msgstr "Défiler vers le haut"
 
-#: ../functions.php:1103
+#: ../functions.php:1100
 msgid "Skip to content"
 msgstr "Aller au contenu principal"
 

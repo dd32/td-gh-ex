@@ -742,9 +742,6 @@ function catchbox_scripts_method() {
 	// Theme block stylesheet.
 	wp_enqueue_style( 'catchbox-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'catchbox-style' ), '1.0' );
 
-	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
-	wp_enqueue_script( 'catchbox-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/navigation.js', array( 'jquery' ), '20152512', true );
-
 	/**
 	 * Loads up Scroll Up script
 	 */

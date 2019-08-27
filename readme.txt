@@ -3,7 +3,7 @@ Contributors: catchthemes
 Tags: dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Requires at least: 4.8
 Tested up to: 5.2.2
-Stable tag: 4.8.4
+Stable tag: 4.8.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -83,6 +83,11 @@ Because Gutenberg ( Block editor from WordPress version 5.0 or onwards ) automat
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 4.8.5 (Released: August 26, 2019) =
+* Bug Fixed: Keyboard navigation accessibility issue
+* Bug Fixed: RTL menu issue
+* Bug Fixed: Essential Widgets plugin issue with menu
 
 = 4.8.4 (Released: August 05, 2019) =
 * Updated: Swedish language translation by Johnny Eriksson

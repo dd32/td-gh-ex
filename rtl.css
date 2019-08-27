@@ -106,7 +106,9 @@ input#s {
 
 /* Assistive text */
 #access a.assistive-text:active,
-#access a.assistive-text:focus {
+#access a.assistive-text:focus,
+#access a.screen-reader-text:active,
+#access a.screen-reader-text:focus {
 	left: auto;
 	right: 7.6%;
 }
@@ -117,10 +119,17 @@ input#s {
 .logo-wrap {
 	float: right;
 }
+#sidebar-header-right {
+	float: left;
+}
+.sidebar-top .widget {
+	float: left;
+}
+
 /* Search Form */
 #branding #searchform {
 	right: auto;
-	left: 0%;
+	left: 7.6%;
 	text-align: left;
 }
 #branding #s {
@@ -131,41 +140,148 @@ input#s {
 	padding-left: 205px;
 }
 
-
 /* =Menu
 -------------------------------------------------------------- */
 
-#branding ul.menu li, 
-#branding #access-secondary ul.menu li,
-#colophon #access-footer ul.menu li { 
-	float: right;
+#access ul.menu li,
+#access-secondary ul.menu li,
+#access-footer ul.menu li {
 	border-left: none;
+	float: right;
 }
-#branding ul.menu li, 
-#colophon #access-footer ul.menu li {
+
+#access ul.menu li,
+#access-footer ul.menu li {
 	border-right: 1px solid #444;
 }
-#branding #access-secondary ul.menu li {
+#access-secondary ul.menu li {
 	border-right: 1px solid #dedede;
 }
-#access ul ul,
-#branding #access-secondary ul ul {
+#access ul.menu ul,
+#access-secondary ul.menu ul {
 	float: right;
 	left: auto;
+	right: -999em;
+}
+#access ul.menu li:hover > ul,
+#access ul.menu li.focus > ul,
+#access-secondary ul.menu li:hover > ul,
+#access-secondary ul.menu li.focus > ul {
 	right: 0;
 }
-#access ul ul ul,
-#branding #access-secondary ul ul ul {
-	left: auto;
+#access ul.menu ul li:hover > ul,
+#access ul.menu ul li.focus > ul,
+#access-secondary ul.menu ul li:hover > ul,
+#access-secondary ul.menu ul li.focus > ul {
 	right: 100%;
 }
-#branding #access-secondary ul.menu ul li {
-	border: none;
+
+@media screen and (max-width: 960px) {
+	#access ul.menu li,
+	#access-secondary ul.menu li,
+	#access-footer ul.menu li {
+		border-right: none;
+		float: none;
+	}
+	#access ul.menu a,
+	#access-secondary ul.menu a,
+	#access-footer ul.menu a {
+   		text-align: right;
+	}
+	.site-header-menu #access .menu-item-has-children > a,
+	.site-header-menu #access .page_item_has_children > a,
+	.site-header-menu #access-secondary .menu-item-has-children > a,
+	.site-footer-menu #access-footer .menu-item-has-children > a {
+		margin-left: 45px;
+		margin-right: 0;
+		padding-right: 20px;
+	}
+	#access ul.menu ul,
+	#access ul.menu ul ul,
+	#access-secondary ul.menu ul,
+	#access-secondary ul.menu ul ul,
+	#access-footer ul.menu ul,
+	#access-footer ul.menu ul ul {
+	    right: auto;
+	}
+	#access ul.menu ul li:hover > ul,
+	#access ul.menu ul li.focus > ul,
+	#access-secondary ul.menu ul li:hover > ul,
+	#access-secondary ul.menu ul li.focus > ul,
+	#access-footer ul.menu ul li:hover > ul,
+	#access-footer ul.menu ul li.focus > ul {
+		right: auto;
+	}
+
+	#access ul.menu ul a,
+	#access-secondary ul.menu ul a,
+	#access-footer ul.menu ul a {
+		padding-right: 30px;
+		padding-left: 20px;
+	}
+	.site-header-menu #access ul .menu-item-has-children > a,
+	.site-header-menu #access ul .page_item_has_children > a,
+	.site-header-menu #access-secondary ul .menu-item-has-children > a,
+	.site-footer-menu #access-footer ul .menu-item-has-children > a {
+		padding-right: 20px;
+	}
+
+	#access ul.menu ul ul a,
+	#access-secondary ul.menu ul ul a,
+	#access-footer ul.menu ul ul a {
+		padding-right: 40px;
+		padding-left: 20px;
+	}
+	.site-header-menu #access ul ul .menu-item-has-children > a,
+	.site-header-menu #access ul ul .page_item_has_children > a,
+	.site-header-menu #access-secondary ul ul .menu-item-has-children > a,
+	.site-footer-menu #access-footer ul ul .menu-item-has-children > a {
+		padding-right: 30px;
+		padding-left: 20px
+	}
+	#access ul.menu ul ul ul a,
+	#access-secondary ul.menu ul ul ul a,
+	#access-footer ul.menu ul ul ul a {
+		padding-right: 50px;
+		padding-left: 20px
+	}
+	.site-header-menu #access ul ul ul .menu-item-has-children > a,
+	.site-header-menu #access ul ul ul .page_item_has_children > a,
+	.site-header-menu #access-secondary ul ul ul .menu-item-has-children > a,
+	.site-footer-menu #access-footer ul ul ul .menu-item-has-children > a {
+		padding-right: 40px;
+		padding-left: 20px
+	}
+	#access ul.menu ul ul ul ul a,
+	#access-secondary ul.menu ul ul ul ul a,
+	#access-footer ul.menu ul ul ul ul a {
+		padding-right: 60px;
+		padding-left: 20px
+	}
+	.site-header-menu #access ul ul ul ul .menu-item-has-children > a,
+	.site-header-menu #access ul ul ul ul .page_item_has_children > a,
+	.site-header-menu #access-secondary ul ul ul ul .menu-item-has-children > a,
+	.site-footer-menu #access-footer ul ul ul ul .menu-item-has-children > a {
+		padding-right: 60px;
+		padding-left: 20px
+	}
+	.dropdown-toggle {
+		left: 0;
+		right: auto;
+	}
+	.dropdown-toggle:after {
+		border-right-width: 1px;
+		border-left-width: 0;
+	}
+	.mobile-menu-text {
+		float: left;
+	}
 }
 
 
 /* =Content
 ----------------------------------------------- */
+
 .entry-title,
 .entry-header .entry-meta {
 	padding-right: 0;
@@ -517,11 +633,6 @@ section.recent-posts .other-recent-posts .comments-link > span {
 	background-position: right center;
 }
 
-.rtl table th,
-.rtl .mce-item-table th,
-.rtl table caption {
-	text-align: right;
-}
 
 /* =Responsive Structure
 ----------------------------------------------- */
@@ -529,7 +640,7 @@ section.recent-posts .other-recent-posts .comments-link > span {
 @media screen and (max-width: 960px) {
 	.tinynav {
 		background-position: left 1px;
-	}	
+	}
 }
 @media (max-width: 800px) {
 	/* Simplify the showcase template when small feature */
@@ -565,12 +676,12 @@ section.recent-posts .other-recent-posts .comments-link > span {
 @media screen and (max-width: 767px) {
 	.logo-wrap {
 		float: none;
-	}	
+	}
 	#branding #searchform {
 		left: auto;
 		right: auto;
 		text-align: center;
-	}	
+	}
 	#branding #s {
 		float: none;
 	}
