@@ -345,7 +345,7 @@ if ( ! function_exists( 'atlas_concern_enqueue_scripts' ) ) :
     function atlas_concern_enqueue_scripts() {
 
      /* Js */
-
+    wp_enqueue_script( 'jquery.min', get_template_directory_uri() . '/js/jquery-1.12.4.min.js', array('jquery'), '20151215', true );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );
     wp_enqueue_script( 'bootsnav', get_template_directory_uri() . '/js/bootsnav.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'concern-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
