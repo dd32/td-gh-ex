@@ -4,11 +4,11 @@ Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a perfect, modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a color options, a magazine homepage template, and a two columned layout that makes your site in flash. A clean and elegant design helps you to deliever or present your content in a stilish way. Easy customization options with use of customizer API can give you an advance features to obtain a perfect looking site.
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
-Tags: blog, news, one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, custom-header, translation-ready, theme-options, threaded-comments, footer-widgets
+Tags: blog, news, one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, rtl-language-support, custom-header, translation-ready, theme-options, threaded-comments, footer-widgets
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -224,7 +224,7 @@ input::-moz-focus-inner {
     background: none;
     border: 2px solid #ff424e;
     color: #ff424e;
-    display: table;
+    display: inline-block;
     font-size: 14px;
     letter-spacing: 2px;
     height: 50px;
@@ -954,7 +954,9 @@ body .jetpack-social-navigation-genericons a:before {
         padding: 0;
     }
 
-    .main-navigation .menu li:hover > ul {
+    .main-navigation .menu li:hover > ul,
+    .main-navigation .menu li:focus > ul,
+    .main-navigation .menu li:focus-within > ul{
         visibility: visible;
         filter: alpha(opacity=1);
         opacity: 1;
@@ -981,7 +983,9 @@ body .jetpack-social-navigation-genericons a:before {
         left: 100%;
     }
 
-    .main-navigation .menu ul ul li:hover ul {
+    .main-navigation .menu ul ul li:hover ul,
+    .main-navigation .menu ul ul li:focus ul,
+    .main-navigation .menu ul ul li:focus-within ul{
         top: 0;
     }
 }
@@ -1229,22 +1233,27 @@ body .jetpack-social-navigation-genericons a:before {
 a {
     color: #000;
     text-decoration: none;
-    outline: none;
 }
 
+a:active,
 a:visited {
-    text-decoration: none;
-    outline: none;
+    color: #000;
 }
 
 a:hover,
-a:focus,
-a:active {
+a:focus {
     color: #ff6860;
     text-decoration: none;
-    outline: none;
 }
 
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -1402,7 +1411,6 @@ body, html {
     padding: 16px 32px 24px;
 }
 
-.style-archive .post-content a,
 .site .post .style-archive header:before,
 .site .sticky header:after {
     color: inherit;
@@ -1445,8 +1453,12 @@ body, html {
 .style-archive .entry-header {
     text-align: left;
     position: relative;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     z-index: 1;
+}
+
+.style-archive .entry-content p {
+    margin-top: 0;
 }
 
 @media screen and (max-width: 767px) {

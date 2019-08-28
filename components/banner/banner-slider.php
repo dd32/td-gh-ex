@@ -11,9 +11,13 @@ if (!function_exists('advance_blog_front_page_banner_slider')) :
                 'cat' => absint(advance_blog_get_option('category_for_banner_slider')),
                 'ignore_sticky_posts' => true,
                 'posts_per_page' => 4,
-            );
-            echo '<div class="slick main-slider">';
-            $banner_slider_post_query = new WP_Query($banner_slider_args);
+            ); ?>
+            <?php $rtl_class = 'false';
+            if(is_rtl()){ 
+                $rtl_class = 'true';
+            }?>
+            <div class="slick main-slider" data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
+            <?php $banner_slider_post_query = new WP_Query($banner_slider_args);
             if ($banner_slider_post_query->have_posts()) :
                 while ($banner_slider_post_query->have_posts()) : $banner_slider_post_query->the_post();
                     if (has_post_thumbnail()) {
