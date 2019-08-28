@@ -17,7 +17,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     }
 }
 $wp_customize->add_section( 'busiprof_pro_section' , array(
-		'title'      => __('Upgrade to Pro','busiprof'),
+		'title'      => __('Important Links','busiprof'),
 		'priority'   => 1000,
    	) );
 

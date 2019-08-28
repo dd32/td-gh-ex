@@ -129,38 +129,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'section' => 'slider_section',
 			'type' => 'checkbox',
 		));
-		
-		
-	class WP_slider_pro_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-    public function render_content() {
-    ?>
-     <div class="pro-vesrion">
-	 <P><?php _e('To add more slider and animation effects click to upgrade to pro','busiprof');?></P>
-	 </div>
-	  <div class="pro-box">
-	 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','busiprof' ); ?></a>
-	 <div>
-    <?php
-    }
-}
-
-	$wp_customize->add_setting(
-		'add_more_slider',
-		array(
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-		)	
-	);
-	$wp_customize->add_control( new WP_slider_pro_Customize_Control( $wp_customize, 'add_more_slider', array(	
-			'section' => 'slider_section',
-			'setting' => 'add_more_slider',
-	
-	)));
-	
 	
 	/* Banner strip section */
 	$wp_customize->add_section( 'bannerstrip_section' , array(
@@ -300,39 +268,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 				'type'     => 'text',
 				'priority'   => 6,
 		));
-		
-		
-		//Pro Service	
-		class WP_service_pro_Customize_Control extends WP_Customize_Control {
-		public $type = 'new_menu';
-		/**
-		* Render the control's content.
-		*/
-		public function render_content() {
-		?>
-		 <div class="pro-vesrion">
-		 <P><?php _e('Want to add more Services? Then upgrade to Pro!','busiprof');?></P>
-		 </div>
-		  <div class="pro-box">
-		 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','busiprof' ); ?></a>
-		 <div>
-		<?php
-		}
-	}
 
-		$wp_customize->add_setting(
-			'add_more_service',
-			array(
-				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field',
-			)	
-		);
-		$wp_customize->add_control( new WP_service_pro_Customize_Control( $wp_customize, 'add_more_service', array(	
-				'section' => 'services_section',
-				'setting' => 'add_more_service',
-		
-		)));
-		
 		
 	//Projects Setting
 	
@@ -638,46 +574,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		
 		
-		//Upgrade to Pro
-		class WP_Projects_Customize_Control extends WP_Customize_Control {
-		public $type = 'new_menu';
-		/**
-		* Render the control's content.
-		*/
-		public function render_content() {
-		?>
-		 <div class="pro-vesrion">
-		 <P><?php _e('Want to add more projects and categorisations? Then upgrade to Pro.','busiprof');?></P>
-		 </div>
-		  <div class="pro-box">
-		 <a href="<?php echo esc_url('http://webriti.com/busiprof/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','busiprof' ); ?></a>
-		 <div>
-		<?php
-		}
-		}
-
-		$wp_customize->add_setting(
-			'Projects_pro',
-			array(
-				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field',
-			)	
-		);
-		$wp_customize->add_control( new WP_Projects_Customize_Control( $wp_customize, 'Projects_pro', array(	
-				'section' => 'projects_settings',
-				'setting' => 'Projects_pro',
-			))
-		);
-		
-		
-		//Recent Blog Setting
-		$wp_customize->add_section( 'recent_blog_settings' , array(
-		'title'      => __('Recent Blog setting', 'busiprof'),
-		'panel'  => 'section_settings',
-		'priority'   => 4,
-		) );
-		
-		
 		// Enable Recent Blog
 		$wp_customize->add_setting( 'busiprof_theme_options[home_recentblog_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[home_recentblog_section_enabled]' , array(
@@ -779,129 +675,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 				'customizer_repeater_checkbox_control' => true,
 				) ) );
 		}
-		
-		
-		/* Client Slider Section */
-	$wp_customize->add_section( 'clientslider_section' , array(
-		'title'      => __('Client Slider setting', 'busiprof'),
-		'panel'  => 'section_settings',
-		'priority'   => 6,
-   	) );
-	
-		
-		
-		//Client Pro
-		class busiprof_Customize_client_upgrade extends WP_Customize_Control {
-			public function render_content() { ?>
-			<h3><?php _e('Want to add a Client section with slider animations? Then','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank">
-			<?php _e('Upgrade to Pro','busiprof'); ?> </a>  
-			<?php
-			}
-		}
-		
-		
-		$wp_customize->add_setting( 'client_upgrade', array(
-			'capability'			=> 'edit_theme_options',
-			'sanitize_callback'	=> 'wp_filter_nohtml_kses',
-		));
-		$wp_customize->add_control(
-			new busiprof_Customize_client_upgrade(
-			$wp_customize,
-			'client_upgrade',
-				array(
-					'section'				=> 'clientslider_section',
-					'settings'				=> 'client_upgrade',
-				)
-			)
-		);
-		
-		
-		
-		// Enable Client Strip
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[home_client_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field',  ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[home_client_section_enabled]' , array(
-				'label'    => __('Enable Home Client section', 'busiprof' ),
-				'section'  => 'clientslider_section',
-				'type'     => 'radio',
-				'choices' => array(
-					'on'=>'ON',
-					'off'=>'OFF'
-				)
-		));	
-	
-	
-		// Client section title
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_title]', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => __('Meet our clients','busiprof') , 'type'=>'option',) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[client_title]', 
-			array(
-				'label'    => __( 'Title', 'busiprof' ),
-				'section'  => 'clientslider_section',
-				'type'     => 'text',
-				'input_attrs' => array('disabled' => 'disabled'),
-		));
-		
-		
-		// Client section Description
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_desc]', array( 'sanitize_callback' => 'sanitize_text_field', 'default' => __('We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.','busiprof') , 'type'=>'option' ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[client_desc]', 
-			array(
-				'label'    => __('Description', 'busiprof' ),
-				'section'  => 'clientslider_section',
-				'type'     => 'text',
-				'input_attrs' => array('disabled' => 'disabled'),
-		));
-		
-		// client to show
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_strip_total]', array( 'default' => 5 , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field', ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[client_strip_total]', 
-			array(
-				'label'    => __('Number of shown clients', 'busiprof' ),
-				'section'  => 'clientslider_section',
-				'type'     => 'select',
-				'choices'=>array(
-					'5'=>'5',
-				)
-		));
-		
-		// Client Strip slide Speed
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[client_strip_slide_speed]', array( 'default' => 2000 , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field', ) );
-		$wp_customize->add_control(	'busiprof_pro_theme_options[client_strip_slide_speed]', 
-			array(
-				'label'    => __('Animation speed', 'busiprof' ),
-				'section'  => 'clientslider_section',
-				'type'     => 'select',
-				'choices' => array(
-					'2000'=>'2.0',
-				)
-		));
-		
-		//link
-		class WP_client_Customize_Control extends WP_Customize_Control {
-		public $type = 'new_menu';
-		/**
-		* Render the control's content.
-		*/
-		public function render_content() {
-		?>
-		<a href="#" class="button"><?php _e('Click here to add client','busiprof' ); ?></a>
-		<?php
-		}
-	}
-
-	$wp_customize->add_setting(
-		'pro_cleint',
-		array(
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-		)	
-	);
-	$wp_customize->add_control( new WP_client_Customize_Control( $wp_customize, 'pro_cleint', array(	
-			'section' => 'clientslider_section',
-		))
-	);
-		
-		
-		
 		
 		
 		function busiprof_input_field_sanitize_text( $input ) 

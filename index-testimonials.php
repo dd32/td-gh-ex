@@ -57,11 +57,14 @@ if( $current_options['home_testimonial_section_enabled']=='on' ) { ?>
 					if( $testimonial_options!='' )
 						{
 					foreach($testimonial_options as $testimonial_iteam){ 
-					
-							$test_desc =  $testimonial_iteam->text;
-							$test_link = $testimonial_iteam->link;
+
+						$title = ! empty( $testimonial_iteam->title ) ? apply_filters( 'busiprof_translate_single_string', $testimonial_iteam->title, 'Testimonial section' ) : '';
+						$test_desc = ! empty(  $testimonial_iteam->text ) ? apply_filters( 'busiprof_translate_single_string',$testimonial_iteam->text, 'Testimonial section' ) : '';
+						$test_link = ! empty( $testimonial_iteam->link ) ? apply_filters( 'busiprof_translate_single_string', $testimonial_iteam->link, 'Testimonial section' ) : '';
+
 							$open_new_tab = $testimonial_iteam->open_new_tab;
-							$designation = $testimonial_iteam->designation;
+
+						$designation = ! empty( $testimonial_iteam->designation ) ? apply_filters( 'busiprof_translate_single_string', $testimonial_iteam->designation, 'Testimonial section' ) : '';
 						
 				
 					?>
@@ -79,7 +82,7 @@ if( $current_options['home_testimonial_section_enabled']=='on' ) { ?>
 							</div>
 							<div class="media"> 
 								<div class="media-body">
-									<span class="author-name"> <a href="<?php echo $test_link; ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>> <?php echo $testimonial_iteam->title; ?> </a> <small class="designation"><?php echo $designation; ?></small></span>
+									<span class="author-name"> <a href="<?php echo $test_link; ?>" <?php if($open_new_tab == 'yes'){ echo 'target="_blank"';}?>> <?php echo $title; ?> </a> <small class="designation"><?php echo $designation; ?></small></span>
 								</div> 
 							</div>
 						</div>

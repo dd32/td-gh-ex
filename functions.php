@@ -21,17 +21,19 @@
 	require( BUSI_THEME_FUNCTIONS_PATH . '/commentbox/comment-function.php' ); // for custom contact widget
 
 	// customizer files include
+	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_general_settings.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_sections_settings.php' );
-	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_template_settings.php' );
-	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_post_slugs_settings.php' );
-	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_layout_manager_settings.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/cust_pro.php' );
-	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/custo_emailcourse.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
 	require( BUSI_THEME_FUNCTIONS_PATH . '/customizer/customizer-archive.php');
+	require( BUSI_THEME_FUNCTIONS_PATH . '/wpml-pll/functions.php' );
 	
-	
+	function busiprof_customizer_css() {
+		wp_enqueue_style( 'busiprof-customizer-info', get_template_directory_uri() . '/css/pro-feature.css' );
+	}
+	add_action( 'admin_init', 'busiprof_customizer_css' );
+
 	//theme ckeck plugin required 	
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support('woocommerce');
