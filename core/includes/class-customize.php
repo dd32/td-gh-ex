@@ -27,10 +27,6 @@ class lookilite_customize {
 			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		}
 			
-		if ( !get_option( 'looki-lite-dismissed-notice') ) {
-			wp_enqueue_style ( 'looki-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
-		}
-
 	}
 
     public function customize_scripts() {

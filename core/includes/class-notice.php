@@ -56,26 +56,32 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice looki_lite-notice">
+            <div class="notice notice-warning is-dismissible">
             
-            	<div class="looki_lite-noticedescription">
-					
-                    <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'looki-lite' ); ?></strong><br/>
+            	<p>
+            
+            		<strong>
 
-					<?php 
-					
-						printf( 
-							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'looki-lite' ) . '</a>', 
-							esc_url( wp_nonce_url( add_query_arg( 'looki-lite-dismiss', '1' ), 'looki-lite-dismiss-action'))
-						);
-					
-					?>
+						<?php
+                        
+                            esc_html_e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more. ', 'looki-lite' );
+
+							printf( 
+								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'looki-lite' ) . '</a>', 
+								esc_url( wp_nonce_url( add_query_arg( 'looki-lite-dismiss', '1' ), 'looki-lite-dismiss-action'))
+							);
+                            
+                        ?>
+                    
+                    </strong>
+                    
+            	</p>
+                    
+            	<p>
+
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button-primary"><?php _e( 'Upgrade to Looki Premium', 'looki-lite' ); ?></a>
                 
-                </div>
-                
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button"><?php _e( 'Upgrade to Looki Premium', 'looki-lite' ); ?></a>
-                
-                <div class="clear"></div>
+            	</p>
 
             </div>
 		

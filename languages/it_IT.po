@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 21:17+0200\n"
-"PO-Revision-Date: 2019-08-02 21:17+0200\n"
+"POT-Creation-Date: 2019-08-28 18:06+0200\n"
+"PO-Revision-Date: 2019-08-28 18:06+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -88,7 +88,7 @@ msgstr "&raquo;"
 msgid "Leave a reply"
 msgstr "Lascia un commento"
 
-#: core/admin/customize/customize.php:13 core/includes/class-notice.php:76
+#: core/admin/customize/customize.php:13 core/includes/class-notice.php:82
 msgid "Upgrade to Looki Premium"
 msgstr "Aggiorna a Looki Premium"
 
@@ -502,11 +502,11 @@ msgstr "Sidebar per la pagina di ricerca"
 msgid "This sidebar will be shown in the search page."
 msgstr "Questa sidebar verrà visualizzata nella pagina di ricerca"
 
-#: core/includes/class-customize.php:312
+#: core/includes/class-customize.php:308
 msgid "Looki premium version"
 msgstr "Looki versione premium"
 
-#: core/includes/class-customize.php:314
+#: core/includes/class-customize.php:310
 msgid ""
 "Upgrade to the premium version of Looki, to enable 600+ Google Fonts, "
 "unlimited widget areas, portfolio section and much more."
@@ -514,39 +514,39 @@ msgstr ""
 "Aggiorna alla versione premium di Looki per abilitare oltre 600 font di "
 "Google, aree widget illimitate, sezione portfolio e molto altro."
 
-#: core/includes/class-customize.php:318
+#: core/includes/class-customize.php:314
 msgid "Upgrade to Looki premium"
 msgstr "Aggiorna a Looki Premium"
 
-#: core/includes/class-customize.php:326
+#: core/includes/class-customize.php:322
 msgid "Become a supporter"
 msgstr "Diventa un supporter"
 
-#: core/includes/class-customize.php:328
+#: core/includes/class-customize.php:324
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, è gradita una delle "
 "seguenti azioni:"
 
-#: core/includes/class-customize.php:332
+#: core/includes/class-customize.php:328
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/includes/class-customize.php:333
+#: core/includes/class-customize.php:329
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/includes/class-notice.php:63
+#: core/includes/class-notice.php:67
 msgid ""
 "Upgrade to the premium version of Looki to enable an extensive option panel, "
-"600+ Google Fonts, unlimited sidebars, portfolio and much more."
+"600+ Google Fonts, unlimited sidebars, portfolio and much more. "
 msgstr ""
 "Aggiorna alla versione premium di Looki per attivare un pannello di "
 "controllo completo, oltre 600 Google Fonts, barre laterali illimitate, "
-"sezione portfolio e molto altro."
+"sezione portfolio e molto altro. "
 
-#: core/includes/class-notice.php:68
+#: core/includes/class-notice.php:70
 msgid "Dismiss this notice"
 msgstr "Rimuovi questa notifica"
 
@@ -619,6 +619,14 @@ msgstr "Controlla il termine digitato"
 #: search.php:49
 msgid "Make a new search, from the below form:"
 msgstr "Effettua una nuova ricerca, dal seguente form"
+
+#~ msgid ""
+#~ "Upgrade to the premium version of Looki to enable an extensive option "
+#~ "panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more."
+#~ msgstr ""
+#~ "Aggiorna alla versione premium di Looki per attivare un pannello di "
+#~ "controllo completo, oltre 600 Google Fonts, barre laterali illimitate, "
+#~ "sezione portfolio e molto altro."
 
 #~ msgid "Page %s"
 #~ msgstr "Pagina %s"

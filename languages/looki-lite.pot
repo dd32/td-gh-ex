@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 21:16+0200\n"
+"POT-Creation-Date: 2019-08-28 18:06+0200\n"
 "PO-Revision-Date: 2015-09-19 13:02+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Leave a reply"
 msgstr ""
 
-#: core/admin/customize/customize.php:13 core/includes/class-notice.php:76
+#: core/admin/customize/customize.php:13 core/includes/class-notice.php:82
 msgid "Upgrade to Looki Premium"
 msgstr ""
 
@@ -474,44 +474,44 @@ msgstr ""
 msgid "This sidebar will be shown in the search page."
 msgstr ""
 
-#: core/includes/class-customize.php:312
+#: core/includes/class-customize.php:308
 msgid "Looki premium version"
 msgstr ""
 
-#: core/includes/class-customize.php:314
+#: core/includes/class-customize.php:310
 msgid ""
 "Upgrade to the premium version of Looki, to enable 600+ Google Fonts, "
 "unlimited widget areas, portfolio section and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:318
+#: core/includes/class-customize.php:314
 msgid "Upgrade to Looki premium"
 msgstr ""
 
-#: core/includes/class-customize.php:326
+#: core/includes/class-customize.php:322
 msgid "Become a supporter"
 msgstr ""
 
-#: core/includes/class-customize.php:328
+#: core/includes/class-customize.php:324
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 
-#: core/includes/class-customize.php:332
+#: core/includes/class-customize.php:328
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/includes/class-customize.php:333
+#: core/includes/class-customize.php:329
 msgid "Subscribe our newsletter"
 msgstr ""
 
-#: core/includes/class-notice.php:63
+#: core/includes/class-notice.php:67
 msgid ""
 "Upgrade to the premium version of Looki to enable an extensive option panel, "
-"600+ Google Fonts, unlimited sidebars, portfolio and much more."
+"600+ Google Fonts, unlimited sidebars, portfolio and much more. "
 msgstr ""
 
-#: core/includes/class-notice.php:68
+#: core/includes/class-notice.php:70
 msgid "Dismiss this notice"
 msgstr ""
 
