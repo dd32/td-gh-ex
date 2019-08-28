@@ -36,8 +36,6 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_recommended_plugin.php');
 
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
-
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/metabox.php');

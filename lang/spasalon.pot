@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Spasalon\n"
-"POT-Creation-Date: 2019-08-23 14:26+0530\n"
+"POT-Creation-Date: 2019-08-26 12:35+0530\n"
 "PO-Revision-Date: 2018-08-01 12:55+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -100,7 +100,7 @@ msgid ""
 "It seems we can't find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: content.php:24 functions.php:223 functions.php:241
+#: content.php:24 functions.php:221 functions.php:239
 #: functions/widget/wbr-news-widget.php:108 index-news.php:88
 msgid "Read More"
 msgstr ""
@@ -109,11 +109,11 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:103
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:105
 msgid "Footer Menu"
 msgstr ""
 
@@ -299,35 +299,6 @@ msgstr ""
 
 #: functions/customizer/banner-settings.php:209
 msgid "WooCommerce"
-msgstr ""
-
-#: functions/customizer/customizer-emailcourse.php:5
-msgid "CREATE TRUSTWORTHY WEBSITES"
-msgstr ""
-
-#: functions/customizer/customizer-emailcourse.php:20
-msgid "A website exists for one and ONLY one reason:"
-msgstr ""
-
-#: functions/customizer/customizer-emailcourse.php:21
-msgid "To bring you more business."
-msgstr ""
-
-#: functions/customizer/customizer-emailcourse.php:23
-msgid ""
-"Think of your website as a hardworking salesman who works 24/7 and never "
-"asks for a raise!"
-msgstr ""
-
-#: functions/customizer/customizer-emailcourse.php:25
-msgid ""
-"In this email course I deliver 4 highly actionable tips on how you can build "
-"a website which is trustworthy and which, in turn, brings more business to "
-"you."
-msgstr ""
-
-#: functions/customizer/customizer-emailcourse.php:29
-msgid "JOIN COURSE"
 msgstr ""
 
 #: functions/customizer/customizer-pro-feature.php:13
@@ -639,6 +610,35 @@ msgstr ""
 msgid "Customize"
 msgstr ""
 
+#: functions/spasalon-info/sections/email-course.php:11
+msgid "Trustworthy Websites Details"
+msgstr ""
+
+#: functions/spasalon-info/sections/email-course.php:18
+msgid "A website exists for one and ONLY one reason:"
+msgstr ""
+
+#: functions/spasalon-info/sections/email-course.php:19
+msgid "To bring you more business."
+msgstr ""
+
+#: functions/spasalon-info/sections/email-course.php:22
+msgid ""
+"Think of your website as a hardworking salesman who works 24/7 and never "
+"asks for a raise!"
+msgstr ""
+
+#: functions/spasalon-info/sections/email-course.php:25
+msgid ""
+"In this email course I deliver 4 highly actionable tips on how you can build "
+"a website which is trustworthy and which, in turn, brings more business to "
+"you."
+msgstr ""
+
+#: functions/spasalon-info/sections/email-course.php:32
+msgid "JOIN COURSE"
+msgstr ""
+
 #: functions/spasalon-info/sections/free_pro.php:14
 msgid "Features"
 msgstr ""
@@ -860,7 +860,7 @@ msgid ""
 msgstr ""
 
 #: functions/spasalon-info/sections/getting-started.php:24
-#: functions/spasalon-info/welcome-screen.php:233
+#: functions/spasalon-info/welcome-screen.php:234
 msgid "Getting Started"
 msgstr ""
 
@@ -900,7 +900,7 @@ msgid "Support"
 msgstr ""
 
 #: functions/spasalon-info/sections/upgrade.php:11
-#: functions/spasalon-info/welcome-screen.php:234
+#: functions/spasalon-info/welcome-screen.php:235
 msgid "Why upgrade to PRO?"
 msgstr ""
 
@@ -1038,36 +1038,40 @@ msgid ""
 "can translate your website in multiple languages."
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:61
+#: functions/spasalon-info/welcome-screen.php:62
 #, php-format
 msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:63
+#: functions/spasalon-info/welcome-screen.php:64
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing SpaSalon WordPress theme. To take full "
 "advantage of the features this theme has to offer visit our %swelcome page%s."
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:64
+#: functions/spasalon-info/welcome-screen.php:65
 msgid "Get started with SpaSalon"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:126
+#: functions/spasalon-info/welcome-screen.php:127
 msgid "Hooray! There are no required actions for you right now."
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:163
+#: functions/spasalon-info/welcome-screen.php:164
 msgid "View Theme Info"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:235
+#: functions/spasalon-info/welcome-screen.php:236
 msgid "Free VS PRO"
 msgstr ""
 
-#: functions/spasalon-info/welcome-screen.php:236
+#: functions/spasalon-info/welcome-screen.php:237
 msgid "Child Themes"
+msgstr ""
+
+#: functions/spasalon-info/welcome-screen.php:238
+msgid "CREATE TRUSTWORTHY WEBSITES"
 msgstr ""
 
 #: functions/widget/post-widget.php:13

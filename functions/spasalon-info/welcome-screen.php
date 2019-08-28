@@ -26,6 +26,7 @@ class spasalon_screen {
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_child_themes' ), 		    20 );
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_upgrade' ), 		        30 );
 		add_action( 'spasalon_info_screen', array( $this, 'spasalon_welcome_free_pro' ), 		40 );
+		add_action( 'spasalon_info_screen', array( $this, 'spasalon_email_course' ), 		50 );
 		
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_spasalon_dismiss_required_action', array( $this, 'spasalon_dismiss_required_action_callback') );
@@ -234,7 +235,8 @@ class spasalon_screen {
 			<li role="presentation"><a href="#upgrade" aria-controls="upgrade" role="tab" data-toggle="tab"><?php esc_html_e( 'Why upgrade to PRO?','spasalon'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free VS PRO','spasalon'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','spasalon'); ?></a></li>
-			
+			<li role="presentation"><a href="#trustworthy_website" aria-controls="trustworthy_website" role="tab" data-toggle="tab"><?php esc_html_e( 'CREATE TRUSTWORTHY WEBSITES','spasalon'); ?></a></li>
+
 		</ul>
 		</div>
 		</div>
@@ -281,6 +283,15 @@ class spasalon_screen {
 	 */
 	public function spasalon_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/spasalon-info/sections/free_pro.php' );
+	}
+
+
+	/**
+	 * Email Courses
+	 * 
+	 */
+	public function spasalon_email_course() {
+		require_once( get_template_directory() . '/functions/spasalon-info/sections/email-course.php' );
 	}
 	
 }
