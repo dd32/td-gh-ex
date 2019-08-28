@@ -38,6 +38,8 @@ function benzer_premium_setting( $wp_customize ) {
 					<li><a href="https://specia.ticksy.com/submit/#100013009" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/support.png"></a></li>
 					
 					<li><a href="https://wordpress.org/support/theme/benzer/reviews/#new-post" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rating.png"></a></li>
+					
+					<li><a href="https://speciatheme.com/benzer-premium/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/upgrade-pro.jpg"></a></li>
 				</ul>
 			</div>
 		<?php
