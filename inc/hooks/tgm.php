@@ -30,7 +30,14 @@ if ( ! function_exists( 'better_health_recommended_plugins' ) ) :
 				'name'     => esc_html__( 'WooCommerce', 'better-health' ),
 				'slug'     => 'woocommerce',
 				'required' => false,
-			),		   
+			),
+
+            array(
+				'name'     => esc_html__( 'Gutentor', 'better-health' ),
+				'slug'     => 'gutentor',
+				'required' => false,
+			),
+
 		);
 		tgmpa( $plugins );
 	}

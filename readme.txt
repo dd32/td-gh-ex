@@ -26,6 +26,12 @@ Demo: http://demo.canyonthemes.com/better-health
 
 == Changelog ==
 
+= 1.0.0 - August 28 2019 =
+
+* Page Templated added
+* Fixed minor issues
+
+
 = 0.0.9 - August 16 2019 =
 
 * Added wp_body()
