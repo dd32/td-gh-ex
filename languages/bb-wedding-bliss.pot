@@ -12,7 +12,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: 404.php:13 
+#: 404.php:13
 msgid '404 Not Found'
 msgstr ""
 
@@ -115,16 +115,16 @@ msgstr ""
 msgid 'One thought on &ldquo;%s&rdquo;'
 msgstr ""
 
-#: comments.php:35
+#: comments.php:37
 msgid 'comments title'
 msgstr ""
 
-#: comments.php:60
+#: comments.php:62
 msgid 'Comments are closed.'
 msgstr ""
 
 #: footer.php:32
-msgid 'Copyright 2017 -'
+msgid 'Copyright 2017'
 msgstr ""
 
 #: functions.php:31
@@ -187,10 +187,6 @@ msgstr ""
 msgid "Wedding WordPress Theme"
 msgstr ""
 
-#: header.php:23
-msgid 'Menu'
-msgstr ""
-
 #: no-results.php:11
 msgid 'Nothing Found'
 msgstr ""
@@ -212,47 +208,47 @@ msgstr ""
 msgid 'Pages:'
 msgstr ""
 
-#: searchform.php:10
-#: searchform.php:12
+#: searchform.php:11
+#: searchform.php:13
 msgid 'Search'
 msgstr ""
 
-#: searchform.php:10
+#: searchform.php:11
 msgid 'placeholder'
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:13
 msgid 'submit button'
 msgstr ""
 
-#: sidebar.php:12
+#: sidebar.php:11
 msgid 'Archives'
 msgstr ""
 
-#: sidebar.php:18
+#: sidebar.php:17
 msgid 'Meta'
 msgstr ""
 
-#: template-parts/single-post.php:14
+#: template-parts/single-post.php:15
 msgid '0 Comments'
 msgstr ""
 
-#: template-parts/single-post.php:37
+#: template-parts/single-post.php:38
 #: template-parts/image-layout.php:42
 msgid 'Parent post link'
 msgstr ""
 
-#: template-parts/single-post.php:45
+#: template-parts/single-post.php:46
 #: template-parts/image-layout.php:50
 msgid 'Previous'
 msgstr ""
 
-#: template-parts/single-post.php:42
+#: template-parts/single-post.php:43
 #: template-parts/image-layout.php:47
 msgid 'Next'
 msgstr ""
 
-#: template-parts/single-post.php:46
+#: template-parts/single-post.php:47
 #: template-parts/image-layout.php:51
 msgid 'Previous post:'
 msgstr ""
@@ -263,7 +259,7 @@ msgid 'Next post:'
 msgstr ""
 
 #: template-parts/content-audio.php:38
-#: template-parts/content-gallery.php:28
+#: template-parts/content-gallery.php:26
 #: template-parts/content-image.php:23
 #: template-parts/content-video.php:39
 #: template-parts/content.php:16

@@ -4,7 +4,7 @@ Theme URI:  https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-them
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.0.9
+Version: 1.2
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -31,6 +31,7 @@ body{
 	font-size:12px;
 	color:#000;
 	font-family: 'Vollkorn', serif;
+	overflow-x: hidden;
 }
 img{
 	margin:0;
@@ -136,6 +137,35 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
 .sticky{
 	margin:0;
 	padding:0;
@@ -182,7 +212,7 @@ input[type='submit']:hover{
 #respond{
 	clear:both;
 }
-.toggleMenu{
+.toggle{
  	display:none;
 }
 .bypostauthor{
@@ -312,27 +342,36 @@ a.button{
 }
 .logo a{
 	color: #fff;
+	font-size: 40px;
 }
 .logo p{
 	font-size:12px;
 	color:#fff;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page .logo a{
+	color: #000;
+	font-size: 40px;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page .logo p{
+	font-size:12px;
+	color:#000;
 }
 .page-template-custom-front-page #header{
 	z-index:999;
 	width:100%;
 	height:auto;
 	position: absolute;
-	background: rgb(000 , 000, 000, 0.5);
+	background: rgba(243, 237, 237, 0.5);
     border: none;
     box-shadow: none;
 }
 #header {
-    background: #fff;
-    border-bottom: 5px solid #000;
+    background: rgb(21, 28, 39);
     position: relative;
     float: left;
     width: 100%;
     padding: 12px 0;
+    color: #b79338;
 }
 #header .header-top{
 	background:#000;
@@ -366,6 +405,7 @@ a.button{
 	font-size:14px;
 	text-transform: uppercase;
 	font-weight:bold;
+	text-align: left;
 }
 #header .nav ul li{
 	display:inline-block;
@@ -380,40 +420,43 @@ a.button{
 	padding:10px;
 	display:block;
 }
-#header .nav ul li a:active,
-#header .nav ul li a:hover{
-	color:#b79338;
+#header .nav ul li a{
+	color:#fff !important;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page #header .nav ul li a{
+	color:#000 !important;
 }
 
 /* Homepage */
-#our-services small{
+.our-services small{
 	color:#6d6d6d;
 	margin:0 0 20px 0;
 }
-#our-services .small-button{
+.our-services .small-button{
 	margin-top:30px;
 }
-#our-services .page-box {
+.our-services .page-box {
     border-radius: 5px;
     padding: 30px;
-    margin: 0 0 4% 0;
+    margin: 20px 0 4% 0;
     background: #f5f5f5;
 }
-#our-services .page-box h4 a{
+.our-services .page-box h4 a{
 	color:rgb(21, 28, 39);
 	margin:0 0 29px 0;
 	padding:0;
+	font-size: 30px;
 }
-#our-services .page-box p{
+.our-services .page-box p{
 	font-size:15px;
 	margin:0;
 	line-height: 25px;
-	color: #737371;
+	color: #555;
 }
-#our-services .box-image{
+.our-services .box-image{
 	margin:0;
 }
-#our-services img{
+.our-services img{
 	max-width:100%;-webkit-transition-duration: 1s;
 	-moz-transition-duration: 1s;
 	-o-transition-duration: 1s;
@@ -426,7 +469,7 @@ a.button{
 	border:1px solid #fff;
 	width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
 	margin:40px 0 20px 0;
 }
 
@@ -508,6 +551,16 @@ h2.woocommerce-loop-product__title,
 .woocommerce table.shop_table td{
 	font-size: 18px;
 }
+.woocommerce-product-gallery.woocommerce-product-gallery--with-images.woocommerce-product-gallery--columns-4.images {
+    opacity: 1 !important;
+}
+.woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
+    width: 28.75%;
+}
+.woocommerce .woocommerce-ordering select{
+	padding: 10px;
+	font-size: 16px;
+}
 .col-1,.col-2 {
     max-width: 100%;
 }
@@ -528,14 +581,14 @@ span.posted_in {
 }
 span.posted_in a,
 span.tagged_as a{
-	color: #b78f31;
+	color: #555;
 }
-.woocommerce-cart #content-ts,
+.woocommerce-cart .content-ts,
 span.woocommerce-input-wrapper {
     width: 100%;
 }
 .woocommerce-MyAccount-content a {
-    color: #b7842d;
+    color: #000;
 }
 .woocommerce table.shop_table th{
 	font-size: 18px;
@@ -561,12 +614,25 @@ span.woocommerce-Price-amount.amount {
     position: absolute;
     text-align: center;
     line-height: 3.236;
-    top: -1.5em;
+    top: 0.5em;
     left: -1.5em;
     padding: 1px 7px !important;
 }
 .woocommerce .quantity .qty {
     font-size: 17px !important;
+}
+.woocommerce .woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a{
+	font-size: 15px;
+	color: #000;
+}
+.woocommerce div.product div.images img{
+	margin-top: 15px;
+}
+.woocommerce form .form-row .required{
+	color: #000;
+}
+.woocommerce-info{
+	font-size: 16px;
 }
 
 /* Footer Section */
@@ -598,6 +664,9 @@ span.woocommerce-Price-amount.amount {
 }
 table#wp-calendar {
     width: 100%;
+}
+table#wp-calendar td a {
+    color: #fff;
 }
 #footer caption,
 #sideabr caption {
@@ -634,6 +703,9 @@ table#wp-calendar {
 #footer li a {
   color: #fff;
   font-size: 15px;
+}
+#footer li a:hover{
+	color:#b79338; 
 }
 #footer ul li {
     list-style: none;
@@ -720,7 +792,7 @@ table#wp-calendar {
     font-size: 15px;
 }
 .heading-line h3 {
-    color: #b79338;
+    color: #000;
     font-size: 35px;
     font-weight: normal;
     letter-spacing: 1px;
@@ -748,7 +820,7 @@ table#wp-calendar {
     letter-spacing: 3px;
     font-weight: normal;
     font-size: 30px;
-    color: #b79338;
+    color: #000;
     padding-bottom: 0;
 }
 #love-Story p {
@@ -782,6 +854,7 @@ table#wp-calendar {
 	color:#000;
 	padding:15px 0;
 	clear:both;
+	font-size: 15px;
 }
 .metabox .entry-date,
 .metabox .entry-author,
@@ -840,14 +913,14 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 0 0 40px;
 }
 #comments .reply{
@@ -869,6 +942,102 @@ table#wp-calendar {
 #comments p {
   width:90%;
   float:left;
+}
+/*serch-box*/
+.serach_inner label {
+  width: 75%;
+}
+.serach_outer {
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ background: #000;
+ overflow: hidden;
+ transition: 0.5s;
+ z-index: 999;
+ top: 0;
+ left: 0;
+ display: none;
+}
+.serach_inner {
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ width: 100%;
+}
+.closepop {
+ position: absolute;
+ top: 20%;
+ transform: translateY(-50%);
+ width: 100%;
+ right: 0;
+ text-align: right;
+ margin-right: 28px;
+}
+.serach_outer i {
+ font-size: 24px;
+ padding: 4px 0 0 0;
+ color: #3a4d5e;
+ cursor: pointer;
+}
+.serach_inner form.search-form {
+ display: table;
+ padding: 0;
+ border-radius: 0;
+ background: #ffffff;
+ margin: 0 auto;
+ max-width: 700px;
+ width: 100%;
+}
+.serach_inner form.search-form {
+ display: table;
+ border: 4px solid #b79338;
+ padding: 10px;
+ box-shadow: 0 0 12px 1px #f5f5f5;
+ border-radius: 0;
+ background: #ffffff;
+ margin: 0 auto;
+ max-width: 700px;
+ width: 100%;
+}
+.serach-page input.search-field {
+ border: 1px solid #ccc;
+ padding: 9px;
+}
+.serach_inner input.search-field {
+ padding: 10px;
+ font-size: 20px;
+ font-style: italic;
+ font-weight: normal;
+ color: #3a4d5e;
+}
+.serach_inner input.search-submit {
+ padding: 8px 35px;
+ margin: 5px 0;
+ font-size: 20px;
+ width: 100%;
+}
+button.search-submit {
+ border: 0;
+ background: transparent;
+}
+input.search-field {
+ border: none;
+ padding: 4px 0;
+ background: transparent;
+ width: 95%;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page .search-box i{
+	color: #000;
+}
+.search-box i {
+  padding: 6px 0px;
+  color: #fff;
+  margin: 7px;
+  font-size: 17px;
+}
+.search-box {
+  margin: 8px 0px;
 }
 /* --------- SLIDER--------- */
 #slider{ 
@@ -915,6 +1084,7 @@ table#wp-calendar {
 /* Sidebar */
 #sidebar {
     padding: 5% 0;
+    margin-top: 15px;
 }
 #sidebar form{
  	display: table;
@@ -978,6 +1148,7 @@ table#wp-calendar {
 label{
 	margin-bottom: 0px;
 	width: 100%;
+	margin-top: 15px;
 }
 #sidebar .tagcloud a{
 	background:#eeeeee;
@@ -992,19 +1163,19 @@ label{
 }
 
 /* Page */
-#content-ts p{
+.content-ts p{
 	text-align:justify;
 	line-height: 25px;
 	font-size: 16px;
 	margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
 	border:none;
 	border-bottom:2px dotted #7e7e7e;
 	margin:35px 0;
 	clear:both;
 }
-#content-ts h2{
+.content-ts h2{
 	font-size:30px;
 	font-weight:normal;
 	margin:0;
@@ -1012,7 +1183,7 @@ label{
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
 	font-size:36px;
 	font-weight:normal;
 	margin:0;
@@ -1020,7 +1191,7 @@ label{
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
 	font-size:20px;
 	font-weight:bold;
 	margin:0;
@@ -1028,25 +1199,25 @@ label{
 	color:#333;
 	margin:0 0 25px;
 }
-#content-ts ul{
+.content-ts ul{
 	list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
 	/*padding:0 0 0 35px;*/
 	margin:0 0 20px 0;
 	line-height:25px;
 	margin-right: 15px;
 	font-size: 20px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
 	padding:10px 0 0 0;
 	font-size:16px;
 	counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
 }
@@ -1095,7 +1266,7 @@ label{
 .pagination .current{
 	padding:10px 15px;
     background: #b79338;
-    color:#fff;
+    color:#000;
 	font-weight:normal;
 }
 /*video*/
@@ -1132,7 +1303,7 @@ iframe{
 		width:100%;
 		color:#fff;
 		background:url('images/mobile_nav_right.png') no-repeat right center rgb(21, 28, 39);
-		padding:10px 10px;
+		padding:10px 137px;
 		font-size:16px;
 	}
 	.toggle a:hover{
@@ -1152,6 +1323,7 @@ iframe{
 		overflow-x:hidden;
 		width: 100%;
 		left: 0;
+		top: -9em;
 	}
 	#header .nav ul{
 		width:100%;
@@ -1185,6 +1357,13 @@ iframe{
 	}
 	.nav ul li ul li ul li a{
 		padding-left:30px !important;
+	}
+	.logo{
+		text-align: center;
+	}
+	.search-box {
+	    margin: 8px 0px;
+	    text-align: center;
 	}
 }
 @media screen and (min-width:720px){
@@ -1244,7 +1423,6 @@ iframe{
 	    text-transform: none;
 	    font-style: italic;
 	}
-
 }
 @media screen and (min-width: 1000px) {
 	#header #header-inner .nav ul li ul li{
@@ -1266,5 +1444,11 @@ iframe{
 	}
 	#footer th{
 		padding: 0;
+	}
+}
+@media screen and (min-width: 991px) and (max-width: 1024px){
+	.logo a {
+	    color: #fff;
+	    font-size: 40px !important;
 	}
 }

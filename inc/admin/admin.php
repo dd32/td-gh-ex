@@ -16,7 +16,7 @@ function bb_wedding_bliss_mostrar_guide() {
 	//custom function about theme customizer
 	$return = add_query_arg( array()) ;
 ?>
- <div class="wrapper-info">
+<div class="wrapper-info">
 	 <div class="header">
 	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
 	 	<h2><?php esc_html_e('Welcome to Wedding Lite Theme', 'bb-wedding-bliss'); ?></h2>

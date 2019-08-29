@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<section id="our-services">
+<main id="maincontent" class="our-services">
     <div class="innerlightbox">
         <div class="container">
             <?php
@@ -221,6 +221,6 @@ get_header(); ?>
           <div class="clearfix"></div>
         </div>
     </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

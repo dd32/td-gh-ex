@@ -11,7 +11,7 @@
 	}
 	if($bb_wedding_bliss_theme_color_first != false){
 		$custom_css .='.social-media i:hover, #header .nav ul li a:active,
-	#header .nav ul li a:hover,#header .nav ul li a, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, nav.woocommerce-MyAccount-navigation ul li a, .heading-line h3, #love-Story h3, #slider .inner_carousel h2 a, #sidebar h3, #sidebar input[type="submit"], .woocommerce a, span.posted_in a, span.tagged_as a{';
+	#header .nav ul li a:hover,#header .nav ul li a, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, nav.woocommerce-MyAccount-navigation ul li a, #slider .inner_carousel h2 a, #sidebar h3, #sidebar input[type="submit"], span.tagged_as a{';
 			$custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
 		$custom_css .='}';
 	}

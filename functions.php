@@ -363,7 +363,7 @@ define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/free/bb-free-weddin
 
 if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 	function bb_wedding_bliss_credit(){
-		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank'>". esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."</a>";
+		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank' alt='".esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."''>". esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."</a>";
 	}
 }
 

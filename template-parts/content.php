@@ -7,15 +7,16 @@
  * @since bb wedding bliss 1.0
  */
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="page-box">
 	  	<div class="new-text">
 		    <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>   
 		    <p><?php the_excerpt();?></p>
 		    <div class="content-bttn">
-		      	<a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read More', 'bb-wedding-bliss' ); ?>"><?php esc_html_e('Read More','bb-wedding-bliss'); ?></a>
+		      	<a href="<?php echo esc_url( get_permalink() );?>" alt="<?php esc_html_e( 'Read More','bb-wedding-bliss' );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read More', 'bb-wedding-bliss' ); ?>"><?php esc_html_e('Read More','bb-wedding-bliss'); ?><span class="screen-reader-text"><?php esc_html_e( 'Read More','bb-wedding-bliss' );?></span></a>
 		    </div>
 	  	</div>
 	  	<div class="clearfix"></div>
 	</div>
-</div>
+</article>

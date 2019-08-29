@@ -40,4 +40,39 @@
 			});
 		}
 	}
+
+	/**** Hidden search box ***/
+	jQuery('document').ready(function($){
+	$('.search-box i').click(function(){
+	       $(".serach_outer").slideDown(700);
+	   });
+
+	   $('.closepop i').click(function(){
+	       $(".serach_outer").slideUp(700);
+	   });
+	});
+
+	jQuery(document).ready(function() {
+		var owl = jQuery('#category .owl-carousel');
+			owl.owlCarousel({
+				nav: true,
+				autoplay:true,
+				autoplayTimeout:2000,
+				autoplayHoverPause:true,
+				loop: true,
+				navText : ['<i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>','<i class="fa fa-lg fa-chevron-right" aria-hidden="true"></i>'],
+				responsive: {
+				  0: {
+				    items: 1
+				  },
+				  600: {
+				    items: 1
+				  },
+				  1000: {
+				    items: 1
+				}
+			}
+		})
+	})
+	
 })( jQuery );
