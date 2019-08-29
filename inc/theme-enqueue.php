@@ -11,6 +11,9 @@
  */
 function articlepress_scripts(){
 
+	// Font
+	wp_enqueue_style( 'google-font', 'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,700i,900&display=swap' );
+
 	// Normalize Css
 	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.min.css' );
 
