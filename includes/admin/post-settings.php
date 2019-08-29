@@ -305,7 +305,7 @@ function bento_metaboxes() {
 			array(
 				'id'            => 'post_headermap_metabox',
 				'title'         => esc_html__( 'Map Header', 'bento' ),
-				'object_types'  => array( 'page' ),
+				'object_types'  => array( 'page', 'post' ),
 				'context'       => 'normal',
 				'priority'      => 'low',
 				'show_names' => true,

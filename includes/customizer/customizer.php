@@ -1959,6 +1959,7 @@ function bento_customizer_css() {
 	$customizer_css .= '
 		.site-header,
 		.header-default .site-header.fixed-header,
+		.header-centered .site-header.fixed-header,
 		.header-side .site-wrapper {
 			background: '.esc_html( get_theme_mod( 'bento_header_background_color', '#ffffff' ) ).';
 		}
@@ -1996,7 +1997,7 @@ function bento_customizer_css() {
 		.primary-menu .sub-menu li a {
 			color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_text_color', '#333333' ) ).'; 
 		}
-		.primary-menu .sub-menu li:hover a {
+		.primary-menu .sub-menu li:hover > a {
 			color: '.esc_html( get_theme_mod( 'bento_primary_menu_submenu_text_hover_color', '#333333' ) ).'; 
 		}
 		#nav-mobile {

@@ -123,7 +123,7 @@ function bento_admin_scripts() {
 	$screen = get_current_screen();
 	$edit_screens = array( 'post', 'page', 'project', 'product' );
 	if ( in_array( $screen->id, $edit_screens ) ) {
-		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js', array('jquery'), false, true );
+		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js', array(), false, true );
 	}
 	$old_options = get_option( 'satori_options', 'none' );
 	if ( $old_options != 'none' ) {
