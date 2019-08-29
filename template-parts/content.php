@@ -7,9 +7,9 @@
  * @since advance-it-company 1.0
  */
 ?>  
-<div class="page-box">
+<article class="page-box">
     <div class="box-img">
-        <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+        <?php the_post_thumbnail(); ?>
     </div>
     <div class="new-text">
         <h4><?php the_title();?></h4>
@@ -21,8 +21,8 @@
         <p><?php the_excerpt();?></p>
         <p><?php the_tags(); ?></p>     
         <div class="read-more-btn">
-            <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i></a>
+            <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-it-company' );?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-it-company' );?></span></a>
         </div>
     </div>
     <div class="clearfix"></div>
-</div>
+</article>

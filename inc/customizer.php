@@ -29,7 +29,6 @@ function advance_it_company_customize_register($wp_customize) {
 	    'default' => '#92c01f',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
-
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_it_company_theme_color_first', array(
   		'label' => 'First Color Option',
   		'description' => __('One can change complete theme color on just one click.', 'advance-it-company'),
@@ -179,7 +178,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -267,7 +265,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_h1_font_size',array(
 		'label'	=> __('H1 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -305,7 +302,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_h2_font_size',array(
 		'label'	=> __('h2 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -343,7 +339,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_h3_font_size',array(
 		'label'	=> __('h3 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -381,7 +376,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_h4_font_size',array(
 		'label'	=> __('h4 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -419,7 +413,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_h5_font_size',array(
 		'label'	=> __('h5 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -457,7 +450,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_it_company_h6_font_size',array(
 		'label'	=> __('h6 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
@@ -481,6 +473,7 @@ function advance_it_company_customize_register($wp_customize) {
 		'section'	=> 'advance_it_company_topbar',
 		'type'	=> 'text'
 	));
+	
 	$wp_customize->add_setting('advance_it_company_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',

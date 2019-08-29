@@ -105,7 +105,7 @@ msgid 'page'
 msgstr ""
 
 #: comments.php:28
-msgid 'comments title'
+msgid 'One thought on &ldquo;%s&rdquo;'
 msgstr ""
 
 #: comments.php:38
@@ -116,7 +116,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:29
+#: footer.php:30
 msgid 'Copyright 2018 -'
 msgstr ""
 
@@ -124,55 +124,55 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:58
+#: functions.php:72
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:59
+#: functions.php:73
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:68
+#: functions.php:82
 msgid 'page sidebar'
 msgstr ""
 
-#: functions.php:79
-#: functions.php:69
+#: functions.php:83
+#: functions.php:93
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:78
+#: functions.php:92
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:88
+#: functions.php:102
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:89
-#: functions.php:99 
-#: functions.php:119
-#: functions.php:129
+#: functions.php:103
+#: functions.php:113
+#: functions.php:123
+#: functions.php:133
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:98
+#: functions.php:112
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:118
+#: functions.php:122
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:128
+#: functions.php:132
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:276
+#: functions.php:290
 msgid 'IT Company WordPress Theme.'
 msgstr ""
 
-#: header.php:131
+#: header.php:132
 msgid 'Menu'
 msgstr ""
 
@@ -222,12 +222,12 @@ msgid 'Meta'
 msgstr ""
 
 #: template-parts/content-single.php:18
-#: template-parts/content-audio.php:38
-#: template-parts/content-gallery.php:28
+#: template-parts/content-audio.php:37
+#: template-parts/content-gallery.php:27
 #: template-parts/content-image.php:18
 #: template-parts/content-video.php:38
 #: template-parts/content.php:18
-#: template-parts/grid-layout.php:18
+#: template-parts/grid-layout.php:20
 msgid '0 Comment'
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr ""
 msgid 'Pages:'
 msgstr ""
 
-#: template-parts/image-layout.php:42
+#: template-parts/image-layout.php:43
 msgid 'Parent post link'
 msgstr ""
 
@@ -276,8 +276,8 @@ msgid 'Previous'
 msgstr ""
 
 #: page-template/custom-front-page:39
-#: template-parts/content-audio.php:44
-#: template-parts/content-gallery.php:34
+#: template-parts/content-audio.php:43
+#: template-parts/content-gallery.php:33
 #: template-parts/content-image.php:24
 #: template-parts/content-video.php:44
 #: template-parts/content.php:24

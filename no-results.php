@@ -21,6 +21,6 @@
 	<?php else : ?>
 	<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-it-company' ); ?></p><br />
 	<div class="read-moresec">
-		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-it-company' ); ?></a>
+		<a href="<?php echo esc_url(home_url()); ?>" alt="<?php esc_html_e( 'Go Back', 'advance-it-company' ); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-it-company' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-it-company' ); ?></span></a>
 	</div>
 <?php endif; ?>

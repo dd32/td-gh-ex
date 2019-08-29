@@ -16,7 +16,7 @@
     $video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
   }
 ?>
-<div class="page-box">
+<article class="page-box">
   <div class="box-img">
     <?php
       if ( ! is_single() ) {
@@ -41,8 +41,8 @@
     <p><?php the_excerpt();?></p>
     <p><?php the_tags(); ?></p>     
     <div class="read-more-btn">
-      <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i></a>
+      <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-it-company' );?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-it-company' );?></span></a>
     </div>
   </div>
   <div class="clearfix"></div>
-</div>
+</article>

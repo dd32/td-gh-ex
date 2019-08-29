@@ -41,7 +41,6 @@ function advance_it_company_setup() {
 	*/
 	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
-
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
@@ -49,8 +48,23 @@ function advance_it_company_setup() {
 	add_editor_style(array('css/editor-style.css', advance_it_company_font_url()));
 }
 
+// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'advance_it_company_activation_notice' );
+	}
+
 endif;
 add_action('after_setup_theme', 'advance_it_company_setup');
+
+// Notice after Theme Activation
+function advance_it_company_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible get-started">';
+		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-it-company' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_it_company_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-it-company' ) .'</a></p>';
+	echo '</div>';
+}
 
 // Theme Widgets Setup
 function advance_it_company_widgets_init() {
@@ -273,7 +287,7 @@ define('ADVANCE_IT_COMPANY_CREDIT', 'https://www.themeshopy.com/themes/free-it-c
 
 if (!function_exists('advance_it_company_credit')) {
 	function advance_it_company_credit() {
-		echo "<a href=".esc_url(ADVANCE_IT_COMPANY_CREDIT)." target='_blank'>".esc_html__('IT Company WordPress Theme', 'advance-it-company')."</a>";
+		echo "<a href=".esc_url(ADVANCE_IT_COMPANY_CREDIT)." target='_blank' alt='".esc_html__('IT Company WordPress Theme','advance-it-company')."''>".esc_html__('IT Company WordPress Theme', 'advance-it-company')."</a>";
 	}
 }
 
@@ -396,7 +410,6 @@ define('ADVANCE_IT_COMPANY_LIVE_DEMO','https://www.themeshopy.com/advance-it-com
 define('ADVANCE_IT_COMPANY_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-it-company-pro/','advance-it-company');
 define('ADVANCE_IT_COMPANY_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-it-company/','advance-it-company');
 define('ADVANCE_IT_COMPANY_CONTACT','https://wordpress.org/support/theme/advance-it-company/','advance-it-company');
-define('ADVANCE_IT_COMPANY_CREDIT','https://www.themeshopy.com/free/wp-advance-it-company-theme/','advance-it-company');
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';
