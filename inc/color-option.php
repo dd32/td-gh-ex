@@ -5,7 +5,7 @@
 	$custom_css = '';
 
 	if($advance_portfolio_theme_color_first != false){
-		$custom_css .='a.button, .second-border a:hover, span.meta-nav, #footer input[type="submit"], .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current{';
+		$custom_css .='a.button, .second-border a:hover, span.meta-nav, #footer input[type="submit"], .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current, .woocommerce span.onsale{';
 			$custom_css .='background-color: '.esc_html($advance_portfolio_theme_color_first).';';
 		$custom_css .='}';
 	}
@@ -16,7 +16,7 @@
 	}
 
 	if($advance_portfolio_theme_color_first != false){
-		$custom_css .='input[type="submit"], .social-media i:hover, #header .nav ul li a:hover,#header .nav ul li a:active, #footer h3,a.showcoupon,.woocommerce-message::before, #sidebar h3, h1.entry-title,h1.page-title, h3.widget-title a{';
+		$custom_css .='input[type="submit"], .social-media i:hover, #header .nav ul li a:hover,#header .nav ul li a:active, #footer h3,.woocommerce-message::before, h1.entry-title,h3.widget-title a, #footer li a:hover{';
 			$custom_css .='color: '.esc_html($advance_portfolio_theme_color_first).';';
 		$custom_css .='}';
 	}

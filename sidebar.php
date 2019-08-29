@@ -5,6 +5,7 @@
  * @package advance-portfolio
  */
 ?>
+
 <div id="sidebar">    
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
         <aside id="archives" class="widget">

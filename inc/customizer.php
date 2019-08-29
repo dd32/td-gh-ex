@@ -25,6 +25,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	$wp_customize->add_section( 'advance_portfolio_theme_color_option', 
 		array( 'panel' => 'advance_portfolio_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-portfolio' ) )
 	);
+
   	$wp_customize->add_setting( 'advance_portfolio_theme_color_first', array(
 	    'default' => '#f54ea2',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -35,6 +36,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	    'section' => 'advance_portfolio_theme_color_option',
 	    'settings' => 'advance_portfolio_theme_color_first',
   	)));
+
   	$wp_customize->add_setting( 'advance_portfolio_theme_color_second', array(
 	    'default' => '#ffdd65',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -202,7 +204,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -366,7 +367,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_h3_font_size',array(
 		'label'	=> __('h3 Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -442,7 +442,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_h5_font_size',array(
 		'label'	=> __('h5 Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -480,7 +479,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_h6_font_size',array(
 		'label'	=> __('h6 Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -500,7 +498,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-
 	$wp_customize->add_control('advance_portfolio_facebook_url', array(
 		'label'   => __('Add Facebook link', 'advance-portfolio'),
 		'section' => 'advance_portfolio_topbar_header',
@@ -512,7 +509,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-
 	$wp_customize->add_control('advance_portfolio_twitter_url', array(
 		'label'   => __('Add Twitter link', 'advance-portfolio'),
 		'section' => 'advance_portfolio_topbar_header',
@@ -524,7 +520,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-
 	$wp_customize->add_control('advance_portfolio_linkedin_url', array(
 		'label'   => __('Add Linkedin link', 'advance-portfolio'),
 		'section' => 'advance_portfolio_topbar_header',
@@ -536,7 +531,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-
 	$wp_customize->add_control('advance_portfolio_insta_url', array(
 		'label'   => __('Add Instagram link', 'advance-portfolio'),
 		'section' => 'advance_portfolio_topbar_header',
@@ -548,7 +542,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-
 	$wp_customize->add_control('advance_portfolio_youtube_url', array(
 		'label'   => __('Add Youtube link', 'advance-portfolio'),
 		'section' => 'advance_portfolio_topbar_header',
@@ -560,7 +553,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
-
 	$wp_customize->add_control('advance_portfolio_behance_url', array(
 		'label'   => __('Add Behance link', 'advance-portfolio'),
 		'section' => 'advance_portfolio_topbar_header',

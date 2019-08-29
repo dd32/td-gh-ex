@@ -16,7 +16,7 @@ function advance_portfolio_mostrar_guide() {
 	//custom function about theme customizer
 	$return = add_query_arg( array()) ;
 ?>
- <div class="wrapper-info">
+<div class="wrapper-info">
 	 <div class="header">
 	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-portfolio'); ?></p>

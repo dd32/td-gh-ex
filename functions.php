@@ -57,8 +57,23 @@ function advance_portfolio_setup() {
 	add_editor_style(array('css/editor-style.css', advance_portfolio_font_url()));
 }
 
+// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'advance_portfolio_activation_notice' );
+	}
+
 endif;
 add_action('after_setup_theme', 'advance_portfolio_setup');
+
+// Notice after Theme Activation
+function advance_portfolio_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible get-started">';
+		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-portfolio' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_portfolio_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-portfolio' ) .'</a></p>';
+	echo '</div>';
+}
 
 /* Theme Widgets Setup */
 function advance_portfolio_widgets_init() {
@@ -291,7 +306,7 @@ define('ADVANCE_PORTFOLIO_CREDIT', 'https://www.themeshopy.com/themes/free-wordp
 
 if (!function_exists('advance_portfolio_credit')) {
 	function advance_portfolio_credit() {
-		echo "<a href=".esc_url(ADVANCE_PORTFOLIO_CREDIT)." target='_blank'>".esc_html__('Advance Portfolio WordPress Theme', 'advance-portfolio')."</a>";
+		echo "<a href=".esc_url(ADVANCE_PORTFOLIO_CREDIT)." target='_blank' alt='".esc_html__('Automobile WordPress Theme','advance-portfolio')."''>".esc_html__('Advance Portfolio WordPress Theme', 'advance-portfolio')."</a>";
 	}
 }
 

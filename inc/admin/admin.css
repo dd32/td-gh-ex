@@ -1,12 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-/*About theme*/
 body{
-    font-family: 'Montserrat', sans-serif;
     font-size: 12px; 
 }
 #wpwrap{
 	background: #fff;
-	letter-spacing: 1px;
 }
 .header {
     background: #54bfed;
@@ -112,8 +108,8 @@ body{
 .tab1{
     display: block;
 }
-
+/*
 .get-started {
     box-shadow: 0 0 10px 4px #eee;
     border: solid 5px #333;
-}
+}*/

@@ -1,4 +1,5 @@
-/* RTL Style */
+/* rtl css */
+
 *{
 	margin:0;
 	padding:0;
@@ -10,9 +11,7 @@ body{
 	-ms-word-wrap:break-word;
 	word-wrap:break-word;
 	background-color:#fff;
-	font-size: 15px;
 	color:#5b5b5b;
-  	letter-spacing: 1px;
 	font-family: 'Montserrat', sans-serif;
 }
 img{
@@ -38,9 +37,7 @@ h6{
 p{
 	margin:0 0 15px;
 	padding:0;
-	font-size:18px;
-	line-height:normal;
-	font-weight:normal;
+	font-size:14px;
 }
 a{
 	text-decoration:none;
@@ -109,6 +106,35 @@ input[type='submit']:hover{
 	position: absolute;
 	top:-9999em;
 	right:-9999em;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+border: 0;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: inset(50%);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+background-color: #eee;
+clip: auto !important;
+clip-path: none;
+color: #444;
+display: block;
+font-size: 1em;
+height: auto;
+right: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{
 	margin:0;
@@ -198,6 +224,9 @@ iframe
 {
   width: 100%;
 }
+.entry-audio audio {
+    width: 100%;
+}
 /* ---------Buttons--------- */
 a.button{
 	background:#f54ea2;
@@ -214,7 +243,6 @@ a.button{
 }
 #header .logo{
 	margin:0;
-	letter-spacing: 1px;
 }
 #header .logo h1{
 	font-weight:700;
@@ -309,7 +337,7 @@ a.button{
 	font-size:15px;
 	margin:10px 0;
 	line-height: 25px;
-	color: #999;
+	color: #5b5b5b;
 }
 .box-image{
 	margin:0;
@@ -318,10 +346,10 @@ a.button{
 	width:100%;
 	opacity: 0.7;
 }
-#our-services img{
+.our-services img{
 	width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
 	margin:40px 0 20px 0;
 }
 .second-border a {
@@ -358,7 +386,6 @@ a.button{
   display: table;
   padding: 15px;
   font-size: 14px;
-  letter-spacing: 2px;
 }
 /* --------- Blog Page ------- */
 .metabox{
@@ -448,6 +475,12 @@ section .innerlightbox{
 #footer td#prev a {
   color: #fff;
 }
+#footer td a {
+    color: #fff;
+}
+#footer a.rsswidget {
+    color: #fff;
+}
 table#wp-calendar {
   width: 100%;
 }
@@ -486,6 +519,9 @@ table#wp-calendar {
 #footer li a {
   color: #fff;
   font-size: 15px;
+}
+#footer li a:hover{
+  color: #f54ea2;
 }
 #footer ul li {
   list-style: none;
@@ -538,7 +574,7 @@ table#wp-calendar {
   margin-bottom: 0;
 }
 .copyright p a{
-  color: #f54ea2;
+  color: #fff;
 }
 .copyright {
   background: #222;
@@ -625,14 +661,14 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 40px 0 0;
 }
 #comments .reply{
@@ -657,7 +693,7 @@ table#wp-calendar {
 }
 /* --------- Portfolio --------- */
 #Portfolio-Section{
-	padding: 3%;
+	padding: 3% 0;
 }
 .portfolio-title{
 	text-align: center;
@@ -665,6 +701,7 @@ table#wp-calendar {
 .portfolio-title h3{
 	padding-bottom: 20px;
 	font-weight: bold;
+  margin: 0;
 }
 #Portfolio-Section .box-image{	
 	width: 100%;
@@ -672,7 +709,7 @@ table#wp-calendar {
 }
 #Portfolio-Section .image-box {
 	margin-bottom: 10px;
-    padding-top: 10px;
+  padding-top: 10px;
 }
 /* --------- banner--------- */
 .box-content h2 {
@@ -698,7 +735,7 @@ table#wp-calendar {
 }
 #banner .social-media i:hover {
     color: #ffdd65;
-    background: hotpink;
+    background: #f54ea2;
 }
 /*woocommerce*/
 .woocommerce #sidebar {
@@ -711,25 +748,25 @@ table#wp-calendar {
 }
 a.showcoupon,
 .woocommerce-message::before{
-color: #f54ea2;
+color: #000;
 }
 .woocommerce-message {
    border-top-color: #ac2925;
 }
 .woocommerce span.onsale{
-background: #f54ea2;
-padding: 0;
+  background: #f54ea2;
+  padding: 0;
+  color: #000;
 }
 .products li {
-    border: solid 1px #dcdcdc;
-    padding: 10px !important;
-    width: 29% !important;
-    text-align: center;
+  border: solid 1px #dcdcdc;
+  padding: 10px !important;
+  width: 29% !important;
+  text-align: center;
 }
 h2.woocommerce-loop-product__title,
 .woocommerce div.product .product_title {
    color: #000;
-   letter-spacing: 1px;
    font-weight: 500;
 }
 .woocommerce ul.products li.product .price,
@@ -743,13 +780,13 @@ margin-bottom: 5px;
    background: none;
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
-background: #f54ea2;
-color: #fff;
-border-radius: 0;
+  background: #f54ea2;
+  color: #000 !important;
+  border-radius: 0;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
-background: #000;
-color: #fff;
+  background: #000;
+  color: #fff;
 }
 .woocommerce .quantity .qty {
    width: 5em;
@@ -774,7 +811,7 @@ nav.woocommerce-MyAccount-navigation ul li {
     margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-color: #fff !important;
+color: #000 !important;
 }
 .posted_in {
  display: block;
@@ -793,6 +830,15 @@ background: #fff;
     vertical-align: top;
     padding: 10px;
 }
+.woocommerce form .form-row .required{
+  color: #000 !important;
+}
+.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb{
+  color: #000;
+}
+.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce button.button.alt:hover, .woocommerce .cart .button:hover, .woocommerce a.button.alt:hover{
+  color: #fff !important;
+}
 /* Sidebar */
 #sidebar caption{
 	color: #202020;
@@ -805,7 +851,6 @@ background: #fff;
   	margin: 0px 0 20px;
   	font-weight: bold;
   	font-size: 22px;
-  	color: #f54ea2;
   	text-transform: none;
   	text-align: right;
 }
@@ -822,11 +867,10 @@ background: #fff;
 	width:100%;
 }
 #sidebar input[type="submit"]{
- 	background: #f54ea2;
+ 	  background: #f54ea2;
   	border: none;
   	color: #fff;
   	padding: 10px 0;
-  	letter-spacing: 2px;
   	width: 100%;
   	font-size: 18px;
   	margin: 0;
@@ -875,19 +919,19 @@ h1.page-title {
     margin-bottom: 10px;
     color: #f54ea2;
 }
-#content-ts p{
+.content-ts p{
 	text-align:justify;
 	line-height: 25px;
 	font-size: 16px;
 	margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
 	border:none;
 	border-bottom:2px dotted #7e7e7e;
 	margin:35px 0;
 	clear:both;
 }
-#content-ts h2{
+.content-ts h2{
 	font-size:32px;
 	font-weight:normal;
 	margin:0;
@@ -895,7 +939,7 @@ h1.page-title {
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
 	font-size:36px;
 	font-weight:normal;
 	margin:0;
@@ -903,7 +947,7 @@ h1.page-title {
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
 	font-size:20px;
 	font-weight:bold;
 	margin:0;
@@ -911,22 +955,22 @@ h1.page-title {
 	color:#333;
 	margin:0 0 25px;
 }
-#content-ts ul{list-style:none;
+.content-ts ul{list-style:none;
 	margin:0 10px 0 0;
 	padding:10px 0 0;
 	font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
 	padding:0;
 	margin:0 0 20px 0;
 	line-height:25px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
 	padding:10px 0 0 0;
 	font-size:16px;
 	counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
 }
@@ -1026,7 +1070,7 @@ h1.page-title {
 	section .innerlightbox {
 		padding: 0;
 	}
-	#our-services{
+	.our-services{
 		margin-top: 0;
 	}
 	.toggle{
@@ -1036,7 +1080,7 @@ h1.page-title {
 		width:100%;
 		color:#fff;
 		background:url('images/mobile_nav_right.png') no-repeat left center #000;
-		padding:10px 10px;
+		padding:10px 134px;
 		font-size:16px;
 	}
 	.nav{
@@ -1050,7 +1094,7 @@ h1.page-title {
 		overflow-x:hidden;
 		width: 100%;
 		right: 0;
-		top: -113px;
+		top: -86px;
 	}
 	#header .nav ul{
 		width:100%;
@@ -1138,7 +1182,6 @@ h1.page-title {
 	color: #202020;
     padding: 8px 12px;
     display: block;
-    letter-spacing: 1px;
     font-weight: 600;
     font-size: 13px;
     text-transform: none;
@@ -1171,7 +1214,7 @@ h1.page-title {
 		border-bottom:1px #313131 solid;
 	}
 	#footer input[type="submit"]{
-		width: 95%;
+		width: 100%;
 		float: none;
 		margin-top: 5px;
 	}
@@ -1188,12 +1231,15 @@ h1.page-title {
     transform: translateY(-50%);
     margin-top: 20px;
   }
+  section h2{
+    margin-top: 2em;
+  }
 }
 @media screen and (max-width: 425px){
 	#footer input[type="submit"]{
-	width: 30%;
+	width: 84%;
 	float: none;
-	margin:2px;
+	margin:2px 0;
 	}
 	#footer input[type="search"]{
 		width: 100%;
@@ -1206,7 +1252,7 @@ h1.page-title {
 }
 @media screen and (min-width: 1200px){
 	#footer input[type="submit"]{
-		width: 80%;
+		width: 95%;
 		float: none;
 		margin-top: 5px;
 	} 

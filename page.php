@@ -14,22 +14,24 @@ get_header(); ?>
 
 <?php do_action( 'advance_portfolio_page_header' ); ?>
 
-<div id="content-ts" class="container">
-    <div class="middle-align">
-        <?php while ( have_posts() ) : the_post(); ?>
-            <img src="<?php the_post_thumbnail_url('full'); ?>" >
-            <h1><?php the_title(); ?></h1>
-            <?php the_content();?>
-        <?php endwhile; // end of the loop. ?>
-        <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
-        ?>
-        <div class="clear"></div>
+<main id="maincontent" class="content-ts">
+    <div class="container">
+        <div class="middle-align">
+            <?php while ( have_posts() ) : the_post(); ?>
+                <?php the_post_thumbnail(); ?>
+                <h1><?php the_title(); ?></h1>
+                <?php the_content();?>
+            <?php endwhile; // end of the loop. ?>
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
+            ?>
+            <div class="clear"></div>
+        </div>
     </div>
-</div>
+</main>
 
 <?php do_action( 'advance_portfolio_page_footer' ); ?>
 
