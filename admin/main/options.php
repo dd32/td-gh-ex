@@ -347,7 +347,7 @@ function thinkup_customizer_theme_options( $wp_customize ) {
 			$wp_customize,
 			'thinkup_section_general_backup',
 			array(
-				'label'           => esc_html__( 'Backup Theme Options', 'thinkup' ),
+				'label'           => esc_html__( 'Backup Theme Options', 'renden' ),
 				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
 				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_general_backup]',
 				'active_callback' => '',
@@ -374,11 +374,11 @@ function thinkup_customizer_theme_options( $wp_customize ) {
 			array(
 				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_general_backupswitch]',
 				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
-				'label'           => esc_html__( 'Backup Theme Options', 'thinkup' ),
-				'description'	  => esc_html__( 'Switch on to backup your theme options settings each time the customizer is updated and saved. If enabled then a new page called "ThinkUp Created Content Backup" will be created where the option values can be found.', 'thinkup' ),
+				'label'           => esc_html__( 'Backup Theme Options', 'renden' ),
+				'description'	  => esc_html__( 'Switch on to backup your theme options settings each time the customizer is updated and saved. If enabled then a new page called "ThinkUp Created Content Backup" will be created where the option values can be found.', 'renden' ),
 				'choices'		  => array(
-					'1'      => esc_html__( 'On', 'thinkup' ),
-					'off'    => esc_html__( 'Off', 'thinkup' ),
+					'1'      => esc_html__( 'On', 'renden' ),
+					'off'    => esc_html__( 'Off', 'renden' ),
 				),
 				'active_callback' => '',
 			)

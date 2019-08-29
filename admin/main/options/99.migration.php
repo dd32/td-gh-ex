@@ -20,12 +20,18 @@ function thinkup_migrate_slider_20190829_v150() {
 	$thinkup_redux_variables = get_option( 'thinkup_redux_variables' );
 
 	// Get option values
-	$slider          = $thinkup_redux_variables['thinkup_homepage_sliderpreset'];
-	$slider_switch   = $thinkup_redux_variables['thinkup_homepage_sliderswitch'];
-	$migration_check = $thinkup_redux_variables['thinkup_migrate_slider_20190829_v150'];
+	if( ! empty( $thinkup_redux_variables['thinkup_homepage_sliderpreset'] ) ) {
+		$slider = $thinkup_redux_variables['thinkup_homepage_sliderpreset'];
+	}
+	if( ! empty( $thinkup_redux_variables['thinkup_homepage_sliderswitch'] ) ) {
+		$slider_switch = $thinkup_redux_variables['thinkup_homepage_sliderswitch'];
+	}
+	if( ! empty( $thinkup_redux_variables['thinkup_migrate_slider_20190829_v150'] ) ) {
+		$migration_check = $thinkup_redux_variables['thinkup_migrate_slider_20190829_v150'];
+	}
 
 	// Skip if migration has already taken place
-	if( $migration_check !== 1 ) {
+	if( $migration_check !== 1 and is_array( $slider ) ) {
 
 		// Loop through each slide and migrate content.
 		foreach( $slider as $slide ) {

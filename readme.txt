@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 5.2.2
 Requires PHP: 5.6.0
-Version: 1.5.0
+Version: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, education, photography, rtl-language-support
@@ -66,18 +66,27 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.08] Item:        Image shown in slider on screenshot.png.
+    [1.08] Item:        Custom made by Think Up Themes: featured1.png, featured2.png, featured3.png, featured4.png, slide_demo2.png, slide_demo3.png
+           Item URL:    /images/slideshow
+           Licence:     CC0
+           Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+    [1.09] Item:        Image shown in slider on screenshot.png and slide_demo1.png.
            Item URL:    https://pxhere.com/en/photo/1269059
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
-    [1.09] Item:        Image shown in device on screenshot.png.
+    [1.10] Item:        Image shown in device on screenshot.png and slide_demo1.png.
            Item URL:    https://pxhere.com/en/photo/761059
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Changelog ==
+
+= 1.5.1
+- Fixed:   All textdomains for translations correctly use "renden".
+- Fixed:   Migration check improved to ensure only runs if slides pre v1.5.0 are present.
 
 = 1.5.0
 - New:     All options added using custom framework built on customizer.
