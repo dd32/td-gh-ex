@@ -5,7 +5,6 @@
  * @package ThinkUpThemes
  */
 
-
 /* Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link. */
 function thinkup_input_pagemenuargs( $args ) {
 	$args['show_home'] = true;
@@ -38,14 +37,3 @@ function thinkup_input_enhancedimagenav( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'thinkup_input_enhancedimagenav', 10, 2 );
-
-
-/* Add backward compatibility for add_theme_support( 'title-tag' ) */
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-	function thinkup_input_wptitle() {
-?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-<?php
-	}
-	add_action( 'wp_head', 'thinkup_input_wptitle', 1 );
-}

@@ -1,12 +1,12 @@
 === Renden ===
 Contributors: thinkupthemes
 Requires at least: 4.6
-Tested up to: 5.1.1
-Requires PHP: 5.2.4
-Version: 1.4.9
+Tested up to: 5.2.2
+Requires PHP: 5.6.0
+Version: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, education, photography, rtl-language-support
 
 
 == Description ==
@@ -35,10 +35,8 @@ Limitations will be added when raised.
 
 == Copyright ==
 
-Renden WordPress Theme, Copyright 2017 Think Up Themes Ltd
+Renden WordPress Theme, Copyright 2019 Think Up Themes Ltd
 Renden is distributed under the terms of the GNU GPL
-
-Demo images are licensed under CC0 1.0 Universal (CC0 1.0) and available from http://unsplash.com/
 
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
 
@@ -47,44 +45,53 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     Licensed under GPLv2 or later
            Licence URL: http://www.gnu.org/licenses/gpl.html
 
-    [1.02] Item:        Redux Framework
-           Item URL:    https://github.com/ReduxFramework/ReduxFramework
-           Licence:     GPLv3
-           Licence URL: http://www.gnu.org/licenses/gpl.html
-
-    [1.03] Item:        PrettyPhoto
+    [1.02] Item:        PrettyPhoto
            Item URL:    http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
            Licence:     GPLv2
            Licence URL: http://www.gnu.org/licenses/gpl-2.0.html
 
-    [1.04] Item:        ImagesLoaded
-           Item URL:    https://github.com/desandro/imagesloaded
-           Licence:     MIT
-           Licence URL: http://opensource.org/licenses/mit-license.html
-
-    [1.05] Item:        Retina js
-           Item URL:    http://retinajs.com
-           Licence:     MIT
-           Licence URL: http://opensource.org/licenses/mit-license.html
-
-    [1.06] Item:        ResponsiveSlides
+    [1.05] Item:        ResponsiveSlides
            Item URL:    https://github.com/viljamis/ResponsiveSlides.js
            Licence:     MIT
            Licence URL: http://opensource.org/licenses/mit-license.html
 
-    [1.07] Item:        Font Awesome
+    [1.06] Item:        Font Awesome
            Item URL:    http://fortawesome.github.io/Font-Awesome/#license
            Licence:     SIL Open Font &  MIT
            Licence OFL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
            Licence MIT: http://opensource.org/licenses/mit-license.html
 
-    [1.08] Item:        Twitter Bootstrap (including images)
+    [1.07] Item:        Twitter Bootstrap (including images)
            Item URL:    https://github.com/twitter/bootstrap/wiki/License
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
+    [1.08] Item:        Image shown in slider on screenshot.png.
+           Item URL:    https://pxhere.com/en/photo/1269059
+           Licence:     CC0
+           Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
+
+    [1.09] Item:        Image shown in device on screenshot.png.
+           Item URL:    https://pxhere.com/en/photo/761059
+           Licence:     CC0
+           Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
+
 
 == Changelog ==
+
+= 1.5.0
+- New:     All options added using custom framework built on customizer.
+- Fixed:   All instances of "WordPress" now spelt correctly.
+- Fixed:   A number of improvements made to sanitization and escaping to improve security.
+- Updated: Theme design width increased from 960 to 1200px;
+- Updated: Major update. Many changes made, backup before updating.
+- Updated: Upsell in customizer area toned down to be non-obtrusive.
+- Removed: template-archive.php
+- Removed: template-sitemap.php
+- Removed: Redux frameworktemplate-sitemap.php
+
+= 1.4.10
+- Updated: Fully compatible with hosting platforms that don't support use of ABSPATH for loading styles / scripts.
 
 = 1.4.9
 - Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.1.1

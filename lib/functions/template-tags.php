@@ -31,17 +31,18 @@ global $wp_query, $post;
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>">
 	<?php if ( is_single() ) : ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . __( 'Previous Post', 'renden' ) . '</span>' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav">' . __( 'Next Post', 'renden' ) . '</span><span class="meta-icon"><i class="fa fa-angle-right fa-lg"></i></span>' ); ?>
+		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . esc_html__( 'Previous Post', 'renden' ) . '</span>' ); ?>
+		<?php next_post_link( '<div class="nav-next">%link</div>', '<span class="meta-nav">' . esc_html__( 'Next Post', 'renden' ) . '</span><span class="meta-icon"><i class="fa fa-angle-right fa-lg"></i></span>' ); ?>
 		<div class="clearboth"></div>
+
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'renden') ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'renden') ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'renden') ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'renden') ); ?></div>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -63,8 +64,8 @@ global $wp_query, $post;
 	?>
 
 	<nav role="navigation" id="nav-below">
-		<div class="nav-previous"><?php previous_image_link( 'false', '<span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . __( 'Previous Post', 'renden' ) . '</span>' ); ?></div>
-		<div class="nav-next"><?php next_image_link( 'false', '<span class="meta-nav">' . __( 'Next Post', 'renden' ) . '</span><span class="meta-icon"><i class="fa fa-angle-right fa-lg"></i></span>' ); ?></div>
+		<div class="nav-previous"><?php previous_image_link( 'false', '<span class="meta-icon"><i class="fa fa-angle-left fa-lg"></i></span><span class="meta-nav">' . esc_html__( 'Previous Post', 'renden' ) . '</span>' ); ?></div>
+		<div class="nav-next"><?php next_image_link( 'false', '<span class="meta-nav">' . esc_html__( 'Next Post', 'renden' ) . '</span><span class="meta-icon"><i class="fa fa-angle-right fa-lg"></i></span>' ); ?></div>
 		<div class="clearboth"></div>
 	</nav><!-- #image-navigation -->
 
@@ -78,19 +79,19 @@ endif;
 	Returns true if a blog has more than 1 category.
 ---------------------------------------------------------------------------------- */
 function thinkup_input_categorizedblog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	if ( false === ( $thinkup_transient_categories = get_transient( 'thinkup_transient_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
+		$thinkup_transient_categories = get_categories( array(
 			'hide_empty' => 1,
 		) );
 
 		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$thinkup_transient_categories = count( $thinkup_transient_categories );
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+		set_transient( 'thinkup_transient_categories', $thinkup_transient_categories );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( '1' != $thinkup_transient_categories ) {
 		return true;
 	} else {
 		return false;
@@ -99,7 +100,7 @@ function thinkup_input_categorizedblog() {
 
 /* Flush out the transients used in thinkup_input_categorizedblog. */
 function thinkup_input_transient_flusher() {
-	delete_transient( 'all_the_cool_cats' );
+	delete_transient( 'thinkup_transient_categories' );
 }
 add_action( 'edit_category', 'thinkup_input_transient_flusher' );
 add_action( 'save_post', 'thinkup_input_transient_flusher' );

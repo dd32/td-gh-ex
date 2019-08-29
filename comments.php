@@ -20,7 +20,7 @@
 		<div id="comments-title">
 			<h3>
 				<?php
-					printf( _n( 'Comments <span>(1)</span> ', 'Comments <span>(%1$s)</span>', get_comments_number(), 'renden' ),
+					printf( _n( 'Comments <span>(%1$s)</span> ', 'Comments <span>(%1$s)</span>', get_comments_number(), 'renden' ),
 						number_format_i18n( get_comments_number() ) );
 				?>
 			</h3>

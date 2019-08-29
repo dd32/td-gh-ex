@@ -4,15 +4,15 @@
  * @subpackage Admin
  * @since 1.0.0
  */
-if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
+if ( ! class_exists( 'thinkup_toolbox_about_page' ) ) {
 	/**
 	 * Singleton class used for generating the about page of the theme.
 	 */
-	class renden_thinkup_toolbox_about_page {
+	class thinkup_toolbox_about_page {
 		/**
 		 * Define the version of the class.
 		 *
-		 * @var string $version The renden_thinkup_toolbox_about_page class version.
+		 * @var string $version The thinkup_toolbox_about_page class version.
 		 */
 		private $version = '1.0.0';
 		/**
@@ -70,22 +70,22 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 		 */
 		private $notification;
 		/**
-		 * The single instance of renden_thinkup_toolbox_about_page
+		 * The single instance of thinkup_toolbox_about_page
 		 *
-		 * @var renden_thinkup_toolbox_about_page $instance The  renden_thinkup_toolbox_about_page instance.
+		 * @var thinkup_toolbox_about_page $instance The  thinkup_toolbox_about_page instance.
 		 */
 		private static $instance;
 
 		/**
-		 * The Main renden_thinkup_toolbox_about_page instance.
+		 * The Main thinkup_toolbox_about_page instance.
 		 *
-		 * We make sure that only one instance of renden_thinkup_toolbox_about_page exists in the memory at one time.
+		 * We make sure that only one instance of thinkup_toolbox_about_page exists in the memory at one time.
 		 *
 		 * @param array $config The configuration array.
 		 */
 		public static function init( $config ) {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof renden_thinkup_toolbox_about_page ) ) {
-				self::$instance = new renden_thinkup_toolbox_about_page;
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof thinkup_toolbox_about_page ) ) {
+				self::$instance = new thinkup_toolbox_about_page;
 				if ( ! empty( $config ) && is_array( $config ) ) {
 					self::$instance->config = $config;
 					self::$instance->setup_config();
@@ -109,9 +109,9 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 			}
 			$this->theme_version = $theme->get( 'Version' );
 			$this->theme_slug    = $theme->get_template();
-			$this->menu_name     = isset( $this->config['menu_name'] ) ? $this->config['menu_name'] : 'About ' . $this->theme_name;
-			$this->page_name     = isset( $this->config['page_name'] ) ? $this->config['page_name'] : 'About ' . $this->theme_name;
-			$this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( 'Welcome! Thank you for choosing %1$s! To get started please make sure you visit our %2$s<strong>welcome page</strong>%3$s.', $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '" class="button button-primary" style="text-decoration: none;">' . sprintf( 'Get started with %s', $this->theme_name ) . '</a></p>' );
+			$this->menu_name     = isset( $this->config['menu_name'] ) ? $this->config['menu_name'] : esc_html__( 'About', 'renden' ) . ' ' . $this->theme_name;
+			$this->page_name     = isset( $this->config['page_name'] ) ? $this->config['page_name'] : esc_html__( 'About', 'renden' ) . ' ' . $this->theme_name;
+			$this->notification  = isset( $this->config['notification'] ) ? $this->config['notification'] : ( '<p>' . sprintf( __( 'Welcome! Thank you for choosing %1$s! To get started please make sure you visit our %2$s<strong>welcome page</strong>%3$s.', 'renden' ), $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '" class="button button-primary" style="text-decoration: none;">' . sprintf( __( 'Get started with %s', 'renden' ), $this->theme_name ) . '</a></p>' );
 			$this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
 
 		}
@@ -155,13 +155,16 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 		 * Display an admin notice linking to the about page
 		 */
 		public function welcome_admin_notice() {
+
+			global $pagenow;
+
 			if ( ! empty( $this->notification ) ) {
 
 				// display notice if not previously dismissed
-				if ( current_user_can( 'edit_theme_options' ) && !get_option( 'renden_thinkup_notice_welcome' ) ) {
+				if ( current_user_can( 'edit_theme_options' ) && ! get_option( 'thinkup_notice_welcome' ) && $pagenow == 'themes.php'  ) {
 
 					echo '<div class="thinkup-toolbox-about updated notice is-dismissible">';
-					echo '<a class="notice-dismiss" href="' . esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('renden-thinkup-hide-notice', 'welcome')), 'renden_thinkup_hide_notices_nonce', '_renden_thinkup_notice_nonce')) . '" style="z-index: 0;padding: 10px;text-decoration: none;" >';
+					echo '<a class="notice-dismiss" href="' . esc_url(wp_nonce_url(remove_query_arg(array('activated'), add_query_arg('thinkup-hide-notice', 'welcome')), 'thinkup_hide_notices_nonce', '_thinkup_notice_nonce')) . '" style="z-index: 0;padding: 10px;text-decoration: none;" >';
 					echo '<span class="screen-reader-text">' . esc_html__('Dismiss this notice.', 'renden'). '</span>';
 					echo '</a>';
 					echo wp_kses_post( $this->notification );
@@ -225,7 +228,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 
 					foreach ( $this->tabs as $tab_key => $tab_name ) {
 
-						echo '<a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '&tab=' . $tab_key . '" class="nav-tab ' . ( $active_tab == $tab_key ? 'nav-tab-active' : '' ) . '" role="tab" data-toggle="tab">';
+						echo '<a href="' . esc_url( admin_url( 'themes.php?page=thinkup-welcome' ) ) . '&tab=' . esc_attr( $tab_key ) . '" class="nav-tab ' . ( $active_tab == $tab_key ? 'nav-tab-active' : '' ) . '" role="tab" data-toggle="tab">';
 						echo esc_html( $tab_name );
 						echo '</a>';
 
@@ -280,7 +283,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
                                 }
                             }
 
-							echo '<a target="' . $button_new_tab . '" href="' . $getting_started_item['button_link'] . '"class="' . $button_class . '">' . $getting_started_item['button_label'] . '</a>';
+							echo '<a target="' . $button_new_tab . '" href="' . esc_url( $getting_started_item['button_link'] ) . '"class="' . $button_class . '">' . esc_html( $getting_started_item['button_label'] ) . '</a>';
 							echo '</p>';
 						}
 
@@ -328,7 +331,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 						echo '<div class="menu-item menu-item-edit-inactive' . $documentation_step['hidden'] .'">';
 						echo '<div class="menu-item-bar">';
 						echo '<div class="menu-item-handle">';
-						echo '<span class="item-title">' . $documentation_step['title'] . '</span>';
+						echo '<span class="item-title">' . wp_kses_post( $documentation_step['title'] ) . '</span>';
 						echo '</div>';
 						echo '</div>';
 						echo '<div class="menu-item-settings wp-clearfix">';
@@ -358,7 +361,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 										$button_new_tab = '_blank';
 									}
 								}
-								echo '<a target="' . $button_new_tab . '" href="' . $documentation_step['button_link'] . '"class="' . $button_class . '">' . $documentation_step['button_label'] . '</a>';
+								echo '<a target="' . $button_new_tab . '" href="' . esc_url( $documentation_step['button_link'] ) . '"class="' . $button_class . '">' . esc_html( $documentation_step['button_label'] ) . '</a>';
 								echo '</p>';
 							}
 							echo '</div><!-- .menu-item-side-->';
@@ -423,7 +426,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 									$button_new_tab = '_blank';
 								}
 							}
-							echo '<a target="' . $button_new_tab . '" href="' . $support_step['button_link'] . '"class="' . $button_class . '">' . $support_step['button_label'] . '</a>';
+							echo '<a target="' . $button_new_tab . '" href="' . esc_url( $support_step['button_link'] ) . '"class="' . $button_class . '">' . esc_html( $support_step['button_label'] ) . '</a>';
 							echo '</p>';
 						}
 
@@ -479,7 +482,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 						if ( ! empty( $feature['is_in_lite'] ) && ( $feature['is_in_lite'] == 'true' ) && empty( $feature['is_in_lite_text'] ) ) {
 							echo '<td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>';
 						} else if ( ! empty( $feature['is_in_lite_text'] ) ) {
-							echo '<td class="only-lite"><span class="">' . $feature['is_in_lite_text'] . '</span></td>';
+							echo '<td class="only-lite"><span class="">' . esc_html( $feature['is_in_lite_text'] ) . '</span></td>';
 						} else {
 							echo '<td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>';
 						}
@@ -488,7 +491,7 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 						if ( ! empty( $feature['is_in_pro'] ) && ( $feature['is_in_pro'] == 'true' ) && empty( $feature['is_in_pro_text'] ) ) {
 							echo '<td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>';
 						} else if ( ! empty( $feature['is_in_pro_text'] ) ) {
-							echo '<td class="only-lite"><span class="">' . $feature['is_in_pro_text'] . '</span></td>';
+							echo '<td class="only-lite"><span class="">' . esc_html( $feature['is_in_pro_text'] ) . '</span></td>';
 						} else {
 							echo '<td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>';
 						}
@@ -520,12 +523,12 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 
 			// enqueue css files
 			if ( 'themes.php' === $pagenow || 'appearance_page_thinkup-welcome' == $hook_suffix ) {
-				wp_enqueue_style( 'renden-thinkup-about-page-css', get_template_directory_uri() . '/admin/main-toolbox/assets/css/toolbox-backend.css' );
+				wp_enqueue_style( 'thinkup-about-page-css', esc_url( get_template_directory_uri() ) . '/admin/main-toolbox/assets/css/toolbox-backend.css' );
 			}
 
 			// enqueue js files
 			if ( 'appearance_page_thinkup-welcome' == $hook_suffix ) {
-				wp_enqueue_script( 'renden-thinkup-about-page-js', ( get_template_directory_uri() . '/admin/main-toolbox/assets/js/toolbox-backend.js' ), array( 'jquery' ), '', 'true' );
+				wp_enqueue_script( 'thinkup-about-page-js', ( esc_url( get_template_directory_uri() ) . '/admin/main-toolbox/assets/js/toolbox-backend.js' ), array( 'jquery' ), '', 'true' );
 			}
 
 		}
@@ -534,15 +537,15 @@ if ( ! class_exists( 'renden_thinkup_toolbox_about_page' ) ) {
 		 * Hide welcome notice when dismissed.
 		 */
 		public function hide_notice() {
-			if (isset($_GET['renden-thinkup-hide-notice']) && isset($_GET['_renden_thinkup_notice_nonce'])) {
-				if (!wp_verify_nonce($_GET['_renden_thinkup_notice_nonce'], 'renden_thinkup_hide_notices_nonce')) {
+			if (isset($_GET['thinkup-hide-notice']) && isset($_GET['_thinkup_notice_nonce'])) {
+				if (!wp_verify_nonce($_GET['_thinkup_notice_nonce'], 'thinkup_hide_notices_nonce')) {
 					wp_die(esc_html__('Action failed. Please refresh the page and retry.', 'renden'));
 				}
 				if (!current_user_can('edit_theme_options')) {
 					wp_die(esc_html__('You do not have the necessary permission to perform this action.', 'renden'));
 				}
-				$hide_notice = sanitize_text_field($_GET['renden-thinkup-hide-notice']);
-				update_option('renden_thinkup_notice_' . $hide_notice, 1);
+				$hide_notice = sanitize_text_field($_GET['thinkup-hide-notice']);
+				update_option('thinkup_notice_' . $hide_notice, 1);
 			}
 		}
 

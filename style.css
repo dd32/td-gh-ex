@@ -4,10 +4,10 @@ Theme URI: https://www.thinkupthemes.com/free/renden-free/
 Author: ThinkUpThemes
 Author URI: https://www.thinkupthemes.com
 Description: Renden is the free version of the multi-purpose professional theme (Renden Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.4.9
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, education, photography, rtl-language-support
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, education, photography, rtl-language-support
 Text Domain: renden
 */
 
@@ -187,7 +187,7 @@ body.layout-fixed #body-core,
 body.layout-fixed #site-header,
 body.layout-fixed #header-sticky,
 body.layout-fixed #notification { 
-	min-width: 960px;
+	min-width: 1140px;
 }
 
 /* Headings */
@@ -432,7 +432,7 @@ a:visited {
 #introaction-core,
 #outroaction-core {
 	display: block;
-	max-width: 960px;
+	max-width:1140px;
 	margin: 0 auto;
 }
 #content,
@@ -450,7 +450,7 @@ a:visited {
 /* Boxed layout */
 body.layout-boxed #body-core,
 body.custom-background #body-core {
-	max-width: 990px;
+	max-width: 1170px;
 	display: block;
 	margin: 0 auto;
 }
@@ -460,7 +460,7 @@ body.layout-boxed #header-sticky,
 body.custom-background #pre-header,
 body.custom-background #header,
 body.custom-background #header-sticky {
-	max-width: 990px;
+	max-width: 1170px;
 }
 
 /* ---------------------------------------------------------------------------------------
@@ -602,6 +602,61 @@ li.pag-next {
 	float: right;
 }
 
+/* Pagination - Native WordPress pagination */
+.navigation.pagination {
+	margin: 10px 0 30px;
+	list-style: none;
+}
+.navigation.pagination .screen-reader-text {
+	display: none;
+}
+.navigation.pagination .nav-links a,
+.navigation.pagination .nav-links span {
+	text-align: center;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: inherit;
+	background: none;
+	border: 1px solid #232323;
+	margin-right: 3px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+}
+.navigation.pagination .nav-links a:hover,
+.navigation.pagination .nav-links a.current,
+.navigation.pagination .nav-links span:hover,
+.navigation.pagination .nav-links span.current {
+	color: #fff;
+	background: #232323;
+}
+.navigation.pagination .nav-links a.prev,
+.navigation.pagination .nav-links a.next {
+	font-size: 0;
+	top: 1px;
+	position: relative;
+}
+.navigation.pagination .nav-links a.prev:after,
+.navigation.pagination .nav-links a.next:after {
+	font-size: 15px;
+	font-family: fontawesome;
+}
+.navigation.pagination .nav-links a.prev:after {
+	content: "\f104";
+}
+.navigation.pagination .nav-links a.next:after {
+	content: "\f105";
+}
+.navigation.pagination .nav-links .dots:hover {
+	color: inherit;
+	background: none;
+	border-color: #232323;
+}
+
 
 /* ---------------------------------------------------------------------------------------
 	06. HEADER
@@ -698,7 +753,7 @@ li.pag-next {
 #header-image.header-image-boxed {
 	display: block;
 	margin: 0 auto;
-	max-width: 990px;
+	max-width: 1170px;
 }
 
 /* Site-header */
@@ -1072,6 +1127,7 @@ li.pag-next {
 }
 #header .header-links .header-thinkupmega > ul > li,
 #header-sticky .header-links .header-thinkupmega > ul > li {
+	height: auto !important;
 	float: left;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -1169,7 +1225,7 @@ li.pag-next {
 }
 .header-style2 #header-links-inner {
 	float: none;
-	max-width: 960px;
+	max-width: 1140px;
 	display: block;
 	margin: 0 auto;
 }
@@ -1376,7 +1432,7 @@ li.pag-next {
 }
 #slider .rslides-inner {
 	position: relative;
-	width: 960px;
+	width: 1140px;
 	max-width: 100%;
 	margin: 0 auto;
 	border: 0;
@@ -1497,7 +1553,7 @@ li.pag-next {
 	box-shadow: 0 0 0 5px #FFF, 0 0 0 6px #DDD;
 }
 .slider-full #header-core {
-	max-width: 960px; 
+	max-width: 1140px; 
 }
 .slider-full #header-links {
 	border-bottom: none;
@@ -1599,7 +1655,7 @@ li.pag-next {
 .thinkupslider-sc.style3 .wrap-safari {
 	display: table;
 	height: 100%;
-	max-width: 960px;
+	max-width: 1140px;
 	margin: 0 auto;
 	width: 100%;
 }
@@ -2028,7 +2084,7 @@ li.pag-next {
 #intro #intro-core {
 	width: 100%;
 	display: table;
-    word-break: break-all;
+	word-wrap: break-word;
 }
 #intro .page-title {
 	font-size: 20px;
@@ -2042,6 +2098,7 @@ li.pag-next {
 #intro #breadcrumbs {
 	color: #232323;
 	font-size: 12px;
+	text-align: right;
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -2053,9 +2110,6 @@ li.pag-next {
 }
 #intro #breadcrumbs a:hover {
 	color: inherit;
-}
-#intro #breadcrumbs-core {
-	text-align: right;
 }
 #intro #breadcrumbs-home {
     padding-left: 12px;
@@ -2237,7 +2291,7 @@ a.themebutton4 {
 	padding: 0 10px;
 }
 #section-home-inner {
-	max-width: 960px;
+	max-width: 1140px;
 	margin: 30px auto 0;
 }
 #section-home .section {
@@ -2295,7 +2349,7 @@ a.themebutton4 {
 }
 #section-home .entry-content {
 	color: #888;
-	padding: 20px 20px 0px;
+	padding: 20px 15px 0px;
 }
 #section-home h3 {
 	font-size: 15px;
@@ -4305,7 +4359,7 @@ li.pingback a {
 }
 .page-template-template-contact-php .panel-grid-core {
 	display: block;
-	max-width: 960px;
+	max-width: 1140px;
 	margin: 0 auto
 }
 
@@ -4438,7 +4492,7 @@ li.pingback a {
 .page-template-template-parallax-php #content #nav-below,
 .page-template-template-parallax-php #content #comments {
 	display: block;
-	max-width: 960px;
+	max-width: 1140px;
 	margin: 0 auto
 }
 .page-template-template-parallax-php #content #comments {
@@ -6030,7 +6084,7 @@ span.bar-per {
 .wrap-safari {
 	display: block; 
 	height: 100%; 
-	max-width: 960px; 
+	max-width: 1140px; 
 	margin: 0 auto;
 }
 

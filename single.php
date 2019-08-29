@@ -11,14 +11,12 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'renden' ), 'after'  => '</div>', ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'renden' ), 'after'  => '</div>', ) ); ?>
 
 				<?php thinkup_input_nav( 'nav-below' ); ?>
 
-				<?php /* Add Social Share */  thinkup_input_share(); ?>
-
 				<?php /* Add comments */ thinkup_input_allowcomments(); ?>
 
-			<?php endwhile; wp_reset_query(); ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 
 <?php get_footer(); ?>

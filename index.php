@@ -13,7 +13,7 @@ get_header(); ?>
 
 				<?php while( have_posts() ): the_post(); ?>
 
-					<div class="blog-grid element<?php echo thinkup_input_stylelayout(); ?>">
+					<div class="blog-grid element<?php thinkup_input_stylelayout(); ?>">
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
@@ -39,12 +39,12 @@ get_header(); ?>
 
 				</div><div class="clearboth"></div>
 
-				<?php thinkup_input_pagination(); ?>
+				<?php the_posts_pagination(); ?>
 
 			<?php else: ?>
 
 				<?php get_template_part( 'no-results', 'archive' ); ?>		
 
-			<?php endif; wp_reset_query(); ?>
+			<?php endif; wp_reset_postdata(); ?>
 
 <?php get_footer() ?>

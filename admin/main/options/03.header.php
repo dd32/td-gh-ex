@@ -5,13 +5,14 @@
  * @package ThinkUpThemes
  */
 
-
 /* ----------------------------------------------------------------------------------
 	HEADER STYLE
 ---------------------------------------------------------------------------------- */
 function thinkup_input_headerstyle($classes) {
-global $thinkup_header_styleswitch;
-global $thinkup_header_locationswitch;
+
+// Get theme options values.
+$thinkup_header_styleswitch    = thinkup_var ( 'thinkup_header_styleswitch' );
+$thinkup_header_locationswitch = thinkup_var ( 'thinkup_header_locationswitch' );
 
 	// Check which header style should be output
 	if ( empty( $thinkup_header_styleswitch ) or $thinkup_header_styleswitch == 'option1' ) {
@@ -22,7 +23,7 @@ global $thinkup_header_locationswitch;
 				$classes[] = 'header-below';
 			}
 
-	} else if ( $thinkup_header_styleswitch == 'option2' ) {	
+	} else if ( $thinkup_header_styleswitch == 'option2' ) {
 		$classes[] = 'header-style2';
 	}
 	return $classes;
@@ -34,7 +35,9 @@ add_action( 'body_class', 'thinkup_input_headerstyle');
 	SEARCH - DISABLE SEARCH
 ---------------------------------------------------------------------------------- */
 function thinkup_input_headersearch() {
-global $thinkup_header_searchswitch;
+
+// Get theme options values.
+$thinkup_header_searchswitch = thinkup_var ( 'thinkup_header_searchswitch' );
 
 	if ( $thinkup_header_searchswitch == '1' ) {
 		echo '<div id="header-search">',
@@ -50,20 +53,22 @@ global $thinkup_header_searchswitch;
 
 /* Message Settings */
 function thinkup_input_socialmessage(){
-global $thinkup_header_socialmessage;
-global $thinkup_header_facebookswitch;
-global $thinkup_header_twitterswitch;
-global $thinkup_header_googleswitch;
-global $thinkup_header_linkedinswitch;
-global $thinkup_header_flickrswitch;
-global $thinkup_header_pinterestswitch;
-global $thinkup_header_lastfmswitch;
-global $thinkup_header_rssswitch;
-global $thinkup_header_diggswitch;
 
-	if ( empty( $thinkup_header_facebookswitch ) and empty( $thinkup_header_twitterswitch ) and empty( $thinkup_header_googleswitch ) and empty( $thinkup_header_linkedinswitch ) and empty( $thinkup_header_flickrswitch ) and empty( $thinkup_header_pinterestswitch ) and empty( $thinkup_header_lastfmswitch ) and empty( $thinkup_header_rssswitch ) and empty( $thinkup_header_diggswitch ) ) {	
+// Get theme options values.
+$thinkup_header_socialmessage   = thinkup_var ( 'thinkup_header_socialmessage' );
+$thinkup_header_facebookswitch  = thinkup_var ( 'thinkup_header_facebookswitch' );
+$thinkup_header_twitterswitch   = thinkup_var ( 'thinkup_header_twitterswitch' );
+$thinkup_header_googleswitch    = thinkup_var ( 'thinkup_header_googleswitch' );
+$thinkup_header_linkedinswitch  = thinkup_var ( 'thinkup_header_linkedinswitch' );
+$thinkup_header_flickrswitch    = thinkup_var ( 'thinkup_header_flickrswitch' );
+$thinkup_header_pinterestswitch = thinkup_var ( 'thinkup_header_pinterestswitch' );
+$thinkup_header_lastfmswitch    = thinkup_var ( 'thinkup_header_lastfmswitch' );
+$thinkup_header_rssswitch       = thinkup_var ( 'thinkup_header_rssswitch' );
+$thinkup_header_diggswitch      = thinkup_var ( 'thinkup_header_diggswitch' );
+
+	if ( empty( $thinkup_header_facebookswitch ) and empty( $thinkup_header_twitterswitch ) and empty( $thinkup_header_googleswitch ) and empty( $thinkup_header_linkedinswitch ) and empty( $thinkup_header_flickrswitch ) and empty( $thinkup_header_pinterestswitch ) and empty( $thinkup_header_lastfmswitch ) and empty( $thinkup_header_rssswitch ) and empty( $thinkup_header_diggswitch ) ) {
 		return '';
-	} else if ( ! empty( $thinkup_header_socialmessage ) ) {	
+	} else if ( ! empty( $thinkup_header_socialmessage ) ) {
 		return esc_html( $thinkup_header_socialmessage );
 	} else if ( empty( $thinkup_header_socialmessage ) ) {
 		return '';
@@ -77,13 +82,15 @@ global $thinkup_header_diggswitch;
 
 /* Facebook - Custom Icon */
 function thinkup_input_facebookicon(){
-global $thinkup_header_facebookiconswitch;
-global $thinkup_header_facebookcustomicon;
+
+// Get theme options values.
+$thinkup_header_facebookiconswitch = thinkup_var ( 'thinkup_header_facebookiconswitch' );
+$thinkup_header_facebookcustomicon = thinkup_var ( 'thinkup_header_facebookcustomicon', 'url' );
 
 	$output = NULL;
 
 	if ( $thinkup_header_facebookiconswitch == '1' and ! empty( $thinkup_header_facebookcustomicon ) ) {
-		
+
 		// Output for header social media
 		$output .= '#pre-header-social li.facebook a,';
 		$output .= '#pre-header-social li.facebook a:hover {';
@@ -118,8 +125,10 @@ global $thinkup_header_facebookcustomicon;
 
 /* Twitter - Custom Icon */
 function thinkup_input_twittericon(){
-global $thinkup_header_twittericonswitch;
-global $thinkup_header_twittercustomicon;
+
+// Get theme options values.
+$thinkup_header_twittericonswitch = thinkup_var ( 'thinkup_header_twittericonswitch' );
+$thinkup_header_twittercustomicon = thinkup_var ( 'thinkup_header_twittercustomicon', 'url' );
 
 	$output = NULL;
 
@@ -159,8 +168,10 @@ global $thinkup_header_twittercustomicon;
 
 /* Google+ - Custom Icon */
 function thinkup_input_googleicon(){
-global $thinkup_header_googleiconswitch;
-global $thinkup_header_googlecustomicon;
+
+// Get theme options values.
+$thinkup_header_googleiconswitch = thinkup_var ( 'thinkup_header_googleiconswitch' );
+$thinkup_header_googlecustomicon = thinkup_var ( 'thinkup_header_googlecustomicon', 'url' );
 
 	$output = NULL;
 
@@ -200,8 +211,10 @@ global $thinkup_header_googlecustomicon;
 
 /* LinkedIn - Custom Icon */
 function thinkup_input_linkedinicon(){
-global $thinkup_header_linkediniconswitch;
-global $thinkup_header_linkedincustomicon;
+
+// Get theme options values.
+$thinkup_header_linkediniconswitch = thinkup_var ( 'thinkup_header_linkediniconswitch' );
+$thinkup_header_linkedincustomicon = thinkup_var ( 'thinkup_header_linkedincustomicon', 'url' );
 
 	$output = NULL;
 
@@ -241,8 +254,10 @@ global $thinkup_header_linkedincustomicon;
 
 /* Flickr - Custom Icon */
 function thinkup_input_flickricon(){
-global $thinkup_header_flickriconswitch;
-global $thinkup_header_flickrcustomicon;
+
+// Get theme options values.
+$thinkup_header_flickriconswitch = thinkup_var ( 'thinkup_header_flickriconswitch' );
+$thinkup_header_flickrcustomicon = thinkup_var ( 'thinkup_header_flickrcustomicon', 'url' );
 
 	$output = NULL;
 
@@ -282,8 +297,10 @@ global $thinkup_header_flickrcustomicon;
 
 /* Pinterest - Custom Icon */
 function thinkup_input_pinteresticon(){
-global $thinkup_header_pinteresticonswitch;
-global $thinkup_header_pinterestcustomicon;
+
+// Get theme options values.
+$thinkup_header_pinteresticonswitch = thinkup_var ( 'thinkup_header_pinteresticonswitch' );
+$thinkup_header_pinterestcustomicon = thinkup_var ( 'thinkup_header_pinterestcustomicon', 'url' );
 
 	$output = NULL;
 
@@ -323,8 +340,10 @@ global $thinkup_header_pinterestcustomicon;
 
 /* YouTube - Custom Icon */
 function thinkup_input_youtubeicon(){
-global $thinkup_header_youtubeiconswitch;
-global $thinkup_header_youtubecustomicon;
+
+// Get theme options values.
+$thinkup_header_youtubeiconswitch = thinkup_var ( 'thinkup_header_youtubeiconswitch' );
+$thinkup_header_youtubecustomicon = thinkup_var ( 'thinkup_header_youtubecustomicon', 'url' );
 
 	$output = NULL;
 
@@ -364,8 +383,10 @@ global $thinkup_header_youtubecustomicon;
 
 /* RSS - Custom Icon */
 function thinkup_input_rssicon(){
-global $thinkup_header_rssiconswitch;
-global $thinkup_header_rsscustomicon;
+
+// Get theme options values.
+$thinkup_header_rssiconswitch = thinkup_var ( 'thinkup_header_rssiconswitch' );
+$thinkup_header_rsscustomicon = thinkup_var ( 'thinkup_header_rsscustomicon', 'url' );
 
 	$output = NULL;
 
@@ -418,7 +439,7 @@ function thinkup_input_socialicon(){
 	$output .= thinkup_input_rssicon();
 
 	if ( ! empty( $output ) ) {
-		echo    '<style type="text/css">' . "\n" . $output . '</style>';
+		echo '<style type="text/css">' . "\n" . $output . '</style>';
 	}
 }
 add_action( 'wp_head', 'thinkup_input_socialicon', 13 );
@@ -429,33 +450,35 @@ add_action( 'wp_head', 'thinkup_input_socialicon', 13 );
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_socialmediaheader() {
-global $thinkup_header_socialswitch;
-global $thinkup_header_socialmessage;
-global $thinkup_header_facebookswitch;
-global $thinkup_header_facebooklink;
-global $thinkup_header_twitterswitch;
-global $thinkup_header_twitterlink;
-global $thinkup_header_googleswitch;
-global $thinkup_header_googlelink;
-global $thinkup_header_linkedinswitch;
-global $thinkup_header_linkedinlink;
-global $thinkup_header_flickrswitch;
-global $thinkup_header_flickrlink;
-global $thinkup_header_pinterestswitch;
-global $thinkup_header_pinterestlink;
-global $thinkup_header_youtubeswitch;
-global $thinkup_header_youtubelink;
-global $thinkup_header_rssswitch;
-global $thinkup_header_rsslink;
+
+// Get theme options values.
+$thinkup_header_socialswitch    = thinkup_var ( 'thinkup_header_socialswitch' );
+$thinkup_header_socialmessage   = thinkup_var ( 'thinkup_header_socialmessage' );
+$thinkup_header_facebookswitch  = thinkup_var ( 'thinkup_header_facebookswitch' );
+$thinkup_header_facebooklink    = thinkup_var ( 'thinkup_header_facebooklink' );
+$thinkup_header_twitterswitch   = thinkup_var ( 'thinkup_header_twitterswitch' );
+$thinkup_header_twitterlink     = thinkup_var ( 'thinkup_header_twitterlink' );
+$thinkup_header_googleswitch    = thinkup_var ( 'thinkup_header_googleswitch' );
+$thinkup_header_googlelink      = thinkup_var ( 'thinkup_header_googlelink' );
+$thinkup_header_linkedinswitch  = thinkup_var ( 'thinkup_header_linkedinswitch' );
+$thinkup_header_linkedinlink    = thinkup_var ( 'thinkup_header_linkedinlink' );
+$thinkup_header_flickrswitch    = thinkup_var ( 'thinkup_header_flickrswitch' );
+$thinkup_header_flickrlink      = thinkup_var ( 'thinkup_header_flickrlink' );
+$thinkup_header_pinterestswitch = thinkup_var ( 'thinkup_header_pinterestswitch' );
+$thinkup_header_pinterestlink   = thinkup_var ( 'thinkup_header_pinterestlink' );
+$thinkup_header_youtubeswitch   = thinkup_var ( 'thinkup_header_youtubeswitch' );
+$thinkup_header_youtubelink     = thinkup_var ( 'thinkup_header_youtubelink' );
+$thinkup_header_rssswitch       = thinkup_var ( 'thinkup_header_rssswitch' );
+$thinkup_header_rsslink         = thinkup_var ( 'thinkup_header_rsslink' );
 
 // Reset count values used in foreach loop
 $i = 0;
 $j = 0;
 
 	if ( $thinkup_header_socialswitch == '1' ) {
-	
+
 		// Assign social media link to an array
-		$social_links = array( 
+		$social_links = array(
 			array( 'social' => 'Facebook',    'toggle' => $thinkup_header_facebookswitch, 'link' => $thinkup_header_facebooklink ),
 			array( 'social' => 'Twitter',     'toggle' => $thinkup_header_twitterswitch,  'link' => $thinkup_header_twitterlink ),
 			array( 'social' => 'Google-plus', 'toggle' => $thinkup_header_googleswitch,   'link' => $thinkup_header_googlelink ),
@@ -467,7 +490,7 @@ $j = 0;
 		);
 
 		// Output social media links if any link is set
-		foreach( $social_links as $social ) {	
+		foreach( $social_links as $social ) {
 			if ( ! empty( $social['link'] ) and $j == 0 ) {
 				echo '<div id="pre-header-social"><ul>'; $j = 1;
 
@@ -478,8 +501,8 @@ $j = 0;
 
 			if ( ! empty( $social['link'] ) and $social['toggle'] == '1' ) {
 			echo '<li class="social ' . strtolower( $social['social'] ) . '">',
-				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="bottom" data-original-title="' . str_replace( '-plus', '+', $social['social'] ) . '" target="_blank">',
-				 '<i class="fa fa-' . strtolower( $social['social'] ) . '"></i>',
+				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="bottom" data-original-title="' . esc_attr( str_replace( '-plus', '+', $social['social'] ) ) . '" target="_blank">',
+				 '<i class="fa fa-' . esc_attr( strtolower( $social['social'] ) ) . '"></i>',
 				 '</a>',
 				 '</li>';
 			}
@@ -496,33 +519,35 @@ $j = 0;
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_socialmediafooter() {
-global $thinkup_footer_socialswitch;
-global $thinkup_header_socialmessage;
-global $thinkup_header_facebookswitch;
-global $thinkup_header_facebooklink;
-global $thinkup_header_twitterswitch;
-global $thinkup_header_twitterlink;
-global $thinkup_header_googleswitch;
-global $thinkup_header_googlelink;
-global $thinkup_header_linkedinswitch;
-global $thinkup_header_linkedinlink;
-global $thinkup_header_flickrswitch;
-global $thinkup_header_flickrlink;
-global $thinkup_header_pinterestswitch;
-global $thinkup_header_pinterestlink;
-global $thinkup_header_youtubeswitch;
-global $thinkup_header_youtubelink;
-global $thinkup_header_rssswitch;
-global $thinkup_header_rsslink;
+
+// Get theme options values.
+$thinkup_footer_socialswitch    = thinkup_var ( 'thinkup_footer_socialswitch' );
+$thinkup_header_socialmessage   = thinkup_var ( 'thinkup_header_socialmessage' );
+$thinkup_header_facebookswitch  = thinkup_var ( 'thinkup_header_facebookswitch' );
+$thinkup_header_facebooklink    = thinkup_var ( 'thinkup_header_facebooklink' );
+$thinkup_header_twitterswitch   = thinkup_var ( 'thinkup_header_twitterswitch' );
+$thinkup_header_twitterlink     = thinkup_var ( 'thinkup_header_twitterlink' );
+$thinkup_header_googleswitch    = thinkup_var ( 'thinkup_header_googleswitch' );
+$thinkup_header_googlelink      = thinkup_var ( 'thinkup_header_googlelink' );
+$thinkup_header_linkedinswitch  = thinkup_var ( 'thinkup_header_linkedinswitch' );
+$thinkup_header_linkedinlink    = thinkup_var ( 'thinkup_header_linkedinlink' );
+$thinkup_header_flickrswitch    = thinkup_var ( 'thinkup_header_flickrswitch' );
+$thinkup_header_flickrlink      = thinkup_var ( 'thinkup_header_flickrlink' );
+$thinkup_header_pinterestswitch = thinkup_var ( 'thinkup_header_pinterestswitch' );
+$thinkup_header_pinterestlink   = thinkup_var ( 'thinkup_header_pinterestlink' );
+$thinkup_header_youtubeswitch   = thinkup_var ( 'thinkup_header_youtubeswitch' );
+$thinkup_header_youtubelink     = thinkup_var ( 'thinkup_header_youtubelink' );
+$thinkup_header_rssswitch       = thinkup_var ( 'thinkup_header_rssswitch' );
+$thinkup_header_rsslink         = thinkup_var ( 'thinkup_header_rsslink' );
 
 // Reset count values used in foreach loop
 $i = 0;
 $j = 0;
 
 	if ( $thinkup_footer_socialswitch == '1' ) {
-	
+
 		// Assign social media link to an array
-		$social_links = array( 
+		$social_links = array(
 			array( 'social' => 'Facebook',    'toggle' => $thinkup_header_facebookswitch, 'link' => $thinkup_header_facebooklink ),
 			array( 'social' => 'Twitter',     'toggle' => $thinkup_header_twitterswitch,  'link' => $thinkup_header_twitterlink ),
 			array( 'social' => 'Google-plus', 'toggle' => $thinkup_header_googleswitch,   'link' => $thinkup_header_googlelink ),
@@ -534,7 +559,7 @@ $j = 0;
 		);
 
 		// Output social media links if any link is set
-		foreach( $social_links as $social ) {	
+		foreach( $social_links as $social ) {
 			if ( ! empty( $social['link'] ) and $j == 0 ) {
 				echo '<div id="post-footer-social"><ul>'; $j = 1;
 
@@ -545,8 +570,8 @@ $j = 0;
 
 			if ( ! empty( $social['link'] ) and $social['toggle'] == '1' ) {
 			echo '<li class="social ' . strtolower( $social['social'] ) . '">',
-				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="top" data-original-title="' . str_replace( '-plus', '+', $social['social'] ) . '" target="_blank">',
-				 '<i class="fa fa-' . strtolower( $social['social'] ) . '"></i>',
+				 '<a href="' . esc_url( $social['link'] ) . '" data-tip="top" data-original-title="' . esc_attr( str_replace( '-plus', '+', $social['social'] ) ) . '" target="_blank">',
+				 '<i class="fa fa-' . esc_attr( strtolower( $social['social'] ) ) . '"></i>',
 				 '</a>',
 				 '</li>';
 			}

@@ -5,14 +5,15 @@
  * @package ThinkUpThemes
  */
 
-
- /* ----------------------------------------------------------------------------------
+/* ----------------------------------------------------------------------------------
 	BLOG STYLE
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_blogclass($classes){
-global $thinkup_blog_style;
-global $thinkup_blog_style1layout;
+
+// Get theme options values.
+$thinkup_blog_style        = thinkup_var ( 'thinkup_blog_style' );
+$thinkup_blog_style1layout = thinkup_var ( 'thinkup_blog_style1layout' );
 
 	if ( thinkup_check_isblog() ) {
 		if ( empty( $thinkup_blog_style ) or $thinkup_blog_style == 'option1' ) {
@@ -35,12 +36,14 @@ add_action( 'body_class', 'thinkup_input_blogclass');
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_stylelayout() {
-global $thinkup_blog_style;
-global $thinkup_blog_style2layout;
-  
+
+// Get theme options values.
+$thinkup_blog_style        = thinkup_var ( 'thinkup_blog_style' );
+$thinkup_blog_style2layout = thinkup_var ( 'thinkup_blog_style2layout' );
+
 	if ( $thinkup_blog_style !== 'option2' ) {
 		echo ' column-1';
-	} else if ( $thinkup_blog_style == 'option2' ) {			
+	} else if ( $thinkup_blog_style == 'option2' ) {
 		if ( empty($thinkup_blog_style2layout) or $thinkup_blog_style2layout == 'option1' ) {
 			echo ' column-1';
 		} else if ( $thinkup_blog_style2layout == 'option2' ) {
@@ -60,9 +63,11 @@ global $thinkup_blog_style2layout;
 
 function thinkup_input_stylelayout_class1() {
 global $post;
-global $thinkup_blog_postswitch;
-global $thinkup_blog_style;
-global $thinkup_blog_style1layout;
+
+// Get theme options values.
+$thinkup_blog_postswitch   = thinkup_var ( 'thinkup_blog_postswitch' );
+$thinkup_blog_style        = thinkup_var ( 'thinkup_blog_style' );
+$thinkup_blog_style1layout = thinkup_var ( 'thinkup_blog_style1layout' );
 
 	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
 		if ( $thinkup_blog_style !== 'option2' and $thinkup_blog_style1layout !== 'option2' ) {
@@ -73,9 +78,11 @@ global $thinkup_blog_style1layout;
 
 function thinkup_input_stylelayout_class2() {
 global $post;
-global $thinkup_blog_postswitch;
-global $thinkup_blog_style;
-global $thinkup_blog_style1layout;
+
+// Get theme options values.
+$thinkup_blog_postswitch   = thinkup_var ( 'thinkup_blog_postswitch' );
+$thinkup_blog_style        = thinkup_var ( 'thinkup_blog_style' );
+$thinkup_blog_style1layout = thinkup_var ( 'thinkup_blog_style1layout' );
 
 	if ( has_post_thumbnail( $post->ID ) and $thinkup_blog_postswitch !== 'option2' ) {
 		if ( $thinkup_blog_style !== 'option2' and $thinkup_blog_style1layout !== 'option2' ) {
@@ -92,7 +99,7 @@ global $thinkup_blog_style1layout;
 function thinkup_input_blogtitle() {
 
 		echo	'<h2 class="blog-title">',
-				'<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'renden' ), the_title_attribute( 'echo=0' ) ) ) . '">' . esc_attr( get_the_title() ) . '</a>',
+				'<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( sprintf( __( 'Permalink to %s', 'renden' ), the_title_attribute( 'echo=0' ) ) ) . '">' . get_the_title() . '</a>',
 				'</h2>';
 }
 
@@ -104,10 +111,11 @@ function thinkup_input_blogtitle() {
 // Input post thumbnail / featured media
 function thinkup_input_blogimage() {
 global $post;
-global $wp_embed;
-global $thinkup_blog_style1layout;
-global $thinkup_blog_lightbox;
-global $thinkup_blog_link;
+
+// Get theme options values.
+$thinkup_blog_style1layout = thinkup_var ( 'thinkup_blog_style1layout' );
+$thinkup_blog_lightbox     = thinkup_var ( 'thinkup_blog_hovercheck', 'option1' );
+$thinkup_blog_link         = thinkup_var ( 'thinkup_blog_hovercheck', 'option2' );
 
 	$size  = NULL;
 	$link  = NULL;
@@ -134,14 +142,14 @@ global $thinkup_blog_link;
 
 	// Determine which links to show on hover
 	if ( $thinkup_blog_lightbox =='1' ) {
-		$blog_lightbox = '<a class="hover-zoom prettyPhoto" href="' . $link . '"><i class="dashicons dashicons-editor-distractionfree"></i></a>';
+		$blog_lightbox = '<a class="hover-zoom prettyPhoto" href="' . esc_url( $link ) . '"><i class="dashicons dashicons-editor-distractionfree"></i></a>';
 	}
 	if ( $thinkup_blog_link =='1' ) {
-		$blog_link = '<a class="hover-link" href="' . get_permalink() . '"><i class="dashicons dashicons-arrow-right-alt2"></i></a>';
+		$blog_link = '<a class="hover-link" href="' . esc_url( get_permalink() ) . '"><i class="dashicons dashicons-arrow-right-alt2"></i></a>';
 	}
 
 	// Determine which if single link animation should be shown
-	if ( ( $thinkup_blog_lightbox =='1' and $thinkup_blog_link !== '1' ) 
+	if ( ( $thinkup_blog_lightbox =='1' and $thinkup_blog_link !== '1' )
 		or ( $thinkup_blog_lightbox !=='1' and $thinkup_blog_link == '1' ) ) {
 		$blog_class = ' style2';
 	}
@@ -158,7 +166,7 @@ global $thinkup_blog_link;
 	// Output media on blog page
 	if ( ! empty( $featured_id ) ) {
 		echo '<div class="blog-thumb">',
-			 '<a href="'. get_permalink($post->ID) . '">' . $media . '</a>',
+			 '<a href="'. esc_url( get_permalink( $post->ID ) ) . '">' . $media . '</a>',
 			 $blog_overlay,
 			 '</div>';
 	}
@@ -167,7 +175,9 @@ global $thinkup_blog_link;
 // Input post excerpt / content to blog page
 function thinkup_input_blogtext() {
 global $post;
-global $thinkup_blog_postswitch;
+
+// Get theme options values.
+$thinkup_blog_postswitch = thinkup_var ( 'thinkup_blog_postswitch' );
 
 	// Output full content - EDD plugin compatibility
 	if( function_exists( 'EDD' ) and is_post_type_archive( 'download' ) ) {
@@ -179,10 +189,16 @@ global $thinkup_blog_postswitch;
 	if ( is_search() ) {
 		the_excerpt();
 	} else if ( ! is_search() ) {
-		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) and ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
-			the_excerpt();
-		} else if ( $thinkup_blog_postswitch == 'option2' ) {		
+		if ( ( empty( $thinkup_blog_postswitch ) or $thinkup_blog_postswitch == 'option1' ) ) {
+			if( ! is_numeric( strpos( $post->post_content, '<!--more-->' ) ) ) {
+				the_excerpt();
+			} else {
+				the_content();
+				wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'renden' ), 'after'  => '</div>', ) );
+			}
+		} else if ( $thinkup_blog_postswitch == 'option2' ) {
 			the_content();
+			wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'renden' ), 'after'  => '</div>', ) );
 		}
 	}
 }
@@ -194,7 +210,7 @@ global $thinkup_blog_postswitch;
 
 // Input sticky post
 function thinkup_input_sticky() {
-	printf( '<span class="sticky"><i class="fa fa-thumb-tack"></i><a href="%1$s" title="%2$s">' . __( 'Sticky', 'renden' ) . '</a></span>',
+	printf( '<span class="sticky"><i class="fa fa-thumb-tack"></i><a href="%1$s" title="%2$s">' . esc_html__( 'Sticky', 'renden' ) . '</a></span>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_title() )
 	);
@@ -228,7 +244,7 @@ $categories_list = get_the_category_list( __( ', ', 'renden' ) );
 
 	if ( $categories_list && thinkup_input_categorizedblog() ) {
 		echo	'<span class="category"><i class="fa fa-list"></i>';
-		printf( __( '%1$s', 'renden' ), $categories_list );
+		printf( '%1$s', $categories_list );
 		echo	'</span>';
 	};
 }
@@ -239,7 +255,7 @@ $tags_list = get_the_tag_list( '', __( ', ', 'renden' ) );
 
 	if ( $tags_list ) {
 		echo	'<span class="tags"><i class="fa fa-tags"></i>';
-		printf( __( '%1$s', 'renden' ), $tags_list );
+		printf( '%1$s', $tags_list );
 		echo	'</span>';
 	};
 }
@@ -344,7 +360,7 @@ $class_comment = NULL;
 
 	echo '<header class="entry-header' . $class_comment . '">';
 
-	echo '<h3 class="post-title">' . esc_attr( get_the_title() ) . '</h3>';
+	echo '<h3 class="post-title">' . get_the_title() . '</h3>';
 
 	echo '<div class="entry-meta">';
 		thinkup_input_blogdate();
@@ -355,77 +371,6 @@ $class_comment = NULL;
 	echo '</div>';
 
 	echo '<div class="clearboth"></div></header><!-- .entry-header -->';
-}
-
-
-/* ----------------------------------------------------------------------------------
-	SHOW SOCIAL SHARING
----------------------------------------------------------------------------------- */
-
-/* HTML for Social Sharing */
-function thinkup_input_sharecode() {
-global $thinkup_post_sharemessage;
-global $thinkup_post_sharefacebook;
-global $thinkup_post_sharetwitter;
-global $thinkup_post_sharegoogle;
-global $thinkup_post_sharelinkedin;
-global $thinkup_post_sharetumblr;
-global $thinkup_post_sharepinterest;
-global $thinkup_post_shareemail;
-
-global $post;
-
-	/* Remove white spaces from title */
-	$page_title = str_replace(' ', '%20', get_the_title());
-
-	echo	'<div id="sharepost">';
-		echo	'<div id="sharemessage">';
-		if ( ! empty( $thinkup_post_sharemessage ) ) { 
-			echo '<p>' . $thinkup_post_sharemessage . '</p>';
-		} else {
-			echo '<p>Spread the word. Share this post!</p>'; 
-		}
-		echo	'</div>';
-		echo	'<div id="shareicons" class="">';
-		if ( $thinkup_post_sharefacebook == '1' ) {
-			echo '<a class="shareicon facebook" onclick="MyWindow=window.open(&#39;//www.facebook.com/sharer.php?u=' . esc_url( get_permalink() ) . '&#38;t=' . esc_attr($page_title ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//www.facebook.com/sharer.php?u=' . esc_url( get_permalink() ) . '&#38;t=' . esc_attr( $page_title ) . '" data-tip="top" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>';
-		}
-		if ( $thinkup_post_sharetwitter == '1' ) {
-			echo '<a class="shareicon twitter" onclick="MyWindow=window.open(&#39;//twitter.com/home?status=Check%20this%20out!%20' . esc_attr( $page_title ) . '%20at%20' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//twitter.com/home?status=Check%20this%20out!%20' . esc_attr( $page_title ) . '%20at%20' . esc_url( get_permalink() ) . '" data-tip="top" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>';
-		}
-		if ( $thinkup_post_sharegoogle == '1' ) {
-			echo '<a class="shareicon Google" onclick="MyWindow=window.open(&#39;//plus.google.com/share?url=' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//plus.google.com/share?url=' . esc_url( get_permalink() ) . '" data-tip="top" data-original-title="Google+"><i class="fa fa-google-plus"></i></a>';
-		}
-		if ( $thinkup_post_sharelinkedin =='1' ) {
-			echo '<a class="shareicon linkedin" onclick="MyWindow=window.open(&#39;//linkedin.com/shareArticle?mini=true&url=' . esc_url( get_permalink() ) . '&summary=' . esc_attr( $page_title ) . '&source=LinkedIn&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//linkedin.com/shareArticle?mini=true&url=' . esc_url( get_permalink() ) . '&summary=' . esc_attr( $page_title ) . '&source=LinkedIn" data-tip="top" data-original-title="LinkedIn"><i class="fa fa-linkedin"></i></a>';
-		}
-		if ( $thinkup_post_sharetumblr == '1' ) {
-			echo '<a class="shareicon tumblr" data-tip="top" data-original-title="Tumblr" onclick="MyWindow=window.open(&#39;//www.tumblr.com/share/link?url=' . esc_url( get_permalink() ) . '&amp;name=' . esc_attr( $page_title ) . '&amp;description=' . esc_html( get_the_excerpt() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//www.tumblr.com/share/link?url=' . esc_url( get_permalink() ) . '&amp;name=' . esc_attr( $page_title ) . '&amp;description=' . esc_html( get_the_excerpt() ) . '"><i class="fa fa-tumblr"></i></a>';
-		}
-		if ( $thinkup_post_sharepinterest == '1' ) {
-			echo '<a class="shareicon pinterest" data-tip="top" data-original-title="Pinterest" onclick="MyWindow=window.open(&#39;//pinterest.com/pin/create/button/?url=' . esc_url( get_permalink() ) . '&amp;description=' . esc_attr( $page_title ) . '&amp;media=' . esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="//pinterest.com/pin/create/button/?url=' . esc_url( get_permalink() ) . '&amp;description=' . esc_attr( $page_title ) . '&amp;media=' . esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID) ) ) . '"><i class="fa fa-pinterest"></i></a>';
-		}
-		if ( $thinkup_post_shareemail == '1' ) {
-			echo	'<a class="shareicon email" data-tip="top" data-original-title="Email" onclick="MyWindow=window.open(&#39;mailto:?subject=' . esc_attr( $page_title ) . '&amp;body=' . esc_url( get_permalink() ) . '&#39;,&#39;MyWindow&#39;,width=650,height=450); return false;" href="mailto:?subject=' . esc_attr( $page_title ) . '&amp;body=' . esc_url( get_permalink() ) . '"><i class="fa fa-envelope"></i></a>';
-		}
-		echo	'</div>';		
-	echo	'</div>';
-}
-
-/* Output Social Sharing */
-function thinkup_input_share() {
-global $thinkup_post_share;
-
-global $post;
-$_thinkup_meta_share = get_post_meta($post->ID, '_thinkup_meta_share', true);
-
-	if ( empty( $_thinkup_meta_share ) or $_thinkup_meta_share == 'option1' )  {
-		if ( $thinkup_post_share == '1' ) {
-			thinkup_input_sharecode();
-		}
-	} else if ( $_thinkup_meta_share == 'option2' ) {
-		thinkup_input_sharecode();
-	}
 }
 
 
@@ -448,13 +393,12 @@ function thinkup_input_allowcomments() {
 
 function thinkup_input_commenttemplate( $comment, $args, $depth ) {
 
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'renden'); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'Edit', 'renden' ), ' ' ); ?></p>
+		<p><?php esc_html_e( 'Pingback:', 'renden'); ?> <?php comment_author_link(); ?><?php edit_comment_link( esc_html__( 'Edit', 'renden' ), ' ' ); ?></p>
 	<?php
 			break;
 		default :
@@ -468,17 +412,17 @@ function thinkup_input_commenttemplate( $comment, $args, $depth ) {
 					<h4><?php printf( '%s', sprintf( '%s', get_comment_author_link() ) ); ?></h4>
 				</div>
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'renden'); ?></em>
+					<em><?php esc_html_e( 'Your comment is awaiting moderation.', 'renden'); ?></em>
 					<br />
 				<?php endif; ?>
 
 				<div class="comment-meta">
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php comment_time( 'c' ); ?>">
+					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time datetime="<?php esc_attr( comment_time( 'c' ) ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
 						printf( '%1$s', get_comment_date() ); ?>
 					</time></a>
-					<?php edit_comment_link( __( 'Edit', 'renden' ), ' ' );
+					<?php edit_comment_link( esc_html__( 'Edit', 'renden' ), ' ' );
 					?>
 				</div>
 
@@ -492,19 +436,19 @@ function thinkup_input_commenttemplate( $comment, $args, $depth ) {
 
 				<div class="comment-content"><?php comment_text(); ?></div>
 
-			</footer>
+			</footer><div class="clearboth"></div>
 
 		</article><!-- #comment-## -->
 
 	<?php
-			break;
+	break;
 	endswitch;
 }
 
 // List comments in single page
 function thinkup_input_comments() {
-	$args = array( 
-		'callback' => 'thinkup_input_commenttemplate', 
+	$args = array(
+		'callback' => 'thinkup_input_commenttemplate',
 	);
 	wp_list_comments( $args );
 }

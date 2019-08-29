@@ -153,6 +153,20 @@ table.cmb_metabox td label {
 
 
 /*---------------------------------------------------- 
+	FIX REDUX COLOR PICKER ISSUE - ALIGN CHECKBOX
+---------------------------------------------------- */
+
+.redux-field.redux-container-color .wp-picker-container {
+	display: inline-block !important;
+}
+.redux-field.redux-container-color .color-transparency-check {
+	top: 6px !important;
+	left: 10px !important;
+	position: relative !important;
+}
+
+
+/*---------------------------------------------------- 
 	UPGRADE PROMOTION TAB - REDUX
 ---------------------------------------------------- */
 

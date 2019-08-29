@@ -49,8 +49,32 @@
 	margin-top: 0;
 	margin-bottom: 5%;
 }
+.about-wrap .feature-section .col p {
+	font-size: 14px;
+}
 .about-wrap .feature-section .col:nth-child(3n + 1) {
 	clear:both;
+}
+
+.about-wrap .feature-section.three-col {
+	margin: auto;
+	max-width: 1020px;
+}
+.feature-section.three-col:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.about-wrap .feature-section.three-col .col {
+	width: 31.6%;
+	margin-right: 2.6%;
+	margin-bottom: 20px;
+	position: relative;
+	float: left;
+}
+.about-wrap .feature-section.three-col .col:last-child {
+	clear: right;
+	margin-right: 0px !important;
 }
 
 
@@ -225,6 +249,15 @@ background: #fff;
 }
 @media only screen and (max-width: 685px) {
 }
+@media only screen and (max-width: 667px) {
+
+	/* Position feature sections correctly */
+	.about-wrap .feature-section.three-col .col {
+		width: 100% !important;
+		float: none !important;
+		margin-right: 0px !important;
+	}
+}
 @media only screen and (max-width: 568px) {
 }
 @media only screen and (max-width: 320px) {
@@ -337,6 +370,7 @@ background: #fff;
 	margin-top: 15px;
 }
 #thinkup-documentation.feature-section p {
+	font-size: 14px;
 	margin: 0 0 20px;
 }
 #thinkup-documentation.feature-section p:last-child {

@@ -1,6 +1,6 @@
 <?php
 
-function renden_thinkup_toolbox_setup() {    
+function thinkup_toolbox_setup() {    
 
 	/**
 	 * About page class
@@ -27,11 +27,11 @@ function renden_thinkup_toolbox_setup() {
 
 	$config = array(
 		// Menu name under Appearance.
-		'menu_name'             => sprintf( __( 'About %1$s (Free)', 'renden' ), ucfirst( $theme_name ) ),
+		'menu_name'             => sprintf( esc_html__( 'About %1$s (Free)', 'renden' ), ucfirst( $theme_name ) ),
 		// Page title.
-		'page_name'             => sprintf( __( 'About %1$s (Free)', 'renden' ), ucfirst( $theme_name ) ),
+		'page_name'             => sprintf( esc_html__( 'About %1$s (Free)', 'renden' ), ucfirst( $theme_name ) ),
 		// Main welcome title
-		'welcome_title'         => sprintf( __( 'Welcome to %1$s! - v', 'renden' ), ucfirst( $theme_name ) ),
+		'welcome_title'         => sprintf( esc_html__( 'Welcome to %1$s! - v', 'renden' ), ucfirst( $theme_name ) ),
 		// Main welcome content
 		'welcome_content'       => sprintf( esc_html__(  '%1$s is a free multi-purpose WordPress theme. It\'s fully responsive and perfect for any type of website, it\'s great web agency businesses, corporate websites , personal, blogs, photography and everything in between! Create a stunning homepage with featured homepage sections and a beautiful slideshow in seconds.', 'renden' ), ucfirst( $theme_name ) ),
 		/**
@@ -42,16 +42,16 @@ function renden_thinkup_toolbox_setup() {
 		 */
 		'upgrade'             => array(
 			'upgrade_url'     => 'https://www.thinkupthemes.com/themes/' . $theme_name . '/',
-			'price_discount'  => __( 'Upgrade for $31 (10% off)', 'renden' ),
-			'price_normal'	  => __( 'Normally $35. Use coupon at checkout.', 'renden' ),
+			'price_discount'  => esc_html__( 'Upgrade for $31 (10% off)', 'renden' ),
+			'price_normal'	  => esc_html__( 'Normally $35. Use coupon at checkout.', 'renden' ),
 			'coupon'	      => $theme_name . '31',
-			'button'	      => __( 'Upgrade Now', 'renden' ),
+			'button'	      => esc_html__( 'Upgrade Now', 'renden' ),
 		),
 		'tabs'                 => array(
-			'getting_started'  => __( 'Getting Started', 'renden' ),
-			'documentation'    => __( 'Documentation', 'renden' ),
-			'support_content'  => __( 'Support', 'renden' ),
-			'free_pro'         => __( 'Free VS PRO', 'renden' ),
+			'getting_started'  => esc_html__( 'Getting Started', 'renden' ),
+			'documentation'    => esc_html__( 'Documentation', 'renden' ),
+			'support_content'  => esc_html__( 'Support', 'renden' ),
+			'free_pro'         => esc_html__( 'Free VS PRO', 'renden' ),
 		),
 		// Getting started tab
 		'getting_started' => array(
@@ -186,7 +186,7 @@ function renden_thinkup_toolbox_setup() {
 				'button_link'  => esc_url( 'https://www.thinkupthemes.com/themes/' . $theme_name . '/' ),
 				'is_button'    => true,
 				'is_new_tab'   => true,
-				'hidden'       => true,
+				'hidden'       => '',
 			),
 			'303'  => array (
 				'section'      => esc_html__( 'Homepage (Featured)', 'renden' ),
@@ -198,7 +198,7 @@ function renden_thinkup_toolbox_setup() {
 				'button_link'  => esc_url( 'https://www.thinkupthemes.com/themes/' . $theme_name . '/' ),
 				'is_button'    => true,
 				'is_new_tab'   => true,
-				'hidden'       => '',
+				'hidden'       => true,
 			),
 			'401'  => array (
 				'section'      => esc_html__( 'Header', 'renden' ),
@@ -305,7 +305,7 @@ function renden_thinkup_toolbox_setup() {
 				'icon'         => 'dashicons dashicons-sos',
 				'text'         => esc_html__( 'Get free support from the amazing volunteers over at the wordpress forums. This support is provided by volunteers not Think Up Themes staff.', 'renden' ),
 				'button_label' => esc_html__( 'Contact Free Support', 'renden' ),
-				'button_link'  => esc_url( '//wordpress.org/support/theme/' . $theme_slug . '/' ),
+				'button_link'  => esc_url( 'https://wordpress.org/support/theme/' . $theme_slug . '/' ),
 				'is_button'    => false,
 				'is_new_tab'   => true,
 			),
@@ -336,7 +336,7 @@ function renden_thinkup_toolbox_setup() {
 			'get_pro_theme_label' => sprintf( __( 'Get %s Now!', 'renden' ), ucfirst( $theme_name ) . ' Pro' ),
 			'features'            => array(
 				array(
-					'title'            => __( 'Mobile Friendly', 'renden' ),
+					'title'            => esc_html__( 'Mobile Friendly', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'true',
 					'is_in_lite_text'  => '',
@@ -345,7 +345,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Background Image', 'renden' ),
+					'title'            => esc_html__( 'Background Image', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'true',
 					'is_in_lite_text'  => '',
@@ -354,7 +354,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Fontpage Sections', 'renden' ),
+					'title'            => esc_html__( 'Fontpage Sections', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'true',
 					'is_in_lite_text'  => '3',
@@ -363,7 +363,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Fontpage Slides', 'renden' ),
+					'title'            => esc_html__( 'Fontpage Slides', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'true',
 					'is_in_lite_text'  => '3',
@@ -372,7 +372,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Built-In Social Buttons', 'renden' ),
+					'title'            => esc_html__( 'Built-In Social Buttons', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => '',
 					'is_in_lite_text'  => '7',
@@ -381,7 +381,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Advanced Theme Options', 'renden' ),
+					'title'            => esc_html__( 'Advanced Theme Options', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => '',
 					'is_in_lite_text'  => 'Basic',
@@ -390,7 +390,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Page Builder', 'renden' ),
+					'title'            => esc_html__( 'Page Builder', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -399,7 +399,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Theme Options Panel', 'renden' ),
+					'title'            => esc_html__( 'Theme Options Panel', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -408,7 +408,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Unlimited Color Options', 'renden' ),
+					'title'            => esc_html__( 'Unlimited Color Options', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -417,7 +417,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( '600+ Google Fonts', 'renden' ),
+					'title'            => esc_html__( '600+ Google Fonts', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -426,7 +426,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( '150+ Shortcodes', 'renden' ),
+					'title'            => esc_html__( '150+ Shortcodes', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -435,7 +435,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'ThinkUpSlider', 'renden' ),
+					'title'            => esc_html__( 'ThinkUpSlider', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -444,7 +444,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Unlimited Sliders', 'renden' ),
+					'title'            => esc_html__( 'Unlimited Sliders', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -453,7 +453,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Video Sliders', 'renden' ),
+					'title'            => esc_html__( 'Video Sliders', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -462,7 +462,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Portfolio', 'renden' ),
+					'title'            => esc_html__( 'Portfolio', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -471,7 +471,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Google Map Section', 'renden' ),
+					'title'            => esc_html__( 'Google Map Section', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -480,7 +480,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Custom Widgets', 'renden' ),
+					'title'            => esc_html__( 'Custom Widgets', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -489,7 +489,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Parallax Effects', 'renden' ),
+					'title'            => esc_html__( 'Parallax Effects', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -498,7 +498,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Animation Effects', 'renden' ),
+					'title'            => esc_html__( 'Animation Effects', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -507,7 +507,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Extended Layout Options', 'renden' ),
+					'title'            => esc_html__( 'Extended Layout Options', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -516,7 +516,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'Premium Support', 'renden' ),
+					'title'            => esc_html__( 'Premium Support', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -525,7 +525,7 @@ function renden_thinkup_toolbox_setup() {
 					'hidden'           => '',
 				),
 				array(
-					'title'            => __( 'No credit footer link', 'renden' ),
+					'title'            => esc_html__( 'No credit footer link', 'renden' ),
 					'description'      => '',
 					'is_in_lite'       => 'false',
 					'is_in_lite_text'  => '',
@@ -536,10 +536,10 @@ function renden_thinkup_toolbox_setup() {
 			),
 		),
 	);
-	renden_thinkup_toolbox_about_page::init( $config );
+	thinkup_toolbox_about_page::init( $config );
 
 }
 
-add_action('after_setup_theme', 'renden_thinkup_toolbox_setup');
+add_action('after_setup_theme', 'thinkup_toolbox_setup');
 
 ?>
