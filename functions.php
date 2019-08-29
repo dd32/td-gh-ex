@@ -4,10 +4,8 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.71' );
+define( 'KAIRA_THEME_VERSION' , '1.7.72' );
 
-// Is ONLY USED IF the user prompts for the premium update
-define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
 
@@ -331,13 +329,18 @@ function kaira_register_required_plugins() {
             'required'  => false,
         ),
         array(
-            'name'      => __( 'Contact Form 7', 'albar' ),
-            'slug'      => 'contact-form-7',
+            'name'      => __( 'Breadcrumb NavXT', 'albar' ),
+            'slug'      => 'breadcrumb-navxt',
             'required'  => false,
         ),
         array(
-            'name'      => __( 'Breadcrumb NavXT', 'albar' ),
-            'slug'      => 'breadcrumb-navxt',
+            'name'      => __( 'Linkt', 'albar' ),
+            'slug'      => 'linkt',
+            'required'  => false,
+        ),
+        array(
+            'name'      => __( 'HubSpot', 'albar' ),
+            'slug'      => 'leadin',
             'required'  => false,
         )
     );
@@ -349,13 +352,6 @@ function kaira_register_required_plugins() {
     tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'kaira_register_required_plugins' );
-
-/**
- * Elementor Check
- */
-if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-    define( 'ELEMENTOR_PARTNER_ID', 2118 );
-}
 
 /* Enque Admin CSS for Conica notice */
 function kaira_load_admin_notice_script() {
@@ -371,7 +367,7 @@ function kaira_recommended_plugin_notice() {
     if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
         echo '<div class="updated albar-conica-notice"><p>';
         printf( __( '<a href="%1$s" class="albar-conica-notice-close"></a></p>', 'albar' ), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
-            <?php printf( __( '<p style="color: red;">LATEST UPDATE: Requires WooCommerce 3.3 or more</p><p>We recommend rather trying out our NEW Power theme, Avant - <a href="%1$s" class="albar-notice-a">Download and try Avant now</a></p><p>With 7 header layouts, 5 Blog layouts and 3 Footer layouts, full website color options and lots of other customization settings, you\'ll be able to create the perfect site. All built within the WordPress Customizer.<br /><b>If not, Albar will still work and we will keep it updated.</b></p>', 'albar' ), admin_url( 'theme-install.php?search=avant' ) ); ?>
+            <?php printf( __( '<p style="color: red;">LATEST UPDATE: Requires WooCommerce 3.3 or more</p><p>We recommend rather trying out our NEW Power theme, Avant - <a href="%1$s" class="albar-notice-a">Download and try Avant now</a> Currently on a <a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">flash sale for only $19</a></p><p>With 7 header layouts, 5 Blog layouts and 3 Footer layouts, full website color options and lots of other customization settings, you\'ll be able to create the perfect site. All built within the WordPress Customizer.<br /><b>If not, Albar will still work and we will keep it updated.</b></p>', 'albar' ), admin_url( 'theme-install.php?search=avant' ) ); ?>
             <a href="<?php echo esc_url( admin_url( 'theme-install.php?search=avant' ) ); ?>" class="albar-conica-img"><img src="<?php echo get_template_directory_uri(); ?>/images/conica-screenshot.png" alt="<?php esc_attr_e( 'Try out Avant instead', 'albar' ); ?>" /></a>
         <?php
         echo '</p></div>';

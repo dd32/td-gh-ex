@@ -68,6 +68,14 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.72
+* Minor tweaks & fixes
+* Removed old deprecated code
+* Added linkt (click tracking) as a recommended plugin
+* Added Hubspot as a recommended plugin
+* Updated language .pot file
+Premium: Added new settings to Header
+
 #### 1.7.71
 NOTE: PLEASE UPDATE WOOCOMMERCE WITH THIS UPDATE / UPDATE ONLY IF YOU UPDATE WOOCOMMERCE
 * Style fixes/tweaks

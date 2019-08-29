@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/theme/albar/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Albar Premium </span><em>$20</em>', 'albar' ) ); ?>
+                    <?php printf( __( '<span>Albar Premium </span><em>$15</em>', 'albar' ) ); ?>
                 </a>
             </div>
             
