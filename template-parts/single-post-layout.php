@@ -8,7 +8,7 @@
  */
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="post-info">
         <?php if(get_theme_mod('automotive_centre_toggle_postdate',true)==1){ ?>
           <span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span><span>|</span>
@@ -25,7 +25,7 @@
     <h2><?php the_title(); ?></h2>
     <?php if(has_post_thumbnail()) { ?>
         <div class="feature-box">
-            <img class="page-image" src="<?php the_post_thumbnail_url('full'); ?>">
+            <?php the_post_thumbnail(); ?>
             <hr>
         </div>
         <?php } the_content();
@@ -52,4 +52,4 @@
             ) );
         }
     ?>
-</div>
+</article>

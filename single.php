@@ -7,8 +7,8 @@
  
  get_header(); ?>
 
-<div class="container">
-  <div class="middle-align">
+<main id="maincontent" role="main">
+  <div class="middle-align container">
     <?php
         $theme_lay = get_theme_mod( 'automotive_centre_theme_options','Right Sidebar');
         if($theme_lay == 'Left Sidebar'){ ?>
@@ -246,6 +246,6 @@
     <?php } ?>
     <div class="clearfix"></div>
   </div>
-</div>
+</main>
 
 <?php get_footer(); ?>

@@ -16,6 +16,6 @@
 	<?php else : ?>
 	<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'automotive-centre' ); ?></p><br />
 	<div class="error-btn">
-		<a href="<?php echo esc_url(home_url() ); ?>"><?php esc_html_e( 'Back to Home Page', 'automotive-centre' ); ?></a>
+		<a href="<?php echo esc_url(home_url() ); ?>"><?php esc_html_e( 'Back to Home Page', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page','automotive-centre' );?></span></a>
 	</div>
 <?php endif; ?>

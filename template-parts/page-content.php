@@ -8,9 +8,9 @@
  */
 ?>
 
-<div id="content-vw">
+<div class="content-vw">
   <?php if(has_post_thumbnail()) {?>
-    <img class="page-image" src="<?php the_post_thumbnail_url('full'); ?>">
+    <?php the_post_thumbnail(); ?>
     <hr>
   <?php }?>
   <h1><?php the_title();?></h1>

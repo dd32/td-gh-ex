@@ -9,7 +9,7 @@
 ?>
 
 <div class="col-lg-4 col-md-4">
-	<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
 	    <div class="post-main-box">
 	      	<div class="box-image">
 	          	<?php 
@@ -23,9 +23,9 @@
 	        	<p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p>
 	        </div>
 	        <div class="more-btn">
-            	<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'READ MORE', 'automotive-centre' ); ?></a>
+            	<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'READ MORE', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','automotive-centre' );?></span></a>
           	</div>
 	    </div>
 	    <div class="clearfix"></div>
-  	</div>
+  	</article>
 </div>

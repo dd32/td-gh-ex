@@ -4,7 +4,7 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version:  0.3
+Version:  0.3.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -72,6 +72,10 @@ a:focus,
 a:hover{
   text-decoration:none !important;
 }
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+}
 ul{ 
   margin:0 0 0 15px; 
   padding:0;
@@ -106,10 +110,34 @@ input[type='submit']:hover{
   margin:0; 
   padding:0; 
 }
+/* Text meant only for screen readers. */
 .screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
   position: absolute;
-  top:-9999em;
-  left:-9999em;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .sticky{ 
   margin:0; 
@@ -520,7 +548,10 @@ iframe,
   width: 100%;
 }
 /* --------- FOOTER ------- */
-
+#footer a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
 #footer .custom-social-icons {
   text-align: left;
 }
@@ -764,7 +795,7 @@ h2#reply-title {
   font-weight:bold;
   font-size:12px;
 }
-#content-vw #comments ol li{
+.content-vw #comments ol li{
   width:100%;
   background:none;
   list-style:none;
@@ -773,7 +804,7 @@ h2#reply-title {
   background:#eee;
   display:inline-block;
 }  
-#content-vw #comments ul{
+.content-vw #comments ul{
   margin:0 0 0 40px;
 }
 #comments .reply{
@@ -942,58 +973,58 @@ h2#reply-title {
 .error404 p {
   text-align: center !important;
 }
-#content-vw p{
+.content-vw p{
   text-align:justify;
   line-height: 25px; 
   font-size: 14px; 
   margin:0 0 20px 0;
 }
-#content-vw h1{
+.content-vw h1{
   font-size: 50px;
 }
-#content-vw h2{
+.content-vw h2{
   font-size:32px;
   padding:0;
   margin:0 0 25px; 
 }
-#content-vw h3{
+.content-vw h3{
   font-size:36px;
   padding:0;
   margin:0 0 25px; 
 }
-#content-vw h4{
+.content-vw h4{
   font-size:20px;
   padding:0;
   margin:0 0 25px;
 }
-#content-vw h5{
+.content-vw h5{
   margin:0 0 15px;
   font-size:18px;
   padding:0; 
 }
-#content-vw h6{
+.content-vw h6{
   margin:0 0 15px;
   font-size:17px;
   padding:0; 
 }
-#content-vw ul{
+.content-vw ul{
   list-style:none;
   margin:0 0 0 10px;
   padding:10px 0 0; 
   font-size:16px;
 }
-#content-vw ol{
+.content-vw ol{
   list-style: none;
   margin:0 0 0 15px;
   padding:10px 0 0 0; 
   font-size:16px;
   counter-reset: myCounter;
 }
-#content-vw ol li ol li{
+.content-vw ol li ol li{
   margin:0 0 20px 0;
   padding:0 0 0 35px;
 }
-#content-vw ol li{
+.content-vw ol li{
   padding:0 0 0 0;
   margin:0 0 20px 0;
 }
@@ -1033,11 +1064,11 @@ h2#reply-title {
   background: #88d055;
   font-weight: bold;
 }
-#content-vw .pagination ul{
+.content-vw .pagination ul{
   margin:0;
   clear:both;
 }
-#content-vw .pagination ul li{
+.content-vw .pagination ul li{
   margin:0;
 }
 .post-navigation{
@@ -1302,7 +1333,7 @@ span.posted_in {
   .toggle{
     display:block;
   }
-  .toggle a{
+  .toggle{
     width:100%; 
     color: #fff;
     font-weight: 500;

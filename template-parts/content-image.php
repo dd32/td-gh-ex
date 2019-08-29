@@ -8,7 +8,7 @@
  */
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
   <div class="post-main-box ">
     <div class="row m-0">
       <?php if(has_post_thumbnail()) {?>
@@ -17,7 +17,7 @@
         </div>
       <?php } ?>
       <div class="new-text <?php if(has_post_thumbnail()) { ?>col-lg-6 col-md-6"<?php } else { ?>col-lg-12 col-md-12"<?php } ?>>
-        <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>
+        <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
         <div class="post-info">
           <?php if(get_theme_mod('automotive_centre_toggle_postdate',true)==1){ ?>
             <span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span><span>|</span>
@@ -34,9 +34,9 @@
         </div>      
         <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p>
         <div class="more-btn">
-          <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'READ MORE', 'automotive-centre' ); ?></a>
+          <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'READ MORE', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','automotive-centre' );?></span></a>
         </div>
       </div>
     </div>
   </div>
-</div>
+</article>

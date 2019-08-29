@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 4.8
 Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.3
+Stable tag: 0.3.1
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -36,6 +36,9 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 = 0.3 =
 *  Add show / hide scroll to top option in customizer
 *  Upadte language folder
+
+= 0.3.1 =
+* Added skip to content part in the theme.
 
 == Resources ==
 

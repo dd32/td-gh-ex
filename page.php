@@ -14,8 +14,8 @@ get_header(); ?>
 
 <?php do_action( 'automotive_centre_page_top' ); ?>
 
-<div class="middle-align"> 
-    <div class="container">
+<main id="maincontent" role="main">
+    <div class="middle-align container">
         <?php $theme_lay = get_theme_mod( 'automotive_centre_page_layout','One Column');
             if($theme_lay == 'One Column'){ ?>
                 <?php while ( have_posts() ) : the_post();
@@ -64,7 +64,7 @@ get_header(); ?>
             </div>
         <?php } ?>
     </div>
-</div>
+</main>
 
 <?php do_action( 'automotive_centre_page_bottom' ); ?>
 

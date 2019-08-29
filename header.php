@@ -20,7 +20,11 @@
 
 	<body <?php body_class(); ?>>
 
-		<div class="home-page-header">
-			<?php get_template_part('template-parts/header/top-header'); ?>
-			<?php get_template_part( 'template-parts/header/navigation' ); ?>			
-		</div>
+		<header role="banner">
+    		<a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'automotive-centre' ); ?></a> 
+
+			<div class="home-page-header">
+				<?php get_template_part('template-parts/header/top-header'); ?>
+				<?php get_template_part( 'template-parts/header/navigation' ); ?>			
+			</div>
+		</header>

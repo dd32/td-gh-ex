@@ -8,14 +8,14 @@
  */
 ?>
 
-<div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','automotive-centre'); ?></a></div>
+<button class="toggleMenu toggle" role="tab"><?php esc_html_e('Menu','automotive-centre'); ?></button>
 <div class="container">
 	<div id="header" class="menubar">
 		<div class="row">
 			<div class="<?php if( get_theme_mod( 'automotive_centre_search_hide_show') != '') { ?>col-lg-11 col-md-10"<?php } else { ?>col-lg-12 col-md-12 <?php } ?> ">
-				<div class="nav">
+				<nav class="nav" role="navigation">
 					<?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-				</div>
+				</nav>
 			</div>
 			<div class="col-lg-1 col-md-2">
 		        <?php if( get_theme_mod( 'automotive_centre_search_hide_show') != '') { ?>

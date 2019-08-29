@@ -8,7 +8,7 @@
  */
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="entry-content">
         <h1><?php the_title();?></h1>    
         <div class="entry-attachment">
@@ -32,4 +32,4 @@
     </div>    
     <?php edit_post_link( __( 'Edit', 'automotive-centre' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
     <div class="clearfix"></div>
-</div>
+</article>
