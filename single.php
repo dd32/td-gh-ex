@@ -10,13 +10,13 @@ get_header(); ?>
 <?php do_action( 'bb_ecommerce_store_single_header' ); ?>
 
 <div class="container">
-    <div class="middle-align">
+    <main id="maincontent" class="middle-align">
     	<?php
 	        $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
 	        if($left_right == 'Left Sidebar'){ ?> 
 	        <div class="row">
 		    	<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
-				<div class="col-lg-8 col-md-8" id="content-bb">
+				<div class="col-lg-8 col-md-8" class="content-bb">
 					<?php if ( have_posts() ) :
 
 		               while ( have_posts() ) : the_post();
@@ -28,10 +28,10 @@ get_header(); ?>
 		               endif; 
 		            ?>
 		       	</div>
-	       </div>
+	        </div>
 	    <?php }else if($left_right == 'Right Sidebar'){ ?>
 	    	<div class="row">
-		       	<div class="col-lg-8 col-md-8" id="content-bb">
+		       	<div class="col-lg-8 col-md-8" class="content-bb">
 					<?php if ( have_posts() ) :
 
 		               while ( have_posts() ) : the_post();
@@ -43,10 +43,10 @@ get_header(); ?>
 		               endif; 
 		            ?>
 		       	</div>
-				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 			</div>
 		<?php }else if($left_right == 'One Column'){ ?>
-			<div id="content-bb">
+			<div class="content-bb">
 				<?php if ( have_posts() ) :
 
 	               while ( have_posts() ) : the_post();
@@ -61,7 +61,7 @@ get_header(); ?>
 	    <?php }else if($left_right == 'Three Columns'){ ?>
 	    	<div class="row">
 		       	<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-		       	<div class="col-lg-6 col-md-6" id="content-bb">
+		       	<div class="col-lg-6 col-md-6" class="content-bb">
 					<?php if ( have_posts() ) :
 
 		               while ( have_posts() ) : the_post();
@@ -73,11 +73,11 @@ get_header(); ?>
 		               endif; 
 		            ?>
 		       	</div>
-				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
 			</div>
 		<?php }else if($left_right == 'Four Columns'){ ?>
 			<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-	       	<div class="col-lg-3 col-md-3" id="content-bb">
+	       	<div class="col-lg-3 col-md-3" class="content-bb">
 				<?php if ( have_posts() ) :
 
 	               while ( have_posts() ) : the_post();
@@ -93,7 +93,7 @@ get_header(); ?>
 			<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
 		<?php }else if($left_right == 'Grid Layout'){ ?>
 			<div class="row">
-				<div class="col-lg-8 col-md-8" id="content-bb">
+				<div class="col-lg-8 col-md-8" class="content-bb">
 					<?php if ( have_posts() ) :
 
 		               while ( have_posts() ) : the_post();
@@ -105,27 +105,27 @@ get_header(); ?>
 		               endif; 
 		            ?>
 		       	</div>
-				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 			</div>
 		<?php }else {?>
 			<div class="row">
-		       	<div class="col-lg-8 col-md-8" id="content-bb">
+		       	<div class="col-lg-8 col-md-8" class="content-bb">
 					<?php if ( have_posts() ) :
 
-		               while ( have_posts() ) : the_post();
+		                while ( have_posts() ) : the_post();
 		                 	get_template_part( 'template-parts/content-single' ); 
-		               endwhile;
+		                endwhile;
 
-		               else :
+		                else :
 		                 	get_template_part( 'no-results' );
-		               endif; 
+		                endif; 
 		            ?>
 		       	</div>
-				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 			</div>
 		<?php }?>
 	    <div class="clearfix"></div>
-    </div>
+    </main>
 </div>
 
 <?php do_action( 'bb_ecommerce_store_single_footer' ); ?>

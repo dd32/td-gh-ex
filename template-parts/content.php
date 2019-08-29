@@ -7,7 +7,7 @@
  * @since Ecommerce Store 1.0
  */
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
   <h3 class="ecomercepost-title"><?php the_title();?></h3>
   <div class="metabox">
     <span class="entry-date"><i class="fas fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>
@@ -24,8 +24,8 @@
   <div class="new-text">
     <p><?php the_excerpt();?></p>
     <div class="read-btn">
-      <a href="<?php the_permalink();?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read More','bb-ecommerce-store'); ?></a>
+      <a href="<?php the_permalink();?>" alt="<?php esc_html_e( 'Read More','bb-ecommerce-store' );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Read More', 'bb-ecommerce-store' ); ?>"><?php esc_html_e('Read More','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'Read More','bb-ecommerce-store' );?></span></a>
     </div>
   </div>
   <div class="clearfix"></div>
-</div>
+</article>

@@ -372,7 +372,7 @@ define('BB_ECOMMERCE_STORE_CREDIT','https://www.themeshopy.com/free/wp-ecommerce
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
-		echo "<a href=".esc_url(BB_ECOMMERCE_STORE_CREDIT)." target='_blank'>".esc_html__('Ecommerce WordPress Theme','bb-ecommerce-store')."</a>";
+		echo "<a href=".esc_url(BB_ECOMMERCE_STORE_CREDIT)." target='_blank' alt='".esc_html__('Ecommerce WordPress Theme','bb-ecommerce-store')."''>".esc_html__('Ecommerce WordPress Theme','bb-ecommerce-store')."</a>";
 	}
 }
 

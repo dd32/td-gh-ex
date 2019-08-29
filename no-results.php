@@ -6,7 +6,8 @@
  *
  * @package Ecommerce Store
  */
-?>	
+?>
+
 <header>
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'bb-ecommerce-store' ); ?></h1>
 </header>
@@ -19,6 +20,6 @@
 <?php else : ?>
 	<p><?php esc_html_e( 'Dont worry it happens to the best of us.', 'bb-ecommerce-store' ); ?></p><br />
 	<div class="read-moresec">
-		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'bb-ecommerce-store' ); ?></a>
+		<a href="<?php echo esc_url( home_url() ); ?>" alt="<?php esc_html_e( 'Go Back', 'bb-ecommerce-store' ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'bb-ecommerce-store' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'bb-ecommerce-store' ); ?></span></a>
 	</div>
 <?php endif; ?>

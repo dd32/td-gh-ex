@@ -15,7 +15,7 @@
 		$custom_css .='}';
 	}
 	if($bb_ecommerce_store_theme_color != false){
-		$custom_css .='.blogbutton-small, a.showcoupon,.woocommerce-message::before, .copyright-wrapper h3, input.search-field,.post-password-form input[type=password], .woocommerce a,.cart_icon i, h3.widget-title a, td#prev a, span.entry-author a, p.logged-in-as a, .copyright-wrapper td a{';
+		$custom_css .='.woocommerce-message::before, .copyright-wrapper h3, input.search-field,.post-password-form input[type=password],.cart_icon i, h3.widget-title a, td#prev a,.copyright-wrapper li a:hover{';
 			$custom_css .='color: '.esc_html($bb_ecommerce_store_theme_color).';';
 		$custom_css .='}';
 	}

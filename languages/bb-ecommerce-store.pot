@@ -120,11 +120,11 @@ msgstr ""
 msgid 'comments title'
 msgstr ""
 
-#: comments.php:72
+#: comments.php:71
 msgid 'Comments are closed.'
 msgstr ""
 
-#: footer.php:30
+#: footer.php:31
 msgid 'copyright 2017'
 msgstr ""
 
@@ -193,33 +193,8 @@ msgstr ""
 msgid 'SHOPPING CART'
 msgstr ""
 
-#: header.php:19
+#: header.php:22
 msgid 'Menu'
-msgstr ""
-
-#: header.php:31
-msgid 'support@123.com'
-msgstr ""
-
-#: header.php:71
-msgid 'placeholder'
-msgstr ""
-
-#: header.php:71
-msgid 'Search here'
-msgstr ""
-
-#: header.php:71
-msgid 'Search for:'
-msgstr ""
-
-#: header.php:71
-msgid 'label'
-msgstr ""
-
-#: header.php:72 
-#: page-template/custom-home-page.php:48
-msgid 'Please Install Woocommerce Plugin'
 msgstr ""
 
 #: image.php:36
@@ -272,11 +247,11 @@ msgstr ""
 msgid 'Search Results For: %s'
 msgstr ""
 
-#: searchform.php:10
+#: searchform.php:11
 msgid 'placeholder'
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:13
 msgid 'submit button'
 msgstr ""
 
