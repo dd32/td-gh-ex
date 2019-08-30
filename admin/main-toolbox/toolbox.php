@@ -524,15 +524,6 @@ function thinkup_toolbox_setup() {
 					'is_in_pro_text'   => '',
 					'hidden'           => '',
 				),
-				array(
-					'title'            => esc_html__( 'No credit footer link', 'renden' ),
-					'description'      => '',
-					'is_in_lite'       => 'false',
-					'is_in_lite_text'  => '',
-					'is_in_pro'        => 'true',
-					'is_in_pro_text'   => '',
-					'hidden'           => '',
-				),
 			),
 		),
 	);

@@ -517,8 +517,8 @@ function thinkup_customizer_theme_options( $wp_customize ) {
 			'label'			  => esc_html__( 'Choose Homepage Slider', 'renden' ),
 			'description'	  => esc_html__( 'Switch on to enable home page slider.', 'renden' ),
 			'choices'		  => array(
-				'option4' => 'Image Slider',
-				'option3' => 'Disable'
+				'option4' => esc_html__( 'Image Slider', 'renden' ),
+				'option3' => esc_html__( 'Disable', 'renden' ),
 			),
 			'active_callback' => '',
 		)

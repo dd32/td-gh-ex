@@ -22,6 +22,9 @@
 <body <?php body_class(); ?>>
 <div id="body-core" class="hfeed site">
 
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'renden' ); ?></a>
+	<!-- .skip-link -->
+	
 	<header>
 	<div id="site-header">
 

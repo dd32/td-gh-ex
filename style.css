@@ -4,10 +4,10 @@ Theme URI: https://www.thinkupthemes.com/free/renden-free/
 Author: ThinkUpThemes
 Author URI: https://www.thinkupthemes.com
 Description: Renden is the free version of the multi-purpose professional theme (Renden Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.5.2
+Version: 1.5.3
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, education, photography, rtl-language-support
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-logo, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, education, photography, rtl-language-support
 Text Domain: renden
 */
 
@@ -155,8 +155,48 @@ a img {
 	clear: both;
 	display: block;
 }
-.screen-reader-text {	
-	display: none;
+/* Accessibility - Text meant only for screen readers. */
+.screen-reader-text {
+	position: absolute !important;
+	word-wrap: normal !important;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+.screen-reader-text:focus {
+	z-index: 100000;
+	display: block;
+	outline: none;
+	color: #21759b;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: normal;
+	text-decoration: none;
+	top: 5px;
+	right: 5px;
+	width: auto;
+	height: auto;
+	padding: 12px 20px;
+	background-color: #f1f1f1;
+	border: 2px solid #aaa;
+	border-radius: 0px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;	
+	clip: auto !important;
+	clip-path: none;
 }
 
 /* ---------------------------------------------------------------------------------------
