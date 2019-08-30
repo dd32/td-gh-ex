@@ -14,7 +14,11 @@
 function thinkup_migrate_slider_20190829_v150() {
 
 	// Reset variable values
-	$count = NULL;
+	$count                   = NULL;
+	$slider                  = NULL;
+	$slider_switch           = NULL;
+	$migration_check         = NULL;
+	$thinkup_redux_variables = NULL;
 
 	// Get options array
 	$thinkup_redux_variables = get_option( 'thinkup_redux_variables' );
