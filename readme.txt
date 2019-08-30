@@ -23,10 +23,11 @@ Simple and Clean Accessibility Ready Blog Theme. It comes with easy to use custo
 AeonBlog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.6 - August 30 2019 =
+Theme URI Added.
 
 = 1.0.5 - August 21 2019 =
 Fixed an issue with the left sidebar post template.
-
 
 = 1.0.4 - August 17 2019 =
 Updated HTML markup.
