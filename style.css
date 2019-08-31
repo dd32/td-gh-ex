@@ -2,7 +2,7 @@
 Theme Name: Digital
 Theme URI: https://www.insertcart.com/product/digital-wp-theme/
 Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support WooCommerce plugin supported with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products. Demo https://www.insertcart.com/themes-demo?theme=Digital
-Version: 2.0
+Version: 2.1
 Author: insertcart.com
 Author URI: https://www.insertcart.com/
 Tags: custom-logo, custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, sticky-post, blog, photography, news, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress 
@@ -12,12 +12,9 @@ License URI: license.txt
 Copyright (C) 2011-2019 sandy, This program is distributed free, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 Digital WordPress theme, Copyright (C) 2019 insertcart.com
-Digital WordPress theme is licensed under the GPL.
+Digital WordPress theme is licensed under the GPL.*/
 
-*/
-
-
-/*===================== reset ===================== */
+/*===================== reset =====================*/
 .clearfix:after { 
 	clear: both;
 	content: ' ';
@@ -952,7 +949,13 @@ border: 1px solid #D3D3D3;
 #pagecont table tr.even, #singlecontent table tr:nth-of-type(2n){
 background: #F9F9F9;}
 
-
+header.page-header{
+    border: 1px solid;
+    padding: 10px;
+    border-color: #ddd;
+    background: #FBFBFB;
+    margin-bottom: 10px;
+}	
 
 table {
 border-collapse: separate;
@@ -2301,4 +2304,17 @@ display:none;}
 }
 
 a.cart-flotingcarte{    transform: translateX(100%);}
+.latest-post{
+	    height: auto !important;
+}
+ul.spicesocialwidget{    margin-left: 0 !important;}
+#pronav .secondary{width: 100%;}
+}
+
+@media screen and (max-width: 704px) {
+	#sidebar {
+    width: 85%;
+	margin-bottom: 10px;}
+	#content {
+    width: 100%;}
 }

@@ -194,11 +194,11 @@ add_action( 'after_setup_theme', 'digital_theme_setup' );
 function digital_search_form( $form ) {
 	$form = '<form role="search" method="get" id="searchform"  class="searchform" action="'. home_url( '/' ).'">
     <label>
-        <span class="screen-reader-text">'. _x( 'Search for:', 'digital' ).'</span>
+        <span class="screen-reader-text">'. _x( 'Search for:', 'label','digital' ).'</span>
         <input type="search" class="search-field"
-            placeholder="'. esc_attr_x( 'Search …', 'digital' ).'"
+            placeholder="'. esc_attr_x( 'Search ...', 'label','digital' ).'"
             value="'. get_search_query().'" name="s" id="s"
-            title="'. esc_attr_x( 'Search for:', 'digital' ).'" />
+            title="'. esc_attr_x( 'Search for:', 'submit button','digital' ).'" />
     </label>
     <input style="font-family: FontAwesome" value="&#xf002;" type="submit" id="searchsubmit"  class="search-submit" />
 </form>';
@@ -449,7 +449,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 
 	?>
-	<a class="cart-flotingcarte" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+	<a class="cart-flotingcarte" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'digital'); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'digital'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
 	<?php
 	$fragments['a.cart-flotingcarte'] = ob_get_clean();
 	return $fragments;

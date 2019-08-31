@@ -6,7 +6,7 @@ function digital_custom_header_setup() {
 		'width'                  => 1284,
 		'height'                 => 250,           
 		'flex-height'            => true,
-		'wp-head-callback'   => 'twentyseventeen_header_style',
+		'wp-head-callback'   => 'digitalhead_header_style',
 		'admin-head-callback'    => 'digital_admin_header_style',
 		'admin-preview-callback' => 'digital_admin_header_image',
 	) ) );
@@ -40,13 +40,13 @@ function digital_admin_header_style() {
 <?php
 }
 endif; // digital_admin_header_style
-if ( ! function_exists( 'twentyseventeen_header_style' ) ) :
+if ( ! function_exists( 'digitalhead_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog.
  *
  * @see twentyseventeen_custom_header_setup().
  */
-function twentyseventeen_header_style() {
+function digitalhead_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail.
@@ -95,7 +95,7 @@ function twentyseventeen_header_style() {
 	</style>
 	<?php
 }
-endif; // End of twentyseventeen_header_style.
+endif; // End of digitalhead_header_style.
 if ( ! function_exists( 'digital_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.

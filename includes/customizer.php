@@ -51,8 +51,8 @@ function digital_customize_register( $wp_customize ) {
                'text' => __('Contact us', 'digital'),
             ),         
 			'Documentation' => array(
-               'link' => esc_url('https://www.insertcart.com/digital-wordpress-theme-setup-and-documentation/'),
-               'text' => __('Documentation', 'digital'),
+               'link' => esc_url('https://www.insertcart.com/product/android-app-for-your-website/'),
+               'text' => __('Android App for Your Website Only $30', 'digital'),
             ),			 
          );
          foreach ($important_links as $important_link) {
@@ -63,7 +63,7 @@ function digital_customize_register( $wp_customize ) {
    }
       $wp_customize->add_section('digital_important_links', array(
       'priority' => 1,
-      'title' => __('Upgrade to Pro', 'digital'),
+      'title' => __('Upgrade to Pro + Android App', 'digital'),
    ));
 
    $wp_customize->add_setting('digital_important_links', array(
