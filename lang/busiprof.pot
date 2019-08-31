@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Busiprof\n"
-"POT-Creation-Date: 2019-08-26 17:17+0530\n"
+"POT-Creation-Date: 2019-08-30 12:27+0530\n"
 "PO-Revision-Date: 2019-03-12 18:11+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -174,8 +174,8 @@ msgstr ""
 #: functions/customizer/custo_sections_settings.php:64
 #: functions/customizer/custo_sections_settings.php:199
 #: functions/customizer/custo_sections_settings.php:303
-#: functions/customizer/custo_sections_settings.php:606
-#: functions/customizer/custo_sections_settings.php:646
+#: functions/customizer/custo_sections_settings.php:613
+#: functions/customizer/custo_sections_settings.php:653
 msgid "Title"
 msgstr ""
 
@@ -192,8 +192,8 @@ msgstr ""
 #: functions/customizer/custo_sections_settings.php:432
 #: functions/customizer/custo_sections_settings.php:495
 #: functions/customizer/custo_sections_settings.php:557
-#: functions/customizer/custo_sections_settings.php:615
-#: functions/customizer/custo_sections_settings.php:655
+#: functions/customizer/custo_sections_settings.php:622
+#: functions/customizer/custo_sections_settings.php:662
 msgid "Description"
 msgstr ""
 
@@ -494,58 +494,62 @@ msgstr ""
 msgid "Project Four"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:580
+#: functions/customizer/custo_sections_settings.php:578
+msgid "Recent Blog setting"
+msgstr ""
+
+#: functions/customizer/custo_sections_settings.php:587
 msgid "Enable Home Blog section"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:584
-#: functions/customizer/custo_sections_settings.php:596
-#: functions/customizer/custo_sections_settings.php:636
+#: functions/customizer/custo_sections_settings.php:591
+#: functions/customizer/custo_sections_settings.php:603
+#: functions/customizer/custo_sections_settings.php:643
 msgid "ON"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:585
-#: functions/customizer/custo_sections_settings.php:597
-#: functions/customizer/custo_sections_settings.php:637
+#: functions/customizer/custo_sections_settings.php:592
+#: functions/customizer/custo_sections_settings.php:604
+#: functions/customizer/custo_sections_settings.php:644
 msgid "OFF"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:592
+#: functions/customizer/custo_sections_settings.php:599
 msgid "Enable Home Blog meta"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:603
+#: functions/customizer/custo_sections_settings.php:610
 #: theme_setup_data.php:155
 msgid "Recent Blog"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:612
-#: functions/customizer/custo_sections_settings.php:652
+#: functions/customizer/custo_sections_settings.php:619
+#: functions/customizer/custo_sections_settings.php:659
 #: theme_setup_data.php:142 theme_setup_data.php:153 theme_setup_data.php:156
 msgid "We are a group of passionate designers & developers"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:624
+#: functions/customizer/custo_sections_settings.php:631
 msgid "Testimonial settings"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:632
+#: functions/customizer/custo_sections_settings.php:639
 msgid "Enable Home Testimonial section"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:643
+#: functions/customizer/custo_sections_settings.php:650
 msgid "<b>Our</b> Testimonials"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:666
+#: functions/customizer/custo_sections_settings.php:673
 msgid "Testimonial content"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:668
+#: functions/customizer/custo_sections_settings.php:675
 msgid "Add new Testimonial"
 msgstr ""
 
-#: functions/customizer/custo_sections_settings.php:669
+#: functions/customizer/custo_sections_settings.php:676
 msgid "Testimonial"
 msgstr ""
 

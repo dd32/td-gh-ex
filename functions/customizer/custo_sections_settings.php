@@ -573,6 +573,13 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'text',
 		));
 		
+		//Recent Blog Setting
+		$wp_customize->add_section( 'recent_blog_settings' , array(
+		'title'      => __('Recent Blog setting', 'busiprof'),
+		'panel'  => 'section_settings',
+		'priority'   => 4,
+		) );
+		
 		
 		// Enable Recent Blog
 		$wp_customize->add_setting( 'busiprof_theme_options[home_recentblog_section_enabled]' , array( 'default' => 'on' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );

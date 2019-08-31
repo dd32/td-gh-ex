@@ -54,6 +54,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 2.1.1
+1. Add recent blog setting
 @version 2.1
 1. Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 2. Remove Create Trustworthy Websites tab from customizer.
