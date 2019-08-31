@@ -15,7 +15,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php thinkup_input_pagination(); ?>
+				<?php the_posts_pagination(); ?>
 
 			<?php else : ?>
 

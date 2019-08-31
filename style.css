@@ -4,11 +4,11 @@ Theme URI: https://www.thinkupthemes.com/free/minamaze-free/
 Author: ThinkUpThemes
 Author URI: https://www.thinkupthemes.com
 Description: Minamaze the free version of the multi-purpose professional theme (Minamaze Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.6.5
+Version: 1.7.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
-Text Domain: lan-thinkupthemes
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-logo, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
+Text Domain: minamaze
 */
 
 /*  TABLE OF CONTENTS
@@ -140,9 +140,51 @@ a img {
 	clear: both;
 	display: block;
 }
-.screen-reader-text {	
-	display: none;
+
+/* Accessibility - Text meant only for screen readers. */
+.screen-reader-text {
+	position: absolute !important;
+	word-wrap: normal !important;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	-webkit-transition: none;
+	-moz-transition: none;
+	-ms-transition: none;
+	-o-transition: none;
+	transition: none;
 }
+.screen-reader-text:focus {
+	z-index: 100000;
+	display: block;
+	outline: none;
+	color: #21759b;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: normal;
+	text-decoration: none;
+	top: 5px;
+	right: 5px;
+	width: auto;
+	height: auto;
+	padding: 12px 20px;
+	background-color: #f1f1f1;
+	border: 2px solid #aaa;
+	border-radius: 0px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;	
+	clip: auto !important;
+	clip-path: none;
+}
+
 
 /* ---------------------------------------------------------------------------------------
 	02. GLOBAL
@@ -528,8 +570,6 @@ iframe.twitter-tweet {
 
 /* =Pagination
 ----------------------------------------------------------------------------- */
-/* =Pagination
------------------------------------------------------------------------------ */
 .pag {
 	text-align: right;
 	margin: 0;
@@ -566,6 +606,61 @@ li.pag-last {
 li.pag-previous {
 }
 li.pag-next {
+}
+
+/* Pagination - Native WordPress pagination */
+.navigation.pagination {
+	margin: 10px 0 30px;
+	list-style: none;
+}
+.navigation.pagination .screen-reader-text {
+	display: none;
+}
+.navigation.pagination .nav-links a,
+.navigation.pagination .nav-links span {
+	text-align: center;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	color: inherit;
+	background: none;
+	border: 1px solid #232323;
+	margin-right: 3px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-ms-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+}
+.navigation.pagination .nav-links a:hover,
+.navigation.pagination .nav-links a.current,
+.navigation.pagination .nav-links span:hover,
+.navigation.pagination .nav-links span.current {
+	color: #fff;
+	background: #232323;
+}
+.navigation.pagination .nav-links a.prev,
+.navigation.pagination .nav-links a.next {
+	font-size: 0;
+	top: 1px;
+	position: relative;
+}
+.navigation.pagination .nav-links a.prev:after,
+.navigation.pagination .nav-links a.next:after {
+	font-size: 15px;
+	font-family: fontawesome;
+}
+.navigation.pagination .nav-links a.prev:after {
+	content: "\f104";
+}
+.navigation.pagination .nav-links a.next:after {
+	content: "\f105";
+}
+.navigation.pagination .nav-links .dots:hover {
+	color: inherit;
+	background: none;
+	border-color: #232323;
 }
 
 

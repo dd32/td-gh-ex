@@ -15,13 +15,13 @@ get_header(); ?>
 						<div class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Published ', 'lan-thinkupthemes') . '<span><time datetime="%1$s">%2$s</time></span> at <a href="%3$s" title="' . __( 'Link to full-size image', 'lan-thinkupthemes') . '">%4$s &times; %5$s</a> in <a href="%6$s" title="' . __( 'Return to ', 'lan-thinkupthemes') . '%7$s" rel="gallery">%8$s</a>',
+								printf( __( 'Published ', 'minamaze') . '<span><time datetime="%1$s">%2$s</time></span> ' . __( 'at', 'minamaze' ) . ' <a href="%3$s" title="' . esc_attr__( 'Link to full-size image', 'minamaze' ) . '">%4$s &times; %5$s</a> ' . __( 'in', 'minamaze' ) . ' <a href="%6$s" title="' . esc_attr__( 'Return to ', 'minamaze' ) . '%7$s" rel="gallery">%8$s</a>',
 									esc_attr( get_the_date( 'c' ) ),
 									esc_html( get_the_date() ),
-									wp_get_attachment_url(),
-									$metadata['width'],
-									$metadata['height'],
-									get_permalink( $post->post_parent ),
+									esc_url( wp_get_attachment_url() ),
+									esc_html( $metadata['width'] ),
+									esc_html( $metadata['height'] ),
+									esc_url( get_permalink( $post->post_parent ) ),
 									esc_attr( get_the_title( $post->post_parent ) ),
 									get_the_title( $post->post_parent )
 								);
@@ -57,10 +57,7 @@ get_header(); ?>
 										$next_attachment_url = wp_get_attachment_url();
 									}
 								?>
-
-								<p><a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-									echo wp_get_attachment_image( $post->ID, array( 1200, 1200 ) );
-								?></a></p>
+								<p><?php echo wp_get_attachment_image( $post->ID, array( 1200, 1200 ) ); ?></p>
 							</div><!-- .attachment -->
 
 							<?php if ( ! empty( $post->post_excerpt ) ) : ?>
@@ -71,7 +68,7 @@ get_header(); ?>
 						</div><!-- .entry-attachment -->
 						
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages', 'lan-thinkupthemes') . ':', 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'minamaze'), 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
 				</article><!-- #post-<?php the_ID(); ?> -->

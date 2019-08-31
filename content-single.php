@@ -12,8 +12,9 @@
 
 		<div class="entry-content">
 			<?php the_content(); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'minamaze' ), 'after'  => '</div>', ) ); ?>
 		</div><!-- .entry-content -->
 
-		<?php edit_post_link( __( 'Edit', 'lan-thinkupthemes' ), '<span class="edit-link">', '</span>' ); ?>
-		
 		</article>
+
+		<div class="clearboth"></div>

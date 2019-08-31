@@ -26,7 +26,7 @@ get_header(); ?>
 						</header>		
 
 						<div class="entry-content<?php echo $column2; ?>">
-							<?php think_input_blogtitle(); ?>
+							<?php thinkup_input_blogtitle(); ?>
 
 							<?php thinkup_input_blogmeta(); ?>
 
@@ -38,7 +38,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php thinkup_input_pagination(); ?>
+				<?php the_posts_pagination(); ?>
 
 			<?php else: ?>
 

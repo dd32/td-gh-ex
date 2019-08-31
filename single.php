@@ -13,8 +13,6 @@ get_header(); ?>
 
 				<?php thinkup_input_nav( 'nav-below' ); ?>
 
-				<?php edit_post_link( __( 'Edit', 'lan-thinkupthemes' ), '<span class="edit-link">', '</span>' ); ?>
-
 				<?php thinkup_input_allowcomments(); ?>
 
 			<?php endwhile; ?>

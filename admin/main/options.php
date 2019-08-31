@@ -1,1526 +1,2729 @@
 <?php
-    /**
-     * ReduxFramework Sample Config File
-     * For full documentation, please visit: http://docs.reduxframework.com/
-     */
+/**
+ * Setup theme options used in customizer.
+ *
+ * @package ThinkUpThemes
+ */
 
-    if ( ! class_exists( 'Redux' ) ) {
-        return;
-    }
+function thinkup_customizer_theme_options( $wp_customize ) {
 
+	global $thinkup_prefix;
 
-    // This is your option name where all the Redux data is stored.
-    $opt_name = "thinkup_redux_variables";
+	$prefix_name = $thinkup_prefix;
 
-    // This line is adding in extensions.
-//    Redux::setExtensions( $opt_name, dirname(__FILE__).'/../main-extensions');
+	// ==========================================================================================
+	// 1. ADD PANELS / SECTIONS
+	// ==========================================================================================
 
-    /*
-     *
-     * --> Used within different fields. Simply examples. Search for ACTUAL DECLARATION for field examples
-     *
-     */
-
-    $sampleHTML = '';
-    if ( file_exists( dirname( __FILE__ ) . '/info-html.html' ) ) {
-        Redux_Functions::initWpFilesystem();
-
-        global $wp_filesystem;
-
-        $sampleHTML = $wp_filesystem->get_contents( dirname( __FILE__ ) . '/info-html.html' );
-    }
-
-    // Background Patterns Reader
-    $sample_patterns_path = ReduxFramework::$_dir . '../sample/patterns/';
-    $sample_patterns_url  = ReduxFramework::$_url . '../sample/patterns/';
-    $sample_patterns      = array();
-
-    if ( is_dir( $sample_patterns_path ) ) {
-
-        if ( $sample_patterns_dir = opendir( $sample_patterns_path ) ) {
-            $sample_patterns = array();
-
-            while ( ( $sample_patterns_file = readdir( $sample_patterns_dir ) ) !== false ) {
-
-                if ( stristr( $sample_patterns_file, '.png' ) !== false || stristr( $sample_patterns_file, '.jpg' ) !== false ) {
-                    $name              = explode( '.', $sample_patterns_file );
-                    $name              = str_replace( '.' . end( $name ), '', $sample_patterns_file );
-                    $sample_patterns[] = array(
-                        'alt' => $name,
-                        'img' => $sample_patterns_url . $sample_patterns_file
-                    );
-                }
-            }
-        }
-    }
-
-    /**
-     * ---> SET ARGUMENTS
-     * All the possible arguments for Redux.
-     * For full documentation on arguments, please refer to: https://github.com/ReduxFramework/ReduxFramework/wiki/Arguments
-     * */
-
-    $theme = wp_get_theme(); // For use with some settings. Not necessary.
-
-    $args = array(
-        // TYPICAL -> Change these values as you need/desire
-        'opt_name'             => $opt_name,
-        // This is where your data is stored in the database and also becomes your global variable name.
-        'display_name'         => $theme->get( 'Name' ),
-        // Name that appears at the top of your panel
-        'display_version'      => $theme->get( 'Version' ),
-        // Version that appears at the top of your panel
-        'menu_type'            => 'menu',
-        //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
-        'allow_sub_menu'       => false,
-        // Show the sections below the admin menu item or not
-        'menu_title'           => __( 'Theme Options', 'lan-thinkupthemes' ),
-        'page_title'           => __( 'Theme Options', 'lan-thinkupthemes' ),
-        // You will need to generate a Google API key to use this feature.
-        // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
-        'google_api_key'       => '',
-        // Set it you want google fonts to update weekly. A google_api_key value is required.
-        'google_update_weekly' => false,
-        // Must be defined to add google fonts to the typography module
-        'async_typography'     => false,
-        // Use a asynchronous font on the front end or font string
-        //'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
-        'admin_bar'            => true,
-        // Show the panel pages on the admin bar
-        'admin_bar_icon'       => 'dashicons-portfolio',
-        // Choose an icon for the admin bar menu
-        'admin_bar_priority'   => 50,
-        // Choose an priority for the admin bar menu
-        'global_variable'      => '',
-        // Set a different name for your global variable other than the opt_name
-        'dev_mode'             => false,
-        // Show the time the page took to load, etc
-        'update_notice'        => false,
-        // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
-        'customizer_only'      => true,
-        'customizer'           => true,
-        // Enable basic customizer support
-        //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
-        //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
-
-        // OPTIONAL -> Give you extra features
-        'page_priority'        => null,
-        // Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
-        'page_parent'          => 'themes.php',
-        // For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters
-        'page_permissions'     => 'manage_options',
-        // Permissions needed to access the options panel.
-        'menu_icon'            => '',
-        // Specify a custom URL to an icon
-        'last_tab'             => '',
-        // Force your panel to always open to a specific tab (by id)
-        'page_icon'            => 'icon-themes',
-        // Icon displayed in the admin panel next to your menu_title
-        'page_slug'            => '',
-        // Page slug used to denote the panel, will be based off page title then menu title then opt_name if not provided
-        'save_defaults'        => true,
-        // On load save the defaults to DB before user clicks save or not
-        'default_show'         => false,
-        // If true, shows the default value next to each field that is not the default value.
-        'default_mark'         => '',
-        // What to print by the field's title if the value shown is default. Suggested: *
-        'show_import_export'   => true,
-        // Shows the Import/Export panel when not used as a field.
-
-        // CAREFUL -> These options are for advanced use only
-        'transient_time'       => 60 * MINUTE_IN_SECONDS,
-        'output'               => true,
-        // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output
-        'output_tag'           => true,
-        // Allows dynamic CSS to be generated for customizer and google fonts, but stops the dynamic CSS from going to the head
-        // 'footer_credit'     => '',                   // Disable the footer credit of Redux. Please leave if you can help it.
-
-        // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
-        'database'             => '',
-        // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
-        'use_cdn'              => true,
-        // If you prefer not to use the CDN for Select2, Ace Editor, and others, you may download the Redux Vendor Support plugin yourself and run locally or embed it in your code.
-
-        // HINTS
-        'hints'                => array(
-            'icon'          => 'el el-question-sign',
-            'icon_position' => 'right',
-            'icon_color'    => 'lightgray',
-            'icon_size'     => 'normal',
-            'tip_style'     => array(
-                'color'   => 'red',
-                'shadow'  => true,
-                'rounded' => false,
-                'style'   => '',
-            ),
-            'tip_position'  => array(
-                'my' => 'top left',
-                'at' => 'bottom right',
-            ),
-            'tip_effect'    => array(
-                'show' => array(
-                    'effect'   => 'slide',
-                    'duration' => '500',
-                    'event'    => 'mouseover',
-                ),
-                'hide' => array(
-                    'effect'   => 'slide',
-                    'duration' => '500',
-                    'event'    => 'click mouseleave',
-                ),
-            ),
-        )
-    );
-
-    // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
-//    $args['admin_bar_links'][] = array(
-//        'id'    => 'redux-docs',
-//        'href'  => 'http://docs.reduxframework.com/',
-//        'title' => __( 'Documentation', 'lan-thinkupthemes' ),
-//    );
-
-//    $args['admin_bar_links'][] = array(
-//        //'id'    => 'redux-support',
-//        'href'  => 'https://github.com/ReduxFramework/redux-framework/issues',
-//        'title' => __( 'Support', 'lan-thinkupthemes' ),
-//    );
-
-//    $args['admin_bar_links'][] = array(
-//        'id'    => 'redux-extensions',
-//        'href'  => 'reduxframework.com/extensions',
-//        'title' => __( 'Extensions', 'lan-thinkupthemes' ),
-//    );
-
-    // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-//    $args['share_icons'][] = array(
-//        'url'   => 'https://github.com/',
-//        'title' => 'Visit us on GitHub',
-//        'icon'  => 'el el-github'
-//        //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
-//    );
-    $args['share_icons'][] = array(
-        'url'   => 'https://www.facebook.com/thinkupthemes',
-        'title' => 'Like us on Facebook',
-        'icon'  => 'el el-facebook'
-    );
-    $args['share_icons'][] = array(
-        'url'   => 'http://www.twitter.com/thinkupthemes',
-        'title' => 'Follow us on Twitter',
-        'icon'  => 'el el-twitter'
-    );
-//    $args['share_icons'][] = array(
-//        'url'   => 'http://www.linkedin.com/',
-//        'title' => 'Find us on LinkedIn',
-//        'icon'  => 'el el-linkedin'
-//    );
-
-    // Panel Intro text -> before the form
-    if ( ! isset( $args['global_variable'] ) || $args['global_variable'] !== false ) {
-        if ( ! empty( $args['global_variable'] ) ) {
-            $v = $args['global_variable'];
-        } else {
-            $v = str_replace( '-', '_', $args['opt_name'] );
-        }
-//        $args['intro_text'] = sprintf( __( '<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'lan-thinkupthemes' ), $v );
-    } else {
-//        $args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'lan-thinkupthemes' );
-    }
-
-    // Add content after the form.
-//    $args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'lan-thinkupthemes' );
-
-    Redux::setArgs( $opt_name, $args );
-
-    /*
-     * ---> END ARGUMENTS
-     */
-
-
-    /*
-     * ---> START HELP TABS
-     */
-
-//    $tabs = array(
-//        array(
-//            'id'      => 'redux-help-tab-1',
-//            'title'   => __( 'Theme Information 1', 'lan-thinkupthemes' ),
-//            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'lan-thinkupthemes' )
-//        ),
-//        array(
-//            'id'      => 'redux-help-tab-2',
-//            'title'   => __( 'Theme Information 2', 'lan-thinkupthemes' ),
-//            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'lan-thinkupthemes' )
-//        )
-//    );
-//    Redux::setHelpTab( $opt_name, $tabs );
-
-    // Set the help sidebar
-//    $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'lan-thinkupthemes' );
-//    Redux::setHelpSidebar( $opt_name, $content );
-
-
-    /*
-     * <--- END HELP TABS
-     */
-
-
-    /*
-     *
-     * ---> START SECTIONS
-     *
-     */
-
-    /*
-
-        As of Redux 3.5+, there is an extensive API. This API can be used in a mix/match mode allowing for
-
-
-     */
-
-	// -----------------------------------------------------------------------------------
-	//	0.	Customizer - Set subsections
-	// -----------------------------------------------------------------------------------
-
-	if ( is_customize_preview() ) {
-
-		// Change subtitle text in customizer / options panel
-		$thinkup_subtitle_customizer   = 'subtitle';
-		$thinkup_subtitle_panel        = NULL;
-
-		// Change section field used in customizer / options panel
-		$thinkup_section_field         = 'thinkup_section';
-
-		// Enable sub-sections in customizer
-		$thinkup_customizer_subsection = true;
-
-		// Add theme options section
-		Redux::setSection( $opt_name, array(
-			'title'            => __( 'Theme Options', 'lan-thinkupthemes' ),
-			'id'               => 'thinkup_theme_options',
-			'desc'             => __( 'Use the options below to customize your theme!', 'lan-thinkupthemes' ),
-			'customizer_width' => '400px',
-			'icon'             => 'el el-home',
-			'customizer'       => true,
-		) );
-
-	} else {
-
-		// Disable sub-sections in theme options panel
-		$thinkup_customizer_subsection = false;
-
-		// Change subtitle text in customizer / options panel
-		$thinkup_subtitle_customizer   = NULL;
-		$thinkup_subtitle_panel        = 'subtitle';
-
-		// Change section field used in customizer / options panel
-		$thinkup_section_field         = 'section';
-
-	}
-	
-
-	// -----------------------------------------------------------------------------------
-	//	1.	General Settings
-	// -----------------------------------------------------------------------------------
-
-	Redux::setSection( $opt_name, array(
-		'title'      => __('General Settings', 'lan-thinkupthemes'),
-		'header'     => __('Welcome to the Simple Options Framework Demo', 'lan-thinkupthemes'),
-		'desc'       => __('<span class="redux-title">Logo & Favicon Settings</span>', 'lan-thinkupthemes'),
-		'icon_class' => '',
-		'icon'       => 'el el-wrench',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
-
+	// Add Upgrade Section
+	$wp_customize->add_section(
+		new thinkup_customizer_customswitch_button_link(
+			$wp_customize,
+			$prefix_name . 'thinkup_customizer_section_upgrade_top',
 			array(
-				'title'                      => __('Logo Settings', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('If you have an image logo you can upload it, otherwise you can display a text site title', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('If you have an image logo you can upload it, otherwise you can display a text site title', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_logoswitch',
-				'type'                       => 'radio',
-				'options'                    => array( 
-					'option1' => 'Custom Image Logo', 
-					'option2' => 'Display Site Title',
-				),
-			),
-
-			array(
-				'title'                      => __('Custom Image Logo', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Upload image logo or specify the image url.<br />Name the logo image logo.png.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Upload image logo or specify the image url.<br />Name the logo image logo.png.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_logolink',
-				'type'                       => 'media',
-				'url'                        => true,
-				'required'                   => array( 
-					array( 'thinkup_general_logoswitch', '=', 
-						array( 'option1' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Custom Image Logo (Retina display)', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Upload a logo image twice the size of logo.png. Name the logo image logo@2x.png.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Upload a logo image twice the size of logo.png. Name the logo image logo@2x.png.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_logolinkretina',
-				'type'                       => 'media',
-				'url'                        => true,
-				'required'                   => array( 
-					array( 'thinkup_general_logoswitch', '=', 
-						array( 'option1' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Site Title', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Input a message to display as your site title. Leave blank to display your default site title.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Input a message to display as your site title. Leave blank to display your default site title.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_sitetitle',
-				'type'                       => 'text',
-				'validate'                   => 'html',
-				'required'                   => array( 
-					array( 'thinkup_general_logoswitch', '=', 
-						array( 'option2' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Site Description', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Input a message to display as site description. Leave blank to display default site description.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Input a message to display as site description. Leave blank to display default site description.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_sitedescription',
-				'type'                       => 'text',
-				'validate'                   => 'html',
-				'required'                   => array( 
-					array( 'thinkup_general_logoswitch', '=', 
-						array( 'option2' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Custom Favicon', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Uploads favicon or specify the favicon url.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Uploads favicon or specify the favicon url.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_faviconlink',
-				'type'                       => 'media',
-				'url'                        => true,
-			),
-
-            array(
-                'id'       => 'thinkup_section_general_page',
-                'type'     => $thinkup_section_field,
-                'title'    => __( ' ', 'lan-thinkupthemes' ),
-                'subtitle' => __( '<span class="redux-title">Page Structure</span>', 'lan-thinkupthemes' ),
-                'indent'   => false,
-            ),
-
-			array(
-				'title'                      => __('Page Layout', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Select page layout. This will only be applied to published Pages (I.e. Not posts, blog or home).', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Select page layout. This will only be applied to published Pages (I.e. Not posts, blog or home).', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_layout',
-				'type'                       => 'image_select',
-				'compiler'                   => true,
-				'default'                    => '0',
-				'options'                    => array(
-					'option1' => array('alt' => '1 Column', 'img' => ReduxFramework::$_url . 'assets/img/1col.png'),
-					'option2' => array('alt' => '2 Column Left', 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'),
-					'option3' => array('alt' => '2 Column Right', 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'),
-				),
-			),
-
-			array(
-				'title'                      => __('Select a Sidebar', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Choose a sidebar to use with the page layout.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Choose a sidebar to use with the page layout.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_sidebars',
-				'type'                       => 'select',
-				'data'                       => 'sidebars',
-				'required'                   => array( 
-					array( 'thinkup_general_layout', '=', 
-						array( 'option2', 'option3' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Enable Fixed Layout', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Check to enable fixed layout.<br />(i.e. Disable responsive layout)', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Check to enable fixed layout.<br />(i.e. Disable responsive layout)', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_fixedlayoutswitch',
-				'type'                       => 'switch',
-			),
-
-			array(
-				'title'                      => __('Enable Breadcrumbs', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Switch on to enable breadcrumbs.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Switch on to enable breadcrumbs.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_breadcrumbswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'title'                      => __('Breadcrumb Delimiter', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Specify a custom delimiter to use instead of the default &#40; / &#41; when displaying breadcrumbs.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Specify a custom delimiter to use instead of the default &#40; / &#41; when displaying breadcrumbs.', 'lan-thinkupthemes'),
-				'default'                    => '/',
-				'id'                         => 'thinkup_general_breadcrumbdelimeter',
-				'type'                       => 'text',
-				'validate'                   => 'html',
-				'required'                   => array( 
-					array( 'thinkup_general_breadcrumbswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-            array(
-                'id'       => 'thinkup_section_general_code',
-                'type'     => $thinkup_section_field,
-                'title'    => __( ' ', 'lan-thinkupthemes' ),
-                'subtitle' => __( '<span class="redux-title">Custom Code</span>', 'lan-thinkupthemes' ),
-                'indent'   => false,
-            ),
-
-			array(
-				'title'                      => __('Custom CSS', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Developers can use this to apply custom css. Use this to control, by styling of any element on the webpage by targeting id&#39;s and classes.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_general_customcss',
-				'type'                       => 'textarea',
-				'validate'                   => 'css',
-			),
-
-//			array(
-//				'title'                      => __('Custom jQuery - Front End', 'lan-thinkupthemes'),
-//				$thinkup_subtitle_panel      => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'lan-thinkupthemes'),
-//				$thinkup_subtitle_customizer => __('Developers can use this to apply custom jQuery which will only affect the front end of the website.<br /><br />Use this to control your site by adding great jQuery features.', 'lan-thinkupthemes'),
-//				'id'                         => 'thinkup_general_customjavafront',
-//				'type'                       => 'textarea',
-//				'validate'                   => 'html',
-//			),
-
-			// Ensures ThinkUpThemes custom code is output
-			array(
-				'title'    => __('Custom Code', 'lan-thinkupthemes'), 
-				'subtitle' => __('Custom Code', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_customization',
-				'type'     => 'thinkup_custom_code',
-			),
+				'title'        => esc_html__( 'Minamaze Pro', 'minamaze' ),
+				'priority'     => 1,
+				'button_text' => esc_html__( 'Upgrade Now', 'minamaze' ),
+				'button_url'  => 'https://www.thinkupthemes.com/themes/minamaze/',
+				'button_class' => 'button-primary',
+			)
 		)
-	) );
+	);
 
-	Redux::setSection( $opt_name, array(
-		'type' => 'divide',
-	) );
-
-
-	// -----------------------------------------------------------------------------------
-	//	2.1.	Home Settings				
-	// -----------------------------------------------------------------------------------
-
-	Redux::setSection( $opt_name, array(
-		'title'      => __('Homepage', 'lan-thinkupthemes'),
-		'desc'       => __('<span class="redux-title">Control Homepage Layout</span>', 'lan-thinkupthemes'),
-		'icon_class' => '',
-		'icon'       => 'el el-home',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
-
+	// Add Documentation Section
+	$wp_customize->add_section(
+		new thinkup_customizer_customswitch_button_link(
+			$wp_customize,
+			$prefix_name . 'thinkup_customizer_section_docs',
 			array(
-				'title'                      => __('Homepage Layout', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Select page layout. This will only be applied to the home page.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Select page layout. This will only be applied to the home page.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_layout',
-				'type'                       => 'image_select',
-				'compiler'                   => true,
-				'default'                    => '0',
-				'options'                    => array(
-					'option1' => array('alt' => '1 Column', 'img' => ReduxFramework::$_url . 'assets/img/1col.png'),
-					'option2' => array('alt' => '2 Column Left', 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'),
-					'option3' => array('alt' => '2 Column Right', 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'),
-				),
-			),
-
-			array(
-				'title'                      => __('Select a Sidebar', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Choose a sidebar to use with the layout.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Choose a sidebar to use with the layout.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_sidebars',
-				'type'                       => 'select',
-				'data'                       => 'sidebars',
-				'required'                   => array( 
-					array( 'thinkup_homepage_layout', '=', 
-						array( 'option2', 'option3' ),
-					), 
-				)
-			),
-
-            array(
-                'id'       => 'thinkup_section_homepage_slider',
-                'type'     => $thinkup_section_field,
-                'title'    => __( ' ', 'lan-thinkupthemes' ),
-                'subtitle' => __( '<span class="redux-title">Homepage Slider</span>', 'lan-thinkupthemes' ),
-                'indent'   => false,
-            ),
-
-			array(
-				'title'                      => __('Enable Homepage Slider', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Switch on to enable home page slider.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Switch on to enable home page slider.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_sliderswitch',
-				'type'                       => 'button_set',
-				'options'                    => array(
-					'option1' => 'ThinkUpSlider',
-					'option2' => 'Custom Slider',
-					'option3' => 'Disable'
-				),
-				'default'                    => 'option1'
-			),
-
-			array(
-				'title'                                      => __('Homepage Slider Shortcode', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel                      => __('Input the shortcode of the slider you want to display. I.e. [shortcode_name].', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer                 => __('Input the shortcode of the slider you want to display. I.e. [shortcode_name].', 'lan-thinkupthemes'),
-				'id'                                         => 'thinkup_homepage_slidername',
-				'type'                                       => 'text',
-				'validate'                                   => 'html',
-				'required'                                   => array( 
-					array( 'thinkup_homepage_sliderswitch', '=', 
-						array( 'option2' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Built-In Slider', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Unlimited slides with drag and drop sortings.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Unlimited slides with drag and drop sortings.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_sliderpreset',
-				'type'                       => 'thinkup_slider_free',
-				'required'                   => array( 
-					array( 'thinkup_homepage_sliderswitch', '=', 
-						array( 'option1' ),
-					), 
-				)
-			),
-
-			array(
-                'title'                      => __('Enable Full-Width Slider', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Switch on to enable full-width slider.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Switch on to enable full-width slider.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_sliderpresetwidth',
-				'type'                       => 'switch',
-				'default'                    => '1',
-				'required'                   => array( 
-					array( 'thinkup_homepage_sliderswitch', '=', 
-						array( 'option1' ),
-					), 
-				)
-			),
-
-			array(
-				'id'                         => 'thinkup_homepage_sliderpresetheight',
-				'type'                       => 'slider', 
-				'title'                      => __('Slider Height (Max)', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Specify the maximum slider height (px).', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Specify the maximum slider height (px).', 'lan-thinkupthemes'),
-				"default"                    => "350",
-				"min"                        => "200",
-				"step"                       => "5",
-				"max"                        => "500",
-				'required'                   => array( 
-					array( 'thinkup_homepage_sliderswitch', '=', 
-						array( 'option1' ),
-					), 
-				)
-			),
-
-            array(
-                'id'       => 'thinkup_section_homepage_ctaintro',
-                'type'     => $thinkup_section_field,
-                'title'    => __( ' ', 'lan-thinkupthemes' ),
-                'subtitle' => __( '<span class="redux-title">Call To Action - Intro</span>', 'lan-thinkupthemes' ),
-                'indent'   => false,
-            ),		
-
-			array(
-				'title'   => __('Message', 'lan-thinkupthemes'), 
-				'desc'    => __('Check to enable intro on home page.', 'lan-thinkupthemes'),
-				'id'      => 'thinkup_homepage_introswitch',
-				'type'    => 'checkbox',
-				'default' => '0',
-			),
-
-			array(
-				$thinkup_subtitle_panel      => __('Enter a <strong>title</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enter a <strong>title</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_introaction',
-				'type'                       => 'textarea',
-				'validate'                   => 'html',
-			),
-
-			array(
-				$thinkup_subtitle_panel      => __('Enter a <strong>teaser</strong> message.<br /><br />Use this to provide more details about what you offer.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enter a <strong>teaser</strong> message.<br /><br />Use this to provide more details about what you offer.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_introactionteaser',
-				'type'                       => 'textarea',
-				'validate'                   => 'html',
-			),
-
-			array(
-				'title'                      => __('Button Text', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Input text to display on the action button.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Input text to display on the action button.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_introactionbutton',
-				'type'                       => 'text',
-				'validate'                   => 'html',
-			),				
-
-			array(
-				'title'                      => __('Link', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Specify whether the action button should link to a page on your site, out to external webpage or disable the link altogether.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Specify whether the action button should link to a page on your site, out to external webpage or disable the link altogether.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_introactionlink',
-				'type'                       => 'radio',
-				'options'                    => array( 
-					'option1' => 'Link to a Page',
-					'option2' => 'Specify Custom link',
-					'option3' => 'Disable Link'
-				),
-			),
-
-			array(
-				'title'                      => __('Link to a page', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Select a target page for action button link.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Select a target page for action button link.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_introactionpage',
-				'type'                       => 'select',
-				'data'                       => 'pages',
-				'required'                   => array( 
-					array( 'thinkup_homepage_introactionlink', '=', 
-						array( 'option1' ),
-					), 
-				)
-			),
-
-			array(
-				'title'                      => __('Custom link', 'lan-thinkupthemes'),
-				$thinkup_subtitle_panel      => __('Input a custom url for the action button link.<br>Add http:// if linking to an external webpage.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Input a custom url for the action button link.<br>Add http:// if linking to an external webpage.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_introactioncustom',
-				'type'                       => 'text',
-				'validate'                   => 'html',
-				'required'                   => array( 
-					array( 'thinkup_homepage_introactionlink', '=', 
-						array( 'option2' ),
-					), 
-				)
-			),
+				'title'        => esc_html__( 'Documentation', 'minamaze' ),
+				'priority'     => 1,
+				'button_text' => __( 'View Docs', 'minamaze' ),
+				'button_url'  => esc_url( admin_url( 'themes.php?page=thinkup-welcome&tab=documentation' ) ),
+				'button_class' => 'button-secondary',
+			)
 		)
-	) );
+	);
 
-
-	// -----------------------------------------------------------------------------------
-	//	2.2.	Homepage (Featured)
-	// -----------------------------------------------------------------------------------
-
-	Redux::setSection( $opt_name, array(
-		'title'      => __('Homepage (Featured)', 'lan-thinkupthemes'),
-		'desc'       => __('<span class="redux-title">Display Pre-Designed Homepage Layout</span>', 'lan-thinkupthemes'),
-		'icon_class' => '',
-		'icon'       => 'el el-pencil',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
-
-			array(
-				'title'                      => __('Enable Pre-Made Homepage ', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('switch on to enable pre-designed homepage layout.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('switch on to enable pre-designed homepage layout.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_homepage_sectionswitch',
-				'type'                       => 'switch',
-				'default'                    => '1',
-			),
-
-			array(
-				'title'    => __('Content Area 1', 'lan-thinkupthemes'),
-				'desc'     => __('Add an image for the section background.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_homepage_section1_image',
-				'type'     => 'media',
-				'url'      => true,
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section1_title',
-				'desc'     => __('Add a title to the section.', 'lan-thinkupthemes'),
-				'type'     => 'text',
-				'validate' => 'html',
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section1_desc',
-				'desc'     => __('Add some text to featured section 1.', 'lan-thinkupthemes'),
-				'type'     => 'textarea',
-				'validate' => 'html',
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section1_link',
-				'desc'     => __('Link to a page', 'lan-thinkupthemes'), 
-				'type'     => 'select',
-				'data'     => 'pages',
-			),
-
-			array(
-				'title'    => __('Content Area 2', 'lan-thinkupthemes'),
-				'desc'     => __('Add an image for the section background.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_homepage_section2_image',
-				'type'     => 'media',
-				'url'      => true,
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section2_title',
-				'desc'     => __('Add a title to the section.', 'lan-thinkupthemes'),
-				'type'     => 'text',
-				'validate' => 'html',
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section2_desc',
-				'desc'     => __('Add some text to featured section 2.', 'lan-thinkupthemes'),
-				'type'     => 'textarea',
-				'validate' => 'html',
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section2_link',
-				'desc'     => __('Link to a page', 'lan-thinkupthemes'), 
-				'type'     => 'select',
-				'data'     => 'pages',
-			),
-
-			array(
-				'title'    => __('Content Area 3', 'lan-thinkupthemes'),
-				'desc'     => __('Add an image for the section background.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_homepage_section3_image',
-				'type'     => 'media',
-				'url'      => true,
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section3_title',
-				'desc'     => __('Add a title to the section.', 'lan-thinkupthemes'),
-				'type'     => 'text',
-				'validate' => 'html',
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section3_desc',
-				'desc'     => __('Add some text to featured section 3.', 'lan-thinkupthemes'),
-				'type'     => 'textarea',
-				'validate' => 'html',
-			),
-
-			array(
-				'id'       => 'thinkup_homepage_section3_link',
-				'desc'     => __('Link to a page', 'lan-thinkupthemes'), 
-				'type'     => 'select',
-				'data'     => 'pages',
-			),
+	// Add Theme Options Panel
+	$wp_customize->add_panel(
+		$prefix_name . 'thinkup_customizer_section_themeoptions',
+		array(
+			'title'       => esc_html__( 'Theme Options', 'minamaze' ),
+			'description' => esc_html__( 'Use the options below to customize your theme!', 'minamaze' ),
+			'priority'    => 2,
 		)
-	) );
+	);
+
+	// Add General Settings Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_generalsettings',
+		array(
+			'title'    => esc_html__( 'General Settings', 'minamaze' ),
+			'priority' => 10,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Homepage Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_homepage',
+		array(
+			'title'    => esc_html__( 'Homepage', 'minamaze' ),
+			'priority' => 20,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Homepage (Featured) Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_homepagefeatured',
+		array(
+			'title'    => esc_html__( 'Homepage (Featured)', 'minamaze' ),
+			'priority' => 30,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Header Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_header',
+		array(
+			'title'    => esc_html__( 'Header', 'minamaze' ),
+			'priority' => 40,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Footer Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_footer',
+		array(
+			'title'    => esc_html__( 'Footer', 'minamaze' ),
+			'priority' => 50,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Social Media Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_socialmedia',
+		array(
+			'title'    => esc_html__( 'Social Media', 'minamaze' ),
+			'priority' => 60,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Blog Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_blog',
+		array(
+			'title'    => esc_html__( 'Blog', 'minamaze' ),
+			'priority' => 70,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
+
+	// Add Upgrade (10% off) Section
+	$wp_customize->add_section(
+		$prefix_name . 'thinkup_customizer_section_upgrade_inner',
+		array(
+			'title'    => esc_html__( 'Upgrade (10% off)', 'minamaze' ),
+			'priority' => 80,
+			'panel'    => $prefix_name . 'thinkup_customizer_section_themeoptions',
+		)
+	);
 
 
-	// -----------------------------------------------------------------------------------
-	//	3.	Header
-	// -----------------------------------------------------------------------------------
+	// ==========================================================================================
+	// 2. ADD CONTROLS
+	// ==========================================================================================
 
-	Redux::setSection( $opt_name, array(
-		'title'      => __('Header', 'lan-thinkupthemes'),
-		'desc'       => __('<span class="redux-title">Control Header Content</span>', 'lan-thinkupthemes'),
-		'icon'       => 'el el-chevron-up',
-		'icon_class' => '',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
+	//----------------------------------------------------
+	// 2.1. Add General Settings Controls
+	//----------------------------------------------------
 
+	// Add Logo Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_general_heading]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_general_heading',
 			array(
-				'title'                      => __('Enable Search', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Switch on to enable header search.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Switch on to enable header search.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_searchswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
+				'label'           => esc_html__( 'Logo Settings', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_general_heading]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Logo Info Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_logosetting]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_raw(
+			$wp_customize,
+			'thinkup_general_logosetting',
+			array(
+				'label'           => esc_html__( 'Since WordPress v4.5 you can now add a site logo using the native WordPress options. To add a site logo go the "Site Identitiy" settings on the main customizer screen.', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_general_logosetting]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add General Page Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_general_page]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_general_page',
+			array(
+				'label'           => esc_html__( 'Page Structure', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_general_page]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Page Layout Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_layout]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_radio_image(
+			$wp_customize,
+			'thinkup_general_layout',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_general_layout]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'label'			  => esc_html__( 'Page Layout', 'minamaze' ),
+				'description'	  => esc_html__( 'Select page layout. This will only be applied to published Pages.', 'minamaze' ),
+				'choices'		  => array(
+					'option1' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option01.png',
+					'option2' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option02.png',
+					'option3' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option03.png',
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add General Sidebar Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_sidebars]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_select_sidebar',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_general_sidebars',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_general_sidebars]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_generalsettings',
+			'type'			  => 'select',
+			'label'			  => esc_html__( 'Select a Sidebar', 'minamaze' ),
+			'description'	  => esc_html__( 'Choose a sidebar to use with the page layout.', 'minamaze' ),
+			'choices'		  => thinkup_customizer_select_array_sidebar(),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Enable Fixed Layout Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_fixedlayoutswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_general_fixedlayoutswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_general_fixedlayoutswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'label'           => esc_html__( 'Enable Fixed Layout', 'minamaze' ),
+				'description'	  => esc_html__( '(i.e. Disable responsive layout)', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => __( 'On', 'minamaze' ),
+					'off'    => __( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Enable Breadcrumbs Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_breadcrumbswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_general_breadcrumbswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_general_breadcrumbswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'label'           => __( 'Enable Breadcrumbs', 'minamaze' ),
+				'description'	  => __( 'Switch on to enable breadcrumbs.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => __( 'On', 'minamaze' ),
+					'off'    => __( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Breadcrumb Delimiter Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_breadcrumbdelimeter]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_general_breadcrumbdelimeter',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_general_breadcrumbdelimeter]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_generalsettings',
+			'type'			  => 'text',
+			'label'			  => __( 'Breadcrumb Delimiter', 'minamaze' ),
+			'description'	  => __( 'Specify a custom delimiter to use instead of the default &#40; / &#41;.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Backup Theme Options Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_general_backup]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_general_backup',
+			array(
+				'label'           => esc_html__( 'Backup Theme Options', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_general_backup]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Backup Theme Options Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_general_backupswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_general_backupswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_general_backupswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_generalsettings',
+				'label'           => esc_html__( 'Backup Theme Options', 'minamaze' ),
+				'description'	  => esc_html__( 'Switch on to backup your theme options settings each time the customizer is updated and saved. If enabled then a new page called "ThinkUp Created Content Backup" will be created where the option values can be found.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+
+	//----------------------------------------------------
+	// 2.2. Homepage
+	//----------------------------------------------------
+
+	// Add Homepage Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_homepage_heading]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_homepage_heading',
+			array(
+				'label'           => esc_html__( 'Control Homepage Layout', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_homepage_heading]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Homepage Layout Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_layout]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_radio_image(
+			$wp_customize,
+			'thinkup_homepage_layout',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_layout]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+				'label'			  => esc_html__( 'Homepage Layout', 'minamaze' ),
+				'description'	  => esc_html__( 'Select page layout. This will only be applied to static homepages (front page) and not to homepage blogs.', 'minamaze' ),
+				'choices'		  => array(
+					'option1' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option01.png',
+					'option2' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option02.png',
+					'option3' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option03.png',
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Homepage Select a Sidebar Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sidebars]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_select_sidebar',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sidebars',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sidebars]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'select',
+			'label'			  => esc_html__( 'Select a Sidebar', 'minamaze' ),
+			'description'	  => esc_html__( 'Choose a sidebar to use with the layout.', 'minamaze' ),
+			'choices'		  => thinkup_customizer_select_array_sidebar(),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Homepage Slider Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_homepage_slider]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_homepage_slider',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_homepage_slider]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'label'           => esc_html__( 'Homepage Slider', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Choose Homepage Slider Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'radio',
+			'label'			  => esc_html__( 'Choose Homepage Slider', 'minamaze' ),
+			'description'	  => esc_html__( 'Switch on to enable home page slider.', 'minamaze' ),
+			'choices'		  => array(
+				'option4' => esc_html__( 'Image Slider', 'minamaze' ),
+				'option3' => esc_html__( 'Disable', 'minamaze' ),
 			),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Image Slide 1 - Info
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_info]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_raw(
+			$wp_customize,
+			'thinkup_homepage_sliderimage1_info',
+			array(
+				'label'           => esc_html__( 'Slide 1', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_info]',
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Image Slide 1 - Image
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_image][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_homepage_sliderimage1_image',
+			array(
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_image][url]',
+				'label'	          => '',
+				'description'	  => esc_html__( 'Image', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Image Slide 1 - Title
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_title]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage1_title',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_title]',
+			'type'			  => 'text',
+			'label'			  => '',
+			'description'	  => esc_html__( 'Title', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Image Slide 1 - Description
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_desc]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage1_desc',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_desc]',
+			'type'			  => 'text',
+			'label'			  => '',
+			'description'	  => esc_html__( 'Description', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Slide 1 - Page Link
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_link]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage1_link',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage1_link]',
+			'type'			  => 'dropdown-pages',
+			'label'			  => '',
+			'description'	  => esc_html__( 'URL', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Image Slide 2 - Info
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_info]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_raw(
+			$wp_customize,
+			'thinkup_homepage_sliderimage2_info',
+			array(
+				'label'           => esc_html__( 'Slide 2', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_info]',
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Image Slide 2 - Image
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_image][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_homepage_sliderimage2_image',
+			array(
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_image][url]',
+				'label'	          => '',
+				'description'	  => esc_html__( 'Image', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Image Slide 2 - Title
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_title]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage2_title',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_title]',
+			'type'			  => 'text',
+			'label'			  => '',
+			'description'	  => esc_html__( 'Title', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Image Slide 2 - Description
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_desc]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage2_desc',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_desc]',
+			'type'			  => 'text',
+			'label'			  => '',
+			'description'	  => esc_html__( 'Description', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Slide 2 - Page Link
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_link]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage2_link',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage2_link]',
+			'type'			  => 'dropdown-pages',
+			'label'			  => '',
+			'description'	  => esc_html__( 'URL', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Image Slide 3 - Info
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_info]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_raw(
+			$wp_customize,
+			'thinkup_homepage_sliderimage3_info',
+			array(
+				'label'           => esc_html__( 'Slide 3', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_info]',
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Image Slide 3 - Image
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_image][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_homepage_sliderimage3_image',
+			array(
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_image][url]',
+				'label'	          => '',
+				'description'	  => esc_html__( 'Image', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Image Slide 3 - Title
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_title]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage3_title',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_title]',
+			'type'			  => 'text',
+			'label'			  => '',
+			'description'	  => esc_html__( 'Title', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Image Slide 3 - Description
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_desc]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage3_desc',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_desc]',
+			'type'			  => 'text',
+			'label'			  => '',
+			'description'	  => esc_html__( 'Description', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Slide 3 - Page Link
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_link]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderimage3_link',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderimage3_link]',
+			'type'			  => 'dropdown-pages',
+			'label'			  => '',
+			'description'	  => esc_html__( 'URL', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Enable Full-Width Slider Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderpresetwidth]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_homepage_sliderpresetwidth',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderpresetwidth]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'label'           => esc_html__( 'Enable Full-Width Slider', 'minamaze' ),
+				'description'	  => esc_html__( 'Switch on to enable full-width slider.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Add Slider Height (Max) Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderpresetheight]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'absint',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_sliderpresetheight',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sliderpresetheight]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'text',
+			'label'			  => esc_html__( 'Slider Height (Max)', 'minamaze' ),
+			'description'	  => esc_html__( 'Specify the maximum slider height (px).', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Call To Action - Intro Section Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_homepage_ctaintro]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_homepage_ctaintro',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_homepage_ctaintro]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepage',
+				'label'           => esc_html__( 'Call To Action - Intro', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);	
+
+	// Add Homepage - Intro Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Message', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to enable intro on home page.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Homepage - Intro Title Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introaction]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introaction',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introaction]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'text',
+			'description'	  => wp_kses_post( __( 'Enter a <strong>title</strong> message.<br /><br />This will be one of the first messages your visitors see. Use this to get their attention.', 'minamaze' ) ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Homepage - Intro Teaser Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionteaser]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introactionteaser',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionteaser]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'text',
+			'description'	  => wp_kses_post( __( 'Enter a <strong>teaser</strong> message.<br /><br />Use this to provide more details about what you offer.', 'minamaze' ) ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Homepage - Intro Button Text Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionbutton]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introactionbutton',
+		array(
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionbutton]',
+			'type'			  => 'text',
+			'label'	          => esc_html__( 'Button - Text', 'minamaze' ),
+			'description'	  => esc_html__( 'Input text to display on the action button.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);		
+
+	// Add Homepage - Intro Link Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionlink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introactionlink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionlink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'radio',
+			'label'			  => esc_html__( 'Button - Link', 'minamaze' ),
+			'description'	  => esc_html__( 'Specify whether the action button should link to a page on your site, out to external webpage or disable the link altogether.', 'minamaze' ),
+			'choices'		  => array(
+				'option1' => esc_html__( 'Link to a Page', 'minamaze' ),
+				'option2' => esc_html__( 'Specify Custom link', 'minamaze' ),
+				'option3' => esc_html__( 'Disable Link', 'minamaze' ),
+			),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Homepage - Intro Page Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionpage]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introactionpage',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactionpage]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'dropdown-pages',
+			'label'			  => esc_html__( 'Button - Link to a page', 'minamaze' ),
+			'description'	  => esc_html__( 'Select a target page for action button link.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);	
+
+	// Add Homepage - Intro Custom Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactioncustom]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_introactioncustom',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_introactioncustom]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepage',
+			'type'			  => 'text',
+			'label'			  => esc_html__( 'Button - Custom link', 'minamaze' ),
+			'description'	  => esc_html__( 'Input a custom url for the action button link. Add http:// if linking to an external webpage.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+
+	//----------------------------------------------------
+	// 2.3. Homepage (Featured)
+	//----------------------------------------------------
+
+	// Add Homepage (Featured) Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_homepagefeatured_heading]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_homepagefeatured_heading',
+			array(
+				'label'           => esc_html__( 'Display Pre-Designed Homepage', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_homepagefeatured_heading]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Enable Pre-Made Homepage Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_sectionswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_homepage_sectionswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_sectionswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+				'label'           => esc_html__( 'Enable Pre-Made Homepage', 'minamaze' ),
+				'description'	  => esc_html__( 'switch on to enable pre-designed homepage layout.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => __( 'On', 'minamaze' ),
+					'off'    => __( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Content Area 1 Image Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_image][id]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'absint',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control(
+			$wp_customize,
+			'thinkup_homepage_section1_image',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_image][id]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+				'label'	          => esc_html__( 'Content Area 1', 'minamaze' ),
+				'description'	  => esc_html__( 'Add an image for the section background.', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Content Area 1 Title Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_title]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section1_title',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_title]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Add a title to the section.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Content Area 1 Description Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_desc]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section1_desc',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_desc]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			  => 'textarea',
+			'description'	  => esc_html__( 'Add some text to featured section 1.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Content Area 1 Link Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_link]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section1_link',
+		array(
+			'settings'		=> $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section1_link]',
+			'section'		=> $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			=> 'dropdown-pages',
+			'label'			=> esc_html__( 'Link to a page', 'minamaze' ),
+		)
+	);
+
+	// Add Content Area 2 Image Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_image][id]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'absint',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control(
+			$wp_customize,
+			'thinkup_homepage_section2_image',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_image][id]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+				'label'	          => esc_html__( 'Content Area 2', 'minamaze' ),
+				'description'	  => esc_html__( 'Add an image for the section background.', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Content Area 2 Title Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_title]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section2_title',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_title]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Add a title to the section.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Content Area 2 Description Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_desc]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section2_desc',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_desc]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			  => 'textarea',
+			'description'	  => esc_html__( 'Add some text to featured section 2.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Content Area 2 Link Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_link]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section2_link',
+		array(
+			'settings'		=> $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section2_link]',
+			'section'		=> $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			=> 'dropdown-pages',
+			'label'			=> esc_html__( 'Link to a page', 'minamaze' ),
+		)
+	);
+
+	// Add Content Area 3 Image Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_image][id]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'absint',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control(
+			$wp_customize,
+			'thinkup_homepage_section3_image',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_image][id]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+				'label'	          => esc_html__( 'Content Area 3', 'minamaze' ),
+				'description'	  => esc_html__( 'Add an image for the section background.', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Content Area 3 Title Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_title]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section3_title',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_title]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Add a title to the section.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Content Area 3 Description Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_desc]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section3_desc',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_desc]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			  => 'textarea',
+			'description'	  => esc_html__( 'Add some text to featured section 3.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+	// Add Content Area 3 Link Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_link]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_dropdown_pages',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_homepage_section3_link',
+		array(
+			'settings'		=> $prefix_name . 'thinkup_redux_variables[thinkup_homepage_section3_link]',
+			'section'		=> $prefix_name . 'thinkup_customizer_section_homepagefeatured',
+			'type'			=> 'dropdown-pages',
+			'label'			=> esc_html__( 'Link to a page', 'minamaze' ),
+		)
+	);
+
+
+	//----------------------------------------------------
+	// 2.4. Header
+	//----------------------------------------------------
+
+	// Add Header Section Title
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_header_content]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_header_content',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_header_content]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_header',
+				'label'           => esc_html__( 'Control Header Content', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Enable Search (Main Header) Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_searchswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_searchswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_searchswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_header',
+				'label'           => esc_html__( 'Enable Search', 'minamaze' ),
+				'description'	  => esc_html__( 'Switch on to enable header search.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+
+	//----------------------------------------------------
+	// 2.5. Footer
+	//----------------------------------------------------
+
+	// Add Footer Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_footer_heading]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_footer_heading',
+			array(
+				'label'           => esc_html__( 'Control Footer Content', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_footer',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_footer_heading]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Footer Widgets Layout Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_footer_layout]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_radio_image(
+			$wp_customize,
+			'thinkup_footer_layout',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_footer_layout]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_footer',
+				'label'			  => esc_html__( 'Footer Widgets Layout', 'minamaze' ),
+				'description'	  => esc_html__( 'Select footer layout. Take complete control of the footer content by adding widgets.', 'minamaze' ),
+				'choices'		  => array(
+					'option1'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option01.png',
+					'option2'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option02.png',
+					'option3'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option03.png',
+					'option4'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option04.png',
+					'option5'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option05.png',
+					'option6'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option06.png',
+					'option7'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option07.png',
+					'option8'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option08.png',
+					'option9'  => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option09.png',
+					'option10' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option10.png',
+					'option11' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option11.png',
+					'option12' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option12.png',
+					'option13' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option13.png',
+					'option14' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option14.png',
+					'option15' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option15.png',
+					'option16' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option16.png',
+					'option17' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option17.png',
+					'option18' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/footer/option18.png',
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Disable Footer Widgets Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_footer_widgetswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_footer_widgetswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_footer_widgetswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_footer',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Disable Footer Widgets', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to disable footer widgets.', 'minamaze' ),
+			'active_callback' => '',
+		)
+	);
+
+
+	//----------------------------------------------------
+	// 2.6. Social Media
+	//----------------------------------------------------
+
+	// Add Social Media Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_socialmedia_heading]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_socialmedia_heading',
+			array(
+				'label'           => esc_html__( 'Social Media Control', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_socialmedia_heading]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Header Social Media Content Control (Header)
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_socialswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_socialswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_socialswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'Enable Social Media Links (Header)', 'minamaze' ),
+				'description'	  => esc_html__( 'Switch on to enable links to social media pages.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => __( 'On', 'minamaze' ),
+					'off'    => __( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Social Media Content Header
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_header_social]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_header_social',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_header_social]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'Social Media Content', 'minamaze' ),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Social Media Display Message Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_socialmessage]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_socialmessage',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_socialmessage]',
+			'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'	  => wp_kses_post( __( 'Add a message here. E.g. &#34;Follow Us&#34;.<br />(Only shown in header)', 'minamaze' ) ),
+			'active_callback' => '',
+		)
+	);
+
+	// Facebook social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_facebookswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_facebookswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_facebookswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'Facebook', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to Facebook profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_facebooklink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_facebooklink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_facebooklink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Input the url to your Facebook page.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_facebookiconswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_facebookiconswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_facebookiconswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to use custom Facebook icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_facebookcustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_facebookcustomicon',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_facebookcustomicon][url]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	  => esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Twitter social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_twitterswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_twitterswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_twitterswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'Twitter', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to Twitter profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_twitterlink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_twitterlink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_twitterlink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Input the url to your Twitter page.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_twittericonswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_twittericonswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_twittericonswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to use custom Twitter icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_twittercustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_twittercustomicon',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_twittercustomicon][url]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	  => esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Google+ social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_googleswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_googleswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_googleswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'Google+', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to Google+ profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_googlelink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_googlelink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_googlelink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Input the url to your Google+ page.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_googleiconswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_googleiconswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_googleiconswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to use custom Google+ icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_googlecustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_googlecustomicon',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_googlecustomicon][url]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	  => esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// LinkedIn social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_linkedinswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_linkedinswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_linkedinswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'LinkedIn', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to LinkedIn profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
+				),
+				'active_callback' => '',
+			)
+		)
+	);
 				
-			array(
-				'title'                      => __('Enable Social Media Links', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Switch on to enable links to social media pages.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Switch on to enable links to social media pages.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_socialswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-            array(
-                'id'       => 'thinkup_section_header_social',
-                'type'     => $thinkup_section_field,
-                'title'    => __( ' ', 'lan-thinkupthemes' ),
-                'subtitle' => __( '<span class="redux-title">Social Media Content</span>', 'lan-thinkupthemes' ),
-                'indent'   => false,
-            ),		
-
-			array(
-				'title'                      => __('Display Message', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Add a message here. E.g. &#34;Follow Us&#34;.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Add a message here. E.g. &#34;Follow Us&#34;.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_socialmessage',
-				'type'                       => 'text',
-				'validate'                   => 'html',
-			),
-
-			// Facebook social settings
-			array(
-				'title'                      => __('Facebook', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to Facebook profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to Facebook profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_facebookswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'desc'     => __('Input the url to your Facebook page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_facebooklink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_facebookswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Use Custom Facebook Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_facebookiconswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_facebookswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_facebookcustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_facebookswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			// Twitter social settings
-			array(
-				'title'                      => __('Twitter', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to Twitter profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to Twitter profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_twitterswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'desc'     => __('Input the url to your Twitter page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_twitterlink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_twitterswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Use Custom Twitter Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_twittericonswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_twitterswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_twittercustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_twitterswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			// Google+ social settings
-			array(
-				'title'                      => __('Google+', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to Google+ profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to Google+ profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_googleswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-				
-			array(
-				'desc'     => __('Input the url to your Google+ page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_googlelink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_googleswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Use Custom Google+ Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_googleiconswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_googleswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_googlecustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_googleswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			// LinkedIn social settings
-			array(
-				'title'                      => __('LinkedIn', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to LinkedIn profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to LinkedIn profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_linkedinswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'desc'     => __('Input the url to your LinkedIn page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_linkedinlink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_linkedinswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Use Custom LinkedIn Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_linkediniconswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_linkedinswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_linkedincustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_linkedinswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			// Flickr social settings
-			array(
-				'title'                      => __('Flickr', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to Flickr profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to Flickr profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_flickrswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'desc'     => __('Input the url to your Flickr page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_flickrlink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_flickrswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Use Custom Flickr Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_flickriconswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_flickrswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_flickrcustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_flickrswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			// YouTube social settings
-			array(
-				'title'                      => __('YouTube', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to YouTube profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to YouTube profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_youtubeswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'desc'     => __('Input the url to your YouTube page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_youtubelink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_youtubeswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),				
-
-			array(
-				'desc'     => __('Use Custom YouTube Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_youtubeiconswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_youtubeswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_youtubecustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_youtubeswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			// RSS social settings
-			array(
-				'title'                      => __('RSS', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Enable link to RSS profile.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Enable link to RSS profile.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_header_rssswitch',
-				'type'                       => 'switch',
-				'default'                    => '0',
-			),
-
-			array(
-				'desc'     => __('Input the url to your RSS page. <strong>Note:</strong> Add http:// as the url is an external link.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_rsslink',
-				'type'     => 'text',
-				'validate' => 'html',
-				'required' => array( 
-					array( 'thinkup_header_rssswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Use Custom RSS Icon', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_rssiconswitch',
-				'type'     => 'checkbox',
-				'default'  => '0',
-				'required' => array( 
-					array( 'thinkup_header_rssswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),
-
-			array(
-				'desc'     => __('Add a link to the image or upload one from your desktop. The image will be resized.', 'lan-thinkupthemes'),
-				'id'       => 'thinkup_header_rsscustomicon',
-				'type'     => 'media',
-				'url'      => true,
-				'required' => array( 
-					array( 'thinkup_header_rssswitch', '=', 
-						array( '1' ),
-					), 
-				)
-			),					
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_linkedinlink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
 		)
-	) );
-	
-	
-	// -----------------------------------------------------------------------------------
-	//	4.	Footer
-	// -----------------------------------------------------------------------------------
+	);
+	$wp_customize->add_control(
+		'thinkup_header_linkedinlink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_linkedinlink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Input the url to your LinkedIn page.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
-	Redux::setSection( $opt_name, array(
-		'title'      => __('Footer', 'lan-thinkupthemes'),
-		'desc'       => __('<span class="redux-title">Control Footer Content</span>', 'lan-thinkupthemes'),
-		'icon'       => 'el el-chevron-down',
-		'icon_class' => '',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_linkediniconswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_linkediniconswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_linkediniconswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to use custom LinkedIn icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_linkedincustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_linkedincustomicon',
 			array(
-				'title'                      => __('Footer Widgets Layout', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Select footer layout. Take complete control of the footer content by adding widgets.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Select footer layout. Take complete control of the footer content by adding widgets.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_footer_layout',
-				'type'                       => 'image_select',
-				'compiler'                   => true,
-				'default'                    => '0',
-				'options'                    => array(
-					'option1' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option01.png',
-					'option2' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option02.png',
-					'option3' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option03.png',
-					'option4' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option04.png',
-					'option5' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option05.png',
-					'option6' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option06.png',
-					'option7' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option07.png',
-					'option8' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option08.png',
-					'option9' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option09.png',
-					'option10' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option10.png',
-					'option11' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option11.png',
-					'option12' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option12.png',
-					'option13' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option13.png',
-					'option14' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option14.png',
-					'option15' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option15.png',
-					'option16' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option16.png',
-					'option17' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option17.png',
-					'option18' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/footer/option18.png',
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_linkedincustomicon][url]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	  => esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// Flickr social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_flickrswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_flickrswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_flickrswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'Flickr', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to Flickr profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
 				),
-			),
-
-			array(
-				'title'   => __('Disable Footer Widgets', 'lan-thinkupthemes'), 
-				'desc'    => __('Check to disable footer widgets.', 'lan-thinkupthemes'),
-				'id'      => 'thinkup_footer_widgetswitch',
-				'type'    => 'checkbox',
-				'default' => '0',
-			),
+				'active_callback' => '',
+			)
 		)
-	) );
+	);
 
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_flickrlink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_flickrlink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_flickrlink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'	  => esc_html__( 'Input the url to your Flickr page.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
-	// -----------------------------------------------------------------------------------
-	//	5.	Blog
-	// -----------------------------------------------------------------------------------
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_flickriconswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_flickriconswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_flickriconswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to use custom Flickr icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
-	Redux::setSection( $opt_name, array(
-		'title'      => __('Blog', 'lan-thinkupthemes'),
-		'desc'       => __('<span class="redux-title">Control Blog (Archive) Pages</span>', 'lan-thinkupthemes'),
-		'icon'       => 'el el-comment',
-		'icon_class' => '',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
-
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_flickrcustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_flickrcustomicon',
 			array(
-				'title'                      => __('Blog Layout', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Select blog page layout. Only applied to the main blog page and not individual posts.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Select blog page layout. Only applied to the main blog page and not individual posts.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_blog_layout',
-				'type'                       => 'image_select',
-				'compiler'                   => true,
-				'options'                    => array(
-					'option1' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/blog/option01.png',
-					'option2' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/blog/option02.png',
-					'option3' => trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout/blog/option03.png',
+				'settings'		=> $prefix_name . 'thinkup_redux_variables[thinkup_header_flickrcustomicon][url]',
+				'section'		=> $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	=> esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// YouTube social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_youtubeswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_youtubeswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_youtubeswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'YouTube', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to YouTube profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
 				),
-			),
+				'active_callback' => '',
+			)
+		)
+	);
 
-			array(
-				'title'                      => __('Select a Sidebar', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('<strong>Note:</strong> Sidebars will not be applied to homepage Blog. Control sidebars on the homepage from the &#39;Home Settings&#39; option.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('<strong>Note:</strong> Sidebars will not be applied to homepage Blog. Control sidebars on the homepage from the &#39;Home Settings&#39; option.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_blog_sidebars',
-				'type'                       => 'select',
-				'data'                       => 'sidebars',
-				'required'                   => array( 
-					array( 'thinkup_blog_layout', '=', 
-						array( 'option2', 'option3' ),
-					), 
-				)
-			),
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_youtubelink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_youtubelink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_youtubelink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'     => esc_html__( 'Input the url to your YouTube page.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_youtubeiconswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_youtubeiconswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_youtubeiconswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Check to use custom YouTube icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_youtubecustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_youtubecustomicon',
 			array(
-				'title'                      => __('Post Content', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Control how much content you want to show from each post on the main blog page. Remember to control the full article content by using the Wordpress <a href="http://en.support.wordpress.com/splitting-content/more-tag/">more</a> tag in your post.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Control how much content you want to show from each post on the main blog page. Remember to control the full article content by using the Wordpress <a href="http://en.support.wordpress.com/splitting-content/more-tag/">more</a> tag in your post.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_blog_postswitch',
-				'type'                       => 'radio',
-				'options'                    => array( 
-					'option1' => 'Show excerpt',
-					'option2' => 'Show full article',
-					'option3' => 'Hide article',
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_youtubecustomicon][url]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	  => esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+	// RSS social settings
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_rssswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_switch',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_switch(
+			$wp_customize,
+			'thinkup_header_rssswitch',
+			array(
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_header_rssswitch]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'label'           => esc_html__( 'RSS', 'minamaze' ),
+				'description'	  => esc_html__( 'Enable link to RSS profile.', 'minamaze' ),
+				'choices'		  => array(
+					'1'      => esc_html__( 'On', 'minamaze' ),
+					'off'    => esc_html__( 'Off', 'minamaze' ),
 				),
-			),
+				'active_callback' => '',
+			)
+		)
+	);
 
-            array(
-                'id'       => 'thinkup_section_post_layout',
-                'type'     => $thinkup_section_field,
-                'title'    => __( ' ', 'lan-thinkupthemes' ),
-                'subtitle' => __( '<span class="redux-title">Control Single Post Page</span>', 'lan-thinkupthemes' ),
-                'indent'   => false,
-            ),
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_rsslink]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_rsslink',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_rsslink]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'text',
+			'description'     => esc_html__( 'Input the url to your RSS feed.', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_rssiconswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_checkbox',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_header_rssiconswitch',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_rssiconswitch]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+			'type'			  => 'checkbox',
+			'label'			  => esc_html__( 'Custom Icon', 'minamaze' ),
+			'description'	  => esc_html__( 'Use Custom RSS Icon', 'minamaze' ),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_header_rsscustomicon][url]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'thinkup_header_rsscustomicon',
 			array(
-				'title'                      => __('Post Layout', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Select blog page layout. This will only be applied to individual posts and not the main blog page.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Select blog page layout. This will only be applied to individual posts and not the main blog page.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_post_layout',
-				'type'                       => 'image_select',
-				'compiler'                   => true,
-				'default'                    => 'option1',
-				'options'                    => array(
-					'option1' => array('alt' => '1 Column', 'img' => ReduxFramework::$_url . 'assets/img/1col.png'),
-					'option2' => array('alt' => '2 Column Left', 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'),
-					'option3' => array('alt' => '2 Column Right', 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'),
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_header_rsscustomicon][url]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_socialmedia',
+				'description'	  => esc_html__( 'Add a link to the image or upload one from your desktop. The image will be resized.', 'minamaze' ),
+				'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+			)
+		)
+	);
+
+
+	//----------------------------------------------------
+	// 2.7. Blog
+	//----------------------------------------------------
+
+	// Add Blog Heading
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_blog_heading]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_text_field',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_blog_heading',
+			array(
+				'label'           => esc_html__( 'Control Blog (Archive) Pages', 'minamaze' ),
+				'section'         => $prefix_name . 'thinkup_customizer_section_blog',
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_blog_heading]',
+				'active_callback' => '',
+			)
+		)
+	);
+
+	// Add Blog Layout Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_blog_layout]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_radio_image(
+			$wp_customize,
+			'thinkup_blog_layout',
+			array(
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_blog_layout]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_blog',
+				'label'			  => esc_html__( 'Blog Layout', 'minamaze' ),
+				'description'	  => esc_html__( 'Select blog page layout. Only applied to the main blog page and not individual posts.', 'minamaze' ),
+				'choices'		  => array(
+					'option1' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option01.png',
+					'option2' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option02.png',
+					'option3' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option03.png',
 				),
-			),
+				'active_callback' => '',
+			)
+		)
+	);
 
+	// Add Blog Select a Sidebar Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_blog_sidebars]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_select_sidebar',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_blog_sidebars',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_blog_sidebars]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_blog',
+			'type'			  => 'select',
+			'label'			  => esc_html__( 'Select a Sidebar', 'minamaze' ),
+			'description'	  => esc_html__( 'Note: Sidebars will not be applied to homepage Blog. Control sidebars on the homepage from the &#39;Home Settings&#39; option.', 'minamaze' ),
+			'choices'		  => thinkup_customizer_select_array_sidebar(),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
+
+	// Add Post Content Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_blog_postswitch]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_blog_postswitch',
+		array(
+			'settings'		=> $prefix_name . 'thinkup_redux_variables[thinkup_blog_postswitch]',
+			'section'		=> $prefix_name . 'thinkup_customizer_section_blog',
+			'type'			=> 'radio',
+			'label'			=> esc_html__( 'Post Content', 'minamaze' ),
+			'description'	=> wp_kses_post( __( 'Control how much content you want to show from each post on the main blog page. Remember to control the full article content by using the WordPress <a href="http://en.support.wordpress.com/splitting-content/more-tag/">more</a> tag in your post.', 'minamaze' ) ),
+			'choices'		=> array(
+				'option1' => esc_html__( 'Show excerpt', 'minamaze' ),
+				'option2' => esc_html__( 'Show full article', 'minamaze' ),
+				'option3' => esc_html__( 'Hide article', 'minamaze' ),
+			)
+		)
+	);
+
+	// Add Control Single Post Page Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_section_post_layout]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_section(
+			$wp_customize,
+			'thinkup_section_post_layout',
 			array(
-				'title'                      => __('Select a Sidebar', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('Choose a sidebar to use with the layout.', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('Choose a sidebar to use with the layout.', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_post_sidebars',
-				'type'                       => 'select',
-				'data'                       => 'sidebars',
-				'required'                   => array( 
-					array( 'thinkup_post_layout', '=', 
-						array( 'option2', 'option3' ),
-					), 
-				)
-			),
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_section_post_layout]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_blog',
+				'label'           => esc_html__( 'Control Single Post Page', 'minamaze' ),
+				'active_callback' => '',
+			)
 		)
-	) );
+	);
 
-
-	// -----------------------------------------------------------------------------------
-	//	15.	Support
-	// -----------------------------------------------------------------------------------
-
-    Redux::setSection( $opt_name, array(
-		'title'      => __('Support', 'lan-thinkupthemes'),
-		'desc'       => __('For premium support direct from the theme developers, or advice on customizations please <a href="https://www.thinkupthemes.com/themes/minamaze/" target="_blank">upgrade</a> to Minamaze Pro or purchase a <a href="http://www.thinkupthemes.com/pricing/" target="_blank">Theme Subscription</a>.', 'lan-thinkupthemes'),
-		'icon'       => 'el el-user',
-		'icon_class' => '',
-        'id'         => 'thinkup_section_support',
-        'subsection' => $thinkup_customizer_subsection,
-        'customizer' => true,
-		'fields'     => array(
-
+	// Add Post Layout Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_post_layout]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'sanitize_key',
 		)
-	) );
-
-
-	// -----------------------------------------------------------------------------------
-	//	15.	Documentation
-	// -----------------------------------------------------------------------------------
-
-	Redux::setSection( $opt_name, array(
-		'title'            => __( 'Documentation', 'lan-thinkupthemes' ),
-		'id'               => 'thinkup_theme_documentation',
-		'desc'             => __( 'Click the button below to view the theme documentation.', 'lan-thinkupthemes' ),
-		'customizer_width' => '400px',
-		'icon'             => 'el el-home',
-		'customizer'       => true,
-		'fields'           => array(
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_radio_image(
+			$wp_customize,
+			'thinkup_post_layout',
 			array(
-				$thinkup_subtitle_panel      => __('', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_theme_documentation_button',
-				'type'                       => 'raw',
-				'content'                    => '<a href="' . admin_url( 'themes.php?page=thinkup-welcome&tab=documentation' ) . '" target="_blank" class="button button-secondary" style="text-align: center;width: 100%;height: 45px;line-height: 45px;padding: 0;margin: -5px auto 19px;">' . __( 'View Theme Docs', 'lan-thinkupthemes' ) . '</a>',
-				'default'                    => '' 
-			),
+				'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_post_layout]',
+				'section'		  => $prefix_name . 'thinkup_customizer_section_blog',
+				'label'			  => esc_html__( 'Post Layout', 'minamaze' ),
+				'description'	  => esc_html__( 'Select blog page layout. This will only be applied to individual posts and not the main blog page.', 'minamaze' ),
+				'choices'		  => array(
+					'option1' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option01.png',
+					'option2' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option02.png',
+					'option3' => trailingslashit( esc_url( get_template_directory_uri() ) ) . 'admin/main/assets/img/layout/blog/option03.png',
+				),
+				'active_callback' => '',
+			)
 		)
-	) );
+	);
+
+	// Add Post Select a Sidebar Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_post_sidebars]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => $prefix_name . 'thinkup_customizer_callback_sanitize_select_sidebar',
+		)
+	);
+	$wp_customize->add_control(
+		'thinkup_post_sidebars',
+		array(
+			'settings'		  => $prefix_name . 'thinkup_redux_variables[thinkup_post_sidebars]',
+			'section'		  => $prefix_name . 'thinkup_customizer_section_blog',
+			'type'			  => 'select',
+			'label'			  => esc_html__( 'Select a Sidebar', 'minamaze' ),
+			'description'	  => esc_html__( 'Choose a sidebar to use with the layout.', 'minamaze' ),
+			'choices'		  => thinkup_customizer_select_array_sidebar(),
+			'active_callback' => $prefix_name . 'thinkup_customizer_callback_active_global',
+		)
+	);
 
 
-	// -----------------------------------------------------------------------------------
-	//	16.	Upgrade Now
-	// -----------------------------------------------------------------------------------
+	//----------------------------------------------------
+	// 2.8. Upgrade Section (10% off)
+	//----------------------------------------------------
 
-    Redux::setSection( $opt_name, array(
-		'title'      => __('Upgrade (10% off)', 'lan-thinkupthemes'),
-		'desc'       => __('', 'lan-thinkupthemes'),
-		'icon'       => 'el el-arrow-up',
-		'icon_class' => '',
-        'id'         => 'thinkup_section_upgrade',
-        'subsection' => false,
-        'customizer' => true,
-		'fields'     => array(
-
-			// Ensures ThinkUpThemes upgrade code is output
+	// Add Upgrade Control
+	$wp_customize->add_setting(
+		$prefix_name . 'thinkup_redux_variables[thinkup_upgrade_content]',
+		array(
+			'type'                 => 'option',
+			'capability'           => 'edit_theme_options',
+			'theme_supports'       => '',
+			'default'              => '',
+			'transport'            => 'refresh',
+			'sanitize_callback'    => 'wp_filter_post_kses',
+		)
+	);
+	$wp_customize->add_control(
+		new thinkup_customizer_customcontrol_upgrade_inner(
+			$wp_customize,
+			'thinkup_upgrade_content',
 			array(
-				'title'                      => __('', 'lan-thinkupthemes'), 
-				$thinkup_subtitle_panel      => __('', 'lan-thinkupthemes'),
-				$thinkup_subtitle_customizer => __('', 'lan-thinkupthemes'),
-				'id'                         => 'thinkup_upgrade_content',
-				'type'                       => 'thinkup_upgrade',
-				'upgrade_url'                => 'https://www.thinkupthemes.com/themes/minamaze/',
-			),
+				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_upgrade_content]',
+				'section'         => $prefix_name . 'thinkup_customizer_section_upgrade_inner',
+				'upgrade_url'     => 'https://www.thinkupthemes.com/themes/minamaze/',
+				'price_discount'  => esc_html__( 'Upgrade for $31 (10% off)', 'minamaze' ),
+				'price_normal'	  => esc_html__( 'Normally $35. Use coupon at checkout.', 'minamaze' ),
+				'coupon'	      => esc_html__( 'minamaze31', 'minamaze' ),
+				'button'	      => esc_html__( 'Upgrade Now', 'minamaze' ),
+				'title_main'	  => esc_html__( 'So&hellip; Why upgrade?', 'minamaze' ),
+				'title_secondary' => esc_html__( 'We&#39;re glad you asked! Here&#39;s just some of the amazing features you&#39;ll get when you upgrade&hellip;', 'minamaze' ),
+				'images'		  => array(
+					'%s/admin/main/inc/controls/upgrade_inner/img/1_trusted_team.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/2_page_builder.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/3_premium_support.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/4_theme_options.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/5_shortcodes.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/6_unlimited_colors.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/7_parallax_pages.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/8_typography.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/9_backgrounds.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/10_responsive.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/11_retina_ready.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/12_site_layout.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/13_translation_ready.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/14_rtl_support.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/15_infinite_sidebars.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/16_portfolios.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/17_seo_optimized.png',
+					'%s/admin/main/inc/controls/upgrade_inner/img/18_demo_content.png',
+				),
+				'active_callback' => '',
+			)
 		)
-	) );
-
-    Redux::setSection( $opt_name, array(
-		'type' => 'divide',
-	) );
-
-
-    /*
-     * <--- END SECTIONS
-     */
-
-    /**
-     * This is a test function that will let you see when the compiler hook occurs.
-     * It only runs if a field    set with compiler=> true is changed.
-     * */
-    if ( ! function_exists( 'compiler_action' ) ) {
-        function compiler_action( $options, $css, $changed_values ) {
-            echo '<h1>The compiler hook has run!</h1>';
-            echo "<pre>";
-            print_r( $changed_values ); // Values that have changed since the last save
-            echo "</pre>";
-            //print_r($options); //Option values
-            //print_r($css); // Compiler selector CSS values  compiler => array( CSS SELECTORS )
-        }
-    }
-
-    /**
-     * Custom function for the callback validation referenced above
-     * */
-    if ( ! function_exists( 'redux_validate_callback_function' ) ) {
-        function redux_validate_callback_function( $field, $value, $existing_value ) {
-            $error   = false;
-            $warning = false;
-
-            //do your validation
-            if ( $value == 1 ) {
-                $error = true;
-                $value = $existing_value;
-            } elseif ( $value == 2 ) {
-                $warning = true;
-                $value   = $existing_value;
-            }
-
-            $return['value'] = $value;
-
-            if ( $error == true ) {
-                $return['error'] = $field;
-                $field['msg']    = 'your custom error message';
-            }
-
-            if ( $warning == true ) {
-                $return['warning'] = $field;
-                $field['msg']      = 'your custom warning message';
-            }
-
-            return $return;
-        }
-    }
-
-    /**
-     * Filter hook for filtering the args. Good for child themes to override or add to the args array. Can also be used in other functions.
-     * */
-    if ( ! function_exists( 'change_arguments' ) ) {
-        function change_arguments( $args ) {
-            //$args['dev_mode'] = true;
-
-            return $args;
-        }
-    }
-
-    /**
-     * Filter hook for filtering the default value of any given field. Very useful in development mode.
-     * */
-    if ( ! function_exists( 'change_defaults' ) ) {
-        function change_defaults( $defaults ) {
-            $defaults['str_replace'] = 'Testing filter hook!';
-
-            return $defaults;
-        }
-    }
-
-    /**
-     * Removes the demo link and the notice of integrated demo from the redux-framework plugin
-     */
-    if ( ! function_exists( 'remove_demo' ) ) {
-        function remove_demo() {
-            // Used to hide the demo mode link from the plugin page. Only used when Redux is a plugin.
-            if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
-                remove_filter( 'plugin_row_meta', array(
-                    ReduxFrameworkPlugin::instance(),
-                    'plugin_metalinks'
-                ), null, 2 );
-
-                // Used to hide the activation notice informing users of the demo panel. Only used when Redux is a plugin.
-                remove_action( 'admin_notices', array( ReduxFrameworkPlugin::instance(), 'admin_notices' ) );
-            }
-        }
-    }
-
+	);
+}
+add_action( 'customize_register', 'thinkup_customizer_theme_options' );

@@ -21,19 +21,6 @@ function thinkup_bodystyle() {
 }
 
 
-/* ----------------------------------------------------------------------------------
-	CORRECT Z-INDEX OF OEMBED OBJECTS
----------------------------------------------------------------------------------- */
-function thinkup_fix_oembed( $embed ) {
-	if ( strpos( $embed, '<param' ) !== false ) {
-   		$embed = str_replace( '<embed', '<embed wmode="transparent" ', $embed );
-   		$embed = preg_replace( '/param>/', 'param><param name="wmode" value="transparent" />', $embed, 1);
-	}
-	return $embed;
-}
-add_filter( 'embed_oembed_html', 'thinkup_fix_oembed', 1 );
-
-
 //----------------------------------------------------------------------------------
 //	ADD PAGE TITLE
 //----------------------------------------------------------------------------------
@@ -44,33 +31,33 @@ function thinkup_title_select() {
 	if ( is_page() ) {
 		printf( '%s', esc_html( get_the_title() ) );
 	} elseif ( is_attachment() ) {
-		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
+		printf( esc_html__( 'Blog Post Image: %s', 'minamaze' ), esc_html( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
 		printf( '%s', html_entity_decode( esc_html( get_the_title() ) ) );
 	} else if ( is_search() ) {
-		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
+		printf( esc_html__( 'Search Results: %s', 'minamaze' ), get_search_query() );
 	} else if ( is_404() ) {
-		printf( __( 'Page Not Found', 'lan-thinkupthemes' ) );
+		printf( esc_html__( 'Page Not Found', 'minamaze' ) );
 	} else if ( is_category() ) {
-		printf( __( 'Category Archives: %s', 'lan-thinkupthemes' ), single_cat_title( '', false ) );
+		printf( esc_html__( 'Category Archives: %s', 'minamaze' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		printf( __( 'Tag Archives: %s', 'lan-thinkupthemes' ), single_tag_title( '', false ) );
+		printf( esc_html__( 'Tag Archives: %s', 'minamaze' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
 		the_post();
-		printf( __( 'Author Archives: %s', 'lan-thinkupthemes' ), get_the_author() );
+		printf( esc_html__( 'Author Archives: %s', 'minamaze' ), get_the_author() );
 		rewind_posts();
 	} elseif ( is_day() ) {
-		printf( __( 'Daily Archives: %s', 'lan-thinkupthemes' ), get_the_date() );
+		printf( esc_html__( 'Daily Archives: %s', 'minamaze' ), get_the_date() );
 	} elseif ( is_month() ) {
-		printf( __( 'Monthly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'F Y' ) );
+		printf( esc_html__( 'Monthly Archives: %s', 'minamaze' ), get_the_date( 'F Y' ) );
 	} elseif ( is_year() ) {
-		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
+		printf( esc_html__( 'Yearly Archives: %s', 'minamaze' ), get_the_date( 'Y' ) );
 	} elseif ( is_archive() ) {
 		printf( get_the_archive_title() );
 	} elseif ( is_tax() ) {
-		printf( get_queried_object()->name );
+		printf( esc_html( get_queried_object()->name ) );
 	} elseif ( thinkup_check_isblog() ) {
-		printf( __( 'Blog', 'lan-thinkupthemes' ) );
+		printf( esc_html__( 'Blog', 'minamaze' ) );
 	} else {
 		printf( '%s', html_entity_decode( esc_html( get_the_title() ) ) );
 	}
@@ -91,7 +78,9 @@ add_filter( 'get_the_archive_title', 'thinkup_title_select_cpt' );
 ---------------------------------------------------------------------------------- */
 
 function thinkup_input_breadcrumb() {
-global $thinkup_general_breadcrumbdelimeter;
+
+// Get theme options values.
+$thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumbdelimeter' );
 
 	if ( empty( $thinkup_general_breadcrumbdelimeter ) ) {
 		$delimiter = '<span class="delimiter">/</span>';
@@ -101,7 +90,7 @@ global $thinkup_general_breadcrumbdelimeter;
 	}
 
 	$delimiter_inner   =   '<span class="delimiter_core"> &bull; </span>';
-	$main              =   __( 'Home', 'lan-thinkupthemes' );
+	$main              =   __( 'Home', 'minamaze' );
 	$maxLength         =   30;
 
 	/* Archive variables */
@@ -152,18 +141,18 @@ global $thinkup_general_breadcrumbdelimeter;
 				}
 			}
 		} elseif (is_category()) {
-			_e( 'Archive Category: ', 'lan-thinkupthemes' ) . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
+			_e( 'Archive Category: ', 'minamaze' ) . get_category_parents($cat, true,' ' . $delimiter . ' ') ;
 		} elseif ( is_tag() ) {
-			_e( 'Posts Tagged: ', 'lan-thinkupthemes' ) . single_tag_title("", false) . '"';
+			_e( 'Posts Tagged: ', 'minamaze' ) . single_tag_title("", false) . '"';
 		} elseif ( is_day()) {
-			echo '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . ' ';
-			echo '<a href="' . esc_url( $url_month ) . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
+			echo '<a href="' . esc_url( $url_year ) . '">' . esc_html( $arc_year ) . '</a> ' . $delimiter . ' ';
+			echo '<a href="' . esc_url( $url_month ) . '">' . esc_html( $arc_month ) . '</a> ' . $delimiter . esc_html( $arc_day ) . ' (' . esc_html( $arc_day_full ) . ')';
 		} elseif ( is_month() ) {
-			echo '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
+			echo '<a href="' . esc_url( $url_year ) . '">' . esc_html( $arc_year ) . '</a> ' . $delimiter . esc_html( $arc_month );
 		} elseif ( is_year() ) {
-			echo $arc_year;
+			echo esc_html( $arc_year );
 		} elseif ( is_search() ) {
-			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . esc_html( get_search_query() ) . '"';
+			esc_html_e( 'Search Results for: ', 'minamaze' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			echo esc_html( get_the_title() );
 		} elseif ( is_page() && $post->post_parent ) {
@@ -178,62 +167,21 @@ global $thinkup_general_breadcrumbdelimeter;
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . esc_html( $user_info->display_name );
+			esc_html_e( 'Archived Article(s) by Author: ', 'minamaze' ) . esc_html( $user_info->display_name );
 		} elseif ( is_404() ) {
-			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
+			esc_html_e( 'Error 404 - Not Found.', 'minamaze' );
 		} elseif ( is_archive() ) {
 			echo get_the_archive_title();
 		} elseif( is_tax() ) {
 			echo esc_html( get_queried_object()->name );
 		} elseif ( thinkup_check_isblog() ) {
-			_e( 'Blog', 'lan-thinkupthemes' );
+			esc_html_e( 'Blog', 'minamaze' );
 		} else {
 			echo html_entity_decode( esc_html( get_the_title() ) );
 		}
 
 		echo '</div></div>';
     }
-}
-
-/* ----------------------------------------------------------------------------------
-	ADD PAGINATION FUNCTIONALITY
----------------------------------------------------------------------------------- */
-function thinkup_input_pagination( $pages = "", $range = 2 ) {
-global $paged;
-global $wp_query;
-		
-	$showitems = ($range * 2)+1;  
-
-	if(empty($paged)) $paged = 1;
-
-	if($pages == "") {
-		$pages = $wp_query->max_num_pages;
-		if(!$pages) {
-			$pages = 1;
-		}
-	}
-
-	if(1 != $pages) {
-		echo '<ul class="pag">';
-		
-			if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
-				echo '<li class="pag-first"><a href="' . esc_url( get_pagenum_link(1) ) . '">&laquo;</a></li>';
-			if($paged > 1 && $showitems < $pages) 
-				echo '<li class="pag-previous"><a href="' . esc_url( get_pagenum_link($paged - 1) ) . '">&lsaquo; ' . __( 'Prev', 'lan-thinkupthemes' ) . '</a></li>';
-
-			for ($i=1; $i <= $pages; $i++) {
-				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
-					echo ($paged == $i)? '<li class="current"><span>' . $i . '</span></li>':'<li><a href="' . esc_url( get_pagenum_link($i) ) . '">'. $i . '</a></li>';
-				}
-			}
-
-			if ($paged < $pages && $showitems < $pages) 
-				echo '<li class="pag-next"><a href="' . esc_url( get_pagenum_link($paged + 1) ) . '">' . __( 'Next', 'lan-thinkupthemes' ) . ' &rsaquo;</i></a></li>';
-			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
-				echo '<li class="pag-last" ><a href="' . esc_url( get_pagenum_link($pages) ) . '">&raquo;</a></li>';
-
-		echo '</ul>';
-     }
 }
 
 
@@ -285,141 +233,31 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 	function thinkup_input_showimagesizes($sizes) {
 
 		/* 1 Column Layout */
-		$sizes['column1-1/3'] = __( 'Full - 1:3', 'lan-thinkupthemes' );
-		$sizes['column1-2/3'] = __( 'Full - 2:3', 'lan-thinkupthemes' );
-		$sizes['column1-1/4'] = __( 'Full - 1:4', 'lan-thinkupthemes' );
-		$sizes['column1-2/5'] = __( 'Full - 2:5', 'lan-thinkupthemes' );
+		$sizes['column1-1/3'] = __( 'Full - 1:3', 'minamaze' );
+		$sizes['column1-2/3'] = __( 'Full - 2:3', 'minamaze' );
+		$sizes['column1-1/4'] = __( 'Full - 1:4', 'minamaze' );
+		$sizes['column1-2/5'] = __( 'Full - 2:5', 'minamaze' );
 
 		/* 2 Column Layout */
-		$sizes['column2-1/1'] = __( 'Half - 1:1', 'lan-thinkupthemes' );
-		$sizes['column2-1/2'] = __( 'Half - 1:2', 'lan-thinkupthemes' );
-		$sizes['column2-2/3'] = __( 'Half - 2:3', 'lan-thinkupthemes' );
-		$sizes['column2-3/5'] = __( 'Half - 3:5', 'lan-thinkupthemes' );
+		$sizes['column2-1/1'] = __( 'Half - 1:1', 'minamaze' );
+		$sizes['column2-1/2'] = __( 'Half - 1:2', 'minamaze' );
+		$sizes['column2-2/3'] = __( 'Half - 2:3', 'minamaze' );
+		$sizes['column2-3/5'] = __( 'Half - 3:5', 'minamaze' );
 
 		/* 3 Column Layout */
-		$sizes['column3-1/1'] = __( 'Third - 1:1', 'lan-thinkupthemes' );
-		$sizes['column3-1/2'] = __( 'Third - 1:2', 'lan-thinkupthemes' );
-		$sizes['column3-1/3'] = __( 'Third - 1:3', 'lan-thinkupthemes' );
-		$sizes['column3-2/3'] = __( 'Third - 2:3', 'lan-thinkupthemes' );
+		$sizes['column3-1/1'] = __( 'Third - 1:1', 'minamaze' );
+		$sizes['column3-1/2'] = __( 'Third - 1:2', 'minamaze' );
+		$sizes['column3-1/3'] = __( 'Third - 1:3', 'minamaze' );
+		$sizes['column3-2/3'] = __( 'Third - 2:3', 'minamaze' );
 
 		/* 4 Column Layout */
-		$sizes['column4-1/1'] = __( 'Quarter - 1:1', 'lan-thinkupthemes' );
-		$sizes['column4-1/2'] = __( 'Quarter - 1:2', 'lan-thinkupthemes' );
-		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'lan-thinkupthemes' );
+		$sizes['column4-1/1'] = __( 'Quarter - 1:1', 'minamaze' );
+		$sizes['column4-1/2'] = __( 'Quarter - 1:2', 'minamaze' );
+		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'minamaze' );
 
 		return $sizes;
 	}
 	add_filter('image_size_names_choose', 'thinkup_input_showimagesizes');
-}
-
-/* ----------------------------------------------------------------------------------
-	ADD HOME: HOME TO CUSTOM MENU PAGE LIST
----------------------------------------------------------------------------------- */
-
-function thinkup_menu_homelink( $args ) {
-	$args['show_home'] = true;
-	return $args;
-}
-add_filter( 'wp_page_menu_args', 'thinkup_menu_homelink' );
-
-
-//----------------------------------------------------------------------------------
-//	ADD FUNCTION TO GET CURRENT PAGE URL
-//----------------------------------------------------------------------------------
-
-function thinkup_check_ishome() {
-	$pageURL = 'http';
-	if( isset($_SERVER["HTTPS"]) ) {
-		if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
-	}
-	$pageURL .= '://' . wp_unslash( $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"] );
-
-	$pageURL = rtrim($pageURL, '/') . '/';
-	$pageURL = str_replace( "www.", "", $pageURL );
-	$siteURL = str_replace( "www.", "", site_url( '/' ) );
-
-	if ( $pageURL == $siteURL ) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
-
-//----------------------------------------------------------------------------------
-//	ADD CUSTOM COMMENTS POP UP LINK FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
-//----------------------------------------------------------------------------------
-
-// Modifies WordPress's built-in comments_popup_link() function to return a string instead of echo comment results
-function thinkup_input_commentspopuplink( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
-    global $wpcommentspopupfile, $wpcommentsjavascript;
- 
-    $id = get_the_ID();
- 
-    if ( false === $zero ) $zero = __( 'No Comments','lan-thinkupthemes' );
-    if ( false === $one ) $one = __( '1 Comment','lan-thinkupthemes' );
-    if ( false === $more ) $more = __( '% Comments','lan-thinkupthemes' );
-    if ( false === $none ) $none = __( 'Comments Off','lan-thinkupthemes' );
- 
-    $number = get_comments_number( $id );
- 
-    $str = '';
- 
-    if ( 0 == $number && !comments_open() && !pings_open() ) {
-        $str = '<span' . ((!empty($css_class)) ? ' class="' . esc_attr( $css_class ) . '"' : '') . '>' . $none . '</span>';
-        return $str;
-    }
- 
-    if ( post_password_required() ) {
-        $str = __( 'Enter your password to view comments.', 'lan-thinkupthemes' );
-        return $str;
-    }
- 
-    $str = '<a href="';
-    if ( $wpcommentsjavascript ) {
-        if ( empty( $wpcommentspopupfile ) )
-            $home = home_url();
-        else
-            $home = get_option('siteurl');
-        $str .= $home . '/' . $wpcommentspopupfile . '?comments_popup=' . $id;
-        $str .= '" onclick="wpopen(this.href); return false"';
-    } else { // if comments_popup_script() is not in the template, display simple comment link
-        if ( 0 == $number )
-            $str .= get_permalink() . '#respond';
-        else
-            $str .= get_comments_link();
-        $str .= '"';
-    }
- 
-    if ( !empty( $css_class ) ) {
-        $str .= ' class="'.$css_class.'" ';
-    }
-    $title = the_title_attribute( array('echo' => 0 ) );
- 
-    $str .= apply_filters( 'comments_popup_link_attributes', '' );
- 
-    $str .= ' title="' . esc_attr( sprintf( __('Comment on %s','lan-thinkupthemes'), $title ) ) . '">';
-    $str .= thinkup_comments_returnstring( $zero, $one, $more );
-    $str .= '</a>';
-     
-    return $str;
-}
- 
-// Modifies WordPress's built-in comments_number() function to return string instead of echo
-function thinkup_comments_returnstring( $zero = false, $one = false, $more = false, $deprecated = '' ) {
-    if ( !empty( $deprecated ) )
-        _deprecated_argument( __FUNCTION__, '1.3' );
- 
-    $number = get_comments_number();
- 
-    if ( $number > 1 )
-        $output = str_replace('%', number_format_i18n($number), ( false === $more ) ? __( '% Comments', 'lan-thinkupthemes' ) : $more);
-    elseif ( $number == 0 )
-        $output = ( false === $zero ) ? __( 'No Comments', 'lan-thinkupthemes' ) : $zero;
-    else // must be one
-        $output = ( false === $one ) ? __( '1 Comment', 'lan-thinkupthemes' ) : $one;
- 
-    return apply_filters('comments_number', $output, $number);
 }
 
 
@@ -465,60 +303,6 @@ function thinkup_check_isblog() {
 
 
 //----------------------------------------------------------------------------------
-//	ADD FEATURED IMAGE THUMBNAIL.
-//----------------------------------------------------------------------------------
-
-// Add featured images to posts
-add_filter('manage_pages_columns', 'thinkup_posts_columns', 5);
-add_filter('manage_posts_columns', 'thinkup_posts_columns', 5);
-add_action('manage_posts_custom_column', 'thinkup_posts_custom_columns', 5, 2);
-add_action('manage_pages_custom_column', 'thinkup_posts_custom_columns', 5, 2);
-function thinkup_posts_columns($defaults){
-    $defaults['riv_post_thumbs'] = __( 'Thumbs', 'lan-thinkupthemes' );
-    return $defaults;
-}
-function thinkup_posts_custom_columns($column_name, $id){
-        if($column_name === 'riv_post_thumbs'){
-        echo the_post_thumbnail( 'thumbnail' );
-    }
-}
-
-
-//----------------------------------------------------------------------------------
-//	GET EXCERPT BY ID.
-//----------------------------------------------------------------------------------
-
-function thinkup_input_excerptbyid($post_id){
-
-	$the_post = get_post($post_id); //Gets post ID
-	$the_excerpt = $the_post->post_excerpt; //Gets post_content to be used as a basis for the excerpt
-	$excerpt_length = 35; //Sets excerpt length by word count
-	$the_excerpt = strip_tags(strip_shortcodes($the_excerpt)); //Strips tags and images
-	$words = explode(' ', $the_excerpt, $excerpt_length + 1);
-
-	if(count($words) > $excerpt_length) {
-		array_pop($words);
-		array_push($words, '…');
-		$the_excerpt = implode(' ', $words);
-	}
-
-	$the_excerpt = '<p>' . $the_excerpt . '</p>';
-	return $the_excerpt;
-}
-
-
-//----------------------------------------------------------------------------------
-//	CUSTOM READ MORE FOR the_content() AND the_excerpt().
-//----------------------------------------------------------------------------------
-
-function thinkup_modify_read_more_link() {
-	return '<p><a href="'. esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link themebutton">' . __( 'Read More', 'lan-thinkupthemes') . '</a></p>';
-}
-add_filter( 'excerpt_more', 'thinkup_modify_read_more_link' );
-add_filter( 'the_content_more_link', 'thinkup_modify_read_more_link' );
-
-
-//----------------------------------------------------------------------------------
 //	ADD GOOGLE FONT - OPEN SANS.
 //----------------------------------------------------------------------------------
 
@@ -526,7 +310,7 @@ function thinkup_googlefonts_url() {
     $fonts_url = '';
 
     // Translators: Translate this to 'off' if there are characters in your language that are not supported by Open Sans
-    $font_translate = _x( 'on', 'Open Sans font: on or off', 'lan-thinkupthemes' );
+    $font_translate = _x( 'on', 'Open Sans font: on or off', 'minamaze' );
  
     if ( 'off' !== $font_translate ) {
         $font_families = array();
@@ -558,7 +342,7 @@ add_action( 'wp_enqueue_scripts', 'thinkup_googlefonts_scripts' );
 
 function thinkup_photon_exception( $val, $src, $tag ) {
         if ( $src == get_template_directory_uri() . '/images/transparent.png' ) {
-                return true;
+			return true;
         }
         return $val;
 }

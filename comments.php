@@ -17,14 +17,14 @@
 	<?php if ( have_comments() ) : ?>
 		<h3 id="comments-title">
 			<?php
-				printf( _n( '1 comment %2$s', '%1$s comments %2$s', get_comments_number(), 'lan-thinkupthemes' ),
+				printf( _n( '%1$s comment %2$s', '%1$s comments %2$s', get_comments_number(), 'minamaze' ),
 					number_format_i18n( get_comments_number() ), '<span class="post-title">on &ldquo;' . get_the_title() . '&rdquo;</span>' );
 			?>
 		</h3>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav role="navigation" id="comment-nav-above" class="comment-navigation">
-			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'lan-thinkupthemes' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'lan-thinkupthemes' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'minamaze' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'minamaze' ) ); ?></div>
 		</nav><!-- #comment-nav-before .comment-navigation -->
 		<?php endif;?>
 
@@ -34,8 +34,8 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav role="navigation" id="comment-nav-below" class="comment-navigation">
-			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'lan-thinkupthemes' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'lan-thinkupthemes' ) ); ?></div>
+			<div class="nav-previous"><?php previous_comments_link( __( 'Older Comments', 'minamaze' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'minamaze' ) ); ?></div>
 		</nav><!-- #comment-nav-below .comment-navigation -->
 		<?php endif; ?>
 
@@ -47,7 +47,7 @@
 	?>
 
 		<div id="nocomments" class="notification info">
-			<div class="icon"><?php _e( 'Comments are closed.', 'lan-thinkupthemes' ); ?></div>
+			<div class="icon"><?php _e( 'Comments are closed.', 'minamaze' ); ?></div>
 		</div>
 
 	<?php endif; ?>
@@ -57,28 +57,28 @@
 		$aria_req = ( $req ? " aria-required='true'" : '' );
 
 		$comments_args = array(
-			'label_submit' => __( 'Post Comment', 'lan-thinkupthemes' ),
-			'title_reply'  => __( 'Leave A Reply', 'lan-thinkupthemes'  ),
+			'label_submit' => __( 'Post Comment', 'minamaze' ),
+			'title_reply'  => __( 'Leave A Reply', 'minamaze'  ),
 			'comment_notes_after' => '',
 			'comment_field' =>  
 				'<p class="comment-form-comment">' .
-				'<label for="comment">' . __( 'Comment', 'lan-thinkupthemes' ) . '</label>' .
+				'<label for="comment">' . __( 'Comment', 'minamaze' ) . '</label>' .
 				'<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' .
 				'</textarea></p>',
 			'fields' => apply_filters( 'comment_form_default_fields', array (
 				'author' =>
 					'<p class="comment-form-author one_third">' .
-					'<label for="author">' . __( 'Name', 'lan-thinkupthemes' ) . ' <span class="required">*</span></label>' .
+					'<label for="author">' . __( 'Name', 'minamaze' ) . ' <span class="required">*</span></label>' .
 					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 					'" size="30"' . $aria_req . ' /></p>',
 				'email' =>
 					'<p class="comment-form-email one_third">' .
-					'<label for="email">' . __( 'Email', 'lan-thinkupthemes' ) . ' <span class="required">*</span></label>' .
+					'<label for="email">' . __( 'Email', 'minamaze' ) . ' <span class="required">*</span></label>' .
 					'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 					'" size="30"' . $aria_req . ' /></p>',
 				'url' =>
 					'<p class="comment-form-url one_third last">' .
-					'<label for="url">' . __( 'Website', 'lan-thinkupthemes' ) . '</label>' .
+					'<label for="url">' . __( 'Website', 'minamaze' ) . '</label>' .
 					'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 					'" size="30" /></p>'
 			) ),

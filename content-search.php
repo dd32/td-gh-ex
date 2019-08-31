@@ -9,7 +9,7 @@
 					<article id="post-<?php the_ID(); ?>" <?php post_class('blog-article'); ?>>
 
 						<div class="entry-content">
-							<?php think_input_blogtitle(); ?>
+							<?php thinkup_input_blogtitle(); ?>
 
 							<div class="entry-meta">
 								<?php thinkup_input_blogauthor(); ?>

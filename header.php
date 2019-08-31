@@ -14,22 +14,21 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <link rel="profile" href="//gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/lib/scripts/html5.js" type="text/javascript"></script>
-<![endif]-->
+<link rel="pingback" href="<?php esc_url( bloginfo( 'pingback_url' ) ); ?>" />
 
 <?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?><?php thinkup_bodystyle(); ?>>
 <div id="body-core" class="hfeed site">
 
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'minamaze' ); ?></a>
+	<!-- .skip-link -->
+
 	<header id="site-header">
 
 		<?php if ( get_header_image() ) : ?>
-			<div class="custom-header"><img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt=""></div>
+			<div class="custom-header"><img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt=""></div>
 		<?php endif; // End header image check. ?>
 
 		<div id="pre-header">
@@ -53,7 +52,7 @@
 		<div id="header-core">
 
 			<div id="logo">
-			<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php /* Custom Logo */ thinkup_custom_logo(); ?></a>
+			<?php /* Custom Logo */ echo thinkup_custom_logo(); ?>
 			</div>
 
 			<div id="header-links" class="main-navigation">
