@@ -1,13 +1,12 @@
 # Affiliate Marketingly
 
-**Contributors:** themeeverest  
-**Requires at least:** WordPress 4.0  
-**Tested up to:** WordPress 5.2
-**Stable tag:** 1.0  
-**Version:** 1.0
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
-**Tags:** two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, entertainment, news
+Contributors: Themeeverest
+Requires at least: 5.3
+Tested up to: 5.2
+Requires PHP: 7.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 
 It does not matter if you want to create classic news website, online editorial magazine, a personal modern lifestyle blog or an affiliate review website. Affiliate Marketingly offers limitless customization. The theme is a perfect combination of beautiful and professional. There is a ton of ad space, you can use the header widgets to place ads banners and adsense in case you need to earn money as an affiliate - No matter if it is image ads advertisment or video advertising, all ad networks work such as Google DFP Ads, adsense and more. Our theme is made for the search engines, so you can easily beat the other bloggers and newspapers in Google with our fast and SEO optimized theme. If you wish to start blogging about business or travel for example then our responsive and flexible design is perfect - It is elegant and you can make it dark, white, minimal, boxed, flat, clean or advanced and full of sidebar widgets if you wish. Being creative and setting up a theme has never been so simple.
 
