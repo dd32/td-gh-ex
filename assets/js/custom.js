@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 
-    $(".bestwp-nav-secondary .bestwp-secondary-nav-menu").addClass("bestwp-secondary-responsive-menu").before('<div class="bestwp-secondary-responsive-menu-icon"></div>');
+    if(bestwp_ajax_object.secondary_menu_active){
+
+    $(".bestwp-nav-secondary .bestwp-secondary-nav-menu").addClass("bestwp-secondary-responsive-menu");
 
     $(".bestwp-secondary-responsive-menu-icon").click(function(){
         $(this).next(".bestwp-nav-secondary .bestwp-secondary-nav-menu").slideToggle();
@@ -16,21 +18,19 @@ jQuery(document).ready(function($) {
     $(".bestwp-secondary-responsive-menu > li").click(function(event){
         if (event.target !== this)
         return;
-        $(this).find(".sub-menu:first").slideToggle(function() {
-            $(this).parent().toggleClass("bestwp-secondary-menu-open");
-        });
-        $(this).find(".children:first").slideToggle(function() {
-            $(this).parent().toggleClass("bestwp-secondary-menu-open");
-        });
+        $(this).find(".sub-menu:first").toggleClass('bestwp-submenu-toggle').parent().toggleClass("bestwp-secondary-menu-open");
+        $(this).find(".children:first").toggleClass('bestwp-submenu-toggle').parent().toggleClass("bestwp-secondary-menu-open");
     });
 
     $("div.bestwp-secondary-responsive-menu > ul > li").click(function(event) {
         if (event.target !== this)
             return;
-        $(this).find("ul:first").slideToggle(function() {
-            $(this).parent().toggleClass("bestwp-secondary-menu-open");
-        });
+        $(this).find("ul:first").toggleClass('bestwp-submenu-toggle').parent().toggleClass("bestwp-secondary-menu-open");
     });
+
+    }
+
+    if(bestwp_ajax_object.primary_menu_active){
 
     if(bestwp_ajax_object.sticky_menu){
     // grab the initial top offset of the navigation 
@@ -67,15 +67,15 @@ jQuery(document).ready(function($) {
     });
     }
 
-    $(".bestwp-nav-primary .bestwp-nav-primary-menu").addClass("bestwp-primary-responsive-menu").before('<div class="bestwp-primary-responsive-menu-icon"></div>');
+    $(".bestwp-nav-primary .bestwp-primary-nav-menu").addClass("bestwp-primary-responsive-menu");
 
     $(".bestwp-primary-responsive-menu-icon").click(function(){
-        $(this).next(".bestwp-nav-primary .bestwp-nav-primary-menu").slideToggle();
+        $(this).next(".bestwp-nav-primary .bestwp-primary-nav-menu").slideToggle();
     });
 
     $(window).resize(function(){
         if(window.innerWidth > 1112) {
-            $(".bestwp-nav-primary .bestwp-nav-primary-menu, nav .sub-menu, nav .children").removeAttr("style");
+            $(".bestwp-nav-primary .bestwp-primary-nav-menu, nav .sub-menu, nav .children").removeAttr("style");
             $(".bestwp-primary-responsive-menu > li").removeClass("bestwp-primary-menu-open");
         }
     });
@@ -83,21 +83,17 @@ jQuery(document).ready(function($) {
     $(".bestwp-primary-responsive-menu > li").click(function(event){
         if (event.target !== this)
         return;
-        $(this).find(".sub-menu:first").slideToggle(function() {
-            $(this).parent().toggleClass("bestwp-primary-menu-open");
-        });
-        $(this).find(".children:first").slideToggle(function() {
-            $(this).parent().toggleClass("bestwp-primary-menu-open");
-        });
+        $(this).find(".sub-menu:first").toggleClass('bestwp-submenu-toggle').parent().toggleClass("bestwp-primary-menu-open");
+        $(this).find(".children:first").toggleClass('bestwp-submenu-toggle').parent().toggleClass("bestwp-primary-menu-open");
     });
 
     $("div.bestwp-primary-responsive-menu > ul > li").click(function(event) {
         if (event.target !== this)
             return;
-        $(this).find("ul:first").slideToggle(function() {
-            $(this).parent().toggleClass("bestwp-primary-menu-open");
-        });
+        $(this).find("ul:first").toggleClass('bestwp-submenu-toggle').parent().toggleClass("bestwp-primary-menu-open");
     });
+
+    }
 
     $(".bestwp-social-icon-search").on('click', function (e) {
         e.preventDefault();
@@ -111,7 +107,6 @@ jQuery(document).ready(function($) {
 
     $(".post").fitVids();
 
-    $( 'body' ).prepend( '<div class="bestwp-scroll-top"></div>');
     var scrollButtonEl = $( '.bestwp-scroll-top' );
     scrollButtonEl.hide();
 

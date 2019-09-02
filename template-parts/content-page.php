@@ -5,7 +5,7 @@
 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -43,7 +43,24 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-        <?php edit_post_link( esc_html__( 'Edit', 'bestwp' ), '<span class="edit-link">', '</span>' ); ?>
+        <?php
+        edit_post_link(
+            sprintf(
+                wp_kses(
+                    /* translators: %s: Name of current post. Only visible to screen readers */
+                    __( 'Edit <span class="screen-reader-text">%s</span>', 'bestwp' ),
+                    array(
+                        'span' => array(
+                            'class' => array(),
+                        ),
+                    )
+                ),
+                get_the_title()
+            ),
+            '<span class="edit-link">',
+            '</span>'
+        );
+        ?>
     </footer><!-- .entry-footer -->
 
 </div>

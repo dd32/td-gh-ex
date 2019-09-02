@@ -3,7 +3,7 @@
 * Slider
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -52,15 +52,15 @@ function bestwp_slider() { ?>
                 $categories_list = get_the_category_list( ' ' );
                 if ( $categories_list ) {
                     /* translators: 1: list of categories. */
-                    printf( '<div class="bestwp-carousel-post-categories">' . __( '<span class="screen-reader-text">Posted in </span>%1$s', 'bestwp' ) . '</div>', $categories_list ); // WPCS: XSS OK.
+                    printf( '<div class="bestwp-carousel-post-categories">' . __( '<span class="screen-reader-text">Posted in </span>%1$s', 'bestwp' ) . '</div>', $categories_list ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
                 }
             }
             ?>
             <h4 class="bestwp-carousel-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php /* translators: %s: post title. */ echo esc_attr( sprintf( __( 'Permanent Link to %s', 'bestwp' ), the_title_attribute( 'echo=0' ) ) ); ?>"><?php the_title(); ?></a></h4>
             <div class="bestwp-carousel-post-footer">
-            <span class="bestwp-carousel-post-author bestwp-carousel-post-meta"><i class="fa fa-user-circle-o"></i>&nbsp;<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></span>
-            <span class="bestwp-carousel-post-date bestwp-carousel-post-meta"><i class="fa fa-clock-o"></i>&nbsp;<?php echo get_the_date('Y-m-d'); ?></span>
-            <span class="bestwp-carousel-post-comment bestwp-carousel-post-meta"><i class="fa fa-comments-o"></i>&nbsp;<?php comments_popup_link( esc_attr__( '0 Comments', 'bestwp' ), esc_attr__( '1 Comment', 'bestwp' ), esc_attr__( '% Comments', 'bestwp' ) ); ?></span>
+            <span class="bestwp-carousel-post-author bestwp-carousel-post-meta"><i class="fa fa-user-circle-o"></i>&nbsp;<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><span class="screen-reader-text"><?php esc_html_e('Author: ', 'bestwp'); ?></span><?php echo esc_html( get_the_author() ); ?></a></span>
+            <span class="bestwp-carousel-post-date bestwp-carousel-post-meta"><i class="fa fa-clock-o"></i>&nbsp;<span class="screen-reader-text"><?php esc_html_e('Published Date: ', 'bestwp'); ?></span><?php echo get_the_date('Y-m-d'); ?></span>
+            <?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) { ?><span class="bestwp-carousel-post-comment bestwp-carousel-post-meta"><i class="fa fa-comments-o"></i>&nbsp;<?php comments_popup_link( sprintf( wp_kses( /* translators: %s: post title */ __( '0 Comments<span class="screen-reader-text"> on %s</span>', 'bestwp' ), array( 'span' => array( 'class' => array(), ), ) ), get_the_title() ) ); ?></span><?php } ?>
             </div>
         </div>
     </div>

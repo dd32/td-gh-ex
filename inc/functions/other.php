@@ -3,7 +3,7 @@
 * More Custom Functions
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -84,3 +84,17 @@ function bestwp_post_style() {
         }
        return $post_style;
 }
+
+if ( ! function_exists( 'wp_body_open' ) ) :
+    /**
+     * Fire the wp_body_open action.
+     *
+     * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+     */
+    function wp_body_open() { // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedFunctionFound
+        /**
+         * Triggered after the opening <body> tag.
+         */
+        do_action( 'wp_body_open' ); // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+    }
+endif;

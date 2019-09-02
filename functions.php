@@ -5,7 +5,7 @@
 * @link https://developer.wordpress.org/themes/basics/theme-functions/
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -137,24 +137,24 @@ add_action( 'after_setup_theme', 'bestwp_setup' );
  * @global int $content_width
  */
 function bestwp_content_width() {
-    $content_width = 651;
+    $bestwp_content_width = 651;
 
     if ( is_page_template( array( 'template-full-width-page.php', 'template-full-width-post.php' ) ) ) {
-       $content_width = 1226;
+       $bestwp_content_width = 1226;
     }
 
     if ( is_404() ) {
-        $content_width = 1226;
+        $bestwp_content_width = 1226;
     }
 
-    $GLOBALS['content_width'] = apply_filters( 'bestwp_content_width', $content_width );
+    $GLOBALS['content_width'] = apply_filters( 'bestwp_content_width', $bestwp_content_width ); /* phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound */
 }
 add_action( 'template_redirect', 'bestwp_content_width', 0 );
 
 require_once get_template_directory() . '/inc/functions/enqueue-scripts.php';
 require_once get_template_directory() . '/inc/functions/widgets-init.php';
 require_once get_template_directory() . '/inc/functions/social-buttons.php';
-require_once get_template_directory() . '/inc/functions/author-bio-box.php';
+require_once get_template_directory() . '/inc/functions/post-author-bio-box.php';
 require_once get_template_directory() . '/inc/functions/postmeta.php';
 require_once get_template_directory() . '/inc/functions/posts-navigation.php';
 require_once get_template_directory() . '/inc/functions/menu.php';

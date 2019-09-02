@@ -5,7 +5,7 @@
 * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -59,6 +59,8 @@
 </div>
 </div>
 </div><!--/#bestwp-footer -->
+
+<button class="bestwp-scroll-top" title="<?php esc_attr_e('Scroll to Top','bestwp'); ?>"><span class="fa fa-arrow-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'bestwp'); ?></span></button>
 
 <?php wp_footer(); ?>
 </body>

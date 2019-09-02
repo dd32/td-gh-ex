@@ -1,16 +1,18 @@
 #, fuzzy
 msgid ""
 msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: BestWP\n"
-"POT-Creation-Date: 2019-03-01 04:21+0530\n"
-"PO-Revision-Date: 2019-03-01 04:21+0530\n"
+"POT-Creation-Date: 2019-09-02 15:17+0530\n"
+"PO-Revision-Date: 2019-09-02 15:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -74,15 +76,27 @@ msgstr ""
 msgid "Design by %s"
 msgstr ""
 
-#: functions.php:80
+#: footer.php:63
+msgid "Scroll to Top"
+msgstr ""
+
+#: functions.php:80 header.php:30
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:81
+#: functions.php:81 header.php:92
 msgid "Secondary Menu"
 msgstr ""
 
-#: header.php:38
+#: header.php:25
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:32 header.php:94
+msgid "Menu"
+msgstr ""
+
+#: header.php:42
 msgid "Close Search"
 msgstr ""
 
@@ -573,7 +587,9 @@ msgstr ""
 msgid "Upgrade To BestWP PRO"
 msgstr ""
 
-#: inc/functions/author-bio-box.php:21
+#: inc/functions/post-author-bio-box.php:21 inc/functions/postmeta.php:46
+#: inc/functions/postmeta.php:76 inc/functions/postmeta.php:105
+#: inc/functions/slider.php:61
 msgid "Author: "
 msgstr ""
 
@@ -601,19 +617,16 @@ msgstr ""
 msgid "<span class=\"screen-reader-text\">Posted in </span>%1$s"
 msgstr ""
 
+#: inc/functions/postmeta.php:47 inc/functions/postmeta.php:77
+#: inc/functions/postmeta.php:106 inc/functions/slider.php:62
+msgid "Published Date: "
+msgstr ""
+
+#. translators: %s: post title
 #: inc/functions/postmeta.php:49 inc/functions/postmeta.php:79
 #: inc/functions/postmeta.php:108
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/functions/postmeta.php:49 inc/functions/postmeta.php:79
-#: inc/functions/postmeta.php:108 inc/functions/slider.php:63
-msgid "1 Comment"
-msgstr ""
-
-#: inc/functions/postmeta.php:49 inc/functions/postmeta.php:79
-#: inc/functions/postmeta.php:108 inc/functions/slider.php:63
-msgid "% Comments"
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: used between list items, there is a space
@@ -621,8 +634,10 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/functions/postmeta.php:110 template-parts/content-page.php:46
-msgid "Edit"
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/functions/postmeta.php:110
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> %s</span>"
 msgstr ""
 
 #: inc/functions/posts-navigation.php:26
@@ -641,8 +656,10 @@ msgstr ""
 msgid "Permanent Link to %s"
 msgstr ""
 
+#. translators: %s: post title
 #: inc/functions/slider.php:63
-msgid "0 Comments"
+#, php-format
+msgid "0 Comments<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #: inc/functions/social-buttons.php:15
@@ -932,6 +949,12 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content-page.php:51
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
 #. Theme Name of the plugin/theme
 msgid "BestWP"
 msgstr ""
@@ -960,4 +983,8 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://themesdna.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width, no sidebar"
 msgstr ""

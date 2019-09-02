@@ -3,7 +3,7 @@
 * Upgrade to pro options
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license licennse URI, for example : http://www.gnu.org/licenses/gpl-2.0.html
 * @author ThemesDNA <themesdna@gmail.com>
 */

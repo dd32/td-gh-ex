@@ -3,28 +3,28 @@
 * BestWP Theme Customizer.
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
 
 if ( ! class_exists( 'WP_Customize_Control' ) ) {return NULL;}
 
-require_once get_template_directory() . '/inc/admin/classes/class-customize-static-text-control.php';
-require_once get_template_directory() . '/inc/admin/classes/class-customize-button-control.php';
-require_once get_template_directory() . '/inc/admin/classes/class-customize-category-control.php';
-require_once get_template_directory() . '/inc/admin/classes/class-customize-recommended-plugins.php';
+require_once get_template_directory() . '/inc/admin/classes/class-customize-static-text-control.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/classes/class-customize-button-control.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/classes/class-customize-category-control.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/classes/class-customize-recommended-plugins.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
 
-require_once get_template_directory() . '/inc/admin/options/getting-started.php';
-require_once get_template_directory() . '/inc/admin/options/header-options.php';
-require_once get_template_directory() . '/inc/admin/options/slider.php';
-require_once get_template_directory() . '/inc/admin/options/post-options.php';
-require_once get_template_directory() . '/inc/admin/options/social-profiles.php';
-require_once get_template_directory() . '/inc/admin/options/footer-options.php';
-require_once get_template_directory() . '/inc/admin/options/other-options.php';
-require_once get_template_directory() . '/inc/admin/options/recommended-plugins.php';
-require_once get_template_directory() . '/inc/admin/options/upgrade-to-pro.php';
-require_once get_template_directory() . '/inc/admin/options/sanitize-callbacks.php';
+require_once get_template_directory() . '/inc/admin/options/getting-started.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/header-options.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/slider.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/post-options.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/social-profiles.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/footer-options.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/other-options.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/recommended-plugins.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/upgrade-to-pro.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
+require_once get_template_directory() . '/inc/admin/options/sanitize-callbacks.php'; /* phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound */
 
 function bestwp_register_theme_customizer( $wp_customize ) {
 

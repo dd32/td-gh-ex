@@ -3,7 +3,7 @@ Contributors: themesdna
 Tags: three-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, news
 Requires at least: 4.7
 Tested up to: 5.0.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,10 +53,20 @@ This theme uses "WP-PageNavi" plugin to display numbered page navigation of this
 = 1.0.0 =
 * Initial Release
 
+= 1.0.1 =
+* Fixed coding issues.
+* Improved coding.
+* Improved accessibility.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
 * This is the initial release.
+
+= 1.0.1 =
+* Fixed coding issues.
+* Improved coding.
+* Improved accessibility.
 
 
 == Resources ==
@@ -165,7 +175,7 @@ https://themesdna.com/contact/
 
 /*
 BestWP PRO is a WordPress Theme,
-Copyright (C) 2018, ThemesDNA
+Copyright (C) 2019, ThemesDNA
 BestWP PRO is distributed under the terms of the GNU/GPLv2 or later
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.

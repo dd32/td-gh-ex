@@ -5,7 +5,7 @@
 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -32,7 +32,7 @@
 
     <?php if ( !(bestwp_get_option('hide_post_snippet')) ) { ?><div class="bestwp-fp04-post-snippet"><?php the_excerpt(); ?></div><?php } ?>
 
-    <?php if ( !(bestwp_get_option('hide_read_more_button')) ) { ?><div class='bestwp-fp04-post-read-more'><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( bestwp_read_more_text() ); ?></a></div><?php } ?>
+    <?php if ( !(bestwp_get_option('hide_read_more_button')) ) { ?><div class='bestwp-fp04-post-read-more'><a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html( bestwp_read_more_text() ); ?><span class="screen-reader-text"> <?php the_title(); ?></span></a></div><?php } ?>
 
     <?php if(!(has_post_thumbnail()) || (bestwp_get_option('hide_thumbnail'))) { ?></div><?php } ?>
     <?php if((has_post_thumbnail()) && !(bestwp_get_option('hide_thumbnail'))) { ?></div><?php } ?>

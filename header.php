@@ -5,7 +5,7 @@
 * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -21,29 +21,29 @@
 </head>
 
 <body <?php body_class('bestwp-animated bestwp-fadein'); ?> id="bestwp-site-body" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#bestwp-posts-wrapper"><?php esc_html_e( 'Skip to content', 'bestwp' ); ?></a>
 
 <?php if ( !(bestwp_get_option('disable_primary_menu')) ) { ?>
 <div class="bestwp-container bestwp-primary-menu-container clearfix">
 <div class="bestwp-primary-menu-container-inside clearfix">
-
-<nav class="bestwp-nav-primary" id="bestwp-primary-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+<nav class="bestwp-nav-primary" id="bestwp-primary-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'bestwp' ); ?>">
 <div class="bestwp-outer-wrapper">
-<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'bestwp-menu-primary-navigation', 'menu_class' => 'bestwp-nav-primary-menu bestwp-menu-primary', 'fallback_cb' => 'bestwp_fallback_menu', ) ); ?>
-
+<button class="bestwp-primary-responsive-menu-icon" aria-controls="bestwp-menu-primary-navigation" aria-expanded="false"><?php esc_html_e( 'Menu', 'bestwp' ); ?></button>
+<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'bestwp-menu-primary-navigation', 'menu_class' => 'bestwp-primary-nav-menu bestwp-menu-primary', 'fallback_cb' => 'bestwp_fallback_menu', 'container' => '', ) ); ?>
 <?php if ( !(bestwp_get_option('hide_header_social_buttons')) ) { bestwp_header_social_buttons(); } ?>
 </div>
 </nav>
+</div>
+</div>
+<?php } ?>
 
 <div id="bestwp-search-overlay-wrap" class="bestwp-search-overlay">
-  <span class="bestwp-search-closebtn" title="<?php esc_attr_e('Close Search','bestwp'); ?>">&#xD7;</span>
+  <button class="bestwp-search-closebtn" aria-label="<?php esc_attr_e( 'Close Search', 'bestwp' ); ?>" title="<?php esc_attr_e('Close Search','bestwp'); ?>">&#xD7;</button>
   <div class="bestwp-search-overlay-content">
     <?php get_search_form(); ?>
   </div>
 </div>
-
-</div>
-</div>
-<?php } ?>
 
 <div class="bestwp-container" id="bestwp-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
 <div class="bestwp-head-content clearfix" id="bestwp-head-content">
@@ -89,13 +89,12 @@
 <?php if ( !(bestwp_get_option('disable_secondary_menu')) ) { ?>
 <div class="bestwp-container bestwp-secondary-menu-container clearfix">
 <div class="bestwp-secondary-menu-container-inside clearfix">
-
-<nav class="bestwp-nav-secondary" id="bestwp-secondary-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+<nav class="bestwp-nav-secondary" id="bestwp-secondary-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation" aria-label="<?php esc_attr_e( 'Secondary Menu', 'bestwp' ); ?>">
 <div class="bestwp-outer-wrapper">
-<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'bestwp-menu-secondary-navigation', 'menu_class' => 'bestwp-secondary-nav-menu bestwp-menu-secondary', 'fallback_cb' => 'bestwp_top_fallback_menu', ) ); ?>
+<button class="bestwp-secondary-responsive-menu-icon" aria-controls="bestwp-menu-secondary-navigation" aria-expanded="false"><?php esc_html_e( 'Menu', 'bestwp' ); ?></button>
+<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'bestwp-menu-secondary-navigation', 'menu_class' => 'bestwp-secondary-nav-menu bestwp-menu-secondary', 'fallback_cb' => 'bestwp_top_fallback_menu', 'container' => '', ) ); ?>
 </div>
 </nav>
-
 </div>
 </div>
 <?php } ?>

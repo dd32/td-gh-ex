@@ -3,7 +3,7 @@
 * Menu Functions
 *
 * @package BestWP WordPress Theme
-* @copyright Copyright (C) 2018 ThemesDNA
+* @copyright Copyright (C) 2019 ThemesDNA
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 * @author ThemesDNA <themesdna@gmail.com>
 */
@@ -35,7 +35,7 @@ function bestwp_fallback_menu() {
    wp_page_menu( array(
         'sort_column'  => 'menu_order, post_title',
         'menu_id'      => 'bestwp-menu-primary-navigation',
-        'menu_class'   => 'bestwp-nav-primary-menu bestwp-menu-primary',
+        'menu_class'   => 'bestwp-primary-nav-menu bestwp-menu-primary',
         'container'    => 'ul',
         'echo'         => true,
         'link_before'  => '',
