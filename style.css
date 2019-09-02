@@ -4,8 +4,8 @@ Theme Name: Airi
 Theme URI: https://athemes.com/theme/airi
 Author: aThemes
 Author URI: https://athemes.com
-Description: Airi is a powerful, flexible, and modern theme for your business website. Featuring Elementor integration, this theme is an outstanding choice for any kind of company or freelancer site. Bringing a wealth of customization opportunities, Airi is great if you want to start a website from scratch and it's even greater if you want to use a premade Elementor layout from our growing collection. What’s more, the theme offers WooCommerce support, making it easy to sell the products you showcase on your site to your audience.
-Version: 1.0.6
+Description: Airi is a powerful, flexible, and modern theme for your business website. Featuring Elementor integration, this theme is an outstanding choice for basically any kind of company or freelancer site. Bringing a wealth of customization opportunities, Airi is great if you want to start a website from scratch and it's even greater if you want to use a premade Elementor layout from our growing collection. What’s more, the theme offers WooCommerce support, making it easy to sell the products you showcase on your site to your audience.
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: airi
@@ -2917,10 +2917,12 @@ ul.social-media-list li {
   position: static;
 }
 
+.business-video .elementor-widget-video .elementor-custom-embed-image-overlay img,
 .startup-video .elementor-widget-video .elementor-custom-embed-image-overlay img {
   display: none;
 }
 
+.business-video .elementor-widget-video .elementor-custom-embed-image-overlay .elementor-custom-embed-play,
 .startup-video .elementor-widget-video .elementor-custom-embed-image-overlay .elementor-custom-embed-play {
   position: static;
   -webkit-transform: none;
@@ -3056,6 +3058,49 @@ ul.social-media-list li {
 }
 .beauty-contact p select {
   padding: 17px 20px;
+}
+
+.hover-white-style:hover .elementor-icon-box-wrapper .elementor-icon-box-icon i {
+  color: #fff;
+}
+.hover-white-style:hover .elementor-icon-box-wrapper .elementor-icon-box-content .elementor-icon-box-title {
+  color: #fff !important;
+}
+.hover-white-style:hover .elementor-icon-box-wrapper .elementor-icon-box-description {
+  color: #fff !important;
+}
+
+.counter-layout .elementor-icon-box-wrapper {
+  position: relative;
+}
+.counter-layout .elementor-icon-box-wrapper .elementor-icon-box-icon {
+  position: absolute;
+  margin: 0;
+  right: 0;
+}
+.counter-layout .elementor-icon-box-wrapper .elementor-icon-box-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.counter-layout .elementor-icon-box-wrapper .elementor-icon-box-title {
+  margin-right: 16px;
+  margin-bottom: 0;
+}
+
+.hover-slide-up {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.hover-slide-up:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 /*--------------------------------------------------------------
@@ -4130,6 +4175,64 @@ ul.social-media-list li {
   text-transform: uppercase;
 }
 
+/* Style 6 */
+.athemes-blog.airi_athemes_blog_skin_6 .post-item {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .thumbnail {
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .thumbnail img {
+  border-radius: 5px;
+  -webkit-transition: all .6s;
+  transition: all .6s;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .thumbnail:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .post-content {
+  padding: 0;
+  background: transparent;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .post-content .posted-on {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .post-content .posted-on a {
+  color: #0a8ae6;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .post-content .entry-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 22px;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .post-content .entry-title a {
+  color: #191919;
+  border-bottom: 1px solid transparent;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .post-content .entry-title a:hover {
+  border-bottom-color: #191919;
+}
+.athemes-blog.airi_athemes_blog_skin_6 .post-item .first-cat {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #0a8ae6;
+  color: #fff;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 7px 13px;
+}
+
 /* Slider block */
 .athemes-hero-wrapper .slick-slide {
   height: 500px;
@@ -4310,3 +4413,5 @@ object {
 .gallery-caption {
   display: block;
 }
+
+/*# sourceMappingURL=style.css.map */
