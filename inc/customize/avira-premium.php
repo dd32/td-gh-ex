@@ -5,7 +5,6 @@ function avira_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Premium','avira'),
-            'description' 	=>'',
 		)
     );
 	
