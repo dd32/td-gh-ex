@@ -7,8 +7,8 @@ function benzer_css() {
 	wp_enqueue_style('benzer-default',get_stylesheet_directory_uri() .'/css/colors/default.css');
 	wp_dequeue_style('specia-default', get_template_directory_uri() . '/css/colors/default.css');
 	
-	wp_enqueue_style('benzer-media-query',get_stylesheet_directory_uri() .'/css/media-query.css');
-	wp_dequeue_style('specia-media-query', get_template_directory_uri() . '/css/media-query.css');
+	wp_dequeue_script('specia-custom-js', get_template_directory_uri() . '/js/custom.js');
+	wp_enqueue_script('benzer-custom-js', get_stylesheet_directory_uri() . '/js/custom.js');
 }
 add_action( 'wp_enqueue_scripts', 'benzer_css',999);
    	
@@ -46,14 +46,12 @@ function benzer_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'benzer_scripts_styles' );
 
 function benzer_remove_parent_setting( $wp_customize ) {
-	$wp_customize->remove_panel('features_panel');
 	$wp_customize->remove_control('slider-page3');
 }
 add_action( 'customize_register', 'benzer_remove_parent_setting',99 );
 
-
-function benzer_remove_widgets(){
-
-	unregister_sidebar( 'specia_feature_widget' );
-}
-add_action( 'widgets_init', 'benzer_remove_widgets', 11 );
+require( get_stylesheet_directory() . '/inc/customize/specia-features.php');
+/**
+ * Called premium page details
+ */
+require_once( get_stylesheet_directory() . '/inc/customize/benzer-premium.php');
