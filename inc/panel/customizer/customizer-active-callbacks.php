@@ -52,3 +52,41 @@ if( ! function_exists( 'catcheverest_is_footer_code_present' ) ) :
 		return ( isset( $options['analytic_footer'] ) && '' != $options['analytic_footer'] );
 	}
 endif;
+
+if ( ! function_exists( 'catcheverest_is_custom_featured_content_saved' ) ) :
+	/**
+	* Return true if custom featured content is saved
+	*
+	* @since Catch Everest 2.5
+	*/
+	function catcheverest_is_custom_featured_content_saved( $control ) {
+		global $catcheverest_options_settings;
+
+    	$options = $catcheverest_options_settings;
+
+    	if ( ! empty( array_filter( $options['homepage_featured_image'] ) ) || !empty( array_filter( $options['homepage_featured_title'] ) ) || !empty( array_filter( $options['homepage_featured_content'] ) ) ) {
+			return true;
+		}
+
+		return false;
+	}
+endif;
+
+if ( ! function_exists( 'catcheverest_is_custom_featured_content_not_saved' ) ) :
+	/**
+	* Return true if custom featured content is not saved
+	*
+	* @since Catch Everest 2.5
+	*/
+	function catcheverest_is_custom_featured_content_not_saved( $control ) {
+		global $catcheverest_options_settings;
+
+    	$options = $catcheverest_options_settings;
+
+    	if ( ! ( ! empty( array_filter( $options['homepage_featured_image'] ) ) || !empty( array_filter( $options['homepage_featured_title'] ) ) || !empty( array_filter( $options['homepage_featured_content'] ) ) ) ) {
+			return true;
+		}
+
+		return false;
+	}
+endif;

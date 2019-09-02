@@ -18,7 +18,7 @@
 function catcheverest_customize_register( $wp_customize ) {
 	global $catcheverest_options_settings, $catcheverest_options_defaults;
 
-    $options = $catcheverest_options_settings;
+	$options = $catcheverest_options_settings;
 
 	$defaults = $catcheverest_options_defaults;
 
@@ -295,11 +295,11 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'excerpt_more_tag_settings',
 			'default' 		=> $defaults['excerpt_length'],
 			'input_attrs' 	=> array(
-					            'style' => 'width: 45px;',
-					            'min'   => 0,
-					            'max'   => 999999,
-					            'step'  => 1,
-					        	)
+								'style' => 'width: 45px;',
+								'min'   => 0,
+								'max'   => 999999,
+								'step'  => 1,
+								)
 		),
 
 		'feed_url' => array(
@@ -337,17 +337,6 @@ function catcheverest_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['content_layout'],
 			'choices'		=> catcheverest_content_layout_options(),
 		),
-		'reset_layout' => array(
-			'id' 			=> 'reset_layout',
-			'title' 		=> __( 'Check to Reset Layout', 'catch-everest' ),
-			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-everest' ),
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
-			'panel' 		=> 'theme_options',
-			'section' 		=> 'layout_options',
-			'transport'		=> 'postMessage',
-			'default' 		=> $defaults['reset_layout']
-		),
 
 		//Custom Css
 		'custom_css' => array(
@@ -372,7 +361,16 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'scrollup_options',
 			'default' 		=> $defaults['disable_scrollup']
 		),
-
+		'disable_homepage_headline' => array(
+			'id' 			=> 'disable_homepage_headline',
+			'title' 		=> __( 'Check to Disable Homepage Headline', 'catch-everest' ),
+			'description'	=> '',
+			'field_type' 	=> 'checkbox',
+			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
+			'panel' 		=> 'homepage_settings',
+			'section' 		=> 'homepage_headline_options',
+			'default' 		=> $defaults['disable_homepage_headline']
+		),
 		//Homepage Headline Options
 		'homepage_headline' => array(
 			'id' 			=> 'homepage_headline',
@@ -384,26 +382,6 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'homepage_headline_options',
 			'default' 		=> $defaults['homepage_headline']
 		),
-		'homepage_subheadline' => array(
-			'id' 			=> 'homepage_subheadline',
-			'title' 		=> __( 'Homepage Subheadline Text', 'catch-everest' ),
-			'description' 	=> __( 'Appropriate Words: 15', 'catch-everest' ),
-			'field_type' 	=> 'textarea',
-			'sanitize' 		=> 'wp_kses_post',
-			'panel' 		=> 'homepage_settings',
-			'section' 		=> 'homepage_headline_options',
-			'default' 		=> $defaults['homepage_subheadline']
-		),
-		'disable_homepage_headline' => array(
-			'id' 			=> 'disable_homepage_headline',
-			'title' 		=> __( 'Check to Disable Homepage Headline', 'catch-everest' ),
-			'description'	=> '',
-			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
-			'panel' 		=> 'homepage_settings',
-			'section' 		=> 'homepage_headline_options',
-			'default' 		=> $defaults['disable_homepage_headline']
-		),
 		'disable_homepage_subheadline' => array(
 			'id' 			=> 'disable_homepage_subheadline',
 			'title' 		=> __( 'Check to Disable Homepage Subheadline', 'catch-everest' ),
@@ -414,7 +392,17 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'homepage_headline_options',
 			'default' 		=> $defaults['disable_homepage_subheadline']
 		),
-
+		'homepage_subheadline' => array(
+			'id' 			=> 'homepage_subheadline',
+			'title' 		=> __( 'Homepage Subheadline Text', 'catch-everest' ),
+			'description' 	=> __( 'Appropriate Words: 15', 'catch-everest' ),
+			'field_type' 	=> 'textarea',
+			'sanitize' 		=> 'wp_kses_post',
+			'panel' 		=> 'homepage_settings',
+			'section' 		=> 'homepage_headline_options',
+			'default' 		=> $defaults['homepage_subheadline']
+		),
+		
 		//Homepage/Frontpage Settings
 		'enable_posts_home' => array(
 			'id' 			=> 'enable_posts_home',
@@ -468,11 +456,11 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 		=> 'homepage_featured_content_options',
 			'default' 		=> $defaults['homepage_featured_qty'],
 			'input_attrs' 	=> array(
-					            'style' => 'width: 45px;',
-					            'min'   => 0,
-					            'max'   => 50,
-					            'step'  => 1,
-					        	)
+								'style' => 'width: 45px;',
+								'min'   => 0,
+								'max'   => 50,
+								'step'  => 1,
+								)
 		),
 
 		//Slider Options
@@ -497,11 +485,11 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 			=> 'slider_options',
 			'default' 			=> $defaults['slider_qty'],
 			'input_attrs' 		=> array(
-						            'style' => 'width: 45px;',
-						            'min'   => 0,
-						            'max'   => 20,
-						            'step'  => 1,
-						        	)
+									'style' => 'width: 45px;',
+									'min'   => 0,
+									'max'   => 20,
+									'step'  => 1,
+									)
 		),
 
 		'transition_effect' => array(
@@ -525,11 +513,11 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 			=> 'slider_options',
 			'default' 			=> $defaults['transition_delay'],
 			'input_attrs' 		=> array(
-						            'style' => 'width: 45px;',
-						            'min'   => 0,
-						            'max'   => 999999999,
-						            'step'  => 1,
-						        	)
+									'style' => 'width: 45px;',
+									'min'   => 0,
+									'max'   => 999999999,
+									'step'  => 1,
+									)
 		),
 		'transition_duration' => array(
 			'id' 				=> 'transition_duration',
@@ -541,11 +529,11 @@ function catcheverest_customize_register( $wp_customize ) {
 			'section' 			=> 'slider_options',
 			'default' 			=> $defaults['transition_duration'],
 			'input_attrs' 		=> array(
-						            'style' => 'width: 45px;',
-						            'min'   => 0,
-						            'max'   => 999999999,
-						            'step'  => 1,
-						        	)
+									'style' => 'width: 45px;',
+									'min'   => 0,
+									'max'   => 999999999,
+									'step'  => 1,
+									)
 		),
 
 		//Featured Post Slider
@@ -1039,6 +1027,26 @@ function catcheverest_customize_register( $wp_customize ) {
 	for ( $i = 1; $i <= $options['homepage_featured_qty']; $i++ ) {
 		$wp_customize->add_setting(
 			// $id
+			$theme_slug . 'options[homepage_featured_page][' . $i . ']',
+			// parameters array
+			array(
+				'type'				=> 'option',
+				'sanitize_callback'	=> 'catcheverest_sanitize_post_id'
+			)
+		);
+
+		$wp_customize->add_control(
+			$theme_slug . 'options[homepage_featured_page][' . $i . ']',
+			array(
+				'label'		=> sprintf( __( 'Featured Page #%s', 'catch-everest' ), $i ),
+				'section'   => $theme_slug .'homepage_featured_content_options',
+				'settings'  => $theme_slug . 'options[homepage_featured_page][' . $i . ']',
+				'type'		=> 'dropdown-pages',
+				'active_callback' => 'catcheverest_is_custom_featured_content_not_saved'
+			)
+		);
+		$wp_customize->add_setting(
+			// $id
 			$theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
 			// parameters array
 			array(
@@ -1054,6 +1062,7 @@ function catcheverest_customize_register( $wp_customize ) {
 					'label'		=> sprintf( __( 'Featured Content #%s', 'catch-everest' ), $i ),
 					'section'   => $theme_slug .'homepage_featured_content_options',
 					'settings'  => $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
+					'active_callback'   => 'catcheverest_is_custom_featured_content_saved'
 				)
 			)
 		);
@@ -1075,6 +1084,7 @@ function catcheverest_customize_register( $wp_customize ) {
 					'label'		=> __( 'Image', 'catch-everest' ),
 					'section'   => $theme_slug .'homepage_featured_content_options',
 					'settings'  => $theme_slug . 'options[homepage_featured_image][' . $i . ']',
+					'active_callback'   => 'catcheverest_is_custom_featured_content_saved'
 				)
 			)
 		);
@@ -1092,10 +1102,11 @@ function catcheverest_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_url][' . $i . ']',
 			array(
-				'label'		=> __( 'Link URL', 'catch-everest' ),
-				'section'	=> $theme_slug .'homepage_featured_content_options',
-				'settings'	=> $theme_slug . 'options[homepage_featured_url][' . $i . ']',
-				'type'		=> 'url'
+				'label'           => __( 'Link URL', 'catch-everest' ),
+				'section'         => $theme_slug .'homepage_featured_content_options',
+				'settings'        => $theme_slug . 'options[homepage_featured_url][' . $i . ']',
+				'type'            => 'url',
+				'active_callback' => 'catcheverest_is_custom_featured_content_saved'
 			)
 		);
 
@@ -1112,10 +1123,11 @@ function catcheverest_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_base][' . $i . ']',
 			array(
-				'label'		=> __( 'Target. Open Link in New Window?', 'catch-everest' ),
-				'section'	=> $theme_slug .'homepage_featured_content_options',
-				'settings'	=> $theme_slug . 'options[homepage_featured_base][' . $i . ']',
-				'type'		=> 'text'
+				'label'           => __( 'Target. Open Link in New Window?', 'catch-everest' ),
+				'section'         => $theme_slug .'homepage_featured_content_options',
+				'settings'        => $theme_slug . 'options[homepage_featured_base][' . $i . ']',
+				'type'            => 'checkbox',
+				'active_callback' => 'catcheverest_is_custom_featured_content_saved'
 			)
 		);
 
@@ -1132,11 +1144,12 @@ function catcheverest_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_title][' . $i . ']',
 			array(
-				'label'			=> __( 'Title', 'catch-everest' ),
-				'section'		=> $theme_slug .'homepage_featured_content_options',
-				'settings'		=> $theme_slug . 'options[homepage_featured_title][' . $i . ']',
-				'description'	=> __( 'Leave empty if you want to remove title', 'catch-everest' ),
-				'type'			=> 'text'
+				'label'           => __( 'Title', 'catch-everest' ),
+				'section'         => $theme_slug .'homepage_featured_content_options',
+				'settings'        => $theme_slug . 'options[homepage_featured_title][' . $i . ']',
+				'description'     => __( 'Leave empty if you want to remove title', 'catch-everest' ),
+				'type'            => 'text',
+				'active_callback' => 'catcheverest_is_custom_featured_content_saved'
 			)
 		);
 
@@ -1157,7 +1170,8 @@ function catcheverest_customize_register( $wp_customize ) {
 				'section'		=> $theme_slug .'homepage_featured_content_options',
 				'settings'		=> $theme_slug . 'options[homepage_featured_content][' . $i . ']',
 				'description'	=> __( 'Appropriate Words: 10', 'catch-everest' ),
-				'type'			=> 'textarea'
+				'type'			=> 'textarea',
+				'active_callback'   => 'catcheverest_is_custom_featured_content_saved'
 			)
 		);
 	}
@@ -1182,14 +1196,14 @@ function catcheverest_customize_register( $wp_customize ) {
 				'settings'  => $theme_slug . 'options[featured_slider][' . $i . ']',
 				'type'		=> 'text',
 					'input_attrs' => array(
-	        		'style' => 'width: 100px;'
-	    		),
+					'style' => 'width: 100px;'
+				),
 			)
 		);
 	}
 
 
-	// Reset all settings to default
+	// Reset
 	$wp_customize->add_section( 'catcheverest_reset_all_settings', array(
 		'description'	=> __( 'Caution: Reset all settings to default. Refresh the page after save to view full effects.', 'catch-everest' ),
 		'priority' 		=> 700,
@@ -1225,12 +1239,12 @@ function catcheverest_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new CatchEverest_Important_Links( $wp_customize, 'important_links', array(
-        'label'   	=> __( 'Important Links', 'catch-everest' ),
-        'section'  	=> 'important_links',
-        'settings' 	=> 'important_links',
-        'type'     	=> 'important_links',
-    ) ) );
-    //Important Links End
+		'label'   	=> __( 'Important Links', 'catch-everest' ),
+		'section'  	=> 'important_links',
+		'settings' 	=> 'important_links',
+		'type'     	=> 'important_links',
+	) ) );
+	//Important Links End
 }
 add_action( 'customize_register', 'catcheverest_customize_register' );
 
@@ -1278,15 +1292,15 @@ add_action( 'customize_controls_enqueue_scripts', 'catcheverest_customize_script
  * Clearing the cache if any changes in Admin Theme Option
  */
 function catcheverest_themeoption_invalidate_caches(){
-    delete_transient( 'catcheverest_post_sliders' ); // featured post slider
-    delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
-    delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content
-    delete_transient( 'catcheverest_social_networks' ); // Social Networks
-    delete_transient( 'catcheverest_webmaster' ); // scripts which loads on header
-    delete_transient( 'catcheverest_footercode' ); // scripts which loads on footer
-    delete_transient( 'catcheverest_inline_css' ); // Custom Inline CSS
-    delete_transient( 'catcheverest_scrollup' ); // Scroll up Navigation
-    delete_transient( 'catcheverest_featured_image' );//Header image
+	delete_transient( 'catcheverest_post_sliders' ); // featured post slider
+	delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
+	delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content
+	delete_transient( 'catcheverest_social_networks' ); // Social Networks
+	delete_transient( 'catcheverest_webmaster' ); // scripts which loads on header
+	delete_transient( 'catcheverest_footercode' ); // scripts which loads on footer
+	delete_transient( 'catcheverest_inline_css' ); // Custom Inline CSS
+	delete_transient( 'catcheverest_scrollup' ); // Scroll up Navigation
+	delete_transient( 'catcheverest_featured_image' );//Header image
 }
 
 
@@ -1294,7 +1308,7 @@ function catcheverest_themeoption_invalidate_caches(){
  * Clearing the cache if any changes in post or page
  */
 function catcheverest_post_invalidate_caches(){
-    delete_transient( 'catcheverest_post_sliders' );
+	delete_transient( 'catcheverest_post_sliders' );
 }
 //Add action hook here save post
 add_action( 'save_post', 'catcheverest_post_invalidate_caches' );
@@ -1307,7 +1321,7 @@ add_action( 'save_post', 'catcheverest_post_invalidate_caches' );
  * @return string
  */
 function catcheverest_the_year() {
-    return esc_attr( date_i18n( __( 'Y', 'catch-everest' ) ) );
+	return esc_attr( date_i18n( __( 'Y', 'catch-everest' ) ) );
 }
 
 
@@ -1318,7 +1332,7 @@ function catcheverest_the_year() {
  * @return string
  */
 function catcheverest_site_link() {
-    return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
 }
 
 
@@ -1328,7 +1342,7 @@ function catcheverest_site_link() {
  * @return string
  */
 function catcheverest_wp_link() {
-    return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catch-everest' ) . '"><span>' . __( 'WordPress', 'catch-everest' ) . '</span></a>';
+	return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catch-everest' ) . '"><span>' . __( 'WordPress', 'catch-everest' ) . '</span></a>';
 }
 
 
@@ -1338,7 +1352,7 @@ function catcheverest_wp_link() {
  * @return string
  */
 function catcheverest_theme_name() {
-    return '<span class="theme-name">' . __( 'Catch Everest Theme by ', 'catch-everest' ) . '</span>';
+	return '<span class="theme-name">' . __( 'Catch Everest Theme by ', 'catch-everest' ) . '</span>';
 }
 /**
  * Function to display a link to Theme Link.
@@ -1347,7 +1361,7 @@ function catcheverest_theme_name() {
  */
 function catcheverest_theme_author() {
 
-    return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-everest' ) . '">' . __( 'Catch Themes', 'catch-everest' ) . '</a></span>';
+	return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-everest' ) . '">' . __( 'Catch Themes', 'catch-everest' ) . '</a></span>';
 
 }
 
@@ -1358,13 +1372,33 @@ function catcheverest_theme_author() {
  * @return string
  */
 function catcheverest_assets(){
-    $catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-everest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-everest' ) . '.</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
+	$catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-everest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-everest' ) . '.</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
 
-    if ( function_exists( 'get_the_privacy_policy_link' ) ) {
+	if ( function_exists( 'get_the_privacy_policy_link' ) ) {
 		 $catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-everest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved.  ', 'catch-everest' ) . ' '. get_the_privacy_policy_link() . '</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
 	}
-    return $catcheverest_content;
+	return $catcheverest_content;
 }
+
+/**
+ * Adds reset option functionalities
+ * @return [type] [description]
+ */
+function catcheverest_reset() {
+	global $catcheverest_options_settings;
+	
+	$options = $catcheverest_options_settings;
+
+	if ( isset( $options['reset_all_settings'] ) && '1' === $options['reset_all_settings'] ) {
+
+		delete_option( 'catcheverest_options' );
+
+		remove_theme_mods();
+
+		return;
+	}
+}
+add_action( 'customize_save_after',  'catcheverest_reset' );
 
 
 //Active callbacks for customizer

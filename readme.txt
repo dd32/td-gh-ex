@@ -52,6 +52,15 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
 
+= 3.3 (Released: September 02, 2019)
+* Bug Fixed: Keyboard navigation accessibility issue
+* Bug Fixed: Reset options not working issue
+* Update with respect to https://themes.trac.wordpress.org/ticket/71126#comment:3
+	* Removed demo data
+	* Disabled Featured Slider and Homepage Featured Content by default
+	* Enabled blog posts on homepage by default
+	* Homepage Featured Content, now can only be added via page for new users
+
 = 3.2 (Released: July 09, 2019)
 * Added: Core Privacy Policy link support in footer
 * Added: Support for wp_body_open action

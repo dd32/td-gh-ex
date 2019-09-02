@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-07-09 00:12-0700\n"
+"POT-Creation-Date: 2019-09-01 23:25-0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -142,7 +142,7 @@ msgstr[1] "Deze galerij bevat <a %1$s>%2$s foto's</a>"
 msgid "All Image Posts"
 msgstr "Alle fotoberichten"
 
-#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1075
+#: ../content-image.php:17 ../inc/panel/customizer/customizer.php:1084
 msgid "Image"
 msgstr "Foto"
 
@@ -189,7 +189,7 @@ msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 "Bekijk alle berichten gesorteerd op %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:117 ../inc/catcheverest-functions.php:393
+#: ../functions.php:117 ../inc/catcheverest-functions.php:387
 msgid "Primary Menu"
 msgstr "Hoofdmenu"
 
@@ -249,256 +249,256 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Zowel reacties als trackbacks zijn gesloten."
 
-#: ../inc/catcheverest-functions.php:150
+#: ../inc/catcheverest-functions.php:144
 msgid "Skip to content"
 msgstr "Doorgaan naar inhoud"
 
-#: ../inc/catcheverest-functions.php:1033
-#: ../inc/panel/customizer/customizer.php:566
+#: ../inc/catcheverest-functions.php:907
+#: ../inc/panel/customizer/customizer.php:554
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catcheverest-functions.php:1038
-#: ../inc/panel/customizer/customizer.php:576
+#: ../inc/catcheverest-functions.php:912
+#: ../inc/panel/customizer/customizer.php:564
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catcheverest-functions.php:1043
-#: ../inc/panel/customizer/customizer.php:586
+#: ../inc/catcheverest-functions.php:917
+#: ../inc/panel/customizer/customizer.php:574
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catcheverest-functions.php:1048
-#: ../inc/panel/customizer/customizer.php:626
+#: ../inc/catcheverest-functions.php:922
+#: ../inc/panel/customizer/customizer.php:614
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catcheverest-functions.php:1053
-#: ../inc/panel/customizer/customizer.php:596
+#: ../inc/catcheverest-functions.php:927
+#: ../inc/panel/customizer/customizer.php:584
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catcheverest-functions.php:1058
+#: ../inc/catcheverest-functions.php:932
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catcheverest-functions.php:1063
-#: ../inc/panel/customizer/customizer.php:616
+#: ../inc/catcheverest-functions.php:937
+#: ../inc/panel/customizer/customizer.php:604
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catcheverest-functions.php:1068
+#: ../inc/catcheverest-functions.php:942
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catcheverest-functions.php:1073
+#: ../inc/catcheverest-functions.php:947
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catcheverest-functions.php:1078
-#: ../inc/panel/customizer/customizer.php:656
+#: ../inc/catcheverest-functions.php:952
+#: ../inc/panel/customizer/customizer.php:644
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catcheverest-functions.php:1083
-#: ../inc/panel/customizer/customizer.php:666
+#: ../inc/catcheverest-functions.php:957
+#: ../inc/panel/customizer/customizer.php:654
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catcheverest-functions.php:1088
-#: ../inc/panel/customizer/customizer.php:676
+#: ../inc/catcheverest-functions.php:962
+#: ../inc/panel/customizer/customizer.php:664
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catcheverest-functions.php:1093
-#: ../inc/panel/customizer/customizer.php:686
+#: ../inc/catcheverest-functions.php:967
+#: ../inc/panel/customizer/customizer.php:674
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catcheverest-functions.php:1098
-#: ../inc/panel/customizer/customizer.php:696
+#: ../inc/catcheverest-functions.php:972
+#: ../inc/panel/customizer/customizer.php:684
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catcheverest-functions.php:1103
-#: ../inc/panel/customizer/customizer.php:706
-#: ../inc/panel/customizer/customizer.php:1331
+#: ../inc/catcheverest-functions.php:977
+#: ../inc/panel/customizer/customizer.php:694
+#: ../inc/panel/customizer/customizer.php:1345
 msgid "WordPress"
 msgstr "Wordpress"
 
-#: ../inc/catcheverest-functions.php:1108
-#: ../inc/panel/customizer/customizer.php:716
+#: ../inc/catcheverest-functions.php:982
+#: ../inc/panel/customizer/customizer.php:704
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catcheverest-functions.php:1113
-#: ../inc/panel/customizer/customizer.php:726
+#: ../inc/catcheverest-functions.php:987
+#: ../inc/panel/customizer/customizer.php:714
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catcheverest-functions.php:1118
-#: ../inc/panel/customizer/customizer.php:736
+#: ../inc/catcheverest-functions.php:992
+#: ../inc/panel/customizer/customizer.php:724
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catcheverest-functions.php:1123
-#: ../inc/panel/customizer/customizer.php:746
+#: ../inc/catcheverest-functions.php:997
+#: ../inc/panel/customizer/customizer.php:734
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catcheverest-functions.php:1128
-#: ../inc/panel/customizer/customizer.php:756
+#: ../inc/catcheverest-functions.php:1002
+#: ../inc/panel/customizer/customizer.php:744
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catcheverest-functions.php:1133
-#: ../inc/panel/customizer/customizer.php:766
+#: ../inc/catcheverest-functions.php:1007
+#: ../inc/panel/customizer/customizer.php:754
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catcheverest-functions.php:1138
-#: ../inc/panel/customizer/customizer.php:776
+#: ../inc/catcheverest-functions.php:1012
+#: ../inc/panel/customizer/customizer.php:764
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catcheverest-functions.php:1143
-#: ../inc/panel/customizer/customizer.php:786
+#: ../inc/catcheverest-functions.php:1017
+#: ../inc/panel/customizer/customizer.php:774
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catcheverest-functions.php:1148
+#: ../inc/catcheverest-functions.php:1022
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catcheverest-functions.php:1153
-#: ../inc/panel/customizer/customizer.php:806
+#: ../inc/catcheverest-functions.php:1027
+#: ../inc/panel/customizer/customizer.php:794
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catcheverest-functions.php:1158
+#: ../inc/catcheverest-functions.php:1032
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catcheverest-functions.php:1163
-#: ../inc/panel/customizer/customizer.php:826
+#: ../inc/catcheverest-functions.php:1037
+#: ../inc/panel/customizer/customizer.php:814
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catcheverest-functions.php:1168
-#: ../inc/panel/customizer/customizer.php:836
+#: ../inc/catcheverest-functions.php:1042
+#: ../inc/panel/customizer/customizer.php:824
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catcheverest-functions.php:1173
-#: ../inc/panel/customizer/customizer.php:846
+#: ../inc/catcheverest-functions.php:1047
+#: ../inc/panel/customizer/customizer.php:834
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catcheverest-functions.php:1268
+#: ../inc/catcheverest-functions.php:1142
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1304
-#: ../inc/catcheverest-functions.php:1318
+#: ../inc/catcheverest-functions.php:1178
+#: ../inc/catcheverest-functions.php:1192
 msgid "Menu"
 msgstr "Menu"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:25
+#: ../inc/panel/catcheverest-theme-options-defaults.php:24
 msgid "Continue Reading &rarr;"
 msgstr ""
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:27
+#: ../inc/panel/catcheverest-theme-options-defaults.php:26
 msgid "Search &hellip;"
 msgstr ""
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:29
+#: ../inc/panel/catcheverest-theme-options-defaults.php:28
 msgid "Homepage Headline"
 msgstr "Homepagina headline"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:30
+#: ../inc/panel/catcheverest-theme-options-defaults.php:29
 msgid "You can edit or disable it through Theme Options"
 msgstr ""
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:101
+#: ../inc/panel/catcheverest-theme-options-defaults.php:100
 msgid "Right Sidebar"
 msgstr "Rechter sidebar"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:102
+#: ../inc/panel/catcheverest-theme-options-defaults.php:101
 msgid "Left Sidebar"
 msgstr "Linker sidebar"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:103
+#: ../inc/panel/catcheverest-theme-options-defaults.php:102
 msgid "No Sidebar"
 msgstr "Geen sidebar"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:104
+#: ../inc/panel/catcheverest-theme-options-defaults.php:103
 msgid "No Sidebar, Full Width"
 msgstr "Geen sidebar, volledige breedte"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:118
+#: ../inc/panel/catcheverest-theme-options-defaults.php:117
 #: ../inc/panel/customizer/customizer.php:331
 msgid "Full Content Display"
 msgstr "Volledige content-weergave"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:119
+#: ../inc/panel/catcheverest-theme-options-defaults.php:118
 msgid "Excerpt/Blog Display"
 msgstr "Blog-weergave"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:132
+#: ../inc/panel/catcheverest-theme-options-defaults.php:131
 msgid "Homepage / Frontpage"
 msgstr "Homepage / Frontpage"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:133
+#: ../inc/panel/catcheverest-theme-options-defaults.php:132
 #: ../inc/panel/customizer/customizer.php:212
 msgid "Entire Site"
 msgstr "Gehele site"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:134
+#: ../inc/panel/catcheverest-theme-options-defaults.php:133
 msgid "Disable"
 msgstr "Uitschakelen"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:148
+#: ../inc/panel/catcheverest-theme-options-defaults.php:147
 msgid "fade"
 msgstr "vervagen"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:149
+#: ../inc/panel/catcheverest-theme-options-defaults.php:148
 msgid "wipe"
 msgstr "vegen"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:150
-#: ../inc/panel/catcheverest-theme-options-defaults.php:152
+#: ../inc/panel/catcheverest-theme-options-defaults.php:149
+#: ../inc/panel/catcheverest-theme-options-defaults.php:151
 msgid "scrollUp"
 msgstr "scrollen omhoog"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:151
+#: ../inc/panel/catcheverest-theme-options-defaults.php:150
 msgid "scrollDown"
 msgstr "scrollen omlaag"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:153
+#: ../inc/panel/catcheverest-theme-options-defaults.php:152
 msgid "scrollLeft"
 msgstr "scrollen links"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:154
+#: ../inc/panel/catcheverest-theme-options-defaults.php:153
 msgid "scrollRight"
 msgstr "scrollen rechts"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:155
+#: ../inc/panel/catcheverest-theme-options-defaults.php:154
 msgid "blindX"
 msgstr "blinderen X"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:156
+#: ../inc/panel/catcheverest-theme-options-defaults.php:155
 msgid "blindY"
 msgstr "blinderen Y"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:157
+#: ../inc/panel/catcheverest-theme-options-defaults.php:156
 msgid "blindZ"
 msgstr "blinderen Z"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:158
+#: ../inc/panel/catcheverest-theme-options-defaults.php:157
 msgid "cover"
 msgstr "bedekken"
 
-#: ../inc/panel/catcheverest-theme-options-defaults.php:159
+#: ../inc/panel/catcheverest-theme-options-defaults.php:158
 msgid "shuffle"
 msgstr "willekeurig"
 
@@ -699,225 +699,226 @@ msgstr ""
 msgid "Sidebar Layout Options"
 msgstr "Sidebar layout-opties"
 
-#: ../inc/panel/customizer/customizer.php:342
-msgid "Check to Reset Layout"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:343
-#: ../inc/panel/customizer/customizer.php:555
-msgid "Please refresh the customizer after saving if reset option is used"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:355
+#: ../inc/panel/customizer/customizer.php:344
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:367
+#: ../inc/panel/customizer/customizer.php:356
 msgid "Check to Disable Scroll Up"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:379
-msgid "Homepage Headline Text"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:380
-#: ../inc/panel/customizer/customizer.php:1159
-msgid "Appropriate Words: 10"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:389
-msgid "Homepage Subheadline Text"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:390
-msgid "Appropriate Words: 15"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:399
+#: ../inc/panel/customizer/customizer.php:366
 msgid "Check to Disable Homepage Headline"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:409
+#: ../inc/panel/customizer/customizer.php:377
+msgid "Homepage Headline Text"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:378
+#: ../inc/panel/customizer/customizer.php:1172
+msgid "Appropriate Words: 10"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:387
 msgid "Check to Disable Homepage Subheadline"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:421
+#: ../inc/panel/customizer/customizer.php:397
+msgid "Homepage Subheadline Text"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:398
+msgid "Appropriate Words: 15"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:409
 msgid "Check to Enable Latest Posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:431
+#: ../inc/panel/customizer/customizer.php:419
 msgid "Homepage posts categories:"
 msgstr "Homepagina categorieën voor berichten:"
 
-#: ../inc/panel/customizer/customizer.php:432
+#: ../inc/panel/customizer/customizer.php:420
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:443
+#: ../inc/panel/customizer/customizer.php:431
 msgid "Check to Disable Homepage Featured Content"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:453
+#: ../inc/panel/customizer/customizer.php:441
 msgid "Featured Content Headline Text"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:454
+#: ../inc/panel/customizer/customizer.php:442
 msgid "Leave empty if you want to remove headline"
 msgstr "Laat leeg als je de headline wilt weghalen"
 
-#: ../inc/panel/customizer/customizer.php:463
+#: ../inc/panel/customizer/customizer.php:451
 msgid "Number of Featured Content"
 msgstr "Aantal uitgelichte berichten"
 
-#: ../inc/panel/customizer/customizer.php:464
+#: ../inc/panel/customizer/customizer.php:452
 msgid ""
 "Customizer page needs to be refreshed after saving if number of featured "
 "content is changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:481
+#: ../inc/panel/customizer/customizer.php:469
 msgid "Enable Slider"
 msgstr "Slider inschakelen"
 
-#: ../inc/panel/customizer/customizer.php:492
+#: ../inc/panel/customizer/customizer.php:480
 msgid "Number of Slides"
 msgstr "Aantal slides"
 
-#: ../inc/panel/customizer/customizer.php:493
+#: ../inc/panel/customizer/customizer.php:481
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:509
+#: ../inc/panel/customizer/customizer.php:497
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:520
+#: ../inc/panel/customizer/customizer.php:508
 msgid "Transition Delay"
 msgstr "Overgangstijd"
 
-#: ../inc/panel/customizer/customizer.php:536
+#: ../inc/panel/customizer/customizer.php:524
 msgid "Transition Length"
 msgstr "Duur van overgang"
 
-#: ../inc/panel/customizer/customizer.php:554
+#: ../inc/panel/customizer/customizer.php:542
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:606
+#: ../inc/panel/customizer/customizer.php:543
+msgid "Please refresh the customizer after saving if reset option is used"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:594
 msgid "Youtube"
 msgstr "YouTube"
 
-#: ../inc/panel/customizer/customizer.php:636
+#: ../inc/panel/customizer/customizer.php:624
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/customizer/customizer.php:646
+#: ../inc/panel/customizer/customizer.php:634
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/panel/customizer/customizer.php:796
+#: ../inc/panel/customizer/customizer.php:784
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../inc/panel/customizer/customizer.php:816
+#: ../inc/panel/customizer/customizer.php:804
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/panel/customizer/customizer.php:858
+#: ../inc/panel/customizer/customizer.php:846
 msgid "Code to display on Header"
 msgstr "Code om weer te geven in de header"
 
-#: ../inc/panel/customizer/customizer.php:859
+#: ../inc/panel/customizer/customizer.php:847
 msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on Header"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:869
+#: ../inc/panel/customizer/customizer.php:857
 msgid "Code to display on Footer"
 msgstr "Code om weer te geven in de footer"
 
-#: ../inc/panel/customizer/customizer.php:870
+#: ../inc/panel/customizer/customizer.php:858
 msgid ""
 "Here you can put scripts from Google, Facebook, Twitter, Add This etc. which "
 "will load on footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1054
+#: ../inc/panel/customizer/customizer.php:1041
+#, fuzzy, php-format
+#| msgid "Featured Content #%s"
+msgid "Featured Page #%s"
+msgstr "Uitgelichte content #%s"
+
+#: ../inc/panel/customizer/customizer.php:1062
 #, php-format
 msgid "Featured Content #%s"
 msgstr "Uitgelichte content #%s"
 
-#: ../inc/panel/customizer/customizer.php:1095
+#: ../inc/panel/customizer/customizer.php:1105
 msgid "Link URL"
 msgstr "Link URL"
 
-#: ../inc/panel/customizer/customizer.php:1115
+#: ../inc/panel/customizer/customizer.php:1126
 msgid "Target. Open Link in New Window?"
 msgstr "Open in een nieuw venster?"
 
-#: ../inc/panel/customizer/customizer.php:1135
+#: ../inc/panel/customizer/customizer.php:1147
 msgid "Title"
 msgstr "Titel"
 
-#: ../inc/panel/customizer/customizer.php:1138
+#: ../inc/panel/customizer/customizer.php:1150
 msgid "Leave empty if you want to remove title"
 msgstr "Laat leeg als je de titel wilt weghalen"
 
-#: ../inc/panel/customizer/customizer.php:1156
+#: ../inc/panel/customizer/customizer.php:1169
 msgid "Content"
 msgstr "Korte beschrijving"
 
-#: ../inc/panel/customizer/customizer.php:1180
+#: ../inc/panel/customizer/customizer.php:1194
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1194
+#: ../inc/panel/customizer/customizer.php:1208
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1196
+#: ../inc/panel/customizer/customizer.php:1210
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1207
+#: ../inc/panel/customizer/customizer.php:1221
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1217
-#: ../inc/panel/customizer/customizer.php:1228
+#: ../inc/panel/customizer/customizer.php:1231
+#: ../inc/panel/customizer/customizer.php:1242
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:1310
+#: ../inc/panel/customizer/customizer.php:1324
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/customizer/customizer.php:1341
+#: ../inc/panel/customizer/customizer.php:1355
 msgid "Catch Everest Theme by "
 msgstr "Catch Everest Theme by "
 
-#: ../inc/panel/customizer/customizer.php:1350
+#: ../inc/panel/customizer/customizer.php:1364
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/panel/customizer/customizer.php:1361
-#: ../inc/panel/customizer/customizer.php:1364
+#: ../inc/panel/customizer/customizer.php:1375
+#: ../inc/panel/customizer/customizer.php:1378
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/customizer/customizer.php:1361
+#: ../inc/panel/customizer/customizer.php:1375
 msgid "All Rights Reserved"
 msgstr "Alle rechten voorbehouden"
 
-#: ../inc/panel/customizer/customizer.php:1364
+#: ../inc/panel/customizer/customizer.php:1378
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved.  "

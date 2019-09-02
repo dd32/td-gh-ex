@@ -12,18 +12,10 @@
 /**
  * Enqueue scripts and styles
  */
-function catcheverest_scripts() {
-
+function catcheverest_scripts() { 
 	//Getting Ready to load data from Theme Options Panel
-	global $post, $wp_query, $catcheverest_options_settings;
+	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
-
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts');
-
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
 
 	/**
 	 * Loads up main stylesheet.
@@ -48,6 +40,8 @@ function catcheverest_scripts() {
 		wp_enqueue_script( 'small-menu', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-menu.min.js', array( 'jquery' ), '20130224', true );
 	}
 
+	wp_enqueue_script( 'catcheverest-navigation', get_template_directory_uri() . '/js/navigation.min.js', array( 'jquery' ), '20150601', true );
+
 	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).
@@ -69,7 +63,7 @@ function catcheverest_scripts() {
 	 * Loads up catcheverest-slider and jquery-cycle set up as dependent on catcheverest-slider
 	 */
 	$enableslider = $options['enable_slider'];
-	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
+	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && is_front_page() ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 		wp_enqueue_script( 'catcheverest-slider', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catcheverest-slider.js', array( 'jquery-cycle' ), '20130114', true );
 	}
 
@@ -389,7 +383,7 @@ add_action( 'catcheverest_hgroup_wrap', 'catcheverest_header_right', 15 );
  */
 function catcheverest_header_menu() { ?>
 	<div id="header-menu">
-        <nav id="access" role="navigation">
+        <nav id="access" class="site-navigation" role="navigation">
             <a class="screen-reader-text"><?php _e( 'Primary Menu', 'catch-everest' ); ?></a>
             <?php
                 if ( has_nav_menu( 'primary' ) ) {
@@ -420,355 +414,208 @@ function catcheverest_pass_slider_value() {
 	global $catcheverest_options_settings;
    	$options = $catcheverest_options_settings;
 
-	$transition_effect = $options['transition_effect'];
-	$transition_delay = $options['transition_delay'] * 1000;
+	$transition_effect   = $options['transition_effect'];
+	$transition_delay    = $options['transition_delay'] * 1000;
 	$transition_duration = $options['transition_duration'] * 1000;
 	wp_localize_script(
 		'catcheverest-slider',
 		'js_value',
 		array(
-			'transition_effect' => $transition_effect,
-			'transition_delay' => $transition_delay,
-			'transition_duration' => $transition_duration
+			array(
+				'transition_effect'   => $transition_effect,
+				'transition_delay'    => $transition_delay,
+				'transition_duration' => $transition_duration,
+			)
 		)
 	);
 }// catcheverest_pass_slider_value
 
 
 if ( ! function_exists( 'catcheverest_post_sliders' ) ) :
-/**
- * Shows Featured Post Slider
- *
- * @uses catcheverest_header action to add it in the header
- */
-function catcheverest_post_sliders() {
-	//delete_transient( 'catcheverest_post_sliders' );
+	/**
+	 * Shows Featured Post Slider
+	 *
+	 * @uses catcheverest_header action to add it in the header
+	 */
+	function catcheverest_post_sliders() {
+		//delete_transient( 'catcheverest_post_sliders' );
 
-	global $post, $catcheverest_options_settings;
-   	$options = $catcheverest_options_settings;
+		global $post, $catcheverest_options_settings;
+	   	$options = $catcheverest_options_settings;
 
 
-	if ( ( !$catcheverest_post_sliders = get_transient( 'catcheverest_post_sliders' ) ) && !empty( $options['featured_slider'] ) ) {
-		echo '<!-- refreshing cache -->';
+		if ( ( !$catcheverest_post_sliders = get_transient( 'catcheverest_post_sliders' ) ) && !empty( $options['featured_slider'] ) ) {
+			echo '<!-- refreshing cache -->';
 
-		$catcheverest_post_sliders = '
-		<div id="main-slider" class="container">
-        	<section class="featured-slider">';
-				$loop = new WP_Query( array(
-					'posts_per_page' => $options['slider_qty'],
-					'post__in'		 => $options['featured_slider'],
-					'orderby' 		 => 'post__in',
-					'ignore_sticky_posts' => 1 // ignore sticky posts
-				));
-				$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
-					$title_attribute = the_title_attribute( 'echo=0' );
-					$excerpt = get_the_excerpt();
-					if ( $i == 1 ) { $classes = "post hentry slides displayblock"; } else { $classes = "post hentry slides displaynone"; }
+			$catcheverest_post_sliders = '
+			<div id="main-slider" class="container">
+	        	<section class="featured-slider">';
+					$loop = new WP_Query( array(
+						'posts_per_page' => $options['slider_qty'],
+						'post__in'		 => $options['featured_slider'],
+						'orderby' 		 => 'post__in',
+						'ignore_sticky_posts' => 1 // ignore sticky posts
+					));
+					$i=0; while ( $loop->have_posts()) : $loop->the_post(); $i++;
+						$title_attribute = the_title_attribute( 'echo=0' );
+						$excerpt = get_the_excerpt();
+						if ( $i == 1 ) { $classes = "post hentry slides displayblock"; } else { $classes = "post hentry slides displaynone"; }
+						$catcheverest_post_sliders .= '
+						<article class="'.$classes.'">
+							<figure class="slider-image">
+								<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
+									'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
+								</a>
+							</figure>
+							<div class="entry-container">
+								<header class="entry-header">
+									<h2 class="entry-title">
+										<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
+									</h2>
+								</header>';
+								if ( $excerpt !='') {
+									$catcheverest_post_sliders .= '<div class="entry-content">'. $excerpt.'</div>';
+								}
+								$catcheverest_post_sliders .= '
+							</div>
+						</article><!-- .slides -->';
+					endwhile; wp_reset_postdata();
 					$catcheverest_post_sliders .= '
-					<article class="'.$classes.'">
-						<figure class="slider-image">
-							<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">
-								'. get_the_post_thumbnail( $post->ID, 'slider', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class'	=> 'pngfix' ) ).'
-							</a>
-						</figure>
-						<div class="entry-container">
-							<header class="entry-header">
-								<h2 class="entry-title">
-									<a title="' . $title_attribute . '" href="' . esc_url( get_permalink() ) . '">'.the_title( '<span>','</span>', false ).'</a>
-								</h2>
-							</header>';
-							if ( $excerpt !='') {
-								$catcheverest_post_sliders .= '<div class="entry-content">'. $excerpt.'</div>';
-							}
-							$catcheverest_post_sliders .= '
-						</div>
-					</article><!-- .slides -->';
-				endwhile; wp_reset_postdata();
-				$catcheverest_post_sliders .= '
-			</section>
-        	<div id="slider-nav">
-        		<a class="slide-previous">&lt;</a>
-        		<a class="slide-next">&gt;</a>
-        	</div>
-        	<div id="controllers"></div>
-  		</div><!-- #main-slider -->';
+				</section>
+	        	<div id="slider-nav">
+	        		<a class="slide-previous">&lt;</a>
+	        		<a class="slide-next">&gt;</a>
+	        	</div>
+	        	<div id="controllers"></div>
+	  		</div><!-- #main-slider -->';
 
-	set_transient( 'catcheverest_post_sliders', $catcheverest_post_sliders, 86940 );
+		set_transient( 'catcheverest_post_sliders', $catcheverest_post_sliders, 86940 );
+		}
+		echo $catcheverest_post_sliders;
 	}
-	echo $catcheverest_post_sliders;
-}
 endif; // catcheverest_post_sliders
 
 
-/**
- * Shows Default Slider Demo if there is not iteam in Featured Post Slider
- */
-function catcheverest_default_sliders() {
-	//delete_transient( 'catcheverest_default_sliders' );
-
-	if ( !$catcheverest_default_sliders = get_transient( 'catcheverest_default_sliders' ) ) {
-		echo '<!-- refreshing cache -->';
-		$catcheverest_default_sliders = '
-		<div id="main-slider" class="container">
-			<section class="featured-slider">
-				<article class="post hentry slides displayblock">
-					<figure class="slider-image">
-						<a title="Mount Everest" href="#">
-							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider1.jpg" class="wp-post-image" alt="Mount Everest" title="Mount Everest">
-						</a>
-					</figure>
-					<div class="entry-container">
-						<header class="entry-header">
-							<h2 class="entry-title">
-								<a title="Mount Everest" href="#"><span>Mount Everest</span></a>
-							</h2>
-						</header>
-						<div class="entry-content">
-							<p>Mount Everest is the Earth\'s highest mountain, with a peak at 8,848 metres above sea level and the 5th tallest mountain measured from the centre of the Earth. It is located in the Nepal.</p>
-						</div>
-					</div>
-				</article><!-- .slides -->
-
-				<article class="post hentry slides displaynone">
-					<figure class="slider-image">
-						<a title="Nepal Prayer Wheels" href="#">
-							<img src="'. trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/slider2.jpg" class="wp-post-image" alt="Nepal Prayer Wheels" title="Nepal Prayer Wheels">
-						</a>
-					</figure>
-					<div class="entry-container">
-						<header class="entry-header">
-							<h2 class="entry-title">
-								<a title="Nepal Prayer Wheels" href="#"><span>Nepal Prayer Wheels</span></a>
-							</h2>
-						</header>
-						<div class="entry-content">
-							<p>A prayer wheel is a cylindrical wheel on a spindle made from metal, wood, stone, leather or coarse cotton. Traditionally, the mantra Om Mani Padme Hum is written in Sanskrit on the outside of the wheel.</p>
-						</div>
-					</div>
-				</article><!-- .slides -->
-			</section>
-			<div id="slider-nav">
-				<a class="slide-previous">&lt;</a>
-				<a class="slide-next">&gt;</a>
-			</div>
-			<div id="controllers"></div>
-		</div><!-- #main-slider -->';
-
-	set_transient( 'catcheverest_default_sliders', $catcheverest_default_sliders, 86940 );
-	}
-	echo $catcheverest_default_sliders;
-} // catcheverest_default_sliders
-
-
 if ( ! function_exists( 'catcheverest_slider_display' ) ) :
-/**
- * Shows Slider
- */
-function catcheverest_slider_display() {
-	global $post, $wp_query, $catcheverest_options_settings;
-   	$options = $catcheverest_options_settings;
+	/**
+	 * Shows Slider
+	 */
+	function catcheverest_slider_display() {
+		global $post, $wp_query, $catcheverest_options_settings;
+	   	$options = $catcheverest_options_settings;
 
-	// get data value from theme options
-	$enableslider = $options['enable_slider'];
-	$featuredslider = $options['featured_slider'];
+		// get data value from theme options
+		$enableslider = $options['enable_slider'];
+		$featuredslider = $options['featured_slider'];
 
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts');
+		// Front page displays in Reading Settings
+		$page_on_front = get_option('page_on_front') ;
+		$page_for_posts = get_option('page_for_posts');
 
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
 
-	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) :
-
-
-		// This function passes the value of slider effect to js file
-		if ( function_exists( 'catcheverest_pass_slider_value' ) ) : catcheverest_pass_slider_value(); endif;
-
-		// Select Slider
-		if ( !empty( $featuredslider ) ) {
-			catcheverest_post_sliders();
-		}
-		else {
-			catcheverest_default_sliders();
-		}
+		if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) :
 
 
-	endif;
-}
+			// This function passes the value of slider effect to js file.
+			if ( function_exists( 'catcheverest_pass_slider_value' ) ) {
+				catcheverest_pass_slider_value(); 
+			}
+
+			// Select Slider.
+			if ( ! empty( $featuredslider ) ) {
+				catcheverest_post_sliders();
+			}
+		endif;
+	}
 endif; // catcheverest_slider_display
 
 add_action( 'catcheverest_before_main', 'catcheverest_slider_display', 10 );
 
 
 if ( ! function_exists( 'catcheverest_homepage_headline' ) ) :
-/**
- * Shows Homepage Headline Message
- *
- * @uses catcheverest_before_main action to add it in the header
- */
-function catcheverest_homepage_headline() {
-	//delete_transient( 'catcheverest_homepage_headline' );
+	/**
+	 * Shows Homepage Headline Message
+	 *
+	 * @uses catcheverest_before_main action to add it in the header
+	 */
+	function catcheverest_homepage_headline() {
+		//delete_transient( 'catcheverest_homepage_headline' );
 
-	global $post, $wp_query, $catcheverest_options_settings;;
-   	$options = $catcheverest_options_settings;
+		global $post, $wp_query, $catcheverest_options_settings;;
+	   	$options = $catcheverest_options_settings;
 
-	// Getting data from Theme Options
-	$disable_headline = $options['disable_homepage_headline'];
-	$disable_subheadline = $options['disable_homepage_subheadline'];
-	$homepage_headline = $options['homepage_headline'];
-	$homepage_subheadline = $options['homepage_subheadline'];
+		// Getting data from Theme Options
+		$disable_headline = $options['disable_homepage_headline'];
+		$disable_subheadline = $options['disable_homepage_subheadline'];
+		$homepage_headline = $options['homepage_headline'];
+		$homepage_subheadline = $options['homepage_subheadline'];
 
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts');
+		// Front page displays in Reading Settings
+		$page_on_front = get_option('page_on_front') ;
+		$page_for_posts = get_option('page_for_posts');
 
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
+		// Get Page ID outside Loop
+		$page_id = $wp_query->get_queried_object_id();
 
 
-	if ( ( empty( $disable_headline ) || empty( $disable_subheadline ) ) && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) {
+		if ( ( empty( $disable_headline ) || empty( $disable_subheadline ) ) && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) {
 
-		if ( !$catcheverest_homepage_headline = get_transient( 'catcheverest_homepage_headline' ) ) {
+			if ( !$catcheverest_homepage_headline = get_transient( 'catcheverest_homepage_headline' ) ) {
 
-			echo '<!-- refreshing cache -->';
+				echo '<!-- refreshing cache -->';
 
-			$catcheverest_homepage_headline = '<div id="homepage-message" class="container"><p>';
+				$catcheverest_homepage_headline = '<div id="homepage-message" class="container"><p>';
 
-			if ( $disable_headline == "0" ) {
-				$catcheverest_homepage_headline .= $homepage_headline;
+				if ( $disable_headline == "0" ) {
+					$catcheverest_homepage_headline .= $homepage_headline;
+				}
+				if ( $disable_subheadline == "0" ) {
+					$catcheverest_homepage_headline .= '<span>' . $homepage_subheadline . '</span>';
+				}
+
+				$catcheverest_homepage_headline .= '</p></div>';
+
+				set_transient( 'catcheverest_homepage_headline', $catcheverest_homepage_headline, 86940 );
 			}
-			if ( $disable_subheadline == "0" ) {
-				$catcheverest_homepage_headline .= '<span>' . $homepage_subheadline . '</span>';
-			}
-
-			$catcheverest_homepage_headline .= '</p></div>';
-
-			set_transient( 'catcheverest_homepage_headline', $catcheverest_homepage_headline, 86940 );
-		}
-		echo $catcheverest_homepage_headline;
-	 }
-}
+			echo $catcheverest_homepage_headline;
+		 }
+	}
 endif; // catcheverest_homepage_headline
 
 add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
 
-
-/**
- * Shows Default Featued Content
- *
- * @uses catcheverest_before_main action to add it in the header
- */
-function catcheverest_default_featured_content() {
-	//delete_transient( 'catcheverest_default_featured_content' );
-
-	// Getting data from Theme Options
-	global $catcheverest_options_settings;
-   	$options = $catcheverest_options_settings;
-	$disable_homepage_featured = $options['disable_homepage_featured'];
-
-	if ( $disable_homepage_featured == "0" ) {
-		if ( !$catcheverest_default_featured_content = get_transient( 'catcheverest_default_featured_content' ) ) {
-
-			$classes = "layout-three";
-
-			$catcheverest_default_featured_content = '
-			<section id="featured-post" class="' . $classes . '">
-				<article class="post hentry first">
-					<figure class="featured-homepage-image">
-						<a href="#" title="Nepal Prayer Wheels">
-							<img title="Nepal Prayer Wheels" alt="Nepal Prayer Wheels" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/thumb-390-1.jpg" />
-						</a>
-					</figure>
-					<div class="entry-container">
-						<header class="entry-header">
-							<h2 class="entry-title">
-								<a title="Nepal Prayer Wheels" href="#">Nepal Prayer Wheels</a>
-							</h2>
-						</header>
-						<div class="entry-content">
-							A prayer wheel is a cylindrical wheel on a spindle made from metal, wood, stone, leather or coarse cotton. Traditionally, the mantra Om Mani Padme Hum is written in Sanskrit on the outside of the wheel.
-						</div>
-					</div><!-- .entry-container -->
-				</article>
-
-				<article class="post hentry">
-					<figure class="featured-homepage-image">
-						<a href="#" title="Mount Everest">
-							<img title="Mount Everest" alt="Mount Everest" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/thumb-390-2.jpg" />
-						</a>
-					</figure>
-					<div class="entry-container">
-						<header class="entry-header">
-							<h2 class="entry-title">
-								<a title="Mount Everest" href="#">Mount Everest</a>
-							</h2>
-						</header>
-						<div class="entry-content">
-							Mount Everest is the Earth\'s highest mountain, with a peak at 8,848 metres above sea level and the 5th tallest mountain measured from the centre of the Earth. It is located in the Nepal.
-						</div>
-					</div><!-- .entry-container -->
-				</article>
-
-				<article class="post hentry">
-					<figure class="featured-homepage-image">
-						<a href="#" title="Mount Kanchengjunga">
-							<img title="Mount Kanchengjunga" alt="Mount Kanchengjunga" class="wp-post-image" src="'.trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/thumb-390-3.jpg" />
-						</a>
-					</figure>
-					<div class="entry-container">
-						<header class="entry-header">
-							<h2 class="entry-title">
-								<a title="Mount Kanchengjunga" href="#">Mount Kanchengjunga</a>
-							</h2>
-						</header>
-						<div class="entry-content">
-							Kangchenjunga is the third highest mountain in the world, with apeat at 8,586 metres above sea level. It is located on the boundary between Nepal and the Indian state of Sikkim.
-						</div>
-					</div><!-- .entry-container -->
-				</article>
-			</section><!-- #featured-post -->';
-		}
-		echo $catcheverest_default_featured_content;
-	}
-}
-
-
 if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
-/**
- * Homepage Featured Content
- *
- * @uses catcheverest_before_main action to add it in the header
- */
-function catcheverest_homepage_featured_content() {
-	//delete_transient( 'catcheverest_homepage_featured_content' );
+	/**
+	 * Homepage Featured Content
+	 *
+	 * @uses catcheverest_before_main action to add it in the header
+	 */
+	function catcheverest_homepage_featured_content() {
+		//delete_transient( 'catcheverest_homepage_featured_content' );
 
-	// Getting data from Theme Options
-	global $catcheverest_options_settings;
-   	$options = $catcheverest_options_settings;
-	$disable_homepage_featured = $options['disable_homepage_featured'];
-	$quantity = $options['homepage_featured_qty'];
-	$headline = $options['homepage_featured_headline'];
+		// Getting data from Theme Options
+		global $catcheverest_options_settings;
+	   	$options = $catcheverest_options_settings;
+		$disable_homepage_featured = $options['disable_homepage_featured'];
+		$quantity                  = $options['homepage_featured_qty'];
+		$headline                  = $options['homepage_featured_headline'];
+					
+		if ( $disable_homepage_featured == "0" ) {
 
-	if ( $disable_homepage_featured == "0" ) {
+			$output = '<section id="featured-post" class="layout-three">';
 
-		if ( !$catcheverest_homepage_featured_content = get_transient( 'catcheverest_homepage_featured_content' )  && ( !empty( $options['homepage_featured_image'] ) || !empty( $options['homepage_featured_title'] ) || !empty( $options['homepage_featured_content'] ) ) ) {
-
-			echo '<!-- refreshing cache -->';
-
-			$parentclasses = "layout-three";
-
-			$catcheverest_homepage_featured_content = '<section id="featured-post" class="' . $parentclasses . '">';
-
-			if ( !empty( $headline ) ) {
-				$catcheverest_homepage_featured_content .= '<h2 id="feature-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h2>';
+			if ( ! empty( $headline ) ) {
+				$output .= '<h2 id="feature-heading" class="entry-title">' . wp_kses_post( $headline ) . '</h2>';
 			}
 
-			$catcheverest_homepage_featured_content .= '<div class="featued-content-wrap">';
+			if ( ! empty( array_filter( $options['homepage_featured_image'] ) ) || !empty( array_filter( $options['homepage_featured_title'] ) ) || !empty( array_filter( $options['homepage_featured_content'] ) ) ) {
+
+
+				$output .= '<div class="featued-content-wrap">';
 
 				for ( $i = 1; $i <= $quantity; $i++ ) {
-
-
 					if ( !empty ( $options['homepage_featured_base'][ $i ] ) ) {
 						$target = '_blank';
 					} else {
@@ -797,12 +644,11 @@ function catcheverest_homepage_featured_content() {
 						$title = '';
 					}
 
-
 					if ( !empty ( $options['homepage_featured_title'][ $i ] ) || !empty ( $options['homepage_featured_content'][ $i ] ) || !empty ( $options['homepage_featured_image'][ $i ] ) ) {
-						$catcheverest_homepage_featured_content .= '
+						$output .= '
 						<article class="'.$classes.'">';
 							if ( !empty ( $options['homepage_featured_image'][ $i ] ) ) {
-								$catcheverest_homepage_featured_content .= '
+								$output .= '
 								<figure class="featured-homepage-image">
 									<a title="' . esc_attr( $title ) . '" href="' . esc_url( $link ) . '" target="' . $target . '">
 										<img src="'.$options['homepage_featured_image'][ $i ].'" class="wp-post-image" alt="' . esc_attr( $title ) . '" title="' . esc_attr( $title ) . '">
@@ -810,11 +656,11 @@ function catcheverest_homepage_featured_content() {
 								</figure>';
 							}
 							if ( !empty ( $options['homepage_featured_title'][ $i ] ) || !empty ( $options['homepage_featured_content'][ $i ] ) ) {
-								$catcheverest_homepage_featured_content .= '
+								$output .= '
 								<div class="entry-container">';
 
 									if ( !empty ( $options['homepage_featured_title'][ $i ] ) ) {
-										$catcheverest_homepage_featured_content .= '
+										$output .= '
 										<header class="entry-header">
 											<h2 class="entry-title">
 												<a href="' . esc_url( $link ) . '" title="' . esc_attr( $title ) . '" target="' . $target . '">' . $title . '</a>
@@ -822,31 +668,80 @@ function catcheverest_homepage_featured_content() {
 										</header>';
 									}
 									if ( !empty ( $options['homepage_featured_content'][ $i ] ) ) {
-										$catcheverest_homepage_featured_content .= '
+										$output .= '
 										<div class="entry-content">
 											' . $options['homepage_featured_content'][ $i ] . '
 										</div>';
 									}
-								$catcheverest_homepage_featured_content .= '
+								$output .= '
 								</div><!-- .entry-container -->';
 							}
-						$catcheverest_homepage_featured_content .= '
+						$output .= '
 						</article><!-- .slides -->';
 					}
-
 				}
 
-			$catcheverest_homepage_featured_content .= '</div><!-- .featued-content-wrap -->';
+				$output .= '</div><!-- .featued-content-wrap -->';
+			} elseif ( ! empty( $options['homepage_featured_page'] ) ) {
+				$output .= '<div class="featued-content-wrap">';
 
-			$catcheverest_homepage_featured_content .= '</section><!-- #featured-post -->';
+				$args = array(
+					'posts_per_page'      => $quantity,
+					'post_type'           => 'page',
+					'ignore_sticky_posts' => 1, // ignore sticky posts.
+					'post__in'            => $options['homepage_featured_page'],
+					'orderby'             => 'post__in',
+				);
 
+				
+				// The Query
+				$query = new WP_Query( $args );
+
+				if ( $query -> have_posts() ) :
+					while ( $query -> have_posts() ) :
+						$query->the_post();
+
+						$output .= '
+						<article class="post hentry">';
+							if ( has_post_thumbnail() ) {
+								$output .= '
+								<figure class="featured-homepage-image">
+									<a title="' . the_title_attribute( 'echo=0' ) . '" href="' . esc_url( get_the_permalink() ) . '">'
+									. get_the_post_thumbnail( get_the_ID(), 'photo-journal-featured-content' ) .
+									'</a>
+								</figure>';
+							}
+	
+							$output .= '
+							<div class="entry-container">';
+							
+							$output .= the_title( '<header class="entry-header"><h2 class="entry-title"> <a href="' . esc_url( get_the_permalink() ) . '" title="' . the_title_attribute( 'echo=0' ) . '">', '</a></h2></header>', false );
+
+							$excerpt = get_the_excerpt();
+	
+							if ( $excerpt !='') {
+								$output .= '<div class="entry-content">' . wp_kses_post( $excerpt ) . '</div>';
+							}
+							
+							$output .= '
+							</div><!-- .entry-container -->
+						</article><!-- .hentry -->';
+					endwhile;
+
+					wp_reset_postdata();
+
+
+				endif;
+
+				$output .= '</div><!-- .featued-content-wrap -->';
+			}
+
+			$output .= '</section>';
+			
+			echo $output;
 		}
 
-		echo $catcheverest_homepage_featured_content;
-
 	}
-
-}
 endif; // catcheverest_homepage_featured_content
 
 
@@ -856,30 +751,9 @@ endif; // catcheverest_homepage_featured_content
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_featured_display() {
-
-	global $post, $wp_query, $catcheverest_options_settings;;
-   	$options = $catcheverest_options_settings;
-
-	// Getting data from Theme Options
-	$options = $catcheverest_options_settings;
-	$disable_homepage_featured = $options['disable_homepage_featured'];
-
-	// Front page displays in Reading Settings
-	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts');
-
-	// Get Page ID outside Loop
-	$page_id = $wp_query->get_queried_object_id();
-
-
-	if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
-		if ( ( !empty( $options['homepage_featured_image'] ) && ( array_filter( $options['homepage_featured_image'] ) ) ) || ( !empty( $options['homepage_featured_title'] ) && ( array_filter( $options['homepage_featured_title'] ) ) ) || ( !empty( $options['homepage_featured_content'] ) && ( array_filter( $options['homepage_featured_content'] ) ) ) ) {
-			catcheverest_homepage_featured_content();
-		} else {
-			catcheverest_default_featured_content();
-		}
+	if ( is_front_page() || ( is_home() && is_front_page() ) ) {
+		catcheverest_homepage_featured_content();
 	}
-
 } // catcheverest_homepage_featured_content
 
 add_action( 'catcheverest_main', 'catcheverest_homepage_featured_display', 10 );
