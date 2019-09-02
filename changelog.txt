@@ -5,3 +5,6 @@
 * Fixed coding issues.
 * Improved coding.
 * Improved accessibility.
+
+= Version 1.0.2 =
+* Fixed a problem of readme.txt.

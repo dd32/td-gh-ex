@@ -1,9 +1,10 @@
-=== BestWP PRO ===
+=== BestWP ===
 Contributors: themesdna
 Tags: three-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, news
 Requires at least: 4.7
-Tested up to: 5.0.1
-Stable tag: 1.0.1
+Tested up to: 5.2.2
+Requires PHP: 5.2.4
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,6 +59,9 @@ This theme uses "WP-PageNavi" plugin to display numbered page navigation of this
 * Improved coding.
 * Improved accessibility.
 
+= 1.0.2 =
+* Fixed a problem of readme.txt.
+
 == Upgrade Notice ==
 
 = 1.0.0 =
@@ -68,12 +72,15 @@ This theme uses "WP-PageNavi" plugin to display numbered page navigation of this
 * Improved coding.
 * Improved accessibility.
 
+= 1.0.2 =
+* Fixed a problem of readme.txt.
+
 
 == Resources ==
 
 Underscores (_s)
 ----------------
-BestWP PRO is based on Underscores starter theme.
+BestWP is based on Underscores starter theme.
 Copyright: Automattic, automattic.com
 Resource URI: https://github.com/automattic/_s
 License: GNU General Public License v2.0
@@ -149,8 +156,11 @@ Resource URI: https://github.com/OwlCarousel2/OwlCarousel2
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-Screenshot Images
------------------
+
+== Screenshots ==
+1. screenshot.png
+
+== Images used in Screenshot of BestWP theme: ==
 License: Creative Commons Zero (CC0) license
 License URL: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
@@ -169,14 +179,14 @@ We will include it within the theme from next version update.
 
 == Report Bugs / Theme Support ==
 
-BestWP PRO is a Brand new theme, and could contain some hidden bugs. So, if you find any please report them at the following URL:
+BestWP is a Brand new theme, and could contain some hidden bugs. So, if you find any please report them at the following URL:
 
 https://themesdna.com/contact/
 
 /*
-BestWP PRO is a WordPress Theme,
+BestWP is a WordPress Theme,
 Copyright (C) 2019, ThemesDNA
-BestWP PRO is distributed under the terms of the GNU/GPLv2 or later
+BestWP is distributed under the terms of the GNU/GPLv2 or later
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
