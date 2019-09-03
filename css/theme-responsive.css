@@ -189,10 +189,12 @@ a.contact{ margin-top:15px !important; font-size:18px !important;}
 }
 
 @media screen and (min-width:1000px) and (max-width:1159px){
-	.header .header-inner, .container, .copyright-wrapper .inner{ width:100%;}
+	.header .header-inner, .container, .copyright-wrapper .inner{ width:95%;}
 	.nivo-caption{ top:17% !important; height:auto !important;}
 	#aboutsec .cont-fix{ width:auto !important;}
 	.cat_comments .cat{ width:48%;}
 	.testimonials{ width:90%; margin:0 auto;}
-	.bx-wrapper, .content-area{ width:100%;}
+	.bx-wrapper, .content-area{ width:95%;}
+	.site-main{ width:65%;}
+	#sidebar{ width:28%;}
 }

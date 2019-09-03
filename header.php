@@ -94,7 +94,7 @@
                         <?php } ?>
                         <?php if( get_theme_mod('button_hide',true) == '') { ?>
                         <?php if( get_theme_mod('purchaselink', true) != ''){ ?>
-                        	<a class="common_btn" href="<?php echo get_theme_mod('purchaselink',true); ?>"><?php _e('Purchase Now','awesomeone'); ?></a>
+                        	<a class="common_btn" href="<?php echo esc_url(get_theme_mod('purchaselink',true)); ?>"><?php _e('Purchase Now','awesomeone'); ?></a>
                         <?php } } ?>
                     </div>
                     </div><?php 
