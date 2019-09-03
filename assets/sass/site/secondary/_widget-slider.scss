@@ -45,6 +45,10 @@
     }
   }
 
+  a:focus {
+	  border-bottom: 3px solid $color__brand-red;
+  }
+
   h4 {
     font-family: "poppins";
     display: inline-block;
@@ -218,7 +222,8 @@
   transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
-.newsmag_slider .category a:hover {
+.newsmag_slider .category a:hover,
+.newsmag_slider .category a:focus {
   background: #000;
 }
 
