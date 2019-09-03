@@ -21,29 +21,29 @@ if( !defined( 'ABSPATH' ) ) {
 }
 
 // Boxes Lite element action
-add_action( 'boxes_lite', 'cyberchimps_boxes_lite_content' );
+add_action( 'boxes_lite', 'ifeature_cc_boxes_lite_content' );
 
 // Defining content of the boxes-lite element
-function cyberchimps_boxes_lite_content() {
+function ifeature_cc_boxes_lite_content() {
 
 	// Set directory uri
 	$directory_uri = get_template_directory_uri();
 
 	// Getting Image URL for each box
-	$img1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one' );
-	$img2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two' );
-	$img3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three' );
+	$img1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_lite_image_one' );
+	$img2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_lite_image_two' );
+	$img3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_lite_image_three' );
 
 	// Getting URL of custom link
-	$url1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_one' );
-	$url2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_two' );
-	$url3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_three' );
+	$url1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_link_url_one' );
+	$url2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_link_url_two' );
+	$url3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_link_url_three' );
 
 
 	// Getting text for each box
-	$text1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one_text' );
-	$text2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two_text' );
-	$text3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three_text' );
+	$text1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_lite_image_one_text' );
+	$text2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_lite_image_two_text' );
+	$text3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_boxes_lite_image_three_text' );
 
 
 	?>

@@ -15,13 +15,8 @@
  * @link     http://www.cyberchimps.com/
  */
 
-/**
- * Add plugin automation file
- */
-require_once( dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php' );
-
 // Load style for elements
-function cyberchimps_add_elements_style() {
+function ifeature_cc_add_elements_style() {
 
 	// Set directory uri
 	$directory_uri = get_template_directory_uri();
@@ -31,52 +26,52 @@ function cyberchimps_add_elements_style() {
 	wp_enqueue_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.min.js' );
 }
 
-add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
+add_action( 'wp_enqueue_scripts', 'ifeature_cc_add_elements_style', 30 );
 
 // Load elements
 // Set directory path
-$directory_path = get_template_directory();
+$ifeature_cc_directory_path = get_template_directory();
 
-require_once( $directory_path . '/elements/parallax.php' );
-require_once( $directory_path . '/elements/portfolio-lite.php' );
-require_once( $directory_path . '/elements/slider-lite.php' );
-require_once( $directory_path . '/elements/boxes.php' );
-require_once( $directory_path . '/elements/testimonial.php' );
-require_once( $directory_path . '/elements/contact-us.php' );
+require_once get_parent_theme_file_path('/elements/parallax.php' );
+require_once get_parent_theme_file_path('/elements/portfolio-lite.php' );
+require_once get_parent_theme_file_path('/elements/slider-lite.php' );
+require_once get_parent_theme_file_path('/elements/boxes.php' );
+require_once get_parent_theme_file_path('/elements/testimonial.php' );
+require_once get_parent_theme_file_path('/elements/contact-us.php' );
 
 // main blog drag and drop options
-function cyberchimps_selected_elements() {
+function ifeature_cc_selected_elements() {
 	$options = array(
-		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_core' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
-		"blog_post_page" => __( 'Post Page', 'cyberchimps_core' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
-                "testimonial"	     => __( 'Testimonial', 'cyberchimps_core'),
-                "map_contact"	     => __( 'Contact Us', 'cyberchimps_core')
+		'boxes_lite'     => __( 'Boxes Lite', 'ifeature' ),
+		"portfolio_lite" => __( 'Portfolio Lite', 'ifeature' ),
+		"blog_post_page" => __( 'Post Page', 'ifeature' ),
+		"slider_lite"    => __( 'Slider Lite', 'ifeature' ),
+                "testimonial"	     => __( 'Testimonial', 'ifeature'),
+                "map_contact"	     => __( 'Contact Us', 'ifeature')
 	);
 
 	return $options;
 }
 
-add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_elements' );
+add_filter( 'ifeature_cc_elements_draganddrop_options', 'ifeature_cc_selected_elements' );
 
-function cyberchimps_selected_page_elements() {
+function ifeature_cc_selected_page_elements() {
 	$options = array(
-		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_core' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
-		"page_section"   => __( 'Page', 'cyberchimps_core' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
-                "testimonial"	     => __( 'Testimonial', 'cyberchimps_core'),
-                "map_contact"	     => __( 'Contact Us', 'cyberchimps_core')
+		'boxes_lite'     => __( 'Boxes Lite', 'ifeature' ),
+		"portfolio_lite" => __( 'Portfolio Lite', 'ifeature' ),
+		"page_section"   => __( 'Page', 'ifeature' ),
+		"slider_lite"    => __( 'Slider Lite', 'ifeature' ),
+                "testimonial"	     => __( 'Testimonial', 'ifeature'),
+                "map_contact"	     => __( 'Contact Us', 'ifeature')
 	);
 
 	return $options;
 }
 
-add_filter( 'cyberchimps_elements_draganddrop_page_options', 'cyberchimps_selected_page_elements' );
+add_filter( 'ifeature_cc_elements_draganddrop_page_options', 'ifeature_cc_selected_page_elements' );
 
 // drop breadcrumb fields
-function cyberchimps_element_drop_fields( $fields ) {
+function ifeature_cc_element_drop_fields( $fields ) {
 // drop unwanted fields
 	foreach( $fields as $key => $value ) {
 		if( $value['id'] == 'single_post_breadcrumbs' || $value['id'] == 'archive_breadcrumbs' ) {
@@ -87,4 +82,4 @@ function cyberchimps_element_drop_fields( $fields ) {
 	return $fields;
 }
 
-add_filter( 'cyberchimps_field_filter', 'cyberchimps_element_drop_fields', 2 );
+add_filter( 'ifeature_cc_field_filter', 'ifeature_cc_element_drop_fields', 2 );

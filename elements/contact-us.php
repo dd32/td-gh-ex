@@ -44,12 +44,12 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			add_action( 'map_contact', array( $this, 'render_display' ) );
 			add_action( 'init', array( $this, 'meta_box' ) );
 
-			$this->options = get_option( 'cyberchimps_options' );
+			$this->options = get_option( 'ifeature_cc_options' );
 		} //end of construct
 
 		public function render_display() {
 
-			global $post, $post_id;
+			global $post;
                         if(is_page())
                         {
 			$post_id = $post->ID;
@@ -63,11 +63,11 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                         else
                         {
 
-                        $custom_contact_title =	        cyberchimps_get_option('custom_contact_title');
-			$custom_contact_address =	cyberchimps_get_option('custom_contact_address');
-			$custom_contact_number =	cyberchimps_get_option('custom_contact_number');
-			$custom_contact_email =		cyberchimps_get_option('custom_contact_email');
-			$contactus_element_text = 	cyberchimps_get_option('contactus_element_text');
+                        $custom_contact_title =	        Ifeature_Helper::ifeature_cc_get_option('custom_contact_title');
+			$custom_contact_address =	Ifeature_Helper::ifeature_cc_get_option('custom_contact_address');
+			$custom_contact_number =	Ifeature_Helper::ifeature_cc_get_option('custom_contact_number');
+			$custom_contact_email =		Ifeature_Helper::ifeature_cc_get_option('custom_contact_email');
+			$contactus_element_text = 	Ifeature_Helper::ifeature_cc_get_option('contactus_element_text');
 
                         }
                 if (!empty($custom_contact_title) || !empty($custom_contact_number) || !empty($custom_contact_email) ) {
@@ -145,33 +145,33 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 					'type'    => 'text',
 					'id'      => 'custom_contact_title',
 					'class'   => '',
-					'name'    => __( 'Contact Section Title', 'cyberchimps_core' )
+					'name'    => __( 'Contact Section Title', 'ifeature' )
 				),
 				array(
 					'type'    => 'text',
 					'id'      => 'custom_contact_address',
 					'class'   => '',
-					'name'    => __( 'Contact Address', 'cyberchimps_core' )
+					'name'    => __( 'Contact Address', 'ifeature' )
 				),
 				array(
 					'type'    => 'text',
 					'id'      => 'custom_contact_number',
 					'class'   => '',
-					'name'    => __( 'Contact Number', 'cyberchimps_core' )
+					'name'    => __( 'Contact Number', 'ifeature' )
 				),
 				array(
 					'type'    => 'text',
 					'id'      => 'custom_contact_email',
 					'class'   => '',
-					'name'    => __( 'Contact Email', 'cyberchimps_core' )
+					'name'    => __( 'Contact Email', 'ifeature' )
 				),
 
 				array(
 					'type'    => 'text',
 					'id'      => 'contactus_element_text',
 					'class'   => '',
-					'name'    => __( 'Additional data', 'cyberchimps_core' ),
-					'desc' => __('Recommended: Contact Form', 'cyberchimps_core')
+					'name'    => __( 'Additional data', 'ifeature' ),
+					'desc' => __('Recommended: Contact Form', 'ifeature')
 				),
 
 
@@ -182,11 +182,11 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			 */
 			$page_config = array(
 				'id'             => 'map_contact_options', // meta box id, unique per meta box
-				'title'          => __( 'Custom Contact Options', 'cyberchimps_core' ), // meta box title
+				'title'          => __( 'Custom Contact Options', 'ifeature' ), // meta box title
 				'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 				'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 				'priority'       => 'high', // order of meta box: high (default), low; optional
-				'fields'         => apply_filters( 'cyberchimps_custom_contact_metabox_fields', $page_fields, 'map_contact' ), // list of meta fields (can be added by field arrays)
+				'fields'         => apply_filters( 'ifeature_cc_custom_contact_metabox_fields', $page_fields, 'map_contact' ), // list of meta fields (can be added by field arrays)
 				'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
 				'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
 			);
@@ -194,7 +194,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			/*
 			 * Initiate your meta box
 			 */
-			$page_meta = new Cyberchimps_Meta_Box( $page_config );
+			$page_meta = new Ifeature_Meta_Box( $page_config );
 		}
 
 	}

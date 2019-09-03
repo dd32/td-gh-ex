@@ -21,9 +21,9 @@ if( !defined( 'ABSPATH' ) ) {
 }
 
 // Portfolio Lite Page Options
-add_action( 'init', 'cyberchimps_portfolio_lite_page_options' );
+add_action( 'init', 'ifeature_cc_portfolio_lite_page_options' );
 
-function cyberchimps_portfolio_lite_page_options() {
+function ifeature_cc_portfolio_lite_page_options() {
 	/**
 	 * Set up Portfolio Lite on Page options
 	 */
@@ -35,116 +35,116 @@ function cyberchimps_portfolio_lite_page_options() {
 		// Image one
 		array(
 			'type'  => 'single_image',
-			'id'    => 'cyberchimps_portfolio_lite_image_one',
+			'id'    => 'ifeature_cc_portfolio_lite_image_one',
 			'class' => '',
-			'name'  => __( 'First Portfolio Image', 'cyberchimps_core' ),
+			'name'  => __( 'First Portfolio Image', 'ifeature' ),
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_lite_image_one_caption',
+			'id'    => 'ifeature_cc_portfolio_lite_image_one_caption',
 			'class' => '',
-			'name'  => __( 'First Portfolio Image Caption', 'cyberchimps_core' ),
-			'std'   => __( 'Image 1', 'cyberchimps_core' )
+			'name'  => __( 'First Portfolio Image Caption', 'ifeature' ),
+			'std'   => __( 'Image 1', 'ifeature' )
 		),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_portfolio_link_toggle_one',
+			'id'    => 'ifeature_cc_portfolio_link_toggle_one',
 			'class' => 'checkbox',
-			'name'  => __( 'First Porfolio Link', 'cyberchimps_core' ),
+			'name'  => __( 'First Porfolio Link', 'ifeature' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_link_url_one',
+			'id'    => 'ifeature_cc_portfolio_link_url_one',
 			'class' => '',
-			'name'  => __( 'Link URL', 'cyberchimps_core' ),
+			'name'  => __( 'Link URL', 'ifeature' ),
 			'std'   => esc_url( home_url() )
 		),
 
 		// Image two
 		array(
 			'type'  => 'single_image',
-			'id'    => 'cyberchimps_portfolio_lite_image_two',
+			'id'    => 'ifeature_cc_portfolio_lite_image_two',
 			'class' => '',
-			'name'  => __( 'Second Portfolio Image', 'cyberchimps_core' ),
+			'name'  => __( 'Second Portfolio Image', 'ifeature' ),
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_lite_image_two_caption',
+			'id'    => 'ifeature_cc_portfolio_lite_image_two_caption',
 			'class' => '',
-			'name'  => __( 'Second Portfolio Image Caption', 'cyberchimps_core' ),
-			'std'   => __( 'Image 2', 'cyberchimps_core' )
+			'name'  => __( 'Second Portfolio Image Caption', 'ifeature' ),
+			'std'   => __( 'Image 2', 'ifeature' )
 		),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_portfolio_link_toggle_two',
+			'id'    => 'ifeature_cc_portfolio_link_toggle_two',
 			'class' => 'checkbox',
-			'name'  => __( 'Second Porfolio Link', 'cyberchimps_core' ),
+			'name'  => __( 'Second Porfolio Link', 'ifeature' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_link_url_two',
+			'id'    => 'ifeature_cc_portfolio_link_url_two',
 			'class' => '',
-			'name'  => __( 'Link URL', 'cyberchimps_core' ),
+			'name'  => __( 'Link URL', 'ifeature' ),
 			'std'   => esc_url( home_url() )
 		),
 
 		// Image three
 		array(
 			'type'  => 'single_image',
-			'id'    => 'cyberchimps_portfolio_lite_image_three',
+			'id'    => 'ifeature_cc_portfolio_lite_image_three',
 			'class' => '',
-			'name'  => __( 'Third Portfolio Image', 'cyberchimps_core' ),
+			'name'  => __( 'Third Portfolio Image', 'ifeature' ),
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_lite_image_three_caption',
+			'id'    => 'ifeature_cc_portfolio_lite_image_three_caption',
 			'class' => '',
-			'name'  => __( 'Third Portfolio Image Caption', 'cyberchimps_core' ),
-			'std'   => __( 'Image 3', 'cyberchimps_core' )
+			'name'  => __( 'Third Portfolio Image Caption', 'ifeature' ),
+			'std'   => __( 'Image 3', 'ifeature' )
 		),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_portfolio_link_toggle_three',
+			'id'    => 'ifeature_cc_portfolio_link_toggle_three',
 			'class' => 'checkbox',
-			'name'  => __( 'Third Porfolio Link', 'cyberchimps_core' ),
+			'name'  => __( 'Third Porfolio Link', 'ifeature' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_link_url_three',
+			'id'    => 'ifeature_cc_portfolio_link_url_three',
 			'class' => '',
-			'name'  => __( 'Link URL', 'cyberchimps_core' ),
+			'name'  => __( 'Link URL', 'ifeature' ),
 			'std'   => esc_url( home_url() )
 		),
 
 		// Image four
 		array(
 			'type'  => 'single_image',
-			'id'    => 'cyberchimps_portfolio_lite_image_four',
+			'id'    => 'ifeature_cc_portfolio_lite_image_four',
 			'class' => '',
-			'name'  => __( 'Fourth Portfolio Image', 'cyberchimps_core' ),
+			'name'  => __( 'Fourth Portfolio Image', 'ifeature' ),
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_lite_image_four_caption',
+			'id'    => 'ifeature_cc_portfolio_lite_image_four_caption',
 			'class' => '',
-			'name'  => __( 'Fourth Portfolio Image Caption', 'cyberchimps_core' ),
-			'std'   => __( 'Image 4', 'cyberchimps_core' )
+			'name'  => __( 'Fourth Portfolio Image Caption', 'ifeature' ),
+			'std'   => __( 'Image 4', 'ifeature' )
 		),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_portfolio_link_toggle_four',
+			'id'    => 'ifeature_cc_portfolio_link_toggle_four',
 			'class' => 'checkbox',
-			'name'  => __( 'Fourth Porfolio Link', 'cyberchimps_core' ),
+			'name'  => __( 'Fourth Porfolio Link', 'ifeature' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_portfolio_link_url_four',
+			'id'    => 'ifeature_cc_portfolio_link_url_four',
 			'class' => '',
-			'name'  => __( 'Link URL', 'cyberchimps_core' ),
+			'name'  => __( 'Link URL', 'ifeature' ),
 			'std'   => esc_url( home_url() )
 		),
 	);
@@ -153,7 +153,7 @@ function cyberchimps_portfolio_lite_page_options() {
 	 */
 	$page_config = array(
 		'id'             => 'portfolio_lite_options', // meta box id, unique per meta box
-		'title'          => __( 'Portfolio Lite Options', 'cyberchimps_core' ), // meta box title
+		'title'          => __( 'Portfolio Lite Options', 'ifeature' ), // meta box title
 		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'low', // order of meta box: high (default), low; optional
@@ -165,14 +165,14 @@ function cyberchimps_portfolio_lite_page_options() {
 	/*
 	 * Initiate your meta box
 	 */
-	$page_meta = new Cyberchimps_Meta_Box( $page_config );
+	$page_meta = new Ifeature_Meta_Box( $page_config );
 }
 
 // Portfolio Lite element action
-add_action( 'portfolio_lite', 'cyberchimps_portfolio_lite_content' );
+add_action( 'portfolio_lite', 'ifeature_cc_portfolio_lite_content' );
 
 // Defining content of the portfolio-lite element
-function cyberchimps_portfolio_lite_content() {
+function ifeature_cc_portfolio_lite_content() {
 
 	// call globals
 	global $post;
@@ -181,64 +181,64 @@ function cyberchimps_portfolio_lite_content() {
 	if( is_page() ) {
 
 		// Geting title option
-		$title_enable = get_post_meta( $post->ID, 'cyberchimps_portfolio_title_toggle', true );
-		$title        = get_post_meta( $post->ID, 'cyberchimps_portfolio_title', true );
+		$title_enable = get_post_meta( $post->ID, 'ifeature_cc_portfolio_title_toggle', true );
+		$title        = get_post_meta( $post->ID, 'ifeature_cc_portfolio_title', true );
 
 		// Getting Image URL for each protfolio
-		$img1 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_one', true );
-		$img2 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_two', true );
-		$img3 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_three', true );
-		$img4 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_four', true );
+		$img1 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_one', true );
+		$img2 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_two', true );
+		$img3 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_three', true );
+		$img4 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_four', true );
 
 		// Getting caption for each protfolio
-		$caption1 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_one_caption', true );
-		$caption2 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_two_caption', true );
-		$caption3 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_three_caption', true );
-		$caption4 = get_post_meta( $post->ID, 'cyberchimps_portfolio_lite_image_four_caption', true );
+		$caption1 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_one_caption', true );
+		$caption2 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_two_caption', true );
+		$caption3 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_three_caption', true );
+		$caption4 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_lite_image_four_caption', true );
 
 		// Getting Custom URL toggle
-		$url_toggle1 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_toggle_one', true );
-		$url_toggle2 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_toggle_two', true );
-		$url_toggle3 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_toggle_three', true );
-		$url_toggle4 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_toggle_four', true );
+		$url_toggle1 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_toggle_one', true );
+		$url_toggle2 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_toggle_two', true );
+		$url_toggle3 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_toggle_three', true );
+		$url_toggle4 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_toggle_four', true );
 
 		// Getting URL of custom link
-		$url1 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_url_one', true );
-		$url2 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_url_two', true );
-		$url3 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_url_three', true );
-		$url4 = get_post_meta( $post->ID, 'cyberchimps_portfolio_link_url_four', true );
+		$url1 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_url_one', true );
+		$url2 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_url_two', true );
+		$url3 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_url_three', true );
+		$url4 = get_post_meta( $post->ID, 'ifeature_cc_portfolio_link_url_four', true );
 	}
 
 	// Getting options of portfolio-lite when added to blog
 	else {
 
 		// Geting title option
-		$title_enable = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle', 1 );
-		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
+		$title_enable = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_title_toggle', 1 );
+		$title        = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_title', 'Portfolio' );
 
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one' );
-		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two' );
-		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three' );
-		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four' );
+		$img1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_one' );
+		$img2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_two' );
+		$img3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_three' );
+		$img4 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_four' );
 
 		// Getting caption for each protfolio
-		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption' );
-		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption' );
-		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption' );
-		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption' );
+		$caption1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_one_caption' );
+		$caption2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_two_caption' );
+		$caption3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_three_caption' );
+		$caption4 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_lite_image_four_caption' );
 
 		// Getting Custom URL toggle
-		$url_toggle1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_one' );
-		$url_toggle2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_two' );
-		$url_toggle3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_three' );
-		$url_toggle4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_four' );
+		$url_toggle1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_toggle_one' );
+		$url_toggle2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_toggle_two' );
+		$url_toggle3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_toggle_three' );
+		$url_toggle4 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_toggle_four' );
 
 		// Getting URL of custom link
-		$url1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_one' );
-		$url2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_two' );
-		$url3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_three' );
-		$url4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_four' );
+		$url1 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_url_one' );
+		$url2 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_url_two' );
+		$url3 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_url_three' );
+		$url4 = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_portfolio_link_url_four' );
 	}
 
 	// Set the title to default value if null is supplied

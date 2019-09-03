@@ -10,7 +10,7 @@
  *
  * @link http://justintadlock.com/archives/2015/05/26/multiple-checkbox-customizer-control
  */
-class cyberchimps_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
+class ifeature_cc_Customize_Control_Checkbox_Multiple extends WP_Customize_Control {
 
     /**
      * The type of customize control being rendered.

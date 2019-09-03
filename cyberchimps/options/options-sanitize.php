@@ -1,20 +1,20 @@
 <?php
 
 /* Text */
-add_filter( 'cyberchimps_sanitize_text', 'sanitize_text_field' );
+add_filter( 'ifeature_cc_sanitize_text', 'sanitize_text_field' );
 
 /* Text that allows all html */
-function cyberchimps_sanitize_text_html( $input ) {
+function ifeature_cc_sanitize_text_html( $input ) {
 	$output = wp_kses_post( $input );
 
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_text_html', 'cyberchimps_sanitize_text_html' );
+add_filter( 'ifeature_cc_sanitize_text_html', 'ifeature_cc_sanitize_text_html' );
 
 /* Unfiltered Textarea */
-function cyberchimps_sanitize_unfiltered_textarea( $input ) {
-	$output = cyberchimps_get_option( 'html_box', '' );
+function ifeature_cc_sanitize_unfiltered_textarea( $input ) {
+	$output = Ifeature_Helper::ifeature_cc_get_option( 'html_box', '' );
 	if( current_user_can( 'unfiltered_html' ) ) {
 		$output = $input;
 
@@ -25,10 +25,10 @@ function cyberchimps_sanitize_unfiltered_textarea( $input ) {
 	}
 }
 
-add_filter( 'cyberchimps_sanitize_unfiltered_textarea', 'cyberchimps_sanitize_unfiltered_textarea' );
+add_filter( 'ifeature_cc_sanitize_unfiltered_textarea', 'ifeature_cc_sanitize_unfiltered_textarea' );
 
 /* CSS Textarea */
-function cyberchimps_sanitize_csstextarea( $input ) {
+function ifeature_cc_sanitize_csstextarea( $input ) {
 
 	// Remove unwanted white spaces from start and end.
 	$input = trim( $input );
@@ -42,36 +42,36 @@ function cyberchimps_sanitize_csstextarea( $input ) {
 		$output = $input;
 	}
 	else {
-		$options = get_option( 'cyberchimps_options' );
+		$options = get_option( 'ifeature_cc_options' );
 		$output  = $options['custom_css'];
 	}
 
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_csstextarea', 'cyberchimps_sanitize_csstextarea' );
+add_filter( 'ifeature_cc_sanitize_csstextarea', 'ifeature_cc_sanitize_csstextarea' );
 
 /* Textarea */
-function cyberchimps_sanitize_textarea( $input ) {
+function ifeature_cc_sanitize_textarea( $input ) {
 	global $allowedposttags;
 	$output = wp_kses( $input, $allowedposttags );
 
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_textarea', 'cyberchimps_sanitize_textarea' );
+add_filter( 'ifeature_cc_sanitize_textarea', 'ifeature_cc_sanitize_textarea' );
 
 /* Select */
-add_filter( 'cyberchimps_sanitize_select', 'cyberchimps_sanitize_enum', 10, 2 );
+add_filter( 'ifeature_cc_sanitize_select', 'ifeature_cc_sanitize_enum', 10, 2 );
 
 /* Radio */
-add_filter( 'cyberchimps_sanitize_radio', 'cyberchimps_sanitize_enum', 10, 2 );
+add_filter( 'ifeature_cc_sanitize_radio', 'ifeature_cc_sanitize_enum', 10, 2 );
 
 /* Images */
-add_filter( 'cyberchimps_sanitize_images', 'cyberchimps_sanitize_enum', 10, 2 );
+add_filter( 'ifeature_cc_sanitize_images', 'ifeature_cc_sanitize_enum', 10, 2 );
 
 /* Checkbox */
-function cyberchimps_sanitize_checkbox( $input ) {
+function ifeature_cc_sanitize_checkbox( $input ) {
 	if( $input ) {
 		$output = '1';
 	}
@@ -82,10 +82,10 @@ function cyberchimps_sanitize_checkbox( $input ) {
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_checkbox', 'cyberchimps_sanitize_checkbox' );
+add_filter( 'ifeature_cc_sanitize_checkbox', 'ifeature_cc_sanitize_checkbox' );
 
 /* Multicheck */
-function cyberchimps_sanitize_multicheck( $input, $option ) {
+function ifeature_cc_sanitize_multicheck( $input, $option ) {
 	$output = '';
 	if( is_array( $input ) ) {
 		foreach( $option['options'] as $key => $value ) {
@@ -101,10 +101,10 @@ function cyberchimps_sanitize_multicheck( $input, $option ) {
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_multicheck', 'cyberchimps_sanitize_multicheck', 10, 2 );
+add_filter( 'ifeature_cc_sanitize_multicheck', 'ifeature_cc_sanitize_multicheck', 10, 2 );
 
 /* Toggle */
-function cyberchimps_sanitize_toggle( $input ) {
+function ifeature_cc_sanitize_toggle( $input ) {
 	if( $input ) {
 		$output = '1';
 	}
@@ -115,13 +115,13 @@ function cyberchimps_sanitize_toggle( $input ) {
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_toggle', 'cyberchimps_sanitize_toggle' );
+add_filter( 'ifeature_cc_sanitize_toggle', 'ifeature_cc_sanitize_toggle' );
 
 /* Color Picker */
-add_filter( 'cyberchimps_sanitize_color', 'cyberchimps_sanitize_hex' );
+add_filter( 'ifeature_cc_sanitize_color', 'ifeature_cc_sanitize_hex' );
 
 /* Uploader */
-function cyberchimps_sanitize_upload( $input ) {
+function ifeature_cc_sanitize_upload( $input ) {
 	$output   = '';
 	$filetype = wp_check_filetype( $input );
 
@@ -136,10 +136,10 @@ function cyberchimps_sanitize_upload( $input ) {
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_upload', 'cyberchimps_sanitize_upload' );
+add_filter( 'ifeature_cc_sanitize_upload', 'ifeature_cc_sanitize_upload' );
 
 /* Editor */
-function cyberchimps_sanitize_editor( $input ) {
+function ifeature_cc_sanitize_editor( $input ) {
 	if( current_user_can( 'unfiltered_html' ) ) {
 		$output = $input;
 	}
@@ -151,10 +151,10 @@ function cyberchimps_sanitize_editor( $input ) {
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_editor', 'cyberchimps_sanitize_editor' );
+add_filter( 'ifeature_cc_sanitize_editor', 'ifeature_cc_sanitize_editor' );
 
 /* Allowed Tags */
-function cyberchimps_sanitize_allowedtags( $input ) {
+function ifeature_cc_sanitize_allowedtags( $input ) {
 	global $allowedtags;
 	$output = wpautop( wp_kses( $input, $allowedtags ) );
 
@@ -162,17 +162,17 @@ function cyberchimps_sanitize_allowedtags( $input ) {
 }
 
 /* Allowed Post Tags */
-function cyberchimps_sanitize_allowedposttags( $input ) {
+function ifeature_cc_sanitize_allowedposttags( $input ) {
 	global $allowedposttags;
 	$output = wpautop( wp_kses( $input, $allowedposttags ) );
 
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_info', 'cyberchimps_sanitize_allowedposttags' );
+add_filter( 'ifeature_cc_sanitize_info', 'ifeature_cc_sanitize_allowedposttags' );
 
 /* Check that the key value sent is valid */
-function cyberchimps_sanitize_enum( $input, $option ) {
+function ifeature_cc_sanitize_enum( $input, $option ) {
 	$output = '';
 	if( $input != false ) {
 		if( array_key_exists( $input, $option['options'] ) ) {
@@ -184,7 +184,7 @@ function cyberchimps_sanitize_enum( $input, $option ) {
 }
 
 /* Section Order */
-function cyberchimps_sanitize_section_order( $input, $option ) {
+function ifeature_cc_sanitize_section_order( $input, $option ) {
 	$output = array();
 	if( is_array( $input ) ) {
 		foreach( $input as $key => $value ) {
@@ -200,10 +200,10 @@ function cyberchimps_sanitize_section_order( $input, $option ) {
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_section_order', 'cyberchimps_sanitize_section_order', 10, 2 );
+add_filter( 'ifeature_cc_sanitize_section_order', 'ifeature_cc_sanitize_section_order', 10, 2 );
 
 /* Background */
-function cyberchimps_sanitize_background( $input ) {
+function ifeature_cc_sanitize_background( $input ) {
 	$output = wp_parse_args( $input, array(
 		'color'      => '',
 		'image'      => '',
@@ -212,52 +212,52 @@ function cyberchimps_sanitize_background( $input ) {
 		'attachment' => 'scroll'
 	) );
 
-	$output['color']      = apply_filters( 'cyberchimps_sanitize_hex', $input['color'] );
-	$output['image']      = apply_filters( 'cyberchimps_sanitize_upload', $input['image'] );
-	$output['repeat']     = apply_filters( 'cyberchimps_background_repeat', $input['repeat'] );
-	$output['position']   = apply_filters( 'cyberchimps_background_position', $input['position'] );
-	$output['attachment'] = apply_filters( 'cyberchimps_background_attachment', $input['attachment'] );
+	$output['color']      = apply_filters( 'ifeature_cc_sanitize_hex', $input['color'] );
+	$output['image']      = apply_filters( 'ifeature_cc_sanitize_upload', $input['image'] );
+	$output['repeat']     = apply_filters( 'ifeature_cc_background_repeat', $input['repeat'] );
+	$output['position']   = apply_filters( 'ifeature_cc_background_position', $input['position'] );
+	$output['attachment'] = apply_filters( 'ifeature_cc_background_attachment', $input['attachment'] );
 
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_background', 'cyberchimps_sanitize_background' );
+add_filter( 'ifeature_cc_sanitize_background', 'ifeature_cc_sanitize_background' );
 
-function cyberchimps_sanitize_background_repeat( $value ) {
-	$recognized = cyberchimps_recognized_background_repeat();
+function ifeature_cc_sanitize_background_repeat( $value ) {
+	$recognized = ifeature_cc_recognized_background_repeat();
 	if( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
 
-	return apply_filters( 'cyberchimps_default_background_repeat', current( $recognized ) );
+	return apply_filters( 'ifeature_cc_default_background_repeat', current( $recognized ) );
 }
 
-add_filter( 'cyberchimps_background_repeat', 'cyberchimps_sanitize_background_repeat' );
+add_filter( 'ifeature_cc_background_repeat', 'ifeature_cc_sanitize_background_repeat' );
 
-function cyberchimps_sanitize_background_position( $value ) {
-	$recognized = cyberchimps_recognized_background_position();
+function ifeature_cc_sanitize_background_position( $value ) {
+	$recognized = ifeature_cc_recognized_background_position();
 	if( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
 
-	return apply_filters( 'cyberchimps_default_background_position', current( $recognized ) );
+	return apply_filters( 'ifeature_cc_default_background_position', current( $recognized ) );
 }
 
-add_filter( 'cyberchimps_background_position', 'cyberchimps_sanitize_background_position' );
+add_filter( 'ifeature_cc_background_position', 'ifeature_cc_sanitize_background_position' );
 
-function cyberchimps_sanitize_background_attachment( $value ) {
-	$recognized = cyberchimps_recognized_background_attachment();
+function ifeature_cc_sanitize_background_attachment( $value ) {
+	$recognized = ifeature_cc_recognized_background_attachment();
 	if( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
 
-	return apply_filters( 'cyberchimps_default_background_attachment', current( $recognized ) );
+	return apply_filters( 'ifeature_cc_default_background_attachment', current( $recognized ) );
 }
 
-add_filter( 'cyberchimps_background_attachment', 'cyberchimps_sanitize_background_attachment' );
+add_filter( 'ifeature_cc_background_attachment', 'ifeature_cc_sanitize_background_attachment' );
 
 /* Typography */
-function cyberchimps_sanitize_typography( $input, $option ) {
+function ifeature_cc_sanitize_typography( $input, $option ) {
 
 	$output = wp_parse_args( $input, array(
 		'size'  => '',
@@ -272,51 +272,51 @@ function cyberchimps_sanitize_typography( $input, $option ) {
 		}
 	}
 	else {
-		$output['face'] = apply_filters( 'cyberchimps_font_face', $output['face'] );
+		$output['face'] = apply_filters( 'ifeature_cc_font_face', $output['face'] );
 	}
 
-	$output['size']  = apply_filters( 'cyberchimps_font_size', $output['size'] );
-	$output['style'] = apply_filters( 'cyberchimps_font_style', $output['style'] );
-	$output['color'] = apply_filters( 'cyberchimps_sanitize_color', $output['color'] );
+	$output['size']  = apply_filters( 'ifeature_cc_font_size', $output['size'] );
+	$output['style'] = apply_filters( 'ifeature_cc_font_style', $output['style'] );
+	$output['color'] = apply_filters( 'ifeature_cc_sanitize_color', $output['color'] );
 
 	return $output;
 }
 
-add_filter( 'cyberchimps_sanitize_typography', 'cyberchimps_sanitize_typography', 10, 2 );
+add_filter( 'ifeature_cc_sanitize_typography', 'ifeature_cc_sanitize_typography', 10, 2 );
 
-function cyberchimps_sanitize_font_size( $value ) {
-	$recognized  = cyberchimps_recognized_font_sizes();
+function ifeature_cc_sanitize_font_size( $value ) {
+	$recognized  = ifeature_cc_recognized_font_sizes();
 	$value_check = preg_replace( '/px/', '', $value );
 	if( in_array( (int)$value_check, $recognized ) ) {
 		return $value;
 	}
 
-	return apply_filters( 'cyberchimps_default_font_size', $recognized );
+	return apply_filters( 'ifeature_cc_default_font_size', $recognized );
 }
 
-add_filter( 'cyberchimps_font_size', 'cyberchimps_sanitize_font_size' );
+add_filter( 'ifeature_cc_font_size', 'ifeature_cc_sanitize_font_size' );
 
-function cyberchimps_sanitize_font_style( $value ) {
-	$recognized = cyberchimps_recognized_font_styles();
+function ifeature_cc_sanitize_font_style( $value ) {
+	$recognized = ifeature_cc_recognized_font_styles();
 	if( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
 
-	return apply_filters( 'cyberchimps_default_font_style', current( $recognized ) );
+	return apply_filters( 'ifeature_cc_default_font_style', current( $recognized ) );
 }
 
-add_filter( 'cyberchimps_font_style', 'cyberchimps_sanitize_font_style' );
+add_filter( 'ifeature_cc_font_style', 'ifeature_cc_sanitize_font_style' );
 
-function cyberchimps_sanitize_font_face( $value ) {
-	$recognized = cyberchimps_recognized_font_faces();
+function ifeature_cc_sanitize_font_face( $value ) {
+	$recognized = ifeature_cc_recognized_font_faces();
 	if( array_key_exists( $value, $recognized ) ) {
 		return $value;
 	}
 
-	return apply_filters( 'cyberchimps_default_font_face', current( $recognized ) );
+	return apply_filters( 'ifeature_cc_default_font_face', current( $recognized ) );
 }
 
-add_filter( 'cyberchimps_font_face', 'cyberchimps_sanitize_font_face' );
+add_filter( 'ifeature_cc_font_face', 'ifeature_cc_sanitize_font_face' );
 
 /**
  * Get recognized background repeat settings
@@ -324,15 +324,15 @@ add_filter( 'cyberchimps_font_face', 'cyberchimps_sanitize_font_face' );
  * @return   array
  *
  */
-function cyberchimps_recognized_background_repeat() {
+function ifeature_cc_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'cyberchimps_core' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'cyberchimps_core' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'cyberchimps_core' ),
-		'repeat'    => __( 'Repeat All', 'cyberchimps_core' ),
+		'no-repeat' => __( 'No Repeat', 'ifeature' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'ifeature' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'ifeature' ),
+		'repeat'    => __( 'Repeat All', 'ifeature' ),
 	);
 
-	return apply_filters( 'cyberchimps_recognized_background_repeat', $default );
+	return apply_filters( 'ifeature_cc_recognized_background_repeat', $default );
 }
 
 /**
@@ -341,20 +341,20 @@ function cyberchimps_recognized_background_repeat() {
  * @return   array
  *
  */
-function cyberchimps_recognized_background_position() {
+function ifeature_cc_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'cyberchimps_core' ),
-		'top center'    => __( 'Top Center', 'cyberchimps_core' ),
-		'top right'     => __( 'Top Right', 'cyberchimps_core' ),
-		'center left'   => __( 'Middle Left', 'cyberchimps_core' ),
-		'center center' => __( 'Middle Center', 'cyberchimps_core' ),
-		'center right'  => __( 'Middle Right', 'cyberchimps_core' ),
-		'bottom left'   => __( 'Bottom Left', 'cyberchimps_core' ),
-		'bottom center' => __( 'Bottom Center', 'cyberchimps_core' ),
-		'bottom right'  => __( 'Bottom Right', 'cyberchimps_core' )
+		'top left'      => __( 'Top Left', 'ifeature' ),
+		'top center'    => __( 'Top Center', 'ifeature' ),
+		'top right'     => __( 'Top Right', 'ifeature' ),
+		'center left'   => __( 'Middle Left', 'ifeature' ),
+		'center center' => __( 'Middle Center', 'ifeature' ),
+		'center right'  => __( 'Middle Right', 'ifeature' ),
+		'bottom left'   => __( 'Bottom Left', 'ifeature' ),
+		'bottom center' => __( 'Bottom Center', 'ifeature' ),
+		'bottom right'  => __( 'Bottom Right', 'ifeature' )
 	);
 
-	return apply_filters( 'cyberchimps_recognized_background_position', $default );
+	return apply_filters( 'ifeature_cc_recognized_background_position', $default );
 }
 
 /**
@@ -363,13 +363,13 @@ function cyberchimps_recognized_background_position() {
  * @return   array
  *
  */
-function cyberchimps_recognized_background_attachment() {
+function ifeature_cc_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'cyberchimps_core' ),
-		'fixed'  => __( 'Fixed in Place', 'cyberchimps_core' )
+		'scroll' => __( 'Scroll Normally', 'ifeature' ),
+		'fixed'  => __( 'Fixed in Place', 'ifeature' )
 	);
 
-	return apply_filters( 'cyberchimps_recognized_background_attachment', $default );
+	return apply_filters( 'ifeature_cc_recognized_background_attachment', $default );
 }
 
 /**
@@ -381,8 +381,8 @@ function cyberchimps_recognized_background_attachment() {
  * @return   string
  *
  */
-function cyberchimps_sanitize_hex( $hex, $default = '' ) {
-	if( cyberchimps_validate_hex( $hex ) ) {
+function ifeature_cc_sanitize_hex( $hex, $default = '' ) {
+	if( ifeature_cc_validate_hex( $hex ) ) {
 		return $hex;
 	}
 
@@ -398,9 +398,9 @@ function cyberchimps_sanitize_hex( $hex, $default = '' ) {
  *
  * @return   array
  */
-function cyberchimps_recognized_font_sizes() {
+function ifeature_cc_recognized_font_sizes() {
 	$sizes = range( 8, 71 );
-	$sizes = apply_filters( 'cyberchimps_recognized_font_sizes', $sizes );
+	$sizes = apply_filters( 'ifeature_cc_recognized_font_sizes', $sizes );
 	$sizes = array_map( 'absint', $sizes );
 
 	return $sizes;
@@ -416,7 +416,7 @@ function cyberchimps_recognized_font_sizes() {
  * @return   array
  *
  */
-function cyberchimps_recognized_font_faces() {
+function ifeature_cc_recognized_font_faces() {
 	$default = array(
 		'arial'     => 'Arial',
 		'verdana'   => 'Verdana, Geneva',
@@ -428,7 +428,7 @@ function cyberchimps_recognized_font_faces() {
 		'helvetica' => 'Helvetica*'
 	);
 
-	return apply_filters( 'cyberchimps_recognized_font_faces', $default );
+	return apply_filters( 'ifeature_cc_recognized_font_faces', $default );
 }
 
 /**
@@ -441,15 +441,15 @@ function cyberchimps_recognized_font_faces() {
  * @return   array
  *
  */
-function cyberchimps_recognized_font_styles() {
+function ifeature_cc_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'cyberchimps_core' ),
-		'italic'      => __( 'Italic', 'cyberchimps_core' ),
-		'bold'        => __( 'Bold', 'cyberchimps_core' ),
-		'bold italic' => __( 'Bold Italic', 'cyberchimps_core' )
+		'normal'      => __( 'Normal', 'ifeature' ),
+		'italic'      => __( 'Italic', 'ifeature' ),
+		'bold'        => __( 'Bold', 'ifeature' ),
+		'bold italic' => __( 'Bold Italic', 'ifeature' )
 	);
 
-	return apply_filters( 'cyberchimps_recognized_font_styles', $default );
+	return apply_filters( 'ifeature_cc_recognized_font_styles', $default );
 }
 
 /**
@@ -460,7 +460,7 @@ function cyberchimps_recognized_font_styles() {
  * @return   bool
  *
  */
-function cyberchimps_validate_hex( $hex ) {
+function ifeature_cc_validate_hex( $hex ) {
 	$hex = trim( $hex );
 
 	/* Strip recognized prefixes. */

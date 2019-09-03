@@ -32,14 +32,35 @@ if( post_password_required() ) {
 	<?php if( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'ifeature' ),
-			        number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			$comments_number = get_comments_number();
+			if ( 1 === $comments_number ) {
+				printf(
+					/* translators: %s: post title */
+					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'ifeature' ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			} else {
+				printf( // WPCS: XSS OK.
+					/* translators: 1: number of comments, 2: post title */
+					esc_html(
+						_nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'ifeature'
+						)
+					),
+					number_format_i18n( $comments_number ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			}
 			?>
 		</h2>
 
 		<?php if( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 			<nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-				<h4 class="assistive-text"><?php _e( 'Comment navigation', 'ifeature' ); ?></h4>
+				<h4 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'ifeature' ); ?></h4>
 
 				<div class="nav-previous"><?php previous_comments_link( '&larr; ' . __( 'Older Comments', 'ifeature' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments', 'ifeature' ) . ' &rarr;' ); ?></div>
@@ -49,18 +70,18 @@ if( post_password_required() ) {
 		<ol class="commentlist">
 			<?php
 			/* Loop through and list the comments. Tell wp_list_comments()
-			 * to use cyberchimps_comment() to format the comments.
+			 * to use ifeature_cc_comment() to format the comments.
 			 * If you want to overload this in a child theme then you can
-			 * define cyberchimps_comment() and that will be used instead.
-			 * See cyberchimps_comment() in functions.php for more.
+			 * define ifeature_cc_comment() and that will be used instead.
+			 * See ifeature_cc_comment() in functions.php for more.
 			 */
-			wp_list_comments( array( 'callback' => 'cyberchimps_comment' ) );
+			wp_list_comments( array( 'callback' => 'ifeature_comment' ) );
 			?>
 		</ol>
 
 		<?php if( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 			<nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
-				<h4 class="assistive-text"><?php _e( 'Comment navigation', 'ifeature' ); ?></h4>
+				<h4 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'ifeature' ); ?></h4>
 
 				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'ifeature' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'ifeature' ) ); ?></div>
@@ -73,7 +94,7 @@ if( post_password_required() ) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if( !comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 		?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'ifeature' ); ?></p>
+		<p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'ifeature' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>

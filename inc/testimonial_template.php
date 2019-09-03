@@ -13,57 +13,57 @@ function ifeature_testimonial_render_display()
 		$if_testimonial_title = get_post_meta( $post->ID, 'ir_testimonial_title', true );
  		$testimonial_background = get_post_meta( $post->ID, 'testimonial_background', true );
 		 // Get testimonial images		
-                $testimonials[0]['img'] = get_post_meta( $post->ID, 'cyberchimps_blog_testimonial_image_one', true );
-                $testimonials[1]['img'] = get_post_meta( $post->ID, 'cyberchimps_blog_testimonial_image_two', true );
-                $testimonials[2]['img'] = get_post_meta( $post->ID, 'cyberchimps_blog_testimonial_image_three', true );
+                $testimonials[0]['img'] = get_post_meta( $post->ID, 'ifeature_cc_blog_testimonial_image_one', true );
+                $testimonials[1]['img'] = get_post_meta( $post->ID, 'ifeature_cc_blog_testimonial_image_two', true );
+                $testimonials[2]['img'] = get_post_meta( $post->ID, 'ifeature_cc_blog_testimonial_image_three', true );
                 
                  // get testimonial clients
-                $testimonials[0]['client'] = get_post_meta( $post->ID, 'cyberchimps_blog_client_one', true );
-                $testimonials[1]['client'] = get_post_meta( $post->ID, 'cyberchimps_blog_client_two', true );
-                $testimonials[2]['client'] = get_post_meta( $post->ID, 'cyberchimps_blog_client_three', true );
+                $testimonials[0]['client'] = get_post_meta( $post->ID, 'ifeature_cc_blog_client_one', true );
+                $testimonials[1]['client'] = get_post_meta( $post->ID, 'ifeature_cc_blog_client_two', true );
+                $testimonials[2]['client'] = get_post_meta( $post->ID, 'ifeature_cc_blog_client_three', true );
                 
                 // get testimonial  - about clients
-                $testimonials[0]['client_abt'] = get_post_meta( $post->ID, 'cyberchimps_blog_client_abt_one', true );
-                $testimonials[1]['client_abt'] = get_post_meta( $post->ID, 'cyberchimps_blog_client_abt_two', true );
-                $testimonials[2]['client_abt'] = get_post_meta( $post->ID, 'cyberchimps_blog_client_abt_three', true );
+                $testimonials[0]['client_abt'] = get_post_meta( $post->ID, 'ifeature_cc_blog_client_abt_one', true );
+                $testimonials[1]['client_abt'] = get_post_meta( $post->ID, 'ifeature_cc_blog_client_abt_two', true );
+                $testimonials[2]['client_abt'] = get_post_meta( $post->ID, 'ifeature_cc_blog_client_abt_three', true );
                 
                   // get testimonial  - about clients
                 
-                $testimonials[0]['text'] = get_post_meta( $post->ID, 'cyberchimps_testimonial_one_text', true );
-                $testimonials[1]['text'] = get_post_meta( $post->ID, 'cyberchimps_testimonial_two_text', true );
-                $testimonials[2]['text'] = get_post_meta( $post->ID, 'cyberchimps_testimonial_three_text', true );
+                $testimonials[0]['text'] = get_post_meta( $post->ID, 'ifeature_cc_testimonial_one_text', true );
+                $testimonials[1]['text'] = get_post_meta( $post->ID, 'ifeature_cc_testimonial_two_text', true );
+                $testimonials[2]['text'] = get_post_meta( $post->ID, 'ifeature_cc_testimonial_three_text', true );
                 
 	}
 	else
 	{
-		$if_testimonial_title = cyberchimps_get_option('ir_testimonial_title');
-		$testimonial_background = cyberchimps_get_option('testimonial_background');
+		$if_testimonial_title = Ifeature_Helper::ifeature_cc_get_option('ir_testimonial_title');
+		$testimonial_background = Ifeature_Helper::ifeature_cc_get_option('testimonial_background');
                 
                 // Get testimonial images
                 
-		$testimonials[0]['img'] = cyberchimps_get_option( 'cyberchimps_blog_testimonial_image_one', $directory_uri . apply_filters( 'cyberchimps_testimonial_img1', '/elements/lib/images/testimonial/client01.jpg' ) );
-                $testimonials[1]['img'] = cyberchimps_get_option( 'cyberchimps_blog_testimonial_image_two', $directory_uri . apply_filters( 'cyberchimps_testimonial_img2', '/elements/lib/images/testimonial/client01.jpg' ) );
-                $testimonials[2]['img'] = cyberchimps_get_option( 'cyberchimps_blog_testimonial_image_three', $directory_uri . apply_filters( 'cyberchimps_testimonial_img3', '/elements/lib/images/testimonial/client01.jpg' ) );
+		$testimonials[0]['img'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_testimonial_image_one', $directory_uri . apply_filters( 'ifeature_cc_testimonial_img1', '/elements/lib/images/testimonial/client01.jpg' ) );
+                $testimonials[1]['img'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_testimonial_image_two', $directory_uri . apply_filters( 'ifeature_cc_testimonial_img2', '/elements/lib/images/testimonial/client01.jpg' ) );
+                $testimonials[2]['img'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_testimonial_image_three', $directory_uri . apply_filters( 'ifeature_cc_testimonial_img3', '/elements/lib/images/testimonial/client01.jpg' ) );
                
                 // get testimonial clients
-                $testimonials[0]['client'] = cyberchimps_get_option( 'cyberchimps_blog_client_one', apply_filters( 'cyberchimps_testimonial_client1', 'Nancy Martin' ) );
-                $testimonials[1]['client'] = cyberchimps_get_option( 'cyberchimps_blog_client_two', apply_filters( 'cyberchimps_testimonial_client2', 'Nancy Martin' ) );
-                $testimonials[2]['client'] = cyberchimps_get_option( 'cyberchimps_blog_client_three', apply_filters( 'cyberchimps_testimonial_client3', 'Nancy Martin' ) );
+                $testimonials[0]['client'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_client_one', apply_filters( 'ifeature_cc_testimonial_client1', 'Nancy Martin' ) );
+                $testimonials[1]['client'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_client_two', apply_filters( 'ifeature_cc_testimonial_client2', 'Nancy Martin' ) );
+                $testimonials[2]['client'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_client_three', apply_filters( 'ifeature_cc_testimonial_client3', 'Nancy Martin' ) );
                 
                 // get testimonial  - about clients
                 
-                $testimonials[0]['client_abt'] = cyberchimps_get_option( 'cyberchimps_blog_client_abt_one', apply_filters( 'cyberchimps_testimonial_client_abt1', 'Developer' ) );
-                $testimonials[1]['client_abt'] = cyberchimps_get_option( 'cyberchimps_blog_client_abt_two', apply_filters( 'cyberchimps_testimonial_client_abt2', 'Designer' ) );
-                $testimonials[2]['client_abt'] = cyberchimps_get_option( 'cyberchimps_blog_client_abt_three', apply_filters( 'cyberchimps_testimonial_client_abt3', 'Developer' ) );
+                $testimonials[0]['client_abt'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_client_abt_one', apply_filters( 'ifeature_cc_testimonial_client_abt1', 'Developer' ) );
+                $testimonials[1]['client_abt'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_client_abt_two', apply_filters( 'ifeature_cc_testimonial_client_abt2', 'Designer' ) );
+                $testimonials[2]['client_abt'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_blog_client_abt_three', apply_filters( 'ifeature_cc_testimonial_client_abt3', 'Developer' ) );
                 
                 // get testimonial description
                 
-                $testimonials[0]['text'] = cyberchimps_get_option( 'cyberchimps_testimonial_one_text', apply_filters( 'cyberchimps_testimonial_text1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet' ) );
-                $testimonials[1]['text'] = cyberchimps_get_option( 'cyberchimps_testimonial_two_text', apply_filters( 'cyberchimps_testimonial_text2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet' ) );
-                $testimonials[2]['text'] = cyberchimps_get_option( 'cyberchimps_testimonial_three_text', apply_filters( 'cyberchimps_testimonial_text3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet' ) );
+                $testimonials[0]['text'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_testimonial_one_text', apply_filters( 'ifeature_cc_testimonial_text1', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet' ) );
+                $testimonials[1]['text'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_testimonial_two_text', apply_filters( 'ifeature_cc_testimonial_text2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet' ) );
+                $testimonials[2]['text'] = Ifeature_Helper::ifeature_cc_get_option( 'ifeature_cc_testimonial_three_text', apply_filters( 'ifeature_cc_testimonial_text3', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet' ) );
                
 	} 
-        $skin_color = cyberchimps_get_option('cyberchimps_skin_color');
+        $skin_color = Ifeature_Helper::ifeature_cc_get_option('ifeature_cc_skin_color');
         ?>
 	<?php 
         if($testimonial_background)

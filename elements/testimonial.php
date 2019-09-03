@@ -44,12 +44,12 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 		 */
 		protected function __construct() {
 			add_action( 'testimonial', array( $this, 'render_display' ) );
-			$this->options = get_option( 'cyberchimps_options' );
-			add_action( 'init', array( $this, 'cyberchimps_init_testimonial_post_type' ) );
+			$this->options = get_option( 'ifeature_cc_options' );
+			add_action( 'init', array( $this, 'ifeature_cc_init_testimonial_post_type' ) );
 		}
 
 		//Define Custom post type
-		function cyberchimps_init_testimonial_post_type() {
+		function ifeature_cc_init_testimonial_post_type() {
 
 			/*
 			 * configure your meta box
@@ -60,7 +60,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 
 			$page_fields = array(
 				array(
-                    'name'    => __( 'Testimonial Section Title', 'cyberchimps_core' ),
+                    'name'    => __( 'Testimonial Section Title', 'ifeature' ),
                     'desc'    => '',
                     'id'      => 'ir_testimonial_title',
                     'type'    => 'text',
@@ -69,99 +69,99 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 				array(
 					'type'    => 'single_image',
 					'id'      => 'testimonial_background',
-					'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_core'),
-					'name'    => __( 'Testimonial Background', 'cyberchimps_core' ),
+					'desc'    => __('Best suited image size is 1280px * 375px', 'ifeature'),
+					'name'    => __( 'Testimonial Background', 'ifeature' ),
 					'class'   => ''
 				),
                 array(
-                    'name'    => __( 'First Testimonial Image', 'cyberchimps_core' ),
-                    'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-                    'id'      => 'cyberchimps_blog_testimonial_image_one',
+                    'name'    => __( 'First Testimonial Image', 'ifeature' ),
+                    'desc'    => __( 'Enter URL or upload file', 'ifeature' ),
+                    'id'      => 'ifeature_cc_blog_testimonial_image_one',
                     'type'    => 'single_image',
 					'class'   => '',
                     ),
                             array(
-                    'name'    => __( 'First Testimonial Author Name', 'cyberchimps_core' ),
-                    'id'      => 'cyberchimps_blog_client_one',
+                    'name'    => __( 'First Testimonial Author Name', 'ifeature' ),
+                    'id'      => 'ifeature_cc_blog_client_one',
 					'class'   => '',
                     'type'    => 'text'
                     ),
                             array(
-                                        'name'    => __( 'First Testimonial about the Author', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_client_abt_one',
+                                        'name'    => __( 'First Testimonial about the Author', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_client_abt_one',
                                         'type'    => 'text',
 					'class'   => ''
 
                                 ),
                             array(
-                                        'name'    => __( 'First Testimonial Text', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_testimonial_one_text',
+                                        'name'    => __( 'First Testimonial Text', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_testimonial_one_text',
                                         'type'    => 'textarea',
 					'class'   => ''
 
                                 ),
                             array(
-                                        'name'    => __( 'Second Testimonial Image', 'cyberchimps_core' ),
-                                        'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_testimonial_image_two',
+                                        'name'    => __( 'Second Testimonial Image', 'ifeature' ),
+                                        'desc'    => __( 'Enter URL or upload file', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_testimonial_image_two',
                                         'type'    => 'single_image',
 					'class'   => ''
 
                                 ),
                             array(
-                                        'name'    => __( 'Second Testimonial Author Name', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_client_two',
+                                        'name'    => __( 'Second Testimonial Author Name', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_client_two',
                                         'type'    => 'text',
 					'class'   => ''
 
                                 ),
                             array(
-                                        'name'    => __( 'Second Testimonial about the Author', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_client_abt_two',
+                                        'name'    => __( 'Second Testimonial about the Author', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_client_abt_two',
                                         'type'    => 'text',
-                                        'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading',
+                                        'section' => 'ifeature_cc_testimonial_section',
+                                        'heading' => 'ifeature_cc_blog_heading',
 					'class'   => ''
                                 ),
                             array(
-                                        'name'    => __( 'Second Testimonial Text', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_testimonial_two_text',
+                                        'name'    => __( 'Second Testimonial Text', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_testimonial_two_text',
                                         'type'    => 'textarea',
-                                        'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading',
+                                        'section' => 'ifeature_cc_testimonial_section',
+                                        'heading' => 'ifeature_cc_blog_heading',
 					'class'   => ''
                                 ),
                             array(
-                                        'name'    => __( 'Third Testimonial Image', 'cyberchimps_core' ),
-                                        'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_testimonial_image_three',
+                                        'name'    => __( 'Third Testimonial Image', 'ifeature' ),
+                                        'desc'    => __( 'Enter URL or upload file', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_testimonial_image_three',
                                         'type'    => 'single_image',
-                                        'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading',
+                                        'section' => 'ifeature_cc_testimonial_section',
+                                        'heading' => 'ifeature_cc_blog_heading',
 					'class'   => ''
                                 ),
                             array(
-                                        'name'    => __( 'Third Testimonial Author Name', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_client_three',
+                                        'name'    => __( 'Third Testimonial Author Name', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_client_three',
                                         'type'    => 'text',
-                                        'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading',
+                                        'section' => 'ifeature_cc_testimonial_section',
+                                        'heading' => 'ifeature_cc_blog_heading',
 					'class'   => ''
                                 ),
                             array(
-                                        'name'    => __( 'Third Testimonial about the Author', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_client_abt_three',
+                                        'name'    => __( 'Third Testimonial about the Author', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_blog_client_abt_three',
                                         'type'    => 'text',
-                                        'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading',
+                                        'section' => 'ifeature_cc_testimonial_section',
+                                        'heading' => 'ifeature_cc_blog_heading',
 					'class'   => ''
                                 ),
                             array(
-                                        'name'    => __( 'Third Testimonial Text', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_testimonial_three_text',
+                                        'name'    => __( 'Third Testimonial Text', 'ifeature' ),
+                                        'id'      => 'ifeature_cc_testimonial_three_text',
                                         'type'    => 'textarea',
-                                        'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading',
+                                        'section' => 'ifeature_cc_testimonial_section',
+                                        'heading' => 'ifeature_cc_blog_heading',
 					'class'   => ''
                                 ),
 
@@ -173,11 +173,11 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 			 */
 			$page_config = array(
 				'id'             => 'testimonial_options', // meta box id, unique per meta box
-				'title'          => __( 'Testimonial Options', 'cyberchimps_core' ), // meta box title
+				'title'          => __( 'Testimonial Options', 'ifeature' ), // meta box title
 				'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 				'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 				'priority'       => 'high', // order of meta box: high (default), low; optional
-				'fields'         => apply_filters( 'cyberchimps_testimonial_metabox_fields', $page_fields, 'testimonial' ), // list of meta fields (can be added by field arrays)
+				'fields'         => apply_filters( 'ifeature_cc_testimonial_metabox_fields', $page_fields, 'testimonial' ), // list of meta fields (can be added by field arrays)
 				'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
 				'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
 			);
@@ -185,7 +185,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 			/*
 			 * Initiate your meta box
 			 */
-			$page_meta = new Cyberchimps_Meta_Box( $page_config );
+			$page_meta = new Ifeature_Meta_Box( $page_config );
 		}
 
 		/**
@@ -196,7 +196,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 		public function render_display() {
 
 			// Get the default image of carousel
-			$custombackground = cyberchimps_get_option('testimonial_background');
+			$custombackground = Ifeature_Helper::ifeature_cc_get_option('testimonial_background');
 
 			if( is_page() ) {
 				$customcategory = get_post_meta( get_the_ID(), 'testimonial_category', true );

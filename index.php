@@ -15,10 +15,10 @@
 
 get_header(); ?>
 
-<?php do_action( 'cyberchimps_before_container' ); ?>
+<?php do_action( 'ifeature_cc_before_container' ); ?>
 
-<?php do_action( 'cyberchimps_blog_content' ); ?>
+<?php do_action( 'ifeature_cc_blog_content' ); ?>
 
-<?php do_action( 'cyberchimps_after_container' ); ?>
+<?php do_action( 'ifeature_cc_after_container' ); ?>
 
 <?php get_footer(); ?>

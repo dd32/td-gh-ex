@@ -23,61 +23,61 @@ if( !defined( 'ABSPATH' ) ) {
 if( is_admin() ) {
 
 	/*********************************** PAGE OPTIONS STARTS ******************************************/
-	$image_path    = get_template_directory_uri() . '/cyberchimps/lib/images/';
-	$themenamefull = apply_filters( 'cyberchimps_current_theme_name', 'CyberChimps' );
-	$pagedocs      = apply_filters( 'cyberchimps_page_options_help', 'http://cyberchimps.com/guide/how-to-use-the-page-or-post-page-element/' );
+	$ifeature_cc_image_path    = get_template_directory_uri() . '/cyberchimps/lib/images/';
+	$ifeature_cc_themenamefull = apply_filters( 'ifeature_cc_current_theme_name', 'CyberChimps' );
+	$ifeature_cc_pagedocs      = apply_filters( 'ifeature_cc_page_options_help', 'http://cyberchimps.com/guide/how-to-use-the-page-or-post-page-element/' );
 
-	$fields = array( array(
+	$ifeature_cc_fields = array( array(
 		'type'    => 'image_select',
-		'id'      => 'cyberchimps_page_sidebar',
+		'id'      => 'ifeature_cc_page_sidebar',
 		'class'   => '',
-		'name'    => __( 'Select Page Layout', 'cyberchimps_core' ),
-		'options' => apply_filters( 'sidebar_layout_options', array(
-			'full_width'    => $image_path . '1col.png',
-			'right_sidebar' => $image_path . '2cr.png'
+		'name'    => __( 'Select Page Layout', 'ifeature' ),
+		'options' => apply_filters( 'ifeature_cc_sidebar_layout_options', array(
+			'full_width'    => $ifeature_cc_image_path . '1col.png',
+			'right_sidebar' => $ifeature_cc_image_path . '2cr.png'
 		) ),
 		'std'     => 'right_sidebar'
 	),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_page_title_toggle',
+			'id'    => 'ifeature_cc_page_title_toggle',
 			'class' => 'checkbox',
-			'name'  => __( 'Page Title', 'cyberchimps_core' ),
+			'name'  => __( 'Page Title', 'ifeature' ),
 			'std'   => 1
 		),
 		array(
 			'type'    => 'section_order',
-			'id'      => 'cyberchimps_page_section_order',
+			'id'      => 'ifeature_cc_page_section_order',
 			'class'   => '',
-			'name'    => __( 'Page Elements', 'cyberchimps_core' ),
-			'options' => apply_filters( 'cyberchimps_elements_draganddrop_page_options', array(
-				'boxes'              => __( 'Boxes', 'cyberchimps_core' ),
-				'page_section'       => __( 'Page', 'cyberchimps_core' ),
-				'portfolio_lite'     => __( 'Portfolio Lite', 'cyberchimps_core' ),
-				'slider_lite'        => __( 'Slider Lite', 'cyberchimps_core' ),
-				'featured_lite'      => __( 'Featured lite', 'cyberchimps_core' ),
-				'twitterbar_section' => __( 'Twitter Bar', 'cyberchimps_core' )
+			'name'    => __( 'Page Elements', 'ifeature' ),
+			'options' => apply_filters( 'ifeature_cc_elements_draganddrop_page_options', array(
+				'boxes'              => __( 'Boxes', 'ifeature' ),
+				'page_section'       => __( 'Page', 'ifeature' ),
+				'portfolio_lite'     => __( 'Portfolio Lite', 'ifeature' ),
+				'slider_lite'        => __( 'Slider Lite', 'ifeature' ),
+				'featured_lite'      => __( 'Featured lite', 'ifeature' ),
+				'twitterbar_section' => __( 'Twitter Bar', 'ifeature' )
 			) ),
 			'std'     => array( 'page_section' )
 		),
 		array(
 			'type'      => 'help',
-			'id'        => 'cyberchimps_page_help',
+			'id'        => 'ifeature_cc_page_help',
 			'class'     => 'help-message',
-			'name'      => __( 'Need Help?', 'cyberchimps_core' ),
-			'help_text' => '<a href="' . $pagedocs . '" target="_blank">' . sprintf( __( 'Visit the %s page options guide', 'cyberchimps_core' ), $themenamefull ) . '</a></td>'
-		)
+			'name'      => __( 'Need Help?', 'ifeature' ),
+			'help_text' => '<a href="' . $ifeature_cc_pagedocs . '" target="_blank">' . sprintf( __( 'Visit the %s page options guide', 'ifeature' ), $ifeature_cc_themenamefull ) . '</a></td>'
+		),
 	);
 	/*
 	 * configure your meta box
 	 */
-	$config = array(
-		'id'             => 'cyberchimps_page_options', // meta box id, unique per meta box
-		'title'          => __( 'Page Options', 'cyberchimps_core' ), // meta box title
+	$ifeature_cc_config = array(
+		'id'             => 'ifeature_cc_page_options', // meta box id, unique per meta box
+		'title'          => __( 'Page Options', 'ifeature' ), // meta box title
 		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'high', // order of meta box: high (default), low; optional
-		'fields'         => apply_filters( 'cyberchimps_page_metabox_options',$fields), // list of meta fields (can be added by field arrays)
+		'fields'         => apply_filters( 'ifeature_cc_page_metabox_options',$ifeature_cc_fields), // list of meta fields (can be added by field arrays)
 		'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
 		'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
 	);
@@ -85,42 +85,42 @@ if( is_admin() ) {
 	/*
 	 * Initiate your meta box
 	 */
-	$my_meta = new Cyberchimps_Meta_Box( $config );
+	$ifeature_cc_meta = new Ifeature_Meta_Box( $ifeature_cc_config );
 	/************************************ PAGE OPTIONS ENDS ***************************************/
 
 	/************************************ POST SLIDER OPTIONS STARTS ***************************************/
-	$slider_fields = array(
+	$ifeature_cc_slider_fields = array(
 		array(
 			'type'  => 'single_image',
-			'id'    => 'cyberchimps_slider_image',
+			'id'    => 'ifeature_cc_slider_image',
 			'class' => '',
-			'name'  => __( 'Slider Image', 'cyberchimps_core' ),
+			'name'  => __( 'Slider Image', 'ifeature' ),
 			'std'   => '',
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_slider_caption',
+			'id'    => 'ifeature_cc_slider_caption',
 			'class' => '',
-			'name'  => __( 'Slider Caption', 'cyberchimps_core' )
+			'name'  => __( 'Slider Caption', 'ifeature' )
 		),
 		array(
 			'type'  => 'text',
-			'id'    => 'cyberchimps_slider_url',
+			'id'    => 'ifeature_cc_slider_url',
 			'class' => '',
-			'name'  => __( 'Custom Slide Link', 'cyberchimps_core' )
+			'name'  => __( 'Custom Slide Link', 'ifeature' )
 		),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_slider_hidetitle',
+			'id'    => 'ifeature_cc_slider_hidetitle',
 			'class' => 'checkbox',
-			'name'  => __( 'Title', 'cyberchimps_core' ),
+			'name'  => __( 'Title', 'ifeature' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'checkbox',
-			'id'    => 'cyberchimps_slider_hidecaption',
+			'id'    => 'ifeature_cc_slider_hidecaption',
 			'class' => 'checkbox',
-			'name'  => __( 'Caption', 'cyberchimps_core' ),
+			'name'  => __( 'Caption', 'ifeature' ),
 			'std'   => 0
 		)
 	);
@@ -128,13 +128,13 @@ if( is_admin() ) {
 	/*
 	* configure your meta box
 	*/
-	$slider_config = array(
+	$ifeature_cc_slider_config = array(
 		'id'             => 'post_slider_options', // meta box id, unique per meta box
-		'title'          => __( 'Custom Feature Slides', 'cyberchimps_core' ), // meta box title
+		'title'          => __( 'Custom Feature Slides', 'ifeature' ), // meta box title
 		'pages'          => array( 'post' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'high', // order of meta box: high (default), low; optional
-		'fields'         => $slider_fields, // list of meta fields (can be added by field arrays)
+		'fields'         => $ifeature_cc_slider_fields, // list of meta fields (can be added by field arrays)
 		'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
 		'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
 	);
@@ -142,8 +142,8 @@ if( is_admin() ) {
 	/*
 	* Initiate your meta box
 	*/
-	if( 'free' != cyberchimps_theme_check() ) {
-		$slider_meta = new Cyberchimps_Meta_Box( $slider_config );
+	if( 'free' != ifeature_cc_theme_check() ) {
+		$ifeature_cc_slider_meta = new Ifeature_Meta_Box( $ifeature_cc_slider_config );
 	}
 	/************************************ POST SLIDER OPTIONS ENDS ***************************************/
 }

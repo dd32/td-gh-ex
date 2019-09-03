@@ -49,32 +49,32 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 		 * @return void
 		 */
 		protected function __construct() {
-			$this->options = get_option( 'cyberchimps_options' );
-			add_action( 'wp_enqueue_scripts', array( $this, 'cyberchimps_parallax_scripts' ) );
-			add_action( 'wp_footer', array( $this, 'cyberchimps_parallax_render' ) );
+			$this->options = get_option( 'ifeature_cc_options' );
+			add_action( 'wp_enqueue_scripts', array( $this, 'ifeature_cc_parallax_scripts' ) );
+			add_action( 'wp_footer', array( $this, 'ifeature_cc_parallax_render' ) );
 
-			add_filter( 'cyberchimps_field_filter', array( $this, 'cyberchimps_parallax_fields' ) );
+			add_filter( 'ifeature_cc_field_filter', array( $this, 'ifeature_cc_parallax_fields' ) );
 
 			// Set slider options
-			$this->slider_parallax_toggle = ( isset( $this->options['cyberchimps_blog_slider_parallax'] ) ) ? $this->options['cyberchimps_blog_slider_parallax'] : 1;
-			$this->slider_parallax_image  = ( isset( $this->options['cyberchimps_blog_slider_parallax_image'] ) ) ? $this->options['cyberchimps_blog_slider_parallax_image'] : '';
+			$this->slider_parallax_toggle = ( isset( $this->options['ifeature_cc_blog_slider_parallax'] ) ) ? $this->options['ifeature_cc_blog_slider_parallax'] : 1;
+			$this->slider_parallax_image  = ( isset( $this->options['ifeature_cc_blog_slider_parallax_image'] ) ) ? $this->options['ifeature_cc_blog_slider_parallax_image'] : '';
 
 			// Set portfolio parallax options.
-			$this->portfolio_parallax_toggle = ( isset( $this->options['cyberchimps_blog_portfolio_parallax'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax'] : 1;
-			$this->portfolio_parallax_image  = ( isset( $this->options['cyberchimps_blog_portfolio_parallax_image'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax_image'] : '';
+			$this->portfolio_parallax_toggle = ( isset( $this->options['ifeature_cc_blog_portfolio_parallax'] ) ) ? $this->options['ifeature_cc_blog_portfolio_parallax'] : 1;
+			$this->portfolio_parallax_image  = ( isset( $this->options['ifeature_cc_blog_portfolio_parallax_image'] ) ) ? $this->options['ifeature_cc_blog_portfolio_parallax_image'] : '';
 
 			// Get boxes parallax options.
-			$this->boxes_parallax_toggle = ( isset( $this->options['cyberchimps_blog_boxes_parallax'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax'] : 1;
-			$this->boxes_parallax_image  = ( isset( $this->options['cyberchimps_blog_boxes_parallax_image'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax_image'] : '';
+			$this->boxes_parallax_toggle = ( isset( $this->options['ifeature_cc_blog_boxes_parallax'] ) ) ? $this->options['ifeature_cc_blog_boxes_parallax'] : 1;
+			$this->boxes_parallax_image  = ( isset( $this->options['ifeature_cc_blog_boxes_parallax_image'] ) ) ? $this->options['ifeature_cc_blog_boxes_parallax_image'] : '';
 
 			// Get boxes parallax options.
-			$this->body_parallax_toggle = ( isset( $this->options['cyberchimps_body_parallax'] ) ) ? $this->options['cyberchimps_body_parallax'] : 1;
+			$this->body_parallax_toggle = ( isset( $this->options['ifeature_cc_body_parallax'] ) ) ? $this->options['ifeature_cc_body_parallax'] : 1;
 		}
 
 		/**
 		 * Sets up scripts for parallax
 		 */
-		public function cyberchimps_parallax_scripts() {
+		public function ifeature_cc_parallax_scripts() {
 
 			// Add parallax js library.
 			wp_enqueue_script( 'parallax-js', get_template_directory_uri() . '/elements/lib/js/jquery.parallax.min.js', array( 'jquery' ) );
@@ -87,89 +87,89 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 		 *
 		 * @return mixed
 		 */
-		public function cyberchimps_parallax_fields( $original ) {
+		public function ifeature_cc_parallax_fields( $original ) {
 
 			// Slider parallax toggle.
 			$new_field[][2] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_blog_slider_parallax',
+				'name'    => __( 'Parallax', 'ifeature' ),
+				'id'      => 'ifeature_cc_blog_slider_parallax',
 				'type'    => 'toggle',
 				'std'     => 1,
-				'section' => 'cyberchimps_blog_slider_lite_section',
-				'heading' => 'cyberchimps_blog_heading'
+				'section' => 'ifeature_cc_blog_slider_lite_section',
+				'heading' => 'ifeature_cc_blog_heading'
 			);
 
 			// Slider parallax image.
 			$new_field[][3] = array(
-				'name'    => __( 'Background image for parallax', 'cyberchimps_core' ),
-				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_blog_slider_parallax_image',
-				'class'   => 'cyberchimps_blog_slider_parallax_toggle',
+				'name'    => __( 'Background image for parallax', 'ifeature' ),
+				'desc'    => __( 'Enter URL or upload file', 'ifeature' ),
+				'id'      => 'ifeature_cc_blog_slider_parallax_image',
+				'class'   => 'ifeature_cc_blog_slider_parallax_toggle',
 				'type'    => 'upload',
-				'section' => 'cyberchimps_blog_slider_lite_section',
-				'heading' => 'cyberchimps_blog_heading'
+				'section' => 'ifeature_cc_blog_slider_lite_section',
+				'heading' => 'ifeature_cc_blog_heading'
 			);
 
 			// Portfolio parallax toggle.
 			$new_field[][2] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_blog_portfolio_parallax',
+				'name'    => __( 'Parallax', 'ifeature' ),
+				'id'      => 'ifeature_cc_blog_portfolio_parallax',
 				'type'    => 'toggle',
 				'std'     => 1,
-				'section' => 'cyberchimps_blog_portfolio_lite_section',
-				'heading' => 'cyberchimps_blog_heading'
+				'section' => 'ifeature_cc_blog_portfolio_lite_section',
+				'heading' => 'ifeature_cc_blog_heading'
 			);
 
 			// Portfolio parallax image.
 			$new_field[][3] = array(
-				'name'    => __( 'Background image for parallax', 'cyberchimps_core' ),
-				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_blog_portfolio_parallax_image',
-				'class'   => 'cyberchimps_blog_portfolio_parallax_toggle',
+				'name'    => __( 'Background image for parallax', 'ifeature' ),
+				'desc'    => __( 'Enter URL or upload file', 'ifeature' ),
+				'id'      => 'ifeature_cc_blog_portfolio_parallax_image',
+				'class'   => 'ifeature_cc_blog_portfolio_parallax_toggle',
 				'type'    => 'upload',
-				'section' => 'cyberchimps_blog_portfolio_lite_section',
-				'heading' => 'cyberchimps_blog_heading'
+				'section' => 'ifeature_cc_blog_portfolio_lite_section',
+				'heading' => 'ifeature_cc_blog_heading'
 			);
 
 			// Boxes parallax toggle.
 			$new_field[][2] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_blog_boxes_parallax',
+				'name'    => __( 'Parallax', 'ifeature' ),
+				'id'      => 'ifeature_cc_blog_boxes_parallax',
 				'type'    => 'toggle',
 				'std'     => 1,
-				'section' => 'cyberchimps_blog_boxes_lite_section',
-				'heading' => 'cyberchimps_blog_heading'
+				'section' => 'ifeature_cc_blog_boxes_lite_section',
+				'heading' => 'ifeature_cc_blog_heading'
 			);
 
 			// Boxes parallax image.
 			$new_field[][3] = array(
-				'name'    => __( 'Background image for parallax', 'cyberchimps_core' ),
-				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_blog_boxes_parallax_image',
-				'class'   => 'cyberchimps_blog_boxes_parallax_toggle',
+				'name'    => __( 'Background image for parallax', 'ifeature' ),
+				'desc'    => __( 'Enter URL or upload file', 'ifeature' ),
+				'id'      => 'ifeature_cc_blog_boxes_parallax_image',
+				'class'   => 'ifeature_cc_blog_boxes_parallax_toggle',
 				'type'    => 'upload',
-				'section' => 'cyberchimps_blog_boxes_lite_section',
-				'heading' => 'cyberchimps_blog_heading'
+				'section' => 'ifeature_cc_blog_boxes_lite_section',
+				'heading' => 'ifeature_cc_blog_heading'
 			);
 
 			// Body parallax toggle.
 			$new_field[][1] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_core' ),
-				'id'      => 'cyberchimps_body_parallax',
-				'desc'    => __( 'Set the background image at Appearance > Background to get parallax effect on whole body.', 'cyberchimps_core' ),
+				'name'    => __( 'Parallax', 'ifeature' ),
+				'id'      => 'ifeature_cc_body_parallax',
+				'desc'    => __( 'Set the background image at Appearance > Background to get parallax effect on whole body.', 'ifeature' ),
 				'type'    => 'toggle',
 				'std'     => 1,
-				'section' => 'cyberchimps_custom_layout_section',
-				'heading' => 'cyberchimps_design_heading'
+				'section' => 'ifeature_cc_custom_layout_section',
+				'heading' => 'ifeature_cc_design_heading'
 			);
 
-			$new_fields = cyberchimps_array_field_organizer( $original, $new_field );
+			$new_fields = ifeature_cc_array_field_organizer( $original, $new_field );
 
 			return $new_fields;
 		}
 
 // Set parallax to individual elements by checking toggle.
-		public function cyberchimps_parallax_render() {
+		public function ifeature_cc_parallax_render() {
 			?>
 			<script>
 				jQuery(document).ready(function () {

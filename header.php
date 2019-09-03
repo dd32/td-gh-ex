@@ -39,9 +39,6 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 
 		<!-- IE6-8 support of HTML5 elements -->
-		<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/inc/js/html5.js" type="text/javascript"></script>
-		<![endif]-->
 
 		<?php wp_head(); ?>
 	</head>
@@ -50,7 +47,8 @@
 
 <!-- ---------------- Top Header ------------------- -->
 <?php
-if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
+if ( Ifeature_Helper::ifeature_cc_get_option( 'top_header_bar', 1 ) ) :
+	?>
 	<div class="container-full-width" id="top_header">
 		<div class="container">
 			<div class="container-fluid">
@@ -61,7 +59,7 @@ if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
 						</div>
 					</div>
 					<div class="top-head-social span6">
-						<?php cyberchimps_header_social_icons(); ?>
+						<?php Ifeature_Hooks::ifeature_cc_header_social_icons(); ?>
 					</div>
 				</div>
 			</div>
@@ -75,11 +73,11 @@ if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
 
 	<div class="container">
 
-		<?php do_action( 'cyberchimps_before_wrapper' ); ?>
+		<?php do_action( 'ifeature_cc_before_wrapper' ); ?>
 
 		<div class="container-fluid">
 
-			<?php do_action( 'cyberchimps_header' ); ?>
+			<?php do_action( 'ifeature_cc_header' ); ?>
 
 		</div>
 		<!-- container fluid -->
@@ -90,7 +88,7 @@ if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
 </div>
 <!-- container full width -->
 
-<?php do_action( 'cyberchimps_before_navigation' ); ?>
+<?php do_action( 'ifeature_cc_before_navigation' ); ?>
 
 <!-- ---------------- Menu ----------------------- -->
 
@@ -101,20 +99,33 @@ if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
 				<div class="main-navigation navbar navbar-inverse">
 					<div class="navbar-inner">
 						<div class="container">
-							<?php /* hide collapsing menu if not responsive */
-							if (cyberchimps_get_option( 'responsive_design', 'checked' )): ?>
+							<?php
+							/* hide collapsing menu if not responsive */
+							if ( Ifeature_Helper::ifeature_cc_get_option( 'responsive_design', 'checked' ) ) :
+								?>
 							<div class="nav-collapse collapse" aria-expanded="true">
 								<?php endif; ?>
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav', 'walker' => new cyberchimps_walker(), 'fallback_cb' => 'cyberchimps_fallback_menu' ) ); ?>
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'primary',
+										'menu_class'     => 'nav',
+										'walker'         => new ifeature_cc_walker(),
+										'fallback_cb'    => 'ifeature_cc_fallback_menu',
+									)
+								);
+								?>
 
-								<?php if( cyberchimps_get_option( 'searchbar', 1 ) == "1" ) : ?>
+								<?php if ( Ifeature_Helper::ifeature_cc_get_option( 'searchbar', 1 ) == '1' ) : ?>
 
 									<?php get_search_form(); ?>
 
 								<?php endif; ?>
 
-								<?php /* hide collapsing menu if not responsive */
-								if (cyberchimps_get_option( 'responsive_design', 'checked' )): ?>
+								<?php
+								/* hide collapsing menu if not responsive */
+								if ( Ifeature_Helper::ifeature_cc_get_option( 'responsive_design', 'checked' ) ) :
+									?>
 							</div>
 						<!-- collapse -->
 
@@ -140,4 +151,4 @@ if( cyberchimps_get_option( 'top_header_bar', 1 ) ): ?>
 </div>
 <!-- container full width -->
 </div>
-<?php do_action( 'cyberchimps_after_navigation' ); ?>
+<?php do_action( 'ifeature_cc_after_navigation' ); ?>

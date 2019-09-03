@@ -11,7 +11,7 @@ class CC_Custom_Background {
 	/**
 	 * The name for the option. Will be saved as theme option.
 	 */
-	protected $option = 'cyberchimps_background';
+	protected $option = 'ifeature_cc_background';
 
 	/**
 	 * Label on the left side of our new option.
@@ -90,7 +90,7 @@ class CC_Custom_Background {
 	protected function get_radio_fields() {
 		$value  = ( get_background_image() ) ? 'none' : get_theme_mod( $this->option, 'none' );
 		$radios = array( 'none', 'noise', 'blue', 'dark', 'space', 'debut_light', 'silk', 'grid' );
-		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'cyberchimps_core' ) . '</label><br>';
+		$html   = '<div class="images-radio-container"><label for="choose-from-library-link">' . __( 'Or choose one of CyberChimps background images', 'ifeature' ) . '</label><br>';
 
 		foreach( $radios as $radio ) {
 			$html .= '<div class="images-radio-subcontainer">';
@@ -154,11 +154,11 @@ function ifeature_background_image( $options ) {
 			);
 	return $options;
 }
-add_filter( 'cyberchimps_background_image', 'ifeature_background_image' );
+add_filter( 'ifeature_cc_background_image', 'ifeature_background_image' );
 
 // default background color
 function ifeature_default_background_color() {
 	$color = 'f7f7f7';
 	return $color;
 }
-add_filter( 'default_background_color', 'ifeature_default_background_color' );
+add_filter( 'ifeature_cc_default_background_color', 'ifeature_default_background_color' );

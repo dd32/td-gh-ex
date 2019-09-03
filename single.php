@@ -21,21 +21,21 @@ get_header(); ?>
 
 			<div class="container-fluid">
 
-				<?php do_action( 'cyberchimps_before_container' ); ?>
+				<?php do_action( 'ifeature_cc_before_container' ); ?>
 
-				<div id="container" <?php cyberchimps_filter_container_class(); ?>>
+				<div id="container" <?php Ifeature_Helper::ifeature_cc_filter_container_class(); ?>>
 
-					<?php do_action( 'cyberchimps_before_content_container' ); ?>
+					<?php do_action( 'ifeature_cc_before_content_container' ); ?>
 
-					<div id="content" <?php cyberchimps_filter_content_class(); ?>>
+					<div id="content" <?php Ifeature_Helper::ifeature_cc_filter_content_class(); ?>>
 
-						<?php do_action( 'cyberchimps_before_content' ); ?>
+						<?php do_action( 'ifeature_cc_before_content' ); ?>
 
 						<?php while( have_posts() ) : the_post(); ?>
 
 							<?php get_template_part( 'content', 'single' ); ?>
 
-							<?php cyberchimps_posts_author_bio();?>
+							<?php ifeature_cc_posts_author_bio();?>
 							<div class="more-content">
 								<div class="row-fluid">
 									<div class="span6 previous-post">
@@ -56,17 +56,17 @@ get_header(); ?>
 
 						<?php endwhile; // end of the loop. ?>
 
-						<?php do_action( 'cyberchimps_after_content' ); ?>
+						<?php do_action( 'ifeature_cc_after_content' ); ?>
 
 					</div>
 					<!-- #content -->
 
-					<?php do_action( 'cyberchimps_after_content_container' ); ?>
+					<?php do_action( 'ifeature_cc_after_content_container' ); ?>
 
 				</div>
 				<!-- #container .row-fluid-->
 
-				<?php do_action( 'cyberchimps_after_container' ); ?>
+				<?php do_action( 'ifeature_cc_after_container' ); ?>
 
 			</div>
 			<!--container fluid -->

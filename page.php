@@ -15,15 +15,15 @@
 
 get_header(); ?>
 
-<?php do_action( 'cyberchimps_before_container' ); ?>
+<?php do_action( 'ifeature_cc_before_container' ); ?>
 
-<?php do_action( 'cyberchimps_page_content' ); ?>
+<?php do_action( 'ifeature_cc_page_content' ); ?>
 
-<?php do_action( 'cyberchimps_after_container' ); ?>
+<?php do_action( 'ifeature_cc_after_container' ); ?>
 
 <?php get_footer();
 
-function cyberchimps_page_display() {
+function ifeature_cc_page_display() {
 
 }
 
