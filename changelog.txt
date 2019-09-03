@@ -1,5 +1,8 @@
+Version 1.0.2
+Improved accesibility with keyboard navigation
+
 Version 1.0.1
-Added compatibility with Kaliforms
+Added compatibility with Kali Forms plugin
 
 Version 1.0.0
 Theme release!

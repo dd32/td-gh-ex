@@ -43,8 +43,8 @@ class Antreas_Theme {
 			),
 			array(
 				'id'          => ANTREAS_SLUG . '-req-ac-install-kaliforms',
-				'title'       => Antreas_Notify_System::create_plugin_requirement_title( __( 'Install: Kaliforms', 'antreas' ), __( 'Activate: Kaliforms', 'antreas' ), 'kali-forms' ),
-				'description' => __( 'It is highly recommended that you install the Kaliforms plugin.', 'antreas' ),
+				'title'       => Antreas_Notify_System::create_plugin_requirement_title( __( 'Install: Kali Forms', 'antreas' ), __( 'Activate: Kali Forms', 'antreas' ), 'kali-forms' ),
+				'description' => __( 'It is highly recommended that you install the Kali Forms plugin.', 'antreas' ),
 				'check'       => Antreas_Notify_System::has_plugin( 'kali-forms' ),
 				'plugin_slug' => 'kali-forms',
 			),
@@ -173,7 +173,7 @@ class Antreas_Theme {
 		$import_plugins = array(
 			'cpo-companion'            => esc_html__( 'CPO Companion', 'antreas' ),
 			'modula-best-grid-gallery' => esc_html__( 'Modula Gallery', 'antreas' ),
-			'kali-forms'               => esc_html__( 'Kaliforms', 'antreas' ),
+			'kali-forms'               => esc_html__( 'Kali Forms', 'antreas' ),
 		);
 
 		$plugins_html = '';

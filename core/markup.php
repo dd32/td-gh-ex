@@ -946,11 +946,11 @@ if ( ! function_exists( 'antreas_menu' ) ) {
 
 //Prints the mobile navigation menu
 if ( ! function_exists( 'antreas_mobile_menu' ) ) {
-	add_action( 'wp_footer', 'antreas_mobile_menu' );
+	add_action( 'antreas_header', 'antreas_mobile_menu', 20 );
 	function antreas_mobile_menu( $options = null ) {
 		//Use mobile menu if set, or fall back to the main menu
 		if ( has_nav_menu( 'mobile_menu' ) ) {
-			echo '<div id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></div>';
+			echo '<button id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></button>';
 			wp_nav_menu(
 				array(
 					'menu_id'        => 'menu-mobile',
@@ -962,7 +962,7 @@ if ( ! function_exists( 'antreas_mobile_menu' ) ) {
 				)
 			);
 		} elseif ( has_nav_menu( 'main_menu' ) ) {
-			echo '<div id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></div>';
+			echo '<button id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></button>';
 			wp_nav_menu(
 				array(
 					'menu_id'        => 'menu-mobile',
@@ -982,7 +982,7 @@ if ( ! function_exists( 'antreas_mobile_menu' ) ) {
 if ( ! function_exists( 'antreas_menu_toggle' ) ) {
 	function antreas_menu_toggle() {
 		if ( has_nav_menu( 'main_menu' ) ) {
-			echo '<div id="menu-mobile-open" class=" menu-mobile-open menu-mobile-toggle"></div>';
+			echo '<button id="menu-mobile-open" class=" menu-mobile-open menu-mobile-toggle"></button>';
 		}
 	}
 }
