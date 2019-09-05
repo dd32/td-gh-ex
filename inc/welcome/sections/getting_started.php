@@ -1,19 +1,72 @@
-<div class="theme-steps-list">
+	<div class="theme-steps-list-wrap two-col">
 
-	<div class="theme-steps">
-		<h3><?php echo esc_html__('Step 1 - Documentation', 'agency-lite'); ?></h3>
-		<p><?php echo esc_html__('Read the detailed documentation of the theme. The documentation contain all the necessary information required to setup the theme Uncode Lite.', 'agency-lite'); ?></p>
-		<a target="__blank" class="button" href="https://doc.accesspressthemes.com/agency-lite/"><?php echo esc_html__('Read Documentation', 'agency-lite'); ?></a>
+		<div class="theme-steps col">
+			<div class="step-1-right recommend-col">
+				<h3><?php echo esc_html__('Links to Customizer Settings', 'agency-lite'); ?></h3>
+				<div class="item-wrap">
+				<?php
+				$data    = array(
+				array(
+					'icon' => 'dashicons-format-gallery',
+					'text' => __( 'Upload Logo', 'agency-lite' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'title_tagline' ), admin_url( 'customize.php' ) ),
+				),
+				array(
+					'icon' => 'dashicons-admin-home',
+					'text' => __( 'HomePage Settings', 'agency-lite' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'agency_lite_home_page_setting' ), admin_url( 'customize.php' ) ),
+				),
+				
+				array(
+					'icon' => 'dashicons-menu',
+					'text' => __( 'Header Options', 'agency-lite' ),
+					'link' => add_query_arg( array( 'autofocus[panel]' => 'agency_lite_header_setting' ), admin_url( 'customize.php' ) ),
+				),
+				array(
+					'icon' => 'dashicons-admin-appearance',
+					'text' => __( 'Template Color', 'agency-lite' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'colors' ), admin_url( 'customize.php' ) ),
+				),
+				array(
+					'icon' => 'dashicons-align-center',
+					'text' => __( 'Footer Options', 'agency-lite' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'agency_lite_footer_page_section' ), admin_url( 'customize.php' ) ),
+				),
+				array(
+					'icon' => 'dashicons-format-aside',
+					'text' => __( 'Sidebar Options', 'parallaxsome-pro' ),
+					'link' => add_query_arg( array( 'autofocus[section]' => 'agency_lite_sidebar_section' ), admin_url( 'customize.php' ) ),
+				),
+
+			); 
+			foreach ( $data as $customizer_item ) {
+				 ?>
+				<div class="ti-customizer-item ">
+					<i class="dashicons <?php echo esc_attr( $customizer_item['icon']); ?> "></i><a href="<?php echo esc_url( $customizer_item['link'] ); ?>"><?php echo wp_kses_post( $customizer_item['text'] ); ?></a>
+				</div>
+			<?php } ?>
+
+			</div>
+		</div>
+		<div class="step-1-left">
+			<h3><?php echo esc_html__('Step 1 - Checkout starter sites (Demos) ', 'agency-lite'); ?></h3>
+			<p><?php /* translators: %s : Theme Name */ printf(esc_html__('%1$s now comes with a sites library with 6 starter sites to pick from. You can check theme out and decide which one to start with. However you can decide not to use any one of them and start building your site from scratch.', 'agency-lite'),$this->theme_name); ?></p>
+			<a class="nav-tab demo_import button" href="<?php echo esc_url(admin_url('/themes.php?page=welcome-page#demo_import')); ?>"><?php echo esc_html__('See Demos', 'agency-lite'); ?></a>
+		</div>
+		
 	</div>
 
-	<div class="theme-steps">
-		<h3><?php echo esc_html__('Step 2 - Customizer Options Panel', 'agency-lite'); ?></h3>
-		<p><?php echo esc_html__('Using the WordPress Customizer you can easily customize every aspect of the theme.', 'agency-lite'); ?></p>
-		<a class="button button-primary" href="<?php echo esc_url(admin_url('customize.php')); ?>"><?php echo esc_html__('Go to Customizer Panels', 'agency-lite'); ?></a>
+	<div class="theme-steps col">
+		<h3><?php echo esc_html__('Step 2 - Import demo of your choice ', 'agency-lite'); ?></h3>
+		<p><?php echo esc_html__('Once you chose one of the available starter sites (demos) - you can install it. Please be noted that once you install the demo, it will install all the required plugins too. It is not recommended to install demo on your existing content. A fresh WordPress installation would be required to install demo to replicate demo content exactly. ', 'agency-lite'); ?></p>
+		<a class=" nav-tab demo_import button" href="<?php echo esc_url(admin_url('/themes.php?page=welcome-page#demo_import')); ?>"><?php echo esc_html__('Install Demo', 'agency-lite'); ?></a>
 	</div>
-
-</div>
-
-<div class="theme-image">
-	<img src="<?php echo esc_url(get_template_directory_uri().'/screenshot.png') ?>">
+	<div class="theme-steps col">
+		<h3><?php echo esc_html__('Step 3 - Start editing the demo content and making your site! ', 'agency-lite'); ?></h3>
+		<p><?php echo esc_html__('Once you install the demo, you can start editing the content, replacing images etc.', 'agency-lite'); ?></p>
+	</div>
+	<div class="theme-steps col">
+		<h3><?php echo esc_html__('Step 4 - You \'re done! ', 'agency-lite'); ?></h3>
+		<p><?php echo esc_html__('Go live with the website and get some rest', 'agency-lite'); ?></p>
+	</div>
 </div>

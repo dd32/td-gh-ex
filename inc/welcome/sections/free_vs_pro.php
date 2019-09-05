@@ -36,7 +36,7 @@
 			<p><?php esc_html_e('Tired of configuring site from scratch. Installation of demo is just one click away.', 'agency-lite'); ?></p>
 		</td>
 		<td>
-			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/no.png'); ?>">
+			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">
 		</td>
 		<td>
 			<img src="<?php echo esc_url(get_template_directory_uri().'/inc/welcome/css/yes.png'); ?>">

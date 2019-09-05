@@ -109,7 +109,7 @@ require get_template_directory() . '/inc/customizer/repeater-controller/customiz
 require get_template_directory() . '/inc/customizer/customizer.php';
 
 
-require get_template_directory() . '/inc/welcome/welcome.php';
+require get_template_directory() . '/inc/welcome/welcome-config.php';
 
 /**
  * Custom Customizer Controls
