@@ -76,24 +76,24 @@ require get_template_directory() . '/inc/welcome-screen/class-sparkling-notify-s
 if ( is_admin() ) {
 	global $sparkling_required_actions, $sparkling_recommended_plugins;
 	$sparkling_recommended_plugins = array(
-		'fancybox-for-wordpress' => array(
-			'recommended' => true,
-		),
-		'simple-custom-post-order' => array(
+		'kali-forms' => array(
 			'recommended' => true,
 		),
 		'colorlib-login-customizer' => array(
 			'recommended' => true,
 		),
-		'colorlib-coming-soon-maintenance' => array(
+		'fancybox-for-wordpress'    => array(
+			'recommended' => false,
+		),
+		'simple-custom-post-order'  => array(
 			'recommended' => true,
 		),
-		'colorlib-404-customizer' => array(
-			'recommended' => true,
-		),
-		'modula-best-grid-gallery' => array(
-			'recommended' => true,
-		),
+        'colorlib-404-customizer' => array(
+            'recommended' => true,
+        ),
+        'colorlib-coming-soon-maintenance' => array(
+            'recommended' => true,
+        ),
 
 	);
 	/*
