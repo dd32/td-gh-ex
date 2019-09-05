@@ -17,22 +17,19 @@ function thebox_setup() {
 	// Make theme available for translation. Translations can be filed in the /languages/ directory
 	load_theme_textdomain( 'the-box', get_template_directory() . '/languages' );	
 	
+	// Set the default content width.
+	$GLOBALS['content_width'] = 600;
+	
 	// Supporting title tag via add_theme_support (since WordPress 4.1)
 	add_theme_support( 'title-tag' );
    
-	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style( array( 'css/editor-style.css', thebox_fonts_url() ) );
-	
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 	
 	// Enable support for Post Thumbnail
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 940, 9999 ); //600 pixels wide (and unlimited height)
-	
-	// Set the default content width.
-	$GLOBALS['content_width'] = 600;
-	
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'the-box' ),
@@ -47,21 +44,79 @@ function thebox_setup() {
 	
 	// Enable support for Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-	
-	// Custom template tags for this theme
-	require get_template_directory() . '/inc/template-tags.php';
-	
-	// Theme Customizer
-	require get_template_directory() . '/inc/customizer.php';
-	
+
 	// Set up the WordPress Custom Background Feature.
 	add_theme_support( 'custom-background', apply_filters( 'thebox_custom_background_args', array(
 		'default-color' => 'f0f3f5',
 		'default-image' => '',
 	) ) );
 	
-	// Load Jetpack compatibility file
-	require get_template_directory() . '/inc/jetpack.php';
+	// This theme styles the visual editor to resemble the theme style,
+	add_editor_style( array( 'inc/css/editor-style.css', thebox_fonts_url() ) );
+	
+	// Load regular editor styles into the new block-based editor.
+	add_theme_support( 'editor-styles' );
+	
+	// Add custom editor font sizes.
+	add_theme_support(
+		'editor-font-sizes', array(
+			array(
+				'name'      => __( 'Small', 'the-box' ),
+				'size'      => 14,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'Normal', 'the-box' ),
+				'size'      => 16,
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => __( 'Large', 'the-box' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => __( 'Huge', 'the-box' ),
+				'size'      => 32,
+				'slug'      => 'huge',
+			),
+		)
+	);
+	
+	// Add support for custom color scheme.
+	add_theme_support(
+		'editor-color-palette', array(
+		array(
+			'name'  => __( 'Black', 'the-box' ),
+			'slug'  => 'black',
+			'color' => '#000000',
+		),
+		array(
+			'name'  => __( 'Dark Gray', 'the-box' ),
+			'slug'  => 'dark-gray',
+			'color' => '#252525',
+		),
+		array(
+			'name'  => __( 'Medium Gray', 'the-box' ),
+			'slug'  => 'medium-gray',
+			'color' => '#353535',
+		),
+		array(
+			'name'  => __( 'Light Gray', 'the-box' ),
+			'slug'  => 'light-gray',
+			'color' => '#959595',
+		),
+		array(
+			'name'  => __( 'White', 'the-box' ),
+			'slug'  => 'white',
+			'color' => '#ffffff',
+		),
+		array(
+			'name'  => __( 'Accent Color', 'the-box' ),
+			'slug'  => 'accent',
+			'color' => esc_attr( get_option( 'color_primary', '#0fa5d9' ) ),
+		),
+	) );
 	
 }
 endif;
@@ -120,17 +175,22 @@ endif;
  */
 function thebox_scripts() {
 	
-	// Add custom fonts, used in the main stylesheet.
+	// Add Google Fonts.
 	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
 	
 	// Add Icons Font, used in the main stylesheet.
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.min.css', array(), '1.7' );
 		
-	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.9.1' );
+	// Theme stylesheet.
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.5.0' );
 	
+	// Blocks stylesheet.
+	wp_enqueue_style( 'thebox-blocks-style', get_template_directory_uri() . '/inc/css/blocks.css', array( 'thebox-style' ), '20190904' );
+	
+	// Main js.
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20170220', true );
-
+	
+	// Comment reply script.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -148,13 +208,17 @@ add_action( 'wp_enqueue_scripts', 'thebox_scripts' );
 
 
 /**
- * Enqueue Google fonts to admin screen.
- *
+ * Enqueue styles for the block-based editor.
  */
-function thebox_admin_fonts() {
-	wp_enqueue_style( 'thebox-admin-fonts', thebox_fonts_url(), array(), null );
+function thebox_block_editor_styles() {
+	// Add Block styles.
+	wp_enqueue_style( 'thebox-block-editor-style', get_theme_file_uri( '/inc/css/editor-blocks.css' ) );
+	// Add custom styles.
+	wp_add_inline_style( 'thebox-block-editor-style', thebox_custom_style() );
+	// Add Google fonts.
+	wp_enqueue_style( 'thebox-fonts', thebox_fonts_url(), array(), null );
 }
-add_action( 'admin_print_scripts-appearance_page_custom-header', 'thebox_admin_fonts' );
+add_action( 'enqueue_block_editor_assets', 'thebox_block_editor_styles' );
 
 
 /**
@@ -188,6 +252,30 @@ add_action( 'widgets_init', 'thebox_widgets_init' );
  *
  */
 require( get_template_directory() . '/inc/custom-header.php' );
+
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+
+/**
+ * Custom styles handled by the Theme customizer.
+ */
+require get_template_directory() . '/inc/custom-styles.php';
+
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+
+/**
+ *  Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
 
 
 /*

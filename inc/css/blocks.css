@@ -1,0 +1,134 @@
+/*
+Theme Name: The Box
+Description: Used to style blocks.
+*/
+
+/* 
+ * 01: Common Blocks
+ */
+
+
+
+/* Captions */
+
+[class^="wp-block-"] figcaption {
+	display: block;
+	margin: 10px 0 0;
+	font-size: 14px;
+	text-align: center;
+	line-height: 1.5;
+	color: #959595;
+	box-sizing: border-box;
+}
+
+/* Image */
+
+.wp-block-image {
+	margin-bottom: 20px;
+}
+
+.wp-block-image img {
+	display: block;
+}
+
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+	margin: 0 auto 20px;
+}
+
+.wp-block-image .aligncenter {
+	clear: both;
+	margin: 20px auto;
+}
+
+@media screen and (min-width: 480px) {
+	.wp-block-image .alignleft {
+	margin: 0 20px 5px 0;
+	}
+	.wp-block-image .alignright {
+	margin: 0 0 5px 20px;
+	}
+}
+
+/* Gallery */
+
+.wp-block-gallery {
+	margin-left: 0;
+}
+
+/* 
+ * 02: Formatting
+ */
+
+
+/* 
+ * 03: Layout Elements
+ */
+
+
+/* 
+ * 04: Widget Blocks
+ */
+
+
+/* 
+ * 05: Colors & Font sizes
+ */
+
+.entry-content .has-black-color {
+	color: #000;
+}
+
+.entry-content .has-dark-gray-color {
+	color: #252525;
+}
+
+.entry-content .has-medium-gray-color {
+	color: #353535;
+}
+
+.entry-content .has-light-gray-color {
+	color: #959595;
+}
+
+.entry-content .has-white-color {
+	color: #fff;
+}
+
+.entry-content .has-black-background-color {
+	background-color: #000;
+}
+
+.entry-content .has-dark-gray-background-color {
+	background-color: #252525;
+}
+
+.entry-content .has-medium-gray-background-color {
+	background-color: #353535;
+}
+
+.entry-content .has-light-gray-background-color {
+	background-color: #959595;
+}
+
+.entry-content .has-white-background-color {
+	background-color: #fff;
+}
+
+.has-small-font-size {
+	font-size: 14px;
+}
+
+.has-regular-font-size {
+	font-size: 16px;
+}
+
+.has-large-font-size {
+	font-size: 24px;
+	line-height: 1.4;
+}
+
+.has-larger-font-size {
+	font-size: 32px;
+	line-height: 1.4;
+}

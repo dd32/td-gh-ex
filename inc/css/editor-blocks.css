@@ -1,0 +1,123 @@
+/*
+Theme Name: The Box
+Description: Used to style blocks in the editor.
+*/
+
+
+/* 
+ * 01: Typography 
+ */
+
+.edit-post-visual-editor .editor-block-list__block,
+.editor-default-block-appender textarea.editor-default-block-appender__content {
+	font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.65;
+}
+
+.edit-post-visual-editor .editor-block-list__block {
+	color: #353535;
+}
+
+.editor-post-title__block .editor-post-title__input {
+	font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	color: #252525;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.edit-post-visual-editor h1,
+.edit-post-visual-editor h2,
+.edit-post-visual-editor h3,
+.edit-post-visual-editor h4,
+.edit-post-visual-editor h5,
+.edit-post-visual-editor h6 {
+	font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+	color: #252525;
+}
+
+.edit-post-visual-editor h1 {
+	font-size: 24px;
+	line-height: 1.4;
+}
+
+.edit-post-visual-editor h2 {
+	font-size: 22px;
+	line-height: 1.4;
+	font-weight: 700;
+}
+
+.edit-post-visual-editor h3 {
+	font-size: 18px;
+	line-height: 1.4;
+	font-weight: 700;
+}
+
+.edit-post-visual-editor h4 {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.edit-post-visual-editor h5 {
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.edit-post-visual-editor h1:first-child,
+.edit-post-visual-editor h2:first-child,
+.edit-post-visual-editor h3:first-child,
+.edit-post-visual-editor h4:first-child,
+.edit-post-visual-editor h5:first-child,
+.edit-post-visual-editor h6:first-child {
+	margin-top: 0;
+}
+
+.edit-post-visual-editor .has-large-font-size,
+.edit-post-visual-editor .has-larger-font-size {
+	line-height: 1.4;
+}
+
+/* 
+ * 02: Block Settings
+ */
+
+.edit-post-visual-editor {
+	max-width: 100% !important; /* Override where editor-style.css is affecting this */
+}
+
+.wp-block {
+	max-width: 600px; /* 760px + 30px to account for padding. */
+}
+
+/* 
+ * 03: Common Blocks
+ */
+
+.edit-post-visual-editor .wp-block-gallery,
+.editor-block-list__block .wp-block-gallery {
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0;
+}
+
+/* Quote */
+
+.wp-block-quote.is-style-large, 
+.wp-block-quote.is-large,
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	font-style: italic;
+    margin: 20px 0;
+    padding: 0 15px;
+    border-left: 4px solid #ddd;
+}
+
+.wp-block-quote cite,
+.wp-block-quote footer,
+.wp-block-quote .wp-block-quote__citation {
+	font-size: 14px;
+	font-weight: 700;
+	color: #252525;
+	line-height: 1.5;
+}

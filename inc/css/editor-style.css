@@ -3,16 +3,22 @@ Theme Name: The Box
 Description: Used to style the TinyMCE editor.
 */
 
-
-html .mceContentBody {
-	font-size: 15px;
+body {
+	background-color: #fff;
+	margin: 20px 40px;
 	max-width: 640px;
 }
 
-body {
+body,
+button,
+input,
+select,
+textarea {
 	color: #353535;
 	font-family: 'Oxygen', sans-serif;
+	font-size: 14px;
 	line-height: 1.65;
+	color: #353535;
 	text-rendering: optimizeLegibility;
 	vertical-align: baseline;
 }
@@ -23,8 +29,8 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
 	font-family: 'Oxygen', sans-serif;
+	clear: both;
 	color: #252525;
 }
 
@@ -138,4 +144,18 @@ embed,
 iframe,
 object {
 	max-width: 100%;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 0 15px;
+    border-left: 4px solid #ddd;
+}
+
+blockquote cite {
+	font-size: 14px;
+	font-weight: 700;
+	color: #252525;
+	line-height: 1.5;
 }

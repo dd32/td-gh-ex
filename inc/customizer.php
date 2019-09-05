@@ -73,8 +73,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			'link' => esc_url('https://wordpress.org/support/theme/the-box/reviews/#new-post'),
 			'text' => __('Rate This Theme', 'the-box'),
 			),
+			'instagram' => array(
+			'link' => esc_url('https://instagram.com/designlabthemes/'),
+			'text' => __('Follow on Instagram', 'the-box'),
+			),
 			'twitter' => array(
-			'link' => esc_url('https://twitter.com/designlabthemes'),
+			'link' => esc_url('https://twitter.com/designlabthemes/'),
 			'text' => __('Follow on Twitter', 'the-box'),
 			)
 		);
@@ -83,7 +87,21 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
     		}
 	    }
 	}
-	
+	class TheBox_Plus_Version extends WP_Customize_Control {
+		public $type = 'the-box-plus-version';
+		
+		function render_content() {
+		$pro_version_text = esc_html( 'Try The Box Plus', 'the-box' );
+		$pro_version_link = esc_url( 'https://www.designlabthemes.com/the-box-plus-wordpress-theme/?utm_source=customizer_link&utm_medium=wordpress_dashboard&utm_campaign=the_box_upsell' );
+		
+		if ( ! empty( $this->label ) ) {
+			echo '<div class="description customize-control-description short-news-custom-description">';
+			echo '<strong>' . esc_html( $this->label ) . '</strong> ';
+			echo '<a target="_blank" href="' . esc_url( $pro_version_link ). '" >' . esc_html( $pro_version_text ) . '</a>';
+			echo '</div>';
+			}
+		}
+	}
 }
 
 
@@ -100,34 +118,45 @@ function thebox_theme_customizer( $wp_customize ) {
 	// Rename the label to "Site Title and Tagline Color"
 	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title and Tagline Color', 'the-box' );
 	
-	// The Box Links
-	$wp_customize->add_section('thebox_links_section', array(
-	  'title' => __('The Box Links', 'the-box'),
-	  'priority' => 2,
-	) );
-	
-	$wp_customize->add_setting('thebox_links', array(
-	  'capability' => 'edit_theme_options',
-	  'sanitize_callback' => 'esc_url_raw',
-	) );
-	
-	$wp_customize->add_control(new TheBox_Important_Links($wp_customize, 'thebox_links', array(
-	  'section' => 'thebox_links_section',
-	) ) );
-	
-	// The Box Panel
+	// Panels
 	$wp_customize->add_panel( 'thebox_panel', array(
-    	'title' => __( 'Theme Settings', 'the-box' ),
+    	'title' => __( 'The Box Settings', 'the-box' ),
 		'priority' => 10,
 	) );
 	
-	// Layout Section
+	// Sections
 	$wp_customize->add_section( 'thebox_layout_section' , array(
 		'title' => __( 'Layout', 'the-box' ),
 		'priority' => 10,
 		'panel' => 'thebox_panel',
 	) );
 	
+	$wp_customize->add_section( 'thebox_post_section' , array(
+		'title' => __( 'Post', 'the-box' ),
+		'priority' => 15,
+		'panel' => 'thebox_panel',
+	) );
+	
+	$wp_customize->add_section( 'thebox_page_section' , array(
+		'title' => __( 'Page', 'the-box' ),
+		'priority' => 20,
+		'panel' => 'thebox_panel',
+	) );
+	
+	$wp_customize->add_section('thebox_social_section' , array(
+	  	'title' => __('Social Links', 'the-box'),
+	  	'priority' => 25,
+	  	'description' => __('Paste here your Social Links.', 'the-box' ),
+	  	'panel' => 'thebox_panel',
+	) );
+	
+	$wp_customize->add_section('thebox_links_section', array(
+	  'title' => __('The Box Links', 'the-box'),
+	  'priority' => 11,
+	) );
+	
+	// Settings
+		
 	// Layout Options
 	$wp_customize->add_setting( 'thebox_sidebar_settings', array(
 		'default' => 'content-sidebar',
@@ -177,14 +206,16 @@ function thebox_theme_customizer( $wp_customize ) {
 	    'type'     => 'checkbox',
 	) );
 	
-	// Post Section
-	$wp_customize->add_section( 'thebox_post_section' , array(
-		'title' => __( 'Post', 'the-box' ),
-		'priority' => 15,
-		'panel' => 'thebox_panel',
+	$wp_customize->add_setting( 'layout_plus_link', array(
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
+
+	$wp_customize->add_control( new TheBox_Plus_Version( $wp_customize, 'layout_plus_link', array(
+		'label'		=> __( 'Need more options?', 'the-box' ),
+		'section'	=> 'thebox_layout_section',
+	) ) );
 	
-	// Enable Featured Image
+	// Enable Featured Image on Single Post
 	$wp_customize->add_setting( 'thebox_enable_featured_image', array(
         'default' => '',
         'capability' => 'edit_theme_options',
@@ -199,14 +230,16 @@ function thebox_theme_customizer( $wp_customize ) {
 	    'type'     		=> 'checkbox',
 	) );
 	
-	// Page Section
-	$wp_customize->add_section( 'thebox_page_section' , array(
-		'title' => __( 'Page', 'the-box' ),
-		'priority' => 20,
-		'panel' => 'thebox_panel',
+	$wp_customize->add_setting( 'post_plus_link', array(
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
+
+	$wp_customize->add_control( new TheBox_Plus_Version( $wp_customize, 'post_plus_link', array(
+		'label'		=> __( 'Need more options?', 'the-box' ),
+		'section'	=> 'thebox_post_section',
+	) ) );
 	
-	// Enable Featured Image
+	// Enable Featured Image on Static Page
 	$wp_customize->add_setting( 'thebox_page_featured_image', array(
 		'default' => '',
         'capability' => 'edit_theme_options',
@@ -221,13 +254,16 @@ function thebox_theme_customizer( $wp_customize ) {
 	    'type'     		=> 'checkbox',
 	) );
 	
-	// Social Links Section
-	$wp_customize->add_section('thebox_social_section' , array(
-	  	'title' => __('Social Links', 'the-box'),
-	  	'priority' => 25,
-	  	'description' => __('Paste here your Social Links.', 'the-box' ),
-	  	'panel' => 'thebox_panel',
+	$wp_customize->add_setting( 'page_plus_link', array(
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
+
+	$wp_customize->add_control( new TheBox_Plus_Version( $wp_customize, 'page_plus_link', array(
+		'label'		=> __( 'Need more options?', 'the-box' ),
+		'section'	=> 'thebox_page_section',
+	) ) );
+	
+	// Social Links
 	
 	// Backward compatibility for Theme versions older than 4.1.3
 	if ( get_option( 'thebox_theme_options' ) ) { 
@@ -456,6 +492,16 @@ function thebox_theme_customizer( $wp_customize ) {
 		'label' => __( 'Footer Background', 'the-box' ),
 		'section' => 'colors',
 	) ) );
+	
+	// The Box Links
+	$wp_customize->add_setting('thebox_links', array(
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'esc_url_raw',
+	) );
+	
+	$wp_customize->add_control(new TheBox_Important_Links($wp_customize, 'thebox_links', array(
+	  'section' => 'thebox_links_section',
+	) ) );
 
 }
 add_action('customize_register', 'thebox_theme_customizer');
@@ -490,27 +536,6 @@ function thebox_sanitize_choices( $input, $setting ) {
 
 
 /**
- * Convert hex to rgb
- *
- */
-function thebox_hex2rgb($hex) {
-   $hex = str_replace("#", "", $hex);
-
-   if(strlen($hex) == 3) {
-      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
-      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
-      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
-   } else {
-      $r = hexdec(substr($hex,0,2));
-      $g = hexdec(substr($hex,2,2));
-      $b = hexdec(substr($hex,4,2));
-   }
-   $rgb = array($r, $g, $b);
-   return implode(",", $rgb); // returns the rgb values separated by commas
-}
-
-
-/**
  * Checks conditions to display Post Lenght Option
  */
 function thebox_check_layout_options( $control ) {
@@ -520,115 +545,3 @@ function thebox_check_layout_options( $control ) {
         return false;
     }
 }
-
-
-/**
- * Get Contrast
- *
- */
-function thebox_get_brightness($hex) {
- // returns brightness value from 0 to 255
- // strip off any leading #
- $hex = str_replace('#', '', $hex);
-
- $c_r = hexdec(substr($hex, 0, 2));
- $c_g = hexdec(substr($hex, 2, 2));
- $c_b = hexdec(substr($hex, 4, 2));
-
- return (($c_r * 299) + ($c_g * 587) + ($c_b * 114)) / 1000;
-}
-
-
-/**
- * Add CSS in <head> for styles handled by the theme customizer
- *
- */
-function thebox_custom_styles() {
-	$accent_color = esc_attr( get_option('color_primary') ); 
-	$footer_bg = esc_attr( get_option('color_footer') );
-	
-	$custom_style = "";
-			
-	// Accent Color
-	if ( $accent_color != '' ) {
-		$accent_color_rgb = thebox_hex2rgb($accent_color);
-		
-		$custom_style .= "
-		.main-navigation,
-		button,
-		input[type='button'],
-		input[type='reset'],
-		input[type='submit'],
-		.pagination .nav-links .current,
-		.pagination .nav-links .current:hover,
-		.pagination .nav-links a:hover {
-		background-color: {$accent_color};	
-		}
-		button:hover,
-		input[type='button']:hover,
-		input[type='reset']:hover,
-		input[type='submit']:hover {
-		background-color: rgba({$accent_color_rgb}, 0.9);		
-		}
-		.entry-time {
-		background-color: rgba({$accent_color_rgb}, 0.7);		
-		}
-		.site-header .main-navigation ul ul a:hover,
-		.site-header .main-navigation ul ul a:focus,
-	    .site-header .site-title a:hover,
-	    .page-title a:hover,
-	    .entry-title a:hover,
-	    .entry-meta a:hover,
-	    .entry-content a,
-	    .entry-summary a,
-		.entry-footer a,
-	    .entry-footer .icon-font,
-	    .author-bio a,
-	    .comments-area a,
-	    .page-title span,
-		.edit-link a,
-		.more-link,
-		.post-navigation a,
-		#secondary a,
-		#secondary .widget_recent_comments a.url { 
-	    color: {$accent_color};
-	    }
-	    .edit-link a {
-		border-color: {$accent_color};
-	    }";
-		if ( thebox_get_brightness($accent_color) > 155) {
-			$custom_style .= "	
-			button,
-			input[type='button'],
-			input[type='reset'],
-			input[type='submit'],
-			.main-navigation > div > ul > li > a {color: rgba(0,0,0,.8);}
-			.main-navigation > div > ul > li > a:hover {color: rgba(0,0,0,.7);}";
-		}
-	}
-	    
-	// Footer Background
-	if ( $footer_bg != '' ) {
-		$custom_style .= "
-		.site-footer {
-		background-color: {$footer_bg};	
-		}";
-		if ( thebox_get_brightness($footer_bg) > 155) {
-			$custom_style .= "
-			.site-footer,
-			.site-footer a,
-			.site-footer a:hover {
-			color: rgba(0,0,0,.8);
-			}
-			#tertiary {
-			border-bottom-color: rgba(0,0,0,.05);
-			}";	
-		}
-	}
-	
-	if ( $custom_style != '' ) { 
-		wp_add_inline_style( 'thebox-style', $custom_style );
-	}
-
-}
-add_action( 'wp_enqueue_scripts', 'thebox_custom_styles' );
