@@ -226,7 +226,7 @@ global $text_domain;
 $text_domain = 'unite';
 
 global $site_layout;
-$site_layout = array('side-pull-left' => esc_html__('Right Sidebar', 'dazzling'),'side-pull-right' => esc_html__('Left Sidebar', 'dazzling'),'no-sidebar' => esc_html__('No Sidebar', 'dazzling'),'full-width' => esc_html__('Full Width', 'dazzling'));
+$site_layout = array('side-pull-left' => esc_html__('Right Sidebar', 'unite'),'side-pull-right' => esc_html__('Left Sidebar', 'unite'),'no-sidebar' => esc_html__('No Sidebar', 'unite'),'full-width' => esc_html__('Full Width', 'unite'));
 
 // Option to switch between the_excerpt and the_content
 global $blog_layout;
