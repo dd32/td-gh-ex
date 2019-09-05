@@ -263,8 +263,12 @@ add_action( 'woocommerce_after_main_content', 'responsive_woocommerce_wrapper_en
  * Responsive_woocommerce_wrapper
  */
 function responsive_woocommerce_wrapper() {
+	$responsive_classes = '';
+	if ( is_active_sidebar( 'main-sidebar' ) ) {
+		$responsive_classes = 'grid col-620';
+	}
 	echo '<div id="content-outer">';
-	echo '<div id="content-woocommerce" class="grid col-620">';
+	echo '<div id="content-woocommerce" class="' . $responsive_classes . '">';
 }
 
 /**
@@ -272,5 +276,8 @@ function responsive_woocommerce_wrapper() {
  */
 function responsive_woocommerce_wrapper_end() {
 	echo '</div><!-- end of #content-woocommerce -->';
+	if ( is_active_sidebar( 'main-sidebar' ) ) {
+		get_sidebar();
+	}
 	echo '</div>';
 }

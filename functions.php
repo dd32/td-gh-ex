@@ -41,8 +41,13 @@ require $responsive_template_directory . '/core/includes/customizer/helper.php';
 require $responsive_template_directory . '/core/includes/customizer/customizer.php';
 require $responsive_template_directory . '/core/includes/customizer/custom-styles.php';
 require $responsive_template_directory . '/core/includes/compatibility/woocommerce/class-responsive-woocommerce.php';
-
-// Return value of the supplied responsive free theme option.
+require $responsive_template_directory . '/admin/admin-functions.php';
+/**
+ * Return value of the supplied responsive free theme option.
+ *
+ * @param  array   $option  options.
+ * @param  boolean $default flag.
+ */
 function responsive_free_get_option( $option, $default = false ) {
 	global $responsive_options;
 
@@ -53,6 +58,9 @@ function responsive_free_get_option( $option, $default = false ) {
 
 	return $default;
 }
+/**
+ * Responsive_free_setup
+ */
 function responsive_free_setup() {
 	add_theme_support( 'title-tag' );
 
@@ -62,7 +70,11 @@ function responsive_free_setup() {
 add_action( 'after_setup_theme', 'responsive_free_setup' );
 
 add_filter( 'body_class', 'responsive_add_site_layout_classes' );
-
+/**
+ * [responsive_add_site_layout_classes description]
+ *
+ * @param array $classes Class.
+ */
 function responsive_add_site_layout_classes( $classes ) {
 	global $responsive_options;
 
@@ -226,7 +238,6 @@ function responsiveedit_customize_register( $wp_customize ) {
 		'responsive_theme_options[contact_title]',
 		array(
 			'selector' => '.contact_title',
-
 		)
 	);
 	$wp_customize->selective_refresh->add_partial(
