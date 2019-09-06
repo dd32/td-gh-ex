@@ -31,6 +31,7 @@
         <p><?php echo esc_html(get_theme_mod('advance_automobile_footer_copy', __('Copyright 2018', 'advance-automobile')));?> <?php advance_automobile_credit();?></p>
     </div>
 </footer>
+
 <?php wp_footer();?>
 </body>
 </html>

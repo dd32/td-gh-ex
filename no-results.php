@@ -18,8 +18,8 @@
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'advance-automobile' ); ?></p><br />
 		<?php get_search_form(); ?>
 	<?php else : ?>
-		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-automobile' ); ?></p><br />
-		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"> <?php esc_html_e( 'Return to Home Page', 'advance-automobile' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-automobile' ); ?></span></a>
-		</div>
+	<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-automobile' ); ?></p><br />
+	<div class="read-moresec">
+		<a href="<?php echo esc_url(home_url()); ?>" class="button"> <?php esc_html_e( 'Return to Home Page', 'advance-automobile' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-automobile' ); ?></span></a>
+	</div>
 <?php endif; ?>

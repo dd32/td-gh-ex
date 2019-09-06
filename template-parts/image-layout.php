@@ -7,6 +7,11 @@
  * @since advance-automobile 1.0
  */
 ?>	
+<?php 
+  $archive_year  = get_the_time('Y'); 
+  $archive_month = get_the_time('m'); 
+  $archive_day   = get_the_time('d'); 
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
         <h2><?php the_title();?></h2>
@@ -17,7 +22,9 @@
 
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
-                    <?php the_excerpt(); ?>
+                    <div class="entry-content">
+                        <?php the_excerpt(); ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>    

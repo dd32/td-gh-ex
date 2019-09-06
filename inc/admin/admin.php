@@ -18,13 +18,13 @@ function advance_automobile_mostrar_guide() {
 ?>
  <div class="wrapper-info">
 	 <div class="header">
-	 	<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="<?php the_title(); ?> post thumbnail image">
+	 	<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" >
 	 	<h2><?php esc_html_e('Welcome to Advance Automobile Theme', 'advance-automobile'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-automobile'); ?></p>
 		<div class="main-button">
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_BUY_NOW ); ?>"><?php esc_html_e('Buy Now', 'advance-automobile'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'advance-automobile'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_LIVE_DEMO ); ?>" target="_blank"><?php esc_html_e('Live Demo', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'advance-automobile'); ?></a>
 		</div>
 	</div>
 	<div class="button-bg">
@@ -34,9 +34,9 @@ function advance_automobile_mostrar_guide() {
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'advance-automobile'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_FREE_DOC ); ?>"><?php esc_html_e('Documentation', 'advance-automobile'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_CONTACT ); ?>"><?php esc_html_e('Support', 'advance-automobile'); ?></a>
-			<a href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_FREE_DOC ); ?>" target="_blank"><?php esc_html_e('Documentation', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_CONTACT ); ?>" target="_blank"><?php esc_html_e('Support', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( admin_url('customize.php') ); ?>" target="_blank"><?php esc_html_e('Start Customizing', 'advance-automobile'); ?></a>
 		</div>
 	  	<div class="documentation">
 		  	<div class="image-docs">
@@ -46,11 +46,11 @@ function advance_automobile_mostrar_guide() {
 				</ul>
 		  	</div>
 		  	<div class="doc-image">
-		  		<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="<?php the_title(); ?> post thumbnail image">	
+		  		<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png">	
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">
-					<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="<?php the_title(); ?> post thumbnail image">	
+					<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png">	
 			    </div>
 			    <div class="image-docs1">
 				    <ul>
@@ -64,13 +64,13 @@ function advance_automobile_mostrar_guide() {
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'advance-automobile'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_BUY_NOW ); ?>"><?php esc_html_e('Buy Now', 'advance-automobile'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'advance-automobile'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_LIVE_DEMO ); ?>" target="_blank"><?php esc_html_e('Live Demo', 'advance-automobile'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_AUTOMOBILE_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'advance-automobile'); ?></a>
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">
-	  			<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.jpg" alt="<?php the_title(); ?> post thumbnail image">
+	  			<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.jpg">
 	  			<p><?php esc_html_e( 'Buying this automobile WordPress theme will be the best decision for your automobile website. It is smart, resourceful, eye-catching and bold. It can serve for car dealers, car showrooms, automobile garage, car rentals, cab service, bike showroom and similar businesses. It is a responsive theme with mobile first approach, multi-browser compatible, translation ready and supports RTL writing. It supports various post formats like gallery, testimonial section, video on homepage, subscription form and others. Though this automobile WordPress theme has sufficient inner pages predesigned like about us, contact us, blog etc., but if you want you can design them on your own with the help of page builder. You can change the layout of the theme from boxed to full width to full screen. Add sidebars on one or both side and use it to display ads to get extra earning. Choose from the unlimited colours and Google fonts to change the look of the website.', 'advance-automobile' ); ?></p>
 	  		</div>
 	  		<div class="col-4">
