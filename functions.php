@@ -343,6 +343,7 @@ function advance_coaching_scripts() {
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-coaching-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'advance-coaching-basic-style',$custom_css );
 
@@ -389,7 +390,7 @@ define('ADVANCE_COACHING_CREDIT', 'https://www.themeshopy.com/themes/free-coachi
 
 if (!function_exists('advance_coaching_credit')) {
 	function advance_coaching_credit() {
-		echo "<a href=".esc_url(ADVANCE_COACHING_CREDIT)." target='_blank'>".esc_html__('Coaching WordPress Theme', 'advance-coaching')."</a>";
+		echo "<a href=".esc_url(ADVANCE_COACHING_CREDIT).">".esc_html__('Coaching WordPress Theme', 'advance-coaching')."</a>";
 	}
 }
 

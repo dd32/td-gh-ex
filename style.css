@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-coaching-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, personal trainer, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
-Version: 0.3.1
+Version: 0.3.2
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-coaching
@@ -274,12 +274,12 @@ input[type="submit"] {
   text-align:left;
 }
 .logo a{
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
 }
 .logo p{
   font-size:12px;
-  color: #000;
+  color: #fff;
 }
 /* ---------HEADER--------- */
 .page-template-custom-front-page .top-header{
@@ -313,11 +313,11 @@ input[type="submit"] {
 .top-header .time i{
   padding: 5px;
   font-size: 30px;
-  color: #000;
+  color: #fff;
 }
 .top-header .time p{
   margin-top:5px;
-  color: #000;
+  color: #fff;
 }
 .welcome-text p{
   margin-top:25px;
@@ -328,6 +328,17 @@ input[type="submit"] {
 .topbar{
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page.page-template-page-templatecustom-front-page-php.page.page-id-19.logged-in.admin-bar.woocommerce-js.customize-support .topbar a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+}
+.topbar a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
+.topbar .main-menu {
+  border-bottom: 1px solid #0000001f;
 }
 .request-btn a {
   border: 1px solid #fff;
@@ -352,59 +363,44 @@ input[type="submit"] {
 .contact_data .mail i{
   padding: 5px;
   font-size: 40px;
-  color:#2379d2;
+  color:#fff;
   margin-left:10px;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page.page-template-page-templatecustom-front-page-php.page.page-id-19.logged-in.admin-bar.woocommerce-js.customize-support .contact_data .mail i{
+  padding: 5px;
+  font-size: 40px;
+  color:#000;
+  margin-left:10px;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page.page-template-page-templatecustom-front-page-php.page.page-id-19.logged-in.admin-bar.woocommerce-js.customize-support .contact_data .mail p{
+  margin-bottom: 9px;
+  color: #000;
 }
 .contact_data .mail p{
   margin-bottom: 9px;
-  color: #69727a;
+  color: #fff;
+}
+body.page-template.page-template-page-template.page-template-custom-front-page.page-template-page-templatecustom-front-page-php.page.page-id-19.logged-in.admin-bar.woocommerce-js.customize-support .mail .color{
+  font-size: 15px;
+  color: #000 !important;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 .mail .color{
   font-size: 15px;
-  color: #051f31 !important;
+  color: #fff !important;
   font-weight: bolder;
   text-transform: uppercase;
 }
 /* --------- Main Menu--------- */
-#header .nav {
-  margin: 0;
-  display: block;
-  padding-top: 10px;
-}
-#header .nav ul {
-	margin:0;
-	padding:0;
-	font-weight:400;
-	font-size:14px;
-	text-transform: uppercase;
-	font-weight:bold;
-}
-#header .nav ul li{
-	display:inline-block;
-	margin:0;
-	position:relative;
-}
-#header .nav ul li a{
-	padding:10px;
-	display:block;
-}
-#header .nav ul li a:after {
-  content: "•";
-  color: transparent;
-  display: block;    
-  text-shadow: transparent 0px 0px;
-  font-size: 1.2em;
-  pointer-events: none;
-  transition: text-shadow 0.3s, color 0.3s;
-}
 
-#header .nav ul li a:hover:after{
-  color:#051f31;
-  text-shadow: 10px 0 #051f31, -10px 0 #051f31;
-}
 #header ul.sub-menu li a:after,
 .sub-menu a.parent:after{
   content: none !important;
+}
+.primary-navigation .sub-menu > li > a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
 }
 
 /*-----------------Search pop up----------------*/
@@ -495,8 +491,8 @@ input.search-field {
  background: transparent;
  width: 95%;
 }
-.search-box i {
-  border-bottom: 2px solid;
+.search-box i {/*
+  border-bottom: 2px solid;*/
   padding: 5px 0px;
   color: #2379d2;
   margin: 7px;
@@ -661,13 +657,13 @@ input.search-field {
   text-transform: uppercase;
   padding-bottom: 5px;
   margin-top: 20px;
-  color: #000;
+  color: #fff;
 }
 .box .description{
   font-size: 16px;
   margin: 2px 0;
   padding: 0 10px;
-  color: #000;
+  color: #fff;
   line-height: 25px;
 }
 #coaching .read-more a {
@@ -749,17 +745,19 @@ input.search-field {
 }
 span.meta-nav {
   background: #2379d2;
-  color: #000;
+  color: #fff;
   padding: 8px;
 }
 /*------ content page ----*/
-.page-box .metabox{
+.page-box .metabox {
   color:#051f31;
   padding: 15px 0 5px;
   clear:both;
   border-top:1px solid #f1f1f1;
 }
-
+.page-box .metabox a{
+  color:#051f31;
+}
 .page-box .metabox span {
   margin-right: 24px;
   font-size: 14px;
@@ -938,11 +936,11 @@ table#wp-calendar td a {
 }
 .copyright p {
   font-size: 16px !important;
-  color: #000;
+  color: #fff;
   margin-bottom: 0;
 }
 .copyright p a{
-  color: #000;
+  color: #fff;
 }
 .copyright {
   background: #2379d2;
@@ -960,7 +958,10 @@ table#wp-calendar td a {
 #footer .tagcloud a:hover{
   background-color: #2379d2; 
 }
-
+#footer a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
 /* --------- POST --------- */
 /* Comments BOX */
 #comments {
@@ -1040,6 +1041,9 @@ table#wp-calendar td a {
   width:90%;
   float:left;
 }
+span.entry-comments {
+  margin-left: 20px;
+}
 /*------------- Woocommerce --------------*/
 .woocommerce .products li {
   width: 29% !important;
@@ -1058,7 +1062,7 @@ a.showcoupon,
 }
 .woocommerce span.onsale {
   background: #2379d2;
-  color: #000;
+  color: #fff;
   padding: 0;
   border-radius: 0;
   margin: 0 !important;
@@ -1078,7 +1082,7 @@ h2.woocommerce-loop-product__title{
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
 	background: #2379d2;
-	color: #000;
+	color: #fff;
 	border-radius: 0;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
@@ -1104,8 +1108,9 @@ nav.woocommerce-MyAccount-navigation ul li {
   margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-  color: #000;
+  color: #fff;
   font-weight: bold;
+  text-decoration: none;
 }
 .posted_in {
   display: block;
@@ -1134,6 +1139,128 @@ span.woocommerce-input-wrapper,
 }
 .woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb{
   color: #000 !important;
+}
+.woocommerce ul.products.columns-4 {
+  display: table;
+}
+body.page-template-default.page.page-id-87.logged-in.admin-bar.woocommerce-js.customize-support .woocommerce ul.products li.product .price{
+  display: inline;
+  top: -29px;
+  position: relative;
+  left: -39px;
+}
+body.page-template-default.page.page-id-87.logged-in.admin-bar.woocommerce-js.customize-support .woocommerce ul.products li.product .button {
+  position: relative;
+  top: -20px;
+}
+.woocommerce tr.woocommerce-cart-form__cart-item.cart_item a {
+  text-decoration: none;
+}
+/* --------- MENUS CSS --------- */
+#menu-sidebar {
+  text-align: center;
+  display: inline;
+}
+ul.list_nav {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+.primary-navigation ul{
+  list-style: none !important;
+  margin: 0;
+  padding-left: 0;  
+  text-align: left;
+}
+.primary-navigation li{
+  padding: 16px 12px;
+  display: inline-block;
+}
+.primary-navigation a{
+  display: block;
+  color: #252525;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 3px;
+}
+.primary-navigation ul ul{
+  display: none;
+  position: absolute;
+  background:#2379d2;
+  min-width: 215px;
+  z-index: 9999;
+}
+.primary-navigation ul ul ul {
+  left: 30%;
+  top: 40px;
+}
+.primary-navigation ul ul a{
+  color: #fff;
+  border: none;
+  padding: 10px;
+}
+.primary-navigation ul ul a:hover{
+  background: #2379d2;
+  color: #fff;
+}
+.primary-navigation ul ul li{
+  float: none;
+  display: block;
+  text-align: left;
+  border-left: none;
+  border-right: none !important;
+  padding: 0;
+}
+.primary-navigation ul ul li:last-child{
+  border-bottom: 0;
+}
+.primary-navigation ul li:hover > ul{
+  display: block;
+}
+/*.primary-navigation .current_page_item > a,
+.primary-navigation .current-menu-item > a,
+.primary-navigation .current_page_ancestor > a{
+  color: #fff !important;
+  background: #2379d2;
+}*/
+/*.primary-navigation a:hover{
+  color: #2379d2 !important;
+}*/
+.primary-navigation .menu > ul > li.highlight{
+  background-color: #006ccc;
+}
+.primary-navigation .menu > ul > li.highlight:hover{
+  background: transparent;
+}
+.primary-navigation ul ul li:hover > a{
+  color: #fff;
+}
+
+/*--------------- SUPERFISH MENU ---------------------------*/
+
+.sf-arrows .sf-with-ul:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  margin-top: -2px;
+  height: 0;
+  width: 0;
+  border-top-color: #e1e1e1;
+}
+.sf-arrows ul .sf-with-ul:after{
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  border-left-color: #888;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after{
+  border-left-color: #333;
+}
+.toggle-menu, a.closebtn{
+  display: none;
 }
 /*------------- Sidebar -------------*/
 div#sidebar{
@@ -1309,7 +1436,12 @@ h1.page-title {
 .entry-content a {
   text-decoration: underline;
 }
-
+.new-text .entry-content p {
+  padding: 15px 0px;
+}
+.navigation .nav-links {
+  padding: 5px;
+}
 /* Pagination */
 .nav-previous {
   float: left;
@@ -1439,57 +1571,6 @@ iframe {
 		padding:10px 10px;
 		font-size:16px;
 	}
-	.nav{
-	 	display:none;
-	}
-  .top-menu .nav{
-    top: -39px !important;
-    display: none;
-  }
-	#header .nav{
-		float:none;
-		margin:0;
-		position:absolute;
-		z-index:999;
-		overflow-x:hidden;
-		width: 100%;
-		left: 0;
-		top:-10.5em;
-	}
-	#header .nav ul{
-		width:100%;
-		float:none !important;
-		margin-top:0;
-		background-color:#051f31;
-	}
-	#header .nav ul li{
-		border-top:1px #292929 solid;
-		display:block;
-		float:none;
-		text-align:left;
-	}
-	#header .nav ul li a{
-		padding: 10px;
-		display:block;
-		color:#ffffff !important;
-    text-align: left;
-	}
-	.nav ul li a:hover{
-		color:#ff8a00;
-	}
-	.nav ul li ul,
-	 .nav ul li ul ul{
-		display:block !important;
-	}
-	.nav ul li ul li a:before{
-		content:"\00BB \00a0";
-	}
-	.nav ul li ul li a{
-		padding-left:20px !important;
-	}
-	.nav ul li ul li ul li a{
-		padding-left:30px !important;
-	}  
   #footer input[type="submit"] {
     padding: 6px 0;
     float: right;
@@ -1510,68 +1591,17 @@ iframe {
   .top-header{
     padding-bottom: 15px;
   }
-  #header .nav ul li a:after{
-    display: none;
-  }
 }
 @media screen and (min-width:720px){
-	#header .nav ul li ul{
-	 	display:none;
-		z-index:2;
-		font-weight:normal;
-		margin-top:12px;
-	}
-
-	#header .nav ul li:hover > ul{
-	 	display:block;
-		background:#051f31;
-		width:200px;
-		position:absolute;
-		top:35px;
-		left:0;
-		text-align:left;
-		z-index:99;
-	}
-  #header .nav ul.sub-menu li a{
-    text-align: left !important;
-  }
-	#header .nav ul li:hover > ul li{
-		display:block;
-	}
-	#header .nav ul li:hover > ul li a{
-		color:#ffffff !important;
-		border-bottom: solid 1px #fff;
-	}
-	#header .nav ul li:hover ul li ul{
-	 	display:none;
-	}
-	#header .nav ul li:hover ul li:hover > ul{
-	 	display:block;
-		position:absolute;
-		left:200px;
-		top:0px;
-	}
-	#header .nav ul.sub-menu{
-		margin-top:10px;
-	}
-	#header .nav ul li a{
-	  color: #fff;
-    padding: 10px 12px;
-    display: block;
-    letter-spacing: 1px;
-    font-weight: 500;
-    font-size: 12px;
-    text-transform: uppercase;
-	}
-  /*#header .contact-content .nav ul li a {
-  color: #fff;
-  }*/
   body.page-template.page-template-page-template.page-template-custom-front-page #header .contact-content .nav ul li a {
     color: #000;
   }
-  /*.contact-content a{
-    color: #fff !important;
-  }*/
+  body.page-template.page-template-page-template.page-template-custom-front-page #header .contact-content .nav ul.sub-menu li a {
+    color: #fff;
+  }
+  .nav ul li a {
+    color: #fff;
+  }
 	#footer input[type="submit"]{
 		width: 100%;
 		float: none;
@@ -1684,5 +1714,137 @@ iframe {
 @media screen and (min-width: 1025px){
   #slider .carousel-caption{
     left:10%;
+  }
+}
+
+/*------------------RESPONSIVE MEIDA-------------------*/
+
+@media screen and (max-width: 1000px){
+  .menubar .nav ul li a:focus,
+  a.closebtn.responsive-menu:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .toggle-menu {
+    display: none;
+    position: relative;
+    /*float: left;*/
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    z-index: 999999;
+    text-align: right;
+    right: 0;
+  }
+  body.page-template.page-template-page-template.page-template-custom-front-page .toggle-menu{
+    position: relative;
+    top: -13px;
+  }
+  .toggle-menu i {
+    font-size: 32px;
+    color: #000;
+  }
+  .toggle-menu button {
+    background: transparent;
+    border: none;
+  }
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    right: 0;
+    background-color: #252525;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: block;
+    color: #ffffff;
+    border:none;
+    background: transparent;
+  }
+  .sidebar #primary-site-navigation {
+    width: 100%;
+  }
+  .toggle-menu span{
+    font-size:30px;
+    cursor:pointer; 
+    text-align: right;
+  }
+  .toggle-menu{
+    display: block;
+  }
+  .toggle i.fa.fa-bars,.toggle i.fa.fa-times {
+    float: right;
+    color: black;
+  }
+  .primary-navigation ul ul li{
+    display: block;
+  }
+  .menubar .nav ul li{
+    border-top:1px #303030 solid; 
+    display:block;
+  }
+  .nav ul li a{
+    padding: 10px;
+    display:block;
+    color:#ffffff;
+    border:none;
+  }
+  .nav ul li ul,
+  .nav ul li ul ul{ 
+    display:block !important;
+  }
+  .nav ul li ul li a:before{
+    content:"\00BB \00a0";
+  }
+  .nav ul li ul li a{
+    padding-left:20px !important;
+  }
+  .nav ul li ul li ul li a{
+    padding-left:30px !important;
+  }  
+  .nav ul li ul, 
+  .nav ul li ul ul {
+    display: block !important;
+    opacity: 1 !important;
+  }
+  .primary-navigation ul ul{
+    position: static;
+    width: 100%;
+  }
+  .primary-navigation li{
+    padding: 0;
+  }
+  .main-header-box{
+    padding-bottom: 15px;
+  }
+  #menu-sidebar {
+    text-align: left;
+    display: inline;
+  }
+  .primary-navigation ul{
+    display: grid;
+  }
+  body.page-template.page-template-page-template.page-template-custom-front-page #header .contact-content .nav ul li a{
+    color: #fff;
+  }
+  .primary-navigation .current_page_item > a,
+  .primary-navigation .current-menu-item > a,
+  .primary-navigation .current_page_ancestor > a{
+    background:unset;
+  }
+  .primary-navigation ul ul{
+    background: unset;
   }
 }
