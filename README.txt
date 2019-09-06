@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.23
+* Style tweaks/fixes for navigation
+* Fix SEO select page title on post Pages
+* Updated language .pot file
+
 #### 1.1.22
 * Added CSS fix for Catalogue Mode plugin
 * Style tweaks/fixes

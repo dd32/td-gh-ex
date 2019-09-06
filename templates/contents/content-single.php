@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+		<?php get_template_part( '/templates/titlebar' ); ?>
 		
 		<?php if ( !get_theme_mod( 'avant-single-remove-meta' ) ) : ?>
 			<div class="entry-meta">
