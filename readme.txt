@@ -20,7 +20,7 @@ Yes, go here: http://docs.kadencethemes.com/virtue/
 
 = Is there demo content available? =
 
-Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
+Yes, go here: https://www.kadencewp.com/kadence-themes-demo-content/
 
 = Is there a free support form for this theme? =
 
@@ -29,6 +29,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 == Changelog ==
 
 = Theme Name: Virtue =
+
+= Version 3.3.8 | 7th September 2019 = 
+* Update: Gallery Lightbox issue.
 
 = Version 3.3.7 | 15th July 2019 = 
 * Fix: Google Map Issue.

@@ -71,6 +71,38 @@ jQuery(document).ready(function ($) {
 				},
 			});
 		} );
+		$( '.kb-gallery-magnific-init' ).each( function() {
+			var showCaption = $( this ).attr( 'data-lightbox-caption' );
+			var filter = $( this ).attr( 'data-image-filter' );
+			$( this ).find( 'li.kadence-blocks-gallery-item a.kb-gallery-item-link' ).magnificPopup( {
+				type: 'image',
+				mainClass: 'mfp-kt-blocks kb-gal-light-filter-' + filter,
+				gallery: {
+					enabled: true,
+				},
+				image: {
+					titleSrc: function( item ) {
+						if ( 'true' == showCaption && item.el.find( 'figcaption' ).length ) {
+							return item.el.find( 'figcaption' ).html();
+						}
+					},
+				},
+			} );
+			$( this ).find( '.kt-blocks-carousel .kb-slide-item:not(.slick-cloned) a.kb-gallery-item-link' ).magnificPopup( {
+				type: 'image',
+				mainClass: 'mfp-kt-blocks kb-gal-light-filter-' + filter,
+				gallery: {
+					enabled: true,
+				},
+				image: {
+					titleSrc: function( item ) {
+						if ( 'true' == showCaption && item.el.find( 'figcaption' ).length ) {
+							return item.el.find( 'figcaption' ).html();
+						}
+					},
+				},
+			} );
+		} );
 		// WooCommerce Gallery with Zoom and slider 
 		$('.woocommerce-product-gallery__wrapper.woo_product_slider_enabled.woo_product_zoom_enabled').each(function(){
 			$(this).parents('.woocommerce-product-gallery').prepend( '<a href="#" class="woocommerce-product-gallery__trigger"></a>' );

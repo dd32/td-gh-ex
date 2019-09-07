@@ -58,8 +58,8 @@ if ( ! class_exists( 'Redux' ) ) {
         'disable_tracking'     => true,
         'customizer_only'      => true,
         'save_defaults'        => false,
-        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/virtue-premium-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=virtue_premium" target="_blank" >Virtue Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
-        'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="https://www.kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'virtue'),
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencewp.com/product/virtue-premium-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=virtue_premium" target="_blank" >Virtue Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
+        'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="https://www.kadencewp.com/" target="_blank">Kadence WP</a>.', 'virtue'),
         'hints'                => array(
             'icon'          => 'icon-question',
             'icon_position' => 'right',
@@ -90,22 +90,27 @@ if ( ! class_exists( 'Redux' ) ) {
         ),
     );
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-        $args['share_icons'][] = array(
-            'url' => 'https://www.facebook.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Facebook', 
-            'icon' => 'icon-facebook',
-        );
-        $args['share_icons'][] = array(
-            'url' => 'https://www.twitter.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Twitter', 
-            'icon' => 'icon-twitter',
-        );
-        $args['share_icons'][] = array(
-            'url' => 'https://www.instagram.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Instagram', 
-            'icon' => 'icon-instagram',
-        );
-        $args = apply_filters('kadence_theme_options_args', $args);
+         $args['share_icons'][] = array(
+	        'url' => 'https://www.facebook.com/KadenceWP',
+	        'title' => 'Follow Kadence WP on Facebook', 
+	        'icon' => 'dashicons dashicons-facebook',
+	    );
+	    $args['share_icons'][] = array(
+	        'url' => 'https://www.twitter.com/KadenceWP',
+	        'title' => 'Follow Kadence WP on Twitter', 
+	        'icon' => 'dashicons dashicons-twitter',
+	    );
+		$args['share_icons'][] = array(
+		    'url' => 'https://www.instagram.com/KadenceWP',
+		    'title' => 'Follow Kadence WP on Instagram', 
+		    'icon' => 'dashicons dashicons-format-image',
+		);
+		$args['share_icons'][] = array(
+		    'url' => 'http://www.youtube.com/c/KadenceWP',
+		    'title' => 'Follow Kadence WP on YouTube', 
+		    'icon' => 'dashicons dashicons-video-alt3',
+		);
+        $args = apply_filters( 'kadence_theme_options_args', $args );
    Redux::setArgs( $opt_name, $args );
 
    // -> START Basic Fields                
@@ -114,8 +119,8 @@ if ( ! class_exists( 'Redux' ) ) {
     'title' => __('Main Settings', 'virtue'),
     'id' => 'main_settings',
     'header' => '',
-    'desc' => "<div class='redux-info-field'><h3>".__('Welcome to Virtue Theme Options', 'virtue')."</h3>
-        <p>".__('This theme was developed by', 'virtue')." <a href=\"https://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
+    'desc' => "<div class='redux-info-field'><h3>".__( 'Welcome to Virtue Theme Options', 'virtue' )."</h3>
+        <p>".__('This theme was developed by', 'virtue')." <a href=\"https://kadencewp.com/\" target=\"_blank\">Kadence WP</a></p>
         <p>".__('For theme documentation visit', 'virtue').": <a href=\"http://docs.kadencethemes.com/virtue-free/\" target=\"_blank\">docs.kadencethemes.com/virtue-free/</a>
         <br />
         ".__('For support please visit', 'virtue').": <a href=\"http://wordpress.org/support/theme/virtue\" target=\"_blank\">wordpress.org/support/theme/virtue</a></p></div>",
