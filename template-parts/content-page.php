@@ -14,7 +14,7 @@
 		
 			<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
-				<span class="comments-icon">
+				<span class="icon comments-icon">
 					<?php comments_popup_link(__( 'No Comments', 'fkidd' ), __( '1 Comment', 'fkidd' ), __( '% Comments', 'fkidd' ), '', __( 'Comments are closed.', 'fkidd' )); ?>
 				</span>
 

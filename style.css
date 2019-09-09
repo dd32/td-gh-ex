@@ -4,7 +4,7 @@ Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Resp
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 2.0.5
+Version: 2.0.6
 Text Domain: fkidd
 Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family: 'Lato', Arial, Helvetica, sans-serif;
-	font-size:14px;
+	font-size:16px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -34,7 +34,13 @@ body:before {
 	content: none !important;
 }
 
-a {
+.icon:before {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+a,
+.icon:before {
 	text-decoration:none;
 	outline:none;
 	color:#398790;
@@ -145,7 +151,7 @@ h5 {
 }
 
 h6 {
-	font-size:14px;
+	font-size:16px;
 	padding:2px 0 1px 0;
 }
 
@@ -601,7 +607,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:14px;
+	font-size:16px;
 }
 
 .footer-social-widget li {
@@ -911,7 +917,7 @@ textarea {
 }
 
 input[type="submit"] {
-	font-size:14px;
+	font-size:16px;
 }
 
 input[type="submit"],
@@ -992,7 +998,7 @@ input[type="submit"]:hover,
   clip-path: none;
   color: #21759b;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;
@@ -1222,7 +1228,7 @@ blockquote, figure {
 
 .commentlist li div .vcard {
 	font-weight:bold;
-	font-size:14px;
+	font-size:16px;
 	line-height:16px;
 }
 
@@ -1382,7 +1388,7 @@ blockquote, figure {
 .quote-content:after,
 .sticky h1:before {
 	font-family:'FontAwesome';
-	margin:0;
+	margin:0 5px 0 0;
 }
 
 .aside-icon,
@@ -1766,7 +1772,7 @@ img.wp-post-image {
 .gallery-caption {
 	color: #686868;
 	display: block;
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.8125rem;
 	font-style: italic;
 	line-height: 1.6153846154;
@@ -3233,9 +3239,7 @@ mark {
 		margin-top:5px;
 	}
 	
-	#header-logo img{
-		margin-top:10px;
-	}
+	
 
 	#header-content-wrapper {
 		position:relative;
@@ -3262,7 +3266,7 @@ mark {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:14px;
+		font-size:16px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -3772,7 +3776,7 @@ mark {
 @media screen and (max-width: 360px) {
 
 	body {
-		font-size:13px;
+		font-size: 16px;
 	}
 	
 	.homepage-icon-link:before {
