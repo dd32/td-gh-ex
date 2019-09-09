@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.23' );
+define( 'AVANT_THEME_VERSION' , '1.1.24' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -377,6 +377,11 @@ function avant_register_required_plugins() {
 		array(
 			'name'      => __( 'Linkt', 'avant' ),
 			'slug'      => 'linkt',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'HubSpot', 'avant' ),
+			'slug'      => 'leadin',
 			'required'  => false,
 		)
 	);

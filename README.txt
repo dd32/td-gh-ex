@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.24
+* Style tweaks/fixes
+* Added HubSpot as a recommended CRM plugin
+* Updated language .pot file
+
 #### 1.1.23
 * Style tweaks/fixes for navigation
 * Fix SEO select page title on post Pages
