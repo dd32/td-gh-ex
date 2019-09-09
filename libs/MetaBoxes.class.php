@@ -29,6 +29,7 @@ class AttireMetaBoxes {
 				'priority'  => 'core',
 				'post_type' => 'page'
 			),
+		 
 		);
 		$this->meta_boxes = apply_filters( "attire_metabox", $this->meta_boxes );
 
@@ -69,8 +70,73 @@ class AttireMetaBoxes {
 		echo '<option  value="container-fluid"  ' . esc_attr( $container_fluid ) . '>' . __( 'Full-Width', 'attire' ) . '</option>';
 		echo '<option  value="container"  ' . esc_attr( $container ) . '> ' . __( 'Container', 'attire' ) . '</option>';
 		echo '</select>';
-
+		$this->SidebarLayout($post);
 	}
+
+	public function SidebarLayout($post)
+        {
+
+			$meta = get_post_meta( $post->ID, 'attire_post_meta', true );
+			$sl = isset($meta['sidebar_layout']) ? $meta['sidebar_layout'] : 'default';
+            $imageDir = '/images/layouts/';
+            $imguri = get_template_directory_uri() . $imageDir;
+            ?>
+			<hr/>
+            <div class="customize-control-title"><strong><?php  _e( 'Sidebar Layout', 'attire' ); ?>:</strong></div>
+            <div class="attire-sb-layout">
+				<div style="padding: 10px 0"><label>
+                    <input <?php checked($sl, 'default') ?> type="radio" name="attire_post_meta[sidebar_layout]"
+                           value="default"/> Theme Default</label>
+				</div>
+                <label>
+                    <input  <?php checked($sl, 'no-sidebar') ?> class="layoutradio" type="radio" name="attire_post_meta[sidebar_layout]"
+                           value="no-sidebar"/>
+                    <img src="<?php echo esc_url($imguri); ?>no-sidebar.png"
+                         alt="<?php esc_attr_e('Full Width', 'attire'); ?>"
+                         title="<?php esc_attr_e('Full Width', 'attire'); ?>"/>
+                </label>
+                <label>
+                    <input <?php checked($sl, 'left-sidebar-1') ?> class="layoutradio" type="radio" name="attire_post_meta[sidebar_layout]"
+                           value="left-sidebar-1"/>
+                    <img src="<?php echo esc_url($imguri); ?>left-sidebar.png"
+                         alt="<?php esc_attr_e('Left Sidebar', 'attire'); ?>"
+                         title="<?php esc_attr_e('Left Sidebar', 'attire'); ?>"/>
+                </label>
+                <label>
+                    <input <?php checked($sl, 'right-sidebar-1') ?> class="layoutradio" type="radio" name="attire_post_meta[sidebar_layout]"
+                           value="right-sidebar-1"/>
+                    <img src="<?php echo esc_url($imguri); ?>right-sidebar.png"
+                         alt="<?php esc_attr_e('Right Sidebar', 'attire'); ?>"
+                         title="<?php esc_attr_e('Right Sidebar', 'attire'); ?>"/>
+                </label>
+                <label>
+                    <input <?php checked($sl, 'sidebar-2') ?> class="layoutradio" type="radio" name="attire_post_meta[sidebar_layout]"
+                           value="sidebar-2"/>
+                    <img src="<?php echo esc_url($imguri); ?>sidebar-2.png"
+                         alt="<?php esc_attr_e('Sidebar | Content | Sidebar', 'attire'); ?>"
+                         title="<?php esc_attr_e('Sidebar | Content | Sidebar', 'attire'); ?>"/>
+                </label>
+                <label>
+                    <input <?php checked($sl, 'left-sidebar-2') ?> class="layoutradio" type="radio"  name="attire_post_meta[sidebar_layout]"
+                           value="left-sidebar-2"/>
+                    <img src="<?php echo esc_url($imguri); ?>left-sidebar-2.png"
+                         alt="<?php esc_attr_e('Two Left Sidebar', 'attire'); ?>"
+                         title="<?php esc_attr_e('Two Left Sidebar', 'attire'); ?>"/>
+                </label>
+                <label>
+                    <input <?php checked($sl, 'right-sidebar-2') ?> class="layoutradio" type="radio"  name="attire_post_meta[sidebar_layout]"
+                           value="right-sidebar-2"/>
+                    <img src="<?php echo esc_url($imguri); ?>right-sidebar-2.png"
+                         alt="<?php esc_attr_e('Two Right Sidebar', 'attire'); ?>"
+                         title="<?php esc_attr_e('Two Right Sidebar', 'attire'); ?>"/>
+                </label>
+            </div>
+			<style>.layoutradio, .layoutradio:before, .layoutradio:after{ position:absolute; display: none !important; }
+			.layoutradio + img{ border: 2px solid #ffffff; }
+			.layoutradio:checked + img{ border: 2px solid #3399ff; }
+			</style>
+            <?php
+        }
 
 
 	/**
@@ -104,8 +170,6 @@ class AttireMetaBoxes {
 			update_post_meta( $postid, 'attire_post_meta', $pagemeta );
 		}
 	}
-
-
 }
 
 new AttireMetaBoxes();

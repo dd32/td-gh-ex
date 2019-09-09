@@ -216,7 +216,7 @@ class AttireThemeEngine {
             $fonts[$font->family.":".implode(",", $font->variants)] = (array)$font;
         }
 
-		$css = '';
+        $css = '';
 
 		/**
 		 *
@@ -267,7 +267,7 @@ class AttireThemeEngine {
 		$text_color      = $body_font_color ? "color:{$body_font_color};" : "";
 
 		if ( $body_font != '' ) {
-			$font_family = isset($fonts[ $body_font ]) && $fonts[ $body_font ]['family'] != '' ? "font-family:{$fonts[$body_font]['family']};" : "";
+			$font_family = isset($fonts[ $body_font ]) && $fonts[ $body_font ]['family'] != '' ? "font-family:\"{$fonts[$body_font]['family']}\", {$fonts[$body_font]['category']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -288,27 +288,28 @@ class AttireThemeEngine {
 		$header_color        = esc_attr( $theme_mod['header_color'] );
 		$heading_font        = esc_attr( $theme_mod['heading_font'] );
 		$h1_font_size        = 'font-size:' . $heading_font_size . 'px;';
-		$h2_font_size        = 'font-size:' . ceil( $heading_font_size * .85 ) . 'px;';
-		$h3_font_size        = 'font-size:' . ceil( $heading_font_size * .80 ) . 'px;';
-		$h4_font_size        = 'font-size:' . ceil( $heading_font_size * .56 ) . 'px;';
-		$h5_font_size        = 'font-size:' . ceil( $heading_font_size * .415 ) . 'px;';
-		$h6_font_size        = 'font-size:' . ceil( $heading_font_size * .375 ) . 'px;';
+		$h2_font_size        = 'font-size:' . ceil( $heading_font_size * .7 ) . 'px;';
+		$h3_font_size        = 'font-size:' . ceil( $heading_font_size * .6 ) . 'px;';
+		$h4_font_size        = 'font-size:' . ceil( $heading_font_size * .4 ) . 'px;';
+		$h5_font_size        = 'font-size:' . ceil( $heading_font_size * .4 ) . 'px;';
+		$h6_font_size        = 'font-size:' . ceil( $heading_font_size * .3 ) . 'px;';
 
 		$text_color = $header_color ? "color:{$header_color};" : "";
 
 		if ( $heading_font != '' ) {
-			$font_family = isset($fonts[ $heading_font ]) && $fonts[ $heading_font ]['family'] != '' ? "font-family:{$fonts[$heading_font]['family']};" : "";
+			$font_family = isset($fonts[ $heading_font ]) && $fonts[ $heading_font ]['family'] != '' ? "font-family:\"{$fonts[$heading_font]['family']}\", {$fonts[$heading_font]['category']};" : "";
 		} else {
 			$font_family = '';
 		}
 
-		$css .= "h1, h1 *{{$font_family}{$h1_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= "h2, h2 *{{$font_family}{$h2_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= "h3, h3 *, .archive-item .cart-title.post-title a{{$font_family}{$h3_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= "h4, h4 *{{$font_family}{$h4_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= "h5, h5 *{{$font_family}{$h5_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= "h6, h6 *{{$font_family}{$h6_font_size}{$heading_font_weight}{$text_color}}";
-		$css .= ".footer-logo, .navbar-brand{{$font_family}{$h1_font_size}}";
+		$css .= "h1, h1 a{{$font_family}{$h1_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h2, h2 a{{$font_family}{$h2_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h3, h3 a, .archive-item .card-title.post-title a{{$font_family}{$h3_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h4, h4 a{{$font_family}{$h4_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h5, h5 a{{$font_family}{$h5_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h6, h6 a{{$font_family}{$h6_font_size}{$heading_font_weight}{$text_color}}";
+		$css .= "h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .archive-item h3.card-title.post-title a, a{ color: {$theme_mod['a_color']};}";
+		$css .= ".footer-logo, .navbar-brand{{$font_family}{$h3_font_size}}";
 
 
 		/**
@@ -343,7 +344,7 @@ class AttireThemeEngine {
 
 		$css .= ".navbar-light .navbar-brand,.navbar-dark .navbar-brand,.logo-header{{$heading_font_weight}{$site_title_text_color}{$site_title_line_height}}";
 		$css .= ".footer-logo{{$heading_font_weight}{$site_footer_title_text_color}{$footer_title_line_height}}";
-		$css .= ".logo-header:hover,.footer-logo:hover{{$site_title_text_color}}";
+		$css .= ".header-contents,.logo-header:hover,.footer-logo:hover{{$site_title_text_color}}";
 		$css .= ".site-description,.copyright-text{{$body_font_weight}{$site_description_text_color}}";
 		$css .= ".info-link > li > span, .small-menu i.fa, .social-icons-div i{{$site_description_text_color}}";
 
@@ -354,9 +355,11 @@ class AttireThemeEngine {
 		 *
 		 */
 
-		$site_header_bg_color = esc_attr( $theme_mod['site_header_bg_color'] );
-		$site_header_bg       = "background-color: $site_header_bg_color;";
-		$css                  .= ".header-div,#attire-mbl-menu{ {$site_header_bg}}";
+		$site_header_bg_color = isset($theme_mod['site_header_bg_color_left']) ? esc_attr( $theme_mod['site_header_bg_color_left'] ) : '#222222';
+		$site_header_bg_color_right = isset($theme_mod['site_header_bg_color_right']) ? esc_attr( $theme_mod['site_header_bg_color_right'] ) : '#555555';
+		$site_header_bg_grad_angle = isset($theme_mod['site_header_bg_grad_angle']) ? esc_attr( $theme_mod['site_header_bg_grad_angle'] ) : 45;
+		$site_header_bg       = "background: $site_header_bg_color linear-gradient( {$site_header_bg_grad_angle}deg, $site_header_bg_color, $site_header_bg_color_right);";
+		$css                  .= ".short-nav,.header-div,#attire-mbl-menu{ {$site_header_bg}}";
 		$css                  .= "a.gn-icon.gn-icon-menu i{ color:$site_header_bg_color;-webkit-filter: invert(100%);filter: invert(100%);}";
 		$css                  .= ".sticky-menu{ {$site_header_bg}}";
 		$site_footer_bg       = 'background-color:' . esc_attr( $theme_mod['site_footer_bg_color'] );
@@ -377,7 +380,7 @@ class AttireThemeEngine {
 		$font_size                  = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
-			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:\"{$fonts[$font]['family']}\", {$fonts[$font]['category']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -397,17 +400,19 @@ class AttireThemeEngine {
 		$font_weight              = $widget_title_font_weight != '' ? "font-weight:{$widget_title_font_weight};" : "";
 		$font                     = esc_attr( $theme_mod['widget_title_font'] );
 		$color                    = "color:" . esc_attr( $theme_mod['widget_title_font_color'] );
+        $background               = "background:" . esc_attr( $theme_mod['main_nav_bg'] );
 
 		if ( $font != '' ) {
-			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:\"{$fonts[$font]['family']}\", {$fonts[$font]['category']};" : "";
 		} else {
 			$font_family = '';
 		}
 
 		$font_size = $font_size != '' ? "font-size:{$font_size}px;" : "";
 		$css       .= ".widget .widget-title {{$font_family}{$font_size}{$font_weight}}";
-		$css       .= ".attire-content .widget .widget-title {{$color}}";
-
+		$css       .= ".attire-content .widget .widget-title {{$color};{$background}}";
+        $css .= ".sticky .card{{$color};{$background}}";
+        $css .= ".sticky .card .card-body *{{$color} !important;}";
 
 		/**
 		 *
@@ -441,7 +446,7 @@ class AttireThemeEngine {
 		$font_size                 = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
-			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:\"{$fonts[$font]['family']}\", {$fonts[$font]['category']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -496,16 +501,16 @@ class AttireThemeEngine {
 		 */
 
 		$color = "color:" . esc_attr( $theme_mod['footer_nav_top_font_color'] ) . ";";
-		$css   .= "footer .footermenu > .menu-item:not(.active) > a, footer .dropdown-toggler{{$color}}";
+		$css   .= "footer a, footer .footermenu > .menu-item:not(.active) > a, footer .dropdown-toggler{{$color}}";
 
-		$footer_nav_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_bg'] );
-		$css           .= "footer .footermenu { {$footer_nav_bg};}";
+		//$footer_nav_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_bg'] );
+		//$css           .= "footer .footermenu { {$footer_nav_bg};}";
 
-		$footer_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_hbg'] );
-		$css                        .= "footer .footermenu > .menu-item:hover,footer .footermenu > .menu-item.active{{$footer_nav_hover_active_bg};}";
+		//$footer_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['footer_nav_hbg'] );
+		//$css                        .= "footer .footermenu > .menu-item:hover,footer .footermenu > .menu-item.active{{$footer_nav_hover_active_bg};}";
 
 		$footer_nav_hover_active_text = 'color:' . esc_attr( $theme_mod['footer_nav_ht_color'] );
-		$css                          .= "footer .footermenu > .menu-item:hover > a,footer .footermenu > .menu-item.active > a, footer .footermenu > .menu-item:hover > .dropdown-toggler,footer .footermenu > .menu-item.active > .dropdown-toggler{{$footer_nav_hover_active_text};}";
+		$css                          .= "footer a:hover, footer .footermenu > .menu-item:hover > a,footer .footermenu > .menu-item.active > a, footer .footermenu > .menu-item:hover > .dropdown-toggler,footer .footermenu > .menu-item.active > .dropdown-toggler{{$footer_nav_hover_active_text};}";
 
 
 		/**

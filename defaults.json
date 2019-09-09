@@ -47,7 +47,9 @@
     "menu_dropdown_font": "Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic",
     "menu_dropdown_font_size": "16",
     "menu_dropdown_font_weight": "400",
-    "site_header_bg_color": "#151515",
+    "site_header_bg_color_left": "#151515",
+    "site_header_bg_color_right": "#151515",
+    "site_header_bg_grad_angle": "45",
     "site_title_text_color": "#ffffff",
     "site_description_text_color": "#ffffff",
     "site_footer_bg_color": "#151515",
@@ -86,7 +88,7 @@
     "attire_search_form_visibility": "show",
     "attire_back_to_top_visibility": "show",
     "attire_nav_behavior": "sticky",
-    "site_logo_height": "80",
-    "site_logo_footer_height": "60"
+    "site_logo_height": "32",
+    "site_logo_footer_height": "32"
   }
 }

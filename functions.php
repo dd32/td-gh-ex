@@ -91,6 +91,7 @@ class AttireBase {
 	function Filters() {
 		add_filter( 'attire_sidebar_styles', array( $this, 'SidebarStyles' ) );
 		add_filter( 'excerpt_more', array( $this, 'attire_excerpt_more' ) );
+		add_filter( 'excerpt_length', array( $this, 'attire_excerpt_length' ), 999999 );
 	}
 
 	function _remove_script_version( $src ) {
@@ -115,6 +116,10 @@ class AttireBase {
 		return $styles;
 	}
 
+    function attire_excerpt_length( $length ) {
+        return 30;
+    }
+
 	function attire_excerpt_more( $more ) {
 
 		if ( is_admin() ) {
@@ -122,9 +127,9 @@ class AttireBase {
 		}
 
 		global $post;
-		$more = AttireThemeEngine::NextGetOption( 'attire_read_more_text', __( 'Read more', 'attire' ) );
+		$more = AttireThemeEngine::NextGetOption( 'attire_read_more_text', __( 'read more...', 'attire' ) );
 
-		return '... <a class="read-more-link" href="' . esc_url( get_permalink( $post->ID ) ) . '">' . wp_kses_post( $more ) . '</a>';
+		return '. <a class="read-more-link" href="' . esc_url( get_permalink( $post->ID ) ) . '">' . wp_kses_post( $more ) . '</a>';
 	}
 }
 

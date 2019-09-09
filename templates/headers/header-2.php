@@ -18,6 +18,11 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                     <div class="row justify-content-between">
                         <div class="col-lg">
                             <ul class="list-inline info-link">
+                                <?php $description = get_bloginfo( 'description', 'display' );
+                                if ( $description || is_customize_preview() ) : ?>
+                                    <?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?>
+                                <?php
+                                endif; ?>
 								<?php if ( isset( $theme_mod['contact_email'] ) && $theme_mod['contact_email'] !== '' ) { ?>
                                     <li class="list-inline-item" title="<?php esc_attr_e( 'Email', 'attire' ); ?>"><i
                                                 class="fa fa-envelope"></i><span
@@ -80,11 +85,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                     <div class="logo-div">
                         <a class="site-logo navbar-brand default-logo"
                            href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo AttireThemeEngine::SiteLogo(); ?></a>
-						<?php $description = get_bloginfo( 'description', 'display' );
-						if ( $description || is_customize_preview() ) : ?>
-                            <h2 class="site-description"><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></h2>
-						<?php
-						endif; ?>
+
                     </div>
                     <button class="col-lg-1 navbar-toggler float-right" type="button" data-toggle="collapse"
                             data-target="#header2_menu"

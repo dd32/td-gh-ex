@@ -243,13 +243,32 @@ $attire_options = array(
 			'after-title'   => __( 'After Post Title', 'attire' )
 		)
 	),
-	'site_header_bg_color'               => array(
-		'label'     => __( 'Header Background', 'attire' ),
+	'site_header_bg_color_left'               => array(
+		'label'     => __( 'Header Background Left', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'color',
 		'section'   => 'attire_header_color_options',
 		'default'   => '#151515',
 	),
+    'site_header_bg_color_right'               => array(
+        'label'     => __( 'Header Background Right', 'attire' ),
+        'transport' => 'postMessage',
+        'type'      => 'color',
+        'section'   => 'attire_header_color_options',
+        'default'   => '#151515',
+    ),
+    'site_header_bg_grad_angle'               => array(
+        'label'     => __( 'Header BG Gradient Angle', 'attire' ),
+        'transport' => 'postMessage',
+        'type'      => 'range',
+        'section'   => 'attire_header_color_options',
+        'default'     => 45,
+        'input_attrs' => array(
+            'min'  => -360,
+            'max'  => 360,
+            'step' => 1,
+        )
+    ),
 	'site_title_text_color'              => array(
 		'label'     => __( 'Site Title', 'attire' ),
 		'transport' => 'postMessage',

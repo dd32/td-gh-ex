@@ -3,16 +3,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="archive-div post row">
+<div class="archive-div post">
+    <div class="row">
 	<?php
 	while ( have_posts() ): the_post();
 		?>
-        <div class="archive-item col-md-4">
-			<?php get_template_part( "content", get_post_format() ); ?>
+        <div class="col-md-4 archive-item">
+			<?php get_template_part( "content", "wpdmpro" ); ?>
             <div class="clear"></div>
         </div>
 		<?php
 	endwhile; ?>
+    </div>
 </div>
 <?php
 global $wp_query;

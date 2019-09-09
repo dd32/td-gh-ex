@@ -81,8 +81,11 @@ class Attire {
 		wp_register_style( 'attire-main', get_stylesheet_uri(), array( 'bootstrap', 'attire-responsive' ) );
 		wp_enqueue_style( 'attire-main' );
 
-		wp_register_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/font-awesome.min.css' );
+		wp_register_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/all.min.css' );
 		wp_enqueue_style( 'font-awesome' );
+
+		wp_register_style( 'wpdm-style', ATTIRE_TEMPLATE_URL . '/download-manager/wpdm-style.css' );
+		wp_enqueue_style( 'wpdm-style' );
 
 		wp_register_style( 'attire-google-fonts', $cssimport, array(), null );
 		wp_enqueue_style( 'attire-google-fonts' );
@@ -240,6 +243,8 @@ class Attire {
 		add_theme_support( 'custom-header', $args );
 		add_theme_support( 'custom-logo' );
 
+        add_image_size( 'attire-card-image', 600, 400, array( 'center', 'top' ) );
+
 		if ( ! get_option( 'attire_options' ) ) {
 			add_option( 'attire_options', $this->GetAttireDefaults() );
 		}
@@ -284,61 +289,63 @@ class Attire {
 			'footer_widget_content_layout_type' => 'container',
 			'footer_content_layout_type'        => 'container',
 
-			'heading_font'        => 'Catamaran:400,900',
+			'heading_font'        => 'Rubik:400,400i,500,700',
 			'heading_font_size'   => '25',
 			'heading_font_weight' => '700',
 
-			'body_font'        => 'Catamaran:400,900',
+			'body_font'        => 'Rubik:400,400i,500,700',
 			'body_font_size'   => '14',
 			'body_font_weight' => '400',
 
-			'widget_title_font'        => 'Catamaran:400,900',
-			'widget_title_font_size'   => '20',
-			'widget_title_font_weight' => '300',
+			'widget_title_font'        => 'Rubik:400,400i,500,700',
+			'widget_title_font_size'   => '14',
+			'widget_title_font_weight' => '500',
 
-			'widget_content_font'        => 'Catamaran:400,900',
-			'widget_content_font_size'   => '14',
-			'widget_content_font_weight' => '300',
+			'widget_content_font'        => 'Rubik:400,400i,500,700',
+			'widget_content_font_size'   => '13',
+			'widget_content_font_weight' => '400',
 
-			'menu_top_font'        => 'Catamaran:400,900',
-			'menu_top_font_size'   => '16',
+			'menu_top_font'        => 'Rubik:400,400i,500,700',
+			'menu_top_font_size'   => '13',
 			'menu_top_font_weight' => '400',
 
-			'menu_dropdown_font'        => 'Catamaran:400,900',
-			'menu_dropdown_font_size'   => '16',
+			'menu_dropdown_font'        => 'Rubik:400,400i,500,700',
+			'menu_dropdown_font_size'   => '13',
 			'menu_dropdown_font_weight' => '400',
 
-			'site_header_bg_color'        => '#151515',
-			'site_title_text_color'       => '#ffffff',
-			'site_description_text_color' => '#ffffff',
+			'site_header_bg_color_left'        => '#fafafa',
+			'site_header_bg_color_right'        => '#fafafa',
+			'site_header_bg_grad_angle'        => '45',
+			'site_title_text_color'       => '#444444',
+			'site_description_text_color' => '#666666',
 
-			'site_footer_bg_color'         => '#151515',
+			'site_footer_bg_color'         => '#435ec4',
 			'site_footer_title_text_color' => '#ffffff',
 
 			'menu_top_font_color'            => '#ffffff',
-			'main_nav_bg'                    => '#151515',
+			'main_nav_bg'                    => '#435ec4',
 			'menuhbg_color'                  => '#ffffff',
 			'menuht_color'                   => '#000000',
 			'menu_dropdown_font_color'       => '#000000',
-			'menu_dropdown_hover_bg'         => '#151515',
+			'menu_dropdown_hover_bg'         => '#435ec4',
 			'menu_dropdown_hover_font_color' => '#ffffff',
 
-			'footer_nav_top_font_color'            => '#ffffff',
-			'footer_nav_bg'                        => '#151515',
+			'footer_nav_top_font_color'            => '#a2b4f9',
+			'footer_nav_bg'                        => '#435ec4',
 			'footer_nav_hbg'                       => '#ffffff',
-			'footer_nav_ht_color'                  => '#000000',
-			'footer_nav_dropdown_font_color'       => '#000000',
-			'footer_nav_dropdown_hover_bg'         => '#151515',
+			'footer_nav_ht_color'                  => '#ffffff',
+			'footer_nav_dropdown_font_color'       => '#ffffff',
+			'footer_nav_dropdown_hover_bg'         => '#435ec4',
 			'footer_nav_dropdown_hover_font_color' => '#ffffff',
 
-			'body_bg_color' => '#F5F5F5',
-			'a_color'       => '#269865',
+			'body_bg_color' => '#fafafa',
+			'a_color'       => '#435ec4',
 			'ah_color'      => '#777777',
-			'header_color'  => '#000000',
-			'body_color'    => '#000000',
+			'header_color'  => '#333333',
+			'body_color'    => '#444444',
 
-			'widget_title_font_color'   => '#000000',
-			'widget_content_font_color' => '#000000',
+			'widget_title_font_color'   => '#ffffff',
+			'widget_content_font_color' => '#444444',
 			'widget_bg_color'           => '#ffffff',
 
 			'footer_widget_title_font_color'   => '#000000',
@@ -346,7 +353,7 @@ class Attire {
 			'footer_widget_bg_color'           => '#D4D4D6',
 
 			'attire_archive_page_post_view'      => 'excerpt',
-			'attire_read_more_text'              => 'Read more',
+			'attire_read_more_text'              => 'read more...',
 			'attire_single_post_post_navigation' => 'show',
 			'attire_single_post_meta_position'   => 'after-title',
 
@@ -357,8 +364,8 @@ class Attire {
 			'attire_back_to_top_visibility' => 'show',
 			'attire_nav_behavior'           => 'sticky',
 
-			'site_logo_height'        => '80',
-			'site_logo_footer_height' => '60'
+			'site_logo_height'        => '32',
+			'site_logo_footer_height' => '32'
 		);
 
 		return $this->attire_defaults;

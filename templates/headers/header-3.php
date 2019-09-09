@@ -16,13 +16,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
             <div class="<?php echo esc_attr( $content_layout ); ?> header-contents">
                 <!-- Icon+Text & Image Logo Default Image Logo -->
                 <div class="logo-div">
-                    <a class="navbar-brand default-logo site-logo"
-                       href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo AttireThemeEngine::SiteLogo(); ?></a>
-					<?php $description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-                        <h2 class="site-description"><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></h2>
-					<?php
-					endif; ?>
+                    <a class="navbar-brand default-logo site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo AttireThemeEngine::SiteLogo(); ?></a>
                 </div>
 
                 <button class="col-lg-1 navbar-toggler float-right" type="button" data-toggle="collapse"

@@ -3,11 +3,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="archive-div post row">
+<div class="archive-div post">
 	<?php
 	while ( have_posts() ): the_post();
 		?>
-        <div class="archive-item col-md-4">
+        <div class="archive-item">
 			<?php get_template_part( "content", get_post_format() ); ?>
             <div class="clear"></div>
         </div>

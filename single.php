@@ -62,11 +62,11 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
                         <div class="post-author-info">
 
                             <div class="media">
-                                <img class="mr-3 mb-3 circle"
-                                     src="<?php echo esc_url( get_avatar_url( get_the_author_meta( 'ID' ), array( 'size' => 90 ) ) ); ?>"
+                                <img class="mr-3 mb-3 circle author-image"
+                                     src="<?php echo esc_url( get_avatar_url( get_the_author_meta( 'ID' ), array( 'size' => 128 ) ) ); ?>"
                                      alt="<?php esc_attr_e( 'Author Avatar', 'attire' ) ?>">
                                 <div class="media-body">
-                                    <h4 class="author-name mt-0"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></h4>
+                                    <h3 class="author-name mt-0"><?php echo esc_html( get_the_author_meta( 'display_name' ) ); ?></h3>
                                     <?php echo wp_kses_post( get_the_author_meta( 'description' ) ); ?>
                                 </div>
                             </div>

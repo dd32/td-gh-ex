@@ -84,8 +84,10 @@ class AttireFramework {
 			$left_sidebar_width  = intval( $theme_mod['front_page_ls_width'] );
 			$right_sidebar_width = intval( $theme_mod['front_page_rs_width'] );
 		} elseif ( is_page() ) {
-
-			$sidebar_layout      = esc_attr( $theme_mod['layout_default_page'] );
+			$meta = get_post_meta( get_the_ID(), 'attire_post_meta', true );
+			$sl = isset($meta['sidebar_layout']) ? $meta['sidebar_layout'] : 'default';	
+			$sidebar_layout      = $sl === 'default' ? esc_attr( $theme_mod['layout_default_page'] ) : $sl;
+			$theme_mod['layout_default_page']  = $sidebar_layout;
 			$left_sidebar        = esc_attr( $theme_mod['default_page_ls'] );
 			$right_sidebar       = esc_attr( $theme_mod['default_page_rs'] );
 			$left_sidebar_width  = intval( $theme_mod['default_page_ls_width'] );
@@ -209,7 +211,11 @@ class AttireFramework {
 		} elseif ( is_single() || is_page() ) {
 
 			if ( is_page() ) {
-				$sidebar_layout      = esc_attr( $theme_mod['layout_default_page'] );
+
+				$meta = get_post_meta( get_the_ID(), 'attire_post_meta', true );
+				$sl = isset($meta['sidebar_layout']) ? $meta['sidebar_layout'] : 'default';	
+				$sidebar_layout      = $sl === 'default' ? esc_attr( $theme_mod['layout_default_page'] ) : $sl;
+				$theme_mod['layout_default_page']  = $sidebar_layout;
 				$left_sidebar_width  = intval( $theme_mod['default_page_ls_width'] );
 				$right_sidebar_width = intval( $theme_mod['default_page_rs_width'] );
 			} else {

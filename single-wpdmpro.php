@@ -11,15 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 get_header();
- 
 ?>
     <div class="row">
-		<?php
-		AttireFramework::DynamicSidebars( 'left' );
-		do_action( ATTIRE_THEME_PREFIX . "before_main_content_area" );
-		?>
+		 
 
-        <div class="<?php AttireFramework::ContentAreaWidth(); ?> attire-post-and-comments">
+        <div class="col-md-12 attire-post-and-comments">
             <div id="single-page-<?php the_ID(); ?>" class="single-page">
 
 				<?php while ( have_posts() ): the_post(); ?>
@@ -31,14 +27,7 @@ get_header();
 
 							<?php
 							$ph_active = AttireThemeEngine::NextGetOption( 'ph_active', false );
-
-							/*
-							if ( ! $ph_active ) {
-								?>
-                                <h1 class="page-title"><?php the_title(); ?></h1>
-							<?php } */  ?>
-
-							<?php the_post_thumbnail(); ?>
+                              ?>
 							<?php the_content(); ?>
                             <div class="clear"></div>
                         </div>
@@ -53,11 +42,6 @@ get_header();
 
             </div>
         </div>
-
-		<?php
-		do_action( ATTIRE_THEME_PREFIX . "after_main_content_area" );
-		AttireFramework::DynamicSidebars( 'right' ); ?>
-
     </div>
 <?php
 get_footer();

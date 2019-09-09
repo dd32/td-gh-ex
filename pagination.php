@@ -13,8 +13,8 @@ $pagination = array(
 	'show_all'           => false,
 	'type'               => 'list',
 	'prev_next'          => true,
-	'prev_text'          => '<i class="fa fa-long-arrow-left"></i> ' . __( 'Previous', 'attire' ),
-	'next_text'          => __( 'Next', 'attire' ) . ' <i class="fa fa-long-arrow-right"></i>',
+	'prev_text'          => '<i class="far fa-arrow-alt-circle-left"></i> ' . __( 'Previous', 'attire' ),
+	'next_text'          => __( 'Next', 'attire' ) . ' <i class="far fa-arrow-alt-circle-right"></i>',
 	'screen_reader_text' => '',
 );
 
