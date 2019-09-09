@@ -4,10 +4,10 @@ Theme URI: https://photricity.com/wordpress-themes/arix/
 Author: Josh Meyer
 Author URI: https://photricity.com
 Description: Arix is a simple and beautiful WordPress theme with a customizable background image that is lightened in the header and darkened in the footer. Arix has a mobile-friendly design with a responsive layout, and supports a custom logo, single-level submenus and widgetized sidebar and footer area. If you're looking to add a light, fresh, and modern touch to your website or blog, Arix is for you.
-Version: 1.1.6
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: custom-menu, featured-images, sticky-post, editor-style, two-columns, right-sidebar, custom-background, custom-logo, footer-widgets
+Tags: custom-menu, featured-images, sticky-post, editor-style, two-columns, right-sidebar, custom-background, custom-logo, footer-widgets, threaded-comments, blog
 Text Domain: arix
 */
 
@@ -163,9 +163,39 @@ i {
 	font-style: italic;
 }
 
-blockquote {
+blockquote,
+.wp-block-quote {
 	margin: 0 0 1em 0;
+	padding-left: 1em;
+	border-left: 2px solid #f7941e;
+}
+
+blockquote p:last-of-type {
+	margin-bottom: 0;
+}
+
+.wp-block-pullquote {
+	box-sizing: border-box;
+	border: 2px solid #f7941e;
+	border-right-width: 0;
+	border-left-width: 0;
+	color: #f7941e;
+}
+
+.wp-block-pullquote blockquote {
+	border: none;
 	padding: 0;
+	max-width: 60%;
+	margin: 0 auto;
+}
+
+.wp-block-pullquote p {
+	margin: 0;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	color: #fff;
+	background-color: #f7941e;
 }
 
 abbr[title],
@@ -187,7 +217,8 @@ small,
 }
 
 big,
-.big {
+.big,
+.is-style-large {
 	font-size: 120%;
 }
 
@@ -217,13 +248,6 @@ samp {
 
 pre {
 	overflow: auto;
-}
-
-hr {
-	clear: both;
-	height: 1px;
-	background: #ccc;
-	border: 0;
 }
 
 .center {
@@ -323,7 +347,13 @@ article.post,
 article.page,
 article.attachment {
 	margin-bottom: 2em;
-	overflow: hidden;
+}
+
+article.post:after,
+article.page:after {
+	content: '';
+	display: block;
+	clear: both;
 }
 
 .post-info {
@@ -378,9 +408,7 @@ span.post-comments {
 	text-align: center;
 }
 
-.page-numbers a,
-.page-numbers .current {
-	display: block;
+.page-numbers {
 	padding: 0 0.4em;
 }
 
@@ -574,6 +602,10 @@ a img .aligncenter {
 	text-align: center;
 }
 
+figcaption {
+	box-sizing: border-box;
+}
+
 @media (max-width: 740px) {
 	.alignleft,
 	.alignright,
@@ -699,11 +731,11 @@ table th {
 	color: #fff;
 }
 
-tr:nth-child(odd) {
+table:not(.is-style-stripes) tr:nth-child(odd) {
     background: #fefbfb;
 }
 
-tr:nth-child(even) {
+table:not(.is-style-stripes) tr:nth-child(even) {
     background: #f5f2f2;
 }
 
@@ -720,8 +752,10 @@ tr:nth-child(even) {
 embed,
 iframe,
 object,
-video {
-	max-width: 100%;
+video,
+.wp-block-embed {
+	width: 100%;
+	max-width: 1000px;
 	margin-bottom: 1.5em;
 }
 
@@ -734,9 +768,31 @@ span > object {
 	margin-bottom: 0;
 }
 
+figure {
+	margin-left: 0;
+	margin-right: 0;
+}
+
 [hidden],
 template {
 	display: none;
+}
+
+hr,
+.wp-block-separator {
+	box-sizing: border-box;
+	margin: 2em auto 2em;
+	width: 100%;
+	max-width: 30rem !important;
+	height: 0;
+	overflow: visible;
+	border: 2px solid #f7941e;
+	border-width: 0 0 2px;
+}
+
+.is-style-wide {
+	width: 100%;
+	max-width: 100% !important;
 }
 
 .tag-cloud {
@@ -1001,39 +1057,68 @@ textarea:focus {
 }
 
 .button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.wp-block-button__link,
+.wp-block-file__button,
 .more-link,
 .comment-reply-link,
-.nextpage a,
-input[type="submit"],
-input[type="reset"] {
-	padding: 0.3em 2.5em 0.4em 2em;
-	background: #f7941e url(images/right-arrow.svg) no-repeat 85% center;
-	background-size: 0.6em;
+.comment-navigation a,
+.post-edit-link {
+	position: relative;
+	padding: 0.3em 2.7em 0.4em 2em;
+	background: #f7941e url(images/right-arrow.svg) no-repeat right 1.2em center !important;
+	background-size: 0.6em !important;
+	background-color: #f7941e !important;
 	color: #fff;
 	border: 0;
 	border-radius: 1.3em;
 	-webkit-transition: background-color 0.2s ease-in-out;
 	-o-transition: background-color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out;
-	-webkit-box-shadow: 0.05em 0.1em 0 #777;
-	box-shadow: 0.05em 0.1em 0 #777;
+	box-shadow: 0.05em 0.1em 0 #777 !important;
 }
 
 .button:hover,
-.button:active,
-.button:focus,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.wp-block-button__link:hover,
+.wp-block-file__button:hover,
 .more-link:hover,
 .comment-reply-link:hover,
-.comment-reply-link:active,
-.nextpage a:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
+.comment-navigation a:hover,
+.post-edit-link:hover {
 	background-color: #eb5b04 !important;
 	color: #fff;
+	cursor: pointer;
+}
+
+.wp-block-file__button,
+.comment-reply-link,
+.post-edit-link {
+	padding: 0.3rem 1rem !important;
+	background-image: none !important;
+	font-size: 80%;
+}
+
+.more-link {
+	display: table;
+	margin: 1em 0;
+	clear: both;
+}
+
+.wp-block-file__button {
+	display: table;
+	margin-left: 0 !important;
 }
 
 input[type="submit"]:disabled {
 	background: #ddd !important;
+	cursor: not-allowed;
 }
 
 textarea {

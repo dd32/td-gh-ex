@@ -6,9 +6,9 @@
 		<?php if ( is_active_sidebar( 'footer' ) ) : ?>
 			<?php dynamic_sidebar( 'footer' ); ?>
 
-		<?php else: ?>
+		<?php else : ?>
 
-			<aside class="widget one-third">
+			<aside class="widget one-fourth">
 				<h3><?php _e( 'Categories', 'arix' ) ?></h3>
 				<ul>
 					<?php
@@ -20,14 +20,21 @@
 				</ul>
 			</aside>
 
-			<aside class="widget one-third widget_tag_cloud">
-				<h3><?php _e( 'Tags', 'arix' ) ?></h3>
-				<p class="tag-cloud"><?php wp_tag_cloud( 'number=38' ); ?></p>
+			<aside class="widget one-fourth recent-comments">
+				<h3><?php _e( 'Archives', 'arix' ) ?></h3>
+				<ul>
+					<?php
+					wp_get_archives( array(
+						'type'   => 'yearly',
+						'limit'  => 6,
+					) );
+					?>
+				</ul>
 			</aside>
 
-			<aside class="widget one-third recent-comments">
-				<h3><?php _e( 'Recent Comments', 'arix' ) ?></h3>
-				<?php arix_recent_comments(); ?>
+			<aside class="widget one-half widget_tag_cloud">
+				<h3><?php _e( 'Tags', 'arix' ) ?></h3>
+				<p class="tag-cloud"><?php wp_tag_cloud( 'number=38' ); ?></p>
 			</aside>
 
 		<?php endif; ?>

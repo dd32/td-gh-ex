@@ -8,7 +8,7 @@
 
 	<?php endwhile; ?>
 
-	<?php arix_page_nav(); ?>
+	<?php get_template_part( 'template-parts/pagination' ); ?>
 
 	<?php else : ?>
 		<?php get_template_part( 'template-parts/content-none' ); ?>
