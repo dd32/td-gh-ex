@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: light, gray, white, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.8
-Tested up to: 5.2.2
-Stable tag: 3.2
+Tested up to: 5.2.3
+Stable tag: 3.3.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,10 +52,13 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
 
+= 3.3.1 (Released: September 08, 2019)
+* Bug Fixed: Sub menu issue on Hover
+
 = 3.3 (Released: September 02, 2019)
 * Bug Fixed: Keyboard navigation accessibility issue
 * Bug Fixed: Reset options not working issue
-* Update with respect to https://themes.trac.wordpress.org/ticket/71126#comment:3
+* Updated with respect to https://themes.trac.wordpress.org/ticket/71126#comment:3
 	* Removed demo data
 	* Disabled Featured Slider and Homepage Featured Content by default
 	* Enabled blog posts on homepage by default
