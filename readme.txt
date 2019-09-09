@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 5.2.2
-Stable tag: 2.2
+Tested up to: 5.2.3
+Stable tag: 2.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,9 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.2 / 9 September 2019
+Fixed the behaviour of top menu links with hashes.
 
 * 2.2 / 29 August 2019
 Improved main menu behaviour on sertain mixed one-page setups.
