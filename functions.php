@@ -287,12 +287,12 @@ if ( ! function_exists( 'fmuzz_custom_header_setup' ) ) :
   function fmuzz_custom_header_setup() {
 
   	add_theme_support( 'custom-header', array (
-                         'default-image'          => '',
+                         'default-image'          => '%s/img/header-image.jpg',
                          'flex-height'            => true,
                          'flex-width'             => true,
                          'uploads'                => true,
-                         'width'                  => 900,
-                         'height'                 => 100,
+                         'width'                  => 1200,
+                         'height'                 => 560,
                          'default-text-color'     => '#434343',
                          'wp-head-callback'       => 'fmuzz_header_style',
                       ) );
@@ -396,16 +396,20 @@ if ( ! function_exists( 'fmuzz_header_style' ) ) :
   ?>
       <style id="fmuzz-custom-header-styles" type="text/css">
 
-          <?php if ( has_header_image() ) : ?>
+      	  <?php if ( has_post_thumbnail() ) { ?>
 
-                  #header-main-fixed {background-image: url("<?php echo esc_url( $headerImage ); ?>");}
+      	  			#page-header {background-image: url("<?php echo esc_url( get_the_post_thumbnail_url( get_the_id(), 'full' ) ); ?>");}
 
-          <?php endif; ?>
+      	  <?php } else if ( has_header_image() ) { ?>
+
+                  #page-header {background-image: url("<?php echo esc_url( $headerImage ); ?>");}
+
+          <?php } ?>
 
           <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                       && 'blank' !== $header_text_color ) : ?>
 
-                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
+                  #page-header, #page-header h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
           <?php endif; ?>
       </style>

@@ -29,7 +29,7 @@
 
 			<?php if ('open' == $post->comment_status) : ?>
 
-				<span class="comments-icon">
+				<span class="icon comments-icon">
 					<?php comments_popup_link(__( 'No Comments', 'fmuzz' ), __( '1 Comment', 'fmuzz' ), __( '% Comments', 'fmuzz' ), '', __( 'Comments are closed.', 'fmuzz' )); ?>
 				</span>
 

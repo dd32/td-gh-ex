@@ -47,6 +47,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.5.4 =
+* increase font size
+
 = 1.5.3 =
 * add Mobile Keyboard navigation for Main Menu
 
@@ -113,6 +116,7 @@ fMuzz WordPress Theme bundles the following third-party resources:
 * FontAwesome 4.6.3 © 2012 Dave Gandy https://github.com/FortAwesome/Font-Awesome, SIL OFL 1.1, MIT
 * Twenty Nineteen 1.4 (Code Block CSS), © 2018 - 2019 wordpressdotorg, GNU v2.0
 * Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
+* img/header-image.jpg, © 2017 @PxHere https://pxhere.com/bg/photo/1376341, CC0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * screenshot.png (header image), © 2017 @PxHere https://pxhere.com/bg/photo/1376341, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3

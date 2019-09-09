@@ -82,28 +82,7 @@
 			<div class="clear">
 			</div><!-- .clear -->
 		    <div id="page-header"
-		    	<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) {
-
-						$frontpage_id = get_option( 'page_on_front' );
-
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $frontpage_id ),
-									'single-post-thumbnail' );
-
-					} else if ( is_home() && get_option( 'show_on_front' ) == 'page' ) {
-
-						$blog_id = get_option( 'page_for_posts' );
-
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $blog_id ),
-									'single-post-thumbnail' );
-
-					} else {
-
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id(),
-									'single-post-thumbnail' );
-					}
-				?>
-		    	<?php if ( $image ) : ?>
-		    				style="background-image: url('<?php echo esc_url( $image[0] ); ?>')"
-		    	<?php endif; ?>>
-		            <h1><?php the_title(); ?></h1>
+		    	<?php if ( has_post_thumbnail() ) : ?>
+		    		style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url() ); ?>')"
+          		<?php endif; ?>>
 		    </div>

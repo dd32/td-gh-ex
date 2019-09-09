@@ -4,7 +4,7 @@ Description: fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Them
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.5.3
+Version: 1.5.4
 Text Domain: fmuzz
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:'Arimo',Arial,Helvetica,sans-serif;
-	font-size:14px;
+	font-size:16px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -39,7 +39,13 @@ body:before {
 	content: none !important;
 }
 
-a {
+.icon:before {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+a,
+.icon:before {
 	text-decoration:none;
 	outline:none;
 	color:#353535;
@@ -106,8 +112,7 @@ img {
 }
 
 #home-content-wrapper img,
-#main-content-wrapper img,
-#footer-main img {
+#main-content-wrapper img {
 	max-width:100%;
 	height:auto;
 	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -116,8 +121,7 @@ img {
 }
 
 #home-content-wrapper a:hover img,
-#main-content-wrapper a:hover img,
-#footer-main a:hover img {
+#main-content-wrapper a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
@@ -156,7 +160,7 @@ h5 {
 }
 
 h6 {
-	font-size:14px;
+	font-size:16px;
 	padding:2px 0 1px 0;
 }
 
@@ -298,6 +302,7 @@ ul {
 	width:100%;
 	z-index:5000;
 	color:#626262;
+	border-bottom:1px solid #888888;
 }
 
 #header-main-fixed a h1,
@@ -513,7 +518,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:14px;
+	font-size:16px;
 }
 
 .footer-social-widget li {
@@ -892,7 +897,7 @@ article,
 }
 
 .header-social-widget a:before {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .header-social-widget a {
@@ -942,7 +947,7 @@ textarea {
 .button,
 input[type="submit"],
 button {
-	font-size:14px;
+	font-size:16px;
 }
 
 .button,
@@ -1266,7 +1271,7 @@ blockquote, figure {
 
 .commentlist li div .vcard {
 	font-weight:bold;
-	font-size:14px;
+	font-size:16px;
 	line-height:16px;
 }
 
@@ -1426,7 +1431,7 @@ blockquote, figure {
 .quote-content:after,
 .sticky h1:before {
 	font-family:'FontAwesome';
-	margin:0;
+	margin:0 5px 0 0;
 }
 
 .aside-icon,
@@ -1589,7 +1594,6 @@ img.wp-post-image {
 	position: fixed;
 	bottom: 0;
 	right:2%;
-	right:-99999px;
 	color:#CBC8B5;
 	background-color:#555555 !important;
 	z-index:5001;
@@ -1630,7 +1634,7 @@ img.wp-post-image {
   clip-path: none;
   color: #21759b;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;
@@ -1735,7 +1739,6 @@ img.wp-post-image {
 }
 
 #page-header {
-	background-image:url('images/pageheader.png');
 	background-repeat: repeat;
 	-webkit-box-shadow: inset 0 -1px 1px -1px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: inset 0 -1px 1px -1px rgba(0, 0, 0, 0.25);
@@ -1743,9 +1746,9 @@ img.wp-post-image {
 	padding:20px 2% 20px 2%;
 	height:560px;
 	text-align:center;
-
+	background-image: linear-gradient(to bottom, #FAFAFA, #999999);
 	background-attachment: fixed;
-  	background-position: center;
+  	background-position: center top;
   	background-repeat:no-repeat;
 }
 
@@ -2005,7 +2008,7 @@ blockquote {
 .gallery-caption {
 	color: #686868;
 	display: block;
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.8125rem;
 	font-style: italic;
 	line-height: 1.6153846154;
@@ -3203,7 +3206,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 
 #header-main-fixed .product_list_widget a {
 	box-shadow:none !important;
-	color:#428400 !important;
+	color:#353535 !important;
 	border:none !important;
 }
 
@@ -3218,7 +3221,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 #header-main-fixed .product_list_widget a:hover {
 	box-shadow:none !important;
 	background-color:#ffffff !important;
-	color:#71A600 !important;
+	color:#000000 !important;
 	border:none !important;
 	text-decoration:underline !important;
 }
@@ -3434,9 +3437,7 @@ mark {
 		margin-top:5px;
 	}
 	
-	#header-logo img{
-		margin-top:10px;
-	}
+	
 
 	#header-content-wrapper {
 		position:relative;
@@ -3468,7 +3469,7 @@ mark {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:14px;
+		font-size:16px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -3493,7 +3494,7 @@ mark {
 		position:absolute;
 		z-index:5000;
 		right:-99999px;
-		background-color:#FFFFFF;
+		background-color:#EEEEEE;
 	}
 
 	#navmain ul ul {
@@ -4073,11 +4074,11 @@ mark {
 @media screen and (max-width: 360px) {
 
 	body {
-		font-size:13px;
+		font-size: 16px;
 	}
 
 	.header-social-widget a:before {
-		font-size:13px;
+		font-size: 16px;
 	}
 	
 	#header-top {
