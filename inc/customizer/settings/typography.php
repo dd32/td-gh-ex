@@ -26,7 +26,7 @@ if ( ! class_exists( 'Bam_Typography_Customizer' ) ) :
             return apply_filters( 'bam_typography_elements', array (
                 'body'  => array(
                     'title'     => esc_html__( 'Body', 'bam' ),
-                    'target'    => 'body, button, input, select, optgroup, textarea, .cat-links a:hover, .site-title',
+                    'target'    => 'body, button, input, select, optgroup, textarea',
                     'defaults'  => array(
                         'font-family'   => 'Source Sans Pro',
                         'font-size'     => array(

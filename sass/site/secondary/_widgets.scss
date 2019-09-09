@@ -308,6 +308,11 @@ li.bm-tab.ui-state-active a{
   background: #222222;
 }
 
+.tagcloud {
+	overflow: hidden;
+	clear: both;
+}
+
 .widget_sidebar_posts .widget-title {
 	margin-bottom: 25px;
 }

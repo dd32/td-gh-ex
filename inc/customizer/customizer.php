@@ -84,6 +84,7 @@ if ( ! class_exists( 'Bam_Customizer' ) ) :
 			require_once( $dir_path . 'header.php' );
 			require_once( $dir_path . 'topbar.php' );
 			require_once( $dir_path . 'blog.php' );
+			require_once( $dir_path . 'pages.php' );
 			require_once( $dir_path . 'typography.php' );
 			require_once( $dir_path . 'social.php' );
 			require_once( $dir_path . 'footer.php' );

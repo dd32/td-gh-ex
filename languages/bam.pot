@@ -3,9 +3,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bam 1.0.7\n"
+"Project-Id-Version: Bam 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-08-26 21:59+0530\n"
+"POT-Creation-Date: 2019-09-09 11:13+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Language-Team: \n"
 "X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;_n;"
+"X-Poedit-KeywordsList: ;__;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;_n;"
 "_nx;esc_html_x\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -625,6 +625,14 @@ msgstr ""
 
 #: inc/customizer/settings/header.php:814
 msgid "Dropdown Link Background Color: Hover"
+msgstr ""
+
+#: inc/customizer/settings/pages.php:31
+msgid "Pages"
+msgstr ""
+
+#: inc/customizer/settings/pages.php:53
+msgid "Page Layout"
 msgstr ""
 
 #: inc/customizer/settings/social.php:29

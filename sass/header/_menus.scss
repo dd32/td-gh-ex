@@ -502,3 +502,7 @@ button.dropdown-toggle.toggled-on::after {
 		}
 	}
 }
+
+.infinite-scroll .pagination {
+	display: none;
+}
