@@ -38,7 +38,7 @@ function bakes_and_cakes_customizer_demo_content( $wp_customize ) {
 		$theme_demo_content_desc .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Plugin required', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://wordpress.org/plugins/rara-one-click-demo-import/' ) . '" target="_blank">' . __( 'Rara One Click Demo Import', 'bakes-and-cakes' ) . '</a></span><br />';
 	}
 
-	$theme_demo_content_desc .= '<span class="sticky_info_row download-link"><label class="row-element">' . __( 'Download Demo Content Zip File', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/documentation/bakes-and-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+	$theme_demo_content_desc .= '<span class="sticky_info_row download-link"><label class="row-element">' . __( 'Download Demo Content Zip File', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://docs.rarathemes.com/docs/bakes-and-cakes/theme-activation-and-installation/how-to-import-demo-content/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
 
 	$wp_customize->add_setting( 'theme_demo_content_info',array(
 		'default'           => '',

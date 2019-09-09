@@ -8,10 +8,10 @@
  */
 
 //define theme version
-if ( !defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) {
-	$theme_data = wp_get_theme();
-	
+if ( ! defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) {
+	$theme_data = wp_get_theme();	
 	define ( 'BAKES_AND_CAKES_THEME_VERSION', $theme_data->get( 'Version' ) );
+    define( 'BAKES_AND_CAKES_THEME_NAME', $theme_data->get( 'Name' ) );
 }
 
 if (!function_exists('bakes_and_cakes_setup')):
@@ -231,6 +231,7 @@ function bakes_and_cakes_scripts() {
     wp_enqueue_style( 'bakes-and-cakes-woocommerce-style', get_template_directory_uri(). '/css' . $build . '/woocommerce' . $suffix . '.css', array('bakes-and-cakes-style'), BAKES_AND_CAKES_THEME_VERSION );
  
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true);
+    wp_enqueue_script('owl-carousel-aria', get_template_directory_uri() . '/js' . $build . '/owl.carousel.aria' . $suffix . '.js', array('owl-carousel'), '2.0.0', true);
 	wp_enqueue_script('tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array(), '20120206', true);
 	wp_enqueue_script('same-height', get_template_directory_uri() . '/js' . $build . '/sameheight' . $suffix . '.js', array(), '20120206', true);
 	wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
@@ -264,17 +265,12 @@ function bakes_and_cakes_scripts() {
 }
 add_action('wp_enqueue_scripts', 'bakes_and_cakes_scripts');
 
-if ( is_admin() ) : // Load only if we are viewing an admin page
 
-	function bakes_and_cakes_admin_scripts() {
-		
-		wp_enqueue_style( 'bakes-and-cakes-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );
-	    
-	}
 
+function bakes_and_cakes_admin_scripts() {
+	wp_enqueue_style( 'bakes-and-cakes-admin-style',get_template_directory_uri().'/inc/css/admin.css','', BAKES_AND_CAKES_THEME_VERSION ); 
+}
 add_action( 'admin_enqueue_scripts', 'bakes_and_cakes_admin_scripts' );
-
-endif;
 
 if( ! function_exists( 'bakes_and_cakes_customizer_js' ) ) :
 /** 
@@ -385,3 +381,8 @@ require get_template_directory() . '/inc/info.php';
  * Demo Content Section
  */
 require get_template_directory() . '/inc/demo-content.php';
+
+/**
+ * Getting Started
+*/
+require get_template_directory() . '/inc/getting-started/getting-started.php';

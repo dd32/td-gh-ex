@@ -4,14 +4,14 @@ Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
 Tested up to: WordPress 5.2.2
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options, food-and-drink, e-commerce, custom-colors, custom-logo    
 
 == Description ==
 
-Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://demo.rarathemes.com/bakes-and-cakes/, documentation at https://rarathemes.com/documentation/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
+Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://demo.rarathemes.com/bakes-and-cakes/, documentation at https://docs.rarathemes.com/docs/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
 
 == Installation ==
         
@@ -200,8 +200,6 @@ lightslider.js, https://github.com/sachinchoolur/lightslider, (C) Sachin, MIT, h
 
 sameheight.js, https://css-tricks.com/examples/EqualHeightsInRows/ ,   licensed under GPLv2 or later
 
-jquery.sidr.js, https://github.com/artberri/sidr, (C) 2013 Alberto Varela, MIT License, https://github.com/artberri/sidr/blob/master/LICENSE
-
 https://jqueryui.com/tabs/ ,licensed under GPLv2 or later
 
 
@@ -224,6 +222,12 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+
+    1.2.0
+    * Added accessibility requirement for Skip Links, Keyboard navigation, Controls and Form labeling..
+    * Added Getting started page.
+    * Changed Documentation links.
+
     1.1.9
     * Added wp_body_open action.
     * Removed demo zip file link from customizer.

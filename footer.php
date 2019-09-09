@@ -26,6 +26,7 @@ if( is_home() || ! $enabled_sections || ! ( is_front_page()  || is_page_template
 	<div class="overlay"></div>
 	<a href="javascript:void(0);" class="btn-top"><span><?php _e('Top','bakes-and-cakes'); ?></span></a>
 
+	</div><!-- #acc-content -->
 </div><!-- #page -->
 
 <?php wp_footer();?>

@@ -508,13 +508,13 @@ if( ! function_exists( 'bakes_and_cakes_change_comment_form_default_fields' ) ) 
         $aria_req = ( $req ? " aria-required='true'" : '' );    
      
         // Change just the author field
-        $fields['author'] = '<p class="comment-form-author"><input id="author" name="author" type="text" placeholder="' . __( 'Name*', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
+        $fields['author'] = '<p class="comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( 'Name*', 'bakes-and-cakes' ) . '</label><input id="author" name="author" type="text" placeholder="' . __( 'Name*', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30"' . $aria_req . ' /></p>';
         
-        $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" type="text" placeholder="' . __( 'Email*', 'bakes-and-cakes' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+        $fields['email'] = '<p class="comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( 'Email*', 'bakes-and-cakes' ) . '</label><input id="email" name="email" type="text" placeholder="' . __( 'Email*', 'bakes-and-cakes' ) . '" value="' . esc_attr(  $commenter['comment_author_email'] ) .
             '" size="30"' . $aria_req . ' /></p>';
         
-        $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" type="text" placeholder="' . __( 'Website', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
+        $fields['url'] = '<p class="comment-form-url"><label class="screen-reader-text" for="url">' . esc_html__( 'Website', 'bakes-and-cakes' ) . '</label><input id="url" name="url" type="text" placeholder="' . __( 'Website', 'bakes-and-cakes' ) . '" value="' . esc_attr( $commenter['comment_author_url'] ) .
             '" size="30" /></p>'; 
         
         return $fields;
@@ -531,7 +531,7 @@ if( ! function_exists( 'bakes_and_cakes_change_comment_form_defaults' ) ) :
     */
     function bakes_and_cakes_change_comment_form_defaults( $defaults ){
         
-        $defaults['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" placeholder="' . __( 'Comment', 'bakes-and-cakes' ) . '" cols="45" rows="8" aria-required="true">' .
+        $defaults['comment_field'] = '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( 'Comment', 'bakes-and-cakes' ) . '</label><textarea id="comment" name="comment" placeholder="' . __( 'Comment', 'bakes-and-cakes' ) . '" cols="45" rows="8" aria-required="true">' .
             '</textarea></p>';
         
         return $defaults;
@@ -637,3 +637,65 @@ function bakes_and_cakes_escape_text_tags( $text ) {
     return (string) str_replace( array( "\r", "\n" ), '', strip_tags( $text ) );
 }
 endif;
+
+if( ! function_exists( 'bakes_and_cakes_admin_notice' ) ) :
+/**
+ * Admin notice for getting started page
+*/
+function bakes_and_cakes_admin_notice(){
+    global $pagenow;
+    $theme_args      = wp_get_theme();
+    $meta            = get_option( 'bakes_and_cakes_admin_notice' );
+    $name            = $theme_args->__get( 'Name' );
+    $current_screen  = get_current_screen();
+    
+    if( 'themes.php' == $pagenow && !$meta ){
+        
+        if( $current_screen->id !== 'dashboard' && $current_screen->id !== 'themes' ){
+            return;
+        }
+
+        if( is_network_admin() ){
+            return;
+        }
+
+        if( ! current_user_can( 'manage_options' ) ){
+            return;
+        } ?>
+
+        <div class="welcome-message notice notice-info">
+            <div class="notice-wrapper">
+                <div class="notice-text">
+                    <h3><?php esc_html_e( 'Congratulations!', 'bakes-and-cakes' ); ?></h3>
+                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'bakes-and-cakes' ), $name ) ; ?></p>
+                    <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=bakes-and-cakes-getting-started' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'bakes-and-cakes' ); ?></a></p>
+                    <p class="dismiss-link"><strong><a href="?bakes_and_cakes_admin_notice=1"><?php esc_html_e( 'Dismiss', 'bakes-and-cakes' ); ?></a></strong></p>
+                </div>
+            </div>
+        </div>
+    <?php }
+}
+endif;
+add_action( 'admin_notices', 'bakes_and_cakes_admin_notice' );
+
+if( ! function_exists( 'bakes_and_cakes_update_admin_notice' ) ) :
+/**
+ * Updating admin notice on dismiss
+*/
+function bakes_and_cakes_update_admin_notice(){
+    if ( isset( $_GET['bakes_and_cakes_admin_notice'] ) && $_GET['bakes_and_cakes_admin_notice'] = '1' ) {
+        update_option( 'bakes_and_cakes_admin_notice', true );
+    }
+}
+endif;
+add_action( 'admin_init', 'bakes_and_cakes_update_admin_notice' );
+
+if( ! function_exists( 'bakes_and_cakes_restore_admin_notice' ) ) :
+/**
+ * Restoring admin notice on theme switch
+ */
+function bakes_and_cakes_restore_admin_notice(){
+    update_option( 'bakes_and_cakes_admin_notice', false );
+}
+endif;
+add_action( 'after_switch_theme', 'bakes_and_cakes_restore_admin_notice' );

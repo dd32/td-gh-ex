@@ -23,7 +23,7 @@
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	
+	<a class="skip-link screen-reader-text" href="#acc-content"><?php esc_html_e( 'Skip to content (Press Enter)', 'bakes-and-cakes' ); ?></a>
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 	    <div class="header-t">
 			  <div class="container">
@@ -66,6 +66,7 @@
           do_action('bakes_and_cakes_slider');
        
         }
+        echo '<div id="acc-content">'; // added for accessibility purpose
 
         if( is_home() || ! $enabled_sections || ! ( is_front_page()  || is_page_template( 'template-home.php' ) ) ){ 
    	       

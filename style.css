@@ -3,8 +3,8 @@ Theme Name: Bakes And Cakes
 Theme URI: https://rarathemes.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
-Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://demo.rarathemes.com/bakes-and-cakes/, documentation at https://rarathemes.com/documentation/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
-Version: 1.1.9
+Description: Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc. The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://demo.rarathemes.com/bakes-and-cakes/, documentation at https://docs.rarathemes.com/docs/bakes-and-cakes/ and get support at http://rarathemes.com/support-ticket/.
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
@@ -479,6 +479,13 @@ input[type="submit"]:active {
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus{
+    outline: thin dotted;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -498,7 +505,7 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
     color: #111;
-    outline: none;
+    outline: thin dotted;
 }
 
 input[type="text"],
@@ -532,7 +539,7 @@ a:active {
 }
 
 a:focus {
-    outline: none;
+    outline: thin dotted;
 }
 
 a:hover,
@@ -623,7 +630,8 @@ a:active {
 
 @media only screen and (min-width: 1025px){
     .main-navigation ul li:hover>ul,
-    .main-navigation ul li.focus>ul {
+    .main-navigation ul li.focus>ul,
+    .main-navigation ul li:focus-within>ul {
         display: block;
     }
 }
@@ -1232,6 +1240,10 @@ ul.owl-carousel {
     text-decoration: none;
 }
 
+.intro .btn-holder a:focus{
+    outline-offset: 2px;
+}
+
 /*featured section style*/
 .featured {
     background: #f6a8c6;
@@ -1266,6 +1278,10 @@ ul.owl-carousel {
 .featured .featured-slider .img-holder {
     overflow: hidden;
     margin: 0 0 20px;
+}
+
+.featured .featured-slider .img-holder a:focus{
+    outline-offset: -2px;
 }
 
 .featured .featured-slider li {
@@ -1510,6 +1526,10 @@ ul.owl-carousel {
     right: -43px;
     top: 0;
     content: '';
+}
+
+.special .info .btn-reserve:focus{
+    outline-offset: -4px;
 }
 
 /*our staff style*/
@@ -1886,7 +1906,12 @@ ul.owl-carousel {
     display: block;
     height: 100%;
     max-height: 255px;
-    overflow: hidden;
+    /*overflow: hidden;*/
+}
+
+.blog-section .post .post-thumbnail:focus{
+    outline-offset: 2px;
+    outline: thin dotted #000;
 }
 
 .blog-section .post .text-holder {
@@ -2112,6 +2137,12 @@ ul.owl-carousel {
 .content-area .page .post-thumbnail {
     display: block;
     height: 100%;
+}
+
+.content-area .post .post-thumbnail:focus,
+.content-area .page .post-thumbnail:focus{
+    outline-offset: 2px;
+    outline: thin dotted #000;
 }
 
 .content-area .post .post-thumbnail img,
@@ -3085,8 +3116,14 @@ ul.owl-carousel {
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: hidden;
+    /*overflow: hidden;*/
     font-size: 20px;
+}
+
+.site-footer .widget .social-networks:after{
+    display: block;
+    clear: both;
+    content: '';
 }
 
 .site-footer .widget .social-networks li {
@@ -3207,8 +3244,14 @@ ul.owl-carousel {
 }
 
 .site-footer .widget ul li {
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin: 0 0 15px;
+}
+
+.site-footer .widget ul li:after{
+    display: block;
+    clear: both;
+    content: '';
 }
 
 .site-footer .widget ul li a,
