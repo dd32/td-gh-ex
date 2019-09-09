@@ -4,7 +4,7 @@ Description: AyaCoffeeShopPro is a fully responsive WordPress Theme. Features in
 Theme URI: https://ayatemplates.com/product/ayacoffeeshop
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.4
+Version: 1.1.5
 Text Domain: ayacoffeeshop
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:"Yanone",Arial,Helvetica,sans-serif;
-	font-size:13px;
+	font-size: 16px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -44,7 +44,13 @@ body:before {
 	content: none !important;
 }
 
-a {
+.icon:before {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+a,
+.icon:before {
 	text-decoration:none;
 	outline:none;
 	color:#753f00;
@@ -155,7 +161,7 @@ h5 {
 }
 
 h6 {
-	font-size:14px;
+	font-size:16px;
 	padding:2px 0 1px 0;
 }
 
@@ -1022,7 +1028,7 @@ article,
 }
 
 .header-social-widget a:before {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .header-social-widget a {
@@ -1401,7 +1407,7 @@ blockquote, figure {
 
 .commentlist li div .vcard {
 	font-weight:bold;
-	font-size:14px;
+	font-size:16px;
 	line-height:16px;
 }
 
@@ -1564,7 +1570,7 @@ blockquote, figure {
 .quote-content:after,
 .sticky h1:before {
 	font-family:'FontAwesome';
-	margin:0;
+	margin:0 5px 0 0;
 }
 
 .aside-icon,
@@ -1770,7 +1776,7 @@ img.wp-post-image {
 	clip: auto !important;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
+	font-size: 16px;
 	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
@@ -2132,7 +2138,7 @@ blockquote {
 .gallery-caption {
 	color: #686868;
 	display: block;
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.8125rem;
 	font-style: italic;
 	line-height: 1.6153846154;
@@ -3203,7 +3209,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:14px;
+		font-size:16px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -3831,7 +3837,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 @media screen and (max-width: 360px) {
 
 	body {
-		font-size:13px;
+		font-size: 16px;
 	}
 
 	.header-social-widget a:before {
