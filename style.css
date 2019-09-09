@@ -5,7 +5,7 @@ Theme URI: https://ayatemplates.com/product/ayagreen
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayawild
-Version: 1.0.8
+Version: 1.0.9
 Text Domain: ayagreen
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:"PT Sans",Arial,Helvetica,sans-serif;
-	font-size:14px;
+	font-size:16px;
 	margin:0;
 	padding:0;
 	background-color:#555555;
@@ -41,7 +41,13 @@ body:before {
 	content: none !important;
 }
 
-a {
+.icon:before {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+a,
+.icon:before {
 	text-decoration:none;
 	outline:none;
 	color:#649300;
@@ -106,8 +112,7 @@ img {
 }
 
 #home-content-wrapper img,
-#main-content-wrapper img,
-#footer-main img {
+#main-content-wrapper img {
 	max-width:100%;
 	height:auto;
 	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -116,8 +121,7 @@ img {
 }
 
 #home-content-wrapper a:hover img,
-#main-content-wrapper a:hover img,
-#footer-main a:hover img {
+#main-content-wrapper a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
@@ -156,7 +160,7 @@ h5 {
 }
 
 h6 {
-	font-size:14px;
+	font-size:16px;
 	padding:2px 0 1px 0;
 }
 
@@ -658,7 +662,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:14px;
+	font-size:16px;
 }
 
 .footer-social-widget li {
@@ -1041,7 +1045,7 @@ article,
 }
 
 .header-social-widget a:before {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .header-social-widget a {
@@ -1419,7 +1423,7 @@ blockquote, figure {
 
 .commentlist li div .vcard {
 	font-weight:bold;
-	font-size:14px;
+	font-size:16px;
 	line-height:16px;
 }
 
@@ -1584,7 +1588,7 @@ blockquote, figure {
 .quote-content:after,
 .sticky h1:before {
 	font-family:'FontAwesome';
-	margin:0;
+	margin:0 5px 0 0;
 }
 
 .aside-icon,
@@ -1757,7 +1761,6 @@ img.wp-post-image {
 	position: fixed;
 	bottom: 0;
 	right:2%;
-	right:-99999px;
 	color:#CBC8B5;
 	background-color:#555555 !important;
 	z-index:5001;
@@ -1798,7 +1801,7 @@ img.wp-post-image {
   clip-path: none;
   color: #21759b;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;
@@ -2230,7 +2233,7 @@ blockquote {
 .gallery-caption {
 	color: #686868;
 	display: block;
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.8125rem;
 	font-style: italic;
 	line-height: 1.6153846154;
@@ -3343,9 +3346,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		margin-top:5px;
 	}
 	
-	#header-logo img{
-		margin-top:10px;
-	}
+	
 
 	#header-content-wrapper {
 		position:relative;
@@ -3378,7 +3379,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:14px;
+		font-size:16px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -4000,11 +4001,11 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 @media screen and (max-width: 360px) {
 
 	body {
-		font-size:13px;
+		font-size: 16px;
 	}
 
 	.header-social-widget a:before {
-		font-size:13px;
+		font-size: 16px;
 	}
 
 	#hdrtop-searchform-subcontent:before {
