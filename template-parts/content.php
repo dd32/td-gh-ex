@@ -47,23 +47,23 @@
 
 
 	<div class="post-after-content">
-		<span class="author-icon">
+		<span class="icon author-icon">
 			<?php the_author_posts_link(); ?>
 		</span>
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
-					<span class="comments-icon">
+					<span class="icon comments-icon">
 						<?php comments_popup_link(__( 'No Comments', 'fgymm' ), __( '1 Comment', 'fgymm' ), __( '% Comments', 'fgymm' ), '', __( 'Comments are closed.', 'fgymm' )); ?>
 					</span>
 		<?php endif; ?>
 		<?php if ( ! post_password_required() ) : ?>
 
 				<?php if ( has_category() ) : ?>
-					<span class="category-icon"><?php the_category( '</span><span class="category-icon">' ) ?></span>
+					<span class="icon category-icon"><?php the_category( '</span><span class="icon category-icon">' ) ?></span>
 				<?php endif; ?>
 		
 				<?php if ( has_tag() ) : ?>
-							<?php echo get_the_tag_list( '<span class="tags-icon">', '</span><span class="tags-icon">', '</span>' ); ?>
+							<?php echo get_the_tag_list( '<span class="icon tags-icon">', '</span><span class="icon tags-icon">', '</span>' ); ?>
 				<?php endif; ?>
 
 		<?php endif; ?>

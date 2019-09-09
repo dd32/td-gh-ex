@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.8.6
+Version: 1.8.7
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:"PT Sans",Arial,Helvetica,sans-serif;
-	font-size:14px;
+	font-size:16px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -35,7 +35,13 @@ body:before {
 	content: none !important;
 }
 
-a {
+.icon:before {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+a,
+.icon:before {
 	text-decoration:none;
 	outline:none;
 	color:#08ab0f;
@@ -147,7 +153,7 @@ h5 {
 }
 
 h6 {
-	font-size:14px;
+	font-size:16px;
 	padding:2px 0 1px 0;
 }
 
@@ -615,7 +621,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:14px;
+	font-size:16px;
 }
 
 .footer-social-widget li {
@@ -890,7 +896,7 @@ article,
 }
 
 .header-social-widget a:before {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .header-social-widget a {
@@ -925,7 +931,7 @@ textarea {
 }
 
 input[type="submit"] {
-	font-size:14px;
+	font-size:16px;
 }
 
 input[type="submit"],
@@ -1193,7 +1199,7 @@ blockquote, figure {
 
 .commentlist li div .vcard {
 	font-weight:bold;
-	font-size:14px;
+	font-size:16px;
 	line-height:16px;
 }
 
@@ -1545,7 +1551,6 @@ img.wp-post-image {
 	position: fixed;
 	bottom: 0;
 	right:2%;
-	right:-99999px;
 	color:#CBC8B5;
 	background-color:#555555 !important;
 	z-index:5001;
@@ -1787,7 +1792,7 @@ img.wp-post-image {
 .gallery-caption {
 	color: #686868;
 	display: block;
-	font-size: 13px;
+	font-size: 16px;
 	font-size: 0.8125rem;
 	font-style: italic;
 	line-height: 1.6153846154;
@@ -3247,9 +3252,7 @@ mark {
 		margin-top:5px;
 	}
 	
-	#header-logo img{
-		margin-top:10px;
-	}
+	
 
 	#header-content-wrapper {
 		position:relative;
@@ -3282,7 +3285,7 @@ mark {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:14px;
+		font-size:16px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -3890,11 +3893,11 @@ mark {
 @media screen and (max-width: 360px) {
 
 	body {
-		font-size:13px;
+		font-size: 16px;
 	}
 
 	.header-social-widget a:before {
-		font-size:13px;
+		font-size: 16px;
 	}
 	
 	.homepage-icon-link:before {
@@ -4085,7 +4088,7 @@ mark {
   clip-path: none;
   color: #21759b;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   font-size: 0.875rem;
   font-weight: bold;
   height: auto;
