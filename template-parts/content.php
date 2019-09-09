@@ -29,7 +29,7 @@
 		
 		<?php if ( !is_single() && get_the_title() === '' ) : ?>
 
-				<span class="clock-icon">
+				<span class="icon clock-icon">
 					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 						<time datetime="<?php the_date( DATE_W3C ); ?>"><?php echo get_the_date(); ?></time>
 					</a>
@@ -37,13 +37,13 @@
 	
 		<?php else : ?>
 
-				<span class="clock-icon">
+				<span class="icon clock-icon">
 					<time datetime="<?php the_date( DATE_W3C ); ?>"><?php echo get_the_date(); ?></time>
 				</span><!-- .clock-icon -->
 			
 		<?php endif; ?>
 
-		<span class="author-icon">
+		<span class="icon author-icon">
 			<?php the_author_posts_link(); ?>
 		</span><!-- .author-icon -->
 		
@@ -64,13 +64,13 @@
 		<?php if ( ! post_password_required() ) : ?>
 
 					<?php if ( has_category() ) : ?>
-							<span class="category-icon">
+							<span class="icon category-icon">
 								<?php the_category( ', ' ) ?>
 							</span><!-- .category-icon -->						
 					<?php endif; ?>
 				
 					<?php if ( has_tag() ) : ?>
-							<span class="tags-icon">
+							<span class="icon tags-icon">
 									<?php the_tags( '', ', ','' ); ?>
 								</span><!-- .tags-icon -->						
 					<?php endif; ?>
@@ -79,7 +79,7 @@
 		
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
-					<span class="comments-icon">
+					<span class="icon comments-icon">
 						<?php comments_popup_link(__( 'No Comments', 'fcorpo' ), __( '1 Comment', 'fcorpo' ), __( '% Comments', 'fcorpo' ), '', __( 'Comments are closed.', 'fcorpo' )); ?>
 					</span><!-- .comments-icon -->
 		

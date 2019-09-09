@@ -46,6 +46,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.3.1 =
+* increase font size
+
 = 1.3.0 =
 * add Mobile Keyboard navigation for Main Menu
 

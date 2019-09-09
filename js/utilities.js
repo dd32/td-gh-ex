@@ -184,7 +184,7 @@ function fcorpo_init_loading_effects() {
             offset: 1
           });
 
-    jQuery('article img, .instagram-pics img, .products img').addClass("animations-hidden").viewportChecker({
+    jQuery('article img, .products img').addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated zoomIn',
             offset: 1
           });
