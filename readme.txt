@@ -63,6 +63,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.7 =
+* increase default text font size
+
 = 1.0.6 =
 * main menu: Add Keyboard navigation
 

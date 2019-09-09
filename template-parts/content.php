@@ -89,13 +89,13 @@
 
 	<div class="after-content">
 
-		<span class="author-icon">
+		<span class="icon author-icon">
 			<?php the_author_posts_link(); ?>
 		</span><!-- .author-icon -->
 
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
-					<span class="comments-icon">
+					<span class="icon comments-icon">
 						<?php comments_popup_link(__( 'No Comments', 'ayahairsalon' ), __( '1 Comment', 'ayahairsalon' ), __( '% Comments', 'ayahairsalon' ), '', __( 'Comments are closed.', 'ayahairsalon' )); ?>
 					</span><!-- .comments-icon -->
 		
@@ -107,7 +107,7 @@
 
 					<?php if ( has_category() ) : ?>
 							<p class="categories-wrapper">
-								<span class="category-icon">
+								<span class="icon category-icon">
 									<?php esc_html_e('Categories:', 'ayahairsalon'); ?>
 								</span><!-- .category-icon -->
 								<?php the_category( ' ' ) ?>
@@ -116,7 +116,7 @@
 				
 					<?php if ( has_tag() ) : ?>
 							<p class="tags-wrapper">
-								<span class="tags-icon">
+								<span class="icon tags-icon">
 									<?php esc_html_e('Tags:', 'ayahairsalon'); ?>
 								</span><!-- .tags-icon -->
 								<?php the_tags('', _x( ', ', 'Used between list items, there is a space after the comma.', 'ayahairsalon' ), ''); ?>
