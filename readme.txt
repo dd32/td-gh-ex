@@ -42,6 +42,10 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.2 =
+* bug fix: remove color gap in footer
+* increase default text font size
+
 = 1.2.1 =
 * fix issue with header height
 
