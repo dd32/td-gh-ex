@@ -40,6 +40,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.3 =
+* increase default text font size
+
 = 1.1.2 =
 * main menu: Add Keyboard navigation
 
