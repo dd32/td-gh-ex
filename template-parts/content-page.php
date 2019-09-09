@@ -34,7 +34,7 @@
 
 			<?php if ('open' == $post->comment_status) : ?>
 
-				<span class="comments-icon">
+				<span class="icon comments-icon">
 					<?php comments_popup_link(__( 'No Comments', 'ayaportfolio' ), __( '1 Comment', 'ayaportfolio' ), __( '% Comments', 'ayaportfolio' ), '', __( 'Comments are closed.', 'ayaportfolio' )); ?>
 				</span>
 
