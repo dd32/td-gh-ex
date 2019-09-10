@@ -27,6 +27,10 @@ jQuery(document).ready(function() {
 	  }
 	}
   })
+  	// Add/Remove .focus class for accessibility
+	jQuery('.navbar-default').find( 'a' ).on( 'focus blur', function() {
+		jQuery( this ).parents( 'ul, li' ).toggleClass( 'focus' );
+	} );
 })
 
 /*
