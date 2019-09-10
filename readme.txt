@@ -3,14 +3,14 @@
 Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.2.2
-Stable tag: 1.0.2
+Tested up to: WordPress 5.2.3
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Author Landing Page is a beautiful and easy-to-use free WordPress theme for authors, writers, novelists, and publishers who want to launch, promote or publish their book online. This theme features an elegant and attractive layout to help you generate high leads and get more sales of your book. With Author Landing Page free theme, you can create a fully responsive, and visually appealing landing page to sell and promote your book without writing a single line of code. It is a speed optimized theme that helps your website load within a blink of an eye and provides a great user experience to your visitors. The theme is developed with SEO optimized codes and is schema.org markup ready to help your website rank higher in Google and other search engines. Furthermore, this theme is fully compatible with the popular WooCommerce plugin to allow you to sell your book via your website. Check demo at https://demo.rarathemes.com/author-landing-page/ and documentation at https://rarathemes.com/documentation/author-landing-page/. Read theme details at https://rarathemes.com/wordpress-themes/author-landing-page/ and get free support at https://rarathemes.com/support-ticket/.
+Author Landing Page is a beautiful and easy-to-use free WordPress theme for authors, writers, novelists, and publishers who want to launch, promote or publish their book online. This theme features an elegant and attractive layout to help you generate high leads and get more sales of your book. With Author Landing Page free theme, you can create a fully responsive, and visually appealing landing page to sell and promote your book without writing a single line of code. It is a speed optimized theme that helps your website load within a blink of an eye and provides a great user experience to your visitors. The theme is developed with SEO optimized codes and is schema.org markup ready to help your website rank higher in Google and other search engines. Furthermore, this theme is fully compatible with the popular WooCommerce plugin to allow you to sell your book via your website. Check demo at https://demo.rarathemes.com/author-landing-page/ and documentation at https://docs.rarathemes.com/docs/author-landing-page/. Read theme details at https://rarathemes.com/wordpress-themes/author-landing-page/ and get free support at https://rarathemes.com/support-ticket/.
 
 == Installation ==
 
@@ -42,6 +42,11 @@ Images used in screenshots.
 All other images including icon image and images used in customizer settings are self created and are under the GPL.
 
 == Changelog ==
+	1.0.3
+	* Added accessibility requirement for Skip Links, Keyboard navigation, Controls and Form labeling.
+    * Added Getting started page.
+    * Changed Documentation links.
+
 	1.0.2
 	* Validated readme.txt.
 	* Changed raratheme.com to rarathemes.com.

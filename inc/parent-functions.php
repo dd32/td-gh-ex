@@ -143,7 +143,7 @@ function book_landing_page_customizer_theme_info( $wp_customize ) {
     $theme_info .= '</p><p>';
 
     /* translators: 1: string, 2: documentation url, 3: string */
-    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Documentation Link : ', 'author-landing-page' ), esc_url( 'https://rarathemes.com/documentation/author-landing-page/' ), esc_html__( 'Click here.', 'author-landing-page' ) );
+    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Documentation Link : ', 'author-landing-page' ), esc_url( 'https://docs.rarathemes.com/docs/author-landing-page/' ), esc_html__( 'Click here.', 'author-landing-page' ) );
 
     $theme_info .= '</p>';
 
