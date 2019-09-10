@@ -45,6 +45,7 @@
         ?>
 	</footer><!-- #colophon -->
     <div class="overlay"></div>
+</div><!-- #acc-content -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

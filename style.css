@@ -3,8 +3,8 @@ Theme Name: Benevolent
 Theme URI: https://rarathemes.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
-Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.rarathemes.com/benevolent/, documentation at https://rarathemes.com/documentation/benevolent/ and get support at https://rarathemes.com/support-forum/. 
-Version: 1.2.1
+Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.rarathemes.com/benevolent/, documentation at https://docs.rarathemes.com/docs/benevolent/ and get support at https://rarathemes.com/support-forum/. 
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -505,6 +505,14 @@ input[type="submit"]:active {
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus{
+    outline: thin dotted;
+    outline-offset: 2px;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -537,6 +545,17 @@ textarea {
     padding-left: 3px;
     width: 100%;
 }
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus{
+    outline: thin dotted;
+    outline-offset: 2px;
+} 
 
 /*--------------------------------------------------------------
 # Header
@@ -578,6 +597,10 @@ textarea {
     line-height: 0;
 }
 
+.logo-text .site-logo a:focus{
+    outline: thin dotted #fff;
+}
+
 .logo-text .site-title-wrap {
     display: inline-block;
     vertical-align: middle;
@@ -600,6 +623,10 @@ textarea {
 
 .site-header .site-branding .site-title a:hover {
     text-decoration: none;
+}
+
+.site-header .site-branding .site-title a:focus{
+    outline: thin dotted #fff;
 }
 
 .site-header .site-branding .site-description {
@@ -658,6 +685,10 @@ textarea {
     text-decoration: none;
 }
 
+.site-header .secondary-navigation ul li a:focus{
+    outline-offset: 1px;
+}
+
 .site-header .secondary-navigation ul ul {
     position: absolute;
     top: 100%;
@@ -668,7 +699,8 @@ textarea {
 }
 
 .site-header .secondary-navigation ul li:hover ul,
-.site-header .secondary-navigation ul li:focus ul {
+.site-header .secondary-navigation ul li:focus ul,
+.site-header .secondary-navigation ul li:focus-within ul {
     display: block;
 }
 
@@ -705,7 +737,7 @@ textarea {
 }
 
 .site-header .header-top .social-networks li {
-    float: right;
+    float: left;
     margin-right: 20px;
 }
 
@@ -717,6 +749,10 @@ textarea {
 .site-header .header-top .social-networks li a:focus {
     text-decoration: none;
     color: #fff;
+}
+
+.site-header .header-top .social-networks li a:focus{
+    outline-offset: 5px;    
 }
 
 /*--------------------------------------------------------------
@@ -735,7 +771,7 @@ a:focus {
 }
 
 a:focus {
-    outline: none;
+    outline: thin dotted;
 }
 
 a:hover,
@@ -802,15 +838,13 @@ a:active {
     display: none;
 }
 
-.main-navigation ul li:hover ul {
+.main-navigation ul li:hover > ul,
+.main-navigation ul li:focus-within > ul {
     display: block;
 }
 
-.main-navigation ul li:hover ul ul {
-    display: none;
-}
-
-.main-navigation ul ul li:hover>ul {
+.main-navigation ul ul li:hover>ul,
+.main-navigation ul ul li:focus-within>ul {
     display: block;
 }
 
@@ -902,6 +936,17 @@ a:active {
     text-decoration: none;
     background: #fcb216;
     color: #fff;
+}
+
+.site-header .btn-donate:focus{
+    outline: thin dotted #fff;
+    outline-offset: 2px;
+}
+
+.site-header .right-panel{
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -1124,6 +1169,10 @@ a:active {
     color: #fcb216;
 }
 
+.banner .text .btn-learn:focus{
+    outline-offset: 2px;
+}
+
 .banner #banner-slider li {
     position: relative;
 }
@@ -1138,6 +1187,10 @@ a:active {
 .banner .owl-carousel .owl-dots .owl-dot {
     display: inline-block;
     margin: 0 5px;
+}
+
+.banner .owl-carousel .owl-dots .owl-dot:focus{
+    outline-offset: 2px;
 }
 
 .banner .owl-carousel .owl-dots span {
@@ -1236,6 +1289,11 @@ a:active {
 
 .intro .columns-3 .text-holder .btn:hover {
     text-decoration: none;
+}
+
+.intro .columns-3 .text-holder .btn:focus{
+    outline: thin dotted #000;
+    outline-offset: 2px;
 }
 
 .intro .columns-3 .text-holder .btn svg {
@@ -1337,11 +1395,13 @@ a:active {
     transition: ease 0.5s;
 }
 
-.our-community .community-holder .columns-2:hover .hover-state {
+.our-community .community-holder .columns-2:hover .hover-state,
+.our-community .community-holder .columns-2:focus-within .hover-state {
     opacity: 1;
 }
 
-.our-community .community-holder .columns-2:hover .text-holder {
+.our-community .community-holder .columns-2:hover .text-holder,
+.our-community .community-holder .columns-2:focus-within .text-holder {
     display: none;
 }
 
@@ -1678,6 +1738,11 @@ a:active {
 .blog-section .blog-holder .post .post-thumbnail {
     display: block;
     margin: 0 0 22px;
+}
+
+.blog-section .blog-holder .post .post-thumbnail:focus{
+    outline: thin dotted #000;
+    outline-offset: 2px;
 }
 
 .blog-section .blog-holder .post .post-thumbnail img {
@@ -2959,6 +3024,16 @@ object {
 .site-footer .widget ul li a:hover {
     text-decoration: none;
     color: #fcb216;
+}
+
+.site-footer input[type="text"]:focus,
+.site-footer input[type="search"]:focus,
+.site-footer input[type="email"]:focus,
+.site-footer input[type="url"]:focus,
+.site-footer input[type="submit"]:focus,
+.site-footer textarea:focus,
+.site-footer select:focus{
+    outline: thin dotted #fff;
 }
 
 .footer-t .subscribe-form {

@@ -35,7 +35,6 @@ $intros = array(
 );
 
 ?>
- 
 <div class="container">
 	<?php if( $intro_section_title || $intro_section_content ){ ?>
     <header class="header">

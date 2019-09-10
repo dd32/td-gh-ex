@@ -631,11 +631,11 @@ function benevolent_change_comment_form_default_fields( $fields ){
     $aria_req = ( $req ? " aria-required='true'" : '' );    
  
     // Change just the author field
-    $fields['author'] = '<p class="comment-form-author"><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['author'] = '<p class="comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( 'Name*', 'benevolent' ) . '</label><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
     
-    $fields['email'] = '<p class="comment-form-email"><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'benevolent' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['email'] = '<p class="comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( 'Email*', 'benevolent' ) . '</label><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'benevolent' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
     
-    $fields['url'] = '<p class="comment-form-url"><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
+    $fields['url'] = '<p class="comment-form-url"><label class="screen-reader-text" for="url">' . esc_html__( 'Website', 'benevolent' ) . '</label><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
     
     return $fields;    
 }
@@ -648,7 +648,7 @@ if( ! function_exists( 'benevolent_change_comment_form_defaults' ) ) :
 */
 function benevolent_change_comment_form_defaults( $fields ){ 
     $comment_field = $fields['comment'];   
-    $fields['comment'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="40" rows="8" required="required" placeholder="' . esc_attr__( 'Comment','benevolent' ) . '"></textarea></p>';;
+    $fields['comment'] = '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( 'Comment', 'benevolent' ) . '</label><textarea id="comment" name="comment" cols="40" rows="8" required="required" placeholder="' . esc_attr__( 'Comment','benevolent' ) . '"></textarea></p>';;
     
     return $fields;    
 }

@@ -7,6 +7,14 @@
  * @package Benevolent
  */
 
+//define theme version
+if ( ! defined( 'BENEVOLENT_THEME_VERSION' ) && ! defined( 'BENEVOLENT_THEME_NAME' ) && ! defined( 'BENEVOLENT_THEME_TEXTDOMAIN' ) ) {
+	$theme_data = wp_get_theme();	
+	define( 'BENEVOLENT_THEME_VERSION', $theme_data->get( 'Version' ) );
+    define( 'BENEVOLENT_THEME_NAME', $theme_data->get( 'Name' ) );
+    define( 'BENEVOLENT_THEME_TEXTDOMAIN', $theme_data->get( 'TextDomain' ) );
+}
+
 if ( ! function_exists( 'benevolent_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -208,11 +216,12 @@ function benevolent_scripts() {
     
     wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
     wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.6.3', false );
-	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true );	
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true );
+    wp_enqueue_script( 'owl-carousel-aria', get_template_directory_uri() . '/js' . $build . '/owl.carousel.aria' . $suffix . '.js', array('owl-carousel'), '2.0.0', true );	
 	wp_enqueue_script( 'tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array('jquery'), '1.11.4', true );
     wp_enqueue_script( 'waypoint', get_template_directory_uri() . '/js' . $build . '/waypoint' . $suffix . '.js', array('jquery'), '1.6.2', true );
     wp_enqueue_script( 'counterup', get_template_directory_uri() . '/js' . $build . '/jquery.counterup' . $suffix . '.js', array('jquery', 'waypoint'), '1.0', true );
-    wp_register_script( 'benevolent-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), '20160125', true );
+    wp_register_script( 'benevolent-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), BENEVOLENT_THEME_VERSION, true );
     
 	$benevolent_slider_auto      = get_theme_mod( 'benevolent_slider_auto', '1' );
 	$benevolent_slider_loop      = get_theme_mod( 'benevolent_slider_loop', '1' );
@@ -240,13 +249,73 @@ function benevolent_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'benevolent_scripts' );
 
-if ( is_admin() ) : // Load only if we are viewing an admin page
 function benevolent_admin_scripts() {
-	wp_enqueue_style( 'benevolent-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );    
+	wp_enqueue_style( 'benevolent-admin-style',get_template_directory_uri().'/inc/css/admin.css','', BENEVOLENT_THEME_VERSION );    
     wp_enqueue_script( 'benevolent-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );
 }
 add_action( 'admin_enqueue_scripts', 'benevolent_admin_scripts' );
+
+if( ! function_exists( 'benevolent_admin_notice' ) ) :
+/**
+ * Addmin notice for getting started page
+*/
+function benevolent_admin_notice(){
+    global $pagenow;
+    $theme_args      = wp_get_theme();
+    $meta            = get_option( 'benevolent_admin_notice' );
+    $name            = $theme_args->__get( 'Name' );
+    $current_screen  = get_current_screen();
+    
+    if( 'themes.php' == $pagenow && !$meta ){
+        
+        if( $current_screen->id !== 'dashboard' && $current_screen->id !== 'themes' ){
+            return;
+        }
+
+        if( is_network_admin() ){
+            return;
+        }
+
+        if( ! current_user_can( 'manage_options' ) ){
+            return;
+        } ?>
+
+        <div class="welcome-message notice notice-info">
+            <div class="notice-wrapper">
+                <div class="notice-text">
+                    <h3><?php esc_html_e( 'Congratulations!', 'benevolent' ); ?></h3>
+                    <p><?php printf( __( '%1$s is now installed and ready to use. Click below to see theme documentation, plugins to install and other details to get started.', 'benevolent' ), $name ) ; ?></p>
+                    <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=benevolent-getting-started' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Go to the getting started.', 'benevolent' ); ?></a></p>
+                    <p class="dismiss-link"><strong><a href="?benevolent_admin_notice=1"><?php esc_html_e( 'Dismiss', 'benevolent' ); ?></a></strong></p>
+                </div>
+            </div>
+        </div>
+    <?php }
+}
 endif;
+add_action( 'admin_notices', 'benevolent_admin_notice' );
+
+if( ! function_exists( 'benevolent_update_admin_notice' ) ) :
+/**
+ * Updating admin notice on dismiss
+*/
+function benevolent_update_admin_notice(){
+    if ( isset( $_GET['benevolent_admin_notice'] ) && $_GET['benevolent_admin_notice'] = '1' ) {
+        update_option( 'benevolent_admin_notice', true );
+    }
+}
+endif;
+add_action( 'admin_init', 'benevolent_update_admin_notice' );
+
+if( ! function_exists( 'benevolent_restore_admin_notice' ) ) :
+/**
+ * Restoring admin notice on theme switch
+ */
+function benevolent_restore_admin_notice(){
+    update_option( 'benevolent_admin_notice', false );
+}
+endif;
+add_action( 'after_switch_theme', 'benevolent_restore_admin_notice' );
 
 /**
  * Custom template tags for this theme.
@@ -293,6 +362,10 @@ require get_template_directory() . '/inc/widget-popular-post.php';
  */
 require get_template_directory() . '/inc/widget-social-links.php';
 
+/**
+ * Getting Started
+*/
+require get_template_directory() . '/inc/getting-started/getting-started.php';
 /**
  * Theme Info
  */

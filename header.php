@@ -23,6 +23,7 @@
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <?php wp_body_open(); ?>
 <div id="page" class="site">	
+    <a class="skip-link screen-reader-text" href="#acc-content"><?php esc_html_e( 'Skip to content (Press Enter)', 'benevolent' ); ?></a>
     <div class="mobile-header">
         <div class="container">
             <?php 
@@ -132,15 +133,17 @@
                     </div>
         		</div><!-- .site-branding -->
                 
-                <?php 
-                    $button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
-                    $button_url = get_theme_mod( 'benevolent_button_url' );
-                    if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '" class="btn-donate">' . esc_html( $button_text ) . '</a>';
-                ?>
-                
-        		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-        		</nav><!-- #site-navigation -->
+                <div class="right-panel">
+                    <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                    </nav><!-- #site-navigation -->
+
+                    <?php 
+                        $button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
+                        $button_url = get_theme_mod( 'benevolent_button_url' );
+                        if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '" class="btn-donate">' . esc_html( $button_text ) . '</a>';
+                    ?>
+                </div>
                 
                 <div id="mobile-header">
     			    <a id="responsive-menu-button" href="javascript:void(0);"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
@@ -156,7 +159,7 @@
     $enabled_sections = benevolent_get_sections();
     
     if( ( is_front_page() || is_page_template( 'template-home.php' ) ) && get_theme_mod( 'benevolent_ed_slider' ) ) do_action( 'benevolent_slider' );
-    
+    echo '<div id="acc-content"><!-- done for accessibility reasons -->';
     if( is_home() || ! $enabled_sections || !( is_front_page() || is_page_template( 'template-home.php' ) ) ) echo '<div class="container">';
     
     //BreadCrumbs
