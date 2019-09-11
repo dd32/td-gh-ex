@@ -2,8 +2,8 @@
 Contributors: weblizar
 Tags: left-sidebar, two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,  custom-logo , news
 Requires at least: 4.0
-Tested up to: 5.2.2
-Stable tag: 5.31
+Tested up to: 5.2.3
+Stable tag: 5.32
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,9 @@ Enigma is an outstanding superfine creation from weblizar, Enigma has become one
 Please drop your issues here <a href="https://wordpress.org/support/theme/enigma"> we'll try to triage issues reported on the theme forum, you'll get a faster response.
 
 == Changelog ==
+= 5.32 = 
+ScrollTop Fix
+
 
 = 5.31 = 
 minor fixes.

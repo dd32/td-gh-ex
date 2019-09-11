@@ -153,10 +153,10 @@ if (!function_exists('enigma_display_theme_info_page')) {
 							<div class="row p_plugin blog_gallery">
                                 <div class="col-xs-12 col-sm-4 col-md-4 p_plugin_pic">
                                     <div class="img-thumbnail pro_theme">
-										<img src="<?php echo get_template_directory_uri(); ?>/images/fashion-png03.png" class="img-responsive" alt="img"/>
+										<img src="<?php echo get_template_directory_uri(); ?>/images/492X-CORPO.jpg" class="img-responsive" alt="img"/>
 										<div class="btn-vertical">
 										<h4 class="pro_thm">
-                                        <a href="<?php echo esc_url( __( 'https://weblizar.com/themes/construction-premium-wordpress-theme/', 'enigma' ) ); ?>"><?php esc_html_e('Construction Premium','enigma'); ?></a></h4>
+                                        <a href="<?php echo esc_url( __( 'https://weblizar.com/themes/eatos-premium-restaurant-theme/', 'enigma' ) ); ?>"><?php esc_html_e('Eatos Premium','enigma'); ?></a></h4>
 										</div>
                                     </div>
 									
@@ -197,7 +197,7 @@ if (!function_exists('enigma_display_theme_info_page')) {
 						<div class="row p_plugin blog_gallery">		
 						<div class="columns">
 						  <ul class="price">
-							<li class="header" style="background:#31A3DD"><?php esc_html_e('Enigma','enigma'); ?></li>
+							<li class="header" style="background:##e91e63"><?php esc_html_e('Enigma','enigma'); ?></li>
 							<li class="grey"><?php esc_html_e('Features','enigma'); ?></li>
 							<li><?php esc_html_e('Front Page','enigma'); ?></li>
 							<li><?php esc_html_e('Parallax Design','enigma'); ?></li>
@@ -231,7 +231,7 @@ if (!function_exists('enigma_display_theme_info_page')) {
 
 						<div class="columns">
 						  <ul class="price">
-							<li class="header" style="background-color:#31A3DD"><?php esc_html_e('Enigma Pro','enigma'); ?></li>
+							<li class="header" style="background-color:##e91e63"><?php esc_html_e('Enigma Pro','enigma'); ?></li>
 							<li class="grey">$ 39</li>
 							<li><i class="fa fa-check"></i></li>
 							<li><i class="fa fa-check"></i></li>

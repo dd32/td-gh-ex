@@ -56,9 +56,8 @@
 		</div>		
 	</div>		
 </div>	
-<!-- /Footer Widget Secton -->
+<!-- /Footer Widget Secton--> <a id="btn-to-top" ></a>
 </div>
-<a href="#" title="Go Top" class="enigma_scrollup" style="display: inline;"><i class="fa fa-chevron-up"></i></a>
 <?php if($wl_theme_options['custom_css']) ?>
 <style type="text/css">
 <?php { echo esc_attr($wl_theme_options['custom_css']); } ?>
