@@ -26,7 +26,6 @@
 <a target="_blank" href="<?php echo esc_url( 'https://gretathemes.com/' . $this->utm ); ?>" class="wp-badge"><?php esc_html_e( 'GretaThemes', 'bayn-lite' ); ?></a>
 
 <p class="about-buttons">
+	<a href="<?php echo esc_url( "https://gretathemes.com/docs/{$this->pro_slug}/{$this->utm }" ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e( 'Documentation', 'bayn-lite' ); ?></a>
 	<a target="_blank" class="button" href="<?php echo esc_url( 'https://gretathemes.com/support/' . $this->utm ); ?>"><?php esc_html_e( 'Support', 'bayn-lite' ); ?></a>
-	<a target="_blank" class="button" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.facebook.com/gretathemes/"><span class="dashicons dashicons-facebook-alt"></span><?php esc_html_e( ' Share', 'bayn-lite' ); ?></a>
-	<a target="_blank" class="button" href="https://twitter.com/home?status=Free%20and%20Premium%20WordPress%20Themes%20https%3A//gretathemes.com/%20via%20%40gretathemes"><span class="dashicons dashicons-twitter"></span><?php esc_html_e( ' Tweet', 'bayn-lite' ); ?></a>
 </p>

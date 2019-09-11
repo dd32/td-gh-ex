@@ -55,8 +55,7 @@ class Bayn_Lite_Dashboard {
 		$this->utm      = '?utm_source=WordPress&utm_medium=link&utm_campaign=' . $this->slug;
 
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
-		add_action( 'admin_init', array( $this, 'redirect' ) );
-		add_filter( 'wpforms_shareasale_id', array( $this, 'wpforms_shareasale_id' ) );
+		add_action( 'admin_notices', array( $this, 'notice' ) );
 	}
 
 	/**
@@ -87,12 +86,10 @@ class Bayn_Lite_Dashboard {
 							<?php include get_template_directory() . '/inc/dashboard/sections/welcome.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/tabs.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/getting-started.php'; ?>
-							<?php include get_template_directory() . '/inc/dashboard/sections/actions.php'; ?>
+							<?php include get_template_directory() . '/inc/dashboard/sections/recommended-actions.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/pro.php'; ?>
-							<?php include get_template_directory() . '/inc/dashboard/sections/recommendation.php'; ?>
 						</div>
 						<div id="postbox-container-1" class="postbox-container">
-							<?php include get_template_directory() . '/inc/dashboard/sections/newsletter.php'; ?>
 							<?php include get_template_directory() . '/inc/dashboard/sections/upgrade.php'; ?>
 						</div>
 					</div>
@@ -106,10 +103,9 @@ class Bayn_Lite_Dashboard {
 	 * Enqueue scripts for dashboard page.
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'slick', get_template_directory_uri() . '/inc/dashboard/css/slick.css' );
 		wp_enqueue_style( "{$this->slug}-dashboard-style", get_template_directory_uri() . '/inc/dashboard/css/dashboard-style.css' );
-		wp_enqueue_script( 'slick', get_template_directory_uri() . '/inc/dashboard/js/slick.js', array( 'jquery' ), '1.8.0', true );
-		wp_enqueue_script( "{$this->slug}-dashboard-script", get_template_directory_uri() . '/inc/dashboard/js/script.js', array( 'slick' ), '', true );
+		wp_enqueue_script( "{$this->slug}-dashboard-slick", get_template_directory_uri() . '/inc/dashboard/js/slick.js', array( 'jquery' ), '1.8.0', true );
+		wp_enqueue_script( "{$this->slug}-dashboard-script", get_template_directory_uri() . '/inc/dashboard/js/script.js', array( 'jquery' ), '', true );
 	}
 
 	/**
@@ -119,17 +115,6 @@ class Bayn_Lite_Dashboard {
 	public function footer_text() {
 		// Translators: theme name and theme slug.
 		echo wp_kses_post( sprintf( __( 'Please rate <strong>%1$s</strong> <a href="https://wordpress.org/support/theme/%2$s/reviews/?filter=5" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="https://wordpress.org/support/theme/%2$s/reviews/?filter=5" target="_blank">WordPress.org</a> to help us spread the word. Thank you from GretaThemes!', 'bayn-lite' ), $this->pro_name, $this->slug ) );
-	}
-
-	/**
-	 * Redirect to dashboard page after theme activation.
-	 */
-	public function redirect() {
-		global $pagenow;
-		if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
-			wp_safe_redirect( admin_url( "themes.php?page={$this->slug}" ) );
-			exit;
-		}
 	}
 
 	/**
@@ -181,21 +166,29 @@ class Bayn_Lite_Dashboard {
 	}
 
 	/**
-	 * Set the WPForms ShareASale ID.
-	 *
-	 * @param string $shareasale_id The the default ShareASale ID.
-	 *
-	 * @return string $shareasale_id
+	 * Add a notice after theme activation.
 	 */
-	public function wpforms_shareasale_id( $shareasale_id ) {
-		$id = '424629';
-
-		if ( ! empty( $shareasale_id ) && $shareasale_id == $id ) {
-			return $shareasale_id;
+	public function notice() {
+		global $pagenow;
+		if ( is_admin() && isset( $_GET['activated'] ) && 'themes.php' === $pagenow ) {
+			?>
+			<div class="updated notice notice-success is-dismissible">
+				<p>
+					<?php
+					// Translators: theme name and welcome page.
+					echo wp_kses_post( sprintf( __( 'Welcome! Thank you for choosing %1$s. To get started, visit our <a href="%2$s">welcome page</a>.', 'bayn-lite' ), $this->theme->name, esc_url( admin_url( 'themes.php?page=' . $this->slug ) ) ) );
+					?>
+				</p>
+				<p>
+					<a class="button" href="<?php echo esc_url( admin_url( 'themes.php?page=' . $this->slug ) ); ?>">
+						<?php
+						// Translators: theme name.
+						echo esc_html( sprintf( __( 'Get started with %s', 'bayn-lite' ), $this->theme->name ) );
+						?>
+					</a>
+				</p>
+			</div>
+			<?php
 		}
-
-		update_option( 'wpforms_shareasale_id', $id );
-
-		return $id;
 	}
 }

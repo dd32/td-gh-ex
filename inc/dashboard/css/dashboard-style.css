@@ -1,3 +1,5 @@
+@import 'slick.css';
+
 .about-wrap .wp-badge {
 	background-image: url(../images/logo.png);
 	background-color: #fff;
@@ -50,6 +52,12 @@ a {
 
 .feature-section.two-col {
 	align-items: flex-start;
+	display: flex;
+	justify-content: space-between;
+}
+
+.feature-section .col {
+	width: 47%;
 }
 
 .feature-section.two-col h3:not(:first-child) {
@@ -59,6 +67,7 @@ a {
 .feature-section img {
 	display: block;
 	box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    margin-top: 30px;
 }
 
 .nav-tab-active:focus {
@@ -103,71 +112,6 @@ a {
 
 .form-table .dashicons-no {
 	color: red;
-}
-
-/* Extensions tab */
-.extension-inner {
-	display: flex;
-	background: #fff;
-	padding: 25px 20px;
-}
-.extension-inner svg {
-	width: 36px;
-	height: 36px;
-	margin: 8px 15px 0 0;
-	fill: #b4b9be;
-}
-.extension-info {
-	flex: 1;
-}
-.extension-info.extension-info h3 {
-	margin: 0 0 5px;
-	font-size: 1.2em;
-}
-.extension-info p {
-	margin: 0;
-}
-.extension-action {
-	border-top: 1px solid #ddd;
-	text-align: center;
-	padding: 20px;
-	background: #f7f7f7;
-}
-
-/* Extensions tab: 2 columns */
-.extension {
-	margin-bottom: 4%;
-}
-@media (min-width: 768px) {
-	.extension {
-		float: left;
-		width: 47.5%;
-		margin: 0 4% 4% 0;
-	}
-	.extension:nth-child(2n) {
-		margin-right: 0;
-	}
-	.extension:nth-child(2n+1) {
-		clear: left;
-	}
-}
-/* For large screen: 2 columns */
-@media (min-width: 1640px) {
-	.extension {
-		width: 30.6%;
-	}
-	.extension:nth-child(2n) {
-		margin-right: 4%;
-	}
-	.extension:nth-child(2n+1) {
-		clear: none;
-	}
-	.extension:nth-child(3n) {
-		margin-right: 0;
-	}
-	.extension:nth-child(3n+1) {
-		clear: left;
-	}
 }
 
 /* Right column */
@@ -222,6 +166,7 @@ a {
 	border: 3px dashed #82878c;
 	background: #fff;
 	padding: 15px;
+	margin-top: 40px;
 }
 .upgrade .dashicons {
 	color: #ef4836;

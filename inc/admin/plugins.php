@@ -32,5 +32,9 @@ function bayn_lite_required_plugins() {
 			'name' => esc_html__( 'Jetpack', 'bayn-lite' ),
 			'slug' => 'jetpack',
 		),
+		array(
+			'name' => esc_html__( 'Slim SEO', 'bayn-lite' ),
+			'slug' => 'slim-seo',
+		)
 	);
 }

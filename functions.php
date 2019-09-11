@@ -216,3 +216,13 @@ $dashboard = new Bayn_Lite_Dashboard();
 require get_template_directory() . '/inc/customizer-pro/class-bayn-lite-customizer-pro.php';
 $customizer_pro = new Bayn_Lite_Customizer_Pro();
 $customizer_pro->init();
+
+/**
+ * Style gutenberg
+ */
+function bayn_lite_style_editor_gutenberg() {
+	// Load the theme styles within Gutenberg.
+	wp_enqueue_style( 'bayn-fonts', bayn_lite_fonts_url() );
+	wp_enqueue_style( 'style-editor', get_theme_file_uri( '/style-editor.css' ), false );
+}
+add_action( 'enqueue_block_editor_assets', 'bayn_lite_style_editor_gutenberg' );
