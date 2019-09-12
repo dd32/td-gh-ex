@@ -52,7 +52,7 @@ if ( ! function_exists( 'adonis_featured_image' ) ) :
 				return get_header_image();
 			}
 		} elseif ( is_header_video_active() && has_header_video() ) {
-			return get_header_image();
+			return true;
 		} else {
 			return get_header_image();
 		}
@@ -93,13 +93,8 @@ if ( ! function_exists( 'adonis_featured_overall_image' ) ) :
 	 * @since Adonis 0.1
 	 */
 	function adonis_featured_overall_image() {
-		global $post, $wp_query;
+		global $post;
 		$enable = get_theme_mod( 'adonis_header_media_option', 'entire-site-page-post' );
-
-		// Get Page ID outside Loop
-		$page_id = absint( $wp_query->get_queried_object_id() );
-
-		$page_for_posts = absint( get_option( 'page_for_posts' ) );
 
 		// Check Enable/Disable header image in Page/Post Meta box
 		if ( is_singular() ) {
@@ -115,20 +110,20 @@ if ( ! function_exists( 'adonis_featured_overall_image' ) ) :
 
 		// Check Homepage
 		if ( 'homepage' === $enable ) {
-			if ( is_front_page() || ( is_home() && $page_for_posts !== $page_id ) ) {
+			if ( is_front_page() || ( is_home() && is_front_page() ) ) {
 				return adonis_featured_image();
 			}
 		} elseif ( 'exclude-home' === $enable ) {
 			// Check Excluding Homepage
-			if ( is_front_page() || ( is_home() && $page_for_posts !== $page_id ) ) {
+			if ( is_front_page() || ( is_home() && is_front_page() ) ) {
 				return false;
 			} else {
 				return adonis_featured_image();
 			}
 		} elseif ( 'exclude-home-page-post' === $enable ) {
-			if ( is_front_page() || ( is_home() && $page_for_posts !== $page_id ) ) {
+			if ( is_front_page() || ( is_home() && is_front_page() ) ) {
 				return false;
-			} elseif ( is_singular() ) {
+			} elseif ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
 				return adonis_featured_page_post_image();
 			} else {
 				return adonis_featured_image();
@@ -138,7 +133,7 @@ if ( ! function_exists( 'adonis_featured_overall_image' ) ) :
 			return adonis_featured_image();
 		} elseif ( 'entire-site-page-post' === $enable ) {
 			// Check Entire Site (Post/Page)
-			if ( is_singular() || ( is_home() && $page_for_posts === $page_id ) ) {
+			if ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
 				return adonis_featured_page_post_image();
 			} else {
 				return adonis_featured_image();
