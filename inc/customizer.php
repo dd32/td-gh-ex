@@ -579,6 +579,16 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'panel' => 'advance_blogging_panel_id'
 	) );
 
+	$wp_customize->add_setting('advance_blogging_slider_arrows',array(
+      'default' => 'false',
+      'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_slider_arrows',array(
+	      'type' => 'checkbox',
+	      'label' => __('Show / Hide slider','advance-blogging'),
+	      'section' => 'advance_blogging_slider_section',
+	));
+
 	for ( $count = 1; $count <= 4; $count++ ) {
 
 		// Add color scheme setting and control.

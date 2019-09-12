@@ -15,9 +15,9 @@ get_header(); ?>
 
 <div class="container">
     <div class="middle-align">       
-        <div id="content-aa">
+        <main id="main" role="main" class="content-aa">
             <?php while ( have_posts() ) : the_post(); ?>
-                <img src="<?php the_post_thumbnail_url('full'); ?>">
+                <?php the_post_thumbnail();  ?>
                 <h1><?php the_title(); ?></h1>
                 <?php the_content();
                 wp_link_pages( array(
@@ -29,9 +29,8 @@ get_header(); ?>
                     if ( comments_open() || '0' != get_comments_number() )
                         comments_template();
                 ?>
-            <?php endwhile; // end of the loop. ?>
-             
-        </div>
+            <?php endwhile; // end of the loop. ?>   
+        </main>
         <div class="clearfix"></div>              
     </div>
 </div>

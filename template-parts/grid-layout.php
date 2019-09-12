@@ -8,7 +8,7 @@
  */
 ?>
 <div class="col-lg-4 col-md-4">
-    <div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
         <div class="mdallpostimage">
             <div class="postimage">
                 <?php 
@@ -23,5 +23,5 @@
             </div>
             <div class="clearfix"></div> 
         </div>
-    </div>
+    </article>
 </div>

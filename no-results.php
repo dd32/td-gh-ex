@@ -8,7 +8,7 @@
  */
 ?>
 
-<header>
+<header role="banner">
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-blogging' ); ?></h1>
 </header>
 

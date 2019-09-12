@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 4.8
 Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.6
+Stable tag: 0.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,10 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Updated POT file.
 * Added updated woocommerce. 
 * Resolved theme issue.
+
+= 0.6.1 =
+* Added skip to content part in the theme.
+* Updated POT file.
 
 == Resources ==
 

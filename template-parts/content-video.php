@@ -10,13 +10,12 @@
 <?php
   $content = apply_filters( 'the_content', get_the_content() );
   $video = false;
-
   // Only get video from the content if a playlist isn't present.
   if ( false === strpos( $content, 'wp-playlist-script' ) ) {
     $video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
   }
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
   <div class="postbox mdallpostimage">
     <div class="postimage">
       <?php
@@ -47,4 +46,4 @@
     </div>
     <div class="clearfix"></div> 
   </div> 
-</div>
+</article>

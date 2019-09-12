@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<section id="wrapper-box">
+<main id="main" role="main" class="wrapper-box">
     <div class="container">
         <?php
             $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
@@ -214,6 +214,6 @@ get_header(); ?>
             </div>
         <?php } ?>
     </div>
-</section>
+</main>
 
 <?php get_footer(); ?>

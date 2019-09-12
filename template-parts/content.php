@@ -7,8 +7,7 @@
  * @since Advance Blogging 1.0
  */
 ?>
-
-<div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="postbox mdallpostimage">
         <div class="postimage">
             <?php 
@@ -31,4 +30,4 @@
         </div>
         <div class="clearfix"></div> 
     </div> 
-</div>
+</article>

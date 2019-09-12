@@ -1,4 +1,5 @@
 /* rtl css */
+
 *{
   margin:0;
   padding:0;
@@ -14,6 +15,7 @@ body{
   color:#222;
   width: 100%;
   font-family: 'Poppins', sans-serif; 
+  overflow-x: hidden;
 }
 img{
   margin:0;
@@ -52,6 +54,10 @@ a:hover{
 }
 a:focus,a:hover{
   text-decoration:none !important;
+}
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
 }
 ul{
   margin:0 15px 0 0;
@@ -101,6 +107,35 @@ input[type='submit']:hover{
   position: absolute;
   top:-9999em;
   right:-9999em;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .post.sticky{
   margin:0;
@@ -155,7 +190,7 @@ input[type='submit']:hover{
 #respond{
   clear:both;
 }
-.toggleMenu{
+.toggle{
   display:none;
 }
 .bypostauthor{
@@ -188,7 +223,6 @@ input[type="submit"] {
   background: #f73637;
   font-weight: bold;
   color: #000;
-  margin: 23px auto 0;
   display: table;
 }
 input[type="submit"]:hover{
@@ -203,7 +237,6 @@ a.button{
   font-size: 16px;
   margin: 20px 0;
   padding: 7px 30px;
-  letter-spacing:1px;
 }
 
 /* ---------HEADER--------- */
@@ -444,14 +477,12 @@ input.search-field {
   font-size: 30px;
   font-weight: bold;
   text-align: right;
-  letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0px !important;
   padding: 0px !important;
 }
 #slider .inner_carousel p{
   font-size: 13px;
-  letter-spacing: 1px;
   margin: 0px !important;
   padding: 0px !important;
   color: #fff;
@@ -466,13 +497,11 @@ input.search-field {
 /* --------- Category blog--------- */
  .cat-box h4{
   color: #fff;
-  letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
   padding: 0;
 } 
 .cat-box p{
-  letter-spacing: 1px;
   font-size: 12px;
   color: #fff;
   margin-bottom: 0;
@@ -508,9 +537,9 @@ input.search-field {
 span.entry-date i,
 span.entry-author i,
 span.entry-comments i,
-#content-aa .metbox .entry-date,
-#content-aa .metbox .entry-author,
-#content-aa .metbox .entry-comments{
+.content-aa .metbox .entry-date,
+.content-aa .metbox .entry-author,
+.content-aa .metbox .entry-comments{
   margin-left: 10px;
 }
 /* single post end*/
@@ -529,7 +558,7 @@ span.entry-comments i,
 }
 .button-post a {
   background: #f73637;
-  color: #fff;
+  color: #fff !important;
   padding: 10px 15px;
   font-weight: bold;
 }
@@ -562,7 +591,12 @@ hr.metahr {
 .month {
   margin-top: 5px;
 }
-
+.entry-audio audio {
+    width: 100%;
+}
+iframe{
+  width: 100%;
+}
 
 /*latest post end*/    
 /* woocommerce */
@@ -582,13 +616,12 @@ select.orderby{
 .products li {
   border: solid 1px #dcdcdc;
   padding: 10px !important;
-  width: 30% !important;
+  width: 29%;
   text-align: center;
 }
 h2.woocommerce-loop-product__title,
 .woocommerce div.product .product_title {
   color: #000;
-  letter-spacing: 1px;
   font-weight: 500;
 }
 .woocommerce ul.products li.product .price,
@@ -601,7 +634,7 @@ h2.woocommerce-loop-product__title,
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
   background: #f73637;
-  color: #000;
+  color: #000 !important;
   border-radius: 0;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
@@ -615,6 +648,9 @@ h2.woocommerce-loop-product__title,
   border: solid 1px #000;
   color: #000;
 }
+.woocommerce div.product, .woocommerce div#sidebar {
+  margin-top: 20px;
+}
 .col-1,.col-2 {
   max-width: 100%;
 }
@@ -622,15 +658,21 @@ nav.woocommerce-MyAccount-navigation ul {
   list-style: none;
 }
 nav.woocommerce-MyAccount-navigation ul li {
+    background: #f73637;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+nav.woocommerce-MyAccount-navigation ul li {
   background: #f73637;
   padding: 10px;
   margin-bottom: 10px;
   color: #000;
   margin-left: 10px;
+  width: 100%;
 }
 nav.woocommerce-MyAccount-navigation ul li a,
 .woocommerce ul.products li.product .button{
-  color: #000;
+  color: #000 !important;
   font-size: 15px;
 }
 .posted_in {
@@ -645,10 +687,11 @@ a.button.wc-forward,
 a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover{
   color: #fff;
 }
-.woocommerce-account .woocommerce-MyAccount-navigation,
-.woocommerce-account .woocommerce-MyAccount-content{
-  float: right;
-  width: 100%;
+#add_payment_method table.cart td, #add_payment_method table.cart th, .woocommerce-cart table.cart td, .woocommerce-cart table.cart th, .woocommerce-checkout table.cart td, .woocommerce-checkout table.cart th {
+  font-size: 14px;
+}
+.woocommerce-info, #add_payment_method .cart-collaterals .cart_totals tr td, #add_payment_method .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-checkout .cart-collaterals .cart_totals tr td, .woocommerce-checkout .cart-collaterals .cart_totals tr th{
+  font-size: 14px;
 }
 span.woocommerce-input-wrapper,
 .woocommerce label {
@@ -660,12 +703,15 @@ span.woocommerce-input-wrapper,
 }
 .footertown input.search-field{
   border: 1px solid #f73637;
+  padding: 10px;
+  width: 100%;
 }
 .footertown input[type="submit"] {
   background: #f73637;
   border: 1px solid #f73637;
-  padding: 5px 20px;
+  padding: 10px;
   color:#000;
+  width: 100%;
 }
 .footertown .tagcloud a,
 .rssSummary,
@@ -718,7 +764,6 @@ span.woocommerce-input-wrapper,
 }
 .footertown .widget h3 {
   color: #f73637;
-  letter-spacing: 1px;
   border-bottom: 3px double;
   margin-bottom: 10px;
 }
@@ -737,7 +782,7 @@ span.woocommerce-input-wrapper,
   color: #fff;
 }
 #footer .copyright a{
-  color: #fff;
+  color: #fff !important;
 }
 .footertown .tagcloud a{
   background: transparent;
@@ -753,7 +798,7 @@ span.woocommerce-input-wrapper,
   color: #000;
 }
 /* --------- Blog Page ------- */
-#wrapper-box {
+.wrapper-box {
   padding-top: 3%;
 }
 .postimage img {
@@ -763,7 +808,6 @@ span.woocommerce-input-wrapper,
   background-color: #fff;
   margin-bottom: 25px;
   padding: 15px;
-  letter-spacing: 1px;
 }
 .postbox h2 {
   margin: 0 0 5px;
@@ -944,7 +988,6 @@ span.woocommerce-input-wrapper,
   padding: 10px 0px;
   text-align: right;
   color: #000;
-  letter-spacing: 1px;
   border-bottom: 2px double #f73637;
 }
 #sidebar ul li {
@@ -967,6 +1010,9 @@ span.woocommerce-input-wrapper,
   float:right;
   margin-bottom: 0;
 }
+label {
+    width: 100%;
+}
 #sidebar input[type="submit"]{
   background:#f73637;
   border:none;
@@ -977,7 +1023,6 @@ span.woocommerce-input-wrapper,
   font-weight: bold;
   float:right;
   margin:0;
-  letter-spacing: 1px;
 }
 #sidebar aside {
   margin-bottom: 30px;
@@ -997,7 +1042,6 @@ span.woocommerce-input-wrapper,
 }
 #sidebar ul li a {
   color: #999;
-  letter-spacing: 1px;
   font-size: 15px;
 }
 #sidebar a.rsswidget,
@@ -1147,7 +1191,7 @@ span.woocommerce-input-wrapper,
     position:absolute;
     z-index:9999;
     overflow-x:hidden;
-    top: -17em;
+    top: -16em;
     width: 100%;
     left: 0;
     right: 0;
@@ -1226,12 +1270,11 @@ span.woocommerce-input-wrapper,
     color:#fff;
   }  
   #header .nav ul li a {
-    color: #fff;
+    color: #fff !important;
     padding: 10px;
     display: block;
     font-size: 15px;
     font-weight: normal;
-    letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -1251,5 +1294,24 @@ span.woocommerce-input-wrapper,
 @media screen and (max-width: 991px){
   #header .nav ul li a{
     font-size: 15px;
+  }
+}
+  @media screen and (min-width: 768px){
+  .footertown td {
+    padding: 5px;
+    color: #999;
+  }
+  .footertown th {
+    text-align: center;
+    padding: 0px;
+    color: #999;
+  }
+}
+  @media screen and (max-width: 984px) {
+  #sidebar th {
+    padding: 1px;
+  }
+  #sidebar td {
+    padding: 1px;
   }
 }

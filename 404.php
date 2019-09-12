@@ -6,7 +6,7 @@
  */
 get_header(); ?>
 
-<div id="content-aa">
+<main id="main" role="main" class="content-aa">
 	<div class="container">
         <div class="page-content">
 			<h1><?php esc_html_e( '404 Not Found', 'advance-blogging' ); ?></h1>
@@ -18,6 +18,6 @@ get_header(); ?>
 			<div class="clearfix"></div>
         </div>
 	</div>
-</div>
+</main>
 	
 <?php get_footer(); ?>

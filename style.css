@@ -4,7 +4,7 @@ Theme URI: https://www.themescaliber.com/themes/free-blog-wordpress-theme/
 Author: ThemesCaliber
 Author URI: https://www.themescaliber.com/
 Description: Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc. It is SEO-friendly with its code optimized for search engines. It is written in clean and secure codes complying with WordPress standards. The theme is so lightweight that it loads fast on all devices giving a great user experience. With multiple layout options, unlimited colours and various template designs, you can give your site the desired look. It uses banner and large sliders to leave a lasting impression on visitors. With the implementation of clean code, coding has become bug-free and secure.  The theme is made on Bootstrap framework for easy usage. It is an interacting and at the same time attractive theme for bloggers out there. Demo: https://www.themescaliber.com/advance-blogging-pro/
-Version: 0.6
+Version: 0.6.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: advance-blogging
@@ -70,6 +70,10 @@ a:hover{
 a:focus,a:hover{
   text-decoration:none !important;
 }
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+}
 ul{
   margin:0 0 0 15px;
   padding:0;
@@ -118,6 +122,35 @@ input[type='submit']:hover{
   position: absolute;
   top:-9999em;
   left:-9999em;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 .post.sticky{
   margin:0;
@@ -172,7 +205,7 @@ input[type='submit']:hover{
 #respond{
   clear:both;
 }
-.toggleMenu{
+.toggle{
   display:none;
 }
 .bypostauthor{
@@ -219,7 +252,6 @@ a.button{
   font-size: 16px;
   margin: 20px 0;
   padding: 7px 30px;
-  letter-spacing:1px;
 }
 
 /* ---------HEADER--------- */
@@ -460,14 +492,12 @@ input.search-field {
   font-size: 30px;
   font-weight: bold;
   text-align: left;
-  letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0px !important;
   padding: 0px !important;
 }
 #slider .inner_carousel p{
   font-size: 13px;
-  letter-spacing: 1px;
   margin: 0px !important;
   padding: 0px !important;
   color: #fff;
@@ -482,13 +512,11 @@ input.search-field {
 /* --------- Category blog--------- */
  .cat-box h4{
   color: #fff;
-  letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
   padding: 0;
 } 
 .cat-box p{
-  letter-spacing: 1px;
   font-size: 12px;
   color: #fff;
   margin-bottom: 0;
@@ -524,9 +552,9 @@ input.search-field {
 span.entry-date i,
 span.entry-author i,
 span.entry-comments i,
-#content-aa .metbox .entry-date,
-#content-aa .metbox .entry-author,
-#content-aa .metbox .entry-comments{
+.content-aa .metbox .entry-date,
+.content-aa .metbox .entry-author,
+.content-aa .metbox .entry-comments{
   margin-right: 10px;
 }
 /* single post end*/
@@ -609,7 +637,6 @@ select.orderby{
 h2.woocommerce-loop-product__title,
 .woocommerce div.product .product_title {
   color: #000;
-  letter-spacing: 1px;
   font-weight: 500;
 }
 .woocommerce ul.products li.product .price,
@@ -635,6 +662,9 @@ h2.woocommerce-loop-product__title,
   border-radius: 0;
   border: solid 1px #000;
   color: #000;
+}
+.woocommerce div.product, .woocommerce div#sidebar {
+  margin-top: 20px;
 }
 .col-1,.col-2 {
   max-width: 100%;
@@ -672,11 +702,12 @@ a.button.wc-forward,
 a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover{
   color: #fff;
 }
-/*.woocommerce-account .woocommerce-MyAccount-navigation,
-.woocommerce-account .woocommerce-MyAccount-content{
-  float: left;
-  width: 100%;
-}*/
+#add_payment_method table.cart td, #add_payment_method table.cart th, .woocommerce-cart table.cart td, .woocommerce-cart table.cart th, .woocommerce-checkout table.cart td, .woocommerce-checkout table.cart th {
+  font-size: 14px;
+}
+.woocommerce-info, #add_payment_method .cart-collaterals .cart_totals tr td, #add_payment_method .cart-collaterals .cart_totals tr th, .woocommerce-cart .cart-collaterals .cart_totals tr td, .woocommerce-cart .cart-collaterals .cart_totals tr th, .woocommerce-checkout .cart-collaterals .cart_totals tr td, .woocommerce-checkout .cart-collaterals .cart_totals tr th{
+  font-size: 14px;
+}
 span.woocommerce-input-wrapper,
 .woocommerce label {
  width: 100%;
@@ -748,7 +779,6 @@ span.woocommerce-input-wrapper,
 }
 .footertown .widget h3 {
   color: #f73637;
-  letter-spacing: 1px;
   border-bottom: 3px double;
   margin-bottom: 10px;
 }
@@ -783,7 +813,7 @@ span.woocommerce-input-wrapper,
   color: #000;
 }
 /* --------- Blog Page ------- */
-#wrapper-box {
+.wrapper-box {
   padding-top: 3%;
 }
 .postimage img {
@@ -793,7 +823,6 @@ span.woocommerce-input-wrapper,
   background-color: #fff;
   margin-bottom: 25px;
   padding: 15px;
-  letter-spacing: 1px;
 }
 .postbox h2 {
   margin: 0 0 5px;
@@ -974,7 +1003,6 @@ span.woocommerce-input-wrapper,
   padding: 10px 0px;
   text-align: left;
   color: #000;
-  letter-spacing: 1px;
   border-bottom: 2px double #f73637;
 }
 #sidebar ul li {
@@ -1002,15 +1030,14 @@ label {
 }
 #sidebar input[type="submit"]{
   background:#f73637;
-  border:none;
-  color:#000;
+  border:none;/*
+  color:#000;*/
   padding:10px 0;
   width:30%;
   font-size:14px;
   font-weight: bold;
   float:left;
   margin:0;
-  letter-spacing: 1px;
 }
 #sidebar aside {
   margin-bottom: 30px;
@@ -1030,7 +1057,6 @@ label {
 }
 #sidebar ul li a {
   color: #999;
-  letter-spacing: 1px;
   font-size: 15px;
 }
 #sidebar a.rsswidget,
@@ -1167,7 +1193,7 @@ label {
     width:100%;
     color:#ffffff;
     background:url('images/responsive_menu.png') no-repeat right center #000;
-    padding:10px 10px;
+    padding:10px 136px;
     font-size:16px;
   }
   .nav,
@@ -1264,7 +1290,6 @@ label {
     display: block;
     font-size: 15px;
     font-weight: normal;
-    letter-spacing: 2px;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -1285,6 +1310,7 @@ label {
   #header .nav ul li a{
     font-size: 15px;
   }
+}
   @media screen and (min-width: 768px){
   .footertown td {
     padding: 5px;
@@ -1295,6 +1321,7 @@ label {
     padding: 0px;
     color: #999;
   }
+}
   @media screen and (max-width: 984px) {
   #sidebar th {
     padding: 1px;

@@ -6,14 +6,14 @@
  */
 get_header(); ?>
 
-<div class="middle-align">
+<main id="main" role="main" class="middle-align">
 	<div class="container">
 		<?php
             $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>
 	            <div class="row">
 					<div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
-					<div class="col-lg-8 col-md-8" id="content-aa">
+					<div class="col-lg-8 col-md-8" class="content-aa">
 						<?php while ( have_posts() ) : the_post(); ?>
 							<h1><?php the_title(); ?></h1>
 							<div class="metbox">
@@ -24,7 +24,7 @@ get_header(); ?>
 							<?php if(has_post_thumbnail()) { ?>
 								<hr>
 								<div class="feature-box">	
-									<img src="<?php the_post_thumbnail_url('full'); ?>" >
+									<img role="img" src="<?php the_post_thumbnail_url('full'); ?>" >
 								</div>
 								<hr>					
 							<?php } the_content();
@@ -65,7 +65,7 @@ get_header(); ?>
 			    </div>
 	    <?php }else if($left_right == 'Right Sidebar'){ ?>
 	    	<div class="row">
-		       	<div class="col-lg-8 col-md-8" id="content-aa">
+		       	<div class="col-lg-8 col-md-8" class="content-aa">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title(); ?></h3>
 						<div class="metbox">
@@ -76,7 +76,7 @@ get_header(); ?>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
 							<div class="feature-box">	
-								<img src="<?php the_post_thumbnail_url('full'); ?>" >
+								<img role="img" src="<?php the_post_thumbnail_url('full'); ?>" >
 							</div>
 							<hr>					
 						<?php } the_content();
@@ -116,7 +116,7 @@ get_header(); ?>
 				<div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
 			</div>
 		<?php }else if($left_right == 'One Column'){ ?>
-			<div id="content-aa">
+			<div class="content-aa">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h3><?php the_title(); ?></h3>
 					<div class="metbox">
@@ -127,7 +127,7 @@ get_header(); ?>
 					<?php if(has_post_thumbnail()) { ?>
 						<hr>
 						<div class="feature-box">	
-							<img src="<?php the_post_thumbnail_url('full'); ?>">
+							<img role="img" src="<?php the_post_thumbnail_url('full'); ?>">
 						</div>
 						<hr>					
 					<?php } the_content();
@@ -168,7 +168,7 @@ get_header(); ?>
 	    <?php }else if($left_right == 'Three Columns'){ ?>
 	    	<div class="row">
 		       	<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
-		       	<div class="col-lg-6 col-md-6" id="content-aa">
+		       	<div class="col-lg-6 col-md-6" class="content-aa">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title(); ?></h3>
 						<div class="metbox">
@@ -179,7 +179,7 @@ get_header(); ?>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
 							<div class="feature-box">	
-								<img src="<?php the_post_thumbnail_url('full'); ?>">
+								<img role="img" src="<?php the_post_thumbnail_url('full'); ?>">
 							</div>
 							<hr>					
 						<?php } the_content();
@@ -222,7 +222,7 @@ get_header(); ?>
 		<?php }else if($left_right == 'Four Columns'){ ?>
 			<div class="row">
 				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
-		       	<div class="col-lg-3 col-md-3" id="content-aa">
+		       	<div class="col-lg-3 col-md-3" class="content-aa">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title(); ?></h3>
 						<div class="metbox">
@@ -233,7 +233,7 @@ get_header(); ?>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
 							<div class="feature-box">	
-								<img src="<?php the_post_thumbnail_url('full'); ?>" >
+								<img role="img" src="<?php the_post_thumbnail_url('full'); ?>" >
 							</div>
 							<hr>					
 						<?php } the_content();
@@ -275,7 +275,7 @@ get_header(); ?>
 			</div>
         <?php }else if($left_right == 'Grid Layout'){ ?>
         	<div class="row">
-				<div class="col-lg-8 col-md-8" id="content-aa">
+				<div class="col-lg-8 col-md-8" class="content-aa">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h3><?php the_title(); ?></h3>
 						<div class="metbox">
@@ -286,7 +286,7 @@ get_header(); ?>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
 							<div class="feature-box">	
-								<img src="<?php the_post_thumbnail_url('full'); ?>" >
+								<img role="img" src="<?php the_post_thumbnail_url('full'); ?>" >
 							</div>
 							<hr>					
 						<?php } the_content();
@@ -328,5 +328,6 @@ get_header(); ?>
         <?php } ?>
         <div class="clearfix"></div>
     </div>
-</div>
+</main>
+
 <?php get_footer(); ?>
