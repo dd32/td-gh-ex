@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.25
+* HTML & CSS fix
+Premium: Fixed WhatsApp Social Links to open WhatsApp chat
+
 #### 1.1.24
 * Style tweaks/fixes
 * Added HubSpot as a recommended CRM plugin

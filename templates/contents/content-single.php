@@ -5,15 +5,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php get_template_part( '/templates/titlebar' ); ?>
-		
-		<?php if ( !get_theme_mod( 'avant-single-remove-meta' ) ) : ?>
-			<div class="entry-meta">
-				<?php avant_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+
+	<?php get_template_part( '/templates/titlebar' ); ?>
+	
+	<?php if ( !get_theme_mod( 'avant-single-remove-meta' ) ) : ?>
+		<div class="entry-meta">
+			<?php avant_posted_on(); ?>
+		</div><!-- .entry-meta -->
+	<?php endif; ?>
 	
 	<?php if ( get_theme_mod( 'avant-single-page-fimage-layout' ) == 'avant-single-page-fimage-layout-standard' ) : ?>
 	
