@@ -25,8 +25,6 @@ function benzer_premium_setting( $wp_customize ) {
 					
 					<li><a href="https://speciatheme.com/benzer-premium/" class="btn-red" target="_blank"><i class="dashicons dashicons-cart"></i><?php _e( 'Buy Now','benzer' ); ?> </a></li>
 					
-					<li><a href="https://speciatheme.com/themes/" class="btn-green"><i class="dashicons dashicons-visibility"></i><?php _e( 'Our Themes','benzer' ); ?> </a></li>
-					
 					<li><a href="http://specia.ticksy.com/" class="btn-green" target="_blank"><i class="dashicons dashicons-sos"></i><?php _e( 'Support Center','benzer' ); ?> </a></li>
 				</ul>
 			</div>
@@ -34,11 +32,7 @@ function benzer_premium_setting( $wp_customize ) {
 				<ul>
 					<li><a href="http://docs.speciatheme.com/themes/benzer-free/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/documentation.png"></a></li>
 					
-					<li><a href="https://specia.ticksy.com/submit/#100013009" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/support.png"></a></li>
-					
 					<li><a href="https://wordpress.org/support/theme/benzer/reviews/#new-post" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rating.png"></a></li>
-					
-					<li><a href="https://speciatheme.com/benzer-premium/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/upgrade-pro.jpg"></a></li>
 				</ul>
 			</div>
 		<?php
