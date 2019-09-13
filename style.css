@@ -4,15 +4,11 @@ Theme URI: https://thememattic.com/theme/best-education
 Author: Thememattic
 Author URI: https://thememattic.com
 Description: Best Education is the flexible and highly responsive wordpress theme that helps in creating the best website for education instituitions like schools, colleges, primary schools, universities and various others business related to the education, teaching and learning. It has many features that supports all the functionalities of an educational website. Loaded with powerful plugin named "Education Connect", helps in creating the outstanding website for your school or college within a very less time. By featuring a responsive layout, it is clear that visitors can use any mobile device or desktop screen for reaching the website. It is perfectly optimized to support all the latest trends in SEO on-page optimization. View Live Preview: https://demo.thememattic.com/best-education and For Documentation: https://docs.thememattic.com/best-education
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-education
-Tags: blog, portfolio, education, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments, footer-widgets
-
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+Tags: blog, portfolio, education, one-column, two-columns, left-sidebar, right-sidebar,  rtl-language-support, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments, footer-widgets
 */
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -623,16 +619,24 @@ a {
     text-decoration: none;
 }
 
+a:active,
 a:visited {
     color: #434343;
-    outline: none !important;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus {
     text-decoration: none;
-    outline: none !important;
 }
 
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -930,7 +934,9 @@ a:hover, a:focus, a:active {
         transition: opacity 0.2s, top 0.4s, visibility 0s linear 0.4s;
     }
 
-    .main-navigation .menu li:hover > ul {
+    .main-navigation .menu li:hover > ul,
+    .main-navigation .menu li:focus > ul,
+    .main-navigation .menu li:focus-within > ul{
         visibility: visible;
         filter: alpha(opacity=1);
         opacity: 1;
@@ -958,10 +964,11 @@ a:hover, a:focus, a:active {
         left: 100%;
     }
 
-    .main-navigation .menu ul ul li:hover ul {
+    .main-navigation .menu ul ul li:hover ul,
+    .main-navigation .menu ul ul li:focus ul,
+    .main-navigation .menu ul ul li:focus-within ul{
         top: 0;
     }
-
 }
 
 .main-navigation .menu .menu-mobile {
@@ -2120,7 +2127,9 @@ span.comments-link {
 .widget ul {
     list-style: none;
     padding-left: 0;
+    padding-right: 0;
     margin-left: 0;
+    margin-right: 0;
     margin-bottom: 0;
 }
 

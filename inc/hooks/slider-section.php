@@ -71,7 +71,11 @@ if (!function_exists('best_education_banner_slider')) :
         $best_education_banner_slider_query = new WP_Query($best_education_banner_slider_args); ?>
         <!-- slider Section -->
         <section class="main-banner">
-            <div class="mainbanner-jumbotron">
+            <?php $rtl_class = 'false';
+            if(is_rtl()){ 
+                $rtl_class = 'true';
+            }?>
+            <div class="mainbanner-jumbotron" data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
                 <?php
                 if ($best_education_banner_slider_query->have_posts()) :
                     while ($best_education_banner_slider_query->have_posts()) : $best_education_banner_slider_query->the_post();

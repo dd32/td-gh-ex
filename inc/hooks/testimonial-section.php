@@ -85,7 +85,11 @@ if (!function_exists('best_education_testimonial')) :
         $best_education_testimonial_args = best_education_testimonial_args();
         $best_education_testimonial_query = new WP_Query($best_education_testimonial_args); ?>
         <section class="section-block section-block-2 data-bg bg-fixed primary-bgcolor testmonial-section" data-stellar-background-ratio="0.5" data-background="<?php echo esc_url(best_education_get_option('testimonial_section_background_image')); ?>">
-            <div class="testmonial-slides high-index">
+            <?php $rtl_class = 'false';
+            if(is_rtl()){ 
+                $rtl_class = 'true';
+            }?>
+            <div class="testmonial-slides high-index"  data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
                 <?php
                 if ($best_education_testimonial_query->have_posts()) :
                     while ($best_education_testimonial_query->have_posts()) : $best_education_testimonial_query->the_post();

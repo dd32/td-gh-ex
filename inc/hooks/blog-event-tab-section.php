@@ -38,7 +38,11 @@ if (!function_exists('best_education_blog_event_block')):
                     ); ?>
                     <div role="tabpanel" class="tab-pane fade in active" id="news-tab">
                         <div class="container">
-                            <div class="tm-news">
+                            <?php $rtl_class = 'false';
+                            if(is_rtl()){ 
+                                $rtl_class = 'true';
+                            }?>
+                            <div class="tm-news" data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
                                 <?php $best_education_blog_section_cat_post_query = new WP_Query($best_education_blog_section_cat_args);
                                 if ($best_education_blog_section_cat_post_query->have_posts()):
                                     while ($best_education_blog_section_cat_post_query->have_posts()):$best_education_blog_section_cat_post_query->the_post();

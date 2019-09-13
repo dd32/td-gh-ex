@@ -167,7 +167,11 @@ if (!function_exists('best_education_about_block')):
             <div class="container high-index">
                 <div class="row">
                     <div class="col-md-12 col-sm-12">
-                        <div class="featured-course slick-carousel">
+                        <?php $rtl_class = 'false';
+                        if(is_rtl()){ 
+                            $rtl_class = 'true';
+                        }?>
+                        <div class="featured-course slick-carousel" data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
                             <?php $best_education_about_sec_cat_post_query = new WP_Query($best_education_about_sec_cat_args);
                             if ($best_education_about_sec_cat_post_query->have_posts()) :
                                 while ($best_education_about_sec_cat_post_query->have_posts()) : $best_education_about_sec_cat_post_query->the_post();

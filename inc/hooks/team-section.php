@@ -101,7 +101,11 @@ if (!function_exists('best_education_team')) :
                     </div>
 
                     <div class="col-md-12">
-                        <div class="tm-team">
+                        <?php $rtl_class = 'false';
+                        if(is_rtl()){ 
+                            $rtl_class = 'true';
+                        }?>
+                        <div class="tm-team"  data-slick='{"rtl": <?php echo($rtl_class); ?>}'>
                             <?php if ($best_education_team_query->have_posts()) :
                                 while ($best_education_team_query->have_posts()) : $best_education_team_query->the_post();
                                     if (has_post_thumbnail()) {

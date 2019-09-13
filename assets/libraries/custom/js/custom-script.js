@@ -187,7 +187,7 @@
                 dots: true
             });
 
-            e(".gallery-columns-1").slick({
+            e(".gallery-columns-1, .wp-block-gallery.columns-1").slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 fade: true,
