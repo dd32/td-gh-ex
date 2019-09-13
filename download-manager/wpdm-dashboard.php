@@ -27,7 +27,7 @@ $store = get_user_meta(get_current_user_id(), '__wpdm_public_profile', true);
                     <?php }
                     echo "</div>";
                 } ?>
-                <a class="udb-item" href="<?php echo wpdm_logout_url(); ?>"><i class="fas fa-sign-out-alt color-danger mr-3"></i><span class="color-red"><?php _e('Logout', 'wmdpro'); ?></span></a>
+                <a class="udb-item" href="<?php echo wpdm_logout_url(); ?>"><i class="fas fa-sign-out-alt color-danger mr-3"></i><span class="color-red"><?php _e('Logout', 'attire'); ?></span></a>
 
             </div>
 
