@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ascent 3.6.0\n"
+"Project-Id-Version: Ascent 3.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ascent\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-08-27T17:57:57+00:00\n"
+"POT-Creation-Date: 2019-09-13T11:35:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: ascent\n"
@@ -23,7 +23,7 @@ msgid "https://ascenttheme.com/"
 msgstr ""
 
 #. Description of the theme
-msgid "Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. You can check out the demo at http://ascenttheme.com/."
+msgid "Ascent is a fully responsive theme which perfectly adjusts as per your device’s screen and resolution. A multipurpose, beautiful and clean theme perfect for businesses, portfolios, and blogs. Easily customize the theme as per your liking. Also, supports WooCommerce integration for eCommerce businesses."
 msgstr ""
 
 #. Author of the theme
@@ -38,42 +38,12 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:211
+#: functions.php:210
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:219
 msgid "Sidebar Footer"
-msgstr ""
-
-#: content-single.php:26
-#: content.php:36
-msgid "Posted by"
-msgstr ""
-
-#: content-single.php:52
-#: content-page.php:18
-#: content.php:71
-#: image.php:63
-msgid "Pages:"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#: content-single.php:62
-#: content-single.php:66
-#: content.php:85
-#: content.php:89
-msgid ", "
-msgstr ""
-
-#: content-single.php:73
-#: content.php:95
-msgid "<i class=\"fa fa-folder\"></i> %1$s"
-msgstr ""
-
-#: content-single.php:76
-#: content.php:98
-msgid "<i class=\"fa fa-tags\"></i> %1$s"
 msgstr ""
 
 #: 404.php:16
@@ -104,89 +74,70 @@ msgstr ""
 msgid "Full Width Page"
 msgstr ""
 
-#: no-results.php:14
+#: no-results.php:17
 msgid "Nothing Found"
 msgstr ""
 
-#: no-results.php:20
+#: no-results.php:25
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: no-results.php:24
+#: no-results.php:29
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: no-results.php:29
+#: no-results.php:34
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: header-searchform.php:13
-#: searchform.php:11
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr ""
-
-#: header-searchform.php:13
-#: searchform.php:11
-msgctxt "label"
-msgid "Search for:"
-msgstr ""
-
 #. translators: %s: post title
-#: comments.php:34
+#: comments.php:36
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
 #. translators: 1: number of comments, 2: post title
-#: comments.php:39
+#: comments.php:41
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:56
-#: comments.php:78
+#: comments.php:58
+#: comments.php:80
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:58
-#: comments.php:79
+#: comments.php:60
+#: comments.php:81
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:59
-#: comments.php:80
+#: comments.php:61
+#: comments.php:82
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:90
+#: comments.php:92
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:96
+#: comments.php:98
 msgid "Leave a Reply"
 msgstr ""
 
 #. translators: %s is replaced with "string"
-#: comments.php:98
+#: comments.php:100
 msgid "Leave a Reply to %s"
 msgstr ""
 
-#: comments.php:99
+#: comments.php:101
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:100
+#: comments.php:102
 msgid "Post Comment"
-msgstr ""
-
-#: content-page.php:23
-#: includes/template-tags.php:85
-#: image.php:37
-#: image.php:81
-msgid "Edit"
 msgstr ""
 
 #: includes/customizer/class-ascent-customizer.php:138
@@ -642,6 +593,13 @@ msgstr ""
 msgid "Pingback:"
 msgstr ""
 
+#: includes/template-tags.php:85
+#: template-parts/content-page.php:40
+#: image.php:45
+#: image.php:100
+msgid "Edit"
+msgstr ""
+
 #: includes/template-tags.php:99
 msgid "%s "
 msgstr ""
@@ -667,12 +625,7 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
-#: content.php:46
-#: content.php:75
-msgid "Read More &rarr;"
-msgstr ""
-
-#: search.php:16
+#: search.php:17
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -680,65 +633,112 @@ msgstr ""
 msgid "Left Sidebar Page"
 msgstr ""
 
-#: header-banner.php:54
+#: template-parts/content-single.php:42
+#: template-parts/content.php:47
+msgid "Posted by"
+msgstr ""
+
+#: template-parts/content-single.php:78
+#: template-parts/content-page.php:31
+#: template-parts/content.php:94
+#: image.php:81
+msgid "Pages:"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: template-parts/content-single.php:92
+#: template-parts/content-single.php:96
+#: template-parts/content.php:110
+#: template-parts/content.php:114
+msgid ", "
+msgstr ""
+
+#: template-parts/content-single.php:103
+#: template-parts/content.php:120
+msgid "<i class=\"fa fa-folder\"></i> %1$s"
+msgstr ""
+
+#: template-parts/content-single.php:106
+#: template-parts/content.php:123
+msgid "<i class=\"fa fa-tags\"></i> %1$s"
+msgstr ""
+
+#: template-parts/header-searchform.php:13
+#: searchform.php:11
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: template-parts/header-searchform.php:13
+#: searchform.php:11
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: template-parts/content.php:65
+#: template-parts/content.php:98
+msgid "Read More &rarr;"
+msgstr ""
+
+#: template-parts/header-banner.php:54
 msgid "Please provide valid video URL."
 msgstr ""
 
-#: footer.php:32
+#: footer.php:51
 msgid "A Semantic Personal Publishing Platform"
 msgstr ""
 
-#: footer.php:32
+#: footer.php:51
 msgid "&copy; %u Ascent. All rights reserved"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:53
 msgid "%1$s  "
 msgstr ""
 
-#: footer.php:34
+#: footer.php:53
 msgid "http://zetamatic.com/"
 msgstr ""
 
-#: footer.php:34
+#: footer.php:53
 msgid "ZetaMatic"
 msgstr ""
 
-#: sidebar.php:23
-#: sidebar-footer.php:26
+#: sidebar.php:26
+#: sidebar-footer.php:24
 msgid "Archives"
 msgstr ""
 
-#: sidebar.php:30
-#: sidebar-footer.php:33
+#: sidebar.php:33
+#: sidebar-footer.php:31
 msgid "Meta"
 msgstr ""
 
-#: image.php:26
+#: image.php:34
 msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
 msgstr ""
 
-#: image.php:42
+#: image.php:51
 msgid "<span class=\"meta-nav\">&larr;</span> Previous"
 msgstr ""
 
-#: image.php:43
+#: image.php:54
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: image.php:72
+#: image.php:91
 msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
 
-#: image.php:74
+#: image.php:93
 msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
 msgstr ""
 
-#: image.php:76
+#: image.php:95
 msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
 msgstr ""
 
-#: image.php:78
+#: image.php:97
 msgid "Both comments and trackbacks are currently closed."
 msgstr ""
 

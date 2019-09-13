@@ -2,7 +2,7 @@
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
 Tested up to: 5.2.2
-Stable tag: 3.6.0
+Stable tag: 3.7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,19 +15,27 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * SwipeBox: http://github.com/brutaldesign/swipebox
 * MeanMenu: https://github.com/meanthemes/meanMenu
 * jQueryAppear: https://github.com/morr/jquery.appear/
+* Theme Hook Alliance: https://github.com/zamoose/themehookalliance
 
 == Description ==
 
-Ascent is a fully responsive WordPress theme that looks elegant on any devices. It is suitable for blogs, business, and personal portfolio websites. This fully customizable and lighting fast theme is built with SEO in mind. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
-If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at https://ascenttheme.com/
+Ascent is a fully responsive theme which perfectly adjusts as per your device’s screen and resolution. A multipurpose, beautiful and clean theme perfect for businesses, portfolios, and blogs. Easily customize the theme as per your liking. Also, supports WooCommerce integration for eCommerce businesses.
+
+It is compatible with all the major page builders like Elementor, SiteOrigin etc. 
+
+Ascent is SEO friendly & Schema.org code integrated to help your website rank organically for specific keywords and phrases in the SERP(Search engine results page). 
+
+The theme is light-weight to help your website load quickly, so the users don’t have to wait too long. Other features: RTL, Translation Ready, Regularly updated.
+
+You can check out the demo at https://ascenttheme.com/
 
 
 * Fully Bootstrap Power
 * FontAwesome implementation
 * jQuery SwipeBox
 * Setup jQuery MeanMenu and Velocity for beautiful responsive animated menu.
-* Implement jQuery appear for tracking element's appearance in browser viewport.
-* Implement Theme Options for customize the Theme
+* Implement jQuery appear for tracking element's appearance in the browser viewport.
+* Implement Theme Options for customizing the Theme
 * A just right amount of lean, well-commented, modern, HTML5 templates.
 * A helpful 404 template.
 * Custom template tags in `includes/template-tags.php` that keep your templates clean and neat and prevent code duplication.
@@ -87,6 +95,10 @@ Yes! You can choose your color scheme under Customizer -> Styling section
 
 = Changelog =
 
+### Version 3.7.0
+- Added Theme Hook Alliance
+- Updated template structures
+
 ### Version 3.6.0
 - Removed HTML allowed_tags
 - Added customizer option for footer copyright section
@@ -95,7 +107,7 @@ Yes! You can choose your color scheme under Customizer -> Styling section
 - Fixed CSS issue
 
 ### Version 3.4
-- Chnaged Theme options to Customizer
+- Changed Theme options to Customizer
 - Removed jQuery smoothScroll
 
 ### Version 3.3

@@ -20,6 +20,8 @@ if ( post_password_required() )
     return;
 ?>
 
+<?php ascent_comments_before(); ?>
+
 <div id="comments" class="comments-area">
 
     <?php // You can start editing here -- including this comment! ?>
@@ -111,3 +113,5 @@ if ( post_password_required() )
     ));
     ?>
 </div><!-- #comments -->
+
+<?php ascent_comments_after(); ?>

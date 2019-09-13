@@ -5,14 +5,19 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package Ascent
- * @since 1.0.0 
+ * @since   0.0.1
  */
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'ascent' ); ?></h1>
-	</header><!-- .page-header -->
+	
+	<?php ascent_entry_header_before(); ?>
+
+		<header class="page-header">
+			<h1 class="entry-title" itemprop="headline"><?php esc_html_e( 'Nothing Found', 'ascent' ); ?></h1>
+		</header><!-- .page-header -->
+
+	<?php ascent_entry_header_after(); ?>
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
