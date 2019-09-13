@@ -84,9 +84,6 @@ class Attire {
 		wp_register_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/all.min.css' );
 		wp_enqueue_style( 'font-awesome' );
 
-		wp_register_style( 'wpdm-style', ATTIRE_TEMPLATE_URL . '/download-manager/wpdm-style.css' );
-		wp_enqueue_style( 'wpdm-style' );
-
 		wp_register_style( 'attire-google-fonts', $cssimport, array(), null );
 		wp_enqueue_style( 'attire-google-fonts' );
 

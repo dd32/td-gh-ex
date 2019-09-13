@@ -16,7 +16,7 @@ $meta_position = AttireThemeEngine::NextGetOption( 'attire_single_post_meta_posi
 				<?php
 
 				while ( have_posts() ): the_post(); ?>
-                <div class="">
+                <div class="single-post-content mb-3">
 					<?php the_post_thumbnail( 'full' ); ?><br>
                     <div class="">
                     <h1><?php
