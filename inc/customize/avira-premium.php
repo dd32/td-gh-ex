@@ -21,8 +21,6 @@ function avira_premium_setting( $wp_customize ) {
 				<ul>
 					<li><a href="https://demo.speciatheme.com/pro/?theme=avira" class="btn-green" target="_blank"><i class="dashicons dashicons-desktop info-icon"></i><?php _e( 'Premium Demo','avira' ); ?> </a></li>
 					
-					<li><a href="https://speciatheme.com/avira-premium/" class="btn-green"><i class="dashicons dashicons-visibility"></i><?php _e( 'View Details','avira' ); ?> </a></li>
-					
 					<li><a href="https://speciatheme.com/avira-premium/" class="btn-red" target="_blank"><i class="dashicons dashicons-cart"></i><?php _e( 'Buy Now','avira' ); ?> </a></li>
 					
 					<li><a href="http://specia.ticksy.com/" class="btn-green" target="_blank"><i class="dashicons dashicons-sos"></i><?php _e( 'Support Center','avira' ); ?> </a></li>
