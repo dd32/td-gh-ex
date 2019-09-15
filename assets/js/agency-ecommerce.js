@@ -239,7 +239,7 @@
 
         },
         initAccessibility: function () {
-            var main_menu_container = $('.menu-main-menu-container');
+            var main_menu_container = $('.main-navigation #primary-menu');
             var special_menu_container = $('.special-menu-container');
             main_menu_container.find('li.menu-item').focusin(function () {
                 if (!$(this).hasClass('focus')) {

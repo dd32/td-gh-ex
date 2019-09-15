@@ -61,6 +61,7 @@ a {
         top: 0;
       }
     }
+
   }
   li {
     position: relative;
@@ -91,30 +92,29 @@ a {
   ul {
     > li:hover > ul,
     > li a:focus ~ ul,
-    > li.focus ul {
+    > li.focus>ul.sub-menu {
       opacity: 1;
-      left: 0;
+      left: 100%;
       z-index: 9999;
     }
     ul {
-      ul {
-        ul {
-          display: none;
-        }
-        li:hover > ul {
-          display: block;
-        }
-      }
+
       li:hover > ul {
         opacity: 1;
         left: 100%;
       }
     }
   }
+  ul.menu>li {
+    >ul.sub-menu {
+      left: 0;
+    }
+  }
   li li {
     float: none;
     display: block;
   }
+
   ul {
     li {
       li:first-child > a {
