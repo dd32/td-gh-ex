@@ -45,7 +45,21 @@ if (agency_ecommerce_is_advance_breadcrumb()) {
             }
         }
     }
+    if (function_exists('is_product_category')) {
 
+        if (is_product_category()) {
+
+            $woo_cat = get_queried_object();
+
+            $woo_category_id = isset($woo_cat->term_id) ? absint($woo_cat->term_id) : 0;
+
+            $thumbnail_id = get_term_meta($woo_category_id, 'thumbnail_id', true);
+
+            $thumb_url = wp_get_attachment_url($thumbnail_id);
+
+            $image_url = !empty($thumb_url) ? $thumb_url : $image_url;
+        }
+    }
     $custom_style = !empty($image_url) ? 'style="background-image:url(' . esc_url($image_url) . ')"' : '';
 }
 

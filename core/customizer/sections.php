@@ -47,6 +47,8 @@ require_once trailingslashit(get_template_directory()) . '/core/customizer/secti
 
 require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/404-options.php';
 
+require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/accessibility-options.php';
+
 require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/footer-options.php';
 
 require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/other-extra-options.php';

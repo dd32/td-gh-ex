@@ -89,7 +89,9 @@ a {
     }
   }
   ul {
-    > li:hover > ul {
+    > li:hover > ul,
+    > li a:focus ~ ul,
+    > li.focus ul {
       opacity: 1;
       left: 0;
       z-index: 9999;
@@ -118,6 +120,7 @@ a {
       li:first-child > a {
         border-left: none;
       }
+
       a {
         color: #11101d;
         display: inline-block;
@@ -345,7 +348,7 @@ a {
   a.page-numbers:hover {
     background: #fff;
     border-color: $primary_color;
-    color:$primary_color;
+    color: $primary_color;
   }
   .page-numbers.dots {
     border: none;

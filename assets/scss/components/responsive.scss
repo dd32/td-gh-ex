@@ -37,7 +37,6 @@
 
 }
 
-
 @media (min-width: 769px) and (max-width: 992px) {
   ul.ae-list-items:not(.slick-initialized) li.product {
     display: none;
@@ -60,6 +59,7 @@
     }
   }
 }
+
 @media (min-width: 479px) and (max-width: 768px) {
   ul.ae-list-items:not(.slick-initialized) li.product {
     display: none;
@@ -162,8 +162,9 @@
 
     .mean-bar {
       position: absolute;
-      right: 0;
+      right: 5px;
       top: 5px;
+      left: unset;
     }
     .mean-nav {
       overflow: hidden;

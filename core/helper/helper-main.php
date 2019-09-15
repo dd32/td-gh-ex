@@ -22,7 +22,7 @@ if (!function_exists('agency_ecommerce_get_the_excerpt')) :
     {
         $agency_excerpt = get_the_excerpt();
 
-        return apply_filters ('agency_ecommerce_excerpt', $agency_excerpt);
+        return apply_filters('agency_ecommerce_excerpt', $agency_excerpt);
 
     }
 
@@ -252,11 +252,6 @@ if (!function_exists('agency_ecommerce_product_searchbox')) {
 
                 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
                     <input type="hidden" name="post_type" value="product"/>
-
-                    <input type="text" class="search-field products-search"
-                           placeholder="<?php echo $product_search_text; ?>"
-                           value="<?php echo get_search_query(); ?>" name="s"/>
-
                     <select class="product-cat" name="product_cat">
 
                         <option value=""><?php echo $product_category_text; ?></option>
@@ -280,6 +275,12 @@ if (!function_exists('agency_ecommerce_product_searchbox')) {
                         } ?>
 
                     </select>
+
+                    <input type="text" class="search-field products-search"
+                           placeholder="<?php echo $product_search_text; ?>"
+                           value="<?php echo get_search_query(); ?>" name="s"/>
+
+
 
                     <button type="submit" class="search-submit"><span
                                 class="screen-reader-text"><?php echo esc_html_x('Search', 'submit button', 'agency-ecommerce'); ?></span><i

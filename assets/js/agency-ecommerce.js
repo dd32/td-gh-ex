@@ -8,6 +8,7 @@
         bindEvents: function () {
             var $this = this;
             $(document).ready(function ($) {
+                $this.initAccessibility();
                 $.each($('.main-slider'), function () {
                     var isDisabled = $(this).attr('data-disable');
                     if (isDisabled != 1) {
@@ -236,6 +237,28 @@
                 product_wrap.find('li.product').find('.ae-woo-block-wrap.' + cat_class).closest('li.product').show();
             }
 
+        },
+        initAccessibility: function () {
+            var main_menu_container = $('.menu-main-menu-container');
+            var special_menu_container = $('.special-menu-container');
+            main_menu_container.find('li.menu-item').focusin(function () {
+                if (!$(this).hasClass('focus')) {
+                    $(this).addClass('focus');
+                }
+            });
+            main_menu_container.find('li.menu-item').focusout(function () {
+                $(this).removeClass('focus');
+
+            });
+            special_menu_container.find('li.menu-item.menu-item-has-children').focusin(function () {
+                if (!$(this).hasClass('focus')) {
+                    $(this).addClass('focus');
+                }
+            });
+            special_menu_container.find('li.menu-item.menu-item-has-children').focusout(function () {
+                $(this).removeClass('focus');
+
+            })
         }
 
     };

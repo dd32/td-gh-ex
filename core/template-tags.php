@@ -121,7 +121,7 @@ if (!function_exists('agency_ecommerce_post_thumbnail')) :
             return;
         }
 
-        if (agency_ecommerce_is_advance_breadcrumb() && (boolean)agency_ecommerce_get_option('override_background_by_featured_image')) {
+        if (agency_ecommerce_is_advance_breadcrumb() && (boolean)agency_ecommerce_get_option('override_background_by_featured_image') && is_single()) {
             return;
         }
         if (is_singular()) :

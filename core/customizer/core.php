@@ -140,6 +140,11 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
 
         $defaults['404_page_content'] = esc_html__('It looks like nothing was found at this location. Maybe try a search?', 'agency-ecommerce');
 
+        // accessiblity options
+
+
+        $defaults['disable_focus_outline'] = false;
+
 
         $font_awesome_icons = array_keys(agency_ecommerce_font_awesome_icon_list());
 

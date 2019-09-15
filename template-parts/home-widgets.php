@@ -44,7 +44,7 @@ if (!is_page_template('templates/home-template.php')) {
     <?php
     if (is_active_sidebar('home-page-fullwidth-before-widget-area')) {
 
-        echo '<div class="homepage-fullwidth-widget-area">';
+        echo '<div class="homepage-fullwidth-widget-area homepage-fullwidth-before">';
 
         dynamic_sidebar('home-page-fullwidth-before-widget-area');
 
@@ -91,11 +91,11 @@ if (!is_page_template('templates/home-template.php')) {
     <?php
     if (is_active_sidebar('home-page-fullwidth-after-widget-area')) {
 
-        echo '<div class="homepage-fullwidth-widget-area">';
+        echo '<div class="homepage-fullwidth-widget-area homepage-fullwidth-after">';
 
         dynamic_sidebar('home-page-fullwidth-after-widget-area');
 
-        echo '<div>';
+        echo '</div>';
     }
     ?>
 

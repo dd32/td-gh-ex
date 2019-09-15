@@ -18,6 +18,8 @@ if (!function_exists('agency_ecommerce_dynamic_options')) :
 
         $special_menu_max_height = agency_ecommerce_get_option('special_menu_max_height');
 
+        $disable_focus_outline = (boolean)agency_ecommerce_get_option('disable_focus_outline');
+
 
         ?>
 
@@ -290,7 +292,29 @@ if (!function_exists('agency_ecommerce_dynamic_options')) :
                 max-height: <?php echo (int)$special_menu_max_height == 0 ? 'unset;': (int)$special_menu_max_height.'px;'; ?>
             }
 
-            <?php } ?>
+            <?php }
+            if($disable_focus_outline){
+                ?>
+            a:focus,
+            button:focus,
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="url"]:focus,
+            input[type="password"]:focus,
+            input[type="search"]:focus,
+            textarea:focus,
+            input[type="button"]:focus,
+            input[type="reset"]:focus,
+            input[type="submit"]:focus,
+            .slick-slider .slick-slide:focus,
+            .search-box .product-search-wrapper form select:focus {
+                outline: none !important;
+
+            }
+
+            <?php
+        }
+        ?>
 
         </style>
 

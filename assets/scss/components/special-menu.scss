@@ -1,8 +1,5 @@
 .ae-enable-special-menu {
-  .acmethemes-nav {
-    float: right;
-    width: calc(100% - 255px);
-  }
+
 }
 
 .special-sub-menu {
@@ -43,7 +40,8 @@
           z-index: 999;
           max-height: 433px;
           overflow: hidden;
-          display: none;
+          opacity: 0;
+          left: -9999999px;
           position: absolute;
           margin-left: 0;
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -83,7 +81,10 @@
             font-size: 15px;
             font-weight: 700;
             text-transform: uppercase;
+            width: 100%;
+            padding: 3px;
             a {
+
               padding: 15px 15px;
               display: inline-block;
               color: $secondary_color;
@@ -115,7 +116,7 @@
             }
           }
           a {
-            width: 225px;
+            width: 100%;
           }
         }
       }
@@ -146,16 +147,17 @@
               }
             }
           }
-          &:hover {
-            ul {
-              left: auto;
-              display: block;
-              opacity: 1;
-              top: 100%;
-              animation: fade 0.5s;
-            }
+          &:hover ul,
+          a.special-menu:focus ~ ul,
+          &.focus ul {
 
+            left: auto;
+            display: block;
+            opacity: 1;
+            top: 100%;
+            animation: fade 0.5s;
           }
+
         }
       }
     }
@@ -168,7 +170,8 @@
 
     &:not( .onhover ) {
       .special-sub-menu {
-        display: block;
+        opacity: 1;
+        left: unset;
       }
     }
   }

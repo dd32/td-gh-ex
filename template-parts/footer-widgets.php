@@ -36,7 +36,7 @@ if (is_active_sidebar('top-footer-1') ||
                 for ($i = 1; $i <= 4; $i++) {
                     if (is_active_sidebar('top-footer-' . $i)) {
                         ?>
-                        <div class="<?php echo esc_attr($column_class); ?>">
+                        <div class="top-footer-widget-col-<?php echo absint($i) . ' ' . esc_attr($column_class); ?>">
                             <?php dynamic_sidebar('top-footer-' . $i); ?>
                         </div>
                         <?php
