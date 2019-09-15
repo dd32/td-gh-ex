@@ -47,6 +47,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.5.5 =
+* fix issue with menu items display
+
 = 1.5.4 =
 * increase font size
 
