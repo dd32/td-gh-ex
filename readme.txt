@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.4 =
+* fix bug with menu items display on Large screens
+
 = 1.2.3 =
 * improve layout and text size
 
