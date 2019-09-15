@@ -15,8 +15,8 @@ if ( ! function_exists( 'aeonblog_about_user' ) ) {
 	 */
 	function aeonblog_about_user() {
 		$enable_about = absint( get_theme_mod( 'aeonblog-enable-about', 0 ) );
-		
-		if ( $enable_about === 1 ) {
+
+		if ( 1 === $enable_about ) {
 
 			$about_users = absint( get_theme_mod( 'aeonblog_about_user' ) );
 
@@ -34,7 +34,7 @@ if ( ! function_exists( 'aeonblog_about_user' ) ) {
 				echo '</h2>';
 				echo '<div class="about-me-description textwidget">';
 				echo '<a href="' . esc_url( get_author_posts_url( $aeonblog_featured_user->ID ) ) . '">' .
-					get_avatar( $aeonblog_featured_user->user_email, 300 ) . '</a>';	
+					get_avatar( $aeonblog_featured_user->user_email, 300 ) . '</a>';
 				echo '<p>' . esc_html( get_user_meta( $aeonblog_featured_user->ID, 'description', true ) )
 					. '</p></div>';
 			}
@@ -48,12 +48,9 @@ if ( ! function_exists( 'aeonblog_breadcrumb' ) ) {
 	 * AeonBlog Breadcrumb
 	 *
 	 * @since AeonBlog 1.0.0
-	 *
-	 * @param null
-	 * @return void
 	 */
 	function aeonblog_breadcrumb() {
-		if ( ! is_front_page() && get_theme_mod( 'aeonblog-breadcrumb-option', 1 ) == 1 ) {
+		if ( ! is_front_page() && get_theme_mod( 'aeonblog-breadcrumb-option', 1 ) === 1 ) {
 			echo '<div class="breadcrumb">';
 			aeonblog_breadcrumb_trail();
 			echo '</div>';
@@ -67,8 +64,7 @@ add_action( 'aeonblog_breadcrumb_hook', 'aeonblog_breadcrumb', 10 );
  *
  * @since AeonBlog 1.0.0
  *
- * @param null
- * @return void
+ * @param int $length Length of the excerpt.
  */
 function aeonblog_excerpt_length( $length ) {
 	if ( ! is_admin() ) {
@@ -82,18 +78,17 @@ add_filter( 'excerpt_length', 'aeonblog_excerpt_length', 999 );
  *
  * @since AeonBlog 1.0.0
  *
- * @param null
- * @return void
+ * @param string $classes CSS body classes.
  */
 function aeonblog_custom_class( $classes ) {
 	$classes[] = 'pt-sticky-sidebar';
 
 	$sidebar = get_theme_mod( 'aeonblog-sidebar-options' );
-	if ( $sidebar == 'no-sidebar' ) {
+	if ( 'no-sidebar' === $sidebar ) {
 		$classes[] = 'no-sidebar';
-	} elseif ( $sidebar == 'left-sidebar' ) {
+	} elseif ( 'left-sidebar' === $sidebar ) {
 		$classes[] = 'has-left-sidebar';
-	} elseif ( $sidebar == 'middle-column' ) {
+	} elseif ( 'middle-column' === $sidebar ) {
 		$classes[] = 'middle-column';
 	} else {
 		$classes[] = 'has-right-sidebar';
@@ -107,12 +102,9 @@ if ( ! function_exists( 'aeonblog_go_to_top' ) ) {
 	 * Go to Top
 	 *
 	 * @since AeonBlog 1.0.0
-	 *
-	 * @param null
-	 * @return void
 	 */
 	function aeonblog_go_to_top() {
-		if ( get_theme_mod( 'aeonblog-go-to-top', 1 ) == 1 ) {
+		if ( get_theme_mod( 'aeonblog-go-to-top', 1 ) === 1 ) {
 			?>
 			<a id="toTop" class="go-to-top" href="#" title="<?php esc_attr_e( 'Back to top', 'aeonblog' ); ?>">
 				<?php echo aeonblog_get_svg( array( 'icon' => 'angle-double-up' ) ); ?>
@@ -128,8 +120,7 @@ if ( ! function_exists( 'aeonblog_go_to_top' ) ) {
  *
  * @since AeonBlog 1.0.0
  *
- * @param null
- * @return void
+ * @param array $get_image_options Jetpack top post settings.
  */
 function aeonblog_custom_thumb_size( $get_image_options ) {
 	$get_image_options['avatar_size'] = 600;
@@ -143,14 +134,11 @@ if ( ! function_exists( 'aeonblog_posts_navigation' ) ) {
 	 * Post Navigation Function
 	 *
 	 * @since AeonBlog 1.0.0
-	 *
-	 * @param null
-	 * @return void
 	 */
 	function aeonblog_posts_navigation() {
 		$aeonblog_pagination_option = get_theme_mod( 'aeonblog-pagination-type', 'numeric' );
 
-		if ( 'default' == $aeonblog_pagination_option ) {
+		if ( 'default' === $aeonblog_pagination_option ) {
 			the_posts_navigation(
 				array(
 					'prev_text' => __( '&laquo; Prev', 'aeonblog' ),
@@ -178,7 +166,7 @@ if ( ! function_exists( 'aeonblog_related_post' ) ) {
 	 *
 	 * @since AeonBlog 1.0.0
 	 *
-	 * @param int $post_id
+	 * @param int $post_id ID of the Post.
 	 * @return void
 	 */
 	function aeonblog_related_post( $post_id ) {
@@ -201,7 +189,7 @@ if ( ! function_exists( 'aeonblog_related_post' ) ) {
 				<h2 class="widget-title"><?php esc_html_e( 'Related Posts', 'aeonblog' ); ?></h2>
 				<ul class="related-post-entries clear">
 					<?php
-					$aeonblog_cat_post_args   = array(
+					$aeonblog_cat_post_args = array(
 						'category__in'        => $category_ids,
 						'post__not_in'        => array( $post_id ),
 						'post_type'           => 'post',
@@ -209,9 +197,11 @@ if ( ! function_exists( 'aeonblog_related_post' ) ) {
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => true,
 					);
+
 					$aeonblog_featured_query = new WP_Query( $aeonblog_cat_post_args );
 
-					while ( $aeonblog_featured_query->have_posts() ) : $aeonblog_featured_query->the_post();
+					while ( $aeonblog_featured_query->have_posts() ) {
+						$aeonblog_featured_query->the_post();
 						?>
 						<li>
 							<?php
@@ -228,7 +218,7 @@ if ( ! function_exists( 'aeonblog_related_post' ) ) {
 							<p class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 						</li>
 						<?php
-					endwhile;
+					}
 					wp_reset_postdata();
 					?>
 				</ul>

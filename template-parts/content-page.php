@@ -10,27 +10,28 @@
  * Template part for displaying page content in page.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package AeonBlog
  */
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-wrapper'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-wrapper' ); ?>>
 	<?php aeonblog_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aeonblog' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aeonblog' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
+	<?php
+	if ( get_edit_post_link() ) {
+		?>
 		<footer class="entry-footer">
 			<?php
 			edit_post_link(
@@ -51,5 +52,7 @@
 			);
 			?>
 		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+		<?php
+	}
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->

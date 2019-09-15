@@ -1,6 +1,6 @@
 <?php
 /**
- * File aeonblog.
+ * About section customizer options.
  *
  * @package   AeonBlog
  * @author    AeonWP <info@aeonwp.com>

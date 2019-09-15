@@ -9,13 +9,16 @@
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  */
 
+/**
+ * Include SVG Icon
+ */
 function aeonblog_include_svg_icons() {
 	// Define SVG sprite file.
 	$svg_icons = get_parent_theme_file_path( '/images/svg-icons.svg' );
 
 	// If it exists, include it.
 	if ( file_exists( $svg_icons ) ) {
-		require_once( $svg_icons );
+		require_once $svg_icons;
 	}
 }
 add_action( 'wp_footer', 'aeonblog_include_svg_icons', 9999 );

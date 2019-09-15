@@ -3,7 +3,7 @@ Contributors: aeontheme
 Requires at least: 5.0
 Tested up to: 5.2.2
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.7
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,22 @@ Simple and Clean Accessibility Ready Blog Theme. It comes with easy to use custo
 
 AeonBlog includes support for Infinite Scroll in Jetpack.
 
+= How can I request help with the theme? =
+
+You can use email us at support@aeonwp.com.
+
+= Can you add more features? =
+
+We would love to hear your ideas.
+You can use email us at support@aeonwp.com
+
 == Changelog ==
+
+= 1.0.7 - September 15 2019 =
+Code style improvements to better match WordPress coding standards.
+Added RTL style sheet.
+Added print style sheet.
+
 = 1.0.6 - August 30 2019 =
 Theme URI Added.
 

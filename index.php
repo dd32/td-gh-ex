@@ -19,21 +19,23 @@
  */
 
 get_header();
+
 /** Left sidebar */
 get_sidebar( 'left' );
 ?>
 	<main id="primary" role="main">
 			<?php
-			if ( have_posts() ) :
-				if ( is_home() && ! is_front_page() ) :
+			if ( have_posts() ) {
+				if ( is_home() && ! is_front_page() ) {
 					?>
 					<div>
 						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 					</div>
 					<?php
-				endif;
+				}
+
 				/* Start the Loop */
-				while ( have_posts() ) :
+				while ( have_posts() ) {
 					the_post();
 					/**
 					 * Include the Post-Type-specific template for the content.
@@ -41,7 +43,8 @@ get_sidebar( 'left' );
 					 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 					 */
 					get_template_part( 'template-parts/content', get_post_type() );
-				endwhile;
+				}
+
 				/**
 				 * Aeonblog_post_navigation hook.
 				 *
@@ -51,11 +54,12 @@ get_sidebar( 'left' );
 				 */
 				do_action( 'aeonblog_action_navigation' );
 
-			else :
+			} else {
 				get_template_part( 'template-parts/content', 'none' );
-			endif;
+			}
 			?>
 	</main><!-- #primary -->
 <?php
 get_sidebar();
+
 get_footer();

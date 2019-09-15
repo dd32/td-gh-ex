@@ -7,12 +7,13 @@
  * @copyright Copyright (c) 2019, AeonWP
  * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
+ *
  * Custom template tags for this theme
  *
  * Eventually, some of the functionality here could be replaced by core features.
  */
 
-if ( ! function_exists( 'aeonblog_posted_on' ) ) :
+if ( ! function_exists( 'aeonblog_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
@@ -22,7 +23,8 @@ if ( ! function_exists( 'aeonblog_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
@@ -30,7 +32,7 @@ if ( ! function_exists( 'aeonblog_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			/* translators: %s: post date. */
+			/* translators: There is a space before the date. %s: post date. */
 			esc_html_x( ' %s', 'post date', 'aeonblog' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
@@ -38,9 +40,9 @@ if ( ! function_exists( 'aeonblog_posted_on' ) ) :
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
-endif;
+}
 
-if ( ! function_exists( 'aeonblog_posted_by' ) ) :
+if ( ! function_exists( 'aeonblog_posted_by' ) ) {
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
@@ -54,9 +56,9 @@ if ( ! function_exists( 'aeonblog_posted_by' ) ) :
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
-endif;
+}
 
-if ( ! function_exists( 'aeonblog_entry_footer' ) ) :
+if ( ! function_exists( 'aeonblog_entry_footer' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
@@ -114,9 +116,9 @@ if ( ! function_exists( 'aeonblog_entry_footer' ) ) :
 			'</span>'
 		);
 	}
-endif;
+}
 
-if ( ! function_exists( 'aeonblog_post_thumbnail' ) ) :
+if ( ! function_exists( 'aeonblog_post_thumbnail' ) ) {
 	/**
 	 * Displays an optional post thumbnail.
 	 *
@@ -127,17 +129,15 @@ if ( ! function_exists( 'aeonblog_post_thumbnail' ) ) :
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
-
-		if ( is_singular() ) :
+		if ( is_singular() ) {
 			?>
-
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
 			</div><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+			<?php
+		} else {
+			?>
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 			<?php
 			the_post_thumbnail(
 				'post-thumbnail',
@@ -150,9 +150,8 @@ if ( ! function_exists( 'aeonblog_post_thumbnail' ) ) :
 				)
 			);
 			?>
-		</a>
-
-		<?php
-		endif; // End is_singular().
+			</a>
+			<?php
+		} // End is_singular().
 	}
-endif;
+}

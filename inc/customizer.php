@@ -111,17 +111,16 @@ function aeonblog_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'aeonblog-sidebar-options',
 		array(
+			'label'       => __( 'Sidebar Options', 'aeonblog' ),
+			'description' => __( 'You can manage the individual sidebar for single post by using the post templates.', 'aeonblog' ),
+			'section'     => 'aeonblog_blog_section',
+			'type'        => 'select',
 			'choices'     => array(
 				'right-sidebar' => __( 'Right sidebar', 'aeonblog' ),
 				'left-sidebar'  => __( 'Left sidebar', 'aeonblog' ),
 				'no-sidebar'    => __( 'No sidebar', 'aeonblog' ),
 				'middle-column' => __( 'No sidebar, content in the middle column', 'aeonblog' ),
 			),
-			'label'       => __( 'Sidebar Options', 'aeonblog' ),
-			'description' => __( 'You can manage the individual sidebar for single post by using the post templates.', 'aeonblog' ),
-			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-sidebar-options',
-			'type'        => 'select',
 		)
 	);
 
@@ -142,7 +141,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Sticky Sidebar', 'aeonblog' ),
 			'description' => __( 'Enable Sticky Sidebar', 'aeonblog' ),
 			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-sticky-sidebar',
 			'type'        => 'checkbox',
 		)
 	);
@@ -164,7 +162,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Continue Reading Text', 'aeonblog' ),
 			'description' => __( 'Enter your custom continue reading text. The title will be included after this text.', 'aeonblog' ),
 			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-read-more-text',
 			'type'        => 'text',
 		)
 	);
@@ -186,7 +183,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Meta Options', 'aeonblog' ),
 			'description' => __( 'Check to show the date, category, tags etc on blog page.', 'aeonblog' ),
 			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-blog-meta',
 			'type'        => 'checkbox',
 		)
 	);
@@ -208,7 +204,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Featured Image', 'aeonblog' ),
 			'description' => __( 'Check to show the featured Image.', 'aeonblog' ),
 			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-blog-image',
 			'type'        => 'checkbox',
 		)
 	);
@@ -230,7 +225,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Large Image', 'aeonblog' ),
 			'description' => __( 'Check to make the featured image larger.', 'aeonblog' ),
 			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-blog-full-image',
 			'type'        => 'checkbox',
 		)
 	);
@@ -252,7 +246,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Excerpt Length', 'aeonblog' ),
 			'description' => __( 'Enter the length of the excerpt.', 'aeonblog' ),
 			'section'     => 'aeonblog_blog_section',
-			'settings'    => 'aeonblog-blog-excerpt',
 			'type'        => 'number',
 			'input_attrs' => array(
 				'min'  => -1,
@@ -277,7 +270,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'default'           => 18,
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'aeonblog_sanitize_number',
-			'settings'          => 'aeonblog-font-size',
 		)
 	);
 
@@ -302,7 +294,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'default'           => 2,
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'aeonblog_sanitize_number',
-			'settings'          => 'aeonblog-font-line-height',
 		)
 	);
 
@@ -327,7 +318,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'default'           => 0,
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'aeonblog_sanitize_number',
-			'settings'          => 'aeonblog-letter-spacing',
 		)
 	);
 
@@ -374,7 +364,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Copyright Text', 'aeonblog' ),
 			'description' => __( 'Enter your own copyright text.', 'aeonblog' ),
 			'section'     => 'aeonblog_footer_section',
-			'settings'    => 'aeonblog-copyright-text',
 			'type'        => 'text',
 		)
 	);
@@ -396,7 +385,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Go To Top', 'aeonblog' ),
 			'description' => __( 'Enable/Disable go to top in the footer.', 'aeonblog' ),
 			'section'     => 'aeonblog_footer_section',
-			'settings'    => 'aeonblog-go-to-top',
 			'type'        => 'checkbox',
 		)
 	);
@@ -429,7 +417,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Breadcrumb Option', 'aeonblog' ),
 			'description' => __( 'Show/Hide breadcrumbs.', 'aeonblog' ),
 			'section'     => 'aeonblog_extra_section',
-			'settings'    => 'aeonblog-breadcrumb-option',
 			'type'        => 'checkbox',
 		)
 	);
@@ -447,14 +434,13 @@ function aeonblog_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'aeonblog-pagination-type',
 		array(
-			'choices' => array(
+			'choices'     => array(
 				'default' => __( 'Next and Previous', 'aeonblog' ),
 				'numeric' => __( 'Numeric', 'aeonblog' ),
 			),
 			'label'       => __( 'Pagination Option', 'aeonblog' ),
 			'description' => __( 'Select the pagination type.', 'aeonblog' ),
 			'section'     => 'aeonblog_extra_section',
-			'settings'    => 'aeonblog-pagination-type',
 			'type'        => 'select',
 		)
 	);
@@ -476,7 +462,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'label'       => __( 'Related Posts', 'aeonblog' ),
 			'description' => __( 'Enable related posts below the post content.', 'aeonblog' ),
 			'section'     => 'aeonblog_extra_section',
-			'settings'    => 'aeonblog-related-post',
 			'type'        => 'checkbox',
 		)
 	);

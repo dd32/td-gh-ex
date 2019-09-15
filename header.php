@@ -87,4 +87,3 @@ do_action( 'aeonblog_breadcrumb_hook' );
 ?>
 
 <div id="content" class="blog-wrapper">
-

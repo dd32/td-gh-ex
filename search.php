@@ -1,6 +1,6 @@
 <?php
 /**
- * File aeonblog.
+ * Search results page.
  *
  * @package   AeonBlog
  * @author    AeonWP <info@aeonwp.com>
@@ -13,8 +13,10 @@
  */
 
 get_header();
+
 /** Left sidebar */
 get_sidebar( 'left' );
+
 ?>
 	<main id="primary" role="main">
 	<?php
@@ -30,7 +32,7 @@ get_sidebar( 'left' );
 		</div>
 		<?php
 		/* Start the Loop */
-		while ( have_posts() ) :
+		while ( have_posts() ) {
 			the_post();
 
 			/**
@@ -39,7 +41,7 @@ get_sidebar( 'left' );
 			 * called content-search.php and that will be used instead.
 			*/
 			get_template_part( 'template-parts/content' );
-		endwhile;
+		}
 			/**
 			 * Aeonblog_post_navigation hook.
 			 *
@@ -56,4 +58,5 @@ get_sidebar( 'left' );
 	</main><!-- #primary -->
 <?php
 get_sidebar();
+
 get_footer();

@@ -1,6 +1,6 @@
 <?php
 /**
- * File aeonblog.
+ * Left Sidebar
  *
  * @package   AeonBlog
  * @author    AeonWP <info@aeonwp.com>

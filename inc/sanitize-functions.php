@@ -1,4 +1,15 @@
 <?php
+/**
+ * File aeonblog.
+ *
+ * @package   AeonBlog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Sanitize functions.
+ */
 
 /**
  * Checkbox sanitization callback example.
@@ -16,10 +27,11 @@ function aeonblog_sanitize_checkbox( $checked ) {
 
 if ( ! function_exists( 'aeonblog_sanitize_number' ) ) {
 	/**
-	* Adds sanitization callback function: Number.
-	*
-	* @since AeonBlog 1.0.0
-	*/
+	 * Adds sanitization callback function: Number.
+	 *
+	 * @param int $input Input from the option.
+	 * @since AeonBlog 1.0.0
+	 */
 	function aeonblog_sanitize_number( $input ) {
 		if ( isset( $input ) && is_numeric( $input ) ) {
 			return $input;
@@ -29,10 +41,13 @@ if ( ! function_exists( 'aeonblog_sanitize_number' ) ) {
 
 if ( ! function_exists( 'aeonblog_sanitize_select' ) ) {
 	/**
-	* Sanitize selection
-	*
-	* @since AeonBlog 1.0.0
-	*/
+	 * Sanitize selection.
+	 *
+	 * @param string $input Input from the option.
+	 * @param array  $setting INformation about the customizer control.
+	 *
+	 * @since AeonBlog 1.0.0
+	 */
 	function aeonblog_sanitize_select( $input, $setting ) {
 		// Ensure input is a slug.
 		$input = sanitize_text_field( $input );

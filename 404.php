@@ -15,8 +15,10 @@
  */
 
 get_header();
+
 /** Left sidebar */
 get_sidebar( 'left' );
+
 ?>
 <main id="primary" role="main">
 	<header class="page-header">
@@ -29,4 +31,5 @@ get_sidebar( 'left' );
 </main><!-- #primary -->
 <?php
 get_sidebar();
+
 get_footer();
