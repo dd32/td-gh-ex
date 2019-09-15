@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying Archive pages.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * The Template for displaying all single posts.
  *
  * @package Ascent
  * @since   0.0.1
@@ -12,48 +10,34 @@ get_header(); ?>
 
 <div class="row">
     <div class="col-sm-12 col-md-9">
-	<?php // add the class "panel" below here to wrap the content-padder in Bootstrap style ;) ?>
-		<div class="content-padder">
 
-		    <?php if ( have_posts() ) : ?>
+    	<?php ascent_content_while_before(); ?>
 
-		        <header class="page-header">
-		            <?php
-		              the_archive_title( '<h1 class="page-title" itemprop="headline">', '</h1>' );
-		              the_archive_description( '<div class="taxonomy-description">', '</div>' );
-		            ?>
-				</header><!-- .page-header -->
+		<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php ascent_content_while_before(); ?>
+			
+			<?php ascent_entry_before(); ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-					<?php ascent_entry_before(); ?>
+			<?php ascent_entry_after(); ?>
 
-				    <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-				    <?php ascent_entry_after(); ?>
+			<?php ascent_content_nav( 'nav-below' ); ?>
 
-				<?php endwhile; ?>
+			<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || '0' != get_comments_number() )
+					comments_template();
+			?>
 
-				<?php ascent_content_while_after(); ?>
+			<?php ascent_content_while_after(); ?>
 
-				<?php ascent_content_nav( 'nav-below' ); ?>
 
-		    <?php else : ?>
-
-		    	<?php ascent_entry_before(); ?>
-
-				<?php get_template_part( 'no-results', 'archive' ); ?>
-
-				<?php ascent_entry_after(); ?>
-
-		    <?php endif; ?>
-
-		</div><!-- .content-padder -->
+		<?php endwhile; // end of the loop. ?>
 
     </div>
-
+    
     <div class="col-sm-12 col-md-3">
         <?php get_sidebar(); ?>
     </div>
