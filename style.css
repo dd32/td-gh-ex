@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: https://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Demo: http://demo.wpattire.com/
 Author: Shafayat
-Version: 1.2.2
+Version: 1.2.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -227,9 +227,10 @@ blockquote {
 .clear {
 	clear: both;
 }
-.list-group-item, .card, .card-header, .card-footer, .form-control{
+.list-group-item, .card, .card-header, .card-footer, .form-control, .input-group-text{
 	border-color: #e5e5e5;
 }
+.input-group-text,
 .card-header, .card-footer{
 	background-color: #fafafa;
 }
@@ -1813,6 +1814,11 @@ article.post.product:before {
 	background: #fff !important;
 	border-color: #e5e5e5;
 }
+#theme-user-dashboard .card h3{
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
 #theme-user-dashboard #wpdm-dashboard-contents .nav-tabs a {
 	color: #00b182;
 	opacity: .4;
@@ -1842,21 +1848,15 @@ article.post.product:before {
 	font-size: 16px;
 	color: #666;
 }
-#theme-user-dashboard .card-body h3 > i {
-	margin-right: 10px;
-	color: #ff4f81;
-}
-#theme-user-dashboard .bg-secondary .card-body h3 > i {
-	color: #4a8eff ;
-}
 
-#theme-user-dashboard .bg-success .card-body h3 > i {
-	color: #00b182;
-}
 #theme-user-dashboard .table td,
 #theme-user-dashboard .table th {
 	padding: 12px 20px;
 }
+.wpdm-rec-item a{
+	font-weight: 500;
+}
+
 /* purchase */
 #theme-user-dashboard .card .card-footer {
 	border-color: #e5e5e5;

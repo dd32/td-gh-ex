@@ -20,6 +20,7 @@ class AttireThemeEngine {
 
 	function Actions() {
 		add_action( 'wp_head', array( $this, 'WPHead' ) );
+		add_action( 'admin_head', array( $this, 'adminHead' ) );
 
 		add_action( 'widgets_init', array( $this, 'InitiateWidgets' ) );
 	}
@@ -28,6 +29,16 @@ class AttireThemeEngine {
 		$this->CustomPageHeader();
 		$this->CustomCSS();
 	}
+
+	function adminHead(){
+	    ?>
+        <style>
+            .wp-block{
+                max-width: 100%;
+            }
+        </style>
+        <?php
+    }
 
 
 	/**

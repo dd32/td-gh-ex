@@ -1,4 +1,4 @@
-= Attire =
+=== Attire ===
 
 * Attire - WordPress Theme, Copyright 2018 wpattire.com
 * Attire - WordPress Theme is distributed under the terms of the GNU GPL v3.0
@@ -15,3 +15,8 @@
 * Respond licensed under MIT [https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT]
 * Popper licensed under MIT [https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md]
 * CC0-licensed image from https://pixabay.com/ [https://pixabay.com/en/service/terms/]
+
+== Changelog ==
+
+= 1.2.3 - 2019.09.15 =
+*   Adjusted some minor css issue
