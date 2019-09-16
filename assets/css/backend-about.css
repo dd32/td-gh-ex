@@ -23,11 +23,10 @@ h2.vision-themes {
 	display: block;
 	border: 0 none;
 	margin: 0 auto;
-	padding-top: 45px;
 }
 #vision-install-plugins .plugin .plugin-screenshot .plugin-info {
 	text-align: center;
-	padding: 40px 0;
+	padding: 10px 0;
 }
 #vision-install-plugins .plugin .plugin-wrapper .plugin-name {
 	font-size: 15px;

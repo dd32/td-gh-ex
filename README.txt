@@ -3,6 +3,10 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.52 - September 16 2019 =
+* Updated Kirki framework to the latest version.
+* Minor backend styling fixes.
+
 = 1.4.51 - 20 July 2019 =
 * Fixed sidebar below content bug on Safari browsers.
 

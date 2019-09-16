@@ -53,7 +53,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 		 * @since Agama v1.0.1
 		 */
 		public function render_page() {
-            $FuryScreenURI = AGAMA_IMG . 'promo/themevision-logo.jpg';
+            $FuryScreenURI = AGAMA_IMG . 'promo/fury-screenshot.png';
             $readme = AGAMA_DIR . 'README.txt';
 			echo '<div class="wrap about-wrap">';
 				echo '<h1>'.sprintf( __( 'Welcome to Agama v%s', 'agama' ), agama_version ).'</h1>';
@@ -98,17 +98,17 @@ if( ! class_exists( 'Agama_About' ) ) {
 				echo '</div>';
             
                 echo '<h2 class="nav-tab-wrapper vision-themes">';
-					echo '<a class="nav-tab nav-tab-active">'.__( 'Our Themes', 'agama' ).'</a>';
+					echo '<a class="nav-tab nav-tab-active">'.esc_html__( 'Our Themes', 'agama' ).'</a>';
 				echo '</h2>';
             
                 echo '<div id="vision-install-plugins" class="vision-important-notice vision-other-products">';
-                    echo '<div class="under-the-hood three-col">';
-                        echo '<div class="plugin  col">';
+                    echo '<div class="has-3-columns is-fullwidth">';
+                        echo '<div class="plugin  column">';
                             echo '<div class="plugin-wrapper">';
                                 echo '<div class="plugin-screenshot">';
                                     echo '<img src="'. esc_url( $FuryScreenURI ) .'" alt="'. esc_attr__( 'Fury Theme', 'agama' ) .'">';
                                     echo '<div class="plugin-info">';
-                                        echo '<a href="http://furytheme.com/" target="_blank">'. esc_html__( 'Demo', 'agama' ) .'</a>';
+                                        echo '<a href="https://wordpress.org/themes/fury/" target="_blank">'. esc_html__( 'Demo', 'agama' ) .'</a>';
                                     echo '</div>';
                                 echo '</div>';
                                 echo '<h3 class="plugin-name">'. esc_html__( 'Fury Theme', 'agama' ) .'</h3>';
