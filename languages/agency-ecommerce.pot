@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Agency Ecommerce 2.0.4\n"
+"Project-Id-Version: Agency Ecommerce 2.0.9\n"
 "Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
-"POT-Creation-Date: 2019-08-08 06:01:35+00:00\n"
+"POT-Creation-Date: 2019-09-16 07:13:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,15 +41,15 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:144
+#: core/class-agency-ecommerce-core.php:148
 msgid "Top Header Menu"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:145
+#: core/class-agency-ecommerce-core.php:149
 msgid "Primary Menu"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:146
+#: core/class-agency-ecommerce-core.php:150
 msgid "Special Menu( Display Beside Primary Menu)"
 msgstr ""
 
@@ -174,6 +174,14 @@ msgstr ""
 
 #: core/customizer/sections/404-options.php:35
 msgid "404 Page Content"
+msgstr ""
+
+#: core/customizer/sections/accessibility-options.php:5
+msgid "Accessibility Options"
+msgstr ""
+
+#: core/customizer/sections/accessibility-options.php:19
+msgid "Disable focus outline"
 msgstr ""
 
 #: core/customizer/sections/bottom-header-options.php:7
@@ -641,16 +649,16 @@ msgstr ""
 msgid "%s page is not set."
 msgstr ""
 
-#: core/helper/helper-main.php:382
+#: core/helper/helper-main.php:383
 msgid "No widgets found. Please add widgets to this widget area."
 msgstr ""
 
-#: core/helper/helper-main.php:392
+#: core/helper/helper-main.php:393
 #. translators: 1: link to WP admin new post page.
 msgid "<a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-miscellaneous-hooks.php:84
+#: core/hooks/class-agency-ecommerce-miscellaneous-hooks.php:83
 #. translators: 1: theme name, 2: author link
 msgid "%1$s by %2$s"
 msgstr ""
@@ -659,16 +667,245 @@ msgstr ""
 msgid "Log Out"
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:199
+#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:206
 msgid "Grid View"
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:201
+#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:208
 msgid "List View"
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:275
+#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:282
 msgid "You&rsquo; re viewing:"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:49
+msgid "About"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:78
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:82
+msgid "Cheat in &#8217; huh?"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:101
+msgid "Dismiss"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:102
+msgid ""
+"Welcome! Thank you for choosing %1$s! To fully take advantage of the best "
+"our theme can offer please make sure you visit our %2$s welcome page %3$s."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:105
+msgid "Get started with %1$s"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:131
+msgid "About "
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:144
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:32
+msgid "Theme Info"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:148
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:44
+msgid "View Demo"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:152
+#: core/info/about/class-agency-ecommerce-about.php:254
+msgid "View PRO version"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:156
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:48
+msgid "Rate this theme"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:162
+msgid "Starter Sites"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:174
+msgid "Free Vs Pro"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:179
+msgid "More Themes"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:184
+msgid "Changelog"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:224
+msgid "Theme Customizer"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:225
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:227
+#: core/info/about/class-agency-ecommerce-about.php:329
+msgid "Customize"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:232
+#: core/info/about/class-agency-ecommerce-about.php:237
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:40
+msgid "Documentation"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:233
+msgid "Please view our documentation page to setup the theme."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:241
+msgid "Got theme support question?"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:242
+msgid "Please put it in our dedicated support forum."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:245
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:36
+#: core/template-functions.php:305 core/template-functions.php:325
+msgid "Support"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:249
+msgid "Need more features?"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:250
+#: core/info/about/class-agency-ecommerce-about.php:601
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:258
+msgid "Have you need customization?"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:259
+msgid "Please send message with your requirement."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:262
+msgid "Customization"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:266
+#: core/info/about/class-agency-ecommerce-about.php:271
+msgid "Translate %1$s"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:267
+msgid "Click below to translate this theme into your own language."
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:280
+msgid "Return to Updates"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:280
+msgid "Return to Dashboard &rarr; Updates"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:283
+msgid "Go to Dashboard &rarr; Home"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:283
+msgid "Go to Dashboard"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:325
+#: core/tgmpa/class-tgm-plugin-activation.php:2371
+msgid "Active"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:365
+#: core/tgmpa/class-tgm-plugin-activation.php:2784
+msgid "Activate"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:377
+msgid "Install Now"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:382
+msgid "Live Preview"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:443
+msgid "View changelog below:"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:494
+msgid "Price"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:498
+msgid "Free"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:502
+msgid "$48 to $68"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:509
+msgid "Import Demo Data"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:523
+msgid "Advance Product Slider"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:537
+msgid "Parallax Footer"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:552
+msgid "Secondary & Alternate color"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:566
+msgid "Primary color option"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:581
+msgid "Typography option"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:606
+msgid "Features"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Agency Ecommerce"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:609
+msgid "Agency Ecommerce Addons"
+msgstr ""
+
+#: core/info/about/class-agency-ecommerce-about.php:654
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:28
+msgid "View Pro"
+msgstr ""
+
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:60
+#: core/info/customizer/class-agency-ecommerce-customizer-upsell.php:72
+msgid "Important Links"
 msgstr ""
 
 #: core/template-functions.php:303 core/template-functions.php:323
@@ -677,10 +914,6 @@ msgstr ""
 
 #: core/template-functions.php:304 core/template-functions.php:324
 msgid "Docs"
-msgstr ""
-
-#: core/template-functions.php:305 core/template-functions.php:325
-msgid "Support"
 msgstr ""
 
 #: core/template-tags.php:58
@@ -863,10 +1096,6 @@ msgstr ""
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: core/tgmpa/class-tgm-plugin-activation.php:2371
-msgid "Active"
-msgstr ""
-
 #: core/tgmpa/class-tgm-plugin-activation.php:2377
 msgid "Required Update not Available"
 msgstr ""
@@ -961,10 +1190,6 @@ msgstr ""
 
 #: core/tgmpa/class-tgm-plugin-activation.php:2781
 msgid "Update"
-msgstr ""
-
-#: core/tgmpa/class-tgm-plugin-activation.php:2784
-msgid "Activate"
 msgstr ""
 
 #: core/tgmpa/class-tgm-plugin-activation.php:2815
@@ -1075,6 +1300,52 @@ msgstr ""
 #: core/tgmpa/tgmpa-agency-ecommerce.php:35
 msgid "Mantrabrain Starter Sites"
 msgstr ""
+
+#: core/tgmpa/tgmpa-agency-ecommerce.php:69
+#. translators: 1: plugin name(s).
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/tgmpa/tgmpa-agency-ecommerce.php:75
+#. translators: 1: plugin name(s).
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/tgmpa/tgmpa-agency-ecommerce.php:81
+#. translators: 1: plugin name(s).
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/tgmpa/tgmpa-agency-ecommerce.php:87
+#. translators: 1: plugin name(s).
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/tgmpa/tgmpa-agency-ecommerce.php:93
+#. translators: 1: plugin name(s).
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/tgmpa/tgmpa-agency-ecommerce.php:99
+#. translators: 1: plugin name(s).
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/vendor/breadcrumbs/breadcrumbs.php:264
 msgid "Browse:"
@@ -1556,24 +1827,24 @@ msgid "This option will work only if you disable carousel for this widget."
 msgstr ""
 
 #: core/widgets/agency-ecommerce-woo-products-widget.php:298
-#: core/widgets/class-agency-ecommerce-widget-base.php:185
+#: core/widgets/class-agency-ecommerce-widget-base.php:209
 msgid "All Categories"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:205
+#: core/widgets/class-agency-ecommerce-widget-base.php:229
 #. translators: 1: taxonomy
 msgid "Taxonomy (%s) not found"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:234
+#: core/widgets/class-agency-ecommerce-widget-base.php:258
 msgid "Choose an image"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:235
+#: core/widgets/class-agency-ecommerce-widget-base.php:259
 msgid "Use image"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:236
+#: core/widgets/class-agency-ecommerce-widget-base.php:260
 msgid "Select an Image"
 msgstr ""
 
@@ -1629,10 +1900,6 @@ msgstr ""
 
 #: template-parts/home-widgets.php:72
 msgid "No widgets found. Please add widgets to Home Page Widget Area."
-msgstr ""
-
-#. Theme Name of the plugin/theme
-msgid "Agency Ecommerce"
 msgstr ""
 
 #. Theme URI of the plugin/theme
@@ -1722,7 +1989,7 @@ msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: core/helper/helper-main.php:285
+#: core/helper/helper-main.php:286
 msgctxt "submit button"
 msgid "Search"
 msgstr ""

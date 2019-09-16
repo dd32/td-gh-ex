@@ -69,6 +69,10 @@ if (!class_exists('Agency_Ecommerce_Core')) :
         {
 
 
+            // Theme information
+            require AGENCY_ECOMMERCE_THEME_DIR . '/core/info/class-agency-ecommerce-theme-information.php';
+
+
             require AGENCY_ECOMMERCE_THEME_DIR . '/core/class-agency-ecommerce-assets.php';
 
             // Customizer additions.
