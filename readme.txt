@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.4 =
+* bug fix: main menu 3rd level Desktop
+
 = 1.2.3 =
 * increase default text font size
 
