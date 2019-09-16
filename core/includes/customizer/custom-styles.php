@@ -78,6 +78,10 @@ function responsive_premium_custom_color_styles() {
 	$container_padding_top    = get_theme_mod( 'responsive_container_top_padding' );
 	$container_padding_bottom = get_theme_mod( 'responsive_container_bottom_padding' );
 
+	// Footer colors.
+	$footer_background_color = get_theme_mod( 'responsive_footer_background_color' );
+	$footer_text_color       = get_theme_mod( 'responsive_footer_text_color' );
+
 	if ( isset( $body_typography['color'] ) ) {
 		$body_color = $body_typography['color'];
 	} else {
@@ -203,7 +207,7 @@ function responsive_premium_custom_color_styles() {
 		input, .widget-wrapper input[type=email], .widget-wrapper input[type=password], .widget-wrapper input[type=text], .widget-wrapper select {
 			color: {$input_text_color};
 			background-color: {$input_background_color};
-			
+			border-color: {$input_border_color};
 			font-family: {$font_family};
 			font-size: {$body_font_size};
 			font-weight: {$font_weight};
@@ -308,8 +312,7 @@ function responsive_premium_custom_color_styles() {
 		.woocommerce #respond input#submit.alt:disabled[disabled],
 		.woocommerce #respond input#submit.alt.disabled:hover,
 		.woocommerce #respond input#submit.alt:disabled:hover,
-		.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
-		.woocommerce a.button.alt:hover{
+		.woocommerce #respond input#submit.alt:disabled[disabled]:hover{
 		background-color: {$button_hover_color};
 		color: {$button_hover_text_color};
 		}
@@ -317,7 +320,7 @@ function responsive_premium_custom_color_styles() {
 			color: {$label_color};
 		}
 		.fullwidth-layout
-		.container, div#container {
+		.container, div#container, {
 			width: {$container_width}px;
 			max-width: 100%;
 		}
@@ -540,6 +543,17 @@ function responsive_premium_custom_color_styles() {
 	if ( ! empty( $background_color ) ) {
 		$custom_css .= "body.home #wrapper, #wrapper{
 			background-color: #{$background_color};
+		}";
+	}
+
+	if ( ! empty( $footer_background_color ) ) {
+		$custom_css .= "#footer, .full-width-no-box #footer-wrapper .footer_div{
+			background-color: {$footer_background_color};
+		}";
+	}
+	if ( ! empty( $footer_text_color ) ) {
+		$custom_css .= "#footer *, .full-width-no-box #footer-wrapper .footer_div *{
+			color: {$footer_text_color};
 		}";
 	}
 	wp_add_inline_style( 'responsive-style', $custom_css );
