@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.3 =
+* bug fix: main menu 3rd level Desktop
+
 = 1.2.2 =
 * bug fix: remove color gap in footer
 * increase default text font size
