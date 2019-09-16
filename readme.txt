@@ -40,6 +40,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.6 =
+* bug fix: main menu 3rd level Desktop
+
 = 1.1.5 =
 * increase default text font size
 
