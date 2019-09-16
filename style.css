@@ -5,7 +5,7 @@ Theme URI: https://ayatemplates.com/product/ayagreen
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayawild
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: ayagreen
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -3494,10 +3494,11 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		display:block;
 	}
 	
-	#navmain ul ul ul {
-		top:-1px;
-		left:100%;
-	}
+	#navmain ul ul li:hover > ul,
+  	#navmain ul ul li:focus-within > ul {
+  		top:-1px;
+  		left:100%;
+  	}
 	
 	#navmain ul ul li {
 		float:none;
