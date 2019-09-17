@@ -92,22 +92,22 @@ if ( ! class_exists( 'Redux' ) ) {
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
          $args['share_icons'][] = array(
 	        'url' => 'https://www.facebook.com/KadenceWP',
-	        'title' => 'Follow Kadence WP on Facebook', 
+	        'title' => 'Follow Kadence WP on Facebook',
 	        'icon' => 'dashicons dashicons-facebook',
 	    );
 	    $args['share_icons'][] = array(
 	        'url' => 'https://www.twitter.com/KadenceWP',
-	        'title' => 'Follow Kadence WP on Twitter', 
+	        'title' => 'Follow Kadence WP on Twitter',
 	        'icon' => 'dashicons dashicons-twitter',
 	    );
 		$args['share_icons'][] = array(
 		    'url' => 'https://www.instagram.com/KadenceWP',
-		    'title' => 'Follow Kadence WP on Instagram', 
+		    'title' => 'Follow Kadence WP on Instagram',
 		    'icon' => 'dashicons dashicons-format-image',
 		);
 		$args['share_icons'][] = array(
 		    'url' => 'http://www.youtube.com/c/KadenceWP',
-		    'title' => 'Follow Kadence WP on YouTube', 
+		    'title' => 'Follow Kadence WP on YouTube',
 		    'icon' => 'dashicons dashicons-video-alt3',
 		);
         $args = apply_filters( 'kadence_theme_options_args', $args );

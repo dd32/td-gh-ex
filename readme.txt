@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.3.9 | 17th September 2019 = 
+* Add: Event Organizer Support
+
 = Version 3.3.8 | 7th September 2019 = 
 * Update: Gallery Lightbox issue.
 

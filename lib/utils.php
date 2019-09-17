@@ -62,7 +62,31 @@ function virtue_toolset_layout_support() {
 		add_filter('template_include', array('Kadence_Wrapping', 'wrap'), 10);
 	}
 }
-
+add_filter( 'template_include', 'virtue_event_organizer_support', 10 );
+function virtue_event_organizer_support( $template_path ) {
+	if ( class_exists( 'EO_Theme_Compatabilty' ) ) {
+		global $wp_query;
+		if ( is_archive() && eventorganiser_is_event_query( $wp_query ) ) {
+			remove_filter( 'template_include', array( 'Kadence_Wrapping', 'wrap' ), 101 );
+		}
+	}
+	return $template_path;
+}
+add_action( 'after_setup_theme', 'virtue_event_organizer_template_support' );
+function virtue_event_organizer_template_support() {
+	add_filter( 'eventorganiser_theme_compatability_templates', 'virtue_event_organizer_archive_template_issue' );
+}
+/**
+ * Virtue event organizer filter
+ *
+ * @param string $template archive template.
+ */
+function virtue_event_organizer_archive_template_issue( $template ) {
+	if ( is_archive() ) {
+		return get_template_part( 'archive', 'events' );
+	}
+	return $template;
+}
 /**
  * Page titles
  */
