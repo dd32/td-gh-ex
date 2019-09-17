@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/archie
 Author: Theme Palace
 Author URI: https://themepalace.com
 Description: Archie, with its aesthetically pleasant and modern looking design is a multipurpose WordPress theme fully capable of handling the needs and requirements of enormously vast range of websites, from personal to corporate but is particularly suited for the needs of people who want to start their blog, archietectural firms, interior design firms, landscaping firms, entertainment business and engineering firms that wish to establish their online presence. The theme is beautifully crafted, clean, easy to use, responsive, features different layouts with sidebar position and allows unlimited color selection. It has been designed for everybody with or without previous coding experience to effectively and helps to speedily put together polished, professional quality websites without having to so much as peek at a single line of code.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: archie
@@ -1473,10 +1473,53 @@ table tbody {
 .tagcloud a:hover {
     color: #fd9c30;
 }
-
-
-
-
+.error404.right-sidebar #primary, 
+.error404.left-sidebar #primary {
+    width: 100%;
+}
+.error-404.not-found {
+    text-align: center;
+    margin: auto;
+}
+.error-404.not-found p {
+	color: #ccc;
+}
+.error404 .search-form {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+.error-404.not-found form.search-form input {
+    padding: 0 40px 0 40px;
+}
+form.search-form input {
+    width: 100%;
+    padding: 0 40px 0 15px;
+    font-weight: 300;
+}
+input.search-field {
+    height: 50px;
+    border-radius: 0;
+    padding: 0 50px 0 15px;
+    width: 100%;
+    outline: none;
+}
+form.search-form button.search-submit {
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    width: 45px;
+    border-radius: 0;
+    outline: none;
+}
+.search-submit svg.icon-search {
+    fill: #ccc;
+    opacity: 1;
+}
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
