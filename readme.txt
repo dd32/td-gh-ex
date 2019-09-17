@@ -5,7 +5,7 @@ Contributors: canyonthemes
 Tags: custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
 Requires at least: 4.8
 Requires PHP: 5.6
-Tested up to: 5.1.1
+Tested up to: 5.2.3
 Stable tag: 0.0.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Better Health  is a capable and competent, professional and robust, serious and reliable responsive WordPress multipurpose website theme. Better Health has been developed as a powerful platform for the effortless crafting of feature-rich medical industry websites. It has one click demo import as well.
 The advanced theme options and available various widgets with drag and drop features will help to customize your site as your need.  Some of the available options are awesome slider section, header options, footer options, layout design options,Color options, widget options, custom copyright options integrated social icons using menu, reset color option and lots of other available options will allow you to create unique website as you want. Medical practices, medical organizations and related businesses find in Better Health a staunch ally in bringing the benefits of their practice to a worldwide audience. Try Better Health today!
- 
+
 Demo: http://demo.canyonthemes.com/better-health
 
 
@@ -25,6 +25,9 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.1 - September 10 2019 =
+* Extend compatibility to WordPress 5.2.3
 
 = 1.0.0 - August 28 2019 =
 
@@ -51,7 +54,7 @@ Demo: http://demo.canyonthemes.com/better-health
 * Book appointment text added.
 * One click demo import added.
 * Checked with latest WordPress version.
-* Fixed minor CSS issues. 
+* Fixed minor CSS issues.
 
 = 0.0.6 - June 25 2018 =
 
@@ -129,9 +132,9 @@ Better Health is distributed under the terms of the GNU General Public License v
  * Have Top Header Info Option on customizer where user can hide and show this section, and user can edit text and icon for email and phone number.
  * Woocommerce compatible
 
-== Upgrade Notice == 
+== Upgrade Notice ==
 
-* There is not any upgrade notic now. 
+* There is not any upgrade notic now.
 
 == Screenshots ==
 * https://www.pexels.com/de/foto/arzt-ausrustung-box-doktor-79858/
