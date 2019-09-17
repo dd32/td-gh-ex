@@ -33,6 +33,7 @@
 					'recommended_plugins' 	=> esc_html__('Recommended Plugins', 'arrival'),
 					'demo_import' 			=> esc_html__('Import Demo', 'arrival'),
 					'changelogs'			=> esc_html__('Changelogs','arrival'),
+					'free_vs_pro'			=> esc_html__('Free Vs Pro','arrival'),
 					'support' 				=> esc_html__('Support', 'arrival'),
 					
 				);
@@ -468,7 +469,7 @@
 						<div class="box-header op-box-header"><?php esc_html_e('Theme Documentation','arrival'); ?></div>
 						<div class="box-content">
 							<p><?php esc_html_e('We have online documentation to make your configuration process easy, go through the documentation to get more familiar with theme','arrival'); ?></p>
-							<a href="#" class="button button-primary" target="_blank"><?php esc_html_e('Read Now','arrival'); ?></a>
+							<a href="https://wpoperation.com/wp-documentation/arrival/" class="button button-primary" target="_blank"><?php esc_html_e('Read Now','arrival'); ?></a>
 						</div>
 					</div>
 

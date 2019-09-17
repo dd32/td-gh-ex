@@ -64,6 +64,40 @@ function arrival_customize_register( $wp_customize ) {
 		
 	}
 
+
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Arrival_Customize_Section_Pro' );
+
+	// Register sections.
+	$wp_customize->add_section(
+	    new Arrival_Customize_Section_Pro(
+	        $wp_customize,
+	        'arrival-pro',
+	        array(
+	            'title'    => esc_html__( 'Premium Addons Available', 'arrival' ),
+	            'pro_text' => esc_html__( 'Buy Now','arrival' ),
+	            'pro_text1' => esc_html__( 'Compare','arrival' ),
+	            'pro_url'  => 'https://wpoperation.com/themes/arrival-pro/',
+	            'priority' => 0,
+	        )
+	    )
+	);
+	$wp_customize->add_setting(
+		'opstore_pro_upbuton',
+		array(
+			'section' => 'arrival-pro',
+			'sanitize_callback' => 'esc_attr',
+		)
+	);
+
+	$wp_customize->add_control(
+		'opstore_pro_upbuton',
+		array(
+			'section' => 'arrival-pro'
+		)
+	);
+
+
 }
 add_action( 'customize_register', 'arrival_customize_register' );
 

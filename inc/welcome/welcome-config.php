@@ -77,6 +77,28 @@
 		'demo_installed' 	=> esc_html__('Demo Installed', 'arrival'),
 		'demo_confirm' 		=> esc_html__('Are you sure to import demo content ?', 'arrival'),
 
+		//free vs pro
+		'free_vs_pro' => array(
+
+            'features' => array(
+                'Preloader Options' => array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Remove Footer Copyright' => array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Sticky Header'=> array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Maintenance Mode'=> array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Custom Elementor Addons'=> array('5+','25+'),
+                'Site Header Options'=> array('Simple','Highly customizable with different navigation layouts'),
+                'Typography Style & Colors' => array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Unlimited Header and Footer Builder' => array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Lazy Load Images' => array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Newsletter Popup' => array('No', 'Yes', 'dashicons-no-alt', 'dashicons-yes'),
+                'Responsive Layout' => array('Yes', 'Yes', 'dashicons-yes', 'dashicons-yes'),
+                'Translations Ready' => array('Yes', 'Yes', 'dashicons-yes', 'dashicons-yes'),
+                'SEO' => array('Optimized', 'Optimized'),
+                'Support' => array('Yes', 'High Priority Dedicated Support')
+            ),
+        ),
+
+
 	);
 
 	/**

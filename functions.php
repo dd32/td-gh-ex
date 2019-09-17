@@ -58,10 +58,10 @@ function arrival_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
-		array(
+		apply_filters('arrival_nav_register',array(
 			'primary' 	=> esc_html__( 'Primary', 'arrival' ),
 			'top'		=> esc_html__( 'Top', 'arrival' ),
-		)
+		))
 	);
 
 	/*

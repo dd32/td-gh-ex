@@ -311,3 +311,44 @@ a.buy-pro-btn:hover{
 .theme-browser .theme .theme-name{
     height: auto;
 }
+/* free vs pro */
+.compare-table.table-responsive table, 
+.compare-table.table-responsive th,
+.compare-table.table-responsive td {
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.compare-table.table-responsive table {
+  border-collapse: collapse;
+}
+
+.operation-comparision-wrapper {
+    background: #fff;
+    padding: 30px;
+    width: 70%;
+    float: left;
+}
+.operation-comparision-wrapper td.dashicons-before.dashicons-no-alt {
+    color: #f16565;
+}
+.operation-comparision-wrapper td.dashicons-before.dashicons-yes {
+    color: rgba(75, 185, 54, 0.8);
+}
+.operation-comparision-wrapper .button-wrapper {
+    text-align: center;
+}
+.operation-comparision-wrapper .button-wrapper a {
+    text-decoration: none;
+    padding: 15px 25px;
+    background: #e94c4c;
+    color: #fff;
+    display: inline-block;
+    margin-top: 25px;
+}
+.operation-comparision-wrapper .button-wrapper a:hover{
+    background: #ce3535;
+}
+.operation-side-box-wrapper .box-content {
+    padding: 20px 15px;
+}

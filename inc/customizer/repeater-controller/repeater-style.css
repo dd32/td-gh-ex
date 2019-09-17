@@ -76,13 +76,13 @@
   float: right;
 }
 .operation-add-control-field:before {
-    content: "\f24d";
+    content: "\f132";
     display: inline-block;
     position: relative;
     left: -2px;
     top: -1px;
     margin-right: 4px;
-    font-family: fontawesome;
+    font-family: dashicons;
     vertical-align: middle;
 }
 .operation-fields textarea{
