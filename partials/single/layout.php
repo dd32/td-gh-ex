@@ -11,11 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php responsive_schema_markup( 'creativework' ); ?>>
 
 	<?php responsive_entry_top(); ?>
 
-	<div class="post-entry" <?php responsive_schema_markup( 'entry_content' ); ?>>
+	<div class="post-entry">
 
 		<?php
 		// Get posts format.

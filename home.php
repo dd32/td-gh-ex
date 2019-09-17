@@ -28,7 +28,7 @@ $responsive_category_id = get_query_var( 'cat' );
 if ( isset( $responsive_options['blog_posts_index_layout_default'] ) && ( in_array( $responsive_options['blog_posts_index_layout_default'], $responsive_blog_layout_columns, true ) ) ) {
 	?>
 	<div id="content-outer">
-		<div id="content-full" class="grid col-940 <?php echo $responsive_options['blog_posts_index_layout_default']; ?>" <?php responsive_schema_markup( 'entry_content' ); ?>>
+		<div id="content-full" class="grid col-940 <?php echo $responsive_options['blog_posts_index_layout_default']; ?>">
 
 			<!-- Blog page title -->
 			<?php if ( responsive_free_get_option( 'blog_post_title_toggle' ) ) { ?>
@@ -59,7 +59,7 @@ if ( isset( $responsive_options['blog_posts_index_layout_default'] ) && ( in_arr
 						array(
 							'mid_size'  => 2,
 							'prev_text' => __( 'Previous', 'responsive' ),
-							'next_text' => __( 'Next', 'responsive' ),
+							'next_text' => __( 'Next', 'textdomain' ),
 						)
 					);
 				endif;
@@ -101,7 +101,7 @@ if ( isset( $responsive_options['blog_posts_index_layout_default'] ) && ( in_arr
 					array(
 						'mid_size'  => 2,
 						'prev_text' => __( 'Previous', 'responsive' ),
-						'next_text' => __( 'Next', 'responsive' ),
+						'next_text' => __( 'Next', 'textdomain' ),
 					)
 				);
 			endif;
