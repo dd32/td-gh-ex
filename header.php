@@ -21,6 +21,9 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'best-news' ); ?></a>
+<div id="content" class="site-content">
 	<!-- preloader -->
 	<?php if(get_theme_mod('best_news_preloader_enable')):?>
 		<div class="template-preloader-rapper">

@@ -179,4 +179,22 @@ Version: 1.0
 			 $("#popular").removeClass("active");
 			 $(".custom-widget-comments").addClass("active");
 		});		 
+
+		/** make sub menu focus with keyboard */ 
+		
+        $(".nav li a").focus(function () {
+            $(this).parent('li').children('ul.dropdown').css({"opacity": "1", "visibility": "visible", "transform": "translateY(0px)"});
+            $(this).parent('li.menu-item-has-children').children('ul.dropdown').children('li.menu-item-has-children').children('ul').children('li:last-child').focusout(function(){
+                $(this).parent('ul').css('visibility', 'hidden');
+                $(this).parent('ul').css('opacity', '0');
+            });
+            $(this).parent('li').children('ul.dropdown').children('li:last-child').not('.menu-item-has-children').focusout(function(){
+				$(this).parent('ul').css('visibility', 'hidden');
+                $(this).parent('ul').css('opacity', '0');
+            });
+            $(this).parent('li.menu-item-has-children').children('ul.dropdown').children('li.menu-item-has-children:last-child').children('ul.dropdown').children('li:last-child').focusout(function(){
+				$(".dropdown").css('visibility', 'hidden');
+                $(".dropdown").css('opacity', '0');
+            });
+        }); 
 })(jQuery);

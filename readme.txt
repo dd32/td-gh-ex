@@ -3,13 +3,19 @@
 Contributors: postmagthemes
 Tags: blog, news, entertainment, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-image-header, featured-images, footer-widgets, theme-options, threaded-comments
 Requires at least: 4.5
-Tested up to: 5.2
-Stable tag: 1.0.5
+Tested up to: 5.2.3
+Stable tag: 1.0.6
 Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A starter theme called Best News.
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Best News is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 == Description ==
 
@@ -28,6 +34,9 @@ Description: Best News WordPress theme is complete magazine and newspaper theme 
 Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.6 - Sept 18 2019 =
+* insert page break in content-single and content-page, add skip link
 
 = 1.0.5 - August 12 2019 =
 * min height CSS adjusted in small news and others
@@ -48,6 +57,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.6 - Sept 18 2019 =
+* insert page break in content-single and content-page, add skip link and all links are approachable via keyboard
 
 = 1.0.5 - August 12 2019 =
 * min height CSS adjusted in small news and others

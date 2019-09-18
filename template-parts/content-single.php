@@ -29,7 +29,13 @@
 			</div>
 		</div>
 		<div class="news-content text-justify">
-			<?php the_content();?>
+			<?php the_content();
+			wp_link_pages( array(
+				'before'            => '<div class="text-center">'.__( 'Pages :', 'best-news' ),
+				'after'             => '</div>',
+				'link_before'       => '',
+				'link_after'        => ''
+		) ); ?>
 		</div>
 		
 	</article>

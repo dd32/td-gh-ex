@@ -48,6 +48,7 @@
 	</section>
 	<?php endif; ?>
 <!-- Footer Area -->
+</div> <!-- skip link-->
 <footer class="footer">
 	<!-- Footer Top -->
 	<div class="footer-top ">

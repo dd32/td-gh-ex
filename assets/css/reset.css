@@ -310,7 +310,6 @@ a,button,input,textarea{
 }
 a,
 a:hover,
-a:focus,
 a:active,
 button{
     text-decoration: none;
@@ -323,13 +322,12 @@ img {
 	display:block;
 	height: auto;
 }
-select:focus,
 select:active {
     box-shadow: 0;
     border: 0;
     outline: 0
 }
-.nav > li > a:focus,
+
 .nav > li > a:hover {
     background-color: transparent;
     text-decoration: none;
@@ -488,7 +486,6 @@ img{
 	transition:all 0.3s ease;
 }
 input,
-input:focus,
 input:active {
     outline: none;
     font-weight: 400;
@@ -498,14 +495,10 @@ select{
    -moz-appearance:    none;
    appearance:         none;
 }
-textarea:focus {
-    outline: none !important;
-    box-shadow: none !important
-}
+
 /* Remove Chrome Input Field's Unwanted Yellow Background Color */
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
+input:-webkit-autofill:hover {
     -webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 /*Remove bootstrap tab css*/
@@ -513,7 +506,6 @@ input:-webkit-autofill:focus {
     border: 0
 }
 .nav-tabs > li.active > a,
-.nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a:hover {
     border: 0;
     outline: 0
@@ -682,11 +674,7 @@ input:-webkit-autofill:focus {
 .breadcrumbs ul li a:hover{
 	color:#4DB2EC;
 }
-.form-control:focus {
-	border-color: #ccc;
-	box-shadow: 0 0 0 ;
-	outline: 0 none;
-}
+
 /* Newsletter */
 .newsletter {
 	margin-top: 20px;

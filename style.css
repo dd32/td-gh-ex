@@ -4,7 +4,7 @@ Theme URI: https://www.postmagthemes.com/downloads/best-news-free-newspaper-word
 Author: postmagthemes
 Author URI: https://www.postmagthemes.com/
 Description: Best News WordPress theme is complete magazine and newspaper theme with multiple variation of design and many widgets. This responsive theme is best to use for magazine, blog, news portal and lifestyle coaches. It comes with option to change color of entire site, social links to connect with social networking sites and more. Best News theme contains feature to filter post by author and category. Post can be ordered by published date, randomly and comments count. It supports popular plugins WooCommerce, Contact Form 7, Easy Digital Download. You can view Demo here: https://www.postmagthemes.com/demobestnews
-Version: 1.0.5
+Version: 1.0.6
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 License: GNU General Public License v2 or later
 Text Domain: best-news
@@ -19,7 +19,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
+
 /*====================================
 * Header CSS
 ======================================*/
@@ -2102,3 +2102,59 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	.main-menu ul.nav li ul.dropdown li ul.dropdown li ul.dropdown li:hover ul.dropdown li ul.dropdown{
 		display: none;
 	}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* do following for keyboard focus*/
+
+.btn:focus, button:focus, a:focus, textarea:focus, select:focus, .nav > li > a:focus,
+textarea:focus, input:-webkit-autofill:focus, .nav-tabs > li.active > a:focus, .form-control:focus
+{
+	outline: thin dotted !important;
+}
+input:focus {
+	border: 2px solid black !important;
+}
+

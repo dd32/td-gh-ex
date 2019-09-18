@@ -43,10 +43,3 @@
 		<!--/ End Single News -->
 	</article>
 </div>
-
-<?php
-wp_link_pages( array(
-	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'best-news' ),
-	'after'  => '</div>',
-) );
-?>

@@ -34,7 +34,14 @@
 			</div>
 		</div>
 	<div class="news-content">
-		<?php the_content();?>
+		<?php the_content();
+		wp_link_pages( array(
+			'before'            => '<div class="text-center">'.__( 'Pages :', 'best-news' ),
+			'after'             => '</div>',
+			'link_before'       => '',
+			'link_after'        => ''
+	) ); 
+		?>
 	</div>
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
