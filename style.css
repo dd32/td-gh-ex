@@ -5,7 +5,7 @@ Description: Child Theme of Businesso. This is a Full Width Layout of the Parent
 Author: asiathemes
 Author URI: 
 Template: businesso
-Version: 1.1
+Version: 1.2
 Tags: black, blue, gray, red, dark, light, silver, white, green, brown, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout, translation-ready ,rtl-language-support
 */
 #wrapper{
@@ -29,9 +29,7 @@ ul.contact-top li {
 ul.contact-top li i {
    color:#28A8A8;
 }
-.pagetitle-separator {
-    background: url("../images/divider_teal.png") no-repeat;
-}
+
 /*--------------- Menu-css------------- */ 
 .header-section{
   background-color: #060c17;
@@ -166,13 +164,6 @@ ul.contact-top li i {
 	color:#28A8A8;
 }
 
-/*--------------Page Title Section---------------------------------*/
-.page-title-section {
-	background: url("../images/bg-1.jpg") no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
-}
-.page-title-section .overlay {
-	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);
-}
 /*----------About page----------------------------------------*/
 .about-section h2{
     color: #060c17;
@@ -353,10 +344,6 @@ background-color:#28A8A8
 .course-scroll-btn li a:hover {
 	color: #ffffff;
 } 
-/*--------Blog Page--------------------------------------------------*/
-/* .blog-section{
-  background-color:#fff;
-} */
 
 /*--------Sidebar--------------------------*/
 
