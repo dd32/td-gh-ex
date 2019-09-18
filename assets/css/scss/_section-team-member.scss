@@ -1,0 +1,76 @@
+/*=========================
+    10. TEAM MEMBER
+===========================*/
+.team-member-container {
+    position: relative;
+    @extend .pre-shadow;
+    border-radius: 3px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    .info-container {
+        position: relative;
+
+        .content-divider {
+            z-index: 2;
+        }
+    }
+
+    .member-info {
+        position: relative;
+        background-color: $white-color;
+        padding: $inner-padding/2;
+
+        text-align: center;
+
+        z-index: 2;
+
+        h2 {
+            font-size: $font-size*1.5;
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .social-links {
+        position: absolute;
+        top: 0;
+
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        transition: top .3s ease-in-out;
+
+        a {
+            background-color: $white-color;
+            margin: 5px 0;
+            border-radius: 50%;
+            display: inline-block;
+            @extend .pre-shadow;
+
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+
+            transform: rotate(-90deg);
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    &:hover {
+        .social-links {
+            top: -60%;
+
+            a {
+                transform: rotate(0);
+            }
+        }
+    }
+}

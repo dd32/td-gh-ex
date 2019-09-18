@@ -11,7 +11,7 @@
         <div class="blog-image image-container thumbnail-image">
             <?php if ( has_post_thumbnail() ) : ?>
                 <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail( '', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+                    <?php the_post_thumbnail(); ?>
                 </a>
             <?php endif; ?>
             <span class="post-date"><?php echo esc_html( get_the_date() ); ?></span>
@@ -28,8 +28,6 @@
                     </div><!-- /.author-img -->
                 </div><!-- /.author-container -->
             <?php endif; ?>
-
-            <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
             <?php if( get_post_type() == 'post' ) : ?>
                 <ul class="entry-meta">
@@ -79,6 +77,8 @@
                 ?>
                 </ul><!-- /.entry-meta -->
             <?php endif; ?>
+
+            <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
         </div><!-- /.entry-header -->
 
         <div class="entry-content">

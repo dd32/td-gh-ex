@@ -111,7 +111,7 @@ function apex_business_customizer_value( $control, $css_selector, $css_prop, arr
  * @return [string]
  */
 function apex_business_backgorund_image( $setting, $css_selector ) {
-    $setting = esc_url( get_theme_mod( $setting, get_template_directory_uri() . '/assets/images/banner.jpg' ) );
+    $setting = esc_url( get_theme_mod( $setting ) );
 
     if ( $setting ) {
 

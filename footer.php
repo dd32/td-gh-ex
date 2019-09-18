@@ -66,7 +66,7 @@
     </footer>
 
     <?php
-        $apex_business_editor       = get_theme_mod( 'apex_business_bottom_bar_content_control', __( 'Theme: Apex Business WordPress Theme', 'apex-business') );
+        $apex_business_editor       = get_theme_mod( 'apex_business_bottom_bar_content_control', __( '&copy; Copyright 2019 Apex Business WordPress Theme', 'apex-business') );
         $apex_business_layout_type  = get_theme_mod( 'apex_business_footer_layout_control', 'default-bottom-bar' );
 
         $apex_business_layout_grid  = '6';
@@ -137,14 +137,11 @@
         </div>
     <?php endif; ?>
 
-    <?php if ( get_theme_mod( 'apex_business_back_to_top_switch_setting', 'true' ) ) : ?>
-        <!--== Start Back to Top ==-->
-        <a href="#" class="back-to-top" id="back-to-top" style="">
-            <span class="fa fa-angle-up"></span>
-        </a>
-        <!--== End Back to Top ==-->
-    <?php endif; ?>
-
+    <!--== Start Back to Top ==-->
+    <a href="#" class="back-to-top" id="back-to-top" style="">
+        <span class="fa fa-angle-up"></span>
+    </a>
+    <!--== End Back to Top ==-->
     <?php wp_footer(); ?>
 </body>
 </html>

@@ -1,0 +1,58 @@
+/*=========================
+    06. ABOUT SECTION
+===========================*/
+.about-content {
+  position: relative;
+
+  li{
+
+    &::before{
+      content: "\f058";
+      color:$primary-color;
+      font-family: FontAwesome;
+      margin-right: 10px;
+    }
+  }
+}
+
+.fancy-image {
+  position: relative;
+  border-radius: 10px;
+  @extend .pre-shadow;
+
+  &::before,
+  &::after {
+    position: absolute;
+
+    content: '';
+    width: 20%;
+    height: 20%;
+
+    border-radius: 10px;
+
+    background-color: $primary-color;
+    z-index: -1;
+  }
+
+  .image-container img {
+    border-radius: 10px;
+  }
+
+  &::before {
+    top: -$smaller-padding;
+    left: 10%;
+  }
+
+  &::after {
+    bottom: -$smaller-padding;
+    right: 10%;
+  }
+
+  .slick-slide {
+      height: auto;
+
+      >div {
+        display: flex;
+      }
+  }
+}

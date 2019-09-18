@@ -1,0 +1,117 @@
+/*=========================
+    11. PRICING TABLE
+===========================*/
+
+
+.pricing-table {
+    background-color: $white-color;
+    @extend .pre-shadow;
+    border-radius: 3px;
+    overflow: hidden;
+
+    .card-ribbon {
+       position: absolute;
+       overflow: hidden;
+       top: -1px;
+       right: 0;
+       width: 114px;
+       height: 112px;
+
+       span {
+           position: absolute;
+           top: 16px;
+           right: -25px;
+
+           background-color: $white-color;
+           color: $dark-color;
+
+           font-size: 12px;
+           text-align: center;
+           line-height: 1.5;
+           font-weight: 500;
+
+           display: block;
+           width: 100px;
+           transform: rotate(45deg);
+        }
+    }
+
+    .price-tag {
+        position: relative;
+        padding: $inner-padding;
+        background-color: $primary-color;
+    }
+
+    .price-quote {
+        text-align: center;
+
+        .scheme {
+            color: $white-color;
+            margin-top: $inner-padding;
+        }
+
+        .currency,
+        .value {
+            @extend .scheme;
+            @extend .pre-font-family-2;
+        }
+
+        .currency {
+            top: -15px;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .value {
+            font-size: 60px;
+            line-height: 1;
+            font-weight: 600;
+        }
+    }
+
+    .package-button {
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+
+        @extend .pre-font-family;
+        text-align: center;
+        text-transform: uppercase;
+
+        @extend .pre-shadow;
+        padding: $smaller-padding $inner-padding;
+        background-color: $white-color;
+        border-radius: 50px;
+
+        @include transform( translateX( -50% ) );
+        z-index: 2;
+    }
+
+    .price-details {
+        padding: $inner-padding*2;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .far {
+                color: $primary-color;
+                margin-right: 10px;
+            }
+
+            li {
+                line-height: 2.2;
+            }
+        }
+    }
+
+    .buy-button {
+        text-align: center;
+        margin: 0 0 40px 0;
+
+        .animated-button {
+            @extend .pre-shadow;
+        }
+    }
+}

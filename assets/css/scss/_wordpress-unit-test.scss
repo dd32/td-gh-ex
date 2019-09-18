@@ -180,6 +180,15 @@ label {
     display: inline-block;
 }
 
+* {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
 .wp-block-archives-dropdown {
     margin-bottom: 11px;
 
@@ -230,7 +239,7 @@ label {
     border: 2px solid $primary-color;
     border-radius: 3px;
     padding: 6px 10px;
-    z-index: 9999999999;
+    z-index: 9;
 
     &:focus {
         top: 0 !important;

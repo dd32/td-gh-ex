@@ -8,7 +8,6 @@ function apex_business_layout_settings_setup( $wp_customize ) {
     $wp_customize->add_section( 'apex_business_layout_settings_section', array(
         'title'       =>  __( 'Layout Settings', 'apex-business' ),
         'priority'    =>  10,
-        'capability'  => 'edit_theme_options',
         'panel'       =>  'apex_business_general_panel'
     ) );
 
@@ -135,31 +134,34 @@ function apex_business_layout_settings_setup( $wp_customize ) {
 
     // Headline Setting
     $wp_customize->add_setting( 'apex_business_lodding_section_setting', array(
-     'capability'        => 'edit_theme_options',
-     'sanitize_callback' => 'absint',
+      'capability'        => 'edit_theme_options',
+      'sanitize_callback' => 'absint',
     ) );
+
     $wp_customize->add_control(
-     new WP_Customize_Control(
-       $wp_customize, 'apex_business_lodding_section_control', array(
-           'label'           => esc_html__( 'Lodding Bar', 'apex-business' ),
-           'section'         => 'apex_business_layout_settings_section',
-           'settings'        => 'apex_business_lodding_section_setting',
-           'priority'        => 25,
-           'type'            => 'hidden',
-       )
-     )
+      new WP_Customize_Control(
+        $wp_customize, 'apex_business_lodding_section_control', array(
+            'label'           => esc_html__( 'Lodding Bar', 'apex-business' ),
+            'section'         => 'apex_business_layout_settings_section',
+            'settings'        => 'apex_business_lodding_section_setting',
+            'priority'        => 25,
+            'type'            => 'hidden',
+        )
+      )
     );
-    $wp_customize->add_setting( 'apex_business_loading_bar_setting', array(
-       'capability'        => 'edit_theme_options',
-       'sanitize_callback' => 'absint',
-       'default'           => false
+
+    $wp_customize->add_setting( 'apex_business_lodding_bar_setting', array(
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'absint',
+        'default'           => false
     ) );
-    $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control( $wp_customize, 'apex_business_loading_bar_switch_control', array(
-       'label'       => __( 'Enable Loading Bar?', 'apex-business' ),
-       'section'     => 'apex_business_layout_settings_section',
-       'settings'    => 'apex_business_loading_bar_setting',
-       'priority'    => 25,
-       'type'        => 'ios',
+
+    $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control( $wp_customize, 'apex_business_lodding_bar_switch_control', array(
+        'label'       => __( 'Enable Lodding Bar?', 'apex-business' ),
+        'section'     => 'apex_business_layout_settings_section',
+        'settings'    => 'apex_business_lodding_bar_setting',
+        'priority'    => 25,
+        'type'        => 'ios',
     ) ) );
 }
 

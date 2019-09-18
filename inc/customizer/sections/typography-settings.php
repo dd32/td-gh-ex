@@ -8,7 +8,6 @@ function apex_business_typography_settings_setup( $wp_customize ) {
     $wp_customize->add_section( 'apex_business_typography_settings_section', array(
         'title'       =>  __( 'Typography Settings', 'apex-business' ),
         'priority'    =>  10,
-        'capability'  => 'edit_theme_options',
         'panel'       =>  'apex_business_general_panel'
     ) );
 
@@ -119,6 +118,7 @@ function apex_business_typography_settings_setup( $wp_customize ) {
                             'apex_business_link_font_style_headline_control',
                             'apex_business_link_font_style_control',
                             'apex_business_link_text_transform_control',
+                            'apex_business_link_color_control',
                         ),
                     ),
                 ),
@@ -1637,7 +1637,7 @@ function apex_business_typography_settings_setup( $wp_customize ) {
       'capability'        => 'edit_theme_options',
       'default'           => 'inherit',
       'transport'         => 'postMessage',
-      'sanitize_callback' => 'apex_business_sanitize_select',
+      'sanitize_callback' => 'apex_business_sanitize_select ',
     ) );
 
     $wp_customize->add_control(
@@ -2203,6 +2203,38 @@ function apex_business_typography_settings_setup( $wp_customize ) {
                     'lowercase'     =>  __( 'Lowercase', 'apex-business' ),
                     'capitalize'    =>  __( 'Capitalize', 'apex-business' ),
                 ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_link_color_setting',
+        array(
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+            'transport'         => 'postMessage'
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_link_color_control',
+            array(
+                'label'         => __( 'Font Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_typography_settings_section',
+                'settings'      => 'apex_business_link_color_setting',
+                'show_opacity'  => false, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
             )
         )
     );

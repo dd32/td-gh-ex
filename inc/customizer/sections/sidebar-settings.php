@@ -7,7 +7,6 @@ function apex_business_sidebar_settings_setup( $wp_customize ) {
 
     $wp_customize->add_section( 'apex_business_sidebar_settings_section', array(
         'title'       =>  __( 'Sidebar', 'apex-business' ),
-        'capability'  => 'edit_theme_options',
         'priority'    =>  10,
     ) );
 

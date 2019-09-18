@@ -8,8 +8,8 @@
 if ( ! function_exists( 'apex_business_fonts_url' ) ) :
 
 function apex_business_fonts_url( $control, $subsets ) {
-    $font_control    = esc_attr( get_theme_mod( $control ) );
-    $subset          = get_theme_mod( $subsets );
+    $font    = esc_attr( get_theme_mod( $control ) );
+    $subset  = get_theme_mod( $subsets );
 
     // Subsets
     if ( is_array( $subset ) ) {
@@ -17,13 +17,13 @@ function apex_business_fonts_url( $control, $subsets ) {
     }
 
     // Sanitize handle
-    $handle = trim( $font_control );
+    $handle = trim( $font );
     $handle = strtolower( $handle );
     $handle = str_replace( ' ', '-', $handle );
 
     $fonts_url   = '';
     $font_weight = '100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
-    $font        = $font_control . ':' . $font_weight;
+    $font        = $font . ':' . $font_weight;
     $query_args  = array(
         'family' => $font,
         'subset' => urlencode( $subset ),
@@ -31,10 +31,8 @@ function apex_business_fonts_url( $control, $subsets ) {
 
     $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 
-    if ( $font_control && ( strpos( $font_control, ',' ) != true ) ) {
-        // Enqueue style
-        wp_enqueue_style( 'apex-business-gfonts-' . $handle , esc_url_raw( $fonts_url ), array(), '1.0.0'  );
-    }
+    // Enqueue style
+    wp_enqueue_style( 'apex-business-gfonts-' . $handle , esc_url_raw( $fonts_url ), array(), '1.0.0'  );
 }
 
 endif;

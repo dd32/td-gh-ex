@@ -31,9 +31,6 @@ nav a {
             display: block;
             padding: 2.4rem 1.6rem;
         }
-        a:hover {
-            color: $primary-color;
-        }
     }
 
     >.menu-item-has-children {
@@ -52,8 +49,7 @@ nav a {
             transition: all .3s;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             >ul {
                 opacity: 1;
                 visibility: visible;
@@ -78,17 +74,6 @@ nav a {
        >ul>.menu-item-has-children {
             >ul {
                 left: 85%;
-                opacity: 0;
-                visibility: hidden;
-            }
-
-            &:hover,
-            &:focus {
-                >ul {
-                    opacity: 1;
-                    visibility: visible;
-                    @include transform( translate( -10px, -2.4rem ) );
-                }
             }
 
             >a {
@@ -113,8 +98,7 @@ nav a {
             line-height: 2.2;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             >a {
                 &::after {
                     color: $primary-color;
@@ -132,19 +116,22 @@ nav a {
             padding: 1.6rem 2.4rem;
             width: 220px;
 
+            opacity: 0;
+            visibility: hidden;
+
             @include transform( translateY(-2.4rem) );
             @include transition( all .2s );
         }
 
         .to-left {
-            left: unset !important; // Override by Js right positioning of rightmost menu item submenus
+            left: unset;
             right: 25%;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             >ul {
-                left: 50%;
+                opacity: 1;
+                visibility: visible;
                 @include transform( translate( -10px, -2.4rem ) );
             }
 
@@ -159,20 +146,6 @@ nav a {
     li ul li a {
         color: $dark-color;
     }
-    .menu-item-has-children {
-        .sub-menu {
-            li {
-                a:hover,
-                a:focus {
-                        color: $primary-color;
-                    }
-
-                a {
-                    color:$secondary-color;
-                }
-            }
-        }
-    }
 }
 
 /* Mobile Navigation Menu */
@@ -185,16 +158,6 @@ nav a {
     position: absolute;
     top: 0;
     right: 3.2rem;
-
-    ul > li {
-        > a {
-            color: $secondary-color;
-
-            &:hover {
-              color: $primary-color;
-            }
-        }
-    }
 }
 
 .menubar-right,
@@ -226,8 +189,6 @@ nav a {
     position: absolute;
     top: 1rem;
     right: 0;
-    padding: 0 !important; // Override for parent padding
-    line-height: 1;
 
     -webkit-transition: -webkit-transform .2s ease-out;
     -moz-transition: -moz-transform .2s ease-out;
@@ -338,7 +299,7 @@ nav a {
 @media (min-width: 768px) {
     .mobile-navigation,
     .menubar-right {
-        display: none !important;
+        display: none;
     }
 }
 
@@ -348,6 +309,10 @@ nav a {
     .nav-button,
     .header-navigation {
         display: none;
+    }
+
+    .sticky-header {
+        width: 100%;
     }
 }
 
@@ -364,21 +329,4 @@ nav a {
 
 .nav-button {
     margin: 0 1.6rem;
-}
-
-.main-nav > .menu-item-has-children > .is-focused,
-.main-nav > .menu-item-has-children > .is-focused > .menu-item-has-children > .is-focused {
-    left: 50%;
-    opacity: 1;
-    visibility: visible;
-}
-
-@media screen and (max-width: 782px) {
-   .admin-bar .mobile-menu-open {
-        top: 46px;
-    }
-}
-
-.mobile-navigation .mobile-nav{
-    margin-top:20px;
 }

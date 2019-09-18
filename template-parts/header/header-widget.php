@@ -13,7 +13,17 @@
         <div class="row nav-menu layout-center">
             <div class="col-md-12 vertical-center logo-container">
                 <div class="site-logo left-logo logo-vertical-spacing">
-                    <?php get_template_part( 'template-parts/header/logo', 'default' ); ?>
+                    <?php
+                        if ( has_custom_logo() ) {
+                            if ( function_exists( 'the_custom_logo' ) ) {
+                                the_custom_logo();
+                            }
+                        } else {
+                    ?>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h2 class="site-title"><?php bloginfo( 'name' ); ?></h2></a>
+                    <?php
+                        }
+                    ?>
                 </div><!-- /.site-logo -->
 
                 <div class="header-widgets-right">
@@ -26,7 +36,7 @@
 
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>
-                    <a href="#" class="js-ct-menubar-right"><i class="fa fa-bars menubar-right"></i></a>
+                <i class="fa fa-bars menubar-right"></i>
                 <?php endif; ?>
             </div><!-- /.col-md-12 -->
 

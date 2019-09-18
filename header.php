@@ -23,26 +23,16 @@
         if ( function_exists( 'wp_body_open' ) ) {
             wp_body_open();
         }
-
-        $apex_business_transparency = get_post_meta( get_the_ID(), '_header_option_value_key', TRUE );
     ?>
+
     <a class="skip-link" href="#content">
     <?php esc_html_e( 'Skip to content', 'apex-business' ); ?></a>
-
-    <?php if ( get_theme_mod( 'apex_business_loading_bar_setting', false ) ) : ?>
-        <div id="loading">
-          <div id="pulse">
-            <span></span> <!-- Wave 1 -->
-            <span></span> <!-- Wave 2 -->
-          </div><!-- #pulse -->
-        </div><!-- /#loading -->
-    <?php endif; ?>
 
     <?php if ( get_theme_mod( 'apex_business_box_layout_switch_setting' ) ) : ?>
         <div class="box-layout">
     <?php endif; ?>
         <!--== Start Header Area ==-->
-        <header class="header-container fixed-spacing <?php echo esc_attr( $apex_business_transparency ); ?>">
+        <header class="header-container fixed-spacing">
             <!-- Start Topbar Area -->
             <?php if ( is_active_sidebar( 'apex-business-topbar-address' )
                     || is_active_sidebar( 'apex-business-topbar-office-hours' )

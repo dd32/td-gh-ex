@@ -9,7 +9,6 @@ function apex_business_topbar_settings_setup( $wp_customize ) {
     // Top Bar Section
     $wp_customize->add_section( 'apex_business_topbar_section', array(
         'title'       =>  __( 'Topbar Setup', 'apex-business' ),
-        'capability'  => 'edit_theme_options',
         'priority'    =>  1
     ) );
 

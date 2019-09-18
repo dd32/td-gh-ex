@@ -4,9 +4,7 @@
 
 #theme-footer {
     .ct-footer-border-top {
-            border-width:0;
             border-top-style: solid;
-            border-color: $primary-color;
     }
     .footer-content {
         background: $light-white-color;
@@ -29,14 +27,12 @@
 
             ul  {
                 li{
-                    margin-bottom: 15px;
-                    border-bottom: 1px solid #424242;
-                    padding-bottom: 15px;
+                    margin-bottom: $smaller-padding;
 
                     &:before{
                         content: "\f105";
                         font-family: FontAwesome;
-                        margin-right: $smaller-padding;
+                        margin-right: 10px;
                     }
                 }
             }
@@ -121,7 +117,8 @@
             .widgetarea {
                 ul {
                     list-style: none;
-                    padding-left: 0;
+                    padding-left: 15px;
+
                 }
 
             }
@@ -131,7 +128,6 @@
 
 .footer-bottom {
     border-top-style:solid;
-    border-width:0;
     padding: $inner-padding/2;
     border-color: $primary-color;
 

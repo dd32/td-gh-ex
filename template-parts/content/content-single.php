@@ -9,7 +9,7 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'post' ); ?>>
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="post-image thumbnail-image">
-            <?php the_post_thumbnail( '', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+            <?php the_post_thumbnail() ?>
         </div><!-- /.post-image -->
     <?php endif; ?>
 
@@ -95,7 +95,32 @@
                 )
             );
 
+            if ( get_theme_mod( 'apex_business_share_fb_icon_setting', 1 )
+                || get_theme_mod( 'apex_business_share_twitter_icon_setting', 1 )
+                || get_theme_mod( 'apex_business_share_linkedin_icon_setting', 1 )
+                || get_theme_mod( 'apex_business_share_insta_icon_setting', 1 ) ) :
         ?>
+        <div class="entry-footer">
+            <span><?php echo esc_html( 'Share this post', 'apex-business' ); ?></span>
+            <ul>
+                <?php if( get_theme_mod( 'apex_business_share_fb_icon_setting', 1 ) ) : ?>
+                    <li><a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>"><span class="fa-facebook"></span></a></li>
+                <?php endif; ?>
+
+                <?php if( get_theme_mod( 'apex_business_share_twitter_icon_setting', 1 ) ) : ?>
+                    <li><a href="https://twitter.com/share?url=<?php the_permalink(); ?>"><span class="fab fa-twitter"></span></a></li>
+                <?php endif; ?>
+
+                <?php if( get_theme_mod( 'apex_business_share_linkedin_icon_setting', 1 ) ) : ?>
+                    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><span class="fa-linkedin"></span></a></li>
+                <?php endif; ?>
+
+                <?php if( get_theme_mod( 'apex_business_share_insta_icon_setting', 1 ) ) : ?>
+                    <li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>"><span class="fab fa-pinterest"></span></a></li>
+                <?php endif; ?>
+            </ul>
+        </div><!-- /.entry-footer -->
+        <?php endif; ?>
 
         <div class="row ">
             <div class="post-next-prev-nav clearfix">

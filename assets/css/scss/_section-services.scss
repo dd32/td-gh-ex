@@ -1,0 +1,30 @@
+/*=========================
+    08. SERVICES SECTION
+===========================*/
+
+.services {
+    .single-service-card {
+        padding: $inner-padding+10;
+    }
+}
+
+.section-card {
+    .card-container {
+        position: relative;
+        background: #fff;
+        text-align: justify;
+        margin-bottom: $inner-section-padding;
+        border-radius: 3px;
+        overflow: hidden;
+        @extend .pre-shadow;
+
+        .service-card-icon {
+            span {
+
+                font-size: 52px;
+                color: #f0f0f0;
+            }
+        }
+    }
+}
+

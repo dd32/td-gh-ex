@@ -8,7 +8,7 @@
         $apex_business_fixed_header = 'fixed-header';
     }
 ?>
-<div class="main-header header-spacing no-stick">
+<div class="main-header header-spacing">
     <div class="container">
         <div class="row nav-menu layout-center">
             <div class="col-md-12 vertical-center logo-container">
@@ -18,7 +18,7 @@
 
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>
-                    <a href="#" class="js-ct-menubar-right"><i class="fa fa-bars menubar-right"></i></a>
+                <i class="fa fa-bars menubar-right"></i>
                 <?php endif; ?>
             </div><!-- /.col-md-12 -->
 

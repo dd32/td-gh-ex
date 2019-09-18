@@ -5,7 +5,28 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 get_header();
+if ( have_posts() ) :
 ?>
+    <section class="main-banner-area archive-banner">
+        <div class="banner">
+            <div class="color-overlay"></div><!-- /.color-overlay -->
+            <div class="banner-content">
+                <?php
+                    $apex_business_allowed_html = array(
+                        'a' => array(
+                            'href' => array(),
+                            'title' => array()
+                        ),
+                        'span' => array(),
+                    );
+                    echo wp_kses( apex_business_the_breadcrumb(), $apex_business_allowed_html );
+                ?>
+                <?php the_archive_title( '<h1>', '</h1>' ); ?>
+            </div><!-- /.banner-content -->
+        </div><!-- /.banner -->
+    </section><!-- /.main-banner-area -->
+ <?php endif; ?>
+
  <?php if ( have_posts() ) : ?>
     <section id="content"  class="theme-padding">
         <div class="container">
@@ -21,7 +42,7 @@ get_header();
                     <?php get_sidebar(); ?>
                 <?php endif; ?>
                 <div class="<?php echo esc_attr( $apex_business_fullwidth_stats ); ?>">
-                    <div class="ct-grid">
+                    <div class="grid">
                         <?php
                             while ( have_posts() ) : the_post();
 
