@@ -9,7 +9,7 @@
  *
  */
 function acoustics_load_admin_scripts() {
-  wp_register_style( 'acoustics-admin-style', get_template_directory_uri() . '/assets/admin/css/core.css', false, '1.0.0' );
+  wp_register_style( 'acoustics-admin-style', get_template_directory_uri() . '/assets/admin/css/admin-style.css', false, '1.0.0' );
         wp_enqueue_style( 'acoustics-admin-style' );
 }
 

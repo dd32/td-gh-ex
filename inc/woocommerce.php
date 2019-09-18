@@ -104,7 +104,12 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'acoustics_woocommerce_thu
  * @return integer products per row.
  */
 function acoustics_woocommerce_loop_columns() {
-  return 3;
+  $column = get_theme_mod( 'acoustics_archive_layout', 'left-sidebar' );
+  if( $column == 'no-sidebar'){
+	  return 4;
+  }else{
+  	return 3;
+  }
 }
 
 add_filter( 'loop_shop_columns', 'acoustics_woocommerce_loop_columns' );

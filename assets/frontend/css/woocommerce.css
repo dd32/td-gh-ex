@@ -149,8 +149,13 @@ table.shop_table_responsive tr td {
     list-style: none;
     position: relative;
     margin-bottom: 2em; }
-    .products .product:nth-child(3n+1) {
+	.products .product img{
+		width: 100%;
+	}
+    .products.columns-3 .product:nth-child(3n+1) {
       clear: left; }
+	  .products.columns-4 .product:nth-child(4n+1) {
+        clear: left; }
     @media screen and (max-width: 767px) {
       .products .product:nth-child(3n+1) {
         clear: none; }
@@ -307,6 +312,11 @@ table.shop_table_responsive tr td {
     clear: both; }
   .single-product div.product .woocommerce-product-gallery {
     position: relative; }
+	.single-product div.product .woocommerce-product-gallery img{
+		width: 100%;
+		vertical-align: bottom;
+		position: relative;
+	}
     .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
       position: absolute;
       top: 1em;
