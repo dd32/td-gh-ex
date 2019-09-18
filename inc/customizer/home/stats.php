@@ -156,7 +156,7 @@ for( $x = 1; $x <= 28; $x++ ){
             'label'           => __( 'Select Day', 'app-landing-page' ),
             'section'         => 'app_landing_page_stats_settings',
             'type'            => 'select',
-            'active_callback' => 'cur_stats_date_odd',
+            'active_callback' => 'app_landing_page_cur_stats_date_odd',
             'choices'         => $app_landing_page_options_days_odd,
         )
     );
@@ -176,7 +176,7 @@ for( $x = 1; $x <= 28; $x++ ){
             'label'           => __( 'Select Day', 'app-landing-page' ),
             'section'         => 'app_landing_page_stats_settings',
             'type'            => 'select',
-            'active_callback' => 'cur_stats_date_even',
+            'active_callback' => 'app_landing_page_cur_stats_date_even',
             'choices'         => $app_landing_page_options_days_even,
         )
     );
@@ -196,7 +196,7 @@ for( $x = 1; $x <= 28; $x++ ){
             'label'           => __( 'Select Day', 'app-landing-page' ),
             'section'         => 'app_landing_page_stats_settings',
             'type'            => 'select',
-            'active_callback' => 'cur_stats_date_leap',
+            'active_callback' => 'app_landing_page_cur_stats_date_leap',
             'choices'         => $app_landing_page_options_days_leap,
         )
     );
@@ -216,7 +216,7 @@ for( $x = 1; $x <= 28; $x++ ){
             'label'           => __( 'Select Day', 'app-landing-page' ),
             'section'         => 'app_landing_page_stats_settings',
             'type'            => 'select',
-            'active_callback' => 'cur_stats_date_noleap',
+            'active_callback' => 'app_landing_page_cur_stats_date_leap',
             'choices'         => $app_landing_page_options_days_noleap,
         )
     );

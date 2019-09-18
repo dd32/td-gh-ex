@@ -31,7 +31,7 @@
 ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
 <?php
     wp_body_open();

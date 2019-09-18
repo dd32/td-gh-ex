@@ -44,10 +44,10 @@ if( ! function_exists( 'app_landing_page_page_start' ) ) :
  * 
  * @since 1.0.1
 */
-function app_landing_page_page_start(){
-   if ( !  is_page_template( 'template-home.php' ) ) { ?>
+function app_landing_page_page_start(){ ?>
       <div id="page" class="site">
- <?php } 
+        <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content (Press Enter)', 'app-landing-page' ); ?></a>
+ <?php 
 }
 endif;
 
@@ -59,21 +59,29 @@ if( ! function_exists( 'app_landing_page_header_cb' ) ) :
 */
 function app_landing_page_header_cb(){
     ?>   
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         <div class="container">
-            <div class="site-branding">
+            <div class="site-branding" itemscope itemtype="http://schema.org/Organization">
                 <?php 
                     if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
                               the_custom_logo();
                           } 
                 ?>
-                    <div class="text-logo">
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                  <div class="text-logo">
+                        <?php  
+                        if( is_front_page() ){ ?>
+                            <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+                            <?php 
+                        }else{ ?>
+                            <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
+                        <?php
+                        }
+                      $description = get_bloginfo( 'description', 'display' );
+                      if ( $description || is_customize_preview() ){ ?>
+                          <p class="site-description" itemprop="description"><?php echo $description; ?></p>
                       <?php
-                            $description = get_bloginfo( 'description', 'display' );
-                            if ( $description || is_customize_preview() ) { ?>
-                              <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                      <?php } ?>
+                      } 
+                      ?>
                     </div>  
             </div><!-- .site-branding -->
             
@@ -83,8 +91,8 @@ function app_landing_page_header_cb(){
               <span></span>
             </div>
             
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+            <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
             </nav><!-- #site-navigation -->
         </div>
     </header><!-- #masthead -->
@@ -102,12 +110,12 @@ if( ! function_exists( 'app_landing_page_breadcrumbs_cb' ) ) :
 
 function app_landing_page_breadcrumbs_cb() {
  
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-  $delimiter = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_separator', '>' ) ); // delimiter between crumbs
-  $home = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_home_text', __( 'Home', 'app-landing-page' ) ) ); // text for the 'Home' link
-  $showCurrent = get_theme_mod( 'app_landing_page_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
-  $before = '<span class="current">'; // tag before the current crumb
-  $after = '</span>'; // tag after the current crumb
+  $showOnHome    = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+  $delimiter     = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_separator', '>' ) ); // delimiter between crumbs
+  $home          = esc_html( get_theme_mod( 'app_landing_page_breadcrumb_home_text', __( 'Home', 'app-landing-page' ) ) ); // text for the 'Home' link
+  $showCurrent   = get_theme_mod( 'app_landing_page_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
+  $before        = '<span class="current">'; // tag before the current crumb
+  $after         = '</span>'; // tag after the current crumb
   $ed_breadcrumb = get_theme_mod( 'app_landing_page_ed_breadcrumb' );
  
   global $post;
@@ -233,25 +241,26 @@ function app_landing_page_page_header(){
             }
 
             if( ! is_single() ){ 
-            if( is_404() ){ echo '<div class="container">'; } ?>
+            if( is_404() ) echo '<div class="container">'; ?>
                 <div class="top-bar">
                     <div class="page-header">
                         <h1 class="page-title">
                         <?php
                             if( is_search() ){ 
                                 printf( esc_html__( '%s Search Results for ','app-landing-page' ), $wp_query->found_posts ); 
-                                printf( '%s', get_search_query() ); }
-                            elseif( is_404() ){ esc_html_e( '404 - Page Not Found ' ,'app-landing-page' ); } 
-                            elseif( is_page() ){ the_title(); }
-                            elseif( is_archive() ){ the_archive_title(); }
-                            elseif( is_home() ){ single_post_title(); }
+                                printf( '%s', get_search_query() );
+                               }
+                            elseif( is_404() ) esc_html_e( '404 - Page Not Found ' ,'app-landing-page' );  
+                            elseif( is_page() ) the_title();
+                            elseif( is_archive() ) the_archive_title(); 
+                            elseif( is_home() ) single_post_title(); 
                         ?>
                         </h1>
                     </div>
                     <?php do_action( 'app_landing_page_breadcrumbs' ); ?>
                 </div>
          <?php  
-             if( is_404() ){ echo '</div>'; }
+             if( is_404() )echo '</div>';
          } 
 } 
 endif;
@@ -290,7 +299,7 @@ if( ! function_exists( 'app_landing_page_page_content_image' ) ) :
 function app_landing_page_page_content_image(){
     $sidebar_layout = app_landing_page_sidebar_layout();
     if( has_post_thumbnail() )
-    ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'app-landing-page-with-sidebar' ) : the_post_thumbnail( 'app-landing-page-without-sidebar' );    
+    ( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'app-landing-page-with-sidebar', array( 'itemprop' => 'image' ) ) : the_post_thumbnail( 'app-landing-page-without-sidebar', array( 'itemprop' => 'image' ) );    
 }
 endif;
 
@@ -304,7 +313,7 @@ if( ! function_exists( 'app_landing_page_post_content_image' ) ) :
 function app_landing_page_post_content_image(){
     if( has_post_thumbnail() ){
     echo ( !is_single() ) ? '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">' : '<div class="post-thumbnail">'; 
-         ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'app-landing-page-with-sidebar' ) : the_post_thumbnail( 'app-landing-page-without-sidebar' ) ; 
+         ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'app-landing-page-with-sidebar', array( 'itemprop' => 'image' ) ) : the_post_thumbnail( 'app-landing-page-without-sidebar', array( 'itemprop' => 'image' ) ) ; 
     echo ( !is_single() ) ? '</a>' : '</div>' ;    
     }
 }
@@ -332,9 +341,9 @@ function app_landing_page_post_entry_header(){
         <header class="entry-header">
             <?php
                 if ( is_single() ) {
-                    the_title( '<h1 class="entry-title">', '</h1>' );
+                    the_title( '<h1 class="entry-title" itemprop="name">', '</h1>' );
                 } else {
-                    the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                    the_title( '<h2 class="entry-title" itemprop="name"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
                 }
                	
                 if ( 'post' === get_post_type() ) :
@@ -380,7 +389,7 @@ function app_landing_page_post_author(){
                         esc_html_e( 'Posted on ','app-landing-page' );
                         app_landing_page_author_posted_on();
                       echo '</span>';
-                      echo wpautop( esc_html( get_the_author_meta( 'description' ) ) ); 
+                      echo wpautop( wp_kses_post( get_the_author_meta( 'description' ) ) ); 
                 ?>
             </div>
         </div>
@@ -429,7 +438,7 @@ if( ! function_exists( 'app_landing_page_footer_start' ) ) :
  * @since 1.0.1
 */
 function app_landing_page_footer_start(){
-    echo '<footer id="colophon" class="site-footer" role="contentinfo">';
+    echo '<footer id="colophon" class="site-footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">';
     echo '<div class="container">';
 }
 endif;
@@ -442,17 +451,19 @@ if( ! function_exists( 'app_landing_page_footer_widgets' ) ) :
  * @since 1.0.1 
 */
 function app_landing_page_footer_widgets(){
+  if( is_active_sidebar( 'footer-sidebar-one') || is_active_sidebar( 'footer-sidebar-two') || is_active_sidebar( 'footer-sidebar-three') ){
    echo '<div class="row">';
-         echo '<div class= "col">';
+         echo '<div class="col">';
              if( is_active_sidebar( 'footer-sidebar-one') ) dynamic_sidebar( 'footer-sidebar-one' ); 
          echo '</div>';
-         echo '<div class= "col">';
+         echo '<div class="col">';
              if( is_active_sidebar( 'footer-sidebar-two') ) dynamic_sidebar( 'footer-sidebar-two' ); 
          echo '</div>';
-         echo '<div class= "col">';
+         echo '<div class="col">';
              if( is_active_sidebar( 'footer-sidebar-three') ) dynamic_sidebar( 'footer-sidebar-three' ); 
          echo '</div>';
    echo '</div>';
+  }
 }
 endif;
 
@@ -488,7 +499,8 @@ if( ! function_exists( 'app_landing_page_footer_end' ) ) :
 */
 function app_landing_page_footer_end(){
     echo '</div>';
-    echo '</footer>'; // #colophon 
+    echo '</footer>';
+    echo '</div>'; // #colophon 
     echo '<div class="overlay"></div>';
 }
 endif;

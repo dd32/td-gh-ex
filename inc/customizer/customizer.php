@@ -65,20 +65,13 @@ function app_landing_page_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'app_landing_page_customize_preview_js' );
 
-if( app_landing_page_newsletter_activated() ){
-  /** 
-   * Registering and enqueuing scripts/stylesheets for Customizer controls.
-   */ 
-  function app_landing_page_customizer_js() {
-    wp_enqueue_script( 'app-landing-page-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array("jquery"), '20160512', true  );
-  }
-  add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customizer_js' );
-}
-
 /**
  * Enqueue Scripts for customize controls
 */
 function app_landing_page_customize_scripts() {
-  wp_enqueue_style( 'app-landing-page-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );    
+  wp_enqueue_style( 'app-landing-page-customize-style',get_template_directory_uri().'/inc/css/customize.css', '',APP_LANDING_PAGE_THEME_VERSION );   
+    if( app_landing_page_newsletter_activated() ){ 
+     wp_enqueue_script( 'app-landing-page-customizer-js', get_template_directory_uri() . '/inc/js/customizer.js', array("jquery"), APP_LANDING_PAGE_THEME_VERSION,   true  );
+    }
 }
 add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customize_scripts' );

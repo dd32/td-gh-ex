@@ -3,8 +3,8 @@ Theme Name: App Landing Page
 Theme URI: https://rarathemes.com/wordpress-themes/app-landing-page/
 Author: Rara Theme 
 Author URI: https://rarathemes.com/
-Description: App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://rarathemes.com/documentation/app-landing-page/
-Version: 1.1.0
+Description: App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://docs.rarathemes.com/docs/app-landing-page/
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: app-landing-page
@@ -467,12 +467,10 @@ input[type="submit"]:hover {
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
+input[type="submit"]:focus {
 	background: #52ad2d;
+	outline-offset: 5px;
+	outline: thin dotted;
 }
 
 input[type="text"],
@@ -527,14 +525,14 @@ a {
 }
 
 a:hover,
-a:focus,
-a:active {
+a:focus {
 	color: #5abe32;
 	text-decoration: underline;
 }
 
 a:focus {
-	outline: none;
+	outline: thin dotted;
+	outline-offset: 5px;
 }
 
 a:hover,
@@ -546,120 +544,76 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 @media only screen and (min-width: 1025px){
-	.main-navigation {
-		float: right;
-		margin: 6px 0 0;
-	}
-
-	.main-navigation ul {
-		list-style: none;
+	.main-navigation ul{
 		margin: 0;
-		padding-left: 0;
-		font-size: 16px;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
-	.main-navigation li {
-		float: left;
+	.main-navigation ul li{
+		margin-left: 50px;
 		position: relative;
-		margin-left: 51px;
 	}
 
-	.main-navigation ul li:first-child{margin-left: 0;}
+	.main-navigation ul li:first-child{
+		margin-left: 0;
+	}
 
-	.main-navigation a {
-		display: block;
-		text-decoration: none;
+	.main-navigation ul li a{
 		color: #fff;
-		padding: 0 0 32px;
+		-webkit-transition: ease 0.2s;
+		-moz-transition: ease 0.2s;
+		transition: ease 0.2s;
 	}
 
 	.main-navigation ul li a:hover,
-	.main-navigation ul li a:focus{
-		border-bottom: 2px solid #fff;
-		padding-bottom: 30px;
-	}
-
+	.main-navigation ul li a:focus,
 	.main-navigation ul li:hover > a,
 	.main-navigation ul li:focus > a,
-	.main-navigation ul li.focus > a{
-		border-bottom: 2px solid #fff;
-		padding-bottom: 30px;
+	.main-navigation ul .current-menu-item > a,
+	.main-navigation ul .current-menu-ancestor > a,
+	.main-navigation ul .current_page_item > a,
+	.main-navigation ul .current_page_ancestor > a{
+		text-decoration: none;
+		color: #5fbd3e;
 	}
 
-	.main-navigation ul ul {
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	.main-navigation ul ul{
 		position: absolute;
 		top: 100%;
-		left: 0;
-		z-index: 99999;
+		left: -15px;
 		width: 250px;
 		background: #205497;
-		display: none;
-	}
-
-	.main-navigation ul ul ul {
-		left: -100%;
-		top: 0;
-	}
-
-	.main-navigation ul ul a {
-		padding: 10px 15px;
-	}
-
-	.main-navigation ul ul li {
-		float: none;
-		display: block;
-		margin: 0;
-	}
-
-	.main-navigation li:hover > a,
-	.main-navigation li.focus > a {
-		border-bottom: 2px solid #fff;
-		padding-bottom: 30px;
-	}
-
-	.main-navigation ul ul li:hover > a,
-	.main-navigation ul ul li.focus > a {
-		padding-bottom: 0;
-		border-bottom: 0;
-		background: #fff;
-		color: #205497;
-		padding: 10px 15px;
-	}
-
-	.main-navigation ul ul a:hover,
-	.main-navigation ul ul a.focus,
-	.main-navigation ul ul a:focus {
-		padding-bottom: 0;
-		border-bottom: 0;
-		background: #fff;
-		color: #205497;
-		padding: 10px 15px;
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+		-webkit-transition: ease 0.5s;
+		-moz-transition: ease 0.5s;
+		transition: ease 0.5s;
 	}
 
 	.main-navigation ul li:hover > ul,
-	.main-navigation ul li.focus > ul {
+	.main-navigation ul li:focus > ul,
+	.main-navigation ul li:focus-within > ul{
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.main-navigation ul ul li{
+		width: 100%;
+		margin: 0;
+	}
+
+	.main-navigation ul ul li a{
 		display: block;
-	}
-
-	.main-navigation ul ul li:hover > ul,
-	.main-navigation ul ul li.focus > ul {
-		display: block;
-	}
-
-	.main-navigation .current_page_item > a,
-	.main-navigation .current-menu-item > a,
-	.main-navigation .current_page_ancestor > a,
-	.main-navigation .current-menu-ancestor > a {
-		border-bottom: 2px solid #fff;
-		padding-bottom: 30px;
-	}
-
-	.main-navigation ul ul .current-menu-item > a{
-		border-bottom: 0;
 		padding: 10px 15px;
-		background: #fff;
-		color: #205497;
+	}
+
+	.main-navigation ul ul ul{
+		left: 100%;
+		top: 0;
 	}
 }
 
@@ -990,21 +944,39 @@ object {
 /*header style*/
 .site-header{
 	background: #205497;
-	padding: 23px 0 0;
+	/*padding: 23px 0 0;*/
+	padding: 25px 0;
+}
+
+.site-header .container:after{
+	display: none;
+}
+
+.site-header .container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .site-branding{
-	float: left;
 	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .site-branding .custom-logo-link{
-	float: left;
 	margin-right: 10px;
 }
 
+.site-branding .custom-logo-link img{
+	vertical-align: top;
+}
+
 .site-branding .text-logo{
-	float: left;
+	flex-basis: 0;
+	flex-grow: 1;
 }
 
 .site-branding .site-title{
@@ -1353,6 +1325,7 @@ object {
 .count-down .btn-holder .btn-request:hover,
 .count-down .btn-holder .btn-request:focus {
 	text-decoration: none;
+	outline: thin dotted #000;
 }
 
 .vedio .btn-holder .btn-download:hover:before,
@@ -1433,6 +1406,11 @@ object {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	margin: 0 0 19px;
+}
+
+.section-5 .row{
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .section-5 .col{
@@ -1550,6 +1528,11 @@ object {
 	padding: 0 5px;
 }
 
+.count-down .btn-holder .btn-request:hover,
+.count-down .btn-holder .btn-request:focus{
+	outline: thin dotted #fff;
+}
+
 /*stay-tuned style*/
 .stay-tuned{
 	background: #fff;
@@ -1584,7 +1567,7 @@ object {
 .stay-tuned form{
 	max-width: 511px;
 	margin: 0 auto 54px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .stay-tuned form input[type="email"]{
@@ -1620,6 +1603,12 @@ object {
 	background: #52ad2d;
 }
 
+.stay-tuned form button[type="submit"]:focus,
+.stay-tuned form input[type="submit"]:focus{
+	outline-offset: 5px;
+	outline: thin dotted #000;
+}
+
 .stay-tuned .social-networks{
 	margin: 0;
 	padding: 0;
@@ -1652,6 +1641,10 @@ object {
 	color: #fff;
 }
 
+.stay-tuned .social-networks li a:focus{
+	outline: thin dotted #000;
+}
+
 .stay-tuned .social-networks li a[href*="twitter"]{
 	color: #13a8f6;
 	border-color: #13a8f6;
@@ -1674,6 +1667,10 @@ object {
 	color: #fff;
 }
 
+.stay-tuned .social-networks li a[href*="facebook"]:focus{
+	outline: thin dotted #000;
+}
+
 .stay-tuned .social-networks li a[href*="dribbble"]{
 	color: #e7498c;
 	border-color: #e7498c;
@@ -1683,6 +1680,10 @@ object {
 .stay-tuned .social-networks li a[href*="dribbble"]:focus{
 	background: #e7498c;
 	color: #fff;
+}
+
+.stay-tuned .social-networks li a[href*="dribbble"]:focus{
+	outline: thin dotted #000;
 }
 
 .stay-tuned .social-networks li a[href*="linkedin"]{
@@ -1742,6 +1743,10 @@ object {
 
 /*blog page style*/
 #content{padding: 33px 0 85px;}
+
+#content.home-site-content{
+	padding: 0;
+}
 
 .top-bar{
 	overflow: hidden;
@@ -1855,7 +1860,9 @@ object {
 #primary .page .entry-content{margin: 0;}
 
 #primary .post .entry-footer,
-.search #primary .page .entry-footer{overflow: hidden;}
+.search #primary .page .entry-footer{
+	display: flex;
+}
 
 #primary .post .entry-footer .btn-readmore,
 .search #primary .page .entry-footer .btn-readmore{
@@ -1876,6 +1883,11 @@ object {
 .search #primary .page .entry-footer .btn-readmore:focus{
 	background: #5abf32;
 	text-decoration: none;
+}
+
+.search #primary .page .entry-footer .btn-readmore:focus,
+#primary .post .entry-footer .btn-readmore:focus{
+	outline: thin dotted #000;
 }
 
 #primary .post .entry-content iframe,
@@ -2270,7 +2282,7 @@ object {
 	text-align: center;
 }
 
-.pagination .nav-links{overflow: hidden;}
+/*.pagination .nav-links{overflow: hidden;}*/
 
 .pagination a,
 .pagination .current{
@@ -2291,6 +2303,10 @@ object {
 	border-color: #2a89d2;
 	color: #fff;
 	text-decoration: none;
+}
+
+.pagination a:focus{
+	outline: thin dotted #000;
 }
 
 .pagination .dots{
@@ -2353,17 +2369,20 @@ object {
 
 .widget.widget_search .search-form,
 .search #primary .search-form{
-	overflow: hidden;
+	/*overflow: hidden;*/
 	background: #f4f4f4;
 	border: 1px solid #dadada;
 	border-radius: 5px;
 	padding: 10px 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 .widget.widget_search .search-form label,
 .search #primary .search-form label{
-	float: left;
-	width: 90%;
+	flex-basis: 0;
+	flex-grow: 1;
 }
 
 .widget.widget_search .search-form input[type="search"],
@@ -2386,6 +2405,11 @@ object {
 	padding: 0;
 	text-indent: -9999px;
 	margin: 4px 0 0;
+}
+
+.widget.widget_search .search-form input[type="submit"]:focus,
+.search #primary .search-form input[type="submit"]:focus{
+	outline: thin dotted #000;
 }
 
 .widget.widget_app_landing_page_featured_post .img-holder{
@@ -2539,10 +2563,12 @@ object {
 
 .widget.widget_app_landing_page_recent_post ul li,
 .widget.widget_app_landing_page_popular_post ul li{
-	overflow: hidden;
+	/*overflow: hidden;*/
 	padding: 0 0 22px;
 	margin: 0 0 20px;
 	border-bottom: 1px solid #e8e8e8;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .widget.widget_app_landing_page_recent_post ul li:last-child,
@@ -2567,7 +2593,8 @@ object {
 
 .widget.widget_app_landing_page_recent_post ul li .entry-header,
 .widget.widget_app_landing_page_popular_post ul li .entry-header{
-	overflow: hidden;
+	flex-basis: 0;
+	flex-grow: 1;
 }
 
 .widget.widget_app_landing_page_recent_post ul li .entry-header .entry-title,
@@ -2686,6 +2713,10 @@ object {
 	border-color: #63b03e;
 	color: #fff;
 	text-decoration: none;
+}
+
+.widget.widget_tag_cloud .tagcloud a:focus{
+	outline: thin dotted #000;
 }
 
 .widget.widget_rss ul li a{color: #5abe32;}

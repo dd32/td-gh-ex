@@ -25,9 +25,13 @@ if( $app_landing_page_vedio_section_page || $app_landing_page_vedio_video ){
                                 the_excerpt();
                             echo '</header>';
                                
-                            if( $app_landing_page_vedio_video){ 
+                            if( $app_landing_page_vedio_video ){ 
                     			echo '<div class="vedio-holder">';
-                            	    echo app_landing_page_sanitize_iframe( $app_landing_page_vedio_video );             
+                                 if( app_landing_page_iframe_match( $app_landing_page_vedio_video ) ){
+                                        echo app_landing_page_sanitize_iframe( $app_landing_page_vedio_video ); 
+                                    }else{
+                                       echo wp_oembed_get( $app_landing_page_vedio_video );
+                                    }             
                     			echo '</div>';
                 			}else{
                                 echo '<div class="vedio-holder">';

@@ -9,14 +9,6 @@ jQuery(document).ready(function($){
 		cursorwidth: "8px",
 		cursorborderradius: "0px;"
 	});
-
-	/* Equal Height */
-     $('.section-5 .col').matchHeight({
-        byRow: true,
-        property: 'height',
-        target: null,
-        remove: false
-    });
     
     /* Date Picker */
     $( "#datepicker" ).datepicker();
@@ -63,5 +55,5 @@ jQuery(document).ready(function($){
             $(this).prev().slideToggle();
             $(this).toggleClass('active');
         });
-    };
+    }
 });

@@ -18,7 +18,7 @@ if( have_posts() ){
 			<div class="banner-text">
 				<?php 
 				     the_post();
-				     the_title( '<strong class="title">', '</strong>' ); 
+				     the_title( '<strong class="title" itemprop="name">', '</strong>' ); 
 				     the_content();
 		    	?>
 		     
@@ -38,3 +38,4 @@ if( have_posts() ){
 <?php
 	}
 } 
+echo '<div class="site-content home-site-content" id="content">';

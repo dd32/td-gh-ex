@@ -68,7 +68,7 @@ function app_landing_page_customize_register_vedio( $wp_customize ) {
     $wp_customize->add_control(
         'app_landing_page_vedio_video',
         array(
-            'label' => __( 'Video Embed Link', 'app-landing-page' ),
+            'label' => __( 'Video Embed Link or Video URL', 'app-landing-page' ),
             'section' => 'app_landing_page_vedio_settings',
             'type' => 'text',
         )

@@ -193,7 +193,86 @@ function app_landing_page_sidebar_layout(){
     
 }
 endif;
-  
+
+/**
+ * Display dates for 31 days based on result of year and month 
+ * 
+ * @link http://ottopress.com/2015/whats-new-with-the-customizer/
+ */
+function app_landing_page_cur_stats_date_odd(  $control ){ 
+	$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
+
+	if( ( ( ( ( $cur_month % 2 ) != 0 ) && ( $cur_month < 8 )  ) || ( ( ( $cur_month % 2 ) == 0 ) && ( $cur_month > 7 ) ) ) && ( $cur_month != 2 ) ) {
+		return true;
+	}else { 
+		return false; 
+	}
+}
+
+/**
+ * Display dates for 30 days based on result of year and month 
+ * 
+ * @link http://ottopress.com/2015/whats-new-with-the-customizer/
+ */
+function app_landing_page_cur_stats_date_even(  $control ){ 
+	$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
+
+	if( ( ( ( ( $cur_month % 2 ) == 0 ) && ( $cur_month < 8 )  ) || ( ( ( $cur_month % 2 ) != 0 ) && ( $cur_month > 7 ) ) ) && ( $cur_month != 2 ) ) {
+		return true;
+	}else { 
+		return false; 
+	}
+}
+
+/**
+ * Display dates for 29 days for leap year and Febuary month 
+ * 
+ * @link http://ottopress.com/2015/whats-new-with-the-customizer/
+ */
+function app_landing_page_cur_stats_date_leap( $control ){ 
+	$control_id = $control->id;
+	$cur_month  = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
+	$cur_year   = $control->manager->get_setting( 'app_landing_page_date_year' )->value();
+	$cur_year   = $cur_year + date('Y') - 1 ;
+
+	if( $cur_month == 2 ){
+		if( ( ( $cur_year % 4 == 0 ) && ( $cur_year % 100 != 0 ) ) || ( $cur_year % 400 == 0 ) ){ //Leap year
+			if( $control_id == 'app_landing_page_date_day_leap' ) return true;
+			if( $control_id == 'app_landing_page_date_day_noleap' ) return false;
+		}else{ // Not Leap Year
+			if( $control_id == 'app_landing_page_date_day_leap' ) return false;
+			if( $control_id == 'app_landing_page_date_day_noleap' ) return true;
+		}
+	}else{ 
+		return false; 
+	}
+}
+
+/**
+ * Display dates for 28 days  for non leap year and Febuary month
+ * 
+ * @link http://ottopress.com/2015/whats-new-with-the-customizer/
+ */
+function cur_stats_date_noleap(  $control ){ 
+	$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
+	$cur_year = $control->manager->get_setting( 'app_landing_page_date_year' )->value();
+
+	if( ( $cur_month == 2 ) && ( ( ( $cur_year - 1 ) % 4 ) != 0  ) ){
+		return true; 
+	}else { 
+		return false; 
+	}
+}
+
+if( ! function_exists( 'is_woocommerce_activated' ) ) :
+/**
+ * Query WooCommerce activation
+ */
+function is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}
+endif;
+
 if( ! function_exists( 'app_landing_page_newsletter_activated' ) ) :
 /**
  * Query Newsletter activation
@@ -203,66 +282,14 @@ function app_landing_page_newsletter_activated(){
 }
 endif;
 
+if ( ! function_exists( 'app_landing_page_iframe_match' ) ) :    
 /**
- * Display dates for 31 days based on result of year and month 
- * 
- * @link http://ottopress.com/2015/whats-new-with-the-customizer/
- */
-function cur_stats_date_odd(  $control ){ 
-$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
-$cur_year = $control->manager->get_setting( 'app_landing_page_date_year' )->value();
-
-if( ( ( ( ( $cur_month % 2 ) != 0 ) && ( $cur_month < 8 )  ) || ( ( ( $cur_month % 2 ) == 0 ) && ( $cur_month > 7 ) ) ) && ( $cur_month != 2 ) ) {
-    return true;
-}else { 
-    return false; 
+ * Check whether the input parameter send is iframe or Url
+*/
+function app_landing_page_iframe_match( $iframe ){
+    return preg_match('/<iframe.*src=\"(.*)\".*><\/iframe>/isU', $iframe ) ? true : false;
 }
-}
-
-/**
- * Display dates for 30 days based on result of year and month 
- * 
- * @link http://ottopress.com/2015/whats-new-with-the-customizer/
- */
-function cur_stats_date_even(  $control ){ 
-$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
-$cur_year = $control->manager->get_setting( 'app_landing_page_date_year' )->value();
-
-if( ( ( ( ( $cur_month % 2 ) == 0 ) && ( $cur_month < 8 )  ) || ( ( ( $cur_month % 2 ) != 0 ) && ( $cur_month > 7 ) ) ) && ( $cur_month != 2 ) ) {
-    return true;
-}else { 
-    return false; }
-}
-
-/**
- * Display dates for 29 days for leap year and Febuary month 
- * 
- * @link http://ottopress.com/2015/whats-new-with-the-customizer/
- */
-function cur_stats_date_leap(  $control ){ 
-$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
-$cur_year = $control->manager->get_setting( 'app_landing_page_date_year' )->value();
-
-if( ( $cur_month == 2 ) && ( ( ( $cur_year - 1 ) % 4 ) == 0 ) ){
-    return true;
-}else { return false; 
-}
-}
-
-/**
- * Display dates for 28 days  for non leap year and Febuary month
- * 
- * @link http://ottopress.com/2015/whats-new-with-the-customizer/
- */
-function cur_stats_date_noleap(  $control ){ 
-$cur_month = $control->manager->get_setting( 'app_landing_page_date_month' )->value();
-$cur_year = $control->manager->get_setting( 'app_landing_page_date_year' )->value();
-
-if( ( $cur_month == 2 ) && ( ( ( $cur_year - 1 ) % 4 ) != 0  ) ){
-    return true; 
-}else { return false; }
-}
-
+endif;
 
 if( ! function_exists( 'app_landing_page_ed_section') ):
     /**

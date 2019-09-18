@@ -55,13 +55,13 @@ class App_Landing_Page_Featured_Post extends WP_Widget {
                 <?php if( has_post_thumbnail() && $show_thumbnail ){ ?>                    
                 <div class="img-holder">
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail( 'app-landing-page-featured-post' ); ?>
+                        <?php the_post_thumbnail( 'app-landing-page-featured' ); ?>
                     </a>
                 </div>    				
                 <?php } ?>
                 <div class="text-holder">
                     <?php the_excerpt();?>
-                    <a href="<?php the_permalink();?>" class="readmore"><?php echo esc_attr( $read_more );?></a>
+                    <a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_html( $read_more ); ?></a>
                 </div>        
             <?php    
             }

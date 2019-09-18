@@ -17,7 +17,7 @@ function app_landing_page_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'app-landing-page' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title" itemprop="name">',
 		'after_title'   => '</h2>',
 	) );
 	 register_sidebar( array(
@@ -26,7 +26,7 @@ function app_landing_page_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title" itemprop="name">',
 		'after_title'   => '</h2>',
 	) );
 	  register_sidebar( array(
@@ -35,7 +35,7 @@ function app_landing_page_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title" itemprop="name">',
 		'after_title'   => '</h2>',
 	) );
 	   register_sidebar( array(
@@ -44,7 +44,7 @@ function app_landing_page_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title" itemprop="name">',
 		'after_title'   => '</h2>',
 	) );
 
@@ -55,7 +55,7 @@ function app_landing_page_widgets_init() {
 			'description'   => '',
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
+			'before_title'  => '<h2 class="widget-title" itemprop="name">',
 			'after_title'   => '</h2>',
 		) );
 	}

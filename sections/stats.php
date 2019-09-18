@@ -26,7 +26,7 @@ if( $app_landing_page_stats_page){
                     <div class="container">
 						<header class="header wow fadeInUp">
 						<?php 
-				            the_title( '<h2 class="title">','</h2>');
+				            the_title( '<h2 class="title" itemprop="name">','</h2>');
 							the_content();         
 				        ?>
 						</header>

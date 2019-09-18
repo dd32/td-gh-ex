@@ -4,14 +4,14 @@ Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
 Tested up to: WordPress 5.2.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
 
 == Description ==
 
-App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://rarathemes.com/documentation/app-landing-page/
+App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://docs.rarathemes.com/docs/app-landing-page/
 
 == Installation ==
 	
@@ -30,7 +30,7 @@ A. Banner Section:
   1. Go to Appearance> Customize> Homepage Settings>Banner Section
   2. Check to Enable Banner Section.
   3. Enter Banner Button Logos and respective URLS
-  4. Enter Download Button Text  and Download Button URL
+  4. Enter Download Button Text and Download Button URL
   5. Click Save and Publish. 
 
 
@@ -139,7 +139,7 @@ J. Social Settings:
 
 
 For more documentation settings, please visit the link below.
-https://rarathemes.com/documentation/app-landing-page/
+https://docs.rarathemes.com/docs/app-landing-page/
 
 
 == Copyrights and License ==
@@ -191,6 +191,13 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
 == Change Log ==
+
+    1.1.1
+    * App Landing Page Pro links Added.
+    * Added accessibility requirement for Skip Links, Keyboard navigation, Controls and Form labeling..
+    * Added Getting started page.
+    * Changed Documentation links.
+
     1.1.0
     * Added wp_body_open action.
     * Changed raratheme.com to rarathemes.com.

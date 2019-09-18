@@ -9,10 +9,11 @@
 
 
 //define theme version
-if ( !defined( 'APP_LANDING_PAGE_THEME_VERSION' ) ) {
-	$theme_data = wp_get_theme();
-	
-	define ( 'APP_LANDING_PAGE_THEME_VERSION', $theme_data->get( 'Version' ) );
+if ( ! defined( 'APP_LANDING_PAGE_THEME_VERSION' ) && ! defined( 'APP_LANDING_PAGE_THEME_NAME' ) && ! defined( 'APP_LANDING_PAGE_THEME_TEXTDOMAIN' ) ) {
+	$theme_data = wp_get_theme();	
+	define( 'APP_LANDING_PAGE_THEME_VERSION', $theme_data->get( 'Version' ) );
+    define( 'APP_LANDING_PAGE_THEME_NAME', $theme_data->get( 'Name' ) );
+    define( 'APP_LANDING_PAGE_THEME_TEXTDOMAIN', $theme_data->get( 'TextDomain' ) );
 }
 /**
  * Implement the Custom functions.
@@ -67,3 +68,15 @@ require get_template_directory() . '/inc/customizer/info.php';
  * Plugin Recommendation
 */
 require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
+
+/**
+ * Getting Started
+*/
+require get_template_directory() . '/inc/getting-started/getting-started.php';
+
+/**
+ * Add theme compatibility function for woocommerce if active
+*/
+if( is_woocommerce_activated() ){
+    require get_template_directory() . '/inc/woocommerce-functions.php';    
+}

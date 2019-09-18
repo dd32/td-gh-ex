@@ -17,11 +17,9 @@ get_header(); ?>
 				<h1><?php esc_html_e( 'Looks Like Something Went Wrong!', 'app-landing-page' ); ?></h1>
 
 				<p><?php esc_html_e( 'The page you were looking for is not here. Maybe you want to perform a search?', 'app-landing-page' ); ?></p>
-					
-					<?php get_search_form(); ?>
+				<?php get_search_form(); ?>
 			</div><!-- .error-404 -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
 get_footer();

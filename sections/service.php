@@ -38,7 +38,7 @@ if( $app_landing_page_service_one_post || $app_landing_page_service_two_post || 
                             $service_qry->the_post();
                             
                             echo '<header class="header wow fadeInUp">';
-                                the_title( '<h2 class="main-title">', '</h2>' );
+                                the_title( '<h2 class="main-title" itemprop="name">', '</h2>' );
                                 the_content();
                             echo '</header>';
                          }
@@ -63,11 +63,11 @@ if( $app_landing_page_service_one_post || $app_landing_page_service_two_post || 
                         		echo '<div class="col wow fadeInUp">';
                          			if( has_post_thumbnail() ){
                 						echo '<div class="icon-holder">';
-                							the_post_thumbnail( 'app-landing-page-features-image-small' );
+                							the_post_thumbnail( 'thumbnail' );
                 						echo '</div>' ; 
                 					} 
             						echo '<div class="text-holder">';
-            							the_title( '<h2 class="main-title">', '</h2>' );
+            							the_title( '<h2 class="main-title" itemprop="name">', '</h2>' );
             							the_content();
             						echo '</div>';
             					echo '</div>';
