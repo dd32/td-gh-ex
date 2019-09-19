@@ -316,7 +316,7 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 				'id' => 'avventura_lite_slideshow_limit',
 				'type' => 'slideshow_limit',
 				'section' => 'slideshow_section',
-				'std' => '-1',
+				'std' => '5',
 
 			),
 
@@ -565,17 +565,6 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 				'label' => esc_html__( 'Flickr Url','avventura-lite'),
 				'description' => esc_html__( 'Insert Flickr Url (leave empty if you want to hide the button)','avventura-lite'),
 				'id' => 'avventura_lite_footer_flickr_button',
-				'type' => 'url',
-				'section' => 'footer_section',
-				'std' => '',
-
-			),
-
-			array( 
-
-				'label' => esc_html__( 'Google Url','avventura-lite'),
-				'description' => esc_html__( 'Insert Google Url (leave empty if you want to hide the button)','avventura-lite'),
-				'id' => 'avventura_lite_footer_google_button',
 				'type' => 'url',
 				'section' => 'footer_section',
 				'std' => '',

@@ -37,7 +37,6 @@ if (!function_exists('avventura_lite_socials_function')) {
 			"facebook" => array( "icon" => "fa fa-facebook" , "target" => "_blank" ),
 			"twitter" => array( "icon" => "fa fa-twitter" , "target" => "_blank" ),
 			"flickr" => array( "icon" => "fa fa-flickr" , "target" => "_blank" ),
-			"google" => array( "icon" => "fa fa-google-plus" , "target" => "_blank" ),
 			"linkedin" => array( "icon" => "fa fa-linkedin" , "target" => "_blank" ),
 			"slack" => array( "icon" => "fa fa-slack" , "target" => "_blank" ),
 			"pinterest" => array( "icon" => "fa fa-pinterest" , "target" => "_blank" ),
