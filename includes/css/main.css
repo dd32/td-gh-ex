@@ -9,7 +9,7 @@
 
 /* Import the font-awesome css */
 
-@import url(../font-awesome/css/font-awesome.css );
+@import url(../fontawesome-5.10.2/css/all.min.css);
 
 /* This is a small security for too long strings titles */
 
@@ -581,7 +581,8 @@ nav.main-menu ul > li:hover > a, nav.main-menu ul > .current-menu-item > a {
     right: 0!important;
     text-align: right!important;
 }
-.mean-container a.meanmenu-reveal .fa {
+.mean-container a.meanmenu-reveal .fa,
+.mean-container a.meanmenu-reveal .fas {
     display: block;
 }
 .pager li > a:hover, .pager li > a:focus {
@@ -1027,6 +1028,7 @@ article.post .entry-content {
     font-weight: 700;
     color: #FFF;
 }
+.comments_count .fas,
 .comments_count .fa {
   padding-left: 15px;
 }

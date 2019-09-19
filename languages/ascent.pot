@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ascent 3.7.0\n"
+"Project-Id-Version: Ascent 3.8.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ascent\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-09-13T11:35:48+00:00\n"
+"POT-Creation-Date: 2019-09-17T01:21:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.2.0\n"
 "X-Domain: ascent\n"
@@ -23,7 +23,7 @@ msgid "https://ascenttheme.com/"
 msgstr ""
 
 #. Description of the theme
-msgid "Ascent is a fully responsive theme which perfectly adjusts as per your device’s screen and resolution. A multipurpose, beautiful and clean theme perfect for businesses, portfolios, and blogs. Easily customize the theme as per your liking. Also, supports WooCommerce integration for eCommerce businesses."
+msgid "Ascent is a fully responsive theme which perfectly adjusts as per your device’s screen and resolution. A multipurpose, beautiful and clean theme perfect for businesses, portfolios, and blogs. Easily customize the theme as per your liking. Also, supports WooCommerce integration for eCommerce businesses. It is compatible with all the major page builders like Elementor, SiteOrigin etc. Ascent is SEO friendly & Schema.org code integrated to help your website rank organically for specific keywords and phrases in the SERP(Search engine results page). The theme is light-weight to help your website load quickly, so the users don’t have to wait too long. Other features: RTL, Translation Ready, Regularly updated."
 msgstr ""
 
 #. Author of the theme
@@ -309,110 +309,118 @@ msgid "RSS URL"
 msgstr ""
 
 #: includes/customizer/class-ascent-customizer.php:560
-msgid "Home Page Slider"
+msgid "Whatsapp Number"
 msgstr ""
 
 #: includes/customizer/class-ascent-customizer.php:561
+msgid "Please enter the number using your country code e.g +91 7735899277"
+msgstr ""
+
+#: includes/customizer/class-ascent-customizer.php:572
+msgid "Home Page Slider"
+msgstr ""
+
+#: includes/customizer/class-ascent-customizer.php:573
 msgid "In this Slider section, you can upload image or video, only one thing will populate in the Home page slider"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:571
+#: includes/customizer/class-ascent-customizer.php:583
 msgid "Do you want to display slider on homepage?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:583
+#: includes/customizer/class-ascent-customizer.php:595
 msgid "Do you want to display the static banner image ?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:595
+#: includes/customizer/class-ascent-customizer.php:607
 msgid "Do you want to enable slider overlay dotted bg ?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:607
+#: includes/customizer/class-ascent-customizer.php:619
 msgid "Do you want to enable slider dotted pagination?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:619
+#: includes/customizer/class-ascent-customizer.php:631
 msgid "Do you want to enable slider left/right navigation?"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:633
+#: includes/customizer/class-ascent-customizer.php:645
 msgid "Enter the Video Height in Pixel"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:647
+#: includes/customizer/class-ascent-customizer.php:659
 msgid "Slider Image 1"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:650
-#: includes/customizer/class-ascent-customizer.php:691
-#: includes/customizer/class-ascent-customizer.php:733
-#: includes/customizer/class-ascent-customizer.php:776
-#: includes/customizer/class-ascent-customizer.php:818
+#: includes/customizer/class-ascent-customizer.php:662
+#: includes/customizer/class-ascent-customizer.php:703
+#: includes/customizer/class-ascent-customizer.php:745
+#: includes/customizer/class-ascent-customizer.php:788
+#: includes/customizer/class-ascent-customizer.php:830
 msgid "Upload image for first slider in sequence."
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:661
+#: includes/customizer/class-ascent-customizer.php:673
 msgid "Enter the Slider Video URL 1"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:675
+#: includes/customizer/class-ascent-customizer.php:687
 msgid "Slider description 1"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:688
+#: includes/customizer/class-ascent-customizer.php:700
 msgid "Slider Image 2"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:701
+#: includes/customizer/class-ascent-customizer.php:713
 msgid "Enter the Slider Video URL 2"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:715
+#: includes/customizer/class-ascent-customizer.php:727
 msgid "Slider description 2"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:730
+#: includes/customizer/class-ascent-customizer.php:742
 msgid "Slider Image 3"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:745
+#: includes/customizer/class-ascent-customizer.php:757
 msgid "Enter the Slider Video URL 3"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:759
+#: includes/customizer/class-ascent-customizer.php:771
 msgid "Slider description 3"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:773
+#: includes/customizer/class-ascent-customizer.php:785
 msgid "Slider Image 4"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:787
+#: includes/customizer/class-ascent-customizer.php:799
 msgid "Enter the Slider Video URL 4"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:801
+#: includes/customizer/class-ascent-customizer.php:813
 msgid "Slider description 4"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:815
+#: includes/customizer/class-ascent-customizer.php:827
 msgid "Slider Image 5"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:829
+#: includes/customizer/class-ascent-customizer.php:841
 msgid "Enter the Slider Video URL 5"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:843
+#: includes/customizer/class-ascent-customizer.php:855
 msgid "Slider description 5"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:853
+#: includes/customizer/class-ascent-customizer.php:865
 msgid "Footer Settings"
 msgstr ""
 
-#: includes/customizer/class-ascent-customizer.php:865
+#: includes/customizer/class-ascent-customizer.php:877
 msgid "Copyright"
 msgstr ""
 
@@ -655,12 +663,12 @@ msgstr ""
 
 #: template-parts/content-single.php:103
 #: template-parts/content.php:120
-msgid "<i class=\"fa fa-folder\"></i> %1$s"
+msgid "<i class=\"fas fa-folder\"></i> %1$s"
 msgstr ""
 
 #: template-parts/content-single.php:106
 #: template-parts/content.php:123
-msgid "<i class=\"fa fa-tags\"></i> %1$s"
+msgid "<i class=\"fas fa-tags\"></i> %1$s"
 msgstr ""
 
 #: template-parts/header-searchform.php:13
@@ -684,23 +692,27 @@ msgstr ""
 msgid "Please provide valid video URL."
 msgstr ""
 
-#: footer.php:51
+#: template-parts/header/header-socialmedia.php:9
+msgid "Hey, Please visit our website to get more info."
+msgstr ""
+
+#: footer.php:57
 msgid "A Semantic Personal Publishing Platform"
 msgstr ""
 
-#: footer.php:51
+#: footer.php:57
 msgid "&copy; %u Ascent. All rights reserved"
 msgstr ""
 
-#: footer.php:53
+#: footer.php:59
 msgid "%1$s  "
 msgstr ""
 
-#: footer.php:53
-msgid "http://zetamatic.com/"
+#: footer.php:59
+msgid "https://zetamatic.com/"
 msgstr ""
 
-#: footer.php:53
+#: footer.php:59
 msgid "ZetaMatic"
 msgstr ""
 

@@ -531,7 +531,7 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 
 			$wp_customize->add_setting( 'ascent_theme_options[asc_pinterest_url]', array(
 		        'default' => '',
-						'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_options',
 		        'sanitize_callback' => 'esc_url_raw',
 		    ) );
 		    $wp_customize->add_control( 'ascent_theme_options[asc_pinterest_url]', array(
@@ -542,13 +542,25 @@ if ( ! class_exists( 'Ascent_Customizer' ) ) {
 
 			$wp_customize->add_setting( 'ascent_theme_options[asc_rss_url]', array(
 		        'default' => '',
-						'capability' => 'edit_theme_options',
+				'capability' => 'edit_theme_options',
 		        'sanitize_callback' => 'esc_url_raw',
 		    ) );
 		    $wp_customize->add_control( 'ascent_theme_options[asc_rss_url]', array(
 		        'label' => __( 'RSS URL', 'ascent' ),
 		        'section' => 'ascent_social_section',
 		        'type' => 'url',
+		    ) );
+
+		    $wp_customize->add_setting( 'ascent_theme_options[asc_whatsapp_number]', array(
+		        'default' => '',
+				'capability' => 'edit_theme_options',
+		        'sanitize_callback' => 'sanitize_text_field',
+		    ) );
+		    $wp_customize->add_control( 'ascent_theme_options[asc_whatsapp_number]', array(
+		        'label' => __( 'Whatsapp Number', 'ascent' ),
+		        'description' => __( 'Please enter the number using your country code e.g +91 7735899277', 'ascent' ),
+		        'section' => 'ascent_social_section',
+		        'type' => 'text',
 		    ) );
 
 

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define Constants
  */
-define( 'ASCENT_THEME_VERSION', '3.8.0' );
+define( 'ASCENT_THEME_VERSION', '3.8.1' );
 define( 'ASCENT_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'ASCENT_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'ASCENT_PRO_URL', 'https://zetamatic.com/downloads/ascent-pro/' );
@@ -366,21 +366,22 @@ require_once ASCENT_THEME_DIR . 'includes/compatibility/class-ascent-jetpack.php
 if( ! function_exists( 'ascent_socialmedia_navs' ) ){
     function ascent_socialmedia_navs() {
         return array(
-            'asc_twitter_url'       => 'fa fa-twitter',
-            'asc_facebook_url'      => 'fa fa-facebook',
-            'asc_google_plus_url'   => 'fa fa-google-plus',
-            'asc_linkedin_url'      => 'fa fa-linkedin',
-            'asc_instagram_url'     => 'fa fa-instagram',
-            'asc_youtube_url'       => 'fa fa-youtube',
-            'asc_skype_url'         => 'fa fa-skype',
-            'asc_dribbble_url'      => 'fa fa-dribbble',
-            'asc_digg_url'          => 'fa fa-digg',
-            'asc_github_url'        => 'fa fa-github',
-            'asc_delicious_url'     => 'fa fa-delicious',
-            'asc_reddit_url'        => 'fa fa-reddit',
-            'asc_pinterest_url'     => 'fa fa-pinterest',
-            'asc_flickr_url'        => 'fa fa-flickr',
-            'asc_rss_url'           => 'fa fa-rss',
+            'asc_twitter_url'           => 'fab fa-twitter',
+            'asc_facebook_url'          => 'fab fa-facebook',
+            'asc_google_plus_url'       => 'fab fa-google-plus',
+            'asc_linkedin_url'          => 'fab fa-linkedin',
+            'asc_instagram_url'         => 'fab fa-instagram',
+            'asc_youtube_url'           => 'fab fa-youtube',
+            'asc_skype_url'             => 'fab fa-skype',
+            'asc_dribbble_url'          => 'fab fa-dribbble',
+            'asc_digg_url'              => 'fab fa-digg',
+            'asc_github_url'            => 'fab fa-github',
+            'asc_delicious_url'         => 'fab fa-delicious',
+            'asc_reddit_url'            => 'fab fa-reddit',
+            'asc_pinterest_url'         => 'fab fa-pinterest',
+            'asc_flickr_url'            => 'fab fa-flickr',
+            'asc_rss_url'               => 'fas fa-rss-square',
+            'asc_whatsapp_number'       => 'fab fa-whatsapp-square'
         );
     }
 }

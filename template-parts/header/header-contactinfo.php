@@ -14,11 +14,11 @@
         $email_id     = ascent_get_options( 'asc_email_id' );
     ?>
     <?php if ( $phone_number ): ?>
-        <span class="phone-info"><i class="fa fa-phone"></i> <?php echo esc_html( $phone_number ); ?></span>
+        <span class="phone-info"><i class="fas fa-phone-square-alt"></i> <?php echo esc_html( $phone_number ); ?></span>
     <?php endif; ?>
 
     <?php if ( $email_id ): ?>
-        <span><i class="fa fa-envelope"></i> <a href="mailto:<?php echo esc_html( $email_id ); ?>"><?php echo esc_html( $email_id ); ?></a></span>
+        <span><i class="fas fa-envelope"></i> <a href="mailto:<?php echo esc_html( $email_id ); ?>"><?php echo esc_html( $email_id ); ?></a></span>
     <?php endif; ?>
 
 </div>

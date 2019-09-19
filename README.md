@@ -2,14 +2,13 @@
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
 Tested up to: 5.2.3
-Stable tag: 3.8.0
+Stable tag: 3.8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Bundled Resources ==
-* Font Awesome: http://fortawesome.github.io/Font-Awesome/
-* Options Framework: http://wptheming.com/
+* Font Awesome: https://fontawesome.com
 * BootStrap: http://getbootstrap.com/
 * Owl carousel: http://owlgraphic.com/owlcarousel/
 * SwipeBox: http://github.com/brutaldesign/swipebox
@@ -95,9 +94,15 @@ Yes! You can choose your color scheme under Customizer -> Styling section
 
 = Changelog =
 
+
+### Version 3.8.1
+- Updated Font-Awesome to 5.10.2
+- Updated translation
+
 ### Version 3.7.0
 - Added Theme Hook Alliance
 - Updated template structures
+
 
 ### Version 3.8.0
 - Fixed single page template issue

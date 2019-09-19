@@ -22,8 +22,8 @@
 	        	<?php ascent_entry_meta_before(); ?>
 
 	      		<div class="entry-meta">
-	      		    <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time( 'c' ); ?>"><i class="fa fa-clock-o nt-mobile"></i> <?php the_time( 'M' ); ?><strong><?php the_time( 'd' ); ?></strong></time>
-	      		    <span class="comments_count clearfix entry-comments-link"><i class="fa fa-comment nt-mobile"></i>  <?php comments_popup_link( '0', '1', '%' ); ?></span>
+	      		    <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time( 'c' ); ?>"><i class="far fa-clock nt-mobile"></i> <?php the_time( 'M' ); ?><strong><?php the_time( 'd' ); ?></strong></time>
+	      		    <span class="comments_count clearfix entry-comments-link"><i class="fas fa-comment-dots nt-mobile"></i>  <?php comments_popup_link( '0', '1', '%' ); ?></span>
 	      		</div><!-- .entry-meta -->
 
 	      		<?php ascent_entry_meta_after(); ?>
@@ -100,10 +100,10 @@
 
 					    <div class="cat-tag-meta-wrap">
 							<?php if ( $categories_list && ascent_categorized_blog() ) :?>
-							    <span class="cats-meta"><?php printf( __( '<i class="fa fa-folder"></i> %1$s', 'ascent' ), $categories_list ); ?></span>
+							    <span class="cats-meta"><?php printf( __( '<i class="fas fa-folder"></i> %1$s', 'ascent' ), $categories_list ); ?></span>
 							<?php endif; ?>
 							<?php if ( $tags_list ) : ?>
-							    <span class="tags-meta"><?php printf( __( '<i class="fa fa-tags"></i> %1$s', 'ascent' ), $tags_list ); ?></span>
+							    <span class="tags-meta"><?php printf( __( '<i class="fas fa-tags"></i> %1$s', 'ascent' ), $tags_list ); ?></span>
 							<?php endif; ?>
 					    </div>
 				    <?php endif; ?>

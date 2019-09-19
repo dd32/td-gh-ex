@@ -44,13 +44,19 @@
 
                     <?php if( $asc_copyright ): ?>
 
-                        <?php echo $asc_copyright; ?>
+                        <?php
+                        $asc_copyright = str_replace( '[current_year]', date("Y"), $asc_copyright );
+                        $asc_copyright = str_replace( '[site_title]', __( 'All rights reserved' ), $asc_copyright );
+
+                        $asc_copyright = str_replace( '[theme_author]', '<a href="'.esc_url( "https://zetamatic.com/" ).'">ZetaMatic</a>', $asc_copyright );
+
+                         echo $asc_copyright; ?>
 
                     <?php else: ?>
 
                         <a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'ascent' ); ?>" ><?php printf( __( '&copy; %u Ascent. All rights reserved', 'ascent' ),  date("Y") ); ?></a>
                         <span class="sep"> | </span>
-                        <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'http://zetamatic.com/', 'ascent' ) ); ?>" target="_blank"><?php printf( __( 'ZetaMatic', 'ascent' ), 'ZetaMatic' ); ?></a>
+                        <?php printf( __( '%1$s  ', 'ascent' ), 'Ascent by '); ?><a href="<?php echo esc_url( __( 'https://zetamatic.com/', 'ascent' ) ); ?>" target="_blank"><?php printf( __( 'ZetaMatic', 'ascent' ), 'ZetaMatic' ); ?></a>
 
                     <?php endif; ?>
                     

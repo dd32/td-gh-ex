@@ -106,7 +106,7 @@
 
                         <div class="col-md-9">
                             <div class="header-search pull-right">
-                                <div id="header-search-button"><i class="fa fa-search"></i></div>
+                                <div id="header-search-button"><i class="fas fa-search"></i></div>
                             </div>
                             <div class="site-navigation pull-right">
 
