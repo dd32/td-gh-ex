@@ -146,28 +146,14 @@ wp.customize( 'arrival_main_nav_menu_color_hover', function( value ) {
 */
 
 //top padding
-wp.customize( 'arrival_nav_top_padding', function( value ) {
+wp.customize( 'arrival_nav_header_padding', function( value ) {
 	value.bind( function( color ) {
 		if (color == '') {
 			wp.customize.preview.send( 'refresh' );
 		}
 		if ( color ) {
-			var dynamicStyle = '.main-header-wrapp.boxed .container, .main-header-wrapp.full { padding-top: ' + color + 'px; } ';
-			arrival_add_dynamic_css( 'arrival_nav_top_padding', dynamicStyle );
-		}
-
-	} );
-} );
-
-//bottom padding
-wp.customize( 'arrival_nav_bottom_padding', function( value ) {
-	value.bind( function( color ) {
-		if (color == '') {
-			wp.customize.preview.send( 'refresh' );
-		}
-		if ( color ) {
-			var dynamicStyle = '.main-header-wrapp.boxed .container, .main-header-wrapp.full{ padding-bottom: ' + color + 'px; } ';
-			arrival_add_dynamic_css( 'arrival_nav_bottom_padding', dynamicStyle );
+			var dynamicStyle = '.main-header-wrapp.boxed .container, .main-header-wrapp.full { padding: ' + color + 'px 0; } ';
+			arrival_add_dynamic_css( 'arrival_nav_header_padding', dynamicStyle );
 		}
 
 	} );

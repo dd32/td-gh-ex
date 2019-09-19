@@ -148,8 +148,6 @@ add_action('customize_controls_enqueue_scripts','arrival_customizer_scripts');
 *
 * @return text for premium version
 */
-
-add_filter('arrival_customizer_text_pro','__return_false');
 if( ! function_exists('arrival_customizer_pro_info')){
 	function arrival_customizer_pro_info($wp_customize,$call_back_id, $section){
 
@@ -168,7 +166,7 @@ if( ! function_exists('arrival_customizer_pro_info')){
       ) );
 
 	$wp_customize->add_control( new Arrival_Customize_Pro_Info( $wp_customize, $call_back_id, array(
-			'label' 		=> sprintf( __('%1$s Arrival Pro %2$s','arrival'), '<a href="#" target="_blank">', '</a>' ),
+			'label' 		=> sprintf( __('%1$s Arrival Pro %2$s','arrival'), '<a href="https://wpoperation.com/themes/arrival-pro" target="_blank">', '</a>' ),
 			'priority'		=> 90,
 	        'description'   => esc_html__( 'more options available in', 'arrival' ),
 	        'section'       => $section,

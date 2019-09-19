@@ -76,6 +76,7 @@
 		'demo_installing' 	=> esc_html__('Installing Demo', 'arrival'),
 		'demo_installed' 	=> esc_html__('Demo Installed', 'arrival'),
 		'demo_confirm' 		=> esc_html__('Are you sure to import demo content ?', 'arrival'),
+		'doc_link'			=> 'https://wpoperation.com/wp-documentation/arrival/',
 
 		//free vs pro
 		'free_vs_pro' => array(

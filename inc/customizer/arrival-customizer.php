@@ -243,6 +243,10 @@ $wp_customize->add_control( new Arrival_Customizer_Range_Control( $wp_customize,
 ) ) );
 
 
+if( function_exists('arrival_customizer_pro_info')){
+  arrival_customizer_pro_info( $wp_customize, $prefix.'_general_settings_info',$prefix.'_general_setting_section');
+}
+
 /**
 * Sidebar settings
 *
@@ -899,6 +903,10 @@ $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_custom
       ) ) );
 
 
+if( function_exists('arrival_customizer_pro_info')){
+  arrival_customizer_pro_info( $wp_customize, $prefix.'_header_section_info',$prefix.'_main_header_options_panel');
+}
+
 /**
 * Main navigation color options
 *
@@ -949,7 +957,24 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefi
 /**
 * Main Nav Padding
 */
-$wp_customize->add_setting( $prefix.'_nav_top_padding', array(
+$wp_customize->add_setting( $prefix.'_nav_header_padding', array(
+  'default'             => $default[$prefix.'_nav_header_padding'],
+  'sanitize_callback'   => 'arrival_sanitize_number',
+  'transport'           => 'postMessage'
+) );
+
+$wp_customize->add_control( new Arrival_Customizer_Range_Control( $wp_customize, $prefix.'_nav_header_padding', array(
+  'label'           => esc_html__( 'Navigation Height (px)', 'arrival' ),
+  'priority'        => 25,
+  'section'         => $prefix.'_main_header_options_panel',
+    'input_attrs'       => array(
+        'min'   => 0,
+        'max'   => 250,
+        'step'  => 1,
+    ),
+) ) );
+
+/*$wp_customize->add_setting( $prefix.'_nav_top_padding', array(
   'transport'       => 'postMessage',
   'sanitize_callback'   => 'arrival_sanitize_number',
 ) );
@@ -972,7 +997,7 @@ $wp_customize->add_control( new Arrival_Customizer_Dimensions_Control( $wp_custo
         'max'   => 300,
         'step'  => 1,
     ),
-) ) );
+) ) );*/
 
 //menu item font-weight
 $arrival_free_font_weight = apply_filters('arrival_free_nav_font_weight','__return_true' );

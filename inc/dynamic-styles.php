@@ -150,15 +150,13 @@ function arrival_dynamic_styles(){
 	}
 
 	//navigation paddings
-	$_nav_top_padding = get_theme_mod('arrival_nav_top_padding');
-	$_nav_bottom_padding = get_theme_mod('arrival_nav_bottom_padding');
+	$_nav_header_padding = get_theme_mod('arrival_nav_header_padding',$defaults['arrival_nav_header_padding']);
 	
 
-	if($_nav_top_padding || $_nav_bottom_padding ){
+	if( $_nav_header_padding != 0 ){
 	?>
 		.main-header-wrapp.boxed .container, .main-header-wrapp.full{
-			padding-top: <?php echo absint($_nav_top_padding); ?>px;
-			padding-bottom: <?php echo absint($_nav_bottom_padding); ?>px;
+			padding: <?php echo absint($_nav_header_padding); ?>px 0;
 		}
 	<?php 	
 	}

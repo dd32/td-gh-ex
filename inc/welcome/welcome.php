@@ -469,7 +469,7 @@
 						<div class="box-header op-box-header"><?php esc_html_e('Theme Documentation','arrival'); ?></div>
 						<div class="box-content">
 							<p><?php esc_html_e('We have online documentation to make your configuration process easy, go through the documentation to get more familiar with theme','arrival'); ?></p>
-							<a href="https://wpoperation.com/wp-documentation/arrival/" class="button button-primary" target="_blank"><?php esc_html_e('Read Now','arrival'); ?></a>
+							<a href="<?php echo esc_url($this->strings['demo_confirm']);?>" class="button button-primary" target="_blank"><?php esc_html_e('Read Now','arrival'); ?></a>
 						</div>
 					</div>
 

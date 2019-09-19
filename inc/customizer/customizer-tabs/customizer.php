@@ -43,6 +43,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_main_nav_last_item_align',
                                 $prefix.'_single_nav_enable_sep',
                                 $prefix.'_one_page_menus',
+                                $prefix.'_header_section_info',
                                 
                             )),
                         ),
@@ -66,6 +67,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_after_top_hdr_padding',
                                 $prefix.'_after_top_header_top_border_show',
                                 $prefix.'_after_top_header_align_center',
+                                $prefix.'_header_section_info',
                                 
                             )),
                         ),
@@ -90,6 +92,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_after_top_header_txt_color',
                                 $prefix.'_after_top_header_border_color',
                                 $prefix.'_after_top_header_icon_color',
+                                $prefix.'_header_section_info',
                                 
 
                             ) ),
@@ -124,6 +127,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_footer_copyright_text',
                                 $prefix.'_footer_icons_enable',
                                 $prefix.'_footer_social_redirect_btn',
+                                $prefix.'_footer_settings_info',
 
                                 )
                             ),

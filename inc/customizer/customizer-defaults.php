@@ -74,6 +74,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_site_header_custom_template']       = 0;
     $defaults[$prefix.'_site_footer_type']                  = 'default';
     $defaults[$prefix.'_site_footer_custom_template']       = 0;
+    $defaults[$prefix.'_nav_header_padding']                = 0;
     
    
 
