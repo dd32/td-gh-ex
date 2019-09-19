@@ -69,3 +69,7 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 #### 1.5.0
 
 - added custom-logo support
+
+#### 1.5.1
+
+- added margin to comment form checkbox
