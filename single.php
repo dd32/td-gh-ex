@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-    <main id="maincontent" class="middle-align">
+    <main id="maincontent" role="main" class="middle-align">
     	<?php
             $left_right = get_theme_mod( 'bb_wedding_bliss_layout_options','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>

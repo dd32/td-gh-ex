@@ -11,9 +11,9 @@
  */
 get_header(); ?>
 
-<main id="maincontent" class="our-services">
+<main id="maincontent" role="main" class="our-services">
   <div class="innerlightbox">
-	  <div class="container">
+    <div class="container">
       <?php
         $left_right = get_theme_mod( 'bb_wedding_bliss_layout_options','Right Sidebar');
         if($left_right == 'Left Sidebar'){ ?>
@@ -29,7 +29,7 @@ get_header(); ?>
                   get_template_part( 'no-results' ); 
                 endif; 
               ?>
-          	  <div class="navigation">
+              <div class="navigation">
                 <?php
                   // Previous/next page navigation.
                   the_posts_pagination( array(
@@ -39,7 +39,7 @@ get_header(); ?>
                   ) );
                 ?>
               </div> 
-      	    </div>
+            </div>
           </div>
       <?php }else if($left_right == 'Right Sidebar'){ ?>
         <div class="row">
@@ -64,7 +64,7 @@ get_header(); ?>
               ?>
             </div> 
           </div>
-      	  <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
+          <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
         </div>
       <?php }else if($left_right == 'One Column'){ ?>
           <?php if ( have_posts() ) :
@@ -187,7 +187,7 @@ get_header(); ?>
           <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
         </div>
       <?php }?>
-		  <div class="clearfix"></div>
+      <div class="clearfix"></div>
     </div>
   </div>
 </main>

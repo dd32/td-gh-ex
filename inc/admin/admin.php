@@ -22,9 +22,9 @@ function bb_wedding_bliss_mostrar_guide() {
 	 	<h2><?php esc_html_e('Welcome to Wedding Lite Theme', 'bb-wedding-bliss'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'bb-wedding-bliss'); ?></p>
 		<div class="main-button">
-			<a href="<?php echo esc_url( BB_WEDDING_BLISS_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( BB_WEDDING_BLISS_BUY_NOW ); ?>"><?php esc_html_e('Buy Now', 'bb-wedding-bliss'); ?></a>
 			<a href="<?php echo esc_url( BB_WEDDING_BLISS_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'bb-wedding-bliss'); ?></a>
-			<a href="<?php echo esc_url( BB_WEDDING_BLISS_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( BB_WEDDING_BLISS_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'bb-wedding-bliss'); ?></a>
 		</div>
 	</div>
 	<div class="button-bg">
@@ -34,9 +34,9 @@ function bb_wedding_bliss_mostrar_guide() {
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'bb-wedding-bliss'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( BB_WEDDING_BLISS_FREE_DOC ); ?>" target="_blank"><?php esc_html_e('Documentation', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( BB_WEDDING_BLISS_FREE_DOC ); ?>"><?php esc_html_e('Documentation', 'bb-wedding-bliss'); ?></a>
 			<a href="<?php echo esc_url( BB_WEDDING_BLISS_CONTACT ); ?>"><?php esc_html_e('Support', 'bb-wedding-bliss'); ?></a>
-			<a target="_blank" href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'bb-wedding-bliss'); ?></a>
 		</div>
 	  	<div class="documentation">
 		  	<div class="image-docs">
@@ -64,9 +64,9 @@ function bb_wedding_bliss_mostrar_guide() {
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'bb-wedding-bliss'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( BB_WEDDING_BLISS_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'bb-wedding-bliss'); ?></a>
-			<a href="<?php echo esc_url( BB_WEDDING_BLISS_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'bb-wedding-bliss'); ?></a>
-			<a href="<?php echo esc_url( BB_WEDDING_BLISS_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( BB_WEDDING_BLISS_BUY_NOW ); ?>"><?php esc_html_e('Buy Now', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( BB_WEDDING_BLISS_LIVE_DEMO );?>"><?php esc_html_e('Live Demo', 'bb-wedding-bliss'); ?></a>
+			<a href="<?php echo esc_url( BB_WEDDING_BLISS_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'bb-wedding-bliss'); ?></a>
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">

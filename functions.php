@@ -342,6 +342,7 @@ function bb_wedding_bliss_scripts() {
 
 	wp_enqueue_script( 'bb-wedding-bliss-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'bb-wedding-bliss-basic-style',$custom_css );
@@ -363,7 +364,7 @@ define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/free/bb-free-weddin
 
 if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 	function bb_wedding_bliss_credit(){
-		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank' alt='".esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."''>". esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."</a>";
+		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT).">". esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."</a>";
 	}
 }
 
