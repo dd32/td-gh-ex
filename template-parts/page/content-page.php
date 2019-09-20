@@ -2,7 +2,7 @@
 /**
  * Template part for displaying page content in page.php
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

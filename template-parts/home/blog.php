@@ -2,7 +2,7 @@
 /**
  * Template part for displaying blog section
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

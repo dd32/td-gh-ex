@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Custom_Headers
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

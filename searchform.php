@@ -2,7 +2,7 @@
 /**
  * Template for displaying search forms in Adventure Travelling
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

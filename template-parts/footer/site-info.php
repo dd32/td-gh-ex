@@ -2,7 +2,7 @@
 /**
  * Displays footer site info
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

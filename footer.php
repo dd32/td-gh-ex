@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

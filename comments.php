@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

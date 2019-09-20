@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

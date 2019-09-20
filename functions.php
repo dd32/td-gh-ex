@@ -2,7 +2,7 @@
 /**
  * Adventure Travelling functions and definitions
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 
@@ -37,6 +37,13 @@ function adventure_travelling_setup() {
 	add_theme_support( 'custom-background', array(
 		'default-color' => 'ffffff'
 	) );
+
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,

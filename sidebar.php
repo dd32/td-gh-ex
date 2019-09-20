@@ -1,7 +1,7 @@
 <?php
 /**
  * The sidebar containing the main widget area
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

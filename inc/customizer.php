@@ -2,7 +2,7 @@
 /**
  * Adventure Travelling: Customizer
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

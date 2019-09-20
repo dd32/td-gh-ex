@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 

@@ -1,25 +1,10 @@
-/*
-Theme Name: Adventure Travelling
-Theme URI: https://www.themespride.com/themes/free-travel-agency-wordpress-theme/
-Author: ThemesPride
-Author URI: https://www.themespride.com/
-Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. Demo: https://themespride.com/tp-adventure-traveling-pro/
-Version: 0.6.6
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: adventure-travelling
-Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, post-formats, threaded-comments, translation-ready, blog, news, portfolio
-
-Adventure Travelling WordPress Theme, Copyright 2018 ThemesPride
-Adventure Travelling is distributed under the terms of the GNU GPL
-
-*/
+/* RTL Style */
 
 html {
-	font-family: sans-serif;
-	line-height: 1.15;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 body{ 
   margin:0;
@@ -56,8 +41,8 @@ a:hover{
   color:#d28d07;
 }
 ul{
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 input[type="search"] {
   padding: 10px;
@@ -86,7 +71,7 @@ Header
   background: #1c1c1c;
 }
 .social-media {
-  text-align: right;
+  text-align: left;
 }
 .social-media i {
   color: #000;
@@ -107,7 +92,7 @@ Header
   font-size: 10px;
   letter-spacing: 1px;
   color: #000;
-  margin-left: 8px;
+  margin-right: 8px;
   font-weight: bold;
 }
 .timebox i {
@@ -119,7 +104,7 @@ Header
   background: #222222;
 }
 .call{
-  text-align: right;
+  text-align: left;
 }
 .call i,
 .email i {
@@ -185,7 +170,7 @@ ul.list_nav {
 .main-navigation ul{
   list-style: none;
   margin: 0;
-  padding-left: 0;  
+  padding-right: 0;  
 }
 .main-navigation li{
   position: relative;
@@ -193,7 +178,7 @@ ul.list_nav {
   display: inline-block;
 }
 .main-navigation li:last-child{
-  border-right: none;
+  border-left: none;
 }
 .main-navigation a{
   display: block;
@@ -210,14 +195,14 @@ ul.list_nav {
 .main-navigation ul ul{
   display: none;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 100% ;
   background: #1c1c1c;
   min-width: 215px;
   z-index: 9999;
 }
 .main-navigation ul ul ul{
-  left: 100%;
+  right: 100%;
   top: 0;
 }
 .main-navigation ul ul a{
@@ -227,7 +212,7 @@ ul.list_nav {
 .menubar.scrolled .main-navigation ul ul li{
   float: none;
   display: block;
-  text-align: left;
+  text-align: right;
   border-bottom: 1px solid #cccccc;
 }
 .main-navigation ul ul li:last-child{
@@ -262,12 +247,12 @@ ul.list_nav {
 Superfish Menu
 --------------------------------------------------------------*/
 .sf-arrows .sf-with-ul{
-  padding-right: 15px;
+  padding-left: 15px;
 }
 .sf-arrows .sf-with-ul:after{
   content: '';
   position: absolute;
-  right: 0;
+  left: 0;
   margin-top: -2px;
   height: 0;
   width: 0;
@@ -275,14 +260,14 @@ Superfish Menu
 }
 .sf-arrows ul .sf-with-ul:after{
   margin-top: -5px;
-  margin-right: -3px;
+  margin-left: -3px;
   border-color: transparent;
-  border-left-color: #888;
+  border-right-color: #888;
 }
 .sf-arrows ul li > .sf-with-ul:focus:after,
 .sf-arrows ul li:hover > .sf-with-ul:after,
 .sf-arrows ul .sfHover > .sf-with-ul:after{
-  border-left-color: #333;
+  border-right-color: #333;
 }
 .toggle-nav, a.closebtn{
   display: none;
@@ -297,13 +282,13 @@ Search pop up
   z-index: 99999;
   position: absolute;
   top: 33%;
-  right: 0px;
+  left: 0px;
   display: none;
 }
 .serach_inner {
   width: 100%;
   padding: 10px;
-  float: right;
+  float: left;
   max-width: 510px;
   background: #ffffff;
 }
@@ -315,10 +300,10 @@ Search pop up
 }
 .serach_inner [type="submit"] {
   padding: 5px 12px;
-  background: url(assets/images/search.png) no-repeat scroll 0 4px;
+  background: url(assets/images/search.png) no-repeat scroll 100% 4px;
   font-size: 13px;
   text-align: center;
-  float: right;
+  float: left;
   text-indent: -9999px;
   border: none;
 }
@@ -350,7 +335,7 @@ width: 100%;
 height: auto;
 }
 .box-info i {
-  margin-right: 5px;
+  margin-left: 5px;
   background: #eee;
   padding: 10px;
   color: #000;
@@ -360,7 +345,7 @@ height: auto;
   padding: 5px 0;
 }
 .box-info span {
-  margin-right: 10px;
+  margin-left: 10px;
   color: #999;
   font-size: 12px;
 }
@@ -378,11 +363,21 @@ height: auto;
   border-bottom: 1px solid #ebebeb;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  text-align: right;
 }
 .readmore-btn a {
   border-bottom: 1px solid #ebebeb;
   font-weight: 600;
   letter-spacing: 1px;
+}
+.box-content .readmore-btn {
+    text-align: right;
+}
+.box-content p {
+    text-align: right;
+}
+.box-content .box-info {
+    text-align: right;
 }
 /*--------------------------------------------------------------
 SLIDER
@@ -425,15 +420,16 @@ SLIDER
   margin: 0;
   font-size: 35px;
   font-weight: bold;
-  text-align: left;
+  text-align: right;
   letter-spacing: 1px;
   color: #fff;
-  border-left: solid 5px #ffcc05;
-  padding-left: 15px;
+  border-right: solid 5px #ffcc05;
+  padding-right: 15px;
   padding-bottom: 0;
+  border-left: none;
 }
 #slider .inner_carousel {
-  text-align: left;
+  text-align: right;
   color: #fff;
 }
 #slider .inner_carousel p {
@@ -463,13 +459,15 @@ From Our Blog
   padding: 3% 0;
 }
 #static-blog h3 {
-  border-left: solid 6px #ffcc05;
+  border-right: solid 6px #ffcc05;
   color: #000;
   padding: 0;
   font-size: 35px;
   font-weight: bold;
-  padding-left: 10px;
+  padding-right: 10px;
   margin: 15px 0;
+  text-align: right;
+  border-left: none;
 }
 #static-blog h4 a {
   color: #000;
@@ -477,11 +475,13 @@ From Our Blog
 #static-blog h4 {
   margin-bottom: 10px;
   padding: 0;
+  text-align: right;
 }
 #static-blog p {
   color: #999;
   letter-spacing: 1px;
   line-height: 24px;
+  text-align: right;
 }
 #static-blog img{
   width: 100%;
@@ -506,6 +506,7 @@ From Our Blog
 }
 .read-more-btn {
   margin: 25px 0;
+  text-align: right;
 }
 
 /*--------------------------------------------------------------
@@ -577,7 +578,7 @@ nav.woocommerce-MyAccount-navigation ul li {
   border: solid 2px #222;
   padding: 10px;
   margin-bottom: 10px;
-  box-shadow: 2px 2px 0 0 #222;
+  box-shadow: -2px 2px 0 0 #222;
   font-weight: bold;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
@@ -619,44 +620,44 @@ Posts Numbers
 .prev.page-numbers:hover,
 .next.page-numbers:focus,
 .next.page-numbers:hover {
-	background-color: #1c1c1c;
-	color: #fff;
+  background-color: #1c1c1c;
+  color: #fff;
 }
 .page-links {
-	font-size: 14px;
-	font-weight: 800;
-	padding: 2em 0 3em;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 2em 0 3em;
 }
 .page-links .page-number {
-	color: #1c1c1c;
-	display: inline-block;
-	padding: 0.5em 1em;
+  color: #1c1c1c;
+  display: inline-block;
+  padding: 0.5em 1em;
 }
 .page-links a {
-	display: inline-block;
+  display: inline-block;
 }
 .page-links a .page-number {
-	color: #222;
+  color: #222;
 }
 
 /* Post Navigation */
 
 .post-navigation {
-	font-weight: 500;
-	margin: 3em 0;
+  font-weight: 500;
+  margin: 3em 0;
 }
 .nav-subtitle {
-	background: transparent;
-	color: #1c1c1c;
-	display: block;
-	font-size: 11px;
-	letter-spacing: 0.1818em;
-	margin-bottom: 1em;
-	text-transform: uppercase;
+  background: transparent;
+  color: #1c1c1c;
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1818em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
 }
 .nav-title {
-	color: #333;
-	font-size: 15px;
+  color: #333;
+  font-size: 15px;
 }
 span.meta-nav {
   color: #1c1c1c;
@@ -664,7 +665,7 @@ span.meta-nav {
   padding: 5px;
 }
 .nav-previous {
-  float: right;
+  float: left;
 }
 
 /*--------------------------------------------------------------
@@ -672,11 +673,11 @@ span.meta-nav {
 --------------------------------------------------------------*/
 
 .error404 .page-content {
-	padding-bottom: 4em;
+  padding-bottom: 4em;
 }
 .error404 .page-content .search-form,
 .search .page-content .search-form {
-	margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 .error-404 input[type="search"] {
   border: solid 1px #1c1c1c;
@@ -773,7 +774,7 @@ Sidebar
   width: 100%;
 }
 #theme-sidebar th,#theme-sidebar td {
-  border-right: solid 1px #ebebeb;
+  border-left: solid 1px #ebebeb;
   padding: 10px 0;
 }
 #theme-sidebar tr {
@@ -785,100 +786,100 @@ Comments
 --------------------------------------------------------------*/
 
 #comments {
-	clear: both;
-	padding: 2em 0 0.5em;
+  clear: both;
+  padding: 2em 0 0.5em;
 }
 .comments-title {
-	font-size: 20px;
-	margin-bottom: 1.5em;
+  font-size: 20px;
+  margin-bottom: 1.5em;
 }
 .comment-list,
 .comment-list .children {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .comment-list li:before {
-	display: none;
+  display: none;
 }
 .comment-body {
-	margin-left: 65px;
+  margin-right: 65px;
 }
 .comment-author {
-	font-size: 16px;
-	margin-bottom: 0.4em;
-	position: relative;
-	z-index: 2;
+  font-size: 16px;
+  margin-bottom: 0.4em;
+  position: relative;
+  z-index: 2;
 }
 .comment-author .avatar {
-	height: 50px;
-	left: -65px;
-	position: absolute;
-	width: 50px;
+  height: 50px;
+  right: -65px;
+  position: absolute;
+  width: 50px;
 }
 .comment-author .says {
-	display: none;
+  display: none;
 }
 .comment-meta {
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 .comment-metadata {
-	color: #767676;
-	font-size: 10px;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	text-transform: uppercase;
+  color: #767676;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1818em;
+  text-transform: uppercase;
 }
 .comment-metadata a {
-	color: #767676;
+  color: #767676;
 }
 .comment-metadata a.comment-edit-link {
-	color: #222;
-	margin-left: 1em;
+  color: #222;
+  margin-right: 1em;
 }
 #comments label{
   display: none;
 }
 .comment-body {
-	color: #333;
-	font-size: 14px;
-	margin-bottom: 4em;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 4em;
 }
 .comment-reply-link {
-	font-weight: 800;
-	position: relative;
+  font-weight: 800;
+  position: relative;
 }
 .comment-reply-link .icon {
-	color: #222;
-	left: -2em;
-	height: 1em;
-	position: absolute;
-	top: 0;
-	width: 1em;
+  color: #222;
+  right: -2em;
+  height: 1em;
+  position: absolute;
+  top: 0;
+  width: 1em;
 }
 .children .comment-author .avatar {
-	height: 30px;
-	left: -45px;
-	width: 30px;
+  height: 30px;
+  right: -45px;
+  width: 30px;
 }
 .bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
-	border: 1px solid #333;
-	padding: 2px;
+  border: 1px solid #333;
+  padding: 2px;
 }
 .no-comments,
 .comment-awaiting-moderation {
-	color: #767676;
-	font-size: 14px;
-	font-style: italic;
+  color: #767676;
+  font-size: 14px;
+  font-style: italic;
 }
 .comments-pagination {
-	margin: 2em 0 3em;
+  margin: 2em 0 3em;
 }
 .comment-form #wp-comment-cookies-consent {
-	margin: 0 10px 0 0;
+  margin: 0 0 0 10px;
 }
 .comment-form .comment-form-cookies-consent label {
-	display: inline;
+  display: inline;
 }
 #comments input[type="submit"] {
   background: #ffcc05;
@@ -896,8 +897,8 @@ Commen CSS
   padding: 3% 0;
 }
 .sticky .page-box h4{
-  background: url(assets/images/pin.png) no-repeat scroll 0 0px;
-  padding-left: 40px;
+  background: url(assets/images/pin.png) no-repeat scroll 100% 0px;
+  padding-right: 40px;
 }
 #gallery-1 img {
   border: 2px solid #000 !important;
@@ -946,7 +947,7 @@ Footer
   width: 100%;
 }
 #footer th,#footer td {
-  border-right: dashed 1px #656363;
+  border-left: dashed 1px #656363;
   padding: 5px 0;
   color: #999;
 }
@@ -992,7 +993,7 @@ Footer
 WordPress Core
 --------------------------------------------------------------*/
 .alignnone {
-  margin: 5px 20px 20px 0;
+  margin: 5px 0 20px 20px;
 }
 .aligncenter,
 div.aligncenter {
@@ -1000,28 +1001,28 @@ div.aligncenter {
   margin: 5px auto 5px auto;
 }
 .alignright {
-  float:right;
-  margin: 5px 0 20px 20px;
-}
-.alignleft {
-  float: left;
+  float:left;
   margin: 5px 20px 20px 0;
 }
-a img.alignright {
+.alignleft {
   float: right;
   margin: 5px 0 20px 20px;
 }
-a img.alignnone {
-  margin: 5px 20px 20px 0;
-}
-a img.alignleft {
+a img.alignright {
   float: left;
   margin: 5px 20px 20px 0;
 }
+a img.alignnone {
+  margin: 5px 0 20px 20px;
+}
+a img.alignleft {
+  float: right;
+  margin: 5px 0 20px 20px;
+}
 a img.aligncenter {
   display: block;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
 }
 .wp-caption {
   background: #fff;
@@ -1031,13 +1032,13 @@ a img.aligncenter {
   text-align: center;
 }
 .wp-caption.alignnone {
-  margin: 5px 20px 20px 0;
+  margin: 5px 0 20px 20px;
 }
 .wp-caption.alignleft {
-  margin: 5px 20px 20px 0;
+  margin: 5px 0 20px 20px;
 }
 .wp-caption.alignright {
-  margin: 5px 0 20px 20px;
+  margin: 5px 20px 20px 0;
 }
 .wp-caption img {
   border: 0 none;
@@ -1074,7 +1075,7 @@ a img.aligncenter {
   display: block;
   font-size: 1em;
   height: auto;
-  left: 5px;
+  right: 5px;
   line-height: normal;
   padding: 15px 23px 14px;
   text-decoration: none;
@@ -1096,17 +1097,17 @@ Media Queries
   .toggle-nav {
     display: none;
     position: relative;
-    float: left;
-    right: 15px;
+    float: right;
+    left: 15px;
     height: 30px;
     width: 30px;
     cursor: pointer;
     margin: 0 auto;
     z-index: 999999;
-    right: 0;
-    text-align: right;
-    right: 0;
-    margin-right: 0;
+    left: 0;
+    text-align: left;
+    left: 0;
+    margin-left: 0;
   }
   .toggle-nav i {
     font-size: 30px;
@@ -1118,14 +1119,14 @@ Media Queries
     position: fixed;
     z-index: 9999999;
     top: 0;
-    right: 0;
+    left: 0;
     background-color: #1c1c1c;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
   }
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 32px 8px 8px;
     text-decoration: none;
     color: #818181;
     display: block;
@@ -1137,9 +1138,9 @@ Media Queries
   .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    left: 25px;
     font-size: 36px;
-    margin-left: 50px;
+    margin-right: 50px;
     display: block;
     color: #ffffff;
   }
@@ -1149,7 +1150,7 @@ Media Queries
   .toggle-nav span{
     font-size:30px;
     cursor:pointer; 
-    text-align: right;
+    text-align: left;
   }
   .toggle-nav{
     display: block;
@@ -1181,7 +1182,7 @@ Media Queries
     border-top-color: #333;
   }
   .toggle i.fa.fa-bars,.toggle i.fa.fa-times {
-    float: right;
+    float: left;
     color: black;
   }
   .menubar .nav ul{ 
@@ -1192,7 +1193,7 @@ Media Queries
   .menubar.scrolled .main-navigation li{
     border-top:1px #303030 solid; 
     display:block;
-    text-align:left;
+    text-align:right;
     float:none;
     width: 100%;
   }  
@@ -1212,10 +1213,10 @@ Media Queries
     content:"\00BB \00a0";
   }
   .nav ul li ul li a{
-  padding-left:20px !important;
+  padding-right:20px !important;
   }
   .nav ul li ul li ul li a{
-    padding-left:30px !important;
+    padding-right:30px !important;
   }
   .main-navigation ul ul{
     position: static;
@@ -1239,7 +1240,7 @@ Media Queries
   }
   .menubox {
     width: 75%;
-    float: left;
+    float: right;
   }
   .search-box {
     width: 10%;
@@ -1252,6 +1253,6 @@ Media Queries
     display: none;
   }
   #slider .carousel-caption{
-    right: auto;
+    left: auto;
   }
 }

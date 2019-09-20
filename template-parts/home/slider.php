@@ -2,7 +2,7 @@
 /**
  * Template part for displaying slider section
  *
- * @package WordPress
+ * @package Adventure Travelling
  * @subpackage adventure_travelling
  */
 
@@ -13,7 +13,7 @@
 <section id="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
     <?php $slide_pages = array();
-      for ( $count = 1; $count <= 3; $count++ ) {
+      for ( $count = 1; $count <= 4; $count++ ) {
         $mod = intval( get_theme_mod( 'adventure_travelling_slider_page' . $count ));
         if ( 'page-none-selected' != $mod ) {
           $slide_pages[] = $mod;
