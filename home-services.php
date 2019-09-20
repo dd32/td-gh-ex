@@ -22,9 +22,9 @@
 						<?php if($wl_theme_options['service_'.$i.'_title'] !='') { ?>
 						<h3 class="head_<?php echo esc_attr($i) ?>">
 						<a href="<?php echo esc_url($wl_theme_options['service_'.$i.'_link']); ?>"><?php echo esc_attr($wl_theme_options['service_'.$i.'_title']); ?></a>
-						</h3><?php } ?>
-						<?php if($wl_theme_options['service_'.$i.'_text'] !='') { ?><p><?php echo get_theme_mod('service_'.$i.'_text' , $wl_theme_options['service_'.$i.'_text']); ?><?php } ?></p>
-						<iframe width="200" height="200" src="<?php echo esc_url($wl_theme_options['service_'.$i.'_youtube']); ?>" frameborder="0"></iframe>
+						</h3><?php } ?>						
+						<?php if($wl_theme_options['service_'.$i.'_text'] !='') { ?><p><?php echo get_theme_mod('service_'.$i.'_text' , $wl_theme_options['service_'.$i.'_text']); ?></p><?php } ?>
+						<?php if($wl_theme_options['service_'.$i.'_youtube'] !='') { ?><iframe width="200" height="200" src="<?php echo esc_url($wl_theme_options['service_'.$i.'_youtube']); ?>" frameborder="0"></iframe><?php } ?>
 					</div>
 				</div>
 			</div>
