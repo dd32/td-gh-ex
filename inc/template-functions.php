@@ -150,7 +150,7 @@ if( ! function_exists( 'bc_business_consulting_blog_wrapper_start' ) ) :
 	*/
 	function bc_business_consulting_blog_wrapper_start() {
 		?>
-        <div class="container blog latestnews-section ">
+        <div id="bc-main-container" class="container blog latestnews-section ">
              <div class="row">
         <?php
 	}
@@ -373,7 +373,7 @@ if( ! function_exists( 'bc_business_consulting_footer_layout' ) ) :
                     
                     <div class="pull-left">
                     	<?php  echo esc_html ( bc_business_consulting_get_option('copyright_text') ); ?>
-                        <a href="<?php /* translators:straing */ echo esc_url( esc_html__( 'https://wordpress.org/', 'bc-business-consulting' ) ); ?>"><?php /* translators:straing */  printf( esc_html__( 'Proudly powered by %s .', 'bc-business-consulting' ), 'WordPress' ); ?></a>
+                        <a href="<?php /* translators:straing */ echo esc_url( esc_html__( 'https://wordpress.org/themes/bc-business-consulting/', 'bc-business-consulting' ) ); ?>"><?php /* translators:straing */  printf( esc_html__( 'Proudly powered by %s .', 'bc-business-consulting' ), 'WordPress' ); ?></a>
                         
                         <?php
                         printf( /* translators:straing */  esc_html__( 'Theme: %1$s by %2$s.', 'bc-business-consulting' ), 'Business Consulting', '<a href="' . esc_url( __( 'https://athemeart.com', 'bc-business-consulting' ) ) . '" target="_blank">' . esc_html__( 'aThemeArt', 'bc-business-consulting' ) . '</a>' ); ?>

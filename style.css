@@ -5,7 +5,7 @@ Author: athemeart
 Author URI: https://athemeart.com/
 Description: BC Business Consulting Multipurpose One page WordPress Theme BC Business Consulting is a clean, super flexible and fully responsive Multipurpose One page WordPress Theme for any project, business, agency , personal or web studio. Its equipped with the latest technologies and designed with user in mind to ensure endless freedom to create and customize your site like a pro and without any coding. This versatile, multi-purpose theme is perfect for beginners, while also feature rich and extendable for developers, freelancers and growing businesses. We built this theme on Visual Composer, a very convenient drag-n-drop PageBuilder for WordPress. It should provide you with the smoothest experience while creating your website with our theme. The colorful widgets will help anyone to customize according to their branding colors. This theme is very well commented and also have proper help documentation too.
 
-Version: 1.1.9
+Version: 1.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bc-business-consulting
@@ -982,7 +982,8 @@ ul.popular_category_list li:last-child{
   
 } 
 
-#secondary .widget li:hover{
+#secondary .widget li:hover,
+#secondary .widget li:focus{
 	padding-left:30px;	
 }
 .sidebar .widget li::before,
@@ -1028,9 +1029,7 @@ ul.popular_category_list li:before  {
 .sidebar .widget.widget_tag_cloud ul li::before  {
     content: "\f0c2";
 }
-.screen-reader-text{
-	display:none;	
-}
+
 
 .widget input,
 .widget select{
@@ -1849,6 +1848,29 @@ a.btn:active,
 a.btn:active{
 	color: #ddab03;
 }
+
+.latestnews-section .type-post .entry-block a:focus,
+.latestnews-section .type-post .entry-title:focus a,
+.latestnews-section .type-post .entry-block .post-by a,
+.post-comments .media-content > a:focus,
+.post-comments .media-body .media-heading a:focus,
+.blogpost-nextprev a:focus,
+.blog.latestnews-section .type-post .entry-meta .post-tag span > a:focus,
+.page-breadcrumb .breadcrumb a:focus,
+.contact-widget.ftr-widget p:focus a,
+.contact-widget.ftr-widget p:focus span,
+.contact-widget.ftr-widget p:focus,
+.link-widget  ul li a:focus,
+.ftr-widget a,
+.header-social ul li a:focus,
+.list-inline > li a:focus,
+#secondary li:focus a,
+#secondary li a:focus,
+#secondary li:focus:before,
+#secondary a:focus,
+a.btn:focus{
+	color: #ddab03;
+}
 .btn:hover,
 .btn:focus,
 .btn:active,
@@ -2028,4 +2050,37 @@ a.btn:active{
 /* Do not show the outline on the skip link target. */
 #main-content[tabindex="-1"]:focus {
   outline: 0;
+}
+.ow-navigation .nav.navbar-nav > li > a:hover,.ow-navigation .nav.navbar-nav > li > a:focus {
+ color:#ddab03; 
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
