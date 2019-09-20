@@ -18,7 +18,6 @@
     <div class="box-image">
         <?php the_post_thumbnail();  ?>	   
     </div>
-    <hr>
     <div class="box-content">        
         <?php the_content(); 
         the_tags(); ?>

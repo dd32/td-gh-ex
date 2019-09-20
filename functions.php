@@ -39,6 +39,13 @@ function automobile_hub_setup() {
 	) );
 
 	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, and column width.
  	 */

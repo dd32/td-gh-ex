@@ -45,66 +45,54 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:70
-msgid 'Blog Sidebar'
-msgstr ""
-
-#: functions.php:72
-msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
-msgstr ""
-
-#: functions.php:80
-msgid 'Page Sidebar'
-msgstr ""
-
-#: functions.php:82
-#: functions.php:92
-msgid "Add widgets here to appear in your sidebar on pages."
-msgstr ""
-
-#: functions.php:90
-msgid 'Sidebar 3'
-msgstr ""
-
-#: functions.php:100
-msgid 'Footer 1'
-msgstr ""
-
-#: functions.php:110
-msgid 'Footer 2'
-msgstr ""
-
-#: functions.php:120
-msgid 'Footer 3'
-msgstr ""
-
-#: functions.php:130
-msgid 'Footer 4'
-msgstr ""
-
-#: functions.php:102
-#: functions.php:112
-#: functions.php:122
-#: functions.php:132
-msgid "Add widgets here to appear in your footer."
-msgstr ""
-
-#: functions.php:213
-msgid 'Themespride'
-msgstr ""
-
-#: searchform.php:13
-msgid 'placeholder'
-msgstr ""
-
-#: searchform.php:14
-msgid 'submit button'
-msgstr ""
-
+#: functions.php:77
 #: sidebar.php:10
 msgid 'Blog Sidebar'
 msgstr ""
 
+#: functions.php:78
+#: functions.php:99
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr ""
+
+#: functions.php:87
+msgid 'Page Sidebar'
+msgstr ""
+
+#: functions.php:89
+msgid "Add widgets here to appear in your sidebar on pages."
+msgstr ""
+
+#: functions.php:97
+msgid 'Sidebar 3'
+msgstr ""
+
+#: functions.php:107
+msgid 'Footer 1'
+msgstr ""
+
+#: functions.php:117
+msgid 'Footer 2'
+msgstr ""
+
+#: functions.php:127
+msgid 'Footer 3'
+msgstr ""
+
+#: functions.php:137
+msgid 'Footer 4'
+msgstr ""
+
+#: functions.php:108
+#: functions.php:118
+#: functions.php:128
+#: functions.php:138
+msgid "Add widgets here to appear in your footer."
+msgstr ""
+
+#: functions.php:220
+msgid 'Themespride'
+msgstr ""
 
 #: archive.php:53
 #: archive.php:91
@@ -215,6 +203,14 @@ msgstr ""
 #: search.php:201
 #: search.php:241
 msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'
+msgstr ""
+
+#: searchform.php:13
+msgid 'placeholder'
+msgstr ""
+
+#: searchform.php:14
+msgid 'submit button'
 msgstr ""
 
 #: inc/customizer.php:21
@@ -375,15 +371,19 @@ msgstr ""
 msgid 'CART ITEM'
 msgstr ""
 
+#: template-parts/page/content-page.php:22
+msgid 'Pages:'
+msgstr ""
+
 #: template-parts/home/about.php:34
 #: template-parts/home/slider.php:41
 msgid 'READ MORE'
 msgstr ""
 
-#: template-parts/page/content-page.php:22
-msgid 'Pages:'
-msgstr ""
-
+#: template-parts/post/content-audio.php:38
+#: template-parts/post/content-gallery.php:27
+#: template-parts/post/content-image.php:24
+#: template-parts/post/content-video.php:38
 #: template-parts/post/content-grid.php:23
 #: template-parts/post/content.php:24
 #: template-parts/post/single-post.php:15
@@ -391,6 +391,10 @@ msgid '0 Comments'
 msgstr ""
 
 #: template-parts/post/content-grid.php:27
+#: template-parts/post/content-audio.php:42
+#: template-parts/post/content-gallery.php:31
+#: template-parts/post/content-image.php:28
+#: template-parts/post/content-video.php:42
 #: template-parts/post/content.php:28
 msgid 'Read More'
 msgstr ""
@@ -403,14 +407,22 @@ msgstr ""
 msgid 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.'
 msgstr ""
 
-#: template-parts/post/single-post.php:33
+#: template-parts/post/single-post.php:32
 msgid 'Parent post link'
 msgstr ""
 
-#: template-parts/post/single-post.php:38
+#: template-parts/post/single-post.php:37
 msgid 'Next:'
 msgstr ""
 
-#: template-parts/post/single-post.php:40
+#: template-parts/post/single-post.php:39
 msgid 'Previous:'
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid 'You must be logged in to checkout.'
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:52
+msgid 'Your order'
 msgstr ""
