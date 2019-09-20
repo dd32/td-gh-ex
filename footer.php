@@ -31,6 +31,7 @@
 <div class="copyright">
     <p><?php echo esc_html(get_theme_mod('advance_business_footer_copy', __('Copyright 2018 -', 'advance-business')));?> <?php advance_business_credit();?></p>
 </div>
+
 <?php wp_footer();?>
 </body>
 </html>

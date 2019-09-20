@@ -10,8 +10,8 @@ get_header(); ?>
 <div class="container">
     <main role="main" id="maincontent" class="middle-align">
     	<?php
-            $left_right = get_theme_mod( 'advance_business_layout_options','Right Sidebar');
-            if($left_right == 'Left Sidebar'){ ?>
+        $left_right = get_theme_mod( 'advance_business_layout_options','Right Sidebar');
+        if($left_right == 'Left Sidebar'){ ?>
             <div class="row">
 		    	<div id="sidebar" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebar-1'); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
 		<?php }else if($left_right == 'One Column'){ ?>
 			<div id="content-ts">
 				<?php while ( have_posts() ) : the_post(); 
-						get_template_part( 'template-parts/single-post' );
+					get_template_part( 'template-parts/single-post' );
 	            endwhile; // end of the loop. ?>
 	       	</div>
 	    <?php }else if($left_right == 'Three Columns'){ ?>

@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 4.7
-Tested up to: 5.2.2
+Tested up to: 5.2.3
 Requires PHP: 7.2.14
-Stable tag: 0.3.1
+Stable tag: 0.3.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -35,7 +35,13 @@ Advance Business is a powerful, bold, flexible, dynamic and neatly-structured bu
   * Changed the notice design in dashboard.
   * Updated POT file.
   * Resolved theme error.
-
+  
+= 0.3.2 =
+  * Updated naviagtion menu code.
+  * Resolved contrast color errors
+  * Resolved css customization
+  * Resolved theme error.
+  
 == Resources ==
 
 Advance Business WordPress Theme, Copyright 2018 Themeshopy

@@ -43,13 +43,6 @@ function advance_business_setup() {
 	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
 	/*
-	* Enable support for Post Formats.
-	*
-	* See: https://codex.wordpress.org/Post_Formats
-	*/
-	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
-
-	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
@@ -68,8 +61,8 @@ add_action( 'after_setup_theme', 'advance_business_setup' );
 // Notice after Theme Activation
 function advance_business_activation_notice() {
 	echo '<div class="notice notice-success is-dismissible get-started">';
-		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-business' ) .'</p>';
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_business_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-business' ) .'</a></p>';
+	echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-business' ) .'</p>';
+	echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_business_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-business' ) .'</a></p>';
 	echo '</div>';
 }
 
@@ -358,6 +351,7 @@ function advance_business_scripts() {
 	wp_add_inline_style( 'advance-business-basic-style',$custom_css );
 
 	wp_enqueue_style('advance-business-ie', get_template_directory_uri().'/css/ie.css', array('advance-business-basic-style'));
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	wp_style_add_data('advance-business-ie', 'conditional', 'IE');
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -400,7 +394,7 @@ define('ADVANCE_BUSINESS_CREDIT', 'https://www.themeshopy.com/themes/free-wordpr
 
 if (!function_exists('advance_business_credit')) {
 	function advance_business_credit() {
-		echo "<a href=".esc_url(ADVANCE_BUSINESS_CREDIT)." target='_blank'>".esc_html__('Business WordPress Theme', 'advance-business')."</a>";
+		echo "<a href=".esc_url(ADVANCE_BUSINESS_CREDIT)." >".esc_html__('Business WordPress Theme', 'advance-business')."</a>";
 	}
 }
 

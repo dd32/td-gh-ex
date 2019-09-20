@@ -16,8 +16,9 @@ function advance_business_mostrar_guide() {
 	//custom function about theme customizer
 	$return = add_query_arg( array()) ;
 ?>
- <div class="wrapper-info">
-	 <div class="header">
+
+<div class="wrapper-info">
+	<div class="header">
 	 	<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="<?php the_title(); ?> post thumbnail image">
 	 	<h2><?php esc_html_e('Welcome to Advance Business Theme', 'advance-business'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-business'); ?></p>
@@ -60,7 +61,6 @@ function advance_business_mostrar_guide() {
 			</div>
 		</div>
 	</div>
-
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'advance-business'); ?></h3>
 	  	<div class="sec-button">
@@ -107,6 +107,7 @@ function advance_business_mostrar_guide() {
 			</div>
 		</div>
 	</div>
+</div>
 
 <script>
 	function openPage(pageName,elmnt,color) {

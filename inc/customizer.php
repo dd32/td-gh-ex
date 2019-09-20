@@ -44,7 +44,6 @@ function advance_business_customize_register($wp_customize) {
 		'panel'    => 'advance_business_panel_id',
 	));
 
-	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_business_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-business'),
 		'sanitize_callback' => 'advance_business_sanitize_choices',
@@ -498,7 +497,6 @@ function advance_business_customize_register($wp_customize) {
 
 	for ( $count = 1; $count <= 4; $count++ ) {
 
-		// Add color scheme setting and control.
 		$wp_customize->add_setting( 'advance_business_slider_page' . $count, array(
 			'default'           => '',
 			'sanitize_callback' => 'advance_business_sanitize_dropdown_pages'

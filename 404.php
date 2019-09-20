@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main role="main" id="maincontent" class="content-ts">
+<main id="maincontent" role="main" class="content-ts">
 	<div class="container">
         <div class="middle-align">
 			<h1><?php printf( '<strong>%s</strong> %s', esc_html__( '404', 'advance-business' ), esc_html__( 'Not Found', 'advance-business' ) ) ?></h1>
