@@ -69,8 +69,8 @@ ul.top-social li a.icon-linkedin:hover {background: #0083a8;color: #fff;}
 .dropdown-menu > li > a:hover {color:#ff2851;background-color:#fff;}
 .dropdown-submenu:hover > .dropdown-menu{color:#ff2851;background-color:#fff;}
 /*------Home Top Callout------*/
-.buy-it-area {background: url(../images/banner-bg.jpg) no-repeat center top fixed;}
-.buy-it-area .solid-bg {background:  rgba(255, 40, 81, 0.8);color: #fff;}
+/*.buy-it-area {background: url(../images/banner-bg.jpg) no-repeat center top fixed;}
+*/.buy-it-area .solid-bg {background:  rgba(255, 40, 81, 0.8);color: #fff;}
 .buy-it-area .solid-bg .buy-it-now {color: #fff;border: 2px solid #fff !important;}
 .buy-it-area .solid-bg .buy-it-now:hover {background-color:#fff;color:#333;}
 /*------Services---------*/
@@ -137,13 +137,13 @@ ul.top-social li a.icon-linkedin:hover {background: #0083a8;color: #fff;}
 .project-scroll-btn li:hover  a.project-next:before{color: #ffffff;}  
 /*----Client Section--------*/
 .client-section{background:#eee;}
-.footer {
-   /*background-color:#010d13;*/
+/*.footer {
+   background-color:#010d13;
    background: url(../images/banner-bg.jpg) no-repeat center top fixed;
    color: #eee;
-  }
+  }*/
 .footer-inner {
-   background-color: rgba(46, 46, 46, 0.9);
+   background-color: rgba(0, 0, 0, 0.7);
 }
 .footer p{ color: #eee;}
 .footer h2 {olor: #fff;}
@@ -164,7 +164,11 @@ ul.top-social li a.icon-linkedin:hover {background: #0083a8;color: #fff;}
 .copyright_info a:hover {color:#999;}
 /*----------------About us -------------------------------------*/
 /* Page Title */
-.buy-it-area .page-title {background: rgba(255, 40, 81, 0.8); color: #fff;}
+/*.buy-it-area .page-title {background: rgba(255, 40, 81, 0.8); color: #fff;}*/
+.buy-it-area .page-title {
+    background: none repeat scroll 0 0 rgba(0,0,0,0.4);
+    color: #fff;
+}
 .page-title h6 a{color:#fff;}
 .page-title h6  span{color:#0C3951;}
 .headline {color: #191a1e;}

@@ -22,6 +22,9 @@ function becorp_theme_default_data()
 	'dribbble_media_enabled' => 0,
 	'google_media_enabled' => 0,
 	'rss_media_enabled' => 0,
+	'breadcrumb_image'=> get_template_directory_uri().'/images/banner-bg.jpg',
+	// Home gallery setting
+
 	'portfolio_one_title' => get_theme_mod('portfolio_one_title',__('Gallery Title','becorp')),
 	'portfolio_two_title' => get_theme_mod('portfolio_two_title',__('Here','becorp')),
 	'portfolio_title_desc' => get_theme_mod('portfolio_title_desc',__('Gallery Description Here','becorp')),
@@ -70,6 +73,7 @@ function becorp_theme_default_data()
 	'footer_customization_develop' => get_theme_mod('footer_customization_develop',__('Developed By','becorp')),
 	'develop_by_name' => get_theme_mod('develop_by_name',__('Asia Themes ','becorp')),
 	'develop_by_link' => 'https://asiathemes.com/',
+	'footer_bg_image'=> get_template_directory_uri().'/images/banner-bg.jpg',
 	
 	);
   	}

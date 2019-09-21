@@ -33,7 +33,7 @@ $wp_customize->remove_control('header_textcolor');
 		'priority'   => 20,
    	) );
 	//Hide slider
-	
+
 	$wp_customize->add_setting(
     'becorp_option[front_page_enabled]',
     array(
@@ -103,8 +103,27 @@ $wp_customize->remove_control('header_textcolor');
         'type'    => 'text',
     ));
 	
+	// Breadcrumb background image
+
+   	$wp_customize->add_setting(
+		'becorp_option[breadcrumb_image]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/banner-bg.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
 	
-	
+	$wp_customize->add_control(
+	   new WP_Customize_Image_Control(
+	   $wp_customize,
+	   'becorp_option[breadcrumb_image]',
+	   array(
+		   'label'          => __( 'Upload Breadcrumb background Image', 'becorp' ),
+		   'section'        => 'header_front_data',
+		   //'priority'   => 150,
+		) ) );
+
 	//Header social Icon
 
 	$wp_customize->add_section(
@@ -679,24 +698,45 @@ $wp_customize->remove_control('header_textcolor');
         'section' => 'footer_copyright_setting',
         'type' => 'text',
     ));
+
+    // Footer background image
+
+    $wp_customize->add_setting(
+		'becorp_option[footer_bg_image]'
+		, array(
+        'default'        => get_template_directory_uri().'/images/banner-bg.jpg',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw',
+		'type' => 'option',
+    ));
+	
+	$wp_customize->add_control(
+	   new WP_Customize_Image_Control(
+	   $wp_customize,
+	   'becorp_option[footer_bg_image]',
+	   array(
+		   'label'          => __( 'Upload Footer background Image', 'becorp' ),
+		   'section'        => 'footer_copyright_setting',
+		   //'priority'   => 150,
+		) ) );
 	
 	$wp_customize->add_section( 'becorp_pro' , array(
-				'title'      	=> __( 'Upgrade to Becorp Premium', 'becorp' ),
-				'priority'   	=> 999,
-				'panel'=>'header_options',
-			) );
+		'title'      	=> __( 'Upgrade to Becorp Premium', 'becorp' ),
+		'priority'   	=> 999,
+		'panel'=>'header_options',
+	) );
 
-			$wp_customize->add_setting( 'becorp_pro', array(
-				'default'    		=> null,
-				'sanitize_callback' => 'sanitize_text_field',
-			) );
+	$wp_customize->add_setting( 'becorp_pro', array(
+		'default'    		=> null,
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
 
-			$wp_customize->add_control( new More_becorp_Control( $wp_customize, 'becorp_pro', array(
-				'label'    => __( 'becorp Premium', 'becorp' ),
-				'section'  => 'becorp_pro',
-				'settings' => 'becorp_pro',
-				'priority' => 1,
-			) ) );
+	$wp_customize->add_control( new More_becorp_Control( $wp_customize, 'becorp_pro', array(
+		'label'    => __( 'becorp Premium', 'becorp' ),
+		'section'  => 'becorp_pro',
+		'settings' => 'becorp_pro',
+		'priority' => 1,
+	) ) );
 			
 			
 		// Slider Setting Section

@@ -8,6 +8,15 @@
 	$header_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); ?>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
 	<?php wp_head(); ?>
+	<style type="text/css">
+		
+		.buy-it-area {background: url('<?php  echo esc_url($header_setting['breadcrumb_image']); ?>') no-repeat center top fixed;}
+		.footer {		    
+			background: url('<?php  echo esc_url($header_setting['footer_bg_image']); ?>') no-repeat center top fixed;
+		    color: #eee;
+			}
+
+	</style>
   </head>
  <body <?php body_class(); ?> >
 

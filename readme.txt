@@ -1,6 +1,9 @@
 === Theme Info ===
 Author:asiathemes
 Author URI: https://asiathemes.com/
+Requires at least: 4.9.6
+Tested up to: WordPress 5.2.2
+Requires PHP: 5.2.4
 
 ****NOTE****
 
@@ -10,106 +13,11 @@ Consider asiathemes PRE-Fix for function-name and as a slug of the Theme becorp.
 Theme Name:becorp
 
 CHANGE-LOG FILE:
-@Version: 1.0
-released
+@Version: 3.7
 
-@Version: 1.1
-1.Changed theme screenshort JPG to PNG.
-
-@Version: 1.2
-1.Changed theme URL.
-
-@Version: 1.3
-1.Fix featured posts issue.
-2.Fix sticky post issue.
-3.Fix Author meta info issue.
-4.Fix Meta Date overlapped with other meta data issue.
-5.Fix Post pagination issue.
-
-@Version: 1.437024
-1.Fixed all issues.
-
-@Version 1.5
-1.Fixed Screenshort resolution.
-
-@version 1.6
-1.As per review fixed all issues from @version 1.5
-
-@version 1.7
-1.As per review fixed all issues from @version 1.6
-
-@version 1.8
-1.As per review fixed all issues from @version 1.7
-
-@version 1.9
-1.As per review fixed all issues from @version 1.8
-
-@version 2.0
-1.As per review fixed all issues from @version 1.9
-
-@version 2.1
-1.As per review fixed all issues from @version 2.0
-
-@version 2.2
-1. Add Home Page template with many home page sections.
-
-2. Add About theme Feature.
-
-@version 2.3
-1. Add Front page with default contents.
-
-@version 2.4
-1. Update with removing all default contents.
-
-@version 2.5
-1. Update color scheme with animation effect.
-2. Update index static blog page.
-3. Add blog post slider on front-page.
-
-@version 2.6
-1. Update fonts.
-2. Update blog single link.
-
-@version 2.7
-1. Update index blog slider with default image.
-2. update sidebar.
-
-@version 2.8
-1. Fixed all issues according new wordpress guideline.
-
-@Version 2.9
-1. Screenshot update.
-2. Add Header image setting in the theme and default header image added also.
-3. Update style default tags.
-
-@Version 3.0
-1. Add Default widgets in footer.
-2. Resolved styling issues. 
-
-@Version 3.1
-1. Update theme color scheme.
-2. Update styling issues.
-3. Update header image setting.
-
-@Version 3.2
-1. Add front-page contents.
-2. Update styling issues.
-3. Add smoothscroll js.
-
-@Version 3.3
-1. Update Header banner images.
-2. Fixed styling issues.
-
-@Version 3.4
-1. Update menu default active.
-2. Update styling issue.
-
-@Version 3.5
-1. Add customize-selective-refresh-widgets support.
-2. Fixed styling issues.
-
-@Version 3.6
-1. Fixed Home services description issue.
+1. Added header breadcrumbs background image changing setting.
+2. Added Footer background image changing setting.
+3. Fixed overlay style on header and footer.
 
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
