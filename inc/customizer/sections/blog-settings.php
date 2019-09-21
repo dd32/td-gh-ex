@@ -36,10 +36,6 @@ function apex_business_blog_settings_setup( $wp_customize ) {
         )
     );
 
-    if ( function_exists( 'apex_business_post_scroll_option_customizer' ) ) {
-       apex_business_post_scroll_option_customizer( $wp_customize );
-    }
-
     $wp_customize->add_setting(
         'apex_business_masonry_column_number_control', array(
             'capability'        => 'edit_theme_options',
@@ -306,7 +302,6 @@ function apex_business_blog_settings_setup( $wp_customize ) {
        )
     );
 
-
     // single Section
     $wp_customize->add_section( 'apex_business_single_section', array(
         'title'       =>  __( 'Single Metas', 'apex-business' ),
@@ -321,10 +316,6 @@ function apex_business_blog_settings_setup( $wp_customize ) {
             'default'           => 1,
        )
     );
-
-    if ( function_exists( 'apex_business_single_post_option_customizer' ) ) {
-       apex_business_single_post_option_customizer( $wp_customize );
-    }
 
     $wp_customize->add_control( 'apex_business_single_display_author_control',
        array(
@@ -413,9 +404,89 @@ function apex_business_blog_settings_setup( $wp_customize ) {
        )
     );
 
-    if ( function_exists( 'apex_business_social_share_customizer' ) ) {
-        apex_business_social_share_customizer( $wp_customize );
-    }
+    // Social Share
+    $wp_customize->add_section( 'apex_business_social_share_section', array(
+        'title'       =>  __( 'Social Share', 'apex-business' ),
+        'priority'    =>  1,
+        'capability'  => 'edit_theme_options',
+        'panel'       =>  'apex_business_blog_panel',
+    ) );
+
+    $wp_customize->add_setting( 'apex_business_share_fb_icon_setting',
+       array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'absint',
+            'default'           => 0,
+       )
+    );
+
+    $wp_customize->add_control( 'apex_business_share_fb_icon_control',
+       array(
+            'label'             => __( 'Facebook', 'apex-business' ),
+            'settings'          => 'apex_business_share_fb_icon_setting',
+            'section'           => 'apex_business_social_share_section',
+            'priority'          => 25,
+            'type'              => 'checkbox',
+            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+       )
+    );
+
+    $wp_customize->add_setting( 'apex_business_share_twitter_icon_setting',
+       array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'absint',
+            'default'           => 0,
+       )
+    );
+
+    $wp_customize->add_control( 'apex_business_share_twitter_icon_control',
+       array(
+            'label'             => __( 'Twitter', 'apex-business' ),
+            'settings'          => 'apex_business_share_twitter_icon_setting',
+            'section'           => 'apex_business_social_share_section',
+            'priority'          => 25,
+            'type'              => 'checkbox',
+            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+       )
+    );
+
+    $wp_customize->add_setting( 'apex_business_share_linkedin_icon_setting',
+       array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'absint',
+            'default'           => 0,
+       )
+    );
+
+    $wp_customize->add_control( 'apex_business_share_linkedin_icon_control',
+       array(
+            'label'             => __( 'Linkedin', 'apex-business' ),
+            'settings'          => 'apex_business_share_linkedin_icon_setting',
+            'section'           => 'apex_business_social_share_section',
+            'priority'          => 25,
+            'type'              => 'checkbox',
+            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+       )
+    );
+
+    $wp_customize->add_setting( 'apex_business_share_pinterest_icon_setting',
+       array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'absint',
+            'default'           => 0,
+       )
+    );
+
+    $wp_customize->add_control( 'apex_business_share_pinterest_icon_control',
+       array(
+            'label'             => __( 'Pinterest', 'apex-business' ),
+            'settings'          => 'apex_business_share_pinterest_icon_setting',
+            'section'           => 'apex_business_social_share_section',
+            'priority'          => 25,
+            'type'              => 'checkbox',
+            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
+       )
+    );
 
 }
 

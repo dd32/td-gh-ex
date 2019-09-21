@@ -2,20 +2,6 @@
     03. HEADER
 =======================*/
 /**
- * #.# Header Right Widget Area
- */
-
-.header-widget-item * {
-    margin-bottom: 0;
-    line-height: 1.2;
-}
-/* Larger than tablet */
-@media (max-width: 768px) {
-    .header-widgets-right {
-        display: none;
-    }
-}
-/**
  *
  * #.# Top Bar
  *
@@ -23,22 +9,6 @@
 
 .header-container {
     @extend .pre-shadow;
-}
-
-.ct-transparent-header {
-    position: absolute;
-    width: 100%;
-    z-index: 9999;
-
-    .no-stick {
-        background-color: transparent;
-        padding-top: 10px;
-        padding-bottom: 10px;
-
-        .main-nav > li > a {
-            color: $white-color;
-        }
-    }
 }
 
 .topbar-content {
@@ -112,33 +82,18 @@
 
 }
 
-.main-header {
+.main-header{
     background-color: $white-color;
 }
 
-.header-spacing {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.sticky-header {
-    transition: all .2s ease;
-}
-
 .site-logo {
-    div {
+    h1 {
         margin-top: 5px;
         margin-bottom: 5px;
-        font-size:48px;
-        font-weight: 600;
         line-height: 1.2;
 
         a {
             display: inline-block;
-
-            &:hover {
-                color: $primary-color;
-            }
         }
     }
 
@@ -278,14 +233,6 @@
     }
 }
 
-.ct-transparent-header {
-    box-shadow: none;
-}
-
-.ct-trans-bar.no-stick {
-    border-bottom: 1px solid $border-color;
-}
-
 /**
  *
  * #.# Search Dropdown
@@ -362,7 +309,7 @@
     margin-right: 0;
 }
 
-.layout-center .site-logo div {
+.layout-center .site-logo h1 {
     text-align: center;
 }
 
@@ -421,18 +368,3 @@
         opacity: 0;
     }
 }
-
-.ct-transparent-header .site-logo div a {
-    color:$white-color;
-}
-
-@media screen and (max-width: 782px){
-   .admin-bar .mobile-menu-open {
-        top: 46px;
-    }
-}
-
-.mobile-navigation .mobile-nav{
-    margin-top:20px;
-}
-

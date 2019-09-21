@@ -26,7 +26,7 @@
 
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>
-                    <a href="#" class="js-ct-menubar-right menubar-right"><i class="fa fa-bars"></i></a>
+                <i class="fa fa-bars menubar-right"></i>
                 <?php endif; ?>
             </div><!-- /.col-md-12 -->
 

@@ -33,6 +33,6 @@
             if ( ( get_theme_mod( 'apex_business_navigation_last_item_setting', 'none' ) == 'button' )
              && get_theme_mod( 'apex_business_navigation_last_button_text_setting', __( 'Click Here', 'apex-business' ) ) != '' ) :
     ?>
-        <a href="<?php echo esc_url( get_theme_mod( 'apex_business_navigation_last_button_link_setting', '#' ) ); ?>" class="ct-button nav-button"><?php echo esc_html( get_theme_mod( 'apex_business_navigation_last_button_text_setting', __( 'Click Here', 'apex-business' ) ) ); ?></a>
+        <a href="<?php echo esc_url( get_theme_mod( 'apex_business_navigation_last_button_link_setting', '#' ) ); ?>" class="button nav-button"><?php echo esc_html( get_theme_mod( 'apex_business_navigation_last_button_text_setting', __( 'Click Here', 'apex-business' ) ) ); ?></a>
     <?php endif; ?>
 </div><!-- /.menu-wrapper -->

@@ -94,7 +94,7 @@
 
     var object = new Object();
 
-    object['body']       = 'body';
+    object['body']          = 'body';
     object['h1']         = 'h1';
     object['h2']         = 'h2';
     object['h3']         = 'h3';
@@ -104,10 +104,7 @@
     object['blockquote, blockquote p, blockquote span, blockquote a'] = 'blockquote';
     object['a']          = 'link';
     object['.main-nav > li > a'] = 'header';
-    object['button, .button, .nav-button'] = 'button';
-    object['#theme-footer .footer-widget .widget-title'] = 'footer_widget_title';
-    object['.single-post .entry-container .entry-header .entry-title'] = 'single_post_title';
-    object['.blog .entry-container .entry-header .entry-title a'] = 'blog_title';
+    object['button, .button'] = 'button';
 
     /******** TYPOGRAPHY OPTIONS *********/
     for( var i in object ) {

@@ -44,10 +44,10 @@ function apex_business_widgets_init() {
         'name'          => esc_html__( 'Top bar: Address', 'apex-business' ),
         'id'            => 'apex-business-topbar-address',
         'description'   => esc_html__( 'Add a Text widget here to appear in your left topbar address area.', 'apex-business' ),
-        'before_widget' => '<span class="address">',
+        'before_widget' => '<span class="office-hour">',
         'after_widget'  => '</span>',
-        'before_title'  => '',
-        'after_title'   => '',
+        'before_title'  => '<span class="fas fa-map-marker-alt">',
+        'after_title'   => '</span>',
     ) );
 
     register_sidebar( array(
@@ -56,8 +56,8 @@ function apex_business_widgets_init() {
         'description'   => esc_html__( 'Add a Text widget here to appear in your left topbar address area.', 'apex-business' ),
         'before_widget' => '<span class="office-hour">',
         'after_widget'  => '</span>',
-        'before_title'  => '',
-        'after_title'   => '',
+        'before_title'  => '<span class="fas fa-map-marker-alt">',
+        'after_title'   => '</span>',
     ) );
 
     register_sidebar( array(
@@ -66,8 +66,8 @@ function apex_business_widgets_init() {
         'description'   => esc_html__( 'Add a Text widget here to appear in your left topbar call us area.', 'apex-business' ),
         'before_widget' => '<span class="phone topbar-widget">',
         'after_widget'  => '</span>',
-        'before_title'  => '',
-        'after_title'   => '',
+        'before_title'  => '<span class="topbar-title widget-title">',
+        'after_title'   => '</span>',
     ) );
 
     register_sidebar( array(
@@ -76,8 +76,8 @@ function apex_business_widgets_init() {
         'description'   => esc_html__( 'Add a Text widget here to appear in your right topbar Email Address area.', 'apex-business' ),
         'before_widget' => '<span class="e-mail topbar-widget">',
         'after_widget'  => '</span>',
-        'before_title'  => '',
-        'after_title'   => '',
+        'before_title'  => '<span class="topbar-title widget-title">',
+        'after_title'   => '</span>',
     ) );
 
     register_sidebar( array(

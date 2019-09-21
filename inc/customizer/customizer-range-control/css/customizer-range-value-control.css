@@ -188,16 +188,3 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 #customize-control-apex_business_single_sidebar_layout_control label {
     max-width: 25%;
 }
-
-#customize-control-apex_business_get_started_button_control {
-    text-align: center;
-}
-
-#accordion-section-apex_business_get_started_section h3 {
-    border-left: 4px solid #0073aa !important;
-    border-right: 4px solid #0073aa !important;
-}
-
-.ct-customizer-getstarted {
-    font-style: normal;
-}

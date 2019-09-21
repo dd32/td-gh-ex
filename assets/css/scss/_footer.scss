@@ -29,14 +29,12 @@
 
             ul  {
                 li{
-                    margin-bottom: 15px;
-                    border-bottom: 1px solid #424242;
-                    padding-bottom: 15px;
+                    margin-bottom: $smaller-padding;
 
                     &:before{
                         content: "\f105";
                         font-family: FontAwesome;
-                        margin-right: $smaller-padding;
+                        margin-right: 10px;
                     }
                 }
             }
@@ -121,7 +119,8 @@
             .widgetarea {
                 ul {
                     list-style: none;
-                    padding-left: 0;
+                    padding-left: 15px;
+
                 }
 
             }
@@ -136,7 +135,6 @@
     border-color: $primary-color;
 
     .copyright-content {
-        font-size:14px;
         p {
             margin-bottom: 0;
         }
@@ -225,19 +223,6 @@ input[type="search"] {
     }
 }
 
-@media (max-width:768px) {
-
-    .footer-bottom .footer-menu-items {
-        text-align: center;
-    }
-    .footer-bottom .copyright-content{
-        text-align:center;
-    }
-    #footer-menu li {
-        margin-left: 0;
-    }
-}
-
 .footer-menu-items {
     text-align: right;
 }
@@ -252,8 +237,4 @@ input[type="search"] {
 
 .footer-right {
     text-align: right;
-}
-
-.ct-footer-bg{
-    background-color: #2b3948;
 }

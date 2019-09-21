@@ -6,7 +6,32 @@
  */
 
 get_header();
+
+if ( have_posts() ) :
 ?>
+    <section id="content" class="page-banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrap clearfix vertical-center entry-header">
+                        <div class="site-breadcrumbs">
+                            <?php
+                                $apex_business_allowed_html = array(
+                                    'a' => array(
+                                        'href' => array(),
+                                        'title' => array()
+                                    ),
+                                    'span' => array(),
+                                );
+                                echo wp_kses( apex_business_the_breadcrumb(), $apex_business_allowed_html );
+                            ?>
+                        </div><!-- /.site-breadcrumbs -->
+                    </div><!-- /.wrap -->
+                </div><!-- /.col-md-12 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.page-banner-area -->
+ <?php endif; ?>
     <!-- if left sidebar is set -->
     <?php
         $apex_business_fullwidth_stats = 'col-md-8 ct-content-area';

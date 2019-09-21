@@ -51,56 +51,9 @@ function apex_business_footer_settings_setup( $wp_customize ) {
         'priority'        => 25,
       ) ) );
 
-    $wp_customize->add_setting(
-        'apex_business_footer_bgcolor_setting',
-        array(
-            'default'           => APEX_BUSINESS_TEXT_COLOR,
-            'type'              => 'theme_mod',
-            'capability'        => 'edit_theme_options',
-            'transport'         => 'postMessage',
-            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
-        )
-    );
-
-    // Alpha Color Picker control.
-    $wp_customize->add_control(
-        new Apex_Business_Customizer_Alpha_Color_Control(
-            $wp_customize,
-            'apex_business_footer_bgcolor_control',
-            array(
-                'label'         => __( 'Footer Background Color', 'apex-business' ),
-                'priority'      => 25,
-                'section'       => 'apex_business_footer_settings_section',
-                'settings'      => 'apex_business_footer_bgcolor_setting',
-                'show_opacity'  => true, // Optional.
-                'palette'       => array(
-                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
-                    APEX_BUSINESS_DEFAULT2_COLOR,
-                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
-                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
-                )
-            )
-        )
-    );
-
-    // Headline Setting
-    $wp_customize->add_setting( 'apex_business_footer_bgcolor_description_setting', array(
-      'capability'        => 'edit_theme_options',
-      'sanitize_callback' => 'absint',
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'apex_business_footer_bgcolor_description_control', array(
-      'description'   => __( 'You can also use this option as overlay color if you set background image.', 'apex-business' ),
-      'section'         => 'apex_business_footer_settings_section',
-      'settings'        => 'apex_business_footer_bgcolor_description_setting',
-      'type'            => 'hidden',
-      'priority'        => 25,
-    ) ) );
-
     $wp_customize->add_setting( 'apex_business_footer_bgimage_setting', array(
         'capability'        => 'edit_theme_options',
         'transport'         => 'postMessage',
-        'default'           =>  get_template_directory_uri() . '/assets/images/banner.jpg',
         'sanitize_callback' => 'apex_business_validate_image',
     ) );
 
@@ -185,6 +138,39 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                     'scroll'    =>  __( 'Scroll', 'apex-business' ),
                     'fixed'     =>  __( 'Fixed', 'apex-business' ),
                     ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_footer_bgcolor_setting',
+        array(
+            'default'           => APEX_BUSINESS_TEXT_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_footer_bgcolor_control',
+            array(
+                'label'         => __( 'Footer Background Color', 'apex-business' ),
+                'description'   => __( 'You can also use this option as overlay color if you set background image.', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_footer_settings_section',
+                'settings'      => 'apex_business_footer_bgcolor_setting',
+                'show_opacity'  => true, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
             )
         )
     );
@@ -442,11 +428,6 @@ function apex_business_footer_settings_setup( $wp_customize ) {
         )
     );
 
-    // If Premium
-    if ( function_exists( 'apex_business_footer_widget_option_customizer' ) ) {
-       apex_business_footer_widget_option_customizer( $wp_customize );
-    }
-
     //Bottom bar section
     $wp_customize->add_section( 'apex_business_bottom_bar_settings_section', array(
         'title'       =>  __( 'Bottom Bar', 'apex-business' ),
@@ -490,7 +471,7 @@ function apex_business_footer_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_bottom_bar_bgcolor_setting',
         array(
-            'default'           =>  APEX_BUSINESS_WHITE_COLOR,
+            'default'           =>  APEX_BUSINESS_DEEP_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',
@@ -540,38 +521,6 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                 'priority'      => 25,
                 'section'       => 'apex_business_bottom_bar_settings_section',
                 'settings'      => 'apex_business_bottom_bar_text_color_setting',
-                'show_opacity'  => false, // Optional.
-                'palette'       => array(
-                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
-                    APEX_BUSINESS_DEFAULT2_COLOR,
-                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
-                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
-                )
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'apex_business_bottom_bar_link_color_setting',
-        array(
-            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
-            'type'              => 'theme_mod',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
-            'transport'         => 'postMessage'
-        )
-    );
-
-    // Alpha Color Picker control.
-    $wp_customize->add_control(
-        new Apex_Business_Customizer_Alpha_Color_Control(
-            $wp_customize,
-            'apex_business_bottom_bar_link_color_control',
-            array(
-                'label'         => __( 'Bottom Bar Link Color', 'apex-business' ),
-                'priority'      => 25,
-                'section'       => 'apex_business_bottom_bar_settings_section',
-                'settings'      => 'apex_business_bottom_bar_link_color_setting',
                 'show_opacity'  => false, // Optional.
                 'palette'       => array(
                     APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
@@ -640,19 +589,19 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                 'priority'      => 25,
                 'input_attr'    => array(
                     'mobile'  => array(
-                        'min'           => 7,
+                        'min'           => 14,
                         'max'           => 35,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'tablet'  => array(
-                        'min'           => 7,
+                        'min'           => 14,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'desktop' => array(
-                        'min'           => 7,
+                        'min'           => 14,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
@@ -680,19 +629,19 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                 'priority'      => 25,
                 'input_attr'    => array(
                     'mobile'  => array(
-                        'min'           => 7,
+                        'min'           => 14,
                         'max'           => 35,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'tablet'  => array(
-                        'min'           => 7,
+                        'min'           => 14,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'desktop' => array(
-                        'min'           => 7,
+                        'min'           => 14,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
@@ -705,7 +654,7 @@ function apex_business_footer_settings_setup( $wp_customize ) {
     $wp_customize->add_setting( 'apex_business_bottom_bar_content_control', array(
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_kses_post',
-        'default'           => __( 'Apex Business WordPress Theme', 'apex-business'),
+        'default'           => __( '&copy; Copyright 2019 Apex Business WordPress Theme', 'apex-business'),
     ) );
 
     $wp_customize->add_control(
@@ -811,6 +760,14 @@ function apex_business_footer_settings_setup( $wp_customize ) {
        'type'        => 'ios',
     ) ) );
 
+    $wp_customize->add_setting(
+        'apex_business_back_to_top_border_radius_control', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_range_value',
+            'transport'         => 'postMessage',
+        )
+    );
+
     $wp_customize->add_control(
         new Apex_Business_Customizer_Range_Value_Control(
             $wp_customize, 'apex_business_back_to_top_border_radius_control', array(
@@ -880,7 +837,7 @@ function apex_business_footer_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_back_to_top_icon_color_setting',
         array(
-            'default'           => APEX_BUSINESS_WHITE_COLOR,
+            'default'           => APEX_BUSINESS_TEXT_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',
@@ -909,11 +866,6 @@ function apex_business_footer_settings_setup( $wp_customize ) {
             )
         )
     );
-
-    // If Premium
-    if ( function_exists( 'apex_business_btt_icon_img_option_customizer' ) ) {
-       apex_business_btt_icon_img_option_customizer( $wp_customize );
-    }
 }
 
 add_action( 'customize_register', 'apex_business_footer_settings_setup');

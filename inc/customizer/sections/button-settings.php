@@ -29,7 +29,6 @@ function apex_business_button_settings_setup( $wp_customize ) {
                         'icon'     => 'font',
                         'controls' => array(
                             'apex_business_button_width_control',
-                            'apex_business_button_height_control',
                             'apex_business_button_text_size_control',
                             'apex_business_button_text_color_control',
                             'apex_business_button_bgcolor_control',
@@ -37,7 +36,6 @@ function apex_business_button_settings_setup( $wp_customize ) {
                             'apex_business_button_border_radius_control',
                             'apex_business_button_letter_spacing_control',
                             'apex_business_button_font_family_control',
-                            'apex_business_button_font_weight_control',
                             'apex_business_button_border_color_control',
                         ),
                     ),
@@ -79,59 +77,19 @@ function apex_business_button_settings_setup( $wp_customize ) {
                         'min'           => 5,
                         'max'           => 500,
                         'step'          => 1,
-                        'default_value' => 10,
+                        'default_value' => 80,
                     ),
                     'tablet'  => array(
                         'min'           => 5,
                         'max'           => 500,
                         'step'          => 1,
-                        'default_value' => 20,
+                        'default_value' => 80,
                     ),
                     'desktop' => array(
                         'min'           => 5,
                         'max'           => 500,
                         'step'          => 1,
-                        'default_value' => 30,
-                    ),
-                ),
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'apex_business_button_height_control', array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'apex_business_sanitize_range_value',
-            'transport'         => 'postMessage',
-        )
-    );
-
-    $wp_customize->add_control(
-        new Apex_Business_Customizer_Range_Value_Control(
-            $wp_customize, 'apex_business_button_height_control', array(
-                'label'         => esc_html__( 'Button Height ( px )', 'apex-business' ),
-                'section'       => 'apex_business_button_settings_section',
-                'type'          => 'range-value',
-                'media_query'   => true,
-                'priority'      => 25,
-                'input_attr'    => array(
-                    'mobile'  => array(
-                        'min'           => 5,
-                        'max'           => 500,
-                        'step'          => 1,
-                        'default_value' => 10,
-                    ),
-                    'tablet'  => array(
-                        'min'           => 5,
-                        'max'           => 500,
-                        'step'          => 1,
-                        'default_value' => 10,
-                    ),
-                    'desktop' => array(
-                        'min'           => 5,
-                        'max'           => 500,
-                        'step'          => 1,
-                        'default_value' => 30,
+                        'default_value' => 80,
                     ),
                 ),
             )
@@ -173,54 +131,6 @@ function apex_business_button_settings_setup( $wp_customize ) {
                         'step'          => 1,
                         'default_value' => 12,
                     ),
-                ),
-            )
-        )
-    );
-
-    $wp_customize->add_setting( 'apex_business_button_font_family_control', array(
-      'capability'        => 'edit_theme_options',
-      'default'           => 'inherit',
-      'transport'         => 'postMessage',
-      'sanitize_callback' => 'apex_business_sanitize_select',
-    ) );
-
-    $wp_customize->add_control(
-        new Apex_Business_Font_Selector(
-            $wp_customize, 'apex_business_button_font_family_control', array(
-                'label'             => esc_html__( 'Button Font Family', 'apex-business' ),
-                'section'           => 'apex_business_button_settings_section',
-                'priority'          => 25,
-                'type'              => 'select',
-            )
-        )
-    );
-    $wp_customize->add_setting( 'apex_business_button_font_weight_setting', array(
-      'capability'        => 'edit_theme_options',
-      'default'           => 'inherit',
-      'transport'         => 'postMessage',
-      'sanitize_callback' => 'apex_business_sanitize_select',
-    ) );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize, 'apex_business_button_font_weight_control', array(
-                'label'       => __( 'Font Weight', 'apex-business' ),
-                'section'     => 'apex_business_button_settings_section',
-                'settings'    => 'apex_business_button_font_weight_setting',
-                'type'        =>  'select',
-                'priority'    => 25,
-                'choices'     =>  array(
-                    'inherit'   =>  __( 'Default', 'apex-business' ),
-                    '100'       =>  __( 'Thin: 100', 'apex-business' ),
-                    '200'       =>  __( 'Light: 200', 'apex-business' ),
-                    '300'       =>  __( 'Book: 300', 'apex-business' ),
-                    '400'       =>  __( 'Normal: 400', 'apex-business' ),
-                    '500'       =>  __( 'Medium: 500', 'apex-business' ),
-                    '600'       =>  __( 'Semibold: 600', 'apex-business' ),
-                    '700'       =>  __( 'Bold: 700', 'apex-business' ),
-                    '800'       =>  __( 'Extra Bold: 800', 'apex-business' ),
-                    '900'       =>  __( 'Black: 900', 'apex-business' ),
                 ),
             )
         )
@@ -363,6 +273,38 @@ function apex_business_button_settings_setup( $wp_customize ) {
     );
 
     $wp_customize->add_setting(
+        'apex_business_button_border_color_setting',
+        array(
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+            'transport'         => 'postMessage'
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_button_border_color_control',
+            array(
+                'label'         => __( 'Button Border Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_button_settings_section',
+                'settings'      => 'apex_business_button_border_color_setting',
+                'show_opacity'  => true, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
         'apex_business_button_border_radius_control', array(
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_range_value',
@@ -451,6 +393,17 @@ function apex_business_button_settings_setup( $wp_customize ) {
         )
     );
 
+    $wp_customize->add_control(
+        new Apex_Business_Font_Selector(
+            $wp_customize, 'apex_business_button_font_family_control', array(
+                'label'             => esc_html__( 'Button Font Family', 'apex-business' ),
+                'section'           => 'apex_business_button_settings_section',
+                'priority'          => 25,
+                'type'              => 'select',
+            )
+        )
+    );
+
     $wp_customize->add_setting(
         'apex_business_button_hover_bgcolor_setting',
         array(
@@ -486,7 +439,7 @@ function apex_business_button_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_button_hover_text_color_setting',
         array(
-            'default'           => APEX_BUSINESS_WHITE_COLOR,
+            'default'           => APEX_BUSINESS_TEXT_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',

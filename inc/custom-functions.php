@@ -3,20 +3,10 @@
  * All theme custom functions are delared here
  */
 
-/*******************************************************************************
- *  Theme State
- *******************************************************************************/
-
-define('CT_THEME_STATE', 'pro');
-
-if ( CT_THEME_STATE == 'free' ) {
-    require_once( get_template_directory() . '/premium/premium-functions.php' );
-}
-
-/*******************************************************************************
+/*************************************************************************************************************************
  * Loads google fonts to the theme
  * Thanks to themeshaper.com
- *******************************************************************************/
+ ************************************************************************************************************************/
 
 if ( ! function_exists( 'apex_business_default_fonts_url' ) ) :
 
@@ -66,7 +56,7 @@ class Apex_Business_Dropdown_Toggle_Walker_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl( &$apex_business_output, $apex_business_depth = 0, $apex_business_args = array() ) {
         $apex_business_indent = str_repeat( "\t", $apex_business_depth );
         if( 'mobile_menu' == $apex_business_args->theme_location ) {
-            $apex_business_output .='<a href="#" class="js-ct-dropdown-toggle dropdown-toggle"><i class="fa fa-ellipsis-v"></i></a>';
+            $apex_business_output .='<i class="fa fa-ellipsis-v dropdown-toggle"></i>';
         }
         $apex_business_output .= "\n$apex_business_indent<ul class=\"sub-menu\">\n";
     }
@@ -193,75 +183,4 @@ function apex_business_dynamic_class( $customizer_setting, $class_name, $default
         return $class_name;
     }
     return false;
-}
-
-/*******************************************************************************
- *  Get Started Notice
- *******************************************************************************/
-
-add_action( 'wp_ajax_apex_business_dismissed_notice_handler', 'apex_business_ajax_notice_handler' );
-
-/**
- * AJAX handler to store the state of dismissible notices.
- */
-function apex_business_ajax_notice_handler() {
-    if ( isset( $_POST['type'] ) ) {
-        // Pick up the notice "type" - passed via jQuery (the "data-notice" attribute on the notice)
-        $type = sanitize_text_field( wp_unslash( $_POST['type'] ) );
-        // Store it in the options table
-        update_option( 'dismissed-' . $type, TRUE );
-    }
-}
-
-function apex_business_deprecated_hook_admin_notice() {
-        // Check if it's been dismissed...
-        if ( ! get_option('dismissed-get_started', FALSE ) ) {
-            // Added the class "notice-get-started-class" so jQuery pick it up and pass via AJAX,
-            // and added "data-notice" attribute in order to track multiple / different notices
-            // multiple dismissible notice states ?>
-            <div class="updated notice notice-get-started-class is-dismissible" data-notice="get_started">
-                <div class="crafthemes-getting-started-notice">
-                    <h2 class="ct-notice-h2"><?php esc_html_e( 'Thank you for choosing Apex Business. Please proceed towards the welcome page and give us the privilege to serve you.', 'apex-business' ) ?></h2>
-
-                    <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Crafthemes demo import plugin.', 'apex-business' ) ?></p>
-
-                    <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ) ?></a>
-                </div>
-            </div>
-        <?php }
-}
-
-add_action( 'admin_notices', 'apex_business_deprecated_hook_admin_notice' );
-
-/*******************************************************************************
- *  Plugin Installer
- *******************************************************************************/
-
-add_action( 'wp_ajax_install_act_plugin', 'apex_business_install_plugin' );
-
-function apex_business_install_plugin() {
-    /**
-     * Install Plugin.
-     */
-    include_once ABSPATH . '/wp-admin/includes/file.php';
-    include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-    include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-
-    if ( ! file_exists( WP_PLUGIN_DIR . '/crafthemes-demo-import' ) ) {
-        $api = plugins_api( 'plugin_information', array(
-            'slug'   => sanitize_key( wp_unslash( 'crafthemes-demo-import' ) ),
-            'fields' => array(
-                'sections' => false,
-            ),
-        ) );
-
-        $skin     = new WP_Ajax_Upgrader_Skin();
-        $upgrader = new Plugin_Upgrader( $skin );
-        $result   = $upgrader->install( $api->download_link );
-    }
-
-    // Activate plugin.
-    if ( current_user_can( 'activate_plugin' ) ) {
-        $result = activate_plugin( 'crafthemes-demo-import/crafthemes-demo-import.php' );
-    }
 }

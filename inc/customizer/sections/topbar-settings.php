@@ -63,45 +63,6 @@ function apex_business_topbar_settings_setup( $wp_customize ) {
             )
         )
     );
-    $wp_customize->add_setting(
-        'apex_business_topbar_vertical_spacing_control', array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'apex_business_sanitize_range_value',
-            'transport'         => 'postMessage',
-        )
-    );
-
-    $wp_customize->add_control(
-        new Apex_Business_Customizer_Range_Value_Control(
-            $wp_customize, 'apex_business_topbar_vertical_spacing_control', array(
-                'label'         => esc_html__( 'Header Vertical Spacing (px)','apex-business' ),
-                'section'       => 'apex_business_topbar_section',
-                'type'          => 'range-value',
-                'priority'      => 25,
-                'media_query'   => true,
-                'input_attr'    => array(
-                    'mobile'  => array(
-                        'min'           => 0,
-                        'max'           => 200,
-                        'step'          => 1,
-                        'default_value' => 0,
-                    ),
-                    'tablet'  => array(
-                        'min'           => 0,
-                        'max'           => 300,
-                        'step'          => 1,
-                        'default_value' => 0,
-                    ),
-                    'desktop' => array(
-                        'min'           => 0,
-                        'max'           => 500,
-                        'step'          => 1,
-                        'default_value' => 0,
-                    ),
-                ),
-            )
-        )
-    );
 }
 
 add_action( 'customize_register', 'apex_business_topbar_settings_setup');

@@ -14,16 +14,6 @@ nav a {
 }
 
 .main-nav {
-    &:before,
-    &:after {
-        display: table;
-        content: " ";
-    }
-
-    &:after {
-        clear: both;
-    }
-
     ul {
         border-radius: 3px;
         @extend .pre-shadow;
@@ -41,19 +31,10 @@ nav a {
             display: block;
             padding: 2.4rem 1.6rem;
         }
-        a:hover {
-            color: $primary-color;
-        }
     }
 
-    .menu-item-has-children {
-
-        .to-left {
-            left: unset !important; // Override by Js right positioning of rightmost menu item submenus
-            right: 25%;
-        }
-
-        ul {
+    >.menu-item-has-children {
+        >ul {
             background-color: $white-color;
             position: absolute;
             padding: 1.6rem 2.4rem;
@@ -68,8 +49,7 @@ nav a {
             transition: all .3s;
         }
 
-        &:hover,
-        &:focus {
+        &:hover {
             >ul {
                 opacity: 1;
                 visibility: visible;
@@ -91,125 +71,81 @@ nav a {
             }
         }
 
-        .menu-item-has-children {
-            .sub-menu {
-                @include transform( translate( 0, 10px ) );
-            }
-
-            &:hover {
-                > .sub-menu {
-                    @include transform( translate( -10px, 10px ) );
-                }
+       >ul>.menu-item-has-children {
+            >ul {
+                left: 85%;
             }
 
             >a {
                 &::after {
                     content: "\f105";
+                    display: inline-block;
+
+                    font: normal normal normal 1.8rem/1 FontAwesome;
+
+                    right: 0;
+                    padding-top: 2px;
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    .menu-item-has-children {
+        position: relative;
+
+        li {
+            line-height: 2.2;
+        }
+
+        &:hover {
+            >a {
+                &::after {
+                    color: $primary-color;
                 }
             }
         }
 
-       // >ul>.menu-item-has-children {
-       //      >ul {
-       //          left: 85%;
-       //          opacity: 0;
-       //          visibility: hidden;
-       //      }
+        >ul {
+            position: absolute;
+            top: 125%;
+            left: 50%;
 
-       //      &:hover,
-       //      &:focus {
-       //          >ul {
-       //              opacity: 1;
-       //              visibility: visible;
-       //              @include transform( translate( -10px, -2.4rem ) );
-       //          }
-       //      }
+            background-color: $white-color;
+            margin-left: -1.1rem;
+            padding: 1.6rem 2.4rem;
+            width: 220px;
 
-       //      >a {
-       //          &::after {
-       //              content: "\f105";
-       //              display: inline-block;
+            opacity: 0;
+            visibility: hidden;
 
-       //              font: normal normal normal 1.8rem/1 FontAwesome;
+            @include transform( translateY(-2.4rem) );
+            @include transition( all .2s );
+        }
 
-       //              right: 0;
-       //              padding-top: 2px;
-       //              position: absolute;
-       //          }
-       //      }
-       //  }
+        .to-left {
+            left: unset;
+            right: 25%;
+        }
+
+        &:hover {
+            >ul {
+                opacity: 1;
+                visibility: visible;
+                @include transform( translate( -10px, -2.4rem ) );
+            }
+
+            >a {
+                &::after {
+                    color: $primary-color;
+                }
+            }
+        }
     }
-    .menu-item-has-children > ul.is-focused {
-        opacity: 1;
-        visibility: visible;
+
+    li ul li a {
+        color: $dark-color;
     }
-    // .menu-item-has-children {
-    //     position: relative;
-
-    //     li {
-    //         line-height: 2.2;
-    //     }
-
-    //     &:hover,
-    //     &:focus {
-    //         >a {
-    //             &::after {
-    //                 color: $primary-color;
-    //             }
-    //         }
-    //     }
-
-    //     >ul {
-    //         position: absolute;
-    //         top: 125%;
-    //         left: 50%;
-
-    //         background-color: $white-color;
-    //         margin-left: -1.1rem;
-    //         padding: 1.6rem 2.4rem;
-    //         width: 220px;
-
-    //         @include transform( translateY(-2.4rem) );
-    //         @include transition( all .2s );
-    //     }
-
-    //     .to-left {
-    //         left: unset !important; // Override by Js right positioning of rightmost menu item submenus
-    //         right: 25%;
-    //     }
-
-    //     &:hover,
-    //     &:focus {
-    //         >ul {
-    //             left: 50%;
-    //             @include transform( translate( -10px, -2.4rem ) );
-    //         }
-
-    //         >a {
-    //             &::after {
-    //                 color: $primary-color;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // li ul li a {
-    //     color: $dark-color;
-    // }
-    // .menu-item-has-children {
-    //     .sub-menu {
-    //         li {
-    //             a:hover,
-    //             a:focus {
-    //                     color: $primary-color;
-    //                 }
-
-    //             a {
-    //                 color:$secondary-color;
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 /* Mobile Navigation Menu */
@@ -222,23 +158,6 @@ nav a {
     position: absolute;
     top: 0;
     right: 3.2rem;
-
-    ul > li {
-        > a {
-            color: $secondary-color;
-
-            &:hover {
-              color: $primary-color;
-            }
-        }
-    }
-}
-
-.js-ct-menubar-right {
-
-    &:focus {
-        outline: 5px auto -webkit-focus-ring-color;
-    }
 }
 
 .menubar-right,
@@ -270,8 +189,6 @@ nav a {
     position: absolute;
     top: 1rem;
     right: 0;
-    padding: 0 !important; // Override for parent padding
-    line-height: 1;
 
     -webkit-transition: -webkit-transform .2s ease-out;
     -moz-transition: -moz-transform .2s ease-out;
@@ -315,7 +232,6 @@ nav a {
 
     max-width: 30rem;
     width: 100%;
-    visibility: hidden;
 
     z-index: 9902;
 
@@ -331,7 +247,6 @@ nav a {
 .mobile-menu-open {
     -webkit-transform: translate3d(0, 0, 0) !important;
     transform: translate3d(0, 0, 0) !important;
-    visibility: visible;
 }
 
 .mobile-nav li {
@@ -384,7 +299,7 @@ nav a {
 @media (min-width: 768px) {
     .mobile-navigation,
     .menubar-right {
-        display: none !important;
+        display: none;
     }
 }
 
@@ -411,8 +326,3 @@ nav a {
 .nav-button {
     margin: 0 1.6rem;
 }
-// .main-nav > .menu-item-has-children > .is-focused,
-// .main-nav > .menu-item-has-children > .is-focused > .menu-item-has-children > .is-focused {
-//     opacity: 1;
-//     visibility: visible;
-// }

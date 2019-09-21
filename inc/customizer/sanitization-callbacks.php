@@ -47,8 +47,6 @@ function apex_business_sanitize_select( $input ) {
     'greek'         =>  'greek',
     'greek-ext'     =>  'greek-ext',
     'vietnamese'    =>  'vietnamese',
-    'infinite-scroll'    =>  'Infinite Scroll',
-    'pagination'    => 'Pagination',
   );
 
   if ( array_key_exists( $input, $valid ) ) {
@@ -87,17 +85,22 @@ function apex_business_sanitize_alpha_color( $color ) {
  */
 
 function apex_business_validate_image( $input, $default = '' ) {
-  /* default output */
-    $output = '';
-
-    /* check file type */
-    $filetype = wp_check_filetype( $input );
-    $mime_type = $filetype['type'];
-
-    /* only mime type "image" allowed */
-    if ( strpos( $mime_type, 'image' ) !== false ){
-        $output = $input;
-    }
-
-    return $output;
+  // Array of valid image file types
+  // The array includes image mime types
+  // that are included in wp_get_mime_types()
+  $mimes = array(
+    'jpg|jpeg|jpe' => 'image/jpeg',
+    'gif'          => 'image/gif',
+    'png'          => 'image/png',
+    'bmp'          => 'image/bmp',
+    'tif|tiff'     => 'image/tiff',
+    'ico'          => 'image/x-icon'
+  );
+  // Return an array with file extension
+  // and mime_type
+  $file = wp_check_filetype( $input, $mimes );
+  // If $input has a valid mime_type,
+  // return it; otherwise, return
+  // the default.
+  return ( $file['ext'] ? $input : $default );
 }
