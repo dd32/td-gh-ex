@@ -1,8 +1,8 @@
 <?php
 /**
- * astral footer functions to be hooked
+ * Astral footer functions to be hooked
  *
- * @package astral
+ * @package Astral
  */
 
 if ( ! function_exists( 'astral_footer_widget' ) ) :

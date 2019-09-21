@@ -2,7 +2,7 @@
 /**
  * The Slider Section
  *
- * @package astral
+ * @package Astral
  */
 
 /**

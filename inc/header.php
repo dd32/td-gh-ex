@@ -1,8 +1,8 @@
 <?php
 /**
- * astral header functions to be hooked
+ * Astral header functions to be hooked
  *
- * @package astral
+ * @package Astral
  */
 ?>
 
@@ -44,12 +44,16 @@ if ( ! function_exists( 'astral_page_start' ) ) :
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-6 email">
-                        <p><i class="fa fa-envelope"></i> <a
-                                    href="mailto:<?php echo esc_attr( $astral_email ); ?>"> <?php echo esc_html( $astral_email ); ?></a>
-                            | <i class="fa fa-phone"></i> <?php echo esc_html( $astral_phoneno ); ?> </p>
+					<p>
+					<?php if($astral_email) { ?>
+					<i class="fa fa-envelope"></i> <a href="mailto:<?php echo esc_attr( $astral_email ); ?>"> <?php echo esc_html( $astral_email ); ?></a> | <?php } ?> 
+					<?php if($astral_phoneno) { ?>
+					<i class="fa fa-phone"></i> <?php echo esc_html( $astral_phoneno ); ?> </p> <?php } ?>
                     </div>
                     <div class="col-md-6 col-sm-6 phone">
+					<?php if($astral_address) { ?>
                         <p><i class="fa fa-location-arrow"> </i> <?php echo esc_html( $astral_address ); ?> </p>
+					<?php } ?>
                     </div>
                 </div>
             </div>
@@ -137,7 +141,7 @@ if ( ! function_exists( 'astral_menus' ) ) :
 						<?php
 						wp_nav_menu( array(
 							'theme_location'  => 'primary',
-							'depth'           => 5, // 1 = no dropdowns, 2 = with dropdowns.
+							'depth'           => 4, // 1 = no dropdowns, 2 = with dropdowns.
 							'container'       => 'div',
 							'container_class' => 'navbar-collapse collapse',
 							'container_id'    => 'navbarNavDropdown',

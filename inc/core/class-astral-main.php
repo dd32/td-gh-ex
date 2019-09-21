@@ -20,7 +20,7 @@ class astral_main {
 		/* navigation menu */
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary Menu', 'astral' )
+				'primary' => __( 'Primary Menu, menu_depth is 4', 'astral' )
 			)
 		);
 
@@ -98,7 +98,7 @@ class astral_main {
 		register_sidebar(
 			array(
 				'id'            => 'footer-widget',
-				'name'          => __( 'Footer Sidebar', 'astral' ),
+				'name'          => __( 'Footer Widget Area', 'astral' ),
 				'description'   => __( 'Sidebar for footer.', 'astral' ),
 				'before_widget' => '<div id="%1$s" class="mwa_footer_widget col-lg-4 col-md-6 mt-lg-0 mt-4">',
 				'after_widget'  => '</div>',

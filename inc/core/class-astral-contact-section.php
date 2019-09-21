@@ -2,7 +2,7 @@
 /**
  * The Contact Section
  *
- * @package astral
+ * @package Astral
  */
 
 /**

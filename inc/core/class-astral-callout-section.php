@@ -2,7 +2,7 @@
 /**
  * The Callout Section
  *
- * @package astral
+ * @package Astral
  */
 
 /**

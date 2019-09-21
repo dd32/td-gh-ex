@@ -4,7 +4,7 @@ Theme URI:
 Author: wpmwa
 Author URI: http://mywebapp.in/
 Description: Astral is a free version  WordPress theme. It is a multi-purpose theme for blog, Education, News, Entertainment etc. You can create a beautiful homepage contain slider, callout, services, blogs, contact section. Support easy to use customization theme options. Astral theme also support Elementor plugin and contact form 7 plugin. Theme contains custom template page full width and page with left sidebar. 
-Version: 0.4
+Version: 0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: right-sidebar, left-sidebar, custom-logo,  custom-header, custom-menu, editor-style, full-width-template, featured-images,  sticky-post, translation-ready, Blog, Entertainment, News
@@ -37,7 +37,7 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: 'Playfair Display', serif !important;
+    font-family: 'Playfair Display', serif;
 }
 
 p {
@@ -46,20 +46,11 @@ p {
     font-size: 14px;
     letter-spacing: 1px;
     line-height: 1.9;
-    color: #999;
-}
-
-ul,
-ol {
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    list-style-type: none;
+    color: #000;
 }
 
 .wp-caption {
+    width: 100% !important;
 }
 
 .wp-caption-text {
@@ -80,12 +71,9 @@ ul {
 .alignleft {
 }
 
-.aligncenter {
-    width: 100% !important;
-}
-
-.alignnone {
-    width: 100% !important;
+img { 
+	height: auto; 
+	max-width: 100%; 
 }
 
 .wp-caption img {
@@ -118,7 +106,9 @@ ul {
 .let {
     letter-spacing: 1px;
 }
-
+.aligncenter {
+	text-align: center;
+}	
 /* bottom-to-top */
 a.move-top {
     position: fixed;
@@ -161,8 +151,8 @@ nav ul li:hover > ul {
 }
 
 .dropdown-menu {
-    top: 98% !important;
-    left: -1% !important;
+    top: 98%;
+    left: -1%;
 }
 
 /* Media Queries
@@ -349,10 +339,10 @@ nav ul li:hover > ul {
 /* inner banner */
 .inner-banner {
     background: url(../images/1.jpg) no-repeat center;
-    background-size: cover;
     min-height: 300px;
     position: relative;
     z-index: 0;
+    background-size: cover !important;
 }
 
 li.breadcrumb-item a {
@@ -379,7 +369,8 @@ h4.mwa-title {
 }
 
 p.sub-title {
-    color: #999;
+	word-break: break-word;
+    color: #000000d1;
     text-transform: capitalize;
     width: 60%;
     margin: 1em auto 0;
@@ -418,8 +409,9 @@ span.sub-title {
 }
 
 .abt-txt h4 a {
+    word-break: break-word;
     text-transform: capitalize;
-    font-size: 1.3em;
+    font-size: 20px;
     margin-bottom: 0.5em;
     text-decoration: none;
     color: #000;
@@ -472,7 +464,7 @@ h5.blog-title a {
 }
 
 .card {
-    border: 1px solid #153e4d !important;
+    border: 1px solid #153e4d;
 }
 
 a.blog_link {
@@ -498,7 +490,7 @@ a.blog_link {
 }
 
 hr {
-    border-top: 1px solid rgba(255, 255, 255, 0.36);
+    border-top: 1px solid #ccc !important;
 }
 
 
@@ -538,7 +530,7 @@ hr {
 .footv3-left h4 a {
     font-size: 1.3em;
     letter-spacing: 0.5px;
-    color: #fff !important;
+    color: #fff;
     padding: 14px 0 0;
     position: relative;
     text-transform: capitalize;
@@ -647,7 +639,7 @@ h3.f_title {
     }
 
     .py-lg-5 {
-        padding-bottom: 3rem !important;
+        padding-bottom: 3rem;
     }
 
     .abt-txt {
@@ -667,12 +659,12 @@ h3.f_title {
 
     /**/
     .contact {
-        letter-spacing: 0px !important;
-        word-spacing: -1px !important;
+        letter-spacing: 0px;
+        word-spacing: -1px;
     }
 
     .abt_bottom p {
-        font-size: 1em !important;
+        font-size: 1em;
     }
 
 
@@ -734,7 +726,7 @@ h3.f_title {
     }
 
     .social ul li {
-        padding-left: 11px !important;
+        padding-left: 11px;
     }
 
     .search1 .form-control {
@@ -871,13 +863,10 @@ h3.f_title {
 }
 
 @media screen and (max-width: 480px) {
-    .header_contact {
-        padding-top: 0 !important;
-    }
-
+ 
     .slider-info p {
-        letter-spacing: 1px !important;
-        font-size: 1em !important;
+        letter-spacing: 1px;
+		font-size: 12px !important;
     }
 
     .col-md-6.email p, .col-md-6.email a {
@@ -886,7 +875,6 @@ h3.f_title {
     }
 
     .col-md-6.phone p {
-        font-size: 14px !important;
         text-align: center;
         float: none !important;
     }
@@ -1038,7 +1026,8 @@ h3.f_title {
 }
 
 .slider-info h3 {
-    font-size: 4em;
+    font-size: 3em;
+	word-break: break-word;
     text-transform: capitalize;
     color: #fff;
     text-shadow: 3px 3px 22px #1d1a22;
@@ -1049,13 +1038,12 @@ h3.f_title {
 }
 
 .slider-info p {
-    letter-spacing: 5px;
+	word-break: break-word;
     margin-top: 0.5em;
     font-size: 1.1em;
     font-weight: 600;
     color: #fff;
-    text-transform: uppercase;
-    word-spacing: 3px;
+    text-transform: capitalize;
 }
 
 .banner-text {
@@ -1117,6 +1105,7 @@ h3.f_title {
 }
 
 h4.abt-text {
+	word-break: break-word;
     color: #fff;
     line-height: 1.5;
     font-size: 3em;
@@ -1125,9 +1114,10 @@ h4.abt-text {
 }
 
 .abt_bottom p {
+	word-break: break-word;
     margin-bottom: 1em;
     letter-spacing: 1px;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 .color-white {
@@ -1199,7 +1189,6 @@ h4.abt-text {
 .category a {
     font-size: 16px;
     color: #000;
-    padding: 0 0 0 7px;
 }
 
 .mm_single_submit input {
@@ -1307,6 +1296,21 @@ img.img-fluid.page-full.img-thumbnail {
     text-transform: capitalize;
     text-decoration: none;
 }
+.astral_blog a.single {
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 2em;
+    padding: 11px 18px;
+    background: #FFEB3B;
+    color: #153e4d;
+    letter-spacing: 1px;
+    -o-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -moz-border-radius: 0px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
 
 .blog_page a.single:hover {
     background: transparent;
@@ -1314,8 +1318,8 @@ img.img-fluid.page-full.img-thumbnail {
 }
 
 .event-right .btn {
-    width: 38% !important;
-    margin-top: 0 !important;
+    width: 38%;
+    margin-top: 0;
     background: linear-gradient(to right, #d80c89, #5919cc);
 }
 
@@ -1493,7 +1497,6 @@ body {
 
 /* menu bar */
 .navbar-light .navbar-toggler {
-    border-color: #fff !important;
     padding: 10px;
 }
 
@@ -1543,7 +1546,7 @@ body {
 }
 
 .dropdown-item:focus, .dropdown-item:hover {
-    color: #000 !important;
+    color: #000;
     text-decoration: none;
     background-color: #ffc107;
 }
@@ -1577,7 +1580,7 @@ div#logo {
 ul.social-network {
     list-style: none;
     display: inline;
-    margin-left: 0 !important;
+    margin-left: 0;
     padding: 0;
 }
 
@@ -1715,6 +1718,7 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 .flip-card-back p {
+	color: #fff;
     font-size: 1rem;
 }
 
@@ -1865,6 +1869,7 @@ a.socialIcon:hover, .socialHoverClass {
 
     .abt_bottom p {
         letter-spacing: 0;
+		font-size: 12px;
     }
 
     div#callout {
@@ -1951,13 +1956,13 @@ a.socialIcon:hover, .socialHoverClass {
     text-transform: capitalize;
     color: #000;
     letter-spacing: 3px;
-    margin: 1em auto;
+    margin: 1em auto 0;
     flex-basis: 100%;
 }
 
 .notfound h2 {
     margin-bottom: 10px;
-    font-size: 13em;
+    font-size: 6em;
     text-align: center;
     flex-basis: 100%;
     color: transparent;
@@ -2114,13 +2119,14 @@ button.submit:hover {
     font-size: 17px;
 }
 
-.mwa_widget ul li:before {
+/* .mwa_widget ul li:before {
     content: '\2713';
     font-size: 15px;
     font-weight: bolder;
-}
+} */
 
 .mwa_widget ul li a {
+	word-break: break-word;
     text-decoration: none;
     font-size: 15px;
     color: #000;
@@ -2149,11 +2155,14 @@ button.submit:hover {
     text-decoration: none;
 }
 
-.mwa_footer_widget ul li:before {
+/* .mwa_footer_widget ul li:before {
     content: '\2713';
     font-size: 15px;
     color: #fff;
     font-weight: 600;
+} */
+.mwa_footer_widget ul {
+    color: #fff;
 }
 
 table#wp-calendar {
@@ -2174,10 +2183,10 @@ section#blog iframe {
     width: 100%;
 }
 
-section#blog .wp-post-image {
+/* section#blog .wp-post-image {
     width: 100%;
     height: 100%;
-}
+} */
 
 a.blog_link:hover {
     color: #153e4d;
@@ -2199,44 +2208,29 @@ div#comments {
     margin-top: 10%;
 }
 
-.alignleft {
+.single_left {
     float: left;
-    color: #fff;
 }
 
-.alignright {
+.single_right {
     float: right;
-    color: #fff;
-}
+} 
 
-.alignleft a {
-    font-size: 15px;
+.navigation a {
+    color: #17181b;
+    font-weight: 900;
+	font-size: 15px;
     padding: 7px;
-    background: #ffeb3b;
 }
 
-.alignright a {
-    font-size: 15px;
-    padding: 7px;
-    background: #ffeb3b;
-}
-
-.alignleft a {
-    color: #153e4d;
-}
-
-.alignright a {
-    color: #153e4d;
-}
-
-.alignleft a:hover {
+.single_left a:hover {
     text-decoration: none;
-    color: #153e4d;
+	color: #17181b;
 }
 
-.alignright a:hover {
+.single_right a:hover {
     text-decoration: none;
-    color: #153e4d;
+	color: #17181b;
 }
 
 a.page-numbers {
@@ -2248,11 +2242,6 @@ a.page-numbers {
     text-decoration: none;
     padding: 10px;
     border: 1px solid #000;
-}
-
-.inner-banner {
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
 }
 
 .sr-only {
@@ -2279,7 +2268,7 @@ a.page-numbers {
 }
 
 .swiper-slide {
-    height: auto !important;
+    height: auto;
     padding-top: 0;
 }
 
@@ -2337,13 +2326,13 @@ div#contact h4.mwa-title {
 }
 
 .card-body h4 a {
+	font-size: 20px;
     text-decoration: none;
     color: #000;
 }
 
 h4.mwa-title {
     color: #153e4d;
-    text-shadow: 0px 7px 5px #153e4d4f;
 }
 
 .calendar_wrap td a {
@@ -2357,7 +2346,7 @@ h4.mwa-title {
 
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link {
-        padding-right: 1.5rem !important;
+        padding-right: 1.5rem;
     }
 }
 
@@ -2420,4 +2409,81 @@ h4.mwa-title {
     .notfound p {
         letter-spacing: 2px;
     }
+}
+
+.gallery-caption {
+    color: #fff;
+}
+.mwa_footer_widget .searchform input[type="text"] {
+    border: 1px solid #ffeb3b;
+}
+.mwa_footer_widget .searchform input[type="text"]::placeholder {
+    color: #fff;
+}
+
+.menu-menu-1-container ul li:before {
+    display: none;
+}
+.dropdown-menu {
+    top: 96% !important;
+}
+table.wp-block-table {
+    width: 100%;
+}
+table.wp-block-table td {
+    font-size: 18px;
+    padding: 7px;
+}
+table.wp-block-table tr {
+    border-bottom: 1px solid #cccccc73;
+}
+.astral_blog h3.card-title {
+    word-break: break-word;
+}
+.align-blog .card-body {
+    padding-top: 32px !important;
+}
+ul.dropdown-menu ul {
+    top: 6px !important;
+    left: 155px;
+}
+/* ul.dropdown-menu li.dropdown a::after {
+    display: inline-block;
+    margin-left: 50px;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+} */
+.calendar_wrap caption {
+    caption-side: top;
+}
+.align-blog h3.card-title {
+    word-break: break-word;
+}
+.align-blog p {
+    word-break: break-word;
+}
+.mwa_footer_widget .searchform input {
+    color: #FFFFFF !important;
+}
+.tag_list a {
+    word-break: break-word;
+    padding-right: 10px;
+}
+.tag_list a::after {
+  content: ", ";
+}
+/* comment section overflow */
+.media-body.comments-grid-right {
+    overflow: hidden;
+}
+
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 15px !important;
+    padding-left: .5rem;
+}
 }

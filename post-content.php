@@ -17,18 +17,15 @@
 	<?php
 	if ( is_single() || is_home() ) { ?>
         <div class="metabox">
-            <span class="entry-date"><i class="fa fa-calendar"></i> <?php echo get_the_date( 'F j, Y' ); ?></span>
+            <span class="entry-date"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></span>
 
-            <span class="entry-author"><a
-                        href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>"><i
-                            class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?></a></span>
+            <span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>"><i class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?></a></span>
 
             <span class="entry-comments"><i class="fa fa-comments"></i>
 			<?php comments_number( '0', '1 comment', '% comments' ); ?> </span>
         </div>
-	<?php } ?>
+	<?php } 
 
-	<?php
 	if ( is_single() && get_the_category_list() ) { ?>
         <div class="mt-4 category">
             <div class="category_list">
@@ -36,33 +33,26 @@
 				<?php the_category( ' , ' ); ?>
             </div>
         </div>
-	<?php } ?>
+	<?php }
 
-	<?php
 	if ( is_single() && get_the_category_list() ) { ?>
         <div class="mt-4 category">
             <div class="tag_list">
 				<?php the_tags( __( 'Tags : ', 'astral' ), '', '<br />' ); ?>
             </div>
         </div>
-	<?php } ?>
+	<?php }
 
-	<?php
 	if ( is_single() ) {
 		the_content();
 	} else {
 		the_excerpt();
 	}
-	?>
 
-	<?php
-	if ( is_home() ) {
-		?>
-        <a class="single"
-           href="<?php echo esc_url( get_permalink() ); ?>"> <?php esc_html_e( 'Read More', 'astral' ); ?> </a>
-	<?php } ?>
+	if ( ! is_single() ) { ?>
+        <a class="single" target="_blank" href="<?php echo esc_url( get_permalink() ); ?>"> <?php esc_html_e( 'Read More', 'astral' ); ?> </a>
+	<?php }
 
-	<?php
 	$defaults = array(
 		'before'           => '<p>' . __( 'Pages:', 'astral' ),
 		'after'            => '</p>',
@@ -75,8 +65,5 @@
 		'pagelink'         => '%',
 		'echo'             => 1
 	);
-
-	wp_link_pages( $defaults );
-	?>
-
+	wp_link_pages( $defaults ); ?>
 </div>

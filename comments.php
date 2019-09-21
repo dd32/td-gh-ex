@@ -2,19 +2,13 @@
 /**
  * The template for displaying Comments
  *
- * @package WordPress
- * @subpackage astral
+ * @package Astral
  */
-
 if ( post_password_required() ) {
 	return;
 }
 ?>
-
 <div id="comments" class="comments-area">
-
-	<?php // You can start editing here -- including this comment! ?>
-
 	<?php if ( have_comments() ) : ?>
         <h2 class="comments-title">
 			<?php
@@ -34,7 +28,6 @@ if ( post_password_required() ) {
 			}
 			?>
         </h2>
-
         <ol class="commentlist">
 			<?php
 			wp_list_comments(
@@ -45,21 +38,18 @@ if ( post_password_required() ) {
 			);
 			?>
         </ol><!-- .commentlist -->
-
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
             <nav id="comment-nav-below" class="navigation" role="navigation">
                 <h1 class="assistive-text section-heading"><?php esc_html_e( 'Comment navigation', 'astral' ); ?></h1>
                 <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'astral' ) ); ?></div>
                 <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'astral' ) ); ?></div>
             </nav>
-		<?php endif; endif; // check for comment navigation ?>
-
-	<?php
+		<?php endif; endif; // check for comment navigation 
+	
 	/* If there are no comments and comments are closed, let's leave a note.
 	 * But we only want the note on posts and pages that had comments in the first place.
 	 */
 	if ( comments_open() ) { ?>
-
         <div class="leave-coment-form">
 			<?php $fields = array(
 				'author' => '<div class="row"><div class="col-sm-6 form-group"><input name="author" id="name" type="text" id="exampleInputEmail1" class="form-control" placeholder="Name"></div>',
@@ -87,4 +77,4 @@ if ( post_password_required() ) {
 	<?php } else { ?>
         <p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'astral' ); ?></p>
 	<?php } ?>
-</div><!-- #comments .comments-area -->
+</div>

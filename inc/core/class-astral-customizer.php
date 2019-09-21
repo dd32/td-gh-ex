@@ -2,8 +2,7 @@
 /**
  * astral: Customizer
  *
- * @package WordPress
- * @subpackage astral
+ * @package Astral
  * @since 0.1
  */
 
@@ -164,6 +163,7 @@ class astral_Customizer extends astral_Abstract_Main {
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'inner_header_image', array(
 			'label'    => __( 'Inner banner Image', 'astral' ),
+			'description' => __( 'background image show before breadcrumb area', 'astral' ),
 			'section'  => 'astral_inner_banner',
 			'settings' => 'inner_header_image'
 		) ) );
@@ -283,6 +283,7 @@ class astral_Customizer extends astral_Abstract_Main {
 
 		$wp_customize->add_control( 'astral_callout_show', array(
 			'label'    => __( 'Callout Section On/Off', 'astral' ),
+			'description' => __( 'Click above checkbox to show callout section on front page', 'astral' ),
 			'type'     => 'checkbox',
 			'section'  => 'astral_callout',
 			'settings' => 'astral_callout_show',
@@ -363,6 +364,7 @@ class astral_Customizer extends astral_Abstract_Main {
 
 		$wp_customize->add_control( 'astral_service_show', array(
 			'label'    => __( 'Service Section On/Off', 'astral' ),
+			'description' => __( 'Click above checkbox to show service section on front page', 'astral' ),
 			'type'     => 'checkbox',
 			'section'  => 'astral_service',
 			'settings' => 'astral_service_show',
@@ -457,7 +459,7 @@ class astral_Customizer extends astral_Abstract_Main {
 
 		/* blog section */
 		$wp_customize->add_section( 'astral_blog', array(
-			'title'      => __( 'Blog Settings', 'astral' ),
+			'title'      => __( 'Blog Options', 'astral' ),
 			'panel'      => 'astral_theme_option',
 			'capability' => 'edit_theme_options',
 			'priority'   => 35,
@@ -508,6 +510,7 @@ class astral_Customizer extends astral_Abstract_Main {
 
 		$wp_customize->add_control( 'astral_contact_show', array(
 			'label'    => __( 'Contact Section On/Off', 'astral' ),
+			'description' => __( 'Click above checkbox to show contact section on front page', 'astral' ),
 			'type'     => 'checkbox',
 			'section'  => 'astral_contact',
 			'settings' => 'astral_contact_show',

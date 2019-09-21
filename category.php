@@ -2,16 +2,11 @@
 /**
  * The template for displaying category pages
  *
- * @package WordPress
- * @subpackage astral
+ * @package Astral
  * @since 0.1
  */
-
 get_header();
-
-/* inner banner */
 do_action( 'astral_top_banner' ); ?>
-
     <!-- breadcrumbs -->
     <nav aria-label="breadcrumb">
 		<?php if ( have_posts() ) { ?>
@@ -24,7 +19,6 @@ do_action( 'astral_top_banner' ); ?>
 		<?php } ?>
     </nav>
     <!-- //breadcrumbs -->
-
     </nav>
     <!-- blog post-->
     <section class="align-blog" id="blog">
@@ -32,16 +26,10 @@ do_action( 'astral_top_banner' ); ?>
             <div class="row">
                 <!-- left side -->
                 <div class="col-lg-8 single-left mt-lg-0 mt-4">
-
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-
 						get_template_part( 'post', 'content' );
-
 					endwhile;
 					endif;
-					?>
-
-					<?php
 					/*
 					* Functions hooked into astral_pagination action
 					*
@@ -49,13 +37,10 @@ do_action( 'astral_top_banner' ); ?>
 					*/
 					do_action( 'astral_pagination' );
 					?>
-
                 </div>
                 <!-- right side -->
                 <div class="col-lg-4 event-right">
-
 					<?php get_sidebar(); ?>
-
                 </div>
             </div>
         </div>
@@ -63,4 +48,3 @@ do_action( 'astral_top_banner' ); ?>
     <!-- //blog post -->
 <?php
 get_footer();
-?>

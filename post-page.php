@@ -3,17 +3,11 @@
 		<?php the_title(); ?>
     </h3>
     <hr>
-
 	<?php
 	if ( has_post_thumbnail() ) {
 		the_post_thumbnail( 'blog-thumb' );  /* post thumbnail */
 	}
-
 	the_content( __( 'Read More', 'astral' ) );
-
-	?>
-
-	<?php
 	$defaults = array(
 		'before'           => '<p>' . __( 'Pages:', 'astral' ),
 		'after'            => '</p>',
@@ -26,8 +20,5 @@
 		'pagelink'         => '%',
 		'echo'             => 1
 	);
-
-	wp_link_pages( $defaults );
-	?>
-
+	wp_link_pages( $defaults ); ?>
 </div>

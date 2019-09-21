@@ -2,7 +2,7 @@
 /**
  * Main abstract function.
  *
- * @package astral
+ * @package Astral
  */
 
 /**

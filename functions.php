@@ -2,8 +2,7 @@
 /**
  * astral functions and code
  *
- * @package WordPress
- * @subpackage astral
+ * @package Astral
  * @since 0.1
  *
  */
@@ -47,3 +46,6 @@ require astral_PARENT_INC_DIR . '/core/class-wp-bootstrap-navwalker.php';
 */
 require astral_PARENT_INC_DIR . '/theme-function.php';
 
+add_filter( 'wp_nav_menu_items', function ( $menu ) {
+    return str_replace( '<a href="#"', '<a', $menu );
+} );

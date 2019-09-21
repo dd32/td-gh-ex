@@ -185,22 +185,19 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
 			$atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 			// If item has_children add atts to <a>.
-			if ( isset( $args->has_children ) && $args->has_children && 0 === $depth && $args->depth > 1 ) {
-				$atts['href']          = '#';
-				$atts['data-toggle']   = 'dropdown';
-				$atts['aria-haspopup'] = 'true';
-				$atts['aria-expanded'] = 'false';
-				$atts['class']         = 'dropdown-toggle nav-link';
-				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
+			if ( $args->has_children && $depth === 0 ) {
+			  $atts['href']        = ! empty( $item->url ) ? $item->url : '';
+				$atts['class']       = 'dropdown-toggle nav-link';
 			} else {
-				$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
-				// Items in dropdowns use .dropdown-item instead of .nav-link.
+			  $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+			  // Items in dropdowns use .dropdown-item instead of .nav-link.
 				if ( $depth > 0 ) {
 					$atts['class'] = 'dropdown-item';
 				} else {
 					$atts['class'] = 'nav-link';
 				}
 			}
+			
 
 			// update atts of this item based on any custom linkmod classes.
 			$atts = self::update_atts_for_linkmod_type( $atts, $linkmod_classes );

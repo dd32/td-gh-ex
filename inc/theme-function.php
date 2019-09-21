@@ -1,6 +1,4 @@
-<?php
-
-/*
+<?php /*
 * theme extra functions 
 */
 
@@ -13,12 +11,9 @@ function astral_inner_banner() { ?>
 		     echo esc_url( get_template_directory_uri() ) . "/images/inner.jpg";
 	     } ?>);"></div>
 <?php }
-
 add_action( 'astral_top_banner', 'astral_inner_banner' );
 
-
 /* display comments */
-
 if ( ! function_exists( 'astral_comment' ) ) :
 	function astral_comment( $comment, $args, $depth ) {
 		//get theme data
@@ -126,10 +121,10 @@ add_action( 'astral_breadcrumb_area', 'astral_breadcrumb' );
 /* single post navigation */
 function astral_post_navigation() { ?>
     <div class="navigation">
-        <div class="alignleft">
+        <div class="single_left alignleft">
 			<?php previous_post_link(); ?>
         </div>
-        <div class="alignright">
+        <div class="single_right alignright">
 			<?php next_post_link(); ?>
         </div>
     </div>
@@ -155,3 +150,10 @@ function astral_excerpt_length( $length ) {
 }
 
 add_filter( 'excerpt_length', 'astral_excerpt_length' );
+
+/* wp_body_open function check */
+if ( ! function_exists( 'wp_body_open' ) ) {
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}

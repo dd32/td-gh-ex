@@ -1,8 +1,8 @@
 <?php
 /**
- * astral hooks.
+ * Astral hooks.
  *
- * @package astral
+ * @package Astral
  */
 
 /* ------------------------------ HEADER ------------------------------ */

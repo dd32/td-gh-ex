@@ -4,23 +4,18 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package WordPress
- * @subpackage astral
+ * @package Astral
  * @since 0.1
  */
 get_header();
-?>
 
-<?php
 /* 
 * Functions hooked into astral_top_banner action
 * 
 * @hooked astral_inner_banner
 */
 do_action( 'astral_top_banner' );
-?>
 
-<?php
 /* 
 * Functions hooked into astral_breadcrumb_area action
 * 
@@ -28,22 +23,15 @@ do_action( 'astral_top_banner' );
 */
 do_action( 'astral_breadcrumb_area' );
 ?>
-
     <section class="align-blog" id="blog">
         <div class="container">
             <div class="row">
                 <!-- left side -->
                 <div class="col-lg-8 single-left mt-lg-0 mt-4">
-
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-
 						get_template_part( 'post', 'content' );
-
 					endwhile;
 					endif;
-					?>
-
-					<?php
 
 					/*
 					* Functions hooked into astral_pagination action
@@ -55,20 +43,14 @@ do_action( 'astral_breadcrumb_area' );
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
-
 					?>
-
                 </div>
                 <!-- right side -->
                 <div class="col-lg-4 event-right">
-
 					<?php get_sidebar(); ?>
-
                 </div>
             </div>
         </div>
     </section>
-
 <?php
 get_footer();
-?>

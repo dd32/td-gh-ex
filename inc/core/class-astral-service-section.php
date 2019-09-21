@@ -2,7 +2,7 @@
 /**
  * The Service Section
  *
- * @package astral
+ * @package Astral
  */
 
 /**

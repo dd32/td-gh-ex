@@ -31,9 +31,9 @@ jQuery(document).ready(function () {
 	
 /* sticky navbar */
 
-$(function(){
+jQuery(function(){
   
-	createSticky($("#main-menu"));
+	createSticky(jQuery("#main-menu"));
 
 });
 
@@ -42,10 +42,14 @@ function createSticky(sticky) {
 	if (typeof sticky !== "undefined") {
 
 		var	pos = sticky.offset().top,
-				win = $(window);
+				win = jQuery(window);
 			
 		win.on("scroll", function() {
     		win.scrollTop() >= pos ? sticky.addClass("sticky") : sticky.removeClass("sticky");      
 		});			
 	}
 }
+
+/* menu */
+/* jQuery(function($) {
+    $("li.menu-item").children("a").attr('href', "menu-item"); }); */
