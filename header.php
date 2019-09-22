@@ -19,6 +19,10 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} ?>
+
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'puro' ); ?></a>
 
@@ -28,8 +32,8 @@
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php puro_display_logo(); ?></a>
 				<?php if ( siteorigin_setting( 'header_display_tagline' ) ) { ?>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				<?php } ?>				
-			</div><!-- .site-branding-->			
+				<?php } ?>
+			</div><!-- .site-branding-->
 			<?php do_action( 'puro_before_nav' ); ?>
 			<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) { ?>
 				<nav id="site-navigation" class="main-navigation" role="navigation">

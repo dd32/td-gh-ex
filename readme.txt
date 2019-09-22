@@ -5,7 +5,7 @@ Contributors: Misplon
 Tags: one-column, two-columns, right-sidebar, custom-menu, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 Requires at least: 4.7
-Tested up to: 5.1.1
+Tested up to: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,6 +131,11 @@ Source: https://github.com/bgrins/TinyColor
 This theme makes use of the SiteOrigin Settings Framework contained in the /inc folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header.
 
 == Changelog ==
+
+= 1.1.8 - 22 September 2019 =
+* Removed duplicate logo link when core logo used.
+* Added `wp_body_open` hook.
+* Premium: Resolved HTML5 Ajax comments error.
 
 = 1.1.7 - 05 May 2019 =
 * Mobile Menu: Allow empty parent link open the submenu.
