@@ -17,7 +17,6 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-ecommerce-store' ); ?></a>
     <div id="header">   
@@ -28,9 +27,23 @@
               <?php dynamic_sidebar('social'); ?>
             </div>
             <div class="col-lg-6 col-md-6">
-              <nav class="nav" role="navigation">
-                <?php wp_nav_menu( array('theme_location'  => 'woocommerce-menu') ); ?>
-              </nav>
+              <div class="toggle-menu responsive-menu">
+                <button role="tab" onclick="wooMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Woocommerce Menu','advance-ecommerce-store'); ?></span></button>
+              </div>
+              <div id="woomenu-sidebar" class="nav sidebar">
+                <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
+                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="wooMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
+                  <?php 
+                    wp_nav_menu( array( 
+                      'theme_location' => 'woocommerce-menu',
+                      'container_class' => 'main-menu-navigation clearfix' ,
+                      'menu_class' => 'clearfix',
+                      'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                      'fallback_cb' => 'wp_page_menu',
+                    ) ); 
+                  ?>
+                </nav>
+              </div>
             </div>
           </div>        
         </div>
@@ -54,7 +67,7 @@
             </div>
             <div class="account col-lg-1 col-md-1">
               <?php if ( is_user_logged_in() ) { ?>
-                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt"></i><span class="screen-reader-text"><?php esc_html_e('My Account','advance-ecommerce-store'); ?></span></a>
               <?php } 
               else { ?>
                 <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
@@ -66,23 +79,33 @@
                   <span class="cart-value"> <?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
                 </li>
                 <span class="cart_no">
-                  <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?>"><?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?><span class="screen-reader-text"><?php esc_attr_e( 'Bookbtn','advance-ecommerce-store' );?></span></a>
+                  <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?>"><?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?><span class="screen-reader-text"><?php esc_attr_e( 'SHOPPING CART','advance-ecommerce-store' );?></span></a>
                 </span>
                 <?php }?>
             </div>         
           </div>
         </div>
       </div>
-      <button class="toggle" role="tab"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-ecommerce-store'); ?></a></button>
-      <button class="toggle" role="tab"><a class="toggleWooMenu" href="#"><?php esc_html_e('Woocommerce Menu','advance-ecommerce-store'); ?></a></button>
+      <div class="toggle-menu responsive-menu">
+        <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
+      </div>
       <div class="main-menu">
         <div class="container">
-          <nav class="nav" role="navigation">
-            <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-          </nav>
+          <div id="menu-sidebar" class="nav sidebar">
+              <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
+                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
+                <?php 
+                  wp_nav_menu( array( 
+                    'theme_location' => 'primary',
+                    'container_class' => 'main-menu-navigation clearfix' ,
+                    'menu_class' => 'clearfix',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                    'fallback_cb' => 'wp_page_menu',
+                  ) ); 
+                ?>
+              </nav>
+          </div>
         </div>
       </div>
     </div>
   </header>
-</body>
-</html>

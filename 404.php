@@ -14,10 +14,11 @@ get_header(); ?>
 			<p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn&hellip', 'advance-ecommerce-store' ); ?></p>
 			<p class="text-404"><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-ecommerce-store' ); ?></p>
 			<div class="read-moresec">
-        		<a href="<?php echo esc_url(home_url() ) ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-ecommerce-store' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-ecommerce-store' ); ?></span></a>
+        		<a href="<?php echo esc_url(home_url() ) ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-ecommerce-store' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-ecommerce-store' ); ?></span></a>
         	</div>
 			<div class="clearfix"></div>
         </div>
 	</div>
 </main>
+
 <?php get_footer(); ?>

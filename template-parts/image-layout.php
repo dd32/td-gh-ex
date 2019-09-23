@@ -17,7 +17,9 @@
 
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
-                    <?php the_excerpt(); ?>
+                    <div class="entry-content">
+                        <?php the_excerpt(); ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>    

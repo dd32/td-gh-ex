@@ -7,6 +7,7 @@
  * @package advance-ecommerce-store
  */
 ?>
+
 <footer role="contentinfo">
     <div id="footer" class="copyright-wrapper">
         <div class="container">
@@ -30,6 +31,7 @@
         <p><?php echo esc_html(get_theme_mod('advance_ecommerce_store_footer_copy', __('Copyright 2018 -', 'advance-ecommerce-store')));?> <?php advance_ecommerce_store_credit();?></p>
     </div>
 </footer>
+
 <?php wp_footer();?>
 </body>
 </html>

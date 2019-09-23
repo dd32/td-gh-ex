@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Version: 0.4.2
+Version: 0.4.3
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -30,7 +30,6 @@ body{
 	background-color:#fff;
 	font-size: 15px;
 	color:#5b5b5b;
-	letter-spacing: 1px;
 	font-family: 'Karla', sans-serif;
 }
 img{
@@ -52,14 +51,16 @@ h6{
   font-family: 'Montserrat', sans-serif;
 	margin:0;
 	padding:10px 0;
-	color: #000
+	color: #000;
+  font-weight: 500;
 }
 p{
 	margin:0 0 15px;
 	padding:0;
-	font-size:18px;
-	line-height:normal;
-	font-weight:normal;
+	font-size:16px;
+  letter-spacing: 0;
+  line-height: 1.8;
+
 }
 a{
 	text-decoration:none;
@@ -208,17 +209,6 @@ z-index: 100000; /* Above WP toolbar. */
 #respond{
 	clear:both;
 }
-.toggle,
-.toggleWooMenu{
- 	display:none;
-}
-.toggle{
-    width:100%;
-    color:#fff;
-    background:url('images/mobile_nav_right.png') no-repeat right center #ff6600;
-    /*padding:10px 10px;*/
-    font-size:16px;
-  }
 .bypostauthor{
 	margin:0;
 	padding:0;
@@ -250,9 +240,9 @@ input[type="submit"] {
 	text-align:center;
 	font-size:18px;
 	padding:7px 30px;
-	background: #000;
+	background: #ff6600;
 	font-weight:bold;
-	color:#ff6600;
+	color:#fff;
 }
 
 /* ---------Buttons--------- */
@@ -268,10 +258,6 @@ a.button{
 .top-menu,
 .main-menu {
   background: #ff6600;
-}
-.top-menu .nav {
-  text-align: left;
-  display: block;
 }
 .social_widget i {  
   color: #fff;
@@ -354,32 +340,10 @@ span.cart-value {
   font-size: 12px;
   font-weight: bold;
   position: relative;
-  color: #000;
+  color: #fff;
 }
 
 /* --------- Main Menu--------- */
-.main-menu .nav ul li a {
-  padding: 15px !important;
-}
-.main-menu .nav ul li {
-  border-right: solid 1px #fff;
-}
-.main-menu .nav ul li a:hover{
-  background: #000;
-}
-.main-menu .nav ul li:last-child{
-  border: none;
-}
-.menu-woocommerce-menu-container ul li a{
-  border-right:1px solid #fff; 
-  padding: 2px 5px !important;
-}
-.menu-woocommerce-menu-container ul li{
-  padding: 6px 0;
-}
-.woocommerce .menu-woocommerce-menu-container ul li:last-child a{
-  border: none;
-}
 .woocommerce form .form-row .required{
   color: #000;
 }
@@ -388,43 +352,134 @@ span.cart-value {
 }
 
 /* ---------HEADER--------- */
-#header .nav{
-	margin:0;
-}
-#header .nav ul {
-	float:right;
-	margin:0;
-	padding:0;
-	font-weight:400;
-	font-size:14px;
-	text-transform: uppercase;
-	font-weight:bold;
-}
-#header .nav ul li{
-	display:inline-block;
-	margin:0;
-	position:relative;
-}
-#header .nav ul li a{
-	color:#ffffff;
-	padding:10px;
-	display:block;
-}
-#header ul.sub-menu:before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 7px solid;
-  border-bottom-color: #000;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  top: -7px;
-  left: 15%;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
+.main-navigation .sub-menu > li > a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
 }
 
+/* --------- MENUS CSS --------- */
+#menu-sidebar {
+  text-align: center;
+  display: inline;
+}
+ul.list_nav {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+.primary-navigation ul{
+  list-style: none !important;
+  margin: 0;
+  padding-left: 0;  
+  text-align: left;
+}
+.primary-navigation li{
+  display: inline-block;
+  position: relative;
+}
+#menu-sidebar .primary-navigation li {
+  border-right: 1px solid #fff;
+}
+#menu-sidebar .primary-navigation li:last-child {
+  border-right: none;
+}
+#menu-sidebar .primary-navigation a{
+  text-transform: uppercase;
+}
+#menu-sidebar .primary-navigation a:hover{
+  background-color: #000;
+  color: #fff;
+}
+#woomenu-sidebar .primary-navigation a{
+  text-transform: capitalize;
+}
+#woomenu-sidebar .primary-navigation a:hover{
+  background-color: #fff;
+}
+#woomenu-sidebar a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
+.menu-sidebar a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
+.primary-navigation a{
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px;
+}
+.primary-navigation a:hover{
+  color: #e9413a;
+}
+.primary-navigation ul ul{
+  display: none;
+  position: absolute;
+  min-width: 215px;
+  z-index: 9999;
+}
+.primary-navigation ul ul ul {
+  left: 100%;
+  top: 0;
+}
+.primary-navigation ul ul a{
+  padding: 12px;
+  background: #fff !important;
+  color: #ff6600;
+  border: 1px solid;
+}
+.primary-navigation ul ul a:hover{
+  background: #ff6600 !important;
+  color: #fff !important;
+}
+.primary-navigation ul ul li{
+  float: none;
+  display: block;
+  text-align: left;
+  border-left: none;
+  border-right: none !important;
+  padding: 0;
+}
+.primary-navigation ul ul li:last-child{
+  border-bottom: 0;
+}
+.primary-navigation ul li:hover > ul{
+  display: block;
+}
+.primary-navigation .menu > ul > li.highlight{
+  background-color: #006ccc;
+}
+.primary-navigation .menu > ul > li.highlight:hover{
+  background: transparent;
+}
+
+/*--------------- SUPERFISH MENU ---------------------------*/
+
+.sf-arrows .sf-with-ul:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  margin-top: -2px;
+  height: 0;
+  width: 0;
+  border-top-color: #e1e1e1;
+}
+.sf-arrows ul .sf-with-ul:after{
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  border-left-color: #888;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after{
+  border-left-color: #333;
+}
+.toggle-menu, a.closebtn{
+  display: none;
+}
 /* --------- Category --------- */
 .slider-category {
   padding: 3% 0;
@@ -439,7 +494,7 @@ span.cart-value {
   margin-right: 10px;
 }
 .categry-title span {
-  color: #000;
+  color: #fff;
   font-size: 15px;
   font-weight: bold;
 }
@@ -516,11 +571,11 @@ span.cart-value {
 #slider .inner_carousel h2 {
   margin: 0;
   font-size: 25px;
-  letter-spacing: 1px;
   font-weight: 700;
   color: #fff;
   text-align: left;
   padding: 0 0 10px 0;
+  text-transform: uppercase;
 }
 hr.slidehr {
   border-top: solid 3px #ff6600;
@@ -528,9 +583,8 @@ hr.slidehr {
   width: 10%;
 }
 #slider .inner_carousel p {
-  letter-spacing: 1px;
   margin-bottom: 0;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 10px;
 }
 #slider .inner_carousel {
@@ -538,16 +592,17 @@ hr.slidehr {
 }
 .more-btn a:hover {
   background: #000;
+  color: #fff;
 }
 .more-btn a {
   background: #ff6600;
-  color: #000;
+  color: #fff;
   padding: 12px;
   font-weight: bold;
   font-size: 12px;
 }
 .more-btn{
-  margin-top: 15px;
+  margin-top: 35px;
 }
 
 /*---------- Product Services -----------*/
@@ -556,13 +611,14 @@ hr.slidehr {
   text-align: center;
 }
 .product-service a h4 {
-  color: #000;
-  font-size: 15px;
+  color: #fff;
+  font-size: 16px;
   font-weight: 700;
+  padding: 10px 0 0;
 }
 .product-service p {
   font-size: 14px;
-  color: #000;
+  color: #fff;
   margin: 0;
   padding-bottom: 10px;
 }
@@ -579,13 +635,11 @@ hr.slidehr {
   margin-bottom: 3%;
   padding: 0;
 }
-div#sidebar {
-  margin-top: 20px;
-}
 /*----------------- Homepage ----------------*/
 .page-box {
   padding: 10px;
-  border-bottom: solid 2px #ff6600;
+  border: solid 1px #000;
+  margin-bottom: 20px;
 }
 .page-box h4 a{
 	color:#000;
@@ -605,21 +659,21 @@ div#sidebar {
 	width:100%;
 	opacity: 0.7;
 }
-.our-services img{
-	width:100%;
-}
 .our-services .services-box{
 	margin:40px 0 20px 0;
 }
 .second-border a {
   border: solid 1px #000;
   padding: 12px 25px;
-  font-size: 15px;
+  font-size: 16px;
   color: #000;
+  letter-spacing: 0;
+  font-weight: 600;
 }
 .second-border a:hover {
   background: #ff6600;
-  color: #000;
+  color: #fff;
+  border: solid 1px #fff;
 }
 .second-border{
   text-align: right;
@@ -629,20 +683,20 @@ div#sidebar {
 /* --------- Blog Page ------- */
 .metabox{
 	color:#000;
-	padding: 5px 0 15px;
+	padding: 5px 0 ;
 	clear:both;
 }
 .metabox span {
   margin-right: 24px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .metabox i {
   margin-right: 5px;
 }
 span.meta-nav {
   background: #ff6600;
-  color: #000;
-  padding: 8px;
+  color: #fff;
+  padding: 4px;
 }
 
 /* Headings */
@@ -683,6 +737,10 @@ section .innerlightbox{
 }
 
 /* Footer Section */
+#footer a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
 #footer label{
   width: 100%;
 }
@@ -754,6 +812,9 @@ table#wp-calendar td a {
   color: #fff;
   font-size: 15px;
 }
+#footer li a:hover{
+  color: #ff6600;
+}
 #footer ul li {
   list-style: none;
   padding: 5px 0;
@@ -795,12 +856,13 @@ table#wp-calendar td a {
   margin-top: -38px;
 }
 .copyright p {
-  font-size: 15px !important;
-  color: #000;
+  font-size: 17px !important;
+  color: #fff;
   margin-bottom: 0;
+  font-weight: 600;
 }
 .copyright p a{
-  color: #000;
+  color: #fff;
 }
 .copyright {
   background: #ff6600;
@@ -817,6 +879,7 @@ table#wp-calendar td a {
 }
 #footer .tagcloud a:hover{
 	border: solid 1px #ff6600;
+  background: #ff6600;
 }
 
 /* --------- POST --------- */
@@ -848,7 +911,7 @@ table#wp-calendar td a {
   font-size:20px;
   font-weight:bold;
   border-top:2px dotted #7e7e7e;
-  padding:40px 0 0 0;
+  padding:40px 0;
 }
 #comments h3.comment-reply-title{
   font-size:20px;
@@ -868,7 +931,7 @@ table#wp-calendar td a {
   padding:10px 50px;
   text-transform:normal;
   font-weight:bold;
-  color: #000;
+  color: #fff;
   margin-top:20px;
   margin-left:0;
   border: none;
@@ -918,6 +981,9 @@ table#wp-calendar td a {
   float:left;
 }
 /*------------- Woocommerce --------------*/
+.woocommerce-product-gallery__image {
+  padding: 5px;
+}
 .woocommerce .products li {
   width: 30% !important;
   text-align: center;
@@ -935,31 +1001,33 @@ a.showcoupon,
 }
 .woocommerce span.onsale {
   background: #ff6600;
-  color: #000;
+  color: #fff;
   padding: 0;
   border-radius: 0;
   margin: 0 !important;
 }
 h2.woocommerce-loop-product__title{
   color: #000;
-  letter-spacing: 1px;
-  font-weight: 500;
-  font-size: 15px !important;
+  font-weight: 600;
+  font-size: 20px !important;
+  text-transform: capitalize;
 }
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #000;
+  font-size: 15px;
+  letter-spacing: 0;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
 	margin-bottom: 5px;
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
 	background: #ff6600;
-	color: #000 !important;
+	color: #fff !important;
 	border-radius: 0;
 }
-.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
-	background: #000;
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce .cart .button:hover, .woocommerce .cart input.button:hover{
+	background: #000 !important;
 	color: #fff !important;
 }
 .woocommerce .quantity .qty {
@@ -981,7 +1049,7 @@ nav.woocommerce-MyAccount-navigation ul li {
   margin-bottom: 10px;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-  color: #000;
+  color: #fff;
   font-weight: bold;
 }
 .posted_in {
@@ -997,6 +1065,16 @@ span.woocommerce-input-wrapper,
 .woocommerce a.remove{
   color: #000 !important;
 }
+.woocommerce-MyAccount-content a, nav.woocommerce-MyAccount-navigation ul li a, .woocommerce td.product-name a, form.woocommerce-shipping-calculator a, a.showcoupon, .woocommerce-privacy-policy-text a {
+  text-decoration: none !important;
+}
+#add_payment_method table.cart td, #add_payment_method table.cart th, .woocommerce-cart table.cart td, .woocommerce-cart table.cart th, .woocommerce-checkout table.cart td, .woocommerce-checkout table.cart th{
+  font-size: 16px;
+}
+
+.innerlightbox {
+  padding: 2% 0 0;
+}
 /*------------- Sidebar -------------*/
 #sidebar caption{
 	color: #000;
@@ -1010,7 +1088,7 @@ span.woocommerce-input-wrapper,
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
   background: #ff6600;
   padding: 10px;
 }
@@ -1018,7 +1096,7 @@ span.woocommerce-input-wrapper,
 	border: solid 1px #bbb;
 	padding: 9px 10px;
 	font-size: 15px;
-  color: #bbb;
+  color: #222;
 	width: 100%;
 	margin-bottom: 15px;
 }
@@ -1050,6 +1128,8 @@ span.woocommerce-input-wrapper,
 }
 #sidebar ul li a{
 	color:#000;
+  font-size: 16px;
+  letter-spacing: 0;
 }
 #sidebar ul li a:hover{
 	color:rgb(21, 28, 39);
@@ -1058,15 +1138,15 @@ label{
 	margin-bottom: 0px;
 }
 #sidebar .tagcloud a{
-	background:#eeeeee;
-	color:#000;
+	background: #ff6600;
+	color:#fff;
 	font-size:15px !important;
 	padding:5px 18px;
 	margin:0 0 5px;
 	display:inline-block;
 }
 #sidebar .tagcloud a:hover{
-	background:#ff6600;
+	background:#000;
 }
 img.rss-widget-icon {
   width: auto !important;
@@ -1074,7 +1154,13 @@ img.rss-widget-icon {
 #sidebar .woocommerce ul.product_list_widget li img {
   width: 40%;
 }
-
+#sidebar li.recentcomments span, li.recentcomments {
+  font-size: 16px;
+  letter-spacing: 0;
+}
+.our-services #sidebar {
+  margin-top: 20px;
+}
 /* Page */
 h1.entry-title,
 h1.page-title {
@@ -1138,19 +1224,26 @@ h1.page-title {
 	margin:0 0 20px 0;
 }
 .entry-content a {
+  color: #ff6600;
   text-decoration: underline;
 }
 
 /* Pagination */
+.nav-links {
+  padding: 20px 0;
+}
 .nav-previous {
-    float: left;
-    width: 50%;
-    font-size: 15px;
+  float: left;
+  width: 50%;
+  font-size: 15px;
+  margin: 15px 0;
 }
 .nav-next {
-    float: right;
-    font-size: 15px;
-    width: 50%;
+  float: right;
+  font-size: 15px;
+  width: 50%;
+  margin: 15px 0;
+  text-align: right;
 }
 .pagination {
 	clear:both;
@@ -1177,20 +1270,20 @@ h1.page-title {
     transition: background .15s ease-in-out;
 }
 .pagination a:hover{
-	color:#000;
-    background: #ff6600;
+	color:#fff;
+  background: #ff6600;
 }
 .pagination .current{
 	padding:10px 15px;
-    background: #ff6600;
-    color:#000;
+  background: #ff6600;
+  color:#fff;
 	font-weight:bold;
 }
 iframe{
   width: 100%;
 }
 .entry-audio audio {
-    width: 100%;
+  width: 100%;
 }
 
 /* Media */
@@ -1242,78 +1335,11 @@ iframe{
 	.our-services{
 		margin-top: 0;
 	}
-	.toggleMenu,
-  .toggleWooMenu{
- 		display:block;
-	}
-	.toggle a{
-		width:100%;
-		color:#fff;
-		background:url('images/mobile_nav_right.png') no-repeat right center #000;
-		padding:10px 10px;
-		font-size:16px;
-    border-bottom: 1px solid;
-	}
-	.nav{
-	 	display:none;
-	}
-  .top-menu .nav{
-    top: 347px !important;
-    display: none;
-  }
-	#header .nav{
-		float:none;
-		margin:0;
-		position:absolute;
-		z-index:999;
-		overflow-x:hidden;
-		width: 100%;
-		left: 0;
-		top: 346px;
-	}
-	#header .nav ul{
-		width:100%;
-		float:none !important;
-		margin-top:0;
-		background-color:#000;
-	}
-	#header .nav ul li{
-		border-top:1px #292929 solid;
-		display:block;
-		float:none;
-		text-align:left;
-	}
-	.nav ul li a{
-		padding:5px 10px;
-		display:block;
-		color:#ffffff !important;
-	}
-	.nav ul li a:hover{
-		color:#ff8a00;
-	}
-	.nav ul li ul,
-	 .nav ul li ul ul{
-		display:block !important;
-	}
-	.nav ul li ul li a:before{
-		content:"\00BB \00a0";
-	}
-	.nav ul li ul li a{
-		padding-left:20px !important;
-	}
-	.nav ul li ul li ul li a{
-		padding-left:30px !important;
-	}
 	.box-content,
   #slider .inner_carousel h2,
   hr.slidehr,
   #slider .inner_carousel p {
 	  display: none;
-  }
-  .menu-woocommerce-menu-container ul li a,
-  .main-menu .nav ul li,
-  .service-border{
-    border: none;
   }
   .middle-header form{
     text-align: left;
@@ -1338,54 +1364,6 @@ iframe{
   }
 }
 @media screen and (min-width:720px){
-	#header .nav ul li ul{
-	 	display:none;
-		z-index:2;
-		font-weight:normal;
-		margin-top:12px;
-	}
-	#header .nav ul li:hover > ul{
-	 	display:block;
-		background:#000;
-		width:200px;
-		position:absolute;
-		top:40px;
-		left:0;
-		text-align:left;
-		z-index:99;
-	}
-	#header .nav ul li:hover > ul li{
-		display:block;
-	}
-	#header .nav ul li:hover > ul li a{
-		padding:7px 0px 7px 10px;
-		color:#ffffff;
-		border-bottom: solid 1px #fff;
-	}
-	#header .nav ul li:hover ul li ul{
-	 	display:none;
-	}
-	#header .nav ul li:hover ul li:hover > ul{
-	 	display:block;
-		position:absolute;
-		left:200px;
-		top:5px;
-	}
-	#header .nav ul.sub-menu{
-		margin-top:10px;
-	}
-	#header .nav ul li a{
-	  color: #000;
-    padding: 10px 12px;
-    display: block;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-size: 13px;
-    text-transform: none;
-	}
-  #header .nav ul li a:hover{
-    color: #fff;
-  }
 	#footer input[type="submit"]{
 		width: 100%;
 		float: none;
@@ -1400,18 +1378,6 @@ iframe{
 	}	
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px) {
-	#header #header-inner .nav ul li ul li{
-	 	display:block;
-		position:relative;
-		float:none;
-	}
-	#header #header-inner .nav ul li ul li a{
-		color:#000;
-		display:block;
-		padding-top:10px;
-		padding-bottom:10px;
-		border-bottom:1px #313131 solid;
-	}
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
@@ -1436,4 +1402,160 @@ iframe{
 		width: 100% !important;
 		float: none !important;
 	}
+}
+/*------------------RESPONSIVE MEIDA-------------------*/
+
+@media screen and (max-width: 1000px){
+  .menubar .primary-navigation ul li a:focus,
+  a.closebtn.responsive-menu:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .toggle-menu {
+    display: none;
+    position: relative;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    text-align: right;
+    right: 0;
+  }
+  body.page-template.page-template-page-template.page-template-custom-front-page .toggle-menu{
+    position: relative;
+    top: -1px;
+  }
+  .toggle-menu i {
+    font-size: 32px;
+    color: #000;
+  }
+  .toggle-menu button {
+    background: transparent;
+    border: none;
+  }
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    right: 0;
+    background-color: #252525;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: block;
+    color: #ffffff;
+    border:none;
+    background: transparent;
+  }
+  .sidebar #primary-site-navigation {
+    width: 100%;
+  }
+  .toggle-menu span{
+    font-size:30px;
+    cursor:pointer; 
+    text-align: right;
+  }
+  .toggle-menu{
+    display: block;
+  }
+  .toggle i.fa.fa-bars,.toggle i.fa.fa-times {
+    float: right;
+    color: black;
+  }
+  .primary-navigation ul ul li{
+    display: block;
+  }
+  .menubar .primary-navigation ul li{
+    border-top:1px #303030 solid; 
+    display:block;
+  }
+  .primary-navigation ul li a{
+    padding: 10px;
+    display:block;
+    color:#ffffff;
+    border:none;
+  }
+  .primary-navigation ul li ul,
+  .primary-navigation ul li ul ul{ 
+    display:block !important;
+  }
+  .primary-navigation ul li ul li a:before{
+    content:"\00BB \00a0";
+  }
+  .primary-navigation ul li ul li a{
+    padding-left:20px !important;
+  }
+  .primary-navigation ul li ul li ul li a{
+    padding-left:30px !important;
+  }  
+  .primary-navigation ul li ul, 
+  .primary-navigation ul li ul ul {
+    display: block !important;
+    opacity: 1 !important;
+  }
+  .primary-navigation ul ul{
+    position: static;
+    width: 100%;
+  }
+  .primary-navigation li{
+    padding: 0;
+  }
+  .main-header-box{
+    padding-bottom: 15px;
+  }
+  #menu-sidebar {
+    text-align: left;
+    display: inline;
+  }
+  div#menu-sidebar a:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .primary-navigation ul{
+    display: grid;
+  }
+  body.page-template.page-template-page-template.page-template-custom-front-page #header .contact-content .primary-navigation ul li a{
+    color: #fff;
+  }
+  .primary-navigation .current_page_item > a,
+  .primary-navigation .current-menu-item > a,
+  .primary-navigation .current_page_ancestor > a{
+    background:unset;
+  }
+  .primary-navigation ul ul{
+    background: unset;
+  }
+  .toggle-menu.responsive-menu a:focus{
+    outline: 1px dotted #000 !important;
+    border-bottom: 1px solid #000 !important;
+  }
+  .page-template-custom-front-page #header {
+    display: block;
+  }
+  .primary-navigation ul ul{
+    background: #252525 !important;
+    padding: 0px 20px;
+  }
+  .primary-navigation ul ul a{
+    color: #fff !important;
+    background: #252525 !important;
+    border: none;
+  }
+  .primary-navigation a{
+    color: #fff;
+  }
+  .main-menu .menu-color{
+    background: #fff !important;
+    text-align: center;
+  }
 }

@@ -72,14 +72,14 @@ get_header(); ?>
               <div class="carousel-inner" role="listbox">
                 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
                   <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-                    <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+                    <?php the_post_thumbnail(); ?>
                     <div class="carousel-caption">
                       <div class="inner_carousel">
                         <h2><?php the_title(); ?></h2>
                         <hr class="slidehr">
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,20 ) ); ?></p>
                         <div class="more-btn">              
-                          <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                          <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-ecommerce-store' ); ?></span></a>
                         </div>
                       </div>
                     </div>

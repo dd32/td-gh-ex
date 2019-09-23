@@ -11,8 +11,8 @@ get_header(); ?>
     <div class="innerlightbox">
         <div class="container">
             <?php
-                $left_right = get_theme_mod( 'advance_ecommerce_store_layout_options','Right Sidebar');
-                if($left_right == 'Left Sidebar'){ ?>
+            $left_right = get_theme_mod( 'advance_ecommerce_store_layout_options','Right Sidebar');
+            if($left_right == 'Left Sidebar'){ ?>
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
