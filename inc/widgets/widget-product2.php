@@ -115,7 +115,7 @@ class accesspress_store_product2 extends WP_Widget {
                               ?>
                               <h3><?php echo esc_html($terms_name->name); ?></h3>
                               <div class="cat_desc">  
-                                <?php echo esc_html($terms); ?>
+                                <?php echo wp_kses_post($terms); ?>
                               </div>  
                           </div>
                     </div>

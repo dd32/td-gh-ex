@@ -43,7 +43,7 @@
                 <?php
                     if (is_woocommerce_activated()){
                         echo '<div class="view-cart">'; 
-                            echo accesspress_store_cart_link();
+                            accesspress_store_cart_link();
                         echo '</div>';
                     }
                 ?>

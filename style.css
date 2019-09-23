@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.3.9
+Version: 2.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -4714,7 +4714,7 @@ span.onsale:after,
     color: #ffffff;
     font-weight: 700;
     right: 0px;
-    top: 100px;
+    top: 0;
     padding: 0;
     padding-right: 10px;
     padding-left: 0px;
@@ -4722,10 +4722,30 @@ span.onsale:after,
     min-width: 50px;
     border-radius: 0;
     margin: 0px;
-    /*left: 220px;*/
     right: 0;
-    /*width: 0;*/
     left: auto;
+}
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger{
+    left: 0;
+    right: auto;
+    top: 0;
+}
+
+.woocommerce ul.products.grid li.product .price-cart .gridlist-buttonwrap a.button:before,
+ .woocommerce.single.single-product .entry-summary form button.button:before {
+    color: #fff !important;
+}
+button.single_add_to_cart_button.button.alt {
+    background: #e24545 !important;
+    color: #fff !important;
+}
+.woocommerce ul.products.grid li.product .price-cart .gridlist-buttonwrap a.button:hover:before,
+ .woocommerce.single.single-product .entry-summary form button.button:hover:before {
+    color: #e24545 !important;
+}
+button.single_add_to_cart_button.button.alt:hover {
+    color: #e24545 !important;
+    background-color: #fff!important;
 }
 .woocommerce.single.single-product del {
     display: inline-block !important;
@@ -4780,7 +4800,7 @@ span.onsale:after,
 }*/
 .woocommerce.single.single-product .entry-summary form button.button {
     display: inline-block;
-    padding: 1.7px 10px;
+    padding: 0px 10px;
     float: none;
     width: auto;
     background: #e24545;

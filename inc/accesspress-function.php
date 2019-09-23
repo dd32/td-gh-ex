@@ -7,7 +7,7 @@
 function accesspress_store_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'AP: Right Sidebar', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Right Sidebar', 'accesspress-store' ),
 		'id'            => 'sidebar-right',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s ">',
@@ -17,7 +17,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Left Sidebar', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Left Sidebar', 'accesspress-store' ),
 		'id'            => 'sidebar-left',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -27,7 +27,7 @@ function accesspress_store_widgets_init() {
 	) );	
 	
 	register_sidebar( array(
-		'name'          => __( 'Shop Sidebar', 'accesspress-store' ),
+		'name'          => esc_html__( 'Shop Sidebar', 'accesspress-store' ),
 		'id'            => 'shop',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'shop' ).'">',
@@ -37,7 +37,7 @@ function accesspress_store_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Header Call To Box', 'accesspress-store' ),
+		'name'          => esc_html__( 'Header Call To Box', 'accesspress-store' ),
 		'id'            => 'header-callto-action',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'header-callto' ).'">',
@@ -47,7 +47,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Promo Widget 1', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Promo Widget 1', 'accesspress-store' ),
 		'id'            => 'promo-widget-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget widget %2$s '.accesspress_count_widgets( 'promo-widget-1' ).'">',
@@ -57,7 +57,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Product Listing Widget 1', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Product Listing Widget 1', 'accesspress-store' ),
 		'id'            => 'product-widget-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -67,7 +67,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Promo Widget 2', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Promo Widget 2', 'accesspress-store' ),
 		'id'            => 'promo-widget-2',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -77,7 +77,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Product Listing Widget 2', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Product Listing Widget 2', 'accesspress-store' ),
 		'id'            => 'product-widget-2',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -87,7 +87,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Video Call to Action', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Video Call to Action', 'accesspress-store' ),
 		'id'            => 'cta-video',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -97,7 +97,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Product Listing Widget 3', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Product Listing Widget 3', 'accesspress-store' ),
 		'id'            => 'product-widget-3',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -107,7 +107,7 @@ function accesspress_store_widgets_init() {
 	) );	
 	
 	register_sidebar( array(
-		'name'          => __( 'AP: Promo Widget 3', 'accesspress-store' ),
+		'name'          => esc_html__( 'AP: Promo Widget 3', 'accesspress-store' ),
 		'id'            => 'promo-widget-3',
 		'description'   => 'You can use widget AP: Icon text block which is what it is designed that it will horizontally allign with 3 row',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'promo-widget-3' ).'">',
@@ -117,7 +117,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Area 1', 'accesspress-store' ),
+		'name'          => esc_html__( 'Footer Area 1', 'accesspress-store' ),
 		'id'            => 'footer-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -127,7 +127,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Area 2', 'accesspress-store' ),
+		'name'          => esc_html__( 'Footer Area 2', 'accesspress-store' ),
 		'id'            => 'footer-2',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -137,7 +137,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Area 3', 'accesspress-store' ),
+		'name'          => esc_html__( 'Footer Area 3', 'accesspress-store' ),
 		'id'            => 'footer-3',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -147,7 +147,7 @@ function accesspress_store_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name'          => __( 'Footer Area 4', 'accesspress-store' ),
+		'name'          => esc_html__( 'Footer Area 4', 'accesspress-store' ),
 		'id'            => 'footer-4',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -225,7 +225,7 @@ function accesspress_ticker_header_customizer(){
 		            debugMode: true,       // Show some helpful errors in the console or as alerts
 		      	    // SHOULD BE SET TO FALSE FOR PRODUCTION SITES!
 		            controls: true,        // Whether or not to show the jQuery News Ticker controls
-		            titleText: '<?php echo $ticker_title;?>',   // To remove the title set this to an empty String
+		            titleText: '<?php echo esc_html($ticker_title);?>',   // To remove the title set this to an empty String
 		            displayType: 'reveal', // Animation type - current options are 'reveal' or 'fade'
 		            direction: 'ltr',       // Ticker direction - current options are 'ltr' or 'rtl'
 		            fadeInSpeed: 900,      // Speed of fade in animation
@@ -242,7 +242,7 @@ function accesspress_ticker_header_customizer(){
 					$i++;
 					?>
 					<li>
-						<h5 class="ticker_tick ticker-h5-<?php echo $i; ?>"> <?php echo $ticker ?> </h5>
+						<h5 class="ticker_tick ticker-h5-<?php echo esc_attr($i); ?>"> <?php echo esc_html($ticker) ?> </h5>
 					</li>
 					<?php 
 				} 
@@ -334,11 +334,11 @@ function accesspress_slidercb(){
 										<div class="caption-content-wrapper">
 											<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
 											<div class="caption-content">
-												<?php echo accesspress_letter_count(get_the_content(), '165'); ?>
+												<?php echo wp_kses_post(accesspress_letter_count(get_the_content(), '165')); ?>
 											</div>
 										</div>
 										<?php if($slider_button_text): ?>
-											<a class="caption-read-more1" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_attr($slider_button_text); ?></a>
+											<a class="caption-read-more1" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_html($slider_button_text); ?></a>
 										<?php endif; ?>
 									</div>
 								</div>
@@ -365,7 +365,7 @@ if( is_woocommerce_activated() ){
 
 	if ( ! function_exists( 'accesspress_store_cart_link' ) ) {
 		function accesspress_store_cart_link() { ?>			
-				<a class="cart-contents wcmenucart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'accesspress-store' ); ?>">
+				<a class="cart-contents wcmenucart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'accesspress-store' ); ?>">
 					<i class="fa fa-shopping-cart"></i> [ <?php echo wp_kses_data( sprintf(  WC()->cart->get_cart_contents_count() ) ); ?> / <span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> ]
 				</a>
 			<?php
@@ -384,7 +384,7 @@ if( is_woocommerce_activated() ){
 			return $fragments;
 		}
 	}
-	add_filter( 'add_to_cart_fragments', 'accesspress_store_cart_link_fragment' );
+	add_filter( 'woocommerce_add_to_cart_fragments', 'accesspress_store_cart_link_fragment' );
 	
 }
 
@@ -436,7 +436,7 @@ function accesspress_header_scripts(){
 				echo 'background:'.esc_attr(get_theme_mod('background_color'));
 			elseif($page_background_option == 'pattern'):
 				echo 'background-color:transparent !important;';
-				echo 'background:url('.get_template_directory_uri().'/inc/images/patterns/'.esc_attr(get_theme_mod("accesspress_background_image_pattern")).'.png)';
+				echo 'background:url('.esc_url(get_template_directory_uri()).'/inc/images/patterns/'.esc_attr(get_theme_mod("accesspress_background_image_pattern")).'.png)';
 			else:
 				echo 'background:none;';
 			endif;
@@ -494,88 +494,88 @@ function accesspress_breadcrumbs() {
     if (is_home() || is_front_page()) {
 
     	if ($showOnHome == 1)
-    		echo '<div id="accesspress-breadcrumb"><a href="' . $homeLink . '">' . $home . '</a></div></div>';
+    		echo '<div id="accesspress-breadcrumb"><a href="' . esc_url($homeLink) . '">' . esc_html($home) . '</a></div></div>';
     } else {
 
-    	echo '<div id="accesspress-breadcrumb"><a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
+    	echo '<div id="accesspress-breadcrumb"><a href="' . esc_url($homeLink) . '">' . esc_html($home) . '</a> ' . wp_kses_post($delimiter) . ' ';
 
     	if (is_category()) {
     		$thisCat = get_category(get_query_var('cat'), false);
     		if ($thisCat->parent != 0)
-    			echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-    		echo $before . __('Archive by category','accesspress-store').' "' . single_cat_title('', false) . '"' . $after;
+    			echo wp_kses_post(get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' '));
+    		echo wp_kses_post($before) . esc_html__('Archive by category','accesspress-store').' "' . single_cat_title('', false) . '"' . wp_kses_post($after);
     	} elseif (is_search()) {
-    		echo $before . __('Search results for','accesspress-store'). '"' . get_search_query() . '"' . $after;
+    		echo wp_kses_post($before) . esc_html__('Search results for','accesspress-store'). '"' . wp_kses_post(get_search_query()) . '"' . wp_kses_post($after);
     	} elseif (is_day()) {
-    		echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-    		echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-    		echo $before . get_the_time('d') . $after;
+    		echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html( get_the_time('Y') ). '</a> ' . wp_kses_post($delimiter) . ' ';
+    		echo '<a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . esc_html(get_the_time('F')) . '</a> ' . wp_kses_post($delimiter) . ' ';
+    		echo wp_kses_post($before) . esc_html(get_the_time('d')) . wp_kses_post($after);
     	} elseif (is_month()) {
-    		echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-    		echo $before . get_the_time('F') . $after;
+    		echo '<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html( get_the_time('Y') ). '</a> ' . wp_kses_post($delimiter) . ' ';
+    		echo wp_kses_post($before) . esc_html(get_the_time('F')) . wp_kses_post($after);
     	} elseif (is_year()) {
-    		echo $before . get_the_time('Y') . $after;
+    		echo wp_kses_post($before) . esc_html( get_the_time('Y') ). wp_kses_post($after);
     	} elseif (is_single() && !is_attachment()) {
     		if (get_post_type() != 'post') {
     			$post_type = get_post_type_object(get_post_type());
     			$slug = $post_type->rewrite;
-    			echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
+    			echo '<a href="' . esc_url($homeLink) . '/' . esc_attr($slug['slug']) . '/">' . esc_html($post_type->labels->singular_name) . '</a>';
     			if ($showCurrent == 1)
-    				echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+    				echo ' ' . wp_kses_post($delimiter) . ' ' . wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
     		} else {
     			$cat = get_the_category();
     			$cat = $cat[0];
-    			$cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+    			$cats = get_category_parents($cat, TRUE, ' ' . wp_kses_post($delimiter) . ' ');
     			if ($showCurrent == 0)
     				$cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-    			echo $cats;
+    			echo wp_kses_post($cats);
     			if ($showCurrent == 1)
-    				echo $before . get_the_title() . $after;
+    				echo wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
     		}
     	} elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
     		$post_type = get_post_type_object(get_post_type());
-    		echo $before . $post_type->labels->singular_name . $after;
+    		echo wp_kses_post($before) . esc_html($post_type->labels->singular_name) . wp_kses_post($after);
     	} elseif (is_attachment()) {
     		$parent = get_post($post->post_parent);
     		$cat = get_the_category($parent->ID);
     		$cat = $cat[0];
-    		echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-    		echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
+    		echo wp_kses_post(get_category_parents($cat, TRUE, ' ' . $delimiter . ' '));
+    		echo '<a href="' . esc_url(get_permalink($parent)) . '">' . esc_html($parent->post_title) . '</a>';
     		if ($showCurrent == 1)
-    			echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+    			echo ' ' . wp_kses_post($delimiter) . ' ' . wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
     	} elseif (is_page() && !$post->post_parent) {
     		if ($showCurrent == 1)
-    			echo $before . get_the_title() . $after;
+    			echo wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
     	} elseif (is_page() && $post->post_parent) {
     		$parent_id = $post->post_parent;
     		$breadcrumbs = array();
     		while ($parent_id) {
     			$page = get_page($parent_id);
-    			$breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+    			$breadcrumbs[] = '<a href="' . esc_url(get_permalink($page->ID)) . '">' . esc_html(get_the_title($page->ID)) . '</a>';
     			$parent_id = $page->post_parent;
     		}
     		$breadcrumbs = array_reverse($breadcrumbs);
     		for ($i = 0; $i < count($breadcrumbs); $i++) {
-    			echo $breadcrumbs[$i];
+    			echo wp_kses_post($breadcrumbs[$i]);
     			if ($i != count($breadcrumbs) - 1)
-    				echo ' ' . $delimiter . ' ';
+    				echo ' ' . wp_kses_post($delimiter) . ' ';
     		}
     		if ($showCurrent == 1)
-    			echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+    			echo ' ' . wp_kses_post($delimiter) . ' ' . wp_kses_post($before) . esc_html(get_the_title()) . wp_kses_post($after);
     	} elseif (is_tag()) {
-    		echo $before . __('Posts tagged','accesspress-store').' "' . single_tag_title('', false) . '"' . $after;
+    		echo wp_kses_post($before) . esc_html__('Posts tagged','accesspress-store').' "' . esc_html(single_tag_title('', false)) . '"' . wp_kses_post($after);
     	} elseif (is_author()) {
     		global $author;
     		$userdata = get_userdata($author);
-    		echo $before . __('Articles posted by ','accesspress-store'). $userdata->display_name . $after;
+    		echo wp_kses_post($before) . esc_html__('Articles posted by','accesspress-store') . ' ' . esc_html($userdata->display_name) . wp_kses_post($after);
     	} elseif (is_404()) {
-    		echo $before . 'Error 404' . $after;
+    		echo wp_kses_post($before) .  esc_html__('Error 404','accesspress-store') . wp_kses_post($after);
     	}
 
     	if (get_query_var('paged')) {
     		if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
     			echo ' (';
-    				echo __('Page', 'accesspress-store') . ' ' . get_query_var('paged');
+    				echo esc_html__('Page', 'accesspress-store') . ' ' . esc_html(get_query_var('paged'));
     				if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
     					echo ')';
 		}
@@ -603,7 +603,7 @@ if( is_woocommerce_activated() ){
 		} elseif ( wc_placeholder_img_src() ) {
 			$placeholder = accesspress_woocommerce_placeholder_img_src();
 			$alt = get_the_title();
-			$placeholder_img = '<img src="'.$placeholder.'" alt="'.$alt.'" />';
+			$placeholder_img = '<img src="'.$placeholder.'" alt="'.esc_attr($alt).'" />';
 			return $placeholder_img;
 		}
 	}
@@ -669,14 +669,9 @@ function accesspress_store_before_top_header_enabled(){
 
 if ( ! function_exists( 'accesspress_store_fallback_menu' ) ) {
 	function accesspress_store_fallback_menu(){
-		/*$args = array(
-			'menu_class'  => 'store-menu',
-			'container_class' => 'menu',
-			'echo'        => true,
-		);
-		wp_page_menu( $args );*/
 		echo '<div class="menu-notif">';
-		printf( __( 'Create %s and set the menu to display at Primary Menu Location.', 'accesspress-store' ), '<a target="_blank" href="'.admin_url( 'nav-menus.php' ).'">Custom Menu</a>' );
+		/* translators: $%s : Menu Link */
+		printf( __( 'Create %s and set the menu to display at Primary Menu Location.', 'accesspress-store' ), '<a target="_blank" href="'.esc_url(admin_url( 'nav-menus.php' )).'">Custom Menu</a>' );
 		echo '</div>';
 	}
 }

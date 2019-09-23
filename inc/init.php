@@ -74,4 +74,4 @@ require $accesspress_store_woocommerce_hooks_file_path = accesspress_store_file_
 /**
  * Load Welcome Page
 */
-require $accesspress_store_plugin_activation_file_path = accesspress_store_file_directory('welcome/welcome.php');
+require $accesspress_store_plugin_activation_file_path = accesspress_store_file_directory('inc/welcome/welcome-config.php');

@@ -95,7 +95,7 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
             ?>
             <p>
                 <label for="<?php echo esc_attr($instance->get_field_id($accesspress_store_widgets_name)); ?>"><?php echo esc_html($accesspress_store_widgets_title); ?>:</label>
-                <textarea class="widefat" rows="<?php echo esc_attr($accesspress_store_widgets_row); ?>" id="<?php echo esc_attr($instance->get_field_id($accesspress_store_widgets_name)); ?>" name="<?php echo esc_attr($instance->get_field_name($accesspress_store_widgets_name)); ?>"><?php echo $athm_field_value; ?></textarea>
+                <textarea class="widefat" rows="<?php echo esc_attr($accesspress_store_widgets_row); ?>" id="<?php echo esc_attr($instance->get_field_id($accesspress_store_widgets_name)); ?>" name="<?php echo esc_attr($instance->get_field_name($accesspress_store_widgets_name)); ?>"><?php echo esc_textarea($athm_field_value); ?></textarea>
             </p>
             <?php
             break;

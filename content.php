@@ -32,7 +32,7 @@
                 	<?php the_excerpt(); ?>
                	</div>
                	<a href="<?php the_permalink(); ?>" class="bttn read-more">
-                    <?php echo __('Read More', 'accesspress-store'); ?>
+                    <?php echo esc_html__('Read More', 'accesspress-store'); ?>
                 </a>                        	                       	
             </div><!-- .entry-content -->                       
         </div>

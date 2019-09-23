@@ -90,13 +90,29 @@ class accesspress_cta_video extends WP_Widget {
         $cta_video_btn_url = isset($instance['cta_video_btn_url']) ? $instance['cta_video_btn_url'] : '';
         $bgfull_image = isset($instance['access_store_image'])? $instance['access_store_image'] : '';
         echo wp_kses_post($before_widget);
+        $allowed_output_html = array(
+            'iframe' => array(
+                    'src' => array(),
+                    'width' => array(),
+                    'height' => array(),
+                    'style' => array(),
+                    'frameborder' => array(),
+                    'allowfullscreen' => array(),
+            ),
+        );
+        $allowed_output_protocol = array(
+                'https',
+                'javascript',
+                'http',
+        );
+        
 ?>
     <style type="text/css">
         #ap-cta-video { background-image: url(<?php echo esc_url($bgfull_image); ?>); }
     </style>
         <div class="cta-video clearfix">
             <div class="cta-wrap-left wow fadeInBounce" data-wow-delay="1s" data-wow-duration="2s">
-                <?php echo $cta_video_iframe; ?>
+                <?php echo wp_kses( $cta_video_iframe, $allowed_output_html, $allowed_output_protocol); ?>
             </div>
             <div class="cta-wrap-right wow fadeIn" data-wow-delay="1.5s">
                 <h2 class="cta-title main-title"><?php echo esc_html($cta_video_title); ?></h2>

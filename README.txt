@@ -47,6 +47,11 @@ Images
 
 
 == Changelog ==
+= 2.4.0 =
+** Added New Welcome page and removed old
+** Added Demo Importer
+** Fixed bugs and design issues
+
 = 2.3.9 =
 ** Fixed Wishlist issues.
 ** Fixed Dynamic color issues.

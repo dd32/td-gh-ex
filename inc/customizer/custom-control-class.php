@@ -120,6 +120,7 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	         * @var    string
 	         */
 	        public $pro_text1 = '';
+	        public $pro_text = '';
 	        public $title1 = '';
 
 	        /**
@@ -129,6 +130,7 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	         * @access public
 	         * @var    string
 	         */
+	        public $pro_url = '';
 	        public $pro_url1 = '';
 
 	        /**
@@ -140,11 +142,11 @@ if( class_exists( 'WP_Customize_control') && class_exists( 'WP_Customize_Section
 	         */
 	        public function json() {
 	            $json = parent::json();
-	            $json['pro_text'] = $this->pro_text;
-	            $json['title1'] = $this->title1;
-	            $json['pro_text1'] = $this->pro_text1;
-	            $json['pro_url']  = esc_url( $this->pro_url );
-	            $json['pro_url1']  = $this->pro_url1;
+	            $json['pro_text'] = isset( $this->pro_text ) ? $this->pro_text : '';
+				$json['title1'] = isset( $this->title1 ) ? $this->title1 : '';
+				$json['pro_text1'] = isset( $this->pro_text1 ) ? $this->pro_text1 : '';
+				$json['pro_url'] = isset( $this->pro_url ) ? esc_url( $this->pro_url ) : '';
+				$json['pro_url1'] = isset( $this->pro_url1 ) ? $this->pro_url1 : '';
 	            return $json;
 	        }
 
