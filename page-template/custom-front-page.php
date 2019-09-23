@@ -6,7 +6,9 @@ get_header(); ?>
 
 <main role="main" id="maincontent">
   <?php do_action( 'advance_it_company_above_slider' ); ?>
+  
   <?php if( get_theme_mod( 'advance_it_company_slider_hide') != '') { ?>
+
   <section id="slider">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <?php $slider_pages = array();
@@ -29,13 +31,13 @@ get_header(); ?>
       <div class="carousel-inner" role="listbox">
         <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+            <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
                 <h2><?php the_title(); ?></h2>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,20 ) ); ?></p>
                 <div class="readbtn">
-                  <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-it-company' );?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-it-company' );?></span></a>
+                  <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-it-company' );?></span></a>
                 </div>
               </div>
             </div>
@@ -48,11 +50,11 @@ get_header(); ?>
       <?php endif;
       endif;?>
       <div class="slider-nex-pre">
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Previous','advance-it-company' );?>" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
           <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-it-company' );?></span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Next','advance-it-company' );?>" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleIndicators"  role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
           <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-it-company' );?></span>
         </a>
@@ -83,9 +85,9 @@ get_header(); ?>
                   if ( $query->have_posts() ) :
                     while ( $query->have_posts() ) : $query->the_post(); ?>
                       <div class="post-sec">
-                        <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><h3><?php the_title(); ?></h3></a>
+                        <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3><span class="screen-reader-text"><?php the_title(); ?></span></a>
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?></p>
-                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+                        <?php the_post_thumbnail(); ?>
                       </div>
                 <?php endwhile; 
                 wp_reset_postdata();?>
@@ -105,7 +107,7 @@ get_header(); ?>
                       <div class="cat-posts ">
                         <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                         <div class="cat_body">
-                          <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>
+                          <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
                           <p>
                             <?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?>
                           </p> 

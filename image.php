@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="maincontent" class="our-services">
+<main role="main" id="maincontent" class="our-services">
     <div class="innerlightbox">
         <div class="container">
             <?php
@@ -19,7 +19,7 @@ get_header(); ?>
                     </div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
-                            the_archive_title( '<h1 class="page-title">', '</h1>' );
+                            the_archive_title( '<h2 class="page-title">', '</h2>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -47,7 +47,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
-                            the_archive_title( '<h1 class="page-title">', '</h1>' );
+                            the_archive_title( '<h2 class="page-title">', '</h2>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -77,7 +77,7 @@ get_header(); ?>
             <?php }else if($left_right == 'One Column'){ ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php
-                        the_archive_title( '<h1 class="page-title">', '</h1>' );
+                        the_archive_title( '<h2 class="page-title">', '</h2>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
                     ?>
                     <?php if ( have_posts() ) :
@@ -104,7 +104,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9'); ?>>
                         <?php
-                            the_archive_title( '<h1 class="page-title">', '</h1>' );
+                            the_archive_title( '<h2 class="page-title">', '</h2>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -135,7 +135,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
-                            the_archive_title( '<h1 class="page-title">', '</h1>' );
+                            the_archive_title( '<h2 class="page-title">', '</h2>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
