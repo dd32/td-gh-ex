@@ -344,13 +344,13 @@ function bard_customize_register( $wp_customize ) {
 						printf( esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use %s.', 'bard' ), esc_html( $theme_data->Name ) );
 					?>
 					</p>
-					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/docs/?ref=bard-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'bard' ); ?></a>
+					<a href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></h3>
 					<p>
 					<?php /* translators: %s link */
-						printf( __( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'bard' ), esc_url('http://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined') );
+						printf( __( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'bard' ), esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined') );
 					?>
 					</p>
 					<a href="<?php echo admin_url('themes.php?page=about-bard#bard-predefined-styles'); ?>" class="button button-primary widefat"><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></a>
@@ -566,7 +566,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'header_image',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Header Options', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/header-image2.html?ref=bard-free-header-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/bard/customizer/free/header-image2.html?ref=bard-free-header-customizer' ),
 				'priority'	  => 100
 			)
 		)
@@ -594,7 +594,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'title_tagline',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Logo Options', 'bard' ),
-				'description' => esc_html( 'http://wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-site-identity-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-site-identity-customizer' ),
 				'priority'	  => 55
 			)
 		)
@@ -1003,7 +1003,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'bard_typography',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Typography Options', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-typography-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/bard/customizer/free/typography-logo.html?ref=bard-free-typography-customizer' ),
 				'priority'	  => 10
 			)
 		)
@@ -1044,7 +1044,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'bard_page_footer',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Footer Options', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/page-footer.html?ref=bard-free-page-footer-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/bard/customizer/free/page-footer.html?ref=bard-free-page-footer-customizer' ),
 				'priority'	  => 100
 			)
 		)

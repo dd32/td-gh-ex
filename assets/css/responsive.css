@@ -261,12 +261,14 @@
     color: inherit !important;
   }
 
-  .bard-instagram-widget .meks-instagram-widget > div {
-    display: none;
+  .bard-instagram-widget .meks-instagram-widget > div,
+  .bard-instagram-widget #sbi_images > div {
+    display: none !important;
   }
 
-  .bard-instagram-widget .meks-instagram-widget > div:nth-child(-n+4) {
-    display: block;
+  .bard-instagram-widget .meks-instagram-widget > div:nth-child(-n+4),
+  .bard-instagram-widget #sbi_images > div:nth-child(-n+4) {
+    display: block !important;
   }
 
 

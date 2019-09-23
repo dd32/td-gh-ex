@@ -22,7 +22,7 @@ function bard_about_page_output() {
 			<?php /* translators: %s theme name */
 					printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2017-2019 years. To understand better what the theme can offer, please click the button below.', 'bard' ), esc_html( $theme_data->Name ) );
 				?>
-				<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'bard' ); ?></a>
+				<br><br><a href="<?php echo esc_url('https://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'bard' ); ?></a>
 		</p><br>
 
 		<?php
@@ -109,7 +109,7 @@ function bard_about_page_output() {
 				<h2><?php esc_html_e( 'Bard Pro - Predefined Styles', 'bard' ); ?></h2>
 				<p>
 					<?php /* translators: %s link */
-						printf( __( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'bard' ), esc_url('http://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined') );
+						printf( __( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'bard' ), esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined') );
 					?>
 				</p>
 
@@ -139,7 +139,7 @@ function bard_about_page_output() {
 					<img src="<?php echo get_template_directory_uri() . '/assets/images/dark.jpg'; ?>" alt="">
 					<div>
 						<h2><?php esc_html_e( 'Dark', 'bard' ); ?></h2>
-						<a href="<?php echo esc_url('http://wp-royal.com/themes/bard-pro/color-black/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
+						<a href="<?php echo esc_url('https://wp-royal.com/themes/bard-pro/color-black/?ref=bard-free-backend-about-predefined-styles'); ?>" target="_blank" class="button button-primary"><?php esc_html_e( 'Live Preview', 'bard' ); ?></a>
 					</div>
 				</div>	
 				<div class="column-width-4">
@@ -614,7 +614,7 @@ function bard_import_demo_files_filter( $default_text ) {
 	$activate_plugins_notice = '';
 	if ( $rpwwt_plugin_link !== '' || $wpiw_plugin_link !== '' ) {
 		/* translators: %s link */
-		$activate_plugins_notice = sprintf( __( 'Recommended (optional): Before you Import Demo Data to get the same demo as shown on our <a href="%s" target="_blank" >Theme Preview Page</a> you need to: ', 'bard' ), esc_url('http://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-section-one-click-demo-import') );
+		$activate_plugins_notice = sprintf( __( 'Recommended (optional): Before you Import Demo Data to get the same demo as shown on our <a href="%s" target="_blank" >Theme Preview Page</a> you need to: ', 'bard' ), esc_url('https://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-section-one-click-demo-import') );
 	}
 
 	$default_text = substr($default_text, 159);
