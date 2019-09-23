@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main id="maincontent" class="content-area">
+<main role="main" id="maincontent" class="content-area">
     <div class="middle-align content_sidebar">
         <div class="container">
             <?php
@@ -18,7 +18,7 @@ get_header(); ?>
                     <div class="site-main col-lg-8 col-md-8" id="sitemain">
             			<?php while ( have_posts() ) : the_post(); ?>    
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <header class="entry-header">
+                                <header class="entry-header" role="banner">
                                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                                     <div class="entry-meta">
@@ -62,7 +62,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -77,7 +77,7 @@ get_header(); ?>
                     <div class="site-main col-lg-8 col-md-8" id="sitemain">
                         <?php while ( have_posts() ) : the_post(); ?>    
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <header class="entry-header">
+                                <header class="entry-header" role="banner">
                                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                                     <div class="entry-meta">
@@ -121,7 +121,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -136,7 +136,7 @@ get_header(); ?>
                 <div class="site-main" id="sitemain">
                     <?php while ( have_posts() ) : the_post(); ?>    
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                            <header class="entry-header">
+                            <header class="entry-header" role="banner">
                                 <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
             
                                 <div class="entry-meta">
@@ -180,7 +180,7 @@ get_header(); ?>
                                     ) );
                                 ?>
                             </div>    
-                            <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                            <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                         </article>    
                         <?php
                             // If comments are open or we have at least one comment, load up the comment template
@@ -195,7 +195,7 @@ get_header(); ?>
                     <div class="site-main col-lg-6 col-md-6" id="sitemain">
                         <?php while ( have_posts() ) : the_post(); ?>    
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <header class="entry-header">
+                                <header class="entry-header" role="banner">
                                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                                     <div class="entry-meta">
@@ -239,7 +239,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -256,7 +256,7 @@ get_header(); ?>
                     <div class="site-main col-lg-3 col-md-3" id="sitemain">
                         <?php while ( have_posts() ) : the_post(); ?>    
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <header class="entry-header">
+                                <header class="entry-header" role="banner">
                                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                                     <div class="entry-meta">
@@ -300,7 +300,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -317,7 +317,7 @@ get_header(); ?>
                     <div class="site-main col-lg-8 col-md-8" id="sitemain">
                         <?php while ( have_posts() ) : the_post(); ?>    
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <header class="entry-header">
+                                <header class="entry-header" role="banner">
                                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                                     <div class="entry-meta">
@@ -361,7 +361,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -377,7 +377,7 @@ get_header(); ?>
                     <div class="site-main col-lg-8 col-md-8" id="sitemain">
                         <?php while ( have_posts() ) : the_post(); ?>    
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                                <header class="entry-header">
+                                <header class="entry-header" role="banner">
                                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 
                                     <div class="entry-meta">
@@ -421,7 +421,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main id="maincontent" class="our-services">
+<main role="main" id="maincontent" class="our-services">
   <div class="innerlightbox">
     <div class="container">
       <?php

@@ -32,14 +32,14 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+            <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
                 <h2><?php the_title();?></h2>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>    
               </div>
               <div class="know-btn">
-                <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'KNOW MORE','bb-mobile-application' );?>"><?php echo esc_html_e('KNOW MORE','bb-mobile-application'); ?><span class="screen-reader-text"><?php esc_html_e( 'KNOW MORE','bb-mobile-application' );?></span></a>
+                <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('KNOW MORE','bb-mobile-application'); ?><span class="screen-reader-text"><?php esc_html_e( 'KNOW MORE','bb-mobile-application' );?></span></a>
               </div> 
             </div>
           </div>
@@ -50,11 +50,11 @@ get_header(); ?>
         <div class="no-postfound"></div>
         <?php endif;
         endif;?>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Previous','bb-mobile-application' );?>" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
           <span class="screen-reader-text"><?php esc_html_e( 'Previous','bb-mobile-application' );?></span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Next','bb-mobile-application' );?>" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
           <span class="screen-reader-text"><?php esc_html_e( 'Next','bb-mobile-application' );?></span>
         </a>
@@ -90,7 +90,7 @@ get_header(); ?>
                           </div>
                         </div>
                         <div class="col-lg-8 col-md-8">
-                          <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>   
+                          <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>   
                         </div>
                       </div>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>    
@@ -135,7 +135,7 @@ get_header(); ?>
                           <div class="abt-img-box"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?></div>
                         </div>
                         <div class="col-lg-8 col-md-8">
-                          <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>
+                          <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
                         </div>
                       </div>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>

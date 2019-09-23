@@ -502,12 +502,12 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	for ( $count = 1; $count <= 4; $count++ ) {
 
 		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'bb_mobile_application_slider' . $count, array(
+		$wp_customize->add_setting( 'bb_mobile_application_slider'.$count, array(
 			'default'           => '',
 			'sanitize_callback' => 'bb_mobile_application_sanitize_dropdown_pages'
 		) );
 
-		$wp_customize->add_control( 'bb_mobile_application_slider' . $count, array(
+		$wp_customize->add_control( 'bb_mobile_application_slider'.$count, array(
 			'label'    => __( 'Select Slide Image Page', 'bb-mobile-application' ),
 			'section'  => 'bb_mobile_application_slidersettings',
 			'type'     => 'dropdown-pages'
@@ -558,7 +558,8 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 
 	//middle image
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+	$post_list = get_posts($args);
 	$i = 0;
 	$pst[]='Select';  
 	foreach($post_list as $post){

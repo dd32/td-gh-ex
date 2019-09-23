@@ -343,7 +343,7 @@ function bb_mobile_application_scripts() {
 		wp_add_inline_style( 'bb-mobile-application-basic-style',$custom_css );
 	wp_enqueue_script( 'bb-mobile-application-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
-	
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'bb-mobile-application-basic-style',$custom_css );
 
@@ -365,7 +365,7 @@ define('BB_MOBILE_APPLICATION_CREDIT','https://www.themeshopy.com/free/wp-bb-mob
 
 if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
 	function bb_mobile_application_credit(){
-		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank' alt='".esc_html__('Mobile App WordPress Theme','bb-mobile-application')."''>". esc_html__('Mobile App WordPress Theme','bb-mobile-application')."</a>";
+		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT).">". esc_html__('Mobile App WordPress Theme','bb-mobile-application')."</a>";
 	}
 }
 

@@ -8,7 +8,7 @@
  */
 ?>
 
-<footer>
+<footer role="contentinfo">
   <div  id="footer" class="copyright-wrapper">
     <div class="container">
       <div class="row">

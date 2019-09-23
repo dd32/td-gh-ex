@@ -17,14 +17,15 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
     <div class="title-box">
     	<div class="container">
-    		<h1><?php the_title();?></h1>
+    		<h2><?php the_title();?></h2>
     	</div>
     </div>
-    <main id="maincontent" class="content-ts">
+    <main role="main" id="maincontent" class="content-ts">
         <div class="container">
             <div class="middle-align">
                     <?php the_post_thumbnail(); ?>
-                    <?php the_content();
+                    <div class="entry-content"><?php the_content();?></div>
+                    <?php 
                     wp_link_pages( array(
                         'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-mobile-application' ) . '</span>',
                         'after'       => '</div>',

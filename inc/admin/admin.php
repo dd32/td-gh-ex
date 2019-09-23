@@ -28,8 +28,8 @@ function bb_mobile_application_mostrar_guide() {
 		</div>
 	</div>
 	<div class="button-bg">
-	<button class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'bb-mobile-application'); ?></button>
-	<button class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'bb-mobile-application'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'bb-mobile-application'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'bb-mobile-application'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'bb-mobile-application'); ?></h3>
