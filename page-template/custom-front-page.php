@@ -6,6 +6,7 @@ get_header(); ?>
 
 <main role="main" id="maincontent">
   <?php do_action( 'advance_fitness_gym_above_slider' ); ?>
+  
   <?php if( get_theme_mod( 'advance_fitness_gym_slider_hide') != '') { ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
@@ -29,7 +30,7 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/></a>
+              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
               <div class="carousel-caption">
                 <div class="inner_carousel">
                   <h2><?php the_title(); ?></h2>
@@ -44,11 +45,11 @@ get_header(); ?>
           <div class="no-postfound"></div>
         <?php endif;
         endif;?>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Previous','advance-fitness-gym' );?>" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-          <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-fitness-gym' );?></span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Next','advance-fitness-gym' );?>" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
           <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-fitness-gym' );?></span>
         </a>
@@ -71,8 +72,8 @@ get_header(); ?>
               <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>                
                 <div class="col-lg-3 col-md-3">
                   <div class="service-border">
-                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
-                    <a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>
+                    <?php the_post_thumbnail('full'); ?>
+                    <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,10 ) ); ?></p>
                   </div>
                 </div>
@@ -100,16 +101,16 @@ get_header(); ?>
               <div class="row">
                 <div class="col-lg-6 col-md-6">
                   <div class="img-box">
-                    <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+                    <?php the_post_thumbnail('full'); ?>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="single-content">
-                    <h4><a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>" ><?php the_title(); ?></a></h4>
+                    <h4><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h4>
                     <hr class="wlcm-hr">
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,70 ) ); ?></p>
                     <div class="know-btn">
-                      <a href="<?php echo esc_url( get_permalink() );?>" alt="<?php esc_html_e( 'READ MORE','advance-fitness-gym' );?>" class="blogbutton-small" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','advance-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span>
+                      <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','advance-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span>
                       </a>
                     </div>
                   </div>

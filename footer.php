@@ -8,7 +8,7 @@
  */
 ?>
 
-<footer>
+<footer role="contentinfo">
     <div id="footer" class="copyright-wrapper">
         <div class="container">
             <div class="row">
@@ -32,6 +32,6 @@
     </div>
 </footer>
 
-    <?php wp_footer();?>
-    </body>
+<?php wp_footer();?>
+</body>
 </html>

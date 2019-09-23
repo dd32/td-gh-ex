@@ -17,8 +17,9 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
-  <a class="screen-reader-text skip-link" href="#maincontent" alt="<?php esc_html_e( 'Skip to content', 'advance-fitness-gym' ); ?>"><?php esc_html_e( 'Skip to content', 'advance-fitness-gym' ); ?></a>
+
+<header role="banner">
+  <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-fitness-gym' ); ?></a>
   <div id="header"> 
     <div class="top_headbar">
       <div class="container">  
@@ -37,33 +38,35 @@
           </div>
           <div class="col-lg-6 col-md-4 socialbox">
             <?php if( get_theme_mod( 'advance_fitness_gym_cont_facebook' ) != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_facebook','' ) ); ?>" alt="<?php esc_attr_e( 'Facebook','advance-fitness-gym' );?>><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-fitness-gym' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_facebook','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-fitness-gym' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_fitness_gym_cont_twitter' ) != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_twitter','' ) ); ?>" alt="<?php esc_attr_e( 'Twitter','advance-fitness-gym' );?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-fitness-gym' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_twitter','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-fitness-gym' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_fitness_gym_google_plus') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_google_plus','' ) ); ?>" alt="<?php esc_attr_e( 'Google','advance-fitness-gym' );?>"><i class="fab fa-google-plus-g" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-fitness-gym' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_google_plus','' ) ); ?>"><i class="fab fa-google-plus-g" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-fitness-gym' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_fitness_gym_instagram') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_instagram','' ) ); ?>" alt="<?php esc_attr_e( 'Instagram','advance-fitness-gym' );?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-fitness-gym' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_instagram','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-fitness-gym' );?></span></a>
             <?php } ?>
             <?php if( get_theme_mod( 'advance_fitness_gym_linkedin') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_linkedin','' ) ); ?>" alt="<?php esc_attr_e( 'Linkedin','advance-fitness-gym' );?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-fitness-gym' );?></span></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_linkedin','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkdin','advance-fitness-gym' );?></span></a>
             <?php } ?>
           </div>
           <div class="clearfix"></div>  
         </div>
       </div>
     </div>
-    <button class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-fitness-gym'); ?></a></button>
+    <div class="toggle-menu responsive-menu">
+      <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-fitness-gym'); ?></span></button>
+    </div>
     <div class="middle-header">
       <div class="container">
         <div class="row">
           <div class="logo col-lg-3 col-md-3">
             <?php if( has_custom_logo() ){ advance_fitness_gym_the_custom_logo();
              }else{ ?>
-            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" alt="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <?php $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?> 
             <p class="site-description"><?php echo esc_html($description); ?></p>       
@@ -72,9 +75,20 @@
           <div class="col-lg-9 col-md-9">
             <div class="main-menu">
               <div class="container">
-                <nav class="nav">
-                  <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-                </nav>
+                <div id="menu-sidebar" class="nav sidebar">
+                  <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-fitness-gym' ); ?>">
+                    <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-fitness-gym'); ?></span></a>
+                    <?php 
+                      wp_nav_menu( array( 
+                        'theme_location' => 'primary',
+                        'container_class' => 'main-menu-navigation clearfix' ,
+                        'menu_class' => 'clearfix',
+                        'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                        'fallback_cb' => 'wp_page_menu',
+                      ) ); 
+                    ?>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>

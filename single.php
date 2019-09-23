@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-    <main id="maincontent" class="middle-align">
+    <main role="main" id="maincontent" class="middle-align">
     	<?php
             $left_right = get_theme_mod( 'advance_fitness_gym_layout_options','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>
@@ -97,4 +97,5 @@ get_header(); ?>
 	    <div class="clearfix"></div>
     </main>
 </div>
+
 <?php get_footer(); ?>
