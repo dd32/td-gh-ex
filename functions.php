@@ -396,7 +396,7 @@ define('AAGAZ_STARTUP_CREDIT','https://www.themeseye.com/wordpress/free-startup-
 
 if ( ! function_exists( 'aagaz_startup_credit' ) ) {
 	function aagaz_startup_credit(){
-		echo "<a href=".esc_url(AAGAZ_STARTUP_CREDIT)." target='_blank'>".esc_html__(' Startup WordPress Theme','aagaz-startup')."</a>";
+		echo "<a href=".esc_url(AAGAZ_STARTUP_CREDIT).">".esc_html__(' Startup WordPress Theme','aagaz-startup')."</a>";
 	}
 }
 

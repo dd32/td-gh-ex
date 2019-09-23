@@ -3,6 +3,11 @@
  * Template part for displaying posts
  */
 ?>
+<?php 
+  $archive_year  = get_the_time('Y'); 
+  $archive_month = get_the_time('m'); 
+  $archive_day   = get_the_time('d'); 
+?>
 <?php
   $content = apply_filters( 'the_content', get_the_content() );
   $audio = false;
@@ -28,15 +33,15 @@
         };
       ?>
     </div>
-    <h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>
+    <h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
     <div class="post-info">
-      <i class="fa fa-calendar" aria-hidden="true"></i><span class="entry-date"> <?php echo esc_html(get_the_date()); ?></span>
-      <i class="fa fa-user" aria-hidden="true"></i><span class="entry-author"> <?php the_author(); ?></span>
+      <i class="fa fa-calendar"></i><span class="entry-date"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
+      <i class="fa fa-user"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
       <i class="fas fa-comments"></i><span class="entry-comments"><?php comments_number( __('0 Comments','aagaz-startup'), __('0 Comments','aagaz-startup'), __('% Comments','aagaz-startup') ); ?></span>
     </div>
-    <p><?php the_excerpt();?></p>
+    <div class="text"><p><?php the_excerpt();?></p></div>
     <div class="post-link">
-      <a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_attr_e( 'READ MORE','aagaz-startup' ); ?></a>
+      <a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_attr_e( 'READ MORE','aagaz-startup' ); ?><span class="screen-reader-text"><?php esc_attr_e( 'READ MORE','aagaz-startup' );?></span></a>
     </div>
   </div>
 </article>

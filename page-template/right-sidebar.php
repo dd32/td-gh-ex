@@ -15,8 +15,8 @@ get_header(); ?>
     			<?php while ( have_posts() ) : the_post(); ?>	
                     
                     <h1><?php the_title();?></h1>
-                    <img role="img" src="<?php the_post_thumbnail_url(); ?>" >
-                    <p><?php the_content();?></p>
+                    <?php the_post_thumbnail(); ?>
+                    <div class="text"><p><?php the_content();?></p></div>
                     <?php   
                         if ( comments_open() || '0' != get_comments_number() )
                             comments_template();

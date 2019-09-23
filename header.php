@@ -32,22 +32,22 @@
 							<div class="col-lg-5 col-md-5">
 								<div class="social-icon">
 									<?php if( get_theme_mod( 'aagaz_startup_facebook_url') != '') { ?>
-									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','aagaz-startup' );?></span></a>
 									<?php } ?>
 									<?php if( get_theme_mod( 'aagaz_startup_twitter_url') != '') { ?>
-									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i></a>
+									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','aagaz-startup' );?></span></a>
 									<?php } ?>
 									<?php if( get_theme_mod( 'aagaz_startup_linkedin_url') != '') { ?>
-									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i></a>
+									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','aagaz-startup' );?></span></a>
 									<?php } ?>
 									<?php if( get_theme_mod( 'aagaz_startup_pinterest_url') != '') { ?>
-									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i></a>
+									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','aagaz-startup' );?></span></a>
 									<?php } ?>
 									<?php if( get_theme_mod( 'aagaz_startup_insta_url') != '') { ?>
-									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i></a>
+									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','aagaz-startup' );?></span></a>
 									<?php } ?>
 									<?php if( get_theme_mod( 'aagaz_startup_youtube_url') != '') { ?>
-									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i></a>
+									    <a href="<?php echo esc_url( get_theme_mod( 'aagaz_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','aagaz-startup' );?></span></a>
 									<?php } ?>
 								</div>
 							</div>
@@ -64,7 +64,7 @@
 							<div class="logo">
 								<?php if( has_custom_logo() ){ the_custom_logo();
 					             }else{ ?>
-					            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span></a></h1>
 					            <?php $description = get_bloginfo( 'description', 'display' );
 					            if ( $description || is_customize_preview() ) : ?> 
 					              <p class="site-description"><?php echo esc_html($description); ?></p>
@@ -83,6 +83,5 @@
 			</div>
 		</header>
 	</div>
-
 	<div class="site-content-contain">
 		<div id="content">

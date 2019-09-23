@@ -4,7 +4,7 @@
  */
 
 ?>
-<div class="widget-area">
+<aside class="widget-area">
 	<div class="row">
 		<div class="col-lg-3 col-md-3">
 			<?php dynamic_sidebar( 'footer-1' ); ?>
@@ -19,4 +19,4 @@
 			<?php dynamic_sidebar( 'footer-4' ); ?>
 		</div>
 	</div>
-</div>
+</aside>

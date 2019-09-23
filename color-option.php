@@ -10,7 +10,7 @@
 		$custom_css .='}';
 	}
 	if($aagaz_startup_theme_color != false){
-		$custom_css .='a, .navigation-top a , .main-navigation li li:focus > a, .main-navigation a:hover, .main-navigation ul ul li a, .main-navigation li li:focus > a, .woocommerce-message::before{';
+		$custom_css .='.main-navigation li li:focus > a, .main-navigation a:hover, .main-navigation ul ul li a, .main-navigation li li:focus > a, .woocommerce-message::before, .nav-subtitle{';
 			$custom_css .='color: '.esc_html($aagaz_startup_theme_color).';';
 		$custom_css .='}';
 	}
@@ -22,6 +22,11 @@
 	if($aagaz_startup_theme_color != false){
 		$custom_css .='#about .about-text hr, .woocommerce-message{';
 			$custom_css .='border-top-color: '.esc_html($aagaz_startup_theme_color).';';
+		$custom_css .='}';
+	}
+	if($aagaz_startup_theme_color != false){
+		$custom_css .='.main-navigation a:hover{';
+			$custom_css .='border-bottom-color: '.esc_html($aagaz_startup_theme_color).';';
 		$custom_css .='}';
 	}
 	if($aagaz_startup_theme_color != false){

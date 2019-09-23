@@ -14,7 +14,7 @@ get_header(); ?>
 		<header role="banner" class="page-header">
 			<h2 class="page-title"><?php esc_html_e( 'Posts', 'aagaz-startup' ); ?></h2>
 		</header>
-		<?php endif; ?>		
+		<?php endif; ?>
 			<?php
 			    $layout_setting = get_theme_mod( 'aagaz_startup_layout_settings', __('Right Sidebar','aagaz-startup') );
 		    if($layout_setting == 'Left Sidebar'){ ?>

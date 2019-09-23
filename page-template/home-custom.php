@@ -30,13 +30,13 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <img role="img" src="<?php the_post_thumbnail_url('full'); ?>"/>
+            <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
                 <h2><?php the_title();?></h2>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt,20 ) ); ?></p>
                 <div class ="readbutton">
-                  <a href="<?php the_permalink(); ?>"> <?php echo esc_html(get_theme_mod('aagaz_startup_slide_page',__('READ MORE','aagaz-startup'))); ?></a>
+                  <a href="<?php the_permalink(); ?>"> <?php echo esc_html(get_theme_mod('aagaz_startup_slide_page',__('READ MORE','aagaz-startup'))); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','aagaz-startup' );?></span></a>
                 </div>
               </div>
             </div>
@@ -50,9 +50,11 @@ get_header(); ?>
         endif;?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="screen-reader-text"><?php esc_attr_e( 'Previous','aagaz-startup' );?></span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          <span class="screen-reader-text"><?php esc_attr_e( 'Next','aagaz-startup' );?></span>
         </a>
       </div> 
       <div class="clearfix"></div>
@@ -88,12 +90,12 @@ get_header(); ?>
                     <h4><?php the_title(); ?></h4>
                     <p><?php the_excerpt();  ?></p>
                     <div class ="aboutbtn">
-                      <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','aagaz-startup'); ?></a>
+                      <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','aagaz-startup'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','aagaz-startup' );?></span></a>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6">
                     <div class="abt-image">
-                      <img role="img" src="<?php the_post_thumbnail_url('full'); ?>"/>
+                      <?php the_post_thumbnail(); ?>
                     </div>
                   </div>
                 </div>
