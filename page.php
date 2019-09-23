@@ -14,14 +14,14 @@ get_header(); ?>
 
 <?php do_action( 'bb_ecommerce_store_page_header' ); ?>
 
-<main id="maincontent" class="content-bb">
+<main role="main" id="maincontent" class="content-bb">
     <div class="container">
         <div class="middle-align">
             <?php while ( have_posts() ) : the_post(); ?>
-                <h1><?php the_title();?></h1>
+                <h2><?php the_title();?></h2>
                 <?php the_post_thumbnail(); ?>
-                <?php the_content();
-
+                <div class="entry-content"><?php the_content();?></div>
+            <?php
                 wp_link_pages( array(
                     'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-ecommerce-store' ) . '</span>',
                     'after'       => '</div>',
@@ -30,12 +30,11 @@ get_header(); ?>
                     'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-ecommerce-store' ) . ' </span>%',
                     'separator'   => '<span class="screen-reader-text">, </span>',
                 ) );
-
-                    // If comments are open or we have at least one comment, load up the comment template.
-                       if ( comments_open() || get_comments_number() ) :
-                           comments_template();
-                       endif;
-                    ?>
+                // If comments are open or we have at least one comment, load up the comment template.
+                   if ( comments_open() || get_comments_number() ) :
+                       comments_template();
+                   endif;
+                ?>
             <?php endwhile; // end of the loop. ?>            
         </div>
     </div>

@@ -10,10 +10,10 @@ get_header(); ?>
 <?php do_action( 'bb_ecommerce_store_single_header' ); ?>
 
 <div class="container">
-    <main id="maincontent" class="middle-align">
+    <main role="main" id="maincontent" class="middle-align">
     	<?php
-	        $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
-	        if($left_right == 'Left Sidebar'){ ?> 
+        $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
+        if($left_right == 'Left Sidebar'){ ?> 
 	        <div class="row">
 		    	<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				<div class="col-lg-8 col-md-8" class="content-bb">

@@ -37,9 +37,9 @@ get_header(); ?>
 		                   <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
 		                    <?php
 		                   if ( $image ) {
-		                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="" />';
+		                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php the_title(); ?>" role="img" />';
 		                }
-		                  echo esc_html( $product_category->name ); ?></a></li>
+		                  echo esc_html( $product_category->name ); ?><span class="screen-reader-text"><?php esc_html_e( 'Product Category','bb-ecommerce-store' );?></span></a></li>
 		                   <?php
 		                  }
 		                }
@@ -77,13 +77,13 @@ get_header(); ?>
 						    <div class="carousel-inner" role="listbox">
 						      	<?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 						        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-						          	<img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+						          	<?php the_post_thumbnail(); ?>
 						          	<div class="carousel-caption">
 							            <div class="inner_carousel">
 							              	<h2><?php the_title();?></h2>
 							              	<div class="more-btn">            
-					                        	<a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?>"><?php esc_html_e('READ MORE','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?></span></a>
-					                      </div>		            
+					                        	<a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?></span></a>
+					                        </div>		            
 							            </div>
 						          	</div>
 						        </div>
@@ -94,11 +94,11 @@ get_header(); ?>
 						    <div class="no-postfound"></div>
 						      <?php endif;
 						    endif;?>
-						    <a class="carousel-control-prev" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Previous','bb-ecommerce-store' );?>" role="button" data-slide="prev">
+						    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 						      <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
 						      <span class="screen-reader-text"><?php esc_html_e( 'Previous','bb-ecommerce-store' );?></span>
 						    </a>
-						    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" alt="<?php esc_html_e( 'Next','bb-ecommerce-store' );?>">
+						    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
 						      <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
 						      <span class="screen-reader-text"><?php esc_html_e( 'Next','bb-ecommerce-store' );?></span>
 						    </a>
@@ -113,16 +113,16 @@ get_header(); ?>
 					<section id="our-service">					
 						<div class="row">
 						    <?php 
-							  $catData=  get_theme_mod('bb_ecommerce_store_services_category');
-							  if($catData){
+							$catData=  get_theme_mod('bb_ecommerce_store_services_category');
+							if($catData){
 						    $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'bb-ecommerce-store')));?>
-						     	<?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-						     		<div class="col-lg-4 col-md-4">
-						     			<div class="service">
-						          			<a href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"><h4><?php the_title(); ?></h4></a>
-						          			<p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_ecommerce_store_string_limit_words( $excerpt,10 ) ); ?></p>
-						          		</div>
-						        	</div>
+					     	<?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					     		<div class="col-lg-4 col-md-4">
+					     			<div class="service">
+					          			<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
+					          			<p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_ecommerce_store_string_limit_words( $excerpt,10 ) ); ?></p>
+					          		</div>
+					        	</div>
 					     	<?php endwhile;
 					     	wp_reset_postdata();
 							}?>
@@ -134,37 +134,37 @@ get_header(); ?>
 
 				<?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>   
 					<section id="our-products">
-						    <div class="text-center innerlightbox">
-						        <?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>     
-						            <h3><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></h3>
-						        <?php }?>
-						    </div>
-							<?php $slider_pages = array();
-								$mod = intval( get_theme_mod( 'bb_ecommerce_store_servicesettings' ));
-								if ( 'page-none-selected' != $mod ) {
-								  $slider_pages[] = $mod;
-								}
-							if( !empty($slider_pages) ) :
-							  $args = array(
-							    'post_type' => 'page',
-							    'post__in' => $slider_pages,
-							    'orderby' => 'post__in'
-							  );
-							  $query = new WP_Query( $args );
-							  if ( $query->have_posts() ) :
-							   
-									while ( $query->have_posts() ) : $query->the_post(); ?>
-									    <div class="row box-image text-center">
-									        <p><?php the_content(); ?></p>
-									        <div class="clearfix"></div>
-									    </div>
-									<?php endwhile; ?>
-							  <?php else : ?>
-							      <div class="no-postfound"></div>
-							  <?php endif;
-							endif;
-							wp_reset_postdata();?>
-						    <div class="clearfix"></div> 
+					    <div class="text-center innerlightbox">
+					        <?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>     
+					            <h3><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></h3>
+					        <?php }?>
+					    </div>
+						<?php $slider_pages = array();
+							$mod = intval( get_theme_mod( 'bb_ecommerce_store_servicesettings' ));
+							if ( 'page-none-selected' != $mod ) {
+							  $slider_pages[] = $mod;
+							}
+						if( !empty($slider_pages) ) :
+						  $args = array(
+						    'post_type' => 'page',
+						    'post__in' => $slider_pages,
+						    'orderby' => 'post__in'
+						  );
+						  $query = new WP_Query( $args );
+						  if ( $query->have_posts() ) :
+						   
+								while ( $query->have_posts() ) : $query->the_post(); ?>
+								    <div class="row box-image text-center">
+								        <p><?php the_content(); ?></p>
+								        <div class="clearfix"></div>
+								    </div>
+								<?php endwhile; ?>
+						  <?php else : ?>
+						      <div class="no-postfound"></div>
+						  <?php endif;
+						endif;
+						wp_reset_postdata();?>
+					    <div class="clearfix"></div> 
 					</section>
 				<?php }?>
 
@@ -179,6 +179,5 @@ get_header(); ?>
 		</div>
 	</div>
 </main>
-<div class="clearfix"></div>
 
 <?php get_footer(); ?>

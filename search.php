@@ -6,11 +6,11 @@
  */
 get_header(); ?>
 
-<main id="maincontent">
+<main role="main" id="maincontent">
   <div class="container">
     <?php
-        $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
-        if($left_right == 'Left Sidebar'){ ?>
+    $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
+    if($left_right == 'Left Sidebar'){ ?>
       <div class="row">  
         <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
         <div id="our-services" class="services col-lg-8 col-md-8">
@@ -241,7 +241,5 @@ get_header(); ?>
     <?php }?>
   </div>
 </main>
-
-<div class="clearfix"></div>
 
 <?php get_footer(); ?>

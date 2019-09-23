@@ -6,12 +6,12 @@
  */
 get_header(); ?>
 
-<main id="maincontent" class="content-bb">
+<main role="main" id="maincontent" class="content-bb">
     <div class="container">
         <div class="middle-align">
             <?php
-                $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
-                if($left_right == 'Left Sidebar'){ ?>
+            $left_right = get_theme_mod( 'bb_ecommerce_store_theme_options','Right Sidebar');
+            if($left_right == 'Left Sidebar'){ ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2');?></div>
                     <div class="col-lg-8 col-md-8">

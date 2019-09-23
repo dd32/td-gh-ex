@@ -29,8 +29,8 @@ function bb_ecommerce_store_mostrar_guide() {
 		</div>
 	</div>
 	<div class="button-bg">
-	<button class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'bb-ecommerce-store'); ?></button>
-	<button class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'bb-ecommerce-store'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'bb-ecommerce-store'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'bb-ecommerce-store'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'bb-ecommerce-store'); ?></h3>
