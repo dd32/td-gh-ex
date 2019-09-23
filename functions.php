@@ -5,9 +5,9 @@ function benzer_css() {
     wp_enqueue_style( 'benzer-style', get_stylesheet_uri(), array( $parent_style ));
 	
 	wp_enqueue_style('benzer-default',get_stylesheet_directory_uri() .'/css/colors/default.css');
-	wp_dequeue_style('specia-default', get_template_directory_uri() . '/css/colors/default.css');
+	wp_dequeue_style('specia-default');
 	
-	wp_dequeue_script('specia-custom-js', get_template_directory_uri() . '/js/custom.js');
+	wp_dequeue_script('specia-custom-js');
 	wp_enqueue_script('benzer-custom-js', get_stylesheet_directory_uri() . '/js/custom.js');
 }
 add_action( 'wp_enqueue_scripts', 'benzer_css',999);
