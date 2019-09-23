@@ -8,8 +8,7 @@ get_header(); ?>
 <main role="main" id="maincontent">
   <?php do_action( 'advance_education_above_slider' ); ?>
 
-  <?php if( get_theme_mod( 'advance_education_slider_hide') != '') { ?>
-    
+  <?php if( get_theme_mod( 'advance_education_slider_hide') != '') { ?>    
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
         <?php $slider_pages = array();
@@ -32,7 +31,7 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image" role="img"/>
               <div class="carousel-caption">
                 <div class="inner_carousel">
                   <h2><?php the_title(); ?></h2>
@@ -63,11 +62,10 @@ get_header(); ?>
       </div>
       <div class="clearfix"></div>
     </section>
-
   <?php } ?>
 
   <?php do_action( 'advance_education_below_slider' ); ?>
-
+  
   <div class="header-nav">
     <?php get_template_part( 'template-parts/header/header-navigation' ); ?> 
   </div>

@@ -10,7 +10,7 @@ get_header(); ?>
 <main role="main" id="maincontent" class="content-ts">
 	<div class="container">
         <div class="middle-align">
-			<h1><?php printf( '<strong>%s</strong> %s', esc_html__( '404', 'advance-education' ), esc_html__( 'Not Found', 'advance-education' ) ) ?></h1>
+			<h2><?php printf( '<strong>%s</strong> %s', esc_html__( '404', 'advance-education' ), esc_html__( 'Not Found', 'advance-education' ) ) ?></h2>
 			<p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn&hellip', 'advance-education' ); ?></p>
 			<p class="text-404"><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-education' ); ?></p>
 			<div class="read-moresec">

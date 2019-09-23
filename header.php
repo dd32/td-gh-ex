@@ -45,7 +45,7 @@
           </div>
           <div class="col-lg-4 col-md-3">
             <div class="account-btn">
-              <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_attr_e( 'Accountbtn','advance-education' );?></span></a>
+              <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_attr_e( 'MY ACCOUNT','advance-education' );?></span></a>
             </div>
           </div>
         </div>
@@ -53,6 +53,8 @@
     </div>  
   </div>
 </header>
-<button role="tab" class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-education'); ?></a></button>
+<div class="toggle-menu responsive-menu">
+  <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
+</div>
 
-<?php get_template_part( 'template-parts/header/header-navigation' ); ?> 
+<?php get_template_part( 'template-parts/header/header-navigation' ); ?>

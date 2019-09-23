@@ -61,8 +61,8 @@ add_action('after_setup_theme', 'advance_education_setup');
 // Notice after Theme Activation
 function advance_education_activation_notice() {
 	echo '<div class="notice notice-success is-dismissible get-started">';
-		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-education' ) .'</p>';
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_education_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-education' ) .'</a></p>';
+	echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-education' ) .'</p>';
+	echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_education_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-education' ) .'</a></p>';
 	echo '</div>';
 }
 
@@ -387,7 +387,7 @@ function advance_education_scripts() {
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-education-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
-
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'advance-education-basic-style',$custom_css );
 	
@@ -414,5 +414,6 @@ require get_template_directory().'/inc/template-tags.php';
 
 /* Customizer additions. */
 require get_template_directory().'/inc/customizer.php';
+
 /* Admin about theme */
 require get_template_directory() . '/inc/admin/admin.php';

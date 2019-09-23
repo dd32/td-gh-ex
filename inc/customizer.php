@@ -410,7 +410,6 @@ function advance_education_customize_register($wp_customize) {
 
 	for ( $count = 1; $count <= 4; $count++ ) {
 
-		// Add color scheme setting and control.
 		$wp_customize->add_setting( 'advance_education_slider_page' . $count, array(
 			'default'           => '',
 			'sanitize_callback' => 'advance_education_sanitize_dropdown_pages'
