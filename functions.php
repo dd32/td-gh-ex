@@ -5,10 +5,10 @@ function avira_css() {
     wp_enqueue_style( 'avira-style', get_stylesheet_uri(), array( $parent_style ));
 	
 	wp_enqueue_style('avira-default',get_stylesheet_directory_uri() .'/css/colors/default.css');
-	wp_dequeue_style('specia-default', get_template_directory_uri() . '/css/colors/default.css');
+	wp_dequeue_style('specia-default');
 	
 	wp_enqueue_style('avira-media-query',get_stylesheet_directory_uri() .'/css/media-query.css');
-	wp_dequeue_style('specia-media-query', get_template_directory_uri() . '/css/media-query.css');
+	wp_dequeue_style('specia-media-query');
 }
 add_action( 'wp_enqueue_scripts', 'avira_css',999);
    	
