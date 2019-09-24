@@ -110,4 +110,21 @@
 			jQuery('.fancybox').fancybox();			    
     });
 
+  
+  $(document).ready(function() {
+       $(".navbar-nav").accessibleDropDown();
+  });
+
+    $.fn.accessibleDropDown = function () {
+        var el = $(this);
+
+        /* Make dropdown menus keyboard accessible */
+
+        $("a", el).focus(function() {
+            $(this).parents("li").addClass("force-show");
+        }).blur(function() {
+            $(this).parents("li").removeClass("force-show");
+        });
+    }
+
 })(jQuery);

@@ -4,7 +4,7 @@ Theme URI:
 Author: Mapro Collins
 Author URI: https://profiles.wordpress.org/ratinatemplates/
 Description: Appdetail  is a simple and easy to use, modern and creative, user friendly and elegant, WordPress theme for blog, news and magazine sites. It is responsive, cross browser compatible, SEO friendly theme with lots of highly created features. Theme comes with beautiful slider section, featured post column, footer options, sidebar options, site design options and many more. It is very light weighted theme based on customizer. Added custom widgets for author information and advertisement will make your site awesome. Try Product today and blog away. Our dedicated support team will guide you in every steps while using theme.
-Version: 1.0
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: appdetail
@@ -391,7 +391,7 @@ img {
         margin-right: 15px;
     }
 
-    .top-banner .btn-video:hover {
+    .top-banner .btn-video:hover,.top-banner .btn-video:focus {
        background-color: #fff;
        color: #000;
     }
@@ -528,7 +528,7 @@ img {
 }
 
 
-.about-item:hover {
+.about-item:hover ,.about-item:focus {
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0, 0, 0, 0.30), 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0, 0, 0, 0.30);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee, 0 10px 1px -4px rgba(0, 0, 0, 0.30), 0 20px 0 -10px #eee, 0 20px 1px -9px rgba(0, 0, 0, 0.30);
     border: 1px solid #ccc;
@@ -658,7 +658,7 @@ img {
     border-bottom: 2px solid transparent;
 }
 
-    .single-features:hover {
+    .single-features:hover,.single-features:focus {
         -webkit-box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.4);
         -o-box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.4);
         box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.4);
@@ -901,7 +901,9 @@ img {
         transition: all .6s ease;
     }
     .screen-nav .prev:hover,
-    .screen-nav .next:hover{
+    .screen-nav .next:hover,
+    .screen-nav .prev:focus,
+    .screen-nav .next:focus{
         background-color: #fff;
         color: #5424bf;
     }
@@ -959,7 +961,7 @@ img {
     background-color: rgba(0, 0, 0, .9);
 }
 
-.box-main:hover .box-round:before {
+.box-main:hover .box-round:before,.box-main:focus .box-round:before {
     opacity: 1;
     visibility: visible;
     -webkit-transform: scale3d(1, 1, 1);
@@ -982,7 +984,7 @@ img {
     transition: all .3s ease;
 }
 
-.box-main:hover .box-round .social {
+.box-main:hover .box-round .social,.box-main:focus .box-round .social {
     -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
@@ -1003,7 +1005,7 @@ img {
         transition: all .3s ease;
     }
 
-        .social li a:hover {
+        .social li a:hover,.social li a:focus {
             color: #5424bf
         }
 
@@ -1083,7 +1085,7 @@ img {
     font-size: 32px;
     transition: all .6s ease;
 }
-.testi .owl-nav [class*='owl-']:hover{
+.testi .owl-nav [class*='owl-']:hover,.testi .owl-nav [class*='owl-']:focus{
    background-color: #fff;
    color: #5424bf;
 }
@@ -1186,7 +1188,9 @@ img {
 }
 
     .prev-slide:hover,
-    .next-slide:hover {
+    .next-slide:hover,
+    .prev-slide:focus,
+    .next-slide:focus {
         padding: 27px 20px;
         opacity: 1;
     }
@@ -1287,7 +1291,7 @@ img {
         background-color: #5424bf
     }
 
-    .price-item .btn-custom:hover {
+    .price-item .btn-custom:hover,.price-item .btn-custom:focus {
          opacity: .8;
     }
 
@@ -1427,7 +1431,7 @@ img {
         box-shadow:4px 3px 20px 0 rgba(0, 0, 0, .5);
     }
 
-        .soc-icon img:hover {
+        .soc-icon img:hover,.soc-icon img:focus {
             -webkit-transform: translateY(-5px);
             -ms-transform: translateY(-5px);
             transform: translateY(-5px);
@@ -1473,7 +1477,7 @@ img {
         transition: all .6s ease;
     }
 
-.blog-item:hover .blog-top img {
+.blog-item:hover .blog-top img,.blog-item:focus .blog-top img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
@@ -1537,7 +1541,7 @@ img {
     margin-top: 0;
 }
 
-    .blog-item .btn-custom:hover {
+    .blog-item .btn-custom:hover,.blog-item .btn-custom:focus {
        opacity: .8;
     }
 
@@ -1600,7 +1604,7 @@ img {
     transition: all .3s ease;
 }
 
-    .btn-search:hover {
+    .btn-search:hover,.btn-search:focus {
         opacity: .7;
     }
 
@@ -1754,7 +1758,7 @@ img {
     transition: all .3s ease;
 }
 
-.foot-social a:hover {
+.foot-social a:hover, .foot-social a:focus {
     color: #fff;
 }
 
@@ -1773,7 +1777,7 @@ img {
     transition: all .3s linear;
 }
 
-.foot-bottom .foot-social a:hover:before {
+.foot-bottom .foot-social a:hover:before,.foot-bottom .foot-social a:focus:before {
     height: 100%;
 }
 
@@ -1872,7 +1876,7 @@ img {
     padding: 17px 15px;
 }
 
-.main-menu .navigation > li:hover > a,
+.main-menu .navigation > li:hover > a,.main-menu .navigation > li a:focus,
 .main-menu .navigation > li.current > a,
 .main-menu .navigation > li.current-menu-item > a {
     color: #fff;
@@ -1885,10 +1889,10 @@ img {
     padding: 12px 18px;
 }
 
-.main-menu .navigation > li:hover:after,
+.main-menu .navigation > li:hover:after,.main-menu .navigation > li a:hover:after,
 .main-menu .navigation > li.current:after,
 .main-menu .navigation > li.current-menu-item:after,
-.main-menu .navigation > li:hover+li:after,
+.main-menu .navigation > li:hover+li:after,.main-menu .navigation > li a:focus+li:after,
 .main-menu .navigation > li.current+li:after,
 .main-menu .navigation > li.current-menu-item+li:after {
     opacity: 0;
@@ -1899,7 +1903,7 @@ img {
     display: none;
 }
 
-.main-menu .navigation > li:hover > a,
+.main-menu .navigation > li:hover > a,.main-menu .navigation > li a:hover ,
 .main-menu .navigation > li.current > a,
 .main-menu .navigation > li.current-menu-item > a {
     background: transparent;
@@ -1968,7 +1972,7 @@ img {
 .main-menu .navigation > li > ul > li:nth-child(even) > a:after{
   background: #ff7473;
 }
-.main-menu .navigation > li > ul li:hover > a {
+.main-menu .navigation > li > ul li:hover > a,.main-menu .navigation > li > ul li a:focus {
     background-color: #5424bf;
     border-color: #5424bf;
     color: #fff;
@@ -1996,7 +2000,7 @@ img {
 }
 
 
-.main-menu .navigation > li > ul li.menu-item-has-children:hover > a:after {
+.main-menu .navigation > li > ul li.menu-item-has-children:hover > a:after,.main-menu .navigation > li > ul li.menu-item-has-children a:hover::after {
     color: #ffffff;
 }
 
@@ -2047,13 +2051,13 @@ img {
 
 
 
-.main-menu .navigation > li.menu-item-has-children:hover > ul {
+.main-menu .navigation > li.menu-item-has-children:hover > ul,.main-menu .navigation > li.menu-item-has-children a:focus > ul {
     visibility: visible;
     opacity: 1;
     top: 100%;
 }
 
-.main-menu .navigation li > ul > li.menu-item-has-children:hover > .sub-menu {
+.main-menu .navigation li > ul > li.menu-item-has-children:hover > .sub-menu ,.main-menu .navigation li > ul > li.menu-item-has-children a:focus > .sub-menu {
     visibility: visible;
     opacity: 1;
     top: -1px;
@@ -2087,9 +2091,18 @@ img {
         visibility: hidden;
         opacity: 0;
     }
-   .main-menu .navigation > li.menu-item-has-children:hover > .sub-menu {
+    .main-menu .navigation > li.menu-item-has-children:hover > .sub-menu,
+    .main-menu .navigation > li.menu-item-has-children a:focus + ul.sub-menu,
+    .main-menu .navigation > li.menu-item-has-children a:focus ul.sub-menu {
         visibility: visible;
         opacity: 1;
+        top: 100%;
+    }
+
+    .main-menu .navigation > li.menu-item-has-children a:focus ul.sub-menu {
+        visibility: visible;
+        opacity: 1;
+        left:-100%;
         top: 100%;
     }
 }
@@ -2246,6 +2259,9 @@ img {
     .main-menu .navbar-collapse  .navigation > li:hover > a,
     .main-menu .navbar-collapse  .navigation > li > ul > li:hover > a,
     .main-menu .navbar-collapse  .navigation > li > ul > li > ul > li:hover > a,
+    .main-menu .navbar-collapse  .navigation > li a:focus ,
+    .main-menu .navbar-collapse  .navigation > li > ul > li a:focus,
+    .main-menu .navbar-collapse  .navigation > li > ul > li > ul > li a:focus,
     .main-menu .navbar-collapse  .navigation > li.current > a,
     .main-menu .navbar-collapse  .navigation > li.current-menu-item > a {
         background: #292929;
@@ -2394,7 +2410,11 @@ img {
 #author:hover,
 #email:hover,
 #url:hover,
-#comment:hover {
+#comment:hover,
+#author:focus,
+#email:focus,
+#url:focus,
+#comment:focus {
   border-color: #e4ecec;
 }
 #author:active,
@@ -2443,7 +2463,8 @@ img {
   color: #ffffff;
   background-color: #5424bf;
 }
-.comment-form #submit:hover {
+.comment-form #submit:hover ,
+.comment-form #submit:focus {
   color: #ffffff;
   background-color: #5424bf;
   text-decoration: none;
@@ -2504,7 +2525,8 @@ img {
   content: '\f057';
   margin-right: 8px;
 }
-.comment-reply-title #cancel-comment-reply-link:hover {
+.comment-reply-title #cancel-comment-reply-link:hover,
+.comment-reply-title #cancel-comment-reply-link:focus {
   color: #6ca4db;
 }
 
@@ -2718,7 +2740,8 @@ img {
 .comment-section .reply .comment-reply-link:focus {
   color: #989ea6;
 }
-.comment-section .reply .comment-reply-link:hover {
+.comment-section .reply .comment-reply-link:hover,
+.comment-section .reply .comment-reply-link:focus {
   color: #6ca4db;
   text-decoration: underline !important;
 }
@@ -2906,8 +2929,8 @@ img {
     border: 1px solid #ddd;
 }
 
-.pagination .page-numbers:hover{
-
+.pagination .page-numbers:hover,
+.pagination .page-numbers:focus{
     color:#fff;
     background-color: #eee;
 }
@@ -2935,16 +2958,18 @@ img {
 #wp-calendar caption {text-align: center; font-size: 14px;}
 .footer-area-top #wp-calendar caption {text-align: center; font-size: 14px;color: #b0b0b0;}
 #wp-calendar tbody td {margin-bottom:10px;text-align:center;-webkit-border-radius:2px;-moz-border-radius:2px;-ms-border-radius:2px;-o-border-radius:2px;border-radius:2px;border:1px solid #ccc;padding: 6px 10px;}
-#wp-calendar tbody td:hover {border-color:#8224e3;}
-.footer-widget #wp-calendar tbody td:hover {border-color:#b015c8;}
+#wp-calendar tbody td:hover,#wp-calendar tbody td:focus {border-color:#8224e3;}
+.footer-widget #wp-calendar tbody td:hover,.footer-widget #wp-calendar tbody td:focus {border-color:#b015c8;}
 #wp-calendar tbody td.pad {border:0;}
 #wp-calendar tbody td#today {color:#fff;background-color:#b015c8;}
 #wp-calendar tfoot td#prev a,#wp-calendar tfoot td#next a {color:#b0b0b0;font-size:12px;font-weight:400;position:relative;text-transform:uppercase;bottom:-9px;margin-bottom:1px;}
 #wp-calendar tfoot td#prev {text-align:left;}
 #wp-calendar tfoot td#next {text-align:right;}
 #wp-calendar thead th {font-size:14px;font-weight:400; border:none; color:#b0b0b0;text-align:center;padding-bottom:10px;}
-#wp-calendar tbody td a,#wp-calendar tfoot td#prev a:hover,#wp-calendar tfoot td#next a:hover {color:#fff;}
-#wp-calendar tbody td a,#wp-calendar tfoot td#prev a:hover,#wp-calendar tfoot td#next a:hover {color:#8224e3;}
+#wp-calendar tbody td a,#wp-calendar tfoot td#prev a:hover,#wp-calendar tfoot td#next a:hover,
+#wp-calendar tbody td a,#wp-calendar tfoot td#prev a:focus,#wp-calendar tfoot td#next a:focus {color:#fff;}
+#wp-calendar tbody td a,#wp-calendar tfoot td#prev a:hover,#wp-calendar tfoot td#next a:hover,
+#wp-calendar tbody td a,#wp-calendar tfoot td#prev a:focus,#wp-calendar tfoot td#next a:focus {color:#8224e3;}
 #wp-calendar td{
 
     border:none;
@@ -3071,10 +3096,10 @@ margin-top: 5px;
 color: #5424bf;
 
 }
-
 /* Accessibility */
 /* Text meant only for screen readers. */
-.screen-reader-text {
+.skip-link.screen-reader-text {
+  display: block;
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -3088,16 +3113,15 @@ color: #5424bf;
   /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
-.screen-reader-text:focus {
-  background-color: #ef237c;
+.skip-link.screen-reader-text:focus {
+  background-color: #f1f1f1;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #fff;
+  color: #21759b;
   display: block;
   font-size: 14px;
-  font-size: 1.875rem;
   font-weight: bold;
   height: auto;
   right: 5px;
