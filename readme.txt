@@ -1,7 +1,7 @@
 === ArticlePress ===
 
-Contributors: ThemeAsia
-Requires at least: 4.9
+Contributors: ThemeAsia, Shiponkormoker
+Requires at least: 4.5
 Tested up to: 5.2.1
 Stable tag: 1.0.0
 Requires PHP: 5.6.2

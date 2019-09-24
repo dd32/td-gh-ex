@@ -11,7 +11,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 
-require_once( get_template_directory() . '/inc/sanitize.php' );
+
 
 function articlepress_customize_register( $wp_customize ) {
 
@@ -120,3 +120,11 @@ function articlepress_customize_preview_js() {
 	wp_enqueue_script( 'articlepress-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'articlepress_customize_preview_js' );
+
+
+// Icon show hide Sanitize Value
+if ( ! function_exists( 'footer_socail_icon_show_hide_sanitize' ) ){
+    function footer_socail_icon_show_hide_sanitize( $checked ) {
+        return ( ( isset( $checked ) && true == $checked ) ? true : false );
+    }
+}
