@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-flames
 Author: Catch Themes
 Author URI: https://catchthemes.com
 Description: Catch Flames is a Simple, Clean, Lightweight, Box Shaped Full-Width responsive WordPress theme that automatically adapts to the screen's size, ensuring that your content is displayed beautifully no matter what device visitors are using. Catch Flames is wider, bigger and looks luxuriously spacious. It uses Three Columns Layout as its default layout and can be changed to Two Columns or One Column as per your need. This theme can be considered as the successor of our popular theme Catch Box, as it has been further carefully crafted keeping in mind the concerns and adaptation possibilities requested by our existing CatchBox users. Catch Flames is based on HTML5, CSS3 and Catch Themes' very own easy to use Theme Options panel, all of which make it highly customizable and flexible. Put together your beautiful, yet professional website in no time. This theme is compatible with popular plugins such as WPML, qTranslate, mqTranslate, Polulang, WooCommerce, Jetpack, WP-PageNavi, Contact Form 7 and so on. This theme is translation ready and is currently translated in Brazilian Portuguese, French, Spanish and Swedish. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-flames/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-flames/
-Version: 3.4
+Version: 3.5
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-flames
@@ -616,6 +616,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+a:focus {
+	outline: thin dotted;
+}
+
 /* Assistive text */
 .assistive-text,
 .screen-reader-text {
@@ -868,12 +872,12 @@ a:hover {
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	border-left: 1px solid #eee;
-	left: 0;
+	left: -999em;
     width: 205px;
     margin: 0;
 	position: absolute;
 	top: 100%;
-    visibility: hidden;
+    opacity: 0;
     z-index: 9999;
 }
 #access-top ul.menu ul li {
@@ -886,9 +890,17 @@ a:hover {
 	border-top: 1px solid #eee;
 	border-left: none;
 }
-#access-top ul.menu li:hover > ul {
-	visibility: visible;
+#access-top ul.menu li:hover > ul,
+#access-top ul.menu li.focus > ul {
+	left: auto;
+	opacity: 1;
 }
+
+#access-top ul.menu ul li:hover > ul,
+#access-top ul.menu ul li.focus > ul {
+	left: 100%;
+}
+
 #access-top ul.nav ul li {
     display: block;
 }
@@ -995,11 +1007,11 @@ a:hover {
 	-moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-	display: none;
+	opacity: 0;
 	float: left;
 	margin: 0;
 	position: absolute;
-	left: 0;
+	left: -999em;
 	list-style: none;
 	width: 205px;
 	z-index: 99999;
@@ -1059,10 +1071,24 @@ a:hover {
 	color: #373737;
 }
 #header-menu ul.menu li:hover > ul,
+#header-menu ul.menu li.focus > ul,
 .sidebar-top .widget_nav_menu ul.menu li:hover > ul,
-#footer-menu ul.menu li:hover > ul {
-	display: block;
+.sidebar-top .widget_nav_menu ul.menu li.focus > ul,
+#footer-menu ul.menu li:hover > ul,
+#footer-menu ul.menu li.focus > ul {
+	left: auto;
+	opacity: 1;
 }
+
+#header-menu ul.menu ul li:hover > ul,
+#header-menu ul.menu ul li.focus > ul,
+.sidebar-top .widget_nav_menu ul.menu ul li:hover > ul,
+.sidebar-top .widget_nav_menu ul.menu li.focus > ul,
+#footer-menu ul.menu ul li:hover > ul,
+#footer-menu ul.menu ul li.focus > ul {
+	left: 100%;
+}
+
 #header-menu .menu .current-menu-item > a,
 #header-menu .menu .current-menu-ancestor > a,
 #header-menu .menu .current_page_item > a,

@@ -68,7 +68,7 @@ function catchflames_header_top_menu() {
             </div>
 
             <?php if ( has_nav_menu( 'top' ) ) :
-                echo '<nav id="access-top" role="navigation">';
+                echo '<nav id="access-top" class="site-navigation" role="navigation">';
                     $args = array(
                         'theme_location'    => 'top',
                         'container' 		=> false,
@@ -107,7 +107,7 @@ function catchflames_header_menu() {
         <div id="header-menu">
 
             <?php if ( empty ( $header_menu ) ) : ?>
-                <nav id="access" role="navigation">
+                <nav id="access" class="site-navigation" role="navigation">
                     <h3 class="assistive-text"><?php _e( 'Primary menu', 'catch-flames' ); ?></h3>
                     <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff. */ ?>
                     <div class="skip-link"><a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to primary content', 'catch-flames' ); ?>"><?php _e( 'Skip to primary content', 'catch-flames' ); ?></a></div>

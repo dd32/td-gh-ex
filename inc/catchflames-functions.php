@@ -90,6 +90,9 @@ function catchflames_scripts_method() {
 	 */
 	wp_enqueue_script( 'catchflames-custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchflames-custom.min.js', array( 'jquery' ), '20140823', true );
 
+	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
+	wp_enqueue_script( 'catchflames-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/navigation.min.js', array( 'jquery' ), '20152512', true );
+
 	//Browser Specific Enqueue Script
 	//for IE 1-8
 	wp_enqueue_script( 'catchflames-html5', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchflames-ielte8.min.js', array(), '3.7.3' );
@@ -1097,3 +1100,123 @@ function catchflames_promotion_headline() {
 endif; // catchflames_promotion_headline
 
 add_action( 'catchflames_before_main', 'catchflames_promotion_headline', 20 );
+
+/*
+ * Clearing the cache if any changes in Admin Theme Option
+ */
+function catchflames_themeoption_invalidate_caches(){
+	delete_transient( 'catchflames_responsive' ); // Disable responsive layout
+	delete_transient( 'catchflames_inline_css' ); // Custom Inline CSS and color options
+	delete_transient( 'catchflames_default_sliders' ); // featured demo slider
+	delete_transient( 'catchflames_post_sliders' ); // featured post slider
+	delete_transient( 'catchflames_page_sliders' ); // featured page slider
+	delete_transient( 'catchflames_category_sliders' ); // featured category slider
+	delete_transient( 'catchflames_image_sliders' ); // featured image slider
+	delete_transient( 'catchflames_social_networks' );  // Social links on header
+	delete_transient( 'catchflames_social_search' );  // Social links with search  on header
+	delete_transient( 'catchflames_site_verification' ); // scripts which loads on header
+	delete_transient( 'catchflames_footercode' ); // scripts which loads on footer
+	delete_transient( 'catchflames_footer_content' ); // Footer content
+	delete_transient( 'catchflames_logo' ); // Header logo
+	delete_transient( 'catchflames_featured_content' ); // Featured Content
+	delete_transient( 'catchflames_promotion_headline' ); // Promotion Headline
+
+
+}
+
+/*
+ * Clearing the cache if any changes in post or page
+ */
+function catchflames_post_invalidate_caches(){
+	delete_transient( 'catchflames_post_sliders' ); // featured post slider
+	delete_transient( 'catchflames_page_sliders' ); // featured page slider
+	delete_transient( 'catchflames_category_sliders' ); // featured category slider
+}
+//Add action hook here save post
+add_action( 'save_post', 'catchflames_post_invalidate_caches' );
+
+
+/*
+ * Clearing the cache if any changes in Custom Header
+ */
+function catchflames_customheader_invalidate_caches(){
+	delete_transient( 'catchflames_logo'); // Header logo
+}
+//Add action hook here save post
+add_action( 'custom_header_options', 'catchflames_customheader_invalidate_caches' );
+
+
+/**
+ * Function to display the current year.
+ *
+ * @uses date() Gets the current year.
+ * @return string
+ */
+function catchflames_the_year() {
+	return esc_attr( date_i18n( __( 'Y', 'catch-flames' ) ) );
+}
+
+
+/**
+ * Function to display a link back to the site.
+ *
+ * @uses get_bloginfo() Gets the site link
+ * @return string
+ */
+function catchflames_site_link() {
+	return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+}
+
+
+/**
+ * Function to display a link to WordPress.org.
+ *
+ * @return string
+ */
+function catchflames_wp_link() {
+	return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catch-flames' ) . '"><span>' . __( 'WordPress', 'catch-flames' ) . '</span></a>';
+}
+
+
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catchflames_theme_link() {
+	return '<a href="' . esc_url( 'https://catchthemes.com/themes/catch-flames-pro' ) . '" target="_blank" title="' . esc_attr__( 'Theme: Catch Flames Pro', 'catch-flames' ) . '"><span>' . __( 'Theme: Catch Flames Pro', 'catch-flames' ) . '</span></a>';
+}
+
+/**
+ * Function to display Catch Flames Assets
+ *
+ * @return string
+ */
+function catchflames_assets(){
+    $catchflames_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-flames' ) . ' &copy; '. catchflames_the_year() . ' ' . catchflames_site_link() . ' ' . esc_attr__( 'All Rights Reserved.', 'catch-flames' ) . ' ' .'</div><div class="powered">'. catchflames_theme_name() . catchflames_theme_author() . '</div>';
+
+    if ( function_exists( 'get_the_privacy_policy_link' ) ) {
+   		$catchflames_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-flames' ) . ' &copy; '. catchflames_the_year() . ' ' . catchflames_site_link() . ' ' . esc_attr__( 'All Rights Reserved.', 'catch-flames' ) . ' ' . get_the_privacy_policy_link() . '</div><div class="powered">'. catchflames_theme_name() . catchflames_theme_author() . '</div>';
+    }
+    return $catchflames_content;
+}
+
+/**
+ * Function to display a link to WordPress.org.
+ *
+ * @return string
+ */
+function catchflames_theme_name() {
+    return '<span class="theme-name">' . esc_html__( 'Theme: Catch Flames by ', 'catch-flames' ) . '</span>';
+}
+
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catchflames_theme_author() {
+
+    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-flames' ) . '">' . esc_html__( 'Catch Themes', 'catch-flames' ) . '</a></span>';
+
+}

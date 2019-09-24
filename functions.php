@@ -130,9 +130,6 @@ function catchflames_setup() {
 	// Load up theme options defaults
 	require( get_template_directory() . '/inc/panel/catchflames-themeoptions-defaults.php' );
 
-	// Load up our theme options page and related code.
-	require( get_template_directory() . '/inc/panel/theme-options.php' );
-
 	// Load up our Catch Flames metabox
 	require( get_template_directory() . '/inc/catchflames-metabox.php' );
 
