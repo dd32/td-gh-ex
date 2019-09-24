@@ -366,8 +366,11 @@ if ( ! function_exists( 'responsive_js' ) ) {
 
 		// JS at the bottom for fast page loading.
 		// except for Modernizr which enables HTML5 elements & feature detects.
-		wp_enqueue_script( 'modernizr', $template_directory_uri . '/core/' . $directory . '/responsive-modernizr' . $suffix . '.js', array(), '2.6.1', false );
-		wp_enqueue_script( 'responsive-scripts', $template_directory_uri . '/core/' . $directory . '/responsive-scripts' . $suffix . '.js', array(), '1.2.6', true );
+		wp_enqueue_script( 'modernizr', $template_directory_uri . '/core/' . $directory . '/responsive-modernizr' . $suffix . '.js', array(), RESPONSIVE_THEME_VERSION, false );
+		wp_enqueue_script( 'responsive-scripts', $template_directory_uri . '/core/' . $directory . '/responsive-scripts' . $suffix . '.js', array(), RESPONSIVE_THEME_VERSION, true );
+		if ( get_theme_mod( 'responsive_scroll_to_top' ) ) {
+			wp_enqueue_script( 'responsive-scroll', $template_directory_uri . '/core/' . $directory . '/scroll-to-top' . $suffix . '.js', array( 'jquery' ), RESPONSIVE_THEME_VERSION, true );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'responsive_js' );
@@ -560,7 +563,7 @@ function responsive_add_pro_button() {
 					word-break: break-all;
 					padding-right: 120px;
 		}
-		 .wp-full-overlay-sidebar-content #customize-info {background-color: #fff;}
+		.wp-full-overlay-sidebar-content #customize-info {background-color: #fff;}
 
 	</style>
 	<?php

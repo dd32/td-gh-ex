@@ -80,6 +80,8 @@ function responsive_comment_list_pings( $comment ) {
 /**
  * Sets the post excerpt length to 40 words.
  * Adopted from Coraline
+ *
+ * @param  integer $length Length of excerpt.
  */
 function responsive_excerpt_length( $length ) {
 	return 40;

@@ -31,7 +31,7 @@ function responsive_premium_custom_color_styles() {
 	$header_text_color      = get_theme_mod( 'responsive_fullwidth_header_color', '#585858' );
 	$button_radius          = get_theme_mod( 'responsive_button_border_radius', '2' );
 
-	$button_hover_text_color = get_theme_mod( 'button-hover-text-color', '#7db7f0' );
+	$button_hover_text_color = get_theme_mod( 'button-hover-text-color', '#ffffff' );
 
 	$background_color = get_theme_mod( 'background_color' );
 
@@ -82,6 +82,23 @@ function responsive_premium_custom_color_styles() {
 	$footer_background_color = get_theme_mod( 'responsive_footer_background_color' );
 	$footer_text_color       = get_theme_mod( 'responsive_footer_text_color' );
 
+	// Footer Padding.
+	$footer_padding_right  = get_theme_mod( 'responsive_footer_right_padding' );
+	$footer_padding_left   = get_theme_mod( 'responsive_footer_left_padding' );
+	$footer_padding_top    = get_theme_mod( 'responsive_footer_top_padding' );
+	$footer_padding_bottom = get_theme_mod( 'responsive_footer_bottom_padding' );
+
+	// Scroll to top settings.
+	$stt_devices                     = get_theme_mod( 'responsive_scroll_to_top_on_devices' );
+	$stt_position                    = get_theme_mod( 'responsive_scroll_to_top_icon_position' );
+	$stt_icon_size                   = get_theme_mod( 'responsive_scroll_to_top_icon_size' );
+	$stt_icon_radius                 = get_theme_mod( 'responsive_scroll_to_top_icon_radius' );
+	$stt_icon_color                  = get_theme_mod( 'responsive_scroll_to_top_icon_color' );
+	$stt_icon_hover_color            = get_theme_mod( 'responsive_scroll_to_top_icon_hover_color' );
+	$stt_icon_background_color       = get_theme_mod( 'responsive_scroll_to_top_icon_background_color' );
+	$stt_icon_background_hover_color = get_theme_mod( 'responsive_scroll_to_top_icon_background_hover_color' );
+
+	$responsive_transparent_container = get_theme_mod( 'responsive_transparent_container' );
 	if ( isset( $body_typography['color'] ) ) {
 		$body_color = $body_typography['color'];
 	} else {
@@ -554,6 +571,67 @@ function responsive_premium_custom_color_styles() {
 	if ( ! empty( $footer_text_color ) ) {
 		$custom_css .= "#footer *, .full-width-no-box #footer-wrapper .footer_div *{
 			color: {$footer_text_color};
+		}";
+	}
+	if ( ! empty( $footer_padding_right ) ) {
+		$custom_css .= "#footer, body.full-width-no-box div#footer {
+			padding-right: {$footer_padding_right}px;
+		}";
+	}
+	if ( ! empty( $footer_padding_left ) ) {
+		$custom_css .= "#footer, body.full-width-no-box div#footer {
+			padding-left: {$footer_padding_left}px;
+		}";
+	}
+	if ( ! empty( $footer_padding_top ) ) {
+		$custom_css .= "#footer, body.full-width-no-box div#footer {
+			padding-top: {$footer_padding_top}px;
+		}";
+	}
+	if ( ! empty( $footer_padding_bottom ) ) {
+		$custom_css .= "#footer, body.full-width-no-box div#footer {
+			padding-bottom: {$footer_padding_bottom}px;
+		}";
+	}
+	if ( ! empty( $stt_icon_size ) ) {
+		$custom_css .= "#scroll {
+			height: {$stt_icon_size}px;
+			width: {$stt_icon_size}px;
+		}";
+	}
+	if ( ! empty( $stt_position ) ) {
+		$custom_css .= "#scroll {
+			{$stt_position}: 2px;
+		}";
+	}
+	if ( isset( $stt_icon_radius ) ) {
+		$custom_css .= "#scroll {
+			border-radius: {$stt_icon_radius}%;
+		}";
+	}
+	if ( ! empty( $stt_icon_background_color ) ) {
+		$custom_css .= "#scroll {
+			background-color: {$stt_icon_background_color};
+		}";
+	}
+	if ( ! empty( $stt_icon_background_hover_color ) ) {
+		$custom_css .= "#scroll:hover {
+			background-color: {$stt_icon_background_hover_color};
+		}";
+	}
+	if ( ! empty( $stt_icon_color ) ) {
+		$custom_css .= "#scroll span {
+			border-bottom-color : {$stt_icon_color};
+		}";
+	}
+	if ( ! empty( $stt_icon_hover_color ) ) {
+		$custom_css .= "#scroll:hover span {
+			border-bottom-color : {$stt_icon_hover_color};
+		}";
+	}
+	if ( ! empty( $responsive_transparent_container ) ) {
+		$custom_css .= "#wrapper {
+			opacity : {$responsive_transparent_container};
 		}";
 	}
 	wp_add_inline_style( 'responsive-style', $custom_css );

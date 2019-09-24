@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'RESPONSIVE_THEME_VERSION', '3.16.2' );
+define( 'RESPONSIVE_THEME_VERSION', '3.17.2' );
 define( 'RESPONSIVE_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'RESPONSIVE_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 /**
@@ -42,6 +42,8 @@ require $responsive_template_directory . '/core/includes/customizer/customizer.p
 require $responsive_template_directory . '/core/includes/customizer/custom-styles.php';
 require $responsive_template_directory . '/core/includes/compatibility/woocommerce/class-responsive-woocommerce.php';
 require $responsive_template_directory . '/admin/admin-functions.php';
+require $responsive_template_directory . '/core/includes/classes/class-responsive-blog-markup.php';
+
 /**
  * Return value of the supplied responsive free theme option.
  *

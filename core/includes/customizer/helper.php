@@ -752,3 +752,93 @@ if ( ! function_exists( 'responsive_schema_markup' ) ) {
 
 	}
 }
+/**
+ * Read more text.
+ *
+ * @param string $text default read more text.
+ * @return string read more text
+ */
+function responsive_read_more_text( $text ) {
+
+	$read_more = get_theme_mod( 'responsive_blog_read_more_text' );
+	if ( '' != $read_more ) {
+		$text = $read_more;
+	}
+
+	return $text;
+}
+
+/**
+ * Read more class.
+ *
+ * @param array $class default classes.
+ * @return array classes
+ */
+function responsive_read_more_class( $class ) {
+
+	$read_more_button = get_theme_mod( 'responsive_display_read_more_as_button' );
+
+	if ( $read_more_button ) {
+		$class[] = 'button';
+	}
+	return $class;
+}
+/**
+ * Returns excerpt length
+ *
+ * @param  integer $length Length of excerpt.
+ * @return integer         Length of excerpt.
+ */
+function responsive_custom_excerpt_length( $length ) {
+
+	$excerpt_length = get_theme_mod( 'responsive_excerpt_length' );
+	if ( ! empty( $excerpt_length ) ) {
+		$length = $excerpt_length;
+	}
+
+	return $length;
+}
+/**
+ * Function to get Read More Link of Post
+ *
+ * @since 3.17.2
+ *
+ * @return html
+ */
+if ( ! function_exists( 'responsive_post_link' ) ) {
+
+	/**
+	 * Function to get Read More Link of Post
+	 *
+	 * @param  string $output_filter Filter string.
+	 * @return html                Markup.
+	 */
+	function responsive_post_link( $output_filter = '' ) {
+
+		$read_more_text    = apply_filters( 'responsive_post_read_more', __( 'Read More &raquo;', 'responsive' ) );
+		$read_more_classes = apply_filters( 'responsive_post_read_more_class', array() );
+
+		$post_link = sprintf(
+			esc_html( '%s' ),
+			'<a class="' . esc_attr( implode( ' ', $read_more_classes ) ) . '" href="' . esc_url( get_permalink() ) . '"> ' . the_title( '<span class="screen-reader-text">', '</span>', false ) . ' ' . $read_more_text . '</a>'
+		);
+
+		$output = ' &hellip;<p class="read-more"> ' . $post_link . '</p>';
+		return apply_filters( 'responsive_post_link', $output, $output_filter );
+	}
+}
+add_filter( 'excerpt_more', 'responsive_post_link' );
+
+if ( ! function_exists( 'responsive_modify_read_more_link' ) ) {
+	/**
+	 * Function to get Read More Link of Post
+	 *
+	 * @since 3.17.2
+	 * @return html
+	 */
+	function responsive_modify_read_more_link() {
+		$read_more_text    = apply_filters( 'responsive_post_read_more', __( 'Read More &raquo;', 'responsive' ) );
+		$read_more_classes = apply_filters( 'responsive_post_read_more_class', array() );
+		return '<a class="more-link ' . esc_attr( implode( ' ', $read_more_classes ) ) . '" href="' . get_permalink() . '">' . $read_more_text . '</a>';
+	}
+}
