@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-10-19 09:18+0545\n"
+"POT-Creation-Date: 2019-09-25 01:17-0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
@@ -64,7 +64,7 @@ msgstr "Reacties zijn gesloten."
 #: ../content-gallery.php:24 ../content-gallery.php:41
 #: ../content-gallery.php:42 ../content-image.php:22 ../content-search.php:16
 #: ../content-video.php:23 ../content.php:31
-#: ../inc/adventurous-functions.php:140
+#: ../inc/adventurous-functions.php:142
 #, php-format
 msgid "Permalink to %s"
 msgstr "Link naar %s"
@@ -282,127 +282,127 @@ msgstr "https://catchthemes.com"
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/adventurous-functions.php:628
+#: ../inc/adventurous-functions.php:630
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/adventurous-functions.php:633
+#: ../inc/adventurous-functions.php:635
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/adventurous-functions.php:638
+#: ../inc/adventurous-functions.php:640
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/adventurous-functions.php:643
+#: ../inc/adventurous-functions.php:645
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/adventurous-functions.php:648
+#: ../inc/adventurous-functions.php:650
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/adventurous-functions.php:653
+#: ../inc/adventurous-functions.php:655
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/adventurous-functions.php:658
+#: ../inc/adventurous-functions.php:660
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/adventurous-functions.php:663
+#: ../inc/adventurous-functions.php:665
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/adventurous-functions.php:668
+#: ../inc/adventurous-functions.php:670
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/adventurous-functions.php:673
+#: ../inc/adventurous-functions.php:675
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/adventurous-functions.php:678
+#: ../inc/adventurous-functions.php:680
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/adventurous-functions.php:683
+#: ../inc/adventurous-functions.php:685
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/adventurous-functions.php:688
+#: ../inc/adventurous-functions.php:690
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/adventurous-functions.php:693
+#: ../inc/adventurous-functions.php:695
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/adventurous-functions.php:698
+#: ../inc/adventurous-functions.php:700
 msgid "WordPress"
 msgstr "Wordpress"
 
-#: ../inc/adventurous-functions.php:703
+#: ../inc/adventurous-functions.php:705
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/adventurous-functions.php:708
+#: ../inc/adventurous-functions.php:710
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/adventurous-functions.php:713
+#: ../inc/adventurous-functions.php:715
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/adventurous-functions.php:718
+#: ../inc/adventurous-functions.php:720
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/adventurous-functions.php:723
+#: ../inc/adventurous-functions.php:725
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/adventurous-functions.php:728
+#: ../inc/adventurous-functions.php:730
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/adventurous-functions.php:733
+#: ../inc/adventurous-functions.php:735
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/adventurous-functions.php:738
+#: ../inc/adventurous-functions.php:740
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/adventurous-functions.php:743
+#: ../inc/adventurous-functions.php:745
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/adventurous-functions.php:748
+#: ../inc/adventurous-functions.php:750
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/adventurous-functions.php:753
+#: ../inc/adventurous-functions.php:755
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/adventurous-functions.php:758
+#: ../inc/adventurous-functions.php:760
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/adventurous-functions.php:763
+#: ../inc/adventurous-functions.php:765
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/adventurous-functions.php:768
+#: ../inc/adventurous-functions.php:770
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/adventurous-functions.php:773
+#: ../inc/adventurous-functions.php:775
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/adventurous-functions.php:795
+#: ../inc/adventurous-functions.php:797
 msgid "ID"
 msgstr "ID"
 
@@ -417,67 +417,6 @@ msgstr "Doorgaan naar inhoud"
 #: ../inc/adventurous-menus.php:44
 msgid "Secondary Menu"
 msgstr "Submenu"
-
-#: ../inc/adventurous-metabox.php:14 ../inc/adventurous-metabox.php:20
-msgid "Adventurous Options"
-msgstr "Adventurous Options"
-
-#: ../inc/adventurous-metabox.php:34
-msgid "Default"
-msgstr "Standaard"
-
-#: ../inc/adventurous-metabox.php:39
-msgid "Enable"
-msgstr "Inschakelen"
-
-#: ../inc/adventurous-metabox.php:44
-msgid "Disable"
-msgstr "Uitschakelen"
-
-#: ../inc/adventurous-metabox.php:55 ../inc/adventurous-metabox.php:86
-#, php-format
-msgid "Default Layout Set in <a href=\"%s\">Theme Options</a>"
-msgstr "Standaard layout geselecteerd in <a href=\"%s\">Thema-opties</a>"
-
-#: ../inc/adventurous-metabox.php:61
-msgid "Right sidebar"
-msgstr "Rechtse sidebar"
-
-#: ../inc/adventurous-metabox.php:67
-msgid "Left sidebar"
-msgstr "Linkse sidebar"
-
-#: ../inc/adventurous-metabox.php:73
-msgid "No sidebar"
-msgstr "Geen sidebar"
-
-#: ../inc/adventurous-metabox.php:91
-msgid "Featured Image"
-msgstr "Uitgelichte afbeelding"
-
-#: ../inc/adventurous-metabox.php:96
-msgid "Full Image"
-msgstr "Volledige afbeelding"
-
-#: ../inc/adventurous-metabox.php:101
-msgid "Slider Image"
-msgstr "Slider afbeelding"
-
-#: ../inc/adventurous-metabox.php:106
-msgid "Disable Image"
-msgstr "Afbeelding uitschakelen"
-
-#: ../inc/adventurous-metabox.php:123
-msgid "Sidebar Layout"
-msgstr "Sidebar-layout"
-
-#: ../inc/adventurous-metabox.php:153
-msgid "Header Featured Image Options"
-msgstr "Opties voor uitgelichte afbeelding in de header"
-
-#: ../inc/adventurous-metabox.php:181
-msgid "Content Featured Image Options"
-msgstr "Opties voor uitgelichte afbeelding in berichten"
 
 #: ../inc/adventurous-slider.php:240
 msgid ""
@@ -731,6 +670,51 @@ msgstr "Zoeken"
 #: ../sidebar.php:64
 msgid "Archives"
 msgstr "Archieven"
+
+#~ msgid "Adventurous Options"
+#~ msgstr "Adventurous Options"
+
+#~ msgid "Default"
+#~ msgstr "Standaard"
+
+#~ msgid "Enable"
+#~ msgstr "Inschakelen"
+
+#~ msgid "Disable"
+#~ msgstr "Uitschakelen"
+
+#~ msgid "Default Layout Set in <a href=\"%s\">Theme Options</a>"
+#~ msgstr "Standaard layout geselecteerd in <a href=\"%s\">Thema-opties</a>"
+
+#~ msgid "Right sidebar"
+#~ msgstr "Rechtse sidebar"
+
+#~ msgid "Left sidebar"
+#~ msgstr "Linkse sidebar"
+
+#~ msgid "No sidebar"
+#~ msgstr "Geen sidebar"
+
+#~ msgid "Featured Image"
+#~ msgstr "Uitgelichte afbeelding"
+
+#~ msgid "Full Image"
+#~ msgstr "Volledige afbeelding"
+
+#~ msgid "Slider Image"
+#~ msgstr "Slider afbeelding"
+
+#~ msgid "Disable Image"
+#~ msgstr "Afbeelding uitschakelen"
+
+#~ msgid "Sidebar Layout"
+#~ msgstr "Sidebar-layout"
+
+#~ msgid "Header Featured Image Options"
+#~ msgstr "Opties voor uitgelichte afbeelding in de header"
+
+#~ msgid "Content Featured Image Options"
+#~ msgstr "Opties voor uitgelichte afbeelding in berichten"
 
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"
 #~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"

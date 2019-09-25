@@ -247,9 +247,8 @@ function adventurous_header_image() {
 
 		// Check Logo
 		if ( function_exists( 'has_custom_logo' ) ) {
-			$sitedetails = 'logo-enable logo-left';
-
 			if ( has_custom_logo() ) {
+				$sitedetails = 'logo-enable logo-left';
 				$adventurous_header_logo = '
 				<div id="site-logo">'. get_custom_logo() . '</div><!-- #site-logo -->';
 			}

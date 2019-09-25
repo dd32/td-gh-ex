@@ -1,17 +1,19 @@
-== Adventurous ==
+=== Adventurous ===
+Contributors: catchthemes
+Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
+Requires at least: 4.8
+Tested up to: 5.2.3
+Stable tag: 3.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Adventurous Theme by Catch Themes, https://catchthemes.com/
+Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme.
 
-
-== About Adventurous ==
+== Description ==
 
 Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German, Polish, Danish and Czech languages. Supports popular plugins like WP-PageNavi, Jetpack, Contact Form 7, Catch Web Tools and more. Check out Theme Instructions at https://catchthemes.com/theme-instructions/adventurous/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/
 
-
-== Tags ==
-
-black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
-
+For more information about Adventurous please go to https://catchthemes.com/themes/adventurous/
 
 == Translation ==
 
@@ -25,83 +27,42 @@ Added Translation for Danish by Alexander Leo-Hansen ( Email: alexanderleoh@gmai
 Added Translation for Czech by Dan Frolec (Email: dan@frolec.cz)
 
 
-== License ==
-
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Adventurous WordPress Theme, Copyright 2014 Catchthemes.com
-Adventurous is distributed under the terms of the GNU General Public License v3
-
-Adventurous is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
-Unless otherwise specified, all Images are self shot by Catch Themes
-Copyright: Catch Themes, catchthemes.com
-
-Demo Image and Screenshot image are from http://pixabay.com and is Licensed under CC0 licenses
-Slider 1: http://pixabay.com/en/tiger-zoo-cat-predator-114550/
-Slider 2: http://pixabay.com/en/tiger-sumatran-sumatran-tiger-164905/
-Featured 1: http://pixabay.com/en/mountain-risk-caution-sport-247932/
-Featured 2: http://pixabay.com/en/rhino-nepal-national-park-chitwan-381/
-Featured 3: http://pixabay.com/en/nepal-yak-tibetan-ox-last-animal-419/
-Featured 4: http://pixabay.com/en/rafting-white-water-rafting-293542/
-Header Image 1: http://pixabay.com/en/road-asphalt-space-sky-clouds-220058/
-Header Image 2: http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/
-
-
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
-JS Files
-    HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://code.google.com/p/html5shiv/
-
-    jQuery Cycle is Licensed under the MIT and GPL licenses
-    http://jquery.malsup.com/cycle/
-
-    Selectivizr is Licensed under the MIT license
-    http://selectivizr.com/
-
-    fitvids is Licensed under the  WTFPL license
-    http://fitvidsjs.com/
-
-  	jQuery Waypoints is Licensed under the MIT License
-	https://github.com/imakewebthings/jquery-waypoints
-
-
-== Post ID shown in the All Posts Table ==
-
-This theme shows the post id of the posts in the all posts table in the dashboard.
-This is added to help the users to use those ids in the Featured Post Slider Options.
-
-
-== Page ID shown in the All Pages Table ==
-
-This theme shows the page id of the pages in the all pages table in the dashboard.
-This is added to help the users to use those ids in the Featured Page Slider Options.
-
-
-== Theme Instruction ==
-
-Check out the theme instruction at https://catchthemes.com/theme-instructions/adventurous/
-
-
-== Free Support Forum ==
-
-Access to free support forum at https://catchthemes.com/support-forum/forum/adventurous-public/
-
-
 == Installation ==
 
-1. Primary: Login to your wp-admin area and go to "Appearance => Themes". Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (adventurous.zip) that you have downloaded. Via FTP, upload the whole folder (adventurous) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/adventurous/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Adventurous theme to activate it.
-4. Complete all of the required inputs on the Adventurous Theme Options page (in the WP admin panel) and click "Save Changes".
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Catch Store in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/adventurous/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com and WooCommerce Plugin.
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/adventurous in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/adventurous/
+
+= More FAQ =
+
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.2 (Released: September 25, 2019) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Added function_exists check for get_the_privacy_policy_link function usage
+* Bug Fixed: Third level primary menu issue
+* Bug Fixed: Keyboard navigation accessibility issue
+* Bug Fixed: Header right menu alignment issue
+* Updated: Readme file as per new requirement
+* Updated: Metabox UI
 
 = 3.1 (Released: October 19, 2018) =
 * Added: Core Privacy Policy link support in footer
@@ -299,3 +260,49 @@ Note: Now to setup of Page as blog, go to "Settings => Readings". In Front page 
 = 0.1 =
 * Initial release in https://catchthemes.com
 * Submitted theme for review in http://wordpress.org
+
+== Copyright ==
+
+Adventurous WordPress Theme, Copyright 2012-2019 Catchthemes.com
+Adventurous is distributed under the terms of the GNU GPL
+
+== Resources ==
+* Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* JS Files
+    HTML5-Shiv is Licensed under the MIT and GPL licenses
+    https://code.google.com/p/html5shiv/
+
+    jQuery Cycle is Licensed under the MIT and GPL licenses
+    http://jquery.malsup.com/cycle/
+
+    Selectivizr is Licensed under the MIT license
+    http://selectivizr.com/
+
+    fitvids is Licensed under the  WTFPL license
+    http://fitvidsjs.com/
+
+    jQuery Waypoints is Licensed under the MIT License
+    https://github.com/imakewebthings/jquery-waypoints
+
+* Images
+    All images are licensed under [CC0] (https://creativecommons.org/publicdomain/zero/1.0/)
+
+    Demo Image and Screenshot image are from http://pixabay.com and is Licensed under CC0 licenses
+    Slider 1: http://pixabay.com/en/tiger-zoo-cat-predator-114550/
+    Slider 2: http://pixabay.com/en/tiger-sumatran-sumatran-tiger-164905/
+    Featured 1: http://pixabay.com/en/mountain-risk-caution-sport-247932/
+    Featured 2: http://pixabay.com/en/rhino-nepal-national-park-chitwan-381/
+    Featured 3: http://pixabay.com/en/nepal-yak-tibetan-ox-last-animal-419/
+    Featured 4: http://pixabay.com/en/rafting-white-water-rafting-293542/
+    Header Image 1: http://pixabay.com/en/road-asphalt-space-sky-clouds-220058/
+    Header Image 2: http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/
+
+    All other images are self-shot by Catch Themes and released under same license as theme.
+
+
+* Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later
+	http://genericons.com/
+

@@ -47,6 +47,8 @@ function adventurous_scripts() {
 	 */
 	wp_enqueue_script( 'adventurous-custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/adventurous-custom.min.js', array( 'jquery' ), '20150601', true );
 
+	wp_enqueue_script( 'adventurous-navigation', get_template_directory_uri() . '/js/navigation.min.js', array( 'jquery' ), '20150601', true );
+
 	/**
 	 * Adds JavaScript to pages with the comment form to support
 	 * sites with threaded comments (when in use).

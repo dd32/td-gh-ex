@@ -37,9 +37,11 @@ jQuery(document).ready(function() {
 				jQueryform = jQuerythis_el.siblings( '.header-search-wrap' );
 
 			if ( jQueryform.hasClass( 'displaynone' ) ) {
-				jQueryform.css( { 'display' : 'block', 'opacity' : 0 } ).animate( { opacity : 1 }, 300 );
+				jQueryform.css( { 'display' : 'block', 'opacity' : 0 } ).animate( { opacity : 1 }, 100 );
+				jQuery(this).removeClass( 'closed' ).addClass( 'opened' );
 			} else {
-				jQueryform.animate( { opacity : 0 }, 300 );
+				jQueryform.animate( { opacity : 0 }, 100 );
+				jQuery(this).removeClass( 'opened' ).addClass( 'closed' );
 			}
 
 			jQueryform.toggleClass( 'displaynone' );
@@ -48,7 +50,6 @@ jQuery(document).ready(function() {
 
 
 	// Fixed Header
-
 	var stickyNavTop = jQuery('#masthead').offset().top;
 
 	var stickyNav = function(){
@@ -66,6 +67,7 @@ jQuery(document).ready(function() {
 	jQuery(window).scroll(function() {
 	    stickyNav();
 	});
+
 
 	// Scroll Up
 	jQuery("#scrollup").hide();

@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/adventurous
 Author: Catch Themes
 Author URI: https://catchthemes.com
 Description: Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German, Polish, Danish and Czech languages. Supports popular plugins like WP-PageNavi, Jetpack, Contact Form 7, Catch Web Tools and more. Check out Theme Instructions at https://catchthemes.com/theme-instructions/adventurous/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/adventurous/
-Version: 3.1
+Version: 3.2
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blog, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday
@@ -138,6 +138,10 @@ a img {
 }
 .mobile-menu-bar:before {
 	content: "\f419";
+}
+.mobile-nav.opened .mobile-menu-bar:before,
+#header-search.opened:before {
+	content: "\f406";
 }
 #slider-nav .slide-previous:before {
   content: "\f503";
@@ -783,6 +787,10 @@ img#wpstats {
 	position: relative;
 	line-height: 1.5;
 }
+#header-right .widget ul.menu ul li {
+	padding-right: 0;
+	width: 100%;
+}
 #header-right .widget ul.menu a {
 	color: #757575;
 	display: block;
@@ -791,7 +799,7 @@ img#wpstats {
 }
 #header-right .widget ul.menu ul li a {
 	padding: 10px;
-	width: 180px;
+	width: 100%;
 	white-space: normal;
 }
 #header-right .widget ul.menu ul {
@@ -805,11 +813,10 @@ img#wpstats {
 	padding: 10px;
 	position: absolute;
 	top: 44px;
-	left: -20px;
+	left: -999em;
 	list-style: none;
 	opacity: 0;
-	visibility: hidden;
-	width: 200px;
+	width: 220px;
 	z-index: 99999;
 }
 .fixed-header #header-right .widget ul.menu ul {
@@ -817,14 +824,24 @@ img#wpstats {
 }
 .fixed-header #header-right .widget ul.menu ul ul,
 #header-right .widget ul.menu ul ul {
-	left: 210px;
+	right: 100%;
 	top: 0;
+	left:auto;
 }
-#header-right .widget ul.menu li:hover > ul {
+#header-right .widget ul.menu li:hover > ul,
+#header-right .widget ul.menu li.focus > ul {
+	left: auto;
+	right: 0;
 	opacity: 1;
-	visibility: visible;
 }
+
+#header-right .widget ul.menu ul li:hover > ul,
+#header-right .widget ul.menu ul li.focus > ul {
+	right: 100%;
+}
+
 #header-right .widget ul.menu li:hover > a,
+#header-right .widget ul.menu li.focus > a,
 #header-right .widget ul.menu a:focus,
 #header-right .widget ul.menu .current-menu-item > a,
 #header-right .widget ul.menu .current-menu-ancestor > a,
@@ -833,6 +850,7 @@ img#wpstats {
 	color: #7c9b30;
 }
 #header-right .widget ul.menu ul li:hover > a,
+#header-right .widget ul.menu ul li.focus > a,
 #header-right .widget ul.menu ul a:focus,
 #header-right .widget ul.menu ul .current-menu-item > a,
 #header-right .widget ul.menu ul .current-menu-ancestor > a,
@@ -894,10 +912,9 @@ img#wpstats {
 	margin: 0;
 	position: absolute;
 	top: 55px;
-	left: 0;
+	left: -999em;
 	list-style: none;
 	opacity: 0;
-	visibility: hidden;
 	width: 205px;
 	z-index: 99999;
 }
@@ -913,10 +930,20 @@ img#wpstats {
 	border: none;
 }
 #secondary-menu ul.menu li:hover > ul,
-#footer-menu ul.menu li:hover > ul {
+#secondary-menu ul.menu li.focus > ul,
+#footer-menu ul.menu li:hover > ul,
+#footer-menu ul.menu li.focus > ul {
+	left: auto;
 	opacity: 1;
-	visibility: visible;
 }
+
+#secondary-menu ul.menu ul li:hover > ul,
+#secondary-menu ul.menu ul li.focus > ul,
+#footer-menu ul.menu ul li:hover > ul,
+#footer-menu ul.menu ul li.focus > ul {
+	left: 100%;
+}
+
 #secondary-menu ul.menu li:hover > a,
 #secondary-menu ul.menu a:focus,
 #secondary-menu .menu .current-menu-item > a,
@@ -924,6 +951,7 @@ img#wpstats {
 #secondary-menu .menu .current_page_item > a,
 #secondary-menu .menu .current_page_ancestor > a,
 #footer-menu ul.menu li:hover > a,
+#footer-menu ul.menu li.focus > a,
 #footer-menu ul.menu a:focus,
 #footer-menu .menu .current-menu-item > a,
 #footer-menu .menu .current-menu-ancestor > a,
@@ -933,12 +961,14 @@ img#wpstats {
 	color: #fff;
 }
 #secondary-menu ul.menu ul li:hover > a,
+#secondary-menu ul.menu ul li.focus > a,
 #secondary-menu ul.menu ul a:focus,
 #secondary-menu ul.menu ul .current-menu-item > a,
 #secondary-menu ul.menu ul .current-menu-ancestor > a,
 #secondary-menu ul.menu ul .current_page_item > a,
 #secondary-menu  ul.menu ul .current_page_ancestor > a,
 #footer-menu ul.menu ul li:hover > a,
+#footer-menu ul.menu ul li.focus > a,
 #footer-menu ul.menu ul a:focus,
 #footer-menu ul.menu ul .current-menu-item > a,
 #footer-menu ul.menu ul .current-menu-ancestor > a,
