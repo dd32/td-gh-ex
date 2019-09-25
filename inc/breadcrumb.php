@@ -230,7 +230,7 @@ class Breadcrumb_Trail {
 	 * @return void
 	 */
 	protected function set_labels() {
-		$defaults = array(
+		$defaults     = array(
 			'browse'              => '',
 			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'aeonblog' ),
 			'home'                => esc_html__( 'Home', 'aeonblog' ),
@@ -380,9 +380,9 @@ class Breadcrumb_Trail {
 	 * @return void
 	 */
 	protected function add_site_home_link() {
-		$network = is_multisite() && ! is_main_site() && true === $this->args['network'];
-		$label   = $network ? get_bloginfo( 'name' ) : $this->labels['home'];
-		$rel     = $network ? '' : ' rel="home"';
+		$network       = is_multisite() && ! is_main_site() && true === $this->args['network'];
+		$label         = $network ? get_bloginfo( 'name' ) : $this->labels['home'];
+		$rel           = $network ? '' : ' rel="home"';
 		$this->items[] = sprintf( '<a href="%s"%s>%s</a>', esc_url( user_trailingslashit( home_url() ) ), $rel, $label );
 	}
 
@@ -516,7 +516,7 @@ class Breadcrumb_Trail {
 							// Core filter hook.
 							$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
 							// Add the post type archive link to the trail.
-							$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
+							$this->items[]  = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
 							$done_post_type = true;
 							// Break out of the loop.
 							break;
@@ -537,9 +537,9 @@ class Breadcrumb_Trail {
 				// If the post type is not 'post'.
 			} else {
 				$post_type_object = get_post_type_object( $taxonomy->object_type[0] );
-				$label = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+				$label            = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
 				// Core filter hook.
-				$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
+				$label         = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
 				$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type_object->name ) ), $label );
 			}
 		}
@@ -887,7 +887,7 @@ class Breadcrumb_Trail {
 			// Add support for a non-standard label of 'archive_title' (special use case).
 			$label = ! empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
 			// Core filter hook.
-			$label = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
+			$label         = apply_filters( 'post_type_archive_title', $label, $post_type_object->name );
 			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_post_type_archive_link( $post_type ) ), $label );
 		}
 
@@ -907,7 +907,7 @@ class Breadcrumb_Trail {
 	 * @return array $return post type.
 	 */
 	protected function get_post_types_by_slug( $slug ) {
-		$return = array();
+		$return     = array();
 		$post_types = get_post_types( array(), 'objects' );
 		foreach ( $post_types as $type ) {
 			if ( $slug === $type->has_archive || ( true === $type->has_archive && $slug === $type->rewrite['slug'] ) ) {

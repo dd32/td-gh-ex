@@ -42,7 +42,10 @@ if ( ! function_exists( 'aeonblog_dynamic_css' ) ) {
 		}
 
 		if ( ! empty( $aeonblog_font_size ) ) {
-			$custom_css .= "body { font-size: {$aeonblog_font_size}px; }";
+			$custom_css .= "body, input { font-size: {$aeonblog_font_size}px; }";
+			if ( 14 == $aeonblog_font_size ) {
+				$custom_css .= '.widget_search .search-form .search-field { height: 46px; } ';
+			}
 		}
 
 		if ( ! empty( $aeonblog_font_line_height ) ) {

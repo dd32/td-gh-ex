@@ -74,7 +74,6 @@ if ( post_password_required() ) {
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'aeonblog' ); ?></p>
 			<?php
 		}
-
 	} else {
 		echo '<h2 class="comments-title">' . esc_html__( 'Be the first to reply', 'aeonblog' ) . '</h2>';
 	} // Check for have_comments().

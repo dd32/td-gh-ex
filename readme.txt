@@ -1,9 +1,9 @@
 === Aeon Blog ===
 Contributors: aeontheme
 Requires at least: 5.0
-Tested up to: 5.2.2
+Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,12 +26,41 @@ AeonBlog includes support for Infinite Scroll in Jetpack.
 
 You can use email us at support@aeonwp.com.
 
+= How do I change the width of the site? =
+
+You can use the Additional CSS option in the customizer to
+update the width. 
+
+Copy and paste the following code into the Additional CSS option,
+and adjust the percentages as needed:
+
+.blog-wrapper {
+	max-width: 80%;
+}
+
+And include the following to also increase the width of the main content.
+#primary {
+	width: 100%;
+}
+
+-If you increase the width of the main content, you may need to turn off the sticky sidebar.
+
 = Can you add more features? =
 
 We would love to hear your ideas.
 You can use email us at support@aeonwp.com
 
 == Changelog ==
+
+= 1.0.8 - September 25 2019 =
+Added aria label to the social navigation.
+Removed the title attribute from the Go to Top link.
+Added translation functions for the fonts.
+Moved the skip link to the wp_body_open filter.
+Minor improvement for the font size setting.
+Minor change to the position of the avatar in comments.
+Removed function aeonblog_post_thumbnail which was oly used in one place.
+Removed a reference to aeonblog-small-thumb because this custom image size was never set.
 
 = 1.0.7 - September 15 2019 =
 Code style improvements to better match WordPress coding standards.

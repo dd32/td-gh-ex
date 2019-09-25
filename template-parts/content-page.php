@@ -1,6 +1,7 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
  * @author    AeonWP <info@aeonwp.com>
  * @copyright Copyright (c) 2019, AeonWP
@@ -11,10 +12,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
-?>
 
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-wrapper' ); ?>>
-	<?php aeonblog_post_thumbnail(); ?>
+	<div class="post-thumbnail">
+		<?php the_post_thumbnail( 'small' ); ?>
+	</div><!-- .post-thumbnail -->
 
 	<div class="entry-content">
 		<?php

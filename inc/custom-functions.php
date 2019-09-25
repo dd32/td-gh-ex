@@ -34,7 +34,8 @@ if ( ! function_exists( 'aeonblog_about_user' ) ) {
 				echo '</h2>';
 				echo '<div class="about-me-description textwidget">';
 				echo '<a href="' . esc_url( get_author_posts_url( $aeonblog_featured_user->ID ) ) . '">' .
-					get_avatar( $aeonblog_featured_user->user_email, 300 ) . '</a>';
+					get_avatar( $aeonblog_featured_user->user_email, 300 ) . '<span class="screen-reader-text">' . esc_html( $aeonblog_featured_user->display_name ) . '</span></a>';
+
 				echo '<p>' . esc_html( get_user_meta( $aeonblog_featured_user->ID, 'description', true ) )
 					. '</p></div>';
 			}
@@ -106,8 +107,9 @@ if ( ! function_exists( 'aeonblog_go_to_top' ) ) {
 	function aeonblog_go_to_top() {
 		if ( get_theme_mod( 'aeonblog-go-to-top', 1 ) === 1 ) {
 			?>
-			<a id="toTop" class="go-to-top" href="#" title="<?php esc_attr_e( 'Back to top', 'aeonblog' ); ?>">
+			<a id="toTop" class="go-to-top" href="#">
 				<?php echo aeonblog_get_svg( array( 'icon' => 'angle-double-up' ) ); ?>
+				<span class="screen-reader-text"><?php esc_html_e( 'Go to top', 'aeonblog' ); ?></span>
 			</a>
 			<?php
 		}
@@ -209,7 +211,7 @@ if ( ! function_exists( 'aeonblog_related_post' ) ) {
 								?>
 								<figure class="widget-image">
 									<a href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail( 'aeonblog-small-thumb' ); ?>
+										<?php the_post_thumbnail( 'small' ); ?>
 									</a>
 								</figure>
 								<?php

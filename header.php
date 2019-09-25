@@ -22,16 +22,10 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php
-if ( function_exists( 'wp_body_open' ) ) {
-	wp_body_open();
-}
-?>
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aeonblog' ); ?></a>
+<?php wp_body_open(); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<!-- Start Header Branding -->
 		<div class="site-branding">
@@ -61,7 +55,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 	if ( has_nav_menu( 'primary' ) ) {
 		?>
 		<!-- Main Menu -->
-		<nav id="site-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Header menu', 'aeonblog' ); ?>" class="main-navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
+		<nav id="site-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Header', 'aeonblog' ); ?>" class="main-navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
 		<button id="mobile-menu-toggle" aria-controls="main-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'aeonblog' ); ?></button>
 		<?php
 		wp_nav_menu(

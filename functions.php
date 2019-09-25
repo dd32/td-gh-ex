@@ -181,6 +181,26 @@ function aeonblog_widgets_init() {
 }
 add_action( 'widgets_init', 'aeonblog_widgets_init' );
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/47891
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
+if ( ! function_exists( 'aeonblog_skip_link' ) ) {
+	/**
+	 * Include a skip to content link at the top of the page so that users can bypass the menu.
+	 */
+	function aeonblog_skip_link() {
+		echo '<a class="skip-link screen-reader-text" href="#content">' . esc_html__( 'Skip to content', 'aeonblog' ) . '</a>';
+	}
+	add_action( 'wp_body_open', 'aeonblog_skip_link', 5 );
+}
 
 if ( ! function_exists( 'aeonblog_fonts_url' ) ) {
 	/**
