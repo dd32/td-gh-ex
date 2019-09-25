@@ -1,11 +1,40 @@
-== Catch Kathmandu ==
-Catch Kathmandu Theme by Catch Themes, https://catchthemes.com/
+=== Catch Kathmandu ===
+Contributors: catchthemes
+Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 4.8
+Tested up to: 5.2.3
+Stable tag: 4.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-== About Catch Kathmandu ==
+Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged theme
+
+== Description ==
 Catch Kathmandu Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight full-fledged WordPress theme based on HTML5 and CSS3. The design is highly customizable and you can tailor the display to your taste with a few easy clicks. If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Catch Kathmandu is your perfect find. This theme is widely been used by Photographers, Bloggers, Corporate Houses and Universities. Translation ready and currently translated in French, Russian, Spanish, Polish, Brazilian Portuguese, Italian, German(SWITZERLAND), Japanese, Dutch, German and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-kathmandu/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-kathmandu/
 
-== Tags ==
-black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+For more information about Catch Kathmandu please go to https://catchthemes.com/themes/catch-kathmandu/
+
+== Installation ==
+
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in catch-kathmandu in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/catch-kathmandu/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/catch-kathmandu in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/catch-kathmandu/
 
 == Translation ==
 Catch Kathmandu theme is translation ready.
@@ -23,47 +52,10 @@ Added Translation for Catalan - Dr. Jaume Albaiges (jaumealbaiges@hotmail.com)
 Added Translation for German - Stephan Erdmann (Email: s.erdmann@bewegungsfelder.de )
 Added Translation for Danish by Alexander Leo-Hansen and Johan Michaelsen (Email: alexanderleoh@gmail.com)
 
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Kathmandu WordPress Theme, Copyright 2015 Catchthemes.com
-Catch Kathmandu is distributed under the terms of the GNU General Public License v3
-
 Catch Kathmandu is a derivative of the Catch Everest theme by the Catch Themes Team:
 https://wordpress.org/themes/catch-everest
 Copyright: Catch Themes, catchthemes.com
 Licensed under GPLv3 or later
-
-Unless otherwise specified, all Images are self shot by Catch Themes
-Copyright: Catch Themes, catchthemes.com
-
-JS Files
-    HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://code.google.com/p/html5shiv/
-
-    Menu JS code from TinyNav.js and jQuery Selectbox
-    TinyNav.js is Licensed under the MIT license
-    https://github.com/viljamis/TinyNav.js
-    jQuery Selectbox plugin is Licensed under the MIT and GPL licenses
-    http://www.bulgaria-web-developers.com/projects/javascript/selectbox/
-
-    Slider code from jQuery Cycle
-    jquery.cycle.all.js is Licensed under the MIT and GPL licenses
-    http://jquery.malsup.com/cycle/
-
-    Selectivizr - CSS3 selectors for Internet Explorer
-    selectivizr.js is Licensed under the MIT license
-    http://selectivizr.com/
-
-    fitvids is Licensed under the  WTFPL license
-    http://fitvidsjs.com/
-
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
 
 == Post ID shown in the All Posts Table ==
 This theme shows the post id of the posts in the all posts table in the dashboard.
@@ -75,19 +67,26 @@ Check out the theme instruction at https://catchthemes.com/theme-instructions/ca
 == Free Support Forum ==
 Access to free support forum at https://catchthemes.com/support-forum/forum/catch-kathmandu-public/
 
-== Installation ==
-1. Primary: Login to your wp-admin area and go to Appearance => Themes. Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (catch-kathmandu.zip) that you have downloaded. Via FTP, upload the whole folder (catch-kathmandu) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-kathmandu/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Catch Kathmandu theme to activate it.
-4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
+= More FAQ =
 
-== Change log ==
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
+
+== Changelog ==
+
+= 4.0 (Released: September 25, 2019) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Demo featured content customizer preview issue
+* Bug Fixed: Keyboard navigation accessibility issue
+* Removed: Support for legacy theme options
+* Updated: Metabox UI
+* Updated: Readme file as per the new requirement
 
 = 3.9.7 (Released: August 06, 2018) =
 * Added: Core Privacy Policy link support in footer
 * Bug Fixed: Comment Form radio and checkbox alignment
 * Replaced: class_exists( 'woocommerce' ) with class_exists( 'WooCommerce' ) as WooCommerce update caused issues
 * Updated: Upgrade to pro button css
+* Updated: Content type label updated
 
 = 3.9.6 (Released: April 10, 2018) =
 * Bug Fixed: Design issue with Catch Infinite Scroll plugin
@@ -337,3 +336,40 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 = 0.1 =
 * Initial release in https://catchthemes.com
 * Submitted theme for review in http://wordpress.org
+
+== Copyright ==
+
+Catch Kathmandu WordPress Theme, Copyright 2012-2019 Catchthemes.com
+Catch Kathmandu is distributed under the terms of the GNU GPL
+
+== Resources ==
+* Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* Unless otherwise specified, all Images are self shot by Catch Themes
+Copyright: Catch Themes, catchthemes.com
+
+* JS Files
+    HTML5-Shiv is Licensed under the MIT and GPL licenses
+    https://code.google.com/p/html5shiv/
+
+    Menu JS code from TinyNav.js and jQuery Selectbox
+    TinyNav.js is Licensed under the MIT license
+    https://github.com/viljamis/TinyNav.js
+    jQuery Selectbox plugin is Licensed under the MIT and GPL licenses
+    http://www.bulgaria-web-developers.com/projects/javascript/selectbox/
+
+    Slider code from jQuery Cycle
+    jquery.cycle.all.js is Licensed under the MIT and GPL licenses
+    http://jquery.malsup.com/cycle/
+
+    Selectivizr - CSS3 selectors for Internet Explorer
+    selectivizr.js is Licensed under the MIT license
+    http://selectivizr.com/
+
+    fitvids is Licensed under the  WTFPL license
+    http://fitvidsjs.com/
+
+* Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later
+	http://genericons.com/

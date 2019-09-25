@@ -68,11 +68,6 @@ function catchkathmandu_setup() {
 	require( get_template_directory() . '/inc/panel/catchkathmandu-theme-options-defaults.php' );
 
 	/**
-	 * Custom Theme Options
-	 */
-	require( get_template_directory() . '/inc/panel/theme-options.php' );
-
-	/**
 	 * Customizer Options
 	 */
 	require( get_template_directory() . '/inc/panel/customizer/customizer.php' );

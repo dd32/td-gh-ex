@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-06 11:03+0545\n"
-"PO-Revision-Date: 2018-08-06 11:03+0545\n"
+"POT-Creation-Date: 2019-09-25 01:45-0700\n"
+"PO-Revision-Date: 2019-09-25 01:45-0700\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -66,7 +66,7 @@ msgstr "Les commentaires sont fermés."
 #: ../content-gallery.php:25 ../content-gallery.php:42
 #: ../content-gallery.php:43 ../content-image.php:23 ../content-page.php:18
 #: ../content-single.php:18 ../content-video.php:24 ../content.php:32
-#: ../inc/catchkathmandu-functions.php:455
+#: ../inc/catchkathmandu-functions.php:457
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalien vers %s"
@@ -143,7 +143,6 @@ msgid "All Image Posts"
 msgstr "Tous les articles image"
 
 #: ../content-image.php:24 ../inc/panel/customizer/customizer.php:1291
-#: ../inc/panel/theme-options.php:258
 msgid "Image"
 msgstr "Image"
 
@@ -189,11 +188,11 @@ msgstr "Vidéo"
 msgid "Featured post"
 msgstr "Article mis en avant"
 
-#: ../functions.php:114 ../inc/catchkathmandu-menus.php:11
+#: ../functions.php:109 ../inc/catchkathmandu-menus.php:11
 msgid "Primary Menu"
 msgstr "Menu principal"
 
-#: ../functions.php:115 ../inc/catchkathmandu-menus.php:45
+#: ../functions.php:110 ../inc/catchkathmandu-menus.php:45
 msgid "Secondary Menu"
 msgstr "Menu secondaire"
 
@@ -253,268 +252,163 @@ msgstr ""
 msgid "Both comments and trackbacks are currently closed."
 msgstr "Les commentaires et les rétroliens sont fermés pour l'instant."
 
-#: ../inc/catchkathmandu-functions.php:1519
+#: ../inc/catchkathmandu-functions.php:1528
 #: ../inc/panel/customizer/customizer.php:636
-#: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:970
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchkathmandu-functions.php:1524
+#: ../inc/catchkathmandu-functions.php:1533
 #: ../inc/panel/customizer/customizer.php:646
-#: ../inc/panel/theme-options.php:109 ../inc/panel/theme-options.php:978
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchkathmandu-functions.php:1529
+#: ../inc/catchkathmandu-functions.php:1538
 #: ../inc/panel/customizer/customizer.php:656
-#: ../inc/panel/theme-options.php:986
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchkathmandu-functions.php:1534
+#: ../inc/catchkathmandu-functions.php:1543
 #: ../inc/panel/customizer/customizer.php:696
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/catchkathmandu-functions.php:1539
+#: ../inc/catchkathmandu-functions.php:1548
 #: ../inc/panel/customizer/customizer.php:666
-#: ../inc/panel/theme-options.php:994
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchkathmandu-functions.php:1544
+#: ../inc/catchkathmandu-functions.php:1553
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchkathmandu-functions.php:1549
+#: ../inc/catchkathmandu-functions.php:1558
 #: ../inc/panel/customizer/customizer.php:686
-#: ../inc/panel/theme-options.php:1010
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchkathmandu-functions.php:1554
+#: ../inc/catchkathmandu-functions.php:1563
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/catchkathmandu-functions.php:1559
+#: ../inc/catchkathmandu-functions.php:1568
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/catchkathmandu-functions.php:1564
+#: ../inc/catchkathmandu-functions.php:1573
 #: ../inc/panel/customizer/customizer.php:726
-#: ../inc/panel/theme-options.php:1042
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchkathmandu-functions.php:1569
+#: ../inc/catchkathmandu-functions.php:1578
 #: ../inc/panel/customizer/customizer.php:736
-#: ../inc/panel/theme-options.php:1050
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchkathmandu-functions.php:1574
+#: ../inc/catchkathmandu-functions.php:1583
 #: ../inc/panel/customizer/customizer.php:746
-#: ../inc/panel/theme-options.php:1058
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchkathmandu-functions.php:1579
+#: ../inc/catchkathmandu-functions.php:1588
 #: ../inc/panel/customizer/customizer.php:756
-#: ../inc/panel/theme-options.php:1066
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchkathmandu-functions.php:1584
+#: ../inc/catchkathmandu-functions.php:1593
 #: ../inc/panel/customizer/customizer.php:766
-#: ../inc/panel/theme-options.php:1074
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchkathmandu-functions.php:1589
+#: ../inc/catchkathmandu-functions.php:1598
 #: ../inc/panel/customizer/customizer.php:776
-#: ../inc/panel/theme-options.php:1082
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchkathmandu-functions.php:1594
+#: ../inc/catchkathmandu-functions.php:1603
 #: ../inc/panel/customizer/customizer.php:786
-#: ../inc/panel/theme-options.php:1090
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchkathmandu-functions.php:1599
+#: ../inc/catchkathmandu-functions.php:1608
 #: ../inc/panel/customizer/customizer.php:796
-#: ../inc/panel/theme-options.php:1098
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/catchkathmandu-functions.php:1604
+#: ../inc/catchkathmandu-functions.php:1613
 #: ../inc/panel/customizer/customizer.php:806
-#: ../inc/panel/theme-options.php:1106
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/catchkathmandu-functions.php:1609
+#: ../inc/catchkathmandu-functions.php:1618
 #: ../inc/panel/customizer/customizer.php:816
-#: ../inc/panel/theme-options.php:1114
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchkathmandu-functions.php:1614
+#: ../inc/catchkathmandu-functions.php:1623
 #: ../inc/panel/customizer/customizer.php:826
-#: ../inc/panel/theme-options.php:1122
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/catchkathmandu-functions.php:1619
+#: ../inc/catchkathmandu-functions.php:1628
 #: ../inc/panel/customizer/customizer.php:836
-#: ../inc/panel/theme-options.php:1130
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/catchkathmandu-functions.php:1624
+#: ../inc/catchkathmandu-functions.php:1633
 #: ../inc/panel/customizer/customizer.php:846
-#: ../inc/panel/theme-options.php:1138
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/catchkathmandu-functions.php:1629
+#: ../inc/catchkathmandu-functions.php:1638
 #: ../inc/panel/customizer/customizer.php:856
-#: ../inc/panel/theme-options.php:1146
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/catchkathmandu-functions.php:1634
+#: ../inc/catchkathmandu-functions.php:1643
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/catchkathmandu-functions.php:1639
+#: ../inc/catchkathmandu-functions.php:1648
 #: ../inc/panel/customizer/customizer.php:876
-#: ../inc/panel/theme-options.php:1162
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchkathmandu-functions.php:1644
+#: ../inc/catchkathmandu-functions.php:1653
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/catchkathmandu-functions.php:1649
+#: ../inc/catchkathmandu-functions.php:1658
 #: ../inc/panel/customizer/customizer.php:896
-#: ../inc/panel/theme-options.php:1178
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/catchkathmandu-functions.php:1654
+#: ../inc/catchkathmandu-functions.php:1663
 #: ../inc/panel/customizer/customizer.php:906
-#: ../inc/panel/theme-options.php:1186
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchkathmandu-functions.php:1659
+#: ../inc/catchkathmandu-functions.php:1668
 #: ../inc/panel/customizer/customizer.php:916
-#: ../inc/panel/theme-options.php:1194
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchkathmandu-functions.php:1664
+#: ../inc/catchkathmandu-functions.php:1673
 #: ../inc/panel/customizer/customizer.php:926
-#: ../inc/panel/theme-options.php:1202
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchkathmandu-functions.php:1759
+#: ../inc/catchkathmandu-functions.php:1768
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchkathmandu-functions.php:1792
-#: ../inc/catchkathmandu-functions.php:1805
+#: ../inc/catchkathmandu-functions.php:1801
+#: ../inc/catchkathmandu-functions.php:1814
 msgid "Menu"
 msgstr "Menu"
 
 #: ../inc/catchkathmandu-menus.php:12
 msgid "Skip to content"
 msgstr "Aller au contenu"
-
-#: ../inc/catchkathmandu-metabox.php:14 ../inc/catchkathmandu-metabox.php:20
-msgid "Catch Kathmandu Options"
-msgstr "Catch Kathmandu Options"
-
-#: ../inc/catchkathmandu-metabox.php:34
-msgid "Default"
-msgstr "Défaut"
-
-#: ../inc/catchkathmandu-metabox.php:39
-msgid "Enable"
-msgstr "Activer"
-
-#: ../inc/catchkathmandu-metabox.php:44
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:189
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:285
-#: ../inc/panel/theme-options.php:474 ../inc/panel/theme-options.php:838
-msgid "Disable"
-msgstr "Désactiver"
-
-#: ../inc/catchkathmandu-metabox.php:55 ../inc/catchkathmandu-metabox.php:85
-msgid "Default Layout Set in"
-msgstr "Les options de maquette par défaut sont réglés dans"
-
-#: ../inc/catchkathmandu-metabox.php:55 ../inc/catchkathmandu-metabox.php:85
-#: ../inc/panel/customizer/customizer.php:52 ../inc/panel/theme-options.php:44
-#: ../inc/panel/theme-options.php:45 ../inc/panel/theme-options.php:125
-msgid "Theme Options"
-msgstr "Options du thème"
-
-#: ../inc/catchkathmandu-metabox.php:61
-msgid "Right sidebar"
-msgstr "Barre latérale à droite"
-
-#: ../inc/catchkathmandu-metabox.php:67
-msgid "Left sidebar"
-msgstr "Barre latérale à gauche"
-
-#: ../inc/catchkathmandu-metabox.php:73
-msgid "No sidebar"
-msgstr "Sans barre latérale"
-
-#: ../inc/catchkathmandu-metabox.php:90
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:205
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:221
-#: ../inc/panel/theme-options.php:492 ../inc/panel/theme-options.php:557
-msgid "Featured Image"
-msgstr "Image mise en avant"
-
-#: ../inc/catchkathmandu-metabox.php:95
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:203
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:219
-#: ../inc/panel/theme-options.php:484 ../inc/panel/theme-options.php:561
-msgid "Full Image"
-msgstr "Image entière"
-
-#: ../inc/catchkathmandu-metabox.php:100
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:204
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:220
-#: ../inc/panel/theme-options.php:488 ../inc/panel/theme-options.php:565
-msgid "Slider Image"
-msgstr "Image diaporama"
-
-#: ../inc/catchkathmandu-metabox.php:105
-#: ../inc/panel/catchkathmandu-theme-options-defaults.php:222
-#: ../inc/panel/theme-options.php:569
-msgid "Disable Image"
-msgstr "Désactiver Image"
-
-#: ../inc/catchkathmandu-metabox.php:122
-msgid "Sidebar Layout"
-msgstr "Présentation pour la barre latérale"
-
-#: ../inc/catchkathmandu-metabox.php:152 ../inc/panel/theme-options.php:425
-msgid "Header Featured Image Options"
-msgstr "Options pour l'image d'en-tête"
-
-#: ../inc/catchkathmandu-metabox.php:180
-#: ../inc/panel/customizer/customizer.php:87 ../inc/panel/theme-options.php:549
-msgid "Content Featured Image Options"
-msgstr "Options pour le contenu inscrit dans l'image"
 
 #: ../inc/catchkathmandu-widgets.php:14
 msgid "Main Sidebar"
@@ -524,7 +418,7 @@ msgstr "Barre principale"
 msgid "Shows the Widgets at the side of Content"
 msgstr "Affiche les Widgets à côté de Contenu"
 
-#: ../inc/catchkathmandu-widgets.php:25 ../inc/panel/theme-options.php:412
+#: ../inc/catchkathmandu-widgets.php:25
 msgid "Header Right Sidebar"
 msgstr "Barre latérale à droite dans l'en-tête"
 
@@ -575,17 +469,14 @@ msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu Logo"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:103
-#: ../inc/panel/theme-options.php:1742
 msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:103
-#: ../inc/panel/theme-options.php:1742
 msgid "All Rights Reserved"
 msgstr "Tous droits réservés"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:103
-#: ../inc/panel/theme-options.php:1742
 msgid "Catch Kathmandu by"
 msgstr "Catch Kathmandu de"
 
@@ -598,155 +489,152 @@ msgid "https://catchthemes.com"
 msgstr "https://catchthemes.com"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:142
-#: ../inc/panel/theme-options.php:93 ../inc/panel/theme-options.php:94
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:153
-#: ../inc/panel/theme-options.php:643
 msgid "Light (Blue)"
 msgstr "Clair (bleu)"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:154
-#: ../inc/panel/theme-options.php:647
 msgid "Dark"
 msgstr "Foncé"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:155
-#: ../inc/panel/theme-options.php:651
 msgid "Light (Black)"
 msgstr "Clair (noir)"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:169
-#: ../inc/panel/theme-options.php:242
 msgid "3 Columns"
 msgstr "3 colonnes"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:170
-#: ../inc/panel/theme-options.php:247
 msgid "4 Columns"
 msgstr "4 colonnes"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:184
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:283
-#: ../inc/panel/theme-options.php:449 ../inc/panel/theme-options.php:830
 msgid "Homepage"
 msgstr "Page d'accueil"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:185
-#: ../inc/panel/theme-options.php:454
 msgid "Excluding Homepage"
 msgstr "Exclure la page d'accueil"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:186
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:284
-#: ../inc/panel/theme-options.php:459 ../inc/panel/theme-options.php:834
 msgid "Entire Site"
 msgstr "Tout le site"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:187
-#: ../inc/panel/theme-options.php:464
 msgid "Entire Site, Page/Post Featured Image"
 msgstr "Tout le site, Image pour Page/Article"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:188
-#: ../inc/panel/theme-options.php:469
 msgid "Pages & Posts"
 msgstr "Pages & articles"
 
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:189
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:285
+msgid "Disable"
+msgstr "Désactiver"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:203
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:219
+msgid "Full Image"
+msgstr "Image entière"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:204
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:220
+msgid "Slider Image"
+msgstr "Image diaporama"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:205
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:221
+msgid "Featured Image"
+msgstr "Image mise en avant"
+
+#: ../inc/panel/catchkathmandu-theme-options-defaults.php:222
+msgid "Disable Image"
+msgstr "Désactiver Image"
+
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:236
-#: ../inc/panel/theme-options.php:589
 msgid "Right Sidebar"
 msgstr "Barre latérale à droite"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:237
-#: ../inc/panel/theme-options.php:594
 msgid "Left Sidebar"
 msgstr "Barre latérale à gauche"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:238
-#: ../inc/panel/theme-options.php:599
 msgid "No Sidebar"
 msgstr "Aucune barre"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:252
 #: ../inc/panel/customizer/customizer.php:411
-#: ../inc/panel/theme-options.php:609
 msgid "Full Content Display"
 msgstr "Affichage complet de l'article"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:253
-#: ../inc/panel/theme-options.php:613
 msgid "Excerpt/Blog Display"
 msgstr "Affichage de l'extrait de l'article"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:267
-msgid "Demo Slider"
+msgid "Demo"
 msgstr ""
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:268
-#: ../inc/panel/theme-options.php:814
-msgid "Post Slider"
-msgstr "Selection d'articles pour le diaporama"
+msgid "Post"
+msgstr ""
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:269
-#: ../inc/panel/theme-options.php:819
-msgid "Category Slider"
+#, fuzzy
+#| msgid "Category Slider"
+msgid "Category"
 msgstr "Sélection de catégories pour le diaporama"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:299
-#: ../inc/panel/theme-options.php:856
 msgid "fade"
 msgstr "Disparaitre"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:300
-#: ../inc/panel/theme-options.php:857
 msgid "wipe"
 msgstr "Essuyer"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:301
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:303
-#: ../inc/panel/theme-options.php:858
 msgid "scrollUp"
 msgstr "Défiler vers le haut"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:302
-#: ../inc/panel/theme-options.php:859
 msgid "scrollDown"
 msgstr "Défiler vers le bas"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:304
-#: ../inc/panel/theme-options.php:860
 msgid "scrollLeft"
 msgstr "Défiler vers la gauche"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:305
-#: ../inc/panel/theme-options.php:861
 msgid "scrollRight"
 msgstr "Défiler vers la droite"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:306
-#: ../inc/panel/theme-options.php:862
 msgid "blindX"
 msgstr "ChevauchementX"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:307
-#: ../inc/panel/theme-options.php:863
 msgid "blindY"
 msgstr "ChevauchementY"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:308
-#: ../inc/panel/theme-options.php:864
 msgid "blindZ"
 msgstr "ChevauchementZ"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:309
-#: ../inc/panel/theme-options.php:865
 msgid "cover"
 msgstr "Couverture"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:310
-#: ../inc/panel/theme-options.php:866
 msgid "shuffle"
 msgstr "Aléatoire"
 
@@ -767,7 +655,6 @@ msgid "Theme Instructions"
 msgstr "Instructions de thème"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:65
-#: ../inc/panel/theme-options.php:106
 msgid "Support"
 msgstr "Support"
 
@@ -776,7 +663,6 @@ msgid "Changelog"
 msgstr "Enregistrement des changements"
 
 #: ../inc/panel/customizer/customizer-custom-controls.php:73
-#: ../inc/panel/theme-options.php:105
 msgid "Donate Now"
 msgstr "Faites un don maintenant"
 
@@ -788,15 +674,19 @@ msgstr "Ce qu'on en dit"
 msgid "Color Scheme"
 msgstr "Jeu de couleurs"
 
+#: ../inc/panel/customizer/customizer.php:52
+msgid "Theme Options"
+msgstr "Options du thème"
+
 #: ../inc/panel/customizer/customizer.php:53
 msgid "Basic theme Options"
 msgstr "Options thème de base "
 
-#: ../inc/panel/customizer/customizer.php:57 ../inc/panel/theme-options.php:137
+#: ../inc/panel/customizer/customizer.php:57
 msgid "Homepage Headline Options"
 msgstr "Options pour le gros titre de la page d'accueil"
 
-#: ../inc/panel/customizer/customizer.php:62 ../inc/panel/theme-options.php:208
+#: ../inc/panel/customizer/customizer.php:62
 msgid "Featured Content Options"
 msgstr ""
 
@@ -804,11 +694,11 @@ msgstr ""
 msgid "Homepage/Frontpage Settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:72 ../inc/panel/theme-options.php:364
+#: ../inc/panel/customizer/customizer.php:72
 msgid "Responsive Design"
 msgstr "Design responsive"
 
-#: ../inc/panel/customizer/customizer.php:77 ../inc/panel/theme-options.php:391
+#: ../inc/panel/customizer/customizer.php:77
 msgid "Header Options"
 msgstr "Options pour l'en-tête du site"
 
@@ -816,21 +706,23 @@ msgstr "Options pour l'en-tête du site"
 msgid "Header Featured image Options"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:92 ../inc/panel/theme-options.php:580
+#: ../inc/panel/customizer/customizer.php:87
+msgid "Content Featured Image Options"
+msgstr "Options pour le contenu inscrit dans l'image"
+
+#: ../inc/panel/customizer/customizer.php:92
 msgid "Layout Options"
 msgstr "Options de présentation"
 
-#: ../inc/panel/customizer/customizer.php:97 ../inc/panel/theme-options.php:682
+#: ../inc/panel/customizer/customizer.php:97
 msgid "Search Text Settings"
 msgstr "Paramètres du champ Recherche"
 
 #: ../inc/panel/customizer/customizer.php:102
-#: ../inc/panel/theme-options.php:699
 msgid "Excerpt / More Tag Settings"
 msgstr "Réglages du résumé / lien \"Lire la suite\""
 
 #: ../inc/panel/customizer/customizer.php:107
-#: ../inc/panel/theme-options.php:734
 msgid "Feed Redirect"
 msgstr "Redirection du flux"
 
@@ -841,28 +733,23 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:112
-#: ../inc/panel/theme-options.php:755
 msgid "Custom CSS"
 msgstr "Personalisation du CSS"
 
 #: ../inc/panel/customizer/customizer.php:117
-#: ../inc/panel/theme-options.php:783
 msgid "Scroll Up"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:126
 #: ../inc/panel/customizer/customizer.php:127
-#: ../inc/panel/theme-options.php:126
 msgid "Featured Slider"
 msgstr "Diaporama mis en avant"
 
 #: ../inc/panel/customizer/customizer.php:131
-#: ../inc/panel/theme-options.php:805
 msgid "Slider Options"
 msgstr "Options du diaporama"
 
 #: ../inc/panel/customizer/customizer.php:139
-#: ../inc/panel/theme-options.php:127
 msgid "Social Links"
 msgstr "Liens sociaux"
 
@@ -875,17 +762,14 @@ msgid "Predefined Social Icons"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:151
-#: ../inc/panel/theme-options.php:129
 msgid "Tools"
 msgstr "Outils"
 
 #: ../inc/panel/customizer/customizer.php:156
-#: ../inc/panel/theme-options.php:1220
 msgid "Header and Footer Codes"
 msgstr "Codes à placer en haut de page (header) ou bas de page (Footer)"
 
 #: ../inc/panel/customizer/customizer.php:201
-#: ../inc/panel/theme-options.php:141
 msgid "Homepage Headline Text"
 msgstr "Texte pour le gros titre de la page d'accueil"
 
@@ -935,17 +819,14 @@ msgid "Check to Disable Featured Content"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:282
-#: ../inc/panel/theme-options.php:221
 msgid "Headline"
 msgstr "Gros titre"
 
 #: ../inc/panel/customizer/customizer.php:292
-#: ../inc/panel/theme-options.php:229
 msgid "Number of Featured Content"
 msgstr "Nombre de contenus mis en avant"
 
 #: ../inc/panel/customizer/customizer.php:308
-#: ../inc/panel/theme-options.php:237
 msgid "Featured Content Layout"
 msgstr "Présentation du contenu mis en avant"
 
@@ -954,7 +835,6 @@ msgid "Check to Enable Latest Posts on homepage"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:331
-#: ../inc/panel/theme-options.php:329
 msgid "Homepage posts categories:"
 msgstr "Catégories des articles pour la page d'accueil"
 
@@ -983,12 +863,10 @@ msgid "Check to Disable Header Right Sidebar"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:387
-#: ../inc/panel/theme-options.php:553
 msgid "Content Featured Image Size"
 msgstr "Taille pour l'image"
 
 #: ../inc/panel/customizer/customizer.php:400
-#: ../inc/panel/theme-options.php:584
 msgid "Sidebar Layout Options"
 msgstr "Options de présentation pour la barre latérale"
 
@@ -1005,17 +883,14 @@ msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:435
-#: ../inc/panel/theme-options.php:686
 msgid "Default Display Text in Search"
 msgstr "Texte par défaut du champ 'Recherche'"
 
 #: ../inc/panel/customizer/customizer.php:447
-#: ../inc/panel/theme-options.php:703
 msgid "More Tag Text"
 msgstr "Texte du lien \"Lire la suite\""
 
 #: ../inc/panel/customizer/customizer.php:457
-#: ../inc/panel/theme-options.php:711
 msgid "Excerpt length(words)"
 msgstr "Longueur du résumé (en mots)"
 
@@ -1024,12 +899,10 @@ msgid "Check to Reset Excerpt"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:486
-#: ../inc/panel/theme-options.php:738
 msgid "Feed Redirect URL"
 msgstr "URL de redirection du flux"
 
 #: ../inc/panel/customizer/customizer.php:487
-#: ../inc/panel/theme-options.php:741
 msgid "Add in the Feedburner URL"
 msgstr "Ajoutez l'URL de Feedburner"
 
@@ -1042,7 +915,6 @@ msgid "Check to Disable Scroll Up"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:522
-#: ../inc/panel/theme-options.php:825
 msgid "Enable Slider"
 msgstr "Activer diaporama"
 
@@ -1051,22 +923,18 @@ msgid "Transition Effect"
 msgstr "Effet de transition"
 
 #: ../inc/panel/customizer/customizer.php:545
-#: ../inc/panel/theme-options.php:872
 msgid "Transition Delay"
 msgstr "Délai de transition"
 
 #: ../inc/panel/customizer/customizer.php:562
-#: ../inc/panel/theme-options.php:881
 msgid "Transition Length"
 msgstr "Durée de la transition"
 
 #: ../inc/panel/customizer/customizer.php:579
-#: ../inc/panel/theme-options.php:809
 msgid "Select Slider Type"
 msgstr "Sélectionnez le type de diaporama"
 
 #: ../inc/panel/customizer/customizer.php:591
-#: ../inc/panel/theme-options.php:844
 msgid "Number of Slides"
 msgstr "Nombre de slides"
 
@@ -1081,12 +949,10 @@ msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:623
-#: ../inc/panel/theme-options.php:933
 msgid "Select Slider Categories"
 msgstr "Sélectionnez les catégories pour le diaporama (Slider Categories)"
 
 #: ../inc/panel/customizer/customizer.php:624
-#: ../inc/panel/theme-options.php:934
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
@@ -1095,27 +961,22 @@ msgstr ""
 "spécifiques dans le diaporama mis en avant (Featured Slider)"
 
 #: ../inc/panel/customizer/customizer.php:676
-#: ../inc/panel/theme-options.php:1002
 msgid "Youtube"
 msgstr "Youtube"
 
 #: ../inc/panel/customizer/customizer.php:706
-#: ../inc/panel/theme-options.php:1026
 msgid "Slideshare"
 msgstr "Slideshare"
 
 #: ../inc/panel/customizer/customizer.php:716
-#: ../inc/panel/theme-options.php:1034
 msgid "Foursquare"
 msgstr "Foursquare"
 
 #: ../inc/panel/customizer/customizer.php:866
-#: ../inc/panel/theme-options.php:1154
 msgid "Goodreads"
 msgstr "Goodreads"
 
 #: ../inc/panel/customizer/customizer.php:886
-#: ../inc/panel/theme-options.php:1170
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
@@ -1141,13 +1002,11 @@ msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:964
 #: ../inc/panel/customizer/customizer.php:1043
-#: ../inc/panel/theme-options.php:444
 msgid "Enable Featured Header Image"
 msgstr "Activer l'option Image d'en-tête"
 
 #: ../inc/panel/customizer/customizer.php:975
 #: ../inc/panel/customizer/customizer.php:1055
-#: ../inc/panel/theme-options.php:480
 msgid "Page/Post Featured Image Size"
 msgstr "Taille de l'image pour pages et articles"
 
@@ -1157,13 +1016,11 @@ msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:996
 #: ../inc/panel/customizer/customizer.php:1066
-#: ../inc/panel/theme-options.php:506
 msgid "Featured Header Image Alt/Title Tag"
 msgstr "Tag pour l'image d'en-tête Alt/Titre"
 
 #: ../inc/panel/customizer/customizer.php:1006
 #: ../inc/panel/customizer/customizer.php:1076
-#: ../inc/panel/theme-options.php:514
 msgid "Featured Header Image Link URL"
 msgstr "Url pour le lien de l'image d'en-tête"
 
@@ -1178,38 +1035,31 @@ msgid "Check to Reset Header Featured Image Options"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:1270
-#: ../inc/panel/theme-options.php:255
 #, php-format
 msgid "Featured Content #%s"
 msgstr "Contenu mis en avant #%s"
 
 #: ../inc/panel/customizer/customizer.php:1311
-#: ../inc/panel/theme-options.php:267
 msgid "Link URL"
 msgstr "Lien URL"
 
 #: ../inc/panel/customizer/customizer.php:1331
-#: ../inc/panel/theme-options.php:275 ../inc/panel/theme-options.php:522
 msgid "Target. Open Link in New Window?"
 msgstr "Cible : Ouvrir le lien dans une nouvelle fenêtre?"
 
 #: ../inc/panel/customizer/customizer.php:1351
-#: ../inc/panel/theme-options.php:284
 msgid "Title"
 msgstr "Titre"
 
 #: ../inc/panel/customizer/customizer.php:1354
-#: ../inc/panel/theme-options.php:287
 msgid "Leave empty if you want to remove title"
 msgstr "Laissez vide si vous souhaitez enlever le titre"
 
 #: ../inc/panel/customizer/customizer.php:1372
-#: ../inc/panel/theme-options.php:292
 msgid "Content"
 msgstr "Contenu"
 
 #: ../inc/panel/customizer/customizer.php:1396
-#: ../inc/panel/theme-options.php:910
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr "Selection d'articles pour le diaporama #%s"
@@ -1234,417 +1084,6 @@ msgstr ""
 #: ../inc/panel/customizer/customizer.php:1445
 msgid "Important Links"
 msgstr "Liens importants"
-
-#: ../inc/panel/theme-options.php:85
-msgid "Options Saved"
-msgstr "Paramètres enregistrés"
-
-#: ../inc/panel/theme-options.php:91
-msgid "Theme Options By"
-msgstr "Options du thèmes par"
-
-#: ../inc/panel/theme-options.php:93
-msgid "https://catchthemes.com/"
-msgstr "https://catchthemes.com/"
-
-#: ../inc/panel/theme-options.php:100
-msgid "https://catchthemes.com/themes/catch-kathmandu-pro/"
-msgstr "https://catchthemes.com/themes/catch-kathmandu-pro/"
-
-#: ../inc/panel/theme-options.php:100
-msgid "Upgrade to Catch Kathmandu Pro"
-msgstr "Passer à la version pro de Catch Kathmandu"
-
-#: ../inc/panel/theme-options.php:105
-msgid "https://catchthemes.com/donate/"
-msgstr "https://catchthemes.com/donate/"
-
-#: ../inc/panel/theme-options.php:105
-msgid "Donate to Catch Kathmandu"
-msgstr "Effectuer un donenvers Catch Kathmandu"
-
-#: ../inc/panel/theme-options.php:106
-msgid "https://catchthemes.com/support/"
-msgstr "https://catchthemes.com/support/"
-
-#: ../inc/panel/theme-options.php:107
-msgid "https://catchthemes.com/theme-instructions/catch-kathmandu/"
-msgstr "https://catchthemes.com/theme-instructions/catch-kathmandu/"
-
-#: ../inc/panel/theme-options.php:107
-msgid "Theme Instruction"
-msgstr "Mode d'emploi du thème"
-
-#: ../inc/panel/theme-options.php:108
-msgid "https://www.facebook.com/catchthemes/"
-msgstr "https://www.facebook.com/catchthemes/"
-
-#: ../inc/panel/theme-options.php:108
-msgid "Like Catch Themes on Facebook"
-msgstr "Aimer Catch Themes sur Facebook"
-
-#: ../inc/panel/theme-options.php:109
-msgid "https://twitter.com/catchthemes/"
-msgstr "https://twitter.com/catchthemes/"
-
-#: ../inc/panel/theme-options.php:109
-msgid "Follow Catch Themes on Twitter"
-msgstr "Suivre Catch Themes sur Twitter"
-
-#: ../inc/panel/theme-options.php:110
-msgid "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"
-msgstr "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"
-
-#: ../inc/panel/theme-options.php:110
-msgid "Rate us 5 Star on WordPress"
-msgstr "Notez-nous avec 5 étoiles sur WordPress"
-
-#: ../inc/panel/theme-options.php:110
-msgid "5 Star Rating"
-msgstr "Note 5 étoiles"
-
-#: ../inc/panel/theme-options.php:116
-#, php-format
-msgctxt "1: Customizer Link Start, 2: Customizer Link End"
-msgid ""
-"Theme Options Panel will be retired on future versions. Please use %1$s "
-"Customizer %2$s instead."
-msgstr ""
-
-#: ../inc/panel/theme-options.php:142
-msgid "The appropriate length for Headine is around 10 words."
-msgstr "La longueur appropriée pour un gros titre est d'environ10 mots."
-
-#: ../inc/panel/theme-options.php:150
-msgid "Homepage Subheadline Headline"
-msgstr "Second gros titre pour la page d'accueil"
-
-#: ../inc/panel/theme-options.php:151
-msgid "The appropriate length for Headine is around 15 words."
-msgstr "La longueur appropriée pour le second gros titre est d'environ15 mots."
-
-#: ../inc/panel/theme-options.php:159
-msgid "Homepage Headline Button Text"
-msgstr "Texte pour le bouton du gros titre de la page d'accueil"
-
-#: ../inc/panel/theme-options.php:160
-msgid "The appropriate length for Headine is around 3 words."
-msgstr "La longueur appropriée pour le bouton est d'environ 3 mots."
-
-#: ../inc/panel/theme-options.php:168
-msgid "Headine Link"
-msgstr "Lien pour le gros titre"
-
-#: ../inc/panel/theme-options.php:176
-msgid "Disable Homepage Headline?"
-msgstr "Désativer le gros titre pour la page d'accueil ?"
-
-#: ../inc/panel/theme-options.php:180 ../inc/panel/theme-options.php:189
-#: ../inc/panel/theme-options.php:198 ../inc/panel/theme-options.php:216
-#: ../inc/panel/theme-options.php:372 ../inc/panel/theme-options.php:791
-msgid "Check to disable"
-msgstr "Cocher pour désactiver"
-
-#: ../inc/panel/theme-options.php:185
-msgid "Disable Homepage Subheadline?"
-msgstr "Désativer le second gros titre pour la page d'accueil ?"
-
-#: ../inc/panel/theme-options.php:194
-msgid "Disable Homepage Button?"
-msgstr "Désativer le bouton pour la page d'accueil ?"
-
-#: ../inc/panel/theme-options.php:202 ../inc/panel/theme-options.php:302
-#: ../inc/panel/theme-options.php:358 ../inc/panel/theme-options.php:385
-#: ../inc/panel/theme-options.php:419 ../inc/panel/theme-options.php:540
-#: ../inc/panel/theme-options.php:574 ../inc/panel/theme-options.php:628
-#: ../inc/panel/theme-options.php:676 ../inc/panel/theme-options.php:693
-#: ../inc/panel/theme-options.php:728 ../inc/panel/theme-options.php:745
-#: ../inc/panel/theme-options.php:774 ../inc/panel/theme-options.php:795
-#: ../inc/panel/theme-options.php:889 ../inc/panel/theme-options.php:923
-#: ../inc/panel/theme-options.php:956 ../inc/panel/theme-options.php:1209
-#: ../inc/panel/theme-options.php:1239
-msgid "Save Changes"
-msgstr "Enregistrer les changements"
-
-#: ../inc/panel/theme-options.php:212
-msgid "Disable Featured Content?"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:224
-msgid "Leave empty if you want to remove headline"
-msgstr "Laissez vide si vous souhaitez enlever le gros titre"
-
-#: ../inc/panel/theme-options.php:262
-#, php-format
-msgid "Insert as Featured Content #%s"
-msgstr "Insert as Featured Content #%s"
-
-#: ../inc/panel/theme-options.php:262
-msgid "Change Image"
-msgstr "Changer image"
-
-#: ../inc/panel/theme-options.php:262
-msgid "Add Image"
-msgstr "Ajouter image"
-
-#: ../inc/panel/theme-options.php:270
-msgid "Add in the Target URL for the content"
-msgstr "Ajoutez l'URL cible du contenu"
-
-#: ../inc/panel/theme-options.php:279 ../inc/panel/theme-options.php:526
-msgid "Check to open in new window"
-msgstr "Cocher pour ouvrir dans une nouvelle fenêtre"
-
-#: ../inc/panel/theme-options.php:293
-msgid "The appropriate length for Content is around 10 words."
-msgstr "La longueur appropriée pour le contenu est d'environ 10 mots."
-
-#: ../inc/panel/theme-options.php:308
-msgid "Homepage / Frontpage Settings"
-msgstr "Paramètres Accueil / page d'accueil"
-
-#: ../inc/panel/theme-options.php:312
-msgid "Enable Latest Posts?"
-msgstr "Afficher les derniers articles ?"
-
-#: ../inc/panel/theme-options.php:316
-msgid "Check to Enable"
-msgstr "Cocher pour activer"
-
-#: ../inc/panel/theme-options.php:321
-msgid "Add Page instead of Latest Posts"
-msgstr "Ajouter une page à la place des derniers articles"
-
-#: ../inc/panel/theme-options.php:324
-msgid "Click Here to Set Static Front Page Instead of Latest Posts"
-msgstr ""
-"Cliquez ic pour activer une page d'accueil statique au lieu d'afficher les "
-"derniers articles"
-
-#: ../inc/panel/theme-options.php:330
-msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page."
-msgstr ""
-"Seuls les articles des catégories sélectionnées seront affichés en page "
-"d'accueil."
-
-#: ../inc/panel/theme-options.php:334 ../inc/panel/theme-options.php:938
-msgid "--Disabled--"
-msgstr "--Désactivé--"
-
-#: ../inc/panel/theme-options.php:345 ../inc/panel/theme-options.php:949
-msgid "You may select multiple categories by holding down the CTRL key."
-msgstr "Vous pouvez choisir plusieurs catégories en maintenant la touche CTRL."
-
-#: ../inc/panel/theme-options.php:350
-msgid "Move above Featured Content?"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:354
-msgid "Check to Move"
-msgstr "Cocher pour déplacer"
-
-#: ../inc/panel/theme-options.php:368
-msgid "Disable Responsive Design?"
-msgstr "Désactiver le design responsive?"
-
-#: ../inc/panel/theme-options.php:377
-msgid "Enable Secondary Menu in Mobile Devices?"
-msgstr "Activer le menu secondaire pour les appareils mobiles ?"
-
-#: ../inc/panel/theme-options.php:381
-msgid "Check to enable"
-msgstr "Cocher pour activer"
-
-#: ../inc/panel/theme-options.php:395
-msgid "Custom Header: Logo & Site Details"
-msgstr "En-tête personnalisé : logo et texte"
-
-#: ../inc/panel/theme-options.php:398
-msgid "Click Here to Add/Replace Header Logo & Site Details"
-msgstr "Cliquez ici pour Ajouter/Remplacer le logo du site et le texte associé"
-
-#: ../inc/panel/theme-options.php:403
-msgid "Disable Header Right Sidebar?"
-msgstr "Désactiver la barre droite de l'en-tête?"
-
-#: ../inc/panel/theme-options.php:407
-msgid "Check to Disable"
-msgstr "Cocher pour désactiver"
-
-#: ../inc/panel/theme-options.php:415
-msgid "Widgets"
-msgstr "Widgets"
-
-#: ../inc/panel/theme-options.php:415
-msgid "Click Here to Add/Replace Widgets"
-msgstr "Cliquez ici pour Ajouter/Remplacer des Widgets"
-
-#: ../inc/panel/theme-options.php:432
-msgid "Custom Header"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:435
-msgid "Click Here to Add/Replace Header Image"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:498
-msgid "Featured Header Image URL"
-msgstr "Url pour l'image d'en-tête"
-
-#: ../inc/panel/theme-options.php:501
-msgid "Insert as Featured Header Image"
-msgstr "Insérer en tant qu'image d'en-tête"
-
-#: ../inc/panel/theme-options.php:501
-msgid "Change Header Image"
-msgstr "Changer l'image d'en-tête"
-
-#: ../inc/panel/theme-options.php:532
-msgid "Reset Header Featured Image Options?"
-msgstr "Remettre à zéro les options pour l'image d'en-tête ?"
-
-#: ../inc/panel/theme-options.php:536 ../inc/panel/theme-options.php:624
-#: ../inc/panel/theme-options.php:724
-msgid "Check to reset"
-msgstr "Cocher pour réinitialiser"
-
-#: ../inc/panel/theme-options.php:605
-msgid "Content Layout"
-msgstr "Présentation du contenu"
-
-#: ../inc/panel/theme-options.php:620
-msgid "Reset Layout?"
-msgstr "Remettre à zéro la mise en page ?"
-
-#: ../inc/panel/theme-options.php:634
-msgid "Color Options"
-msgstr "Jeu de couleurs"
-
-#: ../inc/panel/theme-options.php:638
-msgid "Default Color Scheme"
-msgstr "Couleurs par défaut"
-
-#: ../inc/panel/theme-options.php:657
-msgid "Custom Background Color:"
-msgstr "Couleur personnalisée de l'arrière plan"
-
-#: ../inc/panel/theme-options.php:661
-msgid "Click Here to change Background Color/Image"
-msgstr "Cliquer ici pour changer la couleur/l'image de l'arrière plan"
-
-#: ../inc/panel/theme-options.php:667
-msgid "Custom Header: "
-msgstr "En-tête personnalisé"
-
-#: ../inc/panel/theme-options.php:671
-msgid "Click Here to change Site Title and Tagline Color"
-msgstr ""
-"Cliquer ici pour changer la couleur du titre du site et de son sous-titre"
-
-#: ../inc/panel/theme-options.php:720
-msgid "Reset Excerpt?"
-msgstr "Réinitialiser le résumé?"
-
-#: ../inc/panel/theme-options.php:759
-msgid "Enter your custom CSS styles."
-msgstr "Saisissez vos CSS personnalisés."
-
-#: ../inc/panel/theme-options.php:767
-msgid "CSS Tutorial from W3Schools."
-msgstr "Tutoriel CSS de  W3Schools."
-
-#: ../inc/panel/theme-options.php:770
-msgid "http://www.w3schools.com/css/default.asp"
-msgstr "http://www.w3schools.com/css/default.asp"
-
-#: ../inc/panel/theme-options.php:770
-msgid "CSS Tutorial"
-msgstr "Tutoriel CSS"
-
-#: ../inc/panel/theme-options.php:770
-msgid "Click Here to Read"
-msgstr "Cliquez ici pour lire"
-
-#: ../inc/panel/theme-options.php:787
-msgid "Disable Scroll Up?"
-msgstr ""
-
-#: ../inc/panel/theme-options.php:852
-msgid "Transition Effect:"
-msgstr "Effet de transition:"
-
-#: ../inc/panel/theme-options.php:876 ../inc/panel/theme-options.php:885
-msgid "second(s)"
-msgstr "seconde(s)"
-
-#: ../inc/panel/theme-options.php:895
-msgid "Featured Post Slider Options"
-msgstr "Options de sélection des articles pour le diaporama"
-
-#: ../inc/panel/theme-options.php:899
-msgid "Exclude Slider post from Homepage posts?"
-msgstr ""
-"Exclure de la page d'accueil les articles se trouvant dans le diaporama?"
-
-#: ../inc/panel/theme-options.php:903
-msgid "Check to exclude"
-msgstr "Cocher pour exclure"
-
-#: ../inc/panel/theme-options.php:914
-msgid "Click Here To Edit"
-msgstr "Cliquez ici pour modifier"
-
-#: ../inc/panel/theme-options.php:920
-msgid ""
-"Note: Here You can put your Post IDs which displays on Homepage as slider."
-msgstr ""
-"Remarque: saisissez ici l'ID des articles qui apparaîtront dans le diaporama "
-"de la page d'accueil."
-
-#: ../inc/panel/theme-options.php:929
-msgid "Featured Category Slider Options"
-msgstr "Sélection des catégories pour le diaporama"
-
-#: ../inc/panel/theme-options.php:953
-msgid ""
-"Note: Here you can select the categories from which latest posts will "
-"display on Featured Slider."
-msgstr ""
-"Note: Categories pour les derniers articles affichés dans le diaporama mis "
-"en avant (Featured Slider)."
-
-#: ../inc/panel/theme-options.php:966
-msgid "Predefine Social Icons"
-msgstr "Icones sociales prédéfinies"
-
-#: ../inc/panel/theme-options.php:1018
-msgid "Linkedin"
-msgstr "Linkedin"
-
-#: ../inc/panel/theme-options.php:1224
-msgid "Code to display on Header"
-msgstr "Code à afficher en haut de page"
-
-#: ../inc/panel/theme-options.php:1227
-msgid ""
-"Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
-"This etc. which will load on Header"
-msgstr ""
-"Note: Scripts Google, Facebook, Twitter, Add This etc. chargés en en-tête"
-
-#: ../inc/panel/theme-options.php:1232
-msgid "Code to display on Footer"
-msgstr "Code à afficher en bas de page"
-
-#: ../inc/panel/theme-options.php:1235
-msgid ""
-"Note: Here you can put scripts from Google, Facebook, Twitter, Add This etc. "
-"which will load on footer"
-msgstr ""
-"Note: Scripts Google, Facebook, Twitter, Add This etc. chargés en pied de "
-"page"
 
 #: ../inc/template-tags.php:51 ../inc/template-tags.php:112
 msgid "Post navigation"
@@ -1800,6 +1239,322 @@ msgstr "Recherche"
 #: ../sidebar.php:36
 msgid "Archives"
 msgstr "Archives"
+
+#~ msgid "Catch Kathmandu Options"
+#~ msgstr "Catch Kathmandu Options"
+
+#~ msgid "Default"
+#~ msgstr "Défaut"
+
+#~ msgid "Enable"
+#~ msgstr "Activer"
+
+#~ msgid "Default Layout Set in"
+#~ msgstr "Les options de maquette par défaut sont réglés dans"
+
+#~ msgid "Right sidebar"
+#~ msgstr "Barre latérale à droite"
+
+#~ msgid "Left sidebar"
+#~ msgstr "Barre latérale à gauche"
+
+#~ msgid "No sidebar"
+#~ msgstr "Sans barre latérale"
+
+#~ msgid "Sidebar Layout"
+#~ msgstr "Présentation pour la barre latérale"
+
+#~ msgid "Header Featured Image Options"
+#~ msgstr "Options pour l'image d'en-tête"
+
+#~ msgid "Post Slider"
+#~ msgstr "Selection d'articles pour le diaporama"
+
+#~ msgid "Options Saved"
+#~ msgstr "Paramètres enregistrés"
+
+#~ msgid "Theme Options By"
+#~ msgstr "Options du thèmes par"
+
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com/"
+
+#~ msgid "https://catchthemes.com/themes/catch-kathmandu-pro/"
+#~ msgstr "https://catchthemes.com/themes/catch-kathmandu-pro/"
+
+#~ msgid "Upgrade to Catch Kathmandu Pro"
+#~ msgstr "Passer à la version pro de Catch Kathmandu"
+
+#~ msgid "https://catchthemes.com/donate/"
+#~ msgstr "https://catchthemes.com/donate/"
+
+#~ msgid "Donate to Catch Kathmandu"
+#~ msgstr "Effectuer un donenvers Catch Kathmandu"
+
+#~ msgid "https://catchthemes.com/support/"
+#~ msgstr "https://catchthemes.com/support/"
+
+#~ msgid "https://catchthemes.com/theme-instructions/catch-kathmandu/"
+#~ msgstr "https://catchthemes.com/theme-instructions/catch-kathmandu/"
+
+#~ msgid "Theme Instruction"
+#~ msgstr "Mode d'emploi du thème"
+
+#~ msgid "https://www.facebook.com/catchthemes/"
+#~ msgstr "https://www.facebook.com/catchthemes/"
+
+#~ msgid "Like Catch Themes on Facebook"
+#~ msgstr "Aimer Catch Themes sur Facebook"
+
+#~ msgid "https://twitter.com/catchthemes/"
+#~ msgstr "https://twitter.com/catchthemes/"
+
+#~ msgid "Follow Catch Themes on Twitter"
+#~ msgstr "Suivre Catch Themes sur Twitter"
+
+#~ msgid "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"
+#~ msgstr "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"
+
+#~ msgid "Rate us 5 Star on WordPress"
+#~ msgstr "Notez-nous avec 5 étoiles sur WordPress"
+
+#~ msgid "5 Star Rating"
+#~ msgstr "Note 5 étoiles"
+
+#~ msgid "The appropriate length for Headine is around 10 words."
+#~ msgstr "La longueur appropriée pour un gros titre est d'environ10 mots."
+
+#~ msgid "Homepage Subheadline Headline"
+#~ msgstr "Second gros titre pour la page d'accueil"
+
+#~ msgid "The appropriate length for Headine is around 15 words."
+#~ msgstr ""
+#~ "La longueur appropriée pour le second gros titre est d'environ15 mots."
+
+#~ msgid "Homepage Headline Button Text"
+#~ msgstr "Texte pour le bouton du gros titre de la page d'accueil"
+
+#~ msgid "The appropriate length for Headine is around 3 words."
+#~ msgstr "La longueur appropriée pour le bouton est d'environ 3 mots."
+
+#~ msgid "Headine Link"
+#~ msgstr "Lien pour le gros titre"
+
+#~ msgid "Disable Homepage Headline?"
+#~ msgstr "Désativer le gros titre pour la page d'accueil ?"
+
+#~ msgid "Check to disable"
+#~ msgstr "Cocher pour désactiver"
+
+#~ msgid "Disable Homepage Subheadline?"
+#~ msgstr "Désativer le second gros titre pour la page d'accueil ?"
+
+#~ msgid "Disable Homepage Button?"
+#~ msgstr "Désativer le bouton pour la page d'accueil ?"
+
+#~ msgid "Save Changes"
+#~ msgstr "Enregistrer les changements"
+
+#~ msgid "Leave empty if you want to remove headline"
+#~ msgstr "Laissez vide si vous souhaitez enlever le gros titre"
+
+#~ msgid "Insert as Featured Content #%s"
+#~ msgstr "Insert as Featured Content #%s"
+
+#~ msgid "Change Image"
+#~ msgstr "Changer image"
+
+#~ msgid "Add Image"
+#~ msgstr "Ajouter image"
+
+#~ msgid "Add in the Target URL for the content"
+#~ msgstr "Ajoutez l'URL cible du contenu"
+
+#~ msgid "Check to open in new window"
+#~ msgstr "Cocher pour ouvrir dans une nouvelle fenêtre"
+
+#~ msgid "The appropriate length for Content is around 10 words."
+#~ msgstr "La longueur appropriée pour le contenu est d'environ 10 mots."
+
+#~ msgid "Homepage / Frontpage Settings"
+#~ msgstr "Paramètres Accueil / page d'accueil"
+
+#~ msgid "Enable Latest Posts?"
+#~ msgstr "Afficher les derniers articles ?"
+
+#~ msgid "Check to Enable"
+#~ msgstr "Cocher pour activer"
+
+#~ msgid "Add Page instead of Latest Posts"
+#~ msgstr "Ajouter une page à la place des derniers articles"
+
+#~ msgid "Click Here to Set Static Front Page Instead of Latest Posts"
+#~ msgstr ""
+#~ "Cliquez ic pour activer une page d'accueil statique au lieu d'afficher "
+#~ "les derniers articles"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page."
+#~ msgstr ""
+#~ "Seuls les articles des catégories sélectionnées seront affichés en page "
+#~ "d'accueil."
+
+#~ msgid "--Disabled--"
+#~ msgstr "--Désactivé--"
+
+#~ msgid "You may select multiple categories by holding down the CTRL key."
+#~ msgstr ""
+#~ "Vous pouvez choisir plusieurs catégories en maintenant la touche CTRL."
+
+#~ msgid "Check to Move"
+#~ msgstr "Cocher pour déplacer"
+
+#~ msgid "Disable Responsive Design?"
+#~ msgstr "Désactiver le design responsive?"
+
+#~ msgid "Enable Secondary Menu in Mobile Devices?"
+#~ msgstr "Activer le menu secondaire pour les appareils mobiles ?"
+
+#~ msgid "Check to enable"
+#~ msgstr "Cocher pour activer"
+
+#~ msgid "Custom Header: Logo & Site Details"
+#~ msgstr "En-tête personnalisé : logo et texte"
+
+#~ msgid "Click Here to Add/Replace Header Logo & Site Details"
+#~ msgstr ""
+#~ "Cliquez ici pour Ajouter/Remplacer le logo du site et le texte associé"
+
+#~ msgid "Disable Header Right Sidebar?"
+#~ msgstr "Désactiver la barre droite de l'en-tête?"
+
+#~ msgid "Check to Disable"
+#~ msgstr "Cocher pour désactiver"
+
+#~ msgid "Widgets"
+#~ msgstr "Widgets"
+
+#~ msgid "Click Here to Add/Replace Widgets"
+#~ msgstr "Cliquez ici pour Ajouter/Remplacer des Widgets"
+
+#~ msgid "Featured Header Image URL"
+#~ msgstr "Url pour l'image d'en-tête"
+
+#~ msgid "Insert as Featured Header Image"
+#~ msgstr "Insérer en tant qu'image d'en-tête"
+
+#~ msgid "Change Header Image"
+#~ msgstr "Changer l'image d'en-tête"
+
+#~ msgid "Reset Header Featured Image Options?"
+#~ msgstr "Remettre à zéro les options pour l'image d'en-tête ?"
+
+#~ msgid "Check to reset"
+#~ msgstr "Cocher pour réinitialiser"
+
+#~ msgid "Content Layout"
+#~ msgstr "Présentation du contenu"
+
+#~ msgid "Reset Layout?"
+#~ msgstr "Remettre à zéro la mise en page ?"
+
+#~ msgid "Color Options"
+#~ msgstr "Jeu de couleurs"
+
+#~ msgid "Default Color Scheme"
+#~ msgstr "Couleurs par défaut"
+
+#~ msgid "Custom Background Color:"
+#~ msgstr "Couleur personnalisée de l'arrière plan"
+
+#~ msgid "Click Here to change Background Color/Image"
+#~ msgstr "Cliquer ici pour changer la couleur/l'image de l'arrière plan"
+
+#~ msgid "Custom Header: "
+#~ msgstr "En-tête personnalisé"
+
+#~ msgid "Click Here to change Site Title and Tagline Color"
+#~ msgstr ""
+#~ "Cliquer ici pour changer la couleur du titre du site et de son sous-titre"
+
+#~ msgid "Reset Excerpt?"
+#~ msgstr "Réinitialiser le résumé?"
+
+#~ msgid "Enter your custom CSS styles."
+#~ msgstr "Saisissez vos CSS personnalisés."
+
+#~ msgid "CSS Tutorial from W3Schools."
+#~ msgstr "Tutoriel CSS de  W3Schools."
+
+#~ msgid "http://www.w3schools.com/css/default.asp"
+#~ msgstr "http://www.w3schools.com/css/default.asp"
+
+#~ msgid "CSS Tutorial"
+#~ msgstr "Tutoriel CSS"
+
+#~ msgid "Click Here to Read"
+#~ msgstr "Cliquez ici pour lire"
+
+#~ msgid "Transition Effect:"
+#~ msgstr "Effet de transition:"
+
+#~ msgid "second(s)"
+#~ msgstr "seconde(s)"
+
+#~ msgid "Featured Post Slider Options"
+#~ msgstr "Options de sélection des articles pour le diaporama"
+
+#~ msgid "Exclude Slider post from Homepage posts?"
+#~ msgstr ""
+#~ "Exclure de la page d'accueil les articles se trouvant dans le diaporama?"
+
+#~ msgid "Check to exclude"
+#~ msgstr "Cocher pour exclure"
+
+#~ msgid "Click Here To Edit"
+#~ msgstr "Cliquez ici pour modifier"
+
+#~ msgid ""
+#~ "Note: Here You can put your Post IDs which displays on Homepage as slider."
+#~ msgstr ""
+#~ "Remarque: saisissez ici l'ID des articles qui apparaîtront dans le "
+#~ "diaporama de la page d'accueil."
+
+#~ msgid "Featured Category Slider Options"
+#~ msgstr "Sélection des catégories pour le diaporama"
+
+#~ msgid ""
+#~ "Note: Here you can select the categories from which latest posts will "
+#~ "display on Featured Slider."
+#~ msgstr ""
+#~ "Note: Categories pour les derniers articles affichés dans le diaporama "
+#~ "mis en avant (Featured Slider)."
+
+#~ msgid "Predefine Social Icons"
+#~ msgstr "Icones sociales prédéfinies"
+
+#~ msgid "Linkedin"
+#~ msgstr "Linkedin"
+
+#~ msgid "Code to display on Header"
+#~ msgstr "Code à afficher en haut de page"
+
+#~ msgid ""
+#~ "Note: Note: Here you can put scripts from Google, Facebook, Twitter, Add "
+#~ "This etc. which will load on Header"
+#~ msgstr ""
+#~ "Note: Scripts Google, Facebook, Twitter, Add This etc. chargés en en-tête"
+
+#~ msgid "Code to display on Footer"
+#~ msgstr "Code à afficher en bas de page"
+
+#~ msgid ""
+#~ "Note: Here you can put scripts from Google, Facebook, Twitter, Add This "
+#~ "etc. which will load on footer"
+#~ msgstr ""
+#~ "Note: Scripts Google, Facebook, Twitter, Add This etc. chargés en pied de "
+#~ "page"
 
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"
 #~ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"

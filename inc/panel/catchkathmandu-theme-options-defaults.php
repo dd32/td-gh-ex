@@ -264,9 +264,9 @@ function catchkathmandu_content_layout_options() {
  */
 function catchkathmandu_slider_types() {
 	$options = array(
-		'demo-slider' 		=> __( 'Demo Slider', 'catch-kathmandu' ),
-		'post-slider' 		=> __( 'Post Slider', 'catch-kathmandu' ),
-		'category-slider' 	=> __( 'Category Slider', 'catch-kathmandu' ),
+		'demo-slider' 		=> __( 'Demo', 'catch-kathmandu' ),
+		'post-slider' 		=> __( 'Post', 'catch-kathmandu' ),
+		'category-slider' 	=> __( 'Category', 'catch-kathmandu' ),
 	);
 
 	return apply_filters( 'catchkathmandu_slider_types', $options );

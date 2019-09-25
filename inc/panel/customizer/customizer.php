@@ -1502,3 +1502,36 @@ require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/cust
 
 //Sanitize functions for customizer
 require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/upgrade-button/class-customize.php';
+
+/*
+ * Clearing the cache if any changes in Admin Theme Option
+ */
+function catchkathmandu_themeoption_invalidate_caches() {
+    delete_transient('catchkathmandu_responsive'); // Responsive design
+    delete_transient( 'catchkathmandu_inline_css' ); // Custom Inline CSS
+    delete_transient( 'catchkathmandu_post_sliders' ); // featured post slider
+    delete_transient( 'catchkathmandu_page_sliders' ); // featured page slider
+    delete_transient( 'catchkathmandu_category_sliders' ); // featured category slider
+    delete_transient( 'catchkathmandu_image_sliders' ); // featured image slider
+    delete_transient( 'catchkathmandu_default_sliders' ); //Default slider
+    delete_transient( 'catchkathmandu_homepage_headline' ); // Homepage Headline Message
+    delete_transient( 'catchkathmandu_featured_content' ); // Featured Content
+    delete_transient( 'catchkathmandu_footer_content' ); // Footer Content
+    delete_transient( 'catchkathmandu_social_networks' ); // Social Networks
+    delete_transient( 'catchkathmandu_webmaster' ); // scripts which loads on header
+    delete_transient( 'catchkathmandu_footercode' ); // scripts which loads on footer
+    delete_transient( 'catchkathmandu_scrollup' ); // Scroll Up code
+}
+
+
+/*
+ * Clearing the cache if any changes in post or page
+ */
+function catchkathmandu_post_invalidate_caches(){
+    delete_transient( 'catchkathmandu_post_sliders' ); // featured post slider
+    delete_transient( 'catchkathmandu_page_sliders' ); // featured page slider
+    delete_transient( 'catchkathmandu_category_sliders' ); // featured category slider
+    delete_transient( 'catchkathmandu_featured_content' ); // Featured Content
+}
+//Add action hook here save post
+add_action( 'save_post', 'catchkathmandu_post_invalidate_caches' );
