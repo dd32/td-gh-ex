@@ -30,13 +30,13 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
+              <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
                   <h2><?php the_title(); ?></h2>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_startup_string_limit_words( $excerpt,20 ) ); ?></p>
                   <div class="readbtn">
-                    <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','advance-startup' );?>"><?php echo esc_html_e('READ MORE','advance-startup'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-startup' );?></span></a>
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-startup'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-startup' );?></span></a>
                   </div>
                 </div>
               </div>
@@ -49,11 +49,11 @@ get_header(); ?>
         <?php endif;
         endif;?>
         <div class="slider-nex-pre">
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Previous','advance-startup' );?>" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators"  role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
             <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-startup' );?></span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" alt="<?php esc_html_e( 'Next','advance-startup' );?>" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselExampleIndicators"  role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
             <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-startup' );?></span>
           </a>
@@ -65,10 +65,9 @@ get_header(); ?>
 
   <?php do_action( 'advance_startup_below_slider' ); ?>
 
-  <nav class="header-nav">
-    <button class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-startup'); ?></a></button>
+  <div class="header-nav">
     <?php get_template_part( 'template-parts/header-navigation' ); ?> 
-  </nav>
+  </div>
 
   <?php do_action( 'advance_startup_above_we_provide_section' ); ?>
 
@@ -93,7 +92,7 @@ get_header(); ?>
                         <?php $excerpt = get_the_excerpt(); echo esc_html( advance_startup_string_limit_words( $excerpt,12 ) ); ?>
                       </p> 
                       <div class="theme_button">
-                        <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'VIEW DETAILS','advance-startup' );?>"><?php echo esc_html_e('VIEW DETAILS','advance-startup'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'VIEW DETAILS','advance-startup' );?></span>
+                        <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('VIEW DETAILS','advance-startup'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'VIEW DETAILS','advance-startup' );?></span>
                         </a>
                       </div>
                     </div>

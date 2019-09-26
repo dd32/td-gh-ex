@@ -279,7 +279,7 @@ define('ADVANCE_STARTUP_CREDIT', 'https://www.themeshopy.com/themes/free-startup
 
 if (!function_exists('advance_startup_credit')) {
 	function advance_startup_credit() {
-		echo "<a href=".esc_url(ADVANCE_STARTUP_CREDIT)." target='_blank' alt='".esc_html__('Automobile WordPress Theme','advance-startup')."''>".esc_html__('Startup WordPress Theme', 'advance-startup')."</a>";
+		echo "<a href=".esc_url(ADVANCE_STARTUP_CREDIT).">".esc_html__('Startup WordPress Theme', 'advance-startup')."</a>";
 	}
 }
 
@@ -383,7 +383,7 @@ function advance_startup_scripts() {
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-startup-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
-
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'advance-startup-basic-style',$custom_css );
 
@@ -403,9 +403,15 @@ define('ADVANCE_STARTUP_CONTACT','https://wordpress.org/support/theme/advance-st
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';
+
 /* Custom template tags for this theme. */
 require get_template_directory().'/inc/template-tags.php';
+
 /* Customizer additions. */
 require get_template_directory().'/inc/customizer.php';
+
 /* Admin about theme */
 require get_template_directory() .'/inc/admin/admin.php';
+
+/* TGM Plugin Activation */
+require get_template_directory() .'/inc/tgm.php';
