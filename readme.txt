@@ -3,14 +3,14 @@ Contributors: WpZita
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors 
 Requires at least: 4.0
 Tested up to: 5.2.3
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 "Agency Zita is a child theme of Zita WordPress theme" By WpZita.
 
 == Description ==
-Description:  Agency Zita is a child theme of zita WordPress theme, It provides very unique look and extra post layout. Zita is a super fast and highly customizable theme. Best Suitable for creating any type of website such a corporate, store, agency, blog, portfolio, restaurant, wedding, construction, hospital, school, interior, car workshop, life coach, wine shop, barber shop, furniture shop, yoga, resume, charity, digital marketing etc. Zita includes 8 unique header layout and 8 footer widget layout which makes it extremely powerful. Zita works with any of your favorite page builder like Elementor, Visual Composer, Beaver Builder, SiteOrigin, Divi, Brizy etc. Some more amazing feature are #Woocommerce ready #RTL Ready #Full Responsive #Edit settings in tablet & mobile #Top header #Bottom header #Top footer #Bottom Footer #Transparent Header. Looking for perfect base theme? Looking for perfect multipurpose theme? No need to Look further! Just go with Zita demos: https://wpzita.com/. Zita is built with best SEO practice and best friend of Woocommerce and Elementor.
+Description:  Agency Zita is a child theme of zita WordPress theme, It provides very unique look and extra post layout. Zita is completely builder based theme, With super fast and highly customizable options. Zita works with any of your favorite page builder like Elementor, Visual Composer, Beaver Builder, SiteOrigin, Divi, Brizy etc. Best Suitable for creating any type of website such a corporate, store, agency, blog, portfolio, restaurant, wedding, construction, hospital, school, interior, car workshop, life coach, wine shop, barber shop, furniture shop, yoga, resume, charity, digital marketing etc. Zita includes 8 unique header layout and 8 footer widget layout which makes it extremely powerful. Some more amazing feature are #Woocommerce ready #RTL Ready #Full Responsive #Edit settings in tablet & mobile #Top header #Bottom header #Top footer #Bottom Footer #Transparent Header. Looking for perfect base theme? Looking for perfect multipurpose theme? No need to Look further! Just go with Zita demos: https://wpzita.com/. Zita is built with best SEO practice and best friend of Woocommerce and Elementor.
 
 == Frequently Asked Questions ==
 
@@ -44,3 +44,6 @@ Once again, thank you so much for trying the Agency Zita WordPress Theme. As we 
 
 == 1.2.0  =
 * Screenshot icons changed.
+
+== 1.2.1  =
+* Style and screenshot improved.
