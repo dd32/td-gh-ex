@@ -18,29 +18,12 @@ if (!function_exists('agency_ecommerce_get_the_excerpt')) :
      * @param WP_Post $post_object The post object.
      * @return string Post excerpt.
      */
-    function agency_ecommerce_get_the_excerpt($length = 0, $post_object = null)
+    function agency_ecommerce_get_the_excerpt()
     {
-        global $post;
+        $agency_excerpt = get_the_excerpt();
 
-        if (is_null($post_object)) {
-            $post_object = $post;
-        }
+        return apply_filters('agency_ecommerce_excerpt', $agency_excerpt);
 
-        $length = absint($length);
-        if (0 === $length) {
-            return;
-        }
-
-
-        $source_content = $post_object->post_content;
-
-        if (!empty($post_object->post_excerpt)) {
-            $source_content = $post_object->post_excerpt;
-        }
-
-        $source_content = strip_shortcodes($source_content);
-        $trimmed_content = wp_trim_words($source_content, $length, '...');
-        return $trimmed_content;
     }
 
 endif;
@@ -197,12 +180,18 @@ if (!function_exists('agency_ecommerce_woocommerce_pages_status_message')) :
         $output = '';
 
         $pages = agency_ecommerce_get_woocommerce_pages();
+
         foreach ($pages as $page) {
             if (true === $page['page_set']) {
                 if (true === $page['shortcode_required'] && true !== $page['shortcode_present']) {
+
+                    /* translators: 1: page name, 2: shortcode */
+
                     $output .= '<li>' . sprintf(esc_html__('%1$s page does not contain %2$s shortcode.', 'agency-ecommerce'), $page['page_name'], $page['shortcode']) . '</li>';
                 }
             } else {
+                /* translators: 1: page name */
+
                 $output .= '<li>' . sprintf(esc_html__('%s page is not set.', 'agency-ecommerce'), $page['page_name']) . '</li>';
             }
         }
@@ -263,11 +252,6 @@ if (!function_exists('agency_ecommerce_product_searchbox')) {
 
                 <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
                     <input type="hidden" name="post_type" value="product"/>
-
-                    <input type="text" class="search-field products-search"
-                           placeholder="<?php echo $product_search_text; ?>"
-                           value="<?php echo get_search_query(); ?>" name="s"/>
-
                     <select class="product-cat" name="product_cat">
 
                         <option value=""><?php echo $product_category_text; ?></option>
@@ -292,8 +276,14 @@ if (!function_exists('agency_ecommerce_product_searchbox')) {
 
                     </select>
 
+                    <input type="text" class="search-field products-search"
+                           placeholder="<?php echo $product_search_text; ?>"
+                           value="<?php echo get_search_query(); ?>" name="s"/>
+
+
+
                     <button type="submit" class="search-submit"><span
-                                class="screen-reader-text"><?php echo _x('Search', 'submit button', 'agency-ecommerce'); ?></span><i
+                                class="screen-reader-text"><?php echo esc_html_x('Search', 'submit button', 'agency-ecommerce'); ?></span><i
                                 class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
 
@@ -370,14 +360,14 @@ if (!function_exists('agency_ecommerce_special_menu')) {
                     <i class="fa fa-navicon toggle"></i><?php echo esc_html($special_menu_text); ?>
                 </a>
                 <?php
-                if (has_nav_menu('special-menu')) {
-                    wp_nav_menu(array(
-                        'theme_location' => 'special-menu',
-                        'menu_class' => 'sub-menu special-sub-menu',
-                        'container' => false,
-                        'depth' => 1
-                    ));
-                }
+                wp_nav_menu(array(
+                    'theme_location' => 'special-menu',
+                    'menu_class' => 'sub-menu special-sub-menu',
+                    'container' => false,
+                    'depth' => 1,
+                    'fallback_cb' => 'agency_ecommerce_special_navigation_fallback'
+                ));
+
                 ?>
                 <div class="responsive-special-sub-menu clearfix"></div>
             </li>
@@ -390,7 +380,7 @@ if (!function_exists('agency_ecommerce_widget_not_found_message')) {
 
     function agency_ecommerce_widget_not_found_message($not_found_message = '')
     {
-        $not_found_message = empty($not_found_message) ? 'No widgets found. Please add widgets to this widget area.' : $not_found_message;
+        $not_found_message = empty($not_found_message) ? esc_html__('No widgets found. Please add widgets to this widget area.', 'agency-ecommerce') : $not_found_message;
 
         echo '<div class="ae-empty-content">';
 

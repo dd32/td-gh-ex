@@ -25,7 +25,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                 'classname' => 'agency_ecommerce_widget_newsletter',
                 'description' => esc_html__('Newsletter Widget', 'agency-ecommerce'),
             );
-            parent::__construct('agency-ecommerce-newsletter', esc_html__(' Newsletter', 'agency-ecommerce'), $opts);
+            parent::__construct('agency-ecommerce-newsletter', esc_html__('AE - Newsletter', 'agency-ecommerce'), $opts);
         }
 
         function widget_fields()
@@ -52,7 +52,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                     'name' => 'background_color',
                     'title' => esc_html__('Background Color', 'agency-ecommerce'),
                     'type' => 'color',
-                    'default' => '#0b1f41',
+                    'default' => '#0188cc',
                 )
 
 
@@ -78,9 +78,9 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
 
             $sub_title = esc_html($valid_widget_instance['sub_title']);
 
-            $shortcode = esc_html($valid_widget_instance['shortcode']);
+            $shortcode = ($valid_widget_instance['shortcode']);
 
-            $background_color = sanitize_hex_color($valid_widget_instance['background_color']);
+            $background_color = esc_attr($valid_widget_instance['background_color']);
 
             $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
 
@@ -88,6 +88,8 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
             ?>
 
             <div class="newsletter-content-holder newsletter-widget">
+
+                <?php agency_ecommerce_widget_before($args) ?>
 
                 <div class="content-wrap">
 
@@ -98,7 +100,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                             <div class="newsletter-text">
 
                                 <span class="newsletter-icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/envelope.png"
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/envelope.png'); ?>"
                                          alt="<?php esc_attr_e('newsletter', 'agency-ecommerce'); ?>">
                                 </span>
 
@@ -123,7 +125,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
 
                             <div class="newsletter-form">
 
-                                <?php echo do_shortcode(wp_kses_post($shortcode)); ?>
+                                <?php echo do_shortcode($shortcode); ?>
 
                             </div>
 
@@ -132,6 +134,9 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                     </div><!-- .newsletter-wrapper -->
 
                 </div>
+
+                <?php agency_ecommerce_widget_after($args) ?>
+
 
             </div><!-- .newsletter-widget -->
 

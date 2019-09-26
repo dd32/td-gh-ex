@@ -25,6 +25,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[breadcrumb_type]',
         'choices' => array(
             'disable' => esc_html__('Disable', 'agency-ecommerce'),
             'simple' => esc_html__('Simple', 'agency-ecommerce'),
+            'advanced' => esc_html__('Advanced', 'agency-ecommerce'),
         ),
     )
 );
@@ -43,5 +44,83 @@ $wp_customize->add_control('agency_ecommerce_theme_options[breadcrumb_text]',
         'type' => 'text',
         'priority' => 20,
         'active_callback' => 'agency_ecommerce_is_breadcrumb_active'
+    )
+);
+
+// Setting show_mid_header.
+$wp_customize->add_setting('agency_ecommerce_theme_options[show_page_title_on_breadcrumb]',
+    array(
+        'default' => $default['show_page_title_on_breadcrumb'],
+        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[show_page_title_on_breadcrumb]',
+    array(
+        'label' => esc_html__('Show page title on Breadcrumb', 'agency-ecommerce'),
+        'section' => 'section_breadcrumb',
+        'type' => 'checkbox',
+        'priority' => 30,
+        'active_callback' => 'agency_ecommerce_is_advance_breadcrumb_active'
+
+    )
+);
+/// Background Image
+$wp_customize->add_setting('agency_ecommerce_theme_options[breadcrumb_background_image]',
+    array(
+        'default' => $default['breadcrumb_background_image'],
+        'sanitize_callback' => 'esc_url',
+    )
+);
+$wp_customize->add_control(
+    new WP_Customize_Image_Control(
+        $wp_customize,
+        'agency_ecommerce_theme_options[breadcrumb_background_image]',
+        array(
+            'priority' => 40,
+            'label' => esc_html__('Background image for breadcrumb', 'agency-ecommerce'),
+            'section' => 'section_breadcrumb',
+            'description' => esc_html__('Background image for breadcrumb.', 'agency-ecommerce'),
+            'active_callback' => 'agency_ecommerce_is_advance_breadcrumb_active'
+
+        )
+    )
+);
+
+// Setting override_background_by_featured_image
+
+$wp_customize->add_setting('agency_ecommerce_theme_options[override_background_by_featured_image]',
+    array(
+        'default' => $default['override_background_by_featured_image'],
+        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[override_background_by_featured_image]',
+    array(
+        'label' => esc_html__('Override background by featured image', 'agency-ecommerce'),
+        'description' => esc_html__('This option allows you to override above background image by featured image ( if available ).', 'agency-ecommerce'),
+        'section' => 'section_breadcrumb',
+        'type' => 'checkbox',
+        'priority' => 50,
+        'active_callback' => 'agency_ecommerce_is_advance_breadcrumb_active'
+
+    )
+);
+
+// Make Parallax Background
+$wp_customize->add_setting('agency_ecommerce_theme_options[make_parallax_background_breadcrumb]',
+    array(
+        'default' => $default['make_parallax_background_breadcrumb'],
+        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[make_parallax_background_breadcrumb]',
+    array(
+        'label' => esc_html__('Enable parallax background', 'agency-ecommerce'),
+        'description' => esc_html__('Enable/disable parallax background', 'agency-ecommerce'),
+        'section' => 'section_breadcrumb',
+        'type' => 'checkbox',
+        'priority' => 60,
+        'active_callback' => 'agency_ecommerce_is_advance_breadcrumb_active'
+
     )
 );

@@ -52,7 +52,31 @@ $wp_customize->add_control('agency_ecommerce_theme_options[site_identity]',
     )
 );
 
-// special_menu_max_height
+// special_menu_text
+$wp_customize->add_setting('agency_ecommerce_theme_options[special_menu_alignment]',
+    array(
+        'default' => $default['special_menu_alignment'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[special_menu_alignment]',
+    array(
+        'label' => esc_html__('Special Menu alignment', 'agency-ecommerce'),
+        'description' => esc_html__('Special menu alignment', 'agency-ecommerce'),
+        'section' => 'section_bottom_header',
+        'type' => 'radio',
+        'choices' => array(
+            'left' => esc_html__('Left', 'agency-ecommerce'),
+            'right' => esc_html__('Right', 'agency-ecommerce'),
+        ),
+        'default' => $default['special_menu_alignment'],
+        'priority' => 30,
+        'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
+    )
+);
+
+
+// special_menu_text
 $wp_customize->add_setting('agency_ecommerce_theme_options[special_menu_text]',
     array(
         'default' => $default['special_menu_text'],
@@ -66,7 +90,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[special_menu_text]',
         'section' => 'section_bottom_header',
         'type' => 'text',
         'default' => $default['special_menu_text'],
-        'priority' => 30,
+        'priority' => 40,
         'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
     )
 );
@@ -86,7 +110,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[special_menu_max_heig
         'section' => 'section_bottom_header',
         'type' => 'number',
         'default' => $default['special_menu_max_height'],
-        'priority' => 40,
+        'priority' => 50,
         'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
     )
 );
@@ -105,7 +129,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[special_menu_show_onl
         'section' => 'section_bottom_header',
         'type' => 'checkbox',
         'default' => $default['special_menu_show_only_on_hover'],
-        'priority' => 50,
+        'priority' => 60,
         'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
     )
 );

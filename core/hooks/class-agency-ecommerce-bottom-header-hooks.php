@@ -46,18 +46,23 @@ class Agency_Ecommerce_Bottom_Header_Hooks
     public function hooks()
     {
         $show_bottom_header = (boolean)agency_ecommerce_get_option('show_bottom_header');
-        if ($show_bottom_header) {
-            add_action('agency_ecommerce_before_bottom_header', array($this, 'agency_ecommerce_before_bottom_header_action'), 10);
-            add_action('agency_ecommerce_bottom_header', array($this, 'agency_ecommerce_bottom_header_action'), 10);
-            add_action('agency_ecommerce_after_bottom_header', array($this, 'agency_ecommerce_after_bottom_header_action'), 10);
+
+        if (!$show_bottom_header) {
+            return;
         }
+
+        add_action('agency_ecommerce_before_bottom_header', array($this, 'agency_ecommerce_before_bottom_header_action'), 10);
+        add_action('agency_ecommerce_bottom_header', array($this, 'agency_ecommerce_bottom_header_action'), 10);
+        add_action('agency_ecommerce_after_bottom_header', array($this, 'agency_ecommerce_after_bottom_header_action'), 10);
+
 
     }
 
     public function agency_ecommerce_before_bottom_header_action()
     {
+        $special_menu_alignment = agency_ecommerce_get_option('special_menu_alignment');
         ?>
-        <header id="masthead" class="site-header" role="banner">
+        <header id="masthead" class="site-header <?php echo esc_attr($special_menu_alignment) . '-special-menu' ?>" role="banner">
         <div class="container">
         <?php
     }
@@ -131,11 +136,11 @@ class Agency_Ecommerce_Bottom_Header_Hooks
                     <div class="wrap-menu-content">
                         <?php
                         wp_nav_menu(
-                            array(
+                            apply_filters('agency_ecommerce_primary_nav_args', array(
                                 'theme_location' => 'primary-menu',
                                 'menu_id' => 'primary-menu',
                                 'fallback_cb' => 'agency_ecommerce_primary_navigation_fallback',
-                            )
+                            ))
                         );
                         ?>
                     </div><!-- .menu-content -->

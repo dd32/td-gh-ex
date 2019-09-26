@@ -51,7 +51,6 @@ if (!class_exists('Agency_Ecommerce_Core')) :
             $this->define_constants();
             $this->init_hooks();
             $this->includes();
-            $this->include_hooks();
         }
 
         public function define_constants()
@@ -68,6 +67,11 @@ if (!class_exists('Agency_Ecommerce_Core')) :
 
         public function includes()
         {
+
+
+            // Theme information
+            require AGENCY_ECOMMERCE_THEME_DIR . '/core/info/class-agency-ecommerce-theme-information.php';
+
 
             require AGENCY_ECOMMERCE_THEME_DIR . '/core/class-agency-ecommerce-assets.php';
 
@@ -94,6 +98,13 @@ if (!class_exists('Agency_Ecommerce_Core')) :
 
             // Load dynamic css.
             require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/dynamic.php';
+
+
+            /**
+             * Load TGMPA Configs.
+             */
+            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/tgmpa/class-tgm-plugin-activation.php';
+            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/tgmpa/tgmpa-agency-ecommerce.php';
 
 
         }
@@ -158,10 +169,11 @@ if (!class_exists('Agency_Ecommerce_Core')) :
             )));
 
             // Add woocommerce support, gallery zoom, lightbox and thumbnail slider.
-            add_theme_support('woocommerce');
-            add_theme_support('wc-product-gallery-lightbox');
-            add_theme_support('wc-product-gallery-slider');
-
+            if (class_exists('WooCommerce')) {
+                add_theme_support('woocommerce');
+                add_theme_support('wc-product-gallery-lightbox');
+                add_theme_support('wc-product-gallery-slider');
+            }
             $gallery_zoom = agency_ecommerce_get_option('enable_gallery_zoom');
 
             if (1 == $gallery_zoom) {
@@ -180,10 +192,6 @@ if (!class_exists('Agency_Ecommerce_Core')) :
             $GLOBALS['content_width'] = apply_filters('agency_ecommerce_content_width', 810);
         }
 
-        public function include_hooks()
-        {
-
-        }
     }
 
 endif;

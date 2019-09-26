@@ -45,6 +45,11 @@ class Agency_Ecommerce_Top_Header_Hooks
 
     public function hooks()
     {
+        // Top header status.
+        $show_top_header = (boolean)agency_ecommerce_get_option('show_top_header');
+        if (!$show_top_header) {
+            return;
+        }
         add_action('agency_ecommerce_top_header', array($this, 'agency_ecommerce_top_header_action'), 10);
         add_action('agency_ecommerce_top_header_store_information', array($this, 'agency_ecommerce_top_header_store_information_action'), 10);
         add_action('agency_ecommerce_top_header_menu', array($this, 'agency_ecommerce_top_header_menu_action'), 10);
@@ -56,11 +61,7 @@ class Agency_Ecommerce_Top_Header_Hooks
     public function agency_ecommerce_top_header_action()
     {
 
-        // Top header status.
-        $header_status = agency_ecommerce_get_option('show_top_header');
-        if (1 != $header_status) {
-            return;
-        } ?>
+        ?>
 
         <div id="top-bar" class="top-header">
             <div class="container">
@@ -245,7 +246,7 @@ class Agency_Ecommerce_Top_Header_Hooks
     {
         ?>
 
-        <div class="top-date-holder"><span><?php echo date(get_option('date_format')); ?></span></div>
+        <div class="top-date-holder"><span><?php echo esc_html(date_i18n(get_option('date_format'))); ?></span></div>
 
         <?php
     }

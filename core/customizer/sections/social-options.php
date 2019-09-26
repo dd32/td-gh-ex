@@ -3,7 +3,7 @@
 $wp_customize->add_section('section_social',
     array(
         'title' => esc_html__('Social Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 110,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -24,7 +24,8 @@ for ($num = 1; $num <= $number_of_icon; $num++) {
     );
     $wp_customize->add_control('agency_ecommerce_theme_options[' . $link_option . ']',
         array(
-            'label' => esc_html('Social Icon Link - ' . $num),
+            /* translators: 1: Social icon link id*/
+            'label' => sprintf(esc_html__('Social Icon Link - %d', 'agency-ecommerce'), $num),
             'section' => 'section_social',
             'type' => 'url',
             'priority' => 10 + $num,
@@ -40,7 +41,8 @@ for ($num = 1; $num <= $number_of_icon; $num++) {
     );
     $wp_customize->add_control('agency_ecommerce_theme_options[' . $icon . ']',
         array(
-            'label' => esc_html('Icon Text - ' . $num),
+            /* translators: 1: Icon text id */
+            'label' => sprintf(esc_html__('Icon Text - %d', 'agency-ecommerce'), $num),
             'section' => 'section_social',
             'description' => esc_html__('Please enter font awesome icon text here.', 'agency-ecommerce'),
             'type' => 'text',

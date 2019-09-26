@@ -26,7 +26,7 @@ if (!class_exists('Agency_Ecommerce_Advertisement_Widget')) :
                 'classname' => 'agency_ecommerce_widget_advertisement',
                 'description' => esc_html__('Widget to display advertisement.', 'agency-ecommerce'),
             );
-            parent::__construct('agency-ecommerce-advertisement', esc_html__(' Advertisement', 'agency-ecommerce'), $opts);
+            parent::__construct('agency-ecommerce-advertisement', esc_html__('AE - Advertisement', 'agency-ecommerce'), $opts);
         }
 
 
@@ -109,6 +109,9 @@ if (!class_exists('Agency_Ecommerce_Advertisement_Widget')) :
 
             <div class="advertisement-content-holder advertisement-widget">
 
+                <?php agency_ecommerce_widget_before($args); ?>
+
+
                 <div class="advertisement-text-wrap">
                     <?php
 
@@ -121,6 +124,9 @@ if (!class_exists('Agency_Ecommerce_Advertisement_Widget')) :
                     ?>
 
                 </div>
+
+                <?php agency_ecommerce_widget_after($args); ?>
+
 
             </div><!-- .advertisement-widget -->
 
@@ -142,7 +148,7 @@ if (!class_exists('Agency_Ecommerce_Advertisement_Widget')) :
                              alt="<?php echo esc_attr($title) ?>"></figure>
                     <span class="thumb-hover">
 							<span class="thumb-title-wrapper">
-								<span class="thumb-title"><?php echo esc_attr($title) ?></span>
+								<span class="thumb-title"><?php echo esc_html($title) ?></span>
  							</span>
 						</span> <!-- thumb-hover end -->
                 </a>

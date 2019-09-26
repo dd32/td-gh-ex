@@ -8,21 +8,27 @@
         bindEvents: function () {
             var $this = this;
             $(document).ready(function ($) {
+                $this.initAccessibility();
                 $.each($('.main-slider'), function () {
                     var isDisabled = $(this).attr('data-disable');
                     if (isDisabled != 1) {
                         $(this).slick({
                             prevArrow: '<i class="prev fa fa-angle-left"></i>',
                             nextArrow: '<i class="next fa fa-angle-right"></i>',
+                            autoplay: true,
+
                         });
                     }
                 });
 
                 $.each($('.verticle-slider'), function () {
+
+                    var number_of_slide = $(this).attr('data-rows');
+
                     var isDisabled = $(this).attr('data-disable');
                     if (isDisabled != 1) {
                         $(this).slick({
-                            slidesToShow: 2,
+                            slidesToShow: number_of_slide,
                             slidesToScroll: 1,
                             autoplay: true,
                             vertical: true,
@@ -44,7 +50,9 @@
                         if (
                             $(this).closest('.primary-sidebar').length > 0 ||
 
-                            $(this).closest('#footer-widgets').length > 0
+                            $(this).closest('#footer-widgets').length > 0 ||
+
+                            $(this).closest('.homepage-sidebar').length > 0
 
                         ) {
 
@@ -229,6 +237,28 @@
                 product_wrap.find('li.product').find('.ae-woo-block-wrap.' + cat_class).closest('li.product').show();
             }
 
+        },
+        initAccessibility: function () {
+            var main_menu_container = $('.main-navigation #primary-menu');
+            var special_menu_container = $('.special-menu-container');
+            main_menu_container.find('li.menu-item').focusin(function () {
+                if (!$(this).hasClass('focus')) {
+                    $(this).addClass('focus');
+                }
+            });
+            main_menu_container.find('li.menu-item').focusout(function () {
+                $(this).removeClass('focus');
+
+            });
+            special_menu_container.find('li.menu-item.menu-item-has-children').focusin(function () {
+                if (!$(this).hasClass('focus')) {
+                    $(this).addClass('focus');
+                }
+            });
+            special_menu_container.find('li.menu-item.menu-item-has-children').focusout(function () {
+                $(this).removeClass('focus');
+
+            })
         }
 
     };

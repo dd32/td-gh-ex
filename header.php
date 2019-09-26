@@ -32,14 +32,13 @@ do_action('agency_ecommerce_doctype');
 
 <body <?php body_class(); ?>>
 <?php
-if (function_exists('wp_body_open')) {
+// WordPress Core Hook
+do_action('wp_body_open');
 
-    wp_body_open();
-}
 ?>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content">
-        <?php _e('Skip to content', 'agency-ecommerce'); ?></a>
+        <?php esc_html_e('Skip to content', 'agency-ecommerce'); ?></a>
 
 <?php
 

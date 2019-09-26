@@ -4,7 +4,7 @@
 
         meanMenu
         --------
-        
+
         To be used with jquery.meanmenu.js by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
 
 ####################################################################### */
@@ -54,7 +54,7 @@ a.meanmenu-reveal.meanclose {
     position: relative;
     width: 100%;
     z-index: 9999999;
-}	
+}
 .mean-container .mean-nav ul {
     padding: 0;
     margin: 0;

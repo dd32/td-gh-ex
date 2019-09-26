@@ -127,6 +127,7 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
             if (is_singular() && comments_open() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
+
         }
     }
 

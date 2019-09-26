@@ -85,55 +85,6 @@ $wp_customize->add_control('agency_ecommerce_theme_options[hide_product_sorting]
     )
 );
 
-// Setting show_detail_icon.
-$wp_customize->add_setting('agency_ecommerce_theme_options[show_detail_icon]',
-    array(
-        'default' => $default['show_detail_icon'],
-        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
-    )
-);
-$wp_customize->add_control('agency_ecommerce_theme_options[show_detail_icon]',
-    array(
-        'label' => esc_html__('Enable View Detail Icon at Product Pages', 'agency-ecommerce'),
-        'section' => 'section_shop',
-        'type' => 'checkbox',
-        'priority' => 50,
-    )
-);
-
-// Setting enable_gallery_zoom.
-$wp_customize->add_setting('agency_ecommerce_theme_options[enable_gallery_zoom]',
-    array(
-        'default' => $default['enable_gallery_zoom'],
-        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
-    )
-);
-$wp_customize->add_control('agency_ecommerce_theme_options[enable_gallery_zoom]',
-    array(
-        'label' => esc_html__('Enable Image Zoom at Product Detail Page', 'agency-ecommerce'),
-        'section' => 'section_shop',
-        'type' => 'checkbox',
-        'priority' => 60,
-    )
-);
-
-// Setting disable_related_products.
-$wp_customize->add_setting('agency_ecommerce_theme_options[disable_related_products]',
-    array(
-        'default' => $default['disable_related_products'],
-        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
-    )
-);
-$wp_customize->add_control('agency_ecommerce_theme_options[disable_related_products]',
-    array(
-        'label' => esc_html__('Disable Related Products at Product Detail Page', 'agency-ecommerce'),
-        'section' => 'section_shop',
-        'type' => 'checkbox',
-        'priority' => 70,
-    )
-);
-
-
 // Setting hide_list_grid_view.
 $wp_customize->add_setting('agency_ecommerce_theme_options[hide_list_grid_view]',
     array(

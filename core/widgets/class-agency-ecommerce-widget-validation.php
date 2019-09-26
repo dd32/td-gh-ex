@@ -56,7 +56,6 @@ if (!class_exists('Agency_Ecommerce_Widget_Validation')) {
                 $value = !isset($instance[$field_key]) && isset($field['default']) ? $field['default'] : $value;
 
 
-
                 $new_instance[$field_key] = $this->sanitize($value, $field);
 
             }
@@ -140,6 +139,39 @@ if (!class_exists('Agency_Ecommerce_Widget_Validation')) {
                     $updated_value = sanitize_text_field($field_value);
                     $icons = array_keys(agency_ecommerce_font_awesome_icon_list());
                     $updated_value = in_array($updated_value, $icons) ? $updated_value : '';
+                    break;
+                case 'repeator':
+
+                    if (isset($field_value['__mb_index__'])) {
+
+                        unset($field_value['__mb_index__']);
+                    }
+                    $widget_repeator_options = isset($widget_field['options']) ? $widget_field['options'] : array();
+
+                    $repeator_num = isset($widget_field['repeator_num']) ? $widget_field['repeator_num'] : 3;
+
+                    $repeator_option_array_keys = array_keys($widget_repeator_options);
+
+                    $updated_value = array();
+
+                    $field_value = !is_array($field_value) ? array() : $field_value;
+
+                    foreach ($field_value as $field_index => $val) {
+
+                        $repeator_repeat_value = array();
+
+                        foreach ($val as $rp_key => $rp_value) {
+
+                            if (in_array($rp_key, $repeator_option_array_keys)) {
+
+                                $repeator_repeat_value[$rp_key] = $this->sanitize($rp_value, $widget_repeator_options[$rp_key]);
+                            }
+                        }
+
+                        if (count($updated_value) <= $repeator_num) {
+                            array_push($updated_value, $repeator_repeat_value);
+                        }
+                    }
                     break;
                 default:
                     $updated_value = wp_kses_post(sanitize_text_field($field_value));

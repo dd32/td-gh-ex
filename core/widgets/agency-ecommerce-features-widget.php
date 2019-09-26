@@ -20,7 +20,7 @@ if (!class_exists('Agency_Ecommerce_Features_Widget')) :
                 'classname' => 'agency_ecommerce_widget_features',
                 'description' => esc_html__('Widget to display features with icon (font awesome) and description.', 'agency-ecommerce'),
             );
-            parent::__construct('agency-ecommerce-features', esc_html__(' Features', 'agency-ecommerce'), $opts);
+            parent::__construct('agency-ecommerce-features', esc_html__('AE - Features', 'agency-ecommerce'), $opts);
         }
 
         function widget_fields()
@@ -104,6 +104,9 @@ if (!class_exists('Agency_Ecommerce_Features_Widget')) :
 
             <div class="features-list">
 
+                <?php agency_ecommerce_widget_before($args); ?>
+
+
                 <div class="features-wrapper">
                     <?php
 
@@ -115,6 +118,7 @@ if (!class_exists('Agency_Ecommerce_Features_Widget')) :
                     ?>
 
                 </div>
+                <?php agency_ecommerce_widget_after($args); ?>
 
             </div><!-- .features-list -->
 

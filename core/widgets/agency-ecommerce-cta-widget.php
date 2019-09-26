@@ -26,7 +26,7 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                 'classname' => 'agency_ecommerce_widget_call_to_action',
                 'description' => esc_html__('Call To Action Widget', 'agency-ecommerce'),
             );
-            parent::__construct('agency-ecommerce-cta', esc_html__(' Call To Action', 'agency-ecommerce'), $opts);
+            parent::__construct('agency-ecommerce-cta', esc_html__('AE - Call To Action', 'agency-ecommerce'), $opts);
         }
 
 
@@ -34,15 +34,15 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
         {
 
             $content_position = array(
-                'left' => __('Left', 'agency-ecommerce'),
-                'right' => __('Right', 'agency-ecommerce'),
-                'center' => __('Center', 'agency-ecommerce'),
+                'left' => esc_html__('Left', 'agency-ecommerce'),
+                'right' => esc_html__('Right', 'agency-ecommerce'),
+                'center' => esc_html__('Center', 'agency-ecommerce'),
             );
 
             $content_style = array(
-                'style-1' => __('Style 1', 'agency-ecommerce'),
-                'style-2' => __('Style 2', 'agency-ecommerce'),
-                'style-3' => __('Style 3', 'agency-ecommerce')
+                'style-1' => esc_html__('Style 1', 'agency-ecommerce'),
+                'style-2' => esc_html__('Style 2', 'agency-ecommerce'),
+                'style-3' => esc_html__('Style 3', 'agency-ecommerce')
             );
             $fields = array(
                 'title' => array(
@@ -63,7 +63,7 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                     'name' => 'offer_text',
                     'title' => esc_html__('Offer Text', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => __('OFF', 'agency-ecommerce'),
+                    'default' => esc_html__('OFF', 'agency-ecommerce'),
                 ), 'content_position' => array(
                     'name' => 'content_position',
                     'title' => esc_html__('Content Position', 'agency-ecommerce'),
@@ -80,12 +80,12 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                     'name' => 'button_text',
                     'title' => esc_html__('Button Text', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => __('Buy Now', 'agency-ecommerce'),
+                    'default' => esc_html__('Buy Now', 'agency-ecommerce'),
                 ), 'button_url' => array(
                     'name' => 'button_url',
                     'title' => esc_html__('Button URL', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => 'https://mantrabrain.com/'
+                    'default' => '#'
                 ), 'background_image' => array(
                     'name' => 'background_image',
                     'title' => esc_html__('Background Image', 'agency-ecommerce'),
@@ -135,7 +135,10 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
 
             echo $args['before_widget']; ?>
 
+            <?php agency_ecommerce_widget_before($args) ?>
+
             <div class="cta-content-holder cta-widget position-<?php echo esc_attr($valid_widget_instance["content_position"]);
+
             echo ' ' . esc_attr($valid_widget_instance["content_style"]); ?>">
 
                 <div class="content-wrap">
@@ -193,7 +196,7 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                             <div class="call-to-action-buttons">
 
                                 <a href="<?php echo esc_url($valid_widget_instance["button_url"]); ?>"
-                                   class="button cta-button cta-button-primary"><?php echo esc_attr($valid_widget_instance["button_text"]); ?></a>
+                                   class="button cta-button cta-button-primary"><?php echo esc_html($valid_widget_instance["button_text"]); ?></a>
 
                             </div><!-- .call-to-action-buttons -->
 
@@ -204,6 +207,7 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                 </div>
 
             </div><!-- .cta-widget -->
+            <?php agency_ecommerce_widget_after($args) ?>
 
             <?php
             echo $args['after_widget'];

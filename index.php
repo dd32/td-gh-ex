@@ -14,42 +14,47 @@
 
 get_header(); ?>
 
-<?php if ( true === apply_filters( 'agency_ecommerce_home_page_content', true ) ) : ?>
+<?php if (true === apply_filters('agency_ecommerce_home_page_content', true)) : ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
+            <?php
+            if (have_posts()) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title "><?php single_post_title(); ?></h1>
-				</header>
+                if (is_home() && !is_front_page()) :
 
-			<?php
-			endif;
+                    if (!agency_ecommerce_is_advance_breadcrumb()) { ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+                        <header>
+                            <h1 class="page-title "><?php single_post_title(); ?></h1>
+                        </header>
 
-				get_template_part( 'template-parts/content' );
+                        <?php
+                    }
 
-			endwhile;
+                endif;
 
-			the_posts_pagination();
+                /* Start the Loop */
+                while (have_posts()) : the_post();
 
-		else :
+                    get_template_part('template-parts/content');
 
-			get_template_part( 'template-parts/content', 'none' );
+                endwhile;
 
-		endif; ?>
+                the_posts_pagination();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            else :
 
-<?php
-do_action( 'agency_ecommerce_action_sidebar' );
+                get_template_part('template-parts/content', 'none');
+
+            endif; ?>
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
+
+    <?php
+    do_action('agency_ecommerce_action_sidebar');
 
 endif; // End if show home content.
 

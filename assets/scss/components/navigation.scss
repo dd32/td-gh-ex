@@ -5,8 +5,13 @@
 a {
   color: $primary_color;
   text-decoration: inherit;
-  &:visited, &:hover, &:focus, &:active {
-    color: $primary_color;
+  &:visited {
+  }
+  &:focus, &:active {
+    color: darken($primary_color, 10);
+  }
+  &:hover {
+    color: $secondary_color;
   }
   &:focus {
     outline: inherit;
@@ -56,6 +61,7 @@ a {
         top: 0;
       }
     }
+
   }
   li {
     position: relative;
@@ -84,23 +90,29 @@ a {
     }
   }
   ul {
-    > li:hover > ul {
+    > li:hover > ul,
+    > li a:focus ~ ul,
+    > li.focus > ul.sub-menu {
       opacity: 1;
-      left: 0;
+      left: 100%;
       z-index: 9999;
     }
     ul {
-      ul {
-        ul {
-          display: none;
-        }
-        li:hover > ul {
-          display: block;
-        }
-      }
+
       li:hover > ul {
         opacity: 1;
         left: 100%;
+      }
+    }
+  }
+  ul.menu > li {
+
+    > ul.sub-menu {
+      left: -10000px;
+    }
+    &:hover, &.focus {
+      > ul.sub-menu {
+        left: 0;
       }
     }
   }
@@ -108,11 +120,13 @@ a {
     float: none;
     display: block;
   }
+
   ul {
     li {
       li:first-child > a {
         border-left: none;
       }
+
       a {
         color: #11101d;
         display: inline-block;
@@ -338,11 +352,53 @@ a {
     }
   }
   a.page-numbers:hover {
-    background: $primary_color none repeat scroll 0 0;
+    background: #fff;
     border-color: $primary_color;
-    color: $white_color;
+    color: $primary_color;
   }
   .page-numbers.dots {
     border: none;
+  }
+}
+
+.navigation.post-navigation {
+  float: left;
+  width: 100%;
+  .nav-links, .nav-previous, .nav-next {
+    float: left;
+    width: 100%;
+  }
+  .nav-previous, .nav-next, .nav-previous:hover, .nav-next:hover {
+    width: 50%;
+  }
+  .nav-previous {
+    padding-left: 0px;
+    text-align: left;
+  }
+  .nav-next {
+    padding-right: 0px;
+    text-align: right;
+    float: right;
+  }
+  .nav-previous a, .nav-next a {
+    color: #707070;
+  }
+  .nav-links {
+    a {
+      width: auto;
+      display: inline-block;
+      padding: 10px 25px;
+      background: $primary_color;
+      border-radius: 0;
+      color: #fff;
+      border: 1px solid $primary_color;
+      &:before, &:after {
+        color: inherit;
+      }
+      &:hover {
+        background: #fff;
+        color: $primary_color;
+      }
+    }
   }
 }

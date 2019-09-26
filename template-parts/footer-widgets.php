@@ -22,20 +22,21 @@ if (is_active_sidebar('top-footer-1') ||
     <aside id="footer-widgets" class="widget-area" role="complementary">
         <div class="container">
             <?php
-            $column_count = 0;
-            for ($i = 1; $i <= 4; $i++) {
-                if (is_active_sidebar('footer-' . $i)) {
-                    $column_count++;
+            $footer_widget_class_id = 0;
+            for ($j = 1; $j <= 4; $j++) {
+                if (is_active_sidebar('top-footer-' . $j)) {
+
+                    $footer_widget_class_id++;
                 }
             }
             ?>
             <div class="ae-inner">
                 <?php
-                $column_class = 'widget-column top-footer-' . absint($column_count);
+                $column_class = 'widget-column top-footer-' . $footer_widget_class_id;
                 for ($i = 1; $i <= 4; $i++) {
                     if (is_active_sidebar('top-footer-' . $i)) {
                         ?>
-                        <div class="<?php echo $column_class; ?>">
+                        <div class="top-footer-widget-col-<?php echo absint($i) . ' ' . esc_attr($column_class); ?>">
                             <?php dynamic_sidebar('top-footer-' . $i); ?>
                         </div>
                         <?php

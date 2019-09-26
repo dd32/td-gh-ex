@@ -45,6 +45,11 @@ class Agency_Ecommerce_Mid_Header_Hooks
 
     public function hooks()
     {
+  // Top header status.
+        $show_mid_header = (boolean)agency_ecommerce_get_option('show_mid_header');
+        if (!$show_mid_header) {
+            return;
+        }
         add_action('agency_ecommerce_before_mid_header', array($this, 'agency_ecommerce_before_mid_header_action'), 10);
         add_action('agency_ecommerce_after_mid_header', array($this, 'agency_ecommerce_after_mid_header_action'), 10);
         add_action('agency_ecommerce_mid_header', array($this, 'agency_ecommerce_mid_header_action'), 10);
@@ -106,7 +111,10 @@ class Agency_Ecommerce_Mid_Header_Hooks
 
         <div class="ae-search-holder">
             <?php
-            agency_ecommerce_product_searchbox();
+            $show_mid_search = (boolean)agency_ecommerce_get_option('show_mid_search');
+            if($show_mid_search){
+                agency_ecommerce_product_searchbox();
+            }
             ?>
         </div>
         <div class="ae-cart-wishlist">

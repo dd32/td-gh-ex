@@ -1,8 +1,5 @@
 .ae-enable-special-menu {
-  .acmethemes-nav {
-    float: right;
-    width: calc(100% - 255px);
-  }
+
 }
 
 .special-sub-menu {
@@ -43,7 +40,8 @@
           z-index: 999;
           max-height: 433px;
           overflow: hidden;
-          display: none;
+          opacity: 0;
+          left: -9999999px;
           position: absolute;
           margin-left: 0;
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -66,9 +64,9 @@
             background-image: -webkit-gradient(linear,
                     left bottom,
                     left top,
-                    color-stop(0.44, rgb(122, 153, 217)),
-                    color-stop(0.72, rgb(73, 125, 189)),
-                    color-stop(0.86, rgb(28, 58, 148)));
+                    color-stop(0.0, lighten($primary_color, 10)),
+                    color-stop(0.50, $primary_color),
+                    color-stop(1, darken($primary_color, 20)));
           }
 
           li {
@@ -83,7 +81,10 @@
             font-size: 15px;
             font-weight: 700;
             text-transform: uppercase;
+            width: 100%;
+            padding: 3px;
             a {
+
               padding: 15px 15px;
               display: inline-block;
               color: $secondary_color;
@@ -115,7 +116,7 @@
             }
           }
           a {
-            width: 225px;
+            width: 100%;
           }
         }
       }
@@ -146,16 +147,17 @@
               }
             }
           }
-          &:hover {
-            ul {
-              left: auto;
-              display: block;
-              opacity: 1;
-              top: 100%;
-              animation: fade 0.5s;
-            }
+          &:hover ul,
+          a.special-menu:focus ~ ul,
+          &.focus ul {
 
+            left: auto;
+            display: block;
+            opacity: 1;
+            top: 100%;
+            animation: fade 0.5s;
           }
+
         }
       }
     }
@@ -168,7 +170,18 @@
 
     &:not( .onhover ) {
       .special-sub-menu {
-        display: block;
+        opacity: 1;
+        left: unset;
+      }
+    }
+  }
+}
+
+@media (min-width: 1051px) {
+  .site-header {
+    &.right-special-menu {
+      .special-menu-container {
+        float: right;
       }
     }
   }

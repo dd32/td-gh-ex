@@ -88,8 +88,11 @@ span.comments-link::before {
 }
 
 .entry-meta {
-  .cat-links::before {
+  .cat-links a::before {
     content: "\f115";
+    font-family: FontAwesome;
+    margin-right: 5px;
+    margin-left: 7px;
   }
   .byline::before {
     content: "\f2c0";
@@ -106,6 +109,9 @@ span.comments-link::before {
   }
   .tags-links::before {
     content: "\f02c";
+    font-family: FontAwesome;
+    margin-right: 5px;
+    margin-left: 7px;
   }
 }
 
@@ -378,9 +384,10 @@ a.comment-reply-link:hover {
   label {
     display: inline-block;
   }
-  input[type="submit"] {
+  input[type="submit"], input[type="submit"]#submit {
     line-height: 1.1;
     border: 1px solid $primary_color;
+    color: #fff;
     &:hover {
       background: transparent;
       color: $primary_color;

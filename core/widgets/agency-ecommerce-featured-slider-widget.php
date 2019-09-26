@@ -22,7 +22,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                 'description' => esc_html__('This widget will show slider on your website and it is compatible with Slider Widget Area', 'agency-ecommerce'),
             );
 
-            parent::__construct('agency-ecommerce-featured-slider', esc_html__(' Featured Slider', 'agency-ecommerce'), $opts);
+            parent::__construct('agency-ecommerce-featured-slider', esc_html__('AE - Featured Slider', 'agency-ecommerce'), $opts);
 
         }
 
@@ -65,13 +65,34 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                     'title' => esc_html__('Number of products for Right Slider', 'agency-ecommerce'),
                     'type' => 'number',
                     'default' => 6,
+                ), 'right_number_of_rows' => array(
+                    'name' => 'right_number_of_rows',
+                    'title' => esc_html__('Number of rows for Right Slider', 'agency-ecommerce'),
+                    'type' => 'select',
+                    'default' => 'two',
+                    'options' => array(
+                        'one' => esc_html__('One', 'agency-ecommerce'),
+                        'two' => esc_html__('Two', 'agency-ecommerce'),
+                        'three' => esc_html__('Three', 'agency-ecommerce')
+                    )
                 ), 'shop_now_text' => array(
                     'name' => 'shop_now_text',
                     'title' => esc_html__('Shop Now Text', 'agency-ecommerce'),
                     'type' => 'text',
                     'default' => esc_html__('Shop Now', 'agency-ecommerce'),
-                ), 'disable_slider' => array(
-                    'name' => 'disable_slider',
+                ),
+                'flip_slider' => array(
+                    'name' => 'flip_slider',
+                    'title' => esc_html__('Flip right slider to left and left to right', 'agency-ecommerce'),
+                    'type' => 'checkbox',
+                ),
+                'hide_right_slider' => array(
+                    'name' => 'hide_right_slider',
+                    'title' => esc_html__('Hide right slider', 'agency-ecommerce'),
+                    'type' => 'checkbox',
+                ),
+                'disable_slider_mode' => array(
+                    'name' => 'disable_slider_mode',
                     'title' => esc_html__('Disable Slider Mode', 'agency-ecommerce'),
                     'type' => 'checkbox',
                 )
@@ -92,14 +113,48 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
 
             $left_number_of_products = $valid_widget_instance['left_number_of_products'];
 
-            $disable_slider = $valid_widget_instance['disable_slider'];
+            $right_number_of_rows = $valid_widget_instance['right_number_of_rows'];
 
+            $hide_right_slider = $valid_widget_instance['hide_right_slider'];
+
+            $flip_slider = $valid_widget_instance['flip_slider'];
+
+            $right_rows = 2;
+
+            switch ($right_number_of_rows) {
+                case "one":
+                    $right_rows = 1;
+                    break;
+                case "two":
+                    $right_rows = 2;
+                    break;
+                case "three":
+                    $right_rows = 3;
+                    break;
+
+            }
+
+            $disable_slider_mode = $valid_widget_instance['disable_slider_mode'];
+
+            $feature_slider_wrap_class = 'feature-slider-wrap';
+
+            if ($hide_right_slider) {
+
+                $feature_slider_wrap_class .= ' hide-right-slider';
+            }
+
+            if ($flip_slider) {
+
+                $feature_slider_wrap_class .= ' flipped';
+            }
 
             echo $args['before_widget'];
             ?>
-            <div class="feature-slider-wrap">
+            <div class="<?php echo esc_attr($feature_slider_wrap_class); ?>">
+                <?php agency_ecommerce_widget_before($args); ?>
+
                 <div class="main-slider-wrap">
-                    <div class="main-slider" data-disable="<?php echo $disable_slider ? true : false ?>">
+                    <div class="main-slider" data-disable="<?php echo $disable_slider_mode ? true : false ?>">
 
                         <?php
                         $is_woocommerce_active = true;
@@ -119,27 +174,32 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                         ?>
                     </div>
                 </div>
-                <div class="slider-section-right">
-                    <div class="verticle-slider" data-disable="<?php echo $disable_slider ? true : false ?>">
-                        <?php
-                        $is_woocommerce_active = true;
+                <?php if (!(boolean)$hide_right_slider) { ?>
+                    <div class="slider-section-right">
+                        <div class="verticle-slider row-<?php echo esc_attr($right_number_of_rows) ?>"
+                             data-rows="<?php echo absint($right_rows) ?>"
+                             data-disable="<?php echo $disable_slider_mode ? true : false ?>">
+                            <?php
+                            $is_woocommerce_active = true;
 
-                        $right_query_args = $this->get_query_args($valid_widget_instance, 'right_product');
-                        $right_slider_query = new WP_Query($right_query_args);
-                        if ($right_slider_query->have_posts()):
-                            while ($right_slider_query->have_posts()): $right_slider_query->the_post();
-                                $this->slider_item($valid_widget_instance);
-                            endwhile;
-                        else:
-                            $this->default_slider_item($valid_widget_instance);
-                            $this->default_slider_item($valid_widget_instance);
-                            $this->default_slider_item($valid_widget_instance);
-                        endif;
-                        wp_reset_postdata();
-                        ?>
+                            $right_query_args = $this->get_query_args($valid_widget_instance, 'right_product');
+                            $right_slider_query = new WP_Query($right_query_args);
+                            if ($right_slider_query->have_posts()):
+                                while ($right_slider_query->have_posts()): $right_slider_query->the_post();
+                                    $this->slider_item($valid_widget_instance);
+                                endwhile;
+                            else:
+                                $this->default_slider_item($valid_widget_instance);
+                                $this->default_slider_item($valid_widget_instance);
+                                $this->default_slider_item($valid_widget_instance);
+                            endif;
+                            wp_reset_postdata();
+                            ?>
 
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
+                <?php agency_ecommerce_widget_after($args); ?>
 
             </div>
 
@@ -201,23 +261,23 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
             }
             $image_url = empty($image_url) ? get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-1400-653.jpg' : $image_url;
 
-            $bg_image_style = 'background-image:url(' . ($image_url) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+            $bg_image_style = 'background-image:url(' . (esc_url($image_url)) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
             ?>
             <div class="slide-item" style="<?php echo $bg_image_style; ?>">
                 <a class="ae-overlay"
                    href="<?php the_permalink() ?>"
-                   title="<?php the_title() ?>"></a>
+                   title="<?php the_title_attribute() ?>"></a>
                 <div class="slider-desc">
                     <div class="slider-details">
                         <div class="slide-title">
                             <a href="<?php the_permalink() ?>"
-                               title="<?php the_title() ?>">
+                               title="<?php the_title_attribute() ?>">
                                 <?php the_title() ?></a>
                         </div>
                     </div>
                     <div class="slider-buttons">
                         <a href="<?php the_permalink() ?>"
-                           class="slider-button primary" title="<?php the_title() ?>">
+                           class="slider-button primary" title="<?php the_title_attribute() ?>">
                             <?php echo esc_html($valid_widget_instance['shop_now_text']) ?></a>
                     </div>
                 </div>
@@ -228,7 +288,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
         public function default_slider_item($valid_widget_instance)
         {
             $image_url = get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-1400-653.jpg';
-            $bg_image_style = 'background-image:url(' . ($image_url) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+            $bg_image_style = 'background-image:url(' . esc_url($image_url) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
 
             ?>
             <div class="slide-item" style="<?php echo $bg_image_style; ?>">
@@ -237,7 +297,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                 <div class="slider-desc">
                     <div class="slider-details">
                         <div class="slide-title">
-                            <a href="#"><?php echo __('Slider Title', 'agency-ecommerce'); ?></a>
+                            <a href="#"><?php echo esc_html__('Slider Title', 'agency-ecommerce'); ?></a>
                         </div>
                     </div>
                     <div class="slider-buttons">

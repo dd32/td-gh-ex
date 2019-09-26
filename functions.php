@@ -9,7 +9,9 @@
  * @since 1.0.0
  */
 
-define('AGENCY_ECOMMERCE_THEME_VERSION', '2.0.1');
+$current_theme = wp_get_theme('agency-ecommerce');
+
+define('AGENCY_ECOMMERCE_THEME_VERSION', $current_theme->get('Version'));
 define('AGENCY_ECOMMERCE_THEME_SETTINGS', 'agency-ecommerce-settings');
 
 define('AGENCY_ECOMMERCE_THEME_DIR', trailingslashit(get_template_directory()));
@@ -23,6 +25,7 @@ function Agency_Ecommerce()
 }
 
 Agency_Ecommerce();
+
 
 
 

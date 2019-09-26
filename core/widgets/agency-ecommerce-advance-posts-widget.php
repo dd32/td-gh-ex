@@ -13,6 +13,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
      */
     class Agency_Ecommerce_Advance_Posts_Widget extends Agency_Ecommerce_Widget_Base
     {
+        public $excerpt_length;
 
         function __construct()
         {
@@ -21,7 +22,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                 'description' => esc_html__('Widget to dispaly posts with thumbnail.', 'agency-ecommerce'),
             );
 
-            parent::__construct('agency-ecommerce-advance-posts', esc_html__(' Advance Posts', 'agency-ecommerce'), $opts);
+            parent::__construct('agency-ecommerce-advance-posts', esc_html__('AE - Advance Posts', 'agency-ecommerce'), $opts);
         }
 
         function widget_fields()
@@ -45,9 +46,9 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                 ), 'exclude_categories' => array(
                     'name' => 'exclude_categories',
                     'title' => esc_html__('Exclude Categories', 'agency-ecommerce'),
-                    'description' => 'Enter category id seperated with comma. Posts from these categories will be excluded from latest post listing.',
+                    'description' => esc_html__('Enter category id seperated with comma. Posts from these categories will be excluded from latest post listing.', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => __('View Details', 'agency-ecommerce')
+                    'default' => esc_html__('View Details', 'agency-ecommerce')
                 ), 'excerpt_length' => array(
                     'name' => 'excerpt_length',
                     'title' => esc_html__('Excerpt Length', 'agency-ecommerce'),
@@ -86,6 +87,8 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
 
             <div class="<?php echo esc_attr($class); ?>">
                 <?php
+                agency_ecommerce_widget_before($args);
+
                 if ($title) {
 
                     echo $args['before_title'] . esc_html($title) . $args['after_title'];
@@ -139,7 +142,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                                                     <?php the_post_thumbnail('agency-ecommerce-common'); ?>
                                                 <?php else:
                                                     $placeholder = get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-300-300.png';
-                                                    echo '<img src="'.$placeholder.'"/>';
+                                                    echo '<img src="' . esc_url($placeholder) . '"/>';
 
                                                 endif; ?>
                                             </a>
@@ -159,9 +162,15 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                                             <div class="entry-content">
                                                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                                 <?php
-                                                $content = agency_ecommerce_get_the_excerpt(absint($valid_widget_instance['excerpt_length']));
+                                                $this->excerpt_length = $valid_widget_instance['excerpt_length'];
 
-                                                echo $content ? wpautop(wp_kses_post($content)) : '';
+                                                add_filter('excerpt_length', array($this, 'excerpt_length'), 11);
+
+                                                $content = agency_ecommerce_get_the_excerpt();
+
+                                                echo $content ? wp_kses_post(wpautop($content)) : '';
+
+                                                remove_filter('excerpt_length', array($this, 'excerpt_length'));
                                                 ?>
                                             </div>
 
@@ -181,11 +190,17 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                     <?php endif; ?>
 
                 </div>
-
+                <?php agency_ecommerce_widget_after($args); ?>
             </div><!-- .advance-posts-widget -->
 
             <?php
             echo $args['after_widget'];
+        }
+
+        function excerpt_length($length)
+        {
+
+            return $this->excerpt_length;
         }
 
 

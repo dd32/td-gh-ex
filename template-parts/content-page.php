@@ -15,16 +15,17 @@
     <div class="content-wrap">
 
         <div class="content-wrap-inner">
+            <?php if (!agency_ecommerce_is_advance_breadcrumb()) { ?>
 
-            <header class="entry-header">
-                <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-            </header><!-- .entry-header -->
-
+                <header class="entry-header">
+                    <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+                </header><!-- .entry-header -->
+            <?php } ?>
             <div class="entry-content">
                 <?php
                 the_content(sprintf(
-                                /* translators: %s: Name of current post. */
-                                wp_kses(esc_html__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'agency-ecommerce'), array('span' => array('class' => array()))), the_title('<span class="screen-reader-text">"', '"</span>', false)
+                /* translators: %s: Name of current post. */
+                    wp_kses(esc_html__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'agency-ecommerce'), array('span' => array('class' => array()))), the_title('<span class="screen-reader-text">"', '"</span>', false)
                 ));
 
                 wp_link_pages(array(
@@ -38,10 +39,10 @@
                 <footer class="entry-footer">
                     <?php
                     edit_post_link(
-                            sprintf(
-                                    /* translators: %s: Name of current post */
-                                    esc_html__('Edit %s', 'agency-ecommerce'), the_title('<span class="screen-reader-text">"', '"</span>', false)
-                            ), '<span class="edit-link">', '</span>'
+                        sprintf(
+                        /* translators: %s: Name of current post */
+                            esc_html__('Edit %s', 'agency-ecommerce'), the_title('<span class="screen-reader-text">"', '"</span>', false)
+                        ), '<span class="edit-link">', '</span>'
                     );
                     ?>
                 </footer><!-- .entry-footer -->
