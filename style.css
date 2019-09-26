@@ -1,10 +1,10 @@
 /*!
 Theme Name: ArticlePress
-Theme URI: https://item.themeasia.net/articlepress/
+Theme URI: https://articlepress.pro
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.1.10
+Version: 1.1.11
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
@@ -1622,7 +1622,6 @@ button.btn.btn-blog.form-btn:hover i {
     transition: all .5s;
 }
 .search-input {
-    position: absolute;
     margin: auto;
     top: 0;
     right: 0;
