@@ -1,8 +1,8 @@
 === 20/16 VCReady - Twentysixteen Child Theme ===
 Contributors: WebsiteHelper
-Requires at least: 4.8
-Tested up to: 4.9
-Version: 1.5.8
+Requires at least: 4.9
+Tested up to: 5.2.3
+Version: 1.5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, full-width, accessibility-ready, custom-colors, custom-header
@@ -131,6 +131,13 @@ Updated theme URL in Style.css
 
 Minor CSS adjustments
 Added new customizer support to allow enabling and disabling the read more button and archive layout
+
+== 1.5.9 ==
+* Fixed: September 26, 2019
+
+General clean
+Aligned header elements center
+Fixed spacing issues
 
 == Resources ==
 
