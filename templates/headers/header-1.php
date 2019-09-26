@@ -30,36 +30,48 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                     </div>
                     <div class="col-lg-auto social-icons-div">
                         <ul class="list-inline middle-social-icon">
-							<?php if ( isset( $theme_mod['facebook_profile_url'] ) && $theme_mod['facebook_profile_url'] !== '' ) { ?>
-                                <li class="list-inline-item"><a class="social-link" rel="nofollow" target="_blank"
-                                                                href="<?php echo esc_url( $theme_mod['facebook_profile_url'] ); ?>"><i
-                                                class="fa fa-facebook"></i></a></li>
-							<?php }
-							if ( isset( $theme_mod['instagram_profile_url'] ) && $theme_mod['instagram_profile_url'] !== '' ) { ?>
-                                <li class="list-inline-item"><a class="social-link" rel="nofollow" target="_blank"
-                                                                href="<?php echo esc_url( $theme_mod['instagram_profile_url'] ); ?>"><i
-                                                class="fa fa-instagram"></i></a></li>
-							<?php }
-							if ( isset( $theme_mod['googleplus_profile_url'] ) && $theme_mod['googleplus_profile_url'] !== '' ) { ?>
-                                <li class="list-inline-item"><a class="social-link" rel="nofollow" target="_blank"
-                                                                href="<?php echo esc_url( $theme_mod['googleplus_profile_url'] ); ?>"><i
-                                                class="fa fa-google-plus"></i></a></li>
-							<?php }
-							if ( isset( $theme_mod['twitter_profile_url'] ) && $theme_mod['twitter_profile_url'] !== '' ) { ?>
-                                <li class="list-inline-item"><a class="social-link" rel="nofollow" target="_blank"
-                                                                href="<?php echo esc_url( $theme_mod['twitter_profile_url'] ); ?>"><i
-                                                class="fa fa-twitter"></i></a></li>
-							<?php }
-							if ( isset( $theme_mod['pinterest_profile_url'] ) && $theme_mod['pinterest_profile_url'] !== '' ) { ?>
-                                <li class="list-inline-item"><a class="social-link" rel="nofollow" target="_blank"
-                                                                href="<?php echo esc_url( $theme_mod['pinterest_profile_url'] ); ?>"><i
-                                                class="fa fa-pinterest"></i></a></li>
-							<?php }
-							if ( isset( $theme_mod['linkedin_profile_url'] ) && $theme_mod['linkedin_profile_url'] !== '' ) { ?>
-                                <li class="list-inline-item"><a class="social-link" rel="nofollow" target="_blank"
-                                                                href="<?php echo esc_url( $theme_mod['linkedin_profile_url'] ); ?>"><i
-                                                class="fa fa-linkedin"></i></a></li>
-							<?php } ?>
+                            <?php if ( isset( $theme_mod['facebook_profile_url'] ) && $theme_mod['facebook_profile_url'] !== '' ) { ?>
+                                <li class="list-inline-item">
+                                    <a class="social-link" rel="nofollow" target="_blank" href="<?php echo esc_url( $theme_mod['facebook_profile_url'] ); ?>">
+                                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/social/facebook.svg" />
+                                    </a>
+                                </li>
+                            <?php }
+                            if ( isset( $theme_mod['instagram_profile_url'] ) && $theme_mod['instagram_profile_url'] !== '' ) { ?>
+                                <li class="list-inline-item">
+                                    <a class="social-link" rel="nofollow" target="_blank" href="<?php echo esc_url( $theme_mod['instagram_profile_url'] ); ?>">
+                                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/social/instagram.svg" />
+                                    </a>
+                                </li>
+                            <?php }
+                            if ( isset( $theme_mod['googleplus_profile_url'] ) && $theme_mod['googleplus_profile_url'] !== '' ) { ?>
+                                <li class="list-inline-item">
+                                    <a class="social-link" rel="nofollow" target="_blank" href="<?php echo esc_url( $theme_mod['googleplus_profile_url'] ); ?>">
+                                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/social/youtube.svg" />
+                                    </a>
+                                </li>
+                            <?php }
+                            if ( isset( $theme_mod['twitter_profile_url'] ) && $theme_mod['twitter_profile_url'] !== '' ) { ?>
+                                <li class="list-inline-item">
+                                    <a class="social-link" rel="nofollow" target="_blank" href="<?php echo esc_url( $theme_mod['twitter_profile_url'] ); ?>">
+                                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/social/twitter.svg" />
+                                    </a>
+                                </li>
+                            <?php }
+                            if ( isset( $theme_mod['pinterest_profile_url'] ) && $theme_mod['pinterest_profile_url'] !== '' ) { ?>
+                                <li class="list-inline-item">
+                                    <a class="social-link" rel="nofollow" target="_blank" href="<?php echo esc_url( $theme_mod['pinterest_profile_url'] ); ?>">
+                                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/social/pinterest.svg" />
+                                    </a>
+                                </li>
+                            <?php }
+                            if ( isset( $theme_mod['linkedin_profile_url'] ) && $theme_mod['linkedin_profile_url'] !== '' ) { ?>
+                                <li class="list-inline-item">
+                                    <a class="social-link" rel="nofollow" target="_blank" href="<?php echo esc_url( $theme_mod['linkedin_profile_url'] ); ?>">
+                                        <img src="<?php echo get_stylesheet_directory_uri() ?>/images/social/linkedin.svg" />
+                                    </a>
+                                </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>

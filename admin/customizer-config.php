@@ -1094,7 +1094,7 @@ $attire_options = array(
 		'default'   => '',
 	),
 	'googleplus_profile_url'    => array(
-		'label'     => __( 'Google+ Profile / Page URL', 'attire' ),
+		'label'     => __( 'YouTube Channel URL', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'url',
 		'section'   => 'attire_social',

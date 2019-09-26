@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: https://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Demo: http://demo.wpattire.com/
 Author: Shafayat
-Version: 1.2.3
+Version: 1.2.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -60,7 +60,7 @@ ol {
 	list-style: none;
 	padding-left: 0;
 }
-.entry-content ul{
+.entry-content ul:not(.nav){
 	margin-left: 25px;
 	list-style: square;
 }
@@ -153,7 +153,9 @@ input:focus {
 	box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.05);
 	border: 1px solid #eeeeee;
 }
-
+.w3eden .btn{
+	font-weight: 600;
+}
 input[type="submit"]:not(.btn),
 input[type="reset"]:not(.btn) {
 	color: #ffffff;
@@ -208,11 +210,29 @@ th {
 }
 
 blockquote {
-	border-left: 3px solid #00b182;
-	padding-left: 25px;
+	border-left: 5px solid #00b182;
+	padding: 25px;
 	font-style: italic;
 	position: relative;
 	margin: 25px 0;
+	background: #ffffff linear-gradient(90deg, rgba(0, 177, 130, 0.19) 0%, #FFFFFF 30px);
+	box-shadow: 0 0 6px rgba(0,0,0,0.1);
+	border-radius: 0px;
+	font-size: 13pt;
+}
+blockquote strong,
+blockquote b{
+	font-weight: 500;
+}
+.attire-content blockquote p,
+blockquote p{
+	margin-bottom: 10px;
+	font-style: normal;
+	font-size: 18px;
+}
+blockquote cite{
+	font-size: 11px;
+	color: #999999;
 }
 
 .post-author-info .author-name {
@@ -220,7 +240,6 @@ blockquote {
 }
 
 .post-author-info .media img {
-	/*border-radius: 50%;*/
 	max-height: 96px;
 }
 
@@ -302,6 +321,45 @@ img {
 .wp-caption img {
 	position: relative;
 	vertical-align: bottom;
+}
+
+.alert{
+	border: 0;
+	border-radius: 0;
+	border-top: 2px solid;
+	letter-spacing: .3px;
+}
+.alert.alert-danger{
+	border-color: var(--color-danger);
+	color: var(--color-danger);
+	background-color: rgba(var(--color-danger-rgb), 0.05);
+}
+#mainframe .alert.alert-danger a{
+	color: var(--color-danger);
+}
+.alert.alert-info{
+	border-color: var(--color-info);
+	color: var(--color-info);
+	background-color: rgba(var(--color-info-rgb), 0.05);
+}
+#mainframe .alert.alert-info a{
+	color: var(--color-info);
+}
+.alert.alert-success{
+	border-color: var(--color-success);
+	color: var(--color-success);
+	background-color: rgba(var(--color-success-rgb), 0.05);
+}
+#mainframe .alert.alert-success a{
+	color: var(--color-success);
+}
+.alert.alert-primary{
+	border-color: var(--color-primary);
+	color: var(--color-primary);
+	background-color: rgba(var(--color-primary-rgb), 0.05);
+}
+#mainframe .alert.alert-primary a{
+	color: var(--color-primary);
 }
 
 span[id*=more-]:before {
@@ -574,16 +632,12 @@ footer ul {
 
 header .dropdown-menu {
 	left: 0;
-	margin-top: 0px;
+	margin-top: -1px;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
 
 header .dropdown-menu li {
 	margin-right: 1px;
-}
-
-footer .dropdown:hover > ul {
-	/*position: absolute;*/
-	/*margin-left: -1px;*/
 }
 
 footer .dropdown-menu {
@@ -598,14 +652,8 @@ footer .dropdown-menu {
 	width: 100%;
 }
 
-.dropdown ul li {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	border-left: 1px solid rgba(0, 0, 0, 0.1);
-	border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dropdown ul li:last-child {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+.dropdown ul li:not(:last-child) {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .dropdown ul li a {
@@ -760,12 +808,11 @@ header .widget-search-form {
 }
 
 .middle-header .middle-social-icon > li {
-	padding: 0 6px;
+	padding: 0;
 }
 
-.middle-header .middle-social-icon > li > i {
-	font-size: 13px;
-	cursor: pointer;
+.middle-header .middle-social-icon img {
+	width: 32px;
 }
 
 #header-1 .middle-header .site-logo {
@@ -805,7 +852,7 @@ header .widget-search-form {
 	font-size: 1.3em;
 }
 
-li.nav-item:not(.desktop-search) a {
+header li.nav-item:not(.desktop-search) a {
 	height: 50px;
 	padding: 0 20px;
 	line-height: 50px;
@@ -1762,12 +1809,14 @@ article.post.product:before {
 #theme-user-dashboard.user-dashboard .table tbody td:last-child {
 	text-align: right;
 }
+#wpdm-dashboard-sidebar #tabs,
 #theme-user-dashboard #wpdm-dashboard-sidebar {
 	padding: 15px;
 	width: 240px;
 	background: #354788;
 	border-radius: 4px;
 	margin-right: 25px;
+	max-width: 100%;
 }
 #theme-user-dashboard #wpdm-dashboard-sidebar .adp-item i {
 	border-radius: 30px;
@@ -1858,6 +1907,9 @@ article.post.product:before {
 }
 
 /* purchase */
+.w3eden .card h3.wpdmpp-product-price{
+	margin-bottom: 10px;
+}
 #theme-user-dashboard .card .card-footer {
 	border-color: #e5e5e5;
 }
