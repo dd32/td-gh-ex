@@ -280,7 +280,7 @@ define('ADVANCE_PET_CARE_CREDIT', 'https://www.themeshopy.com/themes/free-pet-wo
 
 if (!function_exists('advance_pet_care_credit')) {
 	function advance_pet_care_credit() {
-		echo "<a href=".esc_url(ADVANCE_PET_CARE_CREDIT)." target='_blank' alt='".esc_html__('Pet WordPress Theme','advance-pet-care')."''>".esc_html__('Pet WordPress Theme', 'advance-pet-care')."</a>";
+		echo "<a href=".esc_url(ADVANCE_PET_CARE_CREDIT).">".esc_html__('Pet WordPress Theme', 'advance-pet-care')."</a>";
 	}
 }
 
@@ -387,7 +387,7 @@ function advance_pet_care_scripts() {
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-pet-care-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
-	
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'advance-pet-care-basic-style',$custom_css );
 

@@ -9,7 +9,7 @@
 ?>	
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
-        <h1><?php the_title();?></h1>
+        <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
         <div class="entry-attachment">
             <div class="attachment">
                 <?php advance_pet_care_the_attached_image(); ?>
@@ -17,7 +17,9 @@
 
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
-                    <?php the_excerpt(); ?>
+                    <div class="entry-content">
+                        <?php the_excerpt(); ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>    

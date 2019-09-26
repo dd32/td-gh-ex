@@ -18,7 +18,7 @@ function advance_pet_care_mostrar_guide() {
 ?>
  <div class="wrapper-info">
 	 <div class="header">
-	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
+	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png"  />
 	 	<h2><?php esc_html_e('Welcome to Advance Pet Care Theme', 'advance-pet-care'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-pet-care'); ?></p>
 		<div class="main-button">
@@ -28,8 +28,8 @@ function advance_pet_care_mostrar_guide() {
 		</div>
 	</div>
 	<div class="button-bg">
-	<button class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-pet-care'); ?></button>
-	<button class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-pet-care'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-pet-care'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-pet-care'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'advance-pet-care'); ?></h3>
@@ -46,11 +46,11 @@ function advance_pet_care_mostrar_guide() {
 				</ul>
 		  	</div>
 		  	<div class="doc-image">
-		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="" />	
+		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png"  />	
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">
-					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="" />	
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" />	
 			    </div>
 			    <div class="image-docs1">
 				    <ul>
@@ -70,7 +70,7 @@ function advance_pet_care_mostrar_guide() {
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">
-	  			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.png" alt="" />
+	  			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.png"  />
 	  			<p><?php esc_html_e( 'This pet WordPress theme is refreshing, colourful, dynamic and appealing. It is the best fit for pet shops, pet grooming, animal training, pet consultant, pet selling store, animal food seller and other relevant websites. This multipurpose theme is built to serve a wide range of websites with high-level functionality and amazing features. Its interface is easy to learn, so much so that even a person with no coding knowledge can make full use of it to build a beautiful and efficient website. This pet WordPress theme comes with so many options of header and footer and many other styles of layouts that every time you will get a different look. To make it run flawlessly on varying screen sizes and browsers, it is made responsive and compatible with all browsers. To ensure its smooth working, it gives you access to customer support and regular theme updates.', 'advance-pet-care' ); ?></p>
 	  		</div>
 	  		<div class="col-4">

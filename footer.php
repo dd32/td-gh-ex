@@ -7,7 +7,8 @@
  * @package advance-pet-care
  */
 ?>
-<footer>
+
+<footer role="contentinfo">
     <div id="footer" class="copyright-wrapper">
         <div class="container">
             <div class="row">
@@ -30,6 +31,7 @@
         <p><?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('Copyright 2018 -', 'advance-pet-care')));?> <?php advance_pet_care_credit();?></p>
     </div>
 </footer>
-    <?php wp_footer();?>
-    </body>
+
+<?php wp_footer();?>
+</body>
 </html>
