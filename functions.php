@@ -57,7 +57,7 @@ function advance_portfolio_setup() {
 	add_editor_style(array('css/editor-style.css', advance_portfolio_font_url()));
 }
 
-// Theme Activation Notice
+	// Theme Activation Notice
 	global $pagenow;
 	
 	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
@@ -154,10 +154,6 @@ add_action('widgets_init', 'advance_portfolio_widgets_init');
 function advance_portfolio_font_url() {
 	$font_url      = '';
 	$font_family   = array();
-	$font_family[] = 'PT Sans:300,400,600,700,800,900';
-	$font_family[] = 'Roboto:400,700';
-	$font_family[] = 'Vollkorn:400,400i,600,600i,700,700i,900,900i';
-	$font_family[] = 'Exo:100,100i,300,300i,400,400i,500,500i,600,600i,700,700i,800';
 	$font_family[] = 'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
 
 	$query_args = array(
@@ -264,7 +260,7 @@ function advance_portfolio_scripts() {
 		wp_enqueue_script('comment-reply');
 	}
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
-
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	require get_parent_theme_file_path( '/inc/color-option.php' );
 	wp_add_inline_style( 'advance-portfolio-basic-style',$custom_css );
 
@@ -306,7 +302,7 @@ define('ADVANCE_PORTFOLIO_CREDIT', 'https://www.themeshopy.com/themes/free-wordp
 
 if (!function_exists('advance_portfolio_credit')) {
 	function advance_portfolio_credit() {
-		echo "<a href=".esc_url(ADVANCE_PORTFOLIO_CREDIT)." target='_blank' alt='".esc_html__('Automobile WordPress Theme','advance-portfolio')."''>".esc_html__('Advance Portfolio WordPress Theme', 'advance-portfolio')."</a>";
+		echo "<a href=".esc_url(ADVANCE_PORTFOLIO_CREDIT).">".esc_html__('Advance Portfolio WordPress Theme', 'advance-portfolio')."</a>";
 	}
 }
 

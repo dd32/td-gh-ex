@@ -7,7 +7,7 @@
  * @package advance-portfolio
  */
 ?>
-<footer>
+<footer role="contentinfo">
     <div id="footer" class="copyright-wrapper">
         <div class="container">
             <div class="row">
@@ -30,6 +30,6 @@
         <p><?php echo esc_html(get_theme_mod('advance_portfolio_footer_copy', __('Copyright 2018 -', 'advance-portfolio')));?> <?php advance_portfolio_credit();?></p>
     </div>
 </footer>
-    <?php wp_footer();?>
-    </body>
+<?php wp_footer();?>
+</body>
 </html>

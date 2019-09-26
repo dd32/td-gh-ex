@@ -596,7 +596,8 @@ function advance_portfolio_customize_register($wp_customize) {
 		'type'    => 'text',
 	));
 
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+	$post_list = get_posts($args);
 	$i = 0;
 	$pst[]='Select';  
 	foreach($post_list as $post){
@@ -614,7 +615,8 @@ function advance_portfolio_customize_register($wp_customize) {
 		'section'     => 'advance_portfolio_page_awesome',
 	));
 
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+	$post_list = get_posts($args);
 	$i = 0;
 	$pst1[]='Select';  
 	foreach($post_list as $post){
@@ -632,7 +634,8 @@ function advance_portfolio_customize_register($wp_customize) {
 		'section'     => 'advance_portfolio_page_awesome',
 	));
 
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+	$post_list = get_posts($args);
 	$i = 0;
 	$pst2[]='Select';  
 	foreach($post_list as $post){
@@ -650,7 +653,8 @@ function advance_portfolio_customize_register($wp_customize) {
 		'section'     => 'advance_portfolio_page_awesome',
 	));
 
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+	$post_list = get_posts($args);
 	$i = 0;
 	$pst3[]='Select';  
 	foreach($post_list as $post){

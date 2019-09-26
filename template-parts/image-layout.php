@@ -7,16 +7,23 @@
  * @since advance-portfolio 1.0
  */
 ?>	
+<?php 
+  $archive_year  = get_the_time('Y'); 
+  $archive_month = get_the_time('m'); 
+  $archive_day   = get_the_time('d'); 
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
-        <h1><?php the_title();?></h1>
+        <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
         <div class="entry-attachment">
             <div class="attachment">
                 <?php advance_portfolio_the_attached_image(); ?>
             </div>
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
-                    <?php the_excerpt(); ?>
+                    <div class="entry-content">
+                        <?php the_excerpt(); ?>
+                    </div>
                 </div>
             <?php endif; ?>
         </div>    
@@ -28,7 +35,7 @@
             ) );
         ?>
     </div>    
-    <?php edit_post_link( __( 'Edit', 'advance-portfolio' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>   
+    <?php edit_post_link( __( 'Edit', 'advance-portfolio' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>   
     <?php
         // If comments are open or we have at least one comment, load up the comment template
         if ( comments_open() || '0' != get_comments_number() )
