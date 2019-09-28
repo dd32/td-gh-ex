@@ -59,7 +59,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content.php:47, inc/settings.php:395, inc/template-tags.php:536, loops/loop-circleicon.php:23, loops/loop-grid.php:24
+#: content.php:47, inc/settings.php:401, inc/template-tags.php:536, loops/loop-circleicon.php:23, loops/loop-grid.php:24
 msgid "Continue reading"
 msgstr ""
 
@@ -67,59 +67,59 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:255, inc/customizer.php:36
+#: functions.php:254, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:256
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:266
+#: functions.php:265
 msgid "Shop"
 msgstr ""
 
-#: functions.php:268
+#: functions.php:267
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:277, inc/customizer.php:40
+#: functions.php:276, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:279
+#: functions.php:278
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:287
+#: functions.php:286
 msgid "Header"
 msgstr ""
 
-#: functions.php:289
+#: functions.php:288
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:297
+#: functions.php:296
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:299
+#: functions.php:298
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:393
+#: functions.php:391
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:592
+#: functions.php:590
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:597
+#: functions.php:595
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:602
+#: functions.php:600
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -496,7 +496,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2689, inc/settings.php:476
+#: inc/class-tgm-plugin-activation.php:2689, inc/settings.php:482
 msgid "Type"
 msgstr ""
 
@@ -950,7 +950,7 @@ msgstr ""
 msgid "Masthead Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:583, inc/customizer.php:610, inc/customizer.php:645, inc/settings.php:496
+#: inc/customizer.php:583, inc/customizer.php:610, inc/customizer.php:645, inc/settings.php:502
 msgid "Default"
 msgstr ""
 
@@ -1030,7 +1030,7 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: inc/extras.php:135
+#: inc/extras.php:134
 msgid "Page %s"
 msgstr ""
 
@@ -1038,7 +1038,7 @@ msgstr ""
 msgid "Slider"
 msgstr ""
 
-#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:450
+#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:456
 msgid "Theme Settings"
 msgstr ""
 
@@ -1266,7 +1266,7 @@ msgstr ""
 msgid "Boxed"
 msgstr ""
 
-#: inc/settings.php:81, inc/settings.php:498
+#: inc/settings.php:81, inc/settings.php:504
 msgid "Full Width"
 msgstr ""
 
@@ -1482,7 +1482,7 @@ msgstr ""
 msgid "Featured Image"
 msgstr ""
 
-#: inc/settings.php:234, inc/settings.php:239, inc/settings.php:244, inc/settings.php:249, inc/settings.php:254, inc/settings.php:259, inc/settings.php:264, inc/settings.php:269, inc/settings.php:279
+#: inc/settings.php:234, inc/settings.php:239, inc/settings.php:244, inc/settings.php:249, inc/settings.php:254, inc/settings.php:259, inc/settings.php:264, inc/settings.php:269, inc/settings.php:274, inc/settings.php:284
 msgid "Display"
 msgstr ""
 
@@ -1546,227 +1546,235 @@ msgstr ""
 msgid "Show an author box below each blog post."
 msgstr ""
 
-#: inc/settings.php:273
-msgid "Post Author's Comments"
+#: inc/settings.php:273, inc/template-tags.php:721
+msgid "Related Posts"
 msgstr ""
 
-#: inc/settings.php:274
-msgid "Text displayed as a label next to the post author's comments."
+#: inc/settings.php:275
+msgid "Display related posts on single post pages."
 msgstr ""
 
 #: inc/settings.php:278
-msgid "Read More Button"
+msgid "Post Author's Comments"
 msgstr ""
 
-#: inc/settings.php:280
-msgid "Show read more button when Post Excerpt is chosen."
+#: inc/settings.php:279
+msgid "Text displayed as a label next to the post author's comments."
 msgstr ""
 
 #: inc/settings.php:283
-msgid "Read More Text"
+msgid "Read More Button"
 msgstr ""
 
-#: inc/settings.php:284
-msgid "The link displayed when post content is split using the \"more\" quicktag or when the read more button is enabled."
-msgstr ""
-
-#: inc/settings.php:287
-msgid "Circle Icon Archive Column Count"
+#: inc/settings.php:285
+msgid "Show read more button when Post Excerpt is chosen."
 msgstr ""
 
 #: inc/settings.php:288
+msgid "Read More Text"
+msgstr ""
+
+#: inc/settings.php:289
+msgid "The link displayed when post content is split using the \"more\" quicktag or when the read more button is enabled."
+msgstr ""
+
+#: inc/settings.php:292
+msgid "Circle Icon Archive Column Count"
+msgstr ""
+
+#: inc/settings.php:293
 msgid "The number of columns to display when the circle icon archive layout is set."
 msgstr ""
 
-#: inc/settings.php:294
+#: inc/settings.php:299
 msgid "Grid Archive Column Count"
 msgstr ""
 
-#: inc/settings.php:295
+#: inc/settings.php:300
 msgid "The number of columns to display when the grid archive layout is set."
 msgstr ""
 
-#: inc/settings.php:305
+#: inc/settings.php:310
 msgid "Ajax Comments"
 msgstr ""
 
-#: inc/settings.php:306
+#: inc/settings.php:311
 msgid "Keep your conversations flowing with ajax comments."
 msgstr ""
 
-#: inc/settings.php:314
+#: inc/settings.php:319
 msgid "Site Information Text"
 msgstr ""
 
-#: inc/settings.php:315
+#: inc/settings.php:320
 msgid "Text displayed in your footer. {site-title}, {copyright} and {year} will be replaced with your website title, a copyright symbol and the current year."
 msgstr ""
 
-#: inc/settings.php:319
+#: inc/settings.php:324
 msgid "Privacy Policy Link"
 msgstr ""
 
-#: inc/settings.php:320
+#: inc/settings.php:325
 msgid "Display the Privacy Policy page link in the footer."
 msgstr ""
 
-#: inc/settings.php:323
+#: inc/settings.php:328
 msgid "SiteOrigin Attribution"
 msgstr ""
 
-#: inc/settings.php:324
+#: inc/settings.php:329
 msgid "Add or remove a link to SiteOrigin in your footer."
 msgstr ""
 
-#: inc/settings.php:328
+#: inc/settings.php:333
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: inc/settings.php:329
+#: inc/settings.php:334
 msgid "Enqueue JavaScript files in the footer, if possible."
 msgstr ""
 
-#: inc/settings.php:350
+#: inc/settings.php:355
 msgid "Call me! Maybe?"
 msgstr ""
 
-#: inc/settings.php:451
+#: inc/settings.php:457
 msgid "Settings for your theme"
 msgstr ""
 
-#: inc/settings.php:452
+#: inc/settings.php:458
 msgid "Premium Only"
 msgstr ""
 
-#: inc/settings.php:456
+#: inc/settings.php:462
 msgid "Variant"
 msgstr ""
 
-#: inc/settings.php:457
+#: inc/settings.php:463
 msgid "Subset"
 msgstr ""
 
-#: inc/settings.php:460
+#: inc/settings.php:466
 msgid "Vantage Premium Upgrade"
 msgstr ""
 
-#: inc/settings.php:461, inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69
+#: inc/settings.php:467, inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69
 msgid "Close"
 msgstr ""
 
-#: inc/settings.php:464
+#: inc/settings.php:470
 msgid "Page settings"
 msgstr ""
 
-#: inc/settings.php:467
+#: inc/settings.php:473
 msgid "Page Template Settings"
 msgstr ""
 
-#: inc/settings.php:468
+#: inc/settings.php:474
 msgid "Change layouts for various pages on your site."
 msgstr ""
 
-#: inc/settings.php:471
+#: inc/settings.php:477
 msgid "Blog Page"
 msgstr ""
 
-#: inc/settings.php:472
+#: inc/settings.php:478
 msgid "Search Results"
 msgstr ""
 
-#: inc/settings.php:473
+#: inc/settings.php:479
 msgid "Date Archives"
 msgstr ""
 
-#: inc/settings.php:474
+#: inc/settings.php:480
 msgid "Not Found"
 msgstr ""
 
-#: inc/settings.php:475
+#: inc/settings.php:481
 msgid "Author Archives"
 msgstr ""
 
-#: inc/settings.php:477
+#: inc/settings.php:483
 msgid "Taxonomy"
 msgstr ""
 
-#: inc/settings.php:494
+#: inc/settings.php:500
 msgid "Page Layout"
 msgstr ""
 
-#: inc/settings.php:497
+#: inc/settings.php:503
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/settings.php:499
+#: inc/settings.php:505
 msgid "Full Width, With Sidebar"
 msgstr ""
 
-#: inc/settings.php:507
+#: inc/settings.php:513
 msgid "Page Featured Image"
 msgstr ""
 
-#: inc/settings.php:508, inc/settings.php:516
+#: inc/settings.php:514, inc/settings.php:522
 msgid "display"
 msgstr ""
 
-#: inc/settings.php:509
+#: inc/settings.php:515
 msgid "Display the page featured image on this page."
 msgstr ""
 
-#: inc/settings.php:515
+#: inc/settings.php:521
 msgid "Page Title"
 msgstr ""
 
-#: inc/settings.php:517
+#: inc/settings.php:523
 msgid "Display the page title on this page."
 msgstr ""
 
-#: inc/settings.php:522
+#: inc/settings.php:528
 msgid "Masthead Bottom Margin"
 msgstr ""
 
-#: inc/settings.php:523, inc/settings.php:530
+#: inc/settings.php:529, inc/settings.php:536
 msgid "enable"
 msgstr ""
 
-#: inc/settings.php:524
+#: inc/settings.php:530
 msgid "Include the margin below the masthead (top area) of your site."
 msgstr ""
 
-#: inc/settings.php:529
+#: inc/settings.php:535
 msgid "Footer Top Margin"
 msgstr ""
 
-#: inc/settings.php:531
+#: inc/settings.php:537
 msgid "Include the margin above your footer."
 msgstr ""
 
-#: inc/settings.php:536
+#: inc/settings.php:542
 msgid "Hide Masthead"
 msgstr ""
 
-#: inc/settings.php:537, inc/settings.php:544
+#: inc/settings.php:543, inc/settings.php:550
 msgid "hide"
 msgstr ""
 
-#: inc/settings.php:538
+#: inc/settings.php:544
 msgid "Hide the masthead on this page."
 msgstr ""
 
-#: inc/settings.php:543
+#: inc/settings.php:549
 msgid "Hide Footer Widgets"
 msgstr ""
 
-#: inc/settings.php:545
+#: inc/settings.php:551
 msgid "Hide the footer widgets on this page."
 msgstr ""
 
-#: inc/settings.php:586
+#: inc/settings.php:592
 msgid "To use these page settings, please use the <strong>Default</strong> template selected under <strong>Page Attributes</strong>"
 msgstr ""
 
-#: inc/settings.php:622
+#: inc/settings.php:628
 msgid "Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store."
 msgstr ""
 
@@ -1893,6 +1901,10 @@ msgstr ""
 
 #: inc/template-tags.php:426
 msgid "Posted in %1$s."
+msgstr ""
+
+#: inc/template-tags.php:737
+msgid "No related posts."
 msgstr ""
 
 #: inc/widgets.php:16

@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', '1.13' );
+define( 'SITEORIGIN_THEME_VERSION', '1.14' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 define( 'SITEORIGIN_THEME_CSS_PREFIX', '.min' );
 
@@ -243,7 +243,6 @@ function vantage_register_custom_background() {
 endif;
 add_action( 'after_setup_theme', 'vantage_register_custom_background' );
 
-
 if ( ! function_exists('vantage_widgets_init') ) :
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -305,7 +304,6 @@ function vantage_widgets_init() {
 }
 endif;
 add_action( 'widgets_init', 'vantage_widgets_init' );
-
 
 if ( ! function_exists( 'vantage_print_styles' ) ) :
 /**
