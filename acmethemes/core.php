@@ -120,7 +120,7 @@ function acmeblog_scripts() {
 	}
 
     /*bxslider js*/
-    wp_enqueue_script('bxslider', get_template_directory_uri() . '/assets/library/bxslider/js/jquery.bxslider.min.js', array('jquery'), '4.2.51', 1);
+    wp_enqueue_script('bxslider', get_template_directory_uri() . '/assets/library/bxslider/js/jquery.bxslider.js', array('jquery'), '4.2.51', 1);
 
     /*custom-js*/
     wp_enqueue_script('acmeblog-custom', get_template_directory_uri() . '/assets/js/acmeblog-custom.js', array('jquery'), '1.0.1', 1);

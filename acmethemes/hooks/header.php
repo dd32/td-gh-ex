@@ -30,8 +30,7 @@ add_action( 'acmeblog_action_before_head', 'acmeblog_set_global', 0 );
  */
 if ( ! function_exists( 'acmeblog_doctype' ) ) :
     function acmeblog_doctype() {
-        ?>
-        <!DOCTYPE html><html <?php language_attributes(); ?>>
+        ?><!DOCTYPE html><html <?php language_attributes(); ?>>
     <?php
     }
 endif;
@@ -49,8 +48,7 @@ add_action( 'acmeblog_action_before_head', 'acmeblog_doctype', 10 );
 if ( ! function_exists( 'acmeblog_before_wp_head' ) ) :
 
     function acmeblog_before_wp_head() {
-        ?>
-        <meta charset="<?php bloginfo( 'charset' ); ?>">
+        ?><meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="<?php echo esc_url('http://gmpg.org/xfn/11')?>">
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

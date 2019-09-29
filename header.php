@@ -36,6 +36,15 @@ do_action( 'acmeblog_action_before_head' );?>
 
 <?php
 /**
+ * Default WordPress Hook
+ * Triggered after the opening <body> tag.
+ * wp_body_open hook
+ *
+ * @since WordPress 5.2
+ *
+ */
+do_action( 'wp_body_open' );
+/**
  * acmeblog_action_before hook
  * @since AcmeBlog 1.0.0
  *

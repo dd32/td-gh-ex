@@ -1,0 +1,52 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_acmeblog">
+            <key name="acmeblog_theme_options">
+                <key name="acmeblog-feature-cat"/>
+                <key name="acmeblog-feature-post-one"/>
+                <key name="acmeblog-feature-post-two"/>
+                <key name="acmeblog-enable-feature"/>
+                <key name="acmeblog-feature-slider-read-more"/>
+                <key name="acmeblog-feature-slider-post-number"/>
+                <key name="acmeblog-header-logo"/>
+                <key name="acmeblog-header-id-display-opt"/>
+                <key name="acmeblog-show-date"/>
+                <key name="acmeblog-facebook-url"/>
+                <key name="acmeblog-twitter-url"/>
+                <key name="acmeblog-youtube-url"/>
+                <key name="acmeblog-instagram-url"/>
+                <key name="acmeblog-pinterest-url"/>
+                <key name="acmeblog-google-plus-url"/>
+                <key name="acmeblog-enable-social"/>
+                <key name="acmeblog-menu-show-search"/>
+                <key name="acmeblog-footer-copyright"/>
+                <key name="acmeblog-default-layout"/>
+                <key name="acmeblog-sidebar-layout"/>
+                <key name="acmeblog-front-page-sidebar-layout"/>
+                <key name="acmeblog-archive-sidebar-layout"/>
+                <key name="acmeblog-enable-sticky-sidebar"/>
+                <key name="acmeblog-blog-archive-layout"/>
+                <key name="acmeblog-blog-archive-image-size"/>
+                <key name="acmeblog-primary-color"/>
+                <key name="acmeblog-custom-css"/>
+                <key name="acmeblog-show-related"/>
+                <key name="acmeblog-related-title"/>
+                <key name="acmeblog-single-post-layout"/>
+                <key name="acmeblog-single-image-size"/>
+                <key name="acmeblog-search-placholder"/>
+                <key name="acmeblog-show-breadcrumb"/>
+                <key name="acmeblog-you-are-here-text"/>
+                <key name="acmeblog-wc-shop-archive-sidebar-layout"/>
+                <key name="acmeblog-wc-product-column-number"/>
+                <key name="acmeblog-wc-shop-archive-total-product"/>
+                <key name="acmeblog-wc-single-product-sidebar-layout"/>
+            </key>
+        </key>
+    </admin-texts>
+</wpml-config>
+
+
+
+
+
+

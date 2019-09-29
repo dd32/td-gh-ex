@@ -18,6 +18,11 @@ function acmeblog_register_required_plugins() {
             'slug'      => 'acme-demo-setup',
             'required'  => false,
         ),
+        array(
+	        'name'      => 'Gutentor',
+	        'slug'      => 'gutentor',
+	        'required'  => false,
+        ),
 
     );
 	tgmpa( $plugins );

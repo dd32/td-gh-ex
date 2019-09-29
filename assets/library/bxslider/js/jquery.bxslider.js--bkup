@@ -1114,7 +1114,7 @@
 
         if (slider.viewport.get(0).setPointerCapture) {
           slider.pointerId = orig.pointerId;
-            if(slider.pointerId === 0){
+            if(slider.pointerId === 1){
                 slider.viewport.get(0).setPointerCapture(slider.pointerId);
             }
         }
