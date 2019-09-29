@@ -53,24 +53,19 @@ class Attire {
 		$cssimport = '//fonts.googleapis.com/css?family=' . implode( "|", $family );
 		$cssimport = str_replace( '||', '|', $cssimport );
 
+        wp_enqueue_script( 'jquery' );
 
-		//attire-mbl-menu
-		wp_register_style( 'attire-gn-comp', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/css/component.css' );
-		wp_enqueue_style( 'attire-gn-comp' );
+        //attire-mbl-menu
 
-		wp_register_script( 'attire-gn-modernizr', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/modernizr.custom.js', array(), null, false );
-		wp_enqueue_script( 'attire-gn-modernizr' );
+		//wp_register_script( 'attire-gn-classie', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/classie.js', array(), null, true );
+		//wp_enqueue_script( 'attire-gn-classie' );
 
-		wp_register_script( 'attire-gn-classie', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/classie.js', array(), null, true );
-		wp_enqueue_script( 'attire-gn-classie' );
-
-		wp_register_script( 'attire-gn-gnm', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/gnmenu.js', array(), null, true );
-		wp_enqueue_script( 'attire-gn-gnm' );
+		//wp_register_script( 'attire-gn-gnm', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/gnmenu.js', array(), null, true );
+		//wp_enqueue_script( 'attire-gn-gnm' );
 
 
 		wp_register_script( 'attire-sticky', ATTIRE_TEMPLATE_URL . '/js/jquery.sticky.js', array('jquery'), null, true );
 		wp_enqueue_script( 'attire-sticky' );
-
 
 		wp_register_style( 'attire-responsive', ATTIRE_TEMPLATE_URL . '/css/responsive.css' );
 		wp_enqueue_style( 'attire-responsive' );
@@ -81,18 +76,11 @@ class Attire {
 		wp_register_style( 'attire-main', get_stylesheet_uri(), array( 'bootstrap', 'attire-responsive' ) );
 		wp_enqueue_style( 'attire-main' );
 
-		wp_register_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/font-awesome/css/all.min.css' );
+		wp_register_style( 'font-awesome', ATTIRE_TEMPLATE_URL . '/fonts/fontawesome/css/all.min.css' );
 		wp_enqueue_style( 'font-awesome' );
 
 		wp_register_style( 'attire-google-fonts', $cssimport, array(), null );
 		wp_enqueue_style( 'attire-google-fonts' );
-
-
-		wp_enqueue_script( 'attire-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), null );
-		wp_script_add_data( 'attire-html5', 'conditional', 'lt IE 9' );
-
-		wp_enqueue_script( 'attire-respond', get_template_directory_uri() . '/js/respond.min.js', array(), null );
-		wp_script_add_data( 'attire-respond', 'conditional', 'lt IE 9' );
 
 		wp_register_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array(), null, true );
 		wp_enqueue_script( 'popper' );
@@ -103,12 +91,8 @@ class Attire {
 		), null, true );
 		wp_enqueue_script( 'bootstrap' );
 
-		wp_register_script( 'attire-modernizer', ATTIRE_TEMPLATE_URL . '/js/modernizr-custom.js', array(), null, true );
-		wp_enqueue_script( 'attire-modernizer' );
-
 		wp_register_script( 'attire-site', ATTIRE_TEMPLATE_URL . '/js/site.js', array(
-			'jquery',
-			'attire-gn-gnm'
+			'jquery'
 		), null, true );
 		wp_enqueue_script( 'attire-site' );
 

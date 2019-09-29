@@ -370,7 +370,7 @@ class AttireThemeEngine {
 		$site_header_bg_color_right = isset($theme_mod['site_header_bg_color_right']) ? esc_attr( $theme_mod['site_header_bg_color_right'] ) : '#555555';
 		$site_header_bg_grad_angle = isset($theme_mod['site_header_bg_grad_angle']) ? esc_attr( $theme_mod['site_header_bg_grad_angle'] ) : 45;
 		$site_header_bg       = "background: $site_header_bg_color linear-gradient( {$site_header_bg_grad_angle}deg, $site_header_bg_color, $site_header_bg_color_right);";
-		$css                  .= ".short-nav,.header-div,#attire-mbl-menu{ {$site_header_bg}}";
+		$css                  .= ".header-div { {$site_header_bg}}";
 		$css                  .= "a.gn-icon.gn-icon-menu i{ color:$site_header_bg_color;-webkit-filter: invert(100%);filter: invert(100%);}";
 		$css                  .= ".sticky-menu{ {$site_header_bg}}";
 		$site_footer_bg       = 'background-color:' . esc_attr( $theme_mod['site_footer_bg_color'] );
@@ -474,7 +474,7 @@ class AttireThemeEngine {
 		$css   .= "header .mainmenu > .menu-item:not(.active) > a, header .nav i.fa.fa-search, header .dropdown-toggler, header .mobile-menu-toggle,.attire-mbl-menu li.nav-item a, input.gn-search,.attire-mbl-menu-main a.gn-icon-search,.attire-mbl-menu .dropdown-toggler i:before{{$color}}";
 
 		$main_nav_bg = 'background-color:' . esc_attr( $theme_mod['main_nav_bg'] );
-		$css         .= ".short-nav .collapse.navbar-collapse,.long-nav,.attire-mbl-menu-wrapper{ {$main_nav_bg};}";
+		$css         .= "#header-style-3 nav.navbar, #header-style-2 nav.navbar, .short-nav .collapse.navbar-collapse,.long-nav,#attire-mbl-menu{ {$main_nav_bg};}";
 
 		$main_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
 		$css                      .= "header .mainmenu > .menu-item:hover, header .mainmenu > .menu-item.active,.attire-mbl-menu li.active{ {$main_nav_hover_active_bg};}";

@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: https://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Demo: http://demo.wpattire.com/
 Author: Shafayat
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -611,7 +611,6 @@ a.dropdown-item {
 	-ms-transition: ease-in-out 300ms;
 	-o-transition: ease-in-out 300ms;
 	transition: ease-in-out 300ms;
-	height: 50px !important;
 }
 .dropdown-submenu {
 	/*position: relative;*/
@@ -706,8 +705,7 @@ header .widget-search-form {
 	margin-top: 0;
 }
 
-.header-div,
-#attire-mbl-menu {
+.header-div {
 	background-color: unset !important;
 }
 
@@ -720,7 +718,17 @@ header .widget-search-form {
 #header-3 h1.logo-header{
 	line-height: 50px;
 }
-
+#header-style-4 .logo-div img{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#header-style-3 .logo-div img,
+#header-style-2 .logo-div img{
+	height: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: auto;
+}
 /*  small menu */
 
 .small-menu {
@@ -755,6 +763,17 @@ header .widget-search-form {
 
 .social-icons-div li.list-inline-item {
 	padding: 0 6px;
+}
+
+#header-style-2 .social-icons-div ul li{
+	padding-right: 0;
+}
+#header-style-2 .social-icons-div ul li,
+#header-style-2 .social-icons-div ul{
+	margin: 0;
+}
+#header-style-2 .social-link img{
+	width: 20px;
 }
 
 .small-menu .list-inline li:last-child {
@@ -879,7 +898,153 @@ header li.nav-item:not(.desktop-search) a {
 	margin-left: -15px;
 }
 
+/* mobile menu */
+.attire-mbl-header{
+	border-bottom: 1px solid #dddddd;
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+	background: #ffffff;
+}
+.attire-mbl-header .gn-icon-menu{
+	line-height: 48px;
+	width: 48px;
+	text-align: center;
+	font-size: 24px;
+	display: inline-block;
+	color: var(--color-primary);
+	border-right: 1px solid #dddddd;
+    cursor: pointer;
+}
+#sticky-wrapper.is-sticky .attire-mbl-header {
+	top: 0 !important;
+}
+#attire-mbl-menu .middle-logo{
+	background: rgba(0,0,0,0.1);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+#attire-mbl-menu h1,
+#attire-mbl-menu .site-logo.navbar-brand{
+	display: block;
+	max-width: 100%;
+	color: #FFFFFF;
+}
+#attire-mbl-menu h1,
+.attire-mbl-header .mbl-logo h1{
+	font-size: 100%;
+	line-height: 48px;
+	margin: 0;
+	text-decoration: none;
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#attire-mbl-menu {
+	width: 300px;
+	position: fixed;
+	top: 0;
+	left: -305px;
+	height: 100vh;
+	z-index: 999;
+	color: #fff;
+	transition: all 0.3s;
+	overflow-y: scroll;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+#attire-mbl-menu .site-logo{
+	margin: 0;
+}
+#attire-mbl-menu .site-logo img{
+	max-width: 100%;
+	width: auto;
+	max-height: 64px;
+	height: auto;
+}
+#attire-mbl-menu.active {
+	left: 0;
+}
+.media.attire-mbl-header .mbl-logo img{
+	height: 48px;
+	width: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+#attire-mbl-menu li.menu-item{
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	position: relative;
+}
+#attire-mbl-menu li.menu-item a{
+	padding-left: 20px;
+	display: block;
+}
+#attire-mbl-menu .dropdown-toggler{
+	float: right;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: 0;
+	border-left: 1px solid rgba(0,0,0,0.1);
+}
+#attire-mbl-menu .dropdown .dropdown-menu{
+	transition: all ease-in-out 300ms;
+	margin-bottom: -2px;
+}
+#attire-mbl-menu .dropdown.active .dropdown-menu{
+	display: block;
+	border-left: 0;
+	border-right: 0;
+	box-shadow: none !important;
+}
+
+#dismiss {
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background: #7386D5;
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#dismiss:hover {
+	background: #fff;
+	color: #7386D5;
+}
+
+.overlay {
+	top: 0;
+	display: none;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 998;
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+	display: block;
+	opacity: 1;
+}
+
+/* mobile menu ends */
+
 /* nav search */
+
 .default-menu.navbar-light .list-search > li.dropdown-item {
 	background-color: transparent;
 }

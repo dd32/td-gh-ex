@@ -11,7 +11,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
 	$stickable = ' stickable';
 }
 ?>
-<div id="header-style-1">
+<div id="header-style-1" class="d-none d-md-block">
     <header id="header-1" class="header navigation1">
         <div class="middle-header">
             <div class="<?php echo esc_attr( $content_layout . ' ' . $nav_width ); ?> header-contents">
