@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 <section class="post-wrapper-top section-shadow clearfix">
 	<div class="container">
-		<div class="col-lg-12">
-			<h2><?php _e('Page Not Found', 'awada'); ?></h2>
-			<ul class="breadcrumb pull-right">
-				<li><a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Home', 'awada'); ?></a></li><i class="fa fa-chevron-circle-right breadcrumbs_space"></i>
-				<li><?php _e('Page Not Found', 'awada'); ?></li>
-			</ul>
+		<div class="col-md-12">
+			<div class="col-md-7 awada_pag_title">
+				<h2><?php _e('Page Not Found', 'awada'); ?></h2>
+			</div>
+			<div class="col-md-5 awada_pag_breadcrumb">
+				<?php awada_breadcrumbs(); ?>
+			</div>
 		</div>
 	</div>
 </section>
-<section class="white-wrapper padding-top">
+<section id="error-404" class="white-wrapper">
 	<div class="container">
 		<div class="not_found text-center">
 		<h1><?php _e('404!', 'awada'); ?></h1>

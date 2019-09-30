@@ -62,6 +62,9 @@ a.readmore,
 #sitetopbar .topbar-contact-cart i {
 	color:#f8504b;
 }
+.main_title hr {
+	border-top-color: #f8504b;
+}
 button,
 input[type="button"],
 input[type="submit"],

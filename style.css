@@ -5,7 +5,7 @@
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 1.7
+	Version: 1.8
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -277,7 +277,6 @@ span.topbar-contact-email {
 	.top-social li{
 		float: left;
 	}
-	
 }
 @media (max-width: 767px){
 	h1.site-title{
@@ -431,7 +430,7 @@ SIDEBAR AREA & WIDGETS STYLES
 }
 .blog-header h3 {
 	padding-bottom:0;
-	font-size:18px;
+	font-size:30px;
 	margin-bottom:5px;
 }
 .blog-header h1 {
@@ -639,11 +638,9 @@ SECTIONS STYLES
 }
 .grey-wrapper {
 	background-color:#f5f5f5;
-	padding:60px 0;
 }
 .white-wrapper {
 	background-color:#ffffff;
-	padding:60px 0;
 }
 #boxed, .boxed {
   background: url(demos/bg.jpg) no-repeat center center fixed; 
@@ -658,16 +655,16 @@ SECTIONS STYLES
 	padding-right: 0px;
 }
 .main_title hr {
-	width:30px;
+	width:100px;
 	margin-bottom:0;
 	margin-top:0;
 	border-width: 2px 0 0;
 }
 .main_title h2 {
-	font-size:31px;
-	text-rendering: optimizeSpeed;
+	font-size:38px;
 	letter-spacing:0.6px;
-	padding-bottom:0;
+	padding:0 0 10px 0;
+	margin:0;
 	font-weight:bold;
 }
 .main_title {
@@ -718,7 +715,7 @@ MODULES
 	padding:15px;
 }
 .servicelayout {
-	margin:20px 0;
+	margin:0;
 }
 .servicelayout h3 {
 	padding:0
@@ -763,8 +760,8 @@ MODULES
 	width: 0;
 }
 .main_title .lead {
-	font-family: 'Lato',sans-serif;
-	font-weight:300;
+	font-family:'Lato',sans-serif;
+	font-weight:400;
 	line-height:1.9;
 	margin:15px 0;
 }
@@ -786,13 +783,12 @@ MODULES
 
 /* Error Page 404 */
 .not_found h1 {
-	margin-bottom:0;
 	font-size: 200px;
-	padding-bottom:0;
 	font-weight: bold;
-	line-height: 1;
 }
-
+#error-404 {
+	padding-bottom: 80px;
+}
 /* ----------------------------------------------------
 BLOG SECTIONS
 ------------------------------------------------------- */
@@ -939,23 +935,26 @@ RESPONSIVE
 ------------------------------------------------------- */
 
 @media (max-width: 767px) {
-.footer-area-menu {
-	display:none !important;
-}
-.btn-lg {
-	font-size:11px !important;
-}
-#sitetopbar .topbar-contact-email, 
-#sitetopbar .topbar-contact-phone,
-.footer_copy_text,
-.menu,
-.topbar-contact {
-	border:none;
-	float:none !important;
-	clear:both !important;
-	text-align:center !important;
-	margin:auto;
-} 
+	.footer-area-menu {
+		display:none !important;
+	}
+	.btn-lg {
+		font-size:11px !important;
+	}
+	#sitetopbar .topbar-contact-email, 
+	#sitetopbar .topbar-contact-phone,
+	.footer_copy_text,
+	.menu,
+	.topbar-contact {
+		border:none;
+		float:none !important;
+		clear:both !important;
+		text-align:center !important;
+		margin:auto;
+	}
+	.not_found h1 {
+		font-size: 100px;
+	}
 }
 
 @media (max-width: 380px) {
@@ -1195,7 +1194,7 @@ pre {
 }
 /* Page Desc Margin */
 .page_desc .blog-desc {
-    margin-top: 25px;
+    margin-top: 0;
 }
 /* Gallery Plugin */
 #home_portfolio .UGPMenuBackground {
@@ -1368,7 +1367,7 @@ p#callout_description {
     color: #fff;
     border-radius: 5px;
     padding: 5px 10px;
-    margin: 0 auto;
+    margin: 10px auto;
 	font-weight: 500;
 }
 .servicelayout a.readmore:hover {
@@ -1453,7 +1452,7 @@ p#callout_description {
 #s {
     width: 82%;
     padding: 19px 10px;
-    margin: 0px 20px 20px 20px;
+    margin: 0 auto;
 }
 .search_form:after {
 	color: #d9d9d9;
@@ -1584,11 +1583,11 @@ a.readmore{
 }
 .search_form:after {
 	color: #d9d9d9;
-	font-size: 12px;
+	font-size: 18px;
 	height: 40px;
 	line-height: 40px;
 	position: absolute;
-	right: 37px;
+	right: 11%;
 	top:0;
 	font-family: 'FontAwesome';
 	content: "\f002";
@@ -2127,19 +2126,7 @@ input[type="submit"].secondary:focus {
 }
 /* Breadcrumb Title */
 @media only screen and (max-width: 1199px){
-	.awada_pag_title{
-		text-align: center;
-	}
-	.breadcrumb.pull-right{
-		float: none !important;
-		text-align: center;
-	}
-	.breadcrumb{
-		padding: 30px 0 0px;
-	}
-	.post-wrapper-top h2{
-		padding: 0px 0 20px;
-	}
+	
 }
 /* Gutenburg CSS */
 @media only screen and (min-width: 768px) {
@@ -2373,12 +2360,30 @@ input[type="submit"].secondary:focus {
     width: 28px;
     height: 8px;
 }
+@media (min-width: 992px){
+	#navy.navbar-nav {
+		margin: 7.5px -15px;
+	}
+}
 @media (max-width: 991px){
 	.slide-inner-content h2 {
 		font-size: 50px;
 	}
-	.slide-inner-content h3, .slide-inner-content h3 p{
+	.slide-inner-content h3, .slide-inner-content h3 p {
 		font-size: 50px;
+	}
+	.awada_pag_title {
+		text-align: center;
+	}
+	.breadcrumb.pull-right{
+		float: none !important;
+		text-align: center;
+	}
+	.breadcrumb{
+		padding: 30px 0 0px;
+	}
+	.post-wrapper-top h2{
+		padding: 0px 0 20px;
 	}
 }
 @media (max-width: 767px){
@@ -2397,8 +2402,18 @@ input[type="submit"].secondary:focus {
 		font-size: 30px;
 	}
 }
-@media (min-width: 992px){
-	#navy.navbar-nav {
-		margin: 7.5px -15px;
-	}
+.sec-spacing {
+	padding: 60px 0 70px;
+}
+.search_error {
+    text-align: center;
+}
+.search_err_heading h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+.awada_searching p {
+    padding: 0 0 10px;
+    font-size: 16px;
+    font-weight: 400;
 }

@@ -12,6 +12,7 @@
 			<key name="service_title_4"/>
 			<key name="service_text_4"/>
             <key name="home_portfolio_title"/>
+			<key name="home_portfolio_subtitle"/>
             <key name="home_blog_title"/>
             <key name="home_blog_description"/>
             <key name="home_extra_title"/>

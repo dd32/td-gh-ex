@@ -62,12 +62,24 @@ function awada_theme_setup()
         'header-text-color' => '222222',
         'wp-head-callback'  => 'awada_header_style',
     );
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
     add_editor_style('css/editor-style.css');
     add_theme_support('custom-background', $args);
     add_theme_support('custom-header', $args1);
     add_theme_support('automatic-feed-links');
     add_theme_support('woocommerce');
+	add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
     add_theme_support('title-tag');
+	add_post_type_support( 'page', 'excerpt' );
+	// Enable support for selective refresh of widgets in Customizer.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
     add_theme_support('custom-logo', array(
         'height'      => 50,
         'width'       => 150,
@@ -75,7 +87,6 @@ function awada_theme_setup()
         'flex-width'  => true,
     ));
 
-    }
     /*
      * Switch default core markup for search form, comment form, and comments
      * to output valid HTML5.
@@ -97,10 +108,6 @@ function awada_theme_setup()
             'name'            => 'Photo Video Gallery Master', // The plugin name.
             'active_filename' => 'photo-video-gallery-master/photo-video-gallery-master.php',
         ),
-        'ultimate-gallery-master'    => array(
-            'name'            => 'Ultimate Gallery Master', // The plugin name.
-            'active_filename' => 'ultimate-gallery-master/ultimate-gallery-master-lite.php',
-        ),
         'social-media-gallery'       => array(
             'name'            => 'Social Media Gallery', // The plugin name.
             'active_filename' => 'social-media-gallery/social-media-gallery.php',
@@ -109,87 +116,6 @@ function awada_theme_setup()
             'name'            => 'Coming Soon Master', // The plugin name.
             'active_filename' => 'coming-soon-master/coming-soon-master.php',
         ),
-
-    ));
-    add_theme_support('starter-content', array(
-
-        'posts'     => array(
-            'home'    => array(
-                'template' => 'home-page.php',
-            ),
-            'about'   => array(
-                'thumbnail' => '{{image-sandwich}}',
-            ),
-            'contact' => array(
-                'thumbnail' => '{{image-espresso}}',
-            ),
-            'blog'    => array(
-                'thumbnail' => '{{image-coffee}}',
-            ),
-        ),
-
-        'options'   => array(
-            'awada_theme_options[portfolio_home]' => 1,
-            'show_on_front'                       => 'page',
-            'page_on_front'                       => '{{home}}',
-            'page_for_posts'                      => '{{blog}}',
-        ),
-        'widgets'   => array(
-            'sidebar-widget' => array(
-                'search',
-                'text_business_info',
-                'text_about',
-                'category',
-                'tags',
-            ),
-
-            'footer-widget'  => array(
-                'text_business_info',
-                'text_about',
-                'meta',
-                'search',
-            ),
-        ),
-
-        'nav_menus' => array(
-            'primary-sidebar'   => array(
-                'name'  => __('Primary Menu', 'awada'),
-                'items' => array(
-                    'page_home',
-                    'page_about',
-                    'page_blog',
-                    'page_contact',
-                ),
-            ),
-            'secondary-sidebar' => array(
-                'name'  => __('Primary Menu', 'awada'),
-                'items' => array(
-                    'page_home',
-                    'page_about',
-                    'page_blog',
-                    'page_contact',
-                ),
-            ),
-            'footer-widget'     => array(
-                'name'  => __('Footer Menu', 'awada'),
-                'items' => array(
-                    'page_home',
-                    'page_about',
-                    'page_blog',
-                    'page_contact',
-                ),
-            ),
-            'social'            => array(
-                'name'  => __('Social Links Menu', 'awada'),
-                'items' => array(
-                    'link_yelp',
-                    'link_facebook',
-                    'link_twitter',
-                    'link_instagram',
-                    'link_email',
-                ),
-            ),
-        ),
     ));
     add_image_size('awada_home_slider_bg_image', 1600, 600, true);
     add_image_size('awada_blog_full_thumb', 1090, 515, true);
@@ -197,7 +123,8 @@ function awada_theme_setup()
     add_image_size('awada_blog_two_sidebar_thumb', 520, 260, true);
     add_image_size('awada_blog_home_thumb', 330, 206, true);
     add_image_size('awada_recent_widget_thumb', 120, 77, true);
-
+	add_image_size('awada_port_home_thumb', 330, 220, true);
+}
 if (!function_exists('awada_header_style')):
 /**
  * Styles the header image and text displayed on the blog.
@@ -281,96 +208,192 @@ function awada_widget()
 /* Breadcrumbs  */
 function awada_breadcrumbs()
 {
-    $delimiter = '<i class="fa fa-chevron-circle-right breadcrumbs_space"></i>';
-    $home      = __('Home', 'awada'); // text for the 'Home' link
-    $before    = ''; // tag before the current crumb
-    $after     = ''; // tag after the current crumb
-    echo '<ul class="breadcrumb pull-right">';
+    /* === OPTIONS === */
+    $text['home']     = esc_html__('Home','awada'); // text for the 'Home' link
+    $text['category'] = esc_html__('Category "%s"','awada'); // text for a category page
+    $text['search']   = esc_html__('Search Results for "%s" Query','awada'); // text for a search results page
+    $text['tag']      = esc_html__('Posts Tagged "%s"','awada'); // text for a tag page
+    $text['author']   = esc_html__('Posted by %s','awada'); // text for an author page
+    $text['404']      = esc_html__('Error 404','awada'); // text for the 404 page
+    $text['page']     = esc_html__('Page %s','awada'); // text 'Page N'
+    $text['cpage']    = esc_html__('Comment Page %s','awada'); // text 'Comment Page N'
+    $wrap_before    = '<div class="breadcrumb pull-right" itemscope itemtype="http://schema.org/BreadcrumbList">'; // the opening wrapper tag
+    $wrap_after     = '</div><!-- .breadcrumbs -->'; // the closing wrapper tag
+    $sep            = '<span class="breadcrumbs__separator">&nbsp;&nbsp;›&nbsp;&nbsp;</span>'; // separator between crumbs
+    $before         = '<span class="breadcrumbs__current">'; // tag before the current crumb
+    $after          = '</span>'; // tag after the current crumb
+    $show_on_home   = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+    $show_home_link = 1; // 1 - show the 'Home' link, 0 - don't show
+    $show_current   = 1; // 1 - show current page title, 0 - don't show
+    $show_last_sep  = 1; // 1 - show last separator, when current page title is not displayed, 0 - don't show
+    /* === END OF OPTIONS === */
     global $post;
-    $homeLink = home_url();
-    if (is_front_page()) {
-        echo '<li><a href="' . $homeLink . '">' . $home . '</a>';
+    $home_url       = home_url('/');
+    $link           = '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">';
+    $link          .= '<a class="breadcrumbs__link" href="%1$s" itemprop="item"><span itemprop="name">%2$s</span></a>';
+    $link          .= '<meta itemprop="position" content="%3$s" />';
+    $link          .= '</span>';
+    $parent_id      = ( $post ) ? $post->post_parent : '';
+    $home_link      = sprintf( $link, $home_url, $text['home'], 1 );
+    if ( is_home() || is_front_page() ) {
+        if ( $show_on_home ) echo $wrap_before . $home_link . $wrap_after;
     } else {
-        echo '<li><a href="' . $homeLink . '">' . $home . '</a>' . $delimiter;
+        $position = 0;
+        echo $wrap_before;
+        if ( $show_home_link ) {
+            $position += 1;
+            echo $home_link;
+        }
+        if ( is_category() ) {
+            $parents = get_ancestors( get_query_var('cat'), 'category' );
+            foreach ( array_reverse( $parents ) as $cat ) {
+                $position += 1;
+                if ( $position > 1 ) echo $sep;
+                echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+            }
+            if ( get_query_var( 'paged' ) ) {
+                $position += 1;
+                $cat = get_query_var('cat');
+                echo $sep . sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+                echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+            } else {
+                if ( $show_current ) {
+                    if ( $position >= 1 ) echo $sep;
+                    echo $before . sprintf( $text['category'], single_cat_title( '', false ) ) . $after;
+                } elseif ( $show_last_sep ) echo $sep;
+            }
+        } elseif ( is_search() ) {
+            if ( get_query_var( 'paged' ) ) {
+                $position += 1;
+                if ( $show_home_link ) echo $sep;
+                echo sprintf( $link, $home_url . '?s=' . get_search_query(), sprintf( $text['search'], get_search_query() ), $position );
+                echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+            } else {
+                if ( $show_current ) {
+                    if ( $position >= 1 ) echo $sep;
+                    echo $before . sprintf( $text['search'], get_search_query() ) . $after;
+                } elseif ( $show_last_sep ) echo $sep;
+            }
+        } elseif ( is_year() ) {
+            if ( $show_home_link && $show_current ) echo $sep;
+            if ( $show_current ) echo $before . get_the_time('Y') . $after;
+            elseif ( $show_home_link && $show_last_sep ) echo $sep;
+        } elseif ( is_month() ) {
+            if ( $show_home_link ) echo $sep;
+            $position += 1;
+            echo sprintf( $link, get_year_link( get_the_time('Y') ), get_the_time('Y'), $position );
+            if ( $show_current ) echo $sep . $before . get_the_time('F') . $after;
+            elseif ( $show_last_sep ) echo $sep;
+        } elseif ( is_day() ) {
+            if ( $show_home_link ) echo $sep;
+            $position += 1;
+            echo sprintf( $link, get_year_link( get_the_time('Y') ), get_the_time('Y'), $position ) . $sep;
+            $position += 1;
+            echo sprintf( $link, get_month_link( get_the_time('Y'), get_the_time('m') ), get_the_time('F'), $position );
+            if ( $show_current ) echo $sep . $before . get_the_time('d') . $after;
+            elseif ( $show_last_sep ) echo $sep;
+        } elseif ( is_single() && ! is_attachment() ) {
+            if ( get_post_type() != 'post' ) {
+                $position += 1;
+                $post_type = get_post_type_object( get_post_type() );
+                if ( $position > 1 ) echo $sep;
+                echo sprintf( $link, get_post_type_archive_link( $post_type->name ), $post_type->labels->name, $position );
+                if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+                elseif ( $show_last_sep ) echo $sep;
+            } else {
+                $cat = get_the_category(); $catID = $cat[0]->cat_ID;
+                $parents = get_ancestors( $catID, 'category' );
+                $parents = array_reverse( $parents );
+                $parents[] = $catID;
+                foreach ( $parents as $cat ) {
+                    $position += 1;
+                    if ( $position > 1 ) echo $sep;
+                    echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+                }
+                if ( get_query_var( 'cpage' ) ) {
+                    $position += 1;
+                    echo $sep . sprintf( $link, get_permalink(), get_the_title(), $position );
+                    echo $sep . $before . sprintf( $text['cpage'], get_query_var( 'cpage' ) ) . $after;
+                } else {
+                    if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+                    elseif ( $show_last_sep ) echo $sep;
+                }
+            }
+        } elseif ( is_post_type_archive() ) {
+            $post_type = get_post_type_object( get_post_type() );
+            if ( get_query_var( 'paged' ) ) {
+                $position += 1;
+                if ( $position > 1 ) echo $sep;
+                echo sprintf( $link, get_post_type_archive_link( $post_type->name ), $post_type->label, $position );
+                echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+            } else {
+                if ( $show_home_link && $show_current ) echo $sep;
+                if ( $show_current ) echo $before . $post_type->label . $after;
+                elseif ( $show_home_link && $show_last_sep ) echo $sep;
+            }
+        } elseif ( is_attachment() ) {
+            $parent = get_post( $parent_id );
+            $cat = get_the_category( $parent->ID ); 
+            if($cat){
+	            $catID = $cat[0]->cat_ID;
+	            $parents = get_ancestors( $catID, 'category' );
+	            $parents = array_reverse( $parents );
+	            $parents[] = $catID;
+	            foreach ( $parents as $cat ) {
+	                $position += 1;
+	                if ( $position > 1 ) echo $sep;
+	                echo sprintf( $link, get_category_link( $cat ), get_cat_name( $cat ), $position );
+	            }
+	            $position += 1;
+	        }
+            echo $sep . sprintf( $link, get_permalink( $parent ), $parent->post_title, $position );
+            if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+            elseif ( $show_last_sep ) echo $sep;
+        } elseif ( is_page() && ! $parent_id ) {
+            if ( $show_home_link && $show_current ) echo $sep;
+            if ( $show_current ) echo $before . get_the_title() . $after;
+            elseif ( $show_home_link && $show_last_sep ) echo $sep;
+        } elseif ( is_page() && $parent_id ) {
+            $parents = get_post_ancestors( get_the_ID() );
+            foreach ( array_reverse( $parents ) as $pageID ) {
+                $position += 1;
+                if ( $position > 1 ) echo $sep;
+                echo sprintf( $link, get_page_link( $pageID ), get_the_title( $pageID ), $position );
+            }
+            if ( $show_current ) echo $sep . $before . get_the_title() . $after;
+            elseif ( $show_last_sep ) echo $sep;
+        } elseif ( is_tag() ) {
+            if ( get_query_var( 'paged' ) ) {
+                $position += 1;
+                $tagID = get_query_var( 'tag_id' );
+                echo $sep . sprintf( $link, get_tag_link( $tagID ), single_tag_title( '', false ), $position );
+                echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+            } else {
+                if ( $show_home_link && $show_current ) echo $sep;
+                if ( $show_current ) echo $before . sprintf( $text['tag'], single_tag_title( '', false ) ) . $after;
+                elseif ( $show_home_link && $show_last_sep ) echo $sep;
+            }
+        } elseif ( is_author() ) {
+            $author = get_userdata( get_query_var( 'author' ) );
+            if ( get_query_var( 'paged' ) ) {
+                $position += 1;
+                echo $sep . sprintf( $link, get_author_posts_url( $author->ID ), sprintf( $text['author'], $author->display_name ), $position );
+                echo $sep . $before . sprintf( $text['page'], get_query_var( 'paged' ) ) . $after;
+            } else {
+                if ( $show_home_link && $show_current ) echo $sep;
+                if ( $show_current ) echo $before . sprintf( $text['author'], $author->display_name ) . $after;
+                elseif ( $show_home_link && $show_last_sep ) echo $sep;
+            }
+        } elseif ( is_404() ) {
+            if ( $show_home_link && $show_current ) echo $sep;
+            if ( $show_current ) echo $before . $text['404'] . $after;
+            elseif ( $show_last_sep ) echo $sep;
+        } elseif ( has_post_format() && ! is_singular() ) {
+            if ( $show_home_link && $show_current ) echo $sep;
+            echo get_post_format_string( get_post_format() );
+        }
+        echo $wrap_after;
     }
-    if (is_category()) {
-        global $wp_query;
-        $cat_obj   = $wp_query->get_queried_object();
-        $thisCat   = $cat_obj->term_id;
-        $thisCat   = get_category($thisCat);
-        $parentCat = get_category($thisCat->parent);
-        if ($thisCat->parent != 0) {
-            echo (get_category_parents($parentCat, true, ' ' . $delimiter . '</li> '));
-        }
-
-        echo $before . _e("Category ", 'awada') . ' ' . single_cat_title($delimiter, false) . '' . $after;
-    } elseif (is_day()) {
-        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $delimiter . '</li>';
-        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter;
-        echo $before . get_the_time('d') . '</li>';
-    } elseif (is_month()) {
-        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $delimiter;
-        echo $before . get_the_time('F') . '</li>';
-    } elseif (is_year()) {
-        echo $before . get_the_time('Y') . '</li>';
-    } elseif (is_single() && !is_attachment()) {
-        if (get_post_type() != 'post') {
-            $post_type = get_post_type_object(get_post_type());
-            $slug      = $post_type->rewrite;
-            echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter;
-            echo $before . get_the_title() . '</li>';
-        } else {
-            $cat = get_the_category();
-            $cat = $cat[0];
-            //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-            echo $before . get_the_title() . '</li>';
-        }
-
-    } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
-        $post_type = get_post_type_object(get_post_type());
-        if ($post_type == null) {
-            echo $before . __('Nothing Found', 'awada') . $after;
-        } else {
-            echo $before . $post_type->labels->singular_name . $after;
-        }
-    } elseif (is_attachment()) {
-        $parent = get_post($post->post_parent);
-        $cat    = get_the_category($parent->ID);
-        $cat    = $cat[0];
-        echo get_category_parents($cat, true, ' ' . $delimiter . ' ');
-        echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>' . $delimiter;
-        echo $before . get_the_title() . $after;
-    } elseif (is_page() && !$post->post_parent) {
-        echo $before . get_the_title() . $after;
-    } elseif (is_page() && $post->post_parent) {
-        $parent_id   = $post->post_parent;
-        $breadcrumbs = array();
-        while ($parent_id) {
-            $page          = get_page($parent_id);
-            $breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
-            $parent_id     = $page->post_parent;
-        }
-        $breadcrumbs = array_reverse($breadcrumbs);
-        foreach ($breadcrumbs as $crumb) {
-            echo $crumb . ' ' . $delimiter . ' ';
-        }
-
-        echo $before . get_the_title() . $after;
-    } elseif (is_search()) {
-        echo $before . _e("Search results for ", 'awada') . get_search_query() . '"' . $after;
-
-    } elseif (is_tag()) {
-        echo $before . _e('Tag ', 'awada') . single_tag_title($delimiter, false) . $after;
-    } elseif (is_author()) {
-        global $author;
-        $userdata = get_userdata($author);
-        echo $before . _e("Articles posted by: ", 'awada') . $userdata->display_name . $after;
-    } elseif (is_404()) {
-        echo $before . _e("Error 404 ", 'awada') . $after;
-    } elseif (single_post_title()) {
-        echo $before . single_post_title() . $after;
-    }
-    echo '</ul>';
 }
 
 /* Blog Pagination */
@@ -423,6 +446,8 @@ function awada_enqueue_style()
 	if ($awada_theme_options['color_scheme'] != '') {
         wp_enqueue_style('color-scheme', get_template_directory_uri() . '/css/skins/' . $awada_theme_options['color_scheme']);
     }
+	wp_enqueue_style( 'awada-font-awesome', get_template_directory_uri() . '/css/all.css' );
+	wp_enqueue_style('fontawesome-v4-shims', 'https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css');
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl-carousel.css');
     wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/css/prettyPhoto.css');
@@ -569,14 +594,13 @@ if (!function_exists('awada_more_post_ajax')) {
         $ppp                 = (isset($_POST['ppp'])) ? $_POST['ppp'] : 3;
         $offset              = (isset($_POST['offset'])) ? $_POST['offset'] : 0;
         
-        $port_id = ($awada_theme_options['portfolio_post'] == ''?'':$awada_theme_options['portfolio_post']);
-        $portfolio_id = intval($port_id);
+        /* $port_id = ($awada_theme_options['portfolio_post'] == ''?'':$awada_theme_options['portfolio_post']);
+        $portfolio_id = intval($port_id); */
         
         $args = array(
             'post_type'      => 'post',
             'posts_per_page' => $ppp,
-            'offset'         => $offset,
-            'post__not_in' => array($portfolio_id)
+            'offset'         => $offset
         );
         if (isset($awada_theme_options['home_post_cat']) && !empty($awada_theme_options['home_post_cat'])) {
             $args['category__in'] = $awada_theme_options['home_post_cat'];
@@ -589,7 +613,7 @@ if (!function_exists('awada_more_post_ajax')) {
             while ($loop->have_posts()):
                 $loop->the_post();
 
-                $out .= '<div class="col-lg-4 grid-item">
+                $out .= '<div class="col-lg-4 awada-grid-item">
                 <div class="blog-carousel">
                     <div class="content_entry">';
                         $img_class = array('class' => 'img-responsive full-width');
@@ -639,4 +663,12 @@ if (!function_exists('awada_more_post_ajax')) {
         wp_die($out);
     }
 }
-?>
+
+// Add style for dashboard, overlap meta boxes on posts(editor)
+add_action('admin_head', 'awada_metabox_style');
+function awada_metabox_style() {
+	echo '<style>
+	.block-editor-writing-flow {
+	height: auto;}
+	</style>';
+}

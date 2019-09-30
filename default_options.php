@@ -63,6 +63,10 @@ function awada_theme_options()
         'home_portfolio_title' => __('Our <span>Portfolio</span>', 'awada'),
         'home_portfolio_subtitle' => __('Our Latest <strong>Work</strong>', 'awada'),
         'portfolio_post' => '',
+		//Extra Settings:
+        'home_extra_title' => __('Extra <span>Title</span>', 'awada'),
+        'home_extra_description' => __('Lorem Ipsum Doller <strong>Sit Amet</strong>', 'awada'),
+        'extra_post' => '',
         /* blog option */
 		'home_blog_title' => __('Our <span>Recent Posts</span>', 'awada'),
 		'home_blog_description' => __('Etiam sit amet orci eget eros faucibus tincidunt.', 'awada'),
@@ -101,7 +105,8 @@ function awada_theme_options()
         'developed_by_link_text' => __('Webhunt Infotech', 'awada'),
         'developed_by_link' => 'http://www.webhuntinfotech.com/',
         'footer_layout' => 4,
-		'home_sections' => array('service', 'portfolio', 'blog', 'callout'),
+		'awada_portfolio_setting'=>array(),
+		'home_sections' => array('service', 'portfolio', 'blog', 'extra', 'callout'),
     );
 	//delete_option('awada_theme_options');
     return wp_parse_args(get_option('awada_theme_options', array()), $awada_theme_options);

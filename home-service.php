@@ -1,6 +1,6 @@
 <?php $awada_theme_options = awada_theme_options();
 $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
-<section class="grey-wrapper section-shadow" id="home_service">
+<section class="grey-wrapper section-shadow sec-spacing" id="home_service">
 	<div class="container">
 		<div class="main_title">
 			<?php if ($awada_theme_options['home_service_title'] != ""){ ?>

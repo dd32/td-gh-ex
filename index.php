@@ -1,6 +1,6 @@
 <?php $awada_theme_options = awada_theme_options();
 get_header(); 
-get_template_part('breadcrumbs');?>
+get_template_part('breadcrumbs'); ?>
 <section class="blog-wrapper">
 	<div class="container">
 		<?php

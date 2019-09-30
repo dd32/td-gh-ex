@@ -22,7 +22,7 @@ function awada_get_actions_required( ) {
         $actions['page_on_front'] = 'active';
         $actions['page_template'] = 'active';
     } else {
-        if ( get_post_meta( $front_page, '_wp_page_template', true ) == 'home-page.php' ) {
+        if ( get_post_meta( $front_page, '_wp_page_template', true ) == 'front-page.php' ) {
             $actions['page_template'] = 'dismiss';
         } else {
             $actions['page_template'] = 'active';
@@ -410,7 +410,7 @@ function awada_theme_info_page() {
 
                                 }
 
-                                if ( $front_page > 0 && get_post_meta( $front_page, '_wp_page_template', true ) != 'home-page.php' ) {
+                                if ( $front_page > 0 && get_post_meta( $front_page, '_wp_page_template', true ) != 'front-page.php' ) {
                                     ?>
                                     <a href="<?php echo get_edit_post_link( $front_page ); ?>" class="button"><?php esc_html_e('Change homepage page template', 'awada'); ?></a>
                                     <?php

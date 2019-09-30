@@ -1,8 +1,16 @@
-===================================================
-Awada THEME
-===================================================
+=== Awada Theme ===
 
-Copyright (c) 2016 by WebHunt Infotech (http://www.webhuntinfotech.com/)
+Contributors: WebHuntInfotech
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, portfolio
+Requires PHP: 5.2.4
+Requires at least: 4.0
+Tested up to: 5.2.3
+Stable tag: 1.8
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Awada WordPress Theme, Copyright (C) 2019, WebHuntInfotech
+Awada is distributed under the terms of the GNU General Public License v3
 
 Awada – Responsive Multi-Purpose WordPres Theme . Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … . Theme Features: Static and fixed header, two, three, four column footer layout, boxed and full-width layout, two widget sections first for “sidebar widget section” and second for “Footer widget section”, typography control feature for change the styling of the theme. to make your site attractive it has  We focused on usability across various devices, starting with smart phones.it is compatible with various devices. Awada is a Cross-Browser Compatible theme that works on All leading web browsers.
 
@@ -22,7 +30,8 @@ Embedded Plugin
 Images Copyright/License Info
 ============================================
  * Screenshot images taken from https://pixabay.com/ with CC0 Public Domain License.
- * All other images taken from http://pixabay.com/ with CC0 Public Domain License.
+ * Portfolio Image taken from https://unsplash.com/photos/0K7GgiA8lVE with CC0 Public Domain License.
+ * And all other images taken from http://pixabay.com/ & https://unsplash.com/ with CC0 Public Domain License.
 
 /***** BUNDELED CSS ***/
 

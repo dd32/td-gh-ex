@@ -2,11 +2,11 @@
 <section class="post-wrapper-top section-shadow clearfix">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12">
-				<div class="col-lg-7 awada_pag_title">
+			<div class="col-md-12">
+				<div class="col-md-7 awada_pag_title">
 					<h2><?php the_archive_title(); ?></h2>
 				</div>
-				<div class="col-lg-5 awada_pag_breadcrumb">
+				<div class="col-md-5 awada_pag_breadcrumb">
 					<?php awada_breadcrumbs(); ?>
 				</div>
 			</div>

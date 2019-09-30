@@ -1,3 +1,10 @@
+###Version 1.8 [30-SEP-2019]
+* Add style for dashboard, overlap meta boxes on posts(editor).
+* Breadcrumbs issue(Attachment Image) fixed.
+* Improve Home section title & sub title styling
+* Translation file updated.
+* Font awesome library updated.
+* Minor bug fixed.
 ###Version 1.7 [02-FEB-2019]
 * Added translation of blog post pagination link texts.
 ###Version 1.6.9 [25-DEC-2018]

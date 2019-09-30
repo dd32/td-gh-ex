@@ -7,7 +7,7 @@ jQuery(document).ready(function ($) {
     var ppp = screenReaderText.ppp;
     $content.imagesLoaded(function(){
         $content.masonry({
-            itemSelector: '.grid-item', 
+            itemSelector: '.awada-grid-item', 
         });
     });
     $loader.on( 'click', load_ajax_posts );
@@ -33,7 +33,7 @@ jQuery(document).ready(function ($) {
                         $content.append($newElements).each(function(){
                             $content.imagesLoaded(function(){
                             $content.masonry({
-                                itemSelector: '.grid-item',
+                                itemSelector: '.awada-grid-item',
                             });
                             
                         });
