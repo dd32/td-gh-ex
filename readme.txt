@@ -1,37 +1,20 @@
-Website: https://accesspressthemes.com
-Email: support@accesspressthemes.com
+=== Accesspress Parallax ===
+Contributors: AccessPress Themes
+Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
+Requires PHP: 5.3
+Requires at least: 4.5
+Tested up to: 5.1.1
+Stable tag: 1.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
-Contributors: access-keys
-Requires at least: WordPress 4.7
-Tested up to: 5.2.1
-Requires PHP: 5.4
-
-== Description ==
-AccessPress Parallax is beautiful WordPress theme with Parallax effect design. It is probably the 1st Parallax WP free theme and still #1 and most downloaded and installed Parallax theme. The theme is perfect for individual, creative agency, corporates and online store and almost any other type of websites. The theme is regularly updated with many features added in every release, currently the theme has a beautiful design, a parallax home page with many useful sections like multiple image-text sliders, features, portfolio gallery, beautiful team section, testimonials, latest blogs, CTA text and button, WooCommerce product listing, Contact form/text and map along with detailed footer. The theme is highly optimized for speed and Search Engines. It has many features from the theme manager panel and is translation ready, RTL support, custom CSS/JS support, deep WooCommerce integrated, bbPress Compatible and fully support multi language via POLYLANG plugin. 
-
-Demo: https://accesspressthemes.com/theme-demos/?theme=accesspress-parallax 
-
-Support forum: https://accesspressthemes.com/support/ 
-
-Premium version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/
-
-
-
-AccessPress Parallax WordPress Theme, Copyright 2014 AccessPress Themes
-AccessPress Parallax is distributed under the terms of the GNU GPL v3
-
-AccessPress Parallax is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
 
 
 Install Steps:
 --------------
 
-1. Activate the theme
-2. Go to the Theme Option page
-3. Setup theme options
+1. Activate the theme.
+2. Go to the Customizer.
+3. Setup the options available in customizer.
 
 
 ------------------------------------------
@@ -52,10 +35,10 @@ JS Files
     jQuery Easing: Open source under the BSD License. 
     https://github.com/gdsmith/jquery.easing
 
-    jQuery FitVids: Released under the WTFPL license
+    jQuery Easing: Released under the WTFPL license
     https://github.com/davatron5000/FitVids.js
 
-    jQuery scrollTo: MIT Licenses
+    jQuery Easing: MIT Licenses
     https://github.com/flesler/jquery.scrollTo
 
     Parallax JS: MIT and GPL licenses
@@ -110,268 +93,271 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+= 2.0.0 =
+** Removed old welcome page and Added new
+** Added Demo Importer
+** Regenerated translation file
 
-Version 1.72
+= 1.72 =
  * Updated readme.txt file headers
  * Minor issues Fixed 
 
-Version 1.71
+= 1.71 =
  * Minor issues Fixed 
 
-Version 1.70
+= 1.70 =
  * Added Styles for Guttenberg Compatible
  * Updates Minor CSS
 
-Version 1.69
+= 1.69 =
  * WMPL translation bug in menu fixed.
 
-Version 1.68
- * WMPL translation bug in menu fixed.
+= 1.68 =
+** WMPL translation bug in menu fixed.
 
-Version 1.67
- * Issue with WMPL translation fixed.
+= 1.67 =
+** Issue with WMPL translation fixed.
 
-Version 1.66
- * Added Dynamic Color Option
+= 1.66 =
+** Added Dynamic Color Option
 
-Version 1.65
- * Made Translation Ready
- * Minor Bug Fixes
+= 1.65 =
+** Made Translation Ready
+** Minor Bug Fixes
 
-Version 1.64
- * Fixed Some Escaping and Security Issues
+= 1.64 =
+** Fixed Some Escaping and Security Issues
 
-Version 1.63
- * Warning Error from Theme Snifer Plugin fixed
- * Pot file updated
- * Other minor fixes
+= 1.63 =
+** Warning Error from Theme Snifer Plugin fixed
+** Pot file updated
+** Other minor fixes
 
-Version 1.62
- * Requiried Error from Theme Snifer Plugin fixed
- * Pot file updated
+= 1.62 =
+** Requiried Error from Theme Snifer Plugin fixed
+** Pot file updated
 
-Version 1.61
- * Multicheck field warning on PHP7 fixed
+= 1.61 =
+** Multicheck field warning on PHP7 fixed
 
-Version 1.60
- * Theme Option Panel error on PHP7 fixed
- * Styling Issue fixed
+= 1.60 =
+** Theme Option Panel error on PHP7 fixed
+** Styling Issue fixed
 
-== Changelog ==
-Version 1.59
- * Responsive issue in team section fixed
+= 1.59 =
+** Responsive issue in team section fixed
 
-Version 1.58
- * Minor CSS issue fixed
- * Recommended plugin activate and deactive button not working - Fixed
+= 1.58 =
+** Minor CSS issue fixed
+** Recommended plugin activate and deactive button not working - Fixed
 
-Version 1.57
- * All Element using bx slider replaced by slick slider for better performance
+= 1.57 =
+** All Element using bx slider replaced by slick slider for better performance
 
-Version 1.56
- * Smooth Scrolling issue on back to top and slider down button fixed
+= 1.56 =
+** Smooth Scrolling issue on back to top and slider down button fixed
 
-Version 1.55
- * Menu Scrolling issue fixed - jquery.nav.js updated 
+= 1.55 =
+** Menu Scrolling issue fixed - jquery.nav.js updated 
  
-Version 1.54
- * Design issue of submenu in responsive fixed
+  = 1.54 =
+** Design issue of submenu in responsive fixed
 
-Version 1.53
- * Updated bxSlider Plugin
- * Update Fontawesome
+= 1.53 =
+** Updated bxSlider Plugin
+** Update Fontawesome
 
-Version 1.52
- * Minor Bug Fixes
+= 1.52 =
+** Minor Bug Fixes
 
-Version 1.51
- * Alignment Issue with Center Header fixed
- * Unwanted text removed.
+= 1.51 =
+** Alignment Issue with Center Header fixed
+** Unwanted text removed.
 
-Version 1.50
- * Minor Bug Fixes
+= 1.50 =
+** Minor Bug Fixes
 
-Version 1.40
- * Added Welcome Page with demo import functionality
- * Some Minor Design fixes
+= 1.40 =
+** Added Welcome Page with demo import functionality
+** Some Minor Design fixes
 
-Version 1.30
- * HTML validation
- * Optmization for Better SEO
+= 1.30 =
+** HTML validation
+** Optmization for Better SEO
 
-Version 1.26.2
- * Fixed some escapting value
- * Updated .pot file
+= 1.26.2 =
+** Fixed some escapting value
+** Updated .pot file
  
-Version 1.26.1
-* Translation Bug fixed
+  = 1.26.1 =
+** Translation Bug fixed
 
-Version 1.26.0
-* Fixed escaping security error
-* Core WordPress Function used of pagination/navigaion for post and archive page
+= 1.26.0 =
+** Fixed escaping security error
+** Core WordPress Function used of pagination/navigaion for post and archive page
 
-Version 1.25.9
-* TGMPA Updated with the latest version
+= 1.25.9 =
+** TGMPA Updated with the latest version
 
-Version 1.25.8
-* Logo alignment bug fixed for centered logo in Responsive Layout
-* Responsive bug fixed for the footer
-* Header Menu Bug fixed for home page template
-* PolyLang support for Theme Option Panel Text
+= 1.25.8 =
+** Logo alignment bug fixed for centered logo in Responsive Layout
+** Responsive bug fixed for the footer
+** Header Menu Bug fixed for home page template
+** PolyLang support for Theme Option Panel Text
 
-Version 1.25.7
-* Section Files Compatibility with Child Theme
-* CSS bug on bottom margin of the Google Map Section fixed
+= 1.25.7 =
+** Section Files Compatibility with Child Theme
+** CSS bug on bottom margin of the Google Map Section fixed
 
-Version 1.25.6
-* Woocommerce Compatible bug fixed
+= 1.25.6 =
+** Woocommerce Compatible bug fixed
 
-Version 1.25.5
-* Woocommerce Compatible
+= 1.25.5 =
+** Woocommerce Compatible
 
-Version 1.25.4
-* Plugin Recommended via TGM
-* Screenshot changed
+= 1.25.4 =
+** Plugin Recommended via TGM
+** Screenshot changed
 
-Version 1.25.3
-* Indonesian Translation Added
+= 1.25.3 =
+** Indonesian Translation Added
 Contributer - Rio Bermano <riobermano92@gmail.com>
 
-Version 1.25.2
-* Added the theme support for title tag and removed the hardcoded title tag
+= 1.25.2 =
+** Added the theme support for title tag and removed the hardcoded title tag
 
-Version 1.25.1
-* Fixes for the compatibility with Polylang Plugin
-* Post Navigation in the single post shows the post with same term only
+= 1.25.1 =
+** Fixes for the compatibility with Polylang Plugin
+** Post Navigation in the single post shows the post with same term only
 
-Version 1.25.0
-* CSS fixes to make compaltible with the latest release of WordPress 4.4
-* Auto Transition Bug in main slider fixed
+= 1.25.0 =
+** CSS fixes to make compaltible with the latest release of WordPress 4.4
+** Auto Transition Bug in main slider fixed
 
-Version 1.24.9
-* Minor bug on Slider fixed for RTL
-* Google Map Section content not displaying issue fixed
+= 1.24.9 =
+** Minor bug on Slider fixed for RTL
+** Google Map Section content not displaying issue fixed
 
-Version 1.24.8
-* Additional CSS added for RTL Support
+= 1.24.8 =
+** Additional CSS added for RTL Support
 
-Version 1.24.7
-* More Theme Page added
+= 1.24.7 =
+** More Theme Page added
 
-Version 1.24.6
-* Menu Center alignment Bug fixed for the header 2 layout
-* New Plugin Suggested Via TGM Plugin Activation
+= 1.24.6 =
+** Menu Center alignment Bug fixed for the header 2 layout
+** New Plugin Suggested Via TGM Plugin Activation
 
-Version 1.24.5
-* Main navigation bug fixed
-* Missing Translation ready fixed
-* Minor bug in accesspress_letter_count function fixed
+= 1.24.5 =
+** Main navigation bug fixed
+** Missing Translation ready fixed
+** Minor bug in accesspress_letter_count function fixed
 
-Version 1.24.4
-* FontAwesome updated to latest version
-* Translation pot file updated 
-* Minor Bug fixed in Home Page
+= 1.24.4 =
+** FontAwesome updated to latest version
+** Translation pot file updated 
+** Minor Bug fixed in Home Page
 
-Version 1.24.3
-* Polylang Plugin translation bug for Call to action section fixed
-* Minor CSS fix in the admin Panel
+= 1.24.3 =
+** Polylang Plugin translation bug for Call to action section fixed
+** Minor CSS fix in the admin Panel
 
-Version 1.24.2
-* Option name mismatch for the child theme fixed
-* Issue of bxslider not working for RTL Website fixed
+= 1.24.2 =
+** Option name mismatch for the child theme fixed
+** Issue of bxslider not working for RTL Website fixed
 
-Version 1.24.0
-* Theme Demo Url Changed
-* Changed Author url from http to https
-* Jquery bug in Team Section fixed
-* Text Domain Issue fixed
+= 1.24.0 =
+** Theme Demo Url Changed
+** Changed Author url from http to https
+** Jquery bug in Team Section fixed
+** Text Domain Issue fixed
 
-Version 1.23.9
-* Demo Slider Content Removed
-* Demo and Documentation Link added in Theme Option Panel
-* Minor change in theme option panel
+= 1.23.9 =
+** Demo Slider Content Removed
+** Demo and Documentation Link added in Theme Option Panel
+** Minor change in theme option panel
 
-Version 1.23.5
-* TGM Plugin Class Updated to latest version
-* Content bug for the parallax section fixed
-* Jquery bug fixed for multiple team section added
-* Slider caption overlapping the menu issue fixed
+= 1.23.5 =
+** TGM Plugin Class Updated to latest version
+** Content bug for the parallax section fixed
+** Jquery bug fixed for multiple team section added
+** Slider caption overlapping the menu issue fixed
 
-Version 1.23.4
-* Loop Issue fixed in Parallax Section.
-* Missing Translation text fixed.
-* Plugins recomemded via TGM Plugin Activation
+= 1.23.4 =
+** Loop Issue fixed in Parallax Section.
+** Missing Translation text fixed.
+** Plugins recomemded via TGM Plugin Activation
 
-Version 1.23.3
-* Compatibility issues with multilingual plugin (polylang) fixed.
-* Issue with Google Map Section fixed.
-* Removed the unused script from the demo content.
+= 1.23.3 =
+** Compatibility issues with multilingual plugin (polylang) fixed.
+** Issue with Google Map Section fixed.
+** Removed the unused script from the demo content.
 
-Version 1.23
-* Main Navigation Bug fixed
+= 1.23 =
+** Main Navigation Bug fixed
 
-Version 1.22
-* Team section slides bug fixed
-* Background Image bug in Mobile device fixed
+= 1.22 =
+** Team section slides bug fixed
+** Background Image bug in Mobile device fixed
 
-Version 1.21
-* Main Navigation Bug fixed
-* Minor Changes in Theme Option Panel
-* New pot file generated for translation
-* Jquery bug fixed while adding multiple team section
+= 1.21 =
+** Main Navigation Bug fixed
+** Minor Changes in Theme Option Panel
+** New pot file generated for translation
+** Jquery bug fixed while adding multiple team section
 
-Version 1.20
-* Archive page Title link fixed
-* ScreenShot Changed
-* Few adjustment in Theme Option Panel
-* Added Theme support for title tag
-* Added callback for custom TinyMCE editor stylesheets
+= 1.20 =
+** Archive page Title link fixed
+** ScreenShot Changed
+** Few adjustment in Theme Option Panel
+** Added Theme support for title tag
+** Added callback for custom TinyMCE editor stylesheets
 
-Version 1.19
-* Navigation not clickalbe in innpages issue solved.
-* Minor CSS bugs fixed.
-* Text translation added.
-* New Options Added in Theme Options Panel
-* Option to change the home text added in menu
+= 1.19 =
+** Navigation not clickalbe in innpages issue solved.
+** Minor CSS bugs fixed.
+** Text translation added.
+** New Options Added in Theme Options Panel
+** Option to change the home text added in menu
 
-Version 1.18
-* Nav unclickable issue solved.
-* Minor CSS bugs fixed.
-* Text translation added.
-* Remove emails from Theme Options due to spams. 
+= 1.18 =
+** Nav unclickable issue solved.
+** Minor CSS bugs fixed.
+** Text translation added.
+** Remove emails from Theme Options due to spams. 
 
-Version 1.17
-* Fixed the link on the Scroll down arrow over the banner.
-* Added New Translation language (Russian).
-* Minor CSS bugs fixed.
+= 1.17 =
+** Fixed the link on the Scroll down arrow over the banner.
+** Added New Translation language (Russian).
+** Minor CSS bugs fixed.
 
-Version 1.16
-* Theme option value not saving bug fixed.
+= 1.16 =
+** Theme option value not saving bug fixed.
 
-Version 1.15 
-* Changed the Option name to theme text domain to prevent the lose of theme option data while making child theme.     
+= 1.15  =
+** Changed the Option name to theme text domain to prevent the lose of theme option data while making child theme.     
 
-Version 1.14
-* Section ID changed by page ID instead of Page name (Page name created problem with other language then english.)
-* Header spacing bug fixed when logged in.
-* Design bug on 2nd level menu fixed on responsive layout.
+= 1.14 =
+** Section ID changed by page ID instead of Page name (Page name created problem with other language then english.)
+** Header spacing bug fixed when logged in.
+** Design bug on 2nd level menu fixed on responsive layout.
 
-Version 1.13
-* Div with clearfix class added in service section to prevent misalignment
-* Overlapping of Heading with date in the blog/archive page fixed
+= 1.13 =
+** Div with clearfix class added in service section to prevent misalignment
+** Overlapping of Heading with date in the blog/archive page fixed
 
-Version 1.11
-* Smooth Scroll Js added for smooth scrolling in Chrome
-* ScreenShot Changed
-* Minor Changes in styles
-* Minor Bugs Fixed
-* Demo Content Added
+= 1.11 =
+** Smooth Scroll Js added for smooth scrolling in Chrome
+** ScreenShot Changed
+** Minor Changes in styles
+** Minor Bugs Fixed
+** Demo Content Added
 
-Version 1.1
-* Parallax background Effect added for blank Sections in Main page.
-* Wow animation effect added
-* Google JavaScript Maps API V3 added
-* Minor Changes in styles
+= 1.1 =
+** Parallax background Effect added for blank Sections in Main page.
+** Wow animation effect added
+** Google JavaScript Maps API V3 added
+** Minor Changes in styles
 
-Version 1.0
-* Submitted theme for review in http://wordpress.org
+= 1.0 =
+** Submitted theme for review in http://wordpress.org

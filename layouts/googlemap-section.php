@@ -6,20 +6,20 @@
  */
 ?>
 
-	<div class="content-area googlemap-section">
-	<div class="googlemap-toggle"><?php esc_html_e('Map','accesspress-parallax'); ?></div>
+<div class="content-area googlemap-section">
+    <div class="googlemap-toggle"><?php esc_html_e( 'Map', 'accesspress-parallax' ); ?></div>
 
-		<?php  
-            $query = new WP_Query( 'page_id='.$section['page'] );
-            while ( $query->have_posts() ) : $query->the_post();
+    <?php
+    $query = new WP_Query( 'page_id=' . $section[ 'page' ] );
+    while ( $query->have_posts() ) : $query->the_post();
         ?>
-		
-		<div class="googlemap-content">
-			<?php the_content(); ?>
-		</div>
 
-		<?php 
-	        endwhile;    
-	        wp_reset_postdata();
-        ?>
-	</div>
+        <div class="googlemap-content">
+            <?php the_content(); ?>
+        </div>
+
+        <?php
+    endwhile;
+    wp_reset_postdata();
+    ?>
+</div>

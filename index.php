@@ -10,41 +10,32 @@
  *
  * @package accesspress_parallax
  */
+get_header();
 
-get_header(); ?>
-<?php if(of_get_option('enable_parallax') == 1 || of_get_option('enable_parallax') == NUll) :
-	get_template_part('index','parallax');
-else: 
-?>
-<div class="mid-content">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+if ( of_get_option( 'enable_parallax' ) == 1 ) :
+    get_template_part( 'index', 'parallax' );
+else:
+    ?>
+    <div class="mid-content clearfix">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+                <?php
+                if ( have_posts() ) :
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'content' );
+                    endwhile;
+                    the_posts_pagination();
+                else :
+                    get_template_part( 'content', 'none' );
+                endif;
+                ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+            </main><!-- #main -->
+        </div><!-- #primary -->
 
-				<?php
-					get_template_part( 'content' );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_pagination(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	
-<?php 
-get_sidebar(); ?>
-</div>
+        <?php get_sidebar(); ?>
+    </div>
 
 <?php
 endif;

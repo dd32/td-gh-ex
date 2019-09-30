@@ -3,8 +3,8 @@ Theme Name: AccessPress Parallax
 Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
-Description: AccessPress Parallax is beautiful WordPress theme with Parallax effect design. It is probably the 1st Parallax WP free theme and still #1 and most downloaded and installed Parallax theme. The theme is perfect for individual, creative agency, corporates and online store and almost any other type of websites. The theme is regularly updated with many features added in every release, currently the theme has a beautiful design, a parallax home page with many useful sections like multiple image-text sliders, features, portfolio gallery, beautiful team section, testimonials, latest blogs, CTA text and button, WooCommerce product listing, Contact form/text and map along with detailed footer. The theme is highly optimized for speed and Search Engines. It has many features from the theme manager panel and is translation ready, RTL support, custom CSS/JS support, deep WooCommerce integrated, bbPress Compatible and fully support multi language via POLYLANG plugin.   Demo: https://accesspressthemes.com/theme-demos/?theme=accesspress-parallax   Support forum: https://accesspressthemes.com/support/   Premium version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/
-Version: 1.72
+Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is widely implemented these days. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! More over the theme is fully translation ready, WooCommerce Compatible, bbPress Compatible and fully support multilanguage via POLYLANG plugin. Demo: https://accesspressthemes.com/theme-demos/?theme=accesspress-parallax Support forum: https://accesspressthemes.com/support/ Pro version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-parallax
@@ -2564,4 +2564,15 @@ ul.wp-block-gallery.alignnone,ul.wp-block-gallery.alignwide,ul.wp-block-gallery.
 .wp-embed-responsive .wp-block-embed-vimeo.wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before,
 .wp-embed-responsive .wp-block-embed-vimeo.wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
     padding-top: 0;
+}
+
+.wp-block-button__link {
+    margin-bottom: 20px;
+}
+
+.wp-block-image.is-resized.alignleft {
+    margin-right: 20px;
+}
+.wp-block-image.is-resized.alignright {
+    margin-left: 20px;
 }
