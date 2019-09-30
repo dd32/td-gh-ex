@@ -176,21 +176,6 @@ jQuery.noConflict()(function($){
 	$( window ).resize(avventura_lite_footer);
 
 /* ===============================================
-   Main menu
-   =============================================== */
-
-	$('nav#mainmenu li').hover(
-		
-		function () {
-			$(this).children('ul').stop(true, true).fadeIn(100);
-		}, 
-		function () {
-			$(this).children('ul').stop(true, true).fadeOut(400);		
-		}
-			
-	);
-
-/* ===============================================
    Scroll to top Plugin
    =============================================== */
 

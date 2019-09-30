@@ -728,7 +728,16 @@ if (!function_exists('avventura_lite_scripts_styles')) {
 		wp_enqueue_script( 'avventura-lite-template',get_template_directory_uri() . '/assets/js/avventura-lite-template.js',array('jquery', 'imagesloaded', 'masonry'), '1.0.0', TRUE ); 
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-		
+
+		wp_enqueue_script( 'avventura-lite-navigation', get_template_directory_uri() . '/assets/js/navigation.js' , array('jquery'), '1.0', TRUE ); 
+
+		wp_localize_script( 'avventura-lite-navigation', 'accessibleNavigationScreenReaderText', array(
+			'expandMain'   => __( 'Open the main menu', 'avventura-lite' ),
+			'collapseMain' => __( 'Close the main menu', 'avventura-lite' ),
+			'expandChild'   => __( 'expand submenu', 'avventura-lite' ),
+			'collapseChild' => __( 'collapse submenu', 'avventura-lite' ),
+		));
+
 		wp_enqueue_script('avventura-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
 		wp_script_add_data('avventura-lite-html5shiv', 'conditional', 'IE 8' );
 		wp_enqueue_script('avventura-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');

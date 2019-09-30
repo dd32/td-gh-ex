@@ -116,7 +116,12 @@ if ( function_exists('wp_body_open') ) {
                 <div class="row">
                                             
                     <div class="col-md-12">
-        
+
+                        <button class="menu-toggle" aria-controls="mainmenu" aria-expanded="false" type="button">
+                            <span aria-hidden="true"><?php esc_html_e( 'Menu', 'avventura-lite' ); ?></span>
+                            <span class="dashicons" aria-hidden="true"></span>
+                        </button>
+
                         <nav id="mainmenu" >
                         
                             <?php 

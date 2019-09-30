@@ -134,6 +134,11 @@ h6.title span {
 	transition: color .3s ease;
 }
 
+.title a span:hover , 
+.title a:focus span { 
+    color: #d14a2b;
+}
+
 input, 
 button, 
 select, 
@@ -190,12 +195,13 @@ a {
 	color:#616161
 }
 
-a:hover ,
-a:active ,
-a:focus {
+a:hover {
 	color:#d14a2b;
-	outline:none;
-	text-decoration:none;
+}
+
+a:focus {
+	outline: thin dotted;
+    text-decoration: underline;
 }
 
 .clear { 
@@ -294,7 +300,9 @@ span.button,
 }
 
 span.button:hover ,
-.post-article span.button:hover {
+.post-article span.button:hover,
+.read-more:focus span.button,
+.post-article .read-more:focus span.button {
 	background:none;
 	border-color:#d14a2b;
 	color:#d14a2b;
@@ -308,7 +316,8 @@ span.button:hover ,
 	transition: color .3s ease;
 }
 
-.post-article a span.nobutton:hover {
+.post-article a span.nobutton:hover ,
+.post-article a:focus span.nobutton {
 	color:#d14a2b;
 }
 
@@ -467,6 +476,10 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
     border-bottom: solid 1px #f1f1f1;
 }
 
+#header-wrapper.light #header .header-cart-widget .buttons a.button {
+    border: solid 1px #ff6644;
+}
+
 /* ===============================================
    HEADER DARK
    =============================================== */
@@ -522,7 +535,7 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 }
 
 #header-wrapper.dark #header .header-cart-widget .buttons a.button {
-    border: solid 1px #fff ;
+    border: solid 1px #fff;
 }
 
 /* ===============================================
@@ -707,8 +720,8 @@ nav#mainmenu ul li a {
 	text-decoration:none; 
 	display:block; 
 	z-index:1; 
-	padding:0 24px 0 0;
-	margin:0 -5px 0 0;
+    padding: 0 12px;
+    margin: 0;
 	color: #616161;
 	font-size:14px; 
 	-webkit-transition: all .1s linear; 
@@ -718,8 +731,12 @@ nav#mainmenu ul li a {
 	line-height:53px
 }
 
+nav#mainmenu a:hover,
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
+nav#mainmenu a:focus,
+nav#mainmenu ul li a:focus,
+nav#mainmenu li:focus > a,
 nav#mainmenu ul li.current-menu-item > a, 
 nav#mainmenu ul li.current_page_item > a, 
 nav#mainmenu ul li.current-menu-parent > a, 
@@ -728,18 +745,24 @@ nav#mainmenu ul li.current-menu-ancestor > a {
 	color:#d14a2b;
 }
 
-nav#mainmenu ul ul { 
-	display:none; 
-	position: absolute; 
+nav#mainmenu ul.sub-menu { 
+	opacity:0; 
+	position: absolute;
 	top:52px; 
-	left:0; 
+	left: -9999em;
 	background:#fff;
 	z-index:1000;
 	width:100%;
 	min-width:213px;
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+	-webkit-transition: opacity 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s;
+	transition: opacity 0.3s ease 0s;
 }
 
-nav#mainmenu ul ul li { 
+nav#mainmenu ul.sub-menu li { 
 	position:relative; 
 	margin:0;
 	line-height:1.2em;
@@ -750,28 +773,38 @@ nav#mainmenu ul ul li {
 	padding:0
 }
 
-nav#mainmenu ul ul li a { 
+nav#mainmenu li li:hover > ul,
+nav#mainmenu li li:focus > ul,
+nav#mainmenu li li.focus > ul {
+	top:0px;
+	left: 100%; 
+}
+
+nav#mainmenu ul.sub-menu li a { 
 	text-decoration:none; 
 	text-align:left; 
 	display:block; 
-	padding:14px 14px 0 14px;
+	padding:14px;
 	margin:0;
 	border:none;
-	color:#616161;
+	text-transform:none;
 	line-height:inherit !important 
  }
 
-nav#mainmenu ul ul li:last-of-type a { 
-	padding:14px;
-}
-
-nav#mainmenu ul ul li ul { 
-	top:0; 
-	left:213px; 
-}
-
-nav#mainmenu ul ul li ul:before {
+nav#mainmenu ul.sub-menu li ul:before {
 	display:none;
+}
+
+nav#mainmenu li:hover > ul,
+nav#mainmenu li:focus > ul,
+nav#mainmenu li.focus > ul {
+	opacity:1; 
+	left:0
+}
+
+.menu-toggle,
+.dropdown-toggle {
+	display: none;
 }
 
 /* ===============================================
@@ -2014,7 +2047,12 @@ div.wpcf7-mail-sent-ok {
 .woocommerce-product-search input[type=submit]:hover,
 .contact-form input[type=submit]:hover ,
 .searchform input[type=submit]:hover ,
-.comment-form input[type=submit]:hover {
+.comment-form input[type=submit]:hover ,
+.wpcf7-form input[type=submit]:focus ,
+.woocommerce-product-search input[type=submit]:focus,
+.contact-form input[type=submit]:focus ,
+.searchform input[type=submit]:focus ,
+.comment-form input[type=submit]:focus {
 	border-color:#d14a2b;
 	color:#d14a2b;
 	text-decoration:none
@@ -2469,7 +2507,8 @@ tr:nth-child(2n+2) {
     position: relative;
 }
 
-.social-buttons a:hover { 
+.social-buttons a:hover , 
+.social-buttons a:focus { 
 	background:#d14a2b;
 	color:#fff !important
 }
@@ -2523,7 +2562,9 @@ tr:nth-child(2n+2) {
 }
 
 .social-buttons a:hover:before , 
-.social-buttons a:hover:after { 
+.social-buttons a:hover:after , 
+.social-buttons a:focus:before , 
+.social-buttons a:focus:after { 
 	-webkit-transition: opacity .3s linear, visibility .3s linear; 
 	-moz-transition: opacity .3s linear, visibility .3s linear; 
 	-o-transition: opacity .3s linear, visibility .3s linear; 
