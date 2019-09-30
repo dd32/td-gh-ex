@@ -4,8 +4,8 @@ Theme Name: BasePress
 Theme URI: https://themecountry.com/basepress
 Author: ThemeCountry
 Author URI: https://themecountry.com
-Description: BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader. Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://themecountry.com/demo/?theme=BasePress
-Version: 1.3.0
+Description: BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader. Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://demo.basepresspro.com
+Version: 1.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basepress
@@ -2622,7 +2622,7 @@ h2,
   line-height: 1.214; }
   h2 + h3,
   .beta + h3 {
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #eaeaea;
     padding-top: 0.5407911001em; }
 
 h3,
@@ -2874,6 +2874,7 @@ button,
 input,
 select,
 textarea {
+  border-radius: 2px;
   font-size: 100%;
   /* Corrects font size not being inherited in all browsers */
   margin: 0;
@@ -3165,6 +3166,25 @@ li > ul, li > ol {
 .hentry {
   margin: 0 0 1.5em; }
 
+.none-sidebar .site-main .intro {
+  display: block;
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -0.7px;
+  margin-top: 30px;
+  margin-bottom: 48px; }
+  .none-sidebar .site-main .intro:first-child:first-letter {
+    float: left;
+    font-size: 88px;
+    font-size: 8.8rem;
+    font-weight: normal;
+    line-height: 60px;
+    padding-top: 0;
+    padding-right: 8px;
+    padding-left: 0px; }
+
 .single .byline,
 .group-blog .byline {
   display: inline; }
@@ -3263,33 +3283,36 @@ li > ul, li > ol {
   .entry-content p a:hover {
     text-decoration: underline; }
 
+.entry-content ul,
 .entry-content ol {
-  margin: 15px; }
-  .entry-content ol > li::before {
-    content: ""; }
-
-.entry-content ul {
-  margin: 15px;
-  margin-right: 0;
+  margin: 0 0 30px;
+  padding-left: 40px;
   list-style: none;
-  line-height: 26px;
   word-wrap: break-word; }
-  .entry-content ul li {
+  .entry-content ul ul,
+  .entry-content ul ol,
+  .entry-content ol ul,
+  .entry-content ol ol {
+    margin-bottom: 0; }
+  .entry-content ul:not(.wp-block-gallery) li::before,
+  .entry-content ol:not(.wp-block-gallery) li::before {
+    font: normal normal normal 14px/1 FontAwesome;
+    content: "\f105";
+    float: left;
+    margin-left: -16px;
     line-height: 26px;
-    word-wrap: break-word;
-    margin-left: 21px; }
-    .entry-content ul li a {
+    font-size: 14px; }
+  .entry-content ul li,
+  .entry-content ol li {
+    line-height: 1.87500;
+    margin: 0; }
+    .entry-content ul li a,
+    .entry-content ol li a {
       color: #333; }
-      .entry-content ul li a:hover {
+      .entry-content ul li a:hover,
+      .entry-content ol li a:hover {
         color: #cb2027;
         text-decoration: underline; }
-    .entry-content ul li::before {
-      font: normal normal normal 14px/1 FontAwesome;
-      content: "\f105";
-      float: left;
-      margin-left: -16px;
-      line-height: 26px;
-      font-size: 14px; }
 
 .entry-content ul.toc_list li::before {
   display: none; }
@@ -3523,7 +3546,7 @@ object {
 .site-branding {
   float: left;
   max-width: 100%;
-  margin: 30px 0; }
+  margin: 15px 0; }
 
 .logo {
   margin-bottom: 0; }
@@ -3603,7 +3626,7 @@ object {
   width: 230px;
   background-color: #ffffff;
   padding: 0;
-  border-top: 1px solid #e0e0e0; }
+  border-top: 1px solid #eaeaea; }
   .main-navigation ul ul li .arrow-main-menu {
     top: 15px;
     right: 15px; }
@@ -3657,7 +3680,7 @@ object {
   width: 100%;
   position: relative;
   background: #fff;
-  border-top: 1px solid #e0e0e0; }
+  border-top: 1px solid #eaeaea; }
 
 /*--------------------------------------------------------------
 # General
@@ -3916,7 +3939,7 @@ input#url {
   width: 100%;
   max-width: 430px;
   font-size: 16px;
-  border: 1px solid #dedede;
+  border: 1px solid #eaeaea;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3927,7 +3950,7 @@ input#url {
 textarea#comment {
   width: 100%;
   font-size: 16px;
-  border: 1px solid #dedede;
+  border: 1px solid #eaeaea;
   padding: 1.4%;
   line-height: 25px;
   box-sizing: border-box;
@@ -3949,14 +3972,8 @@ textarea#comment {
 input#submit {
   background: #fafafa;
   border: 1px solid #eaeaea;
-  color: #777;
-  font-size: 16px;
-  font-weight: normal;
   padding: 13px 20px;
   text-shadow: none;
-  box-shadow: none;
-  border-radius: inherit;
-  outline: none;
   margin: 0;
   transition: background 0.25s linear; }
 
@@ -3964,7 +3981,6 @@ input#submit:hover {
   color: #666666; }
 
 .logged-in-as a {
-  color: #a4a4a4;
   font-size: 16px;
   border-bottom: 1px dotted; }
 
@@ -4398,8 +4414,7 @@ input:input-placeholder {
     width: 65.2173913043%;
     float: right;
     margin-right: 0;
-    margin-top: 30px;
-    margin-bottom: 30px; }
+    margin: 15px 0; }
     .main-navigation .main-navigation-menu {
       margin: 0;
       padding: 0;
@@ -4421,10 +4436,12 @@ input:input-placeholder {
     float: left;
     margin-right: 4.347826087%; }
   .none-sidebar .content-area {
-    width: 100%;
+    width: 73.9130434783%;
     float: left;
-    margin-left: 0;
-    margin-right: 0; }
+    margin-right: 4.347826087%;
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
   .basepress-full-width-content .content-area {
     width: 100%;
     float: left;

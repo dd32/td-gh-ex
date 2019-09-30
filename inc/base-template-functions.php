@@ -307,7 +307,7 @@ if ( ! function_exists( 'basepress_post_content' ) ) {
 
 		$size = apply_filters('basepress_thunmbnail_size', 'large');
 
-		$basepress_display_excerpt = apply_filters('basepress_display_excerpt', false);
+		$basepress_display_excerpt = apply_filters('basepress_display_excerpt', true);
 
 		/**
 		 * Functions hooked in to basepress_post_content_before action.
@@ -951,16 +951,17 @@ if ( ! function_exists( 'basepress_credit' ) ) {
 	function basepress_credit() {
 		?>
 		<div class="site-info">
-			
+
 			<?php echo esc_html( apply_filters( 'basepress_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
 
 			<?php if ( apply_filters( 'basepress_credit_link', true ) ) { ?>
-				
-				<?php printf( esc_attr__( '%1$s designed by %2$s', 'basepress' ), 'BasePress', '<a href="https://themecountry.com" title="Base - The best free blog theme for WordPress" rel="author">ThemeCountry</a>' ); ?>
-			
+
+				<?php echo ( sprintf(__( '&bull; <a href="%s" rel="author" title="BasePress - The best free WordPress blog theme for WordPress" rel="author" target="_blank"> ThemeCountry</a> Powered by <a href="https://wordpress.org" target="_blank">WordPress</a>', 'basepress' ), 'https://basepresspro.com' )); ?>
+
+
 			<?php } ?>
 
-		</div><!-- .site-info -->
+		</div><!-- .copyright -->
 		<?php
 	}
 }

@@ -10,7 +10,7 @@ two-columns, custom-background, custom-header, custom-menu, blog, news, featured
 
 BasePress is a fast loading WordPress theme which is mainly focused on clean design & beautiful typography which to make sure your content is properly served to the reader.
 
-Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://themecountry.com/demo/?theme=BasePress
+Start a Clean design, fast loading & SEO Optimized WordPress Website now with Basepress. Forget the difficulty of customizing website by using Basepress’s state-of-the-art theme option that allows unlimited font & color options as well as very flexible ads management system & more. See demo: https://demo.basepresspro.com
 
 == Installation ==
 
@@ -64,6 +64,11 @@ License: CC0 License
 License http://www.pexels.com/photo-license/
 
 == Changelog ==
+
+= 1.3.1 - September 30 2019
+* Styled: Update list style and line height
+* Updated footer widget when no choose
+
 = 1.3.0 - March 6 2018
 * Styled: Update a link transition
 * Styled: Update meta info style

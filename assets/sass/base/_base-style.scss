@@ -22,7 +22,7 @@ textarea {
 select {
 	max-width: 100%;
 	color: initial;
-	border: 1px solid #eaeaea;
+	border: 1px solid $color_border;
 	font-family: $base-font;
 }
 
@@ -341,6 +341,7 @@ button,
 input,
 select,
 textarea {
+	border-radius: 2px;
 	font-size: 100%; /* Corrects font size not being inherited in all browsers */
 	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
 	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
@@ -353,7 +354,7 @@ input[type="reset"],
 input[type="submit"] {
 	border: 0;
 	background: #fafafa;
-	border: 1px solid #eaeaea;
+	border: 1px solid $color_border;
 	color: $color_body;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	padding: ms(-2) ms(2);
@@ -620,6 +621,35 @@ li > ul, li > ol {
 .hentry {
 	margin: 0 0 1.5em;
 }
+
+.none-sidebar {
+	
+	.site-main {
+		
+		.intro {
+			
+			display: block;
+			font-size: 24px;
+			font-size: 2.4rem;
+			font-weight: bold;
+			line-height: 1.4;
+			letter-spacing: -0.7px;
+			margin-top: 30px;
+			margin-bottom: 48px;
+
+			&:first-child:first-letter {
+				float: left;
+				font-size: 88px;
+				font-size: 8.8rem;
+				font-weight: normal;
+				line-height: 60px;
+				padding-top: 0;
+				padding-right: 8px;
+				padding-left: 0px;
+			}
+		}
+	}
+}
 .single .byline,
 .group-blog .byline {
 	display: inline;
@@ -732,32 +762,38 @@ li > ul, li > ol {
 		}
 
 	}
+	ul,
 	ol {
-		
-		margin: 15px;
 
-		> li {
+		margin: 0 0 30px;
+		padding-left: 40px;
+		list-style: none;
+		word-wrap: break-word;
 
-			&::before {
-				content: "";
-			}
-
+		ul,
+		ol {
+			margin-bottom: 0;
 		}
 
-	}
-	ul {
+		&:not(.wp-block-gallery) {
 
-		margin: 15px;
-		margin-right: 0;
-		list-style: none;
-		line-height: 26px;
-		word-wrap: break-word;
+			li {
+
+				&::before {
+					font: normal normal normal 14px/1 FontAwesome;
+					content: "\f105";
+					float: left;
+					margin-left: -16px;
+					line-height: 26px;
+					font-size: 14px;
+				}
+			}
+		}
 	
 		li {
 			
-			line-height: 26px;
-			word-wrap: break-word;
-			margin-left: 21px;
+			line-height: 1.87500;
+			margin: 0;
 
 			a {
 				color: #333;
@@ -767,15 +803,6 @@ li > ul, li > ol {
 					text-decoration: underline;
 				}
 
-			}
-
-			&::before {
-				font: normal normal normal 14px/1 FontAwesome;
-				content: "\f105";
-				float: left;
-				margin-left: -16px;
-				line-height: 26px;
-				font-size: 14px;
 			}
 		}
 	}
@@ -905,7 +932,7 @@ li > ul, li > ol {
 		font-size: 16px;
 		background: #fff;
 		margin-right: 3px;
-		border: 1px solid #eaeaea;
+		border: 1px solid $color_border;
 		box-sizing: border-box;
 		transition: all 0.25s linear;
 		-webkit-transition: all 0.25s linear;
@@ -1039,7 +1066,7 @@ object {
 .site-branding {
 	float: left;
 	max-width: 100%;
-	margin: 30px 0;
+	margin: 15px 0;
 }
 .logo {
 	margin-bottom: 0;
@@ -1144,7 +1171,7 @@ object {
 			width: 230px;
 			background-color: #ffffff;
 			padding: 0;
-			border-top: 1px solid #e0e0e0;
+			border-top: 1px solid $color_border;
 			
 			li {
 				.arrow-main-menu {
@@ -1207,7 +1234,7 @@ object {
 	width: 100%;
 	position: relative;
 	background: #fff;
-	border-top: 1px solid #e0e0e0;
+	border-top: 1px solid $color_border;
 }
 
 /*--------------------------------------------------------------
@@ -1506,7 +1533,7 @@ input#url {
 	width: 100%;
 	max-width: 430px;
 	font-size: 16px;
-	border: 1px solid #dedede;
+	border: 1px solid $color_border;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1517,7 +1544,7 @@ input#url {
 textarea#comment {
 	width: 100%;
 	font-size: 16px;
-	border: 1px solid #dedede;
+	border: 1px solid $color_border;
 	padding: 1.4%;
 	line-height: 25px;
 	box-sizing: border-box;
@@ -1538,15 +1565,9 @@ textarea#comment {
 }
 input#submit {
 	background: #fafafa;
-	border: 1px solid #eaeaea;
-	color: #777;
-	font-size: 16px;
-	font-weight: normal;
+	border: 1px solid $color_border;
 	padding: 13px 20px;
 	text-shadow: none;
-	box-shadow: none;
-	border-radius: inherit;
-	outline: none;
 	margin: 0;
 	transition: background 0.25s linear;
 }
@@ -1554,7 +1575,6 @@ input#submit:hover {
 	color: #666666;
 }
 .logged-in-as a {
-	color: #a4a4a4;
 	font-size: 16px;
 	border-bottom: 1px dotted;
 }
@@ -1564,7 +1584,7 @@ input#submit:hover {
 --------------------------------------------------------------*/
 .page-header {
 	background: #fff;
-	border: 1px solid #eaeaea;
+	border: 1px solid $color_border;
 	margin-bottom: 30px;
 }
 .page-header .archive-title,
@@ -1620,7 +1640,7 @@ input#submit:hover {
 	position: relative;
 	margin-bottom: 12px;
 	padding-bottom: 12px;
-	border-bottom: 1px solid #eaeaea;
+	border-bottom: 1px solid $color_border;
 }
 .widget li a:hover {
 	text-decoration: underline;
@@ -1665,7 +1685,7 @@ input#submit:hover {
 		line-height: 46px;
 		display: inline-block;
 		outline: none;
-		border: 1px solid #eaeaea;
+		border: 1px solid $color_border;
 		padding: 8px 15px;
 		box-shadow: none;
 		box-sizing: border-box;
@@ -1927,9 +1947,9 @@ input:input-placeholder { color: #999 }
 # Back To Top
 --------------------------------------------------*/
 .back-to-top {
-	width: 40px;
-	height: 40px;
-	line-height: 40px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
 	color: #fff;
 	font-size: 16px;
 	text-align: center;

@@ -424,7 +424,7 @@ if ( ! class_exists( 'BasePress_Customizer' ) ) :
 				body, .sidebar, .related-posts ul li a { color: ' . $basepress_theme_mods['text_color'] . '; }
 				.entry-footer, .entry-footer > span {color: '. basepress_adjust_color_brightness( $basepress_theme_mods['text_color'], 100 ) .'}
 				h1, h2, h3, h4, h5 ,h6, .entry-title a, .sidebar .widget-title { color: ' . $basepress_theme_mods['heading_color'] . '; }
-				a, .sidebar a, .wp-caption .wp-caption-text, .post-navigation .nav-links a:hover { color: ' . $basepress_theme_mods['accent_color'] . '; }
+				a, .sidebar a, .wp-caption .wp-caption-text, .post-navigation .nav-links a:hover,.main-navigation-menu li:hover > a { color: ' . $basepress_theme_mods['accent_color'] . '; }
 				a:hover, .sidebar a:hover, .entry-title a:hover, .entry-content ul li a:hover, .related-posts ul li a:hover { color: ' . basepress_adjust_color_brightness( $basepress_theme_mods['accent_color'],  $darken_factor ) . '; }
 				.back-to-top { background: ' . $basepress_theme_mods['accent_color'] . '; }
 				.site-footer { background: ' . $basepress_theme_mods['footer_background_color'] . '; }
