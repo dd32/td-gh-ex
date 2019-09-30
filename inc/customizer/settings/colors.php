@@ -419,7 +419,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                         background: '. $primary_color .';
                     }
 
-                    .site-title a {
+                    .site-title a, .site-description {
                         color: '. $primary_color .';
                     }
 
@@ -569,7 +569,18 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                     }
 
                 ';
-            } // endif p
+            } // endif primary color
+
+            // header text color
+            $header_textcolor = get_header_textcolor();
+            if ( 'blank' != $header_textcolor && 'FF4F4F' != $header_textcolor ) {
+                $css .= '
+                    .site-title a, .site-description,
+                    .site-header.horizontal-style .site-description {
+                        color: #'. $header_textcolor .';
+                    }
+                ';
+            }
             
             // link color
             if ( ! empty( $link_color ) && '#00aeef' != $link_color ) {

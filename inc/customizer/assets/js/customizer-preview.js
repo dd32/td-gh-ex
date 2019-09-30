@@ -28,12 +28,14 @@
 			if ( 'blank' === to ) {
 				$( '.site-title, .site-description' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
+					'position': 'absolute',
+					'display': 'none'
 				} );
 			} else {
 				$( '.site-title, .site-description' ).css( {
 					'clip': 'auto',
-					'position': 'relative'
+					'position': 'relative',
+					'display': 'block'
 				} );
 				$( '.site-title a, .site-description' ).css( {
 					'color': to

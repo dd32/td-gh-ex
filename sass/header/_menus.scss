@@ -483,7 +483,8 @@ button.dropdown-toggle.toggled-on::after {
 		border: 1px solid #cccccc;
 		color: $color__text-main;
 		padding: 8px 15px;
-		margin: 0 2px;
+		margin: 0 2px 5px 2px;
+    	display: inline-block;
 	}
 	.page-numbers.next,
 	.page-numbers.previous {
