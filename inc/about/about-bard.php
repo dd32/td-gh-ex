@@ -71,6 +71,7 @@ function bard_about_page_output() {
 					?>
 					</p>
 					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-docs/'); ?>" class="button button-primary"><?php esc_html_e( 'Read Full Documentation', 'bard' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=E8vmC4BPU0U'); ?>" class="button button-primary insta"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Setup Instagram', 'bard' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -225,6 +226,10 @@ function bard_about_page_output() {
 					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-bard&tab=bard_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'bard' ); ?></a>
 				</div>
 				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Instagram Widget', 'bard' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=E8vmC4BPU0U"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
+				</div>
+				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Menu', 'bard' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=9M38Z2CLKOg"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('nav-menus.php')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
@@ -270,10 +275,6 @@ function bard_about_page_output() {
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=bard_featured_links')); ?>"></span><?php esc_html_e( 'Customize', 'bard' ); ?></a>
 				</div>
 				<div class="column-width-4">
-					<h3><?php esc_html_e( 'Setup Instagram Widget', 'bard' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=hjZxBacICSg"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
-				</div>
-				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Create Blog Post', 'bard' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=gvW0FhT-cSQ"><?php esc_html_e( 'Watch Video', 'bard' ); ?></a>
 				</div>
@@ -305,7 +306,10 @@ function bard_about_page_output() {
 				bard_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' );
 
 				// Meks Easy Instagram Widget
-				bard_recommended_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' );
+				// bard_recommended_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' );
+
+				// Smash Balloon Social Photo Feed
+				bard_recommended_plugin( 'instagram-feed', 'instagram-feed' );
 
 				// Ajax Thumbnail Rebuild
 				bard_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild' );
@@ -603,12 +607,12 @@ function bard_import_demo_files_filter( $default_text ) {
 	}
 
 	// Activate ISW Plugin After Import
-	if ( is_plugin_active( 'meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) {
+	if ( is_plugin_active( 'instagram-feed/instagram-feed.php' ) ) {
 		$isw_plugin_link = '';
-	} elseif ( bard_check_installed_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' ) ) {
-		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=meks-easy-instagram-widget/meks-easy-instagram-widget.php' ), 'activate-plugin_meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
+	} elseif ( bard_check_installed_plugin( 'instagram-feed', 'instagram-feed' ) ) {
+		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=instagram-feed/instagram-feed.php' ), 'activate-plugin_instagram-feed/instagram-feed.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
 	} else {
-		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=meks-easy-instagram-widget' ), 'install-plugin_meks-easy-instagram-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
+		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=instagram-feed' ), 'install-plugin_instagram-feed' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Smash Balloon Social Photo Feed', 'bard' ) .'</a></li>';
 	}
 
 	$activate_plugins_notice = '';
@@ -639,8 +643,9 @@ function bard_import_demo_files_filter( $default_text ) {
 }
 add_filter( 'pt-ocdi/plugin_intro_text', 'bard_import_demo_files_filter' );
 
-// Install Menus after Import
+// Actions after Import
 function bard_after_import_setup() {
+	// Install Menus after Import
 	$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
 	$top_menu = get_term_by( 'name', 'Top Menu', 'nav_menu' );
 
@@ -649,8 +654,23 @@ function bard_after_import_setup() {
 			'top'  => $top_menu->term_id,
 		)
 	);
+
+	// Get Instagram Options
+	$instagram_options = get_option('sb_instagram_settings');
+	// Set Instagram Options
+	$instagram_options['sb_instagram_num'] = '9';
+	$instagram_options['sb_instagram_cols'] = '1';
+	$instagram_options['sb_instagram_image_padding'] = '0';
+	$instagram_options['sb_instagram_show_header'] = false;
+	$instagram_options['sb_instagram_show_btn'] = false;
+	$instagram_options['sb_instagram_show_follow_btn'] = false;
+	// Update Instagram Options
+	update_option( 'sb_instagram_settings', $instagram_options );
 }
 add_action( 'pt-ocdi/after_import', 'bard_after_import_setup' );
+
+// Disable PT after Import Notice
+add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 // Disable PT Branding after Import Notice
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
