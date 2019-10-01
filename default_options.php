@@ -106,7 +106,7 @@ function awada_theme_options()
         'developed_by_link' => 'http://www.webhuntinfotech.com/',
         'footer_layout' => 4,
 		'awada_portfolio_setting'=>array(),
-		'home_sections' => array('service', 'portfolio', 'blog', 'extra', 'callout'),
+		'home_sections' => array('service', 'portfolio', 'blog', 'callout'),
     );
 	//delete_option('awada_theme_options');
     return wp_parse_args(get_option('awada_theme_options', array()), $awada_theme_options);

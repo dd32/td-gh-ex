@@ -1454,7 +1454,6 @@ Kirki::add_field( 'awada_theme', array(
         'service',
         'portfolio',
         'blog',
-		'extra',
         'callout',
     ),
     'choices'     => array(

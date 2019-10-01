@@ -1,3 +1,5 @@
+###Version 1.9 [01-OCT-2019]
+* Minor bug fixed.
 ###Version 1.8 [30-SEP-2019]
 * Add style for dashboard, overlap meta boxes on posts(editor).
 * Breadcrumbs issue(Attachment Image) fixed.
