@@ -66,6 +66,7 @@ function ashe_about_page_output() {
 					?>
 					</p>
 					<a target="_blank" href="<?php echo esc_url('https://wp-royal.com/themes/ashe/docs/?ref=ashe-free-backend-about-docs/'); ?>" class="button button-primary docs"><?php esc_html_e( 'Read Full Documentation', 'ashe' ); ?></a>
+					<a target="_blank" href="<?php echo esc_url('https://www.youtube.com/watch?v=NDDr_b-jacI'); ?>" class="button button-primary insta"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Setup Instagram', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -219,6 +220,10 @@ function ashe_about_page_output() {
 					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-ashe&tab=ashe_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
+					<h3><?php esc_html_e( 'Setup Instagram Widget', 'ashe' ); ?></h3>
+					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=NDDr_b-jacI"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+				</div>
+				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Setup Menu', 'ashe' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=wuggfN2nzDM"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('nav-menus.php')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
@@ -274,10 +279,6 @@ function ashe_about_page_output() {
 					<a class="button button-secondary" target="_blank" href="<?php echo esc_url(admin_url('customize.php?autofocus[section]=ashe_blog_page')); ?>"></span><?php esc_html_e( 'Customize', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
-					<h3><?php esc_html_e( 'Setup Instagram Widget', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=DcjLQgrv9wc"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
-				</div>
-				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Create Blog Post', 'ashe' ); ?></h3>
 					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=gvW0FhT-cSQ"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 				</div>
@@ -308,11 +309,14 @@ function ashe_about_page_output() {
 				// Recent Posts Widget
 				ashe_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' );
 
-				// Meks Easy Instagram Widget
-				ashe_recommended_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' );
-
 				// Ajax Thumbnail Rebuild
 				ashe_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild' );
+
+				// Meks Easy Instagram Widget
+				// ashe_recommended_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' );
+
+				// Smash Balloon Social Photo Feed
+				ashe_recommended_plugin( 'instagram-feed', 'instagram-feed' );
 
 				// Facebook Widget
 				ashe_recommended_plugin( 'facebook-pagelike-widget', 'facebook_widget' );
@@ -597,12 +601,12 @@ function ashe_import_demo_files_filter( $default_text ) {
 	}
 
 	// Activate WPIW Plugin After Import
-	if ( is_plugin_active( 'meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) {
+	if ( is_plugin_active( 'instagram-feed/instagram-feed.php' ) ) {
 		$wpiw_plugin_link = '';
-	} elseif ( ashe_check_installed_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' ) ) {
-		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=meks-easy-instagram-widget/meks-easy-instagram-widget.php' ), 'activate-plugin_meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
+	} elseif ( ashe_check_installed_plugin( 'instagram-feed', 'instagram-feed' ) ) {
+		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=instagram-feed/instagram-feed.php' ), 'activate-plugin_instagram-feed/instagram-feed.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Smash Balloon Social Photo Feed', 'ashe' ) .'</a></li>';
 	} else {
-		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=meks-easy-instagram-widget' ), 'install-plugin_meks-easy-instagram-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
+		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=instagram-feed' ), 'install-plugin_instagram-feed' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Smash Balloon Social Photo Feed', 'ashe' ) .'</a></li>';
 	}
 
 	$activate_plugins_notice = '';
@@ -633,8 +637,9 @@ function ashe_import_demo_files_filter( $default_text ) {
 }
 add_filter( 'pt-ocdi/plugin_intro_text', 'ashe_import_demo_files_filter' );
 
-// Install Menus after Import
+// Actions after Import
 function ashe_after_import_setup() {
+	// Install Menus after Import
 	$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
 	$top_menu = get_term_by( 'name', 'Top Menu', 'nav_menu' );
 
@@ -643,6 +648,18 @@ function ashe_after_import_setup() {
 			'top'  => $top_menu->term_id,
 		)
 	);
+
+	// Get Instagram Options
+	$instagram_options = get_option('sb_instagram_settings');
+	// Set Instagram Options
+	$instagram_options['sb_instagram_num'] = '9';
+	$instagram_options['sb_instagram_cols'] = '3';
+	$instagram_options['sb_instagram_image_padding'] = '0';
+	$instagram_options['sb_instagram_show_header'] = false;
+	$instagram_options['sb_instagram_show_btn'] = false;
+	$instagram_options['sb_instagram_show_follow_btn'] = false;
+	// Update Instagram Options
+	update_option( 'sb_instagram_settings', $instagram_options );
 }
 add_action( 'pt-ocdi/after_import', 'ashe_after_import_setup' );
 

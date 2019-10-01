@@ -153,6 +153,11 @@
     box-shadow: 0 1px 0 #ba281e;
 }
 
+.button.insta .dashicons {
+	margin-top: 7px;
+	margin-right: 7px;
+}
+
 /* Video Tutorials */
 .video-tutorials .column-width-4 {
   width: 18%;
@@ -302,6 +307,10 @@
 @media screen and ( max-width: 1366px ) {
 	.four-columns-wrap.video-tutorials .column-width-4 {
 		width: 50%;
+	}
+
+	.button.insta {
+		margin-top: 10px;
 	}
 }
 

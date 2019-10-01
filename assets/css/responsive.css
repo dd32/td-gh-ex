@@ -257,6 +257,16 @@
     color: inherit !important;
   }
 
+  .ashe-instagram-widget .meks-instagram-widget > div,
+  .ashe-instagram-widget #sbi_images > div {
+    display: none !important;
+  }
+
+  .ashe-instagram-widget .meks-instagram-widget > div:nth-child(-n+4),
+  .ashe-instagram-widget #sbi_images > div:nth-child(-n+4) {
+    display: block !important;
+  }
+
 }
 
 
