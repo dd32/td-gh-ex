@@ -4,7 +4,7 @@
  * @package Automobile Car Dealer
  */
 ?>
-    <footer>
+    <footer role="contentinfo">
         <?php //Set widget areas classes based on user choice
             $widget_areas = get_theme_mod('footer_widget_areas', '3');
             if ($widget_areas == '3') {
@@ -50,8 +50,8 @@
             <div class="clear"></div>
         </div>
     </footer>
-        
-        <?php wp_footer(); ?>
+    
+    <?php wp_footer(); ?>
 
 </body>
 </html>

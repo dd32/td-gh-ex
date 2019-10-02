@@ -5,8 +5,8 @@
  */
 ?>
 
-<header>
-	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'automobile-car-dealer' ); ?></h1>
+<header role="banner">
+	<h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'automobile-car-dealer' ); ?></h2>
 </header>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
@@ -17,6 +17,6 @@
 <?php else : ?>
 	<p><?php esc_html_e( 'Dont worry it happens to the best of us.', 'automobile-car-dealer' ); ?></p><br />
 	<div class="read-moresec">
-		<a href="<?php echo esc_url( home_url() ); ?>" alt="<?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?></span></a>
+		<a href="<?php echo esc_url( home_url() ); ?>" class="button hvr-sweep-to-right"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'automobile-car-dealer' ); ?></span></a>
 	</div>
 <?php endif; ?>

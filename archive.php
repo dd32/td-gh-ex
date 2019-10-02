@@ -5,11 +5,11 @@
  */
 get_header(); ?>
 
-<main id="maincontent">
+<main id="skip_content" role="main">
     <div class="container">
         <?php
-            $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
-            if($layout_option == 'One Column'){ ?>
+        $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
+        if($layout_option == 'One Column'){ ?>
             <div class="blog-section">
                 <?php
                     the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -224,6 +224,7 @@ get_header(); ?>
         <?php }?>
     </div>
 </main>
+
 <div class="clearfix"></div>
 
 <?php get_footer(); ?>

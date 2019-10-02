@@ -5,12 +5,12 @@
  */
 get_header(); ?>
 
-<main id="maincontent">
+<main id="skip_content" role="main">
     <div class="container">
         <div class="main-wrapper">
             <?php
-                $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
-                if($layout_option == 'Left Sidebar'){ ?>
+            $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
+            if($layout_option == 'Left Sidebar'){ ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2');?></div>
                     <div class="col-lg-8 col-md-8">
@@ -37,7 +37,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -73,7 +73,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -107,7 +107,7 @@ get_header(); ?>
                                 ) );
                             ?>
                         </div>
-                        <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                        <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                     </article>    
                     <?php
                         // If comments are open or we have at least one comment, load up the comment template
@@ -142,7 +142,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -179,7 +179,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -216,7 +216,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template
@@ -253,7 +253,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'automobile-car-dealer' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template

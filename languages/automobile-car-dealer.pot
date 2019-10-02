@@ -112,7 +112,7 @@ msgstr ""
 msgid 'One thought on &ldquo;%s&rdquo;'
 msgstr ""
 
-#: comments.php:32
+#: comments.php:33
 msgid 'comments title'
 msgstr ""
 
@@ -173,15 +173,31 @@ msgstr ""
 msgid "Footer Widget"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 msgid "Buywptemplate"
 msgstr ""
 
-#: header.php:71
-msgid "Menu"
+#: header.php:17
+msgid "Skip to content"
 msgstr ""
 
-#: header.php:85
+#: header.php:44
+msgid "Open Menu"
+msgstr ""
+
+#: header.php:84
+msgid "Close"
+msgstr ""
+
+#: header.php:91
+msgid "Top Menu"
+msgstr ""
+
+#: header.php:92
+msgid "Close Menu"
+msgstr ""
+
+#: header.php:130
 msgid 'MAKE AN APPOINTMENT'
 msgstr ""
 
@@ -193,7 +209,7 @@ msgstr ""
 #: image.php:214
 #: image.php:251
 #: page.php:24
-#: template-parts/single-post.php:26
+#: template-parts/single-post.php:37
 msgid "Pages:"
 msgstr ""
 

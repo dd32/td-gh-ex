@@ -350,6 +350,7 @@ function automobile_car_dealer_scripts() {
 	
 	wp_enqueue_script( 'tether', get_template_directory_uri() . '/js/tether.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') ,'',true);	
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'automobile-car-dealer-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -375,7 +376,7 @@ define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/','automob
 
 if ( ! function_exists( 'automobile_car_dealer_credit' ) ) {
 	function automobile_car_dealer_credit(){
-		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT)." target='_blank' alt='".esc_html__('Buywptemplate','automobile-car-dealer')."''>".esc_html__('Buywptemplate','automobile-car-dealer')."</a>";
+		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT).">".esc_html__('Buywptemplate','automobile-car-dealer')."</a>";
 	}
 }
 

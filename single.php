@@ -4,12 +4,13 @@
  * @package Automobile Car Dealer
  */
 get_header(); ?>
-<main id="maincontent">
+
+<main id="skip_content" role="main">
 	<div class="container">
 	    <div class="main-wrapper">
 	    	<?php
-	            $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
-	            if($layout_option == 'One Column'){ ?>
+            $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
+            if($layout_option == 'One Column'){ ?>
 				<div class="content_box">
 					<?php while ( have_posts() ) : the_post();
 						get_template_part('template-parts/single-post');
@@ -77,4 +78,5 @@ get_header(); ?>
 	    </div>
 	</div>
 </main>
+
 <?php get_footer(); ?>

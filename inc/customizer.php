@@ -622,7 +622,8 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'type'		=> 'text'
 	));
 
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+	$post_list = get_posts($args);
 	$i = 0;
 	$posts[]='Select';  
 	foreach($post_list as $post){

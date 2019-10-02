@@ -5,16 +5,16 @@
 
 get_header(); ?>
 
-<?php do_action( 'automobile_car_dealer_pageright_top' ); ?>
+<main id="skip_content" role="main">
+    <?php do_action( 'automobile_car_dealer_pageright_top' ); ?>
 
-<main id="maincontent">
     <div class="container">
         <div class="main-wrapper row">       
     		<div class="content_box col-lg-8 col-md-8">
                 <h1><?php the_title();?></h1> 
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?> post thumbnail image"/>
-                    <?php the_content(); ?>
+                    <?php the_post_thumbnail(); ?>
+                    <div class="new-text"><?php the_content(); ?></div>
                 <?php endwhile; // end of the loop. ?>
                 <?php
                     // If comments are open or we have at least one comment, load up the comment template.
@@ -29,8 +29,8 @@ get_header(); ?>
             <div class="clear"></div>    
         </div>
     </div>
-</main>
 
-<?php do_action( 'automobile_car_dealer_pageright_bottom' ); ?>
+    <?php do_action( 'automobile_car_dealer_pageright_bottom' ); ?>
+</main>
 
 <?php get_footer(); ?>

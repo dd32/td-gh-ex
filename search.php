@@ -5,11 +5,11 @@
  */
 get_header(); ?>
 
-<main id="maincontent">
+<main id="skip_content" role="main">
     <div class="container">
         <?php
-            $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
-            if($layout_option == 'One Column'){ ?>
+        $layout_option = get_theme_mod( 'automobile_car_dealer_layout_options','Right Sidebar');
+        if($layout_option == 'One Column'){ ?>
             <div id="blog_sec" class="blog-section">
                <h1 class="search-title"><?php /* translators: %s: search term */ printf( esc_html__( 'Search Results for: %s','automobile-car-dealer'), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
                 <?php if ( have_posts() ) :
