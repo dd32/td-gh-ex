@@ -39,7 +39,7 @@
                         <?php _e( 'Avant Premium offers a bunch on Elementor Page layouts built into the theme<br />so you can simply import page layouts to use.', 'avant' ); ?>
                         <p>
                             <a href="<?php echo esc_url( 'https://kairaweb.com/go/layouts/' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                                <?php _e( 'View all the page layouts offered with Avant Premium', 'avant' ); ?>
+                                <?php _e( 'View OR Download all the page layouts offered with Avant Premium', 'avant' ); ?>
                             </a>
                         </p>
                         <div class="upgrade-page-right-box-image"></div>

@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.26
+* Style tweaks/fixes
+* Added indent for Product categories sub-categories
+* Updated the language .pot file
+Premium: Updated Page Layouts Import functionality
+
 #### 1.1.25
 * HTML & CSS fix
 Premium: Fixed WhatsApp Social Links to open WhatsApp chat

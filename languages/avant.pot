@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-09-09 11:17+0200\n"
+"POT-Creation-Date: 2019-10-02 13:50+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1838,7 +1838,7 @@ msgstr ""
 
 #: templates/contents/content-page.php:27
 #: templates/contents/content-search.php:140
-#: templates/contents/content-single.php:32 templates/contents/content.php:144
+#: templates/contents/content-single.php:31 templates/contents/content.php:144
 msgid "Pages:"
 msgstr ""
 
@@ -1982,7 +1982,7 @@ msgid ""
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:42
-msgid "View all the page layouts offered with Avant Premium"
+msgid "View OR Download all the page layouts offered with Avant Premium"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:51
