@@ -52,6 +52,13 @@ You can use email us at support@aeonwp.com
 
 == Changelog ==
 
+= 1.0.9 - October 1 2019 =
+Added additional aria roles since not all screen readers can read the landmarks without them.
+Accessibility improvments for the site footer.
+Simplified the markup for the footer social navigation.
+Minor CSS improvements for button blocks and for Edge and Internet Explorer 11.
+
+
 = 1.0.8 - September 25 2019 =
 Added aria label to the social navigation.
 Removed the title attribute from the Go to Top link.

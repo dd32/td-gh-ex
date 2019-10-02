@@ -18,12 +18,11 @@
 ?>
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer" role="contentinfo">
+<div class="site-footer">
 	<?php
 	if ( has_nav_menu( 'social' ) ) {
 		?>
-		<div class="social-icons-footer">
-			<nav class="footer-social-menu-navigation" aria-label="<?php esc_attr_e( 'Social', 'aeonblog' ); ?>">
+			<nav class="social-icons-footer footer-social-menu-navigation" aria-label="<?php esc_attr_e( 'Social', 'aeonblog' ); ?>" role="navigation">
 				<?php
 				wp_nav_menu(
 					array(
@@ -37,10 +36,10 @@
 				);
 				?>
 			</nav>
-		</div>
 		<?php
 	}
 	?>
+	<footer id="colophon" role="contentinfo">
 		<div class="copyright">
 			<?php echo wp_kses_post( get_theme_mod( 'aeonblog-copyright-text', __( 'All Right Reserved', 'aeonblog' ) ) ); ?>
 		</div>
@@ -67,7 +66,8 @@
 		 */
 		do_action( 'aeonblog_go_to_top_hook' );
 		?>
-</footer><!-- #colophon -->
+	</footer><!-- #colophon -->
+</div>
 <?php wp_footer(); ?>
 </body>
 </html>
