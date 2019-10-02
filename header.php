@@ -36,6 +36,15 @@ do_action( 'acmephoto_action_before_head' );?>
 
 <?php
 /**
+ * WordPress Default Hook
+ * Triggered after the opening <body> tag.
+ * wp_body_open hook
+ *
+ * @since WordPress 5.2
+ *
+ */
+do_action( 'wp_body_open' );
+/**
  * acmephoto_action_before hook
  * @since AcmePhoto 1.0.0
  *

@@ -215,8 +215,15 @@ add_action( 'acmephoto_action_before', 'acmephoto_page_start', 15 );
 if ( ! function_exists( 'acmephoto_skip_to_content' ) ) :
 
     function acmephoto_skip_to_content() {
+	    global $acmephoto_customizer_all_values;
+	    $acmephoto_enable_feature = $acmephoto_customizer_all_values['acmephoto-enable-feature'];
+	    if ( is_front_page() && 1 == $acmephoto_enable_feature ) {
+		    $acmephoto_content_id = "home-content";
+	    } else {
+		    $acmephoto_content_id = "content";
+	    }
         ?>
-        <a class="skip-link screen-reader-text" href="#content" title="link"><?php esc_html_e( 'Skip to content', 'acmephoto' ); ?></a>
+        <a class="skip-link screen-reader-text" href="#<?php echo esc_attr( $acmephoto_content_id );?>" title="link"><?php esc_html_e( 'Skip to content', 'acmephoto' ); ?></a>
     <?php
     }
 

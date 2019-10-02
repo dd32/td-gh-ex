@@ -1,0 +1,53 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_acmephoto">
+            <key name="acmephoto_theme_options">
+                <key name="acmephoto-enable-feature"/>
+                <key name="acmephoto-feature-enable-social"/>
+                <key name="acmephoto-feature-page"/>
+                <key name="acmephoto-feature-height"/>
+                <key name="acmephoto-feature-button-option"/>
+                <key name="acmephoto-header-logo"/>
+                <key name="acmephoto-header-id-display-opt"/>
+                <key name="acmephoto-menu-position-options"/>
+                <key name="acmephoto-facebook-url"/>
+                <key name="acmephoto-twitter-url"/>
+                <key name="acmephoto-instagram-url"/>
+                <key name="acmephoto-enable-social"/>
+                <key name="acmephoto-enable-footer-social"/>
+                <key name="acmephoto-footer-copyright"/>
+                <key name="acmephoto-footer-power-text"/>
+                <key name="acmephoto-default-layout"/>
+                <key name="acmephoto-sidebar-layout"/>
+                <key name="acmephoto-front-page-sidebar-layout"/>
+                <key name="acmephoto-archive-sidebar-layout"/>
+                <key name="acmephoto-single-sidebar-layout"/>
+                <key name="acmephoto-enable-sticky-sidebar"/>
+                <key name="acmephoto-pagination-option"/>
+                <key name="acmephoto-blog-enable-gap"/>
+                <key name="acmephoto-blog-show-title"/>
+                <key name="acmephoto-blog-show-cats"/>
+                <key name="acmephoto-blog-show-comments"/>
+                <key name="acmephoto-blog-show-date"/>
+                <key name="acmephoto-blog-show-author"/>
+                <key name="acmephoto-primary-color"/>
+                <key name="acmephoto-custom-css"/>
+                <key name="acmephoto-blog-archive-image-size"/>
+                <key name="acmephoto-show-related"/>
+                <key name="acmephoto-related-title"/>
+                <key name="acmephoto-related-post-display-from"/>
+                <key name="acmephoto-single-image-size"/>
+                <key name="acmephoto-search-placholder"/>
+                <key name="acmephoto-show-breadcrumb"/>
+                <key name="acmephoto-reset-options"/>
+                <key name="acmephoto-you-are-here-text"/>
+            </key>
+        </key>
+    </admin-texts>
+</wpml-config>
+
+
+
+
+
+
