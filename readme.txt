@@ -3,7 +3,7 @@ Contributors: catchthemes
 Tags: black, gray, tan, white, dark, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.8
 Tested up to: 5.2.3
-Stable tag: 3.5
+Stable tag: 3.5.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -61,6 +61,9 @@ There are 5 Menus registered in this theme. Fixed Header Top, Header Right Sideb
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.5.1 (Released: October 03, 2019) =
+* Added: Necessary Image files
 
 = 3.5 (Released: September 24, 2019) =
 * Added: Support for wp_body_open action
