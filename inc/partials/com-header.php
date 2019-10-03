@@ -51,7 +51,7 @@ function attesa_get_top_bar() {
 					$customFieldIcon = attesa_options('_customfield_icon', 'fa fa-bell');
 					?>
 						<span class="top-custom">
-							<i class="<?php echo esc_attr($customFieldIcon); ?> spaceRight" aria-hidden="true"></i><span class="attesa-custom"><?php echo wp_kses($customField, attesa_allowed_html()); ?></span>
+							<i class="<?php echo esc_attr($customFieldIcon); ?> spaceRight" aria-hidden="true"></i><span class="attesa-custom"><?php echo do_shortcode(wp_kses_post( $customField )); ?></span>
 						</span>
 					<?php endif; ?>
 					<?php 

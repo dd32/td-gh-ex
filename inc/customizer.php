@@ -16,13 +16,13 @@ add_action( 'customize_preview_init', 'attesa_customize_preview_js' );
 function attesa_customizer_script() {
 	wp_enqueue_script( 'attesa-customizer-script', get_template_directory_uri() .'/js/customizer-script.js', array('jquery'),wp_get_theme()->get('Version'), true  );
 	wp_enqueue_style( 'attesa-customizer-style', get_template_directory_uri() .'/inc/css/customizer-style.css', array(), wp_get_theme()->get('Version'));		
-	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
+	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		wp_enqueue_style( 'font-awesome-4', get_template_directory_uri() .'/css/font-awesome.min.css', array(), '4.7.0');
-	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.10.1');
-	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five_comp') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.10.1');
-		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims.min.css', array(), '5.10.1');
+	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five') {
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.11.1');
+	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five_comp') {
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.11.1');
+		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims.min.css', array(), '5.11.1');
 	}
 	
 }
@@ -171,7 +171,7 @@ function attesa_customize_register( $wp_customize ) {
     ) );
 	/* Choose icon pack */
 	$wp_customize->add_setting('attesa_theme_options[_choose_icon_pack]', array(
-        'default'    => 'font_awesome_five_comp',
+        'default'    => 'font_awesome_five',
         'type'       => 'option',
         'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'attesa_sanitize_select'
