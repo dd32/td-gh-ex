@@ -4,8 +4,8 @@
  * Author: Booking Algorithms
  * Author URI: https://ba-booking.com/
  * Description: BA Tours light is a booking theme developed for travel agencies and tour operators of any size. It's a first theme based on a true fast and flexible free booking engine – BA Book Everything plugin. You no longer need any shopping plugins, so this theme doesn't support Woocommerce. The booking engine allows you to create different booking rules and categories for different tours (with or without ages in prices), set seasonal prices and discounts, use promo codes (discount coupons), sell additional services with booking (extra tickets etc.), and add as many taxonomies (attributes) for filtering tours in search requests as you like. Clear landing design looks great on both desktop and mobile screens. Modern responsive design, based on Bootstrap 4 framework, touch-ready and responsive sliders, Fontawesome 5 beautiful icons, customizable theme typography, and more.
- * Version: 1.0.7
- * License: GNU General Public License v2 or later
+ * Version: 1.0.8
+ * License: GNU GPL v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ba-tours-light
  * Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, left-sidebar, theme-options, full-width-template
@@ -1004,6 +1004,7 @@ input[type=radio]:checked:before {
 #search-box{
     padding-top: 20px;
     padding-bottom: 20px;
+    width: 100%;
 }
 
 #search_form .input-group{
@@ -1014,24 +1015,60 @@ input[type=radio]:checked:before {
     flex-wrap: nowrap;
 }
 
+#search_form_tabs {
+    text-align: center;
+}
+
+#search_form_tabs .search_form_tab {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 3px;
+}
+
+#search_form_tabs .search_form_tab.is-active {
+    background-color: #ffffff;
+    color: #787878;
+}
+
+#search_form_tabs .search_form_tab:hover{
+    color: #fff;
+    border-color: #fff;
+}
+
+
 #search_form .input-group input, #search_form .input-group input:focus{
     border: none;
     padding: 5px;
     outline: none;
+    line-height: 1.5em;
 }
 
-#search_form .input-group > div{
-    padding: 5px 20px;
+#search_form .input-group div.add_ids_title{
+    padding: 10px 30px 10px 20px;
+    margin: 0;
     background-color: #fff;
-    margin: 10px;
     color: #787878;
+}
+
+#search_form .input-group .input_select_field .input_select_title {
+    padding: 5px;
+    margin: 0;
+    background-color: #fff;
+    color: #787878;
+}
+
+.add_input_field .add_ids_title i {
+    top: 10px;
+}
+
+#search_form .input-group > div {
+    border-bottom: none;
 }
 
 #search_form .input-group > div.submit{
     padding: 0;
     background-color: transparent;
     border: none;
-    margin-left: 0;
 }
 
 #search_form .input-group > div.submit button{
@@ -1043,8 +1080,15 @@ input[type=radio]:checked:before {
     margin-bottom: 0;
 }
 
+#search_form .input-group > div {
+    margin: 10px 5px;
+}
+
 #search_form .input-group > div.search-date{
     position: relative;
+    border: none;
+    background-color: #fff;
+    color: #787878;
 }
 
 #search_form .input-group .search-date i{
@@ -1056,7 +1100,7 @@ input[type=radio]:checked:before {
 
 #search_form .input-group .search-date .search_date{
     order: 1;
-    width: 120px;
+    padding: 10px 20px;
 }
 
 #search_form .input-group .search-date .search_date:hover{
@@ -1089,82 +1133,6 @@ input[type=radio]:checked:before {
 
 .btn-primary.btn-search i{
     padding-right: 10px;
-}
-
-.btn-primary.btn-search:hover{
-}
-
-#search_form .input-group .add_input_field{
-    position: relative;
-}
-
-.add_input_field .add_ids_title{
-    padding: 5px 50px 5px 10px;
-    position: relative;
-    white-space: nowrap;
-}
-
-.add_input_field .add_ids_title i{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    padding: 5px;
-}
-
-.add_input_field .add_ids_title:hover{
-    cursor: pointer;
-}
-
-.add_input_field .add_ids_list{
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin: 0;
-    padding: 0;
-    border: 1px solid #eaeaea;
-    margin-top: 2px;
-    background-color: #fff;
-    z-index: 100;
-    list-style: none;
-    width: 100%;
-    max-height: 150px;
-    overflow-y: scroll;
-}
-
-.add_input_field .add_ids_list.active{
-    display: block;
-}
-
-.add_input_field .add_ids_list .term_item{
-    padding: 10px 20px;
-    text-align: left;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.add_input_field .add_ids_list .term_item:last-child{
-    border-bottom: none;
-}
-
-.add_input_field .add_ids_list .term_item:hover{
-    cursor: pointer;
-    color: #fff;
-}
-
-.add_input_field .add_ids_list .term_item.term_item_selected{
-    color: #fff;
-}
-
-.add_input_field .add_ids_list .term_item[data-id="0"]{
-    font-weight: 700;
-}
-
-.add_input_field .add_ids_list .term_item[data-id="0"]:before{
-    content: "- ";
-}
-
-.add_input_field .add_ids_list .term_item[data-id="0"]:after{
-    content: " -";
 }
 
 @media screen and (max-width: 1023px){

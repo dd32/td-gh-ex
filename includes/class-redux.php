@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( BATOURSLIGHT_DIR . '/admin/ReduxCore/framework.php' ) ) {
-    require_once BATOURSLIGHT_DIR . '/admin/ReduxCore/framework.php';
+    require_once BATOURSLIGHT_DIR . '/admin/ReduxCore/framework.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 }
 
 // Redux Framefork is required.
@@ -141,6 +141,7 @@ class batourslight_Redux {
 			// TYPICAL -> Change these values as you need/desire
 			'opt_name'             => batourslight_Settings::$option_name,
 			// This is where your data is stored in the database and also becomes your global variable name.
+            /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
 			'display_name'         => sprintf( __( 'BA Tours Light options %1$sTheme Documentation%2$s', 'ba-tours-light' ),'<a href="https://ba-booking.com/ba-tours/documentation/introduction/" target="_blank">','</a>'),
 			// Name that appears at the top of your panel
 			'display_version'      => $theme_version,
@@ -157,7 +158,7 @@ class batourslight_Redux {
 			// Set it you want google fonts to update weekly. A google_api_key value is required.
 			'google_update_weekly' => false,
 			// Must be defined to add google fonts to the typography module
-			'async_typography'     => true,
+			'async_typography'     => false,
 			// Use a asynchronous font on the front end or font string
 			//'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
 			'admin_bar'            => true,
@@ -442,6 +443,7 @@ class batourslight_Redux {
 					'type'        => 'info',
                     'style' => 'warning',
                     'icon'  => 'el-icon-info-sign',
+                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a>, %3$s: opening tag <a>, %4$s: closing tag <a>. */
 					'title'       => sprintf(__( 'To use slideshow and shortcodes like on %1$sDemo site%2$s, you need to download from theme\'s site and install our free plugin: %3$sBA Tours light posts%4$s.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours-light-demo/">', '</a>', '<a href="https://ba-booking.com/ba-tours/wp-content/uploads/sites/5/2018/09/ba-tours-light-posts.zip">', '</a>'),
 					'description' => '',
 				),
@@ -467,7 +469,14 @@ class batourslight_Redux {
 			'id'     => 'search-form',
 			'desc'   => '',
 			'icon'   => 'el el-search',
-			'fields' => $fields,
+			'fields' => array(
+                array(
+					'id'         => 'search_form_info',
+					'type'       => 'info',
+					'title'      => esc_html__( 'Setup fields in Search Form Builder', 'ba-tours-light' ),
+					'desc'    => '<a href="'.get_admin_url().'edit.php?post_type=to_book&page=search_form" target="_blank">'.__( 'Search Form Builder', 'ba-tours-light' ).'</a>',
+				),
+            ),
 		);
 		
 		//////////////////////////////////////////////////
@@ -538,6 +547,7 @@ class batourslight_Redux {
 					'type'        => 'info',
                     'style' => 'warning',
                     'icon'  => 'el-icon-info-sign',
+                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
 					'title'       => sprintf(__( 'Default page/post layout. These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
 					'description' => '',
 				),
@@ -548,56 +558,23 @@ class batourslight_Redux {
 		/**
 		 * Font set.
 		 */
-		$fields = array();
-		
-		// Default font arguments.
-		$default_args = array(
-			'font-family'    => true,
-			'font-style'     => true,
-			'font-weight'    => true,
-			'google'         => false,
-			'subsets'        => false,
-			'font-backup'    => false,
-			'font-size'      => false,
-			'line-height'    => false,
-			'word-spacing'   => false,
-			'letter-spacing' => false,
-			'text-align'     => false,
-			'text-transform' => false,
-			'color'          => false,
-			'preview'        => true,
-			'units'          => 'rem',
-		);
-		
-		// Fonts data.
-		foreach ( batourslight_Settings::$custom_fonts as $item_id => $item_data ) {
-		  
-            $args = array();
-				
-				$args = array(
-					'id'         => $item_id,
-					'type'       => 'typography',
-					'full_width' => false,
-					'title'      => $item_data['name'],
-					'subtitle'   => (isset($item_data['desc']) ? $item_data['desc'] : ''),
-					'default'    => batourslight_Settings::$settings[$item_id],
-				);
-				
-				foreach ( batourslight_Settings::$settings[$item_id] as $id => $value ) {	
-					$args[ $id ] = true;
-				}
-				
-				$args = wp_parse_args( $args, $default_args );
-				
-				$fields[] = $args;
-		}
 		
 		$sections[] = array(
 			'title'  => __( 'Fonts', 'ba-tours-light' ),
 			'id'     => 'custom-fonts',
 			'desc'   => '',
 			'icon'   => 'el el-fontsize',
-			'fields' => $fields,
+			'fields' => array(
+				array(
+					'id'          => 'fonts_info',
+					'type'        => 'info',
+                    'style' => 'warning',
+                    'icon'  => 'el-icon-info-sign',
+                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
+					'title'       => sprintf(__( 'These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
+					'description' => '',
+				),
+			),
 		);
 		
 		//////////////////////////////////////////////////
@@ -616,6 +593,7 @@ class batourslight_Redux {
 					'type'        => 'info',
                     'style' => 'warning',
                     'icon'  => 'el-icon-info-sign',
+                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
 					'title'       => sprintf(__( 'These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
 					'description' => '',
 				),
@@ -664,27 +642,6 @@ class batourslight_Redux {
 		foreach( $sections as $section_key => $section_arr ) {
 			
 			switch ( $section_arr['id'] ) {
-				
-				//////////////////////////////////////////////////
-				/**
-				 * Search Form.
-				 */
-				case 'search-form':
-					
-					$fields = $sections[ $section_key ]['fields'];
-					
-					$fields[] = array(
-						'id'          => 'search_form_add_input_field',
-						'type'        => 'callback',
-						'full_width'  => true,
-						'title'       => __( 'Additional select field', 'ba-tours-light' ),
-						'description' => __( 'Add terms from selected taxonomy to the search form filters.', 'ba-tours-light' ),
-                        'callback'    => array( __CLASS__, 'callback_radio_taxonomies' ),
-					);
-					
-					$sections[ $section_key ]['fields'] = $fields;
-					
-					break;
 				
 				//////////////////////////////////////////////////
 				/**
@@ -781,25 +738,21 @@ class batourslight_Redux {
 		
         $current_checked = apply_filters( 'batourslight_option', null, $args['id'] );
 		
-        $options_html = '
-			<fieldset id="batourslight_settings-' . $args['id'] . '" class="redux-field-container redux-field redux-field-init redux-container-radio redux_remove_th ' . $args['class'] . '" data-id="' . $args['id'] . '" data-type="radio">
+        echo '
+			<fieldset id="batourslight_settings-' . esc_attr( $args['id'] ) . '" class="redux-field-container redux-field redux-field-init redux-container-radio redux_remove_th ' . esc_attr( $args['class'] ) . '" data-id="' . esc_attr( $args['id'] ) . '" data-type="radio">
 				<ul class="data-full">
 		';
 		
 		foreach ( $babe_taxonomies as $key => $title ) {
 			
-			$options_html .= '<li><label for="' . $args['id'] . '_' . $key . '"><input type="radio" class="radio" id="' . $args['id'] . '_' . $key . '" name="' . $args['name'] . '" value="' . $key . '" ' . checked( $key, $current_checked, false ) . '><span>' . $title . '</span></label></li>';
+			echo '<li><label for="' . esc_attr( $args['id'] . '_' . $key ) . '"><input type="radio" class="radio" id="' . esc_attr( $args['id'] . '_' . $key ) . '" name="' . esc_attr( $args['name'] ) . '" value="' . esc_attr( $key ) . '" ' . checked( $key, $current_checked, false ) . '><span>' . esc_html( $title ) . '</span></label></li>';
 		}
 		
-		$options_html .= '
+		echo '
 			</ul>
-            <div class="description field-desc">'.__( 'Add terms from selected taxonomy to the search form filters.', 'ba-tours-light' ).'</div>
+            <div class="description field-desc">'.esc_html__( 'Add terms from selected taxonomy to the search form filters.', 'ba-tours-light' ).'</div>
         </fieldset>
 		';
-        
-        $options_html = apply_filters( 'batourslight_option_callback_radio_taxonomies', $options_html, $args );
-		
-		echo $options_html;
 		
 		return;
 	}

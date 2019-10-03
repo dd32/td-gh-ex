@@ -20,11 +20,6 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 		endif;
-
-		if ( '' !== get_the_post_thumbnail() && ! is_single() && ! get_post_gallery() ) {
-			
-			//get_template_part( 'template-parts/content-tags/content-tag-post-thumbnail' );
-		}
 	
 		if ( 'post' === get_post_type() ) :
 			?>
@@ -47,7 +42,7 @@
 			if ( get_post_gallery() ) {
 				
 				echo '<div class="entry-gallery">';
-					echo get_post_gallery();
+					echo wp_kses(get_post_gallery(), batourslight_Settings::$wp_allowedposttags);
 				echo '</div>';
 			};
 

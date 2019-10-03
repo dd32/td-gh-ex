@@ -85,8 +85,6 @@ add_action( 'wp_enqueue_scripts', 'batourslight_enqueue_scripts', 10, 1 );
  */
 function batourslight_enqueue_scripts(){
     
-        wp_enqueue_style( 'batourslight-fontawesome' , BATOURSLIGHT_URI . '/fonts/fontawesome-free/css/all.min.css', false, '5.6.3' );
-    
         wp_enqueue_style('dashicons');
         
         // Output Google fonts if set.

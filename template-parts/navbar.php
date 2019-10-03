@@ -55,14 +55,13 @@ $menu_position = $header_line ? 'justify-content-center' : 'justify-content-end'
       <div class="header-top-row">
 	
 		<!-- Brand -->
-		<?php $blogname = esc_attr( get_bloginfo( 'name' ) ); ?>
-		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr($blogname); ?>" rel="home">
+		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
 			<?php if ( has_custom_logo() ) : ?>
 				<?php $custom_logo_id = get_theme_mod( 'custom_logo' ); ?>
 				<?php $image = wp_get_attachment_image_src( $custom_logo_id, 'full' ); ?>
-				<img class="site-logo" src="<?php echo esc_attr($image[0]); ?>" alt="<?php echo esc_attr($blogname); ?>" />
+				<img class="site-logo" src="<?php echo esc_attr($image[0]); ?>" alt="<?php echo esc_attr(get_bloginfo( 'name' )); ?>" />
 			<?php else : ?>
-				<h1><?php echo esc_attr($blogname); ?></h1>
+				<h1><?php echo esc_attr(get_bloginfo( 'name' )); ?></h1>
 			<?php endif; ?>
 			<?php if ( ( $tagline = get_bloginfo('description') ) && ( ! has_custom_logo() ) ) : ?>
 				<span class="site-description"><?php echo esc_attr( $tagline ); ?></span>

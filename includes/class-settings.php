@@ -34,6 +34,8 @@ class batourslight_Settings {
     static $sidebars = array();
     
     static $option_name = 'bat_settings';
+    
+    static $wp_allowedposttags = array();
 	
 	//////////////////////////////////////////////////
 	
@@ -48,8 +50,36 @@ class batourslight_Settings {
         add_action( 'template_redirect', array( __CLASS__, 'init_layout_vars'), 20 );
         
         add_filter( 'batourslight_option', array( __CLASS__, 'get_option'), 10, 2);
+        
+        add_action( 'after_switch_theme', array( __CLASS__, 'theme_setup'), 10);
              
 	}
+    
+    //////////////////////////////
+	
+    /**
+	 * Theme setup
+     * 
+     * @return
+	 */
+    public static function theme_setup() {
+        
+        global $wpdb;
+        
+        $query = "SELECT * FROM ".$wpdb->posts." WHERE post_type = 'bathemos_slides' OR post_type = 'batourslight_slides'";
+        
+        $results = $wpdb->query($query, ARRAY_A);
+        
+        if ( !empty($results) ){
+            
+            $query = "UPDATE ".$wpdb->posts." SET post_type = 'batours_slides' WHERE post_type = 'bathemos_slides' OR post_type = 'batourslight_slides'";
+            $updated = $wpdb->query($query, ARRAY_A);
+            
+        }
+        
+        return;
+        
+    }
     
     //////////////////////////////
 	
@@ -77,6 +107,41 @@ class batourslight_Settings {
      * @return
 	 */
     public static function init_settings() {
+        
+        global $allowedposttags;
+        
+        self::$wp_allowedposttags = $allowedposttags;
+        self::$wp_allowedposttags['script'] = array();
+        self::$wp_allowedposttags['time'] = array(
+           'class' => array(),
+           'datetime' => array(),
+        );
+        self::$wp_allowedposttags['svg'] = array(
+           'class' => array(),
+           'xmlns' => array(),
+           'width' => array(),
+           'height' => array(),
+           'viewBox' => array(),
+        );
+        self::$wp_allowedposttags['path'] = array(
+           'fill' => array(),
+           'd' => array(),
+        );
+        self::$wp_allowedposttags['form'] = array(
+           'name' => array(),
+           'class' => array(),
+           'action' => array(),
+           'method' => array(),
+           'id' => array(),
+        );
+        self::$wp_allowedposttags['input'] = array(
+           'type' => array(),
+           'class' => array(),
+           'id' => array(),
+           'name' => array(),
+           'value' => array(),
+           'placeholder' => array(),
+        );
         
         self::$layouts = array(
             'no-sidebars' => __( 'No sidebars', 'ba-tours-light' ),
@@ -120,56 +185,48 @@ class batourslight_Settings {
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '600',
             ),
             'font_title_2' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '400',
             ),
             'font_title_3' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '600',
             ),
             'font_title_4' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '400',
             ),
             'font_title_5' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '400',
             ),
             'font_title_6' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '400',
             ),
             'font_text_1' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '400',
             ),
             'font_text_2' => array(
                     'google'      => true,
                     'subsets' => 'latin',
                     'font-family' => 'Open Sans',
-                    'font-style'  => '',
                     'font-weight' => '400',
             ),
         ));
@@ -625,6 +682,8 @@ class batourslight_Settings {
                 '.pagination .current',
                 '.babe_price_slider .ui-slider-range.ui-corner-all',
                 '.btn.btn-search:hover',
+                '#search_form .btn-search:hover',                
+                '#search_form_tabs .search_form_tab:hover',
                 '.block_special_tours .tour_info_price',
 			),
 		),
@@ -731,6 +790,7 @@ class batourslight_Settings {
 		'selectors' => array(
 			'background-color' => array(
 				'.main-background',
+                '#search_form .btn-search',
                 '.add_input_field .add_ids_list .term_item.term_item_selected',
                 '.add_input_field .add_ids_list .term_item:hover',
                 'body .ui-datepicker .ui-datepicker-header',
@@ -888,11 +948,13 @@ class batourslight_Settings {
         
         $output = '';
         
-        $url = 'https://fonts.googleapis.com/css?family=';
+        $url_base = 'https://fonts.googleapis.com/css';
         
         $url_arr = array();
         
         $fonts = array();
+        
+        $subsets = array();
 		
 		foreach (self::$custom_fonts as $option_id => $style_arr){
             // Process only google fonts.
@@ -904,55 +966,43 @@ class batourslight_Settings {
                 
                 $style .= isset(self::$settings[$option_id]['font-style']) && self::$settings[$option_id]['font-style'] ? self::$settings[$option_id]['font-style'] : '';
                 
-                $subsets = isset(self::$settings[$option_id]['subsets']) && self::$settings[$option_id]['subsets'] ? self::$settings[$option_id]['subsets'] : '';
+                $subset = isset(self::$settings[$option_id]['subsets']) && self::$settings[$option_id]['subsets'] ? self::$settings[$option_id]['subsets'] : '';
                 
-                if (isset($fonts[$family])){
-                    
-                    if (isset($fonts[$family]['style']) && stripos($fonts[$family]['style'], $style) === false){
-                        
-                        $fonts[$family]['style'] .= ','.$style;
-                        
-                    } elseif (!isset($fonts[$family]['style'])){
-                        
-                        $fonts[$family]['style'] = $style;
-                        
-                    }
-                    
-                    if (isset($fonts[$family]['subsets']) && stripos($fonts[$family]['subsets'], $subsets) === false){
-                        
-                        $fonts[$family]['subsets'] .= ','.$subsets;
-                        
-                    } elseif (!isset($fonts[$family]['subsets'])){
-                        
-                        $fonts[$family]['subsets'] = $subsets;
-                        
-                    }
-                    
-                } else {
-                    
-                    $fonts[$family] = array(
-                        'style' => $style,
-                        'subsets' => $subsets,
-                    );
-                    
+                if ($style){
+                    $fonts[$family][$style] = $style;
+                }
+                
+                if ($subset){
+                    $subsets[$subset] = $subset;
                 }
 				
 			}
+            
 		}
 		
 		if (!empty($fonts)){
 		  
+            $fontnames_arr = array();
+		  
             foreach($fonts as $family => $font_args){
                 
-                $url_arr[$family] = urlencode($family);
+                $fontnames_arr[$family] = trim(str_replace( ' ', '+', $family ));
                 
-                $url_arr[$family] .= $font_args['style'] ? ':' . $font_args['style'] : '';
-                
-                $url_arr[$family] .= $font_args['subsets'] ? '&subset='. $font_args['subsets'] : '';
+                if (!empty($font_args)){
+                    $fontnames_arr[$family] .= ':' . urlencode(implode(',',$font_args));
+                }
                 
             }
             
-            $output = $url . implode('|', $url_arr); 
+            $url_arr['family'] = implode('|', $fontnames_arr);
+            
+            if (!empty($subsets)){
+                
+                $url_arr['subset'] = urlencode(implode(',', $subsets));
+                
+            }
+            
+            $output = add_query_arg( $url_arr, $url_base ); 
           
 		}
         

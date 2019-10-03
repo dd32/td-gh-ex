@@ -281,15 +281,16 @@ class batourslight_Page_Options {
         
         if (
 			( ! current_user_can( 'edit_post', $post_id ) ) ||
-			( empty( $_POST[ $nonce_id ] ) ) ||
-			( ! wp_verify_nonce( wp_unslash($_POST[ $nonce_id ]), $nonce_action ) ) ||
+			( empty( $_POST[ $nonce_id ] ) ) || // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			( ! wp_verify_nonce( wp_unslash($_POST[ $nonce_id ]), $nonce_action ) ) || // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 			( empty( $_POST[ $settings_id ] ) )
 		) {
 			
 			return;
 		}
 		
-		$settings = wp_unslash( $_POST[ $settings_id ] );
+        //// will be sanitized below
+		$settings = wp_unslash( $_POST[ $settings_id ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		
 		$options_set = self::$data['options_set'];
 

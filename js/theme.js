@@ -31,38 +31,6 @@ jQuery(document).ready(function($){
 							]
 							});
     
-    /////////Search form//////
-    
-    $('.add_input_field .add_ids_title').on('click', function(event){
-        event.preventDefault();
-        search_add_input_toggle(this);
-    });
-    
-    $('.add_input_field .add_ids_list .term_item').on('click', function(event){
-        event.preventDefault();
-        var parent = $(this).parent();
-        search_add_input_toggle(parent);
-        var selected = $(this).data('id');
-        $(parent).parent().find('input[name="add_ids_'+$(parent).parent().data('tax')+'"]').val(selected);
-        $(parent).find('.term_item').removeClass('term_item_selected');
-        $(this).addClass('term_item_selected');
-        $(parent).parent().find('.add_ids_title_value').html($(this).html());
-    });
-    
-    function search_add_input_toggle(item){
-        $(item).parent().find('.add_ids_list').toggleClass('active');
-        $(item).parent().find('.add_ids_title i').toggleClass('fa-chevron-down');
-        $(item).parent().find('.add_ids_title i').toggleClass('fa-chevron-up');
-    }
-    
-    //////////Map/////////
-    
-    $('#myModal').on('shown.bs.modal', function (e) {
-        
-        
-        
-    })
-    
     ///////Smooth scrolling
     
     var $root = $('html, body');

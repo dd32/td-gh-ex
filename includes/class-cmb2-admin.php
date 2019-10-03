@@ -115,7 +115,7 @@ class batourslight_CMB2_Admin {
         $output = $field_type->input( array( 'type' => 'text', 'class' => 'fontawesome-icon-select regular-text' ) );
         $output = apply_filters( 'batourslight_cmb2_render_fontawesome_icon', $output, $field, $field_type );
 		
-		echo $output;
+		echo wp_kses( $output, batourslight_Settings::$wp_allowedposttags );
 	}
 	
 	//////////////////////////////////////////////////
