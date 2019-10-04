@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    $('.home .single-page-nav.nav').onePageNav({
+    $('.main-navigation .single-page-nav.nav, .main-navigation .menu').onePageNav({
         currentClass: 'current',
         changeHash: false,
         scrollSpeed: 1500,
@@ -150,5 +150,21 @@ jQuery(document).ready(function ($) {
         }, 1000);
 
     }
+    // $(function() {
+    //   $(".main-navigation .current_page_item > a[href*='#']:not([href='#']), .main-navigation .current-menu-item > a[href*='#']:not([href='#'])").click(function() {        
+    //     $(this).parent().siblings('li').removeClass('current');
+    //     $(this).parent().addClass('current');
+    //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    //     var target = $(this.hash);
+    //     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    //     if (target.length) {
+    //       $('html,body').animate({
+    //         scrollTop: target.offset().top - headerHeight
+    //       }, 2000);
+    //       return false;
+    //     }
+    //   }
+    //  });
+    // });
 
 });

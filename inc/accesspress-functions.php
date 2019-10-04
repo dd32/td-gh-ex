@@ -127,8 +127,8 @@ function accesspress_header_styles_scripts() {
     echo "<style type='text/css' media='all'>";
     if ( !empty( $sections ) ) {
         foreach ( $sections as $section ) {
-            $dyamic_style .= "#section-" . $section[ 'page' ] . "{ background:url(" . $section[ 'image' ] . ") " . $section[ 'repeat' ] . " " . $section[ 'attachment' ] . " " . $section[ 'position' ] . " " . $section[ 'color' ] . "; background-size:" . $section[ 'size' ] . "; color:" . $section[ 'font_color' ] . "}\n";
-            $dyamic_style .= "#section-" . $section[ 'page' ] . " .overlay { background:url(" . $image_url . $section[ 'overlay' ] . ".png);}\n";
+            $dyamic_style .= ".ap-home #section-" . $section[ 'page' ] . "{ background:url(" . $section[ 'image' ] . ") " . $section[ 'repeat' ] . " " . $section[ 'attachment' ] . " " . $section[ 'position' ] . " " . $section[ 'color' ] . "; background-size:" . $section[ 'size' ] . "; color:" . $section[ 'font_color' ] . "}\n";
+            $dyamic_style .= ".ap-home #section-" . $section[ 'page' ] . " .overlay { background:url(" . $image_url . $section[ 'overlay' ] . ".png);}\n";
         }
     }
 
@@ -347,3 +347,23 @@ function accesspress_parallax_get_plx_sections() {
 
     return $sections;
 }
+
+    function accesspress_parallax_page_lists(){
+        $pages = get_pages();
+        $page_list = array();
+        $page_list[0] = esc_html__('Select page','accesspress-parallax');
+        foreach ( $pages as $page ) :
+            $page_list[$page->ID]   =   $page->post_title;
+        endforeach;
+        return $page_list;
+    }
+
+    function accesspress_parallax_category_lists(){
+        $category   =   get_categories();
+        $cat_list   =   array();
+        $cat_list[0]=   esc_html__('Select category','accesspress-parallax');
+        foreach ($category as $cat) {
+            $cat_list[$cat->term_id]    =   $cat->name;
+        }
+        return $cat_list;
+    }

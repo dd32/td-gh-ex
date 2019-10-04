@@ -17,6 +17,11 @@
 
 			// Free Plugins
 			'free_plug' => array(
+				'elementor' => array(
+					'slug'      => 'elementor',
+					'filename' 	=> 'elementor.php',
+					'class' 	=> 'Elementor\Plugin',
+				),
 				'contact-form-7' => array(
 					'slug' => 'contact-form-7',
 					'filename' => 'wp-contact-form-7.php',

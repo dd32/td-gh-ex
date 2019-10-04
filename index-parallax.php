@@ -10,6 +10,9 @@
  *
  * @package accesspress_parallax
  */
+?>
+<div class="ap-home">
+    <?php
 $sections = accesspress_parallax_get_plx_sections();
 
 if ( !empty( $sections ) ):
@@ -107,3 +110,5 @@ if ( !empty( $sections ) ):
         endif;
     endforeach;
 endif;
+?>
+</div>

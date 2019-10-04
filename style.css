@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
 Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is widely implemented these days. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! More over the theme is fully translation ready, WooCommerce Compatible, bbPress Compatible and fully support multilanguage via POLYLANG plugin. Demo: https://accesspressthemes.com/theme-demos/?theme=accesspress-parallax Support forum: https://accesspressthemes.com/support/ Pro version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
-Version: 2.0.0
+Version: 2.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-parallax
@@ -1349,8 +1349,8 @@ body.parallax-on .wpcf7-not-valid-tip {
     display: block;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a {
+body:not(.home) .main-navigation .current_page_item > a,
+body:not(.home) .main-navigation .current-menu-item > a {
     color: #E66432;
 }
 
@@ -1981,7 +1981,8 @@ Team Section
     border: 2px solid #E66432;
 }
 
-.team-image img {
+.team-image img, 
+.elementor .team-image img {
     border-radius: 50%;
 }
 

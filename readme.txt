@@ -93,24 +93,29 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+
+= 2.0.1 =
+** Added Elementor Compatibility
+** Removed old demo and added new demo with Elementor
+
 = 2.0.0 =
 ** Removed old welcome page and Added new
 ** Added Demo Importer
 ** Regenerated translation file
 
 = 1.72 =
- * Updated readme.txt file headers
- * Minor issues Fixed 
+** Updated readme.txt file headers
+** Minor issues Fixed 
 
 = 1.71 =
- * Minor issues Fixed 
+** Minor issues Fixed 
 
 = 1.70 =
- * Added Styles for Guttenberg Compatible
- * Updates Minor CSS
+** Added Styles for Guttenberg Compatible
+** Updates Minor CSS
 
 = 1.69 =
- * WMPL translation bug in menu fixed.
+** WMPL translation bug in menu fixed.
 
 = 1.68 =
 ** WMPL translation bug in menu fixed.

@@ -20,7 +20,9 @@ function accesspress_parallax_dynamic_styles() {
                     .woocommerce-MyAccount-navigation a,
                     .woocommerce-MyAccount-content a,
                     .woocommerce-cart-form__cart-item a,
-                    .woocommerce-info a{
+                    .woocommerce-info a,                    
+                    body:not(.home) .main-navigation .current_page_item > a,
+                    body:not(.home) .main-navigation .current-menu-item > a{
                         color: {$tpl_color};
                     }";
 
