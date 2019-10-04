@@ -410,8 +410,18 @@ if( ! function_exists('blogghiamo_allowed_html')){
 			),
 			'strike' => array(),
 			'strong' => array(),
-			'iframe' => array(),
 			'ul' => array(
+				'class' => array(),
+			),
+			'iframe' => array(
+				'width' => array(),
+				'height' => array(),
+				'src' => array(),
+				'frameborder' => array(),
+				'allow' => array(),
+				'style' => array(),
+				'name' => array(),
+				'id' => array(),
 				'class' => array(),
 			),
 		);
