@@ -11,11 +11,12 @@ function attesa_get_top_bar() {
 		$showEddCartButton = attesa_options('_show_eddcart', '');
 		$showSearchButton = attesa_options('_show_search', '1');
 		$showTopBarMenu = attesa_options('_show_topbar_menu', '1');
+		$invertPosition = attesa_options('_topbar_invert', '');
 		?>
 		<div class="nav-top">
 			<?php $topBarStyle = apply_filters( 'attesa_topbar_style', attesa_options('_topbar_style', 'boxed') ); ?>
 			<div class="container smallText <?php echo esc_attr($topBarStyle); ?>">
-				<div class="top-block-left">
+				<div class="top-block-left <?php echo $invertPosition ? 'invert' : ''; ?>">
 					<?php
 					$phoneNumber = attesa_options('_phone_number', '');
 					if($phoneNumber || is_customize_preview()): 
@@ -60,7 +61,7 @@ function attesa_get_top_bar() {
 						}
 					?>
 				</div>
-				<div class="top-block-right">
+				<div class="top-block-right <?php echo $invertPosition ? 'invert' : ''; ?>">
 					<?php if ($showSearchButton) : ?>
 					<!-- Start: Search Icon and Form -->
 					<div class="search-icon">
@@ -128,6 +129,8 @@ function attesa_get_header() {
 	$showEddCartButton = attesa_options('_show_eddcart', '');
 	$showSearchButton = attesa_options('_show_search', '1');
 	$mobileMenuOpen = attesa_options('_menu_mobile_open', 'dropdown');
+	$mobileMenuIcon = attesa_options('_mobile_menu_icon', 'fas fa fa-bars');
+	$mobileMenuText = attesa_options('_menu_mobile_default_text', __( 'Menu', 'attesa' ));
 	?>
 	<?php /* if the header format is compat */ if ($headerFormat == 'compat'): ?>
 		<?php if ($mobileMenuOpen == 'pushmenu' && $headerFormat != 'menupopup'): ?>
@@ -203,20 +206,31 @@ function attesa_get_header() {
 							}
 						?>
 						<?php if ( is_active_sidebar( attesa_get_push_sidebar() ) && attesa_check_bar('push') ) : ?>
-							<div class="hamburger-menu">
-								<div class="menu__line menu_line1"></div>
-								<div class="menu__line menu_line2"></div>
-								<div class="menu__line menu_line3"></div>
-								<div class="menu__line menu_line4"></div>
-								<div class="menu__line menu_line5"></div>
-							</div>
+							<?php if(attesa_options('_pushsidebar_icon','three_lines_icon') == 'three_lines_icon') : ?>
+								<div class="hamburger-menu">
+									<div class="menu__line menu_line1"></div>
+									<div class="menu__line menu_line2"></div>
+									<div class="menu__line menu_line3"></div>
+									<div class="menu__line menu_line4"></div>
+									<div class="menu__line menu_line5"></div>
+								</div>
+							<?php elseif(attesa_options('_pushsidebar_icon','three_lines_icon') == 'plus_icon'): ?>
+								<div class="hamburger-menu noOw">
+									<div class="menu__plus menu_plus1"></div>
+									<div class="menu__plus menu_plus2"></div>
+								</div>
+							<?php else: ?>
+								<div class="hamburger-menu noOw">
+									<div class="menu__circle"></div>
+								</div>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				</div><!-- .mainFunc -->
 				<div class="mainHead">
 					<div class="subHead">
 						<?php $menuLinksStyle = attesa_options('_menu_links_style', 'minimal'); ?>
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'attesa' ); ?><i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-lg spaceLeft fa-bars" aria-hidden="true"></i></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html($mobileMenuText); ?><i class="spaceLeft <?php echo esc_attr($mobileMenuIcon); ?>" aria-hidden="true"></i></button>
 						<div class="attesa-main-menu-container open_<?php echo esc_attr($mobileMenuOpen); ?>">
 							<?php if ($mobileMenuOpen == 'pushmenu'): ?>
 								<?php $closeMenuText = attesa_options('_menu_mobile_text_close',__( 'Close menu', 'attesa' )); ?>
@@ -325,13 +339,24 @@ function attesa_get_header() {
 						</div>
 						<?php endif; ?>
 						<?php if ( is_active_sidebar( attesa_get_push_sidebar() ) && attesa_check_bar('push') ) : ?>
-							<div class="hamburger-menu">
-								<div class="menu__line menu_line1"></div>
-								<div class="menu__line menu_line2"></div>
-								<div class="menu__line menu_line3"></div>
-								<div class="menu__line menu_line4"></div>
-								<div class="menu__line menu_line5"></div>
-							</div>
+							<?php if(attesa_options('_pushsidebar_icon','three_lines_icon') == 'three_lines_icon') : ?>
+								<div class="hamburger-menu">
+									<div class="menu__line menu_line1"></div>
+									<div class="menu__line menu_line2"></div>
+									<div class="menu__line menu_line3"></div>
+									<div class="menu__line menu_line4"></div>
+									<div class="menu__line menu_line5"></div>
+								</div>
+							<?php elseif(attesa_options('_pushsidebar_icon','three_lines_icon') == 'plus_icon'): ?>
+								<div class="hamburger-menu noOw">
+									<div class="menu__plus menu_plus1"></div>
+									<div class="menu__plus menu_plus2"></div>
+								</div>
+							<?php else: ?>
+								<div class="hamburger-menu noOw">
+									<div class="menu__circle"></div>
+								</div>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				</div><!-- .mainFunc -->
@@ -342,7 +367,7 @@ function attesa_get_header() {
 				<div class="mainHead">
 					<div class="subHead">
 						<?php $menuLinksStyle = attesa_options('_menu_links_style', 'minimal'); ?>
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'attesa' ); ?><i class="<?php attesa_fontawesome_icons('general_prefix'); ?> fa-lg spaceLeft fa-bars" aria-hidden="true"></i></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html($mobileMenuText); ?><i class="spaceLeft <?php echo esc_attr($mobileMenuIcon); ?>" aria-hidden="true"></i></button>
 						<div class="attesa-main-menu-container open_<?php echo esc_attr($mobileMenuOpen); ?>">
 							<?php if ($mobileMenuOpen == 'pushmenu'): ?>
 									<?php $closeMenuText = attesa_options('_menu_mobile_text_close',__( 'Close menu', 'attesa' )); ?>
@@ -437,13 +462,24 @@ function attesa_get_header() {
 						</div>
 						<?php endif; ?>
 						<?php if ( is_active_sidebar( attesa_get_push_sidebar() ) && attesa_check_bar('push') ) : ?>
-							<div class="hamburger-menu">
-								<div class="menu__line menu_line1"></div>
-								<div class="menu__line menu_line2"></div>
-								<div class="menu__line menu_line3"></div>
-								<div class="menu__line menu_line4"></div>
-								<div class="menu__line menu_line5"></div>
-							</div>
+							<?php if(attesa_options('_pushsidebar_icon','three_lines_icon') == 'three_lines_icon') : ?>
+								<div class="hamburger-menu">
+									<div class="menu__line menu_line1"></div>
+									<div class="menu__line menu_line2"></div>
+									<div class="menu__line menu_line3"></div>
+									<div class="menu__line menu_line4"></div>
+									<div class="menu__line menu_line5"></div>
+								</div>
+							<?php elseif(attesa_options('_pushsidebar_icon','three_lines_icon') == 'plus_icon'): ?>
+								<div class="hamburger-menu noOw">
+									<div class="menu__plus menu_plus1"></div>
+									<div class="menu__plus menu_plus2"></div>
+								</div>
+							<?php else: ?>
+								<div class="hamburger-menu noOw">
+									<div class="menu__circle"></div>
+								</div>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div>
 				</div><!-- .mainFunc -->

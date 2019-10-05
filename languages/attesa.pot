@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2019-10-03 16:37+0100\n"
-"PO-Revision-Date: 2019-10-03 16:37+0100\n"
+"POT-Creation-Date: 2019-10-05 17:41+0100\n"
+"PO-Revision-Date: 2019-10-05 17:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -722,7 +722,7 @@ msgstr ""
 msgid "Posts and pages settings"
 msgstr ""
 
-#: inc/customizer.php:90 inc/customizer.php:2375
+#: inc/customizer.php:90 inc/customizer.php:2424
 msgid "WooCommerce Settings"
 msgstr ""
 
@@ -813,13 +813,13 @@ msgstr ""
 msgid "Social network float position"
 msgstr ""
 
-#: inc/customizer.php:269 inc/customizer.php:1887 inc/customizer.php:2556
-#: inc/customizer.php:2596
+#: inc/customizer.php:269 inc/customizer.php:1902 inc/customizer.php:2605
+#: inc/customizer.php:2645
 msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:270 inc/customizer.php:1888 inc/customizer.php:2557
-#: inc/customizer.php:2597
+#: inc/customizer.php:270 inc/customizer.php:1903 inc/customizer.php:2606
+#: inc/customizer.php:2646
 msgid "Left"
 msgstr ""
 
@@ -887,7 +887,7 @@ msgstr ""
 msgid "Wide"
 msgstr ""
 
-#: inc/customizer.php:347 inc/customizer.php:1428 inc/customizer.php:1726
+#: inc/customizer.php:347 inc/customizer.php:1443 inc/customizer.php:1741
 msgid "Boxed"
 msgstr ""
 
@@ -1111,12 +1111,12 @@ msgid "Default bold"
 msgstr ""
 
 #: inc/customizer.php:801 inc/customizer.php:820 inc/customizer.php:839
-#: inc/customizer.php:1829
+#: inc/customizer.php:1844
 msgid "Bold"
 msgstr ""
 
 #: inc/customizer.php:802 inc/customizer.php:821 inc/customizer.php:840
-#: inc/customizer.php:1830
+#: inc/customizer.php:1845
 msgid "Normal"
 msgstr ""
 
@@ -1261,464 +1261,496 @@ msgid "Show top bar also on tablet/smartphone"
 msgstr ""
 
 #: inc/customizer.php:1421
+msgid "Invert position"
+msgstr ""
+
+#: inc/customizer.php:1436
 msgid "Top bar style"
 msgstr ""
 
-#: inc/customizer.php:1429 inc/customizer.php:1727
+#: inc/customizer.php:1444 inc/customizer.php:1742
 msgid "Full width"
 msgstr ""
 
-#: inc/customizer.php:1440
+#: inc/customizer.php:1455
 msgid "Top bar scroll"
 msgstr ""
 
-#: inc/customizer.php:1447
+#: inc/customizer.php:1462
 msgid "Hide when scroll down"
 msgstr ""
 
-#: inc/customizer.php:1448
+#: inc/customizer.php:1463
 msgid "Show when scroll down"
 msgstr ""
 
-#: inc/customizer.php:1459
+#: inc/customizer.php:1474
 msgid "Show search button"
 msgstr ""
 
-#: inc/customizer.php:1474
+#: inc/customizer.php:1489
 msgid "Show WooCommerce Cart"
 msgstr ""
 
-#: inc/customizer.php:1494
+#: inc/customizer.php:1509
 msgid "WooCommerce Cart Icon"
 msgstr ""
 
-#: inc/customizer.php:1508
+#: inc/customizer.php:1523
 msgid "Show EDD Cart"
 msgstr ""
 
-#: inc/customizer.php:1528
+#: inc/customizer.php:1543
 msgid "EDD Cart Icon"
 msgstr ""
 
-#: inc/customizer.php:1542
+#: inc/customizer.php:1557
 msgid "Show top bar navigation menu (if set)"
 msgstr ""
 
-#: inc/customizer.php:1558
+#: inc/customizer.php:1573
 msgid "Phone number"
 msgstr ""
 
-#: inc/customizer.php:1559 inc/customizer.php:1596 inc/customizer.php:1633
+#: inc/customizer.php:1574 inc/customizer.php:1611
 msgid "Leave the field blank if you do not want to use it"
 msgstr ""
 
-#: inc/customizer.php:1579
+#: inc/customizer.php:1594
 msgid "Make phone number clickable"
 msgstr ""
 
-#: inc/customizer.php:1595
+#: inc/customizer.php:1610
 msgid "Email Address"
 msgstr ""
 
-#: inc/customizer.php:1616
+#: inc/customizer.php:1631
 msgid "Make email address clickable"
 msgstr ""
 
-#: inc/customizer.php:1632
+#: inc/customizer.php:1647
 msgid "Custom field"
 msgstr ""
 
-#: inc/customizer.php:1658
+#: inc/customizer.php:1648
+msgid "Leave the field blank if you do not want to use it. Shortcode accepted"
+msgstr ""
+
+#: inc/customizer.php:1673
 msgid "Custom Field Icon"
 msgstr ""
 
-#: inc/customizer.php:1672
+#: inc/customizer.php:1687
 msgid "Show social network in the top bar"
 msgstr ""
 
-#: inc/customizer.php:1690
+#: inc/customizer.php:1705
 msgid "Sticky header when scroll down"
 msgstr ""
 
-#: inc/customizer.php:1704
+#: inc/customizer.php:1719
 msgid "Sticky header also on tablet/smartphone"
 msgstr ""
 
-#: inc/customizer.php:1719
+#: inc/customizer.php:1734
 msgid "Header style"
 msgstr ""
 
-#: inc/customizer.php:1738
+#: inc/customizer.php:1753
 msgid "Header format"
 msgstr ""
 
-#: inc/customizer.php:1744
+#: inc/customizer.php:1759
 msgid "Compat"
 msgstr ""
 
-#: inc/customizer.php:1745
+#: inc/customizer.php:1760
 msgid "Featured Title"
 msgstr ""
 
-#: inc/customizer.php:1746
+#: inc/customizer.php:1761
 msgid "Menu Popup"
 msgstr ""
 
-#: inc/customizer.php:1757
+#: inc/customizer.php:1772
 msgid "Header scroll"
 msgstr ""
 
-#: inc/customizer.php:1764
+#: inc/customizer.php:1779
 msgid "Make it smaller when scroll down"
 msgstr ""
 
-#: inc/customizer.php:1765
+#: inc/customizer.php:1780
 msgid "Leave it normal when scroll down"
 msgstr ""
 
-#: inc/customizer.php:1776
+#: inc/customizer.php:1791
 msgid "Remove title description (if set)"
 msgstr ""
 
-#: inc/customizer.php:1791
+#: inc/customizer.php:1806
 msgid "Show social network in the header"
 msgstr ""
 
-#: inc/customizer.php:1810
+#: inc/customizer.php:1825
 msgid "Main menu style"
 msgstr ""
 
-#: inc/customizer.php:1822
+#: inc/customizer.php:1837
 msgid "Menu font weight"
 msgstr ""
 
-#: inc/customizer.php:1841
+#: inc/customizer.php:1856
 msgid "Menu text transform"
 msgstr ""
 
-#: inc/customizer.php:1848
+#: inc/customizer.php:1863
 msgid "None"
 msgstr ""
 
-#: inc/customizer.php:1849
+#: inc/customizer.php:1864
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer.php:1860
+#: inc/customizer.php:1875
 msgid "Menu links style"
 msgstr ""
 
-#: inc/customizer.php:1866
+#: inc/customizer.php:1881
 msgid "Minimal"
 msgstr ""
 
-#: inc/customizer.php:1867
+#: inc/customizer.php:1882
 msgid "Minimal Top"
 msgstr ""
 
-#: inc/customizer.php:1868
+#: inc/customizer.php:1883
 msgid "Bounce"
 msgstr ""
 
-#: inc/customizer.php:1869
+#: inc/customizer.php:1884
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:1880
+#: inc/customizer.php:1895
 msgid "Menu position"
 msgstr ""
 
-#: inc/customizer.php:1899
+#: inc/customizer.php:1914
 msgid "Max height for the logo in pixel (if used)"
 msgstr ""
 
-#: inc/customizer.php:1900
+#: inc/customizer.php:1915
 msgid "Default value 65"
 msgstr ""
 
-#: inc/customizer.php:1919
+#: inc/customizer.php:1934
 msgid "Mobile menu style"
 msgstr ""
 
-#: inc/customizer.php:1932
+#: inc/customizer.php:1942 inc/partials/com-header.php:133
+msgid "Menu"
+msgstr ""
+
+#: inc/customizer.php:1947
+msgid "Mobile menu text"
+msgstr ""
+
+#: inc/customizer.php:1967
+msgid "Mobile Menu Icon"
+msgstr ""
+
+#: inc/customizer.php:1981
 msgid "Open mobile menu"
 msgstr ""
 
-#: inc/customizer.php:1939
+#: inc/customizer.php:1988
 msgid "Dropdown"
 msgstr ""
 
-#: inc/customizer.php:1940
+#: inc/customizer.php:1989
 msgid "Push menu"
 msgstr ""
 
-#: inc/customizer.php:1946 inc/partials/com-header.php:222
-#: inc/partials/com-header.php:348
+#: inc/customizer.php:1995 inc/partials/com-header.php:236
+#: inc/partials/com-header.php:373
 msgid "Close menu"
 msgstr ""
 
-#: inc/customizer.php:1951
+#: inc/customizer.php:2000
 msgid "Text to close the menu"
 msgstr ""
 
-#: inc/customizer.php:1973
+#: inc/customizer.php:2022
 msgid "Main blog page"
 msgstr ""
 
-#: inc/customizer.php:1985
+#: inc/customizer.php:2034
 msgid "Blog page, show posts"
 msgstr ""
 
-#: inc/customizer.php:1991
+#: inc/customizer.php:2040
 msgid "Show excerpt"
 msgstr ""
 
-#: inc/customizer.php:1992
+#: inc/customizer.php:2041
 msgid "Show grid"
 msgstr ""
 
-#: inc/customizer.php:1993
+#: inc/customizer.php:2042
 msgid "Show full post"
 msgstr ""
 
-#: inc/customizer.php:2004
+#: inc/customizer.php:2053
 msgid "Number of columns"
 msgstr ""
 
-#: inc/customizer.php:2011 inc/customizer.php:2737
+#: inc/customizer.php:2060 inc/customizer.php:2805
 msgid "1"
 msgstr ""
 
-#: inc/customizer.php:2012 inc/customizer.php:2738
+#: inc/customizer.php:2061 inc/customizer.php:2806
 msgid "2"
 msgstr ""
 
-#: inc/customizer.php:2013 inc/customizer.php:2739
+#: inc/customizer.php:2062 inc/customizer.php:2807
 msgid "3"
 msgstr ""
 
-#: inc/customizer.php:2014 inc/customizer.php:2740
+#: inc/customizer.php:2063 inc/customizer.php:2808
 msgid "4"
 msgstr ""
 
-#: inc/customizer.php:2025
+#: inc/customizer.php:2074
 msgid "Text lenght for blog excerpt (number of words)"
 msgstr ""
 
-#: inc/customizer.php:2040
+#: inc/customizer.php:2089
 msgid "Custom Excerpt Final"
 msgstr ""
 
-#: inc/customizer.php:2055
+#: inc/customizer.php:2104
 msgid "Show \"read more\" button"
 msgstr ""
 
-#: inc/customizer.php:2065 template-parts/content.php:61
+#: inc/customizer.php:2114 template-parts/content.php:61
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer.php:2071
+#: inc/customizer.php:2120
 msgid "Text button for \"read more\""
 msgstr ""
 
-#: inc/customizer.php:2091
+#: inc/customizer.php:2140
 msgid "Show featured images (if exist) in the posts list"
 msgstr ""
 
-#: inc/customizer.php:2109
+#: inc/customizer.php:2158
 msgid "Single blog posts"
 msgstr ""
 
-#: inc/customizer.php:2121 inc/customizer.php:2259
+#: inc/customizer.php:2170 inc/customizer.php:2308
 msgid "Featured image style (if set)"
 msgstr ""
 
-#: inc/customizer.php:2127 inc/customizer.php:2265
+#: inc/customizer.php:2176 inc/customizer.php:2314
 msgid "Featured image inside the content"
 msgstr ""
 
-#: inc/customizer.php:2128 inc/customizer.php:2266
+#: inc/customizer.php:2177 inc/customizer.php:2315
 msgid "Big Featured image in the header"
 msgstr ""
 
-#: inc/customizer.php:2139 inc/customizer.php:2277
+#: inc/customizer.php:2188 inc/customizer.php:2326
 msgid "Overlay featured image to the main menu"
 msgstr ""
 
-#: inc/customizer.php:2154 inc/customizer.php:2292
+#: inc/customizer.php:2203 inc/customizer.php:2341
 msgid "Featured image fixed inside the box"
 msgstr ""
 
-#: inc/customizer.php:2169 inc/customizer.php:2307
+#: inc/customizer.php:2218 inc/customizer.php:2356
 msgid "Featured image height (in pixel)"
 msgstr ""
 
-#: inc/customizer.php:2170 inc/customizer.php:2308
+#: inc/customizer.php:2219 inc/customizer.php:2357
 msgid "Default value 500"
 msgstr ""
 
-#: inc/customizer.php:2195 inc/customizer.php:2333
+#: inc/customizer.php:2244 inc/customizer.php:2382
 msgid "Opacity color"
 msgstr ""
 
-#: inc/customizer.php:2210 inc/customizer.php:2348
+#: inc/customizer.php:2259 inc/customizer.php:2397
 msgid "Title position"
 msgstr ""
 
-#: inc/customizer.php:2217 inc/customizer.php:2355
+#: inc/customizer.php:2266 inc/customizer.php:2404
 msgid "Inside the content"
 msgstr ""
 
-#: inc/customizer.php:2218 inc/customizer.php:2356
+#: inc/customizer.php:2267 inc/customizer.php:2405
 msgid "Inside the header"
 msgstr ""
 
-#: inc/customizer.php:2229
+#: inc/customizer.php:2278
 msgid "Show previous and next post"
 msgstr ""
 
-#: inc/customizer.php:2247
+#: inc/customizer.php:2296
 msgid "Single pages"
 msgstr ""
 
-#: inc/customizer.php:2376
+#: inc/customizer.php:2425
 msgid "Some of these options needs to refresh the page to view the changes."
 msgstr ""
 
-#: inc/customizer.php:2389
+#: inc/customizer.php:2438
 msgid "Gallery style"
 msgstr ""
 
-#: inc/customizer.php:2395
+#: inc/customizer.php:2444
 msgid "Default gallery"
 msgstr ""
 
-#: inc/customizer.php:2396
+#: inc/customizer.php:2445
 msgid "Zoom gallery"
 msgstr ""
 
-#: inc/customizer.php:2408
+#: inc/customizer.php:2457
 msgid "Use default WooCommerce lightbox"
 msgstr ""
 
-#: inc/customizer.php:2423
+#: inc/customizer.php:2472
 msgid "Show previous and next product (arrow icons)"
 msgstr ""
 
-#: inc/customizer.php:2438
+#: inc/customizer.php:2487
 msgid "Show related products"
 msgstr ""
 
-#: inc/customizer.php:2452
+#: inc/customizer.php:2501
 msgid "Show sticky bar product when user scroll down"
 msgstr ""
 
-#: inc/customizer.php:2461 inc/third/woocommerce.php:104
+#: inc/customizer.php:2510 inc/third/woocommerce.php:104
 msgid "View Product"
 msgstr ""
 
-#: inc/customizer.php:2467
+#: inc/customizer.php:2516
 msgid "Sticky bar button text"
 msgstr ""
 
-#: inc/customizer.php:2492
+#: inc/customizer.php:2541
 msgid "Sticky bar background color"
 msgstr ""
 
-#: inc/customizer.php:2512
+#: inc/customizer.php:2561
 msgid "Sticky bar text color"
 msgstr ""
 
-#: inc/customizer.php:2536
+#: inc/customizer.php:2585
 msgid "Show classic sidebar in"
 msgstr ""
 
-#: inc/customizer.php:2550 inc/customizer.php:2590
+#: inc/customizer.php:2599 inc/customizer.php:2639
 msgid "Sidebar position"
 msgstr ""
 
-#: inc/customizer.php:2576
+#: inc/customizer.php:2625
 msgid "Show push sidebar in"
 msgstr ""
 
-#: inc/customizer.php:2608
+#: inc/customizer.php:2657
 msgid "Show opacity when push sidebar is open"
 msgstr ""
 
-#: inc/customizer.php:2625
-msgid "Show the Scroll to Top button"
+#: inc/customizer.php:2671
+msgid "Choose the icon"
 msgstr ""
 
-#: inc/customizer.php:2639
-msgid "Show the Scroll to Top button also on mobile"
-msgstr ""
-
-#: inc/customizer.php:2654
-msgid "Scroll to top button position"
-msgstr ""
-
-#: inc/customizer.php:2661
-msgid "Bottom right"
-msgstr ""
-
-#: inc/customizer.php:2662
-msgid "Bottom Left"
+#: inc/customizer.php:2677
+msgid "Three Lines Icon"
 msgstr ""
 
 #: inc/customizer.php:2678
-msgid "Scroll to top icon"
+msgid "Plus Icon"
 msgstr ""
 
-#: inc/customizer.php:2699
-msgid "Footer widgets settings"
+#: inc/customizer.php:2679
+msgid "Circle Icon"
 msgstr ""
 
-#: inc/customizer.php:2716
-msgid "Show footer widgets in"
+#: inc/customizer.php:2693
+msgid "Show the Scroll to Top button"
+msgstr ""
+
+#: inc/customizer.php:2707
+msgid "Show the Scroll to Top button also on mobile"
+msgstr ""
+
+#: inc/customizer.php:2722
+msgid "Scroll to top button position"
+msgstr ""
+
+#: inc/customizer.php:2729
+msgid "Bottom right"
 msgstr ""
 
 #: inc/customizer.php:2730
-msgid "Number of footer columns"
+msgid "Bottom Left"
 msgstr ""
 
-#: inc/customizer.php:2755
-msgid "Sub-footer settings"
+#: inc/customizer.php:2746
+msgid "Scroll to top icon"
 msgstr ""
 
 #: inc/customizer.php:2767
+msgid "Footer widgets settings"
+msgstr ""
+
+#: inc/customizer.php:2784
+msgid "Show footer widgets in"
+msgstr ""
+
+#: inc/customizer.php:2798
+msgid "Number of footer columns"
+msgstr ""
+
+#: inc/customizer.php:2823
+msgid "Sub-footer settings"
+msgstr ""
+
+#: inc/customizer.php:2835
 msgid "Show sub-footer"
 msgstr ""
 
-#: inc/customizer.php:2781
+#: inc/customizer.php:2849
 msgid "Show footer navigation menu (if set)"
 msgstr ""
 
-#: inc/customizer.php:2796
+#: inc/customizer.php:2864
 msgid "Show social network in footer"
 msgstr ""
 
-#: inc/customizer.php:2812
+#: inc/customizer.php:2880
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:2813
+#: inc/customizer.php:2881
 msgid "Get the PRO version to remove AttesaWP credits"
 msgstr ""
 
-#: inc/customizer.php:2855
+#: inc/customizer.php:2923
 msgid "Open social links"
 msgstr ""
 
-#: inc/customizer.php:2861
+#: inc/customizer.php:2929
 msgid "Same window"
 msgstr ""
 
-#: inc/customizer.php:2862
+#: inc/customizer.php:2930
 msgid "New Window"
-msgstr ""
-
-#: inc/partials/com-header.php:219 inc/partials/com-header.php:345
-msgid "Menu"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:71

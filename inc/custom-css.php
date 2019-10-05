@@ -735,6 +735,7 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.tagcloud a:focus,
 			.tagcloud a:active, 
 			.hamburger-menu .menu__line,
+			.hamburger-menu .menu__plus,
 			.woocommerce ul.products > li:hover .wooImage .button,
 			.woocommerce ul.products > li:hover .wooImage .added_to_cart,
 			.woocommerce-error li a:hover,
@@ -760,6 +761,9 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesaFeatBoxContainer .attesaproFeatBoxButton a:active,
 			.menu-full-screen-icon .icon-full-screen .square-full-screen {
 				background-color: '.esc_html($generalTextColor).';
+			}
+			.hamburger-menu .menu__circle {
+				border-color: '.esc_html($generalTextColor).';
 			}
 			.aLoader1 {
 				border-top-color: '.esc_html($generalTextColor).';

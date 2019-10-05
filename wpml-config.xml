@@ -8,6 +8,7 @@
 			<key name="_custom_field"/>
 			<key name="_read_more_text"/>
 			<key name="_menu_mobile_text_close"/>
+			<key name="_menu_mobile_default_text"/>
 		</key>
 	</admin-texts>
 </wpml-config>

@@ -1410,6 +1410,21 @@ function attesa_customize_register( $wp_customize ) {
 		'active_callback' => 'attesa_is_topbar_active',
 		'priority' => 1,
     ) );
+	/* Invert position */
+	$wp_customize->add_setting('attesa_theme_options[_topbar_invert]', array(
+        'default'    => '',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_topbar_invert]', array(
+        'label'      => __( 'Invert position', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_topbar',
+        'settings'   => 'attesa_theme_options[_topbar_invert]',
+        'type'       => 'checkbox',
+		'active_callback' => 'attesa_is_topbar_active',
+		'priority' => 1,
+    ) );
 	/* Top bar style */
 	$wp_customize->add_setting('attesa_theme_options[_topbar_style]', array(
         'default'    => 'boxed',
@@ -1630,7 +1645,7 @@ function attesa_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control('attesa_theme_options[_custom_field]', array(
 		'label'      => __( 'Custom field', 'attesa' ),
-		'description'	=> __( 'Leave the field blank if you do not want to use it', 'attesa' ),
+		'description'	=> __( 'Leave the field blank if you do not want to use it. Shortcode accepted', 'attesa' ),
 		'section'    => 'section_attesa_theme_options_topbar',
 		'settings'   => 'attesa_theme_options[_custom_field]',
 		'type'       => 'text',
@@ -1917,8 +1932,42 @@ function attesa_customize_register( $wp_customize ) {
 			'settings'		=> 'attesa_theme_options[_heading_mobile_menu_style]',
 			'section'		=> 'section_attesa_theme_options_header',
 			'label'			=> __( 'Mobile menu style', 'attesa' ),
-			'priority' => 8,
 			'active_callback' => 'attesa_is_menu_not_popup',
+			'priority' => 8,
+		))
+	);
+	/* Mobile menu text */
+	$wp_customize->add_setting('attesa_theme_options[_menu_mobile_default_text]', array(
+		'sanitize_callback' => 'attesa_sanitize_text',
+		'default'    => __( 'Menu', 'attesa' ),
+		'type'       => 'option',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control('attesa_theme_options[_menu_mobile_default_text]', array(
+		'label'      => __( 'Mobile menu text', 'attesa' ),
+		'section'    => 'section_attesa_theme_options_header',
+		'settings'   => 'attesa_theme_options[_menu_mobile_default_text]',
+		'type'       => 'text',
+		'active_callback' => 'attesa_is_menu_not_popup',
+		'priority' => 8,
+	) );
+	/* FontAwesome Mobile Menu Icon */
+	$wp_customize->add_setting('attesa_theme_options[_mobile_menu_icon]', array(
+		'default'			=> 'fas fa fa-bars',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type'       => 'option',
+	));
+	$wp_customize->add_control(
+		new Attesa_Fontawesome_Icon(
+		$wp_customize,
+		'attesa_theme_options[_mobile_menu_icon]',
+		array(
+			'settings'		=> 'attesa_theme_options[_mobile_menu_icon]',
+			'section'		=> 'section_attesa_theme_options_header',
+			'label'			=> __( 'Mobile Menu Icon', 'attesa' ),
+			'type'       => 'iconCustomField',
+			'active_callback' => 'attesa_is_menu_not_popup',
+			'priority' => 8,
 		))
 	);
 	/* Opening mobile menu */
@@ -2610,6 +2659,25 @@ function attesa_customize_register( $wp_customize ) {
         'settings'   => 'attesa_theme_options[_show_opacitypush]',
         'type'       => 'checkbox',
 		'priority' => 2,
+    ) );
+	/* Push sidebar icon */
+	$wp_customize->add_setting('attesa_theme_options[_pushsidebar_icon]', array(
+        'default'    => 'three_lines_icon',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_select'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_pushsidebar_icon]', array(
+        'label'      => __( 'Choose the icon', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_pushsidebar',
+        'settings'   => 'attesa_theme_options[_pushsidebar_icon]',
+        'type'       => 'select',
+		'priority' => 3,
+		'choices' => array(
+			'three_lines_icon' => __( 'Three Lines Icon', 'attesa'),
+			'plus_icon' => __( 'Plus Icon', 'attesa'),
+			'circle_icon' => __( 'Circle Icon', 'attesa'),
+		),
     ) );
 	/**
 	* ################ SECTION SCROLL TO TOP SETTINGS

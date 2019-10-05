@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -1769,6 +1769,10 @@ aside ul.product-categories .indicatorBar.yesOpenBar:before {
     right: 0;
 	padding-top: 12px;
 }
+.nav-top .top-block-right.invert .attesa_woocommerce_mini_cart {
+	left: 0;
+	right: inherit;
+}
 .cartwoo-button:hover .attesa_woocommerce_mini_cart,
 .cartwoo-button:focus .attesa_woocommerce_mini_cart,
 .cartwoo-button:active .attesa_woocommerce_mini_cart {
@@ -2056,10 +2060,12 @@ body.format_featuredtitle .attesa-text-logo p {
     width: 100%;
     z-index: 1000;
 }
-.nav-top .top-block-left {
+.nav-top .top-block-left,
+.nav-top .top-block-right.invert {
 	float: left;
 }
-.nav-top .top-block-right {
+.nav-top .top-block-right,
+.nav-top .top-block-left.invert {
 	float: right;
 }
 .nav-top .top-block-left > span {
@@ -2515,6 +2521,44 @@ footer.entry-footer .read-more span {
   transition: opacity .2s ease-in-out .4s, transform .2s ease-in-out .4s;
   transition: opacity .2s ease-in-out .4s, transform .2s ease-in-out .4s, -webkit-transform .2s ease-in-out .4s;
 }
+.hamburger-menu .menu__plus {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: transform .2s ease-in-out .3s, background-color .3s ease-in-out;
+}
+.hamburger-menu .menu__plus.menu_plus1 {
+	left: 0;
+    height: 2px;
+    width: 25px;
+}
+.hamburger-menu .menu__plus.menu_plus2 {
+	left: 49.5%;
+    height: 25px;
+    width: 2px;
+}
+.hamburger-menu.yesOpen .menu__plus.menu_plus1,
+.hamburger-menu.yesOpen .menu__plus.menu_plus2 {
+	transform: rotate(45deg);
+}
+.hamburger-menu .menu__circle {
+	position: absolute;
+    pointer-events: none;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+	transition: border-width .2s ease-in-out .3s, border-color .3s ease-in-out;
+}
+.hamburger-menu.yesOpen .menu__circle {
+	border-width: 8px;
+}
 .search-icon {
     display: block;
     padding: 0.5em;
@@ -2524,7 +2568,9 @@ footer.entry-footer .read-more span {
 	top: -1px;
 	z-index: 99;
 }
-
+.nav-top .top-block-right.invert .search-icon {
+	float: left;
+}
 .search-icon .circle {
     position: relative;
     display: block;
@@ -2590,6 +2636,9 @@ footer.entry-footer .read-more span {
 	outline: none;
 	height: 46px;
     padding: 0.8em 1em;
+}
+.nav-top .top-block-right.invert .search-container input[type="search"] {
+	text-indent: 30px;
 }
 .search-container input[type="submit"] {
 	display: none;
@@ -5420,6 +5469,9 @@ body.with_fa4 .widget.widget_edd_categories_tags_widget li:before {
 	.hamburger-menu {
 		overflow: hidden;
 	}
+	.hamburger-menu.noOw {
+		overflow: visible;
+	}
 	.main-navigation ul ul ul li:first-child {
 		border-top-style: solid;
 		border-top-width: 1px;
@@ -5553,14 +5605,16 @@ body.with_fa4 .widget.widget_edd_categories_tags_widget li:before {
 	header.site-header.noMobile.topbarscrollhide {
 		margin-top : 0px !important;
 	}
-	.nav-top .top-block-left {
+	.nav-top .top-block-left,
+	.nav-top .top-block-left.invert {
 		float: none;
 		text-align: center;
 	}
 	.nav-top .top-block-left .site-social-top {
 		display: block;
 	}
-	.nav-top .top-block-right {
+	.nav-top .top-block-right,
+	.nav-top .top-block-right.invert {
 		float: none;
 	}
 	.mainFooter .site-copy-down .site-social,
@@ -5651,6 +5705,16 @@ body.with_fa4 .widget.widget_edd_categories_tags_widget li:before {
 	.hamburger-menu {
 		width: 20px;
 		height: 16px;
+	}
+	.hamburger-menu .menu__circle {
+		width: 20px;
+		height: 20px;
+	}
+	.hamburger-menu .menu__plus.menu_plus1 {
+		width: 20px;
+	}
+	.hamburger-menu .menu__plus.menu_plus2 {
+		height: 20px;
 	}
 	.attesa-extra-blog-posts-elementor.number-columns-1 .latest-news-wrapper,
 	.attesa-extra-blog-posts-elementor.number-columns-2 .latest-news-wrapper,
