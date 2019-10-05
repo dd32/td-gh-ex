@@ -86,30 +86,6 @@ function bayn_lite_customize_register( $wp_customize ) {
 		'active_callback' => 'is_front_page',
 	) );
 
-	// Portfolio section.
-	$wp_customize->add_setting( 'front_page_portfolio_title', array(
-		'default'           => esc_html__( 'Recent Work', 'bayn-lite' ),
-		'sanitize_callback' => 'sanitize_text_field',
-		'transport'         => 'postMessage',
-	) );
-	$wp_customize->add_control( 'front_page_portfolio_title', array(
-		'label'           => esc_html__( 'Portfolio Section Title', 'bayn-lite' ),
-		'section'         => 'bayn-lite',
-		'type'            => 'text',
-		'active_callback' => 'is_front_page',
-	) );
-	$wp_customize->add_setting( 'front_page_portfolio_subtitle', array(
-		'default'           => esc_html__( 'Design and Engineering', 'bayn-lite' ),
-		'sanitize_callback' => 'sanitize_text_field',
-		'transport'         => 'postMessage',
-	) );
-	$wp_customize->add_control( 'front_page_portfolio_subtitle', array(
-		'label'           => esc_html__( 'Portfolio Section Subtitle', 'bayn-lite' ),
-		'section'         => 'bayn-lite',
-		'type'            => 'text',
-		'active_callback' => 'is_front_page',
-	) );
-
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
@@ -160,7 +136,7 @@ function bayn_lite_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'cta_text', array(
 		'label'           => esc_html__( 'Call To Action Text', 'bayn-lite' ),
-		'section'         => 'bayn',
+		'section'         => 'bayn-lite',
 		'type'            => 'textarea',
 		'description'     => wp_kses_post( __( 'Use this section to display special offers for your products or services.', 'bayn-lite' ) ),
 		'active_callback' => 'is_front_page',
@@ -175,7 +151,7 @@ function bayn_lite_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'cta_link_text', array(
 		'label'           => esc_html__( 'Call To Action Button Text', 'bayn-lite' ),
-		'section'         => 'bayn',
+		'section'         => 'bayn-lite',
 		'type'            => 'text',
 		'active_callback' => 'is_front_page',
 	) );
@@ -188,7 +164,7 @@ function bayn_lite_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'cta_link_url', array(
 		'label'           => esc_html__( 'Call To Action Button URL', 'bayn-lite' ),
-		'section'         => 'bayn',
+		'section'         => 'bayn-lite',
 		'type'            => 'text',
 		'active_callback' => 'is_front_page',
 	) );

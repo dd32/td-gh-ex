@@ -42,7 +42,7 @@ if ( ! function_exists( 'bayn_lite_header_style' ) ) :
 		<style id="bayn-lite-header-css">
 			<?php if ( has_header_image() ) : ?>
 				.page-header {
-					background: url(<?php echo esc_url( get_header_image() ); ?>) center no-repeat;
+					background: url(<?php echo esc_url( get_header_image() ); ?>) center/cover no-repeat;
 				}
 			<?php endif; ?>
 			<?php if ( ! display_header_text() ) : ?>

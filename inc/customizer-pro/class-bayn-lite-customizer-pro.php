@@ -67,13 +67,25 @@ final class Bayn_Lite_Customizer_Pro {
 				$manager,
 				'bayn-pro',
 				array(
-					'title'     => esc_html__( 'Ready For More?', 'bayn-lite' ),
-					'pro_text'  => esc_html__( 'Upgrade To PRO', 'bayn-lite' ),
-					'pro_url'   => "https://gretathemes.com/wordpress-themes/{$this->pro_slug}/{$this->utm}",
-					'doc_title' => esc_html__( 'Need Some Help?', 'bayn-lite' ),
-					'doc_text'  => esc_html__( 'Documentation', 'bayn-lite' ),
-					'doc_url'   => "https://gretathemes.com/docs/{$this->pro_slug}/{$this->utm}",
-					'priority'  => 99999999,
+					'section_type' => 'pro',
+					'title'        => esc_html__( 'Ready For More?', 'bayn-lite' ),
+					'pro_text'     => esc_html__( 'Upgrade To PRO', 'bayn-lite' ),
+					'pro_url'      => "https://gretathemes.com/wordpress-themes/{$this->pro_slug}/{$this->utm}",
+					'priority'     => 99999999,
+				)
+			)
+		);
+
+		$manager->add_section(
+			new Bayn_Lite_Customizer_Section_Pro(
+				$manager,
+				'bayn-pro-doc',
+				array(
+					'section_type' => 'doc',
+					'doc_title'    => esc_html__( 'Need Some Help?', 'bayn-lite' ),
+					'doc_text'     => esc_html__( 'Need help setting up your site?', 'bayn-lite' ),
+					'doc_url'      => "https://gretathemes.com/docs/{$this->pro_slug}/{$this->utm}",
+					'priority'     => 0,
 				)
 			)
 		);
