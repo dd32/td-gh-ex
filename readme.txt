@@ -88,6 +88,9 @@ License: CC0 Public Domain
 
 == Changelog ==
 
+= 0.0.4 - October 5 2019 =
+* Bug fixes
+
 = 0.0.3 - September 21 2019 =
 * Checked the checklist pointed by theme reviewer
 

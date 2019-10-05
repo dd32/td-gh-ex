@@ -1132,7 +1132,7 @@ nav a {
   -moz-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s; }
-.main-nav > .menu-item-has-children:hover > ul {
+.main-nav > .menu-item-has-children:hover > ul, .main-nav > .menu-item-has-children:focus > ul {
   opacity: 1;
   visibility: visible;
   -webkit-transform: translateY(-10px);
@@ -1157,7 +1157,7 @@ nav a {
   position: relative; }
   .main-nav .menu-item-has-children li {
     line-height: 2.2; }
-  .main-nav .menu-item-has-children:hover > a::after {
+  .main-nav .menu-item-has-children:hover > a::after, .main-nav .menu-item-has-children:focus > a::after {
     color: #13aff0; }
   .main-nav .menu-item-has-children > ul {
     position: absolute;
@@ -1167,8 +1167,6 @@ nav a {
     margin-left: -1.1rem;
     padding: 1.6rem 2.4rem;
     width: 220px;
-    opacity: 0;
-    visibility: hidden;
     -webkit-transform: translateY(-2.4rem);
     -ms-transform: translateY(-2.4rem);
     transform: translateY(-2.4rem);
@@ -1178,13 +1176,12 @@ nav a {
   .main-nav .menu-item-has-children .to-left {
     left: unset;
     right: 25%; }
-  .main-nav .menu-item-has-children:hover > ul {
-    opacity: 1;
-    visibility: visible;
+  .main-nav .menu-item-has-children:hover > ul, .main-nav .menu-item-has-children:focus > ul {
+    left: 50%;
     -webkit-transform: translate(-10px, -2.4rem);
     -ms-transform: translate(-10px, -2.4rem);
     transform: translate(-10px, -2.4rem); }
-  .main-nav .menu-item-has-children:hover > a::after {
+  .main-nav .menu-item-has-children:hover > a::after, .main-nav .menu-item-has-children:focus > a::after {
     color: #13aff0; }
 .main-nav li ul li a {
   color: #2b3948; }
@@ -1327,6 +1324,12 @@ nav a {
 
 .nav-button {
   margin: 0 1.6rem; }
+
+.main-nav .is-focused > .sub-menu,
+.is-focused > .sub-menu {
+  left: 50%;
+  opacity: 1;
+  visibility: visible; }
 
 /*=========================
     14. BLOG SECTION
