@@ -2,7 +2,7 @@
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
 Tested up to: 5.2.3
-Stable tag: 3.8.3
+Stable tag: 3.8.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,9 @@ Yes! You can choose your color scheme under Customizer -> Styling section
 
 
 = Changelog =
+
+### Version 3.8.4
+- Allow HTML to slider description
 
 ### Version 3.8.3
 - Fixed slider image sanitize issue
