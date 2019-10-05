@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress.com - Themes - Bexley package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 03:28:56+0000\n"
+"PO-Revision-Date: 2018-10-11 15:29:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,6 +36,11 @@ msgstr "https://prothemedesign.com/"
 #: wp-content/themes/premium/bexley/custom-templates/custom-page-fullwidth.php
 msgid "Full Width"
 msgstr "Plein écran"
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/bexley/style.css
+msgid "Bexley is a photo blog - placing the photos at the forefront and giving you plenty of space to add your own writing around them."
+msgstr "Bexley est un thème de blog qui mettra vos photos sur le devant de la scène tout en vous donnant tout l’espace dont vous avez besoin pour ajouter vos écrits."
 
 #: searchform.php:10
 msgctxt "search input placeholder text"

@@ -29,6 +29,11 @@ Bexley includes support for most features in [Jetpack](https://wordpress.org/plu
 
 == Changelog ==
 
+= 2.4 - 5th October 2019 =
+* Tidy css
+* Fix search form styles
+* Add support for toolbelt plugin
+
 = 2.3.1 - 28th July 2018 =
 * Ensure the 'next' and 'previous' post links do not obstruct the page content.
 
