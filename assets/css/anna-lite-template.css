@@ -137,12 +137,13 @@ a {
 	color:#616161
 }
 
-a:hover ,
-a:active ,
-a:focus {
+a:hover {
 	color:#d14a2b;
-	outline:none;
-	text-decoration:none;
+}
+
+a:focus {
+	outline: thin dotted;
+    text-decoration: underline;
 }
 
 .clear { 
@@ -229,15 +230,17 @@ span.button {
 	background:#ff6644;
 	padding:10px 15px;
 	color:#fff;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease; 
-	-o-transition: all .3s ease;
+	-webkit-transition: background .3s ease;
+	-moz-transition: background .3s ease; 
+	-o-transition: background .3s ease;
+	transition: background .3s ease;
 	text-align:center;
 	position:relative;
 	display:inline-block;
 }
 
-span.button:hover {
+span.button:hover,
+.read-more:focus span.button {
 	background:#d14a2b;
 	color:#fff;
 	text-decoration:none;
@@ -248,12 +251,14 @@ span.button:hover {
 }
 
 .post-article a span.nobutton {
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease; 
-	-o-transition: all .3s ease;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease; 
+	-o-transition: color .3s ease;
+	transition: color .3s ease;
 }
 
-.post-article a span.nobutton:hover {
+.post-article a span.nobutton:hover ,
+.post-article a:focus span.nobutton {
 	color:#d14a2b;
 }
 
@@ -453,7 +458,8 @@ p.demo_store {
 	line-height:0.8em
 } 
 
-#logo a:hover { 
+#logo a:hover , 
+#logo a:focus { 
 	text-decoration:none;
 	color:#d14a2b;
 	border-bottom:none;
@@ -510,8 +516,12 @@ nav#mainmenu ul li a {
 	line-height:53px
 }
 
+nav#mainmenu a:hover,
 nav#mainmenu ul li a:hover,
 nav#mainmenu li:hover > a,
+nav#mainmenu a:focus,
+nav#mainmenu ul li a:focus,
+nav#mainmenu li:focus > a,
 nav#mainmenu ul li.current-menu-item > a, 
 nav#mainmenu ul li.current_page_item > a, 
 nav#mainmenu ul li.current-menu-parent > a, 
@@ -520,18 +530,21 @@ nav#mainmenu ul li.current-menu-ancestor > a {
 	color:#d14a2b;
 }
 
-nav#mainmenu ul ul { 
-	display:none; 
+nav#mainmenu ul.sub-menu { 
+	opacity:0; 
 	position: absolute; 
 	top:52px; 
-	left:0; 
+	left: -9999em;
 	background:#fff;
 	z-index:1000;
 	width:100%;
 	min-width:213px;
+	-webkit-transition: opacity 0.3s ease 0s;
+	-o-transition: opacity 0.3s ease 0s;
+	transition: opacity 0.3s ease 0s;
 }
 
-nav#mainmenu ul ul li { 
+nav#mainmenu ul.sub-menu li { 
 	position:relative; 
 	margin:0;
 	line-height:1.2em;
@@ -542,27 +555,40 @@ nav#mainmenu ul ul li {
 	padding:0
 }
 
-nav#mainmenu ul ul li a { 
+nav#mainmenu li li:hover > ul,
+nav#mainmenu li li:focus > ul,
+nav#mainmenu li li.focus > ul {
+	top:0px;
+	left: 100%; 
+}
+
+nav#mainmenu ul.sub-menu li a { 
 	text-decoration:none; 
 	text-align:left; 
 	display:block; 
-	padding:14px 14px 0 14px;
+	padding:14px;
 	margin:0;
 	border:none;
-	color:#616161;
 	line-height:inherit !important 
  }
 
-nav#mainmenu ul ul li:last-of-type a { 
-	padding:14px;
+nav#mainmenu ul.sub-menu li ul:before {
+	display:none;
 }
 
-nav#mainmenu ul ul li ul { 
-	top:0; 
-	left:213px; 
+nav#mainmenu li:hover > ul,
+nav#mainmenu li:focus > ul,
+nav#mainmenu li.focus > ul {
+	opacity:1; 
+	left:0
 }
 
-nav#mainmenu ul ul li ul:before {
+.menu-toggle,
+.dropdown-toggle {
+	display: none;
+}
+
+nav#mainmenu ul.sub-menu li ul:before {
 	display:none;
 }
 
@@ -1845,7 +1871,12 @@ div.wpcf7-mail-sent-ok {
 .woocommerce-product-search input[type=submit]:hover,
 .contact-form input[type=submit]:hover ,
 .searchform input[type=submit]:hover ,
-.comment-form input[type=submit]:hover {
+.comment-form input[type=submit]:hover,
+.wpcf7-form input[type=submit]:focus ,
+.woocommerce-product-search input[type=submit]:focus,
+.contact-form input[type=submit]:focus ,
+.searchform input[type=submit]:focus ,
+.comment-form input[type=submit]:focus {
 	background:#d14a2b;
 	color:#fff;
 	text-decoration:none

@@ -2,7 +2,7 @@
 Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
-Tested up to: 5.2.2
+Tested up to: 5.2.3
 Stable tag: 1.1.1
 Requires PHP: 5.3
 License: GPLv2 or later
@@ -22,6 +22,11 @@ Anna Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Anna Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.1.2 =
+Release date - October, 06 - 2019
+
+* Added - Keyboard navigation
 
 = 1.1.1 =
 Release date - August, 24 - 2019
@@ -125,6 +130,9 @@ prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com
 
 Slick Slider By Ken Wheeler - https://github.com/kenwheeler/slick/
 * slick.js v3.1.4 - Licensed under MIT license ( Applies to slick.js file in /anna-lite/assets/js/ )
+
+navigation.js file By Automattic, Inc. - https://underscores.me/
+* navigation.js - Licensed under GPLv2 or later ( Applies to navigation.js file in /anna-lite/assets/js/ )
 
 HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html5shiv
 * html5shiv.js v3.7.0 - Licensed under MIT and GPL2 license ( Applies to html5shiv.js file in /anna-lite/assets/scripts/ )

@@ -691,7 +691,8 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
-.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover{
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover ,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus {
     z-index: 2;
 	color:#d14a2b;
 }
@@ -800,7 +801,19 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 .woocommerce a.button:hover, 
 .woocommerce button.button:hover, 
 .woocommerce input.button:hover,
-.woocommerce .wc-proceed-to-checkout input:hover {
+.woocommerce .wc-proceed-to-checkout input:hover,
+.woocommerce #respond input#submit.alt:focus, 
+.woocommerce a.button.alt:focus, 
+.woocommerce button.button.alt:focus, 
+.woocommerce input.button.alt:focus,
+.woocommerce a.button:focus,
+.woocommerce a.add_to_cart_button:focus,
+.woocommerce .woocommerce-message a.button:focus ,
+.woocommerce #respond input#submit:focus, 
+.woocommerce a.button:focus, 
+.woocommerce button.button:focus, 
+.woocommerce input.button:focus,
+.woocommerce .wc-proceed-to-checkout input:focus {
 	background:#d14a2b;
 	color:#fff;
 	text-decoration:none;
