@@ -4,7 +4,7 @@ Contributors: lumberthemes
 Requires at least: 5.0
 Tested up to: 5.2
 Requires PHP: 5.6.20
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,6 +22,9 @@ Best Hotel is a simple and elegant WordPress theme. It is mainly focused for hot
 
 == Changelog ==
 
+= 1.0.2 - Sep 30 2019 =
+* Minor bug fixes
+
 = 1.0.1 - Aug 15 2019 =
 * Update Font Awesome
 * Minor bug fixes
@@ -37,7 +40,6 @@ Best Hotel is a simple and elegant WordPress theme. It is mainly focused for hot
 * TRT Customizer https://github.com/justintadlock/trt-customizer-pro, (c) 2016 Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * TGM http://tgmpluginactivation.com/, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Breadcrumb Trail http://themehybrid.com/plugins/breadcrumb-trail/, (c) 2008 - 2015, Justin Tadlock, [GPLv2](https://www.gnu.org/licenses/gpl-2.0.html)
-* Sidr https://www.berriart.com/sidr/, (c) 2013-2016 Alberto Varela, [MIT](http://opensource.org/licenses/MIT)
 
 == Images ==
 

@@ -7,7 +7,7 @@
  * @package Best_Hotel
  */
 
-define( 'BEST_HOTEL_VERSION', '1.0.1' );
+define( 'BEST_HOTEL_VERSION', '1.0.2' );
 
 if ( ! function_exists( 'best_hotel_setup' ) ) :
 	/**
@@ -161,16 +161,22 @@ function best_hotel_scripts() {
 
 	wp_enqueue_style( 'best-hotel-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/all' . $min . '.css', '', '5.9.0' );
 
-	wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/third-party/sidr/css/jquery.sidr.dark' . $min . '.css', '', '2.2.1' );
 	wp_enqueue_style( 'best-hotel-style', get_stylesheet_uri(), array(), BEST_HOTEL_VERSION );
 
+	wp_enqueue_script( 'best-hotel-navigation', get_template_directory_uri() . '/js/navigation' . $min . '.js', array(), BEST_HOTEL_VERSION, true );
 	wp_enqueue_script( 'best-hotel-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
-	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/third-party/sidr/js/jquery.sidr' . $min . '.js', array( 'jquery' ), '2.2.1', true );
 	wp_enqueue_script( 'best-hotel-custom', get_template_directory_uri() . '/js/script' . $min . '.js', array( 'jquery' ), BEST_HOTEL_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_localize_script( 'best-hotel-navigation', 'bestHotelScreenReaderText', array(
+		'expandMain'   => __( 'Open the main menu', 'best-hotel' ),
+		'collapseMain' => __( 'Close the main menu', 'best-hotel' ),
+		'expandChild'   => __( 'expand submenu', 'best-hotel' ),
+		'collapseChild' => __( 'collapse submenu', 'best-hotel' ),
+	) );
 }
 
 add_action( 'wp_enqueue_scripts', 'best_hotel_scripts' );

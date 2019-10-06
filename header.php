@@ -28,20 +28,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'best-hotel' ); ?></a>
 
-	<div class="mobile-menu-wrap">
-		<a id="mobile-menu-control" href="#mobile-menu"><?php esc_html_e( 'Menu', 'best-hotel' ); ?></a>
-	</div><!-- .mobile-menu-wrap -->
-
-	<div id="mobile-menu">
-		<?php
-		wp_nav_menu( array(
-			'theme_location' => 'menu-1',
-			'container'      => '',
-			'fallback_cb'    => 'best_hotel_primary_menu_fallback',
-		) );
-		?>
-	</div><!-- #mobile-menu -->
-
 	<?php
 
 	$enable_transparent_header = get_post_meta( absint( get_the_ID() ), 'enable_transparent_header', true );
@@ -52,7 +38,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 		$header_class = 'site-header';
 	} ?>
 
-	<header id="masthead" class="<?php echo $header_class; ?>">
+	<header id="masthead" class="<?php echo esc_attr( $header_class ); ?>">
 		<div class="container">
 			<div class="head-wrap">
 				<div class="site-branding">
@@ -82,15 +68,21 @@ if ( function_exists( 'wp_body_open' ) ) {
 				</div><!-- .site-branding -->
 
 				<div class="navigation-wrap">
-					<nav id="site-navigation" class="main-navigation">
+					<button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" type="button">
+						<span aria-hidden="true"><?php _e( 'Menu', 'best-hotel' ); ?></span>
+						<span class="ticon" aria-hidden="true"></span>
+					</button>
+
+					<nav id="main-navigation" class="site-navigation primary-navigation" role="navigation">
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-							'fallback_cb'    => 'best_hotel_primary_menu_fallback',
+							'container' => 'ul',
+							'menu_id' => 'primary-menu',
+							'menu_class' => 'primary-menu menu',
 						) );
 						?>
-					</nav><!-- #site-navigation -->
+					</nav><!-- .site-navigation -->
 
 					<?php
 					$book_button_text = best_hotel_get_option( 'book_button_text' );

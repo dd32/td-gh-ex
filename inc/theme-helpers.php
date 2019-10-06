@@ -178,15 +178,17 @@ if ( ! function_exists( 'best_hotel_get_rooms' ) ) :
 		global $wpdb;
 		$output = array();
 
+		if ( ! best_hotel_is_abc_active() ) {
+			return $output;
+		}
+
 		$defaults = array (
 			'number' => 3
 			);
 
 		$args = wp_parse_args( $args, $defaults );
 
-		$rooms_query = $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}abc_calendars ORDER by name LIMIT 0, %d ", absint( $args['number'] ) );
-
-		$rooms_result = $wpdb->get_results( $rooms_query, ARRAY_A );
+		$rooms_result = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}abc_calendars ORDER by name LIMIT 0, %d ", absint( $args['number'] ) ), ARRAY_A );
 
 		if ( ! empty( $rooms_result ) ) {
 			foreach ( $rooms_result as $room ) {
