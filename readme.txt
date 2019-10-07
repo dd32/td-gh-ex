@@ -1,6 +1,6 @@
 === Attire ===
 
-Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars.
+Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars
 
 * Attire - WordPress Theme, Copyright 2018 wpattire.com
 * Attire - WordPress Theme is distributed under the terms of the GNU GPL v3.0
@@ -19,6 +19,9 @@ Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurp
 * CC0-licensed image from https://pixabay.com/ [https://pixabay.com/en/service/terms/]
 
 == Changelog ==
+
+= 1.2.6 - 2019.10.07 =
+* Added additional page specific option to control individual page header and site header
 
 = 1.2.5 - 2019.09.29 =
 * Improved mobile menu

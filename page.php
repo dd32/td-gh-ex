@@ -28,16 +28,6 @@ get_header();
                         <div class="clear"></div>
 						<?php do_action( "attire_before_content" ); ?>
                         <div class="entry-content">
-
-							<?php
-							$ph_active = AttireThemeEngine::NextGetOption( 'ph_active', false );
-
-							/*
-							if ( ! $ph_active ) {
-								?>
-                                <h1 class="page-title"><?php the_title(); ?></h1>
-							<?php } */  ?>
-
 							<?php the_post_thumbnail(); ?>
 							<?php the_content(); ?>
                             <div class="clear"></div>

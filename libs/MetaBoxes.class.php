@@ -29,6 +29,20 @@ class AttireMetaBoxes {
 				'priority'  => 'core',
 				'post_type' => 'page'
 			),
+            'attire-page-sidebar' => array(
+                'title'     => __( 'Sidebar Layout', 'attire' ),
+                'callback'  => array( $this, 'SidebarLayout' ),
+                'position'  => 'side',
+                'priority'  => 'core',
+                'post_type' => 'page'
+            ),
+            'attire-page-header' => array(
+                'title'     => __( 'Page Header', 'attire' ),
+                'callback'  => array( $this, 'PageHeader' ),
+                'position'  => 'side',
+                'priority'  => 'core',
+                'post_type' => 'page'
+            ),
 		 
 		);
 		$this->meta_boxes = apply_filters( "attire_metabox", $this->meta_boxes );
@@ -65,13 +79,18 @@ class AttireMetaBoxes {
 		}
 
 		wp_nonce_field( 'attire_page_layout_nonce', 'attire_page_layout_nonce' );
-		echo '<select class="form-control" id="page_width" name="attire_post_meta[layout_page]">';
+		echo "<div class='w3eden' style='padding-top: 10px'>";
+		echo '<select class="form-control wpdm-custom-select" id="page_width" name="attire_post_meta[layout_page]">';
 		echo '<option  value="default"  ' . esc_attr( $default ) . '>' . __( 'Theme Default', 'attire' ) . '</option>';
 		echo '<option  value="container-fluid"  ' . esc_attr( $container_fluid ) . '>' . __( 'Full-Width', 'attire' ) . '</option>';
 		echo '<option  value="container"  ' . esc_attr( $container ) . '> ' . __( 'Container', 'attire' ) . '</option>';
 		echo '</select>';
-		$this->SidebarLayout($post);
+		echo '</div>';
+
+
+
 	}
+
 
 	public function SidebarLayout($post)
         {
@@ -81,8 +100,6 @@ class AttireMetaBoxes {
             $imageDir = '/images/layouts/';
             $imguri = get_template_directory_uri() . $imageDir;
             ?>
-			<hr/>
-            <div class="customize-control-title"><strong><?php  _e( 'Sidebar Layout', 'attire' ); ?>:</strong></div>
             <div class="attire-sb-layout">
 				<div style="padding: 10px 0"><label>
                     <input <?php checked($sl, 'default') ?> type="radio" name="attire_post_meta[sidebar_layout]"
@@ -138,6 +155,21 @@ class AttireMetaBoxes {
             <?php
         }
 
+        function PageHeader( $post ){
+            $meta = get_post_meta( $post->ID, 'attire_post_meta', true );
+            $hide_site_header = isset($meta['hide_site_header']) ? (int)$meta['hide_site_header'] : 0;
+            $page_header = isset($meta['page_header']) ? (int)$meta['page_header'] : -1;
+            wp_nonce_field( 'attire_page_header_nonce', 'attire_page_header_nonce' );
+            echo "<div class='w3eden' style='padding-top: 10px'><div class='form-group'>";
+            echo '<select class="form-control wpdm-custom-select" id="page_header" name="attire_post_meta[page_header]">';
+            echo '<option  value="-1"  ' . selected( -1,  $page_header, false) . '>' . __( 'Theme Default', 'attire' ) . '</option>';
+            echo '<option  value="1"  ' . selected( 1,  $page_header, false) . '>' . __( 'Show', 'attire' ) . '</option>';
+            echo '<option  value="0"  ' . selected( 0,  $page_header, false) . '> ' . __( 'Hide', 'attire' ) . '</option>';
+            echo '</select></div>';
+            echo "<div class='panel panel-default'><div class='panel-heading'>".__('Site Header', 'attire')."</div><div class='panel-body'><input type='hidden' name='attire_post_meta[hide_site_header]' value='0'><input style='margin: -2px 3px 0 0' type='checkbox' ".checked(1, $hide_site_header, false)." name='attire_post_meta[hide_site_header]' value='1' id='htm'> <label style='font-weight: normal' for='htm'> ".__("Hide Top Menu", "attire")."</label></div></div>";
+            echo '</div>';
+        }
+
 
 	/**
 	 * @usage Save Post Meta
@@ -161,10 +193,7 @@ class AttireMetaBoxes {
 			$pagemeta = $_POST['attire_post_meta'];
 
 			if ( wp_verify_nonce( $_POST['attire_page_layout_nonce'], 'attire_page_layout_nonce' ) ) {
-
 				$pagemeta['layout_page'] = sanitize_text_field( $pagemeta['layout_page'] );
-
-
 			}
 
 			update_post_meta( $postid, 'attire_post_meta', $pagemeta );

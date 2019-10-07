@@ -1,12 +1,12 @@
 /*
 Theme Name: Attire
 Theme URI: https://wpattire.com/
-Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Demo: http://demo.wpattire.com/
+Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme. It was built with the Gutenberg editor in mind and offers hundreds of customisation options which allows to make a website look exactly the way you intended. Create any type of website, such as business agency, shop, corporate, education, restaurant, blog, portfolio, landing page and so on. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Try Demo: http://demo.wpattire.com. Attire is # WooCommerce Ready # Gutenberg Block Ready # RTL & Translation Ready # Also Compatible with all major page builders like elementor, divi, visual composer.
 Author: Shafayat
-Version: 1.2.5
+Version: 1.2.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
+Tags: blog, e-commerce, wide-blocks, block-styles, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
 Text Domain: attire
 */
 
@@ -442,8 +442,8 @@ span[id*=more-]:before {
 }
 
 .attire-content {
-	padding-top: 30px;
-	padding-bottom: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 #search-top a {
@@ -947,7 +947,7 @@ header li.nav-item:not(.desktop-search) a {
 	top: 0;
 	left: -305px;
 	height: 100vh;
-	z-index: 999;
+	z-index: 99999;
 	color: #fff;
 	transition: all 0.3s;
 	overflow-y: scroll;
@@ -1010,7 +1010,7 @@ header li.nav-item:not(.desktop-search) a {
 	height: 35px;
 	line-height: 35px;
 	text-align: center;
-	background: #7386D5;
+	background: rgba(0,0,0,0.3);
 	position: absolute;
 	top: 8px;
 	right: 10px;
@@ -1032,7 +1032,7 @@ header li.nav-item:not(.desktop-search) a {
 	width: 100vw;
 	height: 100vh;
 	background: rgba(0, 0, 0, 0.7);
-	z-index: 998;
+	z-index: 99998;
 	opacity: 0;
 	transition: all 0.5s ease-in-out;
 }
@@ -1517,6 +1517,20 @@ a.subscription-toggle {
 }
 
 /* END: TODO*/
+article.post .card .card-image{
+	display: block;
+	height: 224px;
+	overflow: hidden;
+	background: rgba(48, 67, 138, 0.03) url("images/icons/blank-images.svg") center center no-repeat;
+	background-size: 32px;
+	border-bottom: 1px solid #eee;
+}
+article.post .card .card-image img{
+	height: 100%;
+}
+.post-content.card-text {
+	min-height: 150px;
+}
 
 article.post.product {
 	position: relative;

@@ -10,7 +10,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
 	$stickable = ' stickable';
 }
 ?>
-    <div id="header-style-2" class="d-none d-md-block">
+    <div id="header-style-2" class="d-none d-lg-block">
         <header id="header-2" class="header navigation2">
             <!-- small menu -->
             <div class="small-menu <?php echo esc_attr( $nav_width ); ?>">

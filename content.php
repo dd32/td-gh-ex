@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <article <?php post_class( 'post' ); ?>>
 	<?php do_action( ATTIRE_THEME_PREFIX . 'before_content' ); ?>
     <div class="card">
-        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'attire-card-image', array('class' => 'card-img-top') ); ?></a>
+        <a class="card-image" href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'attire-card-image', array('class' => 'card-img-top') ); ?></a>
         <!-- /.post-thumb -->
         <div class="card-body">
             <?php do_action( ATTIRE_THEME_PREFIX . 'before_post_title' ); ?>
