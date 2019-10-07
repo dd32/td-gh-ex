@@ -211,9 +211,17 @@
 	$(window).scroll(function() {
 		if ($(this).scrollTop() > 1){  
 			$('#header-main-fixed-container').addClass("header-sticky");
+
+			if ( $(window).width() >= 800 ) {
+		      $('#navmain ul ul').css('right', '-99999px');
+		    }
 		}
 		else{
 			$('#header-main-fixed-container').removeClass("header-sticky");
+
+			if ( $(window).width() >= 800 ) {
+		      $('#navmain ul ul').css('right', 'auto');
+		    }
 		}
 	});
 

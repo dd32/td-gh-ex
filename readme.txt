@@ -6,7 +6,7 @@ theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.6
 Requires PHP: 5.6.0
-Stable tag: 1.0.4
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,12 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.5. Save Changes
 
 == Changelog ==
+
+= 1.1.8 =
+* font and layout updates
+
+= 1.1.7 =
+* bug fix: sub-menu display when scroll on Desktop screens
 
 = 1.1.6 =
 * bug fix: main menu 3rd level Desktop

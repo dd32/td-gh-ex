@@ -4,7 +4,7 @@ Description: AyaCoffeeShopPro is a fully responsive WordPress Theme. Features in
 Theme URI: https://ayatemplates.com/product/ayacoffeeshop
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.6
+Version: 1.1.8
 Text Domain: ayacoffeeshop
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -45,7 +45,7 @@ body:before {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -127,6 +127,15 @@ img {
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	opacity:0.7;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -1027,9 +1036,7 @@ article,
 	font-size: 32px;
 }
 
-.header-social-widget a:before {
-	font-size: 16px;
-}
+
 
 .header-social-widget a {
 	margin-top:3px;
@@ -1847,7 +1854,7 @@ img.wp-post-image {
 
 .post-date {
 	display:block;
-	margin:-5px 0 10px 13px;
+	margin:0 0 5px 15px;
 }
 
 .advanced-text-icon {
@@ -3209,7 +3216,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:16px;
+		font-size:14px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -3266,6 +3273,11 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
        -ms-animation: opacity 700ms ease-in-out normal;
        -o-animation: opacity 700ms ease-in-out normal;
        -webkit-animation: opacity 700ms ease-in-out normal;    
+    }
+
+    .header-sticky #navmain ul li:hover > ul,
+	.header-sticky #navmain ul li:focus-within > ul {
+       right:auto !important;    
     }
 
     /* add support of browsers which don't support focus-within */
