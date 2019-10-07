@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.8.9 =
+* update font sizes and layout
+
 = 1.8.8 =
 * fix issue with menu items display
 

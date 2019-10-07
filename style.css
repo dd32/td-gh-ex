@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.8.8
+Version: 1.8.9
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:"PT Sans",Arial,Helvetica,sans-serif;
-	font-size:16px;
+	font-size:14px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -36,7 +36,7 @@ body:before {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -119,6 +119,15 @@ img {
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	opacity:0.7;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -592,10 +601,10 @@ article,
     border-radius: 2px;
     display: block;
     float: left;
-    height: 20px;
+    height: 18px;
     padding: 5px;
     text-align: center;
-    width: 20px;
+    width: 18px;
 }
 
 #footer-main input[type="text"] {
@@ -621,7 +630,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:16px;
+	font-size:14px;
 }
 
 .footer-social-widget li {
@@ -895,9 +904,7 @@ article,
     font-size: 16px;
 }
 
-.header-social-widget a:before {
-	font-size: 16px;
-}
+
 
 .header-social-widget a {
 	display:inline-block;
@@ -1808,7 +1815,7 @@ img.wp-post-image {
 
 .post-date {
 	display:block;
-	margin:-5px 0 10px 13px;
+	margin:0 0 5px 15px;
 }
 
 #home-cols {
@@ -3285,7 +3292,7 @@ mark {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:16px;
+		font-size:14px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -3897,9 +3904,7 @@ mark {
 		font-size: 16px;
 	}
 
-	.header-social-widget a:before {
-		font-size: 16px;
-	}
+	
 	
 	.homepage-icon-link:before {
 		font-size:15px;
