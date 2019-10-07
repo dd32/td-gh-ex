@@ -4,7 +4,7 @@ Description: AyaMagazine is Fully Responsive Magazine WordPress Theme perfect fo
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamagazine
-Version: 1.1.8
+Version: 1.2.0
 Text Domain: ayamagazine
 Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -39,7 +39,7 @@ body:before {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -110,7 +110,8 @@ img {
 }
 
 #home-content-wrapper img,
-#main-content-wrapper img {
+#main-content-wrapper img,
+#footer-main img {
 	max-width:100%;
 	height:auto;
 	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -119,7 +120,8 @@ img {
 }
 
 #home-content-wrapper a:hover img,
-#main-content-wrapper a:hover img {
+#main-content-wrapper a:hover img,
+#footer-main a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
@@ -141,6 +143,15 @@ img {
 .wide-content .after-content,
 .wide-content .quote-content {
     padding-left:0;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -445,11 +456,7 @@ article ul > li:before {
 	padding:10px 0 10px 0;
 }
 
-.thumbnail-wrapper {
-	max-width:25%;
-	float:left;
-	margin-right:3%;
-}
+
 
 .author-icon {
 	line-height: 26px;
@@ -1252,7 +1259,7 @@ img.wp-post-image {
 
 .post-date {
 	display:block;
-	margin:-5px 0 10px 13px;
+	margin:0 0 5px 15px;
 }
 
 #page-header {
@@ -2501,7 +2508,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:16px;
+		font-size:14px;
 		white-space:nowrap;
 		display:inline-block;
 	}
