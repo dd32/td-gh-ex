@@ -18,6 +18,7 @@ fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Theme suitable fo
 music store, music events, solo artists, music bands, DJs website or blog, WooCommerce plugin support,
 Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text,
 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
+DEMO: https://tishonator.com/demo/fmuzz
 
 == Frequently Asked Questions ==
 
@@ -46,6 +47,13 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 1.5.7 =
+* update font sizes and layout
+
+= 1.5.6 =
+* add theme demo URL
+* add max width for images in footer
 
 = 1.5.5 =
 * fix issue with menu items display

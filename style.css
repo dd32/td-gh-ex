@@ -1,10 +1,10 @@
 /*!
 Theme Name: fMuzz
-Description: fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Theme suitable for a music producers, music store, music events, solo artists, music bands, DJs website or blog, WooCommerce plugin support, Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text, 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
+Description: fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Theme suitable for a music producers, music store, music events, solo artists, music bands, DJs website or blog, WooCommerce plugin support, Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text, 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more. DEMO: https://tishonator.com/demo/fmuzz
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.5.5
+Version: 1.5.7
 Text Domain: fmuzz
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:'Arimo',Arial,Helvetica,sans-serif;
-	font-size:16px;
+	font-size:14px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -40,7 +40,7 @@ body:before {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -112,7 +112,8 @@ img {
 }
 
 #home-content-wrapper img,
-#main-content-wrapper img {
+#main-content-wrapper img,
+#footer-main img {
 	max-width:100%;
 	height:auto;
 	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -121,11 +122,21 @@ img {
 }
 
 #home-content-wrapper a:hover img,
-#main-content-wrapper a:hover img {
+#main-content-wrapper a:hover img,
+#footer-main a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	opacity:1;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -518,7 +529,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:16px;
+	font-size:14px;
 }
 
 .footer-social-widget li {
@@ -896,9 +907,7 @@ article,
 	font-size: 32px;
 }
 
-.header-social-widget a:before {
-	font-size: 16px;
-}
+
 
 .header-social-widget a {
 	display:inline-block;
@@ -1720,7 +1729,7 @@ img.wp-post-image {
 
 .post-date {
 	display:block;
-	margin:-5px 0 10px 13px;
+	margin:0 0 5px 15px;
 }
 
 .advanced-text-icon {
@@ -3469,7 +3478,7 @@ mark {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:16px;
+		font-size:14px;
 		white-space:nowrap;
 		display:inline-block;
 	}
@@ -4078,9 +4087,7 @@ mark {
 		font-size: 16px;
 	}
 
-	.header-social-widget a:before {
-		font-size: 16px;
-	}
+	
 	
 	#header-top {
 		margin-top:5px;
