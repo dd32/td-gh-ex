@@ -4,7 +4,7 @@ Description: AyaMedicine is fully Responsive WordPress Theme with Built-in Homep
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamedicine
-Version: 1.1.8
+Version: 1.2.0
 Text Domain: ayamedicine
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -41,7 +41,7 @@ body:before {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -111,7 +111,8 @@ img {
 }
 
 #home-content-wrapper img,
-#main-content-wrapper img {
+#main-content-wrapper img,
+#footer-main img {
 	max-width:100%;
 	height:auto;
 	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -120,11 +121,21 @@ img {
 }
 
 #home-content-wrapper a:hover img,
-#main-content-wrapper a:hover img {
+#main-content-wrapper a:hover img,
+#footer-main a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	opacity:1;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -550,7 +561,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:16px;
+	font-size:14px;
 }
 
 .footer-social-widget li {
@@ -928,9 +939,7 @@ article,
 	font-size: 32px;
 }
 
-.header-social-widget a:before {
-	font-size: 16px;
-}
+
 
 .header-social-widget a {
 	display:inline-block;
@@ -1764,7 +1773,7 @@ img.wp-post-image {
 
 .post-date {
 	display:block;
-	margin:-5px 0 10px 13px;
+	margin:0 0 5px 15px;
 }
 
 .advanced-text-icon {
@@ -3706,9 +3715,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		font-size: 16px;
 	}
 
-	.header-social-widget a:before {
-		font-size: 16px;
-	}
+	
 		
 	.hr-top-shadowed {
 		background: url('images/hr-top-shadowed-small_.png') no-repeat; 
@@ -3827,9 +3834,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		margin-top: 5px;
 	}
 	
-	.header-social-widget a:before  {
-		font-size: 15px; 
-	}
+	
 	.header-social-widget li{
 		padding-right: 5px;
 	}
