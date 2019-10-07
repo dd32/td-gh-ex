@@ -298,7 +298,7 @@ Kirki::add_field('awada_theme', array(
 /* logo spacing */
 Kirki::add_field('awada_theme', array(
     'settings'          => 'logo_top_spacing',
-    'label'             => __('Logo Top Spacing', 'awada'),
+    'label'             => __('Logo Top & Bottom Spacing', 'awada'),
     'section'           => 'title_tagline',
     'type'              => 'slider',
     'priority'          => 40,
@@ -659,7 +659,7 @@ for ($i = 1; $i <= 3; $i++) {
         'settings' => 'slider_post_page_' . $i,
         'label'    => __('Link this slide to a post or page', 'awada'),
         'section'  => 'slider_sec',
-        'default'  => 'post',
+        'default'  => 'page',
         'priority' => 10,
         'choices'  => array(
             'post' => esc_attr__('Post', 'awada'),
@@ -681,13 +681,6 @@ for ($i = 1; $i <= 3; $i++) {
         'section'         => 'slider_sec',
         'priority'        => 10,
         'choices'         => Kirki_Helper::get_posts(array('posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DESC', 'post_type' => 'post', 'post_status' => 'publish')),
-        'required'  => array(
-            array(
-                'setting'  => 'slider_style',
-                'operator' => '!=',
-                'value'    => 3,
-            ),
-        ),
 		'active_callback' => array(
             array(
                 'setting'  => 'slider_post_page_' . $i,
@@ -695,6 +688,14 @@ for ($i = 1; $i <= 3; $i++) {
                 'value'    => 'post',
             ),
         ),
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        ),
+		'default'     => 0,
     ));
     Kirki::add_field('awada_theme', array(
         'settings'          => 'page_slider_' . $i,
@@ -716,7 +717,8 @@ for ($i = 1; $i <= 3; $i++) {
                 'operator' => '!=',
                 'value'    => 3,
             ),
-        )
+        ),
+		'default'     => 0,
     ));
     Kirki::add_field('awada_theme', array(
         'settings'          => 'slider_readmore_' . $i,
@@ -940,13 +942,13 @@ Kirki::add_field('awada_theme', array(
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'extra_post',
-    'label'             => __('Select a post', 'awada'),
-    'description'       => __('Select the post in which you have put shortcode.', 'awada'),
+    'label'             => __('Select a page', 'awada'),
+    'description'       => __('Select the page in which you have put shortcode or other content.', 'awada'),
     'section'           => 'extra_sec',
     'type'              => 'select',
     'priority'          => 10,
 	'default'           => $awada_theme_options['extra_post'],
-    'choices'           => Kirki_Helper::get_posts(array('posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DESC', 'post_type' => 'post', 'post_status' => 'publish')),
+    'choices'           => Kirki_Helper::get_posts(array('posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DESC', 'post_type' => 'page', 'post_status' => 'publish')),
     'sanitize_callback' => 'awada_sanitize_number',
 ));
 /* Portfolio */
@@ -1068,7 +1070,7 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'priority'          => 10,
     'default'           => array(),
-	'multiple'          => 1,
+	'multiple'          => 999,
     'choices'           => Kirki_Helper::get_terms( array('taxonomy' => 'category') ),
     'sanitize_callback' => 'awada_sanitize_number',
 ));
@@ -1388,7 +1390,7 @@ Kirki::add_field('awada_theme', array(
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_text_color',
-    'label'             => __('Footer Text Color', 'awada'),
+    'label'             => __('Footer Link Text Color', 'awada'),
     'description'       => __('Change Footer Text Color', 'awada'),
     'section'           => 'footer_sec',
     'type'              => 'color',

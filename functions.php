@@ -219,7 +219,7 @@ function awada_breadcrumbs()
     $text['cpage']    = esc_html__('Comment Page %s','awada'); // text 'Comment Page N'
     $wrap_before    = '<div class="breadcrumb pull-right" itemscope itemtype="http://schema.org/BreadcrumbList">'; // the opening wrapper tag
     $wrap_after     = '</div><!-- .breadcrumbs -->'; // the closing wrapper tag
-    $sep            = '<span class="breadcrumbs__separator">&nbsp;&nbsp;›&nbsp;&nbsp;</span>'; // separator between crumbs
+    $sep            = '<span class="breadcrumbs__separator">&nbsp;&nbsp;&rsaquo;&nbsp;&nbsp;</span>'; // separator between crumbs
     $before         = '<span class="breadcrumbs__current">'; // tag before the current crumb
     $after          = '</span>'; // tag after the current crumb
     $show_on_home   = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
@@ -429,8 +429,8 @@ function awada_pagination_link()
 {?>
     <div class="next_prev text-center">
 		<ul class="pager">
-			<li class="previous"><?php previous_post_link('%link', sprintf('&laquo %s',__('Older')));?></li>
-			<li class="next"><?php next_post_link('%link', sprintf('%s &raquo;',__('Newer')));?></li>
+			<li class="previous"><?php previous_post_link('%link', sprintf('&laquo %s',__('Older', 'awada')));?></li>
+			<li class="next"><?php next_post_link('%link', sprintf('%s &raquo;',__('Newer', 'awada')));?></li>
 		</ul>
 	</div><?php
 }

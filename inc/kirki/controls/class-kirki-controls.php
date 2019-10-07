@@ -4,8 +4,8 @@
  *
  * @package     Kirki
  * @subpackage  Controls
- * @copyright   Copyright (c) 2017, Aristeides Stathopoulos
- * @license     http://opensource.org/licenses/https://opensource.org/licenses/MIT
+ * @copyright   Copyright (c) 2019, Ari Stathopoulos (@aristath)
+ * @license     https://opensource.org/licenses/MIT
  * @since       3.0.17
  */
 
@@ -22,8 +22,11 @@ class Kirki_Controls {
 	 * @var array
 	 */
 	private $templates = array(
+		'code',
 		'color',
 		'generic',
+		'image',
+		'number',
 		'radio',
 		'select',
 		'textarea',
@@ -45,7 +48,6 @@ class Kirki_Controls {
 	 * @since 3.0.17
 	 */
 	public function __construct() {
-
 		if ( ! $this->views_path ) {
 			$this->views_path = wp_normalize_path( dirname( KIRKI_PLUGIN_FILE ) . '/controls/views/' );
 		}
@@ -57,13 +59,12 @@ class Kirki_Controls {
 	 *
 	 * @access public
 	 * @since 3.0.17
-	 * @return void
 	 */
 	public function underscore_templates() {
 		foreach ( $this->templates as $template ) {
 			if ( file_exists( $this->views_path . $template . '.php' ) ) {
 				echo '<script type="text/html" id="tmpl-kirki-input-' . esc_attr( $template ) . '">';
-				include $this->views_path . $template . '.php';
+				include $this->views_path . $template . '.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude
 				echo '</script>';
 			}
 		}

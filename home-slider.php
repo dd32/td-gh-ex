@@ -1,4 +1,5 @@
 <?php $awada_theme_options = awada_theme_options();
+//var_dump($awada_theme_options);
 if($awada_theme_options['home_slider_enabled']==1){
 	if( $awada_theme_options['slider_style'] == 3 ) {
 		if($awada_theme_options['home_slider_shortcode']!=""){
@@ -15,7 +16,6 @@ if($awada_theme_options['home_slider_enabled']==1){
                     }else{
                         $img_src =$awada_theme_options['slider_img_'.$i];
                     }
-
 						if ($i % 2 == 0){	$orientation = 'horizontal';	}
 						else{	$orientation = 'vertical';	}
 					?>
@@ -31,7 +31,7 @@ if($awada_theme_options['home_slider_enabled']==1){
 										 }
 	                                } else {
 	                                    if (isset($awada_theme_options['page_slider_' . $i]) && $awada_theme_options['page_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['page_slider_' . $i]);}
-	                                } ?>
+	                                } var_dump(get_permalink($awada_theme_options['page_slider_' . $i]));?>
 								<?php if($awada_theme_options['slider_subtitle_'.$i]!="" || $link!=""){?>
 								<blockquote>
 									<?php if($awada_theme_options['slider_subtitle_'.$i]!=""){?>
@@ -82,16 +82,16 @@ if($awada_theme_options['home_slider_enabled']==1){
 									<?php } ?>
 									<?php $link='';
 									if (isset($awada_theme_options['slider_post_page_' . $i]) && $awada_theme_options['slider_post_page_' . $i] == 'post') {
-										if (isset($awada_theme_options['post_slider_' . $i]) && $awada_theme_options['post_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['post_slider_' . $i]);
+										if (isset($awada_theme_options['post_slider_' . $i]) && $awada_theme_options['post_slider_' . $i] != '') {$link = get_permalink($awada_theme_options['post_slider_' . $i]);
 										 }
 									} else {
-										if (isset($awada_theme_options['page_slider_' . $i]) && $awada_theme_options['page_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['page_slider_' . $i]);}
+										if (isset($awada_theme_options['page_slider_' . $i]) && $awada_theme_options['page_slider_' . $i] != '') {$link = get_permalink($awada_theme_options['page_slider_' . $i]);}
 									} ?>
 									<?php if($awada_theme_options['slider_subtitle_'.$i]!="" || $link!=""){?>
 									<?php if($awada_theme_options['slider_subtitle_'.$i]!=""){?>
                                     <h3><p><?php echo wp_kses_post($awada_theme_options['slider_subtitle_'.$i]); ?></p></h3>
 									<?php } ?>
-									<?php if($link!='' && isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){?>
+									<?php if(isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){?>
                                     <a href="<?php echo esc_url($link); ?>" class="btn a-btn-classic btn-primary btn-lg append-button1 btn-shadow"><?php if(isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){ echo esc_html($awada_theme_options['slider_readmore_' . $i]); }?></a>
 									<?php }
 									} ?>

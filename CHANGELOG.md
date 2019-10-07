@@ -1,3 +1,10 @@
+###Version 2.1 [07-OCT-2019]
+* Slider button issue fixed.
+* Kirki library update.
+* minor bug fixed.
+###Version 2.0 [02-OCT-2019]
+* Breadcrumb icon issue fixed
+* Other minor bug fixed.
 ###Version 1.9 [01-OCT-2019]
 * Minor bug fixed.
 ###Version 1.8 [30-SEP-2019]
