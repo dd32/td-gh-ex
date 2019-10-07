@@ -42,6 +42,12 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.5 =
+* font and layout updates
+
+= 1.2.4 =
+* bug fix: maximum width added for footer images
+
 = 1.2.3 =
 * bug fix: main menu 3rd level Desktop
 
