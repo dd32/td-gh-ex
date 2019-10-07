@@ -4,7 +4,7 @@ Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Resp
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 2.0.7
+Version: 2.0.8
 Text Domain: fkidd
 Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -14,7 +14,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family: 'Lato', Arial, Helvetica, sans-serif;
-	font-size:16px;
+	font-size:14px;
 	margin:0;
 	padding:0;
 	background-color:#FFFFFF;
@@ -35,7 +35,7 @@ body:before {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -117,6 +117,15 @@ img {
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	opacity:0.7;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -328,8 +337,8 @@ dt.gallery-icon:before {
 
 #header-top {
     text-align:right;
-    font-size:18px;
-    padding:5px 0;
+    font-size:14px;
+    padding:5px 0 20px 0;
 }
 
 #header-top #header-phone {
@@ -607,7 +616,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:16px;
+	font-size:14px;
 }
 
 .footer-social-widget li {
@@ -882,9 +891,7 @@ article,
     font-size: 16px;
 }
 
-.header-social-widget a:before {
-	font-size: 18px;
-}
+
 
 .header-social-widget a {
 	display:inline-block;
@@ -3266,7 +3273,7 @@ mark {
 	
 	#navmain ul a {
 		padding:17px 5px;
-		font-size:16px;
+		font-size:14px;
 		white-space:nowrap;
 		display:inline-block;
 	}
