@@ -3,21 +3,21 @@
 		<?php if ( is_single() || is_page() ) {
 			the_title();
 		} else { ?>
-            <a href="<?php echo esc_url( get_permalink() ); ?>"> <?php the_title(); ?> </a>
+            <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a>
 		<?php } ?>
     </h3>
     <hr>
 
 	<?php
 	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( 'blog-thumb' );  /* post thumbnail */
+		the_post_thumbnail( 'astral-blog-thumb' );  /* post thumbnail */
 	}
 	?>
 
 	<?php
 	if ( is_single() || is_home() ) { ?>
         <div class="metabox">
-            <span class="entry-date"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></span>
+            <span class="entry-date"><i class="fa fa-calendar"></i><?php echo esc_html( get_the_date() ); ?></span>
 
             <span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>"><i class="fa fa-user"></i> <?php the_author_meta( 'display_name' ); ?></a></span>
 
@@ -43,14 +43,14 @@
         </div>
 	<?php }
 
-	if ( is_single() ) {
+	if ( is_single() || is_page() ) {
 		the_content();
 	} else {
 		the_excerpt();
 	}
 
-	if ( ! is_single() ) { ?>
-        <a class="single" target="_blank" href="<?php echo esc_url( get_permalink() ); ?>"> <?php esc_html_e( 'Read More', 'astral' ); ?> </a>
+	if ( ! is_page() && ! is_single() ) { ?>
+        <a class="single" target="_blank" href="<?php the_permalink(); ?>"> <?php esc_html_e( 'Read More', 'astral' ); ?> </a>
 	<?php }
 
 	$defaults = array(

@@ -5,7 +5,6 @@
  * @package Astral
  * @since 0.1
  */
-
 class astral_Customizer extends astral_Abstract_Main {
 
 	public function __construct() {
@@ -16,7 +15,6 @@ class astral_Customizer extends astral_Abstract_Main {
 
 	public function init() {
 	}
-
 
 	function astral_customize_register( $wp_customize ) {
 
@@ -31,6 +29,29 @@ class astral_Customizer extends astral_Abstract_Main {
 		$wp_customize->add_panel( 'astral_theme_option', array(
 			'title'    => __( 'Theme Settings', 'astral' ),
 			'priority' => 1, // Mixed with top-level-section hierarchy.
+		) );
+		
+		/* social icon section */
+		$wp_customize->add_section( 'astral_general_settings', array(
+			'title'      => __( 'General Settings', 'astral' ),
+			'panel'      => 'astral_theme_option',
+			'capability' => 'edit_theme_options',
+			'priority'   => 35,
+		) );
+		
+		$wp_customize->add_setting( 'astral_frontpage_show', array(
+			'type'              => 'theme_mod',
+			'default'           => '',
+			'sanitize_callback' => 'astral_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		) );
+
+		$wp_customize->add_control( 'astral_frontpage_show', array(
+			'label'    => __( 'Frontpage Template', 'astral' ),
+			'description' => __( 'Click to keep the frontpage template?', 'astral' ),
+			'type'     => 'checkbox',
+			'section'  => 'astral_general_settings',
+			'settings' => 'astral_frontpage_show',
 		) );
 
 		/* social icon section */
@@ -589,10 +610,5 @@ class astral_Customizer extends astral_Abstract_Main {
 			return $input;
 		}
 	}
-
 }
-
 new astral_Customizer();
-
-
-

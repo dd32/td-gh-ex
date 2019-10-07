@@ -45,7 +45,7 @@ class astral_Blog_Section extends astral_Abstract_Main {
                         <div class="swiper-slide">
                             <div class="card h-100 wow bounceInRight">
                                 <div class="card-header p-0  position-relative">
-									<span class="blog-date"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
+									<span class="blog-date"><i class="fa fa-calendar"></i> <?php echo esc_html( get_the_date() ); ?>
 									</span>
 									<a title="<?php the_title_attribute(); ?>" href="<?php echo esc_url( get_permalink() ); ?>">
 									<?php if ( has_post_thumbnail() ) :
@@ -70,5 +70,4 @@ class astral_Blog_Section extends astral_Abstract_Main {
 <?php
 	}
 }
-
 $astral_Blog_Section = new astral_Blog_Section();

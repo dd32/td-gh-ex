@@ -50,7 +50,7 @@ class astral_Service_Section extends astral_Abstract_Main {
                                             <div class="col-9">
                                                 <div class="abt-txt">
                                                     <h4><a href="<?php echo esc_url( $service_link ); ?>"
-                                                           target="_blank">                                        <?php echo esc_html( $service_title ); ?></a>
+                                                           target="_blank"><?php echo esc_html( $service_title ); ?></a>
                                                     </h4>
                                                     <p><?php echo esc_html( $service_desc ); ?></p>
                                                 </div>
@@ -66,5 +66,4 @@ class astral_Service_Section extends astral_Abstract_Main {
 		<?php endif;
 	}
 }
-
 $astral_Service_Section = new astral_Service_Section();

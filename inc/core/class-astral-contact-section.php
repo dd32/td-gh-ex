@@ -91,5 +91,4 @@ class astral_Contact_Section extends astral_Abstract_Main {
 		<?php endif;
 	}
 }
-
 $astral_Contact_Section = new astral_Contact_Section();

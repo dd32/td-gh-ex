@@ -6,7 +6,6 @@
 * @package Astral
 * @since 0.1
 */
-
 /* 
 * Functions hooked into astral_action_doctype action
 *

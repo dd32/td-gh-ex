@@ -17,4 +17,3 @@ abstract class astral_Abstract_Main {
 	 */
 	abstract public function init();
 }
-

@@ -3,14 +3,12 @@
 * search template 
 */
 get_header();
-
 /* 
 * Functions hooked into astral_top_banner action
 * 
 * @hooked astral_inner_banner
 */
 do_action( 'astral_top_banner' );
-
 /* 
 * Functions hooked into astral_breadcrumb_area action
 * 

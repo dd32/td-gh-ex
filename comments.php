@@ -52,8 +52,8 @@ if ( post_password_required() ) {
 	if ( comments_open() ) { ?>
         <div class="leave-coment-form">
 			<?php $fields = array(
-				'author' => '<div class="row"><div class="col-sm-6 form-group"><input name="author" id="name" type="text" id="exampleInputEmail1" class="form-control" placeholder="Name"></div>',
-				'email'  => '<div class="col-sm-6 form-group"><input  name="email" id="email" type="text" class="form-control" placeholder="Email"></div></div>',
+				'author' => '<div class="row"><div class="col-sm-6 form-group"><input name="author" id="name" type="text" id="exampleInputEmail1" class="form-control" placeholder="'.esc_attr( 'Name' ).'"></div>',
+				'email'  => '<div class="col-sm-6 form-group"><input  name="email" id="email" type="text" class="form-control" placeholder="'.esc_attr( 'Email' ).'"></div></div>',
 			);
 			function astral_fields( $fields ) {
 				return $fields;
@@ -63,7 +63,7 @@ if ( post_password_required() ) {
 			$defaults = array(
 				'fields'         => apply_filters( 'astral_comment_form', $fields ),
 				'comment_field'  => '<div class="leave-coment-form"><div class="form-group">
-			<textarea id="comment" name="comment" class="form-control" placeholder="Your comment here..." required=""></textarea></div></div>',
+			<textarea id="comment" name="comment" class="form-control" placeholder="'.esc_attr( 'Your comment here...' ).'" required=""></textarea></div></div>',
 				'logged_in_as'   => '<p class="logged-in-as">' . __( "Logged in as ", 'astral' ) . '<a href="' . admin_url( 'profile.php' ) . '">' . $user_identity . '</a>' . '<a href="' . wp_logout_url( get_permalink() ) . '" title="Log out of this account">' . __( " Log out?", 'astral' ) . '</a>' . '</p>',
 				/* translators: %s: reply to name */
 				'title_reply_to' => __( 'Leave a Reply to %s', 'astral' ),

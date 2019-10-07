@@ -4,7 +4,6 @@
  *
  * @package Astral
  */
-
 if ( ! function_exists( 'astral_footer_widget' ) ) :
 	/**
 	 * footer widget area
@@ -13,7 +12,6 @@ if ( ! function_exists( 'astral_footer_widget' ) ) :
 		?>
         <div class="container">
             <div class="row p-sm-4 py-3">
-
 				<?php
 				if ( is_active_sidebar( 'footer-widget' ) ) {
 					dynamic_sidebar( 'footer-widget' );
@@ -27,7 +25,6 @@ if ( ! function_exists( 'astral_footer_widget' ) ) :
 					the_widget( 'WP_Widget_Pages', null, $args );
 				}
 				?>
-
             </div>
         </div>
 		<?php
@@ -49,5 +46,3 @@ if ( ! function_exists( 'astral_copyright' ) ) :
 		<?php
 	}
 endif;
-
-?>

@@ -11,7 +11,6 @@
  * @since 0.1
  */
 get_header();
-
 /* 
 * Functions hooked into astral_top_banner action
 * 

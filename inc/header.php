@@ -4,23 +4,15 @@
  *
  * @package Astral
  */
-?>
-
-<?php
 if ( ! function_exists( 'astral_doctype' ) ) :
-
-	function astral_doctype() {
-		?>
+	function astral_doctype() { ?>
         <!doctype html>
         <html <?php language_attributes(); ?>>
 		<?php
 	}
 endif;
-?>
 
-<?php
 if ( ! function_exists( 'astral_head' ) ) :
-
 	function astral_head() { ?>
         <!-- Meta tag Keywords -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,11 +23,8 @@ if ( ! function_exists( 'astral_head' ) ) :
 		<?php }
 	}
 endif;
-?>
 
-<?php
 if ( ! function_exists( 'astral_page_start' ) ) :
-
 	function astral_page_start() {
 		$astral_phoneno = get_theme_mod( 'astral_phoneno' );
 		$astral_address = get_theme_mod( 'astral_address' );
@@ -99,20 +88,19 @@ if ( ! function_exists( 'astral_page_start' ) ) :
 							$linkedin_link   = get_theme_mod( 'linkedin_link' );
 							if ( get_theme_mod( 'facebook_link' ) ) { ?>
                                 <li><a target="_blank" href="<?php echo esc_url( $facebook_link ); ?>"
-                                       class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a>
+                                       class="icoFacebook"><i class="fa fa-facebook"></i></a>
                                 </li> <?php } ?>
 							<?php if ( get_theme_mod( 'twitter_link' ) ) { ?>
-                                <li><a target="_blank" href="<?php echo esc_url( $twitter_link ); ?>" class="icoTwitter"
-                                       title="Twitter"><i class="fa fa-twitter"></i></a>
+                                <li><a target="_blank" href="<?php echo esc_url( $twitter_link ); ?>" class="icoTwitter" ><i class="fa fa-twitter"></i></a>
                                 </li> <?php } ?>
 							<?php if ( get_theme_mod( 'googleplus_link' ) ) { ?>
                                 <li><a target="_blank" href="<?php echo esc_url( $googleplus_link ); ?>"
-                                       class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a>
+                                       class="icoGoogle"><i class="fa fa-google-plus"></i></a>
                                 </li> <?php } ?>
 							<?php if ( get_theme_mod( 'linkedin_link' ) ) { ?>
-                                <li><a target="_blank" href="<?php echo esc_url( $linkedin_link ); ?>"
-                                       class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                                </li> <?php } ?>
+                                <li><a target="_blank" href="<?php echo esc_url( $linkedin_link ); ?>" class="icoLinkedin"><i class="fa fa-linkedin"></i></a>
+                                </li> 
+							<?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -121,11 +109,8 @@ if ( ! function_exists( 'astral_page_start' ) ) :
 		<?php
 	}
 endif;
-?>
 
-<?php
 if ( ! function_exists( 'astral_menus' ) ) :
-
 	function astral_menus() { ?>
         <div class="menu1" id="main-menu">
             <div id="app" class="container">
@@ -156,4 +141,3 @@ if ( ! function_exists( 'astral_menus' ) ) :
         </div>
 	<?php }
 endif;
-?>

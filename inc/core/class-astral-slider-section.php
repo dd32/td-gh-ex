@@ -62,5 +62,4 @@ class astral_Slider_Section extends astral_Abstract_Main {
 		<?php endif;
 	}
 }
-
 $astral_Slider_Section = new astral_Slider_Section();

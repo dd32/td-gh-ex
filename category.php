@@ -14,7 +14,7 @@ do_action( 'astral_top_banner' ); ?>
                 <li class="breadcrumb-item">
                     <a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Home', 'astral' ); ?></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page"><?php echo single_cat_title(); ?></li>
+                <li class="breadcrumb-item active" aria-current="page"><?php single_cat_title(); ?></li>
             </ol>
 		<?php } ?>
     </nav>

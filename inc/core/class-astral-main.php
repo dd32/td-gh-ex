@@ -1,5 +1,4 @@
 <?php
-
 class astral_main {
 
 	function __construct() {
@@ -7,6 +6,7 @@ class astral_main {
 		add_action( 'after_setup_theme', array( $this, 'astral_setup_theme' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'astral_scripts' ) );
 		add_action( 'widgets_init', array( $this, 'astral_register_sidebars' ) );
+		add_action( 'wp_footer', array( $this, 'astral_footer_script' ) );
 	}
 
 	function astral_setup_theme() {
@@ -40,8 +40,8 @@ class astral_main {
 		add_theme_support( 'post-thumbnails' );
 
 		/* image size */
-		add_image_size( 'blog-thumb', 700, 430, true );
-		add_image_size( 'about-thumb', 540, 430, true );
+		add_image_size( 'astral-blog-thumb', 700, 430, true );
+		add_image_size( 'astral-about-thumb', 540, 430, true );
 
 		add_theme_support( 'title-tag' );
 
@@ -71,7 +71,7 @@ class astral_main {
 		wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/css/swiper.min.css' );
 
 		// Enqueue JS for theme 
-		wp_enqueue_script( "jquery" );
+		/* wp_enqueue_script( "jquery" ); */
 
 		wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/js/swiper.min.js' );
 
@@ -79,6 +79,10 @@ class astral_main {
 		wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/js/wow.js', array( 'jquery' ) );
 		wp_enqueue_script( 'astral-theme-script', get_template_directory_uri() . '/js/astral-theme-script.js' );
 
+	}
+	
+	function astral_footer_script() {
+		wp_enqueue_script( 'astral-footer-script', get_template_directory_uri() . '/js/astral-footer-script.js' );
 	}
 
 	function astral_register_sidebars() {
@@ -108,6 +112,5 @@ class astral_main {
 		);
 	}
 }
-
 /* initialize class */
 new astral_main();

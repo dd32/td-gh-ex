@@ -49,5 +49,4 @@ class astral_Callout_Section extends astral_Abstract_Main {
 		<?php endif;
 	}
 }
-
 $astral_Callout_Section = new astral_Callout_Section();

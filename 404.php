@@ -8,14 +8,12 @@
  * @since 0.1
  */
 get_header(); 
-
 /* 
 * Functions hooked into astral_top_banner action
 * 
 * @hooked astral_inner_banner
 */
 do_action( 'astral_top_banner' ); 
-
 /* 
 * Functions hooked into astral_breadcrumb_area action
 * 
@@ -32,7 +30,7 @@ do_action( 'astral_breadcrumb_area' );
 			<p><?php esc_html_e( 'Page cannot be found', 'astral' ); ?></p>
 			<?php get_search_form(); ?>
 			<div class="hom">
-				<a href="<?php echo esc_url( home_url() ); ?>"> <?php esc_html_e( 'Go Home', 'astral' ); ?></a>
+				<a href="<?php echo esc_url( home_url("/") ); ?>"> <?php esc_html_e( 'Go Home', 'astral' ); ?></a>
 			</div>
 		</div>
 	</div>

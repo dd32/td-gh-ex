@@ -1,7 +1,6 @@
 <?php /*
 * theme extra functions 
 */
-
 /* inner banner */
 function astral_inner_banner() { ?>
     <div class="inner-banner d-flex flex-column justify-content-center align-items-center"
@@ -56,7 +55,6 @@ endif;
 
 /* breadcrumb */
 if ( ! function_exists( 'astral_breadcrumb' ) ) :
-
 	function astral_breadcrumb() { ?>
         <nav aria-label="breadcrumb">
 			<?php if ( have_posts() ) { ?>
@@ -108,9 +106,7 @@ if ( ! function_exists( 'astral_breadcrumb' ) ) :
                     </li>
 
                     <li class="breadcrumb-item"><?php esc_html_e( '404 Error', 'astral' ); ?></li>
-
                 </ol>
-
 			<?php } ?>
         </nav>
 		<?php
@@ -130,25 +126,21 @@ function astral_post_navigation() { ?>
     </div>
 	<?php
 }
-
 add_action( 'astral_single_blog_navigation', 'astral_post_navigation' );
 
 /* pagination link for index, author, category, tag pages */
 function astral_navigation() { ?>
-
     <div class="navigation">
 		<?php posts_nav_link(); ?>
     </div>
 	<?php
 }
-
 add_action( 'astral_pagination', 'astral_navigation' );
 
 /* excerpt length */
 function astral_excerpt_length( $length ) {
 	return 30;
 }
-
 add_filter( 'excerpt_length', 'astral_excerpt_length' );
 
 /* wp_body_open function check */
