@@ -5,7 +5,7 @@ Theme URI: https://ayatemplates.com/product/ayabiostorelite
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayaclub
-Version: 1.0.9
+Version: 1.1.1
 Text Domain: ayabiostorelite
 Tags: e-commerce, news, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* general styles */
 body {
 	font-family:'Work Sans', Arial, Helvetica, sans-serif;
-	font-size:16px;
+	font-size:14px;
 	margin:0;
 	padding:0;
 	background-color:#ebe6e2;
@@ -24,7 +24,7 @@ body {
 }
 
 .icon:before {
-    font-size: 18px;
+    font-size: 14px;
     margin-right: 5px;
 }
 
@@ -94,7 +94,8 @@ img {
 }
 
 #home-content-wrapper img,
-#main-content-wrapper img {
+#main-content-wrapper img,
+#footer-main img {
 	max-width:100%;
 	height:auto;
 	-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -103,11 +104,21 @@ img {
 }
 
 #home-content-wrapper a:hover img,
-#main-content-wrapper a:hover img {
+#main-content-wrapper a:hover img,
+#footer-main a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	opacity:1;
+}
+
+article,
+.recent-posts-slider-after-content {
+	line-height:1.5;
+}
+
+.jcarousel-skin h3 {
+	font-size:16px;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -562,7 +573,7 @@ article,
 }
 
 .footer-social-widget a:before {
-	font-size:16px;
+	font-size:14px;
 }
 
 .footer-social-widget li {
@@ -935,9 +946,7 @@ article,
 	font-size: 32px;
 }
 
-.header-social-widget a:before {
-	font-size: 16px;
-}
+
 
 .header-social-widget a {
 	display:inline-block;
@@ -1747,7 +1756,7 @@ img.wp-post-image {
 
 .post-date {
 	display:block;
-	margin:-5px 0 10px 13px;
+	margin:0 0 5px 15px;
 }
 
 .advanced-text-icon {
@@ -4314,9 +4323,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 		font-size: 16px;
 	}
 
-	.header-social-widget a:before {
-		font-size: 16px;
-	}
+	
 
 	#hdrtop-searchform-subcontent:before {
 		width:30px;

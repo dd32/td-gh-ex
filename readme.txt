@@ -44,6 +44,12 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.1 =
+* font and layout updates
+
+= 1.1.0 =
+* bug fix: maximum width added for footer images
+
 = 1.0.9 =
 * bug fix: main menu 3rd level Desktop
 
