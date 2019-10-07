@@ -63,6 +63,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.9 =
+* font and layout updates
+
 = 1.0.8 =
 * bug fix: main menu 3rd level Desktop
 
