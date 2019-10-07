@@ -4,7 +4,7 @@
 ?>
 
 <?php 
-	for($slide =1; $slide<4; $slide++) 
+	for($slide =1; $slide<3; $slide++) 
 	{
 		if( get_theme_mod('slider-page'.$slide)) 
 		{
@@ -41,24 +41,24 @@
 			<div class="item">
 			
 				<figure>
-					<?php $image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
-					if( !empty($image) ) { ?>
-							<img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title_attribute();?>" >
-						<?php } else { ?>
-							<img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slider/default.jpg" title="<?php the_title_attribute(); ?>" />
-					<?php } ?>
+					<?php
+						$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+						$thumbnail_id = get_post_thumbnail_id( $post->ID );
+						$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+					?>
+					<img src="<?php echo esc_url($image);?>" alt="<?php echo esc_attr($alt); ?>">
 				</figure>
 
 				<div class="specia-slider">
 					<div class="container inner-table">
 						<div class="inner-table-cell">
 							<div class="caption verticle-center text-center wow zoomIn">
-								<h1 class="wow fadeInDown animated" data-wow-delay="0.4s"><?php echo $title; ?></span></h1>
+								<h1 class="wow fadeInDown animated" data-wow-delay="0.4s"><?php echo wp_filter_post_kses($title); ?></span></h1>
 								<?php echo $content; ?>
 								
 								<?php if( get_post_meta(get_the_ID(),'slidebutton', true ) ): ?>
-									<a href="<?php echo get_post_meta( get_the_ID(),'slidebutton', true); ?>" class="specia-btn-1">
-										<?php echo _e( 'Read More','avira' ); ?> 
+									<a href="<?php echo esc_url( get_post_meta( get_the_ID(),'slidebutton', true) ); ?>" class="specia-btn-1">
+										<?php echo esc_html_e( 'Read More','avira' ); ?> 
 									</a>
 								<?php
 									endif;
@@ -76,4 +76,4 @@
 
 	<div class="clearfix"></div>
 
-<?php } endif; ?>
+<?php } wp_reset_postdata(); endif; ?>
