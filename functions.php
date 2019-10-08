@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.26' );
+define( 'AVANT_THEME_VERSION' , '1.1.27' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -153,7 +153,7 @@ function avant_scripts() {
 		if ( !get_theme_mod( 'avant-disable-default-fonts-only', customizer_library_get_default( 'avant-disable-default-fonts-only' ) ) ) {
 			wp_enqueue_style( 'avant-title-font', '//fonts.googleapis.com/css?family=Parisienne', array(), AVANT_THEME_VERSION );
 			wp_enqueue_style( 'avant-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans', array(), AVANT_THEME_VERSION );
-			wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
+			wp_enqueue_style( 'avant-heading-font-default', '//fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
 		}
 	}
 

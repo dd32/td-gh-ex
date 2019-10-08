@@ -73,14 +73,24 @@ global $woocommerce; ?>
 		
 		<div class="site-container">
 			<div class="site-header-top-left">
-				
-				<nav id="site-navigation" class="main-navigation avant-nav-style-plain" role="navigation">
-					<span class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'avant-header-menu-text', __( 'menu', 'avant' ) ) ); ?></span></span>
-					<div id="main-menu" class="main-menu-container">
-						<span class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></span>
+
+				<?php if ( get_theme_mod( 'avant-plugin-mega-menu', customizer_library_get_default( 'avant-plugin-mega-menu' ) ) ) : ?>
+
+					<nav class="main-navigation-mm">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-					</div>
-				</nav><!-- #site-navigation -->
+					</nav><!-- #site-navigation -->
+
+				<?php else : ?>
+				
+					<nav id="site-navigation" class="main-navigation avant-nav-style-plain" role="navigation">
+						<span class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'avant-header-menu-text', __( 'menu', 'avant' ) ) ); ?></span></span>
+						<div id="main-menu" class="main-menu-container">
+							<span class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></span>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+						</div>
+					</nav><!-- #site-navigation -->
+
+				<?php endif; ?>
 				
 			</div>
 			

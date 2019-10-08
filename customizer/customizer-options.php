@@ -1623,6 +1623,24 @@ function customizer_library_avant_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />- Change Social Icons to their brand colors<br />- Premium offers a bunch of extra Social Links<br />- Plus 3 custom inputs for your own links', 'avant' )
     );
 
+    // Site Plugins Support
+    $section = 'avant-plugin-support-section';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Plugin Support', 'avant' ),
+        'priority' => '120',
+        'description' => __( 'Avant adds/removes custom styling to support external plugins', 'avant' )
+    );
+
+    $options['avant-plugin-mega-menu'] = array(
+        'id' => 'avant-plugin-mega-menu',
+        'label'   => __( 'Mega Menu', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
+
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;

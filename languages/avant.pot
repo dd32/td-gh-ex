@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-10-02 13:50+0200\n"
+"POT-Creation-Date: 2019-10-08 17:19+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1218,6 +1218,18 @@ msgid ""
 "custom inputs for your own links"
 msgstr ""
 
+#: customizer/customizer-options.php:1631
+msgid "Plugin Support"
+msgstr ""
+
+#: customizer/customizer-options.php:1633
+msgid "Avant adds/removes custom styling to support external plugins"
+msgstr ""
+
+#: customizer/customizer-options.php:1638
+msgid "Mega Menu"
+msgstr ""
+
 #: functions.php:74
 msgid "Top Bar Menu"
 msgstr ""
@@ -1796,24 +1808,24 @@ msgid "% Comments"
 msgstr ""
 
 #: includes/inc/woocommerce-header-inc.php:9
-#: templates/header/header-layout-five.php:86
-#: templates/header/header-layout-four.php:84
-#: templates/header/header-layout-one.php:60
-#: templates/header/header-layout-seven.php:124
-#: templates/header/header-layout-six.php:61
+#: templates/header/header-layout-five.php:94
+#: templates/header/header-layout-four.php:92
+#: templates/header/header-layout-one.php:68
+#: templates/header/header-layout-seven.php:132
+#: templates/header/header-layout-six.php:69
 #: templates/header/header-layout-three.php:78
-#: templates/header/header-layout-two.php:93
+#: templates/header/header-layout-two.php:103
 msgid "View your shopping cart"
 msgstr ""
 
 #: includes/inc/woocommerce-header-inc.php:11
-#: templates/header/header-layout-five.php:88
-#: templates/header/header-layout-four.php:86
-#: templates/header/header-layout-one.php:62
-#: templates/header/header-layout-seven.php:126
-#: templates/header/header-layout-six.php:63
+#: templates/header/header-layout-five.php:96
+#: templates/header/header-layout-four.php:94
+#: templates/header/header-layout-one.php:70
+#: templates/header/header-layout-seven.php:134
+#: templates/header/header-layout-six.php:71
 #: templates/header/header-layout-three.php:80
-#: templates/header/header-layout-two.php:95
+#: templates/header/header-layout-two.php:105
 #, php-format
 msgid "%d item"
 msgid_plural "%d items"
@@ -1905,13 +1917,13 @@ msgstr ""
 msgid "Add your own widgets here"
 msgstr ""
 
-#: templates/header/header-layout-five.php:75
-#: templates/header/header-layout-four.php:73
-#: templates/header/header-layout-one.php:51
-#: templates/header/header-layout-seven.php:113
-#: templates/header/header-layout-six.php:52
-#: templates/header/header-layout-three.php:101
-#: templates/header/header-layout-two.php:78
+#: templates/header/header-layout-five.php:83
+#: templates/header/header-layout-four.php:81
+#: templates/header/header-layout-one.php:59
+#: templates/header/header-layout-seven.php:121
+#: templates/header/header-layout-six.php:60
+#: templates/header/header-layout-three.php:109
+#: templates/header/header-layout-two.php:86
 msgid "menu"
 msgstr ""
 

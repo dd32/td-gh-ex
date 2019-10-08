@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.27
+* Style tweaks/fixes
+* Added fix for Mega Menu plugin to control the navigation area - Customize -> Plugin Support
+* Updated the language .pot file
+Premium: Added setting to show logo & tagline ONLY on home page for Header Layout One
+
 #### 1.1.26
 * Style tweaks/fixes
 * Added indent for Product categories sub-categories
