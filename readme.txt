@@ -4,11 +4,11 @@ Author: ThemeArile
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2.2
 Requires PHP: 5.6
-Stable tag: 0.5
-Version: 0.5
+Stable tag: 0.6
+Version: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns ,right-sidebar, flexible-header, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
+Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
 
 == Description ==
 
@@ -52,6 +52,9 @@ License: MIT (http://opensource.org/licenses/MIT)
 License: CC0 Public Domain
 
 == Changelog ==
+
+= Version 0.6
+* Remove accessibility-ready tag.
 
 = Version 0.5
 * Fixed Theme Review Issues.
