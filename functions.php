@@ -126,6 +126,24 @@ function azeria_setup() {
 		'default-color' => 'f3f3f3',
 		'default-image' => '',
 	) ) );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Enqueue editor styles.
+	add_editor_style( 'style-editor.css' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
 }
 endif; // azeria_setup
 add_action( 'after_setup_theme', 'azeria_setup' );
@@ -181,18 +199,21 @@ add_action( 'widgets_init', 'azeria_widgets_init' );
  */
 function azeria_assets() {
 
+	$template      = get_template();
+	$theme_obj     = wp_get_theme( $template );
+	$theme_version = $theme_obj->get( 'Version' );
+
 	$base_url = get_template_directory_uri();
 
 	// Styles
 	wp_enqueue_style( 'azeria-fonts', azeria_fonts_url() );
-	wp_enqueue_style( 'azeria-font-awesome', $base_url . '/css/font-awesome.min.css', false, '4.5.0' );
-	wp_enqueue_style( 'azeria-style', get_stylesheet_uri(), false, '1.1.0' );
+	wp_enqueue_style( 'azeria-style', get_stylesheet_uri(), false, $theme_version );
 
 	// Scripts
-	wp_enqueue_script( 'azeria-slick-slider', $base_url . '/js/slick.js', array( 'jquery' ), '1.5.0', true );
-	wp_enqueue_script( 'azeria-magnific-popup', $base_url . '/js/jquery.magnific-popup.js', array( 'jquery' ), '1.0.0', true );
-	wp_enqueue_script( 'azeria-navigation', $base_url . '/js/navigation.js', array( 'jquery', 'hoverIntent' ), '20120206', true );
-	wp_enqueue_script( 'azeria-skip-link-focus-fix', $base_url . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'jquery-slick', $base_url . '/js/slick.min.js', array( 'jquery' ), '1.8.1', true );
+	wp_enqueue_script( 'jquery-magnific-popup', $base_url . '/js/jquery.magnific-popup.min.js', array( 'jquery' ), '1.1.0', true );
+	wp_enqueue_script( 'azeria-navigation', $base_url . '/js/navigation.js', array( 'jquery', 'hoverIntent' ), $theme_version, true );
+	wp_enqueue_script( 'azeria-skip-link-focus-fix', $base_url . '/js/skip-link-focus-fix.js', array(), $theme_version, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -204,7 +225,7 @@ function azeria_assets() {
 		wp_enqueue_script( 'azeria-stickup', $base_url . '/js/jquery.stickup.js', array( 'jquery' ), '1.1.0', true );
 	}
 
-	wp_enqueue_script( 'azeria-custom-script', $base_url . '/js/script.js', array( 'jquery' ), '1.1.0', true );
+	wp_enqueue_script( 'azeria-custom-script', $base_url . '/js/script.js', array( 'jquery' ), $theme_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'azeria_assets' );
 
@@ -287,6 +308,67 @@ function azeria_get_option( $name, $default = false ) {
 }
 
 /**
+ * Do Elementor or Jet Theme Core location
+ *
+ * @since  1.2.0
+ * @param  string $location
+ * @param  string $fallback
+ * @return bool
+ */
+function azeria_do_location( $location = null, $fallback = null ) {
+
+	$handler = false;
+	$done    = false;
+
+	// Choose handler
+	if ( function_exists( 'jet_theme_core' ) ) {
+		$handler = array( jet_theme_core()->locations, 'do_location' );
+	} elseif ( function_exists( 'elementor_theme_do_location' ) ) {
+		$handler = 'elementor_theme_do_location';
+	}
+
+	// If handler is found - try to do passed location
+	if ( false !== $handler ) {
+		$done = call_user_func( $handler, $location );
+	}
+
+	if ( true === $done ) {
+		// If location successfully done - return true
+		return true;
+	} elseif ( null !== $fallback ) {
+		// If for some reasons location couldn't be done and passed fallback template name - include this template and return
+		if ( is_array( $fallback ) ) {
+			// fallback in name slug format
+			get_template_part( $fallback[0], $fallback[1] );
+		} else {
+			// fallback with just a name
+			get_template_part( $fallback );
+		}
+		return true;
+	}
+
+	// In other cases - return false
+	return false;
+}
+
+/**
+ * Register Elementor Pro locations
+ *
+ * @param object $elementor_theme_manager
+ */
+function azeria_elementor_locations( $elementor_theme_manager ) {
+
+	// Do nothing if Jet Theme Core is active.
+	if ( function_exists( 'jet_theme_core' ) ) {
+		return;
+	}
+
+	$elementor_theme_manager->register_all_core_location();
+}
+
+add_action( 'elementor/theme/register_locations', 'azeria_elementor_locations' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -320,3 +402,8 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load SVG icons class.
+ */
+require get_template_directory() . '/inc/classes/class-svg-icons.php';
