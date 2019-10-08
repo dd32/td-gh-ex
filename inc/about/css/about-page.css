@@ -141,6 +141,14 @@
 }
 
 /* Buttons */
+.docs-desc p {
+	margin-bottom: 0 !important;
+}
+
+.docs-desc a {
+	margin-top: 1em !important;
+}
+
 .button.demo-import {
 	margin-bottom: 10px;
 	background: #E14D43;
@@ -266,12 +274,6 @@
 		width: 80% !important;
 	}
 
-}
-
-@media screen and ( max-width: 1366px ) {
-	.button.insta {
-		margin-top: 10px;
-	}
 }
 
 @media screen and ( max-width: 1160px ) {

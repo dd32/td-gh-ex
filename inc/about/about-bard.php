@@ -63,7 +63,7 @@ function bard_about_page_output() {
 
 				<br>
 
-				<div class="column-width-3">
+				<div class="column-width-3 docs-desc">
 					<h3><?php esc_html_e( 'Documentation', 'bard' ); ?></h3>
 					<p>
 						<?php /* translators: %s theme name */
