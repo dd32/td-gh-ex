@@ -417,10 +417,11 @@ function slideToggle() {
 		window.addEventListener("resize", resizedWindow);
 		function resizedWindow(){
 
-			var break_point = responsive.break_point;
-			if ( screen.width > break_point ) {
+			var break_point = responsives.break_point;
+			if ( window.innerWidth > break_point ) {
 				document.getElementById( "responsive_menu_button" ).classList.remove( 'responsive-toggle-open' );
 				document.querySelector( '.js .main-nav .menu' ).style.display = "block";
+				document.querySelector( '.js .main-nav' ).classList.remove( 'mobile-dropdown-inner' );
 				document.querySelector( '.js .main-nav #responsive_current_menu_item' ).style.display = "none";
 				var mobile_menu_sidebar = document.querySelector( ".responsive-mobile-sidebar #mobile-sidebar" );
 				if ( mobile_menu_sidebar ) {
@@ -432,8 +433,9 @@ function slideToggle() {
 					mobile_menu_fullscreen.style.display = "none";
 				}
 			}
-			if ( screen.width <= break_point ) {
+			if ( window.innerWidth <= break_point ) {
 				document.querySelector( '.js .main-nav .menu' ).style.display = "none";
+				document.querySelector( '.js .main-nav' ).classList.add( 'mobile-dropdown-inner' );
 				document.querySelector( '.js .main-nav #responsive_current_menu_item' ).style.display = "block";
 			}
 		}
@@ -444,12 +446,15 @@ function slideToggle() {
 				if ( -1 === menu.className.indexOf( 'menu' ) ) {
 					menu.className = 'menu';
 				}
+
 				if ( -1 !== document.getElementById( "responsive_menu_button" ).className.indexOf( 'responsive-toggle-open' ) ) {
 					document.getElementById( "responsive_menu_button" ).classList.remove( 'responsive-toggle-open' );
 					document.querySelector( '.js .main-nav .menu' ).style.display = "none";
+					document.querySelector( '.js .main-nav' ).classList.remove( 'mobile-dropdown-inner' );
 				} else {
 					document.getElementById( "responsive_menu_button" ).classList.add( 'responsive-toggle-open' );
 					document.querySelector( '.js .main-nav .menu' ).style.display = "block";
+					document.querySelector( '.js .main-nav' ).classList.add( 'mobile-dropdown-inner' );
 				}
 			});
 		}

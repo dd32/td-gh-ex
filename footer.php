@@ -35,7 +35,7 @@ global $responsive_blog_layout_columns;
 </div><!-- end of #container -->
 <?php responsive_container_end(); // after container hook ?>
 
-<div id="footer" class="clearfix" role="contentinfo" <?php responsive_schema_markup( 'footer' ); ?>>
+<footer id="footer" class="clearfix" role="contentinfo" <?php responsive_schema_markup( 'footer' ); ?>>
 	<?php responsive_footer_top(); ?>
 
 	<div id="footer-wrapper">
@@ -164,7 +164,7 @@ global $responsive_blog_layout_columns;
 	</div><!-- end #footer-wrapper -->
 
 	<?php responsive_footer_bottom(); ?>
-</div><!-- end #footer -->
+</footer><!-- end #footer -->
 <?php responsive_footer_after(); ?>
 <?php
 if ( get_theme_mod( 'responsive_scroll_to_top' ) ) {
@@ -176,17 +176,17 @@ if ( get_theme_mod( 'responsive_scroll_to_top' ) ) {
 	?>
 
 
-    <?php
-    // If full screen mobile menu style.
-    if ( 'fullscreen' === get_theme_mod('mobile_menu_style' ) ) {
-        get_template_part( 'partials/mobile/mobile-fullscreen' );
-    }
+	<?php
+	// If full screen mobile menu style.
+	if ( 'fullscreen' === get_theme_mod( 'mobile_menu_style' ) ) {
+		get_template_part( 'partials/mobile/mobile-fullscreen' );
+	}
 
-    // If sidebar mobile menu style.
-    if ( 'sidebar' === get_theme_mod('mobile_menu_style' ) ) {
-        get_template_part( 'partials/mobile/mobile-sidebar' );
-    }
-    ?>
+	// If sidebar mobile menu style.
+	if ( 'sidebar' === get_theme_mod( 'mobile_menu_style' ) ) {
+		get_template_part( 'partials/mobile/mobile-sidebar' );
+	}
+	?>
 <?php wp_footer(); ?>
 <script type="text/javascript">
 
