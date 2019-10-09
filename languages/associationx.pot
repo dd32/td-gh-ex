@@ -1,0 +1,629 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Innovation Lite\n"
+"POT-Creation-Date: 2019-10-09 20:46+0600\n"
+"PO-Revision-Date: 2015-10-29 02:02+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.13\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:9 function/imp.php:134
+msgid "SORRY, NOT FOUND ANYTHING"
+msgstr ""
+
+#: comments.php:13 function/imp.php:114
+msgid "No Comments"
+msgstr ""
+
+#: comments.php:13 function/imp.php:114
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:13 function/imp.php:114
+msgid "Comments"
+msgstr ""
+
+#: comments.php:13
+msgid " to"
+msgstr ""
+
+#: comments.php:27
+msgid "Comments are Closed"
+msgstr ""
+
+#: fpcontents/ecommerce.php:9
+msgid "Our <b>Awesome</b> Products"
+msgstr ""
+
+#: fpcontents/fp-event.php:15
+msgid "Our Upcoming Events"
+msgstr ""
+
+#: fpcontents/fp-noticeboard.php:27 fpcontents/fp-noticeboard.php:70
+msgid "Read All"
+msgstr ""
+
+#: fpcontents/fp-noticeboard.php:57
+msgid "A Few From Our Activities"
+msgstr ""
+
+#: fpcontents/fp-slide.php:43
+msgid "Show Image"
+msgstr ""
+
+#: fpcontents/fp-slide.php:44
+msgid "About Image"
+msgstr ""
+
+#: fpcontents/fp-staffs.php:14
+msgid "Our Members"
+msgstr ""
+
+#: fpcontents/fp-testimonial.php:19
+msgid "Sweet Words from our <b>Proud Members</b> Worldwide"
+msgstr ""
+
+#: front-page.php:12 functions.php:18
+msgid "Featured Links"
+msgstr ""
+
+#: front-page.php:13
+msgid "About Us"
+msgstr ""
+
+#: front-page.php:14
+msgid "Featured Box"
+msgstr ""
+
+#: front-page.php:15
+msgid "Noticeboard and News"
+msgstr ""
+
+#: front-page.php:16
+msgid "E-Commerce/WooCommerce"
+msgstr ""
+
+#: front-page.php:17
+msgid "Event Box"
+msgstr ""
+
+#: front-page.php:18
+msgid "Member Box"
+msgstr ""
+
+#: front-page.php:19
+msgid "Specific Page Content"
+msgstr ""
+
+#: front-page.php:20
+msgid "Blog/Page Index (WP Settings)"
+msgstr ""
+
+#: front-page.php:21
+msgid "Members Testimonials"
+msgstr ""
+
+#: function/breadcrumbs.php:271
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: function/breadcrumbs.php:273
+msgid "404 Not Found"
+msgstr ""
+
+#: function/breadcrumbs.php:274
+msgid "Archives"
+msgstr ""
+
+#: function/breadcrumbs.php:276
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: function/breadcrumbs.php:278
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: function/breadcrumbs.php:280
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: function/breadcrumbs.php:282
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: function/breadcrumbs.php:284
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: function/breadcrumbs.php:744
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: function/breadcrumbs.php:761
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: function/breadcrumbs.php:778
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#: function/breadcrumbs.php:794 function/breadcrumbs.php:823
+#: function/breadcrumbs.php:850 function/breadcrumbs.php:877
+#: function/breadcrumbs.php:1217
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: function/breadcrumbs.php:795 function/breadcrumbs.php:851
+#: function/breadcrumbs.php:1221
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: function/breadcrumbs.php:796 function/breadcrumbs.php:1225
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: function/breadcrumbs.php:824
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#: function/imp.php:114
+msgid "Edit"
+msgstr ""
+
+#: function/imp.php:135
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: function/imp.php:137
+msgid "Or Return to the Home Page"
+msgstr ""
+
+#: function/imp.php:146
+msgid ":Newer"
+msgstr ""
+
+#: function/imp.php:147
+msgid "Older: "
+msgstr ""
+
+#: function/imp.php:150
+msgid "Newer"
+msgstr ""
+
+#: function/imp.php:151
+msgid "Older"
+msgstr ""
+
+#: function/sidebars.php:10
+msgid "Primary Sidebar"
+msgstr ""
+
+#: function/sidebars.php:19
+msgid "Single Page Sidebar"
+msgstr ""
+
+#: function/sidebars.php:28
+msgid "Single Post Sidebar"
+msgstr ""
+
+#: function/sidebars.php:38
+msgid "Front Page Sidebar"
+msgstr ""
+
+#: function/sidebars.php:49
+msgid "Community/BuddyPress Sidebar"
+msgstr ""
+
+#: function/sidebars.php:60
+msgid "Forum/bbPress Sidebar"
+msgstr ""
+
+#: function/sidebars.php:71
+msgid "E-Commerce Sidebar"
+msgstr ""
+
+#: function/sidebars.php:81
+msgid "Search Sidebar"
+msgstr ""
+
+#: function/sidebars.php:93
+msgid "Footer Area "
+msgstr ""
+
+#: function/sidebars.php:95
+msgid "An optional widget area for your site footer"
+msgstr ""
+
+#: functions.php:11
+msgid "AssociationX Options"
+msgstr ""
+
+#: functions.php:18
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:18
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:116 functions.php:122
+msgid "Read More"
+msgstr ""
+
+#: functions.php:144
+msgid "(Untitled)"
+msgstr ""
+
+#: image.php:25
+msgid "Author: "
+msgstr ""
+
+#: inc/customize.php:16
+msgid "AssociationX OPTIONS"
+msgstr ""
+
+#: inc/customize.php:17
+msgid "We appreciate an"
+msgstr ""
+
+#: inc/customize.php:17
+msgid "Honest Review"
+msgstr ""
+
+#: inc/customize.php:17
+msgid "of this Theme if you Love our Work"
+msgstr ""
+
+#: inc/customize.php:19
+msgid ""
+"Need More Features and Options including Exciting Slide and 100+ Advanced "
+"Features? Try "
+msgstr ""
+
+#: inc/customize.php:20
+msgid "AssociationX Extend"
+msgstr ""
+
+#: inc/customize.php:23
+msgid "You can Visit the AssociationX Extend "
+msgstr ""
+
+#: inc/customize.php:23
+msgid "Demo Here"
+msgstr ""
+
+#: inc/customize.php:38
+msgid "Use Responsive Layout"
+msgstr ""
+
+#: inc/customize.php:41
+msgid "Check the Box if you want the Responsive Layout of your Website"
+msgstr ""
+
+#: inc/customize.php:56
+msgid "Show the Top Menu Bar"
+msgstr ""
+
+#: inc/customize.php:59
+msgid "Check the Box if you want to Show the Top Menu Bar"
+msgstr ""
+
+#: inc/customize.php:73
+msgid "Contact Number"
+msgstr ""
+
+#: inc/customize.php:90
+msgid "Anything Extra After the Phone Number like E-Mail"
+msgstr ""
+
+#: inc/customize.php:107
+msgid "Show Breadcrumbs"
+msgstr ""
+
+#: inc/customize.php:110
+msgid ""
+"Show Breadcrumbs in Single News, Page, Blog, Archive, Search Results, 404 "
+"Page. Default is <b>Unchecked</b>"
+msgstr ""
+
+#: inc/customize.php:124
+msgid "Show Posts/Page Section in Front Page"
+msgstr ""
+
+#: inc/customize.php:127
+msgid "Check This to Show Posts/Page Section in Front Page"
+msgstr ""
+
+#: inc/customize.php:140
+msgid "404 Not Found Error Page Image"
+msgstr ""
+
+#: inc/customize.php:143
+msgid ""
+"Upload an image for the 404 Not Found Error Page. You can Remove this Image "
+"for No Image"
+msgstr ""
+
+#: inc/customize.php:152
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Slider"
+msgstr ""
+
+#: inc/customize.php:166
+msgid "Show the Slider"
+msgstr ""
+
+#: inc/customize.php:184
+msgid "Slide Image"
+msgstr ""
+
+#: inc/customize.php:187
+msgid "Upload or Set any Slide Image Here. Recommended Size: 1500px X 675px"
+msgstr ""
+
+#: inc/customize.php:200
+msgid "Automatically Add Image Title, Caption and Links"
+msgstr ""
+
+#: inc/customize.php:214
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Featured Links"
+msgstr ""
+
+#: inc/customize.php:228
+msgid "Show the Featured Links"
+msgstr ""
+
+#: inc/customize.php:245
+msgid "Show the Featured Links from Featured Links Navigation Menu"
+msgstr ""
+
+#: inc/customize.php:248
+msgid ""
+"Check this if you want to Show the Featured Links from the <b>Featured "
+"Links</b> Navigation Menu. You can use <b>Description</b> and Use any "
+"<b>FontAwesome 5 Icon Name</b> like <b>fa-star</b> as a Menu Class in Custom "
+"Menu</div>"
+msgstr ""
+
+#: inc/customize.php:258
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page About Us"
+msgstr ""
+
+#: inc/customize.php:273
+msgid "Show the About Us Section"
+msgstr ""
+
+#: inc/customize.php:290
+msgid "About Us Section from a Page"
+msgstr ""
+
+#: inc/customize.php:293
+msgid "Check this if You want to Show the About Us Part from a Page Content"
+msgstr ""
+
+#: inc/customize.php:307
+msgid "Select a Page to Show the Content in About Us Part"
+msgstr ""
+
+#: inc/customize.php:310
+msgid "You can Select a Page to Show the Content in About Us Part"
+msgstr ""
+
+#: inc/customize.php:320
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Featured Boxes"
+msgstr ""
+
+#: inc/customize.php:334
+msgid "Show the Featured Boxes"
+msgstr ""
+
+#: inc/customize.php:351
+msgid "Show the Featured Boxes from the Sticky Posts"
+msgstr ""
+
+#: inc/customize.php:354
+msgid "This will show the latest 04 Sticky Posts as Featured Boxes"
+msgstr ""
+
+#: inc/customize.php:364
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Noticeboard and News"
+msgstr ""
+
+#: inc/customize.php:379
+msgid "Show the Noticeboard"
+msgstr ""
+
+#: inc/customize.php:396
+msgid "Select the Desired Category for the Noticeboard"
+msgstr ""
+
+#: inc/customize.php:414
+msgid "Show the News Box"
+msgstr ""
+
+#: inc/customize.php:432
+msgid "Select the Category for News"
+msgstr ""
+
+#: inc/customize.php:447
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - E-Commerce by WooCommerce"
+msgstr ""
+
+#: inc/customize.php:461
+msgid "Show the E-Commerce/WooCommerce Box in Front Page"
+msgstr ""
+
+#: inc/customize.php:478
+msgid "ShortCode for E-Commerce/WooCommerce"
+msgstr ""
+
+#: inc/customize.php:481
+msgid "Example:"
+msgstr ""
+
+#: inc/customize.php:495
+msgid "Set Transparent Background of the Product Items"
+msgstr ""
+
+#: inc/customize.php:512
+msgid "Show Border of the Product Items"
+msgstr ""
+
+#: inc/customize.php:529
+msgid "Show Box Shadow of the Product Items"
+msgstr ""
+
+#: inc/customize.php:546
+msgid "Show No Padding Space of the Product Items"
+msgstr ""
+
+#: inc/customize.php:563
+msgid "Show Product Items Image Border"
+msgstr ""
+
+#: inc/customize.php:576
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Events"
+msgstr ""
+
+#: inc/customize.php:590
+msgid "Show the Event Boxes"
+msgstr ""
+
+#: inc/customize.php:608
+msgid "Event Image"
+msgstr ""
+
+#: inc/customize.php:611
+msgid "Uoload the Event Image. Recommended Size is 400px X 300px"
+msgstr ""
+
+#: inc/customize.php:624 inc/customize.php:687
+msgid "Collect Image Title, Caption and Link Automatically"
+msgstr ""
+
+#: inc/customize.php:639
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Members"
+msgstr ""
+
+#: inc/customize.php:653
+msgid "Show the Member Boxes"
+msgstr ""
+
+#: inc/customize.php:671
+msgid "Member Image"
+msgstr ""
+
+#: inc/customize.php:674
+msgid ""
+"Uoload the Member Image. You must use 300px X 200px or Higher Ratio Imag"
+msgstr ""
+
+#: inc/customize.php:701
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Specific Page Content"
+msgstr ""
+
+#: inc/customize.php:716
+msgid "Show a Page Content in Front Page"
+msgstr ""
+
+#: inc/customize.php:733
+msgid "Select a Page to Show the Content"
+msgstr ""
+
+#: inc/customize.php:736
+msgid ""
+"You can Select a Page to Show the Content. This is ideal for Page Builder "
+"Page Contents"
+msgstr ""
+
+#: inc/customize.php:746
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Testimonials"
+msgstr ""
+
+#: inc/customize.php:760
+msgid "Show the Members Testimonials"
+msgstr ""
+
+#: inc/customize.php:777
+msgid "Show the Testimonials from the Latest Comments"
+msgstr ""
+
+#: inc/customize.php:780
+msgid ""
+"Check this if you want to Show the Testimonials from the Latest Comments"
+msgstr ""
+
+#: inc/customize.php:790
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
+msgstr ""
+
+#: inc/customize.php:791
+msgid ""
+"Input Your Social Page Links. Example: <b>https://facebook.com/d5creation</"
+"b>. If you do not want to show anything here leave the box blank"
+msgstr ""
+
+#: inc/customize.php:805
+msgid "Social Link"
+msgstr ""
+
+#: post-content.php:26
+msgid "SEARCH RESULTS"
+msgstr ""
+
+#: post-content.php:27
+msgid "Search Term"
+msgstr ""
+
+#: post-content.php:28
+msgid "Number of Results"
+msgstr ""
+
+#: post-content.php:68
+msgid "Author : "
+msgstr ""
+
+#: post-content.php:74
+msgid "Related Posts"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "AssociationX"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://d5creation.com/theme/associationx/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "D5 Creation"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://d5creation.com/"
+msgstr ""

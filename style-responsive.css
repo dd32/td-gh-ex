@@ -1,0 +1,147 @@
+/* AssociationX Theme by D5 Creation, www.d5creation.com
+/* =Responsive Design 
+-------------------------------------------------------------- */
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1279px) {
+	body {min-width: 100%; width: 100%; overflow-x: hidden;}
+	.box90{ width: 95% !important; }
+	.top-menu-con-items input[type="search"].search-field:focus { width: 130px; }
+	#header-content{ flex-direction: column; align-items: center; } 
+	#logotitle{ max-width: 100%; }
+	img.site-logo{ max-width: 300px; }
+	#header.smallheader #logotitle{ display: none; }
+	#main-menu-con, #main-menu-con.mmenuvtop, #main-menu-con.mmenuvbottom{ max-width: 100%; align-self:auto; }
+	#mainslider.main-slider .title1 { font-size: 4vw; }
+	#mainslider.main-slider .title2 { font-size: 3vw; }
+	#mainslider.main-slider .title3 { font-size: 1.5vw; }
+	#mainslider.main-slider .slide-links .slide-btn, .linkbtn1{ padding: 5px 10px; font-size: 17px;  }
+	.flinkitem{ min-width: calc(25% - 20px); }
+	.featured-box{ min-width: 200px; }
+	.contentin .postandpage{ min-width: calc(33.33% - 30px) !important; }
+	.gallery-item, .blocks-gallery-item {width: calc(25% - 20px) !important;}
+}
+
+@media screen and (max-width: 1024px) {
+	#resmwdt { width: 11px; }
+	#header.smallheader { position: relative !important; }
+	#main-menu-con a{ padding: 9px; }
+	#main-menu-con .mainmenu-parent > ul > li{ margin-left: 0 !important; }
+	#main-menu-con .mainmenu-parent > ul > li > a{ border-width: 0 !important; margin-left: 0 !important; padding-top:9px !important; padding-bottom:9px !important; }
+	#mainslider .flex-control-nav{ text-align: right; bottom: 45px !important; }
+	#mainslider .flex-control-nav li{ margin: 0 3px; }
+	#mainslider .flex-control-nav li a{ width: 13px; height: 13px; }
+	.featured-box{ min-width: calc(33.33% - 30px); }
+	.noticebox, .newsbox{ width: calc(100% - 30px) !important; }
+	.noticeitemtitles .nbitmplink{ width: calc(50% - 20px) !important;  }
+	.newsbox .nboardcat { min-width: calc(50% - 26px) !important; }
+	.grid-portfolio figcaption h3, .gcaption h3{ font-size: 19px; }
+	#heading1texts{ width: 100%; padding: 0; text-align: center; }
+	#heading1button { width: 100%; border: 0; padding: 15px 0 0; }
+	.heading1container button{ min-width: 200px; }
+	.bqpcontainer .featured-box { min-width: calc(50% - 30px) !important; }
+	#footer-sidebar .footer-widgets { min-width: calc(33.33% - 30px); }
+	#bottomspace{ height: 0 !important; }
+	#footer{ position: relative !important;}
+	.contentin .postandpage{ min-width: calc(50% - 30px) !important; }
+	.gallery-item, .blocks-gallery-item {width: calc(33.33% - 20px) !important;}
+}
+
+@media screen and (max-width: 1023px) {
+	#resmwdt { width: 9px; }
+	#header-content{ flex-direction: row-reverse; align-items: center; }
+	#logotitle{ max-width: calc(100% - 55px); }
+	
+	#sldvidcon{ margin-top: 0 !important; }
+	.slidecaptions{ padding-top: 0 !important; }
+	#mainslider.main-slider .title1 { font-size: 5vw; }
+	#mainslider.main-slider .title2 { font-size: 3vw; }
+	#mainslider.main-slider .title3 { font-size: 2vw; }
+	#mainslider .flex-control-nav{ text-align: center; bottom: 55px; }
+	#mainslider .flex-control-nav li a{ width: 15px; height: 15px; }
+	
+	#content { width: 100% !important; }
+	#right-sidebar{ width: 100% !important; display: flex; justify-content: center; flex-wrap: wrap; }	
+	#rsdbaroff.elementshow{ display: none !important; }
+	.about-us-title, .boxtoptitle, .nboxhdes .boxtoptitle, .nboxhdes .boxtoptitle, .tesheading, #testimonial-box-item .tesheading{ font-size: 35px; }
+	
+	#mobile-menu{ display: inline-flex; }
+	#main-menu-con{ position: absolute; top: 100%; left: 0; }
+	#main-menu-con.mmenumobile{ display: none; }
+	#main-menu-con ul { display: inline-block; margin: 0 auto; width: 100%; }
+	#main-menu-con li{ float: none; width: 225px; margin: 0 !important; border: none !important; background-color: #051039 !important; }
+	#main-menu-con a{ width: 100%; text-align: left; font-size: 14px; }	
+	#main-menu-con .mainmenu-parent > ul > li > a{ border-bottom: 1px dotted rgba(255,255,255,0.5) !important; }
+	#main-menu-con .mainmenu-parent > ul > li:last-child > a{ border-bottom: none !important; }
+	#main-menu-con .mainmenu-parent > ul > li > ul{ left: 20px; }
+	#main-menu-con a.wccart-icon{ text-align: center; }
+	.item-gallery{ width: 50%; }	
+}
+
+@media screen and (max-width: 900px) {	
+	.flinkitem{ min-width: calc(33.33% - 20px); }
+	.featured-box, .bqpcontainer .featured-box, #footer-sidebar .footer-widgets{ min-width: calc(50% - 30px) !important; }	
+	.displaybtitle, .displaybdes{ margin: 0; line-height: 1; }
+	.relatespost{ min-width: calc( 50% - 30px) !important; }
+	h1.page-title { font-size: 30px; }
+	h2.post-title, h2.commentsbox, h3#reply-title, h2.post-title-color, #wpbpcontainer h2.post-title{ font-size: 23px; }
+	.post-meta{ font-size: 13px; }
+	.smartbdesignplus .contentin .postandpage .post-container .fpthumb, .smartbdesign .contentin .postandpage .post-container .fpthumb{ width: 100%; }
+	.smartbdesignplus .contentin .postandpage .post-container .smartpluscontext, .smartbdesign .contentin .postandpage .post-container .entrytext{ width: 100%; }
+	.smartbdesignplus:not(.smartbdesignpluswhite) .contentin .post:nth-child(2n) .post-container{ flex-direction: column; }
+	.smartbdesign .contentin .postandpage .post-container:not(.postconborder):hover .fpthumb, .smartbdesign .contentin .postandpage .post-container:not(.postconborder):hover .entrytext{ padding: 10px; }
+}
+
+@media screen and (max-width: 700px) {
+	.contentin .postandpage{ min-width: calc(100% - 30px) !important; }
+	#mainslider.main-slider .title1 { font-size: 4vw; }
+	#mainslider.main-slider .title2 { font-size: 3vw; }
+	#mainslider.main-slider .title3 { font-size: 2vw; }
+	#mainslider .flex-control-nav{ text-align: right; bottom: 40px; }
+	#mainslider .flex-control-nav li a{ width: 13px; height: 13px; }	
+	
+	.flinkitem{ min-width: calc(50% - 20px); }
+	.noticeitemtitles .nbitmplink{ width: calc(100% - 20px) !important;  }
+	.newsbox .nboardcat { min-width: calc(100% - 26px) !important; }
+	
+	#portfolio-box-item .flex-control-nav, #testimonial-box-item .flex-control-nav, #client-box-item .flex-control-nav,
+	#portfolio-box-item .flex-direction-nav, #testimonial-box-item .flex-direction-nav, #client-box-item .flex-direction-nav{ display: none !important; }
+	.gallery-item, .blocks-gallery-item {width: calc(50% - 20px) !important;}
+	.pagenavlink { width: calc(100% - 20px); }
+}
+
+@media screen and (max-width: 650px) {
+	#fsearchbox { height: 40px; }
+	.top-menu-con-items{ justify-content: center; }
+	.top-menu-con-items #fsearchbox .search-form{ width: 95%; height: 35px; }
+	img.site-logo{ max-width: calc(100% - 55px); }	
+	#main-menu-con{ background: #ffffff; }
+}
+
+@media screen and (max-width: 600px) {
+	#main-menu-con li, #main-menu-con ul ul a{ width: 190px; }
+	#main-menu-con a{ font-size: 13px; }
+	#main-menu-con ul ul, .sub-menu, .sub-menu ul ul{ top: calc(100% - 10px) !important; left: 25px !important; }
+	#main-menu-con .sub-menu li.smedge.menu-item-has-children > a::after, #main-menu-con .sub-menu li.smedge.page_item_has_children > a::after { content: '\f054'; left: auto; right: 5px; }
+	.flinkitem, .featured-box, .bqpcontainer .featured-box, #footer-sidebar .footer-widgets{ min-width: 350px !important; }
+	#containerin{ margin: 0 auto; }
+	.relatespost{ min-width: calc( 100% - 30px) !important; }
+}
+
+
+@media screen and (max-width: 500px) {
+	#mainslider.main-slider .title1 { font-size: 7vw; }
+	#mainslider.main-slider .title2 { font-size: 5vw; }
+	#mainslider.main-slider .title3 { font-size: 3vw; }
+	#mainslider.main-slider .slide-links .slide-btn, .linkbtn1{ padding: 3px 5px; font-size: 13px;  }
+	#mainslider .flex-control-nav{ display: none; }
+	#mainslider .slide-links{ top: 5px; }
+	.featured-box, .bqpcontainer .featured-box, #footer-sidebar .footer-widgets{ min-width: calc(100% - 30px) !important; }
+	.flinkitem{ min-width: calc(100% - 20px) !important; }
+	.about-us-title, .boxtoptitle, .nboxhdes .boxtoptitle, .nboxhdes .boxtoptitle, .tesheading, #testimonial-box-item .tesheading{ font-size: 30px; line-height: 1; }
+	#portfolio-box-item .flex-viewport { max-height: 290px; }
+	.item-gallery{ width: 100%; }
+	.gallery-item, .blocks-gallery-item {width: calc(100% - 20px) !important;}
+	#footerlogo img.site-logo{ max-width: 100%; }	
+}

@@ -1,0 +1,492 @@
+/*
+Theme Name: AssociationX
+Theme URI: https://d5creation.com/theme/associationx/
+
+Author: D5 Creation
+Author URI: https://d5creation.com/
+
+Description: AssociationX is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. This Theme is designed for Multi Purposes. You can develop a Community Site using the Plugin BuddyPress easily with this Theme. You can also use bbPress Forum in your Site. AssociationX Theme is E-Commerce ready by WooCommerce. You can use this Theme for Personal Blog, Travel Blog, Company Website, Corporate Website, Association Website, Alumni Website, University/School/College Websites, E-Commerce Product Selling Websites etc. You can add Extra Page Contents in Front Page from the Theme Options. This is very helpful for Page Builder Pages like Elementor. You can show Exciting Multilayer Slider, Featured Links, About Section, Featured Boxes, Events Boxes, Members Boxes, Partners/Clients List, Testimonials with Title, Text, Name and Avatar. The Theme can be decorated Smartly with all Devices as it is Fully Responsive. The Gallery and Image Presentation system of this Theme is really Awesome.  You can find details in the Theme Page Here: https://d5creation.com/theme/associationx/
+
+Version: 1.0
+
+Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
+
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+AssociationX WordPress Theme, Copyright 2012-2019: D5 Creation (www.d5creation.com)
+AssociationX is distributed under the terms of the GNU GPL
+
+Text Domain: associationx
+
+*/
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+caption, th, td {
+	text-align:right;
+}
+
+.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.alignleft {
+	float:left;
+	margin:5px 20px 20px 0;
+}
+
+a img.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+a img.alignright {
+	float:right;
+	margin:5px 0 20px 20px;
+}
+
+a img.aligncenter {
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.wp-caption.alignnone {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignright {
+	margin:5px 0 20px 20px;
+}
+
+.wp-caption.alignleft {
+	margin:5px 20px 20px 0;
+}
+
+#site-con {
+	background-position: top right;
+}
+
+#sitetoppart {
+	background-position: top right;
+}
+
+@media screen and (min-width: 1024px) {
+
+#site-con {
+	background-position: top right;
+}
+
+#sitetoppart {
+	background-position: top right;
+}
+
+}
+
+/* ================ Container, Content, Post, Page ============== */
+
+.pconbsdow.smartbdesign .contentin .postandpage .post-container:not(.postconborder ) .fpthumb {
+	padding-right: 9px;
+	padding-left: 0;
+}
+
+.smartbdesign .contentin .postandpage .post-container:not(.postconborder ):hover .fpthumb {
+	padding-right: 9px;
+	padding-left: 0;
+}
+
+/* ================ Related Posts ============== */
+
+/* ================ Footer ============== */
+#footer {
+	right: auto;
+	left: auto;
+}
+
+/* ================ Main Menu ============== */
+
+#main-menu-con li {
+	float:right;
+}
+
+#main-menu-con li ul {
+	float:right;
+}
+
+#main-menu-con ul ul, .sub-menu, .sub-menu ul ul {
+	float:right;
+	right:0;
+	left: auto;
+}
+
+#main-menu-con ul ul ul {
+	right:100%;
+	left: auto;
+}
+
+#main-menu-con ul ul a {
+	text-align:right;
+}
+
+#main-menu-con .menu-item-has-children a, #main-menu-con .page_item_has_children a {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+#main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after {
+	left:5px;
+	right: auto;
+}
+
+#main-menu-con .sub-menu li.smedge.menu-item-has-children > a, #main-menu-con .sub-menu li.smedge.page_item_has_children > a {
+	padding:9px 20px 9px 10px;
+}
+
+#main-menu-con .sub-menu li.smedge.menu-item-has-children > a::after, #main-menu-con .sub-menu li.smedge.page_item_has_children > a::after {
+	right: 5px;
+	left: auto;
+}
+
+#main-menu-con li.smedge > ul {
+	right:auto;
+	left:0;
+}
+
+#main-menu-con li li.smedge > ul {
+	right:auto;
+	left:100%;
+}
+
+/* ================ Top Menu Bar ============== */
+
+.top-menu-con .menu li {
+	float:right;
+}
+
+.top-menu-con .menu a:before {
+	padding: 0 0 0 5px;
+}
+
+/* ================ WidGet Elements ============== */
+
+#left-sidebar .widget ul, #left-sidebar .widget ul {
+	margin: 0 15px 10px 0;
+}
+
+/* ================ Text Elements ============== */
+
+ul, ol {
+	margin:0 15px 10px 0;
+}
+
+address {
+	text-align:left;
+}
+
+/* ================ Gallery Post ============== */
+
+/* ================ H Tags and Tables ============== */
+
+/* ================ Calendar ============== */
+
+/* ================ Input and Button ============== */
+
+/* ================ Featured Boxes ============== */
+
+/* ================ Front Page Blog Posts ============== */
+
+.fpblogptlnk .read-more:after {
+	margin: 0 7px 0 0;
+}
+
+.read-more.fpageshow {
+	left: 0;
+	right: auto;
+}
+
+/* ================ Testimonial and Quote ============== */
+blockquote, q {
+	border-right:10px solid #cccccc;
+	border-left: none;
+}
+
+blockquote:before, q:before {
+	margin-left:.20em;
+	margin-right: auto;
+}
+
+blockquote:after, q:after {
+	margin-right:.20em;
+	margin-left: auto;
+}
+
+.fpage-quote::before {
+	right: 30px;
+	left: auto;
+}
+
+.arrow-down {
+	float: right;
+	margin: -10px 20px 0 0;
+}
+
+.testiin {
+	margin: 20px 30px 10px 0;
+}
+
+.testiimage {
+	margin: 0 0 0 10px;
+}
+
+.testialllink {
+	left: 0;
+	right: auto;
+}
+
+.testialllink::after {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+/* ================ Container, Content, Post ============== */
+
+#container .attachment-thumbnail {
+	margin:0px 0 10px 15px;
+	float:right;
+}
+
+h1.page-title {
+	text-align:right;
+}
+
+h2.post-title, h2.commentsbox, h3#reply-title, h2.post-title-color {
+	text-align: right;
+}
+
+h2.commentsbox:before {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.searchinfo h1.page-title:before {
+	margin-right: -110px;
+	margin-left: auto;
+}
+
+.searchinfo h3.arc-src, .searchinfo h1.page-title, .searchinfo .search-form, .searchinfo .backhome {
+	padding-right: 110px;
+	padding-left: 0;
+}
+
+/* ================ Search Box ============== */
+
+input[type="submit"].search-submit, #bbp_search_submit, .woocommerce-product-search button[type="submit"] {
+	margin: 0 -5px 0 0;
+}
+
+.connumber::before {
+	margin-left: 7px;
+	margin-right: auto;
+}
+
+.extranumber::before {
+	margin-left: 7px;
+	margin-right: auto;
+}
+
+/* ================ About Us Box ============== */
+
+/* ================ Author Bio ============== */
+.autbio {
+	border-right: 5px solid #0ba4ca;
+	border-left: none;
+}
+
+.author-image {
+	margin-left: 15px;
+	margin-right: auto;
+}
+
+/* ================ Events ============== */
+
+.portfolioslider .allevntlink {
+	left: 0;
+	right: auto;
+}
+
+/* ================ Noticeboard and News ============== */
+
+.nbitemtitle::before {
+	margin: 1px 0 0 7px;
+}
+
+.newsbox .nbitmplink .nboxtimg {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.read-more {
+	padding: 5px 15px 5px 7px;
+	float: left;
+}
+
+/* ================ Post Meta and Others  ============== */
+
+.post-meta span::before {
+	margin-left: 3px;
+	margin-right: auto;
+}
+
+/* ================ Page Navigation  ============== */
+
+.page-link::before {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.page-nav .alignleft {
+	text-align:left;
+}
+
+.page-nav .alignright {
+	text-align:right;
+}
+
+.alignright .pagenavicon {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.alignleft .pagenavicon {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.floatright {
+	float:right;
+}
+
+.floatleft {
+	float:left;
+}
+
+/* ================ Comments Box  ============== */
+
+#comments img.avatar {
+	right: 0;
+	left: auto;
+}
+
+.comment-body:after {
+	border-left: 15px solid #f5f5f5;
+	margin: 0 -25px 0 0;
+	border-right: none;
+}
+
+#comments .commentlist li.comment {
+	padding:20px 97px 0 0;
+}
+
+#comments .commentlist .children li {
+	margin:0 -25px 0 0;
+}
+
+#respond label {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+#respond .comment-form-cookies-consent label {
+	padding: 0 10px 0 0;
+}
+
+.go-top {
+	left: 10px;
+	right: auto;
+}
+
+.se-pre-con {
+	right: 0px;
+	left: auto;
+}
+
+.allmemlink::after {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+/* ================ Placeholders  ============== */
+
+/* ================ Slide Video ============== */
+.wp-video, .wp-audio {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.ytviditem iframe, .ytviditem object, .ytviditem embed {
+	right: 0;
+	left: auto;
+}
+
+.playpause {
+	right: 0;
+	left: auto;
+}
+
+.vidfullscreen::after {
+	left: 10px;
+	right: auto;
+}
+
+/* ================ Featured Links ============== */
+
+.flinkmenuitem::before {
+	right: 0;
+	left: auto;
+}
+
+/* ================ Social Links ============== */
+
+.social-link span {
+	right: 0 !important;
+	left: auto !important;
+}
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
+
+/* 
+==================== E-Commerce/WooCommerce ========== */
+
+.woocommerce ul.products li.product .price del {
+	margin-left: 15px;
+	margin-right: auto;
+}
+
+.woocommerce .quantity .qty {
+	padding: 7px 5px 8px 3px;
+}
+
+/* 
+==================== Breadcrumbs ========== */
+.breadcrumbs {
+	padding: 4px 10px 4px 20px;
+}
+
+.breadcrumbs h2.trail-browse {
+	margin-left: 5px;
+	margin-right: auto;
+}
