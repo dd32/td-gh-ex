@@ -3,15 +3,14 @@ $quality_pro_options=theme_data_setup();
 $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options );
 ?>
 <article class="post" <?php post_class(); ?>>	
+	<?php if(has_post_thumbnail()): ?>
 		<figure class="post-thumbnail">
 		<?php $defalt_arg =array('class' => "img-responsive"); ?>
-			<?php if(has_post_thumbnail()): ?>
 			<a  href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail('', $defalt_arg); ?>
-			</a>
-			<?php endif; ?>	
-			
+			</a>			
 		</figure>
+	<?php endif; ?>
 		<div class="post-content">
 			<?php if($current_options['home_meta_section_settings'] == '' ) {?>		
 			<div class="item-meta">

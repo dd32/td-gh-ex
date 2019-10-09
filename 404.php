@@ -1,5 +1,6 @@
 <?php
-  get_header(); ?>
+  get_header(); 
+  quality_breadcrumbs(); ?>
 <section id="section-block" class="error-page">		
 	<div class="container">
 		<div class="row v-center">

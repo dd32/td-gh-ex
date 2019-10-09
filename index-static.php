@@ -9,14 +9,15 @@ $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ),
                 style="background-image:url(<?php echo $current_options['home_feature'];?>)" <?php }?>>
                 
         <div class="container">
+            <?php if($current_options['home_image_title'] !='' || $current_options['home_image_sub_title'] !='' || $current_options['home_image_description'] !='' || $current_options['home_image_button_text']!='' ) : ?>
             <div class="slider-caption">
             <?php if($current_options['home_image_title']){ ?>
             <h5><?php echo $current_options['home_image_title']; ?></h5>
-            <?php } ?>
-            <?php if($current_options['home_image_sub_title']){ ?>
+            <?php } 
+            if($current_options['home_image_sub_title']){ ?>
             <h1><?php echo $current_options['home_image_sub_title']; ?></h1>
-            <?php } ?>
-            <?php if($current_options['home_image_description']){ ?>
+            <?php } 
+            if($current_options['home_image_description']){ ?>
             <p><?php  echo $current_options['home_image_description']; ?></p>
             <?php }
                 if($current_options['home_image_button_text']!=''){?>
@@ -27,6 +28,7 @@ $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ),
             </div>
             <?php }?>
             </div>
+        <?php endif; ?>
         </div>
     </div>
 </section>

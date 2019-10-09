@@ -154,6 +154,9 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank y
 
 ChangLog:
 
+@Version 2.4.1
+1. Remove unnecessary HTML markup.
+2. Add breadcrumb section in 404 page.
 @Version 2.4
 Remove Lock Icons and Create list of features mentioned in View PRO details tab.
 @Version 2.3.2.1
