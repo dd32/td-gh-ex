@@ -1,16 +1,17 @@
-/*
+/**
+***
 	Theme Name: Awada
 	Theme URI: http://demo.webhuntinfotech.com/demo?theme=awada
 	Description: Awada – Responsive Multi-Purpose WordPres Theme . Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … . Theme Features: Static and fixed header, 2,3, and 4 column footer layout, 3 color schemes, boxed and full-width layout, three widget sections first for “Left Sidebar”, “Right Sidebar”  and “Footer widget Area”, typography control feature for change the styling of the theme, WooCommerce Compatible, Translation ready and many more... Awada is a Cross-Browser Compatible theme that works on All leading web browsers.
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 2.1
+	Version: 2.1.1
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
-*/
-
+***
+**/
 body{
 	font-family: "Merriweather","Georgia",serif;
 	font-weight: 300;
@@ -81,12 +82,6 @@ a.navbar-brand {
 	padding-left: 55px !important;
 	line-height: 36px;
 }
-/* ul:not(.blog-desc ul){
-	padding-left:0;
-}
-ul:not(#sidebar .widget ul, #awada_footer_area .widget ul) {
-	padding-left:0;
-} */
 .lead {
 	font-family: 'PT Sans',sans-serif;
 	font-size:18px;
@@ -134,11 +129,9 @@ section::after {
 .make-center img {
 	margin:auto;
 }
-
 /* ----------------------------------------------------
 TOPBAR & HEADER
 ------------------------------------------------------- */
-
 #awada-header.affix a.navbar-brand {
 	font-size:31px !important;
 	margin:5px 0 0;
@@ -261,7 +254,6 @@ span.topbar-contact-email {
     padding: 0;
     text-transform: uppercase;
 }
-
 @media screen and (min-width: 48em){
 	.site-title {
 		font-size: 36px;
@@ -362,11 +354,9 @@ span.topbar-contact-email {
 	-moz-border-radius:6px 0 6px 6px;
 	border-radius:6px 0 6px 6px;
 }
-
 /* ----------------------------------------------------
 FOOTER SECTION STYLES
 ------------------------------------------------------- */
-
 #copyrights {
 	background-color:#0c0c0c;
 	/* padding:20px 0 20px; */
@@ -405,11 +395,9 @@ FOOTER SECTION STYLES
 #awada_footer_area .widget .title h3 {
 	text-transform:none;
 }
-
 /* ----------------------------------------------------
 SIDEBAR AREA & WIDGETS STYLES
 ------------------------------------------------------- */
-
 .text-widget p {
 	margin-bottom:15px;
 }
@@ -532,11 +520,9 @@ SIDEBAR AREA & WIDGETS STYLES
 	float: left;
 	margin: 5px 15px 0 0;
 }
-
 /* ----------------------------------------------------
 PORTFOLIO SECTION STYLES
 ------------------------------------------------------- */
-
 .pager li > a, .pager li > span {
 	background-color: #FFFFFF;
 	border: 1px solid #fff;
@@ -626,11 +612,9 @@ PORTFOLIO SECTION STYLES
 	-o-transform: scale(1);
 	transform: scale(1);
 }
-
 /* ----------------------------------------------------
 SECTIONS STYLES
 ------------------------------------------------------- */
-
 .section-shadow {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
@@ -673,11 +657,9 @@ SECTIONS STYLES
 .main_title .lead {
 	margin-top:10px !important;
 }
-
 /* ----------------------------------------------------
 MODULES
 ------------------------------------------------------- */
-
 .search_form {
 	position:relative;
 }
@@ -780,7 +762,6 @@ MODULES
 	text-transform:uppercase;
 	color:#fff;
 }
-
 /* Error Page 404 */
 .not_found h1 {
 	font-size: 200px;
@@ -792,7 +773,6 @@ MODULES
 /* ----------------------------------------------------
 BLOG SECTIONS
 ------------------------------------------------------- */
-
 #comments_form .form-control{
 	margin-bottom:10px;
 }
@@ -929,11 +909,9 @@ BLOG SECTIONS
 .quote-post blockquote {
 	border-left:0px solid #fff;
 }	
-
 /* ----------------------------------------------------
 RESPONSIVE
 ------------------------------------------------------- */
-
 @media (max-width: 767px) {
 	.footer-area-menu {
 		display:none !important;
@@ -956,7 +934,6 @@ RESPONSIVE
 		font-size: 100px;
 	}
 }
-
 @media (max-width: 380px) {
 #sitetopbar .topbar-contact-email, 
 #sitetopbar .topbar-contact-phone,
@@ -964,11 +941,9 @@ RESPONSIVE
 	display:block
 } 
 }
-
 /* ----------------------------------------------------
 COLOR SCHEMES
 ------------------------------------------------------- */
-
 .pagination > .active > a, 
 .pagination > .active > span, 
 .pagination > .active > a:hover, 
@@ -993,7 +968,6 @@ COLOR SCHEMES
 #awada_footer_area .widget .title h3 {
 	color:#ffffff !important;
 }
-
 @font-face {
 	font-family: 'southern_aire_personal_use_Rg';
 	src: url('fonts/southernaire_personal_use_only.eot');
@@ -1004,7 +978,6 @@ COLOR SCHEMES
 	font-weight: normal;
 	font-style: normal;
 }
-
 /* Extra CSS */
 .breadcrumbs_space {
     margin: 0 10px;
@@ -1471,7 +1444,6 @@ p#callout_description {
 #sidebar .widget ul li {
     padding: 0px 20px;
 }
-
 #sidebar .tagcloud {
     padding: 5px 20px;
 }
@@ -1661,7 +1633,6 @@ a.readmore{
 .woocommerce ul.products li.product .star-rating{
 	margin:0 auto;
 }
-
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product,
 .woocommerce ul.products:not(.list) li.product h3{
 	text-align:center;
@@ -1669,7 +1640,6 @@ a.readmore{
 .woocommerce ul.products:not(.list) li.product .button {
     margin-top: 0em;
 }
-
 .dcjq-icon:before{
 	content:'\f067';
 	font-family:FontAwesome;
@@ -1745,7 +1715,6 @@ a.readmore{
 #sidebar .textwidget{
 	padding: 0 20px;
 }
-
 @media only screen and (min-width: 620px) and (max-width: 767px) {
 	.blog-masonry .col-lg-4  {
 		width: 50%;
@@ -1836,11 +1805,9 @@ img {
 #awada-header .dropmenu img {
     margin-left: 15px;
 }
-
 /*--------------------------------------------------------------
 16.1 Galleries
 --------------------------------------------------------------*/
-
 .gallery-item {
 	display: inline-block;
 	text-align: left;
@@ -1849,15 +1816,12 @@ img {
 	padding: 0 1em 0 0;
 	width: 50%;
 }
-
 .gallery-columns-1 .gallery-item {
 	width: 100%;
 }
-
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
 }
-
 .gallery-item a,
 .gallery-item a:hover,
 .gallery-item a:focus,
@@ -1870,7 +1834,6 @@ img {
 	display: inline-block;
 	max-width: 100%;
 }
-
 .gallery-item a img {
 	display: block;
 	-webkit-transition: -webkit-filter 0.2s ease-in;
@@ -1880,13 +1843,11 @@ img {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
-
 .gallery-item a:hover img,
 .gallery-item a:focus img {
 	-webkit-filter: opacity(60%);
 	filter: opacity(60%);
 }
-
 .gallery-caption {
 	display: block;
 	text-align: left;
@@ -1895,55 +1856,43 @@ img {
 }
 @media screen and (min-width: 30em) {
 	/* Gallery Columns */
-
 	.gallery-item {
 		max-width: 25%;
 	}
-
 	.gallery-columns-1 .gallery-item {
 		max-width: 100%;
 	}
-
 	.gallery-columns-2 .gallery-item {
 		max-width: 50%;
 	}
-
 	.gallery-columns-3 .gallery-item {
 		max-width: 33.33%;
 	}
-
 	.gallery-columns-4 .gallery-item {
 		max-width: 25%;
 	}
 }
 @media screen and (min-width: 48em) {
 	/* Gallery Columns */
-
 	.gallery-columns-5 .gallery-item {
 		max-width: 20%;
 	}
-
 	.gallery-columns-6 .gallery-item {
 		max-width: 16.66%;
 	}
-
 	.gallery-columns-7 .gallery-item {
 		max-width: 14.28%;
 	}
-
 	.gallery-columns-8 .gallery-item {
 		max-width: 12.5%;
 	}
-
 	.gallery-columns-9 .gallery-item {
 		max-width: 11.11%;
 	}
 }
-
 /*--------------------------------------------------------------
 6.0 Forms
 --------------------------------------------------------------*/
-
 label {
 	color: #333;
 	display: block;
@@ -1955,7 +1904,6 @@ fieldset {
 	margin: 0 2px;
 	padding: 0.35em 0.625em 0.75em;
 }
-
 legend {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -1969,7 +1917,6 @@ legend {
 fieldset {
 	margin-bottom: 1em;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1996,7 +1943,6 @@ textarea {
 	padding: 0.7em;
 	width: 100%;
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -2025,17 +1971,14 @@ select {
 	height: 3em;
 	max-width: 100%;
 }
-
 input[type="radio"],
 input[type="checkbox"] {
 	margin-right: 0.5em;
 }
-
 input[type="radio"] + label,
 input[type="checkbox"] + label {
 	font-weight: 400;
 }
-
 button,
 input[type="button"],
 input[type="submit"] {
@@ -2055,13 +1998,11 @@ input[type="submit"] {
 	-webkit-transition: background 0.2s;
 	transition: background 0.2s;
 }
-
 input + button,
 input + input[type="button"],
 input + input[type="submit"] {
 	padding: 0.75em 2em;
 }
-
 button.secondary,
 input[type="reset"],
 input[type="button"].secondary,
@@ -2079,7 +2020,6 @@ input[type="submit"].secondary {
 	background-color: #222;
 	color: #fff;
 }
-
 button:hover,
 button:focus,
 input[type="button"]:hover,
@@ -2088,7 +2028,6 @@ input[type="submit"]:hover,
 input[type="submit"]:focus {
 	opacity: 0.8;
 }
-
 button.secondary:hover,
 button.secondary:focus,
 input[type="reset"]:hover,
@@ -2101,25 +2040,21 @@ input[type="submit"].secondary:hover,
 input[type="submit"].secondary:focus {
 	opacity: 0.8;
 }
-
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
 	color: #333;
 	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 }
-
 :-moz-placeholder {
 	color: #333;
 	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 }
-
 ::-moz-placeholder {
 	color: #333;
 	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 	opacity: 1;
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
-
 :-ms-input-placeholder {
 	color: #333;
 	font-family: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
@@ -2136,14 +2071,12 @@ input[type="submit"].secondary:focus {
     width: auto;
     max-width: 1000%;
   }
-
   .alignwide {
     margin-left: calc(25% - 25vw);
     margin-right: calc(25% - 25vw);
     width: auto;
     max-width: 1000%;
   }
-
   .alignwide img,
   .alignfull img {
     display: block;
@@ -2173,32 +2106,26 @@ input[type="submit"].secondary:focus {
     background-color: #000;
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 .s-theme-2 .awada-slide-overlay {
     background-color: rgba(255, 255, 255, 0.8);
 }
-
 .a-slide-inner {
     overflow: hidden;
     display: table;
     width: 100%;
     height: 100%;
 }
-
 .a-slide-inner-cell {
     display: table-cell;
     vertical-align: middle;
 }
-
 .slide-inner-content {
     text-align: center;
     overflow: hidden;
 }
-
 .s-theme-2 .slide-inner-content {
     text-align: left;
 }
-
 .slide-inner-content h2 {
     font-size: 70px;
     text-transform: capitalize;
@@ -2207,26 +2134,22 @@ input[type="submit"].secondary:focus {
     margin-bottom: 20px;
 	padding: 0;
 }
-
 .s-theme-2 .slide-inner-content h2 {
     display: inline-block;
     background-color: #043766;
     color: #ffe000;
     padding: 10px;
 }
-
 .slide-img {
     position: relative;
     -webkit-animation-delay: 0.3s;
     animation-delay: 0.3s;
 }
-
 .a-classic-slider .owl-item .slide-img img {
     position: absolute;
     top: -40px;
     right: 0;
 }
-
 .slide-inner-content h3 ,.slide-inner-content h3  p {
     font-size: 70px;
     text-transform: uppercase;
@@ -2236,14 +2159,12 @@ input[type="submit"].secondary:focus {
     margin: 0;
     font-family: "Poppins", sans-serif;
 }
-
 .slide-inner-content p {
     color: #fff;
     font-size: 16px;
     max-width: 650px;
     margin: 50px auto 40px;
 }
-
 .s-theme-2 .slide-inner-content p {
     margin: 50px 0 40px;
     color: #000;
@@ -2268,7 +2189,6 @@ input[type="submit"].secondary:focus {
 	transition: 0.5s ease-in-out;
 	z-index: -1;
 }
-
 .a-btn-classic:before {
 	right: -50px;
 	border-right: 50px solid transparent;
@@ -2276,7 +2196,6 @@ input[type="submit"].secondary:focus {
 	-webkit-transform: translateX(-100%);
 	transform: translateX(-100%);
 }
-
 .a-btn-classic:after {
 	left: -50px;
 	border-left: 50px solid transparent;
@@ -2284,12 +2203,10 @@ input[type="submit"].secondary:focus {
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
 }
-
 .a-btn-classic:hover:before {
 	-webkit-transform: translateX(-49%);
 	transform: translateX(-49%);
 }
-
 .a-btn-classic:hover:after {
 	-webkit-transform: translateX(49%);
 	transform: translateX(49%);
@@ -2299,7 +2216,6 @@ input[type="submit"].secondary:focus {
     border: 2px solid #fff;
     margin-top: 20px;
 }
-
 .slide-inner-content .a-btn-classic:hover {
 	color: #fff;
 }
@@ -2313,7 +2229,6 @@ input[type="submit"].secondary:focus {
     transform: translateY(-50%);
     width: 100%;
 }
-
 .awada-slider .owl-nav .owl-prev,
 .awada-slider .owl-nav .owl-next {
     position: absolute;
@@ -2330,28 +2245,23 @@ input[type="submit"].secondary:focus {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-
 .awada-slider .owl-nav .owl-prev {
     left: -45px;
     padding-left: 44px;
 }
-
 .awada-slider .owl-nav .owl-next {
     right: -45px;
     padding-right: 44px;
 }
-
 .awada-slider .owl-dots {
     position: absolute;
     bottom: 25px;
     text-align: center;
     width: 100%;
 }
-
 .s-theme-2 .awada-slider .owl-dots {
     display: none;
 }
-
 .awada-slider .owl-dots .owl-dot span {
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;

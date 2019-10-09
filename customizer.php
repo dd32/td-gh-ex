@@ -1371,23 +1371,25 @@ Kirki::add_field('awada_theme', array(
 		)
 	)
 ));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'footer_background_color',
-    'label'             => __('Footer Background Color', 'awada'),
-    'description'       => __('Change Footer Background Color', 'awada'),
-    'section'           => 'footer_sec',
-    'type'              => 'color',
-    'priority'          => 10,
-    'default'           => '#121214',
-    'sanitize_callback' => 'awada_sanitize_color',
-    'output'            => array(
+
+Kirki::add_field( 'awada_theme', array(
+	'type'        => 'color',
+	'settings'    => 'footer_background_color',
+	'label'       => __( 'Footer Background Color', 'awada' ),
+	'description' => esc_html__( 'Add footer section background color here', 'awada' ),
+	'section'     => 'footer_sec',
+	'priority'          => 10,
+	'default'     => 'rgba(18,18,20,1)',
+	'output'            => array(
         array(
             'element'  => '#awada_footer_area',
-            'property' => 'background',
+            'property' => 'background-color',
         ),
     ),
-    'transport'         => 'auto',
-));
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_text_color',
     'label'             => __('Footer Link Text Color', 'awada'),
@@ -1395,7 +1397,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '',
+    'default'           => '#31a3dd',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -1403,7 +1405,10 @@ Kirki::add_field('awada_theme', array(
             'property' => 'color',
         ),
     ),
-    'transport'         => 'auto',
+	'choices'     => array(
+		'alpha' => false,
+	),
+	'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'copyright_section_bg_color',
@@ -1412,7 +1417,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '',
+    'default'           => '#31a3dd',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(

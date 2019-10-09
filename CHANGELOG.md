@@ -1,3 +1,6 @@
+###Version 2.1.1 [09-OCT-2019]
+* Footer background, link text color issue fixed.
+* Footer copyright section background color issue fixed.
 ###Version 2.1 [07-OCT-2019]
 * Slider button issue fixed.
 * Kirki library update.
