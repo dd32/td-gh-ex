@@ -4,6 +4,14 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.7
+	* Updated: Bootstrap 3.4.1
+	* Fixed: Homepage panes image not linked to post when Featured Image is set
+	* Fixed: Read More button in home page panes may not link to post due to conflict with certain plugins
+	* Fixed: Infinite Scroll does not work on paginated URLs
+	* Fixed: Long content occasionally not wrapping in post content
+	* Fixed: Error importing theme options in non-multisite installs due to different returned mime type
+	
 Version 2.6.5
 	* Fixed: Custom Google Fonts not loaded if not hosting the fonts locally
 

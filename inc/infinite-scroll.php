@@ -13,11 +13,12 @@ function graphene_inf_posts_nav_defaults( $defaults ){
 			'nav-selector'	=> '.pagination',
 			'next-selector'	=> '.pagination .next',
 			'item-selector'	=> '.entries-wrapper .item-wrap',
-			'total-posts'	=> $wp_query->found_posts,
+			'total-posts'	=> $wp_query->found_posts - ( $defaults['current'] - 1 ) * $wp_query->query_vars['posts_per_page'],
 			'posts-per-page'=> $wp_query->query_vars['posts_per_page'],
 			'method'		=> $graphene_settings['inf_scroll_method']
 		)
 	) );
+	// disect_it( $defaults );
 	
 	return $defaults;
 }

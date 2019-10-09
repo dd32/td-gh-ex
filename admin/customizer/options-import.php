@@ -134,9 +134,16 @@ function graphene_import_file() {
 	if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
 	$file = $_FILES['graphene-import-file'];
 
-	add_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
-	$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/html' ) ) );
-	remove_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
+	/* 
+	 * Two tries, first using text/plain and second using text/html. This is because PHP's finfo_open 
+	 * appears to be returning the mime type as text/html in multisite instead of the expected text/plain
+	 */
+	$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/plain' ) ) );
+	if ( isset( $import_file['error'] ) ) {
+		add_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
+		$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/html' ) ) );
+		remove_filter( 'upload_mimes', 'graphene_import_file_mime', 10, 2 );
+	}
 	if ( isset( $import_file['error'] ) ) wp_die( $import_file['error'] );
 
 	/* Get filesystem credentials to read the file */

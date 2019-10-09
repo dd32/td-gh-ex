@@ -50,24 +50,28 @@ function graphene_homepage_panes(){
     
     <div class="homepage_panes row">
 	
-	<?php while ( $panes->have_posts() ) : $panes->the_post(); $count++; ?>
+	<?php while ( $panes->have_posts() ) : $panes->the_post(); $count++; $post_id = get_the_ID(); ?>
 		<div class="homepage-pane-wrap col-sm-6">
-			<div class="homepage_pane" id="homepage-pane-<?php the_ID(); ?>">
+			<div class="homepage_pane" id="homepage-pane-<?php echo $post_id; ?>">
 	        	<?php
 	        		do_action( 'graphene_homepage_pane_top' );
 
 	        		/* Get the post's image */ 
-					if ( has_post_thumbnail( get_the_ID() ) ) $image = get_the_post_thumbnail( get_the_ID(), 'graphene-homepage-pane' );
-					else $image = graphene_get_post_image( get_the_ID(), 'graphene-homepage-pane', 'excerpt' );
+					if ( has_post_thumbnail( $post_id ) ){
+						$image = get_the_post_thumbnail( $post_id, 'graphene-homepage-pane' );
+						$image = '<a href="' . get_permalink( $post_id ) . '">' . $image . '</a>';
+					} else {
+						$image = graphene_get_post_image( $post_id, 'graphene-homepage-pane', 'excerpt' );
+					}
 
-					if ( $image ) echo apply_filters( 'graphene_homepage_pane_image', $image, get_the_ID() );
+					if ( $image ) echo apply_filters( 'graphene_homepage_pane_image', $image, $post_id );
 				?>
 	            
 	            <div class="pane-content">
 
 		            <?php /* The post title */ ?>
 		            <h3 class="post-title">
-		            	<a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>"><?php the_title(); ?></a>
+		            	<a href="<?php echo get_permalink( $post_id ); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title( $post_id ) ) ); ?>"><?php echo get_the_title( $post_id ); ?></a>
 		                <?php do_action( 'homepage_pane_title' ); ?>
 		            </h3>
 		            
@@ -82,7 +86,7 @@ function graphene_homepage_panes(){
 		            
 		            <?php /* Read more button */ ?>
 		            <p class="post-comments">
-		            	<a href="<?php the_permalink(); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title() ) ); ?>" class="btn"><?php _e( 'Read more', 'graphene' ); ?></a>
+		            	<a href="<?php echo get_permalink( $post_id ); ?>" title="<?php printf( __( 'Permalink to %s', 'graphene' ), esc_attr( get_the_title( $post_id ) ) ); ?>" class="btn"><?php _e( 'Read more', 'graphene' ); ?></a>
 		            </p>
 
 	            </div>

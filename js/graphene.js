@@ -181,19 +181,33 @@ jQuery(document).ready(function($) {
 			},
 			// debug		: true
 		};
-		
+
+		/* Manually parse the path so that Infinite Scroll will still work even on offset page */
+		currentPage = parseInt( $(infScrollOptions.navSelector+' .current').html() );
+		infScrollOptions.state = { currPage: currentPage };
+
+		nextURI = $(infScrollOptions.nextSelector).attr('href');
+		nextIndex = (currentPage+1).toString();
+		suffix = nextURI.slice(-(nextURI.length - nextURI.indexOf(nextIndex)-nextIndex.length));
+		pathURI = nextURI.replace(nextIndex+suffix,'');
+		infScrollOptions.pathParse = function(path,nextPage){
+			path = [pathURI,suffix];
+			return path;
+		};
+
+		/* Modify the path for reverse Infinite Scroll direction */
 		if (  $(this).data('direction') == 'reverse' ) {
 			infScrollOptions.direction = $(this).data('direction');
 			
-			var currentPage = parseInt( $(infScrollOptions.navSelector+' .current').html() );
+			currentPage = parseInt( $(infScrollOptions.navSelector+' .current').html() );
 			infScrollOptions.state = { currPage: currentPage };
 			
 			if ($(infScrollOptions.nextSelector).length > 0) {
-				var nextURI = $(infScrollOptions.nextSelector).attr('href');
-				var nextIndex = (currentPage-1).toString();
+				nextURI = $(infScrollOptions.nextSelector).attr('href');
+				nextIndex = (currentPage-1).toString();
 				
-				var suffix = nextURI.slice(-(nextURI.length - nextURI.indexOf(nextIndex)-nextIndex.length));
-				var pathURI = nextURI.replace(nextIndex,'').replace(suffix,'');
+				suffix = nextURI.slice(-(nextURI.length - nextURI.indexOf(nextIndex)-nextIndex.length));
+				pathURI = nextURI.replace(nextIndex,'').replace(suffix,'');
 	
 				infScrollOptions.pathParse = function(path,nextPage){
 					path = [pathURI,suffix];
