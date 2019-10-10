@@ -43,9 +43,9 @@ switch ( $template ) {
 		break;
 	default :
 		if(is_single()){
-			echo '<div class="product-details pt-120 pb-125"><div class="container">';
+			echo '<div class="product-details pt-120 pb-125"><div class="ht-container">';
 		} else {
-			echo '<div class="shop-page-wrapper pt-115 pb-80"><div class="container">';
+			echo '<div class="shop-page-wrapper pt-115 pb-80"><div class="ht-container">';
 		}
 		break;
 }

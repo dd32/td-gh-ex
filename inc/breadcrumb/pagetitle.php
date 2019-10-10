@@ -6,8 +6,8 @@
 	$css = "background:url(". esc_url($bg_image) .") no-repeat center/$bg_size $bg_color";
 ?>
 <div class="breadcrumb-area pt-150 pb-150" style="<?php echo esc_html($css); ?>">
-    <div class="container">
-        <div class="breadcrumb-content text-center">
+    <div class="ht-container">
+        <div class="breadcrumb-content ht-text-center">
         	<?php if($page_title_status): ?>
             <h2>
         	<?php

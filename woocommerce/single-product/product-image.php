@@ -37,7 +37,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 
 ?>
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<div class="product-details-large tab-content">
+	<div class="product-details-large">
 		<?php
 		$attributes = array(
 			'title'                   => get_post_field( 'post_title', $post_thumbnail_id ),
@@ -49,7 +49,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 		);
 		
 		if ( has_post_thumbnail() ) {
-			$html  = '<div class="tab-pane active show fade" id="pro-details'. $post->ID .'" role="tabpanel">';
+			$html  = '<div class="nnfy-tab-pane nnfyactive" id="pro-details'. $post->ID .'" role="tabpanel">';
 
 			if(is_single()){
 				$html .= '<div class="easyzoom easyzoom--overlay  is-ready">';
@@ -76,7 +76,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 			foreach ($attachment_ids as $attachment_id) {
 				$tab_full_size_image   = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
 
-				$html  = '<div class="tab-pane show fade" id="pro-details'. $attachment_id .'" role="tabpanel">';
+				$html  = '<div class="nnfy-tab-pane" id="pro-details'. $attachment_id .'" role="tabpanel">';
 				if(is_single()){
 					$html .= '<div class="easyzoom easyzoom--overlay  is-ready">';
 				}

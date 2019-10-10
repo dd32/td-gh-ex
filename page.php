@@ -14,9 +14,9 @@
 get_header(); 
 ?>	
 <div class="page-wrapper clear">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
+	<div class="ht-container">
+		<div class="ht-row">
+			<div class="ht-col-md-12 ht-col-xs-12">
 				<?php
 					while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', 'page' );

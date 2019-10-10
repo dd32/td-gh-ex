@@ -16,4 +16,4 @@
  * @version     3.3.3
  */
 ?>
-<div class="row products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+<div class="ht-row products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">

@@ -177,6 +177,10 @@
     padding: 0 15px;
 }
 
+.woocommerce .product .cart .button.single_add_to_cart_button, .woocommerce .wishlist_table td.product-add-to-cart a {
+	padding: 17px 30px;
+}
+
     
 }
 /*end 992 - 1200*/
@@ -283,7 +287,7 @@
 	.description-review-text .tab-pane {
 	    width: 100%;
 	}
-	.archive .shop-page-wrapper .container > .row{
+	.archive .shop-page-wrapper .ht-container > .ht-row{
 		flex-wrap: wrap-reverse;
 	}
 	.woocommerce .qwick-view-content .quickview-btn-cart .button.single_add_to_cart_button {
@@ -293,6 +297,7 @@
 	.single-slider {
 	    padding: 0 15px;
 	}
+
 
 }
 /*end 768 - 991*/

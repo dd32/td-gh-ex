@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.4.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,9 +28,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 
 if(is_cart()){
-	$classes = 'col-lg-6 col-12';
+	$classes = 'ht-col-lg-6 ht-col-xs-12';
 } else {
-	$classes = 'col-lg-4 col-sm-6 col-12';
+	$classes = 'ht-col-lg-4 ht-col-sm-6 ht-col-xs-12';
 }
 
 ?>

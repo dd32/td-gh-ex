@@ -31,37 +31,37 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
         $footer_top = false;
     }
 
-    if($footer_top):
+    if( $footer_top ):
 
         $footer_col_size = get_theme_mod('nnfy_footer_col_size', 2);
 
 ?>
 <div class="footer-top-area black-bg pt-120 pb-75">
-    <div class="container">
-        <div class="row">
+    <div class="ht-container">
+        <div class="ht-row">
 
             <?php
                 for($i = 1; $i <= $footer_col_size; $i++):
 
                     switch ($footer_col_size) {
                         case '1':
-                             $col_class = 'col-lg-12';
+                             $col_class = 'ht-col-lg-12 ht-col-xs-12';
                             break;
 
                         case '2':
-                             $col_class = 'col-sm-6 col-lg-6';
+                             $col_class = 'ht-col-sm-6 ht-col-lg-6 ht-col-xs-12';
                             break;
 
                         case '3':
-                             $col_class = 'col-sm-6 col-lg-4';
+                             $col_class = 'ht-col-sm-6 ht-col-lg-4 ht-col-xs-12';
                             break;
 
                         case '5':
-                             $col_class = ($i == 1 || $i == 5) ? 'col-sm-6 col-lg-3' : 'col-sm-6 col-lg-2';
+                             $col_class = ($i == 1 || $i == 5) ? 'ht-col-sm-6 ht-col-lg-3 ht-col-xs-12' : 'ht-col-sm-6 ht-col-lg-2 ht-col-xs-12';
                             break;
                         
                         default:
-                            $col_class = 'col-sm-6 col-md-6 col-lg-3';
+                            $col_class = 'ht-col-sm-6 ht-col-md-6 ht-col-lg-3 ht-col-xs-12';
                             break;
                     }
             ?>
@@ -81,10 +81,10 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 <?php if($footer_copyright && $footer_copyright_text): ?>
 
 <div class="footer-bottom-area black-bg-2 ptb-15">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="copyright text-center">
+    <div class="ht-container">
+        <div class="ht-row">
+            <div class="ht-col-lg-12 ht-col-xs-12">
+                <div class="copyright ht-text-center">
                     <?php echo wp_kses_post( $footer_copyright_text ); ?>
                 </div>
             </div>

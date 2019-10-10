@@ -10,16 +10,16 @@
 get_header(); ?>
 	
 <div class="page-not-found-wrap">
-	<div class="container">
-		<div class="row">
-            <div class="col-md-12">
+	<div class="ht-container">
+		<div class="ht-row">
+            <div class="ht-col-md-12 ht-col-xs-12">
                 <div class="pnf-inner-wrap">
-	                <div class="pnf-inner text-center">
-						<h1><?php echo esc_html__('404','99fy'); ?></h1>
-						<h2><?php echo esc_html__('PAGE NOT FOUND','99fy'); ?></h2>
-						<p><?php echo esc_html__('The page you are looking for does not exist or has been moved.','99fy'); ?> </p>
-						<a href="<?php echo esc_url(home_url('/')); ?>" class="btn">
-							<?php echo esc_html__('Go back to Home Page' , '99fy'); ?>
+	                <div class="pnf-inner ht-text-center">
+						<h1><?php echo esc_html__( '404','99fy' ); ?></h1>
+						<h2><?php echo esc_html__( 'PAGE NOT FOUND','99fy' ); ?></h2>
+						<p><?php echo esc_html__( 'The page you are looking for does not exist or has been moved.','99fy' ); ?> </p>
+						<a href="<?php echo esc_url( home_url('/') ); ?>" class="btn">
+							<?php echo esc_html__( 'Go back to Home Page' , '99fy' ); ?>
 						</a>
 	                </div>
                 </div>

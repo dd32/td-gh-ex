@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$col_class = is_active_sidebar( 'sidebar-shop' ) ? 'col-lg-9' : 'col-lg-12';
+$col_class = is_active_sidebar( 'sidebar-shop' ) ? 'ht-col-lg-9 ht-col-md-9 ht-col-xs-12' : 'ht-col-lg-12 ht-col-xs-12';
 
 get_header( 'shop' ); ?>
 
@@ -35,8 +35,8 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
-	<div class="row">
-		<div class="col-lg-3">
+	<div class="ht-row">
+		<div class="ht-col-lg-3 ht-col-md-3 ht-col-xs-12">
 			<?php
 				/**
 				 * woocommerce_sidebar hook.

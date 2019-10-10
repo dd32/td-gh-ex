@@ -1,4 +1,4 @@
-<div class="col-lg-5 col-12">
+<div class="ht-col-lg-5 ht-col-xs-12">
     <div class="qwick-view-left">
         <?php
             /**
@@ -11,7 +11,7 @@
         ?>
     </div>
 </div>
-<div class="col-lg-7 col-12">
+<div class="ht-col-lg-7 ht-col-xs-12">
     <div class="qwick-view-right">
         <div class="qwick-view-content">
             <h3><?php the_title(); ?></h3>

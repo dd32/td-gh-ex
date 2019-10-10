@@ -14,9 +14,9 @@ if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
 ?>
 
 <div class="header-top-area theme-bg ptb-15">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
+    <div class="ht-container">
+        <div class="ht-row">
+            <div class="ht-col-lg-12">
                 <div class="header-top">
                     <div class="header-info">
                         <ul>

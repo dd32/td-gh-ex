@@ -136,7 +136,6 @@ function nnfy_wc_get_rating_html($html, $rating, $count){
 					}
 				}
 	    	} ?>
-	        <!-- <i class="ion-ios-star red-star"></i> -->
 	    </div>
 
 	</div>

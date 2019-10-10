@@ -1,12 +1,12 @@
 === 99fy ===
 
-Contributors: devitemsllc
+Contributors: hasthemes, htplugins, devitemsllc
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.0-trunk
-Version: 2.0
+Tested up to: WordPress 5.2.3-trunk
+Version: 3.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, right-sidebar, footer-widgets, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options, woocommerce
+Tags: Elementor, WooCommerce, WooLentor, retail, shop, shopping, fashion, blog, custom-menu, sticky-post, editor-style, threaded-comments, custom-colors, featured-images, full-width-template, theme-options
 
 == Description ==
 
@@ -27,7 +27,7 @@ user friendly theme.
 
 == Copyright ==
 
-99fy WordPress Theme, Copyright 2018
+99fy WordPress Theme, Copyright 2019
 99fy is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -39,10 +39,6 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 99fy bundles the following third-party resources:
-
-Bootstrap:
-Source: http://getbootstrap.com
-License: MIT
 
 Animate.css:
 Source: https://github.com/daneden/animate.css
@@ -94,11 +90,15 @@ Image used in Theme Screenshot:
 License: Creative Commons Zero (CC0) license
 
 == Changelog ==
+= 3.0.0 =
+* Released: October 10, 2019
+* Elementor page builder supported.
+* Flex box grid added.
+
 = 2.0.1 =
 * Released: Aug 18, 2018
 * Updated woocommmerce files
 
-== Changelog ==
 = 2.0 =
 * Released: May 27, 2018
 * Menu fix

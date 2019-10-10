@@ -24,7 +24,7 @@ global $post, $product;
 
 ?>
 
-<ul class="product-details-small nav product-details-2" role="tablist">
+<ul class="product-details-small product-details-2">
 
 <?php
 
@@ -46,9 +46,9 @@ if ( $attachment_ids && has_post_thumbnail() ) {
 			'data-large_image_height' => $full_size_image[2],
 		);
 
-		$class = $i % 4 == 0 ? '' : '';
+		$class = $i == 1 ? 'nnfyactive' : '';
 
-		$html = ' <li><a class="'.$class.'" href="#pro-details'.$attachment_id.'" data-toggle="tab" role="tab" aria-selected="true">';
+		$html = ' <li><a class="'.$class.'" href="#pro-details'.$attachment_id.'">';
  		$html .= wp_get_attachment_image( $attachment_id, 'nnfy_product_nav_thumb', false, $attributes );
  		$html .= '</a></li>';
 

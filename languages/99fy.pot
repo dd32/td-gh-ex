@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 99fy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-07 14:22+0000\n"
+"POT-Creation-Date: 2019-10-09 08:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -12,7 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.3.0; wp-5.2.3"
 
 #: template-parts/content-single.php:34
 msgid "% Comments"
@@ -76,6 +77,16 @@ msgstr ""
 msgid "99FY Options"
 msgstr ""
 
+#. Description of the theme
+msgid ""
+"99FY – Free WooCommerce Theme is a 100% responsive and reliable WooCommerce "
+"WordPress theme for multipurpose website. It is adaptable to all the devices "
+"and screens.This simple but unique, vast but ambitious, and tech-savvy "
+"WordPress theme is perfectly suitable for furniture, home decors, home "
+"appliances, fashion, accessories, and other eCommerce related websites. "
+"CHECK LIVE DEMO HERE: https://wphash.com/themes/99fy/"
+msgstr ""
+
 #: woocommerce/wishlist-view.php:261
 msgid "Add the selected products to the cart"
 msgstr ""
@@ -133,10 +144,6 @@ msgstr ""
 
 #: inc/customizer/customizer.php:212
 msgid "Background Image"
-msgstr ""
-
-#. Name of the template
-msgid "Blank Template"
 msgstr ""
 
 #: inc/customizer/customizer.php:274
@@ -210,7 +217,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin/plugins.php:68
+#: inc/tgm-plugin/plugins.php:73
 msgid "Contact Form 7"
 msgstr ""
 
@@ -270,6 +277,10 @@ msgstr ""
 
 #: woocommerce/wishlist-view.php:32
 msgid "Edit title"
+msgstr ""
+
+#: inc/tgm-plugin/plugins.php:68
+msgid "Elementor"
 msgstr ""
 
 #: inc/customizer/customizer.php:69
@@ -340,16 +351,8 @@ msgstr ""
 msgid "Footer Optinos"
 msgstr ""
 
-#. Description of the theme
-msgid "Free WordPress WooCommerce Theme"
-msgstr ""
-
 #: woocommerce/wishlist-view.php:166
 msgid "Free!"
-msgstr ""
-
-#. Name of the template
-msgid "Full Width"
 msgstr ""
 
 #: inc/customizer/customizer.php:37
@@ -364,6 +367,10 @@ msgstr ""
 msgid "Google Plus Link:"
 msgstr ""
 
+#: inc/tgm-plugin/plugins.php:104
+msgid "HashBar"
+msgstr ""
+
 #: inc/customizer/customizer.php:41
 msgid "Header Optinos"
 msgstr ""
@@ -372,20 +379,20 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#. URI of the theme
-msgid "http://demo.wphash.com/99fy/"
+#: inc/tgm-plugin/plugins.php:83
+msgid "HT Feed"
 msgstr ""
 
 #. Author URI of the theme
 msgid "https://devitems.com"
 msgstr ""
 
-#: woocommerce/wishlist-view.php:173
-msgid "In Stock"
+#. URI of the theme
+msgid "https://wphash.com/themes/99fy/"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:78
-msgid "Instagram Feed"
+#: woocommerce/wishlist-view.php:173
+msgid "In Stock"
 msgstr ""
 
 #: inc/widgets/author-info.php:221
@@ -398,20 +405,12 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:63
-msgid "King Composer"
-msgstr ""
-
 #: comments.php:111
 msgid "Leave a comment"
 msgstr ""
 
 #: inc/customizer/customizer.php:296
 msgid "Left Sidebar"
-msgstr ""
-
-#. Name of the template
-msgid "Left sidebar"
 msgstr ""
 
 #: inc/widgets/author-info.php:213
@@ -426,7 +425,7 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:73
+#: inc/tgm-plugin/plugins.php:78
 msgid "Mailchimp For WP"
 msgstr ""
 
@@ -478,6 +477,10 @@ msgstr ""
 msgid "on"
 msgstr ""
 
+#: inc/tgm-plugin/plugins.php:63
+msgid "One Click Demo Import"
+msgstr ""
+
 #. 1: title.
 #: comments.php:39
 #, php-format
@@ -485,7 +488,7 @@ msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language.
-#: functions.php:125
+#: functions.php:127
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
@@ -533,7 +536,7 @@ msgid "Search Here"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Poppins, translate this to 'off'. Do not translate into your own language.
-#: functions.php:130
+#: functions.php:132
 msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
@@ -547,7 +550,7 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:59
 msgid "Primary"
 msgstr ""
 
@@ -606,10 +609,6 @@ msgstr ""
 
 #: inc/customizer/customizer.php:297
 msgid "Right Sidebar"
-msgstr ""
-
-#. Name of the template
-msgid "Right sidebar"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:41
@@ -725,15 +724,15 @@ msgstr ""
 msgid "Upload Image"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:83
+#: inc/tgm-plugin/plugins.php:88
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:88
+#: inc/tgm-plugin/plugins.php:93
 msgid "WooCommerce Variation Swatches"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:93
+#: inc/tgm-plugin/plugins.php:98
 msgid "YITH WooCommerce Wishlist"
 msgstr ""
 

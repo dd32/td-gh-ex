@@ -31,8 +31,6 @@
 		var top_offset = $('.header-area').height() - 0;
 	}
 
-	$('body').scrollspy({target: ".primary-nav-wrap nav"});
-
 	$(".primary-nav-one-page nav ul li:first-child").addClass("active"); 
 
 	$('.primary-nav-wrap > nav > ul > li').slice(-2).addClass('last-elements');
@@ -298,48 +296,68 @@
 	    }
 	});
 
+    // Custom Tab
+    function nnfy_tabs( $tabmenus, $tabpane ){
+        $tabmenus.on('click', 'a', function(e){
+            e.preventDefault();
+            var $this = $(this),
+                $target = $this.attr('href');
+            $this.addClass('nnfyactive').parent().siblings().children('a').removeClass('nnfyactive');
+            $( $tabpane + $target ).addClass('nnfyactive').siblings().removeClass('nnfyactive');
+        });
+    }
+    if( $(".product-details-small").length > 0 ){
+        nnfy_tabs( $(".product-details-small"), '.nnfy-tab-pane' );
+    }
+    if( $(".description-review-title").length > 0 ){
+        nnfy_tabs( $(".description-review-title"), '.nnfy-tab-pane' );
+    }
+
 
 	//Quickview
 
 	//Add quick view box
-	jQuery('body').append('<div class="modal fade woocommerce" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="ion-android-close" aria-hidden="true"></span></button><div class="modal-dialog product" role="document"><div class="modal-content"><div class="modal-body row"></div></div></div></div>');
+	$('body').append('<div class="woocommerce" id="nnfyquick-viewmodal"><button type="button" class="closeqv"><span class="ion-android-close"></span></button><div class="nnfymodal-dialog product"><div class="nnfymodal-content"><div class="nnfymodal-body ht-row"></div></div></div></div>');
 
 
 	//show quick view
-	jQuery('.quickview').each(function(){
-	 var quickviewLink = jQuery(this);
-	 var productID = quickviewLink.attr('data-quick-id');
+	$('.quickview').each(function(){
+	    var quickviewLink = $(this);
+	    var productID = quickviewLink.attr('data-quick-id');
+    	quickviewLink.on('click', function(event){
+    	 	event.preventDefault();
 
-	 quickviewLink.on('click', function(event){
-	 	event.preventDefault();
+    	 	$('.nnfymodal-body').html(''); /*clear content*/
+    	 	$('body').addClass('quickview');
+            $('#nnfyquick-viewmodal').addClass('open loading');
+            $('.nnfymodal-body').html('<div class="nnfy-loading"><div class="lds-css ng-scope"><div style="width:100%;height:100%" class="lds-ripple"><div></div><div></div></div>');
 
-	 	jQuery('.modal-body').html(''); /*clear content*/
-	 	jQuery('body').addClass('quickview');
+    	 	window.setTimeout(function(){
+    	 		$.post(
+    	 		    nnfy_localize_vars.ajaxurl, 
+        	 		{
+        	 		  'action': 'nnfy_product_quickview',
+        	 		  'data':   productID
+        	 		},
+        	 		function(response){
+                        $('#nnfyquick-viewmodal').removeClass('loading');
+                        $('.nnfymodal-dialog').css("background-color","#ffffff");
+        	 		 	$('.nnfymodal-body').html(response);
+                        nnfy_tabs( $(".product-details-small"), '.nnfy-tab-pane' );
+        	 		}
 
-	 	window.setTimeout(function(){
-	 		
-	 		jQuery.post(
-	 		 nnfy_localize_vars.ajaxurl, 
-	 		 {
-	 		  'action': 'nnfy_product_quickview',
-	 		  'data':   productID
-	 		 },
-	 		 function(response){
-	 		 	jQuery('.modal-body').html(response);
-	 		 });
+                );
+    	 	}, 300);
 
-	 	}, 300);
-
-	 });
+    	});
 	});
 
-	jQuery('.closeqv').on('click', function(event){
-	 jQuery('.quickview-wrapper').removeClass('open');
-
-	 window.setTimeout(function(){
-	  jQuery('body').removeClass('quickview');
-	 }, 500);
-
+	$('.closeqv').on('click', function(event){
+	    $('#nnfyquick-viewmodal').removeClass('open');
+        $('.nnfymodal-dialog').css("background-color","transparent");
+    	window.setTimeout(function(){
+    	   $('body').removeClass('quickview');
+    	}, 500 );
 	});
 
 	

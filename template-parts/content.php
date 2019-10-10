@@ -13,19 +13,19 @@ for($i = 1; $i <= $blog_col_size; $i++){
 
     switch ($blog_col_size) {
         case '1':
-             $col_class = 'col-lg-12';
+             $col_class = 'ht-col-xs-12 ht-col-lg-12';
             break;
 
         case '2':
-             $col_class = 'col-xs-12 col-sm-6 col-lg-6';
+             $col_class = 'ht-col-xs-12 ht-col-sm-6 ht-col-lg-6';
             break;
 
         case '4':
-             $col_class = 'col-xs-12 col-sm-6 col-lg-3';
+             $col_class = 'ht-col-xs-12 ht-col-sm-6 ht-col-lg-3';
             break;
         
         default:
-            $col_class = 'col-xs-12 col-sm-6 col-lg-4';
+            $col_class = 'ht-col-xs-12 ht-col-sm-6 ht-col-lg-4';
             break;
     }
  }

@@ -13,7 +13,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.5.0
+ * @version 3.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -131,8 +131,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 		</table>
 	</div>
 
-	<div class="row">
-		<div class="col-md-8 col-sm-7 col-12">
+	<div class="ht-row">
+		<div class="ht-col-md-8 ht-col-sm-7 ht-col-xs-12">
             <div class="cart-buttons mb-30">
             	<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', '99fy' ); ?>"><?php esc_html_e( 'Update Cart', '99fy' ); ?></button>
 

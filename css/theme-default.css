@@ -8,8 +8,6 @@ body {
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 button,
 input,
@@ -228,6 +226,9 @@ hr {
     border: 0;
     height: 1px;
     margin-bottom: 1.5em;
+}
+a{
+    text-decoration: none;
 }
 /*--------------------------------------------------------------
 # Forms

@@ -65,8 +65,13 @@ function nnfy_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => esc_html__('King Composer', '99fy'), 
-			'slug'      => 'kingcomposer', 
+			'name'      => esc_html__('Elementor', '99fy'), 
+			'slug'      => 'elementor', 
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('WooLentor – WooCommerce Elementor Addons + Builder', '99fy'), 
+			'slug'      => 'woolentor-addons', 
 			'required'  => false,
 		),
 		array(
@@ -80,8 +85,8 @@ function nnfy_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => esc_html__('Instagram Feed', '99fy'), 
-			'slug'      => 'instagram-feed', 
+			'name'      => esc_html__('HT Feed', '99fy'), 
+			'slug'      => 'ht-instagram', 
 			'required'  => false,
 		),
 		array(

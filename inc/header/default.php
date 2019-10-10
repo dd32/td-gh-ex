@@ -17,9 +17,9 @@ if(get_theme_mod('custom_logo')){
 
 <header  class="header-default main-header clearfix">
 	<div class="header-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+		<div class="ht-container">
+			<div class="ht-row">
+				<div class="ht-col-xs-12 ht-col-sm-12 ht-col-md-12 ht-col-lg-12">
 
 					<div class="header-menu-wrap logo-left">
 						<!-- Start Logo Wrapper  -->
@@ -51,7 +51,6 @@ if(get_theme_mod('custom_logo')){
                                 	wp_nav_menu(array(
                                 		'theme_location' => 'primary',
                                 		'container'      => false,
-                                		// 'fallback_cb'    => 'nnfy_fallback'
                                 	));
                                 ?>
 							</nav>

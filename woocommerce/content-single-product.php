@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.4.0
+ * @version     3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -36,8 +36,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div <?php post_class('row pb-125'); ?>>
-	<div class="col-md-12 col-lg-7 col-12">
+<div <?php post_class('ht-row pb-125'); ?>>
+	<div class="ht-col-md-7 ht-col-lg-7 ht-col-xs-12">
 	    <div class="product-details-img-content">
 	        <div class="product-details-tab mr-70 product-details-tab2">
 
@@ -55,7 +55,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	    </div>
 	</div>
 
-	<div class="col-md-12 col-lg-5 col-12">
+	<div class="ht-col-md-5 ht-col-lg-5 ht-col-xs-12">
 	    <div class="product-details-content">
 
 	    	<?php

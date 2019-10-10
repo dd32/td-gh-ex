@@ -14,16 +14,16 @@
 
 $layout = get_theme_mod('nnfy_blog_layout', 'none');
 
-$content_class = ($layout == 'left' || $layout == 'right') ? 'col-md-12 col-lg-8 col-12' : 'col-lg-12 col-12';
+$content_class = ($layout == 'left' || $layout == 'right') ? 'ht-col-md-12 ht-col-lg-8 ht-col-xs-12' : 'ht-col-lg-12 ht-col-xs-12';
 
 get_header(); 
 ?>
 	<div class="page-wrapper clear">
-		<div class="container">
-			<div class="row">
+		<div class="ht-container">
+			<div class="ht-row">
 				<?php
 					if($layout == 'left'){
-						echo '<div class="col-md-12 col-lg-4 col-12">';
+						echo '<div class="ht-col-md-12 ht-col-lg-4 ht-col-xs-12">';
 
 						get_sidebar( 'left' );
 
@@ -32,7 +32,7 @@ get_header();
 				?>
 
 				<div class="<?php echo esc_attr( $content_class ); ?>">
-					<div class="row">
+					<div class="ht-row">
 
 						<?php
 							if ( have_posts() ) :
@@ -49,7 +49,7 @@ get_header();
 
 							endwhile;/* End Loop */
 						?>
-							<div class="col-lg-12 text-center">
+							<div class="ht-col-lg-12 ht-col-xs-12 ht-text-center">
 								<?php nnfy_blog_pagination(); ?>
 							</div>
 						<?php
@@ -66,7 +66,7 @@ get_header();
 
 			     <?php
 			     	if($layout == 'right'){
-			     		echo '<div class="col-md-12 col-lg-4 col-12">';
+			     		echo '<div class="ht-col-md-12 ht-col-xs-12 ht-col-lg-4 ht-col-md-12">';
 
 			     		get_sidebar( 'left' );
 

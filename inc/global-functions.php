@@ -20,7 +20,7 @@ function nnfy_post_excerpt() {
 if(!function_exists('nnfy_blog_pagination')){
 	function nnfy_blog_pagination(){
 		?>
-		<div class="paginations text-center pt-20"> <?php
+		<div class="paginations ht-text-center pt-20"> <?php
 			the_posts_pagination(array(
 				'prev_text'          => '<i class="ion-ios-arrow-back"></i>',
 				'next_text'          => '<i class="ion-ios-arrow-forward"></i>',
