@@ -28,12 +28,14 @@
 			if ( $( '.showSearch' ).length ) {
 				$('.showTop').addClass('withS');
 			}
-			$('#open-search').click(function() {
+			$('#open-search, a[href*=#search]').click(function(e) {
+				e.preventDefault();
 				$('#search-full').fadeIn(400);
 				if ( !mobileDetect ) {
 					$('#search-full #search-field').focus();
 				}
-			});
+				return false;
+			}); 
 			$('#close-search').click(function() {
 				$('#search-full').fadeOut(400);
 			});
