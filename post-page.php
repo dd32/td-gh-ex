@@ -8,7 +8,7 @@
 		the_post_thumbnail( 'blog-thumb' );  /* post thumbnail */
 	}
 	the_content( __( 'Read More', 'astral' ) );
-	$defaults = array(
+	$astral_pagination = array(
 		'before'           => '<p>' . __( 'Pages:', 'astral' ),
 		'after'            => '</p>',
 		'link_before'      => '',
@@ -20,5 +20,5 @@
 		'pagelink'         => '%',
 		'echo'             => 1
 	);
-	wp_link_pages( $defaults ); ?>
+	wp_link_pages( $astral_pagination ); ?>
 </div>

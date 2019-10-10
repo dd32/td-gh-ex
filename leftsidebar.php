@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Full Width Page
+ * Template Name: Page With Left Sidebar
  *
  * @package Astral
  */
@@ -18,10 +18,15 @@ do_action( 'astral_top_banner' );
 */
 do_action( 'astral_breadcrumb_area' );
 ?>
-    <section class="align-page-full" id="blog">
+    <section class="align-blog blog_page" id="blog">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 single-left mt-lg-0 mt-4">
+                <!-- left side -->
+                <div class="col-lg-4 event-right">
+					<?php get_sidebar(); ?>
+                </div>
+                <!-- right side -->
+                <div class="col-lg-8 single-left mt-lg-0 mt-4">
                     <div class="single-left1">
 						<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 							get_template_part( 'post', 'page' );
@@ -33,5 +38,5 @@ do_action( 'astral_breadcrumb_area' );
             </div>
         </div>
     </section>
-<?php
-get_footer(); 
+<?php 
+get_footer();

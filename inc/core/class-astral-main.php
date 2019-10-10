@@ -71,7 +71,7 @@ class astral_main {
 		wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/css/swiper.min.css' );
 
 		// Enqueue JS for theme 
-		/* wp_enqueue_script( "jquery" ); */
+		wp_enqueue_script( 'jquery' );
 
 		wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/js/swiper.min.js' );
 

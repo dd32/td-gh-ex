@@ -458,6 +458,7 @@ class astral_Customizer extends astral_Abstract_Main {
 			);
 			$wp_customize->add_control( 'service_icon_' . $i, array(
 				'label'    => esc_attr( 'Service icon ' . $i ),
+				'description' => esc_attr( 'For Example: fa fa-user' ),
 				'type'     => 'text',
 				'section'  => 'astral_service',
 				'settings' => 'service_icon_' . $i,

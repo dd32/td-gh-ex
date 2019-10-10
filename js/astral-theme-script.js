@@ -50,6 +50,10 @@ function createSticky(sticky) {
 	}
 }
 
-/* menu */
-/* jQuery(function($) {
-    $("li.menu-item").children("a").attr('href', "menu-item"); }); */
+/* drop down */
+jQuery(function($) {
+$('.navbar .dropdown > a').click(function(){
+location.href = this.href;
+});
+
+});

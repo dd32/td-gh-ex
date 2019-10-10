@@ -40,8 +40,7 @@ if ( ! function_exists( 'astral_copyright' ) ) :
 		$footer_link      = get_theme_mod( 'footer_link' );
 		$footer_text      = get_theme_mod( 'footer_text' );
 		?>
-        <p class="text-wh"> <?php echo esc_html( $footer_copyright ); ?>
-            <a href="<?php echo esc_url( esc_attr( $footer_link ) ); ?>"> <?php echo esc_html( $footer_text ); ?></a>
+        <p class="text-wh"><?php echo esc_html( $footer_copyright ); ?><a href="<?php echo esc_url( esc_attr( $footer_link ) ); ?>"> <?php echo esc_html( $footer_text ); ?></a>
         </p>
 		<?php
 	}

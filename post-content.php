@@ -53,7 +53,7 @@
         <a class="single" target="_blank" href="<?php the_permalink(); ?>"> <?php esc_html_e( 'Read More', 'astral' ); ?> </a>
 	<?php }
 
-	$defaults = array(
+	$astral_pagination = array(
 		'before'           => '<p>' . __( 'Pages:', 'astral' ),
 		'after'            => '</p>',
 		'link_before'      => '',
@@ -65,5 +65,5 @@
 		'pagelink'         => '%',
 		'echo'             => 1
 	);
-	wp_link_pages( $defaults ); ?>
+	wp_link_pages( $astral_pagination ); ?>
 </div>
