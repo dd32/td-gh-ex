@@ -32,7 +32,7 @@ get_header(); ?>
       <div class="carousel-inner" role="listbox">
         <?php while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+            <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
                 <h2><?php the_title(); ?></h2>

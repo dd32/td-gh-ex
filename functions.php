@@ -54,7 +54,7 @@ add_action( 'admin_notices', 'automotive_centre_activation_notice' );
 add_action( 'after_setup_theme', 'automotive_centre_setup' );
 
 // Notice after Theme Activation
-	function automotive_centre_activation_notice() {
+function automotive_centre_activation_notice() {
 	echo '<div class="notice notice-success is-dismissible welcome-notice">';
 	echo '<h3>'. esc_html__( 'Warm Greetings to you!!', 'automotive-centre' ) .'</h3>';
 	echo '<p>'. esc_html__( 'Thank you for choosing Automotive Centre Theme. Would like to have you on our Welcome page so that you can reap all the benefits of our Automotive Centre Theme.', 'automotive-centre' ) .'</p>';
@@ -256,6 +256,7 @@ function automotive_centre_scripts() {
 	wp_add_inline_style( 'automotive-centre-basic-style',$custom_css );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/assets/css/fontawesome-all.css' );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery') ,'',true);
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'automotive-centre-custom-scripts-jquery', get_template_directory_uri() . '/assets/js/custom.js', array('jquery') );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -313,7 +314,7 @@ define('AUTOMOTIVE_CREDIT','https://www.vwthemes.com/themes/free-automotive-word
 
 if ( ! function_exists( 'automotive_centre_credit' ) ) {
 	function automotive_centre_credit(){
-		echo "<a href=".esc_url(AUTOMOTIVE_CREDIT)." target='_blank'>".esc_html__('Automotive WordPress Theme','automotive-centre')."</a>";
+		echo "<a href=".esc_url(AUTOMOTIVE_CREDIT).">".esc_html__('Automotive WordPress Theme','automotive-centre')."</a>";
 	}
 }
 

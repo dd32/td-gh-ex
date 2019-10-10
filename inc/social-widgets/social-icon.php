@@ -19,7 +19,6 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 		?>
 		<div class="widget">
 		<?php
-		$title= ''; $facebook = ''; $twitter = '';$google = ''; $linkedin = '';  $pinterest = '';$tumblr = ''; $instagram = ''; $youtube = '';
 		
 		$title = apply_filters('widget_title', esc_html($instance['title']));
 		$facebook = $instance['facebook'];
@@ -49,6 +48,9 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 	
 	// Widget Backend 
 	public function form( $instance ) {
+
+		$title= ''; $facebook = ''; $twitter = '';$google = ''; $linkedin = '';  $pinterest = '';$tumblr = ''; $instagram = ''; $youtube = '';
+		
 		isset($instance['title']) ? $title = $instance['title'] : null;
 		isset($instance['facebook']) ? $facebook = $instance['facebook'] : null;
 		isset($instance['instagram']) ? $instagram = $instance['instagram'] : null;

@@ -5,6 +5,9 @@
   padding:0;
   outline:none;
 }
+html{
+  overflow-x: hidden;
+}
 body{ 
   margin:0; 
   padding:0; 
@@ -363,19 +366,25 @@ input.search-field {
 #header {
   background: #fff;
 }
-#header .nav {
+/* --------- MENUS CSS --------- */
+#mySidenav {
+  display: inline;
+}
+ul.list_nav {
+  margin: 0 auto;
+  text-align: center;
   display: block;
 }
-#header .nav ul {
-  padding: 0;
+.main-navigation ul{
+  list-style: none;
   margin: 0;
+  padding-right: 0;  
+  /*float: left;*/
 }
-#header .nav ul li{ 
-  display:inline-block;
-  margin:0; 
-  position:relative;
+.main-navigation li{
+  display: inline-block;
 }
-#header .nav ul li a {
+.main-navigation a{
   color: #b1b6b9;
   padding: 25px 15px;
   font-size: 12px;
@@ -384,21 +393,87 @@ input.search-field {
   font-weight: bold;
   text-transform: uppercase;
 }
-#header .nav ul li a:hover {
+.main-navigation a:hover{
   border-bottom: solid 2px #88d055;
   color: #88d055;
   transition: 1s;
 }
-ul.sub-menu li a {
+.main-navigation a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+}
+.main-navigation ul ul{
+  display: none;
+  position: absolute;
+  background: #010203;
+  min-width: 200px;
+  z-index: 9999;
+}
+.main-navigation ul ul ul{
+  right: 100%;
+  top: 0;
+}
+.main-navigation ul ul a{
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
   border: none !important;
 }
-#header .nav ul ul {
-  margin:5% 0 0 0;
+.main-navigation ul.sub-menu a:hover{
+  color: #fff !important ;
 }
-#header .nav ul li:hover > ul li a{
-  color: #fff;
+.main-navigation ul.sub-menu li:hover{
+  background: #88d055;
 }
+.main-navigation ul.sub-menu a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
+.main-navigation ul ul li{
+  float: none;
+  display: block;
+  text-align: right;
+  border-right: none;
+  border-left: none !important;
+  padding: 0;
+}
+.main-navigation ul ul li:last-child{
+  border-bottom: 0;
+}
+.main-navigation ul li:hover > ul{
+  display: block;
+}
+.main-navigation .menu > ul > li.highlight{
+  background-color: #006ccc;
+}
+.main-navigation .menu > ul > li.highlight:hover{
+  background: transparent;
+}
+/*--------------- SUPERFISH MENU ---------------------------*/
 
+.sf-arrows .sf-with-ul:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  margin-top: -2px;
+  height: 0;
+  width: 0;
+  border-top-color: #e1e1e1;
+}
+.sf-arrows ul .sf-with-ul:after{
+  margin-top: -5px;
+  margin-left: -3px;
+  border-color: transparent;
+  border-right-color: #888;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after{
+  border-right-color: #333;
+}
+.toggle-nav, a.closebtn{
+  display: none;
+}
 /* --------- SLIDER--------- */
 #slider{ 
   max-width:100%; 
@@ -704,7 +779,41 @@ h1.page-title {
 .post-main-box:hover h3{
   color: #88d055;
 }
-
+.entry-content a{
+  color: #88d055;
+  text-decoration: underline;
+}
+.tags {
+  padding-top: 20px;
+}
+.tags a{
+  text-decoration: none!important;
+  font-weight: 400;
+  border-radius: 3px;
+  color: #121212!important;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0,0,0,.08);
+  text-shadow: none;
+  line-height: 23px;
+  padding: 2px 10px 2px 10px;
+  margin: 5px;
+}
+.single-post p{
+  padding-top: 10px;
+}
+.entry-date a, .entry-author a{
+  color: #b1b6b9;
+}
+.single-post .post-info{
+  padding: 10px 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-bottom: 15px;
+}
+.post-info i{
+  margin-left: 10px;
+}
 /* --------- POST --------- */
 h2#reply-title {
   text-align: right;
@@ -1272,6 +1381,9 @@ span.posted_in {
 .related.products ul li {
   width: 30.75% !important;
 }
+nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-MyAccount-content a, .woocommerce-info a, .woocommerce-privacy-policy-text a, td.product-name a, a.shipping-calculator-button{
+  text-decoration: none !important;
+}
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width:720px) {
   #slider .inner_carousel,
@@ -1314,94 +1426,139 @@ span.posted_in {
     bottom: 5px;
     left: 5px;
   }
-  .toggle{
-    display:block;
-  }
-  .toggle{
-    width:100%; 
-    color: #fff;
-    font-weight: 500;
-    background: url('assets/images/responsive_menu.png') no-repeat left center #88d055;
-    padding:10px 10px;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-align: right;
-    border-bottom: solid 1px #fff;
-  }
-  .nav,
   #slider .inner_carousel p{
     display:none;
   }
-  #header .nav ul{ 
-    width:100%; 
-    float:none !important; 
-    margin-top:0;
-    background: #212121;
-  }
-  #header .nav ul li{
-    border-top: solid 1px #a8a8a8; 
-    display:block; 
-    float:none; 
-    text-align:right;
-  }
-  .nav{
-    padding: 0;
-  }
-  .nav ul li ul, 
-  .nav ul li ul ul{ 
-    display:block !important;
-  }
-  .nav ul li ul li a:before{
-    content:"\00BB \00a0";
-  }
-  .nav ul li a{
-    color: #fff !important;
-    padding: 12px !important;
-  }
-  .nav ul li ul li a{
-    padding-right:20px !important;
-  }
-  .nav ul li ul li ul li a{
-    padding-right:30px !important;
-  }  
 }
-@media screen and (min-width:720px){
-  #header .nav ul li ul{
-    display:none; 
-    z-index:2;
+@media screen and (max-width: 424px){
+  #slider .carousel-caption {
+    top: 35%;
   }
-  #header .nav ul li:hover > ul{
-    display: block;
-    background: #010203;
-    width: 200px;
-    position: absolute;
-    top: 58px;
-    right: 0;
-    text-align: right;
+}
+@media screen and (max-width: 575px){
+  .middle-align {
+    padding: 20px 20px 20px;
+  }
+}
+/*------------------RESPONSIVE MEIDA-------------------*/
+@media screen and (max-width: 1000px){
+  .menubar .nav ul li a:focus,
+  a.closebtn.mobile-menu:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .toggle-nav {
+    display: none;
+    position: relative;
+    /*float: left;*/
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin: 0 auto;
+    z-index: 999999;
+    text-align: left;
+    left: 0;
+    top: 20px;
+  }
+  .toggle-nav i {
+    font-size: 32px;
+    color: #000;
+    /*margin: 10px 0px;*/
+  }
+  .toggle-nav button {
+    background: transparent;
+    border: none;
+  }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
     z-index: 9999999;
+    top: 0;
+    left: 0;
+    background-color: #252525;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
   }
-  #header .nav ul li:hover > ul li{ 
+  .sidenav .closebtn {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+    display: block !important;
+    color: #ffffff;
+    border:none;
+    background: transparent;
+  }
+  .sidenav #site-navigation {
+    width: 100%;
+  }
+  .toggle-nav span{
+    font-size:30px;
+    cursor:pointer; 
+    text-align: left;
+  }
+  .toggle-nav{
+    display: block;
+  }
+  .toggle i.fa.fa-bars,.toggle i.fa.fa-times {
+    float: left;
+    color: black;
+  }
+  .main-navigation ul{
+    float: none;
+  }
+  .main-navigation ul ul li{
+    display: block;
+  }
+  .menubar .nav ul li{
+    border-top:1px #303030 solid; 
     display:block;
   }
-  #header .nav ul li:hover ul li ul{
-    display:none;
+  .main-navigation ul li a{
+    display:block;
+    color:#ffffff;
+    border:none;
+    padding: 10px 15px;
   }
-  #header .nav ul li:hover ul li:hover > ul{
-    display:block; 
-    position:absolute; 
-    right:200px; 
-    top:5px;
+  .main-navigation ul li ul,
+  .main-navigation ul li ul ul{ 
+    display:block !important;
   }
-  #header .nav ul.sub-menu{
-    margin-top:10px;
+  .main-navigation ul li ul li a:before{
+    content:"\00BB \00a0";
   }
-  #header .nav ul.sub-menu li a:hover {
-    background: #88d055;
-    color: #fff;
+  .main-navigation ul li ul li a{
+    padding-right:20px !important;
   }
-  #header .nav ul.sub-menu li a{
-    padding: 12px;
+  .main-navigation ul li ul li ul li a{
+    padding-right:30px !important;
+  }  
+  .main-navigation ul li ul, 
+  .main-navigation ul li ul ul {
+    display: block !important;
+    opacity: 1 !important;
+  }
+  .main-navigation ul ul{
+    position: static;
+    width: 100%;
+    background: #252525 !important;
+  }
+  .main-navigation li{
+    padding: 0;
     display: block;
+  }
+  .main-header-box{
+    padding-bottom: 15px;
+  }
+  #mySidenav {
+    text-align: right;
+    display: inline;
+  }
+  .main-menu {
+    padding: 0em;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
@@ -1423,9 +1580,6 @@ span.posted_in {
   }
   #slider .inner_carousel h2{
     font-size: 30px;
-  }
-  #header .nav ul li a{
-    border: none;
   }
   .scrollup i{
     bottom: 10px;

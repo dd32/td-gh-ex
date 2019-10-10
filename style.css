@@ -4,7 +4,7 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version:  0.3.1
+Version:  0.3.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -20,6 +20,9 @@ Automotive Centre WordPress Theme is released under the terms of GNU GPL
   margin:0;
   padding:0;
   outline:none;
+}
+html{
+  overflow-x: hidden;
 }
 body{ 
   margin:0; 
@@ -379,19 +382,25 @@ input.search-field {
 #header {
   background: #fff;
 }
-#header .nav {
+/* --------- MENUS CSS --------- */
+#mySidenav {
+  display: inline;
+}
+ul.list_nav {
+  margin: 0 auto;
+  text-align: center;
   display: block;
 }
-#header .nav ul {
-  padding: 0;
+.main-navigation ul{
+  list-style: none;
   margin: 0;
+  padding-left: 0;  
+  /*float: left;*/
 }
-#header .nav ul li{ 
-  display:inline-block;
-  margin:0; 
-  position:relative;
+.main-navigation li{
+  display: inline-block;
 }
-#header .nav ul li a {
+.main-navigation a{
   color: #b1b6b9;
   padding: 25px 15px;
   font-size: 12px;
@@ -400,21 +409,87 @@ input.search-field {
   font-weight: bold;
   text-transform: uppercase;
 }
-#header .nav ul li a:hover {
+.main-navigation a:hover{
   border-bottom: solid 2px #88d055;
   color: #88d055;
   transition: 1s;
 }
-ul.sub-menu li a {
+.main-navigation a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+}
+.main-navigation ul ul{
+  display: none;
+  position: absolute;
+  background: #010203;
+  min-width: 200px;
+  z-index: 9999;
+}
+.main-navigation ul ul ul{
+  left: 100%;
+  top: 0;
+}
+.main-navigation ul ul a{
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
   border: none !important;
 }
-#header .nav ul ul {
-  margin:5% 0 0 0;
+.main-navigation ul.sub-menu a:hover{
+  color: #fff !important ;
 }
-#header .nav ul li:hover > ul li a{
-  color: #fff;
+.main-navigation ul.sub-menu li:hover{
+  background: #88d055;
 }
+.main-navigation ul.sub-menu a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+}
+.main-navigation ul ul li{
+  float: none;
+  display: block;
+  text-align: left;
+  border-left: none;
+  border-right: none !important;
+  padding: 0;
+}
+.main-navigation ul ul li:last-child{
+  border-bottom: 0;
+}
+.main-navigation ul li:hover > ul{
+  display: block;
+}
+.main-navigation .menu > ul > li.highlight{
+  background-color: #006ccc;
+}
+.main-navigation .menu > ul > li.highlight:hover{
+  background: transparent;
+}
+/*--------------- SUPERFISH MENU ---------------------------*/
 
+.sf-arrows .sf-with-ul:after{
+  content: '';
+  position: absolute;
+  right: 0;
+  margin-top: -2px;
+  height: 0;
+  width: 0;
+  border-top-color: #e1e1e1;
+}
+.sf-arrows ul .sf-with-ul:after{
+  margin-top: -5px;
+  margin-right: -3px;
+  border-color: transparent;
+  border-left-color: #888;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after{
+  border-left-color: #333;
+}
+.toggle-nav, a.closebtn{
+  display: none;
+}
 /* --------- SLIDER--------- */
 #slider{ 
   max-width:100%; 
@@ -720,7 +795,41 @@ h1.page-title {
 .post-main-box:hover h3{
   color: #88d055;
 }
-
+.entry-content a{
+  color: #88d055;
+  text-decoration: underline;
+}
+.tags {
+  padding-top: 20px;
+}
+.tags a{
+  text-decoration: none!important;
+  font-weight: 400;
+  border-radius: 3px;
+  color: #121212!important;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 0 rgba(0,0,0,.08);
+  text-shadow: none;
+  line-height: 23px;
+  padding: 2px 10px 2px 10px;
+  margin: 5px;
+}
+.single-post p{
+  padding-top: 10px;
+}
+.entry-date a, .entry-author a{
+  color: #b1b6b9;
+}
+.single-post .post-info{
+  padding: 10px 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  margin-bottom: 15px;
+}
+.post-info i{
+  margin-right: 10px;
+}
 /* --------- POST --------- */
 h2#reply-title {
   text-align: left;
@@ -1288,6 +1397,10 @@ span.posted_in {
 .related.products ul li {
   width: 30.75% !important;
 }
+nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-MyAccount-content a, .woocommerce-info a, .woocommerce-privacy-policy-text a, td.product-name a, a.shipping-calculator-button{
+  text-decoration: none !important;
+}
+
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width:720px) {
   #slider .inner_carousel,
@@ -1330,94 +1443,135 @@ span.posted_in {
     bottom: 5px;
     right: 5px;
   }
-  .toggle{
-    display:block;
-  }
-  .toggle{
-    width:100%; 
-    color: #fff;
-    font-weight: 500;
-    background: url('assets/images/responsive_menu.png') no-repeat right center #88d055;
-    padding:10px 10px;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-align: left;
-    border-bottom: solid 1px #fff;
-  }
-  .nav,
   #slider .inner_carousel p{
     display:none;
   }
-  #header .nav ul{ 
-    width:100%; 
-    float:none !important; 
-    margin-top:0;
-    background: #212121;
-  }
-  #header .nav ul li{
-    border-top: solid 1px #a8a8a8; 
-    display:block; 
-    float:none; 
-    text-align:left;
-  }
-  .nav{
-    padding: 0;
-  }
-  .nav ul li ul, 
-  .nav ul li ul ul{ 
-    display:block !important;
-  }
-  .nav ul li ul li a:before{
-    content:"\00BB \00a0";
-  }
-  .nav ul li a{
-    color: #fff !important;
-    padding: 12px !important;
-  }
-  .nav ul li ul li a{
-    padding-left:20px !important;
-  }
-  .nav ul li ul li ul li a{
-    padding-left:30px !important;
-  }  
 }
-@media screen and (min-width:720px){
-  #header .nav ul li ul{
-    display:none; 
-    z-index:2;
+@media screen and (max-width: 424px){
+  #slider .carousel-caption {
+    top: 35%;
   }
-  #header .nav ul li:hover > ul{
-    display: block;
-    background: #010203;
-    width: 200px;
-    position: absolute;
-    top: 58px;
-    left: 0;
-    text-align: left;
+}
+@media screen and (max-width: 575px){
+  .middle-align {
+    padding: 20px 20px 20px;
+  }
+  .toggle-nav{
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1000px){
+  .menubar .nav ul li a:focus,
+  a.closebtn.mobile-menu:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+  }
+  #header{
+    background: transparent;
+  }
+  .toggle-nav {
+    display: none;
+  }
+  .toggle-nav i {
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    padding: 10px;
+  }
+  .toggle-nav button {
+    background: transparent;
+    border: none;
+  }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
     z-index: 9999999;
+    top: 0;
+    right: 0;
+    background-color: #252525;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
   }
-  #header .nav ul li:hover > ul li{ 
+  .sidenav .closebtn {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: block !important;
+    color: #ffffff;
+    border:none;
+    background: transparent;
+  }
+  .sidenav #site-navigation {
+    width: 100%;
+  }
+  .toggle-nav span{
+    font-size:30px;
+    cursor:pointer; 
+    text-align: right;
+  }
+  .toggle-nav {
+    display: block;
+  }
+  .toggle i.fa.fa-bars,.toggle i.fa.fa-times {
+    float: right;
+    color: black;
+  }
+  .main-navigation ul{
+    float: none;
+  }
+  .main-navigation ul ul li{
+    display: block;
+  }
+  .menubar .nav ul li{
+    border-top:1px #303030 solid; 
     display:block;
   }
-  #header .nav ul li:hover ul li ul{
-    display:none;
+  .main-navigation ul li a{
+    display:block;
+    color:#ffffff;
+    border:none;
+    padding: 10px 15px;
   }
-  #header .nav ul li:hover ul li:hover > ul{
-    display:block; 
-    position:absolute; 
-    left:200px; 
-    top:5px;
+  .main-navigation ul li ul,
+  .main-navigation ul li ul ul{ 
+    display:block !important;
   }
-  #header .nav ul.sub-menu{
-    margin-top:10px;
+  .main-navigation ul li ul li a:before{
+    content:"\00BB \00a0";
   }
-  #header .nav ul.sub-menu li a:hover {
-    background: #88d055;
-    color: #fff;
+  .main-navigation ul li ul li a{
+    padding-left:20px !important;
   }
-  #header .nav ul.sub-menu li a{
-    padding: 12px;
+  .main-navigation ul li ul li ul li a{
+    padding-left:30px !important;
+  }  
+  .main-navigation ul li ul, 
+  .main-navigation ul li ul ul {
+    display: block !important;
+    opacity: 1 !important;
+  }
+  .main-navigation ul ul{
+    position: static;
+    width: 100%;
+    background: #252525 !important;
+  }
+  .main-navigation li{
+    padding: 0;
     display: block;
+  }
+  .main-header-box{
+    padding-bottom: 15px;
+  }
+  #mySidenav {
+    text-align: left;
+    display: inline;
+  }
+  .main-menu {
+    padding: 0em;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
@@ -1439,9 +1593,6 @@ span.posted_in {
   }
   #slider .inner_carousel h2{
     font-size: 30px;
-  }
-  #header .nav ul li a{
-    border: none;
   }
   .scrollup i{
     bottom: 10px;

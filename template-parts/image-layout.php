@@ -10,7 +10,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="entry-content">
-        <h1><?php the_title();?></h1>    
+        <h1 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>    
         <div class="entry-attachment">
             <div class="attachment">
                 <?php automotive_centre_the_attached_image(); ?>
@@ -18,7 +18,7 @@
 
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
-                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p>
+                    <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p></div>
                 </div>
             <?php endif; ?>
         </div>    

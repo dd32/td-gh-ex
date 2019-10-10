@@ -15,7 +15,7 @@
         <div class="logo">
           <?php if( has_custom_logo() ){ automotive_centre_the_custom_logo();
             }else{ ?>
-              <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+              <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
               <?php $description = get_bloginfo( 'description', 'display' );
               if ( $description || is_customize_preview() ) : ?>
               <p class="site-description"><?php echo esc_html($description); ?></p>
@@ -51,7 +51,7 @@
       <div class="col-lg-2 col-md-3">
         <?php if( get_theme_mod( 'automotive_centre_top_button_url') != '' || get_theme_mod( 'automotive_centre_top_button_text') != '') { ?>
           <div class="top-btn">
-            <a href="<?php echo esc_url(get_theme_mod('automotive_centre_top_button_url',''));?>"><?php echo esc_html(get_theme_mod('automotive_centre_top_button_text',''));?></a>
+            <a href="<?php echo esc_url(get_theme_mod('automotive_centre_top_button_url',''));?>"><?php echo esc_html(get_theme_mod('automotive_centre_top_button_text',''));?><span class="screen-reader-text"><?php esc_html_e( 'SELL YOUR CAR','automotive-centre' );?></span></a>
           </div>
         <?php }?>
       </div>
