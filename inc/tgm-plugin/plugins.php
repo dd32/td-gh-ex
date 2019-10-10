@@ -70,7 +70,7 @@ function nnfy_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => esc_html__('WooLentor – WooCommerce Elementor Addons + Builder', '99fy'), 
+			'name'      => esc_html__('WooLentor - WooCommerce Elementor Addons + Builder', '99fy'), 
 			'slug'      => 'woolentor-addons', 
 			'required'  => false,
 		),
