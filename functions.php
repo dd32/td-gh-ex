@@ -145,7 +145,7 @@ function annina_scripts() {
 	wp_enqueue_style( 'annina-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 
 	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.min.js', array('jquery', 'jquery-masonry'), wp_get_theme()->get('Version'), true );
-	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'annina-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.4.9', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
