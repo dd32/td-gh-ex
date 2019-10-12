@@ -5,12 +5,12 @@
 	$custom_css = '';
 
 	if($advance_business_theme_color != false){
-		$custom_css .='a.button, .search-box i, #slider .carousel-control-next-icon i:hover,#slider .carousel-control-prev-icon i:hover, #slider .inner_carousel .know-btn a:hover, hr.project-hr, .second-border a:hover, span.meta-nav, #footer input[type="submit"], .copyright,#footer .tagcloud a:hover, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar h3, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current, #footer input[type="submit"], a.button, .pagination span, .pagination a, .primary-navigation ul ul a:hover{';
+		$custom_css .='.search-box i, #slider .carousel-control-next-icon i:hover,#slider .carousel-control-prev-icon i:hover, #slider .inner_carousel .know-btn a:hover, hr.project-hr, .second-border a:hover,  #footer input[type="submit"], .copyright,#footer .tagcloud a:hover, .woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar h3, #sidebar input[type="submit"], #sidebar .tagcloud a:hover, .pagination a:hover, .pagination .current, #footer input[type="submit"], a.button,.meta-nav:hover{';
 			$custom_css .='background-color: '.esc_html($advance_business_theme_color).';';
 		$custom_css .='}';
 	}
 	if($advance_business_theme_color != false){
-		$custom_css .='input[type="submit"],.contact i, #footer h3,.woocommerce-message::before, h3.widget-title a, #footer li a:hover, .primary-navigation .current_page_item > a, .primary-navigation .current-menu-item > a, .primary-navigation .current_page_ancestor > a, .primary-navigation a:hover, .entry-content a{';
+		$custom_css .='input[type="submit"],.contact i,.woocommerce-message::before, #footer h3.widget-title a, #footer li a:hover,.primary-navigation a:hover, .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul a, .sf-arrows ul .sf-with-ul:after, .primary-navigation ul ul li:hover > a, .primary-navigation a:focus,#sidebar ul li a:hover, .page-box h2 a:hover, .metabox a:hover{';
 			$custom_css .='color: '.esc_html($advance_business_theme_color).';';
 		$custom_css .='}';
 	}
@@ -20,7 +20,7 @@
 		$custom_css .='}';
 	}
 	if($advance_business_theme_color != false){
-		$custom_css .='.woocommerce-message{';
+		$custom_css .='.woocommerce-message,.primary-navigation ul ul li:first-child{';
 			$custom_css .='border-top-color: '.esc_html($advance_business_theme_color).';';
 		$custom_css .='}';
 	}
@@ -39,3 +39,13 @@
 			$custom_css .='background-color: '.esc_html($advance_business_theme_color).'!important;';
 		$custom_css .='}';
 	}
+
+// media
+
+	$custom_css .='@media screen and (max-width:1000px) {';
+	if($advance_business_theme_color){
+	$custom_css .='#menu-sidebar, .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul ul ul{
+	background-image: linear-gradient(-90deg, #000 0%, '.esc_html($advance_business_theme_color).' 120%);
+		}';
+	}
+	$custom_css .='}';

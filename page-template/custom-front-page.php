@@ -31,10 +31,10 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
+              <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt,20 ) ); ?></p>
                   <div class="know-btn">
                     <a href="<?php the_permalink(); ?>"> <?php echo esc_html_e('READ MORE','advance-business'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-business' ); ?></span></a>
@@ -127,7 +127,7 @@ get_header(); ?>
       <div class="container">
         <?php if( get_theme_mod('advance_business_projects_title') != ''){ ?>
           <div class="project_title">
-            <h3><?php echo esc_html(get_theme_mod('advance_business_projects_title','')); ?> </h3>
+            <h2><?php echo esc_html(get_theme_mod('advance_business_projects_title','')); ?> </h2>
             <hr class="project-hr">
           </div>
         <?php } ?>
@@ -145,7 +145,7 @@ get_header(); ?>
                   </div>
                   <div class="col-lg-6 col-md-6 p-0">
                     <div class="project_content">
-                      <a href="<?php the_permalink(); ?>" class="screen-reader-text" ><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                      <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3><span class="screen-reader-text"><?php the_title(); ?></span></a>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt,12 ) ); ?></p>
                       <div class="know-btn">
                         <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Know More', 'advance-business' ); ?>"><?php esc_html_e('Know More','advance-business'); ?><i class="fas fa-angle-double-right"></i>

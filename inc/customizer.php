@@ -27,7 +27,7 @@ function advance_business_customize_register($wp_customize) {
 		'title' => esc_html__( 'Theme Color Option', 'advance-business' ) 
 	) );
   	$wp_customize->add_setting( 'advance_business_theme_color', array(
-	    'default' => '#fe8e1e',
+	    'default' => '#ffaa56',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_business_theme_color', array(
@@ -638,6 +638,9 @@ function advance_business_customize_register($wp_customize) {
 	));
 }
 add_action('customize_register', 'advance_business_customize_register');
+
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Singleton class for handling the theme's customizer integration.

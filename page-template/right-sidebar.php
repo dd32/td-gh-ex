@@ -12,7 +12,7 @@ get_header(); ?>
         <div class="middle-align row">
             <div class="col-lg-8 col-md-8">
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image" >
+                    <?php the_post_thumbnail(); ?>
                     <h1><?php the_title(); ?></h1>
                     <div class="entry-content"><?php the_content();?></div>
                 <?php endwhile; // end of the loop. ?>
