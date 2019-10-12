@@ -16,12 +16,10 @@ Child Theme Name: Abubize Business
 
 CHANGE-LOG FILE:
 
-@Version: 1.2
+@Version: 1.6
+1. We have update this child theme according to review.
+2. accessibility-ready checked and fixed according to this given reference url: https://make.wordpress.org/themes/handbook/review/accessibility/
 
-1. Fixed Breadcrub background issue.
-2. Remove unused from style.css file.
-3. Add Blank full width template.
-4. Add Change Log file.
 
 *****************Licence Copyrights Attribution*******************
 
