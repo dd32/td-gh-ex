@@ -33,7 +33,7 @@ get_header(); ?>
               <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,20 ) ); ?></p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ get_header(); ?>
                 <div class="col-lg-3 col-md-3">
                   <div class="service-border">
                     <?php the_post_thumbnail('full'); ?>
-                    <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+                    <a href="<?php the_permalink(); ?>"><strong><?php the_title(); ?></strong></a>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,10 ) ); ?></p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ get_header(); ?>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="single-content">
-                    <h4><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h4>
+                    <h2><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h2>
                     <hr class="wlcm-hr">
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,70 ) ); ?></p>
                     <div class="know-btn">

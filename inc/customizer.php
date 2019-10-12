@@ -675,6 +675,9 @@ function advance_fitness_gym_customize_register($wp_customize) {
 }
 add_action('customize_register', 'advance_fitness_gym_customize_register');
 
+// logo resize
+	load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
+
 load_template( ABSPATH . 'wp-includes/class-wp-customize-control.php' );
 
 class Advance_Fitness_Gym_Image_Radio_Control extends WP_Customize_Control {

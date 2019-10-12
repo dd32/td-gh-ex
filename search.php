@@ -18,8 +18,8 @@ get_header(); ?>
                         <?php get_sidebar();?>
                     </div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
-                       <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                       <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                           while ( have_posts() ) : the_post();
@@ -44,8 +44,8 @@ get_header(); ?>
             <?php }else if($left_right == 'Right Sidebar'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
-                       <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                       <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                         <?php if ( have_posts() ) :
                             /* Start the Loop */
                             while ( have_posts() ) : the_post();
@@ -72,8 +72,8 @@ get_header(); ?>
                 </div>
             <?php }else if($left_right == 'One Column'){ ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                    <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                    <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                     <?php if ( have_posts() ) :
                         /* Start the Loop */
                         while ( have_posts() ) : the_post();
@@ -98,8 +98,8 @@ get_header(); ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
-                        <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                        <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                           while ( have_posts() ) : the_post();
@@ -126,8 +126,8 @@ get_header(); ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
-                       <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                       <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                             while ( have_posts() ) : the_post();
@@ -154,8 +154,8 @@ get_header(); ?>
             <?php }else if($left_right == 'Grid Layout'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9 row'); ?>>
-                       <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                       <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                         <?php if ( have_posts() ) :
                           /* Start the Loop */
                             while ( have_posts() ) : the_post();
@@ -183,8 +183,8 @@ get_header(); ?>
             <?php }else{?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
-                       <h2 class="entry-title"><?php /* translators: %s: search term */
-                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h2>
+                       <h1 class="entry-title"><?php /* translators: %s: search term */
+                        printf( esc_html__( 'Results For: %s','advance-fitness-gym'), esc_html( get_search_query() ) ); ?></h1>
                         <?php if ( have_posts() ) :
                             /* Start the Loop */
                             while ( have_posts() ) : the_post();

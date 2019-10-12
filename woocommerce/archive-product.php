@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' ); ?>
 
 	<div class="container">
-		<main role="main" id="maincontent">
+		<main role="main" id="maincontent" class="our-services">
 			<div class="row">
 				<div class="col-lg-8 col-md-8">
 					<?php

@@ -19,7 +19,7 @@ get_header(); ?>
                     <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
-                            the_archive_title( '<h2 class="page-title">', '</h2>' );
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -47,7 +47,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
-                            the_archive_title( '<h2 class="page-title">', '</h2>' );
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -78,7 +78,7 @@ get_header(); ?>
             <?php }else if($left_right == 'One Column'){ ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <?php
-                        the_archive_title( '<h2 class="page-title">', '</h2>' );
+                        the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
                     ?>
                     <?php if ( have_posts() ) :
@@ -107,7 +107,7 @@ get_header(); ?>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
                         <?php
-                            the_archive_title( '<h2 class="page-title">', '</h2>' );
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -138,7 +138,7 @@ get_header(); ?>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
                         <?php
-                            the_archive_title( '<h2 class="page-title">', '</h2>' );
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -169,7 +169,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9 row'); ?>>
                         <?php
-                            the_archive_title( '<h2 class="page-title">', '</h2>' );
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :
@@ -209,7 +209,7 @@ get_header(); ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                         <?php
-                            the_archive_title( '<h2 class="page-title">', '</h2>' );
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="taxonomy-description">', '</div>' );
                         ?>
                         <?php if ( have_posts() ) :

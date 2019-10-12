@@ -8,14 +8,14 @@ get_header(); ?>
 <?php do_action( 'advance_fitness_gym_pageleft_header' ); ?>
 
 <div class="container">
-    <main role="main" id="maincontent" class="middle-align row">
+    <main role="main" id="maincontent"  class="our-services row">
     	<div id="sidebar" class="col-lg-4 col-md-4">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>
         <div class="col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>
-                <h2><?php the_title(); ?></h2>
+                <h1><?php the_title(); ?></h1>
                 <div class="entry-content"><?php the_content();?></div>
             <?php endwhile; // end of the loop. ?>
             <?php

@@ -14,7 +14,7 @@
 ?>
 <div class="col-lg-4 col-md-4">
     <article class="page-box">
-        <h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>
+        <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h2>
         <div class="box-image">
             <?php the_post_thumbnail();?>
         </div>

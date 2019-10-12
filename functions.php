@@ -65,7 +65,6 @@ function advance_fitness_gym_activation_notice() {
 	echo '</div>';
 }
 
-
 /* Theme Widgets Setup */
 function advance_fitness_gym_widgets_init() {
 	register_sidebar(array(
@@ -261,7 +260,6 @@ function advance_fitness_gym_font_url(){
 }
 
 /* Theme enqueue scripts */
-
 function advance_fitness_gym_scripts() {
 	wp_enqueue_style('advance-fitness-gym-font', advance_fitness_gym_font_url(), array());
 	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
