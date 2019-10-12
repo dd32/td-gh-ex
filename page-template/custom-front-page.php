@@ -31,10 +31,10 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image" role="img"/>
+              <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt,20 ) ); ?></p>
                   <div class="readbtn">
                     <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-education'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-education' );?></span></a>
@@ -76,7 +76,7 @@ get_header(); ?>
     <section id="courses">
       <div class="container">
         <?php if( get_theme_mod('advance_education_title') != ''){ ?>
-          <h3><i class="fas fa-book"></i><?php echo esc_html(get_theme_mod('advance_education_title','')); ?></h3>
+          <h2><i class="fas fa-book"></i><?php echo esc_html(get_theme_mod('advance_education_title','')); ?></h2>
         <?php } ?>
         <div class="row">
           <?php 
@@ -89,7 +89,7 @@ get_header(); ?>
                     <div class="cat-posts ">
                       <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                       <div class="cat_body">
-                        <h4 class="title"><?php the_title(); ?></h4>
+                        <h3 class="title"><?php the_title(); ?></h3>
                         <p class="description">
                           <?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt,12 ) ); ?>
                         </p> 

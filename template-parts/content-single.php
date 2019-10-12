@@ -13,8 +13,8 @@
   $archive_day   = get_the_time('d'); 
 ?> 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <single class="page-box-single">
-        <h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
+    <div class="page-box-single">
+        <h1><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
         <div class="box-img">
             <?php the_post_thumbnail(); ?>
         </div>
@@ -25,7 +25,16 @@
                 <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
             </div>
             <div class="entry-content"><p><?php the_content();?></p></div>
-        </div>
+            <div class="tags"><p><?php
+                if( $tags = get_the_tags() ) {
+                    echo '<i class="fas fa-tags"></i>';
+                    echo '<span class="meta-sep"></span>';
+                    foreach( $tags as $content_tag ) {
+                      $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
+                      echo '<a href="' . esc_url(get_term_link( $content_tag, $content_tag->taxonomy )) . '">' . esc_html($content_tag->name) . '</a>' . esc_html($sep);
+                    }
+                } ?></p></div>
+            </div>
         <div class="clearfix"></div>
-    </single>
+    </div>
 </article>
