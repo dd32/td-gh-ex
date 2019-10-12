@@ -9,12 +9,12 @@
 <?php
 	if($features_background_setting !== '') {
 ?>
-<section class="features-version-one" style="background: url('<?php echo esc_url($features_background_setting); ?>') no-repeat <?php echo esc_attr($features_background_position); ?> 0 0 / cover rgba(0, 0, 0, 0);">
+<section id="specia-feature" class="features-version-one" style="background: url('<?php echo esc_url($features_background_setting); ?>') no-repeat <?php echo esc_attr($features_background_position); ?> 0 0 / cover rgba(0, 0, 0, 0);">
 
 <?php	
 } else {
 ?>
-<section class="features-version-one" style="background: url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/features.jpg') no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);">
+<section id="specia-feature" class="features-version-one" style="background: url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/features.jpg') no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);">
 
 <?php
 }

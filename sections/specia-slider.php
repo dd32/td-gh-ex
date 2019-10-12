@@ -20,7 +20,7 @@
 ?>
 <?php if(!empty($id_arr))
 { ?>
-	<section class="slider-version">
+	<section id="specia-slider" class="slider-version">
 
 		<div class="slider-version-one">
 			
