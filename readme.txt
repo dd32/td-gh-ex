@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 4.3
 Tested up to: 5.2.3
 Requires PHP: 7.2.14
-Stable tag: 0.3.2
+Stable tag: 0.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,13 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 * Updated naviagtion code.
 * Resolved css customization.
 * Resolved theme error.
+
+= 0.3.3 =
+* Solved constrast error.
+* Added logo resizer.
+* Updated search layout.
+* Changed menu css.
+* Updated responsive menu css.
 
 == Resources ==
 

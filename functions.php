@@ -419,5 +419,6 @@ require get_template_directory().'/inc/template-tags.php';
 
 /* Customizer additions. */
 require get_template_directory().'/inc/customizer.php';
+
 /* Admin about theme */
 require get_template_directory() . '/inc/admin/admin.php';

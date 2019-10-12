@@ -26,7 +26,7 @@ msgstr ""
 msgid 'Looks like you have taken a wrong turn&hellip'
 msgstr ""
 
-#: 404.php:15 
+#: 404.php:15
 #: no-results.php:21
 msgid 'Dont worry&hellip it happens to the best of us'
 msgstr ""
@@ -401,7 +401,7 @@ msgstr ""
 msgid 'H6 Font Size'
 msgstr ""
 
-#: inc/customizer.php:468
+#: inc/customizer.php:462
 msgid 'Topbar Section'
 msgstr ""
 
@@ -509,15 +509,15 @@ msgstr ""
 msgid 'Add some text for footer like copyright etc'
 msgstr ""
 
-#: inc/customizer.php:708
+#: inc/customizer.php:703
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:710
 msgid 'Sidebar Layout Settings'
 msgstr ""
 
-#: inc/customizer.php:722
+#: inc/customizer.php:717
 #: inc/customizer.php:731
 msgid 'Right Sidebar'
 msgstr ""
@@ -526,22 +526,22 @@ msgstr ""
 msgid 'Change Layouts'
 msgstr ""
 
-#: inc/customizer.php:730
+#: inc/customizer.php:722
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:732
+#: inc/customizer.php:727
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:733
+#: inc/customizer.php:728
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:814
+#: inc/customizer.php:812
 msgid 'IT Company Pro'
 msgstr ""
 
-#: inc/customizer.php:815
+#: inc/customizer.php:813
 msgid 'Go Pro'
 msgstr ""

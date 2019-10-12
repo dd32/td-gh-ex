@@ -29,12 +29,10 @@ get_header(); ?>
               endif;
 
               the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ',
               ) );
 
             endwhile; // End of the loop.
@@ -56,12 +54,10 @@ get_header(); ?>
               endif;
 
               the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' ,
               ) );
 
             endwhile; // End of the loop.
@@ -85,12 +81,10 @@ get_header(); ?>
             endif;
 
             the_post_navigation( array(
-              'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-it-company' ) . '</span> ' .
-                '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ' .
-                '<span class="post-title">%title</span>',
-              'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-it-company' ) . '</span> ' .
-                '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' .
-                '<span class="post-title">%title</span>',
+              'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-it-company' ) . '</span> ' .
+                '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ',
+              'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-it-company' ) . '</span> ' .
+                '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ',
             ) );
 
           endwhile; // End of the loop.
@@ -111,12 +105,10 @@ get_header(); ?>
               endif;
 
               the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ',
               ) );
 
             endwhile; // End of the loop.
@@ -141,12 +133,10 @@ get_header(); ?>
               endif;
 
               the_post_navigation( array(
-                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
-                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-it-company' ) . '</span> ' .
-                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' .
-                  '<span class="post-title">%title</span>',
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i>', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Next post:', 'advance-it-company' ) . '</span> ',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-it-company' ) . '</span> ' .
+                  '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-it-company' ) . '</span> ' ,
               ) );
 
             endwhile; // End of the loop.

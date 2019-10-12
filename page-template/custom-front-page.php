@@ -34,7 +34,7 @@ get_header(); ?>
             <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
-                <h2><?php the_title(); ?></h2>
+                <h1><?php the_title(); ?></h1>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,20 ) ); ?></p>
                 <div class="readbtn">
                   <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-it-company'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-it-company' );?></span></a>
@@ -85,7 +85,7 @@ get_header(); ?>
                   if ( $query->have_posts() ) :
                     while ( $query->have_posts() ) : $query->the_post(); ?>
                       <div class="post-sec">
-                        <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                        <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2><span class="screen-reader-text"><?php the_title(); ?></span></a>
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_it_company_string_limit_words( $excerpt,10 ) ); ?></p>
                         <?php the_post_thumbnail(); ?>
                       </div>
