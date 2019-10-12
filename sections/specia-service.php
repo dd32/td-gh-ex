@@ -4,7 +4,7 @@
 	$service_description= get_theme_mod('service_description');
 	if($hide_show_service == 'on') :
 ?>
-	<section class="service-version-one">
+	<section id="specia-service" class="service-version-one">
 		<div class="container">
 			<div class="row text-center padding-top-60 padding-bottom-30">
 				<div class="col-sm-12">
