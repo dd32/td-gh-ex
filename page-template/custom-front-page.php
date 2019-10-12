@@ -31,10 +31,10 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
+              <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_automobile_string_limit_words( $excerpt,20 ) ); ?></p>
                   <div class="read-btn">
                     <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-automobile' );?></span></a>
@@ -134,7 +134,7 @@ get_header(); ?>
     <section id="category">
       <div class="container">
         <?php if( get_theme_mod('advance_automobile_our_services_title') != ''){ ?>
-        <h3><?php echo esc_html(get_theme_mod('advance_automobile_our_services_title','')); ?></h3>
+        <h2><?php echo esc_html(get_theme_mod('advance_automobile_our_services_title','')); ?></h2>
         <?php }?>
         <div class="row owl-carousel m-0">
           <?php 
@@ -145,7 +145,7 @@ get_header(); ?>
             <div class="row">
               <div class="col-lg-6 col-md-6">
                 <div class="text-content">
-                  <h4><?php the_title(); ?></h4>
+                  <h3><?php the_title(); ?></h3>
                   <p><?php the_excerpt(); ?></p>
                   <div class="explore-btn">
                     <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html_e('EXPLORE MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'EXPLORE MORE','advance-automobile' );?></span></a>
@@ -154,8 +154,7 @@ get_header(); ?>
               </div>
               <div class="col-lg-6 col-md-6">
                 <div class="imagebox">
-                  <a href="<?php the_permalink(); ?>"><img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
-                  </a>
+                  <?php the_post_thumbnail(); ?>
                 </div>
               </div>
             </div>

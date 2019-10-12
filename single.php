@@ -29,12 +29,10 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
+								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i> ', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ',
+								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ',
 							) );
 
 						endwhile; // End of the loop.
@@ -56,12 +54,11 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
+								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i> ', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ',
+								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i>
+										Previous', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ',
 							) );
 
 						endwhile; // End of the loop.
@@ -85,12 +82,10 @@ get_header(); ?>
 						endif;
 
 						the_post_navigation( array(
-							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-automobile' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ' .
-								'<span class="post-title">%title</span>',
-							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-automobile' ) . '</span> ' .
-								'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ' .
-								'<span class="post-title">%title</span>',
+							'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i> ', 'advance-automobile' ) . '</span> ' .
+								'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ',
+							'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( ' <i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-automobile' ) . '</span> ' .
+								'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ',
 						) );
 
 					endwhile; // End of the loop.
@@ -111,12 +106,10 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
+								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i> ', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ' ,
+								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ',
 							) );
 
 						endwhile; // End of the loop.
@@ -141,12 +134,10 @@ get_header(); ?>
 							endif;
 
 							the_post_navigation( array(
-								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
-								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-automobile' ) . '</span> ' .
-									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ' .
-									'<span class="post-title">%title</span>',
+								'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next <i class="far fa-long-arrow-alt-right"></i> ', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Next post:', 'advance-automobile' ) . '</span> ',
+								'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="far fa-long-arrow-alt-left"></i> Previous', 'advance-automobile' ) . '</span> ' .
+									'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-automobile' ) . '</span> ',
 							) );
 
 						endwhile; // End of the loop.

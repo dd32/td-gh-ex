@@ -43,7 +43,6 @@
       <span class="entry-comments"><i class="fas fa-comments"></i><?php comments_number( __('0 Comments','advance-automobile'), __('0 Comments','advance-automobile'), __('% Comments','advance-automobile') ); ?></span>
     </div>
     <div class="entry-content"><p><?php the_excerpt();?></p></div>
-    <p><?php the_tags(); ?></p>
     <div class="read-more-btn">
       <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-automobile' );?></span></a>
     </div>

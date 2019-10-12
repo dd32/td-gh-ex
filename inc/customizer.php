@@ -26,7 +26,7 @@ function advance_automobile_customize_register($wp_customize) {
 		array( 'panel' => 'advance_automobile_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-automobile' ) )
 	);
   	$wp_customize->add_setting( 'advance_automobile_theme_color_first', array(
-	    'default' => '#50a65d',
+	    'default' => '#1a8129',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_first', array(
@@ -742,6 +742,9 @@ function advance_automobile_customize_register($wp_customize) {
 	));
 }
 add_action('customize_register', 'advance_automobile_customize_register');
+
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Singleton class for handling the theme's customizer integration.
