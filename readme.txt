@@ -1,9 +1,10 @@
 === Asura ===
 Contributors: wpkoithemes
-Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images, theme-options
+Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images
 Requires at least: WordPress 4.9
-Tested up to: WordPress 5.0.3
-Stable tag: 1.0.0
+Requires PHP: 5.6
+Tested up to: WordPress 5.2.3
+Stable tag: 1.1.0
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -187,6 +188,10 @@ Copyright Shotstash.com
 License: https://creativecommons.org/publicdomain/zero/1.0/
 
 == Change Log ==
+
+= 1.1.0 =
+Fixed: Icon compatibility with newest Elementor
+Changed: Demo URL
 
 = 1.0.0 =
 First release

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'ASURA_VERSION', '1.0.0' );
+define( 'ASURA_VERSION', '1.1.0' );
 
 if ( ! function_exists( 'asura_setup' ) ) {
 	add_action( 'after_setup_theme', 'asura_setup' );
