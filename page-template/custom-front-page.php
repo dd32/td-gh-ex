@@ -31,10 +31,10 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image" role="img"/>
+              <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt,20 ) ); ?></p>
                   <div class="read-btn">
                     <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span></a>
@@ -71,8 +71,8 @@ get_header(); ?>
       <div class="container">
         <?php if( get_theme_mod('advance_coaching_title') != ''){ ?>
           <div class="coaching-title">
-            <h3><?php echo esc_html(get_theme_mod('advance_coaching_title','')); ?></h3>
-            <img src="<?php echo esc_url(get_theme_mod('advance_coaching_sec_border',get_template_directory_uri().'/images/border.png')); ?>" alt="<?php the_title(); ?> post thumbnail image" role="img">
+            <h2><?php echo esc_html(get_theme_mod('advance_coaching_title','')); ?></h2>
+            <img src="<?php echo esc_url(get_theme_mod('advance_coaching_sec_border',get_template_directory_uri().'/images/border.png')); ?>" alt="<?php esc_html_e('Border Image','advance-coaching'); ?>" role="img">
           </div>
         <?php } ?>
         <div class="row">
@@ -109,7 +109,9 @@ get_header(); ?>
 
   <div id="content">
     <div class="container">
-      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+      <?php while ( have_posts() ) : the_post(); ?>
+        <?php the_content(); ?>
+      <?php endwhile; // end of the loop. ?>
     </div>
   </div>
 </main>

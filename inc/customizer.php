@@ -28,7 +28,7 @@ function advance_coaching_customize_register($wp_customize) {
 	) );
 
   	$wp_customize->add_setting( 'advance_coaching_theme_color', array(
-	    'default' => '#2379d2',
+	    'default' => '#005bba',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_coaching_theme_color', array(
@@ -690,6 +690,9 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 }
 add_action('customize_register', 'advance_coaching_customize_register');
+
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Singleton class for handling the theme's customizer integration.

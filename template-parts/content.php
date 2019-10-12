@@ -23,9 +23,8 @@
     <?php } ?>
     <div class="new-text">
         <div class="entry-content"><p><?php the_excerpt();?></p></div>
-        <?php the_tags(); ?>
         <div class="read-more-btn">
-            <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span></a>
+          <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span></a>
         </div>
     </div>
     <div class="metabox">

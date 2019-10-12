@@ -55,25 +55,39 @@
         </div>
       </div>
     </div>
-    <div class="toggle-menu responsive-menu">
-      <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
-    </div>
+    
     <div class="contact-content">
       <div class="container">
         <div class="menu-bar">
           <div class="row">
             <div class="col-lg-3 col-md-3 logo_bar p-0">
               <div class="logo">
-                <?php if( has_custom_logo() ){ advance_coaching_the_custom_logo();
-                 }else{ ?>
-                <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"  rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?> 
-                  <p class="site-description"><?php echo esc_html($description); ?></p>       
-                <?php endif; }?>
+                <?php if ( has_custom_logo() ) : ?>
+                  <div class="site-logo"><?php the_custom_logo(); ?></div>
+                  <?php else: ?>
+                  <?php $blog_info = get_bloginfo( 'name' ); ?>
+                  <?php if ( ! empty( $blog_info ) ) : ?>
+                    <?php if ( is_front_page() && is_home() ) : ?>
+                      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php else : ?>
+                      <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php endif; ?>
+                  <?php endif; ?>
+                  <?php
+                  $description = get_bloginfo( 'description', 'display' );
+                  if ( $description || is_customize_preview() ) :
+                    ?>
+                  <p class="site-description">
+                    <?php echo esc_html($description); ?>
+                  </p>
+                <?php endif; ?>
+                <?php endif; ?>
               </div>
             </div>         
             <div class="col-lg-9 col-md-9 p-0">
+              <div class="toggle-menu responsive-menu">
+                <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
+              </div>
               <div class="topbar">
                 <div class="row m-0">
                   <div class="col-lg-11 col-md-11 padding0">
@@ -81,7 +95,7 @@
                       <div class="container">
                         <div id="menu-sidebar" class="nav sidebar">
                           <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-coaching' ); ?>">
-                            <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-coaching'); ?></span></a>
+                            <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-coaching'); ?></span></a>
                             <?php 
                               wp_nav_menu( array( 
                                 'theme_location' => 'primary',
@@ -91,19 +105,25 @@
                                 'fallback_cb' => 'wp_page_menu',
                               ) ); 
                             ?>
+                            <div class="request-btn">
+                              <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
+                                <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_attr_e( 'Requestbtn','advance-coaching' );?></span></span>
+                              <?php }?>
+                            </div>
+                            <?php get_search_form();?>
                           </nav>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-1 col-md-1 p-0">
-                    <div class="search-box">
-                      <i class="fas fa-search"></i>
-                    </div>
+                  <div class="col-lg-1 col-md-1">
+                    <a href="#" onclick="search_open()" class="search-box">
+                      <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-coaching' );?></span>
+                    </a>
                   </div>
                 </div>
                 <div class="serach_outer">
-                  <div class="closepop"><i class="far fa-window-close"></i></div>
+                  <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-coaching' );?></span></a>
                   <div class="serach_inner">
                     <?php get_search_form(); ?>
                   </div>

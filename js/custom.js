@@ -9,23 +9,20 @@ jQuery(function($){
 });
 
 function resMenu_open() {
-	  document.getElementById("menu-sidebar").style.width = "250px";
+  document.getElementById("menu-sidebar").style.width = "100%";
+  document.getElementById("contact-info").style.position = "fixed";
 }
 function resMenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
+  document.getElementById("contact-info").style.position = "static";
 }
 
-(function( $ ) {
 
-	/**** Hidden search box ***/
-	jQuery('document').ready(function($){
-	$('.search-box i').click(function(){
-	       $(".serach_outer").slideDown(700);
-	   });
+/**** Hidden search box ***/
 
-	   $('.closepop i').click(function(){
-	       $(".serach_outer").slideUp(700);
-	   });
-	});
-	
-})( jQuery );
+	function search_open() {
+	  jQuery(".serach_outer").slideDown(100);
+	}
+	function search_close() {
+	  jQuery(".serach_outer").slideUp(100);
+	}
