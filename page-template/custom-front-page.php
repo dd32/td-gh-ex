@@ -33,7 +33,7 @@ get_header(); ?>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h2><?php the_title(); ?></h2>
+                  <h1><?php the_title(); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_startup_string_limit_words( $excerpt,20 ) ); ?></p>
                   <div class="readbtn">
                     <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-startup'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-startup' );?></span></a>
@@ -75,7 +75,7 @@ get_header(); ?>
     <section id="we_provide">
       <div class="container">
         <?php if( get_theme_mod('advance_startup_title') != ''){ ?>
-          <h3><?php echo esc_html(get_theme_mod('advance_startup_title','')); ?></h3>
+          <h2><?php echo esc_html(get_theme_mod('advance_startup_title','')); ?></h2>
         <?php } ?>
         <div class="row">
           <?php 
@@ -87,7 +87,7 @@ get_header(); ?>
                   <div class="cat-posts ">
                     <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                     <div class="cat_body">
-                      <h4 class="title"><?php the_title(); ?></h4>
+                      <h3 class="title"><?php the_title(); ?></h3>
                       <p>
                         <?php $excerpt = get_the_excerpt(); echo esc_html( advance_startup_string_limit_words( $excerpt,12 ) ); ?>
                       </p> 

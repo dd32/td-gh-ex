@@ -26,7 +26,7 @@ function advance_startup_customize_register($wp_customize) {
 	);
 
   	$wp_customize->add_setting( 'advance_startup_theme_color_first', array(
-	    'default' => '#e9413a',
+	    'default' => '#df2b23',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_first', array(
@@ -37,7 +37,7 @@ function advance_startup_customize_register($wp_customize) {
   	)));
 
   	$wp_customize->add_setting( 'advance_startup_theme_color_second', array(
-	    'default' => '#fcc012',
+	    'default' => '#906b00 ',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_second', array(
@@ -694,6 +694,9 @@ function advance_startup_customize_register($wp_customize) {
 	));
 }
 add_action('customize_register', 'advance_startup_customize_register');
+
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Singleton class for handling the theme's customizer integration.

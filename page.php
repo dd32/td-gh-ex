@@ -14,7 +14,7 @@ get_header(); ?>
 
 <?php do_action( 'advance_startup_page_header' ); ?>
 
-<main role="main" id="maincontent" class="content-ts">
+<main role="main" id="maincontent">
     <div class="container">
         <div class="middle-align">
             <?php while ( have_posts() ) : the_post(); ?>
