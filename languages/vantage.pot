@@ -1623,7 +1623,7 @@ msgid "SiteOrigin Attribution"
 msgstr ""
 
 #: inc/settings.php:329
-msgid "Add or remove a link to SiteOrigin in your footer."
+msgid "Remove the theme attribution link from your footer."
 msgstr ""
 
 #: inc/settings.php:333
