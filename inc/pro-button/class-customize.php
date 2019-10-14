@@ -5,6 +5,7 @@
  * @since  1.0.0
  * @access public
  */
+use WPTRT\Customize\Section\Button;
 final class Ansia_Updgrade_Pro_Button {
 
 	/**
@@ -60,38 +61,29 @@ final class Ansia_Updgrade_Pro_Button {
 	 * @return void
 	 */
 	public function sections( $manager ) {
+		
+		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/Button.php' );
 
-		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/section-pro.php' );
+		$manager->register_section_type( Button::class );
 
-		// Register custom section types.
-		$manager->register_section_type( 'Ansia_Updgrade_Section_Pro' );
-
-		// Register sections.
 		$manager->add_section(
-			new Ansia_Updgrade_Section_Pro(
-				$manager,
-				'cresta_ansia_buy_pro',
-				array(
-					'priority' => 1,
-					'title'    => esc_html__( 'Ansia PRO Theme', 'ansia' ),
-					'pro_text' => esc_html__( 'More Info',         'ansia' ),
-					'pro_url'  => 'https://crestaproject.com/downloads/ansia/',
-				)
-			)
+			new Button( $manager, 'cresta_ansia_buy_pro', [
+				'title'       => __( 'Ansia PRO', 'ansia' ),
+				'button_text' => __( 'More Info',        'ansia' ),
+				'button_url'  => 'https://crestaproject.com/downloads/ansia/',
+				'priority' => 1,
+			] )
 		);
+		
 		$manager->add_section(
-			new Ansia_Updgrade_Section_Pro(
-				$manager,
-				'cresta_ansia_documentation',
-				array(
-					'priority' => 999,
-					'title'    => esc_html__( 'Need help?', 'ansia' ),
-					'pro_text' => esc_html__( 'Theme Documentation',         'ansia' ),
-					'pro_url'  => admin_url( add_query_arg( array( 'page' => 'ansia-welcome', 'tab' => 'documentation' ), 'themes.php' ) ),
-				)
-			)
+			new Button( $manager, 'cresta_ansia_documentation', [
+				'title'       => __( 'Need help?', 'ansia' ),
+				'button_text' => __( 'Theme Documentation',        'ansia' ),
+				'button_url'  => admin_url( add_query_arg( array( 'page' => 'ansia-welcome', 'tab' => 'documentation' ), 'themes.php' ) ),
+				'priority' => 999,
+			] )
 		);
+		
 	}
 
 	/**

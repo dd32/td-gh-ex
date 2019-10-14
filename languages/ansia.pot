@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2019-07-18 10:32+0100\n"
-"PO-Revision-Date: 2019-07-18 10:32+0100\n"
+"POT-Creation-Date: 2019-10-14 18:28+0100\n"
+"PO-Revision-Date: 2019-10-14 18:28+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -390,7 +390,7 @@ msgstr ""
 msgid "Ansia"
 msgstr ""
 
-#: inc/admin/ansia-admin-page.php:370
+#: inc/admin/ansia-admin-page.php:370 inc/pro-button/class-customize.php:71
 msgid "Ansia PRO"
 msgstr ""
 
@@ -658,67 +658,63 @@ msgstr ""
 msgid "New Window"
 msgstr ""
 
-#: inc/customizer.php:617
+#: inc/customizer.php:627
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:620
+#: inc/customizer.php:630
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:633
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:626
+#: inc/customizer.php:636
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:629
+#: inc/customizer.php:639
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:632
+#: inc/customizer.php:642
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:635
+#: inc/customizer.php:645
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:638
+#: inc/customizer.php:648
 msgid "Tumblr"
 msgstr ""
 
-#: inc/customizer.php:641
+#: inc/customizer.php:651
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer.php:644
+#: inc/customizer.php:654
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:657
 msgid "Xing"
 msgstr ""
 
-#: inc/customizer.php:650
+#: inc/customizer.php:660
 msgid "Reddit"
 msgstr ""
 
-#: inc/pro-button/class-customize.php:77
-msgid "Ansia PRO Theme"
-msgstr ""
-
-#: inc/pro-button/class-customize.php:78
+#: inc/pro-button/class-customize.php:72
 msgid "More Info"
 msgstr ""
 
-#: inc/pro-button/class-customize.php:89
+#: inc/pro-button/class-customize.php:80
 msgid "Need help?"
 msgstr ""
 
-#: inc/pro-button/class-customize.php:90
+#: inc/pro-button/class-customize.php:81
 msgid "Theme Documentation"
 msgstr ""
 

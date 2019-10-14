@@ -46,7 +46,7 @@
 
 					$ansia_description = get_bloginfo( 'description', 'display' );
 					if ( $ansia_description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $ansia_description; /* WPCS: xss ok. */ ?></p>
+						<p class="site-description"><?php echo $ansia_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 					<?php endif; ?>
 				</div>
 			</div><!-- .site-branding -->
