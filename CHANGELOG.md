@@ -1,3 +1,6 @@
+###Version 2.1.2 [14-OCT-2019]
+* Footer option updated.
+* Minor bug fixed.
 ###Version 2.1.1 [09-OCT-2019]
 * Footer background, link text color issue fixed.
 * Footer copyright section background color issue fixed.

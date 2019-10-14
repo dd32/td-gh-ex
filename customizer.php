@@ -1178,7 +1178,7 @@ Kirki::add_field('awada_theme', array(
     'type' => 'text',
     'priority' => 10,
     'transport' => 'postMessage',
-    'default' => esc_url('https://www.youtube.com/watch?v=jnLSYfObARA'),
+    'default' => '',
     'sanitize_callback' => 'esc_url_raw',
 	'partial_refresh' => array(
 		'callout_external_bg_video' => array(
@@ -1375,50 +1375,63 @@ Kirki::add_field('awada_theme', array(
 Kirki::add_field( 'awada_theme', array(
 	'type'        => 'color',
 	'settings'    => 'footer_background_color',
-	'label'       => __( 'Footer Background Color', 'awada' ),
+	'label'       => esc_html__( 'Footer Background Color', 'awada' ),
 	'description' => esc_html__( 'Add footer section background color here', 'awada' ),
 	'section'     => 'footer_sec',
-	'priority'          => 10,
+	'priority'    => 10,
 	'default'     => 'rgba(18,18,20,1)',
 	'output'            => array(
         array(
             'element'  => '#awada_footer_area',
-            'property' => 'background-color',
+            'property' => 'background',
         ),
     ),
 	'choices'     => array(
 		'alpha' => true,
 	),
+	'transport'         => 'auto',
 ) );
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_text_color',
-    'label'             => __('Footer Link Text Color', 'awada'),
-    'description'       => __('Change Footer Text Color', 'awada'),
+    'label'             => esc_html__('Footer Text Color', 'awada'),
+    'description'       => esc_html__('Change Footer Text Color', 'awada'),
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '#31a3dd',
-    'sanitize_callback' => 'awada_sanitize_color',
+	'default'			=> '#fff',
+    'output'            => array(
+        array(
+            'element'  => '#awada_footer_area .recent_posts_widget > li > a, #awada_footer_area .recent_posts_widget > a, #awada_footer_area p',
+            'property' => 'color',
+        ),
+    ),
+	'transport'         => 'auto',
+));
+
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'footer_link_text_color',
+    'label'             => esc_html__('Footer Link Text Color', 'awada'),
+    'description'       => esc_html__('Change Footer Link Text Color', 'awada'),
+    'section'           => 'footer_sec',
+    'type'              => 'color',
+    'priority'          => 10,
+	'default'			=> '#31a3dd',
     'output'            => array(
         array(
             'element'  => '#awada_footer_area li a, #awada_footer_area a',
             'property' => 'color',
         ),
     ),
-	'choices'     => array(
-		'alpha' => false,
-	),
 	'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'copyright_section_bg_color',
-    'label'             => __('Copyright Section Background Color', 'awada'),
-    'description'       => __('Change Copyright Section Background Color', 'awada'),
+    'label'             => esc_html__('Copyright Section Background Color', 'awada'),
+    'description'       => esc_html__('Change Copyright Section Background Color', 'awada'),
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '#31a3dd',
-    'sanitize_callback' => 'awada_sanitize_color',
+    'default'           => 'rgba(49,163,221,1)',
     'output'            => array(
         array(
             'element'  => '#copyrights',
@@ -1426,6 +1439,9 @@ Kirki::add_field('awada_theme', array(
         ),
     ),
     'transport'         => 'auto',
+	'choices'     => array(
+		'alpha' => true,
+	),
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'copyright_section_text_color',
@@ -1435,7 +1451,6 @@ Kirki::add_field('awada_theme', array(
     'type'              => 'color',
     'priority'          => 10,
     'default'           => '#fff',
-    'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
             'element'  => '#copyrights, .footer-area-menu li a',

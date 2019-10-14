@@ -18,23 +18,18 @@ function awada_theme_options()
 		//Slider Settings:
         'home_slider_enabled' => 1,
 		'slider_style' => 2,
-
         'slider_img_1'=>get_template_directory_uri().'/images/slider/s1.jpg',
         'slider_img_2'=>get_template_directory_uri().'/images/slider/s2.jpg',
         'slider_img_3'=>get_template_directory_uri().'/images/slider/s3.jpg',
-
         'slider_title_1'=>__('Lorem ipsum dolor','awada'),
         'slider_subtitle_1'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_1'=>__('Read More','awada'),
-
         'slider_title_2'=>__('Lorem ipsum dolor','awada'),
         'slider_subtitle_2'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_2'=>__('Read More','awada'),
-
         'slider_title_3'=>__('Lorem ipsum dolor','awada'),
         'slider_subtitle_3'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_3'=>__('Read More','awada'),
-
         'home_slider_shortcode'=>'',
 		// Service
         'home_service_title' => __('Our <span>Services</span>', 'awada'),
@@ -79,7 +74,7 @@ function awada_theme_options()
         'blog_load_more_text'     => __('Load More', 'awada'),
 		/* footer callout */
 		'callout_bg_image' => $banner_img,
-		'callout_external_bg_video'=>esc_url('https://www.youtube.com/watch?v=jnLSYfObARA'),
+		'callout_external_bg_video'=>'',
         'home_callout_title' => __('Best Wordpress Resposnive Theme Ever!', 'awada'),
         'home_callout_description' => __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don\'t look even slightly believable If you are going to use a passage of Lorem Ipsum.', 'awada'),
         'callout_btn_text' => __('Purchase Now', 'awada'),
@@ -105,6 +100,11 @@ function awada_theme_options()
         'developed_by_link_text' => __('Webhunt Infotech', 'awada'),
         'developed_by_link' => 'http://www.webhuntinfotech.com/',
         'footer_layout' => 4,
+		'footer_background_color' => 'rgba(18,18,20,1)',
+		'footer_text_color' => '#fff',
+		'footer_link_text_color' => '#31a3dd',
+		'copyright_section_bg_color' => 'rgba(49,163,221,1)',
+		'copyright_section_text_color' => '#fff',
 		'awada_portfolio_setting'=>array(),
 		'home_sections' => array('service', 'portfolio', 'blog', 'callout'),
     );

@@ -1,15 +1,3 @@
-<?php
-/**
- * Customizer controls underscore.js template.
- *
- * @package     Kirki
- * @subpackage  Controls
- * @copyright   Copyright (c) 2019, Ari Stathopoulos (@aristath)
- * @license     https://opensource.org/licenses/MIT
- * @since       3.0.17
- */
-
-?>
 <# data = _.defaults( data, {
 	choices: {},
 	label: '',
@@ -23,10 +11,10 @@
 
 <div class="kirki-input-container" data-id="' + data.id + '">
 	<# if ( data.label ) { #>
-		<span class="customize-control-title">{{{ data.label }}}</span>
+		<span class="customize-control-title">{{ data.label }}</span>
 	<# } #>
 	<# if ( data.description ) { #>
-		<span class="description customize-control-description">{{{ data.description }}}</span>
+		<span class="description customize-control-description">{{ data.description }}</span>
 	<# } #>
 	<# _.each( data.choices, function( val, key ) { #>
 		<label>
@@ -35,7 +23,7 @@
 				type="radio"
 				data-id="{{ data['data-id'] }}"
 				value="{{ key }}"
-				name="_customize-radio-{{ data['data-id'] }}"
+				name="_customize-radio-{{ data.id }}"
 				<# if ( data.value === key ) { #> checked<# } #>
 			/>
 			<# if ( _.isArray( val ) ) { #>

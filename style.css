@@ -6,7 +6,7 @@
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 2.1.1
+	Version: 2.1.2
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -955,9 +955,7 @@ COLOR SCHEMES
 .pagination > li > span:focus,
 .pagination > .active > span:focus,
 #awada_footer_area .topbar-social-links span a:hover,
-.recent_posts_widget a,
 #awada_footer_area .widget,
-#awada_footer_area p,
 .magnifier .btn-default:hover,
 .magnifier .btn-default:focus,
 .magnifier .btn-default:active,
