@@ -70,6 +70,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.22
+* Styling fixes/tweaks
+* Added WooCustomizer as a recommended plugin in TGM
+* Fixed broken help link
+* Updated language .pot file
+Premium: Added functionlaity to Elementor Layouts import section
+
 #### 1.3.21
 * Styling fixes/tweaks
 * Updated Theme URI

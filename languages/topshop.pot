@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2019-07-26 12:39+0200\n"
+"POT-Creation-Date: 2019-10-15 12:01+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -196,7 +196,7 @@ msgstr ""
 msgid "Default Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:135 functions.php:290
+#: customizer/customizer-options.php:135
 msgid "Meta Slider"
 msgstr ""
 
@@ -673,10 +673,14 @@ msgid "Elementor Page Builder"
 msgstr ""
 
 #: functions.php:280
-msgid "Contact Form by WPForms"
+msgid "WooCustomizer"
 msgstr ""
 
 #: functions.php:285
+msgid "Contact Form by WPForms"
+msgstr ""
+
+#: functions.php:290
 msgid "Breadcrumb NavXT"
 msgstr ""
 

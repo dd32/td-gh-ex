@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.21' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.22' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -277,6 +277,11 @@ function topshop_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => __( 'WooCustomizer', 'topshop' ),
+			'slug'      => 'woocustomizer',
+			'required'  => false,
+		),
+		array(
 			'name'      => __( 'Contact Form by WPForms', 'topshop' ),
 			'slug'      => 'wpforms-lite',
 			'required'  => false,
@@ -284,11 +289,6 @@ function topshop_register_required_plugins() {
 		array(
 			'name'      => __( 'Breadcrumb NavXT', 'topshop' ),
 			'slug'      => 'breadcrumb-navxt',
-			'required'  => false,
-		),
-		array(
-			'name'      => __( 'Meta Slider', 'topshop' ),
-			'slug'      => 'ml-slider',
 			'required'  => false,
 		)
 	);
