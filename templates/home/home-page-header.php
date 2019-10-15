@@ -140,10 +140,12 @@
 		<div class="container">
 			<div class="page-header" style="<?php echo esc_attr($talign);?>">
 				<div class="page-header-inner">
+					<?php do_action('ascend_above_page_title'); ?>
 					<h1 class="page_head_title home_head_title entry-title" itemprop="name" <?php echo 'data-max-size="'.esc_attr($title_data).'" data-min-size="'.esc_attr($title_small_data).'"'; ?>>
 						<?php echo do_shortcode($home_page_title); ?>
 					</h1>
 					<?php if(!empty($bsub)) { echo '<p class="subtitle" data-max-size="'.esc_attr($subtitle_data).'" data-min-size="'.esc_attr($subtitle_small_data).'"  style="'.esc_attr($scolor).'"> '.do_shortcode($bsub).' </p>'; } ?>
+					<?php do_action('ascend_below_page_title'); ?>
 				</div>
 			</div>
 		</div><!--container-->

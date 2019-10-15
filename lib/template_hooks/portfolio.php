@@ -31,21 +31,7 @@ function ascend_portfolio_nav() {
 		        	echo '</div>';
 		        endif; 
 		        if(isset($ascend['portfolio_link_type']) && $ascend['portfolio_link_type'] == 'type') {
-		        	$main_term = '';
-	                if(class_exists('WPSEO_Primary_Term')) {
-	              		$WPSEO_term = new WPSEO_Primary_Term('portfolio-type', $post->ID);
-						$WPSEO_term = $WPSEO_term->get_primary_term();
-						$WPSEO_term = get_term($WPSEO_term);
-						if (is_wp_error($WPSEO_term)) { 
-							if ( $terms = wp_get_post_terms( $post->ID, 'portfolio-type', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ) {
-								$main_term = $terms[0];
-							}
-						} else {
-							$main_term = $WPSEO_term;
-						}
-	              	} elseif ( $terms = wp_get_post_terms( $post->ID, 'portfolio-type', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ) {
-	                    $main_term = $terms[0];
-	                }
+		        	$main_term = ascend_get_primary_term( $post->ID, 'portfolio-type' );
 		        	if ( $main_term ) {
                     	echo '<div class="kad-grid-link">';
                     	echo '<a href="'.esc_url( get_term_link( $main_term->slug, 'portfolio-type' ) ).'" class="kt_color_gray"><i class="kt-icon-th-large"></i></a>';

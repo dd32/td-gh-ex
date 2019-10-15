@@ -47,8 +47,8 @@
         'show_options_object'  => false,
         'default_show'         => false,
         'default_mark'         => '',
-        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/ascend-premium-wordpress-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=ascend_premium" target="_blank">Ascend Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, custom post types and much much more!',       
-        'footer_credit' 		=> __('Thank you for using the Ascend Theme by <a href="https://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'ascend'),
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencewp.com/product/ascend-premium-wordpress-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=ascend_premium" target="_blank">Ascend Premium</a> for more great features. Over 50 more theme options, premium sliders and carousels, custom post types and much much more!',       
+        'footer_credit' 		=> __('Thank you for using the Ascend Theme by <a href="https://kadencewp.com/" target="_blank">Kadence WP</a>.', 'ascend'),
         'hints'                => array(
             'icon'          => 'kt-icon-question',
             'icon_position' => 'right',
@@ -80,20 +80,25 @@
     );
 
     $args['share_icons'][] = array(
-        'url' => 'https://www.facebook.com/KadenceThemes',
-        'title' => 'Follow Kadence Themes on Facebook', 
+        'url' => 'https://www.facebook.com/KadenceWP',
+        'title' => 'Follow Kadence WP on Facebook', 
         'icon' => 'dashicons dashicons-facebook',
     );
     $args['share_icons'][] = array(
-        'url' => 'https://www.twitter.com/KadenceThemes',
-        'title' => 'Follow Kadence Themes on Twitter', 
+        'url' => 'https://www.twitter.com/KadenceWP',
+        'title' => 'Follow Kadence WP on Twitter', 
         'icon' => 'dashicons dashicons-twitter',
     );
-    $args['share_icons'][] = array(
-        'url' => 'https://www.instagram.com/KadenceThemes',
-        'title' => 'Follow Kadence Themes on Instagram', 
-        'icon' => 'dashicons dashicons-format-image',
-    );
+	$args['share_icons'][] = array(
+	    'url' => 'https://www.instagram.com/KadenceWP',
+	    'title' => 'Follow Kadence WP on Instagram', 
+	    'icon' => 'dashicons dashicons-format-image',
+	);
+	$args['share_icons'][] = array(
+	    'url' => 'http://www.youtube.com/c/KadenceWP',
+	    'title' => 'Follow Kadence WP on YouTube', 
+	    'icon' => 'dashicons dashicons-video-alt3',
+	);
 
     $args = apply_filters('kadence_theme_options_args', $args);
     Redux::setArgs( $opt_name, $args );

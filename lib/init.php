@@ -55,7 +55,7 @@ function ascend_setup() {
 	// Indicate widget sidebars can use selective refresh in the Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	define( 'ASCEND_VERSION', '1.4.2' );
+	define( 'ASCEND_VERSION', '1.4.3' );
 	// Square.
 	add_image_size( 'ascend-600x600', 600, 600, true );
 	// portrait.
@@ -155,3 +155,8 @@ function ascend_filter_archive_title( $title ){
 	}
 	return $title;
 }
+
+require_once trailingslashit( get_template_directory() ) . 'lib/schema-functions.php'; // Add Schema Functions.
+require_once trailingslashit( get_template_directory() ) . 'lib/deprecated.php'; // Add Deprecated Functions.
+require_once trailingslashit( get_template_directory() ) . 'lib/plugin-support/facet-wp.php'; // Add Facet Support.
+require_once trailingslashit( get_template_directory() ) . 'lib/plugin-support/lifterlms.php'; // Add Lifter Support.

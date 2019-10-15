@@ -19,7 +19,7 @@ Yes, go here: http://docs.kadencethemes.com/ascend-free/
 
 = Is there demo content available? =
 
-Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
+Yes, go here: https://www.kadencewp.com/kadence-themes-demo-content/
 
 
 -------------------------------------------------------
@@ -27,6 +27,16 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 -------------------------------------------------------
 
 = Theme Name: Ascend =
+
+= Version 1.4.3 | 15th October 2019 =
+* Update: Better Elementor Pro Support.
+* Update: Breadcrumbs, new class better rank math support.
+* Update: Main term, supports rank math.
+* Update: Change cart refresh to prevent issue with Elementor.
+* Update: Add DESC order to Data Best seller to force DESC if set to something else.
+* Update: Refactor code.
+* Update: Change Video Post Schema.
+* Update: CSS for portfolio navigation.
 
 = Version 1.4.2 | 12th August 2019 =
 * Update: WC 3.7

@@ -61,21 +61,61 @@ function ascend_adjust_brightness( $hex, $steps ) {
 }
 
 /**
- * Schema type
+ * Get Primary Term
+ *
+ * @param string $taxonomy string term name.
+ * @param string $post_id string post id.
  */
-function ascend_html_tag_schema() {
-	$schema = 'http://schema.org/';
-
-	if ( is_singular( 'post' ) ) {
-		$type = 'WebPage';
-	} elseif ( is_author() ) {
-		$type = 'ProfilePage';
-	} elseif ( is_search() ) {
-		$type = 'SearchResultsPage';
-	} else {
-		$type = 'WebPage';
+function ascend_get_taxonomy_main( $taxonomy, $post_id ) {
+	$main_term = '';
+	$terms     = wp_get_post_terms(
+		$post_id,
+		$taxonomy,
+		array(
+			'orderby' => 'parent',
+			'order'   => 'DESC',
+		)
+	);
+	if ( $terms && ! is_wp_error( $terms ) ) {
+		if ( is_array( $terms ) ) {
+			$main_term = $terms[0];
+		}
 	}
-
-	echo apply_filters( 'ascend_html_schema', 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ) . '"' );
+	return $main_term;
 }
 
+/**
+ * Get Primary Term
+ *
+ * @param string $post_id string post id.
+ * @param string $term string term name.
+ */
+function ascend_get_primary_term( $post_id, $term ) {
+	$main_term = '';
+	if ( class_exists( 'WPSEO_Primary_Term' ) ) {
+		$wpseo_term = new WPSEO_Primary_Term( $term, $post_id );
+		$wpseo_term = $wpseo_term->get_primary_term();
+		$wpseo_term = get_term( $wpseo_term );
+		if ( is_wp_error( $wpseo_term ) ) {
+			$main_term = ascend_get_taxonomy_main( $term, $post_id );
+		} else {
+			$main_term = $wpseo_term;
+		}
+	} elseif ( class_exists( 'RankMath' ) ) {
+		$wpseo_term = get_post_meta( $post_id, 'rank_math_primary_category', true );
+		if ( $wpseo_term ) {
+			$wpseo_term = get_term( $wpseo_term );
+			if ( is_wp_error( $wpseo_term ) ) {
+				$main_term = ascend_get_taxonomy_main( $term, $post_id );
+			} else {
+				$main_term = $wpseo_term;
+			}
+		} else {
+			$main_term = ascend_get_taxonomy_main( $term, $post_id );
+		}
+	} else {
+		$main_term = ascend_get_taxonomy_main( $term, $post_id );
+	}
+
+	return $main_term;
+}

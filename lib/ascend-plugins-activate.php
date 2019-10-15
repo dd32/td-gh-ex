@@ -40,7 +40,7 @@ function ascend_kadence_toolkit_notice() {
 	$activate_nonce  = wp_create_nonce( 'activate-plugin_virtue-toolkit/virtue_toolkit.php' );
 	$activation_link = self_admin_url( 'plugins.php?_wpnonce=' . $activate_nonce . '&action=activate&plugin=virtue-toolkit%2Fvirtue_toolkit.php' );
 	?>
-	<div id="message" class="updated kt-plugin-install-notice-wrapper" style="position: relative; border:10px solid #fff; padding:10px 30px; background:#ebfbff;">
+	<div id="message" class="is-dismissible notice updated kt-plugin-install-notice-wrapper">
 		<h3 class="kt-notice-title"><?php echo esc_html__( 'Thanks for choosing the Ascend Theme', 'ascend' ); ?></h3>
 		<p class="kt-notice-description"><?php /* translators: %s: <strong> */ printf( esc_html__( 'To take full advantage of the Ascend Theme please install the %1$sKadence Toolkit%2$s, this adds extra settings and features.', 'ascend' ), '<strong>', '</strong>' ); ?></p>
 		<p class="submit">

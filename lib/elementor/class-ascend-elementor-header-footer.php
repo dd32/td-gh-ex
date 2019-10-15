@@ -1,20 +1,29 @@
 <?php
+/**
+ * Elementor Header and Footer Support.
+ *
+ * @package Ascend Theme
+ */
+
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-} 
+	exit; // Exit if accessed directly.
+}
+
 /**
  * HFE Ascend theme compatibility.
  */
 class Ascend_Elementor_Header_Footer {
 	/**
-	* @var null
-	*/
+	 * For instance Control
+	 *
+	 * @var null
+	 */
 	private static $instance = null;
 	/**
-	* Instance Control
-	*/
+	 * Instance Control
+	 */
 	public static function get_instance() {
-		if ( is_null(  self::$instance ) ) {
+		if ( is_null( self::$instance ) ) {
 			self::$instance = new self();
 			add_action( 'after_setup_theme', array( self::$instance, 'init' ), 30 );
 		}
