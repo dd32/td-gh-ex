@@ -94,6 +94,9 @@ Images
 ---------------------------------------------
 == Changelog ==
 
+= 2.0.2 =
+** Fixed Scroll to Top
+
 = 2.0.1 =
 ** Added Elementor Compatibility
 ** Removed old demo and added new demo with Elementor
