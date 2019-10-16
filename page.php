@@ -15,10 +15,10 @@ get_header(); ?>
 <?php do_action( 'bb_wedding_bliss_header_page' ); ?>
 
 <div class="container">
-    <main id="maincontent" role="main" class="content-ts">
+    <main id="maincontent" role="main">
         <div class="middle-align">
             <?php while ( have_posts() ) : the_post(); ?>
-                <h2><?php the_title();?></h2>
+                <h1><?php the_title();?></h1>
                 <?php the_post_thumbnail(); ?>
                 <?php the_content();
                 

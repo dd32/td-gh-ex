@@ -355,12 +355,12 @@ function bb_wedding_bliss_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'bb_wedding_bliss_scripts' );
 
-define('BB_WEDDING_BLISS_BUY_NOW','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_BUY_NOW','https://www.themeshopy.com/themes/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
 define('BB_WEDDING_BLISS_LIVE_DEMO','https://themeshopy.com/bb-wedding-bliss-theme/','bb-wedding-bliss');
 define('BB_WEDDING_BLISS_PRO_DOC','https://themeshopy.com/demo/docs/bb-wedding-bliss/','bb-wedding-bliss');
 define('BB_WEDDING_BLISS_FREE_DOC','https://themeshopy.com/demo/docs/free-bb-wedding-bliss/','bb-wedding-bliss');
 define('BB_WEDDING_BLISS_CONTACT','https://wordpress.org/support/theme/bb-wedding-bliss/','bb-wedding-bliss');
-define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/themes/bb-free-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
 
 if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 	function bb_wedding_bliss_credit(){

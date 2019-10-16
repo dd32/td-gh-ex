@@ -247,12 +247,12 @@ input[type="search"] {
     color: #000;
 }
 input[type="submit"] {
-	border:2px solid rgb(21, 28, 39);
+	border:2px solid #151c27;
 	text-align:center;
 	text-transform:uppercase;
 	font-size:18px;
 	padding:4px 15px;
-	background:rgb(21, 28, 39);
+	background:#151c27;
 	font-weight:bold;
 	color:#b79338;
 	border-radius:3px;
@@ -282,7 +282,7 @@ input[type="submit"] {
 	right: 0;
 	left: 0;
 	bottom: 0;
-	background: rgb(21, 28, 39);
+	background: #151c27;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
 	-webkit-transform-origin: 100% 50%;
@@ -308,7 +308,7 @@ input[type="submit"] {
 
 /* ---------Buttons--------- */
 a.button{
-	background:rgb(21, 28, 39);
+	background:#151c27;
     color: #fff;
     font-size: 16px;
     margin: 20px 0 0;
@@ -360,7 +360,7 @@ body.page-template.page-template-page-template.page-template-custom-front-page .
     box-shadow: none;
 }
 #header {
-    background: rgb(21, 28, 39);
+    background: #151c27;
     position: relative;
     float: right;
     width: 100%;
@@ -518,7 +518,7 @@ outline: 1px solid  #000000!important;
     background: #f5f5f5;
 }
 .our-services .page-box h4 a{
-	color:rgb(21, 28, 39);
+	color:#151c27;
 	margin:0 0 29px 0;
 	padding:0;
 	font-size: 30px;
@@ -799,7 +799,7 @@ table#wp-calendar td a {
   margin: 0;
 }
 #footer{
-	background:rgb(21, 28, 39);
+	background:#151c27;
 	text-align:center;
 	color:#fff;
 	text-align:right;
@@ -860,7 +860,7 @@ table#wp-calendar td a {
 }
 /* --------- Bride & Groom ------- */
 .contentbox a {
-    color: rgb(21, 28, 39);
+    color: #151c27;
     font-size: 18px;
 }
 .contentbox p {
@@ -936,9 +936,9 @@ table#wp-calendar td a {
 	background:none;
 	font-weight:bold;
 	padding:6px 25px;
-	border:2px solid rgb(21, 28, 39);
+	border:2px solid #151c27;
 	background-color :#b79338;
-	color:rgb(21, 28, 39);
+	color:#151c27;
 	font-size:14px;
 	text-transform:uppercase;
 	margin:25px 0 0 0;
@@ -989,7 +989,7 @@ table#wp-calendar td a {
   margin:20px 0 0 0;
 }
 #comments input[type="submit"].submit{
-  background:rgb(21, 28, 39) !important;
+  background:#151c27 !important;
   padding:10px 50px;
   text-transform:uppercase;
   font-weight:bold;
@@ -1003,7 +1003,7 @@ table#wp-calendar td a {
   padding:5px 15px;
 }  
 #comments a.comment-reply-link:hover{
-  background:rgb(21, 28, 39);
+  background:#151c27;
   color: #fff;
 }  
 #comments a time{
@@ -1192,7 +1192,7 @@ body.page-template.page-template-page-template.page-template-custom-front-page .
     padding: 10px 15px;
     font-weight: bold;
     font-size: 18px;
-    background: rgb(21, 28, 39);
+    background: #151c27;
     color: #b79338;
     text-transform: uppercase;
     text-align: center;
@@ -1212,7 +1212,7 @@ body.page-template.page-template-page-template.page-template-custom-front-page .
 	margin:0;
 }
 #sidebar input[type="submit"]{
-	background:rgb(21, 28, 39);
+	background:#151c27;
 	border:none;
 	color:#b79338;
 	padding:10px 0;
@@ -1223,7 +1223,7 @@ body.page-template.page-template-page-template.page-template-custom-front-page .
 }
 #sidebar aside {
     margin-bottom: 12%;
-    border: 2px solid rgb(21, 28, 39);
+    border: 2px solid #151c27;
     padding: 15px;
     border-radius: 3px;
 }
@@ -1241,7 +1241,7 @@ body.page-template.page-template-page-template.page-template-custom-front-page .
 	color:#737171;
 }
 #sidebar ul li a:hover{
-	color:rgb(21, 28, 39);
+	color:#151c27;
 }
 label{
 	margin-bottom: 2%;
@@ -1366,7 +1366,7 @@ span.post-title {
     text-decoration:none;
     width:auto;
     color:#fff;
-    background: rgb(21, 28, 39) ;
+    background: #151c27 ;
     -webkit-transition: background .15s ease-in-out;
     -moz-transition: background .15s ease-in-out;
     -ms-transition: background .15s ease-in-out;

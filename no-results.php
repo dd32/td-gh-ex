@@ -8,7 +8,7 @@
  */
 ?>
 <header>
-	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'bb-wedding-bliss' ); ?></h1>
+	<h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'bb-wedding-bliss' ); ?></h2>
 </header>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>

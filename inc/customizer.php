@@ -716,6 +716,8 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'bb_wedding_bliss_customize_register' );	
 
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Singleton class for handling the theme's customizer integration.
@@ -794,7 +796,7 @@ final class BB_Wedding_Bliss_Customize {
 					'priority'  => 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-wedding-bliss' ),
 					'pro_text' => esc_html__( 'Go Pro', 'bb-wedding-bliss' ),
-					'pro_url'  => esc_url('https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/'),
+					'pro_url'  => esc_url('https://www.themeshopy.com/themes/bb-wedding-bliss-wordpress-theme/'),
 				)
 			)
 		);
