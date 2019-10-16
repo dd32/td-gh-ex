@@ -1,5 +1,11 @@
 == Change log ==
 
+= 2.0.1 - Oct 16 2019=
+* Added : wp_body_open hook in header
+* Added : Gutentor Plugin in TGM
+* Added : wp-config.xml file for translation
+* Fixed : Screen Reader Text
+
 = 2.0.0 - June 13 2019 =
 * Added : Gutenberg Ready
 * Fixed : RTL CSS

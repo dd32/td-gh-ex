@@ -37,6 +37,15 @@ do_action( 'beauty_studio_action_before_head' );?>
 
 <?php
 /**
+ * WordPress Default Hook
+ * Triggered after the opening <body> tag.
+ * wp_body_open hook
+ *
+ * @since WordPress 5.2
+ *
+ */
+do_action( 'wp_body_open' );
+/**
  * beauty_studio_action_before hook
  * @since Beauty Studio 1.0.0
  *

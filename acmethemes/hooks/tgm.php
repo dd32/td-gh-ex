@@ -17,6 +17,11 @@ function beauty_studio_register_required_plugins() {
             'name'      => esc_html__('Acme Demo Setup','beauty-studio'),
             'slug'      => 'acme-demo-setup',
             'required'  => false,
+        ),
+        array(
+            'name'      => 'Gutentor',
+            'slug'      => 'gutentor',
+            'required'  => false,
         )
     );
 	tgmpa( $plugins );
