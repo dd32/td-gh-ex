@@ -62,7 +62,7 @@ get_header(); ?>
                                         ) );
                                     ?>
                                 </div>    
-                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
+                                <?php edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<footer  class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
                             </article>    
                             <?php
                                 // If comments are open or we have at least one comment, load up the comment template

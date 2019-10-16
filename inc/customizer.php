@@ -28,7 +28,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	) );
 
   	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
-	    'default' => '#00A885',
+	    'default' => '#3ae0bf',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(
@@ -620,6 +620,9 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	
 
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
+
 
 /**
  * Singleton class for handling the theme's customizer integration.
@@ -698,7 +701,7 @@ final class BB_Mobile_Application_Customize {
 					'priority'	=> 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-mobile-application' ),
 					'pro_text' => esc_html__( 'Go Pro',         'bb-mobile-application' ),
-					'pro_url'  => esc_url( 'https://www.themeshopy.com/premium/bb-mobile-application-theme/' ),
+					'pro_url'  => esc_url( 'https://www.themeshopy.com/themes/bb-mobile-application-theme/' ),
 				)
 			)
 		);

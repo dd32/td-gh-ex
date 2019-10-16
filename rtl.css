@@ -39,7 +39,7 @@ p{
 }
 a{
 	text-decoration:none;
-	color:#00A885;
+	color:#3ae0bf;
 }
 a:hover{
 	text-decoration:none;
@@ -237,7 +237,7 @@ input[type="submit"]:hover{
 
 /* ---------Buttons--------- */
 a.button{
-	background:#14c2a0;
+	background:#3ae0bf;
   color: #fff;
   font-size: 16px;
   margin: 20px 0 0;
@@ -248,7 +248,7 @@ a.button{
 /* ---------HEADER--------- */
 #header {
   width: 100%;
-  background: #00a885;
+  background: #3ae0bf;
   position: static;
 }
 .page-template-custom-front-page #header {
@@ -328,11 +328,11 @@ ul.list_nav {
 .primary-navigation ul ul a{
   padding: 10px;
   background: #fff !important;
-  color: #00a885;
+  color: #3ae0bf;
   border: 1px solid;
 }
 .primary-navigation ul ul a:hover{
-  background:#00a885 !important;
+  background:#3ae0bf !important;
   color: #fff !important;
 }
 .primary-navigation ul ul li{
@@ -447,7 +447,7 @@ ul.list_nav {
 	margin:40px 0 20px 0;
 }
 .new-text{
-	border-right: 20px solid #00b18e;
+	border-right: 20px solid #3ae0bf;
     padding-right: 20px;
 }
 .read-more-box{
@@ -456,7 +456,7 @@ ul.list_nav {
   text-decoration: none;
   margin: 20px 0 0 15px;
   padding: 7px 20px;
-  background: #00b18e;
+  background: #3ae0bf;
   display: table;
   font-weight: 600;
 }
@@ -504,7 +504,7 @@ a.r_button {
   font-size: 13px;
 }
 .copyright-wrapper li a:hover {
-	color: #14c2a0;
+	color: #3ae0bf;
 }
 .copyright-wrapper ul li {
 	list-style: none;
@@ -530,7 +530,7 @@ a.r_button {
   color: #000;
 }
 .search-form input.search-submit {
-  background: #00a885;
+  background: #3ae0bf;
   border: none;
   display: -webkit-inline-box;
   padding: 7px;
@@ -579,21 +579,21 @@ a.r_button {
 }
 #footer .tagcloud a {
   font-size: 17px !important;
-  border: 3px inset #14c2a0;
+  border: 3px inset #3ae0bf;
   padding: 4px;
   line-height: 2.4;
   margin: 1px;
 }
 #footer .tagcloud a:hover {
-  background-color: #14c2a0;
+  background-color: #3ae0bf;
 }
 #footer h3 {
   text-align: right;
   font-size: 24px;
   margin: 0 0 24px 0;
-  border-bottom: 3px double #14c2a0;
+  border-bottom: 3px double #3ae0bf;
   padding: 0 0 17px 0;
-  color: #14c2a0;
+  color: #3ae0bf;
 }
 #footer p{
 	font-size:17px;
@@ -619,7 +619,7 @@ a.r_button {
   width: 100%;
   padding: 6px;
   border: none;
-  background: #14c2a0;
+  background: #3ae0bf;
   border-radius: 0;
   margin: 2px 0px;
   height: 34px;
@@ -646,13 +646,13 @@ table#wp-calendar td a{
    padding: 10px;
 }
 .woocommerce-message::before{
-  	color: #00a885;
+  	color: #3ae0bf;
 }
 .woocommerce-message {
-  	border-top-color: #00a885;
+  	border-top-color: #3ae0bf;
 }
 .woocommerce span.onsale{
-	background: #00a885;
+	background: #3ae0bf;
 	padding: 0;
 }
 .products li {
@@ -677,7 +677,7 @@ h2.woocommerce-loop-product__title,
   background: none;
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
-	background: #00a885;
+	background: #3ae0bf;
 	color: #fff !important;
 	border-radius: 0;
 	padding: 12px;
@@ -704,7 +704,7 @@ nav.woocommerce-MyAccount-navigation ul {
   list-style: none;
 }
 nav.woocommerce-MyAccount-navigation ul li {
-  background: #00a885;
+  background: #3ae0bf;
   padding: 12px !important;
   margin-bottom: 10px !important;
 }
@@ -765,11 +765,11 @@ header.woocommerce-products-header {
   text-align: right;
 }
 .rssSummary {
-  color: #00b18e;
+  color: #3ae0bf;
 }
 .entry-content p a {
   text-decoration: underline;
-  color: #00A885;
+  color: #3ae0bf;
 }
 /* --------- POST --------- */
 #blog{
@@ -838,7 +838,7 @@ header.woocommerce-products-header {
 	margin:20px 0 0 0;
 }
 #comments input[type="submit"].submit{
-	background:#00A885 !important;
+	background:#3ae0bf !important;
 	padding:10px 50px;
 	text-transform:uppercase;
 	font-weight:bold;
@@ -852,7 +852,7 @@ header.woocommerce-products-header {
 	padding:5px 15px;
 }  
 #comments a.comment-reply-link:hover{
- 	background:#00a885;
+ 	background:#3ae0bf;
 }  
 #comments a time{
 	color:#000;
@@ -929,7 +929,7 @@ header.woocommerce-products-header {
 }
 #slider .know-btn a {
   color: #fff;
-  background: #00A885;
+  background: #3ae0bf;
   padding: 14px;
   font-size: 15px;
   font-weight: 600;
@@ -1182,7 +1182,7 @@ span.entry-date a , span.entry-author a{
 @media screen and (max-width:720px) {
 	.page-template-custom-front-page #header{
 		position: static;
-		background: #00a885;
+		background: #3ae0bf;
 	}
 	.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
     width: 100% !important;

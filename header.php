@@ -23,22 +23,35 @@
     <div id="header">
       <div class="container">
         <div class="row">
-          <div class="logo col-lg-4 col-md-4 col-8">
-            <?php bb_mobile_application_the_custom_logo(); ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            <?php
-            $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
-              <p class="site-description"><?php echo esc_html( $description ); ?></p>
+          <div class="logo col-lg-4 col-md-9 col-9">
+            <?php if ( has_custom_logo() ) : ?>
+              <div class="site-logo"><?php the_custom_logo(); ?></div>
+              <?php else: ?>
+              <?php $blog_info = get_bloginfo( 'name' ); ?>
+              <?php if ( ! empty( $blog_info ) ) : ?>
+                <?php if ( is_front_page() && is_home() ) : ?>
+                  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <?php else : ?>
+                  <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                <?php endif; ?>
+              <?php endif; ?>
+              <?php
+              $description = get_bloginfo( 'description', 'display' );
+              if ( $description || is_customize_preview() ) :
+                ?>
+              <p class="site-description">
+                <?php echo esc_html($description); ?>
+              </p>
+            <?php endif; ?>
             <?php endif; ?>
           </div>
-          <div class="menubox col-lg-8 col-md-8 col-4">
+          <div class="menubox col-lg-8 col-md-3 col-3">
             <div class="toggle-menu responsive-menu">
               <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-mobile-application'); ?></span></button>
             </div>
             <div id="menu-sidebar" class="nav sidebar">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-mobile-application' ); ?>">
-                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-mobile-application'); ?></span></a>
+                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-mobile-application'); ?></span></a>
                 <?php 
                   wp_nav_menu( array( 
                     'theme_location' => 'primary',
@@ -48,6 +61,9 @@
                     'fallback_cb' => 'wp_page_menu',
                   ) ); 
                 ?>
+                <div id="contact-info">
+                  <?php get_search_form();?>
+                </div>
               </nav>
             </div>
           </div>        
