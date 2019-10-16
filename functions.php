@@ -267,6 +267,25 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
    
+    /* Copyright */
+
+    $wp_customize->add_section( 'copyright_section', array(
+        'priority'       => 250,
+        'title' => __( 'Copyright', 'atlas-concern' )
+    ));
+
+    $wp_customize->add_setting( 'copyright_section_text', array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'esc_textarea'
+    ));
+
+    $wp_customize->add_control( 'copyright_section_text', array(
+        'label' => __( 'Copyright', 'atlas-concern' ),
+        'type' => 'textarea',
+        'section' => 'copyright_section'
+    ));
+   
 
 }
 add_action( 'customize_register', 'atlas_concern_customize_register' );
@@ -345,7 +364,6 @@ if ( ! function_exists( 'atlas_concern_enqueue_scripts' ) ) :
     function atlas_concern_enqueue_scripts() {
 
      /* Js */
-    wp_enqueue_script( 'jquery.min', get_template_directory_uri() . '/js/jquery-1.12.4.min.js', array('jquery'), '20151215', true );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );
     wp_enqueue_script( 'bootsnav', get_template_directory_uri() . '/js/bootsnav.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'concern-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
@@ -367,11 +385,6 @@ if ( ! function_exists( 'atlas_concern_enqueue_scripts' ) ) :
     }
     add_action( 'wp_enqueue_scripts', 'atlas_concern_enqueue_scripts' );
 endif;
-
-
-
-
-
 
 /**
  * Implement the Custom Header feature.

@@ -18,19 +18,9 @@
                     <div class="row"> 
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
                            <div class="site-info text-center">
-                             <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'atlas-concern' ) ); ?>">
-                                <?php
-                                /* translators: %s: CMS name, i.e. WordPress. */
-
-                                printf( esc_html__( 'Proudly powered by %s', 'atlas-concern' ), 'WordPress' );
-                                ?>
-                             </a>
-
-                               <span class="sep"> | </span>
-                                <?php
-                                /* translators: 1: Theme name, 2: Theme author. */
-                                printf( esc_html__( 'Power %1$s by %2$s.', 'atlas-concern' ), 'atlas concern', '<a href="https://www.atlasresponsivetasarim.com/">Atlas</a>' );
-                                ?>
+   	                        <p><?php echo 
+		                        /* translators: %s: CMS name, i.e. WordPress. */
+		                        esc_html( get_theme_mod( 'copyright_section_text' )); ?></p>
                            </div><!-- .site-info -->
                         </div>                                   
                     </div>                     

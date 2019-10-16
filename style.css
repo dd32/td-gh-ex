@@ -4,7 +4,7 @@ Theme URI: https://www.atlasresponsivetasarim.com/product/concern-3-3v/
 Author: atlas
 Author URI: http://www.atlasresponsivetasarim.com/
 Description: It is a company wordpress theme arranged according to business requirements. redux framework and management panel. All the features provided in this section .Theme is a company theme that can be used in multipurpose places. This theme is compatible with all plugins. Supports all browsers. Translators are ready for you. Responsive wordpress theme compatible with all devices
-Version: 3.5
+Version: 3.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: atlas-concern
@@ -653,7 +653,6 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
 input[type="number"],
 input[type="tel"],
 input[type="range"],
@@ -668,7 +667,6 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	padding: 7px;
-	width:100%;
 }
 select {
 	border: 1px solid #ccc;
@@ -1201,8 +1199,9 @@ a:active {
 	position: relative;
 }
 .search-field{
-	height:45px;
-	width:90%;
+	height:40px;
+	width:70%;
+	border:1px solid #ccc;
 }
 .search_widget_input{
 	height:45px;
@@ -1212,7 +1211,6 @@ a:active {
 .search-form .search-submit {
 	bottom: 0px;
 	padding: 0.5em 25px;
-	position: absolute;
 	right: 3px;
 	top: 0px;
 }
@@ -1719,7 +1717,6 @@ object {
 	text-align:center;
 }
 .search-field{
-	color:#fff;
 	text-align:center;
     letter-spacing:2px;
 }
