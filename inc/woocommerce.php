@@ -243,19 +243,23 @@ add_action( 'woocommerce_before_shop_loop', 'acoustics_woocommerce_result_end', 
 
 
 if( ! function_exists( 'acoustics_woocommerce_result_start' ) ) {
-function acoustics_woocommerce_result_start(){
+	function acoustics_woocommerce_result_start(){
+		if( woocommerce_products_will_display() ):
 		?>
-		<div class="section-result section-action-result clearfix">
-	<?php
-}
+			<div class="section-result section-action-result clearfix">
+		<?php
+	endif;
+	}
 }
 
 if( ! function_exists( 'acoustics_woocommerce_result_end' ) ) {
-function acoustics_woocommerce_result_end(){
+	function acoustics_woocommerce_result_end(){
+		if( woocommerce_products_will_display() ):
 		?>
-		</div>
-	<?php
-}
+			</div>
+		<?php
+	endif;
+	}
 }
 
 if ( ! function_exists( 'acoustics_woocommerce_cart_link_fragment' ) ) {
@@ -267,13 +271,13 @@ if ( ! function_exists( 'acoustics_woocommerce_cart_link_fragment' ) ) {
 	 * @param array $fragments Fragments to refresh via AJAX.
 	 * @return array Fragments to refresh via AJAX.
 	 */
-function acoustics_woocommerce_cart_link_fragment( $fragments ) {
-		ob_start();
-		acoustics_woocommerce_cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
+	function acoustics_woocommerce_cart_link_fragment( $fragments ) {
+			ob_start();
+			acoustics_woocommerce_cart_link();
+			$fragments['a.cart-contents'] = ob_get_clean();
 
-		return $fragments;
-}
+			return $fragments;
+	}
 }
 
 add_filter( 'woocommerce_add_to_cart_fragments', 'acoustics_woocommerce_cart_link_fragment' );
