@@ -109,7 +109,7 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_section( 'social_section', array(
 	    'priority'       => 1,
-        'title' => __( 'Top Lİne Layout', 'atlas-concern' )
+        'title' => __( 'Top Lıne Layout', 'atlas-concern' )
     ));
 
 
@@ -121,7 +121,7 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_control( 'social_section_text_1', array(
-        'label' => __( 'İnfo', 'atlas-concern' ),
+        'label' => __( 'Info', 'atlas-concern' ),
         'type' => 'text',
         'section' => 'social_section'
     ));
@@ -203,7 +203,7 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_control( 'message_section_icon', array(
-        'label' => __( 'İcon', 'atlas-concern' ),
+        'label' => __( 'Icon', 'atlas-concern' ),
         'type' => 'text',
 		'description' => __( 'Themify icons for code <a href="https://themify.me/themify-icons" target="_blank">click here</a> ', 'atlas-concern' ),
         'section' => 'message_section'
