@@ -2,9 +2,9 @@
 Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.5
-Tested up to: 5.2
-Stable tag: 1.0.6
-Requires PHP: 5.3
+Tested up to: 5.3
+Stable tag: 1.0.7
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Attesa WordPress Theme, Copyright 2019 Rizzo Andrea
@@ -31,7 +31,7 @@ Attesa includes support for Infinite Scroll in Jetpack, WooCommerce, Easy Digita
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * FontAwesome http://fontawesome.io/ Font licensed under SIL OFL 1.1 and Code lisensed under MIT
 * nanoScrollerJS https://github.com/jamesflorentino/nanoScrollerJS licensed under MIT
-* SmoothScroll https://github.com/galambalazs/smoothscroll-for-websites licensed under MIT
+* SmoothScroll https://github.com/gblazex/smoothscroll-for-websites licensed under MIT
 * Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
 
 == Screenshots == 
@@ -40,6 +40,11 @@ License: Pexels.com CC0 license https://www.pexels.com/creative-commons-images/
 Image Source: https://www.pexels.com/photo/person-typing-on-macbook-pro-1548999/
 
 == Changelog ==
+
+= Version 1.0.7 =
+* Improved main menu and sub-menus position
+* Added an option to add an alternative logo when the user scrolls
+* Updated SmoothScroll to 1.4.10 version
 
 = Version 1.0.6 =
 * Added an option to invert the top bar position

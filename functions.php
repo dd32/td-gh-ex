@@ -236,11 +236,13 @@ function attesa_scripts() {
 		if (is_rtl()) {
 			$query_args = array(
 				'family' => $fontNameText.':400,700%7C'. $fontNameHead .':400,700',
-				'subset' => 'arabic'
+				'subset' => 'arabic',
+				'display' => 'swap'
 			);
 		} else {
 			$query_args = array(
-				'family' => $fontNameText.':400,700%7C'. $fontNameHead .':400,700'
+				'family' => $fontNameText.':400,700%7C'. $fontNameHead .':400,700',
+				'display' => 'swap'
 			);
 		}
 		wp_enqueue_style( 'attesa-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
@@ -248,7 +250,7 @@ function attesa_scripts() {
 	wp_enqueue_script( 'attesa-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix'.$min.'.js', array(), '20151215', true );
 	wp_enqueue_script( 'attesa-custom', get_template_directory_uri() . '/js/jquery.attesa'.$min.'.js', array('jquery'), wp_get_theme()->get('Version'), true );
 	if ( attesa_options('_smooth_scroll', '1') == 1) {
-		wp_enqueue_script( 'attesa-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll'.$min.'.js', array('jquery'), '1.4.9', true );
+		wp_enqueue_script( 'attesa-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll'.$min.'.js', array('jquery'), '1.4.10', true );
 	}
 	if ( is_active_sidebar( attesa_get_push_sidebar() ) && attesa_check_bar('push') ) {
 		wp_enqueue_script( 'attesa-nanoScroll', get_template_directory_uri() . '/js/jquery.nanoscroller'.$min.'.js', array('jquery'), '0.8.7', true );

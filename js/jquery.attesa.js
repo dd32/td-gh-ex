@@ -58,6 +58,27 @@
 				});
 			}
 		/*-----------------------------------------------------------------------------------*/
+		/*  Sub-Menu Position
+		/*-----------------------------------------------------------------------------------*/
+			if (!mobileDetect) {
+				$('.main-navigation').find('li').each(function(){
+					if ($('ul', this).length) {
+						var elm = $('ul:first', this);
+						var off = elm.offset();
+						var l = off.left;
+						var w = elm.width();
+						var docH = $("body").height();
+						var docW = $("body").width();
+						var isEntirelyVisible = (l + w <= docW);
+						if (!isEntirelyVisible) {
+							$(this).addClass('invert');
+						} else {
+							$(this).removeClass('invert');
+						}
+					}
+				});
+			}
+		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
 			if ($( window ).width() <= 1025) {
@@ -158,6 +179,11 @@
 			function setMenu() {
 				if ( (!mobileDetect && $('header.site-header').hasClass('withSticky')) || (mobileDetect && $('header.site-header').hasClass('yesMobile')) ) {
 					$('header.site-header').addClass('fixed');
+					if($('header#masthead').attr('data-logo-on-scroll')){
+						var $logoOriginal = $('.attesa-logo img').attr('src'),
+							$logoOrininalSrcset = $('.attesa-logo img').attr('srcset'),
+							$logoOnScroll = $('header#masthead').attr('data-logo-on-scroll');
+					}
 					if ($('body').is('.headerFeatImage, .attesa-full-width') ) {
 						if ($('body').hasClass('withOverlayMenu') ) {
 							$('.attesaFeatBox, body.attesa-full-width #content.site-content').css('margin-top', $('.nav-top').outerHeight() + 'px');
@@ -176,11 +202,27 @@
 								if ($filter.hasClass('topbarscrollhide')) {
 									$filter.css( 'margin-top', '-' + $topHeight + 'px' );
 								}
+								if($('header#masthead').attr('data-logo-on-scroll')){
+									if ($logoOnScroll && $logoOriginal) {
+										$('.attesa-logo img').fadeOut(125, function() {
+											$('.attesa-logo img').attr('src',$logoOnScroll);
+											$('.attesa-logo img').attr('srcset',$logoOnScroll);
+										}).fadeIn(125);
+									}
+								}
 								$('body').addClass('menuMinor');
 							} else if ($filter.hasClass('menuMinor') && $(window).scrollTop() <= 0 ) {
 								$filter.removeClass('menuMinor');
 								$('body').removeClass('menuMinor');
 								$filter.css( 'margin-top', '0px' );
+								if($('header#masthead').attr('data-logo-on-scroll')){
+									if ($logoOnScroll && $logoOriginal) {
+										$('.attesa-logo img').fadeOut(125, function() {
+											$('.attesa-logo img').attr('src',$logoOnScroll);
+											$('.attesa-logo img').attr('srcset',$logoOrininalSrcset);
+										}).fadeIn(125);
+									}
+								}
 							}
 						});
 					}

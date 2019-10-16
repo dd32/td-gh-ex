@@ -41,7 +41,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			$attesa_stickyHeaderMobile = apply_filters( 'attesa_sticky_header_scroll_mobile', attesa_options('_sticky_header_mobile', '') );
 			$attesa_topBarScroll = apply_filters( 'attesa_choose_top_nav', attesa_options('_topbar_scroll', 'hide') );
 			$attesa_showTopBarMobile = apply_filters( 'attesa_show_top_bar_mobile', attesa_options('_show_topbar_mobile', '1') ); ?>
-			<header id="masthead" class="site-header topbarscroll<?php echo esc_attr($attesa_topBarScroll); ?> <?php echo $attesa_stickyHeader ? 'withSticky' : 'noSticky' ?> <?php echo $attesa_stickyHeaderMobile ? 'yesMobile' : 'nonMobile' ?> <?php echo $attesa_showTopBarMobile ? 'inMobile' : 'noMobile' ?>" <?php attesa_schema_markup('header'); ?>>
+			<header id="masthead" <?php echo esc_attr(attesa_logo_on_scroll()); ?> class="site-header topbarscroll<?php echo esc_attr($attesa_topBarScroll); ?> <?php echo $attesa_stickyHeader ? 'withSticky' : 'noSticky' ?> <?php echo $attesa_stickyHeaderMobile ? 'yesMobile' : 'nonMobile' ?> <?php echo $attesa_showTopBarMobile ? 'inMobile' : 'noMobile' ?>" <?php attesa_schema_markup('header'); ?>>
 				
 				<?php do_action( 'attesa_top_bar' ); ?>
 					

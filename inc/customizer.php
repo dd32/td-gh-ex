@@ -1810,6 +1810,26 @@ function attesa_customize_register( $wp_customize ) {
 		'active_callback' => 'attesa_is_customheader_active',
 		'priority' => 2,
     ) );
+	/* Logo on scroll */
+	$wp_customize->add_setting('attesa_theme_options[_logo_on_scroll]', array(
+		'default'    => '',
+		'type'       => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw'
+	) );
+	$wp_customize->add_control( 
+		new WP_Customize_Image_Control(
+		$wp_customize, 
+		'attesa_theme_options[_logo_on_scroll]', 
+		array(
+			'label'      => __( 'Logo on scroll', 'attesa' ),
+			'description'=> __( 'Upload an alternative logo if you want to show a different logo when the user scrolls (leave the field blank if you want to show the same logo)', 'attesa' ),
+			'section'    => 'section_attesa_theme_options_header',
+			'settings'   => 'attesa_theme_options[_logo_on_scroll]',
+			'active_callback' => 'attesa_is_sticky_active_and_logo',
+			'priority' => 2,
+		) ) 
+	);
 	/* Heading menu style section */
 	$wp_customize->add_setting('attesa_theme_options[_heading_menu_style]', array(
 		'sanitize_callback' => 'sanitize_text_field',
@@ -2882,7 +2902,7 @@ function attesa_customize_register( $wp_customize ) {
 		'section'    => 'section_attesa_theme_options_footer',
 		'settings'   => 'attesa_theme_options[_copyright_text]',
 		'active_callback' => 'attesa_is_subfooter_active',
-		'type'       => 'text',
+		'type'       => 'textarea',
 		'priority' => 6,
 	) );
 	$wp_customize->selective_refresh->add_partial('attesa_theme_options[_copyright_text]', array(
@@ -3066,6 +3086,15 @@ function attesa_is_grid_active() {
 function attesa_is_sticky_active() {
 	$stickyHeader = attesa_options('_sticky_header', '1');
 	if ($stickyHeader == '1') {
+		return true;
+	}
+	return false;
+}
+
+function attesa_is_sticky_active_and_logo() {
+	$stickyHeader = attesa_options('_sticky_header', '1');
+	$headerFormat = attesa_options('_header_format','compat');
+	if ($stickyHeader == '1' && $headerFormat != 'featuredtitle' && has_custom_logo()) {
 		return true;
 	}
 	return false;

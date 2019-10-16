@@ -941,3 +941,16 @@ function attesa_the_breadcrumb() {
 function attesa_check_for_breadcrumb() {
 	return apply_filters( 'attesa_the_breadcrumb_filter', true );
 }
+
+/* Check if logo on scroll exist */
+function attesa_logo_on_scroll() {
+	$attesa_stickyHeader = apply_filters( 'attesa_sticky_header_scroll', attesa_options('_sticky_header', '1') );
+	$headerFormat = attesa_options('_header_format','compat');
+	$logoOnScroll = attesa_options('_logo_on_scroll', '');
+	if ( has_custom_logo() && $attesa_stickyHeader && $logoOnScroll && $headerFormat != 'featuredtitle' ) {
+		$logoAlternative = 'data-logo-on-scroll='.esc_url(attesa_options('_logo_on_scroll', '')).'';
+	} else {
+		$logoAlternative = false;
+	}
+	return apply_filters( 'attesa_logo_on_scroll_filter', $logoAlternative );
+}

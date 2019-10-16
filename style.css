@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -827,6 +827,11 @@ a:hover, a:active {
 	display: inline-block;
     position: relative;
     font-size: 14px;
+}
+
+.main-navigation li.invert ul {
+	left: inherit;
+	right: 100%;
 }
 
 .main-navigation a {
@@ -5283,7 +5288,8 @@ body.with_fa4.woocommerce-MyAccount-navigation ul li:before,
 body.with_fa4 ul.products li.product .tinvwl_add_to_wishlist_button:after,
 body.with_fa4.woocommerce ul.products li.product a.compare:before,
 body.with_fa4 .widget.widget_edd_cart_widget li.edd-cart-item:before,
-body.with_fa4 .widget.widget_edd_categories_tags_widget li:before {
+body.with_fa4 .widget.widget_edd_categories_tags_widget li:before,
+body.with_fa4 .main-navigation ul li .indicator:before {
 	font-family: "FontAwesome";
 	font-weight: 400;
 }
@@ -5380,6 +5386,7 @@ body.with_fa4 .widget.widget_edd_categories_tags_widget li:before {
 	}
 	.main-navigation ul li .indicator:before {
 		content: "\f107";
+		font-weight: 900;
 	}
 	.main-navigation ul li .yesOpen.indicator:before {
 		content: "\f106";
@@ -5411,6 +5418,9 @@ body.with_fa4 .widget.widget_edd_categories_tags_widget li:before {
 		background-color: transparent !important;
 		padding: 1em 0.6em;
 		border-bottom-width: 0px;
+	}
+	.main-navigation ul ul ul {
+		padding: 0;
 	}
 	.main-navigation > div > ul > li > ul.sub-menu {
 		padding-top: 0;
