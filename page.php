@@ -19,8 +19,8 @@ get_header(); ?>
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail();  ?>
                 <h1><?php the_title(); ?></h1>
-                <?php the_content();
-                wp_link_pages( array(
+                <div class="entry-content"><?php the_content(); ?></div>
+                <?php wp_link_pages( array(
                     'before' => '<div class="page-links">' . __( 'Pages:', 'advance-blogging' ),
                     'after'  => '</div>',
                 ) );

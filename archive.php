@@ -8,7 +8,7 @@
  */
 get_header(); ?>
 
-<main id="main" role="main" class="wrapper-boxwrapper-box">
+<main id="main" role="main" class="wrapper-box">
     <div class="container">
         <?php
             $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
@@ -16,6 +16,10 @@ get_header(); ?>
             <div class="row">
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
                 <div class="col-lg-8 col-md-8">
+                    <?php
+                        the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
                     <?php if ( have_posts() ) :
                     /* Start the Loop */
                       
@@ -48,6 +52,10 @@ get_header(); ?>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
             <div class="row">
                 <div class="col-lg-8 col-md-8">
+                    <?php
+                        the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
                     <?php if ( have_posts() ) :
                         /* Start the Loop */
                           
@@ -77,7 +85,11 @@ get_header(); ?>
                 </div>
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
             </div>
-        <?php }else if($left_right == 'One Column'){ ?>            
+        <?php }else if($left_right == 'One Column'){ ?> 
+            <?php
+                        the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>           
             <?php if ( have_posts() ) :
                 /* Start the Loop */
                   
@@ -108,6 +120,10 @@ get_header(); ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
                 <div class="col-lg-6 col-md-6">
+                    <?php
+                        the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
                     <?php if ( have_posts() ) :
                         /* Start the Loop */
                           
@@ -141,6 +157,10 @@ get_header(); ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
                 <div class="col-lg-3 col-md-3">
+                    <?php
+                        the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                        the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                    ?>
                     <?php if ( have_posts() ) :
                         /* Start the Loop */
                           
@@ -175,6 +195,10 @@ get_header(); ?>
             <div class="row">
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
+                        <?php
+                            the_archive_title( '<h1 class="entry-title">', '</h1>' );
+                            the_archive_description( '<div class="taxonomy-description">', '</div>' );
+                        ?>
                         <?php if ( have_posts() ) :
                             /* Start the Loop */
                               

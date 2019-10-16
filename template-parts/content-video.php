@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying slider
+ * The template part for displaying single-post
  *
  * @package Advance Blogging
  * @subpackage advance_blogging
@@ -39,9 +39,9 @@
     </div>
     <div class="new-text">
       <div class="box-content">
-        <h2><?php the_title();?></h2>
-        <p><?php echo the_excerpt(); ?></p>
-        <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?></a>
+        <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+        <div class="entry-content"><p><?php echo the_excerpt(); ?></p></div>
+        <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-blogging' );?></span></a>
       </div>
     </div>
     <div class="clearfix"></div> 

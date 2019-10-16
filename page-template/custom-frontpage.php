@@ -14,7 +14,7 @@ get_header(); ?>
 	<?php if( get_theme_mod('advance_blogging_slider_arrows') != ''){?>
 	<section id="slider">
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row m-0">
 				<div class="col-lg-8 col-md-8 p-0">
 					<div class="slider">
 					  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
@@ -38,10 +38,10 @@ get_header(); ?>
 						    <div class="carousel-inner" role="listbox">
 						      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 						        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-						          <img role="img" src="<?php the_post_thumbnail_url('full'); ?>"/>	          
-							        <div class="carousel-caption">
+						          <?php the_post_thumbnail(); ?>
+	          				        <div class="carousel-caption">
 							            <div class="inner_carousel">
-							              <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+							              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
 							              <p><?php the_excerpt(); ?></p>
 							            </div>
 							        </div>
@@ -54,10 +54,10 @@ get_header(); ?>
 						    <?php endif;
 						    endif;?>
 						    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-	      						<span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+	      						<span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span><span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-blogging' );?></span>
 							</a>
 							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-	      						<span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+	      						<span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span><span class="screen-reader-text"><?php esc_html_e( 'Next','advance-blogging' );?></span>
 	   						</a>
 					  	</div>  	
 					</div>		
@@ -68,10 +68,10 @@ get_header(); ?>
 			              $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('advance_blogging_blogcategory_setting'),'theblog')));?>
 			              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
 			              	<div class="abt-img-box">   
-		                      	<img role="img" src="<?php the_post_thumbnail_url('full'); ?>"/>
+		                      	<?php the_post_thumbnail(); ?>
 		                      	<div class="cat-box">
 		                      		<div class="cat-border">
-			                       		<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+			                       		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
 			                      		<p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,18 ) ); ?></p>
 			                      	</div>
 		                      	</div>
@@ -111,11 +111,11 @@ get_header(); ?>
 													</div>
 												<?php } ?>
 											</div>
-					                      	<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+					                      	<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
 					                      	<p><?php the_excerpt(); ?></p>
 					                    </div>
 					                    <div class="button-post">
-				                  			<a href="<?php echo esc_url( get_permalink() );?>" class="blog-btn" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?></a>
+				                  			<a href="<?php echo esc_url( get_permalink() );?>" class="blog-btn" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-blogging' );?></span></a>
 				                  		</div>
 			                  		</div>
 			                  	</div>

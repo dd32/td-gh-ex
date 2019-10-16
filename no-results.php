@@ -9,7 +9,7 @@
 ?>
 
 <header role="banner">
-	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-blogging' ); ?></h1>
+	<h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-blogging' ); ?></h2>
 </header>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
@@ -21,6 +21,6 @@
 	<?php else : ?>
 	<p><?php esc_html_e( 'Dont worry it happens to the best of us.', 'advance-blogging' ); ?></p><br />
 	<div class="read-moresec">
-		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?></a>
+		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page','advance-blogging' );?></span></a>
 	</div>
 <?php endif; ?>

@@ -163,7 +163,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	// Add the Theme Color Option section.
 	$wp_customize->add_setting( 'advance_blogging_theme_color', array(
-	    'default' => '#f73637',
+	    'default' => '#db0607',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_blogging_theme_color', array(
@@ -630,6 +630,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'    => 'select',
 		'choices' => $cats,
 		'label' => __('Select Category to display Latest Post','advance-blogging'),
+			'description' => 'Category Image Size (300x225 )',
 		'section' => 'advance_blogging_category_post',
 	));
 

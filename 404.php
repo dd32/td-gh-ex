@@ -13,7 +13,7 @@ get_header(); ?>
 			<p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn', 'advance-blogging' ); ?></p>
 			<p class="text-404"><?php esc_html_e( 'Dont worry it happens to the best of us.', 'advance-blogging' ); ?></p>
 			<div class="read-moresec">
-        		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?></a>
+        		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page','advance-blogging' );?></span></a>
 			</div>
 			<div class="clearfix"></div>
         </div>

@@ -13,9 +13,9 @@ get_header(); ?>
 		</div>		 
 		<div class="col-lg-8 col-md-8" class="content-aa" >
             <?php while ( have_posts() ) : the_post(); ?>
-                <img role="img" src="<?php the_post_thumbnail_url('full'); ?>">
+                <?php the_post_thumbnail(); ?>
                 <h1><?php the_title(); ?></h1>
-                <?php the_content();?>
+                <div class="entry-content"><?php the_content();?></div>
             <?php endwhile; // end of the loop. ?>
             <?php
                 //If comments are open or we have at least one comment, load up the comment template
