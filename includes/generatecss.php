@@ -219,6 +219,34 @@ function weaverx_output_style( $sout ) {
 		}
 	}
 
+	// Create alignwide min-width @media
+
+	if ( $themew != WEAVERX_THEME_WIDTH ) { // need to generate new alignwide rule
+
+		$minw = (int) ( $themew * 1.08 );    /* add 8% to width */
+		$maxw = $minw - 1;
+
+		/* reset default value for 1188px = default + 8% */
+
+		weaverx_f_write( $sout, "@media (min-width: 1188px) {
+.weaverx-sb-one-column .alignwide,#header .alignwide,#header.alignwide,#colophon.alignwide,#colophon .alignwide,
+#container .alignwide,#container.alignwide,#infobar .alignwide,.alignwide {
+margin-left: inherit;margin-right: inherit;max-width:reset;width:100%;} }\n" );
+
+		weaverx_f_write( $sout, "@media (max-width: 1187px) {
+.alignwide {margin-left: inherit;margin-right: inherit;max-width:reset;width:100%;} }\n" );
+
+		weaverx_f_write( $sout, "@media (min-width: {$minw}px) {
+.weaverx-sb-one-column .alignwide,#header .alignwide,#header.alignwide,#colophon.alignwide,#colophon .alignwide,
+#container .alignwide,#container.alignwide,#infobar .alignwide,.alignwide {
+margin-left: calc(50% - 46vw);margin-right: calc(50% - 46vw);max-width:10000px;width: 92vw;} }\n" );
+
+		weaverx_f_write( $sout, "@media (max-width: {$maxw}px) {
+.alignwide {margin-left:0 !important;margin-right:0 !important;max-width:100% !important;width:100% !important;} }\n" );
+
+	}
+
+
 // =========================== LINKS ===============================
 //	Important. Links must come before any other rules that might define a tag - such as the menu bars, so just
 //	put them here, near the top.
@@ -619,14 +647,14 @@ function weaverx_output_style( $sout ) {
 		weaverx_f_write( $sout, sprintf( "body{font-size:%.5fem;}\n", $font_size * 0.0625 ) );
 	}
 
-	$font_size = weaverx_getopt( 'site_fontsize_tablet_int' );
+	$font_size = weaverx_getopt( 'site_fontsize_tablet_int' );  // tablet
 	if ( $font_size ) {
-		weaverx_f_write( $sout, sprintf( 'body.is-smalltablet{font-size:%.5fem;}', $font_size * 0.0625 ) );
+		weaverx_f_write( $sout, sprintf( 'f ( min-width: 581px) and ( max-width: 767px) {body{font-size:%.5fem;}}', $font_size * 0.0625 ) );
 	}
 
-	$font_size = weaverx_getopt( 'site_fontsize_phone_int' );
+	$font_size = weaverx_getopt( 'site_fontsize_phone_int' );   // .is-phone
 	if ( $font_size ) {
-		weaverx_f_write( $sout, sprintf( 'body.is-phone{font-size:%.5fem;}', $font_size * 0.0625 ) );
+		weaverx_f_write( $sout, sprintf( '@media (max-width: 580px) {body{font-size:%.5fem;}}', $font_size * 0.0625 ) );
 	}
 
 	if ( ( $site_h = weaverx_getopt( 'site_line_height_dec' ) ) ) {
@@ -911,7 +939,7 @@ function weaverx_output_style( $sout ) {
 
 
 	if ( $smart != 1 ) {
-		weaverx_f_write( $sout, '@media ( min-width:768px) {' );
+		weaverx_f_write( $sout, '@media ( min-width:768px) {' );    // .is-desktop
 		for ( $i = 2; $i <= 8; $i ++ ) {
 			$w = ( ( 99.9999 / $i ) - $smart ) + ( $smart / $i );  // 99.9999 just a little rounding fudge factor */
 			weaverx_f_write( $sout, sprintf( ".per-row-%d-m{width:%.5f%%;}", $i, $w ) );
@@ -1733,7 +1761,7 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 	// on the desktop is no longer supportd for IE8. Instead, we allow IE8 to gracefully degrade to only showing default widths.
 	// All the rules between the @media }{} formerly had .is-desktop leading each rule. These have been removed.
 
-	weaverx_f_write( $sout, "@media screen and ( min-width:768px) {\n" );
+	weaverx_f_write( $sout, "@media screen and ( min-width:768px) {\n" ); // .is-desktop
 	if ( $r_sb_w != 25 || $smart != 1 || $override ) {      // changed right sidebar width ( or smart width )
 		$cw = 100 - $r_sb_w;
 		$cw_m = $cw - $smart;
@@ -1802,7 +1830,7 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 				weaverx_f_write( $sout, "{$ltag}{width:auto;}\n" );
 			} // changed to 100%: version 2.0.10
 			elseif ( $w > 0 ) {
-				weaverx_f_write( $sout, "{$ltag}{width:{$w}%;}.is-phone {$ltag}{width:100%}\n" );
+				weaverx_f_write( $sout, "{$ltag}{width:{$w}%;}@media (max-width: 580px) {{$ltag}{width:100%}}\n" ); // .is-phone
 			} // changed to 100%: version 2.0.10
 
 		}

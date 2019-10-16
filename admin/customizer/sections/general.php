@@ -84,8 +84,8 @@ if ( ! function_exists( 'weaverx_customizer_define_general_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_TEXT_CONTROL,
-							'label'        => esc_html__( 'Inline CSS', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-							'description'  => esc_html__( 'Generate inline CSS code rather than using style-weaverxt.css file.
+							'label'        => __( 'Inline CSS', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+							'description'  => __( 'Generate inline CSS code rather than using style-weaverxt.css file.
 By default, Weaver Xtreme Plus will create and use the style-weaverxt.css file. &diams;', 'weaver-xtreme' ),
 							'type'         => 'checkbox',
 						),
@@ -96,8 +96,8 @@ By default, Weaver Xtreme Plus will create and use the style-weaverxt.css file. 
 							'transport' => 'postMessage'    // no visual effect, so don't refresh
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Disable Schema.org Structured Data', 'weaver-xtreme' ),
-							'description' => esc_html__( 'Disable adding Schema.org structured data. ( We do not recommend removing this SEO feature. ) &diams;', 'weaver-xtreme' ),
+							'label'       => __( 'Disable Schema.org Structured Data', 'weaver-xtreme' ),
+							'description' => __( 'Disable adding Schema.org structured data. ( We do not recommend removing this SEO feature. ) &diams;', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
 					),
@@ -107,8 +107,8 @@ By default, Weaver Xtreme Plus will create and use the style-weaverxt.css file. 
 							'transport' => 'postMessage'    // no visual effect, so don't refresh
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Include Widget Areas in Print', 'weaver-xtreme' ),
-							'description' => esc_html__( 'Include all widget areas and full Footer content on browser Print page operation. &diams;', 'weaver-xtreme' ),
+							'label'       => __( 'Include Widget Areas in Print', 'weaver-xtreme' ),
+							'description' => __( 'Include all widget areas and full Footer content on browser Print page operation. &diams;', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
 					),
@@ -141,8 +141,8 @@ The IDs for the SiteMap sections are: <code>#sitemap-pages, #sitemap-posts, #sit
 							'transport' => 'postMessage'    // no visual effect, so don't refresh
 						),
 						'control' => array(
-							'label'       => esc_html__( 'I\'ve Donated', 'weaver-xtreme' ),
-							'description' => esc_html__( 'Thank you for donating to the Weaver Xtreme theme.
+							'label'       => __( 'I\'ve Donated', 'weaver-xtreme' ),
+							'description' => __( 'Thank you for donating to the Weaver Xtreme theme.
 This will hide the Donate button. Purchasing Weaver Xtreme Plus also hides the Donate button. &diams;', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
@@ -153,8 +153,8 @@ This will hide the Donate button. Purchasing Weaver Xtreme Plus also hides the D
 							'transport' => 'postMessage'    // no visual effect, so don't refresh
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Disable Page/Post Editor Styling', 'weaver-xtreme' ),
-							'description' => esc_html__( 'Disable the Weaver Xtreme theme based styling in the Page/Post editor.
+							'label'       => __( 'Disable Page/Post Editor Styling', 'weaver-xtreme' ),
+							'description' => __( 'Disable the Weaver Xtreme theme based styling in the Page/Post editor.
 If you have a theme using transparent backgrounds, this option will likely improve the Post/Page editor visibility. &diams;', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
@@ -303,7 +303,8 @@ Select a theme <em>.wxt</em>, backup <em>.wxb</em>, or full settings <em>.wxall<
 <ul>
 <li>&bull; A <em>.wxt</em> theme file will restore only theme settings, leaving &diams; settings intact.</li>
 <li>&bull; A <em>.wxb</em> backup file will reset all settings.</li>
-<li>&bull; A <em>.wxall</em> file will reset all settings, including <em>Weaver Xtreme Plus</em> shortcode and other settings.</li></ul>', 'weaver-xtreme' ) ),
+<li>&bull; A <em>.wxall</em> file will reset all settings, including <em>Weaver Xtreme Plus</em> shortcode and other settings.</li>
+<li>&bull; A <em>.json</em> backup file will restore theme settings from an <em>Absolute Weaver</em> file.</li></ul>', 'weaver-xtreme' ) ),
 						),
 					),
 

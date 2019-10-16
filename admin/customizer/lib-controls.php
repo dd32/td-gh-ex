@@ -1132,7 +1132,7 @@
 						<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 					<?php endif;
 						if ( ! empty( $this->description ) ) : ?>
-							<span class="description customize-control-description"><?php echo $this->description; ?></span>
+							<span class="description customize-control-description"><?php echo wp_kses_data( $this->description ); ?></span>
 						<?php endif; ?>
 					<div id="slider_<?php echo $this->id; ?>" class="weaverx-range-slider"></div>
 					<input id="input_<?php echo $this->id; ?>" class="weaverx-control-range" type="number" <?php $this->input_attrs(); ?> value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
@@ -1330,8 +1330,8 @@
 			),
 			'control' => array (
 				'control_type' => WEAVERX_SELECT_CONTROL,
-				'label'        => $label,
-				'description'  => $description,
+				'label'        => esc_html( $label ),
+				'description'  => weaverx_filter_text( $description ),
 				'type'         => 'select',
 				'choices'      => $choices(),
 				'input_attrs'  => $input_attrs,
@@ -1368,8 +1368,8 @@
 			),
 			'control' => array (
 				'control_type' => WEAVERX_PLUS_SELECT_CONTROL,
-				'label'        => $label,
-				'description'  => $description,
+				'label'        => esc_html( $label ),
+				'description'  => weaverx_filter_text( $description ),
 				'type'         => 'select',
 				'choices'      => $choices(),
 				'input_attrs'  => $input_attrs,
@@ -1528,8 +1528,8 @@
 			),
 			'control' => array (
 				'control_type' => $cb,
-				'label'        => $label,
-				'description'  => $description,
+				'label'        => esc_html( $label ),
+				'description'  => weaverx_filter_text( $description ),
 				'type'         => 'checkbox',
 			),
 		);
@@ -1559,7 +1559,7 @@
 			'control' => array (
 				'control_type' => $cb,
 				'label'        => $label,
-				'description'  => $description,
+				'description'  => weaverx_filter_text( $description ),
 				'type'         => 'checkbox',
 			),
 		);
@@ -1761,7 +1761,7 @@
 		// Font Size
 		$opt[$root . '_font_size'] = weaverx_cz_select(
 			'',
-			'<strong>' . weaverx_filter_text( __( 'Select <span style="font-size:120%;">Font Size</span> for ', 'weaver-xtreme' ) ) . $label . '</strong>',
+			'<strong>' . __( 'Select <span style="font-size:120%;">Font Size</span> for ', 'weaver-xtreme' ) . $label . '</strong>',
 			'weaverx_cz_choices_font_size', '', $transport
 		);
 
@@ -1769,7 +1769,7 @@
 
 		$opt[$root . '_font_family'] = weaverx_cz_select(
 			'',
-			'<strong>' . weaverx_filter_text( __( 'Select <span style="font-size:120%;">Font Family</span> for ', 'weaver-xtreme' ) ) . "{$label}&nbsp;&nbsp;<a href='{$t_dir}' target='_blank'><span class='dashicons dashicons-info'></span></a>",
+			'<strong>' . __( 'Select <span style="font-size:120%;">Font Family</span> for ', 'weaver-xtreme' ) . "{$label}&nbsp;&nbsp;<a href='{$t_dir}' target='_blank'><span class='dashicons dashicons-info'></span></a>",
 			'weaverx_cz_choices_font_family', '', $transport
 		);
 
@@ -1790,7 +1790,7 @@
 		} else {
 			$opt[$root . '_bold'] = weaverx_cz_select(
 				'',
-				'<strong>' . weaverx_filter_text( __( 'Use <span style="font-size:120%;font-weight:bold;">Bold</span> for ', 'weaver-xtreme' ) ) . $label . '</strong>',
+				'<strong>' . __( 'Use <span style="font-size:120%;font-weight:bold;">Bold</span> for ', 'weaver-xtreme' ) . $label . '</strong>',
 				'weaverx_cz_choices_bold_italic', '', $transport
 			);
 		}
@@ -1798,7 +1798,7 @@
 		// Italic
 		$opt[$root . '_italic'] = weaverx_cz_select(
 			'',
-			'<strong>' . weaverx_filter_text( __( 'Use <span style="font-size:120%;"><em>Italic</em></span> for ', 'weaver-xtreme' ) ) . $label . '</strong>',
+			'<strong>' . __( 'Use <span style="font-size:120%;"><em>Italic</em></span> for ', 'weaver-xtreme' ) . $label . '</strong>',
 			'weaverx_cz_choices_bold_italic', '', $transport
 		);
 
@@ -1820,7 +1820,7 @@
 		// Bold
 		$opt[$root . '_strong'] = weaverx_cz_select(
 			'',
-			'<strong>' . esc_html__( 'Use Bold for ', 'weaver-xtreme' ) . $label . '</strong>' . $tlabel,
+			'<strong>' . __( 'Use Bold for ', 'weaver-xtreme' ) . $label . '</strong>' . $tlabel,
 			'weaverx_cz_choices_bold_italic', '', $transport
 		);
 
@@ -1828,7 +1828,7 @@
 		// Italic
 		$opt[$root . '_em'] = weaverx_cz_select(
 			'',
-			'<strong>' . weaverx_filter_text( __( 'Use <em>Italic</em> for ', 'weaver-xtreme' ) ) . $label . '</strong>' . $tlabel,
+			'<strong>' . __( 'Use <em>Italic</em> for ', 'weaver-xtreme' ) . $label . '</strong>' . $tlabel,
 			'weaverx_cz_choices_bold_italic', '', $transport
 		);
 
@@ -1840,8 +1840,8 @@
 				'transport' => $transport,
 			),
 			'control' => array (
-				'label'       => esc_html__( 'Underline Link', 'weaver-xtreme' ) . $tlabel,
-				'description' => '<strong>' . weaverx_filter_text( __( 'Use <u>Underline</u> link for ', 'weaver-xtreme' ) ) . $label . '</strong>',
+				'label'       => __( 'Underline Link', 'weaver-xtreme' ) . $tlabel,
+				'description' => '<strong>' . __( 'Use <u>Underline</u> link for ', 'weaver-xtreme' )  . $label . '</strong>',
 				'type'        => 'checkbox',
 			),
 		);
@@ -1853,8 +1853,8 @@
 				'transport' => 'refresh'    // this one is refresh
 			),
 			'control' => array (
-				'label'       => esc_html__( 'Underline Hover', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-				'description' => '<strong>' . weaverx_filter_text( __( 'Use <u>Underline</u> on Hover.', 'weaver-xtreme' ) ) . '</strong>',
+				'label'       => __( 'Underline Hover', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+				'description' => '<strong>' . __( 'Use <u>Underline</u> on Hover.', 'weaver-xtreme' ) . '</strong>',
 				'type'        => 'checkbox',
 			),
 		);

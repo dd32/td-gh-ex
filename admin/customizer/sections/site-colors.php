@@ -27,8 +27,8 @@ if ( ! function_exists( 'weaverx_customizer_define_colorscheme_sections' ) ) :
 				          'fadebody_bg' => array(
 					          'setting' => array(),
 					          'control' => array(
-						          'label'       => esc_html__( 'Fade Outside BG', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						          'description' => esc_html__( 'Will fade the Outside BG color, darker at top to lighter at bottom.', 'weaver-xtreme' ),
+						          'label'       => __( 'Fade Outside BG', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						          'description' => __( 'Will fade the Outside BG color, darker at top to lighter at bottom.', 'weaver-xtreme' ),
 						          'type'        => 'checkbox',
 					          ),
 				          ),
@@ -402,8 +402,8 @@ if ( ! function_exists( 'weaverx_customizer_define_colorscheme_sections' ) ) :
 			'm_retain_hover' => array(
 				'setting' => array(),
 				'control' => array(
-					'label'       => esc_html__( 'Retain Menu Bar Hover BG Color', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => esc_html__( 'Retain the menu bar item hover BG color when sub-menus are opened.', 'weaver-xtreme' ),
+					'label'       => __( 'Retain Menu Bar Hover BG Color', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __( 'Retain the menu bar item hover BG color when sub-menus are opened.', 'weaver-xtreme' ),
 					'type'        => 'checkbox',
 				),
 			),
@@ -799,8 +799,8 @@ if ( ! function_exists( 'weaverx_customizer_define_colorscheme_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Flow Color to Bottom', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'If checked, Content and Sidebar bg colors will flow to bottom of the Container ( that is, equal heights ). You must provide background colors for the Content and Sidebars or the default bg color will be used.', 'weaver-xtreme' ),
+						'label'        => __( 'Flow Color to Bottom', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'If checked, Content and Sidebar bg colors will flow to bottom of the Container ( that is, equal heights ). You must provide background colors for the Content and Sidebars or the default bg color will be used.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),

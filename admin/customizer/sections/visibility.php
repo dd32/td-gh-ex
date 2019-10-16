@@ -26,8 +26,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-							'label'        => esc_html__( 'Hide Menu/Link Tool Tips', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Hide the tool tip pop up over all menus and links.', 'weaver-xtreme' ),
+							'label'        => __( 'Hide Menu/Link Tool Tips', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Hide the tool tip pop up over all menus and links.', 'weaver-xtreme' ),
 							'type'         => 'checkbox',
 						),
 					),
@@ -47,25 +47,25 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					// Hide Site Title option
 
 					'header_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Header Area', 'weaver-xtreme' ),
+						__( 'Hide Header Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 					'hide_site_title' => weaverx_cz_select(
-						esc_html__( 'Hide Site Title', 'weaver-xtreme' ),
+						__( 'Hide Site Title', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 					'hide_site_tagline' => weaverx_cz_select(
-						esc_html__( 'Hide Tagline', 'weaver-xtreme' ),
+						__( 'Hide Tagline', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 					'hide_header_image' => weaverx_cz_select(
-						esc_html__( 'Hide Header Image', 'weaver-xtreme' ),
+						__( 'Hide Header Image', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -75,17 +75,17 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'header_sb_hide'     => weaverx_cz_select(
-						esc_html__( 'Hide Header Widget Area', 'weaver-xtreme' ),
+						__( 'Hide Header Widget Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'header_html_hide'   => weaverx_cz_select(
-						esc_html__( 'Hide Header HTML Area', 'weaver-xtreme' ),
+						__( 'Hide Header HTML Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'header_search_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Search box on Header', 'weaver-xtreme' ),
+						__( 'Hide Search box on Header', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -108,7 +108,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'm_primary_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Primary Menu', 'weaver-xtreme' ),
+						__( 'Hide Primary Menu', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -120,13 +120,13 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'm_primary_hide_left' => weaverx_cz_select_plus(
-						esc_html__( 'Hide Primary Menu Left HTML', 'weaver-xtreme' ),
+						__( 'Hide Primary Menu Left HTML', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 					'm_primary_hide_right' => weaverx_cz_select(
-						esc_html__( 'Hide Primary Menu Right HTML', 'weaver-xtreme' ),
+						__( 'Hide Primary Menu Right HTML', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -150,7 +150,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'm_secondary_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Secondary Menu', 'weaver-xtreme' ),
+						__( 'Hide Secondary Menu', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -161,13 +161,13 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'm_secondary_hide_left' => weaverx_cz_select_plus(
-						esc_html__( 'Hide Secondary Menu Left HTML', 'weaver-xtreme' ),
+						__( 'Hide Secondary Menu Left HTML', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 					'm_secondary_hide_right' => weaverx_cz_select_plus(
-						esc_html__( 'Hide Secondary Menu Right HTML', 'weaver-xtreme' ),
+						__( 'Hide Secondary Menu Right HTML', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -178,7 +178,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						esc_html__( 'You must define a Header Menu from the Custom Menus Content menu.', 'weaver-xtreme' ) ),
 
 					'm_header_mini_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Header Mini Menu', 'weaver-xtreme' ),
+						__( 'Hide Header Mini Menu', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -197,7 +197,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'm_extra_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Extra Menu', 'weaver-xtreme' ),
+						__( 'Hide Extra Menu', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -208,13 +208,13 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					),
 
 					'm_extra_hide_left' => weaverx_cz_select_plus(
-						esc_html__( 'Hide Extra Menu Left HTML', 'weaver-xtreme' ),
+						__( 'Hide Extra Menu Left HTML', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 					'm_extra_hide_right' => weaverx_cz_select_plus(
-						esc_html__( 'Hide Extra Menu Right HTML', 'weaver-xtreme' ),
+						__( 'Hide Extra Menu Right HTML', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -238,7 +238,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 				'options'     => array(
 
 					'infobar_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Info Bar', 'weaver-xtreme' ),
+						__( 'Hide Info Bar', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -260,8 +260,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 							'sanitize_callback' => 'weaverx_cz_sanitize_int',
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Show Search Icon', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Include slide open Search icon on the right.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'label'       => __( 'Show Search Icon', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'Include slide open Search icon on the right.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 							'type'        => 'checkbox',
 						),
 					),
@@ -271,8 +271,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 							'sanitize_callback' => 'weaverx_cz_sanitize_int',
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Show Log In', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Include a simple Log In link on the right.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'label'       => __( 'Show Log In', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'Include a simple Log In link on the right.', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 							'type'        => 'checkbox',
 						),
 					),
@@ -305,8 +305,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-							'label'        => esc_html__( 'Hide Old Comments When Closed', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Hide previous comments after closing comments for page or post. (Default: show old comments after closing.)', 'weaver-xtreme' ),
+							'label'        => __( 'Hide Old Comments When Closed', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Hide previous comments after closing comments for page or post. (Default: show old comments after closing.)', 'weaver-xtreme' ),
 							'type'         => 'checkbox',
 						),
 					),
@@ -317,8 +317,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-							'label'        => esc_html__( 'Show Allowed HTML', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Show the allowed HTML tags below comment input box.', 'weaver-xtreme' ),
+							'label'        => __( 'Show Allowed HTML', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Show the allowed HTML tags below comment input box.', 'weaver-xtreme' ),
 							'type'         => 'checkbox',
 						),
 					),
@@ -329,8 +329,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-							'label'        => esc_html__( 'Hide Comment Title Icon', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Hide the comment icon (bubble) before the Comments title.', 'weaver-xtreme' ),
+							'label'        => __( 'Hide Comment Title Icon', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Hide the comment icon (bubble) before the Comments title.', 'weaver-xtreme' ),
 							'type'         => 'checkbox',
 						),
 					),
@@ -342,8 +342,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-							'label'        => esc_html__( 'Hide Separator Above Comments', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Hide the <hr> separator line above the Comments area.', 'weaver-xtreme' ),
+							'label'        => __( 'Hide Separator Above Comments', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Hide the &lt;hr> separator line above the Comments area.', 'weaver-xtreme' ),
 							'type'         => 'checkbox',
 						),
 					),
@@ -385,8 +385,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 
 
 					'show_post_avatar' => weaverx_cz_select(
-						esc_html__( 'Show Author Avatar', 'weaver-xtreme' ),
-						esc_html__( 'Show author avatar on the post info line (also can be set per post with post editor).', 'weaver-xtreme' ),
+						__( 'Show Author Avatar', 'weaver-xtreme' ),
+						__( 'Show author avatar on the post info line (also can be set per post with post editor).', 'weaver-xtreme' ),
 						'weaverx_cz_choices_hide', 'hide', 'refresh'
 					),
 
@@ -446,8 +446,8 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-							'label' => esc_html__( 'Hide Post Format Icons', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Hide the icons for posts with Post Format specified.', 'weaver-xtreme' ),
+							'label' => __( 'Hide Post Format Icons', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+							'description' => __( 'Hide the icons for posts with Post Format specified.', 'weaver-xtreme' ),
 							'type'  => 'checkbox',
 						),
 					), */
@@ -479,7 +479,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					'visibility-primary-widget-heading' => weaverx_cz_group_title( esc_html__( 'Primary Widget Area', 'weaver-xtreme' ) ),
 
 					'primary_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Primary Widget Area', 'weaver-xtreme' ),
+						__( 'Hide Primary Widget Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -488,7 +488,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 					'visibility-secondary-widget-heading' => weaverx_cz_group_title( esc_html__( 'Secondary Widget Area', 'weaver-xtreme' ) ),
 
 					'secondary_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Secondary Widget Area', 'weaver-xtreme' ),
+						__( 'Hide Secondary Widget Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -498,7 +498,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						esc_html__( 'Properties for all Top Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) ),
 
 					'top_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Top Widget Areas', 'weaver-xtreme' ),
+						__( 'Hide Top Widget Areas', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -508,7 +508,7 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						esc_html__( 'Properties for all Bottom Widget areas (Sitewide, Pages, Blog, Archive).', 'weaver-xtreme' ) ),
 
 					'bottom_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Bottom Widget Areas', 'weaver-xtreme' ),
+						__( 'Hide Bottom Widget Areas', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
@@ -542,20 +542,20 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'footer_sb_hide'   => weaverx_cz_select(
-						esc_html__( 'Hide Footer Widget Area', 'weaver-xtreme' ),
+						__( 'Hide Footer Widget Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'footer_html_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Footer HTML Area', 'weaver-xtreme' ),
+						__( 'Hide Footer HTML Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 
 
 					'_hide_poweredby' => weaverx_cz_checkbox_refresh(
-						esc_html__( 'Hide Powered By tag', 'weaver-xtreme' ),
-						esc_html__( 'Hide the WordPress Logo link/notice in the footer. &diams;', 'weaver-xtreme' )
+						__( 'Hide Powered By tag', 'weaver-xtreme' ),
+						__( 'Hide the WordPress Logo link/notice in the footer. &diams;', 'weaver-xtreme' )
 					),
 
 
@@ -571,47 +571,47 @@ if ( ! function_exists( 'weaverx_customizer_define_visibility_sections' ) ) :
 						esc_html__( 'With the Full and Standard Level Interface Levels, you can define control visibility for many other items.', 'weaver-xtreme' ) ),
 
 					'm_primary_hide'     => weaverx_cz_select(
-						esc_html__( 'Hide Primary Menu', 'weaver-xtreme' ),
+						__( 'Hide Primary Menu', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'm_header_mini_hide' => weaverx_cz_select(
-						esc_html__( 'Hide Header Mini Menu', 'weaver-xtreme' ),
+						__( 'Hide Header Mini Menu', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'infobar_hide'       => weaverx_cz_select(
-						esc_html__( 'Hide Info Bar', 'weaver-xtreme' ),
+						__( 'Hide Info Bar', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'primary_hide'       => weaverx_cz_select(
-						esc_html__( 'Hide Primary Widget Area', 'weaver-xtreme' ),
+						__( 'Hide Primary Widget Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'secondary_hide'     => weaverx_cz_select(
-						esc_html__( 'Hide Secondary Widget Area', 'weaver-xtreme' ),
+						__( 'Hide Secondary Widget Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'top_hide'           => weaverx_cz_select(
-						esc_html__( 'Hide Top Widget Areas', 'weaver-xtreme' ),
+						__( 'Hide Top Widget Areas', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'bottom_hide'        => weaverx_cz_select(
-						esc_html__( 'Hide Bottom Widget Areas', 'weaver-xtreme' ),
+						__( 'Hide Bottom Widget Areas', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'header_hide'        => weaverx_cz_select(
-						esc_html__( 'Hide Header Area', 'weaver-xtreme' ),
+						__( 'Hide Header Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),
 					'footer_hide'        => weaverx_cz_select(
-						esc_html__( 'Hide Footer Area', 'weaver-xtreme' ),
+						__( 'Hide Footer Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_hide', 'hide-none', 'refresh'
 					),

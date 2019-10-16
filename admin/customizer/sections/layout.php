@@ -29,8 +29,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Theme Width (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( "Note: Mobile devices adjust width responsively.", 'weaver-xtreme' ),
+						'label'        => __( 'Theme Width (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description'  => __( "Note: Mobile devices adjust width responsively.", 'weaver-xtreme' ),
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 770,
@@ -78,7 +78,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					'transport'         => 'postMessage',
 				),
 				'control' => array(
-					'label' => esc_html__( 'Add border around Container', 'weaver-xtreme' ),
+					'label' => __( 'Add border around Container', 'weaver-xtreme' ),
 					'type'  => 'checkbox',
 				),
 			),
@@ -109,8 +109,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'wrapper_fullwidth' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Stretch Entire Site Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => weaverx_filter_text( __( 'Display site stretched to full width. This option is similar to the Stretched One-Step Site Layout option but makes content as well as the footer and header stretched. This option overrides the <em>Site Width</em> option.', 'weaver-xtreme' ) ),
+						'label'       => __( 'Stretch Entire Site Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Display site stretched to full width. This option is similar to the Stretched One-Step Site Layout option but makes content as well as the footer and header stretched. This option overrides the <em>Site Width</em> option.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -125,7 +125,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'header_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Header Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Header Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -133,8 +133,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'expand_header' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Header Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Checking this option will automatically include the other Header Area Expand options as well.', 'weaver-xtreme' ),
+						'label'       => __( 'Header Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Checking this option will automatically include the other Header Area Expand options as well.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -163,7 +163,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'header_sb_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Header Widget Area Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Header Widget Area Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -171,7 +171,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'header_html_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Header HTML Area Expand BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Header HTML Area Expand BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -189,8 +189,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'expand_header-image' => array(
 				'setting' => array(),
 				'control' => array(
-					'label'       => esc_html__( 'Header Image Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => weaverx_filter_text( __( 'Also consider using the <em>Spacing, Widths, Alignment -> Header Area -> Move Title/Tagline over Image</em> option to create an attractive header.', 'weaver-xtreme' ) ),
+					'label'       => __( 'Header Image Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __( 'Also consider using the <em>Spacing, Widths, Alignment -> Header Area -> Move Title/Tagline over Image</em> option to create an attractive header.', 'weaver-xtreme' ),
 					'type'        => 'checkbox',
 				),
 			),
@@ -202,14 +202,14 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'm_primary_extend_width' => array(
 				'setting' => array(),
 				'control' => array(
-					'label' => esc_html__( 'Primary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Primary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
 			'expand_m_primary'       => array(
 				'setting' => array(),
 				'control' => array(
-					'label' => esc_html__( 'Primary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Primary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
@@ -236,14 +236,14 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'm_secondary_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Secondary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Secondary Menu Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
 				'expand_m_secondary'       => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Secondary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Secondary Menu Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -273,15 +273,15 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'container_extend_width' => array(
 				'setting' => array(),
 				'control' => array(
-					'label' => esc_html__( 'Container Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Container Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
 			'expand_container'       => array(
 				'setting' => array(),
 				'control' => array(
-					'label'       => esc_html__( 'Container Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => esc_html__( 'The container wraps the Info Bar, the content, and widget areas.', 'weaver-xtreme' ),
+					'label'       => __( 'Container Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __( 'The container wraps the Info Bar, the content, and widget areas.', 'weaver-xtreme' ),
 					'type'        => 'checkbox',
 				),
 			),
@@ -306,8 +306,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'infobar_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Info Bar Extend BG', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'The Info Bar contains the breadcrumbs and page links.', 'weaver-xtreme' ),
+						'label'       => __( 'Info Bar Extend BG', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'The Info Bar contains the breadcrumbs and page links.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -315,7 +315,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'expand_infobar' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Info Bar Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Info Bar Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -324,15 +324,15 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'post_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Posts Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'This option most useful with FI as BG images', 'weaver-xtreme' ),
+						'label'       => __( 'Posts Extend BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'This option most useful with FI as BG images', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
 				'post_expand'       => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Posts Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Posts Stretch to Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -350,15 +350,15 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			'footer_extend_width' => array(
 				'setting' => array(),
 				'control' => array(
-					'label' => esc_html__( 'Extend Footer BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label' => __( 'Extend Footer BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'  => 'checkbox',
 				),
 			),
 			'expand_footer'       => array(
 				'setting' => array(),
 				'control' => array(
-					'label'       => esc_html__( 'Footer Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => esc_html__( 'Checking this option will automatically include the other Footer Area Stretch options as well.', 'weaver-xtreme' ),
+					'label'       => __( 'Footer Stretch Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description' => __( 'Checking this option will automatically include the other Footer Area Stretch options as well.', 'weaver-xtreme' ),
 					'type'        => 'checkbox',
 				),
 			),
@@ -384,14 +384,14 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'footer_sb_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Extend Footer Widget Area BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Extend Footer Widget Area BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
 				'expand_footer_sb'       => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Footer Widget Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Footer Widget Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 
 						'type' => 'checkbox',
 					),
@@ -401,14 +401,14 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'footer_html_extend_width' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Extend Footer HTML Area BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Extend Footer HTML Area BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
 				'expand_footer_html'       => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Footer HTML Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Footer HTML Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -416,7 +416,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'expand_site-ig-wrap' => array(
 					'setting' => array(),
 					'control' => array(
-						'label' => esc_html__( 'Footer Copyright Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Footer Copyright Area Stretch', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -443,7 +443,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Header Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label'        => __( 'Header Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 1,
@@ -460,8 +460,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'header_sb_fixedtop' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Fixed-Top Header Widget Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Fix Header Widget are to top of page. If primary/secondary menus also fixed-top, header widget area will always be after secondary and before primary.',
+						'label'       => __( 'Fixed-Top Header Widget Area', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Fix Header Widget are to top of page. If primary/secondary menus also fixed-top, header widget area will always be after secondary and before primary.',
 							'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
@@ -533,8 +533,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				'header_sb_no_widget_margins' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Header No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Do not use "smart margins" between  multi-column widgets on rows.',
+						'label'       => __( 'Header No Smart Widget Margins', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Do not use "smart margins" between  multi-column widgets on rows.',
 							'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
@@ -544,8 +544,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					'setting' => array(),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Header Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Make widgets equal height rows if &gt; 1 column.',
+						'label'        => __( 'Header Equal Height Widget Rows', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Make widgets equal height rows if &gt; 1 column.',
 							'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
@@ -568,7 +568,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 
 				'm_primary_fixedtop' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
 					esc_html__( 'Fixed-Top Primary Menu', 'weaver-xtreme' ),
-					esc_html__( 'Fix the Primary Menu to top of page.  Use the Expand/Extend BG Attributes to make a full width menu.', 'weaver-xtreme' ),
+					esc_html__( 'Fix the Primary Menu to top of page.  Use the Expand/Extend BG Attributes or Align to make a full width menu.', 'weaver-xtreme' ),
 					'weaverx_cz_choices_fixed_menu', 'none', 'refresh'
 				),
 
@@ -577,8 +577,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport' => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Move Primary Menu to Top', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Move Primary Menu at Top of Header Area. This is not the same as a Fixed-Top Menu (Default: Bottom)', 'weaver-xtreme' ),
+						'label'       => __( 'Move Primary Menu to Top', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Move Primary Menu at Top of Header Area. This is not the same as a Fixed-Top Menu (Default: Bottom)', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -588,8 +588,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport' => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Add Site Title to Left of Primary Menu', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Adds the Site Title to the left end of the primary memu in larger font size.', 'weaver-xtreme' ),
+						'label'       => __( 'Add Site Title to Left of Primary Menu', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Adds the Site Title to the left end of the primary memu in larger font size.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -603,7 +603,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 
 				'm_secondary_fixedtop' => weaverx_cz_select(    // must be refresh because column class applied to specific page id
 					esc_html__( 'Fixed-Top Secondary Menu', 'weaver-xtreme' ),
-					esc_html__( 'Fix the Secondary Menu to top of page.  Use the Expand/Extend BG Attributes to make a full width menu.', 'weaver-xtreme' ),
+					esc_html__( 'Fix the Secondary Menu to top of page.  Use the Expand/Extend BG Attributes or Align to make a full width menu.', 'weaver-xtreme' ),
 					'weaverx_cz_choices_fixed_menu', 'none', 'refresh'
 				),
 
@@ -612,8 +612,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport' => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Move Secondary Menu to Bottom', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Move Secondary Menu at Bottom of Header Area (Default: Top)', 'weaver-xtreme' ),
+						'label'       => __( 'Move Secondary Menu to Bottom', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Move Secondary Menu at Bottom of Header Area (Default: Top)', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -628,8 +628,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						// 'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,		// changed to free version in 4.0
-						'label'       => esc_html__( 'Use SmartMenus', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,    // . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description' => weaverx_filter_text( __( 'Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, and transition effects. This option is recommended. There are additional <em>Smart Menu</em> options available on the <em>Appearance &rarr; +Xtreme Plus</em> menu.', 'weaver-xtreme' ) ),
+						'label'       => __( 'Use SmartMenus', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,    // . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Use <em>SmartMenus</em> rather than default Weaver Xtreme Menus. <em>SmartMenus</em> provide enhanced menu support, including auto-visibility, and transition effects. This option is recommended. There are additional <em>Smart Menu</em> options available on the <em>Appearance &rarr; +Xtreme Plus</em> menu.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -684,8 +684,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 
-						'label'       => esc_html__( 'Auto Hyphenate Content', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Allow browsers to automatically hyphenate text for appearance.', 'weaver-xtreme' ),
+						'label'       => __( 'Auto Hyphenate Content', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Allow browsers to automatically hyphenate text for appearance.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -714,8 +714,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Excerpt length', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Change post excerpt length.', 'weaver-xtreme' ),
+						'label'        => __( 'Excerpt length', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Change post excerpt length.', 'weaver-xtreme' ),
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 2,
@@ -731,8 +731,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Show Full Blog Posts', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => weaverx_filter_text( __( 'Will display full blog post instead of excerpts on <em>blog pages</em>. Does not override manually added &lt;--more--> breaks.', 'weaver-xtreme' ) ),
+						'label'       => __( 'Show Full Blog Posts', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Will display full blog post instead of excerpts on <em>blog pages</em>. Does not override manually added &lt;--more--> breaks.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -743,7 +743,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label' => esc_html__( 'Full Post for Archives', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Full Post for Archives', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -753,7 +753,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label' => esc_html__( 'Full Post for Searches', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label' => __( 'Full Post for Searches', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'  => 'checkbox',
 					),
 				),
@@ -791,8 +791,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Use Columns on Archive Pages', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Display posts on archive-like pages using columns. (Archive, Author, Category, Tag)', 'weaver-xtreme' ),
+						'label'       => __( 'Use Columns on Archive Pages', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Display posts on archive-like pages using columns. (Archive, Author, Category, Tag)', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -803,8 +803,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'First Post One Column', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Display the first post in one column.', 'weaver-xtreme' ),
+						'label'       => __( 'First Post One Column', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Display the first post in one column.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -815,8 +815,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Sticky Posts One Column', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Display opening Sticky Posts in one column. If First Post One Column also checked, then first non-sticky post will also be one column.', 'weaver-xtreme' ),
+						'label'       => __( 'Sticky Posts One Column', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Display opening Sticky Posts in one column. If First Post One Column also checked, then first non-sticky post will also be one column.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -833,8 +833,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Compact "Post Format" Posts', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => weaverx_filter_text( __( 'Use compact layout for <em>Post Format</em> posts ( Image, Gallery, Video, etc. ). Useful for photo blogs and multi-column layouts. Looks great with <em>Masonry</em>.', 'weaver-xtreme' ) ),
+						'label'       => __( 'Compact "Post Format" Posts', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Use compact layout for <em>Post Format</em> posts ( Image, Gallery, Video, etc. ). Useful for photo blogs and multi-column layouts. Looks great with <em>Masonry</em>.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -856,8 +856,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Hide Top Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Hide the blog navigation links at the top.', 'weaver-xtreme' ),
+						'label'        => __( 'Hide Top Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Hide the blog navigation links at the top.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),
@@ -868,8 +868,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Hide Bottom Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Hide the blog navigation links at the bottom.', 'weaver-xtreme' ),
+						'label'        => __( 'Hide Bottom Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Hide the blog navigation links at the bottom.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),
@@ -880,8 +880,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Show Top Nav on First Page', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Show navigation at top even on the first page.', 'weaver-xtreme' ),
+						'label'        => __( 'Show Top Nav on First Page', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Show navigation at top even on the first page.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),
@@ -899,8 +899,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Nav Links to Same Categories', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Single Page navigation links point to posts with same categories.', 'weaver-xtreme' ),
+						'label'        => __( 'Nav Links to Same Categories', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Single Page navigation links point to posts with same categories.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),
@@ -911,8 +911,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Hide Top Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Hide the single page navigation links at the top.', 'weaver-xtreme' ),
+						'label'        => __( 'Hide Top Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Hide the single page navigation links at the top.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),
@@ -923,8 +923,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-						'label'        => esc_html__( 'Hide Bottom Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Hide the single page navigation links at the bottom.', 'weaver-xtreme' ),
+						'label'        => __( 'Hide Bottom Nav Links', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Hide the single page navigation links at the bottom.', 'weaver-xtreme' ),
 						'type'         => 'checkbox',
 					),
 				),
@@ -942,8 +942,8 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 						'transport'         => 'refresh',
 					),
 					'control' => array(
-						'label'       => esc_html__( 'Clear Major Content Options', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => weaverx_filter_text( __( '<em>ADVANCED OPTION!</em> Clear wrapping Content Area bg, borders, padding, and top/bottom margins for views with posts. Allows more flexible post styling. Most people will not need this.', 'weaver-xtreme' ) ),
+						'label'       => __( 'Clear Major Content Options', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( '<em>ADVANCED OPTION!</em> Clear wrapping Content Area bg, borders, padding, and top/bottom margins for views with posts. Allows more flexible post styling. Most people will not need this.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
@@ -1056,7 +1056,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
-					'label'        => esc_html__( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 					'type'         => 'range',
 					'input_attrs'  => array(
 						'min'  => 1,
@@ -1143,7 +1143,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			                                                                       ),
 			                                                                       'control' => array(
 				                                                                       'control_type' => 'WeaverX_Range_Control',
-				                                                                       'label'        => esc_html__( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+				                                                                       'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 				                                                                       'type'         => 'range',
 				                                                                       'input_attrs'  => array(
 					                                                                       'min'  => 1,
@@ -1230,7 +1230,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			                                                                       ),
 			                                                                       'control' => array(
 				                                                                       'control_type' => 'WeaverX_Range_Control',
-				                                                                       'label'        => esc_html__( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+				                                                                       'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 				                                                                       'type'         => 'range',
 				                                                                       'input_attrs'  => array(
 					                                                                       'min'  => 1,
@@ -1317,7 +1317,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 			                                                                   ),
 			                                                                   'control' => array(
 				                                                                   'control_type' => 'WeaverX_Range_Control',
-				                                                                   'label'        => esc_html__( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+				                                                                   'label'        => __( 'Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 				                                                                   'type'         => 'range',
 				                                                                   'input_attrs'  => array(
 					                                                                   'min'  => 1,
@@ -1418,7 +1418,7 @@ if ( ! function_exists( 'weaverx_customizer_define_layout_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Footer Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label'        => __( 'Footer Columns of Widgets', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 1,

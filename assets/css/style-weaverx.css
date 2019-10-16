@@ -288,79 +288,94 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	font-style:    normal;
 }
 
-#content *[class^="wp-block-"] { /* put a margin at the bottom of each block */
-	margin-top:    1.2em;
-	margin-bottom: 1.5em;
+
+.weaverx-sb-one-column #container,
+.weaverx-sb-one-column #content,
+.weaverx-sb-one-column .content-page,
+.weaverx-sb-one-column .content-single {
+	overflow: visible;
 }
 
-@media ( min-width: 768px) {
-	.weaverx-sb-one-column #container,
-	.weaverx-sb-one-column #content,
-	.weaverx-sb-one-column .content-page,
-	.weaverx-sb-one-column .content-single {
-		overflow: visible;
-	}
+/* need to override Weaver Xtreme's default hidden for fullwidth to show */
+.weaverx-has-sb #container,
+.weaverx-has-sb #content,
+.weaverx-has-sb .content-page,
+.weaverx-has-sb .content-single {
+	overflow: hidden;
+}
 
-	/* need to override Weaver Xtreme's default hidden for fullwidth to show */
-	.weaverx-has-sb #container,
-	.weaverx-has-sb #content,
-	.weaverx-has-sb .content-page,
-	.weaverx-has-sb .content-single {
-		overflow: hidden;
-	}
 
-	/* need to override Weaver Xtreme's default hidden for fullwidth to show */
+.weaverx-sb-one-column .alignfull, /* most elements only on one column pages */
+#header .alignfull, /* but some are okay on pages with sidebars */
+#header.alignfull,
+#container.alignfull,
+#colophon .alignfull,
+#colophon.alignfull,
+#infobar .alignfull,
+#nav-primary .alignfull,
+#nav-secondary .alignfull {
+	xleft:        0;
+	margin-left:  calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	max-width:    1000%;
+	width:        100vw;
+}
+
+#container .wp-block-embed.alignfull {
+	left:         0;
+	margin-left:  calc(50% - 49vw);
+	margin-right: calc(50% - 49vw);
+	max-width:    1100px;
+	width:        98vw
+}
+
+.weaverx-has-sb #container .alignfull {
+	margin-left:  0 !important;
+	margin-right: 0 !important;
+	max-width:    100% !important;
+	width:        100% !important;
+}
+
+.weaverx-has-sb #container .alignfull {
+	margin-left:  0 !important;
+	margin-right: 0 !important;
+	max-width:    100% !important;
+	width:        100% !important;
+}
+
+.weaverx-has-sb #container .alignwide {
+	margin-left:  1% !important;
+	margin-right: 1% !important;
+	max-width:    100% !important;
+	width:        98% !important;
+}
+
+@media (min-width: 1188px) {
 	.weaverx-sb-one-column .alignwide,
 	#header .alignwide,
 	#header.alignwide,
-	#colophon.alignwide,
 	#colophon .alignwide,
+	#colophon.alignwide,
 	#container .alignwide,
-	#container.alignwide {
-		margin-left:  calc(50% - 40vw);
-		margin-right: calc(50% - 40vw);
-		max-width:    1000%;
-		width:        80vw;
-	}
-
-	.weaverx-sb-one-column .alignfull, /* most elements only on one column pages */
-	#header .alignfull, /* but some are okay on pages with sidebars */
-	#header.alignfull,
-	#container.alignfull,
-	#colophon .alignfull,
-	#colophon.alignfull,
-	#nav-primary .alignfull,
-	#nav-secondary .alignfull {
+	#container.alignwide,
+	#infobar .alignwide,
+	.alignwide {
 		left:         0;
-		margin-left:  calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-		max-width:    1000%;
-		width:        100vw;
+		margin-left:  calc(50% - 46vw);
+		margin-right: calc(50% - 46vw);
+		max-width:    10000px;
+		width:        92vw;
 	}
+}
 
-	#container .wp-block-embed.alignfull {
-		left:         0;
-		margin-left:  calc(50% - 49vw);
-		margin-right: calc(50% - 49vw);
-		max-width:    1000%;
-		width:        98vw;
-
+@media (max-width: 1187px) {
+	.alignwide {
+		left:          0;
+		margin-left:   0 !important;
+		margin-right:  0 !important;
+		max-width:     100% !important;
+		width:         100% !important;
 	}
-
-	.weaverx-has-sb #container .alignwide {
-		margin-left:  0 !important;
-		margin-right: 0 !important;
-		max-width:    100% !important;
-		width:        98% !important;
-	}
-
-	.weaverx-has-sb #container .alignfull {
-		margin-left:  0 !important;
-		margin-right: 0 !important;
-		max-width:    100% !important;
-		width:        100% !important;
-	}
-
 }
 
 
@@ -483,7 +498,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 .is-phone .content-2-col,
-.is-phone .content-3-col {		/* changed in V 4.3.3 to be consistent with general #content padding rules */
+.is-phone .content-3-col { /* changed in V 4.3.3 to be consistent with general #content padding rules */
 	width:         100%;
 	padding-right: 2%;
 	padding-left:  2%;
@@ -2841,6 +2856,7 @@ li.mega-normal ul.mega-menu li a:hover {
 
 #site-title a,
 .site-title a {
+	color:           inherit;
 	text-decoration: none;
 	font-style:      inherit;
 	font-weight:     inherit;
@@ -5302,7 +5318,13 @@ a.more-link {
 /* Weaver Xtreme uses #content to wrap all page and post content */
 
 #content *[class^="wp-block-"] { /* put a margin at the bottom of each block */
-	margin-bottom: 2.5em;
+	margin-top:    1.2em;
+	margin-bottom: 1.5em;
+}
+
+#content *[class^="wp-block-embed__wrapper"] { /* don't double match wp-block- on embed wrappers */
+	margin-top:    0 !important;
+	margin-bottom: 0 !important;
 }
 
 /* =================== Pullquotes =================== */

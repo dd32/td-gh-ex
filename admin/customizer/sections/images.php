@@ -46,8 +46,8 @@ if ( ! function_exists( 'weaverx_customizer_define_image_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Image Border Width (px)', 'weaver-xtreme' ),
-							'description'  => weaverx_filter_text( __( 'Border width for images in Container and Footer. There will be <strong>no</strong> borders unless you set this value above 0px.', 'weaver-xtreme' ) ),
+							'label'        => __( 'Image Border Width (px)', 'weaver-xtreme' ),
+							'description'  => __( 'Border width for images in Container and Footer. There will be <strong>no</strong> borders unless you set this value above 0px.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -63,8 +63,8 @@ if ( ! function_exists( 'weaverx_customizer_define_image_sections' ) ) :
 							'transport'         => 'postMessage',
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Add Image Shadow', 'weaver-xtreme' ),
-							'description' => esc_html__( 'Add a shadow to images in Container and Footer. Add custom CSS for custom shadow.', 'weaver-xtreme' ),
+							'label'       => __( 'Add Image Shadow', 'weaver-xtreme' ),
+							'description' => __( 'Add a shadow to images in Container and Footer. Add custom CSS for custom shadow.', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
 					),
@@ -75,8 +75,8 @@ if ( ! function_exists( 'weaverx_customizer_define_image_sections' ) ) :
 							'transport'         => 'refresh',
 						),
 						'control' => array(
-							'label'       => esc_html__( 'Restrict Borders to Media Library', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'For Container and Footer, restrict border and shadows to images from Media Library. Manually entered &lt;img&gt; HTML without Media Library classes will not have borders.', 'weaver-xtreme' ),
+							'label'       => __( 'Restrict Borders to Media Library', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'For Container and Footer, restrict border and shadows to images from Media Library. Manually entered &lt;img&gt; HTML without Media Library classes will not have borders.', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
 					),
@@ -134,8 +134,8 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 					weaverx_filter_text( __( 'Check to add a link to site home page for Header Image. Note: If used with <em>Move Title/Tagline over Image</em>, parts of the header image will not be clickable.', 'weaver-xtreme' ) ) ),
 
 				'header_image_align' => weaverx_cz_select(
-					esc_html__( 'Align Header Image', 'weaver-xtreme' ),
-					esc_html__( 'How to align header image. Wide and Full do not apply to BG header image.', 'weaver-xtreme' ),
+					__( 'Align Header Image', 'weaver-xtreme' ),
+					__( 'How to align header image. Wide and Full do not apply to BG header image.', 'weaver-xtreme' ),
 					'weaverx_cz_choices_align', 'float-left', 'refresh'
 				),
 
@@ -143,8 +143,8 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 					? weaverx_cz_heading( esc_html__( 'Header Image Rendering', 'weaver-xtreme' ) . ' (WX+ V3)',
 						esc_html__( '"Render Header Image as BG Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme' ) )
 					: weaverx_cz_select_plus(
-						esc_html__( 'Header Image Rendering', 'weaver-xtreme' ),
-						weaverx_filter_text( __( 'How to render header image: as img in header or as header area bg image. When rendered as a BG image, other options such as moving Title/Tagline or having image link to home page are not meaningful. Optionally, use <em>Suggested Header Image Height</em> above to control BG image height.', 'weaver-xtreme' )),
+						__( 'Header Image Rendering', 'weaver-xtreme' ),
+						__( 'How to render header image: as img in header or as header area bg image. When rendered as a BG image, other options such as moving Title/Tagline or having image link to home page are not meaningful. Optionally, use <em>Suggested Header Image Height</em> above to control BG image height.', 'weaver-xtreme' ),
 						'weaverx_cz_choices_render_header', 'header-as-img', 'refresh'
 					),
 
@@ -215,8 +215,8 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 				                                                        'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 188 ),
 				                                                        'control' => array(
 					                                                        'control_type' => 'WeaverX_Range_Control',
-					                                                        'label'        => esc_html__( 'Suggested Header Image Height (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					                                                        'description'  => esc_html__( 'Change the suggested height of the Header Image. Standard size is 188. This height is only a suggestion, and only affects the clipping window on the Customizer <em>Images &rarr; Header Banner Images<em> panel after you refresh the whole Customize interface. Header images will always be responsively sized. (Default header image width: theme width)', 'weaver-xtreme' ),
+					                                                        'label'        => __( 'Suggested Header Image Height (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					                                                        'description'  => __( 'Change the suggested height of the Header Image. Standard size is 188. This height is only a suggestion, and only affects the clipping window on the Customizer <em>Images &rarr; Header Banner Images<em> panel after you refresh the whole Customize interface. Header images will always be responsively sized. (Default header image width: theme width)', 'weaver-xtreme' ),
 					                                                        'type'         => 'range',
 					                                                        'input_attrs'  => array(
 						                                                        'min'  => 10,
@@ -267,8 +267,8 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Logo as Title Replacement Height (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description'  => esc_html__( 'Set height of Logo on Menu. Will interact with padding. (Default: 32px)', 'weaver-xtreme' ),
+						'label'        => __( 'Logo as Title Replacement Height (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description'  => __( 'Set height of Logo on Menu. Will interact with padding. (Default: 32px)', 'weaver-xtreme' ),
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 10,
@@ -317,7 +317,7 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 					),
 
 					'page_min_height' => array(
-						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 0 ),
+						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh', 'default' => 100 ),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 							'label'        => esc_html__( 'Page Content Height (px)', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
@@ -620,8 +620,8 @@ The normal site view will respect the Restrict Borders setting.', 'weaver-xtreme
 						),
 						'control' => array(
 							'control_type' => WEAVERX_PLUS_IMAGE_CONTROL,
-							'label'        => esc_html__( 'Full Screen Site BG Image', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
-							'description'  => esc_html__( 'Full screen centered auto-sized BG image. &diams;', 'weaver-xtreme' ),
+							'label'        => __( 'Full Screen Site BG Image', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON,
+							'description'  => __( 'Full screen centered auto-sized BG image. &diams;', 'weaver-xtreme' ),
 							//'type'  => 'checkbox',
 						),
 					),

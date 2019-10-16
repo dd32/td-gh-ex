@@ -23,8 +23,8 @@ if ( ! function_exists( 'weaverx_customizer_define_pagebuilder_sections' ) ) :
 				'pb_header_hide_menus' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Hide Weaver Menus', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Check to hide the Weaver Primary and/or Secondary Menus normally displayed above and below the replacement page.',
+						'label'       => __( 'Hide Weaver Menus', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Check to hide the Weaver Primary and/or Secondary Menus normally displayed above and below the replacement page.',
 							'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
@@ -35,8 +35,8 @@ if ( ! function_exists( 'weaverx_customizer_define_pagebuilder_sections' ) ) :
 
 		if ( defined( 'ELEMENTOR_VERSION' ) ) {                // only provide if elementor is active
 			$pb_sections['pb-header-replace']['options']['elementor_header_replacement'] = weaverx_cz_select(
-				esc_html__( 'Elementor Header Replacement', 'weaver-xtreme' ),
-				esc_html__( 'Select an Elementor Page / Post to replace the Header Area.', 'weaver-xtreme' ),
+				__( 'Elementor Header Replacement', 'weaver-xtreme' ),
+				__( 'Select an Elementor Page / Post to replace the Header Area.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_elementor_pages', 'none', 'refresh'
 			);
 		}
@@ -44,8 +44,8 @@ if ( ! function_exists( 'weaverx_customizer_define_pagebuilder_sections' ) ) :
 		if ( defined( 'SITEORIGIN_PANELS_VERSION' ) ) {        // only provide if siteorigins is active
 
 			$pb_sections['pb-header-replace']['options']['siteorigin_header_replacement'] = weaverx_cz_select(
-				esc_html__( 'SiteOrigin Header Replacement', 'weaver-xtreme' ),
-				esc_html__( 'Select an SiteOrigin Page to replace the Header Area.', 'weaver-xtreme' ),
+				__( 'SiteOrigin Header Replacement', 'weaver-xtreme' ),
+				__( 'Select an SiteOrigin Page to replace the Header Area.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_siteorigin_pages', 'none', 'refresh'
 			);
 		}
@@ -77,8 +77,8 @@ if ( ! function_exists( 'weaverx_customizer_define_pagebuilder_sections' ) ) :
 
 		if ( defined( 'ELEMENTOR_VERSION' ) ) {                // only provide if elementor is active
 			$pb_sections['footer-pb-replace']['options']['elementor_footer_replacement'] = weaverx_cz_select(
-				esc_html__( 'Elementor Footer Replacement', 'weaver-xtreme' ),
-				esc_html__( 'Select an Elementor Page or Post to replace the Footer Area.', 'weaver-xtreme' ),
+				__( 'Elementor Footer Replacement', 'weaver-xtreme' ),
+				__( 'Select an Elementor Page or Post to replace the Footer Area.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_elementor_pages', 'none', 'refresh'
 			);
 		}
@@ -86,8 +86,8 @@ if ( ! function_exists( 'weaverx_customizer_define_pagebuilder_sections' ) ) :
 		if ( defined( 'SITEORIGIN_PANELS_VERSION' ) ) {        // only provide if siteorigins is active
 
 			$pb_sections['footer-pb-replace']['options']['siteorigin_footer_replacement'] = weaverx_cz_select(
-				esc_html__( 'SiteOrigin Footer Replacement', 'weaver-xtreme' ),
-				esc_html__( 'Select an SiteOrigin Page or Post to replace the Footer Area.', 'weaver-xtreme' ),
+				__( 'SiteOrigin Footer Replacement', 'weaver-xtreme' ),
+				__( 'Select an SiteOrigin Page or Post to replace the Footer Area.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_siteorigin_pages', 'none', 'refresh'
 			);
 		}

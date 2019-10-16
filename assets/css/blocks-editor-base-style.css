@@ -69,6 +69,8 @@ body {
 	margin-top:    0 !important;
 }
 
+.block-editor-writing-flow { height: auto; }	/* Chrome 77 bug work around */
+
 /** === Title === */
 .editor-post-title {
 	margin-bottom: -15px;

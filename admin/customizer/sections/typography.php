@@ -360,24 +360,24 @@ Be sure to <em>Save Settings</em> before leaving the Legacy Weaver Xtreme Admin 
 				'menubar_curpage_bold'        => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Bold Current Page', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Bold Face Current Page and ancestors.', 'weaver-xtreme' ),
+						'label'       => __( 'Bold Current Page', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Bold Face Current Page and ancestors.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
 				'menubar_curpage_em'          => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Italic Current Page', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Italic Current Page and ancestors.', 'weaver-xtreme' ),
+						'label'       => __( 'Italic Current Page', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Italic Current Page and ancestors.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),
 				'menubar_curpage_noancestors' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Do Not Highlight Ancestors', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Highlight Current Page only - do not also highlight ancestor items.', 'weaver-xtreme' ),
+						'label'       => __( 'Do Not Highlight Ancestors', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Highlight Current Page only - do not also highlight ancestor items.', 'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
 				),

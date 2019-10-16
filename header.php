@@ -164,7 +164,7 @@ if ( apply_filters( 'weaverx_replace_pb_area', 'header' ) == 'header' ) {
 echo "\n</div></div><div class='clear-header-end clear-both'></div><!-- #header-inside,#header -->\n";
 //}
 
-weaverx_header_widget_area( 'post_header' );
+					weaverx_header_widget_area( 'post_header' );
 do_action( 'weaverx_post_header' );
 
 // ************* DEFINE HEADER RELATED PLUGGABLE FUNCTION *****************
@@ -454,7 +454,7 @@ if ( weaverx_getopt( 'link_site_image' ) ) {
 		}
 
 		?>
-		<h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo $title; ?>" rel="home">
+		<h1 id="site-title" class="<?php echo esc_attr( weaverx_title_class( 'site_title', true, $h_class ) ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo $title; ?>" rel="home">
 				<?php echo $title_text; ?></a></h1>
 
 		<?php

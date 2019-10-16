@@ -608,7 +608,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 			wp_enqueue_script(
 				'weaverx_cz-customizer-preview',
 				get_template_directory_uri() . '/admin/customizer/js/customizer-preview' . WEAVERX_MINIFY . '.js',
-				array( 'customize-preview' ),
+				array( ),
 				WEAVERX_VERSION,
 				true
 			);

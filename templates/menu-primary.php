@@ -21,13 +21,11 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
 			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
-				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . get_home_url() . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
-			}
-			else {
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
+			} else {
 				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
 			}
 		}
-
 	}
 
 	$site_title = '';
@@ -45,7 +43,7 @@ if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
 		$classt .= weaverx_get_bold_italic( 'site_title','bold' );
 		$classt .= weaverx_get_bold_italic( 'site_title','italic' );
 
-		$site_title = '<span class="' . $classt . '"><a href="' . get_home_url() . '" alt="Site Home">' . get_bloginfo( 'name' ) . '</a></span>';
+		$site_title = '<span class="' . $classt . '"><a href="' . esc_url( home_url() ) . '" alt="Site Home">' . get_bloginfo( 'name' ) . '</a></span>';
 	}
 
 	$left = weaverx_getopt( 'm_primary_html_left' );

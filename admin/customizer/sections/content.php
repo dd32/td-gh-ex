@@ -110,6 +110,7 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 						weaverx_filter_text( __( 'Add the Site Logo to the primary menu. Add custom CSS for <em>.custom-logo-on-menu</em> to style. (Use Customize : Site Identity to set Site Logo.)', 'weaver-xtreme' ) ) . $logo_html
 					),
 
+
 					'm_primary_logo_height_dec' => array(
 						'setting' => array(
 							'sanitize_callback' => 'weaverx_cz_sanitize_float',
@@ -118,8 +119,8 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Logo on Menu Bar Height (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Set height of Logo on Menu. Will interact with padding. Default 0 uses current line height.', 'weaver-xtreme' ),
+							'label'        => __( 'Logo on Menu Bar Height (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Set height of Logo on Menu. Will interact with padding. Default 0 uses current line height.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,

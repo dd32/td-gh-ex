@@ -63,8 +63,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'full_browser_height' => array(
 						'setting' => array(),
 						'control' => array(
-							'label'       => weaverx_filter_text( __( 'Full Browser Height', 'weaver-xtreme' ) ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'For short pages, add extra padding to  of content to force full browser height.', 'weaver-xtreme' ),
+							'label'       => __( 'Full Browser Height', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'For short pages, add extra padding to  of content to force full browser height.', 'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
 					),
@@ -78,8 +78,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
+							'description'  => __( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -96,7 +96,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -113,7 +113,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Left Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -130,7 +130,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Right Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -144,8 +144,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => weaverx_filter_text( __( 'Top Margin (px) ) ', 'weaver-xtreme' ) ),
-							'description'  => weaverx_filter_text( __( 'Set Top and Bottom Margins. <em>Side margins are auto-generated.</em>', 'weaver-xtreme' ) ),
+							'label'        => __( 'Top Margin (px) ) ', 'weaver-xtreme' ),
+							'description'  => __( 'Set Top and Bottom Margins. <em>Side margins are auto-generated.</em>', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -162,7 +162,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -181,8 +181,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => $container_width_transport, 'default' => 100 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Container Width (%)', 'weaver-xtreme' ) . $container_refresh,
-							'description'  => esc_html__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
+							'label'        => __( 'Container Width (%)', 'weaver-xtreme' ) . $container_refresh,
+							'description'  => __( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Container "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -207,7 +207,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'container_align' => weaverx_cz_select(
-						esc_html__( 'Align Container Area', 'weaver-xtreme' ),
+						__( 'Align Container Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', $container_width_transport
 					),
@@ -217,8 +217,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
+							'description'  => __( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -235,7 +235,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -252,7 +252,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (px)', 'weaver-xtreme' ) . $container_refresh,
+							'label'        => __( 'Left Padding (px)', 'weaver-xtreme' ) . $container_refresh,
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -269,7 +269,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (px)', 'weaver-xtreme' ) . $container_refresh,
+							'label'        => __( 'Right Padding (px)', 'weaver-xtreme' ) . $container_refresh,
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -283,7 +283,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -300,7 +300,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -341,8 +341,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Header Area Width (%)', 'weaver-xtreme' ) . $hdr_refresh,
-							'description'  => esc_html__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Header "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
+							'label'        => __( 'Header Area Width (%)', 'weaver-xtreme' ) . $hdr_refresh,
+							'description'  => __( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Header "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -367,7 +367,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'header_align' => weaverx_cz_select(
-						esc_html__( 'Align Header Area', 'weaver-xtreme' ),
+						__( 'Align Header Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', 'refresh'
 					),
@@ -376,8 +376,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
+							'description'  => __( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -394,7 +394,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -411,7 +411,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (px)', 'weaver-xtreme' ) . $hdr_refresh,
+							'label'        => __( 'Left Padding (px)', 'weaver-xtreme' ) . $hdr_refresh,
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -428,7 +428,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (px)', 'weaver-xtreme' ) . $hdr_refresh,
+							'label'        => __( 'Right Padding (px)', 'weaver-xtreme' ) . $hdr_refresh,
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -442,7 +442,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -459,7 +459,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -477,8 +477,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'title_over_image' => array(
 						'setting' => array(),
 						'control' => array(
-							'label'       => esc_html__( 'Move Title/Tagline over Image', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image. NOTE: Best to not use with Header Image as BG Image.',
+							'label'       => __( 'Move Title/Tagline over Image', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image. NOTE: Best to not use with Header Image as BG Image.',
 								'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
@@ -495,7 +495,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Site Title Left Margin (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Site Title Left Margin (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => - 20,
@@ -512,7 +512,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Site Title Top Margin (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Site Title Top Margin (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => - 50,
@@ -525,7 +525,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 90 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Site Title Maximum Width (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Site Title Maximum Width (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 10,
@@ -549,7 +549,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Site Tagline Left Margin (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Site Tagline Left Margin (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => - 20,
@@ -566,7 +566,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Site Tagline Top Margin (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Site Tagline Top Margin (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => - 50,
@@ -579,7 +579,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 90 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Site Tagline Maximum Width (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Site Tagline Maximum Width (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 10,
@@ -598,7 +598,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Title/Tagline Top Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Title/Tagline Top Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -615,7 +615,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Title/Tagline Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Title/Tagline Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -640,8 +640,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Header Widget Area Width (%)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align Header Widget Area "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme' ),
+							'label'        => __( 'Header Widget Area Width (%)', 'weaver-xtreme' ),
+							'description'  =>     __( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align Header Widget Area "Center align" setting. (Default: 0, means auto)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -652,7 +652,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'header_sb_align' => weaverx_cz_select(
-						esc_html__( 'Align Header Widget Area Area', 'weaver-xtreme' ),
+						__( 'Align Header Widget Area Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'header_sb_align', 'refresh'
 					),
@@ -662,7 +662,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
+							'label'        =>  __( 'Top Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -679,7 +679,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -696,7 +696,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Left Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -713,7 +713,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Right Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -727,7 +727,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -744,7 +744,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -767,8 +767,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Header HTML Area Width (%)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align HTML Area "Center align" setting. You will have to "Save & Publish" and refresh this page if you are using Center Area align. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
+							'label'        => __( 'Header HTML Area Width (%)', 'weaver-xtreme' ),
+							'description'  => __( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Align HTML Area "Center align" setting. You will have to "Save & Publish" and refresh this page if you are using Center Area align. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -779,7 +779,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'header_html_align' => weaverx_cz_select(
-						esc_html__( 'Align Header HTML Area', 'weaver-xtreme' ),
+						__( 'Align Header HTML Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', 'refresh'
 					),
@@ -790,7 +790,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 							'transport' => 'postMessage',
 						),
 						'control' => array(
-							'label' => esc_html__( 'Center Content within HTML Area', 'weaver-xtreme' ),
+							'label' => __( 'Center Content within HTML Area', 'weaver-xtreme' ),
 							'type'  => 'checkbox',
 						),
 					),
@@ -799,7 +799,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -816,7 +816,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -833,7 +833,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Left Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -850,7 +850,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Right Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -864,7 +864,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -881,7 +881,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -905,7 +905,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						esc_html__( 'Spacing of the whole Header Area', 'weaver-xtreme' ) ),
 
 					'header_align' => weaverx_cz_select(
-						esc_html__( 'Align Header Area', 'weaver-xtreme' ),
+						__( 'Align Header Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', 'refresh'
 					),
@@ -916,8 +916,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'title_over_image' => array(
 						'setting' => array(),
 						'control' => array(
-							'label'       => esc_html__( 'Move Title/Tagline over Image', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image. NOTE: Best to not use with Header Image as BG Image.',
+							'label'       => __( 'Move Title/Tagline over Image', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,__( 'Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image. NOTE: Best to not use with Header Image as BG Image.',
 								'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
@@ -942,8 +941,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'm_primary_align' => weaverx_cz_select(
-						esc_html__( 'Align Primary Menu Bar', 'weaver-xtreme' ),
-						esc_html__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
+						__( 'Align Primary Menu Bar', 'weaver-xtreme' ),
+						__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
 						'weaverx_cz_choices_align_menu', 'float-left'
 					),
 
@@ -955,8 +954,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+							'label'        => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -974,7 +973,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Menu Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Menu Top Margin (px)', 'weaver-xtreme' ),
 							'description'  => '',
 							'type'         => 'range',
 							'input_attrs'  => array(
@@ -992,7 +991,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Menu Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Menu Bottom Margin (px)', 'weaver-xtreme' ),
 							'description'  => '',
 							'type'         => 'range',
 							'input_attrs'  => array(
@@ -1011,8 +1010,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					                                        ),
 					                                        'control' => array(
 						                                        'control_type' => 'WeaverX_Range_Control',
-						                                        'label'        => esc_html__( 'Desktop Menu Spacing (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						                                        'description'  => esc_html__( 'Add space between desktop menu bar items. (not on Smart Menus)', 'weaver-xtreme' ),
+						                                        'label'        => __( 'Desktop Menu Spacing (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						                                        'description'  => __( 'Add space between desktop menu bar items. (not on Smart Menus)', 'weaver-xtreme' ),
 						                                        'type'         => 'range',
 						                                        'input_attrs'  => array(
 							                                        'min'  => 0.0,
@@ -1054,8 +1053,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						esc_html__( 'You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme' ) ),
 
 					'm_secondary_align' => weaverx_cz_select(
-						esc_html__( 'Align Secondary Menu Bar', 'weaver-xtreme' ),
-						esc_html__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
+						__( 'Align Secondary Menu Bar', 'weaver-xtreme' ),
+						__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
 						'weaverx_cz_choices_align_menu', 'float-left'
 					),
 
@@ -1067,8 +1066,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+							'label'        => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1086,7 +1085,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Menu Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Menu Top Margin (px)', 'weaver-xtreme' ),
 							'description'  => '',
 							'type'         => 'range',
 							'input_attrs'  => array(
@@ -1104,7 +1103,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Menu Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Menu Bottom Margin (px)', 'weaver-xtreme' ),
 							'description'  => '',
 							'type'         => 'range',
 							'input_attrs'  => array(
@@ -1122,8 +1121,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Desktop Menu Spacing (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add space between desktop menu bar items. (not on Smart Menus)', 'weaver-xtreme' ),
+							'label'        => __( 'Desktop Menu Spacing (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add space between desktop menu bar items. (not on Smart Menus)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0.0,
@@ -1164,8 +1163,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 0.0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Mini Menu Top Margin (em)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'Top margin for Header Mini Menu. Negative value moves it up. (Default: -1.0em)', 'weaver-xtreme' ),
+							'label'        => __( 'Mini Menu Top Margin (em)', 'weaver-xtreme' ),
+							'description'  => __( 'Top margin for Header Mini Menu. Negative value moves it up. (Default: -1.0em)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => - 10.0,
@@ -1189,8 +1188,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'm_extra_align' => weaverx_cz_select(
-						esc_html__( 'Align Extra Menu Bar', 'weaver-xtreme' ),
-						esc_html__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
+						__( 'Align Extra Menu Bar', 'weaver-xtreme' ),
+						__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
 						'weaverx_cz_choices_align_menu', 'float-left'
 					),
 
@@ -1203,7 +1202,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Menu Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Menu Top Margin (px)', 'weaver-xtreme' ),
 							'description'  => '',
 							'type'         => 'range',
 							'input_attrs'  => array(
@@ -1221,7 +1220,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Menu Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Menu Bottom Margin (px)', 'weaver-xtreme' ),
 							'description'  => '',
 							'type'         => 'range',
 							'input_attrs'  => array(
@@ -1239,8 +1238,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Desktop Menu Spacing (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add space between desktop menu bar items. (not on Smart Menus)', 'weaver-xtreme' ),
+							'label'        => __( 'Desktop Menu Spacing (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add space between desktop menu bar items. (not on Smart Menus)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0.0,
@@ -1288,8 +1287,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'm_primary_align' => weaverx_cz_select(
-						esc_html__( 'Align Primary Menu Bar', 'weaver-xtreme' ),
-						esc_html__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
+						__( 'Align Primary Menu Bar', 'weaver-xtreme' ),
+						__( 'Align this menu on desktop view. Mobile, accordion, and vertical menus always left aligned.', 'weaver-xtreme' ),
 						'weaverx_cz_choices_align_menu', 'float-left'
 					),
 
@@ -1301,8 +1300,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+							'label'        => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1331,8 +1330,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'postMessage', 'default' => 100 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Info Bar Width (%)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Info Bar "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
+							'label'        => __( 'Info Bar Width (%)', 'weaver-xtreme' ),
+							'description'  => __( 'Width of Area in % of enclosing area on desktop and small tablet. Hint: use with Info Bar "Center align" setting. (Default: 100%, use 0 for auto)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1343,7 +1342,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'infobar_align' => weaverx_cz_select(
-						esc_html__( 'Align Info Bar Area', 'weaver-xtreme' ),
+						__( 'Align Info Bar Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', 'refresh'
 					),
@@ -1353,8 +1352,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 5 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
+							'description'  => __( 'These options control the padding (inner space) around the area.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1371,7 +1370,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1388,7 +1387,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Left Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1405,7 +1404,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Right Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1419,7 +1418,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1436,7 +1435,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1466,7 +1465,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 4 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1483,7 +1482,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1500,7 +1499,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Left Padding (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1517,7 +1516,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Right Padding (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1531,7 +1530,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1548,7 +1547,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1565,8 +1564,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'content_smartmargin' => array(
 						'setting' => array(),
 						'control' => array(
-							'label'       => esc_html__( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content0. This is normally used only if you have borders or BG colors for your sidebars.',
+							'label'       => __( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content0. This is normally used only if you have borders or BG colors for your sidebars.',
 								'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
@@ -1580,8 +1579,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Space Between Title and Content (em)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'Space between Page or Post title and beginning of content.', 'weaver-xtreme' ),
+							'label'        => __( 'Space Between Title and Content (em)', 'weaver-xtreme' ),
+							'description'  => __( 'Space between Page or Post title and beginning of content.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1600,7 +1599,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Space after paragraphs and lists (em)', 'weaver-xtreme' ),
+							'label'        => __( 'Space after paragraphs and lists (em)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1620,8 +1619,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Margin Before Blocks (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add margins to non-paragraph Blocks created with Block Editor.', 'weaver-xtreme' ),
+							'label'        => __( 'Margin Before Blocks (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add margins to non-paragraph Blocks created with Block Editor.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1639,8 +1638,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Margin After Blocks (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description'  => esc_html__( 'Add margins to non-paragraph Blocks created with Block Editor.', 'weaver-xtreme' ),
+							'label'        => __( 'Margin After Blocks (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description'  => __( 'Add margins to non-paragraph Blocks created with Block Editor.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1669,7 +1668,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1686,7 +1685,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Padding (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Padding (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1703,7 +1702,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Left Padding (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Left Padding (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1720,7 +1719,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Right Padding (%)', 'weaver-xtreme' ),
+							'label'        => __( 'Right Padding (%)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1734,7 +1733,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Top Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Top Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1751,7 +1750,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Bottom Margin (px)', 'weaver-xtreme' ),
+							'label'        => __( 'Bottom Margin (px)', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => 0,
@@ -1767,8 +1766,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'post_smartmargin' => array(
 						'setting' => array(),
 						'control' => array(
-							'label'       => esc_html__( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-							'description' => esc_html__( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content). This is normally used only if you have borders or BG colors for your sidebars.',
+							'label'       => __( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+							'description' => __( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content). This is normally used only if you have borders or BG colors for your sidebars.',
 								'weaver-xtreme' ),
 							'type'        => 'checkbox',
 						),
@@ -1782,8 +1781,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',
-							'label'        => esc_html__( 'Space Between Post Title and Content (em)', 'weaver-xtreme' ),
-							'description'  => esc_html__( 'Space between Post title and beginning of content. This will adjust/override the equivalent Content setting.', 'weaver-xtreme' ),
+							'label'        => __( 'Space Between Post Title and Content (em)', 'weaver-xtreme' ),
+							'description'  => __( 'Space between Post title and beginning of content. This will adjust/override the equivalent Content setting.', 'weaver-xtreme' ),
 							'type'         => 'range',
 							'input_attrs'  => array(
 								'min'  => - 5.0,
@@ -1817,7 +1816,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Left Sidebar Width (%)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label'        => __( 'Left Sidebar Width (%)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 0,
@@ -1834,7 +1833,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Right Sidebar Width (%)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label'        => __( 'Right Sidebar Width (%)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 0,
@@ -1852,7 +1851,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Width for Split Sidebar, Left Side', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label'        => __( 'Width for Split Sidebar, Left Side', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 10,
@@ -1869,7 +1868,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Width for Split Sidebar, Right Side', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'label'        => __( 'Width for Split Sidebar, Right Side', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 10,
@@ -1889,7 +1888,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0 ),
 					'control' => array(
 						'control_type' => 'WeaverX_Range_Control',
-						'label'        => esc_html__( 'Top Padding (px)', 'weaver-xtreme' ),
+						'label'        => __( 'Top Padding (px)', 'weaver-xtreme' ),
 						'type'         => 'range',
 						'input_attrs'  => array(
 							'min'  => 0,
@@ -1986,8 +1985,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 				'primary_smartmargin' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content). This is normally used only if you have borders or BG colors for your sidebars.',
+						'label'       => __( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content). This is normally used only if you have borders or BG colors for your sidebars.',
 							'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
@@ -2100,8 +2099,8 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 				'secondary_smartmargin' => array(
 					'setting' => array(),
 					'control' => array(
-						'label'       => esc_html__( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-						'description' => esc_html__( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content0. This is normally used only if you have borders or BG colors for your sidebars.',
+						'label'       => __( 'Add Side Margin(s)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+						'description' => __( 'Automatically add left/right "smart" margins for separation of areas (sidebar/content0. This is normally used only if you have borders or BG colors for your sidebars.',
 							'weaver-xtreme' ),
 						'type'        => 'checkbox',
 					),
@@ -2130,7 +2129,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 				),
 
 				'top_align' => weaverx_cz_select(
-					esc_html__( 'Align Widget Area', 'weaver-xtreme' ),
+					__( 'Align Widget Area', 'weaver-xtreme' ),
 					'',
 					'weaverx_cz_choices_align', 'float-left', 'postMessage'
 				),
@@ -2255,7 +2254,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 				),
 
 				'bottom_align' => weaverx_cz_select(
-					esc_html__( 'Align Bottom Widget Area', 'weaver-xtreme' ),
+					__( 'Align Bottom Widget Area', 'weaver-xtreme' ),
 					'',
 					'weaverx_cz_choices_align', 'float-left', 'postMessage'
 				),
@@ -2505,7 +2504,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'footer_align' => weaverx_cz_select(
-						esc_html__( 'Align Footer Area', 'weaver-xtreme' ),
+						__( 'Align Footer Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', $foot_width_transport
 					),
@@ -2629,7 +2628,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'footer_sb_align' => weaverx_cz_select(
-						esc_html__( 'Align Footer Widget Area Area', 'weaver-xtreme' ),
+						__( 'Align Footer Widget Area Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'postMessage', 'postMessage'
 					),
@@ -2757,7 +2756,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 					),
 
 					'footer_html_align' => weaverx_cz_select(
-						esc_html__( 'Align Footer HTML Area', 'weaver-xtreme' ),
+						__( 'Align Footer HTML Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', 'refresh'
 					),
@@ -2768,7 +2767,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 							'transport' => 'postMessage',
 						),
 						'control' => array(
-							'label' => esc_html__( 'Center Content within HTML Area', 'weaver-xtreme' ),
+							'label' => __( 'Center Content within HTML Area', 'weaver-xtreme' ),
 							'type'  => 'checkbox',
 						),
 					),
@@ -2881,7 +2880,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						esc_html__( 'Spacing of the whole Footer Area', 'weaver-xtreme' ) ),
 
 					'footer_align' => weaverx_cz_select(
-						esc_html__( 'Align Footer Area', 'weaver-xtreme' ),
+						__( 'Align Footer Area', 'weaver-xtreme' ),
 						'',
 						'weaverx_cz_choices_align', 'float-left', $foot_width_transport
 					),

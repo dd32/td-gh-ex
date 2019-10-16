@@ -15,10 +15,11 @@ function weaverx_f_file_access_fail( $who = '' ) {
 	?>
 	<div class="error">
 		<strong style="color:#f00; line-height:150%;"><?php echo weaverx_filter_text( __( '*** Weaver Xtreme File Access Error! *** <small style="padding-left:20px;">( But don\'t panic! )</small>
-	<p>Weaver Xtreme is unable to process a file access request. You may need proper FTP credentials set in
-	WordPress, or in your wp-config.php file. It is unusual to see this error. It may be displayed
-	after you move to a new host.</p>
-	<p>You may have to change the directory permissions on your web hosting server.</p>', 'weaver-xtreme') ); ?>
+	<p>Weaver Xtreme is unable to process a file access request. It is unusual to see this error. It is most commonly displayed	after moving to a new host.</p>
+	<p>Possible issues:
+	<ul><li>You may have to change the directory permissions on your web hosting server to allow writing.</li>
+	<li>If you have defined a custom directory structure (e.g., custom "UPLOADS" in wp_config.php), make sure they are correct.</li>
+	<li>If you use an older host or self-host, you may need to set FTP credentials in wp_config.php.</li></ul></p>', 'weaver-xtreme') ); ?>
 			<?php echo '<p>' . esc_html__( 'Diagnostics:', 'weaver-xtreme') . "{$who}</p>\n"; ?>
 	</div>
 	<?php

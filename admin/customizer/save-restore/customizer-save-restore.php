@@ -280,8 +280,8 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'WeaverX_Restore_
 				return;
 			}
 
-			if ( $ok && $ext_check != 'wxt' && $ext_check != 'wxb' && $ext_check != 'wxall' ) {
-				self::$wvrx_error = esc_html__( 'Theme files must have .wxt, .wxb, or .wxall extension.', 'weaver-xtreme') . '<br />';
+			if ( $ok && $ext_check != 'wxt' && $ext_check != 'wxb' && $ext_check != 'wxall'  && $ext_check != 'json') {
+				self::$wvrx_error = esc_html__( 'Theme files must have .wxt, .wxb, .wxall, or .json extension.', 'weaver-xtreme') . '<br />';
 
 				return;
 			}
@@ -338,7 +338,97 @@ You may need to check your folder permissions or other server settings.', 'weave
 				weaverxplus_update_opts();
 				weaverx_save_opts( 'xplus', true );
 
-			} else {
+			} else if ( $ext == 'json' ) {         // restore new json format
+
+				$opts = json_decode($contents, true );
+
+				if ( empty( $opts ) ) {
+					print_r( $contents );
+					self::$wvrx_error = esc_html__( "Loading of theme settings file failed", 'weaver-xtreme' );
+					weaverx_alert( self::$wvrx_error );
+
+					return false;
+				}
+
+				// see if theme or backup settings by looking for '_' options
+
+				$is_backup = false;
+				foreach ( $opts as $key => $val ) {
+					if ( isset( $key[0] ) && $key[0] == '_' )    // these are non-theme specific settings
+					{
+						$is_backup = true;
+						break;
+					}
+				}
+
+				if ( $is_backup ) {
+					$new_cache = $opts;
+				} else {
+
+					$version = weaverx_getopt( 'weaverx_version_id' );    // get something to force load of existing settings
+					$new_cache = array();
+
+
+					global $weaverx_opts_cache;
+
+					// need to clear some settings
+					// first, pickup the per-site settings that aren't theme related...
+
+
+					foreach ( $weaverx_opts_cache as $key => $val ) {
+						if ( isset( $key[0] ) && $key[0] == '_' )    // these are non-theme specific settings
+						{
+							$new_cache[ $key ] = $val;
+						}    // keep
+					}
+
+					foreach ( $opts as $key => $val ) {             // now, add theme settings from loaded settings
+						if ( isset( $key[0] ) && $key[0] != '_' ) {
+							$new_cache[ $key ] = $val;
+						}    // and add rest from restore
+					}
+				}
+
+				$new_cache['weaverx_css_saved'] = '';
+				// Before anything else, restore WP CSS settings
+
+					if ( isset( $new_cache['wp_css'] ) ) {
+						$new_cache['add_css'] = $new_cache['wp_css'];
+						unset ( $new_cache['wp_css'] );
+					} else {
+						$new_cache['add_css']  = '';  // wipe previous settings
+					}
+
+
+				$new_cache['style_date'] = date( 'Y-m-d-H:i:s' );
+
+				$new_cache['weaverx_version_id'] = $version;
+				$new_cache['wvrx_css_saved']     = '';
+				$new_cache['last_option']        = WEAVERX_THEMENAME;
+
+				$new_cache['style_date'] = date( 'Y-m-d-H:i:s' );
+
+				$opt_func = WEAVER_DELETE_OPTION;
+				$opt_func( WEAVER_SETTINGS_NAME );
+
+				$opt_func = WEAVER_UPDATE_OPTION;
+				$opt_func( WEAVER_SETTINGS_NAME, $new_cache );
+
+				$save_dir = weaverx_f_uploads_base_dir() . WEAVERX_SUBTHEMES_DIR;
+				$usename  = WEAVERX_STYLE_FILE;
+				$filename = $save_dir . '/' . $usename;
+				@unlink( $filename );
+
+				$weaverx_opts_cache = $new_cache;
+
+				if ( weaverx_f_file_access_available() ) {    // and now is the time to update the style file
+					require_once( get_template_directory() . '/includes/generatecss.php' );
+					weaverx_fwrite_current_css();
+				}
+				do_action( 'weaverx_save_mcecss' );        // theme support plugin saved editor css in file
+				do_action( 'weaverx_save_gutenberg_css' );
+
+			} else {        // end of .json load
 
 				if ( substr( $contents, 0, 10 ) == 'WXT-V01.00' || substr( $contents, 0, 10 ) != 'WVA-V01.00' ) {
 					$type = 'theme';

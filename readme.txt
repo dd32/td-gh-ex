@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
 Tested up to: 5.2
-Stable tag: 4.3.1.5
+Stable tag: 4.3.2
 
 == Description ==
 
@@ -619,3 +619,14 @@ Fix: hide post author
 
 = Version 4.3.1.5 =
 Fix: Primary and Secondary display order to match move options for fixed to top
+
+= Version 4.3.1.6 =
+Fix: Link to home page option when left menu logo displayed
+Fix: Block Editor embeds caption margin
+
+= Version 4.3.2 =
+Fix: hide site title
+Fix: Chrome 77 Block Editor Meta Box display bug
+Fix: Issues with alignfull and alignwide - layout and interaction with other width settings
+New: Support to import Absolute Weaver .json settings file
+Tweak: File access error suggestions updated

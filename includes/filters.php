@@ -245,7 +245,7 @@ function weaverx_page_menu( $args = array() ) {
 		$classt .= weaverx_get_bold_italic( 'site_title', 'bold' );
 		$classt .= weaverx_get_bold_italic( 'site_title', 'italic' );
 
-		$site_title = '<span class="' . $classt . '"><a href="' . get_home_url() . '" alt="Site Home">' . get_bloginfo( 'name' ) . '</a></span>';
+		$site_title = '<span class="' . $classt . '"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__('Site Home', 'weaver-xtreme') . '">' . get_bloginfo( 'name' ) . '</a></span>';
 	}
 
 
@@ -256,9 +256,11 @@ function weaverx_page_menu( $args = array() ) {
 		$custom_logo_url = weaverx_get_wp_custom_logo_url();
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
-			//weaverx_alert( 'custom logo:' . $custom_logo_url );
-			$left = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img class="custom-logo-on-menu" src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url ) . $left;     // +since: 3.1.10: add alt=
-
+			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
+				$left = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . esc_url( home_url() ) . '" alt="' . esc_attr__('Site Home', 'weaver-xtreme') . '"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );
+			} else {
+				$left = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="' . esc_attr__('logo', 'weaver-xtreme') . '"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
+			}
 		}
 	}
 
