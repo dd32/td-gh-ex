@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/adventurous
 Author: Catch Themes
 Author URI: https://catchthemes.com
 Description: Adventurous is a Simple, Clean, Minimal, Lightweight, Box-Shaped and Full-Width Responsive WordPress Theme. It is based in HTML5, CSS3 and very own Catch Themes easy to use Theme Options panel, which make this theme highly customizable and flexible.  Make your beautiful yet professional website in no time. Adventurous is a multi-purpose theme and is suitable for Photographers, Bloggers and Businesses. This theme is translation ready and also currently translated in Brazilian Portuguese, Hungarian, Dutch, German, Polish, Danish and Czech languages. Supports popular plugins like WP-PageNavi, Jetpack, Contact Form 7, Catch Web Tools and more. Check out Theme Instructions at https://catchthemes.com/theme-instructions/adventurous/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/adventurous/
-Version: 3.2
+Version: 3.2.1
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: blog, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday
@@ -824,9 +824,7 @@ img#wpstats {
 }
 .fixed-header #header-right .widget ul.menu ul ul,
 #header-right .widget ul.menu ul ul {
-	right: 100%;
 	top: 0;
-	left:auto;
 }
 #header-right .widget ul.menu li:hover > ul,
 #header-right .widget ul.menu li.focus > ul {
@@ -900,7 +898,7 @@ img#wpstats {
 	line-height: 23px;
 	height: auto;
 	padding: 10px 19px;
-	width: 168px;
+	width: 205px;
 	white-space: normal;
 }
 #secondary-menu ul.menu ul,

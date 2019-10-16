@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: black, blue, gray, green, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, holiday, photoblogging
 Requires at least: 4.8
-Tested up to: 5.2.3
-Stable tag: 3.2
+Tested up to: 5.2.4
+Stable tag: 3.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,9 @@ You can check our Theme Demo at https://catchthemes.com/demo/adventurous/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.2.1 (Released: October 16, 2019) =
+* Bug Fixed: Sub menu issue on hover
 
 = 3.2 (Released: September 25, 2019) =
 * Added: Support for wp_body_open action
