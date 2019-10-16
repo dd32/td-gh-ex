@@ -80,7 +80,7 @@ get_header(); ?>
 						          	<?php the_post_thumbnail(); ?>
 						          	<div class="carousel-caption">
 							            <div class="inner_carousel">
-							              	<h2><?php the_title();?></h2>
+							              	<h1><?php the_title();?></h1>
 							              	<div class="more-btn">            
 					                        	<a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?></span></a>
 					                        </div>		            
@@ -119,7 +119,7 @@ get_header(); ?>
 					     	<?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
 					     		<div class="col-lg-4 col-md-4">
 					     			<div class="service">
-					          			<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
+					          			<strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></strong>
 					          			<p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_ecommerce_store_string_limit_words( $excerpt,10 ) ); ?></p>
 					          		</div>
 					        	</div>
@@ -136,7 +136,7 @@ get_header(); ?>
 					<section id="our-products">
 					    <div class="text-center innerlightbox">
 					        <?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>     
-					            <h3><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></h3>
+					            <strong><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></strong>
 					        <?php }?>
 					    </div>
 						<?php $slider_pages = array();

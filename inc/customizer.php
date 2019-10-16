@@ -693,6 +693,8 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'bb_ecommerce_store_customize_register' );	
 
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Singleton class for handling the theme's customizer integration.
@@ -771,7 +773,7 @@ final class BB_Ecommerce_Store_Customize {
 					'priority'   => 9,
 					'title'    => esc_html__( 'BB Ecommerce Pro', 'bb-ecommerce-store' ),
 					'pro_text' => esc_html__( 'Go Pro','bb-ecommerce-store' ),
-					'pro_url'  => esc_url('https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/')
+					'pro_url'  => esc_url('https://www.themeshopy.com/themes/ecommerce-store-wordpress-theme/')
 				)
 			)
 		);

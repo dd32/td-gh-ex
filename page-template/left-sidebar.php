@@ -13,9 +13,8 @@ get_header(); ?>
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 
 		<div class="col-lg-8" class="content-bb" >
-			<?php while ( have_posts() ) : the_post(); ?>
-                
-                <h2><?php the_title();?></h2>
+			<?php while ( have_posts() ) : the_post(); ?>                
+                <h1><?php the_title();?></h1>
                 <?php the_post_thumbnail(); ?>
                 <div class="entry-content"><?php the_content();?></div>
             <?php
