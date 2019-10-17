@@ -27,7 +27,7 @@ get_header(); ?>
           <a href="<?php echo esc_url( get_permalink() );?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
         </div>
         <div class="box-content">
-          <h2><?php the_title(); ?></h2>
+          <h1><?php the_title(); ?></h1>
           <p><?php the_excerpt(); ?></p>                  
           <div class="social-media">
             <?php if( get_theme_mod( 'advance_portfolio_facebook_url') != '') { ?>
@@ -64,7 +64,7 @@ get_header(); ?>
     <div class="container">
       <div class="portfolio-title">
         <?php if( get_theme_mod('advance_portfolio_title') != ''){ ?>     
-          <h3><?php echo esc_html(get_theme_mod('advance_portfolio_title','')); ?></h3>
+          <h2><?php echo esc_html(get_theme_mod('advance_portfolio_title','')); ?></h2>
         <?php }?>
       </div>
       <?php if( get_theme_mod('advance_portfolio_awesome_setting') != ''){ ?>    

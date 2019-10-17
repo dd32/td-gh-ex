@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 4.7
 Tested up to: 5.2.3
 Requires PHP: 7.2.14
-Stable tag: 0.3.2
+Stable tag: 0.3.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -40,6 +40,13 @@ Advance Portfolio is a clean, sleek and creative WordPress theme for building a 
   * Updated naviagtion code.
   * Resolved css customization
   * Resolved theme error.
+
+= 0.3.3 =
+  * Solved constrast error.
+  * Added logo resizer.
+  * Updated search layout.
+  * Changed menu css.
+  * Updated responsive menu css.
 
 == Resources ==
 

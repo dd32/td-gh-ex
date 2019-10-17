@@ -14,13 +14,13 @@ get_header(); ?>
 
 <?php do_action( 'advance_portfolio_page_header' ); ?>
 
-<main id="maincontent" role="main" class="content-ts">
+<main id="maincontent" role="main">
     <div class="container">
         <div class="middle-align">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>
-                <h2><?php the_title(); ?></h2>
-                <?php the_content();?>
+                <h1><?php the_title(); ?></h1>
+                <div class="entry-content"><?php the_content();?></div>
             <?php endwhile; // end of the loop. ?>
             <?php
                 // If comments are open or we have at least one comment, load up the comment template.

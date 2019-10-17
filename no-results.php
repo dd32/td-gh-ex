@@ -8,7 +8,7 @@
  */
 ?>
 <header role="banner">
-	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-portfolio' ); ?></h1>
+	<h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-portfolio' ); ?></h2>
 </header>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
