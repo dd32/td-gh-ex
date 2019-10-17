@@ -32,6 +32,7 @@ function advance_ecommerce_store_setup() {
 	register_nav_menus(array(
 		'primary' => __('Primary Menu', 'advance-ecommerce-store'),
 		'woocommerce-menu' => __('Woocommerce Menu', 'advance-ecommerce-store'),
+		'resposive-menu' => __('Responsive Menu', 'advance-ecommerce-store'),
 	));
 
 	add_theme_support('custom-background', array(

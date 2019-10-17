@@ -5,27 +5,37 @@
 	$custom_css = '';
 
 	if($advance_ecommerce_store_theme_color != false){
-		$custom_css .='#sidebar .tagcloud a:hover,.top-menu,.main-menu, .account a i, span.cart-value, .categry-title, .product-category::-webkit-scrollbar-thumb:hover, #slider .carousel-control-prev-icon, #slider .carousel-control-next-icon, .more-btn a, .product-service, .second-border a:hover, span.meta-nav, #footer input[type="submit"], .copyright, woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar h3, #sidebar input[type="submit"], .pagination a:hover, .pagination .current, .woocommerce span.onsale, #footer .tagcloud a:hover, input[type="submit"] {';
+		$custom_css .='#sidebar .tagcloud a:hover,.top-menu,.main-menu, .account a i, span.cart-value, .categry-title, .product-category::-webkit-scrollbar-thumb:hover, #slider .carousel-control-prev-icon, #slider .carousel-control-next-icon, .more-btn a, .product-service, .second-border a:hover, #footer input[type="submit"], .copyright, woocommerce span.onsale, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, #sidebar h3, #sidebar input[type="submit"], .pagination a:hover, .pagination .current, .woocommerce span.onsale, #footer .tagcloud a:hover, input[type="submit"],#res-sidebar input[type="submit"],#comments a.comment-reply-link ,.tags p a:hover,#sidebar .tagcloud a{';
 			$custom_css .='background-color: '.esc_html($advance_ecommerce_store_theme_color).';';
 		$custom_css .='}';
 	}
 	if($advance_ecommerce_store_theme_color != false){
-		$custom_css .='#footer h3, .woocommerce-message::before, #footer h3,.woocommerce-message::before, .primary-navigation ul ul a, .primary-navigation a:hover, #footer li a:hover, .entry-content a{';
+		$custom_css .='#footer h3, .woocommerce-message::before, #footer h3,.woocommerce-message::before, .primary-navigation ul ul a, .primary-navigation a:hover, #footer li a:hover,.primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation a:focus,.sf-arrows ul .sf-with-ul:after, .sf-arrows ul li > .sf-with-ul:focus:after,.sf-arrows ul li:hover > .sf-with-ul:after,.sf-arrows .sfHover > .sf-with-ul:after,.primary-navigation li a:hover, .primary-navigation li:hover a,.tags i,.metabox a:hover,#footer a.rsswidget{';
 			$custom_css .='color: '.esc_html($advance_ecommerce_store_theme_color).';';
 		$custom_css .='}';
 	}
 	if($advance_ecommerce_store_theme_color != false){
-		$custom_css .='.woocommerce-message, hr.slidehr{';
+		$custom_css .='.woocommerce-message, hr.slidehr,.primary-navigation ul ul{';
 			$custom_css .='border-top-color: '.esc_html($advance_ecommerce_store_theme_color).';';
 		$custom_css .='}';
 	}
 	if($advance_ecommerce_store_theme_color != false){
-		$custom_css .='#footer .tagcloud a:hover,.page-box, #footer input[type="search"]{';
+		$custom_css .='#footer .tagcloud a:hover,.page-box, #footer input[type="search"],.primary-navigation ul{';
 			$custom_css .='border-color: '.esc_html($advance_ecommerce_store_theme_color).';';
 		$custom_css .='}';
 	}
 	if($advance_ecommerce_store_theme_color != false){
-		$custom_css .='nav.woocommerce-MyAccount-navigation ul li, #comments input[type="submit"].submit, .primary-navigation ul ul a:hover{';
+		$custom_css .='nav.woocommerce-MyAccount-navigation ul li, #comments input[type="submit"].submit{';
 			$custom_css .='background-color: '.esc_html($advance_ecommerce_store_theme_color).'!important;';
 		$custom_css .='}';
 	}
+
+// media
+
+	$custom_css .='@media screen and (max-width:1000px) {';
+	if($advance_ecommerce_store_theme_color){
+	$custom_css .='#res-sidebar, .primary-navigation ul ul a, .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul ul ul,#contact-info{
+	background-image: linear-gradient(-90deg, #000 0%, '.esc_html($advance_ecommerce_store_theme_color).' 120%);
+		}';
+	}
+	$custom_css .='}';

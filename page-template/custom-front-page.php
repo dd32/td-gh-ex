@@ -75,7 +75,7 @@ get_header(); ?>
                     <?php the_post_thumbnail(); ?>
                     <div class="carousel-caption">
                       <div class="inner_carousel">
-                        <h2><?php the_title(); ?></h2>
+                        <h1><?php the_title(); ?></h1>
                         <hr class="slidehr">
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,20 ) ); ?></p>
                         <div class="more-btn">              
@@ -112,7 +112,7 @@ get_header(); ?>
                 <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>                
                     <div class="col-lg-4 col-md-4">
                       <div class="service-border">
-                        <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                        <a href="<?php the_permalink(); ?>"><strong><?php the_title(); ?></strong><span class="screen-reader-text"><?php the_title(); ?></span></a>
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,5 ) ); ?></p>
                       </div>
                     </div>
@@ -138,7 +138,7 @@ get_header(); ?>
           <?php if( get_theme_mod('advance_ecommerce_store_section_title') != '' || get_theme_mod('advance_ecommerce_store_product_page') != ''){ ?>
             <div class="product-page">
               <?php if( get_theme_mod('advance_ecommerce_store_section_title') != ''){ ?>
-                <h3><?php echo esc_html(get_theme_mod('advance_ecommerce_store_section_title')); ?></h3>
+                <strong><?php echo esc_html(get_theme_mod('advance_ecommerce_store_section_title')); ?></strong>
               <?php }?>
               <?php $slider_pages = array();
                 $mod = absint( get_theme_mod( 'advance_ecommerce_store_product_page','advance-ecommerce-store'));
