@@ -4,7 +4,7 @@ Theme URI:
 Author: wpmwa
 Author URI: http://mywebapp.in/
 Description: Astral is a free version  WordPress theme. It is a multi-purpose theme for blog, Education, News, Entertainment etc. You can create a beautiful homepage contain slider, callout, services, blogs, contact section. Support easy to use customization theme options. Astral theme also support Elementor plugin and contact form 7 plugin. Theme contains custom template page full width and page with left sidebar. 
-Version: 0.7
+Version: 0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: right-sidebar, left-sidebar, custom-logo,  custom-header, custom-menu, editor-style, full-width-template, featured-images,  sticky-post, translation-ready, Blog, Entertainment, News
@@ -385,13 +385,13 @@ span.sub-title {
 .align-blog {
     padding: 3em 0;
 }
-
+.front-blog {
+	background: #153e4d0d;
+}
 
 /* about */
 .abt-icon {
-    width: 80px;
-    height: 80px;
-    background: #153e4d;
+
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;
@@ -754,11 +754,6 @@ h3.f_title {
         font-size: 1em;
     }
 
-    .abt-icon {
-        width: 60px;
-        height: 60px;
-    }
-
     .abt-icon span {
         font-size: 1.5em;
     }
@@ -865,7 +860,7 @@ h3.f_title {
 @media screen and (max-width: 480px) {
  
     .slider-info p {
-        letter-spacing: 1px;
+        letter-spacing: 0px;
 		font-size: 12px !important;
     }
 
@@ -1006,15 +1001,9 @@ h3.f_title {
 /* new html */
 .abt-grid {
     transition: 0.5s;
-    padding: 35px;
+    padding: 24px;
     transition: 0.5s;
 
-}
-
-.abt-icon {
-    webkit-box-shadow: 5px 10px 10px 0px rgba(216, 216, 216, 0.78);
-    -moz-box-shadow: 5px 10px 10px 0px rgba(216, 216, 216, 0.78);
-    box-shadow: 1px 15px 17px 0px rgba(180, 167, 167);
 }
 
 .abt-grid:hover {
@@ -1114,6 +1103,8 @@ h4.abt-text {
 }
 
 .abt_bottom p {
+	color: #fff;
+    text-align: center;
 	word-break: break-word;
     margin-bottom: 1em;
     letter-spacing: 1px;
@@ -1860,7 +1851,7 @@ a.socialIcon:hover, .socialHoverClass {
     }
 
     .slider-info h3 {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     h4.abt-text {
@@ -1927,6 +1918,10 @@ a.socialIcon:hover, .socialHoverClass {
         margin-top: 0px;
         margin-bottom: 10px;
     }
+	
+	#mwa_banner_slider .mwa_link_bnr {
+		padding: 8px;
+	}
 }
 
 
@@ -2482,6 +2477,11 @@ ul.dropdown-menu ul {
 }
 span.entry-date i.fa.fa-calendar {
     padding-right: 6px;
+}
+ul.social-network a {
+    color: #fff;
+    padding: 10px;
+    font-size: 22px;
 }
 
 @media (min-width: 992px){

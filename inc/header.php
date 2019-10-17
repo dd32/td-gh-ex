@@ -80,28 +80,18 @@ if ( ! function_exists( 'astral_page_start' ) ) :
                         <!-- //logo -->
                     </div>
                     <div class="col-md-6 col-sm-12 social">
-                        <ul class="social-network social-circle">
-							<?php
-							$facebook_link   = get_theme_mod( 'facebook_link' );
-							$twitter_link    = get_theme_mod( 'twitter_link' );
-							$googleplus_link = get_theme_mod( 'googleplus_link' );
-							$linkedin_link   = get_theme_mod( 'linkedin_link' );
-							if ( get_theme_mod( 'facebook_link' ) ) { ?>
-                                <li><a target="_blank" href="<?php echo esc_url( $facebook_link ); ?>"
-                                       class="icoFacebook"><i class="fa fa-facebook"></i></a>
-                                </li> <?php } ?>
-							<?php if ( get_theme_mod( 'twitter_link' ) ) { ?>
-                                <li><a target="_blank" href="<?php echo esc_url( $twitter_link ); ?>" class="icoTwitter" ><i class="fa fa-twitter"></i></a>
-                                </li> <?php } ?>
-							<?php if ( get_theme_mod( 'googleplus_link' ) ) { ?>
-                                <li><a target="_blank" href="<?php echo esc_url( $googleplus_link ); ?>"
-                                       class="icoGoogle"><i class="fa fa-google-plus"></i></a>
-                                </li> <?php } ?>
-							<?php if ( get_theme_mod( 'linkedin_link' ) ) { ?>
-                                <li><a target="_blank" href="<?php echo esc_url( $linkedin_link ); ?>" class="icoLinkedin"><i class="fa fa-linkedin"></i></a>
-                                </li> 
-							<?php } ?>
-                        </ul>
+					<?php if ( has_nav_menu( 'social' ) ) : 
+							wp_nav_menu(
+								array(
+									'theme_location' => 'social',
+									'menu_class'     => 'social-network ',
+									'walker' => new WO_Nav_Social_Walker(),
+									'depth'          => 1,
+									'link_before'    => '<span class="screen-reader-text">',
+									'link_after'     => '</span>',
+								)
+							);
+					endif; ?>
                     </div>
                 </div>
             </div>

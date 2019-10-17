@@ -29,7 +29,7 @@ class astral_Blog_Section extends astral_Abstract_Main {
 	$astral_blog_title = get_theme_mod( 'astral_blog_title' );
 	$astral_blog_desc  = get_theme_mod( 'astral_blog_desc' );
 	?>
-    <section class="align-blog" id="blog">
+    <section class="align-blog front-blog" id="blog">
         <div class="container">
             <div class="mwa_title text-center">
                 <h4 class="mwa-title"><?php echo esc_html( $astral_blog_title ); ?></h4>

@@ -23,12 +23,6 @@ do_action( 'astral_callout_area' );
 */
 do_action( 'astral_service_area' );
 /* 
-* Functions hooked into astral_contact_area action
-*
-* @hooked astral_contact
-*/
-do_action( 'astral_contact_area' );
-/* 
 * Functions hooked into astral_blog_area action
 * 
 * @hooked astral_blog

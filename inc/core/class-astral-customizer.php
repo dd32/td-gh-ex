@@ -54,70 +54,6 @@ class astral_Customizer extends astral_Abstract_Main {
 			'settings' => 'astral_frontpage_show',
 		) );
 
-		/* social icon section */
-		$wp_customize->add_section( 'astral_social_icon', array(
-			'title'      => __( 'Social Links', 'astral' ),
-			'panel'      => 'astral_theme_option',
-			'capability' => 'edit_theme_options',
-			'priority'   => 35,
-		) );
-
-		$wp_customize->add_setting( 'facebook_link', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-		$wp_customize->add_control( 'facebook_link', array(
-			'label'    => __( 'Facebook Link', 'astral' ),
-			'type'     => 'url',
-			'section'  => 'astral_social_icon',
-			'settings' => 'facebook_link',
-		) );
-
-		$wp_customize->add_setting( 'twitter_link', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-		$wp_customize->add_control( 'twitter_link', array(
-			'label'    => __( 'Twitter Link', 'astral' ),
-			'type'     => 'url',
-			'section'  => 'astral_social_icon',
-			'settings' => 'twitter_link',
-		) );
-
-		$wp_customize->add_setting( 'googleplus_link', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-		$wp_customize->add_control( 'googleplus_link', array(
-			'label'    => __( 'Google+ Link', 'astral' ),
-			'type'     => 'url',
-			'section'  => 'astral_social_icon',
-			'settings' => 'googleplus_link',
-		) );
-
-		$wp_customize->add_setting( 'linkedin_link', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-		$wp_customize->add_control( 'linkedin_link', array(
-			'label'    => __( 'LinkedIn Link', 'astral' ),
-			'type'     => 'url',
-			'section'  => 'astral_social_icon',
-			'settings' => 'linkedin_link',
-		) );
-
 		/* footer section */
 		$wp_customize->add_section( 'astral_footer', array(
 			'title'      => __( 'Footer Options', 'astral' ),
@@ -202,94 +138,28 @@ class astral_Customizer extends astral_Abstract_Main {
 			)
 		);
 
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_setting(
-				'slide_image_' . $i,
-				array(
-					'type'              => 'theme_mod',
-					'default'           => '',
-					'capability'        => 'edit_theme_options',
-					'sanitize_callback' => 'esc_url_raw',
-				)
-			);
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'slide_image_' . $i, array(
-				'label'    => esc_attr( 'Slider Image ' . $i ),
-				'section'  => 'slider_section',
-				'settings' => 'slide_image_' . $i
-			) ) );
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_setting(
-				'slide_title_' . $i,
-				array(
-					'type'              => 'theme_mod',
-					'default'           => '',
-					'capability'        => 'edit_theme_options',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-
-				)
-			);
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_control( 'slide_title_' . $i, array(
-				'label'    => esc_attr( 'Slider title ' . $i ),
-				'type'     => 'text',
-				'section'  => 'slider_section',
-				'settings' => 'slide_title_' . $i
-			) );
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_setting(
-				'slide_desc_' . $i,
-				array(
-					'default'           => '',
-					'capability'        => 'edit_theme_options',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-
-				)
-			);
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_control( 'slide_desc_' . $i, array(
-				'label'    => esc_attr( 'Slider dsecription ' . $i ),
-				'type'     => 'text',
-				'section'  => 'slider_section',
-				'settings' => 'slide_desc_' . $i
-			) );
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_setting(
-				'slide_btn_link_' . $i,
-				array(
-					'type'              => 'theme_mod',
-					'default'           => '',
-					'capability'        => 'edit_theme_options',
-					'sanitize_callback' => 'esc_url_raw',
-
-				)
-			);
-		}
-
-		for ( $i = 1; $i <= 3; $i ++ ) {
-			$wp_customize->add_control( 'slide_btn_link_' . $i, array(
-				'label'    => esc_attr( 'Slider Button Link ' . $i ),
-				'type'     => 'url',
-				'section'  => 'slider_section',
-				'settings' => 'slide_btn_link_' . $i
-			) );
+		for($i=1;$i<=3;$i++) {
+		$wp_customize->add_setting( 'astral_dropdown_pages_'.$i,
+		   array(
+			'type'              => 'theme_mod',
+			  'default' => '',
+			  'sanitize_callback' => 'absint',
+			  'capability'        => 'edit_theme_options',
+		   )
+		);
+		$wp_customize->add_control( 'astral_dropdown_pages_'.$i,
+			array(
+				'label' => 'Select page for slider '.$i,
+				'description' => esc_html__( 'Add Featured image in page' ,'astral' ),
+				'section' => 'slider_section', 
+				'type' => 'dropdown-pages',
+			)
+		);
 		}
 
 		/* callout section */
 		$wp_customize->add_section( 'astral_callout', array(
-			'title'      => __( 'Callout Settings', 'astral' ),
+			'title'      => __( 'About Us Section', 'astral' ),
 			'panel'      => 'astral_theme_option',
 			'capability' => 'edit_theme_options',
 			'priority'   => 35,
@@ -303,68 +173,29 @@ class astral_Customizer extends astral_Abstract_Main {
 		) );
 
 		$wp_customize->add_control( 'astral_callout_show', array(
-			'label'    => __( 'Callout Section On/Off', 'astral' ),
-			'description' => __( 'Click above checkbox to show callout section on front page', 'astral' ),
+			'label'    => __( 'About Section On/Off', 'astral' ),
+			'description' => __( 'Click above checkbox to show about section on front page', 'astral' ),
 			'type'     => 'checkbox',
 			'section'  => 'astral_callout',
 			'settings' => 'astral_callout_show',
 		) );
 
-		$wp_customize->add_setting( 'callout_title', array(
+		$wp_customize->add_setting( 'astral_about_section',
+		   array(
 			'type'              => 'theme_mod',
-			'default'           => '',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
-			'capability'        => 'edit_theme_options',
-		) );
-
-		$wp_customize->add_control( 'callout_title', array(
-			'label'    => __( 'Callout Title', 'astral' ),
-			'type'     => 'text',
-			'section'  => 'astral_callout',
-			'settings' => 'callout_title',
-		) );
-
-		$wp_customize->add_setting( 'callout_desc', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'wp_filter_nohtml_kses',
-				'capability'        => 'edit_theme_options',
+			  'default' => '',
+			  'sanitize_callback' => 'absint',
+			  'capability'        => 'edit_theme_options',
+		   )
+		);
+		$wp_customize->add_control( 'astral_about_section',
+			array(
+				'label' => __( 'Select about us page','astral' ),
+				'description' => esc_html__( 'Select page to show on about us section on frontpage template', 'astral' ),
+				'section' => 'astral_callout', 
+				'type' => 'dropdown-pages',
 			)
 		);
-		$wp_customize->add_control( 'callout_desc', array(
-			'label'    => __( 'callout description', 'astral' ),
-			'type'     => 'text',
-			'section'  => 'astral_callout',
-			'settings' => 'callout_desc',
-		) );
-
-		$wp_customize->add_setting( 'callout_link_1', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-		$wp_customize->add_control( 'callout_link_1', array(
-			'label'    => __( 'Callout Link 1', 'astral' ),
-			'type'     => 'url',
-			'section'  => 'astral_callout',
-			'settings' => 'callout_link_1',
-		) );
-
-		$wp_customize->add_setting( 'callout_link_2', array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-			)
-		);
-		$wp_customize->add_control( 'callout_link_2', array(
-			'label'    => __( 'Callout Link 2', 'astral' ),
-			'type'     => 'url',
-			'section'  => 'astral_callout',
-			'settings' => 'callout_link_2',
-		) );
 
 
 		/* service section */
@@ -374,8 +205,7 @@ class astral_Customizer extends astral_Abstract_Main {
 			'capability' => 'edit_theme_options',
 			'priority'   => 35,
 		) );
-
-
+		
 		$wp_customize->add_setting( 'astral_service_show', array(
 			'type'              => 'theme_mod',
 			'default'           => '',
@@ -419,65 +249,27 @@ class astral_Customizer extends astral_Abstract_Main {
 			'section'  => 'astral_service',
 			'settings' => 'astral_service_desc',
 		) );
-
-		for ( $i = 1; $i < 4; $i ++ ) {
-			$wp_customize->add_setting( 'service_title_' . $i, array(
-				'type'              => 'theme_mod',
-				'default'           => '',
-				'sanitize_callback' => 'wp_filter_nohtml_kses',
-				'capability'        => 'edit_theme_options',
-			) );
-
-			$wp_customize->add_control( 'service_title_' . $i, array(
-				'label'    => esc_attr( 'Service Title ' . $i ),
-				'type'     => 'text',
-				'section'  => 'astral_service',
-				'settings' => 'service_title_' . $i,
-			) );
-
-			$wp_customize->add_setting( 'service_desc_' . $i, array(
-					'type'              => 'theme_mod',
-					'default'           => '',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-					'capability'        => 'edit_theme_options',
-				)
-			);
-			$wp_customize->add_control( 'service_desc_' . $i, array(
-				'label'    => esc_attr( 'Service description ' . $i ),
-				'type'     => 'text',
-				'section'  => 'astral_service',
-				'settings' => 'service_desc_' . $i,
-			) );
-
-			$wp_customize->add_setting( 'service_icon_' . $i, array(
-					'type'              => 'theme_mod',
-					'default'           => '',
-					'sanitize_callback' => 'wp_filter_nohtml_kses',
-					'capability'        => 'edit_theme_options',
-				)
-			);
-			$wp_customize->add_control( 'service_icon_' . $i, array(
-				'label'    => esc_attr( 'Service icon ' . $i ),
-				'description' => esc_attr( 'For Example: fa fa-user' ),
-				'type'     => 'text',
-				'section'  => 'astral_service',
-				'settings' => 'service_icon_' . $i,
-			) );
-
-			$wp_customize->add_setting( 'service_link_' . $i, array(
-					'type'              => 'theme_mod',
-					'default'           => '',
-					'sanitize_callback' => 'esc_url_raw',
-					'capability'        => 'edit_theme_options',
-				)
-			);
-			$wp_customize->add_control( 'service_link_' . $i, array(
-				'label'    => esc_attr( 'Service Link ' . $i ),
-				'type'     => 'url',
-				'section'  => 'astral_service',
-				'settings' => 'service_link_' . $i,
-			) );
+		
+		/* */
+		for($j=1;$j<=3;$j++) {
+		$wp_customize->add_setting(
+		'astral_service_'.$j,
+			array(
+			'type'=>'theme_mod',
+			'default'=>'',
+			'sanitize_callback'=>'absint',
+			'capability'        => 'edit_theme_options',
+		) );
+		$wp_customize->add_control( new astral_service( 
+		$wp_customize, 'astral_service_'.$j,
+		array(
+			'label'    => 'Select post for service '.$j, 
+			'section'  => 'astral_service',
+			'settings' => 'astral_service_'.$j,	
+		) ) );
 		}
+		/* */
+
 
 		/* blog section */
 		$wp_customize->add_section( 'astral_blog', array(
@@ -517,53 +309,12 @@ class astral_Customizer extends astral_Abstract_Main {
 
 		/* contact section */
 		$wp_customize->add_section( 'astral_contact', array(
-			'title'      => __( 'Contact Settings', 'astral' ),
+			'title'      => __( 'Topbar Section', 'astral' ),
+			'description'=>__( 'Only Show on Topbar', 'astral' ),
 			'panel'      => 'astral_theme_option',
 			'capability' => 'edit_theme_options',
 			'priority'   => 35,
 		) );
-
-		$wp_customize->add_setting( 'astral_contact_show', array(
-			'type'              => 'theme_mod',
-			'default'           => '',
-			'sanitize_callback' => 'astral_sanitize_checkbox',
-			'capability'        => 'edit_theme_options',
-		) );
-
-		$wp_customize->add_control( 'astral_contact_show', array(
-			'label'    => __( 'Contact Section On/Off', 'astral' ),
-			'description' => __( 'Click above checkbox to show contact section on front page', 'astral' ),
-			'type'     => 'checkbox',
-			'section'  => 'astral_contact',
-			'settings' => 'astral_contact_show',
-		) );
-
-		$wp_customize->add_setting( 'astral_contact_title', array(
-			'type'              => 'theme_mod',
-			'default'           => '',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
-			'capability'        => 'edit_theme_options',
-		) );
-
-		$wp_customize->add_control( 'astral_contact_title', array(
-			'label'    => __( 'Contact Title ', 'astral' ),
-			'type'     => 'text',
-			'section'  => 'astral_contact',
-			'settings' => 'astral_contact_title',
-		) );
-
-		$wp_customize->add_setting( 'contact_image', array(
-			'type'              => 'theme_mod',
-			'default'           => '',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'contact_image', array(
-			'label'    => __( 'Contact Background Image', 'astral' ),
-			'section'  => 'astral_contact',
-			'settings' => 'contact_image'
-		) ) );
 
 		$wp_customize->add_setting( 'astral_phoneno', array(
 				'type'              => 'theme_mod',
@@ -610,6 +361,13 @@ class astral_Customizer extends astral_Abstract_Main {
 		function astral_sanitize_checkbox( $input ) {
 			return $input;
 		}
+		
+
+		
+		//astral_Dropdown_Posts_Custom_Control
 	}
 }
+
+
+
 new astral_Customizer();

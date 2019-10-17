@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 0.8 =
+* ticket issue fixed, https://themes.trac.wordpress.org/ticket/71918
+
 = 0.7 =
 * ticket issue fixed, https://themes.trac.wordpress.org/ticket/71918
 

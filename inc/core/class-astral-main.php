@@ -20,7 +20,8 @@ class astral_main {
 		/* navigation menu */
 		register_nav_menus(
 			array(
-				'primary' => __( 'Primary Menu, menu_depth is 4', 'astral' )
+				'primary' => __( 'Primary Menu, menu_depth is 4', 'astral' ),
+				'social' => __( 'Social Links Menu', 'astral' ),
 			)
 		);
 
