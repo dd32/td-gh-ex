@@ -320,12 +320,12 @@ function accesspress_parallax_switch_theme_options() {
 
     $theme = wp_get_theme();
 
-    if ( version_compare( $theme->Version, '1.68', '>' ) ) {
+    if ( version_compare( $theme->Version, '1.68', '>' ) && !$accesspress_parallax_old_value_saved) {
         $old_options = get_option( 'accesspress_parallax' );
         $new_options = get_option( 'accesspress_parallax_section' );
 
-        $parallax_sections = $old_options[ 'parallax_section' ];
-
+        $parallax_sections = (isset($old_options[ 'parallax_section' ])) ? $old_options[ 'parallax_section' ] : '';
+        
         $parallax_sections = json_encode( $parallax_sections );
 
         update_option( 'accesspress_parallax_section', $parallax_sections );
