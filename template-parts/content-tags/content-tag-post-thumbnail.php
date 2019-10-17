@@ -16,7 +16,7 @@ if ( is_singular() && (!is_front_page() || (is_front_page() && !$option)) ) :
 	?>
 
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail( 'batourslight_wide' );
+		<?php the_post_thumbnail( 'batours_wide' );
         
         if ( apply_filters( 'batourslight_page_option', true, 'page_title' ) ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -29,7 +29,7 @@ if ( is_singular() && (!is_front_page() || (is_front_page() && !$option)) ) :
 
 <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 	<?php
-	the_post_thumbnail( 'batourslight_thumbnail', array(
+	the_post_thumbnail( 'batours_thumbnail', array(
 		'alt' => the_title_attribute( array(
 			'echo' => false,
 		) ),

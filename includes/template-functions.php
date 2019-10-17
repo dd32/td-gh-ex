@@ -1341,7 +1341,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
             
             $posts = BABE_Post_types::get_posts( $args );
 			
-			$thumbnail = 'batourslight_thumbnail';
+			$thumbnail = 'batours_thumbnail';
 			
 			$excerpt_length = 19;
 			
@@ -1460,7 +1460,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		    
             $output = '';
             
-            $thumbnail = 'batourslight_thumbnail';
+            $thumbnail = 'batours_thumbnail';
 			
 			$taxonomies = apply_filters('batourslight_option', '', 'tour_preview_taxonomies');
             
@@ -1487,7 +1487,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		    
             $output = '';
             
-            $thumbnail = 'batourslight_thumbnail';
+            $thumbnail = 'batours_thumbnail';
             
             $excerpt_length = 27;
 			

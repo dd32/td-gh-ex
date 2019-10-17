@@ -327,17 +327,17 @@ class batourslight_Settings {
          );
          
          self::$image_sizes = array(
-           'batourslight_wide' => array(
+           'batours_wide' => array(
               'width' => 1920,
               'height' => 870,
               'crop' => true,
            ),
-           'batourslight_thumbnail' => array(
+           'batours_thumbnail' => array(
               'width' => 350,
               'height' => 200,
               'crop' => true,
            ),
-           'batourslight_thumbnail_wide' => array(
+           'batours_thumbnail_wide' => array(
               'width' => 430,
               'height' => 190,
               'crop' => true,

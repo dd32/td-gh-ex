@@ -4,7 +4,7 @@
  * Author: Booking Algorithms
  * Author URI: https://ba-booking.com/
  * Description: BA Tours light is a booking theme developed for travel agencies and tour operators of any size. It's a first theme based on a true fast and flexible free booking engine – BA Book Everything plugin. You no longer need any shopping plugins, so this theme doesn't support Woocommerce. The booking engine allows you to create different booking rules and categories for different tours (with or without ages in prices), set seasonal prices and discounts, use promo codes (discount coupons), sell additional services with booking (extra tickets etc.), and add as many taxonomies (attributes) for filtering tours in search requests as you like. Clear landing design looks great on both desktop and mobile screens. Modern responsive design, based on Bootstrap 4 framework, touch-ready and responsive sliders, Fontawesome 5 beautiful icons, customizable theme typography, and more.
- * Version: 1.0.8
+ * Version: 1.0.9
  * License: GNU GPL v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ba-tours-light
@@ -1044,7 +1044,6 @@ input[type=radio]:checked:before {
 }
 
 #search_form .input-group div.add_ids_title{
-    padding: 10px 30px 10px 20px;
     margin: 0;
     background-color: #fff;
     color: #787878;
@@ -1055,10 +1054,6 @@ input[type=radio]:checked:before {
     margin: 0;
     background-color: #fff;
     color: #787878;
-}
-
-.add_input_field .add_ids_title i {
-    top: 10px;
 }
 
 #search_form .input-group > div {
@@ -1082,6 +1077,8 @@ input[type=radio]:checked:before {
 
 #search_form .input-group > div {
     margin: 10px 5px;
+    padding: 5px 0 5px 10px;
+    background-color: #fff;
 }
 
 #search_form .input-group > div.search-date{
@@ -1092,15 +1089,11 @@ input[type=radio]:checked:before {
 }
 
 #search_form .input-group .search-date i{
-    position: absolute;
-    right: 15px;
-    top: 12px;
     color: #787878;
 }
 
 #search_form .input-group .search-date .search_date{
     order: 1;
-    padding: 10px 20px;
 }
 
 #search_form .input-group .search-date .search_date:hover{
@@ -1163,6 +1156,15 @@ input[type=radio]:checked:before {
       flex-grow: 1;
    }
     
+}
+
+#search_form .add_input_field .add_ids_list {
+    left: -10px;
+    margin-top: 5px;
+}
+
+.daterangepicker {
+    margin-left: -24px;
 }
 
 /*===================Date picker=========*/
