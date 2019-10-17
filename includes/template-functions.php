@@ -1950,262 +1950,38 @@ if ( class_exists( 'BABE_Post_types' ) ) {
     
     ///////////////////////////////////////////////
     
-add_filter('babe_booking_form_html', 'bahotel_l_booking_form', 10, 4);
-if ( ! function_exists( 'bahotel_l_booking_form' ) ) :
-/**
-	 * Filter booking form
+   add_filter('babe_booking_form_date_from_label', 'bahotel_l_booking_form_date_from_label', 10, 1);
+   if ( ! function_exists( 'bahotel_l_booking_form_date_from_label' ) ) :
+   /**
+	 * Filter booking form date from label
      * 
-     * @param string $content
-     * @param array $babe_post
-     * @param array $input_fields
-     * @param string $after_hidden_fields
-     * 
+     * @param string $label
      * @return string
 	 */
-    function bahotel_l_booking_form($content, $babe_post, $input_fields, $after_hidden_fields){
+    function bahotel_l_booking_form_date_from_label($label){
         
-        $output = '';
+        $label = esc_html__('Check In:', 'ba-hotel-light');
         
-            $post_id = $babe_post['ID'];
-            
-            $action = 'to_checkout';
-            
-            ///// get rules
-            $rules_cat = BABE_Booking_Rules::get_rule_by_obj_id($post_id);
-            
-            ///// get av times
-            $av_times = BABE_Post_types::get_post_av_times($babe_post);
-            
-            $modal_meeting_points = '';
-            
-            $i = 1;
-            
-            /////////date fields
-            
-            $date_from = isset($_GET['date_from']) && BABE_Calendar_functions::isValidDate($_GET['date_from'], BABE_Settings::$settings['date_format']) ? wp_unslash($_GET['date_from']) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-            $date_to = isset($_GET['date_to']) && BABE_Calendar_functions::isValidDate($_GET['date_to'], BABE_Settings::$settings['date_format']) ? wp_unslash($_GET['date_to']) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-            
-            $input_time_from = '';
-            $input_time_to = '';
-            
-            if ($rules_cat['rules']['basic_booking_period'] == 'day'){
-                $time_select_arr = BABE_html::get_time_select_arr($date_from, $post_id, true);
-                $input_time_from = '<div id="booking_time_from_block" class="booking-time-block">
-                   '.BABE_html::input_select_field('booking_time_from', '', $time_select_arr, (
-                   // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                   isset($_GET['time_from']) ? wp_unslash($_GET['time_from']) : false
-                   ) ).'
-                   </div>'; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                $time_select_arr = BABE_html::get_time_select_arr($date_to, $post_id, false);
-                $input_time_to = '<div id="booking_time_to_block" class="booking-time-block">
-                   '.BABE_html::input_select_field('booking_time_to', '', $time_select_arr, (
-                   // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-                   isset($_GET['time_to']) ? wp_unslash($_GET['time_to']) : false
-                   ) ).'
-                   </div>'; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-            }
-            
-            $date_from_label = $rules_cat['rules']['basic_booking_period'] == 'night' ? esc_html__('Check In:', 'ba-hotel-light') : esc_html__('From:', 'ba-hotel-light');
-            $date_to_label = $rules_cat['rules']['basic_booking_period'] == 'night' ? esc_html__('Check Out:', 'ba-hotel-light') : esc_html__('To:', 'ba-hotel-light');
-            
-            $input_fields = array();
-            
-            $input_fields = apply_filters('babe_booking_form_before_date_from', $input_fields, $babe_post, $av_times, $rules_cat);
-         
-            $input_fields[] = '
-            <div class="booking-form-block booking-date-block">
-                <label class="booking_form_input_label"><span class="booking_form_step_num">'.$i.'</span>'.$date_from_label.'</label>
-            <div class="booking-date">
-                   <span class="lnr lnr-calendar-full"></span>
-				   <input type="text" class="booking_date" id="booking_date_from" name="booking_date_from" value="'.$date_from.'" placeholder="'.apply_filters('babe_booking_form_date_from_placeholder', '').'" data-post-id="'.$post_id.'">
-                   '.$input_time_from.'
-			</div>
-            
-            </div>';
-            $i++;
-            
-            $input_fields = apply_filters('babe_booking_form_after_date_from', $input_fields, $babe_post, $av_times, $rules_cat);
-            
-            if ($rules_cat['rules']['basic_booking_period'] != 'recurrent_custom' && $rules_cat['rules']['basic_booking_period'] != 'single_custom'){
-                $input_fields[] = '
-                <div class="booking-form-block booking-date-block">
-                <label class="booking_form_input_label"><span class="booking_form_step_num">'.$i.'</span>'.$date_to_label.'</label>
-            <div class="booking-date">
-                   <span class="lnr lnr-calendar-full"></span>
-				   <input type="text" class="booking_date" id="booking_date_to" name="booking_date_to" value="'.$date_to.'" placeholder="'.apply_filters('babe_booking_form_date_to_placeholder', '').'" data-post-id="'.$post_id.'">
-                   '.$input_time_to.'
-			</div>
-            </div>';
-                 $i++;
-                 
-                 $input_fields = apply_filters('babe_booking_form_after_date_to', $input_fields, $babe_post, $av_times, $rules_cat);
-                 
-            }
-            
-            $check_add_av_times = $rules_cat['rules']['basic_booking_period'] == 'recurrent_custom';
-            $check_add_av_times = apply_filters('babe_booking_form_check_add_av_times', $check_add_av_times, $av_times, $babe_post, $rules_cat);
-            
-            ////////////Time fields///////////
-            if ($check_add_av_times){
-                
-                //// get AV time spans by AJAX
-                $input_fields[] = '<div class="booking-form-block booking-times-block">
-                <label class="booking_form_input_label"><span class="booking_form_step_num">'.$i.'</span>'.__('Time:', 'ba-hotel-light').'</label>
-                <div id="booking-times" class="booking-date-times">
-			    </div>
-                </div>';
-                
-                $i++;
-                
-                $input_fields = apply_filters('babe_booking_form_after_av_times', $input_fields, $babe_post, $av_times, $rules_cat);
-                
-            }
-            //////////////Guests fields/////////
-            
-            if (!isset($rules_cat['category_meta']['categories_remove_guests']) || !$rules_cat['category_meta']['categories_remove_guests']){
-                
-                /// will be sanitized on line 2072
-                $guests = isset( $_GET['guests'] ) && is_array( $_GET['guests'] ) ? wp_unslash($_GET['guests']) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-            
-              if (!empty($guests) && $date_from && $rules_cat['rules']['basic_booking_period'] != 'recurrent_custom'){
-                
-                $date_from_sql = BABE_Calendar_functions::date_to_sql($date_from);
-                
-                $date_to_sql = $date_to ? BABE_Calendar_functions::date_to_sql($date_to) : $date_to;
-                
-                $av_guests = BABE_Calendar_functions::get_av_guests($post_id, $date_from_sql, $date_to_sql);
-                
-                $guests = array_map('absint', $guests);
-                
-                $guests_output = BABE_html::booking_form_select_guests($post_id, $av_guests, $date_from_sql, $date_to_sql, $guests);
-                
-              } else {
-                
-                $guests_output = __('please, select date first', 'ba-hotel-light');
-                
-              }
-            
-            $guests_title = $rules_cat['rules']['booking_mode'] == 'tickets' ? __('Tickets:', 'ba-hotel-light') : __('Guests:', 'ba-hotel-light');
-            
-            $input_fields[] = '
-            <div class="booking-form-block booking-guests-block">
-            <label class="booking_form_input_label"><span class="booking_form_step_num">'.$i.'</span>'.$guests_title.'</label>
-            <div id="booking-guests-result">
-            '.$guests_output.'
-            </div>
-            </div>';
-            $i++;
-            
-            $input_fields = apply_filters('babe_booking_form_after_guests', $input_fields, $babe_post, $av_times, $rules_cat);
-            
-            }
-            
-            ////////////Meeting points///////////
-            
-            if (!empty($babe_post) && isset($babe_post['meeting_points']) && isset($babe_post['meeting_place']) && $babe_post['meeting_place'] == 'point'){
-            
-            $meeting_points = BABE_Post_types::get_post_meeting_points($babe_post);
-           
-             if (!empty($meeting_points)){
-                $meeting_points_output = array();
-              foreach($meeting_points as $point_id => $meeting_point){      
-                $meeting_points_output[] = '<div class="booking_meeting_point_line">
-                <input type="radio" class="booking_meeting_point" name="booking_meeting_point" value="'.$point_id.'" id="booking_meeting_point_'.$point_id.'" data-point-id="'.$point_id.'">
-                <label for="booking_meeting_point_'.$point_id.'">'.implode(', ', $meeting_point['times']).' - <a href="'.$meeting_point['permalink'].'" target="_blank" open-mode="modal" data-obj-id="'.$point_id.'" data-lat="'.$meeting_point['lat'].'" data-lng="'.$meeting_point['lng'].'" data-address="'.$meeting_point['address'].'" >'.$meeting_point['address'].'</a></label>
-              </div>';
-              }
-              
-              $find_closes_loc_text = BABE_Settings::$settings['google_map_remove'] || is_admin() ? '' : ' (' . '<a href="#block_meeting_points">'.__('find closest location', 'ba-hotel-light').'</a>'.')';
-              
-              $input_fields[] = apply_filters('babe_booking_form_meeting_points', '<div class="booking-form-block booking-meeting-point">
-              <label class="booking_form_input_label"><span class="booking_form_step_num">'.$i.'</span>'.__('Select meeting point', 'ba-hotel-light'). $find_closes_loc_text .':</label>
-              '.implode(' ', $meeting_points_output).'
-              </div>', $meeting_points_output, $meeting_points, $babe_post, $i);
-              $i++;
-              
-              $input_fields = apply_filters('babe_booking_form_after_meeting_points', $input_fields, $babe_post, $av_times, $rules_cat);
-              
-              if (!is_admin()){
-              
-              $modal_meeting_points = '<div id="babe_overlay_container">
-            <div id="block_address_map_with_direction" class="babe_overlay_inner">
-              <span id="modal_close"><i class="fas fa-times"></i></span>
-              
-                <h3>'.__('Find a route from your location', 'ba-hotel-light').'</h3>
-              
-                <div id="google_map_address_with_direction" data-obj-id="" data-lat="" data-lng="" data-address="">
-                </div>
-                
-                <div id="route_to_buttons">
-                    <button id="route_to_button_ok" data-point-id="" class="btn button route_to_point_button">'.__('Ok', 'ba-hotel-light').'</button>
-                </div>  
+        return $label;
+    }   
+   endif;
 
-            </div>
-          </div>
-          <div id="babe_overlay"></div>';
-          
-              }
-            
-             } //// end if !empty($meeting_points) 
-           }
-           
-           /////////////////////////////////////
-           
-           if (BABE_Settings::$settings['services_to_booking_form']){
-            
-              $services_html = BABE_html::list_add_services($babe_post);
-           
-             if ($services_html){
-              $input_fields[] = '
-              <div class="booking-form-block booking-services-block">
-               <label class="booking_form_input_label">'.__('Services:', 'ba-hotel-light').'</label>
-               <div class="booking_services_inner">
-               '.$services_html.'
-               </div>
-              </div>';
-             }
-            
-           }
-            
-            ////////////////////////////////////
-            
-            $input_fields = apply_filters('babe_booking_form_input_fields', $input_fields, $babe_post, $av_times, $rules_cat);
-            
-            $after_hidden_fields = apply_filters('babe_booking_form_after_hidden_fields', '', $babe_post, $av_times, $rules_cat);
-            
-            $output .= '<form id="booking_form" name="booking_form" method="post" action="" data-post-id="'.$post_id.'">
-            
-            <div class="input_group">
-            
-            '.implode('', $input_fields).'
-            
-            </div>
-            
-            <div id="total_group">
-                <label class="booking_form_input_label">'.__('Total:', 'ba-hotel-light').'</label>
-                <div id="booking_form_total">
-                </div>
-            </div>
-            
-            <div id="error_group">
-                <label class="booking_form_error_label">'.__('Please fill in all the data.', 'ba-hotel-light').'</label>
-            </div>
-            
-            <input type="hidden" name="booking_obj_id" value="'.$post_id.'">
-            <input type="hidden" name="action" value="'.$action.'">
-            '.$after_hidden_fields.'
-            
-            <div class="submit_group">
-               
-               <button class="btn button booking_form_submit" data-post-id="'.$post_id.'">'.esc_html__('Book Now', 'ba-hotel-light').' <span class="lnr lnr-arrow-right"></span></button>
-               
-            </div>
-            
-            </form>';      
+   ////////////////////////////
+
+   add_filter('babe_booking_form_date_to_label', 'bahotel_l_booking_form_date_to_label', 10, 1);
+   if ( ! function_exists( 'bahotel_l_booking_form_date_to_label' ) ) :
+   /**
+	 * Filter booking form date from label
+     * 
+     * @param string $label
+     * @return string
+	 */
+    function bahotel_l_booking_form_date_to_label($label){
         
-        return $output; 
-    }
-    
+        $label = esc_html__('Check Out:', 'ba-hotel-light');
+        
+        return $label;
+    }   
    endif;
 
    //////////////////////////////////////////////////

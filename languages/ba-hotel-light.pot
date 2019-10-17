@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: BA Hotel\n"
-"POT-Creation-Date: 2019-06-18 19:30+0300\n"
+"Project-Id-Version: BA Hotel light\n"
+"POT-Creation-Date: 2019-10-17 19:30+0300\n"
 "PO-Revision-Date: 2018-04-10 13:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: https://ba-booking.com\n"
@@ -17,6 +17,9 @@ msgstr ""
 "esc_html_x\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: admin/ReduxCore\n"
+"X-Poedit-SearchPathExcluded-1: js\n"
+"X-Poedit-SearchPathExcluded-2: css\n"
+"X-Poedit-SearchPathExcluded-3: fonts\n"
 
 #: 404.php:15
 msgid "That page can&rsquo;t be found."
@@ -24,11 +27,6 @@ msgstr ""
 
 #: 404.php:19
 msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr ""
-
-#: archive-service.php:81 includes/template-functions.php:1255
-#: template-parts/contents/content.php:78
-msgid "Read more"
 msgstr ""
 
 #: comments-to_book.php:26 comments.php:77
@@ -76,7 +74,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:86
+#: functions.php:91
 msgid "Primary Menu"
 msgstr ""
 
@@ -125,22 +123,6 @@ msgstr ""
 msgid "Service subtitle"
 msgstr ""
 
-#: includes/class-envato-protected-api.php:67
-msgid "Please enter your Envato Marketplace Username."
-msgstr ""
-
-#: includes/class-envato-protected-api.php:71
-msgid "Please enter your Envato Marketplace API Key."
-msgstr ""
-
-#: includes/class-envato-protected-api.php:96
-msgid "The API \"set\" is a required parameter."
-msgstr ""
-
-#: includes/class-envato-protected-api.php:167
-msgid "The Envato Marketplace \"item ID\" is a required parameter."
-msgstr ""
-
 #: includes/class-page-options.php:63
 msgid "Theme default"
 msgstr ""
@@ -177,429 +159,379 @@ msgstr ""
 msgid "Page template options"
 msgstr ""
 
-#: includes/class-redux.php:110
+#: includes/class-redux.php:90
 msgid "New update available!"
 msgstr ""
 
-#: includes/class-redux.php:111
+#: includes/class-redux.php:91
 msgid "Version "
 msgstr ""
 
-#: includes/class-redux.php:111 includes/class-tgm-plugin-activation.php:2723
+#: includes/class-redux.php:91 includes/class-tgm-plugin-activation.php:2729
 msgid "Update"
 msgstr ""
 
-#: includes/class-redux.php:193
+#: includes/class-redux.php:173
 #, php-format
-msgid "BA Hotel options %1$sTheme Documentation%2$s"
+msgid "BA Hotel light options %1$sTheme Documentation%2$s"
 msgstr ""
 
-#: includes/class-redux.php:204
+#: includes/class-redux.php:184
 msgid "Theme Options"
 msgstr ""
 
-#: includes/class-redux.php:205
-msgid "BA Hotel options"
+#: includes/class-redux.php:185
+msgid "BA Hotel light options"
 msgstr ""
 
-#: includes/class-redux.php:309
+#: includes/class-redux.php:289
 msgid "Documentation"
 msgstr ""
 
-#: includes/class-redux.php:375
+#: includes/class-redux.php:355
 msgid "Logo image"
 msgstr ""
 
-#: includes/class-redux.php:390
+#: includes/class-redux.php:370
 msgid "Site Title"
 msgstr ""
 
-#: includes/class-redux.php:407
+#: includes/class-redux.php:387
 msgid "Tagline"
 msgstr ""
 
-#: includes/class-redux.php:424
+#: includes/class-redux.php:404
 msgid "Site Identity"
 msgstr ""
 
-#: includes/class-redux.php:436
+#: includes/class-redux.php:416
 msgid "Footer logo image"
 msgstr ""
 
-#: includes/class-redux.php:461
+#: includes/class-redux.php:441
 msgid "General"
 msgstr ""
 
-#: includes/class-redux.php:470
+#: includes/class-redux.php:450
 msgid "Header settings"
 msgstr ""
 
-#: includes/class-redux.php:477
+#: includes/class-redux.php:457
 msgid "Use default header background pattern"
 msgstr ""
 
-#: includes/class-redux.php:485
+#: includes/class-redux.php:465
 msgid "Header background pattern image"
 msgstr ""
 
-#: includes/class-redux.php:491
+#: includes/class-redux.php:471
 msgid "Header with transparent background (over header image)"
 msgstr ""
 
-#: includes/class-redux.php:498
+#: includes/class-redux.php:478
 msgid "Sticky header"
 msgstr ""
 
-#: includes/class-redux.php:505
+#: includes/class-redux.php:485
 msgid "Gallery settings"
 msgstr ""
 
-#: includes/class-redux.php:512
+#: includes/class-redux.php:492
 msgid "Gallery style"
 msgstr ""
 
-#: includes/class-redux.php:515
+#: includes/class-redux.php:495
 msgid "Masonry"
 msgstr ""
 
-#: includes/class-redux.php:516
+#: includes/class-redux.php:496
 msgid "3 columns"
 msgstr ""
 
-#: includes/class-redux.php:529
+#: includes/class-redux.php:509
 msgid "Layouts"
 msgstr ""
 
-#: includes/class-redux.php:539
+#: includes/class-redux.php:519
 msgid "Default page/post layout"
 msgstr ""
 
-#: includes/class-redux.php:540
+#: includes/class-redux.php:520
 msgid ""
 "This layout will be applied if no specific layout has been assigned to the current "
 "page/post."
 msgstr ""
 
-#: includes/class-redux.php:553
+#: includes/class-redux.php:533
 msgid "Front Page"
 msgstr ""
 
-#: includes/class-redux.php:562
+#: includes/class-redux.php:545
+#, php-format
+msgid ""
+"To use shortcodes like on %1$sDemo site%2$s, you need to download from theme's "
+"site and install our free %3$sBA Theme core plugin%4$s."
+msgstr ""
+
+#: includes/class-redux.php:552
 msgid "Use slideshow"
 msgstr ""
 
-#: includes/class-redux.php:563
+#: includes/class-redux.php:553
 msgid ""
 "If it's enabled, Slide posts will be used to get images and titles for slideshow. "
 "Otherwise, the page featured image will be displayed."
 msgstr ""
 
-#: includes/class-redux.php:575
+#: includes/class-redux.php:565
 msgid "Room Page"
 msgstr ""
 
-#: includes/class-redux.php:584
+#: includes/class-redux.php:574
 msgid "Room post layout"
 msgstr ""
 
-#: includes/class-redux.php:592
+#: includes/class-redux.php:582
 msgid "Show thumbnails in slideshow"
 msgstr ""
 
-#: includes/class-redux.php:599 includes/class-redux.php:1044
+#: includes/class-redux.php:589 includes/class-redux.php:919
 msgid "Show star rating in room details?"
 msgstr ""
 
-#: includes/class-redux.php:606
+#: includes/class-redux.php:596
 msgid "Show book now button"
 msgstr ""
 
-#: includes/class-redux.php:613
+#: includes/class-redux.php:603
 msgid "Show features section"
 msgstr ""
 
-#: includes/class-redux.php:620
+#: includes/class-redux.php:610
 msgid "Show booking form at the page bottom"
 msgstr ""
 
-#: includes/class-redux.php:627
+#: includes/class-redux.php:617
 msgid "Show reviews section"
 msgstr ""
 
-#: includes/class-redux.php:634
+#: includes/class-redux.php:624
 msgid "Show \"add review\" form"
 msgstr ""
 
-#: includes/class-redux.php:646
-#: template-parts/content-tags/content-tag-header-thumbnail.php:77
+#: includes/class-redux.php:636
+#: template-parts/content-tags/content-tag-header-thumbnail.php:73
 msgid "Blog"
 msgstr ""
 
-#: includes/class-redux.php:655 includes/class-redux.php:739
-#: includes/class-redux.php:775 includes/class-redux.php:863
+#: includes/class-redux.php:645 includes/class-redux.php:701
+#: includes/class-redux.php:747
 msgid "Use default header image"
 msgstr ""
 
-#: includes/class-redux.php:663
+#: includes/class-redux.php:653
 msgid "Blog Header image"
 msgstr ""
 
-#: includes/class-redux.php:669 includes/class-redux.php:753
-#: includes/class-redux.php:789 includes/class-redux.php:877
+#: includes/class-redux.php:659 includes/class-redux.php:715
+#: includes/class-redux.php:761
 msgid "Archive layout"
 msgstr ""
 
-#: includes/class-redux.php:677
+#: includes/class-redux.php:667
 msgid "Blog archive columns"
 msgstr ""
 
-#: includes/class-redux.php:678
+#: includes/class-redux.php:668
 msgid "Only for full width layouts"
 msgstr ""
 
-#: includes/class-redux.php:680 includes/class-redux.php:1028
+#: includes/class-redux.php:670 includes/class-redux.php:903
 msgid "1 column"
 msgstr ""
 
-#: includes/class-redux.php:681 includes/class-redux.php:1029
+#: includes/class-redux.php:671 includes/class-redux.php:904
 msgid "2 columns"
 msgstr ""
 
-#: includes/class-redux.php:689 includes/class-redux.php:841
-#: includes/class-redux.php:908
+#: includes/class-redux.php:679 includes/class-redux.php:792
 msgid "Single post layout"
 msgstr ""
 
-#: includes/class-redux.php:697
-msgid "Show post author"
-msgstr ""
-
-#: includes/class-redux.php:704
-msgid "Show post categories"
-msgstr ""
-
-#: includes/class-redux.php:711
-msgid "Show post tags"
-msgstr ""
-
-#: includes/class-redux.php:718
-msgid "Show post date"
-msgstr ""
-
-#: includes/class-redux.php:730
+#: includes/class-redux.php:692
 msgid "Archive Page"
 msgstr ""
 
-#: includes/class-redux.php:747
+#: includes/class-redux.php:709
 msgid "Archive Header image"
 msgstr ""
 
-#: includes/class-redux.php:766
-msgid "Services"
-msgstr ""
-
-#: includes/class-redux.php:783
-msgid "Services Header image"
-msgstr ""
-
-#: includes/class-redux.php:797
-msgid "Archive page excerpt"
-msgstr ""
-
-#: includes/class-redux.php:805
-msgid "Archive excerpt title"
-msgstr ""
-
-#: includes/class-redux.php:812
-msgid "Archive excerpt text"
-msgstr ""
-
-#: includes/class-redux.php:818
-msgid "Include posts to archive page"
-msgstr ""
-
-#: includes/class-redux.php:819
-msgid "All will be displayed if no pages are selected."
-msgstr ""
-
-#: includes/class-redux.php:826
-msgid "Show reviews on Archive page"
-msgstr ""
-
-#: includes/class-redux.php:834
-msgid "Review IDs (comma separated)"
-msgstr ""
-
-#: includes/class-redux.php:835
-msgid "123, 234, 56 etc."
-msgstr ""
-
-#: includes/class-redux.php:854
+#: includes/class-redux.php:728
 msgid "Events"
 msgstr ""
 
-#: includes/class-redux.php:871
+#: includes/class-redux.php:740
+#, php-format
+msgid ""
+"To use event post type and shortcodes like on %1$sDemo site%2$s, you need to "
+"download from theme's site and install our free %3$sBA Theme core plugin%4$s."
+msgstr ""
+
+#: includes/class-redux.php:755
 msgid "Events Header image"
 msgstr ""
 
-#: includes/class-redux.php:885
+#: includes/class-redux.php:769
 msgid "Archive events order by"
 msgstr ""
 
-#: includes/class-redux.php:887 includes/class-redux.php:940
+#: includes/class-redux.php:771 includes/class-redux.php:824
 msgid "Event date"
 msgstr ""
 
-#: includes/class-redux.php:888 includes/class-redux.php:941
+#: includes/class-redux.php:772 includes/class-redux.php:825
 msgid "Post modified date"
 msgstr ""
 
-#: includes/class-redux.php:889 includes/class-redux.php:942
+#: includes/class-redux.php:773 includes/class-redux.php:826
 msgid "Title"
 msgstr ""
 
-#: includes/class-redux.php:897
+#: includes/class-redux.php:781
 msgid "Archive events order"
 msgstr ""
 
-#: includes/class-redux.php:899 includes/class-redux.php:952
+#: includes/class-redux.php:783 includes/class-redux.php:836
 msgid "DESC"
 msgstr ""
 
-#: includes/class-redux.php:900 includes/class-redux.php:953
+#: includes/class-redux.php:784 includes/class-redux.php:837
 msgid "ASC"
 msgstr ""
 
-#: includes/class-redux.php:916
+#: includes/class-redux.php:800
 msgid "Front end event date format"
 msgstr ""
 
-#: includes/class-redux.php:917
+#: includes/class-redux.php:801
 msgid "See more in PHP docs, https://www.php.net/manual/en/function.date.php"
 msgstr ""
 
-#: includes/class-redux.php:924
+#: includes/class-redux.php:808
 msgid "Title for related events section"
 msgstr ""
 
-#: includes/class-redux.php:931
+#: includes/class-redux.php:815
 msgid "Subtitle for related events section"
 msgstr ""
 
-#: includes/class-redux.php:938
+#: includes/class-redux.php:822
 msgid "Related events order by"
 msgstr ""
 
-#: includes/class-redux.php:950
+#: includes/class-redux.php:834
 msgid "Related events order"
 msgstr ""
 
-#: includes/class-redux.php:966
+#: includes/class-redux.php:850
 msgid "Search Form"
 msgstr ""
 
-#: includes/class-redux.php:975
-msgid "Add guest select fields"
+#: includes/class-redux.php:858
+msgid "Setup fields in Search Form Builder"
 msgstr ""
 
-#: includes/class-redux.php:982
+#: includes/class-redux.php:859
+msgid "Search Form Builder"
+msgstr ""
+
+#: includes/class-redux.php:865
 msgid "Use background on search form"
 msgstr ""
 
-#: includes/class-redux.php:989
+#: includes/class-redux.php:872
 msgid "Place search form over header image"
 msgstr ""
 
-#: includes/class-redux.php:996
+#: includes/class-redux.php:879
 msgid "Make header search form collapsible on mobile screens"
 msgstr ""
 
-#: includes/class-redux.php:1003
-msgid "Exclude search form from pages"
-msgstr ""
-
-#: includes/class-redux.php:1016
+#: includes/class-redux.php:891
 msgid "Search Results"
 msgstr ""
 
-#: includes/class-redux.php:1025
+#: includes/class-redux.php:900
 msgid "Search result columns"
 msgstr ""
 
-#: includes/class-redux.php:1037
+#: includes/class-redux.php:912
 msgid "Show \"sort by\" filter?"
 msgstr ""
 
-#: includes/class-redux.php:1055
+#: includes/class-redux.php:930
 msgid "Footer"
 msgstr ""
 
-#: includes/class-redux.php:1064
+#: includes/class-redux.php:939
 msgid "Copyrights"
 msgstr ""
 
-#: includes/class-redux.php:1071
+#: includes/class-redux.php:946
 msgid "Copyrights text"
 msgstr ""
 
-#: includes/class-redux.php:1072 includes/template-functions.php:1543
+#: includes/class-redux.php:947 includes/template-functions.php:1001
 msgid "Copyright &copy; {year}, {sitename}"
 msgstr ""
 
-#: includes/class-redux.php:1134
+#: includes/class-redux.php:969
 msgid "Fonts"
 msgstr ""
 
-#: includes/class-redux.php:1166
+#: includes/class-redux.php:981 includes/class-redux.php:1005
+#, php-format
+msgid "These options are available in %1$sBA Hotel theme%2$s only."
+msgstr ""
+
+#: includes/class-redux.php:993
 msgid "Colors"
 msgstr ""
 
-#: includes/class-redux.php:1179
-msgid "Custom CSS"
-msgstr ""
-
-#: includes/class-redux.php:1187
-msgid "You don't need to use &lt;style&gt; tag here."
-msgstr ""
-
-#: includes/class-redux.php:1276
-msgid "Add taxonomy select field"
-msgstr ""
-
-#: includes/class-redux.php:1277 includes/class-redux.php:1405
-msgid "Add terms from selected taxonomy to the search form filters."
-msgstr ""
-
-#: includes/class-redux.php:1285
+#: includes/class-redux.php:1075
 msgid "Exclude search form from post types"
 msgstr ""
 
-#: includes/class-redux.php:1306
+#: includes/class-redux.php:1096
 msgid "Add room terms"
 msgstr ""
 
-#: includes/class-redux.php:1307
+#: includes/class-redux.php:1097
 msgid "Show terms in the room preview from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:1327
+#: includes/class-redux.php:1117
 msgid "Room terms section"
 msgstr ""
 
-#: includes/class-redux.php:1328
+#: includes/class-redux.php:1118
 msgid "Show term icons on the room page from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:1352
+#: includes/class-redux.php:1142
 msgid "Archive excerpt term icons"
 msgstr ""
 
-#: includes/class-redux.php:1353
+#: includes/class-redux.php:1143
 msgid "Show terms on the services archive from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:1380
+#: includes/class-redux.php:1170
 msgid "None"
+msgstr ""
+
+#: includes/class-redux.php:1195
+msgid "Add terms from selected taxonomy to the search form filters."
 msgstr ""
 
 #: includes/class-settings.php:193
@@ -738,7 +670,7 @@ msgstr ""
 msgid "Footer title"
 msgstr ""
 
-#: includes/class-settings.php:691 includes/class-settings.php:1624
+#: includes/class-settings.php:691 includes/class-settings.php:1628
 msgid "Footer text"
 msgstr ""
 
@@ -818,59 +750,59 @@ msgstr ""
 msgid "Icons"
 msgstr ""
 
-#: includes/class-settings.php:1430
+#: includes/class-settings.php:1434
 msgid "Alternative buttons"
 msgstr ""
 
-#: includes/class-settings.php:1459
+#: includes/class-settings.php:1463
 msgid "Grey buttons"
 msgstr ""
 
-#: includes/class-settings.php:1471
+#: includes/class-settings.php:1475
 msgid "Buttons text"
 msgstr ""
 
-#: includes/class-settings.php:1505
+#: includes/class-settings.php:1509
 msgid "Important text"
 msgstr ""
 
-#: includes/class-settings.php:1518
+#: includes/class-settings.php:1522
 msgid "Header background"
 msgstr ""
 
-#: includes/class-settings.php:1537
+#: includes/class-settings.php:1541
 msgid "Header text"
 msgstr ""
 
-#: includes/class-settings.php:1566
+#: includes/class-settings.php:1570
 msgid "Main background"
 msgstr ""
 
-#: includes/class-settings.php:1581
+#: includes/class-settings.php:1585
 msgid "Text color with Main background"
 msgstr ""
 
-#: includes/class-settings.php:1606
+#: includes/class-settings.php:1610
 msgid "Footer background"
 msgstr ""
 
-#: includes/class-settings.php:1615
+#: includes/class-settings.php:1619
 msgid "Footer titles"
 msgstr ""
 
-#: includes/class-settings.php:1641
+#: includes/class-settings.php:1645
 msgid "Search form: Background"
 msgstr ""
 
-#: includes/class-settings.php:1651
+#: includes/class-settings.php:1655
 msgid "Search form: Button"
 msgstr ""
 
-#: includes/class-settings.php:1660
+#: includes/class-settings.php:1664
 msgid "Search form: Button hover"
 msgstr ""
 
-#: includes/class-settings.php:1673
+#: includes/class-settings.php:1677
 msgid "Search form: Button text"
 msgstr ""
 
@@ -896,580 +828,488 @@ msgstr ""
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:385
+#: includes/class-tgm-plugin-activation.php:391
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:386
-#: includes/class-tgm-plugin-activation.php:827
-#: includes/class-tgm-plugin-activation.php:2533
-#: includes/class-tgm-plugin-activation.php:3580
+#: includes/class-tgm-plugin-activation.php:392
+#: includes/class-tgm-plugin-activation.php:833
+#: includes/class-tgm-plugin-activation.php:2539
+#: includes/class-tgm-plugin-activation.php:3586
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:387
-#: includes/class-tgm-plugin-activation.php:3159
+#: includes/class-tgm-plugin-activation.php:393
+#: includes/class-tgm-plugin-activation.php:3165
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:388
-#: includes/class-tgm-plugin-activation.php:2952
+#: includes/class-tgm-plugin-activation.php:394
+#: includes/class-tgm-plugin-activation.php:2958
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:390
+#: includes/class-tgm-plugin-activation.php:396
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:392
+#: includes/class-tgm-plugin-activation.php:398
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %1$s is needed for this theme. Please "
 "update the plugin."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:394
+#: includes/class-tgm-plugin-activation.php:400
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:395
+#: includes/class-tgm-plugin-activation.php:401
 msgid "Dismiss this notice"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:396
+#: includes/class-tgm-plugin-activation.php:402
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:397
+#: includes/class-tgm-plugin-activation.php:403
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:523
+#: includes/class-tgm-plugin-activation.php:529
 msgid "Update Required"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:934
+#: includes/class-tgm-plugin-activation.php:940
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug and "
 "renaming did not work."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:934
-#: includes/class-tgm-plugin-activation.php:937
+#: includes/class-tgm-plugin-activation.php:940
+#: includes/class-tgm-plugin-activation.php:943
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin according "
 "to the WordPress guidelines."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:937
+#: includes/class-tgm-plugin-activation.php:943
 msgid ""
 "The remote plugin package consists of more than one file, but the files are not "
 "packaged in a folder."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:1121
-#: includes/class-tgm-plugin-activation.php:2948
+#: includes/class-tgm-plugin-activation.php:1127
+#: includes/class-tgm-plugin-activation.php:2954
 msgid "and"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:1982
+#: includes/class-tgm-plugin-activation.php:1988
 #, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2273
+#: includes/class-tgm-plugin-activation.php:2279
 msgid "Required"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2276
+#: includes/class-tgm-plugin-activation.php:2282
 msgid "Recommended"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2292
+#: includes/class-tgm-plugin-activation.php:2298
 msgid "WordPress Repository"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2295
+#: includes/class-tgm-plugin-activation.php:2301
 msgid "External Source"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2298
+#: includes/class-tgm-plugin-activation.php:2304
 msgid "Pre-Packaged"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2315
+#: includes/class-tgm-plugin-activation.php:2321
 msgid "Not Installed"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2319
+#: includes/class-tgm-plugin-activation.php:2325
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2321
+#: includes/class-tgm-plugin-activation.php:2327
 msgid "Active"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2327
+#: includes/class-tgm-plugin-activation.php:2333
 msgid "Required Update not Available"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2330
+#: includes/class-tgm-plugin-activation.php:2336
 msgid "Requires Update"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2333
+#: includes/class-tgm-plugin-activation.php:2339
 msgid "Update recommended"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2342
+#: includes/class-tgm-plugin-activation.php:2348
 #, php-format
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2388
+#: includes/class-tgm-plugin-activation.php:2394
 #, php-format
 msgid "All <span class=\"count\">(%s)</span>"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2392
+#: includes/class-tgm-plugin-activation.php:2398
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2396
+#: includes/class-tgm-plugin-activation.php:2402
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2400
+#: includes/class-tgm-plugin-activation.php:2406
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2482
+#: includes/class-tgm-plugin-activation.php:2488
 msgid "unknown"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2490
+#: includes/class-tgm-plugin-activation.php:2496
 msgid "Installed version:"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2498
+#: includes/class-tgm-plugin-activation.php:2504
 msgid "Minimum required version:"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2510
+#: includes/class-tgm-plugin-activation.php:2516
 msgid "Available version:"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2533
+#: includes/class-tgm-plugin-activation.php:2539
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2547
+#: includes/class-tgm-plugin-activation.php:2553
 msgid "Plugin"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2548
+#: includes/class-tgm-plugin-activation.php:2554
 msgid "Source"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2549
+#: includes/class-tgm-plugin-activation.php:2555
 msgid "Type"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2553
+#: includes/class-tgm-plugin-activation.php:2559
 msgid "Version"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2554
+#: includes/class-tgm-plugin-activation.php:2560
 msgid "Status"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2603
+#: includes/class-tgm-plugin-activation.php:2609
 #, php-format
 msgid "Install %2$s"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2608
+#: includes/class-tgm-plugin-activation.php:2614
 #, php-format
 msgid "Update %2$s"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2614
+#: includes/class-tgm-plugin-activation.php:2620
 #, php-format
 msgid "Activate %2$s"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2684
+#: includes/class-tgm-plugin-activation.php:2690
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2717
+#: includes/class-tgm-plugin-activation.php:2723
 msgid "Install"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2726
+#: includes/class-tgm-plugin-activation.php:2732
 msgid "Activate"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2757
+#: includes/class-tgm-plugin-activation.php:2763
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2759
+#: includes/class-tgm-plugin-activation.php:2765
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2800
+#: includes/class-tgm-plugin-activation.php:2806
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2802
+#: includes/class-tgm-plugin-activation.php:2808
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2908
+#: includes/class-tgm-plugin-activation.php:2914
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:2934
+#: includes/class-tgm-plugin-activation.php:2940
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3158
+#: includes/class-tgm-plugin-activation.php:3164
 msgid "Plugin activation failed."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3498
+#: includes/class-tgm-plugin-activation.php:3504
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3501
+#: includes/class-tgm-plugin-activation.php:3507
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3503
+#: includes/class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3507
+#: includes/class-tgm-plugin-activation.php:3513
 msgid ""
 "The installation and activation process is starting. This process may take a while "
 "on some hosts, so please be patient."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3509
+#: includes/class-tgm-plugin-activation.php:3515
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3509
-#: includes/class-tgm-plugin-activation.php:3517
+#: includes/class-tgm-plugin-activation.php:3515
+#: includes/class-tgm-plugin-activation.php:3523
 msgid "Show Details"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3509
-#: includes/class-tgm-plugin-activation.php:3517
+#: includes/class-tgm-plugin-activation.php:3515
+#: includes/class-tgm-plugin-activation.php:3523
 msgid "Hide Details"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3510
+#: includes/class-tgm-plugin-activation.php:3516
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3512
+#: includes/class-tgm-plugin-activation.php:3518
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3515
+#: includes/class-tgm-plugin-activation.php:3521
 msgid ""
 "The installation process is starting. This process may take a while on some hosts, "
 "so please be patient."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3517
+#: includes/class-tgm-plugin-activation.php:3523
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3518
+#: includes/class-tgm-plugin-activation.php:3524
 msgid "All installations have been completed."
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:3520
+#: includes/class-tgm-plugin-activation.php:3526
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/template-functions.php:1195
-msgid "Facebook"
-msgstr ""
-
-#: includes/template-functions.php:1196
-msgid "Twitter"
-msgstr ""
-
-#: includes/template-functions.php:1197
-msgid "LinkedIn"
-msgstr ""
-
-#: includes/template-functions.php:1198
-msgid "Instagram"
-msgstr ""
-
-#: includes/template-functions.php:1471
+#: includes/template-functions.php:928
 msgid "My account"
 msgstr ""
 
-#: includes/template-functions.php:1471
+#: includes/template-functions.php:928
 msgid "Login"
 msgstr ""
 
-#: includes/template-functions.php:1665
+#: includes/template-functions.php:1039
 msgid "Pingback:"
 msgstr ""
 
-#: includes/template-functions.php:1665
+#: includes/template-functions.php:1039
 msgid "Edit"
 msgstr ""
 
-#: includes/template-functions.php:1692
+#: includes/template-functions.php:1066
 msgid ""
 "<span style=\"margin-left: 5px;\" class=\"glyphicon glyphicon-edit\"></span> Edit"
 msgstr ""
 
-#: includes/template-functions.php:1697
+#: includes/template-functions.php:1071
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: includes/template-functions.php:1765
+#: includes/template-functions.php:1139
 msgid "Previous post"
 msgstr ""
 
-#: includes/template-functions.php:1773
+#: includes/template-functions.php:1147
 msgid "Next post"
 msgstr ""
 
-#: includes/template-functions.php:1881
+#: includes/template-functions.php:1255
 msgid "Book now"
 msgstr ""
 
-#: includes/template-functions.php:1931
+#: includes/template-functions.php:1305
 #, php-format
 msgid "%s Guests"
 msgstr ""
 
-#: includes/template-functions.php:1973 includes/template-functions.php:1979
+#: includes/template-functions.php:1347 includes/template-functions.php:1353
 msgid "From"
 msgstr ""
 
-#: includes/template-functions.php:1981
+#: includes/template-functions.php:1355
 msgid "/Night"
 msgstr ""
 
-#: includes/template-functions.php:2020
+#: includes/template-functions.php:1394
 msgid "Room size"
 msgstr ""
 
-#: includes/template-functions.php:2023
+#: includes/template-functions.php:1397
 msgid "with units of measurement"
 msgstr ""
 
-#: includes/template-functions.php:2032
+#: includes/template-functions.php:1406
 msgid "Beds"
 msgstr ""
 
-#: includes/template-functions.php:2194
+#: includes/template-functions.php:1568
 msgid "Description"
 msgstr ""
 
-#: includes/template-functions.php:2211
+#: includes/template-functions.php:1585
 msgid "Room Features"
 msgstr ""
 
-#: includes/template-functions.php:2228
+#: includes/template-functions.php:1602
 msgid "Details"
 msgstr ""
 
-#: includes/template-functions.php:2244
+#: includes/template-functions.php:1618
 msgid "Questions & Answers"
 msgstr ""
 
-#: includes/template-functions.php:2258
+#: includes/template-functions.php:1632
 msgid "Book this room"
 msgstr ""
 
-#: includes/template-functions.php:2274
+#: includes/template-functions.php:1648
 msgid "You may like"
 msgstr ""
 
-#: includes/template-functions.php:2294
-msgid "Our clients say"
-msgstr ""
-
-#: includes/template-functions.php:2334
+#: includes/template-functions.php:1694
 msgid "1. Choose Room"
 msgstr ""
 
-#: includes/template-functions.php:2338
+#: includes/template-functions.php:1698
 msgid "2. Make a Reservation"
 msgstr ""
 
-#: includes/template-functions.php:2342
+#: includes/template-functions.php:1702
 msgid "3. Confirmation"
 msgstr ""
 
-#: includes/template-functions.php:2387 includes/template-functions.php:2525
+#: includes/template-functions.php:1747 includes/template-functions.php:1885
 msgid "Your reservation"
 msgstr ""
 
-#: includes/template-functions.php:2450 includes/template-functions.php:2642
+#: includes/template-functions.php:1810 includes/template-functions.php:1963
 msgid "Check In:"
 msgstr ""
 
-#: includes/template-functions.php:2453 includes/template-functions.php:2643
+#: includes/template-functions.php:1813 includes/template-functions.php:1981
 msgid "Check Out:"
 msgstr ""
 
-#: includes/template-functions.php:2457
+#: includes/template-functions.php:1817
 msgid "Date:"
 msgstr ""
 
-#: includes/template-functions.php:2457 includes/template-functions.php:2687
+#: includes/template-functions.php:1817
 msgid "Time:"
 msgstr ""
 
-#: includes/template-functions.php:2501
+#: includes/template-functions.php:1861
 msgid "Pay now"
 msgstr ""
 
-#: includes/template-functions.php:2508
+#: includes/template-functions.php:1868
 msgid "Payment is expected"
 msgstr ""
 
-#: includes/template-functions.php:2511
+#: includes/template-functions.php:1871
 msgid "Payment in progress"
 msgstr ""
 
-#: includes/template-functions.php:2516
+#: includes/template-functions.php:1876
 msgid "Reservation complete"
 msgstr ""
 
-#: includes/template-functions.php:2529
+#: includes/template-functions.php:1889
 #, php-format
 msgid "Order #%1$s"
 msgstr ""
 
-#: includes/template-functions.php:2642
-msgid "From:"
-msgstr ""
-
-#: includes/template-functions.php:2643
-msgid "To:"
-msgstr ""
-
-#: includes/template-functions.php:2717
-msgid "please, select date first"
-msgstr ""
-
-#: includes/template-functions.php:2721
-msgid "Tickets:"
-msgstr ""
-
-#: includes/template-functions.php:2721 includes/template-functions.php:3537
-msgid "Guests:"
-msgstr ""
-
-#: includes/template-functions.php:2751
-msgid "find closest location"
-msgstr ""
-
-#: includes/template-functions.php:2754
-msgid "Select meeting point"
-msgstr ""
-
-#: includes/template-functions.php:2767
-msgid "Find a route from your location"
-msgstr ""
-
-#: includes/template-functions.php:2773
-msgid "Ok"
-msgstr ""
-
-#: includes/template-functions.php:2794
-msgid "Services:"
-msgstr ""
-
-#: includes/template-functions.php:2818
-msgid "Total:"
-msgstr ""
-
-#: includes/template-functions.php:2824
-msgid "Please fill in all the data."
-msgstr ""
-
-#: includes/template-functions.php:2833
-msgid "Book Now"
-msgstr ""
-
-#: includes/template-functions.php:3170 includes/template-functions.php:3216
+#: includes/template-functions.php:2313
 msgid "Check availability"
 msgstr ""
 
-#: includes/template-functions.php:3222
-msgid "Check in"
-msgstr ""
-
-#: includes/template-functions.php:3227
-msgid "Check out"
-msgstr ""
-
-#: includes/template-functions.php:3233
-msgid "Check"
-msgstr ""
-
-#: includes/template-functions.php:3343
-msgid "Guests"
-msgstr ""
-
-#: includes/template-functions.php:3530
+#: includes/template-functions.php:2474
 msgid "Room size:"
 msgstr ""
 
-#: includes/template-functions.php:3545
+#: includes/template-functions.php:2481
+msgid "Guests:"
+msgstr ""
+
+#: includes/template-functions.php:2489
 msgid "Beds:"
 msgstr ""
 
-#: includes/template-functions.php:3660 includes/template-functions.php:3678
-msgid "Select"
-msgstr ""
-
-#: includes/template-functions.php:3683
-msgid "Reservation"
-msgstr ""
-
-#: includes/template-functions.php:3983
+#: includes/template-functions.php:2850
 msgid "Previous page"
 msgstr ""
 
-#: includes/template-functions.php:3984
+#: includes/template-functions.php:2851
 msgid "Next page"
 msgstr ""
 
-#: includes/template-functions.php:3985
+#: includes/template-functions.php:2852
 msgid "Page"
 msgstr ""
 
-#: includes/template-functions.php:4058
+#: includes/template-functions.php:2925
 msgid "There is no excerpt because this is a protected post."
 msgstr ""
 
@@ -1493,11 +1333,11 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content-tags/content-tag-header-thumbnail.php:81
+#: template-parts/content-tags/content-tag-header-thumbnail.php:77
 msgid "Search results"
 msgstr ""
 
-#: template-parts/content-tags/content-tag-header-thumbnail.php:85
+#: template-parts/content-tags/content-tag-header-thumbnail.php:81
 msgid "Error 404"
 msgstr ""
 
@@ -1540,125 +1380,6 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: updater/theme-updater-admin.php:276 updater/theme-updater-admin.php:330
-#: updater/theme-updater-admin.php:383
-msgid "An error occurred, please try again."
-msgstr ""
-
-#: updater/theme-updater-admin.php:296
-#, php-format
-msgid "Your license key expired on %s."
-msgstr ""
-
-#: updater/theme-updater-admin.php:304
-msgid "Your license key has been disabled."
-msgstr ""
-
-#: updater/theme-updater-admin.php:309
-msgid "Invalid license."
-msgstr ""
-
-#: updater/theme-updater-admin.php:315
-msgid "Your license is not active for this URL."
-msgstr ""
-
-#: updater/theme-updater-admin.php:320
-#, php-format
-msgid "This appears to be an invalid license key for %s."
-msgstr ""
-
-#: updater/theme-updater-admin.php:325
-msgid "Your license key has reached its activation limit."
-msgstr ""
-
-#: updater/theme-updater.php:30
-msgid "Theme License"
-msgstr ""
-
-#: updater/theme-updater.php:31
-msgid "Enter your theme license key."
-msgstr ""
-
-#: updater/theme-updater.php:32
-msgid "License Key"
-msgstr ""
-
-#: updater/theme-updater.php:33
-msgid "License Action"
-msgstr ""
-
-#: updater/theme-updater.php:34
-msgid "Deactivate License"
-msgstr ""
-
-#: updater/theme-updater.php:35
-msgid "Activate License"
-msgstr ""
-
-#: updater/theme-updater.php:36 updater/theme-updater.php:49
-msgid "License status is unknown."
-msgstr ""
-
-#: updater/theme-updater.php:37
-msgid "Renew?"
-msgstr ""
-
-#: updater/theme-updater.php:38
-msgid "unlimited"
-msgstr ""
-
-#: updater/theme-updater.php:39
-msgid "License key is active."
-msgstr ""
-
-#: updater/theme-updater.php:40
-#, php-format
-msgid "Expires %s."
-msgstr ""
-
-#: updater/theme-updater.php:41
-msgid "Lifetime License."
-msgstr ""
-
-#: updater/theme-updater.php:42
-#, php-format
-msgid "You have %1$s / %2$s sites activated."
-msgstr ""
-
-#: updater/theme-updater.php:43
-#, php-format
-msgid "License key expired %s."
-msgstr ""
-
-#: updater/theme-updater.php:44
-msgid "License key has expired."
-msgstr ""
-
-#: updater/theme-updater.php:45
-msgid "License keys do not match."
-msgstr ""
-
-#: updater/theme-updater.php:46
-msgid "License is inactive."
-msgstr ""
-
-#: updater/theme-updater.php:47
-msgid "License key is disabled."
-msgstr ""
-
-#: updater/theme-updater.php:48
-msgid "Site is inactive."
-msgstr ""
-
-#: updater/theme-updater.php:50
-msgid ""
-"Updating this theme will lose any customizations you have made. 'Cancel' to stop, "
-"'OK' to update."
-msgstr ""
-
-#: updater/theme-updater.php:51
-#, php-format
-msgid ""
-"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" title="
-"\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</a>."
+#: template-parts/contents/content.php:78
+msgid "Read more"
 msgstr ""

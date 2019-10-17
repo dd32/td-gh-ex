@@ -1398,6 +1398,9 @@ class BAH_L_Settings {
 		'name'  => esc_html__( 'Buttons', 'ba-hotel-light' ),
 		'desc'  => '',
 		'selectors' => array(
+			'color' => array(
+                '.btn.btn-search-guests-change',
+            ),
 			'background-color' => array(
 				'#infinite-handle span button',
 				'.added_to_cart',
@@ -1423,6 +1426,7 @@ class BAH_L_Settings {
             'border-color' => array(
 				'.gallery-item-hover-desc',
                 '.contact_form_bar_content .wpcf7 input[type="submit"]',
+                '.btn.btn-search-guests-change',
 			),
 		),
 	),

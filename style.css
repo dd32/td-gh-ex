@@ -6,7 +6,7 @@
  * Description: "BA Hotel light" is a hotel/hostel booking theme developed for mini hotels and property rental businesses. It's based on the fast and flexible free booking engine ("BA Book Everything" plugin) and allows you to start your online rental business in an hours!
 You can easily create different booking rules and categories, flexible rates (define minimum/maximum booking period, days of the week to which the rate applies, days of the week in which the reservation can be started), variable prices based on number of the guests or/and nights, seasonal prices and discounts. Sell additional services with booking (breakfast, dinner, etc.), use special offers, promo codes (discount coupons), and more. Clear landing design looks great on both desktop and mobile screens thanks to Bootstrap 4 framework, touch-ready and responsive sliders, great google and icon fonts.
 Full-featured theme version ("BA Hotel") is completed with payment gateways (PayPal, Stripe) and extra settings to easily customize the theme to suit your needs.
- * Version: 1.0.0
+ * Version: 1.0.1
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ba-hotel
@@ -101,6 +101,10 @@ button, .button, .btn, input[type=button], input[type=reset], input[type=submit]
 
 button:hover{
     cursor: pointer;
+}
+
+.btn:hover, button:hover {
+    color: #ffffff;
 }
 
 button:focus, a:focus {
@@ -1999,15 +2003,8 @@ input[type=radio]:checked:before {
     position: relative;
 }
 
-#search_form .input-group .search-date i, #search_form .input-group .search-date .lnr{
-    position: absolute;
-    right: 0;
-    top: 8px;
-}
-
 #search_form .input-group .search-date .search_date{
     order: 1;
-    width: 140px;
 }
 
 .search_form_color_bg #search_form{
@@ -2099,15 +2096,6 @@ input[type=radio]:checked:before {
 
 #search_form .input-group .add_input_field{
     position: relative;
-}
-
-.add_input_field .add_ids_title{
-    width: 200px;
-}
-
-.add_input_field .add_ids_list{
-    width: 100%;
-    max-height: 150px;
 }
 
 .add_input_field .add_ids_list .term_item{
@@ -2220,6 +2208,27 @@ input[type=radio]:checked:before {
        justify-content: center;
    }
     
+}
+
+.btn.btn-search-guests-change, .btn.btn-search-guests-change:focus {
+    background-color: transparent;
+    padding: 0;
+    line-height: inherit;
+    border: 1px solid;
+}
+
+.btn.search_guests_minus {
+    border-radius: 50% 0 0 50%;
+    border-right: none;
+}
+
+.btn.search_guests_plus {
+    border-radius: 0 50% 50% 0;
+    border-left: none;
+}
+
+.btn.btn-search-guests-change:hover{
+    color: #fff;
 }
 
 /*===================Date picker=========*/
@@ -3371,16 +3380,16 @@ body.single-to_book .collapse-body.block_active, body.single-to_book .site-conte
 }
 
 #booking_form .booking-date-block label{
-    flex-grow: 1;
+    flex-grow: 10;
 }
 
 #booking_form .booking-date-block .booking-date{
-    flex-grow: 10;
+    flex-grow: 1;
     position: relative;
     width: 150px;
 }
 
-#booking_form .booking-date-block .lnr{
+#booking_form .booking-date-block .lnr, #booking_form .booking-date-block .far, #booking_form .booking-date-block .fas{
     position: absolute;
     right: 15px;
     top: 12px;
