@@ -93,6 +93,9 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+= 2.0.4 =
+** Fixed menu issue
+
 = 2.0.3 =
 ** Fixed issues
 

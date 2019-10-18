@@ -39,7 +39,7 @@
                             <div class="menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-parallax' ); ?></div>
 
                             <?php
-                            $sections = of_get_option( 'parallax_section' );
+                            $sections = accesspress_parallax_get_plx_sections();
                             if ( (of_get_option( 'enable_parallax' ) == 1 && of_get_option( 'enable_parallax_nav' ) == 1) || (is_page_template( 'home-page.php' ) && of_get_option( 'enable_parallax_nav' ) == 1) ):
                                 ?>
                                 <ul class="nav single-page-nav">
