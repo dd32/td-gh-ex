@@ -30,3 +30,6 @@ Ajaira is a clean responsive blogging theme, Focused on content.
 2. Header Settings can be enable or disable Social Menu and Search bar
 3. Header Social options can set social site link
 4. Header Image. Here header image can be set
+
+= 1.0.4 = 
+- Bug fixed
