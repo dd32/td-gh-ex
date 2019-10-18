@@ -22,33 +22,33 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 <form name="checkout" method="post" class="checkout woocommerce-checkout"
       action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
-	<?php if ( $checkout->get_checkout_fields() ) : ?>
-
-		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-
         <div class="row" id="customer_details">
+            <?php if ( $checkout->get_checkout_fields() ) : ?>
             <div class="col-lg-6">
+                <?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
+                <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+                <?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
             </div>
-
+            <?php endif; ?>
             <div class="col-lg-6">
-				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+                <h3 id="order_review_heading"><?php echo esc_html__( 'Your order', 'attire' ); ?></h3>
+
+                <?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+
+                <div id="order_review" class="woocommerce-checkout-review-order">
+                    <?php do_action( 'woocommerce_checkout_order_review' ); ?>
+                </div>
+
+                <?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
             </div>
         </div>
 
-		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
-	<?php endif; ?>
 
-    <h3 id="order_review_heading"><?php echo esc_html__( 'Your order', 'attire' ); ?></h3>
 
-	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
-    <div id="order_review" class="woocommerce-checkout-review-order">
-		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-    </div>
 
-	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
 </form>
 

@@ -82,6 +82,10 @@ class Attire {
 		wp_register_style( 'attire-google-fonts', $cssimport, array(), null );
 		wp_enqueue_style( 'attire-google-fonts' );
 
+        wp_register_style( 'attire-woocommerce', ATTIRE_TEMPLATE_URL . '/css/woocommerce.css' );
+        if ( class_exists( 'WooCommerce' ) )
+            wp_enqueue_style( 'attire-woocommerce' );
+
 		wp_register_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array(), null, true );
 		wp_enqueue_script( 'popper' );
 

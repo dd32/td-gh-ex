@@ -10,3 +10,7 @@
 .bg-dark .navbar * {
     color: white !important;
 }
+
+#spnr .components-spinner{
+    float: none;
+}

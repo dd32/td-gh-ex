@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: https://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme. It was built with the Gutenberg editor in mind and offers hundreds of customisation options which allows to make a website look exactly the way you intended. Create any type of website, such as business agency, shop, corporate, education, restaurant, blog, portfolio, landing page and so on. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Try Demo: http://demo.wpattire.com. Attire is # WooCommerce Ready # Gutenberg Block Ready # RTL & Translation Ready # Also Compatible with all major page builders like elementor, divi, visual composer.
 Author: Shafayat
-Version: 1.2.6
+Version: 1.2.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, e-commerce, wide-blocks, block-styles, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -210,12 +210,11 @@ th {
 }
 
 blockquote {
-	border-left: 5px solid #00b182;
+	border: 1px solid rgba(0,0,0,0.1);
 	padding: 25px;
 	font-style: italic;
 	position: relative;
 	margin: 25px 0;
-	background: #ffffff linear-gradient(90deg, rgba(0, 177, 130, 0.19) 0%, #FFFFFF 30px);
 	box-shadow: 0 0 6px rgba(0,0,0,0.1);
 	border-radius: 0px;
 	font-size: 13pt;
@@ -1523,7 +1522,7 @@ article.post .card .card-image{
 	overflow: hidden;
 	background: rgba(48, 67, 138, 0.03) url("images/icons/blank-images.svg") center center no-repeat;
 	background-size: 32px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 article.post .card .card-image img{
 	height: 100%;
