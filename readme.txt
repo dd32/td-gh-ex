@@ -630,3 +630,6 @@ Fix: Chrome 77 Block Editor Meta Box display bug
 Fix: Issues with alignfull and alignwide - layout and interaction with other width settings
 New: Support to import Absolute Weaver .json settings file
 Tweak: File access error suggestions updated
+
+= Version 4.3.2.1 =
+Fix: typo in alignfull rule

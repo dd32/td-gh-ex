@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /* Version Information */
 
-define( 'WEAVERX_VERSION', '4.3.2' );
+define( 'WEAVERX_VERSION', '4.3.2.1' );
 define( 'WEAVERX_VERSION_ID', 100 );
 define( 'WEAVERX_THEMENAME', 'Weaver Xtreme' );
 define( 'WEAVERX_SETTINGS_VERSION', 'Settings:4.2' );
