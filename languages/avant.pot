@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-10-08 17:19+0200\n"
+"POT-Creation-Date: 2019-10-19 14:49+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -662,9 +662,10 @@ msgstr ""
 msgid "Add in the Post Modified Date"
 msgstr ""
 
-#: customizer/customizer-options.php:637 customizer/customizer-options.php:749
+#: customizer/customizer-options.php:637
 msgid ""
-"<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full Width"
+"<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full "
+"Width<br />- Add Post Author block below content"
 msgstr ""
 
 #: customizer/customizer-options.php:645 customizer/customizer-options.php:1339
@@ -713,6 +714,11 @@ msgstr ""
 
 #: customizer/customizer-options.php:735
 msgid "Content Border Radius"
+msgstr ""
+
+#: customizer/customizer-options.php:749
+msgid ""
+"<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full Width"
 msgstr ""
 
 #: customizer/customizer-options.php:757 customizer/customizer-options.php:1356

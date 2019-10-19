@@ -634,7 +634,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-blog-single',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full Width', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Set Featured Image banner to Full Width<br />- Add Post Author block below content', 'avant' )
     );
 
 

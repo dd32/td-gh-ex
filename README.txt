@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.28
+* Style tweaks/fixes
+* Updated the language .pot file
+Premium: Added Airbnb to Social Links
+Premium: Added Kickstarter to Social Links
+Premium: Added setting to show a single post author blocks
+Premium: Added settings to change the design of the author block
+
 #### 1.1.27
 * Style tweaks/fixes
 * Added fix for Mega Menu plugin to control the navigation area - Customize -> Plugin Support
