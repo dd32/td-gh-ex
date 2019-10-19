@@ -88,12 +88,11 @@
 		<div class="container navbar-container" >
 			<nav class="navbar navbar-default " role="navigation">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+					<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu" aria-controls="#menu" aria-expanded="false" aria-label="Toggle navigation">
 					 
 					  <span class="sr-only"><?php esc_html_e('Toggle navigation','enigma');?></span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
-					  <span class="icon-bar"></span>
+					  <span class="fas fa-bars"></span>
+
 					</button>
 				</div>
 				<div id="menu" class="collapse navbar-collapse ">	

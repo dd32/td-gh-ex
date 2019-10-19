@@ -74,6 +74,9 @@
 			'service_1_youtube'=>'',
 			'service_2_youtube'=>'',
 			'service_3_youtube'=>'',
+
+			'editor_home' => '1',
+			'editor_extra_text' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
 			
 			// Footer Call-Out
 			'fc_home'=>'1',			
@@ -539,8 +542,8 @@ $my_theme = wp_get_theme();
 				echo wp_kses_post($msg); ?>
 			</div>
 			<div class="hello-elementor-notice-icon"><h3><?php _e('Current WPORG Rating', 'enigma'); ?></h3>
-				<img src="<?php echo get_template_directory_uri() . '/images/admin-logo.png'; ?>" alt="Enigma Logo" />
-			</div>
+				<a target="_blank" href="https://wordpress.org/support/theme/enigma/reviews/?filter=5"><img src="<?php echo get_template_directory_uri() . '/images/admin-logo.png'; ?>" alt="Enigma Logo" />
+			</a></div>
 		</div>
 	</div>
 <?php } ?>

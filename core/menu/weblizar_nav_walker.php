@@ -18,7 +18,7 @@ class weblizar_nav_walker extends Walker_Nav_Menu {
 			$classes[] = 'dropdown';
 		}
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . ' "' : '';
 
 		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
@@ -32,7 +32,7 @@ class weblizar_nav_walker extends Walker_Nav_Menu {
 		//$attributes .= ($args->has_children) 	    ? ' data-toggle="dropdown" data-target="#" class="dropdown-toggle"' : '';
 			
 		$item_output = $args->before;
-		$item_output .= '<a'. $attributes .'>';
+		$item_output .= '<a class=""'. $attributes .'>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 		$item_output .= ($args->has_children) ? '<i class="fa fa-angle-down"></i></a>' : '</a>';
 		$item_output .= $args->after;

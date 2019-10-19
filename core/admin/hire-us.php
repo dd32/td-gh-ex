@@ -11,7 +11,7 @@ function theme_admin_info(){
 	// CSS
 	wp_enqueue_style('bootstrap',  get_stylesheet_directory_uri() .'/core/admin/bootstrap/css/bootstrap.css');
 	wp_enqueue_style('hire',  get_stylesheet_directory_uri() .'/core/admin/admin-themes.css');
-	wp_enqueue_style('fontawesome',  get_template_directory_uri() .'/css/font-awesome-5.8.1/css/all.min.css');
+	wp_enqueue_style('fontawesome',  get_template_directory_uri() .'/css/font-awesome-5.11.2/css/all.min.css');
 	//JS
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('bootstrap-js',get_stylesheet_directory_uri() .'/core/admin/bootstrap/js/bootstrap.js');

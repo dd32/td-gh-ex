@@ -3,7 +3,7 @@
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
 	//wp_enqueue_style('FA', WL_TEMPLATE_DIR_URI .'/css/font-awesome-4.7.0/css/font-awesome.min.css');
-	wp_enqueue_style('FA-5.8.1', WL_TEMPLATE_DIR_URI .'/css/font-awesome-5.8.1/css/all.min.css');
+	wp_enqueue_style('FA-5.11.2', WL_TEMPLATE_DIR_URI .'/css/font-awesome-5.11.2/css/all.min.css');
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
@@ -11,7 +11,6 @@ function weblizar_gl_customizer( $wp_customize ) {
 	$port['2'] = esc_url(get_template_directory_uri() ."/images/portfolio2.png");
 	$port['3'] = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
 	$port['4'] = esc_url(get_template_directory_uri() ."/images/portfolio4.png"); 
-	
 	
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.logo h1',
@@ -22,11 +21,11 @@ function weblizar_gl_customizer( $wp_customize ) {
 	
 	/* Genral section */
 	$wp_customize->add_panel( 'enigma_theme_option', array(
-    'title' => __( 'Theme Options','enigma' ),
-    'priority' => 1, // Mixed with top-level-section hierarchy.
-) );
+	    'title' => __( 'Theme Options','enigma' ),
+	    'priority' => 1, // Mixed with top-level-section hierarchy.
+	) );
 
-$wp_customize->add_section(
+	$wp_customize->add_section(
         'general_sec',
         array(
             'title' => __( 'Theme General Options','enigma' ),
@@ -37,7 +36,8 @@ $wp_customize->add_section(
 			
         )
     );
-		$wl_theme_options = weblizar_get_options();
+
+	$wl_theme_options = weblizar_get_options();
 	$wp_customize->add_setting(
 		'enigma_options[_frontpage]',
 		array(
@@ -1150,6 +1150,46 @@ $wp_customize->add_section(
         'section'    => 'blog_section',
         'settings'   => 'enigma_options[autoplay]',
     ) );
+
+   /* Extra Section Option */
+	$wp_customize->add_section('extra_section',array(
+	'title'      => __('Home Extra Section Options','enigma'),
+	'panel'      => 'enigma_theme_option',
+	'capability' => 'edit_theme_options',
+    'priority'   => 35
+	));
+	$wp_customize->add_setting(
+	'enigma_options[editor_home]',
+		array(
+		'default'           => esc_attr( $wl_theme_options['editor_home'] ),
+		'type'              => 'option',
+		'sanitize_callback' => 'enigma_sanitize_checkbox',
+		'capability'        => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( 'editor_home', array(
+		'label'    => __( 'Enable extra section on homepage.', 'enigma' ),
+		'type'     => 'checkbox',
+		'section'  => 'extra_section',
+		'settings' => 'enigma_options[editor_home]'
+	) );
+
+	$wp_customize->add_setting(
+	'extra_sec_desc',
+		array(
+		'default'           => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+		'type'              => 'theme_mod',
+		'sanitize_callback' => 'enigma_sanitize_text',
+		'capability'        => 'edit_theme_options'
+		)
+	);
+	$wp_customize->add_control( new One_Page_Editor( $wp_customize, 'extra_sec_desc', array(
+		'label'                      =>  __( 'Extra section content', 'enigma' ),
+		'active_callback'            => 'show_on_front',
+		'include_admin_print_footer' => true,
+		'section'                    => 'extra_section',
+		'settings'                   => 'extra_sec_desc'
+	) ) );
 	
 /* Font Family Section */
 	$wp_customize->add_section('font_section', array(
@@ -1651,16 +1691,17 @@ $wp_customize->add_section(
 				'capability'        => 'edit_theme_options',
         )
     );
-    $wp_customize->add_control(new enigma_Custom_sortable_Control($wp_customize,'home_reorder', array(
-		'label'=>__( 'Front Page Layout Option', 'enigma' ),
+    $wp_customize->add_control( new enigma_Custom_sortable_Control( $wp_customize,'home_reorder', array(
+		'label'   => __( 'Front Page Layout Option', 'enigma' ),
         'section' => 'Home_Page_Layout',
         'type'    => 'home-sortable',
         'choices' => array(
-            'services'      => __('Home Services', 'enigma'),
-            'portfolio'     => __('Home Portfolio', 'enigma'),
-            'blog'        => __('Home Blog', 'enigma'),
+            'services'  => __( 'Home Services', 'enigma' ),
+            'portfolio' => __( 'Home Portfolio', 'enigma' ),
+            'blog'      => __( 'Home Blog', 'enigma' ),
+            'editor'    => __( 'Home Extra Section', 'enigma' ),
         ),
-		'settings'=>'home_reorder',
+		'settings' => 'home_reorder',
     ))); 
 	
 	$wp_customize->add_setting('enigma_options[box_layout]',
@@ -1751,7 +1792,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Enigma_Customize
 			wp_enqueue_script( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'iconpicker-control', get_template_directory_uri() . '/iconpicker-control/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_style( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/css/fontawesome-iconpicker.min.css' );
-			wp_enqueue_style('font-awesome-latest', get_template_directory_uri(). '/css/font-awesome-latest/css/fontawesome-all.css');
+			wp_enqueue_style('font-awesome-latest', get_template_directory_uri(). '/css/font-awesome-5.11.2/css/all.min.css');
 		}
 		
 		

@@ -12,8 +12,9 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	</div>
 	<?php } ?>
 	<div class="container">	
-	<div class="row" id="enigma_blog_section">
-	<?php 	if ( have_posts()) : 			
+	<div id="enigma_blog_section">
+		
+		<?php 	if ( have_posts()) : 			
 			$posts_count =wp_count_posts()->publish;
 			if($wl_theme_options['blog_category']) {
 				$category = $wl_theme_options['blog_category'];
@@ -94,8 +95,9 @@ if($wl_theme_options['blog_title'] !='') { ?>
 			</div>
 			</div>
 		<?php endif; ?>
-		
+				
 	</div>
+				
 	<div class="enigma_carousel-navi">
 				<div id="port-next" class="enigma_carousel-prev" ><i class="fa fa-arrow-left"></i></div>
 				<div id="port-prev" class="enigma_carousel-next" ><i class="fa fa-arrow-right"></i></div>

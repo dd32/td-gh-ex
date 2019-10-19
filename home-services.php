@@ -1,18 +1,18 @@
 <!-- service section -->
 <?php $wl_theme_options = weblizar_get_options(); ?>
 <div class="enigma_service">
-<?php if($wl_theme_options['home_service_heading'] !='') { ?>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<div class="enigma_heading_title">
-				<h3><?php echo esc_attr($wl_theme_options['home_service_heading']); ?></h3>		
+	<?php if($wl_theme_options['home_service_heading'] !='') { ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="enigma_heading_title">
+					<h3><?php echo esc_attr($wl_theme_options['home_service_heading']); ?></h3>		
+				</div>
 			</div>
 		</div>
-	</div>
-</div>	
-<?php } ?>
-<div class="container">
+	</div>	
+	<?php } ?>
+	<div class="container">
 		<div class="row isotope" id="isotope-service-container">		
 			<?php for($i=1; $i<4; $i++ ) { ?>
 			<div class=" col-md-4 service">
