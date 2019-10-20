@@ -49,7 +49,7 @@ function best_hotel_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Best Hotel Pro', 'best-hotel' ),
 				'pro_text' => esc_html__( 'Buy Pro', 'best-hotel' ),
-				'pro_url'  => 'https://lumberthemes.com/downloads/best-hotel-pro/',
+				'pro_url'  => 'https://lumberthemes.com/best-hotel-pro/',
 				'priority' => 1,
 			)
 		)

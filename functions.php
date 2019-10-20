@@ -7,7 +7,7 @@
  * @package Best_Hotel
  */
 
-define( 'BEST_HOTEL_VERSION', '1.0.2' );
+define( 'BEST_HOTEL_VERSION', '1.0.3' );
 
 if ( ! function_exists( 'best_hotel_setup' ) ) :
 	/**
@@ -172,8 +172,8 @@ function best_hotel_scripts() {
 	}
 
 	wp_localize_script( 'best-hotel-navigation', 'bestHotelScreenReaderText', array(
-		'expandMain'   => __( 'Open the main menu', 'best-hotel' ),
-		'collapseMain' => __( 'Close the main menu', 'best-hotel' ),
+		'expandMain'    => __( 'Open the main menu', 'best-hotel' ),
+		'collapseMain'  => __( 'Close the main menu', 'best-hotel' ),
 		'expandChild'   => __( 'expand submenu', 'best-hotel' ),
 		'collapseChild' => __( 'collapse submenu', 'best-hotel' ),
 	) );
