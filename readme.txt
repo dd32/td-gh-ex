@@ -62,6 +62,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.28 - 20th October, 2019 =
+* Added Keyboard navigation support.
+* Minor Css fixes.
+
 = 1.0.27 - 5th July, 2019 =
 * Added new footer layout.
 

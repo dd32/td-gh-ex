@@ -129,6 +129,7 @@ function aglee_lite_scripts() {
 	wp_enqueue_style('aglee-lite-google-fonts-css', add_query_arg($aglee_lite_query_args, "//fonts.googleapis.com/css"));
 	wp_enqueue_style( 'aglee-lite-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'aglee-lite-respond', get_template_directory_uri() . '/css/responsive.css', array() );
+	wp_enqueue_style( 'aglee-lite-keybaord', get_template_directory_uri() . '/css/keyboard.css', array() );
 
 	if(is_rtl()){
 		wp_enqueue_style( 'aglee-lite-rtl', get_template_directory_uri() . '/css/rtl.css', array() );
