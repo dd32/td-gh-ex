@@ -303,6 +303,20 @@
 		border-radius: 3px;
 	}
 	
+	ul.payment-icon {
+    	text-align: center;
+	}
+	
+	.single-testimonial:nth-child(2) {
+		margin: 0px;
+		margin-bottom: 35px;
+	}
+	
+	.single-testimonial {
+		flex: auto;
+		margin: 0px 0px 35px;
+	}
+	
 }
 
 @media only screen and (max-width:400px) {

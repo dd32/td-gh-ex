@@ -4,7 +4,7 @@ Author: Nayra Themes
 Author URI: https://www.nayrathemes.com/
 Description: Arowana is a Fast and lightweight, easily customizable and multi-purpose WordPress theme with the main focus on smooth user experience to make your site stand out from the crowd. Arowana comes with everything you could ever need to build an amazing website. Arowana is the perfect theme for your business! View the demo of StartKit Pro https://www.nayrathemes.com/demo/pro/?theme=startkit
 Template: startkit
-Version: 1.0
+Version: 1.0.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: arowana
@@ -244,4 +244,45 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .arowana-btn .boxed-btn, .arowana-btn .slide-bg h4, .arowana-btn .dots-vertical .owl-dot.active .tp-bullet-inner, .arowana-btn .boxed-btn:hover, .arowana-btn .mc4wp-form input[type="submit"]:hover {
 	color: #fff;
     background: #ee591f !important;
+}
+
+/* Scroll Up */
+
+.scrollup {
+	z-index: 888;
+	-webkit-transition: .3s;
+	transition: .3s;
+	box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .5);
+}
+.scrollup:hover i {
+	-webkit-animation: slideUp 1s ease-in-out infinite;
+	animation: slideUp 1s ease-in-out infinite;
+}
+.scrollup i {
+    color: #fff;
+}
+@-webkit-keyframes slideUp {
+  0%,
+  100% {
+	-webkit-transform: translate(0, 10px);
+			transform: translate(0, 10px);
+  }
+
+  50% {
+	-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0%,
+  100% {
+	-webkit-transform: translate(0, 10px);
+			transform: translate(0, 10px);
+  }
+
+  50% {
+	-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+  }
 }

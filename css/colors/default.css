@@ -22,6 +22,7 @@
     background: #ee591f ;    
 }
 
+.breadcrumb-nav li a:hover,
 .boxed-btn:hover {
     color: #ee591f ;    
 }
@@ -165,8 +166,8 @@ a.book-now:hover {
 }
 
 .scrollup:hover {
-    color: #ee591f ;
     border-color: #ee591f ;
+	background: #ee591f;
 }
 
 /* Gallery */
@@ -338,7 +339,7 @@ a.page-numbers {
     Secondary Color
 =========================================*/
 /* Theme Reset css */
-button, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+button, input[type="button"]:hover, input[type="reset"]:hover{
     background: #242424!important;
 }
 p {

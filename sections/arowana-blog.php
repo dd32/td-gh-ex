@@ -28,10 +28,10 @@
 				}else{
 					$args = array( 'post_type' => 'post','post__not_in'=>get_option("sticky_posts")) ; 	
 				}
-					query_posts( $args );
-					if(query_posts( $args ))
+					 $arowana_wp_query = new WP_Query($args);
+					if($arowana_wp_query)
 					{	
-					while(have_posts()):the_post(); ?>
+					while($arowana_wp_query->have_posts()):$arowana_wp_query->the_post(); ?>
 					<div class="col-lg-4 col-md-6 col-sm-12 mb-lg-0 mb-4">
 						<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
 							<div class="post-thumb">
@@ -39,7 +39,7 @@
 									 the_post_thumbnail();
 								} ?>
 								<div class="post-overlay">
-									<a href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-link"></i></a>
+									<a href="<?php the_permalink(); ?>"><i class="fa fa-link"></i></a>
 								</div>
 							</div>
 							<div class="post-content">
@@ -54,7 +54,7 @@
 									the_content( 
 										sprintf( 
 											__( 'Read More', 'arowana' ), 
-											'<span class="screen-reader-text">  '.get_the_title().'</span>' 
+											'<span class="screen-reader-text">  '.esc_html(get_the_title()).'</span>' 
 										) 
 									);
 								?>

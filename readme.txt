@@ -1,11 +1,11 @@
 === Arowana ===
 
 Contributors: Nayrathemes
-Requires at least: WordPress 4.4
-Tested up to: WordPress 5.2.2
+Requires at least: 4.4
+Tested up to: 5.2.2
 Requires PHP: 5.6
-Stable tag: 1.0
-Version: 1.0
+Stable tag: 1.0.1
+Version: 1.0.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, portfolio, editor-style, grid-layout
@@ -13,8 +13,10 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, cus
 == Copyright ==
 
 Arowana WordPress Theme, Copyright 2019 Nayra Themes
-Arowana is distributed under the terms of the GNU GPL
+Arowana is distributed under the terms of the GPLv2 or later
 
+
+StartKit WordPress Theme, Copyright 2019 Nayra Themes. StartKit WordPress Theme is distributed under the terms of the GPLv2 or later
 
 == Description ==
 
@@ -108,6 +110,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 1.0.1
+* Theme Review Issues Resolved
 
 @version 1.0
 * Initial release
