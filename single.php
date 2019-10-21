@@ -15,7 +15,7 @@ get_header(); ?>
 <?php
     $single_post_layout = get_post_meta($post->ID,'apbasic_page_layout', true);
     $default_post_layout = ($single_post_layout == 'default_layout') ? $default_post_layout : $single_post_layout;
-    
+
     // Dynamically Generating Classes for #primary on the basis of page layout
     $content_class = '';
     switch($default_post_layout){
@@ -49,7 +49,9 @@ get_header(); ?>
             			<?php the_post_navigation(); ?>
                         </div>
                         
-                        <?php if($enable_comments_post == 1) : ?>
+                        <?php
+                        $enable_comments_post = isset($apbasic_settings['enable_comments_post'])? $apbasic_settings['enable_comments_post'] : '';
+                        if($enable_comments_post == 1) : ?>
             			<?php
             				// If comments are open or we have at least one comment, load up the comment template
             				if ( comments_open() || get_comments_number() ) :

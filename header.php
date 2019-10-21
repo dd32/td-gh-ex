@@ -11,7 +11,12 @@
     global $apbasic_options;
     $old_setting = get_option('apbasic_options', $apbasic_options);
     $apbasic_settings = wp_parse_args($old_setting, $apbasic_options);
-    $slider_type = $apbasic_settings['slider_type'];
+    $slider_type = isset($apbasic_settings['slider_type'])? $apbasic_settings['slider_type'] : '';
+    
+    $show_header = isset($apbasic_settings['show_header'])? $apbasic_settings['show_header'] : '';
+
+    $site_layout = isset($apbasic_settings['site_layout']) ? $apbasic_settings['site_layout'] : '';
+
     if ( is_array( $apbasic_settings ) && ! empty( $apbasic_settings )) {
         extract($apbasic_settings);
     }
@@ -44,6 +49,10 @@
 </head>
 
 <body <?php body_class($site_class); ?>>
+    <?php 
+    if ( function_exists( 'wp_body_open' ) ) {
+     wp_body_open();
+     }?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-basic' ); ?></a>
 
@@ -52,7 +61,6 @@
                 <div class="ap-container">
                     <div class="site-branding">
                         <?php if($show_header != 'disable') : ?>
-                            
                             <?php if($show_header == 'header_logo_only') : ?>
                                 <?php if(get_header_image()) : ?>
                                     <div class="header-logo-container">
@@ -86,7 +94,10 @@
                                 <div class="call-us"><?php echo esc_attr($header_text); ?></div>
                             <?php endif; ?>
                         <?php endif; ?>
-                        <?php if($show_social_links == 1 && is_active_sidebar('apbasic_header_social_links')) : ?>
+                        <?php  
+                        $show_social_links = isset($apbasic_settings['show_social_links'])? $apbasic_settings['show_social_links'] : '';
+                        
+                        if($show_social_links == 1 && is_active_sidebar('apbasic_header_social_links')) : ?>
                         <div class="social-icons-head">
                             <div class="social-container">
                                 <?php dynamic_sidebar('apbasic_header_social_links'); ?>
@@ -104,7 +115,9 @@
             			<button class="menu-toggle hide" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'accesspress-basic' ); ?></button>
             			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
             		</nav><!-- #site-navigation -->
-                    <?php if($show_search == 1) : ?>
+                    <?php
+                    $show_search = isset($apbasic_settings['show_search'])? $apbasic_settings['show_search'] : ''; 
+                    if($show_search == 1) : ?>
                         <div class="search-icon">
                         <i class="fa fa-search"></i>
                         <div class="ak-search">
@@ -130,7 +143,10 @@
 
 	<div id="content" class="site-content <?php echo esc_attr($slider_type) . '-slider'; ?>">
     <?php
-        if($show_slider == 'yes') :
+    $show_slider = isset($apbasic_settings['show_slider'])? $apbasic_settings['show_slider'] : '';
+    $show_slider_in_post = isset($apbasic_settings['show_slider_in_post'])? $apbasic_settings['show_slider_in_post'] : '';
+
+        if($show_slider == 1) :
             if($show_slider_in_post == 1) :
                  if(is_front_page() || is_single()) :
                  ?>

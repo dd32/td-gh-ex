@@ -9,10 +9,9 @@
  
  global $apbasic_options;
  $apbasic_settings = get_option('apbasic_options',$apbasic_options);
- $default_layout = $apbasic_settings['default_layout'];
- 
- $blog_display_type = $apbasic_settings['blog_post_display_type'];
- 
+ $default_layout = isset($apbasic_settings['default_layout'])? $apbasic_settings['default_layout'] : '';
+ $blog_display_type = isset($apbasic_settings['blog_display_type'])? $apbasic_settings['blog_display_type'] : '';
+
  $blog_display_class = '';
  switch($blog_display_type){
     case 'blog_image_large' :

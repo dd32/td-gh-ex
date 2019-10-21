@@ -107,8 +107,9 @@ function accesspress_basic_scripts() {
 	wp_enqueue_style( 'accesspress-basic-superfish-css', get_template_directory_uri() . '/css/superfish.css');
 	wp_enqueue_style( 'accesspress-basic-lato-font', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' );
 	wp_enqueue_style( 'accesspress-basic-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'accesspress-basic-keyboard-css', get_template_directory_uri() . '/css/keyboard.css');
 	wp_enqueue_style( 'accesspress-basic-responsive-css', get_template_directory_uri() . '/css/responsive.css');
-	
+
 
 	wp_enqueue_script( 'accesspress-basic-superfish', get_template_directory_uri() . '/js/superfish.js', array('jquery','hoverIntent'));
 	wp_enqueue_script( 'accesspress-basic-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
@@ -120,6 +121,13 @@ function accesspress_basic_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'accesspress_basic_scripts' );
+
+function acesspress_basic_admin_scripts()
+{
+	wp_enqueue_style( 'ap-customizer-style', get_template_directory_uri() . '/inc/admin-panel/css/customizer.css' );
+    wp_enqueue_script('of-media-uploader', get_template_directory_uri().'/inc/admin-panel/js/media-uploader.js', array('jquery'));
+}
+add_action( 'admin_enqueue_scripts', 'acesspress_basic_admin_scripts' );
 
 /**
  * Custom Image Sizes
@@ -174,11 +182,6 @@ require get_template_directory() . '/inc/apbasic-functions.php';
 require get_template_directory() . '/inc/apbasic-custom-metabox.php';
 
 /**
- * Load Theme Options
- */
-require get_template_directory() . '/inc/admin-panel/theme-options.php';
-
-/**
  * Load Accesspress Basic Widgets
  */
 require get_template_directory() . '/inc/apbasic-widgets.php';
@@ -191,7 +194,7 @@ require get_template_directory() . '/css/style.php';
 /**
  * Load Welcome Page
  */
-require get_template_directory() . '/welcome/welcome.php';
+require get_template_directory() . '/inc/welcome/welcome-config.php';
 
 /**
  * Load Woocommerce

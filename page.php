@@ -52,7 +52,9 @@ get_header(); ?>
                 
 				<?php get_template_part( 'content', 'page' ); ?>
                 
-                <?php if($enable_comments_page == 1) : ?>
+                <?php 
+                $enable_comments_page = isset($apbasic_settings['enable_comments_page'])? $apbasic_settings['enable_comments_page'] : '';
+                if($enable_comments_page == 1) : ?>
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || get_comments_number() ) :

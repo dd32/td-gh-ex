@@ -10,7 +10,7 @@
             /*echo "<pre>";
             print_r($apbasic_settings);
             echo "</pre>";*/
-	        $background_image = $apbasic_settings['background_image'];
+            $background_image = isset($apbasic_settings['background_image'])? $apbasic_settings['background_image'] : '';
 	        $bg_img = get_template_directory_uri().'/inc/admin-panel/images/'.$background_image.'.png';
 
 	        if( $background_image == 'pattern0' ) {
@@ -22,11 +22,9 @@
 	        		background: url({$bg_img});
 	        	}";
 	        }
-
 	        $template_color = isset( $apbasic_settings['template_color'] ) ? $apbasic_settings['template_color'] : '#dc3522';
 
 	        if( $template_color ) {
-	           
                $light_tpl_color = accesspress_basic_colour_brightness($template_color, 0.9);
                $dark_tpl_color = accesspress_basic_colour_brightness($template_color, -0.8);
                $tpl_rgb = accesspress_basic_hex2rgb($template_color);

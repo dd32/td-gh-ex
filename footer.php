@@ -9,7 +9,7 @@
  
  global $apbasic_options;
  $apbasic_settings = get_option('apbasic_options',$apbasic_options);
- $show_footer_featured_section = $apbasic_settings['show_footer_featured_section'];
+ $show_footer_featured_section = isset($apbasic_settings['show_footer_featured_section'])? $apbasic_settings['show_footer_featured_section'] : '';
 ?>
 
 	</div><!-- #content -->

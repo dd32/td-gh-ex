@@ -53,123 +53,104 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+= 3.1.8 =
+** Removed theme options and Added Customizer options
+** Fixed Minor bugs
+** Added Skip to Content link Options
+** Remove old welcome page and added new
+** Added new demo importer
+** Removed TGMPA
+** Fixed design issues
 
-Version 3.1.7
-===============
-* Added Styles for Guttenberg Compatible
-* Updates Minor CSS
+= 3.1.7 =
+** Added Styles for Guttenberg Compatible
+** Updates Minor CSS
 
-Version 3.1.6
-===============
-* Fixed minor dynamic color issues
+= 3.1.6 =
+** Fixed minor dynamic color issues
 
-Version 3.1.5
-===============
-* Added Template Color
+= 3.1.5 =
+** Added Template Color
 
-Version 3.1.4
-===============
-* Minor Bug Fixes
-* Made theme Translation Ready
+= 3.1.4 =
+** Minor Bug Fixes
+** Made theme Translation Ready
 
-Version 3.1.3
-===============
-* Fixed Security Issues
+= 3.1.3 =
+** Fixed Security Issues
 
-Version 3.1.2
-===============
-* Fixed Woocommerce Compatibility Issue in 3.3.0
+= 3.1.2 =
+** Fixed Woocommerce Compatibility Issue in 3.3.0
 
-Version 3.1.1
-===============
-* Updated bxSlider Plugin
-* Updated Fontawesome Fonts
+= 3.1.1 =
+** Updated bxSlider Plugin
+** Updated Fontawesome Fonts
 
-Version 3.0.9
-===============
-* Minor Bug Fixes
+= 3.0.9 =
+** Minor Bug Fixes
 
-Version 3.0.9
-===============
-* Added Welcome Page with demo import functionality
+= 3.0.9 =
+** Added Welcome Page with demo import functionality
 
-Version 3.0.7
-===============
-* Updated the fontawesome files.
-* Fixed Toggle Content not displaying the HTML markups.
+= 3.0.7 =
+** Updated the fontawesome files.
+** Fixed Toggle Content not displaying the HTML markups.
 
-Version 3.0.6
-===============
-* Fixed some escaping issues.
-* Updated Latest Font awesome
+= 3.0.6 =
+** Fixed some escaping issues.
+** Updated Latest Font awesome
 
-Version 3.0.5
-===============
-* Fixed Sidebar width issues in both sidebar layout
-* Used updated version of tgmpa plugin
+= 3.0.5 =
+** Fixed Sidebar width issues in both sidebar layout
+** Used updated version of tgmpa plugin
 
-Version 3.0.4
-===============
-* Added the option to set the excerpt length for the featured post section.
-* Fixed formatting of html tags in toggle widget.
-* Fixed navigation text overflow in single post page.
+= 3.0.4 =
+** Added the option to set the excerpt length for the featured post section.
+** Fixed formatting of html tags in toggle widget.
+** Fixed navigation text overflow in single post page.
 
-Version 3.0.3
-===============
-* Fixed issue of appearing shortcode tags in feature section in home page.
+= 3.0.3 =
+** Fixed issue of appearing shortcode tags in feature section in home page.
 
-Version 3.0.2
-===============
-* Fixed issue of appearing shortcode tags in feature section in home page.
-* Fixed issue of appearing shortcode tags in service section in home page.
+= 3.0.2 =
+** Fixed issue of appearing shortcode tags in feature section in home page.
+** Fixed issue of appearing shortcode tags in service section in home page.
 
-Version 3.0.1
-===============
-* Fixed Some theme tranlation issues
+= 3.0.1 =
+** Fixed Some theme tranlation issues
 
 Verion 2.0.9
-===============
-* Added Editor Style for editing TinyMCE visual editor styles.
+** Added Editor Style for editing TinyMCE visual editor styles.
 
-Version 2.0.7
-===============
-* Fixed the Responsive menu displaying in window resize issue.
+= 2.0.7 =
+** Fixed the Responsive menu displaying in window resize issue.
 
-Version 2.0.6
-===============
-* Added the feature to open the slider links in same widow or in new tab.
+= 2.0.6 =
+** Added the feature to open the slider links in same widow or in new tab.
 
-Version 2.0.5
-===============
-* Fixed Woocommerce Product Image not displaying problem.
+= 2.0.5 =
+** Fixed Woocommerce Product Image not displaying problem.
 
-Version 2.0.4
-===============
-* Translation errors fixed.
+= 2.0.4 =
+** Translation errors fixed.
 
-Version 2.0.3
-===============
-* Removed the option to set the blog page layout from blog page metabox option itself which created the confusion within the users to set the blog layout.
+= 2.0.3 =
+** Removed the option to set the blog page layout from blog page metabox option itself which created the confusion within the users to set the blog layout.
 
-Version 2.0.2
-===============
-* Fixed the option of unable to set the sidebar layout for the blog page.
+= 2.0.2 =
+** Fixed the option of unable to set the sidebar layout for the blog page.
 
-Version 2.0.1
-===============
-* Fixed the wrong page title showing up in blog page.
+= 2.0.1 =
+** Fixed the wrong page title showing up in blog page.
 
-Version 2.0.0
-===============
-* Slider displaying in blog page (assigned from settings > Reading) (Fixed)
-* Added Navigation feature in Post pages.
-* Prevented woocommerce incompatibility message from showing up (Fixed)
+= 2.0.0 =
+** Slider displaying in blog page (assigned from settings > Reading) (Fixed)
+** Added Navigation feature in Post pages.
+** Prevented woocommerce incompatibility message from showing up (Fixed)
 
-Version 1.1.9
-===============
-* Fixed Gallery Page Column Layout Issues
-* Fixed Span and H2 tags for slider caption title and descriptions. 
+= 1.1.9 =
+** Fixed Gallery Page Column Layout Issues
+** Fixed Span and H2 tags for slider caption title and descriptions. 
 
-Version 1.0
-===============
-* Submitted theme for review in http://wordpress.org
+= 1.0 =
+** Submitted theme for review in http://wordpress.org

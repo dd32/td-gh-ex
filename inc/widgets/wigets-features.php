@@ -89,17 +89,22 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
         $apbasic_settings = get_option('apbasic_options',$apbasic_options);
         $features_readmore_text = $apbasic_settings['features_readmore_text'];
 
-		$feature_posts = array_values($instance);
-        $feature_text_length = isset($instance['feature_text_length']) ? $instance['feature_text_length'] : 30;
+        $feature_post[] = $instance['feature_post_1'];
+        $feature_post[] = $instance['feature_post_2'];
+        $feature_post[] = $instance['feature_post_3'];
+        $feature_post[] = $instance['feature_post_4'];
+        $feature_post[] = $instance['feature_post_5'];
+        $feature_post[] = $instance['feature_post_6'];
 
-        if(!empty($feature_posts)) :
+        $feature_text_length = empty($instance['feature_text_length']) ? 30 : $instance['feature_text_length'];
+        if(!empty($feature_post)) :
             
             echo wp_kses_post($before_widget);
             
             $args = array(
                 'posts_per_page' => -1,
-                'post_type' => array('page'),
-                'post__in' => $feature_posts,
+                'post_type' => 'page',
+                'post__in' => $feature_post,
                 'orderby' => 'post__in'
             );
             
@@ -110,6 +115,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                 <div class="ap-container clearfix">
                 <div class="feature-post-wrap-block clearfix">
                 <?php
+
                 while($feat_query->have_posts()) : $feat_query->the_post();
                     $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'accesspress-basic-features-post-thumbnail');
                     $img_src = $img[0];
@@ -130,10 +136,12 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                         <a href="<?php the_permalink(); ?>">
                             <h2><?php echo get_the_title(); ?></h2>
                         </a>
+                        <?php if($feature_text_length){ ?>
                         <div class="feature-post-excerpt">
                             <?php $content = trim(strip_tags(strip_shortcodes( get_the_content() ))); ?>
                             <?php echo esc_html(wp_trim_words($content, $feature_text_length,'...')); ?>
                         </div>
+                        <?php } ?>
                         <a class="feat_readmore-button readmore-button" href="<?php the_permalink(); ?>">
                             <?php if(empty($features_readmore_text)) : ?>
                                 <?php esc_html_e('Read More...','accesspress-basic'); ?>
@@ -148,6 +156,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                     <?php
                     $count++;
                 endwhile;
+                wp_reset_postdata();
                 ?>
                 </div>
             </div>

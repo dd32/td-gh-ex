@@ -6,9 +6,12 @@
 <?php
     global $apbasic_options;
     $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-    $blog_layout = $apbasic_settings['blog_post_display_type'];
-    $enable_comments_post = $apbasic_settings['enable_comments_post'];
-    $blog_readmore_text = $apbasic_settings['blog_readmore_text'];
+    $blog_layout = isset($apbasic_settings['blog_post_display_type'])? $apbasic_settings['blog_post_display_type'] : '';
+    $enable_comments_post = isset($apbasic_settings['enable_comments_post'])? $apbasic_settings['enable_comments_post'] : '';
+    $blog_readmore_text = isset($apbasic_settings['blog_readmore_text'])? $apbasic_settings['blog_readmore_text'] : '';
+    
+    $image_size = 'full';
+    $no_image = 'no-blog-medium-image.png';
     
     switch($blog_layout){
         case 'blog_image_large' :
@@ -26,6 +29,9 @@
     
     $blog_img = wp_get_attachment_image_src(get_post_thumbnail_id(),$image_size);
     $blog_img_url = $blog_img[0];
+    $image_id   = get_post_thumbnail_id( get_the_ID() );
+    $image_alt  = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('category-post-list'); ?>>
 	<header class="entry-header">
@@ -37,7 +43,7 @@
             <?php if(has_post_thumbnail()) : ?>
                 <img src="<?php echo esc_url($blog_img_url); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
             <?php else : ?>
-                <img src="<?php echo esc_url(get_template_directory_uri().'/images/'.$no_image); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" />
+                <img src="<?php echo esc_url(get_template_directory_uri().'/images/'.$no_image); ?>" title="<?php the_title_attribute(); ?>" alt="<?php echo esc_attr('no image','accesspress-basic'); ?>" />
             <?php endif; ?>
         </a>
     </figure>

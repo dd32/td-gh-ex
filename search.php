@@ -6,7 +6,7 @@
  */
 global $apbasic_options;
 $apbasic_settings = get_option('apbasic_options',$apbasic_options);
-$search_results_for_text = esc_attr($apbasic_settings['search_results_for_text']);
+$search_results_for_text = isset($apbasic_settings['search_results_for_text'])? $apbasic_settings['search_results_for_text'] : '';
 get_header(); ?>
 
 	<section id="primary" class="content-area">

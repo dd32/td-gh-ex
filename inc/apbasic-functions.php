@@ -49,7 +49,9 @@
         
     	return $classes;
     }
-    if($apbasic_settings['blog_post_display_type'] == 'blog_image_alternate_medium'){
+    $blog_post_display_type = isset($apbasic_settings['blog_post_display_type'])? $apbasic_settings['blog_post_display_type'] : '';
+    if($blog_post_display_type == 'blog_image_alternate_medium'){
+
         add_filter( 'post_class', 'accesspress_basic_assign_alt_classes' );
     }
     //add_filter( 'body_class', 'category_id_class' );

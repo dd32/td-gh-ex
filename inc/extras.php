@@ -55,24 +55,13 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		return $title;
 	}
 	add_filter( 'wp_title', 'accesspress_basic_wp_title', 10, 2 );
-
-	/**
-	 * Title shim for sites older than WordPress 4.1.
-	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
-	 */
-	function accesspress_basic_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'accesspress_basic_render_title' );
 endif;
  
     function accesspress_basic_slidercb(){
         global $apbasic_options;
         $old_setting = get_option('apbasic_options', $apbasic_options);
+        // echo 'aa';
+        // var_dump($old_setting);
         $apbasic_settings = wp_parse_args($old_setting, $apbasic_options);
 
         $mode = $apbasic_settings['slider_mode'];
@@ -91,29 +80,32 @@ endif;
                 );
             endif;
         endfor;
-        //print_r($slides);
+        // echo '<pre>';
+        // print_r($slides);
+        // echo '</pre>';
+
         ?>
             <script type="text/javascript">
                 jQuery(document).ready(function ($){
                     $("#apbasic-slider").bxSlider({
                         pager: true,
                         auto: true,
-                        mode: '<?php echo $mode; ?>'
+                        mode: '<?php echo esc_attr($mode); ?>'
                     });
                 });
             </script>
             <?php if(!empty($slides)) : ?>
-                <div id="apbasic-slider" class="<?php echo $slider_type; ?>">
+                <div id="apbasic-slider" class="<?php echo esc_attr($slider_type); ?>">
                     <?php $slide_id = 1; ?>
                     <?php foreach($slides as $slide) : ?>
                         <?php if(!empty($slide['slide'])) : ?>
-                            <div class="slide slider-<?php echo $slide_id; ?>">
+                            <div class="slide slider-<?php echo esc_attr($slide_id); ?>">
                                 <div class="slider-image-container">
                                     <?php   
                                         $img_id = attachment_url_to_postid($slide['slide']);
                                         $img = wp_get_attachment_image_src($img_id,'full', false);
                                     ?>
-                                    <img src="<?php echo $img[0]; ?>" />
+                                    <img src="<?php echo esc_url($img[0]); ?>" />
                                 </div>
                                 <?php if(!empty($slide['caption_title']) || !empty($slide['caption_description'])) : ?>
                                 <div class="slider-caption-container">
@@ -124,7 +116,7 @@ endif;
                                         <div class="caption-description"><?php echo wp_kses_post($slide['caption_description']); ?></div>
                                     <?php endif; ?>
                                     <?php if(!empty($slide['readmore_text'])) : ?>
-                                        <a class="readmore-button slide_readmore-button" href="<?php echo esc_url($slide['readmore_link']); ?>" <?php if($ositab){echo 'target="_blank"';} ?>><i class="fa <?php echo $slide['readmore_icon']; ?>"></i><?php echo $slide['readmore_text']; ?></a>
+                                        <a class="readmore-button slide_readmore-button" href="<?php echo esc_url($slide['readmore_link']); ?>" <?php if($ositab){echo 'target="_blank"';} ?>><i class="fa <?php echo esc_attr($slide['readmore_icon']); ?>"></i><?php echo esc_html($slide['readmore_text']); ?></a>
                                     <?php endif; ?>
                                 </div>
                                 <?php endif; ?>
