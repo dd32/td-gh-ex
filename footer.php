@@ -45,7 +45,7 @@
         </aside>
     	<div class="copyright-wrapper">
             <div class="container">
-                <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Theme Design & Developed By','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
+                <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Copyright 2019 ','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
             </div>
             <div class="clear"></div>
         </div>

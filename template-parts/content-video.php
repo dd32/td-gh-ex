@@ -35,6 +35,6 @@
     <p><?php the_excerpt();?></p>
   </div>
   <div class="postbtn">
-    <a href="<?php the_permalink(); ?>"><?php esc_html_e('View More','automobile-car-dealer'); ?><span class="screen-reader-text"><?php esc_html_e( 'View More','automobile-car-dealer' );?></span></a>
+    <a class="read-more" href="<?php the_permalink(); ?>"><i class="fas fa-long-arrow-alt-right"></i><?php esc_html_e( 'VIEW MORE','automobile-car-dealer' ); ?><span class="screen-reader-text"><?php esc_html_e( 'VIEW MORE','automobile-car-dealer' );?></span></a>
   </div>
 </article>

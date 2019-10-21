@@ -450,6 +450,23 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'type'    => 'text',
 	));
 
+	//Global Color
+	$wp_customize->add_section('automobile_car_dealer_global_color', array(
+		'title'    => __('Theme Color Option', 'automobile-car-dealer'),
+		'priority' => 31,
+		'panel'    => 'automobile_car_dealer_panel_id',
+	));
+
+	$wp_customize->add_setting('automobile_car_dealer_first_color', array(
+		'default'           => '#dd3333',
+		'sanitize_callback' => 'sanitize_hex_color',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'automobile_car_dealer_first_color', array(
+		'label'    => __('Highlight Color', 'automobile-car-dealer'),
+		'section'  => 'automobile_car_dealer_global_color',
+		'settings' => 'automobile_car_dealer_first_color',
+	)));
+
 	//Social Icons(topbar)
 	$wp_customize->add_section('automobile_car_dealer_topbar_header',array(
 		'title'	=> __('Social Icon Section','automobile-car-dealer'),

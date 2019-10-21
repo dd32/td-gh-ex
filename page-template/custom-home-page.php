@@ -12,21 +12,21 @@ get_header(); ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
         <?php $slider_page = array();
-            for ( $count = 1; $count <= 4; $count++ ) {
-              $mod = intval( get_theme_mod( 'automobile_car_dealer_slider' . $count ));
-              if ( 'page-none-selected' != $mod ) {
-                $slider_page[] = $mod;
-              }
+          for ( $count = 1; $count <= 4; $count++ ) {
+            $mod = intval( get_theme_mod( 'automobile_car_dealer_slider' . $count ));
+            if ( 'page-none-selected' != $mod ) {
+              $slider_page[] = $mod;
             }
-            if( !empty($slider_page) ) :
-            $args = array(
-                'post_type' => 'page',
-                'post__in' => $slider_page,
-                'orderby' => 'post__in'
-            );
-            $query = new WP_Query( $args );
-            if ( $query->have_posts() ) :
-              $i = 1;
+          }
+          if( !empty($slider_page) ) :
+          $args = array(
+              'post_type' => 'page',
+              'post__in' => $slider_page,
+              'orderby' => 'post__in'
+          );
+          $query = new WP_Query( $args );
+          if ( $query->have_posts() ) :
+            $i = 1;
         ?>     
         <div class="carousel-inner" role="listbox">
             <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -103,7 +103,7 @@ get_header(); ?>
                     <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                   </div>
                   <div class="col-md-8 col-sm-8">
-                    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_category_excerpt_number','30')))); ?></p>
                   </div>
                 </div>

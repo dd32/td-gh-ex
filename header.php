@@ -88,7 +88,9 @@
           <div class="row m-0">
             <div class="col-lg-9 col-md-6 padding0">
               <div id="navbar-header" class="menu-brand">
-                <?php get_search_form();?>
+                <div class="responsive-search">
+                  <?php get_search_form();?>
+                </div>
                 <nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'automobile-car-dealer' ); ?>">
                   <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','automobile-car-dealer'); ?></span></a>
                   <?php 
@@ -127,7 +129,7 @@
               </div>
             </div>
             <?php if( get_theme_mod( 'automobile_car_dealer_button_link','' ) != '') { ?>
-              <div class="col-lg-3 col-md-6  appointbtn">
+              <div class="col-lg-3 col-md-12  appointbtn">
                 <a href="<?php echo esc_url( get_theme_mod('automobile_car_dealer_button_link','' ) ); ?>"><i class="fas fa-calendar-alt"></i><?php esc_html_e( 'MAKE AN APPOINTMENT','automobile-car-dealer' ); ?><span class="screen-reader-text"><?php esc_html_e( 'MAKE AN APPOINTMENT','automobile-car-dealer' );?></span></a>
               </div>
             <?php }?>

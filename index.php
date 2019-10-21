@@ -3,6 +3,7 @@
  * The template for displaying home page.
  * @package Automobile Car Dealer
  */
+
 get_header(); ?>
 
 <main role="main" id="skip_content">

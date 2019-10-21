@@ -20,7 +20,6 @@
 		<i class="fas fa-comments"></i><span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
 	</div>
 	<?php if(has_post_thumbnail()) { ?>
-		<hr>
 		<div class="feature-box">	
 			<?php the_post_thumbnail(); ?>
 		</div>

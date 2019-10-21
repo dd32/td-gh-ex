@@ -19,57 +19,69 @@ get_header(); ?>
 		    <?php }else if($layout_option == 'Three Columns'){ ?>
 		    	<div class="row">
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
-					<div class="content_box col-lg-6 col-md-6">
-						<?php while ( have_posts() ) : the_post();
-							get_template_part('template-parts/single-post');
-		            	endwhile; // end of the loop. ?>
+					<div class="col-lg-6 col-md-6">
+						<div class="content_box">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part('template-parts/single-post');
+			            	endwhile; // end of the loop. ?>
+			            </div>
 			       	</div>
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				</div>
 			<?php }else if($layout_option == 'Four Columns'){ ?>
 				<div class="row">
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
-					<div class="content_box col-lg-3 col-md-3">
-						<?php while ( have_posts() ) : the_post();
-							get_template_part('template-parts/single-post');
-			            endwhile; // end of the loop. ?>
+					<div class="col-lg-3 col-md-3">
+						<div class="content_box">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part('template-parts/single-post');
+				            endwhile; // end of the loop. ?>
+				        </div>
 			       	</div>
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				</div>
 			<?php }else if($layout_option == 'Grid Layout'){ ?>
 				<div class="row">
-					<div class="content_box col-lg-8 col-md-8">
-						<?php while ( have_posts() ) : the_post();
-							get_template_part('template-parts/single-post');
-			            endwhile; // end of the loop. ?>
+					<div class="col-lg-8 col-md-8">
+						<div class="content_box">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part('template-parts/single-post');
+				            endwhile; // end of the loop. ?>
+				        </div>
 			       	</div>
 					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				</div>
 		    <?php }else if($layout_option == 'Left Sidebar'){ ?>
 		   		<div class="row">
 		    		<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
-					<div class="content_box col-lg-8 col-md-8">
-						<?php while ( have_posts() ) : the_post();
-							get_template_part('template-parts/single-post');
-			            endwhile; // end of the loop. ?>
+					<div class="col-lg-8 col-md-8">
+						<div class="content_box">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part('template-parts/single-post');
+				            endwhile; // end of the loop. ?>
+				        </div>
 			       	</div>
 			    </div>
 		    <?php }else if($layout_option == 'Right Sidebar'){ ?>
 		    	<div class="row">
-			       	<div class="content_box col-lg-8 col-md-8">
-						<?php while ( have_posts() ) : the_post();
-							get_template_part('template-parts/single-post');
-			            endwhile; // end of the loop. ?>
+			       	<div class="col-lg-8 col-md-8">
+			       		<div class="content_box">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part('template-parts/single-post');
+				            endwhile; // end of the loop. ?>
+				        </div>
 			       	</div>
 					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 				</div>
 			<?php }else {?>
 				<div class="row">
-			       	<div class="content_box col-lg-8 col-md-8">
-						<?php while ( have_posts() ) : the_post();
-							get_template_part('template-parts/single-post');
-			            endwhile; // end of the loop. ?>
+			       	<div class="col-lg-8 col-md-8">
+			       		<div class="content_box">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part('template-parts/single-post');
+				            endwhile; // end of the loop. ?>
+				        </div>
 			       	</div>
 					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
 				</div>
