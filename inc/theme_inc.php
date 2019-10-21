@@ -5,12 +5,12 @@ function bb10_theme_options_items() {
 		array(
 			'id' => 'twitter_url',
 			'name' => __('Twitter URL.', 'bb10'),
-			'desc' => __('Enter your twitter url. For example: http://twitter.com/ylgod.', 'bb10'),
+			'desc' => __('Enter your twitter url. For example: https://twitter.com/ylgod.', 'bb10'),
 			'std'    => '',
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id'     => 'twitter_name',
@@ -20,17 +20,17 @@ function bb10_theme_options_items() {
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id' => 'weibo_url',
 			'name' => __('Sina Weibo URL.', 'bb10'),
-			'desc' => __('Enter your Sina Weibo url. For example: http://weibo.com/ylgod.', 'bb10'),
+			'desc' => __('Enter your Sina Weibo url. For example: https://weibo.com/ylgod.', 'bb10'),
 			'std'    => '',
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id'     => 'weibo_name',
@@ -40,7 +40,7 @@ function bb10_theme_options_items() {
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id' => 'email_url',
@@ -50,7 +50,7 @@ function bb10_theme_options_items() {
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id'     => 'email_name',
@@ -60,17 +60,17 @@ function bb10_theme_options_items() {
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id' => 'rss_url',
 			'name' => __('RSS URL.', 'bb10'),
-			'desc' => __('Enter your RSS url. For example: http://hjyl.org/feed.', 'bb10'),
+			'desc' => __('Enter your RSS url. For example: https://hjyl.org/feed.', 'bb10'),
 			'std'    => '',
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id'     => 'rss_name',
@@ -80,17 +80,17 @@ function bb10_theme_options_items() {
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id' => 'qrcode_url',
 			'name' => __('Qrcode Image URL.', 'bb10'),
-			'desc' => __('Enter your Qrcode Image url. For example: http://img.hjyl.org/uploads/2009/09/qrcode_for_gh_8b1a277c7cb7_430-300x300.jpg.', 'bb10'),
+			'desc' => __('Enter your Qrcode Image url. For example: https://img.hjyl.org/uploads/2009/09/qrcode_for_gh_8b1a277c7cb7_430-300x300.jpg.', 'bb10'),
 			'std'    => '',
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 		array(
 			'id'     => 'qrcode_name',
@@ -100,7 +100,7 @@ function bb10_theme_options_items() {
 			'hr'     => '',
 			'nTable' => '',
 			'nTitle' => '',
-			'type'   => ''
+			'type'   => 'text'
 		),
 	);
 	return $items;
@@ -114,26 +114,9 @@ function bb10_theme_options_init(){
 function bb10_theme_options_add_page() {
 	add_theme_page( __( 'Theme Options', 'bb10' ), __( 'Theme Options', 'bb10' ), 'edit_theme_options', 'theme_options', 'bb10_theme_options_do_page' );
 }
-function bb10_default_options() {
-	$options = get_option( 'bb10_theme_options' );
-	foreach ( bb10_theme_options_items() as $item ) {
-		if ( ! isset( $options[$item['id']] ) ) {
-			if ( !empty($item['std']) )
-				$options[$item['id']] = $item['std'];
-			else
-				$options[$item['id']] = '';
-		}
-	}
-	update_option( 'bb10_theme_options', $options );
-}
-add_action( 'init', 'bb10_default_options' );
 function bb10_theme_options_do_page() {
 	if ( ! isset( $_REQUEST['settings-updated'] ) )
 		$_REQUEST['settings-updated'] = false;
-	if( isset( $_REQUEST['action'])&&('reset' == $_REQUEST['action']) ) {
-		delete_option( 'bb10_theme_options' );
-		bb10_default_options();
-	}
 ?>
 	<div class="wrap hjyl_wrap">
 
@@ -152,7 +135,7 @@ function bb10_theme_options_do_page() {
 					<div class="postbox" id="sm_pnres">
 								<h3 class="hndle"><span><?php _e('Donation','bb10'); ?></span></h3>
 								<div class="inside" style="margin:0;padding-top:10px;background-color:#ffffe0;">
-										<?php printf(__('Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!','bb10'), '<a href="'.esc_url( __( 'http://hjyl.org/', 'bb10' ) ).'">HJYL</a>'); ?>
+										<?php printf(__('Created, Developed and maintained by %s . If you feel my work is useful and want to support the development of more free resources, you can donate me. Thank you very much!','bb10'), '<a href="'.esc_url( __( 'https://hjyl.org/', 'bb10' ) ).'">HJYL</a>'); ?>
 											<br /><br />
 											<table>
 											<tr>
@@ -166,7 +149,7 @@ function bb10_theme_options_do_page() {
 											</form>
 											</tr>
 											<tr>
-											<img src="<?php echo esc_url( __( 'http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000', 'bb10' ) ); ?>" alt="<?php _e('Alipay', 'bb10'); ?>" />
+											<img src="<?php echo esc_url( __( 'https://hilau.com/wp-content/uploads/2019/10/alipay.jpg', 'bb10' ) ); ?>" alt="<?php _e('Alipay', 'bb10'); ?>" />
 											</tr>
 											</table>
 								</div>
@@ -260,10 +243,6 @@ function bb10_theme_options_do_page() {
 						<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'bb10' ); ?>" />
 					</p>
 				</form>
-				<form method="post" style="position:relative;margin:0;padding:0;">
-					<input class="button" name="reset" type="submit" value="<?php _e('Reset All Settings','bb10'); ?>" onclick="return confirm('<?php _e('Click OK to reset. Any settings will be lost!', 'bb10'); ?>');" style="position:absolute;left:120px;top:-28px;" />
-					<input type="hidden" name="action" value="reset" />
-				</form>
 			</div>
 		</div>
 	</div>
@@ -272,9 +251,10 @@ function bb10_theme_options_do_page() {
 
 //	Sanitize and validate input. Accepts an array, return a sanitized array.
 function bb10_options_validate( $input ) {
+		
+		$str = array();
+		$input[$str] = sanitize_text_field( $input[$str] );
+	
 	// must be safe text with no HTML tags
-	$str = array('twitter_name','twitter_url','weibo_name','weibo_url','email_name','email_url','rss_name','rss_url','qrcode_name','qrcode_url');
-	$input[$str] = sanitize_text_field( $input[$str] );
-
 	return $input;
 }

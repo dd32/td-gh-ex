@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-04 23:09+0800\n"
-"PO-Revision-Date: 2018-02-04 23:10+0800\n"
+"POT-Creation-Date: 2019-10-21 01:47+0800\n"
+"PO-Revision-Date: 2019-10-21 01:47+0800\n"
 "Last-Translator: 皇家元林 <i@hjyl.org>\n"
 "Language-Team: hjyl.org <i@hjyl.org>\n"
 "Language: zh_CN\n"
@@ -13,63 +13,16 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../archive.php:7 ../inc/loop-attachment.php:11 ../inc/loop-gallery.php:12
-#: ../inc/loop-link.php:12 ../inc/loop.php:4
-msgid "Featured"
-msgstr "置顶"
-
-#: ../archive.php:27 ../inc/loop-attachment.php:49 ../inc/loop-status.php:15
-#: ../inc/loop.php:32 ../page.php:20
-msgid "Posted by"
-msgstr "作者"
-
-#: ../archive.php:30 ../inc/loop-attachment.php:52 ../inc/loop-status.php:28
-#: ../inc/loop.php:35
-msgid "Posted in"
-msgstr "分类"
-
-#: ../archive.php:34 ../comments.php:5 ../inc/loop-aside.php:16
-#: ../inc/loop-attachment.php:56 ../inc/loop-status.php:32 ../inc/loop.php:44
-msgid "Leave a reply"
-msgstr "回复"
-
-#: ../archive.php:34 ../inc/loop-attachment.php:56 ../inc/loop-status.php:32
-#: ../inc/loop.php:44
-msgid "<b>1</b>"
-msgstr "<b>1</b>"
-
-#: ../archive.php:34 ../inc/loop-attachment.php:56 ../inc/loop-status.php:32
-#: ../inc/loop.php:44
-msgid "<b>%</b>"
-msgstr "<b>%</b>"
-
-#: ../archive.php:37 ../functions.php:114 ../inc/loop-aside.php:37
-#: ../inc/loop-attachment.php:59 ../inc/loop-gallery.php:47
-#: ../inc/loop-link.php:34 ../inc/loop-quote.php:37 ../inc/loop-status.php:35
-#: ../inc/loop.php:46 ../page.php:27
-msgid "Edit"
-msgstr "编辑"
-
-#: ../archive.php:54 ../index.php:19
+#: ../archive.php:19 ../index.php:19
 msgid "&laquo; Previous page"
 msgstr "&laquo; 前一页"
 
-#: ../archive.php:54 ../index.php:19
+#: ../archive.php:19 ../index.php:19
 msgid "Next page &raquo;"
 msgstr "下一页 &raquo;"
-
-#: ../archive.php:64 ../inc/loop-none.php:3 ../page.php:38
-msgid "Nothing Found"
-msgstr "什么都没有"
-
-#: ../archive.php:68 ../inc/loop-none.php:7 ../page.php:42
-msgid ""
-"Apologies, but no results were found for the requested archive. Perhaps "
-"searching will help find a related post."
-msgstr "抱歉，这里没有你要找的，你可以试试搜搜。。"
 
 #: ../comments.php:2
 msgid ""
@@ -77,12 +30,20 @@ msgid ""
 msgstr "此文密码保护。键入你的密码才能看所有的评论。"
 
 #: ../comments.php:5
-msgid "<b>1</b> Reply"
-msgstr "<b>1</b>条评论"
+msgid " Leave a reply"
+msgstr " 回复"
 
 #: ../comments.php:5
-msgid "<b>%</b> Replies"
-msgstr "<b>%</b>条评论"
+msgid " 1 Comment "
+msgstr " 1条评论 "
+
+#: ../comments.php:5
+msgid " % Comments"
+msgstr " % 条评论"
+
+#: ../comments.php:5
+msgid " Comments Off"
+msgstr " 评论关闭"
 
 #: ../comments.php:9
 msgid "Previous"
@@ -92,28 +53,41 @@ msgstr "上一页"
 msgid "Next"
 msgstr "下一页"
 
-#: ../comments.php:17
+#: ../comments.php:14 ../comments.php:46
+msgid "(Toggle)"
+msgstr "(打开)"
+
+#: ../comments.php:15
+msgid "(Close)"
+msgstr "(关闭)"
+
+#: ../comments.php:46
+#, php-format
+msgid "Welcome <strong>%s</strong>"
+msgstr "欢迎回来 <strong>%s</strong>"
+
+#: ../comments.php:46
 msgid "Name"
 msgstr "名字"
 
-#: ../comments.php:17 ../comments.php:18
+#: ../comments.php:46 ../comments.php:47
 msgid "(required)"
 msgstr "(必填)"
 
-#: ../comments.php:18
+#: ../comments.php:47
 msgid "Email"
 msgstr "邮箱"
 
-#: ../comments.php:19
+#: ../comments.php:48
 msgid "Website"
 msgstr "网站"
 
-#: ../comments.php:24
+#: ../comments.php:53
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr "你必须 <a href=\"%s\">登录</a> 才能发布评论。"
 
-#: ../comments.php:25
+#: ../comments.php:54
 #, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
@@ -122,24 +96,24 @@ msgstr ""
 "<a href=\"%1$s\">%2$s</a>已登录。 <a href=\"%3$s\" title=\"登出账户\">退出？"
 "</a>"
 
-#: ../comments.php:30
+#: ../comments.php:61
 msgid "Leave a Reply"
 msgstr "发表评论"
 
-#: ../comments.php:31
+#: ../comments.php:62
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "回复 %s"
 
-#: ../comments.php:32
+#: ../comments.php:63
 msgid "Cancel reply"
 msgstr "取消回复"
 
-#: ../comments.php:33
+#: ../comments.php:64
 msgid "Post Comment"
 msgstr "发布评论"
 
-#: ../comments.php:41
+#: ../comments.php:72
 msgid "Pingbacks"
 msgstr "引用通告"
 
@@ -152,7 +126,7 @@ msgstr "CopyRight"
 msgid "%1$s Powered by %2$s"
 msgstr "%1$s 由 %2$s 强力驱动"
 
-#: ../footer.php:6
+#: ../footer.php:6 ../inc/theme_inc.php:138
 msgid "https://hjyl.org/"
 msgstr "https://hjyl.org/"
 
@@ -168,24 +142,16 @@ msgstr "主要导航"
 msgid "Mobile Navigation"
 msgstr "手机导航"
 
-#: ../functions.php:89
+#: ../functions.php:89 ../header.php:67
 #, php-format
 msgid "Untitled #%s"
 msgstr "无题 #%s"
 
-#: ../functions.php:113
-msgid "Before Refresh, you can"
-msgstr "刷新之前，你可以"
-
-#: ../functions.php:115
-msgid "Cancel Editing"
-msgstr "取消编辑"
-
-#: ../functions.php:116
+#: ../functions.php:119
 msgid "Wait a moment..."
 msgstr "请稍候..."
 
-#: ../functions.php:117
+#: ../functions.php:120
 msgid "Good Comment"
 msgstr "提交成功"
 
@@ -230,7 +196,7 @@ msgstr "分钟前"
 msgid "seconds ago"
 msgstr "秒前"
 
-#: ../functions.php:172 ../header.php:49
+#: ../functions.php:172 ../header.php:39
 msgid "Home"
 msgstr "首页"
 
@@ -247,114 +213,110 @@ msgid "Other"
 msgstr "其他页"
 
 #: ../header.php:49
-msgid "Location"
-msgstr "位置"
-
-#: ../header.php:53
 #, php-format
 msgid "Search Results for: %s"
 msgstr "%s的搜索结果"
 
-#: ../header.php:67
+#: ../header.php:71
 msgid "404 Error"
 msgstr "404错误"
 
-#: ../inc/bbComment.php:23 ../inc/bbComment.php:181
+#: ../header.php:73
 #, php-format
-msgid "%s "
-msgstr "%s "
+msgid "Author \"%s\" as followed"
+msgstr "以下是作者“%s”的文章"
 
-#: ../inc/bbComment.php:24 ../inc/bbComment.php:182 ../inc/loop-aside.php:13
+#: ../header.php:76
 #, php-format
-msgid "%s published"
-msgstr "%s 发布"
+msgid " - Page %s - "
+msgstr " - 第 %s 页 - "
 
-#: ../inc/bbComment.php:24
+#: ../inc/bbComment.php:30 ../inc/bbComment.php:94 ../inc/bbComment.php:95
 #, php-format
-msgid "<cite id=\"commentmeta\">%1$s</cite>"
-msgstr "<cite id=\"commentmeta\">%1$s</cite>"
+msgid "%s"
+msgstr "%s"
 
-#: ../inc/bbComment.php:66 ../inc/bbComment.php:79 ../inc/bbComment.php:82
-msgid "Invalid comment status."
-msgstr "评论状态错误."
-
-#: ../inc/bbComment.php:76
-msgid "Sorry, comments are closed for this item."
-msgstr "对不起，此文评论关闭."
-
-#: ../inc/bbComment.php:85
-msgid "Password Protected"
-msgstr "密码保护"
-
-#: ../inc/bbComment.php:112
-msgid "Sorry, you must be logged in to post a comment."
-msgstr "对不起，你必须登录之后才能发布评论."
-
-#: ../inc/bbComment.php:119
-msgid "Error: please fill the required fields (name, email)."
-msgstr "错误：请填写必填部分（名字，邮箱）."
-
-#: ../inc/bbComment.php:121
-msgid "Error: please enter a valid email address."
-msgstr "错误：请填写正确的邮箱地址."
-
-#: ../inc/bbComment.php:125
-msgid "Error: please type a comment."
-msgstr "错误：请填上一段评论."
-
-#: ../inc/bbComment.php:133
-msgid ""
-"Duplicate comment detected; it looks as though you&#8217;ve already said "
-"that!"
-msgstr "检查有重复评论；你好像刚刚评论过了！"
-
-#: ../inc/bbComment.php:142
-msgid "You are posting comments too quickly.  Slow down."
-msgstr "你评论太快了。淡定。"
-
-#: ../inc/bbComment.php:176
+#: ../inc/bbComment.php:89
 msgid "Your comment is awaiting moderation."
 msgstr "你的评论正在等待审核。"
 
-#: ../inc/bbComment.php:182
+#: ../inc/bbComment.php:95
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s 在 %2$s"
 
-#: ../inc/bbComment.php:182
-msgid "(Edit)"
-msgstr "（编辑）"
+#: ../inc/functions-svg.php:35
+msgid "Please define default parameters in the form of an array."
+msgstr "请定义默认数组的字符元素."
+
+#: ../inc/functions-svg.php:40
+msgid "Please define an SVG icon filename."
+msgstr "请定义一个SVG图标文件名."
+
+#: ../inc/loop-aside.php:13
+#, php-format
+msgid "%s published"
+msgstr "%s 发布"
 
 #: ../inc/loop-aside.php:13
 msgid "l Y-m-d"
 msgstr "l Y-m-d"
 
-#: ../inc/loop-aside.php:16
-msgid "<b>1 Comment</b>"
-msgstr "<b>1条评论</b>"
+#: ../inc/loop-aside.php:16 ../inc/loop-attachment.php:53
+#: ../inc/loop-status.php:20 ../inc/loop.php:46
+msgid "Leave a reply"
+msgstr "回复"
 
-#: ../inc/loop-aside.php:16
-msgid "<b>% Comments</b>"
-msgstr "<b>%条评论</b>"
+#: ../inc/loop-aside.php:16 ../inc/loop-attachment.php:53
+#: ../inc/loop-status.php:20 ../inc/loop.php:46
+msgid "<b>1</b>"
+msgstr "<b>1</b>"
 
-#: ../inc/loop-aside.php:25 ../inc/loop-attachment.php:42
-#: ../inc/loop-gallery.php:39 ../inc/loop-link.php:28 ../inc/loop-quote.php:31
-#: ../inc/loop-status.php:21 ../inc/loop.php:20 ../page.php:16
+#: ../inc/loop-aside.php:16 ../inc/loop-attachment.php:53
+#: ../inc/loop-status.php:20 ../inc/loop.php:46
+msgid "<b>%</b>"
+msgstr "<b>%</b>"
+
+#: ../inc/loop-aside.php:18 ../inc/loop-attachment.php:56
+#: ../inc/loop-gallery.php:55 ../inc/loop-link.php:42 ../inc/loop-quote.php:42
+#: ../inc/loop-status.php:22 ../inc/loop.php:48 ../page.php:27
+msgid "Edit"
+msgstr "编辑"
+
+#: ../inc/loop-aside.php:32 ../inc/loop-attachment.php:39
+#: ../inc/loop-gallery.php:44 ../inc/loop-link.php:33 ../inc/loop-quote.php:33
+#: ../inc/loop-status.php:25 ../inc/loop.php:21 ../page.php:16
 msgid "Pages:"
 msgstr "页面："
 
-#: ../inc/loop-attachment.php:35
+#: ../inc/loop-attachment.php:32
 msgid "Previous Image"
 msgstr "上一张图片"
 
-#: ../inc/loop-attachment.php:36
+#: ../inc/loop-attachment.php:33
 msgid "Next Image"
 msgstr "下一张图片"
 
-#: ../inc/loop-status.php:18 ../inc/loop.php:39
-#, php-format
-msgid "Last Updated %s"
-msgstr "最后更新于 %s"
+#: ../inc/loop-attachment.php:46 ../inc/loop-status.php:15 ../inc/loop.php:33
+#: ../page.php:20
+msgid "Posted by"
+msgstr "作者"
+
+#: ../inc/loop-attachment.php:49 ../inc/loop-gallery.php:52
+#: ../inc/loop-link.php:39 ../inc/loop-quote.php:39 ../inc/loop-status.php:32
+#: ../inc/loop.php:36
+msgid "Posted in"
+msgstr "分类"
+
+#: ../inc/loop-none.php:3 ../page.php:38
+msgid "Nothing Found"
+msgstr "什么都没有"
+
+#: ../inc/loop-none.php:7 ../page.php:42
+msgid ""
+"Apologies, but no results were found for the requested archive. Perhaps "
+"searching will help find a related post."
+msgstr "抱歉，这里没有你要找的，你可以试试搜搜。。"
 
 #: ../inc/loop-status.php:18
 msgid "Y-m-d H:i:s"
@@ -448,16 +410,16 @@ msgstr "输入你的二维码名称或其他描述."
 msgid "Theme Options"
 msgstr "主题设置"
 
-#: ../inc/theme_inc.php:147
+#: ../inc/theme_inc.php:130
 #, php-format
 msgid "%1$s Theme Options"
 msgstr "%1$s 主题设置"
 
-#: ../inc/theme_inc.php:153
+#: ../inc/theme_inc.php:136
 msgid "Donation"
 msgstr "捐助"
 
-#: ../inc/theme_inc.php:155
+#: ../inc/theme_inc.php:138
 #, php-format
 msgid ""
 "Created, Developed and maintained by %s . If you feel my work is useful and "
@@ -467,78 +429,129 @@ msgstr ""
 "本主题由%s开发和维护，如果你觉得还不错，并想支持开发更多免费资源，你可以给我"
 "捐助。非常感谢你的支持！"
 
-#: ../inc/theme_inc.php:155
-msgid "http://hjyl.org/"
-msgstr "http://hjyl.org/"
-
-#: ../inc/theme_inc.php:159
+#: ../inc/theme_inc.php:142
 msgid "https://www.paypal.com/cgi-bin/webscr"
 msgstr "https://www.paypal.com/cgi-bin/webscr"
 
-#: ../inc/theme_inc.php:165
+#: ../inc/theme_inc.php:148
 msgid "https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"
 msgstr "https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif"
 
-#: ../inc/theme_inc.php:169
-msgid "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
-msgstr "http://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
+#: ../inc/theme_inc.php:152
+msgid "https://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
+msgstr "https://t1.qpic.cn/mblogpic/bcd7926bbc4d4e03f384/2000"
 
-#: ../inc/theme_inc.php:169
+#: ../inc/theme_inc.php:152
 msgid "Alipay"
 msgstr "支付宝捐赠"
 
-#: ../inc/theme_inc.php:181
+#: ../inc/theme_inc.php:164
 msgid "General settings"
 msgstr "常规设置"
 
-#: ../inc/theme_inc.php:260
+#: ../inc/theme_inc.php:243
 msgid "Save Options"
 msgstr "保存设置"
-
-#: ../inc/theme_inc.php:264
-msgid "Reset All Settings"
-msgstr "重置所有设置"
-
-#: ../inc/theme_inc.php:264
-msgid "Click OK to reset. Any settings will be lost!"
-msgstr "点击‘确定’重置。所有设置将被丢失！"
-
-#: ../page.php:23
-#, php-format
-msgid " Last Updated %s "
-msgstr " 最后更新于 %s "
 
 #: ../searchform.php:2
 msgid "Search..."
 msgstr "搜索..."
 
-#: ../sidebar.php:62
+#: ../sidebar.php:39
 msgid "Archives"
 msgstr "归档"
 
-#: ../sidebar.php:69
+#: ../sidebar.php:46
 msgid "Meta"
 msgstr "管理"
 
-#: ../single.php:11
+#: ../single.php:8
 msgid "Previous: %title"
 msgstr "上一篇: %title"
 
-#: ../single.php:12
+#: ../single.php:9
 msgid "Next: %title"
 msgstr "下一篇: %title"
 
+#~ msgid "Featured"
+#~ msgstr "置顶"
+
+#~ msgid "<b>1</b> Reply"
+#~ msgstr "<b>1</b>条评论"
+
+#~ msgid "<b>%</b> Replies"
+#~ msgstr "<b>%</b>条评论"
+
+#~ msgid "Before Refresh, you can"
+#~ msgstr "刷新之前，你可以"
+
+#~ msgid "Cancel Editing"
+#~ msgstr "取消编辑"
+
+#~ msgid "Location"
+#~ msgstr "位置"
+
+#, php-format
+#~ msgid "<cite id=\"commentmeta\">%1$s</cite>"
+#~ msgstr "<cite id=\"commentmeta\">%1$s</cite>"
+
+#~ msgid "Invalid comment status."
+#~ msgstr "评论状态错误."
+
+#~ msgid "Sorry, comments are closed for this item."
+#~ msgstr "对不起，此文评论关闭."
+
+#~ msgid "Password Protected"
+#~ msgstr "密码保护"
+
+#~ msgid "Sorry, you must be logged in to post a comment."
+#~ msgstr "对不起，你必须登录之后才能发布评论."
+
+#~ msgid "Error: please fill the required fields (name, email)."
+#~ msgstr "错误：请填写必填部分（名字，邮箱）."
+
+#~ msgid "Error: please enter a valid email address."
+#~ msgstr "错误：请填写正确的邮箱地址."
+
+#~ msgid "Error: please type a comment."
+#~ msgstr "错误：请填上一段评论."
+
+#~ msgid ""
+#~ "Duplicate comment detected; it looks as though you&#8217;ve already said "
+#~ "that!"
+#~ msgstr "检查有重复评论；你好像刚刚评论过了！"
+
+#~ msgid "You are posting comments too quickly.  Slow down."
+#~ msgstr "你评论太快了。淡定。"
+
+#~ msgid "(Edit)"
+#~ msgstr "（编辑）"
+
+#~ msgid "<b>1 Comment</b>"
+#~ msgstr "<b>1条评论</b>"
+
+#~ msgid "<b>% Comments</b>"
+#~ msgstr "<b>%条评论</b>"
+
+#, php-format
+#~ msgid "Last Updated %s"
+#~ msgstr "最后更新于 %s"
+
+#~ msgid "http://hjyl.org/"
+#~ msgstr "http://hjyl.org/"
+
+#~ msgid "Reset All Settings"
+#~ msgstr "重置所有设置"
+
+#~ msgid "Click OK to reset. Any settings will be lost!"
+#~ msgstr "点击‘确定’重置。所有设置将被丢失！"
+
+#, php-format
+#~ msgid " Last Updated %s "
+#~ msgstr " 最后更新于 %s "
+
 #~ msgid "%s ago published"
 #~ msgstr "%s 前发布"
-
-#~ msgid "Welcome <strong>%s</strong>"
-#~ msgstr "欢迎回来 <strong>%s</strong>"
-
-#~ msgid "(Toggle)"
-#~ msgstr "(打开)"
-
-#~ msgid "(Close)"
-#~ msgstr "(关闭)"
 
 #~ msgid "<< Previous"
 #~ msgstr "上一页"
@@ -629,9 +642,6 @@ msgstr "下一篇: %title"
 
 #~ msgid "olo"
 #~ msgstr "olo"
-
-#~ msgid "Page %s"
-#~ msgstr "第 %s 页"
 
 #~ msgid "Show ICP No."
 #~ msgstr "显示备案号"
@@ -802,9 +812,6 @@ msgstr "下一篇: %title"
 
 #~ msgid "About Me"
 #~ msgstr "关于我"
-
-#~ msgid "Comments:"
-#~ msgstr "评论："
 
 #~ msgid "1 Reply"
 #~ msgstr "1条评论"

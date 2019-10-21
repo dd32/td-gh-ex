@@ -13,18 +13,18 @@
 					
 					<section class="hjylEntry">
 						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '<nav class="page-link"><span>' . __( 'Pages:', 'bb10' ) . '</span>', 'after' => '</nav>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<nav class="page-link">'.hjyl_get_svg( array( 'icon' => 'folder-open') ).'<span>' . __( 'Pages:', 'bb10' ) . '</span>', 'after' => '</nav>' ) ); ?>
 					</section>
 					
 					<footer>
-						<span class="fa fa-user author" title="<?php _e('Posted by', 'bb10'); ?>">
-							<?php the_author_posts_link(); ?>
+						<span class="author" title="<?php _e('Posted by', 'bb10'); ?>">
+							<?php echo hjyl_get_svg( array( 'icon' => 'user' ) ); the_author_posts_link(); ?>
 						</span>
-						<span class="fa fa-clock-o last-updated" title="<?php printf(__(' Last Updated %s ', 'bb10'),timeago(get_gmt_from_date(get_the_time('Y-m-d G:i:s')))); ?>">
-							<?php if ((get_the_modified_time('Y')*365+get_the_modified_time('z')) > (get_the_time('Y')*365+get_the_time('z'))) : ?><?php the_modified_time('Y-m-j h:s'); ?><?php else : ?><?php the_time('Y-m-j G:i:s'); ?><?php endif; ?>
+						<span class="last-updated" title="<?php if ((get_the_modified_time('Y')*365+get_the_modified_time('z')) > (get_the_time('Y')*365+get_the_time('z'))) : ?><?php the_modified_time('Y-m-j h:s'); ?><?php else : ?><?php the_time('Y-m-j G:i:s'); ?><?php endif; ?>">
+							<?php echo hjyl_get_svg( array( 'icon' => 'time' ) ); echo timeago(get_gmt_from_date(get_the_time('Y-m-d G:i:s'))); ?>
 						</span>
 
-						<?php edit_post_link( __( 'Edit', 'bb10' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'bb10' ), '<span class="edit-link">'.hjyl_get_svg( array( 'icon' => 'edit' ) ).'', '</span>' ); ?>
 					</footer>
 				</article><!-- #post-<?php the_ID(); ?> -->
 				

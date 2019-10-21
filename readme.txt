@@ -2,23 +2,24 @@
 Author:HJYL
 * by hjyl.org
 Requires at least: 4.9+
-Tested up to: 4.9.2
+Tested up to: 5.2.4
 
 == ABOUT bb10 ==
 For questions, comments or bug reports, please go to
-http://hjyl.org/wordpress-theme-bb10/
+https://hjyl.org/wordpress-theme-bb10/
 
-Bundled with the theme are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl-2.0.html) as followed:
+Bundled with the theme are licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-3.0.html) as followed:
 	All the images;
-	Font Awesome;
-	comments-ajax.js;
+	bb10-comments-ajax.js;
 	html5.js;
-	archives.js;
+	bb10-archives.js;
+	bb10.js;
+	svg-icons.svg;
 
 == Theme Options ==
 bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearance > Theme Options'
 
-* Theme options User Guide please visit here: http://hjyl.org/wordpress-theme-bb10/#bb10-theme-options
+* Theme options User Guide please visit here: https://hjyl.org/wordpress-theme-bb10/#bb10-theme-options
 
 == Language Package:  ==
 * Chinese (zh_CN): HJYL
@@ -36,3 +37,7 @@ bb10 has theme options page:Go into your Wordpress Admin, navigate to 'Appearanc
 2018.02.04	add post-formats and attachment template,
 			update mobile CSS
 2018.02.21	fix some bug, and change head-logo style.
+2019.10.21	replace fontawesome with SVG Sprite, and reduce superfluous code,
+			change default font family,
+			change the post formats css styles,
+			update the comment ajax code and fix some bugs.
