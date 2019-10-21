@@ -1,16 +1,15 @@
 /*
 Theme Name: Arowana
-Theme URI: https://www.nayrathemes.com/arowana-free/
 Author: Nayra Themes
 Author URI: https://www.nayrathemes.com/
-Description: Arowana is a child of the StartKit theme with lots of powerful features. Arowana is suited for any type of website and works with all popular plugins. Get 24x7 support with both the free and the Pro versions. Explore the Pro demo - https://www.nayrathemes.com/demo/pro/?theme=arowana
+Description: Arowana is a Fast and lightweight, easily customizable and multi-purpose WordPress theme with the main focus on smooth user experience to make your site stand out from the crowd. Arowana comes with everything you could ever need to build an amazing website. Arowana is the perfect theme for your business! View the demo of StartKit Pro https://www.nayrathemes.com/demo/pro/?theme=startkit
 Template: startkit
-Version: 1.0.19
+Version: 1.0.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: arowana
 Slug: arowana
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, portfolio, editor-style, grid-layout
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -174,17 +173,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     margin-left: 10px;
 }
 
-.blog-post .post-thumb {
-    float: none;
-}
-
-.slide-content h1 {
-    letter-spacing: 0.7px;
-}
-
-.slide-content p {
-    color: #fff;
-}
 .slide-content {
     margin-top: 50px;
     background-color: rgba(0, 0, 0, 0.6);
