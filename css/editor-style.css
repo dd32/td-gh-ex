@@ -147,7 +147,6 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     margin: 10px 0 20px;
 	width: 100%;
 }
-
 .gallery-columns-2 .gallery-item {
     width: 50%;
 	float: none;
@@ -155,7 +154,6 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     margin: 10px 0 20px;
 	padding: 0 10px;
 }
-
 .gallery-columns-3 .gallery-item {
     width: 33.33%;
 	float: none;
@@ -163,7 +161,6 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     margin: 10px 0 20px;
 	padding: 0 10px;
 }
-
 .gallery-columns-4 .gallery-item {
     width: 25%;
 	float: none;
@@ -171,7 +168,6 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     margin: 10px 0 20px;
 	padding: 0 10px;
 }
-
 .gallery-columns-5 .gallery-item {
     width: 20%;
 	float: none;
@@ -179,41 +175,33 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
     margin: 10px 0 20px;
 	padding: 0 10px;
 }
-
 .gallery-columns-6 .gallery-item {
     width: 13.6%;
 }
-
 .gallery-columns-7 .gallery-item {
     width: 12.25%;
     margin: 10px 1% 10px;
 }
-
 .gallery-columns-8 .gallery-item {
     width: 10.5%;
     margin: 10px 1% 10px;
 }
-
 .gallery-columns-9 .gallery-item {
     width: 9.11%;
     margin: 10px 1% 10px;
 }
-
 .gallery dl a {
     display: block;
 }
-
 .gallery dl a img {
     height: auto;
     margin: 0 auto;
 }
-
 .gallery .gallery-caption {
     font-size: 15px;
     line-height: 1.2;
     margin: 10px 0 0;
 }
-
 .gallery br+br {
     display: none;
 }
@@ -231,32 +219,26 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto;}
 	text-align: center;
 }
 
-
-
 /* Ul and ol lists*/
 ul { 
 	margin: 0 0 20px; 
 	padding: 0 0px 0px 20px; 
 }
-
 ol { 
 	margin: 0 0 20px; 
 	padding: 0 0px 0px 20px; 
 }
-
 ul li, ol li { 
 	margin: 0; 
 	padding: 6px 0; 
 	vertical-align: top; 
 	font-family: 'Open Sans', sans-serif;
 }
-
 ul li, ul li a, ol li, ol li a  { 
 	border: 0 none; 
 	color: #747474; 
 	font-family: 'Open Sans', sans-serif;
 }
-
 li > ul, li > ol, blockquote > ul, blockquote > ol {
     margin-left: 1.3333em;
 }
