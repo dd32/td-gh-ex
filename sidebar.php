@@ -29,30 +29,20 @@
 				if ($olo_theme_options['qrcode_name'] != '') esc_attr( $qrcode_name = $olo_theme_options['qrcode_name'] );
 			?>
 				<?php if ($twitter_url != '') { ?>
-					<a href="<?php echo $twitter_url; ?>" rel="bookmark" title="<?php echo $twitter_name; ?>"><span class="fa fa-twitter"></span></a>
-				<?php }else{ ?>
-					<span class="fa fa-twitter"></span>
+					<a href="<?php echo $twitter_url; ?>" rel="bookmark" title="<?php echo $twitter_name; ?>"><span><?php echo hjyl_get_svg( array( 'icon' => 'twitter') ); ?></span></a>
 				<?php } ?>
 				<?php if ($weibo_url != '') { ?>
-					<a href="<?php echo $weibo_url; ?>" rel="bookmark" title="<?php echo $weibo_name; ?>"><span class="fa fa-weibo"></span></a>
-				<?php }else{ ?>
-					<span class="fa fa-weibo"></span>
+					<a href="<?php echo $weibo_url; ?>" rel="bookmark" title="<?php echo $weibo_name; ?>"><span><?php echo hjyl_get_svg( array( 'icon' => 'weibo') ); ?></span></a>
 				<?php } ?>
 				<?php if ($email_url != '') { ?>
-					<a href="<?php echo $email_url; ?>" rel="bookmark" title="<?php echo $email_name; ?>"><span class="fa fa-envelope"></span></a>
-				<?php }else{ ?>
-					<span class="fa fa-envelope"></span>
+					<a href="<?php echo $email_url; ?>" rel="bookmark" title="<?php echo $email_name; ?>"><span><?php echo hjyl_get_svg( array( 'icon' => 'email') ); ?></span></a>
 				<?php } ?>
 				<?php if ($rss_url != '') { ?>
-					<a href="<?php echo $rss_url; ?>" rel="bookmark" title="<?php echo $rss_name; ?>"><span class="fa fa-rss"></span></a>
-				<?php }else{ ?>
-					<span class="fa fa-rss"></span>
+					<a href="<?php echo $rss_url; ?>" rel="bookmark" title="<?php echo $rss_name; ?>"><span><?php echo hjyl_get_svg( array( 'icon' => 'feed') ); ?></span></a>
 				<?php } ?>
 				<?php if ($qrcode_url != '') { ?>
-				<span class="fa fa-qrcode"></span>
-				<img src="<?php echo $qrcode_url; ?>" alt="<?php echo $qrcode_name; ?>" class="qrcodeimg" width="258" height="258" />
-				<?php }else{ ?>
-					<span class="fa fa-qrcode"></span>
+				<span class="qrcode"><?php echo hjyl_get_svg( array( 'icon' => 'qrcode') ); ?></span>
+				<img src="<?php echo $qrcode_url; ?>" width="258" height="258" alt="<?php echo $qrcode_name; ?>" class="qrcodeimg" />
 				<?php } ?>
 			</li>
 			<?php if (is_home()) { ?>

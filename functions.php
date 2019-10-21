@@ -28,6 +28,9 @@ function olo_setup(){
 	//editor style
 	add_editor_style('css/editor.css');
 	
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+	
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 	
@@ -42,18 +45,33 @@ function olo_setup(){
 	
 	// Add sidebar
 	add_action( 'widgets_init', 'olo_widgets' );
-	
-	//Add custom-header for logo
-	$olo_logo = array(
-		'default-image'          => TPLDIR.'/images/logo.gif',
-		'random-default'         => false,
-		'width'                  => 100,
-		'height'                 => 100,
-		'header-text'            => false,
-		'uploads'                => true,
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		)
 	);
-	add_theme_support( 'custom-header', $olo_logo );
-	
+
+	//Add support for core custom logo.
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'			=> 100,
+			'width'				=> 100,
+			'flex-width'		=> true,
+			'flex-height'		=> true,
+			'header-text'		=> array( 'site-title', 'site-description' ),
+		)
+	);
+	add_theme_support( "custom-header" );
 	// Add menu
 	register_nav_menus( array(
 		'primary' => __( 'Primary Navigation','olo'),
@@ -69,7 +87,7 @@ function hjyl_document_title_parts( $title ){
     if( is_home() && isset( $title['tagline'] ) ) unset( $title['tagline'] );
 	//no title
 	if(is_singular() && ""==get_the_title() ) { 
-		$title['title'] = sprintf(__('Untitled #%s', 'olo'),get_the_ID());
+		$title['title'] = sprintf(__('Untitled #%s', 'olo'),get_the_date('Y-m-d'));
 	};
     return $title;
 }
@@ -85,31 +103,32 @@ function olo_wp_list_pages(){
 // Enqueue style-file, if it exists.
 function olo_script() {
 	if( !IsMobile ){
-		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20180203', false);
+		wp_enqueue_style( 'olo', get_stylesheet_uri(),  array(), '20191021', false);
 	}else{
-		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20180203', false);
+		wp_enqueue_style('mobile', TPLDIR . '/css/mobile.css', array(), '20191021', false);
 	};
+	wp_enqueue_style( 'Play', '//fonts.googleapis.com/css?family=Play', array(), '20191021', 'all');
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20180203', true);
-	wp_enqueue_script( 'comments-ajax', TPLDIR . '/js/comments-ajax.js', array(), '20180203', true);
-	wp_localize_script('comments-ajax', 'ajaxL10n', array(
-		'edt1' => __('Before Refresh, you can','olo'),
-		'edt2' => __('Edit','olo'),
-		'cancel_edit' => __('Cancel Editing','olo'),
+	wp_enqueue_script( 'olo', TPLDIR . '/js/olo.js', array(), '20191021', true);
+	if ( is_singular() && comments_open() ) {
+	wp_enqueue_script( 'comment-reply' );
+	wp_enqueue_script( 'ajax-comment', TPLDIR . '/js/comments-ajax.js', array('jquery'), '20191022', true);
+	}
+	wp_localize_script( 'ajax-comment', 'ajaxcomment', array(
+		'ajax_url' => admin_url('admin-ajax.php'),
+		'order' => get_option('comment_order'),
+		'formpostion' => 'bottom',
 		'txt1' => __('Wait a moment...','olo'),
-		'txt3' => __('Good Comment','olo')
-	));
-	
-	if ( is_singular() && comments_open() ) wp_enqueue_script( 'comment-reply' );
-			
+		'txt2' => __('Good Comment','olo'),
+	) );	
 	if( is_page('archives') ){
-		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20180203', false);
-		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20180203', 'screen');
+		wp_enqueue_script( 'archives', TPLDIR . '/js/archives.js', array(), '20191021', false);
+		wp_enqueue_style( 'archives', TPLDIR . '/css/archives.css', array(), '20191021', 'screen');
 	};
 	if(is_404()){
-		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20180203', 'screen');
-		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20180203', 'screen');
-		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20180203', 'screen');
+		wp_enqueue_style( '4041', 'http://fonts.googleapis.com/css?family=Press+Start+2P', array(), '20191021', 'screen');
+		wp_enqueue_style( '4042', 'http://fonts.googleapis.com/css?family=Oxygen:700', array(), '20191021', 'screen');
+		wp_enqueue_style( '4043', TPLDIR . '/css/404.css', array(), '20191021', 'screen');
 	}
 }
 
@@ -141,6 +160,29 @@ function olo_copyright($content) {
 	return $content;
 }
 
+//time formats "xxxx ago"
+function timeago($ptime) {
+    $ptime = strtotime($ptime);
+    $etime = time() - $ptime;
+    if ($etime < 1) return __('Just Now','olo');
+    $interval = array(
+        12 * 30 * 24 * 60 * 60 => __('years ago', 'olo'),
+        30 * 24 * 60 * 60 => __('month ago', 'olo'),
+        7 * 24 * 60 * 60 => __('weeks ago', 'olo'),
+        24 * 60 * 60 => __('days ago', 'olo'),
+        60 * 60 => __('hours ago', 'olo'),
+        60 => __('minutes ago', 'olo'),
+        1 => __('seconds ago', 'olo')
+    );
+    foreach ($interval as $secs => $str) {
+        $d = $etime / $secs;
+        if ($d >= 1) {
+            $r = round($d);
+            return $r . $str;
+        }
+    };
+}
+
 // Add sidebar
 function olo_widgets(){
     register_sidebar(array(
@@ -169,8 +211,17 @@ function olo_widgets(){
     ));
 }
 
+//move comment field to bottom
+function move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+add_filter( 'comment_form_fields', 'move_comment_field_to_bottom' );
 //Load Custom parts
- require( dirname( __FILE__ ) . '/inc/theme_inc.php' );
- require( dirname( __FILE__ ) . '/inc/oloComment.php' );
+require( get_template_directory() . '/inc/theme_inc.php' );
+require( get_template_directory() . '/inc/oloComment.php' );
+require( get_template_directory() . '/inc/functions-svg.php');
  $olo_theme_options = get_option('olo_theme_options');
 ?>

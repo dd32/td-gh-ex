@@ -1,14 +1,14 @@
 == olo WordPress Theme==
 Author:HJYL
 * by hjyl.org
-Requires at least: 4.5+
-Tested up to: 4.9
+Requires at least: 5.0+
+Tested up to: 5.2.4
 
 == ABOUT olo ==
 For questions, comments or bug reports, please go to
 https://hjyl.org/wordpress-theme-olo/
 
-All the images bundled with the theme are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl-2.0.html)
+All the images bundled with the theme are licensed under the [GNU GPL](https://www.gnu.org/licenses/gpl-3.0.html)
 
 == Theme Options ==
 olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance > Theme Options'
@@ -41,3 +41,6 @@ olo has theme options page:Go into your Wordpress Admin, navigate to 'Appearance
 			change the whole site width, and some styles.
 2018.02.03	add floors for thread comment or not,
 			change some styles;
+2019.10.21	replace fontawesome with SVG Sprite, and reduce superfluous code,
+			change default font family,
+			update the comment ajax code and fix some bugs.

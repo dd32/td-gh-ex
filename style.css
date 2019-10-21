@@ -1,16 +1,15 @@
 ﻿/*
 Theme Name: olo
-Theme URI: http://hjyl.org/wordpress-theme-olo/
+Theme URI: https://hjyl.org/wordpress-theme-olo/
 Author: HJYL
-Author URI: http://hjyl.org/
+Author URI: https://hjyl.org/
 Description: Blue WordPress Theme based as HTML5 + CSS3.
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: olo
-Version: 4.1
+Version: 4.2
 Tags: two-columns, theme-options, custom-menu, right-sidebar, editor-style, sticky-post
 */
-@import url("css/font-awesome.min.css");
 /* =Reset CSS.= */
 *{
 	margin:0;
@@ -98,7 +97,7 @@ body{
 	text-align:center;
 	font-size:14px;
 	line-height:24px;
-	font-family:Microsoft YaHei,Consolas,Helvetica,Georgia,Arial,sans-serif,'宋体';
+	font-family: 'Play',"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,"WenQuanYi Micro Hei",Verdana,sans-serif;
 	color:#383838;
 	word-wrap: break-word;
 	position:relative;
@@ -329,7 +328,6 @@ pre{
 	width:auto;
 	line-height:16px;
 	overflow:auto;
-	font-family:"Courier New", clearSys;
 	background:none;
 	border:none;
 	padding:0 5px 16px;
@@ -366,7 +364,19 @@ pre{
 	z-index: 100000;
 	/* Above WP toolbar. */
 }
-
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+.hjylPosts footer .icon, .status-date .icon{
+	margin-right:5px;
+}
 
 /*header
 ---------------------*/
@@ -454,7 +464,9 @@ body > header{
 }
 #oloLogo h1 img{
 	overflow:hidden;
-	border-radius:100px;
+	border-radius:100%;
+	width:100px;
+	height:100px;
 	box-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 	border:5px solid #FFF;
 	margin:20px auto;
@@ -468,7 +480,7 @@ body > header{
 	position:relative;
 	text-align:right;
 }
-#olosearch .fa-search{
+#olosearch .svg-search{
 	position:absolute;
 	right:0;
 	top:5px;
@@ -562,7 +574,7 @@ body > header{
 #nav-single  p:before{
 	background:#12629C;
 	border: 3px solid #FFFFFF;
-	border-radius: 100px;
+	border-radius: 100%;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 	height: 9px;
 	margin: 53px 0 0 -16px;
@@ -721,7 +733,6 @@ body > header{
 #archives-content {
 	width: 80%;
 }
-
 /*oloWidget
 ---------------------*/
 #olo #oloContainer  #oloWidget{
@@ -810,9 +821,9 @@ body > header{
 	position:relative;
 }
 .twitter_rss .active:after{
-	content:" ";
-	width:15px;
-	height:15px;
+	content:"";
+	width:10px;
+	height:10px;
 	border-top:1px solid #DDDDDD;
 	border-right:1px solid #DDDDDD;
 	background:#FFF;
@@ -822,8 +833,8 @@ body > header{
 	-webkit-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	position:absolute;
-	top:20px;
-	right:0;
+	top:25px;
+	right:3px;
 	z-index:20;
 }
 .twitter_rss span:hover{
@@ -915,7 +926,6 @@ ul.children .comment-body{
 .comment_time,
 .reply a{
 	color:#CCC;
-	font-family:Microsoft YaHei,Arial,sans-serif;
 }
 .fn{
 	font-style:normal;
@@ -961,11 +971,13 @@ ul.children .comment-body{
 	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
 	box-shadow:			inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-#respond,
-.comment-welcomeback{
+#respond{
 	margin:0 10px 0 120px;
 	display:inline-block;
 	position:relative;
+}
+.comment-welcomeback{
+	margin-bottom:10px;
 }
 #reply-title:before{
 	margin:5px 0 0 -136px;
@@ -1012,7 +1024,6 @@ body  > footer{
 	margin:20px 0;
 	padding:20px 0 0;
 	color:#8E8E8E;
-	font-family: Consolas,Microsoft YaHei,sans-serif;
 }
 body > footer a{
 	color:#8E8E8E;
