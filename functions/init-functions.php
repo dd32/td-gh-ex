@@ -121,7 +121,22 @@ function hu_doing_customizer_ajax() {
 */
 function hu_is_customizing() {
     //checks if is customizing : two contexts, admin and front (preview frame)
-    return hu_is_customize_left_panel() || hu_is_customize_preview_frame() || hu_doing_customizer_ajax();
+    global $pagenow;
+    // the check on $pagenow does NOT work on multisite install @see https://github.com/presscustomizr/nimble-builder/issues/240
+    // That's why we also check with other global vars
+    // @see wp-includes/theme.php, _wp_customize_include()
+    $is_customize_php_page = ( is_admin() && 'customize.php' == basename( $_SERVER['PHP_SELF'] ) );
+    $is_customize_admin_page_one = (
+      $is_customize_php_page
+      ||
+      ( isset( $_REQUEST['wp_customize'] ) && 'on' == $_REQUEST['wp_customize'] )
+      ||
+      ( ! empty( $_GET['customize_changeset_uuid'] ) || ! empty( $_POST['customize_changeset_uuid'] ) )
+    );
+    $is_customize_admin_page_two = is_admin() && isset( $pagenow ) && 'customize.php' == $pagenow;
+
+    //checks if is customizing : two contexts, admin and front (preview frame)
+    return $is_customize_admin_page_one || $is_customize_admin_page_two || hu_is_customize_preview_frame() || hu_doing_customizer_ajax();
 }
 
 //@return boolean
@@ -324,8 +339,10 @@ function hu_is_home() {
 */
 if ( ! function_exists( 'hu_is_real_home') ) {
     function hu_is_real_home() {
+        // Warning : when show_on_front is a page, but no page_on_front has been picked yet, is_home() is true
+        // beware of https://github.com/presscustomizr/nimble-builder/issues/349
         return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || '__nothing__' == get_option( 'show_on_front' ) ) )
-        || ( 0 == get_option( 'page_on_front' ) && 'page' == get_option( 'show_on_front' ) )//<= this is the case when the user want to display a page on home but did not pick a page yet
+        || ( is_home() && 0 == get_option( 'page_on_front' ) && 'page' == get_option( 'show_on_front' ) )//<= this is the case when the user want to display a page on home but did not pick a page yet
         || is_front_page();
     }
 }
@@ -466,6 +483,42 @@ function hu_get_img_src( $img ) {
 
 
 /**
+* helper ensuring backward compatibility with the previous option system
+* @return (false|array) returns an array (url, width, height), or false, if no image is available.
+*/
+function hu_get_img_source( $img ) {
+    if ( ! $img )
+      return;
+
+    $_image_src     = '';
+    $_width         = false;
+    $_height        = false;
+    $_attachment_id = '';
+
+    //Get the img src
+    if ( is_numeric( $img ) ) {
+        $_attachment_id     = $img;
+        $_attachment_data   = apply_filters( "hu_attachment_img" , wp_get_attachment_image_src( $_attachment_id, 'full' ), $_attachment_id );
+        $_img_src           = $_attachment_data[0];
+        $_width             = ( isset($_attachment_data[1]) && $_attachment_data[1] > 1 ) ? $_attachment_data[1] : $_width;
+        $_height            = ( isset($_attachment_data[2]) && $_attachment_data[2] > 1 ) ? $_attachment_data[2] : $_height;
+    } else { //old treatment
+        //rebuild the img path : check if the full path is already saved in DB. If not, then rebuild it.
+        $upload_dir         = wp_upload_dir();
+        $_saved_path        = esc_url ( $img );
+        $_img_src           = ( false !== strpos( $_saved_path , '/wp-content/' ) ) ? $_saved_path : $upload_dir['baseurl'] . $_saved_path;
+        $width              = '';
+        $height             = '';
+    }
+
+    //return img source + make ssl compliant
+    $_img_src = is_ssl() ? str_replace('http://', 'https://', $_img_src) : $_img_src;
+    return $_img_src ? array( $_img_src, $_width, $_height ) : false;
+}
+
+
+
+/**
 * wrapper of hu_get_img_src specific for theme options
 * @return logo src string
 */
@@ -477,6 +530,22 @@ function hu_get_img_src_from_option( $option_name ) {
     $_src      = hu_get_img_src( $_img_option );
     //hook
     return apply_filters( "hu_img_src_from_option" , $_src, $option_name ) ;
+}
+
+
+/**
+* wrapper of hu_get_img_source specific for theme options
+* @return (false|array) returns an array (url, width, height), or false, if no image is available.
+*/
+function hu_get_img_source_from_option( $option_name ) {
+    $_img_option    = esc_attr( hu_get_option( $option_name ) );
+    if ( ! $_img_option )
+      $_source = false;
+
+    $_source      = hu_get_img_source( $_img_option );
+
+    //hook
+    return apply_filters( "hu_img_source_from_option" , $_source, $option_name ) ;
 }
 
 
@@ -542,3 +611,74 @@ function hu_is_comment_icon_displayed_on_grid_item_thumbnails() {
     }
     return comments_open() && hu_is_checked( 'comment-count') && $are_comments_contextually_enabled;
 }
+
+// @return string
+function hu_is_full_nimble_tmpl() {
+  $bool = false;
+  if ( function_exists('Nimble\sek_get_locale_template') ) {
+    $tmpl_name = \Nimble\sek_get_locale_template();
+    $tmpl_name = ( !empty( $tmpl_name ) && is_string( $tmpl_name ) ) ? basename( $tmpl_name ) : '';
+    // kept for retro-compat.
+    // since Nimble Builder v1.4.0, the 'nimble_full_tmpl_ghf.php' has been deprecated
+    $bool = 'nimble_full_tmpl_ghf.php' === $tmpl_name;
+
+    // "is full Nimble template" when header, footer and content use Nimble templates.
+    if ( function_exists('Nimble\sek_page_uses_nimble_header_footer') ) {
+        $bool = ( 'nimble_template.php' === $tmpl_name || 'nimble-tmpl.php' === $tmpl_name ) && Nimble\sek_page_uses_nimble_header_footer();
+    }
+  }
+  return $bool;
+}
+
+
+/**
+* Check whether a category exists.
+* (wp category_exists isn't available in pre_get_posts)
+*
+* @see term_exists()
+*
+* @param int $cat_id.
+* @return bool
+*/
+function hu_category_id_exists( $cat_id ) {
+    return term_exists( (int) $cat_id, 'category' );
+}
+
+// @return bool
+function hu_is_pro() {
+    return ( defined( 'HU_IS_PRO' ) && HU_IS_PRO ) || ( defined('HU_IS_PRO_ADDONS') && HU_IS_PRO_ADDONS );
+}
+
+/* ------------------------------------------------------------------------- *
+ * Template tags parsing
+/* ------------------------------------------------------------------------- */
+function hu_get_year() {
+    return esc_attr( date('Y') );
+}
+
+function hu_find_pattern_match($matches) {
+    $replace_values = array(
+        'home_url' => 'home_url',
+        'year' => 'hu_get_year',
+        'site_title' => 'get_bloginfo'
+    );
+
+    if ( array_key_exists( $matches[1], $replace_values ) ) {
+      $dyn_content = $replace_values[$matches[1]];
+      if ( function_exists( $dyn_content ) ) {
+        return call_user_func( $dyn_content ); //$dyn_content();//<= @todo handle the case when the callback is a method
+      } else if ( is_string($dyn_content) ) {
+        return $dyn_content;
+      } else {
+        return null;
+      }
+    }
+    return null;
+}
+// fired @filter 'hu_parse_template_tags'
+function hu_parse_template_tags( $val ) {
+    //the pattern could also be '!\{\{(\w+)\}\}!', but adding \s? allows us to allow spaces around the term inside curly braces
+    //see https://stackoverflow.com/questions/959017/php-regex-templating-find-all-occurrences-of-var#comment71815465_959026
+    return is_string( $val ) ? preg_replace_callback( '!\{\{\s?(\w+)\s?\}\}!', 'hu_find_pattern_match', $val) : $val;
+}
+add_filter( 'hu_parse_template_tags', 'hu_parse_template_tags' );
