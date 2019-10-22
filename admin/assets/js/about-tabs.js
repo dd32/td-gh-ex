@@ -25,4 +25,14 @@ jQuery(document).ready(function() {
          $tab.css('min-height',$newheight);
      }
 
+     jQuery(".quality-custom-class").click(function(event){
+       event.preventDefault();
+       jQuery('.quality-nav-tabs li a[href="#recommended_actions"]').click();
+    });
+
+     jQuery(".quality-changelog-class").click(function(event){
+       event.preventDefault();
+       jQuery('.quality-nav-tabs li a[href="#changelog"]').click();
+    });
+
 });

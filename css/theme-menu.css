@@ -42,7 +42,7 @@
 }
 @media (min-width: 768px){
 	.navbar-custom .navbar-brand {
-		padding: 26px 30px 26px 0px;
+		padding: 26px 10px 26px 0px;
 	}
 }
 .navbar-custom .navbar-nav li { margin: 0px 10px; padding: 0; }

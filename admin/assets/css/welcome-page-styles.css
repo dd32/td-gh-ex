@@ -70,11 +70,11 @@
 	width: 100%;
 }
 
-.tab-content {
+/*.tab-content {
     border: 1px solid #ccc;
     border-top: none;
     padding: 20px;
-}
+}*/
 
 .col{
 	width: 32%;
@@ -87,8 +87,8 @@
 }
 
 .quality-wrap .action-list .action {
-    background-color: #FFF;
-    padding: 20px;
+    /*background-color: #FFF;
+    padding: 20px;*/
     margin-bottom: 20px;
 }
 

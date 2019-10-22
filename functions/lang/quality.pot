@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2019-08-21 18:59+0530\n"
+"POT-Creation-Date: 2019-10-22 17:23+0530\n"
 "PO-Revision-Date: 2019-04-09 19:27+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,57 +21,57 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:8
+#: 404.php:9
 msgid "4"
 msgstr ""
 
-#: 404.php:9
+#: 404.php:10
 msgid "Oops! Page not found"
 msgstr ""
 
-#: 404.php:10
+#: 404.php:11
 msgid "We are sorry, but the page you are looking for does not exist."
 msgstr ""
 
-#: 404.php:12
+#: 404.php:13
 msgid "Back to Homepage"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:76 admin/inc/include-companion.php:42
+#: admin/inc/class-webriti-about-page.php:78 admin/inc/include-companion.php:42
 #: admin/inc/plugin-include-control.php:40
 msgid "Installing"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:77 admin/inc/include-companion.php:43
+#: admin/inc/class-webriti-about-page.php:79 admin/inc/include-companion.php:43
 #: admin/inc/plugin-include-control.php:41
 #: functions/customizer-notify/quality-customizer-notify.php:111
 msgid "Activating"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:78 admin/inc/include-companion.php:44
+#: admin/inc/class-webriti-about-page.php:80 admin/inc/include-companion.php:44
 #: admin/inc/plugin-include-control.php:42
 msgid "Error"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:117
+#: admin/inc/class-webriti-about-page.php:119
 msgid "View Theme Info"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:127
+#: admin/inc/class-webriti-about-page.php:129
 msgid "About Quality Theme"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:128
+#: admin/inc/class-webriti-about-page.php:130
 #, php-format
 msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:143
+#: admin/inc/class-webriti-about-page.php:145
 #, php-format
 msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:145
+#: admin/inc/class-webriti-about-page.php:147
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Webriti's Quality WordPress theme. To take "
@@ -79,72 +79,84 @@ msgid ""
 "page%s."
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:146
+#: admin/inc/class-webriti-about-page.php:148
 msgid "Get started with Quality"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:277
-#: admin/tab-pages/getting-started.php:23
+#: admin/inc/class-webriti-about-page.php:290
+msgid "See changelog below:"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:347
 msgid "Getting Started"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:282
+#: admin/inc/class-webriti-about-page.php:352
 #: functions/customizer/customizer_recommended_plugin.php:16
 msgid "Recommended Actions"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:290
+#: admin/inc/class-webriti-about-page.php:360
 msgid "Why Upgrade to PRO?"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:297
+#: admin/inc/class-webriti-about-page.php:367
 msgid "Free vs Pro"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:303
+#: admin/inc/class-webriti-about-page.php:373
+msgid "Support"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:379 admin/tab-pages/support.php:28
+#: admin/tab-pages/support.php:30
+msgid "Changelog"
+msgstr ""
+
+#: admin/inc/class-webriti-about-page.php:385
 msgid "Child Themes"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:379
+#: admin/inc/class-webriti-about-page.php:463
 #, php-format
 msgid "Install %s Now"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:381
+#: admin/inc/class-webriti-about-page.php:465
 #: admin/inc/include-companion.php:82
 msgid "Install & Activate"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:398
+#: admin/inc/class-webriti-about-page.php:482
 #, php-format
 msgid "Activate %s Now"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:400
+#: admin/inc/class-webriti-about-page.php:484
 #: functions/customizer/customizer_recommended_plugin.php:19
 msgid "Activate"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:403
+#: admin/inc/class-webriti-about-page.php:487
 msgid "Active"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:524
+#: admin/inc/class-webriti-about-page.php:608
 #: admin/inc/include-companion.php:81 admin/inc/include-companion.php:98
 msgid "Webriti Companion"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:526
+#: admin/inc/class-webriti-about-page.php:610
 msgid ""
 "It is highly recommended that you install the Webriti Companion plugin to "
 "have access to the advance Frontpage sections and other theme features"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:530
+#: admin/inc/class-webriti-about-page.php:614
 msgid "Contact Form 7"
 msgstr ""
 
-#: admin/inc/class-webriti-about-page.php:532
+#: admin/inc/class-webriti-about-page.php:616
 msgid ""
 "it is recommended that you install the Contact Form 7 plugin to show contact "
 "form on pages"
@@ -450,66 +462,92 @@ msgstr ""
 msgid "Get Quality PRO Now!"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:13
-msgid "About the Quality theme"
+#: admin/tab-pages/getting-started.php:15
+msgid "Recommended Plugins"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:19
+#: admin/tab-pages/getting-started.php:18
 msgid ""
-"This is a Business theme, ideal for creating corporate and business "
-"websites. The premium version has tons of features: the Homepage has a "
-"number of sections where you can feature unlimited sliders, your portfolios, "
-"user reviews, latest news, services, calls to action and much more. Each "
-"section in the HomePage template is carefully designed to fit to all "
-"business requirements."
+"To take full advanctage of the theme features you need to install "
+"recommended plugins."
 msgstr ""
 
 #: admin/tab-pages/getting-started.php:21
+msgid "Click here"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:26
+msgid "Start Customizing"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:29
+msgid "After activating recommended plugins , now you can start customization."
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:32
+msgid "Go to Customizer"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:37
+#: admin/tab-pages/getting-started.php:43 admin/tab-pages/support.php:20
+msgid "Documentation"
+msgstr ""
+
+#: admin/tab-pages/getting-started.php:40
 msgid ""
-"You can use this theme for any type of activity. Quality is compatible with "
-"popular plugins like WPML and Polylang, and has predefined versions of a "
-"Contact page, a Services page, Portfolio columned layout pages, About Us and "
-"Blog layout pages, to help you create an effective and impactful web "
-"presence."
+"Browse the documention for the detailed information regarding this theme."
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:27
-msgid ""
-"Install and activate the Webriti Companion plugin to take full advantage of "
-"all the features this theme has to offer. Go to Customize and install the "
-"Webriti Companion plugin."
-msgstr ""
-
-#: admin/tab-pages/getting-started.php:30
-msgid "Go to the Customizer"
-msgstr ""
-
-#: admin/tab-pages/getting-started.php:36
+#: admin/tab-pages/getting-started.php:49
 msgid "Quality Theme"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:43
+#: admin/tab-pages/getting-started.php:55
 msgid "Useful Links"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:50
+#: admin/tab-pages/getting-started.php:61
 msgid "Lite Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:54
+#: admin/tab-pages/getting-started.php:65
 msgid "PRO Demo"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:65
+#: admin/tab-pages/getting-started.php:71
 msgid "Your feedback is valuable to us"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:68
-msgid "Premium Theme Support"
+#: admin/tab-pages/getting-started.php:75
+msgid "Premium Theme Details"
 msgstr ""
 
-#: admin/tab-pages/getting-started.php:78
-msgid "Premium Theme Details"
+#: admin/tab-pages/support.php:12 admin/tab-pages/support.php:14
+msgid "Contact Support"
+msgstr ""
+
+#: admin/tab-pages/support.php:13
+msgid ""
+"We want to make sure you have the best experience using quality theme, and "
+"that is why we have gathered all the necessary information here for you. We "
+"hope you will enjoy using quality theme as much as we enjoy creating great "
+"products."
+msgstr ""
+
+#: admin/tab-pages/support.php:21
+msgid ""
+"Need more details? Please check our full documentation for detailed "
+"information on how to use quality."
+msgstr ""
+
+#: admin/tab-pages/support.php:22
+msgid "Read full documentation"
+msgstr ""
+
+#: admin/tab-pages/support.php:29
+msgid ""
+"Want to get the gist on the latest theme changes? Just consult our changelog "
+"below to get a taste of the recent fixes and features implemented."
 msgstr ""
 
 #: admin/tab-pages/useful_plugins.php:11
@@ -651,15 +689,15 @@ msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:16 content.php:36 index-blog.php:53
+#: comments.php:16 content.php:35 index-blog.php:53
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:16 content.php:36 index-blog.php:53
+#: comments.php:16 content.php:35 index-blog.php:53
 msgid "One comment"
 msgstr ""
 
-#: comments.php:16 content.php:36 index-blog.php:53
+#: comments.php:16 content.php:35 index-blog.php:53
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -709,11 +747,11 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:31 functions.php:106 index-blog.php:48
+#: content.php:30 functions.php:116 index-blog.php:48
 msgid "Read More"
 msgstr ""
 
-#: content.php:39 index-blog.php:56
+#: content.php:38 index-blog.php:56
 msgid "In"
 msgstr ""
 
@@ -725,7 +763,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:139
 msgid ""
 "Important Notice: We hope you are enjoying this theme, and we thank you for "
 "updating it. Please install our Webriti Companion plugin to manage your "
@@ -734,7 +772,7 @@ msgid ""
 "plugin from there."
 msgstr ""
 
-#: functions.php:130
+#: functions.php:140
 msgid "Go To Customizer"
 msgstr ""
 
@@ -1039,45 +1077,13 @@ msgstr ""
 msgid "Header settings"
 msgstr ""
 
-#: functions/customizer/customizer-home.php:14
-msgid "Site Favicon"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:16
-msgid "Upload a Favicon"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:27
-msgid "Choose your favicon (ideal width and height is 16x16 or 32x32)"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:33
-msgid "Header logo settings"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:50
-msgid "Upload a 150x150 Logo Image"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:69
-msgid "Enable/Disable Logo"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:90
-msgid "Enter Logo Width"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:109
-msgid "Enter Logo Height"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:131
-msgid "Show Logo text"
-msgstr ""
-
-#: functions/customizer/customizer-home.php:139
-#: functions/customizer/customizer-home.php:152
+#: functions/customizer/customizer-home.php:13
+#: functions/customizer/customizer-home.php:26
 msgid "Custom CSS"
+msgstr ""
+
+#: functions/customizer/customizer-home.php:44
+msgid "Display Site Title and Tagline"
 msgstr ""
 
 #: functions/customizer/customizer-pro-feature.php:13
@@ -1364,23 +1370,6 @@ msgstr ""
 msgid "https://webriti.com/quality-lite-version-details-page/"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid ""
-"Quality is a perfect theme to create a corporate/business website. It boasts "
-"3 beautifully designed page templates, namely Business Page, Full-width, and "
-"Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully "
-"responsive on all devices, and is translation-ready. To enable the Business "
-"template, just create a normal WordPress page and select Business Template "
-"as page template. The Business template can be further personalized in the "
-"customizer. Each section in the Business Template is designed according to "
-"current business requirements, with sections like Banner, Services, Projects "
-"etc. You can use this theme for any type of activity. Quality supports "
-"famous plugins like Contact Form 7, to create your contact page or any type "
-"of forms you might want to add. Quality also gives a clean and appealing "
-"look to the WordPress core gallery feature. See Quality's demo at https://"
-"demo.webriti.com/?theme=Quality"
-msgstr ""
-
 #. Author of the plugin/theme
 msgid "Webriti"
 msgstr ""
@@ -1391,6 +1380,14 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full-width page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Page Builder Default"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Page Builder FullWidth"
 msgstr ""
 
 #. Template Name of the plugin/theme

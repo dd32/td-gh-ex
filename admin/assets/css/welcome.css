@@ -11,12 +11,13 @@
     float: left;
     margin-bottom: -1px;
     display: block;
+    padding-right: 2px;
 }
 .quality-nav-tabs > li > a {
     border: 1px solid transparent;
     border-radius: 4px 4px 0 0;
     display: block;
-    padding: 10px 15px;
+    padding: 8px 16px;
 	text-decoration: none;
 }
 .quality-nav-tabs > li.active > a, .quality-nav-tabs > li.active > a:focus, .quality-nav-tabs > li.active > a:hover {
@@ -309,6 +310,7 @@
     width: 20px;
     height: 20px;
     font-size: 20px;
+    padding-top: 5px;
     line-height: 1;
     font-family: dashicons;
     text-decoration: inherit;
@@ -332,7 +334,7 @@
 /*===================================================================================*/
 /*	PRICING TABLES TWO
 /*===================================================================================*/
-.pricing1 { margin-top: 40px;  }
+.pricing1 { margin-top: 30px;  }
 .pricing h1, .pricing h2, .pricing h3, .pricing h4, .pricing h5, .pricing h6, 
 .pricing1 h1, .pricing1 h2, .pricing1 h3, .pricing1 h4, .pricing1 h5, .pricing1 h6 { font-family: 'Signika', sans-serif; }
 .pricing1 .plan {
@@ -461,5 +463,94 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-a.info-block{text-decoration:none;color:#333;}
+a.info-block{text-decoration:none;color:#333;  padding: 0px;padding-top: 6px;width: 38%;}
+.useful_box { margin-left: 12%;}
 a.info-block:hover, a.info-block:active, a.info-block:focus{color:#333;}
+.recommended_box {
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    margin: 30px;
+    width: 45%;
+}
+#changelog pre {
+    font-size: 16px;
+    overflow-y: scroll;
+    height: 720px;
+}
+#changelog .about-wrap {
+    max-width: 100%;
+}
+.quality-tab-support {
+    margin-top: 12px;
+    padding: 24px 24px;
+}
+.quality-tab-support p {
+   font-size: 17px;
+}
+.quality-tab-pane-half h3 {
+    font-weight: 600;
+    padding-top: 20px;
+}
+.quality-tab-center h3 {
+    font-weight: 600;
+}
+.plan h2 {
+    margin-top: 0px !important;
+}
+.panel-close {
+    padding-bottom: 1px;
+}
+#getting_started.quality-tab-pane {
+    padding-bottom: 10px;
+}
+#support.panel-close {
+    min-height: 0px !important;
+}
+.info-text {
+    margin: 10px 10px;
+}
+@media only screen and (max-width: 768px) {
+    .recommended_box {
+        border: 1px solid #e5e5e5;
+        padding: 20px;
+        margin: 13px;
+        width: 45%;
+    }   
+}
+@media only screen and (max-width: 767px) {
+    .recommended_box {
+        padding: 20px;
+        margin: 0px;
+        width: 100%;    
+    }
+    .quality-nav-tabs > li > a {
+        margin: 2px 0 2px 0;
+    }
+    .quality-nav-tabs li{
+        display: grid;
+        width: 100%;
+    }
+    .useful_box {
+        margin-left: unset;
+    }
+    a.info-block {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+     .recommended_box {
+        margin: 16px;  
+        width: 45%;  
+    }
+}
+@media only screen and (min-width: 1100px) {
+    #wpbody-content {
+        width: 80%;
+    } 
+}
+@media only screen and (min-width: 1100px) {
+    .recommended_box {
+        margin: 16px;
+        width: 45%;
+    }
+}

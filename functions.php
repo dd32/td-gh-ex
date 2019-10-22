@@ -84,6 +84,16 @@
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
+
+		//Custom logo
+	
+		add_theme_support( 'custom-logo', array(
+			'height'      => 49,
+			'width'       => 153,
+			'flex-height' => true,
+			'header-text' => array( 'site-title', 'site-description' ),
+			
+		) );
   		
   		require_once('theme_setup_data.php');
   		// setup admin pannel defual data for index page		
@@ -124,22 +134,39 @@
 	
 	
 	function quality_theme_plugin_notify() {
-   ?>
+   	?>
                <div class="notice-warning notice is-dismissible">
                <p><b><?php echo sprintf( esc_html__( "Important Notice: We hope you are enjoying this theme, and we thank you for updating it. Please install our Webriti Companion plugin to manage your Services/Projects sections. Don't worry, nothing is lost, just install the Companion Plugin. Go to the Customizer and install the Webriti Companion plugin from there.", 'quality' ) ); ?></b></p>
                 <p><a href="<?php echo esc_url( admin_url( '/customize.php' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Go To Customizer', 'quality' ); ?></a></p>
             </div>
 		
-   <?php
+   	<?php
 	}
 	$old_theme = get_option( 'quality_pro_options');
 	if($old_theme!='')
 	{
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if( is_plugin_active( 'webriti-companion/webriti-companion.php' ) ) {}	else{	
-	add_action( 'admin_notices', 'quality_theme_plugin_notify' );
+		if( is_plugin_active( 'webriti-companion/webriti-companion.php' ) ) {}	else{	
+			add_action( 'admin_notices', 'quality_theme_plugin_notify' );
+		}
+	}
+	the_tags();	
 
+
+	function quality_custom_header_setup() 
+	{
+	    add_theme_support( 'custom-header', apply_filters( 'quality_custom_header_args', array(
+	        'default-image'          => QUALITY_TEMPLATE_DIR_URI.'/images/logo.png',
+	        'width'                  => 1903,
+	        'height'                 => 350,
+	    ) ) );
 	}
+	add_action( 'after_setup_theme', 'quality_custom_header_setup' );
+
+	function de_register( $wp_customize ) {
+    	$wp_customize->remove_control('display_header_text');
+    	$wp_customize->remove_control("header_image");
+    	$wp_customize->remove_section("colors");
 	}
-the_tags();	
+	add_action( 'customize_register', 'de_register', 11 );
 ?>

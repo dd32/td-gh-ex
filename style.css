@@ -4,8 +4,8 @@ Theme URI: https://webriti.com/quality-lite-version-details-page/
 Bitbucket Theme URI: priyanshumittal/quality-lite-customizer
 Author: Webriti
 Author URI: https://webriti.com/
-Description: Quality is a perfect theme to create a corporate/business website. It boasts 3 beautifully designed page templates, namely Business Page, Full-width, and Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully responsive on all devices, and is translation-ready. To enable the Business template, just create a normal WordPress page and select Business Template as page template. The Business template can be further personalized in the customizer. Each section in the Business Template is designed according to current business requirements, with sections like Banner, Services, Projects etc. You can use this theme for any type of activity. Quality supports famous plugins like Contact Form 7, to create your contact page or any type of forms you might want to add. Quality also gives a clean and appealing look to the WordPress core gallery feature. See Quality's demo at https://demo.webriti.com/?theme=Quality
-Version:  2.4.1
+Description: Quality is a perfect theme to create a corporate/business website. It boasts 3 beautifully designed page templates, namely Business Page, Full-width, and Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully responsive on all devices, and is translation-ready. To enable the Business template, just create a normal WordPress page and select Business Template as page template. The Business template can be further personalized in the customizer. Each section in the Business Template is designed according to current business requirements, with sections like Banner, Services, Projects etc. You can use this theme for any type of activity. Quality supports famous plugins like Contact Form 7, to create your contact page or any type of forms you might want to add. Work with the most popular page builders as Elementor, Beaver Builder, etc... Quality also gives a clean and appealing look to the WordPress core gallery feature. See Quality's demo at https://demo.webriti.com/?theme=Quality
+Version:  2.5
 Tags: full-width-template, threaded-comments, custom-menu, two-columns, translation-ready, sticky-post, blog, portfolio, footer-widgets, featured-images, right-sidebar
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -2626,4 +2626,27 @@ color:#ffffff;
 
 .woocommerce-product-gallery .flex-control-nav {
     display: block;
+}
+/* Header Logo */
+.site-title h2 {
+    font-size: 1.85rem;
+    margin: auto;
+}
+.site-description {
+    padding: 2px;
+}
+.site-title {
+    padding: 18px 15px;
+    float: left;
+}
+.navbar-custom .navbar-brand {
+    padding: 25px 10px 16px 0px;
+}
+/* Header Logo*/
+@media (max-width: 480px) {
+    .site-title {
+        text-align: center;
+        float: none;
+        padding: 0;
+    }
 }

@@ -154,6 +154,11 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank y
 
 ChangLog:
 
+@Version 2.5
+1. Remove Site favicon setting from Header setting in customizer.
+2. Move Header logo setting from Header settings to Site identity.
+3. Add page builder templates.
+4. Update About quality theme option page.
 @Version 2.4.1
 1. Remove unnecessary HTML markup.
 2. Add breadcrumb section in 404 page.

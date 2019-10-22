@@ -46,6 +46,8 @@ if (!class_exists('Webriti_About_Page')) {
 			add_action( 'quality_info_screen', array( $this, 'quality_welcome_free_pro' ), 				50 );
 			add_action( 'quality_info_screen', array( $this, 'quality_recommended_actions' ), 				50 );
 			add_action( 'quality_info_screen', array( $this, 'quality_child_themes' ), 				50 );
+			add_action( 'quality_info_screen', array( $this, 'quality_support_themes' ), 				50 );
+			add_action( 'quality_info_screen', array( $this, 'quality_changelog_themes' ), 				50 );
 			
 			
 			
@@ -264,9 +266,77 @@ if (!class_exists('Webriti_About_Page')) {
 		require_once( get_template_directory() . '/admin/tab-pages/recommended_actions.php' );
 	}
 	
+	/**
+	 * Support 
+	 * 
+	 */
+	public function quality_support_themes() {
+		require_once( get_template_directory() . '/admin/tab-pages/support.php' );
+	}
+
+
+	/**
+		 * Output the changelog screen.
+		 */
+		public function quality_changelog_themes() {
+			global $wp_filesystem;
+
+			?>
+			<div id="changelog" class="quality-tab-pane panel-close">
+			<div class="wrap about-wrap">
+
+				<?php //$this->intro(); ?>
+
+				<p class="about-description"><?php esc_html_e( 'See changelog below:', 'quality' ); ?></p>
+
+				<?php
+				$changelog_file = apply_filters( 'quality_changelog_themes', QUALITY_TEMPLATE_DIR. '/changelog.txt' );
+
+				// Check if the changelog file exists and is readable.
+				if ( $changelog_file && is_readable( $changelog_file ) ) {
+					WP_Filesystem();
+					$changelog      = $wp_filesystem->get_contents( $changelog_file );
+					$changelog_list = $this->parse_changelog( $changelog );
+
+					echo wp_kses_post( $changelog_list );
+				}
+				?>
+			</div>
+			</div>
+			<?php
+		}
+
+		/**
+		 * Parse changelog from readme file.
+		 *
+		 * @param  string $content
+		 *
+		 * @return string
+		 */
+		private function parse_changelog( $content ) {
+			$matches   = null;
+			$regexp    = '~==\s*Changelog\s*==(.*)($)~Uis';
+			$changelog = '';
+
+			if ( preg_match( $regexp, $content, $matches ) ) {
+				$changes = explode( '\r\n', trim( $matches[1] ) );
+
+				$changelog .= '<pre class="changelog">';
+
+				foreach ( $changes as $index => $line ) {
+					$changelog .= wp_kses_post( preg_replace( '~(=\s*Version\s*(\d+(?:\.\d+)+)\s*=|$)~Uis', '<span class="title">${1}</span>', $line ) );
+				}
+
+				$changelog .= '</pre>';
+			}
+
+			return wp_kses_post( $changelog );
+		}
+
 	public function quality_child_themes() {
 		require_once( get_template_directory() . '/admin/tab-pages/child_themes.php' );
 	}
+
 
 		public function get_tabs_array() {
 			$tabs_array = array();
@@ -297,13 +367,25 @@ if (!class_exists('Webriti_About_Page')) {
 					'name'      => esc_html__('Free vs Pro', 'quality'),
 					'file_path' => get_template_directory() . '/admin/tab-pages/free-vs-pro.php',
 				);
-				
+
+			$tabs_array[]	= 	array(
+					'link'      => 'support',
+					'name'      => esc_html__('Support', 'quality'),
+					'file_path' => get_template_directory() . '/admin/tab-pages/support.php',
+			);
+			
+			$tabs_array[]	= 	array(
+					'link'      => 'changelog',
+					'name'      => esc_html__('Changelog', 'quality'),
+					'file_path' => get_template_directory() . '/admin/tab-pages/changelog.php',
+			);
+
 			$tabs_array[]	= 	array(
 					'link'      => 'child_themes',
 					'name'      => esc_html__('Child Themes', 'quality'),
 					'file_path' => get_template_directory() . '/admin/tab-pages/child_themes.php',
 			);
-			
+
 			return $tabs_array;
 			
 		}
@@ -318,6 +400,8 @@ if (!class_exists('Webriti_About_Page')) {
 			$plugins = apply_filters('quality_useful_plugins', array());
 			return $plugins;
 		}
+
+
 
 		public function get_recommended_actions() {
 
