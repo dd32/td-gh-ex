@@ -14,7 +14,7 @@
         $email_id     = ascent_get_options( 'asc_email_id' );
     ?>
     <?php if ( $phone_number ): ?>
-        <span class="phone-info"><i class="fas fa-phone-square-alt"></i> <?php echo esc_html( $phone_number ); ?></span>
+        <span class="phone-info"><i class="fas fa-phone-square-alt"></i> <a href="tel:<?php echo esc_html( $phone_number ); ?>"><?php echo esc_html( $phone_number ); ?></a></span>
     <?php endif; ?>
 
     <?php if ( $email_id ): ?>
