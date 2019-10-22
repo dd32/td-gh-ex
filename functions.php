@@ -44,8 +44,3 @@ function arowana_scripts_styles() {
     wp_enqueue_style( 'arowana-fonts', arowana_google_font(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'arowana_scripts_styles' );
-
-/**
- * Called all the Customize file.
- */
-require( get_stylesheet_directory() . '/inc/customize/arowana-premium.php');

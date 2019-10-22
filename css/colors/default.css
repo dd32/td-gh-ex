@@ -10,9 +10,6 @@
    background: #ee591f;
 }
 /* 00. Theme Reset Css */
-#blog-content .post-title a,
-h2.site-title::first-letter,
-#recent-blog .post-content .post-title a ,
 .section-header h2 {
     color: #ee591f ;
 }
@@ -74,7 +71,11 @@ h2.site-title::first-letter,
 
 a.book-now {
     border-color: #ee591f ;
-	background: #ee591f;
+    color: #ee591f ;    
+}
+
+a.book-now:hover {
+    background: #ee591f ;
 }
 
 .search-button a.nav-link {
@@ -85,6 +86,19 @@ a.book-now {
     background: #ee591f ;    
 }
 
+/* Header slider */
+.header-slider .owl-next,
+.header-slider .owl-prev {
+    color: #ee591f ;    
+}
+
+.header-slider .owl-next, .header-slider .owl-prev {
+    border: solid 1px #ee591f;
+}
+
+.header-slider .owl-next:hover, .header-slider .owl-prev:hover {
+    background: #ee591f !important;
+}
 /* 05. Features */
 
 .features-list-item .icon i {
@@ -242,6 +256,16 @@ ul.recent-meta-info li a:hover {
     border-color: #ee591f ;
 }
 
+.widget-newsletter .subscribe {
+    color: #ee591f ;
+    border-color: #ee591f ;
+}
+
+.widget-newsletter .subscribe:hover {
+    background: #ee591f ;
+}
+
+
 ul.widget-social li a:hover {
     color: #ee591f ;
 }
@@ -366,6 +390,10 @@ p {
 
 .gallery-item figure:hover figcaption {
     background: #242424;
+}
+
+#blog-content .post-title a {
+    color: #242424;
 }
 
 #blog-content ul.meta-info li {
