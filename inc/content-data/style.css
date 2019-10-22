@@ -1,0 +1,32 @@
+aside#article-microdata {
+    display: none;
+    float: right;
+    font-size: .6em;
+    margin: 0 0 5em;
+    text-align: center;
+    width: 14em;
+}
+
+aside#article-microdata img.avatar {
+    border-radius: 50%;
+    border: solid .5em #ffffff;
+    width: calc(100% - 1em);
+}
+
+aside#article-microdata h6.microdata-title {
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+aside#article-microdata b {
+    color: #b9393d;
+}
+
+@media all and (min-width:60em) {
+    
+    aside#article-microdata {
+        display: block;
+    }
+    
+}
