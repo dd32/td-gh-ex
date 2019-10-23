@@ -4,7 +4,7 @@ Theme URI: https://aeonwp.com/aeonblog/
 Author: aeontheme
 Author URI: https://aeonwp.com/
 Description: Simple and clean accessibility ready blog theme. It comes with easy to use customizer based theme options, copyright text, post templates, sidebar options, meta options, featured image option, excerpt length option, read more text, sticky sidebar, font preview and many more. AeonBlog has soft green and blue colors, and many color options. This is a complete WordPress theme for bloggers.
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aeonblog
@@ -77,14 +77,16 @@ Blocks
  */
 
 html {
-	line-height: 1.7;
+	line-height: 2;
 	-webkit-text-size-adjust: 100%;
 	font-size: 100%;
 }
 
 @media (min-width: 768px) {
-	html { font-size: 112.5%; }
-} 
+	html {
+		font-size: 112.5%;
+	}
+}
 
 
 /* Sections
@@ -730,6 +732,9 @@ textarea:hover {
 
 select {
 	border: 1px solid #ccc;
+	padding: 8px;
+	max-width: 80%;
+	margin: 20px 30px;
 }
 
 textarea {
@@ -744,14 +749,17 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a,
+a:hover,
+a:focus,
+a:active,
 a:visited {
 	color: #111;
 }
 
-a:hover,
-a:focus,
-a:active {
-	color: #111;
+.widget a:visited,
+ol a:visited,
+ul a:visited {
+	color: #516185;
 }
 
 a:focus {
@@ -792,8 +800,8 @@ a:active {
 	text-align: center;
 }
 
-.main-navigation:not(.toggled) div > ul > li:first-of-type,
-.main-navigation:not(.toggled) > ul > li:first-of-type {
+.main-navigation:not(.toggled) div>ul>li:first-of-type,
+.main-navigation:not(.toggled)>ul>li:first-of-type {
 	padding-right: 0;
 }
 
@@ -803,13 +811,18 @@ a:active {
 	display: inline-block;
 	width: auto;
 	color: #6f6f6f;
-	padding: 15px 30px;
+	padding: 15px 20px;
 	text-transform: uppercase;
+	border-bottom: 2px solid transparent;
 }
 
 .main-navigation a:focus,
 .main-navigation a:hover {
 	text-decoration: underline;
+}
+
+.main-navigation .current_page_item>a {
+	border-bottom: 2px solid #000;
 }
 
 /*first sub-menu*/
@@ -826,12 +839,12 @@ a:active {
 	display: inline-block;
 	width: 100%;
 	min-width: 220px;
-	border: 1px solid rgba(0,0,0, 0.1);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 	box-sizing: border-box;
 	padding: 0.8em 1em;
 	background: #ffffff;
 	border-top: 1px solid #333333;
-	text-align:right;
+	text-align: right;
 	padding: 1em;
 }
 
@@ -850,7 +863,7 @@ a:active {
 	margin: 0;
 	display: block;
 	clip: rect(1px, 1px, 1px, 1px);
-	z-index: 999; 
+	z-index: 999;
 	border-right: none;
 }
 
@@ -858,8 +871,8 @@ a:active {
 	border-top: none;
 }
 
-.main-navigation li:focus > ul,
-.main-navigation li:hover > ul,
+.main-navigation li:focus>ul,
+.main-navigation li:hover>ul,
 .keyboard-dropdown {
 	clip: auto !important;
 }
@@ -869,14 +882,14 @@ a:active {
 }
 
 .main-navigation li.menu-item-has-children>a {
-	padding-left: 15px;
+	padding-left: 35px;
 }
 
 .main-navigation li.menu-item-has-children>a:before {
 	position: absolute;
 	content: '\203A';
 	top: 1.5rem;
-	left: 0;
+	left: 20px;
 	line-height: 0;
 	font-size: 1.5em;
 	transform: rotate(-90deg);
@@ -896,7 +909,7 @@ a:active {
 
 @media screen and (max-width: 768px) {
 	#mobile-menu-toggle {
-		cursor: pointer; 
+		cursor: pointer;
 		display: inline-block;
 		text-align: center;
 		line-height: 1.6;
@@ -904,7 +917,7 @@ a:active {
 		margin: 12px;
 		padding: 9px 20px;
 		font-size: 12px;
-		background:#fff;
+		background: #fff;
 		color: #6f6f6f;
 		text-transform: uppercase;
 		text-align: center;
@@ -925,7 +938,7 @@ a:active {
 	.main-navigation #main-menu {
 		display: none;
 	}
-	
+
 	.main-navigation.toggled #main-menu {
 		display: block;
 	}
@@ -934,12 +947,12 @@ a:active {
 		display: inline-block;
 		margin-right: 1em !important;
 	}
-	
+
 	.main-navigation.toggled ul {
 		margin-right: 0 !important;
 		margin-top: 0;
 		display: block;
-		background:#ffffff;
+		background: #ffffff;
 		padding: 18px 0 18px 0;
 	}
 
@@ -950,7 +963,7 @@ a:active {
 	.main-navigation.toggled li {
 		display: inline-block;
 		width: 100%;
-		background:#ffffff;
+		background: #ffffff;
 		box-sizing: border-box;
 	}
 
@@ -972,7 +985,7 @@ a:active {
 	.toggled .nav-menu ul ul ul li:last-child {
 		margin-bottom: 0;
 	}
-	
+
 	.main-navigation.toggled ul ul li {
 		border: none;
 		padding-top: 7px;
@@ -1000,6 +1013,7 @@ a:active {
 
 .social-icons-footer {
 	text-align: center;
+	color: #fff;
 }
 
 .aeonblog-menu-social {
@@ -1042,7 +1056,18 @@ a:active {
 	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	padding: 20px;
-	background: #e5f2ee;
+	margin-bottom: -11px;
+}
+
+.nav-previous,
+.nav-previous a {
+	float: right;
+	display: block;
+}
+
+.nav-next,
+.nav-next a {
+	float: left;
 }
 
 .nav-previous a:hover,
@@ -1052,24 +1077,13 @@ a:active {
 	text-decoration: none;
 }
 
-.nav-previous,
-.nav-previous a {
-	float: right;
-}
-
-.nav-next,
-.nav-next a {
-	float: left;
-}
-
-
 /*--------------------------------------------------------
 ##   Pagination
 *   ----------------------------------------------------- */
 
 /* Pagination option */
 .aeonblog-pagination {
-	margin-top: 2em;
+	margin-top: 2.5em;
 	text-align: center;
 }
 
@@ -1077,7 +1091,7 @@ a:active {
 	border: 2px solid #021634;
 	padding: 2px 12px;
 	margin-left: 8px;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 	display: inline-block;
 	border-radius: 3px;
 	text-decoration: none;
@@ -1241,8 +1255,13 @@ a:active {
 
 .widget {
 	background-color: #fff;
-	margin: 0 0 1.5em;	/* Make sure select elements fit in widgets. */
+	margin: 0 0 1.5em;
 	color: #6f6f6f;
+	word-break: break-word;
+}
+
+.widget:last-of-type {
+	margin-bottom: 0;
 }
 
 .widget-title {
@@ -1289,7 +1308,7 @@ a:active {
 .widget.widget_meta ul li:before,
 .widget.widget_nav_menu ul li:before,
 .widget.widget_pages ul li:before {
-	content:"\00bb";
+	content: "\00bb";
 	position: absolute;
 	right: -20px;
 }
@@ -1374,10 +1393,7 @@ a:active {
 }
 
 .widget_rss ul li,
-.widget_nav_menu ul li {
-	margin-right: 0;
-}
-
+.widget_nav_menu ul li,
 .widget_nav_menu .sub-menu {
 	margin-right: 0;
 }
@@ -1426,7 +1442,7 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin:0;
+	margin: 0;
 }
 
 .entry-content a,
@@ -1468,10 +1484,11 @@ a:active {
 
 .comments-wrapper {
 	display: inline-block;
-	margin-top: 1.5em;
+	margin-top: 2.5em;
 	padding: 30px;
 	background-color: #fff;
 	width: 100%;
+	text-align: right;
 }
 
 .comments-wrapper a {
@@ -1554,7 +1571,7 @@ p.comment-form-cookies-consent {
 }
 
 .comments-wrapper .comment-author a:focus,
-.comments-wrapper .comment-author a:hover{
+.comments-wrapper .comment-author a:hover {
 	text-decoration: underline;
 }
 
@@ -1573,8 +1590,13 @@ p.comment-form-cookies-consent {
 	color: #6f6f6f;
 }
 
+.comment-metadata .edit-link {
+	margin-right: 2em;
+}
+
 .comments-wrapper .reply a {
 	float: left;
+	padding: 0.5em;
 }
 
 @media (max-width: 600px) {
@@ -1621,19 +1643,12 @@ object {
 /*--------------------------------------------------------------
 # Site Header
 --------------------------------------------------------------*/
-
-/* Make sure logo link wraps around logo image. */
-
-.custom-logo-link {
-	display: inline-block;
-}
-
 .attr-nav {
 	z-index: 999;
 }
 
 .site-branding {
-	margin: 1.5em 0 1.5em 0;
+	margin: 1.5em 0 1.8em 0;
 	text-align: center;
 	width: 100%;
 }
@@ -1641,6 +1656,9 @@ object {
 .site-title {
 	font-size: 2.44em;
 	line-height: 1;
+	font-weight: 700;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
 }
 
 .site-title a {
@@ -1652,9 +1670,10 @@ object {
 }
 
 .custom-logo-link {
+	display: inline-block;
 	max-width: 250px;
 	max-height: 250px;
-	margin-top: 1em;
+	margin-top: 0.8em;
 }
 
 .wp-custom-header img {
@@ -1673,7 +1692,7 @@ object {
 
 #primary,
 .secondary {
-	margin: 50px 0;
+	margin: 2.5em 0;
 }
 
 .post-wrapper {
@@ -1766,6 +1785,7 @@ object {
 }
 
 @media screen and (min-width: 1200px) {
+
 	.blog .blog-content,
 	.archive .blog-content {
 		overflow: hidden;
@@ -1773,6 +1793,7 @@ object {
 }
 
 @media screen and (max-width: 1199px) {
+
 	.blog .post-wrapper .featured-wrapper,
 	.archive .post-wrapper .featured-wrapper {
 		width: 100%;
@@ -1788,10 +1809,11 @@ object {
 .single .post-wrapper {
 	border: 0;
 	padding: 0;
+	margin-bottom: 2.5em;
 }
 
 .single .blog-content {
-	margin: 30px;
+	margin: 2.5em;
 }
 
 .single .entry-footer {
@@ -1830,7 +1852,8 @@ object {
 	text-decoration: underline;
 }
 
-.author-credits, .wp-credits {
+.author-credits,
+.wp-credits {
 	display: inline-block;
 }
 
@@ -1841,6 +1864,14 @@ object {
 .copyright {
 	margin-top: 1.5em;
 	text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+
+	.site-footer {
+		padding: 1.5em 0;
+	}
+
 }
 
 /*==============================
@@ -1954,12 +1985,12 @@ object {
 
 .middle-column #primary,
 .post-template-post-middle-column #primary {
-	margin: 50px auto 0 auto;
+	margin: 2.5em auto;
 	float: none;
 	display: table;
 }
 
-.post-template-post-full-width #primary{
+.post-template-post-full-width #primary {
 	width: 100%;
 }
 
@@ -2042,6 +2073,7 @@ object {
 ===============================*/
 
 @media screen and (max-width: 1000px) {
+
 	#primary,
 	.secondary {
 		width: 100%;
@@ -2070,7 +2102,7 @@ object {
 /*==============================
 # Jetpack Top Post Widget Image Size
 ===============================*/
-.widget_top-posts .widgets-list-layout li > a {
+.widget_top-posts .widgets-list-layout li>a {
 	width: 40%;
 }
 
@@ -2101,7 +2133,7 @@ object {
 --------------------------------------------------------------*/
 .related-pots-block {
 	display: block;
-	margin-top: 1.5em;
+	margin-top: 2.5em;
 	background: #fff;
 	padding: 0 15px;
 }
@@ -2223,7 +2255,7 @@ object {
 --------------------------------------------------------------*/
 
 .entry-content a.wp-block-button__link {
-	color:#fff;
+	color: #fff;
 }
 
 .entry-content .is-style-outline a.wp-block-button__link {
@@ -2257,4 +2289,13 @@ object {
 .wp-block-latest-posts__post-date,
 .wp-block-latest-comments__comment-date {
 	color: #6f6f6f;
+}
+
+.wp-block-latest-posts.is-grid {
+	padding-right: 0;
+	margin-right: 0;
+}
+
+.wp-block-categories-list.aligncenter {
+	text-align: center;
 }

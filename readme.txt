@@ -3,7 +3,7 @@ Contributors: aeontheme
 Requires at least: 5.0
 Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: 1.0.8
+Stable tag: 1.1.0
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,12 +52,17 @@ You can use email us at support@aeonwp.com
 
 == Changelog ==
 
+= 1.1.0 - October 22 2019 =
+Added a link to the premium version of the theme.
+Style updates to make the spacing more even.
+Fixed the position of the site title so that it looks the same on all pages.
+Updated block editor styles to better match the front.
+
 = 1.0.9 - October 1 2019 =
 Added additional aria roles since not all screen readers can read the landmarks without them.
 Accessibility improvments for the site footer.
 Simplified the markup for the footer social navigation.
 Minor CSS improvements for button blocks and for Edge and Internet Explorer 11.
-
 
 = 1.0.8 - September 25 2019 =
 Added aria label to the social navigation.
@@ -130,6 +135,7 @@ AeonBlog is distributed under the terms of the GNU General Public License v2 or 
 * Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
 * theia-sticky-sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT](http://opensource.org/licenses/MIT)
 * BreadcrumbTrail Copyright (c) 2008 - 2017, Justin Tadlock https://themehybrid.com/plugins/breadcrumb-trail http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+* Customizer pro button, licensed under the GNU GPL, version 2 or later. Copyright Justin Tadlock 2016. https://github.com/justintadlock/trt-customizer-pro
 * Sanitization Copyright (c) 2015, WordPress Theme Review Team, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html) https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php 
 * Keyboard Accessible Dropdown Menus Copyright 2013 Amy Hendrix, Graham Armfield [MIT](https://opensource.org/licenses/MIT) 
   https://github.com/sabreuse/accessible-menus

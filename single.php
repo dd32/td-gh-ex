@@ -35,7 +35,7 @@ get_sidebar( 'left' );
 			/**
 			* Aeonblog_related_posts hook
 			*
-			* @since AeonBlog 1.0.0
+			* @since AeonBlog Plus 1.0.0
 			*
 			* @hooked aeonblog_related_posts -  10
 			*/
