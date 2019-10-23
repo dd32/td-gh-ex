@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/admiral/
 Contributors: themezee
 Tags: three-columns, custom-background, custom-menu, editor-style, rtl-language-support, grid-layout, blog, entertainment, news, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar, two-columns
 Requires at least: 4.7
-Tested up to: 5.2.3
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,21 +26,24 @@ For more information about Admiral please go to https://themezee.com/themes/admi
 
 == Changelog ==
 
-= 1.6.1 =
+= 1.6.2 - 2019-10-23 =
+* added improved Theme Info section to Customizer
+
+= 1.6.1 - 2019-09-10 =
 * fixed post meta settings for post slider
 
-= 1.6 =
+= 1.6 - 2019-08-16 =
 * added custom styling for ThemeZee Magazine Blocks
 * added custom image sizes to select fields in Gutenberg Editor and Media Library
 * disabled post meta theme settings for Magazine blocks
 
-= 1.5.2 =
+= 1.5.2 - 2019-05-27 =
 * adjusted footer credit link with clearer wording
 
-= 1.5.1 =
+= 1.5.1 - 2019-05-07 =
 * added support for responsive embed blocks
 
-= 1.5 =
+= 1.5 - 2018-11-06 =
 * added styling for Gutenberg blocks
 * added custom color palette for Gutenberg
 * added editor styling for WordPress 5.0
