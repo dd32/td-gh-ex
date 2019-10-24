@@ -49,7 +49,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary:
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'accesspress-mag' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( /* translators: %s: Page Number */ __( 'Page %s', 'accesspress-mag' ), max( $paged, $page ) );
 		}
 
 		return $title;

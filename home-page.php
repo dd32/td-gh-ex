@@ -45,16 +45,16 @@ get_header();
                     $block1_cat = of_get_option( 'featured_block_1' );
                     if( !empty( $block1_cat ) ) {
                         $posts_for_block1 = of_get_option( 'posts_for_block1' );                                
-                        $category_info = get_category_by_slug( $block1_cat );
+                        $category_info = get_the_category_by_ID( $block1_cat );
                 ?>
                 <div class="first-block-wrapper">
                     <h3 class="block-cat-name"> 
-                        <span><?php echo esc_attr( $category_info->name ) ; ?></span>
+                        <span><?php echo esc_attr( $category_info ) ; ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php                                
                         $block1_args = array(
-                                            'category_name' => $block1_cat,
+                                            'cat' => $block1_cat,
                                             'post_status' => 'publish',
                                             'posts_per_page' => $posts_for_block1,
                                             'order' => 'DESC'
@@ -106,16 +106,16 @@ get_header();
                     $block2_cat = of_get_option( 'featured_block_2' );
                     if(!empty( $block2_cat ) ) {
                         $posts_for_block2 = of_get_option( 'posts_for_block2' );
-                        $category_info_2 = get_category_by_slug( $block2_cat );
+                        $category_info_2 = get_the_category_by_ID( $block2_cat );
                 ?>
                 <div class="second-block-wrapper">
                     <h3 class="block-cat-name"> 
-                        <span><?php echo esc_attr( $category_info_2->name ); ?></span>
+                        <span><?php echo esc_attr( $category_info_2 ); ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php                          
                         $block2_args = array(
-                                            'category_name'=>$block2_cat,
+                                            'cat'=>$block2_cat,
                                             'post_status'=>'publish',
                                             'posts_per_page'=>$posts_for_block2,
                                             'order'=>'DESC'
@@ -170,16 +170,16 @@ get_header();
                     $block3_cat = of_get_option( 'featured_block_3' );
                     if( !empty( $block3_cat) ) {
                         $posts_for_block3 = of_get_option( 'posts_for_block3' );
-                        $category_info_3 = get_category_by_slug( $block3_cat );
+                        $category_info_3 = get_the_category_by_ID( $block3_cat );
                 ?>
                 <div class="first-block-wrapper">
                     <h3 class="block-cat-name">
-                        <span><?php echo esc_attr( $category_info_3->name ); ?></span>
+                        <span><?php echo esc_attr( $category_info_3 ); ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php
                         $block3_args = array(
-                                            'category_name'=>$block3_cat,
+                                            'cat'=>$block3_cat,
                                             'post_status'=>'publish',
                                             'posts_per_page'=>$posts_for_block3,
                                             'order'=>'DESC'
@@ -231,16 +231,16 @@ get_header();
                     $block4_cat = of_get_option( 'featured_block_4' );
                     if( !empty( $block4_cat ) ) {
                         $posts_for_block4 = of_get_option( 'posts_for_block4' );
-                        $category_info_4 = get_category_by_slug( $block4_cat );
+                        $category_info_4 = get_the_category_by_ID( $block4_cat );
                 ?>
                 <div class="second-block-wrapper">
                     <h3 class="block-cat-name">
-                        <span><?php echo esc_attr( $category_info_4->name ); ?></span>
+                        <span><?php echo esc_attr( $category_info_4 ); ?></span>
                     </h3>
                     <div class="block-post-wrapper clearfix">
                     <?php
                         $block4_args = array(
-                                            'category_name'=>$block4_cat,
+                                            'cat'=>$block4_cat,
                                             'post_status'=>'publish',
                                             'posts_per_page'=>$posts_for_block4,
                                             'order'=>'DESC'

@@ -20,6 +20,7 @@
 <body <?php body_class(); ?>>
 <?php do_action( 'accesspress_mag_before' ); ?>
 <div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-mag' ); ?></a>
     <?php
         $accesspress_mag_logo_alt = of_get_option( 'logo_alt' );
         $accesspress_mag_logo_title = of_get_option( 'logo_title' );

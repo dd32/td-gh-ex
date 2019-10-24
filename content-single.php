@@ -54,7 +54,7 @@
         <?php } ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-mag' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'accesspress-mag' ),
 				'after'  => '</div>',
 			) );
 		?>        

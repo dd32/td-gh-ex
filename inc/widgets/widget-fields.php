@@ -112,7 +112,7 @@ function optionsframework_media_scriptss($hook) {
     if (function_exists('wp_enqueue_media'))
         wp_enqueue_media();
 
-    wp_register_script('of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY . 'js/media-uploader.js', array('jquery'), 1.70);
+    wp_register_script('of-media-uploader', get_template_directory_uri() . 'js/media-uploader.js', array('jquery'), 1.70);
     wp_enqueue_script('of-media-uploader');
     wp_localize_script('of-media-uploader', 'optionsframework_l10n', array(
         'upload' => __('Upload', 'accesspress-mag'),

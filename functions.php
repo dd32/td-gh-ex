@@ -132,6 +132,8 @@ function accesspress_mag_scripts() {
     	
     wp_enqueue_style( 'accesspress-mag-style', get_stylesheet_uri(), array(), esc_attr( $theme_version ) );
 
+	wp_enqueue_style( 'accesspress-mag-keyboard-css', get_template_directory_uri() . '/css/keyboard.css');
+
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css', array(), esc_attr($theme_version) );
     
     if ( of_get_option( 'menu_sticky', '1' ) == 1 ) {
@@ -167,10 +169,20 @@ function accesspress_mag_scripts() {
 add_action( 'wp_enqueue_scripts', 'accesspress_mag_scripts' );
 
 
-/**
- * Framework path
- */
-require get_template_directory().'/inc/option-framework/options-framework.php';
+if ( !function_exists( 'of_get_option' ) ) {
+
+   function of_get_option( $option, $default = '' ) {
+       $accesspress_mag_options = get_option( 'accesspress-mag-theme' );
+
+       if ( isset( $accesspress_mag_options[ $option ] ) ) {
+           return $accesspress_mag_options[ $option ];
+       } else {
+           return $default;
+       }
+   }
+
+}
+
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -225,6 +237,5 @@ require get_template_directory() . '/css/style.php';
 /**
  * Load Welcome Page
  */
-require get_template_directory() . '/welcome/welcome.php';
+require get_template_directory() . '/inc/welcome/welcome-config.php';
 
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri(). '/inc/option-framework/' );
