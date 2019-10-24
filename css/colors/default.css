@@ -10,6 +10,7 @@
    background: #ee591f;
 }
 /* 00. Theme Reset Css */
+#recent-blog .post-content .post-title a ,
 .section-header h2 {
     color: #ee591f ;
 }
@@ -71,11 +72,7 @@
 
 a.book-now {
     border-color: #ee591f ;
-    color: #ee591f ;    
-}
-
-a.book-now:hover {
-    background: #ee591f ;
+	background: #ee591f;
 }
 
 .search-button a.nav-link {
