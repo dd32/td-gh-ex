@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'RESPONSIVE_THEME_VERSION', '3.21' );
+define( 'RESPONSIVE_THEME_VERSION', '3.23' );
 define( 'RESPONSIVE_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'RESPONSIVE_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 /**
@@ -66,9 +66,12 @@ function responsive_free_get_option( $option, $default = false ) {
  */
 function responsive_free_setup() {
 	add_theme_support( 'title-tag' );
-
-	// Add support for full and wide align images.
+	// Adding Gutenberg support.
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'core/css/gutenberg-editor.css' );
 }
 add_action( 'after_setup_theme', 'responsive_free_setup' );
 

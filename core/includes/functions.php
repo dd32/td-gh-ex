@@ -193,7 +193,6 @@ if ( ! function_exists( 'responsive_setup' ) ) :
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
-		add_theme_support( 'responsive-embeds' );
 
 		/**
 		 * This feature enables custom-menus support for a theme.
