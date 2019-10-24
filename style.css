@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: https://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme. It was built with the Gutenberg editor in mind and offers hundreds of customisation options which allows to make a website look exactly the way you intended. Create any type of website, such as business agency, shop, corporate, education, restaurant, blog, portfolio, landing page and so on. This theme allows to customise pages with google-fonts, page background, page header and sidebars. Try Demo: http://demo.wpattire.com. Attire is # WooCommerce Ready # Gutenberg Block Ready # RTL & Translation Ready # Also Compatible with all major page builders like elementor, divi, visual composer.
 Author: Shafayat
-Version: 1.2.7
+Version: 1.2.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, e-commerce, wide-blocks, block-styles, grid-layout, one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -740,9 +740,15 @@ header .widget-search-form {
 
 .small-menu .social-link,
 .small-menu .info-link {
-	margin: 9px 0;
+	line-height: 18px;
 }
-
+.small-menu .middle-social-icon li,
+.small-menu .social-link {
+	padding: 0 !important;
+}
+.small-menu .social-link img{
+	width: 18px;
+}
 .small-menu .social-link > li,
 .small-menu .info-link > li {
 	font-size: 12px;
@@ -777,13 +783,6 @@ header .widget-search-form {
 
 .small-menu .list-inline li:last-child {
 	padding-right: 0 !important;
-}
-
-.small-menu .social-link > li > i,
-.small-menu .info-link > li > i {
-	float: left;
-	font-size: 12px;
-	margin-top: 4px;
 }
 
 /* middle header */
@@ -859,6 +858,57 @@ header .widget-search-form {
 #header-4 .middle-logo.logo-div a {
 	margin: 0;
 }
+
+#header-5 #top-bar{
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	background: rgba(0, 0, 0, 0.02);
+}
+#header-5 #top-bar .list-inline{
+	margin: 0;
+}
+#header-5 #top-bar .list-inline li{
+	line-height: 38px;
+}
+#header-5 .middle-header {
+	padding: 22px 0;
+	position: relative;
+
+}
+#header-5 .site-logo img{
+	height: 40px;
+	max-height: 40px;
+}
+#header-5 #header-search-field{
+	margin: 0 40px;
+}
+#header-5 .middle-header .btn,
+#header-5 #header-search-field .form-control{
+	border-radius: 3px;
+	font-size: 12px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 14px;
+	background: #ffffff;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 2px 3px rgba(0,0,0,0.04);
+	transition: all ease-in-out 400ms;
+	color: #666666;
+}
+#header-5 .middle-header .btn:focus,
+#header-5 .middle-header .btn:active,
+#header-5 #header-search-field .form-control:focus{
+	border: 1px solid #dddddd;
+	box-shadow: 0 0 5px rgba(0,0,0,0.09);
+}
+#header-5 .middle-header .btn:hover{
+	background: #fafafa;
+}
+#header-5 #header-search-field .form-control{
+	padding-left: 38px;
+	background: url("data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDMxMC40MiAzMTAuNDIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMxMC40MiAzMTAuNDI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yNzMuNTg3LDIxNC45NjVjNDkuMTEtNDkuMTExLDQ5LjEwOS0xMjkuMDIxLDAtMTc4LjEzMmMtNDkuMTExLTQ5LjExMS0xMjkuMDItNDkuMTExLTE3OC4xMywwICAgIEM1My43OTMsNzguNDk3LDQ3LjQ4MywxNDAuNDYyLDc2LjUxLDE4OC44NWMwLDAsMi4wODUsMy40OTgtMC43MzEsNi4zMTJjLTE2LjA2NSwxNi4wNjQtNjQuMjYzLDY0LjI2My02NC4yNjMsNjQuMjYzICAgIGMtMTIuNzkxLDEyLjc5LTE1LjgzNiwzMC42NzUtNC40OTMsNDIuMDJsMS45NTMsMS45NTFjMTEuMzQzLDExLjM0NSwyOS4yMjksOC4zMDEsNDIuMDE5LTQuNDljMCwwLDQ4LjA5Ni00OC4wOTcsNjQuMTI4LTY0LjEyOCAgICBjMi45NTEtMi45NTEsNi40NDgtMC44NjYsNi40NDgtMC44NjZDMTY5Ljk1OCwyNjIuOTM4LDIzMS45MjMsMjU2LjYyOSwyNzMuNTg3LDIxNC45NjV6IE0xMTguNzExLDE5MS43MSAgICBjLTM2LjI4OC0zNi4yODgtMzYuMjg3LTk1LjMzMiwwLjAwMS0xMzEuNjJjMzYuMjg4LTM2LjI4Nyw5NS4zMzItMzYuMjg4LDEzMS42MTksMGMzNi4yODgsMzYuMjg3LDM2LjI4OCw5NS4zMzIsMCwxMzEuNjIgICAgQzIxNC4wNDMsMjI3Ljk5NiwxNTUsMjI3Ljk5NiwxMTguNzExLDE5MS43MXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0E4NTdDRCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCQk8Zz4KCQkJPHBhdGggZD0iTTEyNi43NSwxMTguNDI0Yy0xLjY4OSwwLTMuNDA2LTAuMzMyLTUuMDYxLTEuMDMxYy02LjYxMS0yLjc5OC05LjcwNC0xMC40MjYtNi45MDYtMTcuMDM4ICAgICBjMTcuNTg2LTQxLjU1OSw2NS43MDMtNjEuMDYyLDEwNy4yNjEtNDMuNDc2YzYuNjExLDIuNzk4LDkuNzA0LDEwLjQyNiw2LjkwNiwxNy4wMzhjLTIuNzk5LDYuNjEyLTEwLjQyNSw5LjcwMy0xNy4wMzksNi45MDYgICAgIGMtMjguMzU0LTExLjk5OC02MS4xODYsMS4zMDktNzMuMTgzLDI5LjY2M0MxMzYuNjI5LDExNS40NDUsMTMxLjgxNSwxMTguNDI0LDEyNi43NSwxMTguNDI0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQTg1N0NEIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJCTwvZz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+") 10px center no-repeat;
+	background-size: 16px;
+}
+
 
 .default-menu.navbar-light .navbar-toggler {
 	border-radius: 0;
@@ -2114,3 +2164,27 @@ article.post.product:before {
 	border-bottom: 0 !important;
 }
 /** WPDM Styles :: END **/
+
+/** Gutenberg CSS **/
+.attiire-featured-media {
+	background: linear-gradient(45deg, #5a46bd, #6679c4bf);
+	color: #fff;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.wp-block-column:last-child .attiire-featured-media{
+	background: linear-gradient(45deg,#46bdb2,#2981dfc4);
+}
+
+.attiire-featured-media img{
+	margin: 0;
+}
+.attiire-featured-media h2{
+	margin:0 0 10px 0;
+	font-size: 16pt !important;
+}
+.attiire-featured-media *{
+	color: #ffffff !important;
+	text-align: center
+}
+/** Gutenberg CSS :: END **/

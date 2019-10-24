@@ -11,7 +11,7 @@ class AttireStructuredData {
 	}
 
 	function ItemType() {
-		echo 'itemscope itemtype="http://schema.org/Product"';
+		echo ' itemscope itemtype="http://schema.org/Product"';
 	}
 
 	function ItemName( $name ) {

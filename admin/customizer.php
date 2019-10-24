@@ -757,9 +757,68 @@ function attire_customizer_style()
         'jquery',
         'customize-controls'
     ), false, true);
+    if(defined('WPDM_Version')){
+        wp_enqueue_script('chosen', plugins_url('/download-manager/assets/js/chosen.jquery.min.js'), array('jquery'));
+        wp_enqueue_style('chosen-css', plugins_url('/download-manager/assets/css/chosen.css'));
+    }
 }
 
 add_action('customize_controls_enqueue_scripts', 'attire_customizer_style');
+
+add_action("customize_controls_print_styles", function (){
+    ?>
+    <style>
+        .chosen-container.chosen-container-single {
+            max-width: 100%;
+        }
+        .chosen-container-single .chosen-single div b::after {
+            content: "\f333";
+            font-family: "dashicons";
+            font-size: 8pt;
+            height: 10px !important;
+            left: -2px;
+            position: absolute;
+            top: 0px;
+            width: 10px !important;
+        }
+    </style>
+<?php
+});
+add_action("customize_controls_print_scripts", function (){
+    ?>
+    <script>
+        jQuery(function ($) {
+            $('.customize-save-button-wrapper').prepend("<a title='<?php _e('Reset to default settings', 'attire'); ?>' id='reset-attire' class='button button-secondary' href='#' style='float: left;margin-right: 5px;background: #fb4e60;color:#ffffff;border-color: rgba(251, 55, 56, 0.8)'><?php _e('Reset', 'attire'); ?></a>");
+            $('body').on('click', '#reset-attire', function(e){
+                e.preventDefault();
+                if(!confirm("<?php _e('Are you trying to reset Attire theme options to it\'s default settings.\nAction can not be reverted.\nAre your sure?'); ?>")) return false;
+                var tt = $(this);
+                tt.attr('disabled', 'disabled').html('<?php _e('Reseting...', 'attire'); ?>');
+                $.post(ajaxurl, { action: 'reset_attire_options', __reset_attire: '<?php echo wp_create_nonce(NONCE_KEY ); ?>' }, function(res){
+                    //tt.removeAttr('disabled').html('<?php _e('Reset to Default', 'attire'); ?>');
+                    if(res.success){
+                        //jQuery('#customize-preview iframe').attr('src', jQuery('#customize-preview iframe').attr('src'));
+                        location.reload(true);
+                    }
+                });
+            });
+            var csn = 0;
+            $('body').on('click', function(){
+                if(csn) return;
+                $('select').chosen();
+                csn = 1;
+            });
+        });
+    </script>
+    <?php
+});
+
+add_action("wp_ajax_reset_attire_options", function (){
+    if(wp_verify_nonce($_REQUEST['__reset_attire'], NONCE_KEY) && current_user_can('manage_options')){
+        delete_option('attire_options');
+        wp_send_json(array('success' => true));
+    }
+});
 
 
 /**

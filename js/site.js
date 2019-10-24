@@ -137,6 +137,8 @@ jQuery(function ($) {
 
     // END: Back to top
 
+    $('.attire-tip').tooltip();
+
 
 // START: Full-Screen search form
 
