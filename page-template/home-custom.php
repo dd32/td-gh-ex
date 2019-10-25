@@ -11,7 +11,7 @@ get_header(); ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
         <?php $slider_pages = array();
-          for ( $count = 1; $count <= 4; $count++ ) {
+          for ( $count = 0; $count <= 3; $count++ ) {
             $mod = intval( get_theme_mod( 'aagaz_startup_slide_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
               $slider_pages[] = $mod;
@@ -33,7 +33,7 @@ get_header(); ?>
             <?php the_post_thumbnail(); ?>
             <div class="carousel-caption">
               <div class="inner_carousel">
-                <h2><?php the_title();?></h2>
+                <h1><?php the_title();?></h1>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt,20 ) ); ?></p>
                 <div class ="readbutton">
                   <a href="<?php the_permalink(); ?>"> <?php echo esc_html(get_theme_mod('aagaz_startup_slide_page',__('READ MORE','aagaz-startup'))); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','aagaz-startup' );?></span></a>
@@ -82,12 +82,12 @@ get_header(); ?>
             while ( $query->have_posts() ) : $query->the_post(); ?>
               <div class="about-text">
                 <?php if( get_theme_mod('aagaz_startup_title') != ''){ ?>     
-                  <h3><?php echo esc_html(get_theme_mod('aagaz_startup_title','')); ?></h3>
+                  <h2><?php echo esc_html(get_theme_mod('aagaz_startup_title','')); ?></h2>
                   <hr>
                 <?php }?>
                 <div class="row">
                   <div class="col-lg-6 col-md-6">
-                    <h4><?php the_title(); ?></h4>
+                    <h3><?php the_title(); ?></h3>
                     <p><?php the_excerpt();  ?></p>
                     <div class ="aboutbtn">
                       <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','aagaz-startup'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','aagaz-startup' );?></span></a>

@@ -25,9 +25,17 @@
 		    <i class="fa fa-user"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
 		    <i class="fas fa-comments"></i><span class="entry-comments"><?php comments_number( __('0 Comments','aagaz-startup'), __('0 Comments','aagaz-startup'), __('% Comments','aagaz-startup') ); ?></span>
 		</div>
-		<h3><?php the_title();?></h3>
+		<h1><?php the_title();?></h1>
 		<div class="text">
 	    	<?php the_content();?>
 	  	</div>
+	  	<div class="tags"><p><?php
+	      if( $tags = get_the_tags() ) {
+	        echo '<span class="meta-sep"></span>';
+	        foreach( $tags as $content_tag ) {
+	          $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
+	          echo '<a href="' . esc_url(get_term_link( $content_tag, $content_tag->taxonomy )) . '">' . esc_html($content_tag->name) . '</a>' . esc_html($sep);
+	        }
+	      } ?></p></div>
 	</div>
 </article>

@@ -116,7 +116,6 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	//Typography
 	$wp_customize->add_section( 'aagaz_startup_typography', array(
     	'title'      => __( 'Color / Fonts Settings', 'aagaz-startup' ),
-		'priority'   => 30,
 		'panel' => 'aagaz_startup_panel_id'
 	) );
 	
@@ -439,15 +438,35 @@ function aagaz_startup_customize_register( $wp_customize ) {
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aagaz_startup_theme_color', array(
   		'label' => __( 'Color Option', 'aagaz-startup' ),
-	    'description' => __('One can change complete theme color on just one click.
-', 'aagaz-startup'),
+	    'description' => __('One can change complete theme color on just one click.', 'aagaz-startup'),
 	    'section' => 'aagaz_startup_theme_color_option',
 	    'settings' => 'aagaz_startup_theme_color',
   	)));
 
+  	//Layout Settings
+	$wp_customize->add_section( 'aagaz_startup_width_layout', array(
+    	'title'      => __( 'Layout Settings', 'aagaz-startup' ),
+		'panel' => 'aagaz_startup_panel_id'
+	) );
+
+	$wp_customize->add_setting('aagaz_startup_theme_options',array(
+    'default' => __('Default','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('aagaz_startup_theme_options',array(
+        'type' => 'select',
+        'label' => __('Container Box','aagaz-startup'),
+        'description' => __('Here you can change the Width layout. ','aagaz-startup'),
+        'section' => 'aagaz_startup_width_layout',
+        'choices' => array(
+            'Default' => __('Default','aagaz-startup'),
+            'Wide Layout' => __('Wide Layout','aagaz-startup'),
+            'Box Layout' => __('Box Layout','aagaz-startup'),
+        ),
+	) );
+
 	$wp_customize->add_section( 'aagaz_startup_general_option', array(
     	'title'      => __( 'Sidebar Settings', 'aagaz-startup' ),
-		'priority'   => 30,
 		'panel' => 'aagaz_startup_panel_id'
 	) );
 
@@ -473,7 +492,6 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	$wp_customize->add_section('aagaz_startup_contact_details',array(
 		'title'	=> __('Topbar Section','aagaz-startup'),
 		'description'	=> __('Add Header Content here','aagaz-startup'),
-		'priority'	=> null,
 		'panel' => 'aagaz_startup_panel_id',
 	));
 
@@ -582,7 +600,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
       	'section' => 'aagaz_startup_slider',
 	));
 
-	for ( $count = 1; $count <= 4; $count++ ) {
+	for ( $count = 0; $count <= 3; $count++ ) {
 
 		$wp_customize->add_setting( 'aagaz_startup_slide_page' . $count, array(
 			'default'           => '',
@@ -628,6 +646,32 @@ function aagaz_startup_customize_register( $wp_customize ) {
     	'title'      => __( 'Footer Text', 'aagaz-startup' ),
 		'priority'   => null,
 		'panel' => 'aagaz_startup_panel_id'
+	) );
+
+	$wp_customize->add_setting('aagaz_startup_hide_show_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_hide_show_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll To Top','aagaz-startup'),
+      	'section' => 'aagaz_startup_footer',
+	));
+
+	$wp_customize->add_setting('aagaz_startup_footer_options',array(
+        'default' => __('Right align','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('aagaz_startup_footer_options',array(
+        'type' => 'select',
+        'label' => __('Scroll To Top','aagaz-startup'),
+        'description' => __('Here you can change the Footer layout. ','aagaz-startup'),
+        'section' => 'aagaz_startup_footer',
+        'choices' => array(
+            'Left align' => __('Left align','aagaz-startup'),
+            'Right align' => __('Right align','aagaz-startup'),
+            'Center align' => __('Center align','aagaz-startup'),
+        ),
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_footer_text',array(

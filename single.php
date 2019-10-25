@@ -41,8 +41,6 @@ get_header(); ?>
 
 					endwhile; // End of the loop.
 
-					the_tags(); 
-
 					?>
 				</div>
 			<?php }else if($layout_settings == 'Right Sidebar'){ ?>
@@ -72,8 +70,6 @@ get_header(); ?>
 						) );
 
 					endwhile; // End of the loop.
-
-					the_tags(); 
 
 					?>
 				</div>
@@ -108,8 +104,6 @@ get_header(); ?>
 
 					endwhile; // End of the loop.
 
-					the_tags(); 
-
 					?>
 				</div>
 			<?php }else if($layout_settings == 'Grid Layout'){ ?>
@@ -138,8 +132,6 @@ get_header(); ?>
 						) );
 
 					endwhile; // End of the loop.
-
-					the_tags(); 
 
 					?>
 				</div>
@@ -173,8 +165,6 @@ get_header(); ?>
 						) );
 
 					endwhile; // End of the loop.
-
-					the_tags(); 
 
 					?>
 				</div>
