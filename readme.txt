@@ -4,13 +4,13 @@ Tags: one-column, two-columns, right-sidebar footer-widgets, Blog, News, e-comme
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.2.4
-Stable tag: 0.0.01
+Stable tag: 0.0.02
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Axis Magazine is an easy to use blogging theme with  minimal and magazine design. It features a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog or any content-focused website. It is a simple design and multi-purpose theme compatible with elementor page builder and woocommerce.
+Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
 
 == Copyright ==
 
@@ -18,6 +18,11 @@ Axis Magazine WordPress Theme, Copyright 2019 Zidithemes
 Axis Magazine is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 0.0.02 =
+* Released: October 26, 2019
+
+Fixed axis_magazine_wp_link_pages, fixed css for easy digital downloads single page, fixed comments.php display errors.
 
 = 0.0.01 =
 * Released: September 23, 2019

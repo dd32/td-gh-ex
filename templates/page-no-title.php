@@ -2,7 +2,7 @@
 /**
  * The template for displaying pages
  *
- * @version    0.0.01
+ * @version    0.0.02
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
@@ -23,52 +23,50 @@
 
 	<div  id="content"  class="page-content">
 
-<div class="flowid axis-magazine-page-no-sidebar-no-title ">
+		<div class="flowid axis-magazine-page-no-sidebar-no-title ">
 
-	    <div class="mg-auto wid-90 mobwid-90">
-	        
-	        <div class="inner dsply-fl fl-wrap">
-	            
-	            <div class="wid-100 blog-2-col-inner">
-	            	
-	                <div class=" dsply-fl fl-wrap">
-	                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
+		    <div class="mg-auto wid-90 mobwid-90">
+		        
+		        <div class="inner dsply-fl fl-wrap">
+		            
+		            <div class="wid-100 blog-2-col-inner">
+		            	
+		                <div class=" dsply-fl fl-wrap">
+		                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>	
 
-	                	
-	                	
-	                	<div class="items wid-100 mobwid-100">
-	                            <div class="items-inner dsply-fl fl-wrap  mn-dz">
-	                                <div class="img-box ov-fl-hd wid-100 relative">
-	                                	
-	                                	
-                                        
-	                                    <div class="details-box ">
-	                                        <div class="details-box-inner">
-	                                            <p><?php the_content(); ?></p>
-	                                            
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                    </div>
-			            <div class="axis-magazine_link_pages">
-				            <?php wp_link_pages(); ?>
-				        </div>
-	                    <?php endwhile; else : ?>
-						<h2><?php esc_html__('No posts Found!', 'axis-magazine'); ?></h2>
-	                    <?php endif; ?>
-	                    <!-- NO SIDEBAR -->
-	                    
-	                </div>
-	                
-	            </div>
+		                	
+		                	
+		                	<div class="items wid-100 mobwid-100">
+		                            <div class="items-inner dsply-fl fl-wrap  mn-dz">
+		                                <div class="img-box ov-fl-hd wid-100 relative">
+		                                	
+		                                	<div class="details-box ">
+		                                        <div class="details-box-inner">
+		                                            <p><?php the_content(); ?></p>
+		                                            
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                    </div>
+				            <div class="axis_magazine_link_pages">
+					            <?php wp_link_pages(); ?>
+					        </div>
+		                    <?php endwhile; else : ?>
+							<h2><?php esc_html__('No posts Found!', 'axis-magazine'); ?></h2>
+		                    <?php endif; ?>
+		                    <!-- NO SIDEBAR -->
+		                    
+		                </div>
+		                
+		            </div>
 
-	        </div>
-	    </div>
+		        </div>
+		    </div>
+		</div>
+
+
 	</div>
-
-
-</div>
 
 </main>
 

@@ -265,7 +265,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	
 	//BLOGBAND SEARCH BUTTON SIDEBAR SECTION BACKGROUND COLOR
 	$wp_customize->add_setting('axis_magazine_search_btn_sidebar_bg_color_settings', array(
-	    'default' => __('#353535', 'axis-magazine'),
+	    'default' => __('#fff', 'axis-magazine'),
 	    'sanitize_callback'  => 'sanitize_hex_color',
 	));
 

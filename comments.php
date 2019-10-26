@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @version    0.0.01
+ * @version    0.0.02
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
@@ -23,8 +23,8 @@ if ( post_password_required() ) {
 
 	<h2 class="comments-title">
 		<?php
-			$axis-magazine_comments_sum = get_comments_number();
-			if ( '1' === $axis-magazine_comments_sum ) {
+			$axis_magazine_comments_sum = get_comments_number();
+			if ( '1' === $axis_magazine_comments_sum ) {
 				/* translators: %s: post title */
 				printf(  esc_html( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'axis-magazine' ) ), get_the_title() );
 			} else {
@@ -33,11 +33,11 @@ if ( post_password_required() ) {
 					esc_html( _nx(
 						'%1$s Reply to &ldquo;%2$s&rdquo;',
 						'%1$s Replies to &ldquo;%2$s&rdquo;',
-						$axis-magazine_comments_sum,
+						$axis_magazine_comments_sum,
 						'comments title',
 						'axis-magazine'
 					) ),
-					esc_html( number_format_i18n( $axis-magazine_comments_sum ) ),
+					esc_html( number_format_i18n( $axis_magazine_comments_sum ) ),
 					get_the_title()
 				);
 			}

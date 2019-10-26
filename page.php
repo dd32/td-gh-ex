@@ -2,7 +2,7 @@
 /**
  * The template for displaying pages
  *
- * @version    0.0.01
+ * @version    0.0.02
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
@@ -62,7 +62,7 @@
 	                    
 	                    </div>
 
-				        <div class="axis-magazine_link_pages">
+				        <div class="axis_magazine_link_pages">
 				            <?php wp_link_pages(); ?>
 				        </div>
 

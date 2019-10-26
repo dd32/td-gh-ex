@@ -2,7 +2,7 @@
 /**
  * The template for displaying widgets in the sidebar
  *
- * @version    0.0.01
+ * @version    0.0.02
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.

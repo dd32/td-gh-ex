@@ -3,8 +3,8 @@ Theme Name: Axis Magazine
 Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: http://www.zidithemes.tumblr.com/author
-Description: Axis Magazine is an easy to use magazine theme with  minimal and magazine design. It features a responsive design, over four different blog layouts. axis is perfect for your personal blog or any content-focused website. It is a simple design and multi-purpose theme compatible with elementor page builder and woocommerce.
-Version: 0.0.01
+Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
+Version: 0.0.02
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template
@@ -1510,6 +1510,7 @@ ul {
     margin: 0px 0px 60px 0px;
     width: 49%;
     border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 } 
 
 
@@ -1777,6 +1778,7 @@ ul {
     margin: 0px 0px 60px 0px;
     width: 100%;
     border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 } 
 
 
@@ -2043,6 +2045,7 @@ ul {
     margin: 0px 0px 60px 0px;
     width: 49%;
     border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 } 
 
 
@@ -2308,6 +2311,7 @@ ul {
     margin: 0px 0px 60px 0px;
     width: 32.3%;
     border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 } 
 
 
@@ -2567,6 +2571,7 @@ ul {
     margin: 0px 0px 60px 0px;
     width: 100%;
     border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 } 
 
 
@@ -3301,6 +3306,7 @@ ul {
     padding: 20px 30px;
     background: #ffffff;
     box-sizing: border-box;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 }
 
 .axis-magazine-page .inner .blog-2-col-inner .items .items-inner .img-box{}
@@ -3509,6 +3515,7 @@ ul {
     background: #ffffff;
     box-sizing: border-box;
     border: 1px solid #dadce0;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 }
 
 .wrap-comments .comments-title{
@@ -4102,7 +4109,31 @@ ul {
 
 /***** END SIDEBAR *****/
 
+/* BEGIN EASY DIGITAL DOWNLOADS */
 
+.edd-page {}
+.edd-page .blog-2-col-inner {}
+.edd-page .blog-2-col-inner .items {}
+.edd-page .blog-2-col-inner .items .items-inner {
+    border-radius: 2px;
+    padding: 20px;
+    background: #ffffff;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
+}
+
+.single-download  {}
+.single-download .blog-2-col-inner div > span {
+    display: flex;
+    flex-wrap: wrap;
+}
+.single-download .blog-2-col-inner .items  {}
+.single-download .blog-2-col-inner .items .items-inner {}
+
+
+/* END EASY DIGITAL DOWNLOADS */
 
 /* BEGIN WOOCOMMERCE */
 .required {
@@ -4118,15 +4149,26 @@ ul {
     background: none;
     box-shadow: none;
 }
+.woocommerce-page .blog-2-col-inner .items {
+    background: transparent;
+    border: none;
+}
 
 .axis-magazine-woocommerce .blog-2-col-inner .items .items-inner {
     border-radius: 2px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid #bdbdbd;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67, 0.3), 0 4px 8px 3px rgba(60,64,67, 0.15);
 }
 
 .axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box {
 
+}
+
+.axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box h1{
+    padding: 15px 0px 0px 20px;
 }
 
 .axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box .page-title{
@@ -4139,7 +4181,9 @@ ul {
 
 .axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box .woocommerce-products-header page-title{}
 
-.axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box .woocommerce-result-count {}
+.axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box .woocommerce-result-count {
+    padding: 15px 0px 0px 20px;
+}
 
 .axis-magazine-woocommerce .blog-2-col-inner .items .items-inner .img-box .woocommerce-ordering{}
 
@@ -4158,6 +4202,7 @@ ul {
     margin-right: 0px;
     margin-left: 0px;
     background: #fff;
+    border: 1px solid #9c9c9c;
     /*box-shadow: 1px 1px 5px 1px rgba(0,0,0,.4);*/
 }
 

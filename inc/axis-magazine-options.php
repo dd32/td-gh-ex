@@ -25,7 +25,7 @@ function axis_magazine_theme_info_display() {
 	
 	?>
 	<div class="wrap axis-magazine-adm">
-		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.01', 'axis-magazine'); ?></h1>
+		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.02', 'axis-magazine'); ?></h1>
 		<div class="axis-magazine-adm-dsply-fl axis-magazine-adm-fl-wrap axis-magazine-adm-jc-sp-btw">
 
 			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
@@ -47,6 +47,16 @@ function axis_magazine_theme_info_display() {
 				<p>
 					<a href="<?php echo esc_url(admin_url('customize.php')); ?>" class="button button-secondary" target="_blank">
 						<?php esc_html_e('Go To Customizer', 'axis-magazine'); ?>
+					</a>
+				</p>
+			</div>
+
+			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
+				<h4><?php esc_html_e('View All Our Themes','axis-magazine'); ?></h4>
+				<p><?php esc_html_e('View all our themes.', 'axis-magazine'); ?></p>
+				<p>
+					<a href="<?php echo esc_url('https://wordpress.org/themes/author/zidithemes'); ?>" class="button button-secondary" target="_blank">
+						<?php esc_html_e('Latest Themes', 'axis-magazine'); ?>
 					</a>
 				</p>
 			</div>

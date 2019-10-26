@@ -2,7 +2,7 @@
 /**
  * The template for displaying details of the posts
  *
- * @version    0.0.01
+ * @version    0.0.02
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
@@ -45,9 +45,15 @@
 	                                    <div class="details-box ">
 	                                        <div class="details-box-inner">
 	                                        	<div class="singular dsply-fl jc-sp-btw">
-		                                            <span class=" mg-bt-20 text-center dsply-ib date bg-wrap"><?php the_time(get_option('date_format')); ?></span>
-		                                            <span class="dsply-ib mg-left-15 text-center author bg-wrap"><?php esc_html_e(' by ', 'axis-magazine'); ?><?php the_author_posts_link(); ?></span>
-		                                            <span class="dsply-ib mg-left-15 comments"><a href="<?php comments_link(); ?>"> <?php comments_number(); ?> </a></span>
+		                                            <span class=" mg-bt-20 text-center dsply-ib date bg-wrap">
+		                                            	<?php the_time(get_option('date_format')); ?>
+		                                            </span>
+		                                            <span class="dsply-ib mg-left-15 text-center author bg-wrap">
+		                                            	<?php esc_html_e(' by ', 'axis-magazine'); ?><?php the_author_posts_link(); ?>
+		                                            </span>
+		                                            <span class="dsply-ib mg-left-15 comments">
+		                                            	<a href="<?php comments_link(); ?>"> <?php comments_number(); ?> </a>
+		                                            </span>
 	                                        	</div>
 			                                        	
 		                                        <div class="featured-img">
@@ -82,7 +88,7 @@
 							<h2><?php esc_html__('No posts Found', 'axis-magazine'); ?></h2>
 		                    <?php endif; ?>
 	                    </div>
-				        <div class="axis-magazine_link_pages">
+				        <div class="axis_magazine_link_pages">
 				            <?php wp_link_pages(); ?>
 				        </div>
 	                    <?php get_sidebar(); ?>
