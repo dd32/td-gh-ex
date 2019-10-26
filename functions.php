@@ -330,3 +330,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( ! function_exists( 'aeonblog_breadcrumb_trail' ) ) {
 	require get_template_directory() . '/inc/breadcrumb.php';
 }
+
+/**
+ * Load dynamic css file
+*/
+require get_template_directory() . '/inc/functions/dynamic-css.php';

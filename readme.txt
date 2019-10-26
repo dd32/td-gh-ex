@@ -3,7 +3,7 @@ Contributors: aeontheme
 Requires at least: 5.0
 Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,9 @@ We would love to hear your ideas.
 You can use email us at support@aeonwp.com
 
 == Changelog ==
+
+= 1.1.1 - October 26 2019 =
+Font and Color Issues Fixed
 
 = 1.1.0 - October 22 2019 =
 Added a link to the premium version of the theme.
