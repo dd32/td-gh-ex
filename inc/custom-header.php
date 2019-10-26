@@ -23,7 +23,7 @@ if ( ! function_exists( 'akhada_fitness_gym_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see multipurpose_ecommerce_custom_header_setup().
+ * @see akhada_fitness_gym_custom_header_setup().
  */
 
 function akhada_fitness_gym_header_style() {
@@ -34,7 +34,7 @@ function akhada_fitness_gym_header_style() {
 		//Check if user has defined any header image.
 		if ( get_header_image() ) :
 	?>
-		.site-header{
+		#header{
 			background: url(<?php echo esc_url(get_header_image()); ?>) no-repeat;
 			background-position: center top;
 		}

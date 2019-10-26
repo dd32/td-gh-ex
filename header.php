@@ -7,8 +7,8 @@
  * @since 1.0
  * @version 0.3
  */
-?>
-<!DOCTYPE html>
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -20,43 +20,61 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'akhada-fitness-gym' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content" alt="<?php esc_html_e( 'Skip to content', 'akhada-fitness-gym' ); ?>"><?php esc_html_e( 'Skip to content', 'akhada-fitness-gym' ); ?></a>
 
-<div class="top-header">
-	<div class="container">	
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>	
-		<div class="top">
-			<?php if( get_theme_mod( 'akhada_fitness_gym_mail','' ) != '') { ?>	
-		        <i class="fas fa-envelope"></i><span class="col-org"><?php echo esc_html( get_theme_mod('akhada_fitness_gym_mail',__('support@example.com','akhada-fitness-gym')) ); ?></span>
-		    <?php } ?>
-	   		<?php if( get_theme_mod( 'akhada_fitness_gym_location','' ) != '') { ?>		
-		        <i class="fas fa-map-marker-alt"></i><span class="col-org"><?php echo esc_html( get_theme_mod('akhada_fitness_gym_location',__('9870 st. vicent place, glasgaw ,D.C 45 Fr 45','akhada-fitness-gym')) ); ?></span>
-		    <?php } ?>
-		</div>
-	</div>
-</div>
-<div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','akhada-fitness-gym'); ?></a></div>
-
-<div id="header">
-	<div class="container">
-		<div class="main-top">
-			<div class="row padd0">
-				<div class="col-lg-4 col-md-4">
-					<div class="logo">
-				        <?php if( has_custom_logo() ){ akhada_fitness_gym_the_custom_logo();
-				           }else{ ?>
-				          <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				          <?php $description = get_bloginfo( 'description', 'display' );
-				          if ( $description || is_customize_preview() ) : ?> 
-				            <p class="site-description"><?php echo esc_html($description); ?></p>       
-				        <?php endif; }?>
-				    </div>
-				</div>
-				<div class="nav col-lg-8 col-md-8">
-					<?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>	
-				</div>
+	<div class="top-header">
+		<div class="container">	
+			<?php get_template_part( 'template-parts/header/header', 'image' ); ?>	
+			<div class="top">
+				<?php if( get_theme_mod( 'akhada_fitness_gym_mail','' ) != '') { ?>	
+			        <span class="col-org"><i class="fas fa-envelope"></i><?php echo esc_html( get_theme_mod('akhada_fitness_gym_mail','') ); ?></span>
+			    <?php } ?>
+		   		<?php if( get_theme_mod( 'akhada_fitness_gym_location','' ) != '') { ?>		
+			        <span class="col-org"><i class="fas fa-map-marker-alt"></i><?php echo esc_html( get_theme_mod('akhada_fitness_gym_location','') ); ?></span>
+			    <?php } ?>
 			</div>
-			<div class="clearfix"></div>
 		</div>
 	</div>
-</div>
+
+	<header id="header">
+		<div class="container">
+			<div class="main-top">
+				<div class="row padd0">
+					<div class="col-lg-3 col-md-5 col-9">
+						<div class="logo">
+					        <?php if( has_custom_logo() ){ akhada_fitness_gym_the_custom_logo();
+					           }else{ ?>
+					          <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					          <?php $description = get_bloginfo( 'description', 'display' );
+					          if ( $description || is_customize_preview() ) : ?> 
+					            <p class="site-description"><?php echo esc_html($description); ?></p>       
+					        <?php endif; }?>
+					    </div>
+					</div>
+					<div class="col-lg-9 col-md-7 col-3">
+						<div class="toggle-menu responsive-menu">
+					            <button onclick="resMenu_open()" role="tab"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','akhada-fitness-gym'); ?></span></button>
+					        </div>
+							<div id="sidelong-menu" class="nav sidenav">
+				                <nav id="primary-site-navigation" class="nav-menu" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'akhada-fitness-gym' ); ?>">
+				                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','akhada-fitness-gym'); ?></span></a>
+				                  <?php 
+				                    wp_nav_menu( array( 
+				                      'theme_location' => 'primary',
+				                      'container_class' => 'main-menu-navigation clearfix' ,
+				                      'menu_class' => 'clearfix',
+				                      'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+				                      'fallback_cb' => 'wp_page_menu',
+				                    ) ); 
+				                  ?>
+				                </nav>
+				            </div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</header>
+
+	<div class="site-content-contain">
+		<div id="content" class="site-content">

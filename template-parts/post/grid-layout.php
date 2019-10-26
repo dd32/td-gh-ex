@@ -26,7 +26,7 @@
 			<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 				<div class="post-thumbnail">
 					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail( 'akhada-fitness-gym-featured-image' ); ?>
+						<?php the_post_thumbnail( 'akhada-fitness-gym-featured-image' ); ?><span class="screen-reader-text"><?php the_title();?></span>
 					</a>
 				</div>
 			<?php endif; ?>
@@ -39,6 +39,8 @@
 				else :
 				the_excerpt();
 				endif;
+				
+
 				wp_link_pages( array(
 					'before'      => '<div class="page-links">' . __( 'Pages:', 'akhada-fitness-gym' ),
 					'after'       => '</div>',
@@ -47,12 +49,7 @@
 				) );
 				?>
 			</div>
-			<div class="new-text">
-	            <div class="box-content">
-	                <p><?php echo the_excerpt(); ?></p>
-	                <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'akhada-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','akhada-fitness-gym'); ?></a>
-	            </div>
-	        </div>
+
 			<?php
 			if ( is_single() ) {
 				akhada_fitness_gym_entry_footer();

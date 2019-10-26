@@ -13,9 +13,8 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 }
 
 function akhada_fitness_gym_setup() {
-
-	load_theme_textdomain( 'akhada-fitness-gym', get_template_directory() . '/languages' );
 	
+	load_theme_textdomain( 'akhada-fitness-gym', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
@@ -38,7 +37,6 @@ function akhada_fitness_gym_setup() {
 	$GLOBALS['content_width'] = 525;
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'akhada-fitness-gym' ),
-		'footer'	=> __('Footer Menu', 'akhada-fitness-gym'),
 	) );
 
 	add_theme_support( 'html5', array(
@@ -71,8 +69,24 @@ function akhada_fitness_gym_setup() {
  	 */
 	add_editor_style( array( 'assets/css/editor-style.css', akhada_fitness_gym_fonts_url() ) );
 
+	// Theme Activation Notice
+	global $pagenow;
+
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'akhada_fitness_gym_activation_notice' );
+	}
+
 }
 add_action( 'after_setup_theme', 'akhada_fitness_gym_setup' );
+
+// Notice after Theme Activation
+function akhada_fitness_gym_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible start-notice">';
+	echo '<h3>'. esc_html__( 'Welcome to Luzuk!!', 'akhada-fitness-gym' ) .'</h3>';
+	echo '<p>'. esc_html__( 'Thank you for choosing Akhada Fitness Gym theme. It will be our pleasure to have you on our Welcome page to serve you better.', 'akhada-fitness-gym' ) .'</p>';
+	echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=akhada_fitness_gym_guide' ) ) .'" class="button button-primary">'. esc_html__( 'GET STARTED', 'akhada-fitness-gym' ) .'</a></p>';
+	echo '</div>';
+}
 
 function akhada_fitness_gym_widgets_init() {
 	register_sidebar( array(
@@ -150,12 +164,7 @@ add_action( 'widgets_init', 'akhada_fitness_gym_widgets_init' );
 function akhada_fitness_gym_fonts_url(){
 	$font_url = '';
 	$font_family = array();
-	$font_family[] = 'PT Sans:300,400,600,700,800,900';
-	$font_family[] = 'Roboto:400,700';
-	$font_family[] = 'Poppins:200,200i,300,300i,400,400i,500,500i,700i,800i';
-	$font_family[] = 'Lato';
-	$font_family[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
-	$font_family[] = 'Sacramento';
+	$font_family[] = 'Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
 
 	$query_args = array(
 		'family'	=> urlencode(implode('|',$font_family)),
@@ -169,7 +178,7 @@ function akhada_fitness_gym_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'akhada-fitness-gym-fonts', akhada_fitness_gym_fonts_url(), array(), null );
 		//Bootstarp 
-	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri().'/assets/css/bootstrap.min.css' );	
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/assets/css/bootstrap.css' );	
 	
 	// Theme stylesheet.
 	wp_enqueue_style( 'akhada-fitness-gym-style', get_stylesheet_uri() );
@@ -202,6 +211,8 @@ function akhada_fitness_gym_scripts() {
 
 	wp_enqueue_script( 'akhada-fitness-gym-navigation-jquery', get_theme_file_uri( '/assets/js/navigation.js' ), array( 'jquery' ), '2.1.2', true );
 	wp_enqueue_script( 'akhada-fitness-gym-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
 
 	wp_localize_script( 'akhada-fitness-gym-skip-link-focus-fix', 'akhada_fitness_gymScreenReaderText', $akhada_fitness_gym_l10n );
 
@@ -227,11 +238,15 @@ function akhada_fitness_gym_sanitize_choices( $input, $setting ) {
 }
 
 //footer Link
-define('AKHADA_FITNESS_GYM_CREDIT','https://www.luzuk.com/themes/free-fitness-wordpress-theme/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_LIVE_DEMO','https://www.luzuk.com/demo/akhada-fitness/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_PRO_DOCS','https://luzuk.com/demo/akhada-fitness/documentation/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_BUY_NOW','https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_SUPPORT','https://wordpress.org/support/theme/akhada-fitness-gym/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_CREDIT','https://www.luzuk.com/','akhada-fitness-gym');
 
 if ( ! function_exists( 'akhada_fitness_gym_credit' ) ) {
 	function akhada_fitness_gym_credit(){
-		echo "<a href=".esc_url(AKHADA_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Akhada Fitness WordPress Theme','akhada-fitness-gym')."</a>";
+		echo "<a href=".esc_url(AKHADA_FITNESS_GYM_CREDIT)." target='_blank' alt='".esc_html__('Luzuk','akhada-fitness-gym')."'>".esc_html__('Luzuk','akhada-fitness-gym')."</a>";
 	}
 }
 
@@ -243,6 +258,21 @@ function akhada_fitness_gym_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'akhada_fitness_gym_loop_columns');
+	if (!function_exists('akhada_fitness_gym_loop_columns')) {
+		function akhada_fitness_gym_loop_columns() {
+	return 3; // 3 products per row
+	}
+}
+
+function akhada_fitness_gym_sanitize_dropdown_pages( $page_id, $setting ) {
+  // Ensure $input is an absolute integer.
+  $page_id = absint( $page_id );
+  // If $page_id is an ID of a published page, return it; otherwise, return the default.
+  return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+}
+
 require get_parent_theme_file_path( '/inc/custom-header.php' );
 
 require get_parent_theme_file_path( '/inc/template-tags.php' );
@@ -250,3 +280,5 @@ require get_parent_theme_file_path( '/inc/template-tags.php' );
 require get_parent_theme_file_path( '/inc/template-functions.php' );
 
 require get_parent_theme_file_path( '/inc/customizer.php' );
+
+require get_parent_theme_file_path( '/inc/getting-started/getting-started.php' );

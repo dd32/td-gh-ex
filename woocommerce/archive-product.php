@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' ); ?>
 
-<div class="container">
+<div class="container content-area">
 	<div class="row">
 		<div class="col-lg-8 col-md-8">
 			<?php
@@ -102,7 +102,7 @@ get_header( 'shop' ); ?>
 			do_action( 'woocommerce_after_main_content' );?>
 
 		</div>
-		<div class="col-lg-4 col-md-4">
+		<div id="sidebox" class="col-lg-4 col-md-4">
 			<?php
 				/**
 				 * Hook: woocommerce_sidebar.

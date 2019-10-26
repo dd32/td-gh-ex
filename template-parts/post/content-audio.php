@@ -6,6 +6,7 @@
  * @since 1.0
  * @version 1.4
  */
+
 ?>
 <?php
   $content = apply_filters( 'the_content', get_the_content() );
@@ -29,25 +30,24 @@
         }
       ?>
     </header>
-    <div class="post-thumbnail">
-      <?php
-        if ( ! is_single() ) {
-          // If not a single post, highlight the audio file.
-          if ( ! empty( $audio ) ) {
-            foreach ( $audio as $audio_html ) {
-              echo '<div class="entry-audio">';
-                echo $audio_html;
-              echo '</div><!-- .entry-audio -->';
-            }
+
+    <?php if ( '' !== get_the_post_thumbnail() || is_single() ) : ?>
+      <div class="post-thumbnail">
+        <?php
+          if ( ! is_single() ) {
+            // If not a single post, highlight the audio file.
+            if ( ! empty( $audio ) ) {
+              foreach ( $audio as $audio_html ) {
+                echo '<div class="entry-audio">';
+                  echo $audio_html;
+                echo '</div><!-- .entry-audio -->';
+              }
+            };
           };
-        };
-      ?>  
-    </div>
-    <div class="meta">
-      <?php echo esc_html( get_the_date( 'd') ); ?>
-      <?php echo esc_html( get_the_date( 'M' ) ); ?>
-      <?php echo esc_html( get_the_date( 'Y' ) ); ?>
-    </div>
+        ?>  
+      </div>
+    <?php endif; ?>
+
     <div class="entry-content">
       <?php
       /* translators: %s: Name of current post */
@@ -56,6 +56,8 @@
       else :
       the_excerpt();
       endif;
+      
+
       wp_link_pages( array(
         'before'      => '<div class="page-links">' . __( 'Pages:', 'akhada-fitness-gym' ),
         'after'       => '</div>',
@@ -64,12 +66,7 @@
       ) );
       ?>
     </div>
-    <div class="new-text">
-      <div class="box-content">
-        <p><?php echo the_excerpt(); ?></p>
-        <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'akhada-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','akhada-fitness-gym'); ?></a>
-      </div>
-    </div>
+
     <?php
     if ( is_single() ) {
       akhada_fitness_gym_entry_footer();

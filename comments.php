@@ -23,13 +23,15 @@ if ( post_password_required() ) {
 				printf( esc_html__( 'One thought on &ldquo;%s&rdquo;', 'akhada-fitness-gym' ), get_the_title() );
 			} else {
 				printf(
-					/* translators: 1: number of comments, 2: post title */
 					esc_html(
+					/* translators: 1: number of comments, 2: post title */
+					_nx(
 						'%1$s Reply to &ldquo;%2$s&rdquo;',
 						'%1$s Replies to &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
 						'akhada-fitness-gym'
+					)
 					),
 					esc_html (number_format_i18n( $comments_number ) ),
 					get_the_title()

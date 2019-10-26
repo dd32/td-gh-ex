@@ -15,7 +15,7 @@
 		<?php akhada_fitness_gym_edit_link( get_the_ID() ); ?>
 	</header>
 	<div class="entry-content">
-		<img src="<?php the_post_thumbnail_url(); ?>">
+		<?php the_post_thumbnail(); ?>
 		<?php			
 			the_content();
 

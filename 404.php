@@ -16,7 +16,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'akhada-fitness-gym' ); ?></h1>
 					<div class="home-btn">
-						<a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Return to home page', 'akhada-fitness-gym' ); ?></a>
+						<a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Return to home page', 'akhada-fitness-gym' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Return to home page', 'akhada-fitness-gym' ); ?></span></a>
 					</div>
 				</header>
 				<div class="page-content">

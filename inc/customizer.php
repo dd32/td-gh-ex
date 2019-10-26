@@ -73,7 +73,7 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 		'type'=> 'text'
 	));
 
-	//home page slider
+	//slider
 	$wp_customize->add_section( 'akhada_fitness_gym_slider_section' , array(
     	'title'      => __( 'Slider Settings', 'akhada-fitness-gym' ),
 		'priority'   => null,
@@ -85,7 +85,7 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 		// Add color scheme setting and control.
 		$wp_customize->add_setting( 'akhada_fitness_gym_slider' . $count, array(
 			'default'           => '',
-			'sanitize_callback' => 'absint'
+			'sanitize_callback' => 'akhada_fitness_gym_sanitize_dropdown_pages'
 		) );
 
 		$wp_customize->add_control( 'akhada_fitness_gym_slider' . $count, array(
@@ -139,7 +139,7 @@ function akhada_fitness_gym_customize_register( $wp_customize ) {
 	));
 	
 	$wp_customize->add_control('akhada_fitness_gym_footer_copy',array(
-		'label'	=> __('Section Title','akhada-fitness-gym'),
+		'label'	=> __('Footer Text','akhada-fitness-gym'),
 		'section'	=> 'akhada_fitness_gym_footer',
 		'setting'	=> 'akhada_fitness_gym_footer_copy',
 		'type'		=> 'text'
@@ -291,8 +291,8 @@ final class Akhada_Fitness_Gym_Customize {
 				'example_1',
 				array(
 					'priority' => 9,
-					'title'    => esc_html__( 'Akhada Fitness Pro Theme', 'akhada-fitness-gym' ),
-					'pro_text' => esc_html__( 'Go Pro',         'akhada-fitness-gym' ),
+					'title'    => esc_html__( 'Akhada Fitness Pro', 'akhada-fitness-gym' ),
+					'pro_text' => esc_html__( 'Go Pro','akhada-fitness-gym' ),
 					'pro_url'  => esc_url( 'https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/' ),
 				)
 			)
