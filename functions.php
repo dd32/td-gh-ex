@@ -43,7 +43,7 @@ define( 'BAYLEAF_THEME_VERSION', esc_html( wp_get_theme( get_template() )->get( 
  */
 function bayleaf_setup() {
 	// Make theme available for translation.
-	load_theme_textdomain( 'bayleaf' );
+	load_theme_textdomain( 'bayleaf', get_template_directory() . '/lang' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );

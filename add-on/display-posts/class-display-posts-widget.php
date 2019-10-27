@@ -68,6 +68,7 @@ class Display_Posts_Widget extends \WP_Widget {
 			'post_ids'   => '',
 			'pages'      => [],
 			'number'     => 5,
+			'offset'     => 0,
 			'orderby'    => 'date',
 			'order'      => 'DESC',
 			'styles'     => 'grid-view1',
@@ -98,7 +99,7 @@ class Display_Posts_Widget extends \WP_Widget {
 			'description'                 => esc_html__( 'Create a display posts widget.', 'bayleaf' ),
 			'customize_selective_refresh' => true,
 		];
-		parent::__construct( 'bayleaf_display_posts', esc_html__( 'Display Posts', 'bayleaf' ), $widget_ops );
+		parent::__construct( 'bayleaf_display_posts', esc_html__( 'Display Posts - Bayleaf', 'bayleaf' ), $widget_ops );
 	}
 
 	/**
@@ -168,6 +169,10 @@ class Display_Posts_Widget extends \WP_Widget {
 
 			if ( $instance['post_ids'] ) {
 				$query_args['post__in'] = explode( ',', $instance['post_ids'] );
+			}
+
+			if ( isset( $instance['offset'] ) && 0 !== $instance['offset'] ) {
+				$query_args['offset'] = $instance['offset'];
 			}
 		}
 
@@ -296,6 +301,11 @@ class Display_Posts_Widget extends \WP_Widget {
 				<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $instance['number'] ); ?>" size="3" />
 			</p>
 
+			<p class="post-offset">
+				<?php $this->label( 'offset', esc_html__( 'Offset (number of post to displace)', 'bayleaf' ) ); ?>
+				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'offset' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'offset' ) ); ?>" type="number" step="1" min="0" value="<?php echo absint( $instance['offset'] ); ?>" size="3" />
+			</p>
+
 			<p class="posts-orderby">
 				<?php
 				$this->label( 'orderby', esc_html__( 'Order By', 'bayleaf' ) );
@@ -399,6 +409,7 @@ class Display_Posts_Widget extends \WP_Widget {
 		}
 
 		$instance['number']  = absint( $new_instance['number'] );
+		$instance['offset']  = absint( $new_instance['offset'] );
 		$instance['orderby'] = ( array_key_exists( $new_instance['orderby'], $this->orderby ) ) ? $new_instance['orderby'] : 'date';
 
 		$instance['order'] = ( 'DESC' === $new_instance['order'] ) ? 'DESC' : 'ASC';

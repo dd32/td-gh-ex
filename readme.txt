@@ -20,6 +20,13 @@ PHP 5.4+, IE11+, WordPress 4.7+
 
 == Changelog ==
 
+= 1.4.1 =
+* Add: lang folder added to fecilitate easy translation.
+* Add: Full width single page or post layout.
+* Add: Add offset option to the Display posts widget.
+* Add: Add wp_body_open hook.
+* Modify: Rename Display posts widget to Bayleaf - Display Posts widget.
+
 = 1.4.0 =
 * Error Fix: Respect block editor gallery crop toggle.
 * Modify: Minor css improvements.

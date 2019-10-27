@@ -13,6 +13,9 @@
 			.no-sidebar & {
 				margin-left: -13.6%;
 			}
+			.fw-builder.no-sidebar & {
+				margin-left: 0;
+			}
 		}
 		@media only screen and (min-width: $laptop) {
 			margin-left: -7%;
@@ -36,6 +39,9 @@
 			.no-sidebar & {
 				margin-left: -13.6%;
 			}
+			.fw-builder.no-sidebar & {
+				margin-left: 0;
+			}
 		}
 		@media only screen and (min-width: $laptop) {
 			margin-left: -7%;
@@ -54,6 +60,9 @@
 		@media only screen and (min-width: $tablet__rotate) {
 			.no-sidebar & {
 				margin-right: -13.6%;
+			}
+			.fw-builder.no-sidebar & {
+				margin-right: 0;
 			}
 		}
 		@media only screen and (min-width: $laptop) {
@@ -76,6 +85,9 @@
 			max-width: none;
 			.no-sidebar & {
 				margin-right: -13.6%;
+			}
+			.fw-builder.no-sidebar & {
+				margin-right: 0;
 			}
 		}
 		@media only screen and (min-width: $laptop) {
@@ -116,6 +128,9 @@
 		max-width: none;
 		.no-sidebar & {
 			width: 1.272 * $line__length;
+		}
+		.fw-builder.no-sidebar & {
+			width: 100%;
 		}
 	}
 	@media only screen and (min-width: $laptop) {
@@ -247,8 +262,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-columns {
-	display: block;
 	&.has-2-columns {
+		display: block;
 		.wp-block-column {
 			@media only screen and (min-width: $tablet) {
 				float: left;

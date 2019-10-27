@@ -19,7 +19,10 @@ function bayleaf_body_classes( $classes ) {
 	if ( is_singular() ) {
 		$classes[] = 'singular-view';
 
-		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		if ( is_page_template( 'page-templates/full-width.php' ) ) {
+			$classes[] = 'no-sidebar';
+			$classes[] = 'fw-builder';
+		} elseif ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			$classes[] = 'no-sidebar';
 		} else {
 			if ( is_single() ) {

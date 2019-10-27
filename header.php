@@ -30,6 +30,14 @@
 
 <body<?php bayleaf_attr( 'body', false ); ?> <?php body_class(); ?>>
 
+	<?php
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	} else {
+		do_action( 'wp_body_open' );
+	}
+	?>
+
 	<header id="masthead"<?php bayleaf_attr( 'site-header' ); ?>>
 
 		<?php

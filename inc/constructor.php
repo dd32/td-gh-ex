@@ -238,6 +238,10 @@ function bayleaf_header_widgets() {
 function bayleaf_sidebar() {
 	if ( is_singular( [ 'post', 'page' ] ) ) {
 
+		if ( is_page_template( 'page-templates/full-width.php' ) ) {
+			return;
+		}
+
 		if ( is_single() && 'no-sidebar' === bayleaf_get_mod( 'bayleaf_post_sidebar', 'none' ) ) {
 			return;
 		}
@@ -328,6 +332,11 @@ function bayleaf_page_entry_header() {
 	}
 
 	if ( is_singular( [ 'post', 'page' ] ) ) {
+
+		if ( is_page_template( 'page-templates/full-width.php' ) ) {
+			return;
+		}
+
 		bayleaf_markup(
 			'page-entry-header',
 			[

@@ -827,8 +827,7 @@ body.block-editor-page #editor {
 			font-size: 18px;
 		}
 	}
-	p.wp-block-cover-image-text,
-	p.wp-block-cover-text {
+	.wp-block-cover p {
 		color: $base-color;
 		font-size: 2em;
 	}

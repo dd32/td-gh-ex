@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/bayleaf/
 Author: Vedathemes
 Author URI: https://www.vedathemes.com
 Description: Bayleaf is designed for cooking or food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme also offers full width single column layout on single pages for distraction free display of your food recipe. Bayleaf is also compatible with Gutenberg.
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayleaf
@@ -1138,6 +1138,10 @@ button.search-submit:focus {
 	text-decoration: none;
 }
 
+.singular-view.fw-builder:not(.home) .site-header {
+	margin-bottom: 1.75rem;
+}
+
 .home .site-header {
 	margin-bottom: 0;
 }
@@ -1723,6 +1727,10 @@ button.search-submit:focus {
 .singular-view:not(.woocommerce-page) .site-main {
 	max-width: 41rem;
 	margin: 0 auto;
+}
+
+.singular-view.fw-builder:not(.woocommerce-page) .site-main {
+	max-width: none;
 }
 
 body:not(.error404) .page-header {
@@ -3592,6 +3600,18 @@ h3.related-posts-title {
 	margin-bottom: 1.75rem;
 }
 
+.entry-content .pp-podcast.postview {
+	margin-bottom: 3.5rem;
+}
+
+.wp-block-column .entry-content .pp-podcast.postview {
+	margin-bottom: 2.625rem;
+}
+
+.entry-content .pp-podcast.postview:last-child {
+	margin-bottom: 1.75rem;
+}
+
 .has-featured-img {
 	position: relative;
 }
@@ -4040,6 +4060,9 @@ h3.related-posts-title {
 	.singular-view:not(.home) .site-header {
 		margin-bottom: 5.25rem;
 	}
+	.singular-view.fw-builder:not(.home) .site-header {
+		margin-bottom: 1.75rem;
+	}
 	.header-items {
 		margin-top: 1.75rem;
 		border-bottom-width: 0;
@@ -4476,6 +4499,9 @@ h3.related-posts-title {
 	}
 	.singular-view:not(.woocommerce-page) .site-main {
 		width: 87.72%;
+	}
+	.singular-view.fw-builder:not(.woocommerce-page) .site-main {
+		width: 100%;
 	}
 	.sidebar-widget-area {
 		margin-left: 3.5rem;
