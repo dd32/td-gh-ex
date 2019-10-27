@@ -83,19 +83,6 @@ a.book-now {
     background: #ee591f ;    
 }
 
-/* Header slider */
-.header-slider .owl-next,
-.header-slider .owl-prev {
-    color: #ee591f ;    
-}
-
-.header-slider .owl-next, .header-slider .owl-prev {
-    border: solid 1px #ee591f;
-}
-
-.header-slider .owl-next:hover, .header-slider .owl-prev:hover {
-    background: #ee591f !important;
-}
 /* 05. Features */
 
 .features-list-item .icon i {
