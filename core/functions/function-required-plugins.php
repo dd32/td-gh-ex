@@ -26,28 +26,24 @@ if (!function_exists('anna_lite_required_plugins')) {
 				'slug'      => 'wip-custom-login',
 				'required'  => false,
 			),
-
 			array(
 				'name'      => 'WIP WooCarousel Lite',
 				'slug'      => 'wip-woocarousel-lite',
 				'required'  => false,
 			),
-
+			array(
+				'name'      => 'Chatbox Manager',
+				'slug'      => 'wa-chatbox-manager',
+				'required'  => false,
+			),
 			array(
 				'name'      => 'Widget Importer & Exporter',
 				'slug'      => 'widget-importer-exporter',
 				'required'  => false,
 			),
-	
 			array(
 				'name'      => 'Regenerate Thumbnails',
 				'slug'      => 'regenerate-thumbnails',
-				'required'  => false,
-			),
-
-			array(
-				'name'      => 'Instagram Slider Widget',
-				'slug'      => 'instagram-slider-widget',
 				'required'  => false,
 			),
 

@@ -525,17 +525,6 @@ if (!function_exists('anna_lite_customize_panel_function')) {
 
 			array( 
 
-				'label' => esc_html__( 'Google Url','anna-lite'),
-				'description' => esc_html__( 'Insert Google Url (leave empty if you want to hide the button)','anna-lite'),
-				'id' => 'anna_lite_footer_google_button',
-				'type' => 'url',
-				'section' => 'footer_section',
-				'std' => '',
-
-			),
-
-			array( 
-
 				'label' => esc_html__( 'Linkedin Url','anna-lite'),
 				'description' => esc_html__( 'Insert Linkedin Url (leave empty if you want to hide the button)','anna-lite'),
 				'id' => 'anna_lite_footer_linkedin_button',
