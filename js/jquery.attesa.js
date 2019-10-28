@@ -218,7 +218,7 @@
 								if($('header#masthead').attr('data-logo-on-scroll')){
 									if ($logoOnScroll && $logoOriginal) {
 										$('.attesa-logo img').fadeOut(125, function() {
-											$('.attesa-logo img').attr('src',$logoOnScroll);
+											$('.attesa-logo img').attr('src',$logoOriginal);
 											$('.attesa-logo img').attr('srcset',$logoOrininalSrcset);
 										}).fadeIn(125);
 									}

@@ -7,6 +7,7 @@
 	font-weight: 400;
 	font-size: 80%;
     padding: 0 5px;
+	line-height: 26px;
 }
 #accordion-section-manager_attesa_buy_pro .accordion-section-title .button:first-child {
 	background: #689e5b;

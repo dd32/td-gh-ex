@@ -434,6 +434,10 @@ if( ! function_exists('attesa_google_fonts_heading')){
 			'Expletus Sans : cursive' => esc_html__( 'Expletus Sans', 'attesa'),
 			'Sansita : sans-serif' => esc_html__( 'Sansita', 'attesa'),
 			'Montserrat Alternates : sans-serif' => esc_html__( 'Montserrat Alternates', 'attesa'),
+			'Teko : sans-serif' => esc_html__( 'Teko', 'attesa'),
+			'Passion One : cursive' => esc_html__( 'Passion One', 'attesa'),
+			'Srisakdi : cursive' => esc_html__( 'Srisakdi', 'attesa'),
+			'Zilla Slab Highlight : cursive' => esc_html__( 'Zilla Slab Highlight', 'attesa'),
 		);
 		return apply_filters('attesa_google_fonts_heading_register', $attesa_google_fonts_heading);
 	}
@@ -473,6 +477,9 @@ if( ! function_exists('attesa_google_fonts_text')){
 			'Advent Pro : sans-serif' => esc_html__( 'Advent Pro', 'attesa'),
 			'Livvic : sans-serif' => esc_html__( 'Livvic', 'attesa'),
 			'Fira Sans : sans-serif' => esc_html__( 'Fira Sans', 'attesa'),
+			'Red Hat Display : sans-serif' => esc_html__( 'Red Hat Display', 'attesa'),
+			'ABeeZee : sans-serif' => esc_html__( 'ABeeZee', 'attesa'),
+			'Turret Road : cursive' => esc_html__( 'Turret Road', 'attesa'),
 		);
 		return apply_filters('attesa_google_fonts_text_register', $attesa_google_fonts_text);
 	}

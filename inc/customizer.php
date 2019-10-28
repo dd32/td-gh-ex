@@ -1900,6 +1900,7 @@ function attesa_customize_register( $wp_customize ) {
 		'choices' => array(
 			'minimal' => __( 'Minimal', 'attesa'),
 			'minimaltop' => __( 'Minimal Top', 'attesa'),
+			'minimalside' => __( 'Minimal Side', 'attesa'),
 			'bounce' => __( 'Bounce', 'attesa'),
 			'default' => __( 'Default', 'attesa'),
 		),
