@@ -675,3 +675,9 @@ footer .businessup-widget .businessup-widget-tags a:hover, footer .businessup-wi
 .woocommerce form .form-row label { 
 	color: #222;
 }
+
+.btn-theme:hover, .btn-theme:focus {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
