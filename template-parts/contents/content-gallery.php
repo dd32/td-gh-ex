@@ -13,25 +13,20 @@
 	
 	<header class="entry-header">
 		<?php
-		if ( apply_filters( 'bathemos_page_option', true, 'page_title' ) ) :
+		if ( apply_filters( 'batourslight_page_option', true, 'page_title' ) ) :
 			if ( is_single() && !get_the_post_thumbnail()) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			elseif ( ! is_single()) :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 		endif;
-
-		if ( '' !== get_the_post_thumbnail() && ! is_single() && ! get_post_gallery() ) {
-			
-			//do_action( 'bathemos_get_content_tag_template', 'post-thumbnail' );
-		}
 	
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
 				<?php
-				do_action( 'bathemos_get_content_tag_template', 'posted-on' );
-				do_action( 'bathemos_get_content_tag_template', 'posted-by' );
+				get_template_part( 'template-parts/content-tags/content-tag-posted-on' );
+                get_template_part( 'template-parts/content-tags/content-tag-posted-by' );
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -47,7 +42,7 @@
 			if ( get_post_gallery() ) {
 				
 				echo '<div class="entry-gallery">';
-					echo get_post_gallery();
+					echo wp_kses(get_post_gallery(), batourslight_Settings::$wp_allowedposttags);
 				echo '</div>';
 			};
 
@@ -57,7 +52,8 @@
 
 			the_content( sprintf(
 				wp_kses(
-					 __( 'Continue reading<span class="screen-reader-text"> "%1$s"</span>', 'ba-tours-light' ),
+                /* translators: %s: Name of current post. Only visible to screen readers */
+					 __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ba-tours-light' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -77,7 +73,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php do_action( 'bathemos_get_content_tag_template', 'entry-footer' ); ?>
+		<?php get_template_part( 'template-parts/content-tags/content-tag-entry-footer' ); ?>
 	</footer><!-- .entry-footer -->
 	
 </article><!-- #post-<?php the_ID(); ?> -->

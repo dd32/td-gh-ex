@@ -4,21 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BA Tours
  */
 
-
-// Set layout for this template.
-do_action( 'bathemos_get_layout', '404' );
-
-// Init page layout and parts.
-do_action( 'bathemos_init_page' );
-
-// Get page header.
-do_action( 'bathemos_get_header' );
-
-// Get container opening part.
-do_action( 'bathemos_get_container', 'before' );
+get_header();
 
 ?>
 
@@ -37,7 +25,7 @@ do_action( 'bathemos_get_container', 'before' );
 			?>
 
 			<div class="widget widget_categories">
-				<h2 class="widget-title"><?php echo esc_html_e( 'Most used categories', 'ba-tours-light' ); ?></h2>
+				<h2 class="widget-title"><?php esc_html_e( 'Most used categories', 'ba-tours-light' ); ?></h2>
 				<ul>
 					<?php
 					wp_list_categories( array(
@@ -63,8 +51,4 @@ do_action( 'bathemos_get_container', 'before' );
 
 <?php
 
-// Get container closing part.
-do_action( 'bathemos_get_container', 'after' );
-
-// Get page footer.
-do_action( 'bathemos_get_footer' );
+get_footer();

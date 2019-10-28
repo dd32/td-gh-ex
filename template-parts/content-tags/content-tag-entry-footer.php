@@ -2,7 +2,6 @@
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  *
- * @package BA Tours
  */
 
 
@@ -12,15 +11,15 @@ if ( 'post' === get_post_type() ) {
 	$categories_list = get_the_category_list( esc_html__( ', ', 'ba-tours-light' ) );
 
 	if ( $categories_list ) {
-		
-		printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ba-tours-light' ) . '</span>', $categories_list );
+		/* translators: %1$s: category list. */
+		printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'ba-tours-light' ) . '</span>', wp_kses_post($categories_list) );
 	}
 
 	$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'ba-tours-light' ) );
 	
 	if ( $tags_list ) {
-		
-		printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ba-tours-light' ) . '</span>', $tags_list );
+		/* translators: %1$s: tag list. */
+		printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'ba-tours-light' ) . '</span>', wp_kses_post( $tags_list ) );
 	}
 }
 
@@ -32,7 +31,8 @@ if ( ! is_single() && ! post_password_required() && ( comments_open() || get_com
 	comments_popup_link(
 		sprintf(
 			wp_kses(
-				__( 'Leave a comment<span class="screen-reader-text"> on %1$s</span>', 'ba-tours-light' ),
+            /* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'ba-tours-light' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -49,7 +49,8 @@ if ( ! is_single() && ! post_password_required() && ( comments_open() || get_com
 edit_post_link(
 	sprintf(
 		wp_kses(
-			__( 'Edit <span class="screen-reader-text">%1$s</span>', 'ba-tours-light' ),
+        /* translators: %s: Name of current post. Only visible to screen readers */
+			__( 'Edit <span class="screen-reader-text">%s</span>', 'ba-tours-light' ),
 			array(
 				'span' => array(
 					'class' => array(),

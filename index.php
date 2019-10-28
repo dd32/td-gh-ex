@@ -4,21 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BA Tours
  */
 
-
-// Set layout for this template.
-do_action( 'bathemos_get_layout', 'default' );
-
-// Init page layout and parts.
-do_action( 'bathemos_init_page' );
-
-// Get page header.
-do_action( 'bathemos_get_header' );
-
-// Get container opening part.
-do_action( 'bathemos_get_container', 'before' );
+get_header();
 
 ?>
 
@@ -46,7 +34,7 @@ do_action( 'bathemos_get_container', 'before' );
         
         if ( !is_author() ):
         
-        do_action( 'bathemos_pagination' );
+        do_action( 'batourslight_pagination' );
         
         endif;
 
@@ -59,8 +47,4 @@ do_action( 'bathemos_get_container', 'before' );
 
 <?php
 
-// Get container closing part.
-do_action( 'bathemos_get_container', 'after' );
-
-// Get page footer.
-do_action( 'bathemos_get_footer' );
+get_footer();

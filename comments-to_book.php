@@ -4,7 +4,6 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BA Tours
  */
 
 
@@ -34,9 +33,10 @@ if ( post_password_required() ) {
 				
 			} else {
 				
-				printf( // WPCS: XSS OK.
+				printf(
+                    /* translators: 1: number of reviews */
 					esc_html( _nx( '%1$s review', '%1$s reviews', $comment_count, 'multiple_comments_title', 'ba-tours-light' ) ),
-					number_format_i18n( $comment_count )
+					esc_html( number_format_i18n( $comment_count ) )
 				);
 			}
 			?>
@@ -54,7 +54,7 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments( array(
 				'short_ping' => true,
-                'callback' => 'bathemos_comment_callback',
+                'callback' => 'batourslight_comment_callback',
                 'avatar_size' => 96,
 			) );
 			?>

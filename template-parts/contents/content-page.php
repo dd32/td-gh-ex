@@ -4,7 +4,6 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BA Tours
  */
 
 ?>
@@ -13,7 +12,7 @@
 
 	<header class="entry-header">
 		<?php
-		if ( apply_filters( 'bathemos_page_option', true, 'page_title' ) && ! is_front_page() ) :
+		if ( apply_filters( 'batourslight_page_option', true, 'page_title' ) && ! is_front_page() ) :
 			if ( is_page() && !get_the_post_thumbnail() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			endif;
@@ -39,7 +38,8 @@
 			edit_post_link(
 				sprintf(
 					wp_kses(
-						__( 'Edit <span class="screen-reader-text">%1$s</span>', 'ba-tours-light' ),
+                    /* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'ba-tours-light' ),
 						array(
 							'span' => array(
 								'class' => array(),

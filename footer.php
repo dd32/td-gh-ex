@@ -6,48 +6,49 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package BA Tours
  */
 
 ?>
-
+                        <?php do_action( 'batourslight_main_after' ); ?>
+						
+					</main><!-- #main -->
+				
+				</div>
+			
+            </div><!-- #primary -->
+			
+			<?php do_action( 'batourslight_get_panel', 'right' ); ?>
+			
+		</div><!-- .row -->
 
 	</div><!-- #content -->
 	
-	<?php do_action( 'bathemos_get_panel', 'before-footer' ); ?>
+	<?php do_action( 'batourslight_get_panel', 'before-footer' ); ?>
 	
 	<!-- Footer -->
 	
-	<footer id="footer" class="<?php
-     
-     $footer_styles = apply_filters( 'bathemos_style', 'site-footer', 'footer' );
-     
-     echo esc_attr($footer_styles);
-     
-     ?>">
+	<footer id="footer" class="<?php echo esc_attr( apply_filters( 'batourslight_style', 'site-footer', 'footer' )); ?>">
 		
-		<?php do_action( 'bathemos_footer_before' ); ?>
+		<?php do_action( 'batourslight_footer_before' ); ?>
 		
-		<?php do_action( 'bathemos_get_panel', 'footer' ); ?>
+		<?php do_action( 'batourslight_get_panel', 'footer' ); ?>
 		
 		<div class="container footer-widgets">
 			<div class="row">
-				<?php do_action( 'bathemos_get_panel', 'footer-left' ); ?>
-				<?php do_action( 'bathemos_get_panel', 'footer-middle' ); ?>
-				<?php do_action( 'bathemos_get_panel', 'footer-right' ); ?>
+				<?php do_action( 'batourslight_get_panel', 'footer-left' ); ?>
+				<?php do_action( 'batourslight_get_panel', 'footer-middle' ); ?>
+				<?php do_action( 'batourslight_get_panel', 'footer-right' ); ?>
 			</div>
 		</div>
 	
 		<!-- Info -->
 		
-		<?php //do_action( 'bathemos_get_navbar', 'footer' ); ?>
-        
-        <div class="container footer-copyright">
+		<div class="container footer-copyright">
 	
 		   <!-- Copyright -->
 		   <div id="copyrights" class="copyrights"><?php
            
-           $copyright_text = apply_filters( 'bathemos_copyright_text', '');
+           $copyright_text = apply_filters( 'batourslight_copyright_text', '');
            
            echo wp_kses_post($copyright_text);
            
@@ -59,15 +60,15 @@
         
         </div>
 		
-		<?php do_action( 'bathemos_footer_after' ); ?>
+		<?php do_action( 'batourslight_footer_after' ); ?>
 		
 	</footer><!-- #footer -->
 
-	<?php do_action( 'bathemos_page_bottom' ); ?>
+	<?php do_action( 'batourslight_page_bottom' ); ?>
 
 </div><!-- #page -->
 
-<!-- Wordpress footer -->
+<!-- WordPress footer -->
 <?php wp_footer(); ?>
 
 </body>

@@ -3,8 +3,6 @@
  * Template part for displaying video posts.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package BA Tours
  */
 
 ?>
@@ -13,7 +11,7 @@
 	
 	<header class="entry-header">
 		<?php
-		if ( apply_filters( 'bathemos_page_option', true, 'page_title' ) ) :
+		if ( apply_filters( 'batourslight_page_option', true, 'page_title' ) ) :
 			if ( is_single() && !get_the_post_thumbnail() ) :
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			elseif ( ! is_single()) :
@@ -32,15 +30,15 @@
 		
 		if ( '' !== get_the_post_thumbnail() && ! is_single() && empty( $video ) ) {
 			
-			do_action( 'bathemos_get_content_tag_template', 'post-thumbnail' );
+			get_template_part( 'template-parts/content-tags/content-tag-post-thumbnail' );
 		}
 
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
 				<?php
-				do_action( 'bathemos_get_content_tag_template', 'posted-on' );
-				do_action( 'bathemos_get_content_tag_template', 'posted-by' );
+				get_template_part( 'template-parts/content-tags/content-tag-posted-on' );
+                get_template_part( 'template-parts/content-tags/content-tag-posted-by' );
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
@@ -58,7 +56,7 @@
 				foreach ( $video as $video_html ) {
 					
 					echo '<div class="entry-video">';
-						echo $video_html;
+						echo $video_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					echo '</div>';
 				}
 			};
@@ -69,7 +67,8 @@
 
 			the_content( sprintf(
 				wp_kses(
-					 __( 'Continue reading<span class="screen-reader-text"> "%1$s"</span>', 'ba-tours-light' ),
+                /* translators: %s: Name of current post. Only visible to screen readers */
+					 __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'ba-tours-light' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -89,7 +88,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php do_action( 'bathemos_get_content_tag_template', 'entry-footer' ); ?>
+		<?php get_template_part( 'template-parts/content-tags/content-tag-entry-footer' ); ?>
 	</footer><!-- .entry-footer -->
 	
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -4,24 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package BA Tours
  */
 
-$page_custom_layout = apply_filters( 'bathemos_page_option', '', 'layout' );
-
-$page_custom_layout = $page_custom_layout == 'default' || !$page_custom_layout ? 'no-sidebars-wide' : $page_custom_layout;
-
-// Set layout for this template.
-do_action( 'bathemos_get_layout', $page_custom_layout );
-
-// Init page layout and parts.
-do_action( 'bathemos_init_page' );
-
-// Get page header.
-do_action( 'bathemos_get_header' );
-
-// Get container opening part.
-do_action( 'bathemos_get_container', 'before' );
+get_header();
 
 ?>
 
@@ -44,8 +29,4 @@ do_action( 'bathemos_get_container', 'before' );
 
 <?php
 
-// Get container closing part.
-do_action( 'bathemos_get_container', 'after' );
-
-// Get page footer.
-do_action( 'bathemos_get_footer' );
+get_footer();
