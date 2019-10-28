@@ -1,13 +1,10 @@
 /*!
 Theme Name: ArticlePress
-Theme URI: https://univahost.com/blog
+Theme URI: https://articlepress.pro
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.2.12
-Requires at least: 4.7
-Requires PHP: 7.0
-Tested up to: 5.4
+Version: 1.2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
@@ -85,9 +82,6 @@ improve design quality
 
 Version 1.2.2
 Improve design quality
-
-Version 1.2.3
-Css Prefix
 
 -------------------------------------------------*/
 
@@ -467,7 +461,6 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	color: #232323;
 }
 
 p {
@@ -913,6 +906,10 @@ a:hover, a:active {
 	display: block;
 }
 
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
 
 .updated:not(.published) {
 	display: none;
@@ -1214,9 +1211,6 @@ p.logged-in-as {
 footer.comment-meta img:focus {
     outline: none;
 }
-h1.entry-title {
-    color: var(--primary-dark);
-}
 /*
 	Comments area
 */
@@ -1286,9 +1280,7 @@ h2.comments-count:before {
     text-decoration: none !important;
     color: var(--primary-dark);
     display: inline-block;
-    -webkit-transform: translateY(-31px);
-        -ms-transform: translateY(-31px);
-            transform: translateY(-31px);
+    transform: translateY(-31px);
     margin-left: 49px;
 }
 .comment-body .comment-metadata a {
@@ -1300,9 +1292,7 @@ h2.comments-count:before {
     margin-left: 6px;
     font-size: 15px;
     font-weight: 600;
-    -webkit-transform: translateY(-30px);
-        -ms-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
     color: #7660ff;
     text-transform: uppercase;
     text-decoration: none;
@@ -1361,10 +1351,7 @@ footer.comment-meta img {
 
 .form-control:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 10px #d2d2d2;
-            box-shadow: 0 0 10px #d2d2d2;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
+    box-shadow: 0 0 10px #d2d2d2;
     transition: .3s;
     border-color: transparent;
 }
@@ -1475,16 +1462,17 @@ button.search-btn i {
         -ms-transform: translateY(1px);
             transform: translateY(1px);
 }
+
 h2.widget-title {
     background-color: var( --primary-color );
     padding: 20px 0;
     font-size: 20px;
     padding-left: 20px;
     color: #fff;
-    border-left: 6px solid #6752e8;
 }
 .widget {
     border: 1px solid #eae6e6;
+    background-color: #fff;
     margin-bottom: 50px;
 }
 section#search-2 {margin-bottom: 70px;}
@@ -1615,7 +1603,7 @@ button.btn.btn-blog.form-btn:hover i {
         -ms-transform: translateY(1px) translateX(10px);
             transform: translateY(1px) translateX(10px);
 }
-.articlepress-search-form {
+.articlepress-search-form{
     position: absolute;
     margin: auto;
     top: 0;
@@ -1628,10 +1616,10 @@ button.btn.btn-blog.form-btn:hover i {
     border-radius: 50%;
     -webkit-transition: all 1s;
     -o-transition: all 1s;
-    transition: all .3s;
+    transition: all 1s;
     z-index: 6;
     -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
     border: 0;
 }
 .articlepress-search-form:hover {
@@ -1699,8 +1687,9 @@ button.btn.btn-blog.form-btn:hover i {
 }
 .articlepress-search-form:hover {
     -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    background: #5bd5e8;
 }
 .search-input::-webkit-input-placeholder {
     color: white;
@@ -1930,13 +1919,11 @@ li.page-item a {
 /*
 	Unity Test Code
 */
-.single-page-content ul li,
-.single-page-content ol li {
+.single-page-content ul li {
     list-style: disc;
     line-height: 27px;
-    margin-bottom: 16px;
+    margin-bottom: 21px;
     margin-left: 21px;
-    list-style-position: inside;
 }
 
 .single-page-content ul li:last-child {
@@ -1947,9 +1934,9 @@ p.single-page-text ul {
     margin-top: 20px;
     display: inline-block;
 }
-.single-page-content ul,
-.single-page-content ol {
-    margin-top: 22px;
+
+.single-page-content ul {
+    margin-top: 16px;
 }
 
 /*
@@ -1995,7 +1982,7 @@ footer.site-footer {
 }
 
 footer.site-footer a {
-    color: #d8d8d8;
+    color: #afa4a4;
     -webkit-transition: .3s;
     -o-transition: .3s;
     transition: .3s;
@@ -2009,9 +1996,11 @@ footer.site-footer a:hover {
     display: inline;
     margin-right: 12px;
 }
+
 .footer-sociaal-icon ul li a {
     display: inline-block;
-    color: #ffffff;
+    background: white;
+    color: #5bd5e8;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -2051,8 +2040,7 @@ p.site-copyright {
 .comment-list article {
     background-color: #fff;
     border-radius: 10px;
-    -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,0.06);
-            box-shadow: 0 15px 20px 0 rgba(0,0,0,0.06);
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.06);
     padding: 30px 50px 30px 50px;
 }
 
@@ -2064,20 +2052,13 @@ p.site-copyright {
     margin-bottom: 15px;
     width: 60px;
     border-radius: 14px;
-    background-image: -webkit-gradient( linear, left top, left bottom, from(black), to(#FFE));
-    background-image: -o-linear-gradient( black, #FFE);
     background-image: linear-gradient( black, #FFE);
-    -webkit-transform: translate(-80px, 0px);
-        -ms-transform: translate(-80px, 0px);
-            transform: translate(-80px, 0px);
-    -webkit-box-shadow: 0px 2px 12px 1px #cccccc8f;
-            box-shadow: 0px 2px 12px 1px #cccccc8f;
+    transform: translate(-80px, 0px);
+    box-shadow: 0px 2px 12px 1px #cccccc8f;
 }
 
 .comment-body b.fn{
-    -webkit-transform: translateX(-42px);
-        -ms-transform: translateX(-42px);
-            transform: translateX(-42px);
+    transform: translateX(-42px);
     display: inline-block;
 }
 
@@ -2092,9 +2073,7 @@ p.site-copyright {
 
 .comment-body span.says {
     color: #a2a2a2;
-    -webkit-transform: translateX(-36px);
-        -ms-transform: translateX(-36px);
-            transform: translateX(-36px);
+    transform: translateX(-36px);
     display: inline-block;
 }
 
@@ -2103,8 +2082,4 @@ p.site-copyright {
     float: right;
     margin-left: 1em;
     margin-top: 60px !important;
-}
-
-.page-template-default.page .site-content {
-    margin-top: 60px;
 }
