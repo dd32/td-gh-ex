@@ -29,9 +29,13 @@ endif;
  */
 
 function aari_custom_logo_dark() {
+
+	if ( ! get_theme_mod( 'custom_logo' ) ) {
+		return false;
+	}
+
 	$custom_logo_id  = get_theme_mod( 'custom_logo' );
 	$custom_logo_url = wp_get_attachment_image_url( $custom_logo_id, 'full' );
-
 	if ( $custom_logo_url ) {
 		return '<a class="navbar-brand" href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $custom_logo_url ) . '" alt="' . esc_html( get_bloginfo( 'name', 'display' ) ) . '" data-light="' . esc_url( $custom_logo_url ) . '" ></a>';
 	} else {

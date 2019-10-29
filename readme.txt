@@ -3,10 +3,10 @@ Contributors: emtiaz51921
 Requires at least: 4.0
 Tested up to: 5.2
 Requires PHP: 5.2
-Stable tag: 2.0.1
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: translation-ready
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 ====Copyright===
 Aari, Copyright 2019 emtiaz51921
@@ -16,7 +16,7 @@ Aari is distributed under the terms of the GNU GPL .
 
 == Description ==
 
-Theme aari is a fully functional personal blogging theme. The feature includes full-width template, sidebar template, controlling each element on the blog page. Make your custom background color, custom menu, and the site icon.
+Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to blogs. Aari provides a responsive layout with unlimited colors. It allows you to change the way you introduce posts for pictures and texts for an appealing look. It is modern, clean, colorful and responsive. The feature includes a full-width template, sidebar template, custom widgets, post carousel, image lightbox, etc.
 
 == Installation ==
 
@@ -45,8 +45,8 @@ Not for now.
 = 2.0.0 - August 6 2019 =
 * Fix the errors and wordpress standard
 
-= 2.0.1 - August 7 2019 =
-* Theme URL changed
+= 2.1.0 - October 29 2019 =
+* Fix the errors, add author widget and recent post with thumbnail widget, add lightbox for gallery.
 
 == Credits ==
 Aari bundles the following third-party resources:
@@ -54,45 +54,70 @@ Aari bundles the following third-party resources:
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
-Bootstrap
+* Bootstrap
 License : MIT-LICENSE - https://github.com/twbs/bootstrap/blob/master/LICENSE
 Source: https://github.com/twbs/bootstrap
 
-Animate.css
+* Animate.css
 License : MIT License - https://github.com/daneden/animate.css/blob/master/LICENSE
 Source: https://github.com/daneden/animate.css
 
-HTML5 Shiv
+* HTML5 Shiv
 License : MIT and GPL2 - https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
 Source: https://github.com/aFarkas/html5shiv
 
-Sticky Sidebar
+* Colorbox - a jQuery lightbox
+License : MIT License (MIT) - https://github.com/jackmoore/colorbox/blob/master/LICENSE.md
+Source: https://github.com/jackmoore/colorbox
+
+* Sticky Sidebar
 License : MIT - https://github.com/abouolia/sticky-sidebar/blob/master/LICENSE.md
 Source: https://github.com/abouolia/sticky-sidebar
 
-WP Bootstrap Navwalker
+* WP Bootstrap Navwalker
 License : GNU - https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt
 Source: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
 
-Fonts
+* Fonts
 Poppins
 Source: https://fonts.google.com/specimen/Poppins
+Merriweather
+Source: https://fonts.google.com/specimen/Merriweather
 Noto Serif
 https://fonts.google.com/specimen/Noto+Serif
 License : Open Font License http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
 
 
-Icons
+* Icons
 jam-icons.woff
 jam-icons.min.css
 License : MIT License https://github.com/michaelampr/jam/blob/master/LICENSE
 
 
-Images
+* Images includes in theme file
 page_default_background.jpg
 Source: https://pixabay.com/photos/beach-dominican-republic-caribbean-1236581/
 License : https://pixabay.com/service/terms/#license
+
+border.png
+controls.png
+loading.gif
+loading_background.png
+overlay.png
+Source: https://github.com/jackmoore/colorbox/tree/master/example1/images
+License : MIT License (MIT) - https://github.com/jackmoore/colorbox/blob/master/LICENSE.md
+
 quote-icon.jpg
+Graphical Image
+
+* Images used in theme screenshot (all CC0 licenced):
+https://pixabay.com/photos/suspension-bridge-south-africa-cable-163064/
+https://pixabay.com/photos/people-portrait-man-male-smile-1690965/
+https://pixabay.com/photos/whale-shark-shark-aquarium-water-281498/
+https://pixabay.com/photos/climbing-rappelling-canyoneering-1761386/
+https://pixabay.com/photos/diving-underwater-sea-float-813028/
+
+placeholder-logo
 Graphical Image
 
 

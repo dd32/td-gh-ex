@@ -7,12 +7,12 @@
  *
  * @package aari
  */
-if ( ! function_exists( 'gutenbergtheme_posted_on' ) ) :
+if ( ! function_exists( 'aari_posted_on' ) ) :
 
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function gutenbergtheme_posted_on() {
+	function aari_posted_on() {
 
 		$get_author_id       = get_the_author_meta( 'ID' );
 		$get_author_gravatar = get_avatar_url( $get_author_id );
@@ -22,17 +22,6 @@ if ( ! function_exists( 'gutenbergtheme_posted_on' ) ) :
 			esc_url( get_author_posts_url( $get_author_id ) ),
 			esc_url( $get_author_gravatar ),
 			esc_attr( get_the_author() )
-		);
-
-		$time_string = '<time class="post_meta_item meta_item_date" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="post_meta_item meta_item_date" datetime="%1$s">%2$s</time>';
-		}
-
-		$time_string = sprintf(
-			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() )
 		);
 
 		$byline = sprintf(
@@ -45,13 +34,9 @@ if ( ! function_exists( 'gutenbergtheme_posted_on' ) ) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'aari' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="post_meta_item post_cat">%1$s</span>', wp_kses_post( $categories_list ) ); // WPCS: XSS OK.
+			printf( '<span class="post_meta_item post_cat">%1$s</span>', wp_kses_post( $categories_list ) );
 		}
 
-		printf(
-			'%s',
-			'<a href="' . esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ) . '" rel="bookmark">' . wp_kses_post( $time_string ) . '</a>'
-		);
 	}
 
 endif;
@@ -106,7 +91,9 @@ if ( ! function_exists( 'aari_single_post_header' ) ) :
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'aari' ) );
 
-		echo ( get_theme_mod( 'disable_post_breadcrumbs' ) ? '' : wp_kses_post( aari_breadcrumbs() ) );
+		if ( ! is_attachment() ) :
+			echo ( 1 === get_theme_mod( 'disable_post_breadcrumbs' ) ? '' : wp_kses_post( aari_breadcrumbs() ) );
+		endif;
 
 		the_title( '<h1 class="entry-title">', '</h1>' );
 
@@ -145,21 +132,21 @@ if ( ! function_exists( 'aari_single_tags_cloud' ) ) :
 	 */
 	function aari_single_tags_cloud() {
 
-		$categories_list = get_the_category_list( esc_html__( ', ', 'aari' ) );
+		$categories_list = get_the_category_list( esc_html__( ',', 'aari' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 			if ( ! get_theme_mod( 'disable_category_cloud' ) ) {
-				printf( '<span class="tagcloud catloud clearfix"><span class="namee">%1$s </span>%2$s</span>', esc_html_x( 'Post Categories: ', 'aari', 'aari' ), wp_kses_post( $categories_list ) ); // WPCS: XSS OK.
+				printf( '<span class="tagcloud catloud clearfix"><span class="namee">%1$s </span>%2$s</span>', esc_html_x( 'Post Categories:  &nbsp;', 'aari', 'aari' ), wp_kses_post( $categories_list ) );
 			}
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', ' ' );
+		$tags_list = get_the_tag_list( '', ',' );
 		if ( $tags_list && ! is_wp_error( $tags_list ) && ! get_theme_mod( 'disable_tag_cloud' ) ) {
 
 			printf(
 				'<span class="tagcloud clearfix"><span class="namee">%1$s </span>%2$s</span>',
-				esc_html_x( 'Tags: ', 'Used before tag names.', 'aari' ),
+				esc_html_x( 'Tags:  &nbsp;', 'Used before tag names.', 'aari' ),
 				wp_kses_post( $tags_list )
 			);
 		}
@@ -231,10 +218,36 @@ if ( ! function_exists( 'aari_related_post_ext' ) ) :
 			esc_html( get_the_date() )
 		);
 
-		$cats .= sprintf( '<span class="posted_on"><a href="%1$s">%2$s</a </span>', get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ), $time_string );
+		$cats .= sprintf( '<span class="posted_on"><a href="%1$s">%2$s</a> </span>', get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ), $time_string );
 
 		return $cats;
 	}
 
+
+endif;
+
+
+/**
+ * Retrive post date
+ */
+
+if ( ! function_exists( 'aari_post_date' ) ) :
+
+	function aari_post_date() {
+
+		$time_string = '<time class="post_meta_item meta_item_date" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="post_meta_item meta_item_date" datetime="%1$s">%2$s</time>';
+		}
+
+		$time_string = sprintf(
+			$time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
+		);
+
+		echo wp_kses_post( $time_string );
+
+	}
 
 endif;

@@ -89,7 +89,7 @@ get_header();
 
 					<!-- Side Bar -->
 					<?php
-					if ( get_theme_mod( 'post_layout' ) === 'fullwidth' ) :
+					if ( get_theme_mod( 'post_layout' ) !== 'fullwidth' ) :
 						if ( function_exists( 'get_sidebar' ) ) :
 							get_sidebar();
 						endif;

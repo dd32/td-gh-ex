@@ -5,7 +5,7 @@
  *
  * @package aari
  */
-function gutenbergtheme_body_classes( $classes ) {
+function aari_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
@@ -14,18 +14,8 @@ function gutenbergtheme_body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', 'gutenbergtheme_body_classes' );
+add_filter( 'body_class', 'aari_body_classes' );
 
-/**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
-function gutenbergtheme_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	}
-}
-
-add_action( 'wp_head', 'gutenbergtheme_pingback_header' );
 
 /*
  * Fatch related post data
@@ -146,8 +136,9 @@ if ( ! function_exists( 'aari_number_paging_nav' ) ) :
 				'current'   => $paged,
 				'mid_size'  => 1,
 				'add_args'  => array_map( 'urlencode', $query_args ),
-				'prev_text' => '',
-				'next_text' => '',
+				'prev_next' => true,
+				'prev_text' => '<span class="jam jam-arrow-left"></span>',
+				'next_text' => '<span class="jam jam-arrow-right"></span>',
 			)
 		);
 
@@ -402,14 +393,14 @@ function aari_copyright() {
 	$all_posts  = get_posts( 'post_status=publish&order=ASC' );
 	$first_post = $all_posts[0];
 	$first_date = $first_post->post_date_gmt;
-	esc_html_e( 'Copyright &copy; ', 'aari' );
+	esc_html_e( 'Copyright &copy;  ', 'aari' );
 	if ( substr( $first_date, 0, 4 ) === date( 'Y' ) ) {
 		echo wp_kses_post( date( 'Y' ) );
 	} else {
 		echo wp_kses_post( substr( $first_date, 0, 4 ) ) . '-' . wp_kses_post( date( 'Y' ) );
 	}
-	echo '. <strong>' . esc_html( get_bloginfo( 'name' ) ) . '</strong> ';
-	esc_html_e( 'All rights reserved.', 'aari' );
+	echo '<span>' . esc_html( get_bloginfo( 'name' ) ) . '.</span>';
+	esc_html_e( ' All rights reserved.', 'aari' );
 }
 
 /*

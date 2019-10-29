@@ -204,7 +204,7 @@ class Aari_Comment extends Walker_Comment {
 						),
 						sprintf( '<span class="fn">%s</span>', get_comment_author_link( $comment ) )
 					);
-					printf( wp_kses_post( '<h6 class="comntr_time"><span>%1$s . &nbsp</span>  %2$s</h6>' ), wp_kses_post( get_comment_time() ), wp_kses_post( get_comment_date() ) );
+					printf( wp_kses_post( '<h6 class="comntr_time"><span>%1$s</span>  %2$s</h6>' ), wp_kses_post( get_comment_time() ), wp_kses_post( get_comment_date() ) );
 					$user_id = $comment->user_id;
 					?>
 

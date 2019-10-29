@@ -74,24 +74,6 @@ if ( ! function_exists( 'aari_setup' ) ) :
 			)
 		);
 
-		/*
-		* Enable support for Post Formats.
-		*
-		* See: https://codex.wordpress.org/Post_Formats
-		*/
-		add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
-				'gallery',
-				'audio',
-			)
-		);
-
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
@@ -116,7 +98,7 @@ if ( ! function_exists( 'aari_setup' ) ) :
 			'custom-logo',
 			array(
 				'height'      => 50,
-				'width'       => 140,
+				'width'       => 250,
 				'flex-width'  => false,
 				'flex-height' => false,
 			)
@@ -259,7 +241,9 @@ add_action( 'wp_head', 'aari_javascript_detection', 0 );
  */
 function aari_pingback_header() {
 	if ( is_singular() && pings_open() ) {
+
 		printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
+
 	}
 }
 add_action( 'wp_head', 'aari_pingback_header' );
@@ -283,7 +267,11 @@ function aari_scripts() {
 
 	wp_enqueue_style( 'aari-main-style', get_template_directory_uri() . '/css/main-style.css', array(), '1.1', 'all' );
 
+	wp_enqueue_style( 'aari-colorbox-css', get_template_directory_uri() . '/css/plugins/colorbox.css', array(), '1.1', 'all' );
+
 	wp_enqueue_style( 'aari-fonts', aari_fonts_url(), array(), '1.1', 'all' );
+
+	wp_enqueue_style( 'aari-font-Merriweather', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900&display=swap', array(), '1.1', 'all' );
 
 	// Load the Internet Explorer 8 specific stylesheet.
 	wp_enqueue_style( 'aari-ie8', get_template_directory_uri() . '/css/ie8.css', array(), '1.0' );
@@ -296,6 +284,8 @@ function aari_scripts() {
 	}
 
 	wp_enqueue_script( 'aari-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '4.0.0', true );
+
+	wp_enqueue_script( 'aari-colorbox-js', get_template_directory_uri() . '/js/colorbox/jquery.colorbox-min.js', array( 'jquery' ), '1.0.0', true );
 
 	wp_enqueue_script( 'aari-custom', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
 
@@ -361,3 +351,13 @@ require get_template_directory() . '/inc/search-form.php';
  * customizer functions
  */
 require get_template_directory() . '/inc/customizer-functions.php';
+
+/**
+ * Recent post widget
+ */
+require get_template_directory() . '/inc/widgets/class-aari-recentpost-widget.php';
+
+/**
+ * About me widget
+ */
+require get_template_directory() . '/inc/widgets/class-aari-aboutme-widget.php';

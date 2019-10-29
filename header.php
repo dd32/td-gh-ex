@@ -97,7 +97,7 @@
 						<div class="search_trigger">
 
 							<?php
-							echo ( get_theme_mod( 'aari_search' ) ) ? '' : '<a class="nav-search search-trigger" href="#"><span class="jam jam-search"></span></a>';
+							echo ( get_theme_mod( 'aari_search' ) && has_nav_menu( 'primary' ) ) ? '<a class="nav-search search-trigger" href="#"><span class="jam jam-search"></span></a>' : '';
 							?>
 
 							<button class="icon">
@@ -113,6 +113,7 @@
 
 			<!-- search form -->
 			<?php
-			( get_theme_mod( 'aari_search' ) ) ? '' : aari_search_form();
+			( get_theme_mod( 'aari_search' ) && has_nav_menu( 'primary' ) ) ? aari_search_form() : '';
+
 			?>
 			<!-- search form -->

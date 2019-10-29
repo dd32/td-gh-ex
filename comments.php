@@ -30,8 +30,8 @@ if ( post_password_required() ) {
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf(// WPCS: XSS OK.
-						/* translators: 1: comment count number, 2: title. */
+				printf(
+					/* translators: 1: comment count number, 2: title. */
 						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $aari_comment_count, 'comments title', 'aari' ) ),
 					wp_kses_post( number_format_i18n( $aari_comment_count ) ),
 					'<span>' . wp_kses_post( get_the_title() ) . '</span>'

@@ -1,3 +1,9 @@
+/*
+ Theme Name: Aari
+ File Description: CSS file for Gutenberg block
+*/
+
+
 .entry-content > .alignwide {
   max-width: 1100px;
 }

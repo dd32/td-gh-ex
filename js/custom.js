@@ -7,6 +7,26 @@
 	$( document ).ready(
 		function () {
 
+
+			//initiate colorbox
+			$( 'a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".gif"]' ).colorbox(
+				{
+					transition:'elastic',
+					speed 	:350,
+					rel: 'gallery',
+					opacity:.85,
+					closeButton: true,
+					scalePhotos: true,
+					maxWidth: '90%',
+					maxHeight: '90%',
+
+					title: function() {
+						return $( this ).find( 'img' ).attr( 'alt' );
+					}
+				}
+			);
+
+
 			function headerController() {
 				$( ".header-controller .icon , #topSidebar .icon" ).on(
 					"click",

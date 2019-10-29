@@ -28,8 +28,8 @@ while ( have_posts() ) :
 	<!-- main content -->
 	<div id="content_full" class="main_p main_p_v_2 section-padding">
 		<div class="container">
-			<div class="row <?php echo ( get_theme_mod( 'post_layout' ) !== 'fullwidth' ? 'sticky-container' : '' ); ?>">
-				<div class="content <?php echo ( get_theme_mod( 'post_layout' ) !== 'fullwidth' ? 'col-lg-8' : 'col-lg-12' ); ?>">
+			<div class="row <?php echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? '' : 'sticky-container' ); ?>">
+				<div class="content <?php echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'col-lg-12' : 'col-lg-8' ); ?>">
 					<div class="p_content entry_header_small">
 						<?php
 						get_template_part( 'template-parts/content', get_post_type() );
@@ -46,14 +46,9 @@ while ( have_posts() ) :
 						?>
 					</div>
 				</div>
-
 				<!-- Side Bar -->
 				<?php
-				if ( get_theme_mod( 'post_layout' ) !== 'fullwidth' ) :
-					if ( function_exists( 'get_sidebar' ) ) :
-						get_sidebar();
-					endif;
-				endif;
+				echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? '' : wp_kses_post( get_sidebar() ) );
 				?>
 				<!-- End Side Bar -->
 

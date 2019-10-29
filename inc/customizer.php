@@ -11,7 +11,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function gutenbergtheme_customize_register( $wp_customize ) {
+function aari_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -21,14 +21,14 @@ function gutenbergtheme_customize_register( $wp_customize ) {
 			'blogname',
 			array(
 				'selector'        => '.site-title a',
-				'render_callback' => 'gutenbergtheme_customize_partial_blogname',
+				'render_callback' => 'aari_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
 			'blogdescription',
 			array(
 				'selector'        => '.site-description',
-				'render_callback' => 'gutenbergtheme_customize_partial_blogdescription',
+				'render_callback' => 'aari_customize_partial_blogdescription',
 			)
 		);
 	}
@@ -65,7 +65,7 @@ function gutenbergtheme_customize_register( $wp_customize ) {
 		'display_header_search',
 		array(
 			'settings' => 'aari_search',
-			'label'    => esc_html__( 'Remove Header Search?', 'aari' ),
+			'label'    => esc_html__( 'Enable Header Search?', 'aari' ),
 			'section'  => 'aari_theme_setting',
 			'type'     => 'checkbox',
 		)
@@ -94,7 +94,7 @@ function gutenbergtheme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Image_Control(
 			$wp_customize,
-			'image_upload_page',
+			'page_header_background',
 			array(
 				'label'       => esc_html__( 'Page header image', 'aari' ),
 				'section'     => 'aari_page_setting',
@@ -183,7 +183,7 @@ function gutenbergtheme_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		'breadcrumbs_control',
+		'disable_post_breadcrumbs',
 		array(
 			'settings' => 'disable_post_breadcrumbs',
 			'label'    => esc_html__( 'Disable Breadcrumbs for Posts', 'aari' ),
@@ -426,25 +426,22 @@ function gutenbergtheme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_logo',
 		array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'absint',
+			'capability' => 'edit_theme_options',
+			 'sanitize_callback' => 'esc_url_raw',
 		)
 	);
 	$wp_customize->add_control(
-		new WP_Customize_Cropped_Image_Control(
+		new WP_Customize_Image_Control(
 			$wp_customize,
 			'image_upload_footer',
 			array(
-				'label'        => esc_html__( 'Footer Logo', 'aari' ),
-				'section'      => 'aari_footer_setting',
-				'settings'     => 'footer_logo',
-				'height'       => 50,
-				'width'        => 140,
-				'flex_width '  => false,
-				'flex_height ' => false,
+				'label'    => esc_html__( 'Footer Logo', 'aari' ),
+				'section'  => 'aari_footer_setting',
+				'settings' => 'footer_logo',
 			)
 		)
 	);
+
 	$wp_customize->add_setting(
 		'aari_footer_copyright',
 		array(
@@ -462,13 +459,14 @@ function gutenbergtheme_customize_register( $wp_customize ) {
 
 		)
 	);
+
 	/* Footer Options end */
 
 	$wp_customize->remove_control( 'header_textcolor' );
 	$wp_customize->remove_section( 'header_image' );
 }
 
-add_action( 'customize_register', 'gutenbergtheme_customize_register' );
+add_action( 'customize_register', 'aari_customize_register' );
 
 
 /**
@@ -476,7 +474,7 @@ add_action( 'customize_register', 'gutenbergtheme_customize_register' );
  */
 
 function aari_sanitize_checkbox( $input ) {
-	return ( isset( $input ) ? true : false );
+	return ( 1 === absint( $input ) ) ? 1 : 0;
 }
 
 function aari_sanitize_select( $input, $setting ) {
@@ -493,7 +491,7 @@ function aari_sanitize_select( $input, $setting ) {
  *
  * @return void
  */
-function gutenbergtheme_customize_partial_blogname() {
+function aari_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -502,18 +500,18 @@ function gutenbergtheme_customize_partial_blogname() {
  *
  * @return void
  */
-function gutenbergtheme_customize_partial_blogdescription() {
+function aari_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function gutenbergtheme_customize_preview_js() {
-	wp_enqueue_script( 'gutenbergtheme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+function aari_customize_preview_js() {
+	wp_enqueue_script( 'aari-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 
-add_action( 'customize_preview_init', 'gutenbergtheme_customize_preview_js' );
+add_action( 'customize_preview_init', 'aari_customize_preview_js' );
 
 
 

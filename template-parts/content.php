@@ -32,7 +32,7 @@
 
 		<?php if ( 'post' === get_post_type() & ! is_singular() ) : ?>
 			<div class="post_meta">
-				<?php gutenbergtheme_posted_on(); ?>
+				<?php aari_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			<?php
 		endif;
@@ -82,8 +82,9 @@
 				<div class="half_width">
 					<div class="post_more">
 						<a href="<?php echo esc_url( get_permalink() ); ?>">
-							<span class="icon1"><?php esc_html_e( 'Load More', 'aari' ); ?></span>
-							<span class="icon2 jam jam-arrow-right"></span>
+							<?php
+							aari_post_date()
+							?>
 						</a>
 					</div>
 				</div>
