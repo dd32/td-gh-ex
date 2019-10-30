@@ -60,7 +60,7 @@
       <div class="container">
         <div class="menu-bar">
           <div class="row">
-            <div class="col-lg-3 col-md-3 logo_bar p-0">
+            <div class="col-lg-3 col-md-3 logo_bar">
               <div class="logo">
                 <?php if ( has_custom_logo() ) : ?>
                   <div class="site-logo"><?php the_custom_logo(); ?></div>

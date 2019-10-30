@@ -45,6 +45,22 @@ function advance_coaching_customize_register($wp_customize) {
 		'panel'    => 'advance_coaching_panel_id',
 	));
 
+	$wp_customize->add_setting('advance_coaching_theme_options',array(
+        'default' => __('Default','advance-coaching'),
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-coaching'),
+        'description' => __('Here you can change the Width layout. ','advance-coaching'),
+        'section' => 'advance_coaching_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-coaching'),
+            'Container' => __('Container','advance-coaching'),
+            'Box Container' => __('Box Container','advance-coaching'),
+        ),
+	) );
+		
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_coaching_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-coaching'),
