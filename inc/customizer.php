@@ -44,6 +44,22 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'panel'    => 'advance_ecommerce_store_panel_id',
 	));
 
+	$wp_customize->add_setting('advance_ecommerce_store_theme_options',array(
+        'default' => __('Default','advance-ecommerce-store'),
+	        'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_ecommerce_store_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-ecommerce-store'),
+        'description' => __('Here you can change the Width layout. ','advance-ecommerce-store'),
+        'section' => 'advance_ecommerce_store_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-ecommerce-store'),
+            'Container' => __('Container','advance-ecommerce-store'),
+            'Box Container' => __('Box Container','advance-ecommerce-store'),
+        ),
+	) );
+
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_ecommerce_store_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-ecommerce-store'),
