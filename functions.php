@@ -199,34 +199,7 @@
     }
     add_action('admin_init', 'axiohost_override_redux_message', 30);
     
-    //axiohost extra CSS
-    function axiohost_extra_css(){
-        if(class_exists('ReduxFrameworkPlugin')){
-        global $axiohost;
-        ?>
-            <style>
-                .navigation-brand a img {
-                    width: <?php echo esc_attr($axiohost['brand_width']); ?>px;
-                    height: auto;
-                }
-                footer.footer-area{
-                     background-color:<?php echo esc_attr($axiohost['bg-color']); ?>;   
-                }
-                .searchBoxTop button[type="submit"]{
-                     background: <?php echo esc_attr($axiohost['modal-search-btn-bg']);?>; 
-                     border-color: <?php echo esc_attr($axiohost['modal-search-btn-bg']);?>; 
-                }
-                .loader-wrapper{
-                     background-color: <?php echo esc_attr($axiohost['loader-wrapper']);?>;   
-                }
-                .searchBoxTop input,.searchBoxTop input:focus{
-                     border-color: <?php echo esc_attr($axiohost['modal-search-btn-bg']);?>; 
-                }
-            </style>
-        <?php
-        }
-    }
-    add_action('wp_head', 'axiohost_extra_css');
+    
     
     function axiohost_scripts(){
         
@@ -404,6 +377,11 @@ function axiohost_admin_menu_page_removing() {
     remove_menu_page( 'ajax-domain-checker' );
 }
 add_action( 'admin_menu', 'axiohost_admin_menu_page_removing' );
+
+function axiohost_admin_style() {
+  wp_enqueue_style('admin-style', AXIOHOST_CSS_URL.'/admin.css');
+}
+add_action('admin_enqueue_scripts', 'axiohost_admin_style');
 
 
 ?>

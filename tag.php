@@ -14,7 +14,7 @@
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">
-                   <?php get_template_part('template-parts/blog-list', 'blog-gird'); ?>
+                   <?php get_template_part('template-parts/blog-list', 'blog-list'); ?>
                </div>
             </div>
          </div>

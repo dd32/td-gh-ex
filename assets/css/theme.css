@@ -990,10 +990,18 @@ table tr td {
 }
 
 /*fixing superfish design*/
+.sf-menu ul li {
+    background: #ffffff;
+}
+.sf-menu ul li:hover {
+    background: #ffffff;
+}
+.sf-menu ul ul li,.sf-menu ul > li:hover, .sf-menu ul > li.sfHover {
+    background: #ffffff!important;
+}
   .sf-menu a {
-    color: #13a;
+    color: rgba(51, 46, 46, 0.82);
     border: none;
-    color: #fff;
 }
 .navigation-main .sf-menu >li >a {
     color: #fff;
@@ -1005,7 +1013,7 @@ table tr td {
 .navigation-main ul.sub-menu li a:hover {
     color: #226cbc;
 }
-.navigation-main .sf-menu li:hover,.sf-menu li,.sf-menu ul li{
+.navigation-main .sf-menu > ul > li:hover,.sf-menu > li,.sf-menu > ul > li{
      background: transparent!important;   
 }
 .navigation-main .sf-menu li a,.sf-menu ul li a{

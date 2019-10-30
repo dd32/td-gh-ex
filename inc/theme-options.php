@@ -281,31 +281,7 @@
                 ),      
             )
         ) );
-        Redux::setSection( $opt_name, array(     
-            'title' =>  esc_html__( 'Color', 'axiohost' ),
-            'id'    => 'color_option',
-            'desc'  =>  esc_html__( 'Color opitons', 'axiohost' ),
-            'icon'  => 'fa fa-paint-brush',
-            'fields'     => array(
-                
-            
-                
-                array(
-                    'id'          => 'modal-search-btn-bg',
-                    'type'        => 'color', 
-                    'title'       =>  esc_html__('Modal Search Button BG Color', 'axiohost'), 
-                    'default'     => '#8066dc'
-                ),
-               
-                array(
-                    'id'       => 'bg-color',
-                    'type'     => 'color',
-                    'title'    =>  esc_html__( 'Footer bg color', 'axiohost' ),
-                    'default'  => '#fbfbfb'
-                ),
-                        
-            )
-        ) );
+       
         Redux::setSection( $opt_name, array(     
             'title' =>  esc_html__( 'Facebook Pixel', 'axiohost' ),
             'id'    => 'facebook-pexels',

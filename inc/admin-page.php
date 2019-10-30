@@ -281,42 +281,6 @@
     <div class="clear"></div></div>
     <?php
 }
-    add_action('admin_head', 'my_custom_fonts');
-
-    function my_custom_fonts() {
-    echo '<style>';?>
-        .about-wrap img{
-            width: 32px;
-        }
-        .widgets-holder-wrap {
-            padding: 20px;
-        }
-        .welcome-text {
-            text-align: center;
-            font-size: 24px!important;
-            padding: 15px!important;
-            margin: 0!important;
-            background: #0085ba;
-            color: white!important;
-        }
-        ays, .feature-filter, .imgedit-group, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
-            padding: 15px;
-            padding-top: 0;
-            border-right: 1px solid #ffffff;
-        }
-        .col {
-            float: left;
-            width: 33.333333%;
-        }
-        .free-vs-pro {
-            float: left;
-            width: 100%;
-            margin-top: 30px;
-        }
-        .checkmark,.cross{
-            margin-left: 22px;
-        }
-    <?php echo '</style>';
-    }
+    
 
 ?>
