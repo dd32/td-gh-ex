@@ -41,7 +41,7 @@ $bento_grid_columns = esc_html( get_post_meta( $bento_parent_page_id, 'bento_pag
 			
 			<?php
 			// Build the query
-			$bento_query = new WP_Query( bento_grid_query() );
+			$bento_query = new WP_Query( bento_grid_query( $bento_parent_page_id ) );
 			
 			// Start the Loop
 			if ( $bento_query->have_posts() ) { 

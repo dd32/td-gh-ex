@@ -303,7 +303,7 @@ function bento_localize_scripts() {
 		} else {
 			$bento_grid_mode = 'packery';
 		}
-		$bento_query = new WP_Query( bento_grid_query() );
+		$bento_query = new WP_Query( bento_grid_query($postid) );
 	} else {
 		global $wp_query;
 		$bento_query = $wp_query;
@@ -972,7 +972,7 @@ function bento_ajax_pagination() {
 	$post_id = url_to_postid( $url );
 	global $bento_parent_page_id; 
 	$bento_parent_page_id = $post_id;
-	$query_args = bento_grid_query(); 
+	$query_args = bento_grid_query( $post_id ); 
 	$query_args['paged'] = $_POST['page'] + 1;
 	$post_types = get_post_meta( $post_id, 'bento_page_content_types', true );
 	$query_args['post_type'] = $post_types;
@@ -999,6 +999,7 @@ function bento_ajax_pagination() {
 			// Include the page content
 			if ( get_page_template_slug( $post_id ) == 'grid.php' ) {
 				get_template_part( 'content', 'grid' ); 
+				//print_r( bento_grid_query( $post_id ) );
 			} else {
 				get_template_part( 'content' ); 
 			}
@@ -1010,8 +1011,8 @@ function bento_ajax_pagination() {
 
 
 // Custom query for grid pages
-function bento_grid_query() {
-	$post_id = get_queried_object_id();
+function bento_grid_query( $id ) {
+	$post_id = $id;
 	$bento_grid_query_args = array();
 	$post_types = get_post_meta( $post_id, 'bento_page_content_types', true );
 	$bento_grid_query_args['post_type'] = $post_types;
