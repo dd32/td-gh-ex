@@ -24,7 +24,7 @@
     <div class="container">
       <div class="main-header">
         <div class="row">
-          <div class="logo col-lg-3 col-md-8 col-9">
+          <div class="logo col-lg-3 col-md-5 col-9">
             <?php if ( has_custom_logo() ) : ?>
             <div class="site-logo"><?php the_custom_logo(); ?></div>
             <?php else: ?>
@@ -46,7 +46,7 @@
           <?php endif; ?>
           <?php endif; ?>
           </div>
-          <div class="col-lg-8 col-md-3 col-3">
+          <div class="col-lg-8 col-md-7 col-3">
             <div class="toggle-menu responsive-menu">
               <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-business'); ?></span></button>
             </div>
@@ -68,8 +68,8 @@
               </nav>
             </div>
           </div>
-          <div class="col-lg-1 col-md-1">
-            <a href="#" onclick="search_open()" class="search-box">
+          <div class="col-lg-1 search-box">
+            <a href="#" onclick="search_open()">
               <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-business' );?></span>
             </a>
           </div>

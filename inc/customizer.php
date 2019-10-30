@@ -26,6 +26,7 @@ function advance_business_customize_register($wp_customize) {
 		'panel' => 'advance_business_panel_id', 
 		'title' => esc_html__( 'Theme Color Option', 'advance-business' ) 
 	) );
+
   	$wp_customize->add_setting( 'advance_business_theme_color', array(
 	    'default' => '#ffaa56',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -43,6 +44,22 @@ function advance_business_customize_register($wp_customize) {
 		'priority' => 30,
 		'panel'    => 'advance_business_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_business_theme_options',array(
+        'default' => __('Default','advance-business'),
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-business'),
+        'description' => __('Here you can change the Width layout. ','advance-business'),
+        'section' => 'advance_business_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-business'),
+            'Container' => __('Container','advance-business'),
+            'Box Container' => __('Box Container','advance-business'),
+        ),
+	) );
 
 	$wp_customize->add_setting('advance_business_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-business'),

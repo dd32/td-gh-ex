@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro/
-Version: 0.3.3
+Version: 0.3.4
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -70,7 +70,7 @@ a:hover{
 a:hover{
 	text-decoration:none !important;
 }
-a:focus, input:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+a:focus, input:focus, button:focus, textarea:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
@@ -262,6 +262,7 @@ input[type="submit"] {
 }
 /* ---------Middle Header--------- */
 .logo {
+  text-align: left;
   padding: 10px 20px;
 }
 .logo h1,
@@ -270,6 +271,8 @@ input[type="submit"] {
   font-weight:bold;
   text-align:left;
   letter-spacing: 0px;
+  padding: 0;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 .logo a{
@@ -344,7 +347,7 @@ ul.list_nav {
 }
 .primary-navigation ul ul ul{
   left: 100%;
-  top: 5px;
+  top: 0px;
 }
 .primary-navigation ul ul a{
   color: #ffaa56;
@@ -504,7 +507,7 @@ input.search-field {
 .search-box i {
   padding: 10px;
   color: #000;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 .search-box {
   margin: 8px 0px;
@@ -1046,7 +1049,7 @@ div#sidebar {
   text-align: right;
 }
 #comments ol.comment-list {
-  color: #3a4d5e;
+  color: #5b5b5b;
   font-size: 18px;
 }
 .comment-meta.commentmetadata {
@@ -1335,7 +1338,7 @@ h1.page-title {
   font-size: 15px;
 }
 .nav-next {
-  float: right;
+  text-align: right;
   font-size: 15px;
 }
 .pagination {
@@ -1424,13 +1427,16 @@ iframe{
 	.contentbox{
 		width: auto;
 	}
-
+  .logo{
+    padding: 0;
+  }
 	#header,
 	#header .logo h1{
 		text-align: center;
 	}
   .page-template-custom-front-page #header {
     position: static;
+    border-bottom: 1px solid #000;
   }
   .project_content{
     position: static;
@@ -1663,7 +1669,7 @@ iframe{
     text-align: center;
     display: block;
   }
-  .search-box i{
+  .search-box {
     display: none;
   }
   #menu-sidebar input[type="submit"]{
