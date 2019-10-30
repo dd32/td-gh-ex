@@ -39,12 +39,12 @@ Avant - Centered Header Social
   right: -999em;
   z-index: 99999;
   padding: 0;
-  display: none;
+  /* display: none; */
 }
 .avant-header-nav ul ul ul {
   right: -999em;
   top: 0;
-  display: none;
+  /* display: none; */
 }
 .avant-header-nav ul ul li {
     float: none;
@@ -313,12 +313,16 @@ a.header-cart-contents {
 }
 
 .menu-search {
+    box-shadow: none !important;
     float: right;
     text-align: right;
     margin: 0;
     padding: 0 0 0 2px;
     font-size: 24px;
     line-height: 24px;
+    background: none;
+    color: inherit;
+    border: 0;
 }
 .search-btn {
     display: block;
@@ -622,6 +626,7 @@ a.header-cart-contents {
         width: 100%;
     }
     .header-menu-button {
+        width: 100%;
         padding: 15px 10px 16px 10px;
     }
     .site-header-top-right .social-icon {

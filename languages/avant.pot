@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-10-19 14:49+0200\n"
+"POT-Creation-Date: 2019-10-30 13:21+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1405,6 +1405,10 @@ msgstr ""
 
 #: functions.php:594
 msgid "Dismiss Notice"
+msgstr ""
+
+#: header.php:20
+msgid "Skip to content"
 msgstr ""
 
 #: includes/avant-pro/class-customize.php:76

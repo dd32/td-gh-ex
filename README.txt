@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.30
+* Style tweaks/fixes
+* Improved theme accessibility
+* Added 'Skip to Content' accessibility link
+* Changed Navigation & link elements to work when using tab & enter - Keyboard navigation
+* Fixed mobile minor design tweaks
+* Updated the language .pot file
+
 #### 1.1.28
 * Style tweaks/fixes
 * Updated the language .pot file

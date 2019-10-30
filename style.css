@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/wordpress-theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings, SEO (Search Engine Optimization) settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.1.28
+Version: 1.1.30
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -615,7 +615,7 @@ a:active {
     top: 51px;
     left: -999em;
     z-index: 99999;
-    display: none;
+    /* display: none; */
 }
 .main-navigation ul ul a {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
@@ -649,7 +649,7 @@ a:active {
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: 0;
-  display: block;
+  /* display: block; */
 }
 
 .main-navigation ul ul li:hover > ul,
@@ -670,6 +670,10 @@ a:active {
 }
 
 .header-menu-button {
+    background: none !important;
+    border: 0 !important;
+    color: inherit;
+    box-shadow: none !important;
     display: none;
 }
 
@@ -678,7 +682,7 @@ a:active {
     position: absolute;
     top: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1) !important;
     color: #838383;
     margin: 0;
     padding: 11px 14px;
@@ -902,6 +906,7 @@ a:active {
 
 #page {
     position: relative;
+    overflow-x: hidden;
     right: 0;
 
     -webkit-transition: right 0.4s ease 0s;
@@ -2402,6 +2407,8 @@ body.page-template-template-gutenberg {
         float: none;
     }
     .main-menu-close {
+        background: none !important;
+        border: 0 !important;
         display: block;
         border-radius: 4px;
         position: absolute;
@@ -2631,7 +2638,9 @@ a.privacy-policy-link:hover,
 .main-navigation.avant-nav-style-plain ul > li.current-menu-parent > a,
 .main-navigation.avant-nav-style-plain ul > li.current_page_parent > a,
 .main-navigation.avant-nav-style-plain ul > li.current_page_ancestor > a,
-.main-navigation.avant-nav-style-plain .current_page_item > a {
+.main-navigation.avant-nav-style-plain .current_page_item > a,
+.avant-header-nav ul li.focus > a,
+nav.main-navigation ul li.menu-item.focus > a {
     color: #de7158;
 }
 

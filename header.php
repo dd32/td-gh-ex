@@ -16,13 +16,16 @@ global $woocommerce;
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'avant' ); ?></a>
+
 <?php if ( get_theme_mod( 'avant-site-add-side-social', customizer_library_get_default( 'avant-site-add-side-social' ) ) ) : ?>
 	<div class="side-aligned-social hide-side-social">
 		<?php get_template_part( '/templates/social-links' ); ?>
 	</div>
 <?php endif; ?>
 <div id="page" class="hfeed site <?php echo ( get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? sanitize_html_class( 'boxed-site' ) : ''; ?> <?php echo ( get_theme_mod( 'avant-slider-type' ) ) ? sanitize_html_class( get_theme_mod( 'avant-slider-type' ) ) : sanitize_html_class( 'avant-slider-default' ); ?> <?php echo ( get_theme_mod( 'avant-site-layout' ) ) ? sanitize_html_class( get_theme_mod( 'avant-site-layout' ) ) : sanitize_html_class( 'avant-site-full-width' ); ?>">
-	
+
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '<div class="content-boxed">' : ''; ?>
 	
 <?php echo ( get_theme_mod( 'avant-header-layout' ) != 'avant-header-layout-six' && get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? '<div class="site-boxed">' : ''; ?>

@@ -97,12 +97,12 @@ Avant - Side Layout Header
   left: -999em;
   z-index: 99999;
   padding: 0;
-  display: none;
+  /* display: none; */
 }
 .avant-header-nav ul ul ul {
   left: -999em;
   top: 0;
-  display: none;
+  /* display: none; */
 }
 .avant-header-nav ul ul li {
     float: none;
@@ -270,11 +270,14 @@ a.header-cart-contents {
 
 .menu-search {
     float: right;
-    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08) inset;
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08) inset !important;
     text-align: right;
     margin: 0;
     padding: 10px 10px 11px 10px;
     font-size: 13px;
+    background: none;
+    color: inherit;
+    border: 0;
 }
 .search-btn {
     display: block;
@@ -403,6 +406,7 @@ a.header-cart-contents {
         font-size: 12px;
         cursor: pointer;
         text-align: center;
+        width: 100%;
     }
     .site-header-switch .header-menu-button {
         padding: 15px 0 16px 80px;

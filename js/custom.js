@@ -7,7 +7,11 @@
     jQuery( document ).ready( function() {
         
         // Add button to sub-menu item to show nested pages / Only used on mobile
-        $( '.main-navigation li.page_item_has_children, .main-navigation li.menu-item-has-children' ).prepend( '<span class="menu-dropdown-btn"><i class="fas fa-angle-down"></i></span>' );
+        $( '.main-navigation li.page_item_has_children, .main-navigation li.menu-item-has-children' ).prepend( '<button class="menu-dropdown-btn"><i class="fas fa-angle-down"></i></button>' );
+        $( '.main-navigation, .avant-header-nav' ).find( 'a' ).on( 'focus blur', function() {
+            $( this ).parents( 'li' ).toggleClass( 'focus' );
+        } );
+        
         // Mobile nav button functionality
         $( '.menu-dropdown-btn' ).bind( 'click', function() {
             $(this).parent().toggleClass( 'open-page-item' );

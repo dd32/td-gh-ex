@@ -57,9 +57,9 @@ global $woocommerce; ?>
 			<?php else : ?>
 			
 				<nav id="site-navigation" class="main-navigation avant-nav-style-plain <?php echo ( get_theme_mod( 'avant-header-nav-align' ) ) ? sanitize_html_class( get_theme_mod( 'avant-header-nav-align' ) ) : sanitize_html_class( 'avant-nav-align-right' ); ?>" role="navigation">
-					<span class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'avant-header-menu-text', __( 'menu', 'avant' ) ) ); ?></span></span>
+					<button class="header-menu-button"><i class="fas fa-bars"></i><span><?php echo esc_attr( get_theme_mod( 'avant-header-menu-text', __( 'menu', 'avant' ) ) ); ?></span></button>
 					<div id="main-menu" class="main-menu-container">
-						<span class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></span>
+						<button class="main-menu-close"><i class="fas fa-angle-right"></i><i class="fas fa-angle-left"></i></button>
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 						
 						<?php if ( avant_is_woocommerce_activated() ) : ?>
@@ -87,9 +87,9 @@ global $woocommerce; ?>
 			<div class="site-header-social">
 			
 				<?php if ( !get_theme_mod( 'avant-header-search', customizer_library_get_default( 'avant-header-search' ) ) ) : ?>
-					<div class="menu-search">
+					<button class="menu-search">
 				    	<i class="fas fa-search search-btn"></i>
-				    </div>
+				    </button>
 				<?php endif; ?>
 				
 				<?php if ( !get_theme_mod( 'avant-header-remove-social', customizer_library_get_default( 'avant-header-remove-social' ) ) ) : ?>

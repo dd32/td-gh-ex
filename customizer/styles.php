@@ -106,7 +106,9 @@ function customizer_library_avant_build_styles() {
 				.main-navigation.avant-nav-style-plain ul > li.current-menu-parent > a,
 				.main-navigation.avant-nav-style-plain ul > li.current_page_parent > a,
 				.main-navigation.avant-nav-style-plain ul > li.current_page_ancestor > a,
-				.main-navigation.avant-nav-style-plain .current_page_item > a'
+				.main-navigation.avant-nav-style-plain .current_page_item > a,
+				.avant-header-nav ul li.focus > a,
+				nav.main-navigation ul li.menu-item.focus > a'
 			),
 			'declarations' => array(
                 'color' => $color

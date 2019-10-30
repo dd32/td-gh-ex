@@ -39,12 +39,12 @@ Avant - Default Header
   right: -999em;
   z-index: 99999;
   padding: 0;
-  display: none;
+  /* display: none; */
 }
 .avant-header-nav ul ul ul {
   right: -999em;
   top: 0;
-  display: none;
+  /* display: none; */
 }
 .avant-header-nav ul ul li {
     float: none;
@@ -286,11 +286,14 @@ a.header-cart-contents {
 
 .menu-search {
     float: right;
-    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08) inset;
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08) inset !important;
     text-align: right;
     margin: 0 0 0 8px;
     padding: 10px 0 11px 10px;
     font-size: 13px;
+    background: none;
+    color: inherit;
+    border: 0;
 }
 .content-boxed .menu-search {
     padding: 10px 10px 11px 10px;
@@ -571,7 +574,8 @@ a.header-cart-contents {
     }
     .header-menu-button,
     .site-header-switch .header-menu-button{
-        padding: 10px;
+        width: 100%;
+        padding: 15px 10px 16px;
     }
     .site-header-top-right .social-icon,
     .site-header-switch .site-header-top-right .social-icon {
