@@ -353,6 +353,46 @@ function advance_education_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	//Layouts
+	$wp_customize->add_section('advance_education_left_right', array(
+		'title'    => __('Layout Settings', 'advance-education'),
+		'priority' => null,
+		'panel'    => 'advance_education_panel_id',
+	));
+	
+	$wp_customize->add_setting('advance_education_theme_options',array(
+        'default' => __('Default','advance-education'),
+        'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_education_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-education'),
+        'description' => __('Here you can change the Width layout. ','advance-education'),
+        'section' => 'advance_education_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-education'),
+            'Container' => __('Container','advance-education'),
+            'Box Container' => __('Box Container','advance-education'),
+        ),
+	) );
+
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('advance_education_layout_options', array(
+		'default'           => __('Right Sidebar', 'advance-education'),
+		'sanitize_callback' => 'advance_education_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_education_layout_options',array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-education'),
+		'section'        => 'advance_education_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-education'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-education'),
+			'One Column'    => __('One Column', 'advance-education'),
+			'Grid Layout'   => __('Grid Layout', 'advance-education')
+		),
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_education_topbar',array(
 		'title'	=> __('Topbar Section','advance-education'),
@@ -479,30 +519,6 @@ function advance_education_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-education'),
 		'section' => 'advance_education_footer_section',
 		'type'    => 'text',
-	));
-
-	//Layouts
-	$wp_customize->add_section('advance_education_left_right', array(
-		'title'    => __('Sidebar Layout Settings', 'advance-education'),
-		'priority' => null,
-		'panel'    => 'advance_education_panel_id',
-	));
-
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting('advance_education_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-education'),
-		'sanitize_callback' => 'advance_education_sanitize_choices',
-	));
-	$wp_customize->add_control('advance_education_layout_options',array(
-		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-education'),
-		'section'        => 'advance_education_left_right',
-		'choices'        => array(
-			'Left Sidebar'  => __('Left Sidebar', 'advance-education'),
-			'Right Sidebar' => __('Right Sidebar', 'advance-education'),
-			'One Column'    => __('One Column', 'advance-education'),
-			'Grid Layout'   => __('Grid Layout', 'advance-education')
-		),
 	));
 }
 add_action('customize_register', 'advance_education_customize_register');
