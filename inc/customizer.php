@@ -457,6 +457,46 @@ function advance_pet_care_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	//Layouts
+	$wp_customize->add_section('advance_pet_care_left_right', array(
+		'title'    => __('Layout Settings', 'advance-pet-care'),
+		'priority' => null,
+		'panel'    => 'advance_pet_care_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_pet_care_theme_options',array(
+        'default' => __('Default','advance-pet-care'),
+        'sanitize_callback' => 'advance_pet_care_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_pet_care_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-pet-care'),
+        'description' => __('Here you can change the Width layout. ','advance-pet-care'),
+        'section' => 'advance_pet_care_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-pet-care'),
+            'Container' => __('Container','advance-pet-care'),
+            'Box Container' => __('Box Container','advance-pet-care'),
+        ),
+	) );
+
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('advance_pet_care_layout_options', array(
+		'default'           => __('Right Sidebar', 'advance-pet-care'),
+		'sanitize_callback' => 'advance_pet_care_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_pet_care_layout_options',array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-pet-care'),
+		'section'        => 'advance_pet_care_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-pet-care'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-pet-care'),
+			'One Column'    => __('One Column', 'advance-pet-care'),
+			'Grid Layout'   => __('Grid Layout', 'advance-pet-care')
+		),
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_pet_care_topbar',array(
 		'title'	=> __('Topbar Section','advance-pet-care'),
@@ -662,30 +702,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-pet-care'),
 		'section' => 'advance_pet_care_footer_section',
 		'type'    => 'text',
-	));
-
-	//Layouts
-	$wp_customize->add_section('advance_pet_care_left_right', array(
-		'title'    => __('Sidebar Layout Settings', 'advance-pet-care'),
-		'priority' => null,
-		'panel'    => 'advance_pet_care_panel_id',
-	));
-
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting('advance_pet_care_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-pet-care'),
-		'sanitize_callback' => 'advance_pet_care_sanitize_choices',
-	));
-	$wp_customize->add_control('advance_pet_care_layout_options',array(
-		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-pet-care'),
-		'section'        => 'advance_pet_care_left_right',
-		'choices'        => array(
-			'Left Sidebar'  => __('Left Sidebar', 'advance-pet-care'),
-			'Right Sidebar' => __('Right Sidebar', 'advance-pet-care'),
-			'One Column'    => __('One Column', 'advance-pet-care'),
-			'Grid Layout'   => __('Grid Layout', 'advance-pet-care')
-		),
 	));
 }
 add_action('customize_register', 'advance_pet_care_customize_register');

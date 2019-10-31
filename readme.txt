@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 4.3
-Tested up to: 5.2.3
+Tested up to: 5.2.4
 Requires PHP: 7.2.14
-Stable tag: 0.4.3
+Stable tag: 0.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,10 @@ Advance Pet Care is a robust, reliable and clean WordPress theme for animal care
 * Updated search layout.
 * Changed menu css.
 * Updated responsive menu css.
+
+= 0.4.4 =
+* Added Width Layout option in Customizer.
+* Changed some css.
 
 == Resources ==
 

@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, translation ready and deeply customizable. It does not matter whether you are an experienced web developer or a WordPress newbie, setting up your own website with this theme does not need coding knowledge. This pet WordPress theme is optimized for search engines and will give your website higher rank. It has banners and sliders to make the theme more impressive. Advance Pet Care has sections like gallery and supports various post formats like image, gallery, video etc. It is embedded with social media icons. It is extensible with third party plugins. You can set up your very own online store and start selling products, all with the help of WooCommerce plugin which is compatible with it. Demo: https://www.themeshopy.com/advance-pet-care-pro/
-Version: 0.4.3
+Version: 0.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -72,7 +72,8 @@ a:focus,
 a:hover{
 	text-decoration:none !important;
 }
-a:focus, input:focus, textarea:focus{
+a:focus, input:focus, textarea:focus, button:focus, 
+.woocommerce form .form-row input.input-text:focus, .woocommerce form .form-row textarea:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
@@ -265,10 +266,14 @@ input[type="submit"] {
 .logo {
   padding: 2px;
 }
-.logo h1{
+.logo h1,
+.logo p.site-title{
   font-size:37px;
   font-weight:bold;
   text-align:center;
+  line-height: 1.5;
+  padding:0;
+  font-family: 'Lobster', cursive;
 }
 .logo a{
   color: #0d7f71;
@@ -279,12 +284,7 @@ input[type="submit"] {
   text-align:center;
   margin: 0;
 }
-.logo p a{
-  font-size: 37px;
-  font-weight: bold;
-  text-align: center;
-  font-family: 'Lobster', cursive;
-}
+
 /* ---------HEADER--------- */
 .top-header{
   background: url('./images/topbar.png')no-repeat;
@@ -460,11 +460,6 @@ input[type="submit"] {
   color: #b65741;
   top: 15px;
 }
-.sf-arrows ul li > .sf-with-ul:focus:after,
-.sf-arrows ul li:hover > .sf-with-ul:after,
-.sf-arrows .sfHover > .sf-with-ul:after{
-  content: '\f068';
-}
 .toggle-menu, a.closebtn{
   display: none;
 }
@@ -485,7 +480,7 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   transition: all 500ms;
   box-shadow: 0px 0px 12px #c0bebe;
 }
@@ -1112,16 +1107,6 @@ table#wp-calendar td a {
   font-weight:bold;
   font-size:12px;
 }
-/*.content-ts #comments ol li{
-  width:100%;
-  background:none;list-style:none;
-  margin: 0 0 20px;
-  background:#eee;
-  display:inline-block;
-}  
-.content-ts #comments ul{
-  margin:0 0 0 40px;
-}*/
 #comments .reply{
   text-align:right;
 }
@@ -1141,6 +1126,9 @@ table#wp-calendar td a {
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
+.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb {
+  color: #000
+}
 .woocommerce .products li {
   width: 30% !important;
   text-align: center;
@@ -1221,15 +1209,12 @@ span.woocommerce-input-wrapper {
 .woocommerce-product-gallery__image{
   padding: 2px;
 }
-.woocommerce form .form-row .required, .woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb{
+.woocommerce form .form-row .required{
   color: #df0000;
 }
 .woocommerce-privacy-policy-text p a {
   color:#000;
 }
-/*.woocommerce-cart .cart-collaterals .shipping-calculator-button{
-  color: #3a4d5e;
-}*/
 form#commentform p a , .woocommerce-MyAccount-content a, nav.woocommerce-MyAccount-navigation a, .woocommerce-info a, tr.woocommerce-cart-form__cart-item.cart_item a, a.shipping-calculator-button {
   text-decoration: none;
   color: #b65741;
@@ -1492,6 +1477,46 @@ iframe {
   }
 }
 @media screen and (max-width:720px) {	
+  #footer input[type="search"]{
+    width: 100%;
+  }
+  .woocommerce ul.products[class*=columns-] li.product,
+  .woocommerce-page ul.products[class*=columns-] li.product{
+    width: 100% !important;
+    float: none !important;
+  }
+  #slider .carousel-caption{
+    right: 0;
+    left: 0;
+    top:45%;
+  }
+  #slider .carousel-control-prev, #slider .carousel-control-next{
+    top:0;
+  }
+  #slider .carousel-control-prev{
+    left: 5%;
+  }
+  .pet-top .address{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .top-header{
+    background-image: none;
+    background-color: #b65741;
+    padding: 10px 0;
+  }
+  .social-icons i{
+    margin-left: 10px;
+  }
+  .content-sec {
+    margin: 10px 0;
+  }
+  #welcome{
+    background-image: none;
+  }
+  #footer:before{
+    top:0px;
+  }
   .page-template-custom-front-page .contact-content{
     position: static;
   }
@@ -1555,47 +1580,11 @@ iframe {
   .woocommerce ul.products.columns-3 li.product, .woocommerce-page ul.products.columns-3 li.product {
     width: 28.75% !important;
   }
-}
-@media screen and (max-width: 425px){
-	#footer input[type="search"]{
-		width: 100%;
-	}
-	.woocommerce ul.products[class*=columns-] li.product,
-	.woocommerce-page ul.products[class*=columns-] li.product{
-		width: 100% !important;
-		float: none !important;
-	}
-  #slider .carousel-caption{
-    right: 0;
-    left: 0;
-    top:45%;
+  #slider .carousel-control-prev {
+    left: 86%;
   }
-  #slider .carousel-control-prev, #slider .carousel-control-next{
-    top:0;
-  }
-  #slider .carousel-control-prev{
-    left: 5%;
-  }
-  .pet-top .address{
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .top-header{
-    background-image: none;
-    background-color: #b65741;
-    padding: 10px 0;
-  }
-  .social-icons i{
-    margin-left: 10px;
-  }
-  .content-sec {
-    margin: 10px 0;
-  }
-  #welcome{
-    background-image: none;
-  }
-  #footer:before{
-    top:0px;
+  #slider .carousel-caption {
+    top: 50%;
   }
 }
 @media screen and (min-width: 426px) and (max-width: 767px){
@@ -1650,24 +1639,11 @@ iframe {
     top:0px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 767px){
-  
-}
-@media screen and (min-width: 1000px) and (max-width: 1024px){
-  #slider .carousel-control-prev {
-    left: 86%;
-  }
-  #slider .carousel-caption {
-    top: 50%;
-  }
-}
 @media screen and (min-width: 1025px){
   #slider .carousel-caption{
     left:10%;
   }
 }
-/*------------------RESPONSIVE MEIDA-------------------*/
-
 @media screen and (max-width: 1000px){
   .social-icons,
   .phone,

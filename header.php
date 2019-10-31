@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-4">
             <div class="time">
-              <div class="row">
+              <div class="row m-0">
                 <?php if( get_theme_mod( 'advance_pet_care_time') != '' || get_theme_mod( 'advance_pet_care_time1' )!= '') { ?>
                   <div class="col-lg-1 col-md-2 p-0">
                     <i class="far fa-calendar-alt"></i>
@@ -107,7 +107,7 @@
           </div>
           <div class="col-lg-4 col-md-4">
             <div class="address">
-              <div class="row">
+              <div class="row m-0">
                 <?php if( get_theme_mod( 'advance_pet_care_address') != '' || get_theme_mod( 'advance_pet_care_address1' )!= '') { ?>
                   <div class="col-lg-11 col-md-10">
                     <?php if( get_theme_mod('advance_pet_care_address') != ''){ ?>
