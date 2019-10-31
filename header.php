@@ -129,7 +129,7 @@
             </div>
             <div class="main-menu">
               <div class="row m-0 ">
-                <div class="col-lg-10 col-md-11 p-0">
+                <div class="col-lg-11 col-md-11 p-0">
                   <div id="menu-sidebar" class="nav sidebar">
                     <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-it-company' ); ?>">
                       <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-it-company'); ?></span></a>

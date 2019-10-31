@@ -457,6 +457,46 @@ function advance_it_company_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	//Layouts
+	$wp_customize->add_section('advance_it_company_left_right', array(
+		'title'    => __('Layout Settings', 'advance-it-company'),
+		'priority' => null,
+		'panel'    => 'advance_it_company_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_it_company_theme_options',array(
+        'default' => __('Default','advance-it-company'),
+        'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_it_company_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-it-company'),
+        'description' => __('Here you can change the Width layout. ','advance-it-company'),
+        'section' => 'advance_it_company_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-it-company'),
+            'Container' => __('Container','advance-it-company'),
+            'Box Container' => __('Box Container','advance-it-company'),
+        ),
+	));
+
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('advance_it_company_layout_options', array(
+		'default'           => __('Right Sidebar', 'advance-it-company'),
+		'sanitize_callback' => 'advance_it_company_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_it_company_layout_options',array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-it-company'),
+		'section'        => 'advance_it_company_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-it-company'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-it-company'),
+			'One Column'    => __('One Column', 'advance-it-company'),
+			'Grid Layout'   => __('Grid Layout', 'advance-it-company')
+		),
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_it_company_topbar',array(
 		'title'	=> __('Topbar Section','advance-it-company'),
@@ -703,30 +743,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-it-company'),
 		'section' => 'advance_it_company_footer_section',
 		'type'    => 'text',
-	));
-
-	//Layouts
-	$wp_customize->add_section('advance_it_company_left_right', array(
-		'title'    => __('Sidebar Layout Settings', 'advance-it-company'),
-		'priority' => null,
-		'panel'    => 'advance_it_company_panel_id',
-	));
-
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting('advance_it_company_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-it-company'),
-		'sanitize_callback' => 'advance_it_company_sanitize_choices',
-	));
-	$wp_customize->add_control('advance_it_company_layout_options',array(
-		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-it-company'),
-		'section'        => 'advance_it_company_left_right',
-		'choices'        => array(
-			'Left Sidebar'  => __('Left Sidebar', 'advance-it-company'),
-			'Right Sidebar' => __('Right Sidebar', 'advance-it-company'),
-			'One Column'    => __('One Column', 'advance-it-company'),
-			'Grid Layout'   => __('Grid Layout', 'advance-it-company')
-		),
 	));
 }
 add_action('customize_register', 'advance_it_company_customize_register');
