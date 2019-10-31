@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.30' );
+define( 'AVANT_THEME_VERSION' , '1.1.31' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -370,6 +370,11 @@ function avant_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => __( 'WooCustomizer', 'avant' ),
+			'slug'      => 'woocustomizer',
+			'required'  => false,
+		),
+		array(
 			'name'      => __( 'Breadcrumb NavXT', 'avant' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
@@ -528,7 +533,7 @@ function avant_add_license_notice() {
 				<span>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Premium is currently on a %1$s for only $19', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/go/notice-purchase/" target="_blank">35% flash sale</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Premium is currently on a %1$s for only $19', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">35% flash sale</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</span>
 			</h4>
@@ -542,7 +547,7 @@ function avant_add_license_notice() {
 					<p>
 						<?php
 						/* translators: %s: 'Recommended Resources' */
-						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/go/recommended-resources/" target="_blank">Recommended Resources</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/support/wordpress-recommended-resources/" target="_blank">Recommended Resources</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 						?>
 					</p>
 					<a href="<?php echo esc_url( admin_url( 'themes.php?page=avant_theme_info' ) ) ?>" class="avant-admin-notice-btn">
@@ -557,7 +562,7 @@ function avant_add_license_notice() {
 						printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 						?>
 					</p>
-					<a href="<?php echo esc_url( 'https://kairaweb.com/go/recommended-resources/' ) ?>" class="avant-admin-notice-btn-in" target="_blank">
+					<a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" class="avant-admin-notice-btn-in" target="_blank">
 						<?php esc_html_e( 'Recommended Resources', 'avant' ); ?>
 					</a>
 					<p>
@@ -583,7 +588,7 @@ function avant_add_license_notice() {
 							<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'avant' ); ?></a>
 						</li>
 						<li>
-							<a href="https://kairaweb.com/go/what-premium-offers-notice/" target="_blank"><?php esc_html_e( 'What does Avant Premium offer extra', 'avant' ); ?></a>
+							<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank"><?php esc_html_e( 'What does Avant Premium offer extra', 'avant' ); ?></a>
 						</li>
 					</ul>
 					<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="avant-admin-notice-btn-grey" target="_blank">

@@ -9,11 +9,11 @@
         <div class="upgrade-page-top">
             
             <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/go/page-purchase/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                <a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
                     <?php printf( __( '<span>Avant Premium </span><em>$29</em>', 'avant' ) ); ?>
                 </a>
                 <div class="upgrade-order-offer">
-                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/go/page-purchase/" target="_blank">once off payment of $29 for lifetime updates</a></b>', 'avant' ); ?>
+                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">once off payment of $29 for lifetime updates</a></b>', 'avant' ); ?>
                 </div>
             </div>
             
@@ -74,7 +74,7 @@
                         <?php _e( 'See what we suggest when building your website.', 'avant' ); ?><br />
                     </div>
                     <div class="avant-upgrade-block-right">
-                        <a href="<?php echo esc_url( 'https://kairaweb.com/go/recommended-resources/' ) ?>" target="_blank" class="avant-upgrade-result-button">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" target="_blank" class="avant-upgrade-result-button">
                             <?php _e( 'Recommended Resources', 'avant' ); ?>
                         </a>
                     </div>

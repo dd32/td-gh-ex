@@ -1,6 +1,6 @@
 === Avant ===
 Contributors: Kaira
-Donate link: 
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PFZGBM92T8XSE&source=url
 Tags: two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, entertainment, portfolio
 Requires at least: 4.7
 License: GPLv2 or later
@@ -67,6 +67,12 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1400 wide and 700 high.
 
 == Changelog ==
+
+#### 1.1.31
+* Style tweaks/fixes
+* Added WooCustomizer as a recommended plugin in TGM
+* Fixed broken help links
+* Updated the language .pot file
 
 #### 1.1.30
 * Style tweaks/fixes

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-10-30 13:21+0200\n"
+"POT-Creation-Date: 2019-10-31 16:29+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1269,141 +1269,145 @@ msgid "Contact Form by WPForms"
 msgstr ""
 
 #: functions.php:373
-msgid "Breadcrumb NavXT"
+msgid "WooCustomizer"
 msgstr ""
 
 #: functions.php:378
-msgid "Linkt"
+msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: functions.php:383
+msgid "Linkt"
+msgstr ""
+
+#: functions.php:388
 msgid "HubSpot"
 msgstr ""
 
-#: functions.php:527
+#: functions.php:532
 msgid "Thank you for trying out Avant!"
 msgstr ""
 
-#: functions.php:531
+#: functions.php:536
 #, php-format
 msgid "Premium is currently on a %1$s for only $19"
 msgstr ""
 
-#: functions.php:531
+#: functions.php:536
 #, php-format
 msgid ""
-"<a href=\"https://kairaweb.com/go/notice-purchase/\" target=\"_blank"
-"\">35% flash sale</a>"
+"<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
+"target=\"_blank\">35% flash sale</a>"
 msgstr ""
 
-#: functions.php:535
+#: functions.php:540
 msgid ""
 "We're here to help... Please read through our help notes below on getting "
 "started with Avant:"
 msgstr ""
 
-#: functions.php:538
+#: functions.php:543
 msgid "About Avant:"
 msgstr ""
 
-#: functions.php:540
+#: functions.php:545
 msgid ""
 "Avant is a widely used and loved WordPress theme which gives you 7 header "
 "layouts, multiple blog and footer layouts, and lots of customization "
 "settings... so you can easily change the look of your site any time."
 msgstr ""
 
-#: functions.php:545
+#: functions.php:550
 #, php-format
 msgid ""
 "Read through our %1$s and %2$s and we'll help you build a professional "
 "website easily."
 msgstr ""
 
-#: functions.php:545
+#: functions.php:550
 msgid ""
-"<a href=\"https://kairaweb.com/go/recommended-resources/\" target=\"_blank"
-"\">Recommended Resources</a>"
+"<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
+"target=\"_blank\">Recommended Resources</a>"
 msgstr ""
 
-#: functions.php:545
+#: functions.php:550
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/\" target=\"_blank\">Kaira "
 "Documentation</a>"
 msgstr ""
 
-#: functions.php:549
+#: functions.php:554
 msgid "Read More About Avant"
 msgstr ""
 
-#: functions.php:553
+#: functions.php:558
 msgid "Using Avant:"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:562
 #, php-format
 msgid ""
 "See our recommended %1$s and how to get ready before you start building your "
 "website after you've %2$s."
 msgstr ""
 
-#: functions.php:557
+#: functions.php:562
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/our-recommended-wordpress-basic-"
 "setup/\" target=\"_blank\">WordPress basic setup</a>"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:562
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-hosting/\" target=\"_blank\">setup "
 "WordPress Hosting</a>"
 msgstr ""
 
-#: functions.php:561 upgrade/tpl/upgrade-page.php:78
+#: functions.php:566 upgrade/tpl/upgrade-page.php:78
 msgid "Recommended Resources"
 msgstr ""
 
-#: functions.php:564
+#: functions.php:569
 msgid ""
 "We've neatly built most of the Avant settings into the WordPress Customizer "
 "so you can see all your changes happen as you built your site."
 msgstr ""
 
-#: functions.php:567
+#: functions.php:572
 msgid "Start Customizing Your Website"
 msgstr ""
 
-#: functions.php:571
+#: functions.php:576
 msgid "Popular FAQ's:"
 msgstr ""
 
-#: functions.php:573
+#: functions.php:578
 msgid ""
 "See our list of popular help links for building your website and/or any "
 "issues you may have."
 msgstr ""
 
-#: functions.php:577
+#: functions.php:582
 msgid "Setup the Avant default slider"
 msgstr ""
 
-#: functions.php:580
+#: functions.php:585
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:583
+#: functions.php:588
 msgid "Mobile Menu is not working"
 msgstr ""
 
-#: functions.php:586
+#: functions.php:591
 msgid "What does Avant Premium offer extra"
 msgstr ""
 
-#: functions.php:590
+#: functions.php:595
 msgid "See More Documentation"
 msgstr ""
 
-#: functions.php:594
+#: functions.php:599
 msgid "Dismiss Notice"
 msgstr ""
 
@@ -1970,8 +1974,8 @@ msgstr ""
 #: upgrade/tpl/upgrade-page.php:16
 msgid ""
 "<b>Time limited offer, only advertised here</b>... Get Avant Premium now for "
-"a <b><a href=\"https://kairaweb.com/go/page-purchase/\" target=\"_blank"
-"\">once off payment of $29 for lifetime updates</a></b>"
+"a <b><a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium"
+"\" target=\"_blank\">once off payment of $29 for lifetime updates</a></b>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:21
