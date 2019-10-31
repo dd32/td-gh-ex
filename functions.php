@@ -976,6 +976,7 @@ function bento_ajax_pagination() {
 	$query_args['paged'] = $_POST['page'] + 1;
 	$post_types = get_post_meta( $post_id, 'bento_page_content_types', true );
 	$query_args['post_type'] = $post_types;
+	$query_args['post_status'] = 'publish';
 	$bento_grid_number_items = get_post_meta( $post_id, 'bento_page_number_items', true );
 	if ( ctype_digit($bento_grid_number_items) &&  ctype_digit($bento_grid_number_items) != 0 ) {
 		$query_args['posts_per_page'] = (int)$bento_grid_number_items;
@@ -999,7 +1000,6 @@ function bento_ajax_pagination() {
 			// Include the page content
 			if ( get_page_template_slug( $post_id ) == 'grid.php' ) {
 				get_template_part( 'content', 'grid' ); 
-				//print_r( bento_grid_query( $post_id ) );
 			} else {
 				get_template_part( 'content' ); 
 			}
