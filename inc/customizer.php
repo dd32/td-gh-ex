@@ -44,6 +44,22 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'panel'    => 'advance_fitness_gym_panel_id',
 	));
 
+	$wp_customize->add_setting('advance_fitness_gym_theme_options',array(
+        'default' => __('Default','advance-fitness-gym'),
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-fitness-gym'),
+        'description' => __('Here you can change the Width layout. ','advance-fitness-gym'),
+        'section' => 'advance_fitness_gym_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-fitness-gym'),
+            'Container' => __('Container','advance-fitness-gym'),
+            'Box Container' => __('Box Container','advance-fitness-gym'),
+        ),
+	) );
+		
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_fitness_gym_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-fitness-gym'),
