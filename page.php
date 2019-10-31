@@ -4,12 +4,9 @@
 */
 
 get_header(); 
-     $bg_image = $axiohost['header-bg-image']['url'];
-     $bg_color = $axiohost['header-bg-color'];
-     $bg = $axiohost['_page'];
 ?>
       <!-- Start Post Title Area -->
-      <section class="post-title-area bg-color2" style="<?php if($bg == 'image' && class_exists('ReduxFrameWork')){echo 'background-image: url('.esc_url($bg_image).')'; }elseif($bg == 'color' && class_exists('ReduxFrameWork')){ echo 'background:'.esc_attr($bg_color); }else{echo '';}?>">
+      <section class="post-title-area bg-color2">
          <div class="container">
             <div class="post-title-content">
                <h1 class="heading-1"><?php wp_title(' '); ?></h1>

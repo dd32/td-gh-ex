@@ -1,10 +1,10 @@
 === Axiohost ===
 
 Contributors: themeix
-Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar , right-sidebar,grid-layout,theme-options,blog
+Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar , right-sidebar,grid-layout,theme-options, blog
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 5.6
 Author URI: https://themeix.com/
 Theme URI: http://axiohost-wp.themeix.com/
