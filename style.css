@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -798,7 +798,6 @@ textarea {
 --------------------------------------------------------------*/
 
 .site-header {
-	padding-bottom: 2em;
 	z-index: 99;
     position: relative
 }
@@ -883,7 +882,6 @@ textarea {
 	padding: .5em 1em .5em 0;
 	text-decoration: none;
 	color: #333;
-	font-weight: 500;
     font-size: 15px;
 	line-height: 70px;
 	-webkit-transition: all 0.3s ease-in;
@@ -1572,15 +1570,6 @@ ul.social li a i {
 /* default text editor */
 .active-arrival  .elementor-widget-text-editor{
 	line-height: 1.8;
-}
-/*  */
-.active-arrival .elementor-progress-wrapper{
-	height: 25px;
-    line-height: 25px;
-}
-.active-arrival .elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar{
-	-webkit-border-radius: 12px;;
-	        border-radius: 12px;;
 }
 
 .active-arrival .elementor-text-editor a{
@@ -2681,10 +2670,7 @@ header ul.social,header .top-nav-wrap{
 .header-last-item.search-wrap .search-wrap:hover{
 	cursor: pointer;
 }
-/* a:focus {
-    outline: none;
-}
- */
+
 .contact-info-wrapp.logo-only .container .site-branding {
     text-align: center;
     float: none;
@@ -2714,7 +2700,22 @@ header .header-last-item span.cart-count{
     right: 0;
     z-index: 1;
 }
+.main-header-overlap .main-header-wrapp.boxed.on {
+    top: 40px;
+}
 
 body.header-bg-image.arrival-inner-page .site-header .main-header-wrapp.boxed.on{
 	position: absolute;
+}
+
+/* transparent header */
+body.home .arrival-transparent-header {
+    position: absolute;
+    width: 100%;
+    background: transparent;
+}
+body.home .arrival-transparent-header .main-header-wrapp.boxed .container,
+body.home .arrival-transparent-header .main-header-wrapp.full {
+    background: transparent;
+    box-shadow: none;
 }

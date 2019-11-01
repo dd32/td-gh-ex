@@ -20,7 +20,8 @@ function arrival_body_classes( $classes ) {
     $_inner_header_image    = get_theme_mod('arrival_inner_header_image');
     $_main_nav_menu_align   = get_theme_mod('arrival_main_nav_menu_align',$default['arrival_main_nav_menu_align']);
     $_after_top_header_align_center = get_theme_mod('arrival_after_top_header_align_center',$default['arrival_after_top_header_align_center']);
-
+    $_top_header_enable             = get_theme_mod('arrival_top_header_enable',$default['arrival_top_header_enable']);
+    $_main_nav_layout               = get_theme_mod('arrival_main_nav_layout',$default['arrival_main_nav_layout']);
 
     $classes[] = $_main_nav_menu_align;
 
@@ -51,6 +52,10 @@ function arrival_body_classes( $classes ) {
 
     if( ('no_sidebar' != $_single_post_sidebars) &&  ('default' == $ultra_sidebar_layout) ){
         $classes[] = 'has-sidebar';
+    }
+
+    if( $_top_header_enable == 'on' && $_main_nav_layout == 'boxed' ){
+        $classes[] = 'main-header-overlap';   
     }
 	
 

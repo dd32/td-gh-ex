@@ -117,4 +117,6 @@ if( 'yes' == smoothScrollEnable ){
       })
 }
 
+
+
 });

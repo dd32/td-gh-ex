@@ -4,7 +4,7 @@
 	<?php
 	WP_Filesystem();
 	global $wp_filesystem;
-	$changelog 			= $wp_filesystem->get_contents( get_template_directory().'/changelog.txt' );
+	$changelog 			= $wp_filesystem->get_contents( get_stylesheet_directory().'/changelog.txt' );
 	$changelog 			= str_replace('=== v1','<br/><br/><strong>=== 1',$changelog);
 	$changelog 			= str_replace('-','</strong><br/>-',$changelog);
 

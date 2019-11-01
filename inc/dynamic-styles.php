@@ -115,6 +115,29 @@ function arrival_dynamic_styles(){
 	<?php 
 	}
 
+
+	//transparent header menu color
+	$_main_nav_menu_color_transparent = get_theme_mod('arrival_main_nav_menu_color_transparent',$defaults['arrival_main_nav_menu_color']);
+	
+	if( $_main_nav_menu_color_transparent ){ ?>
+
+		.home .arrival-transparent-header .main-navigation ul li > a,.home .arrival-transparent-header .site-title a,.home .arrival-transparent-header .site-description,.home .arrival-transparent-header .header-last-item .search-wrap i{
+			color: <?php echo arrival_sanitize_color($_main_nav_menu_color_transparent); ?>;
+		}
+		.home .arrival-transparent-header .main-navigation .dropdown-symbol{
+			border-color: <?php echo arrival_sanitize_color($_main_nav_menu_color_transparent); ?>;
+		}
+
+		.home .arrival-transparent-header .header-last-item.search-wrap .search-wrap svg{
+			fill: <?php echo arrival_sanitize_color($_main_nav_menu_color_transparent); ?>!important;
+		}
+		.home header.arrival-transparent-header .header-last-item .cart-wrapper svg{
+			stroke: <?php echo arrival_sanitize_color($_main_nav_menu_color_transparent); ?>!important;
+		}
+
+	<?php 
+	}
+
 	//header box-shadow
 	$_header_box_shadow_disable = get_theme_mod('arrival_header_box_shadow_disable',$defaults['arrival_header_box_shadow_disable']);
 

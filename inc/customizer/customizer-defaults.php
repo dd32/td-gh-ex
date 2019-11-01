@@ -24,7 +24,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_top_right_header_content']          = 'menus';
     $defaults[$prefix.'_blog_layout']                       = 'list-layout';
     $defaults[$prefix.'_top_right_header_menus']            = 'top';
-    $defaults[$prefix.'_main_nav_layout']                   = 'boxed';
+    $defaults[$prefix.'_main_nav_layout']                   = 'full';
     $defaults[$prefix.'_main_nav_right_content']            = 'search';
     $defaults[$prefix.'_main_nav_right_btn_txt']            = esc_html('Contact Us','arrival');
     $defaults[$prefix.'_main_nav_right_btn_url']            = '#';
@@ -36,7 +36,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_lazyload_image_enable']             = 'yes';
     $defaults[$prefix.'_smooth_scroll_enable']              = 'no';
     $defaults[$prefix.'_top_header_bg_color']               = '#E12454';
-    $defaults[$prefix.'_main_nav_bg_color']                 = '#fafafa';
+    $defaults[$prefix.'_main_nav_bg_color']                 = '#fff';
     $defaults[$prefix.'_footer_bg_color']                   = '#223645';
     $defaults[$prefix.'_footer_text_color']                 = '#fff';
     $defaults[$prefix.'_footer_link_color']                 = '#fff';
@@ -75,6 +75,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_site_footer_type']                  = 'default';
     $defaults[$prefix.'_site_footer_custom_template']       = 0;
     $defaults[$prefix.'_nav_header_padding']                = 0;
+    $defaults[$prefix.'_transparent_header_enable']         = false;
     
    
 

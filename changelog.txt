@@ -1,3 +1,7 @@
+=== v1.1.6 === 
+- Minor bugs fixed
+
+
 === v1.1.5 === 
 - Replaced header padding input with slider UI
 - Minor bugs fixed

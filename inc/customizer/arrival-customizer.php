@@ -920,7 +920,7 @@ $wp_customize->add_setting($prefix.'_main_nav_bg_color', array(
     )
 );
 
-$wp_customize->add_control( new Arrival_Customizer_Color_Control( $wp_customize, $prefix.'_main_nav_bg_color', array(
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix.'_main_nav_bg_color', array(
         'label'           => esc_html__( 'Background Color', 'arrival' ),
         'priority'        => 10,
         'section'         => $prefix.'_main_header_options_panel',
@@ -953,6 +953,63 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefi
             'section'       => $prefix.'_main_header_options_panel',
 )));
 
+/**
+* Transparend header options
+* @since 1.1.6
+*/
+$wp_customize->add_setting( $prefix.'_transparent_hdr_styles_seperatpr', array(
+        'sanitize_callback'     => 'sanitize_text_field',
+        'transport'             => 'postMessage'    
+      ) );
+
+$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_transparent_hdr_styles_seperatpr', array(
+        'label'         => esc_html__( 'Transparent Header Styles', 'arrival' ),
+        'description'   => esc_html__('The transparent header will only be displayed on homepage','arrival'),
+        'priority'      => 21,
+        'section'       => $prefix.'_main_header_options_panel',
+      ) ) );
+
+//enable transparent header
+$wp_customize->add_setting($prefix.'_transparent_header_enable', array(
+        'default'           => $default[$prefix.'_transparent_header_enable'],
+        'sanitize_callback' => 'arrival_sanitize_checkbox',
+    )
+);
+
+$wp_customize->add_control( $prefix.'_transparent_header_enable',array(
+        'label'       => esc_html__( 'Enable Transparent Header', 'arrival' ),
+        'priority'    => 22,
+        'description' => esc_html__('Check the box to enable transparent header','arrival'),
+        'section'     => $prefix.'_main_header_options_panel',
+        'type'        => 'checkbox',
+
+));
+
+//transparent header menu color
+$wp_customize->add_setting($prefix.'_main_nav_menu_color_transparent', array(
+        'default'           => $default[$prefix.'_main_nav_menu_color'],
+        'sanitize_callback' => 'arrival_sanitize_color',
+    )
+);
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_main_nav_menu_color_transparent', array(
+            'label'         => esc_html__( 'Menu Color', 'arrival' ),
+            'priority'      => 23,
+            'section'       => $prefix.'_main_header_options_panel',
+)));
+
+/**
+* Additional styles
+*/
+$wp_customize->add_setting( $prefix.'_hdr_addi_styles_seperatpr', array(
+        'sanitize_callback'     => 'sanitize_text_field',
+        'transport'             => 'postMessage'    
+      ) );
+
+$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_hdr_addi_styles_seperatpr', array(
+        'label'         => esc_html__( 'Additional Styles', 'arrival' ),
+        'priority'      => 24,
+        'section'       => $prefix.'_main_header_options_panel',
+      ) ) );
 
 /**
 * Main Nav Padding
@@ -974,30 +1031,7 @@ $wp_customize->add_control( new Arrival_Customizer_Range_Control( $wp_customize,
     ),
 ) ) );
 
-/*$wp_customize->add_setting( $prefix.'_nav_top_padding', array(
-  'transport'       => 'postMessage',
-  'sanitize_callback'   => 'arrival_sanitize_number',
-) );
-$wp_customize->add_setting( $prefix.'_nav_bottom_padding', array(
-  'transport'       => 'postMessage',
-  'sanitize_callback'   => 'arrival_sanitize_number',
-) );
 
-$wp_customize->add_control( new Arrival_Customizer_Dimensions_Control( $wp_customize, $prefix.'_nav_header_padding', array(
-  'label'         => esc_html__( 'Navigation Padding (px)', 'arrival' ),
-  'section'       => $prefix.'_main_header_options_panel',
-  'priority'      => 25,
-  'responsive'    => false,
-  'settings'   => array(
-          'desktop_top'     => $prefix.'_nav_top_padding',
-          'desktop_bottom'  => $prefix.'_nav_bottom_padding',
-  ),
-    'input_attrs'       => array(
-        'min'   => 0,
-        'max'   => 300,
-        'step'  => 1,
-    ),
-) ) );*/
 
 //menu item font-weight
 $arrival_free_font_weight = apply_filters('arrival_free_nav_font_weight','__return_true' );

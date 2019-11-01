@@ -331,6 +331,13 @@ if( ! function_exists('arrival_main_header_wrapp')){
 		$_menu_hover_styles 		= get_theme_mod('arrival_menu_hover_styles',$default['arrival_menu_hover_styles']);
 		$_main_nav_disable_logo 	= get_theme_mod('arrival_main_nav_disable_logo',$default['arrival_main_nav_disable_logo']);
 		$arrival_main_nav_right_content = get_theme_mod('arrival_main_nav_right_content',$default['arrival_main_nav_right_content']);
+		$_transparent_header_enable 	= get_theme_mod('arrival_transparent_header_enable',$default['arrival_transparent_header_enable']);
+
+		if( $_transparent_header_enable == true ){
+			$transparent_hdr = 'arrival-transparent-header';
+		}else{
+			$transparent_hdr = '';
+		}
 
 		$hdr_class = 'seperate-breadcrumb';
 		if( $_page_header_layout == 'default' ){
@@ -357,7 +364,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 		
 
 		?>
-		<header id="masthead" class="site-header <?php echo esc_attr($hdr_class.' '.$_menu_hover_styles);?>">
+		<header id="masthead" class="site-header <?php echo esc_attr($hdr_class.' '.$_menu_hover_styles.' '.$transparent_hdr);?>">
 			
 			<?php if( function_exists('arrival_top_header')):
 				arrival_top_header();
