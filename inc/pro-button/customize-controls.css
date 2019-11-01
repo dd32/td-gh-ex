@@ -17,6 +17,7 @@ li#accordion-section-cresta_annina_buy_pro h3:before {
     border: none;
 	font-size: 80%;
     padding: 0 5px;
+	line-height: 26px;
 }
 #accordion-section-cresta_annina_buy_pro h3 {
 	background-color: #000000 !important;

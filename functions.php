@@ -55,7 +55,7 @@ function annina_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'script', 'style',
 	) );
 	
 	/*
@@ -140,7 +140,8 @@ function annina_scripts() {
 	wp_enqueue_style( 'annina-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css', array(), '4.7.0');
 	$query_args = array(
-		'family' => 'Lato:300,400,700'
+		'family' => 'Lato:300,400,700',
+		'display' => 'swap'
 	);
 	wp_enqueue_style( 'annina-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 
