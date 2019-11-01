@@ -457,6 +457,46 @@ function advance_startup_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	//Layouts
+	$wp_customize->add_section('advance_startup_left_right', array(
+		'title'    => __('Layout Settings', 'advance-startup'),
+		'priority' => null,
+		'panel'    => 'advance_startup_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_startup_theme_options',array(
+        'default' => __('Default','advance-startup'),
+        'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_startup_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-startup'),
+        'description' => __('Here you can change the Width layout. ','advance-startup'),
+        'section' => 'advance_startup_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-startup'),
+            'Container' => __('Container','advance-startup'),
+            'Box Container' => __('Box Container','advance-startup'),
+        ),
+	) );
+
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('advance_startup_layout_options', array(
+		'default'           => __('Right Sidebar', 'advance-startup'),
+		'sanitize_callback' => 'advance_startup_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_startup_layout_options',array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-startup'),
+		'section'        => 'advance_startup_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-startup'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-startup'),
+			'One Column'    => __('One Column', 'advance-startup'),
+			'Grid Layout'   => __('Grid Layout', 'advance-startup')
+		),
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_startup_topbar',array(
 		'title'	=> __('Topbar Section','advance-startup'),
@@ -667,30 +707,6 @@ function advance_startup_customize_register($wp_customize) {
 		'label'   => __('Copyright Text', 'advance-startup'),
 		'section' => 'advance_startup_footer_section',
 		'type'    => 'text',
-	));
-
-	//Layouts
-	$wp_customize->add_section('advance_startup_left_right', array(
-		'title'    => __('Sidebar Layout Settings', 'advance-startup'),
-		'priority' => null,
-		'panel'    => 'advance_startup_panel_id',
-	));
-
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting('advance_startup_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-startup'),
-		'sanitize_callback' => 'advance_startup_sanitize_choices',
-	));
-	$wp_customize->add_control('advance_startup_layout_options',array(
-		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-startup'),
-		'section'        => 'advance_startup_left_right',
-		'choices'        => array(
-			'Left Sidebar'  => __('Left Sidebar', 'advance-startup'),
-			'Right Sidebar' => __('Right Sidebar', 'advance-startup'),
-			'One Column'    => __('One Column', 'advance-startup'),
-			'Grid Layout'   => __('Grid Layout', 'advance-startup')
-		),
 	));
 }
 add_action('customize_register', 'advance_startup_customize_register');

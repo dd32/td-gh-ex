@@ -1,5 +1,4 @@
 /* rtl Style */
-
 *{
   margin:0;
   padding:0;
@@ -24,18 +23,12 @@ img{
 section img{
   max-width:100%;
 }
-h4,
+h1, h2, h3,h4,
 h5,
 h6{
   margin:0;
   padding:10px 0;
   color: #906b00 ;
-  text-transform: capitalize;
-}
-h1, h2, h3{
-  margin:0;
-  padding:10px 0;
-  color: #000;
   text-transform: capitalize;
 }
 p{
@@ -259,10 +252,12 @@ input[type="submit"] {
   bottom: 0px; 
   padding: 4px 0px;
 }
-.logo h1{
+.logo h1,
+.logo p.site-title{
   font-size:35px;
   padding: 0;
   font-weight:bold;
+  line-height: 1.2;
 }
 .logo a{
   color: #fff;
@@ -271,11 +266,6 @@ input[type="submit"] {
   font-size:12px;
   margin:0;
   color: #fff;
-}
-.logo p a{
-  font-size: 35px;
-  padding: 0;
-  font-weight: bold;
 }
 .page-template-custom-front-page .logo a,
 .page-template-custom-front-page .logo p {
@@ -512,7 +502,7 @@ ul.list_nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   transition: all 500ms;
   box-shadow: 0px 0px 12px #c0bebe;
 }
@@ -537,7 +527,7 @@ ul.list_nav {
  font-size: 40px;
  z-index: 9999;
  left: 50%;
- color: #707070;
+ color: #575756;
 }
 .serach_outer {
  font-size: 24px;
@@ -1273,7 +1263,6 @@ nav.woocommerce-MyAccount-navigation li a {
   font-size: 25px;
   text-transform:capitalize !important;
   color: #000;
-  text-align: center;
   padding: 10px;
 }
 #sidebar input[type="search"] {
@@ -1353,14 +1342,15 @@ label{
 }
 #sidebar .tagcloud a{
   border: outset 2px #999;
-  color: #3a4d5e;
+  color: #262626;
   font-size: 15px !important;
   padding: 5px 18px;
   margin: 0 2px 6px;
   display: inline-block;
 }
 #sidebar .tagcloud a:hover{
-  background:#906b00 ;
+  background:#906b00;
+  color: #fff;
 }
 img.rss-widget-icon {
   width: auto !important;
@@ -1373,7 +1363,6 @@ img.rss-widget-icon {
 h1.page-title {
   text-align: right;
   margin-bottom: 10px;
-  color: #000;
 }
 .content-ts p{
   text-align:justify;
@@ -1658,7 +1647,6 @@ iframe, .entry-audio audio{
   }
   .toggle-menu {
     display: block;
-    text-align: center;
   }
   .toggle-menu i {
     font-size: 18px;
@@ -1772,7 +1760,6 @@ iframe, .entry-audio audio{
   }
   .main-menu .menu-color{
     background: #fff !important;
-    text-align: center;
     padding: 5px;
   }
   .primary-navigation ul ul{
