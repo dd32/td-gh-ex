@@ -1,2 +1,5 @@
+=== v1.0.1 ===
+- Minor bugs fixed
+
 === v1.0.0 ===
 - Initial Release

@@ -1,18 +1,4 @@
 <?php 
-
-
-//change default theme background color
-add_filter('arrival_custom_background_args','arrival_me_background_args' );
-
-function arrival_me_background_args(){
-    $args = array(
-                'default-color' => 'fff',
-                'default-image' => '',
-            );
-    return $args;
-}
-
-
 /**
  * Register Google Fonts
  */
