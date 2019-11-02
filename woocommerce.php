@@ -5,7 +5,7 @@ global $woocommerce;
 $shop_page_id = get_option( 'woocommerce_shop_page_id' );
 $page_sidebar_layout = get_post_meta( $shop_page_id, '_sidebar_layout', true );
 ?>
-<section class="theme-block">
+<section id="content" class="theme-block">
 
 	<div class="container">
 	

@@ -17,7 +17,7 @@ get_template_part('template-parts/site','breadcrumb');
 $arilewp_general_blog_container_size = get_theme_mod('arilewp_general_blog_container_size', 'container');
 if($arilewp_general_blog_container_size == 'container-full'){$container = '9';}else{$container = '8';}
 ?>
-<section class="theme-block theme-blog theme-blog-large theme-bg-grey">		
+<section id="content" class="theme-block theme-blog theme-blog-large theme-bg-grey">		
 	<div class="<?php echo esc_attr($arilewp_general_blog_container_size); ?>">
 		<div class="row">
 		

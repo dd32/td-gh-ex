@@ -163,7 +163,7 @@ a.bg-light:focus, a.bg-light:hover {
     margin-bottom: 0.290rem;
 }
 
-@media (max-width: 1199px) { 
+@media (max-width: 991px) { 
 	/*When we add more menus then show vertical scroll in mobiles*/
 	.navbar-collapse{
 		max-height: 400px;

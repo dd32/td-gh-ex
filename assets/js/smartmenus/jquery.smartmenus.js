@@ -104,7 +104,7 @@
 		this.hideTimeout = 0;
 		this.scrollTimeout = 0;
 		this.clickActivated = false;
-		this.focusActivated = false;
+		this.focusActivated = true;
 		this.zIndexInc = 0;
 		this.idInc = 0;
 		this.$firstLink = null; // we'll use these for some tests

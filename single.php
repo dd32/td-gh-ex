@@ -13,7 +13,7 @@ $arilewp_single_blog_pages_layout = get_theme_mod('arilewp_single_blog_pages_lay
 $arilewp_single_blog_container_size = get_theme_mod('arilewp_single_blog_container_size', 'container');
 if($arilewp_single_blog_container_size == 'container-full'){$container = '9';}else{$container = '8';}
 ?>
-<section class="theme-block theme-blog theme-blog-large theme-bg-grey">
+<section id="content" class="theme-block theme-blog theme-blog-large theme-bg-grey">
 
 	<div class="<?php echo esc_attr($arilewp_single_blog_container_size); ?>">
 	
