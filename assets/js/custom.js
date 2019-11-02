@@ -121,15 +121,6 @@ jQuery('.shop-product-slider').slick({
     }
   ]
 });
-    
-    /* ==========================================
-          2.    Modal Popup   
-    ========================================== */
-	jQuery('#cart-popup').apFullscreenModal({
-		openSelector: '#cart-popup-open',
-		backgroundColor: '#fafafa',
-		closeSelector: '.close-modal, #send',
-	});
 
     /* ==========================================
           2.    Scollup   
@@ -146,15 +137,7 @@ jQuery('.shop-product-slider').slick({
 });
 
 
-   /* ==========================================
-             6.    Show Hide
-     ========================================== */
 
-
-	jQuery(".hide-shop-close").on("click", function(){
-		
-		jQuery(this).parents(".hide-shop-item").fadeOut();
-	});
     /*=============================================
         8. Paralax Active JS
     ===============================================*/

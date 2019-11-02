@@ -1,13 +1,13 @@
 === Axiohost ===
 
 Contributors: themeix
-Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar , right-sidebar,grid-layout,theme-options, blog
+Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar , right-sidebar,grid-layout,theme-options,blog
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires PHP: 5.6
 Author URI: https://themeix.com/
-Theme URI: http://axiohost-wp.themeix.com/
+Theme URI: https://axiohost-wp.themeix.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,12 @@ Axiohost is distributed under the terms of the GNU General Public License v2
 Axiohost includes support for contact form 7.
 
 == Changelog ==
+
+= 1.0.6 =
+* Bug Fixes 
+ 
+= 1.0.5 =
+* Bug Fixes  
 
 = 1.0.4 =
 * Bug Fixes 

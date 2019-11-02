@@ -13,7 +13,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    
+    <?php wp_body_open(); ?>
     <header class="header-area">
         <div class="container">
             <div class="navigation-wrapper">
@@ -27,7 +27,7 @@
                         else{
                             ?>
                             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                            <p class="site-description"><?php echo esc_html($axiohost_description); /* WPCS: xss ok. */ ?></p>
+                            <p class="site-description"><?php echo esc_html($axiohost_description); ?></p>
                             <?php
                         }
                     ?>

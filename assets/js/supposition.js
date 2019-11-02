@@ -1,5 +1,4 @@
 (function($) {
-
   jQuery.fn.supposition = function() {
     var $w = jQuery(window),
       /*do this once instead of every onBeforeShow call*/

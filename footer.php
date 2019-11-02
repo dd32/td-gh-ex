@@ -27,14 +27,14 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="footer-copyright-text">
-                            <?php esc_html_e('© Copyright 2019 axiohost - Designed by ', 'axiohost'); ?>
-                            <a href="<?php echo esc_url('https//themeix.com'); ?>"><?php  esc_html_e('Themeix', 'axiohost');?></a>
-                             
+                          <?php esc_html_e('&copy; Copyright ', 'axiohost'); ?> <?php echo date("Y"); ?> <?php bloginfo( 'name' ); ?> <?php esc_html_e(' - Developed by ', 'axiohost'); ?><a href="<?php echo esc_url('https//themeix.com'); ?>"><?php  esc_html_e('themeix', 'axiohost');?></a>   
                         </div>
                     </div>
+					<?php if ( is_active_sidebar('footer-menu') ) : ?>
                     <div class="col-md-6">
                         <?php dynamic_sidebar('footer-menu'); ?>
                     </div>
+					<?php endif; ?>
                 </div>
             </div>
         </div>
@@ -48,5 +48,4 @@
     <?php wp_footer(); ?>
 
 </body>
-
 </html>
