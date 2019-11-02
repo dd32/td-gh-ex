@@ -32,6 +32,12 @@ if (!function_exists('avventura_lite_required_plugins')) {
 				'slug'      => 'wip-woocarousel-lite',
 				'required'  => false,
 			),
+			
+			array(
+				'name'      => 'Chatbox Manager',
+				'slug'      => 'wa-chatbox-manager',
+				'required'  => false,
+			),
 
 			array(
 				'name'      => 'Widget Importer & Exporter',
