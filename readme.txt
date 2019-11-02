@@ -1,7 +1,7 @@
 === BHost ===
 Contributors: Masum Billah
 Requires at least: WordPress 3.6
-Tested up to: WordPress 4.3-trunk
+Tested up to: WordPress 5.2.4-trunk
 Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,6 +35,9 @@ BHost Theme is derived from Underscores Theme, Copyright 2012-2015 Automattic, I
 Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
+
+= 1.4.3 - November 11 2019 =
+* Updated some codes
 
 = 1.4.2 - October 28 2018=
 * Updated some codes

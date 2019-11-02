@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: https://themesvila.com/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -2229,11 +2229,11 @@ fieldset {
 
 #secondary{
 	padding-top: 0;
+	padding-left: 15px;
 }
 .single-widget{
-	background: #fafafa;
+	background: #fff;
 	margin-bottom: 40px;
-	padding: 30px 30px;
 	font-size: 15px;
 }
 .single-widget ul li {
@@ -2302,8 +2302,10 @@ position:relative;
 	position: absolute;
 	right: 0;	
 	border-radius: 0;
+	z-index: 999;
 }
-#searchform button.search_btn:hover, #searchform button.search_btn:focus{
+#searchform button.search_btn:hover, 
+#searchform button.search_btn:focus{
 	background: #222;
 }
 
@@ -2764,4 +2766,52 @@ object {
 }
 .searchform .form-control:focus{
 	box-shadow: inherit;
+}
+
+/* Woocommerce Style */
+
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button {
+	padding: 12px 15px;
+	font-weight: 700;
+	border-radius: 0px;
+	color: #fff;
+	background-color: #2bcdc1;
+	font-size: 15px;
+	display: inline-block;
+}
+
+
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover {
+	color: #fff!important;
+	background-color: #0aa398!important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a, 
+.woocommerce nav.woocommerce-pagination ul li span {
+	margin: 0;
+	text-decoration: none;
+	line-height: 1;
+	font-size: 1em;
+	font-weight: 400;
+	padding: 14px 16px;
+	min-width: 1em;
+	display: block;
+}
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt {
+	background-color: #2bcdc1;
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+}
+.input-text.qty.text{
+	padding: 10px 15px !important;
+	margin-right: 10px;
 }
