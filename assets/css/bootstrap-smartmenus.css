@@ -217,9 +217,12 @@ a.bg-light:focus, a.bg-light:hover {
 		margin-bottom: 2.355rem;
 		margin-top: 2.355rem;
 	}
-	.navbar.navbar-expand-lg .navbar-nav .dropdown-menu {
-		top: 65px !important;
-	}
+	.navbar .nav .dropdown-menu {
+        top: 65px !important;
+    }
+    .navbar.header-fixed-top .nav .dropdown-menu {
+        top: 53px !important;
+    }
 	.navbar .nav .dropdown-menu { 
 		background-color: #01012f; 
 		box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 12px 0 rgba(0, 0, 0, 0.12); 

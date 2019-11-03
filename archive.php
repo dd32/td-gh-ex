@@ -13,7 +13,7 @@ $arilewp_archive_blog_container_size = get_theme_mod('arilewp_archive_blog_conta
 if($arilewp_archive_blog_container_size == 'container-full'){$container = '9';}else{$container = '8';}
 ?>
 
-<section id="content" class="theme-block theme-blog theme-blog-large theme-bg-grey">
+<section class="theme-block theme-blog theme-blog-large theme-bg-grey">
 	<div class="<?php echo esc_attr($arilewp_archive_blog_container_size); ?>">
 		<div class="row">
 		

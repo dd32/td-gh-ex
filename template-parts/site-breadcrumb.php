@@ -10,7 +10,7 @@ $arilewp_page_header_background_color = get_theme_mod('arilewp_page_header_backg
     <?php else: ?>
         <div class="overlay"></div>
 	<?php endif; ?>	
-		<div class="container">
+		<div id="content" class="container">
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12">
 				<?php 

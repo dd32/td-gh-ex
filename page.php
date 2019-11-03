@@ -16,7 +16,7 @@ get_header();
 get_template_part('template-parts/site','breadcrumb');
 $page_sidebar_layout = get_post_meta( get_the_ID(), '_sidebar_layout', true );
 ?>
-<section id="content" class="theme-block theme-blog theme-bg-grey">
+<section class="theme-block theme-blog theme-bg-grey">
 	<div class="container">
 		<div class="row">
 		

@@ -11,7 +11,7 @@ get_header();
 get_template_part('template-parts/site','breadcrumb');
 ?>
 
-<section id="content" class="theme-block theme-blog theme-blog-large theme-bg-grey">
+<section class="theme-block theme-blog theme-blog-large theme-bg-grey">
 
 	<div class="container">
 	

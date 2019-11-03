@@ -19,10 +19,10 @@
 			<?php foreach ( $blog_content_ordering as $blog_content_order ) : ?>	
 			   <?php if ( 'meta-one' === $blog_content_order ) : ?>
 				<div class="entry-meta">
-					<?php $category_data = get_the_category_list();
-					if(!empty($category_data)) { ?>
-					<span class="cat-links"><a href="<?php the_permalink(); ?>"><?php the_category(', '); ?></a></span>
-					<?php } ?>
+					<?php $category_data = get_the_category_list( esc_html__( ', ', 'arilewp' ) );
+					if(!empty($category_data)) {
+					echo '<span class="cat-links">' . $category_data . '</span>';
+					} ?>
 				</div>	
 				<?php elseif ( 'title' === $blog_content_order ) : ?>
 				<header class="entry-header">

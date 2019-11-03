@@ -24,6 +24,14 @@ td a {
 
 
 /*--------------------------------------------------
+=>> Site Branding Text & Navar Brand
+--------------------------------------------------*/
+
+.site-branding-text .site-title a:focus { 
+	color: #007bff;
+}
+
+/*--------------------------------------------------
 =>> Navbar
 --------------------------------------------------*/
 
@@ -41,9 +49,10 @@ td a {
 .navbar.navbar-header-wrap.header-fixed-top .nav .menu-item .btn-border {
     border: 2px solid #007bff;
 }
-.navbar .nav .menu-item:hover .nav-link, 
-.navbar .nav .menu-item.active .nav-link {
-    color: #007bff;
+.navbar .nav .menu-item:hover .nav-link,
+.navbar .nav .menu-item.active .nav-link,
+.navbar .nav .menu-item .nav-link:focus {
+   color: #007bff;
 }
 .navbar .nav .dropdown-item:focus, 
 .navbar .nav .dropdown-item:hover {
@@ -202,7 +211,7 @@ td a {
 
 .entry-meta a:hover, 
 .entry-meta a:focus { 
-	color: #007bff !important; 
+	color: #007bff; 
 }
 .entry-meta .cat-links a { 
 	color: #007bff; 
@@ -233,7 +242,7 @@ td a {
 	background-color: #007bff; 
 	border: 1px solid #007bff; 
 }
-.comment-date a:hover { color: #007bff; }
+.comment-date a:hover, .comment-date a:focus { color: #007bff; }
 .pull-left-comment img { 
 	border: 3px solid #007bff; 
 }
