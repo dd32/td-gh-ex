@@ -16,18 +16,6 @@
  *
  * @uses arina_header_style()
  */
-function arina_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'arina_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'arina_header_style',
-	) ) );
-}
-add_action( 'after_setup_theme', 'arina_custom_header_setup' );
-
 
 
 if ( ! function_exists( 'arina_header_style' ) ) :

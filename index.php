@@ -31,9 +31,7 @@ get_header();
 
 <section class="blog-style-one sec-pad blog-page mrmain_blog mrindex">
     <div class="container">
-        <div class="row">
-				
-				
+        <div class="row wrapper">
 			
 			<?php if(is_active_sidebar('sidebar-left')) : ?> 
 			<div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12 ">

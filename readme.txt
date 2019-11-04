@@ -4,10 +4,9 @@ Tags:one-column, two-columns, right-sidebar, custom-header, custom-menu, editor-
 Requires at least: 4.9
 Tested up to: 5.2.1
 Requires PHP: 5.6
-Stable tag: 1.0.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.htm
-Copyright: Maria Kibtia 2019.
+Stable tag: 1.0.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 This is arina Business WordPress Theme
@@ -40,16 +39,14 @@ The theme has one menus. The menu supports 3 levels.
 
 = 1.0.0- July 20 2019 =
 * Initial release
+= 1.0.1- November 03 2019 =
+* Issue Fixing
 
 == Upgrade Notice ==
 No Upgrade Yet
 
 
 == Screenshots ==
-
-Pexels Images
-	License: CC0 1.0 Universal (CC0 1.0) 
-	Source: https://www.pexels.com/photo-license/
 	
 == Resources ==
 
@@ -58,26 +55,41 @@ arina is distributed under the terms of the GNU GPL
 
 arina bundles the following third-party resources:
 
-* CSS bootstrap.css
-	Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
+
+* Bootstrap - http://getbootstrap.com/
+	Licensed Under MIT( https://opensource.org/licenses/MIT)
+
 
 * JS bootstrap.js
 	Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
 	https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 
-* Font Awesome icons, Copyright Dave Gandy
-	License: SIL Open Font License, version 1.1.
-	Source: http://fontawesome.io/ 
+* Font-Awesome
+	* License: GPL Friendly
+	* License URI: https://fortawesome.github.io/Font-Awesome/license/
 
-* Screenshot Images
- 	Pexels Images
-	License: CC0 1.0 Universal (CC0 1.0) 
-	Source: https://www.pexels.com/photo-license/
+* Screenshot Images:
+Screenshot image is GPLv2 as well are GPLv2.
+All images used in theme Screenshot are listed below
+They are all CC0 License & free for personal and commercial use with no attribution required
+ 
+https://stocksnap.io/photo/8LHTBAZW32
+https://stocksnap.io/photo/NWXA46JA4V
+https://stocksnap.io/photo/SCC00WCQ3I
 
-	Banner image, Copyright Gantas Vaičiulėnas
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/person-walking-on-snow-1891882/
+* Theme Images:
+All images used in theme URI, demo and on the screenshot is listed below.
+They are all CC0 License & free for personal and commercial use with no attribution required
+
+https://stocksnap.io/photo/8LHTBAZW32
+https://stocksnap.io/photo/NWXA46JA4V
+https://stocksnap.io/photo/SCC00WCQ3I
+
+
+* Open Sans 
+	* License: Apache License, version 2.0
+	* License URI: http://www.apache.org/licenses/LICENSE-2.0.html
 
 * Customizer Pro, Copyright 2016 © Justin Tadlock.
   	License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
