@@ -268,8 +268,12 @@ aside ul.product-categories ul.children {
 	padding-right: inherit;
 }
 .main-navigation li.invert ul {
-    left: 100%;
-    right: inherit;
+	left: 100%;
+	right: inherit;
+}
+.main-navigation > div > ul > li.invert > ul {
+	left: 0;
+	right: inherit;
 }
 @media all and (max-width: 1025px) {
 	.cartwoo-button-mobile,

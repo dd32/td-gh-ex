@@ -331,38 +331,38 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				/* translators: %s: plugin name. */
 				'updating'                        => __( 'Updating Plugin: %s', 'attesa' ),
 				'oops'                            => __( 'Something went wrong with the plugin API.', 'attesa' ),
+				/* translators: 1: plugin name(s). */
 				'notice_can_install_required'     => _n_noop(
-					/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
 					'attesa'
 				),
+				/* translators: 1: plugin name(s). */
 				'notice_can_install_recommended'  => _n_noop(
-					/* translators: 1: plugin name(s). */
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
 					'attesa'
 				),
+				/* translators: 1: plugin name(s). */
 				'notice_ask_to_update'            => _n_noop(
-					/* translators: 1: plugin name(s). */
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
 					'attesa'
 				),
+				/* translators: 1: plugin name(s). */
 				'notice_ask_to_update_maybe'      => _n_noop(
-					/* translators: 1: plugin name(s). */
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
 					'attesa'
 				),
+				/* translators: 1: plugin name(s). */
 				'notice_can_activate_required'    => _n_noop(
-					/* translators: 1: plugin name(s). */
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
 					'attesa'
 				),
+				/* translators: 1: plugin name(s). */
 				'notice_can_activate_recommended' => _n_noop(
-					/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
 					'attesa'
@@ -2946,10 +2946,11 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					$plugin_names = array_map( array( 'TGMPA_Utils', 'wrap_in_strong' ), $plugin_names );
 					$last_plugin  = array_pop( $plugin_names ); // Pop off last name to prep for readability.
 					$imploded     = empty( $plugin_names ) ? $last_plugin : ( implode( ', ', $plugin_names ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'attesa' ) . ' ' . $last_plugin );
-
-					printf( // WPCS: xss ok.
+					
+					printf(
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
 						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'attesa' ) ),
+						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Pre-escaped via wrap_in_strong() method above.
 						$imploded
 					);
 
