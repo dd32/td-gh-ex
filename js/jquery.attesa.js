@@ -181,7 +181,7 @@
 					$('header.site-header').addClass('fixed');
 					if($('header#masthead').attr('data-logo-on-scroll')){
 						var $logoOriginal = $('.attesa-logo img').attr('src'),
-							$logoOrininalSrcset = $('.attesa-logo img').attr('srcset'),
+							$logoOriginalSrcset = $('.attesa-logo img').attr('srcset'),
 							$logoOnScroll = $('header#masthead').attr('data-logo-on-scroll');
 					}
 					if ($('body').is('.headerFeatImage, .attesa-full-width') ) {
@@ -206,7 +206,9 @@
 									if ($logoOnScroll && $logoOriginal) {
 										$('.attesa-logo img').fadeOut(125, function() {
 											$('.attesa-logo img').attr('src',$logoOnScroll);
-											$('.attesa-logo img').attr('srcset',$logoOnScroll);
+											if($('.attesa-logo img').attr('srcset')){
+												$('.attesa-logo img').attr('srcset',$logoOnScroll);
+											}
 										}).fadeIn(125);
 									}
 								}
@@ -219,7 +221,9 @@
 									if ($logoOnScroll && $logoOriginal) {
 										$('.attesa-logo img').fadeOut(125, function() {
 											$('.attesa-logo img').attr('src',$logoOriginal);
-											$('.attesa-logo img').attr('srcset',$logoOrininalSrcset);
+											if($('.attesa-logo img').attr('srcset')){
+												$('.attesa-logo img').attr('srcset',$logoOriginalSrcset);
+											}
 										}).fadeIn(125);
 									}
 								}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2019-11-04 09:28+0100\n"
-"PO-Revision-Date: 2019-11-04 09:28+0100\n"
+"POT-Creation-Date: 2019-11-04 18:49+0100\n"
+"PO-Revision-Date: 2019-11-04 18:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -1745,19 +1745,21 @@ msgstr ""
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:2902
-msgid "Get the PRO version to remove AttesaWP credits"
+#. translators: 1: start link, 2: end link
+#: inc/customizer.php:2903
+#, php-format
+msgid "Get %1$s Attesa PRO addon %2$s to remove AttesaWP credits"
 msgstr ""
 
-#: inc/customizer.php:2944
+#: inc/customizer.php:2945
 msgid "Open social links"
 msgstr ""
 
-#: inc/customizer.php:2950
+#: inc/customizer.php:2951
 msgid "Same window"
 msgstr ""
 
-#: inc/customizer.php:2951
+#: inc/customizer.php:2952
 msgid "New Window"
 msgstr ""
 

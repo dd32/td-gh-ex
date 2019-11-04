@@ -2899,7 +2899,8 @@ function attesa_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control('attesa_theme_options[_copyright_text]', array(
 		'label'      => __( 'Copyright Text', 'attesa' ),
-		'description' => __( 'Get the PRO version to remove AttesaWP credits', 'attesa' ),
+		/* translators: 1: start link, 2: end link */
+		'description' => sprintf( __( 'Get %1$s Attesa PRO addon %2$s to remove AttesaWP credits', 'attesa' ), '<a href="' . esc_url( apply_filters( 'attesa_pro_filter_url', 'https://attesawp.com/attesa-pro/' ) ) . '" target="_blank">', '</a>' ),
 		'section'    => 'section_attesa_theme_options_footer',
 		'settings'   => 'attesa_theme_options[_copyright_text]',
 		'active_callback' => 'attesa_is_subfooter_active',

@@ -95,7 +95,7 @@ if ( ! function_exists( 'attesa_setup' ) ) :
 			'caption',
 			'script',
 			'style',
-		) );
+		) );		
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
