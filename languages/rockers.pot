@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Rockers\n"
-"POT-Creation-Date: 2018-12-20 13:01+0530\n"
-"PO-Revision-Date: 2018-12-20 13:01+0530\n"
+"POT-Creation-Date: 2019-04-09 11:27+0530\n"
+"PO-Revision-Date: 2019-04-09 11:27+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -454,13 +454,15 @@ msgstr ""
 
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:93
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:125
-#: header/header-navbar.php:62 header/header-navbar.php:194
+#: header/header-navbar.php:74 header/header-navbar.php:125
+#: header/header-navbar.php:298
 msgid "Chestnut Road,"
 msgstr ""
 
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:100
 #: functions/widgets/wdl_header_topbar_info_ct_widget.php:128
-#: header/header-navbar.php:63 header/header-navbar.php:195
+#: header/header-navbar.php:75 header/header-navbar.php:126
+#: header/header-navbar.php:299
 msgid "California - United States"
 msgstr ""
 
@@ -545,15 +547,17 @@ msgstr ""
 msgid "Dribble URL"
 msgstr ""
 
-#: header/header-navbar.php:75 header/header-navbar.php:207
+#: header/header-navbar.php:87 header/header-navbar.php:138
+#: header/header-navbar.php:311
 msgid "08:00 - 16:30"
 msgstr ""
 
-#: header/header-navbar.php:76 header/header-navbar.php:207
+#: header/header-navbar.php:88 header/header-navbar.php:139
+#: header/header-navbar.php:311
 msgid "Monday - Saturday"
 msgstr ""
 
-#: header/header-navbar.php:143
+#: header/header-navbar.php:224 header/header-navbar.php:235
 msgid "Toggle navigation"
 msgstr ""
 
