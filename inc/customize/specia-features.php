@@ -62,7 +62,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
     	'features_title',
     	array(
-	        'default'			=> '',
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_html',
 			'transport'         => $selective_refresh,
@@ -83,7 +82,6 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 	$wp_customize->add_setting(
     	'features_description',
     	array(
-	        'default'			=> '',
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_html',
 			'transport'         => $selective_refresh,
