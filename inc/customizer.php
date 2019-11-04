@@ -50,10 +50,26 @@ function advance_portfolio_customize_register($wp_customize) {
 
 	//Layouts
 	$wp_customize->add_section('advance_portfolio_left_right', array(
-			'title'    => __('Layout Settings', 'advance-portfolio'),
-			'priority' => 30,
-			'panel'    => 'advance_portfolio_panel_id',
-		));
+		'title'    => __('Layout Settings', 'advance-portfolio'),
+		'priority' => 30,
+		'panel'    => 'advance_portfolio_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_portfolio_theme_options',array(
+        'default' => __('Default','advance-portfolio'),
+        'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_portfolio_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-portfolio'),
+        'description' => __('Here you can change the Width layout. ','advance-portfolio'),
+        'section' => 'advance_portfolio_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-portfolio'),
+            'Container' => __('Container','advance-portfolio'),
+            'Box Container' => __('Box Container','advance-portfolio'),
+        ),
+	) );
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_portfolio_layout_options', array(
@@ -62,7 +78,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	)	);
 	$wp_customize->add_control('advance_portfolio_layout_options', array(
 		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-portfolio'),
+		'label'          => __('Sidebar Layouts', 'advance-portfolio'),
 		'section'        => 'advance_portfolio_left_right',
 		'choices'        => array(
 			'Left Sidebar'  => __('Left Sidebar', 'advance-portfolio'),

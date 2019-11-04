@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
-Version: 0.3.3
+Version: 0.3.4
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-portfolio
@@ -282,10 +282,9 @@ iframe{
 	text-transform:uppercase;
 	padding:0;
   line-height: 1.5;
-	margin-bottom:8px;
 	font-size:25px;
 	font-weight:bold;
-	margin-top: 0;
+	margin: 0;
 	text-align:left;
 }
 #header .logo a{
@@ -554,7 +553,8 @@ span.entry-date{
   color:#202020;
   border: 1px solid #202020;
   padding: 5px 10px;
-  margin-right: 10px;
+  display: inline-block;
+  margin:5px;
 }
 .tags p a:hover{
   color: #fff;
@@ -602,7 +602,7 @@ section .innerlightbox{
 }
 /* Footer Section */
 #footer .widget {
-  padding-bottom: 5%;
+  padding: 5% 0;
 }
 #footer label{
   width: 100%;
@@ -998,6 +998,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 }
 .posted_in {
   display: block;
+  margin-bottom: 10px;
 }
 header.woocommerce-products-header {
   margin-top: 20px;

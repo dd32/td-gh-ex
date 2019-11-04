@@ -22,7 +22,7 @@
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-portfolio' ); ?></a>
     <div id="header">
       <div class="container">
-        <div class="row">
+        <div class="row m-0">
           <div class="logo col-lg-4 col-md-4 col-9">
             <?php if ( has_custom_logo() ) : ?>
               <div class="site-logo"><?php the_custom_logo(); ?></div>
