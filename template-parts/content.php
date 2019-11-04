@@ -23,13 +23,11 @@ $blog_content_ordering = get_theme_mod( 'arilewp_general_blog_arcive_single_cont
 				<div class="entry-meta">
 					<?php if(is_sticky()) : ?>
 						<span class="sticky-post"><?php esc_html_e('Featured', 'arilewp'); ?></span>
-					<?php endif; ?>
-						
+						<?php endif; ?>
 					<?php $category_data = get_the_category_list( esc_html__( ', ', 'arilewp' ) );
 					if(!empty($category_data)) {
 					echo '<span class="cat-links">' . $category_data . '</span>';
 					} ?>
-					
 				</div>	
 				<?php elseif ( 'title' === $blog_content_order ) : ?>
 				<header class="entry-header">

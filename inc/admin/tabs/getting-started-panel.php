@@ -14,7 +14,7 @@
     <div class="panel-aside panel-column">
         <h4><?php esc_html_e( 'Extensive Documentation', 'arilewp' ); ?></h4>
         <p><?php esc_html_e( 'Read detailed documentation of the theme. The documentation has all the necessary information to set up the theme. Which will help you set up the theme.', 'arilewp' ); ?></p>
-        <a href="#" class="hyperlink" title="<?php esc_attr_e( 'Visit the Support', 'arilewp' ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'arilewp' ); ?></a>
+        <a href="//helpdoc.themearile.com/" class="hyperlink" title="<?php esc_attr_e( 'Visit the Support', 'arilewp' ); ?>" target="_blank"><?php esc_html_e( 'Documentation', 'arilewp' ); ?></a>
     </div>
    <div class="panel-aside panel-column">
         <h4><?php esc_html_e( 'Go to the Customizer', 'arilewp' ); ?></h4>

@@ -178,3 +178,25 @@ function arilewp_recommended_plugin_section( $manager ) {
 		)
 	);	
 }
+
+/*
+ *  Customizer Notifications
+ */
+require get_template_directory() . '/inc/customizer/customizer-notice/class-customizer-notice.php';
+
+$config_customizer = array(
+    'recommended_plugins' => array( 
+        'arile-extra' => array(
+            'recommended' => true,
+            'description' => sprintf( 
+                /* translators: %s: plugin name */
+                esc_html__( 'If you want to show all the features and business sections of the FrontPage. please install and activate %s plugin', 'arilewp' ), '<strong>Arile Extra</strong>' 
+            ),
+        ),
+    ),
+    'recommended_plugins_title' => esc_html__( 'Recommended Plugin', 'arilewp' ),
+    'install_button_label'      => esc_html__( 'Install and Activate', 'arilewp' ),
+    'activate_button_label'     => esc_html__( 'Activate', 'arilewp' ),
+    'deactivate_button_label'   => esc_html__( 'Deactivate', 'arilewp' ),
+);
+ArileWP_Customizer_Notice::init( apply_filters( 'arilewp_customizer_notice_array', $config_customizer ) );

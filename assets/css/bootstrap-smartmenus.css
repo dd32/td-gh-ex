@@ -45,6 +45,12 @@ Name: bootstrap-smartmenus.css
 	line-height: 1.4;
 	padding-top: 0.063rem;
 }
+.navbar-brand .custom-logo, 
+.navbar.header-fixed-top .sticky-navbar-brand .custom-logo { 
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
 
 
 /*Toggle Button*/
@@ -175,6 +181,9 @@ a.bg-light:focus, a.bg-light:hover {
 	}
 }
 @media (max-width: 991px) {
+	.navbar-brand, .sticky-navbar-brand {
+		float: left;
+	}
 	.navbar .nav {	
 		margin-top: 20px;
 		margin-left: 0;
@@ -206,6 +215,10 @@ a.bg-light:focus, a.bg-light:hover {
 		margin-bottom: 1.5rem;
 	}
 	.navbar.header-fixed-top .navbar-brand {
+		padding-top: 1.170rem;
+		padding-bottom: 1.170rem;
+	}
+	.navbar.header-fixed-top .sticky-navbar-brand .custom-logo{
 		padding-top: 1.170rem;
 		padding-bottom: 1.170rem;
 	}

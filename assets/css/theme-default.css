@@ -22,7 +22,6 @@ td a {
 	color: #007bff;
 }
 
-
 /*--------------------------------------------------
 =>> Site Branding Text & Navar Brand
 --------------------------------------------------*/
@@ -242,7 +241,8 @@ td a {
 	background-color: #007bff; 
 	border: 1px solid #007bff; 
 }
-.comment-date a:hover, .comment-date a:focus { color: #007bff; }
+.comment-date a:hover,
+.comment-date a:focus { color: #007bff; }
 .pull-left-comment img { 
 	border: 3px solid #007bff; 
 }
@@ -268,7 +268,8 @@ td a {
 .sidebar .widget .widget-title {
     border-top: 3px solid #007bff;
 }
-.widget button[type="submit"] {
+.widget button[type="submit"],
+.btn-success{
     background-color: #007bff;
 	border-color: #007bff;
 }

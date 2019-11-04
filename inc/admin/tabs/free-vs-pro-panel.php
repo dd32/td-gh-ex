@@ -119,7 +119,7 @@
 			  <tr>
 				 <td>
 					<h3><?php esc_html_e( 'Multilingual Ready', 'arilewp' ); ?></h3>
-					<p><?php esc_html_e( 'The Premium Version is fully compatible with WPML and Poylang. Create your the website in multiple languages.', 'arilewp' ); ?></p>
+					<p><?php esc_html_e( 'The Premium Version is fully compatible with WPML and Poylang. Create your website in multiple languages.', 'arilewp' ); ?></p>
 				 </td>
 				 <td class="only-pro"><span class="dashicons-before dashicons-no-alt"></span></td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>

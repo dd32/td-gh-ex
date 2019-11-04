@@ -49,11 +49,6 @@ if ( ! class_exists( 'ArileWP_Customizer_Partials' ) ) {
 			return get_theme_mod( 'arilewp_main_theme_slider' );
 		}
 		
-		// Theme info area
-		public static function customize_partial_arilewp_theme_info_content() {
-			return get_theme_mod( 'arilewp_theme_info_content' );
-		}
-		
 		// service title
 		public static function customize_partial_arilewp_service_area_title() {
 			return get_theme_mod( 'arilewp_service_area_title' );
@@ -72,13 +67,7 @@ if ( ! class_exists( 'ArileWP_Customizer_Partials' ) ) {
 		// project description
 		public static function customize_partial_arilewp_project_area_des() {
 			return get_theme_mod( 'arilewp_project_area_des' );
-		}
-		
-        // project content
-		public static function customize_partial_arilewp_project_content() {
-			return get_theme_mod( 'arilewp_project_content' );
-		}
-		
+		}		
 		
 	    // testimonial title
 		public static function customize_partial_arilewp_testimonial_area_title() {
@@ -88,11 +77,6 @@ if ( ! class_exists( 'ArileWP_Customizer_Partials' ) ) {
 		// testimonial description
 		public static function customize_partial_arilewp_testimonial_area_des() {
 			return get_theme_mod( 'arilewp_testimonial_area_des' );
-		}
-
-        // testimonial content
-		public static function customize_partial_arilewp_testimonial_content() {
-			return get_theme_mod( 'arilewp_testimonial_content' );
 		}
 		
 	    // blog title

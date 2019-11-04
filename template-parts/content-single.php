@@ -19,7 +19,7 @@
 			<?php foreach ( $blog_content_ordering as $blog_content_order ) : ?>	
 			   <?php if ( 'meta-one' === $blog_content_order ) : ?>
 				<div class="entry-meta">
-					<?php $category_data = get_the_category_list( esc_html__( ', ', 'arilewp' ) );
+				    <?php $category_data = get_the_category_list( esc_html__( ', ', 'arilewp' ) );
 					if(!empty($category_data)) {
 					echo '<span class="cat-links">' . $category_data . '</span>';
 					} ?>

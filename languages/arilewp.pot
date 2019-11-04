@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArileWP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-12 23:56+0000\n"
+"POT-Creation-Date: 2019-11-04 07:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-4.9.10"
+"X-Loco-Version: 2.3.0; wp-4.9.12"
 
 #: comments.php:26
 #, php-format
@@ -46,6 +46,14 @@ msgstr ""
 msgid "&larr; Older Comments"
 msgstr ""
 
+#: template-parts/content-single.php:22 template-parts/content.php:27
+msgid ", "
+msgstr ""
+
+#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:539
+msgid "//fontawesome.io/icons/"
+msgstr ""
+
 #: inc/admin/tabs/free-vs-pro-panel.php:47
 msgid "02 Unique Business Homepage Styles."
 msgstr ""
@@ -71,8 +79,12 @@ msgid ""
 msgstr ""
 
 #: inc/admin/class-getting-start-plugin-helper.php:97
-#: inc/customizer/arilewp-customizer-options.php:177
+#: inc/customizer/arilewp-customizer-options.php:199
 msgid "Activate"
+msgstr ""
+
+#: inc/customizer/customizer-notice/class-customizer-notice.php:144
+msgid "Activating"
 msgstr ""
 
 #: inc/admin/getting-started.php:38
@@ -90,10 +102,6 @@ msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:33
 msgid "Add new field"
-msgstr ""
-
-#: functions.php:125
-msgid "Add widgets here."
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:79
@@ -116,7 +124,7 @@ msgstr ""
 msgid "Archive Blog Pages"
 msgstr ""
 
-#: inc/template-tags.php:172
+#: inc/template-tags.php:177
 msgid "Archive by category"
 msgstr ""
 
@@ -167,15 +175,12 @@ msgid ""
 "Elementor page builder to create, edit and updates page designs as per the "
 "requirement. ArileWP also supports popular free and premium WordPress "
 "plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, "
-"Google Analytics and much more."
+"Google Analytics and much more. Check the demo of ArileWP Pro https://demo."
+"themearile.com/?theme=ArileWP%20Pro"
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:15
 msgid "ArileWP Pro"
-msgstr ""
-
-#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:576
-msgid "Aside"
 msgstr ""
 
 #: inc/template-tags.php:57
@@ -222,16 +227,16 @@ msgstr ""
 msgid "Button Text"
 msgstr ""
 
-#: template-parts/content-single.php:36 template-parts/content.php:38
+#: template-parts/content-single.php:36 template-parts/content.php:42
 msgid "by "
-msgstr ""
-
-#: inc/customizer/customizer-settings/theme-settings/arilewp-menu-bar-customizer-settings.php:89
-msgid "Cart Icon Enable/Disable"
 msgstr ""
 
 #: inc/template-tags.php:113
 msgid "Category"
+msgstr ""
+
+#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:580
+msgid "Center"
 msgstr ""
 
 #: inc/admin/tabs/getting-started-panel.php:12
@@ -253,6 +258,11 @@ msgstr ""
 
 #: comments.php:36
 msgid "Comment navigation"
+msgstr ""
+
+#: inc/admin/getting-started.php:172
+#, php-format
+msgid "Congratulations, Welcome to %1$s Theme"
 msgstr ""
 
 #: inc/admin/tabs/useful-plugin-panel.php:38
@@ -283,9 +293,9 @@ msgstr ""
 
 #: footer.php:14 inc/customizer/arilewp-customizer-options.php:147
 msgid ""
-"Copyright © 2019 <a href=\"http://wordpress.org/\">WordPress</a> <span "
-"class=\"sep\"> | </span> ArileWP by <a target=\"_blank\" href=\"https:"
-"//themearile.com/\">ThemeArile</a>"
+"Copyright &copy; 2019 | Powered by <a href=\"//wordpress.org/\">WordPress</a>"
+" <span class=\"sep\"> | </span> ArileWP theme by <a target=\"_blank\" "
+"href=\"//themearile.com/\">ThemeArile</a>"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:38
@@ -297,11 +307,8 @@ msgid "Dark Color Style."
 msgstr ""
 
 #: inc/admin/class-getting-start-plugin-helper.php:112
+#: inc/customizer/arilewp-customizer-options.php:200
 msgid "Deactivate"
-msgstr ""
-
-#: inc/customizer/controls/code/arilewp-customize-typography-control.php:36
-msgid "Default"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:367
@@ -312,10 +319,6 @@ msgstr ""
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:351
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:475
 msgid "Designation"
-msgstr ""
-
-#: inc/admin/getting-started.php:177
-msgid "Dismiss"
 msgstr ""
 
 #: inc/admin/tabs/useful-plugin-panel.php:42
@@ -347,14 +350,11 @@ msgid "Email"
 msgstr ""
 
 #: inc/customizer/arilewp-panels-and-sections.php:84
-msgid "Enable/Disable"
-msgstr ""
-
 #: inc/customizer/customizer-settings/theme-settings/arilewp-typography-customizer-settings.php:32
-msgid "Enable/Disable Typography"
+msgid "Enable Typography"
 msgstr ""
 
-#: inc/template-tags.php:209
+#: inc/template-tags.php:214
 msgid "Error 404"
 msgstr ""
 
@@ -368,6 +368,10 @@ msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:180
 msgid "Fast & Friendly Support"
+msgstr ""
+
+#: template-parts/content.php:25
+msgid "Featured"
 msgstr ""
 
 #: inc/customizer/arilewp-customizer-options.php:43
@@ -461,13 +465,13 @@ msgstr ""
 msgid "General"
 msgstr ""
 
-#: inc/customizer/arilewp-customizer-options.php:192
+#: inc/customizer/arilewp-customizer-options.php:175
 #: inc/admin/tabs/free-vs-pro-panel.php:188
 msgid "Get ArileWP Pro"
 msgstr ""
 
 #: inc/admin/getting-started.php:176
-msgid "Get started with ArileWP."
+msgid "Get started with ArileWP"
 msgstr ""
 
 #: inc/admin/getting-started.php:133
@@ -483,7 +487,7 @@ msgid "Go"
 msgstr ""
 
 #: 404.php:22
-msgid "Go Back Now"
+msgid "Go to Home"
 msgstr ""
 
 #: inc/admin/tabs/getting-started-panel.php:20
@@ -491,7 +495,7 @@ msgstr ""
 msgid "Go to the Customizer"
 msgstr ""
 
-#: inc/customizer/controls/code/arilewp-customize-typography-control.php:51
+#: inc/customizer/controls/code/arilewp-customize-typography-control.php:50
 msgid "Google Fonts"
 msgstr ""
 
@@ -527,7 +531,7 @@ msgstr ""
 msgid "Headings H6"
 msgstr ""
 
-#: inc/template-tags.php:167 inc/template-tags.php:170
+#: inc/template-tags.php:172 inc/template-tags.php:175
 msgid "Home"
 msgstr ""
 
@@ -535,16 +539,12 @@ msgstr ""
 msgid "Homepage Layout Styles"
 msgstr ""
 
-#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:539
-msgid "http://fontawesome.io/icons/"
-msgstr ""
-
 #. Author URI of the theme
 msgid "https://themearile.com"
 msgstr ""
 
 #. URI of the theme
-msgid "https://themearile.com/themes/arilewp/"
+msgid "https://themearile.com/arilewp-theme/"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:533
@@ -558,6 +558,14 @@ msgid ""
 "beautiful feedback. We will appreciate you with love."
 msgstr ""
 
+#. %s: plugin name
+#: inc/customizer/arilewp-customizer-options.php:193
+#, php-format
+msgid ""
+"If you want to show all the features and business sections of the FrontPage. "
+"please install and activate %s plugin"
+msgstr ""
+
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:556
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:594
 msgid "Image"
@@ -565,6 +573,10 @@ msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:590
 msgid "Image type"
+msgstr ""
+
+#: inc/customizer/arilewp-customizer-options.php:198
+msgid "Install and Activate"
 msgstr ""
 
 #: inc/admin/class-getting-start-plugin-helper.php:93
@@ -588,6 +600,10 @@ msgstr ""
 
 #: inc/admin/getting-started.php:136
 msgid "Leave us a review"
+msgstr ""
+
+#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:572
+msgid "Left"
 msgstr ""
 
 #: inc/metabox.php:28
@@ -619,10 +635,6 @@ msgstr ""
 
 #: inc/customizer/arilewp-panels-and-sections.php:29
 msgid "Menu"
-msgstr ""
-
-#: inc/customizer/customizer-settings/theme-settings/arilewp-menu-bar-customizer-settings.php:76
-msgid "Menu Items"
 msgstr ""
 
 #: inc/customizer/customizer-settings/theme-settings/arilewp-menu-bar-customizer-settings.php:27
@@ -694,7 +706,7 @@ msgstr ""
 msgid "Page Header Enable/Disable"
 msgstr ""
 
-#: template-parts/content-page.php:22 template-parts/content.php:48
+#: template-parts/content-page.php:22 template-parts/content.php:53
 msgid "Pages:"
 msgstr ""
 
@@ -709,10 +721,6 @@ msgstr ""
 msgid "Pro"
 msgstr ""
 
-#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:580
-msgid "Quote"
-msgstr ""
-
 #: inc/admin/tabs/getting-started-panel.php:16
 msgid ""
 "Read detailed documentation of the theme. The documentation has all the "
@@ -721,11 +729,11 @@ msgid ""
 msgstr ""
 
 #: inc/template-tags.php:82 template-parts/content-single.php:45
-#: template-parts/content.php:47
+#: template-parts/content.php:52
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer/arilewp-customizer-options.php:190
+#: inc/customizer/arilewp-customizer-options.php:173
 msgid "Ready for more?"
 msgstr ""
 
@@ -749,7 +757,7 @@ msgstr ""
 msgid "Recommended actions"
 msgstr ""
 
-#: inc/customizer/arilewp-customizer-options.php:175
+#: inc/customizer/arilewp-customizer-options.php:197
 msgid "Recommended Plugin"
 msgstr ""
 
@@ -760,6 +768,10 @@ msgstr ""
 
 #: inc/template-tags.php:46
 msgid "Reply"
+msgstr ""
+
+#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:576
+msgid "Right"
 msgstr ""
 
 #: inc/metabox.php:18
@@ -799,16 +811,20 @@ msgstr ""
 msgid "Shows the physical location with an interactive contact form."
 msgstr ""
 
-#: functions.php:109
-msgid "Sidebar"
-msgstr ""
-
 #: inc/metabox.php:10
 msgid "Sidebar Layout"
 msgstr ""
 
+#: functions.php:109
+msgid "Sidebar Widget Area"
+msgstr ""
+
 #: inc/customizer/customizer-settings/theme-settings/arilewp-blog-general-customizer-settings.php:87
 msgid "Single Blog Pages"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:568
@@ -835,11 +851,7 @@ msgstr ""
 msgid "Speed Performance"
 msgstr ""
 
-#: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:572
-msgid "Standard"
-msgstr ""
-
-#: inc/customizer/controls/code/arilewp-customize-typography-control.php:40
+#: inc/customizer/controls/code/arilewp-customize-typography-control.php:39
 msgid "Standard Fonts"
 msgstr ""
 
@@ -890,19 +902,17 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#. %1$s %2$s: welcome message
-#: inc/admin/getting-started.php:175
+#: inc/admin/getting-started.php:174
 #, php-format
 msgid ""
-"Thank you for choosing %1$s theme. To take full advantage of the complete "
-"features of the theme, you have to go to our <a href=\"%2$s\">Welcome "
-"page</a>"
+"Thank you for choosing ArileWP theme. To take full advantage of the complete "
+"features of the theme, you have to go to our %1$s welcome page %2$s."
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:122
 msgid ""
 "The Premium Version is fully compatible with WPML and Poylang. Create your "
-"the website in multiple languages."
+"website in multiple languages."
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:64
@@ -980,8 +990,7 @@ msgid ""
 msgstr ""
 
 #. %1$s: welcome page
-#. %1$s %2$s: welcome message
-#: inc/admin/getting-started.php:22 inc/admin/getting-started.php:172
+#: inc/admin/getting-started.php:22
 #, php-format
 msgid "Welcome to %1$s"
 msgstr ""

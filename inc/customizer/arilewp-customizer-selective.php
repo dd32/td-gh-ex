@@ -34,7 +34,6 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		'arilewp_main_slider_content',
 		array(
 			'selector'        => '.theme-main-slider .theme-slider-content',
-			'render_callback' => array( 'ArileWP_Customizer_Partials', 'customize_partial_arilewp_main_slider_content' ),
 		)
 	);
 	
@@ -43,7 +42,6 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		'arilewp_theme_info_content',
 		array(
 			'selector'        => '.row.theme-info-area',
-			'render_callback' => array( 'ArileWP_Customizer_Partials', 'customize_partial_arilewp_theme_info_content' ),
 		)
 	);
 	
@@ -70,7 +68,6 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		'arilewp_service_content',
 		array(
 			'selector'        => '.theme-services .row.theme-services-content',
-			'render_callback' => array( 'ArileWP_Customizer_Partials', 'customize_partial_arilewp_service_content' ),
 		)
 	);
 	
@@ -97,7 +94,6 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		'arilewp_project_content',
 		array(
 			'selector'        => '.theme-project .row.theme-project-row',
-			'render_callback' => array( 'ArileWP_Customizer_Partials', 'customize_partial_arilewp_project_content' ),
 		)
 	);
 	
@@ -124,7 +120,6 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		'arilewp_testimonial_content',
 		array(
 			'selector'        => '.theme-testimonial .row.theme-testimonial-content',
-			'render_callback' => array( 'ArileWP_Customizer_Partials', 'customize_partial_arilewp_testimonial_content' ),
 		)
 	);
 	
