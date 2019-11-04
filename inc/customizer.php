@@ -720,10 +720,26 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//Layouts
 	$wp_customize->add_section('advance_automobile_left_right', array(
-		'title'    => __('Sidebar Layout Settings', 'advance-automobile'),
+		'title'    => __('Layout Settings', 'advance-automobile'),
 		'priority' => null,
 		'panel'    => 'advance_automobile_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_automobile_theme_options',array(
+        'default' => __('Default','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-automobile'),
+        'description' => __('Here you can change the Width layout. ','advance-automobile'),
+        'section' => 'advance_automobile_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-automobile'),
+            'Container' => __('Container','advance-automobile'),
+            'Box Container' => __('Box Container','advance-automobile'),
+        ),
+	) );
 
 	$wp_customize->add_setting('advance_automobile_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-automobile'),

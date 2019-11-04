@@ -63,7 +63,7 @@
     <div class="main-menu">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 col-md-8 col-9">
+          <div class="col-lg-3 col-md-4 col-9">
             <div class="logo">
               <?php if ( has_custom_logo() ) : ?>
               <div class="site-logo"><?php the_custom_logo(); ?></div>
@@ -87,7 +87,7 @@
             <?php endif; ?>
             </div>
           </div>
-          <div class="col-lg-8 col-md-3 col-3">
+          <div class="col-lg-8 col-md-8 col-3">
             <div class="toggle-menu mobile-menu">
               <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
             </div>
@@ -136,7 +136,7 @@
               </nav>
             </div>
           </div>
-          <div class="col-lg-1 col-md-1">
+          <div class="col-lg-1">
             <a href="#" onclick="search_open()" class="search-box">
               <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-automobile' );?></span>
             </a>
