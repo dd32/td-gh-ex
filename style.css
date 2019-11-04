@@ -4,7 +4,7 @@ Theme URI: https://axiohost-wp.themeix.com/
 Author: Themeix
 Author URI: https://themeix.com
 Description: Axiohost is a responsive hosting theme for the digital products authors.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 Text Domain: axiohost
@@ -3185,7 +3185,7 @@ ul.slimmenu li a {
 }
 
 .blog-post .blog-img img {
-	width: 100%;
+	max-width: 100%;
 	-webkit-transition: all 0.3s ease-in;
 	-o-transition: all 0.3s ease-in;
 	transition: all 0.3s ease-in;
@@ -3367,7 +3367,7 @@ ul.slimmenu li a {
 }
 
 .single-post .single-img img {
-	width: 100%;
+	max-width: 100%;
 }
 
 .single-post .single-calender {
@@ -3759,7 +3759,7 @@ ul.slimmenu li a {
 }
 
 .recent-widget .recent-wrapper .recent-img img {
-	width: 100%;
+	max-width: 100%;
 	-webkit-transition: all 0.5s ease-in;
 	-o-transition: all 0.5s ease-in;
 	transition: all 0.5s ease-in;

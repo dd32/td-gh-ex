@@ -3,7 +3,7 @@
             while(have_posts()) : the_post();
                  if(has_post_thumbnail()){?>
                     <div class="single-img">
-                       <?php the_post_thumbnail('axiohost-featured-image'); ?>
+                       <?php the_post_thumbnail('full'); ?>
                     </div>
                 <?php
                }

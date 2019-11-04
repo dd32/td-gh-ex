@@ -1,28 +1,13 @@
 <?php global $axiohost; ?>
- <div class="<?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- * @since 1.0
- * @version 1.0
- */
-
-if ( ! is_active_sidebar( 'axiohost-sidebar' ) ) {
-	echo "col-md-12";
-} else {
-	echo "col-md-7 col-lg-8";
-}
-?>">
-  <?php 
-      
+ <div class="<?php if (is_active_sidebar('axiohost-sidebar')){ echo 'col-md-7 col-lg-8'; }else{ echo 'col-md-12'; }?>">
+  <?php       
       if(have_posts()){
            while(have_posts()) : the_post();?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-wow-duration="1s">
                        <?php
                               if(has_post_thumbnail()){?>
                                   <div class="blog-img">
-                                       <?php the_post_thumbnail('axiohost-featured-image'); ?>
+                                       <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
                                        <div class="blog-calender">
                                           <div class="calender-day"><?php the_time('d'); ?></div>
                                           <div class="calender-month"><?php the_time('M'); ?></div>

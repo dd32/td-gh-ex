@@ -42,7 +42,7 @@
         add_theme_support('title-tag');
         
         //Add Image Size
-        add_image_size( 'axiohost-featured-image', 730, 430, false );
+        add_image_size( 'axiohost-featured-image', 2000, 1200, false );
 
     	// Load regular editor styles into the new block-based editor.
     	add_theme_support( 'editor-styles' );
@@ -76,8 +76,6 @@
     //axiohost comments layout
     include_once('inc/comments-layout.php'); 
     
-    //axiohost comments layout
-    include_once('inc/admin-page.php'); 
     
     //axiohost TGM Plugin Activation
     require_once('inc/class-tgm-plugin-activation.php');
