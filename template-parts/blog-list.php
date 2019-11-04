@@ -1,5 +1,19 @@
 <?php global $axiohost; ?>
- <div class="col-md-8 col-md-7">
+ <div class="<?php
+/**
+ * The sidebar containing the main widget area
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @since 1.0
+ * @version 1.0
+ */
+
+if ( ! is_active_sidebar( 'axiohost-sidebar' ) ) {
+	echo "col-md-12";
+} else {
+	echo "col-md-7 col-lg-8";
+}
+?>">
   <?php 
       
       if(have_posts()){
