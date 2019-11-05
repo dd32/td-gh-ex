@@ -21,26 +21,26 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-ecommerce-store' ),
 	) );
 	
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'bb_ecommerce_store_theme_color_option', 
-		array( 'panel' => 'bb_ecommerce_store_panel_id', 'title' => esc_html__( 'Theme Color Option', 'bb-ecommerce-store' ) )
-	);
-  	$wp_customize->add_setting( 'bb_ecommerce_store_theme_color', array(
-	    'default' => '#e22626',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
-  		'label' => 'Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-ecommerce-store'),
-	    'section' => 'bb_ecommerce_store_theme_color_option',
-	    'settings' => 'bb_ecommerce_store_theme_color',
-  	)));
- 
 	//Layouts
 	$wp_customize->add_section( 'bb_ecommerce_store_left_right', array(
     	'title'      => __( 'Layout Settings', 'bb-ecommerce-store' ),
-		'priority'   => 30,
 		'panel' => 'bb_ecommerce_store_panel_id'
+	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_width_theme_options',array(
+        'default' => __('Default','bb-ecommerce-store'),
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_width_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','bb-ecommerce-store'),
+        'description' => __('Here you can change the Width layout. ','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_left_right',
+        'choices' => array(
+            'Default' => __('Default','bb-ecommerce-store'),
+            'Container' => __('Container','bb-ecommerce-store'),
+            'Box Container' => __('Box Container','bb-ecommerce-store'),
+        ),
 	) );
 
 	// Add Settings and Controls for Layout
@@ -52,7 +52,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	$wp_customize->add_control('bb_ecommerce_store_theme_options',
 	    array(
 	        'type' => 'radio',
-	        'label' => __('Change Layouts','bb-ecommerce-store'),
+	        'label' => __('Sidebar Layouts','bb-ecommerce-store'),
 	        'section' => 'bb_ecommerce_store_left_right',
 	        'choices' => array(
 	            'Left Sidebar' => __('Left Sidebar','bb-ecommerce-store'),
@@ -158,10 +158,26 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
         'Yanone Kaffeesatz' => 'Yanone Kaffeesatz'
     );
 
+    // Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_ecommerce_store_theme_color_option', array( 
+		'panel' => 'bb_ecommerce_store_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-ecommerce-store'
+	) )	);
+	
+  	$wp_customize->add_setting( 'bb_ecommerce_store_theme_color', array(
+	    'default' => '#e22626',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
+  		'label' => 'Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-ecommerce-store'),
+	    'section' => 'bb_ecommerce_store_theme_color_option',
+	    'settings' => 'bb_ecommerce_store_theme_color',
+  	)));
+ 
 	//Typography
 	$wp_customize->add_section( 'bb_ecommerce_store_typography', array(
     	'title'      => __( 'Typography', 'bb-ecommerce-store' ),
-		'priority'   => 30,
 		'panel' => 'bb_ecommerce_store_panel_id'
 	) );
 	
@@ -583,7 +599,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     //home page slider
 	$wp_customize->add_section( 'bb_ecommerce_store_slidersettings' , array(
     	'title'      => __( 'Slider Settings', 'bb-ecommerce-store' ),
-		'priority'   => 30,
 		'panel' => 'bb_ecommerce_store_panel_id'
 	) );
 

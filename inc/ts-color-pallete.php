@@ -40,6 +40,22 @@
 	}
 	$custom_css .='}';
 
-	
+	/*---------------------------Width Layout -------------------*/
 
-	
+	$theme_lay = get_theme_mod( 'bb_ecommerce_store_width_theme_options','Default');
+    if($theme_lay == 'Default'){
+		$custom_css .='body{';
+			$custom_css .='max-width: 100%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Container'){
+		$custom_css .='body{';
+			$custom_css .='width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Box Container'){
+		$custom_css .='body{';
+			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;';
+		$custom_css .='}';
+		$custom_css .='.header .logo{';
+			$custom_css .='padding-left:20px;';
+		$custom_css .='}';
+	}

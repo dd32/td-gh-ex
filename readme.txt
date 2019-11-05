@@ -1,10 +1,10 @@
 ===  BB Ecommerce Store ===
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, post-formats, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce, portfolio
-Requires at least: 4.7
-Tested up to: 5.2.3
+Requires at least: 4.8
+Tested up to: 5.2.4
 Requires PHP: 7.2.14
-Stable tag: 1.3.9
+Stable tag: 1.4
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -102,17 +102,21 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
   * Updated POT file.
   * Resolved theme error.
 
-= 0.3.8 =
+= 1.3.8 =
   * Updated naviagtion code.
   * Resolved css customization
   * Resolved theme error.
 
-= 0.3.9 =
+= 1.3.9 =
   * Solved constrast error.
   * Added logo resizer.
   * Updated search layout.
   * Changed menu css.
   * Updated responsive menu css.
+
+= 1.4 =
+  * Added Width Layout option in customizer.
+  * Changed some css.
 
 == Resources ==
 
