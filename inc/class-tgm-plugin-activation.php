@@ -560,7 +560,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				wp_enqueue_style( 'plugin-install' );
 
-				global $tab, $body_id;
+				//global $tab, $body_id;
 				$body_id = 'plugin-information';
 				// @codingStandardsIgnoreStart
 				$tab     = 'plugin-information';

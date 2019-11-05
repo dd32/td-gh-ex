@@ -6,44 +6,28 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
-     <?php if(!empty($axiohost['fb-pexel-code'])){ echo wp_kses_post($axiohost['fb-pexel-code']); } ?>
+	<?php if(!empty($axiohost['fb-pexel-code'])){ echo wp_kses_post($axiohost['fb-pexel-code']); } ?>
      <?php if(!empty($axiohost['google-analytics-code'])){ echo wp_kses_post($axiohost['google-analytics-code']); } ?>
+     
      
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <!-- Loading -->
-    <?php 
-        if($axiohost['preloader'] == 1){?>
-            <div class="loader-wrapper">
-                <div class="lds-roller">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>    
-        <?php
-        }
-    ?>
-    
+    <?php wp_body_open(); ?>
     <header class="header-area">
         <div class="container">
             <div class="navigation-wrapper">
                 <div class="navigation-brand">
                     <?php 
                         $axiohost_description = get_bloginfo( 'description', 'display' );
-                        if ( !empty(get_custom_logo()) ){
+                        $custom_logo = get_custom_logo();
+                        if ( !empty($custom_logo) ){
                             the_custom_logo();
                         }
                         else{
                             ?>
                             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                            <p class="site-description"><?php echo esc_html($axiohost_description); /* WPCS: xss ok. */ ?></p>
+                            <p class="site-description"><?php echo esc_html($axiohost_description); ?></p>
                             <?php
                         }
                     ?>
@@ -63,7 +47,7 @@
             <div class="seachBoxContainer">
                <div class="container">
                   <span class="searchClose"></span>
-                  <?php get_axiohost_search_form(); ?>
+                  <?php axiohost_get_search_form(); ?>
                </div>
             </div>
          </div>

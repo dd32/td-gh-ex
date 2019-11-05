@@ -62,7 +62,7 @@ function axiohost_register_required_plugins() {
         array(
             'name' => esc_html__('Elementor Page Builder', 'axiohost'), // The plugin name
             'slug' => 'elementor', // The plugin slug (typically the folder name)
-            'required' => true, // If false, the plugin is only 'recommended' instead of required            
+            'required' => false, // If false, the plugin is only 'recommended' instead of required            
             'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url' => '', // If set, overrides default API URL and points to an external URL
@@ -71,7 +71,7 @@ function axiohost_register_required_plugins() {
         array(
             'name' => esc_html__('Contact Form 7', 'axiohost'), // The plugin name
             'slug' => 'contact-form-7', // The plugin slug (typically the folder name)
-            'required' => true, // If false, the plugin is only 'recommended' instead of required            
+            'required' => false, // If false, the plugin is only 'recommended' instead of required            
             'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url' => '', // If set, overrides default API URL and points to an external URL
@@ -80,44 +80,20 @@ function axiohost_register_required_plugins() {
         array(
             'name' => esc_html__('Redux Framework', 'axiohost'), // The plugin name
             'slug' => 'redux-framework', // The plugin slug (typically the folder name)
-            'required' => true, // If false, the plugin is only 'recommended' instead of required          
+            'required' => false, // If false, the plugin is only 'recommended' instead of required          
         ),
 		
         array(
-            'name' => esc_html__('One Click Demo Import', 'axiohost'), // The plugin name
-            'slug' => 'one-click-demo-import', // The plugin slug (typically the folder name)
-            'required' => false, // If false, the plugin is only 'recommended' instead of required
-        ),
-        array(
-            'name' => esc_html__('Axiohost Elementor Addons', 'axiohost'), // The plugin name
-            'slug' => 'axiohost-elementor-addons', // The plugin slug (typically the folder name)
-            'required' => true, // If false, the plugin is only 'recommended' instead of required 
-            'source' => 'https://github.com/mDAAKASH/plugins-/raw/master/axiohost-elementor-addons.zip',
-            'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-            'external_url' => '', // If set, overrides default API URL and points to an external URL
-            'version' => '1.0.0'
-        ),
-        array(
             'name' => esc_html__('Axiohost Core', 'axiohost'), // The plugin name
             'slug' => 'axiohost-core', // The plugin slug (typically the folder name)
-            'required' => true, // If false, the plugin is only 'recommended' instead of required 
+            'required' => false, // If false, the plugin is only 'recommended' instead of required 
             'source' => 'https://github.com/mDAAKASH/plugins-/raw/master/axiohost-core.zip',
             'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
             'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
             'external_url' => '', // If set, overrides default API URL and points to an external URL
             'version' => '1.0.0'
         ),
-        array(
-            'name' => esc_html__('Ajax Domain Checker', 'axiohost'), // The plugin name
-            'slug' => 'ajax-domain-checker', // The plugin slug (typically the folder name)
-            'required' => true, // If false, the plugin is only 'recommended' instead of required 
-            'source' => 'https://github.com/mDAAKASH/plugins-/raw/master/ajax-domain-checker.zip',
-            'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-            'external_url' => '', // If set, overrides default API URL and points to an external URL
-            'version' => '1.2.2'
-        ),
+        
 
 	);
 

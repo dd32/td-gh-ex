@@ -1,20 +1,17 @@
-
 <?php global $axiohost; ?>
- <div class="col-md-<?php if($axiohost['page-layout'] == '1' && class_exists('ReduxFrameworkPlugin')){echo '12 col-md-12'; }elseif(!is_active_sidebar('axiohost-sidebar')){echo '12 col-md-12';}else{echo '8 col-md-7'; }?>">
-  <?php 
-      
+<?php do_action( 'axiohost_full_column' ); ?>
+  <?php       
       if(have_posts()){
            while(have_posts()) : the_post();?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> data-wow-duration="1s">
                        <?php
                               if(has_post_thumbnail()){?>
                                   <div class="blog-img">
-                                       <?php the_post_thumbnail('axiohost-featured-image'); ?>
+                                       <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
                                        <div class="blog-calender">
                                           <div class="calender-day"><?php the_time('d'); ?></div>
                                           <div class="calender-month"><?php the_time('M'); ?></div>
-                                          <!-- <div class="overlay-icon"> <img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/add.png'); ?>" alt="<?php esc_attr_e('Overlay Icon', 'axiohost'); ?>" /> -->
-                                       </div>
+                                         </div>
                                     </div>
                                 <?php
                             }
@@ -37,21 +34,21 @@
                                 <p>
                                     <?php 
                                          if(class_exists('ReduxFrameworkPlugin')){
-                                             $limit = $axiohost['except_limit'];
+                                             $axiohost_limit = $axiohost['except_limit'];
                                          }
                                          else{
-                                              $limit = 30;   
+                                              $axiohost_limit = 30;   
                                          }
                                          if(has_excerpt()){
                                              the_excerpt();
                                          }
                                          else{
-                                            echo esc_html(axiohost_excerpt($limit)); 
+                                            echo esc_html(axiohost_excerpt($axiohost_limit)); 
                                          }
                                      ?>
                                 </p>
                            
-                           <a class="blog-readmore-btn2" href="<?php the_permalink(); ?>"><?php _e('Read More', 'axiohost'); ?></a>
+                           <a class="blog-readmore-btn2" href="<?php the_permalink(); ?>"><?php if(class_exists('redux')){echo esc_html($axiohost['reade_more_label']);}else{ esc_html_e('Read More', 'axiohost'); } ?></a>
                         </div>
                      </article>
           <?php endwhile;

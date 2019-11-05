@@ -14,7 +14,7 @@
         <?php 
            comments_template();
         ?>
-        <p class="comments-closed"> <?php _e('Comments are closed', 'axiohost'); ?> </p>
+        <p class="comments-closed"> <?php esc_html_e('Comments are closed', 'axiohost'); ?> </p>
         </div>
     <?php
 	}

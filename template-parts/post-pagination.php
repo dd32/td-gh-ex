@@ -1,5 +1,6 @@
 <?php 
-    if(!empty(get_the_posts_pagination())){
+    $axiohost_pagination = get_the_posts_pagination();
+    if(!empty($axiohost_pagination)){
         
         the_posts_pagination(array(
             'next_text' => esc_html__('Next', 'axiohost'),
@@ -9,4 +10,3 @@
         )); 
                
     }
- ?>

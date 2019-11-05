@@ -6,4 +6,3 @@
         'menu_id' => 'navigation-menu',
         'container' => 'ul'
     ));
-?>

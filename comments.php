@@ -1,4 +1,3 @@
-
 <?php
     if(!post_password_required()){
          wp_list_comments(array(
@@ -8,13 +7,13 @@
     		'type'			=> 'all'
     	)); 
     }
- 
+     $comments_number = get_comments_number();
  ?>
-<div class="comment-pagination <?php if(empty(get_comments_number())){echo 'minus-comment-spacing';}?>">
+<div class="comment-pagination <?php if(empty($comments_number)){echo 'minus-comment-spacing';}?>">
     <?php 
         paginate_comments_links(array(
-            'prev_text' => __('<','axiohost'),
-            'next_text' => __('>','axiohost'),
+            'prev_text' => esc_html__('<','axiohost'),
+            'next_text' => esc_html__('>','axiohost'),
             'mid_size'  => 3
         ));
     ?>
@@ -25,9 +24,9 @@
 
 $comments_args = array(
     // Change the title of send button 
-    'label_submit' => __( 'Add Comment', 'axiohost' ),
+    'label_submit' => esc_html__( 'Add Comment', 'axiohost' ),
     // Change the title of the reply section
-    'title_reply' => __( 'Leave a Comment', 'axiohost' ),
+    'title_reply' => esc_html__( 'Leave a Comment', 'axiohost' ),
     // Remove "Text or HTML to be displayed after the set of comment fields".
     'comment_notes_after' => '',
     // Redefine your own textarea (the comment body).
@@ -41,8 +40,8 @@ $comments_args = array(
     'class_form'      => 'comment-form',
     'id_submit'         => 'submit',
     'class_submit'   => 'btn-primary btn',
-    'title_reply_to'    => __( 'Leave a Reply to %s', 'axiohost' ),
-    'cancel_reply_link' => __( 'Cancel Reply', 'axiohost' ),
+    'title_reply_to'    => esc_html( 'Leave a Reply to %s' ),
+    'cancel_reply_link' => esc_html__( 'Cancel Reply', 'axiohost' ),
     'format'            => 'xhtml',
 
 );

@@ -1,11 +1,5 @@
 <?php 
-    //////////////////////////////////////////////////////////////////
-    // COMMENTS LAYOUT
-    //////////////////////////////////////////////////////////////////
-    function axiohost_comments($comment, $args, $depth) {
-    	$GLOBALS['comment'] = $comment;
-    	
-    	?>
+    function axiohost_comments($comment, $args, $depth) {?>
     	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
     		
     		<div class="axiohost-comment">
@@ -21,7 +15,7 @@
                             <?php comment_reply_link(array_merge( $args, array('reply_text' => esc_html__('Reply', 'axiohost'), 'depth' => $depth, 'max_depth' => $args['max_depth'])), $comment->comment_ID); ?> 
                         </span>
                     </h6>
-                    <div class="date-and-edit"><span class="date"><?php printf(esc_html__('%1$s', 'axiohost'), get_comment_date()) ?></span></div>
+                    <div class="date-and-edit"><span class="date"><?php printf(esc_html('%1$s'), esc_html(get_comment_date())); ?></span></div>
     				<?php if ($comment->comment_approved == '0') : ?>
     					<em><i class="icon-info-sign"></i> <?php esc_html_e('Comment awaiting approval', 'axiohost'); ?></em>
     					<br />

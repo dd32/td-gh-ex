@@ -5,4 +5,3 @@
         'menu_id' => 'example',
         'container' => 'ul'
     ));
-?>

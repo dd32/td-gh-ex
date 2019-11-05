@@ -1,8 +1,10 @@
 <?php 
- if(!empty(get_the_tags()) || class_exists('ThemeixAxiohostPlugin')){?>
+$axiohost_tags =  get_the_tags();
+ if(!empty($axiohost_tags) || class_exists('ThemeixAxiohostPlugin')){?>
      <div class="single-tags-share">
         <?php 
-            if(!empty(get_the_tags())){?>  
+           
+            if(!empty($axiohost_tags)){?>  
                <ul class="single-tags list-inline float-left">
                   <?php
                       the_tags('',' ','');

@@ -42,7 +42,7 @@
         add_theme_support('title-tag');
         
         //Add Image Size
-        add_image_size( 'axiohost-featured-image', 730, 430, false );
+        add_image_size( 'axiohost-featured-image', 2000, 1200, false );
 
     	// Load regular editor styles into the new block-based editor.
     	add_theme_support( 'editor-styles' );
@@ -68,13 +68,7 @@
     
     //axiohost Theme Options
     require_once('inc/theme-options.php');
-     
     
-    //axiohost TGM Plugin Activation
-    require_once('inc/tgm-plugin/class-tgm-plugin-activation.php');
-    
-    //axiohost Requiered Plugins
-     require_once('inc/theme-plugins.php');
     
     //axiohost User Meta Extra Field
     include_once('inc/user-meta-extra-fields.php');
@@ -82,6 +76,12 @@
     //axiohost comments layout
     include_once('inc/comments-layout.php'); 
     
+    
+    //axiohost TGM Plugin Activation
+    require_once('inc/class-tgm-plugin-activation.php');
+    
+    //axiohost Requiered Plugins
+     require_once('inc/theme-plugins.php');
    
     //custom comments form label
     function axiohost_comment_form_text($fields){
@@ -190,34 +190,6 @@
     }
 
     
-    //axiohost import demo content
-    function axiohost_import_demo_content() {
-        return array(
-          array(
-            'import_file_name'           => esc_html__('Axiohost Demo', 'axiohost'),
-            'import_file_url'            => get_template_directory_uri().'/inc/demo-content/demo-content.xml',
-            'import_widget_file_url'     => get_template_directory_uri().'/inc/demo-content/demo-widget.wie',
-            'import_customizer_file_url' => get_template_directory_uri().'/inc/demo-content/demo-customization.dat',
-            'import_redux'               => array(
-              array(
-                'file_url'    => get_template_directory_uri().'/inc/demo-content/demo-redux.json',
-                'option_name' => 'axiohost',
-              ),
-            ),
-            'import_notice'              => esc_html__( 'Please waiting for a few minutes, do not close the window or refresh the page until the data is imported.', 'axiohost' ),
-            'preview_url'                => 'axiohost-wp.themeix.com',
-          ),
-        );
-      }
-      add_filter( 'pt-ocdi/import_files', 'axiohost_import_demo_content' );
-
-      function axiohost_import_after_menu (){
-        $themex_main_menu = get_term_by( 'name', 'primary menu', 'primary_menu' );
-        set_theme_mod( 'nav_menu_locations', array(
-          'primary_menu' => $themex_main_menu->term_id,
-        ) );
-      }
-      add_action( 'pt-ocdi/after_import', 'axiohost_import_after_menu' );
 
     //Override redux message
     function axiohost_override_redux_message() {
@@ -225,34 +197,7 @@
     }
     add_action('admin_init', 'axiohost_override_redux_message', 30);
     
-    //axiohost extra CSS
-    function axiohost_extra_css(){
-        if(class_exists('ReduxFrameworkPlugin')){
-        global $axiohost;
-        ?>
-            <style>
-                .navigation-brand a img {
-                    width: <?php echo esc_attr($axiohost['brand_width']); ?>px;
-                    height: auto;
-                }
-                footer.footer-area{
-                     background-color:<?php echo esc_attr($axiohost['bg-color']); ?>;   
-                }
-                .searchBoxTop button[type="submit"]{
-                     background: <?php echo esc_attr($axiohost['modal-search-btn-bg']);?>; 
-                     border-color: <?php echo esc_attr($axiohost['modal-search-btn-bg']);?>; 
-                }
-                .loader-wrapper{
-                     background-color: <?php echo esc_attr($axiohost['loader-wrapper']);?>;   
-                }
-                .searchBoxTop input,.searchBoxTop input:focus{
-                     border-color: <?php echo esc_attr($axiohost['modal-search-btn-bg']);?>; 
-                }
-            </style>
-        <?php
-        }
-    }
-    add_action('wp_head', 'axiohost_extra_css');
+    
     
     function axiohost_scripts(){
         
@@ -263,65 +208,53 @@
        //====================ALL CSS FILE HERE=====================================//
        
        //Bootstrap CSS
-       wp_enqueue_style('bootstrap', AXIOHOST_CSS_URL.'/bootstrap.min.css', null, 'v4.0', 'all');
-       
-       //App Full Screen Modal CSS
-       wp_enqueue_style('ap-screen-modal', AXIOHOST_CSS_URL.'/ap-fullscreen-modal.min.css', null, 'v4.0', 'all');
+       wp_enqueue_style('bootstrap', AXIOHOST_CSS_URL.'/bootstrap.min.css', null, 'v4.3.1', 'all');
 
        //Nivo Slider CSS
-       wp_enqueue_style('nivo-slider', AXIOHOST_CSS_URL.'/nivo-slider.css', null, 'v1.0', 'all');
+       wp_enqueue_style('nivo-slider', AXIOHOST_CSS_URL.'/nivo-slider.css', null, 'v3.2', 'all');
        
        //Slim Menu CSS
        wp_enqueue_style('slimmenu', AXIOHOST_CSS_URL.'/slimmenu.min.css', null, 'v1.0', 'all');
        
        //Font Awesome CSS
-       wp_enqueue_style('font-awesome', AXIOHOST_CSS_URL.'/font-awesome.min.css', null, 'v1.0', 'all');
+       wp_enqueue_style('font-awesome', AXIOHOST_CSS_URL.'/font-awesome.min.css', null, '4.7.0', 'all');
        
        //Animate CSS
-       wp_enqueue_style('animate', AXIOHOST_CSS_URL.'/animate.min.css', null, 'v1.0', 'all');
+       wp_enqueue_style('animate', AXIOHOST_CSS_URL.'/animate.min.css', null, '3.5.2', 'all');
        
        //Slick CSS
        wp_enqueue_style('slick', AXIOHOST_CSS_URL.'/slick.css', null, 'v1.0', 'all');   
 
        //Owl Carousel CSS
-       wp_enqueue_style('owl-carousel', AXIOHOST_CSS_URL.'/owl.carousel.min.css', null, 'v1.0', 'all');
-
-       //Main Stylesheet
-       wp_enqueue_style('main', AXIOHOST_CSS_URL.'/main.css', null, 'v1.0', 'all');
+       wp_enqueue_style('owl-carousel', AXIOHOST_CSS_URL.'/owl.carousel.min.css', null, 'v2.3.4', 'all');
        
-       //Responsive CSS
-       wp_enqueue_style('responsive', AXIOHOST_CSS_URL.'/responsive.css', null, 'v1.0', 'all');
-       
+   
        //Superfish CSS
        wp_enqueue_style('superfish', AXIOHOST_CSS_URL.'/superfish.css', null, 'v1.0', 'all');
-       
-       //Theme Stylesheet
-       wp_enqueue_style('theme', AXIOHOST_CSS_URL.'/theme.css', null, 'v1.0', 'all');
-       
+           
        //Stylesheet CSS
        wp_enqueue_style('style', get_stylesheet_uri());
-       
+	   
+       //Responsive CSS
+       wp_enqueue_style('responsive', AXIOHOST_CSS_URL.'/responsive.css', null, 'v1.0', 'all');       
 
         //-- ====================ALL JS FILE HERE===================================== -//
                          
        
        //Bootstrap
-        wp_enqueue_script('bootstrap', AXIOHOST_JS_URL.'/bootstrap.min.js', array('jquery'), 'v4.0', true);
+        wp_enqueue_script('bootstrap', AXIOHOST_JS_URL.'/bootstrap.min.js', array('jquery'), 'v4.3.1', true);
 
         //Nivo slider JS    
-        wp_enqueue_script('jquery-nivo-slider', AXIOHOST_JS_URL.'/jquery.nivo.slider.js', array('jquery'), 'v1.0', true);
+        wp_enqueue_script('jquery-nivo-slider', AXIOHOST_JS_URL.'/jquery.nivo.slider.js', array('jquery'), 'v3.2', true);
 
        //Nivo slider pack JS   
-       wp_enqueue_script('jquery-nivo-slider-pack', AXIOHOST_JS_URL.'/jquery.nivo.slider.pack.js', array('jquery'), 'v1.0', true);
+       wp_enqueue_script('jquery-nivo-slider-pack', AXIOHOST_JS_URL.'/jquery.nivo.slider.pack.js', array('jquery'), 'v3.2', true);
        
        //Propper JS    
-       wp_enqueue_script('popper', AXIOHOST_JS_URL.'/popper.min.js', array('jquery'), 'v1.0', true);
-       
-       //App Fullscreen JS    
-       wp_enqueue_script('app-fullscreen-modal', AXIOHOST_JS_URL.'/ap-fullscreen-modal.min.js', array('jquery'), 'v1.0', true);
-       
-       //Nivo slider JS    
-       wp_enqueue_script('owl-carousel', AXIOHOST_JS_URL.'/owl.carousel.min.js', array('jquery'), 'v1.0', true);
+       wp_enqueue_script('popper', AXIOHOST_JS_URL.'/popper.min.js', array('jquery'), 'v1.14', true);       
+      
+       //owl slider JS    
+       wp_enqueue_script('owl-carousel', AXIOHOST_JS_URL.'/owl.carousel.min.js', array('jquery'), 'v2.3.4', true);
 
        //Slick JS    
        wp_enqueue_script('slick', AXIOHOST_JS_URL.'/slick.min.js', array('jquery'), 'v1.0', true);
@@ -330,7 +263,7 @@
        wp_enqueue_script('jquery-slimmenu', AXIOHOST_JS_URL.'/jquery.slimmenu.min.js', array('jquery'), 'v1.0', true);
        
        //superfish
-       wp_enqueue_script('superfish', AXIOHOST_JS_URL.'/superfish.js', array('jquery'), 'v1.0', true);
+       wp_enqueue_script('superfish', AXIOHOST_JS_URL.'/superfish.js', array('jquery'), 'v1.7.10', true);
        
        //hoverIntent
        wp_enqueue_script('hoverIntent', AXIOHOST_JS_URL.'/hoverIntent.js', array('jquery'), 'v1.0', true);
@@ -343,7 +276,7 @@
        
     
        //WOW JS 
-       wp_enqueue_script('wow', AXIOHOST_JS_URL.'/wow.min.js', array('jquery'), 'v1.0', true); 
+       wp_enqueue_script('wow', AXIOHOST_JS_URL.'/wow.min.js', array('jquery'), 'v1.1.3', true); 
     
     
        //Navigation JS 
@@ -386,8 +319,6 @@
     }
     add_filter( 'get_search_form', 'axiohost_search_form' );
     
-//Include breadcrumb
-include_once('inc/breadcrumb.php'); 
 
 
 
@@ -404,7 +335,7 @@ function axiohost_custom_post_class( $classes ) {
 add_filter( 'post_class', 'axiohost_custom_post_class');
 
 //Axiohost Search Form
-function get_axiohost_search_form(){?>
+function axiohost_get_search_form(){?>
     <form class="formSearch" action="<?php echo esc_url(site_url()); ?>" method="get">
          <div class="input-group">
             <input class="form-control" type="search" name="s" value="" placeholder="<?php esc_attr_e('Search…', 'axiohost'); ?>" autocomplete="off" />
@@ -430,4 +361,59 @@ function axiohost_admin_menu_page_removing() {
 }
 add_action( 'admin_menu', 'axiohost_admin_menu_page_removing' );
 
+function axiohost_admin_style() {
+  wp_enqueue_style('admin-style', AXIOHOST_CSS_URL.'/admin.css');
+}
+add_action('admin_enqueue_scripts', 'axiohost_admin_style');
+
+function axiohost_styles_method()
+	{	 
+	
+	    global $axiohost;
+    $bg_image = $axiohost['header-bg-image']['url'];
+	     $bg_color = $axiohost['header-bg-color'];
+     $bg = $axiohost['_page'];
+	
+	    if ($bg == 'image' && class_exists('ReduxFrameWork')) {
+        $background = 'url('.$bg_image.')';
+	    } elseif ($bg == 'color' && class_exists('ReduxFrameWork')) {
+	        $background = $bg_color;
+    } else {
+	        $background = '';
+    }
+   
+    $custom_css = "
+                .post-title-area{
+	                        background: $background;
+                }";
+	    wp_add_inline_style('custom-style', $custom_css);
+	}
+	add_action('wp_enqueue_scripts', 'axiohost_styles_method');
+	
+	
+if ( ! function_exists( 'axiohost_dynamic_class_full_width') ) {
+	function axiohost_dynamic_class_full_width() {
+	if ( ! is_active_sidebar( 'axiohost-sidebar' ) ) {
+echo '<div class="col-md-12">'	;	
+	} else {
+	echo '<div class="col-md-7 col-lg-8">'	;
+	}	 
+	}
+}	
+
+add_action( 'axiohost_full_column', 'axiohost_dynamic_class_full_width', 10 );
+	
+if ( ! function_exists( 'axiohost_dynamic_class_full_width_post') ) {
+	function axiohost_dynamic_class_full_width_post() {
+	if ( ! is_active_sidebar( 'axiohost-sidebar' ) ) {
+echo '<div class="col-md-10 mx-auto">'	;	
+	} else {
+	echo '<div class="col-md-7 col-lg-8">'	;
+	}	 
+	}
+}	
+
+add_action( 'axiohost_full_post_column', 'axiohost_dynamic_class_full_width_post', 10 );
+	
+	
 ?>

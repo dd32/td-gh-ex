@@ -428,6 +428,15 @@ section.signature-area .inner-title, section.themeix-hosting-area .inner-title {
 		box-shadow: 0px 0px 21px 5px rgba(24, 38, 127, 0.08);
 		margin-bottom: 30px;
 	}
+	.sidebar-widget {
+		padding:0
+	}
+	nav.navigation.pagination {
+    padding-bottom: 30px;
+}
+.space-top {
+    padding-top: 60px;
+}
 }
 
 
