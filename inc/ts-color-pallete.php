@@ -14,11 +14,6 @@
 			$custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_first).';';
 		$custom_css .='}';
 	}
-	if($bb_wedding_bliss_theme_color_first != false){
-		$custom_css .='a:focus{';
-			$custom_css .='outline: 1px dotted '.esc_html($bb_wedding_bliss_theme_color_first).'!important;';
-		$custom_css .='}';
-	}
 	
 	if($bb_wedding_bliss_theme_color_first != false){
 		$custom_css .='.primary-navigation ul ul{';
@@ -48,4 +43,43 @@
 		$custom_css .='.pagination .current, .blogbutton-small, .our-services .page-box h4 a,.meta-nav,.tags p a {';
 			$custom_css .='color: '.esc_html($bb_wedding_bliss_theme_color_second).';';
 		$custom_css .='}';
+	}
+
+	/*---------------------------Width Layout -------------------*/
+
+	$theme_lay = get_theme_mod( 'bb_wedding_bliss_theme_options','Default');
+    if($theme_lay == 'Default'){
+		$custom_css .='body{';
+			$custom_css .='max-width: 100%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Container'){
+		$custom_css .='body{';
+			$custom_css .='width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;';
+		$custom_css .='}';
+		$custom_css .='.page-template-custom-front-page #header{';
+			$custom_css .='width:97.7%;';
+		$custom_css .='}';
+		$custom_css .='.serach_outer{';
+			$custom_css .='width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 1000px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:97.1%;';
+		$custom_css .='} }';
+	}else if($theme_lay == 'Box Container'){
+		$custom_css .='body{';
+			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;';
+		$custom_css .='}';
+		$custom_css .='.serach_outer{';
+			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; right:0';
+		$custom_css .='}';
+		$custom_css .='.page-template-custom-front-page #header{';
+			$custom_css .='width: 86.4%;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 1000px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:97.1%;';
+		$custom_css .='} }';
 	}

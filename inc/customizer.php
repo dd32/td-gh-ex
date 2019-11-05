@@ -17,53 +17,42 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'priority' => 10,
 	    'capability' => 'edit_theme_options',
 	    'theme_supports' => '',
-	    'title' => __( 'BB Settings', 'bb-wedding-bliss' ),
+	    'title' => __( 'Theme Settings', 'bb-wedding-bliss' ),
 	    'description' => __( 'Description of what this panel does.', 'bb-wedding-bliss' ),
 	) );
-
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'bb_wedding_bliss_theme_color_option', 
-		array( 'panel' => 'bb_wedding_bliss_panel_id', 'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
-	);
-  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
-	    'default' => '#b79338',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
-  		'label' => 'First Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_theme_color_option',
-	    'settings' => 'bb_wedding_bliss_theme_color_first',
-  	)));
-  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
-	    'default' => '#151c27',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
-  		'label' => 'Second Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_theme_color_option',
-	    'settings' => 'bb_wedding_bliss_theme_color_second',
-  	)));
   	
 	//Layouts
 	$wp_customize->add_section( 'bb_wedding_bliss_left_right', array(
     	'title'      => __( 'Layout Settings', 'bb-wedding-bliss' ),
-		'priority'   => 30,
 		'panel' => 'bb_wedding_bliss_panel_id'
+	) );
+
+	$wp_customize->add_setting('bb_wedding_bliss_theme_options',array(
+        'default' => __('Default','bb-wedding-bliss'),
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','bb-wedding-bliss'),
+        'description' => __('Here you can change the Width layout. ','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_left_right',
+        'choices' => array(
+            'Default' => __('Default','bb-wedding-bliss'),
+            'Container' => __('Container','bb-wedding-bliss'),
+            'Box Container' => __('Box Container','bb-wedding-bliss'),
+        ),
 	) );
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_wedding_bliss_layout_options',array(
 	        'default' => __('Right Sidebar','bb-wedding-bliss'),
-	        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'	        
+	        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
 	    )
     );
-
 	$wp_customize->add_control('bb_wedding_bliss_layout_options',
 	    array(
 	        'type' => 'radio',
-	        'label' => __('Change Layouts','bb-wedding-bliss'),
+	        'label' => __('Sidebar Layouts','bb-wedding-bliss'),
 	        'section' => 'bb_wedding_bliss_left_right',
 	        'choices' => array(
 	            'Left Sidebar' => __('Left Sidebar','bb-wedding-bliss'),
@@ -173,10 +162,34 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
         'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
     );
 
+    // Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_wedding_bliss_theme_color_option', 
+		array( 'panel' => 'bb_wedding_bliss_panel_id', 'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
+	);
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
+	    'default' => '#b79338',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_first',
+  	)));
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
+	    'default' => '#151c27',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_second',
+  	)));
+
 	//Typography
 	$wp_customize->add_section( 'bb_wedding_bliss_typography', array(
     	'title'      => __( 'Typography', 'bb-wedding-bliss' ),
-		'priority'   => 30,
 		'panel' => 'bb_wedding_bliss_panel_id'
 	) );
 	
@@ -499,7 +512,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$wp_customize->add_section('bb_wedding_bliss_social_icons',array(
 		'title'	=> __('Social Icon Section','bb-wedding-bliss'),
 		'description'	=> __('Social icons will appear in footer.','bb-wedding-bliss'),
-		'priority'	=> null,
 		'panel' => 'bb_wedding_bliss_panel_id',
 	));
 
@@ -590,7 +602,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	//home page slider
 	$wp_customize->add_section( 'bb_wedding_bliss_slidersettings' , array(
     	'title'      => __( 'Slider Settings', 'bb-wedding-bliss' ),
-		'priority'   => 30,
 		'panel' => 'bb_wedding_bliss_panel_id'
 	) );
 
@@ -647,8 +658,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	//More Event
   	$wp_customize->add_section('bb_wedding_bliss_event_section',array(
 	    'title' => __('More Event Section','bb-wedding-bliss'),
-	    'description' => '',
-	    'priority'  => null,
 	    'panel' => 'bb_wedding_bliss_panel_id',
 	));
 	  
@@ -699,7 +708,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$wp_customize->add_section('bb_wedding_bliss_footer_section',array(
 		'title'	=> __('Footer Text','bb-wedding-bliss'),
 		'description'	=> __('Add some text for footer like copyright etc.','bb-wedding-bliss'),
-		'priority'	=> null,
 		'panel' => 'bb_wedding_bliss_panel_id',
 	));
 	

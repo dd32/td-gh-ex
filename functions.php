@@ -344,7 +344,7 @@ function bb_wedding_bliss_scripts() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
 	
-	require get_parent_theme_file_path( '/inc/color-option.php' );
+	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
 	wp_add_inline_style( 'bb-wedding-bliss-basic-style',$custom_css );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

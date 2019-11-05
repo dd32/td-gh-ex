@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, buddypress, full-width-template, theme-options, threaded-comments, blog, portfolio, e-commerce
 Requires at least: 4.7
-Tested up to: 5.2.3
+Tested up to: 5.2.4
 Requires PHP: 7.2.14
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GNU General Public License v3.0
 License URI:  http://www.gnu.org/licenses/gpl.html
 
@@ -73,12 +73,16 @@ BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage
   * Resolved css customization
   * Resolved theme error.
 
-= 0.2.2 =
+= 1.2.2 =
   * Solved constrast error.
   * Added logo resizer.
   * Updated search layout.
   * Changed menu css.
   * Updated responsive menu css.
+
+= 1.2.3 =
+  * Added Width Layout option in customizer.
+  * Changed some css.
 
 == Resources ==
 
