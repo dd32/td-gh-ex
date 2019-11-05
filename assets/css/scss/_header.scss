@@ -87,9 +87,11 @@
 }
 
 .site-logo {
-    h1 {
+    div {
         margin-top: 5px;
         margin-bottom: 5px;
+        font-size:48px;
+        font-weight: 600;
         line-height: 1.2;
 
         a {
@@ -309,7 +311,7 @@
     margin-right: 0;
 }
 
-.layout-center .site-logo h1 {
+.layout-center .site-logo div {
     text-align: center;
 }
 

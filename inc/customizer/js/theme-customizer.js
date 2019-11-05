@@ -159,10 +159,10 @@
     range_live_media_load( 'apex_business_header_logo_height_control', '.site-logo img', [ 'max-width' ], 'px' );
 
      /** Header Navigation : Text Logo Width **/
-    range_live_media_load( 'apex_business_nav_text_size_control', '.site-logo h1', [ 'font-size' ], 'px' );
+    range_live_media_load( 'apex_business_nav_text_size_control', '.site-logo div', [ 'font-size' ], 'px' );
 
     /** Header Navigation : Text Logo line height **/
-    range_live_media_load( 'apex_business_nav_line_height_control', '.site-logo h1', [ 'line-height' ], );
+    range_live_media_load( 'apex_business_nav_line_height_control', '.site-logo div', [ 'line-height' ], );
 
     /** Header Navigation : manu font letter spacing **/
     range_live_media_load( 'apex_business_nav_letter_spacing_control', 'nav a', [ 'letter-spacing' ], 'px' );
@@ -190,7 +190,7 @@
     ct_customizer_live_load( 'apex_business_header_dropdown_color_setting', '.main-nav .menu-item-has-children li a', [ 'color' ] );
 
     /** Header Navigation : Text Logo color **/
-    ct_customizer_live_load( 'apex_business_header_text_logo_color_setting', '.site-logo h1 a', [ 'color' ] );
+    ct_customizer_live_load( 'apex_business_header_text_logo_color_setting', '.site-logo div a', [ 'color' ] );
 
     /***************************************************************************
     * Fixed header Settings

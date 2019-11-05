@@ -68,13 +68,13 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_logo_height_control', '.site-logo img', array( 'max-width' ), array( 300, 300, 300 ), 'px' );
 
     /** Header Navigation : text logo font size **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_nav_text_size_control', '.site-logo h1', array( 'font-size' ), array( 38, 34, 26 ), 'px' );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_nav_text_size_control', '.site-logo div', array( 'font-size' ), array( 38, 34, 26 ), 'px' );
 
     /** Header Navigation : text logo font line Height **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_nav_line_height_control', '.site-logo h1', array( 'line-height' ), array( 1, 1, 1 ));
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_nav_line_height_control', '.site-logo div', array( 'line-height' ), array( 1, 1, 1 ));
 
     /** Header Navigation : text logo color **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_text_logo_color_setting', '.site-logo h1 a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_text_logo_color_setting', '.site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : manu font letter spacing **/
     $apex_business_custom_css   .=  apex_business_customizer_value( 'apex_business_nav_letter_spacing_control', 'nav a', array( 'letter-spacing' ), array( 0, 0, 0 ), 'px' ) ;
@@ -113,7 +113,7 @@ function apex_business_enqueue_inline_css() {
 
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_logo_size_control', '.sticky-header .site-logo .custom-logo', array( 'max-width' ), array( 300, 300, 300 ), 'px' );
 
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_text_logo_size_control', '.sticky-header .site-logo h1', array( 'font-size' ), array( 100, 100, 100 ), 'px' );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_text_logo_size_control', '.sticky-header .site-logo div', array( 'font-size' ), array( 100, 100, 100 ), 'px' );
 
     /** fixed Hover Settings : fixed header Bg color**/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_header_bgcolor_setting', '.sticky-header', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );

@@ -250,8 +250,9 @@ body {
   .sub-title-center {
     position: absolute;
     top: -42px;
-    left: -42px;
+    left: 0;
 
+    width: 100%;
     color: $subtitle-color;
     @extend .pre-font-family-2;
     font-size: 60px;

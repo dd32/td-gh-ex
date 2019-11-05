@@ -8,6 +8,11 @@ Stable tag: trunk
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+== Description ==
+
+Apex Business is a multipurpose business and blog theme that can be used for all types
+of websites.
+
 == Copyright ==
 
 Apex Business WordPress Theme, Copyright 2019 aruphash
@@ -23,16 +28,28 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-== Description ==
-
-Apex Business is a multipurpose business and blog theme that can be used for all types
-of websites.
-
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Apex Business in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
+
+== Changelog ==
+
+= 0.0.5 - November 5 2019 =
+* Bug fixes
+
+= 0.0.4 - October 5 2019 =
+* Bug fixes
+
+= 0.0.3 - September 21 2019 =
+* Checked the checklist pointed by theme reviewer
+
+= 0.0.2 - September 18 2019 =
+* Checked the checklist pointed by theme reviewer
+
+= 0.0.1 - Jul 19 2019 =
+* Initial release
 
 == Resources ==
 
@@ -85,17 +102,3 @@ Source: https://github.com/soderlind/class-customizer-toggle-control
 https://stocksnap.io/photo/0SHBIHYBNJ
 Copyright Bruce Mars
 License: CC0 Public Domain
-
-== Changelog ==
-
-= 0.0.4 - October 5 2019 =
-* Bug fixes
-
-= 0.0.3 - September 21 2019 =
-* Checked the checklist pointed by theme reviewer
-
-= 0.0.2 - September 18 2019 =
-* Checked the checklist pointed by theme reviewer
-
-= 0.0.1 - Jul 19 2019 =
-* Initial release
