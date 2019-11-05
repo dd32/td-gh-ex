@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Define constants.
  */
-define( 'RESPONSIVE_THEME_VERSION', '3.23' );
+define( 'RESPONSIVE_THEME_VERSION', '3.24' );
 define( 'RESPONSIVE_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'RESPONSIVE_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 /**
@@ -44,6 +44,7 @@ require $responsive_template_directory . '/core/includes/compatibility/woocommer
 require $responsive_template_directory . '/admin/admin-functions.php';
 require $responsive_template_directory . '/core/includes/classes/class-responsive-blog-markup.php';
 require $responsive_template_directory . '/core/includes/classes/class-responsive-mobile-menu-markup.php';
+require $responsive_template_directory . '/core/gutenberg/gutenberg-support.php';
 
 /**
  * Return value of the supplied responsive free theme option.
@@ -71,7 +72,9 @@ function responsive_free_setup() {
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'responsive-embeds' );
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'core/css/gutenberg-editor.css' );
+    add_editor_style( 'core/css/gutenberg-editor.css' );
+    // Gutenberg editor color palette.
+    add_theme_support( 'editor-color-palette', responsive_gutenberg_color_palette() );
 }
 add_action( 'after_setup_theme', 'responsive_free_setup' );
 
@@ -427,6 +430,9 @@ if ( isset( $responsive_options['override_woo'] ) && 1 == $responsive_options['o
  */
 function responsive_block_styles() {
 	wp_enqueue_style( 'mytheme-blocks', get_stylesheet_directory_uri() . '/core/css/gutenberg-blocks.css', array(), '1.0' );
+
+    // Add customizer colors to Gutenberg editor in backend.
+	wp_add_inline_style( 'responsive-gutenberg', responsive_gutenberg_colors( responsive_gutenberg_color_palette() ) );
 }
 add_action( 'enqueue_block_editor_assets', 'responsive_block_styles' );
 
@@ -466,3 +472,34 @@ function responsive_admin_rate_us( $footer_text ) {
 }
 
 add_filter( 'admin_footer_text', 'responsive_admin_rate_us' );
+
+// load the latest sdk version from the active Responsive theme.
+if ( ! function_exists( 'responsive_sdk_load_latest' ) ) :
+	/**
+	 * Always load the latest sdk version.
+	 */
+	function responsive_sdk_load_latest() {
+		/**
+		 * Don't load the library if we are on < 5.4.
+		 */
+		if ( version_compare( PHP_VERSION, '5.4.32', '<' ) ) {
+			return;
+		}
+		require_once RESPONSIVE_THEME_DIR . 'core/rollback/start.php';
+	}
+endif;
+add_action( 'init', 'responsive_sdk_load_latest' );
+
+add_filter( 'responsive_sdk_products', 'responsive_load_sdk' );
+/**
+ * Loads products array.
+ *
+ * @param array $products All products.
+ *
+ * @return array Products array.
+ */
+function responsive_load_sdk( $products ) {
+	$products[] = get_template_directory() . '/style.css';
+
+	return $products;
+}
