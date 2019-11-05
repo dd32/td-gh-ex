@@ -228,15 +228,15 @@
        //Owl Carousel CSS
        wp_enqueue_style('owl-carousel', AXIOHOST_CSS_URL.'/owl.carousel.min.css', null, 'v2.3.4', 'all');
        
-       //Responsive CSS
-       wp_enqueue_style('responsive', AXIOHOST_CSS_URL.'/responsive.css', null, 'v1.0', 'all');
-       
+   
        //Superfish CSS
        wp_enqueue_style('superfish', AXIOHOST_CSS_URL.'/superfish.css', null, 'v1.0', 'all');
            
        //Stylesheet CSS
        wp_enqueue_style('style', get_stylesheet_uri());
-       
+	   
+       //Responsive CSS
+       wp_enqueue_style('responsive', AXIOHOST_CSS_URL.'/responsive.css', null, 'v1.0', 'all');       
 
         //-- ====================ALL JS FILE HERE===================================== -//
                          
@@ -366,5 +366,32 @@ function axiohost_admin_style() {
 }
 add_action('admin_enqueue_scripts', 'axiohost_admin_style');
 
-
+function axiohost_styles_method()
+	{
+	    wp_enqueue_style(
+        'custom-style',
+        AXIOHOST_CSS_URL . '/theme.css'
+    );
+	
+	    global $axiohost;
+    $bg_image = $axiohost['header-bg-image']['url'];
+	     $bg_color = $axiohost['header-bg-color'];
+     $bg = $axiohost['_page'];
+	
+	    if ($bg == 'image' && class_exists('ReduxFrameWork')) {
+        $background = 'url('.$bg_image.')';;
+	    } elseif ($bg == 'color' && class_exists('ReduxFrameWork')) {
+	        $background = $bg_color;
+    } else {
+	        $background = '';
+    }
+   
+    $custom_css = "
+                .post-title-area{
+	                        background: $background;
+                }";
+	    wp_add_inline_style('custom-style', $custom_css);
+	}
+	add_action('wp_enqueue_scripts', 'axiohost_styles_method');
+	
 ?>
