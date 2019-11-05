@@ -60,6 +60,11 @@ function nnfy_register_required_plugins() {
 	$plugins = array(
 		// One Click Demo Import
 		array(
+			'name'      => esc_html__('99fy Core', '99fy'), 
+			'slug'      => '99fy-core', 
+			'required'  => true,
+		),
+		array(
 			'name'      => esc_html__('One Click Demo Import', '99fy'), 
 			'slug'      => 'one-click-demo-import', 
 			'required'  => false,
