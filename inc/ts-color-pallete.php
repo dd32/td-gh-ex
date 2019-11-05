@@ -45,8 +45,7 @@
 		$custom_css .='}';
 	}
 	
-
-// media
+	// media
 
 	$custom_css .='@media screen and (max-width:1000px) {';
 	if($bb_mobile_application_theme_color){
@@ -56,3 +55,58 @@
 	}
 	$custom_css .='}';
 
+	/*---------------------------Width Layout -------------------*/
+
+	$theme_lay = get_theme_mod( 'bb_mobile_application_width_theme_options','Default');
+    if($theme_lay == 'Default'){
+		$custom_css .='body{';
+			$custom_css .='max-width: 100%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Container'){
+		$custom_css .='body{';
+			$custom_css .='width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;';
+		$custom_css .='}';
+		$custom_css .='.page-template-custom-front-page #header{';
+			$custom_css .='width: 97.7%';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1000px) and (min-width: 720px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:95.8%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 720px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:100%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 1000px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:97%;';
+		$custom_css .='} }';
+	}else if($theme_lay == 'Box Container'){
+		$custom_css .='body{';
+			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;';
+		$custom_css .='}';
+		$custom_css .='.page-template-custom-front-page #header{';
+			$custom_css .='width:86.4%;';
+		$custom_css .='}';
+		$custom_css .='#header{';
+			$custom_css .='padding-left:20px;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1000px) and (min-width: 720px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:95.8%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 1000px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:97%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 720px){
+		.page-template-custom-front-page #header{';
+		$custom_css .='width:100%;';
+		$custom_css .='} }';
+	}

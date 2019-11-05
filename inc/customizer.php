@@ -17,32 +17,30 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'priority' => 10,
 	    'capability' => 'edit_theme_options',
 	    'theme_supports' => '',
-	    'title' => __( 'BB Settings', 'bb-mobile-application' ),
+	    'title' => __( 'Theme Settings', 'bb-mobile-application' ),
 	    'description' => __( 'Description of what this panel does.', 'bb-mobile-application' ),
 	) );
-
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'bb_mobile_application_theme_color_option', array( 
-		'panel' => 'bb_mobile_application_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'bb-mobile-application' ) 
-	) );
-
-  	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
-	    'default' => '#3ae0bf',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(
-  		'label' => 'Color Option',
-	    'description' => __('One can change complete theme color on just one click.', 'bb-mobile-application'),
-	    'section' => 'bb_mobile_application_theme_color_option',
-	    'settings' => 'bb_mobile_application_theme_color',
-  	)));
 
 	//Layouts
 	$wp_customize->add_section( 'bb_mobile_application_left_right', array(
     	'title'      => __( 'General Settings', 'bb-mobile-application' ),
-		'priority'   => 30,
 		'panel' => 'bb_mobile_application_panel_id'
+	) );
+
+	$wp_customize->add_setting('bb_mobile_application_width_theme_options',array(
+        'default' => __('Default','bb-mobile-application'),
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_mobile_application_width_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','bb-mobile-application'),
+        'description' => __('Here you can change the Width layout. ','bb-mobile-application'),
+        'section' => 'bb_mobile_application_left_right',
+        'choices' => array(
+            'Default' => __('Default','bb-mobile-application'),
+            'Container' => __('Container','bb-mobile-application'),
+            'Box Container' => __('Box Container','bb-mobile-application'),
+        ),
 	) );
 
 	// Add Settings and Controls for Layout
@@ -53,7 +51,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$wp_customize->add_control('bb_mobile_application_theme_options',
 	    array(
 	        'type' => 'radio',
-	        'label' => __( 'Change Layouts', 'bb-mobile-application' ),
+	        'label' => __( 'Sidebar Layouts', 'bb-mobile-application' ),
 	        'section' => 'bb_mobile_application_left_right',
 	        'choices' => array(
 	            'Left Sidebar' => __('Left Sidebar','bb-mobile-application'),
@@ -160,10 +158,26 @@ function bb_mobile_application_customize_register( $wp_customize ) {
         'Yanone Kaffeesatz' => 'Yanone Kaffeesatz',
     );
 
+    // Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_mobile_application_theme_color_option', array( 
+		'panel' => 'bb_mobile_application_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-mobile-application' ) 
+	) );
+
+  	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
+	    'default' => '#3ae0bf',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'bb-mobile-application'),
+	    'section' => 'bb_mobile_application_theme_color_option',
+	    'settings' => 'bb_mobile_application_theme_color',
+  	)));
+
 	//Typography
 	$wp_customize->add_section( 'bb_mobile_application_typography', array(
     	'title'      => __( 'Typography', 'bb-mobile-application' ),
-		'priority'   => 30,
 		'panel' => 'bb_mobile_application_panel_id'
 	) );
 	
@@ -485,7 +499,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	//home page slider
 	$wp_customize->add_section( 'bb_mobile_application_slidersettings' , array(
     	'title'      => __( 'Slider Settings', 'bb-mobile-application' ),
-		'priority'   => 30,
 		'panel' => 'bb_mobile_application_panel_id'
 	) );
 
@@ -518,8 +531,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	//Creative Feature
 	$wp_customize->add_section('bb_mobile_application_creative_section',array(
 		'title'	=> __('Creative Features Section','bb-mobile-application'),
-		'description'	=> '',
-		'priority'	=> null,
 		'panel' => 'bb_mobile_application_panel_id',
 	));
 	
@@ -603,8 +614,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	//Footer
 	$wp_customize->add_section('bb_mobile_application_footer_section',array(
 		'title'	=> __('Footer Text','bb-mobile-application'),
-		'description'	=> '',
-		'priority'	=> null,
 		'panel' => 'bb_mobile_application_panel_id',
 	));
 
