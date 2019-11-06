@@ -5,61 +5,7 @@
  */
 get_header();
 if(is_home()){ ?>
-    <div class="featured_wrap">
-    <div class="container">
-        <?php
-        $blog_layout_class = (get_theme_mod('sidebar_style', 'right_sidebar') == 'left_sidebar') ? "9" : ((get_theme_mod('sidebar_style', 'right_sidebar') == 'right_sidebar') ? "9" : "12");
-        if (get_theme_mod('sidebar_style', 'right_sidebar') == 'left_sidebar') {
-            ?>
-            <!-- Left sidebar -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="sidebar">
-                <div class="<?php echo esc_attr(get_theme_mod('sidebar_style')); ?>">
-                    <?php get_sidebar(); ?>     
-                </div>
-            </div>
-            </div> <!-- and Left sidebar -->
-        <?php } ?>
-        <!-- content -->
-        <div class="col-md-<?php echo esc_attr($blog_layout_class); ?> col-sm-9 col-xs-12">
-            <div class="memory_block ">
-                 <h3 class="widget-title"><?php esc_html_e("Blog",'best-classifieds'); ?></h3>
-                <?php
-                $icounter = 1;
-                while (have_posts()) : the_post();
-                    $icounter = ($icounter > 2) ? 1 : $icounter;
-                    ?>
-                    <div class="every_people">  
-                        <div class="every_sec">  
-                          <div class="post_box">
-                            <ul>  
-                                <?php get_template_part('template-parts/content', 'blog'); ?> 
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                    <?php if ($icounter == 2): ?>
-                        <div class="clearfix"></div>
-                    <?php endif; 
-                $icounter++;
-                endwhile; // End of the loop.
-                 the_posts_pagination( array(
-                    'screen_reader_text' => ' ', 
-                    'prev_text' => __( '<i class="fa fa-arrow-left" aria-hidden="true"></i>', 'best-classifieds' ),
-                   'next_text' => __( '<i class="fa fa-arrow-right" aria-hidden="true"></i>', 'best-classifieds' )));
-                ?>
-            </div>
-        </div><!-- and content -->
-        <?php if (get_theme_mod('sidebar_style', 'right_sidebar') == 'right_sidebar') { ?>
-            <!-- right sidebar -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="sidebar">
-                    <?php get_sidebar(); ?>     
-                </div>
-            </div> <!-- and right sidebar -->
-        <?php } ?>
-    </div><!-- and Main  -->
-</div>
+    
 <?php 
 }else{ 
   $theme_i = 0;  if(!get_theme_mod('frontpage_slider_sectionswitch',false)): ?>   
@@ -70,7 +16,7 @@ if(is_home()){ ?>
             <!--Wrapper for slides-->
             <div class="carousel-inner main-slide" role="listbox">
             <?php 
-            for ($theme_loop = 1; $theme_loop <= 5; $theme_loop++):  
+            for ($theme_loop = 1; $theme_loop <= 2; $theme_loop++):  
                 $sliderimage_image = wp_get_attachment_url(get_theme_mod ( 'homepage_sliderimage'.$theme_loop.'_image'));
                 $sliderimage_title = get_theme_mod ( 'homepage_sliderimage'.$theme_loop.'_title');
                 $sliderimage_subtitle = get_theme_mod ( 'homepage_sliderimage'.$theme_loop.'_subtitle','');
@@ -122,22 +68,11 @@ if(is_home()){ ?>
     <div class="filter-wrap">
         <div class="container">
             <div class="search-filter-title">
-                <h5><?php echo esc_html(get_theme_mod('homepage_search_area_title','Search Awesome Verified Ads!'));?></h5>
+                <h5><?php echo esc_html(get_theme_mod('homepage_search_area_title',esc_html__('Search Awesome Verified Ads!','best-classifieds') ));?></h5>
             </div>
             <div class="search-filter">
                 <div class="row">
-                    <form action="<?php echo esc_url(site_url()); ?>" role="search" method="get" id="searchformtop">
-                        <div class="filter-category">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">    
-                                   
-                                        <input type="search"  placeholder="<?php echo esc_attr(get_theme_mod('search_area_placeholder','What are you looking for?')); ?>" name="s" id="s" required="">
-                                    
-                            </div>                        
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <input type="submit" value="<?php echo esc_html(get_theme_mod('search_area_btn_title','Search')); ?>">
-                            </div>
-                        </div>
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>                
             </div>
         </div>
@@ -151,7 +86,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="main-heading">
                         <?php if(get_theme_mod('homepage_category_area_title','Categories')!=''): ?>
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_category_area_title','Categories')); ?></h1>                    
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_category_area_title',esc_html__('Categories','best-classifieds'))); ?></h1>                    
                         <div class="title-divider">
                             <span></span>
                         </div>
@@ -164,14 +99,14 @@ if(is_home()){ ?>
                     <?php $i= 1;
                      $args             = array('orderby'    => 'id','hide_empty' => 0,);
                      $categories       = get_categories( $args );
-                     foreach ( $categories as $category_list ) :
-                     $cat_img = wp_get_attachment_image_url(get_theme_mod('category_img_' .  $category_list->cat_ID )); 
+                     foreach ( $categories as $category_list ) :                    
                      if(get_theme_mod('category_switch_'.$category_list->cat_ID,false)): ?>
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="category-box">
-                            <?php if($cat_img!=''): ?>
+                            <?php if(get_theme_mod('category_img_'.$category_list->cat_ID,'fa fa-lightbulb-o' )!=''): ?>
                             <div class="category-icon">
-                                <a href="<?php echo esc_url(get_category_link($category_list->cat_ID));?>"><img src="<?php echo esc_url($cat_img); ?>"></a>
+                                <a href="<?php echo esc_url(get_category_link($category_list->cat_ID));?>" style="color:<?php echo esc_attr(get_theme_mod('category_color_'.$category_list->cat_ID,'#4396FF' )); ?>" ><i class="<?php echo esc_attr(get_theme_mod('category_img_'.$category_list->cat_ID,'fa fa-lightbulb-o' )); ?>" aria-hidden="true"></i>
+                                </a>
                             </div>
                         <?php endif; ?>
                             <div class="category-title">
@@ -200,7 +135,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="main-heading">
                         <?php if(get_theme_mod('homepage_keyfeature_title','Why we are best')!=''): ?>
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_keyfeature_title','Why we are best')); ?></h1>
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_keyfeature_title',esc_html__('Why we are best','best-classifieds'))); ?></h1>
                         <?php endif; if(get_theme_mod('homepage_keyfeature_title','Why we are best')!=''): ?>
                         <div class="title-divider">
                             <span></span>
@@ -220,7 +155,7 @@ if(is_home()){ ?>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="weAre-box">
                             <div class="weAre-icon">
-                                <i class="fa <?php echo esc_html(get_theme_mod('homepage_keyfeature'.$i.'_icon','fa-eye')); ?>" aria-hidden="true"></i>
+                                <i class="<?php echo esc_html(get_theme_mod('homepage_keyfeature'.$i.'_icon','fa fa-eye')); ?>" aria-hidden="true"></i>
                             </div>                            
                             <div class="weAre-title-content">
                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -228,7 +163,7 @@ if(is_home()){ ?>
                             </div>
                         </div>
                     </div>
-                    <?php $i++; endwhile; ?>
+                    <?php $i++; endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>
         <?php endif; ?>
@@ -251,7 +186,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <?php if(get_theme_mod('homepage_testimonial_section_title','Testimonials')!=''): ?>
                     <div class="main-heading">
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_testimonial_section_title','Testimonials')); ?></h1>
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_testimonial_section_title',esc_html__('Testimonials','best-classifieds'))); ?></h1>
                         <div class="title-divider">
                             <span></span>
                         </div>
@@ -273,7 +208,7 @@ if(is_home()){ ?>
                                 </div>
                             </div>
                         </div>                        
-                        <?php endwhile;?>
+                        <?php endwhile; wp_reset_postdata(); ?>
 
                     </div>
                 </div>
@@ -299,7 +234,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="main-heading">
                         <?php if(get_theme_mod('homepage_latest_blog_section_title','Latest Blog')!=''): ?>
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_latest_blog_section_title','Latest Blog')); ?></h1>
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_latest_blog_section_title',esc_html__('Latest Blog','best-classifieds'))); ?></h1>
                         <?php endif; if(get_theme_mod('homepage_latest_blog_section_title','Latest Blog')!=''): ?>
                         <div class="title-divider">
                             <span></span>
@@ -335,7 +270,7 @@ if(is_home()){ ?>
                             </div>
                         </div>
                     </div>
-                    <?php endwhile; ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>
         <?php endif; ?>

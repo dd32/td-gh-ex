@@ -21,7 +21,7 @@ function best_classifieds_widgets_init() {
         'after_title'           => '</h2>',
     ) );
     register_sidebar( array(
-        'name'                  => __( 'Footer 1', 'best-classifieds' ),
+        'name'                  => esc_html__( 'Footer 1', 'best-classifieds' ),
         'id'                    => 'footer-1',
         'romana_description'    => esc_html__( 'Add widgets here to appear in your footer.', 'best-classifieds' ),
         'before_widget'         => '<div id="%1$s" class="%2$s footer-widget">',
@@ -64,8 +64,8 @@ add_action( 'widgets_init', 'best_classifieds_widgets_init' );
 function best_classifieds_default_menu() {
     $html = '<ul id="menu-main-menu" class="offside nav navbar-nav">';
     $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
-    $html .= '<a href="' . esc_url(home_url()) . '" title="' . esc_attr('Home', 'best-classifieds') . '">';
-    $html .= esc_html('Home', 'best-classifieds');
+    $html .= '<a href="' . esc_url(home_url()) . '" title="' . esc_attr__('Home', 'best-classifieds') . '">';
+    $html .= esc_html__('Home', 'best-classifieds');
     $html .= '</a>';
     $html .= '</li>';
     $html .= '</ul>';
@@ -77,7 +77,7 @@ function best_classifieds_default_menu() {
  */
 function best_classifieds_pingback_header() {
     if ( is_singular() && pings_open() ) {
-        printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+        printf( '<link rel="pingback" href="%s">' . "\n", esc_url(get_bloginfo( 'pingback_url' )) );
     }
 }
 add_action( 'wp_head', 'best_classifieds_pingback_header' );
@@ -166,17 +166,17 @@ function best_classifieds_required_plugins() {
     if (class_exists('TGM_Plugin_Activation')) {
         $plugins = array(
             array(
-                'name' => __('Page Builder by SiteOrigin', 'best-classifieds'),
+                'name' => esc_html__('Page Builder by SiteOrigin', 'best-classifieds'),
                 'slug' => 'siteorigin-panels',
                 'required' => false,
             ),
             array(
-                'name' => __('SiteOrigin Widgets Bundle', 'best-classifieds'),
+                'name' => esc_html__('SiteOrigin Widgets Bundle', 'best-classifieds'),
                 'slug' => 'so-widgets-bundle',
                 'required' => false,
             ),
             array(
-                'name' => __('Contact Form 7', 'best-classifieds'),
+                'name' => esc_html__('Contact Form 7', 'best-classifieds'),
                 'slug' => 'contact-form-7',
                 'required' => false,
             ),
@@ -190,8 +190,8 @@ function best_classifieds_required_plugins() {
             'is_automatic' => false,
             'message' => '',
             'strings' => array(
-                'page_title' => __('Install Recommended Plugins', 'best-classifieds'),
-                'menu_title' => __('Install Plugins', 'best-classifieds'),
+                'page_title' => esc_html__('Install Recommended Plugins', 'best-classifieds'),
+                'menu_title' => esc_html__('Install Plugins', 'best-classifieds'),
                 'nag_type' => 'updated'
             )
         );

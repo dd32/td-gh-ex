@@ -19,19 +19,19 @@ if ( comments_open()) : ?>
 			<?php $best_classifieds_comments_number = get_comments_number();
 				if ( '1' === $best_classifieds_comments_number ) {
 					/* translators: %s: post title */
-					printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'best-classifieds' ), get_the_title() );
+					printf( esc_html(_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'best-classifieds' )), esc_html(get_the_title()) );
 				} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
-						_nx(
+						esc_html(_nx(
 							'%1$s Reply to &ldquo;%2$s&rdquo;',
 							'%1$s Replies to &ldquo;%2$s&rdquo;',
 							$best_classifieds_comments_number,
 							'comments title',
 							'best-classifieds'
-						),
-						number_format_i18n( $best_classifieds_comments_number ),
-						get_the_title()
+						)),
+						absint(number_format_i18n( $best_classifieds_comments_number )),
+						esc_html(get_the_title())
 					);
 				} ?>
 		</h2>

@@ -2,11 +2,7 @@
 /**
 * Customization options
 **/
-function best_classifieds_color_escaping_option_sanitize( $input ) {
-    $input = esc_attr( $input );
 
-    return $input;
-  }
 function best_classifieds_posts_category(){
   $args = array('parent' => 0);
   $categories = get_categories($args);
@@ -79,7 +75,7 @@ $wp_customize->add_control('frontpage_slider_sectionswitch',
         'type'       => 'checkbox',        
     )
 );
- for($i=1;$i <= 5;$i++):  
+ for($i=1;$i <= 2;$i++):  
 
     $wp_customize->add_setting(
         'homepage_sliderimage'.$i.'_image',
@@ -284,24 +280,48 @@ $wp_customize->add_control( 'homepage_category_area_title',
   $args             = array('orderby'    => 'id','hide_empty' => 0,);
   $categories       = get_categories( $args );$wp_category_list = array();
   foreach ( $categories as $category_list ) {
-    $wp_category_list[ $category_list->cat_ID ] = $category_list->cat_name;
-     $wp_customize->add_setting(
-        'category_img_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
-        array(            
-            'capability'     => 'edit_theme_options',
-            'sanitize_callback' => 'absint',
-        )
-    );
-    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'category_img_' . get_cat_id( $wp_category_list[ $category_list->cat_ID ] ), array(
-        'section'     => 'category_color_setting',
-        'label'       => __( 'Upload Icon Image Of ' ,'best-classifieds').$wp_category_list[ $category_list->cat_ID ],
-        'flex_width'  => true,
-        'flex_height' => true,
-        'width'       => 64,
-        'height'      => 64,   
-        'default-image' => '',
-    ) ) );
+    $wp_category_list[ $category_list->cat_ID ] = $category_list->cat_name;     
 
+    // Icon
+    $wp_customize->add_setting(
+      'category_img_'.get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
+      array(
+          'default'           => 'fa fa-lightbulb-o',
+          'sanitize_callback' => 'sanitize_text_field',
+          'transport'         => 'postMessage'
+      )
+    );
+    $wp_customize->add_control(
+      new Best_classifieds_Fontawesome_Icon_Chooser(
+      $wp_customize,
+      'key_feature_icon'. get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
+        array(
+            'settings'        => 'category_img_'. get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
+            'section'         => 'category_color_setting',
+            'label'           => $wp_category_list[ $category_list->cat_ID ] . esc_html__( ' Category Icon & Color ', 'best-classifieds') ,
+        )
+      )
+    );
+    //color
+    $wp_customize->add_setting(
+	    'category_color_'. get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
+	    array(
+	        'default' => '#4396FF',
+	        'capability'     => 'edit_theme_options',
+	        'sanitize_callback' => 'sanitize_hex_color',
+	    )
+	);
+	$wp_customize->add_control(
+	  new WP_Customize_Color_Control(
+	    $wp_customize,
+	    'category_color_'. get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
+	    array(
+	        
+	        'section' => 'category_color_setting',
+	        'priority' => 10
+	    )
+	  )
+	);
 
     $wp_customize->add_setting(
       'category_switch_'. get_cat_id( $wp_category_list[ $category_list->cat_ID ] ),
@@ -319,7 +339,7 @@ $wp_customize->add_control( 'homepage_category_area_title',
             'type'       => 'checkbox',
         )
     );
-    $i ++;
+    $i++;
   }
 
 /* Front page Key Feature section */
@@ -699,9 +719,9 @@ $wp_customize->add_control(
     'section' => 'blog_page_section',
     'label' => esc_html__( 'Sidebar Layout', 'best-classifieds' ),
     'choices' => array(
-      'right_sidebar' => 'Right',
-      'left_sidebar' => 'Left',
-      'no_sidebar' => 'Full',
+      'right_sidebar' => esc_html__( 'Right', 'best-classifieds' ),
+      'left_sidebar' => esc_html__( 'Left', 'best-classifieds' ),
+      'no_sidebar' => esc_html__( 'Full', 'best-classifieds' ),
       )
   ) );
   // End Blog Listing Section
@@ -744,9 +764,9 @@ $wp_customize->add_control(
     'section' => 'single_page_section',
     'label' => esc_html__( 'Sidebar Layout', 'best-classifieds' ),
     'choices' => array(
-      'right_sidebar' => 'Right',
-      'left_sidebar' => 'Left',
-      'no_sidebar' => 'Full',
+      'right_sidebar' => esc_html__( 'Right', 'best-classifieds' ),
+      'left_sidebar' => esc_html__( 'Left', 'best-classifieds' ),
+      'no_sidebar' => esc_html__( 'Full', 'best-classifieds' ),
     )
   ) );
   // End Blog Page Section
