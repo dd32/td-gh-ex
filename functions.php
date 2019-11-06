@@ -60,7 +60,7 @@ function best_classifieds_admin_menu( ) {
 }
 function best_classifieds_pro_buy_now(){ ?>
 <div class="best_classifieds_pro_version">
-  <a href="<?php echo esc_url('https://cipherthemes.com/wordpress-themes/best-classifieds-pro/'); ?>" target="_blank">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/best-classifieds-pro/'); ?>" target="_blank">
     <img src ="<?php echo esc_url( get_template_directory_uri().'/assets/images/best-classifieds-pro-features.png' ); ?>" width="70%" height="auto" />
   </a>
 </div>
