@@ -4,7 +4,7 @@ Theme URI:
 Author: wpmwa
 Author URI: http://mywebapp.in/
 Description: Astral is a free version  WordPress theme. It is a multi-purpose theme for blog, Education, News, Entertainment etc. You can create a beautiful homepage contain slider, callout, services, blogs, contact section. Support easy to use customization theme options. Astral theme also support Elementor plugin and contact form 7 plugin. Theme contains custom template page full width and page with left sidebar. 
-Version: 0.8
+Version: 0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: right-sidebar, left-sidebar, custom-logo,  custom-header, custom-menu, editor-style, full-width-template, featured-images,  sticky-post, translation-ready, Blog, Entertainment, News
@@ -2482,6 +2482,33 @@ ul.social-network a {
     color: #fff;
     padding: 10px;
     font-size: 22px;
+}
+
+/* Keyboard Navigation */
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    padding: 6px;
+    font-size: 15px;
+    background: #f8f9fa;
+    position: absolute !important;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    color: #21759b;
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
 }
 
 @media (min-width: 992px){

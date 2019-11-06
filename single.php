@@ -21,6 +21,7 @@ do_action( 'astral_top_banner' );
 */
 do_action( 'astral_breadcrumb_area' );
 ?>
+<div id="content">
     <section class="align-blog" id="blog">
         <div class="container">
             <div class="row">
@@ -50,5 +51,6 @@ do_action( 'astral_breadcrumb_area' );
             </div>
         </div>
     </section>
+</div>
 <?php
 get_footer();

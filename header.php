@@ -25,7 +25,10 @@ do_action( 'astral_action_doctype' );
 ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); 
+<?php wp_body_open(); ?>
+<a class="skip-link screen-reader-text" href="#content">
+<?php _e( 'Skip to content', 'astral' ); ?></a>
+<?php
 /*
 * Functions hooked into astral_body_start action
 *
