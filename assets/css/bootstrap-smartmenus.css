@@ -44,8 +44,7 @@ Name: bootstrap-smartmenus.css
 .site-branding-text .site-description {
 	line-height: 1.4;
 	padding-top: 0.063rem;
-}
-.navbar-brand .custom-logo, 
+} 
 .navbar.header-fixed-top .sticky-navbar-brand .custom-logo { 
 	max-width: 100%;
 	display: block;
