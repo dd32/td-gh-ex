@@ -240,16 +240,6 @@ ul.recent-meta-info li a:hover {
     border-color: #ee591f ;
 }
 
-.widget-newsletter .subscribe {
-    color: #ee591f ;
-    border-color: #ee591f ;
-}
-
-.widget-newsletter .subscribe:hover {
-    background: #ee591f ;
-}
-
-
 ul.widget-social li a:hover {
     color: #ee591f ;
 }
