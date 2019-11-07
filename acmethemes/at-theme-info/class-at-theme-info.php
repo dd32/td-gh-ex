@@ -211,6 +211,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                 if ( ! empty( $welcome_content ) ) {
                     echo '<div class="about-text">' . wp_kses_post( $welcome_content ) . '</div>';
                 }
+                $notice_nag = get_option( 'acmeblog_admin_notice_welcome' );
                 if ( ! $notice_nag ) {
                     echo '<div class="at-gsm-notice">
                         <small class="plugin-install-notice">'.esc_html__('Clicking the button below will install and activate the Advanced Import plugin.','acmeblog').'</small>
