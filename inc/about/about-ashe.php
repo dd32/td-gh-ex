@@ -72,17 +72,10 @@ function ashe_about_page_output() {
 				<div class="column-width-3">
 					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
 					<p>
-						<?php esc_html_e( 'Install the Demo Content in 2 clicks. Just click the button below to install demo import plugin and wait a bit to be redirected to the demo import page.', 'ashe' ); ?>
+						<?php esc_html_e( 'If you are a WordPress beginner it\'s highly recomended to install the theme Demo Content. This file includes: Menus, Posts, Pages, Widgets, etc.', 'ashe' ); ?>
 					</p>
 
-					<?php if ( is_plugin_active( 'one-click-demo-import/one-click-demo-import.php' ) ) : ?>
-						<a href="<?php echo admin_url( '/themes.php?page=pt-one-click-demo-import' ); ?>" class="button button-primary demo-import"><?php esc_html_e( 'Go to Import page', 'ashe' ); ?></a>
-					<?php elseif ( ashe_check_installed_plugin( 'one-click-demo-import', 'one-click-demo-import' ) ) : ?>
-						<button class="button button-primary demo-import" id="ashe-demo-content-act"><?php esc_html_e( 'Activate Demo Import Plugin', 'ashe' ); ?></button>
-					<?php else: ?>
-						<button class="button button-primary demo-import" id="ashe-demo-content-inst"><?php esc_html_e( 'Install Demo Import Plugin', 'ashe' ); ?></button>
-					<?php endif; ?>
-					<a href="<?php echo esc_url('https://www.youtube.com/watch?v=ZCrRuCuM6oA') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Video Tutorial', 'ashe' ); ?></a>
+					<a href="<?php echo esc_url('https://wp-royal.com/themes/ashe/democontent/ashe_free_demo_content.html?ref=ashe-free-backend-about-section-demo-import-btn') ?>" target="_blank" class="button button-primary import-video"><span class="dashicons dashicons-video-alt3"></span><?php esc_html_e( 'Demo Import Video Tutorial', 'ashe' ); ?></a>
 				</div>
 
 				<div class="column-width-3">
@@ -216,7 +209,7 @@ function ashe_about_page_output() {
 
 				<div class="column-width-4">
 					<h3><?php esc_html_e( 'Demo Content', 'ashe' ); ?></h3>
-					<a class="button button-primary" target="_blank" href="https://www.youtube.com/watch?v=ZCrRuCuM6oA"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
+					<a class="button button-primary" target="_blank" href="https://youtu.be/ih0A79PY9bc"><?php esc_html_e( 'Watch Video', 'ashe' ); ?></a>
 					<a class="button button-secondary" href="<?php echo esc_url(admin_url('themes.php?page=about-ashe&tab=ashe_tab_1')); ?>"></span><?php esc_html_e( 'Get Started', 'ashe' ); ?></a>
 				</div>
 				<div class="column-width-4">
@@ -566,106 +559,6 @@ function ashe_plugin_auto_activation() {
 
 }
 add_action( 'wp_ajax_ashe_plugin_auto_activation', 'ashe_plugin_auto_activation' );
-
-// Import Plugin Data
-function ashe_import_demo_files() {
-	return array(
-		array(
-			'import_file_name'             => esc_html__( 'Import Demo Data', 'ashe' ),
-			'local_import_file'            => trailingslashit( get_template_directory() ) . 'inc/about/import/ashe-demo.xml',
-			'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'inc/about/import/ashe-widgets.wie',
-			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'inc/about/import/ashe-customizer.dat'
-		)
-	);
-}
-add_filter( 'pt-ocdi/import_files', 'ashe_import_demo_files' );
-
-function ashe_import_demo_files_filter( $default_text ) {
-
-	// Activate CF7 Plugin After Import
-	if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) {
-		$cf7_plugin_link = '';
-	} elseif ( ashe_check_installed_plugin( 'contact-form-7', 'wp-contact-form-7' ) ) {
-		$cf7_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=contact-form-7/wp-contact-form-7.php' ), 'activate-plugin_contact-form-7/wp-contact-form-7.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Contact Form 7', 'ashe' ) .'</a></li>';
-	} else {
-		$cf7_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=contact-form-7' ), 'install-plugin_contact-form-7' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Contact Form 7', 'ashe' ) .'</a></li>';
-	}
-
-	// Activate RPWWT Plugin After Import
-	if ( is_plugin_active( 'recent-posts-widget-with-thumbnails/recent-posts-widget-with-thumbnails.php' ) ) {
-		$rpwwt_plugin_link = '';
-	} elseif ( ashe_check_installed_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' ) ) {
-		$rpwwt_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=recent-posts-widget-with-thumbnails/recent-posts-widget-with-thumbnails.php' ), 'activate-plugin_recent-posts-widget-with-thumbnails/recent-posts-widget-with-thumbnails.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Recent Posts Widget with Thumbnails', 'ashe' ) .'</a></li>';
-	} else {
-		$rpwwt_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=recent-posts-widget-with-thumbnails' ), 'install-plugin_recent-posts-widget-with-thumbnails' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Recent Posts Widget with Thumbnails', 'ashe' ) .'</a></li>';
-	}
-
-	// Activate WPIW Plugin After Import
-	if ( is_plugin_active( 'instagram-feed/instagram-feed.php' ) ) {
-		$wpiw_plugin_link = '';
-	} elseif ( ashe_check_installed_plugin( 'instagram-feed', 'instagram-feed' ) ) {
-		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=instagram-feed/instagram-feed.php' ), 'activate-plugin_instagram-feed/instagram-feed.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Smash Balloon Social Photo Feed', 'ashe' ) .'</a></li>';
-	} else {
-		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=instagram-feed' ), 'install-plugin_instagram-feed' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Smash Balloon Social Photo Feed', 'ashe' ) .'</a></li>';
-	}
-
-	$activate_plugins_notice = '';
-	if ( $rpwwt_plugin_link !== '' || $wpiw_plugin_link !== '' ) {
-		/* translators: %s link */
-		$activate_plugins_notice = sprintf( __( 'Recommended (optional): Before you Import Demo Data to get the same demo as shown on our <a href="%s" target="_blank" >Theme Preview Page</a> you need to: ', 'ashe' ), esc_url('https://wp-royal.com/themes/ashe-free/demo/?ref=ashe-free-backend-about-section-one-click-demo-import') );
-	}
-
-	$default_text = substr($default_text, 159);
-
-	$default_text .= '<div class="ocdi__intro-text">';
-
-		if ( $wpiw_plugin_link !== '' || $cf7_plugin_link !== '' || $rpwwt_plugin_link !== '' ) {
-
-			$default_text .= '<h4>'. $activate_plugins_notice .'</h4>';
-
-			$default_text .= '<ul>';
-				$default_text .= $wpiw_plugin_link;
-				$default_text .= $cf7_plugin_link;
-				$default_text .= $rpwwt_plugin_link;
-			$default_text .= '</ul>';
-
-		}
-
-	$default_text .= '</div><hr>';
-
-	return $default_text; 
-}
-add_filter( 'pt-ocdi/plugin_intro_text', 'ashe_import_demo_files_filter' );
-
-// Actions after Import
-function ashe_after_import_setup() {
-	// Install Menus after Import
-	$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
-	$top_menu = get_term_by( 'name', 'Top Menu', 'nav_menu' );
-
-	set_theme_mod( 'nav_menu_locations', array(
-			'main' => $main_menu->term_id,
-			'top'  => $top_menu->term_id,
-		)
-	);
-
-	// Get Instagram Options
-	$instagram_options = get_option('sb_instagram_settings');
-	// Set Instagram Options
-	$instagram_options['sb_instagram_num'] = '9';
-	$instagram_options['sb_instagram_cols'] = '3';
-	$instagram_options['sb_instagram_image_padding'] = '0';
-	$instagram_options['sb_instagram_show_header'] = false;
-	$instagram_options['sb_instagram_show_btn'] = false;
-	$instagram_options['sb_instagram_show_follow_btn'] = false;
-	// Update Instagram Options
-	update_option( 'sb_instagram_settings', $instagram_options );
-}
-add_action( 'pt-ocdi/after_import', 'ashe_after_import_setup' );
-
-// Disable PT after Import Notice
-add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
-
 
 // enqueue ui CSS/JS
 function ashe_enqueue_about_page_scripts($hook) {
