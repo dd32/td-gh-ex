@@ -96,5 +96,10 @@ require_once acmeblog_file_directory('acmethemes/gutenberg/gutenberg-init.php');
  */
 require_once acmeblog_file_directory('acmethemes/metabox/metabox.php');
 
-/*themes info*/
-require_once acmeblog_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');
+/**
+ * Theme options page.
+ */
+if ( is_admin() ) {
+	require_once acmeblog_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');
+	require_once acmeblog_file_directory('acmethemes/admin-notice/class-acmeblog-notice-handler.php');
+}

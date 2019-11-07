@@ -22,9 +22,6 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
             $this->config = $config;
             $this->prepare_class();
 
-            /* activation notice */
-            add_action( 'load-themes.php', array( $this, 'activation_admin_notice' ) );
-
             /*admin menu*/
             add_action( 'admin_menu', array( $this, 'at_admin_menu' ) );
 
@@ -35,24 +32,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
             add_action( 'wp_ajax_at_theme_info_update_recommended_action', array( $this, 'update_recommended_action_callback' ) );
 
         }
-        /**
-         * Adds an admin notice upon successful activation.
-         */
-        public function activation_admin_notice() {
-            global $pagenow;
-            if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
-                add_action( 'admin_notices', array( $this, 'at_theme_info_welcome_admin_notice' ), 99 );
-            }
-        }
 
-        /**
-         * Display an admin notice linking to the about page
-         */
-        public function at_theme_info_welcome_admin_notice() {
-            echo '<div class="updated notice is-dismissible">';
-            echo ( '<p>' . sprintf( __('Welcome! Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our %2$swelcome page%3$s.','acmeblog'), $this->theme_name, '<a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-info' ) ) . '">', '</a>' ) . '</p><p><a href="' . esc_url( admin_url( 'themes.php?page=' . $this->theme_slug . '-info' ) ) . '" class="button" style="text-decoration: none;">' . sprintf( __('Get started with %s','acmeblog'), $this->theme_name ) . '</a></p>' );
-            echo '</div>';
-        }
 
         /**
          * Prepare and setup class properties.
@@ -220,7 +200,6 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                 ! empty( $this->tabs )
             ) {
                 echo '<div class="wrap about-wrap info-wrap epsilon-wrap">';
-
                 if ( ! empty( $welcome_title ) ) {
                     echo '<h1>';
                     echo esc_html( $welcome_title );
@@ -232,9 +211,15 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                 if ( ! empty( $welcome_content ) ) {
                     echo '<div class="about-text">' . wp_kses_post( $welcome_content ) . '</div>';
                 }
-
+                if ( ! $notice_nag ) {
+                    echo '<div class="at-gsm-notice">
+                        <small class="plugin-install-notice">'.esc_html__('Clicking the button below will install and activate the Advanced Import plugin.','acmeblog').'</small>
+                        <a class="at-gsm-btn button button-primary button-hero" href="#" data-name="" data-slug="" aria-label="'.esc_html__('Get started with AcmeBlog','acmeblog').'">
+                         '.esc_html__('Get started with AcmeBlog','acmeblog').'                   
+                         </a>
+                    </div>';
+                }
                 echo '<a href="https://www.acmethemes.com/" target="_blank" class="wp-badge epsilon-info-logo"></a>';
-
                 /*quick links*/
                 if( !empty( $quick_links ) && is_array( $quick_links ) ){
                     echo '<p class="quick-links">';
@@ -247,6 +232,7 @@ if ( ! class_exists( 'Acmeblog_Theme_Info' ) ) {
                     }
                     echo "</p>";
                 }
+
                 /* Display tabs */
                 if ( ! empty( $this->tabs ) ) {
                     $current_tab = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : 'getting_started';
@@ -1090,18 +1076,18 @@ $config = array(
 		    'id' => 'setting-image'
 	    ),
         'demo-content' => array(
-            'title' => esc_html__( 'Install Demo Setup','acmeblog' ),
-            'desc' => sprintf( esc_html__( 'For the demo content installation, install the Acme Demo Setup plugin, download demo content from %1$s here %2$s. Then go to "Acme Demo Setup" and import demo. ', 'acmeblog' ), '<a target="_blank" href="http://www.doc.acmethemes.com/acmeblog/#DummyData" >','</a>' ),
-            'id' => 'acme-demo-setup',
+            'title' => esc_html__( 'Install Gutentor','acmeblog' ),
+            'desc' => sprintf( esc_html__( 'Customize everything within default WordPress editor %1$s Gutentor : WordPress Page Builder with Unlimited Possibilities to Design %2$s.', 'acmeblog' ), '<a target="_blank" href="https://www.gutentor.com/" >','</a>' ),
+            'id' => 'gutentor',
             'check' =>  ( ( function_exists('acme_demo_setup_load_textdomain') )? true : false ),
-            'plugin_slug'   => 'acme-demo-setup',
+            'plugin_slug'   => 'gutentor',
         )
     ),
 
     // Plugins array.
     'recommended_plugins'        => array(
-        'acme-demo-setup' => array(
-            'slug' => 'acme-demo-setup'
+        'gutentor' => array(
+            'slug' => 'gutentor'
         )
     ),
 
