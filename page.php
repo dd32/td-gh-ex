@@ -14,7 +14,7 @@ get_header();
          <div id="post-title-shape"></div>
       </section>
       <!-- End Post Title  Area -->
-      <div class="blog-area section-spacing">
+      <div id="content" class="blog-area section-spacing">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">

@@ -11,6 +11,5 @@
            }
        ?>
       <h4 class="heading-4"><?php the_author(); ?></h4>
-      <h6 class="heading-6"><?php the_author_meta('job-status'); ?></h6>
    </div>
 </div>

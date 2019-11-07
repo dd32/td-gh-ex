@@ -10,7 +10,7 @@
       </section>
       
       <!-- End Post Title  Area -->
-      <div class="blog-area space-top">
+      <div id="content" class="blog-area space-top">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">

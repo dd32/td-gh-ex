@@ -10,11 +10,11 @@
       </section>
       
       <!-- End Post Title  Area -->
-      <div class="blog-area section-spacing">
+      <div id="content" class="blog-area section-spacing">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">
-                  <div class="<?php if (is_active_sidebar('axiohost-sidebar')){ echo 'col-md-7 col-lg-8'; }else{ echo 'col-md-10 mx-auto'; }?>">   
+                  <?php do_action( 'axiohost_full_post_column' ); ?>  
                      <div id="post-<?php the_ID(); ?>" <?php post_class();?>>
                             <?php 
                                  get_template_part('template-parts/content', 'content'); 

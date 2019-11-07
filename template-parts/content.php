@@ -9,7 +9,7 @@
                }
               ?>
                 
-                <div class="single-content">
+                <div class="single-content entry-content">
                      <?php 
                        the_content();
                        wp_link_pages( array(

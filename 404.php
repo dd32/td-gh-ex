@@ -10,7 +10,7 @@
       </section>
      
       <!-- End Post Title Area -->
-      <section class="blog-area section-spacing bg-color1">
+      <section id="content" class="blog-area section-spacing bg-color1">
          <div class="container">
             <div class="error-content">
                 <div class="error-logo"><img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/404.png'); ?>" alt="<?php esc_attr_e('404', 'axiohost'); ?>" /></div>

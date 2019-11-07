@@ -39,11 +39,10 @@
             </div>
         </div>
     </footer>
-    <?php 
-        if($axiohost['scroll-back-to-top'] == 1){ ?>          		
-			   <a id="scrollUp" href="#top" title="<?php esc_html_e('Scroll to top', 'axiohost'); ?>"><i class="fa fa-chevron-up"> </i></a>     			
-   <?php     }
-    ?>
+   
+    <?php if ( true == get_theme_mod( 'back_to_top') ) : ?>
+    	<a id="scrollUp" href="#top" title="<?php esc_html_e('Scroll to top', 'axiohost'); ?>"><i class="fa fa-chevron-up"> </i></a> 
+    <?php endif; ?>
     <!-- End Footer Area -->
     <?php wp_footer(); ?>
 

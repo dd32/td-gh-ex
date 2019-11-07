@@ -27,14 +27,14 @@
                             ?>
                            
                     	   	<ul class="recent-meta list-inline">
-                    			<li class="list-inline-item"><i class="fa fa-user"></i><?php the_author_posts_link(); ?></li>
-                    			<li class="list-inline-item"><i class="fa fa-comment"></i><?php comments_number(esc_html__('0 Comments', 'axiohost'), esc_html__('1 Comment','axiohost'),'%'.esc_html__(' Comments', 'axiohost')); ?></li>
+                    			<li class="list-inline-item"><i class="fa fa-user-o"></i><?php the_author_posts_link(); ?></li>
+                    			<li class="list-inline-item"><i class="fa fa-comment-o"></i><?php comments_number(esc_html__('0 Comments', 'axiohost'), esc_html__('1 Comment','axiohost'),'%'.esc_html__(' Comments', 'axiohost')); ?></li>
                     		 </ul>
                           
                                 <p>
                                     <?php 
-                                         if(class_exists('ReduxFrameworkPlugin')){
-                                             $axiohost_limit = $axiohost['except_limit'];
+                                         if(!empty(get_theme_mod( 'post_excerpt_limit'))){
+                                             $axiohost_limit = get_theme_mod( 'post_excerpt_limit');
                                          }
                                          else{
                                               $axiohost_limit = 30;   
@@ -47,8 +47,12 @@
                                          }
                                      ?>
                                 </p>
-                           
-                           <a class="blog-readmore-btn2" href="<?php the_permalink(); ?>"><?php if(class_exists('redux')){echo esc_html($axiohost['reade_more_label']);}else{ esc_html_e('Read More', 'axiohost'); } ?></a>
+                           <?php 
+                               if(true == get_theme_mod( 'readmore_switch')){?>
+                           <a class="blog-readmore-btn2" href="<?php the_permalink(); ?>"><?php if(!empty(get_theme_mod( 'read_more_label'))){echo esc_html(get_theme_mod( 'read_more_label'));}else{ echo esc_html__('Read More', 'axiohost'); } ?></a>
+                        <?php
+                               }
+                               ?>
                         </div>
                      </article>
           <?php endwhile;

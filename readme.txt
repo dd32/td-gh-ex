@@ -1,10 +1,10 @@
 === Axiohost ===
 
 Contributors: themeix
-Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, left-sidebar , right-sidebar,grid-layout,theme-options,blog
+Tags: blog, right-sidebar, footer-widgets, sticky-post, theme-options, full-width-template, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 Requires PHP: 5.6
 Author URI: https://themeix.com/
 Theme URI: https://axiohost-wp.themeix.com/
@@ -30,18 +30,57 @@ Axiohost is distributed under the terms of the GNU General Public License v2
 
 = Does this theme support any plugins? =
 
-Axiohost includes support for contact form 7.
+Axiohost includes support for contact form 7, Elementor Page Builder, Ajax Domain Checker, Redux Framework, Kirki Framework
 
 == Changelog ==
+= 1.0.12 =
+* Licensing information added
+* Font Changed to Open Sans
+* user_meta fields removed
+* FB Pixel, GA code removed from theme
+* Redux Framework Removed
+* admin init issue fixed
+* Font Awesome CDN call chaned to Local
+* remove_menu_page removed
+* All the scripts minified version added
+* Kirki Framework added
+* All the customizer option bug fixed
+* New options added in customizer
+* Design improved
+* Language file updated
+* Accessiblity added
+* Keyboard navigation bug fixed
+
+= 1.0.11 =
+* Sidebar bug fix
+* Removed commented code
+* Scroll to top text escaped 
+
+= 1.0.10 =
+* Bug Fixes 
+* Removed if/else condtion inside the tags
+
+= 1.0.9 =
+* Bug Fixes 
+
+= 1.0.8 =
+* Bug Fixes 
+* Few design issue fixed
+
+= 1.0.7 =
+* Bug Fixes 
 
 = 1.0.6 =
 * Bug Fixes 
+* wp_body_open added
  
 = 1.0.5 =
-* Bug Fixes  
+* Table of content added for stylesheet 
+* Style attributes changed with wp_inline_style
 
 = 1.0.4 =
-* Bug Fixes 
+* esc_attr function used for attributes only. [ File functions.php ]
+* WordPress core css itegrated
 
 = 1.0.3 =
 * Bug Fixes 
@@ -61,12 +100,11 @@ Axiohost Theme bundles the following third-party resources:
 
 == Javascript ==
 
-
 Bootstrap
 Licenses: MIT
 Source: http://getbootstrap.com/
 
-Font Awesome v5.8.1
+Font Awesome v4.7.0
 Licenses: MIT
 Source: http://fontawesome.io/
 
@@ -74,13 +112,20 @@ TGM Plugin Activation
 Source:  http://tgmpluginactivation.com/
 Licenses: GPLv2 or later
 
-== Images ==
+== Image Credit ==
 
-License: CC0
-Licesnse: https://unsplash.com/license
+https://stocksnap.io/photo/Z88YXBLD2D
+https://stocksnap.io/photo/42MI2XQAXN
+https://stocksnap.io/photo/KFRHTQDZYP
+https://stocksnap.io/photo/MWNSCH2DPP
+https://stocksnap.io/photo/E4OKNBGBYI
 
+- Screenshot and header banner
+
+== Illustration Credit ==
+https://undraw.co/license
 
 == Google Fonts ==
 
-Poppins ( https://fonts.google.com/specimen/Poppins )
+Open Sans ( https://fonts.google.com/specimen/Open+Sans )
 Licensed under Apache License, Version 2.0 ( http://www.apache.org/licenses/LICENSE-2.0 )

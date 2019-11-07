@@ -1,6 +1,6 @@
 <?php get_header(); ?>
       <!-- End Post Title Area -->
-      <section class="post-title-area bg-color2">
+      <section class="bg-color2 home-page">
           <div class="container">
             <div class="post-title-content">
                <h1 class="heading-1"><?php wp_title(' '); ?></h1>
@@ -10,7 +10,7 @@
       </section>
       
       <!-- End Post Title  Area -->
-      <div class="blog-area space-top">
+      <div id="content" class="blog-area space-top">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">
