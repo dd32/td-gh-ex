@@ -2,9 +2,9 @@
 /* General Options */
 function awada_theme_options()
 {
-	$banner_img = get_template_directory_uri() . '/images/banner.jpg';
+	//$banner_img = get_template_directory_uri() . '/images/banner.jpg';
     $awada_theme_options = array(
-        '_frontpage' => 1,
+        '_frontpage' => 0,
         'site_layout' => '',
 		'color_scheme'=>'default.css',
         'logo_layout' => 'left',
@@ -18,9 +18,9 @@ function awada_theme_options()
 		//Slider Settings:
         'home_slider_enabled' => 1,
 		'slider_style' => 2,
-        'slider_img_1'=>get_template_directory_uri().'/images/slider/s1.jpg',
-        'slider_img_2'=>get_template_directory_uri().'/images/slider/s2.jpg',
-        'slider_img_3'=>get_template_directory_uri().'/images/slider/s3.jpg',
+        'slider_img_1'=>get_template_directory_uri().'/images/slider/s.jpg',
+        'slider_img_2'=>get_template_directory_uri().'/images/slider/s.jpg',
+        'slider_img_3'=>get_template_directory_uri().'/images/slider/s.jpg',
         'slider_title_1'=>__('Lorem ipsum dolor','awada'),
         'slider_subtitle_1'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_1'=>__('Read More','awada'),
@@ -73,7 +73,7 @@ function awada_theme_options()
         'blog_more_loading'       => __('Loading', 'awada'),
         'blog_load_more_text'     => __('Load More', 'awada'),
 		/* footer callout */
-		'callout_bg_image' => $banner_img,
+		'callout_bg_image' => '',
 		'callout_external_bg_video'=>'',
         'home_callout_title' => __('Best Wordpress Resposnive Theme Ever!', 'awada'),
         'home_callout_description' => __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don\'t look even slightly believable If you are going to use a passage of Lorem Ipsum.', 'awada'),

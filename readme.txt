@@ -4,8 +4,8 @@ Contributors: WebHuntInfotech
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, portfolio
 Requires PHP: 5.2.4
 Requires at least: 4.0
-Tested up to: 5.2.3
-Stable tag: 2.1.2
+Tested up to: 5.2.4
+Stable tag: 2.1.3
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,9 +29,7 @@ Embedded Plugin
 ============================================
 Images Copyright/License Info
 ============================================
- * Screenshot images taken from https://pixabay.com/ with CC0 Public Domain License.
- * Portfolio Image taken from https://unsplash.com/photos/0K7GgiA8lVE with CC0 Public Domain License.
- * And all other images taken from http://pixabay.com/ & https://unsplash.com/ with CC0 Public Domain License.
+* Screenshot images taken from https://pxhere.com/en/photo/33.
 
 /***** BUNDELED CSS ***/
 

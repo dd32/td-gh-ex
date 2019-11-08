@@ -1,3 +1,6 @@
+###Version 2.1.3 [08-NOV-2019]
+* Removed all images that aren't GPL compatible.
+* Starter content removed.
 ###Version 2.1.2 [14-OCT-2019]
 * Footer option updated.
 * Minor bug fixed.
