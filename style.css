@@ -4,7 +4,7 @@ Theme URI:
 Author: wpmwa
 Author URI: http://mywebapp.in/
 Description: Astral is a free version  WordPress theme. It is a multi-purpose theme for blog, Education, News, Entertainment etc. You can create a beautiful homepage contain slider, callout, services, blogs, contact section. Support easy to use customization theme options. Astral theme also support Elementor plugin and contact form 7 plugin. Theme contains custom template page full width and page with left sidebar. 
-Version: 0.9
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: right-sidebar, left-sidebar, custom-logo,  custom-header, custom-menu, editor-style, full-width-template, featured-images,  sticky-post, translation-ready, Blog, Entertainment, News
@@ -2494,16 +2494,42 @@ ul li ul:hover {
 }
 
 /* Text meant only for screen readers. */
+
+/* Accessibility */
 .screen-reader-text {
-    padding: 6px;
-    font-size: 15px;
-    background: #f8f9fa;
-    position: absolute !important;
-    word-wrap: normal !important;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
-    color: #21759b;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
@@ -2511,9 +2537,16 @@ ul li ul:hover {
   outline: 0;
 }
 
-@media (min-width: 992px){
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 15px !important;
-    padding-left: .5rem;
+/* screen render ends here */
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
 }
+
+@media (min-width: 992px){
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding-right: 15px !important;
+		padding-left: .5rem;
+	}
 }
