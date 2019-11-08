@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, threaded
 
 Requires at least: 4.7
 Tested up to: 5.2.2
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,9 @@ https://demo.hamyarwp.com/archie/
 	One Click Demo Import is recommended to extract demo data for initial setup.
 
 == Changelog ==
+
+= 1.1.0 - Nov 7 2019 =
+* Updated Subscribe css
 
 = 1.0.9 - Sep 10 2019 =
 * Updated 404 css
