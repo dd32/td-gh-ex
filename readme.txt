@@ -1,6 +1,30 @@
---------------------------------------------------------------------------------
- Licenses:
---------------------------------------------------------------------------------
+=== Atwood ===
+Contributors: themeora
+Requires at least: 4.9.1
+Tested up to: 5.2.3
+Requires PHP: 5.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+A simple, clean and fully responsive blog theme. Perfect for using as a started theme or for anyone who wants a nice and simple blog. Bloat free code with a strong framework.
+
+== Description ==
+
+A simple, clean and fully responsive blog theme. Perfect for using as a started theme or for anyone who wants a nice and simple blog. Bloat free code with a strong framework.
+
+== Installation ==
+
+1. Sign into your WordPress dashboard, go to Appearance > Themes, and click Add New.
+2. Click Add New.
+3. Click Upload.
+4. Click Choose File and select the theme zip file you downloaded.
+5. Click Install Now.
+6. Click Add New, then click Upload, then click Choose File.
+7. After WordPress installs the theme, click Activate.
+8. You've successfully installed your new theme!
+
+== Resources ==
+
 This theme is licensed under GNU General Public License v2.0
 
 The resources used in this theme are all GPL-compatible:
@@ -27,17 +51,30 @@ Moderniser is licenced under the MIT licence
 
 Respond.js has a duel MIT/BSD license
 
-Retina.js is licenced under MIT 
+Retina.js is licenced under MIT
 https://github.com/imulus/retinajs/blob/master/LICENSE
 
+Screenshot images are from stockSnap.io and licenced under the CC0 License
+
+https://stocksnap.io/photo/KWVTIEAN3M
+https://stocksnap.io/photo/SVXFGAE7NB
+https://stocksnap.io/photo/26TCI436RB
+https://stocksnap.io/photo/V1XVGEFUP0
+https://stocksnap.io/photo/SH9D3TMYID
+https://stocksnap.io/photo/NLD7XULIEB
+https://stocksnap.io/photo/SPYOGV0DTL
+https://stocksnap.io/photo/SVXFGAE7NB
 
 Other icons and images are created by Themeora and licensed under GPL.
 --------------------------------------------------------------------------------
 
 
---------------------------------------------------------------------------------
-Changelog
---------------------------------------------------------------------------------
+== Changelog ==
+
+v1.2.6
+- Tweak: minor style fixes
+- Tweak: removed redundant customizer options
+- Bug fix: Removed video widget
 
 v1.2.5
 - Bug fix: Removed test data being returned in footer copyright

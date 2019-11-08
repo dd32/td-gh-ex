@@ -7,10 +7,10 @@
                 <?php if ( ! have_posts() ) : ?>
                     <h1 class="title">
                         <i class="fa fa-exclamation-circle"></i>
-                        <?php _e('Sorry! We cant find that page!', THEMEORA_THEME_NAME); ?>
+                        <?php _e('Sorry! We cant find that page!', 'atwood'); ?>
                     </h1>
                     <div class="well">
-                        <p><?php _e( 'Why not try searching for the page you want?', THEMEORA_THEME_NAME ); ?></p>
+                        <p><?php _e( 'Why not try searching for the page you want?', 'atwood' ); ?></p>
                         <?php get_search_form(); ?>
                     </div>
                 <?php endif; ?>

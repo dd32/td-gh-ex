@@ -4,7 +4,7 @@
     <div class="container">
         <?php if ( have_posts() ) : ?>
             <?php the_post(); ?>
-            <h1 class="archive-title"><?php printf( __( 'All posts by %s', THEMEORA_THEME_NAME ), get_the_author() ); ?></h1>
+            <h1 class="archive-title"><?php printf( __( 'All posts by %s', 'atwood' ), get_the_author() ); ?></h1>
             <?php rewind_posts(); ?>
         <?php endif; ?>
             

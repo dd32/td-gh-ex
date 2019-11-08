@@ -349,26 +349,6 @@ msgstr ""
 msgid "Custom CSS Editor"
 msgstr ""
 
-#: ../framework/inc/widgets/widget-video.php:25
-msgid "A simple video widget that makes it easy to add responsive videos "
-msgstr ""
-
-#: ../framework/inc/widgets/widget-video.php:27
-msgid "themeora Video Widget"
-msgstr ""
-
-#: ../framework/inc/widgets/widget-video.php:61
-msgid "Enter a title (if required) and embed URL of a video here:"
-msgstr ""
-
-#: ../framework/inc/widgets/widget-video.php:64
-msgid "Title:"
-msgstr ""
-
-#: ../framework/inc/widgets/widget-video.php:69
-msgid "Video Embed Code:"
-msgstr ""
-
 #: ../includes/functions-templates.php:12
 msgid "Sticky"
 msgstr ""

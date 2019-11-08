@@ -2,8 +2,8 @@
 -------------------------------------------------------------- */
 
 body {
-    font: 16px/30px 'Source Sans Pro',sans-serif;
-    color: #565656;
+    font: 16px/26px 'Source Sans Pro',sans-serif;
+    color: #4e4e4e;
     font-weight: 300;
 }
 
@@ -35,11 +35,23 @@ a:hover {
     transition: none;
 }
 
+h1 a, h1 a:hover, h1 a:focus, h1 a:active, h1 a:visited,
+h2 a, h2 a:hover, h2 a:focus, h2 a:active, h2 a:visited,
+h3 a, h3 a:hover, h3 a:focus, h3 a:active, h3 a:visited,
+h4 a, h4 a:hover, h4 a:focus, h4 a:active, h4 a:visited,
+h5 a, h5 a:hover, h5 a:focus, h5 a:active, h5 a:visited,
+h6 a, h6 a:hover, h6 a:focus, h6 a:active, h6 a:visited
+{
+    color: #252525;
+    margin-top: 0;
+    font-weight: bold;
+}
+
 /* =Headings
 -------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
-    color: #414142;
+    color: #252525;
     margin-top: 0;
     font-weight: bold;
 }
@@ -80,7 +92,7 @@ h6 {
 /* Helpers
 ---------------------------------------------------------------- */
 
-.wp-caption-text, 
+.wp-caption-text,
 .gallery-caption {
     font-size:12px;
     color:#555;
@@ -106,13 +118,13 @@ img {
     height: auto;
 }
 
-.img-left, 
+.img-left,
 .alignleft {
     float: left;
     margin: 0 20px 20px 0;
 }
 
-.img-right, 
+.img-right,
 .alignright {
     float: right;
     margin: 0 0 25px 20px;
@@ -167,14 +179,14 @@ ul, ol {
 }
 
 /* second level */
-ul li ul, 
+ul li ul,
 ol li ol {
     margin: 0;
 }
 
 /* third level */
-ul li ul li ul, 
-ol li ol li ol { 
+ul li ul li ul,
+ol li ol li ol {
     margin: 0;
 }
 
@@ -193,7 +205,7 @@ ul.list-group {
     margin-bottom: 30px;
 }
 
-table > tbody > tr:nth-child(2n+1) > td, 
+table > tbody > tr:nth-child(2n+1) > td,
 table > tbody > tr:nth-child(2n+1) > th {
     background-color: #F9F9F9;
 }
@@ -215,7 +227,7 @@ thead th {
     padding: 4px 10px;
 }
 
-tbody th, 
+tbody th,
 tbody td {
     padding: 4px 10px;
 }

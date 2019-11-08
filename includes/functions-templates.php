@@ -9,15 +9,15 @@ if ( ! function_exists( 'themeora_entry_meta' ) ) :
  */
 function themeora_entry_meta($shorten = false) {
 	if ( is_sticky() && is_home() && ! is_paged() )
-		echo '<span class="featured-post">' . __( 'Sticky', THEMEORA_THEME_NAME ) . '</span>';
+		echo '<span class="featured-post">' . __( 'Sticky', 'atwood' ) . '</span>';
 
 	if ( 'post' == get_post_type() ) {
         echo '<div class="meta">';
-            echo __('Posted on', THEMEORA_THEME_NAME) . ' ';
-            echo get_the_time('jS') . ' ' . get_the_time('F') . ', ' . __('by', THEMEORA_THEME_NAME) . ' ' ;
+            echo __('Posted on', 'atwood') . ' ';
+            echo get_the_time('jS') . ' ' . get_the_time('F') . ', ' . __('by', 'atwood') . ' ' ;
             the_author_posts_link(); 
             if ( !$shorten ) {
-                echo ' ' . __('in', THEMEORA_THEME_NAME) . ' '; 
+                echo ' ' . __('in', 'atwood') . ' '; 
                 the_category(', ') . ' ' ;
             }
             ?>
@@ -35,13 +35,13 @@ if ( ! function_exists( 'themeora_entry_date' ) ) :
  */
 function themeora_entry_date( $echo = true ) {
 	if ( has_post_format( array( 'chat', 'status' ) ) )
-		$format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', THEMEORA_THEME_NAME );
+		$format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', 'atwood' );
 	else
 		$format_prefix = '%2$s';
 
 	$date = sprintf( '<span class="date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
 		esc_url( get_permalink() ),
-		esc_attr( sprintf( __( 'Permalink to %s', THEMEORA_THEME_NAME ), the_title_attribute( 'echo=0' ) ) ),
+		esc_attr( sprintf( __( 'Permalink to %s', 'atwood' ), the_title_attribute( 'echo=0' ) ) ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date() ) )
 	);
@@ -73,10 +73,10 @@ function themeora_post_nav() {
         <nav class="navigation post-navigation styled-box" role="navigation">
             <div class="nav-links row-fluid">
                 <div class="col-md-6 col-sm-6 col-xs-6 nav-links-prev">
-                    <?php previous_post_link( '%link', _x( '<i class="fa fa-arrow-circle-left"></i> Last Post', 'Previous post link', THEMEORA_THEME_NAME ) ); ?>
+                    <?php previous_post_link( '%link', _x( '<i class="fa fa-arrow-circle-left"></i> Last Post', 'Previous post link', 'atwood' ) ); ?>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 nav-links-next">
-                    <?php next_post_link( '%link', _x( 'Next Post <i class="fa fa-arrow-circle-right"></i>', 'Next post link', THEMEORA_THEME_NAME ) ); ?>
+                    <?php next_post_link( '%link', _x( 'Next Post <i class="fa fa-arrow-circle-right"></i>', 'Next post link', 'atwood' ) ); ?>
                 </div>
             </div><!-- .nav-links -->
         </nav><!-- .navigation -->
@@ -96,7 +96,7 @@ function themeora_post_tags() {
 	global $post;
     if( get_theme_mod( 'show_tags' ) == true && has_tag() && is_singular() ) {
         echo '<div class="styled-box post-tags">';
-        echo the_tags( '<h3>' . __('Tagged As', THEMEORA_THEME_NAME) . '</h3>', '', '' );
+        echo the_tags( '<h3>' . __('Tagged As', 'atwood') . '</h3>', '', '' );
         echo '</div>';
     }
 }
@@ -114,15 +114,15 @@ function themeora_post_author_meta() {
         if ( 'post' == get_post_type() && get_the_author_meta('first_name') != '' && get_the_author_meta('last_name') != '') { ?>
             <div class="post-author styled-box">
                 <?php echo get_avatar( get_the_author_meta('ID'), 80 ); ?>
-                <h2><?php _e('Author', THEMEORA_THEME_NAME) ?>: <a href="<?php echo home_url(); ?>/?author=<?php the_author_meta('ID'); ?>" title="<?php _e('Posts by ', THEMEORA_THEME_NAME); the_author_meta('first_name'); print ' '; the_author_meta('last_name'); ?>">
+                <h2><?php _e('Author', 'atwood') ?>: <a href="<?php echo home_url(); ?>/?author=<?php the_author_meta('ID'); ?>" title="<?php _e('Posts by ', 'atwood'); the_author_meta('first_name'); print ' '; the_author_meta('last_name'); ?>">
                 <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></h2>
                 <p><?php the_author_meta('description'); ?></p>
                 <a href="<?php echo home_url(); ?>/?author=<?php the_author_meta('ID'); ?>">
                 <?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?>
-                <?php _e('has', THEMEORA_THEME_NAME); ?>
+                <?php _e('has', 'atwood'); ?>
                 <?php the_author_posts(); ?> 
                 <?php
-                count_user_posts( get_the_author_meta('ID') ) == 1 ? _e('article', THEMEORA_THEME_NAME) : _e('articles', THEMEORA_THEME_NAME);
+                count_user_posts( get_the_author_meta('ID') ) == 1 ? _e('article', 'atwood') : _e('articles', 'atwood');
                 ?></a>.
             </div>
         <?php
@@ -147,15 +147,15 @@ function themeora_paging() {
 	?>
     <div class="article_nav">
         <nav class="navigation paging-navigation" role="navigation">
-            <h2 class="screen-reader-text"><?php _e( 'Posts navigation', THEMEORA_THEME_NAME ); ?></h2>
+            <h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'atwood' ); ?></h2>
             <div class="nav-links post-navigation styled-box">
                 <div class="row-fluid">
                     <?php if ( get_previous_posts_link() ) : ?>
-                    <div class="span6 pull-left nav-links-prev"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-arrow-circle-left"></i>', THEMEORA_THEME_NAME ) ); ?></div>
+                    <div class="span6 pull-left nav-links-prev"><?php previous_posts_link( __( 'Newer posts <i class="fa fa-arrow-circle-left"></i>', 'atwood' ) ); ?></div>
                     <?php endif; ?>
 
                     <?php if ( get_next_posts_link() ) : ?>
-                    <div class="span6 pull-right nav-links-next"><?php next_posts_link( __( '<i class="fa fa-arrow-circle-right"></i> Older posts', THEMEORA_THEME_NAME ) ); ?></div>
+                    <div class="span6 pull-right nav-links-next"><?php next_posts_link( __( '<i class="fa fa-arrow-circle-right"></i> Older posts', 'atwood' ) ); ?></div>
                     <?php endif; ?>
                 </div>
             </div><!-- .nav-links -->
@@ -219,7 +219,7 @@ if ( ! function_exists( 'themeora_excerpt_more' ) ) :
  */
 
 function themeora_excerpt_more() {
-	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. __('...read more', THEMEORA_THEME_NAME) . '</a>';
+	return ' <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">'. __('...read more', 'atwood') . '</a>';
 }
 endif;
 
@@ -253,7 +253,7 @@ function themeora_default_page_loop( $page = null, $sidebar = null ) {
                                     
                                 <?php endwhile; ?>
                             <?php else : ?>
-                                <?php _e('No posts found', THEMEORA_THEME_NAME); ?>
+                                <?php _e('No posts found', 'atwood'); ?>
                             <?php endif; ?>
                         </div>
                     </article><!-- end col-md-8 / col-md-12 -->

@@ -8,7 +8,7 @@
                     <span>
                         <!-- search title -->
                         <?php if ( is_search() ) :	?>
-                            <?php _e('Search Results for', THEMEORA_THEME_NAME); ?> 
+                            <?php _e('Search Results for', 'atwood'); ?> 
                             '<?php the_search_query() ?>'
                         <?php endif; ?>
 
@@ -36,7 +36,7 @@
                         </article><!-- end post-teaser -->
                     <?php endwhile; ?>
                 <?php else: ?>
-                    <?php _e('Sorry, nothing was found. Please try again.', THEMEORA_THEME_NAME); ?>
+                    <?php _e('Sorry, nothing was found. Please try again.', 'atwood'); ?>
                 <?php endif; ?>
     			<!-- end page content -->
 			</div><!-- end span8 -->

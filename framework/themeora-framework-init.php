@@ -8,11 +8,6 @@ if ( !defined( 'WP_THEME_URL' ) ) {
     define( 'WP_THEME_URL', get_template_directory_uri() );
 }
 
-/* Define theme name */
-if ( !defined( 'THEMEORA_THEME_NAME' ) ) {
-    define( "THEMEORA_THEME_NAME", 'Atwood' );
-}
-
 // Directory location constants
 define('PARENT_DIR', get_template_directory());
 define('CHILD_DIR', get_stylesheet_directory());
@@ -88,7 +83,7 @@ function themeora_theme_supports($group, $feature) {
     $setup = themeora_feature_setup();
     if (isset($setup[$group][$feature]) && $setup[$group][$feature])
         return true;
-    else {     
+    else {
     }
 }
 
@@ -108,7 +103,7 @@ function themeora_load_framework() {
     if (themeora_theme_supports('primary', 'customizer')) {
         require( THEMEORA_CUSTOMIZER_DIR . '/themeora-customizer.php' );
         require( THEMEORA_CUSTOMIZER_DIR . '/themeora-customizer-css.php' );
-        
+
         //CUSTOMIZER CSS
         function themeora_customizer_ui_css() {
             wp_register_style('customizer-ui-css', get_template_directory_uri() . '/framework/assets/css/customizer-ui.css', 'all');

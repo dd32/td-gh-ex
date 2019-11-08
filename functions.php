@@ -14,20 +14,20 @@ if ( file_exists( get_template_directory(). '/framework/themeora-framework-init.
 if ( ! function_exists( 'themeora_theme_setup' ) ) :
 
     function themeora_theme_setup() {
-    
-        /* Register Navigation 
+
+        /* Register Navigation
         ------------------------------------------------------------------------------*/
         register_nav_menus( array(
-            'primary_menu' => __( 'Primary Menu', 'Primary Menu' )
+            'primary_menu' => __( 'Primary Menu', 'atwood' )
         ));
-        
+
         /* Load editor style
         ------------------------------------------------------------------------------*/
         add_editor_style( 'custom-editor-style.css' );
 
         /* Load text domain
         ------------------------------------------------------------------------------*/
-        load_theme_textdomain(THEMEORA_THEME_NAME, WP_THEME_URL . "/languages/");
+        load_theme_textdomain('atwood', WP_THEME_URL . "/languages/");
 
         /* Add various theme support options
         ----------------------------------------------------------------------------- */
@@ -37,7 +37,8 @@ if ( ! function_exists( 'themeora_theme_setup' ) ) :
         add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
         add_theme_support( 'custom-background' );
         add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'quote', 'video', 'link' ) );
-        
+        add_theme_support( "title-tag" );
+
         $defaults = array(
             'default-image'          => '',
             'random-default'         => false,
@@ -52,7 +53,7 @@ if ( ! function_exists( 'themeora_theme_setup' ) ) :
             'admin-head-callback'    => '',
             'admin-preview-callback' => '',
         );
-        
+
         add_theme_support( 'custom-header', $defaults );
 
         /* Setup the post thumbnail size for the theme.
@@ -84,10 +85,10 @@ if ( ! function_exists( 'themeora_enqueue_scripts' ) ) :
         wp_enqueue_style( 'themeora-fontAwesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
         wp_enqueue_style( 'themeora-typography', get_template_directory_uri() . '/css/typography.css' );
         wp_enqueue_style( 'themeora-theme-style', get_template_directory_uri() . '/css/styles.css' );
-        
+
         //load jquery validate
         wp_enqueue_script( 'jqueryValidate', get_template_directory_uri() . '/js/jquery.validate.min.js', array( 'jquery' ), null, true );
-        
+
         //load bootstraps javascript file
         wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), null, true );
 
@@ -113,7 +114,7 @@ function themeora_head_js() {
     echo '<script src="' . esc_url( get_template_directory_uri() . '/js/respond.js' ) . '"></script>' . "\n";
     echo '<![endif]-->' . "\n";
 }
-add_action( 'wp_head', 'themeora_head_js' ); 
+add_action( 'wp_head', 'themeora_head_js' );
 
 
 if ( ! function_exists( 'themeora_widgets_init' ) ) :
@@ -122,14 +123,14 @@ if ( ! function_exists( 'themeora_widgets_init' ) ) :
     ------------------------------------------------------------------------------- */
 
     function themeora_widgets_init() {
-        
+
         /* Register widget areas
         --------------------------------------------------------------------------*/
 
         register_sidebar( array(
-            'name' => __( 'Blog Sidebar', THEMEORA_THEME_NAME ),
+            'name' => __( 'Blog Sidebar', 'atwood' ),
             'id' => 'blog-sidebar',
-            'description' => __( 'Default blog sidebar stuff', THEMEORA_THEME_NAME ),
+            'description' => __( 'Default blog sidebar stuff', 'atwood' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="">',
@@ -137,9 +138,9 @@ if ( ! function_exists( 'themeora_widgets_init' ) ) :
         ));
 
         register_sidebar( array(
-            'name' => __( 'Page Sidebar', THEMEORA_THEME_NAME ),
+            'name' => __( 'Page Sidebar', 'atwood' ),
             'id' => 'page-sidebar',
-            'description' => __( 'Default page sidebar stuff', THEMEORA_THEME_NAME ),
+            'description' => __( 'Default page sidebar stuff', 'atwood' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="">',
@@ -147,9 +148,9 @@ if ( ! function_exists( 'themeora_widgets_init' ) ) :
         ));
 
         register_sidebar( array(
-            'name' => __( 'Footer Left Widget', THEMEORA_THEME_NAME ),
+            'name' => __( 'Footer Left Widget', 'atwood' ),
             'id' => 'footer-widget-left',
-            'description' => __( 'Footer left side widget', THEMEORA_THEME_NAME ),
+            'description' => __( 'Footer left side widget', 'atwood' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="">',
@@ -157,9 +158,9 @@ if ( ! function_exists( 'themeora_widgets_init' ) ) :
         ));
 
         register_sidebar( array(
-            'name' => __( 'Footer Right Widget', THEMEORA_THEME_NAME ),
+            'name' => __( 'Footer Right Widget', 'atwood' ),
             'id' => 'footer-widget-right',
-            'description' => __( 'Footer right side widget', THEMEORA_THEME_NAME ),
+            'description' => __( 'Footer right side widget', 'atwood' ),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget' => '</div>',
             'before_title' => '<h3 class="">',

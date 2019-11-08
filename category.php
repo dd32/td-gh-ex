@@ -2,7 +2,7 @@
 
 <section class="full-width-container blog-section">
     <div class="container">
-        <h1 class="archive-title"><?php printf( __( 'Posts On %s', THEMEORA_THEME_NAME ), single_cat_title( '', false ) ); ?></h1>
+        <h1 class="archive-title"><?php printf( __( 'Posts On %s', 'atwood' ), single_cat_title( '', false ) ); ?></h1>
         <?php if ( category_description() ) : // Show an optional category description ?>
             <div class="category-description"><?php echo category_description(); ?></div>
         <?php endif; ?>

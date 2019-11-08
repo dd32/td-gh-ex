@@ -4,13 +4,13 @@
     <div class="container">
         <h1 class="archive-title"><?php
             if ( is_day() ) :
-                printf( __( 'Posts for %s', THEMEORA_THEME_NAME ), get_the_date() );
+                printf( __( 'Posts for %s', 'atwood' ), get_the_date() );
             elseif ( is_month() ) :
-                printf( __( 'Posts for %s', THEMEORA_THEME_NAME ), get_the_date( _x( 'F Y', 'monthly archives date format', 'themeora' ) ) );
+                printf( __( 'Posts for %s', 'atwood' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'atwood' ) ) );
             elseif ( is_year() ) :
-                printf( __( 'Posts for %s', THEMEORA_THEME_NAME ), get_the_date( _x( 'Y', 'yearly archives date format', 'themeora' ) ) );
+                printf( __( 'Posts for %s', 'atwood' ), get_the_date( _x( 'Y', 'yearly archives date format', 'atwood' ) ) );
             else :
-                _e( 'Post Archive', THEMEORA_THEME_NAME );
+                _e( 'Post Archive', 'atwood' );
             endif;
         ?></h1>
 	    <div class="row">
