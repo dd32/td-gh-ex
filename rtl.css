@@ -30,12 +30,7 @@ img{
 section img{
   max-width:100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1,h2,h3,h4,h5,h6{
   font-family: 'Titillium Web', sans-serif;
   margin:0;
   padding:10px 0;
@@ -63,6 +58,10 @@ a:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
+input:focus, #comments:focus, textarea:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+} 
 ul{ 
   margin:0 15px 0 0; 
   padding:0;
@@ -75,6 +74,15 @@ ul{
 }
 .clear{ 
   clear:both;
+}
+input.search-field {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  background: transparent;
+  width: 100%;
+  font-size: 20px;
+  font-style: italic;
+  color: #999
 }
 input[type='submit']:hover{
   cursor: pointer;
@@ -209,7 +217,7 @@ input[type="submit"] {
   text-align:center;
   text-transform:uppercase;
   font-size:12px;
-  padding: 18px 30px; 
+  padding: 13px 30px; 
   background: #88d055;
   font-weight:bold;
   color: #fff;
@@ -331,7 +339,7 @@ button.search-submit {
   border: 0;
   background: transparent;
 }
-input.search-field {
+.serach_inner input.search-field {
   border: none;
   padding: 4px 0;
   background: transparent;
@@ -366,6 +374,7 @@ input.search-field {
 #header {
   background: #fff;
 }
+
 /* --------- MENUS CSS --------- */
 #mySidenav {
   display: inline;
@@ -376,13 +385,12 @@ ul.list_nav {
   display: block;
 }
 .main-navigation ul{
-  list-style: none;
   margin: 0;
-  padding-right: 0;  
-  /*float: left;*/
+  padding: 0;
 }
 .main-navigation li{
   display: inline-block;
+  position: relative;
 }
 .main-navigation a{
   color: #b1b6b9;
@@ -399,35 +407,68 @@ ul.list_nav {
   transition: 1s;
 }
 .main-navigation a:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
 }
 .main-navigation ul ul{
   display: none;
   position: absolute;
-  background: #010203;
+  background: #fff;
   min-width: 200px;
   z-index: 9999;
+  top: 70%;
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-top-color: #88d055;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-bottom-color: #88d055;
+  line-height: 30px;
+  border-radius: 5px;
+}
+.main-navigation ul ul li{
+  border-bottom: 1px solid #eaeaea;
 }
 .main-navigation ul ul ul{
   right: 100%;
-  top: 0;
+  top: 0%;
 }
 .main-navigation ul ul a{
-  color: #fff;
+  color: #000 ;
   border: none;
-  padding: 10px 10px;
-  border: none !important;
+  padding: 5px 10px ;
+  margin-top: 5px;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
 }
 .main-navigation ul.sub-menu a:hover{
-  color: #fff !important ;
+  color: #88d055;
+  padding-right: 50px !important;
+  border-bottom: none;
+  transition: all .5s ease;
 }
-.main-navigation ul.sub-menu li:hover{
-  background: #88d055;
+.main-navigation ul.sub-menu>li>a:before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  margin-top: 15px;
+  right: 0;
+  opacity: 0;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  background: #222;
 }
-.main-navigation ul.sub-menu a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
+.main-navigation ul.sub-menu>li>a:hover:before {
+  opacity: 1;
+  right: 15px;
+  width: 20px;
+}
+.main-navigation ul ul a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
 }
 .main-navigation ul ul li{
   float: none;
@@ -451,15 +492,6 @@ ul.list_nav {
 }
 /*--------------- SUPERFISH MENU ---------------------------*/
 
-.sf-arrows .sf-with-ul:after{
-  content: '';
-  position: absolute;
-  left: 0;
-  margin-top: -2px;
-  height: 0;
-  width: 0;
-  border-top-color: #e1e1e1;
-}
 .sf-arrows ul .sf-with-ul:after{
   margin-top: -5px;
   margin-left: -3px;
@@ -605,6 +637,58 @@ ul.list_nav {
 iframe,
 .entry-audio audio{
   width: 100%;
+}
+/*---------Sticky Header---------*/
+.header-fixed {
+  position: fixed;
+  top:0; right:0;
+  width: 100%;
+  background: #fff;
+  z-index: 999999;
+  border-bottom: 2px solid #88d055;
+  padding: 5px;
+}
+/*----------- PRELOADER ----------*/
+
+#preloader  {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99;
+  height: 100%;
+}
+#status  {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px -100px 0 0;
+}
+/* Footer Section */
+.scrollup i {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 50px;
+  left: 100px;
+  font-size: 20px;
+  display: none;
+  color: #fff !important;
+  padding: 10px;
+  background: #88d055;
+}
+.scrollup.left i{
+  right: 100px;
+}
+.scrollup.center i{
+  right: 50%;
+  left: 50%;
 }
 /* --------- FOOTER ------- */
 #footer a:focus{
@@ -779,36 +863,42 @@ h1.page-title {
 .post-main-box:hover h3{
   color: #88d055;
 }
-.entry-content a{
+.entry-content a, .sidebar .textwidget p a, .textwidget p a, #comments p a, .slider .inner_carousel p a{
   color: #88d055;
   text-decoration: underline;
 }
 .tags {
-  padding-top: 20px;
+  padding-top: 10px;
 }
-.tags a{
+.tags a {
   text-decoration: none!important;
   font-weight: 400;
-  border-radius: 3px;
   color: #121212!important;
   background: #f8f8f8;
   border: 1px solid #ccc;
   box-shadow: 0 1px 0 rgba(0,0,0,.08);
   text-shadow: none;
-  line-height: 23px;
-  padding: 2px 10px 2px 10px;
+  line-height: 3.5;
+  padding: 8px;
   margin: 5px;
+  font-size: 15px;
 }
-.single-post p{
+.single-post .entry-content p{
   padding-top: 10px;
 }
 .entry-date a, .entry-author a{
   color: #b1b6b9;
 }
+.single-post .entry-date a, .single-post .entry-author a{
+  color: #000;
+}
 .single-post .post-info{
-  padding: 10px 0;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
+  color: #000;
+  clear: both;
+  font-size: 12px;
+  letter-spacing: 1px;
+  background: #f1f1f1;
+  padding: 10px;
   margin-bottom: 15px;
 }
 .post-info i{
@@ -853,7 +943,6 @@ h2#reply-title {
   font-size:20px;
   font-weight:bold;
   border-top:2px dotted #7e7e7e;
-  padding:40px 0 0 0;
 }
 #comments h3.comment-reply-title{
   font-size:20px;
@@ -876,35 +965,33 @@ h2#reply-title {
   font-size: 12px;
 }
 #comments a.comment-reply-link{
-  color:#000;
-  background:#cecece;
+  color:#fff;
+  background:#88d055;
   padding:5px 15px;
 }  
 #comments a.comment-reply-link:hover{
   background:#ddd;
+  color:#000;
 }
 #comments a time{
   color:#000;
   font-weight:bold;
   font-size:12px;
 }
-.content-vw #comments ol li{
+#comments ol li{
   width:100%;
-  background:none;
   list-style:none;
   margin: 0 0 20px;
   padding: 20px;
-  background:#eee;
+  background:#f8f8f8;
   display:inline-block;
-}  
-.content-vw #comments ul{
+  border: 1px solid #d6d6d6;
+}
+#comments ul{
   margin:0 40px 0 0;
 }
 #comments .reply{
   float:left;
-}
-#comments .comment-author{
-  width:100%;
 }
 #comments .comment-metadata{
   width:90%;
@@ -920,7 +1007,28 @@ h2#reply-title {
   width:100%;
   float:right;
 }
-
+/*----------single-post-comments---------*/
+.comments .comment-author, .comment-author.vcard {
+  width: 50%;
+  float: right;
+}
+.comment-meta.commentmetadata {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.comments p {
+  width: 90%;
+  float: right;
+}
+.comments .reply {
+  float: right;
+}
+.reply {
+  margin-bottom: 15px;
+  width: 100%;
+  float: right;
+}
 /* Sidebar */
 #sidebar .custom-social-icons {
   text-align: center;
@@ -1062,9 +1170,8 @@ h2#reply-title {
 }
 
 /*------------ PAGE CSS -------------*/
-.error404,
-.error404 p {
-  text-align: center !important;
+.error404{
+  text-align: center;
 }
 .content-vw p{
   text-align:justify;
@@ -1073,7 +1180,7 @@ h2#reply-title {
   margin:0 0 20px 0;
 }
 .content-vw h1{
-  font-size: 50px;
+  font-size: 35px;
 }
 .content-vw h2{
   font-size:32px;
@@ -1124,7 +1231,12 @@ h2#reply-title {
 .read-moresec{
   margin:2% 0;
 }
-
+.page-content, .page-content p {
+  text-align: center;
+}
+.page-content p {
+  margin: 0;
+}
 /*------------- PAGINATION CSS --------------*/
 .pagination {
   clear:both;
@@ -1180,13 +1292,12 @@ h2#reply-title {
 .post-navigation a { 
   color: #010203; 
   display: block; 
-  padding: 1.75em 0;
 }
 .post-navigation span { 
   display: block; 
 }
 .post-navigation .meta-nav { 
-  color: #686868; 
+  color: #b1b6b9; 
   font-size: 13px;
   letter-spacing: 0.076923077em; 
   line-height: 1.6153846154; 
@@ -1194,7 +1305,6 @@ h2#reply-title {
   text-transform: uppercase; 
 }
 .post-navigation .post-title {
-  display: inline; 
   font-size: 15px; 
   font-weight: 700;  
   line-height: 1.2173913043; 
@@ -1275,7 +1385,51 @@ h2#reply-title {
 .post-navigation .prev {
   left: 54px;
 }
-
+/*------single-post-pagination------*/
+.post-navigation a {
+  color: #1a1a1a;
+  display: block;
+}
+.nav-next {
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.nav-previous {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+.nav-next span.meta-nav:after{
+  content: "\f30b";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.nav-previous span.meta-nav:before{
+  content: "\f30a";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.post-navigation span.meta-nav {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 0;
+  padding: 15px;
+}
+.post-navigation span { 
+  display: block;
+}
+.post-navigation .post-title {
+  display:none;
+}
 /*------------- WOOCOMMERCE CSS --------------*/
 .woocommerce ul.products li.product .button,
 a.checkout-button.button.alt.wc-forward {
@@ -1384,10 +1538,10 @@ span.posted_in {
 nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-MyAccount-content a, .woocommerce-info a, .woocommerce-privacy-policy-text a, td.product-name a, a.shipping-calculator-button{
   text-decoration: none !important;
 }
+
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width:720px) {
-  #slider .inner_carousel,
-  .search-box,.logo,
+  #slider .inner_carousel,.logo,
   #topbar .custom-social-icons{
     text-align: center;
   }
@@ -1429,41 +1583,39 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
   #slider .inner_carousel p{
     display:none;
   }
+  .middle-align {
+    padding: 20px 20px 20px;
+  }
+  .toggle-nav{
+    text-align: center;
+  }
 }
 @media screen and (max-width: 424px){
   #slider .carousel-caption {
     top: 35%;
   }
 }
-@media screen and (max-width: 575px){
-  .middle-align {
-    padding: 20px 20px 20px;
-  }
-}
-/*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
   a.closebtn.mobile-menu:focus{
-    outline: 1px dotted #fff;
-    border-bottom: 1px solid #fff;
+    outline: 1px dotted #000;
+    border-bottom: 1px solid #000;
+  }
+  #header{
+    background: transparent;
   }
   .toggle-nav {
     display: none;
     position: relative;
-    /*float: left;*/
-    height: 30px;
-    width: 30px;
     cursor: pointer;
-    margin: 0 auto;
-    z-index: 999999;
     text-align: left;
-    left: 0;
-    top: 20px;
   }
   .toggle-nav i {
-    font-size: 32px;
-    color: #000;
-    /*margin: 10px 0px;*/
+    font-size: 15px;
+    color: #fff;
+    padding: 15px;
+    background:#88d055;
+    border-radius: 50%;
   }
   .toggle-nav button {
     background: transparent;
@@ -1473,24 +1625,21 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 9999999;
+    z-index: 1; 
+    right: 0;
     top: 0;
-    left: 0;
-    background-color: #252525;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     transition: 0.5s;
-    padding-top: 60px;
+    overflow-y: scroll;
+    background: #fff ;
   }
   .sidenav .closebtn {
     position: absolute;
-    top: -10px;
     left: 25px;
     font-size: 36px;
-    margin-right: 50px;
     display: block !important;
-    color: #ffffff;
-    border:none;
-    background: transparent;
+    color: #000;
+    padding: 0;
   }
   .sidenav #site-navigation {
     width: 100%;
@@ -1508,47 +1657,61 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
     color: black;
   }
   .main-navigation ul{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center; 
+    margin-top: 0px;
     float: none;
   }
   .main-navigation ul ul li{
     display: block;
   }
   .menubar .nav ul li{
-    border-top:1px #303030 solid; 
+    border-top:1px #f1f1f1 solid; 
     display:block;
   }
   .main-navigation ul li a{
-    display:block;
-    color:#ffffff;
-    border:none;
-    padding: 10px 15px;
-  }
-  .main-navigation ul li ul,
-  .main-navigation ul li ul ul{ 
-    display:block !important;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+    display: block; 
+    transition: 0.3s;
+    float: none;
+    margin: 5px 0;
+    border-left: none;
   }
   .main-navigation ul li ul li a:before{
     content:"\00BB \00a0";
   }
-  .main-navigation ul li ul li a{
+  .main-navigation ul.sub-menu a:hover{
     padding-right:20px !important;
-  }
-  .main-navigation ul li ul li ul li a{
-    padding-right:30px !important;
-  }  
-  .main-navigation ul li ul, 
-  .main-navigation ul li ul ul {
-    display: block !important;
-    opacity: 1 !important;
+    background: #fff !important;
   }
   .main-navigation ul ul{
     position: static;
     width: 100%;
-    background: #252525 !important;
+    background: transparent;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    box-shadow: none;
+  }
+  .main-navigation ul ul a{
+    border-bottom: none;
+    text-align: center;
+    padding-right: 40px;
+  }
+  .main-navigation ul ul ul.sub-menu a{
+    padding-right: 40px;
   }
   .main-navigation li{
     padding: 0;
     display: block;
+    text-align: center;
+  } 
+  .main-navigation ul li:last-child{
+    border-bottom: 1px #f1f1f1 solid;
   }
   .main-header-box{
     padding-bottom: 15px;
@@ -1559,6 +1722,46 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
   }
   .main-menu {
     padding: 0em;
+    padding-top: 50px;
+  }
+  .main-navigation ul.sub-menu>li>a:before {
+    content: unset;
+  }
+  .main-navigation ul.sub-menu>li>a:hover:before {
+    opacity: 0;
+    right: 0px;
+    width: 0px;
+  }
+  #mySidenav {
+    transition: all 0.5s ease-in-out;
+    cursor: zoom-in;
+    z-index: 999999;
+    width: 100%;
+    top: -110%;
+  }
+  .sf-arrows .sf-with-ul:hover:after,
+  .main-navigation ul li li:hover .sf-with-ul:after{
+    content: '\f107';
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Free';
+    color: #000;
+  }
+  .sf-arrows .sf-with-ul:after{
+    content: '\f106';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top-color: #e1e1e1;
+    color: #000;
+    font-weight: 600;
+    font-family: 'Font Awesome 5 Free';
+    margin-top: 0px;
+    font-size: 12px;
+    padding: 0px 10px;
+  }
+  .search-box {
+    margin: 0;
+    text-align: right;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px){
@@ -1611,24 +1814,4 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
 a[href^=tel] {
   color:inherit;
   text-decoration: none;
-}
-/* Footer Section */
-.scrollup i {
-  width: 40px;
-  height: 40px;
-  position: fixed;
-  bottom: 50px;
-  left: 100px;
-  font-size: 20px;
-  display: none;
-  color: #fff !important;
-  padding: 10px;
-  background: #88d055;
-}
-.scrollup.left i{
-  right: 100px;
-}
-.scrollup.center i{
-  right: 50%;
-  left: 50%;
 }

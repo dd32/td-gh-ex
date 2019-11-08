@@ -9,13 +9,29 @@ jQuery(function($){
 });
 
 function menu_openNav() {
-	document.getElementById("mySidenav").style.width = "250px";
+	document.getElementById("mySidenav").style.top ="0";
 }
 function menu_closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("mySidenav").style.top = "-110%";
 }
 
 (function( $ ) {
+
+	// makes sure the whole site is loaded
+	jQuery(window).load(function() {
+        // will first fade out the loading animation
+	    jQuery("#status").fadeOut();
+	        // will fade out the whole DIV that covers the website.
+	    jQuery("#preloader").delay(1000).fadeOut("slow");
+	})
+
+	$(window).scroll(function(){
+	  var sticky = $('.header-sticky'),
+	      scroll = $(window).scrollTop();
+
+	  if (scroll >= 100) sticky.addClass('header-fixed');
+	  else sticky.removeClass('header-fixed');
+	});
 
 	/**** Hidden search box ***/
 	jQuery('document').ready(function($){

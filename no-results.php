@@ -6,7 +6,7 @@
  */
 ?>
 
-<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'automotive-centre' ); ?></h1>
+<h2 class="entry-title"><?php esc_html_e( 'Nothing Found', 'automotive-centre' ); ?></h2>
 
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 	<p><?php printf( esc_html__( 'Ready to publish your first post? Get started here.', 'automotive-centre' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
