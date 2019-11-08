@@ -11,20 +11,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php do_action('attesa_before_page_content'); ?>
-	<?php
-		$attesa_featImagePages = apply_filters( 'attesa_page_featured_image_style', attesa_options('_featimage_style_pages', 'content') );
-		$attesa_featImageTitle = apply_filters( 'attesa_title_featured_image_style_page', attesa_options('_featimage_style_pages_title', 'insidecontent') );
-	?>
+	<?php $attesa_featImagePages = apply_filters( 'attesa_page_featured_image_style', attesa_options('_featimage_style_pages', 'content') ); ?>
 	<header class="entry-header">
-		<?php
-		if ($attesa_featImageTitle == 'insideheader' && $attesa_featImagePages == 'header' && '' != get_the_post_thumbnail()) {
-			the_title( '<span class="entry-title hidden" '. attesa_get_schema_markup('name') .'>', '</span>' );
-		} else {
-			the_title( '<h1 class="entry-title" '. attesa_get_schema_markup('name') .'>', '</h1>' );
-		}
-		?>
+		<?php do_action('attesa_entry_header'); ?>
 	</header><!-- .entry-header -->
-
 	<?php
 		if ($attesa_featImagePages == 'content') {
 			attesa_post_thumbnail();

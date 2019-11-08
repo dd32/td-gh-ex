@@ -961,3 +961,25 @@ function attesa_logo_on_scroll() {
 	}
 	return apply_filters( 'attesa_logo_on_scroll_filter', $logoAlternative );
 }
+
+/* Create the header for posts and pages */
+add_action('attesa_entry_header', 'attesa_get_entry_header');
+function attesa_get_entry_header() {
+	if ( 'post' === get_post_type() ) :
+		$attesa_featImageTitle = apply_filters( 'attesa_title_featured_image_style', attesa_options('_featimage_style_posts_title', 'insidecontent') ); 
+		$attesa_featImage = apply_filters( 'attesa_post_featured_image_style', attesa_options('_featimage_style_posts', 'content') ); ?>
+		<div class="entry-meta smallText">
+			<?php
+			attesa_posted_on();
+			?>
+		</div><!-- .entry-meta -->
+	<?php else:
+		$attesa_featImageTitle = apply_filters( 'attesa_title_featured_image_style_page', attesa_options('_featimage_style_pages_title', 'insidecontent') );
+		$attesa_featImage = apply_filters( 'attesa_page_featured_image_style', attesa_options('_featimage_style_pages', 'content') );
+	endif;
+	if ($attesa_featImageTitle == 'insideheader' && $attesa_featImage == 'header' && '' != get_the_post_thumbnail()) {
+		the_title( '<span class="entry-title hidden" '. attesa_get_schema_markup('name') .'>', '</span>' );
+	} else {
+		the_title( '<h1 class="entry-title" '. attesa_get_schema_markup('name') .'>', '</h1>' );
+	}
+}

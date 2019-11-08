@@ -11,27 +11,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php do_action('attesa_before_post_content'); ?>
-	<?php
-		$attesa_featImagePosts = apply_filters( 'attesa_post_featured_image_style', attesa_options('_featimage_style_posts', 'content') );
-		$attesa_featImageTitle = apply_filters( 'attesa_title_featured_image_style', attesa_options('_featimage_style_posts_title', 'insidecontent') );
-	?>
+	<?php $attesa_featImagePosts = apply_filters( 'attesa_post_featured_image_style', attesa_options('_featimage_style_posts', 'content') ); ?>
 	<header class="entry-header">
-		<?php
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta smallText">
-				<?php
-				attesa_posted_on();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif;
-		if ('post' === get_post_type() && $attesa_featImageTitle == 'insideheader' && $attesa_featImagePosts == 'header' && '' != get_the_post_thumbnail()) {
-			the_title( '<span class="entry-title hidden" '. attesa_get_schema_markup('name') .'>', '</span>' );
-		} else {
-			the_title( '<h1 class="entry-title" '. attesa_get_schema_markup('name') .'>', '</h1>' );
-		}
-		?>
+		<?php do_action('attesa_entry_header'); ?>
 	</header><!-- .entry-header -->
 	<?php
 		if ('post' === get_post_type() && $attesa_featImagePosts == 'content') {
