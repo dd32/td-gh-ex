@@ -65,6 +65,7 @@ function arrival_customize_register( $wp_customize ) {
 	}
 
 
+if( ! class_exists('Arrival_Companion') ):
 	// Register custom section types.
 	$wp_customize->register_section_type( 'Arrival_Customize_Section_Pro' );
 
@@ -97,6 +98,7 @@ function arrival_customize_register( $wp_customize ) {
 		)
 	);
 
+endif;
 
 }
 add_action( 'customize_register', 'arrival_customize_register' );
