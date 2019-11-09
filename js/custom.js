@@ -49,6 +49,7 @@
 			}
 
 			function dropdoenMenu() {
+
 				$( "a.dropdown-toggle" ).on(
 					"click",
 					function (e) {
@@ -57,6 +58,8 @@
 						}
 					}
 				)
+
+
 			}
 
 			function navInSidebar() {
@@ -65,6 +68,7 @@
 			}
 
 			function fixeDropdowns() {
+
 				$( ".dropdown-menu" ).on(
 					"mouseenter",
 					function () {
@@ -72,8 +76,10 @@
 						e.offset().left + e.width() + e.find( "li:first" ).width() < $( "body" ).width() ? e.find( ".dropdown-menu" ).removeClass( "dropdown-right" ).addClass( "dropdown-left" ).removeClass( "fadeInRight" ).addClass( "fadeInLeft" ) : e.find( ".dropdown-menu" ).removeClass( "dropdown-left" ).addClass( "dropdown-right" ).removeClass( "fadeInLeft" ).addClass( "fadeInRight" )
 					}
 				)
+
 			}
 
+			/*
 			function scrollEffect() {
 				var e = $( window ),
 					t = $( ".header-controller" ),
@@ -97,6 +103,8 @@
 					}
 				)
 			}
+			*/
+
 
 			function getProgress(e) {
 				for ($text = "", $x = 0; $x < e; $x++) {

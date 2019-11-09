@@ -4,9 +4,9 @@ Theme URI: https://imtiazshamim.com/aari
 Author: Imtiaz Shamim
 Author URI: https://imtiazshamim.com
 Description: Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to blogs. Aari provides a responsive layout with unlimited colors. It allows you to change the way you introduce posts for pictures and texts for an appealing look. It is modern, clean, colorful and responsive. The feature includes a full-width template, sidebar template, custom widgets, post carousel, image lightbox, etc.
-Version: 2.1.0
+Version: 2.2.0
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aari
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
@@ -46,6 +46,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Normalize
 --------------------------------------------------------------*/
 
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -53,6 +54,7 @@ html {
 }
 body {
 	margin: 0;
+
 }
 article,
 aside,
@@ -393,35 +395,42 @@ textarea {
 --------------------------------------------------------------*/
 
 /* Text meant only for screen readers. */
-
 .screen-reader-text {
+	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
+	clip-path: inset(50%);
 	height: 1px;
-	width: 1px;
+	margin: -1px;
 	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
 	word-wrap: normal !important;
 	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
+
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color:#fd4145;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 1px 3px 0px
+	rgba(106, 106, 106, 0.6);
 	clip: auto !important;
-	color: #21759b;
+	clip-path: none;
+	color:#fff;
 	display: block;
 	font-size: 14px;
 	font-size: 0.875rem;
-	font-weight: bold;
+	font-weight: 400;
 	height: auto;
-	left: 5px;
+	right: 20px;
 	line-height: normal;
-	padding: 15px 23px 14px;
+	padding: 10px 15px 10px;
 	text-decoration: none;
-	top: 5px;
+	top: 20px;
 	width: auto;
 	z-index: 100000;
-	/* Above WP toolbar. */
+	border: 1px solid
+	#fd4145;
 }
 /* Do not show the outline on the skip link target. */
 
@@ -447,7 +456,6 @@ textarea {
 }
 .alignleft,
 .alignright {
-	max-width: 636px;
 	/* Let's work to make this !important unnecessary */
 }
 .alignleft figcaption {
@@ -612,8 +620,8 @@ object {
 	width: 100%
 }
 .gallery-caption {} .gallery-columns-2 .gallery-item {
-	max-width: 50%;
-}
+						max-width: 50%;
+					}
 .gallery-columns-3 .gallery-item {
 	max-width: 33.3333333333%;
 }
@@ -658,12 +666,42 @@ object {
 	font-weight: 500;
 	font-size: 14px;
 }
+
 .main_p .entry_header_small .catloud {
 	margin-bottom: 10px;
 }
+
 figure {
-	width: auto !important;
+	width: auto;
 }
+
+
+/*
+figure.wp-block-image.alignwide {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+figure.wp-block-image.alignfull {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+*/
+
+
+.post_info_wrapper {
+	display: inline-block;
+	width: 100%;
+}
+
+.post_info_wrapper .page-links {
+	clear: both;
+}
+
+.entry-content .post_bottom_meta {
+	margin-bottom: 20px;
+}
+
 .bypostauthor {
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
@@ -678,3 +716,30 @@ figure {
 	text-transform: none;
 	vertical-align: top;
 }
+
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 37.5em) {
+	.main-navigation ul {
+		display: inherit;
+	}
+
+	.main-navigation ul li ul.dropdown-menu {
+		display: none;
+	}
+
+	.main-navigation ul li:focus-within ul.dropdown-menu {
+		display: block;
+	}
+	.main-navigation ul li a:focus-within ul.dropdown-menu {
+		display: block;
+	}
+	.main-navigation ul li a:focus ul.dropdown-menu {
+		display: block;
+	}
+
+}
+

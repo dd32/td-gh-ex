@@ -11,6 +11,7 @@ get_header();
 
 
 <?php
+
 while ( have_posts() ) :
 	the_post();
 	?>
@@ -29,6 +30,7 @@ while ( have_posts() ) :
 	<div id="content_full" class="main_p main_p_v_2 section-padding">
 		<div class="container">
 			<div class="row <?php echo ( get_theme_mod( 'post_layout' ) !== 'fullwidth' ? 'sticky-container' : '' ); ?>">
+
 				<div class="content <?php echo ( get_theme_mod( 'post_layout' ) !== 'fullwidth' ? 'col-lg-8' : 'col-lg-12' ); ?>">
 					<div class="p_content entry_header_small">
 						<?php
@@ -46,6 +48,7 @@ while ( have_posts() ) :
 						?>
 					</div>
 				</div>
+
 
 				<!-- Side Bar -->
 				<?php

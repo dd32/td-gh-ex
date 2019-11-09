@@ -1,9 +1,11 @@
 === Aari ===
 Contributors: emtiaz51921
+Author URI: https://imtiazshamim.com/
+Donate link: https://imtiazshamim.com/contact/
 Requires at least: 4.0
-Tested up to: 5.2
-Requires PHP: 5.2
-Stable tag: 2.1.0
+Tested up to: 5.2.3
+Requires PHP: 5.5
+Stable tag: 2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -26,27 +28,42 @@ Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to b
 
 == Frequently Asked Questions ==
 
+= How to install Mythos theme=
+1. Login your WordPress dashboard.
+2. Go to "Appearance" -> "Theme" and click on "Add New" button.
+3. Click on "Upload Theme" button and choose the theme's zip file you have downloaded.
+4. Click on "Install Now" button.
+5. Activate the theme.
+6. Now go to "Appearance" -> "Customize" to configure theme options.
+
+Alternatively,
+
+1. Login to your WordPress dashboard.
+2. Go to "Appearance" -> "Theme" and click on "Add New" button.
+3. Search for "Mythos".
+4. Click on Install and Activate.
+
+If you need any help or assistance we'd be happy to help. Just drop a line here- https://imtiazshamim.com/contct
+
 = Does this theme support any plugins? =
 Aari includes support for Infinite Scroll in Jetpack.
+
 = Does this theme support gutenberg? =
 Yes.
+
 = Can I use woocommerce with this theme? =
 Not for now.
 
 
-== Changelog ==
+== Upgrade Notice ==
 
-= 1.0.0 - June 18 2019 =
-* Initial release
+= Method 1 =
+"Your site Address"/wp-admin/update-core.php
 
-= 1.0.1 - June 18 2019 =
-* Fix the error Tags: is either empty or missing in style.css header.
+= Method 2 =
+Go to "Appearance" > Themes >
+You'll see the theme upgrade notice. Just click on the update.
 
-= 2.0.0 - August 6 2019 =
-* Fix the errors and wordpress standard
-
-= 2.1.0 - October 29 2019 =
-* Fix the errors, add author widget and recent post with thumbnail widget, add lightbox for gallery.
 
 == Credits ==
 Aari bundles the following third-party resources:
@@ -107,8 +124,14 @@ overlay.png
 Source: https://github.com/jackmoore/colorbox/tree/master/example1/images
 License : MIT License (MIT) - https://github.com/jackmoore/colorbox/blob/master/LICENSE.md
 
-quote-icon.jpg
+* quote-icon.jpg
 Graphical Image
+
+* placeholder-logo
+Graphical Image
+
+
+== Screenshots ==
 
 * Images used in theme screenshot (all CC0 licenced):
 https://pixabay.com/photos/suspension-bridge-south-africa-cable-163064/
@@ -117,8 +140,29 @@ https://pixabay.com/photos/whale-shark-shark-aquarium-water-281498/
 https://pixabay.com/photos/climbing-rappelling-canyoneering-1761386/
 https://pixabay.com/photos/diving-underwater-sea-float-813028/
 
-placeholder-logo
-Graphical Image
+
+== Changelog ==
+
+= 2.2.0 - November 11 2019 =
+* Fix theme sniffer errors and warning
+* Fix theme check errors
+* Fix gutenberg css issues
+* Add skip links and keyboard navigation
+* Fix some design issue
+
+= 2.1.0 - October 29 2019 =
+* Fix the errors, add author widget and recent post with thumbnail widget, add lightbox for gallery.
+
+= 2.0.0 - August 6 2019 =
+* Fix the errors and wordpress standard
+
+= 1.0.1 - June 18 2019 =
+* Fix the error Tags: is either empty or missing in style.css header.
+
+= 1.0.0 - June 18 2019 =
+* Initial release
+
+
 
 
 

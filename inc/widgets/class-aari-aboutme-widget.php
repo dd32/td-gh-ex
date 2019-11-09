@@ -42,10 +42,11 @@ class Aari_Aboutme_Widget extends WP_Widget {
 	);
 
 	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
+
+		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		$author_image = wp_get_attachment_image_src( $instance['image_media'], 'thumbnail' );
@@ -58,7 +59,7 @@ class Aari_Aboutme_Widget extends WP_Widget {
 			echo '<a href="' . esc_url( $instance['link_url'] ) . '" class="btn-read-more mt-2">' . esc_html( $instance['readmoretext_text'] ) . ' <i class="mdi mdi-arrow-right"></i></a>';
 		}
 		echo '</div>';
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	public function media_fields() {
@@ -114,8 +115,8 @@ class Aari_Aboutme_Widget extends WP_Widget {
 					}
 					$output .= '<p>';
 					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . ':</label> ';
-					$output .= '<input style="display:none;" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . $widget_value . '">';
-					$output .= '<span id="preview' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . $media_url . ');background-size:contain;background-repeat:no-repeat;"></span>';
+					$output .= '<input style="display:none" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . $widget_value . '">';
+					$output .= '<div id="preview' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . $media_url . ');background-size:cover;background-repeat:no-repeat;background-position:center;"></div>';
 					$output .= '<button id="' . $this->get_field_id( $widget_field['id'] ) . '" class="button select-media custommedia">Add Media</button>';
 					$output .= '<input style="width: 19%;" class="button remove-media" id="buttonremove" name="buttonremove" type="button" value="Clear" />';
 					$output .= '</p>';
@@ -133,7 +134,39 @@ class Aari_Aboutme_Widget extends WP_Widget {
 					$output .= '</p>';
 			}
 		}
-		echo $output;
+
+		$arr = array(
+			'p'        => array(),
+			'input'    => array(
+				'style' => array(),
+				'class' => array(),
+				'id'    => array(),
+				'name'  => array(),
+				'type'  => array(),
+				'value' => array(),
+			),
+			'div'      => array(
+				'id'    => array(),
+				'style' => array(),
+			),
+			'button'   => array(
+				'id'    => array(),
+				'class' => array(),
+			),
+			'label'    => array(
+				'for' => array(),
+			),
+			'textarea' => array(
+				'class' => array(),
+				'id'    => array(),
+				'name'  => array(),
+				'rows'  => array(),
+				'cols'  => array(),
+				'value' => array(),
+			),
+		);
+		echo wp_kses( $output, $arr );
+
 	}
 
 	public function form( $instance ) {

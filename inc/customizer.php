@@ -57,7 +57,7 @@ function aari_customize_register( $wp_customize ) {
 		'aari_search',
 		array(
 			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -87,6 +87,7 @@ function aari_customize_register( $wp_customize ) {
 		'page_header_background',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'default'           => get_template_directory_uri() . '/assets/default-images/page_default_background.jpg',
 			'sanitize_callback' => 'esc_url_raw',
 		)
@@ -108,6 +109,7 @@ function aari_customize_register( $wp_customize ) {
 		'404_header_background',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'default'           => get_template_directory_uri() . '/assets/default-images/page_default_background.jpg',
 			'sanitize_callback' => 'esc_url_raw',
 		)
@@ -129,6 +131,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_breadcrumbs',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -158,11 +161,13 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'default'           => 'right',
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_select',
+
 		)
 	);
 	$wp_customize->add_control(
-		'post_layout_control',
+		'post_layout',
 		array(
 			'settings' => 'post_layout',
 			'label'    => esc_html__( 'Post Layout', 'aari' ),
@@ -179,6 +184,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_post_breadcrumbs',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -196,6 +202,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_post_details',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -213,6 +220,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_tag_cloud',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -230,6 +238,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_category_cloud',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -247,6 +256,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_author_after',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -254,7 +264,7 @@ function aari_customize_register( $wp_customize ) {
 		'post_autdate_control',
 		array(
 			'settings' => 'disable_author_after',
-			'label'    => esc_html__( 'Disable Author Date After Post', 'aari' ),
+			'label'    => esc_html__( 'Disable Author info box After Post', 'aari' ),
 			'section'  => 'aari_post_setting',
 			'type'     => 'checkbox',
 		)
@@ -264,6 +274,7 @@ function aari_customize_register( $wp_customize ) {
 		'disable_related_post',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_checkbox',
 		)
 	);
@@ -282,6 +293,7 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'default'           => 'tag',
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'aari_sanitize_select',
 		)
 	);
@@ -304,6 +316,7 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => 3,
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'absint',
 		)
 	);
@@ -322,6 +335,7 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => get_template_directory_uri() . '/assets/default-images/page_default_background.jpg',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -354,6 +368,7 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => get_template_directory_uri() . '/assets/default-images/page_default_background.jpg',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -375,6 +390,7 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => get_template_directory_uri() . '/assets/default-images/page_default_background.jpg',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -396,6 +412,7 @@ function aari_customize_register( $wp_customize ) {
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => get_template_directory_uri() . '/assets/default-images/page_default_background.jpg',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
@@ -426,8 +443,9 @@ function aari_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_logo',
 		array(
-			'capability' => 'edit_theme_options',
-			 'sanitize_callback' => 'esc_url_raw',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
 	$wp_customize->add_control(
@@ -446,6 +464,7 @@ function aari_customize_register( $wp_customize ) {
 		'aari_footer_copyright',
 		array(
 			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
 			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
@@ -478,11 +497,13 @@ function aari_sanitize_checkbox( $input ) {
 }
 
 function aari_sanitize_select( $input, $setting ) {
-	// input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+	// Ensure input is a slug.
 	$input = sanitize_key( $input );
-	// get the list of possible select options
+
+	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
-	// return input if valid or return default option
+
+	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }
 

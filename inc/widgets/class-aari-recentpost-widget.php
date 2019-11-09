@@ -34,10 +34,10 @@ class Aari_Recentpost_Widget extends WP_Widget {
 
 	public function widget( $args, $instance ) {
 
-		echo $args['before_widget'];
+		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
 		$aari_the_query = new WP_Query(
@@ -86,7 +86,7 @@ class Aari_Recentpost_Widget extends WP_Widget {
 		wp_reset_postdata();
 		echo '</ul>';
 
-		echo $args['after_widget'];
+		echo wp_kses_post( $args['after_widget'] );
 	}
 
 	public function field_generator( $instance ) {
@@ -111,10 +111,37 @@ class Aari_Recentpost_Widget extends WP_Widget {
 					$output .= '</p>';
 			}
 		}
-		echo $output;
+
+		// echo $output;
+
+		$arr = array(
+			'p'     => array(),
+			'input' => array(
+				'class'   => array(),
+				'type'    => array(
+					'checkbox' => array(),
+				),
+				'id'      => array(),
+				'name'    => array(),
+				'value'   => array(
+					'true'  => array(),
+					'false' => array(),
+					'1'     => array(),
+					'0'     => array(),
+				),
+				'checked' => array(),
+			),
+			'label' => array(
+				'for' => array(),
+			),
+		);
+		echo wp_kses( $output, $arr );
+
 	}
 
+
 	public function form( $instance ) {
+
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Recent Post', 'aari' );
 		?>
 		<p>

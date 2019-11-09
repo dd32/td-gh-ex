@@ -415,3 +415,18 @@ function aari_get_comment_depth( $my_comment_id ) {
 	}
 	return $depth_level;
 }
+
+/*
+ * Return safe css
+ */
+
+add_filter(
+	'safe_style_css',
+	function( $styles ) {
+		$styles[] = 'display';
+		$styles[] = 'background-size';
+		$styles[] = 'background-repeat';
+		$styles[] = 'background-position';
+		return $styles;
+	}
+);
