@@ -94,11 +94,17 @@ function apex_business_enqueue_inline_css() {
     /** Header Navigation : Navigation Link color**/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_text_color_setting', '.main-nav > li > a', 'color', array( APEX_BUSINESS_TEXT_COLOR ) );
 
+     /** Header Navigation : Navigation active Link color**/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_link_color_setting', '.main-nav .current-menu-item a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
     /** Header Navigation : Navigation active Link color**/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_link_hover_color_setting', '.main-nav > li > a:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
     /** Header Navigation : Navigation dropdown Link color**/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_dropdown_color_setting', '.main-nav .menu-item-has-children li a', 'color', array( APEX_BUSINESS_TEXT_COLOR ) );
+
+    /** Header Navigation : Navigation dropdown Link color**/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_dropdown_hover_color_setting', '.main-nav .menu-item-has-children li a:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : logo vertical spacing **/
 

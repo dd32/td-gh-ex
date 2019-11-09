@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-m
 Requires at least: 4.0
 Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: trunk
+Stable tag: 0.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ GNU General Public License for more details.
 3. Click on the 'Activate' button to use your new theme right away.
 
 == Changelog ==
+
+= 0.0.6 - November 9 2019 =
+* Iusses fixed pointed by reviewer
 
 = 0.0.5 - November 5 2019 =
 * Bug fixes

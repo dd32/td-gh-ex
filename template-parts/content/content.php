@@ -8,7 +8,7 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class( esc_attr( apex_business_blog_layout() ) ); ?>>
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="blog-image image-container thumbnail-image">
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php the_post_thumbnail(); ?>
             </a>
             <?php if ( get_theme_mod( 'apex_business_display_date_setting', 1 ) ) : ?>

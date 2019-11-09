@@ -188,7 +188,8 @@
 
     /** Header Navigation : header dropdown link color **/
     ct_customizer_live_load( 'apex_business_header_dropdown_color_setting', '.main-nav .menu-item-has-children li a', [ 'color' ] );
-
+    /** Header Navigation : header dropdown link color **/
+    ct_customizer_live_load( 'apex_business_header_dropdown_hover_color_setting', '.main-nav .menu-item-has-children li a:hover', [ 'color' ] );
     /** Header Navigation : Text Logo color **/
     ct_customizer_live_load( 'apex_business_header_text_logo_color_setting', '.site-logo div a', [ 'color' ] );
 

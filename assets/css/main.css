@@ -1073,6 +1073,9 @@ nav a {
     color: #2b3948;
     display: block;
     padding: 2.4rem 1.6rem; }
+  .main-nav > li a:hover,
+  .main-nav > li a:focus {
+    color: #13aff0; }
 .main-nav > .menu-item-has-children > ul {
   background-color: white;
   position: absolute;
@@ -1136,6 +1139,11 @@ nav a {
   .main-nav .menu-item-has-children:hover > a::after, .main-nav .menu-item-has-children:focus > a::after {
     color: #13aff0; }
 .main-nav li ul li a {
+  color: #2b3948; }
+.main-nav .menu-item-has-children .sub-menu li a:hover,
+.main-nav .menu-item-has-children .sub-menu li a:focus {
+  color: #13aff0 !important; }
+.main-nav .menu-item-has-children .sub-menu li a {
   color: #2b3948; }
 
 /* Mobile Navigation Menu */

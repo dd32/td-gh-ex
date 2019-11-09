@@ -8,7 +8,7 @@
         $( '#loading' ).fadeOut( 'slow' );
     } );
 
-    $( '#menu-menu>li' ).on( 'keyup keydown', function( e ) {
+    $( '.main-nav>li' ).on( 'keyup keydown', function( e ) {
         var keyCode = e.keyCode || e.which;
           if (keyCode == 9) {
             $( this ).toggleClass( 'is-focused' );

@@ -31,6 +31,10 @@ nav a {
             display: block;
             padding: 2.4rem 1.6rem;
         }
+        a:hover,
+        a:focus {
+            color: $primary-color;
+        }
     }
 
     >.menu-item-has-children {
@@ -144,6 +148,20 @@ nav a {
 
     li ul li a {
         color: $dark-color;
+    }
+    .menu-item-has-children {
+        .sub-menu {
+            li {
+                a:hover,
+                a:focus {
+                        color: $primary-color !important;
+                    }
+
+                a {
+                    color:$secondary-color;
+                }
+            }
+        }
     }
 }
 

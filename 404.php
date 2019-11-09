@@ -13,7 +13,7 @@ get_header();
        <div class="row">
           <div class="col-md-12">
               <div class="error-content inner-section">
-                  <h1>404</h1>
+                  <h1><?php esc_html_e( '404', 'apex-business' ); ?></h1>
                   <h4><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'apex-business' ); ?></h4>
               </div><!-- /.error-content -->
           </div><!-- /.col-md-12 -->
