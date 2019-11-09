@@ -448,7 +448,7 @@
 				setCoverBackground(), scrollAnimate(), headerController(), navInSidebar(), fixeDropdowns(), textSearch(), mouseParallax(), e( window ).on(
 					"load",
 					function () {
-						scrollEffect()
+						//scrollEffect()
 					}
 				)
 			}(jQuery);
