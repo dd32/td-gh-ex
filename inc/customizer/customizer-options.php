@@ -228,31 +228,7 @@ Kirki::add_field( 	'axiohost_config', array(
 	)
 );
 
-
-Kirki::add_field( 	'axiohost_config', array(
-	'type'        => 'background',
-	'settings'    => 'theme_footer_bg',
-	'label'       => esc_html__('Footer Background Color', 'axiohost'),
-	'section'     => 'color_options_section',
-	'priority'    => 1,	
-	'default'     => array(
-		'background-color'      => 'rgba(20,20,20,.8)',
-		'background-image'      => '',
-		'background-repeat'     => 'repeat',
-		'background-position'   => 'center center',
-		'background-size'       => 'cover',
-		'background-attachment' => 'scroll',
-	),
-	'transport'   => 'auto',
-	'output'      => array(
-		array(
-			'element' => 'footer.footer-area.bg-color1',
-		),
-	),
-
-	)
-);
-
+ 
 Kirki::add_field( 	'axiohost_config', array(
 	'type'        => 'color',
 	'settings'    => 'footer_text_color',

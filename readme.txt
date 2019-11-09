@@ -33,6 +33,9 @@ Axiohost is distributed under the terms of the GNU General Public License v2
 Axiohost includes support for contact form 7, Elementor Page Builder, Ajax Domain Checker, Redux Framework, Kirki Framework
 
 == Changelog ==
+= 1.0.13 =
+* Customizer Bug Fixed
+
 = 1.0.12 =
 * Licensing information added
 * Font Changed to Open Sans

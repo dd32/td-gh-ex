@@ -67,25 +67,23 @@ function axiohost_setup()
 add_action('after_setup_theme', 'axiohost_setup');
 
 //axiohost customizer
-include_once('inc/customizer/class-customizer.php');
-
-
-
+require get_template_directory() . '/inc/customizer/class-customizer.php';
+ 
 //axiohost comments layout
-include_once('inc/comments-layout.php');
+require get_template_directory() . '/inc/comments-layout.php';
 
 //axiohost theme info
-include_once('inc/welcome-page.php');
+require get_template_directory() . '/inc/welcome-page.php';
 
 //axiohost customizer
- include_once('inc/themeix-enqueue-scripts.php');
+require get_template_directory() . '/inc/themeix-enqueue-scripts.php';
  
 //axiohost customizer
- include_once('inc/themeix-dynamic-styles.php');
+require get_template_directory() . '/inc/themeix-dynamic-styles.php';
  
 //axiohost TGM Plugin Activation
-require_once('inc/tgm/class-tgm-plugin-activation.php');
-require_once('inc/tgm/recommended-plugins.php');
+require get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm/recommended-plugins.php';
 
 //custom comments form label
 function axiohost_comment_form_text($fields)
