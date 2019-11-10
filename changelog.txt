@@ -1,3 +1,6 @@
+=== v1.1.8 === 
+- Fixed skip to content issue
+
 === v1.1.7 === 
 - Minor bugs fixed
 - Fixed compatiblity issue with premium addons

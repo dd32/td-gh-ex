@@ -38,7 +38,7 @@ $_page_header_layout 		= get_theme_mod('arrival_page_header_layout',$default['ar
 
 ?>
 
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'arrival' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#page"><?php esc_html_e( 'Skip to content', 'arrival' ); ?></a>
 		
 		<?php do_action('arrival_main_header_wrapp'); ?>
 
