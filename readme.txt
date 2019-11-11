@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, rtl-language-support, blog, news
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.9.5
+Stable tag: 1.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Semplicemente WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -228,4 +228,8 @@ Semplicemente includes support for Infinite Scroll in Jetpack.
 
 = Version 1.9.5 =
 * Minify navigation.js
+* Minor bug fixes
+
+= Version 1.9.6 =
+* Improved compatibility with WordPress 5.3
 * Minor bug fixes
