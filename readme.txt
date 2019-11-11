@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.6 =
+* improve sub-menu display for IE/Edge browsers
+
 = 1.2.5 =
 * layout improvements
 
