@@ -40,6 +40,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.7 =
+* Main menu: fix issue with dropdown menu under IE/Edge browsers
+
 = 1.1.6 =
 * font and layout updates
 
