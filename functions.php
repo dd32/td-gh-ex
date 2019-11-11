@@ -252,6 +252,8 @@ add_action( 'wp_head', 'aari_pingback_header' );
 /**
  * Enqueue scripts and styles.
  */
+
+
 function aari_scripts() {
 
 	// Theme stylesheet.

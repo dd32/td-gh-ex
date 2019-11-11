@@ -49,13 +49,24 @@
 }
 
 .entry-content .alignfull {
-
+  width: 100vw;
+  overflow: visible;
+  max-width: 100vw;
+  margin-left: -15%;
+  z-index: 999;
+  position: relative;
 }
 
 @media screen and (min-width: 608px) {
   .entry-content > * {
     padding-left: 0px;
     padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .entry-content .alignfull {
+    margin-left: -5%;
   }
 }
 
@@ -299,6 +310,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
     width: 100%;
   }
 }
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 ## Video

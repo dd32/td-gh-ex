@@ -3401,7 +3401,9 @@ p {
 	font-weight: 500;
 }
 
-#content_full #sidebar .widget_recent_comments ul li:not(:last-child), #content_full #sidebar .widget_archive ul li:not(:last-child), #content_full #sidebar .widget_meta ul li:not(:last-child), #content_full #sidebar .widget_pages ul li:not(:last-child) {
+#content_full #sidebar .widget_recent_comments ul li:not(:last-child), #content_full #sidebar .widget_archive ul li:not(:last-child), #content_full #sidebar .widget_meta ul li:not(:last-child), #content_full #sidebar .widget_pages ul li:not(:last-child)
+, #content_full #sidebar .widget_categories ul li:not(:last-child), #content_full #sidebar .widget_meta ul li:not(:last-child)
+{
 	margin-bottom: 20px;
 }
 #content_full #sidebar .widget_recent_comments ul li:after, #content_full #sidebar .widget_archive ul li:after, #content_full #sidebar .widget_meta ul li:after, #content_full #sidebar .widget_pages ul li:after {
@@ -3633,6 +3635,9 @@ body.page .content article.page {
 	width: 100%;
 }
 
+.content article.post {
+	width: 100%;
+}
 
 
 @media all and (min-width: 991px) {
@@ -5154,7 +5159,6 @@ body.single-post .footer_bottom.section-padding {
 
 .widget_meta ul li {
 	padding-bottom: 0px;
-	margin-bottom: 5px !important;
 }
 
 .widget_tag_cloud .tagcloud a {
