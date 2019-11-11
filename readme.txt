@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.6 =
+* Main menu: fix issue with dropdown menu under IE/Edge browsers
+
 = 1.2.5 =
 * font and layout updates
 
