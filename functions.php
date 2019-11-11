@@ -337,7 +337,7 @@ function fcorpo_fonts_url() {
     if ( 'off' !== $cantarell ) {
         $font_families = array();
  
-        $font_families[] = 'Dosis::400,300,200,500,700';
+        $font_families[] = 'Dosis:400,300,200,500,700';
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),
