@@ -47,10 +47,18 @@ Name: bootstrap-smartmenus.css
 } 
 .navbar.header-fixed-top .sticky-navbar-brand .custom-logo { 
 	max-width: 100%;
-	display: block;
 	height: auto;
 }
-
+.navbar.header-fixed-top .sticky-navbar-brand {
+	margin-right: 1rem;
+}
+.navbar .row.align-self-center {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.navbar-brand, .sticky-navbar-brand {
+	float: left;
+}
 
 /*Toggle Button*/
 .navbar-light .navbar-toggler {
@@ -164,7 +172,7 @@ a.bg-light:focus, a.bg-light:hover {
 }
 
 .navbar.header-fixed-top .site-branding-text {
-	margin-top: 0.290rem;
+	margin-top: 0.7rem;
     margin-bottom: 0.290rem;
 }
 
@@ -174,15 +182,38 @@ a.bg-light:focus, a.bg-light:hover {
 		max-height: 400px;
 		overflow-x: hidden;
 	}
-
 	.navbar .nav .menu-item {
 		margin-right: 28px;
 	}
 }
-@media (max-width: 991px) {
+@media (max-width: 500px) { 
 	.navbar-brand, .sticky-navbar-brand {
-		float: left;
+		float: none;
 	}
+	.navbar-light .navbar-toggler {
+		float: none;
+		text-align: center;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.site-branding-text, .navbar.header-fixed-top .site-branding-text {
+		display: block;
+		margin-top: 1.238rem;
+		margin-right: 0rem;
+	}
+	.navbar-light .navbar-toggler {
+		margin-top: 1.238rem;
+	}
+	.row.align-self-center .align-self-center {
+		text-align: center;
+	}
+}
+
+@media (max-width: 991px) {
+	.row.align-self-center .align-self-center {
+		width: 100%;
+	}	
 	.navbar .nav {	
 		margin-top: 20px;
 		margin-left: 0;
@@ -329,7 +360,6 @@ a.bg-light:focus, a.bg-light:hover {
 .navbar-nav:not(.sm-collapsible) .dropdown-item.has-submenu {
 	padding-right: 2em;
 }
-
 
 /* Scrolling arrows for tall menus */
 .navbar-nav .scroll-up,
