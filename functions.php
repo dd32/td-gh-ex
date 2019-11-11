@@ -69,7 +69,9 @@ if ( !function_exists( 'accesspress_parallax_setup' ) ) :
         add_image_size( 'blog-header', 900, 300, array( 'center', 'center' ) ); //blog Image
         add_image_size( 'portfolio-thumbnail', 560, 450, array( 'center', 'center' ) ); //Portfolio Image
         add_image_size( 'blog-thumbnail', 480, 300, array( 'center', 'center' ) ); //Blog Image	
-        add_image_size( 'team-thumbnail', 380, 380, array( 'top', 'center' ) ); //Portfolio Image
+        add_image_size( 'team-thumbnail', 380, 380, array( 'center', 'center' ) ); //Portfolio Image
+        add_image_size( 'rect-wide-med', 600, 300, array( 'center', 'center' ) ); //Rectangle Wide
+        add_image_size( 'rect-height-med', 400, 600, array( 'center', 'center' ) ); //Rectangle Height
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
             'primary' => __( 'Primary Menu', 'accesspress-parallax' ),
@@ -156,9 +158,8 @@ add_action( 'widgets_init', 'accesspress_parallax_widgets_init' );
  * Enqueue scripts and styles.
  */
 function accesspress_parallax_scripts() {
-    $query_args = array(
-        'family' => 'Roboto:400,300,500,700|Oxygen:400,300,700',
-    );
+    $query_args = array( 'family' => 'Roboto:400,300,500,700|Oxygen:400,300,700|Quicksand:400,500,600,700|Poppins:300,400,500,600
+' );
 
     $slider_parameters = array(
         'accesspress_show_pager' => (!of_get_option( 'show_pager' ) || of_get_option( 'show_pager' ) == "yes") ? "true" : "false",
@@ -182,11 +183,13 @@ function accesspress_parallax_scripts() {
     if ( of_get_option( 'enable_animation' ) == '1' && is_front_page() ) :
         wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', array( 'jquery' ), '1.0', true );
     endif;
-
-    wp_enqueue_script( 'parallax', get_template_directory_uri() . '/js/parallax.js', array( 'jquery' ), '1.1.3', true );
+    
+    wp_enqueue_script( 'jarallax', get_template_directory_uri() . '/js/jarallax.js', array( 'jquery' ), '1.1.3', true );
     wp_enqueue_script( 'scrollto', get_template_directory_uri() . '/js/jquery.scrollTo.min.js', array( 'jquery' ), '1.4.14', true );
     wp_enqueue_script( 'jquery-localscroll', get_template_directory_uri() . '/js/jquery.localScroll.min.js', array( 'jquery' ), '1.3.5', true );
     wp_enqueue_script( 'accesspress-parallax-parallax-nav', get_template_directory_uri() . '/js/jquery.nav.js', array( 'jquery' ), '2.2.0', true );
+    wp_enqueue_script( 'isotope', get_template_directory_uri() . '/js/isotope.pkgd.js', array('jquery'), '3.0.4', true ); 
+    wp_enqueue_script( 'waypoint', get_template_directory_uri() . '/js/waypoint.js', array('jquery'), '2.0.3', true );
     wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/js/jquery.easing.min.js', array( 'jquery' ), '1.3', true );
     wp_enqueue_script( 'jquery-fitvid', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '1.0', true );
     wp_enqueue_script( 'nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array( 'jquery' ), '1.2.0', true );

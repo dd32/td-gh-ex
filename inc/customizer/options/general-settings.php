@@ -48,3 +48,19 @@ $wp_customize->add_control(
     'type' => 'checkbox',
     'section' => 'accesspress_parallax_general_settings',
 ) );
+
+$wp_customize->add_section( 'accesspress_parallax_general_settings_parallax', array(
+    'title' => __( 'Parallax Settings', 'accesspress-parallax' ),
+    'panel' => 'accesspress_parallax_general_settings_panel'
+) );
+
+
+// Enable Single Page Nav
+$wp_customize->add_setting( 'accesspress_parallax[enable_parallax_effect]', array( 'default' => 1, 'type' => 'option', 'sanitize_callback' => 'accesspress_parallax_sanitize_checkbox' ) );
+$wp_customize->add_control(
+        'accesspress_parallax[enable_parallax_effect]', array(
+    'label' => esc_html__( 'Enable Parallax Effect on scroll', 'accesspress-parallax' ),
+    'description' => esc_html__( '( Check to enable parallax effect on scroll in background image of Elementor. )', 'accesspress-parallax' ),
+    'type' => 'checkbox',
+    'section' => 'accesspress_parallax_general_settings_parallax',
+) );

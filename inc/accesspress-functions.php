@@ -18,6 +18,10 @@ function accesspress_parallax_body_classes( $classes ) {
     if ( is_multi_author() ) {
         $classes[] = 'group-blog';
     }
+    $parallax = (of_get_option( 'enable_parallax_effect' )) ? of_get_option( 'enable_parallax_effect' ) : 1;
+    if( $parallax ){
+        $classes[] = 'ap-parallax';
+    }
 
     return $classes;
 }
@@ -38,11 +42,7 @@ add_action( 'wp_head', 'accesspress_parallax_pingback_header' );
 //bxSlider Callback for do action
 function accesspress_parallax_bxslidercb() {
     global $post;
-    $accesspress_parallax = of_get_option( 'parallax_section' );
-    if ( !empty( $accesspress_parallax ) ) :
-        $accesspress_parallax_first_page_array = array_slice( $accesspress_parallax, 0, 1 );
-        $accesspress_parallax_first_page = $accesspress_parallax_first_page_array[ 0 ][ 'page' ];
-    endif;
+    $next_link = of_get_option( 'next_link' );
     $accesspress_slider_category = of_get_option( 'slider_category' );
     $accesspress_slider_full_window = of_get_option( 'slider_full_window' );
     $accesspress_show_slider = of_get_option( 'show_slider', 'yes' );
@@ -53,8 +53,8 @@ function accesspress_parallax_bxslidercb() {
     <?php if ( $accesspress_show_slider == "yes" ) : ?>
         <section id="main-slider" class="full-screen-<?php echo esc_attr( $accesspress_slider_full_window ); ?>">
 
-            <?php if ( !empty( $accesspress_parallax_first_page ) && $accesspress_enable_parallax == 1 ): ?>
-                <div class="next-page"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo esc_attr( $accesspress_parallax_first_page ); ?>"></a></div>
+            <?php if ( !empty( $next_link ) ): ?>
+                <div class="next-page"><a href="<?php echo esc_url( $next_link ); ?>"></a></div>
                 <?php
             endif;
 
@@ -260,14 +260,16 @@ function accesspress_word_count( $string, $limit ) {
 }
 
 function accesspress_letter_count( $content, $limit ) {
-    $striped_content = strip_tags( $content );
-    $striped_content = strip_shortcodes( $striped_content );
-    $limit_content = mb_substr( $striped_content, 0, $limit );
+    if( !empty($limit) && ($limit != 0) ){
+        $striped_content = strip_tags( $content );
+        $striped_content = strip_shortcodes( $striped_content );
+        $limit_content = mb_substr( $striped_content, 0, $limit );
 
-    if ( strlen( $limit_content ) < strlen( $content ) ) {
-        $limit_content .= "...";
+        if ( strlen( $limit_content ) < strlen( $content ) ) {
+            $limit_content .= "...";
+        }
+        return $limit_content;
     }
-    return $limit_content;
 }
 
 function accesspress_register_string() {
@@ -325,7 +327,7 @@ function accesspress_parallax_switch_theme_options() {
         $new_options = get_option( 'accesspress_parallax_section' );
 
         $parallax_sections = (isset($old_options[ 'parallax_section' ])) ? $old_options[ 'parallax_section' ] : '';
-        
+
         $parallax_sections = json_encode( $parallax_sections );
 
         update_option( 'accesspress_parallax_section', $parallax_sections );

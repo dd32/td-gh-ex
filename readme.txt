@@ -41,8 +41,8 @@ JS Files
     jQuery Easing: MIT Licenses
     https://github.com/flesler/jquery.scrollTo
 
-    Parallax JS: MIT and GPL licenses
-    https://github.com/IanLunn/jQuery-Parallax/
+    Jarallax: MIT License (MIT)
+    https://github.com/nk-o/jarallax
 
     WOw JS: MIT Licenses
     https://github.com/matthieua/WOW
@@ -93,10 +93,16 @@ Images
 
 ---------------------------------------------
 == Changelog ==
-= 2.0.4 =
+
+= 3.0 =
+** Added Elementor Addons 
+** Added 5 starter demos
+** Replaced parallax.js with jarallax.js
+
+== Version 2.0.4 ==
 ** Fixed menu issue
 
-= 2.0.3 =
+== Version 2.0.3 ==
 ** Fixed issues
 
 = 2.0.2 =

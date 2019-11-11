@@ -39,6 +39,17 @@ $wp_customize->add_control(
     'choices' => array(
         'logo-top' => esc_html__( 'Logo on Top of Menu', 'accesspress-parallax' ),
         'logo-side' => esc_html__( 'Logo on Side of Menu', 'accesspress-parallax' ),
+        'header-transparent' => esc_html__( 'Transparent Header', 'accesspress-parallax' ),
     ),
+    'section' => 'accesspress_parallax_header_settings',
+) );
+
+// Enable Single Page Nav
+$wp_customize->add_setting( 'accesspress_parallax[enable_bottom_border]', array( 'default' => 1, 'type' => 'option', 'sanitize_callback' => 'accesspress_parallax_sanitize_checkbox' ) );
+$wp_customize->add_control(
+        'accesspress_parallax[enable_bottom_border]', array(
+    'label' => esc_html__( 'Enable Bottom Border', 'accesspress-parallax' ),
+    'description' => /* translators: Menu Link*/ esc_html__( 'Check to enable border in bottom of header.', 'accesspress-parallax' ),
+    'type' => 'checkbox',
     'section' => 'accesspress_parallax_header_settings',
 ) );

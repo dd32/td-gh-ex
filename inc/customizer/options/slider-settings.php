@@ -141,3 +141,12 @@ $wp_customize->add_control(
     ),
     'section' => 'accesspress_parallax_slider_settings',
 ) );
+// Link
+$wp_customize->add_setting( 'accesspress_parallax[next_link]', array( 'default' => '', 'type' => 'option', 'sanitize_callback' => 'esc_url_raw' ) );
+$wp_customize->add_control(
+        'accesspress_parallax[next_link]', array(
+    'label' => __( 'Enter Link', 'accesspress-parallax' ),
+    'description' => __( 'Enter url with section id. for eg: http://demo.accesspressthemes.com/accesspress-parallax/#section-529', 'accesspress-parallax' ),
+    'type' => 'text',
+    'section' => 'accesspress_parallax_slider_settings',
+) );

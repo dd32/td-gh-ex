@@ -68,6 +68,7 @@ if ( !class_exists( 'Accesspress_Parallax_Customizer_Class' ) ) {
 
             $files = array(
                 'header-settings',
+                'footer-settings',
                 'general-settings',
                 'post-settings',
                 'slider-settings',

@@ -8,7 +8,11 @@ function accesspress_parallax_sanitize_checkbox( $input, $setting ) {
 
     return ( ( isset( $input ) && true == $input ) ? true : false );
 }
+// Sanitize integer
+function accesspress_parallax_sanitize_integer( $input, $setting ) {
 
+    return intval( $input );
+}
 // Sanitize Repeater Fields
 function accesspress_parallax_sanitize_repeater( $input ) {
     $input_decoded = json_decode( $input, true );

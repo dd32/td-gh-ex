@@ -13,15 +13,23 @@
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-
         <?php wp_head(); ?>
     </head>
-
     <body <?php body_class(); ?>>
+        <?php
+        if ( function_exists( 'wp_body_open' ) ) {
+           wp_body_open();
+        } ?>
         <div id="page" class="hfeed site">
-            <header id="masthead" class="<?php echo esc_attr( of_get_option( 'header_layout' ) ); ?>">
+            <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-parallax' ); ?></a>
+            <?php
+            if ( of_get_option( 'show_social' ) == 1 ):
+                do_action( 'accesspress_social' );
+            endif;
+            ?>
+            <?php $header_bottom = (of_get_option( 'enable_bottom_border' )) ? 'header-bottom-border' : ""; ?>
+            <header id="masthead" class="<?php echo esc_attr( of_get_option( 'header_layout' ) ) . ' ' . esc_attr($header_bottom); ?>">
                 <div class="mid-content clearfix">
-
                     <div class="flex-box">
                         <div id="site-logo">
                             <?php if ( get_header_image() ) : ?>
@@ -39,7 +47,7 @@
                             <div class="menu-toggle"><?php esc_html_e( 'Menu', 'accesspress-parallax' ); ?></div>
 
                             <?php
-                            $sections = accesspress_parallax_get_plx_sections();
+                            $sections = of_get_option( 'parallax_section' );
                             if ( (of_get_option( 'enable_parallax' ) == 1 && of_get_option( 'enable_parallax_nav' ) == 1) || (is_page_template( 'home-page.php' ) && of_get_option( 'enable_parallax_nav' ) == 1) ):
                                 ?>
                                 <ul class="nav single-page-nav">
@@ -77,13 +85,6 @@
                         </nav><!-- #site-navigation -->
                     </div>
                 </div>
-
-
-                <?php
-                if ( of_get_option( 'show_social' ) == 1 ):
-                    do_action( 'accesspress_social' );
-                endif;
-                ?>
             </header><!-- #masthead -->
 
             <?php

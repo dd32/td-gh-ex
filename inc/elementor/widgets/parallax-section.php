@@ -45,7 +45,7 @@ class Accesspress_Parallax_Elementor_Section extends Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-call-to-action';
+		return 'eicon-section';
 	}
 
 	/**
@@ -72,7 +72,7 @@ class Accesspress_Parallax_Elementor_Section extends Widget_Base {
 
 		// Widget title section
 		$this->start_controls_section(
-			'Accesspress_Parallax_Elementor_Section_title',
+			'section_detail',
 			array(
 				'label' => esc_html__( 'Section Setting', 'accesspress-parallax' ),
 			)

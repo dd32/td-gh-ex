@@ -22,7 +22,9 @@ function accesspress_parallax_dynamic_styles() {
                     .woocommerce-cart-form__cart-item a,
                     .woocommerce-info a,                    
                     body:not(.home) .main-navigation .current_page_item > a,
-                    body:not(.home) .main-navigation .current-menu-item > a{
+                    body:not(.home) .main-navigation .current-menu-item > a,
+                    h4.blog-post-title a:hover,
+                    h4.portfolio-post-title a:hover{
                         color: {$tpl_color};
                     }";
 
@@ -62,22 +64,27 @@ function accesspress_parallax_dynamic_styles() {
 
         /** Border Color * */
         $custom_css .= "
-                    #masthead,
+                    #masthead.header-bottom-border,
                     #main-slider .slick-dots li.slick-active button,
                     .slider-caption .caption-description a:hover, .btn:hover,
                     .team-image:hover, .team-image.slick-current,
                     .testimonial-listing .slick-arrow:hover,
                     .blog-list .blog-excerpt,
-                    .parallax-section input[type=\"text\"],
-                    .parallax-section input[type=\"email\"],
-                    .parallax-section input[type=\"url\"],
-                    .parallax-section input[type=\"password\"],
-                    .parallax-section input[type=\"search\"],
-                    .parallax-section input[type=\"tel\"],
-                    .parallax-section textarea,
                     #secondary h2.widget-title{
                         border-color: {$tpl_color};
                     }";
+        $custom_css .= "
+                    #secondary h2.widget-title{
+                        border-color: {$tpl_color};
+                    }";
+        /** Background Color * */
+        $custom_css .= "@media screen and (max-width: 1000px){
+            .main-navigation > ul,
+            .menu-toggle
+            {
+                background-color: {$tpl_color} !important;
+            }
+        }";
 
         /** Transparent Border Color * */
         $custom_css .= "

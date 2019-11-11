@@ -82,6 +82,9 @@ Responsive CSS
     .main-navigation .current-menu-item > a{
         color: #EEE;
     }
+    .main-navigation > ul > li > a:hover, .main-navigation > ul > li.current a {
+        color: #ccc !important;        
+    }
     .slider-caption{
         padding-left: 70px;
         padding-right: 70px;

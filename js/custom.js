@@ -133,14 +133,32 @@ jQuery(document).ready(function ($) {
     $("#content").fitVids();
 
     $(window).on('load', function () {
-        $('.blank_template').each(function () {
-            $(this).parallax('50%', 0.4, true);
-        });
-
-        $('.action_template').each(function () {
-            $(this).parallax('50%', 0.3, true);
+        $('.parallax-section, .ap-parallax .elementor-element, .ap-parallax .elementor-column-wrap').jarallax({
+            speed: 0.2
         });
     });
+    var $window       = $( window );
+        var lastScrollTop = 0;
+        var $header       = $( '#masthead' );
+        var headerBottom  =  $( '#masthead' ).outerHeight( true );
+        $window.on('scroll', function() {
+            var windowTop  = $window.scrollTop();
+            // Add custom sticky class 
+            if ( windowTop >= headerBottom ) {
+                $header.addClass( 'ap-fixed' );
+            } else {
+                $header.removeClass( 'ap-fixed' );
+                $header.removeClass( 'show-nav' );
+            }
+            // Show/hide
+            if ( windowTop > headerBottom && windowTop < lastScrollTop ) {
+                $header.addClass( 'show-nav' );
+            } else {
+                $header.removeClass( 'show-nav' );
+            }
+            lastScrollTop = windowTop;
+        });
+
 
     // *only* if we have anchor on the url
     if (window.location.hash) {
@@ -150,21 +168,5 @@ jQuery(document).ready(function ($) {
         }, 1000);
 
     }
-    // $(function() {
-    //   $(".main-navigation .current_page_item > a[href*='#']:not([href='#']), .main-navigation .current-menu-item > a[href*='#']:not([href='#'])").click(function() {        
-    //     $(this).parent().siblings('li').removeClass('current');
-    //     $(this).parent().addClass('current');
-    //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-    //     var target = $(this.hash);
-    //     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    //     if (target.length) {
-    //       $('html,body').animate({
-    //         scrollTop: target.offset().top - headerHeight
-    //       }, 2000);
-    //       return false;
-    //     }
-    //   }
-    //  });
-    // });
 
 });
