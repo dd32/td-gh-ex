@@ -110,8 +110,8 @@ function fkidd_setup() {
 
     // add custom logo
     add_theme_support( 'custom-logo', array (
-                       'width'                  => 145,
-                       'height'                 => 36,
+                       'width'                  => 75,
+                       'height'                 => 75,
                        'flex-height'            => true,
                        'flex-width'             => true,
                     ) );
