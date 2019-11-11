@@ -368,12 +368,14 @@ if (!function_exists('novalite_setup')) {
 			'main-menu', esc_html__( 'Main menu', 'nova-lite' )
 		);
 		
-		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-customize.php' );
-		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-metaboxes.php' );
-		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-notice.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/includes/class-customize.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/includes/class-metaboxes.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/includes/class-notice.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/includes/class-plugin-activation.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/admin/customize/customize.php' );
-		require_once( trailingslashit( get_template_directory() ) . 'core/functions/style.php' );
-		require_once( trailingslashit( get_template_directory() ) . 'core/functions/widgets.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/functions/function-style.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/functions/function-widgets.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'core/functions/function-required-plugins.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/templates/after-content.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/templates/before-content.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/templates/footer.php' );
