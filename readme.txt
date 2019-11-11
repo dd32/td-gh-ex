@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.1 =
+* Main menu: fix issue with dropdown menu under IE/Edge browsers
+
 = 1.2.0 =
 * font and layout updates
 
