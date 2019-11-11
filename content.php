@@ -6,9 +6,9 @@
 <?php
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$cat_event = $accesspresslite_settings['event_cat'];
-$cat_testimonial = $accesspresslite_settings['testimonial_cat'];
-$cat_portfolio = $accesspresslite_settings['portfolio_cat'];
+$cat_testimonial  	= isset( $accesspresslite_settings[ 'testimonial_cat' ] ) ? $accesspresslite_settings[ 'testimonial_cat' ] : '';
+$cat_event  		= isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
+$cat_portfolio  	= isset( $accesspresslite_settings[ 'portfolio_cat' ] ) ? $accesspresslite_settings[ 'portfolio_cat' ] : '';
 ?>
 
 

@@ -1,7 +1,8 @@
 <?php
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$menu_align = $accesspresslite_settings['menu_alignment'];?>
+$menu_align            = isset( $accesspresslite_settings[ 'menu_alignment' ] ) ? $accesspresslite_settings[ 'menu_alignment' ] : '';
+//$menu_align = $accesspresslite_settings['menu_alignment'];?>
 <div id="top-header" class="<?php if($menu_align == 'Center'){echo 'center_menu_top';}?>">
 		<div class="ak-container">
             <div class="header_text_left">
@@ -27,7 +28,9 @@ $menu_align = $accesspresslite_settings['menu_alignment'];?>
                 <div class="social_search_container">
                     <div class="search_right">
                         <?php
-                        if($accesspresslite_settings['show_search'] == 1 || $accesspresslite_settings['show_search'] == ''){ ?>
+                        $show_search = isset( $accesspresslite_settings[ 'show_search' ] ) ? $accesspresslite_settings[ 'show_search' ] : '';
+
+                        if($show_search == 1 || $show_search == ''){ ?>
             				<div class="ak-search">
             					<?php get_search_form(); ?>
                                 <i class="fa fa-search search_one"></i>
@@ -39,7 +42,8 @@ $menu_align = $accesspresslite_settings['menu_alignment'];?>
             				/** 
             				* @hooked accesspresslite_social_cb - 10
             				*/
-            				if($accesspresslite_settings['show_social_header'] == 0){
+                            $show_social_header = isset( $accesspresslite_settings[ 'show_social_header' ] ) ? $accesspresslite_settings[ 'show_social_header' ] : '';
+            				if($show_social_header == 1){
             				do_action( 'accesspresslite_social_links' ); 
             				}?>
                     </div>      

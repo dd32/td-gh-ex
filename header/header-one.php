@@ -25,11 +25,13 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 				/** 
 				* @hooked accesspresslite_social_cb - 10
 				*/
-				if($accesspresslite_settings['show_social_header'] == 0){
+				$show_social_header  = isset( $accesspresslite_settings[ 'show_social_header' ] ) ? $accesspresslite_settings[ 'show_social_header' ] : '';
+				if($show_social_header == 1){
 				do_action( 'accesspresslite_social_links' ); 
 				}
 
-				if($accesspresslite_settings['show_search'] == 1){ ?>
+				$show_search  = isset( $accesspresslite_settings[ 'show_search' ] ) ? $accesspresslite_settings[ 'show_search' ] : '';
+				if($show_search == 1){ ?>
 				<div class="ak-search">
 					<?php get_search_form(); ?>
 				</div>

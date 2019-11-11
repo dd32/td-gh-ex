@@ -1,0 +1,118 @@
+a:focus{
+    outline: 1px dotted;
+}
+
+.bttn:focus:after{
+    width:100%;
+}
+
+.bttn:focus{
+    color:#FFF;
+}
+
+.navigation .nav-links a:focus,
+.bttn:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+    color:#FFF;
+}
+
+.entry-footer a:focus{
+	color:#01AEFD;
+}
+
+.comment-author .fn .url:focus{
+	border-bottom: 1px dotted #333;
+}
+
+.socials a:focus{
+	color: #FFF;
+	background: #01aefd;
+}
+
+.main-navigation li:focus > a {
+	background: #04A3ED;
+}
+
+.main-navigation ul ul li:focus > a {
+    color:#01AEFD;
+}
+
+.main-navigation ul li:focus > ul,
+.main-navigation ul li:focus-within > ul {
+	display: block;
+}
+
+.event-detail h4 a:focus{
+	color: #01aefd
+}
+
+.featured-post.big-icon h4.has-icon:focus .fa{
+     transform:rotateY(180deg);
+	-ms-transform:rotateY(180deg); /* IE 9 */
+	-webkit-transform:rotateY(180deg); /* Opera, Chrome, and Safari */
+}
+
+.featured-image:focus .featured-overlay{
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	transform:rotateY(180deg) scale(1);
+	-ms-transform:rotateY(180deg) scale(1); /* IE 9 */
+	-webkit-transform:rotateY(180deg) scale(1); /* Opera, Chrome, and Safari */
+}
+
+#bottom-section .thumbnail-gallery .gallery-item:focus{
+	background: rgba(0,0,0,0.2);
+}
+
+#bottom-section .thumbnail-gallery .gallery-item:focus img{
+	transform:scale(1.1);
+	-ms-transform:scale(1.1); /* IE 9 */
+	-webkit-transform:scale(1.1); /* Opera, Chrome, and Safari */
+}
+
+.site-footer a:focus{
+    color:#F9F9F9;
+}
+
+#top-footer .footer .socials a:focus{
+	border:1px solid #01AEFD;
+}
+
+.sidebar .widget_recent_comments .url:focus{
+	color: #01AEFD;
+}
+
+.sidebar ul li a:focus{
+	color:#01AEFD;
+}
+
+.cat-portfolio-list:focus .portofolio-layout{
+	background: rgba(0,151,214,0.6);
+}
+
+.cat-portfolio-list:focus .portofolio-layout .entry-title{
+	opacity: 1;
+	transform:translateY(0);
+	-ms-transform:translateY(0); /* IE 9 */
+	-webkit-transform:translateY(0); /* Opera, Chrome, and Safari */
+}
+
+.cat-portfolio-list:focus .portofolio-layout .cat-portfolio-excerpt{
+	opacity: 1;
+	transform:translateY(0);
+	-ms-transform:translateY(0); /* IE 9 */
+	-webkit-transform:translateY(0); /* Opera, Chrome, and Safari */
+}
+
+.cat-portfolio-list:focus .cat-portfolio-image img{
+	transform:scale(1.2);
+	-ms-transform:scale(1.2); /* IE 9 */
+	-webkit-transform:scale(1.2); /* Opera, Chrome, and Safari */
+}
+
+#call-to-action .action-btn:focus{
+	background: #282F35;
+}

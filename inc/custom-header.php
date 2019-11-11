@@ -17,7 +17,10 @@
 function accesspresslite_custom_header_setup() {
     $accesspresslite_options = accesspress_default_setting_value();
     $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-    $home_template = $accesspresslite_settings['accesspresslite_home_template']; 
+    //$home_template = $accesspresslite_settings['accesspresslite_home_template'];
+
+    $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+ 
     if($home_template == 'template_one'){       
 		add_theme_support( 'custom-header', apply_filters( 'accesspresslite_custom_header_args', array(
 			'default-image'          => get_template_directory_uri() . '/images/demo/logo.png',

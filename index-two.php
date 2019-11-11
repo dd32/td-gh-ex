@@ -1,20 +1,24 @@
 <?php 
-$accesspresslite_options = accesspress_default_setting_value();
+$accesspresslite_options  = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$accesspresslite_layout = $accesspresslite_settings['accesspresslite_home_page_layout'];
-$accesspresslite_welcome_post_id = $accesspresslite_settings['welcome_post'];
-$accesspresslite_event_category = $accesspresslite_settings['event_cat'];
-$featured_section_title = isset($accesspresslite_settings['featured_section_title']) ? $accesspresslite_settings['featured_section_title'] : "";
-$featured_post1 = $accesspresslite_settings['featured_post1'];
-$featured_post2 = $accesspresslite_settings['featured_post2'];
-$featured_post3 = $accesspresslite_settings['featured_post3'];
-$show_fontawesome_icon = $accesspresslite_settings['show_fontawesome'];
-$testimonial_category = $accesspresslite_settings['testimonial_cat'];
-$accesspresslite_featured_bar = $accesspresslite_settings['featured_bar'];
+$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : 'Default';
+$accesspresslite_welcome_post_id  = isset( $accesspresslite_settings[ 'welcome_post' ] ) ? $accesspresslite_settings[ 'welcome_post' ] : '';
+$accesspresslite_event_category  = isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
+$featured_section_title  = isset( $accesspresslite_settings[ 'featured_section_title' ] ) ? $accesspresslite_settings[ 'featured_section_title' ] : '';
+$featured_post1  = isset( $accesspresslite_settings[ 'featured_post1' ] ) ? $accesspresslite_settings[ 'featured_post1' ] : '';
+$featured_post2  = isset( $accesspresslite_settings[ 'featured_post2' ] ) ? $accesspresslite_settings[ 'featured_post2' ] : '';
+$featured_post3  = isset( $accesspresslite_settings[ 'featured_post3' ] ) ? $accesspresslite_settings[ 'featured_post3' ] : '';
+$show_fontawesome_icon  = isset( $accesspresslite_settings[ 'show_fontawesome' ] ) ? $accesspresslite_settings[ 'show_fontawesome' ] : '';
+$testimonial_category  = isset( $accesspresslite_settings[ 'testimonial_cat' ] ) ? $accesspresslite_settings[ 'testimonial_cat' ] : '';
+$accesspresslite_featured_bar  = isset( $accesspresslite_settings[ 'featured_bar' ] ) ? $accesspresslite_settings[ 'featured_bar' ] : '';
+
 $accesspresslite_welcome_post_char = (isset($accesspresslite_settings['welcome_post_char']) ? $accesspresslite_settings['welcome_post_char'] : 650 );
 $accesspresslite_show_event_number = (isset($accesspresslite_settings['show_event_number']) ? $accesspresslite_settings['show_event_number'] : 3 ) ;
-$big_icons = $accesspresslite_settings['big_icons'];
-$disable_event = $accesspresslite_settings['disable_event'];
+$big_icons  = isset( $accesspresslite_settings[ 'big_icons' ] ) ? $accesspresslite_settings[ 'big_icons' ] : '';
+$disable_event  = isset( $accesspresslite_settings[ 'disable_event' ] ) ? $accesspresslite_settings[ 'disable_event' ] : '';
+
+// $big_icons = $accesspresslite_settings['big_icons'];
+// $disable_event = $accesspresslite_settings['disable_event'];
 
 if($disable_event == 1){
 	$welcome_class = "full-width";
@@ -289,8 +293,9 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
         		        		<div class="event-excerpt_two">
         		        			<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 100 )); ?>
         		        		</div>
-                                 <?php 
-    						if($accesspresslite_settings['show_eventdate'] == 1){ ?>
+                                 <?php
+                                $show_eventdate  = isset( $accesspresslite_settings[ 'show_eventdate' ] ) ? $accesspresslite_settings[ 'show_eventdate' ] : 1;
+								if($show_eventdate == 1){  ?>
     							<div class="event-date_two">
     							<span class="event-date-day_two"><?php echo get_the_date('j'); ?></span>
     							<span class="event-date-month_two"><?php echo get_the_date('M'); ?></span>
@@ -359,7 +364,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 <?php }
 ?>
 
-<?php if($accesspresslite_featured_bar != 1){ ?>
+<?php if($accesspresslite_featured_bar == 1){ ?>
 <section id="bottom-section">
 	<div class="ak-container">
         <div class="text-box">

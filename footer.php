@@ -13,7 +13,7 @@
 	<?php 
 		$accesspresslite_options = accesspress_default_setting_value();
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-        $home_template = $accesspresslite_settings['accesspresslite_home_template'];
+        $home_template  = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
 		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
 		<div class="ak-container">
@@ -69,7 +69,13 @@
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<?php
+// $settings = get_option( 'accesspresslite_options' );
+// $encoded = json_encode($accesspresslite_settings);
+// echo '<pre>';
+//   print_r($encoded);
+// echo '</pre>';
+?>
 <?php wp_footer(); ?>
 
 </body>

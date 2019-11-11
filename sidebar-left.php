@@ -9,10 +9,11 @@
 <?php 
 global $post, $accesspresslite_options;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$event_category = $accesspresslite_settings['event_cat'];
-$show_events = $accesspresslite_settings['leftsidebar_show_latest_events'];
-$testimonial_category = $accesspresslite_settings['testimonial_cat'];
-$show_testimonials = $accesspresslite_settings['leftsidebar_show_testimonials'];
+$event_category  	= isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
+$show_events  	= isset( $accesspresslite_settings[ 'leftsidebar_show_latest_events' ] ) ? $accesspresslite_settings[ 'leftsidebar_show_latest_events' ] : '';
+$testimonial_category  	= isset( $accesspresslite_settings[ 'testimonial_cat' ] ) ? $accesspresslite_settings[ 'testimonial_cat' ] : '';
+$show_testimonials  	= isset( $accesspresslite_settings[ 'leftsidebar_show_testimonials' ] ) ? $accesspresslite_settings[ 'leftsidebar_show_testimonials' ] : '';
+
 $post_class = "";
 
 if(!empty($post)){

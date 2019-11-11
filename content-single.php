@@ -6,7 +6,7 @@
 <?php
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$cat_event = $accesspresslite_settings['event_cat'];
+$cat_event  	= isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">

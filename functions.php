@@ -112,9 +112,10 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 
 /**
- * Implement the Theme Option feature.
+ * Implement the Customizer options
  */
-require get_template_directory() . '/inc/admin-panel/theme-options.php';
+require get_template_directory() . '/inc/customizer.php';
+
 
 /**
  * Load Jetpack compatibility file.
@@ -141,4 +142,4 @@ require get_template_directory() . '/css/style.php';
 /**
  * Add Welcome Page to the theme
  */
-require get_template_directory() . '/welcome/welcome.php';
+require get_template_directory() . '/inc/welcome/welcome-config.php';

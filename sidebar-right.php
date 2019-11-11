@@ -9,10 +9,15 @@
 <?php 
 global $post, $accesspresslite_options;
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$event_category = $accesspresslite_settings['event_cat'];
-$show_events = $accesspresslite_settings['rightsidebar_show_latest_events'];
-$testimonial_category = $accesspresslite_settings['testimonial_cat'];
-$show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
+$event_category  	= isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
+$show_events  	= isset( $accesspresslite_settings[ 'rightsidebar_show_latest_events' ] ) ? $accesspresslite_settings[ 'rightsidebar_show_latest_events' ] : '';
+$testimonial_category  	= isset( $accesspresslite_settings[ 'testimonial_cat' ] ) ? $accesspresslite_settings[ 'testimonial_cat' ] : '';
+$show_testimonials  	= isset( $accesspresslite_settings[ 'rightsidebar_show_testimonials' ] ) ? $accesspresslite_settings[ 'rightsidebar_show_testimonials' ] : '';
+
+//$event_category = $accesspresslite_settings['event_cat'];
+//$show_events = $accesspresslite_settings['rightsidebar_show_latest_events'];
+//$testimonial_category = $accesspresslite_settings['testimonial_cat'];
+//$show_testimonials = $accesspresslite_settings['rightsidebar_show_testimonials'];
 $post_class = "";
 
 if(!empty($post)){
@@ -105,7 +110,8 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
                                 <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/testimonial-dummy.jpg" alt="no-image"/>
                             <?php }?>
 		        		</div>
-                        <?php $home_template = $accesspresslite_settings['accesspresslite_home_template']; 
+                        <?php 
+                        $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
                             if($home_template == 'template_two') { ?>
         					<div class="testimoinal-client-name"><?php the_title(); ?></div>
                             <?php } ?>
