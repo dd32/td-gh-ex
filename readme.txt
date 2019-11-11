@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.9.0 =
+* fix issue with sub-menu items not displayed under IE 11 and Edge browsers
+
 = 1.8.9 =
 * update font sizes and layout
 

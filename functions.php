@@ -110,8 +110,8 @@ function fgymm_setup() {
 
     // add custom logo
     add_theme_support( 'custom-logo', array (
-                       'width'                  => 145,
-                       'height'                 => 36,
+                       'width'                  => 75,
+                       'height'                 => 75,
                        'flex-height'            => true,
                        'flex-width'             => true,
                     ) );
@@ -386,27 +386,15 @@ function fgymm_fonts_url() {
     $fonts_url = '';
  
     /* Translators: If there are characters in your language that are not
-    * supported by PT Sans, translate this to 'off'. Do not translate
-    * into your own language.
-    */
-    $pt_sans = _x( 'on', 'PT Sans font: on or off', 'fgymm' );
- 
-    /* Translators: If there are characters in your language that are not
     * supported by Open Sans, translate this to 'off'. Do not translate
     * into your own language.
     */
     $open_sans = _x( 'on', 'Open Sans font: on or off', 'fgymm' );
  
-    if ( 'off' !== $pt_sans || 'off' !== $open_sans ) {
+    if ( 'off' !== $open_sans ) {
         $font_families = array();
  
-        if ( 'off' !== $pt_sans ) {
-            $font_families[] = 'PT+Sans:400,400italic,700,700italic';
-        }
- 
-        if ( 'off' !== $open_sans ) {
-            $font_families[] = 'Open Sans:700italic,400,800,600';
-        }
+        $font_families[] = 'Open Sans:300,400,400i,700';
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),
