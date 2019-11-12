@@ -1,3 +1,6 @@
+=== v1.0.2 ===
+- Minor bugs fixed
+
 === v1.0.1 ===
 - Minor bugs fixed
 

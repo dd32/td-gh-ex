@@ -106,6 +106,7 @@ function arrival_me_get_default_theme_options() {
     $defaults[$prefix.'_site_footer_type']                  = 'default';
     $defaults[$prefix.'_site_footer_custom_template']       = 0;
     $defaults[$prefix.'_nav_header_padding']                = 0;
+    $defaults[$prefix.'_transparent_header_enable']         = false;
    
 
 	return $defaults;
