@@ -5,7 +5,6 @@
  * @package Advance Blogging
  */
 ?>
-
 <div id="sidebar">
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
         <aside role="complementary" aria-label="sidebar-1" id="archives" class="widget">

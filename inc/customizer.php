@@ -145,15 +145,6 @@ function advance_blogging_customize_register( $wp_customize ) {
         'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
     );
 
-	//add home page setting pannel
-	$wp_customize->add_panel( 'advance_blogging_panel_id', array(
-	    'priority' => 10,
-	    'capability' => 'edit_theme_options',
-	    'theme_supports' => '',
-	    'title' => __( 'Theme Settings', 'advance-blogging' ),
-	    'description' => __( 'Description of what this panel does.', 'advance-blogging' )
-	) );
-
 	//Color / Font Pallete
 	$wp_customize->add_section( 'advance_blogging_typography', array(
     	'title'      => __( 'Color / Font Pallete', 'advance-blogging' ),
@@ -494,6 +485,27 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'priority'	=> null,
 		'panel' => 'advance_blogging_panel_id',
 	));
+
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_blogging_topbar_hide',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_blogging_topbar_hide',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-blogging' ),
+        'section' => 'advance_blogging_topbar_header'
+    ));
+
+	//Sticky Header
+	$wp_customize->add_setting( 'advance_blogging_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_blogging_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-blogging' ),
+        'section' => 'advance_blogging_topbar_header'
+    ));
 
 	$wp_customize->add_setting('advance_blogging_facebook_url',array(
 		'default'	=> '',

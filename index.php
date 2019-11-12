@@ -205,6 +205,38 @@ get_header(); ?>
                 ?>
                 <div class="clearfix"></div>
             </div>            
+        <?php }else {?>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                          
+                        while ( have_posts() ) : the_post();
+
+                            get_template_part( 'template-parts/content' , get_post_format() ); 
+                          
+                        endwhile;
+                        wp_reset_postdata();
+                        else :
+
+                            get_template_part( 'no-results' ); 
+
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                            // Previous/next page navigation.
+                            the_posts_pagination( array(
+                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
+                                'next_text'          => __( 'Next page', 'advance-blogging' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
+                            ) );
+                        ?>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
+            </div>
         <?php } ?>
     </div>
 </main>

@@ -38,7 +38,7 @@ get_header(); ?>
 						    <div class="carousel-inner" role="listbox">
 						      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 						        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-						          <?php the_post_thumbnail(); ?>
+						            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
 	          				        <div class="carousel-caption">
 							            <div class="inner_carousel">
 							              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>

@@ -21,17 +21,15 @@ function search_open() {
 function search_close() {
 	jQuery(".serach_outer").animate({width: '0'});
 }
+
 (function( $ ) {
 
-	/**** Hidden search box ***/
-	// jQuery('document').ready(function($){
-	// 	$('.search-box span i').click(function(){
-	//         $(".serach_outer").animate({width: '100%'});
-	//     });
+	$(window).scroll(function(){
+	  var sticky = $('.sticky-header'),
+	      scroll = $(window).scrollTop();
 
-	//     $('.closepop i').click(function(){
-	//         $(".serach_outer").animate({width: '0'});
-	//     });
-	// });
-		
+	  if (scroll >= 100) sticky.addClass('fixed-header');
+	  else sticky.removeClass('fixed-header');
+	});
+
 })( jQuery );

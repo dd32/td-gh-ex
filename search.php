@@ -10,40 +10,40 @@ get_header(); ?>
 <main id="main" role="main" class="wrapper-box">
     <div class="container">
         <?php
-            $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
-            if($left_right == 'Left Sidebar'){ ?>
-                <div class="row">
-                    <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
-                    <div class="col-lg-8 col-md-8">
-                        <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
-                        <?php if ( have_posts() ) :
-                            /* Start the Loop */
-                          
-                            while ( have_posts() ) : the_post();
+        $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
+        if($left_right == 'Left Sidebar'){ ?>
+            <div class="row">
+                <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
+                <div class="col-lg-8 col-md-8">
+                    <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                      
+                        while ( have_posts() ) : the_post();
 
-                                get_template_part(  'template-parts/content',get_post_format()); 
-                          
-                            endwhile;
-                            wp_reset_postdata();
-                            else :
+                            get_template_part(  'template-parts/content',get_post_format()); 
+                      
+                        endwhile;
+                        wp_reset_postdata();
+                        else :
 
-                                get_template_part( 'no-results' ); 
+                            get_template_part( 'no-results' ); 
 
-                            endif; 
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                            // Previous/next page navigation.
+                            the_posts_pagination( array(
+                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
+                                'next_text'          => __( 'Next page', 'advance-blogging' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
+                            ) );
                         ?>
-                        <div class="navigation">
-                            <?php
-                                // Previous/next page navigation.
-                                the_posts_pagination( array(
-                                    'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                                    'next_text'          => __( 'Next page', 'advance-blogging' ),
-                                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                                ) );
-                            ?>
-                            <div class="clearfix"></div>
-                        </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
+            </div>
             <div class="clearfix"></div>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
             <div class="row">
@@ -89,11 +89,11 @@ get_header(); ?>
                   
                 endwhile;
                 wp_reset_postdata();
-                else :
+            else :
 
-                    get_template_part( 'no-results' ); 
+                get_template_part( 'no-results' ); 
 
-                endif; 
+            endif; 
             ?>
             <div class="navigation">
                 <?php
@@ -137,11 +137,9 @@ get_header(); ?>
                         ?>
                     </div>
                 </div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
             </div>
-        <div class="clearfix"></div>
-    
-        <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
-            
+            <div class="clearfix"></div>            
         <?php }else if($left_right == 'Four Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
@@ -211,6 +209,39 @@ get_header(); ?>
                     </div>
                 </div>
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
+            </div>
+        <?php }else {?>
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+                    <?php if ( have_posts() ) :
+                        /* Start the Loop */
+                          
+                        while ( have_posts() ) : the_post();
+
+                            get_template_part( 'template-parts/content',get_post_format() ); 
+                          
+                        endwhile;
+                        wp_reset_postdata();
+                        else :
+
+                            get_template_part( 'no-results' ); 
+
+                        endif; 
+                    ?>
+                    <div class="navigation">
+                        <?php
+                            // Previous/next page navigation.
+                            the_posts_pagination( array(
+                                'prev_text'          => __( 'Previous page', 'advance-blogging' ),
+                                'next_text'          => __( 'Next page', 'advance-blogging' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
+                            ) );
+                        ?>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
             </div>
         <?php } ?>
     </div>

@@ -2,9 +2,9 @@
 Contributors: ThemesCaliber
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout,custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, front-page-post-form, translation-ready, rtl-language-support, blog, e-commerce, news
 Requires at least: 4.8
-Tested up to: 5.2.3
+Tested up to: 5.2.4
 Requires PHP: 7.2.14
-Stable tag: 0.6.2
+Stable tag: 0.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,12 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added new menu style.
 * Added new search style.
 * Updated pot file.
+
+= 0.6.3 =
+* Added Show/hide option for topbar in customizer.
+* Added sticky header option in customizer.
+* Changed some theme code.
+* Updated Pot file.
 
 == Resources ==
 

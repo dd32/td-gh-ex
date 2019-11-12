@@ -22,7 +22,7 @@
 		<hr>					
 	<?php }?> 
 		<div class="entry-content"><?php the_content();?></div>
-		<div class="tag"><?php the_tags(); ?></div>
+		<div class="tags"><?php the_tags(); ?></div>
 	<div class="clearfix"></div>	             
 	<?php
 	 wp_link_pages( array(
@@ -45,12 +45,12 @@
 	} elseif ( is_singular( 'post' ) ) {
 		// Previous/next post navigation.
 		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next page', 'advance-blogging' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Next post:', 'advance-blogging' ) . '</span> ' .
-				'<span class="post-title">%title</span>',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous page', 'advance-blogging' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Previous post:', 'advance-blogging' ) . '</span> ' .
-				'<span class="post-title">%title</span>',
+			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post<i class="fas fa-chevron-right"></i>', 'advance-blogging' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Next post', 'advance-blogging' ) . '</span> ' .
+				'',
+			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="fas fa-chevron-left"></i>Previous Post', 'advance-blogging' ) . '</span> ' .
+				'<span class="screen-reader-text">' . __( 'Previous post', 'advance-blogging' ) . '</span> ' .
+				'',
 		) );
 	}
 ?>

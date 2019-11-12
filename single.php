@@ -9,16 +9,16 @@ get_header(); ?>
 <main id="main" role="main" class="middle-align">
 	<div class="container">
 		<?php
-            $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
-            if($left_right == 'Left Sidebar'){ ?>
-	            <div class="row">
-					<div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
-					<div class="col-lg-8 col-md-8" class="content-aa">
-						<?php while ( have_posts() ) : the_post(); 
-							get_template_part( 'template-parts/single-post');
-						endwhile; // end of the loop. ?>
-			       	</div>
-			    </div>
+        $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
+        if($left_right == 'Left Sidebar'){ ?>
+            <div class="row">
+				<div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
+				<div class="col-lg-8 col-md-8" class="content-aa">
+					<?php while ( have_posts() ) : the_post(); 
+						get_template_part( 'template-parts/single-post');
+					endwhile; // end of the loop. ?>
+		       	</div>
+		    </div>
 	    <?php }else if($left_right == 'Right Sidebar'){ ?>
 	    	<div class="row">
 		       	<div class="col-lg-8 col-md-8" class="content-aa">
@@ -58,6 +58,15 @@ get_header(); ?>
         <?php }else if($left_right == 'Grid Layout'){ ?>
         	<div class="row">
 				<div class="col-lg-8 col-md-8" class="content-aa">
+					<?php while ( have_posts() ) : the_post(); 
+						get_template_part( 'template-parts/single-post');
+					endwhile; // end of the loop. ?>
+		       	</div>
+				<div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
+			</div>
+		<?php }else {?>
+			<div class="row">
+		       	<div class="col-lg-8 col-md-8" class="content-aa">
 					<?php while ( have_posts() ) : the_post(); 
 						get_template_part( 'template-parts/single-post');
 					endwhile; // end of the loop. ?>
