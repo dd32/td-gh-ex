@@ -352,3 +352,10 @@ a.buy-pro-btn:hover{
 .operation-side-box-wrapper .box-content {
     padding: 20px 15px;
 }
+
+.operation-theme-welcome-info{
+    padding: 20px;
+}
+.operation-theme-welcome-info span.dismiss{
+    float: right;
+}

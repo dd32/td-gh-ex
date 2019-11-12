@@ -64,6 +64,9 @@
 
 				add_action( 'init', array( $this, 'get_required_plugin_notification' ));
 
+				/** Remove welcome notice after closing **/
+				add_action('admin_init', array( $this, 'info_notice_ignore' ));
+
 			}
 			
 			public function get_required_plugin_notification() {
@@ -83,24 +86,42 @@
 				return $notif_counter;
 			}
 
+			function info_notice_ignore() {
+				global $current_user;
+				
+				$user_id = $current_user->ID;
+				
+				if (isset($_GET['theme-info-ignore-notice'])) {
+					add_user_meta($user_id, 'info_notice_ignore', 'true', true);
+				}
+				
+			}
+			
+
 			/** Welcome Message Notification on Theme Activation **/
 			public function activation_admin_notice() {
-				global $pagenow;
-
-				if( is_admin() && ('themes.php' == $pagenow)  ) { 
-					add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
+				global $pagenow,$current_user;
+				
+				$user_id = $current_user->ID;
+				if (!get_user_meta($user_id, 'info_notice_ignore')) {
+					if( is_admin() && ('themes.php' == $pagenow)  ) { 
+						add_action( 'admin_notices', array( $this,'welcome_admin_notice_display') );
+					}
 				}
 			}
 
 			public function welcome_admin_notice_display(){
                 ?>
-			<div class="notice notice-success is-dismissible">
+			<div class="operation-theme-welcome-info notice notice-success is-dismissible clearfix">
 			<p>
 			<?php
 			printf( '%1$s %2$s %3$s <a href="%4$s">%5$s</a> %6$s', esc_html__( 'Welcome! Thank you for choosing', 'arrival' ), esc_html($this->theme_name), esc_html__( 'Please make sure you visit our', 'arrival' ), esc_url( admin_url( 'themes.php?page=welcome-page' ) ), esc_html__( 'Welcome Page', 'arrival' ), esc_html__( 'to get started with Arrival.', 'arrival' ) );
 			?>
 			</p>
-			<p><a class="button button-primary" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page' )) ?>"><?php esc_html_e( 'Lets Get Started', 'arrival' ); ?></a></p>
+			<p><a class="button button-primary" href="<?php echo esc_url(admin_url( 'themes.php?page=welcome-page' )) ?>"><?php esc_html_e( 'Lets Get Started', 'arrival' ); ?></a>
+				<span class="dismiss"><a href="?theme-info-ignore-notice"><?php esc_html_e('Dismiss','arrival') ?></a></span>
+			</p>
+			
 			</div>
 			<?php
 
@@ -477,7 +498,7 @@
 						<div class="box-header op-box-header"><?php printf(esc_html__('Loving %1$s ? ','arrival'),$this->theme_name); ?></div>
 						<div class="box-content">
 							<p><?php esc_html_e('If you are enjoying theme,spread your love and rate our theme.','arrival'); ?></p>
-							<a href="https://wordpress.org/support/theme/<?php echo esc_attr($this->theme_name)?>/reviews/#new-post" class="button button-primary" target="_blank"><?php esc_html_e('Rate Now','arrival'); ?></a>
+							<a href="https://wordpress.org/support/theme/arrival/reviews/#new-post" class="button button-primary" target="_blank"><?php esc_html_e('Rate Now','arrival'); ?></a>
 						</div>
 					</div>
 
