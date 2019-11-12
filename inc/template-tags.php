@@ -146,7 +146,7 @@ function anther_post_category() {
 		foreach ( $categories as $category ) {
 			$category_list .= sprintf(
 				'<a href="%1$s" title="%2$s">%3$s</a>, ',
-				esc_attr( esc_url( get_category_link( $category->term_id ) ) ),
+				esc_url( get_category_link( $category->term_id ) ),
 				esc_attr( $category->cat_name ),
 				esc_html( $category->cat_name )
 			);
@@ -311,7 +311,7 @@ function anther_post_thumbnail( $args = array() ) {
 		// Post Thumbnail HTML
 		printf( '<div class="%1$s"><figure class="post-thumbnail"><a href="%2$s">%3$s</a></figure></div>',
 			esc_attr( $args['class'] ),
-			esc_attr( esc_url( get_the_permalink() ) ),
+			esc_url( get_the_permalink() ),
 			get_the_post_thumbnail( null, $args['size'], array( 'class' => 'img-featured img-responsive' ) )
 		);
 	}

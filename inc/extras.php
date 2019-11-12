@@ -245,7 +245,8 @@ add_action( 'anther_credits', 'anther_credits_blog' );
  * @return void
  */
 function anther_credits_designer() {
-	printf( '<div class="credits credits-designer">Anther Theme by <a href="%1$s" title="DesignOrbital">DesignOrbital</a> <span>&sdot;</span> %2$s <a href="%3$s" title="WordPress">WordPress</a></div>',
+	printf( '<div class="credits credits-designer">%1$s <a href="%2$s" title="DesignOrbital">DesignOrbital</a> <span>&sdot;</span> %3$s <a href="%4$s" title="WordPress">WordPress</a></div>',
+		esc_html__( 'Anther Theme by', 'anther' ),
 		esc_url( 'https://designorbital.com' ),
 		esc_html__( 'Powered by', 'anther' ),
 		esc_url( 'https://wordpress.org' )
@@ -374,7 +375,7 @@ function anther_the_attached_image() {
 
 	printf( '<a href="%1$s" title="%2$s" rel="attachment">%3$s</a>',
 		esc_url( $next_attachment_url ),
-		esc_attr( get_the_title() ),
+		the_title_attribute( 'echo=0' ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
 

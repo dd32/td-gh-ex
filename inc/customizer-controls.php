@@ -30,7 +30,7 @@ function anther_default( $theme_mod = '' ) {
 		'anther_content_options_featured_image_page'    => true,
 		'anther_content_options_archive_title_label'    => false,
 		'anther_content_options_post_first_category'    => true,
-		'anther_copyright'                              => sprintf( '%1$s %2$s - <a href="%3$s">%4$s</a>', esc_html__( '&copy; Copyright', 'anther' ), esc_html( date_i18n( __( 'Y', 'anther' ) ) ), esc_attr( esc_url( home_url( '/' ) ) ), esc_html( get_bloginfo( 'name' ) ) ),
+		'anther_copyright'                              => sprintf( '%1$s %2$s - <a href="%3$s">%4$s</a>', esc_html__( '&copy; Copyright', 'anther' ), esc_html( date_i18n( __( 'Y', 'anther' ) ) ), esc_url( home_url( '/' ) ), esc_html( get_bloginfo( 'name' ) ) ),
 		'anther_credit'                                 => true,
 	);
 
