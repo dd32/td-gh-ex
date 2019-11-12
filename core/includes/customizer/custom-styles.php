@@ -16,7 +16,7 @@ function responsive_premium_custom_color_styles() {
 	$body_typography        = get_theme_mod( 'body_typography' );
 	$headings_typography    = get_theme_mod( 'headings_typography' );
 	$heading_text_color     = get_theme_mod( 'heading-text-color', '' );
-	$link_color             = get_theme_mod( 'link-color', '#078ce1' );
+	$link_color             = get_theme_mod( 'link-color', '#0066cc' );
 	$link_hover_color       = get_theme_mod( 'link-hover-color', '#10659c' );
 	$button_color           = get_theme_mod( 'button-color', '#1874cd' );
 	$button_hover_color     = get_theme_mod( 'button-hover-color', '#7db7f0' );
@@ -143,6 +143,9 @@ function responsive_premium_custom_color_styles() {
 	// Mobile Menu Toggle button color.
 	$mobile_menu_toggle_button_color = get_theme_mod( 'responsive_menu_toggle_button_color' );
 
+	// Mobile Menu Border Color.
+	$responsive_mobile_menu_border_color = get_theme_mod( 'responsive_mobile_menu_border_color', '#f5f5f5' );
+
 	// Submenu styles.
 	$responsive_submenu_top_border    = get_theme_mod( 'responsive_submenu_top_border' );
 	$responsive_submenu_right_border  = get_theme_mod( 'responsive_submenu_right_border' );
@@ -159,7 +162,7 @@ function responsive_premium_custom_color_styles() {
 	if ( isset( $body_typography['color'] ) ) {
 		$body_color = $body_typography['color'];
 	} else {
-		$body_color = '#929292';
+		$body_color = '#575757';
 	}
 
 	if ( isset( $headings_typography['color'] ) ) {
@@ -403,6 +406,13 @@ function responsive_premium_custom_color_styles() {
 		.content-area, body.default-layout #content-outer, body.full-width-layout #content-outer, body.full-width-no-box #content-outer, .menu, #footer {
 			max-width: {$container_width}px;
 		}
+
+		.full-width-layout .grid.col-940 .alignwide,
+		.full-width-no-box .grid.col-940 .alignwide {
+			padding-left: calc((100vw - {$container_width}px)/4);
+			padding-right: calc((100vw - {$container_width}px)/4);
+		}
+
 		.woocommerce ul.products li.product .onsale.circle-outline, .woocommerce ul.products li.product .onsale.square-outline, .woocommerce div.product .onsale.circle-outline, .woocommerce div.product .onsale.square-outline {
 			background: #ffffff;
 			border: 2px solid {$link_color};
@@ -455,17 +465,17 @@ function responsive_premium_custom_color_styles() {
 	}
 
 	if ( ! empty( $menu_text_color ) ) {
-		$custom_css .= ".menu a, .full-width-no-box .menu a, .js .main-nav a#responsive_menu_button {
+		$custom_css .= ".menu a,.menu .menu-item-has-children::after, .full-width-no-box .menu a, .js .main-nav a#responsive_menu_button {
 			color: {$menu_text_color};
 		}
 		@media (min-width: 768px){
-			.menu li li a {
+			.menu li li a, .js .main-nav a#responsive_menu_button {
 				color: {$menu_text_color};
 			}
 		}";
 	}
 	if ( ! empty( $menu_text_hover_color ) ) {
-		$custom_css .= ".menu a:hover, .full-width-no-box .menu a:hover{
+		$custom_css .= ".menu a:hover, .full-width-no-box .menu a:hover,.menu .menu-item-has-children:hover::after{
 			color: {$menu_text_hover_color};
 		}
 		@media (min-width: 768px){
@@ -484,7 +494,7 @@ function responsive_premium_custom_color_styles() {
 	if ( ! empty( $menu_active_text_color ) ) {
 		$custom_css .= "
 		.full-width-no-box .menu .current-menu-item a, .full-width-no-box .menu .current_page_item a,
-		.menu .current-menu-item a, .menu .current_page_item a  {
+		.menu .current-menu-item a, .menu .current_page_item a, .current_page_item.menu-item-has-children::after  {
 			color: {$menu_active_text_color};
 		}";
 	}
@@ -622,7 +632,7 @@ function responsive_premium_custom_color_styles() {
 		}";
 	}
 	if ( ! empty( $sidebar_text_color ) ) {
-		$custom_css .= "#widgets .widget-wrapper * {
+		$custom_css .= "#widgets .widget-wrapper p,#widgets .widget-wrapper li,#widgets .widget-wrapper a,#widgets .widget-wrapper div {
 			color: {$sidebar_text_color};
 		}";
 	}
@@ -724,7 +734,7 @@ function responsive_premium_custom_color_styles() {
 		}";
 	}
 	if ( ! empty( $footer_text_color ) ) {
-		$custom_css .= "#footer *, .full-width-no-box #footer-wrapper .footer_div *{
+		$custom_css .= "#footer *, .full-width-no-box #footer-wrapper .footer_div *, #footer a{
 			color: {$footer_text_color};
 		}";
 	}
@@ -858,7 +868,7 @@ function responsive_premium_custom_color_styles() {
             display: block;
             padding: 5px 40px 5px 10px;
             font-weight: 700;
-            color: {$menu_text_color};
+			color: {$menu_text_color};
             cursor: pointer
         }
         .js .main-nav a#responsive_menu_button {
@@ -870,7 +880,6 @@ function responsive_premium_custom_color_styles() {
             width: 32px;
             margin-left: -32px;
             cursor: pointer;
-            color: #fff;
             font-size: 30px;
             line-height: 1.3;
             text-align: center
@@ -920,7 +929,7 @@ function responsive_premium_custom_color_styles() {
                 line-height: 45px;
                 padding: 0 15px;
                 border: none;
-                border-bottom: 1px solid #f5f5f5;
+                border-bottom: 1px solid {$responsive_mobile_menu_border_color};
                 text-shadow: none;
                 text-align: left;
                 cursor: pointer
