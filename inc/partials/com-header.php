@@ -230,7 +230,7 @@ function attesa_get_header() {
 				<div class="mainHead">
 					<div class="subHead">
 						<?php $menuLinksStyle = attesa_options('_menu_links_style', 'minimal'); ?>
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html($mobileMenuText); ?><i class="spaceLeft <?php echo esc_attr($mobileMenuIcon); ?>" aria-hidden="true"></i></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php echo esc_attr($mobileMenuText); ?>"><?php echo esc_html($mobileMenuText); ?><i class="spaceLeft <?php echo esc_attr($mobileMenuIcon); ?>" aria-hidden="true"></i></button>
 						<div class="attesa-main-menu-container open_<?php echo esc_attr($mobileMenuOpen); ?>">
 							<?php if ($mobileMenuOpen == 'pushmenu'): ?>
 								<?php $closeMenuText = attesa_options('_menu_mobile_text_close',__( 'Close menu', 'attesa' )); ?>
@@ -367,7 +367,7 @@ function attesa_get_header() {
 				<div class="mainHead">
 					<div class="subHead">
 						<?php $menuLinksStyle = attesa_options('_menu_links_style', 'minimal'); ?>
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html($mobileMenuText); ?><i class="spaceLeft <?php echo esc_attr($mobileMenuIcon); ?>" aria-hidden="true"></i></button>
+						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php echo esc_attr($mobileMenuText); ?>"><?php echo esc_html($mobileMenuText); ?><i class="spaceLeft <?php echo esc_attr($mobileMenuIcon); ?>" aria-hidden="true"></i></button>
 						<div class="attesa-main-menu-container open_<?php echo esc_attr($mobileMenuOpen); ?>">
 							<?php if ($mobileMenuOpen == 'pushmenu'): ?>
 									<?php $closeMenuText = attesa_options('_menu_mobile_text_close',__( 'Close menu', 'attesa' )); ?>
