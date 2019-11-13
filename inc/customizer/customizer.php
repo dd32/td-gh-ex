@@ -140,7 +140,7 @@ function arrival_customizer_scripts(){
 	wp_enqueue_style( 'arrival-customizer-general', get_theme_file_uri( '/assets/css/customizer-general.css' ), array(), ARRIVAL_VER );
 
 	wp_enqueue_script( 'arrival-customizer-general', get_theme_file_uri( '/assets/js/customizer-general.js' ), array('jquery','customize-base'), ARRIVAL_VER );
-	wp_enqueue_script( 'arrival-customizer-scripts', get_theme_file_uri( '/assets/js/customizer-control.js' ), array('customize-controls'), ARRIVAL_VER );
+	wp_enqueue_script( 'arrival-customizer-scripts', get_theme_file_uri( '/assets/js/customizer-control.js' ), array('jquery','customize-controls'), ARRIVAL_VER );
 }
 add_action('customize_controls_enqueue_scripts','arrival_customizer_scripts');
 
@@ -155,7 +155,9 @@ if( ! function_exists('arrival_customizer_pro_info')){
 
 	$pro_info_return = apply_filters('arrival_customizer_text_pro','__return_true');
 
-	if( false == $pro_info_return )
+	
+
+	if( (false == $pro_info_return) || class_exists('Arrival_Companion') )
 		return;
 
 	if ( ! class_exists( 'WP_Customize_Control' ) ) {
