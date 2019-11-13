@@ -70,7 +70,7 @@ function axiohost_customize_partial_blogdescription() {
 
 function axiohost_customize_backend_scripts() {
 
-    wp_enqueue_style( 'customizer-style', get_template_directory_uri() . '/assets/css/em-customizer-style.css', array(), 'all' );
+    wp_enqueue_style( 'customizer-style', get_template_directory_uri() . '/assets/css/customizer-style.css', array(), 'all' );
      
     wp_enqueue_script( 'axiohost-customizer-controls', get_template_directory_uri() . '/assets/js/customizer-controls.js', array(), '20151215', false );
 }

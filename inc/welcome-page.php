@@ -1,9 +1,12 @@
 <?php 
 
     function axiohost_admin_menu() {
-        add_theme_page( 'About Axiohost', 'About Axiohost', 'manage_options', 'about-axiohost', 'axiohost_info', 'dashicons-tickets', 6  );
+ 
+        add_theme_page( 'About Axiohost', 'About Axiohost', 'edit_theme_options', 'about-axiohost', 'axiohost_info');
     }
     add_action( 'admin_menu', 'axiohost_admin_menu' );
+	
+ 
     
     function axiohost_info(){
     	

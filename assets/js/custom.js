@@ -122,21 +122,6 @@ jQuery('.shop-product-slider').slick({
   ]
 });
 
-    /* ==========================================
-          2.    Scollup   
-    ========================================== */
-    var offset = 300,
-    offset_opacity = 1200,
-    scroll_top_duration = 1000,
-    $back_to_top = jQuery('#scrollUp');
-    $back_to_top.on('click', function(event) {
-    event.preventDefault();
-    jQuery('body,html').animate({
-        scrollTop: 0,
-    }, scroll_top_duration);
-});
-
-
 
     /*=============================================
         8. Paralax Active JS
