@@ -17,7 +17,7 @@
 				<span class="sep"> | </span>
 				<?php
 				/* translators: 1: theme name, 2: theme developer */
-				printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'zenzero' ), '<a target="_blank" href="https://crestaproject.com/downloads/zenzero/" rel="nofollow" title="Zenzero Theme">Zenzero</a>', 'CrestaProject' );
+				printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'zenzero' ), '<a target="_blank" href="https://crestaproject.com/downloads/zenzero/" rel="noopener noreferrer" title="Zenzero Theme">Zenzero</a>', 'CrestaProject' );
 				?>
 			</div><!-- .site-info -->
 			<?php 

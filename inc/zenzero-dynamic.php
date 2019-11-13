@@ -478,7 +478,7 @@ function zenzero_custom_css_styles() {
 	$special_box_color_fourth = get_option('special_color_fourth');
 ?>
 
-<style type="text/css">
+<style id="zenzero-custom-css">
 	<?php if (!empty($text_color_first) && $text_color_first != '#919191' ) : ?>
 	body,
 	button,
