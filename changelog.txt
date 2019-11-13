@@ -4,6 +4,11 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.7.1
+	* Fixed: Error when checking for theme updates in certain multisite configurations
+	* Fixed: Ads appear in front page when using Static Front Page, when it should be disabled
+	* Fixed: PHP warnings when creating new posts in WordPress 5.3
+
 Version 2.7
 	* Updated: Bootstrap 3.4.1
 	* Fixed: Homepage panes image not linked to post when Featured Image is set

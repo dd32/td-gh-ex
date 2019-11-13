@@ -76,6 +76,6 @@
 ?>
 
 <?php /* Display Adsense advertising */ ?>
-<?php if ( ! is_front_page() || ( is_front_page() && $graphene_settings['adsense_show_frontpage'] ) ) { graphene_adsense(); } ?>
+<?php graphene_adsense(); ?>
 
 <?php do_action( 'graphene_loop_footer' ); ?>

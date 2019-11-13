@@ -30,19 +30,25 @@ function graphene_pre_get_avatar_data( $args, $id_or_email ) {
 
 	$user_id = 0;
 
-	/* If this is a comment object, check if user is registered */
-	if ( is_object( $id_or_email ) && isset( $id_or_email->comment_ID ) ) {
-		if ( $id_or_email->user_id ) $user_id = $id_or_email->user_id;
-		else {
-			$user = get_user_by( 'email', $id_or_email->comment_author_email );
-			if ( $user ) $user_id = $user->ID;
+	
+	if ( is_object( $id_or_email ) ) {
+
+		/* If this is a comment object, check if user is registered */
+		if ( isset( $id_or_email->comment_ID ) ) {
+			if ( $id_or_email->user_id ) $user_id = $id_or_email->user_id;
+			else {
+				$user = get_user_by( 'email', $id_or_email->comment_author_email );
+				if ( $user ) $user_id = $user->ID;
+			}
+		} else {
+			$user_id = $id_or_email->ID;
 		}
 	
 	} else if ( is_numeric( $id_or_email ) ) {
 		/* If this is the user ID, set it as such */
 		$user_id = $id_or_email;
 
-	} else if ( is_email( $id_or_email ) ) {
+	} else if ( is_string( $id_or_email ) && is_email( $id_or_email ) ) {
 		/* If this is email, see if it's a registered user */
 		$user = get_user_by( 'email', $id_or_email );
 		if ( $user ) $user_id = $user->ID;

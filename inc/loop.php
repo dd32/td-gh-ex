@@ -27,6 +27,7 @@ add_action( 'after_setup_theme', 'graphene_ads_counter' );
 if ( ! function_exists( 'graphene_adsense' ) ) :
 	function graphene_adsense(){
 		global $graphene_ads_count, $graphene_settings;
+		if ( is_front_page() && ! $graphene_settings['adsense_show_frontpage'] ) return;
 
 		if ( $graphene_settings['show_adsense'] && $graphene_ads_count <= $graphene_settings['adsense_max_count'] ) : ?>
             <div class="post adsense_single clearfix" id="adsense-ad-<?php echo $graphene_ads_count; ?>">
