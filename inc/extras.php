@@ -249,7 +249,7 @@ function anther_credits_designer() {
 		esc_html__( 'Anther Theme by', 'anther' ),
 		esc_url( 'https://designorbital.com' ),
 		esc_html__( 'Powered by', 'anther' ),
-		esc_url( 'https://wordpress.org' )
+		esc_url( __( 'https://wordpress.org/', 'anther' ) )
 	);
 }
 add_action( 'anther_credits', 'anther_credits_designer' );

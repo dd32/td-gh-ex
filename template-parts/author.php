@@ -26,7 +26,7 @@
                 printf(
                     /* translators: %1$s: post author */
                     esc_html__( 'Published by %1$s', 'anther' ),
-                    '<span class="author-name">' . get_the_author() . '</span>'
+                    '<span class="author-name">' . esc_html( get_the_author() ) . '</span>'
                 );
             ?>
         </h2>

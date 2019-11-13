@@ -120,7 +120,7 @@ function anther_post_edit_link() {
 	if ( anther_has_post_edit_link() ) {
 		// Post Edit Link
 		printf( '<span class="post-edit-link-meta entry-meta-icon"><span class="screen-reader-text">%1$s</span><a class="post-edit-link" href="%2$s">%3$s</a></span>',
-			esc_html( the_title_attribute( 'echo=0' ) ),
+			esc_html( get_the_title() ),
 			esc_url( get_edit_post_link() ),
 			/* translators: %s: post edit link label */
 			esc_html_x( 'Edit', 'post edit link label', 'anther' )
