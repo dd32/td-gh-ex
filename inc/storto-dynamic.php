@@ -215,7 +215,7 @@ function storto_custom_css_styles() {
 	}
 ?>
 
-<style type="text/css">
+<style id="storto-custom-css">
 	<?php if (!empty($color_primary)) : ?>
 	body,
 	button,

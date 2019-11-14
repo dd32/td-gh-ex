@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="https://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
@@ -82,7 +82,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'storto' ); ?>"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'storto' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($hideSearch == 1 ) : ?>
-				<a href="#" class="top-search"><i class="fa spaceRightDouble fa-search"></i></a>
+				<a href="#" class="top-search" aria-hidden="true"><i class="fa spaceRightDouble fa-search"></i></a>
 			<?php endif; ?>
 		</div>
 		<?php if ($hideSearch == 1 ) : ?>
@@ -92,7 +92,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle"><?php esc_html_e( 'Select a page...', 'storto' ); ?><i class="fa fa-align-justify"></i></button>
+			<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Select a page...', 'storto' ); ?>"><?php esc_html_e( 'Select a page...', 'storto' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 		

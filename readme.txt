@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.5.8
+Stable tag: 1.5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Storto WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -166,4 +166,7 @@ Storto is a simple and modern WordPress Theme useful for blog or personal page. 
 = Version 1.5.8 =
 * Improved compatibility with WordPress 5.3
 * Minify navigation.js
+* Minor bug fixes
+
+= Version 1.5.9 =
 * Minor bug fixes
