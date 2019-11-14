@@ -8,7 +8,7 @@ Contributors: Theme Palace
 Requires at least: 4.5
 Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: 1.9
+Stable tag: 2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -129,6 +129,9 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 2.0 - Nov 14, 2019
+* Updated minor css
 
 = 1.9 - October 04, 2019
 * Updated minor css
