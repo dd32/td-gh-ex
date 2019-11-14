@@ -157,6 +157,8 @@ function automobile_hub_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'automobile-hub-style', get_stylesheet_uri() );
+	require get_parent_theme_file_path( '/tp-theme-color.php' );
+	wp_add_inline_style( 'automobile-hub-style',$tp_theme_css );
 
 	// Fontawesome
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome-all.css' ) );
@@ -214,7 +216,7 @@ function automobile_hub_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template','automobile_hub_front_page_template' );
 
-define('AUTOMOBILE_HUB_CREDIT','https://www.themespride.com/');
+define('AUTOMOBILE_HUB_CREDIT','https://www.themespride.com/themes/free-automobile-wordpress-theme/');
 if ( ! function_exists( 'automobile_hub_credit' ) ) {
 	function automobile_hub_credit(){
 		echo "<a href=".esc_url(AUTOMOBILE_HUB_CREDIT)." target='_blank'>".esc_html__('Themespride','automobile-hub')."</a>";

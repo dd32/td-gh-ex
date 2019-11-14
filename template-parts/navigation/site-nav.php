@@ -7,13 +7,13 @@
 <div class="menubar">
   	<div class="container right_menu">
   		<div class="row">
-	    	<div class="menubox col-lg-8 col-md-6">
-	      		<div class="innermenubox ">
+	    	<div class="menubox col-lg-8 col-md-6 col-2">
+	      		<div class="innermenubox">
 		          	<div class="toggle-nav mobile-menu">
 		            	<span onclick="openNav()"><i class="fas fa-bars"></i></span>
 		          	</div>
 		         	<div id="mySidenav" class="nav sidenav">
-			            <nav id="site-navigation" class="main-navigation">
+			            <nav id="site-navigation" class="main-navigation" role="navigation">
 			              	<a href="javascript:void(0)" class="closebtn mobile-menu" onclick="closeNav()"><i class="fas fa-times"></i></a>
 			              	<?php 
 			                	wp_nav_menu( array( 
@@ -29,7 +29,7 @@
           			<div class="clearfix"></div>
         		</div>
 	    	</div>
-			<div class="col-lg-3 col-md-5 social-media">
+			<div class="col-lg-3 col-md-5 col-6 social-media">
 				<?php if( get_theme_mod( 'automobile_hub_facebook_url' ) != '') { ?>
 					<a href="<?php echo esc_url( get_theme_mod( 'automobile_hub_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i></a>
 				<?php } ?>
@@ -46,7 +46,7 @@
 					<a href="<?php echo esc_url( get_theme_mod( 'automobile_hub_pint_url','' ) ); ?>"><i class="fab fa-pinterest"></i></a>
 				<?php } ?>
 			</div>
-	    	<div class="search-box col-lg-1 col-md-1">
+	    	<div class="search-box col-lg-1 col-md-1 col-2">
 		        <span><i class="fas fa-search"></i></span>
 	      	</div>
 	    </div>

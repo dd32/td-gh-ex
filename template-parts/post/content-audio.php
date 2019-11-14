@@ -16,7 +16,7 @@
     $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
   }
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="page-box row">
     <?php
       if ( ! is_single() ) {
@@ -44,4 +44,4 @@
     </div>
     <div class="clearfix"></div>
   </div>
-</div>
+</article>

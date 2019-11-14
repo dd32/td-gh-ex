@@ -22,10 +22,34 @@ function automobile_hub_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'automobile-hub' ),
 	) );
 
+	//TP Color Option
+	$wp_customize->add_section('automobile_hub_color_option',array(
+        'title'         => __('TP Color Settings', 'automobile-hub'),
+        'panel' => 'automobile_hub_panel_id'
+    ) );
+
+	$wp_customize->add_setting( 'automobile_hub_tp_color_option', array(
+	    'default' => '#e43315',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'automobile_hub_tp_color_option', array(
+	    'description' => __('It will change the complete theme color in one click.', 'automobile-hub'),
+	    'section' => 'automobile_hub_color_option',
+	    'settings' => 'automobile_hub_tp_color_option',
+  	)));
+  	$wp_customize->add_setting( 'automobile_hub_tp_color_option_link', array(
+	    'default' => '#b91b00',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'automobile_hub_tp_color_option_link', array(
+	    'description' => __('It will change the complete theme hover link color in one click.', 'automobile-hub'),
+	    'section' => 'automobile_hub_color_option',
+	    'settings' => 'automobile_hub_tp_color_option_link',
+  	)));
+
 	//Sidebar Position
 	$wp_customize->add_section('automobile_hub_sidebar_position',array(
         'title'         => __('Sidebar Position', 'automobile-hub'),
-        'priority'      => 21,
         'panel' => 'automobile_hub_panel_id'
     ) );
 
@@ -69,7 +93,6 @@ function automobile_hub_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'automobile_hub_topbar', array(
     	'title'      => __( 'Contact Details', 'automobile-hub' ),
     	'description' => __( 'Add your contact details', 'automobile-hub' ),
-		'priority'   => 30,
 		'panel' => 'automobile_hub_panel_id'
 	) );
 
@@ -116,7 +139,6 @@ function automobile_hub_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'automobile_hub_social_media', array(
     	'title'      => __( 'Social Media Links', 'automobile-hub' ),
     	'description' => __( 'Add your Social Links', 'automobile-hub' ),
-		'priority'   => 30,
 		'panel' => 'automobile_hub_panel_id'
 	) );
 
@@ -173,7 +195,6 @@ function automobile_hub_customize_register( $wp_customize ) {
 	//home page slider
 	$wp_customize->add_section( 'automobile_hub_slider_section' , array(
     	'title'      => __( 'Slider Section', 'automobile-hub' ),
-		'priority'   => 30,
 		'panel' => 'automobile_hub_panel_id'
 	) );
 

@@ -4,7 +4,7 @@ Theme URI: https://www.themespride.com/themes/free-automobile-wordpress-theme/
 Author: ThemesPride
 Author URI: https://www.themespride.com/
 Description: Automobile Hub is a stylish, modern, dynamic, resourceful and feature-rich automobile WordPress theme for car and bike showrooms, automobile garage, car dealership, cab services, car rentals, ATV bikes, RV bikes and cycles, aircrafts manufacturing company, helicopter services, car lifters, cargo hubs, car washing centres and all the websites dealing in automobile industry. It is a responsive theme with 100% fluid layout and cross-browser compatible to load seamlessly on all browsers. It is multilingual to give services in all international languages and retina ready to show sharp and crisp images of automobiles to make the website look beautiful. This automobile WordPress theme is optimized for search engines and all its pages load with super-fast speed. It is compatible with the latest WordPress version and many customization options are provided which eliminates the need for any professional coder. There are so many social media icons embedded that your website and its content are sure to reach target audience easily. The interface of this automobile theme is extremely easy to use; sliders are provided for smooth navigation. It has a gallery where you can post gorgeous pictures of cars, bikes and other vehicles to allure visitors and testimonial section is to get customers’ feedback to improve services.  demo: https://www.themespride.com/automobile-hub-pro/
-Version: 0.1.2
+Version: 0.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: automobile-hub
@@ -73,6 +73,41 @@ img {
 textarea{
   width: 100%;
 }
+
+/*--------------------------------------------------------------
+Accessibility CSS
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
@@ -159,7 +194,7 @@ Menu bar
   width: 100%;
   z-index: 99;
   box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.25);
-  background: #151515;
+  background: #fff;
 }
 .menubar {
   -webkit-transition: all 0.5s ease;
@@ -258,9 +293,7 @@ ul.list_nav {
 /*--------------------------------------------------------------
 Superfish Menu
 --------------------------------------------------------------*/
-/*.sf-arrows .sf-with-ul{
-  padding-right: 15px;
-}*/
+
 .sf-arrows .sf-with-ul:after{
   content: '';
   position: absolute;
@@ -759,6 +792,9 @@ Sidebar
 #theme-sidebar tr {
   border-bottom: solid 1px #ebebeb;
 }
+.woocommerce #tp_content {
+  margin-top: 30px;
+}
 
 /*--------------------------------------------------------------
 Comments
@@ -869,6 +905,19 @@ Comments
   cursor: pointer;
   color: #fff;
 }
+input[type="text"],
+input[type="email"],
+input[type="phno"],
+input[type="password"], 
+textarea{
+  border:1px solid #c8c8c8;
+  width:100%; 
+  font-size:16px;
+  padding:10px 10px; 
+  margin:0 0 23px 0;
+  height:auto;
+}
+
 /*--------------------------------------------------------------
 Commen CSS
 --------------------------------------------------------------*/
@@ -1233,16 +1282,6 @@ Media Queries
   .headerbox i:after{
     content: none;
   }
-  .menubox {
-    width: 19%;
-    float: left;
-  }
-  .social-media{
-    width: 58%;
-  }
-  .search-box {
-    width: 10%;
-  }
   .search-box i{
     border: none;
   }
@@ -1259,5 +1298,13 @@ Media Queries
   }
   #slider .carousel-caption{
     right: auto;
+  }
+  .woocommerce ul.products.columns-3 li.product, 
+  .woocommerce-page ul.products.columns-3 li.product{
+    width: 100%;
+  }
+  .woocommerce .woocommerce-ordering, 
+  .woocommerce-page .woocommerce-ordering{
+    float: none;
   }
 }

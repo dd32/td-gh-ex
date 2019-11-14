@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<h2><?php the_title();?></h2>
     <div class="box-info">
   		<i class="far fa-calendar-alt"></i><span class="entry-date"><?php the_date(); ?></span>
@@ -42,4 +42,4 @@
         }
     ?>
     </div>
-</div>
+</article>

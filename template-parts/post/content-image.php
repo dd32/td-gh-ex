@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="page-box row">
       <?php 
         if(has_post_thumbnail()) { ?>
@@ -30,4 +30,4 @@
       </div>
       <div class="clearfix"></div>
   </div>
-</div>
+</article>
