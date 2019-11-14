@@ -5,8 +5,8 @@ Contributors: canyonthemes
 Tags: custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
 Requires at least: 4.8
 Requires PHP: 5.6
-Tested up to: 5.2.3
-Stable tag: 0.0.8
+Tested up to: 5.3.0
+Stable tag: 1.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,9 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.2 - November 04 2019 =
+* Extend compatibility to WordPress 5.3
 
 = 1.0.1 - September 10 2019 =
 * Extend compatibility to WordPress 5.2.3
