@@ -157,6 +157,8 @@ function adventure_travelling_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'adventure-travelling-style', get_stylesheet_uri() );
+	require get_parent_theme_file_path( '/tp-theme-color.php' );
+	wp_add_inline_style( 'adventure-travelling-style',$tp_theme_css );
 
 	// Fontawesome
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/fontawesome-all.css' ) );
@@ -214,7 +216,7 @@ function adventure_travelling_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template',  'adventure_travelling_front_page_template' );
 
-define('ADVENTURE_TRAVELLING_CREDIT','https://www.themespride.com/');
+define('ADVENTURE_TRAVELLING_CREDIT','https://www.themespride.com/themes/free-travel-agency-wordpress-theme/');
 if ( ! function_exists( 'adventure_travelling_credit' ) ) {
 	function adventure_travelling_credit(){
 		echo "<a href=".esc_url(ADVENTURE_TRAVELLING_CREDIT)." target='_blank'>".esc_html__('Themespride','adventure-travelling')."</a>";

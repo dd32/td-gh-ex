@@ -22,10 +22,34 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'adventure-travelling' ),
 	) );
 
+	//TP Color Option
+	$wp_customize->add_section('adventure_travelling_color_option',array(
+        'title'         => __('TP Color Settings', 'adventure-travelling'),
+        'panel' => 'adventure_travelling_panel_id'
+    ) );
+
+	$wp_customize->add_setting( 'adventure_travelling_tp_color_option', array(
+	    'default' => '#ffcc05',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'adventure_travelling_tp_color_option', array(
+	    'description' => __('It will change the complete theme color in one click.', 'adventure-travelling'),
+	    'section' => 'adventure_travelling_color_option',
+	    'settings' => 'adventure_travelling_tp_color_option',
+  	)));
+  	$wp_customize->add_setting( 'adventure_travelling_tp_color_option_link', array(
+	    'default' => '#d28d07',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'adventure_travelling_tp_color_option_link', array(
+	    'description' => __('It will change the complete theme hover link color in one click.', 'adventure-travelling'),
+	    'section' => 'adventure_travelling_color_option',
+	    'settings' => 'adventure_travelling_tp_color_option_link',
+  	)));
+
 	//Sidebar Position
 	$wp_customize->add_section('adventure_travelling_sidebar_position',array(
         'title'         => __('Sidebar Position', 'adventure-travelling'),
-        'priority'      => 21,
         'panel' => 'adventure_travelling_panel_id'
     ) );
 
@@ -69,7 +93,6 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'adventure_travelling_topbar', array(
     	'title'      => __( 'Contact Details', 'adventure-travelling' ),
     	'description' => __( 'Add your contact details', 'adventure-travelling' ),
-		'priority'   => 30,
 		'panel' => 'adventure_travelling_panel_id'
 	) );
 
@@ -136,7 +159,6 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'adventure_travelling_social_media', array(
     	'title'      => __( 'Social Media Links', 'adventure-travelling' ),
     	'description' => __( 'Add your Social Links', 'adventure-travelling' ),
-		'priority'   => 30,
 		'panel' => 'adventure_travelling_panel_id'
 	) );
 
@@ -193,7 +215,6 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	//home page slider
 	$wp_customize->add_section( 'adventure_travelling_slider_section' , array(
     	'title'      => __( 'Slider Settings', 'adventure-travelling' ),
-		'priority'   => 30,
 		'panel' => 'adventure_travelling_panel_id'
 	) );
 

@@ -42,4 +42,4 @@ function adventure_travelling_header_style() {
 	   	wp_add_inline_style( 'adventure-travelling-style', $custom_css );
 	endif;
 }
-endif; // adventure_travelling_header_style
+endif;

@@ -8,7 +8,7 @@
 
 ?>
 <div class="container">
-	<div class="widget-area row">
+	<aside class="widget-area row" role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'adventure-travelling' ); ?>">
 		<div class="col-lg-3 col-md-3">
 			<?php dynamic_sidebar( 'footer-1' ); ?>
 		</div>
@@ -21,5 +21,5 @@
 		<div class="col-lg-3 col-md-3">
 			<?php dynamic_sidebar( 'footer-4' ); ?>
 		</div>
-	</div>
+	</aside>
 </div>

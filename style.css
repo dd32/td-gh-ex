@@ -4,7 +4,7 @@ Theme URI: https://www.themespride.com/themes/free-travel-agency-wordpress-theme
 Author: ThemesPride
 Author URI: https://www.themespride.com/
 Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. Demo: https://themespride.com/tp-adventure-traveling-pro/
-Version: 0.6.6
+Version: 0.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adventure-travelling
@@ -78,6 +78,41 @@ img {
 textarea{
   width: 100%;
 }
+
+/*--------------------------------------------------------------
+Accessibility CSS
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
@@ -600,7 +635,6 @@ span.posted_in {
   margin: 5px;
 }
 
-
 /*--------------------------------------------------------------
 Posts Numbers
 --------------------------------------------------------------*/
@@ -779,6 +813,9 @@ Sidebar
 #theme-sidebar tr {
   border-bottom: solid 1px #ebebeb;
 }
+.woocommerce #theme-sidebar {
+  margin-top: 30px;
+}
 
 /*--------------------------------------------------------------
 Comments
@@ -888,6 +925,19 @@ Comments
   letter-spacing: 1px;
   cursor: pointer;
 }
+input[type="text"],
+input[type="email"],
+input[type="phno"],
+input[type="password"], 
+textarea{
+  border:1px solid #c8c8c8;
+  width:100%; 
+  font-size:16px;
+  padding:10px 10px; 
+  margin:0 0 23px 0;
+  height:auto;
+}
+
 /*--------------------------------------------------------------
 Commen CSS
 --------------------------------------------------------------*/
@@ -1237,13 +1287,6 @@ Media Queries
   .call{
     text-align: center;
   }
-  .menubox {
-    width: 75%;
-    float: left;
-  }
-  .search-box {
-    width: 10%;
-  }
   .serach_outer{
     top: auto;
   }
@@ -1253,5 +1296,13 @@ Media Queries
   }
   #slider .carousel-caption{
     right: auto;
+  }
+  .woocommerce ul.products.columns-3 li.product, 
+  .woocommerce-page ul.products.columns-3 li.product{
+    width: 100%;
+  }
+  .woocommerce .woocommerce-ordering, 
+  .woocommerce-page .woocommerce-ordering{
+    float: none;
   }
 }

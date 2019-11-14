@@ -9,7 +9,8 @@
 get_header(); ?>
 
 <div class="container">
-	<div id="primary" class="content-area">
+	<main id="tp_content" role="main">
+		<div id="primary" class="content-area">
 		<?php if ( have_posts() ) : ?>
 			<div class="page-header">
 				<?php
@@ -289,7 +290,8 @@ get_header(); ?>
 	          	<div class="col-lg-4 col-md-4" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
 	        </div>
 	    <?php } ?>
-	</div>
+		</div>
+	</main>
 </div>
 
 <?php get_footer();

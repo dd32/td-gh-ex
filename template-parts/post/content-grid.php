@@ -9,7 +9,7 @@
  */
 
 ?>
-<div class="col-lg-4 col-md-4">
+<article class="col-lg-4 col-md-4">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="page-box">
 	        <div class="box-image">
@@ -30,4 +30,4 @@
 		    <div class="clearfix"></div>
 		</div>
 	</div>
-</div>
+</article>
