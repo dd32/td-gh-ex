@@ -5,7 +5,7 @@ Donate link: https://imtiazshamim.com/contact/
 Requires at least: 4.0
 Tested up to: 5.2.3
 Requires PHP: 5.5
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -142,6 +142,9 @@ https://pixabay.com/photos/diving-underwater-sea-float-813028/
 
 
 == Changelog ==
+
+= 2.2.3 - November 15 2019 =
+* Bug fix
 
 = 2.2.2 - November 11 2019 =
 * Bug fix

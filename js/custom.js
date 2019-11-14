@@ -159,6 +159,8 @@
 							},
 							500
 						), $( ".nav-search, #search-close" ).addClass( "open" )
+
+						$(".main-search-input").focus();
 					}
 				), $( ".search-close" ).on(
 					"click",
@@ -452,6 +454,12 @@
 					}
 				)
 			}(jQuery);
+
+		/*
+		** Search box cursor pointer
+		*/
+
+
 
 		}
 	);

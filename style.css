@@ -4,7 +4,7 @@ Theme URI: https://imtiazshamim.com/aari
 Author: Imtiaz Shamim
 Author URI: https://imtiazshamim.com
 Description: Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to blogs. Aari provides a responsive layout with unlimited colors. It allows you to change the way you introduce posts for pictures and texts for an appealing look. It is modern, clean, colorful and responsive. The feature includes a full-width template, sidebar template, custom widgets, post carousel, image lightbox, etc.
-Version: 2.2.2
+Version: 2.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aari
@@ -205,6 +205,9 @@ textarea {
 optgroup {
 	font-weight: bold;
 }
+li > ul, li > ol {
+	padding-left: 2rem;
+}
 ul,
 ol {
 	margin: 0 0 28px 0;
@@ -259,9 +262,7 @@ th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
-tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
+
 tr:hover {
 	background-color: #ddd;
 }
@@ -280,6 +281,17 @@ th {
 	font-weight: bold;
 	line-height: 1.714285714;
 }
+
+dd {
+	margin: 0 1rem 1rem !important;
+}
+
+.format-quote blockquote {
+	border-left: 2px solid #fd4145;
+	margin-left: 0;
+	padding: 0 0 0 1rem;
+}
+
 .entry-content dd,
 .comment-content dd {
 	line-height: 1.714285714;

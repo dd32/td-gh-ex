@@ -6,13 +6,14 @@
  */
 
 
-// Adds widget: aari About Me
+// Adds widget: Aari About Me
 class Aari_Aboutme_Widget extends WP_Widget {
 
 	function __construct() {
 		parent::__construct(
-			'Aari_Aboutme_Widget',
-			esc_html__( 'aari About Me', 'aari' )
+			'aariaboutme_widget',
+			esc_html__( 'Aari About Me', 'aari' ),
+			array( 'description' => esc_html__( 'Add about me section', 'aari' ) ) // Args
 		);
 		add_action( 'admin_footer', array( $this, 'media_fields' ) );
 		add_action( 'customize_controls_print_footer_scripts', array( $this, 'media_fields' ) );
@@ -20,8 +21,8 @@ class Aari_Aboutme_Widget extends WP_Widget {
 
 	private $widget_fields = array(
 		array(
-			'label' => 'Image',
-			'id'    => 'image_media',
+			'label' => 'Image Upload',
+			'id'    => 'imageupload_media',
 			'type'  => 'media',
 		),
 		array(
@@ -29,36 +30,22 @@ class Aari_Aboutme_Widget extends WP_Widget {
 			'id'    => 'description_textarea',
 			'type'  => 'textarea',
 		),
-		array(
-			'label' => 'Read More Text',
-			'id'    => 'readmoretext_text',
-			'type'  => 'text',
-		),
-		array(
-			'label' => 'Link',
-			'id'    => 'link_url',
-			'type'  => 'url',
-		),
 	);
 
 	public function widget( $args, $instance ) {
-
 		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
 			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
-		$author_image = wp_get_attachment_image_src( $instance['image_media'], 'thumbnail' );
-
+		$author_image = wp_get_attachment_image_src( $instance['imageupload_media'], 'thumbnail' );
 		// Output generated fields
 		echo '<div class="about-widget">';
 		echo '<img src="' . esc_url( $author_image[0] ) . '" alt="About Me" class="rounded-circle">';
 		echo '<p>' . esc_attr( $instance['description_textarea'] ) . '</p>';
-		if ( ! empty( $instance['readmoretext_text'] ) ) {
-			echo '<a href="' . esc_url( $instance['link_url'] ) . '" class="btn-read-more mt-2">' . esc_html( $instance['readmoretext_text'] ) . ' <i class="mdi mdi-arrow-right"></i></a>';
-		}
 		echo '</div>';
+
 		echo wp_kses_post( $args['after_widget'] );
 	}
 
@@ -106,7 +93,7 @@ class Aari_Aboutme_Widget extends WP_Widget {
 			if ( isset( $widget_field['default'] ) ) {
 				$default = $widget_field['default'];
 			}
-			$widget_value = ! empty( $instance[ $widget_field['id'] ] ) ? $instance[ $widget_field['id'] ] : esc_html( $default );
+			$widget_value = ! empty( $instance[ $widget_field['id'] ] ) ? $instance[ $widget_field['id'] ] : $default;
 			switch ( $widget_field['type'] ) {
 				case 'media':
 					$media_url = '';
@@ -115,8 +102,8 @@ class Aari_Aboutme_Widget extends WP_Widget {
 					}
 					$output .= '<p>';
 					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . ':</label> ';
-					$output .= '<input style="display:none" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . $widget_value . '">';
-					$output .= '<div id="preview' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . $media_url . ');background-size:cover;background-repeat:no-repeat;background-position:center;"></div>';
+					$output .= '<input style="display:none;" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . $widget_value . '">';
+					$output .= '<span id="preview' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . $media_url . ');background-size:contain;background-repeat:no-repeat;"></span>';
 					$output .= '<button id="' . $this->get_field_id( $widget_field['id'] ) . '" class="button select-media custommedia">Add Media</button>';
 					$output .= '<input style="width: 19%;" class="button remove-media" id="buttonremove" name="buttonremove" type="button" value="Clear" />';
 					$output .= '</p>';
@@ -149,6 +136,10 @@ class Aari_Aboutme_Widget extends WP_Widget {
 				'id'    => array(),
 				'style' => array(),
 			),
+			'span'     => array(
+				'id'    => array(),
+				'style' => array(),
+			),
 			'button'   => array(
 				'id'    => array(),
 				'class' => array(),
@@ -165,6 +156,7 @@ class Aari_Aboutme_Widget extends WP_Widget {
 				'value' => array(),
 			),
 		);
+
 		echo wp_kses( $output, $arr );
 
 	}
@@ -177,6 +169,7 @@ class Aari_Aboutme_Widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php
+
 		$this->field_generator( $instance );
 	}
 

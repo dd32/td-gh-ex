@@ -1526,7 +1526,7 @@ p {
 	font-size: inherit;
 	font-weight: inherit;
 	text-transform: uppercase;
-	padding: 18px 0;
+	padding: 15px 0;
 	display: block;
 	text-align: inherit;
 }
@@ -1621,9 +1621,25 @@ p {
 	color: #fd4145 !important;
 }
 
-#mainContent .navbar .navbar-collapse .navbar-nav .nav-item.active a {
-	background-color: inherit;
+#mainContent .navbar .navbar-collapse .navbar-nav .current_page_parent.active .nav-item.active > a {
+	background-color: #fff;
 	color: #fd4145;
+}
+
+#mainContent .navbar .navbar-collapse .navbar-nav .current_page_parent.active > a {
+	background-color: transparent;
+	color: #fd4145;
+}
+
+#mainContent .navbar .navbar-collapse .navbar-nav .current-menu-item.active > a {
+	background-color: transparent;
+	color: #fd4145;
+}
+
+
+
+#mainContent .navbar .navbar-collapse .navbar-nav .nav-item.active {
+
 }
 
 #mainContent .navbar .navbar-collapse .navbar-nav .nav-item a.dropdown-toggle {
@@ -1719,6 +1735,9 @@ p {
 	right: 100%;
 	left: auto;
 }
+
+
+
 
 /* -------------------------------------------------------
 				   header-overlay
@@ -2376,11 +2395,11 @@ p {
 -------------------------------------------------------- */
 #content_full {
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
 }
 #content_full .latest-posts {
 	position: relative;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 #content_full .latest-posts .post {
 	position: relative;
@@ -4693,7 +4712,13 @@ body.single-post .footer_bottom.section-padding {
 .main_p .comment_sec .comment-respond .comment-form .form-submit input:hover, .main_p .comment_sec .comment-respond .comment-form .form-submit input:focus  {
 	-webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+	background-color: #000;
 }
+
+.comment-form .form-submit {
+	padding-left: 15px;
+}
+
 #comments .blog_comments .pingback {
 	margin-bottom: 20px;
 }
@@ -5002,7 +5027,7 @@ body.single-post .footer_bottom.section-padding {
 	background: #000;
 
 }
-#topSidebar .sidebar .navbar-brand {display: block;}
+#topSidebar .sidebar .navbar-brand {display: none;}
 #topSidebar .sidebar .navbar-brand img {
 
 	width: 100%;
@@ -5260,6 +5285,12 @@ body.single-post .footer_bottom.section-padding {
 	}
 }
 @media all and (max-width: 767px) {
+
+
+	.search_trigger .nav-search {
+		display: none;
+	}
+
 	.xs-mb-30 {
 		margin-bottom: 30px;
 	}
