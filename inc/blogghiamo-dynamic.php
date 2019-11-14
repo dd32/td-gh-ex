@@ -446,7 +446,7 @@ function blogghiamo_custom_css_styles() {
 	}
 ?>
 
-<style type="text/css">
+<style id="blogghiamo-custom-css">
 	<?php if (!empty($text_color_first) && $text_color_first != '#404040' ) : ?>
 	body,
 	button,

@@ -17,6 +17,7 @@ li#accordion-section-cresta_blogghiamo_buy_pro h3:before {
     color: #fff;
     box-shadow: none;
     border: none;
+	line-height: 26px;
 }
 #accordion-section-cresta_blogghiamo_buy_pro h3 {
 	background-color: #000000 !important;

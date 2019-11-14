@@ -20,13 +20,13 @@
 				<span class="sep"> | </span>
 				<?php
 				/* translators: 1: theme name, 2: theme developer */
-				printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject' );
+				printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="noopener noreferrer">Blogghiamo</a>', 'CrestaProject' );
 				?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	<?php endif; ?>
 </div><!-- #page -->
-<a href="#top" id="toTop"><i class="fa fa-angle-up fa-lg"></i></a>
+<a href="#top" id="toTop" aria-hidden="true"><i class="fa fa-angle-up fa-lg"></i></a>
 <?php wp_footer(); ?>
 
 </body>

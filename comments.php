@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 				printf( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comments_number, 'comments title', 'blogghiamo' ) ),
-					number_format_i18n( $comments_number ),
+					esc_html( number_format_i18n( $comments_number ) ),
 					'<span>' . esc_html(get_the_title()) . '</span>'
 				);
 			}

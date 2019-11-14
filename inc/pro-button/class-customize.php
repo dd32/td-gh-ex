@@ -62,7 +62,7 @@ final class Blogghiamo_Updgrade_Pro_Button {
 	 */
 	public function sections( $manager ) {
 		
-		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/Button.php' );
+		get_template_part( '/inc/pro-button/Button');
 
 		$manager->register_section_type( Button::class );
 
