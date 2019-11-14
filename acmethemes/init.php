@@ -97,5 +97,10 @@ require_once acmephoto_file_directory('acmethemes/metabox/metabox.php');
 require_once acmephoto_file_directory('acmethemes/core.php');
 require_once acmephoto_file_directory('acmethemes/gutenberg/gutenberg-init.php');
 
-/*themes info*/
-require_once acmephoto_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');
+/**
+ * Theme options page.
+ */
+if ( is_admin() ) {
+	require_once acmephoto_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');
+	require_once acmephoto_file_directory('acmethemes/admin-notice/class-admin-notice-handler.php');
+}
