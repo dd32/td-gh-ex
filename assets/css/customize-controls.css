@@ -11,3 +11,10 @@
 	margin-left:  0;
 	margin-right: 8px;
 }
+
+/* ---------Excerpt & Logo --------- */
+input#_customize-input-aagaz_startup_excerpt_number,
+input#_customize-input-aagaz_startup_slider_excerpt_number,
+input#_customize-input-aagaz_startup_slider_opacity_color {
+    width: 100%;
+}

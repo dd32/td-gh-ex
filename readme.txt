@@ -1,10 +1,10 @@
 === Aagaz Startup ===
 Contributors: ThemesEye
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
-Requires at least: 4.8
-Tested up to: 5.2.4
+Requires at least: 5.0
+Tested up to: 5.3
 Requires PHP: 7.2.14
-Stable tag: 0.3.4
+Stable tag: 0.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +46,11 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Updated searchform.
   * Changed menu css.
   * Added Scroll to top.
+
+= 0.3.5 =
+  * Added slider content layout option.
+  * Added slider excerpt length option.
+  * Added slider image opacity option.
   
 == Resources ==
 

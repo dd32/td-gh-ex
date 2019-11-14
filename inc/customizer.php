@@ -613,6 +613,65 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		) );
 	}
 
+    $wp_customize->add_setting('aagaz_startup_slider_content_option',array(
+    'default' => __('Left','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('aagaz_startup_slider_content_option',array(
+        'type' => 'select',
+        'label' => __('Slider Content Layout','aagaz-startup'),
+        'section' => 'aagaz_startup_slider',
+        'choices' => array(
+            'Center' => __('Center','aagaz-startup'),
+            'Left' => __('Left','aagaz-startup'),
+            'Right' => __('Right','aagaz-startup'),
+        ),
+	) );
+
+	$wp_customize->add_setting( 'aagaz_startup_slider_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'aagaz_startup_slider_excerpt_number', array(
+		'label'       => esc_html__( 'Slider Excerpt length','aagaz-startup' ),
+		'section'     => 'aagaz_startup_slider',
+		'type'        => 'range',
+		'settings'    => 'aagaz_startup_slider_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('aagaz_startup_slider_opacity_color',array(
+      'default'              => 0.6,
+      'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+	));
+
+	$wp_customize->add_control( 'aagaz_startup_slider_opacity_color', array(
+	'label'       => esc_html__( 'Slider Image Opacity','aagaz-startup' ),
+	'section'     => 'aagaz_startup_slider',
+	'type'        => 'select',
+	'settings'    => 'aagaz_startup_slider_opacity_color',
+	'choices' => array(
+      '0' =>  esc_attr('0','aagaz-startup'),
+      '0.1' =>  esc_attr('0.1','aagaz-startup'),
+      '0.2' =>  esc_attr('0.2','aagaz-startup'),
+      '0.3' =>  esc_attr('0.3','aagaz-startup'),
+      '0.4' =>  esc_attr('0.4','aagaz-startup'),
+      '0.5' =>  esc_attr('0.5','aagaz-startup'),
+      '0.6' =>  esc_attr('0.6','aagaz-startup'),
+      '0.7' =>  esc_attr('0.7','aagaz-startup'),
+      '0.8' =>  esc_attr('0.8','aagaz-startup'),
+      '0.9' =>  esc_attr('0.9','aagaz-startup')
+	),
+	));
+
 	//About
 	$wp_customize->add_section('aagaz_startup_about',array(
 		'title'	=> __('About Us','aagaz-startup'),

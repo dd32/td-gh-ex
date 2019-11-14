@@ -53,3 +53,95 @@
 		$custom_css .='}';
 	}
 
+	/*--------------------------- Slider Opacity -------------------*/
+
+	$slider_layout = get_theme_mod( 'aagaz_startup_slider_opacity_color','0.6');
+	if($slider_layout == '0'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0';
+		$custom_css .='}';
+		}else if($slider_layout == '0.1'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.1';
+		$custom_css .='}';
+		}else if($slider_layout == '0.2'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.2';
+		$custom_css .='}';
+		}else if($slider_layout == '0.3'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.3';
+		$custom_css .='}';
+		}else if($slider_layout == '0.4'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.4';
+		$custom_css .='}';
+		}else if($slider_layout == '0.5'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.5';
+		$custom_css .='}';
+		}else if($slider_layout == '0.6'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.6';
+		$custom_css .='}';
+		}else if($slider_layout == '0.7'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.7';
+		$custom_css .='}';
+		}else if($slider_layout == '0.8'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.8';
+		$custom_css .='}';
+		}else if($slider_layout == '0.9'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.9';
+		$custom_css .='}';
+		}
+
+	/*---------------------------Slider Content Layout -------------------*/
+
+	$slider_layout = get_theme_mod( 'aagaz_startup_slider_content_option','Left');
+    if($slider_layout == 'Left'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:left; left:15%; right:45%;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 768px){
+		#slider .carousel-caption{';
+		$custom_css .='top:32%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 990px) and (min-width: 768px){
+		#slider .inner_carousel h1{';
+		$custom_css .='font-size:27px;';
+		$custom_css .='} }';
+	}else if($slider_layout == 'Center'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:center; left:20%; right:20%;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 768px){
+		#slider .carousel-caption{';
+		$custom_css .='top:40%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 990px) and (min-width: 768px){
+		#slider .inner_carousel h1{';
+		$custom_css .='font-size:30px;';
+		$custom_css .='} }';
+	}else if($slider_layout == 'Right'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:right; left:45%; right:15%;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 1024px) and (min-width: 768px){
+		#slider .carousel-caption{';
+		$custom_css .='top:32%;';
+		$custom_css .='} }';
+		$custom_css .='
+		@media screen and (max-width: 990px) and (min-width: 768px){
+		#slider .inner_carousel h1{';
+		$custom_css .='font-size:30px;';
+		$custom_css .='} }';
+	}
+
