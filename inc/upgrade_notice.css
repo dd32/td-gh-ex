@@ -1,0 +1,80 @@
+/**
+ * Styles for the Upgrade notice.
+ *
+ * @package     Anarcho Notepad
+ * @since       2.32
+ * @author      Space X-Chimp
+ * @copyright   Copyright (c) 2013-2019, Space X-Chimp
+ * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html
+ */
+
+
+/*
+ -------------------------------------------------- */
+.anarcho-notice.notice {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.anarcho-notice {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    color: #111;
+    border: 2px solid #0074a2;
+}
+
+/* Title
+ -------------------------------------------------- */
+.anarcho-notice-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: inherit;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 21px;
+}
+
+.anarcho-notice-message {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 14px;
+    word-spacing: 2px;
+}
+
+/* Buttons
+ -------------------------------------------------- */
+.anarcho-notice-buttons {
+    padding-top: 10px;
+}
+
+.anarcho-notice-button {
+    margin-right: 8px !important;
+}
+
+.anarcho-notice-button span {
+    vertical-align: middle;
+    margin-top: -1px;
+    font-size: 18px;
+}
+
+.anarcho-notice-button-white {
+    background-color: #fff !important;
+}
+
+.anarcho-notice-button-white span {
+    color: rgb(255, 165, 208);
+}
+
+/* Dashicons
+ -------------------------------------------------- */
+.anarcho-notice-icon {
+    float: left;
+    margin-right: 15px;
+    position: relative;
+    top: -5px;
+    width: 145px;
+}

@@ -4,50 +4,54 @@
  *
  * Template Name: Page without date
  *
- * @package	Anarcho Notepad
- * @since	2.4.1
- * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://www.gnu.org/licenses/gpl-3.0.html
+ * @package     Anarcho Notepad
+ * @since       2.38
+ * @author      Space X-Chimp
+ * @copyright   Copyright (c) 2013-2019, Space X-Chimp
+ * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
 
 <?php get_header(); ?>
 
 <section id="content" role="main">
-  <div class="col01">
-  <?php anarcho_breadcrumbs(); ?>
-  <?php if (have_posts()) : ?>
-  <?php while (have_posts()) : the_post(); ?>
+    <div class="col01">
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <?php spacexchimp_theme_breadcrumbs(); ?>
 
-      <h1><?php the_title(); ?></h1>
-      <div class="post-inner">
+        <?php if ( have_posts() ) : ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-	        <?php the_post_thumbnail(); ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
-      </div>
+            <h1 class="post-title">
+                <?php the_title(); ?>
+            </h1>
 
-      <div class="meta"><?php if ((the_category() != '')) { _e('Category: ', 'anarcho-notepad'); the_category(', '); } ?></div>
-    </article>
-    <?php comments_template(); ?>
-    <?php endwhile; ?>
+            <div class="post-inner">
+                <?php the_post_thumbnail(); ?>
+                <?php the_content( __( 'Continue reading', 'anarcho-notepad' ) ); ?>
+            </div>
 
-    <?php else : ?>
+            <?php spacexchimp_theme_entry_meta(); ?>
 
-	<div class="no-results">
-		<h1><?php _e('Not Found', 'anarcho-notepad'); ?></h1>
-		<p><?php _e('Sorry, but you are looking for something that isn\'t here.', 'anarcho-notepad'); ?></p>
-	</div>
+        </article>
 
-    <?php endif; ?>
+        <?php comments_template(); ?>
 
-  </div>
+        <?php endwhile; ?>
 
-   <?php get_sidebar(); ?>
-</section><br clear="all" />
+        <?php else : ?>
+            <?php spacexchimp_theme_not_found(); ?>
+        <?php endif; ?>
+
+    </div>
+
+    <?php get_sidebar(); ?>
+
+</section>
+
+<br clear="all">
 
 <?php get_footer(); ?>

@@ -2,212 +2,202 @@
 /**
  * Theme Information Page
  *
- * @package	Anarcho Notepad
- * @since	2.4.1
- * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
- * @license   	http://www.gnu.org/licenses/gpl-3.0.html
+ * @package     Anarcho Notepad
+ * @since       2.38
+ * @author      Space X-Chimp
+ * @copyright   Copyright (c) 2013-2019, Space X-Chimp
+ * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html
  */
 
-
-// Add some CSS so I can Style the Theme Options Page
-function anarcho_admin_enqueue_scripts( $hook_suffix ) {
-	wp_enqueue_style('anarcho-theme-options', get_template_directory_uri() . '/theme_info.css', false, '1.0');
+/* Add some CSS so we can Style the Theme Options Page */
+function spacexchimp_theme_include_theme_options_style() {
+    wp_enqueue_style('spacexchimp_theme_options_styles', get_template_directory_uri() . '/inc/theme_info.css', false, '1.0');
+    wp_enqueue_style('spacexchimp_theme_options_font_awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.css', 'screen');
 }
-add_action('admin_print_styles-appearance_page_theme_options', 'anarcho_admin_enqueue_scripts');
+add_action( 'admin_print_styles-appearance_page_theme_options', 'spacexchimp_theme_include_theme_options_style' );
 
-// Create the Theme Information page (Theme Options)
-function anarcho_theme_options_do_page() { ?>
+/* Create the Theme Information page (Theme Options) */
+function spacexchimp_theme_options_do_page() {
+
+    $spacexchimp_theme_brand_logo = get_template_directory_uri() . '/images/theme_info/spacexchimp-logo.png';
+    $spacexchimp_theme_brand_banner = get_template_directory_uri() . '/images/theme_info/spacexchimp-banner.png';
+    $spacexchimp_theme_brand_uri = "https://www.spacexchimp.com";
+    $spacexchimp_theme_uri = "https://www.spacexchimp.com/themes/anarcho-notepad.html";
+    $spacexchimp_theme_donate_link = "https://www.spacexchimp.com/donate.html";
+    $spacexchimp_theme_donate_image = get_template_directory_uri() . '/images/theme_info/donate.png';
+
+    ?>
     <div class="cover">
-    <header id="header"></header>
-    <section id="page">
+        <header id="header"></header>
+        <section id="page">
 
-      <div class="content">
+            <div class="content">
 
-	<div class="welcome"><i><?php _e('Thank you for using "Anarcho Notepad"! The "Anarcho Notepad" v2.4 now even more opportunities, it is safer and more stable than ever! Enjoy! ', 'anarcho-notepad');?></i>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://mycyberuniverse.tk/anarcho-notepad.html" data-text="My WordPress website is built with the #Anarcho-Notepad Theme version 2.4!" data-related="AGareginyan">Tweet</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	<p><a name="fb_share" type="icon"
-   share_url="http://mycyberuniverse/anarcho-notepad.html"></a>
-<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript">
-</script></p>
-	</div>
+                <h3>
+                    <?php _e( 'Theme "Anarcho Notepad"', 'anarcho-notepad' ); ?>
+                </h3>
+                <h4>
+                    <a title="Space X-Chimp" target="_blank" href="<?php echo $spacexchimp_theme_brand_uri; ?>">
+                        <?php _e( 'by Space X-Chimp', 'anarcho-notepad' ); ?>
+                    </a>
+                </h4>
+                <p>
+                    <a title="Space X-Chimp" target="_blank" href="<?php echo $spacexchimp_theme_brand_uri; ?>">
+                        <img src="<?php echo $spacexchimp_theme_brand_logo; ?>" alt="Space X-Chimp" width="170" height="170" class="alignleft size-thumbnail logo-img" />
+                    </a>
+                    <?php _e( 'Inspired by the idea of anarchy, we designed this free WordPress theme for your personal blogs and diaries. This theme is perfect for writers and artists. "Anarcho Notepad" can be easily customized and already translated to different languages. It utilizes latest HTML-5, CSS-3, PHP and WordPress native functions for creating the awesomeness that looks good on every browser. We are constantly adding new features to this theme to allow you to personalize it to your own needs. We are glad to present you the Most Anarchist WP-Theme Of All! Enjoy!', 'anarcho-notepad' ); ?>
+                </p>
 
-      <h4><?php _e('About the Theme "Anarcho Notepad"', 'anarcho-notepad');?></h4>
-	<p><?php _e('Inspired by the idea of Anarchy, I designed this theme for your personal blogs and diaries. \"Anarcho Notepad\" can be easily customized. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. I\'m constantly adding new features to this theme to allow you to personalize it to your own needs. If you want a new feature or just want to be able to change something just ask me and I would be happy to add it for you. I would like to thank you for your support, visit the Theme URI for the update history, and Enjoy!', 'anarcho-notepad');?></p>
+                <h4>
+                    <i class="fa fa-cogs"></i>
+                    <?php _e( 'Features', 'anarcho-notepad' ); ?>
+                </h4>
+                <ul class="fa-ul">
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Cross browser compatible (work smooth in any modern browser)', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'RTL compatible (right to left)', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Ready for translation (Translated to 13 languages)', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Hand-coded, no WYSIWYG stuff', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'HTML5 Inside', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'CSS3 Inside', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Easy to set up - Theme Customizer', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Customize using "Google Web Fonts"', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Built-in iconic font "Font Awesome"', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Widget ready (in sidebar and footer)', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Built-in Pagination', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Built-in Breadcrumbs', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Template page "HTML map of the website"', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Template page "Without date"', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Block "About Author" below posts', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Custom text of copyright below posts', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Custom text of copyright in footer', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Custom header image', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Custom background', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'Custom menu', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-check-square-o"></i><?php _e( 'And many more...', 'anarcho-notepad' ); ?></li>
+                    <li type="none"><i class="fa-li fa fa-square-o"></i><?php _e( 'Got more ideas? Tell us!', 'anarcho-notepad' ); ?></li>
+                </ul>
+                <p>
+                    <?php
+                        printf(
+                            __( 'If you have any questions or suggestions for improving and adding new features, feel free to %1$s contact us %2$s.', 'anarcho-notepad' ),
+                            '<a href="https://www.spacexchimp.com/contact.html" target="_blank">',
+                            '</a>'
+                        );
+                    ?>
+                </p>
 
+                <h4>
+                    <i class="fa fa-globe"></i>
+                    <?php _e( 'Translation', 'anarcho-notepad' ); ?>
+                </h4>
+                <p>
+                    <?php _e( 'This theme is ready for translation. It written on <strong>English</strong> and translated into:', 'anarcho-notepad' ); ?>
+                </p>
+                <ul class="fa-ul">
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Russian</strong> (translated by <strong>Arthur Gareginyan</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Ukrainian</strong> (translated by <strong>Svetlana Drotyanko</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Slovak</strong> (translated by <strong>Martin Petrus</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Afrikaans</strong> (translated by <strong>MadriVictor</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Spanish</strong> (translated by <strong>Ivan Ratinoff</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Polish</strong> (translated by <strong>Krzysztof Goral</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>German</strong> (translated by <strong>Alexander v. Falkenhausen</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Estonian</strong> (translated by <strong>Taavi Tiitsmaa</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Catalan</strong> (translated by <strong>Nestor Malet</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Danish</strong> (translated by <strong>Chano Klinck Andersen</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>French</strong> (translated by <strong>Rolland Dudemaine</strong>)</li>
+                    <li type="none"><i class="fa-li fa fa-check-circle"></i><strong>Chinese</strong> (translated by <strong>Weiquan Bao</strong>)</li>
+                </ul>
+                <p>
+                    <?php
+                        printf(
+                            __( 'If you want to help translate this theme, please use the POT file, that is included and placed in the "languages" folder, in order to create a translation files (*.po, *.mo). Just send the translation files (*.po, *.mo) to us ( %s ) and we will include the translation within the next theme update.', 'anarcho-notepad' ),
+                            '<a href="https://www.spacexchimp.com/contact.html" target="_blank">www.spacexchimp.com/contact.html</a>'
+                        );
+                    ?>
+                    <?php _e( 'Also you can use an existing PO file that placed in the "languages" folder, in order to make corrections.', 'anarcho-notepad' ); ?>
+                    <?php _e( 'Many of theme users would be delighted if you share your translation with the community. Thanks for your contribution!', 'anarcho-notepad' ); ?>
+                </p>
+                <p>
+                    <em><b><?php _e( 'Thanks to all who helped us translate this theme into other languages!', 'anarcho-notepad' ); ?></b></em>
+                    <em><b><?php _e( 'Thank you very much for your contribution!', 'anarcho-notepad' ); ?></b></em>
+                </p>
 
-      <h4><?php _e('Features', 'anarcho-notepad');?></h4>
-      <table>
-        <tbody>
-        <tr>
-        <th class="justify"><?php _e('Anarcho Notepad Theme Features', 'anarcho-notepad');?></th>
-        <th></th>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Responsive Design', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Clean and Beautiful Stylized HTML, CSS, JavaScript', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Change the site Title and Slogan Colors', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Upload Your Own Background Image', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Easy Selection of Fonts from Font Library "Googl Fonts".', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Automatically Scaling the Width Properties of Images, Video etc (Fluid Images etc.).', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Use Conditional Units of Measurements.', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <td class="justify"><?php _e('CSS3 Font Flags.', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('HTML5 Semantic Markup.', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('RTL Styles for Hebrew or Arabic.', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <td class="justify"><?php _e('Prepared to Translate to Other Languages.', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Box "About the author" Below', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
-        <tr>
-        <td class="justify"><?php _e('Your Copyright Box Under Each Post.', 'anarcho-notepad'); ?></td>
-        <td>&#9733;</td>
-        </tr>
+                <h4>
+                    <i class="fa fa-diamond"></i>
+                    <?php _e( 'PREMIUM versions', 'anarcho-notepad' ); ?>
+                </h4>
+                <p>
+                    <?php _e( 'Elevate your website to the next level by upgrading to one of the PREMIUM Anarcho versions: the Author\'s-Notepad and the Simple-Notepad!', 'anarcho-notepad' ); ?>
+                </p>
+                <table class="store-item-features">
+                    <tbody>
+                        <tr>
+                            <td class="feature-item-text"><b><?php _e( 'Responsive layout', 'anarcho-notepad' ); ?></b></td>
+                            <td class="feature-item-text"><b><?php _e( 'Better SEO', 'anarcho-notepad' ); ?></b></td>
+                            <td class="feature-item-text"><b><?php _e( 'Optimized load time', 'anarcho-notepad' ); ?></b></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-item-text"><b><?php _e( 'More secure', 'anarcho-notepad' ); ?></b></td>
+                            <td class="feature-item-text"><b><?php _e( 'Improved design', 'anarcho-notepad' ); ?></b></td>
+                            <td class="feature-item-text"><b><?php _e( 'Better typography', 'anarcho-notepad' ); ?></b></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-item-text"><b><?php _e( 'WooCommerce supported', 'anarcho-notepad' ); ?></b></td>
+                            <td class="feature-item-text"><b><?php _e( 'More settings', 'anarcho-notepad' ); ?></b></td>
+                            <td class="feature-item-text"><b><?php _e( 'More features', 'anarcho-notepad' ); ?></b></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <?php _e( 'These premium versions have significantly more customization options, improved design and many functional improvements. Importantly, both are <b>optimized for mobile devices</b> by having a responsive/mobile friendly layout.', 'anarcho-notepad' ); ?>
+                </p>
+            </div>
 
-        </tbody>
-	</table>
+            <aside id="sidebar">
 
-	<p>
-	<b><em><?php _e('The theme is in the process of translation into other languages of the world. If you have the desire then you can help me in translation to your native language.', 'anarcho-notepad'); ?></em></b>
-	</p>
+                <div class="donate">
+                    <h3>
+                        <?php _e( 'Happy to enjoy the theme?', 'anarcho-notepad' ); ?>
+                    </h3>
 
-	</br>
-	<p>
-	<?php _e('If you have any questions or suggestions for improving and adding new features, feel free to contact me at support at:', 'anarcho-notepad'); ?>
-	</br>
-	<a href="http://wordpress.org/support/theme/anarcho-notepad">http://wordpress.org/support/theme/anarcho-notepad</a>
+                    <p>
+                        <a href="<?php echo $spacexchimp_theme_donate_link; ?>" target="_blank" rel="nofollow">
+                            <img class="tc-donate" src="<?php echo $spacexchimp_theme_donate_image; ?>" alt="Make a donation for Anarcho-Notepad">
+                        </a>
+                        <?php _e( 'Thanks for your support!', 'anarcho-notepad' ); ?>
+                    </p>
+                </div>
 
-	</br></br>
-	<?php _e('If you liked the theme "Anarcho Notepad", then I\'ll be glad if you would appreciate "Anarcho Notepad" or leave feedback on the site wordpress.org:', 'anarcho-notepad'); ?>
-	</br>
-	<a href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank">http://wordpress.org/support/view/theme-reviews/anarcho-notepad</a>
+                <div class="store">
+                    <h3>
+                        <?php _e( 'Explore our website', 'anarcho-notepad' ); ?>
+                    </h3>
+                    <a href="<?php echo $spacexchimp_theme_brand_uri; ?>" title="Space X-Chimp studio" target="_blank">
+                        <img src="<?php echo $spacexchimp_theme_brand_banner; ?>" alt="Space X-Chimp">
+                    </a>
+                </div>
 
-	<br/><br/>
-	<?php _e('You can thank me by making a donation by using PayPal or Yandex:', 'anarcho-notepad'); ?>
-	<br/>
-	<div style="float:left;">
-	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-	<input type="hidden" name="cmd" value="_s-xclick">
-	<input type="hidden" name="hosted_button_id" value="QC3JBY36ES4QJ">
-	<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-	<img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
-	</form>
-	</div></br>
-	<iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?uid=410011922986618&amp;button-text=06&amp;button-size=m&amp;button-color=white&amp;targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0&amp;default-sum=100" width="auto" height="42"></iframe>
+            </aside>
 
-	</br></br>
-	<?php _e('Also you can follow me at social networks to follow the news about "Anarcho Notepad".', 'anarcho-notepad'); ?>
-	</p>
+            <br clear="all">
 
-	<p style="font-family:FontAwesome;">&#xf099; : <a href="https://twitter.com/AGareginyan" target="_blank">https://twitter.com/AGareginyan</a></p>
+        </section>
+        <footer id="footer"></footer>
 
-	<p style="font-family:FontAwesome;">&#xf09a; : <a href="https://www.facebook.com/arthur.gareginyan" target="_blank">https://www.facebook.com/arthur.gareginyan</a></p>
+    </div>
 
-	<p style="font-family:FontAwesome;">&#xf0d5; : <a href="https://plus.google.com/+ArthurGareginyan" target="_blank">https://plus.google.com/+ArthurGareginyan</a></p>
-	</br>
+    <?php
+}
+add_action('admin_menu', 'spacexchimp_theme_options_add_page');
 
-
-      <h4><?php _e('Versions change log', 'anarcho-notepad');?></h4>
-
-	<p>
-      <h5>2.4 (2014.1.19)</h5>
-	* added : a lot more options for customization.<br/>
-	* added : ability to turn off unnecessary elements.<br/>
-	* added : template page without date.<br/>
-	* fixed : position of the title.<br/>
-	* fixed : the method of output of the title of the posts.<br/>
-	* fixed : stretch of the background images.<br/>
-	* fixed : many more minor fixes and changes.<br/>
-	</p>
-
-	<p>
-      <h5>2.3 (2014.1.9)</h5>
-	* added : support for php versions below 5.3<br/>
-	* fixed : many more minor fixes and changes.<br/>
-	</p>
-
-	<p>
-      <h5>2.2 (2014.1.5)</h5>
-	* added : more widget areas<br/>
-	</p>
-
-	<p>
-      <h5>2.1 (2013.10.22)</h5>
-	* added : russian translation.<br/>
-	* added : (css) rtl styles for hebrew or arabic.<br/>
-	* added : (css) comment navigation styling, similar to post navigation<br/>
-	* added : (php) (css) author box styling (if bio field not empty)<br/>
-	* added : (js) smooth transition for "back to top" link.<br/>
-	* added : (css) font-icons to title of archive, search, 404<br/>
-	* fixed : many more minor fixes and changes.<br/>
-	</p>
-
-      </div><!--<div class="content">-->
-
-      <aside id="sidebar">
-            <div class="donate">
-              <h3><?php _e('Donate', 'anarcho-notepad');?></h3>
-              <p><?php _e('You can thank me by making a donation', 'anarcho-notepad');?><br><br>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2EBT6E8BQ5RRQ" target="_blank" rel="nofollow"><img class="tc-donate" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" alt="Make a donation for Anarcho-Notepad"></a>
-              </p>
-            </div><!--<div class="donate">-->
-
-            <div class="site-link">
-              <h3><?php _e('Happy to enjoy the Anarcho-Notepad?', 'anarcho-notepad');?></h3>
-              <p><?php _e('If you are content this template, tell about it at wordpress.org!', 'anarcho-notepad');?><br>
-              <a class="button-primary review-customizr" title="Visit the site of theme" href="http://wordpress.org/support/view/theme-reviews/anarcho-notepad" target="_blank"><?php _e('Leave a comment', 'anarcho-notepad');?></a></p>
-            </div><!--<div class="site-link">-->
-
-            <div class="follow">
-              <h3><?php _e('Follow me in Twitter', 'anarcho-notepad');?></h3>
-              <p><a href="https://twitter.com/AGareginyan" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @AGareginyan</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-              </p>
-            </div><!--<div class="last-feature">-->
-      </aside><!--<aside id="sidebar">-->
-
-      <br clear="all">
-
-    </section><!--<section id="page">-->
-    <footer id="footer"></footer><!--<footer id="finishing">-->
-
-    </div><!--<div class="cover">-->
-
-<?php }
-add_action('admin_menu', 'anarcho_theme_options_add_page');
-
-// Link to the page about theme in dashboard
-function anarcho_theme_options_add_page() {
-	add_theme_page('Theme Info', 'Theme Info', 'edit_theme_options', 'theme_options', 'anarcho_theme_options_do_page');}
+/* Page "Theme info" in dashboard */
+function spacexchimp_theme_options_add_page() {
+    add_theme_page(
+        __( 'Theme Info' , 'anarcho-notepad' ),      // Name of page
+        __( 'Theme Info' , 'anarcho-notepad' ),      // Label in menu
+        'edit_theme_options',                        // Capability required
+        'theme_options',                             // Menu slug, used to uniquely identify the page
+        'spacexchimp_theme_options_do_page'              // Function to be called to output the content of this page
+    );
+}
