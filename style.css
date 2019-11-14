@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.1.2
+Version: 1.1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -1930,6 +1930,8 @@ body.withOverlayMenu .nav-middle.format_featuredtitle {
 	margin: 0;
 	line-height: 1;
 	margin-top: 10px;
+	-webkit-transition: color 0.25s;
+    transition: color 0.25s;
 }
 body.format_featuredtitle .attesa-logo a {
 	padding: 0.8em;
@@ -2354,18 +2356,18 @@ footer.entry-footer .read-more span {
 .hamburger-menu .menu_line4, .hamburger-menu .menu_line5 {
   opacity: 0;
   top: 8.5px;
-  transition: opacity .2s ease-in-out, -webkit-transform .2s ease-in-out, background-color .3s ease-in-out;
-  transition: opacity .2s ease-in-out, transform .2s ease-in-out, background-color .3s ease-in-out;
-  transition: opacity .2s ease-in-out, transform .2s ease-in-out, -webkit-transform .2s ease-in-out, background-color .3s ease-in-out;
+  transition: opacity .2s ease-in-out, -webkit-transform .2s ease-in-out, background-color .25s ease-in-out;
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out, background-color .25s ease-in-out;
+  transition: opacity .2s ease-in-out, transform .2s ease-in-out, -webkit-transform .2s ease-in-out, background-color .25s ease-in-out;
 }
 .hamburger-menu .menu_line1 {
-  transition: width .2s ease-in-out .4s, background-color .3s ease-in-out;
+  transition: width .2s ease-in-out .4s, background-color .25s ease-in-out;
 }
 .hamburger-menu .menu_line2 {
-  transition: width .2s ease-in-out .3s, background-color .3s ease-in-out;
+  transition: width .2s ease-in-out .3s, background-color .25s ease-in-out;
 }
 .hamburger-menu .menu_line3 {
-  transition: width .2s ease-in-out .2s, background-color .3s ease-in-out;
+  transition: width .2s ease-in-out .2s, background-color .25s ease-in-out;
 }
 .hamburger-menu .menu_line4 {
   -webkit-transform: rotate(45deg) translate3d(-30px, 0, 0);
@@ -2415,7 +2417,7 @@ footer.entry-footer .read-more span {
 	top: 0;
     bottom: 0;
     margin: auto;
-    transition: transform .2s ease-in-out .3s, background-color .3s ease-in-out;
+    transition: transform .2s ease-in-out .3s, background-color .25s ease-in-out;
 }
 .hamburger-menu .menu__plus.menu_plus1 {
 	left: 0;
@@ -2442,7 +2444,7 @@ footer.entry-footer .read-more span {
     border-radius: 50%;
     border-width: 2px;
     border-style: solid;
-	transition: border-width .2s ease-in-out .3s, border-color .3s ease-in-out;
+	transition: border-width .2s ease-in-out .3s, border-color .25s ease-in-out;
 }
 .hamburger-menu.yesOpen .menu__circle {
 	border-width: 8px;
@@ -2693,10 +2695,10 @@ body.admin-bar #tertiary.widget-area {
 }
 .site-social-header a {
 	font-size: 14px;
-	-o-transition: color .3s ease-in-out;
-    -moz-transition: color .3s ease-in-out;
-    -webkit-transition: color .3s ease-in-out;
-    transition: color .3s ease-in-out;
+	-o-transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -webkit-transition: color .25s ease-in-out;
+    transition: color .25s ease-in-out;
 }
 .site-social-float {
 	position: fixed;

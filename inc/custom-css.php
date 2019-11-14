@@ -788,13 +788,13 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			input[type="button"],
 			input[type="reset"],
 			input[type="submit"],
-			#toTop,
-			.woocommerce span.onsale,
-			.main-navigation ul ul a,
 			.main-navigation > div > ul > li.attesaMenuButton > a,
 			.main-navigation > div > ul > li.attesaMenuButton > a:hover,
 			.main-navigation > div > ul > li.attesaMenuButton > a:focus,
 			.main-navigation > div > ul > li.attesaMenuButton > a:active,
+			#toTop,
+			.woocommerce span.onsale,
+			.main-navigation ul ul a,
 			.navigation.pagination .nav-links a,
 			.woocommerce-pagination > ul.page-numbers li a,
 			.page-links a,
@@ -1672,6 +1672,109 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.second-navigation li.attesaMenuButton a {
 					color: '.esc_html($subfooterBackgroundColor).';
 				}';
+			}
+			if (apply_filters( 'attesa_filter_use_header_colors', attesa_options('_activate_header_custom_colors', ''))) {
+				/* Choose header background color */
+				$headerBackgroundColor = apply_filters( 'attesa_header_background_color', attesa_options('_header_background_color', '#ffffff') );
+				$attesa_custom_css .='
+					body:not(.withOverlayMenu) header.site-header,
+					header.site-header.menuMinor,
+					header.site-header .nav-middle.fixed {
+						background-color: '.esc_html($headerBackgroundColor).';
+					}
+					.main-navigation >div >ul >li.attesaMenuButton >a,
+					.main-navigation >div >ul >li.attesaMenuButton >a:hover,
+					.main-navigation >div >ul >li.attesaMenuButton >a:focus,
+					.main-navigation >div >ul >li.attesaMenuButton >a:active,
+					button.menu-toggle,
+					.attesa-search-button-mobile input[type="submit"] {
+						color: '.esc_html($headerBackgroundColor).';
+					}
+					.main-navigation ul li.attesaMenuButton .indicator:before {
+						color: '.esc_html($headerBackgroundColor).' !important;
+					}
+					@media all and (max-width: 1025px) {
+						.attesa-main-menu-container {
+							background-color: '.esc_html($headerBackgroundColor).';
+						}
+						.main-navigation >div ul li.attesaMenuButton a,
+						.main-navigation >div ul li.attesaMenuButton a:hover,
+						.main-navigation >div ul li.attesaMenuButton a:focus,
+						.main-navigation >div ul li.attesaMenuButton a:active {
+							color: '.esc_html($headerBackgroundColor).' !important;
+						}
+					}
+				';
+				/* Choose header link color */
+				$headerLinkColor = apply_filters( 'attesa_header_link_color', attesa_options('_header_link_color', '#f06292') );
+				$attesa_custom_css .='
+					.site-branding .site-title a,
+					.main-navigation.menustyle_default >div >ul >li:hover >a,
+					.main-navigation.menustyle_default >div >ul >li:focus >a,
+					.main-navigation.menustyle_default >div >ul >.current_page_item >a,
+					.main-navigation.menustyle_default >div >ul >.current-menu-item >a,
+					.main-navigation.menustyle_default >div >ul >.current_page_ancestor >a,
+					.main-navigation.menustyle_default >div >ul >.current-menu-ancestor >a,
+					.main-navigation.menustyle_default >div >ul >.current_page_parent >a,
+					.main-navigation-popup.menustyle_default >div ul li:hover >a,
+					.main-navigation-popup.menustyle_default >div ul li:focus >a,
+					.main-navigation-popup.menustyle_default >div ul .current_page_item >a,
+					.main-navigation-popup.menustyle_default >div ul .current-menu-item >a,
+					.main-navigation-popup.menustyle_default >div ul .current_page_ancestor >a,
+					.main-navigation-popup.menustyle_default >div ul .current-menu-ancestor >a,
+					.main-navigation-popup.menustyle_default >div ul .current_page_parent >a,
+					.site-social-header a:hover,
+					.site-social-header a:focus,
+					.site-social-header a:active {
+						color: '.esc_html($headerLinkColor).';
+					}
+					.main-navigation >div >ul >li >a::before,
+					.main-navigation-popup >div ul li a::before,
+					.main-navigation .attesaMenuButton,
+					button.menu-toggle,
+					.attesa-search-button-mobile input[type="submit"] {
+						background-color: '.esc_html($headerLinkColor).';
+					}
+					.attesa-search-button-mobile input[type="search"]:focus,
+					.attesa-search-button-popup input[type="search"]:focus {
+						border-color: '.esc_html($headerLinkColor).';
+					}
+				';
+				/* Choose header text color */
+				$headerTextColor = apply_filters( 'attesa_header_text_color', attesa_options('_header_text_color', '#404040') );
+				$attesa_custom_css .='
+					.main-navigation >div >ul >li >a,
+					.site-social-header a,
+					.site-branding .site-title a:hover,
+					.site-branding .site-title a:focus,
+					.site-branding .site-title a:active,
+					.site-branding .site-description,
+					.attesa-search-button-mobile input[type="search"],
+					header.site-header .cartwoo-button-mobile a,
+					header.site-header .cartedd-button-mobile a {
+						color: '.esc_html($headerTextColor).';
+					}
+					.hamburger-menu .menu__line,
+					.hamburger-menu .menu__plus,
+					.menu-full-screen-icon .icon-full-screen .square-full-screen {
+						background-color: '.esc_html($headerTextColor).';
+					}
+					.hamburger-menu .menu__circle {
+						border-color: '.esc_html($headerTextColor).';
+					}
+					@media all and (max-width: 1025px) {
+						.main-navigation ul ul a,
+						.main-navigation ul li .indicator:before {
+							color: '.esc_html($headerTextColor).' !important;
+						}
+						.main-navigation li,
+						.main-navigation ul li .indicator,
+						.main-navigation >div >ul >li >ul.sub-menu,
+						.attesa-search-button-mobile input[type="search"] {
+							border-color: '.esc_html($headerTextColor).';
+						}
+					}
+				';
 			}
 		$attesa_css_output = attesa_minify_css(apply_filters( 'attesa_custom_css_style_filter', $attesa_custom_css ));
 		wp_add_inline_style( 'attesa-style', $attesa_css_output );

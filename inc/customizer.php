@@ -1060,6 +1060,94 @@ function attesa_customize_register( $wp_customize ) {
 			'priority' => 12,
 		) )
 	);
+	/* Heading header color section */
+	$wp_customize->add_setting('attesa_theme_options[_heading_header_color]', array(
+		'sanitize_callback' => 'sanitize_text_field',
+		'type'       => 'option',
+	));
+	$wp_customize->add_control(
+		new Attesa_Customize_Heading(
+		$wp_customize,
+		'attesa_theme_options[_heading_header_color]',
+		array(
+			'settings'		=> 'attesa_theme_options[_heading_header_color]',
+			'section'		=> 'section_attesa_theme_options_colors',
+			'label'			=> __( 'Header colors', 'attesa' ),
+			'priority' => 12,
+		))
+	);
+	/* Activate header custom colors */
+	$wp_customize->add_setting('attesa_theme_options[_activate_header_custom_colors]', array(
+        'default'    => '',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_activate_header_custom_colors]', array(
+        'label'      => __( 'Activate header custom colors', 'attesa' ),
+		'description'=> __( 'If disabled, the header colors will be the same as in the general colors', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_colors',
+        'settings'   => 'attesa_theme_options[_activate_header_custom_colors]',
+        'type'       => 'checkbox',
+		'priority' => 12,
+    ) );
+	/* Header background color' */
+	$wp_customize->add_setting( 'attesa_theme_options[_header_background_color]', array(
+		'default' => '#ffffff',
+		'type' => 'option', 
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability' => 'edit_theme_options',
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'attesa_theme_options[_header_background_color]', 
+		array(
+			'label' => __( 'Header background color', 'attesa' ),
+			'section' => 'section_attesa_theme_options_colors',
+			'settings' =>'attesa_theme_options[_header_background_color]',
+			'active_callback' => 'attesa_is_header_custom_colors_active',
+			'priority' => 12,
+		) )
+	);
+	/* Header link color' */
+	$wp_customize->add_setting( 'attesa_theme_options[_header_link_color]', array(
+		'default' => '#f06292',
+		'type' => 'option', 
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability' => 'edit_theme_options',
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'attesa_theme_options[_header_link_color]', 
+		array(
+			'label' => __( 'Header link color', 'attesa' ),
+			'section' => 'section_attesa_theme_options_colors',
+			'settings' =>'attesa_theme_options[_header_link_color]',
+			'active_callback' => 'attesa_is_header_custom_colors_active',
+			'priority' => 12,
+		) )
+	);
+	/* Header text color' */
+	$wp_customize->add_setting( 'attesa_theme_options[_header_text_color]', array(
+		'default' => '#404040',
+		'type' => 'option', 
+		'sanitize_callback' => 'sanitize_hex_color',
+		'capability' => 'edit_theme_options',
+	));
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+		$wp_customize,
+		'attesa_theme_options[_header_text_color]', 
+		array(
+			'label' => __( 'Header text color', 'attesa' ),
+			'section' => 'section_attesa_theme_options_colors',
+			'settings' =>'attesa_theme_options[_header_text_color]',
+			'active_callback' => 'attesa_is_header_custom_colors_active',
+			'priority' => 12,
+		) )
+	);
 	/* Heading classic sidebar color section */
 	$wp_customize->add_setting('attesa_theme_options[_heading_classicsidebar_color]', array(
 		'sanitize_callback' => 'sanitize_text_field',
@@ -3232,4 +3320,12 @@ function attesa_is_customfooter_active() {
 
 function attesa_is_customheader_active() {
 	return apply_filters('attesa_is_customheader_active_filter', true);
+}
+
+function attesa_is_header_custom_colors_active() {
+	$activateHeaderColors = attesa_options('_activate_header_custom_colors','');
+	if ($activateHeaderColors == '1') {
+		return true;
+	}
+	return false;
 }

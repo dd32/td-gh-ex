@@ -438,6 +438,7 @@ if( ! function_exists('attesa_google_fonts_heading')){
 			'Passion One : cursive' => esc_html__( 'Passion One', 'attesa'),
 			'Srisakdi : cursive' => esc_html__( 'Srisakdi', 'attesa'),
 			'Zilla Slab Highlight : cursive' => esc_html__( 'Zilla Slab Highlight', 'attesa'),
+			'Thasadith : sans-serif' => esc_html__( 'Thasadith', 'attesa'),
 		);
 		return apply_filters('attesa_google_fonts_heading_register', $attesa_google_fonts_heading);
 	}
@@ -480,6 +481,7 @@ if( ! function_exists('attesa_google_fonts_text')){
 			'Red Hat Display : sans-serif' => esc_html__( 'Red Hat Display', 'attesa'),
 			'ABeeZee : sans-serif' => esc_html__( 'ABeeZee', 'attesa'),
 			'Turret Road : cursive' => esc_html__( 'Turret Road', 'attesa'),
+			'Thasadith : sans-serif' => esc_html__( 'Thasadith', 'attesa'),
 		);
 		return apply_filters('attesa_google_fonts_text_register', $attesa_google_fonts_text);
 	}
