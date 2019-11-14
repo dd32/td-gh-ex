@@ -4,7 +4,7 @@ Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors
 Requires at least: WordPress 5.1
 Tested up to: WordPress 5.3
 Requires PHP: 5.6
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -102,6 +102,12 @@ Source: https://stocksnap.io/
 - https://stocksnap.io/photo/CB9BPBBWMD
 
 == Changelog ==
+
+= 1.3 =
+Released: November 14, 2019
+
+* Code updates according to ticket # https://themes.trac.wordpress.org/ticket/72818#comment:8
+* POT file updated.
 
 = 1.2 =
 Released: November 13, 2019

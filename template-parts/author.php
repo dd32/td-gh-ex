@@ -39,7 +39,7 @@
                 printf(
                     /* translators: %1$s: post author */
                     esc_html__( 'View all posts by %1$s', 'anther' ),
-                    get_the_author()
+                    esc_html( get_the_author() )
                 );
             ?>
 		</a>

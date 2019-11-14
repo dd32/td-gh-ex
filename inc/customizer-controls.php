@@ -147,7 +147,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			<span class="center">
 				<?php
 				// Print open tag
-				echo '<' . esc_html( $this->button_tag ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<' . $this->button_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 				// button class
 				if ( ! empty( $this->button_class ) ) {
@@ -177,7 +177,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				echo esc_html( $this->label );
 
 				// Print close tag
-				echo '</' . esc_html( $this->button_tag ) . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '</' . $this->button_tag . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			</span>
 		<?php
