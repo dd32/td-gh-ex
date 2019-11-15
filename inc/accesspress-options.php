@@ -10,7 +10,7 @@
 
 function optionsframework_options() {
     
-    $imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
+    $imagepath =  get_template_directory_uri() . '/inc/admin-panel/images/';
          
 	// Pull all the categories into an array
 	$options_categories = array();

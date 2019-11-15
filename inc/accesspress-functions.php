@@ -18,16 +18,6 @@ $accesspress_mag_default = get_option('accesspress-mag');
 
 /*------------------------------------------------------------------------------------------------*/
 /**
- * Enqueue custom admin panel JS
- */
- 
-function accesspress_mag_admin_scripts() {
-    wp_enqueue_script( 'accesspress-mag-custom-admin', get_template_directory_uri(). '/inc/option-framework/js/custom-admin.js', array( 'jquery' ) );
-    wp_enqueue_style( 'accesspress-mag-admin', get_template_directory_uri(). '/inc/option-framework/css/accesspress-mag-admin.css' );
- }
-add_action( 'admin_enqueue_scripts', 'accesspress_mag_admin_scripts' );
-
-/**
  * Enqueue script for custom customize control.
  */
 function accesspress_mag_customize_enqueue() {

@@ -1,4 +1,14 @@
 <?php 
+$defaults = accesspress_mag_get_default_theme_options();
+
+// Pull all the categories into an array
+	$options_categories = array();
+	$options_categories_obj = get_categories();
+    $options_categories[]= __( 'Select category', 'accesspress-mag' );
+	foreach ($options_categories_obj as $category) {
+		$options_categories[$category->slug] = $category->cat_name;
+	}
+
 	Kirki::add_config( 'accesspress_mag_config', array(
 		'capability'    => 'edit_theme_options',
 		'option_type'   => 'option',
@@ -182,7 +192,7 @@
 						)
 					);
 
-    			$imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
+    			$imagepath =  get_template_directory_uri() . '/inc/admin-panel/images/';
 
 				Kirki::add_field( 'accesspress_mag_config', 
 					array(
@@ -282,7 +292,7 @@
 						)
 					);
 
-				$imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
+				$imagepath =  get_template_directory_uri() . '/inc/admin-panel/images/';
 
 				Kirki::add_field( 'accesspress_mag_config', 
 					array(
@@ -327,7 +337,7 @@
 						'description' => esc_html__( 'Select a category for homepage slider.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_slider',
 						'priority'    => 40,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 		            	'active_callback' => [
@@ -348,7 +358,7 @@
 						'description' => esc_html__( 'Select a category for highlight section beside slider.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_slider',
 						'priority'    => 50,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 						)
@@ -471,9 +481,9 @@
 						'description' => esc_html__( 'Select a category for first block in homepage.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_block',
 						'priority'    => 10,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
-		            	'default'	=> '',
+		            	'default'	=> $defaults['featured_block_1'],
 						)
 					);
 				Kirki::add_field( 'accesspress_mag_config', 
@@ -512,7 +522,7 @@
 						'description' => esc_html__( 'Select a category for first block in homepage.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_block',
 						'priority'    => 30,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 						)
@@ -553,7 +563,7 @@
 						'description' => esc_html__( 'Select a category for first block in homepage.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_block',
 						'priority'    => 50,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 						)
@@ -594,7 +604,7 @@
 						'description' => esc_html__( 'Select a category for first block in homepage.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_block',
 						'priority'    => 70,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 						)
@@ -642,7 +652,7 @@
 						'description' => esc_html__( 'Select a category for editor pick in homepage sidebar.', 'accesspress-mag' ),
 						'section'     => 'accesspress_mag_editor',
 						'priority'    => 10,
-		            	'choices' => accesspress_mag_category_lists(),
+		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 						)

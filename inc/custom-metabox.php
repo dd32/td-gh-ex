@@ -31,23 +31,23 @@ $accesspress_mag_sidebar_layout = array(
         'global-sidebar' => array(
                         'value'     => 'global-sidebar',
                         'label'     => __( 'Theme option sidebar', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/theme-option-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/theme-option-sidebar.png'
                     ), 
         'left-sidebar' => array(
                         'value'     => 'left-sidebar',
                         'label'     => __( 'Left sidebar', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/left-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/left-sidebar.png'
                     ), 
         'right-sidebar' => array(
                         'value' => 'right-sidebar',
                         'label' => __( 'Right sidebar<br/>(default)', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/right-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/right-sidebar.png'
                     ),
        
         'no-sidebar' => array(
                         'value'     => 'no-sidebar',
                         'label'     => __( 'No sidebar', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/no-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/no-sidebar.png'
                     )   
 
     );
@@ -56,18 +56,18 @@ $accesspress_mag_page_sidebar_layout = array(
         'left-sidebar' => array(
                         'value'     => 'left-sidebar',
                         'label'     => __( 'Left sidebar', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/left-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/left-sidebar.png'
                     ), 
         'right-sidebar' => array(
                         'value' => 'right-sidebar',
                         'label' => __( 'Right sidebar<br/>(default)', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/right-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/right-sidebar.png'
                     ),
        
         'no-sidebar' => array(
                         'value'     => 'no-sidebar',
                         'label'     => __( 'No sidebar', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/no-sidebar.png'
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/no-sidebar.png'
                     )   
 
     );
@@ -76,19 +76,19 @@ $accesspress_mag_post_template_layout = array(
         'global-template' => array(
                         'value'     => 'global-template',
                         'label'     => __( 'Theme option Template', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-theme.png',
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/post_template/post-templates-icons-theme.png',
                         'available'=> 'free'
                     ),
         'default-template' => array(
                         'value'     => 'single',
                         'label'     => __( 'Default Template', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-0.png',
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/post_template/post-templates-icons-0.png',
                         'available'=> 'free'
                     ), 
         'style1-template' => array(
                         'value' => 'single-style1',
                         'label' => __( 'Style 1', 'accesspress-mag' ),
-                        'thumbnail' => get_template_directory_uri() . '/inc/option-framework/images/post_template/post-templates-icons-1.png',
+                        'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/post_template/post-templates-icons-1.png',
                         'available'=> 'free'
                     )
     );

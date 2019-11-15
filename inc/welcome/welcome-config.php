@@ -77,6 +77,12 @@
 		'recommended_plugins' => array(
 			// Free Plugins
 			'free_plugins' => array(
+
+				'kirki' => array(
+					'slug' => 'kirki',
+					'filename' => 'kirki.php',
+					'class' => 'Kirki'
+				),
 				
 				'accesspress-social-share' => array(
 					'slug'      => 'accesspress-social-share',

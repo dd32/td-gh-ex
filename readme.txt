@@ -71,6 +71,9 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+= 2.5.6 =
+ ** Fixed customizer issues
+
 = 2.5.5 =
  ** Removed old welcome page and added new
  ** Added Demo Importer

@@ -183,7 +183,6 @@ if ( !function_exists( 'of_get_option' ) ) {
 
 }
 
-
 /**
  * Custom functions that act independently of the theme templates.
  */
@@ -207,7 +206,10 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
+require get_template_directory() . '/inc/admin-panel/theme-op-defaults.php';
 require get_template_directory() . '/inc/customizer.php';
+
+
 
 /**
  * Load Jetpack compatibility file.

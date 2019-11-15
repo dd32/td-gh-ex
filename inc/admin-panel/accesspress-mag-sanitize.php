@@ -52,7 +52,7 @@
     }
 
     function accesspress_mag_sanitize_footer($accesspress_mag_input){
-        $imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
+        $imagepath =  get_template_directory_uri() . '/inc/admin-panel/images/';
         $accesspress_mag_output = array(
                 'column4' => $imagepath . 'footers/footer-4.png',
                 'column3' => $imagepath . 'footers/footer-3.png',
@@ -80,7 +80,7 @@
 
     /* Sanitization for slider type */
     function accesspress_mag_sanitize_slider($accesspress_mag_input){
-        $imagepath =  get_template_directory_uri() . '/inc/option-framework/images/';
+        $imagepath =  get_template_directory_uri() . '/inc/admin-panel/images/';
         $accesspress_mag_output = array(
                 'slider_default' => $imagepath.'slider-default.jpg',
                 'slider_highlight' => $imagepath.'slider-highlight.jpg'

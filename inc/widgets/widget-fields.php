@@ -104,22 +104,3 @@ function accesspress_mag_widgets_updated_field_value( $widget_field, $new_field_
     }
 }
 
-/**
- * Enqueue scripts for file uploader
- */
-function optionsframework_media_scriptss($hook) {
-
-    if (function_exists('wp_enqueue_media'))
-        wp_enqueue_media();
-
-    wp_register_script('of-media-uploader', get_template_directory_uri() . 'js/media-uploader.js', array('jquery'), 1.70);
-    wp_enqueue_script('of-media-uploader');
-    wp_localize_script('of-media-uploader', 'optionsframework_l10n', array(
-        'upload' => __('Upload', 'accesspress-mag'),
-        'remove' => __('Remove', 'accesspress-mag')
-    ));
-
-    wp_enqueue_style( 'accesspress-mag-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-}
-
-add_action('admin_enqueue_scripts', 'optionsframework_media_scriptss');
