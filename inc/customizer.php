@@ -61,6 +61,7 @@ get_template_part( 'inc/customizer/sections/sidebar-settings' );
 get_template_part( 'inc/customizer/sections/footer-settings' );
 get_template_part( 'inc/customizer/sections/banner-settings' );
 get_template_part( 'inc/customizer/sections/blog-settings' );
+get_template_part( 'inc/customizer/sections/breadcurmb-settings' );
 
 get_template_part( 'inc/customizer/active-callbacks' );
 

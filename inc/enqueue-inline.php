@@ -128,7 +128,29 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_nav_link_color_setting', '.sticky-header .current-menu-item a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : text logo color **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_header_text_logo_color_setting', '.sticky-header .site-logo h1 a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_header_text_logo_color_setting', '.sticky-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
+
+    /***************************************************************************
+    * transparent header Settings
+    ***************************************************************************/
+
+    /** Layout Settings: Section Height **/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_navigation_control', '.ct-transparent-header', array( 'padding-top', 'padding-bottom' ), array( 10, 10, 10 ), 'px' );
+
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_logo_size_control', '.ct-transparent-header .site-logo .ct-transparent-logo img', array( 'max-width' ), array( 300, 300, 300 ), 'px' );
+
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_text_logo_size_control', '.ct-transparent-header .site-logo div', array( 'font-size' ), array( 100, 100, 100 ), 'px' );
+
+    /** fixed Hover Settings : fixed header Bg color**/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_bgcolor_setting', '.ct-transparent-header', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );
+
+    /** Header Navigation : Navigation active Link color**/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .main-nav li a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
+     /** Header Navigation : text logo color **/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_text_logo_color_setting', '.sticky-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
 
     /***************************************************************************
     * topbar :  topbar Settings

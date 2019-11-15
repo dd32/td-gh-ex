@@ -23,8 +23,9 @@
         if ( function_exists( 'wp_body_open' ) ) {
             wp_body_open();
         }
-    ?>
 
+        $apex_business_transparency = get_post_meta( get_the_ID(), '_header_option_value_key', TRUE );
+    ?>
     <a class="skip-link" href="#content">
     <?php esc_html_e( 'Skip to content', 'apex-business' ); ?></a>
 
@@ -41,7 +42,7 @@
         <div class="box-layout">
     <?php endif; ?>
         <!--== Start Header Area ==-->
-        <header class="header-container fixed-spacing">
+        <header class="header-container fixed-spacing <?php echo esc_attr( $apex_business_transparency ); ?>">
             <!-- Start Topbar Area -->
             <?php if ( is_active_sidebar( 'apex-business-topbar-address' )
                     || is_active_sidebar( 'apex-business-topbar-office-hours' )

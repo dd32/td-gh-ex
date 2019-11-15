@@ -11,6 +11,16 @@
     @extend .pre-shadow;
 }
 
+.ct-transparent-header {
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+
+    .main-header {
+        background-color: transparent;
+    }
+}
+
 .topbar-content {
     display: inline-block;
     margin-left: 10px;
@@ -233,6 +243,13 @@
     label {
         padding-bottom: 0;
     }
+}
+
+.ct-transparent-header .sticky-header {
+    background-color: #fff;
+}
+.ct-transparent-header {
+    box-shadow: none;
 }
 
 /**

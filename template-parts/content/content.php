@@ -9,7 +9,7 @@
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="blog-image image-container thumbnail-image">
             <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail( '', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
             </a>
             <?php if ( get_theme_mod( 'apex_business_display_date_setting', 1 ) ) : ?>
                 <span class="post-date"><?php echo esc_html( get_the_date() ); ?></span>

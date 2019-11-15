@@ -2,7 +2,12 @@
 /**
  * Header Logo
  */
-if ( has_custom_logo() ) {
+$apex_business_transparency = get_post_meta( get_the_ID(), '_header_option_value_key', TRUE );
+
+if ( $apex_business_transparency == 'ct-transparent-header'
+    && get_theme_mod( 'apex_business_transparent_header_logo_setting' ) ) {
+    echo '<a class="ct-transparent-logo" href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . esc_url( wp_get_attachment_url( get_theme_mod( 'apex_business_transparent_header_logo_setting' ) ) ) . '" alt="' . esc_attr__( 'Transparent logo', 'apex-business' ) . '"></a>';
+} else if ( has_custom_logo() ) {
     if ( function_exists( 'the_custom_logo' ) ) {
         the_custom_logo();
     }

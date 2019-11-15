@@ -5,3 +5,4 @@
     require_once( get_template_directory() . '/inc/custom-functions.php' );
     require_once( get_template_directory() . '/inc/custom-widgets.php' );
     require_once( get_template_directory() . '/inc/customizer.php' );
+    require_once( get_template_directory() . '/inc/transparent-header.php' );

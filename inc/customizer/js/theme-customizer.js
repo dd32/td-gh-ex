@@ -204,7 +204,7 @@
     range_live_media_load( 'apex_business_fixed_logo_size_control', '.sticky-header .site-logo .custom-logo', [ 'max-width' ], 'px' );
 
     /** Fixed header Settings: fixed_text_logo_size **/
-    range_live_media_load( 'apex_business_fixed_text_logo_size_control', '.sticky-header .site-logo h1', [ 'font-size' ], 'px' );
+    range_live_media_load( 'apex_business_fixed_text_logo_size_control', '.sticky-header .site-logo div', [ 'font-size' ], 'px' );
 
     /** Fixed Header Navigation :  Fixed header bg color **/
     ct_customizer_live_load( 'apex_business_fixed_header_bgcolor_setting', '.sticky-header', [ 'background-color' ] );
@@ -213,7 +213,31 @@
     ct_customizer_live_load( 'apex_business_fixed_nav_link_color_setting', '.sticky-header .current-menu-item a', [ 'color' ] );
 
     /** Fixed Header Navigation : Text Logo color **/
-    ct_customizer_live_load( 'apex_business_fixed_header_text_logo_color_setting', '.sticky-header .site-logo h1 a', [ 'color' ] );
+    ct_customizer_live_load( 'apex_business_fixed_header_text_logo_color_setting', '.sticky-header .site-logo div a', [ 'color' ] );
+
+
+
+     /***************************************************************************
+    * transparent header Settings
+    ***************************************************************************/
+
+    /** Fixed header Settings: Section Height **/
+    range_live_media_load( 'apex_business_transparent_navigation_control', '.ct-transparent-header', [ 'padding-top', 'padding-bottom' ], 'px' );
+
+    /** Fixed header Settings: logo width **/
+    range_live_media_load( 'apex_business_transparent_logo_size_control', '.ct-transparent-header .site-logo .ct-transparent-logo img', [ 'max-width' ], 'px' );
+
+    /** Fixed header Settings: fixed_text_logo_size **/
+    range_live_media_load( 'apex_business_transparent_text_logo_size_control', '.ct-transparent-header .site-logo div', [ 'font-size' ], 'px' );
+
+    /** Fixed Header Navigation :  Fixed header bg color **/
+    ct_customizer_live_load( 'apex_business_transparent_header_bgcolor_setting', '.ct-transparent-header', [ 'background-color' ] );
+
+    /** Fixed Header Navigation :  active link color **/
+    ct_customizer_live_load( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .main-nav li a', [ 'color' ] );
+
+    /** Fixed Header Navigation : Text Logo color **/
+    ct_customizer_live_load( 'apex_business_transparent_header_text_logo_color_setting', '.ct-transparent-header .site-logo div a', [ 'color' ] );
 
     /***************************************************************************
     * topbar Settings

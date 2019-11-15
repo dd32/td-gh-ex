@@ -9,7 +9,7 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'post' ); ?>>
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="post-image thumbnail-image">
-            <?php the_post_thumbnail() ?>
+            <?php the_post_thumbnail( '', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
         </div><!-- /.post-image -->
     <?php endif; ?>
 

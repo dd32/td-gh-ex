@@ -30,6 +30,12 @@ function apex_business_register_panels_setup( $wp_customize ) {
         'title'         => __( 'Blog', 'apex-business' ),
         'priority'      => 10,
     ) );
+
+    $wp_customize->add_panel( 'apex_business_breadcrumb_panel', array(
+        'capability'    => 'edit_theme_options',
+        'title'         => __( 'Breadcrumb', 'apex-business' ),
+        'priority'      => 10,
+    ) );
 }
 
 add_action( 'customize_register', 'apex_business_register_panels_setup');
@@ -112,6 +118,22 @@ function apex_business_accent_color_setup( $wp_customize ) {
     );
 
   /******************************** Site Description Switch *****************************/
+    $wp_customize->add_setting( 'apex_business_transparent_header_logo_setting', array(
+    'capability'        => 'edit_theme_options',
+    'sanitize_callback' => 'absint',
+    'default'           => false
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Cropped_Image_Control( $wp_customize, 'apex_business_transparent_header_logo_control', array(
+        'label'         =>  __( 'Transparent Header logo', 'apex-business' ),
+        'section'       =>  'title_tagline',
+        'settings'      =>  'apex_business_transparent_header_logo_setting',
+        'flex_width'    =>  true,
+        'flex_height'   =>  true,
+        'width'         =>  220,
+        'height'        =>  55,
+    ) ) );
+
   $wp_customize->add_setting( 'apex_business_site_description_switch_setting', array(
     'capability'        => 'edit_theme_options',
     'sanitize_callback' => 'absint',

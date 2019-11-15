@@ -788,6 +788,13 @@ button, .button {
  * #.# Top Bar
  *
  */
+.ct-transparent-header {
+  position: absolute;
+  width: 100%;
+  z-index: 9999; }
+  .ct-transparent-header .main-header {
+    background-color: transparent; }
+
 .topbar-content {
   display: inline-block;
   margin-left: 10px;
@@ -943,6 +950,12 @@ button, .button {
     padding: 0; }
   .search-form label {
     padding-bottom: 0; }
+
+.ct-transparent-header .sticky-header {
+  background-color: #fff; }
+
+.ct-transparent-header {
+  box-shadow: none; }
 
 /**
  *
@@ -1267,7 +1280,7 @@ nav a {
 @media (min-width: 768px) {
   .mobile-navigation,
   .menubar-right {
-    display: none; } }
+    display: none !important; } }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 767.98px) {
   .main-nav,

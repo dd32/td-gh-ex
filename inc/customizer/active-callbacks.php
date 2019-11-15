@@ -44,10 +44,3 @@ function apex_business_flag_back_to_top_disabled() {
     return false;
 }
 
-// function apex_business_archive_banner_callback() {
-//     $flag = get_theme_mod( 'apex_business_archive_banner_image_setting');
-//     if( $flag != '' ) {
-//         return true;
-//     }
-//     return false;
-// }
