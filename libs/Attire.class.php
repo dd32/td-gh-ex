@@ -86,6 +86,9 @@ class Attire {
         if ( class_exists( 'WooCommerce' ) )
             wp_enqueue_style( 'attire-woocommerce' );
 
+		wp_register_style( 'attire', ATTIRE_TEMPLATE_URL . '/css/attire.css' );
+		wp_enqueue_style( 'attire' );
+
 		wp_register_script( 'popper', ATTIRE_TEMPLATE_URL . '/bootstrap/js/popper.min.js', array(), null, true );
 		wp_enqueue_script( 'popper' );
 

@@ -134,4 +134,3 @@ class AttireBase {
 }
 
 new AttireBase();
-

@@ -14,8 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!--BODY STARTS HERE-->
 
-<body <?php body_class( 'attire' );
-AttireThemeEngine::AttireBodySchema(); ?> >
+<body <?php body_class( 'attire' ); ?> <?php  AttireThemeEngine::AttireBodySchema(); ?> >
 
 <?php
 /**
