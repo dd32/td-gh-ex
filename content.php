@@ -16,7 +16,7 @@
 	
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
-			echo '<div class="entry-featuredImg"><a href="' .esc_url(get_permalink()). '"><span class="overlay-img"></span>';
+			echo '<div class="entry-featuredImg"><a href="' .esc_url(get_permalink()). '" title="' .the_title_attribute('echo=0'). '"><span class="overlay-img"></span>';
 			if ($i == 0 && $lastbig == 1 ) {
 				the_post_thumbnail('annina-normal-post');
 			} else {

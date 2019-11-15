@@ -19,7 +19,7 @@
 			<span class="sep"> | </span>			
 			<?php
 			/* translators: 1: theme name, 2: theme developer */
-			printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'annina' ), '<a target="_blank" href="https://crestaproject.com/downloads/annina/" rel="nofollow" title="Annina Theme">Annina Free</a>', 'CrestaProject' );
+			printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'annina' ), '<a target="_blank" href="https://crestaproject.com/downloads/annina/" rel="noopener noreferrer" title="Annina Theme">Annina Free</a>', 'CrestaProject' );
 			?>
 			</div>
 			<div id="toTop"><i class="fa fa-angle-up fa-lg"></i></div>

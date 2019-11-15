@@ -429,7 +429,7 @@ function annina_custom_css_styles() {
 	}
 ?>
 
-<style type="text/css">
+<style id="annina-custom-css">
 	<?php if (!empty($text_color_first) && $text_color_first != '#222222' ) : ?>
 	body,
 	button,

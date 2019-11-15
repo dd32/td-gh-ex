@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="https://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
@@ -73,7 +73,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle"><?php esc_html_e( 'Main Menu', 'annina' ); ?><i class="fa fa-align-justify"></i></button>
+			<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Main Menu', 'annina' ); ?>"><?php esc_html_e( 'Main Menu', 'annina' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 
