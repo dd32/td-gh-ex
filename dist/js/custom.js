@@ -37,13 +37,10 @@
 				$( e ).removeAttr( 'style' );
 			} );
 
-			// Responsive Menu Close Button
-			var $responsiveMenuClose = $( '<div class="header-menu-responsive-close">&times;</div>' );
-
-			// Insert the cloned menu before the site content
-			$( '<div class="site-header-menu-responsive" />' ).insertBefore( '.site-content' );
+			// Insert the cloned menu before the site header menu
+			$( '<div class="site-header-menu-responsive" />' ).insertBefore( '.site-header-menu' );
+			$headerMenuClone.prepend( '<li class="menu-item menu-item-type-close"><button class="header-menu-responsive-close">&times;</button></li>' );
 			$headerMenuClone.appendTo( '.site-header-menu-responsive' );
-			$responsiveMenuClose.appendTo( '.site-header-menu-responsive' );
 
 			// Add dropdown toggle that display child menu items.
 			$( '.site-header-menu-responsive .page_item_has_children > a, .site-header-menu-responsive .menu-item-has-children > a' ).append( '<button class="dropdown-toggle" aria-expanded="false"/>' );
@@ -213,6 +210,12 @@
 		if ( e.keyCode === 27 ) {
 			// Make the escape key to close the slide panel
 			anther.slidePanelCloseInit();
+
+			// Make the search header toggle
+			var siteSearchHeader = $( '.site-search-header-form-wrapper' );
+			if ( siteSearchHeader.hasClass( 'show' ) ) {
+				siteSearchHeader.toggleClass( 'show' );
+			}
 		}
 	} );
 }( jQuery ) );

@@ -7,7 +7,6 @@
 
 <nav id="site-navigation" class="main-navigation">
 	<div class="main-navigation-inside">
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'anther' ); ?></a>
 		<div class="toggle-menu-wrapper">
 			<a href="#header-menu-responsive" title="<?php esc_attr_e( 'Menu', 'anther' ); ?>" class="toggle-menu-control">
 				<span class="toggle-menu-label"><?php esc_html_e( 'Menu', 'anther' ); ?></span>
