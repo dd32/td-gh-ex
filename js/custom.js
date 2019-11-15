@@ -79,33 +79,6 @@
 
 			}
 
-			/*
-			function scrollEffect() {
-				var e = $( window ),
-					t = $( ".header-controller" ),
-					o = $( "footer" ),
-					a = $( "#rStories" ),
-					n = t.offset().top,
-					r = o.offset().top - o.height(),
-					i = "fixed-header-controller-down",
-					s = "fixed-header-controller-up",
-					l = 0;
-				e.on(
-					"scroll",
-					function (o) {
-
-						var lightlogo = $( "#nav img" ).data( "light" );
-						var c         = e.scrollTop();
-						n < c ? c > l ? t.hasClass( i ) && (t.removeClass( i ).addClass( s ),
-						$( ".navbar-brand img" ).attr( "src", lightlogo )) : t.hasClass( i ) || (t.removeClass( s ).addClass( i ),
-						$( ".navbar-brand img" ).attr( "src", lightlogo )) : (t.removeClass( s ).removeClass( i ), t.find( "#nav" ).hasClass( "nav-overlay" ) ||
-						$( ".navbar-brand img" ).attr( "src", lightlogo )), r <= c ? a.css( "display", "none" ) : a.css( "display", "block" ), l = c
-					}
-				)
-			}
-			*/
-
-
 			function getProgress(e) {
 				for ($text = "", $x = 0; $x < e; $x++) {
 					$per = 100 / e, $text += '<div class="progress" data-index="' + $x + '" style="width: ' + $per + '%">\n                <div class="progress-bar"></div>\n            </div>';

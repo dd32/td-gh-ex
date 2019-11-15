@@ -3,9 +3,9 @@ Contributors: emtiaz51921
 Author URI: https://imtiazshamim.com/
 Donate link: https://imtiazshamim.com/contact/
 Requires at least: 4.0
-Tested up to: 5.2.3
+Tested up to: 5.3
 Requires PHP: 5.5
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -28,7 +28,7 @@ Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to b
 
 == Frequently Asked Questions ==
 
-= How to install Mythos theme=
+= How to install Aari theme=
 1. Login your WordPress dashboard.
 2. Go to "Appearance" -> "Theme" and click on "Add New" button.
 3. Click on "Upload Theme" button and choose the theme's zip file you have downloaded.
@@ -40,7 +40,7 @@ Alternatively,
 
 1. Login to your WordPress dashboard.
 2. Go to "Appearance" -> "Theme" and click on "Add New" button.
-3. Search for "Mythos".
+3. Search for "Aari".
 4. Click on Install and Activate.
 
 If you need any help or assistance we'd be happy to help. Just drop a line here- https://imtiazshamim.com/contct
@@ -142,6 +142,9 @@ https://pixabay.com/photos/diving-underwater-sea-float-813028/
 
 
 == Changelog ==
+
+= 2.2.4 - November 15 2019 =
+* Bug fix
 
 = 2.2.3 - November 15 2019 =
 * Bug fix

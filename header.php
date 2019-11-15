@@ -64,9 +64,9 @@
 
 	<!-- Nav Bar
 	================================================== -->
-	<div id="masthead" class="header-controller text-center <?php echo ( is_front_page() && is_home() ) ? '' : 'header-overlay'; ?>">
+	<div id="masthead" class="header-controller text-center <?php echo ( ( is_front_page() && is_home() ) || is_home() ) ? '' : 'header-overlay'; ?>">
 		<div class="container">
-			<nav id="nav" class="navbar navbar-expand-lg <?php echo ( is_front_page() && is_home() ) ? 'nav-overlay' : ''; ?>">
+			<nav id="nav" class="navbar navbar-expand-lg <?php echo ( ( is_front_page() && is_home() ) || is_home() ) ? 'nav-overlay' : ''; ?>">
 
 				<?php
 				if ( aari_custom_logo_dark() !== false ) {
