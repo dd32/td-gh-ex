@@ -588,7 +588,7 @@ add_action( 'wp_enqueue_scripts', 'audioman_scripts' );
 function audioman_block_editor_styles() {
 	// Block styles.
 	wp_enqueue_style( 'audioman-block-editor-style', get_theme_file_uri( 'assets/css/editor-blocks.css' ) );
-	
+
 	// Add custom fonts.
 	wp_enqueue_style( 'audioman-fonts', audioman_fonts_url(), array(), null );
 }
@@ -683,11 +683,6 @@ if ( ! function_exists( 'audioman_more_link' ) ) :
 	}
 endif; //audioman_more_link
 add_filter( 'the_content_more_link', 'audioman_more_link', 10, 2 );
-
-/**
- * SVG icons functions and filters
- */
-require get_parent_theme_file_path( '/inc/icon-functions.php' );
 
 /**
  * Implement the Custom Header feature

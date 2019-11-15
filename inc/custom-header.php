@@ -86,8 +86,9 @@ if ( ! function_exists( 'audioman_featured_image' ) ) :
 	 */
 	function audioman_featured_image() {
 		if ( is_header_video_active() && has_header_video() ) {
-			return get_header_image();
+			return true;
 		}
+		
 		$thumbnail = 'audioman-slider';
 
 		if ( is_post_type_archive( 'jetpack-testimonial' ) ) {
@@ -118,8 +119,6 @@ if ( ! function_exists( 'audioman_featured_image' ) ) :
 			} else {
 				return get_header_image();
 			}
-		} elseif ( is_header_video_active() && has_header_video() ) {
-			return true;
 		} else {
 			return get_header_image();
 		}
@@ -205,7 +204,7 @@ if ( ! function_exists( 'audioman_featured_overall_image' ) ) :
 		} elseif ( 'exclude-home-page-post' === $enable ) {
 			if ( is_front_page() ) {
 				return 'disable';
-			} elseif ( is_singular() ) {
+			} elseif ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
 				return audioman_featured_page_post_image();
 			} else {
 				return audioman_featured_image();
@@ -215,7 +214,7 @@ if ( ! function_exists( 'audioman_featured_overall_image' ) ) :
 			return audioman_featured_image();
 		} elseif ( 'entire-site-page-post' === $enable ) {
 			// Check Entire Site (Post/Page)
-			if ( is_singular() || ( is_home() && ! is_front_page() ) ) {
+			if ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
 				return audioman_featured_page_post_image();
 			} else {
 				return audioman_featured_image();

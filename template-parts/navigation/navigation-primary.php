@@ -18,7 +18,7 @@
 					audioman_header_cart();
 				}
 				?>
-				
+
 				<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 
 					<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'audioman' ); ?>">
@@ -55,11 +55,11 @@
 				</div><!-- .mobile-social-search -->
 			</div><!-- .menu-inside-wrapper -->
 		</div><!-- #primary-menu-wrapper.menu-wrapper -->
-		
+
 		<div id="primary-search-wrapper" class="menu-wrapper">
 			<div class="menu-toggle-wrapper">
 				<button id="social-search-toggle" class="menu-toggle search-toggle">
-					<span class="menu-label screen-reader-text"><?php echo esc_html_e( 'Search', 'audioman' ); ?>
+					<span class="menu-label screen-reader-text"><?php echo esc_html_e( 'Search', 'audioman' ); ?></span>
 				</button>
 			</div><!-- .menu-toggle-wrapper -->
 

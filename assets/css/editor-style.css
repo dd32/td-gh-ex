@@ -177,6 +177,8 @@ pre,
 
 code,
 .mce-content-body code {
+	background-color: transparent;
+	color: inherit;
 	padding: 0.125em 0.25em;
 }
 
