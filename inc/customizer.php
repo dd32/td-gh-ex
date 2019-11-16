@@ -691,6 +691,81 @@ function advance_startup_customize_register($wp_customize) {
 		'section' => 'advance_startup_category',
 	));
 
+	//Blog Post
+	$wp_customize->add_section('advance_startup_blog_post',array(
+		'title'	=> __('Blog Page Settings','advance-startup'),
+		'panel' => 'advance_startup_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_startup_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_startup_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','advance-startup'),
+       'section' => 'advance_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_startup_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_startup_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','advance-startup'),
+       'section' => 'advance_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_startup_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_startup_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','advance-startup'),
+       'section' => 'advance_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_startup_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_startup_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','advance-startup'),
+       'section' => 'advance_startup_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'advance_startup_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_startup_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','advance-startup' ),
+		'section'     => 'advance_startup_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'advance_startup_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('advance_startup_button_text',array(
+		'default'=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_startup_button_text',array(
+		'label'	=> __('Add Button Text','advance-startup'),
+		'section'=> 'advance_startup_blog_post',
+		'type'=> 'text'
+	));
+
 	//Footer
 	$wp_customize->add_section('advance_startup_footer_section', array(
 		'title'       => __('Footer Text', 'advance-startup'),
