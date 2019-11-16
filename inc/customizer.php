@@ -14,12 +14,12 @@ function advance_portfolio_customize_register($wp_customize) {
 
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_portfolio_panel_id', array(
-			'priority'       => 10,
-			'capability'     => 'edit_theme_options',
-			'theme_supports' => '',
-			'title'          => __('Theme Settings', 'advance-portfolio'),
-			'description'    => __('Description of what this panel does.', 'advance-portfolio'),
-		));
+		'priority'       => 10,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '',
+		'title'          => __('Theme Settings', 'advance-portfolio'),
+		'description'    => __('Description of what this panel does.', 'advance-portfolio'),
+	));
 
 	// Add the Theme Color Option section.
 	$wp_customize->add_section( 'advance_portfolio_theme_color_option', 
@@ -307,7 +307,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_h1_font_size',array(
 		'label'	=> __('H1 Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -345,7 +344,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_h2_font_size',array(
 		'label'	=> __('h2 Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -420,7 +418,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_portfolio_h4_font_size',array(
 		'label'	=> __('h4 Font Size','advance-portfolio'),
 		'section'	=> 'advance_portfolio_typography',
@@ -686,6 +683,81 @@ function advance_portfolio_customize_register($wp_customize) {
 		'label'       => __('Select post', 'advance-portfolio'),
 		'description' => __('Size of image should be 570x570', 'advance-portfolio'),
 		'section'     => 'advance_portfolio_page_awesome',
+	));
+
+	//Blog Post
+	$wp_customize->add_section('advance_portfolio_blog_post',array(
+		'title'	=> __('Blog Page Settings','advance-portfolio'),
+		'panel' => 'advance_portfolio_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_portfolio_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_portfolio_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','advance-portfolio'),
+       'section' => 'advance_portfolio_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_portfolio_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_portfolio_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','advance-portfolio'),
+       'section' => 'advance_portfolio_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_portfolio_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_portfolio_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','advance-portfolio'),
+       'section' => 'advance_portfolio_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_portfolio_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_portfolio_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','advance-portfolio'),
+       'section' => 'advance_portfolio_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'advance_portfolio_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_portfolio_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','advance-portfolio' ),
+		'section'     => 'advance_portfolio_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'advance_portfolio_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('advance_portfolio_button_text',array(
+		'default'=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_portfolio_button_text',array(
+		'label'	=> __('Add Button Text','advance-portfolio'),
+		'section'=> 'advance_portfolio_blog_post',
+		'type'=> 'text'
 	));
 
 	//footer

@@ -276,6 +276,15 @@ function advance_portfolio_sanitize_dropdown_pages($page_id, $setting) {
 	return ('publish' == get_post_status($page_id)?$page_id:$setting->default);
 }
 
+// Excerpt Limit Begin
+function advance_portfolio_string_limit_words($string, $word_limit) {
+	$words = explode(' ', $string, ($word_limit + 1));
+	if(count($words) > $word_limit)
+	array_pop($words);
+	return implode(' ', $words);
+}
+
+
 /*radio button sanitization*/
 function advance_portfolio_sanitize_choices($input, $setting) {
 	global $wp_customize;
