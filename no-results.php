@@ -7,7 +7,6 @@
  * @package BB Mobile Application
  */
 ?>
-
 <header role="banner">
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'bb-mobile-application' ); ?></h1>
 </header>

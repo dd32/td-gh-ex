@@ -7,7 +7,6 @@
  * @package BB Mobile Application
  */
 ?>
-
 <footer role="contentinfo">
   <div  id="footer" class="copyright-wrapper">
     <div class="container">

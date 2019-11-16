@@ -5,7 +5,6 @@
  * @package BB Mobile Application
  */
 ?>
-
 <div id="sidebar">    
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
         <aside role="complementary" aria-label="firstsidebar" id="archives" class="widget">

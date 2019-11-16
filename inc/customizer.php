@@ -298,7 +298,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_mobile_application_h1_font_size',array(
 		'label'	=> __('H1 Font Size','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_typography',
@@ -336,7 +335,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_mobile_application_h2_font_size',array(
 		'label'	=> __('h2 Font Size','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_typography',
@@ -374,7 +372,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_mobile_application_h3_font_size',array(
 		'label'	=> __('h3 Font Size','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_typography',
@@ -412,7 +409,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_mobile_application_h4_font_size',array(
 		'label'	=> __('h4 Font Size','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_typography',
@@ -450,7 +446,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_mobile_application_h5_font_size',array(
 		'label'	=> __('h5 Font Size','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_typography',
@@ -488,7 +483,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_mobile_application_h6_font_size',array(
 		'label'	=> __('h6 Font Size','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_typography',
@@ -525,7 +519,6 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 			'section'  => 'bb_mobile_application_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
-
 	}
 
 	//Creative Feature
@@ -609,6 +602,81 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'choices' => $cat_post1,
 		'label' => __('Select Category to display Latest Post','bb-mobile-application'),
 		'section' => 'bb_mobile_application_creative_section',
+	));
+
+	//Blog Post
+	$wp_customize->add_section('bb_mobile_application_blog_post',array(
+		'title'	=> __('Blog Page Settings','bb-mobile-application'),
+		'panel' => 'bb_mobile_application_panel_id',
+	));	
+
+	$wp_customize->add_setting('bb_mobile_application_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_mobile_application_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','bb-mobile-application'),
+       'section' => 'bb_mobile_application_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_mobile_application_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_mobile_application_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','bb-mobile-application'),
+       'section' => 'bb_mobile_application_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_mobile_application_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_mobile_application_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','bb-mobile-application'),
+       'section' => 'bb_mobile_application_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_mobile_application_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_mobile_application_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','bb-mobile-application'),
+       'section' => 'bb_mobile_application_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'bb_mobile_application_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'bb_mobile_application_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','bb-mobile-application' ),
+		'section'     => 'bb_mobile_application_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'bb_mobile_application_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('bb_mobile_application_button_text',array(
+		'default'=> 'Read More',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_mobile_application_button_text',array(
+		'label'	=> __('Add Button Text','bb-mobile-application'),
+		'section'=> 'bb_mobile_application_blog_post',
+		'type'=> 'text'
 	));
 	
 	//Footer
