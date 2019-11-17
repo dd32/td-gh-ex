@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, translation ready and deeply customizable. It does not matter whether you are an experienced web developer or a WordPress newbie, setting up your own website with this theme does not need coding knowledge. This pet WordPress theme is optimized for search engines and will give your website higher rank. It has banners and sliders to make the theme more impressive. Advance Pet Care has sections like gallery and supports various post formats like image, gallery, video etc. It is embedded with social media icons. It is extensible with third party plugins. You can set up your very own online store and start selling products, all with the help of WooCommerce plugin which is compatible with it. Demo: https://www.themeshopy.com/advance-pet-care-pro/
-Version: 0.4.4
+Version: 0.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -448,23 +448,27 @@ input[type="submit"] {
 .sf-arrows .sf-with-ul:after{
   content: '\f067';
   position: absolute;
+  height: 0;
+  width: 0;
+  border-top-color: #e1e1e1;
   font-weight: 600;
   font-family: 'Font Awesome 5 Free';
+  margin-top: 0px;
   font-size: 10px;
   padding: 0px 6px;
-  top: 22px;
-  color: #fff;
 }
 .sf-arrows ul .sf-with-ul:after{
   right: 10px;
-  color: #b65741;
-  top: 15px;
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows .sfHover > .sf-with-ul:after{
+  content: '\f068';
+  font-weight: 600;
+  font-family: 'Font Awesome 5 Free';
 }
 .toggle-menu, a.closebtn{
   display: none;
-}
-.sf-arrows .sf-with-ul{
-  padding-right: 30px;
 }
 /*-----------------Search pop up----------------*/
 
@@ -822,7 +826,8 @@ article.page-box .box-img {
   color:#b65741;
   border: 1px solid #b65741;
   padding: 5px 10px;
-  margin-right: 10px;
+  display: inline-block;
+  margin: 5px;
 }
 .tags p a:hover{
   color: #fff;

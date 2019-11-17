@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('Copyright 2018 -', 'advance-pet-care')));?> <?php advance_pet_care_credit();?></p>
+        <p><?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('Copyright 2018', 'advance-pet-care')));?> <?php advance_pet_care_credit();?></p>
     </div>
 </footer>
 
