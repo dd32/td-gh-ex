@@ -354,7 +354,7 @@ function advance_fitness_gym_scripts() {
 	wp_enqueue_script('advance-fitness-gym-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);
-	require get_parent_theme_file_path( '/inc/color-option.php' );
+	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
 	wp_add_inline_style( 'advance-fitness-gym-basic-style',$custom_css );
 
 	wp_enqueue_style('advance-fitness-gym-ie', get_template_directory_uri().'/css/ie.css', array('advance-fitness-gym-basic-style'));

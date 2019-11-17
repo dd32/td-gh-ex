@@ -50,7 +50,7 @@ input[type=checkbox]:before {
 }
 
 /* ---------Excerpt & Logo --------- */
-input#_customize-input-logo_size{
+input#_customize-input-logo_size,input#_customize-input-advance_fitness_gym_excerpt_number{
     width: 100%;
 }
 li#customize-control-logo_size {
