@@ -9,48 +9,48 @@
 
 <!--- ============  EVENTS  =========== ------------>
 <?php 	
-$portfboxv = esc_html(associationx_get_option('portfoliobox', ''));  
-if(!$portfboxv) return;
+$associationx_portfboxv = esc_attr(associationx_get_option('portfoliobox', ''));  
+if(!$associationx_portfboxv) return;
 
-$portheading = esc_html__('Our Upcoming Events', 'associationx');
-if($portheading) $portheading = '<h2 class="boxtoptitle box90">'.do_shortcode($portheading).'</h2>';
+$associationx_portheading = esc_html__('Our Upcoming Events', 'associationx');
+if($associationx_portheading) $associationx_portheading = '<h2 class="boxtoptitle box90">'.$associationx_portheading.'</h2>';
 	 
-$portfbnum = 5; 
-if($portfbnum && is_numeric($portfbnum)): 
-	$portfitem = '';
-	foreach (range(1, $portfbnum ) as $portfbnumn) { 
-		$portimg = ''; $portfautomatic = ''; $portfpostid = ''; $getattpost = ''; $portitemlink = ''; $portitemlinkt = ''; $portft = ''; $portftdes= '';
-		$portimg = esc_url(associationx_get_option('portfb-image' . $portfbnumn, ''));
+$associationx_portfbnum = 5; 
+if($associationx_portfbnum && is_numeric($associationx_portfbnum)): 
+	$associationx_portfitem = '';
+	foreach (range(1, $associationx_portfbnum ) as $associationx_portfbnumn) { 
+		$associationx_portimg = ''; $associationx_portfautomatic = ''; $associationx_portfpostid = ''; $associationx_getattpost = ''; $associationx_portitemlink = ''; $associationx_portitemlinkt = ''; $portft = ''; $portftdes= '';
+		$associationx_portimg = esc_url(associationx_get_option('portfb-image' . $associationx_portfbnumn, ''));
 		
-		$portfautomatic = esc_html(associationx_get_option('portfb-image-automatic' . $portfbnumn, '0'));
-		if($portimg && $portfautomatic ):
-			$portfpostid = attachment_url_to_postid($portimg);
-			$getattpost = get_post( $portfpostid );
-			$portitemlink = get_permalink( $getattpost->ID );
-			$portitemlinkt = 1;
-			$portft = $getattpost->post_title;
-			$portftdes = $getattpost->post_excerpt;
+		$associationx_portfautomatic = esc_attr(associationx_get_option('portfb-image-automatic' . $associationx_portfbnumn, '0'));
+		if($associationx_portimg && $associationx_portfautomatic ):
+			$associationx_portfpostid = attachment_url_to_postid($associationx_portimg);
+			$associationx_getattpost = get_post( $associationx_portfpostid );
+			$associationx_portitemlink = get_permalink( $associationx_getattpost->ID );
+			$associationx_portitemlinkt = 1;
+			$portft = $associationx_getattpost->post_title;
+			$portftdes = $associationx_getattpost->post_excerpt;
 		endif;		
 
-		if($portimg) $portimg = '<div class="poftfitem-image"><img src="'.$portimg.'" alt="'.$portft.'" /></div>';
+		if($associationx_portimg) $associationx_portimg = '<div class="poftfitem-image"><img src="'.$associationx_portimg.'" alt="'.$portft.'" /></div>';
 		if($portft) $portft = '<h3 class="poftfitem-title">'.do_shortcode($portft).'</h3>';
 		if($portftdes) $portftdes = '<span class="poftfitem-des">'.do_shortcode($portftdes).'</span>';
 		if($portft || $portftdes ) $portft = '<figcaption class="portfoliotext">'.$portft.$portftdes.'</figcaption>';
 
-		if($portimg) $portimg = associationx_linkandtarget($portimg.$portft, $portitemlink, $portitemlinkt, '', 'portfitemandlink' );
-		if($portimg) $portfitem .= '<li class="portfitem-list"><figure class="portfitem-figure">'.$portimg.'</li></figure>';
+		if($associationx_portimg) $associationx_portimg = associationx_linkandtarget($associationx_portimg.$portft, $associationx_portitemlink, $associationx_portitemlinkt, '', 'portfitemandlink' );
+		if($associationx_portimg) $associationx_portfitem .= '<li class="portfitem-list"><figure class="portfitem-figure">'.$associationx_portimg.'</li></figure>';
 	}	
 endif;
 
-if( !$portheading && !$portfitem ) return; ?>
+if( !$associationx_portheading && !$associationx_portfitem ) return; ?>
 	
 <div class="clear"></div>
 <div id="portfolio-box-item" class="posrel" data-sr="enter bottom, move 70px, over 0.7s, wait 0.5s">
 	
 	<?php
-	echo $portheading; 
-	if($portfitem):
-		echo '<div id="portfslider" class="box90 portfolioslider posrel"><ul class="grid-portfolio slides  cs-style-3">'.$portfitem.'</ul></div>';			
+	echo $associationx_portheading; 
+	if($associationx_portfitem):
+		echo '<div id="portfslider" class="box90 portfolioslider posrel"><ul class="grid-portfolio slides  cs-style-3">'.$associationx_portfitem.'</ul></div>';			
 		
 	?>
        	<script type="text/javascript">

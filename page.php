@@ -7,15 +7,15 @@
 get_header(); 
 $activesidebar = 'sidebar-sinpage';
 if ( associationx_woo_page_check() ) $activesidebar = 'sidebar-woo'; 
-$pagelayout = 'leftcontent';
-if(!is_active_sidebar($activesidebar)) $pagelayout = 'fullcontent';
+$associationx_pagelayout = 'leftcontent';
+if(!is_active_sidebar($activesidebar)) $associationx_pagelayout = 'fullcontent';
 ?>
 <div id="pagename" class="d5_page_page"></div>
-<div id="container" class="sinpagepostcon sinpagecon box90 <?php echo $pagelayout; ?>">
+<div id="container" class="sinpagepostcon sinpagecon box90 <?php echo $associationx_pagelayout; ?>">
 	<div id="containerin">
 		<?php
 		get_template_part( 'post-content' );
-		if($pagelayout != 'fullcontent'): if ( associationx_woo_page_check() ): get_sidebar('ecommerce'); else: get_sidebar('sinpage'); endif; endif; 
+		if($associationx_pagelayout != 'fullcontent'): if ( associationx_woo_page_check() ): get_sidebar('ecommerce'); else: get_sidebar('sinpage'); endif; endif; 
 		?>
 	</div>
 </div>

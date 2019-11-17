@@ -1,7 +1,7 @@
-/* 	Innovation Theme's Admin Style
-	Copyright: 2012-2017, D5 Creation, www.d5creation.com
+/* 	AssociationX Theme's Admin Style
+	Copyright: 2012-2019, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
-	Since Innovation 3.0
+	Since AssociationX 1.0
 */
 
 #about-page { width:90%; min-width: 950px; display: block; margin: 10px 0; border-radius: 5px; background: #DDDDDD; border: 1px solid #cccccc; border-bottom: 15px solid #555555; padding: 10px 15px; line-height: 1.7; overflow: hidden; }
@@ -15,6 +15,7 @@
 .floatlt { float: left; }
 .floatrt { float: right; }
 .floatcntr { text-align: center; }
+.aboutdes{ font-size: 15px; }
 #about-page .specialbutton { background: #00aeef; border: none; box-shadow: 0 2px 0 0 #0089bc, 0 1px 0 0 rgba(225, 225, 225, 0.2) inset; color: #ffffff; text-shadow: 0 1px rgba(0, 0, 0, 0.1); border-radius: 3px; cursor: pointer; display: block; font-size: 15px; font-weight: bold; height: auto; margin: 5px; padding: 13px; text-align: center; text-decoration: none; text-transform: uppercase; width: auto;}
 #about-page .inblk { display: inline-block; vertical-align: top; margin: 5px 10px; }
 #about-page .specialbutton:hover { background: #0098d0 ; box-shadow: none; }

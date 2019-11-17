@@ -5,16 +5,16 @@
 	Since AssociationX 1.0
 */
 get_header(); 
-$pagelayout = 'leftcontent';
-if(!is_active_sidebar('sidebar-1')) $pagelayout = 'fullcontent'; 
+$associationx_pagelayout = 'leftcontent';
+if(!is_active_sidebar('sidebar-1')) $associationx_pagelayout = 'fullcontent'; 
 $blogpdesign = 'normalbdesign';
 global $associationx_ExLength;
 ?>
 <div id="pagename" class="d5_index_page allindexpages"></div>
-<div id="container" class="blogindexp box90 <?php echo $pagelayout.' '.$blogpdesign; ?>">
+<div id="container" class="blogindexp box90 <?php echo $associationx_pagelayout.' '.$blogpdesign; ?>">
 	<div id="containerin"><?php 
 		get_template_part( 'post-content' );
-		if($pagelayout != 'fullcontent') get_sidebar(); ?>
+		if($associationx_pagelayout != 'fullcontent') get_sidebar(); ?>
 	</div>
 </div>
 <?php get_footer();

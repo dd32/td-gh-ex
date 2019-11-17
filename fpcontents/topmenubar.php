@@ -5,7 +5,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-$showtmbar = esc_html(associationx_get_option('showtmbar','1'));
+$showtmbar = esc_attr(associationx_get_option('showtmbar','1'));
 $tmnucls=''; if(!$showtmbar) $tmnucls='notopmenu'; 
 ?>
 <div class="box100 top-menu-con-container <?php echo $tmnucls; ?>"><?php 

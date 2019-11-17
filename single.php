@@ -6,15 +6,15 @@
 	Since AssociationX 1.0
 */
 get_header(); 
-$pagelayout = 'leftcontent';
-if(!is_active_sidebar('sidebar-sinpost') ) $pagelayout = 'fullcontent';
+$associationx_pagelayout = 'leftcontent';
+if(!is_active_sidebar('sidebar-sinpost') ) $associationx_pagelayout = 'fullcontent';
 ?>
 <div id="pagename" class="d5_single_page"></div>
-<div id="container" class="sinpagepostcon sinpostcon box90 <?php echo $pagelayout; ?>">
+<div id="container" class="sinpagepostcon sinpostcon box90 <?php echo $associationx_pagelayout; ?>">
 	<div id="containerin">
 		<?php
 		get_template_part( 'post-content' );
-		if($pagelayout != 'fullcontent') get_sidebar('sinpost'); 
+		if($associationx_pagelayout != 'fullcontent') get_sidebar('sinpost'); 
 		?>
 	</div>
 </div>

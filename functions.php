@@ -8,7 +8,7 @@
 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
 	function associationx_about_page() { 
-	add_theme_page( esc_html__('AssociationX Options','associationx'), esc_html__('AssociationX Options','associationx'), 'edit_theme_options', 'theme-about', 'associationx_theme_about' ); 
+		add_theme_page( esc_html__('AssociationX Options','associationx'), esc_html__('AssociationX Options','associationx'), 'edit_theme_options', 'theme-about', 'associationx_theme_about' ); 
 	}
 	add_action('admin_menu', 'associationx_about_page');
 	function associationx_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
@@ -59,15 +59,15 @@
 	wp_enqueue_script( 'associationx-html5', get_template_directory_uri().'/js/html5.js'); 
     wp_script_add_data( 'associationx-html5', 'conditional', 'lt IE 9' );		
 		
-	$slidebox = esc_html(associationx_get_option('slidebox', ''));
-	$portfboxv = esc_html(associationx_get_option('portfoliobox', '0'));
-	$testiv = esc_html(associationx_get_option('tes-cln', ''));
-	if (is_front_page() && ( $slidebox || $portfboxv || $testiv ) ):
+	$slidebox = esc_attr(associationx_get_option('slidebox', ''));
+	$associationx_portfboxv = esc_attr(associationx_get_option('portfoliobox', '0'));
+	$testiv = esc_attr(associationx_get_option('tes-cln', ''));
+	if (is_front_page() && ( $slidebox || $associationx_portfboxv || $testiv ) ):
 		wp_enqueue_style('associationx-slider-css', get_template_directory_uri(). '/css/flexslider.css' ); 
 		wp_enqueue_script( 'associationx-slider-js', get_template_directory_uri(). '/js/jquery.flexslider-min.js' );		
-		if($portfboxv) wp_enqueue_style('associationx-portfolio-component-css', get_template_directory_uri(). '/css/portfolio-component.css' );		
+		if($associationx_portfboxv) wp_enqueue_style('associationx-portfolio-component-css', get_template_directory_uri(). '/css/portfolio-component.css' );		
 	endif;
-	$stfboxv = esc_html(associationx_get_option('staffbox', ''));	
+	$stfboxv = esc_attr(associationx_get_option('staffbox', ''));	
 	if (is_front_page() && $stfboxv ):	
 	wp_enqueue_style('associationx-staffs-css', get_template_directory_uri(). '/css/staffs.css' );
 	wp_enqueue_script( 'associationx-jquery.hoverfold-js', get_template_directory_uri(). '/js/jquery.hoverfold.js' );
@@ -88,13 +88,22 @@
 		
 	wp_enqueue_style('associationx-bbpress', get_template_directory_uri(). '/css/bbp.css' );
 	
-	if (esc_html(associationx_get_option('responsive', '1'))) wp_enqueue_style('associationx-responsive', get_template_directory_uri(). '/style-responsive.css' ); 	 
+	if (esc_attr(associationx_get_option('responsive', '1'))) wp_enqueue_style('associationx-responsive', get_template_directory_uri(). '/style-responsive.css' ); 	 
 	}
 	add_action( 'wp_enqueue_scripts', 'associationx_enqueue_scripts' );
 
 	// 	Functions for adding script to Admin Area
-	function associationx_admin_style() { wp_enqueue_style( 'associationx_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	function associationx_admin_style($hook) { 
+		if ( 'appearance_page_theme-about' != $hook ) { return; }
+		wp_enqueue_style( 'associationx_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); 
+	}
 	add_action( 'admin_enqueue_scripts', 'associationx_admin_style' );
+
+	//	Enqueue Customizer stylesheet
+	function associationx_customizer_style() {
+		wp_enqueue_style( 'associationx-customizer-css', get_template_directory_uri() . '/inc/customizer-style.css', false );
+	}
+	add_action( 'customize_controls_print_styles', 'associationx_customizer_style' );
 	
 // 	Add Some Sub Functions necessary for the Site
 	require_once get_theme_file_path('/function/imp.php');

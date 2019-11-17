@@ -5,11 +5,11 @@
 	Since AssociationX 1.0
 */
 get_header();
-$pagelayout = 'leftcontent';
-if(!is_active_sidebar('sidebar-bp') ) $pagelayout = 'fullcontent';
+$associationx_pagelayout = 'leftcontent';
+if(!is_active_sidebar('sidebar-bp') ) $associationx_pagelayout = 'fullcontent';
 ?>
 <div id="pagename" class="d5_buddypress_page"></div>
-<div id="container" class="bpsinpgcon box90 <?php echo $pagelayout; ?>">
+<div id="container" class="bpsinpgcon box90 <?php echo $associationx_pagelayout; ?>">
 	<div id="containerin">
 		<div id="content" class="bpcontent">			
 			<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>    
@@ -21,7 +21,7 @@ if(!is_active_sidebar('sidebar-bp') ) $pagelayout = 'fullcontent';
 				</div>
 			<?php endwhile; endif; ?>
 		</div>
-	<?php if($pagelayout != 'fullcontent') get_sidebar('bp'); ?>
+	<?php if($associationx_pagelayout != 'fullcontent') get_sidebar('bp'); ?>
 	</div>
 </div>
 <?php get_footer();

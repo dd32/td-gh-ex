@@ -24,12 +24,12 @@
 					$stitleclass = 'site-title'; if($logoimg) $stitleclass = 'site-title-hidden';
 					?>
 					<div id="footerlogo">  
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logotitle"><?php if ( $logoimg ): ?><img class="site-logo" src="<?php echo $logoimg; ?>" alt="<?php esc_html(bloginfo('name')); ?>" /><?php endif; ?><h1 class="<?php echo $stitleclass; ?>"><?php esc_html(bloginfo('name')); ?></h1></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logotitle"><?php if ( $logoimg ): ?><img class="site-logo" src="<?php echo $logoimg; ?>" alt="<?php esc_attr(bloginfo('name')); ?>" /><?php endif; ?><h1 class="<?php echo $stitleclass; ?>"><?php esc_html(bloginfo('name')); ?></h1></a>
 						<h2 class="site-des"><?php esc_html(bloginfo('description')); ?></h2>
 					</div>
 					<?php  get_sidebar( 'footer' ); ?>
 				</div><!-- #footer-content -->
-				<div id="creditline" class="box100"><?php echo '&copy; ' . date("Y"). ': ' . esc_html(get_bloginfo('name')) .','; ?> <span class="credit">| AssociationX Theme by: <a href="<?php echo esc_url('https://d5creation.com'); ?>" target="_blank">D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span></div>						
+				<div id="creditline" class="box100"><?php echo '&copy; ' . date("Y"). ': ' . esc_html(get_bloginfo('name')) .','; ?> <span class="credit">| AssociationX <?php echo esc_html_e('Theme by:', 'associationx'); ?> <a href="<?php echo esc_url('https://d5creation.com'); ?>" target="_blank">D5 Creation</a> | <?php echo esc_html_e('Powered by:', 'associationx'); ?> <a href="http://wordpress.org" target="_blank">WordPress</a></span></div>						
 			</div><!-- #footer -->						
 		</div><!-- #sitebottompart -->
 		<div class="clear"></div>

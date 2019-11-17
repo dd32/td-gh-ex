@@ -3,8 +3,8 @@
 Contributors: D5 Creation
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
 Requires at least: 4.0
-Tested up to: 5.2.3
-Stable tag: 1.0
+Tested up to: 5.3
+Stable tag: 1.01
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
 == Changelog ==
+
+= 1.01 =
+* Security Improvement
+* Translation Improvement
 
 = 1.0 =
 * Initial Release

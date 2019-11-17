@@ -7,7 +7,7 @@
 */
 
 $slidebox = ''; 
-if (is_front_page() ) $slidebox = esc_html(associationx_get_option('slidebox', ''));
+if (is_front_page() ) $slidebox = esc_attr(associationx_get_option('slidebox', ''));
 if(!$slidebox) return;
 ?>
 <script type="text/javascript">
@@ -25,21 +25,21 @@ if(!$slidebox) return;
 	<div id="mainslider" class="flexslider main-slider" >
 		<ul class="slides">
 			<?php 
-			$counter = 0;
-			foreach (range(1, 3) as $opsinumber)  { $counter++; if  ($counter == 3): $counter = 1; endif; 
+			$associationx_counter = 0;
+			foreach (range(1, 3) as $opsinumber)  { $associationx_counter++; if  ($associationx_counter == 3): $associationx_counter = 1; endif; 
 			$sldimg = ''; $sldimgf = ''; $capa = ''; $capb = ''; $capc =''; $slidelinks = '';									
 			$sldimg = esc_url(associationx_get_option('slide-image' . $opsinumber, ''));
 			if($sldimg ) $sldimgf = 'style="background-image:url('.$sldimg.');"';								
 			
-			$slidcapfromimg = ''; $slideimageid = ''; $attachurl = ''; $getattpost = '';
-			$slidcapfromimg = esc_html(associationx_get_option('slide-imageautomaticall-'. $opsinumber, ''));
+			$slidcapfromimg = ''; $slideimageid = ''; $attachurl = ''; $associationx_getattpost = '';
+			$slidcapfromimg = esc_attr(associationx_get_option('slide-imageautomaticall-'. $opsinumber, ''));
 			if($sldimg && $slidcapfromimg ):
 				$slideimageid = attachment_url_to_postid($sldimg);
-				$getattpost = get_post( $slideimageid );
-				$capa = $getattpost->post_title;
-				$capb = $getattpost->post_excerpt;
-				$capc = $getattpost->post_content;	
-				$attachurl = get_permalink( $getattpost->ID );
+				$associationx_getattpost = get_post( $slideimageid );
+				$capa = $associationx_getattpost->post_title;
+				$capb = $associationx_getattpost->post_excerpt;
+				$capc = $associationx_getattpost->post_content;	
+				$attachurl = get_permalink( $associationx_getattpost->ID );
 				$slidelinks .= associationx_linkandtarget(esc_html__('Show Image', 'associationx'), $sldimg, '1', '','slide-btn slide-btn1', '1' );
 				$slidelinks .= associationx_linkandtarget(esc_html__('About Image', 'associationx'), $attachurl, '1', '','slide-btn slide-btn2', '1' );
 			endif;								
@@ -50,12 +50,12 @@ if(!$slidebox) return;
 					<?php 
 					$slidecap = ''; 
 					$flexcaptions = '';
-					if  ($counter == 1):  
+					if  ($associationx_counter == 1):  
 						if($capa) $slidecap .= '<p class="title1 captionDelay6 FromTop">'.$capa.'</p>';
 						if($capb) $slidecap .= '<p class="title2 captionDelay4 FromTop">'.$capb.'</p>';
 						if($capc) $slidecap .= '<p class="title3 captionDelay2 FromTop">'.$capc.'</p>';
 					endif;						
-					if  ($counter == 2):  
+					if  ($associationx_counter == 2):  
 					if($capa) $slidecap .= '<p class="title1 captionDelay2 FromBottom">'.$capa.'</p>';
 						if($capb) $slidecap .= '<p class="title2 captionDelay4 FromBottom">'.$capb.'</p>';
 						if($capc) $slidecap .= '<p class="title3 captionDelay6 FromBottom">'.$capc.'</p>';

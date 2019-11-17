@@ -8,7 +8,7 @@
 ?>
 <!--- ============  STAFFS  =========== ------------>
 <?php 	
-$stfboxv = esc_html(associationx_get_option('staffbox', ''));
+$stfboxv = esc_attr(associationx_get_option('staffbox', ''));
 if ( !$stfboxv ) return; 
 
 $stfbtitle = ''; $stfbtitle = esc_html__('Our Members', 'associationx');
@@ -19,13 +19,13 @@ $viewstaffboxes = '';
 		$stfimg = ''; $stfimgautomatic = ''; $stfpostid = ''; $stfautoname = ''; $stfautodesig = ''; $stfautolink = '';
 		$stfimg = esc_url(associationx_get_option('staffboxes-image' . $staffboxsnumber, ''));
 		
-		$stfimgautomatic = esc_html(associationx_get_option('staffboxes-image-automatic' . $staffboxsnumber, ''));
+		$stfimgautomatic = esc_attr(associationx_get_option('staffboxes-image-automatic' . $staffboxsnumber, ''));
 		if( $stfimg && $stfimgautomatic ):
 			$stfpostid = attachment_url_to_postid($stfimg);
-			$getattpost = get_post( $stfpostid );
-			$stfautolink = get_permalink( $getattpost->ID );
-			$stfautoname = $getattpost->post_title;
-			$stfautodesig = $getattpost->post_excerpt;
+			$associationx_getattpost = get_post( $stfpostid );
+			$stfautolink = get_permalink( $associationx_getattpost->ID );
+			$stfautoname = $associationx_getattpost->post_title;
+			$stfautodesig = $associationx_getattpost->post_excerpt;
 		endif;		
 
 		$stfname = ''; 

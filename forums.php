@@ -6,11 +6,11 @@
 	Since AssociationX 1.0
 */
 get_header();
-$pagelayout = 'leftcontent';
-if(!is_active_sidebar('sidebar-bb') ) $pagelayout = 'fullcontent';
+$associationx_pagelayout = 'leftcontent';
+if(!is_active_sidebar('sidebar-bb') ) $associationx_pagelayout = 'fullcontent';
 ?>
 <div id="pagename" class="d5_forums_page"></div>
-<div id="container" class="bbsinpgcon box90 <?php echo $pagelayout; ?>">
+<div id="container" class="bbsinpgcon box90 <?php echo $associationx_pagelayout; ?>">
 	<div id="containerin">		
 		<div id="content" class="bbcontent bbpage ribboncon">
 			<?php 
@@ -25,7 +25,7 @@ if(!is_active_sidebar('sidebar-bb') ) $pagelayout = 'fullcontent';
 				</div>
 			<?php endwhile; endif; ?>	
 		</div>
-		<?php if($pagelayout != 'fullcontent') get_sidebar('bb'); ?>
+		<?php if($associationx_pagelayout != 'fullcontent') get_sidebar('bb'); ?>
 	</div>
 </div><?php
 get_footer();

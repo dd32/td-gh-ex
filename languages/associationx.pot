@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2019-10-09 20:46+0600\n"
+"POT-Creation-Date: 2019-11-18 03:26+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,6 +44,14 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
+#: footer.php:32
+msgid "Theme by:"
+msgstr ""
+
+#: footer.php:32
+msgid "Powered by:"
+msgstr ""
+
 #: fpcontents/ecommerce.php:9
 msgid "Our <b>Awesome</b> Products"
 msgstr ""
@@ -76,7 +84,7 @@ msgstr ""
 msgid "Sweet Words from our <b>Proud Members</b> Worldwide"
 msgstr ""
 
-#: front-page.php:12 functions.php:18
+#: front-page.php:12 functions.php:18 inc/customize.php:248
 msgid "Featured Links"
 msgstr ""
 
@@ -272,11 +280,11 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:116 functions.php:122
+#: functions.php:125 functions.php:131
 msgid "Read More"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:153
 msgid "(Untitled)"
 msgstr ""
 
@@ -288,15 +296,15 @@ msgstr ""
 msgid "AssociationX OPTIONS"
 msgstr ""
 
-#: inc/customize.php:17
+#: inc/customize.php:17 inc/theme-about.php:24
 msgid "We appreciate an"
 msgstr ""
 
-#: inc/customize.php:17
+#: inc/customize.php:17 inc/theme-about.php:24
 msgid "Honest Review"
 msgstr ""
 
-#: inc/customize.php:17
+#: inc/customize.php:17 inc/theme-about.php:24
 msgid "of this Theme if you Love our Work"
 msgstr ""
 
@@ -314,7 +322,7 @@ msgstr ""
 msgid "You can Visit the AssociationX Extend "
 msgstr ""
 
-#: inc/customize.php:23
+#: inc/customize.php:23 inc/theme-about.php:29
 msgid "Demo Here"
 msgstr ""
 
@@ -349,7 +357,11 @@ msgstr ""
 #: inc/customize.php:110
 msgid ""
 "Show Breadcrumbs in Single News, Page, Blog, Archive, Search Results, 404 "
-"Page. Default is <b>Unchecked</b>"
+"Page. Default is"
+msgstr ""
+
+#: inc/customize.php:110
+msgid "Unchecked"
 msgstr ""
 
 #: inc/customize.php:124
@@ -403,11 +415,31 @@ msgid "Show the Featured Links from Featured Links Navigation Menu"
 msgstr ""
 
 #: inc/customize.php:248
-msgid ""
-"Check this if you want to Show the Featured Links from the <b>Featured "
-"Links</b> Navigation Menu. You can use <b>Description</b> and Use any "
-"<b>FontAwesome 5 Icon Name</b> like <b>fa-star</b> as a Menu Class in Custom "
-"Menu</div>"
+msgid "Check this if you want to Show the Featured Links from the "
+msgstr ""
+
+#: inc/customize.php:248
+msgid "Navigation Menu. You can use"
+msgstr ""
+
+#: inc/customize.php:248
+msgid "Description"
+msgstr ""
+
+#: inc/customize.php:248
+msgid "and Use any"
+msgstr ""
+
+#: inc/customize.php:248
+msgid "FontAwesome 5 Icon Name"
+msgstr ""
+
+#: inc/customize.php:248
+msgid "like"
+msgstr ""
+
+#: inc/customize.php:248
+msgid "as a Menu Class in Custom Menu"
 msgstr ""
 
 #: inc/customize.php:258
@@ -583,13 +615,424 @@ msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
 msgstr ""
 
 #: inc/customize.php:791
-msgid ""
-"Input Your Social Page Links. Example: <b>https://facebook.com/d5creation</"
-"b>. If you do not want to show anything here leave the box blank"
+msgid "Input Your Social Page Links. Example:"
+msgstr ""
+
+#: inc/customize.php:791
+msgid "If you do not want to show anything here leave the box blank"
 msgstr ""
 
 #: inc/customize.php:805
 msgid "Social Link"
+msgstr ""
+
+#: inc/theme-about.php:13
+msgid "About"
+msgstr ""
+
+#: inc/theme-about.php:17
+msgid "IMPORTANT NOTE !"
+msgstr ""
+
+#: inc/theme-about.php:17
+msgid ""
+"As per the Requirements of New Theme Review Guidelines, Theme Options will "
+"not be available at this location anymore for the Free Version of "
+"AssociationX Theme. You can get all those options under"
+msgstr ""
+
+#: inc/theme-about.php:17
+msgid "Appearance > Customize"
+msgstr ""
+
+#: inc/theme-about.php:19
+msgid ""
+"If you love the Excellent Previous Style Options You may consider using our"
+msgstr ""
+
+#: inc/theme-about.php:19
+msgid "Extend Version Themes"
+msgstr ""
+
+#: inc/theme-about.php:19
+msgid "All Options will be under"
+msgstr ""
+
+#: inc/theme-about.php:19
+msgid "Appearance > AssociationX Options"
+msgstr ""
+
+#: inc/theme-about.php:19
+msgid "with large screen and user friendtly Interface in Extended Version"
+msgstr ""
+
+#: inc/theme-about.php:22
+msgid ""
+"A Theme is an effort of many sleepless nights of the Developers. You can "
+"contribute on this development translating this theme in your Language. You "
+"can send your translation/language file to us. For any kind of Theme "
+"Support, Please do not hesitate to"
+msgstr ""
+
+#: inc/theme-about.php:22
+msgid "Contact Us"
+msgstr ""
+
+#: inc/theme-about.php:22
+msgid "anytime"
+msgstr ""
+
+#: inc/theme-about.php:26
+msgid ""
+"Need More Features and Options including Exciting Slide and 100+ Advanced "
+"Features? Try"
+msgstr ""
+
+#: inc/theme-about.php:29
+msgid "You can Visit the AssociationX Extend"
+msgstr ""
+
+#: inc/theme-about.php:33
+msgid ""
+"AssociationX is CSS3 Powered and WordPress Latest Version Ready Responsive "
+"Theme. This Theme is designed for Multi Purposes. You can develop a "
+"Community Site using the Plugin BuddyPress easily with this Theme. You can "
+"also use bbPress Forum in your Site. AssociationX Theme is E-Commerce ready "
+"by WooCommerce. You can use this Theme for Personal Blog, Travel Blog, "
+"Company Website, Corporate Website, Association Website, Alumni Website, "
+"University/School/College Websites, E-Commerce Product Selling Websites etc. "
+"You can add Extra Page Contents in Front Page from the Theme Options. This "
+"is very helpful for Page Builder Pages like Elementor. You can show Exciting "
+"Multilayer Slider, Featured Links, About Section, Featured Boxes, Events "
+"Boxes, Members Boxes, Gallery, Noticeboard, News Section, Display Box, "
+"Heading and Link, Partners/Clients List, Testimonials with Title, Text, Name "
+"and Avatar. The Theme can be decorated Smartly with all Devices as it is "
+"Fully Responsive. The Gallery and Image Presentation system of this Theme is "
+"really Awesome.  You can find details in the Theme Page Here:"
+msgstr ""
+
+#: inc/theme-about.php:36
+msgid "AssociationX Theme Page"
+msgstr ""
+
+#: inc/theme-about.php:37
+msgid "AssociationX Demo"
+msgstr ""
+
+#: inc/theme-about.php:38
+msgid "D5 Theme Gallery"
+msgstr ""
+
+#: inc/theme-about.php:41
+msgid "Features of AssociationX vs AssociationX Extend"
+msgstr ""
+
+#: inc/theme-about.php:44
+msgid "FEATURES"
+msgstr ""
+
+#: inc/theme-about.php:45
+msgid "You will love These"
+msgstr ""
+
+#: inc/theme-about.php:45
+msgid "Free"
+msgstr ""
+
+#: inc/theme-about.php:45
+msgid "Only $7.5*"
+msgstr ""
+
+#: inc/theme-about.php:46
+msgid "WordPress Latest Version Ready"
+msgstr ""
+
+#: inc/theme-about.php:46 inc/theme-about.php:47 inc/theme-about.php:48
+#: inc/theme-about.php:49 inc/theme-about.php:50 inc/theme-about.php:51
+#: inc/theme-about.php:53 inc/theme-about.php:54 inc/theme-about.php:55
+#: inc/theme-about.php:57 inc/theme-about.php:58 inc/theme-about.php:60
+#: inc/theme-about.php:62 inc/theme-about.php:65 inc/theme-about.php:66
+#: inc/theme-about.php:67 inc/theme-about.php:69 inc/theme-about.php:70
+#: inc/theme-about.php:71 inc/theme-about.php:72 inc/theme-about.php:74
+#: inc/theme-about.php:75 inc/theme-about.php:76 inc/theme-about.php:77
+#: inc/theme-about.php:78 inc/theme-about.php:79 inc/theme-about.php:80
+#: inc/theme-about.php:81 inc/theme-about.php:82
+msgid "YES"
+msgstr ""
+
+#: inc/theme-about.php:47
+msgid "Sophisticated, Lightweight, and Adaptable"
+msgstr ""
+
+#: inc/theme-about.php:48
+msgid "Widgets Ready, Right Sidebar and Footer Sidebar"
+msgstr ""
+
+#: inc/theme-about.php:49
+msgid "Left Sidebar and No Sidebar Option"
+msgstr ""
+
+#: inc/theme-about.php:49 inc/theme-about.php:50 inc/theme-about.php:51
+#: inc/theme-about.php:53 inc/theme-about.php:54 inc/theme-about.php:55
+#: inc/theme-about.php:57 inc/theme-about.php:58 inc/theme-about.php:60
+#: inc/theme-about.php:62 inc/theme-about.php:65 inc/theme-about.php:66
+#: inc/theme-about.php:69 inc/theme-about.php:70 inc/theme-about.php:71
+#: inc/theme-about.php:72 inc/theme-about.php:74 inc/theme-about.php:75
+#: inc/theme-about.php:76 inc/theme-about.php:77 inc/theme-about.php:78
+#: inc/theme-about.php:79 inc/theme-about.php:80 inc/theme-about.php:81
+#: inc/theme-about.php:82
+msgid "NO"
+msgstr ""
+
+#: inc/theme-about.php:50
+msgid "Excellent and Easy Theme Options"
+msgstr ""
+
+#: inc/theme-about.php:51
+msgid "Customizer Options"
+msgstr ""
+
+#: inc/theme-about.php:52
+msgid "Slider"
+msgstr ""
+
+#: inc/theme-about.php:52
+msgid "Limited Images"
+msgstr ""
+
+#: inc/theme-about.php:52
+msgid "Unlimited Images"
+msgstr ""
+
+#: inc/theme-about.php:53
+msgid "Exciting Slide Options"
+msgstr ""
+
+#: inc/theme-about.php:54
+msgid "Slide Control, Slide Size, Navigation, Slide Speed etc. Setting Options"
+msgstr ""
+
+#: inc/theme-about.php:55
+msgid "More Slider Controlling Options"
+msgstr ""
+
+#: inc/theme-about.php:56
+msgid "Slider Animation"
+msgstr ""
+
+#: inc/theme-about.php:57
+msgid "VIDEO or EMBED HTML Adding Functionality"
+msgstr ""
+
+#: inc/theme-about.php:58
+msgid "Video Boxes"
+msgstr ""
+
+#: inc/theme-about.php:59
+msgid "Featured Boxes with Multiple Options"
+msgstr ""
+
+#: inc/theme-about.php:59 inc/theme-about.php:63
+msgid "Limited"
+msgstr ""
+
+#: inc/theme-about.php:59 inc/theme-about.php:68
+msgid "Unlimited"
+msgstr ""
+
+#: inc/theme-about.php:60
+msgid "Contact Box and Contact Information Options"
+msgstr ""
+
+#: inc/theme-about.php:61
+msgid "Extra Pages and Contents in Front Page"
+msgstr ""
+
+#: inc/theme-about.php:61
+msgid "Only 01"
+msgstr ""
+
+#: inc/theme-about.php:61
+msgid "Up to 11"
+msgstr ""
+
+#: inc/theme-about.php:62
+msgid "Map Option"
+msgstr ""
+
+#: inc/theme-about.php:63
+msgid "Drag and Drop Page Builder Options"
+msgstr ""
+
+#: inc/theme-about.php:63
+msgid "Advanced"
+msgstr ""
+
+#: inc/theme-about.php:64
+msgid "50+ ShortCodes Adding Boxes"
+msgstr ""
+
+#: inc/theme-about.php:65
+msgid "Featured Boxes with Links"
+msgstr ""
+
+#: inc/theme-about.php:66
+msgid "Videos, Iframe, HTML etc. Showing Facilities within the Featured Boxes"
+msgstr ""
+
+#: inc/theme-about.php:67
+msgid "RESPONSIVE"
+msgstr ""
+
+#: inc/theme-about.php:68
+msgid "Social Media Integration Options"
+msgstr ""
+
+#: inc/theme-about.php:68
+msgid "Only 05"
+msgstr ""
+
+#: inc/theme-about.php:69
+msgid "Google Analytics Code, Custom CSS and Scripts Inserter"
+msgstr ""
+
+#: inc/theme-about.php:70
+msgid "Customizable Copyright Notice and SiteMap Option"
+msgstr ""
+
+#: inc/theme-about.php:71
+msgid "Hiding options for Theme Credit to D5 Creation and WordPress"
+msgstr ""
+
+#: inc/theme-about.php:72
+msgid "PSD Files Included"
+msgstr ""
+
+#: inc/theme-about.php:73
+msgid "E-Commerce Ready by WooCommerce!"
+msgstr ""
+
+#: inc/theme-about.php:73
+msgid "YES and Limited Options"
+msgstr ""
+
+#: inc/theme-about.php:73
+msgid "YES and More Options"
+msgstr ""
+
+#: inc/theme-about.php:74
+msgid "Three Site Layout. Full Width, Left Sidebar or Right Sidebar Option"
+msgstr ""
+
+#: inc/theme-about.php:75
+msgid "Easy Color Changing Options"
+msgstr ""
+
+#: inc/theme-about.php:76
+msgid "Gallery Box"
+msgstr ""
+
+#: inc/theme-about.php:77
+msgid "Display Box"
+msgstr ""
+
+#: inc/theme-about.php:78
+msgid "Site-wide Comments Box Disabling Option"
+msgstr ""
+
+#: inc/theme-about.php:79
+msgid "Disable Option of Logged In User Admin Bar"
+msgstr ""
+
+#: inc/theme-about.php:80
+msgid "Membership Registration and Log In Panel Available"
+msgstr ""
+
+#: inc/theme-about.php:81
+msgid "Site Logo and Url can be displayed in Login Page, Own Branding!"
+msgstr ""
+
+#: inc/theme-about.php:82
+msgid "Unlimited Client or Partner List with or without Links Adding Function"
+msgstr ""
+
+#: inc/theme-about.php:83
+msgid "Unlimited Clients' Testimonial Adding Facility"
+msgstr ""
+
+#: inc/theme-about.php:83
+msgid "From Comments Only"
+msgstr ""
+
+#: inc/theme-about.php:83
+msgid "From Comments or Can be Set Any"
+msgstr ""
+
+#: inc/theme-about.php:84
+msgid "Awesome Support with Foruma and Dedicated E-Mail"
+msgstr ""
+
+#: inc/theme-about.php:84
+msgid "Only Forum"
+msgstr ""
+
+#: inc/theme-about.php:84
+msgid "Forum and E-Mail"
+msgstr ""
+
+#: inc/theme-about.php:86
+msgid "Learn More"
+msgstr ""
+
+#: inc/theme-about.php:88
+msgid "* Each Extend Theme is only $7.5 with DEVELOPER Membership"
+msgstr ""
+
+#: inc/theme-about.php:89
+msgid ""
+"These are few of the Theme Features. There are various other Features of "
+"This Theme. You can also Extend the Possibilities using any Plugin you may "
+"like"
+msgstr ""
+
+#: inc/theme-about.php:92
+msgid "Learn More about our Flexible Membership Options"
+msgstr ""
+
+#: inc/theme-about.php:93 inc/theme-about.php:114
+msgid "View Pricing and Features"
+msgstr ""
+
+#: inc/theme-about.php:96
+msgid "D5 Creation Themes"
+msgstr ""
+
+#: inc/theme-about.php:99
+msgid "World Class, Responsive and Premium WordPress Themes"
+msgstr ""
+
+#: inc/theme-about.php:100
+msgid ""
+"Ready to take your WordPress site to the next level? Give your CMS a "
+"beautiful design to draw in more visitors. Peoples love us because of the "
+"Simplicity of our Themes. We deliver User Friendly Responsive and Premium "
+"WordPress Themes with Unique and Modern Design. You can Trust our Themes"
+msgstr ""
+
+#: inc/theme-about.php:102
+msgid "Visit Our Theme Gallery"
+msgstr ""
+
+#: inc/theme-about.php:103
+msgid "Visit Theme Demos"
+msgstr ""
+
+#: inc/theme-about.php:104
+msgid "Become a Happy Member"
+msgstr ""
+
+#: inc/theme-about.php:113
+msgid "Extend Theme is only $7.5 with DEVELOPER Membership"
 msgstr ""
 
 #: post-content.php:26

@@ -34,7 +34,7 @@
 						}
 		  				$stitleclass = 'site-title'; if($logoimg): $stitleclass = 'site-title-hidden'; endif;
 						?>  
-       					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logotitle" class="logoandtitle"><?php if ( $logoimg ): ?><img class="site-logo" src="<?php echo $logoimg; ?>" alt="<?php esc_html(bloginfo('name')); ?>" /><?php endif; ?><h1 class="<?php echo $stitleclass; ?>"><?php esc_html(bloginfo('name')); ?><h2 class="site-title-hidden"><?php esc_html(bloginfo('description')); ?></h2></a>
+       					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logotitle" class="logoandtitle"><?php if ( $logoimg ): ?><img class="site-logo" src="<?php echo $logoimg; ?>" alt="<?php esc_attr(bloginfo('name')); ?>" /><?php endif; ?><h1 class="<?php echo $stitleclass; ?>"><?php esc_html(bloginfo('name')); ?><h2 class="site-title-hidden"><?php esc_html(bloginfo('description')); ?></h2></a>
         				<!-- Site Main Menu Goes Here -->
         				<div id="mobile-menu" class="mmenucon"></div>
         				<nav id="main-menu-con" class="mmenucon mmenumobile">
