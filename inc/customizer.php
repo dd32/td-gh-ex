@@ -503,6 +503,81 @@ function advance_education_customize_register($wp_customize) {
 		'section' => 'advance_education_category',
 	));
 
+	//Blog Post
+	$wp_customize->add_section('advance_education_blog_post',array(
+		'title'	=> __('Blog Page Settings','advance-education'),
+		'panel' => 'advance_education_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_education_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','advance-education'),
+       'section' => 'advance_education_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_education_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','advance-education'),
+       'section' => 'advance_education_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_education_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','advance-education'),
+       'section' => 'advance_education_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_education_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','advance-education'),
+       'section' => 'advance_education_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'advance_education_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_education_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','advance-education' ),
+		'section'     => 'advance_education_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'advance_education_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('advance_education_button_text',array(
+		'default'=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_button_text',array(
+		'label'	=> __('Add Button Text','advance-education'),
+		'section'=> 'advance_education_blog_post',
+		'type'=> 'text'
+	));
+
 	//footer
 	$wp_customize->add_section('advance_education_footer_section', array(
 		'title'       => __('Footer Text', 'advance-education'),
@@ -525,7 +600,6 @@ add_action('customize_register', 'advance_education_customize_register');
 
 // logo resize
 load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
-
 
 /**
  * Singleton class for handling the theme's customizer integration.

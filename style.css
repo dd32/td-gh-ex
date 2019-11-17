@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-education-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, mentors, online library, educational websites and everything related to education, learning and teaching. It offers various layout options to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages. It is readily customizable to change its various elements to make it represent your brand. To keep visitors engaged, there are several sections like gallery, testimonial, faculty, contact form etc. Advance Education is made to score good rank in search engine results and its social media icons give the needed exposure to reach maximum people in minimum time. It is based on the latest WordPress version and hence yields a bug-free website. Its interface is simple to understand so any person with no previous coding skills can also use it to design a high performing and professional looking website. Demo: https://www.themeshopy.com/advance-education-pro/
-Version: 0.3.4
+Version: 0.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-education
@@ -878,7 +878,8 @@ h3.title-btn {
   color:#cc3333;
   border: 1px solid #cc3333;
   padding: 5px 10px;
-  margin-right: 10px;
+  margin: 5px;
+  display: inline-block;
 }
 .tags p a:hover{
   color: #fff;
@@ -1059,6 +1060,9 @@ table#wp-calendar td a {
   margin-top: -38px;
 }
 #footer table#wp-calendar td a {
+  color: #fff;
+}
+#footer h3.widget-title a{
   color: #fff;
 }
 .copyright p {
@@ -1686,6 +1690,9 @@ iframe, .entry-audio audio {
   #slider .carousel-control-prev, #slider .carousel-control-next{
     top:auto;
   }
+  #slider .inner_carousel h1{
+    display: none;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
   #slider .carousel-caption {
@@ -1724,6 +1731,9 @@ iframe, .entry-audio audio {
   }
   #contact-info .account-btn {
     margin:0;
+  }
+  #slider .inner_carousel h1{
+    font-size: 40px;
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
@@ -1894,7 +1904,7 @@ iframe, .entry-audio audio {
     text-align: center;
     display: block;
   }
-  .search-box i, #menu-sidebar .talk-btn,.top-header, #slider .inner_carousel h1{
+  .search-box i, #menu-sidebar .talk-btn,.top-header{
     display: none;
   }
   .phone span, .mail span, .social-icons a, .time span{
