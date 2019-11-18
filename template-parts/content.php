@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
-			echo '<div class="entry-featuredImg onlist"><a href="' .esc_url(get_permalink()). '">';
+			echo '<div class="entry-featuredImg onlist"><a href="' .esc_url(get_permalink()). '" title="' .the_title_attribute('echo=0'). '">';
 			the_post_thumbnail('ansia-the-post');
 			echo '<div class="ansia-the-effect"></div></a></div>';
 		}

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2019-10-14 18:28+0100\n"
-"PO-Revision-Date: 2019-10-14 18:28+0100\n"
+"POT-Creation-Date: 2019-11-18 11:25+0100\n"
+"PO-Revision-Date: 2019-11-18 11:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -131,60 +131,60 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:93
 msgid "Small"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:94
 msgid "S"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:99
 msgid "Regular"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:100
 msgid "M"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:105
 msgid "Large"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:106
 msgid "L"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:111
 msgid "Larger"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:112
 msgid "XL"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:141
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:141 functions.php:150 functions.php:159 functions.php:168
-#: functions.php:177
+#: functions.php:143 functions.php:152 functions.php:161 functions.php:170
+#: functions.php:179
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:148
+#: functions.php:150
 msgid "Push Sidebar"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:159
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:166
+#: functions.php:168
 msgid "Footer Center"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:177
 msgid "Footer Right"
 msgstr ""
 
@@ -658,51 +658,51 @@ msgstr ""
 msgid "New Window"
 msgstr ""
 
-#: inc/customizer.php:627
+#: inc/customizer.php:632
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:630
+#: inc/customizer.php:635
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:633
+#: inc/customizer.php:638
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:636
+#: inc/customizer.php:641
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:639
+#: inc/customizer.php:644
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:647
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:645
+#: inc/customizer.php:650
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:648
+#: inc/customizer.php:653
 msgid "Tumblr"
 msgstr ""
 
-#: inc/customizer.php:651
+#: inc/customizer.php:656
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer.php:654
+#: inc/customizer.php:659
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:657
+#: inc/customizer.php:662
 msgid "Xing"
 msgstr ""
 
-#: inc/customizer.php:660
+#: inc/customizer.php:665
 msgid "Reddit"
 msgstr ""
 

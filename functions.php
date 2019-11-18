@@ -58,6 +58,8 @@ if ( ! function_exists( 'ansia_setup' ) ) :
 			'comment-list',
 			'gallery',
 			'caption',
+			'script',
+			'style',
 		) );
 
 		// Set up the WordPress core custom background feature.

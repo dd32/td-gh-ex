@@ -44,7 +44,7 @@
 						<span class="sep"> | </span>
 						<?php
 							/* translators: 1: Theme name, 2: Theme author. */
-							printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'ansia' ), '<a target="_blank" href="https://crestaproject.com/downloads/ansia/" rel="nofollow" title="Ansia Theme">Ansia</a>', 'CrestaProject' );
+							printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'ansia' ), '<a target="_blank" href="https://crestaproject.com/downloads/ansia/" rel="noopener noreferrer" title="Ansia Theme">Ansia</a>', 'CrestaProject' );
 						?>
 					</div><!-- .site-info -->
 					<?php 
@@ -58,7 +58,7 @@
 	<?php endif; ?>
 </div><!-- #page -->
 <?php $scrollToTopMobile = ansia_options('_scroll_top', ''); ?>
-<a href="#top" id="toTop" class="<?php echo $scrollToTopMobile ? 'scrolltop_on' : 'scrolltop_off' ?>"><i class="fa fa-angle-up fa-lg"></i></a>
+<a href="#top" id="toTop" aria-hidden="true" class="<?php echo $scrollToTopMobile ? 'scrolltop_on' : 'scrolltop_off' ?>"><i class="fa fa-angle-up fa-lg"></i></a>
 <?php wp_footer(); ?>
 
 </body>
