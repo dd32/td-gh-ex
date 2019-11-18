@@ -25,7 +25,7 @@ a.button.button-secondary.alignright:hover {
 	background: #0073aa;
 }
 /* ---------Excerpt & Logo --------- */
-input#_customize-input-logo_size{
+input#_customize-input-logo_size,input#_customize-input-advance_coaching_excerpt_number{
     width: 100%;
 }
 li#customize-control-logo_size {
