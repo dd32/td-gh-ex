@@ -266,7 +266,7 @@ function advance_it_company_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_it_company_h1_font_size',array(
-		'label'	=> __('H1 Font Size','advance-it-company'),
+		'label'	=> __('h1 Font Size','advance-it-company'),
 		'section'	=> 'advance_it_company_typography',
 		'setting'	=> 'advance_it_company_h1_font_size',
 		'type'	=> 'text'
@@ -725,6 +725,81 @@ function advance_it_company_customize_register($wp_customize) {
 		'label' => __('Select Category to display post','advance-it-company'),
 		'description'	=> __('Size of image should be 370 x 240','advance-it-company'),
 		'section' => 'advance_it_company_post_category',
+	));
+
+	//Blog Post
+	$wp_customize->add_section('advance_it_company_blog_post',array(
+		'title'	=> __('Blog Page Settings','advance-it-company'),
+		'panel' => 'advance_it_company_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_it_company_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_it_company_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','advance-it-company'),
+       'section' => 'advance_it_company_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_it_company_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_it_company_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','advance-it-company'),
+       'section' => 'advance_it_company_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_it_company_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_it_company_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','advance-it-company'),
+       'section' => 'advance_it_company_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_it_company_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_it_company_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','advance-it-company'),
+       'section' => 'advance_it_company_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'advance_it_company_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_it_company_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','advance-it-company' ),
+		'section'     => 'advance_it_company_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'advance_it_company_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('advance_it_company_button_text',array(
+		'default'=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_it_company_button_text',array(
+		'label'	=> __('Add Button Text','advance-it-company'),
+		'section'=> 'advance_it_company_blog_post',
+		'type'=> 'text'
 	));
 
 	//Footer
