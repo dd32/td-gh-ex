@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Bakes And Cakes 1.2.0\n"
+"Project-Id-Version: Bakes And Cakes 1.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bakes-and-cakes\n"
-"POT-Creation-Date: 2019-09-09 09:22:12+00:00\n"
+"POT-Creation-Date: 2019-11-18 10:15:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,35 +65,35 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:57
 msgid "Primary"
 msgstr ""
 
-#: functions.php:163
+#: functions.php:160
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:170
 msgid "Google Map Widget"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:172
 msgid "Widget for Google map section( Use Text widget for Google Map )."
 msgstr ""
 
-#: functions.php:183
+#: functions.php:180
 msgid "Footer First"
 msgstr ""
 
-#: functions.php:193
+#: functions.php:190
 msgid "Footer Second"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:192
 msgid "Here you can use text widget to display Contact Form."
 msgstr ""
 
-#: functions.php:203
+#: functions.php:200
 msgid "Footer Third"
 msgstr ""
 
@@ -476,21 +476,21 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: inc/getting-started/class-getting-start-plugin-helper.php:91
+#: inc/getting-started/class-getting-start-plugin-helper.php:85
 msgid "Install and activate"
 msgstr ""
 
-#: inc/getting-started/class-getting-start-plugin-helper.php:95
-#: inc/getting-started/class-getting-start-plugin-helper.php:115
+#: inc/getting-started/class-getting-start-plugin-helper.php:89
+#: inc/getting-started/class-getting-start-plugin-helper.php:109
 #: inc/tgmpa/class-tgm-plugin-activation.php:2726
 msgid "Activate"
 msgstr ""
 
-#: inc/getting-started/class-getting-start-plugin-helper.php:110
+#: inc/getting-started/class-getting-start-plugin-helper.php:104
 msgid "Deactivate"
 msgstr ""
 
-#: inc/getting-started/class-getting-start-plugin-helper.php:115
+#: inc/getting-started/class-getting-start-plugin-helper.php:109
 msgid "Jetpack Portfolio"
 msgstr ""
 
@@ -648,7 +648,7 @@ msgstr ""
 msgid ""
 "Here is a list of recommended plugins you should install to get most out of "
 "the Bakes and Cakes. Though every plugin is optional, we recommend you to "
-"at least install %1$sRara One Click Demo Import%2$s,%1$sWooCommerce%2$s & "
+"at least install %1$sRara One Click Demo Import%2$s, %1$sWooCommerce%2$s & "
 "%1$sContact Form 7%2$s to create a website similar to the Bakes and Cakes "
 "demo and also to ensure every feature of the theme works correctly."
 msgstr ""

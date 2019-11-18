@@ -9,7 +9,7 @@
 <div id="plugins-panel" class="panel-left visible">
 	<h4><?php _e( 'Recommended Plugins', 'bakes-and-cakes' ); ?></h4>
 
-	<p><?php printf( __( 'Here is a list of recommended plugins you should install to get most out of the Bakes and Cakes. Though every plugin is optional, we recommend you to at least install %1$sRara One Click Demo Import%2$s,%1$sWooCommerce%2$s & %1$sContact Form 7%2$s to create a website similar to the Bakes and Cakes demo and also to ensure every feature of the theme works correctly.', 'bakes-and-cakes' ), '<strong>', '</strong>' ) ?></p>
+	<p><?php printf( __( 'Here is a list of recommended plugins you should install to get most out of the Bakes and Cakes. Though every plugin is optional, we recommend you to at least install %1$sRara One Click Demo Import%2$s, %1$sWooCommerce%2$s & %1$sContact Form 7%2$s to create a website similar to the Bakes and Cakes demo and also to ensure every feature of the theme works correctly.', 'bakes-and-cakes' ), '<strong>', '</strong>' ) ?></p>
 
 	<hr/>
 
@@ -17,7 +17,7 @@
 	$free_plugins = array(
 		'contact-form-7' => array(
 			'slug'     	=> 'contact-form-7',
-			'filename' 	=> 'contact-form-7.php',
+			'filename' 	=> 'wp-contact-form-7.php',
 		),             
 		'woocommerce' => array(
 			'slug' 		=> 'woocommerce',
@@ -51,7 +51,7 @@
     						<?php echo esc_html( $info->name ); ?>	
     					</span>
                         <div class="button-wrap">
-    					   <?php echo Bakes_And_Cakes_Getting_Started_Page_Plugin_Helper::instance()->get_button_html( $plugin['slug'] ); ?>
+    					   <?php echo Bakes_And_Cakes_Getting_Started_Page_Plugin_Helper::instance()->get_button_html( $plugin['slug'], $plugin['filename'] ); ?>
                         </div>
     				</div>
     			</div>

@@ -37,14 +37,8 @@ class Bakes_And_Cakes_Getting_Started_Page_Plugin_Helper {
 	 *
 	 * @return string
 	 */
-	public static function get_plugin_path( $slug ){
-		switch ( $slug ) {
-			case 'contact-form-7':
-				return $slug . '/' . 'wp-' . $slug . '.php';
-				break;
-			default:
-				return $slug . '/' . $slug . '.php';
-		}
+	public static function get_plugin_path( $slug, $filename ){
+		return $slug . '/' . $filename;
 	}
 
 	/**
@@ -55,13 +49,13 @@ class Bakes_And_Cakes_Getting_Started_Page_Plugin_Helper {
 	 *
 	 * @return string
 	 */
-	public function get_button_html( $slug, $settings = array() ) {
+	public function get_button_html( $slug, $filename, $settings = array() ) {
 		$button   = '';
 		$redirect = '';
 		if ( ! empty( $settings ) && array_key_exists( 'redirect', $settings ) ) {
 			$redirect = $settings['redirect'];
 		}
-		$state = $this->check_plugin_state( $slug );
+		$state = $this->check_plugin_state( $slug, $filename );
 		if ( empty( $slug ) ) {
 			return '';
 		}
@@ -74,7 +68,7 @@ class Bakes_And_Cakes_Getting_Started_Page_Plugin_Helper {
 
 		$button .= '<div class=" plugin-card-' . esc_attr( $slug ) . esc_attr( $additional ) . '" style="padding: 8px 0 5px;">';
 
-		$plugin_link_suffix = self::get_plugin_path( $slug );
+		$plugin_link_suffix = self::get_plugin_path( $slug, $filename );
 
 		$nonce = add_query_arg(
 			array(
@@ -127,9 +121,9 @@ class Bakes_And_Cakes_Getting_Started_Page_Plugin_Helper {
 	 *
 	 * @return bool
 	 */
-	public function check_plugin_state( $slug ){
+	public function check_plugin_state( $slug, $filename ){
 
-		$plugin_link_suffix = self::get_plugin_path( $slug );
+		$plugin_link_suffix = self::get_plugin_path( $slug, $filename );
 
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $plugin_link_suffix ) ) {
 			$needs = is_plugin_active( $plugin_link_suffix ) ? 'deactivate' : 'activate';

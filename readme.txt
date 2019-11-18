@@ -1,10 +1,10 @@
 === Bakes and Cakes ===
 
 Contributors: raratheme
-Requires at least: WordPress 4.7
+Requires at least: WordPress 4.9
 Requires PHP: 5.6
-Tested up to: WordPress 5.2.2
-Stable tag: 1.2.0
+Tested up to: WordPress 5.3
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options, food-and-drink, e-commerce, custom-colors, custom-logo    
@@ -222,6 +222,9 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.2.1
+    * Fixed slider navigation for latest google chrome updates
+    * Fixed accessibility issue of menu hover for edge browser.
 
     1.2.0
     * Added accessibility requirement for Skip Links, Keyboard navigation, Controls and Form labeling..

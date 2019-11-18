@@ -46,6 +46,12 @@ jQuery(document).ready(function($) {
         nav: false,
     });
 
+    $("#site-navigation ul li a").focus(function(){
+       $(this).parents("li").addClass("hover");
+   }).blur(function(){
+       $(this).parents("li").removeClass("hover");
+   });
+
     $('.btn-top').click(function() {
         $("html, body").animate({
             scrollTop: 0

@@ -7,12 +7,9 @@
  * @package Bakes_And_Cakes
  */
 
-//define theme version
-if ( ! defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) {
-	$theme_data = wp_get_theme();	
-	define ( 'BAKES_AND_CAKES_THEME_VERSION', $theme_data->get( 'Version' ) );
-    define( 'BAKES_AND_CAKES_THEME_NAME', $theme_data->get( 'Name' ) );
-}
+$theme_data = wp_get_theme();
+if( ! defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) define ( 'BAKES_AND_CAKES_THEME_VERSION', $theme_data->get( 'Version' ) );
+if( ! defined( 'BAKES_AND_CAKES_THEME_NAME' ) ) define( 'BAKES_AND_CAKES_THEME_NAME', $theme_data->get( 'Name' ) );
 
 if (!function_exists('bakes_and_cakes_setup')):
 /**
