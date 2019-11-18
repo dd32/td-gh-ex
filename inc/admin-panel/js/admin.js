@@ -1,16 +1,163 @@
 jQuery(document).ready(function ($){
-    $('#accordion-panel-aglee_lite_general_panel').prepend(
-        '<div class="user_sticky_note">'+
-        '<h3 class="sticky_title">Need help?</h3>'+
-        '<span class="sticky_info_row"><label class="row-element">View demo: </label> <a href="http://8degreethemes.com/demo/aglee-lite/" target="_blank">here</a>'+
-        '<span class="sticky_info_row"><label class="row-element">View documentation: </label><a href="http://8degreethemes.com/documentation/aglee-lite/" target="_blank">here</a></span>'+
-        '<span class="sticky_info_row"><label class="row-element">Support forum: </label><a href="https://8degreethemes.com/support/forum/aglee-lite/" target="_blnak">here</a></span>'+
-        '<span class="sticky_info_row"><label class="row-element">Email us: </label><a href="mailto:support@8degreethemes.com">support@8degreethemes.com<a/></span>'+
-        '<span class="sticky_info_row"><label class="more-detail row-element">More Details: </label><a href="https://8degreethemes.com/wordpress-themes/" target="_blank">here</a></span>'+
-        '</div>'
-        );
+    var upgrade_notice = '<div class="notice-up">';
+    upgrade_notice += '<a class="upgrade-pro-demo" target="_blank" href="http://8degreethemes.com/demos/?theme=aglee-pro">View AGLEE PRO</a></div>';
+    jQuery('#customize-info').append(upgrade_notice);
 
-var upgrade_notice = '<div class="notice-up"><a class="upgrade-pro" target="_blank" href="https://8degreethemes.com/wordpress-themes/aglee-pro/"><img src="http://8degreethemes.com/demo/upgrade-aglee-lite.jpg" alt="UPGRADE TO AGLEE PRO" /></a>';
-upgrade_notice += '<a class="upgrade-pro-demo" target="_blank" href="http://8degreethemes.com/demos/?theme=aglee-pro">AGLEE PRO DEMO</a></div>';
-jQuery('#customize-info').append(upgrade_notice);
+    /** Ajax Plugin Installation **/
+	$(".install").on('click', function (e) {
+		e.preventDefault();
+		var el = $(this);
+
+		is_loading = true;
+		el.addClass('installing');
+		var plugin = $(el).attr('data-slug');
+		var plugin_file = $(el).attr('data-file');
+		var ajaxurl = agleeWelcomeObject.ajaxurl;
+		var plhref = $(el).attr('href');
+		var newPlhref = plhref.split('&');
+		var plNonce = newPlhref[newPlhref.length-1];
+		var newPlhref = plNonce.split('=');
+		var plNonce = newPlhref[newPlhref.length-1];
+		if(plNonce==''){
+			var plNonce = agleeWelcomeObject.admin_nonce;
+		}
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'aglee_lite_plugin_installer',
+				plugin: plugin,
+				plugin_file: plugin_file,
+				nonce: plNonce,
+			},
+			success: function(response) {
+
+				if(response == 'success'){
+					
+					el.attr('class', 'installed button');
+					el.html(agleeWelcomeObject.installed_btn);
+					
+				}
+
+				el.removeClass('installing');
+				is_loading = false;
+		   		//location.reload();
+		   	},
+		   	error: function(xhr, status, error) {
+		   		console.log(status);
+		   		el.removeClass('installing');
+		   		is_loading = false;
+		   	}
+		   });
+	});
+
+	/** Ajax Plugin Installation (Offlines) **/
+	$('.install-offline').on('click', function (e) {
+		e.preventDefault();
+		var el = $(this);
+
+		is_loading = true;
+		el.addClass('installing');
+
+		var file_location = el.attr('href');
+		var github = $(el).attr('data-github');
+		var slug = $(el).attr('data-slug');
+		var file = el.attr('data-file');
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'aglee_lite_plugin_offline_installer',
+				file_location: file_location,
+				file: file,
+				slug: slug,
+				github: github,
+				dataType: 'json'
+			},
+			success: function(response) {
+
+				if(response == 'success'){
+					
+					el.attr('class', 'installed button');
+					el.html(agleeWelcomeObject.installed_btn);
+					
+				}
+
+				is_loading = false;
+				location.reload();
+			},
+			error: function(xhr, status, error) {
+				el.removeClass('installing');
+				is_loading = false;
+			}
+		});
+	});
+
+	/** Ajax Plugin Activation **/
+	$(".activate").on('click', function (e) {
+		
+		var el = $(this);
+		var plugin = $(el).attr('data-slug');
+
+		var ajaxurl = agleeWelcomeObject.ajaxurl;
+		
+		
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'aglee_lite_plugin_activation',
+				plugin: plugin,
+				nonce: agleeWelcomeObject.activate_nonce,
+				dataType: 'json'
+			},
+			success: function(response) {
+				if(response){
+					if(response.status === 'success'){
+						el.attr('class', 'installed button');
+						el.html(agleeWelcomeObject.installed_btn);
+					}
+				}
+				is_loading = false;
+				location.reload();
+			},
+			error: function(xhr, status, error) {
+				console.log(status);
+				is_loading = false;
+			}
+		});
+	});
+
+	/** Ajax Plugin Activation Offline **/
+	$('.activate-offline').on('click', function (e) {
+		e.preventDefault();
+		
+		var el = $(this);
+		var plugin = $(el).attr('data-slug');
+
+		$.ajax({
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'aglee_lite_plugin_offline_activation',
+				plugin: plugin,
+				nonce: agleeWelcomeObject.activate_nonce,
+				dataType: 'json'
+			},
+			success: function(response) {
+				if(response){
+					el.attr('class', 'installed button');
+					el.html(agleeWelcomeObject.installed_btn);
+				}
+				is_loading = false;
+				location.reload();
+			},
+			error: function(xhr, status, error) {
+				console.log(status);
+				is_loading = false;
+			}
+		});
+	});
+
 });

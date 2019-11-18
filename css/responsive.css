@@ -6,8 +6,11 @@
 }
 @media screen and (max-width: 1280px){
 	.ap-container, .aglee-container, .ag-container,
-	#cta-container aside.widget .ap-container, #featured-post-container aside.widget .aglee-container, #cta-container aside.widget .ag-container {
-		width: 90%;
+	#cta-container aside.widget .ap-container, #featured-post-container aside.widget .aglee-container, #cta-container aside.widget .ag-container, 
+	.caption_wrap .slider-caption-wrap {
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	body.boxed-layout{
 		width: 100%;
@@ -39,8 +42,8 @@
 	.icon-block-title{
 		font-size: 14px;
 	}
-	.caption_wrap{
-		padding-top: 8%;
+	.caption_wrap .slider_title {
+		font-size: 40px;
 	}
 	/*TESTIMONIAL SECTION*/
 	#testimonial-container .testimonial_img {
@@ -75,9 +78,6 @@
 	.header-text-logo .header-logo-container{
 		display: block;
 	}
-	.caption_wrap{
-		padding-top: 7%;
-	}
 	.blog-bottom-content{
 		float: left;
 		width: 100%;
@@ -89,6 +89,8 @@
 	.ap-container, .aglee-container, .ag-container,
 	#cta-container aside.widget .ap-container, #featured-post-container aside.widget .aglee-container, #cta-container aside.widget .ag-container {
 		width: 100%;
+		padding-left: 0;
+		padding-right: 0; 
 	}
 	.comments-area {
 		margin-bottom: 25px;
@@ -136,13 +138,14 @@
 		font-size:12px; 
 	}
 	
-	.header-logo-only .site-title {
+	.header-logo-only .site-branding {
 		float: none;
 		padding: 0 15px;
-		width: auto;
+		width: 100%;
 	}
 	.header-logo-only .menu-wrapper{
 		margin-top: 0;
+		width: 100%;
 	}
 	.header-text-only .site-branding, .header-text-only .menu-wrapper{
 		width: 100%;
@@ -180,7 +183,12 @@
 		float: none;
 		width: auto;
 	}
-
+	.search.search-no-results .search-form > label {
+		width: 79%;
+	}
+	.search.search-no-results form .search-submit {
+		width: 20%;
+	}
 
 	/*=========================== RESPONSIVE NAVIGATION MENU =======================================*/
 	.menu-wrapper {
@@ -264,11 +272,14 @@
 	}
 
 	/*======================= BANNER CAPTION =============================*/
-	.caption_wrap{
-		padding-top:7%; 
+	.caption_wrap .slider-caption-wrap {
+		margin-top:-13%; 
 	}
 	.caption_wrap .slider_title{
-		font-size: 40px;
+		font-size: 30px;
+	}
+	.caption_wrap .slider_cont {
+		font-size: 18px;
 	}
 	/* FEATURE POST SECTION*/
 	.feature-post-wrap-block{
@@ -397,14 +408,14 @@
 @media screen and (max-width: 800px){
 
 	/*==================================== BANNER CAPTION ====================================*/
-	.caption_wrap{
-		padding-top:6%;
+	.caption_wrap .slider-caption-wrap {
+		margin-top:-15%;
 	}
 	.caption_wrap .slider_title{
-		font-size: 30px; 
+		font-size: 25px; 
 	}
 	.caption_wrap .slider_cont{
-		font-size: 18px;
+		font-size: 16px;
 		padding: 0 0 10px 0;
 	}
 
@@ -572,7 +583,6 @@
 	.aglee-search input[type="search"]{
 		font-size: 13px;
 	}
-	
 	.top-header .call-us span{
 		font-size:12px; 
 		text-transform: capitalize;
@@ -585,12 +595,11 @@
 	.header-text-only .site-branding{
 		width: 100%;
 		margin: 10px 0;
-		padding: 0 15px; 
+		/*padding: 0 15px; */
 	}
 	.header-text-only .menu-wrapper{
 		width: 100%;
 	}
-
 	/* TOGGLE NAVIGATION TAB */
 	.menu-toggle {
 		float: left;
@@ -611,7 +620,13 @@
 		display: none;
 		border-top:none;
 	}
-
+	.search.search-no-results .search-form > label, 
+	.search.search-no-results form .search-submit {
+		width: 100%;
+	}
+	.search.search-no-results .search-form > label {
+		margin-bottom: 5px;
+	}
 
 	/*=========================== FEATURE SECTION =================================*/
 	#featured-post-container .feature-post-wrap {

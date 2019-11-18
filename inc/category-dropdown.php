@@ -6,7 +6,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) )
 /**
  * A class to create a dropdown for all categories in your wordpress site
  */
- class Category_Dropdown extends WP_Customize_Control
+ class Aglee_lite_Category_Dropdown extends WP_Customize_Control
  {
     private $aglee_lite_cats = false;
 

@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_features_widget' );
-function register_features_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_features_widget' );
+function aglee_lite_register_features_widget() {
     register_widget( 'aglee_lite_features_widget' );
 }
 class Aglee_Lite_Features_Widget extends WP_Widget {
@@ -87,6 +87,7 @@ class Aglee_Lite_Features_Widget extends WP_Widget {
                 ?>
                 <div class="aglee-container clearfix">
                 <div class="feature-post-wrap-block clearfix">
+                <h1><?php echo get_theme_mod('aglee_lite_features_section_title',''); ?></h1>
                 <?php
                 while($feat_query->have_posts()) : $feat_query->the_post();
                     $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'feature-posts-home');
