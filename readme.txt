@@ -1,0 +1,46 @@
+== Azuma ==
+Azuma WordPress Theme, Copyright UXL Themes 2019
+Azuma is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-2.0.html)
+Contributors: uxl
+Requires at least: WordPress 4.4
+Tested up to: WordPress 5.3
+Requires PHP: 5.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Installation ==
+1. In your WordPress Dashboard, nagivate to **Appearance > Themes** and click the **Add New** button.
+2. Type **Azuma** in the search form and press the **Enter** key on your keyboard.
+3. Click the **Activate** button to begin using Azuma on your website.
+
+== Customization ==
+1. Navigate to **Appearance > Customize**.
+2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
+
+== Changelog ==
+1.0.1 - November 18, 2019
+Fix for keyboard navigation
+Update to homepage hero image/slider widget section
+
+1.0 - August 16, 2019
+Initial release
+
+== Credits ==
+* Underscores - (C) 2012-2019 Automattic, Inc. - http://underscores.me
+License: GPLv2 or later - https://www.gnu.org/licenses/gpl-2.0.html
+
+* normalize.css - (C) 2012-2015 Nicolas Gallagher and Jonathan Neal - http://necolas.github.io/normalize.css/
+License: MIT - http://opensource.org/licenses/MIT
+
+* Font Awesome Free 5.8.1 by @fontawesome - https://fontawesome.com
+License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+
+* BxSlider - Copyright 2014, Steven Wanderski - http://bxslider.com
+License: MIT - http://opensource.org/licenses/MIT
+
+== Images ==
+Images used in screenshot
+
+https://stocksnap.io/photo/RCFX768X06
+Copyright: Negative Space - https://stocksnap.io/author/4440
+License: CC0 Creative Commons - https://stocksnap.io/license - https://creativecommons.org/publicdomain/zero/1.0/
