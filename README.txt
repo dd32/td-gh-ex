@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.32
+* Style tweaks/fixes
+* JS bug fix in WP Customizer
+* Remove old deprecated JS code
+* Added Chanelog to Appearance -> About Avant Page
+* Updated the language .pot file
+Premium: Added Spotify to theme Social Links
+
 #### 1.1.31
 * Style tweaks/fixes
 * Added WooCustomizer as a recommended plugin in TGM

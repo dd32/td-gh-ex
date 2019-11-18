@@ -173,6 +173,52 @@
             </div>
             
         </div>
+
+        <div class="clearboth"></div>
+
+        <div class="upgrade-changelog">
+            <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
+            
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.32</li>
+                <li>Style fixes/tweaks</li>
+                <li>JS bug fix in WP Customizer</li>
+                <li>Remove old deprecated JS code</li>
+                <li>Updated language .pot file</li>
+                <li><span>Premium:</span> Added Spotify to theme Social Links</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.31</li>
+                <li>Style fixes/tweaks</li>
+                <li>Added WooCustomizer as a recommended plugin in TGM</li>
+                <li>Fixed broken help links</li>
+                <li>Updated language .pot file</li>
+                <li><span>Premium:</span> Edited Page Layouts import functionlaity</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.30</li>
+                <li>Style fixes/tweaks</li>
+                <li>Improved theme accessibility</li>
+                <li>Added 'Skip to Content' accessibility link</li>
+                <li>Changed Navigation & link elements to work when using tab & enter - Keyboard navigation</li>
+                <li>Fixed mobile minor design tweaks</li>
+                <li>Updated language .pot file</li>
+            </ul>
+
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.28</li>
+                <li>Style fixes/tweaks</li>
+                <li>Updated language .pot file</li>
+                <li><span>Premium:</span> Added Airbnb to Social Links</li>
+                <li><span>Premium:</span> Added Kickstarter to Social Links</li>
+                <li><span>Premium:</span> Added setting to show a single post author blocks</li>
+                <li><span>Premium:</span> Added settings to change the design of the author block</li>
+            </ul>
+
+            <p>See Readme.txt file for older changelogs</p>
+        </div>
         
         <div class="clearboth"></div>
     </div>

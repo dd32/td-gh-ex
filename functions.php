@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.31' );
+define( 'AVANT_THEME_VERSION' , '1.1.32' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -244,7 +244,6 @@ add_action( 'wp_head', 'avant_pingback_header' );
  */
 function avant_load_admin_script() {
 	wp_enqueue_style( 'avant-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css', array(), AVANT_THEME_VERSION );
-	wp_enqueue_script( 'avant-admin-js', get_template_directory_uri() . "/upgrade/js/admin.js", array( 'jquery' ), AVANT_THEME_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'avant_load_admin_script' );
 
