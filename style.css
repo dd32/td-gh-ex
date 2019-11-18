@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro/
-Version: 0.3.4
+Version: 0.3.5
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -582,8 +582,8 @@ input.search-field {
 }
 #slider .inner_carousel .know-btn a:hover {
   background: #ffaa56;
-  color: #fff;
-  border-color: #fff;
+  color: #000;
+  border-color: #ffaa56;
 }
 #slider .inner_carousel .know-btn {
   margin-top: 23px;
@@ -778,7 +778,9 @@ article.new-text.col-lg-6.col-md-6 {
   color:#000;
   border: 1px solid #000;
   padding: 5px 10px;
-  margin-right: 10px;
+  display: inline-block;
+  margin: 5px;
+  font-weight: 500;
 }
 .tags p a:hover{
   color: #000;
@@ -1479,7 +1481,9 @@ iframe{
 	.our-services{
 		margin-top: 0;
 	}
-	
+  #slider .inner_carousel h1{
+    display: none;
+  }
   #footer input[type="submit"] {
     padding: 6px 0;
     float: right;
@@ -1713,8 +1717,5 @@ iframe{
   }
   .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul li:hover > a{
     color: #fff !important;
-  }
-  #slider .inner_carousel h1{
-    display: none;
   }
 }

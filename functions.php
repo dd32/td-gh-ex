@@ -347,7 +347,7 @@ function advance_business_scripts() {
 	wp_enqueue_script('advance-business-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
 	
-	require get_parent_theme_file_path( '/inc/color-option.php' );
+	require get_parent_theme_file_path( '/inc/ts-color-pallete.php' );
 	wp_add_inline_style( 'advance-business-basic-style',$custom_css );
 
 	wp_enqueue_style('advance-business-ie', get_template_directory_uri().'/css/ie.css', array('advance-business-basic-style'));
