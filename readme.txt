@@ -23,6 +23,11 @@ Live demo: https://demo.themonic.com/io/
 
 == Changelog ==
 
+= 2.1.1=
+* Released: November 18, 2019
+* Fix: Image Captions alignment
+* WordPress 5.3 compatibility
+
 = 2.1=
 * Released: June 20, 2019
 * Fix: RTL language style fixes
