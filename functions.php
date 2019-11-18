@@ -69,6 +69,7 @@ if ( ! function_exists( 'arilewp_setup' ) ) :
 			'height'      => 39,
 			'width'       => 210,
 			'flex-height' => true,
+			'flex-width' => true,
 			'header-text' => array( 'site-title', 'site-description' ),
 			
 		) );
@@ -240,5 +241,10 @@ require ARILEWP_PARENT_INC_DIR . '/class-bootstrap-navwalker.php';
 /**
  * Pgge layout setting.
  */
-
-require ARILEWP_PARENT_INC_DIR . '/admin/getting-started.php';
+ 
+$theme = wp_get_theme();
+	if ( 'ArileWP' == $theme->name) {
+	if ( is_admin() ) {
+		require ARILEWP_PARENT_INC_DIR . '/admin/getting-started.php';
+	}
+}

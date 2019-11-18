@@ -18,6 +18,8 @@ Name: bootstrap-smartmenus.css
 }
 .navbar>.container {
     display: block;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 /*--------------------------------------------------
@@ -53,8 +55,8 @@ Name: bootstrap-smartmenus.css
 	margin-right: 1rem;
 }
 .navbar .row.align-self-center {
-	padding-left: 15px;
-	padding-right: 15px;
+	margin-left: 0;
+	margin-right: 0;
 }
 .navbar-brand, .sticky-navbar-brand {
 	float: left;
