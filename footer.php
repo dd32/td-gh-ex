@@ -32,18 +32,8 @@
 						    <?php
 						        if(get_theme_mod('copyright_txt')){
 						            echo esc_html(get_theme_mod('copyright_txt'));
-                                }else{
-						          
-								  esc_html_e('Copyright &copy;','arina');
-								  echo date_i18n(__('Y','arina'));
-								  esc_html_e('| arina Theme','arina');
-								   
                                 }
-								
-								
-						    ?>
-							
-							
+						    ?>							
                         </div>
                     </footer>
                 </div>
