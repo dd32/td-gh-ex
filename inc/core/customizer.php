@@ -20,6 +20,16 @@ function acoustics_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+	$wp_customize->register_section_type( 'Acoustics_Customize_Control_Premium' );
+	$wp_customize->add_section( new Acoustics_Customize_Control_Premium( $wp_customize, 'premium', array(
+				'title'  =>    esc_html__('Acoustic Premium Version', 'acoustics'),
+				'button' => esc_html__( 'Upgrade Now','acoustics' ),
+				'link'   => esc_url( 'https://codegearthemes.com/products/acoustic-pro' ),
+				'priority' => 0,
+			)
+		)
+	);
+
 
 	require get_template_directory() . '/inc/core/acoustics-customizer.php';
 

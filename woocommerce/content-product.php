@@ -23,7 +23,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div <?php wc_product_class( 'col-md-3 col-sm-4 col-xs-6 text-left', $product ); ?>>
+<div <?php wc_product_class( 'col-md-3 col-sm-4 col-xs-12 text-left', $product ); ?>>
 	<div class="product-inner">
 		<?php
 		/**

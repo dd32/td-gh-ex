@@ -26,3 +26,39 @@ Description: Used to style customizer.
 .buttonset-setting .image-item input[type="radio"]:checked+label{
 	border: 2px solid #000;
 }
+
+.section-premium{
+	display: block !important;
+	text-align: center;
+	min-height: 116px;
+}
+
+.section-premium .button {
+	background: #000;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+    margin-top: -2px;
+	display: block;
+	width: 100%;
+	float: none;
+	margin-top: 15px;
+}
+
+.section-premium .button:hover{
+	background: #000;
+    color: #fff;
+    border: 0px;
+    border-radius: 0px;
+    margin-top: -2px;
+	display: block;
+	width: 100%;
+	float: none;
+	margin-top: 15px;
+}
+
+.section-premium .accordion-section-title{
+	background-color: #F4F6FC !important;
+    margin-left: -4px;
+    padding: 25px;
+}

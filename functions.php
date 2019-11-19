@@ -128,9 +128,11 @@ if ( ! class_exists( 'acousticsThemeSetup' ) ) {
 			/**
 			* Customizer additions.
 			*/
+			require get_template_directory() . '/inc/core/controls/acoustics-premium-control.php';
 			require get_template_directory() . '/inc/core/customizer.php';
 			require get_template_directory() . '/inc/core/controls/acoustics-radio-image-control.php';
 			require get_template_directory() . '/inc/core/controls/acoustics-information-control.php';
+
 			require get_template_directory() . '/inc/core/acoustics-sanitizer.php';
 			require get_template_directory() . '/inc/extras/extras.php';
 			require get_template_directory() . '/inc/widgets/acoustics-widgets.php';
