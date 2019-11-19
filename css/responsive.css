@@ -121,12 +121,6 @@
     }
 	
     /* Header slider */
-    .header-slider .owl-next,
-    .header-slider .owl-prev {
-        bottom: 26%;
-        top: 77%;
-    }
-
     .header-slider .container.inner-content {
         width: 70%;
     }

@@ -29,7 +29,7 @@
 					$args = array( 'post_type' => 'post','post__not_in'=>get_option("sticky_posts")) ; 	
 				}
 					 $arowana_wp_query = new WP_Query($args);
-					if($arowana_wp_query)
+					if($arowana_wp_query->have_posts())
 					{	
 					while($arowana_wp_query->have_posts()):$arowana_wp_query->the_post(); ?>
 					<div class="col-lg-4 col-md-6 col-sm-12 mb-lg-0 mb-4">
