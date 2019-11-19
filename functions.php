@@ -59,7 +59,7 @@ if ( ! function_exists( 'architect_lite_fonts_url' ) ) :
     }
 endif;
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------*/
 /**
  * Enqueue child theme styles and scripts
  *
@@ -76,6 +76,7 @@ function architect_lite_scripts() {
 	wp_enqueue_style( 'architect-lite-google-font', architect_lite_fonts_url(), array(), null );
 
 	wp_dequeue_style( 'owner-style' );
+
     wp_dequeue_style( 'owner-responsive-style' );
 
     wp_enqueue_style( 'owner-parent-style', get_template_directory_uri() . '/style.css', array(), esc_attr( $architect_lite_version ) );
@@ -132,7 +133,7 @@ function architect_lite_scripts() {
     wp_add_inline_style( 'architect-lite-style', $output_css );
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------------*/
 /**
  * Get rgba color from hex
  *
@@ -147,7 +148,8 @@ function architect_lite_get_hex2rgba( $color, $opacity ) {
     $output = 'rgba( '.implode( ",", $rgb ).','.$opacity.' )';
     return $output;
 }
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------------------*/
 /**
  * Define pages for dropdown
  *
@@ -163,7 +165,8 @@ if( !function_exists( 'owner_pages_dropdown' ) ):
         return $owner_pages_dropdown;
     }
 endif;
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------------------------*/
 /**
  * Managed widgets
  *
