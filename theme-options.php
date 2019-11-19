@@ -1,19 +1,18 @@
 <?php
 
 function ct_unlimited_register_theme_page() {
-	add_theme_page( sprintf( esc_html__( '%s Dashboard', 'unlimited' ), wp_get_theme() ), sprintf( esc_html__( '%s Dashboard', 'unlimited' ), wp_get_theme() ), 'edit_theme_options', 'unlimited-options', 'ct_unlimited_options_content', 'ct_unlimited_options_content' );
+	add_theme_page( 
+		sprintf( esc_html__( '%s Dashboard', 'unlimited' ), wp_get_theme() ), 
+		sprintf( esc_html__( '%s Dashboard', 'unlimited' ), wp_get_theme() ), 
+		'edit_theme_options', 
+		'unlimited-options', 
+		'ct_unlimited_options_content'
+	);
 }
 add_action( 'admin_menu', 'ct_unlimited_register_theme_page' );
 
 function ct_unlimited_options_content() {
 
-	$customizer_url = add_query_arg(
-		array(
-			'url'    => get_home_url(),
-			'return' => add_query_arg( 'page', 'unlimited-options', admin_url( 'themes.php' ) )
-		),
-		admin_url( 'customize.php' )
-	);
 	$pro_url = 'https://www.competethemes.com/unlimited-pro/?utm_source=wp-dashboard&utm_medium=Dashboard&utm_campaign=Unlimited%20Pro%20-%20Dashboard';
 	?>
 	<div id="unlimited-dashboard-wrap" class="wrap unlimited-dashboard-wrap">

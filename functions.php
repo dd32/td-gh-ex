@@ -338,6 +338,7 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 			'phone'         => 'unlimited_phone_profile',
 			'email_form'    => 'unlimited_email_form',
 			'amazon'        => 'unlimited_amazon_profile',
+			'artstation'    => 'unlimited_artstation_profile',
 			'bandcamp'      => 'unlimited_bandcamp_profile',
 			'behance'       => 'unlimited_behance_profile',
 			'bitbucket'     => 'unlimited_bitbucket_profile',
@@ -361,6 +362,7 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 			'ok-ru'         => 'unlimited_ok_ru_profile',
 			'patreon'       => 'unlimited_patreon_profile',
 			'paypal'        => 'unlimited_paypal_profile',
+			'pocket'        => 'unlimited_pocket_profile',
 			'podcast'       => 'unlimited_podcast_profile',
 			'qq'            => 'unlimited_qq_profile',
 			'quora'         => 'unlimited_quora_profile',
@@ -454,6 +456,8 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 					$class = 'fab fa-odnoklassniki';
 				} elseif ( $active_site == 'wechat' ) {
 					$class = 'fab fa-weixin';
+				} elseif ( $active_site == 'pocket' ) {
+					$class = 'fab fa-get-pocket';
 				} elseif ( $active_site == 'phone' ) {
 					$class = 'fas fa-phone';
 				} else {
@@ -646,12 +650,6 @@ if ( ! function_exists( 'unlimited_delete_settings_notice' ) ) {
 					<p><?php esc_html_e( 'Customizer settings deleted.', 'unlimited' ); ?></p>
 				</div>
 				<?php
-			} else if ( $_GET['unlimited_status'] == 'activated' ) {
-				?>
-				<div class="updated">
-					<p><?php printf( esc_html__( '%s successfully activated!', 'unlimited' ), wp_get_theme( get_template() ) ); ?></p>
-				</div>
-				<?php
 			}
 		}
 	}
@@ -724,20 +722,6 @@ if ( ! function_exists( 'ct_unlimited_nav_dropdown_buttons' ) ) {
 	}
 }
 add_filter( 'walker_nav_menu_start_el', 'ct_unlimited_nav_dropdown_buttons', 10, 4 );
-
-// trigger theme switch on link click and send to Appearance menu
-function ct_unlimited_welcome_redirect() {
-
-	$welcome_url = add_query_arg(
-		array(
-			'page'             => 'unlimited-options',
-			'unlimited_status' => 'activated',
-		),
-		admin_url( 'themes.php' )
-	);
-	wp_safe_redirect( esc_url_raw( $welcome_url ) );
-}
-add_action( 'after_switch_theme', 'ct_unlimited_welcome_redirect' );
 
 //----------------------------------------------------------------------------------
 // Add paragraph tags for author bio displayed in content/archive-header.php.
