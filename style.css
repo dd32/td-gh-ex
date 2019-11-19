@@ -5,7 +5,7 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, over 50+ social media icons, search bar, comment display controls, premium layouts, and more. Tracks has a dark, simple, and minimalist design that makes it great for publish both text and image based content. Use it for a travel blog, online newspaper, video site, podcast, or even an eCommerce store thanks to its WooCommerce compatibility. As a free theme, you can use Tracks for as many projects as you’d like. Now fully compatible with the new Gutenberg post editor. Preview Tracks now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=tracks
-Version: 1.70
+Version: 1.71
 Tags: one-column, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -21,7 +21,17 @@ Tracks is distributed under the terms of the GNU GPL
   line-height: 1.85;
 }
 
-.wp-caption-text, .excerpt-meta, .entry-meta, .more-link, .pagination, .further-reading span,
+.alignright figcaption,
+.alignleft figcaption,
+.aligncenter figcaption,
+.alignnone figcaption,
+.alignwide figcaption,
+.alignfull figcaption,
+.size-auto figcaption,
+.size-full figcaption,
+.size-large figcaption,
+.size-medium figcaption,
+.size-thumbnail figcaption, .wp-block-image figcaption, .wp-caption-text, .excerpt-meta, .entry-meta, .more-link, .pagination, .further-reading span,
 .further-reading a,
 .entry-categories span,
 .entry-categories a,
@@ -232,6 +242,8 @@ th {
 .alignleft,
 .aligncenter,
 .alignnone,
+.alignwide,
+.alignfull,
 .size-auto,
 .size-full,
 .size-large,
@@ -246,12 +258,41 @@ th {
 .alignleft img,
 .aligncenter img,
 .alignnone img,
+.alignwide img,
+.alignfull img,
 .size-auto img,
 .size-full img,
 .size-large img,
 .size-medium img,
 .size-thumbnail img {
   max-width: 100%;
+}
+.alignright figcaption,
+.alignleft figcaption,
+.aligncenter figcaption,
+.alignnone figcaption,
+.alignwide figcaption,
+.alignfull figcaption,
+.size-auto figcaption,
+.size-full figcaption,
+.size-large figcaption,
+.size-medium figcaption,
+.size-thumbnail figcaption {
+  line-height: 1.5;
+  margin: 6px 0 0 0;
+  color: #8c8c8c;
+  text-align: center;
+}
+
+.wp-block-image {
+  margin: 0;
+  line-height: 0;
+}
+
+.wp-block-image figcaption {
+  line-height: 1.5;
+  margin: 6px 0 0 0;
+  color: #8c8c8c;
 }
 
 .alignleft {
@@ -285,14 +326,8 @@ img {
 }
 
 .wp-caption-text {
-  margin: 0;
+  margin: 6px 0 0 0;
   color: #8c8c8c;
-}
-
-.wp-caption.aligncenter {
-  max-width: none;
-  margin: 0 auto;
-  width: auto !important;
 }
 
 /* Form styles */
