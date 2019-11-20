@@ -166,6 +166,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'bb_wedding_bliss_theme_color_option', 
 		array( 'panel' => 'bb_wedding_bliss_panel_id', 'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
 	);
+
   	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
 	    'default' => '#b79338',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -176,6 +177,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'section' => 'bb_wedding_bliss_theme_color_option',
 	    'settings' => 'bb_wedding_bliss_theme_color_first',
   	)));
+
   	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
 	    'default' => '#151c27',
 	    'sanitize_callback' => 'sanitize_hex_color'
@@ -222,7 +224,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -310,7 +311,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_h1_font_size',array(
 		'label'	=> __('H1 Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -348,7 +348,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_h2_font_size',array(
 		'label'	=> __('h2 Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -386,7 +385,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_h3_font_size',array(
 		'label'	=> __('h3 Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -424,7 +422,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_h4_font_size',array(
 		'label'	=> __('h4 Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -462,7 +459,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_h5_font_size',array(
 		'label'	=> __('h5 Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -500,7 +496,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_h6_font_size',array(
 		'label'	=> __('h6 Font Size','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_typography',
@@ -519,7 +514,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_youtube_url',array(
 		'label'	=> __('Add Youtube link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -531,7 +525,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_facebook_url',array(
 		'label'	=> __('Add Facebook link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -543,7 +536,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_twitter_url',array(
 		'label'	=> __('Add Twitter link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -555,7 +547,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_rss_url',array(
 		'label'	=> __('Add RSS link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -567,7 +558,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_insta_url',array(
 		'label'	=> __('Add Instagram link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -579,7 +569,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_google_url',array(
 		'label'	=> __('Add Google link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -591,7 +580,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('bb_wedding_bliss_pint_url',array(
 		'label'	=> __('Add Pintrest link','bb-wedding-bliss'),
 		'section'	=> 'bb_wedding_bliss_social_icons',
@@ -647,7 +635,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('bb_wedding_bliss_love_post_setting',array(
 		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	));
-
 	$wp_customize->add_control('bb_wedding_bliss_love_post_setting',array(
 		'type'    => 'select',
 		'choices' => $pst,
@@ -703,6 +690,81 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'label' => __('Select Category to display Latest Post','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
   	));
+
+  	//Blog Post
+	$wp_customize->add_section('bb_wedding_bliss_blog_post',array(
+		'title'	=> __('Blog Page Settings','bb-wedding-bliss'),
+		'panel' => 'bb_wedding_bliss_panel_id',
+	));	
+
+	$wp_customize->add_setting('bb_wedding_bliss_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','bb-wedding-bliss'),
+       'section' => 'bb_wedding_bliss_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_wedding_bliss_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','bb-wedding-bliss'),
+       'section' => 'bb_wedding_bliss_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_wedding_bliss_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','bb-wedding-bliss'),
+       'section' => 'bb_wedding_bliss_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_wedding_bliss_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','bb-wedding-bliss'),
+       'section' => 'bb_wedding_bliss_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'bb_wedding_bliss_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'bb_wedding_bliss_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','bb-wedding-bliss' ),
+		'section'     => 'bb_wedding_bliss_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'bb_wedding_bliss_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('bb_wedding_bliss_button_text',array(
+		'default'=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_button_text',array(
+		'label'	=> __('Add Button Text','bb-wedding-bliss'),
+		'section'=> 'bb_wedding_bliss_blog_post',
+		'type'=> 'text'
+	));
 
 	//footer
 	$wp_customize->add_section('bb_wedding_bliss_footer_section',array(

@@ -14,11 +14,21 @@
 ?>
 <article class="page-box-single">
 	<h1><?php the_title();?></h1>
-	<div class="metabox">
-		<span class="entry-date"><i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><span>|</span>
-        <span class="entry-author"><i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span><span>|</span>
-        <span class="entry-comments"><i class="fa fa-comments" aria-hidden="true"></i> <?php comments_number( __('0 Comment', 'bb-wedding-bliss'), __('0 Comments', 'bb-wedding-bliss'), __('% Comments', 'bb-wedding-bliss') ); ?> </span>
-	</div>
+	<?php if( get_theme_mod( 'bb_wedding_bliss_date_hide',true) != '' || get_theme_mod( 'bb_wedding_bliss_author_hide',true) != '' || get_theme_mod( 'bb_wedding_bliss_comment_hide',true) != '') { ?>
+		<div class="metabox">
+			<?php if( get_theme_mod( 'bb_wedding_bliss_date_hide',true) != '') { ?>
+				<span class="entry-date"><i class="fa fa-calendar" aria-hidden="true"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><span>|</span>
+			<?php } ?>
+
+			<?php if( get_theme_mod( 'bb_wedding_bliss_author_hide',true) != '') { ?>
+	        	<span class="entry-author"><i class="fa fa-user" aria-hidden="true"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span><span>|</span>
+	        <?php } ?>
+
+	        <?php if( get_theme_mod( 'bb_wedding_bliss_comment_hide',true) != '') { ?>
+	        	<span class="entry-comments"><i class="fa fa-comments" aria-hidden="true"></i> <?php comments_number( __('0 Comment', 'bb-wedding-bliss'), __('0 Comments', 'bb-wedding-bliss'), __('% Comments', 'bb-wedding-bliss') ); ?> </span>
+	        <?php } ?>
+		</div>
+	<?php }?>
 	<?php if(has_post_thumbnail()) { ?>
 		<hr>
 		<div class="feature-box">	
@@ -29,15 +39,18 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div>
-	<div class="tags"><p><?php
-      if( $tags = get_the_tags() ) {
-        echo '<i class="fas fa-tags"></i>';
-        echo '<span class="meta-sep"></span>';
-        foreach( $tags as $content_tag ) {
-          $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
-          echo '<a href="' . esc_url(get_term_link( $content_tag, $content_tag->taxonomy )) . '">' . esc_html($content_tag->name) . '</a>' . esc_html($sep);
-        }
-      } ?></p></div>
+
+	<?php if( get_theme_mod( 'bb_wedding_bliss_tags_hide',true) != '') { ?>
+		<div class="tags"><p><?php
+	      if( $tags = get_the_tags() ) {
+	        echo '<i class="fas fa-tags"></i>';
+	        echo '<span class="meta-sep"></span>';
+	        foreach( $tags as $content_tag ) {
+	          $sep = ( $content_tag === end( $tags ) ) ? '' : ' ';
+	          echo '<a href="' . esc_url(get_term_link( $content_tag, $content_tag->taxonomy )) . '">' . esc_html($content_tag->name) . '</a>' . esc_html($sep);
+	        }
+	      } ?></p></div>
+	<?php } ?>
 	
 	<?php
 	wp_link_pages( array(

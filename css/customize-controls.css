@@ -26,7 +26,7 @@ a.button.button-secondary.alignright:hover {
 }
 
 /* ---------Excerpt & Logo --------- */
-input#_customize-input-logo_size{
+input#_customize-input-logo_size,input#_customize-input-bb_wedding_bliss_excerpt_number{
     width: 100%;
 }
 li#customize-control-logo_size {
