@@ -4,7 +4,9 @@ Theme URI:    https://mysterythemes.com/wp-themes/aerobics/
 Author:       Mystery Themes
 Author URI:   https://mysterythemes.com/
 Description:  Aerobics is a child theme of SwipeWp which is awesome free WordPress Business Theme comes up with plenty of powerful features that allow you to create a business website in any niche. It is integrated with WooCommerce and other popular plugins that offers full flexibility to use all its features. It has a promising design and exemplary features like Testimonials, Customization option, Optimized for SEO, Amazing support and documentation that makes no trouble while using the theme. Demo: http://demo.mysterythemes.com/swipe-demos/
-Version:      1.0.0
+Version:      1.0.1
+Requires at least: 4.5
+Requires PHP : 5.6
 License:      GNU General Public License v3 or later
 License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 Template:     swipewp
@@ -42,6 +44,18 @@ h6 {
 
 .edit-link .post-edit-link{
   background: none;
+}
+
+#masthead #primary-menu li:hover > a,
+#masthead #primary-menu li.current-menu-item > a,
+#masthead #primary-menu li.current_page_ancestor > a,
+#masthead #primary-menu li.current_page_item > a,
+#masthead #primary-menu li.current-menu-ancestor > a {
+    color: #ff8e48;
+}
+
+#masthead .side-menu-toggle {
+	margin-left: 20px;
 }
 
 /*layout two*/
