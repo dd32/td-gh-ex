@@ -44,7 +44,7 @@ function benzer_premium_setting( $wp_customize ) {
 			'premium_info_buttons',
 			array(
 			   'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'proficient_sanitize_text',
+				'sanitize_callback' => 'specia_sanitize_text',
 			)	
 		);
 	
