@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 1.1 =
+* Woocommerce Ready
+
 = 1.0 =
 * ticket issue fixed, https://themes.trac.wordpress.org/ticket/71918
 

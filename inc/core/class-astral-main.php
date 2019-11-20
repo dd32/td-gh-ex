@@ -24,6 +24,13 @@ class astral_main {
 				'social' => __( 'Social Links Menu', 'astral' ),
 			)
 		);
+		
+		/* woocommerce */
+		add_theme_support( 'woocommerce' );
+		
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		add_theme_support( 'custom-logo', array() );
 
