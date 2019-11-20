@@ -48,7 +48,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
         'default' => '',
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'	        
 	) );
-
 	$wp_customize->add_control('bb_ecommerce_store_theme_options',
 	    array(
 	        'type' => 'radio',
@@ -210,7 +209,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -298,7 +296,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_h1_font_size',array(
 		'label'	=> __('H1 Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -336,7 +333,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_h2_font_size',array(
 		'label'	=> __('h2 Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -374,7 +370,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_h3_font_size',array(
 		'label'	=> __('h3 Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -412,7 +407,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_h4_font_size',array(
 		'label'	=> __('h4 Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -450,7 +444,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_h5_font_size',array(
 		'label'	=> __('h5 Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -488,7 +481,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_h6_font_size',array(
 		'label'	=> __('h6 Font Size','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_typography',
@@ -508,7 +500,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_contact',array(
 		'label'	=> __('Add Phone Number','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_topbar',
@@ -520,7 +511,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_email',array(
 		'label'	=> __('Add Email','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_topbar',
@@ -540,7 +530,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
-	
 	$wp_customize->add_control('bb_ecommerce_store_youtube_url',array(
 		'label'	=> __('Add Youtube link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
@@ -552,7 +541,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
-	
 	$wp_customize->add_control('bb_ecommerce_store_facebook_url',array(
 		'label'	=> __('Add Facebook link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
@@ -564,7 +552,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
-	
 	$wp_customize->add_control('bb_ecommerce_store_twitter_url',array(
 		'label'	=> __('Add Twitter link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
@@ -576,7 +563,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
-	
 	$wp_customize->add_control('bb_ecommerce_store_instagram_url',array(
 		'label'	=> __('Add Instagram link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
@@ -588,7 +574,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	) );
-	
 	$wp_customize->add_control('bb_ecommerce_store_rss_url',array(
 		'label'	=> __('Add RSS link','bb-ecommerce-store'),
 		'section'	=> 'bb_ecommerce_store_social',
@@ -619,7 +604,6 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 				'default'           => '',
 				'sanitize_callback' => 'bb_ecommerce_store_sanitize_dropdown_pages'
 		) );
-
 		$wp_customize->add_control( 'bb_ecommerce_store_slider' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'bb-ecommerce-store' ),
 			'section'  => 'bb_ecommerce_store_slidersettings',
@@ -664,12 +648,10 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'panel' => 'bb_ecommerce_store_panel_id',
 	));
 	
-	
 	$wp_customize->add_setting('bb_ecommerce_store_sec1_title',array(
 		'default'=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('bb_ecommerce_store_sec1_title',array(
 		'label'	=> __('Section Title','bb-ecommerce-store'),
 		'section'=> 'bb_ecommerce_store_product',
@@ -685,6 +667,81 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'label'    => __( 'Select Page', 'bb-ecommerce-store' ),
 		'section'  => 'bb_ecommerce_store_product',
 		'type'     => 'dropdown-pages'
+	));
+
+	//Blog Post
+	$wp_customize->add_section('bb_ecommerce_store_blog_post',array(
+		'title'	=> __('Blog Page Settings','bb-ecommerce-store'),
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));	
+
+	$wp_customize->add_setting('bb_ecommerce_store_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Post Date','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_ecommerce_store_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Comments','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_ecommerce_store_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Author','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_blog_post'
+    ));
+
+    $wp_customize->add_setting('bb_ecommerce_store_tags_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_tags_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Single Post Tags','bb-ecommerce-store'),
+       'section' => 'bb_ecommerce_store_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'bb_ecommerce_store_excerpt_number', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'bb_ecommerce_store_excerpt_number', array(
+		'label'       => esc_html__( 'Excerpt length','bb-ecommerce-store' ),
+		'section'     => 'bb_ecommerce_store_blog_post',
+		'type'        => 'textfield',
+		'settings'    => 'bb_ecommerce_store_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_button_text',array(
+		'default'=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_button_text',array(
+		'label'	=> __('Add Button Text','bb-ecommerce-store'),
+		'section'=> 'bb_ecommerce_store_blog_post',
+		'type'=> 'text'
 	));
 
 	//footer

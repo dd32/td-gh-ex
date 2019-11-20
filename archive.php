@@ -6,7 +6,6 @@
  *
  * @package Ecommerce Store
  */
-
 get_header(); ?>
 
 <main role="main" id="maincontent">

@@ -9,7 +9,6 @@
  *
  * @package Ecommerce Store
  */
-
 get_header(); ?>
 
 <?php do_action( 'bb_ecommerce_store_page_header' ); ?>
