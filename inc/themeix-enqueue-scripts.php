@@ -24,9 +24,6 @@ function axiohost_scripts()
 	//Nivo Slider CSS
 	wp_enqueue_style('nivo-slider', AXIOHOST_CSS_URL . '/nivo-slider.css', null, 'v3.2', 'all');
 
-	//Slim Menu CSS
-	wp_enqueue_style('slimmenu', AXIOHOST_CSS_URL . '/slimmenu.min.css', null, 'v1.0', 'all');
-
 	//Font Awesome CSS
 	wp_enqueue_style('font-awesome', AXIOHOST_CSS_URL . '/font-awesome.min.css', null, '4.7.0', 'all');
 
@@ -39,9 +36,6 @@ function axiohost_scripts()
 	//Owl Carousel CSS
 	wp_enqueue_style('owl-carousel', AXIOHOST_CSS_URL . '/owl.carousel.min.css', null, 'v2.3.4', 'all');
 
-
-	//Superfish CSS
-	wp_enqueue_style('superfish', AXIOHOST_CSS_URL . '/superfish.css', null, 'v1.0', 'all');
 
 	//Stylesheet CSS
 	wp_enqueue_style('axiohost-style', get_stylesheet_uri());
@@ -68,28 +62,12 @@ function axiohost_scripts()
 	//Slick JS    
 	wp_enqueue_script('slick', AXIOHOST_JS_URL . '/slick.min.js', array('jquery'), 'v1.0', true);
 
-	//Slim menu     
-	wp_enqueue_script('jquery-slimmenu', AXIOHOST_JS_URL . '/jquery.slimmenu.min.js', array('jquery'), 'v1.0', true);
-
-	//superfish
-	wp_enqueue_script('superfish', AXIOHOST_JS_URL . '/superfish.js', array('jquery'), 'v1.7.10', true);
-
-	//hoverIntent
-	wp_enqueue_script('hoverIntent', AXIOHOST_JS_URL . '/hoverIntent.js', array('jquery'), 'v1.0', true);
-
-	//Supersubs
-	wp_enqueue_script('supersubs', AXIOHOST_JS_URL . '/supersubs.js', array('jquery'), 'v1.0', true);
-
-	//Supposition
-	wp_enqueue_script('supposition', AXIOHOST_JS_URL . '/supposition.js', array('jquery'), 'v1.0', true);
-
 
 	//WOW JS 
 	wp_enqueue_script('wow', AXIOHOST_JS_URL . '/wow.min.js', array('jquery'), 'v1.1.3', true);
 
-
-	//Navigation JS 
-	wp_enqueue_script('navigation', AXIOHOST_JS_URL . '/navigation.js', array('jquery'), 'v1.0', true);
+	//axiohost script 
+	wp_enqueue_script('axiohost-script', AXIOHOST_JS_URL . '/axiohost-nav.js', array('jquery'), 'v1.0', true);
 
 	wp_enqueue_script('axiohost-skip-link-focus-fix', AXIOHOST_JS_URL . '/skip-link-focus-fix.js', array(), '20151215', true);
 
@@ -97,6 +75,16 @@ function axiohost_scripts()
 	wp_enqueue_script('axiohost-custom', AXIOHOST_JS_URL . '/custom.js', array('jquery'), 'v1.0', true);
 
 	wp_enqueue_script("comment-reply");
+	
+		wp_localize_script(
+		'axiohost-script',
+		'screenReaderText',
+		array(
+			'expand'   => __( 'expand child menu', 'axiohost' ),
+			'collapse' => __( 'collapse child menu', 'axiohost' ),
+		)
+	);
+	
 }
 add_action('wp_enqueue_scripts', 'axiohost_scripts');
 

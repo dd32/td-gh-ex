@@ -4,7 +4,7 @@ Contributors: themeix
 Tags: blog, right-sidebar, footer-widgets, sticky-post, theme-options, full-width-template, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.0.14
+Stable tag: 1.0.15
 Requires PHP: 5.6
 Author URI: https://themeix.com/
 Theme URI: https://axiohost-wp.themeix.com/

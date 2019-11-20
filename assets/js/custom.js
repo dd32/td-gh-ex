@@ -127,12 +127,7 @@ jQuery('.shop-product-slider').slick({
         8. Paralax Active JS
     ===============================================*/
    
-    jQuery('.slimmenu').slimmenu({
-        resizeWidth: '992',
-        collapserTitle: 'Main Menu',
-        animSpeed: 'medium',
-        indentChildren: true,
-    });  
+    
   
 	/*=============================================
         8. Active WoW JS
@@ -221,25 +216,4 @@ var previewSliderOptions = {
 
 })(jQuery);
 
-(function($) { 
-  jQuery(document).ready(function() {
-
-    // initialise plugin
-    var example = jQuery('#example').superfish({
-      //add options here if required					
-    }).supposition();
-
-  });
-  
-    jQuery('.collapse-button').on('click', function(){
-        jQuery('.collapse-button').toggleClass('navigation-close-icon');
-    });
-    
-     /* Demo purposes only */
-  jQuery("figure").mouseleave(
-    function() {
-      jQuery(this).removeClass("hoer");
-    }
-  );
-    
-})(jQuery);
+ 

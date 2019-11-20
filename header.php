@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e ( 'Skip to content', 'axiohost' ); ?></a>
-    <header class="header-area">
+    <header id="masthead" class="site-header header-area" role="banner">	
         <div class="container">
             <div class="navigation-wrapper">
 				<div class="navigation-brand">				
@@ -37,11 +37,24 @@
                 <div class="navigation-main">
                     
                         <a href="#" class="search-popup-icon"><img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/search-icon.png'); ?>" alt="<?php esc_attr__('nav search', 'axiohost'); ?> "></a> 
-                    <?php
-                       get_template_part('template-parts/primary-menu', 'primary-menu'); 
-                       get_template_part('template-parts/responsive-menu', 'mobile-menu'); 
-                    
-                    ?>
+						
+						<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'axiohost' ); ?></button>
+				<div id="site-header-menu" class="site-header-menu">
+						<?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
+							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'axiohost' ); ?>">
+								<?php
+									wp_nav_menu(
+										array(
+											'theme_location' => 'primary_menu',
+											'menu_class' => 'primary-menu',
+										)
+									);
+								?>
+							</nav><!-- .main-navigation -->
+						<?php endif; ?>
+
+					</div><!-- .site-header-menu -->					
+
                 </div>
             </div>
         </div>
