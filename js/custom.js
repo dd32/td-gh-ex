@@ -8,6 +8,11 @@
 		function () {
 
 
+			$('#nav-toggle').on('focus', function(){
+				$('#nav-toggle').trigger('click');
+			});
+
+
 			//initiate colorbox
 			$( 'a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".gif"]' ).colorbox(
 				{

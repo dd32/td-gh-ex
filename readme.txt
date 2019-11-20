@@ -5,7 +5,7 @@ Donate link: https://imtiazshamim.com/contact/
 Requires at least: 4.0
 Tested up to: 5.3
 Requires PHP: 5.5
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -92,8 +92,12 @@ License : MIT - https://github.com/abouolia/sticky-sidebar/blob/master/LICENSE.m
 Source: https://github.com/abouolia/sticky-sidebar
 
 * WP Bootstrap Navwalker
-License : GNU - https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt
+License : MIT - https://github.com/viljamis/responsive-nav.js/blob/master/README.md
 Source: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+
+* Responsive Nav
+License : GNU - https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt
+Source: https://github.com/viljamis/responsive-nav.js
 
 * Fonts
 Poppins
@@ -113,8 +117,8 @@ License : MIT License https://github.com/michaelampr/jam/blob/master/LICENSE
 
 * Images includes in theme file
 page_default_background.jpg
-Source: https://pixabay.com/photos/beach-dominican-republic-caribbean-1236581/
-License : https://pixabay.com/service/terms/#license
+Source: https://stocksnap.io/photo/7XEX5NOW5M
+License(CC0): https://stocksnap.io/license
 
 border.png
 controls.png
@@ -134,14 +138,20 @@ Graphical Image
 == Screenshots ==
 
 * Images used in theme screenshot (all CC0 licenced):
-https://pixabay.com/photos/suspension-bridge-south-africa-cable-163064/
-https://pixabay.com/photos/people-portrait-man-male-smile-1690965/
-https://pixabay.com/photos/whale-shark-shark-aquarium-water-281498/
-https://pixabay.com/photos/climbing-rappelling-canyoneering-1761386/
-https://pixabay.com/photos/diving-underwater-sea-float-813028/
+https://stocksnap.io/photo/W50PW8YI9U
+https://stocksnap.io/photo/CPFJYMYEQH
+https://stocksnap.io/photo/QVFEQ4HZBY
+https://stocksnap.io/photo/26OLIALPKJ
+https://stocksnap.io/photo/LGM78ZHH2Q
+https://stocksnap.io/photo/EZIOMSHSX4
 
 
 == Changelog ==
+
+= 2.2.5 - November 20 2019 =
+* Bug fix
+* add yoast breadcrumb support
+* Fix accessible menu
 
 = 2.2.4 - November 15 2019 =
 * Bug fix

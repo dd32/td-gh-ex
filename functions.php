@@ -161,7 +161,7 @@ add_action( 'after_setup_theme', 'aari_setup' );
  * @global int $content_width
  */
 function aari_content_width() {
-	$GLOBALS['aari_content_width'] = apply_filters( 'aari_content_width', 640 );
+	$GLOBALS['aari_content_width'] = apply_filters( 'aari_content_width', 1140 );
 }
 
 add_action( 'after_setup_theme', 'aari_content_width', 0 );
@@ -253,27 +253,19 @@ add_action( 'wp_head', 'aari_pingback_header' );
  * Enqueue scripts and styles.
  */
 
-
 function aari_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'aari-style', get_stylesheet_uri(), array(), '1.1', 'all' );
-
 	wp_enqueue_style( 'aari-blocks-style', get_template_directory_uri() . '/css/blocks.css', array(), '1.1', 'all' );
-
-	wp_enqueue_style( 'aari-bootstrap-style', get_template_directory_uri() . '/css/plugins/bootstrap.css', array(), '1.1', 'all' );
-
-	wp_enqueue_style( 'aari-jam-icons', get_template_directory_uri() . '/css/plugins/jam-icons.css', array(), '1.1', 'all' );
-
-	wp_enqueue_style( 'aari-animate', get_template_directory_uri() . '/css/plugins/animate.css', array(), '1.1', 'all' );
-
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/plugins/bootstrap.css', array(), '1.1', 'all' );
+	wp_enqueue_style( 'jam-icons', get_template_directory_uri() . '/css/plugins/jam-icons.css', array(), '1.1', 'all' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/plugins/animate.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'aari-main-style', get_template_directory_uri() . '/css/main-style.css', array(), '1.1', 'all' );
-
-	wp_enqueue_style( 'aari-colorbox-css', get_template_directory_uri() . '/css/plugins/colorbox.css', array(), '1.1', 'all' );
-
+	wp_enqueue_style( 'colorbox', get_template_directory_uri() . '/css/plugins/colorbox.css', array(), '1.1', 'all' );
+	wp_enqueue_style( 'responsive-nav', get_template_directory_uri() . '/css/responsive-nav.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'aari-fonts', aari_fonts_url(), array(), '1.1', 'all' );
-
-	wp_enqueue_style( 'aari-font-Merriweather', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900&display=swap', array(), '1.1', 'all' );
+	wp_enqueue_style( 'Merriweather', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900&display=swap', array(), '1.1', 'all' );
 
 	// Load the Internet Explorer 8 specific stylesheet.
 	wp_enqueue_style( 'aari-ie8', get_template_directory_uri() . '/css/ie8.css', array(), '1.0' );
@@ -285,12 +277,10 @@ function aari_scripts() {
 		wp_style_add_data( 'aari-ie9', 'conditional', 'IE 9' );
 	}
 
-	wp_enqueue_script( 'aari-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '4.0.0', true );
-
-	wp_enqueue_script( 'aari-colorbox-js', get_template_directory_uri() . '/js/colorbox/jquery.colorbox-min.js', array( 'jquery' ), '1.0.0', true );
-
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '4.0.0', true );
+	wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/js/colorbox/jquery.colorbox-min.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'aari-custom', get_template_directory_uri() . '/js/custom.js', array( 'jquery' ), '1.0.0', true );
-
+	wp_enqueue_script( 'responsive-nav', get_template_directory_uri() . '/js/responsive-nav.js', array( 'jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'aari-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0.2', true );
 
 	// Load the html5 shiv.
@@ -335,17 +325,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 /**
- * bootstrap navwalker
+ * Load bootstrap navwalker
  */
 require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 /**
- * Comments Walker
+ * Load Comments Walker
  */
 require get_template_directory() . '/inc/class-aari-comment.php';
 
 /**
- * search form
+ * Load search form
  */
 require get_template_directory() . '/inc/search-form.php';
 
@@ -356,11 +346,11 @@ require get_template_directory() . '/inc/search-form.php';
 require get_template_directory() . '/inc/customizer-functions.php';
 
 /**
- * Recent post widget
+ * Load Recent post widget
  */
 require get_template_directory() . '/inc/widgets/class-aari-recentpost-widget.php';
 
 /**
- * About me widget
+ * Load About me widget
  */
 require get_template_directory() . '/inc/widgets/class-aari-aboutme-widget.php';

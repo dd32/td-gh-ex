@@ -31,7 +31,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			}
 			$indent = str_repeat( $t, $depth );
 			// Default class to add to the file.
-			$classes = array( 'dropdown-menu' );
+			$classes = array( 'sub-menu' );
 			/**
 			 * Filters the CSS class(es) applied to a menu list element.
 			 *
@@ -109,7 +109,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			$args = apply_filters( 'aari_nav_menu_item_args', $args, $item, $depth );
 			// Add .dropdown or .active classes where they are needed.
 			if ( isset( $args->has_children ) && $args->has_children ) {
-				$classes[] = 'dropdown';
+				$classes[] = 'has-submenu dropdown';
 			}
 			if ( in_array( 'current-menu-item', $classes, true ) || in_array( 'current-menu-parent', $classes, true ) ) {
 				$classes[] = 'active';
@@ -153,13 +153,13 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$atts['data-toggle']   = 'dropdown';
 				$atts['aria-haspopup'] = 'true';
 				$atts['aria-expanded'] = 'false';
-				$atts['class']         = 'dropdown-toggle nav-link';
+				$atts['class']         = 'has-dropdown';
 				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
 				// Items in dropdowns use .dropdown-item instead of .nav-link.
 				if ( $depth > 0 ) {
-					$atts['class'] = 'dropdown-item';
+					$atts['class'] = '';
 				} else {
 					$atts['class'] = 'nav-link';
 				}

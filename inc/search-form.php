@@ -12,7 +12,7 @@ if ( ! function_exists( 'aari_search_form' ) ) :
 				<div class="search-cell">
 					<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<div class="search-field-holder">
-							<input type="search" class="search-field form-control main-search-input" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'aari' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+							<input type="search" class="search-field form-control main-search-input"  placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'aari' ); ?>" value="<?php echo get_search_query(); ?>" name="s"/>
 						</div>
 					</form>
 				</div>

@@ -18,17 +18,16 @@
 
 			<?php
 			if ( has_post_thumbnail() ) :
-				printf( "<div class='post_banner'><div class='gallery_image_1'><a href='%s'><img src='%s' alt=''></a></div></div>", esc_url( get_permalink() ), esc_url( get_the_post_thumbnail_url( $post, 'aari_post_thumb' ) ) );
+				printf( "<div class='post_banner'><div class='gallery_image_1'><a href='%s'><img src='%s' alt=''></a></div></div>", esc_url( get_permalink() ), esc_url( get_the_post_thumbnail_url( get_the_ID(), 'aari_post_thumb' ) ) );
 			endif;
 			?>
-		</header><!-- .entry-header --> 
+		</header><!-- .entry-header -->
 		<?php
 	endif;
 	?>
-	   
 
 
-	<div class="entry-content post_body <?php echo ( has_post_thumbnail() ? 'has_thumbnail' : 'no_thumbnail' ); ?>">
+	<div class="entry-content post_body <?php echo( has_post_thumbnail() ? 'has_thumbnail' : 'no_thumbnail' ); ?>">
 
 		<?php if ( 'post' === get_post_type() & ! is_singular() ) : ?>
 			<div class="post_meta">
@@ -47,7 +46,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-									__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'aari' ),
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'aari' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -65,9 +64,7 @@
 				)
 			);
 			?>
-		</div>      
-
-
+		</div>
 
 
 		<?php
@@ -88,14 +85,13 @@
 						</a>
 					</div>
 				</div>
-			</div>            
+			</div>
 			<?php
 		endif;
 		?>
 
 
 	</div><!-- .entry-content -->
-
 
 
 </article><!-- #post-<?php the_ID(); ?> -->

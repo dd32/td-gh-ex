@@ -18,7 +18,11 @@ get_header();
 		<div class="container">
 
 			<div class="post-categories">
-				<?php aari_breadcrumbs(); ?>
+				<?php
+				if ( function_exists( 'yoast_breadcrumb' ) ) {
+					yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">', '</div>' );
+				}
+				?>
 			</div>
 
 			<?php
@@ -39,7 +43,7 @@ get_header();
 	<!-- main content
 	================================================== -->
 	<div id="content_full" class="section-padding">
-		<div class="container">
+		<div id="content" class="container">
 			<div class="row sticky-container <?php echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
 
 
@@ -53,13 +57,13 @@ get_header();
 							<div class="row">
 								<div class="col-md-3">
 									<div class="avatar-part">
-										<?php printf( ' <img src="%1$s" alt="%2$s">', esc_url( get_avatar_url( get_the_author_meta( 'ID' ) ) ), esc_attr( get_the_author() ) ); ?>
+										<?php printf( ' <img src="%1$s" alt="%2$s">', esc_url( get_avatar_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ); ?>
 									</div>
 								</div>
 
 								<div class="col-md-9">
 									<div class="text">
-										<?php printf( '<h1 class="page-title">%1$s</h1><h5 class="btExcerpt">%2$s</h5>', esc_attr( get_the_author() ), esc_textarea( get_the_author_meta( 'description' ) ) ); ?>   
+										<?php printf( '<h1 class="page-title">%1$s</h1><h5 class="btExcerpt">%2$s</h5>', esc_html( get_the_author() ), esc_textarea( get_the_author_meta( 'description' ) ) ); ?>
 									</div>
 								</div>
 							</div>

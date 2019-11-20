@@ -14,20 +14,28 @@ get_header();
 	<!-- Site Header-->
 	<header id="header" class="site_header_image cover-bg" data-image-src="<?php echo ( get_theme_mod( 'search_header_background' ) !== null ? esc_url( get_theme_mod( 'search_header_background' ) ) : '' ); ?>" data-overlay="5">
 		<div class="container search-result">
+
 			<div class="post-categories">
-				<?php aari_breadcrumbs(); ?>
+				<?php
+				if ( function_exists( 'yoast_breadcrumb' ) ) {
+					yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">', '</div>' );
+				}
+				?>
 			</div>
+
 			<h1>
 				<?php
 				/* translators: %s: search query. */
-				printf( esc_html__( 'Search Results for: %s', 'aari' ), '<span>' . get_search_query() . '</span>' );
+				printf( esc_html__( 'Search Results for: <span> %s </span>', 'aari' ), get_search_query() );
 				?>
 			</h1>
+
 			<div class="post-subtitle-container">
 				<?php
 				the_archive_description( '<div class="post-author">', '</div>' );
 				?>
 			</div>
+
 		</div>
 	</header>
 	<!-- End Site Header
@@ -36,7 +44,7 @@ get_header();
 	<!-- main content
 	================================================== -->
 	<div id="content_full" class="section-padding">
-		<div class="container">
+		<div id="content" class="container">
 			<div class="row sticky-container">
 
 				<!-- latest-posts -->

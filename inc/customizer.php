@@ -12,6 +12,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function aari_customize_register( $wp_customize ) {
+
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -70,7 +71,6 @@ function aari_customize_register( $wp_customize ) {
 			'type'     => 'checkbox',
 		)
 	);
-
 	/* Header Options end */
 
 	/* Page options */
@@ -127,23 +127,6 @@ function aari_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting(
-		'disable_breadcrumbs',
-		array(
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'aari_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'breadcrumbs_control',
-		array(
-			'settings' => 'disable_breadcrumbs',
-			'label'    => esc_html__( 'Disable Breadcrumbs for Pages', 'aari' ),
-			'section'  => 'aari_page_setting',
-			'type'     => 'checkbox',
-		)
-	);
 	/* Page options end */
 
 	/* Post options */
@@ -177,24 +160,6 @@ function aari_customize_register( $wp_customize ) {
 				'right'     => esc_html__( 'Sidebar Right', 'aari' ),
 				'fullwidth' => esc_html__( 'Full Width', 'aari' ),
 			),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'disable_post_breadcrumbs',
-		array(
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'aari_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control(
-		'disable_post_breadcrumbs',
-		array(
-			'settings' => 'disable_post_breadcrumbs',
-			'label'    => esc_html__( 'Disable Breadcrumbs for Posts', 'aari' ),
-			'section'  => 'aari_post_setting',
-			'type'     => 'checkbox',
 		)
 	);
 
@@ -289,30 +254,7 @@ function aari_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
-		'related_post_by',
-		array(
-			'default'           => 'tag',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'aari_sanitize_select',
-		)
-	);
-	$wp_customize->add_control(
-		'related_post_control',
-		array(
-			'settings' => 'related_post_by',
-			'label'    => esc_html__( 'Related Post By:', 'aari' ),
-			'section'  => 'aari_post_setting',
-			'type'     => 'select',
-			'choices'  => array(
-				'tag' => esc_html__( 'Tags', 'aari' ),
-				''    => esc_html__( 'Categories', 'aari' ),
-			),
-		)
-	);
-
-	$wp_customize->add_setting(
-		'related_post_count',
+		'aari_related_post_count',
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => 3,
@@ -321,9 +263,9 @@ function aari_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		'rpost_number_control',
+		'aari_related_post_count',
 		array(
-			'settings' => 'related_post_count',
+			'settings' => 'aari_related_post_count',
 			'label'    => esc_html__( 'Number Related Post', 'aari' ),
 			'section'  => 'aari_post_setting',
 			'type'     => 'number',

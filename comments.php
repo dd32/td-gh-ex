@@ -27,14 +27,14 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'aari' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
 				printf(
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $aari_comment_count, 'comments title', 'aari' ) ),
-					wp_kses_post( number_format_i18n( $aari_comment_count ) ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+					esc_html( number_format_i18n( $aari_comment_count ) ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}
 			?>
@@ -72,37 +72,36 @@ if ( post_password_required() ) {
 
 	$aari_args = array(
 		'format'               => 'html5',
-		'title_reply'          => '<h4 class="title">' . esc_attr__( 'Leave A Reply', 'aari' ) . '</h4>',
+		'title_reply'          => '<h4 class="title">' . esc_html__( 'Leave A Reply', 'aari' ) . '</h4>',
 		'comment_notes_before' => '',
-		'comment_field'        => '<div class="col-12">' . '<div class="comment-form-comment">' . '<label for="comment">' . esc_attr__( 'Comment', 'aari' ) . '</label>' . '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' . '</textarea></div></div>',
+		'comment_field'        => '<div class="col-12">' . '<div class="comment-form-comment">' . '<label for="comment">' . esc_html__( 'Comment', 'aari' ) . '</label>' . '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' . '</textarea></div></div>',
 		'class_submit'         => 'form-submit',
 		'fields'               => apply_filters(
 			'aari_form_default_fields',
 			array(
 				'author'  =>
 					'<div class="col-lg-4"><div class="comment-form-author form-comment">' .
-					'<label for="author">' . esc_attr__( 'Name', 'aari' ) . '</label> ' .
-					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+					'<label for="author">' . esc_html__( 'Name', 'aari' ) . '</label> ' .
+					'<input id="author" name="author" type="text" value="' . esc_html( $commenter['comment_author'] ) .
 					'" size="30" /></div></div>',
 				'email'   =>
-					'<div class="col-lg-4"><div class="comment-form-email form-comment"><label for="email">' . esc_attr__( 'Email', 'aari' ) . '</label> ' .
-					'<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
+					'<div class="col-lg-4"><div class="comment-form-email form-comment"><label for="email">' . esc_html__( 'Email', 'aari' ) . '</label> ' .
+					'<input id="email" name="email" type="text" value="' . sanitize_email( $commenter['comment_author_email'] ) .
 					'" size="30" /></div></div>',
 				'url'     =>
-					'<div class="col-lg-4"><div class="comment-form-url form-comment"><label for="email">' . esc_attr__( 'Website', 'aari' ) . '</label>' .
-					'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+					'<div class="col-lg-4"><div class="comment-form-url form-comment"><label for="email">' . esc_html__( 'Website', 'aari' ) . '</label>' .
+					'<input id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) .
 					'" size="30" /></div></div>',
 				'cookies' => '',
 
 			)
 		),
 
-
-
 	);
-	comment_form( $aari_args );
-	?>
 
+	comment_form( $aari_args );
+
+	?>
 
 
 </div><!-- #comments -->

@@ -19,7 +19,7 @@ get_header();
 	<!-- main content
 	================================================== -->
 	<div id="content_full" class="section-padding">
-		<div class="container">
+		<div id="content" class="container">
 			<div class="row sticky-container <?php echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
 
 				<!-- latest-posts -->
@@ -67,7 +67,9 @@ get_header();
 
 				<!-- Side Bar -->
 				<?php
-				echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? '' : wp_kses_post( get_sidebar() ) );
+				if ( 'fullwidth' !== get_theme_mod( 'post_layout' ) ) {
+					get_sidebar();
+				}
 				?>
 				<!-- End Side Bar -->                          
 

@@ -21,7 +21,7 @@ if ( ! function_exists( 'aari_posted_on' ) ) :
 			wp_kses_post( $authorof ),
 			esc_url( get_author_posts_url( $get_author_id ) ),
 			esc_url( $get_author_gravatar ),
-			esc_attr( get_the_author() )
+			esc_html( get_the_author() )
 		);
 
 		$byline = sprintf(
@@ -34,7 +34,16 @@ if ( ! function_exists( 'aari_posted_on' ) ) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'aari' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="post_meta_item post_cat">%1$s</span>', wp_kses_post( $categories_list ) );
+			$arr_allowed = array(
+				'a' => array(
+					'href'   => array(),
+					'rel'    => array(),
+					'before' => array(),
+					'after'  => array(),
+				),
+			);
+			printf( '<span class="post_meta_item post_cat">%1$s</span>', wp_kses( $categories_list, $arr_allowed ) );
+
 		}
 
 	}
@@ -92,7 +101,9 @@ if ( ! function_exists( 'aari_single_post_header' ) ) :
 		$categories_list = get_the_category_list( esc_html__( ', ', 'aari' ) );
 
 		if ( ! is_attachment() ) :
-			echo ( 1 === get_theme_mod( 'disable_post_breadcrumbs' ) ? '' : wp_kses_post( aari_breadcrumbs() ) );
+			if ( function_exists( 'yoast_breadcrumb' ) ) {
+				yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">', '</div>' );
+			}
 		endif;
 
 		the_title( '<h1 class="entry-title">', '</h1>' );
@@ -103,9 +114,9 @@ if ( ! function_exists( 'aari_single_post_header' ) ) :
 		}
 		$time_string = sprintf(
 			$time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
+			esc_html( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
+			esc_html( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
 
@@ -113,7 +124,13 @@ if ( ! function_exists( 'aari_single_post_header' ) ) :
 
 		if ( ! get_theme_mod( 'disable_post_details' ) ) {
 			if ( ! is_page() ) :
-				printf( '<div class="post-subtitle-container"><div class="post-date"><a href="%1$s">%2$s</a></div><div class="post-author"><a href="%3$s">%4$s</a></div></div>', wp_kses_post( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), wp_kses_post( $time_string ), esc_url( get_author_posts_url( $get_author_id ) ), esc_attr( get_the_author() ) );
+				$arr_tags = array(
+					'time' => array(
+						'class'    => array(),
+						'datetime' => array(),
+					),
+				);
+				printf( '<div class="post-subtitle-container"><div class="post-date"><a href="%1$s">%2$s</a></div><div class="post-author"><a href="%3$s">%4$s</a></div></div>', esc_html( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), wp_kses( $time_string, $arr_tags ), esc_url( get_author_posts_url( $get_author_id ) ), esc_html( get_the_author() ) );
 			endif;
 		}
 	}
@@ -138,7 +155,15 @@ if ( ! function_exists( 'aari_single_tags_cloud' ) ) :
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
 			if ( ! get_theme_mod( 'disable_category_cloud' ) ) {
-				printf( '<span class="tagcloud catloud clearfix"><span class="namee">%1$s </span>%2$s</span>', esc_html_x( 'Post Categories:  &nbsp;', 'aari', 'aari' ), wp_kses_post( $categories_list ) );
+				$arr_allowed = array(
+					'a' => array(
+						'href'   => array(),
+						'rel'    => array(),
+						'before' => array(),
+						'after'  => array(),
+					),
+				);
+				printf( '<span class="tagcloud catloud clearfix"><span class="namee">%1$s </span>%2$s</span>', esc_html_x( 'Post Categories:  &nbsp;', 'aari', 'aari' ), wp_kses( $categories_list, $arr_allowed ) );
 			}
 		}
 
@@ -146,10 +171,19 @@ if ( ! function_exists( 'aari_single_tags_cloud' ) ) :
 		$tags_list = get_the_tag_list( '', ',' );
 		if ( $tags_list && ! is_wp_error( $tags_list ) && ! get_theme_mod( 'disable_tag_cloud' ) ) {
 
+			$arr_allowed = array(
+				'a' => array(
+					'href'   => array(),
+					'rel'    => array(),
+					'before' => array(),
+					'after'  => array(),
+				),
+			);
+
 			printf(
 				'<span class="tagcloud clearfix"><span class="namee">%1$s </span>%2$s</span>',
 				esc_html_x( 'Tags:  &nbsp;', 'Used before tag names.', 'aari' ),
-				wp_kses_post( $tags_list )
+				wp_kses( $tags_list, $arr_allowed )
 			);
 		}
 	}
@@ -177,17 +211,24 @@ if ( ! function_exists( 'aari_post_footer_author' ) ) :
 
 		$time_string    = sprintf(
 			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
 		$author_details = '<div class="post_bottom_meta"><div class="half_width"><ul class="post_meta"><li><span class="author"><img src="%1$s" class="avatar" alt>By <a href="%2$s">%3$s</a></span></li><li><span class="date">%4$s</span></li></ul></div></div>';
+
+		$arr_tags = array(
+			'time' => array(
+				'class'    => array(),
+				'datetime' => array(),
+			),
+		);
 
 		printf(
 			wp_kses_post( $author_details ),
 			esc_url( $get_author_gravatar ),
 			esc_url( get_author_posts_url( $get_author_id ) ),
-			esc_attr( get_the_author() ),
-			wp_kses_post( $time_string )
+			esc_html( get_the_author() ),
+			wp_kses( $time_string, $arr_tags )
 		);
 	}
 
@@ -216,7 +257,7 @@ if ( ! function_exists( 'aari_related_post_ext' ) ) :
 		}
 		$time_string = sprintf(
 			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
 
@@ -244,11 +285,18 @@ if ( ! function_exists( 'aari_post_date' ) ) :
 
 		$time_string = sprintf(
 			$time_string,
-			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
 
-		echo wp_kses_post( $time_string );
+		$arr_tags = array(
+			'time' => array(
+				'class'    => array(),
+				'datetime' => array(),
+			),
+		);
+
+		echo wp_kses( $time_string, $arr_tags );
 
 	}
 

@@ -20,9 +20,11 @@
 					<?php
 
 					if ( get_theme_mod( 'footer_logo' ) ) {
-						printf( '<a href="%1$s" class="footer_logo"><img src="%2$s" alt="%3$s"></a>', esc_url( home_url( '/' ) ), esc_url( get_theme_mod( 'footer_logo' ) ), esc_html( get_bloginfo( 'name', 'display' ) ) );
-					}
-					?>
+						?>
+
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer_logo"><img src="<?php echo esc_url( get_theme_mod( 'footer_logo' ) ); ?>" alt="<?php bloginfo( 'name', 'display' ); ?>"></a>
+
+					<?php } ?>
 
 					<div class="box_scoial_icon">
 						<?php if ( is_active_sidebar( 'footer-widget' ) ) : ?>

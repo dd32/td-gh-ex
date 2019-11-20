@@ -74,7 +74,7 @@ class Aari_Recentpost_Widget extends WP_Widget {
 					<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
 
 					<?php if ( $instance['displaypostdate_checkbox'] ) : ?>
-						<span class="post-date"><?php echo wp_kses_post( get_the_date() ); ?></span>
+						<span class="post-date"><?php echo esc_html( get_the_date() ); ?></span>
 					<?php endif; ?>
 
 				</div>
@@ -100,14 +100,14 @@ class Aari_Recentpost_Widget extends WP_Widget {
 			switch ( $widget_field['type'] ) {
 				case 'checkbox':
 					$output .= '<p>';
-					$output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, true, false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" value="1">';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . '</label>';
+					$output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, true, false ) . ' id="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_html( $this->get_field_name( $widget_field['id'] ) ) . '" value="1">';
+					$output .= '<label for="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'] ) . '</label>';
 					$output .= '</p>';
 					break;
 				default:
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . ':</label> ';
-					$output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
+					$output .= '<label for="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'] ) . ':</label> ';
+					$output .= '<input class="widefat" id="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_html( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
 					$output .= '</p>';
 			}
 		}
@@ -145,8 +145,8 @@ class Aari_Recentpost_Widget extends WP_Widget {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Recent Post', 'aari' );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'aari' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+			<label for="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'aari' ); ?></label>
+			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
 		<?php
 		$this->field_generator( $instance );

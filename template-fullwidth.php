@@ -21,8 +21,13 @@ while ( have_posts() ) :
 	<header class="site_header_image cover-bg" data-image-src="<?php echo ( get_the_post_thumbnail_url() ? esc_url( get_the_post_thumbnail_url() ) : esc_url( get_theme_mod( 'page_header_background' ) ) ); ?>"  data-overlay="5">
 		<div class="container page">
 			<?php
+
 			aari_single_post_header();
-			echo ( get_theme_mod( 'disable_breadcrumbs' ) ? '' : wp_kses_post( aari_breadcrumbs() ) );
+
+			if ( function_exists( 'yoast_breadcrumb' ) ) {
+				yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">', '</div>' );
+			}
+
 			?>
 		</div>
 	</header>
@@ -32,7 +37,7 @@ while ( have_posts() ) :
 	================================================== -->
 	<div id="content_full" class="main_p main_p_v_2 section-padding">
 
-		<div class="container">
+		<div id="content" class="container">
 			<div class="row sticky-container">
 				<div class="col-lg-12  content">
 					<div class="p_content entry_header_small">

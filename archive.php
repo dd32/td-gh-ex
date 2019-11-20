@@ -21,11 +21,13 @@ get_header();
 			<div class="container">
 				<div class="post-categories">
 					<?php
-					aari_breadcrumbs();
+					if ( function_exists( 'yoast_breadcrumb' ) ) {
+						yoast_breadcrumb( '<div id="breadcrumbs" class="breadcrumbs">', '</div>' );
+					}
 					?>
 				</div>
 				<?php
-				printf( '<h1>%s</h1>', esc_attr( get_the_archive_title() ) );
+				the_archive_title( '<h1>', '</h1>' );
 				?>
 				<div class="post-subtitle-container">
 					<?php
@@ -40,7 +42,7 @@ get_header();
 		<!-- main content
 		================================================== -->
 		<div id="content_full" class="section-padding">
-			<div class="container">
+			<div id="content" class="container">
 				<div class="row sticky-container <?php echo( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
 
 					<!-- latest-posts -->

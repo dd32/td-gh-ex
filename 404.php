@@ -22,7 +22,7 @@ get_header();
 
 	<div id="content_full" class="main_p main_p_v_2 section-padding">
 
-		<div class="container">
+		<div id="content" class="container">
 			<div class="row sticky-container">
 				<div class="col-lg-12  content">
 					<div class="p_content entry_header_small not-found">

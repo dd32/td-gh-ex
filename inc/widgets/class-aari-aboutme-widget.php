@@ -33,6 +33,7 @@ class Aari_Aboutme_Widget extends WP_Widget {
 	);
 
 	public function widget( $args, $instance ) {
+
 		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
@@ -42,8 +43,8 @@ class Aari_Aboutme_Widget extends WP_Widget {
 		$author_image = wp_get_attachment_image_src( $instance['imageupload_media'], 'thumbnail' );
 		// Output generated fields
 		echo '<div class="about-widget">';
-		echo '<img src="' . esc_url( $author_image[0] ) . '" alt="About Me" class="rounded-circle">';
-		echo '<p>' . esc_attr( $instance['description_textarea'] ) . '</p>';
+		echo '<img src="' . esc_url( $author_image[0] ) . '" alt="' . esc_html__( 'About Me', 'aari' ) . '" class="rounded-circle">';
+		echo '<p>' . esc_textarea( $instance['description_textarea'] ) . '</p>';
 		echo '</div>';
 
 		echo wp_kses_post( $args['after_widget'] );
@@ -101,23 +102,23 @@ class Aari_Aboutme_Widget extends WP_Widget {
 						$media_url = wp_get_attachment_url( $widget_value );
 					}
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . ':</label> ';
-					$output .= '<input style="display:none;" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . $widget_value . '">';
-					$output .= '<span id="preview' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . $media_url . ');background-size:contain;background-repeat:no-repeat;"></span>';
-					$output .= '<button id="' . $this->get_field_id( $widget_field['id'] ) . '" class="button select-media custommedia">Add Media</button>';
+					$output .= '<label for="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'] ) . ':</label> ';
+					$output .= '<input style="display:none;" class="widefat" id="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_html( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
+					$output .= '<span id="preview' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . esc_url( $media_url ) . ');background-size:contain;background-repeat:no-repeat;"></span>';
+					$output .= '<button id="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" class="button select-media custommedia">' . esc_html__( 'Add Media', 'aari' ) . '</button>';
 					$output .= '<input style="width: 19%;" class="button remove-media" id="buttonremove" name="buttonremove" type="button" value="Clear" />';
 					$output .= '</p>';
 					break;
 				case 'textarea':
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . ':</label> ';
-					$output .= '<textarea class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" rows="6" cols="6" value="' . esc_attr( $widget_value ) . '">' . $widget_value . '</textarea>';
+					$output .= '<label for="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'] ) . ':</label> ';
+					$output .= '<textarea class="widefat" id="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_html( $this->get_field_name( $widget_field['id'] ) ) . '" rows="6" cols="6" value="' . esc_attr( $widget_value ) . '">' . esc_attr( $widget_value ) . '</textarea>';
 					$output .= '</p>';
 					break;
 				default:
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'], 'aari' ) . ':</label> ';
-					$output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
+					$output .= '<label for="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_attr( $widget_field['label'] ) . ':</label> ';
+					$output .= '<input class="widefat" id="' . esc_html( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_html( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
 					$output .= '</p>';
 			}
 		}
@@ -165,11 +166,11 @@ class Aari_Aboutme_Widget extends WP_Widget {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'About Me', 'aari' );
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'aari' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+			<label for="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'aari' ); ?></label>
+			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-		<?php
 
+		<?php
 		$this->field_generator( $instance );
 	}
 
