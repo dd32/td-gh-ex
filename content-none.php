@@ -25,7 +25,7 @@
 
 		<?php else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'accesspress-root' ); ?></p>
+			<p><?php esc_html_e( 'It se ems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'accesspress-root' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>

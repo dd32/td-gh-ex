@@ -1,5 +1,17 @@
-License: GNU General Public License v3 or later
+=== AccessPress Root ===
+
+Requires at least: 4.0
+Tested up to: 5.3
+Stable tag: 2.0
+Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, featured-image-header, theme-options, threaded-comments, featured-images, custom-header, translation-ready
+License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Contributors: access-keys
+
+== Description ==
+Description: AccessPress Root is a simple, clean, beautifully designed responsive WordPress business theme with drag and drop homepage sections. Its minimal but mostly used features will help you setup your website easily and quickly. Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Root is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins. Great customer support via online chat, email, support forum. Official support forum: https://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-root/
+
+
 AccessPress Root WordPress Theme, Copyright 2014 AccessPress Themes
 AccessPress Root is distributed under the terms of the GNU GPL v3
 
@@ -96,112 +108,119 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+= 2.0 =
+** Removed old welcome page and added new
+** Added Demo Importer
+** Regenerated translation file
+** Removed theme options and made customizer based
+** Added sanitization functions
+** Added custom header and background support
+** Added Skip Link Content Option
+** Added keyboard Accessibility
 
-Version 1.34
- * Fixed Slider Button link issue 
- * Fixed Dynamic Color issue.
- * Tetsted with PHP 7.3+ 
- * Tested with WordPress 5X
- * Tested with Woocommerce 3.6X
- * Updates Minor CSS
+= 1.34 =
+ ** Fixed Slider Button link issue 
+ ** Fixed Dynamic Color issue.
+ ** Tetsted with PHP 7.3+ 
+ ** Tested with WordPress 5X
+ ** Tested with Woocommerce 3.6X
+ ** Updates Minor CSS
 
-Version 1.33
- * Added Styles for Guttenberg Compatible
- * Updates Minor CSS
+= 1.33 =
+ ** Added Styles for Guttenberg Compatible
+ ** Updates Minor CSS
 
-Version 1.32
- * Fixed Dynamic Template Color options in mobile view
+= 1.32 =
+ ** Fixed Dynamic Template Color options in mobile view
 
-Version 1.31
- * Added Template Color Option
+= 1.31 =
+ ** Added Template Color Option
 
-Version 1.30
- * Made Translation Ready
- * Minor Bug Fixes
+= 1.30 =
+ ** Made Translation Ready
+ ** Minor Bug Fixes
 
-Version 1.29
- * Fixed Security Issues
+= 1.29 =
+ ** Fixed Security Issues
 
-Version 1.28
- * Updated bxSlider
- * Updated Fontawesome Fonts
+= 1.28 =
+ ** Updated bxSlider
+ ** Updated Fontawesome Fonts
 
- Version 1.27
- * Minor bug fixes
+ = 1.27 =
+ ** Minor bug fixes
 
-Version 1.25
- * Added Welcome Page with demo import functionality
+= 1.25 =
+ ** Added Welcome Page with demo import functionality
 
-Version 1.25
- * Testing on WordPress v4.6
- * Fixed the text domain on tgmpa file
- * Updated .pot file
- 
-Version 1.24
- * Minor Changes in CSS
+= 1.25 =
+ ** Testing on WordPress v4.6
+ ** Fixed the text domain on tgmpa file
+ ** Updated .pot file
 
-Version 1.23
- * Woocommerce Compatible
+ = 1.24 =
+ ** Minor Changes in CSS
 
-Version 1.22
-* Fontawesome path error fixed.
-* Minor edit in off canvas menu js file
+= 1.23 =
+ ** Woocommerce Compatible
 
-== Changelog ==
-Version 1.21
-* CSS fixes with the latest version of the WordPress 4.4
+= 1.22 =
+** Fontawesome path error fixed.
+** Minor edit in off canvas menu js file
 
-Version 1.20
-* Hardcoded Title tag removed
+= 1.21 =
+** CSS fixes with the latest version of the WordPress 4.4
 
-Version 1.19
-* More Theme Page added
+= 1.20 =
+** Hardcoded Title tag removed
 
-== Changelog ==
-Version 1.18
-* Service Section bug for post count fixed
-* FontAwesome updated to latest version
-* Minor Fixes in CSS
+= 1.19 =
+** More Theme Page added
 
-Version 1.17
-* Textdomain issue fixed
-* PHP warning notice for background color fixed
+= 1.18 =
+** Service Section bug for post count fixed
+** FontAwesome updated to latest version
+** Minor Fixes in CSS
 
-Version 1.16
-* Change in documentation and demo links
-* TGM activation plugin updated to 2.5.2
+= 1.17 =
+** Textdomain issue fixed
+** PHP warning notice for background color fixed
 
-Version 1.15
-* CSS bug for responsive menu fixed
-* Minor Change in Theme Option Panel text
+= 1.16 =
+** Change in documentation and demo links
+** TGM activation plugin updated to 2.5.2
 
-Version 1.14
-* Breadcrumb error in the attachment single page fixed
+= 1.15 =
+** CSS bug for responsive menu fixed
+** Minor Change in Theme Option Panel text
 
-Version 1.13
-* Demo Content Removed
-* Padding Issues in Sidebar widget fixed
-* Minor Change in Theme Option Panel
-* Minor Design Bug Fixed
+= 1.14 =
+** Breadcrumb error in the attachment single page fixed
 
-Version 1.12
-* Blog Page layout fixed
-* Minor Changes in Admin Panel
+= 1.13 =
+** Demo Content Removed
+** Padding Issues in Sidebar widget fixed
+** Minor Change in Theme Option Panel
+** Minor Design Bug Fixed
 
-Version 1.11
-* Design bug Fixed
-* Screenshot Changed
+= 1.12 =
+** Blog Page layout fixed
+** Minor Changes in Admin Panel
 
-Version 1.10
-* Plugins Added via TGM-Plugin-Activation
-* Minor changes in the escaping of the outputs
-* Gap between slider and content for a static page removed.
+= 1.11 =
+** Design bug Fixed
+** Screenshot Changed
 
-Version 1.08
-* Added Demo Content.
-* Minor changes in theme Option Panel
-* Screen Shot Change
-* New .pot file added
+= 1.10 =
+** Plugins Added via TGM-Plugin-Activation
+** Minor changes in the escaping of the outputs
+** Gap between slider and content for a static page removed.
 
-Version 1.0
-* Submitted theme for review in http://wordpress.org
+= 1.08 =
+** Added Demo Content.
+** Minor changes in theme Option Panel
+** Screen Shot Change
+** New .pot file added
+
+= 1.0 =
+** Submitted theme for review in http://wordpress.org

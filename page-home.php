@@ -8,7 +8,11 @@
 get_header(); ?>
 
 <?php 
-	$home_order = of_get_option('home_order');
+    $home_order = get_theme_mod( 'accesspress_root_homepage_sections_order','' );
+    if( empty($home_order) ){
+		$home_order = of_get_option('home_order');
+        set_theme_mod( 'accesspress_root_homepage_sections_order', $home_order );
+    }
 	if(empty($home_order)):
 		$home_order = array(
 			'text_slider' => '1', 
@@ -19,6 +23,7 @@ get_header(); ?>
 			'project_block' => '6',
 	    	'testimonial_slider' => '7'
 			);
+        set_theme_mod( 'accesspress_root_homepage_sections_order', $home_order );
 	endif;
 
 	foreach ($home_order as $key => $value) {

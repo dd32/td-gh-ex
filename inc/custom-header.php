@@ -30,8 +30,6 @@ function accesspress_root_custom_header_setup() {
 		'height'                 => 250,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'accesspress_root_header_style',
-		'admin-head-callback'    => 'accesspress_root_admin_header_style',
-		'admin-preview-callback' => 'accesspress_root_admin_header_image',
 	) ) );
 }
 add_action( 'after_setup_theme', 'accesspress_root_custom_header_setup' );
@@ -56,7 +54,7 @@ function accesspress_root_header_style() {
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
+		if ( ! display_header_text() ) :
 	?>
 		.site-title,
 		.site-description {
@@ -67,8 +65,8 @@ function accesspress_root_header_style() {
 		// If the user has set a custom color for the text use that
 		else :
 	?>
-		.site-title a,
-		.site-description {
+		.site-title,
+		#site-branding h2.site-description {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}
 	<?php endif; ?>
@@ -76,51 +74,3 @@ function accesspress_root_header_style() {
 	<?php
 }
 endif; // accesspress_root_header_style
-
-if ( ! function_exists( 'accesspress_root_admin_header_style' ) ) :
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @see accesspress_root_custom_header_setup().
- */
-function accesspress_root_admin_header_style() {
-?>
-	<style type="text/css">
-		.appearance_page_custom-header #headimg {
-			border: none;
-		}
-		#headimg h1,
-		#desc {
-		}
-		#headimg h1 {
-		}
-		#headimg h1 a {
-		}
-		#desc {
-		}
-		#headimg img {
-		}
-	</style>
-<?php
-}
-endif; // accesspress_root_admin_header_style
-
-if ( ! function_exists( 'accesspress_root_admin_header_image' ) ) :
-/**
- * Custom header image markup displayed on the Appearance > Header admin panel.
- *
- * @see accesspress_root_custom_header_setup().
- */
-function accesspress_root_admin_header_image() {
-	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
-?>
-	<div id="headimg">
-		<h1 class="displaying-header-text"><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-		<div class="displaying-header-text" id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></div>
-		<?php if ( get_header_image() ) : ?>
-		<img src="<?php header_image(); ?>" alt="">
-		<?php endif; ?>
-	</div>
-<?php
-}
-endif; // accesspress_root_admin_header_image

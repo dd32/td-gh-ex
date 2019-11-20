@@ -46,6 +46,12 @@ function accesspress_root_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'accesspress_root_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
+	add_theme_support( 'custom-header' );
 
 	/** Woocommerce Compatibility **/
 	add_theme_support( 'woocommerce' );
@@ -92,6 +98,32 @@ function accesspress_root_setup() {
 endif; // accesspress_root_setup
 add_action( 'after_setup_theme', 'accesspress_root_setup' );
 
+
+	/**
+	 * Enqueue Admin Scripts and Styles
+	 */
+	function accesspress_root_admin_scripts() {
+	    wp_enqueue_style( 'accesspress-root-admin', get_template_directory_uri() . '/inc/css/ap-admin.css');
+	    wp_register_script('accesspress-root-admin', get_template_directory_uri() . '/inc/js/ap-admin.js', array('jquery','jquery-ui-sortable' ));
+	    wp_enqueue_script('accesspress-root-admin');
+
+    	$default_sections = array(
+			'text_slider' => '1', 
+			'service_block' => '2',
+			'call_to_action' => '3',
+			'feature_block' => '4',
+			'latest_post_block' => '5',
+			'project_block' => '6',
+	    	'testimonial_slider' => '7'
+	    );
+		$accesspress_root_customizer = array();
+		$accesspress_root_customizer['ajax_url'] = admin_url( 'admin-ajax.php' );
+		$accesspress_root_option = get_option( 'accesspress-root', $default_sections );
+		$accesspress_root_customizer['sections'] = isset($accesspress_root_option['home_order']) ? $accesspress_root_option['home_order'] : $default_sections;
+		wp_localize_script( 'accesspress-root-admin', 'ApAdminObj', $accesspress_root_customizer );
+	}
+
+	add_action('admin_enqueue_scripts', 'accesspress_root_admin_scripts');
 /**
  * Register widget area.
  *
@@ -169,21 +201,23 @@ function accesspress_root_scripts() {
     ); 
 	wp_enqueue_style('accesspress-root-google-fonts-css', add_query_arg($query_args, "//fonts.googleapis.com/css"));
 	wp_enqueue_style('accesspress-root-step3-css', get_template_directory_uri() . '/css/off-canvas-menu.css');
-    wp_enqueue_style('accesspress-root-font-awesome-css', get_template_directory_uri() . '/css/fontawesome/css/font-awesome.min.css');
-    wp_enqueue_style('accesspress-root-bx-slider-css', get_template_directory_uri() . '/css/jquery.bxslider.css');
-    wp_enqueue_style('accesspress-root-nivo-lightbox-css', get_template_directory_uri() . '/css/nivo-lightbox.css');
+    wp_enqueue_style('font-awesome-css', get_template_directory_uri() . '/css/fontawesome/css/font-awesome.min.css');
+    wp_enqueue_style('bxslider', get_template_directory_uri() . '/css/jquery.bxslider.css');
+    wp_enqueue_style('nivo-lightbox', get_template_directory_uri() . '/css/nivo-lightbox.css');
     wp_enqueue_style('accesspress-root-woocommerce-style',get_template_directory_uri().'/woocommerce/woocommerce-style.css');
     wp_enqueue_style('accesspress-root-style', get_stylesheet_uri() );
+    wp_enqueue_style('ap-root-keyboard', get_template_directory_uri() . '/css/keyboard.css');
+
     if(of_get_option('responsive') == '1') :
 		wp_enqueue_style( 'accesspress-root-responsive', get_template_directory_uri() . '/css/responsive.css' );
 	endif;
 
-	wp_enqueue_script( 'accesspress-root-bx-slider-js', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.2.1', true );
-	wp_enqueue_script( 'accesspress-root-actual-js', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
-	wp_enqueue_script( 'accesspress-root-lightbox-js', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '1.2.0', true );
-	wp_enqueue_script( 'accesspress-root-modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '1.2.0', false );
-    wp_enqueue_script( 'accesspress-root-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
-    wp_enqueue_script( 'accesspress-root-off-canvas-menu-js', get_template_directory_uri() . '/js/off-canvas-menu.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'bxslider-js', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.2.1', true );
+	wp_enqueue_script( 'actual', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
+	wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '1.2.0', true );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.min.js', array('jquery'), '1.2.0', false );
+    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.0', true);
+    wp_enqueue_script( 'off-canvas-menu', get_template_directory_uri() . '/js/off-canvas-menu.js', array(), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -225,12 +259,14 @@ require get_template_directory() .'/woocommerce/woocommerce-function.php';
  *
  * Add Welcome Page
  */
-require get_template_directory() .'/welcome/welcome.php';
+require get_template_directory() .'/inc/welcome/welcome-config.php';
 
 /**
  *
  * Add Dynamic Styles
  */
 require get_template_directory() .'/css/style.php';
-
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';

@@ -1,0 +1,23 @@
+li.control-section {
+    position: relative;
+}
+.control-section .dashicons.section-trigger,
+.control-section .dashicons.section-drag {
+    line-height:1;
+    padding: 11.4px 11px 11.4px 11px;
+    background: #ffffff;
+    border-bottom: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    display: inline-block;
+    cursor : pointer;
+    position: relative;
+}
+#sub-accordion-panel-accesspress_root_homepage.current-panel .control-section > h3.accordion-section-title {
+    width: calc(100% - 96px);
+    display: inline-block;
+}
+li.control-section:hover .section-trigger,
+li.control-section:hover .section-drag {
+    background: #f3f3f5;
+}
