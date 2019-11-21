@@ -54,13 +54,25 @@ a:focus,
 a:hover{
   text-decoration:none !important;
 }
-a:focus{
+a:focus,
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="phno"]:focus, 
+input[type="password"]:focus, 
+input[type="search"]:focus,
+input[type="tel"]:focus, 
+textarea:focus,
+input[type="submit"]:focus,
+#comments:focus,
+select{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
-}
-input:focus, #comments:focus, textarea:focus{
-  outline: 1px dotted #000;
-  border-bottom: 1px solid #000;
+  text-decoration:none !important;
+} 
+.serach_inner input.search-field:focus, .serach_inner input.search-submit:focus, .closepop a:focus{
+  outline: 1px dotted #fff;
+  border-bottom: 1px solid #fff;
+  text-decoration:none !important;
 } 
 ul{ 
   margin:0 15px 0 0; 
@@ -635,7 +647,7 @@ ul.list_nav {
 }
 
 iframe,
-.entry-audio audio{
+.entry-audio audio, .entry-video video{
   width: 100%;
 }
 /*---------Sticky Header---------*/
@@ -675,8 +687,8 @@ iframe,
   width: 40px;
   height: 40px;
   position: fixed;
-  bottom: 50px;
-  left: 100px;
+  bottom: 20px;
+  left: 10px;
   font-size: 20px;
   display: none;
   color: #fff !important;
@@ -684,7 +696,7 @@ iframe,
   background: #88d055;
 }
 .scrollup.left i{
-  right: 100px;
+  right: 10px;
 }
 .scrollup.center i{
   right: 50%;
@@ -834,7 +846,7 @@ h1.page-title {
   border: 1px solid #e1e1e1;
   box-shadow: 0px 15px 35px -15px #e1e1e1
 }
-.post-main-box h3 {
+.post-main-box h2 {
   font-size: 18px;
   color: #010203;
   letter-spacing: 1px;
@@ -860,7 +872,7 @@ h1.page-title {
   border-top: solid 2px #d7d7d7;
   margin-bottom: 0;
 }
-.post-main-box:hover h3{
+.post-main-box:hover h2{
   color: #88d055;
 }
 .entry-content a, .sidebar .textwidget p a, .textwidget p a, #comments p a, .slider .inner_carousel p a{
@@ -900,6 +912,7 @@ h1.page-title {
   background: #f1f1f1;
   padding: 10px;
   margin-bottom: 15px;
+  text-align: right;
 }
 .post-info i{
   margin-left: 10px;

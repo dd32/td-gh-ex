@@ -34,14 +34,14 @@
 				<div class="col-lg-1 col-md-2 col-6">
 			        <?php if( get_theme_mod( 'automotive_centre_search_hide_show') != '') { ?>
 			        <div class="search-box">
-			        	<span><i class="fas fa-search"></i></span>
+			        	<span><a href="#"><i class="fas fa-search"></i></a></span>
 			        </div>
 			        <?php }?>
 			    </div>
 			</div>
 		</div>
 		<div class="serach_outer">
-	      	<div class="closepop"><i class="far fa-window-close"></i></div>
+	      	<div class="closepop"><a href="#"><i class="far fa-window-close"></i></a></div>
 	      	<div class="serach_inner">
 	        	<?php get_search_form(); ?>
 	      	</div>

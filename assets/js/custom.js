@@ -35,11 +35,11 @@ function menu_closeNav() {
 
 	/**** Hidden search box ***/
 	jQuery('document').ready(function($){
-		$('.search-box span i').click(function(){
+		$('.search-box span a').click(function(){
 	        $(".serach_outer").slideDown(1000);
 	    });
 
-	    $('.closepop i').click(function(){
+	    $('.closepop a').click(function(){
 	        $(".serach_outer").slideUp(1000);
 	    });
 	});	

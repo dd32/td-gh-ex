@@ -12,7 +12,7 @@
 		$custom_css .='}';
 	}
 	if($automotive_centre_first_color != false){
-		$custom_css .='#sidebar ul li a:hover,.info-box i,a,.post-navigation a:hover .post-title, .post-navigation a:focus .post-title,.post-main-box:hover h3,#footer h3,.serv-box a,#footer li a:hover,a.scrollup, #footer .custom-social-icons i:hover, .main-navigation a:hover, .main-navigation ul.sub-menu a:hover, .entry-content a, .sidebar .textwidget p a, .textwidget p a, #comments p a, .slider .inner_carousel p a{';
+		$custom_css .='#sidebar ul li a:hover,.info-box i,a,.post-navigation a:hover .post-title, .post-navigation a:focus .post-title,.post-main-box:hover h2,#footer h3,.serv-box a,#footer li a:hover,a.scrollup, #footer .custom-social-icons i:hover, .main-navigation a:hover, .main-navigation ul.sub-menu a:hover, .entry-content a, .sidebar .textwidget p a, .textwidget p a, #comments p a, .slider .inner_carousel p a{';
 			$custom_css .='color: '.esc_html($automotive_centre_first_color).';';
 		$custom_css .='}';
 	}
@@ -111,5 +111,37 @@
 	}else if($theme_lay == 'Right'){
 		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h2{';
 			$custom_css .='text-align:right; left:50%; right:7%;';
+		$custom_css .='}';
+	}
+
+	/*---------------------------Blog Layout -------------------*/
+
+	$theme_lay = get_theme_mod( 'automotive_centre_blog_layout_option','Default');
+    if($theme_lay == 'Default'){
+		$custom_css .='.post-main-box{';
+			$custom_css .='';
+		$custom_css .='}';
+	}else if($theme_lay == 'Center'){
+		$custom_css .='.post-main-box, .post-main-box h2, .post-info, .new-text p, .content-bttn{';
+			$custom_css .='text-align:center;';
+		$custom_css .='}';
+		$custom_css .='.post-info, .content-bttn{';
+			$custom_css .='margin-top:10px;';
+		$custom_css .='}';
+		$custom_css .='.post-info hr{';
+			$custom_css .='margin:10px auto;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Left'){
+		$custom_css .='.post-main-box, .post-main-box h2, .post-info, .new-text p, .content-bttn, #our-services p{';
+			$custom_css .='text-align:Left;';
+		$custom_css .='}';
+		$custom_css .='.content-bttn{';
+			$custom_css .='margin:20px 0;';
+		$custom_css .='}';
+		$custom_css .='.post-info hr{';
+			$custom_css .='margin-bottom:10px;';
+		$custom_css .='}';
+		$custom_css .='.post-main-box h2{';
+			$custom_css .='margin-top:10px;';
 		$custom_css .='}';
 	}

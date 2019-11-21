@@ -18,7 +18,7 @@
 		            }
 	          	?>
 	        </div>
-	        <h3 class="section-title"><?php the_title();?></h3>
+	        <h2 class="section-title"><?php the_title();?></h2>
 	        <div class="new-text">
 	        	<div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p></div>
 	        </div>
