@@ -93,6 +93,17 @@ function bayleaf_get_theme_controls( $controls = [] ) {
 				'description' => esc_html__( 'Change theme color scheme.', 'bayleaf' ),
 			],
 			[
+				'label'       => esc_html__( 'Overall Border Radius (in px)', 'bayleaf' ),
+				'section'     => 'bayleaf_general_section',
+				'setting'     => 'bayleaf_border_radius',
+				'type'        => 'number',
+				'input_attrs' => array(
+					'step' => 1,
+					'min'  => 0,
+					'max'  => 100,
+				),
+			],
+			[
 				'label'   => esc_html__( 'Use Google Fonts', 'bayleaf' ),
 				'section' => 'bayleaf_general_section',
 				'setting' => 'bayleaf_use_google_fonts',
@@ -174,6 +185,7 @@ function bayleaf_get_theme_defaults( $defaults = [] ) {
 	return array_merge(
 		$defaults,
 		[
+			'bayleaf_border_radius'         => 8,
 			'bayleaf_display_site_title'    => 1,
 			'bayleaf_display_site_desc'     => 1,
 			'bayleaf_use_google_fonts'      => 1,

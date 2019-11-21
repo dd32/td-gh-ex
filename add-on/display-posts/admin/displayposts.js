@@ -8,29 +8,41 @@
 		showTerms( $(this) );
 	});
 
-	$('#widgets-right').on('change', 'select.bayleaf-styles', function() {
-		showSlider( $(this) );
+	$( document ).on( 'click', '.dp-settings-toggle', function( event ) {
+		var _this = $( this );
+		event.preventDefault();
+		_this.next( '.dp-settings-content' ).slideToggle('fast');
+		_this.toggleClass( 'toggle-active' );
 	});
 	
 	function showPosttypeContent( pType ) {
 		var postType  = pType.val(),
 			parent    = pType.parent(),
-			taxSelec  = parent.nextAll( '.post-panel' ).find( 'select.bayleaf-taxonomy' );
+			toggle    = parent.nextAll('.dp-settings-toggle'),
+			wrapper   = parent.nextAll('.dp-settings-content'),
+			taxSelec  = wrapper.find( 'select.dp-taxonomy' );
 
-		if ( ! postType ) {
-			parent.nextAll( '.post-panel, .page-panel, .posts-styles' ).hide();
-		} else if ( 'page' === postType ) {
-			parent.nextAll( '.post-panel' ).hide();
-			parent.nextAll( '.page-panel, .posts-styles' ).show();
-			parent.nextAll( '.page-panel' ).find( '.pages-checklist li' ).show();
-		} else if ( postType ) {
-			parent.nextAll( '.page-panel' ).hide();
-			parent.nextAll( '.post-panel' ).children( '.terms-panel' ).hide();
-			taxSelec.find( 'option' ).hide();
-			taxSelec.find( '.' + postType ).show();
-			taxSelec.find( '.always-visible' ).show();
-			taxSelec.val('');
-			parent.nextAll( '.post-panel, .posts-styles' ).show();
+		if (postType) {
+			toggle.show();
+			if ('page' === postType) {
+				wrapper.find('.page-panel').show();
+				wrapper.find('.post-panel').hide();
+			} else {
+				wrapper.find('.page-panel, .terms-panel').hide();
+				wrapper.find('.post-panel').show();
+				taxSelec.find( 'option' ).hide();
+				taxSelec.find( '.' + postType ).show();
+				taxSelec.find( '.always-visible' ).show();
+				taxSelec.val('');
+			}
+			if ('post' !== postType) {
+				wrapper.addClass('not-post');
+			} else {
+				wrapper.removeClass('not-post');
+			}
+		} else {
+			toggle.hide();
+			wrapper.hide();
 		}
 	}
 
@@ -41,16 +53,6 @@
 			taxonomy.parent().next('.terms-panel').find( '.terms-checklist .' + taxonomy.val() ).show();
 		} else {
 			taxonomy.parent().next('.terms-panel').hide();
-		}
-	}
-
-	function showSlider( style ) {
-		var dpStyle = style.val();
-		var parent  = style.parent();
-		if ( -1 !== dpStyle.indexOf('slider') || 'vt-grid-4' === dpStyle || 'vt-grid-1' === dpStyle || 'vt-grid-1a' === dpStyle ) {
-			parent.nextAll('.dp-slider-option').hide();
-		} else {
-			parent.nextAll('.dp-slider-option').show();
 		}
 	}
 }( jQuery ) );

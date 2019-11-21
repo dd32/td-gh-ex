@@ -49,10 +49,8 @@ class Main {
 		this.polyfill();
 
 		// Add reveal on scroll functionality to brick elements.
-		lib.addRosObject('.brick', 'fadeInUp');
-
-		// Add reveal on scroll functionality to brick elements.
-		lib.addRosObject('.dp-grid > .dp-entry', '', 0, 150);
+		lib.addRosObject('.brick', 'fadein', 20, 100);
+		lib.addRosObject('.dp-grid > .dp-entry, .fc-main-content, .mfc-feature, .fc-featured-images', '', 0, 600, 150);
 	}
 
 	/**

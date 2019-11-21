@@ -54,10 +54,10 @@ class Display_Posts {
 		add_filter( 'bayleaf_widget_custom_classes', [ self::get_instance(), 'widget_classes' ], 10, 2 );
 		add_filter( 'bayleaf_dp_wrapper_classes', [ self::get_instance(), 'wrapper_classes' ], 10, 2 );
 		add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 10, 2 );
-		add_filter( 'bayleaf_dp_styles', [ self::get_instance(), 'dp_styles' ], 10, 2 );
+		add_filter( 'bayleaf_dp_styles', [ self::get_instance(), 'dp_styles' ] );
 		add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
 		add_filter( 'bayleaf_dp_excerpt_length', [ self::get_instance(), 'excerpt_length' ], 10, 2 );
-		add_filter( 'bayleaf_dp_excerpt_more', [ self::get_instance(), 'excerpt_more' ], 10, 2 );
+		add_filter( 'bayleaf_dp_excerpt_text', [ self::get_instance(), 'excerpt_text' ], 12, 2 );
 		add_action( 'widgets_init', [ self::get_instance(), 'register_custom_widget' ] );
 		add_action( 'admin_enqueue_scripts', [ self::get_instance(), 'enqueue_admin' ] );
 		add_action( 'bayleaf_dp_entry', [ self::get_instance(), 'dp_entry' ], 10, 2 );
@@ -67,18 +67,37 @@ class Display_Posts {
 	/**
 	 * Register widget display styles.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @param array $styles   Array of supported posts display styles.
-	 * @param array $instance Settings for the current widget instance.
 	 * @return array Array of supported display styles.
 	 */
-	public function dp_styles( $styles, $instance ) {
+	public function dp_styles( $styles = [] ) {
 		return [
-			'list-view1' => esc_html__( 'List View 1', 'bayleaf' ),
-			'grid-view1' => esc_html__( 'Grid View 1', 'bayleaf' ),
-			'grid-view2' => esc_html__( 'Grid View 2', 'bayleaf' ),
-			'grid-view3' => esc_html__( 'Grid View 3', 'bayleaf' ),
-			'slider1'    => esc_html__( 'Slider 1', 'bayleaf' ),
-			'slider2'    => esc_html__( 'Slider 2', 'bayleaf' ),
+			'list-view1' => [
+				'label'   => esc_html__( 'List View 1', 'bayleaf' ),
+				'support' => [ 'thumbnailtitle', 'excerpt', 'media', 'ialign' ],
+			],
+			'grid-view1' => [
+				'label'   => esc_html__( 'Grid View 1', 'bayleaf' ),
+				'support' => [ 'thumbnailtitle', 'media', 'multicol', 'imgcrop' ],
+			],
+			'grid-view2' => [
+				'label'   => esc_html__( 'Grid View 2', 'bayleaf' ),
+				'support' => [ 'thumbnailtitle', 'category', 'media' ],
+			],
+			'grid-view3' => [
+				'label'   => esc_html__( 'Grid View 3', 'bayleaf' ),
+				'support' => [ 'thumbnailtitle', 'category', 'media', 'multicol', 'imgcrop' ],
+			],
+			'slider1'    => [
+				'label'   => esc_html__( 'Slider 1', 'bayleaf' ),
+				'support' => [ 'thumbnailtitle', 'category', 'media' ],
+			],
+			'slider2'    => [
+				'label'   => esc_html__( 'Slider 2', 'bayleaf' ),
+				'support' => [ 'thumbnailtitle', 'media', 'excerpt' ],
+			],
 		];
 	}
 
@@ -115,7 +134,8 @@ class Display_Posts {
 		$classes[] = 'index-view';
 
 		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
-			$classes[] = 'flex-wrapper dp-grid';
+			$classes[] = 'flex-wrapper';
+			$classes[] = 'dp-grid';
 		} elseif ( false !== strpos( $instance['styles'], 'list' ) ) {
 			$classes[] = 'dp-list';
 		}
@@ -158,20 +178,77 @@ class Display_Posts {
 	 * @param array $instance Settings for the current widget instance.
 	 */
 	public function dp_entry( $args, $instance ) {
-		$display = $this->get_style_args( $instance['styles'] );
+		$display = $this->get_display_map( $instance['styles'] );
+		$display = $this->filter_display_map( $display, $instance );
 		if ( ! empty( $display ) ) {
-			if ( false !== strpos( $instance['styles'], 'grid' ) ) {
-				echo '<div class="entry-index-wrapper">';
-				$this->dp_display_entry( $display, $instance['styles'] );
-				echo '</div>';
-			} elseif ( false !== strpos( $instance['styles'], 'vt-slider' ) ) {
-				echo '<div class="entry-index-wrapper">';
-				$this->dp_display_entry( $display, $instance['styles'] );
-				echo '</div>';
+			echo '<div class="dp-index-wrapper">';
+			$this->dp_display_entry( $display, $instance );
+			echo '</div>';
+		}
+	}
+
+	/**
+	 * Get args for displaying elements for specific dp style.
+	 *
+	 * @param str $style Style for this widget instance.
+	 * @return array
+	 */
+	public function get_display_map( $style ) {
+		/*
+		 * Default element display instructions.
+		 * Instructions array to display particular HTML element as per given sequence.
+		 */
+		$display_map = apply_filters(
+			'bayleaf_dp_style_args',
+			[
+				'list-view1' => [ 'thumbnail-medium', [ 'title', 'excerpt' ] ],
+				'grid-view1' => [ 'thumbnail-medium', [ 'title' ] ],
+				'grid-view2' => [ 'thumbnail-medium', [ 'category', 'title' ] ],
+				'grid-view3' => [ 'thumbnail-medium', [ 'category', 'title' ] ],
+				'slider1'    => [ 'thumbnail-large', [ 'category', 'title', 'excerpt' ] ],
+				'slider2'    => [ 'thumbnail-large', [ [ 'title', 'excerpt' ] ] ],
+			]
+		);
+
+		return isset( $display_map[ $style ] ) ? $display_map[ $style ] : [];
+	}
+
+	/**
+	 * Display widget content to front-end.
+	 *
+	 * @param array $items content to be displayed.
+	 * @param array $args Widget display arguments.
+	 */
+	public function filter_display_map( $items, $args ) {
+
+		if ( ! isset( $args['style_sup'] ) || ! $args['style_sup'] ) {
+			return $items;
+		}
+
+		// Compatibility with older version.
+		if ( 'slider1' === $args['styles'] ) {
+			$args['style_sup'][] = 'excerpt';
+		}
+
+		foreach ( $items as $key => $item ) {
+			if ( is_array( $item ) ) {
+				$items[ $key ] = $this->filter_display_map( $item, $args );
 			} else {
-				$this->dp_display_entry( $display, $instance['styles'] );
+				$unset = true;
+				if ( in_array( $item, $args['style_sup'], true ) ) {
+					$unset = false;
+				} elseif ( false !== strpos( $item, 'thumbnail' ) || 'title' === $item ) {
+					if ( in_array( 'thumbnailtitle', $args['style_sup'], true ) ) {
+						$unset = false;
+					}
+				}
+				if ( $unset ) {
+					unset( $items[ $key ] );
+				}
 			}
 		}
+
+		return $items;
 	}
 
 	/**
@@ -206,12 +283,14 @@ class Display_Posts {
 	 * Display entry content to front-end.
 	 *
 	 * @param array $display_args Content display arguments.
-	 * @param str   $style  Current display post style.
+	 * @param array $instance Settings for the current widget instance.
 	 */
-	public function dp_display_entry( $display_args, $style ) {
+	public function dp_display_entry( $display_args, $instance ) {
+		$style = $instance['styles'];
+		$fetch = isset( $instance['fetch_media'] ) ? $instance['fetch_media'] : false;
 		foreach ( $display_args as $args ) {
 			if ( is_array( $args ) ) {
-				bayleaf_markup( 'sub-entry', [ [ [ $this, 'dp_display_entry' ], $args, $style ] ] );
+				bayleaf_markup( 'sub-entry', [ [ [ $this, 'dp_display_entry' ], $args, $instance ] ] );
 			} else {
 				switch ( $args ) {
 					case 'title':
@@ -230,7 +309,7 @@ class Display_Posts {
 						$this->content();
 						break;
 					case 'excerpt':
-						$this->excerpt( $style );
+						$this->excerpt( $instance );
 						break;
 					case 'category':
 						$this->category();
@@ -238,17 +317,20 @@ class Display_Posts {
 					case 'meta':
 						$this->meta();
 						break;
+					case 'meta-alt':
+						$this->meta_alt();
+						break;
 					case 'thumbnail-small':
-						$this->featured( 'thumbnail', $style );
+						$this->featured( 'thumbnail', $style, $fetch );
 						break;
 					case 'thumbnail-medium':
-						$this->featured( 'bayleaf-medium', $style );
+						$this->featured( 'bayleaf-medium', $style, $fetch );
 						break;
 					case 'thumbnail-large':
-						$this->featured( 'bayleaf-large', $style );
+						$this->featured( 'bayleaf-large', $style, $fetch );
 						break;
 					case 'no-thumb':
-						$this->featured( false, $style );
+						$this->featured( false, $style, $fetch );
 						break;
 					default:
 						do_action( 'bayleaf_display_dp_item', $args );
@@ -283,44 +365,6 @@ class Display_Posts {
 			BAYLEAF_THEME_VERSION,
 			true
 		);
-	}
-
-	/**
-	 * Get args for displaying elements for specific dp style.
-	 *
-	 * @param str $style Style for this widget instance.
-	 * @return array
-	 */
-	public function get_style_args( $style ) {
-		/*
-		 * Default element display instructions.
-		 * Instructions array to display particular HTML element as per given sequence.
-		 */
-
-		switch ( $style ) {
-			case 'list-view1':
-				$d = [ 'thumbnail-medium', [ 'title', 'excerpt' ] ];
-				break;
-			case 'grid-view1':
-				$d = [ 'thumbnail-medium', [ 'title' ] ];
-				break;
-			case 'grid-view2':
-				$d = [ 'thumbnail-medium', [ 'category', 'title' ] ];
-				break;
-			case 'grid-view3':
-				$d = [ 'thumbnail-medium', [ 'category', 'title' ] ];
-				break;
-			case 'slider1':
-				$d = [ 'thumbnail-large', [ 'category', 'title', 'excerpt' ] ];
-				break;
-			case 'slider2':
-				$d = [ 'thumbnail-large', [ [ 'title', 'excerpt' ] ] ];
-				break;
-			default:
-				$d = [];
-		}
-
-		return apply_filters( 'bayleaf_dp_style_args', $d, $style );
 	}
 
 	/**
@@ -390,9 +434,10 @@ class Display_Posts {
 	 * @since 1.0.0
 	 *
 	 * @param str $size Thumbanil Size.
-	 * @param str $style  Current display post style.
+	 * @param str $style Current display post style.
+	 * @param str $fetch Media type to be fetched from post content.
 	 */
-	public function featured( $size, $style = '' ) {
+	public function featured( $size, $style = '', $fetch = false ) {
 		if ( bayleaf_get_mod( 'bayleaf_thumbnail_placeholder', 'none' ) || has_post_thumbnail() ) {
 
 			if ( $style && false !== strpos( $style, 'slider' ) ) {
@@ -406,6 +451,9 @@ class Display_Posts {
 				];
 			}
 
+			if ( $fetch ) {
+				$featured_content = apply_filters( 'bayleaf_dp_fetaured_content', $featured_content, $fetch, $style );
+			}
 			bayleaf_markup( 'dp-featured-content', $featured_content );
 		}
 	}
@@ -456,32 +504,47 @@ class Display_Posts {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $style  Current display post style.
+	 * @param array $instance Settings array for current widget instance.
 	 */
-	public function excerpt( $style ) {
+	public function excerpt( $instance ) {
 
 		// Short circuit filter.
-		$check = apply_filters( 'bayleaf_display_posts_excerpt', false, $style );
+		$check = apply_filters( 'bayleaf_display_posts_excerpt', false, $instance );
 		if ( false !== $check ) {
 			return;
 		}
 
-		$text = get_the_content( '' );
-		$text = wp_strip_all_tags( strip_shortcodes( $text ) );
-		$text = str_replace( ']]>', ']]&gt;', $text );
+		$style = $instance['styles'];
+		$text  = get_the_content( '' );
+		$text  = wp_strip_all_tags( strip_shortcodes( $text ) );
+		$text  = str_replace( ']]>', ']]&gt;', $text );
+
+		// Return if not post content.
+		if ( ! $text ) {
+			return;
+		}
+
+		// Default value of excerpt length. Backward styles compatibility.
+		if ( in_array( $style, [ 'list-view1', 'slider2' ], true ) ) {
+			$len = 55;
+		} else {
+			$len = 20;
+		}
 
 		/**
 		 * Filters the number of words in an excerpt.
 		 *
 		 * @since 1.0.0
 		 *
-		 * @param int $number The number of words. Default 55.
+		 * @param int $number The number of words.
+		 * @param arr $instance Settings for current widget instance.
 		 */
-		$excerpt_length = apply_filters( 'bayleaf_dp_excerpt_length', 55, $style );
+		$excerpt_length = apply_filters( 'bayleaf_dp_excerpt_length', $len, $instance );
 
 		// Generate excerpt teaser text and link.
 		$exrpt_url   = esc_url( get_permalink() );
 		$exrpt_text  = esc_html__( 'Continue Reading', 'bayleaf' );
+		$exrpt_text  = apply_filters( 'bayleaf_dp_excerpt_text', $exrpt_text, $instance );
 		$exrpt_title = get_the_title();
 
 		if ( 0 === strlen( $exrpt_title ) ) {
@@ -490,7 +553,7 @@ class Display_Posts {
 			$screen_reader = sprintf( '<span class="screen-reader-text">%s</span>', $exrpt_title );
 		}
 
-		$excerpt_teaser = sprintf( '<p class="dp-link-more"><a class="dp-more-link" href="%1$s">%2$s &rarr; %3$s</a></p>', $exrpt_url, $exrpt_text, $screen_reader );
+		$excerpt_teaser = $exrpt_text ? sprintf( '<p class="dp-link-more"><a class="dp-more-link" href="%1$s">%2$s %3$s</a></p>', $exrpt_url, $exrpt_text, $screen_reader ) : '';
 
 		/**
 		 * Filters the string in the "more" link displayed after a trimmed excerpt.
@@ -498,8 +561,9 @@ class Display_Posts {
 		 * @since 1.0.0
 		 *
 		 * @param string $more_string The string shown within the more link.
+		 * @param arr $instance Settings for current widget instance.
 		 */
-		$excerpt_more = apply_filters( 'bayleaf_dp_excerpt_more', ' ' . $excerpt_teaser, $style );
+		$excerpt_more = apply_filters( 'bayleaf_dp_excerpt_more', ' ' . $excerpt_teaser, $instance );
 		$text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
 
 		printf( '<div class="dp-excerpt">%s</div>', $text ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -511,10 +575,11 @@ class Display_Posts {
 	 * @since 1.0.0
 	 *
 	 * @param int $length Excerpt length.
-	 * @param str $style  Current display post style.
+	 * @param arr $instance Settings for current widget instance.
 	 * @return int Excerpt length.
 	 */
-	public function excerpt_length( $length, $style ) {
+	public function excerpt_length( $length, $instance ) {
+		$style = $instance['styles'];
 
 		if ( 'slider1' === $style ) {
 			$length = 0;
@@ -528,23 +593,22 @@ class Display_Posts {
 	}
 
 	/**
-	 * Modify display post's excerpt length.
+	 * Modify display post's excerpt teaser text.
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $teaser Excerpt teaser.
-	 * @param str $style  Current display post style.
+	 * @param str $text Excerpt teaser text.
+	 * @param arr $instance Settings for current widget instance.
 	 * @return int Excerpt teaser.
 	 */
-	public function excerpt_more( $teaser, $style ) {
+	public function excerpt_text( $text, $instance ) {
+		$style = $instance['styles'];
 
 		if ( 'slider1' === $style ) {
-			$exrpt_url  = esc_url( get_permalink() );
-			$exrpt_text = esc_html__( 'Read More', 'bayleaf' );
-			$teaser     = sprintf( '<p class="dp-link-more"><a class="dp-more-link" href="%1$s">%2$s</a></p>', $exrpt_url, $exrpt_text );
+			$text = esc_html__( 'Read More', 'bayleaf' );
 		}
 
-		return $teaser;
+		return $text;
 	}
 
 	/**
@@ -609,11 +673,28 @@ class Display_Posts {
 	}
 
 	/**
+	 * Display alternative post meta markup.
+	 *
+	 * @since 1.0.0
+	 */
+	public function meta_alt() {
+		echo '<div class="dp-meta-alt">';
+		echo get_avatar( get_the_author_meta( 'user_email' ), 42 );
+		echo '<div class="meta-info-alt"><div class="dp-author-alt">';
+		echo esc_html_e( 'Written by', 'bayleaf' );
+		$this->author();
+		echo '</div>';
+		$this->date();
+		echo '</div></div>';
+	}
+
+	/**
 	 * Register the custom Widget.
 	 *
 	 * @since 1.0.0
 	 */
 	public function register_custom_widget() {
+		require_once get_template_directory() . '/add-on/display-posts/class-instance-counter.php';
 		require_once get_template_directory() . '/add-on/display-posts/class-display-posts-widget.php';
 		register_widget( 'bayleaf\Display_Posts_Widget' );
 	}

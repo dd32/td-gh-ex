@@ -45,13 +45,7 @@ class WidgetLayer {
 	 *
 	 * @since  1.0.0
 	 */
-	public function __construct() {
-		$this->widget_areas = [
-			'home-widgetlayer-1',
-			'home-widgetlayer-2',
-			'home-widgetlayer-3',
-		];
-	}
+	public function __construct() {}
 
 	/**
 	 * Returns the instance of this class.
@@ -79,6 +73,29 @@ class WidgetLayer {
 		add_action( 'in_widget_form', [ self::get_instance(), 'extend_widget_form' ], 9, 3 );
 		add_filter( 'dynamic_sidebar_params', [ self::get_instance(), 'add_widget_customizations' ] );
 		add_filter( 'widget_update_callback', [ self::get_instance(), 'update_settings' ], 10, 2 );
+	}
+
+	/**
+	 * Get widget areas.
+	 *
+	 * @since 1.0.0
+	 */
+	public function get_widget_areas() {
+
+		if ( ! empty( $this->widget_areas ) ) {
+			return $this->widget_areas;
+		}
+
+		$this->widget_areas = apply_filters(
+			'bayleaf_widgetlayer_widget_areas',
+			[
+				'home-widgetlayer-1',
+				'home-widgetlayer-2',
+				'home-widgetlayer-3',
+			]
+		);
+
+		return $this->widget_areas;
 	}
 
 	/**
@@ -138,9 +155,10 @@ class WidgetLayer {
 		}
 
 		$css_array        = [];
+		$widget_areas     = $this->get_widget_areas();
 		$sidebars_widgets = get_option( 'sidebars_widgets', [] );
 
-		foreach ( $this->widget_areas as $area ) {
+		foreach ( $widget_areas as $area ) {
 
 			// Continue only if widget area is registered.
 			if ( ! isset( $sidebars_widgets[ $area ] ) ) {
@@ -224,7 +242,24 @@ class WidgetLayer {
 
 		if ( ! empty( $widget_css ) ) {
 			foreach ( $widget_css as $key => $rules ) {
-				$widget_css[ $key ] = (array) sprintf( '.widgetlayer .%s{%s}', $widget_id, implode( ';', $rules ) );
+				if ( false === strpos( $key, 'direct' ) ) {
+					$widget_css[ $key ] = (array) sprintf( '.widgetlayer .%s{%s}', $widget_id, implode( ';', $rules ) );
+				}
+			}
+			foreach ( $widget_css as $key => $rules ) {
+				if ( false !== strpos( $key, 'direct' ) ) {
+					$key_arr = explode( '-', $key );
+					$new_key = isset( $key_arr[1] ) ? $key_arr[1] : false;
+					if ( $new_key && is_array( $rules ) ) {
+						foreach ( $rules as $rule ) {
+							if ( isset( $widget_css[ $new_key ] ) ) {
+								$widget_css[ $new_key ][] = $rule;
+							} else {
+								$widget_css[ $new_key ] = (array) $rule;
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -687,7 +722,8 @@ class WidgetLayer {
 			return $params;
 		}
 
-		foreach ( $this->widget_areas as $area ) {
+		$widget_areas = $this->get_widget_areas();
+		foreach ( $widget_areas as $area ) {
 			if ( ! is_active_sidebar( $area ) ) {
 				$widget_data = false;
 				continue;

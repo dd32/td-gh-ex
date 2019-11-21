@@ -73,11 +73,6 @@ class TGM_Activation {
 				'slug'     => 'wp-gallery-enhancer',
 				'required' => false,
 			],
-			[
-				'name'     => 'MailOptin - Lite',
-				'slug'     => 'mailoptin',
-				'required' => false,
-			],
 		];
 
 		$config = [

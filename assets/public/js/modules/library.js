@@ -171,8 +171,8 @@ let library = {
 		}
 
 		this.scrollPosition = this.scrollingElem.scrollTop;
-		this.scrollingElem.classList.add('no-scroll');
 		this.scrollingElem.scrollTop = 0;
+		this.scrollingElem.classList.add('no-scroll');
 		this.bodyScrollDisabled = true;
 	},
 
@@ -188,8 +188,8 @@ let library = {
 			return;
 		}
 
-		this.scrollingElem.scrollTop = this.scrollPosition;
 		this.scrollingElem.classList.remove('no-scroll');
+		this.scrollingElem.scrollTop = this.scrollPosition;
 		this.bodyScrollDisabled = false;
 	},
 
@@ -204,7 +204,7 @@ let library = {
 
 		let elemsArr;
 		if ('object' !== typeof obj || Array.isArray(obj)) return obj;
-		elemsArr = Array.from(obj);
+		elemsArr = Array.prototype.slice.call(obj);
 		if (0 === elemsArr.length) elemsArr.push(obj);
 		return elemsArr;
 	},
@@ -465,23 +465,26 @@ let library = {
 	 * @param {string} elem 
 	 * @param {string} ani 
 	 * @param {number} rp 
+	 * @param {number} duration
 	 * @param {number} delay 
 	 * @param {string} easing
 	 */
-	addRosObject(elem, ani = 'fadein', rp = 20, delay = 0, easing = 'easeinout') {
+	addRosObject(elem, ani = 'fadein', rp = 20, duration = 250, delay = 0, easing = 'easeinout') {
 
 		let index = 0;
 		let prevParent = null;
 		let elements = this.get(elem);
 		if (null === elements || 0 === elements.length) return;
-
+		this.addClass(elements, 'rosobj');
 		elements.forEach( element => {
 			let thisParent = element.parentNode;
 			let height = this.bodyHeight;
 			let top = element.getBoundingClientRect().top + this.scrollTop;
 			let revealon = 100 - rp;
-			if (0 !== delay ) {				
-				if (prevParent !== thisParent) index = 0;
+			element.style.transitionDuration = duration + 'ms';
+			element.style.transitionTimingFunction = easing;
+			if (0 !== delay ) {
+				if (prevParent !== thisParent) index = 1;
 				prevParent = thisParent;
 				element.style.transitionDelay = index * delay + 'ms';
 				index++;
@@ -494,7 +497,6 @@ let library = {
 
 				if ( percent < revealon ) {
 					element.classList.add(ani);
-					element.classList.add(easing);
 					return 'unbind';
 				}
 			} );

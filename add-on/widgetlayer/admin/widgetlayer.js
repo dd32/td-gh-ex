@@ -37,7 +37,6 @@
 	});
 
 	$document.on( 'click', '.bayleaf-widget-img-remover', function( event ){
-		console.log('hello');
 		event.preventDefault();
 		$( this ).prevAll('.bayleaf-widget-img-uploader').html(bayleafImageUploadText.set_featured_img).removeClass( 'has-image' );
 		$( this ).prev( '.bayleaf-widget-img-instruct' ).addClass( 'bayleaf-hidden' );

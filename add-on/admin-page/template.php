@@ -10,12 +10,7 @@
 
 <div class="updated notice is-dismissible theme-welcome-notice">
 	<h3><?php esc_html_e( 'Getting Started', 'bayleaf' ); ?></h3>
-	<ol>
-		<li><?php esc_html_e( 'Use "Display Posts" widget from Appearance > Widgets to create various posts layout.', 'bayleaf' ); ?></li>
-		<li><?php esc_html_e( 'Use "Blank Widget" widget from Appearance > Widgets to create vertical gaps between widgets.', 'bayleaf' ); ?></li>
-		<li><?php printf( esc_html__( 'Visit %s to get Started', 'bayleaf' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://vedathemes.com/documentation/bayleaf/', esc_html__( 'quick setup guide', 'bayleaf' ) ) ); ?></li>
-		<li><?php printf( esc_html__( 'Get Support at %s', 'bayleaf' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://wordpress.org/support/theme/bayleaf/', esc_html__( 'Support Forum', 'bayleaf' ) ) ); ?></li>
-		<li><?php printf( esc_html__( 'If you are happy with Bayleaf, %s', 'bayleaf' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://wordpress.org/support/theme/bayleaf/reviews/?filter=5', esc_html__( 'Kindly give 5 star rating.', 'bayleaf' ) ) ); ?></li>
-	</ol>
-	<p><?php esc_html_e( 'Thanks for trying Bayleaf', 'bayleaf' ); ?>
+	<p><?php printf( esc_html__( 'Thanks for trying Bayleaf theme. Kindly get started with %1$s OR get support at %2$s.', 'bayleaf' ), sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://vedathemes.com/documentation/bayleaf/', esc_html__( 'Bayleaf documentation', 'bayleaf' ) ), sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://wordpress.org/support/theme/bayleaf/', esc_html__( 'Bayleaf support forum', 'bayleaf' ) ) ); ?></p>
+	<span style="display: block; width: 100%; background-color: #e6e6e6; height: 1px; margin: 20px 0 10px;"></span>
+	<p style="font-size: 15px;"><?php printf( esc_html__( 'Want more amazing features? %s', 'bayleaf' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://vedathemes.com/blog/vedaitems/bayleaf-premium/', esc_html__( 'Try Bayleaf Premium.', 'bayleaf' ) ) ); ?></p>
 </div>

@@ -38,7 +38,9 @@ h4.widget-options-title.toggle-active:after {
 }
 
 [id^=home-widgetlayer-] .widget-options-section,
-[id^=sub-accordion-section-sidebar-widgets-home-widgetlayer-] .widget-options-section {
+[id^=widgetlayer-page-] .widget-options-section,
+[id^=sub-accordion-section-sidebar-widgets-home-widgetlayer-] .widget-options-section,
+[id^=sub-accordion-section-sidebar-widgets-widgetlayer-page] .widget-options-section {
 	display: block;
 }
 

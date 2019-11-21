@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget API: Blank_Widget class
+ * Display Posts Widget.
  *
  * @package Bayleaf
  * @since 1.0.0
@@ -45,6 +45,24 @@ class Display_Posts_Widget extends \WP_Widget {
 	protected $imagecrop = [];
 
 	/**
+	 * Holds all display styles.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var array
+	 */
+	protected $styles = [];
+
+	/**
+	 * Holds all display styles supported items.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var array
+	 */
+	public $style_supported = [];
+
+	/**
 	 * Holds widget settings defaults, populated in constructor.
 	 *
 	 * @since  1.0.0
@@ -60,20 +78,23 @@ class Display_Posts_Widget extends \WP_Widget {
 	 */
 	public function __construct() {
 		// Set widget instance settings default values.
-		$this->defaults = [
-			'title'      => '',
-			'post_type'  => '',
-			'taxonomy'   => '',
-			'terms'      => [],
-			'post_ids'   => '',
-			'pages'      => [],
-			'number'     => 5,
-			'offset'     => 0,
-			'orderby'    => 'date',
-			'order'      => 'DESC',
-			'styles'     => 'grid-view1',
-			'image_crop' => 'centercrop',
-		];
+		$this->defaults = apply_filters(
+			'bayleaf_dp_widget_defaults',
+			[
+				'title'      => '',
+				'post_type'  => '',
+				'taxonomy'   => '',
+				'terms'      => [],
+				'post_ids'   => '',
+				'pages'      => [],
+				'number'     => 5,
+				'offset'     => 0,
+				'orderby'    => 'date',
+				'order'      => 'DESC',
+				'styles'     => 'grid-view1',
+				'image_crop' => 'centercrop',
+			]
+		);
 
 		// Set the options for orderby.
 		$this->orderby = [
@@ -99,7 +120,7 @@ class Display_Posts_Widget extends \WP_Widget {
 			'description'                 => esc_html__( 'Create a display posts widget.', 'bayleaf' ),
 			'customize_selective_refresh' => true,
 		];
-		parent::__construct( 'bayleaf_display_posts', esc_html__( 'Display Posts - Bayleaf', 'bayleaf' ), $widget_ops );
+		parent::__construct( 'bayleaf_display_posts', esc_html__( 'BayLeaf - Display Posts', 'bayleaf' ), $widget_ops );
 	}
 
 	/**
@@ -118,12 +139,15 @@ class Display_Posts_Widget extends \WP_Widget {
 		// Merge with defaults.
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
+		// Run 'get_display_styles' to populate style_supported array.
+		$styles = $this->get_display_styles();
+
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-		$wrapper_class = apply_filters( 'bayleaf_dp_wrapper_classes', [ $instance['styles'] ], $instance );
+		$wrapper_class = apply_filters( 'bayleaf_dp_wrapper_classes', [ $instance['styles'] ], $instance, $this );
 		$wrapper_class = array_map( 'esc_attr', $wrapper_class );
 
 		$after_title = apply_filters( 'bayleaf_after_dp_widget_title', $args['after_title'], $instance );
@@ -185,16 +209,20 @@ class Display_Posts_Widget extends \WP_Widget {
 				'query'    => $post_query,
 			];
 
+			$inst_class  = Instance_Counter::get_instance();
+			$instance_id = $inst_class->get();
+
 			/**
 			 * Fires before display posts wrapper.
 			 *
 			 * @since 1.0.0
 			 *
 			 * @param array $action_args Settings & args for the current widget instance..
+			 * @param int   $instance_id Current display post instance ID.
 			 */
-			do_action( 'bayleaf_before_dp_wrapper', $action_args );
+			do_action( 'bayleaf_before_dp_wrapper', $action_args, $instance_id );
 			?>
-			<div class="dp-wrapper <?php echo join( ' ', $wrapper_class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
+			<div id="dp-wrapper-<?php echo absint( $instance_id ); ?>" class="dp-wrapper <?php echo join( ' ', $wrapper_class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
 
 			<?php
 			/**
@@ -208,7 +236,7 @@ class Display_Posts_Widget extends \WP_Widget {
 
 			while ( $post_query->have_posts() ) :
 				$post_query->the_post();
-				$entry_class = apply_filters( 'bayleaf_dp_entry_classes', [], $instance );
+				$entry_class = apply_filters( 'bayleaf_dp_entry_classes', [], $instance, $this );
 				$entry_class = array_map( 'esc_attr', $entry_class );
 				?>
 				<div class="dp-entry <?php echo join( ' ', $entry_class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
@@ -257,10 +285,8 @@ class Display_Posts_Widget extends \WP_Widget {
 		// Merge with defaults.
 		$instance = wp_parse_args( (array) $instance, $this->defaults );
 
-		if ( empty( $this->post_types ) ) {
-			// Get the registered post types.
-			$this->post_types = get_post_types( [ 'public' => true ], 'objects' );
-		}
+		// Get all display post styles.
+		$styles = $this->get_display_styles();
 
 		?>
 		<p>
@@ -270,77 +296,87 @@ class Display_Posts_Widget extends \WP_Widget {
 
 		<p>
 			<?php
-			$post_type = wp_list_pluck( $this->post_types, 'label', 'name' );
+			$post_type = $this->get_post_types();
 			$post_type = array_merge( [ '' => esc_html__( 'None', 'bayleaf' ) ], $post_type );
 			$this->label( 'post_type', esc_html__( 'Select Post Type', 'bayleaf' ) );
 			$this->select( 'post_type', $post_type, $instance['post_type'] );
 			?>
 		</p>
 
-		<div class="page-panel" <?php echo 'page' !== $instance['post_type'] ? ' style="display:none;"' : ''; ?>>
-			<?php $this->pages_checklist( $instance['pages'] ); ?>
-		</div><!-- .page-panel -->
+		<a class="dp-filter dp-settings-toggle" <?php echo ( ! $instance['post_type'] ) ? ' style="display:none;"' : ''; ?>><?php esc_html_e( 'Get items to be displayed', 'bayleaf' ); ?></a>
+		<div class="dp-filter-content dp-settings-content">
+			<div class="page-panel" <?php echo 'page' !== $instance['post_type'] ? ' style="display:none;"' : ''; ?>>
+				<?php $this->pages_checklist( $instance['pages'] ); ?>
+			</div><!-- .page-panel -->
 
-		<div class="post-panel" <?php echo ( ! $instance['post_type'] || 'page' === $instance['post_type'] ) ? ' style="display:none;"' : ''; ?>>
+			<div class="post-panel" <?php echo ( ! $instance['post_type'] || 'page' === $instance['post_type'] ) ? ' style="display:none;"' : ''; ?>>
 
-			<p class="post-ids">
-				<?php $this->label( 'post_ids', esc_html__( 'Post IDs (if any)', 'bayleaf' ) ); ?>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_ids' ) ); ?>" type="text" placeholder="<?php echo esc_attr_x( 'Comma separated ids, i.e. 230,300', 'Placeholder text for post ids', 'bayleaf' ); ?>" value="<?php echo esc_attr( $instance['post_ids'] ); ?>" />
-			</p>
+				<p class="post-ids">
+					<?php $this->label( 'post_ids', esc_html__( 'Post IDs (if any)', 'bayleaf' ) ); ?>
+					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'post_ids' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'post_ids' ) ); ?>" type="text" placeholder="<?php echo esc_attr_x( 'Comma separated ids, i.e. 230,300', 'Placeholder text for post ids', 'bayleaf' ); ?>" value="<?php echo esc_attr( $instance['post_ids'] ); ?>" />
+				</p>
 
-			<div class="taxonomies">
-				<?php $this->taxonomies_select( $instance['post_type'], $instance['taxonomy'] ); ?>
-			</div><!-- .taxonomies -->
+				<div class="taxonomies">
+					<?php $this->taxonomies_select( $instance['post_type'], $instance['taxonomy'] ); ?>
+				</div><!-- .taxonomies -->
 
-			<div class="terms-panel" <?php echo '' === $instance['taxonomy'] ? ' style="display:none;"' : ''; ?>>
-				<?php $this->terms_checklist( $instance['taxonomy'], $instance['terms'] ); ?>
-			</div><!-- .terms-panel -->
+				<div class="terms-panel" <?php echo '' === $instance['taxonomy'] ? ' style="display:none;"' : ''; ?>>
+					<?php $this->terms_checklist( $instance['taxonomy'], $instance['terms'] ); ?>
+				</div><!-- .terms-panel -->
 
-			<p class="number-of-posts">
-				<?php $this->label( 'number', esc_html__( 'Number of Posts', 'bayleaf' ) ); ?>
-				<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $instance['number'] ); ?>" size="3" />
-			</p>
+				<p class="number-of-posts">
+					<?php $this->label( 'number', esc_html__( 'Number of Posts', 'bayleaf' ) ); ?>
+					<input class="tiny-text" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="number" step="1" min="1" value="<?php echo absint( $instance['number'] ); ?>" size="3" />
+				</p>
 
-			<p class="post-offset">
-				<?php $this->label( 'offset', esc_html__( 'Offset (number of post to displace)', 'bayleaf' ) ); ?>
-				<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'offset' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'offset' ) ); ?>" type="number" step="1" min="0" value="<?php echo absint( $instance['offset'] ); ?>" size="3" />
-			</p>
+				<p class="post-offset">
+					<?php $this->label( 'offset', esc_html__( 'Offset (number of posts to displace)', 'bayleaf' ) ); ?>
+					<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'offset' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'offset' ) ); ?>" type="number" step="1" min="0" value="<?php echo absint( $instance['offset'] ); ?>" size="3" />
+				</p>
 
-			<p class="posts-orderby">
-				<?php
-				$this->label( 'orderby', esc_html__( 'Order By', 'bayleaf' ) );
-				$this->select( 'orderby', $this->orderby, $instance['orderby'] );
-				?>
-			</p>
+				<?php do_action( 'bayleaf_dp_widget_extend_filters', $this, $instance ); ?>
 
-			<p class="order">
-				<?php
-				$this->label( 'order', esc_html__( 'Sort Order', 'bayleaf' ) );
-				$order = [
-					'DESC' => esc_html__( 'Descending', 'bayleaf' ),
-					'ASC'  => esc_html__( 'Ascending', 'bayleaf' ),
-				];
-				$this->select( 'order', $order, $instance['order'] );
-				?>
-			</p>
-		</div><!-- .post-panel -->
+				<div class="dp-sort-panel">
+					<p class="posts-orderby">
+						<?php
+						$this->label( 'orderby', esc_html__( 'Order By', 'bayleaf' ) );
+						$this->select( 'orderby', $this->orderby, $instance['orderby'] );
+						?>
+					</p>
+					<p class="order">
+						<?php
+						$this->label( 'order', esc_html__( 'Sort Order', 'bayleaf' ) );
+						$order = [
+							'DESC' => esc_html__( 'Descending', 'bayleaf' ),
+							'ASC'  => esc_html__( 'Ascending', 'bayleaf' ),
+						];
+						$this->select( 'order', $order, $instance['order'] );
+						?>
+					</p>
+				</div>
+			</div><!-- .post-panel -->
+		</div>
 
-		<div class="posts-styles" <?php echo $instance['post_type'] ? '' : ' style="display:none;"'; ?>>
-			<p class="posts-dstyle">
-				<?php
-				$this->label( 'styles', esc_html__( 'Display Style', 'bayleaf' ) );
-				$styles = apply_filters( 'bayleaf_dp_styles', '', $instance );
-				$this->select( 'styles', $styles, $instance['styles'] );
-				?>
-			</p>
+		<a class="dp-style dp-settings-toggle" <?php echo ( ! $instance['post_type'] ) ? ' style="display:none;"' : ''; ?>><?php esc_html_e( 'Displaying selected items', 'bayleaf' ); ?></a>
+		<div class="dp-display-content dp-settings-content<?php echo ( 'post' !== $instance['post_type'] ) ? ' not-post' : ''; ?>">
+			<div class="posts-display">
+				<p class="posts-dstyle">
+					<?php
+					$this->label( 'styles', esc_html__( 'Display Style', 'bayleaf' ) );
+					$this->select( 'styles', $styles, $instance['styles'] );
+					?>
+				</p>
 
-			<p class="posts-imgcrop">
-				<?php
-				$this->label( 'image_crop', esc_html__( 'Image Cropping Position', 'bayleaf' ) );
-				$this->select( 'image_crop', $this->imagecrop, $instance['image_crop'] );
-				?>
-			</p>
-		</div><!-- .posts-styles -->
+				<?php do_action( 'bayleaf_dp_widget_extend_style', $this, $instance ); ?>
+
+				<p class="posts-imgcrop">
+					<?php
+					$this->label( 'image_crop', esc_html__( 'Image Cropping Position', 'bayleaf' ) );
+					$this->select( 'image_crop', $this->imagecrop, $instance['image_crop'] );
+					?>
+				</p>
+			</div><!-- .posts-styles -->
+		</div>
 		<?php
 		do_action( 'bayleaf_dp_widget_extend', $this, $instance );
 	}
@@ -361,12 +397,7 @@ class Display_Posts_Widget extends \WP_Widget {
 		$instance          = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 
-		if ( empty( $this->post_types ) ) {
-			// Get the registered post types.
-			$this->post_types = get_post_types( [ 'public' => true ], 'objects' );
-		}
-
-		$valid_post_types      = wp_list_pluck( $this->post_types, 'name' );
+		$valid_post_types      = array_keys( $this->get_post_types() );
 		$instance['post_type'] = in_array( $new_instance['post_type'], $valid_post_types, true ) ? $new_instance['post_type'] : '';
 
 		if ( 'page' === $instance['post_type'] ) {
@@ -416,10 +447,10 @@ class Display_Posts_Widget extends \WP_Widget {
 
 		$instance['image_crop'] = ( array_key_exists( $new_instance['image_crop'], $this->imagecrop ) ) ? $new_instance['image_crop'] : 'centercrop';
 
-		$valid_styles       = apply_filters( 'bayleaf_dp_styles', '', $new_instance );
+		$valid_styles       = $this->get_display_styles();
 		$instance['styles'] = array_key_exists( $new_instance['styles'], $valid_styles ) ? $new_instance['styles'] : '';
 
-		return $instance;
+		return apply_filters( 'bayleaf_dp_widget_update', $instance, $new_instance, $this );
 	}
 
 	/**
@@ -448,19 +479,26 @@ class Display_Posts_Widget extends \WP_Widget {
 	public function terms_checklist( $taxonomy, $selected_terms = [] ) {
 
 		// Get list of all registered terms.
-		$terms = get_terms();
+		$terms = get_terms(
+			[
+				'hide_empty' => true,
+			]
+		);
 
 		// Get 'checkbox' options as value => label.
 		$options = wp_list_pluck( $terms, 'name', 'slug' );
 
 		// Get HTML classes for checkbox options.
-		$classes = wp_list_pluck( $terms, 'taxonomy', 'slug' );
-		if ( $taxonomy ) {
-			foreach ( $classes as $slug => $taxon ) {
-				if ( $taxonomy !== $taxon ) {
-					$classes[ $slug ] .= ' bayleaf-hidden';
-				}
+		$classes = [];
+		foreach ( $terms as $term ) {
+			$classes[ $term->slug ][] = $term->taxonomy;
+		}
+
+		foreach ( $classes as $slug => $taxonomies ) {
+			if ( $taxonomy && ! in_array( $taxonomy, $taxonomies, true ) ) {
+				$classes[ $slug ][] = 'bayleaf-hidden';
 			}
+			$classes[ $slug ] = implode( ' ', $classes[ $slug ] );
 		}
 
 		// Terms Checkbox markup.
@@ -595,5 +633,56 @@ class Display_Posts_Widget extends \WP_Widget {
 		} else {
 			return $mu_checkbox;
 		}
+	}
+
+	/**
+	 * Get list of all registered post types.
+	 *
+	 * @return array
+	 */
+	public function get_post_types() {
+
+		if ( ! empty( $this->post_types ) ) {
+			return $this->post_types;
+		}
+
+		// Default Post and Pages post types.
+		$default = [
+			'post' => esc_html__( 'Posts', 'bayleaf' ),
+			'page' => esc_html__( 'Pages', 'bayleaf' ),
+		];
+
+		// Get the registered post types.
+		$post_types = get_post_types(
+			[
+				'public'   => true,
+				'_builtin' => false,
+			],
+			'objects'
+		);
+
+		$post_types       = wp_list_pluck( $post_types, 'label', 'name' );
+		$this->post_types = array_merge( $default, $post_types );
+
+		return $this->post_types;
+	}
+
+	/**
+	 * Get display styles.
+	 *
+	 * @return array
+	 */
+	public function get_display_styles() {
+		if ( ! empty( $this->styles ) ) {
+			return $this->styles;
+		}
+
+		$styles = apply_filters( 'bayleaf_dp_styles', [] );
+		foreach ( $styles as $style => $args ) {
+			$this->styles[ $style ]          = $args['label'];
+			$this->style_supported[ $style ] = $args['support'];
+		}
+
+		return $this->styles;
 	}
 }

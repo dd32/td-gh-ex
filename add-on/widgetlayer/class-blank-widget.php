@@ -28,7 +28,7 @@ class Blank_Widget extends \WP_Widget {
 			'description'                 => esc_html__( 'Create a blank widget.', 'bayleaf' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'bayleaf_blank_widget', esc_html__( 'Blank Widget', 'bayleaf' ), $widget_ops );
+		parent::__construct( 'bayleaf_blank_widget', esc_html__( 'BayLeaf - Divider', 'bayleaf' ), $widget_ops );
 		add_filter( 'bayleaf_widget_custom_css', [ $this, 'add_widget_css' ], 10, 2 );
 		add_filter( 'bayleaf_widgetlayer_widget_options', [ $this, 'widget_options' ] );
 		add_filter( 'bayleaf_widget_custom_classes', [ $this, 'widget_classes' ], 10, 3 );

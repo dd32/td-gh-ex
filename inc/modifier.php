@@ -165,7 +165,7 @@ add_filter( 'image_size_names_choose', 'bayleaf_custom_image_sizes_to_admin' );
  * @param str $css Dynamically generated css string.
  * @return str
  */
-function bayleaf_color_scheme_css( $css ) {
+function bayleaf_inline_dynamic_css( $css ) {
 
 	$color = bayleaf_get_mod( 'bayleaf_color_scheme', 'color' ); // Escaped by bayleaf_escape function.
 	if ( ! $color ) {
@@ -173,6 +173,7 @@ function bayleaf_color_scheme_css( $css ) {
 	}
 
 	$rgb_color = bayleaf_hex_to_rgb( $color, true );
+	$brad      = bayleaf_get_mod( 'bayleaf_border_radius', 'integer' );
 
 	$css .= sprintf(
 		'
@@ -191,9 +192,7 @@ function bayleaf_color_scheme_css( $css ) {
 		ul.products .button,
 		ul.products a.added_to_cart,
 		.woocommerce-tabs .wc-tabs li a:hover,
-		.woocommerce-tabs .wc-tabs li a:focus,
-		.entry-featured-content .quick-action,
-		.dp-featured-content .quick-action {
+		.woocommerce-tabs .wc-tabs li a:focus {
 			color: %1$s;
 		}
 		a.button,
@@ -223,18 +222,62 @@ function bayleaf_color_scheme_css( $css ) {
 			-webkit-box-shadow: inset 0 0 1px %1$s;
 	        		box-shadow: inset 0 0 1px %1$s;
 		}
-		.site-description,
-		.slider1 .sub-entry {
+		.site-description {
 			background-color: rgba( %2$s, 0.8 );
+		}
+		.site-footer {
+			background-color: rgba( %2$s, 0.05 );
 		}
 		',
 		$color,
 		$rgb_color
 	);
 
+	if ( $brad && 8 !== $brad ) {
+		$css .= sprintf(
+			'
+			.loop-product-wrapper,
+			.entry-author-avatar > img,
+			.comment-respond,
+			.entry-index-wrapper,
+			.entry-header-title-area .entry-thumbnail img,
+			.page-entry-header .entry-thumbnail img,
+			.header-image,
+			.wprm-recipe-template-compact.wprm-recipe-template-compact,
+			.mc4wp-form,
+			.has-featured-img .custom-widget-thumbnail,
+			.has-featured-img .custom-widget-content,
+			.singular-view:not(.woocommerce-page) .entry-content a.wprm-recipe-link,
+			input[type="date"],
+			input[type="time"],
+			input[type="datetime-local"],
+			input[type="week"],
+			input[type="month"],
+			input[type="text"],
+			input[type="email"],
+			input[type="url"],
+			input[type="password"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="number"],
+			textarea,
+			select {
+				border-radius: %1$spx;
+			}
+
+			@media only screen and (min-width: 1024px) {
+				.sidebar-widget-area .widget {
+					border-radius: %1$spx;
+				}
+			}
+			',
+			$brad
+		);
+	}
+
 	return $css;
 }
-add_filter( 'bayleaf_inline_styles', 'bayleaf_color_scheme_css' );
+add_filter( 'bayleaf_inline_styles', 'bayleaf_inline_dynamic_css' );
 
 /**
  * Create dynamic css for theme color scheme.

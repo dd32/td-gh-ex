@@ -20,7 +20,7 @@ let config = {
 		scrlTop      : '.scrl-to-top',
 		comments     : '.comments-area',
 		cToggle      : '.comments-toggle',
-		widthStyle   : '.has-featured-img, .slider2',
+		widthStyle   : '.has-featured-img, .slider2, .dp-wrapper',
 	},
 	cls: { /* HTML Classes */
 		toggled: 'toggled-on',

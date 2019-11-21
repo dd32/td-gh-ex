@@ -3,22 +3,26 @@
 Contributors: vedathemes
 tags: Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks, food-and-drink
 Requires at least: 4.7
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress blog theme optimized for sharing your food receipes or personal views.
+Bayleaf is a multipurpose WordPress theme with elegant visual look and feel.
 
 == Description ==
 
-Bayleaf is designed for cooking or food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme also offers full width single column layout on single pages for distraction free display of your food recipe. Bayleaf is also compatible with Gutenberg.
+Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website..
 
 == Frequently Asked Questions ==
 = What are the minimum requirmens for using this theme? =
 PHP 5.4+, IE11+, WordPress 4.7+
 
 == Changelog ==
+
+= 1.4.2 =
+* Add: JS closest polyfill.
+* Add: Bayleaf Premium compatibility
 
 = 1.4.1 =
 * Add: lang folder added to fecilitate easy translation.

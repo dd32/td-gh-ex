@@ -53,7 +53,7 @@ function bayleaf_setup() {
 
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'bayleaf-small', 320, 240, true );
+	add_image_size( 'bayleaf-small', 320, 9999, false );
 	add_image_size( 'bayleaf-medium', 720, 9999, false );
 	add_image_size( 'bayleaf-large', 1280, 9999, false );
 
@@ -439,7 +439,7 @@ function bayleaf_scripts() {
 	wp_enqueue_script(
 		'bayleaf-scripts',
 		get_theme_file_uri( '/scripts.js' ),
-		array( 'jquery' ),
+		array(),
 		BAYLEAF_THEME_VERSION,
 		true
 	);

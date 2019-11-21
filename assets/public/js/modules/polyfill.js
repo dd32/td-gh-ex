@@ -13,6 +13,7 @@ class PolyFill {
 	constructor() {
 
 		this.objectFit();
+		this.closest();
 	}
 
 	/**
@@ -32,12 +33,12 @@ class PolyFill {
 
 		if (false === 'objectFit' in document.documentElement.style) {
 			const elems = document.querySelectorAll(selectors.join(','));
-			const elemsArr = Array.from(elems);
+			const elemsArr = Array.prototype.slice.call(elems);
 			elemsArr.forEach(elem => {
 				const image  = elem.getElementsByTagName('img');
 				const imgsrc = image.length ? image[0].src : '';
 				if (!imgsrc) return;
-				image.style.visibility     = 'hidden';
+				image[0].style.visibility     = 'hidden';
 				elem.style.backgroundImage = 'url(' + imgsrc + ')';
 				elem.style.backgroundSize  = 'cover';
 				
@@ -46,6 +47,30 @@ class PolyFill {
 					elem.style.backgroundPosition = 'center center';
 				}
 			});
+		}
+	}
+
+	/**
+	 * closest polyfill.
+	 * 
+	 * @since 1.3.5
+	 */
+	closest() {
+		if (!Element.prototype.matches) {
+			Element.prototype.matches = Element.prototype.msMatchesSelector || 
+										Element.prototype.webkitMatchesSelector;
+		}
+		
+		if (!Element.prototype.closest) {
+			Element.prototype.closest = function(s) {
+				var el = this;
+		  
+				do {
+					if (el.matches(s)) return el;
+					el = el.parentElement || el.parentNode;
+				} while (el !== null && el.nodeType === 1);
+				return null;
+			};
 		}
 	}
 }
