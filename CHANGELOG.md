@@ -1,3 +1,6 @@
+###Version 2.1.4 [21-NOV-2019]
+* Tested and compatible with latest WordPress.
+* Minor bug fixed.
 ###Version 2.1.3 [08-NOV-2019]
 * Removed all images that aren't GPL compatible.
 * Starter content removed.

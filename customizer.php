@@ -1,5 +1,5 @@
 <?php
-$banner_img = get_template_directory_uri() . '/images/banner.jpg';
+//$banner_img = get_template_directory_uri() . '/images/banner.jpg';
 function awada_customizer_preview_js()
 {
     wp_enqueue_script('custom_css_preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview', 'jquery'));
@@ -613,7 +613,7 @@ for ($i = 1; $i <= 3; $i++) {
         'type'        => 'image',
         'section'     => 'slider_sec',
         'priority'    => 10,
-        'default'     => get_template_directory_uri() . '/images/slider/s'.$i.'.jpg',
+        'default'     => '',
 		'required'  => array(
             array(
                 'setting'  => 'slider_style',
@@ -1159,7 +1159,7 @@ Kirki::add_field('awada_theme', array(
     'type' => 'image',
     'priority' => 10,
     'transport' => 'postMessage',
-    'default' => $banner_img,
+    'default' => '',
     'sanitize_callback' => 'esc_url_raw',
 	'partial_refresh' => array(
 		'callout_bg_image' => array(
