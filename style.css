@@ -4,7 +4,7 @@ Theme URI: https://themearile.com/arilewp-theme/
 Author: ThemeArile
 Author URI: https://themearile.com
 Description: ArileWP is a powerful, modern and professional multipurpose WordPress theme with pixel perfect design and outstanding functionality. As well as sophisticated plus it has some exotic features like customization and clean code, advanced typography, sticky menu, logo upload, header image, Bootstrap 4 framework, built with SEO in mind, and theme info area besides being Mobile ready, translation ready (WPML, Polylang) and it's built to be beautiful on all screen sizes. The theme perfectly suited for business, consultant, finance, corporate, freelancer, agency, business promotion, electrician, industries, education, SEO, construction, fashion, online shop, health & medical, Beauty & spa salons, wedding, photography, gym, cafe, music, architecture, lawyer, restaurant, hotel, blog, magazine, travel agency and many other websites compatible. This theme supports the best Elementor page builder to create, edit and updates page designs as per the requirement. ArileWP also supports popular free and premium WordPress plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, Google Analytics and much more. Check the demo of ArileWP Pro https://demo.themearile.com/?theme=ArileWP%20Pro
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arilewp
@@ -218,13 +218,6 @@ select:focus {
    border-color: #545454;
    box-shadow: 0 0 0 0.063rem rgba(84, 84, 84,.25);
 }
-/* select { */
-	/* border: 1px solid #e5e5e5; */
-	/* -webkit-border-radius: 0px; */
-	/* border-radius: 0px; */
-	/* height: 3em; */
-	/* max-width: 100%; */
-/* } */
 input[type="radio"],
 input[type="checkbox"] {
 	margin-right: 0.5em;
@@ -509,7 +502,7 @@ a:hover, a:active { color: #01012f; outline: 0; }
 	
 }
 .theme-main-slider { margin: 0; }
-.theme-main-slider .static-theme-slide {
+.theme-main-slider .item {
     position: relative;
     background-color: #fff;
     background-repeat: no-repeat;
@@ -557,18 +550,93 @@ a:hover, a:active { color: #01012f; outline: 0; }
 }
 
 /*Slider Content Animation*/
-.theme-slider-content .theme-caption-bg {
+.owl-item.active  .theme-slider-content .theme-caption-bg {
     animation: 1s .2s fadeInDown both;
 }
-.theme-slider-content .title-large {
+.owl-item.active .theme-slider-content .title-large {
 	animation: 1s .4s fadeInDown both;
 }
-.theme-slider-content .description {
+.owl-item.active .theme-slider-content .description {
     animation: 1s .6s fadeInUp both;
 }
-.theme-slider-content .mt-5, 
-.theme-slider-content .mt-4 {
+.owl-item.active .theme-slider-content .mt-5, 
+.owl-item.active .theme-slider-content .mt-4, 
+.owl-item.active .theme-slider-content .divider-sm-left {
     animation: 1s .9s fadeInUp both;
+}
+
+
+
+
+/*--------------------------------------------------
+=>> Slider Next/Prev Button Styles
+--------------------------------------------------*/
+
+.owl-carousel .owl-prev, .owl-carousel .owl-next { 
+	display: inline-block;
+	background-color: rgba(255, 255, 255, 1); 
+	opacity: 0;
+	color: #01012f;
+    font-size: 2rem;
+    line-height: 1.7;  
+	padding: 0 !important;
+	margin: 0px;
+	-moz-border-radius: 0px; 
+	-webkit-border-radius: 0px; 
+	border-radius: 0px;
+	position: absolute;
+    top: 50%;
+	-webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+	width: 3.50rem;
+	height: 3.50rem;
+	border-radius: 3px;
+    z-index: 10;
+    overflow: hidden;
+    cursor: pointer;
+	text-align: center;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.owl-carousel .owl-prev { left: 30px; }
+.owl-carousel .owl-next { right: 30px; }
+.owl-carousel:hover .owl-prev { left: 30px; opacity: 1; }
+.owl-carousel:hover .owl-next { right: 30px; opacity: 1; }
+.owl-carousel .owl-prev:hover, 
+.owl-carousel .owl-prev:focus, 
+.owl-carousel .owl-next:hover, 
+.owl-carousel .owl-next:focus { 
+	color: #fff;
+}
+
+@media (max-width: 500px) {
+	.owl-carousel .owl-prev { left: 15px; }
+	.owl-carousel .owl-next { right: 15px; }
+	.owl-carousel:hover .owl-prev { left: 15px; opacity: 1; }
+	.owl-carousel:hover .owl-next { right: 15px; opacity: 1; }
+}
+
+.theme-sponsors .owl-carousel .owl-prev { left: -40px; }
+.theme-sponsors .owl-carousel .owl-next { right: -40px; }
+.theme-sponsors .owl-carousel .owl-prev, 
+.theme-sponsors .owl-carousel .owl-next { 
+	background-color: #01012f; 
+	color: #fff;
+	font-size: 1.5rem;
+	width: 2.50rem;
+    height: 2.50rem;
+}
+.theme-sponsors .owl-carousel .owl-prev:hover, 
+.theme-sponsors .owl-carousel .owl-next:hover {
+    color: #fff;
+}
+@media (max-width: 1250px) {
+	.theme-sponsors .owl-carousel .owl-prev, 
+	.theme-sponsors .owl-carousel .owl-next { 
+		display: none; 
+	}
 }
 
 

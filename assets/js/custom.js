@@ -47,6 +47,26 @@
 		jQuery('.panel-group').on('shown.bs.collapse', toggleIcon);
 		
 		
+		jQuery("#theme-main-slider").owlCarousel({
+			navigation : true, // Show next and prev buttons
+			slideSpeed : 300,
+			autoplay : 7000,
+			autoplayTimeout: 2500,
+			smartSpeed: 1000,
+			autoplayHoverPause:true,
+			singleItem:true,
+			mouseDrag: true,
+			loop:true, // loop is true up to 1199px screen.
+			nav:true, // is true across all sizes
+			margin:0, // margin 10px till 960 breakpoint
+			autoHeight: true,
+			responsiveClass:true, // Optional helper class. Add 'owl-reponsive-' + 'breakpoint' class to main element.
+			items: 1,
+			dots: false,
+			navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]	
+        });
+		
+		
 		//Search Popup Box
 		
 		jQuery(function () {

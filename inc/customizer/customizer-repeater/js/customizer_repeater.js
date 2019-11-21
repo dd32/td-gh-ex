@@ -248,9 +248,12 @@ jQuery(document).ready(function () {
 		var parentid = $(this).parent().attr("id"); 
 	
 		if(parentid == 'customize-control-arilewp_main_slider_content')
-		{
-			$( "#customize-control-arilewp_slider_upgrade .arilewp-upgrade-pro-message" ).show();
-			return false;
+		{	
+			var numItems = $("#customize-control-arilewp_main_slider_content .customizer-repeater-general-control-repeater-container").length 
+			if(numItems >= 2){ 
+			  $( "#customize-control-arilewp_slider_upgrade .arilewp-upgrade-pro-message" ).show();
+			  return false;   
+			}
 		}
 		if(parentid == 'customize-control-arilewp_theme_info_content')
 		{
@@ -366,6 +369,13 @@ jQuery(document).ready(function () {
     theme_conrols.on('click', '.social-repeater-general-control-remove-field', function () {
         if (typeof    jQuery(this).parent() !== 'undefined') {
             jQuery(this).parent().hide(500, function(){
+				
+				var main_slider_items = $("#customize-control-arilewp_main_slider_content .customizer-repeater-general-control-repeater-container").length 
+				if(main_slider_items < 3){ 
+				  $( "#customize-control-arilewp_slider_upgrade .arilewp-upgrade-pro-message" ).hide();
+				}
+				
+				
 				var theme_info_items = $("#customize-control-arilewp_theme_info_content .customizer-repeater-general-control-repeater-container").length 
 				if(theme_info_items < 4){ 
 				  $( "#customize-control-arilewp_theme_info_upgrade .arilewp-upgrade-pro-message" ).hide();
