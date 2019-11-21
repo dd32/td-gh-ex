@@ -310,7 +310,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.attesaPostWidget .theText span.comm,
 				ul.products li.product .tinvwl_add_to_wishlist_button,
 				.woocommerce ul.products li.product a.compare,
-				.site-social-widget .attesa-social {
+				.site-social-widget .attesa-social,
+				.wp-block-image figcaption {
 					font-size: '.esc_html($smalltext_font_size).';
 				}';
 			}
@@ -879,7 +880,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-pro-sharing-box-container,
 			.attesa-breadcrumbs,
 			.rank-math-breadcrumb,
-			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu {
+			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
+			.wp-block-image {
 				background-color: '.esc_html($alternativeBackgroundColor).';
 			}
 			.tagcloud a,
@@ -990,7 +992,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-pro-sharing-box-container,
 			.attesa-breadcrumbs,
 			.rank-math-breadcrumb,
-			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu {
+			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
+			.wp-block-image {
 				border-color: '.esc_html($generalBorderColor).';
 			}
 			.star-rating:before {
