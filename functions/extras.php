@@ -296,7 +296,7 @@ function azuma_block_editor_dynamic_style( $css = array() ) {
 if ( !function_exists( 'azuma_header_menu' ) ) {
 	function azuma_header_menu() {
 		?>
-		<div class="toggle-nav"></div>
+		<button class="toggle-nav"></button>
 		<div id="site-navigation" role="navigation">
 			<div class="site-main-menu">
 			<?php wp_nav_menu(
