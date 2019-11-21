@@ -358,7 +358,7 @@ function semplicemente_custom_css_styles() {
 	
 ?>
 
-<style type="text/css">
+<style id="semplicemente-custom-css">
 	<?php if (!empty($color_primary)) : ?>
 	body,
 	button,

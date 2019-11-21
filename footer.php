@@ -20,7 +20,7 @@
 				<span class="sep"> | </span>
 				<?php
 				/* translators: 1: theme name, 2: theme developer */
-				printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'semplicemente' ), '<a title="Semplicemente Theme" href="https://crestaproject.com/downloads/semplicemente/" rel="nofollow" target="_blank">Semplicemente</a>', 'CrestaProject' );
+				printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'semplicemente' ), '<a title="Semplicemente Theme" href="https://crestaproject.com/downloads/semplicemente/" rel="noopener noreferrer" target="_blank">Semplicemente</a>', 'CrestaProject' );
 				?>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
