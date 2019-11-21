@@ -111,7 +111,7 @@ add_filter('comment_form_fields', 'axiohost_move_comment_field_to_bottom');
 function axiohost_nav_menus()
 {
 	register_nav_menus(array(
-		'primary_menu' =>  esc_html__('Primary Menu', 'axiohost'),
+		'primary' =>  esc_html__('Primary Menu', 'axiohost'),
 		'footer_menu' =>  esc_html__('Footer Menu', 'axiohost'),
 	));
 }

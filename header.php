@@ -39,13 +39,13 @@
                         <a href="#" class="search-popup-icon"><img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/search-icon.png'); ?>" alt="<?php esc_attr__('nav search', 'axiohost'); ?> "></a> 
 						
 						<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'axiohost' ); ?></button>
-				<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary_menu' ) ) : ?>
+						<div id="site-header-menu" class="site-header-menu">
+						<?php if ( has_nav_menu( 'primary' ) ) : ?>
 							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'axiohost' ); ?>">
 								<?php
 									wp_nav_menu(
 										array(
-											'theme_location' => 'primary_menu',
+											'theme_location' => 'primary',
 											'menu_class' => 'primary-menu',
 										)
 									);
