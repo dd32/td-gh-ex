@@ -20,6 +20,9 @@ PHP 5.4+, IE11+, WordPress 4.7+
 
 == Changelog ==
 
+= 1.4.3 =
+* Bugfix release.
+
 = 1.4.2 =
 * Add: JS closest polyfill.
 * Add: Bayleaf Premium compatibility

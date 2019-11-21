@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/bayleaf-premium/
 Author: Vedathemes
 Author URI: https://www.vedathemes.com
 Description: Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website.
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayleaf
@@ -3991,24 +3991,24 @@ h3.related-posts-title {
 	.slider2.widescreen .dp-index-wrapper > .sub-entry .sub-entry {
 		width: 40%;
 	}
-	.js .dp-grid .dp-entry,
-	.js .brick,
-	.js .fc-main-content,
-	.js .fc-featured-images,
-	.js .mfc-feature {
+	.js .widgetlayer .dp-grid .dp-entry,
+	.js .widgetlayer .brick,
+	.js .widgetlayer .fc-main-content,
+	.js .widgetlayer .fc-featured-images,
+	.js .widgetlayer .mfc-feature {
 		opacity: 0;
 	}
-	.js .rosobj {
+	.js .widgetlayer .rosobj {
 		opacity: 0;
 		-webkit-transition: opacity 0.25s, -webkit-transform 0.25s;
 		transition: opacity 0.25s, -webkit-transform 0.25s;
 		transition: opacity 0.25s, transform 0.25s;
 		transition: opacity 0.25s, transform 0.25s, -webkit-transform 0.25s;
 	}
-	.js .rosobj.fadein {
+	.js .widgetlayer .rosobj.fadein {
 		opacity: 1;
 	}
-	.js .rosobj.fadein .rosobj {
+	.js .widgetlayer .rosobj.fadein .rosobj {
 		opacity: 1;
 		-webkit-transform: none;
 		transform: none;
