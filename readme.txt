@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.0.11
-Version: 1.0.11
+Stable tag: 1.0.12
+Version: 1.0.12
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, portfolio, editor-style, grid-layout
@@ -20,7 +20,7 @@ StartKit WordPress Theme, Copyright 2019 Nayra Themes. StartKit WordPress Theme 
 
 == Description ==
 
-Arowana is a child theme of StartKit. It comes with lots of powerful features. Best Suitable for any type of websites. Arowana works with all popular plugins. Get 24x7 support with free & premium theme. Explore Pro Demo - https://www.nayrathemes.com/demo/pro/?theme=arowana
+Arowana is a child of the StartKit theme with lots of powerful features. Arowana is suited for any type of website and works with all popular plugins. Get 24x7 support with both the free and the Pro versions. Explore the Pro demo - https://www.nayrathemes.com/demo/pro/?theme=arowana
 
 == Installation ==
 	
@@ -110,6 +110,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 1.0.12
+* Theme Description Changed
 
 @version 1.0.11
 * Theme Description Changed
