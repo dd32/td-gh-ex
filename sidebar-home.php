@@ -52,7 +52,7 @@ if( empty( $trans_editor ) ){ $trans_editor = __( "Editor's Pick", "accesspress-
             <?php
                 echo '<div class="sidebar-posts-wrapper">';
                 $editor_args = array(
-                                'cat' => $editor_cat,
+                                'category_name' => $editor_cat,
                                 'post_status' => 'publish',
                                 'posts_per_page' => $editor_posts_per_page,
                                 'order' => 'DESC'

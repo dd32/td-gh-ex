@@ -1,5 +1,5 @@
 <?php 
-$defaults = accesspress_mag_get_default_theme_options();
+//$defaults = accesspress_mag_get_default_theme_options();
 
 // Pull all the categories into an array
 	$options_categories = array();
@@ -338,7 +338,7 @@ $defaults = accesspress_mag_get_default_theme_options();
 						'section'     => 'accesspress_mag_slider',
 						'priority'    => 40,
 		            	'choices' => $options_categories,
-		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
+		            	//'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
 		            	'default'	=> '',
 		            	'active_callback' => [
 							[
@@ -483,7 +483,8 @@ $defaults = accesspress_mag_get_default_theme_options();
 						'priority'    => 10,
 		            	'choices' => $options_categories,
 		            	'sanitize_callback'	=> 'accesspress_mag_sanitize_category_lists',
-		            	'default'	=> $defaults['featured_block_1'],
+		            	// 'default'	=> $defaults['featured_block_1'],
+		            	'default'	=> '',
 						)
 					);
 				Kirki::add_field( 'accesspress_mag_config', 

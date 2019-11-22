@@ -1,5 +1,16 @@
-License: GNU General Public License v3 or later
+=== AccessPress Mag ===
+
+Requires at least: 4.0
+Tested up to: 5.3
+Stable tag: 2.5.7
+License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Contributors: access-keys
+
+== Description ==
+
+AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
+
 AccessPress Mag WordPress Theme, Copyright 2015 AccessPress Themes
 AccessPress Mag is distributed under the terms of the GNU GPL v3
 
@@ -71,6 +82,11 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+
+= 2.5.7 =
+ ** Fixed Sanitization function issues
+ ** Refined functions
+
 = 2.5.6 =
  ** Fixed customizer issues
 

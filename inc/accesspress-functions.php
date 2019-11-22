@@ -14,7 +14,7 @@
  * @return array
  */
 
-$accesspress_mag_default = get_option('accesspress-mag');
+$accesspress_mag_default = get_option('accesspress-mag-theme');
 
 /*------------------------------------------------------------------------------------------------*/
 /**
@@ -179,7 +179,7 @@ if ( ! function_exists( 'accesspress_mag_slider_mobile_cb' ) ) :
                                     )
                         );
         if( ( $slider_posts_option == 'cat' ) && ( !empty( $slider_category ) ) ){
-            $slider_args['cat'] = $slider_category;
+            $slider_args['category_name'] = $slider_category;
 
         }
         $slider_query = new WP_Query( $slider_args );
@@ -237,7 +237,7 @@ if ( ! function_exists( 'accesspress_mag_slider_highlight_cb' ) ) :
                                 'order' => 'DESC'
                             );
                     if(  !empty( $highlight_category ) ){
-                        $highlight_args['cat'] = $highlight_category;
+                        $highlight_args['category_name'] = $highlight_category;
                     }
                     $highlight_query = new WP_Query( $highlight_args );
                     if( $highlight_query->have_posts() ) {

@@ -181,7 +181,13 @@
     }
 
     function accesspress_mag_sanitize_category_lists($accesspress_mag_input) {
-        $accesspress_mag_output = accesspress_mag_category_lists();
+        $accesspress_mag_output = array();
+        $options_categories_obj = get_categories();
+        $accesspress_mag_output[]= __( 'Select category', 'accesspress-mag' );
+
+        foreach ($options_categories_obj as $category) {
+            $accesspress_mag_output[$category->slug] = $category->cat_name;
+        }
         if(array_key_exists($accesspress_mag_input,$accesspress_mag_output)){
             return $accesspress_mag_input;
         }else{
