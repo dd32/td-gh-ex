@@ -116,7 +116,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:31
+#: footer.php:51
 msgid 'Copyright 2018'
 msgstr ""
 
@@ -153,30 +153,11 @@ msgstr ""
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:98
-msgid 'Footer Navigation 1'
+#: functions.php:101
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:99
-#: functions.php:109
-#: functions.php:119
-#: functions.php:129
-msgid 'Appears on footer'
-msgstr ""
-
-#: functions.php:108
-msgid 'Footer Navigation 2'
-msgstr ""
-
-#: functions.php:118
-msgid 'Footer Navigation 3'
-msgstr ""
-
-#: functions.php:128
-msgid 'Footer Navigation 4'
-msgstr ""
-
-#: functions.php:283
+#: functions.php:257
 msgid 'Pet WordPress Theme'
 msgstr ""
 
@@ -591,22 +572,46 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:756
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:757
-msgid 'Add some text for footer like copyright etc'
+#: inc/customizer.php:759
+msgid 'Add Button Text'
 msgstr ""
 
 #: inc/customizer.php:767
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:778
+msgid 'Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:780
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:782
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:783
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:784
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:785
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:794
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:852
+#: inc/customizer.php:879
 msgid 'Pet Care Theme'
 msgstr ""
 
-#: inc/customizer.php:853
+#: inc/customizer.php:880
 msgid 'Go Pro'
 msgstr ""

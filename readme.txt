@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 7.2.14
-Stable tag: 0.4.5
+Stable tag: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,6 +61,10 @@ Advance Pet Care is a robust, reliable and clean WordPress theme for animal care
 * Added blog excerpt length option.
 * Added button text option.
 * Updated POT file.
+
+= 0.4.6 =
+  * Added Footer widget area option in customizer.
+  * Updated POT file.
 
 == Resources ==
 

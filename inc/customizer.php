@@ -765,10 +765,26 @@ function advance_pet_care_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_pet_care_footer_section', array(
 		'title'       => __('Footer Text', 'advance-pet-care'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-pet-care'),
 		'priority'    => null,
 		'panel'       => 'advance_pet_care_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_pet_care_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_pet_care_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_pet_care_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-pet-care'),
+        'section'     => 'advance_pet_care_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-pet-care'),
+        'choices' => array(
+            '1'     => __('One', 'advance-pet-care'),
+            '2'     => __('Two', 'advance-pet-care'),
+            '3'     => __('Three', 'advance-pet-care'),
+            '4'     => __('Four', 'advance-pet-care')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_pet_care_footer_copy', array(
 		'default'           => '',
