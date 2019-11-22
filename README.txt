@@ -79,6 +79,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.17
+* Styling fixes/tweaks
+* Fix js customizer issue
+* Added WooCustomizer as a recommended plugin in TGMPA
+* Updated language .pot file
+Premium: Updated Page Layouts importer section
+
 #### 1.3.16
 * Style tweaks/fixes
 * Updated Theme URI

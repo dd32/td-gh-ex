@@ -89,7 +89,7 @@ final class Conica_Premium_Customize {
 	 * @return void
 	 */
 	public function enqueue_control_scripts() {
-		wp_enqueue_script( 'conica-customize-controls', trailingslashit( get_template_directory_uri() ) . 'includes/conica-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'conica-customize-controls', trailingslashit( get_template_directory_uri() ) . 'includes/conica-pro/customize-controls.js', array( 'jquery', 'customize-controls' ) );
 		wp_enqueue_style( 'conica-customize-controls', trailingslashit( get_template_directory_uri() ) . 'includes/conica-pro/customize-controls.css' );
 	}
 }

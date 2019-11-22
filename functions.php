@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.16' );
+define( 'CONICA_THEME_VERSION' , '1.3.17' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -325,6 +325,11 @@ function conica_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => __( 'WooCustomizer', 'conica' ),
+			'slug'      => 'woocustomizer',
+			'required'  => false,
+		),
+		array(
 			'name'      => __( 'Breadcrumb NavXT', 'conica' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
@@ -388,7 +393,7 @@ function conica_add_license_notice() {
 				<span>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Conica Premium is currently on a %1$s', 'conica' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/conica/#purchase-premium" target="_blank">40% sale</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Conica Premium is currently on a %1$s', 'conica' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/conica/#purchase-premium" target="_blank">40% sale for only $15</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</span>
 			</h4>
