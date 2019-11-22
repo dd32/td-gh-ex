@@ -763,10 +763,26 @@ function advance_portfolio_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_portfolio_footer_section', array(
 		'title'       => __('Footer Text', 'advance-portfolio'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-portfolio'),
 		'priority'    => null,
 		'panel'       => 'advance_portfolio_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_portfolio_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_portfolio_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_portfolio_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-portfolio'),
+        'section'     => 'advance_portfolio_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-portfolio'),
+        'choices' => array(
+            '1'     => __('One', 'advance-portfolio'),
+            '2'     => __('Two', 'advance-portfolio'),
+            '3'     => __('Three', 'advance-portfolio'),
+            '4'     => __('Four', 'advance-portfolio')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_portfolio_footer_copy', array(
 		'default'           => '',
