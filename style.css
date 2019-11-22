@@ -4,7 +4,7 @@ Theme URI: https://uxlthemes.com/theme/azuma/
 Author: UXL Themes
 Author URI: https://uxlthemes.com
 Description: Azuma is a customizable WordPress theme which features a sticky header, homepage hero or slider using the standard WordPress image widget, sortable homepage sections, custom colors and fonts, grid layout options and support for video posts/articles. Support for WooCommerce ecommerce plugin along with Wishlist and Quick View plugins is included along with an auto-updating shopping cart, sticky add-to-cart panel on single product pages and a horizontal product filter widget area.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azuma
@@ -1959,6 +1959,59 @@ object{
 	transition: all 0.3s ease;
 }
 
+#masthead .top-account .mini-account a{
+	text-decoration: underline dotted;
+}
+
+.woocommerce .top-account .col2-set .col-1,
+.woocommerce-page .top-account .col2-set .col-1,
+.woocommerce .top-account .col2-set .col-2,
+.woocommerce-page .top-account .col2-set .col-2{
+	float: none;
+	width: 100%;
+}
+
+.top-account #customer_login .u-column2{
+	margin-top: .8em;
+	border-top: 1px solid rgba(255,255,255,.3);
+}
+
+.top-account h2{
+	position: relative;
+	color: #fff;
+	font-size: 1.15em;
+	text-transform: none;
+	margin: 0 0 .8em;
+}
+
+.top-account #customer_login .u-column2 h2{
+	margin-top: .8em;
+	cursor: pointer;
+}
+
+.top-account #customer_login .u-column2 h2:after{
+	font-family: 'Font Awesome 5 Free';
+	content: "\f107";
+	font-weight: 900;
+	font-size: 16px;
+	text-shadow: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.top-account #customer_login .u-column2.open h2:after{
+	content: "\f106";
+}
+
+.top-account #customer_login .u-column2 form{
+	display: none;
+}
+
+.top-account #customer_login .u-column2.open form{
+	display: block;
+}
+
 .top-account p{
 	margin: 0 0 7px;
 }
@@ -2007,10 +2060,6 @@ div.mini-account .form-row-first,
 span.mini-account .form-row-last{
 	width: 100%;
 	float: left;
-}
-
-div.mini-account form.login input{
-	height: 32px;
 }
 
 .top-account .woocommerce-form__label-for-checkbox{
@@ -2432,9 +2481,11 @@ div.mini-account form.login input{
 	overflow: hidden;
 }
 
+#primary-menu ul li.menu-item-has-children ul,
+#primary-menu ul li.menu-item-has-children ul,
 #primary-menu ul li.menu-item-has-children.locked ul,
 #primary-menu ul li.menu-item-has-children:hover ul,
-#primary-menu ul li a:focus ~ ul{
+#primary-menu ul li.menu-item-has-children a:focus ~ ul{
 	left: 100%;
 	top: 5px;
 }

@@ -222,6 +222,10 @@ jQuery(function($){
         }
     });
 
+    $( '.top-account #customer_login .u-column2 h2' ).click( function() {
+        $( '.top-account #customer_login .u-column2' ).toggleClass( 'open' );
+    });
+
 });
 
 jQuery( document ).ready( function( $ ){

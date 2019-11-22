@@ -349,26 +349,23 @@ if ( !function_exists( 'azuma_header_content_extra' ) ) {
 
 if ( !function_exists( 'azuma_header_account' ) ) {
 	function azuma_header_account() {
-		if ( class_exists( 'WooCommerce' ) ) { 
-			$woo_login_args = array(
-				'message'  => '',
-				'redirect' => azuma_current_page_url(),
-				'hidden'   => false,
-			); ?>
+		if ( class_exists( 'WooCommerce' ) ) { ?>
 			<div class="top-account">
 			<?php $woo_account_page_id = get_option( 'woocommerce_myaccount_page_id' );
 			if ( $woo_account_page_id ) {
 				$woo_account_page_url = get_permalink( $woo_account_page_id ); ?>
-				<a class="azuma-account" href="<?php echo get_permalink( $woo_account_page_id ); ?>" role="button"><span class="icons azuma-icon-user"></span></a>
+				<a class="azuma-account" href="<?php echo get_permalink( $woo_account_page_id ); ?>" role="button"><span id="icon-user" class="icons azuma-icon-user"></span></a>
 			<?php } else {
 				$woo_account_page_url = wp_login_url( get_permalink() ); ?>
-				<span class="azuma-account" role="button"><span class="icons azuma-icon-user"></span></span>
+				<span class="azuma-account" role="button"><span id="icon-user" class="icons azuma-icon-user"></span></span>
 			<?php } ?>
 				<div class="mini-account">
-				<?php if ( is_user_logged_in() ) { ?><p class="username-wrap"><?php
-					/* translators: %1$s: user display name, %2$s: logout url */
-					printf( __( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'azuma' ), '<strong>' . esc_html( wp_get_current_user()->display_name ) . '</strong>', esc_url( wc_logout_url( wc_get_page_permalink( 'myaccount' ) ) ) );
-					?></p><?php woocommerce_account_navigation(); } else { ?><p class="mini-account-header"><span class="mini-account-login"><?php echo esc_html__( 'Login', 'azuma' ); ?></span></p><?php woocommerce_login_form( $woo_login_args );?><p class="mini-account-footer"><span class="mini-account-register"><a href="<?php echo $woo_account_page_url; ?>"><?php echo esc_html__( 'Register', 'azuma' ); ?></a></span></p><?php } ?>
+				<?php if ( is_user_logged_in() ) {
+					woocommerce_account_content();
+					woocommerce_account_navigation();
+				} else {
+					wc_get_template( 'myaccount/form-login.php' );
+				} ?>
 				</div>
 			</div>
 		<?php }
