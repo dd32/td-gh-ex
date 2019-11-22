@@ -1,9 +1,10 @@
 === Academic Education ===
 Contributors: LogicalThemes
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
-Requires at least: 4.7
-Tested up to: 5.2.2
-Stable tag: 0.2.4
+Requires at least: 4.9
+Tested up to: 5.3
+Stable tag: 0.2.5
+Requires PHP: 7.2.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,6 +47,14 @@ Academic Education theme is suitable for college, School, university, LMS, Train
   *  Resolved theme errors.
   *  Changed theme screenshot.
   *  Changed image urls.
+
+= 0.2.5 =
+  * Added skip to content in the theme.
+  * Code of navigation updated.
+  * Resolved css errors.
+  * Changed single post layout.
+  * Done Keyboard navigation.
+  * Pot file updated.
 
 == Resources ==
 

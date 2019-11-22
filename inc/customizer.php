@@ -534,7 +534,8 @@ function academic_education_customize_register( $wp_customize ) {
 		'panel' => 'academic_education_panel_id',
 	));	
 
-	$post_list = get_posts();
+	$args = array('numberposts' => -1);
+    $post_list = get_posts($args);
 	$i = 0;
 	$pst[]='Select';
 	foreach($post_list as $post){

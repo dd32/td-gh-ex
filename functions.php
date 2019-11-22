@@ -398,6 +398,7 @@ function academic_education_scripts() {
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array('jquery') ,'',true);
 	wp_enqueue_script( 'academic-education-customscripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery') );
+	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/assets/js/jquery.superfish.js', array('jquery') ,'',true);
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

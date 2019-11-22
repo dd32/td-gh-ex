@@ -15,12 +15,13 @@
 
 <body <?php body_class(); ?>>
 
-<div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','academic-education'); ?></a></div>
+<header role="banner">
+	<a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'academic-education' ); ?></a>
+	<?php
+	  get_template_part( 'template-parts/header/top', 'bar' );
 
-<?php
-  get_template_part( 'template-parts/header/top', 'bar' );
+	  get_template_part( 'template-parts/header/site', 'branding' );
 
-  get_template_part( 'template-parts/header/site', 'branding' );
-
-  get_template_part( 'template-parts/navigation/site', 'nav' );
-?>
+	  get_template_part( 'template-parts/navigation/site', 'nav' );
+	?>
+</header>	
