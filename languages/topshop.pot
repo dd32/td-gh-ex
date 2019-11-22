@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2019-10-15 12:01+0200\n"
+"POT-Creation-Date: 2019-11-22 11:28+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -697,8 +697,8 @@ msgstr ""
 
 #: functions.php:353
 msgid ""
-"<a href=\"https://kairaweb.com/go/purchase-topshop/\" target=\"_blank"
-"\">flash sale</a>"
+"<a href=\"https://kairaweb.com/wordpress-theme/topshop/#purchase-premium\" "
+"target=\"_blank\">flash sale</a>"
 msgstr ""
 
 #: functions.php:357
@@ -727,8 +727,8 @@ msgstr ""
 
 #: functions.php:367
 msgid ""
-"<a href=\"https://kairaweb.com/go/topshop-recommended-resources/\" target="
-"\"_blank\">Recommended Resources</a>"
+"<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
+"target=\"_blank\">Recommended Resources</a>"
 msgstr ""
 
 #: functions.php:367

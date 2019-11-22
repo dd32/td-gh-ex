@@ -10,6 +10,7 @@
 		isContextuallyActive: function () {
 			return true;
 		}
+		
 	} );
 
 } )( wp.customize );

@@ -70,6 +70,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.23
+* Styling fixes/tweaks
+* Fix js customizer issue
+* Updated broken help links
+* Updated language .pot file
+Premium: Updated Page Layouts import section
+
 #### 1.3.22
 * Styling fixes/tweaks
 * Added WooCustomizer as a recommended plugin in TGM

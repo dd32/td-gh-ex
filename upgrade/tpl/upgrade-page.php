@@ -9,7 +9,7 @@
         <div class="upgrade-page-top">
             
             <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/go/topshop-purchase/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                <a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
                     <?php printf( __( '<span>TopShop Premium </span><em>$25</em>', 'topshop' ) ); ?>
                 </a>
             </div>

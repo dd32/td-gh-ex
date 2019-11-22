@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.22' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.23' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -350,7 +350,7 @@ function topshop_add_license_notice() {
 				<span>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Premium now includes Page Layouts to import & is currently on a %1$s for only $15', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/go/purchase-topshop/" target="_blank">flash sale</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Premium now includes Page Layouts to import & is currently on a %1$s for only $15', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" target="_blank">flash sale</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</span>
 			</h4>
@@ -364,7 +364,7 @@ function topshop_add_license_notice() {
 					<p>
 						<?php
 						/* translators: %s: 'Recommended Resources' */
-						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/go/topshop-recommended-resources/" target="_blank">Recommended Resources</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/support/wordpress-recommended-resources/" target="_blank">Recommended Resources</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 						?>
 					</p>
 					<a href="<?php echo esc_url( admin_url( 'themes.php?page=theme_info' ) ) ?>" class="topshop-admin-notice-btn">
@@ -379,7 +379,7 @@ function topshop_add_license_notice() {
 						printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 						?>
 					</p>
-					<a href="<?php echo esc_url( 'https://kairaweb.com/go/topshop-recommended-resources/' ) ?>" class="topshop-admin-notice-btn-in" target="_blank">
+					<a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" class="topshop-admin-notice-btn-in" target="_blank">
 						<?php esc_html_e( 'Recommended Resources', 'topshop' ); ?>
 					</a>
 					<p>
@@ -405,7 +405,7 @@ function topshop_add_license_notice() {
 							<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'topshop' ); ?></a>
 						</li>
 						<li>
-							<a href="https://kairaweb.com/go/what-topshop-premium-offers/" target="_blank"><?php esc_html_e( 'What does TopShop Premium offer extra', 'topshop' ); ?></a>
+							<a href="https://kairaweb.com/wordpress-theme/topshop/#premium-features" target="_blank"><?php esc_html_e( 'What does TopShop Premium offer extra', 'topshop' ); ?></a>
 						</li>
 					</ul>
 					<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="topshop-admin-notice-btn-grey" target="_blank">

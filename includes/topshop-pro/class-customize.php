@@ -89,7 +89,7 @@ final class Topshop_Premium_Customize {
 	 * @return void
 	 */
 	public function enqueue_control_scripts() {
-		wp_enqueue_script( 'topshop-customize-controls', trailingslashit( get_template_directory_uri() ) . 'includes/topshop-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'topshop-customize-controls', trailingslashit( get_template_directory_uri() ) . 'includes/topshop-pro/customize-controls.js', array( 'jquery', 'customize-controls' ) );
 		wp_enqueue_style( 'topshop-customize-controls', trailingslashit( get_template_directory_uri() ) . 'includes/topshop-pro/customize-controls.css' );
 	}
 }
