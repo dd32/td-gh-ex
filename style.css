@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/wp-ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.4.1
+Version: 1.4.2
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
@@ -22,6 +22,7 @@ BB Ecommerce Store WordPress Theme is released under the terms of GNU GPL
 body{ 
   margin:0;
   padding:0;
+
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#fff;
@@ -344,7 +345,9 @@ a.blog-more{
  #contact-info{
   display: none;
 }
-.header a:focus, .copyright-wrapper a:focus, .header input:focus, form.woocommerce-product-search button[type="submit"]:focus{
+.header a:focus, .copyright-wrapper a:focus, .header input:focus, 
+form.woocommerce-product-search button[type="submit"]:focus,
+.copyright-wrapper input:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
 }
@@ -1500,10 +1503,6 @@ input.search-submit,
   color:#ffffff;
   padding:4px 10px;
   cursor:pointer;
-}
-aside.widget{
-  margin-bottom:30px;
-  margin-top: 5%;
 }
 aside.widget ul{ 
   list-style:disc;

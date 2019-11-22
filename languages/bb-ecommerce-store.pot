@@ -124,7 +124,7 @@ msgstr ""
 msgid 'Comments are closed.'
 msgstr ""
 
-#: footer.php:32
+#: footer.php:52
 msgid 'copyright 2017'
 msgstr ""
 
@@ -162,30 +162,19 @@ msgstr ""
 msgid "Third Column Sidebar"
 msgstr ""
 
-#: functions.php:101
-msgid 'Footer 1'
+#: functions.php:104
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:102
-#: functions.php:112
-#: functions.php:122
-#: functions.php:132
-msgid 'Appears on footer'
+#: functions.php:115
+msgid 'Home Page Sidebar'
 msgstr ""
 
-#: functions.php:111
-msgid 'Footer 2'
+#: functions.php:116
+msgid "Appears on Home Page"
 msgstr ""
 
-#: functions.php:121
-msgid 'Footer 3'
-msgstr ""
-
-#: functions.php:131
-msgid 'Footer 4'
-msgstr ""
-
-#: functions.php:376
+#: functions.php:350
 msgid 'Ecommerce WordPress Theme'
 msgstr ""
 
@@ -580,22 +569,46 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:739
+#: inc/customizer.php:746
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:749
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:740
-msgid 'Add some text for footer like copyright etc.'
+#: inc/customizer.php:760
+msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:750
+#: inc/customizer.php:762
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:764
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:765
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:766
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:767
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:776
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:836
+#: inc/customizer.php:862
 msgid 'BB Ecommerce Pro'
 msgstr ""
 
-#: inc/customizer.php:837
+#: inc/customizer.php:863
 msgid 'Go Pro'
 msgstr ""

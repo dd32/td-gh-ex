@@ -747,10 +747,26 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	//footer
 	$wp_customize->add_section('bb_ecommerce_store_footer_section',array(
 		'title'	=> __('Footer Text','bb-ecommerce-store'),
-		'description'	=> __('Add some text for footer like copyright etc.','bb-ecommerce-store'),
 		'priority'	=> null,
 		'panel' => 'bb_ecommerce_store_panel_id',
 	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices',
+    ));
+    $wp_customize->add_control('bb_ecommerce_store_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'bb-ecommerce-store'),
+        'section'     => 'bb_ecommerce_store_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'bb-ecommerce-store'),
+        'choices' => array(
+            '1'     => __('One', 'bb-ecommerce-store'),
+            '2'     => __('Two', 'bb-ecommerce-store'),
+            '3'     => __('Three', 'bb-ecommerce-store'),
+            '4'     => __('Four', 'bb-ecommerce-store')
+        ),
+    ));
 	
 	$wp_customize->add_setting('bb_ecommerce_store_footer_copy',array(
 		'default'	=> '',
