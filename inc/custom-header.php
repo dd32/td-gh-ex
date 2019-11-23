@@ -19,9 +19,9 @@ function actinia_custom_header_setup() {
 			array(
 				'default-image'       => '',
 				'default-text-color'  => '000000',
-				'width'               => 1500,
+				'width'               => 1920,
 				'flex-width'          => true,
-				'height'              => 200,
+				'height'              => 360,
 				'flex-height'         => true,
 				'wp-head-callback'    => 'actinia_header_style',
 			)

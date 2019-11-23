@@ -174,6 +174,7 @@ function actinia_customize_register( $wp_customize ) {
 				'label'    => esc_html__( 'Tagline Color', 'actinia' ),
 				'section'  => 'colors',
 				'settings' => 'actinia_tagline_color',
+				'description' => esc_html__( 'Site Description Color', 'actinia' )
 			)
 		)
 	);

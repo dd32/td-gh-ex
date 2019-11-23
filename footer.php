@@ -27,7 +27,7 @@
 			</a>
 			<span class="sep"> | </span>
 			<?php /* translators: theme name */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', 'green_onion' );
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', 'alex-codes' );
 			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
