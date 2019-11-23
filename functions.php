@@ -64,8 +64,3 @@ function avira_remove_widgets(){
 add_action( 'widgets_init', 'avira_remove_widgets', 11 );
 
 require_once( get_stylesheet_directory() . '/inc/customize/avira-premium.php');
-
-/**
- * Load Sanitization file.
- */
-require_once get_stylesheet_directory() . '/inc/sanitization.php';
