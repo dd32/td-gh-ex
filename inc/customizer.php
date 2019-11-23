@@ -805,10 +805,26 @@ function advance_it_company_customize_register($wp_customize) {
 	//Footer
 	$wp_customize->add_section('advance_it_company_footer_section', array(
 		'title'       => __('Footer Text', 'advance-it-company'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-it-company'),
 		'priority'    => null,
 		'panel'       => 'advance_it_company_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_it_company_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_it_company_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_it_company_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-it-company'),
+        'section'     => 'advance_it_company_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-it-company'),
+        'choices' => array(
+            '1'     => __('One', 'advance-it-company'),
+            '2'     => __('Two', 'advance-it-company'),
+            '3'     => __('Three', 'advance-it-company'),
+            '4'     => __('Four', 'advance-it-company')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_it_company_footer_copy', array(
 		'default'           => '',
