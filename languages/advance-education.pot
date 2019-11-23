@@ -116,7 +116,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:31
+#: footer.php:51
 msgid 'Copyright 2018'
 msgstr ""
 
@@ -153,30 +153,11 @@ msgstr ""
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:102
-msgid 'Footer Navigation 1'
+#: functions.php:105
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:103
-#: functions.php:113
-#: functions.php:123
-#: functions.php:133
-msgid 'Appears on footer'
-msgstr ""
-
-#: functions.php:112
-msgid 'Footer Navigation 2'
-msgstr ""
-
-#: functions.php:122
-msgid 'Footer Navigation 3'
-msgstr ""
-
-#: functions.php:132
-msgid 'Footer Navigation 4'
-msgstr ""
-
-#: functions.php:284
+#: functions.php:258
 msgid 'Education WordPress Theme.'
 msgstr ""
 
@@ -555,22 +536,46 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:573
+#: inc/customizer.php:576
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:583
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:574
-msgid 'Add some text for footer like copyright etc'
+#: inc/customizer.php:594
+msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:584
+#: inc/customizer.php:596
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:598
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:599
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:600
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:601
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:610
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:669
+#: inc/customizer.php:695
 msgid ''Education Pro Theme' 
 msgstr ""
 
-#: inc/customizer.php:670
+#: inc/customizer.php:696
 msgid 'Go Pro'
 msgstr ""

@@ -581,10 +581,26 @@ function advance_education_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_education_footer_section', array(
 		'title'       => __('Footer Text', 'advance-education'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-education'),
 		'priority'    => null,
 		'panel'       => 'advance_education_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_education_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_education_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_education_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-education'),
+        'section'     => 'advance_education_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-education'),
+        'choices' => array(
+            '1'     => __('One', 'advance-education'),
+            '2'     => __('Two', 'advance-education'),
+            '3'     => __('Three', 'advance-education'),
+            '4'     => __('Four', 'advance-education')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_education_footer_copy', array(
 		'default'           => '',
