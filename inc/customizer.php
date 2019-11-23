@@ -748,10 +748,26 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_fitness_gym_footer_section', array(
 		'title'       => __('Footer Text', 'advance-fitness-gym'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-fitness-gym'),
 		'priority'    => null,
 		'panel'       => 'advance_fitness_gym_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_fitness_gym_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_fitness_gym_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-fitness-gym'),
+        'section'     => 'advance_fitness_gym_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-fitness-gym'),
+        'choices' => array(
+            '1'     => __('One', 'advance-fitness-gym'),
+            '2'     => __('Two', 'advance-fitness-gym'),
+            '3'     => __('Three', 'advance-fitness-gym'),
+            '4'     => __('Four', 'advance-fitness-gym')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_fitness_gym_footer_copy', array(
 		'default'           => '',

@@ -145,8 +145,8 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:31
-msgid 'Copyright 2018 -'
+#: footer.php:51
+msgid 'Copyright 2018 '
 msgstr ""
 
 #: functions.php:30
@@ -182,38 +182,19 @@ msgstr ""
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:101
-msgid 'Footer Navigation 1'
+#: functions.php:104
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:102 
-#: functions.php:112 
-#: functions.php:122
-#: functions.php:132
-msgid 'Appears on footer'
-msgstr ""
-
-#: functions.php:111
-msgid 'Footer Navigation 2'
-msgstr ""
-
-#: functions.php:121
-msgid 'Footer Navigation 3'
-msgstr ""
-
-#: functions.php:131
-msgid 'Footer Navigation 4'
-msgstr ""
-
-#: functions.php:141
+#: functions.php:115
 msgid 'Home Page Sidebar'
 msgstr ""
 
-#: functions.php:142
+#: functions.php:116
 msgid 'Appears on home page'
 msgstr ""
 
-#: functions.php:403
+#: functions.php:377
 msgid 'Fitness WordPress Theme'
 msgstr ""
 
@@ -603,22 +584,46 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:741
+#: inc/customizer.php:744
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:750
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:742
-msgid 'Add some text for footer like copyright etc'
+#: inc/customizer.php:761
+msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:752
+#: inc/customizer.php:763
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:765
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:766
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:767
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:768
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:777
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:871
+#: inc/customizer.php:896
 msgid 'Fitness WordPress Theme'
 msgstr ""
 
-#: inc/customizer.php:872
+#: inc/customizer.php:897
 msgid 'Go Pro'
 msgstr ""
