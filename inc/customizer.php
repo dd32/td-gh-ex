@@ -758,10 +758,26 @@ function advance_coaching_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_coaching_footer_section', array(
 		'title'       => __('Footer Text', 'advance-coaching'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-coaching'),
 		'priority'    => null,
 		'panel'       => 'advance_coaching_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_coaching_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_coaching_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_coaching_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-coaching'),
+        'section'     => 'advance_coaching_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-coaching'),
+        'choices' => array(
+            '1'     => __('One', 'advance-coaching'),
+            '2'     => __('Two', 'advance-coaching'),
+            '3'     => __('Three', 'advance-coaching'),
+            '4'     => __('Four', 'advance-coaching')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_coaching_footer_copy', array(
 		'default'           => '',

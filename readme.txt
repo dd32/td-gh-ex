@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-c
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 7.2.14
-Stable tag: 0.3.5
+Stable tag: 0.3.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -57,6 +57,10 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Added show / hide author, comment, post date and Single Post tags option.
   * Added blog excerpt length option.
   * Added button text option.
+  * Updated POT file.
+
+= 0.3.6 =
+  * Added Footer widget area option in customizer.
   * Updated POT file.
 
 == Resources ==
