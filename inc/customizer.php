@@ -654,10 +654,26 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_ecommerce_store_footer_section', array(
 		'title'       => __('Footer Text', 'advance-ecommerce-store'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-ecommerce-store'),
 		'priority'    => null,
 		'panel'       => 'advance_ecommerce_store_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_ecommerce_store_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_ecommerce_store_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-ecommerce-store'),
+        'section'     => 'advance_ecommerce_store_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-ecommerce-store'),
+        'choices' => array(
+            '1'     => __('One', 'advance-ecommerce-store'),
+            '2'     => __('Two', 'advance-ecommerce-store'),
+            '3'     => __('Three', 'advance-ecommerce-store'),
+            '4'     => __('Four', 'advance-ecommerce-store')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_ecommerce_store_footer_copy', array(
 		'default'           => '',

@@ -145,7 +145,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:31
+#: footer.php:51
 msgid 'Copyright 2018 -'
 msgstr ""
 
@@ -187,46 +187,27 @@ msgstr ""
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:106
-msgid 'Footer Navigation 1'
+#: functions.php:109
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:107 
-#: functions.php:117
-#: functions.php:127
-#: functions.php:137
-msgid 'Appears on footer'
-msgstr ""
-
-#: functions.php:116
-msgid 'Footer Navigation 2'
-msgstr ""
-
-#: functions.php:126
-msgid 'Footer Navigation 3'
-msgstr ""
-
-#: functions.php:136
-msgid 'Footer Navigation 4'
-msgstr ""
-
-#: functions.php:146
+#: functions.php:120
 msgid 'Home Page Sidebar'
 msgstr ""
 
-#: functions.php:147
+#: functions.php:121
 msgid 'Appears on home page'
 msgstr ""
 
-#: functions.php:156
+#: functions.php:130
 msgid 'Social Media Widget'
 msgstr ""
 
-#: functions.php:157
+#: functions.php:131
 msgid 'Appears on topbar'
 msgstr ""
 
-#: functions.php:419
+#: functions.php:393
 msgid 'Ecommerce Wordpress Theme'
 msgstr ""
 
@@ -592,22 +573,46 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:646
+#: inc/customizer.php:649
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:656
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:647
-msgid 'Add some text for footer like copyright etc'
+#: inc/customizer.php:667
+msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:657
+#: inc/customizer.php:679
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:671
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:672
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:673
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:674
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:683
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:742
+#: inc/customizer.php:768
 msgid 'Ecommerce Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:743
+#: inc/customizer.php:769
 msgid 'Go Pro'
 msgstr ""
