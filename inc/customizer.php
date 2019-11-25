@@ -126,5 +126,5 @@ add_action( 'customize_controls_enqueue_scripts', 'aperture_portfolio_customizer
  * Generate a link to the Noah Lite info page.
  */
 function aperture_portfolio_get_pro_link() {
-    return 'https://aperturewp.com/downloads/aperture/';
+    return 'https://portfolio.thepixeltribe.com/#aperture;
 }
