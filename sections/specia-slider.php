@@ -1,6 +1,6 @@
 <?php 
-	$avira_hs_slider= get_theme_mod('hide_show_slider','on');
-	if( $avira_hs_slider == 'on' ): 
+	$hide_show_slider= get_theme_mod('hide_show_slider','on');
+	if( $hide_show_slider == 'on' ): 
 ?>
 
 <?php 
