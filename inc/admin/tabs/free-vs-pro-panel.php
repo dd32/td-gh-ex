@@ -35,8 +35,8 @@
 			  <tr>
 				 <td>
 					<h3><?php esc_html_e( 'Frontpage Sections', 'arilewp' ); ?></h3>
-					<p><b class="text-show"><?php esc_html_e( 'Free', 'arilewp' ); ?></b> - <?php esc_html_e( 'Static Slider, Theme Info Area, Services, Projects, Call to Action, Testimonials, Blog/News', 'arilewp' ); ?></p>
-					<p><b class="text-show"><?php esc_html_e( 'Pro', 'arilewp' ); ?></b> - <?php esc_html_e( 'Slider with unlimited slides, Theme Info Area, Services, Projects, Funfacts, Testimonials, Shop, Call to Action, Team, Blog/News, Clients', 'arilewp' ); ?></p>
+					<p><b class="text-show"><?php esc_html_e( 'Free', 'arilewp' ); ?></b> - <?php esc_html_e( 'Slider with Two Slides, Theme Info Area, Services, Projects, Testimonials, Blog/News', 'arilewp' ); ?></p>
+					<p><b class="text-show"><?php esc_html_e( 'Pro', 'arilewp' ); ?></b> - <?php esc_html_e( 'Slider with Unlimited Slides, Theme Info Area, Services, Projects, Funfacts, Testimonials, Shop, Call to Action, Team, Blog/News, Clients', 'arilewp' ); ?></p>
 				 </td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
