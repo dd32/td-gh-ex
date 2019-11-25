@@ -7,13 +7,10 @@
  * @package Benevolent
  */
 
-//define theme version
-if ( ! defined( 'BENEVOLENT_THEME_VERSION' ) && ! defined( 'BENEVOLENT_THEME_NAME' ) && ! defined( 'BENEVOLENT_THEME_TEXTDOMAIN' ) ) {
-	$theme_data = wp_get_theme();	
-	define( 'BENEVOLENT_THEME_VERSION', $theme_data->get( 'Version' ) );
-    define( 'BENEVOLENT_THEME_NAME', $theme_data->get( 'Name' ) );
-    define( 'BENEVOLENT_THEME_TEXTDOMAIN', $theme_data->get( 'TextDomain' ) );
-}
+$theme_data = wp_get_theme();
+if( ! defined( 'BENEVOLENT_THEME_VERSION' ) ) define( 'BENEVOLENT_THEME_VERSION', $theme_data->get( 'Version' ) );
+if( ! defined( 'BENEVOLENT_THEME_NAME' ) ) define( 'BENEVOLENT_THEME_NAME', $theme_data->get( 'Name' ) );
+if( ! defined( 'BENEVOLENT_THEME_TEXTDOMAIN' ) ) define( 'BENEVOLENT_THEME_TEXTDOMAIN', $theme_data->get( 'TextDomain' ) );
 
 if ( ! function_exists( 'benevolent_setup' ) ) :
 /**
@@ -250,8 +247,7 @@ function benevolent_scripts() {
 add_action( 'wp_enqueue_scripts', 'benevolent_scripts' );
 
 function benevolent_admin_scripts() {
-	wp_enqueue_style( 'benevolent-admin-style',get_template_directory_uri().'/inc/css/admin.css','', BENEVOLENT_THEME_VERSION );    
-    wp_enqueue_script( 'benevolent-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );
+	wp_enqueue_style( 'benevolent-admin-style',get_template_directory_uri().'/inc/css/admin.css','', BENEVOLENT_THEME_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'benevolent_admin_scripts' );
 

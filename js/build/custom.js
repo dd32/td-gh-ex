@@ -105,4 +105,17 @@ jQuery(document).ready(function($){
       $(this).toggleClass('active');
    });
 
+   //secondary menu accibility for edge
+   $(".secondary-navigation ul li a").focus(function(){
+       $(this).parents("li").addClass("focus");
+   }).blur(function(){
+       $(this).parents("li").removeClass("focus");
+   });
+
+   $("#site-navigation ul li a").focus(function(){
+       $(this).parents("li").addClass("focus");
+   }).blur(function(){
+       $(this).parents("li").removeClass("focus");
+   });
+
 });

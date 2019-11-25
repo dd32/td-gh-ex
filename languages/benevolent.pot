@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Benevolent 1.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/benevolent\n"
-"POT-Creation-Date: 2019-09-09 11:42:28+00:00\n"
+"POT-Creation-Date: 2019-11-25 05:08:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,49 +53,49 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:55
+#: functions.php:52
 msgid "Primary"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:53
 msgid "Secondary"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:149
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:159
 msgid "Footer One"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:169
 msgid "Footer Two"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:179
 msgid "Footer Three"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:189
 msgid "Footer Four"
 msgstr ""
 
-#: functions.php:286
+#: functions.php:282
 msgid "Congratulations!"
 msgstr ""
 
-#: functions.php:287
+#: functions.php:283
 msgid ""
 "%1$s is now installed and ready to use. Click below to see theme "
 "documentation, plugins to install and other details to get started."
 msgstr ""
 
-#: functions.php:288
+#: functions.php:284
 msgid "Go to the getting started."
 msgstr ""
 
-#: functions.php:289
+#: functions.php:285
 msgid "Dismiss"
 msgstr ""
 

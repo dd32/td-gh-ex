@@ -1796,6 +1796,11 @@ add_action( 'customize_register', 'benevolent_customize_register' );
 function benevolent_customize_preview_js() {
     $build  = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
     $suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-    wp_enqueue_script( 'benevolent_customizer', get_template_directory_uri() . '/js' . $build . '/customizer' . $suffix . '.js', array( 'customize-preview' ), '20130508', true );
+    wp_enqueue_script( 'benevolent_customizer', get_template_directory_uri() . '/js' . $build . '/customizer' . $suffix . '.js', array( 'customize-preview' ), BENEVOLENT_THEME_VERSION, true );
 }
 add_action( 'customize_preview_init', 'benevolent_customize_preview_js' );
+
+function benevolent_customizer_scripts(){
+    wp_enqueue_script( 'benevolent-customizer', get_template_directory_uri().'/inc/js/customizer.js', array( 'jquery' ), BENEVOLENT_THEME_VERSION, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'benevolent_customizer_scripts' );
