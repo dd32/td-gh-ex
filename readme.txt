@@ -2,15 +2,15 @@
 
 Contributors: specia
 Requires at least: 4.4
-Tested up to: 5.4.2
+Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 3.0.19
-Version: 3.0.19
+Stable tag: 3.0.2
+Version: 3.0.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
 
-Benzer WordPress Theme, Copyright 2020 Specia Theme
+Benzer WordPress Theme, Copyright 2019 Specia Theme
 Benzer is distributed under the terms of the GNU GPL
 
 ##Description
@@ -25,7 +25,7 @@ Benzer is a trending WordPress theme with lots of powerful features, instantly g
 
 ## Credit & Copyright
 
-Benzer WordPress Theme is child theme of Specia WordPress Theme, Copyright 2020 Specia Theme
+Benzer WordPress Theme is child theme of Specia WordPress Theme, Copyright 2018 Specia Theme
 Benzer WordPress Theme is distributed under the terms of the GNU GPL
 
 i) Package Structure
@@ -75,63 +75,12 @@ Source: https://pxhere.com
 License: CC0 License
 
 xi)Feature Section Image
-URL: https://pxhere.com/en/photo/47321
-Source: https://pxhere.com
+URL: https://stocksnap.io/photo/7OPWOSQFXS
+Source: https://stocksnap.io
 License: CC0 Public Domain
 
 
 ##Changelog
-
-version 3.0.19
-* Tested with WordPress 5.4.2
-
-version 3.0.18
-* Fixed Theme Check Plugin Issues
-
-version 3.0.17
-* Removed Customizer Images & Call From Parent Theme
-
-version 3.0.16
-* Tested up to & Requires PHP Fields Added in Style.css
-
-version 3.0.15
-* Tested With WordPress 5.4.1
-
-version 3.0.14
-* Resolve Prefixing Issue
-
-version 3.0.13
-* Tested With WordPress 5.4
-
-version 3.0.12
-* Prefixing Issues Resolved
-
-version 3.0.11
-* Footer Style Issue Resolved
-
-version 3.0.10
-* Screenshot Updated
-
-version 3.0.9
-* Version Increased
-
-version 3.0.8
-* Feature Image Changed
-
-version 3.0.7
-* Copyright Updated
-
-version 3.0.6
-* Remove Unnecessary Code
-
-version 3.0.5
-* Tested with WordPress 5.3.2
-
-version 3.0.4
-* Tested with WordPress 5.3.1
-
-version 3.0.3
-* Readme Updated
 
 version 3.0.2
 * Remove Upgrade to Pro Image From Customizer

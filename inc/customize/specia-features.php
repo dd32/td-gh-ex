@@ -112,6 +112,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
     $wp_customize->add_setting( 
     	'features_background_setting' , 
     	array(
+			'default' 			=> '',
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_url',	
 		) 
