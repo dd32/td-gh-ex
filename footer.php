@@ -26,8 +26,9 @@
 				<?php printf( esc_html__( 'Proudly powered by %s', 'actinia' ), 'WordPress' ); ?>
 			</a>
 			<span class="sep"> | </span>
-			<?php /* translators: theme name */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', 'alex-codes' );
+			
+			<?php /* translators: theme name, theme developer */
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', '<a href="https://alex-codes.com">' . esc_html__( 'alex-codes', 'actinia' ) . '</a>' );
 			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
