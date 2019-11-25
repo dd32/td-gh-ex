@@ -81,5 +81,5 @@ add_action( 'customize_controls_enqueue_scripts', 'aqua_portfolio_customizer_ass
  * Generate a link to the Noah Lite info page.
  */
 function aqua_portfolio_get_pro_link() {
-    return 'https://aperturewp.com/downloads/aqua-portfolio/';
+    return 'https://portfolio.thepixeltribe.com/#aqua';
 }
