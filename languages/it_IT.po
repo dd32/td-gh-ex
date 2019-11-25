@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-19 18:33+0200\n"
-"PO-Revision-Date: 2019-09-19 18:33+0200\n"
+"POT-Creation-Date: 2019-11-25 22:36+0100\n"
+"PO-Revision-Date: 2019-11-25 22:36+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -759,7 +759,7 @@ msgstr "Margine in alto per la descrizione del sito."
 msgid "Add a space between the logo and the description (For example, 15px) "
 msgstr "Aggiungi uno spazio tra logo e descrizione (Per esempio, 15px)"
 
-#: core/admin/customize/customize.php:861
+#: core/admin/customize/customize.php:861 header.php:121
 msgid "Menu"
 msgstr "Font per il menu"
 
@@ -1523,6 +1523,22 @@ msgstr "%1$s: %2$s"
 msgid "Read More"
 msgstr "Continua"
 
+#: core/main.php:735
+msgid "Open the main menu"
+msgstr "Apri il menu principale"
+
+#: core/main.php:736
+msgid "Close the main menu"
+msgstr "Chiudi il menu principale"
+
+#: core/main.php:737
+msgid "expand submenu"
+msgstr "espandi il sottomenu"
+
+#: core/main.php:738
+msgid "collapse submenu"
+msgstr "comprimi sottomenu"
+
 #: core/metaboxes/page.php:20 core/metaboxes/post.php:20
 #: core/metaboxes/product.php:20
 msgid "Setting"
@@ -1632,7 +1648,7 @@ msgstr "Spiacente, nessun articolo trovato."
 msgid "Cart Totals"
 msgstr "Totale carrello"
 
-#: woocommerce/cart/cart-totals.php:26
+#: woocommerce/cart/cart-totals.php:26 woocommerce/cart/cart.php:44
 msgid "Subtotal"
 msgstr "Subtotale"
 
@@ -1640,7 +1656,7 @@ msgstr "Subtotale"
 msgid "Shipping"
 msgstr "Spedizione"
 
-#: woocommerce/cart/cart-totals.php:80 woocommerce/cart/cart.php:44
+#: woocommerce/cart/cart-totals.php:80
 msgid "Total"
 msgstr "Totale"
 
