@@ -1,22 +1,19 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-item'); ?>>
+<?php if (has_post_thumbnail()) {
+	$thumb = get_the_post_thumbnail_url(get_the_ID(), 'adri-large'); 
+} else {
+	$thumb = get_template_directory_uri() .'/img/default.png';
 
-<div class="post-thumb">
-	<a href="<?php the_permalink();?>">
-	<?php if (has_post_thumbnail()) {
-		the_post_thumbnail(get_the_ID(), 'medium'); 
-	} else {
-		$thumb = get_template_directory_uri() .'/img/default.png';
-
-		echo '<img src="'.esc_url("$thumb").'">';
-	} ?>
-</a>
-</div>
+} ?>
+<a href="<?php the_permalink();?>">
+<div class="post-thumb" style="background-image:url('<?php echo $thumb; ?>')"></div></a>
 	<header class="entry-header">
 		<a href="<?php the_permalink();?>">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</a>			
 
 		<?php echo esc_html(adri_post_category()); 
+		echo esc_html(do_action('pro-portfolio-type'));
 		
 		?>			
 	</header><!-- .entry-header -->

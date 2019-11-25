@@ -124,10 +124,4 @@ add_action( 'customize_controls_enqueue_scripts', 'adri_customizer_assets' );
  */
 function adri_get_pro_link() {
     return 'https://aperturewp.com/downloads/adri/';
-  }
-$color = get_theme_mod('link_color'); ?>
-<style type="text/css">
-	.adri-social a {
-		color:<?php echo esc_attr($color); ?>;
-	}
-</style>
+}

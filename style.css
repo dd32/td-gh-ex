@@ -1,14 +1,14 @@
 /*!
 Theme Name: Adri
-Theme URI: https://aperturewp.com/downloads/adri/
+Theme URI: https://portfolio.thepixeltribe.com/adri/
 Author: Afrothemes
-Author URI:https://aperturewp.com
-Description: Adri is a simple WordPress theme for photographers & bloggers, use it for a travel, food or photography bloging & portfolio. Adri can also be use be used for creative agency or photo studio. Try it out for free today.
-Version: 1.0.1
+Author URI:https://portfolio.thepixeltribe.com/
+Description: Adri is a simple WordPress theme for photography portfolio, use it for a travel, food or photography bloging & portfolio. Adri can also be use be used for creative agency or photo studio. Try it out for free today.
+Version: 1.0.10
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: adri
-Tags: one-column, grid-layout, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, blog
+Tags: one-column, grid-layout, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, blog, portfolio, photography
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -871,13 +871,13 @@ background: #eee;
 
 #cssmenu>ul>li:after {
   content: '';
-  display: block;
+  display: none;
   position: absolute;
   width: 100%;
   height: 1px;
   top: 0;
   z-index: 0;
-  border-bottom: 1px solid #000
+  border-bottom: 1px solid #000;
   background: transparent;
   -webkit-transition: border-bottom .2s;
   -moz-transition: border-bottom .2s;
@@ -1389,7 +1389,9 @@ a:hover, a:active {
 .widget select {
 	max-width: 100%;
 }
-
+.rightwidget {
+	text-align: right;
+}
 .cat-links,
 .cat-links a {
 	font-size: 13px;
@@ -1409,6 +1411,13 @@ a:hover, a:active {
 .post-thumb {
 	line-height: 0;
 	background: #000;
+	height: 650px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+@media all and (max-width: 420px) {
+	.post-thumb { height: 350px; }
 }
 .post-thumb img {
 	width: 100%;
@@ -1425,6 +1434,7 @@ a:hover, a:active {
 .single .post-thumbnail {
 	margin-top: 2em;
 }
+
 /*--------------------------------------------------------------
 # Post Item
 --------------------------------------------------------------*/
@@ -1459,6 +1469,9 @@ a:hover, a:active {
 .post-item .entry-header a {
 	line-height: 1.3;
 }
+.single-portfolio h1.entry-title {
+	margin-top: 0;
+}
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1478,6 +1491,9 @@ a:hover, a:active {
 }
 @media all and (max-width: 420px) {
 	.post-item { width: 100%; }
+}
+@media all and (max-width: 768px) {
+	.post-item { width: 49%; }
 }
 .updated:not(.published) {
 	display: none;
