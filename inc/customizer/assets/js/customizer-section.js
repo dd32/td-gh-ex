@@ -77,7 +77,7 @@ function arilewpfrontpagesectionsscroll( section_id ){
     }
 }
 
- $('body').on('click', '#sub-accordion-panel-arilewp_frontpage_settings .control-subsection .accordion-section-title', function(event) {
-        var section_id = $(this).parent('.control-subsection').attr('id');
+ jQuery('body').on('click', '#sub-accordion-panel-arilewp_frontpage_settings .control-subsection .accordion-section-title', function(event) {
+        var section_id = jQuery(this).parent('.control-subsection').attr('id');
         arilewpfrontpagesectionsscroll( section_id );
 });
