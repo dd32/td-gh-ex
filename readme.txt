@@ -3,7 +3,7 @@
 Contributors: Afrothemes
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.5
-Tested up to: 4.9
+Tested up to: 5.3
 Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
