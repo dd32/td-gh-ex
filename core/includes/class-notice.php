@@ -64,7 +64,7 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
 
 						<?php
                         
-                            esc_html_e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more. ', 'looki-lite' );
+                            esc_html_e( 'Download for free the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more. ', 'looki-lite' );
 
 							printf( 
 								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'looki-lite' ) . '</a>', 
@@ -79,7 +79,7 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
                     
             	<p>
 
-                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button-primary"><?php _e( 'Upgrade to Looki Premium', 'looki-lite' ); ?></a>
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button-primary"><?php _e( 'Download for free Looki Premium', 'looki-lite' ); ?></a>
                 
             	</p>
 
