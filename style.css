@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/ignite/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Ignite is a clean, free, and responsive blog theme. Its modern design is great for both business and personal websites. Ignite has a simple and minimalist design that looks equally great on laptops, tablets, and mobile devices. Features include: custom logo, social media icons, left- and right-sidebar layouts, five fonts, custom background colors, and many additional display options. Use it to blog about the news, food, music, fashion, or your travels. Ignite is now WooCommerce compatible, so you can even setup an eCommerce store. There is also a premium upgrade for Ignite called Ignite Plus. Ignite is also fully compatible with the new Gutenberg post editor. Preview Ignite now on desktop, tablets, and phones with the interactive live demo: https://www.competethemes.com/demos/?theme=ignite
-Version: 1.76
+Version: 1.77
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, left-sidebar, custom-background, custom-logo, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
@@ -183,17 +183,37 @@ table {
   margin: 1.5em 0;
 }
 
-td {
-  padding: 0.5em 0.75em;
-  border: solid 1px black;
+td,
+th {
+  padding: 0.75em;
+  border: solid 1px #303338;
 }
 
-th {
-  padding: 0.5em 0.75em;
-  border: solid 1px black;
+.wp-block-table {
+  margin: 0;
+}
+.wp-block-table thead,
+.wp-block-table tfoot {
+  background: #E8EAEE;
+}
+.wp-block-table td,
+.wp-block-table th {
+  border-color: #D9DCDF;
+}
+
+.wp-block-table.is-style-stripes thead {
+  background: none;
+}
+.wp-block-table.is-style-stripes td,
+.wp-block-table.is-style-stripes th {
+  border-color: #D9DCDF;
 }
 
 /* Images */
+.wp-block-image {
+  margin: 0;
+}
+
 .alignleft {
   float: left;
   margin: 0 1.5em 1.5em 0;
@@ -211,7 +231,7 @@ th {
 }
 
 .alignnone {
-  margin: 1.5em;
+  margin: 1.5em 0;
 }
 
 img,
@@ -223,16 +243,37 @@ img,
 .size-full,
 .size-large,
 .size-medium,
-.size-thumbnail {
+.size-thumbnail,
+.wp-block-image {
   max-width: 100%;
   height: auto;
 }
+img figcaption,
+.alignright figcaption,
+.alignleft figcaption,
+.aligncenter figcaption,
+.alignnone figcaption,
+.size-auto figcaption,
+.size-full figcaption,
+.size-large figcaption,
+.size-medium figcaption,
+.size-thumbnail figcaption,
+.wp-block-image figcaption {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 3px 0 0 0;
+  color: #303338;
+  text-align: center;
+}
 
-.wp-caption-text {
-  margin: 0 0 1.8450184502em;
-  font-size: 0.813em;
-  line-height: 1.85;
-  color: #7C7D7F;
+.wp-caption-text,
+.gallery-caption,
+.wp-caption-dd {
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 3px 0 0 0;
+  color: #303338;
+  text-align: center;
 }
 
 /* Form styles */

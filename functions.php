@@ -59,7 +59,6 @@ if ( ! function_exists( 'ct_ignite_theme_setup' ) ) {
 
 		// Gutenberg - wide & full images
 		add_theme_support( 'align-wide' );
-		add_theme_support( 'align-full' );
 
 		// Gutenberg - add support for editor styles
 		add_theme_support('editor-styles');
@@ -215,7 +214,7 @@ if ( ! function_exists( 'ct_ignite_update_comment_field' ) ) {
 		return $comment_field;
 	}
 }
-add_filter( 'comment_form_field_comment', 'ct_ignite_update_comment_field' );
+add_filter( 'comment_form_field_comment', 'ct_ignite_update_comment_field', 7 );
 
 if ( ! function_exists( 'ct_ignite_remove_comments_notes_after' ) ) {
 	function ct_ignite_remove_comments_notes_after( $defaults ) {
@@ -599,6 +598,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'email-form',
 			'academia',
 			'amazon',
+			'artstation',
 			'bandcamp',
 			'behance',
 			'bitbucket',
@@ -622,6 +622,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'ok-ru',
 			'patreon',
 			'paypal',
+			'pocket',
 			'podcast',
 			'qq',
 			'quora',
@@ -723,20 +724,6 @@ if ( ! function_exists( 'ct_ignite_allow_skype_protocol' ) ) {
 }
 add_filter( 'kses_allowed_protocols' , 'ct_ignite_allow_skype_protocol' );
 
-// trigger theme switch on link click and send to Appearance menu
-function ct_ignite_welcome_redirect() {
-
-	$welcome_url = add_query_arg(
-		array(
-			'page'          => 'ignite-options',
-			'ignite_status' => 'activated'
-		),
-		admin_url( 'themes.php' )
-	);
-	wp_safe_redirect( esc_url_raw( $welcome_url ) );
-}
-add_action( 'after_switch_theme', 'ct_ignite_welcome_redirect' );
-
 if ( ! function_exists( ( 'ct_ignite_settings_notice' ) ) ) {
 	function ct_ignite_settings_notice() {
 
@@ -746,12 +733,6 @@ if ( ! function_exists( ( 'ct_ignite_settings_notice' ) ) ) {
 				?>
 				<div class="updated">
 					<p><?php esc_html_e( 'Customizer settings deleted.', 'ignite' ); ?></p>
-				</div>
-				<?php
-			} else if ( $_GET['ignite_status'] == 'activated' ) {
-				?>
-				<div class="updated">
-					<p><?php printf( esc_html__( '%s successfully activated!', 'ignite' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
