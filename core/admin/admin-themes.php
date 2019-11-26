@@ -21,24 +21,25 @@ if (!function_exists('enigma_display_theme_info_page')) {
 		$theme_data = wp_get_theme(); ?>
 	<div class="wrap elw-page-welcome about-wrap seting-page">
 
-    <div class="col-md-12 settings">
-         <div class=" col-md-9">
-            <div class="col-md-12" style="padding:0">
-				<?php $wl_th_info = wp_get_theme(); ?>
-				<h2><span class="elw_shortcode_heading"><?php esc_html_e('Welcome to Enigma - Version','enigma'); ?><?php echo esc_html( $wl_th_info->get('Version') ); ?> </span></h2>
-				<p style="font-size:19px;color: #555d66;"><?php esc_html_e('Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design.','enigma'); ?> </p>
-            </div>
-			
-		</div>
-       
-        <div class=" col-md-3">
-			<div class="update_pro">
-				<h3><?php esc_html_e(' Upgrade Pro','enigma'); ?> </h3>
-				<a class="demo" href="<?php echo esc_url( __( 'https://weblizar.com/themes/enigma-premium/', 'enigma' ) ); ?>"><?php esc_html_e('Get Pro In $39','enigma'); ?></a>
+	    <div class="col-md-12 settings">
+	         <div class=" col-md-9">
+	            <div class="col-md-12" style="padding:0">
+					<?php $wl_th_info = wp_get_theme(); ?>
+					<h2><span class="elw_shortcode_heading"><?php esc_html_e('Welcome to Enigma - Version','enigma'); ?><?php echo esc_html( $wl_th_info->get('Version') ); ?> </span></h2>
+					<p style="font-size:19px;color: #555d66;"><?php esc_html_e('Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design.','enigma'); ?>
+						
+					</p>
+	            </div>
 				
 			</div>
+	       
+	        <div class=" col-md-3">
+				<div class="update_pro">
+					<h3><?php esc_html_e(' Upgrade Pro','enigma'); ?> </h3>
+					<a class="demo" href="<?php echo esc_url( __( 'https://weblizar.com/themes/enigma-premium/', 'enigma' ) ); ?>"><?php esc_html_e('Get Pro In $39','enigma'); ?></a>
+				</div>
+			</div>
 		</div>
-	</div>
 
             <!-- Themes & Plugin -->
             <div class="col-md-12  product-main-cont">
@@ -148,8 +149,6 @@ if (!function_exists('enigma_display_theme_info_page')) {
                                     </div>
                                 </div>
                             </div>
-							
-							
 							<div class="row p_plugin blog_gallery">
                                 <div class="col-xs-12 col-sm-4 col-md-4 p_plugin_pic">
                                     <div class="img-thumbnail pro_theme">

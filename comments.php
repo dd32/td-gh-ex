@@ -3,17 +3,17 @@
 	<?php return; endif; ?>
     <?php if ( have_comments() ) : ?>
 	<div class="enigma_comment_section">		
-	<div class="enigma_comment_title"><h3><i class="fa fa-comments"></i><?php echo comments_number(__('No Comments','enigma'), __('1 Comment','enigma'), '% Comments'); ?></h3></div>
-	<?php wp_list_comments( array( 'callback' => 'weblizar_comment' ) ); ?>		
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'enigma' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'enigma' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'enigma' ) ); ?></div>
-		</nav>
+		<div class="enigma_comment_title"><h3><i class="fa fa-comments"></i><?php echo comments_number(__('No Comments','enigma'), __('1 Comment','enigma'), '% Comments'); ?></h3></div>
+		<?php wp_list_comments( array( 'callback' => 'weblizar_comment' ) ); ?>		
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav id="comment-nav-below">
+				<h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'enigma' ); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'enigma' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'enigma' ) ); ?></div>
+			</nav>
 		<?php endif;  ?>
 	</div>		
-	<?php endif; ?>
+<?php endif; ?>
 <?php if ( comments_open() ) : ?>
 	<div class="enigma_comment_form_section">
 	<?php $fields=array(
@@ -39,6 +39,5 @@
 		'role_form'=> 'form',		
 		);
 		comment_form($defaults); ?>		
-		
-</div>
+	</div>
 <?php endif; // If registration required and not logged in ?>

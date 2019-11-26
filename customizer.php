@@ -264,8 +264,6 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'settings'   => 'enigma_options[animate_type_desc]',
 	) ) );
 	
-
-
 	$wp_customize->add_setting(
 		'enigma_options[slide_image_1]',
 		array(
@@ -275,6 +273,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 			'sanitize_callback'=>'esc_url_raw',
 		)
 	);
+
 	$wp_customize->add_setting(
 		'enigma_options[slide_image_2]',
 		array(
@@ -284,6 +283,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 			'sanitize_callback'=>'esc_url_raw'
 		)
 	);
+
 	$wp_customize->add_setting(
 		'enigma_options[slide_image_3]',
 		array(
@@ -291,9 +291,9 @@ function weblizar_gl_customizer( $wp_customize ) {
 			'default'=>$ImageUrl3,
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'=>'esc_url_raw',
-			
 		)
 	);
+
 	$wp_customize->add_setting(
 		'enigma_options[slide_title_1]',
 		array(
@@ -304,6 +304,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 			
 		)
 	);
+
 	$wp_customize->add_setting(
 		'enigma_options[slide_title_2]',
 		array(
@@ -314,6 +315,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 			
 		)
 	);
+	
 	$wp_customize->add_setting(
 		'enigma_options[slide_title_3]',
 		array(
@@ -1031,13 +1033,14 @@ function weblizar_gl_customizer( $wp_customize ) {
 	) );
 	}
 
-/* Blog Option */
+	/* Blog Option */
 	$wp_customize->add_section('blog_section',array(
 	'title'=>__('Home Blog Options','enigma'),
 	'panel'=>'enigma_theme_option',
 	'capability'=>'edit_theme_options',
     'priority' => 35
 	));
+
 	$wp_customize->add_setting(
 	'enigma_options[blog_home]',
 		array(
@@ -1047,12 +1050,14 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'blog_home', array(
 		'label'        => __( 'Enable Social Media Icons in Header', 'enigma' ),
 		'type'=>'checkbox',
 		'section'    => 'blog_section',
 		'settings'   => 'enigma_options[blog_home]'
 	) );
+
 	$wp_customize->add_setting(
 		'enigma_options[blog_title]',
 		array(
@@ -1062,6 +1067,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 			'capability'        => 'edit_theme_options',
 		)
 	);
+
 	$wp_customize->add_control( 'enigma_latest_post', array(
 		'label'        => __( 'Home Blog Title', 'enigma' ),
 		'type'=>'text',
@@ -1082,6 +1088,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 			'capability'        => 'edit_theme_options',
 		)
 	);
+
 	$wp_customize->add_control( 'blog_speed', array(
 		'label'        => __( 'Slider Speed Option', 'enigma' ),
 		'description' => 'Value will be in milliseconds',
@@ -1097,6 +1104,7 @@ function weblizar_gl_customizer( $wp_customize ) {
             'capability'        => 'edit_theme_options',
         )
     );
+
     $wp_customize->add_control( 'blog_speed', array(
         'label'        => __( 'Blog Speed Option', 'enigma' ),
         'description' => 'Value will be in milliseconds',
@@ -1128,6 +1136,7 @@ function weblizar_gl_customizer( $wp_customize ) {
             'capability'        => 'edit_theme_options',
         )
     );
+
     $wp_customize->add_control( 'read_more', array(
         'label'        => __( 'Blog Read More Button', 'enigma' ),
         'description' => 'Enter Read More button text',
@@ -1143,6 +1152,7 @@ function weblizar_gl_customizer( $wp_customize ) {
             'capability'        => 'edit_theme_options',
         )
     );
+
     $wp_customize->add_control( 'autoplay', array(
         'label'        => __( 'Blog AutoPlay', 'enigma' ),
         'description' => 'blog autoplay on/off',
@@ -1158,6 +1168,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	'capability' => 'edit_theme_options',
     'priority'   => 35
 	));
+
 	$wp_customize->add_setting(
 	'enigma_options[editor_home]',
 		array(
@@ -1167,6 +1178,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'        => 'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'editor_home', array(
 		'label'    => __( 'Enable extra section on homepage.', 'enigma' ),
 		'type'     => 'checkbox',
@@ -1183,6 +1195,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'        => 'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( new One_Page_Editor( $wp_customize, 'extra_sec_desc', array(
 		'label'                      =>  __( 'Extra section content', 'enigma' ),
 		'active_callback'            => 'show_on_front',
@@ -1191,7 +1204,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'settings'                   => 'extra_sec_desc'
 	) ) );
 	
-/* Font Family Section */
+    /* Font Family Section */
 	$wp_customize->add_section('font_section', array(
 	'title' => __('Typography Settings', 'enigma'),
 	'panel' => 'enigma_theme_option',
@@ -1207,6 +1220,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	'sanitize_callback'=>'enigma_sanitize_text',
 	'capability'=>'edit_theme_options',
     ));
+
 	$wp_customize->add_control(new enigma_Font_Control($wp_customize, 'main_heading_font', array(
 	'label' => __('Logo Font Style', 'enigma'),
 	'section' => 'font_section',
@@ -1221,6 +1235,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	'sanitize_callback'=>'enigma_sanitize_text',
 	'capability'=>'edit_theme_options'
     ));
+
 	$wp_customize->add_control(new enigma_Font_Control($wp_customize, 'menu_font', array(
 	'label' => __('Header Menu Font Style', 'enigma'),
 	'section' => 'font_section',
@@ -1235,6 +1250,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	'sanitize_callback'=>'enigma_sanitize_text',
 	'capability'=>'edit_theme_options'
     ));
+
 	$wp_customize->add_control(new enigma_Font_Control($wp_customize, 'theme_title', array(
 	'label' => __('Theme Title Font Style', 'enigma'),
 	'section' => 'font_section',
@@ -1249,19 +1265,21 @@ function weblizar_gl_customizer( $wp_customize ) {
 	'sanitize_callback'=>'enigma_sanitize_text',
 	'capability'=>'edit_theme_options'
     ));
+
 	$wp_customize->add_control(new enigma_Font_Control($wp_customize, 'desc_font_all', array(
 	'label' => __('Theme Description Font Style', 'enigma'),
 	'section' => 'font_section',
 	'settings' => 'enigma_options[desc_font_all]'
 	)));
 	
-/* Social options */
+    /* Social options */
 	$wp_customize->add_section('social_section',array(
 	'title'=>__("Social Options",'enigma'),
 	'panel'=>'enigma_theme_option',
 	'capability'=>'edit_theme_options',
     'priority' => 35
 	));
+
 	$wp_customize->add_setting(
 	'enigma_options[header_social_media_in_enabled]',
 		array(
@@ -1271,6 +1289,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'header_social_media_in_enabled', array(
 		'label'        => __( 'Enable Social Media Icons in Header', 'enigma' ),
 		'type'=>'checkbox',
@@ -1291,6 +1310,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'footer_section_social_media_enbled', array(
 		'label'        => __( 'Enable Social Media Icons in Footer', 'enigma' ),
 		'type'=>'checkbox',
@@ -1311,6 +1331,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'email_id', array(
 		'label'        =>  __('Email ID', 'enigma' ),
 		'type'=>'email',
@@ -1331,12 +1352,14 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'phone_no', array(
 		'label'        =>  __('Phone Number', 'enigma' ),
 		'type'=>'text',
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[phone_no]'
 	) );
+
 	$wp_customize->add_setting(
 	'enigma_options[twitter_link]',
 		array(
@@ -1346,12 +1369,14 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'twitter_link', array(
 		'label'        =>  __('Twitter', 'enigma' ),
 		'type'=>'url',
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[twitter_link]'
 	) );
+
 	$wp_customize->add_setting(
 	'enigma_options[fb_link]',
 		array(
@@ -1361,12 +1386,14 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'capability'=>'edit_theme_options'
 		)
 	);
+
 	$wp_customize->add_control( 'fb_link', array(
 		'label'        => __( 'Facebook', 'enigma' ),
 		'type'=>'url',
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[fb_link]'
 	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[linkedin_link]',
 		array(

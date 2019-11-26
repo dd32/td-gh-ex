@@ -53,9 +53,5 @@
 			<key name="show_blog" />           
 			<key name="blog_title" />			
         </key>
-        
     </admin-texts>    
-    
 </wpml-config>
-
-

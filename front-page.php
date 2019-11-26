@@ -17,7 +17,7 @@ if ( $wl_theme_options['_frontpage']=="1" && is_front_page() ) {
 		if ( $wl_theme_options['services_home'] == "1" ) {
 		 	get_template_part('home','services'); 
 		}
-		if ( 	$wl_theme_options['portfolio_home'] == "1" ) {
+		if ( $wl_theme_options['portfolio_home'] == "1" ) {
 			get_template_part( 'home','portfolio' ); 
 		}
 		if ( $wl_theme_options['editor_home'] == "1" ) {

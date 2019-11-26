@@ -57,7 +57,7 @@ if (!function_exists('theme_display_theme_info_page')) {
 				
 			</div>
 		</div>
-<?php
+	<?php
 	}
 }
 ?>

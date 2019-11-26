@@ -23,15 +23,15 @@
 	
 	//Sane Defaults
 	function weblizar_default_settings()
-{
-	$ImageUrl =  esc_url(get_template_directory_uri() ."/images/1.png");
-	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
-	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
-	$ImageUrl4 = esc_url(get_template_directory_uri() ."/images/portfolio1.png");
-	$ImageUrl5 = esc_url(get_template_directory_uri() ."/images/portfolio2.png");
-	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
-	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
-	$wl_theme_options=array(
+	{
+		$ImageUrl =  esc_url(get_template_directory_uri() ."/images/1.png");
+		$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
+		$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
+		$ImageUrl4 = esc_url(get_template_directory_uri() ."/images/portfolio1.png");
+		$ImageUrl5 = esc_url(get_template_directory_uri() ."/images/portfolio2.png");
+		$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
+		$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
+		$wl_theme_options=array(
 			//Logo and Fevicon header
 			'title_position'=>'',
 			'search_box'=>'',
@@ -74,7 +74,6 @@
 			'service_1_youtube'=>'',
 			'service_2_youtube'=>'',
 			'service_3_youtube'=>'',
-
 			'editor_home' => '1',
 			'editor_extra_text' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
 			
@@ -97,7 +96,6 @@
 			'qq_link' => "#",
 			'whatsapp_link' => "#",
 			'footer_widgets' => "1",
-			
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
 			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'enigma' ),
@@ -110,12 +108,10 @@
 			'service_1_icons'=>"fa fa-google",
 			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_1_link'=>"#",
-			
 			'service_2_title'=>__('Records', 'enigma' ),
 			'service_2_icons'=>"fa fa-database",
 			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_2_link'=>"#",
-			
 			'service_3_title'=>__("WordPress", 'enigma' ),
 			'service_3_icons'=>"fa fa-wordpress",
 			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
@@ -138,6 +134,8 @@
 			'port_4_img'=> $ImageUrl7,
 			'port_4_title'=>__('randomised', 'enigma' ),
 			'port_4_link'=>'#',
+			
+
 			//BLOG Settings
 			'blog_home' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
@@ -150,31 +148,32 @@
 			'theme_title' => 'Open Sans',
 			'desc_font_all' => 'Open Sans'
 			
-			
 		);
 		return apply_filters( 'enigma_options', $wl_theme_options );
-}
+	}
+
 	function weblizar_get_options() {
-    // Options API
-    return wp_parse_args( 
-        get_option( 'enigma_options', array() ), 
-        weblizar_default_settings() 
-    );    
+	    // Options API
+	    return wp_parse_args( 
+	        get_option( 'enigma_options', array() ), 
+	        weblizar_default_settings() 
+	    );    
 	}
 	
 	$args = array(
-	'flex-width'    => true,
-	'width'         => 2000,
-	'flex-height'    => true,
-	'height'        => 100,
-	'default-image' => get_template_directory_uri() . '/images/header-bg.jpg',
-	'wp-head-callback'   => 'enigma_header_style',
-);
-add_theme_support( 'custom-header', $args );
+		'flex-width'    => true,
+		'width'         => 2000,
+		'flex-height'    => true,
+		'height'        => 100,
+		'default-image' => get_template_directory_uri() . '/images/header-bg.jpg',
+		'wp-head-callback'   => 'enigma_header_style',
+	);
+	add_theme_support( 'custom-header', $args );
 
 	
 	/*After Theme Setup*/
 	add_action( 'after_setup_theme', 'weblizar_head_setup' ); 	
+
 	function weblizar_head_setup()
 	{	
 		global $content_width;
@@ -204,32 +203,36 @@ add_theme_support( 'custom-header', $args );
 		register_nav_menu( 'primary', __( 'Primary Menu', 'enigma' ) );
 		// theme support 	
 		$args = array('default-color' => 'ffffff',);
-		add_theme_support( 'custom-background', $args); 
-		add_theme_support( 'automatic-feed-links');
-		$defaults = array(
-	'default-image'          => '',
-	'width'                  => 0,
-	'height'                 => 0,
-	'flex-height'            => false,
-	'flex-width'             => false,
-	'uploads'                => true,
-	'random-default'         => false,
-	'header-text'            => true,
-	'default-text-color'     => '',
-	'wp-head-callback'       => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
-);
-add_theme_support( 'custom-header', $defaults );
+		add_theme_support( 'custom-background', $args);
 
-add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'automatic-feed-links');
+
+		$defaults = array(
+			'default-image'          => '',
+			'width'                  => 0,
+			'height'                 => 0,
+			'flex-height'            => false,
+			'flex-width'             => false,
+			'uploads'                => true,
+			'random-default'         => false,
+			'header-text'            => true,
+			'default-text-color'     => '',
+			'wp-head-callback'       => '',
+			'admin-head-callback'    => '',
+			'admin-preview-callback' => '',
+		);
+		
+		add_theme_support( 'custom-header', $defaults );
+
+		add_theme_support( 'customize-selective-refresh-widgets' );
 		
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
-		 */
+		*/
 		add_editor_style('css/editor-style.css');
-		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
+
+		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here	
 	}
 	
 
@@ -302,22 +305,22 @@ endif;
 	*/
 	add_action( 'widgets_init', 'weblizar_widgets_init');
 	function weblizar_widgets_init() {
-	/*sidebar*/
-	register_sidebar( array(
+		/*sidebar*/
+		register_sidebar( array(
 			'name' => __( 'Sidebar', 'enigma' ),
 			'id' => 'sidebar-primary',
 			'description' => __( 'The primary widget area', 'enigma' ),
-			'before_widget' => '<div class="enigma_sidebar_widget">',
+			'before_widget' => '<div class="enigma_sidebar_widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_sidebar_widget_title"><h2>',
 			'after_title' => '</h2></div>'
 		) );
 
-	register_sidebar( array(
+		register_sidebar( array(
 			'name' => __( 'Footer Widget Area', 'enigma' ),
 			'id' => 'footer-widget-area',
 			'description' => __( 'footer widget area', 'enigma' ),
-			'before_widget' => '<div class="col-md-3 col-sm-6 enigma_footer_widget_column">',
+			'before_widget' => '<div class="col-md-3 col-sm-6 enigma_footer_widget_column %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_footer_widget_title">',
 			'after_title' => '<div class="enigma-footer-separator"></div></div>',
@@ -326,83 +329,83 @@ endif;
 	
 	/* Breadcrumbs  */
 	function weblizar_breadcrumbs() {
-    $delimiter = '';
-    $home = __('Home', 'enigma' ); // text for the 'Home' link
-    $before = '<li>'; // tag before the current crumb
-    $after = '</li>'; // tag after the current crumb
-    echo '<ul class="breadcrumb">';
-    global $post;
-    $homeLink = home_url();
-    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li>' . $delimiter . ' ';
-    if (is_category()) {
-        global $wp_query;
-        $cat_obj = $wp_query->get_queried_object();
-        $thisCat = $cat_obj->term_id;
-        $thisCat = get_category($thisCat);
-        $parentCat = get_category($thisCat->parent);
-        if ($thisCat->parent != 0)
-            echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-        echo $before . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . $after;
-    } elseif (is_day()) {
-        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
-        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
-        echo $before . get_the_time('d') . $after;
-    } elseif (is_month()) {
-        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
-        echo $before . get_the_time('F') . $after;
-    } elseif (is_year()) {
-        echo $before . get_the_time('Y') . $after;
-    } elseif (is_single() && !is_attachment()) {
-        if (get_post_type() != 'post') {
-            $post_type = get_post_type_object(get_post_type());
-            $slug = $post_type->rewrite;
-            echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
-            echo $before . get_the_title() . $after;
-        } else {
-            $cat = get_the_category();
-            $cat = $cat[0];
-            //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-            echo $before . get_the_title() . $after;
-        }
-		
-    } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
-        $post_type = get_post_type_object(get_post_type());
-        echo $before . $post_type->labels->singular_name . $after;
-    } elseif (is_attachment()) {
-        $parent = get_post($post->post_parent);
-        $cat = get_the_category($parent->ID);
-        //$cat = $cat[0];
-       // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-        echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
-    } elseif (is_page() && !$post->post_parent) {
-        echo $before . get_the_title() . $after;
-    } elseif (is_page() && $post->post_parent) {
-        $parent_id = $post->post_parent;
-        $breadcrumbs = array();
-        while ($parent_id) {
-            $page = get_page($parent_id);
-            $breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
-            $parent_id = $page->post_parent;
-        }
-        $breadcrumbs = array_reverse($breadcrumbs);
-        foreach ($breadcrumbs as $crumb)
-            echo $crumb . ' ' . $delimiter . ' ';
-        echo $before . get_the_title() . $after;
-    } elseif (is_search()) {
-        echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
+	    $delimiter = '';
+	    $home = __('Home', 'enigma' ); // text for the 'Home' link
+	    $before = '<li>'; // tag before the current crumb
+	    $after = '</li>'; // tag after the current crumb
+	    echo '<ul class="breadcrumb">';
+	    global $post;
+	    $homeLink = home_url();
+	    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li>' . $delimiter . ' ';
+	    if (is_category()) {
+	        global $wp_query;
+	        $cat_obj = $wp_query->get_queried_object();
+	        $thisCat = $cat_obj->term_id;
+	        $thisCat = get_category($thisCat);
+	        $parentCat = get_category($thisCat->parent);
+	        if ($thisCat->parent != 0)
+	            echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
+	        echo $before . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . $after;
+	    } elseif (is_day()) {
+	        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+	        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
+	        echo $before . get_the_time('d') . $after;
+	    } elseif (is_month()) {
+	        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+	        echo $before . get_the_time('F') . $after;
+	    } elseif (is_year()) {
+	        echo $before . get_the_time('Y') . $after;
+	    } elseif (is_single() && !is_attachment()) {
+	        if (get_post_type() != 'post') {
+	            $post_type = get_post_type_object(get_post_type());
+	            $slug = $post_type->rewrite;
+	            echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
+	            echo $before . get_the_title() . $after;
+	        } else {
+	            $cat = get_the_category();
+	            $cat = $cat[0];
+	            //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+	            echo $before . get_the_title() . $after;
+	        }
+			
+	    } elseif (!is_single() && !is_page() && get_post_type() != 'post') {
+	        $post_type = get_post_type_object(get_post_type());
+	        echo $before . $post_type->labels->singular_name . $after;
+	    } elseif (is_attachment()) {
+	        $parent = get_post($post->post_parent);
+	        $cat = get_the_category($parent->ID);
+	        //$cat = $cat[0];
+	       // echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+	        echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
+	        echo $before . get_the_title() . $after;
+	    } elseif (is_page() && !$post->post_parent) {
+	        echo $before . get_the_title() . $after;
+	    } elseif (is_page() && $post->post_parent) {
+	        $parent_id = $post->post_parent;
+	        $breadcrumbs = array();
+	        while ($parent_id) {
+	            $page = get_page($parent_id);
+	            $breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
+	            $parent_id = $page->post_parent;
+	        }
+	        $breadcrumbs = array_reverse($breadcrumbs);
+	        foreach ($breadcrumbs as $crumb)
+	            echo $crumb . ' ' . $delimiter . ' ';
+	        echo $before . get_the_title() . $after;
+	    } elseif (is_search()) {
+	        echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
 
-    } elseif (is_tag()) {        
-		echo $before . _e('Tag','enigma') . single_tag_title('', false) . $after;
-    } elseif (is_author()) {
-        global $author;
-        $userdata = get_userdata($author);
-        echo $before . _e("Articles posted by","enigma") . $userdata->display_name . $after;
-    } elseif (is_404()) {
-        echo $before . _e("Error 404","enigma") . $after;
-    }
-    
-    echo '</ul>';
+	    } elseif (is_tag()) {        
+			echo $before . _e('Tag','enigma') . single_tag_title('', false) . $after;
+	    } elseif (is_author()) {
+	        global $author;
+	        $userdata = get_userdata($author);
+	        echo $before . _e("Articles posted by","enigma") . $userdata->display_name . $after;
+	    } elseif (is_404()) {
+	        echo $before . _e("Error 404","enigma") . $after;
+	    }
+	    
+	    echo '</ul>';
 	}
 	
 	/*===================================================================================
@@ -418,6 +421,7 @@ endif;
 	return $contactmethods;
 	}
 	add_filter( 'user_contactmethods', 'weblizar_author_profile', 10, 1);
+
 	/*===================================================================================
 	* Add Class Gravtar
 	* =================================================================================*/
@@ -427,67 +431,68 @@ endif;
     $class = str_replace("class='avatar", "class='author_detail_img", $class);
     return $class;
 	}	
+
 	/****--- Navigation for Author, Category , Tag , Archive ---***/
 	function weblizar_navigation() { ?>
-	<div class="enigma_blog_pagination">
-	<div class="enigma_blog_pagi">
-	<?php posts_nav_link(); ?>
-	</div>
-	</div>
+		<div class="enigma_blog_pagination">
+			<div class="enigma_blog_pagi">
+				<?php posts_nav_link(); ?>
+			</div>
+		</div>
 	<?php }
 
 	/****--- Navigation for Single ---***/
 	function weblizar_navigation_posts() { ?>
-	<div class="navigation_en">
-	<nav id="wblizar_nav"> 
-	<span class="nav-previous">
-	<?php previous_post_link('&laquo; %link'); ?>
-	</span>
-	<span class="nav-next">
-	<?php next_post_link('%link &raquo;'); ?>
-	</span> 
-	</nav>
-	</div>	
-<?php
+		<div class="navigation_en">
+			<nav id="wblizar_nav"> 
+				<span class="nav-previous">
+					<?php previous_post_link('&laquo; %link'); ?>
+				</span>
+				<span class="nav-next">
+					<?php next_post_link('%link &raquo;'); ?>
+				</span> 
+			</nav>
+		</div>	
+	<?php
 	}
 
+	//Plugin Recommend
+	add_action('tgmpa_register','enigma_plugin_recommend');
 
+	function enigma_plugin_recommend(){
+		$plugins = array(
+			array(
+		        'name'      => 'Responsive Coming Soon',
+		        'slug'      => 'responsive-coming-soon-page',
+		        'required'  => false,
+		    ),
+			array(
+		        'name'      => 'Appointment Booking Scheduler',
+		        'slug'      => 'appointment-booking-scheduler',
+		        'required'  => false,
+		    ), 
+			array(
+		        'name'      => 'Admin Custom Login',
+		        'slug'      => 'admin-custom-login',
+		        'required'  => false,
+		    )
+			
+		);
+	    tgmpa( $plugins );
+	}
 
-//Plugin Recommend
-add_action('tgmpa_register','enigma_plugin_recommend');
-function enigma_plugin_recommend(){
-	$plugins = array(
-	array(
-            'name'      => 'Responsive Coming Soon',
-            'slug'      => 'responsive-coming-soon-page',
-            'required'  => false,
-        ),
-	array(
-            'name'      => 'Appointment Booking Scheduler',
-            'slug'      => 'appointment-booking-scheduler',
-            'required'  => false,
-        ), 
-	array(
-            'name'      => 'Admin Custom Login',
-            'slug'      => 'admin-custom-login',
-            'required'  => false,
-        )
-		
-	);
-    tgmpa( $plugins );
-}
-
-$theme_options = weblizar_get_options();
+/*$theme_options = weblizar_get_options();
 if($theme_options['snoweffect'] =='1'){
 	function snow_script() {
 	wp_dequeue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
 	}
 	add_action( 'wp_enqueue_scripts', 'snow_script' );
-}
+}*/
 
 if (is_admin()) {
 	require_once('core/admin/hire-us.php');
 }
+
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
 }
@@ -503,32 +508,33 @@ if ( $pagenow == 'index.php' || $pagenow == 'themes.php' ) {
 function enigma_activation_notice(){
 $my_theme = wp_get_theme();	
 ?>
-   <style>
-   .notice .hello-elementor-notice-inner .hello-elementor-notice-icon, .notice .hello-elementor-notice-inner .hello-elementor-notice-content{
-		display: table-cell;
-		vertical-align: middle;
-		padding-right : 160px;
-	}
-	.notice h3 {
-		margin: 0 0 5px;
-	}
-	.notice.updated.is-dismissible {
-		padding: 15px;
-	}
-	.notice p {
-		padding: 0;
-		margin: 0;
-	}
-	
-   </style>
-   <div class="notice updated is-dismissible">
+    <style>
+	    .notice .hello-elementor-notice-inner .hello-elementor-notice-icon, .notice .hello-elementor-notice-inner .hello-elementor-notice-content{
+			display: table-cell;
+			vertical-align: middle;
+			padding-right : 160px;
+		}
+		.notice h3 {
+			margin: 0 0 5px;
+		}
+		.notice.updated.is-dismissible {
+			padding: 15px;
+		}
+		.notice p {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+
+    <div class="notice updated is-dismissible">
 		<div class="hello-elementor-notice-inner">
 			<div class="hello-elementor-notice-content">
-			<h3> <?php _e('Thank you for installing', 'enigma'); ?> <?php echo $my_theme->get( 'Name' ); ?></h3>
-			<?php $msg = sprintf('<p> %1$s %2$s <span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span> %3$s <span style="color:red">&hearts;</span>  %4$s <a href=%5$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary"> %6$s </a>
-			 	<a href=%7$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%8$s</a>
-			 	<a href=%9$s   style="text-decoration: none; margin-left:10px;" class="button button-primary">%10$s</a>
-			 	</p>',
+				<h3> <?php _e('Thank you for installing', 'enigma'); ?> <?php echo $my_theme->get( 'Name' ); ?></h3>
+				<?php 
+				$msg = sprintf('<p> %1$s %2$s <span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span> %3$s <span style="color:red">&hearts;</span>  %4$s <a href=%5$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary"> %6$s </a>
+			 		<a href=%7$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%8$s</a>
+			 		<a href=%9$s   style="text-decoration: none; margin-left:10px;" class="button button-primary">%10$s</a>
+			 		</p>',
 				esc_html__(' If you like this ','enigma'),
 				esc_html__(' theme, please leave us a ','enigma'),
 				esc_html__(' Rating ','enigma'),

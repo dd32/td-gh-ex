@@ -4,10 +4,10 @@ Theme URI:http://weblizar.com/themes/enigma/
 Author: weblizar
 Author URI: http://weblizar.com/
 Description: Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design. This theme can be used for different kinds of websites including business, blogging, portfolio, agency, landing page etc. Enigma has Filkr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more. Demo -> http://demo.weblizar.com/enigma-free-theme/
-Version: 5.35
+Version: 5.36
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,rtl-language-support , E-Commerce , Education , Entertainment 
+Tags: two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,rtl-language-support , E-Commerce , Education , Entertainment , accessibility-ready
 Text Domain: enigma
 */
 /* Main css with editable-------------------------------------------------------------- */
@@ -94,7 +94,8 @@ line-height: 26px;
 	font-size: 40px;
 	color: #fff;
 }
-.logo a:hover{
+.logo a:hover,
+.logo a:focus{
 	color: #fff;
 }
 .logo p{
@@ -138,7 +139,8 @@ line-height: 26px;
 	background-size: 100% 200%;
 	background-image: linear-gradient(to bottom, transparent 50%, #4C66A4 50%);
 }
-.social li.facebook:hover{
+.social li.facebook:hover,
+.social li.facebook:focus{
 	background-position: 0 -100%;
 	background-color:#4C66A4;
 }
@@ -147,7 +149,8 @@ line-height: 26px;
 	background-size: 100% 200%;
 	background-image: linear-gradient(to bottom, transparent 50%, #EA4C89 50%);
 }
-.social li.dribbble:hover{
+.social li.dribbble:hover,
+.social li.dribbble:focus{
   background-position: 0 -100%;
   background-color:#EA4C89;
  }
@@ -156,7 +159,8 @@ line-height: 26px;
 	background-size: 100% 200%;
 	background-image: linear-gradient(to bottom, transparent 50%, #f60 50%);
 }
-.social li.twitter:hover{
+.social li.twitter:hover,
+.social li.twitter:focus{
 	background-position: 0 -100%;
 	background-color:#f60;
 }
@@ -165,7 +169,8 @@ line-height: 26px;
 	background-size: 100% 200%;
 	background-image: linear-gradient(to bottom, transparent 50%, #069 50%);
 }
-.social li.linkedin:hover{
+.social li.linkedin:hover,
+.social li.linkedin:focus{
 	background-position: 0 -100%;
 	background-color:#069;
 }
@@ -174,7 +179,8 @@ line-height: 26px;
 	background-size: 100% 200%;
 	background-image: linear-gradient(to bottom, transparent 50%, #C92228 50%);
 }
-.social li.youtube:hover{
+.social li.youtube:hover,
+.social li.youtube:focus{
 	background-position: 0 -100%;
 	background-color:#C92228;
 }
@@ -379,7 +385,8 @@ line-height: 26px;
 	font-size: 16px;
 	line-height: 27px;
 }	
-.enigma_service_area:hover .enigma_service_iocn{
+.enigma_service_area:hover .enigma_service_iocn,
+.enigma_service_area:focus .enigma_service_iocn{
 	background-position: 0 -100%;
 }
 .enigma_service_area_2{
@@ -419,10 +426,12 @@ line-height: 26px;
 	font-size: 18px;
 	line-height: 27px;
 }	
-.enigma_service_area_2:hover .enigma_service_iocn_2 i{
+.enigma_service_area_2:hover .enigma_service_iocn_2 i,
+.enigma_service_area_2:focus .enigma_service_iocn_2 i{
 	background-position: 0 -100%;
 }
-.enigma_service_area_2:hover .enigma_service_iocn_2 i {
+.enigma_service_area_2:hover .enigma_service_iocn_2 i,
+.enigma_service_area_2:focus .enigma_service_iocn_2 i {
 	color:#fff;
 }
 
@@ -480,7 +489,8 @@ line-height: 26px;
 	width: 100%;
 	overflow: hidden;
 }
-.enigma_home_portfolio_showcase:hover .enigma_home_portfolio_showcase_title a {
+.enigma_home_portfolio_showcase:hover .enigma_home_portfolio_showcase_title a,
+.enigma_home_portfolio_showcase:focus .enigma_home_portfolio_showcase_title a {
     text-decoration: underline;
 }
 .enigma_img_responsive {
@@ -543,16 +553,19 @@ line-height: 26px;
     font-size: 1.6em;
 	line-height:40px;
 }
+.enigma_home_portfolio_showcase:hover .enigma_home_portfolio_showcase_overlay,
 .enigma_home_portfolio_showcase:hover .enigma_home_portfolio_showcase_overlay {
     visibility: visible;
 	top: 0;
 }
-.enigma_home_portfolio_showcase:hover img{
+.enigma_home_portfolio_showcase:hover img,
+.enigma_home_portfolio_showcase:focus img{
 	-webkit-transform: scale(1.9) rotate(15deg);
 	-moz-transform: scale(1.9) rotate(15deg);
 	-ms-transform: scale(1.9) rotate(15deg);
 }
-.enigma_home_portfolio_showcase:hover .enigma_home_portfolio_showcase_overlay_inner {
+.enigma_home_portfolio_showcase:hover .enigma_home_portfolio_showcase_overlay_inner ,
+.enigma_home_portfolio_showcase:focus .enigma_home_portfolio_showcase_overlay_inner {
     visibility: visible;
     bottom:40%;
     left: 0;
@@ -560,7 +573,8 @@ line-height: 26px;
 .enigma_home_portfolio_showcase_fade {
     opacity: 0.8;
 }
-.enigma_home_portfolio_showcase_fade:hover .enigma_home_portfolio_showcase_overlay {
+.enigma_home_portfolio_showcase_fade:hover .enigma_home_portfolio_showcase_overlay,
+.enigma_home_portfolio_showcase_fade:focus .enigma_home_portfolio_showcase_overlay {
     display: none !important;
 }
 .enigma_home_portfolio_caption {
@@ -904,16 +918,17 @@ transition: all 0.3s ease 0s;
 	line-height:40px;
 	
 }
-.enigma_gallery_showcase:hover .enigma_gallery_showcase_overlay {
+.enigma_gallery_showcase:hover .enigma_gallery_showcase_overlay,
+.enigma_gallery_showcase:focus .enigma_gallery_showcase_overlay {
     visibility: visible;
 	top: 0;
 }
 
-.enigma_gallery_showcase:hover .enigma_gallery_showcase_overlay_inner {
+.enigma_gallery_showcase:hover .enigma_gallery_showcase_overlay_inner ,
+.enigma_gallery_showcase:focus .enigma_gallery_showcase_overlay_inner {
     visibility: visible;
      bottom:40%;
     left: 0;
-	
 }
 
 
@@ -948,10 +963,12 @@ transition: all 0.3s ease 0s;
 	margin-top:0px;
 	
 }
-.enigma_blog_thumb_wrapper h2 a:hover {
+.enigma_blog_thumb_wrapper h2 a:hover,
+.enigma_blog_thumb_wrapper h2 a:focus {
 	color: #34495e !important;
 }
-.enigma_fuul_blog_detail_padding h2 a:hover {
+.enigma_fuul_blog_detail_padding h2 a:hover,
+.enigma_fuul_blog_detail_padding h2 a:focus {
 	color: #34495e !important;
 }
 .enigma_blog_thumb_wrapper{
@@ -1088,17 +1105,20 @@ transition: all 0.3s ease 0s;
 	
 }
 
-.enigma_blog_thumb_wrapper_showcase:hover .enigma_blog_thumb_wrapper_showcase_overlay {
+.enigma_blog_thumb_wrapper_showcase:hover .enigma_blog_thumb_wrapper_showcase_overlay,
+.enigma_blog_thumb_wrapper_showcase:focus .enigma_blog_thumb_wrapper_showcase_overlay {
     visibility: visible;
 	top: 0;
 }
 
-.enigma_blog_thumb_wrapper_showcase:hover img{
+.enigma_blog_thumb_wrapper_showcase:hover img,
+.enigma_blog_thumb_wrapper_showcase:focus img{
 	-webkit-transform: scale(1.9) rotate(15deg);
 	-moz-transform: scale(1.9) rotate(15deg);
 	-ms-transform: scale(1.9) rotate(15deg);}
 
-.enigma_blog_thumb_wrapper_showcase:hover .enigma_blog_thumb_wrapper_showcase_overlay_inner {
+.enigma_blog_thumb_wrapper_showcase:hover .enigma_blog_thumb_wrapper_showcase_overlay_inner,
+.enigma_blog_thumb_wrapper_showcase:focus .enigma_blog_thumb_wrapper_showcase_overlay_inner {
     visibility: visible;
     bottom:40%;
     left: 0;
@@ -1315,7 +1335,8 @@ margin-bottom:20px;
     transition: all 0.2s ease 0s;
 }
 
-.enigma_recent_widget_post h3 a:hover {
+.enigma_recent_widget_post h3 a:hover,
+.enigma_recent_widget_post h3 a:focus {
 	color: #ffffff;
 }
 
@@ -1357,7 +1378,8 @@ margin-bottom:20px;
 .enigma_sidebar_widget .enigma_recent_widget_post_date{
 color: #6a6a6a;
 }
-.enigma_sidebar_widget .enigma_recent_widget_post h3 a:hover {
+.enigma_sidebar_widget .enigma_recent_widget_post h3 a:hover,
+.enigma_sidebar_widget .enigma_recent_widget_post h3 a:focus {
 	color: #6a6a6a;
 }
 .enigma_sidebar_widget .enigma_recent_widget_post h3 {
@@ -1470,7 +1492,7 @@ color: #6a6a6a;
 	line-height: 20px;
 }
 .enigma_sidebar_widget ul li ,.enigma_footer_widget_column ul#recentcomments li {list-style:none;}
-.enigma_sidebar_widget ul li a{ padding-left: 10px; }
+/*.enigma_sidebar_widget ul li a{ padding-left: 10px; }*/
 .enigma_sidebar_link p a i {
 	margin-right: 10px;
 }
@@ -1537,7 +1559,8 @@ color: #6a6a6a;
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
-.flickr-photos-list > li img:hover {
+.flickr-photos-list > li img:hover,
+.flickr-photos-list > li img:focus {
     opacity: 0.65;
     filter: alpha(opacity=65);
 }
@@ -1722,7 +1745,6 @@ margin-bottom: 20px;
 	padding: 15px 40px;
 	margin-bottom: 0;
 	font-size: 18px;
-	
 	line-height: 1.428571429;
 	text-align: center;
 	white-space: nowrap;
@@ -1733,9 +1755,6 @@ margin-bottom: 20px;
 	transition: all 0.4s ease;
 	
 }
-
-
-
 .enigma_comment_title h3 {
 	color: #121212;
 	border-bottom: 1px solid #E9E9E9;
@@ -1958,7 +1977,8 @@ margin-bottom: 20px;
     transition: all ease 0.5s;
 	border:4px solid #393c40;
 }
-.enigma_callout_area a:hover {
+.enigma_callout_area a:hover,
+.enigma_callout_area a:focus {
 	background-position: 0 -100%;
 	color:#fff;
 }
@@ -2058,11 +2078,10 @@ margin-bottom: 20px;
 	color: #CCCCCC;
 	
 }
-.enigma_footer_widget_column address a:hover{
+.enigma_footer_widget_column address a:hover,
+.enigma_footer_widget_column address a:focus{
 	color: #ffffff;
 }
-
-
 
 .enigma_footer_widget_link {
     margin: 20px 0 10px;
@@ -2084,12 +2103,10 @@ margin-bottom: 20px;
 	color: #ffffff;
 	text-decoration:none;
 }
-.enigma_footer_widget_link a:hover {
+.enigma_footer_widget_link a:hover,
+.enigma_footer_widget_link a:focus {
 	color:#f8504b;
 }
-
-
-
 
 /* Footer area Section Css------------------------------------------------------------ */
 
@@ -2115,7 +2132,8 @@ margin-bottom: 20px;
 .enigma_footer_area p a {
     color: #000000;
 }
-.enigma_footer_area p a:hover {
+.enigma_footer_area p a:hover,
+.enigma_footer_area p a:focus {
     color: #ffffff;
 }
 .enigma_footer_copyright_info{
@@ -2150,10 +2168,12 @@ margin-bottom: 20px;
 	font-size: 24px;
 	vertical-align:middle;
 }
-.enigma_scrollup:hover{
+.enigma_scrollup:hover,
+.enigma_scrollup:focus{
 	opacity: 0.8;
 }
-a.enigma_scrollup:hover i, a.enigma_scrollup:focus i {
+a.enigma_scrollup:hover i,
+a.enigma_scrollup:focus i, a.enigma_scrollup:focus i {
     text-decoration: none;
     color: #fafafa;
     outline: none;
@@ -2403,7 +2423,8 @@ color: #fff;
     margin-left: 5%;    
 	transition: all 0.2s ease-in-out 0s;
 }
-.flickr_badge_image:hover{opacity:0.65;}
+.flickr_badge_image:hover,
+.flickr_badge_image:focus{opacity:0.65;}
 .enigma_footer_widget_column .flickr_badge_image {
      float: left;
     margin-bottom: 5px;
@@ -2501,7 +2522,8 @@ li.enigma_blog_thumb_wrapper_showcase img {
     -o-transition: none;
     /* transition: all .45s ease-in; */
 }
-li.enigma_blog_thumb_wrapper_showcase:hover img {
+li.enigma_blog_thumb_wrapper_showcase:hover img,
+li.enigma_blog_thumb_wrapper_showcase:focus img {
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;
@@ -2511,7 +2533,8 @@ li.enigma_blog_thumb_wrapper_showcase:hover img {
     font-size: 20px;
     color: #292828;
 }
-.enigma_blog_thumb_wrapper_showcase_icons1 a:hover {
+.enigma_blog_thumb_wrapper_showcase_icons1 a:hover,
+.enigma_blog_thumb_wrapper_showcase_icons1 a:focus {
     color: #292828;
 }
 li.enigma_post_author.enigma_blog_thumb_wrapper_showcase {
@@ -2594,11 +2617,13 @@ ul.children {
    line-height: 50px;
    color: #212121;
 	}
-#btn-to-top:hover {
+#btn-to-top:hover,
+#btn-to-top:focus {
    cursor: pointer;
    background-color: #333;
 }
-#btn-to-top:hover::after {
+#btn-to-top:hover::after,
+#btn-to-top:focus::after {
    color: #fff;
 }
 #btn-to-top:active {
@@ -2647,4 +2672,34 @@ width: 100%;
 .woocommerce-checkout.woocommerce-page .woocommerce-form__label,
 .woocommerce-checkout.woocommerce-page .woocommerce-input-wrapper{
 width:100%;
+}
+
+.widget_categories li, .widget_archive li{
+    text-align: right;
+    position: relative;
+    text-transform: capitalize;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    overflow: hidden;
+}
+.widget_categories li a, .widget_archive li a {
+    float: left;
+    clear: both;
+}
+.widget_archive select,.widget_categories select{
+    width: 100%;
+    border: 1px solid #9c9a9a;
+    padding: 10px;
+}
+.recentcomments a{
+	word-wrap: break-word;
+}
+
+.logo h1{
+	color: #fff;
+}
+
+#searchform{
+	display: inherit;
 }

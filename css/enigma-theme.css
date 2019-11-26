@@ -30,17 +30,6 @@ a:hover {
     text-decoration: none
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #fff;
-    text-shadow: 0 0 1px rgba(0, 0, 0, .01);
-    font-weight: 700
-}
-
 .navigation_menu {
     width: 100%;
     position: relative
@@ -87,8 +76,10 @@ h6 {
     text-transform: uppercase;
     font-family: Arimo, Arial, Helvetica, sans-serif;
     font-weight: 400;
+	display : inline-block;
     font-size: 15px;
     padding: 10px 20px
+
 }
 
 .dropdown-menu>li>a,
@@ -239,7 +230,9 @@ h6 {
 .navbar-brand {
     margin-bottom: 30px
 }
-
+*{
+    word-wrap: break-word;
+}
 .nav-pills>li>a,
 .nav-stacked>li>a,
 .nav-tabs li a {
@@ -324,7 +317,8 @@ h6 {
 }
 
 .enigma_header_breadcrum_title h1 {
-    color: #777
+    color: #777;
+    word-wrap: break-word;
 }
 
 .breadcrumb {

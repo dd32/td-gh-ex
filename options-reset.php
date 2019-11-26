@@ -1,5 +1,6 @@
 <?php /**Options Reset Here**/
 $wl_theme_options = weblizar_get_options();
+
 /*
 * General Settings
 */
@@ -41,7 +42,6 @@ function wl_reset_slide_image_setting()
 	$wl_theme_options['slide_desc_3'] = "Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi";
 	$wl_theme_options['slide_btn_text_3'] = "Read More";
 	$wl_theme_options['slide_btn_link_3'] = "#";
-	
 	
 	update_option('enigma_options', $wl_theme_options);
 }
@@ -141,7 +141,6 @@ function wl_reset_footer_footercall_setting () {
 }
 
 function wl_reset_footer_homeblog_setting() {
-	
 	$wl_theme_options['show_blog'] = '1';
 	$wl_theme_options['blog_title']="Latest Blog";
 	update_option('enigma_options',$wl_theme_options);

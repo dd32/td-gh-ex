@@ -1,18 +1,18 @@
 <!-- portfolio section -->
 <?php $wl_theme_options = weblizar_get_options(); ?>
 <div class="enigma_project_section">
-<?php if($wl_theme_options['port_heading'] !='') { ?>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="enigma_heading_title">
-					<h3><?php echo esc_attr($wl_theme_options['port_heading']); ?></h3>		
+	<?php if($wl_theme_options['port_heading'] !='') { ?>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="enigma_heading_title">
+						<h3><?php echo esc_attr($wl_theme_options['port_heading']); ?></h3>		
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-<?php } ?>	
-<div class="container">
+	<?php } ?>	
+	<div class="container">
 		<div class="row" >
 			<div id="enigma_portfolio_section" class="enima_photo_gallery">
 				<?php for($i=1 ; $i<=4; $i++) { ?>
@@ -43,8 +43,7 @@
 				<?php } ?>
 				<?php } ?>
 			</div>
-			</div>
-						
 		</div>
 	</div>
+</div>
 <!-- /portfolio section -->
