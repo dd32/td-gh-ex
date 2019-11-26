@@ -312,11 +312,11 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 				<h2><?php esc_html_e('Diarjo premium version','diarjo-lite');?></h2> 
 
-                <p><?php esc_html_e("Upgrade to the premium version of Diarjo to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.","diarjo-lite");?></p>
+                <p><?php esc_html_e("Download for free the premium version of Diarjo to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.","diarjo-lite");?></p>
 
                 <ul>
                 
-                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjo-lite-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Diarjo premium','diarjo-lite');?>" target="_blank"><?php esc_html_e('Upgrade to Diarjo premium','diarjo-lite');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjo-lite-panel' ); ?>" title="<?php esc_attr_e('Download for free','diarjo-lite');?>" target="_blank"><?php esc_html_e('Download for free','diarjo-lite');?></a></li>
                 
                 </ul>
 
@@ -331,7 +331,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 <ul>
                 
                     <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','diarjo-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','diarjo-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','diarjo-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','diarjo-lite');?></a></li>
                 
                 </ul>
     
