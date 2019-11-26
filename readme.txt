@@ -4,7 +4,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Pinnacle is a bold theme with versatile options and multiple styles. This theme is loaded with features and tools that allow full creativity to be released into a unique site. Built with a modern flat design, its fully responsive layout make for easy navigation on mobile/tablet displays. Pinnacle is perfect for any kind of business, online store, portfolio, or personal site. It is fully compatible with woocommerce and gives you a unique layout for an ecommerce site. Pinnacle was built and designed by <a href="http://kadencethemes.com/">Kadence Themes</a>.
+Pinnacle is a bold theme with versatile options and multiple styles. This theme is loaded with features and tools that allow full creativity to be released into a unique site. Built with a modern flat design, its fully responsive layout make for easy navigation on mobile/tablet displays. Pinnacle is perfect for any kind of business, online store, portfolio, or personal site. It is fully compatible with woocommerce and gives you a unique layout for an ecommerce site. Pinnacle was built and designed by <a href="http://kadencewp.com/">Kadence WP</a>.
 
 == Features ==
 * Woocommerce
@@ -24,13 +24,18 @@ Yes, go here: http://docs.kadencethemes.com/pinnacle/
 
 = Is there demo content available? =
 
-Yes, go here: http://www.kadencethemes.com/kadence-themes-demo-content/
+Yes, go here: http://www.kadencewp.com/kadence-themes-demo-content/
 
 = Is there a free support form for this theme? =
 
 Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
+
+
+= 1.7.4 | 26th November 2019 = 
+* Update: Gutenberg css.
+* Add: Home Call to action tag option.
 
 = 1.7.3 | 8th April 2019 = 
 * Update: Gutenberg css.

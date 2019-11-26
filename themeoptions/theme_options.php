@@ -57,8 +57,8 @@ if ( ! class_exists( 'Redux' ) ) {
         'disable_tracking'     => true,
         'customizer_only'      => true,
         'save_defaults'        => false,
-        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=pinnacle_premium" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
-        'footer_credit'        => __('Thank you for using the Pinnacle Theme by <a href="https://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencewp.com/product/pinnacle-premium-wordpress-theme/?utm_source=themeoptions&utm_medium=banner&utm_campaign=pinnacle_premium" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
+        'footer_credit'        => __('Thank you for using the Pinnacle Theme by <a href="https://kadencewp.com/" target="_blank">Kadence WP</a>.', 'pinnacle'),
         'hints'                => array(
             'icon'          => 'icon-question',
             'icon_position' => 'right',
@@ -89,23 +89,28 @@ if ( ! class_exists( 'Redux' ) ) {
         ),
     );
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
-        $args['share_icons'][] = array(
-            'url' => 'https://www.facebook.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Facebook', 
-            'icon' => 'icon-facebook',
-        );
-        $args['share_icons'][] = array(
-            'url' => 'https://www.twitter.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Twitter', 
-            'icon' => 'icon-twitter',
-        );
-        $args['share_icons'][] = array(
-            'url' => 'https://www.instagram.com/KadenceThemes',
-            'title' => 'Follow Kadence Themes on Instagram', 
-            'icon' => 'icon-instagram',
-        );
-        $args = apply_filters('kadence_theme_options_args', $args);
-   Redux::setArgs( $opt_name, $args );
+	$args['share_icons'][] = array(
+		'url' => 'https://www.facebook.com/KadenceWP',
+		'title' => 'Follow Kadence WP on Facebook',
+		'icon' => 'dashicons dashicons-facebook',
+	);
+	$args['share_icons'][] = array(
+		'url' => 'https://www.twitter.com/KadenceWP',
+		'title' => 'Follow Kadence WP on Twitter',
+		'icon' => 'dashicons dashicons-twitter',
+	);
+	$args['share_icons'][] = array(
+		'url' => 'https://www.instagram.com/KadenceWP',
+		'title' => 'Follow Kadence WP on Instagram',
+		'icon' => 'dashicons dashicons-format-image',
+	);
+	$args['share_icons'][] = array(
+		'url' => 'http://www.youtube.com/c/KadenceWP',
+		'title' => 'Follow Kadence WP on YouTube',
+		'icon' => 'dashicons dashicons-video-alt3',
+	);
+	$args = apply_filters( 'kadence_theme_options_args', $args );
+	Redux::setArgs( $opt_name, $args );
 
    // -> START Basic Fields                
 
@@ -114,7 +119,7 @@ if ( ! class_exists( 'Redux' ) ) {
     'id' => 'site_header',
     'header' => '',
     'desc' => "<div class='redux-info-field'><h3>".__('Welcome to Pinnacle Theme Options', 'pinnacle')."</h3>
-            <p>".__('This theme was developed by', 'pinnacle')." <a href=\"https://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
+            <p>".__('This theme was developed by', 'pinnacle')." <a href=\"https://kadencewp.com/\" target=\"_blank\">Kadence WP</a></p>
             <p>".__('For theme documentation visit', 'pinnacle').": <a href=\"http://docs.kadencethemes.com/pinnacle/\" target=\"_blank\">docs.kadencethemes.com/pinnacle/</a>
             <br />
             ".__('For support please visit', 'pinnacle').": <a href=\"https://wordpress.org/support/theme/pinnacle\" target=\"_blank\">https://wordpress.org/support/theme/pinnacle</a></p></div>",
@@ -1070,6 +1075,19 @@ Redux::setSection( $opt_name, array(
             'transparent'=>false,
             'output' => array('color' => '.kad-call-title-case h1.kad-call-title'),
             ),
+            array(
+				'id' => 'home_action_text_tag',
+				'type' => 'select',
+				'title' => __( 'Text Tag', 'pinnacle' ),
+				'options' => array(
+					'h1' => __( 'h1', 'pinnacle' ),
+					'h2' => __( 'h2', 'pinnacle' ),
+					'h3' => __( 'h3', 'pinnacle' ),
+					'span' => __( 'span', 'pinnacle' ),
+				),
+				'default' => 'h1',
+				'width' => 'width:60%',
+			),
              array(
             'id'=>'home_action_text_btn',
             'type' => 'text',
