@@ -224,11 +224,11 @@ jQuery(document).ready(function () {
      * This adds a new box to repeater
      *
      */
-    theme_conrols.on('click', '.customizer-repeater-new-field', function () {
+    theme_conrols.on( 'click', '.customizer-repeater-new-field', function () {
         var th = jQuery(this).parent();
         var id = 'customizer-repeater-' + customizer_repeater_uniqid();
 
-        if ( $('.customizer-repeater-general-control-repeater-container').length >= 3 ) {
+        if ( jQuery('.customizer-repeater-general-control-repeater-container').length >= 3 ) {
             alert('More Slides are available in the Premium Version!');
             return false;
         }
