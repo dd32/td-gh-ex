@@ -145,7 +145,7 @@ if ( ! function_exists( 'czr_fn_setup_constants' ) ):
         if( ! defined( 'CZR_IS_PRO' ) )               define( 'CZR_IS_PRO' , czr_fn_is_pro() );
 
         //IS DEBUG MODE
-        if( ! defined( 'CZR_DEBUG_MODE' ) )           define( 'CZR_DEBUG_MODE', ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( isset( $_GET['czr_debug'] ) && 1 == $_GET['czr_debug'] ) );
+        if( ! defined( 'CZR_DEBUG_MODE' ) )           define( 'CZR_DEBUG_MODE', isset( $_GET['czr_debug'] ) && 1 == $_GET['czr_debug'] );
 
         //IS DEV MODE
         if( ! defined( 'CZR_DEV_MODE' ) )             define( 'CZR_DEV_MODE', ( defined('CZR_DEV') && true === CZR_DEV ) );
@@ -164,7 +164,7 @@ if ( ! function_exists( 'czr_fn_setup_constants' ) ):
         //TC_BASE_URL_CHILD http url of the loaded child theme
         if( ! defined( 'TC_BASE_URL_CHILD' ) )  define( 'TC_BASE_URL_CHILD' , CZR_BASE_URL_CHILD );
 
-        if( ! defined( 'REC_NOTICE_ID' ) )  define( 'REC_NOTICE_ID' , 'rec-notice-0519' );
+        if( ! defined( 'REC_NOTICE_ID' ) )  define( 'REC_NOTICE_ID' , 'rec-notice-1119' );
 
         //fire an action hook after constants have been set up
         do_action( 'czr_after_setup_base_constants' );
