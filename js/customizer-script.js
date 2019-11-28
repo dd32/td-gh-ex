@@ -11,6 +11,16 @@
 		$('body').on('click', '.attesa-selected-icon', function(){
 			$(this).next().slideToggle();
 		});
+		// FontAwesome search filter
+		$( '.attesa-icon-list' ).each(function() {
+			$(this).find('#attesaInputFilter').on('keyup', function() {
+				var value = $(this).val().toLowerCase(),
+					where = $(this).closest('.attesa-icon-list').find('li');
+				$(where).filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+				});
+			});
+		});
 		// Multiple checkbox control
 		$( 'ul.toShowClassic li.attesaToShow input[type="checkbox"], ul.toShowPush li.attesaToShow input[type="checkbox"], ul.toShowFooter li.attesaToShow input[type="checkbox"], ul.toShowShare li.attesaToShow input[type="checkbox"], ul.toShowFooterCallout li.attesaToShow input[type="checkbox"], ul.toShowContact li.attesaToShow input[type="checkbox"]' ).on( 'change', function() {
 			var checkbox_values = $( this ).parents( '.customize-control' ).find( 'input[type="checkbox"]:checked' ).map(

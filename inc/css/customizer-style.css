@@ -83,6 +83,18 @@ li#accordion-section-manager_attesa_buy_pro h3:before {
   border: 1px solid #0073aa;
   color: #FFF;
 }
+.attesa-hidden-name {
+	display: none;
+}
+.attesa-icon-list-search {
+	padding-top: 10px;
+	max-width: 98%;
+    margin: 0 auto;
+}
+.attesa-icon-list-search input {
+	outline: none;
+	border-radius: 0px;
+}
 /* Multiple checkbox control */
 .customize-control-title.attesatab {
 	background: #F6F6F6;

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2019-11-21 11:53+0100\n"
-"PO-Revision-Date: 2019-11-21 11:53+0100\n"
+"POT-Creation-Date: 2019-11-28 12:14+0100\n"
+"PO-Revision-Date: 2019-11-28 12:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -656,35 +656,39 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/customizer-class.php:78
-msgid "Entire website"
+#: inc/customizer-class.php:40
+msgid "Filter icons..."
 msgstr ""
 
 #: inc/customizer-class.php:81
-msgid "Home page"
+msgid "Entire website"
 msgstr ""
 
 #: inc/customizer-class.php:84
+msgid "Home page"
+msgstr ""
+
+#: inc/customizer-class.php:87
 msgid "Blog page"
 msgstr ""
 
-#: inc/customizer-class.php:88
+#: inc/customizer-class.php:91
 msgid "WooCommerce Shop page"
 msgstr ""
 
-#: inc/customizer-class.php:92
+#: inc/customizer-class.php:95
 msgid "Author page"
 msgstr ""
 
-#: inc/customizer-class.php:95
+#: inc/customizer-class.php:98
 msgid "Archive page"
 msgstr ""
 
-#: inc/customizer-class.php:98
+#: inc/customizer-class.php:101
 msgid "Search page"
 msgstr ""
 
-#: inc/customizer-class.php:101
+#: inc/customizer-class.php:104
 msgid "404 page"
 msgstr ""
 

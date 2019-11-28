@@ -755,7 +755,7 @@ function attesa_footer_credits_print() {
 	<span class="sep"> | </span>
 	<?php
 	/* translators: 1: Theme name, 2: Theme author. */
-	printf( esc_html__( 'WordPress Theme: %1$s by %2$s', 'attesa' ), '<a target="_blank" href="https://attesawp.com/" rel="nofollow" title="Attesa WordPress Theme">Attesa</a>', 'AttesaWP.com' );
+	printf( esc_html__( 'WordPress Theme: %1$s by %2$s', 'attesa' ), '<a target="_blank" href="https://attesawp.com/" rel="noopener noreferrer" title="Attesa WordPress Theme">Attesa</a>', 'AttesaWP.com' );
 }
 add_action('attesa_footer_credits','attesa_footer_credits_print');
 
