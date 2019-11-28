@@ -180,6 +180,13 @@
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
             
             <ul>
+                <li class="upgrade-changelog-v">#### 1.1.33</li>
+                <li>Style fixes/tweaks</li>
+                <li>Fix WooCommerce mobile styling if product widths are set</li>
+                <li>Fix WooCommerce product page price floating left</li>
+            </ul>
+
+            <ul>
                 <li class="upgrade-changelog-v">#### 1.1.32</li>
                 <li>Style fixes/tweaks</li>
                 <li>JS bug fix in WP Customizer</li>

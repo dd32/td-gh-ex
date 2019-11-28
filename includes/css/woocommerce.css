@@ -259,7 +259,6 @@
 }
 
 /* -------- Single Page Styling -------- */
-
 .woocommerce #content div.product div.images,
 .woocommerce div.product div.images,
 .woocommerce-page #content div.product div.images,
@@ -267,13 +266,15 @@
     margin: 0 0 40px;
 
 }
-
 .woocommerce #content div.product div.summary,
 .woocommerce div.product div.summary,
 .woocommerce-page #content div.product div.summary,
 .woocommerce-page div.product div.summary {
     margin-top: 5px;
     margin-bottom: 40px;
+}
+.woocommerce.single-product .product_title {
+    float: none;
 }
 
 .woocommerce a.button,

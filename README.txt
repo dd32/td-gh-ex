@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.33
+* Style tweaks/fixes
+* Fix WooCommerce mobile styling if product widths are set
+* Fix WooCommerce product page price floating left
+
 #### 1.1.32
 * Style tweaks/fixes
 * JS bug fix in WP Customizer
