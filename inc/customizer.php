@@ -48,10 +48,26 @@ function automobile_hub_customize_register( $wp_customize ) {
   	)));
 
 	//Sidebar Position
-	$wp_customize->add_section('automobile_hub_sidebar_position',array(
-        'title'         => __('Sidebar Position', 'automobile-hub'),
+	$wp_customize->add_section('automobile_hub_tp_general_settings',array(
+        'title'         => __('TP General Settings', 'automobile-hub'),
         'panel' => 'automobile_hub_panel_id'
     ) );
+
+    $wp_customize->add_setting('automobile_hub_tp_body_layout_settings',array(
+        'default' => __('Full','automobile-hub'),
+        'sanitize_callback' => 'automobile_hub_sanitize_choices'
+	));
+    $wp_customize->add_control('automobile_hub_tp_body_layout_settings',array(
+        'type' => 'radio',
+        'label'     => __('Body Layout Setting', 'automobile-hub'),
+        'description'   => __('This option work for complete body, if you want to set the complete website in container.', 'automobile-hub'),
+        'section' => 'automobile_hub_tp_general_settings',
+        'choices' => array(
+            'Full' => __('Full','automobile-hub'),
+            'Container' => __('Container','automobile-hub'), 
+            'Container Fluid' => __('Container Fluid','automobile-hub')
+        ),
+	) );
 
     // Add Settings and Controls for Post Layout
 	$wp_customize->add_setting('automobile_hub_sidebar_post_layout',array(
@@ -62,7 +78,7 @@ function automobile_hub_customize_register( $wp_customize ) {
         'type' => 'radio',
         'label'     => __('Theme Sidebar Position', 'automobile-hub'),
         'description'   => __('This option work for blog page, blog single page, archive page and search page.', 'automobile-hub'),
-        'section' => 'automobile_hub_sidebar_position',
+        'section' => 'automobile_hub_tp_general_settings',
         'choices' => array(
             'full' => __('Full','automobile-hub'),
             'left' => __('Left','automobile-hub'), 
@@ -82,7 +98,7 @@ function automobile_hub_customize_register( $wp_customize ) {
         'type' => 'radio',
         'label'     => __('Page Sidebar Position', 'automobile-hub'),
         'description'   => __('This option work for pages.', 'automobile-hub'),
-        'section' => 'automobile_hub_sidebar_position',
+        'section' => 'automobile_hub_tp_general_settings',
         'choices' => array(
             'full' => __('Full','automobile-hub'),
             'left' => __('Left','automobile-hub'), 

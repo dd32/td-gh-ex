@@ -157,7 +157,8 @@ function automobile_hub_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'automobile-hub-style', get_stylesheet_uri() );
-	require get_parent_theme_file_path( '/tp-theme-color.php' );
+	require get_parent_theme_file_path( '/tp-theme-color.php' );	
+	require get_parent_theme_file_path( '/tp-body-width-layout.php' );
 	wp_add_inline_style( 'automobile-hub-style',$tp_theme_css );
 
 	// Fontawesome
