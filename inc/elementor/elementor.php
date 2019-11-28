@@ -3,7 +3,6 @@
 	define( 'AP_ELEMENTOR_WIDGETS_DIR', get_template_directory() . '/inc/elementor/widgets' );
 	define( 'AP_ELEMENTOR_URL', get_template_directory() . '/inc/elementor' );
 	require_once AP_ELEMENTOR_URL.'/queries.php';
-	require_once AP_ELEMENTOR_URL.'/posts-group-control.php';
 	require_once AP_ELEMENTOR_URL.'/elementor-helper.php';
 
 	/**
@@ -100,13 +99,13 @@
 
 
 
-	if ( ! function_exists( 'accespress_parallax_elementor_enqueue_scripts' ) ) :
+	if ( ! function_exists( 'accesspress_parallax_elementor_enqueue_scripts' ) ) :
 
-		function accespress_parallax_elementor_enqueue_scripts() {
+		function accesspress_parallax_elementor_enqueue_scripts() {
 			// Enqueue the main Elementor CSS file for use with Elementor
 			wp_enqueue_script( 'accesspress-parallax-elementor', get_template_directory_uri() . '/inc/elementor/assets/js/ap-elementor.js'  );
 		}
 
 	endif;
 
-	add_action( 'elementor/frontend/before_enqueue_scripts', 'accespress_parallax_elementor_enqueue_scripts' );
+	add_action( 'elementor/frontend/before_enqueue_scripts', 'accesspress_parallax_elementor_enqueue_scripts' );

@@ -93,6 +93,9 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+= 3.1 =
+** Changed theme description
+** Fixed menu issue
 
 = 3.0 =
 ** Added Elementor Addons 
