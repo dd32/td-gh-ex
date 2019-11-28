@@ -329,15 +329,20 @@
 	}
 	
 	.header-slider h1 {
-		font-size: 16px !important;
-		margin-bottom: 0px !important;
+		font-size: 12px !important;
+		margin-bottom: 3px !important;
 		line-height: 1.2 !important;
 	}
 	
 	.header-slider p {
-		font-size: 13px;
+		font-size: 10px;
 		margin-bottom: 3px !important;
 		line-height: 1.4 !important;
+	}
+	
+	.header-single-slider .boxed-btn {
+		padding: 0 10px !important;
+		font-size: 10px;
 	}
 	
 }

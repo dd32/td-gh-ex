@@ -13,7 +13,7 @@
 	<div class="navbar-area normal-h <?php echo esc_attr(startkit_sticky_menu()); ?>">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3 col-6">
+			<div class="col-lg-3 col-6 my-auto">
 				<div class="logo main">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<?php

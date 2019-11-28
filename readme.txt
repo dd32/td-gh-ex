@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.0.14
-Version: 1.0.14
+Stable tag: 1.0.15
+Version: 1.0.15
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
@@ -54,28 +54,29 @@ Bootstrap (http://getbootstrap.com/)
 Copyright (c) 2011-2019 Twitter, Inc.
 License - MIT License (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-4) Owl Carousel 2.2.1
-=================================================================================================
-Owl Carousel 2.2.1 - by @David Deutsch - https://github.com/OwlCarousel2
-License - MIT License(https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE)
-
-5) Animate Css
+4) Animate Css
 =================================================================================================
 Animate Css by @Daniel Eden - https://daneden.me/
 License - MIT License (https://github.com/daneden/animate.css/blob/master/LICENSE)
 Source: https://github.com/daneden/animate.css
 
-6) Sticky Js
+5) Sticky Js
 =================================================================================================
 Sticky Js by @Anthony Garand - http://stickyjs.com/
 License - MIT License (https://github.com/garand/sticky/blob/master/LICENSE.md)
 Source: http://stickyjs.com/
 
-7) Meanmenu Js
+6) Meanmenu Js
 =================================================================================================
 jquery.meanmenu.js by Chris Wharton
 License - GNU LESSER GENERAL PUBLIC LICENSE (https://github.com/meanthemes/meanMenu/blob/master/gpl.txt)
 Source: http://www.meanthemes.com/plugins/meanmenu/
+
+7) Wow Js
+=================================================================================================
+jquery.meanmenu.js by Thomas Grainger
+License -  MIT license (https://github.com/graingert/WOW/blob/master/LICENSE)
+Source: https://github.com/graingert/WOW/blob/master/dist/wow.min.js
 
 8) Sainitization
 =================================================================================================
@@ -110,6 +111,9 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 1.0.15
+* Style Improvement
 
 @version 1.0.14
 * Subject Tags Updated
