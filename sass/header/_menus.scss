@@ -156,10 +156,12 @@
 			color: $color__primary;
 		}
 
-		#site-navigation-inner.align-center {
-			#primary-menu {
-				display: table;
-				margin: 0 auto;
+		@media screen and (min-width: 959px) {
+			#site-navigation-inner.align-center {
+				#primary-menu {
+					display: table;
+					margin: 0 auto;
+				}
 			}
 		}
 		

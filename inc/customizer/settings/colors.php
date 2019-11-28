@@ -585,7 +585,8 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
             // link color
             if ( ! empty( $link_color ) && '#00aeef' != $link_color ) {
                 $css .= '
-                    .single article .entry-content a {
+                    .page-content a,
+                    .entry-content a {
                         color: '. $link_color .';
                     }
                 ';
@@ -594,7 +595,8 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
             // link color hover
             if ( ! empty( $link_color_hover ) && '#21759b' != $link_color_hover ) {
                 $css .= '
-                    .single article .entry-content a:hover {
+                    .page-content a:hover,
+                    .entry-content a:hover {
                         color: '. $link_color_hover .';
                     }
                 ';

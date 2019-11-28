@@ -4,7 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 4.5
 Tested up to: 5.2.3
 Requires PHP: 5.2
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,11 @@ Bam is a great flexible theme for blogging sites.
 Bam supports all the major plugins.
 
 == Changelog ==
+
+= 1.1.0 =
+* Modified related posts layout for mobiles.
+* Fixed the mobile navigation issue that comes when the menu is centered.
+* Fixed article link color controls not working issue.
 
 = 1.0.9 =
 * Fixed few CSS issues on mobiles.

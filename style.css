@@ -4,7 +4,7 @@ Theme URI: https://themezhut.com/themes/bam/
 Author: ThemezHut
 Author URI: https://themezhut.com/
 Description: Bam WordPress theme is a great flexible theme for blogging sites. Even this is a free theme you will find most of the advanced theme customizer options that you may find only on premium themes like, typography options, header layout options, advanced color options, blog layout options, social media options, etc. Just install the theme and customize it as you like. Check the demo at: https://themezhut.com/demo/bam/
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bam
@@ -1053,9 +1053,11 @@ textarea {
   color: #FF4F4F;
 }
 
-.site-header.default-style .main-navigation #site-navigation-inner.align-center #primary-menu {
-  display: table;
-  margin: 0 auto;
+@media screen and (min-width: 959px) {
+  .site-header.default-style .main-navigation #site-navigation-inner.align-center #primary-menu {
+    display: table;
+    margin: 0 auto;
+  }
 }
 
 .site-header.default-style .main-navigation #site-navigation-inner.align-right #primary-menu {
@@ -2465,14 +2467,18 @@ body.separate-containers.single .post-thumbnail {
 
 /* Related Posts */
 .bam-related-posts .related-post {
-  width: 33.3333%;
-  padding: 0 15px;
-  float: left;
   margin-bottom: 35px;
 }
 
-.bam-related-posts .related-post:nth-child(3n+1) {
-  clear: both;
+@media (min-width: 768px) {
+  .bam-related-posts .related-post {
+    width: 33.3333%;
+    padding: 0 15px;
+    float: left;
+  }
+  .bam-related-posts .related-post:nth-child(3n+1) {
+    clear: both;
+  }
 }
 
 .bam-related-posts .related-post-title {
@@ -2480,8 +2486,10 @@ body.separate-containers.single .post-thumbnail {
   -ms-word-wrap: break-word;
 }
 
-.related-posts-wrap {
-  margin: 0 -15px;
+@media (min-width: 768px) {
+  .related-posts-wrap {
+    margin: 0 -15px;
+  }
 }
 
 .related-section-title {

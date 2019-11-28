@@ -336,14 +336,19 @@ body.separate-containers.single .post-thumbnail {
 .bam-related-posts {
 
 	.related-post {
-		width: 33.3333%;
-		padding: 0 15px;
-		float: left;
 		margin-bottom: 35px;
 	}
 
-	.related-post:nth-child(3n+1) {
-		clear: both;
+	@media (min-width: 768px) {
+		.related-post {
+			width: 33.3333%;
+			padding: 0 15px;
+			float: left;
+		}
+
+		.related-post:nth-child(3n+1) {
+			clear: both;
+		}
 	}
 
 	.related-post-title {
@@ -353,8 +358,10 @@ body.separate-containers.single .post-thumbnail {
 
 }
 
-.related-posts-wrap {
-	margin: 0 -15px;
+@media (min-width: 768px) {
+	.related-posts-wrap {
+		margin: 0 -15px;
+	}
 }
 
 .related-section-title {
