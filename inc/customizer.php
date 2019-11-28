@@ -47,11 +47,27 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	    'settings' => 'adventure_travelling_tp_color_option_link',
   	)));
 
-	//Sidebar Position
-	$wp_customize->add_section('adventure_travelling_sidebar_position',array(
-        'title'         => __('Sidebar Position', 'adventure-travelling'),
+	//TP General Settings
+	$wp_customize->add_section('adventure_travelling_tp_general_settings',array(
+        'title'         => __('TP General Settings', 'adventure-travelling'),
         'panel' => 'adventure_travelling_panel_id'
     ) );
+
+    $wp_customize->add_setting('adventure_travelling_tp_body_layout_settings',array(
+        'default' => __('Full','adventure-travelling'),
+        'sanitize_callback' => 'adventure_travelling_sanitize_choices'
+	));
+    $wp_customize->add_control('adventure_travelling_tp_body_layout_settings',array(
+        'type' => 'radio',
+        'label'     => __('Body Layout Setting', 'adventure-travelling'),
+        'description'   => __('This option work for complete body, if you want to set the complete website in container.', 'adventure-travelling'),
+        'section' => 'adventure_travelling_tp_general_settings',
+        'choices' => array(
+            'Full' => __('Full','adventure-travelling'),
+            'Container' => __('Container','adventure-travelling'), 
+            'Container Fluid' => __('Container Fluid','adventure-travelling')
+        ),
+	) );
 
     // Add Settings and Controls for Post Layout
 	$wp_customize->add_setting('adventure_travelling_sidebar_post_layout',array(
@@ -62,7 +78,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
         'type' => 'radio',
         'label'     => __('Theme Sidebar Position', 'adventure-travelling'),
         'description'   => __('This option work for blog page, blog single page, archive page and search page.', 'adventure-travelling'),
-        'section' => 'adventure_travelling_sidebar_position',
+        'section' => 'adventure_travelling_tp_general_settings',
         'choices' => array(
             'full' => __('Full','adventure-travelling'),
             'left' => __('Left','adventure-travelling'), 
@@ -82,7 +98,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
         'type' => 'radio',
         'label'     => __('Page Sidebar Position', 'adventure-travelling'),
         'description'   => __('This option work for pages.', 'adventure-travelling'),
-        'section' => 'adventure_travelling_sidebar_position',
+        'section' => 'adventure_travelling_tp_general_settings',
         'choices' => array(
             'full' => __('Full','adventure-travelling'),
             'left' => __('Left','adventure-travelling'), 

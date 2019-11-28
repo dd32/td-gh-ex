@@ -1,9 +1,9 @@
 === Adventure Travelling ===
 Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, post-formats, threaded-comments, translation-ready, blog, news, portfolio
-Requires at least: 4.8
-Tested up to: 5.2.4
-Stable tag: 0.6.7
+Requires at least: 4.9
+Tested up to: 5.3
+Stable tag: 0.6.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,9 +69,12 @@ Installation
 	* Added RTL file
 	* Resolved blog alignment issue.
 
-= 0.6.6 =
+= 0.6.7 =
 	* Added Skip link.
-	* Added one click theme color 
+	* Added one click theme color.
+
+= 0.6.8 =
+	* Added body layout option in customizer.
 
 == Resources ==
 
