@@ -1,3 +1,7 @@
+###Version 2.1.5 [28-NOV-2019]
+* gutenberg block styling.
+* skin color issue fixed.
+* improve CSS.
 ###Version 2.1.4 [21-NOV-2019]
 * Tested and compatible with latest WordPress.
 * Minor bug fixed.

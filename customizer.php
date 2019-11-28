@@ -70,7 +70,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '',
+    'default'           => '#31a3dd',
     'transport'         =>'auto',
     'output'            => array(
         array(
@@ -1401,7 +1401,7 @@ Kirki::add_field('awada_theme', array(
 	'default'			=> '#fff',
     'output'            => array(
         array(
-            'element'  => '#awada_footer_area .recent_posts_widget > li > a, #awada_footer_area .recent_posts_widget > a, #awada_footer_area p',
+            'element'  => '#awada_footer_area .recent_posts_widget > li > a, #awada_footer_area p',
             'property' => 'color',
         ),
     ),
@@ -1415,7 +1415,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-	'default'			=> '#31a3dd',
+	'default'			=> '',
     'output'            => array(
         array(
             'element'  => '#awada_footer_area li a, #awada_footer_area a',
@@ -1431,7 +1431,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => 'rgba(49,163,221,1)',
+    'default'           => '',
     'output'            => array(
         array(
             'element'  => '#copyrights',

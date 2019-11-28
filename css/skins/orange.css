@@ -275,3 +275,26 @@ Awada Classic SLIDER
 .slide-inner-content .a-btn-classic:hover {
     border-color: #f8504b;
 }
+/* Gutenburg CSS */
+.wp-block-button.is-style-outline {
+    color: #f8504b;
+}
+.wp-block-button__link {
+	background-color: #f8504b;
+}
+blockquote, .border-color-accent, .border-color-accent-hover:hover, .border-color-accent-hover:focus {
+    border-color: #f8504b;
+}
+blockquote {
+    border-color: #f8504b;
+}
+.wp-block-pullquote::before {
+    background: #f8504b;
+}
+/* Block Dropcap */
+.has-drop-cap:not(:focus)::first-letter {
+    color: #f8504b;
+}
+.pagination > li > span.current {
+    background-color: #f8504b;
+}
