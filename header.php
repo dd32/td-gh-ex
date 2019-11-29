@@ -23,12 +23,12 @@
         <div id="page" class="hfeed site">
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-parallax' ); ?></a>
             <?php
-            if ( of_get_option( 'show_social' ) == 1 ):
+            if ( accesspress_parallax_of_get_option( 'show_social' ) == 1 ):
                 do_action( 'accesspress_social' );
             endif;
             ?>
-            <?php $header_bottom = (of_get_option( 'enable_bottom_border' )) ? 'header-bottom-border' : ""; ?>
-            <header id="masthead" class="<?php echo esc_attr( of_get_option( 'header_layout' ) ) . ' ' . esc_attr($header_bottom); ?>">
+            <?php $header_bottom = (accesspress_parallax_of_get_option( 'enable_bottom_border' )) ? 'header-bottom-border' : ""; ?>
+            <header id="masthead" class="<?php echo esc_attr( accesspress_parallax_of_get_option( 'header_layout' ) ) . ' ' . esc_attr($header_bottom); ?>">
                 <div class="mid-content clearfix">
                     <div class="flex-box">
                         <div id="site-logo">
@@ -48,12 +48,12 @@
 
                             <?php
                             $sections = accesspress_parallax_get_plx_sections();
-                            if ( (of_get_option( 'enable_parallax' ) == 1 && of_get_option( 'enable_parallax_nav' ) == 1) || (is_page_template( 'home-page.php' ) && of_get_option( 'enable_parallax_nav' ) == 1) ):
+                            if ( (accesspress_parallax_of_get_option( 'enable_parallax' ) == 1 && accesspress_parallax_of_get_option( 'enable_parallax_nav' ) == 1) || (is_page_template( 'home-page.php' ) && accesspress_parallax_of_get_option( 'enable_parallax_nav' ) == 1) ):
                                 ?>
                                 <ul class="nav single-page-nav">
                                     <?php
-                                    $home_text = of_get_option( 'home_text' );
-                                    if ( of_get_option( 'show_slider' ) == "yes" && !empty( $home_text ) ) :
+                                    $home_text = accesspress_parallax_of_get_option( 'home_text' );
+                                    if ( accesspress_parallax_of_get_option( 'show_slider' ) == "yes" && !empty( $home_text ) ) :
                                         $home_text = apply_filters( 'accesspress_translate_string', $home_text, __( 'Home Text in Menu', 'accesspress-parallax' ) );
                                         ?>
                                         <li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_html( $home_text ); ?></a></li>
@@ -88,7 +88,7 @@
             </header><!-- #masthead -->
 
             <?php
-            $accesspress_show_slider = of_get_option( 'show_slider' );
+            $accesspress_show_slider = accesspress_parallax_of_get_option( 'show_slider' );
             $content_class = "";
             if ( empty( $accesspress_show_slider ) || $accesspress_show_slider == "no" ):
                 $content_class = "no-slider";

@@ -18,7 +18,7 @@ function accesspress_parallax_body_classes( $classes ) {
     if ( is_multi_author() ) {
         $classes[] = 'group-blog';
     }
-    $parallax = (of_get_option( 'enable_parallax_effect' )) ? of_get_option( 'enable_parallax_effect' ) : 1;
+    $parallax = (accesspress_parallax_of_get_option( 'enable_parallax_effect' )) ? accesspress_parallax_of_get_option( 'enable_parallax_effect' ) : 1;
     if( $parallax ){
         $classes[] = 'ap-parallax';
     }
@@ -42,12 +42,12 @@ add_action( 'wp_head', 'accesspress_parallax_pingback_header' );
 //bxSlider Callback for do action
 function accesspress_parallax_bxslidercb() {
     global $post;
-    $next_link = of_get_option( 'next_link' );
-    $accesspress_slider_category = of_get_option( 'slider_category' );
-    $accesspress_slider_full_window = of_get_option( 'slider_full_window' );
-    $accesspress_show_slider = of_get_option( 'show_slider', 'yes' );
-    $accesspress_show_caption = of_get_option( 'show_caption' );
-    $accesspress_enable_parallax = of_get_option( 'enable_parallax' );
+    $next_link = accesspress_parallax_of_get_option( 'next_link' );
+    $accesspress_slider_category = accesspress_parallax_of_get_option( 'slider_category' );
+    $accesspress_slider_full_window = accesspress_parallax_of_get_option( 'slider_full_window' );
+    $accesspress_show_slider = accesspress_parallax_of_get_option( 'show_slider', 'yes' );
+    $accesspress_show_caption = accesspress_parallax_of_get_option( 'show_caption' );
+    $accesspress_enable_parallax = accesspress_parallax_of_get_option( 'enable_parallax' );
     ?>
 
     <?php if ( $accesspress_show_slider == "yes" ) : ?>
@@ -106,7 +106,7 @@ add_action( 'accesspress_bxslider', 'accesspress_parallax_bxslidercb', 10 );
 
 //add class for parallax
 function accesspress_is_parallax( $class ) {
-    $is_parallax = of_get_option( 'enable_parallax' );
+    $is_parallax = accesspress_parallax_of_get_option( 'enable_parallax' );
     if ( $is_parallax == '1' || is_page_template( 'home-page.php' ) ):
         $class[] = "parallax-on";
     endif;
@@ -118,9 +118,9 @@ add_filter( 'body_class', 'accesspress_is_parallax' );
 //Dynamic styles on header
 function accesspress_header_styles_scripts() {
     $sections = array();
-    $sections = accesspress_parallax_get_plx_sections(); // of_get_option('parallax_section');
-    $custom_css = of_get_option( 'custom_css' );
-    $slider_overlay = of_get_option( 'slider_overlay' );
+    $sections = accesspress_parallax_get_plx_sections(); // accesspress_parallax_of_get_option('parallax_section');
+    $custom_css = accesspress_parallax_of_get_option( 'custom_css' );
+    $slider_overlay = accesspress_parallax_of_get_option( 'slider_overlay' );
     $image_url = get_template_directory_uri() . "/images/";
     $dyamic_style = '';
 
@@ -141,7 +141,7 @@ function accesspress_header_styles_scripts() {
     echo "</style>\n";
 
     echo "<script>\n";
-    if ( of_get_option( 'enable_animation' ) == '1' && is_front_page() ) :
+    if ( accesspress_parallax_of_get_option( 'enable_animation' ) == '1' && is_front_page() ) :
         ?>
         jQuery(document).ready(function($){
         wow = new WOW(
@@ -176,16 +176,16 @@ function accesspress_footer_count() {
 }
 
 function accesspress_social_cb() {
-    $facebooklink = of_get_option( 'facebook' );
-    $twitterlink = of_get_option( 'twitter' );
-    $google_pluslink = of_get_option( 'google_plus' );
-    $youtubelink = of_get_option( 'youtube' );
-    $pinterestlink = of_get_option( 'pinterest' );
-    $linkedinlink = of_get_option( 'linkedin' );
-    $flickrlink = of_get_option( 'flickr' );
-    $vimeolink = of_get_option( 'vimeo' );
-    $instagramlink = of_get_option( 'instagram' );
-    $skypelink = of_get_option( 'skype' );
+    $facebooklink = accesspress_parallax_of_get_option( 'facebook' );
+    $twitterlink = accesspress_parallax_of_get_option( 'twitter' );
+    $google_pluslink = accesspress_parallax_of_get_option( 'google_plus' );
+    $youtubelink = accesspress_parallax_of_get_option( 'youtube' );
+    $pinterestlink = accesspress_parallax_of_get_option( 'pinterest' );
+    $linkedinlink = accesspress_parallax_of_get_option( 'linkedin' );
+    $flickrlink = accesspress_parallax_of_get_option( 'flickr' );
+    $vimeolink = accesspress_parallax_of_get_option( 'vimeo' );
+    $instagramlink = accesspress_parallax_of_get_option( 'instagram' );
+    $skypelink = accesspress_parallax_of_get_option( 'skype' );
     ?>
     <div class="social-icons">
         <?php if ( !empty( $facebooklink ) ) { ?>
@@ -274,7 +274,7 @@ function accesspress_letter_count( $content, $limit ) {
 
 function accesspress_register_string() {
     if ( function_exists( 'pll_register_string' ) ) {
-        $home_text = of_get_option( 'home_text' );
+        $home_text = accesspress_parallax_of_get_option( 'home_text' );
         pll_register_string( 'Menu: Home Text', $home_text, 'Theme Option Text' );
     }
 }

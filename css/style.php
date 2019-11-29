@@ -1,7 +1,7 @@
 <?php
 
 function accesspress_parallax_dynamic_styles() {
-    $tpl_color = of_get_option( 'template_color', '#E66432' );
+    $tpl_color = accesspress_parallax_of_get_option( 'template_color', '#E66432' );
 
     $custom_css = "";
 

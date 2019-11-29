@@ -2,8 +2,8 @@
 /**
  * @package accesspress_parallax
  */
-$post_date = of_get_option( 'post_date' );
-$post_footer = of_get_option( 'post_footer' );
+$post_date = accesspress_parallax_of_get_option( 'post_date' );
+$post_footer = accesspress_parallax_of_get_option( 'post_footer' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-wrap' ); ?>>

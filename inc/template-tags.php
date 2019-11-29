@@ -26,8 +26,8 @@ if ( !function_exists( 'accesspress_parallax_posted_on' ) ) :
                 _x( 'By %s', 'post author', 'accesspress-parallax' ), '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
         );
 
-        $post_date = of_get_option( 'post_date' );
-        $post_author = of_get_option( 'post_author' );
+        $post_date = accesspress_parallax_of_get_option( 'post_date' );
+        $post_author = accesspress_parallax_of_get_option( 'post_author' );
         if ( $post_date == 1 ) :
             echo '<div class="entry-meta">';
             echo '<span class="posted-on">' . $time_string . '</span>'; // WPCS: XSS OK.

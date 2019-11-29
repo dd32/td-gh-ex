@@ -2,7 +2,7 @@
 /**
  * @package accesspress_parallax
  */
-$post_footer = of_get_option( 'post_footer' );
+$post_footer = accesspress_parallax_of_get_option( 'post_footer' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-wrap' ); ?>>
     <?php if ( has_post_thumbnail() ) : ?>

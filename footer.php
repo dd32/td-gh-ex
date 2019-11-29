@@ -10,7 +10,7 @@
 
 </div><!-- #content -->
 <?php
-$custom_footer_page_id = of_get_option( 'custom_footer_page' );
+$custom_footer_page_id = accesspress_parallax_of_get_option( 'custom_footer_page' );
 if( isset($custom_footer_page_id) && !empty($custom_footer_page_id)) :?>
     <footer id="ap-custom-footer" class="ap-custom-footer-wrapper">
         <?php echo \Elementor\Plugin::$instance->frontend->get_builder_content( $custom_footer_page_id ); ?>

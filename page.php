@@ -13,7 +13,7 @@ get_header();
 ?>
 
 <?php
-if ( of_get_option( 'enable_parallax' ) == 1 && is_front_page() && get_option( 'show_on_front' ) == 'page' ) {
+if ( accesspress_parallax_of_get_option( 'enable_parallax' ) == 1 && is_front_page() && get_option( 'show_on_front' ) == 'page' ) {
     get_template_part( 'index', 'parallax' );
 } else {
     ?>

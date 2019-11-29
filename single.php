@@ -15,7 +15,7 @@ get_header();
                 <?php get_template_part( 'content', 'single' ); ?>
 
                 <?php
-                $post_pagination = of_get_option( 'post_pagination' );
+                $post_pagination = accesspress_parallax_of_get_option( 'post_pagination' );
                 if ( $post_pagination == 1 || !isset( $post_pagination ) ) :
                     the_post_navigation( array(
                         'prev_text' => '<i class="fa fa-hand-o-left"></i>' . __( '%title', 'accesspress-parallax' ),

@@ -93,6 +93,9 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+= 3.2 =
+** Fixed Woocommerce widgets in Elementor
+
 = 3.1 =
 ** Changed theme description
 ** Fixed menu issue

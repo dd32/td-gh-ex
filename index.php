@@ -12,7 +12,7 @@
  */
 get_header();
 
-if ( of_get_option( 'enable_parallax' ) == 1 ) :
+if ( accesspress_parallax_of_get_option( 'enable_parallax' ) == 1 ) :
     get_template_part( 'index', 'parallax' );
 else:
     ?>
