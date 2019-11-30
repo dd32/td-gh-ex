@@ -83,6 +83,11 @@ if( ! function_exists( 'bc_business_consulting_header_middle' ) ) :
                         </div>
                    </div> 
                    <div class="col-md-8 col-sm-7">
+                   		<?php  if ( is_active_sidebar( 'logo_right_widgets' ) ) :
+									
+								 dynamic_sidebar( 'logo_right_widgets' );
+								 
+						 else: ?>
                         <div class="header-info">
                             <?php if ( bc_business_consulting_get_option('social_profile_dialog') == 1 && count( bc_business_consulting_get_option('bc_business_consulting_award') ) > 0 )  :
 								echo '<ul>';
@@ -97,6 +102,7 @@ if( ! function_exists( 'bc_business_consulting_header_middle' ) ) :
 								echo '</ul>';
 							 endif;?>
                         </div>
+                        <?php endif;?>
                 	</div>
                 
                 </div>

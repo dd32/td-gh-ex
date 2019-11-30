@@ -52,26 +52,14 @@ function bc_business_consulting_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => 'WooCommerce Popup Cart + ajax',
-			'slug'      => 'woocomm-popup-cart-ajax',
-			'required'  => false,
-		),
-		array(
-			'name'      => 'Smart Variation Swatches for WooCommerce',
-			'slug'      => 'variation-swatches-style',
+			'name'      => 'WordPress SEO Plugin – Rank Math',
+			'slug'      => 'seo-by-rank-math',
 			'required'  => false,
 		),
 		
 		array(
-			'name'      => 'Advanced Product Search For WooCommerce',
-			'slug'      => 'advanced-product-search-for-woo',
-			'required'  => false,
-		),
-
-
-		array(
-			'name'      => 'Advanced Product Wishlist for Woocommerce',
-			'slug'      => 'advanced-product-wishlist-for-woo',
+			'name'      => 'WP Fastest Cache',
+			'slug'      => 'wp-fastest-cache',
 			'required'  => false,
 		),
 

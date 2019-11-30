@@ -1,6 +1,10 @@
 == Changelog ==
 
  =  1.2.0 =
+*  TGM separate for child theme
+*  keyboard shortcuts css add
+
+ =  1.2.0 =
 * skip-link and screen-reader-text update
 
  =  1.1.9 =

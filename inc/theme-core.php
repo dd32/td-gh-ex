@@ -159,6 +159,16 @@ function bc_business_consulting_widgets_init() {
 		'before_title'  => '<h3 class="widget-title screen-reader-text">',
 		'after_title'   => '</h3>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => esc_html__( 'Logo Right Widgets', 'bc-business-consulting' ),
+		'id'            => 'logo_right_widgets',
+		'description'   => esc_html__( 'Add widgets here.', 'bc-business-consulting' ),
+		'before_widget' => '<div id="%1$s" class="%2$s logo_right_widgets">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title screen-reader-text">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'bc_business_consulting_widgets_init' );
 
@@ -212,3 +222,4 @@ if( ! function_exists( 'bc_business_consulting_pingback_header' ) ) :
 	add_action( 'wp_head', 'bc_business_consulting_pingback_header' );
 
 endif;
+
