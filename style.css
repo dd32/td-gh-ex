@@ -4,7 +4,7 @@ Theme URI: https://uxlthemes.com/theme/azuma/
 Author: UXL Themes
 Author URI: https://uxlthemes.com
 Description: Azuma is a customizable WordPress theme which features a sticky header, homepage hero or slider using the standard WordPress image widget, sortable homepage sections, custom colors and fonts, grid layout options and support for video posts/articles. Support for WooCommerce ecommerce plugin along with Wishlist and Quick View plugins is included along with an auto-updating shopping cart, sticky add-to-cart panel on single product pages and a horizontal product filter widget area.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azuma
@@ -3988,10 +3988,10 @@ p.has-background{
 	}
 	.menu-item-has-children .sub-trigger:after{
 		position: absolute;
-		top: .5em;
+		top: 0;
 		left: 0;
 		font-family: 'Font Awesome 5 Free';
-		font-size: 16px;
+		font-size: 26px;
 		font-weight: 900;
 		text-shadow: none;
 		content: "\f107";
@@ -4002,7 +4002,12 @@ p.has-background{
 	#primary-menu .sub-menu,
 	#primary-menu li:hover > .sub-menu,
 	#primary-menu ul.children,
-	#primary-menu li:hover > ul.children{
+	#primary-menu li:hover > ul.children,
+	#primary-menu ul li.menu-item-has-children ul,
+	#primary-menu ul li.menu-item-has-children ul,
+	#primary-menu ul li.menu-item-has-children.locked ul,
+	#primary-menu ul li.menu-item-has-children:hover ul,
+	#primary-menu ul li.menu-item-has-children a:focus ~ ul{
 		left: 0;
 		width: 250px;
 		border: none;
@@ -4011,7 +4016,7 @@ p.has-background{
 		opacity: 1;
 		visibility: visible;
 		position: relative;
-		top: 0;
+		top: 0 !important;
 		transition: none;
 	}
 	#primary-menu .sub-menu li,

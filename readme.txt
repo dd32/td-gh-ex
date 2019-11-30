@@ -18,6 +18,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.0.4 - November 30, 2019
+Minor update to sub-menu on mobile
+
 1.0.3 - November 22, 2019
 Update header account section to use WooCommerce templates for better functionality and translations
 
