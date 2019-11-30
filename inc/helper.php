@@ -92,13 +92,7 @@ endif;
                 </a>
                 <?php the_post_thumbnail('full');?>
             </div>
-         <?php else:?>
-        	<div class="entry-cover <?php echo esc_attr( $formats );?>">
-                <a href="<?php echo esc_url( get_permalink() );?>" class="image-link">
-                <i class="fa fa-plus"></i>
-                </a>
-                <img src="<?php echo esc_url( get_stylesheet_directory_uri().'/assets/default.png' );?>" alt="<?php echo esc_attr( get_the_title() );?>" title="<?php echo esc_attr( get_the_title() );?>" />
-            </div>
+        
         <?php endif;?>  
 	<?php
 	}
@@ -225,3 +219,101 @@ if ( ! function_exists( 'bcshop_product_review_comment_form_args' ) ) :
 
 endif;
 
+
+
+add_action( 'tgmpa_register', 'bcshop_register_required_plugins' );
+
+/**
+ * Register the required plugins for this theme.
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function bcshop_register_required_plugins() {
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+		array(
+			'name'      => 'Page Builder by SiteOrigin',
+			'slug'      => 'siteorigin-panels',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'WP Subtitle',
+			'slug'      => 'wp-subtitle',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Smart Slider ',
+			'slug'      => 'smart-slider-3',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'WP Instagram Widget',
+			'slug'      => 'wp-instagram-widget',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'WooCommerce Popup Cart + ajax',
+			'slug'      => 'woocomm-popup-cart-ajax',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Smart Variation Swatches for WooCommerce',
+			'slug'      => 'variation-swatches-style',
+			'required'  => false,
+		),
+		
+		array(
+			'name'      => 'Advanced Product Search For WooCommerce',
+			'slug'      => 'advanced-product-search-for-woo',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Advanced Product Wishlist for Woocommerce',
+			'slug'      => 'advanced-product-wishlist-for-woo',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'WordPress SEO Plugin – Rank Math',
+			'slug'      => 'seo-by-rank-math',
+			'required'  => false,
+		),
+		
+		array(
+			'name'      => 'WP Fastest Cache',
+			'slug'      => 'wp-fastest-cache',
+			'required'  => false,
+		),
+
+
+	);
+
+	/*
+	 * Array of configuration settings. Amend each line as needed.
+	 *
+	 * TGMPA will start providing localized text strings soon. If you already have translations of our standard
+	 * strings available, please help us make TGMPA even better by giving us access to these translations or by
+	 * sending in a pull-request with .po file(s) with the translations.
+	 *
+	 * Only uncomment the strings in the config array if you want to customize the strings.
+	 */
+	$config = array(
+		'id'           => 'bc-business-consulting',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+
+	);
+
+	tgmpa( $plugins, $config );
+}
