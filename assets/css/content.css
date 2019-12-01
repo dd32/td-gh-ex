@@ -672,7 +672,7 @@ nav.navigation.post-navigation .nav-links a{
 }
 nav.navigation.post-navigation .nav-links a:after{
 	position: absolute;
-    top: 0;
+    top: 10px;
     height: 100%;
     color: #F4F5F7;
     font-weight: normal;

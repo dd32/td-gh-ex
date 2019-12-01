@@ -7,29 +7,46 @@
 */
 
 
+if(! function_exists('arrival_site_titles_text')){
+	function arrival_site_titles_text(){ 
+		$arrival_description 	= get_bloginfo( 'description', 'display' );
+
+		if ( is_front_page() && is_home() ) : ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php else : ?>
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		<?php endif;
+
+		if ( $arrival_description || is_customize_preview() ) : ?>
+			<p class="site-description"><?php echo wp_kses_post($arrival_description); /* WPCS: xss ok. */ ?></p>
+		<?php endif;
+
+	}
+}
 
 add_action( 'arrival_main_nav','arrival_site_logo',5 );
 if( ! function_exists('arrival_site_logo')){
 	function arrival_site_logo(){
 		$default 				= arrival_get_default_theme_options();
 		$_main_nav_disable_logo = get_theme_mod('arrival_main_nav_disable_logo',$default['arrival_main_nav_disable_logo']);
-
+		$display_header_text 	= display_header_text();
+		
 		if( 'yes' == $_main_nav_disable_logo ){
 			return;
 		}
 	?>
 	<div class="site-branding">
-		<?php the_custom_logo(); ?>
-		<?php if ( is_front_page() && is_home() ) : ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-		<?php else : ?>
-			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-		<?php endif; ?>
+		<?php if(has_custom_logo() && $display_header_text === true ){ 
+			 	the_custom_logo(); ?>
+			 	<div class="text-wrapp">
+			 		<?php arrival_site_titles_text(); ?>
+			 	</div>
+		<?php }else{
 
-		<?php $arrival_description = get_bloginfo( 'description', 'display' ); ?>
-		<?php if ( $arrival_description || is_customize_preview() ) : ?>
-			<p class="site-description"><?php echo wp_kses_post($arrival_description); /* WPCS: xss ok. */ ?></p>
-		<?php endif; ?>
+				the_custom_logo();
+				arrival_site_titles_text();
+			} ?>
+
 	</div><!-- .site-branding -->
 	<?php
 	}
@@ -332,6 +349,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 		$_main_nav_disable_logo 	= get_theme_mod('arrival_main_nav_disable_logo',$default['arrival_main_nav_disable_logo']);
 		$arrival_main_nav_right_content = get_theme_mod('arrival_main_nav_right_content',$default['arrival_main_nav_right_content']);
 		$_transparent_header_enable 	= get_theme_mod('arrival_transparent_header_enable',$default['arrival_transparent_header_enable']);
+		$_breadcrumb_enable 			= get_theme_mod('arrival_breadcrumb_enable',$default['arrival_breadcrumb_enable']);
 
 		if( $_transparent_header_enable == true ){
 			$transparent_hdr = 'arrival-transparent-header';
@@ -342,6 +360,8 @@ if( ! function_exists('arrival_main_header_wrapp')){
 		$hdr_class = 'seperate-breadcrumb';
 		if( $_page_header_layout == 'default' ){
 			$hdr_class = 'hdr-breadcrumb';
+		}else if( $_page_header_layout == 'layout-two' && $_breadcrumb_enable == 'no' ){
+			$hdr_class = 'hdr-breadcrumb breadcrumb-off';
 		}
 
 		if( 'empty' == $arrival_main_nav_right_content ){
@@ -354,11 +374,11 @@ if( ! function_exists('arrival_main_header_wrapp')){
 		);
 		
 		$grid_class = 'op-grid-three';
-		if( ('yes' == $_main_nav_disable_logo)  && ('empty' == $arrival_main_nav_right_content) ){
+		if( ('yes' == $_main_nav_disable_logo)  && ('none' == $arrival_main_nav_right_content) ){
 			$grid_class = 'op-grid-one';
-		}elseif( ('yes' == $_main_nav_disable_logo) && ('empty' != $arrival_main_nav_right_content) ){
+		}elseif( ('yes' == $_main_nav_disable_logo) && ('none' != $arrival_main_nav_right_content) ){
 			$grid_class = 'op-grid-two';
-		}elseif( ('yes' == $_main_nav_disable_logo) || ('empty' == $arrival_main_nav_right_content) ) {
+		}elseif( ('yes' == $_main_nav_disable_logo) || ('none' == $arrival_main_nav_right_content) ) {
 			$grid_class = 'op-grid-two';
 		}
 		
@@ -384,7 +404,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 				</div>
 			</div>
 
-			<?php if( $_page_header_layout == 'default' ){
+			<?php if( $_page_header_layout == 'default' && $_breadcrumb_enable == 'yes' ){
 				
 				arrival_header_title_display();
 

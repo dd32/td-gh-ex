@@ -1,3 +1,7 @@
+=== v1.2.1 === 
+- Added option to show/hide site breadcrumbs
+- Minor CSS improvements
+
 === v1.2.0 === 
 - Fixed issue on customizer scripts
 - Checked and added compatiblity with WordPress 5.3

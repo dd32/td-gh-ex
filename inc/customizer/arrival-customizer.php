@@ -1218,6 +1218,29 @@ $wp_customize->add_section( $prefix.'_breadcrumb_potions', array(
     )
   );
 
+
+/**
+* Disable breadcrumbs
+* @since 1.2.1
+*/
+
+$wp_customize->add_setting( $prefix.'_breadcrumb_enable', array(
+        'default'             => $default[$prefix.'_breadcrumb_enable'],
+        'sanitize_callback'   => 'arrival_sanitize_switch',
+        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_breadcrumb_enable', array(
+        'label'         => esc_html__( 'Enable Breadcrumbs', 'arrival' ),
+        'description'   => esc_html__('Show or hide breadcrumb header bars.','arrival'),
+        'section'       => $prefix.'_breadcrumb_potions',
+        'choices'       => array(
+          'yes'         => esc_html__( 'Yes', 'arrival' ),
+          'no'          => esc_html__( 'No', 'arrival' ),
+        )
+      ) ) );
+
+
 //layout
 $wp_customize->add_setting( $prefix.'_page_header_layout', array(
         'default'               => $default[$prefix.'_page_header_layout'],

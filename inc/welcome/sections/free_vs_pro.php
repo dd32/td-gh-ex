@@ -29,12 +29,15 @@ if ( empty( $content ) ) {
     </table>
 
     </div><!-- .demo-description -->
+
+<?php if(! class_exists('Arrival_Companion')){ ?>
 <div class="button-wrapper">
     <?php
     $pro_link = 'https://wpoperation.com/themes/arrival-pro/';
     ?>
 	<a href="<?php echo esc_url($pro_link);?>" class="btn" target="_blank"><?php esc_html_e('Buy Now','arrival'); ?></a>
 </div>
+<?php } ?>
 </div><!-- .wpopsection -->
 <?php
 

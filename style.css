@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -496,9 +496,7 @@ template {
 		background: #FFF;
 		padding: 1.25rem 1.25rem;
 	}
-	/* .blog.masonry-layout .site-main{
-		display: inline-block;
-	} */
+	
 
 	.primary-sidebar {
 		-ms-grid-column: 2;
@@ -1312,10 +1310,13 @@ textarea {
 }
 
 .footer-btm {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: auto auto;
     grid-template-columns: auto auto;
     padding-top: 27px;
 }
+
 .footer-btm.border-enable{
 	border-top: 1px solid rgba(255,255,255,0.08);
 }
@@ -1468,7 +1469,9 @@ textarea {
 
 
 .op-grid-two{
+	display: -ms-grid;
 	display: grid;
+    -ms-grid-columns: auto auto;
     grid-template-columns: auto auto;
 }
 
@@ -2253,8 +2256,11 @@ span.toggle-wrapp {
 
 /* 404 page */
 .error404 .site {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
+
 section.error-404.not-found {
     text-align: center;
 }
@@ -2271,42 +2277,6 @@ article.sticky {
 	grid-gap: 0.2em;
 }
 
-/* contact form styling */
-/* contact form styling */
-input.wpcf7-form-control:not(.wpcf7-submit),
-textarea.wpcf7-form-control.wpcf7-textarea {
-    border: none;
-    background: transparent;
-    border-bottom: 2px solid #a5a4a4;
-    padding-left: 0;
-    text-align: center;
-    height: 60px;
-}
-form.wpcf7-form .form-groups{
-	text-align: center;
-}
-form.wpcf7-form .form-groups label {
-    display: inline-block;
-        width: 45%;
-    text-align: center;
-}
-form.wpcf7-form .form-field{
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-    margin-top: 30px;
-}
-input.wpcf7-form-control.wpcf7-submit {
-    margin-top: 40px;
-        padding: 15px 40px;
-}
-form.wpcf7-form .submit-form {
-    text-align: center;
-}
-input.wpcf7-form-control:focus,
-textarea.wpcf7-form-control.wpcf7-textarea:focus {
-    outline: none;
-}
 
 /* masonry blog */
 body.masonry-layout .site-main article.post{
@@ -2608,14 +2578,6 @@ section.no-results.not-found {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-gap: 10px;
 }
-/* .after-top-header-wrapp .widget_arrival_info .contact-info-wrapp .info-wrap{
-	float: right;
-    width: 75%;
-}
-.after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info {
-    float: left;
-    width: 33.33%;
-} */
 
 
 .after-top-header-wrapp .icon-wrap {
@@ -2719,4 +2681,14 @@ body.home .arrival-transparent-header .main-header-wrapp.boxed .container,
 body.home .arrival-transparent-header .main-header-wrapp.full {
     background: transparent;
     box-shadow: none;
+}
+
+/* display header icon and logo inline */
+.site-branding .site-branding a,
+.site-branding .text-wrapp {
+    display: inline-block;
+}
+
+.breadcrumb-off{
+	padding-bottom: 32px;
 }

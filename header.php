@@ -34,7 +34,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 $default 					= arrival_get_default_theme_options();
 $_page_header_layout 		= get_theme_mod('arrival_page_header_layout',$default['arrival_page_header_layout']);
-
+$_breadcrumb_enable 		= get_theme_mod('arrival_breadcrumb_enable',$default['arrival_breadcrumb_enable']);
 
 ?>
 
@@ -42,7 +42,7 @@ $_page_header_layout 		= get_theme_mod('arrival_page_header_layout',$default['ar
 		
 		<?php do_action('arrival_main_header_wrapp'); ?>
 
-<?php if( $_page_header_layout == 'layout-two' ){
+<?php if( $_page_header_layout == 'layout-two' && $_breadcrumb_enable == 'yes' ){
 	arrival_header_title_display();
 
 }?>
