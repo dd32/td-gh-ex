@@ -34,7 +34,7 @@
 				),
 				array(
 					'icon' => 'dashicons-format-aside',
-					'text' => __( 'Sidebar Options', 'parallaxsome-pro' ),
+					'text' => __( 'Sidebar Options', 'agency-lite' ),
 					'link' => add_query_arg( array( 'autofocus[section]' => 'agency_lite_sidebar_section' ), admin_url( 'customize.php' ) ),
 				),
 

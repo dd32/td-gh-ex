@@ -98,7 +98,7 @@ function agency_lite_page_lists(){
 function agency_lite_slider_control(){
 ?>
 <div class="mail-slider-header-wrap container">
-    <div id="header-slider-wrap" class="carousel-main-slider owl-carousel">
+    <div id="header-slider-wrap" class="carousel-main-slider agency-carousel-main-slider owl-carousel">
     <?php 
         $home_sliders = array('one','two', 'three' );
         foreach ($home_sliders as $home_slider) {

@@ -22,7 +22,7 @@
 			<p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'agency-lite'); ?></p>
 		</td>
 		<td colspan="2">
-			<a target="__blank" class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/agency-pro/">Buy Now ($45 only)</a>
+			<a target="__blank" class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/agency-pro/">Buy Now ($55 only)</a>
 		</td>
 	</tr>
 	<tr>
@@ -252,7 +252,7 @@
 			<p><?php esc_html_e('Upgrade to pro version for additional features and better supports.', 'agency-lite'); ?></p>
 		</td>
 		<td colspan="2">
-			<a target="__blank" class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/agency-pro/">Buy Now ($45 only)</a>
+			<a target="__blank" class="buy-pro-btn" href="https://accesspressthemes.com/wordpress-themes/agency-pro/">Buy Now ($55 only)</a>
 		</td>
 	</tr>
 </table>

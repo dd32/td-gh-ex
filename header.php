@@ -20,8 +20,12 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+}?>
 <div id="page" class="site">
-
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'agency-lite' ); ?></a>
 	<?php do_action('agency_lite_top_header'); ?>
 	
 	<header id="masthead" class="site-header">
@@ -62,6 +66,8 @@
 	<?php 
 	  if(!is_front_page() ){
             do_action('agency_lite_header_banner'); 
-        }
+        }?>
+	<div id="content" class="site-content">
+        
 
 

@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
 //for slider
-$('.carousel-main-slider').owlCarousel({
+$('.agency-carousel-main-slider').owlCarousel({
     loop:true,
     nav:false,
     autoplay:true,

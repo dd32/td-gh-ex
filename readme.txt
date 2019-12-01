@@ -1,14 +1,15 @@
 === Agency Lite ===
 
-Contributors: automattic
+Contributors: Access Keys
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, custom-header, footer-widget, blog, portfolio
-
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 5.3
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
+=== Description === 
+Agency Lite is a multipurpose WordPress theme perfect for any agency, blog, portfolio, business and corporate website. This theme comes up with the most modern and clean design, while being equipped with the latest technology. The highly configurable homepage of this theme has numerous well coded sections - Slider, About, FAQ, Feature, Service, Team, Counter, Blog and Logo Section. And the best part is that all these sections can be enabled or disabled by you as per your will. You can even translate this site in any language you prefer, create an ecommerce site with the theme and view each change that you have been making live - in real time. Check demo here https://demo.accesspressthemes.com/agency-lite
 
 
 == Installation ==
@@ -35,6 +36,11 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 * Screenshot banner Image, https://pixabay.com/en/wood-wooden-desktop-table-desk-3271749/, © 2018 Pixabay, [Creative Commons CC0]https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.1.1 - Dec 01 2019 =
+** Added Skip Link Content Option
+** Added keyboard Navigation option
+** Fixed minor issues
+
 = 1.1.0 - Sep 04 2019 =
 ** Added New Welcome Page and removed old welcome page
 ** Added Demo Importer
