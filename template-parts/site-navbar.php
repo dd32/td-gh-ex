@@ -1,8 +1,6 @@
 <?php 
 $arilewp_menu_style = get_theme_mod('arilewp_menu_style', 'sticky');   
-$arilewp_menu_container_size = get_theme_mod('arilewp_menu_container_size', 'container-full');  
-$arilewp_cart_icon_disabled = get_theme_mod('arilewp_cart_icon_disabled', true); 
-$arilewp_search_icon_disabled = get_theme_mod('arilewp_search_icon_disabled', true); 
+$arilewp_menu_container_size = get_theme_mod('arilewp_menu_container_size', 'container-full');
 ?>
 	<!-- Theme Menubar -->
 	<nav class="navbar navbar-expand-lg not-sticky navbar-light <?php if($arilewp_menu_style == 'sticky'){echo 'header-sticky'; }?>">
