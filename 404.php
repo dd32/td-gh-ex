@@ -1,13 +1,16 @@
 <?php
+/**
+ * Exit if accessed directly.
+ *
+ * @package Responsive
+ */
 
-// Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Error 404 Template
- *
  *
  * @file           404.php
  * @package        Responsive
@@ -22,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
 ?>
 <?php get_header(); ?>
 <div id="content-outer">
-<div id="content-full" class="grid col-940">
+<div id="content-full" class="grid col-940" <?php responsive_schema_markup( 'main' ); ?>>
 
 	<?php responsive_entry_before(); ?>
 	<div id="post-0" class="error404">
@@ -40,5 +43,5 @@ if ( !defined( 'ABSPATH' ) ) {
 
 </div><!-- end of #content-full -->
 
-<?php get_footer(); ?>
 </div>
+<?php get_footer(); ?>

@@ -1,14 +1,18 @@
 <?php
+/**
+ * Exit if accessed directly.
+ *
+ * @package Responsive
+ */
 
-// Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 /**
  * Blog Template
  *
-Template Name: Blog Excerpt (summary)
+Template Name: Blog Excerpt (summary) (Deprecated)
  *
  * @file           blog-excerpt.php
  * @package        Responsive
@@ -26,26 +30,29 @@ get_header();
 <div id="content-outer">
 <div id="content-blog" class="<?php echo esc_attr( implode( ' ', responsive_get_content_classes() ) ); ?>">
 
-	<?php get_template_part( 'loop-header', get_post_type() ); ?>
+	<?php
+	get_template_part( 'loop-header', get_post_type() );
+	?>
 
 	<?php
-	global $wp_query, $paged;
 	if ( get_query_var( 'paged' ) ) {
-		$paged = get_query_var( 'paged' );
-	}elseif ( get_query_var( 'page' ) ) {
-		$paged = get_query_var( 'page' );
+		$responsive_paged = get_query_var( 'paged' );
+	} elseif ( get_query_var( 'page' ) ) {
+		$responsive_paged = get_query_var( 'page' );
+	} else {
+		$responsive_paged = 1;
 	}
-	else {
-		$paged = 1;
-	}
-	$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
-	$temp_query = $wp_query;
-	$wp_query = null;
-	$wp_query = $blog_query;
+	$responsive_blog_query = new WP_Query(
+		array(
+			'post_type' => 'post',
+			'paged'     => $responsive_paged,
+		)
+	);
 
-	if ( $blog_query->have_posts() ) :
+	if ( $responsive_blog_query->have_posts() ) :
 
-		while( $blog_query->have_posts() ) : $blog_query->the_post();
+		while ( $responsive_blog_query->have_posts() ) :
+			$responsive_blog_query->the_post();
 			?>
 
 			<?php responsive_entry_before(); ?>
@@ -61,7 +68,14 @@ get_header();
 						</a>
 					<?php endif; ?>
 					<?php the_excerpt(); ?>
-					<?php wp_link_pages( array( 'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ), 'after' => '</div>' ) ); ?>
+					<?php
+					wp_link_pages(
+						array(
+							'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ),
+							'after'  => '</div>',
+						)
+					);
+					?>
 				</div><!-- end of .post-entry -->
 
 				<?php get_template_part( 'post-data', get_post_type() ); ?>
@@ -70,29 +84,28 @@ get_header();
 			</div><!-- end of #post-<?php the_ID(); ?> -->
 			<?php responsive_entry_after(); ?>
 
-		<?php
+			<?php
 		endwhile;
 
-		if ( $wp_query->max_num_pages > 1 ) :
+		if ( $responsive_blog_query->max_num_pages > 1 ) :
 			?>
 			<div class="navigation">
-				<div class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ), $wp_query->max_num_pages ); ?></div>
-				<div class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ), $wp_query->max_num_pages ); ?></div>
+				<div class="previous"><?php next_posts_link( __( '&#8249; Older posts', 'responsive' ), $responsive_blog_query->max_num_pages ); ?></div>
+				<div class="next"><?php previous_posts_link( __( 'Newer posts &#8250;', 'responsive' ), $responsive_blog_query->max_num_pages ); ?></div>
 			</div><!-- end of .navigation -->
-		<?php
+			<?php
 		endif;
 
-	else :
+		else :
 
-		get_template_part( 'loop-no-posts', get_post_type() );
+			get_template_part( 'loop-no-posts', get_post_type() );
 
 	endif;
-	$wp_query = $temp_query;
-	wp_reset_postdata();
-	?>
+		wp_reset_postdata();
+		?>
 
 </div><!-- end of #content-blog -->
 
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>
 </div>
+<?php get_footer(); ?>
