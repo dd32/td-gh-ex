@@ -301,7 +301,7 @@ msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: inc/customizer/customizer-default.php:100
-msgid "Copyright All right reserved"
+msgid "Copyright All rights reserved"
 msgstr ""
 
 #: inc/about/about.php:70

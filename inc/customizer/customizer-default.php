@@ -97,7 +97,7 @@ function best_education_get_default_theme_options() {
 	$defaults['archive_layout_image']     = 'full';
 	$defaults['single_post_image_layout'] = 'full';
 	$defaults['pagination_type']          = 'default';
-	$defaults['copyright_text']           = esc_html__('Copyright All right reserved', 'best-education');
+	$defaults['copyright_text']           = esc_html__('Copyright All rights reserved', 'best-education');
 	$defaults['social_icon_style']        = 'circle';
 	$defaults['number_of_footer_widget']  = 3;
 	$defaults['page_loader_setting']  = 1;
