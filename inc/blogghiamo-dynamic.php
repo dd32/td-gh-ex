@@ -252,6 +252,26 @@ function blogghiamo_color_primary_register( $wp_customize ) {
     ) );
 	
 	/*
+	Show read more button
+	=====================================================
+	*/
+	$wp_customize->add_setting('blogghiamo_theme_options_readmore', array(
+        'default'    => '',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field'
+    ) );
+	
+	$wp_customize->add_control('blogghiamo_theme_options_readmore', array(
+        'label'      => __( 'Read more button', 'blogghiamo' ),
+		'description'=> __( 'Leave the field blank if you do not want to show the read more button', 'blogghiamo' ),
+        'section'    => 'cresta_blogghiamo_options',
+        'settings'   => 'blogghiamo_theme_options_readmore',
+        'type'       => 'text',
+		'active_callback' => 'blogghiamo_is_excerpt',
+    ) );
+	
+	/*
 	Copyright text
 	=====================================================
 	*/
@@ -334,6 +354,14 @@ function blogghiamo_sanitize_checkbox( $input ) {
 	} else {
 		return '';
 	}
+}
+
+function blogghiamo_is_excerpt() {
+	$showfullpost = get_theme_mod('blogghiamo_theme_options_postshow', '1');
+	if ($showfullpost) {
+		return true;
+	}
+	return false;
 }
 
 function blogghiamo_sanitize_text( $input ) {
@@ -473,7 +501,7 @@ function blogghiamo_custom_css_styles() {
 	.main-navigation a:active,
 	.post-navigation .meta-nav,
 	.widget-title,
-	.edit-link a, .tagcloud a,
+	.edit-link a, .tagcloud a, .blogghiamoReadMore a,
 	#comments .reply a,
 	.menu-toggle:hover,
 	.menu-toggle:focus,
@@ -507,7 +535,7 @@ function blogghiamo_custom_css_styles() {
 	.main-navigation ul ul,
 	.post-navigation .meta-nav,
 	.widget-title,
-	.edit-link a, .tagcloud a,
+	.edit-link a, .tagcloud a, .blogghiamoReadMore a,
 	#comments .reply,
 	.menu-toggle:focus, .menu-toggle:hover {
 		background: <?php echo esc_html($special_color_third); ?>;
@@ -521,7 +549,7 @@ function blogghiamo_custom_css_styles() {
 	a:active,
 	.post-navigation .meta-nav:hover,
 	.top-search.active,
-	.edit-link a:hover, .tagcloud a:hover,
+	.edit-link a:hover, .tagcloud a:hover, .blogghiamoReadMore a:hover,
 	.page-links a span {
 		color: <?php echo esc_html($special_color_third); ?>;
 	}
@@ -551,7 +579,7 @@ function blogghiamo_custom_css_styles() {
 	textarea:focus,
 	.post-navigation .meta-nav:hover,
 	#wp-calendar tbody td#today,
-	.edit-link a:hover, .tagcloud a:hover	{
+	.edit-link a:hover, .tagcloud a:hover, .blogghiamoReadMore a:hover	{
 		border: 1px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	.widget-title:before, .theShareSpace:before {

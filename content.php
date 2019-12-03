@@ -18,7 +18,7 @@
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
 			echo '<div class="entry-featuredImg"><a href="' .esc_url( get_permalink() ). '" title="' .the_title_attribute('echo=0'). '"><span class="overlay-img"></span>';
-			the_post_thumbnail('blogghiamo-normal-post');
+			the_post_thumbnail('blogghiamo-normal-post', array( 'alt' => get_the_title()));
 			echo '</a></div>';
 		}
 	?>
@@ -34,7 +34,13 @@
 			$showfullpost = get_theme_mod('blogghiamo_theme_options_postshow', '1');
 		?>
 		<?php if ( $showfullpost == 1 ) : ?>
-			<?php the_excerpt(); ?>
+			<?php 
+				the_excerpt();
+				$showReadMore = get_theme_mod('blogghiamo_theme_options_readmore', '');
+				if ($showReadMore) {
+					echo '<div class="blogghiamoReadMore"><a href="' .esc_url( get_permalink() ). '" title="' .the_title_attribute('echo=0'). '">' .esc_html($showReadMore). '</a></div>';
+				}
+			?>
 		<?php else: ?>
 			<?php
 			the_content( sprintf(
