@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 1.2 =
+* Rate us notice added
+
 = 1.1 =
 * Woocommerce Ready
 

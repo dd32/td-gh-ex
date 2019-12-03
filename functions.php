@@ -14,6 +14,8 @@ define( 'ASTRAL_PARENT_URI', get_template_directory_uri() );
 define( 'ASTRAL_PARENT_INC_DIR', ASTRAL_PARENT_DIR . '/inc' );
 define( 'ASTRAL_PARENT_INC_URI', ASTRAL_PARENT_URI . '/inc' );
 define( 'ASTRAL_PARENT_CORE_URI', ASTRAL_PARENT_INC_URI . '/core/' );
+
+define('astral_THEME_REVIEW_URL','https://wordpress.org/support/theme/astral/reviews/?filter=5');
 /* 
  * require classes 
 */
@@ -82,3 +84,52 @@ function astral_skip_link_focus_fix() {
 	<?php
 }
 add_action( 'wp_print_footer_scripts', 'astral_skip_link_focus_fix' );
+
+
+/**
+* display notice 
+**/
+
+if ( $pagenow == 'index.php' || $pagenow == 'themes.php' ) {
+	add_action( 'admin_notices', 'astral_activation_notice' );
+}
+
+function astral_activation_notice(){
+$my_theme = wp_get_theme();	
+?>
+    <style>
+		.notice h3 {
+			margin: 0 0 5px;
+		}
+		.notice.updated.is-dismissible {
+			padding: 15px;
+		}
+		a.rate-btn {
+			font-size: 11px;
+			text-decoration: none;
+			background: #153e4d;
+			padding: 3px 10px;
+			color: #fff;
+		}
+		a.support-btn {
+			margin-left: 10px;
+			text-decoration: none;
+		}
+	</style>
+
+    <div class="notice updated is-dismissible">
+		<div class="hello-elementor-notice-inner">
+			<div class="hello-elementor-notice-content">
+				<h3> <?php _e('Thank you for installing', 'astral'); ?> <?php echo $my_theme->get( 'Name' ); ?></h3>
+				
+				<p><?php 
+				_e(' Are you are enjoying Astral? We would love to hear your feedback. Big thanks in advance.','astral'); ?> </p>
+				<a target="_blank" class="rate-btn" href="https://wordpress.org/support/theme/astral/reviews/?filter=5"> <?php _e('Submit a review','astral'); ?> </a>
+				
+				<a target="_blank" class="support-btn" href="https://wordpress.org/support/theme/astral/"> <?php _e('Contact Support','astral'); ?> </a>
+				
+				
+			</div>
+		</div>
+	</div>
+<?php } ?>
