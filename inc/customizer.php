@@ -695,6 +695,9 @@ function advance_blogging_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'advance_blogging_customize_register' );
 
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-width.php' );
+
 /**
  * Singleton class for handling the theme's customizer integration.
  *

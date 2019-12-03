@@ -561,10 +561,10 @@ msgstr ""
 msgid 'Text'
 msgstr ""
 
-#: inc/customizer.php:773
+#: inc/customizer.php:776
 msgid 'Advance Blogging'
 msgstr ""
 
-#: inc/customizer.php:774
+#: inc/customizer.php:777
 msgid 'Go Pro'
 msgstr ""
