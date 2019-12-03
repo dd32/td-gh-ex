@@ -2,8 +2,8 @@
 Contributors: WPoperation
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors 
 Requires at least: 4.0
-Tested up to: 5.2.4
-Stable tag: 1.0.2
+Tested up to: 5.3
+Stable tag: 1.0.3
 Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
