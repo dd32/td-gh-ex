@@ -14,11 +14,19 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>> 
 	<h1><?php the_title();?></h1>
-	<div class="metabox">
-		<i class="far fa-calendar-alt"></i><span class="entry-date"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
-		<i class="fas fa-user"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></span>
-		<i class="fas fa-comments"></i><span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?> </span>
-	</div>
+	<?php if( get_theme_mod( 'automobile_car_dealer_metafields_date',true) != '' || get_theme_mod( 'automobile_car_dealer_metafields_author',true) != '' || get_theme_mod( 'automobile_car_dealer_metafields_comment',true) != '') { ?>
+		<div class="metabox">
+			<?php if( get_theme_mod( 'automobile_car_dealer_metafields_date',true) != '') { ?>
+				<i class="far fa-calendar-alt"></i><span class="entry-date"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
+			<?php }?>
+			<?php if( get_theme_mod( 'automobile_car_dealer_metafields_author',true) != '') { ?>
+				<i class="fas fa-user"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></span>
+			<?php }?>
+			<?php if( get_theme_mod( 'automobile_car_dealer_metafields_comment',true) != '') { ?>
+				<i class="fas fa-comments"></i><span class="entry-comments"> <?php comments_number( __('0 Comment', 'automobile-car-dealer'), __('0 Comments', 'automobile-car-dealer'), __('% Comments', 'automobile-car-dealer') ); ?></span>
+			<?php }?>
+		</div>
+	<?php }?>
 	<?php if(has_post_thumbnail()) { ?>
 		<div class="feature-box">	
 			<?php the_post_thumbnail(); ?>

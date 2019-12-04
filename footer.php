@@ -4,6 +4,16 @@
  * @package Automobile Car Dealer
  */
 ?>
+    <?php if( get_theme_mod( 'automobile_car_dealer_hide_show_scroll',true) != '') { ?>
+        <?php $theme_lay = get_theme_mod( 'automobile_car_dealer_footer_options','Right');
+            if($theme_lay == 'Left align'){ ?>
+                <a href="#" id="scrollbutton" class="left"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automobile-car-dealer' ); ?></span></a>
+            <?php }else if($theme_lay == 'Center align'){ ?>
+                <a href="#" id="scrollbutton" class="center"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automobile-car-dealer' ); ?></span></a>
+            <?php }else{ ?>
+                <a href="#" id="scrollbutton"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automobile-car-dealer' ); ?></span></a>
+        <?php }?>
+    <?php }?>
     <footer role="contentinfo">
         <?php //Set widget areas classes based on user choice
             $widget_areas = get_theme_mod('footer_widget_areas', '3');
@@ -45,7 +55,7 @@
         </aside>
     	<div class="copyright-wrapper">
             <div class="container">
-                <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Copyright 2019 ','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
+                <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Copyright 2019','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
             </div>
             <div class="clear"></div>
         </div>

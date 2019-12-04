@@ -1,4 +1,4 @@
-/* RTL Style*/
+/*RTL Style*/
 
 *{ 
   margin:0;
@@ -395,7 +395,7 @@ input.search-field {
 /*--------------header-------------*/
 .page-template-custom-home-page #header {
   position: absolute;
-  top: 4em;
+  top: 2em;
   z-index: 99;
   width: 100%;
   border:none;
@@ -603,11 +603,6 @@ ul.list_nav {
   display: none;
 }
 /* --------- Homepage --------- */
-#blog_sec i {
-  font-size: 13px;
-  color: #fff;
-  margin-left: 10px;
-}
 .metabox {
   color: #111111;
   padding: 10px 15px;
@@ -637,19 +632,20 @@ ul.list_nav {
 .postbtn i {
   background: #dd3333;
   padding: 8px;
-  font-size: 20px;
+  color: #fff;
+  font-size: 13px;
+  margin-left: 10px;
 }
 .postbtn :hover i{
   background: #111111;
 }
 .section-title {
   text-align: right;
-  padding: 10px 0px;
+  padding: 0px 0px 10px;
+  font-size: 25px;
 }
 .blog-section .section-title a {
   color: #000;
-  font-size: 20px;
-  font-weight: 400;
 }
 .blog-section .section-title a:after{
   content: "";
@@ -760,13 +756,11 @@ span.meta-nav {
 .tags a{
   text-decoration: none!important;
   font-weight: 400;
-  /*border-radius: 3px;*/
   background: #f8f8f8;
   border: 1px solid #ccc;
   box-shadow: 0 1px 0 rgba(0,0,0,.08);
   text-shadow: none;
-  line-height: 3.5;
-  padding: 8px;
+  padding: 5px 8px;
   margin: 5px;
   font-size: 15px;
   color: #333;
@@ -955,14 +949,14 @@ iframe{
     float: right;
 }
 .comment-meta.commentmetadata {
-    float: left;
-    width: 50%;
-    text-align: left;
+  float: left;
+  width: 50%;
+  text-align: left;
 }
 .reply {
-    margin-bottom: 15px;
-    width: 100%;
-    float: right;
+  margin-bottom: 15px;
+  width: 100%;
+  float: right;
 }
 #comments a.comment-reply-link {
   color: #fff;
@@ -971,8 +965,8 @@ iframe{
   text-decoration: none;
 }
 #comments a.comment-reply-link:hover {
-    color: #000;
-    background: #cecece;
+  color: #fff;
+  background: #000;
 }
 .entry-content a, .sidebar p a, #comments p a, .comment-meta.commentmetadata a{
   color: #111111 !important;
@@ -1135,13 +1129,12 @@ table {
 }
 #sidebar form.search-form {
   display: table;
-  padding: 0px 10px;
-  border-radius: 20px;
 }
 
 /* Page */
 .content_box p{
   font-size: 16px;
+  margin-bottom: 10px;
 }
 .content_box hr{
   border:none;
@@ -1246,6 +1239,9 @@ a.button {
   text-align: right;
   font-size: 20px;
   letter-spacing: 2px;
+  color: #fff;
+}
+.footer-wp .textwidget p a{
   color: #fff;
 }
 .footer-wp h3:after {
@@ -1403,12 +1399,9 @@ a.button {
   background:#ff8a00;
 }
 h2.entry-title, h2.page-title {
-  padding: 10px;
   font-size: 25px;
   text-transform: uppercase;
   color: #dd3333;
-  border: solid 1px #000;
-  text-align: center;
   font-weight: bold;
   margin-bottom: 10px; 
 }
@@ -1437,7 +1430,7 @@ input.search-submit,
 #project{
   padding: 2% 0;
 }
-#project h3 {
+#project h3 a {
   font-size: 23px;
   color: #111111;
 }
@@ -1468,9 +1461,14 @@ input.search-submit,
 .mainbox {
   float: right;
 }
+
 /* Woocommerce */
 .woocommerce-product-gallery__image {
-    padding: 5px;
+  padding: 5px;
+}
+.woocommerce-info{
+  background: none;
+  border: 1px solid;
 }
 .woocommerce span.onsale{
   background: #dd3333;
@@ -1671,6 +1669,9 @@ code{
   .page-template-custom-home-page #header{
     position: static;
   }
+  .appointbtn{
+    margin:10px 0;
+  }
   .topbar i{
     margin-left: 5px;
   }
@@ -1705,6 +1706,9 @@ code{
 @media screen and (max-width: 1000px){
   #navbar-header form.search-form{
     display: block;
+  }
+  #navbar-header .socialbox i:hover{
+    color: #000 !important;
   }
   .topbar span,
   .topbar .socialbox{
@@ -1749,8 +1753,7 @@ code{
     margin:0;
   }
   #navbar-header form.search-form{
-    border:1px solid #eee;
-    margin-bottom: 10px;
+    border-bottom:1px solid #eee;
   }
   #navbar-header form.search-form label{
     margin:0;
@@ -1842,7 +1845,10 @@ code{
     display:block !important;
   }
   .primary-navigation ul li ul li a:before{
-    content:"\00BB \00a0";
+    content: "__";
+    padding-left: 6px;
+    position: relative;
+    top: -6px;
   }
   .primary-navigation ul li ul li ul li a{
     padding-right:30px !important;
@@ -1919,8 +1925,5 @@ code{
   }
   #slider .carousel-caption h1{
     display: none;
-  }
-  .responsive-search{
-    padding: 0 10px;
   }
 }

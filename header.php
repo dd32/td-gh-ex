@@ -41,12 +41,13 @@
             </p>
             <?php endif; ?>
           </div>
-           <div class="toggle-menu responsive-menu">
+          <div class="toggle-menu responsive-menu">
             <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
-            </button>
+          </button>
           </div>
         </div>
         <div class="col-lg-9 col-md-5 padding0">
+          
           <div class="topbar row m-0">
             <div class="col-lg-7 col-md-7">
               <?php if( get_theme_mod( 'automobile_car_dealer_mail','' ) != '') { ?>

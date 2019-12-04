@@ -26,3 +26,25 @@ function resMenu_close() {
 		}
 	});            
 });
+
+// scroll
+jQuery(document).ready(function () {
+	jQuery(window).scroll(function () {
+	    if (jQuery(this).scrollTop() > 0) {
+	        jQuery('#scrollbutton').fadeIn();
+	    } else {
+	        jQuery('#scrollbutton').fadeOut();
+	    }
+	});
+	jQuery(window).on("scroll", function () {
+	   document.getElementById("scrollbutton").style.display = "block";
+	});
+	jQuery('#scrollbutton').click(function () {
+	    jQuery("html, body").animate({
+	        scrollTop: 0
+	    }, 600);
+	    return false;
+	});
+});
+
+
