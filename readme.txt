@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-m
 Requires at least: 4.0
 Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: 0.0.8
+Stable tag: 0.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ GNU General Public License for more details.
 3. Click on the 'Activate' button to use your new theme right away.
 
 == Changelog ==
+
+= 0.0.8 - December 5 2019 =
+* Updated readme.txt and screenshot
 
 = 0.0.8 - December 5 2019 =
 * Bug fixes
@@ -107,6 +110,14 @@ Source: https://github.com/soderlind/class-customizer-toggle-control
        Licensed under Apache License, Version 2.0
 
 ==  Images ==
+
+https://stocksnap.io/photo/Y01VDYAX63
+Copyright Helloquence
+License: CC0 Public Domain
+
+https://stocksnap.io/photo/AKWVXIXFA8
+Copyright Kristin Hardwick
+License: CC0 Public Domain
 
 https://stocksnap.io/photo/0SHBIHYBNJ
 Copyright Bruce Mars
