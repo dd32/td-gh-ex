@@ -29,12 +29,14 @@
 
             ul  {
                 li{
-                    margin-bottom: $smaller-padding;
+                    margin-bottom: 15px;
+                    border-bottom: 1px solid #424242;
+                    padding-bottom: 15px;
 
                     &:before{
                         content: "\f105";
                         font-family: FontAwesome;
-                        margin-right: 10px;
+                        margin-right: $smaller-padding;
                     }
                 }
             }
@@ -119,8 +121,7 @@
             .widgetarea {
                 ul {
                     list-style: none;
-                    padding-left: 15px;
-
+                    padding-left: 0;
                 }
 
             }

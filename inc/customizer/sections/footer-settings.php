@@ -51,6 +51,52 @@ function apex_business_footer_settings_setup( $wp_customize ) {
         'priority'        => 25,
       ) ) );
 
+    $wp_customize->add_setting(
+        'apex_business_footer_bgcolor_setting',
+        array(
+            'default'           => APEX_BUSINESS_TEXT_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_footer_bgcolor_control',
+            array(
+                'label'         => __( 'Footer Background Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_footer_settings_section',
+                'settings'      => 'apex_business_footer_bgcolor_setting',
+                'show_opacity'  => true, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+    // Headline Setting
+    $wp_customize->add_setting( 'apex_business_footer_bgcolor_description_setting', array(
+      'capability'        => 'edit_theme_options',
+      'sanitize_callback' => 'absint',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'apex_business_footer_bgcolor_description_control', array(
+      'description'   => __( 'You can also use this option as overlay color if you set background image.', 'apex-business' ),
+      'section'         => 'apex_business_footer_settings_section',
+      'settings'        => 'apex_business_footer_bgcolor_description_setting',
+      'type'            => 'hidden',
+      'priority'        => 25,
+    ) ) );
+
     $wp_customize->add_setting( 'apex_business_footer_bgimage_setting', array(
         'capability'        => 'edit_theme_options',
         'transport'         => 'postMessage',
@@ -138,39 +184,6 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                     'scroll'    =>  __( 'Scroll', 'apex-business' ),
                     'fixed'     =>  __( 'Fixed', 'apex-business' ),
                     ),
-            )
-        )
-    );
-
-    $wp_customize->add_setting(
-        'apex_business_footer_bgcolor_setting',
-        array(
-            'default'           => APEX_BUSINESS_TEXT_COLOR,
-            'type'              => 'theme_mod',
-            'capability'        => 'edit_theme_options',
-            'transport'         => 'postMessage',
-            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
-        )
-    );
-
-    // Alpha Color Picker control.
-    $wp_customize->add_control(
-        new Apex_Business_Customizer_Alpha_Color_Control(
-            $wp_customize,
-            'apex_business_footer_bgcolor_control',
-            array(
-                'label'         => __( 'Footer Background Color', 'apex-business' ),
-                'description'   => __( 'You can also use this option as overlay color if you set background image.', 'apex-business' ),
-                'priority'      => 25,
-                'section'       => 'apex_business_footer_settings_section',
-                'settings'      => 'apex_business_footer_bgcolor_setting',
-                'show_opacity'  => true, // Optional.
-                'palette'       => array(
-                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
-                    APEX_BUSINESS_DEFAULT2_COLOR,
-                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
-                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
-                )
             )
         )
     );
@@ -589,19 +602,19 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                 'priority'      => 25,
                 'input_attr'    => array(
                     'mobile'  => array(
-                        'min'           => 14,
+                        'min'           => 7,
                         'max'           => 35,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'tablet'  => array(
-                        'min'           => 14,
+                        'min'           => 7,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'desktop' => array(
-                        'min'           => 14,
+                        'min'           => 7,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
@@ -629,19 +642,19 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                 'priority'      => 25,
                 'input_attr'    => array(
                     'mobile'  => array(
-                        'min'           => 14,
+                        'min'           => 7,
                         'max'           => 35,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'tablet'  => array(
-                        'min'           => 14,
+                        'min'           => 7,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,
                     ),
                     'desktop' => array(
-                        'min'           => 14,
+                        'min'           => 7,
                         'max'           => 36,
                         'step'          => 1,
                         'default_value' => 14,

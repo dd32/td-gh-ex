@@ -101,10 +101,10 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_link_hover_color_setting', '.main-nav > li > a:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
     /** Header Navigation : Navigation dropdown Link color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_dropdown_color_setting', '.main-nav .menu-item-has-children li a', 'color', array( APEX_BUSINESS_TEXT_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_dropdown_color_setting', '.main-nav .menu-item-has-children .sub-menu li a', 'color', array( APEX_BUSINESS_TEXT_COLOR ) );
 
     /** Header Navigation : Navigation dropdown Link color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_dropdown_hover_color_setting', '.main-nav .menu-item-has-children li a:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_dropdown_hover_color_setting', '.main-nav .menu-item-has-children .sub-menu li a:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : logo vertical spacing **/
 
@@ -125,7 +125,7 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_header_bgcolor_setting', '.sticky-header', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
     /** Header Navigation : Navigation active Link color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_nav_link_color_setting', '.sticky-header .current-menu-item a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_nav_link_color_setting', '.sticky-header .main-nav > li > a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : text logo color **/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_fixed_header_text_logo_color_setting', '.sticky-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
@@ -136,7 +136,7 @@ function apex_business_enqueue_inline_css() {
     ***************************************************************************/
 
     /** Layout Settings: Section Height **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_navigation_control', '.ct-transparent-header', array( 'padding-top', 'padding-bottom' ), array( 10, 10, 10 ), 'px' );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_navigation_control', '.ct-transparent-header .no-stick', array( 'padding-top', 'padding-bottom' ), array( 10, 10, 10 ), 'px' );
 
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_logo_size_control', '.ct-transparent-header .site-logo .ct-transparent-logo img', array( 'max-width' ), array( 300, 300, 300 ), 'px' );
 
@@ -146,7 +146,7 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_bgcolor_setting', '.ct-transparent-header', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
     /** Header Navigation : Navigation active Link color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .main-nav li a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .no-stick .main-nav > li > a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : text logo color **/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_text_logo_color_setting', '.sticky-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
@@ -188,10 +188,10 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_font_family( 'button, .button', 'apex_business_button_font_family_control', array(  41, 37, 33), array( 1.2, 1.2, 1.2 ) ) ;
 
     /** Button Hover Settings : bg color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_button_hover_bgcolor_setting', 'button, .button', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_button_hover_bgcolor_setting', 'button:hover, .button:hover', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
     /** Button Hover Settings : text color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_button_hover_text_color_setting', 'button, .button', 'background-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_button_hover_text_color_setting', 'button:hover, .button:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /**  Button Settings : border radius **/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_button_hover_border_radius_control', 'button:hover, .button:hover', array( 'border-radius' ), array( 3, 3, 3 ), 'px' );
@@ -255,7 +255,7 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_bottom_bar_text_color_setting', '.ct-copyright-content-color', 'color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
     /** bottom bar Settings : Font-size **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_bottom_bar_text_size_control', '.ct-copyright-content-color p', array( 'font-size' ), array( 14, 14, 14 ), 'px' );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_bottom_bar_text_size_control', '.copyright-content', array( 'font-size' ), array( 14, 14, 14 ), 'px' );
 
     /** bottom bar Settings : Font-size **/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_bottom_bar_menu_text_size_control', '#footer-menu li a', array( 'font-size' ), array( 14, 14, 14 ), 'px' );

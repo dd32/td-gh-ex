@@ -2,6 +2,20 @@
     03. HEADER
 =======================*/
 /**
+ * #.# Header Right Widget Area
+ */
+
+.header-widget-item * {
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+/* Larger than tablet */
+@media (min-width: 768px) {
+    .header-widgets-right {
+        display: none;
+    }
+}
+/**
  *
  * #.# Top Bar
  *
@@ -16,7 +30,7 @@
     width: 100%;
     z-index: 9999;
 
-    .main-header {
+    .no-stick {
         background-color: transparent;
     }
 }
@@ -94,6 +108,10 @@
 
 .main-header{
     background-color: $white-color;
+}
+
+.sticky-header {
+    transition: all .2s ease;
 }
 
 .site-logo {
@@ -245,9 +263,6 @@
     }
 }
 
-.ct-transparent-header .sticky-header {
-    background-color: #fff;
-}
 .ct-transparent-header {
     box-shadow: none;
 }

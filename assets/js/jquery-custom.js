@@ -25,9 +25,14 @@
             var header_height   = header[0].getBoundingClientRect().height;
             var header_c_height = header_container[0].getBoundingClientRect().height;
             var sticky          = 'sticky-header';
+            var no_sticky       = 'no-stick';
             var topbar          = $( '.top-bar' );
             var topbar_height   = topbar.height();
             var adjust_height   = $( '.fixed-spacing' );
+
+            var trans_header    = $( '.ct-transparent-logo>img' );
+            var trans_logo      = trans_header.data('transparent-logo');
+            var main_logo       = trans_header.data('main-logo');
 
             var logo_container  = $( '.logo-container' );
             var lc_height       = logo_container.height();
@@ -35,19 +40,23 @@
             var adminbar_height = 0;
             var fixed_boxed     = '';
 
+            // If Logged In
             if( $( document ).find( '#wpadminbar' ) ) {
                 adminbar_height = $( '#wpadminbar' ).height();
             }
 
+            // If Boxed Layout
             if ( $( 'body' ).hasClass( 'box-layout' ) ) {
                 fixed_boxed = 'fixed-boxed';
             }
 
+            // If Topbar Enabled
             if ( !$( '.top-bar' ).is( ':visible' ) && !$( document ).find( logo_container ) ) {
                 header.addClass( sticky + ' ' + fixed_boxed );
                 adjust_height.css( 'margin-bottom', header_height );
             }
 
+            // If Small device remove sticky and boxed layout
             if ( $(window).width() < 768 ) {
                 logo_container.removeClass( sticky + ' ' + fixed_boxed ).css( 'top', 'unset' );
             }
@@ -58,30 +67,54 @@
 
                     if( $( this ).scrollTop() > ( topbar_height + lc_height ) ) {
                         header.addClass( sticky + ' ' + fixed_boxed ).css( 'top', adminbar_height );
-                        //alert( header_height );
                         adjust_height.css( 'margin-bottom', header_height );
+                        header.removeClass( no_sticky );
+
+                        // Replace main logo with transparent logo
+                        $( trans_header ).attr( 'src', main_logo );
                     } else {
                         header.removeClass( sticky + ' ' + fixed_boxed ).css( 'top', 0 );
                         adjust_height.css( 'margin-bottom', 0 );
+                        header.addClass( no_sticky );
+
+                        // Replace transparent logo with main logo
+                        $( trans_header ).attr( 'src', trans_logo );
                     }
 
+                    // If small device and in centered header
                     if ( $( window ).width() < 768 ) {
                         if ( $( '.menu-container' ).hasClass( 'fixed-header' ) ) {
                             logo_container.addClass( sticky + ' ' + fixed_boxed ).css( 'top', adminbar_height );
                             adjust_height.css( 'margin-bottom', header_c_height-1 );
+                            header.removeClass( no_sticky );
+
+                            // Replace main logo with transparent logo
+                            $( trans_header ).attr( 'src', main_logo );
                         } else {
                             logo_container.removeClass( sticky + ' ' + fixed_boxed ).css( 'top', 'unset' );
                             adjust_height.css( 'margin-bottom', 0 );
+                            header.addClass( no_sticky );
+
+                            // Replace transparent logo with main logo
+                            $( trans_header ).attr( 'src', trans_logo );
                         }
                     }
                 } else {
-
+                    // Normal Header not centered
                     if ( $( this ).scrollTop() > topbar_height ) {
                         header.addClass( sticky + ' ' + fixed_boxed ).css( 'top', adminbar_height );
                         adjust_height.css( 'margin-bottom', header_height );
+                        header.removeClass( no_sticky );
+
+                        // Replace main logo with transparent logo
+                        $( trans_header ).attr( 'src', main_logo );
                     } else {
                         header.removeClass( sticky + ' ' + fixed_boxed ).css( 'top', 'unset' );
                         adjust_height.css( 'margin-bottom', 0 );
+                        header.addClass( no_sticky );
+
+                        // Replace transparent logo with main logo
+                        $( trans_header ).attr( 'src', trans_logo );
                     }
                 }
             } );

@@ -940,26 +940,6 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
-    $wp_customize->add_setting( 'apex_business_dropdown_animation_setting', array(
-      'capability'        => 'edit_theme_options',
-      'default'           => 'slide',
-      'sanitize_callback' => 'apex_business_sanitize_select',
-    ) );
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize, 'apex_business_dropdown_animation_control', array(
-                'label'       => __( 'Dropdown Animation', 'apex-business' ),
-                'section'     => 'apex_business_header_navigation_section',
-                'settings'    => 'apex_business_dropdown_animation_setting',
-                'type'        =>  'select',
-                'priority'    => 25,
-                'choices'     =>  array(
-                        'fade'      =>  __( 'Fade', 'apex-business' ),
-                        'slide'     =>  __( 'Slide', 'apex-business' ),
-                    ),
-    ) ) );
-
     $wp_customize->add_section( 'apex_business_fixed_header_section', array(
         'title'       =>  __( 'Fixed Header', 'apex-business' ),
         'priority'    =>  25,

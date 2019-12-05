@@ -83,10 +83,8 @@ h6 {
   color: $secondary-color;
 }
 
-body,
-span {
+body{
   @extend .pre-font-family-1;
-  color: $para-color;
 }
 
 /* Basics */

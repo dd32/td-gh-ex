@@ -8,7 +8,7 @@
         $apex_business_fixed_header = 'fixed-header';
     }
 ?>
-<div class="main-header header-spacing <?php echo esc_attr( $apex_business_fixed_header ); ?>">
+<div class="main-header header-spacing no-stick <?php echo esc_attr( $apex_business_fixed_header ); ?>">
     <div class="container">
         <div class="row nav-menu">
             <div class="col-md-12 vertical-center header-col">
