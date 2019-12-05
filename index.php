@@ -11,13 +11,35 @@
  */
 
 get_header();
-
-if ( have_posts() ) :
 ?>
+<section class="main-banner-area blog-banner">
+    <div class="banner">
+        <div class="color-overlay"></div><!-- /.color-overlay -->
+        <?php if ( get_theme_mod( 'apex_business_blog_banner_content_setting', 'Blog' ) != '' ) : ?>
+            <div class="banner-content">
+                <h1><?php echo esc_html( get_theme_mod( 'apex_business_blog_banner_content_setting', 'Blog' ) ); ?></h1>
+            </div><!-- /.banner-content -->
+        <?php endif; ?>
+    </div><!-- /.banner -->
+</section><!-- /.main-banner-area -->
 
+<?php if ( have_posts() ) : ?>
+<section id="content" class="theme-padding">
     <div class="container">
-        <div class="row ">
-            <div class="nine columns">
+        <div class="row">
+            <?php
+                $apex_business_fullwidth_stats = 'col-md-8 ct-content-area';
+                if ( !is_active_sidebar( 'apex_business_main_sidebar' )
+                    || ( get_theme_mod( 'apex_business_default_sidebar_layout_control', 'right-sidebar' ) == 'no-sidebar' ) ) {
+                    $apex_business_fullwidth_stats = 'col-md-12';
+                }
+
+                if ( get_theme_mod( 'apex_business_default_sidebar_layout_control', 'right-sidebar' ) == 'left-sidebar' ) :
+                    get_sidebar();
+                endif;
+            ?>
+            <div class="<?php echo esc_attr( $apex_business_fullwidth_stats ); ?>">
+                <div class="grid">
                 <?php
                     while ( have_posts() ) : the_post();
 
@@ -25,18 +47,24 @@ if ( have_posts() ) :
 
                     endwhile; // End of the loop.
                 ?>
-            </div><!-- /.nine .columns -->
+                </div><!-- /.grid -->
+            </div><!-- /.col-md-? -->
+            <?php
+                if ( get_theme_mod( 'apex_business_default_sidebar_layout_control', 'right-sidebar' ) == 'right-sidebar' ) :
+                    get_sidebar();
+                endif;
+            ?>
         </div><!-- /.row -->
+        <?php
+            // Pagination
+            get_template_part( 'template-parts/pagination/pagination', get_post_format() );
+        ?>
+
     </div><!-- /.container -->
-
-    <?php else :
-
-            get_template_part( 'template-parts/content/content', 'none' );
-
-        endif;
-        // Pagination
-        get_template_part( 'template-parts/pagination/pagination', get_post_format() );
-    ?>
-
+</section><!-- /.news-section theme-padding -->
 <?php
+    else :
+        get_template_part( 'template-parts/content/content', 'none' );
+    endif;
+
 get_footer();

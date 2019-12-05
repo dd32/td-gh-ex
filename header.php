@@ -1,84 +1,107 @@
+<?php
+/**
+ * The template for displaying the header
+ *
+ * Displays all of the head element and everything upto navigation menu.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-       <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    <meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-        <!-- Mobile Specific Data -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Mobile Specific Data -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <header class="ct-header container ct-transparent-header">
-        <div class="row vertical-center">
-            <div class="three columns">
-                <?php
-                    if ( has_custom_logo() ) {
-                        if ( function_exists( 'the_custom_logo' ) ) {
-                            the_custom_logo();
-                        }
-                    } else {
-                ?>
-                    <h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
-                    <?php if ( get_theme_mod( 'apex_business_site_description_switch_setting' ) ) : ?>
-                        <p class="ct-tagline"><?php bloginfo( 'description' ) ?></p>
-                    <?php endif; ?>
-                <?php
-                    }
-                ?>
+    <?php
+        if ( function_exists( 'wp_body_open' ) ) {
+            wp_body_open();
+        }
 
-            </div><!-- /.three columns -->
-            <div class="nine columns">
-                <?php
-                    if ( has_nav_menu( 'header_menu' ) ) :
+        $apex_business_transparency = get_post_meta( get_the_ID(), '_header_option_value_key', TRUE );
+    ?>
+    <a class="skip-link" href="#content">
+    <?php esc_html_e( 'Skip to content', 'apex-business' ); ?></a>
 
-                        wp_nav_menu( array(
-                            'theme_location'    => 'header_menu',
-                            'container'         => 'nav',
-                            'container_class'   => 'menu-all-pages-container',
-                            'menu_class'        => 'main-nav',
-                            'fallback_cb'       => 'wp_page_menu',
-                        ) );
+    <?php if ( get_theme_mod( 'apex_business_loading_bar_setting', false ) ) : ?>
+        <div id="loading">
+          <div id="pulse">
+            <span></span> <!-- Wave 1 -->
+            <span></span> <!-- Wave 2 -->
+          </div><!-- #pulse -->
+        </div><!-- /#loading -->
+    <?php endif; ?>
 
-                    endif;
-                ?>
-                <!-- Mobile Menu Icon -->
-                <i class="fa fa-bars menubar-right"></i>
-            </div><!-- /.nine columns -->
-        </div><!-- /.row -->
-    </header><!-- /.ct-header -->
+    <?php if ( get_theme_mod( 'apex_business_box_layout_switch_setting' ) ) : ?>
+        <div class="box-layout">
+    <?php endif; ?>
+        <!--== Start Header Area ==-->
+        <header class="header-container fixed-spacing <?php echo esc_attr( $apex_business_transparency ); ?>">
+            <!-- Start Topbar Area -->
+            <?php if ( is_active_sidebar( 'apex-business-topbar-address' )
+                    || is_active_sidebar( 'apex-business-topbar-office-hours' )
+                    || is_active_sidebar( 'apex-business-topbar-email' )
+                    || has_nav_menu( 'social_menu' ) ) : ?>
+                <div class="top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="topbar-widgets">
+                                    <?php if ( is_active_sidebar( 'apex-business-topbar-address' ) ) : ?>
+                                        <span class="address topbar-content"><span class="fa-map-marker"></span>
+                                            <?php dynamic_sidebar( 'apex-business-topbar-address' ); ?>
+                                        </span>
+                                    <?php endif; ?>
 
-    <div class="container mobile-menu-container">
-        <div class="row">
-            <div class="mobile-navigation">
-                    <nav class="nav-parent">
-                        <i class="fa fa-close menubar-close"></i>
-                        <?php
-                            if ( has_nav_menu( 'mobile_menu' ) ) :
-                                wp_nav_menu( array(
-                                    'theme_location'    => 'mobile_menu',
-                                    'container'         => false,
-                                    'menu_class'        => 'mobile-nav',
-                                    'fallback_cb'       => 'wp_page_menu',
-                                    'depth'             => '4',
-                                    'walker'            => new Apex_Business_Dropdown_Toggle_Walker_Nav_Menu()
-                                ) );
-                            else :
-                                wp_nav_menu( array(
-                                    'theme_location'    => 'header_menu',
-                                    'container'         => false,
-                                    'menu_class'        => 'mobile-nav',
-                                    'fallback_cb'       => 'wp_page_menu',
-                                    'depth'             => '4',
-                                    'walker'            => new Apex_Business_Dropdown_Toggle_Walker_Nav_Menu()
-                                ) );
-                            endif;
-                        ?>
-                    </nav>
-                </div> <!-- /.mobile-navigation -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
+                                    <?php if ( is_active_sidebar( 'apex-business-topbar-office-hours' ) ) : ?>
+                                        <span class="office-hour topbar-content"><span class="fa-clock-o"></span>
+                                            <?php dynamic_sidebar( 'apex-business-topbar-office-hours' ); ?>
+                                        </span>
+                                    <?php endif; ?>
+                                </div><!-- /.topbar-widgets -->
+                            </div><!-- /.col-md-8 -->
 
-    <div class="ct-divider"></div><!-- /.ct-divider -->
-    <div class="ct-content">
+                            <div class="col-md-4">
+                                <div class="section-right">
+                                    <?php if ( is_active_sidebar( 'apex-business-topbar-email' ) ) : ?>
+                                        <span class="e-mail topbar-content"><span class="fa-envelope"></span>
+                                            <?php dynamic_sidebar( 'apex-business-topbar-email' ); ?>
+                                        </span>
+                                    <?php endif; ?>
+
+                                    <?php
+                                        if ( has_nav_menu( 'social_menu' ) ) {
+                                            wp_nav_menu(
+                                                    array(
+                                                        'theme_location'    => 'social_menu',
+                                                        'container'         => 'li',
+                                                        'menu_id'           => 'menu-social-items',
+                                                        'menu_class'        => 'menu-items menu-social',
+                                                        'depth'             => 1,
+                                                        'link_before'       => '<span class="screen-reader-text">',
+                                                        'link_after'        => '</span>',
+                                                        'fallback_cb'       => '',
+                                                    )
+                                            );
+                                        }
+                                    ?>
+                                </div><!-- /.section-right -->
+                            </div><!-- /.col-md-4 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.top-bar -->
+            <?php endif; ?>
+            <!-- End Topbar Area -->
+
+            <?php
+                $apex_business_header_layout = esc_attr( get_theme_mod( 'apex_business_header_layout_control', 'default' ) );
+                get_template_part( 'template-parts/header/header', $apex_business_header_layout );
+            ?>
+        </header><!-- /.ct-header -->
+        <!--== End Header Area ==-->

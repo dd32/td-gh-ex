@@ -1,30 +1,28 @@
 <?php
-/**
- * The sidebar containing the main widget area.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- */
-?>
-
-<?php
     if ( !is_page() ) :
-        if ( is_active_sidebar( 'apex-business-main-sidebar' ) ) :
+        if ( is_active_sidebar( 'apex_business_main_sidebar' ) ) :
 ?>
-<div class="three columns">
-    <?php dynamic_sidebar( 'apex-business-main-sidebar' ); ?>
-</div><!-- /.three columns -->
+            <div class="col-md-4 ct-sidebar ct-sidebar-bg ct-sidebar-padding">
+                <div class="sidebar blog-sidebar">
+                    <div class="side-bar-widget">
+                        <?php dynamic_sidebar( 'apex_business_main_sidebar' ); ?>
+                    </div><!-- /.side-bar-widget -->
+                </div><!-- /.side-bar -->
+            </div><!-- /.col-md-4 -->
 <?php
         endif;
     endif;
-?>
 
-<?php
     if ( is_page() ) :
-        if ( is_active_sidebar( 'apex-business-page-sidebar' ) ) :
+        if ( is_active_sidebar( 'apex_business_page_sidebar' ) ) :
 ?>
-<div class="three columns">
-    <?php dynamic_sidebar( 'apex-business-page-sidebar' ); ?>
-</div><!-- /.three columns -->
+            <div class="col-md-4 ct-sidebar">
+                <div class="sidebar page-sidebar">
+                    <div class="side-bar-widget">
+                        <?php dynamic_sidebar( 'apex_business_page_sidebar' ); ?>
+                    </div><!-- /.side-bar-widget -->
+                </div><!-- /.side-bar -->
+            </div><!-- /.col-md-4 -->
 <?php
         endif;
     endif;

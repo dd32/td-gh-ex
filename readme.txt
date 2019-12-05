@@ -1,16 +1,21 @@
 === Apex Business ===
-Contributors: Aruphash
-Tags: blog, news, two-columns, right-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template, portfolio
+Contributors: aruphash
+Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template, portfolio, grid-layout
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.2.3
 Requires PHP: 5.6
-Stable tag: trunk
+Stable tag: 0.0.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+== Description ==
+
+Apex Business is a multipurpose business and blog theme that can be used for all types
+of websites.
+
 == Copyright ==
 
-Apex Business WordPress Theme, Copyright 2019 Aruphash
+Apex Business WordPress Theme, Copyright 2019 aruphash
 Apex Business is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -23,17 +28,43 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-== Description ==
-
-Apex Business is a multipurpose blog theme that can be used for all types
-of blogs for example travel blog, news blog, personal blog etc. The theme
-option makes it very easy to customize the theme.
-
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Apex Business in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
+
+== Changelog ==
+
+= 0.0.10 - December 5 2019 =
+* Bug fixes
+
+= 0.0.9 - December 5 2019 =
+* Updated readme.txt and screenshot
+
+= 0.0.8 - December 5 2019 =
+* Bug fixes
+
+= 0.0.7 - November 15 2019 =
+* Iusses fixed pointed by reviewer
+
+= 0.0.6 - November 9 2019 =
+* Iusses fixed pointed by reviewer
+
+= 0.0.5 - November 5 2019 =
+* Bug fixes
+
+= 0.0.4 - October 5 2019 =
+* Bug fixes
+
+= 0.0.3 - September 21 2019 =
+* Checked the checklist pointed by theme reviewer
+
+= 0.0.2 - September 18 2019 =
+* Checked the checklist pointed by theme reviewer
+
+= 0.0.1 - Jul 19 2019 =
+* Initial release
 
 == Resources ==
 
@@ -51,17 +82,21 @@ Font-Awesome.css - http://fontawesome.io/
      License: MIT License
      URL: http://opensource.org/licenses/mit-license.html
 
-Skeleton, Copyright getskeleton.com
-Skeleton is licensed under MIT License
-Source: http://getskeleton.com
+Bootstrap, Copyright Twitter
+Bootstrap is Licensed under the MIT license
+Source: http://getbootstrap.com
 
-Slick, Copyright Ken Wheeler
-Slick is licensed under MIT License
-Source: https://github.com/kenwheeler/slick/
+jQuery offscreen plugin, Copyright Cory LaViska
+jQuery offscreen plugin is licensed under the MIT license
+Source: https://gist.github.com/claviska/7240757
 
-Normalize.css, Copyright Nicolas Gallagher
-Normalize.css is licensed under MIT License
-Source: https://github.com/necolas/normalize.css
+Customizer Controls, Copyright CodeinWp
+Customizer Controls is licensed under the MIT license
+Source: https://github.com/Codeinwp/customizer-controls
+
+WordPress Customizer Toggle Control, Copyright CodeinWp
+WordPress Customizer Toggle Control is licensed under GNU General Public License v2
+Source: https://github.com/soderlind/class-customizer-toggle-control
 
 == Fonts ==
 1.  Font Awesome: - http://fontawesome.io/
@@ -74,12 +109,19 @@ Source: https://github.com/necolas/normalize.css
     == Poppins - https://fonts.google.com/specimen/Poppins
        Licensed under SIL OFL 1.1 ( https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web )
 
-    == Source Sans Pro - https://fonts.google.com/specimen/Source+Sans+Pro
-       Licensed under SIL OFL 1.1 ( https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web )
+    == Roboto - https://fonts.google.com/specimen/Roboto
+       Licensed under Apache License, Version 2.0
 
 ==  Images ==
 
-== Changelog ==
+https://stocksnap.io/photo/Y01VDYAX63
+Copyright Helloquence
+License: CC0 Public Domain
 
-= 0.0.1 - Jul 19 2019 =
-* Initial release
+https://stocksnap.io/photo/AKWVXIXFA8
+Copyright Kristin Hardwick
+License: CC0 Public Domain
+
+https://stocksnap.io/photo/0SHBIHYBNJ
+Copyright Bruce Mars
+License: CC0 Public Domain

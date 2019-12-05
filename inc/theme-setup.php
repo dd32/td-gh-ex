@@ -9,8 +9,8 @@ if ( !function_exists( 'apex_business_setup' ) ):
          */
         add_theme_support( 'post-thumbnails' );
 
-        /* Image Ratio - 1:1 */
-        add_image_size( 'apex-business-600-1x1', 600, 600, true );
+        // Add Custom Background support
+        add_theme_support( 'custom-background' );
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
@@ -41,6 +41,7 @@ if ( !function_exists( 'apex_business_setup' ) ):
             'header_menu' => esc_html__( 'Header Menu', 'apex-business' ),
             'mobile_menu' => esc_html__( 'Mobile Menu', 'apex-business' ),
             'social_menu' => esc_html__( 'Social Menu', 'apex-business' ),
+            'footer_menu' => esc_html__( 'Footer Menu', 'apex-business' ),
          ) );
 
         /*
@@ -80,7 +81,7 @@ if ( !function_exists( 'apex_business_setup' ) ):
          * This theme styles the visual editor to resemble the theme style,
          * specifically font, colors, icons, and column width.
         */
-        add_editor_style( array( 'css/editor-style.css', apex_business_fonts_url() ) );
+        //add_editor_style( array( 'css/editor-style.css', apex_business_fonts_url() ) );
     }
 
 endif;

@@ -1,37 +1,41 @@
-/**
- * --------------------------------------------------------------------------------
- * Main Stylesheet
- * --------------------------------------------------------------------------------
-*/
+/*=========================
+    01. PRE SETUP
+===========================*/
 
-$primary-color: #e8664a;
-$secondary-color: #d4145a;
+/*------------------------------------------------------------------------------
+# [Color Codes]
+--------------------------------------------------------------------------------*/
+
+$primary-color: #13aff0;
+$secondary-color: #2b3948;
 $white-color: #fff;
 
 $light-white-color: #fafafa;
-$hr-divider: #dee0e0;
-$dark-color: #303030;
+$background-light: #f8f9fa;
+$subtitle-color: #f0f0f0;
+$border-color: #dee0e0;
+$dark-color: #2b3948;
+$para-color: #626262;
+$overlay-color: $primary-color;
 
-$font-size: 1.6rem;
+$font-size: 16px;
+$line-height: 1.5;
 
-$base-margin: $font-size*3;
-
-.pre-font-family-1 {
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-.pre-font-family-2 {
-    font-family: 'Poppins', sans-serif;
-}
-
-.pre-shadow {
-   box-shadow: 0 2px 21px 3px rgba(0,0,0,.2);
-}
+$theme-padding: $font-size*$line-height*3;
+$inner-section-padding: $font-size*$line-height*2;
+$inner-padding: 30px;
+$smaller-padding: 6px;
 
 @mixin transition( $property ) {
     -webkit-transition: $property;
     -ms-transition: $property;
     transition: $property;
+}
+
+@mixin transform( $property ) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
 }
 
 @mixin gradient( $direction, $start-color, $start-per, $end-color, $end-per ) {
@@ -42,12 +46,81 @@ $base-margin: $font-size*3;
   background: linear-gradient($direction, $start-color $start-per, $end-color  $end-per);
 }
 
-.fa {
-  -webkit-text-stroke: 0;
+/* Typography */
+
+* {
+    word-break: break-word;
+    word-wrap: break-word;
 }
 
-.ct-text-center {
-    text-align: center;
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color:$light-white-color;
+}
+
+body,
+form,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend .pre-font-family-2;
+  color: $secondary-color;
+}
+
+body{
+  @extend .pre-font-family-1;
+}
+
+/* Basics */
+a,
+a:active,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a {
+  color: $primary-color;
+  @include transition( all .2s ease-in-out );
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken( $primary-color, 15% );
+  }
+}
+
+ /* Pre Setup */
+.pre-font-family-1 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.pre-font-family-2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.pre-shadow {
+   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.fa {
+  -webkit-text-stroke: 0;
 }
 
 .vertical-center {
@@ -55,27 +128,15 @@ $base-margin: $font-size*3;
     align-items: center;
 }
 
-.ct-padding {
-    padding: $font-size*5 0;
+.horizontal-center {
+  display: flex;
+  justify-content: center;
 }
 
-.ct-sm-b-padding {
-    padding: 0 0 $font-size*3 0;
-}
-
-.ct-container-img img {
+.image-container img {
     max-width: 100%;
-    height: auto;
+    height:auto;
     display: block;
-}
-
-.ct-divider {
-    position: relative;
-    border-bottom: 1px solid $hr-divider;
-    z-index: 2;
-}
-img{
-  max-width:100%;
 }
 
 .fa-gradient {
@@ -91,4 +152,56 @@ img{
   @include gradient(45deg, $primary-color, 0%, $secondary-color, 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.theme-padding {
+  padding-top: $theme-padding;
+  padding-bottom: $theme-padding;
+}
+
+.inner-section {
+  margin-bottom: $inner-section-padding;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.form-input,
+input,
+textarea,
+select {
+    width: 100%;
+    height: auto;
+    color: $dark-color;
+    padding: 10px;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="search"],
+button {
+  border-radius: 0;
+}
+
+
+$typo-p-padding: 11px;
+
+
+::-webkit-input-placeholder {
+  font-size: 14px;
+}
+
+::-moz-placeholder {
+  font-size: 14px;
+}
+
+:-ms-input-placeholder {
+  font-size: 14px;
+}
+
+::placeholder {
+  font-size: 14px;
 }

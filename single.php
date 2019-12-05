@@ -4,46 +4,57 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
-
 get_header();
+
+$apex_business_fullwidth_stats = 'col-md-8 ct-content-area';
+if ( !is_active_sidebar( 'apex_business_main_sidebar' )
+    || ( get_theme_mod( 'apex_business_single_sidebar_layout_control' ) == 'no-sidebar' ) ) {
+    $apex_business_fullwidth_stats = 'col-md-12';
+}
+
+if ( get_theme_mod( 'apex_business_single_sidebar_layout_control', 'right-sidebar' ) == 'center-content' ) {
+    $apex_business_fullwidth_stats = 'col-md-8 col-md-offset-2';
+}
 ?>
-    <div class="container-fluid">
-      <?php if ( has_post_thumbnail() ): ?>
-        <div class="ct-featured-transparent ct-featured-image" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>')">
-        </div><!-- /.ct-featured-image -->
-      <?php endif; ?>
+<section id="content" class="single-blog theme-padding">
+    <div class="container">
         <div class="row">
-            <div class="twelve columns">
-              <p></p>
-            </div><!-- /.twelve columns -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-         <div class="container">
-             <div class="row">
-                 <div class="nine columns">
-                    <?php
-                        if ( have_posts() ) :
+            <?php
+                if ( get_theme_mod( 'apex_business_single_sidebar_layout_control' ) == 'left-sidebar' ) :
+                    get_sidebar();
+                endif;
+            ?>
 
-                            while ( have_posts() ) : the_post();
+            <div class="<?php echo esc_attr( $apex_business_fullwidth_stats ); ?>">
+                <?php
+                    if ( have_posts() ) :
 
-                                get_template_part( 'template-parts/content/content', 'single' );
+                        while ( have_posts() ) : the_post();
 
-                            // If comments are open or we have at least one comment, load up the comment template.
-                            if ( comments_open() || get_comments_number() ) :
-                                comments_template();
-                            endif;
+                            get_template_part( 'template-parts/content/content', 'single' );
 
-                            endwhile; // End of the loop.
-                        else :
-
-                            get_template_part( 'template-parts/content/content', 'none' );
-
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
                         endif;
-                    ?>
-             </div><!-- /.nine columns -->
-             <?php get_sidebar(); ?>
-         </div><!-- /.row -->
-     </div><!-- /.container -->
+
+                        endwhile; // End of the loop.
+                    else :
+
+                        get_template_part( 'template-parts/content/content', 'none' );
+
+                    endif;
+                ?>
+            </div><!-- /.col-md-? -->
+
+            <?php
+                if ( get_theme_mod( 'apex_business_single_sidebar_layout_control', 'right-sidebar' ) == 'right-sidebar' ) :
+                    get_sidebar();
+                endif;
+            ?>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.single-blogs -->
+
 <?php
 get_footer();
-

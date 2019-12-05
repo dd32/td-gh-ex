@@ -1,66 +1,55 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying single page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
 
 get_header();
 ?>
+    <!-- if left sidebar is set -->
+    <?php
+        $apex_business_fullwidth_stats = 'col-md-8 ct-content-area';
+        if ( !is_active_sidebar( 'apex_business_page_sidebar' )
+            || ( get_theme_mod( 'apex_business_page_sidebar_layout_control', 'right-sidebar' ) == 'no-sidebar' ) ) {
+            $apex_business_fullwidth_stats = 'col-md-12';
+        }
 
-<?php if( !is_front_page() ) : ?>
-<div class="container-fluid">
-  <?php if ( has_post_thumbnail() ): ?>
-    <div class="ct-featured-transparent ct-featured-image" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>')">
+        if ( get_theme_mod( 'apex_business_page_sidebar_layout_control', 'right-sidebar' ) == 'center-content' ) {
+            $apex_business_fullwidth_stats = 'col-md-8 col-md-offset-2';
+        }
+    ?>
+    <div class="container theme-padding">
+        <div class="row">
+            <?php if ( get_theme_mod( 'apex_business_page_sidebar_layout_control', 'right-sidebar' ) == 'left-sidebar' ): ?>
+                <?php get_sidebar(); ?>
+            <?php endif; ?>
+            <div class="<?php echo esc_attr( $apex_business_fullwidth_stats ); ?>">
 
-    </div><!-- /.ct-featured-image -->
-  <?php endif; ?>
+                <?php
+                    if ( have_posts() ) :
+                        while ( have_posts() ) : the_post();
 
-    <div class="row">
-        <div class="twelve columns">
-          <p></p>
-        </div><!-- /.twelve columns -->
-    </div><!-- /.row -->
-</div><!-- /.container-fluid -->
+                            get_template_part( 'template-parts/content/content', 'page' );
 
-<div class="container">
-     <div class="row">
-         <div class="nine columns">
-<?php endif; ?>
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
 
-<?php
-    if( is_front_page() ) :
-        get_template_part( 'template-parts/home/ct', 'banner' );
-        get_template_part( 'template-parts/home/ct', 'info-boxes' );
-        get_template_part( 'template-parts/home/ct', 'introduction' );
-        get_template_part( 'template-parts/home/ct', 'portfolio' );
-        get_template_part( 'template-parts/home/ct', 'news' );
-    else :
-        if ( have_posts() ) :
-            while ( have_posts() ) : the_post();
+                        endwhile; // End of the loop.
+                    else :
 
-                get_template_part( 'template-parts/content/content', 'page' );
+                        get_template_part( 'template-parts/content/content', 'none' );
 
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
+                    endif;
+                ?>
 
-            endwhile; // End of the loop.
-        else :
-
-            get_template_part( 'template-parts/content/content', 'none' );
-
-        endif;
-    endif;
-?>
-
-<?php if( !is_front_page() ) : ?>
-        </div><!-- /.nine columns -->
-        <?php get_sidebar(); ?>
-    </div><!-- /.row -->
-</div><!-- /.container -->
-<?php endif; ?>
-
+            </div><!-- /.col-md-? -->
+            <?php if ( get_theme_mod( 'apex_business_page_sidebar_layout_control', 'right-sidebar' ) == 'right-sidebar' ): ?>
+                <?php get_sidebar(); ?>
+            <?php endif; ?>
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 <?php
 get_footer();

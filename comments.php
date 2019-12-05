@@ -14,7 +14,6 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="block">
-    <div class="sub-block">
         <?php
         // You can start editing here -- including this comment!
         if ( have_comments() ) : ?>
@@ -27,15 +26,15 @@ if ( post_password_required() ) {
                 ?>
             </h3>
 
-            <ol class="comment-list">
+            <ul class="comment-area">
                 <?php
                     wp_list_comments( array(
                         'avatar_size' => 42,
-                        'style'       => 'ol',
+                        'style'       => 'ul',
                         'short_ping'  => true,
                     ) );
                 ?>
-            </ol> <!-- /.comment-list .container -->
+            </ul> <!-- /.comment-area -->
 
             <?php the_comments_pagination( array(
                 'prev_text' => esc_html__( 'Previous', 'apex-business' ),
@@ -51,5 +50,4 @@ if ( post_password_required() ) {
         endif;
         comment_form();
         ?>
-    </div><!-- /.sub-block -->
 </div><!-- #comments -->

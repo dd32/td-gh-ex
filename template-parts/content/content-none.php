@@ -1,52 +1,31 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found
+ * The template for displaying 404 pages (not found)
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
  */
 
+get_header();
 ?>
-<div class="container content-none">
-    <div class="row">
-         <div class="twelve columns">
-            <div class="no-results">
-                <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'apex-business' ); ?></h1>
-
-                <div class="page-content">
-                    <?php
-                        if ( is_home() && current_user_can( 'publish_posts' ) ) :
-
-                            printf(
-                                '<p>' . wp_kses(
-                                    /* translators: 1: link to WP admin new post page. */
-                                    __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'apex-business' ),
-                                    array(
-                                        'a' => array(
-                                            'href' => array(),
-                                        ),
-                                    )
-                                ) . '</p>',
-                                esc_url( admin_url( 'post-new.php' ) )
-                            );
-
-                        elseif ( is_search() ) :
-                            ?>
-
-                            <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'apex-business' ); ?></p>
-                            <?php
-                            get_search_form();
-
-                        else :
-                            ?>
-
-                            <p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'apex-business' ); ?></p>
-                            <?php
-                            get_search_form();
-
-                        endif;
-                        ?>
-                </div><!-- /.page-content -->
-            </div><!-- /.no-results -->
-        </div><!-- /.twelve columns -->
-    </div><!-- /.row -->
-</div><!-- /.container -->
+  <section class="page-not-found theme-padding">
+    <div class="container text-center">
+       <div class="row">
+          <div class="col-md-12">
+              <div class="error-content inner-section">
+                  <h2><?php esc_html_e( 'Nothing Found', 'apex-business' ); ?></h2>
+                  <h4><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'apex-business' ); ?></h4>
+              </div><!-- /.error-content -->
+          </div><!-- /.col-md-12 -->
+       </div><!-- /.row -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="error-search">
+            <?php get_search_form(); ?>
+          </div><!-- .error-content -->
+        </div>
+      </div>
+    </div><!-- /.container -->
+  </section>
+<?php
+get_footer();
