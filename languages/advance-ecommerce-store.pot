@@ -585,7 +585,7 @@ msgstr ""
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:679
+#: inc/customizer.php:669
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
@@ -609,10 +609,31 @@ msgstr ""
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:768
+#: inc/customizer.php:694
+msgid 'Show / Hide Scroll To Top'
+msgstr ""
+
+#: inc/customizer.php:699
+#: inc/customizer.php:708
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:704
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:707
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:709
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:794
 msgid 'Ecommerce Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:769
+#: inc/customizer.php:795
 msgid 'Go Pro'
 msgstr ""

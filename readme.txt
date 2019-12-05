@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 7.2.14
-Stable tag: 0.4.7
+Stable tag: 0.4.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -66,6 +66,10 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 
 = 0.4.7 =
 * Added Footer widget area option in customizer.
+* Updated POT file.
+
+= 0.4.8 =
+* Added scroll to top button in customizer.
 * Updated POT file.
 
 == Resources ==

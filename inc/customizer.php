@@ -684,6 +684,32 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'section' => 'advance_ecommerce_store_footer_section',
 		'type'    => 'text',
 	));
+
+	$wp_customize->add_setting('advance_ecommerce_store_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_ecommerce_store_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-ecommerce-store'),
+      	'section' => 'advance_ecommerce_store_footer_section',
+	));
+
+	$wp_customize->add_setting('advance_ecommerce_store_scroll_setting',array(
+        'default' => __('Right','advance-ecommerce-store'),
+        'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_ecommerce_store_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-ecommerce-store'),
+        'section' => 'advance_ecommerce_store_footer_section',
+        'choices' => array(
+            'Left' => __('Left','advance-ecommerce-store'),
+            'Right' => __('Right','advance-ecommerce-store'),
+            'Center' => __('Center','advance-ecommerce-store'),
+        ),
+	) );
+	
 }
 add_action('customize_register', 'advance_ecommerce_store_customize_register');
 
