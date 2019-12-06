@@ -4,7 +4,7 @@ Theme URI: https://uxlthemes.com/theme/azuma/
 Author: UXL Themes
 Author URI: https://uxlthemes.com
 Description: Azuma is a customizable WordPress theme which features a sticky header, homepage hero or slider using the standard WordPress image widget, sortable homepage sections, custom colors and fonts, grid layout options and support for video posts/articles. Support for WooCommerce ecommerce plugin along with Wishlist and Quick View plugins is included along with an auto-updating shopping cart, sticky add-to-cart panel on single product pages and a horizontal product filter widget area.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azuma
@@ -946,10 +946,6 @@ a.more-tag{
 	font-weight: 400;
 }
 
-.single-excerpt{
-	font-size: 1.5em;
-}
-
 .page-links{
 	clear: both;
 	margin: 0 0 15px;
@@ -994,25 +990,46 @@ article{
 	overflow: hidden;
 }
 
-.entry-header.with-image{
+.entry-header.with-image,
+.archive-header.with-image{
 	margin-top: 0;
 	margin-bottom: 30px;
 	min-height: 30rem;
 	background-size: cover;
 	background-position: center center;
-	background-color: #2d364c;
+	background-color: rgba(45,54,76,.5);
 	color: #fff;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	flex: 1 1 auto;
+	position: relative;
 }
 
-.entry-header .title-meta-wrapper{
+.entry-header.with-image.full:before,
+.archive-header.with-image.full:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(45,54,76,.5);
+}
+
+.entry-header .title-meta-wrapper,
+.archive-header .title-meta-wrapper{
 	background: rgba(45,54,76,.7);
 }
 
-.entry-header .entry-title{
+.entry-header.full .title-meta-wrapper,
+.archive-header.full .title-meta-wrapper{
+	background: transparent;
+	position: relative;
+}
+
+.entry-header .entry-title,
+.archive-header .archive-title{
 	position: relative;
 	font-weight: bold;
 	padding: 10px;
@@ -1103,10 +1120,6 @@ article{
 
 .entry-footer span.tags-links{
 	margin-top: 10px;
-}
-
-.single .with-image .entry-meta a{
-	color: #fff;
 }
 
 .entry-meta .author{
@@ -1705,15 +1718,34 @@ object{
 	margin: 0 auto;
 	padding: 0;
 	width: 100%;
-	background-color: #2d364c;
 }
 
-#masthead.scrolled{
+#masthead.full{
+	background-color: transparent;
+	transition: background-color .5s;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 999;
+}
+
+#masthead.not-full{
+	background-color: #2d364c;
+	transition: background-color .5s;
+}
+
+#masthead.not-full.scrolled{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+}
+
+#masthead.full.scrolled{
+	background-color: #2d364c;
+	transition: background-color 1s;
 }
 
 .logged-in.admin-bar #masthead.scrolled{
@@ -3004,8 +3036,12 @@ span.mini-account .form-row-last{
 /*--------------------------------------------------------------
 ## WooCommerce CSS
 --------------------------------------------------------------*/
-.woocommerce .term-description{;
+.woocommerce .term-description{
 	margin: 0 0 20px 0;
+}
+
+.woocommerce .archive-header.full .term-description{
+	margin: 0;
 }
 
 .woocommerce nav.woocommerce-pagination{

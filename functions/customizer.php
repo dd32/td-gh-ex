@@ -104,6 +104,30 @@ function azuma_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'page_title_style',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_radio_select'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Image_Radio_Control(
+		$wp_customize,
+		'page_title_style',
+		array(
+			'type' => 'radio',
+			'label' => esc_html__( 'Page Title Layout', 'azuma' ),
+			'section' => 'layout_options',
+			'settings' => 'page_title_style',
+			'choices' => array(
+				'' => get_template_directory_uri() . '/images/header-title-style-1.png',
+				'2' => get_template_directory_uri() . '/images/header-title-style-2.png',
+				)
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'grid_layout',
 		array(
 			'default'			=> '4',

@@ -28,10 +28,16 @@
 	} else {
 		$page_class = '';
 	}
+
+	if ( get_theme_mod( 'page_title_style' ) == 2 ) {
+		$masthead_class = ' not-full';
+	} else {
+		$masthead_class = ' full';
+	}
 ?>
 <div id="page"<?php echo $page_class; ?>>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header<?php echo $masthead_class; ?>">
 
 		<?php if ( is_active_sidebar( 'azuma-top-bar' ) ) : ?>
 		<div id="top-bar">
@@ -62,7 +68,9 @@
 	<div id="home-hero-section" class="clearfix">
 		<?php dynamic_sidebar( 'azuma-homepage-large-area' ); ?>
 	</div>
-<?php } ?>
+<?php } else {
+	azuma_header_title();
+	}?>
 
 	<div id="content" class="site-content clearfix">
 		<div class="container clearfix">

@@ -35,7 +35,12 @@ if ( ! function_exists( 'azuma_posted_by' ) ) :
 	 */
 	function azuma_posted_by() {
 
-		echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span></span> ';
+		if ( in_the_loop() ) {
+			echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span></span> ';
+		} else {
+			global $post;
+			echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post->post_author ) ) . '</a></span></span> ';
+		}
 
 	}
 endif;

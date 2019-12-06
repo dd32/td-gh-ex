@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Azuma 1.0.3\n"
-"POT-Creation-Date: 2019-11-22 18:49+0000\n"
+"Project-Id-Version: Azuma 1.0.5\n"
+"POT-Creation-Date: 2019-12-05 19:04+0000\n"
 "PO-Revision-Date: 2019-04-08 16:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: UXL Themes\n"
@@ -60,34 +60,34 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-front-page.php:18 content-page.php:33 content-search.php:53
-#: content-single.php:49 content.php:53
+#: content-front-page.php:18 content-page.php:39 content-search.php:53
+#: content-single.php:57 content.php:53
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: content-front-page.php:29 content-page.php:44
+#: content-front-page.php:29 content-page.php:50
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: content-none.php:11
+#: content-none.php:12
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:15
+#: content-none.php:17
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:19
+#: content-none.php:21
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:24
+#: content-none.php:26
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -113,83 +113,91 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:104
+msgid "Photographer: Ylanite Koppens"
+msgstr ""
+
+#: functions.php:109
+msgid "Photographer: Carl Cerstrand"
+msgstr ""
+
+#: functions.php:135
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:144
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:153
 msgid "Shop Sidebar"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:155
 msgid "Requires WooCommerce plugin."
 msgstr ""
 
-#: functions.php:150
+#: functions.php:163
 msgid "Shop Filters"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:165
 msgid ""
 "Horizontal widget area for product archives. Requires WooCommerce plugin."
 msgstr ""
 
-#: functions.php:160
+#: functions.php:173
 msgid "Top Bar"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:175
 msgid "Add your own content above the header."
 msgstr ""
 
-#: functions.php:170
+#: functions.php:183
 msgid "Offers Bar"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:185
 msgid "Add your own content below the site masthead."
 msgstr ""
 
-#: functions.php:180
+#: functions.php:193
 msgid "Homepage Slider/Hero Section"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:195
 msgid ""
 "The large image/hero/slider area below the masthead on the homepage. Add "
 "more than one Image Widget to automatically create a slider."
 msgstr ""
 
-#: functions.php:190
+#: functions.php:203
 msgid "Top Footer"
 msgstr ""
 
-#: functions.php:191
+#: functions.php:204
 msgid "Full width area above the footer columns."
 msgstr ""
 
-#: functions.php:201
+#: functions.php:214
 msgid "Footer Column 1"
 msgstr ""
 
-#: functions.php:211
+#: functions.php:224
 msgid "Footer Column 2"
 msgstr ""
 
-#: functions.php:221
+#: functions.php:234
 msgid "Footer Column 3"
 msgstr ""
 
-#: functions.php:247 functions.php:316
+#: functions.php:260 functions.php:329
 msgctxt "Google fonts: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:278 functions.php:347
+#: functions.php:291 functions.php:360
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
@@ -224,215 +232,228 @@ msgstr ""
 msgid "Disable Search Form in Header"
 msgstr ""
 
-#: functions/customizer.php:120
+#: functions/customizer.php:119
+msgid "Page Title Layout"
+msgstr ""
+
+#: functions/customizer.php:144
 msgid "Blog - Grid Layout"
 msgstr ""
 
-#: functions/customizer.php:143
+#: functions/customizer.php:167
 msgid "Sidebar Position"
 msgstr ""
 
-#: functions/customizer.php:147
+#: functions/customizer.php:171
 msgid "Left"
 msgstr ""
 
-#: functions/customizer.php:148
+#: functions/customizer.php:172
 msgid "Right"
 msgstr ""
 
-#: functions/customizer.php:165
+#: functions/customizer.php:189
 msgid "Enable Sticky Footer"
 msgstr ""
 
-#: functions/customizer.php:175 functions/customizer.php:221
+#: functions/customizer.php:199 functions/customizer.php:245
 msgid "Homepage Sections"
 msgstr ""
 
-#: functions/customizer.php:176
+#: functions/customizer.php:200
 msgid ""
 "You should first select a Static Homepage if you have not already done so. "
 "See: \"Homepage Settings\""
 msgstr ""
 
-#: functions/customizer.php:193
+#: functions/customizer.php:217
 msgid "Activate Homepage Sections"
 msgstr ""
 
-#: functions/customizer.php:194
+#: functions/customizer.php:218
 msgid "Page Content is displayed by default if Homepage Sections is disabled."
 msgstr ""
 
-#: functions/customizer.php:222
+#: functions/customizer.php:246
 msgid ""
 "Check the box to display. Sortable: drag and drop into your preferred order."
 msgstr ""
 
-#: functions/customizer.php:242 functions/extras.php:762
+#: functions/customizer.php:266 functions/extras.php:759
 msgid "Featured Services"
 msgstr ""
 
-#: functions/customizer.php:263
+#: functions/customizer.php:287
 msgid "Feature "
 msgstr ""
 
-#: functions/customizer.php:284
+#: functions/customizer.php:308
 msgid "Icon"
 msgstr ""
 
-#: functions/customizer.php:303
+#: functions/customizer.php:327
 msgid "Select Page"
 msgstr ""
 
-#: functions/customizer.php:304
+#: functions/customizer.php:328
 msgid ""
 "Displays title and excerpt of selected page. You can add an optional hand-"
 "crafted excerpt in the page editor (make sure []excerpt is checked in Screen "
 "Options)."
 msgstr ""
 
-#: functions/customizer.php:313
+#: functions/customizer.php:337
 msgid "Typography & Fonts"
 msgstr ""
 
-#: functions/customizer.php:325 functions/customizer.php:384
+#: functions/customizer.php:349 functions/customizer.php:408
 msgid "Site Title"
 msgstr ""
 
-#: functions/customizer.php:338
+#: functions/customizer.php:362
 msgid "Navigation"
 msgstr ""
 
-#: functions/customizer.php:351
+#: functions/customizer.php:375
 msgid "Content"
 msgstr ""
 
-#: functions/customizer.php:364
+#: functions/customizer.php:388
 msgid "Headings"
 msgstr ""
 
-#: functions/customizer.php:402
+#: functions/customizer.php:426
 msgid "Size"
 msgstr ""
 
-#: functions/customizer.php:423
+#: functions/customizer.php:447
 msgid "Weight"
 msgstr ""
 
-#: functions/customizer.php:441
+#: functions/customizer.php:465
 msgid "Transform"
 msgstr ""
 
-#: functions/customizer.php:444
+#: functions/customizer.php:468
 msgid "none"
 msgstr ""
 
-#: functions/customizer.php:444
+#: functions/customizer.php:468
 msgid "capitalize"
 msgstr ""
 
-#: functions/customizer.php:444
+#: functions/customizer.php:468
 msgid "lowercase"
 msgstr ""
 
-#: functions/customizer.php:444
+#: functions/customizer.php:468
 msgid "uppercase"
 msgstr ""
 
-#: functions/customizer.php:461
+#: functions/customizer.php:485
 msgid "Letter Spacing"
 msgstr ""
 
-#: functions/customizer.php:474 functions/customizer.php:485
-#: functions/customizer.php:686
+#: functions/customizer.php:498 functions/customizer.php:509
+#: functions/customizer.php:710
 msgid "Go Pro"
 msgstr ""
 
-#: functions/customizer.php:476 functions/theme-help.php:85
+#: functions/customizer.php:500 functions/theme-help.php:85
 msgid ""
 "Upgrade to Azuma Pro for even more cool features and customization options."
 msgstr ""
 
-#: functions/customizer.php:594
+#: functions/customizer.php:618
 msgid "Search..."
 msgstr ""
 
-#: functions/customizer.php:669
+#: functions/customizer.php:693
 msgid "More options available"
 msgstr ""
 
-#: functions/customizer.php:678
+#: functions/customizer.php:702
 msgid "Documentation"
 msgstr ""
 
-#: functions/extras.php:508
+#: functions/extras.php:505
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: functions/extras.php:508
+#: functions/extras.php:505
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: functions/extras.php:510
+#: functions/extras.php:507
 #, php-format
 msgid "Theme: %s"
 msgstr ""
 
-#: functions/extras.php:533
+#: functions/extras.php:530
 msgid "options"
 msgstr ""
 
-#: functions/extras.php:768
+#: functions/extras.php:765
 msgid "Page Content"
 msgstr ""
 
-#: functions/extras.php:776
+#: functions/extras.php:773
 msgid "Product Categories"
 msgstr ""
 
-#: functions/extras.php:782
+#: functions/extras.php:779
 msgid "New products"
 msgstr ""
 
-#: functions/extras.php:788
+#: functions/extras.php:785
 msgid "Featured products"
 msgstr ""
 
-#: functions/extras.php:794
+#: functions/extras.php:791
 msgid "On-sale products"
 msgstr ""
 
-#: functions/extras.php:800
+#: functions/extras.php:797
 msgid "Top sellers"
 msgstr ""
 
-#: functions/extras.php:806
+#: functions/extras.php:803
 msgid "Top rated products"
 msgstr ""
 
-#: functions/extras.php:956 functions/extras.php:987
+#: functions/extras.php:953 functions/extras.php:984
 msgid "Read More"
 msgstr ""
 
+#: functions/header-title.php:153
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: functions/header-title.php:174
+msgid "404 Error"
+msgstr ""
+
 #. translators: %2s: number of posts by this author.
-#: functions/template-tags.php:54
+#: functions/template-tags.php:59
 #, php-format
 msgid "%2s posts"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: functions/template-tags.php:63
+#: functions/template-tags.php:68
 msgid ", "
 msgstr ""
 
 #. translators: %s: post title
-#: functions/template-tags.php:83
+#: functions/template-tags.php:88
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: functions/template-tags.php:100
+#: functions/template-tags.php:105
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -521,7 +542,7 @@ msgid "Skip to content"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:30
+#: search.php:31
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""

@@ -97,12 +97,25 @@ add_action( 'after_setup_theme', 'azuma_content_width', 0 );
 
 // Set up the WordPress core custom header feature
 function azuma_custom_header_setup() {
+	register_default_headers( array(
+		'fashion' => array(
+			'url'           => '%s/images/header-image.jpg',
+			'thumbnail_url' => '%s/images/header-image-th.jpg',
+			'description'   => esc_html__( 'Photographer: Ylanite Koppens', 'azuma' ),
+		),
+		'mountains' => array(
+			'url'           => '%s/images/header-image-2.jpg',
+			'thumbnail_url' => '%s/images/header-image-2-th.jpg',
+			'description'   => esc_html__( 'Photographer: Carl Cerstrand', 'azuma' ),
+		),
+	) );
+
 	add_theme_support( 'custom-header', apply_filters( 'azuma_custom_header_args', array(
-		'default-image'			=> '',
+		'default-image'			=> get_template_directory_uri().'/images/header-image.jpg',
 		'default-text-color'	=> 'ffffff',
 		'header_text'			=> true,
 		'width'					=> '1920',
-		'height'				=> '150',
+		'height'				=> '500',
 		'flex-height'			=> false,
 		'flex-width'			=> false,
 		'wp-head-callback'		=> '',
@@ -409,6 +422,7 @@ require get_template_directory() . '/functions/template-tags.php';
  * Custom functions.
  */
 require get_template_directory() . '/functions/extras.php';
+require get_template_directory() . '/functions/header-title.php';
 require get_template_directory() . '/functions/icons.php';
 
 /**

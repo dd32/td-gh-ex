@@ -180,11 +180,6 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			$css[] = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after{color:#' . esc_attr($header_textcolor) . ';}';
 		}
 
-		$header_bg = get_header_image();
-		if ( $header_bg ) {
-			$css[] = '#masthead{background-image: '.'url( ' . $header_bg . ' )}';
-		}
-
 		$hi_color = get_theme_mod( 'hi_color', '#ff7800' );
 		if ( $hi_color && $hi_color != '#ff7800' ) {
 			$hi_color = esc_attr($hi_color);
@@ -209,7 +204,7 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			
 			$css[] = '.button:hover,a.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,#infinite-handle span button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce a.added_to_cart,.woocommerce a.added_to_cart:hover,#grid-loop article:hover,#main.infinite-grid .infinite-wrap article:hover,.woocommerce ul.products li.product:hover,.woocommerce-page ul.products li.product:hover,.single .entry-footer,aside,#site-usp,#shop-filters,.comment-navigation .nav-previous a,.comment-navigation .nav-next a,.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#home-hero-section .widget_media_image:before,#primary-menu ul,.posts-navigation,.post-navigation,.featured-post:hover,.featured-post .featured-icon{background:' . $hi_color2 . ';}';
 			
-			$css[] = '.entry-header.with-image,#masthead,#colophon{background-color:' . $hi_color2 . ';}';
+			$css[] = '#masthead.not-full,#masthead.full.scrolled,#colophon{background-color:' . $hi_color2 . ';}';
 			
 			$css[] = '#grid-loop article:hover a.button:hover,#main.infinite-grid .infinite-wrap article:hover a.button:hover,.woocommerce ul.products li.product:hover a.button:hover,.woocommerce ul.products li.product:hover button.button:hover,.woocommerce ul.products li.product:hover input.button:hover,.woocommerce ul.products li.product:hover a.button.alt:hover,.woocommerce ul.products li.product:hover button.button.alt:hover,.woocommerce ul.products li.product:hover input.button.alt:hover,.woocommerce ul.products li.product:hover a.added_to_cart,.woocommerce ul.products li.product:hover a.added_to_cart:hover{color:' . $hi_color2 . ';}';
 			
@@ -221,9 +216,11 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 
 			$css[] = '.comment-navigation .nav-previous a:after{border-right:11px solid ' . $hi_color2 . ';}';
 
-			$css[] = '.entry-header .title-meta-wrapper{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.7);}';
+			$css[] = '.entry-header.with-image,.archive-header.with-image{background-color:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
 
-			$css[] = '.bx-wrapper .bx-controls-direction a{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
+			$css[] = '.entry-header .title-meta-wrapper,.archive-header .title-meta-wrapper{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.7);}';
+
+			$css[] = '.entry-header.with-image.full:before,.archive-header.with-image.full:before,.bx-wrapper .bx-controls-direction a{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
 
 			$css[] = '.featured-post .featured-icon{box-shadow: 0px 0px 0px 4px rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
 			

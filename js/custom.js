@@ -22,6 +22,14 @@ jQuery(document).ready(function($){
             $('.toggle-nav').css({'display' : 'none'});
         }
 
+        var heroTitleMar = false;
+        if ( $('#masthead.full').length && $('.hero-widget-title').length ) {
+            var mastheadHeight = parseInt( $('#masthead').outerHeight() );
+            var heroTitleMarginTop = parseInt(mastheadHeight / 2);
+            $('.hero-widget-title').css({'margin-top' : heroTitleMarginTop + 'px'});
+            heroTitleMar = true;
+        }
+
         var windowWidth = parseInt( $('body').width() );
         var heroTitleFontSize = parseInt(windowWidth / 25);
         var heroCaptionFontSize = parseInt(windowWidth / 70);
@@ -37,6 +45,9 @@ jQuery(document).ready(function($){
         $('#home-hero-section').find('.widget_media_image').each(function(){
             var heroTitleHeight = parseInt( $('.hero-widget-title', this).height() );
             var captionMargin = parseInt( ( heroTitleHeight / 2 ) + heroCaptionFontSize );
+            if ( heroTitleMar == true ) {
+                captionMargin = captionMargin + heroTitleMarginTop;
+            }
             $('.wp-caption-text', this).css({'margin-top' : captionMargin + 'px'});
         });
 
@@ -70,10 +81,14 @@ jQuery(function($){
         }
         if( scrollTop > 0 ){
             $('#masthead').addClass('scrolled');
-            $(contentElement).css({'padding-top' : masthead + 'px'});
+            if ( $('#masthead.not-full').length ) {
+                $(contentElement).css({'padding-top' : masthead + 'px'});
+            }
         }else{
             $('#masthead').removeClass('scrolled');
-            $(contentElement).css({'padding-top' : '0'});
+            if ( $('#masthead.not-full').length ) {
+                $(contentElement).css({'padding-top' : '0'});
+            }
         }
     });
 

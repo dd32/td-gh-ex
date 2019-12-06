@@ -9,7 +9,10 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-<?php if ( has_post_thumbnail() ) {
+<?php
+if ( get_theme_mod( 'page_title_style' ) == 2 ) {
+
+	if ( has_post_thumbnail() ) {
 	$thumbnail_on = true; ?>
 	<header class="entry-header with-image" style="background-image: url('<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full' ); ?>')">
 		<div class="title-meta-wrapper">
@@ -39,9 +42,14 @@
 	<?php } ?>
 	</header><!-- .entry-header -->
 
+<?php
+} ?>
+
 	<div class="entry-content single-entry-content">
 		<?php
+		if ( get_theme_mod( 'page_title_style' ) == 2 ) {
 		azuma_single_excerpt();
+		}
 
 		the_content();
 

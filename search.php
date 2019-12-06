@@ -23,6 +23,7 @@ $grid_loop_main = ' infinite-grid layout-'. esc_attr( $grid_layout );
 
 		<?php if ( have_posts() ) : ?>
 
+			<?php if ( get_theme_mod( 'page_title_style' ) == 2 ) { ?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
@@ -31,6 +32,7 @@ $grid_loop_main = ' infinite-grid layout-'. esc_attr( $grid_layout );
 					?>
 				</h1>
 			</header><!-- .page-header -->
+			<?php } ?>
 
 			<div id="grid-loop"<?php echo $grid_loop_layout;?>>
 

@@ -76,7 +76,7 @@
 
 			var styleBackground = '.button:hover,a.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,#infinite-handle span button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce a.added_to_cart,.woocommerce a.added_to_cart:hover,#grid-loop article:hover,#main.infinite-grid .infinite-wrap article:hover,.woocommerce ul.products li.product:hover,.woocommerce-page ul.products li.product:hover,.single .entry-footer,aside,#site-usp,#shop-filters,.comment-navigation .nav-previous a,.comment-navigation .nav-next a,.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#home-hero-section .widget_media_image:before,#primary-menu ul,.posts-navigation,.post-navigation,.featured-post:hover,.featured-post .featured-icon{background:' + to + ';}';
 
-			var styleBgColor = '.entry-header.with-image,#masthead,#colophon{background-color:' + to + ';}';
+			var styleBgColor = '#masthead.not-full,#masthead.full.scrolled,#colophon{background-color:' + to + ';}';
 
 			var styleColor = '#grid-loop article:hover a.button:hover,#main.infinite-grid .infinite-wrap article:hover a.button:hover,.woocommerce ul.products li.product:hover a.button:hover,.woocommerce ul.products li.product:hover button.button:hover,.woocommerce ul.products li.product:hover input.button:hover,.woocommerce ul.products li.product:hover a.button.alt:hover,.woocommerce ul.products li.product:hover button.button.alt:hover,.woocommerce ul.products li.product:hover input.button.alt:hover,.woocommerce ul.products li.product:hover a.added_to_cart,.woocommerce ul.products li.product:hover a.added_to_cart:hover{color:' + to + ';}';
 
@@ -88,13 +88,15 @@
 
 			var styleBorderRightColor = '.comment-navigation .nav-previous a:after{border-right-color:' + to + ';}';
 
-			var styleEntryHeader = '.entry-header .title-meta-wrapper{background: ' + featicon + ';}';
+			var styleEntryHeaderImg = '.entry-header.with-image,.archive-header.with-image{background-color: ' + featicon2 + ';}';
 
-			var stylebxcontrols = '.bx-wrapper .bx-controls-direction a{background: ' + featicon2 + ';}';
+			var styleEntryHeader = '.entry-header .title-meta-wrapper,.archive-header .title-meta-wrapper{background: ' + featicon + ';}';
+
+			var stylebxcontrols = '.entry-header.with-image.full:before,.archive-header.with-image.full:before,.bx-wrapper .bx-controls-direction a{background: ' + featicon2 + ';}';
 
 			var styleBoxShadow = '.featured-post .featured-icon{box-shadow: 0px 0px 0px 4px ' + featicon + ';}';
 
-			$('head').append('<style>' + styleBackground + styleBgColor + styleColor + styleBorderColor + styleBorderColor2 + styleBorderLeftColor + styleBorderRightColor + styleEntryHeader + stylebxcontrols + styleBoxShadow + '</style>');
+			$('head').append('<style>' + styleBackground + styleBgColor + styleColor + styleBorderColor + styleBorderColor2 + styleBorderLeftColor + styleBorderRightColor + styleEntryHeaderImg + styleEntryHeader + stylebxcontrols + styleBoxShadow + '</style>');
 		} );
 	} );
 

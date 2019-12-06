@@ -8,7 +8,9 @@
 ?>
 
 <section class="no-results not-found">
+		<?php if ( get_theme_mod( 'page_title_style' ) == 2 ) { ?>
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'azuma' ); ?></h1>
+		<?php } ?>
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 

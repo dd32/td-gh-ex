@@ -18,6 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.0.5 - December 06, 2019
+Added page/post title in header or content option
+Added featured image as header image
+
 1.0.4 - November 30, 2019
 Minor update to sub-menu on mobile
 
@@ -48,8 +52,17 @@ License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL
 License: MIT - http://opensource.org/licenses/MIT
 
 == Images ==
-Images used in screenshot
+Image used in screenshot
+https://stocksnap.io/photo/FCUDWWBKFV
+Copyright: Bruce Mars - https://stocksnap.io/author/brucemars
+License: CC0 Creative Commons - https://stocksnap.io/license - https://creativecommons.org/publicdomain/zero/1.0/
 
-https://stocksnap.io/photo/RCFX768X06
-Copyright: Negative Space - https://stocksnap.io/author/4440
+Default header image
+https://stocksnap.io/photo/BRDLQ22VO4
+Copyright: Ylanite Koppens - https://stocksnap.io/author/ylanitekoppens
+License: CC0 Creative Commons - https://stocksnap.io/license - https://creativecommons.org/publicdomain/zero/1.0/
+
+Suggested additional header image
+https://stocksnap.io/photo/PIX0SSJ72A
+Copyright: Carl Cerstrand - https://stocksnap.io/author/26742
 License: CC0 Creative Commons - https://stocksnap.io/license - https://creativecommons.org/publicdomain/zero/1.0/
