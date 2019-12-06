@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Azuma 1.0.5\n"
-"POT-Creation-Date: 2019-12-05 19:04+0000\n"
+"Project-Id-Version: Azuma 1.0.6\n"
+"POT-Creation-Date: 2019-12-06 11:46+0000\n"
 "PO-Revision-Date: 2019-04-08 16:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: UXL Themes\n"
@@ -202,177 +202,189 @@ msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions/customizer.php:29
+#: functions/customizer.php:30
+msgid ""
+"See \"Layout Options\" > \"Page Title Layout\" for where the header image is "
+"used."
+msgstr ""
+
+#: functions/customizer.php:48
 msgid "Primary Color"
 msgstr ""
 
-#: functions/customizer.php:30
+#: functions/customizer.php:49
 msgid "Site title, links, buttons and other highlights."
 msgstr ""
 
-#: functions/customizer.php:50
+#: functions/customizer.php:69
 msgid "Secondary Color"
 msgstr ""
 
-#: functions/customizer.php:51
+#: functions/customizer.php:70
 msgid ""
 "Header, sidebar, footer, posts (hover over) and products (hover over) "
 "background color."
 msgstr ""
 
-#: functions/customizer.php:61
+#: functions/customizer.php:80
 msgid "Layout Options"
 msgstr ""
 
-#: functions/customizer.php:79
+#: functions/customizer.php:98
 msgid "Container Width"
 msgstr ""
 
-#: functions/customizer.php:101
+#: functions/customizer.php:120
 msgid "Disable Search Form in Header"
 msgstr ""
 
-#: functions/customizer.php:119
+#: functions/customizer.php:138
 msgid "Page Title Layout"
 msgstr ""
 
-#: functions/customizer.php:144
+#: functions/customizer.php:139
+msgid ""
+"Large image header uses default \"Header Image\" or page/post \"Featured "
+"Image\" if available."
+msgstr ""
+
+#: functions/customizer.php:164
 msgid "Blog - Grid Layout"
 msgstr ""
 
-#: functions/customizer.php:167
+#: functions/customizer.php:187
 msgid "Sidebar Position"
 msgstr ""
 
-#: functions/customizer.php:171
+#: functions/customizer.php:191
 msgid "Left"
 msgstr ""
 
-#: functions/customizer.php:172
+#: functions/customizer.php:192
 msgid "Right"
 msgstr ""
 
-#: functions/customizer.php:189
+#: functions/customizer.php:209
 msgid "Enable Sticky Footer"
 msgstr ""
 
-#: functions/customizer.php:199 functions/customizer.php:245
+#: functions/customizer.php:219 functions/customizer.php:265
 msgid "Homepage Sections"
 msgstr ""
 
-#: functions/customizer.php:200
+#: functions/customizer.php:220
 msgid ""
 "You should first select a Static Homepage if you have not already done so. "
 "See: \"Homepage Settings\""
 msgstr ""
 
-#: functions/customizer.php:217
+#: functions/customizer.php:237
 msgid "Activate Homepage Sections"
 msgstr ""
 
-#: functions/customizer.php:218
+#: functions/customizer.php:238
 msgid "Page Content is displayed by default if Homepage Sections is disabled."
 msgstr ""
 
-#: functions/customizer.php:246
+#: functions/customizer.php:266
 msgid ""
 "Check the box to display. Sortable: drag and drop into your preferred order."
 msgstr ""
 
-#: functions/customizer.php:266 functions/extras.php:759
+#: functions/customizer.php:286 functions/extras.php:759
 msgid "Featured Services"
 msgstr ""
 
-#: functions/customizer.php:287
+#: functions/customizer.php:307
 msgid "Feature "
 msgstr ""
 
-#: functions/customizer.php:308
+#: functions/customizer.php:328
 msgid "Icon"
 msgstr ""
 
-#: functions/customizer.php:327
+#: functions/customizer.php:347
 msgid "Select Page"
 msgstr ""
 
-#: functions/customizer.php:328
+#: functions/customizer.php:348
 msgid ""
 "Displays title and excerpt of selected page. You can add an optional hand-"
 "crafted excerpt in the page editor (make sure []excerpt is checked in Screen "
 "Options)."
 msgstr ""
 
-#: functions/customizer.php:337
+#: functions/customizer.php:357
 msgid "Typography & Fonts"
 msgstr ""
 
-#: functions/customizer.php:349 functions/customizer.php:408
+#: functions/customizer.php:369 functions/customizer.php:428
 msgid "Site Title"
 msgstr ""
 
-#: functions/customizer.php:362
+#: functions/customizer.php:382
 msgid "Navigation"
 msgstr ""
 
-#: functions/customizer.php:375
+#: functions/customizer.php:395
 msgid "Content"
 msgstr ""
 
-#: functions/customizer.php:388
+#: functions/customizer.php:408
 msgid "Headings"
 msgstr ""
 
-#: functions/customizer.php:426
+#: functions/customizer.php:446
 msgid "Size"
 msgstr ""
 
-#: functions/customizer.php:447
+#: functions/customizer.php:467
 msgid "Weight"
 msgstr ""
 
-#: functions/customizer.php:465
+#: functions/customizer.php:485
 msgid "Transform"
 msgstr ""
 
-#: functions/customizer.php:468
+#: functions/customizer.php:488
 msgid "none"
 msgstr ""
 
-#: functions/customizer.php:468
+#: functions/customizer.php:488
 msgid "capitalize"
 msgstr ""
 
-#: functions/customizer.php:468
+#: functions/customizer.php:488
 msgid "lowercase"
 msgstr ""
 
-#: functions/customizer.php:468
+#: functions/customizer.php:488
 msgid "uppercase"
 msgstr ""
 
-#: functions/customizer.php:485
+#: functions/customizer.php:505
 msgid "Letter Spacing"
 msgstr ""
 
-#: functions/customizer.php:498 functions/customizer.php:509
-#: functions/customizer.php:710
+#: functions/customizer.php:518 functions/customizer.php:529
+#: functions/customizer.php:730
 msgid "Go Pro"
 msgstr ""
 
-#: functions/customizer.php:500 functions/theme-help.php:85
+#: functions/customizer.php:520 functions/theme-help.php:85
 msgid ""
 "Upgrade to Azuma Pro for even more cool features and customization options."
 msgstr ""
 
-#: functions/customizer.php:618
+#: functions/customizer.php:638
 msgid "Search..."
 msgstr ""
 
-#: functions/customizer.php:693
+#: functions/customizer.php:713
 msgid "More options available"
 msgstr ""
 
-#: functions/customizer.php:702
+#: functions/customizer.php:722
 msgid "Documentation"
 msgstr ""
 
@@ -426,12 +438,12 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: functions/header-title.php:153
+#: functions/header-title.php:157
 #, php-format
 msgid "Search results for: %s"
 msgstr ""
 
-#: functions/header-title.php:174
+#: functions/header-title.php:178
 msgid "404 Error"
 msgstr ""
 

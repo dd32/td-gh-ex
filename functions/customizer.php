@@ -14,6 +14,25 @@ function azuma_customize_register( $wp_customize ) {
 	$wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
 	$wp_customize->add_setting(
+		'header_image_helper',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'sanitize_text_field'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'header_image_helper',
+			array(
+				'settings'		=> 'header_image_helper',
+				'section'		=> 'header_image',
+				'label'			=> esc_html__( 'See "Layout Options" > "Page Title Layout" for where the header image is used.', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'hi_color',
 		array(
 			'default'			=> '#ff7800',
@@ -117,6 +136,7 @@ function azuma_customize_register( $wp_customize ) {
 		array(
 			'type' => 'radio',
 			'label' => esc_html__( 'Page Title Layout', 'azuma' ),
+			'description' => esc_html__( 'Large image header uses default "Header Image" or page/post "Featured Image" if available.', 'azuma' ),
 			'section' => 'layout_options',
 			'settings' => 'page_title_style',
 			'choices' => array(

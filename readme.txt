@@ -18,6 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.0.6 - December 06, 2019
+Added fallback header title function for unknown post formats/templates
+Added information about Header Image and Page Title Layout in customizer
+
 1.0.5 - December 06, 2019
 Added page/post title in header or content option
 Added featured image as header image

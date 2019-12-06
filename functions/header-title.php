@@ -45,6 +45,10 @@ if ( !function_exists( 'azuma_header_title' ) ) {
 			azuma_header_title_404();
 		}
 
+		else {
+			azuma_header_title_fallback();
+		}
+
 	}
 }
 
@@ -290,6 +294,20 @@ if ( !function_exists( 'azuma_header_title_shop' ) ) {
 				</div>
 			</div>
 		</header><!-- .archive-header -->
+
+		<?php
+	}
+}
+
+
+if ( !function_exists( 'azuma_header_title_fallback' ) ) {
+	function azuma_header_title_fallback() {
+
+		$bg_image_url = get_header_image();
+
+		?>
+		<header class="archive-header with-image full" style="background-image: url('<?php echo $bg_image_url; ?>')">
+		</header><!-- .entry-header -->
 
 		<?php
 	}
