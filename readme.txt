@@ -2,15 +2,15 @@
 
 Contributors: specia
 Requires at least: 4.4
-Tested up to: 5.6
+Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 3.0.29
-Version: 3.0.29
+Stable tag: 3.0.3
+Version: 3.0.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
 
-Avira WordPress Theme, Copyright 2021 Specia Theme
+Avira WordPress Theme, Copyright 2019 Specia Theme
 Avira is distributed under the terms of the GNU GPL
 
 ##Description
@@ -26,7 +26,7 @@ Avira is a trending WordPress theme with lots of powerful features, instantly gi
 
 ## Credit & Copyright
 
-Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2021 Specia Theme
+Avira WordPress Theme is child theme of Specia WordPress Theme, Copyright 2019 Specia Theme
 Avira WordPress Theme is distributed under the terms of the GNU GPL
 
 i) Package Structure
@@ -74,90 +74,11 @@ Source: https://github.com/matthieua/WOW
 Images
 =================================================================================================
 Screenshot Image
-URL: https://pxhere.com/en/photo/1323639
+URL: https://pxhere.com/en/photo/1523587
 Source: https://pxhere.com
 License: CC0 License
 
 ##Changelog
-
-version 3.0.29
-* Copyright Updated
-
-version 3.0.28
-* Upsale Button Position Changed in Customizer
-
-version 3.0.27
-* Tested With WordPress 5.6
-
-version 3.0.26
-* Added Functionality to Import Data of Parent Theme
-
-version 3.0.25
-* Readme Updated
-
-version 3.0.24
-* Tested With WordPress 5.5.3
-
-version 3.0.23
-* Removed Unused Folder
-
-version 3.0.22
-* Tested With WordPress 5.5.1
-
-version 3.0.21
-* Fixed Escaping Issue
-
-version 3.0.20
-* Tested with WordPress 5.5
-
-version 3.0.19
-* Code Improvement
-
-version 3.0.18
-* Screenshot Updated
-
-version 3.0.17
-* Tested with WordPress 5.4.2
-
-version 3.0.16
-* Fixed Theme Check Plugin Issues
-
-version 3.0.15
-* Removed Customizer Images & Call From Parent Theme
-
-version 3.0.14
-* Tested up to & Requires PHP Fields Added in Style.css
-
-version 3.0.13
-* Tested with WordPress 5.4.1 
-
-version 3.0.12
-* Resolve Prefixing Issue
-
-version 3.0.11
-* Tested with WordPress 5.4 
-
-version 3.0.10
-* Resolve Prefixing Issues
-
-version 3.0.9
-* Footer Style Issue Resolved
-
-version 3.0.8
-* Screenshot Updated
-
-version 3.0.7
-* Screenshot Link Updated
-
-version 3.0.6
-* Copyright Updated
-
-version 3.0.5
-* Tested with WordPress 5.3.2
-
-version 3.0.4
-* Tested with WordPress 5.3.1
-
 version 3.0.3
 * Readme Updated
 
@@ -338,3 +259,91 @@ version 1.0.32
 
 version 1.0.31
 * Updated License Information
+
+version 1.0.30
+* WordPress 4.9.6 Compatibility Tested.
+
+version 1.0.29
+* Changed Screenshot and Copyright
+
+version 1.0.28
+* Added [wp_reset_postdata();] for templates.
+
+version 1.0.27
+* Output escaping issue resolved.
+
+version 1.0.25
+* Resolved color issue in editor-style.css
+
+version 1.0.24
+* WordPress 4.9.5 Compatibility Tested.
+
+version 1.0.23
+* Resolved Slider Bug
+
+version 1.0.22
+* Resolved Slider Bug
+
+version 1.0.21
+* Screenshot Changed
+
+version 1.0.20
+* Screenshot Changed
+
+version 1.0.19
+* WordPress 4.9.4 Compatibility Tested.
+
+version 1.0.18
+* Code Improvement.
+
+version 1.0.17
+* WordPress 4.9.2 Compatibility Tested.
+
+version 1.0.16
+* Image URL changed.
+
+version 1.0.15
+* Screenshot Changed.
+
+version 1.0.14
+* WordPress 4.9.1 compatibility tested.
+* Customizer Improvment(Allow Addition True).
+
+version 1.0.13
+* WordPress 4.9 compatibility tested.
+
+version 1.0.12
+* Tested Latest WordPress version compatibility
+
+version 1.0.11
+* Responsive Bug Resolved
+
+version 1.0.10
+* Screenshot Changed
+
+version 1.0.8
+* Enhance Theme Detail
+
+version 1.0.7
+* Description Improvement
+
+version 1.0.6
+* Sanitization Issue Fixed
+
+version 1.0.5
+* Replace Screenshot Image
+
+version 1.0.4
+* Version Error Fixed
+
+version 1.0.3
+* Social Media Features Added
+
+version 1.0.2
+* Theme Review Issues Fixed
+
+version 1.0.1
+* Initial release
+
+version 1.0
+* Initial release

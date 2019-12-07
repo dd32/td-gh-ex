@@ -5,7 +5,6 @@ function avira_premium_setting( $wp_customize ) {
         'upgrade_premium',
         array(
             'title' 		=> __('Upgrade to Premium','avira'),
-			'priority'      => 1,
 		)
     );
 	
@@ -13,7 +12,7 @@ function avira_premium_setting( $wp_customize ) {
 	Buttons
 	=========================================*/
 	
-	class Avira_Buttons_Customize_Control extends WP_Customize_Control {
+	class WP_Buttons_Customize_Control extends WP_Customize_Control {
 	public $type = 'upgrade_premium';
 
 	   function render_content() {
@@ -29,9 +28,9 @@ function avira_premium_setting( $wp_customize ) {
 			</div>
 			<div>
 				<ul>
-					<li><a href="http://docs.speciatheme.com/themes/avira-free/" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/documentation.png"></a></li>
+					<li><a href="http://docs.speciatheme.com/themes/avira-free/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/documentation.png"></a></li>
 					
-					<li><a href="https://wordpress.org/support/theme/avira/reviews/#new-post" target="_blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/rating.png"></a></li>
+					<li><a href="https://wordpress.org/support/theme/avira/reviews/#new-post" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rating.png"></a></li>
 				</ul>
 			</div>
 		<?php
@@ -46,9 +45,11 @@ function avira_premium_setting( $wp_customize ) {
 			)	
 		);
 	
-		$wp_customize->add_control( new Avira_Buttons_Customize_Control( $wp_customize, 'premium_info_buttons', array(
+		$wp_customize->add_control( new WP_Buttons_Customize_Control( $wp_customize, 'premium_info_buttons', array(
 				'section' => 'upgrade_premium',
+				'setting' => 'premium_info_buttons',
 			))
 		);
 }
 add_action( 'customize_register', 'avira_premium_setting',999 );
+?>

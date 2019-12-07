@@ -13,8 +13,8 @@
     .page-breadcrumb {
 		text-align: right;
     }
-	p.copyright, ul.payment-icon {
-		text-align: center;
+	ul.payment-icon {
+		text-align: left;
 	}
 	
     /*---------------------------------------
@@ -76,8 +76,8 @@
     .page-breadcrumb {
 		text-align: right;
     }
-	p.copyright, ul.payment-icon {
-		text-align: center;
+	ul.payment-icon {
+		text-align: left;
 	}
 
     /*---------------------------------------
@@ -175,7 +175,7 @@
              -o-transition: all 200ms ease-out;
                 transition: all 200ms ease-out;
     }
-	p.copyright, ul.payment-icon {
-		text-align: center;
+	ul.payment-icon {
+		text-align: left;
 	}
 }
