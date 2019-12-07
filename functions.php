@@ -55,19 +55,3 @@ require( get_stylesheet_directory() . '/inc/customize/specia-features.php');
  * Called premium page details
  */
 require_once( get_stylesheet_directory() . '/inc/customize/benzer-premium.php');
-
-
-
-/**
- * Import Options From Specia Theme
- *
- */
-function benzer_parent_theme_options() {
-	$specia_mods = get_option( 'theme_mods_specia' );
-	if ( ! empty( $specia_mods ) ) {
-		foreach ( $specia_mods as $specia_mod_k => $specia_mod_v ) {
-			set_theme_mod( $specia_mod_k, $specia_mod_v );
-		}
-	}
-}
-add_action( 'after_switch_theme', 'benzer_parent_theme_options' );

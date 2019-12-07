@@ -2,15 +2,15 @@
 
 Contributors: specia
 Requires at least: 4.4
-Tested up to: 5.6
+Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 3.0.29
-Version: 3.0.29
+Stable tag: 3.0.3
+Version: 3.0.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
 
-Benzer WordPress Theme, Copyright 2020 Specia Theme
+Benzer WordPress Theme, Copyright 2019 Specia Theme
 Benzer is distributed under the terms of the GNU GPL
 
 ##Description
@@ -25,7 +25,7 @@ Benzer is a trending WordPress theme with lots of powerful features, instantly g
 
 ## Credit & Copyright
 
-Benzer WordPress Theme is child theme of Specia WordPress Theme, Copyright 2020 Specia Theme
+Benzer WordPress Theme is child theme of Specia WordPress Theme, Copyright 2019 Specia Theme
 Benzer WordPress Theme is distributed under the terms of the GNU GPL
 
 i) Package Structure
@@ -75,90 +75,12 @@ Source: https://pxhere.com
 License: CC0 License
 
 xi)Feature Section Image
-URL: https://pxhere.com/en/photo/47321
-Source: https://pxhere.com
+URL: https://stocksnap.io/photo/7OPWOSQFXS
+Source: https://stocksnap.io
 License: CC0 Public Domain
 
 
 ##Changelog
-
-version 3.0.29
-* Tested with WordPress 5.6
-
-version 3.0.28
-* Added Functionality to Import Data of Parent Theme
-
-version 3.0.27
-* Readme Updated
-
-version 3.0.26
-* Tested with WordPress 5.5.3 
-
-version 3.0.25
-* Removed Unnecessary Code
-
-version 3.0.24
-* Code Improvement
-
-version 3.0.23
-* Tested with WordPress 5.5.1
-
-version 3.0.22
-* Tested with WordPress 5.5
-
-version 3.0.21
-* Code Improvement
-
-version 3.0.20
-* Screenshot Updated
-
-version 3.0.19
-* Tested with WordPress 5.4.2
-
-version 3.0.18
-* Fixed Theme Check Plugin Issues
-
-version 3.0.17
-* Removed Customizer Images & Call From Parent Theme
-
-version 3.0.16
-* Tested up to & Requires PHP Fields Added in Style.css
-
-version 3.0.15
-* Tested With WordPress 5.4.1
-
-version 3.0.14
-* Resolve Prefixing Issue
-
-version 3.0.13
-* Tested With WordPress 5.4
-
-version 3.0.12
-* Prefixing Issues Resolved
-
-version 3.0.11
-* Footer Style Issue Resolved
-
-version 3.0.10
-* Screenshot Updated
-
-version 3.0.9
-* Version Increased
-
-version 3.0.8
-* Feature Image Changed
-
-version 3.0.7
-* Copyright Updated
-
-version 3.0.6
-* Remove Unnecessary Code
-
-version 3.0.5
-* Tested with WordPress 5.3.2
-
-version 3.0.4
-* Tested with WordPress 5.3.1
 
 version 3.0.3
 * Readme Updated
@@ -269,3 +191,93 @@ version 1.0.32
 version 1.0.31
 * Resolve Escaping Issue
 * Feature Image Change
+
+version 1.0.30
+* Tested With WordPress 5.0.3
+
+version 1.0.29
+* Copyright Changed
+
+version 1.0.28
+* Tested With WordPress 5.0.2
+
+version 1.0.27
+* Tested With WordPress 5.0.1
+
+version 1.0.26
+* Tested With WP5
+
+version 1.0.25
+* License Info Changed.
+
+version 1.0.24
+* Tags & Description Changed in Readme File.
+
+version 1.0.23
+* Feature image added
+
+version 1.0.22
+* Added Theme Tag (grid-layout)
+
+version 1.0.21
+* Changed Screenshot
+
+version 1.0.20
+* Updated Premium Themes Link
+
+version 1.0.19
+* Added Documentation, Support & Review Buttons
+
+version 1.0.18
+* Added Parent Theme License
+
+version 1.0.17
+* Theme Description Updated
+
+version 1.0.16
+* Theme Description Updated
+
+version 1.0.15
+* Added Premium Themes Link
+
+version 1.0.14
+* Theme URI Updated
+
+version 1.0.13
+* Theme Description Updated
+
+version 1.0.12
+* Added features section
+
+version 1.0.11
+* Slider Animation Changed
+
+version 1.0.10
+* WordPress 4.9.8 Compatibility Tested.
+
+version 1.0.9
+* Social Media Improvement Test against Parent theme
+
+version 1.0.8
+* WordPress 4.9.7 Compatibility Tested.
+
+version 1.0.7
+* Updated Readme
+
+version 1.0.6
+* Screenshot & Description Update
+
+version 1.0.5
+* Color changed in Editor Style CSS
+
+version 1.0.4
+* Screenshot Update
+
+version 1.0.3
+* Resolved all theme review issues.
+
+version 1.0.2
+* Resolved all theme review issues.
+
+version 1.0.1
+* Submit to WP.org
