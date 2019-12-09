@@ -7,7 +7,6 @@
  * @package advance-business
  */
 ?>
-
 <footer role="contentinfo">
   <?php //Set widget areas classes based on user choice
     $widget_areas = get_theme_mod('advance_business_footer_widget_areas', '4');
@@ -51,6 +50,17 @@
 <div class="copyright">
   <p><?php echo esc_html(get_theme_mod('advance_business_footer_copy', __('Copyright 2018 -', 'advance-business')));?> <?php advance_business_credit();?></p>
 </div>
+
+<?php if( get_theme_mod( 'advance_business_enable_disable_scroll',true) != '') { ?>
+  <?php $theme_lay = get_theme_mod( 'advance_business_scroll_setting','Right');
+    if($theme_lay == 'Left'){ ?>
+      <button id="scroll-top" class="left-align" title="<?php esc_attr_e('Scroll to Top','advance-business'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-business'); ?></span></button>
+    <?php }else if($theme_lay == 'Center'){ ?>
+      <button id="scroll-top" class="center-align" title="<?php esc_attr_e('Scroll to Top','advance-business'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-business'); ?></span></button>
+    <?php }else{ ?>
+      <button id="scroll-top" title="<?php esc_attr_e('Scroll to Top','advance-business'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-business'); ?></span></button>
+  <?php }?>
+<?php }?>
 
 <?php wp_footer();?>
 </body>

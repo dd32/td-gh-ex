@@ -608,10 +608,31 @@ msgstr ""
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:821
+#: inc/customizer.php:747
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:752
+#: inc/customizer.php:761
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:757
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:760
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:762
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:847
 msgid 'Business Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:822
+#: inc/customizer.php:848
 msgid 'Go Pro'
 msgstr ""
