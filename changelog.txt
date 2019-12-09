@@ -1,3 +1,8 @@
+=== v1.2.2 === 
+- CSS improvements for theme header
+- Added header last elements on responsive header also
+
+
 === v1.2.1 === 
 - Added option to show/hide site breadcrumbs
 - Minor CSS improvements

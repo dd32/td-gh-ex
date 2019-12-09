@@ -12,9 +12,14 @@
     }
 }
 @media only screen and (max-width: 768px){
-
+    header .cart-wrapper{
+        display: block;
+    }
     .container,.site {
         padding: 0 20px;
+    }
+    .site-header .site-branding{
+        max-height: 100%;
     }
     .mob-outer-wrapp .site-branding{
         padding-top: 0;
@@ -43,6 +48,9 @@
     .site-footer .col-3 .ftr-widget,
     .site-footer .col-2 .ftr-widget{
         width: 48%;
+    }
+    .header-last-item{
+        margin-left: 0;
     }
 
 }
@@ -77,6 +85,12 @@
 }
 
 @media only screen and (max-width: 500px){
+    .site-title{
+        font-size: 26px;
+    }
+    .mob-outer-wrapp .site-branding{
+        width: 50%;
+    }
     .top-header-wrapp .op-grid-two{
         display: block;
     }
@@ -141,6 +155,9 @@
 }
 
 @media only screen and (max-width: 400px){
+    .site-title {
+        font-size: 21px;
+    }
     .mob-nav-wrapp{
         max-width: 200px;
     }
@@ -151,6 +168,10 @@
 }
 
 @media only screen and (max-width: 385px){
+    .site-title {
+        font-size: 18px;
+    }
+    
     .mob-nav-wrapp{
         max-width: 200px;
     }

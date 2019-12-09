@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -815,12 +815,7 @@ textarea {
 	margin: 0 auto 1em;
 }
 
- .site-branding {
-	/* text-align: center;
-	padding: 60px 0 1.75em; */
-	
-	padding: 15px 0 10px 10px;
-} 
+ 
 .site-branding a {
     margin-bottom: 0;
 }
@@ -1473,6 +1468,7 @@ textarea {
 	display: grid;
     -ms-grid-columns: auto auto;
     grid-template-columns: auto auto;
+	align-items: center;
 }
 
 /* search form */
@@ -2206,6 +2202,7 @@ span.toggle-wrapp {
     color: inherit;
     border: 0;
     background-color: transparent;
+    padding-top: 0;
 }
 .toggled-on span.menu-toggle{
     -webkit-transform: translate3d(0,10px,0) rotate(-45deg);
@@ -2531,6 +2528,7 @@ section.no-results.not-found {
     display: grid;
 	-ms-grid-columns: auto auto auto;
 	grid-template-columns: auto auto auto;
+	align-items: center;
 }
 .header-last-item{
 	line-height: 70px;
@@ -2687,4 +2685,8 @@ body.home .arrival-transparent-header .main-header-wrapp.full {
 .site-branding .site-branding a,
 .site-branding .text-wrapp {
     display: inline-block;
+}
+
+.breadcrumb-off{
+	padding-bottom: 32px;
 }

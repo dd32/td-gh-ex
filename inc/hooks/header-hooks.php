@@ -304,6 +304,10 @@ if(! function_exists('arrival_after_top_header')){
 add_action('arrival_mob_nav','arrival_mob_nav');
 if(! function_exists('arrival_mob_nav')){
 	function arrival_mob_nav(){
+
+	$default 						= arrival_get_default_theme_options();
+	$arrival_main_nav_right_content = get_theme_mod('arrival_main_nav_right_content',$default['arrival_main_nav_right_content']);
+	$_cart_display_position 		= get_theme_mod('arrival_cart_display_position',$default['arrival_cart_display_position']);
 	?>
 	<div class="mob-outer-wrapp">
 	<div class="container clearfix">
@@ -325,10 +329,31 @@ if(! function_exists('arrival_mob_nav')){
 						'menu_class'	 => 'mob-primary-menu'
 					)
 				);
-				do_action('arrival_social_icons');
+				
 				 ?>
-
+		<?php
+		if( 'search' == $arrival_main_nav_right_content ){ ?>
+			<div class="header-last-item search-wrap">
+				<div class="search-wrap">
+					<?php echo arrival_get_icon_svg('search'); ?>
+				</div>
+				<?php if( 'main' == $_cart_display_position ){
+					do_action('arrival_header_cart_disp');
+				} ?>
+			</div>
+		<?php }elseif( 'button' == $arrival_main_nav_right_content){ ?>
+		<div class="header-last-item search-wrap header-btn">
+			<?php do_action('arrival_header_cta_btn_info'); ?>
+			
+			<?php if( 'main' == $_cart_display_position ){
+					do_action('arrival_header_cart_disp');
+			} ?>
 		</div>
+		<?php } 
+		do_action('arrival_social_icons'); ?>
+		</div>
+
+
 	</div>
 <?php
 	}
@@ -385,7 +410,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 
 		?>
 		<header id="masthead" class="site-header <?php echo esc_attr($hdr_class.' '.$_menu_hover_styles.' '.$transparent_hdr);?>">
-			
+			<?php do_action('arrival_mob_nav'); ?>
 			<?php if( function_exists('arrival_top_header')):
 				arrival_top_header();
 			endif; ?>
@@ -409,7 +434,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 				arrival_header_title_display();
 
 			}?>
-			<?php do_action('arrival_mob_nav'); ?>
+			
 		</header><!-- #masthead -->
 		<?php 
 	}
