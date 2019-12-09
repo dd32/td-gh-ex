@@ -3,10 +3,10 @@ Contributors: ayatemplates
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets
-Requires at least: 4.8.0
-Tested up to: 4.9.6
-Requires PHP: 5.6.0
+Tested up to: 5.3
 Stable tag: 1.2.6
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.1 =
+* Blocks CSS updates for WordPress 5.3
+* add Requires tags in style.css instead of readme.txt file
 
 = 1.3.0 =
 * Main menu: fix issue with dropdown menu under IE/Edge browsers
