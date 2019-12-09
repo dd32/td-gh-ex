@@ -572,10 +572,31 @@ msgstr ""
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:695
+#: inc/customizer.php:621
+msgid 'Show / Hide Scroll To Top'
+msgstr ""
+
+#: inc/customizer.php:626
+#: inc/customizer.php:635
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:631
+msgid 'Scroll To Top Position'
+msgstr ""
+
+#: inc/customizer.php:634
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:636
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:720
 msgid ''Education Pro Theme' 
 msgstr ""
 
-#: inc/customizer.php:696
+#: inc/customizer.php:721
 msgid 'Go Pro'
 msgstr ""

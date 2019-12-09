@@ -52,6 +52,17 @@
     </div>
 </footer>
 
+<?php if( get_theme_mod( 'advance_education_enable_disable_scroll',true) != '') { ?>
+    <?php $theme_lay = get_theme_mod( 'advance_education_scroll_setting','Right');
+      if($theme_lay == 'Left'){ ?>
+        <button id="scroll-top" class="left-align" title="<?php esc_attr_e('Scroll to Top','advance-education'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-education'); ?></span></button>
+      <?php }else if($theme_lay == 'Center'){ ?>
+        <button id="scroll-top" class="center-align" title="<?php esc_attr_e('Scroll to Top','advance-education'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-education'); ?></span></button>
+      <?php }else{ ?>
+        <button id="scroll-top" title="<?php esc_attr_e('Scroll to Top','advance-education'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-education'); ?></span></button>
+    <?php }?>
+<?php }?>
+
 <?php wp_footer();?>
 </body>
 </html>

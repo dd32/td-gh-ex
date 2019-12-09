@@ -611,6 +611,31 @@ function advance_education_customize_register($wp_customize) {
 		'section' => 'advance_education_footer_section',
 		'type'    => 'text',
 	));
+
+	$wp_customize->add_setting('advance_education_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-education'),
+      	'section' => 'advance_education_footer_section',
+	));
+
+	$wp_customize->add_setting('advance_education_scroll_setting',array(
+        'default' => __('Right','advance-education'),
+        'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_education_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-education'),
+        'section' => 'advance_education_footer_section',
+        'choices' => array(
+            'Left' => __('Left','advance-education'),
+            'Right' => __('Right','advance-education'),
+            'Center' => __('Center','advance-education'),
+        ),
+	) );
 }
 add_action('customize_register', 'advance_education_customize_register');
 
