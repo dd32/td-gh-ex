@@ -3,10 +3,10 @@ Contributors: ayatemplates
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header,
 custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
-Requires at least: 4.8.0
-Tested up to: 4.9.5
-Requires PHP: 5.6.0
+Tested up to: 5.3
 Stable tag: 1.1.4
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,10 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.2.0 =
+* Blocks CSS updates for WordPress 5.3
+* add Requires tags in style.css instead of readme.txt file
 
 = 1.1.9 =
 * Main menu: fix issue with dropdown menu under IE/Edge browsers
