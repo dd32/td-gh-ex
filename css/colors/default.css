@@ -10,6 +10,8 @@
    background: #ee591f;
 }
 /* 00. Theme Reset Css */
+#blog-content .post-title a,
+h2.site-title::first-letter,
 #recent-blog .post-content .post-title a ,
 .section-header h2 {
     color: #ee591f ;
@@ -364,10 +366,6 @@ p {
 
 .gallery-item figure:hover figcaption {
     background: #242424;
-}
-
-#blog-content .post-title a {
-    color: #242424;
 }
 
 #blog-content ul.meta-info li {
