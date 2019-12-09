@@ -4,10 +4,10 @@ Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-background, cus
 custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments,
 translation-ready, sticky-post, theme-options, footer-widgets, full-width-template,
 front-page-post-form
-Requires at least: 4.8.0
-Tested up to: 4.9.6
-Requires PHP: 5.6.0
+Tested up to: 5.3
 Stable tag: 1.2.0
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.3.5 =
+* move 'Requires PHP' and 'Requires at least' tags into style.css
 
 = 1.3.4 =
 * fix issue with sub-menu items not displayed under IE 11 and Edge browsers
