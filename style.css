@@ -4,11 +4,13 @@ Description: AyaHandmade is Fully Responsive WordPress Theme, suitable for handm
 Theme URI: https://ayatemplates.com/product/ayahandmade
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.7
+Version: 1.1.8
 Text Domain: ayahandmade
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, editor-style
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 */
 
 /* general styles */
@@ -1582,6 +1584,11 @@ article > *.alignfull,
   }
 }
 
+.wp-block-group:not(.alignwide):not(.alignfull) * {
+    max-width: 100%;
+    margin-left: 0;
+}
+
 article > *.alignleft,
 .entry .entry-summary > *.alignleft {
   /*rtl:ignore*/
@@ -2892,7 +2899,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 
     #navmain .sub-menu-item-toggle {
         display:inline-block;
-        margin:10px 10px 0 0;
+        padding:10px;
         float:right;
     }
 
@@ -3290,11 +3297,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	height:auto;
 }
 
-#footer-main .instagram-pics li,
-.col .instagram-pics li{
-	width:75px;
-	margin-right:2%;
-}
+
 
 
 .wpt_widget_content li:before {
@@ -3667,7 +3670,7 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 
     #navmain .sub-menu-item-toggle {
         display:inline-block;
-        margin:10px 10px 0 0;
+        padding:10px;
         float:right;
     }
 
