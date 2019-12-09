@@ -660,10 +660,31 @@ msgstr ""
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:872
+#: inc/customizer.php:798
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:803
+#: inc/customizer.php:812
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:808
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:811
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:813
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:898
 msgid 'Coaching Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:873
+#: inc/customizer.php:899
 msgid 'Go Pro'
 msgstr ""

@@ -788,6 +788,32 @@ function advance_coaching_customize_register($wp_customize) {
 		'section' => 'advance_coaching_footer_section',
 		'type'    => 'text',
 	));
+	
+	$wp_customize->add_setting('advance_coaching_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_coaching_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-coaching'),
+      	'section' => 'advance_coaching_footer_section',
+	));
+
+	$wp_customize->add_setting('advance_coaching_scroll_setting',array(
+        'default' => __('Right','advance-coaching'),
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-coaching'),
+        'section' => 'advance_coaching_footer_section',
+        'choices' => array(
+            'Left' => __('Left','advance-coaching'),
+            'Right' => __('Right','advance-coaching'),
+            'Center' => __('Center','advance-coaching'),
+        ),
+	) );
+
 }
 add_action('customize_register', 'advance_coaching_customize_register');
 
