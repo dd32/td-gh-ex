@@ -11,9 +11,9 @@ if ( ! function_exists( 'arina_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function arina_posted_on() {
-		echo '<a href="#"><i class="lnr lnr-calendar-full "></i>' . wp_kses_post(get_the_date()) . '</a>'; // WPCS: XSS OK.
-	}
+	function arina_posted_on() {?>	
+		<a href="<?php echo get_month_link(get_the_date('Y'), get_the_date('m')); ?>"><i class="lnr lnr-calendar-full "></i><?php echo get_the_date()?></a>
+	<?php }
 endif;
 
 if ( ! function_exists( 'arina_posted_by' ) ) :

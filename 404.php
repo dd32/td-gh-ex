@@ -9,11 +9,6 @@
  
 get_header();
 ?>
- <section class="page-title">
-    <div class="container">
-        <h3><?php wp_title(''); ?></h3>          
-    </div><!-- /.thm-container -->
-</section><!-- /.page-title -->
 <div class="breadcumb-wrapper">
     <div class="container">
       <?php echo wp_kses_post(arina_get_the_breadcrumb()); ?>
@@ -33,8 +28,9 @@ get_header();
                             <section class="error-404 not-found">
                                 <div class="page-content">
                                     <h2 class="error_title"><?php esc_html_e( '404 Page Not Found', 'arina' ); ?></h2>
-									
-									<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'arina' ); ?></p>
+									<div class="errortext"><?php esc_html_e( 'Sorry, but the page you are looking for does not exist', 'arina' ); ?></div>
+									 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="theme-btn errot_btn"> <?php esc_html_e( 'Go to Home', 'arina' ); ?></a>
+									<p></p>
 									<?php
 									    get_search_form();
 									?>

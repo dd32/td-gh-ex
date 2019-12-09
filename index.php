@@ -18,15 +18,11 @@
  
 get_header();
 ?>
-<section class="page-title">
-    <div class="container">
-        <h3><?php if(wp_title()) echo wp_title(); else esc_html_e('Our Blog', 'arina');?></h3>        
-    </div><!-- /.thm-container -->
-</section><!-- /.page-title -->
 <div class="breadcumb-wrapper">
-    <div class="container">
-      <?php echo wp_kses_post(arina_get_the_breadcrumb()); ?>
-    </div><!-- /.thm-container -->
+    <div class="container ">
+	<ul class="page-breadcrumb xt">
+	<li><?php esc_html_e( 'Blog', 'arina' ); ?></li>
+	</ul>
 </div><!-- /.breadcumb-wrapper -->
 
 <section class="blog-style-one sec-pad blog-page mrmain_blog mrindex">

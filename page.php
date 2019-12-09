@@ -14,19 +14,13 @@
 
 get_header();
 ?>
- <section class="page-title">
-    <div class="container">
-       <h3><?php wp_title(''); ?></h3>         
-    </div><!-- /.thm-container -->
-</section><!-- /.page-title -->
 <div class="breadcumb-wrapper">
     <div class="container">
       <?php echo wp_kses_post(arina_get_the_breadcrumb()); ?>
     </div><!-- /.thm-container -->
-</div><!-- /.breadcumb-wrapper -->   
-	
+</div><!-- /.breadcumb-wrapper -->   	
 	<div class="main-content-section main_page">
-        <div class="container">
+        <div class="wp-style container">
             <div class="row d-flex justify-content-center">
                 <?php if(is_active_sidebar('sidebar-left')) : ?> 
 			<div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12 ">

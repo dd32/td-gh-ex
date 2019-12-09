@@ -8,11 +8,6 @@
  */
 get_header();
 ?>
-<section class="page-title">
-    <div class="container">
-        <h3><?php wp_title(''); ?></h3>          
-    </div><!-- /.thm-container -->
-</section><!-- /.page-title -->
 <div class="breadcumb-wrapper">
     <div class="container">
       <?php echo wp_kses_post(arina_get_the_breadcrumb()); ?>
@@ -43,7 +38,7 @@ get_header();
 									 * If you want to override this in a child theme, then include a file
 									 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 									 */
-									get_template_part( 'template-parts/content', 'search' );
+									get_template_part( 'template-parts/content');
 
 								endwhile;?>
 

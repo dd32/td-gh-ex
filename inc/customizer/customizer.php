@@ -41,7 +41,7 @@ function arina_customizer_option( $wp_customize ) {
 $wp_customize->add_setting(
 		'custom_menu_color',
 		array(
-			'default'     => '#fff',
+			'default'     => '#222',
 			'sanitize_callback' => 'sanitize_hex_color'
 		)
 	);
@@ -56,50 +56,9 @@ $wp_customize->add_setting(
 			)
 		)
 	);	
-//Bread Title Color	
-$wp_customize->add_setting(
-		'bread_title_color',
-		array(
-			'default'     => '#fff',
-			'sanitize_callback' => 'sanitize_hex_color'
-		)
-	);
-	
-	$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-			$wp_customize,
-			'bread_title_color',
-			array(
-				'label'      => esc_html__('Bread Title Color', 'arina'),
-				'section'    => 'colors',
-				'settings'   => 'bread_title_color',
-			)
-		)
-	);
 
 
-//Bread Crumb Section 	
-	$wp_customize->add_setting(
-		'bread_bg_color',
-		array(
-			'default'     => '#008391',
-			'sanitize_callback' => 'sanitize_hex_color'
-		)
-	);
-	
-	$wp_customize->add_control(
-	new WP_Customize_Color_Control(
-			$wp_customize,
-			'bread_bg_color',
-			array(
-				'label'      => esc_html__('Bread BG Color', 'arina'),
-				'section'    => 'colors',
-				'settings'   => 'bread_bg_color',
-			)
-		)
-	);
-	
-//End of Menu
+
 
 //Footer SEction 	
 	$wp_customize->add_section('arina_footer_section', array(

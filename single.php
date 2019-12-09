@@ -9,11 +9,6 @@
 
 get_header();
 ?>
-<section class="page-title">
-    <div class="container">
-        <h3><?php wp_title(''); ?></h3>          
-    </div><!-- /.thm-container -->
-</section><!-- /.page-title -->
 <div class="breadcumb-wrapper">
     <div class="container">
       <?php echo wp_kses_post(arina_get_the_breadcrumb()); ?>
@@ -35,6 +30,9 @@ get_header();
 							 <?php while( have_posts() ): the_post();
 								?>
 							 <div class="blog_post">
+								<h1 class="single_title">
+										<a href="<?php esc_url( get_permalink() ) ?>"><?php the_title(); ?></a>
+									</h1><!-- .entry-header -->
 								<div class="img-box">
 									<?php arina_post_thumbnail(); ?>		
 									<footer class="entry-footer">
@@ -58,19 +56,6 @@ get_header();
 								</div>
 								</div>
 							
-							 <div class="navigation post-navigation container">
-                                <div class="row">
-                                    <div class="nav-previous col-md-6 text-left">
-                                        <?php previous_post_link('%link','<div class="prev-post"><span class="fa fa-long-arrow-left"></span> &nbsp;&nbsp;&nbsp; '.esc_html__('Prev Post: ', 'arina').'</div>'); ?>
-		                                
-                                    </div>
-                                    <div class="nav-next col-md-6 text-right">
-                                        <?php next_post_link('%link','<div class="next-post">'. esc_html__('Next Post: ', 'arina').' &nbsp;&nbsp;&nbsp; <span class="fa fa-long-arrow-right"></span> </div>'); ?>
-		                               
-                                    </div>
-                                </div>
-                            </div>	
-								
 							<?php
 								// If comments are open or we have at least one comment, load up the comment template.
 								if ( comments_open() || get_comments_number() ) :
