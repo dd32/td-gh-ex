@@ -284,3 +284,33 @@ if( ! function_exists( 'arilewp_custom_customizer_options' ) ):
     }
 endif;
 add_action( 'wp_enqueue_scripts', 'arilewp_custom_customizer_options' );
+
+
+add_action( 'after_switch_theme', 'arilewp_import_theme_mods_from_child_themes_to_parent_theme' );
+
+/**
+* Import theme mods
+*/
+function arilewp_import_theme_mods_from_child_themes_to_parent_theme() {
+
+    // Get the name of the previously active theme.
+    $previous_theme = strtolower( get_option( 'theme_switched' ) );
+
+    if ( ! in_array(
+        $previous_theme, array(
+            'business-street',
+			'strangerwp',
+        )
+    ) ) {
+        return;
+    }
+
+    // Get the theme mods from the previous theme.
+    $previous_theme_content = get_option( 'theme_mods_' . $previous_theme );
+
+    if ( ! empty( $previous_theme_content ) ) {
+        foreach ( $previous_theme_content as $previous_theme_mod_k => $previous_theme_mod_v ) {
+            set_theme_mod( $previous_theme_mod_k, $previous_theme_mod_v );
+        }
+    }
+}
