@@ -32,6 +32,12 @@ function ayagreen_test_for_min_php() {
 	};
 }
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+        function wp_body_open() {
+                do_action( 'wp_body_open' );
+        }
+}
+
 /**
  * An error notice that can be displayed if the Minimum PHP version is not met.
  */
