@@ -4,7 +4,7 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version:  0.3.4
+Version:  0.3.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -286,13 +286,20 @@ input[type="submit"] {
 }
 /* ------------ LOGO CSS ----------- */
 
-.logo h1 a {
+.logo h1 a , .logo p.site-title a{
   color: #fff;
 }
-.logo h1 {
+.logo h1 , .logo p.site-title{
   font-size: 30px;
   padding: 0;
   letter-spacing: 1px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+.logo p.site-title {
+  margin: 0;
+  line-height: 1;
+  padding: 3px 0px;
 }
 p.site-description {
   font-weight: 500;
@@ -435,8 +442,8 @@ ul.list_nav {
   transition: 1s;
 }
 .main-navigation a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
 }
 .main-navigation ul ul{
   display: none;
@@ -589,7 +596,7 @@ ul.list_nav {
   left: 7%;
   text-align: left;
 }
-#slider .inner_carousel h2 {
+#slider .inner_carousel h1 {
   font-size: 45px;
   text-align: left;
   color: #fff;
@@ -656,10 +663,11 @@ ul.list_nav {
 #about-section p {
   line-height: 2;
 }
-#about-section h6 {
+#about-section h2 {
   color: #b1b6b9;
   padding: 0;
   letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 iframe,
@@ -919,6 +927,9 @@ h1.page-title {
 }
 .single-post .entry-date a, .single-post .entry-author a{
   color: #000;
+}
+.single-post h1{
+  font-size: 30px;
 }
 .single-post .post-info{
   color: #000;
@@ -1562,7 +1573,7 @@ span.posted_in {
   color: #010203;
 }
 .related.products ul li {
-  width: 30.75% !important;
+  width: 29% !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-MyAccount-content a, .woocommerce-info a, .woocommerce-privacy-policy-text a, td.product-name a, a.shipping-calculator-button{
   text-decoration: none !important;
@@ -1596,7 +1607,7 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
     right: 10%;
     left: 10%;
   }
-  #slider .inner_carousel h2{
+  #slider .inner_carousel h1{
     font-size: 15px;
     text-align: center;
     padding: 0;
@@ -1618,6 +1629,11 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
   .toggle-nav{
     text-align: center;
   }
+  .search-box a:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+    text-decoration:none !important;
+  } 
 }
 @media screen and (max-width: 424px){
   #slider .carousel-caption {
@@ -1810,13 +1826,18 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
   #slider .inner_carousel p{
     font-size: 12px;
   }
-  #slider .inner_carousel h2{
+  #slider .inner_carousel h1{
     font-size: 30px;
   }
   .scrollup i{
     bottom: 10px;
     right: 10px;
   }
+  .search-box a:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+    text-decoration:none !important;
+  } 
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1199px){

@@ -159,72 +159,85 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:60
+#: functions.php:59
 msgid "Warm Greetings to you!!"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:60
 msgid 'Thank you for choosing Automotive Centre Theme. Would like to have you on our Welcome page so that you can reap all the benefits of our Automotive Centre Theme.'
 msgstr ""
 
-#: functions.php:62
+#: functions.php:61
 msgid "GET STARTED"
 msgstr ""
 
-#: functions.php:72
+#: functions.php:68
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:73
+#: functions.php:69
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:82
+#: functions.php:78
 msgid 'page sidebar'
 msgstr ""
 
-#: functions.php:92
+#: functions.php:88
 msgid 'Sidebar 3'
 msgstr ""
 
-#: functions.php:83
-#: functions.php:93
+#: functions.php:79
+#: functions.php:89
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:102
+#: functions.php:98
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:103
+#: functions.php:99
 msgid 'Appears on footer 1'
 msgstr ""
 
-#: functions.php:112
+#: functions.php:108
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:113
+#: functions.php:109
 msgid 'Appears on footer 2'
 msgstr ""
 
-#: functions.php:122
+#: functions.php:118
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:123
+#: functions.php:119
 msgid 'Appears on footer 3'
 msgstr ""
 
-#: functions.php:132
+#: functions.php:128
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:133
+#: functions.php:129
 msgid 'Appears on footer 4'
 msgstr ""
 
-#: functions.php:320
+#: functions.php:138
+msgid "Shop Page Sidebar"
+msgstr ""
+
+#: functions.php:139
+#: functions.php:149
+msgid "Appears on shop page"
+msgstr ""
+
+#: functions.php:148
+msgid "Single Product Sidebar"
+msgstr ""
+
+#: functions.php:337
 msgid "Automotive WordPress Theme"
 msgstr ""
 
@@ -578,164 +591,200 @@ msgstr ""
 msgid 'Here you can change the sidebar layout for pages.'
 msgstr ""
 
-#: inc/customizer.php:90
-msgid 'Topbar Settings'
+#: inc/customizer.php:95
+msgid 'Shop Page Sidebar'
 msgstr ""
 
-#: inc/customizer.php:99
-#: inc/customizer.php:125
-msgid 'Add Text'
+#: inc/customizer.php:106
+msgid 'Single Product Sidebar'
 msgstr ""
 
-#: inc/customizer.php:101
-msgid 'PHONE'
-msgstr ""
-
-#: inc/customizer.php:112
-msgid 'Add Phone Number'
+#: inc/customizer.php:117
+msgid 'Pre-Loader'
 msgstr ""
 
 #: inc/customizer.php:127
-msgid 'EMAIL'
+msgid 'Pre-Loader Type'
+msgstr ""
+
+#: inc/customizer.php:130
+msgid 'Two Way'
+msgstr ""
+
+#: inc/customizer.php:131
+msgid 'Dots'
+msgstr ""
+
+#: inc/customizer.php:132
+msgid 'Rotate'
 msgstr ""
 
 #: inc/customizer.php:138
-msgid 'Add Email Address'
+msgid 'Topbar Settings'
 msgstr ""
 
-#: inc/customizer.php:140
-msgid 'example@123.com'
+#: inc/customizer.php:149
+msgid 'Sticky Header'
 msgstr ""
 
-#: inc/customizer.php:151
-msgid 'Add Button Text'
-msgstr ""
-
-#: inc/customizer.php:153
-msgid 'SELL YOUR CAR'
-msgstr ""
-
-#: inc/customizer.php:164
-msgid 'Add Button URL'
-msgstr ""
-
-#: inc/customizer.php:166
-msgid 'https://example.com/'
-msgstr ""
-
-#: inc/customizer.php:178
+#: inc/customizer.php:159
 msgid 'Show / Hide Search'
 msgstr ""
 
-#: inc/customizer.php:184
+#: inc/customizer.php:168
+#: inc/customizer.php:194
+msgid 'Add Text'
+msgstr ""
+
+#: inc/customizer.php:170
+msgid 'PHONE'
+msgstr ""
+
+#: inc/customizer.php:181
+msgid 'Add Phone Number'
+msgstr ""
+
+#: inc/customizer.php:196
+msgid 'EMAIL'
+msgstr ""
+
+#: inc/customizer.php:207
+msgid 'Add Email Address'
+msgstr ""
+
+#: inc/customizer.php:209
+msgid 'example@123.com'
+msgstr ""
+
+#: inc/customizer.php:220
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:222
+msgid 'SELL YOUR CAR'
+msgstr ""
+
+#: inc/customizer.php:233
+msgid 'Add Button URL'
+msgstr ""
+
+#: inc/customizer.php:235
+msgid 'https://example.com/'
+msgstr ""
+
+#: inc/customizer.php:243
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:253
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:264
 msgid 'Select Slider Page'
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:265
 msgid 'Slider image size (1500 x 650)'
 msgstr ""
 
-#: inc/customizer.php:219
+#: inc/customizer.php:278
 msgid 'Slider Content Layouts'
 msgstr ""
 
-#: inc/customizer.php:236
+#: inc/customizer.php:295
 msgid 'Slider Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:253
+#: inc/customizer.php:313
 msgid 'Slider Image Opacity'
 msgstr ""
 
-#: inc/customizer.php:274
+#: inc/customizer.php:333
 msgid 'About us Settings'
 msgstr ""
 
-#: inc/customizer.php:284
+#: inc/customizer.php:343
 msgid 'Add Section Title'
 msgstr ""
 
-#: inc/customizer.php:286
+#: inc/customizer.php:345
 msgid 'ABOUT US'
 msgstr ""
 
-#: inc/customizer.php:297
+#: inc/customizer.php:356
 msgid 'Select About Page'
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:370
 msgid 'About Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:383
 msgid 'Blog Post Settings'
 msgstr ""
 
-#: inc/customizer.php:334
+#: inc/customizer.php:393
 msgid 'Post Date'
 msgstr ""
 
-#: inc/customizer.php:344
+#: inc/customizer.php:403
 msgid 'Author'
 msgstr ""
 
-#: inc/customizer.php:354
+#: inc/customizer.php:413
 msgid 'Comments'
 msgstr ""
 
-#: inc/customizer.php:366
+#: inc/customizer.php:425
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:379
+#: inc/customizer.php:443
+msgid 'Blog Layouts'
+msgstr ""
+
+#: inc/customizer.php:453
 msgid 'Customize Home Page Settings'
 msgstr ""
 
-#: inc/customizer.php:392
+#: inc/customizer.php:466
 msgid 'First select static page in homepage setting for front page.Below given edit button is to customize Home Page. Just click on the edit option, add whatever elements you want to include in the homepage, save the changes and you are good to go.'
 msgstr ""
 
-#: inc/customizer.php:401
+#: inc/customizer.php:475
 msgid 'Footer Settings'
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:484
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:486
 msgid 'Copyright 2019, .....'
 msgstr ""
 
-#: inc/customizer.php:424
+#: inc/customizer.php:498
 msgid 'Show / Hide Scroll To Top'
 msgstr ""
 
-#: inc/customizer.php:434
+#: inc/customizer.php:508
 msgid 'Scroll To Top'
 msgstr ""
 
-#: inc/customizer.php:519
+#: inc/customizer.php:593
 msgid 'AUTOMOTIVE PRO'
 msgstr ""
 
-#: inc/customizer.php:520
+#: inc/customizer.php:594
 msgid 'UPGRADE PRO'
 msgstr ""
 
-#: inc/customizer.php:526
+#: inc/customizer.php:600
 msgid 'DOCUMENATATION'
 msgstr ""
 
-#: inc/customizer.php:527
+#: inc/customizer.php:601
 msgid 'DOCS'
 msgstr ""
 

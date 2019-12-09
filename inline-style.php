@@ -101,15 +101,15 @@
 
 	$theme_lay = get_theme_mod( 'automotive_centre_slider_content_option','Left');
     if($theme_lay == 'Left'){
-		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h2{';
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1{';
 			$custom_css .='text-align:left; left:7%; right:50%;';
 		$custom_css .='}';
 	}else if($theme_lay == 'Center'){
-		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h2{';
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1{';
 			$custom_css .='text-align:center; left:20%; right:20%;';
 		$custom_css .='}';
 	}else if($theme_lay == 'Right'){
-		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h2{';
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1{';
 			$custom_css .='text-align:right; left:50%; right:7%;';
 		$custom_css .='}';
 	}

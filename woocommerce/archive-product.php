@@ -19,10 +19,19 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' ); ?>
 
+<?php
+ $automotive_centre_woocommerce_shop_page_sidebar = get_theme_mod( 'automotive_centre_woocommerce_shop_page_sidebar' );
+ if ( 'Disable' == $automotive_centre_woocommerce_shop_page_sidebar ) {
+   $colmd = 'col-lg-12 col-md-12';
+ } else { 
+   $colmd = 'col-lg-8 col-md-8';
+ } 
+?>
+
 <div class="container">
 	<main id="maincontent" role="main" class="middle-align">
 		<div class="row m-0">
-			<div class="col-lg-8 col-md-8">
+			<div class="<?php echo esc_html( $colmd ); ?>">
 				<?php
 					/**
 					 * Hook: woocommerce_before_main_content.
@@ -102,16 +111,11 @@ get_header( 'shop' ); ?>
 				 */
 				do_action( 'woocommerce_after_main_content' );?>
 			</div>
-			<div class="col-lg-4 col-md-4">
-				<?php
-					/**
-					 * Hook: woocommerce_sidebar.
-					 *
-					 * @hooked woocommerce_get_sidebar - 10
-					 */
-					do_action( 'woocommerce_sidebar' );
-				?>
-			</div>
+			<?php if ( 'Disable' != $automotive_centre_woocommerce_shop_page_sidebar ) {?>
+				<div id="sidebar" class="col-lg-4 col-md-4">
+					<?php dynamic_sidebar('woocommerce-shop-sidebar'); ?>
+				</div>
+			<?php } ?>
 		</div>
 	</main>
 </div>

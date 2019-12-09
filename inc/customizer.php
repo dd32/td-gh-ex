@@ -85,6 +85,28 @@ function automotive_centre_customize_register( $wp_customize ) {
         ),
 	) );
 
+	//Woocommerce Shop Page Sidebar
+	$wp_customize->add_setting( 'automotive_centre_woocommerce_shop_page_sidebar',array(
+		'default' => 1,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ) );
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_woocommerce_shop_page_sidebar',array(
+		'label' => esc_html__( 'Shop Page Sidebar','automotive-centre' ),
+		'section' => 'automotive_centre_left_right'
+    )));
+
+    //Woocommerce Single Product page Sidebar
+	$wp_customize->add_setting( 'automotive_centre_woocommerce_single_product_page_sidebar',array(
+		'default' => 1,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ) );
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_woocommerce_single_product_page_sidebar',array(
+		'label' => esc_html__( 'Single Product Sidebar','automotive-centre' ),
+		'section' => 'automotive_centre_left_right'
+    )));
+
 	//Pre-Loader
 	$wp_customize->add_setting( 'automotive_centre_loader_enable',array(
         'default' => 1,

@@ -133,6 +133,26 @@ function automotive_centre_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Shop Page Sidebar', 'automotive-centre' ),
+		'description'   => __( 'Appears on shop page', 'automotive-centre' ),
+		'id'            => 'woocommerce-shop-sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Single Product Sidebar', 'automotive-centre' ),
+		'description'   => __( 'Appears on shop page', 'automotive-centre' ),
+		'id'            => 'woocommerce-single-sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'automotive_centre_widgets_init' );
 

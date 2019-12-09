@@ -270,13 +270,20 @@ input[type="submit"] {
 }
 /* ------------ LOGO CSS ----------- */
 
-.logo h1 a {
+.logo h1 a , .logo p.site-title a{
   color: #fff;
 }
-.logo h1 {
+.logo h1 , .logo p.site-title{
   font-size: 30px;
   padding: 0;
   letter-spacing: 1px;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bold;
+}
+.logo p.site-title {
+  margin: 0;
+  line-height: 1;
+  padding: 3px 0px;
 }
 p.site-description {
   font-weight: 500;
@@ -419,8 +426,8 @@ ul.list_nav {
   transition: 1s;
 }
 .main-navigation a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
 }
 .main-navigation ul ul{
   display: none;
@@ -573,7 +580,7 @@ ul.list_nav {
   right: 7%;
   text-align: right;
 }
-#slider .inner_carousel h2 {
+#slider .inner_carousel h1 {
   font-size: 45px;
   text-align: right;
   color: #fff;
@@ -640,10 +647,11 @@ ul.list_nav {
 #about-section p {
   line-height: 2;
 }
-#about-section h6 {
+#about-section h2 {
   color: #b1b6b9;
   padding: 0;
   letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 iframe,
@@ -903,6 +911,9 @@ h1.page-title {
 }
 .single-post .entry-date a, .single-post .entry-author a{
   color: #000;
+}
+.single-post h1{
+  font-size: 30px;
 }
 .single-post .post-info{
   color: #000;
@@ -1546,7 +1557,7 @@ span.posted_in {
   color: #010203;
 }
 .related.products ul li {
-  width: 30.75% !important;
+  width: 29% !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-MyAccount-content a, .woocommerce-info a, .woocommerce-privacy-policy-text a, td.product-name a, a.shipping-calculator-button{
   text-decoration: none !important;
@@ -1580,7 +1591,7 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
     left: 10%;
     right: 10%;
   }
-  #slider .inner_carousel h2{
+  #slider .inner_carousel h1{
     font-size: 15px;
     text-align: center;
     padding: 0;
@@ -1602,6 +1613,11 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
   .toggle-nav{
     text-align: center;
   }
+  .search-box a:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+    text-decoration:none !important;
+  } 
 }
 @media screen and (max-width: 424px){
   #slider .carousel-caption {
@@ -1794,13 +1810,18 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
   #slider .inner_carousel p{
     font-size: 12px;
   }
-  #slider .inner_carousel h2{
+  #slider .inner_carousel h1{
     font-size: 30px;
   }
   .scrollup i{
     bottom: 10px;
     left: 10px;
   }
+  .search-box a:focus{
+    outline: 1px dotted #fff;
+    border-bottom: 1px solid #fff;
+    text-decoration:none !important;
+  } 
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1199px){

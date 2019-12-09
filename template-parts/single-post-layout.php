@@ -14,7 +14,7 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="single-post">
-        <h2><?php the_title(); ?></h2>
+        <h1><?php the_title(); ?></h1>
         <div class="post-info">
             <?php if(get_theme_mod('automotive_centre_toggle_postdate',true)==1){ ?>
               <i class="fas fa-calendar-alt"></i><span class="entry-date"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span><span>|</span>
