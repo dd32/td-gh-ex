@@ -1,9 +1,7 @@
 === ArtGallery ===
 Contributors: customizablethemes
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
-Requires at least: 4.7.0
-Tested up to: 4.9.2
-Requires PHP: 5.6.0
+Tested up to: 5.3
 Stable tag: 1.1.2
 License: License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -41,6 +39,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.7 =
+* add in style.css Requires PHP and Requires at least fields
 
 = 1.2.6 =
 * improve sub-menu display for IE/Edge browsers
