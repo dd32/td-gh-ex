@@ -357,6 +357,42 @@ class astral_Customizer extends astral_Abstract_Main {
 			'section'  => 'astral_contact',
 			'settings' => 'astral_email',
 		) );
+		
+		//typography
+		$wp_customize->add_section( 'astral_typography', array(
+			'title'      => __( 'Typography', 'astral' ),
+			'panel'      => 'astral_theme_option',
+			'capability' => 'edit_theme_options',
+			'priority'   => 35,
+		) );
+
+		$wp_customize->add_setting( 'astral_post_title_size',
+		   array(
+			  'type'              => 'theme_mod',
+			  'default' => '',
+			  'sanitize_callback' => 'absint',
+			  'capability'        => 'edit_theme_options',
+		   )
+		);
+ 
+		$wp_customize->add_control( 'astral_post_title_size',
+		   array(
+			  'label' => __( 'Post title size' ),
+			  'description' => esc_html__( 'size of post title in post page and single page' ),
+			  'section' => 'astral_typography',
+			  'priority' => 10,
+			  'type' => 'select',
+			  'capability' => 'edit_theme_options',
+			  'choices' => array( 
+				 '1' => __( 'H1' ),
+				 '2' => __( 'H2' ),
+				 '3' => __( 'H3' ),
+				 '4' => __( 'H4' ),
+				 '5' => __( 'H5' ),
+				 '6' => __( 'H6' ),
+			  )
+		   )
+		);
 
 		function astral_sanitize_checkbox( $input ) {
 			return $input;

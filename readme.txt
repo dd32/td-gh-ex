@@ -27,6 +27,10 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 1.3 =
+* Post title size option added
+* Minor issue fixed in slider section
+
 = 1.2 =
 * Rate us notice added
 

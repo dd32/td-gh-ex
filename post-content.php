@@ -1,11 +1,12 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class( 'astral_blog' ); ?>>
-    <h3 class="card-title">
+<?php $astral_post_title_size = get_theme_mod('astral_post_title_size','3'); ?>
+    <h<?php echo esc_html($astral_post_title_size); ?> class="card-title">
 		<?php if ( is_single() || is_page() ) {
 			the_title();
 		} else { ?>
             <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a>
 		<?php } ?>
-    </h3>
+    </h<?php echo esc_html($astral_post_title_size); ?>>
     <hr>
 
 	<?php
