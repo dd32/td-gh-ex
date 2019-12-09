@@ -3,10 +3,10 @@ Contributors: tishonator
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
 sticky-post, theme-options, footer-widgets
-Requires at least: 4.8.0
-Tested up to: 4.9.6
-Requires PHP: 5.6.0
+Tested up to: 5.3
 Stable tag: 1.4.5
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 1.5.9 =
+* move 'Requires PHP' and 'Requires at least' tags into style.css
 
 = 1.5.8 =
 * fix issue with sub-menu items not displayed under IE 11 and Edge browsers

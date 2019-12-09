@@ -4,11 +4,13 @@ Description: fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Them
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.5.8
+Version: 1.5.9
 Text Domain: fmuzz
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 */
 
 /* general styles */
@@ -1756,9 +1758,9 @@ img.wp-post-image {
 	height:560px;
 	text-align:center;
 	background-image: linear-gradient(to bottom, #FAFAFA, #999999);
-	background-attachment: fixed;
   	background-position: center top;
   	background-repeat:no-repeat;
+  	background-size:cover;
 }
 
 #page-header,
@@ -2082,6 +2084,11 @@ article > *.alignfull,
     width: calc( 125% + 150px);
     max-width: calc( 125% + 150px);
   }
+}
+
+.wp-block-group:not(.alignwide):not(.alignfull) * {
+    max-width: 100%;
+    margin-left: 0;
 }
 
 article > *.alignleft,
@@ -3278,6 +3285,14 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	.product_list_widget li:nth-child(2n + 1) {
 		clear:both;
 	}
+
+	.woocommerce table.shop_table td {
+		padding:5px;
+	}
+
+	.woocommerce td.product-quantity {
+		min-width:10px;
+	}
 }
 
 @media screen and (max-width: 360px) {
@@ -3781,7 +3796,7 @@ mark {
 
     #navmain .sub-menu-item-toggle {
         display:inline-block;
-        margin:10px 10px 0 0;
+        padding:10px;
         float:right;
     }
 
