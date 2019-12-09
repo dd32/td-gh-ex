@@ -4,11 +4,13 @@ Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Resp
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 2.0.9
+Version: 2.1.0
 Text Domain: fkidd
 Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP: 5.6.0
+Requires at least: 4.8.0
 */
 
 /* general styles */
@@ -1846,6 +1848,11 @@ article > *.alignfull,
   }
 }
 
+.wp-block-group:not(.alignwide):not(.alignfull) * {
+    max-width: 100%;
+    margin-left: 0;
+}
+
 article > *.alignleft,
 .entry .entry-summary > *.alignleft {
   /*rtl:ignore*/
@@ -3043,6 +3050,14 @@ article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
 	.product_list_widget li:nth-child(2n + 1) {
 		clear:both;
 	}
+
+	.woocommerce table.shop_table td {
+		padding:5px;
+	}
+
+	.woocommerce td.product-quantity {
+		min-width:10px;
+	}
 }
 
 @media screen and (max-width: 360px) {
@@ -3486,7 +3501,7 @@ mark {
 
     #navmain .sub-menu-item-toggle {
         display:inline-block;
-        margin:10px 10px 0 0;
+        padding:10px;
         float:right;
     }
 

@@ -11,6 +11,7 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<?php wp_body_open(); ?>
 		<a class="skip-link screen-reader-text" href="#main-content-wrapper">
 			<?php _e( 'Skip to content', 'fkidd' ); ?>
 		</a>
