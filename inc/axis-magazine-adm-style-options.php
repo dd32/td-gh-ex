@@ -1,5 +1,7 @@
 <?php
 
+//admin style
+
 if (!function_exists('axis_magazine_admin_style')) {
 	function axis_magazine_admin_style($hook) {
 		

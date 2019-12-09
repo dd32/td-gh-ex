@@ -85,6 +85,13 @@
     box-sizing: border-box;
 }
 
+
+.axis-magazine-adm .theme-upgrade table tbody tr td .number-index-styles{
+	font-weight: 800;
+    font-size: 21px;
+}
+
+
 .axis-magazine-adm .theme-upgrade table tbody tr .go-pro .link {
 	display: inline-block;
     background: #10d710;

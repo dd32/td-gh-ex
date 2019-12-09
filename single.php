@@ -2,7 +2,7 @@
 /**
  * The template for displaying details of the posts
  *
- * @version    0.0.02
+ * @version    0.0.03
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.

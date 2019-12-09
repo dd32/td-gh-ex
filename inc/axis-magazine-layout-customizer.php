@@ -1,5 +1,7 @@
 <?php
 
+//layout customizer
+
 function axis_magazine_sanitize_select( $input, $setting ) {
 	
 	// Ensure input is a slug
@@ -161,12 +163,12 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	    'settings' => 'axis_magazine_index_class_name_settings',
 	    'type'     	=> 'select',
 	    'choices'	=> array(
-	    				'axis-magazine-index' 		=> __('List Layout - Right Sidebar', 'axis-magazine'),
-	    				'axis-magazine-index-three' 	=> __('List Layout (Full Width) - No Sidebar', 'axis-magazine'),
+	    				'axis-magazine-index' 		=> __('Split Layout - Right Sidebar', 'axis-magazine'),
+	    				'axis-magazine-index-three' => __('List Layout (Full Width) - No Sidebar', 'axis-magazine'),
+	    				'axis-magazine-index-six' 	=> __('List Layout - Right Sidebar', 'axis-magazine'),
 	    				'axis-magazine-index-two' 	=> __('Grid Layout - Right Sidebar', 'axis-magazine'),
 	    				'axis-magazine-index-four' 	=> __('Grid Layout (Two Columns) - No Sidebar', 'axis-magazine'),
 	    				'axis-magazine-index-five' 	=> __('Grid Layout (Three Columns) - No Sidebar', 'axis-magazine'),
-	    				'axis-magazine-index-six' 	=> __('Split Layout - Right Sidebar', 'axis-magazine'),
 	    			   )
 	)));
 
