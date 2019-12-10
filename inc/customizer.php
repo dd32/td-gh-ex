@@ -793,6 +793,31 @@ function advance_portfolio_customize_register($wp_customize) {
 		'section' => 'advance_portfolio_footer_section',
 		'type'    => 'text',
 	));
+
+	$wp_customize->add_setting('advance_portfolio_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_portfolio_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-portfolio'),
+      	'section' => 'advance_portfolio_footer_section',
+	));
+
+	$wp_customize->add_setting('advance_portfolio_scroll_setting',array(
+        'default' => __('Right','advance-portfolio'),
+        'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_portfolio_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-portfolio'),
+        'section' => 'advance_portfolio_footer_section',
+        'choices' => array(
+            'Left' => __('Left','advance-portfolio'),
+            'Right' => __('Right','advance-portfolio'),
+            'Center' => __('Center','advance-portfolio'),
+        ),
+	) );
 }
 add_action('customize_register', 'advance_portfolio_customize_register');
 

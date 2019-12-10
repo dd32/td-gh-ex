@@ -50,6 +50,18 @@
         <p><?php echo esc_html(get_theme_mod('advance_portfolio_footer_copy', __('Copyright 2018 -', 'advance-portfolio')));?> <?php advance_portfolio_credit();?></p>
     </div>
 </footer>
+
+<?php if( get_theme_mod( 'advance_portfolio_enable_disable_scroll',true) != '') { ?>
+    <?php $theme_lay = get_theme_mod( 'advance_portfolio_scroll_setting','Right');
+      if($theme_lay == 'Left'){ ?>
+        <button id="scroll-top" class="left-align" title="<?php esc_attr_e('Scroll to Top','advance-portfolio'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-portfolio'); ?></span></button>
+      <?php }else if($theme_lay == 'Center'){ ?>
+        <button id="scroll-top" class="center-align" title="<?php esc_attr_e('Scroll to Top','advance-portfolio'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-portfolio'); ?></span></button>
+      <?php }else{ ?>
+        <button id="scroll-top" title="<?php esc_attr_e('Scroll to Top','advance-portfolio'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-portfolio'); ?></span></button>
+    <?php }?>
+<?php }?>
+
 <?php wp_footer();?>
 </body>
 </html>
