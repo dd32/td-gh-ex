@@ -685,6 +685,23 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'panel' => 'bb_mobile_application_panel_id',
 	));
 
+	$wp_customize->add_setting('bb_mobile_application_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices',
+    ));
+    $wp_customize->add_control('bb_mobile_application_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'bb-mobile-application'),
+        'section'     => 'bb_mobile_application_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'bb-mobile-application'),
+        'choices' => array(
+            '1'     => __('One', 'bb-mobile-application'),
+            '2'     => __('Two', 'bb-mobile-application'),
+            '3'     => __('Three', 'bb-mobile-application'),
+            '4'     => __('Four', 'bb-mobile-application')
+        ),
+    ));
+
 	$wp_customize->add_setting('bb_mobile_application_footer_copy',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
@@ -694,6 +711,31 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'section'	=> 'bb_mobile_application_footer_section',
 		'type'		=> 'text'
 	));	
+
+	$wp_customize->add_setting('bb_mobile_application_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_mobile_application_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','bb-mobile-application'),
+      	'section' => 'bb_mobile_application_footer_section',
+	));
+
+	$wp_customize->add_setting('bb_mobile_application_scroll_setting',array(
+        'default' => __('Right','bb-mobile-application'),
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_mobile_application_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','bb-mobile-application'),
+        'section' => 'bb_mobile_application_footer_section',
+        'choices' => array(
+            'Left' => __('Left','bb-mobile-application'),
+            'Right' => __('Right','bb-mobile-application'),
+            'Center' => __('Center','bb-mobile-application'),
+        ),
+	) );
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	
 

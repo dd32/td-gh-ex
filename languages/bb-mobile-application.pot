@@ -114,7 +114,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:30
+#: footer.php:50
 msgid 'Copyright 2016'
 msgstr ""
 
@@ -152,39 +152,11 @@ msgstr ""
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:104
-msgid 'Footer Nav 1'
+#: functions.php:107
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:105
-msgid 'footer-1'
-msgstr ""
-
-#: functions.php:114
-msgid 'Footer Nav 2'
-msgstr ""
-
-#: functions.php:115
-msgid 'footer-2'
-msgstr ""
-
-#: functions.php:124
-msgid 'Footer Nav 3'
-msgstr ""
-
-#: functions.php:125
-msgid 'footer-3'
-msgstr ""
-
-#: functions.php:134
-msgid 'Footer Nav 4'
-msgstr ""
-
-#: functions.php:135
-msgid 'footer-4'
-msgstr ""
-
-#: functions.php:368
+#: functions.php:342
 msgid 'Mobile App WordPress Theme'
 msgstr ""
 
@@ -551,19 +523,67 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:674
+#: inc/customizer.php:677
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:684
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:683
+#: inc/customizer.php:694
+msgid 'Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:696
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:698
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:699
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:700
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:701
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:710
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:769
+#: inc/customizer.php:721
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:726
+#: inc/customizer.php:735
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:731
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:734
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:736
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:821
 msgid 'Upgrade to Pro'
 msgstr ""
 
-#: inc/customizer.php:770
+#: inc/customizer.php:822
 msgid 'Go Pro'
 msgstr ""
-

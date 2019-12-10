@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
-Version: 1.2.7
+Version: 1.2.8
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-mobile-application
@@ -30,6 +30,7 @@ body{
 	background-color:#fff;
 	color:#000;
 	font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 img{
 	margin:0;
@@ -557,7 +558,7 @@ a.r_button {
 .search-form input.search-submit {
   background: #3ae0bf;
   border: none;
-  display: -webkit-inline-box;
+  display: inline-block;
   padding: 11px;
   font-size: 14px;
   color: #000;
@@ -666,6 +667,33 @@ a.r_button {
 }
 #footer table#wp-calendar td a{
 	color: #fff;
+}
+/*scroll to top*/
+#scroll-top{
+  background:#252525;
+  border:2px solid #252525;
+  color:#fff;
+  cursor:pointer;
+  width:65px;
+  height:65px;
+  opacity:0.5;
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  z-index:9999;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  font-size:20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: none;
+}
+.left-align{
+  left: 20px;
+}
+.center-align {
+  left: 50%;
+  right: 50%;
 }
 /*woocommerce*/
 .woocommerce-product-gallery__image {
@@ -1107,7 +1135,6 @@ div#comments a{
 	padding:10px 0;
 	width:100%;
 	font-size:17px;
-	float:left;
 	margin:0;
   color: #000;
 }
@@ -1131,7 +1158,8 @@ label{
   background: #fff;
   padding: 10px;
 }
-#sidebar ul {list-style:none;
+#sidebar ul {
+  list-style:none;
 	margin:6px;
 	padding:0;
 	font-size:16px;
@@ -1345,11 +1373,23 @@ iframe{
   #slider .know-btn{
     margin: 0;
   }
+  .center-align {
+    left: 40%;
+    right: 50%;
+  }
 }
-@media screen and (min-width:720px) and (max-width: 768px;){
+@media screen and (min-width:720px) and (max-width: 768px){
 	.copyright-wrapper th{
 		padding: 0px;
 	}
+}
+@media screen and (min-width:768px) and (max-width: 992px){
+  #sidebar th{
+    padding:5px;
+  }
+  #sidebar td{
+    padding:0;
+  }
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
 

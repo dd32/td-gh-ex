@@ -100,45 +100,19 @@ function bb_mobile_application_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	register_sidebar( array(
-		'name'          => __( 'Footer Nav 1', 'bb-mobile-application' ),
-		'description'   => __( 'footer-1', 'bb-mobile-application' ),
-		'id'            => 'footer-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Nav 2', 'bb-mobile-application' ),
-		'description'   => __( 'footer-2', 'bb-mobile-application' ),
-		'id'            => 'footer-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Nav 3', 'bb-mobile-application' ),
-		'description'   => __( 'footer-3', 'bb-mobile-application' ),
-		'id'            => 'footer-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Nav 4', 'bb-mobile-application' ),
-		'description'   => __( 'footer-4', 'bb-mobile-application' ),
-		'id'            => 'footer-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	//Footer widget areas
+	$widget_areas = get_theme_mod('bb_mobile_application_footer_widget_areas', '4');
+	for ($i=1; $i<=$widget_areas; $i++) {
+		register_sidebar( array(
+			'name'          => __( 'Footer Nav ', 'bb-mobile-application' ) . $i,
+			'id'            => 'footer-' . $i,
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}
 }
 add_action( 'widgets_init', 'bb_mobile_application_widgets_init' );
 
