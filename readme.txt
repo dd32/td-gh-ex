@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 7.2.14
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -127,6 +127,10 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
 = 1.4.2 =
   * Added Footer widget area option in customizer.
   * Updated POT file.
+
+= 1.4.3 =
+  * Added scroll to top button in customizer.
+  * Updated pot file.
 
 == Resources ==
 

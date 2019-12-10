@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/wp-ecommerce-store-wordpress-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-ecommerce-store
@@ -543,6 +543,33 @@ form.woocommerce-product-search button[type="submit"] {
 .copyright-wrapper .textwidget a{
   color: #fff;
   text-decoration: underline;
+}
+/*scroll to top*/
+#scroll-top{
+  background:#252525;
+  border:2px solid #252525;
+  color:#fff;
+  cursor:pointer;
+  width:65px;
+  height:65px;
+  opacity:0.5;
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  z-index:9999;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  font-size:20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: none;
+}
+.left-align{
+  left: 20px;
+}
+.center-align {
+  left: 50%;
+  right: 50%;
 }
 /*----------static page----------*/
 .cart_icon {
@@ -1131,6 +1158,9 @@ h2.woocommerce-loop-product__title,
 .woocommerce-MyAccount-navigation li {
   list-style: none !important;
 }
+.woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover {
+  color: #000 !important;
+}
 /* Page */
 .title-box{
   background-repeat:no-repeat;
@@ -1606,6 +1636,10 @@ iframe{
     max-width: 100%; 
     top: 10px;
   }
+  .center-align {
+    left: 40%;
+    right: 50%;
+  }
 }
 @media screen and (min-width:720px){
   input#woocommerce-product-search-field {
@@ -1644,6 +1678,9 @@ iframe{
   }
   .toggle-menu{
     margin: 0 0 0 auto !important;
+  }
+  .comment-body {
+    margin-bottom: 2em;
   }
 }
 @media screen and (max-width: 768px) and (min-width: 721px){
@@ -1888,6 +1925,12 @@ iframe{
   }
   #slider .inner_carousel h1{
     display: none;
+  }
+  #sidebar ul ul li{
+    padding: 0 0 0 5px;
+  }
+  #sidebar ul ul li a{
+    padding-left: 10px;
   }
 }
 

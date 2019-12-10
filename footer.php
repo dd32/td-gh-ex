@@ -7,7 +7,6 @@
  * @package Ecommerce Store
  */
 ?>
-
 <footer role="contentinfo">
   <?php //Set widget areas classes based on user choice
     $widget_areas = get_theme_mod('bb_ecommerce_store_footer_widget_areas', '4');
@@ -54,6 +53,17 @@
     <div class="clear"></div>
   </div>
 </footer>
+
+<?php if( get_theme_mod( 'bb_ecommerce_store_enable_disable_scroll',true) != '') { ?>
+  <?php $theme_lay = get_theme_mod( 'bb_ecommerce_store_scroll_setting','Right');
+    if($theme_lay == 'Left'){ ?>
+      <button id="scroll-top" class="left-align" title="<?php esc_attr_e('Scroll to Top','bb-ecommerce-store'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'bb-ecommerce-store'); ?></span></button>
+    <?php }else if($theme_lay == 'Center'){ ?>
+      <button id="scroll-top" class="center-align" title="<?php esc_attr_e('Scroll to Top','bb-ecommerce-store'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'bb-ecommerce-store'); ?></span></button>
+    <?php }else{ ?>
+      <button id="scroll-top" title="<?php esc_attr_e('Scroll to Top','bb-ecommerce-store'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'bb-ecommerce-store'); ?></span></button>
+  <?php }?>
+<?php }?>
 
 <?php wp_footer(); ?>
 </body>
