@@ -78,6 +78,17 @@ nav a {
        >ul>.menu-item-has-children {
             >ul {
                 left: 85%;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &:hover,
+            &:focus {
+                >ul {
+                    opacity: 1;
+                    visibility: visible;
+                    @include transform( translate( -10px, -2.4rem ) );
+                }
             }
 
             >a {

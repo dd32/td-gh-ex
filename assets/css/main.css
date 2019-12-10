@@ -1037,7 +1037,15 @@ nav a {
   padding-left: 6px;
   font: normal normal normal 18px/1 FontAwesome; }
 .main-nav > .menu-item-has-children > ul > .menu-item-has-children > ul {
-  left: 85%; }
+  left: 85%;
+  opacity: 0;
+  visibility: hidden; }
+.main-nav > .menu-item-has-children > ul > .menu-item-has-children:hover > ul, .main-nav > .menu-item-has-children > ul > .menu-item-has-children:focus > ul {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(-10px, -2.4rem);
+  -ms-transform: translate(-10px, -2.4rem);
+  transform: translate(-10px, -2.4rem); }
 .main-nav > .menu-item-has-children > ul > .menu-item-has-children > a::after {
   content: "\f105";
   display: inline-block;
