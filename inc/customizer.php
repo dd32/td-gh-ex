@@ -778,6 +778,31 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'section' => 'advance_fitness_gym_footer_section',
 		'type'    => 'text',
 	));
+
+	$wp_customize->add_setting('advance_fitness_gym_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-fitness-gym'),
+      	'section' => 'advance_fitness_gym_footer_section',
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_scroll_setting',array(
+        'default' => __('Right','advance-fitness-gym'),
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-fitness-gym'),
+        'section' => 'advance_fitness_gym_footer_section',
+        'choices' => array(
+            'Left' => __('Left','advance-fitness-gym'),
+            'Right' => __('Right','advance-fitness-gym'),
+            'Center' => __('Center','advance-fitness-gym'),
+        ),
+	) );
 }
 add_action('customize_register', 'advance_fitness_gym_customize_register');
 

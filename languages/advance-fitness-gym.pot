@@ -620,6 +620,27 @@ msgstr ""
 msgid 'Copyright Text'
 msgstr ""
 
+#: inc/customizer.php:788
+msgid 'Show / Hide Scroll To Top'
+msgstr ""
+
+#: inc/customizer.php:793
+#: inc/customizer.php:802
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:798
+msgid 'Scroll To Top Position'
+msgstr ""
+
+#: inc/customizer.php:801
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:803
+msgid 'Center'
+msgstr ""
+
 #: inc/customizer.php:896
 msgid 'Fitness WordPress Theme'
 msgstr ""
