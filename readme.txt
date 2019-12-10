@@ -26,6 +26,9 @@ For more information about Rubine Lite please go to https://themezee.com/themes/
 
 == Changelog ==
 
+= 1.5.2 =
+* fixed missing featured content tag bug in WordPress Block Editor
+
 = 1.5.1 =
 * added font display swap to default theme fonts
 
