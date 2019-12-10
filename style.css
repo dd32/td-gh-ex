@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, translation ready and deeply customizable. It does not matter whether you are an experienced web developer or a WordPress newbie, setting up your own website with this theme does not need coding knowledge. This pet WordPress theme is optimized for search engines and will give your website higher rank. It has banners and sliders to make the theme more impressive. Advance Pet Care has sections like gallery and supports various post formats like image, gallery, video etc. It is embedded with social media icons. It is extensible with third party plugins. You can set up your very own online store and start selling products, all with the help of WooCommerce plugin which is compatible with it. Demo: https://www.themeshopy.com/advance-pet-care-pro/
-Version: 0.4.6
+Version: 0.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -1054,6 +1054,33 @@ table#wp-calendar td a {
 #footer .tagcloud a:hover{
   background-color: #b65741; 
 }
+/*scroll to top*/
+#scroll-top{
+  background:#252525;
+  border:2px solid #252525;
+  color:#fff;
+  cursor:pointer;
+  width:65px;
+  height:65px;
+  opacity:0.5;
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  z-index:9999;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  font-size:20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: none;
+}
+.left-align{
+  left: 20px;
+}
+.center-align {
+  left: 50%;
+  right: 50%;
+}
 /* Comments BOX */
 #comments {
   display: block;
@@ -1544,12 +1571,16 @@ iframe {
     margin-top: 4px;
     margin-bottom: 10px;
   }
+  .center-align {
+    left: 40%;
+    right: 50%;
+  }
 }
 @media screen and (min-width:720px){
 	#footer input[type="submit"]{
 		width: 100%;
 		float: none;
-		margin-top: 5px;
+		margin: 5px 0;
 	}
 	#footer input[type="search"]{
 		width: 100%;

@@ -608,10 +608,31 @@ msgstr ""
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:879
+#: inc/customizer.php:805
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:810
+#: inc/customizer.php:819
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:815
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:818
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:820
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:904
 msgid 'Pet Care Theme'
 msgstr ""
 
-#: inc/customizer.php:880
+#: inc/customizer.php:905
 msgid 'Go Pro'
 msgstr ""
