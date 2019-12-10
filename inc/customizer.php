@@ -769,10 +769,26 @@ function advance_startup_customize_register($wp_customize) {
 	//Footer
 	$wp_customize->add_section('advance_startup_footer_section', array(
 		'title'       => __('Footer Text', 'advance-startup'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-startup'),
 		'priority'    => null,
 		'panel'       => 'advance_startup_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_startup_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_startup_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_startup_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-startup'),
+        'section'     => 'advance_startup_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-startup'),
+        'choices' => array(
+            '1'     => __('One', 'advance-startup'),
+            '2'     => __('Two', 'advance-startup'),
+            '3'     => __('Three', 'advance-startup'),
+            '4'     => __('Four', 'advance-startup')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_startup_footer_copy', array(
 		'default'           => '',
@@ -783,6 +799,32 @@ function advance_startup_customize_register($wp_customize) {
 		'section' => 'advance_startup_footer_section',
 		'type'    => 'text',
 	));
+
+	$wp_customize->add_setting('advance_startup_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_startup_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-startup'),
+      	'section' => 'advance_startup_footer_section',
+	));
+
+	$wp_customize->add_setting('advance_startup_scroll_setting',array(
+        'default' => __('Right','advance-startup'),
+        'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_startup_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-startup'),
+        'section' => 'advance_startup_footer_section',
+        'choices' => array(
+            'Left' => __('Left','advance-startup'),
+            'Right' => __('Right','advance-startup'),
+            'Center' => __('Center','advance-startup'),
+        ),
+	) );
+	
 }
 add_action('customize_register', 'advance_startup_customize_register');
 
