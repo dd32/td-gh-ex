@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3
 Requires PHP: 7.2.14
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GNU General Public License v3.0
 License URI:  http://www.gnu.org/licenses/gpl.html
 
@@ -88,6 +88,11 @@ BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage
   * Added show / hide author, comment, post date and Single Post tags option.
   * Added blog excerpt length option.
   * Added button text option.
+  * Updated POT file.
+
+= 1.2.5 =
+  * Added Footer widget area option in customizer.
+  * Added scroll to top button in customizer.
   * Updated POT file.
 
 == Resources ==

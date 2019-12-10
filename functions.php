@@ -98,45 +98,19 @@ function bb_wedding_bliss_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	register_sidebar( array(
-		'name'          => __( 'Footer Navigation 1', 'bb-wedding-bliss' ),
-		'description'   => __( 'Appears on footer', 'bb-wedding-bliss' ),
-		'id'            => 'footer-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Navigation 2', 'bb-wedding-bliss' ),
-		'description'   => __( 'Appears on footer', 'bb-wedding-bliss' ),
-		'id'            => 'footer-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Navigation 3', 'bb-wedding-bliss' ),
-		'description'   => __( 'Appears on footer', 'bb-wedding-bliss' ),
-		'id'            => 'footer-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer Navigation 4', 'bb-wedding-bliss' ),
-		'description'   => __( 'Appears on footer', 'bb-wedding-bliss' ),
-		'id'            => 'footer-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+	//Footer widget areas
+	$widget_areas = get_theme_mod('bb_wedding_bliss_footer_widget_areas', '4');
+	for ($i=1; $i<=$widget_areas; $i++) {
+		register_sidebar( array(
+			'name'          => __( 'Footer Nav ', 'bb-wedding-bliss' ) . $i,
+			'id'            => 'footer-' . $i,
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}
 }
 add_action( 'widgets_init', 'bb_wedding_bliss_widgets_init' );
 

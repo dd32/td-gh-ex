@@ -4,7 +4,7 @@ Theme URI:  https://www.themeshopy.com/themes/bb-free-wedding-bliss-wordpress-th
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.2.4
+Version: 1.2.5
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -446,7 +446,7 @@ ul.list_nav {
   color: #fff;
   font-size: 15px;	
   letter-spacing: 1px;
-  padding: 16px 25px;
+  padding: 16px 25px 16px 10px;
   text-transform: capitalize;
   font-style: italic;
 }
@@ -787,7 +787,7 @@ table#wp-calendar {
 #sidebar td#prev a,
 #sidebar th {
 	color:#737171 !important;
-	padding: 10px;
+	padding: 8px;
 }
 #footer td {
     padding: 5px;
@@ -796,7 +796,7 @@ table#wp-calendar {
 #footer th,
 #sidebar th {
     text-align: center;
-    padding: 0px;
+    padding: 5px;
     color: #fff;
 }
 #footer select,
@@ -876,6 +876,33 @@ table#wp-calendar {
 .abovecopyright {
     background: rgb(4, 14, 29);
     padding: 0px 0px;
+}
+/*scroll to top*/
+#scroll-top{
+  background:#252525;
+  border:2px solid #252525;
+  color:#fff;
+  cursor:pointer;
+  width:65px;
+  height:65px;
+  opacity:0.5;
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  z-index:9999;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  font-size:20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: none;
+}
+.left-align{
+  left: 20px;
+}
+.center-align {
+  left: 50%;
+  right: 50%;
 }
 /* --------- Bride & Groom ------- */
 .contentbox a {
@@ -1340,6 +1367,13 @@ input.search-field {
 }
 #sidebar ul li a{
 	color:#151c27;
+	padding-left: 5px;
+}
+#sidebar ul ul li a{
+	padding-left: 12px;
+}
+#sidebar ul ul li{
+	padding: 0 0 0 8px;
 }
 #sidebar ul li a:hover{
 	color:#b79338;
@@ -1513,6 +1547,10 @@ iframe{
 	#love-Story, #moreevent{
 		margin: 3% 0;
 	}
+	.center-align {
+	  left: 40%;
+	  right: 50%;
+	}
 }
 
 @media screen and (min-width: 720px) and (max-width: 768px){
@@ -1527,7 +1565,7 @@ iframe{
 	    opacity: 1;
 	    padding: 0;
 	    background: #151c27;
-	}	
+	}
 }
 @media screen and (min-width: 991px) and (max-width: 1024px){
 	.logo a {

@@ -769,9 +769,25 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	//footer
 	$wp_customize->add_section('bb_wedding_bliss_footer_section',array(
 		'title'	=> __('Footer Text','bb-wedding-bliss'),
-		'description'	=> __('Add some text for footer like copyright etc.','bb-wedding-bliss'),
 		'panel' => 'bb_wedding_bliss_panel_id',
 	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'bb-wedding-bliss'),
+        'section'     => 'bb_wedding_bliss_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'bb-wedding-bliss'),
+        'choices' => array(
+            '1'     => __('One', 'bb-wedding-bliss'),
+            '2'     => __('Two', 'bb-wedding-bliss'),
+            '3'     => __('Three', 'bb-wedding-bliss'),
+            '4'     => __('Four', 'bb-wedding-bliss')
+        ),
+    ));
 	
 	$wp_customize->add_setting('bb_wedding_bliss_footer_copy',array(
 		'default'	=> '',
@@ -782,6 +798,31 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'section'	=> 'bb_wedding_bliss_footer_section',
 		'type'		=> 'text'
 	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','bb-wedding-bliss'),
+      	'section' => 'bb_wedding_bliss_footer_section',
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_scroll_setting',array(
+        'default' => __('Right','bb-wedding-bliss'),
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_footer_section',
+        'choices' => array(
+            'Left' => __('Left','bb-wedding-bliss'),
+            'Right' => __('Right','bb-wedding-bliss'),
+            'Center' => __('Center','bb-wedding-bliss'),
+        ),
+	) );
 		
 }
 add_action( 'customize_register', 'bb_wedding_bliss_customize_register' );	

@@ -123,7 +123,7 @@ msgstr ""
 msgid 'Comments are closed.'
 msgstr ""
 
-#: footer.php:32
+#: footer.php:52
 msgid 'Copyright 2017'
 msgstr ""
 
@@ -160,30 +160,11 @@ msgstr ""
 msgid "Third Column Sidebar"
 msgstr ""
 
-#: functions.php:102
-msgid 'Footer Navigation 1'
+#: functions.php:105
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:112
-msgid 'Footer Navigation 2'
-msgstr ""
-
-#: functions.php:122
-msgid 'Footer Navigation 3'
-msgstr ""
-
-#: functions.php:132
-msgid 'Footer Navigation 4'
-msgstr ""
-
-#: functions.php:103
-#: functions.php:113
-#: functions.php:123
-#: functions.php:133
-msgid "Appears on footer"
-msgstr ""
-
-#: functions.php:367
+#: functions.php:341
 msgid "Wedding WordPress Theme"
 msgstr ""
 
@@ -555,22 +536,67 @@ msgstr ""
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:761
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:762
-msgid 'Add some text for footer like copyright etc.'
+#: inc/customizer.php:764
+msgid 'Add Button Text'
 msgstr ""
 
 #: inc/customizer.php:771
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:781
+msgid 'Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:783
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:785
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:786
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:787
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:788
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:797
 msgid 'Copyright txt'
 msgstr ""
 
-#: inc/customizer.php:857
+#: inc/customizer.php:808
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:813
+#: inc/customizer.php:822
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:818
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:821
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:823
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:908
 msgid 'Upgrade to Pro'
 msgstr ""
 
-#: inc/customizer.php:858
+#: inc/customizer.php:909
 msgid 'Go Pro'
 msgstr ""

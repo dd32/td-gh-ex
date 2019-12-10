@@ -55,7 +55,6 @@ get_header(); ?>
         </div>
         <div class="clearfix"></div>
       </section>
-   
   <?php }?>
 
   <?php do_action( 'bb_wedding_bliss_after_slider' ); ?>
