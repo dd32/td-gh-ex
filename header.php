@@ -20,6 +20,14 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}
+?>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'unite' ); ?></a>
 <div id="page" class="hfeed site">
 	<div class="container header-area">
 		<?php do_action( 'before' ); ?>
