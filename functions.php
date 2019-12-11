@@ -226,3 +226,12 @@ function bayn_lite_style_editor_gutenberg() {
 	wp_enqueue_style( 'style-editor', get_theme_file_uri( '/style-editor.css' ), false );
 }
 add_action( 'enqueue_block_editor_assets', 'bayn_lite_style_editor_gutenberg' );
+
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}

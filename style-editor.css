@@ -167,17 +167,27 @@ blockquote p,
 blockquote.wp-block-quote.is-large p {
 	margin-bottom: 2em;
 	font-style: italic;
-	color: #999;
 	font-family:  'Georgia', Times, sans-serif;
 }
 blockquote.wp-block-quote,
 blockquote.wp-block-quote.is-large,
-.wp-block-pullquote blockquote{
+.wp-block-pullquote blockquote,
+.wp-block-quote.is-style-large {
 	text-align: left;
 	border: 0;
 	font-size: 18px;
 	padding-left: 2em;
 	position: relative;
+}
+.wp-block-pullquote.is-style-solid-color {
+	padding: 20px 0;
+}
+.wp-block-quote.is-style-large p,
+.wp-block-quote.is-style-default p,
+.wp-block-pullquote.is-style-solid-color blockquote>.block-editor-rich-text p {
+	font-size: 18px;
+	line-height: 1.6;
+	margin-bottom: 36px;
 }
 blockquote.wp-block-quote:before, 
 blockquote.wp-block-quote.is-large:before,
@@ -194,20 +204,21 @@ blockquote.wp-block-quote.is-large:before,
 	border: none;
 	padding: 0px;
 	text-align: left;
+	color: #999;
 }
 .wp-block-pullquote p{
 	text-align: left;
 }
 .wp-block-quote__citation,
-.block-editor-rich-text__editable.editor-rich-text__editable.wp-block-pullquote__citation {
+.wp-block-pullquote__citation {
 	font-size: 18px;
 	font-style: italic;
 	text-align: left;
-	color: #999;
 	font-family:  'Georgia';
 	margin-top: 0px;
 	text-transform: unset;
 }
+
 .wp-block-quote.is-large p,
 .wp-block-pullquote blockquote>.block-editor-rich-text p,
 .block-editor-block-list__block[data-type="core/pullquote"][data-align=left] .block-editor-rich-text p,
