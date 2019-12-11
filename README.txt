@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.34
+* Style tweaks/fixes
+* Added Customizer note
+* Updated the language .pot file
+Premium: Added Numberic Pagination for Blog List & search pages
+Premium: Added extra settings for new Numeric Pagination
+
 #### 1.1.33
 * Style tweaks/fixes
 * Fix WooCommerce mobile styling if product widths are set

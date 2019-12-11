@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-11-18 11:10+0200\n"
+"POT-Creation-Date: 2019-12-11 11:01+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -607,11 +607,12 @@ msgstr ""
 
 #: customizer/customizer-options.php:564
 msgid ""
-"<b>Premium Extra Features:</b><br />- Set Blog, Archives and Single pages to "
-"Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- "
-"Set Blog list & archives to use post summary<br />- Extra summary "
-"settings<br />- Set custom Blocks layout columns<br />- Set spacing of "
-"Blocks layout<br />- Change Blocks styling (Image or Post layouts)"
+"<b>Premium Extra Features:</b><br />- Change Blog Pagination to Numberic "
+"Pagination<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- "
+"Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & "
+"archives to use post summary<br />- Extra summary settings<br />- Set custom "
+"Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change "
+"Blocks styling (Image or Post layouts)"
 msgstr ""
 
 #: customizer/customizer-options.php:571
@@ -2136,6 +2137,6 @@ msgid ""
 "recommend it to other users."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:178
+#: upgrade/tpl/upgrade-page.php:180
 msgid "Avant Changelog:"
 msgstr ""

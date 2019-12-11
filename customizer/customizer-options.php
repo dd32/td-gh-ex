@@ -561,7 +561,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-blog',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Set Blog, Archives and Single pages to Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & archives to use post summary<br />- Extra summary settings<br />- Set custom Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling (Image or Post layouts)', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change Blog Pagination to Numberic Pagination<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & archives to use post summary<br />- Extra summary settings<br />- Set custom Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling (Image or Post layouts)', 'avant' )
     );
 
     $section = 'avant-blog-section-post';

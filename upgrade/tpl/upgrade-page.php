@@ -180,6 +180,15 @@
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
             
             <ul>
+                <li class="upgrade-changelog-v">#### 1.1.34</li>
+                <li>Style fixes/tweaks</li>
+                <li>Added Customizer note</li>
+                <li>Updated language .pot file</li>
+                <li><span>Premium:</span> Added Numberic Pagination for Blog List & search pages</li>
+                <li><span>Premium:</span> Added extra settings for new Numeric Pagination</li>
+            </ul>
+
+            <ul>
                 <li class="upgrade-changelog-v">#### 1.1.33</li>
                 <li>Style fixes/tweaks</li>
                 <li>Fix WooCommerce mobile styling if product widths are set</li>
