@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2019-11-28 12:14+0100\n"
-"PO-Revision-Date: 2019-11-28 12:15+0100\n"
+"POT-Creation-Date: 2019-12-11 10:26+0100\n"
+"PO-Revision-Date: 2019-12-11 10:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -720,7 +720,7 @@ msgstr ""
 msgid "Posts and pages settings"
 msgstr ""
 
-#: inc/customizer.php:90 inc/customizer.php:2533
+#: inc/customizer.php:90 inc/customizer.php:2549
 msgid "WooCommerce Settings"
 msgstr ""
 
@@ -811,13 +811,13 @@ msgstr ""
 msgid "Social network float position"
 msgstr ""
 
-#: inc/customizer.php:269 inc/customizer.php:2011 inc/customizer.php:2714
-#: inc/customizer.php:2754
+#: inc/customizer.php:269 inc/customizer.php:2012 inc/customizer.php:2730
+#: inc/customizer.php:2770
 msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:270 inc/customizer.php:2012 inc/customizer.php:2715
-#: inc/customizer.php:2755
+#: inc/customizer.php:270 inc/customizer.php:2013 inc/customizer.php:2731
+#: inc/customizer.php:2771
 msgid "Left"
 msgstr ""
 
@@ -1445,350 +1445,358 @@ msgstr ""
 msgid "Uppercase"
 msgstr ""
 
-#: inc/customizer.php:1983
+#: inc/customizer.php:1973
+msgid "Capitalize"
+msgstr ""
+
+#: inc/customizer.php:1984
 msgid "Menu links style"
 msgstr ""
 
-#: inc/customizer.php:1989
+#: inc/customizer.php:1990
 msgid "Minimal"
 msgstr ""
 
-#: inc/customizer.php:1990
+#: inc/customizer.php:1991
 msgid "Minimal Top"
 msgstr ""
 
-#: inc/customizer.php:1991
+#: inc/customizer.php:1992
 msgid "Minimal Side"
 msgstr ""
 
-#: inc/customizer.php:1992
+#: inc/customizer.php:1993
 msgid "Bounce"
 msgstr ""
 
-#: inc/customizer.php:1993
+#: inc/customizer.php:1994
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:2004
+#: inc/customizer.php:2005
 msgid "Menu position"
 msgstr ""
 
-#: inc/customizer.php:2023
+#: inc/customizer.php:2024
+msgid "Sub-menu effect on hover"
+msgstr ""
+
+#: inc/customizer.php:2039
 msgid "Max height for the logo in pixel (if used)"
 msgstr ""
 
-#: inc/customizer.php:2024
+#: inc/customizer.php:2040
 msgid "Default value 65"
 msgstr ""
 
-#: inc/customizer.php:2043
+#: inc/customizer.php:2059
 msgid "Mobile menu style"
 msgstr ""
 
-#: inc/customizer.php:2051 inc/partials/com-header.php:133
+#: inc/customizer.php:2067 inc/partials/com-header.php:133
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer.php:2056
+#: inc/customizer.php:2072
 msgid "Mobile menu text"
 msgstr ""
 
-#: inc/customizer.php:2076
+#: inc/customizer.php:2092
 msgid "Mobile Menu Icon"
 msgstr ""
 
-#: inc/customizer.php:2090
+#: inc/customizer.php:2106
 msgid "Open mobile menu"
 msgstr ""
 
-#: inc/customizer.php:2097
+#: inc/customizer.php:2113
 msgid "Dropdown"
 msgstr ""
 
-#: inc/customizer.php:2098
+#: inc/customizer.php:2114
 msgid "Push menu"
 msgstr ""
 
-#: inc/customizer.php:2104 inc/partials/com-header.php:236
+#: inc/customizer.php:2120 inc/partials/com-header.php:236
 #: inc/partials/com-header.php:373
 msgid "Close menu"
 msgstr ""
 
-#: inc/customizer.php:2109
+#: inc/customizer.php:2125
 msgid "Text to close the menu"
 msgstr ""
 
-#: inc/customizer.php:2131
+#: inc/customizer.php:2147
 msgid "Main blog page"
 msgstr ""
 
-#: inc/customizer.php:2143
+#: inc/customizer.php:2159
 msgid "Blog page, show posts"
 msgstr ""
 
-#: inc/customizer.php:2149
+#: inc/customizer.php:2165
 msgid "Show excerpt"
 msgstr ""
 
-#: inc/customizer.php:2150
+#: inc/customizer.php:2166
 msgid "Show grid"
 msgstr ""
 
-#: inc/customizer.php:2151
+#: inc/customizer.php:2167
 msgid "Show full post"
 msgstr ""
 
-#: inc/customizer.php:2162
+#: inc/customizer.php:2178
 msgid "Number of columns"
 msgstr ""
 
-#: inc/customizer.php:2169 inc/customizer.php:2914
+#: inc/customizer.php:2185 inc/customizer.php:2930
 msgid "1"
 msgstr ""
 
-#: inc/customizer.php:2170 inc/customizer.php:2915
+#: inc/customizer.php:2186 inc/customizer.php:2931
 msgid "2"
 msgstr ""
 
-#: inc/customizer.php:2171 inc/customizer.php:2916
+#: inc/customizer.php:2187 inc/customizer.php:2932
 msgid "3"
 msgstr ""
 
-#: inc/customizer.php:2172 inc/customizer.php:2917
+#: inc/customizer.php:2188 inc/customizer.php:2933
 msgid "4"
 msgstr ""
 
-#: inc/customizer.php:2183
+#: inc/customizer.php:2199
 msgid "Text lenght for blog excerpt (number of words)"
 msgstr ""
 
-#: inc/customizer.php:2198
+#: inc/customizer.php:2214
 msgid "Custom Excerpt Final"
 msgstr ""
 
-#: inc/customizer.php:2213
+#: inc/customizer.php:2229
 msgid "Show \"read more\" button"
 msgstr ""
 
-#: inc/customizer.php:2223 template-parts/content.php:61
+#: inc/customizer.php:2239 template-parts/content.php:61
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer.php:2229
+#: inc/customizer.php:2245
 msgid "Text button for \"read more\""
 msgstr ""
 
-#: inc/customizer.php:2249
+#: inc/customizer.php:2265
 msgid "Show featured images (if exist) in the posts list"
 msgstr ""
 
-#: inc/customizer.php:2267
+#: inc/customizer.php:2283
 msgid "Single blog posts"
 msgstr ""
 
-#: inc/customizer.php:2279 inc/customizer.php:2417
+#: inc/customizer.php:2295 inc/customizer.php:2433
 msgid "Featured image style (if set)"
 msgstr ""
 
-#: inc/customizer.php:2285 inc/customizer.php:2423
+#: inc/customizer.php:2301 inc/customizer.php:2439
 msgid "Featured image inside the content"
 msgstr ""
 
-#: inc/customizer.php:2286 inc/customizer.php:2424
+#: inc/customizer.php:2302 inc/customizer.php:2440
 msgid "Big Featured image in the header"
 msgstr ""
 
-#: inc/customizer.php:2297 inc/customizer.php:2435
+#: inc/customizer.php:2313 inc/customizer.php:2451
 msgid "Overlay featured image to the main menu"
 msgstr ""
 
-#: inc/customizer.php:2312 inc/customizer.php:2450
+#: inc/customizer.php:2328 inc/customizer.php:2466
 msgid "Featured image fixed inside the box"
 msgstr ""
 
-#: inc/customizer.php:2327 inc/customizer.php:2465
+#: inc/customizer.php:2343 inc/customizer.php:2481
 msgid "Featured image height (in pixel)"
 msgstr ""
 
-#: inc/customizer.php:2328 inc/customizer.php:2466
+#: inc/customizer.php:2344 inc/customizer.php:2482
 msgid "Default value 500"
 msgstr ""
 
-#: inc/customizer.php:2353 inc/customizer.php:2491
+#: inc/customizer.php:2369 inc/customizer.php:2507
 msgid "Opacity color"
 msgstr ""
 
-#: inc/customizer.php:2368 inc/customizer.php:2506
+#: inc/customizer.php:2384 inc/customizer.php:2522
 msgid "Title position"
 msgstr ""
 
-#: inc/customizer.php:2375 inc/customizer.php:2513
+#: inc/customizer.php:2391 inc/customizer.php:2529
 msgid "Inside the content"
 msgstr ""
 
-#: inc/customizer.php:2376 inc/customizer.php:2514
+#: inc/customizer.php:2392 inc/customizer.php:2530
 msgid "Inside the header"
 msgstr ""
 
-#: inc/customizer.php:2387
+#: inc/customizer.php:2403
 msgid "Show previous and next post"
 msgstr ""
 
-#: inc/customizer.php:2405
+#: inc/customizer.php:2421
 msgid "Single pages"
 msgstr ""
 
-#: inc/customizer.php:2534
+#: inc/customizer.php:2550
 msgid "Some of these options needs to refresh the page to view the changes."
 msgstr ""
 
-#: inc/customizer.php:2547
+#: inc/customizer.php:2563
 msgid "Gallery style"
 msgstr ""
 
-#: inc/customizer.php:2553
+#: inc/customizer.php:2569
 msgid "Default gallery"
 msgstr ""
 
-#: inc/customizer.php:2554
+#: inc/customizer.php:2570
 msgid "Zoom gallery"
 msgstr ""
 
-#: inc/customizer.php:2566
+#: inc/customizer.php:2582
 msgid "Use default WooCommerce lightbox"
 msgstr ""
 
-#: inc/customizer.php:2581
+#: inc/customizer.php:2597
 msgid "Show previous and next product (arrow icons)"
 msgstr ""
 
-#: inc/customizer.php:2596
+#: inc/customizer.php:2612
 msgid "Show related products"
 msgstr ""
 
-#: inc/customizer.php:2610
+#: inc/customizer.php:2626
 msgid "Show sticky bar product when user scroll down"
 msgstr ""
 
-#: inc/customizer.php:2619 inc/third/woocommerce.php:104
+#: inc/customizer.php:2635 inc/third/woocommerce.php:104
 msgid "View Product"
 msgstr ""
 
-#: inc/customizer.php:2625
+#: inc/customizer.php:2641
 msgid "Sticky bar button text"
 msgstr ""
 
-#: inc/customizer.php:2650
+#: inc/customizer.php:2666
 msgid "Sticky bar background color"
 msgstr ""
 
-#: inc/customizer.php:2670
+#: inc/customizer.php:2686
 msgid "Sticky bar text color"
 msgstr ""
 
-#: inc/customizer.php:2694
+#: inc/customizer.php:2710
 msgid "Show classic sidebar in"
 msgstr ""
 
-#: inc/customizer.php:2708 inc/customizer.php:2748
+#: inc/customizer.php:2724 inc/customizer.php:2764
 msgid "Sidebar position"
 msgstr ""
 
-#: inc/customizer.php:2734
+#: inc/customizer.php:2750
 msgid "Show push sidebar in"
 msgstr ""
 
-#: inc/customizer.php:2766
+#: inc/customizer.php:2782
 msgid "Show opacity when push sidebar is open"
 msgstr ""
 
-#: inc/customizer.php:2780
+#: inc/customizer.php:2796
 msgid "Choose the icon"
 msgstr ""
 
-#: inc/customizer.php:2786
+#: inc/customizer.php:2802
 msgid "Three Lines Icon"
 msgstr ""
 
-#: inc/customizer.php:2787
+#: inc/customizer.php:2803
 msgid "Plus Icon"
 msgstr ""
 
-#: inc/customizer.php:2788
+#: inc/customizer.php:2804
 msgid "Circle Icon"
 msgstr ""
 
-#: inc/customizer.php:2802
+#: inc/customizer.php:2818
 msgid "Show the Scroll to Top button"
 msgstr ""
 
-#: inc/customizer.php:2816
+#: inc/customizer.php:2832
 msgid "Show the Scroll to Top button also on mobile"
 msgstr ""
 
-#: inc/customizer.php:2831
+#: inc/customizer.php:2847
 msgid "Scroll to top button position"
 msgstr ""
 
-#: inc/customizer.php:2838
+#: inc/customizer.php:2854
 msgid "Bottom right"
 msgstr ""
 
-#: inc/customizer.php:2839
+#: inc/customizer.php:2855
 msgid "Bottom Left"
 msgstr ""
 
-#: inc/customizer.php:2855
+#: inc/customizer.php:2871
 msgid "Scroll to top icon"
 msgstr ""
 
-#: inc/customizer.php:2876
+#: inc/customizer.php:2892
 msgid "Footer widgets settings"
 msgstr ""
 
-#: inc/customizer.php:2893
+#: inc/customizer.php:2909
 msgid "Show footer widgets in"
 msgstr ""
 
-#: inc/customizer.php:2907
+#: inc/customizer.php:2923
 msgid "Number of footer columns"
 msgstr ""
 
-#: inc/customizer.php:2932
+#: inc/customizer.php:2948
 msgid "Sub-footer settings"
 msgstr ""
 
-#: inc/customizer.php:2944
+#: inc/customizer.php:2960
 msgid "Show sub-footer"
 msgstr ""
 
-#: inc/customizer.php:2958
+#: inc/customizer.php:2974
 msgid "Show footer navigation menu (if set)"
 msgstr ""
 
-#: inc/customizer.php:2973
+#: inc/customizer.php:2989
 msgid "Show social network in footer"
 msgstr ""
 
-#: inc/customizer.php:2989
+#: inc/customizer.php:3005
 msgid "Copyright Text"
 msgstr ""
 
 #. translators: 1: start link, 2: end link
-#: inc/customizer.php:2991
+#: inc/customizer.php:3007
 #, php-format
 msgid "Get %1$s Attesa PRO addon %2$s to remove AttesaWP credits"
 msgstr ""
 
-#: inc/customizer.php:3033
+#: inc/customizer.php:3049
 msgid "Open social links"
 msgstr ""
 
-#: inc/customizer.php:3039
+#: inc/customizer.php:3055
 msgid "Same window"
 msgstr ""
 
-#: inc/customizer.php:3040
+#: inc/customizer.php:3056
 msgid "New Window"
 msgstr ""
 
@@ -1816,489 +1824,497 @@ msgstr ""
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/template-functions.php:211
-msgid "Facebook URL"
+#: inc/pro-button/class-customize.php:101
+msgid "More options with Attesa PRO"
 msgstr ""
 
-#: inc/template-functions.php:212
-msgid "Facebook"
-msgstr ""
-
-#: inc/template-functions.php:218
-msgid "Twitter URL"
-msgstr ""
-
-#: inc/template-functions.php:219
-msgid "Twitter"
-msgstr ""
-
-#: inc/template-functions.php:225
-msgid "Google Plus URL"
+#: inc/pro-button/class-customize.php:102
+msgid "PRO Addon"
 msgstr ""
 
 #: inc/template-functions.php:226
-msgid "Google Plus"
+msgid "Facebook URL"
 msgstr ""
 
-#: inc/template-functions.php:232
-msgid "LinkedIn URL"
+#: inc/template-functions.php:227
+msgid "Facebook"
 msgstr ""
 
 #: inc/template-functions.php:233
-msgid "LinkedIn"
+msgid "Twitter URL"
 msgstr ""
 
-#: inc/template-functions.php:239
-msgid "Instagram URL"
+#: inc/template-functions.php:234
+msgid "Twitter"
 msgstr ""
 
 #: inc/template-functions.php:240
-msgid "Instagram"
+msgid "Google Plus URL"
 msgstr ""
 
-#: inc/template-functions.php:246
-msgid "YouTube URL"
+#: inc/template-functions.php:241
+msgid "Google Plus"
 msgstr ""
 
 #: inc/template-functions.php:247
-msgid "YouTube"
+msgid "LinkedIn URL"
 msgstr ""
 
-#: inc/template-functions.php:253
-msgid "Pinterest URL"
+#: inc/template-functions.php:248
+msgid "LinkedIn"
 msgstr ""
 
 #: inc/template-functions.php:254
-msgid "Pinterest"
+msgid "Instagram URL"
 msgstr ""
 
-#: inc/template-functions.php:260
-msgid "Tumblr URL"
+#: inc/template-functions.php:255
+msgid "Instagram"
 msgstr ""
 
 #: inc/template-functions.php:261
-msgid "Tumblr"
+msgid "YouTube URL"
 msgstr ""
 
-#: inc/template-functions.php:267
-msgid "Flickr URL"
+#: inc/template-functions.php:262
+msgid "YouTube"
 msgstr ""
 
 #: inc/template-functions.php:268
-msgid "Flickr"
+msgid "Pinterest URL"
 msgstr ""
 
-#: inc/template-functions.php:274
-msgid "VK URL"
+#: inc/template-functions.php:269
+msgid "Pinterest"
 msgstr ""
 
 #: inc/template-functions.php:275
-msgid "VK"
+msgid "Tumblr URL"
 msgstr ""
 
-#: inc/template-functions.php:281
-msgid "Xing URL"
+#: inc/template-functions.php:276
+msgid "Tumblr"
 msgstr ""
 
 #: inc/template-functions.php:282
-msgid "Xing"
+msgid "Flickr URL"
 msgstr ""
 
-#: inc/template-functions.php:288
-msgid "Reddit URL"
+#: inc/template-functions.php:283
+msgid "Flickr"
 msgstr ""
 
 #: inc/template-functions.php:289
-msgid "Reddit"
+msgid "VK URL"
 msgstr ""
 
-#: inc/template-functions.php:295
-msgid "Vimeo URL"
+#: inc/template-functions.php:290
+msgid "VK"
 msgstr ""
 
 #: inc/template-functions.php:296
-msgid "Vimeo"
+msgid "Xing URL"
 msgstr ""
 
-#: inc/template-functions.php:302
-msgid "IMDb URL"
+#: inc/template-functions.php:297
+msgid "Xing"
 msgstr ""
 
 #: inc/template-functions.php:303
-msgid "IMDb"
+msgid "Reddit URL"
 msgstr ""
 
-#: inc/template-functions.php:309
-msgid "Telegram URL"
+#: inc/template-functions.php:304
+msgid "Reddit"
 msgstr ""
 
 #: inc/template-functions.php:310
-msgid "Telegram"
+msgid "Vimeo URL"
 msgstr ""
 
-#: inc/template-functions.php:316
-msgid "WeChat URL"
+#: inc/template-functions.php:311
+msgid "Vimeo"
 msgstr ""
 
 #: inc/template-functions.php:317
-msgid "WeChat"
+msgid "IMDb URL"
 msgstr ""
 
-#: inc/template-functions.php:323
-msgid "Weibo URL"
+#: inc/template-functions.php:318
+msgid "IMDb"
 msgstr ""
 
 #: inc/template-functions.php:324
-msgid "Weibo"
+msgid "Telegram URL"
 msgstr ""
 
-#: inc/template-functions.php:330
-msgid "SnapChat URL"
+#: inc/template-functions.php:325
+msgid "Telegram"
 msgstr ""
 
 #: inc/template-functions.php:331
-msgid "SnapChat"
+msgid "WeChat URL"
 msgstr ""
 
-#: inc/template-functions.php:337
-msgid "SoundCloud URL"
+#: inc/template-functions.php:332
+msgid "WeChat"
 msgstr ""
 
 #: inc/template-functions.php:338
-msgid "SoundCloud"
+msgid "Weibo URL"
 msgstr ""
 
-#: inc/template-functions.php:344
-msgid "Ok.ru URL"
+#: inc/template-functions.php:339
+msgid "Weibo"
 msgstr ""
 
 #: inc/template-functions.php:345
-msgid "Ok.ru"
+msgid "SnapChat URL"
 msgstr ""
 
-#: inc/template-functions.php:351
-msgid "Renren URL"
+#: inc/template-functions.php:346
+msgid "SnapChat"
 msgstr ""
 
 #: inc/template-functions.php:352
-msgid "Renren"
+msgid "SoundCloud URL"
 msgstr ""
 
-#: inc/template-functions.php:358
-msgid "QQ URL"
+#: inc/template-functions.php:353
+msgid "SoundCloud"
 msgstr ""
 
 #: inc/template-functions.php:359
-msgid "QQ"
+msgid "Ok.ru URL"
 msgstr ""
 
-#: inc/template-functions.php:365
-msgid "Last.fm URL"
+#: inc/template-functions.php:360
+msgid "Ok.ru"
 msgstr ""
 
 #: inc/template-functions.php:366
-msgid "Last.fm"
+msgid "Renren URL"
 msgstr ""
 
-#: inc/template-functions.php:372
-msgid "WordPress URL"
+#: inc/template-functions.php:367
+msgid "Renren"
 msgstr ""
 
 #: inc/template-functions.php:373
+msgid "QQ URL"
+msgstr ""
+
+#: inc/template-functions.php:374
+msgid "QQ"
+msgstr ""
+
+#: inc/template-functions.php:380
+msgid "Last.fm URL"
+msgstr ""
+
+#: inc/template-functions.php:381
+msgid "Last.fm"
+msgstr ""
+
+#: inc/template-functions.php:387
+msgid "WordPress URL"
+msgstr ""
+
+#: inc/template-functions.php:388
 msgid "WordPress"
 msgstr ""
 
-#: inc/template-functions.php:401
+#: inc/template-functions.php:416
 msgid "Playfair Display"
 msgstr ""
 
-#: inc/template-functions.php:402 inc/template-functions.php:461
+#: inc/template-functions.php:417 inc/template-functions.php:476
 msgid "Poppins"
 msgstr ""
 
-#: inc/template-functions.php:403
+#: inc/template-functions.php:418
 msgid "Oswald"
 msgstr ""
 
-#: inc/template-functions.php:404
+#: inc/template-functions.php:419
 msgid "Merriweather"
 msgstr ""
 
-#: inc/template-functions.php:405
+#: inc/template-functions.php:420
 msgid "Nunito"
 msgstr ""
 
-#: inc/template-functions.php:406 inc/template-functions.php:453
+#: inc/template-functions.php:421 inc/template-functions.php:468
 msgid "Quicksand"
 msgstr ""
 
-#: inc/template-functions.php:407
+#: inc/template-functions.php:422
 msgid "Exo"
 msgstr ""
 
-#: inc/template-functions.php:408
+#: inc/template-functions.php:423
 msgid "Josefin Slab"
 msgstr ""
 
-#: inc/template-functions.php:409
+#: inc/template-functions.php:424
 msgid "Lobster Two"
 msgstr ""
 
-#: inc/template-functions.php:410
+#: inc/template-functions.php:425
 msgid "Philosopher"
 msgstr ""
 
-#: inc/template-functions.php:411
+#: inc/template-functions.php:426
 msgid "Kalam"
 msgstr ""
 
-#: inc/template-functions.php:412
+#: inc/template-functions.php:427
 msgid "Khand"
 msgstr ""
 
-#: inc/template-functions.php:413
+#: inc/template-functions.php:428
 msgid "Nobile"
 msgstr ""
 
-#: inc/template-functions.php:414
+#: inc/template-functions.php:429
 msgid "Cormorant Upright"
 msgstr ""
 
-#: inc/template-functions.php:415
+#: inc/template-functions.php:430
 msgid "Atma"
 msgstr ""
 
-#: inc/template-functions.php:416
+#: inc/template-functions.php:431
 msgid "Dancing Script"
 msgstr ""
 
-#: inc/template-functions.php:417
+#: inc/template-functions.php:432
 msgid "Amatic SC"
 msgstr ""
 
-#: inc/template-functions.php:418
+#: inc/template-functions.php:433
 msgid "Cabin Sketch"
 msgstr ""
 
-#: inc/template-functions.php:419
+#: inc/template-functions.php:434
 msgid "Merienda"
 msgstr ""
 
-#: inc/template-functions.php:420
+#: inc/template-functions.php:435
 msgid "Unkempt"
 msgstr ""
 
-#: inc/template-functions.php:421 inc/template-functions.php:472
+#: inc/template-functions.php:436 inc/template-functions.php:487
 msgid "Lato"
 msgstr ""
 
-#: inc/template-functions.php:422
+#: inc/template-functions.php:437
 msgid "Life Savers"
 msgstr ""
 
-#: inc/template-functions.php:423
+#: inc/template-functions.php:438
 msgid "Caveat"
 msgstr ""
 
-#: inc/template-functions.php:424
+#: inc/template-functions.php:439
 msgid "Oregano"
 msgstr ""
 
-#: inc/template-functions.php:425
+#: inc/template-functions.php:440
 msgid "Skranji"
 msgstr ""
 
-#: inc/template-functions.php:426
+#: inc/template-functions.php:441
 msgid "Stardos Stencil"
 msgstr ""
 
-#: inc/template-functions.php:427
+#: inc/template-functions.php:442
 msgid "Oleo Script Swash Caps"
 msgstr ""
 
-#: inc/template-functions.php:428
+#: inc/template-functions.php:443
 msgid "Cherry Swash"
 msgstr ""
 
-#: inc/template-functions.php:429
+#: inc/template-functions.php:444
 msgid "Tangerine"
 msgstr ""
 
-#: inc/template-functions.php:430
+#: inc/template-functions.php:445
 msgid "Allan"
 msgstr ""
 
-#: inc/template-functions.php:431
+#: inc/template-functions.php:446
 msgid "Almendra"
 msgstr ""
 
-#: inc/template-functions.php:432 inc/template-functions.php:460
+#: inc/template-functions.php:447 inc/template-functions.php:475
 msgid "Dosis"
 msgstr ""
 
-#: inc/template-functions.php:433
+#: inc/template-functions.php:448
 msgid "Nanum Myeongjo"
 msgstr ""
 
-#: inc/template-functions.php:434
+#: inc/template-functions.php:449
 msgid "Expletus Sans"
 msgstr ""
 
-#: inc/template-functions.php:435
+#: inc/template-functions.php:450
 msgid "Sansita"
 msgstr ""
 
-#: inc/template-functions.php:436
+#: inc/template-functions.php:451
 msgid "Montserrat Alternates"
 msgstr ""
 
-#: inc/template-functions.php:437
+#: inc/template-functions.php:452
 msgid "Teko"
 msgstr ""
 
-#: inc/template-functions.php:438
+#: inc/template-functions.php:453
 msgid "Passion One"
 msgstr ""
 
-#: inc/template-functions.php:439
+#: inc/template-functions.php:454
 msgid "Srisakdi"
 msgstr ""
 
-#: inc/template-functions.php:440
+#: inc/template-functions.php:455
 msgid "Zilla Slab Highlight"
 msgstr ""
 
-#: inc/template-functions.php:441 inc/template-functions.php:484
+#: inc/template-functions.php:456 inc/template-functions.php:499
 msgid "Thasadith"
 msgstr ""
 
-#: inc/template-functions.php:451
+#: inc/template-functions.php:466
 msgid "Muli"
 msgstr ""
 
-#: inc/template-functions.php:452
+#: inc/template-functions.php:467
 msgid "Montserrat"
 msgstr ""
 
-#: inc/template-functions.php:454
+#: inc/template-functions.php:469
 msgid "Roboto"
 msgstr ""
 
-#: inc/template-functions.php:455
+#: inc/template-functions.php:470
 msgid "Open Sans"
 msgstr ""
 
-#: inc/template-functions.php:456
+#: inc/template-functions.php:471
 msgid "Roboto Slab"
 msgstr ""
 
-#: inc/template-functions.php:457
+#: inc/template-functions.php:472
 msgid "Arimo"
 msgstr ""
 
-#: inc/template-functions.php:458
+#: inc/template-functions.php:473
 msgid "Rubik"
 msgstr ""
 
-#: inc/template-functions.php:459
+#: inc/template-functions.php:474
 msgid "Cabin"
 msgstr ""
 
-#: inc/template-functions.php:462
+#: inc/template-functions.php:477
 msgid "Catamaran"
 msgstr ""
 
-#: inc/template-functions.php:463
+#: inc/template-functions.php:478
 msgid "Karla"
 msgstr ""
 
-#: inc/template-functions.php:464
+#: inc/template-functions.php:479
 msgid "Comfortaa"
 msgstr ""
 
-#: inc/template-functions.php:465
+#: inc/template-functions.php:480
 msgid "Cabin Condensed"
 msgstr ""
 
-#: inc/template-functions.php:466
+#: inc/template-functions.php:481
 msgid "Rambla"
 msgstr ""
 
-#: inc/template-functions.php:467
+#: inc/template-functions.php:482
 msgid "Rasa"
 msgstr ""
 
-#: inc/template-functions.php:468
+#: inc/template-functions.php:483
 msgid "Hind Vadodara"
 msgstr ""
 
-#: inc/template-functions.php:469
+#: inc/template-functions.php:484
 msgid "Droid Sans"
 msgstr ""
 
-#: inc/template-functions.php:470
+#: inc/template-functions.php:485
 msgid "Oxygen"
 msgstr ""
 
-#: inc/template-functions.php:471
+#: inc/template-functions.php:486
 msgid "Judson"
 msgstr ""
 
-#: inc/template-functions.php:473
+#: inc/template-functions.php:488
 msgid "Sura"
 msgstr ""
 
-#: inc/template-functions.php:474
+#: inc/template-functions.php:489
 msgid "Maven Pro"
 msgstr ""
 
-#: inc/template-functions.php:475
+#: inc/template-functions.php:490
 msgid "Quattrocento Sans"
 msgstr ""
 
-#: inc/template-functions.php:476
+#: inc/template-functions.php:491
 msgid "Rajdhani"
 msgstr ""
 
-#: inc/template-functions.php:477
+#: inc/template-functions.php:492
 msgid "Vollkorn"
 msgstr ""
 
-#: inc/template-functions.php:478
+#: inc/template-functions.php:493
 msgid "Advent Pro"
 msgstr ""
 
-#: inc/template-functions.php:479
+#: inc/template-functions.php:494
 msgid "Livvic"
 msgstr ""
 
-#: inc/template-functions.php:480
+#: inc/template-functions.php:495
 msgid "Fira Sans"
 msgstr ""
 
-#: inc/template-functions.php:481
+#: inc/template-functions.php:496
 msgid "Red Hat Display"
 msgstr ""
 
-#: inc/template-functions.php:482
+#: inc/template-functions.php:497
 msgid "ABeeZee"
 msgstr ""
 
-#: inc/template-functions.php:483
+#: inc/template-functions.php:498
 msgid "Turret Road"
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme author.
-#: inc/template-functions.php:758
+#: inc/template-functions.php:773
 #, php-format
 msgid "WordPress Theme: %1$s by %2$s"
 msgstr ""
 
-#: inc/template-functions.php:780
+#: inc/template-functions.php:795
 msgid "Previous"
 msgstr ""
 
-#: inc/template-functions.php:781
+#: inc/template-functions.php:796
 msgid "Next"
 msgstr ""
 

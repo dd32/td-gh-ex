@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -583,7 +583,9 @@ ul.products li.product .tinvwl_add_to_wishlist_button,
 .attesa-breadcrumbs,
 .rank-math-breadcrumb,
 .attesa-portfolio-filter li a,
-.attesa-portfolio-grid .attesa-portfolio-readmore p a {
+.attesa-portfolio-grid .attesa-portfolio-readmore p a,
+ul.woocommerce-thankyou-order-details li,
+.woocommerce-MyAccount-navigation ul li {
 	border-radius: 5px;
 }
 #wp-calendar > caption {
@@ -859,6 +861,18 @@ a:hover, a:active {
 	border-color: rgba(0,0,0,0.5);
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
+}
+header.site-header.withSubEffect .main-navigation ul ul a {
+	text-indent: 0px;
+	-o-transition: text-indent .15s ease-in-out;
+    -moz-transition: text-indent .15s ease-in-out;
+    -webkit-transition: text-indent .15s ease-in-out;
+    transition: text-indent .15s ease-in-out;
+}
+header.site-header.withSubEffect .main-navigation ul ul a:hover,
+header.site-header.withSubEffect .main-navigation ul ul a:focus,
+header.site-header.withSubEffect .main-navigation ul ul a:active {
+	text-indent: 8px;
 }
 .main-navigation ul ul li:first-child > a {
 	border-top-left-radius: 5px;
@@ -4481,27 +4495,19 @@ body.woocommerce .required {
 .woocommerce-mini-cart__buttons a.checkout {
 	float: right;
 }
-.woocommerce-MyAccount-navigation {
-	margin-bottom: 2em;
-}
 ul.woocommerce-thankyou-order-details,
 .woocommerce-MyAccount-navigation ul {
-	list-style: none;
-    padding: 0;
+    list-style: none;
+    padding: 0 0 1.5em 0;
     margin: 0;
 }
 ul.woocommerce-thankyou-order-details li,
 .woocommerce-MyAccount-navigation ul li {
-	border-bottom-style: solid;
-	border-bottom-width: 1px;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
-}
-.woocommerce-MyAccount-navigation ul li:before {
-	font-family: "Font Awesome 5 Free";
-    content: "\f0da";
-    padding-right: 0.5em;
-    float: left;
+	display: inline-block;
+    border-width: 1px;
+	border-style: solid;
+    padding: 0 5px;
+    margin: 2px;
 }
 .widget-area .woocommerce li span.amount {
 	display: block;
@@ -5206,6 +5212,14 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	.attesa-extra-blog-posts-elementor.number-columns-5 .latest-news-wrapper {
 		grid-template-columns: repeat(3,1fr);
 	}
+	.attesaFeatBox {
+		background-attachment: scroll !important;
+	}
+	header.site-header.withSubEffect .main-navigation ul ul a:hover,
+	header.site-header.withSubEffect .main-navigation ul ul a:focus,
+	header.site-header.withSubEffect .main-navigation ul ul a:active {
+		text-indent: 0px;
+	}
 }
 @media all and (max-width: 782px) {
 	body.admin-bar:not(.format_featuredtitle) header.site-header:not(.noSticky),
@@ -5254,7 +5268,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 @media all and (max-width: 768px) {
 	.attesaFeatBox {
 		max-height: 350px !important;
-		background-attachment: scroll !important;
 	}
 	.hentry .entry-title,
 	.attesaFeatBoxTitle .entry-title {
@@ -5312,6 +5325,18 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	.attesa-extra-alert-wrap .attesa-extra-alert-container.withIcon {
 		margin-left: 0;
 		text-align: center;
+	}
+	.nav-top .container.boxed,
+	.nav-middle .container.boxed,
+	.nav-middle-top-title .container.boxed,
+	#content.site-content,
+	.attesaFooterWidget,
+	.attesaFeatBox .attesaFeatBoxContainer,
+	.mainFooter .site-copy-down,
+	.second-navigation,
+	.attesa-woocommerce-sticky-product .container,
+	.attesapro-footer-callout-container {
+		max-width: 100% !important;
 	}
 }
 @media all and (max-width: 767px) {

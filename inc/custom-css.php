@@ -204,7 +204,9 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.attesa-breadcrumbs,
 				.rank-math-breadcrumb,
 				.attesa-portfolio-filter li a,
-				.attesa-portfolio-grid .attesa-portfolio-readmore p a {
+				.attesa-portfolio-grid .attesa-portfolio-readmore p a,
+				ul.woocommerce-thankyou-order-details li,
+				.woocommerce-MyAccount-navigation ul li {
 					border-radius: '.intval($borderRadius).'px;
 				}
 				#wp-calendar > caption {
@@ -918,7 +920,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			#edd_purchase_receipt_products thead th,
 			#edd_sl_license_sites thead th,
 			body.edd-page legend,
-			.site-social-widget .attesa-social {
+			.site-social-widget .attesa-social,
+			.woocommerce-MyAccount-navigation ul li.is-active {
 				background-color: '.esc_html($generalBorderColor).';
 			}
 			input[type="text"],
@@ -993,7 +996,9 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-breadcrumbs,
 			.rank-math-breadcrumb,
 			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
-			.wp-block-image {
+			.wp-block-image,
+			ul.woocommerce-thankyou-order-details li,
+			.woocommerce-MyAccount-navigation ul li {
 				border-color: '.esc_html($generalBorderColor).';
 			}
 			.star-rating:before {

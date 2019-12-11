@@ -1970,6 +1970,7 @@ function attesa_customize_register( $wp_customize ) {
 		'choices' => array(
 			'none' => __( 'None', 'attesa'),
 			'uppercase' => __( 'Uppercase', 'attesa'),
+			'capitalize' => __( 'Capitalize', 'attesa'),
 		),
     ) );
 	/* Menu links style */
@@ -2011,6 +2012,21 @@ function attesa_customize_register( $wp_customize ) {
 			'right' => __( 'Right', 'attesa'),
 			'left' => __( 'Left', 'attesa'),
 		),
+    ) );
+	/* Sub-menu effect */
+	$wp_customize->add_setting('attesa_theme_options[_submenu_effect]', array(
+        'default'    => '',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_submenu_effect]', array(
+        'label'      => __( 'Sub-menu effect on hover', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_header',
+        'settings'   => 'attesa_theme_options[_submenu_effect]',
+        'type'       => 'checkbox',
+		'active_callback' => 'attesa_is_menu_not_popup',
+		'priority' => 6,
     ) );
 	/* Menu logo max-height */
 	$wp_customize->add_setting('attesa_theme_options[_menu_logo_max_height]', array(

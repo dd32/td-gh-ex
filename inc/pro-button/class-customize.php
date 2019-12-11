@@ -95,6 +95,18 @@ final class Attesa_Updgrade_Pro_Button {
 			] )
 		);
 		
+		if ( !class_exists( 'Attesa_pro' ) ) {
+			$manager->add_section(
+				new Button( $manager, 'attesa_pro_locked', [
+					'title'       => __( 'More options with Attesa PRO', 'attesa' ),
+					'button_text' => __( 'PRO Addon',        'attesa' ),
+					'button_url'  => 'https://attesawp.com/attesa-pro/',
+					'panel'  => 'attesa_themeoptions',
+					'priority' => 999,
+				] )
+			);
+		}
+		
 	}
 
 	/**

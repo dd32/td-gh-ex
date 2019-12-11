@@ -29,3 +29,10 @@
 	background-color: #000000 !important;
 	color: #ffffff !important;
 }
+#accordion-section-attesa_pro_locked .accordion-section-title .button:after {
+	font-family: dashicons;
+	content: "\f160";
+	padding-left: 3px;
+    float: right;
+	font-size: 150%;
+}
