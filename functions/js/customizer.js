@@ -92,11 +92,13 @@
 
 			var styleEntryHeader = '.entry-header .title-meta-wrapper,.archive-header .title-meta-wrapper{background: ' + featicon + ';}';
 
-			var stylebxcontrols = '.entry-header.with-image.full:before,.archive-header.with-image.full:before,.bx-wrapper .bx-controls-direction a{background: ' + featicon2 + ';}';
+			var stylebxcontrols = '.entry-header.with-image.full:before,.archive-header.with-image.full:before{background: ' + featicon2 + ';}';
 
 			var styleBoxShadow = '.featured-post .featured-icon{box-shadow: 0px 0px 0px 4px ' + featicon + ';}';
 
-			$('head').append('<style>' + styleBackground + styleBgColor + styleColor + styleBorderColor + styleBorderColor2 + styleBorderLeftColor + styleBorderRightColor + styleEntryHeaderImg + styleEntryHeader + stylebxcontrols + styleBoxShadow + '</style>');
+			var styleResp = '@media only screen and (max-width: 1024px){#site-navigation{background: ' + to + ';}}';
+
+			$('head').append('<style>' + styleBackground + styleBgColor + styleColor + styleBorderColor + styleBorderColor2 + styleBorderLeftColor + styleBorderRightColor + styleEntryHeaderImg + styleEntryHeader + stylebxcontrols + styleBoxShadow + styleResp + '</style>');
 		} );
 	} );
 
@@ -125,7 +127,7 @@
 
 	wp.customize('font_nav', function( value ) {
 		value.bind( function( to ) {
-			azuma_font_bind( to, '.site-main-menu' );
+			azuma_font_bind( to, '#site-navigation' );
 		} );
 	} );
 
@@ -140,9 +142,9 @@
 				azuma_font_bind( font_site_title, '.site-title' );
 			}
 			if ( font_nav === '' ) {
-				$('.site-main-menu').css({ fontFamily: 'initial' });
+				$('#site-navigation').css({ fontFamily: 'initial' });
 			} else {
-				azuma_font_bind( font_nav, '.site-main-menu' );
+				azuma_font_bind( font_nav, '#site-navigation' );
 			}
 		} );
 	} );
@@ -181,11 +183,11 @@ function azuma_font_bind( to, style_class ) {
 	if ( to == '' || to == 'Arial, Helvetica, sans-serif' || to == 'Impact, Charcoal, sans-serif' || to == '"Lucida Sans Unicode", "Lucida Grande", sans-serif' || to == 'Tahoma, Geneva, sans-serif' || to == '"Trebuchet MS", Helvetica, sans-serif' || to == 'Verdana, Geneva, sans-serif' || to == 'Georgia, serif' || to == '"Palatino Linotype", "Book Antiqua", Palatino, serif' || to == '"Times New Roman", Times, serif' ) {
 	} else {
 		var googlefont = encodeURI(to.replace(" ", "+"));
-		$('head').append('<link href="//fonts.googleapis.com/css?family=' + googlefont + '" type="text/css" media="all" rel="stylesheet">');
+		jQuery('head').append('<link href="//fonts.googleapis.com/css?family=' + googlefont + '" type="text/css" media="all" rel="stylesheet">');
 		to = to.substr(0, to.indexOf(':'));
 		to = "'" + to + "'";
 	}
-	$(style_class).css({
+	jQuery(style_class).css({
 		fontFamily: to
 	});
 }
@@ -196,7 +198,7 @@ function azuma_font_style( to, style_class ) {
 	} else {
 		var to_style = 'normal';
 	}
-	$(style_class).css( {'font-style': to_style } );
+	jQuery(style_class).css( {'font-style': to_style } );
 }
 
 function azuma_hex2rgba( colour, opacity ) {

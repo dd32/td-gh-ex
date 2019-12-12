@@ -4,7 +4,7 @@ Theme URI: https://uxlthemes.com/theme/azuma/
 Author: UXL Themes
 Author URI: https://uxlthemes.com
 Description: Azuma is a customizable WordPress theme which features a sticky header, homepage hero or slider using the standard WordPress image widget, sortable homepage sections, custom colors and fonts, grid layout options and support for video posts/articles. Support for WooCommerce ecommerce plugin along with Wishlist and Quick View plugins is included along with an auto-updating shopping cart, sticky add-to-cart panel on single product pages and a horizontal product filter widget area.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azuma
@@ -1194,7 +1194,6 @@ aside button{
 #site-usp{
 	width: 100%;
 	padding: 10px 0;
-	background: #f5f5f5;
 	transition: padding .5s;
 }
 
@@ -1207,11 +1206,14 @@ aside button{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	padding: 10px;
+	background: rgba(255,255,255,.05);
+	box-shadow: 0 0 2px rgba(255,255,255,.3);
 }
 
 #site-usp aside{
 	background: transparent;
-	color: #2f3032;
+	color: #fff;
 	margin: 0;
 	display: block;
 }
@@ -1219,7 +1221,7 @@ aside button{
 .offers-bar-widget-title{
 	text-transform: uppercase;
 	font-size: 18px;
-	color: #2f3032;
+	color: #fff;
 	margin: 0;
 	line-height: 1;
 }
@@ -2393,7 +2395,6 @@ span.mini-account .form-row-last{
 
 .bx-wrapper .bx-controls-direction a{
 	margin-top: 0;
-	background: rgba(45,54,76,.5);
 	height: 40px;
 	width: 40px;
 	font-size: 24px;
@@ -2420,6 +2421,10 @@ span.mini-account .form-row-last{
 	color: #fff;
 	cursor: pointer;
 	width: 20px;
+}
+
+.toggle-nav:hover{
+	background: transparent;
 }
 
 .toggle-nav:focus{
@@ -3971,6 +3976,10 @@ p.has-background{
 
 	#site-navigation{
 		display: none;
+		width: 100%;
+		background: #2d364c;
+		border-radius: 3px;
+		box-shadow: 0 0 2px rgba(255,255,255,.3);
 	}
 
 	#site-navigation.menu-open{
@@ -3980,10 +3989,6 @@ p.has-background{
 		overflow: hidden auto;
 		grid-column: 1/4;
 		justify-self: end;
-	}
-
-	#site-navigation.menu-open .site-main-menu{
-		width: 250px;
 	}
 
 	#primary-menu li{
@@ -4045,7 +4050,6 @@ p.has-background{
 	#primary-menu ul li.menu-item-has-children:hover ul,
 	#primary-menu ul li.menu-item-has-children a:focus ~ ul{
 		left: 0;
-		width: 250px;
 		border: none;
 		box-shadow: none;
 		display: none;
@@ -4057,6 +4061,7 @@ p.has-background{
 	}
 	#primary-menu .sub-menu li,
 	#primary-menu ul.children li{
+		background: rgba(255,255,255,.03);
 		padding: 0;
 		text-transform: none;
 		border: 0;

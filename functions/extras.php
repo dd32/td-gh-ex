@@ -121,12 +121,12 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			if ( $font_site_title ) {
 				$css[] = '.site-title{' . azuma_css_font_family( $font_site_title ) . ';}';
 			} else {
-				$css[] = '.site-title{font-family:\'Montserrat\';}';
+				$css[] = '.site-title{font-family:\'Rajdhani\';}';
 			}
 			if ( $font_nav ) {
-				$css[] = '.site-main-menu{' . azuma_css_font_family( $font_nav ) . ';}';
+				$css[] = '#site-navigation{' . azuma_css_font_family( $font_nav ) . ';}';
 			} else {
-				$css[] = '.site-main-menu{font-family:\'Libre Franklin\';}';
+				$css[] = '#site-navigation{font-family:\'Rajdhani\';}';
 			}
 		} else {
 			$font_site_title_on = 0;
@@ -142,7 +142,7 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 		}
 
 		if ( $font_nav && $font_nav_on == 0 ) {
-			$css[] = '.site-main-menu{' . azuma_css_font_family( $font_nav ) . ';}';
+			$css[] = '#site-navigation{' . azuma_css_font_family( $font_nav ) . ';}';
 		}
 		
 		$fs_site_title = get_theme_mod( 'fs_site_title', '44' );
@@ -220,9 +220,11 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 
 			$css[] = '.entry-header .title-meta-wrapper,.archive-header .title-meta-wrapper{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.7);}';
 
-			$css[] = '.entry-header.with-image.full:before,.archive-header.with-image.full:before,.bx-wrapper .bx-controls-direction a{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
+			$css[] = '.entry-header.with-image.full:before,.archive-header.with-image.full:before{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
 
 			$css[] = '.featured-post .featured-icon{box-shadow: 0px 0px 0px 4px rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
+
+			$css[] = '@media only screen and (max-width: 1024px){#site-navigation{background:' . $hi_color2 . ';}}';
 			
 		}
 
@@ -270,13 +272,13 @@ add_filter( 'tiny_mce_before_init', 'azuma_editor_dynamic_style' );
 
 function azuma_block_editor_dynamic_style( $css = array() ) {
 
-	$font_content = get_theme_mod( 'font_content', 'Libre Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' );
-	if ($font_content && $font_content != 'Libre Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' ) {
+	$font_content = get_theme_mod( 'font_content', 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' );
+	if ($font_content && $font_content != 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' ) {
 		$css[] = '.editor-default-block-appender textarea.editor-default-block-appender__content,.editor-styles-wrapper p,.editor-styles-wrapper ul,.editor-styles-wrapper li{' . azuma_css_font_family( $font_content ) . ';}';
 	}
 
-	$font_headings = get_theme_mod( 'font_headings', 'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' );
-	if ($font_headings && $font_headings != 'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' ) {
+	$font_headings = get_theme_mod( 'font_headings', 'Rajdhani:300,400,500,600,700' );
+	if ($font_headings && $font_headings != 'Rajdhani:300,400,500,600,700' ) {
 		$css[] = '.editor-post-title__block .editor-post-title__input,.editor-styles-wrapper h1,.editor-styles-wrapper h2,.editor-styles-wrapper h3,.editor-styles-wrapper h4,.editor-styles-wrapper h5,.editor-styles-wrapper h6{' . azuma_css_font_family( $font_headings ) . ';}';
 	}
 

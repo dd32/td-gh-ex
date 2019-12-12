@@ -22,14 +22,6 @@ jQuery(document).ready(function($){
             $('.toggle-nav').css({'display' : 'none'});
         }
 
-        var heroTitleMar = false;
-        if ( $('#masthead.full').length && $('.hero-widget-title').length ) {
-            var mastheadHeight = parseInt( $('#masthead').outerHeight() );
-            var heroTitleMarginTop = parseInt(mastheadHeight / 2);
-            $('.hero-widget-title').css({'margin-top' : heroTitleMarginTop + 'px'});
-            heroTitleMar = true;
-        }
-
         var windowWidth = parseInt( $('body').width() );
         var heroTitleFontSize = parseInt(windowWidth / 25);
         var heroCaptionFontSize = parseInt(windowWidth / 70);
@@ -43,6 +35,13 @@ jQuery(document).ready(function($){
         $('#home-hero-section .widget_media_image .wp-caption .wp-caption-text').css({'font-size' : heroCaptionFontSize + 'px'});
 
         $('#home-hero-section').find('.widget_media_image').each(function(){
+            var heroTitleMar = false;
+            if ( $('#masthead.full').length && $('.hero-widget-title', this).length ) {
+                var mastheadHeight = parseInt( $('#masthead').outerHeight() );
+                var heroTitleMarginTop = parseInt(mastheadHeight / 2);
+                $('.hero-widget-title', this).css({'margin-top' : heroTitleMarginTop + 'px'});
+                heroTitleMar = true;
+            }
             var heroTitleHeight = parseInt( $('.hero-widget-title', this).height() );
             var captionMargin = parseInt( ( heroTitleHeight / 2 ) + heroCaptionFontSize );
             if ( heroTitleMar == true ) {
