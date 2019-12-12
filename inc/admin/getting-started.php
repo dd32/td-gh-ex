@@ -119,23 +119,52 @@ function arilewp_getting_started_page() { ?>
 						<?php esc_html_e( 'Free Vs Pro', 'arilewp' ); ?>
 					</a>
 				</li>
+			    <li>
+					<a id="support-and-review" href="#">
+						<?php esc_html_e( 'Support', 'arilewp' ); ?>
+					</a>
+				</li>
 			</ul>
 			<div id="panel" class="panel">
 				<?php require get_template_directory() . '/inc/admin/tabs/getting-started-panel.php'; ?>
 				<?php require get_template_directory() . '/inc/admin/tabs/recommended-plugins-panel.php'; ?>
 				<?php require get_template_directory() . '/inc/admin/tabs/useful-plugin-panel.php'; ?>
 				<?php require get_template_directory() . '/inc/admin/tabs/free-vs-pro-panel.php'; ?>
+				<?php require get_template_directory() . '/inc/admin/tabs/support-and-review.php'; ?>
 			</div>
 			<div class="panel">
-				<div class="panel-aside panel-column w-50">
-					<h4><?php esc_html_e( 'Support', 'arilewp' ); ?></h4>
-					<p><?php esc_html_e( 'Still having a problem after using all the documentation? No Problem!! Our dedicated support team will help you to solve your problem. Hope you are enjoying our ArileWP theme.', 'arilewp' ); ?></p>
-					<a class="button button-primary" target="_blank" href="//wordpress.org/support/theme/arilewp/" title="<?php esc_attr_e( 'Get Support', 'arilewp' ); ?>"><?php esc_html_e( 'Get Support', 'arilewp' ); ?></a>
+				<div class="panel-aside bg-white panel-column w-50">
+					<h4><?php esc_html_e( 'Links to Customizer Options', 'arilewp' ); ?></h4>
+					<li class="customize-options"><i class="dashicons dashicons-format-image"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=title_tagline' ) ); ?>" target="_blank"><?php esc_html_e('Site Logo','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-align-left"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_theme_menu_bar' ) ); ?>" target="_blank"><?php esc_html_e('Menus Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-schedule"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=header_image' ) ); ?>" target="_blank"><?php esc_html_e('Page Header Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-admin-customizer"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=colors' ) ); ?>" target="_blank"><?php esc_html_e('Colors Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-editor-textcolor"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_base_typography' ) ); ?>" target="_blank"><?php esc_html_e('Typography Options','arilewp'); ?></a></li>
+					<?php // check for plugin using plugin name
+                    if ( is_plugin_active( 'arile-extra/arile-extra.php' ) ) { ?>
+					<li class="customize-options"><i class="dashicons dashicons-align-center"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_main_theme_slider' ) ); ?>" target="_blank"><?php esc_html_e('Slider Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-editor-insertmore"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_theme_info_area' ) ); ?>" target="_blank"><?php esc_html_e('Theme Info Area Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-admin-generic"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_theme_service' ) ); ?>" target="_blank"><?php esc_html_e('Service Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-images-alt2"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_theme_project' ) ); ?>" target="_blank"><?php esc_html_e('Project Options','arilewp'); ?></a></li>
+			       <li class="customize-options"><i class="dashicons dashicons-slides"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_theme_testimonial' ) ); ?>" target="_blank"><?php esc_html_e('Testimonial Options','arilewp'); ?></a></li><?php } ?>					
+		           <li class="customize-options"><i class="dashicons dashicons-list-view"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_blog_general' ) ); ?>" target="_blank"><?php esc_html_e('Blog Options','arilewp'); ?></a></li>	
+					<li class="customize-options"><i class="dashicons dashicons-editor-kitchensink"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=arilewp_theme_footer' ) ); ?>" target="_blank"><?php esc_html_e('Footer Options','arilewp'); ?></a></li>
+					<li class="customize-options"><i class="dashicons dashicons-welcome-write-blog"></i><a class="arilewp-links-settings" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=custom_css' ) ); ?>" target="_blank"><?php esc_html_e('Additional Css Box','arilewp'); ?></a></li>
 				</div>
-			   <div class="panel-aside panel-column w-50">
-					<h4><?php esc_html_e( 'Leave us a review', 'arilewp' ); ?></h4>
-					<p><?php esc_html_e( 'If you are enjoying our arilewp theme. So we will be waiting for your beautiful feedback. We will appreciate you with love.', 'arilewp' ); ?></p>
-					<a class="button button-primary" target="_blank" href="//wordpress.org/support/theme/arilewp/reviews/#new-post" title="<?php esc_attr_e( 'Submit a review', 'arilewp' ); ?>"><?php esc_html_e( 'Submit a review', 'arilewp' ); ?></a>
+			   <div class="panel-aside bg-white panel-column w-50">
+					<h4><?php esc_html_e( 'ArileWP Pro Theme Features', 'arilewp' ); ?></h4>
+					<li class="customize-options"><i class="dashicons dashicons-welcome-widgets-menus"></i><?php esc_html_e( 'Sticky Header', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-admin-generic"></i><?php esc_html_e( 'Live Customizer', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-admin-site-alt"></i><?php esc_html_e( 'Multilingual Ready', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-thumbs-up"></i><?php esc_html_e( '1 Year Free Updates', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-editor-textcolor"></i><?php esc_html_e( 'Google Font Support', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-admin-customizer"></i><?php esc_html_e( 'Unlimited Color Schemes', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-feedback"></i><?php esc_html_e( 'Wide & Boxed Layouts', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-editor-ltr"></i><?php esc_html_e( 'Advanced Typography', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-editor-insertmore"></i><?php esc_html_e( 'Unique Header Layouts', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-feedback"></i><?php esc_html_e( 'Unlimited Business Sections', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-list-view"></i><?php esc_html_e( 'Advanced Blog Layouts', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-format-video"></i><?php esc_html_e( 'Video Tutorial', 'arilewp' ); ?></li>
 				</div>
 			</div>
 		</div>

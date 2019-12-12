@@ -898,3 +898,21 @@ h4 .button {
 .mb-0 { margin-bottom: 0; }
 .text-show { color: #13aff0; }
 .font-18 { font-size: 18px; }
+
+.getting-started .panel-aside.bg-white { background-color: #fff; }
+.getting-started .panel-aside li.customize-options {
+	list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 15px;
+    margin-right: 2%;
+    display: inline-block;
+    width: 47%;
+}
+.getting-started .panel-aside li.customize-options:last-child {
+	margin-bottom: 0px;
+}
+.getting-started .panel-aside li.customize-options i.dashicons {
+    color: #202020;
+    margin-right: 12px;
+	float: left;
+}
