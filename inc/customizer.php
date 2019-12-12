@@ -496,6 +496,17 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'panel' => 'aagaz_startup_panel_id',
 	));
 
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'aagaz_startup_show_hide_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('aagaz_startup_show_hide_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Top Header','aagaz-startup' ),
+        'section' => 'aagaz_startup_contact_details'
+    ));
+
 	$wp_customize->add_setting('aagaz_startup_contact_number',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'

@@ -145,3 +145,13 @@
 		$custom_css .='} }';
 	}
 
+	$show_header = get_theme_mod( 'aagaz_startup_show_hide_topbar', true);
+	if($show_header == true){
+		$custom_css .='.logo{';
+			$custom_css .=';';
+		$custom_css .='}';
+	}else if($show_header == false){
+		$custom_css .='.logo{';
+			$custom_css .='top: 0;';
+		$custom_css .='}';
+	}
