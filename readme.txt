@@ -3,7 +3,7 @@ Contributors: WpZita
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors 
 Requires at least: 4.0
 Tested up to: 5.2.3
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -47,3 +47,6 @@ Once again, thank you so much for trying the Agency Zita WordPress Theme. As we 
 
 == 1.2.1  =
 * Style and screenshot improved.
+
+== 1.2.2  =
+* Latest WordPress compatibility checked
