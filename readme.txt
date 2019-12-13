@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.5 | 12th December 2019 = 
+* Update: Font page template, make sure logic forces the latest posts to show if it's set as "Your homepage displays: Your latest posts"
+* Update: Fix php notices.
+* Update: Remove all admin notice styling.
 
 = 1.7.4 | 26th November 2019 = 
 * Update: Gutenberg css.
