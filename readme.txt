@@ -3,8 +3,8 @@
 Contributors: WPinterface
 
 Requires at least:4.0
-Tested up to:5.0.3
-Stable tag: 1.1.0
+Tested up to: 5.3
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Advance Blog is distributed under the terms of the GNU GPL
 Advance Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
+= 1.1.1- [10-Dec-2019] =
+* Added new feature with compatibility on new WordPress version.
+
 = 1.1.0 - [24-Aug-2019] =
 * Added the wp_body_open action.
 * Added skip links TRT requirement.

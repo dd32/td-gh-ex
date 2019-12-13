@@ -1,13 +1,10 @@
 /**
  * Custom js for theme
  */
-
 (function ($) {
-
     $(window).on('load', function () {
         $("#mini-loader").fadeOut(500);
     });
-
     $(document).ready(function () {
         var pageSection = $(".data-bg");
         pageSection.each(function (indx) {
@@ -15,13 +12,11 @@
                 $(this).css("background-image", "url(" + $(this).data("background") + ")");
             }
         });
-
         $('.background-src').each(function () {
             var src = $(this).children('img').attr('src');
             $(this).css('background-image', 'url(' + src + ')').children('img').hide();
         });
     });
-
     $(document).ready(function () {
         $('.search-icon').on('click', function (event) {
             $('body').toggleClass('search-toogle');
@@ -30,7 +25,6 @@
             $('body').removeClass('search-toogle');
         });
     });
-
     $(document).ready(function () {
         $(".main-slider").slick({
             slidesToShow: 1,
@@ -44,8 +38,7 @@
             prevArrow: '<i class="navcontrol-icon slide-prev ion-ios-arrow-left"></i>',
             easing: "linear"
         });
-
-        $(".gallery-columns-1, .wp-block-gallery.columns-1").each(function () {
+        $(".gallery-columns-1, ul.wp-block-gallery.columns-1, .wp-block-gallery.columns-1 .blocks-gallery-grid").each(function () {
             $(this).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -59,8 +52,7 @@
                 easing: "linear"
             });
         });
-
-        $('.gallery, .blocks-gallery-item').each(function () {
+        $('.gallery, .wp-block-gallery').each(function () {
             $(this).magnificPopup({
                 delegate: 'a',
                 type: 'image',
@@ -77,16 +69,12 @@
             });
         });
     });
-
     $(document).ready(function () {
         $('.background').each(function () {
             var src = $(this).children('img').attr('src');
             $(this).css('background-image', 'url(' + src + ')').children('img').hide();
         });
-
     });
-
-
     $(document).ready(function () {
         $("#scroll-top").on("click", function () {
             $("html, body").animate({
@@ -94,9 +82,7 @@
             }, 800);
             return false;
         });
-
     });
-
     $(document).scroll(function () {
         if ($(window).scrollTop() > $(window).height() / 2) {
             $("#scroll-top").fadeIn(300);
@@ -104,6 +90,4 @@
             $("#scroll-top").fadeOut(300);
         }
     });
-
-
 })(jQuery);
