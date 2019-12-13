@@ -2,9 +2,9 @@
 Contributors: themefreesia
 Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, footer-widgets, blog, e-commerce, education, entertainment, news, portfolio
 Requires at least: 5.0
-Tested up to: 5.2.2
+Tested up to: 5.2.4
 Requires PHP: 5.6
-Stable tag: 2.1.3.9
+Stable tag: 2.2.0
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -120,6 +120,13 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+== 2.2.0 =
+	- Fix - WooCommerce search button issue fixed
+			- Style css viewport issue fixed
+	- Update - admin css removed
+				- Requires PHP field added
+
+
 == 2.1.3.9 =
 	- New - Accessibility Added
 
