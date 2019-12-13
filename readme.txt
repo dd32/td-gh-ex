@@ -2,13 +2,13 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.2.2
+Tested up to: 5.3.1
 Requires PHP: 5.6
-Stable tag: 1.0.2
-Version: 1.0.2
+Stable tag: 1.0.20
+Version: 1.0.20
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
 
 == Copyright ==
 
@@ -20,7 +20,7 @@ StartKit WordPress Theme, Copyright 2019 Nayra Themes. StartKit WordPress Theme 
 
 == Description ==
 
-Arowana is a Fast and lightweight, easily customizable and multi-purpose WordPress theme with the main focus on smooth user experience to make your site stand out from the crowd. Arowana comes with everything you could ever need to build an amazing website. Arowana is the perfect theme for your business! View the demo of StartKit Pro https://www.nayrathemes.com/demo/pro/?theme=startkit
+Arowana is a child of the StartKit theme with lots of powerful features. Arowana is suited for any type of website and works with all popular plugins. Get 24x7 support with both the free and the Pro versions. Explore the Pro demo - https://www.nayrathemes.com/demo/pro/?theme=arowana
 
 == Installation ==
 	
@@ -54,28 +54,29 @@ Bootstrap (http://getbootstrap.com/)
 Copyright (c) 2011-2019 Twitter, Inc.
 License - MIT License (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-4) Owl Carousel 2.2.1
-=================================================================================================
-Owl Carousel 2.2.1 - by @David Deutsch - https://github.com/OwlCarousel2
-License - MIT License(https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE)
-
-5) Animate Css
+4) Animate Css
 =================================================================================================
 Animate Css by @Daniel Eden - https://daneden.me/
 License - MIT License (https://github.com/daneden/animate.css/blob/master/LICENSE)
 Source: https://github.com/daneden/animate.css
 
-6) Sticky Js
+5) Sticky Js
 =================================================================================================
 Sticky Js by @Anthony Garand - http://stickyjs.com/
 License - MIT License (https://github.com/garand/sticky/blob/master/LICENSE.md)
 Source: http://stickyjs.com/
 
-7) Meanmenu Js
+6) Meanmenu Js
 =================================================================================================
 jquery.meanmenu.js by Chris Wharton
 License - GNU LESSER GENERAL PUBLIC LICENSE (https://github.com/meanthemes/meanMenu/blob/master/gpl.txt)
 Source: http://www.meanthemes.com/plugins/meanmenu/
+
+7) Wow Js
+=================================================================================================
+jquery.meanmenu.js by Thomas Grainger
+License -  MIT license (https://github.com/graingert/WOW/blob/master/LICENSE)
+Source: https://github.com/graingert/WOW/blob/master/dist/wow.min.js
 
 8) Sainitization
 =================================================================================================
@@ -100,7 +101,7 @@ Source: https://github.com/soderlind/class-customizer-toggle-control
 12) Screenshot Image
 =================================================================================================
 Screenshot Image
-URL: https://pxhere.com/en/photo/1456587
+URL: https://pxhere.com/en/photo/1446785
 Source: https://pxhere.com
 License: CC0 Public Domain
 
@@ -110,6 +111,61 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 1.0.20
+* Tested With WordPress 5.3.1
+* Style Improvement
+
+@version 1.0.19
+* Add Upsale Button
+
+@version 1.0.18
+* Site Title Styled
+
+@version 1.0.17
+* Screenshot Changed
+
+@version 1.0.16
+* Screenshot Changed
+
+@version 1.0.15
+* Style Improvement
+
+@version 1.0.14
+* Subject Tags Updated
+
+@version 1.0.13
+* Resolve Escaping Issue
+
+@version 1.0.12
+* Theme Description Changed
+
+@version 1.0.11
+* Theme Description Changed
+
+@version 1.0.10
+* Remove Unnecessary Style
+
+@version 1.0.9
+* Tested With WordPress 5.3
+
+@version 1.0.8
+* Screenshot Updated
+
+@version 1.0.7
+* Screenshot Updated
+
+@version 1.0.6
+* Remove Unnecessary Style
+
+@version 1.0.5
+* Remove Unnecessary Style
+
+@version 1.0.4
+* Style Improvement
+
+@version 1.0.3
+* Theme URI Added
 
 @version 1.0.2
 * Theme Review Issues Resolved
