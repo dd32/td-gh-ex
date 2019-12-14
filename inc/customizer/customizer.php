@@ -44,6 +44,11 @@
 	}
 
 /**
+ * Font Awesome List
+ */
+require get_template_directory() . '/inc/fontawesome-list.php';
+
+/**
  * Sanitization Functions
 */
 require get_template_directory() . '/inc/customizer/sanitization-functions.php';
@@ -55,3 +60,13 @@ function bakery_shop_customize_preview_js() {
     wp_enqueue_script( 'bakery_shop_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'bakery_shop_customize_preview_js' );
+
+/**
+ * Enqueue Scripts for customize controls
+*/
+function bakery_shop_customize_scripts() {
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.css');   
+    wp_enqueue_style( 'bakery-shop-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );    
+    //wp_enqueue_script( 'bakery-shop-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'bakery_shop_customize_scripts' );

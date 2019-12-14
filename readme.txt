@@ -2,15 +2,15 @@
 Contributors: prosysthemes (http://prosystheme.com)
 Requires at least: 4.7
 Requires PHP: 5.2
-Tested up to: 5.2.2
-Stable tag: 1.0.8
+Tested up to: 5.3
+Stable tag: 1.0.9
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-menu, featured-image-header, featured-images,  threaded-comments, translation-ready, theme-options, footer-widgets, blog, full-width-template, custom-colors, e-commerce, food-and-drink 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Bakery Shop is a modern Multipurpose responsive Bakery Shop style WordPress theme suitable for business, portfolio, food, bakery shop, cake shop, travel, blogs, publishing and any kind of sites. This theme supports Ecommerce so that this theme can be used in any kind of shops. The theme is built on Customizer and it allows you to easily customize your website with live previews. The theme is Speed and Search Engine Optimized (SEO) to help you easily climb the google rank. Other feature includes social media integration, custom widgets, author bio, breadcrumb, custom CSS, translation ready and more. Check demo at http://prosystheme.com/theme-demos/?theme_demos=business-ezone and documentation at http://prosystheme.com/documentation/bakery-shop. Read theme details at http://prosystheme.com/wordpress-themes/bakery-shop and get support at http://prosystheme.com/forums.
+Bakery Shop is a modern Multipurpose responsive Bakery Shop style WordPress theme suitable for business, portfolio, food, bakery shop, cake shop, travel, blogs, publishing and any kind of sites. This theme supports Ecommerce so that this theme can be used in any kind of shops. The theme is built on Customizer and it allows you to easily customize your website with live previews. The theme is Speed and Search Engine Optimized (SEO) to help you easily climb the google rank. Other feature includes social media integration, custom widgets, author bio, breadcrumb, custom CSS, translation ready and more. Check demo at http://prosystheme.com/theme-demos/?theme_demos=bakery-shop and documentation at http://prosystheme.com/documentation/bakery-shop. Read theme details at http://prosystheme.com/wordpress-themes/bakery-shop and get support at http://prosystheme.com/forums.
 
 == License ==
 All other resources and theme elements are licensed under the GPLv2 or later
@@ -30,6 +30,12 @@ Bakery Shop WordPress Theme is distributed under the terms of the GPLv2 or later
 3. Click Activate to use your new theme right away.
 
 == Change Log ==
+1.0.9
+ * fixed found bugs.
+ * Enable Curtain button added for header menu.
+ * improved css.
+ * Site to content and keyboard Navigation added for accessibility.
+
 1.0.8
  * fixed found bugs.
 

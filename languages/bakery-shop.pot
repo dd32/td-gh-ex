@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2018-08-03 11:04+0000\n"
+"POT-Creation-Date: 2019-12-14 15:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,6 +30,14 @@ msgstr ""
 
 #: 404.php:21
 msgid "homepage."
+msgstr ""
+
+#: archive.php:40 index.php:45 search.php:40
+msgid "<span class=\"fa fa-angle-double-left\"></span>"
+msgstr ""
+
+#: archive.php:41 index.php:46 search.php:41
+msgid "<span class=\"fa fa-angle-double-right\"></span>"
 msgstr ""
 
 #: comments.php:32
@@ -165,36 +173,36 @@ msgstr ""
 msgid "Choose Sidebar Template"
 msgstr ""
 
-#: inc/template-functions.php:164 inc/customizer/home.php:230
+#: inc/template-functions.php:169 inc/customizer/home.php:231
 msgid "Learn More"
 msgstr ""
 
-#: inc/template-functions.php:491 inc/customizer/home.php:473
+#: inc/template-functions.php:500 inc/customizer/home.php:514
 msgid "About Us"
 msgstr ""
 
-#: inc/template-functions.php:493
+#: inc/template-functions.php:502
 msgid "Contact Us"
 msgstr ""
 
-#: inc/template-functions.php:899
+#: inc/template-functions.php:909
 msgid "http://prosystheme.com/wordpress-themes/bakery-shop/"
 msgstr ""
 
-#: inc/template-functions.php:899
+#: inc/template-functions.php:909
 msgid "Bakery Shop By Prosys Theme. "
 msgstr ""
 
-#: inc/template-functions.php:900
+#: inc/template-functions.php:910
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/template-functions.php:900
+#: inc/template-functions.php:910
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/template-functions.php:900
+#: inc/template-functions.php:910
 msgid "WordPress"
 msgstr ""
 
@@ -335,128 +343,136 @@ msgstr ""
 msgid "Select Post "
 msgstr ""
 
-#: inc/customizer/home.php:238
+#: inc/customizer/home.php:239
 msgid "Readmore Text"
 msgstr ""
 
-#: inc/customizer/home.php:250
+#: inc/customizer/home.php:258
+msgid "Enable Header Curtain"
+msgstr ""
+
+#: inc/customizer/home.php:270
 msgid "Featured Section"
 msgstr ""
 
-#: inc/customizer/home.php:269
+#: inc/customizer/home.php:289
 msgid "Enable Featured Post Section"
 msgstr ""
 
-#: inc/customizer/home.php:287
+#: inc/customizer/home.php:307
 msgid "Enable Featured Post Icon"
 msgstr ""
 
-#: inc/customizer/home.php:306
+#: inc/customizer/home.php:326
 msgid "Select Featured Post "
 msgstr ""
 
-#: inc/customizer/home.php:318
+#: inc/customizer/home.php:348
+msgid "FontAwesome Icon "
+msgstr ""
+
+#: inc/customizer/home.php:359
 msgid "About Section"
 msgstr ""
 
-#: inc/customizer/home.php:337
+#: inc/customizer/home.php:378
 msgid "Enable Welcome Section"
 msgstr ""
 
-#: inc/customizer/home.php:349
+#: inc/customizer/home.php:390
 msgid "Featured Product Section"
 msgstr ""
 
-#: inc/customizer/home.php:367
+#: inc/customizer/home.php:408
 msgid "Enable Featured Product Section"
 msgstr ""
 
-#: inc/customizer/home.php:370
+#: inc/customizer/home.php:411
 msgid "Please Enable Woocommerce to display items in Featured Products."
 msgstr ""
 
-#: inc/customizer/home.php:386 inc/customizer/home.php:459
-#: inc/customizer/home.php:542 inc/customizer/home.php:607
-#: inc/customizer/home.php:692
+#: inc/customizer/home.php:427 inc/customizer/home.php:500
+#: inc/customizer/home.php:583 inc/customizer/home.php:648
+#: inc/customizer/home.php:733
 msgid "Select Page"
 msgstr ""
 
-#: inc/customizer/home.php:408
+#: inc/customizer/home.php:449
 msgid "Select Product "
 msgstr ""
 
-#: inc/customizer/home.php:422
+#: inc/customizer/home.php:463
 msgid "CTA Section"
 msgstr ""
 
-#: inc/customizer/home.php:441
+#: inc/customizer/home.php:482
 msgid "Enable cta Us Section"
 msgstr ""
 
-#: inc/customizer/home.php:460
+#: inc/customizer/home.php:501
 msgid ""
 "Featured Image of Selected Page will be set as Background Image of this "
 "section."
 msgstr ""
 
-#: inc/customizer/home.php:481
+#: inc/customizer/home.php:522
 msgid "CTA Button"
 msgstr ""
 
-#: inc/customizer/home.php:498
+#: inc/customizer/home.php:539
 msgid "CTA Button Link"
 msgstr ""
 
-#: inc/customizer/home.php:507
+#: inc/customizer/home.php:548
 msgid "Teams Section"
 msgstr ""
 
-#: inc/customizer/home.php:526
+#: inc/customizer/home.php:567
 msgid "Enable Teams Section"
 msgstr ""
 
-#: inc/customizer/home.php:560
+#: inc/customizer/home.php:601
 msgid "Select Teams Category"
 msgstr ""
 
-#: inc/customizer/home.php:572
+#: inc/customizer/home.php:613
 msgid "Testimonials Section"
 msgstr ""
 
-#: inc/customizer/home.php:591
+#: inc/customizer/home.php:632
 msgid "Enable Testimonials Section"
 msgstr ""
 
-#: inc/customizer/home.php:625
+#: inc/customizer/home.php:666
 msgid "Select Testimonial Category"
 msgstr ""
 
-#: inc/customizer/home.php:638
+#: inc/customizer/home.php:679
 msgid "Blog Section"
 msgstr ""
 
-#: inc/customizer/home.php:657
+#: inc/customizer/home.php:698
 msgid "Enable Blog Section"
 msgstr ""
 
-#: inc/customizer/home.php:675
+#: inc/customizer/home.php:716
 msgid "Show Posts Date, Author, Comment, Category"
 msgstr ""
 
-#: inc/customizer/home.php:710
+#: inc/customizer/home.php:751
 msgid "Select Blogs Category"
 msgstr ""
 
-#: inc/customizer/home.php:720 inc/widgets/widget-featured-post.php:95
+#: inc/customizer/home.php:761 inc/widgets/widget-featured-post.php:95
 #: inc/widgets/widget-featured-post.php:135
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer/home.php:728
+#: inc/customizer/home.php:769
 msgid "Blog Section Read More Text"
 msgstr ""
 
-#: inc/customizer/home.php:746
+#: inc/customizer/home.php:787
 msgid "Blog Page url"
 msgstr ""
 
@@ -637,10 +653,11 @@ msgid ""
 "previews. The theme is Speed and Search Engine Optimized (SEO) to help you "
 "easily climb the google rank. Other feature includes social media "
 "integration, custom widgets, author bio, breadcrumb, custom CSS, translation "
-"ready and more. Check demo at http://prosystheme.com/preview/bakery-shop/ "
-"and documentation at http://prosystheme.com/documentation/bakery-shop. Read "
-"theme details at http://prosystheme.com/wordpress-themes/bakery-shop and get "
-"free support at http://prosystheme.com/request-a-support."
+"ready and more. Check demo at http://prosystheme.com/theme-demos/?"
+"theme_demos=bakery-shop and documentation at http://prosystheme."
+"com/documentation/bakery-shop. Read theme details at http://prosystheme."
+"com/wordpress-themes/bakery-shop and get support at http://prosystheme."
+"com/forums."
 msgstr ""
 
 #. URI of the theme

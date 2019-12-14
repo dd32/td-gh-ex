@@ -89,6 +89,8 @@ if( ! function_exists( 'bakery_shop_header_bottom' ) ) :
  * @since 1.0.1
 */
 function bakery_shop_header_bottom(){
+
+    $ed_curtain = get_theme_mod( 'bakery_shop_ed_curtain' );
     ?>
     <div class="header-bottom">    
         <div class="container">
@@ -99,6 +101,9 @@ function bakery_shop_header_bottom(){
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
             </nav><!-- #site-navigation -->
         </div>
+        <?php if( $ed_curtain ){
+            echo '<div class="curtain"><div class="curtain-holder"></div></div>';
+        } ?>
     </div>
     <?php 
 }
@@ -244,7 +249,11 @@ global $bakery_shop_default_post;
                                                 echo '<a href="' . esc_url( get_the_permalink() ) .'">';
                                                     the_post_thumbnail( 'bakery-shop-recent-post' ); 
                                                 echo '</a>';
-                                            }
+                                            }else{
+                                            echo '<a href="' . esc_url( get_the_permalink() ) .'">';
+                                                echo '<i class="fa ' . esc_attr( $bakery_shop_featured_page_icon ) .'"></i>';
+                                            echo '</a>';
+                                        } 
                                         ?>
                                         <div class="featured-text">
                                             <a href="<?php the_permalink(); ?>"><?php the_title('<h3>','</h3>'); ?></a>
@@ -532,6 +541,7 @@ function bakery_shop_cta(){
 }
 
 endif;
+
 
 if( ! function_exists( 'bakery_shop_team' ) ) :
 /**
