@@ -2,9 +2,9 @@
 Contributors: aruphash
 Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template, portfolio, grid-layout
 Requires at least: 4.0
-Tested up to: 5.3
+Tested up to: 5.3.1
 Requires PHP: 5.6
-Stable tag: 0.0.11
+Stable tag: 0.0.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,14 +34,8 @@ GNU General Public License for more details.
 2. Type in Apex Business in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 
-Import Demo Front Page
-
-To import the demo contents first you need to download the demo data. Download the demo from this url http://www.crafthemes.com/wp-content/uploads/2019/12/apex-business.xml and follow the steps
-
-1. Click on Tools -> Import
-2. On the Import page, under WordPress click Install Now.
-3. Click on Run Importer.
-4. Upload the file you have downloaded and click “Upload file and import”
+Documentation
+https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 == Changelog ==
 

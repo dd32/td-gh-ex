@@ -434,7 +434,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_control(
         new Apex_Business_Customizer_Range_Value_Control(
             $wp_customize, 'apex_business_header_font_size_control', array(
-                'label'         => esc_html__( 'header Font Size (px)', 'apex-business' ),
+                'label'         => esc_html__( 'Header Font Size (px)', 'apex-business' ),
                 'section'       => 'apex_business_header_navigation_section',
                 'type'          => 'range-value',
                 'priority'      => 25,
@@ -505,7 +505,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_control(
         new Apex_Business_Customizer_Range_Value_Control(
             $wp_customize, 'apex_business_header_line_height_control', array(
-                'label'             => esc_html__( 'header Line Height (px)', 'apex-business' ),
+                'label'             => esc_html__( 'Header Line Height (px)', 'apex-business' ),
                 'section'           => 'apex_business_header_navigation_section',
                 'type'              => 'range-value',
                 'media_query'       => true,
