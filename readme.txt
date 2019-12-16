@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.2.2
-Stable tag: 1.1.1
+Tested up to: WordPress 5.3.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
@@ -191,6 +191,10 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
 == Change Log ==
+  
+    1.1.2
+    * changed free vs pro image
+    * Fixed dropdown menu for edge
 
     1.1.1
     * App Landing Page Pro links Added.

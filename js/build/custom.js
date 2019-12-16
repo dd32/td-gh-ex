@@ -56,4 +56,12 @@ jQuery(document).ready(function($){
             $(this).toggleClass('active');
         });
     }
+
+    if(winWidth > 1024){
+        $("#site-navigation ul li a").focus(function() {
+            $(this).parents("li").addClass("focus");
+        }).blur(function() {
+            $(this).parents("li").removeClass("focus");
+        });
+    }
 });
