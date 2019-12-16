@@ -18,6 +18,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.0.8 - December 16, 2019
+Updated homepage slider controls
+
 1.0.7 - December 12, 2019
 Fix for custom font selection
 Updated menu background on mobile

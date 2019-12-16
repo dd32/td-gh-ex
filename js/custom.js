@@ -97,13 +97,12 @@ jQuery(function($){
     }
 
     $('.bx-slider').bxSlider({
-        'pager':false,
+        'pager': true,
         'auto' : true,
         'mode' : 'fade',
         'pause' : 7000,
-        'prevText' : '<i class="fa fa-chevron-left"></i>',
-        'nextText' : '<i class="fa fa-chevron-right"></i>',
-        'adaptiveHeight' : true
+        'controls' : false,
+        'adaptiveHeight' : true,
     });
 
     $('#home-hero-section .widget_media_image').each(function(){
