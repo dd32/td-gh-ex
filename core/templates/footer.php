@@ -14,9 +14,9 @@
 /* Socials */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('alhenalite_socials_function')) {
+if (!function_exists('alhena_lite_socials_function')) {
 
-	function alhenalite_socials_function() {
+	function alhena_lite_socials_function() {
 
 		$allowed = array(
 			'a' => array(
@@ -35,7 +35,6 @@ if (!function_exists('alhenalite_socials_function')) {
 			"facebook" => array( "icon" => "fa fa-facebook" , "target" => "_blank" ),
 			"twitter" => array( "icon" => "fa fa-twitter" , "target" => "_blank" ),
 			"flickr" => array( "icon" => "fa fa-flickr" , "target" => "_blank" ),
-			"google" => array( "icon" => "fa fa-google-plus" , "target" => "_blank" ),
 			"linkedin" => array( "icon" => "fa fa-linkedin" , "target" => "_blank" ),
 			"pinterest" => array( "icon" => "fa fa-pinterest" , "target" => "_blank" ),
 			"tumblr" => array( "icon" => "fa fa-tumblr" , "target" => "_blank" ),
@@ -57,16 +56,16 @@ if (!function_exists('alhenalite_socials_function')) {
 		
 		foreach ( $socials as $k => $v) { 
 		
-			if ( alhenalite_setting('wip_footer_'.$k.'_button') ): 
+			if ( alhena_lite_setting('wip_footer_'.$k.'_button') ): 
 			
 				$i++;	
-				$html.= '<a href="'.esc_url(alhenalite_setting('wip_footer_'.$k.'_button'), array( 'http', 'https', 'tel', 'skype', 'mailto' )).'" target="'.$v['target'].'" title="'.ucfirst($k).'" class="social"><i class="'.$v['icon'].'" ></i></a> ';
+				$html.= '<a href="'.esc_url(alhena_lite_setting('wip_footer_'.$k.'_button'), array( 'http', 'https', 'tel', 'skype', 'mailto' )).'" target="'.$v['target'].'" title="'.ucfirst($k).'" class="social"><i class="'.$v['icon'].'" ></i></a> ';
 			
 			endif;
 			
 		}
 		
-		if ( alhenalite_setting('wip_footer_rss_button') == "on" ): 
+		if ( alhena_lite_setting('wip_footer_rss_button') == "on" ): 
 		
 			$i++;	
 			$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="Rss" class="social rss"> <i class="fa fa-rss" ></i>  </a> ';
@@ -81,7 +80,7 @@ if (!function_exists('alhenalite_socials_function')) {
 		
 	}
 	
-	add_action( 'alhenalite_socials', 'alhenalite_socials_function', 10, 2 );
+	add_action( 'alhena_lite_socials', 'alhena_lite_socials_function', 10, 2 );
 
 }
 

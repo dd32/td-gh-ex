@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 
-class alhenalite_customize {
+class alhena_lite_customize {
 
 	public $theme_fields;
 
@@ -260,7 +260,7 @@ class alhenalite_customize {
 			
 		}
 
-		if ( alhenalite_is_woocommerce_active() ) :
+		if ( alhena_lite_is_woocommerce_active() ) :
 			
 			$wp_customize->remove_control( 'woocommerce_catalog_rows');
 			$wp_customize->remove_control( 'woocommerce_catalog_columns');

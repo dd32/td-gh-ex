@@ -8,8 +8,8 @@
                 
                     <p>
                     
-                        <?php if (alhenalite_setting('wip_copyright_text')): ?>
-                           <?php echo stripslashes(alhenalite_setting('wip_copyright_text')); ?>
+                        <?php if (alhena_lite_setting('wip_copyright_text')): ?>
+                           <?php echo stripslashes(alhena_lite_setting('wip_copyright_text')); ?>
                         <?php else: ?>
                           <?php esc_html_e('Copyright',"alhena-lite"); ?> <?php echo get_bloginfo("name"); ?> <?php echo date_i18n("Y"); ?> 
                         <?php endif; ?> 
@@ -22,7 +22,7 @@
                 
                 <div class="col-md-6" >
                     
-                    <div class="socials"><?php do_action( 'alhenalite_socials' ); ?></div>
+                    <div class="socials"><?php do_action( 'alhena_lite_socials' ); ?></div>
     
                 </div>
             

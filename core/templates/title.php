@@ -10,9 +10,9 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_get_title_function')) {
+if (!function_exists('alhena_lite_get_title_function')) {
 
-	function alhenalite_get_title_function($type) {
+	function alhena_lite_get_title_function($type) {
 		
 		global $post;
 		
@@ -36,7 +36,7 @@ if (!function_exists('alhenalite_get_title_function')) {
 		
 	}
 	
-	add_action( 'alhenalite_get_title', 'alhenalite_get_title_function', 10, 2 );
+	add_action( 'alhena_lite_get_title', 'alhena_lite_get_title_function', 10, 2 );
 
 }
 

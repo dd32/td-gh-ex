@@ -9,7 +9,7 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function alhenalite_footer_content_function() { 
+function alhena_lite_footer_content_function() { 
 
 	if ( is_active_sidebar('footer_sidebar_area')) : ?>
     
@@ -33,6 +33,6 @@ function alhenalite_footer_content_function() {
 
 } 
 
-add_action( 'alhenalite_footer_content', 'alhenalite_footer_content_function', 10, 2 );
+add_action( 'alhena_lite_footer_content', 'alhena_lite_footer_content_function', 10, 2 );
 
 ?>

@@ -10,27 +10,27 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_before_content_function')) {
+if (!function_exists('alhena_lite_before_content_function')) {
 
-	function alhenalite_before_content_function() {
+	function alhena_lite_before_content_function() {
 
-		if ( ! alhenalite_is_single() ) {
+		if ( ! alhena_lite_is_single() ) {
 
-			do_action('alhenalite_get_title', 'blog' ); 
+			do_action('alhena_lite_get_title', 'blog' ); 
 
 		} else {
 
-			if ( !alhenalite_postmeta('wip_view_title') || alhenalite_postmeta('wip_view_title') == "on" ) :
+			if ( !alhena_lite_postmeta('wip_view_title') || alhena_lite_postmeta('wip_view_title') == "on" ) :
 
-				if ( !alhenalite_is_woocommerce_active('is_cart') ) :
+				if ( !alhena_lite_is_woocommerce_active('is_cart') ) :
 	
-					if ( alhenalite_is_single() && !is_page_template() ) :
+					if ( alhena_lite_is_single() && !is_page_template() ) :
 							 
-						do_action('alhenalite_get_title','post');
+						do_action('alhena_lite_get_title','post');
 							
 					else :
 					
-						do_action('alhenalite_get_title','blog'); 
+						do_action('alhena_lite_get_title','blog'); 
 							 
 					endif;
 	
@@ -42,7 +42,7 @@ if (!function_exists('alhenalite_before_content_function')) {
 		
 	} 
 	
-	add_action( 'alhenalite_before_content', 'alhenalite_before_content_function', 10, 2 );
+	add_action( 'alhena_lite_before_content', 'alhena_lite_before_content_function', 10, 2 );
 
 }
 

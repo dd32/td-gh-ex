@@ -1,9 +1,9 @@
 <?php 
 
 	get_header(); 
-	do_action( 'alhenalite_header_content' );
+	do_action( 'alhena_lite_header_content' );
 
-	if ( (alhenalite_postmeta('wip_content') == "on") || (!alhenalite_postmeta('wip_content') )): 
+	if ( (alhena_lite_postmeta('wip_content') == "on") || (!alhena_lite_postmeta('wip_content') )): 
 	
 ?>
 
@@ -13,7 +13,7 @@
 
 	<div class="row" >
         
-		<div class="<?php echo alhenalite_template('span') . " " . alhenalite_template('sidebar'); ?>">
+		<div class="<?php echo alhena_lite_template('span') . " " . alhena_lite_template('sidebar'); ?>">
                 
 			<div class="row">
         
@@ -21,7 +21,7 @@
                     
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                        
-                        <?php do_action('alhenalite_postformat'); ?> 
+                        <?php do_action('alhena_lite_postformat'); ?> 
                 
                         <?php wp_link_pages(array('before' => '<div class="wip-pagination">' . esc_html__('Pages:',"alhena-lite"), 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>') ); ?>
                 
@@ -43,7 +43,7 @@
 	
 	endif; 
 	
-	do_action( 'alhenalite_footer_content' ); 
+	do_action( 'alhena_lite_footer_content' ); 
 
 	get_footer(); 
 

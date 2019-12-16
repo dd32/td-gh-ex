@@ -9,12 +9,12 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function alhenalite_general_function() {
+function alhena_lite_general_function() {
 	
 	get_template_part( 'core/post-formats/general' );
 
 }
 
-add_action( 'alhenalite_general','alhenalite_general_function', 10, 2 );
+add_action( 'alhena_lite_general','alhena_lite_general_function', 10, 2 );
 
 ?>

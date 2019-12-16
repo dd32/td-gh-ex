@@ -1,8 +1,8 @@
 <?php
 
-if (!function_exists('alhenalite_loadwidgets')) {
+if (!function_exists('alhena_lite_loadwidgets')) {
 
-	function alhenalite_loadwidgets() {
+	function alhena_lite_loadwidgets() {
 
 		register_sidebar(array(
 		
@@ -66,7 +66,7 @@ if (!function_exists('alhenalite_loadwidgets')) {
 	
 	}
 
-	add_action( 'widgets_init', 'alhenalite_loadwidgets' );
+	add_action( 'widgets_init', 'alhena_lite_loadwidgets' );
 
 }
 

@@ -35,10 +35,10 @@ if ( function_exists('wp_body_open') ) {
                             
                         <?php 
                                             
-                            if ( alhenalite_setting('wip_custom_logo') ):
+                            if ( alhena_lite_setting('wip_custom_logo') ):
                             
 							    echo '<a href="'.esc_url(home_url('/')).'" title="'.esc_attr(get_bloginfo('name')).'">';
-                                echo "<img src='".esc_url(alhenalite_setting('wip_custom_logo'))."' alt='logo'>"; 
+                                echo "<img src='".esc_url(alhena_lite_setting('wip_custom_logo'))."' alt='logo'>"; 
                                 echo '</a>';
                             
 							else: 
@@ -57,13 +57,13 @@ if ( function_exists('wp_body_open') ) {
                 
 				<?php 
 						
-					if ( alhenalite_is_woocommerce_active() && ( !alhenalite_setting('wip_woocommerce_header_cart') || alhenalite_setting('wip_woocommerce_header_cart') == "on" ) ) :
+					if ( alhena_lite_is_woocommerce_active() && ( !alhena_lite_setting('wip_woocommerce_header_cart') || alhena_lite_setting('wip_woocommerce_header_cart') == "on" ) ) :
 							
 						$menu_class="col-md-9";
 							
 						echo '<div class="col-md-1 right">';
 		
-							alhenalite_header_cart();
+							alhena_lite_header_cart();
 							
 						echo '</div>';
 							

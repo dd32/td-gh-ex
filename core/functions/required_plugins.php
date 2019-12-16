@@ -16,9 +16,9 @@
  * TGM_Plugin_Activation class constructor.
  */
  
-if (!function_exists('alhenalite_required_plugins')) {
+if (!function_exists('alhena_lite_required_plugins')) {
 	
-	function alhenalite_required_plugins() {
+	function alhena_lite_required_plugins() {
 
 		$plugins = array(
 
@@ -58,7 +58,7 @@ if (!function_exists('alhenalite_required_plugins')) {
 		tgmpa( $plugins, $config );
 	}
 	
-	add_action( 'tgmpa_register', 'alhenalite_required_plugins' );
+	add_action( 'tgmpa_register', 'alhena_lite_required_plugins' );
 
 }
 

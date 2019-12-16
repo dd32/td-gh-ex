@@ -10,11 +10,11 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_after_content_function')) {
+if (!function_exists('alhena_lite_after_content_function')) {
 
-	function alhenalite_after_content_function( $type = "" ) {
+	function alhena_lite_after_content_function( $type = "" ) {
 	
-		if ( ! alhenalite_is_single() ) :
+		if ( ! alhena_lite_is_single() ) :
 			
 			the_excerpt(); 
 	
@@ -36,7 +36,7 @@ if (!function_exists('alhenalite_after_content_function')) {
 		
 			the_content();
 
-			if ( alhenalite_setting('wip_view_comments') == "on" ) :
+			if ( alhena_lite_setting('wip_view_comments') == "on" ) :
 				
 				comments_template();
 			
@@ -48,7 +48,7 @@ if (!function_exists('alhenalite_after_content_function')) {
 		 
 	} 
 	
-	add_action( 'alhenalite_after_content', 'alhenalite_after_content_function', 10, 2 );
+	add_action( 'alhena_lite_after_content', 'alhena_lite_after_content_function', 10, 2 );
 
 }
 

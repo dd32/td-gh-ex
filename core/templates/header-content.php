@@ -9,9 +9,9 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function alhenalite_header_content_function() { 
+function alhena_lite_header_content_function() { 
 
-	if ( alhenalite_postmeta('wip_slogan') ) : ?>
+	if ( alhena_lite_postmeta('wip_slogan') ) : ?>
 	
 	<!-- START SLOGAN  -->
 	
@@ -23,7 +23,7 @@ function alhenalite_header_content_function() {
             
 				<div class="col-md-12">
                 
-					<p> <?php echo alhenalite_postmeta('wip_slogan'); ?> </p>
+					<p> <?php echo alhena_lite_postmeta('wip_slogan'); ?> </p>
                     
 				</div>
                 
@@ -63,6 +63,6 @@ function alhenalite_header_content_function() {
 	
 } 
 
-add_action( 'alhenalite_header_content', 'alhenalite_header_content_function', 10, 2 );
+add_action( 'alhena_lite_header_content', 'alhena_lite_header_content_function', 10, 2 );
 
 ?>

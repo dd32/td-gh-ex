@@ -12,7 +12,7 @@
             
                 <div class="col-md-12">
     
-                    <p><?php echo alhenalite_get_archive_title(); ?> </p>
+                    <p><?php echo alhena_lite_get_archive_title(); ?> </p>
                     
                 </div>
                 
@@ -24,9 +24,9 @@
         
 <?php
 
-	do_action( 'alhenalite_header_content' );
+	do_action( 'alhena_lite_header_content' );
 
-	if ( ( !alhenalite_setting('wip_category_layout')) || ( alhenalite_setting('wip_category_layout') == "masonry" ) ) {
+	if ( ( !alhena_lite_setting('wip_category_layout')) || ( alhena_lite_setting('wip_category_layout') == "masonry" ) ) {
 				
 		get_template_part('layouts/category-masonry'); 
 		
@@ -38,7 +38,7 @@
 
 	get_template_part('pagination');
 	
-	do_action( 'alhenalite_footer_content' ); 
+	do_action( 'alhena_lite_footer_content' ); 
 	
 	get_footer(); 
 

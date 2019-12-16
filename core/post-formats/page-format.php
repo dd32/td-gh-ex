@@ -10,8 +10,8 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-	do_action('alhenalite_header_type'); 
-	do_action('alhenalite_thumbnail', 'blog', 'media-container'); 
+	do_action('alhena_lite_header_type'); 
+	do_action('alhena_lite_thumbnail', 'blog', 'media-container'); 
 
 ?>
 
@@ -19,7 +19,7 @@
 
 	<?php 
 		
-		do_action('alhenalite_before_content');
+		do_action('alhena_lite_before_content');
 		the_content(); 
 		
 	?>

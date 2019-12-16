@@ -10,9 +10,9 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_postformat_function')) {
+if (!function_exists('alhena_lite_postformat_function')) {
 
-	function alhenalite_postformat_function() {
+	function alhena_lite_postformat_function() {
 		
 		if ( get_post_type( get_the_ID()) == "page" ) {
 			
@@ -42,7 +42,7 @@ if (!function_exists('alhenalite_postformat_function')) {
 	
 	}
 	
-	add_action( 'alhenalite_postformat','alhenalite_postformat_function', 10, 2 );
+	add_action( 'alhena_lite_postformat','alhena_lite_postformat_function', 10, 2 );
 
 }
 

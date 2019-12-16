@@ -32,7 +32,7 @@ endif;
 $html .= '<div class="product-content '.$contentclass.'">';
 $html .= '<h3 class="product-title"><a href="'.get_permalink($post->ID).'">'.get_the_title().'</a></h3>';
                         
-if ( alhenalite_postmeta( '_sale_price' ) ) :	
+if ( alhena_lite_postmeta( '_sale_price' ) ) :	
                                     
 	$html .= '<span class="onsale">Sale!</span>';
                                     

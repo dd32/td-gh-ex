@@ -1,8 +1,8 @@
 <?php
 
-if (!function_exists('alhenalite_customize_panel_function')) {
+if (!function_exists('alhena_lite_customize_panel_function')) {
 
-	function alhenalite_customize_panel_function() {
+	function alhena_lite_customize_panel_function() {
 		
 		$theme_panel = array ( 
 
@@ -327,17 +327,6 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				"label" => esc_html__( "Flickr Url","alhena-lite"),
 				"description" => esc_html__( "Insert Flickr Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_flickr_button",
-				"type" => "url",
-				"section" => "footer_section",
-				"std" => "",
-
-			),
-
-			array( 
-
-				"label" => esc_html__( "Google Url","alhena-lite"),
-				"description" => esc_html__( "Insert Google Url (empty if you want to hide the button)","alhena-lite"),
-				"id" => "wip_footer_google_button",
 				"type" => "url",
 				"section" => "footer_section",
 				"std" => "",
@@ -736,14 +725,14 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 			
 		);
 		
-		new alhenalite_customize($theme_panel);
+		new alhena_lite_customize($theme_panel);
 		
 	} 
 	
-	add_action( 'alhenalite_customize_panel', 'alhenalite_customize_panel_function', 10, 2 );
+	add_action( 'alhena_lite_customize_panel', 'alhena_lite_customize_panel_function', 10, 2 );
 
 }
 
-do_action('alhenalite_customize_panel');
+do_action('alhena_lite_customize_panel');
 
 ?>

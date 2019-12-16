@@ -12,14 +12,14 @@ if  ( comments_open() && ( have_comments()) ) :
 
 <section id="comments">
 	<ul class="commentlist">
-		<?php wp_list_comments('type=all&callback=alhenalite_comment&short_ping=TRUE'); ?>
+		<?php wp_list_comments('type=all&callback=alhena_lite_comment&short_ping=TRUE'); ?>
 	</ul>
 </section>
 
 <?php endif; ?>
 
 <?php 
-function alhenalite_comment ($comment, $args, $depth) {
+function alhena_lite_comment ($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
  

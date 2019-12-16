@@ -10,9 +10,9 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_post_info_function')) {
+if (!function_exists('alhena_lite_post_info_function')) {
 	
-	function alhenalite_post_info_function() { 
+	function alhena_lite_post_info_function() { 
 	
 		global $post;
 		
@@ -22,7 +22,7 @@ if (!function_exists('alhenalite_post_info_function')) {
            
              <span> <i class="fa fa-clock-o"></i><?php echo get_the_date(); ?></span>
           
-             <?php if (alhenalite_setting('wip_view_comments') == "on" ): ?>
+             <?php if (alhena_lite_setting('wip_view_comments') == "on" ): ?>
              
                 <span> <i class="fa fa-comments-o"></i>
                     <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.esc_html__( "No comments","alhena-lite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.esc_html__( "comment","alhena-lite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.esc_html__( "comments","alhena-lite").'</a>' ); ?>
@@ -31,11 +31,11 @@ if (!function_exists('alhenalite_post_info_function')) {
             <?php 
 			
 				endif;
-				echo alhenalite_posticon(); 
+				echo alhena_lite_posticon(); 
 				
 			?>
 
-			<?php if (alhenalite_setting('wip_view_author') == "on" ): ?>
+			<?php if (alhena_lite_setting('wip_view_author') == "on" ): ?>
 
 				<span><i class="fa fa-user"></i><?php the_author(); ?></span>
 
@@ -47,7 +47,7 @@ if (!function_exists('alhenalite_post_info_function')) {
 	
 	} 
 
-	add_action( 'alhenalite_post_info', 'alhenalite_post_info_function', 10, 2 );
+	add_action( 'alhena_lite_post_info', 'alhena_lite_post_info_function', 10, 2 );
 
 }
 

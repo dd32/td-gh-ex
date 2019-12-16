@@ -10,13 +10,13 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-	if ( ! alhenalite_is_single() ) :
+	if ( ! alhena_lite_is_single() ) :
 	
-		do_action('alhenalite_thumbnail', 'blog', 'media-container blog-section'); 
+		do_action('alhena_lite_thumbnail', 'blog', 'media-container blog-section'); 
 	
 	else :
 
-		do_action('alhenalite_thumbnail', 'blog', 'media-container'); 
+		do_action('alhena_lite_thumbnail', 'blog', 'media-container'); 
 
 ?>
 
@@ -24,9 +24,9 @@
 
 	<?php 
 	
-		do_action('alhenalite_before_content');
-		do_action('alhenalite_post_info');
-		do_action('alhenalite_after_content'); 
+		do_action('alhena_lite_before_content');
+		do_action('alhena_lite_post_info');
+		do_action('alhena_lite_after_content'); 
 		
 	?>
 

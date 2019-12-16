@@ -2,8 +2,8 @@
 	
 	<?php 
 	
-		do_action('alhenalite_masonry'); 
-		do_action( 'alhenalite_pagination', 'home'); 
+		do_action('alhena_lite_masonry'); 
+		do_action( 'alhena_lite_pagination', 'home'); 
 	
 	?>
 

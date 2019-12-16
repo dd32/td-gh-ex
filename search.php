@@ -26,7 +26,7 @@
 
             <div class="post-container col-md-12">
             
-                <?php do_action('alhenalite_postformat'); ?>
+                <?php do_action('alhena_lite_postformat'); ?>
                 
 				<div class="clear"></div>  
                     

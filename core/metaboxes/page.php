@@ -9,7 +9,7 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-$wip_new_metaboxes = new alhenalite_metaboxes ('page', array (
+$wip_new_metaboxes = new alhena_lite_metaboxes ('page', array (
 
 array( "type" => "navigation",  
        "item" => array( "setting" => esc_html__( "Setting","alhena-lite")),   

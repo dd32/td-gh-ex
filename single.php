@@ -1,7 +1,7 @@
 <?php 
 
 	get_header(); 
-	do_action( 'alhenalite_header_content' );
+	do_action( 'alhena_lite_header_content' );
 
 ?>
 
@@ -9,7 +9,7 @@
 
 	<div class="row">
 
-		<div class="<?php echo alhenalite_template('span') . " " . alhenalite_template('sidebar'); ?>">
+		<div class="<?php echo alhena_lite_template('span') . " " . alhena_lite_template('sidebar'); ?>">
 
             <div class="row">
 
@@ -17,7 +17,7 @@
                     
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
                     
-                        do_action('alhenalite_postformat');
+                        do_action('alhena_lite_postformat');
             
                     ?>
         
@@ -41,7 +41,7 @@
 
 <?php
 
-	do_action( 'alhenalite_footer_content' ); 
+	do_action( 'alhena_lite_footer_content' ); 
 
 	get_footer(); 
 

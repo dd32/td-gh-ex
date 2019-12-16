@@ -4,9 +4,9 @@
 
 	<div class="row" id="blog" >
     
-	<?php if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
+	<?php if ( ( alhena_lite_template('sidebar') == "left-sidebar" ) || ( alhena_lite_template('sidebar') == "right-sidebar" ) ) : ?>
         
-        <div class="<?php echo alhenalite_template('span') .' '. alhenalite_template('sidebar'); ?>"> 
+        <div class="<?php echo alhena_lite_template('span') .' '. alhena_lite_template('sidebar'); ?>"> 
         
         <div class="row"> 
         
@@ -16,7 +16,7 @@
 
         <div <?php post_class(); ?> >
     
-				<?php do_action('alhenalite_postformat'); ?>
+				<?php do_action('alhena_lite_postformat'); ?>
         
                 <div style="clear:both"></div>
             
@@ -46,7 +46,7 @@
 	
 		<?php endif; ?>
         
-	<?php if ( ( alhenalite_template('sidebar') == "left-sidebar" ) || ( alhenalite_template('sidebar') == "right-sidebar" ) ) : ?>
+	<?php if ( ( alhena_lite_template('sidebar') == "left-sidebar" ) || ( alhena_lite_template('sidebar') == "right-sidebar" ) ) : ?>
         
         </div>
 	
@@ -54,7 +54,7 @@
         
     <?php endif; ?>
 
-	<?php if ( alhenalite_template('span') == "col-md-8" ) :  ?>
+	<?php if ( alhena_lite_template('span') == "col-md-8" ) :  ?>
 
     <!-- HOME WIDGET -->
 

@@ -9,9 +9,9 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_thumbnail_function')) {
+if (!function_exists('alhena_lite_thumbnail_function')) {
 
-	function alhenalite_thumbnail_function ($id, $class = "" ) {
+	function alhena_lite_thumbnail_function ($id, $class = "" ) {
 	
 		if ( '' != get_the_post_thumbnail() ) :
 	
@@ -25,7 +25,7 @@ if (!function_exists('alhenalite_thumbnail_function')) {
 	
 	}
 
-	add_action( 'alhenalite_thumbnail', 'alhenalite_thumbnail_function', 10, 2 );
+	add_action( 'alhena_lite_thumbnail', 'alhena_lite_thumbnail_function', 10, 2 );
 
 }
 

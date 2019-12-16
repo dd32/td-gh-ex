@@ -1,4 +1,4 @@
-<?php if (alhenalite_template('span') == "col-md-8" ) :  ?>
+<?php if (alhena_lite_template('span') == "col-md-8" ) :  ?>
 
 	<div class="col-md-4">
                 

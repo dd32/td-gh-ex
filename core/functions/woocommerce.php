@@ -12,15 +12,15 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_
 /* Woocommerce remove breadcrumbs */
 /*-----------------------------------------------------------------------------------*/ 
 
-if ( ! function_exists( 'alhenalite_remove_breadcrumbs' ) ) {
+if ( ! function_exists( 'alhena_lite_remove_breadcrumbs' ) ) {
 
-	function alhenalite_remove_breadcrumbs() {
+	function alhena_lite_remove_breadcrumbs() {
     	
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 	
 	}
 
-	add_action( 'init', 'alhenalite_remove_breadcrumbs' );
+	add_action( 'init', 'alhena_lite_remove_breadcrumbs' );
 
 }
 
@@ -28,9 +28,9 @@ if ( ! function_exists( 'alhenalite_remove_breadcrumbs' ) ) {
 /* Woocommerce header cart */
 /*-----------------------------------------------------------------------------------*/ 
 
-if ( ! function_exists( 'alhenalite_header_cart' ) ) {
+if ( ! function_exists( 'alhena_lite_header_cart' ) ) {
 
-	function alhenalite_header_cart() { ?>
+	function alhena_lite_header_cart() { ?>
 
         <section class="header-cart">
         
@@ -55,9 +55,9 @@ if ( ! function_exists( 'alhenalite_header_cart' ) ) {
 	
 }
 
-if ( ! function_exists( 'alhenalite_cart_link_fragment' ) ) {
+if ( ! function_exists( 'alhena_lite_cart_link_fragment' ) ) {
 
-	function alhenalite_cart_link_fragment( $fragments ) {
+	function alhena_lite_cart_link_fragment( $fragments ) {
 	
 		ob_start();
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'alhenalite_cart_link_fragment' ) ) {
 	
 	}
 	
-	add_filter( 'woocommerce_add_to_cart_fragments', 'alhenalite_cart_link_fragment' );
+	add_filter( 'woocommerce_add_to_cart_fragments', 'alhena_lite_cart_link_fragment' );
 
 }
 
@@ -85,9 +85,9 @@ if ( ! function_exists( 'alhenalite_cart_link_fragment' ) ) {
 /* Woocommerce template */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('alhenalite_woocommerce_before_main_content')) {
+if (!function_exists('alhena_lite_woocommerce_before_main_content')) {
 
-	function alhenalite_woocommerce_before_main_content() { 
+	function alhena_lite_woocommerce_before_main_content() { 
 	
 		if ( is_product() ) {
 			
@@ -99,7 +99,7 @@ if (!function_exists('alhenalite_woocommerce_before_main_content')) {
 	
 		}
 
-		do_action( 'alhenalite_header_content' );
+		do_action( 'alhena_lite_header_content' );
 
 	
 ?>
@@ -108,13 +108,13 @@ if (!function_exists('alhenalite_woocommerce_before_main_content')) {
 	
 		<div class="row">
 		
-			<div class="<?php echo alhenalite_template('span') . " " . alhenalite_template('sidebar') . " " . $classes; ?>" >
+			<div class="<?php echo alhena_lite_template('span') . " " . alhena_lite_template('sidebar') . " " . $classes; ?>" >
 	
 <?php
 
 	}
 	
-	add_action('woocommerce_before_main_content', 'alhenalite_woocommerce_before_main_content', 10);
+	add_action('woocommerce_before_main_content', 'alhena_lite_woocommerce_before_main_content', 10);
 
 }
 
@@ -122,15 +122,15 @@ if (!function_exists('alhenalite_woocommerce_before_main_content')) {
 /* Woocommerce template */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('alhenalite_woocommerce_after_main_content')) {
+if (!function_exists('alhena_lite_woocommerce_after_main_content')) {
 	
-	function alhenalite_woocommerce_after_main_content() { ?>
+	function alhena_lite_woocommerce_after_main_content() { ?>
 	
 			</div>
 			
 			<?php 
 			
-				if ( alhenalite_template('span') == "col-md-8" ) :
+				if ( alhena_lite_template('span') == "col-md-8" ) :
 
 					get_sidebar(); 
 					
@@ -144,12 +144,12 @@ if (!function_exists('alhenalite_woocommerce_after_main_content')) {
     
 <?php
 	
-		do_action('alhenalite_masonry_script');
-		do_action( 'alhenalite_footer_content' );
+		do_action('alhena_lite_masonry_script');
+		do_action( 'alhena_lite_footer_content' );
 
 	}
 	
-	add_action('woocommerce_after_main_content', 'alhenalite_woocommerce_after_main_content', 10);
+	add_action('woocommerce_after_main_content', 'alhena_lite_woocommerce_after_main_content', 10);
 
 }
 
@@ -165,7 +165,7 @@ if ( ! function_exists( 'alhena_lite_get_wc_product_thumbnail' ) ) {
 		$imgSize = apply_filters( 'single_product_archive_thumbnail_size', $size);
 
 		if ( $product ) {
-			return (alhenalite_setting('wip_linkable_product_thumbnails') == 'on') ? '<a href="' . get_permalink( $post->ID ) . '">' . $product->get_image( $imgSize ) . '</a>' : $product->get_image( $imgSize );
+			return (alhena_lite_setting('wip_linkable_product_thumbnails') == 'on') ? '<a href="' . get_permalink( $post->ID ) . '">' . $product->get_image( $imgSize ) . '</a>' : $product->get_image( $imgSize );
 		} else {
 			return '';
 		}

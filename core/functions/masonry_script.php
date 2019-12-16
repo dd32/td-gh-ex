@@ -10,9 +10,9 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-if (!function_exists('alhenalite_masonry_script_function')) {
+if (!function_exists('alhena_lite_masonry_script_function')) {
 
-	function alhenalite_masonry_script_function() { ?>
+	function alhena_lite_masonry_script_function() { ?>
 	
 		<script type="text/javascript">
 	
@@ -57,7 +57,7 @@ if (!function_exists('alhenalite_masonry_script_function')) {
 	
 	} 
 	
-	add_action( 'alhenalite_masonry_script', 'alhenalite_masonry_script_function', 10, 2 );
+	add_action( 'alhena_lite_masonry_script', 'alhena_lite_masonry_script_function', 10, 2 );
 
 }
 
