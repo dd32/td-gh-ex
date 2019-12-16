@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.6 | 16th December 2019 = 
+* Update: Fix notice dismiss off screen.
+
 = 1.7.5 | 12th December 2019 = 
 * Update: Font page template, make sure logic forces the latest posts to show if it's set as "Your homepage displays: Your latest posts"
 * Update: Fix php notices.

@@ -14,7 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Add Notice for toolkit if not installed
  */
 function pinnacle_kadence_toolkit_notice() {
-	if ( class_exists( 'virtue_toolkit_welcome' ) || get_transient( 'pinnacle_theme_toolkit_plugin_notice' ) || ! current_user_can( 'manage_options' ) ) {
+	$screen = get_current_screen();
+	if ( class_exists( 'virtue_toolkit_welcome' ) || get_transient( 'pinnacle_theme_toolkit_plugin_notice' ) || ! current_user_can( 'manage_options' ) || ! is_object( $screen ) || 'themes' !== $screen->id ) {
 		return;
 	}
 	$installed_plugins = get_plugins();
@@ -40,12 +41,12 @@ function pinnacle_kadence_toolkit_notice() {
 	$activate_nonce  = wp_create_nonce( 'activate-plugin_virtue-toolkit/virtue_toolkit.php' );
 	$activation_link = self_admin_url( 'plugins.php?_wpnonce=' . $activate_nonce . '&action=activate&plugin=virtue-toolkit%2Fvirtue_toolkit.php' );
 	?>
-	<div id="message" class="is-dismissible updated kt-plugin-install-notice-wrapper">
+	<div class="notice updated kt-plugin-install-notice-wrapper" style="position: relative;">
 		<h3 class="kt-notice-title"><?php echo esc_html__( 'Thanks for choosing the Pinnacle Theme', 'pinnacle' ); ?></h3>
 		<p class="kt-notice-description"><?php /* translators: %s: <strong> */ printf( esc_html__( 'To take full advantage of the Pinnacle Theme please install the %1$sKadence Toolkit%2$s, this adds extra settings and features.', 'pinnacle' ), '<strong>', '</strong>' ); ?></p>
 		<p class="submit">
 			<a class="button button-primary kt-install-toolkit-btn" data-redirect-url="<?php echo esc_url( admin_url( 'themes.php?page=kadence_welcome_page' ) ); ?>" data-activating-label="<?php echo esc_attr__( 'Activating...', 'pinnacle' ); ?>" data-activated-label="<?php echo esc_attr__( 'Activated', 'pinnacle' ); ?>" data-installing-label="<?php echo esc_attr__( 'Installing...', 'pinnacle' ); ?>" data-installed-label="<?php echo esc_attr__( 'Installed', 'pinnacle' ); ?>" data-action="<?php echo esc_attr( $data_action ); ?>" data-install-url="<?php echo esc_attr( $install_link ); ?>" data-activate-url="<?php echo esc_attr( $activation_link ); ?>"><?php echo esc_html( $button_label ); ?></a>
-			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'virtue-kadence-toolkit-plugin-notice', 'install' ), 'virtue_toolkit_hide_notices_nonce', '_notice_nonce' ) ); ?>" class="notice-dismiss kt-close-notice"><span class="screen-reader-text"><?php esc_html_e( 'Skip', 'pinnacle' ); ?></span></a>
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'virtue-kadence-toolkit-plugin-notice', 'install' ), 'virtue_toolkit_hide_notices_nonce', '_notice_nonce' ) ); ?>" style="    display: flex; text-decoration: none;" class="notice-dismiss kt-close-notice"><?php esc_html_e( 'Dismiss', 'pinnacle' ); ?></a>
 		</p>
 	</div>
 	<?php
