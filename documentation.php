@@ -57,6 +57,15 @@ function aaron_docs() {
 		</a>
 	</div>
 
+	<div class="doc-box">
+		<h3><?php esc_html_e( '4.3 Update Notice', 'aaron' ); ?></h3>
+		<?php esc_html_e( 'In version 4.3, several options in the customizer has moved into their own sections under the Advanced settings panel.', 'aaron' ); ?>
+		<br>
+		<?php esc_html_e( 'The default colors of the Call to Action has been updated to improve accessibility.', 'aaron' ); ?>
+		<br>
+		<?php esc_html_e( 'Added an option to include a small version of the logo in the menu.', 'aaron' ); ?>
+	</div>
+
 	<ul class="doc-menu">
 		<li><a href="#aaron-menus"><?php esc_html_e( 'Menus', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-widgets"><?php esc_html_e( 'Widget areas', 'aaron' ); ?></a></li>
@@ -111,7 +120,13 @@ function aaron_docs() {
 		</i>
 		<br><br>
 		<b><?php esc_html_e( 'Advanced', 'aaron' ); ?></b><br>
-		<?php esc_html_e( 'By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.	You can edit these features under the Advanced settings tab in the Customizer.', 'aaron' ); ?>
+		<?php
+		esc_html_e( 'By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.', 'aaron' );
+		echo '<br>';
+		esc_html_e( 'And if you have selected a custom logo, you can show a smaller version of the logo in the menu.', 'aaron' );
+		echo '<br>';
+		esc_html_e( 'You can edit these features under the Advanced settings tab in the Customizer.', 'aaron' );
+		?>
 	</div>
 
 	<div class="doc-box" id="aaron-widgets">
