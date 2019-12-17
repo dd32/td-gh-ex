@@ -51,7 +51,6 @@ function novalite_social_function() {
 		"icon-facebook" => "facebook" , 
 		"icon-twitter" => "twitter" ,
 		"icon-flickr" => "flickr" ,
-		"icon-google-plus" => "google" ,
 		"icon-linkedin" => "linkedin" ,
 		"icon-pinterest" => "pinterest" ,
 		"icon-tumblr" => "tumblr" ,
@@ -67,19 +66,20 @@ function novalite_social_function() {
 	
 	foreach ( $socials as $social_icon => $social_name) { 
 	
-		if (novalite_setting('novalite_footer_'.$social_name.'_button')): 
+		if ( novalite_setting('novalite_footer_'.$social_name.'_button') ): 
 		
-			$i++;	
-            $html.= '<a href="'.novalite_setting('novalite_footer_'.$social_name.'_button','url').'" target="_blank" class="social"><i class="'.$social_icon.'" ></i></a>';
+			$i++;
+			$link = 	esc_url(novalite_setting('novalite_footer_'.$social_name.'_button','url'), array( 'http', 'https', 'tel', 'skype', 'mailto' ) );
+            $html.= '<a href="'.$link.'" target="_blank" class="social"><i class="'.esc_attr($social_icon).'" ></i></a>';
 		
 		endif;
 		
 	}
 	
-	if (novalite_setting('novalite_footer_rss_button') == "on"): 
+	if ( novalite_setting('novalite_footer_rss_button') == "on" ): 
 	
 		$i++;	
-		$html.= '<a href="'. get_bloginfo('rss2_url'). '" title="Rss" class="social rss"> <i class="icon-rss" ></i>  </a> ';
+		$html.= '<a href="'. esc_url(get_bloginfo('rss2_url')). '" title="Rss" class="social rss"> <i class="icon-rss" ></i>  </a> ';
 	
 	endif; 
 		

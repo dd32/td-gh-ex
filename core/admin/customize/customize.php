@@ -244,17 +244,6 @@ if (!function_exists('novalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => esc_html__( "Google Url","nova-lite"),
-				"description" => esc_html__( "Insert Google Url (empty if you want to hide the button)","nova-lite"),
-				"id" => "novalite_footer_google_button",
-				"type" => "url",
-				"section" => "footer_section",
-				"std" => "",
-
-			),
-
-			array( 
-
 				"label" => esc_html__( "Linkedin Url","nova-lite"),
 				"description" => esc_html__( "Insert Linkedin Url (empty if you want to hide the button)","nova-lite"),
 				"id" => "novalite_footer_linkedin_button",
