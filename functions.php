@@ -56,8 +56,13 @@ $("html").addClass("safari");
 else if (navigator.userAgent.search("Opera") >= 0) {
 $("html").addClass("opera");
 }
-$(":checkbox").on("click", function() {
-$(this).parent().toggleClass("checked");
+$(".menu-icon").on("click", function () {
+$("#menu").toggleClass("toggled");
+});
+$(".menu-toggle").on("keypress", function(e) {
+if(e.which == 13) {
+$("#menu").toggleClass("toggled");
+}
 });
 });
 </script>
@@ -89,6 +94,15 @@ return '&rarr;';
 } else {
 return $title;
 }
+}
+if ( ! function_exists( 'wp_body_open' ) ) {
+function wp_body_open() {
+do_action( 'wp_body_open' );
+}
+}
+add_action( 'wp_body_open', 'bands_skip_link', 5 );
+function bands_skip_link() {
+echo '<a href="#content" class="skip-link screen-reader-text">' . esc_html__( 'Skip to the content', 'bands' ) . '</a>';
 }
 function bands_read_more_link() {
 if ( ! is_admin() ) {

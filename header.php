@@ -6,8 +6,9 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="wrapper" class="hfeed">
-<header id="header" style="background-image:url(<?php if ( get_header_image() ) { echo esc_url( get_header_image() ); } else { echo esc_url( get_template_directory_uri() ) . '/images/bg.jpg'; } ?>)">
+<header id="header" style="background-image:url(<?php if ( get_header_image() ) { echo esc_url( get_header_image() ); } else { echo esc_url( get_template_directory_uri() ) . '/images/bg.jpg'; } ?>)" role="banner">
 <div id="header-nav">
 <div id="site-title">
 <?php
@@ -24,12 +25,11 @@ echo '</a>';
 if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; }
 ?>
 </div>
-<nav id="menu">
+<nav id="menu" role="navigation">
 <div id="search">
 <?php get_search_form(); ?>
 </div>
-<label class="toggle" for="toggle"><span class="menu-icon">&#9776;</span> <?php esc_html_e( 'Menu', 'bands' ); ?></label>
-<input id="toggle" class="toggle" type="checkbox" />
+<button type="button" class="menu-toggle"><span class="menu-icon">&#9776;</span><span class="menu-text screen-reader-text"><?php esc_html_e( ' Menu', 'generic' ); ?></span></button>
 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 </nav>
 </div>

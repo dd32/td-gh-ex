@@ -1,7 +1,6 @@
 === Bands ===
 
 Contributors: bandswp, bhadaway
-Theme link: https://bandswp.com/
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 5.3
 Tested up to: 5.3
@@ -15,15 +14,13 @@ Dedicated theme for bands.
 
 Dedicated theme for bands.
 
-Please post support questions and feature requests here:
-
-https://bandswp.com/forum/
-
-Thank you.
-
 === Notes ===
 
-— Find the theme documentation here: https://bandswp.com/forum/docs/
+— This theme shows a hero image on every page by default. To disable, add the following CSS:
+
+#header{background-image:none !important}
+#site-description{padding:10% 5% 5%}
+
 — This theme hides sidebars by default. To enable, add the following CSS:
 
 #content{width:75%;padding:4%;float:left}
@@ -38,4 +35,4 @@ The Bands theme package and all files contained within are distributed under the
 
 == Credits ==
 
-* bg.jpg [CC0](https://www.pexels.com/photo/people-at-concert-1105666/)
+* bg.jpg [CC0](https://stocksnap.io/photo/5FGWJW4Z5D)

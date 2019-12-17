@@ -1,5 +1,5 @@
 </div>
-<footer id="footer">
+<footer id="footer" role="contentinfo">
 <?php if ( is_active_sidebar( 'footer-widget-area' ) ) : ?>
 <aside id="footer-sidebar" role="complementary">
 <div id="fsidebar" class="widget-area">
