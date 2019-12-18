@@ -7,6 +7,11 @@
  * @since Advance Blogging 1.0
  */
 ?>
+<?php 
+  $archive_year  = get_the_time('Y'); 
+  $archive_month = get_the_time('m'); 
+  $archive_day   = get_the_time('d'); 
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="postbox mdallpostimage">
         <div class="postimage">
@@ -14,10 +19,12 @@
                 if(has_post_thumbnail()) { ?>
                     <?php the_post_thumbnail();  ?>
                 <div class="metabox">
+                    <a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>">
                     <div class="dateday"><?php echo esc_html( get_the_date( 'd') ); ?></div>
                     <hr class="metahr m-0 p-0">
                     <div class="month"><?php echo esc_html( get_the_date( 'M' ) ); ?></div>
                     <div class="year"><?php echo esc_html( get_the_date( 'Y' ) ); ?></div>
+                    <span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a>
                 </div>
             <?php } ?>
         </div>

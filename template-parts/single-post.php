@@ -7,6 +7,11 @@
  * @since Advance Blogging 1.0
  */
 ?>
+<?php 
+  $archive_year  = get_the_time('Y'); 
+  $archive_month = get_the_time('m'); 
+  $archive_day   = get_the_time('d'); 
+?>
 <article>
 	<h1><?php the_title(); ?></h1>
 	<div class="metbox">
@@ -53,5 +58,5 @@
 				'',
 		) );
 	}
-?>
+	?>
 </article>

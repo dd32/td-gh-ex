@@ -28,12 +28,26 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'panel' => 'advance_blogging_panel_id'
 	) );
 
+	$wp_customize->add_setting('advance_blogging_width_options',array(
+        'default' => __('Full Layout','advance-blogging'),
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_blogging_width_options',array(
+        'type' => 'select',
+        'label' => __('Select Site Layout','advance-blogging'),
+        'section' => 'advance_blogging_left_right',
+        'choices' => array(
+            'Full Layout' => __('Full Layout','advance-blogging'),
+            'Contained Layout' => __('Contained Layout','advance-blogging'),
+            'Boxed Layout' => __('Boxed Layout','advance-blogging'),
+        ),
+	) );
+
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_blogging_theme_options',array(
         'default' => '',
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	)  );
-
 	$wp_customize->add_control('advance_blogging_theme_options',
 	    array(
 	        'type' => 'radio',
@@ -192,7 +206,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
@@ -280,7 +293,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_h1_font_size',array(
 		'label'	=> __('H1 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
@@ -318,7 +330,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_h2_font_size',array(
 		'label'	=> __('h2 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
@@ -356,7 +367,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_h3_font_size',array(
 		'label'	=> __('h3 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
@@ -394,7 +404,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_h4_font_size',array(
 		'label'	=> __('h4 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
@@ -432,7 +441,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_h5_font_size',array(
 		'label'	=> __('h5 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
@@ -470,7 +478,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_blogging_h6_font_size',array(
 		'label'	=> __('h6 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',

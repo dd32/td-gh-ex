@@ -7,6 +7,11 @@
  * @since Advance Blogging 1.0
  */
 ?>
+<?php 
+  $archive_year  = get_the_time('Y'); 
+  $archive_month = get_the_time('m'); 
+  $archive_day   = get_the_time('d'); 
+?>
 <div class="col-lg-4 col-md-4">
     <article id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
         <div class="mdallpostimage">

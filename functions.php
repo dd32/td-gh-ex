@@ -358,8 +358,23 @@ function advance_blogging_scripts() {
 			.footertown input.search-field, .footertown input[type="submit"],.footertown input.search-field{
 			    border-color:'.esc_html($advance_blogging_theme_color).'!important;
 			}
-
 			';
+
+	/*---------------------------Width Layout -------------------*/
+		$theme_lay = get_theme_mod( 'advance_blogging_width_options','Full Layout');
+		    if($theme_lay == 'Full Layout'){
+				$custom_css .='body{';
+					$custom_css .='max-width: 100%;';
+				$custom_css .='}';
+			}else if($theme_lay == 'Contained Layout'){
+				$custom_css .='body{';
+					$custom_css .='width: 100%;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;';
+				$custom_css .='}';
+			}else if($theme_lay == 'Boxed Layout'){
+				$custom_css .='body{';
+					$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;';
+				$custom_css .='}';
+			}
 
 	wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
 	wp_enqueue_script( 'advance-blogging-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
