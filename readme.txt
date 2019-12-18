@@ -1,11 +1,11 @@
-== appdetail   ==
+== Appdetail   ==
 
 Contributors: Mapro Collins
 Tags: right-sidebar, custom-background, custom-colors, custom-menu, featured-images,theme-options, threaded-comments, blog, custom-logo
 
 Requires at least: 4.4
-Tested up to: 5.2.2
-Stable tag: 1.1
+Tested up to: 5.3.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Appdetail is a simple and easy to use, modern and creative, user friendly and el
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.2 =
+* Reviewer suggestion
 
 = 1.1 =
 * Reviewer suggestion
@@ -52,35 +55,16 @@ Appdetail   is distributed under the terms of the GNU General Public License v2
 	* http://sorgalla.com/lity/
 	* Copyright (c) 2015-2017 Jan Sorgalla; Licensed MIT
 
- * Swiper 3.4.2
- * Most modern mobile touch slider and framework with hardware accelerated transitions
- * 
- * http://www.idangero.us/swiper/
- * 
- * Copyright 2017, Vladimir Kharlampidi
- * The iDangero.us
- * http://www.idangero.us/
- * 
- * Licensed under MIT
- * 
- * Released on: March 10, 2017
+*    Swiper 3.4.2
+	* http://www.idangero.us/swiper/
+	* Copyright 2017, Vladimir Kharlampidi
+	* Licensed under MIT
+
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Google Fonts - Apache License, version 2.0
 * Bootstrap http://getbootstrap.com/ [MIT](http://opensource.org/licenses/MIT) Copyright 2011-2015 Twitter, Inc.
 * Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
-
-* Slick [MIT License] - https://github.com/kenwheeler/slick/blob/master/LICENSE
-
-* Litty
-* http://sorgalla.com/lity/
-* Copyright (c) 2015-2017 Jan Sorgalla
-* Licensed under MIT
-
-* Animate
-* http://daneden.me/animate
-* Copyright (c) 2013 Daniel Eden
-* Licensed under MIT
 
 == Image used in screenshot ==
 

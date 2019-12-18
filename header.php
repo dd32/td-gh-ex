@@ -8,7 +8,7 @@
  */
     global $appdetail_theme_options;
 	$appdetail_theme_options = appdetail_get_theme_options();
-	 $appdetail_header_disable = $appdetail_theme_options['appdetail-header-disable'];
+	$appdetail_header_disable = $appdetail_theme_options['appdetail-header-disable'];
 
 ?>
 <?php
@@ -36,6 +36,14 @@
 </head>
 
 <body <?php body_class('at-sticky-sidebar');?>>
+<?php
+	if ( ! function_exists( 'wp_body_open' ) ) {
+		function wp_body_open() 
+		{
+			do_action( 'wp_body_open' );
+		}
+	} 
+	?>
 	<a class="skip-link screen-reader-text" href="#content">
 		<?php esc_html_e( 'Skip to content', 'appdetail' ); ?>
 	</a>
@@ -136,4 +144,4 @@
 	 */
 
 	do_action( 'appdetail_header_end_wrapper_action' );
-?>		
+?>

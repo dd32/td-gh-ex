@@ -1,4 +1,5 @@
 <?php 
+global $wp_customize, $defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-testimonial-category', array(
     'priority'       => 160,

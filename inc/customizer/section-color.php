@@ -1,4 +1,5 @@
 <?php 
+global $wp_customize, $defaults;
 /*adding sections for color Option*/
     $wp_customize->add_section( 'appdetail-color-option', array(
 

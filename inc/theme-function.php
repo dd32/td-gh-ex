@@ -81,7 +81,7 @@ if (!function_exists('appdetail_home_slider')) :
                          <a class="btn btn-video wow fadeInDown" data-wow-delay=".8s" data-lity=""
                     href="<?php echo esc_url($appdetail_theme_options['appdetail-slider-video-url'] ); ?>">         
                         <i class="fa fa-play"></i><?php                                  
-                            echo $appdetail_slider_read_more;
+                            echo esc_html($appdetail_slider_read_more);
                         ?>
                         </a>
                     <?php  } ?>                
@@ -103,18 +103,14 @@ if (!function_exists('appdetail_home_slider')) :
                                $image_url = wp_get_attachment_image_src( $image_id,'',true );
                     ?>                    
                     <div class="item">
-                        <img src="<?php echo esc_url($image_url[0]);?>">
+                        <img alt="slide" src="<?php echo esc_url($image_url[0]);?>">
                     </div>
                     <?php } endwhile; wp_reset_postdata(); endif; ?>
                 </div>
             </div>
         </div>
     </div>
-<?php   }
-
-
-
- endif;
+<?php   } endif;
 
 /************************* Home Service Section************************************/
 if (!function_exists('appdetail_home_service')) :
@@ -149,7 +145,7 @@ if (!function_exists('appdetail_home_service')) :
             ?>
             <div class="col-md-4 col-sm-6">
                 <div class="about-item wow slideInUp">
-                    <img src="<?php echo esc_url($image_url[0]);?>">
+                    <img alt="icon" src="<?php echo esc_url($image_url[0]);?>">
                     <h4 class="h-border"><?php the_title(); ?></h4>
                     <p><?php the_excerpt(); ?></p>
                 </div>
@@ -168,9 +164,9 @@ if (!function_exists('appdetail_home_video')) :
    <div class="row">
         <div class="col-sm-12">
             <div class="video-wrap">
-                <img class="lapi wow animated" src="<?php echo esc_url($appdetail_theme_options['appdetail-video-background-image'] ); ?>">
+                <img alt="laptop" class="lapi wow animated" src="<?php echo esc_url($appdetail_theme_options['appdetail-video-background-image'] ); ?>">
                 <a data-lity="" href="<?php echo esc_url($appdetail_theme_options['appdetail-video-url'] ); ?>">
-                    <img src="<?php echo get_template_directory_uri() ?>/assets/images/vid-con.png">
+                    <img alt="icon" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/vid-con.png">
                 </a>
             </div>
         </div>
@@ -203,7 +199,7 @@ if (!function_exists('appdetail_home_screenshot')) :
         if($screencategory_id!=''){ ?>
             <style type="text/css">
                 .swiper-container::before {
-                    background: url(<?php echo get_template_directory_uri() ?>/assets/images/iphone-top.png) no-repeat right;
+                    background: url(<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/iphone-top.png) no-repeat right;
                 }
             </style>
         <?php } ?> 
@@ -220,7 +216,7 @@ if (!function_exists('appdetail_home_screenshot')) :
                        $image_url = wp_get_attachment_image_src( $image_id,'',true );
             ?>
             <div class="swiper-slide">
-                <img class="img-responsive" src="<?php echo esc_url($image_url[0]);?>">
+                <img alt="app screen" class="img-responsive" src="<?php echo esc_url($image_url[0]);?>">
             </div>
             <?php } endwhile; wp_reset_postdata(); endif; ?>
             </div>
@@ -278,7 +274,7 @@ if (!function_exists('appdetail_home_testimonial')) :
                         </div>
                     </div>
                     <div class="student">
-                        <img class="photo" src="<?php echo esc_url($image_url[0]);?>">
+                        <img alt="client" class="photo" src="<?php echo esc_url($image_url[0]);?>">
                         <h4><?php the_title(); ?></h4>
                     </div>
                 </div>
@@ -322,10 +318,10 @@ if (!function_exists('appdetail_home_blog')) :
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="blog-top">
-                            <img src="<?php echo esc_url($image_url[0]);?>">
+                            <img alt="blog" src="<?php echo esc_url($image_url[0]);?>">
                         </div>
                         <div class="blog-admin">
-                            <img src="<?php echo esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>">
+                            <img alt="admin" src="<?php echo esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>">
                         </div>
                         <div class="blog-bottom">
                             <h4 class="h-border"><?php echo esc_html__( 'By', 'appdetail' ); ?> <?php the_author(); ?>
@@ -347,7 +343,23 @@ if (!function_exists('appdetail_home_blog')) :
 <?php   } endif;
 
 /**
+ * Goto Top functions
+ *
+ * @since appdetail 1.0.0
+ *
+ */
+if (!function_exists('appdetail_go_to_top')) :
+    function appdetail_go_to_top()
+    {
+        ?>
+       <!-- ====== scroll to top ====== -->
+        <a href="javascript:void(0)" class="scrollBtn" title="Go to top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+    <?php
+    } endif;
 
+/**
  * Post Navigation Function
  *
  * @since appdetail 1.0.0
@@ -356,15 +368,30 @@ if (!function_exists('appdetail_home_blog')) :
  * @return void
  *
  */
-if ( !function_exists('appdetail_posts_pagination') ) :
-    function appdetail_posts_pagination() {
-       
-            the_posts_pagination();
+if ( !function_exists('appdetail_posts_navigation') ) :
+    function appdetail_posts_navigation() {
+        global $appdetail_theme_options;
+        $appdetail_pagination_option = $appdetail_theme_options['appdetail-blog-pagination-type-options'];
+        if( 'default' == $appdetail_pagination_option ){
+            the_posts_navigation();
         }
-       
-    
+        else{
+            echo"<ul class='pagination'>";
+            global $wp_query;
+            $big = 999999999; // need an unlikely integer
+            echo paginate_links(array(
+                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format' => '?paged=%#%',
+                'current' => max(1, get_query_var('paged')),
+                'total' => $wp_query->max_num_pages,
+                'prev_text' => __('&laquo; Prev', 'appdetail'),
+                'next_text' => __('Next &raquo;', 'appdetail'),
+            ));
+            echo "</ul>";
+        }
+    }
 endif;
-add_action( 'appdetail_action_navigation', 'appdetail_posts_pagination', 10 );
+add_action( 'appdetail_action_navigation', 'appdetail_posts_navigation', 10 );
 
 /*
 * Remove [...] from default fallback excerpt content

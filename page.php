@@ -14,9 +14,9 @@
 get_header();
 global $appdetail_theme_options;
 
-if(!is_front_page()){
+
 ?>
-	<div id="primary" class="content-area page-def s-pad col-sm-8 col-md-8 col-xs-12">
+	<div id="primary" class="content-area about s-pad col-sm-8 col-md-8 col-xs-12">
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();
@@ -34,8 +34,7 @@ if(!is_front_page()){
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php
-
+if(!is_front_page()){
 get_sidebar();
-
-get_footer();
 }
+get_footer();

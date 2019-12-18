@@ -27,8 +27,8 @@ if ( !function_exists('appdetail_pagination_option') ) :
     function appdetail_pagination_option() {
       
         $appdetail_pagination_option =  array(
-            'default'  => esc_html__( 'Default Pagination', 'appdetail'),
-            'numeric'  => esc_html__( 'Numeric Pagination' , 'appdetail')
+            'default'  => __( 'Default Pagination', 'appdetail'),
+            'numeric'  => __( 'Numeric Pagination' , 'appdetail')
         );
       
         return apply_filters( 'appdetail_pagination_option', $appdetail_pagination_option );
@@ -56,7 +56,7 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             'appdetail-blog-cat'                     => 0,
             'appdetail-promo-cat'                    => 0,
             /***********************************Slider Section Setting**********************************/
-            'appdetail-slider-background-image'      => esc_url(''),
+            'appdetail-slider-background-image'      => esc_url('http://localhost/consulton/wp-content/uploads/2019/04/business_professional_teamwork_corporate_meeting_businessman_business_people_group-649367-1.jpg','appdetail'),
             'appdetail-slider-title'                 => esc_html__('Slider Title','appdetail'), 
             'appdetail-slider-description'           => esc_html__('Slider Description','appdetail'),
             'appdetail-slider-video-url'             => esc_url('//www.youtube.com/watch?v=XSGBVzeBUbk','appdetail'), 
@@ -65,7 +65,7 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             'appdetail-service-title'                 => esc_html__('Service Title','appdetail'), 
             'appdetail-service-description'           => esc_html__('Service Description','appdetail'),
             /***********************************Video Section Setting**********************************/ 
-            'appdetail-video-background-image'      => esc_url(''),
+            'appdetail-video-background-image'      => esc_url('http://localhost/consulton/wp-content/uploads/2019/04/laptop.png','appdetail'),
             'appdetail-video-url'                    => esc_url('//www.youtube.com/watch?v=XSGBVzeBUbk','appdetail'), 
             /***********************************Screenshot Section Setting*****************************/
             'appdetail-screenshot-title'                 => esc_html__('Screenshot Title','appdetail'), 
@@ -84,8 +84,8 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             'appdetail-footer-totop'                 => 1,
             'appdetail-read-more-text'               => esc_html__('read more','appdetail'),
             'appdetail-blog-pagination-type-options' => 'default',
-              'appdetail-header-disable'               => 0,
             'appdetail-default-color'                => '#5424bf', 
+              'appdetail-header-disable'               => 0,
             'appdetail-title-tagline-color'          => '#fff',
             'appdetail-tagline-color'                => '#fff', 
 );
@@ -115,47 +115,48 @@ function appdetail_customize_register( $wp_customize ) {
 
     /**
      * Load customizer custom-controls
+
      */
-    require get_template_directory() . '/inc/customizer-inc/custom-controls.php';
+    get_template_part('/inc/customizer/custom-controls');
+    // die;
+    // require get_template_directory() . '/inc/customizer/custom-controls.php';
     /**
      * Load customizer Slider
      */
-    require get_template_directory() . '/inc/customizer-inc/feature-section.php';
-
+    get_template_part('/inc/customizer/section-feature');
     /**
-     * Load customizer Service
+     * Load customizer Service   
      */
-    require get_template_directory() . '/inc/customizer-inc/service-section.php';
-
+    get_template_part('/inc/customizer/section-service' );
     /**
      * Load customizer Video
      */
-    require get_template_directory() . '/inc/customizer-inc/video-section.php';
+    get_template_part('/inc/customizer/section-video');
     /**
          * Load customizer Screenshot
          */
-        require get_template_directory() . '/inc/customizer-inc/screenshot-section.php';
+    get_template_part('/inc/customizer/section-screenshot');
     /**
      * Load customizer Screenshot
      */
-    require get_template_directory() . '/inc/customizer-inc/testimonial-section.php';
+    get_template_part('/inc/customizer/section-testimonial');
     /**
      * Load customizer Screenshot
      */
-    require get_template_directory() . '/inc/customizer-inc/blog-section.php';
+    get_template_part('/inc/customizer/section-blog');
 
     /**
      * Load customizer Typography
      */
-    require get_template_directory() . '/inc/customizer-inc/typography-section.php';
+    get_template_part('/inc/customizer/section-typography');
     /**
      * Load customizer Color
      */
-    require get_template_directory() . '/inc/customizer-inc/color-section.php';
+    get_template_part('/inc/customizer/section-color');
     /**
      * Load customizer custom-controls
      */
-    require get_template_directory() . '/inc/customizer-inc/footer-section.php';
+    get_template_part('/inc/customizer/section-footer');
 
 }
 add_action( 'customize_register', 'appdetail_customize_register' );
@@ -163,7 +164,7 @@ add_action( 'customize_register', 'appdetail_customize_register' );
 /**
  * Load dynamic css file
 */
-require get_template_directory() . '/inc/dynamic-css.php';
+get_template_part('/inc/dynamic-css');
 
 
 /**

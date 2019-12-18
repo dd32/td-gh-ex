@@ -1,4 +1,5 @@
 <?php 
+global $wp_customize, $defaults;
 /*adding sections for footer options*/
     $wp_customize->add_section( 'appdetail-footer-option', array(
         'priority'       => 170,

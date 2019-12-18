@@ -159,7 +159,7 @@ if ( ! function_exists( 'appdetail_header_lower_section' ) ) :
     -------------------------------------------------*/
     if (jQuery('#menu').length) {
         jQuery('#menu').slicknav({
-            brand: '<a href="<?php echo esc_url( home_url( '/' ) ); ?>">  <?php if (has_custom_logo()) {  the_custom_logo(); } else { bloginfo( 'name' );?> <br> <?php bloginfo( 'description' ); }  ?> </a>',
+            brand: '<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php the_custom_logo(); ?></a>',
             appendTo: 'header',
         });
     }

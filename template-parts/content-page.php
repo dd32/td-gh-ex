@@ -12,11 +12,7 @@
 	<div class="post-wrapper">
 		<div class="post-content-wrapper">
 		<div class="post-content">
-
 			<?php
-				if(has_post_thumbnail()) :
-				the_post_thumbnail();
-			    endif;
 				the_content();
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'appdetail' ),

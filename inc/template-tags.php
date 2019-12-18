@@ -10,13 +10,14 @@ if ( ! function_exists( 'appdetail_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function appdetail_posted_by() {
+function appdetail_posted_on() {
 	$byline = sprintf(
-        esc_html_x(' By %s', 'post author', 'appdetail'),
+		/* translators: post Author */
+        esc_html_x(' By : %s', 'post author', 'appdetail'),
         '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
     );
 
-    echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+    echo '<span class="byline"> <i class="fa fa-user"></i> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 endif;
 

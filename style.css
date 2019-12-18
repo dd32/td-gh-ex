@@ -4,7 +4,7 @@ Theme URI:
 Author: Mapro Collins
 Author URI: https://profiles.wordpress.org/ratinatemplates/
 Description: Appdetail  is a simple and easy to use, modern and creative, user friendly and elegant, WordPress theme for blog, news and magazine sites. It is responsive, cross browser compatible, SEO friendly theme with lots of highly created features. Theme comes with beautiful slider section, featured post column, footer options, sidebar options, site design options and many more. It is very light weighted theme based on customizer. Added custom widgets for author information and advertisement will make your site awesome. Try Product today and blog away. Our dedicated support team will guide you in every steps while using theme.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: appdetail
@@ -94,11 +94,15 @@ p {
 }
 
 a,
-a:focus,
 a:hover {
     outline: 0;
     text-decoration: none;
 }
+
+ a:focus{
+
+    text-decoration: none;
+ }
 
 .btn.focus,
 .btn:focus,
@@ -1090,13 +1094,13 @@ img {
    color: #5424bf;
 }
 
-.tag {
+/*.tag {
     border-style: solid;
     border-width: 18px 18px 18px 137px;
     border-color: #000 transparent #000 #000;
     width: 130px;
     height: 28px;
-}
+}*/
 
 .quote {
     padding: 20px 25px 0;
@@ -2091,7 +2095,7 @@ img {
         visibility: hidden;
         opacity: 0;
     }
-    .main-menu .navigation > li.menu-item-has-children:hover > .sub-menu,
+   /* .main-menu .navigation > li.menu-item-has-children:hover > .sub-menu,
     .main-menu .navigation > li.menu-item-has-children a:focus + ul.sub-menu,
     .main-menu .navigation > li.menu-item-has-children a:focus ul.sub-menu {
         visibility: visible;
@@ -2104,7 +2108,7 @@ img {
         opacity: 1;
         left:-100%;
         top: 100%;
-    }
+    }*/
 }
 
 @media only screen and (max-width: 767px) {
@@ -2292,10 +2296,14 @@ img {
   display: none;
 }
 .togo-text{
-    padding-top: 5px;
+    padding-top: 15px;
 }
 .togo-text .site-title a{
-    font-size: 36px;
+    font-size: 21px;
+}
+
+.site-description{
+font-size: 12px;
 }
 /*===============================================================
 
@@ -3137,4 +3145,23 @@ color: #5424bf;
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0;
+}
+
+.error-section .err-page{
+
+    font-size: 50px;
+    padding-bottom: 40px;
+    font-weight: 600;
+}
+
+.main-menu .navigation li:hover>ul.sub-menu,
+.main-menu .navigation li a:focus + ul.sub-menu,
+.main-menu .navigation li.force-show ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.news-detail .meta{
+
+    padding-left: 0 !important;
 }

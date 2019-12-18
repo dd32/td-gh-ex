@@ -12,10 +12,10 @@ get_header(); ?>
             <div class="row">
                 <div class="col-md-12">
                     <div class="error-section">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/404.png">
+                        <h1 class="err-page"><?php esc_html_e( 'ERROR 404', 'appdetail' ); ?></h1>
                         <h2 class="mb-20 mt-20"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'appdetail' ); ?></h2>
                         <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'appdetail' ); ?> <a class="error-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php esc_html_e( 'Go back to Homepage', 'appdetail' ); ?></a><br>
-                        	<?php esc_html_e( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'appdetail' ); ?>
+                            <?php esc_html_e( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'appdetail' ); ?>
                             </p>
                     </div>
                 </div>

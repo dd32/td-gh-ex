@@ -16,7 +16,9 @@ get_header();
 
 			<div>
 				<h3 class="page-title">
-					<?php printf( esc_html__( 'New Serach For : %s', 'appdetail' ), '<span>' . get_search_query() . '</span>' ); ?>
+					<?php printf( 
+					/* translators: 1: Search, 2: title. */
+						esc_html__( 'New Serach For : %s', 'appdetail' ), '<span>' . get_search_query() . '</span>' ); ?>
 				</h3>
 			</div><!-- .page-header -->
 
@@ -48,5 +50,5 @@ get_header();
 
 	</section><!-- #primary -->
 <?php
-
 get_footer();
+
