@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3.08' );
+define( 'KAIRA_THEME_VERSION' , '1.3.09' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -216,6 +216,11 @@ function kaira_register_required_plugins() {
             'required'  => false,
         ),
         array(
+            'name'      => __( 'WooCustomizer', 'electa' ),
+            'slug'      => 'woocustomizer',
+            'required'  => false,
+        ),
+        array(
             'name'      => __( 'Elementor Page Builder', 'electa' ),
             'slug'      => 'elementor',
             'required'  => false,
@@ -224,11 +229,6 @@ function kaira_register_required_plugins() {
         array(
             'name'      => __( 'Breadcrumb NavXT', 'electa' ),
             'slug'      => 'breadcrumb-navxt',
-            'required'  => false,
-        ),
-        array(
-            'name'      => __( 'Meta Slider', 'electa' ),
-            'slug'      => 'ml-slider',
             'required'  => false,
         )
     );

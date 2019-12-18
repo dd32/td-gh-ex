@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2019-04-12 15:22+0200\n"
+"POT-Creation-Date: 2019-12-18 12:23+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -349,10 +349,11 @@ msgstr ""
 
 #: customizer/customizer-options.php:219
 msgid ""
-"<b>Premium Extra Features:</b><br />- Setting to change blog blocks columns "
-"layout<br />- Enable blocks layout on Archive pages<br /><br />- Custom "
-"WooCommerce Styling<br />- Set WooCommerce Shop page to full width<br />- "
-"Set WC products per row<br />- Set WC products per page"
+"<b>Premium Extra Features:</b><br />- Change Blog Post Image Size/"
+"Proportion<br />- Setting to change blog blocks columns layout<br />- Enable "
+"blocks layout on Archive pages<br /><br />- Custom WooCommerce Styling<br /"
+">- Set WooCommerce Shop page to full width<br />- Set WC products per "
+"row<br />- Set WC products per page"
 msgstr ""
 
 #: customizer/customizer-options.php:228
@@ -424,15 +425,15 @@ msgid "WooCommerce"
 msgstr ""
 
 #: functions.php:219
+msgid "WooCustomizer"
+msgstr ""
+
+#: functions.php:224
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:225
-msgid "Breadcrumb NavXT"
-msgstr ""
-
 #: functions.php:230
-msgid "Meta Slider"
+msgid "Breadcrumb NavXT"
 msgstr ""
 
 #: header.php:52

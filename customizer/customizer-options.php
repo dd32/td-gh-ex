@@ -216,7 +216,7 @@ function customizer_library_kaira_options() {
         'id' => 'kra-upsell-blog',
         'section' => $section,
         'type'    => 'upsell',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Setting to change blog blocks columns layout<br />- Enable blocks layout on Archive pages<br /><br />- Custom WooCommerce Styling<br />- Set WooCommerce Shop page to full width<br />- Set WC products per row<br />- Set WC products per page', 'electa' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change Blog Post Image Size/Proportion<br />- Setting to change blog blocks columns layout<br />- Enable blocks layout on Archive pages<br /><br />- Custom WooCommerce Styling<br />- Set WooCommerce Shop page to full width<br />- Set WC products per row<br />- Set WC products per page', 'electa' )
     );
     
     

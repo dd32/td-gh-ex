@@ -60,6 +60,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.09
+* Styling fixes/tweaks
+* Added WooCustomizer as a recommended plugin in TGM
+* Updated the language .pot file
+Premium: Added setting to change Blog List image size proportions
+
 #### 1.3.08
 * Removed old/deprecated code
 * Neatened up code/comments
