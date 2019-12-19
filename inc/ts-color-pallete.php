@@ -83,3 +83,12 @@
 		$custom_css .='width:97.1%;';
 		$custom_css .='} }';
 	}
+
+	//css
+ 
+	$show_header = get_theme_mod( 'bb_wedding_bliss_slider_arrows', true);
+		if($show_header == false){
+			$custom_css .='.page-template-custom-front-page #header{';
+				$custom_css .='background-color:#151c27; position:static;';
+			$custom_css .='}';
+		}

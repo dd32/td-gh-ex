@@ -4,7 +4,7 @@ Theme URI:  https://www.themeshopy.com/themes/bb-free-wedding-bliss-wordpress-th
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.2.5
+Version: 1.2.6
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -247,6 +247,7 @@ a.small-button:hover{
 input[type="text"],
 input[type="email"],
 input[type="phno"],
+input[type="password"],
  textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
@@ -344,7 +345,7 @@ p.site-description {
     margin: 0;
     padding: 0;
 }
-.logo h1, .logo p.site-title a{
+.logo h1, .logo p.site-title{
 	text-transform:uppercase;
 	padding:0;
 	margin-bottom:8px;
@@ -353,6 +354,7 @@ p.site-description {
 	margin-top: 0;
 	text-decoration: none;
 	font-family: 'Unica One', cursive;
+	line-height:1.2;
 }
 .logo a{
 	color: #fff;
@@ -366,10 +368,6 @@ p.site-description {
 .page-template-custom-front-page .logo a{
 	color: #fff;
 	font-size: 35px;
-}
-.page-template-custom-front-page .logo p{
-	font-size:12px;
-	color:#fff;
 }
 .page-template-custom-front-page #header{
 	z-index:999;
@@ -396,8 +394,10 @@ p.site-description {
 	color:#aaaaaa
 }
 #header a:focus,
-#footer li a:focus, #footer table#wp-calendar td a:focus, .abovecopyright a:focus{
+#footer a:focus, .abovecopyright a:focus, #footer input:focus, 
+#footer textarea:focus{
 	outline:1px dotted #fff;
+	border-bottom: 1px dotted #fff;
 }
 
 .social-media {
@@ -681,7 +681,10 @@ span.woocommerce-input-wrapper {
 }
 .woocommerce-MyAccount-content a {
     color: #000;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+.woocommerce form.login{
+	display: inline-block;
 }
 .woocommerce table.shop_table th{
 	font-size: 18px;
@@ -733,6 +736,22 @@ a.woocommerce-privacy-policy-link {
 }
 .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
 	color: #fff;
+}
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 20px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
+.woocommerce-input-wrapper, .woocommerce label {
+  width: 100%;
+}
+.select2-container--default .select2-selection--single, input#billing_phone {
+	padding: 10px 0px;
+	border-radius: 0px;
 }
 /* Footer Section */
 .tagcloud a {
@@ -856,12 +875,16 @@ table#wp-calendar {
     background: #bd9338;
     margin: 0;
     color: #000;
+    float: none;
+    border: 0;
+    border-radius: 0;
 }
 #footer .copyright{
 	text-align:center;
 }
 #footer label{
 	width: 100%;
+	float: none;
 }
 .copyright p {
     font-size: 16px !important;
@@ -928,7 +951,7 @@ table#wp-calendar {
     font-size: 15px;
 }
 .heading-line h2 {
-    color: #151c27
+    color: #151c27;
     font-size: 35px;
     font-weight: normal;
     letter-spacing: 1px;
@@ -956,7 +979,7 @@ table#wp-calendar {
     letter-spacing: 3px;
     font-weight: normal;
     font-size: 30px;
-    color: #151c27
+    color: #151c27;
     padding-bottom: 0;
 }
 #love-Story p {
@@ -1729,7 +1752,6 @@ iframe{
     padding: 15px 0;
   }
   .main-menu-navigation{
-    max-height: 254px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }

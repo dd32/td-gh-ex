@@ -10,11 +10,9 @@ jQuery(function($){
 
 function resMenu_open() {
   document.getElementById("menu-sidebar").style.width = "100%";
-  document.getElementById("contact-info").style.position = "fixed";
 }
 function resMenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
-  document.getElementById("contact-info").style.position = "static";
 }
 
 
