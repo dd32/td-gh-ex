@@ -655,6 +655,7 @@ class WidgetLayer {
 
 		foreach ( $this->get_widget_options() as $option => $value ) {
 			$setting      = $value['setting'];
+			$instance     = wp_parse_args( $instance, [ $setting => '' ] );
 			$new_instance = wp_parse_args( $new_instance, [ $setting => '' ] );
 			switch ( $value['type'] ) {
 				case 'select':

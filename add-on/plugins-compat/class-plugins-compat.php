@@ -60,7 +60,7 @@ class Plugins_Compat {
 			add_filter( 'bayleaf_template_entry_author', [ self::get_instance(), 'disable_entry_author' ] );
 			add_filter( 'bayleaf_markup_entry_main_content', [ self::get_instance(), 'remove_header' ] );
 			add_filter( 'bayleaf_display_posts_excerpt', [ self::get_instance(), 'modify_dp_excerpts' ], 10, 2 );
-			add_filter( 'bayleaf_dp_style_args', [ self::get_instance(), 'modify_dp_items' ], 10, 2 );
+			add_filter( 'bayleaf_dp_style_args', [ self::get_instance(), 'modify_dp_items' ] );
 			add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 12, 2 );
 			add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
 			add_action( 'bayleaf_display_dp_item', [ self::get_instance(), 'display_dp_item' ] );
@@ -157,14 +157,13 @@ class Plugins_Compat {
 	 * Modify display posts items for 'tribe_events' post type.
 	 *
 	 * @param arr $d     Post items display instructions.
-	 * @param str $style Display posts style.
 	 * @return bool
 	 */
-	public function modify_dp_items( $d, $style ) {
+	public function modify_dp_items( $d ) {
 		if ( 'tribe_events' === get_post_type() ) {
-			if ( in_array( $style, [ 'grid-view1', 'grid-view2', 'grid-view3' ], true ) ) {
-				$d = [ 'thumbnail-medium', [ 'title', 'event-time' ] ];
-			}
+			$d['grid-view1'] = [ 'thumbnail-medium', [ 'title', 'event-time' ] ];
+			$d['grid-view2'] = [ 'thumbnail-medium', [ 'title', 'event-time' ] ];
+			$d['grid-view3'] = [ 'thumbnail-medium', [ 'title', 'event-time' ] ];
 		}
 		return $d;
 	}

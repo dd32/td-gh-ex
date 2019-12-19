@@ -20,6 +20,12 @@ PHP 5.4+, IE11+, WordPress 4.7+
 
 == Changelog ==
 
+= 1.4.4 =
+* Error Fix: Ajax error in Appearance > Widget, if mc4wp plugin activated.
+* Error Fix: Fetal error if Events Calendar plugin activated.
+* Error Fix: Minor block editor bug fixes.
+* Add: Bayleaf Premium better compatibility.
+
 = 1.4.3 =
 * Bugfix release.
 

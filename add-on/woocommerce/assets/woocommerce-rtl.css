@@ -1286,7 +1286,7 @@
 .woocommerce form .form-row.woocommerce-validated .select2-container,
 .woocommerce form .form-row.woocommerce-validated input.input-text,
 .woocommerce form .form-row.woocommerce-validated select {
-	border-color: #69bf29;
+	border-color: #7ad03a;
 }
 
 .woocommerce form .form-row ::-webkit-input-placeholder {
@@ -2616,7 +2616,7 @@ ul.products a.added_to_cart.added {
 
 ul.products .button:hover,
 ul.products a.added_to_cart:hover {
-	color: #DC1E21;
+	color: #673AB7;
 }
 
 .widgetlayer ul.products .button,
@@ -2844,7 +2844,7 @@ div.product .price ins {
 }
 
 div.product .star-rating {
-	color: #DC1E21;
+	color: #673AB7;
 }
 
 div.product .woocommerce-review-link {
@@ -2926,7 +2926,7 @@ div.product .woocommerce-review-link {
 
 .woocommerce-tabs .wc-tabs li a:hover,
 .woocommerce-tabs .wc-tabs li a:focus {
-	color: #DC1E21;
+	color: #673AB7;
 }
 
 .woocommerce-tabs .wc-tabs li:first-child a {
@@ -3106,11 +3106,11 @@ form.woocommerce-checkout .wc_payment_method label {
 
 .ui-slider .ui-slider-range,
 .ui-slider .ui-slider-handle {
-	background-color: #DC1E21;
+	background-color: #673AB7;
 }
 
 .ui-widget-content {
-	background-color: #DC1E21;
+	background-color: #673AB7;
 }
 
 .grid.woocommerce-page .site-main {
