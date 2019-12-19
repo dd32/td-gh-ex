@@ -4,6 +4,7 @@ Contributors: blazethemes
 Requires at least: 4.7
 Tested up to: 5.0.0
 Stable tag: 1.0.0
+Tested up to: 7.2.9  
 Tags: right-sidebar, custom-background, custom-header, custom-logo, portfolio, blog, education, custom-colors,featured-images, footer-widgets, theme-options, threaded-comments, post-formats
 
 A starter theme called Article.
@@ -33,6 +34,9 @@ Article Lite is a mimimal WordPress Theme design specially for bloggers. Providi
 
 = 1.0 - Aug 25 2019 =
 * Initial release
+
+= 1.0.1 - Dec 09 2019 =
+* Fixed escaping and function not found issue
 
 
 

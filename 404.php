@@ -16,9 +16,9 @@ get_header();
 			<div class="wrapper">
 				<div class="error-box">
 				  <p class="error404 text-center"><?php esc_html_e( '404', 'article-lite' ); ?></p>
-				  <p class="error-title text-center"><?php echo esc_html('Page Not Found', 'article-lite' ); ?></p>
-				  <p class="error-message text-center"><?php echo esc_html('It appears the page you were wanting to see is either missing, no longer available, or another problem has caused this error.', 'article-lite'); ?></p>
-				  <p class="text-center"><a class="error-button btn" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_html('Back to Home', 'article-lite'); ?></a></p>
+				  <p class="error-title text-center"><?php eesc_html_e('Page Not Found', 'article-lite' ); ?></p>
+				  <p class="error-message text-center"><?php esc_html_e('It appears the page you were wanting to see is either missing, no longer available, or another problem has caused this error.', 'article-lite'); ?></p>
+				  <p class="text-center"><a class="error-button btn" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html_e('Back to Home', 'article-lite'); ?></a></p>
 				</div>
 			</div>
 

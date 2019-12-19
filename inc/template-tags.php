@@ -163,15 +163,21 @@ function article_lite_entry_titles() {
 if ( is_single() ) :
 	
         echo '<h1 class="entry-title" itemprop="headline">';		
-		if(the_title( '', '', false ) !='') the_title(); 
-			else esc_html('Untitled', 'article-lite'); 
+		if(the_title( '', '', false ) !=''){
+			the_title();
+		}else {
+			esc_html_e('Untitled', 'article-lite');
+		} 
 	echo '</h1>';
 	  
  else :
 		
 	echo '<h2 class="entry-title" itemprop="headline"><a href="' .esc_url( get_permalink() ) .'" rel="bookmark">';			
-	if(the_title( '', '', false ) !='') the_title(); 
-		else esc_html('Untitled', 'article-lite'); 
+	if(the_title( '', '', false ) !=''){
+		the_title();
+	} else {
+		esc_html_e('Untitled', 'article-lite'); 
+	}
 	echo '</a></h2>';
 	  
     endif;
@@ -266,16 +272,6 @@ function article_lite_single_posted_on() {
 		'<span class="author vcard" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" itemprop="url"><span itemprop="name">' . esc_html( get_the_author() ) . '</span></a></span>'
 	);
 
-	
-	$format = get_post_format();
-	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '<span class="entry-format"><a href="%2$s">%3$s %1$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Post', 'Used After post format.', 'article-lite' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			get_post_format_string( $format )
-		);
-	}	
-
 	echo '<span class="posted-on">' .$posted_on . '</span>';
 
 	echo '<span class="byline">' . $byline . '</span>';
@@ -363,9 +359,9 @@ function article_lite_posts_link_attributes_2() {
 
 // Output the pagination navigation
 if ( ! function_exists( 'article_lite_blog_pagination' ) ) :
-function article_lite_blog_pagination() {	
-		echo get_next_posts_link( __('Older Posts', 'article-lite'));		
-		echo get_previous_posts_link( __('Newer Posts', 'article-lite'));	
+function article_lite_blog_pagination() {
+		next_post_link();
+		previous_post_link();	
 }
 endif;
 

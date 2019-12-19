@@ -23,25 +23,25 @@ if (   ! is_active_sidebar( 'cbottom1'  )
             <aside id="sidebar-content-bottom" class="widget-area clearfix">
                    
                 <?php if ( is_active_sidebar( 'cbottom1' ) ) : ?>
-                    <div id="cbottom1" <?php article_lite_cbottom(); ?>>
+                    <div id="cbottom1">
                         <?php dynamic_sidebar( 'cbottom1' ); ?>
                     </div>
                 <?php endif; ?>
                 
                 <?php if ( is_active_sidebar( 'cbottom2' ) ) : ?>      
-                    <div id="cbottom2" <?php article_lite_cbottom(); ?>>
+                    <div id="cbottom2">
                         <?php dynamic_sidebar( 'cbottom2' ); ?>
                     </div>         
                 <?php endif; ?>
                 
                 <?php if ( is_active_sidebar( 'cbottom3' ) ) : ?>        
-                    <div id="cbottom3" <?php article_lite_cbottom(); ?>>
+                    <div id="cbottom3">
                         <?php dynamic_sidebar( 'cbottom3' ); ?>
                     </div>
                 <?php endif; ?>
                 
                 <?php if ( is_active_sidebar( 'cbottom4' ) ) : ?>     
-                    <div id="cbottom4" <?php article_lite_cbottom(); ?>>
+                    <div id="cbottom4">
                         <?php dynamic_sidebar( 'cbottom4' ); ?>
                     </div>
                  <?php endif; ?>

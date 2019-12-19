@@ -39,7 +39,7 @@
 				$article_lite_description = get_bloginfo( 'description', 'display' );
 				if ( $article_lite_description || is_customize_preview() ) :
 					?>
-					<div class="site-description" itemprop="description"><?php echo $article_lite_description; /* WPCS: xss ok. */ ?></div>
+					<div class="site-description" itemprop="description"><?php echo esc_html($article_lite_description); /* WPCS: xss ok. */ ?></div>
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
