@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro/
-Version: 0.3.7
+Version: 0.3.8
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -222,6 +222,7 @@ small{
 input[type="text"],
 input[type="email"],
 input[type="phno"],
+input[type="password"],
  textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
@@ -621,7 +622,7 @@ input.search-field {
 .contact-box {
   background: #fff;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  margin-top: -11%;
+  margin-top: -8.5%;
   position: relative;
   padding: 28px;
 }
@@ -942,6 +943,10 @@ div#sidebar {
 	background:#000;
 	color:#fff;
 	clear:both;
+  padding: 10px 0;
+}
+#footer aside{
+  margin-bottom: 20px;
 }
 #footer h3{
 	text-align:left;
@@ -1100,6 +1105,13 @@ li#comment{
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
+.woocommerce form.login{
+  display: inline-block;
+}
+input#billing_phone {
+  padding: 10px;
+  border-radius: 0px;
+}
 .woocommerce .products li {
   width: 29% !important;
   text-align: center;
@@ -1203,6 +1215,21 @@ span.woocommerce-input-wrapper{
 .woocommerce-info a, form.woocommerce-shipping-calculator a,.woocommerce-account .woocommerce-MyAccount-content a,tr.woocommerce-cart-form__cart-item.cart_item td a{
   text-decoration: none !important;
 }
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
+.woocommerce-input-wrapper, .woocommerce label {
+  width: 100%;
+}
+.woocommerce label {
+  margin-bottom: 10px;
+}
 /*------------- Sidebar -------------*/
 #sidebar caption{
 	color: #000;
@@ -1227,11 +1254,10 @@ span.woocommerce-input-wrapper{
 }
 #sidebar input[type="search"] {
 	border: solid 1px #bbb;
-	padding: 9px 10px;
+	padding: 10px;
 	font-size: 15px;
   color: #000;
 	width: 100%;
-	margin-bottom: 15px;
 }
 #sidebar label{
 	width:100%;
@@ -1720,7 +1746,6 @@ iframe{
     margin: 20px 0;
   }
   .main-menu-navigation{
-    max-height: 291px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }

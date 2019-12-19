@@ -1,5 +1,4 @@
-/* rtl Style */
-
+/* RTL Style */
 *{
   margin:0;
   padding:0;
@@ -53,7 +52,7 @@ a:hover{
 a:hover{
   text-decoration:none !important;
 }
-a:focus, input:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
+a:focus, input:focus, button:focus, textarea:focus, .woocommerce form .form-row input:focus.input-text, .woocommerce form .form-row textarea:focus{
   outline: 1px dotted #000;
   border-bottom: 1px solid #000;
 }
@@ -205,6 +204,7 @@ small{
 input[type="text"],
 input[type="email"],
 input[type="phno"],
+input[type="password"],
  textarea{
   border:1px solid #bcbcbc;
   width:100%;
@@ -245,6 +245,7 @@ input[type="submit"] {
 }
 /* ---------Middle Header--------- */
 .logo {
+  text-align: right;
   padding: 10px 20px;
 }
 .logo h1,
@@ -253,6 +254,8 @@ input[type="submit"] {
   font-weight:bold;
   text-align:right;
   letter-spacing: 0px;
+  padding: 0;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 .logo a{
@@ -327,7 +330,7 @@ ul.list_nav {
 }
 .primary-navigation ul ul ul{
   right: 100%;
-  top: 5px;
+  top: 0px;
 }
 .primary-navigation ul ul a{
   color: #ffaa56;
@@ -391,7 +394,33 @@ ul.list_nav {
 .sf-arrows .sf-with-ul{
   padding-left: 30px;
 }
-
+/*scroll to top*/
+#scroll-top{
+  background:#252525;
+  border:2px solid #252525;
+  color:#fff;
+  cursor:pointer;
+  width:65px;
+  height:65px;
+  opacity:0.5;
+  position:fixed;
+  bottom:60px;
+  left:20px;
+  z-index:9999;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  font-size:20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: none;
+}
+.left-align{
+  right: 20px;
+}
+.center-align {
+  right: 50%;
+  left: 50%;
+}
 /*-----------------Search pop up----------------*/
 
 .serach_inner form.search-form label {
@@ -487,7 +516,7 @@ input.search-field {
 .search-box i {
   padding: 10px;
   color: #000;
-  margin-top: 20px;
+  margin-top: 12px;
 }
 .search-box {
   margin: 8px 0px;
@@ -562,8 +591,8 @@ input.search-field {
 }
 #slider .inner_carousel .know-btn a:hover {
   background: #ffaa56;
-  color: #fff;
-  border-color: #fff;
+  color: #000;
+  border-color: #ffaa56;
 }
 #slider .inner_carousel .know-btn {
   margin-top: 23px;
@@ -575,7 +604,7 @@ input.search-field {
 .contact-box {
   background: #fff;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  margin-top: -11%;
+  margin-top: -8.5%;
   position: relative;
   padding: 28px;
 }
@@ -758,7 +787,9 @@ article.new-text.col-lg-6.col-md-6 {
   color:#000;
   border: 1px solid #000;
   padding: 5px 10px;
-  margin-left: 10px;
+  display: inline-block;
+  margin: 5px;
+  font-weight: 500;
 }
 .tags p a:hover{
   color: #000;
@@ -808,10 +839,6 @@ section .innerlightbox{
 }
 #footer a.rsswidget{
   color:#fff;
-}
-#footer .widget {
-  padding-top: 15%;
-  padding-bottom: 5%;
 }
 #footer .textwidget a {
   color: #fff;
@@ -898,13 +925,16 @@ div#sidebar {
   background:#000;
   color:#fff;
   clear:both;
+  padding: 10px 0;
+}
+#footer aside{
+  margin-bottom: 20px;
 }
 #footer h3{
   text-align:right;
   text-transform:uppercase;
   font-size:24px;
   font-weight: bold;
-  padding:0 0 17px 0;
   color: #fff;
 }
 #footer p{
@@ -1029,7 +1059,7 @@ div#sidebar {
   text-align: left;
 }
 #comments ol.comment-list {
-  color: #3a4d5e;
+  color: #5b5b5b;
   font-size: 18px;
 }
 .comment-meta.commentmetadata {
@@ -1057,6 +1087,13 @@ li#comment{
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
+.woocommerce form.login{
+  display: inline-block;
+}
+input#billing_phone {
+  padding: 10px;
+  border-radius: 0px;
+}
 .woocommerce .products li {
   width: 29% !important;
   text-align: center;
@@ -1160,6 +1197,21 @@ span.woocommerce-input-wrapper{
 .woocommerce-info a, form.woocommerce-shipping-calculator a,.woocommerce-account .woocommerce-MyAccount-content a,tr.woocommerce-cart-form__cart-item.cart_item td a{
   text-decoration: none !important;
 }
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
+.woocommerce-input-wrapper, .woocommerce label {
+  width: 100%;
+}
+.woocommerce label {
+  margin-bottom: 10px;
+}
 /*------------- Sidebar -------------*/
 #sidebar caption{
   color: #000;
@@ -1184,11 +1236,10 @@ span.woocommerce-input-wrapper{
 }
 #sidebar input[type="search"] {
   border: solid 1px #bbb;
-  padding: 9px 10px;
+  padding: 10px;
   font-size: 15px;
   color: #000;
   width: 100%;
-  margin-bottom: 15px;
 }
 #sidebar label{
   width:100%;
@@ -1318,7 +1369,7 @@ h1.page-title {
   font-size: 15px;
 }
 .nav-next {
-  float: left;
+  text-align: left;
   font-size: 15px;
 }
 .pagination {
@@ -1333,7 +1384,7 @@ h1.page-title {
 .pagination a {
   display:block;
   float:right;
-  margin: 2px 0 2px 2px;
+  margin: 2px 0 10px 5px;
   padding:10px 15px;
   text-decoration:none;
   width:auto;
@@ -1407,13 +1458,16 @@ iframe{
   .contentbox{
     width: auto;
   }
-
+  .logo{
+    padding: 0;
+  }
   #header,
   #header .logo h1{
     text-align: center;
   }
   .page-template-custom-front-page #header {
     position: static;
+    border-bottom: 1px solid #000;
   }
   .project_content{
     position: static;
@@ -1456,7 +1510,9 @@ iframe{
   .our-services{
     margin-top: 0;
   }
-  
+  #slider .inner_carousel h1{
+    display: none;
+  }
   #footer input[type="submit"] {
     padding: 6px 0;
     float: left;
@@ -1466,13 +1522,17 @@ iframe{
     margin-top: 4px;
     margin-bottom: 10px;
   }
+  .center-align {
+    right: 45%;
+    left: 50%;
+  }
 }
 @media screen and (min-width:720px){
   
   #footer input[type="submit"]{
     width: 100%;
     float: none;
-    margin-top: 5px;
+    margin: 5px 0;
   }
   #footer input[type="search"]{
     width: 100%;
@@ -1646,7 +1706,7 @@ iframe{
     text-align: center;
     display: block;
   }
-  .search-box i{
+  .search-box {
     display: none;
   }
   #menu-sidebar input[type="submit"]{
@@ -1668,7 +1728,6 @@ iframe{
     margin: 20px 0;
   }
   .main-menu-navigation{
-    max-height: 291px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }
@@ -1690,8 +1749,5 @@ iframe{
   }
   .primary-navigation li a:hover, .primary-navigation li:hover a,.primary-navigation ul ul li:hover > a{
     color: #fff !important;
-  }
-  #slider .inner_carousel h1{
-    display: none;
   }
 }

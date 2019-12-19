@@ -84,3 +84,15 @@
 			$custom_css .='right:0;';
 		$custom_css .='}';
 	}
+
+//css
+ 
+	$show_header = get_theme_mod( 'advance_business_slider_hide', true);
+		if($show_header == false){
+			$custom_css .='.contact-box{';
+				$custom_css .='margin-top: 0; position: static;';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page #header{';
+				$custom_css .='position: static;border-bottom: 1px solid #000;';
+			$custom_css .='}';
+		}
