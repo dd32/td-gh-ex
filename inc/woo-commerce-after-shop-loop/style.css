@@ -1,0 +1,30 @@
+article#after-shop-loop {
+    align-items: center;
+    background: url(images/moose-aaaaaa.jpg);
+    background-attachment: fixed !important;
+    background-color: #c52b30;
+    background-position: center center !important;
+    background-size: cover !important;
+    position: relative; /* IE Fix for shakey */
+}
+
+header#after-shop-loop-header {
+    color: #dfdfdf;
+    height: 25em;
+    overflow: hidden;
+    position: relative;
+    text-shadow: .05em -.05em .05em #2c2e32;
+}
+
+header#after-shop-loop-header h2 {
+    bottom: -.275em;
+    color: #eeeeee;
+    font-size: 5em;
+    line-height: 1em;
+    padding: 0 0 0 5%;
+    position: absolute;
+    max-height: 1em;
+    overflow: hidden;
+    text-align: left;
+    width: 100vw;
+}

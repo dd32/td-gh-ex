@@ -1,0 +1,105 @@
+section#categories-and-tags {
+    background: url(images/Clinton-Skydive-Sunset-Flocking-960x540.jpg);
+    background-attachment: fixed !important;
+    background-color: #ffffff;
+    background-position: center center !important;
+    background-size: cover !important;
+    min-height: 22em;
+    padding: 4em 5% 8em;
+    position: relative;
+}
+
+section#categories-and-tags .older-blog-posts,
+section#categories-and-tags .newer-blog-posts {
+    background: #444444;
+    border: .35em solid #eeeeee;
+    display: inline-block;
+    float: left;
+    font-size: 1.25em;
+    margin: 7em .5em;
+    padding: .65em 1.65em;
+}
+
+section#categories-and-tags .newer-blog-posts {
+    float: right;
+}
+
+section#categories-and-tags .older-blog-posts a,
+section#categories-and-tags .newer-blog-posts a {
+    color: #ffffff;
+}
+
+section#categories-and-tags .older-blog-posts a:hover,
+section#categories-and-tags .newer-blog-posts a:hover {
+    color: #999999;
+}
+
+section#categories-and-tags ul.post-categories,
+section#categories-and-tags ul.tag-list {
+    max-width: 100%;
+    text-align: center;
+    margin: 4em auto 0;
+}
+
+section#categories-and-tags ul.post-categories,
+section#categories-and-tags ul.tag-list {
+    max-width: 100%;
+    text-align: center;
+    margin: 4em auto 0;
+}
+
+section#categories-and-tags ul.post-categories li,
+section#categories-and-tags ul.tag-list li {
+    background: #444444;
+    border: .35em solid #eeeeee;
+    display: inline-block;
+    margin: .5em;
+}
+
+section#categories-and-tags ul.post-categories a,
+section#categories-and-tags ul.tag-list a {
+    display: block;
+    color: #ffffff;
+    padding: .65em 1.65em;
+}
+
+section#categories-and-tags ul.post-categories a:hover,
+section#categories-and-tags ul.tag-list a:hover {
+    color: #777777;
+}
+
+section#categories-and-tags .older-blog-posts,
+section#categories-and-tags .newer-blog-posts {
+    background: #444444;
+    border: .35em solid #eeeeee;
+    display: inline-block;
+    float: left;
+    font-size: 1.25em;
+    margin: 7em .5em;
+    padding: .65em 1.65em;
+}
+
+section#categories-and-tags .newer-blog-posts {
+    float: right;
+}
+
+section#categories-and-tags .older-blog-posts a,
+section#categories-and-tags .newer-blog-posts a {
+    color: #ffffff;
+}
+
+section#categories-and-tags .older-blog-posts a:hover,
+section#categories-and-tags .newer-blog-posts a:hover {
+    color: #999999;
+}
+
+section#categories-and-tags > h3 {
+    color: #ffffff;
+    text-shadow: .05em .05em .05em #333333;
+}
+
+section#categories-and-tags div.customizer-categories-and-tags {
+    left: 4em;
+    position: absolute;
+    top: 2em;
+}
