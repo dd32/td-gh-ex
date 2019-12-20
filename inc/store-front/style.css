@@ -1,0 +1,196 @@
+article.store-front {
+    align-items: center;
+    background: url(images/moose-aaaaaa.jpg);
+    background-attachment: fixed !important;
+    background-color: #c52b30;
+    background-position: center center !important;
+    background-size: cover !important;
+    position: relative; /* IE Fix for shakey */
+}
+
+header.store-header {
+    color: #dfdfdf;
+    height: 25em;
+    overflow: hidden;
+    position: relative;
+    text-shadow: .05em -.05em .05em #2c2e32;
+}
+
+header.store-header h2 {
+    bottom: -.275em;
+    color: #dfdfdf;
+    font-size: 5em;
+    line-height: 1em;
+    padding: 0 0 0 5%;
+    position: absolute;
+    max-height: 1em;
+    overflow: hidden;
+    text-align: left;
+    width: 100vw;
+}
+
+article.store-front > section {
+    align-items: center;
+    background-color: #dfdfdf;
+    color: #111111;
+    display: flex;
+    flex-flow: row wrap;
+    min-height: 16em;
+    padding: 0 3em 3em;
+    position: relative; /* IE Fix for shakey */
+}
+
+article.store-front section  .customizer {
+    left: 3em;
+    position: absolute;
+    top: 3em;
+}
+
+article.store-front section section {
+    background: #ffffff;
+    margin: 4em auto 0;
+    padding: 1.5em 1.5em 1em;
+    position: relative;
+    width: 18em;
+}
+
+article.store-front section  a.post-edit-link {
+    font-size: .6em;
+    font-weight: normal;
+    left: 0;
+    line-height: 1em;
+    position: absolute;
+    top: -1.25em;
+}
+
+article.store-front section a img.store-front-image {
+    display: block;
+    height: 15em;
+    margin-bottom: 1em;
+    object-fit: cover;
+}
+
+article.store-front h3 {
+    font-size: 1.5em;
+    margin: 0 auto;
+    width: 100%;
+    text-shadow: .05em .05em .05em #333333;
+}
+
+article.store-front section div.store-front-title {
+    background: rgba(0,0,0,.3);
+    height: 15em;
+    position: absolute;
+    text-shadow: .05em .05em .05em #333333;
+    top: 0;
+    width: 100%;
+}
+
+article.store-front section h5 {
+    line-height: 1em;
+    padding: 0 0 .5em;
+    width: 100%;
+}
+
+article.store-front section h5 a {
+    color: #4d4d4d;
+    text-align: center;
+}
+
+article.store-front section h5 a:hover {
+    color: #c52b30;
+}
+
+article.store-front section div.price {
+    background: #ffffff;
+    display: inline-block;
+    font-size: 1.1em;
+    line-height: 2.2em;
+    margin: .5em;
+    position: relative;
+    width: 2.3em;
+    z-index: 2;
+}
+
+article.store-front section div.price a {
+    background: #c52b30;
+    color: #ffffff;
+    display: block;
+    font-family: 'Teko', sans-serif;
+    float: right;
+    height: 2em;
+    position: absolute;
+    text-shadow: .05em .05em .05em #111111;
+    width: 2em;
+    z-index: 3;
+}
+
+article.store-front section div.price a:hover {
+    color: #aaaaaa;
+}
+
+article.store-front section div.price a:before,
+article.store-front section div.price a:after {
+    content: "";
+    position: absolute;
+    top: 0em;
+    left: 0;
+    margin: 0em;
+    height: 2em;
+    width: 2em;
+    background: #c52b30;
+    z-index: -1;
+}
+
+article.store-front section div.price:before,
+article.store-front section div.price a:before {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+}
+
+article.store-front section div.price:after,
+article.store-front section div.price a:after {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+} 
+
+article.store-front section p {
+    color: #333333;
+    font-size: .7em;
+    padding: 0 0 1em;
+}
+
+article.store-front section a.continue-reading {
+    display: block;
+    float: left;
+    margin: 1em 1em 0;
+    text-align: left;
+    text-shadow: 0 0 .25em #fff;
+}
+
+article.store-front section a.continue-reading::after {
+    content: " →";
+}
+
+article.store-front section a.add_to_cart_button,
+article.store-front section a.product_type_simple,
+article.store-front section a.product_type_variable {
+    background: #444444;
+    border: .25em solid #f5f5f5;
+    color: #ffffff;
+    font-size: .8em;
+    line-height: 4em;
+    padding: .6em 1em;
+    margin: .5em;
+    vertical-align: top;
+}
+
+article.store-front section a.add_to_cart_button:hover,
+article.store-front section a.product_type_simple:hover,
+article.store-front section a.product_type_variable:hover {
+    color: #aaaaaa;
+}
