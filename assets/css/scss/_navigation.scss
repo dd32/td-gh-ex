@@ -137,7 +137,7 @@ nav a {
         }
 
         .to-left {
-            left: unset;
+            left: unset !important; // Override by Js right positioning of rightmost menu item submenus
             right: 25%;
         }
 

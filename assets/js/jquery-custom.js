@@ -21,7 +21,7 @@
         }
     } );
 
-    $( '.main-nav>li:not(.menu-item-has-children), .main-nav>.menu-item-has-children>ul>li:not(.menu-item-has-children)' ).on( {
+    $( '.main-nav>li, .main-nav>.menu-item-has-children>ul>li' ).on( {
         keyup: function( e ) {
             $( this ).prev().children( 'ul' ).removeClass( 'is-focused' );
             $( this ).next().children( 'ul' ).removeClass( 'is-focused' );

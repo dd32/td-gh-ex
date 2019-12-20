@@ -1077,7 +1077,7 @@ nav a {
     -ms-transition: all 0.2s;
     transition: all 0.2s; }
   .main-nav .menu-item-has-children .to-left {
-    left: unset;
+    left: unset !important;
     right: 25%; }
   .main-nav .menu-item-has-children:hover > ul, .main-nav .menu-item-has-children:focus > ul {
     left: 50%;
