@@ -504,6 +504,17 @@ function advance_pet_care_customize_register($wp_customize) {
 		'priority'	=> null,
 		'panel' => 'advance_pet_care_panel_id',
 	));
+
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_pet_care_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_pet_care_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-pet-care' ),
+        'section' => 'advance_pet_care_topbar'
+    ));
 	
 	$wp_customize->add_setting('advance_pet_care_mail1',array(
 		'default'	=> '',
