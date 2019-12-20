@@ -29,7 +29,7 @@
 
 
       <?php } elseif (is_author()) { ?>
-	<h2><?php the_time('Y'); ?></h2>
+	<h2><?php the_author(); ?></h2>
 
 
       <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
@@ -90,7 +90,6 @@
 		</div>
 		
 			<div class="entry">
-				<?php the_post_thumbnail(); ?>
                 <?php the_content(); ?>
 			</div><!--Ends entry-->
 

@@ -16,7 +16,7 @@ It's a multipurpose theme, including a wide page template, suitable to design wi
 - Custom background, and custom background colors.
 - Widget areas in index header, sidebar and footer.
 - Responsive. Easy to read from desktops, tablets and smartphones.
-Redesign WordPress theme, Copyright (C) 2018 Robert Toth
+Redesign WordPress theme, Copyright (C) 2019 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
 Resource All graphic objects, example: img/logo.png.
 Resource Images: bridge.jpg - the front cover image from Good Free Photos, public domain photos (included in img folder). Link to their website: https://www.goodfreephotos.com/
