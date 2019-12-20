@@ -463,6 +463,45 @@ function advance_automobile_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	//Layouts
+	$wp_customize->add_section('advance_automobile_left_right', array(
+		'title'    => __('Layout Settings', 'advance-automobile'),
+		'priority' => null,
+		'panel'    => 'advance_automobile_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_automobile_theme_options',array(
+        'default' => __('Default','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-automobile'),
+        'description' => __('Here you can change the Width layout. ','advance-automobile'),
+        'section' => 'advance_automobile_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-automobile'),
+            'Container' => __('Container','advance-automobile'),
+            'Box Container' => __('Box Container','advance-automobile'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_automobile_layout_options', array(
+		'default'           => __('Right Sidebar', 'advance-automobile'),
+		'sanitize_callback' => 'advance_automobile_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_automobile_layout_options',array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-automobile'),
+		'section'        => 'advance_automobile_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-automobile'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-automobile'),
+			'One Column'    => __('One Column', 'advance-automobile'),
+			'Grid Layout'   => __('Grid Layout', 'advance-automobile')
+		),
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_automobile_topbar',array(
 		'title'	=> __('Topbar Section','advance-automobile'),
@@ -470,6 +509,17 @@ function advance_automobile_customize_register($wp_customize) {
 		'priority'	=> null,
 		'panel' => 'advance_automobile_panel_id',
 	));
+
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_automobile_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_automobile_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-automobile' ),
+        'section' => 'advance_automobile_topbar'
+    ));
 
 	$wp_customize->add_setting('advance_automobile_mail1',array(
 		'default'	=> '',
@@ -778,10 +828,26 @@ function advance_automobile_customize_register($wp_customize) {
 	//footer
 	$wp_customize->add_section('advance_automobile_footer_section', array(
 		'title'       => __('Footer Text', 'advance-automobile'),
-		'description' => __('Add some text for footer like copyright etc.', 'advance-automobile'),
 		'priority'    => null,
 		'panel'       => 'advance_automobile_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_automobile_footer_widget_areas',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_automobile_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_automobile_footer_widget_areas',array(
+        'type'        => 'select',
+        'label'       => __('Footer widget area', 'advance-automobile'),
+        'section'     => 'advance_automobile_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-automobile'),
+        'choices' => array(
+            '1'     => __('One', 'advance-automobile'),
+            '2'     => __('Two', 'advance-automobile'),
+            '3'     => __('Three', 'advance-automobile'),
+            '4'     => __('Four', 'advance-automobile')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_automobile_footer_copy', array(
 		'default'           => '',
@@ -793,44 +859,31 @@ function advance_automobile_customize_register($wp_customize) {
 		'type'    => 'text',
 	));
 
-	//Layouts
-	$wp_customize->add_section('advance_automobile_left_right', array(
-		'title'    => __('Layout Settings', 'advance-automobile'),
-		'priority' => null,
-		'panel'    => 'advance_automobile_panel_id',
+	$wp_customize->add_setting('advance_automobile_enable_disable_scroll',array(
+        'default' => 'true',
+        'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_enable_disable_scroll',array(
+     	'type' => 'checkbox',
+      	'label' => __('Show / Hide Scroll Top Button','advance-automobile'),
+      	'section' => 'advance_automobile_footer_section',
 	));
 
-	$wp_customize->add_setting('advance_automobile_theme_options',array(
-        'default' => __('Default','advance-automobile'),
+	$wp_customize->add_setting('advance_automobile_scroll_setting',array(
+        'default' => __('Right','advance-automobile'),
         'sanitize_callback' => 'advance_automobile_sanitize_choices'
 	));
-	$wp_customize->add_control('advance_automobile_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-automobile'),
-        'description' => __('Here you can change the Width layout. ','advance-automobile'),
-        'section' => 'advance_automobile_left_right',
+	$wp_customize->add_control('advance_automobile_scroll_setting',array(
+        'type' => 'select',
+        'label' => __('Scroll Back to Top Position','advance-automobile'),
+        'section' => 'advance_automobile_footer_section',
         'choices' => array(
-            'Default' => __('Default','advance-automobile'),
-            'Container' => __('Container','advance-automobile'),
-            'Box Container' => __('Box Container','advance-automobile'),
+            'Left' => __('Left','advance-automobile'),
+            'Right' => __('Right','advance-automobile'),
+            'Center' => __('Center','advance-automobile'),
         ),
 	) );
-
-	$wp_customize->add_setting('advance_automobile_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-automobile'),
-		'sanitize_callback' => 'advance_automobile_sanitize_choices',
-	));
-	$wp_customize->add_control('advance_automobile_layout_options',array(
-		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-automobile'),
-		'section'        => 'advance_automobile_left_right',
-		'choices'        => array(
-			'Left Sidebar'  => __('Left Sidebar', 'advance-automobile'),
-			'Right Sidebar' => __('Right Sidebar', 'advance-automobile'),
-			'One Column'    => __('One Column', 'advance-automobile'),
-			'Grid Layout'   => __('Grid Layout', 'advance-automobile')
-		),
-	));
+	
 }
 add_action('customize_register', 'advance_automobile_customize_register');
 

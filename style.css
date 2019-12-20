@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme. Demo: https://themeshopy.com/advance-automobile-pro/
-Version: 0.3.5
+Version: 0.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
@@ -1101,6 +1101,33 @@ table#wp-calendar td a {
 #footer .entry-content p a{
   color: #fff !important;
 }
+/*scroll to top*/
+#scroll-top{
+  background:#252525;
+  border:2px solid #252525;
+  color:#fff;
+  cursor:pointer;
+  width:65px;
+  height:65px;
+  opacity:0.5;
+  position:fixed;
+  bottom:60px;
+  right:20px;
+  z-index:9999;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius:0;
+  font-size:20px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: none;
+}
+.left-align{
+  left: 20px;
+}
+.center-align {
+  left: 50%;
+  right: 50%;
+}
 /* Comments BOX */
 #comments {
   display: block;
@@ -1322,6 +1349,15 @@ span.woocommerce-input-wrapper{
 }
 .woocommerce-privacy-policy-text p a,.woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover{
   color: #000;
+}
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
 }
 /*------------- Sidebar -------------*/
 #sidebar {
@@ -1603,6 +1639,10 @@ iframe , .entry-audio audio{
   .time{
     text-align: center;
   }
+  .center-align {
+    left: 40%;
+    right: 50%;
+  }
 }
 @media screen and (min-width:720px){
   #footer input[type="submit"]{
@@ -1706,6 +1746,10 @@ iframe , .entry-audio audio{
   }
   .woocommerce .products li {
     width: 44% !important;
+  }
+  .center-align {
+    left: 45%;
+    right: 50%;
   }
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
@@ -1898,8 +1942,8 @@ iframe , .entry-audio audio{
   #contact-info form.search-form {
     display: block;
   }
-  .main-menu-navigation{
-    max-height: 223px;
+  .main-menu-navigation{/*
+    max-height: 223px;*/
     overflow-y: scroll;
     scroll-behavior: auto;
   }

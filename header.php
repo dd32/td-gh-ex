@@ -20,45 +20,47 @@
 <header role="banner">
   <a class="screen-reader-text skip-link" href="#maincontent" ><?php esc_html_e( 'Skip to content', 'advance-automobile' ); ?></a>
   <div id="header">
-    <div class="top-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-md-4">
-            <div class="mail">
-              <?php if( get_theme_mod('advance_automobile_mail1') != ''){ ?>
-                <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?></span>
-              <?php } ?>
+    <?php if( get_theme_mod('advance_automobile_display_topbar',true) != ''){ ?>
+      <div class="top-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4">
+              <div class="mail">
+                <?php if( get_theme_mod('advance_automobile_mail1') != ''){ ?>
+                  <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_automobile_mail1','')); ?></span>
+                <?php } ?>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-md-5">
-            <div class="social-icons">
-              <?php if( get_theme_mod( 'advance_automobile_facebook_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-automobile' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_automobile_twitter_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-automobile' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_automobile_youtube_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-automobile' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_automobile_google_plus_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-automobile' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_automobile_linkedin_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-automobile' );?></span></a>
-              <?php } ?>
+            <div class="col-lg-6 col-md-5">
+              <div class="social-icons">
+                <?php if( get_theme_mod( 'advance_automobile_facebook_url') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-automobile' );?></span></a>
+                <?php } ?>
+                <?php if( get_theme_mod( 'advance_automobile_twitter_url') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-automobile' );?></span></a>
+                <?php } ?>
+                <?php if( get_theme_mod( 'advance_automobile_youtube_url') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-automobile' );?></span></a>
+                <?php } ?>
+                <?php if( get_theme_mod( 'advance_automobile_google_plus_url') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-automobile' );?></span></a>
+                <?php } ?>
+                <?php if( get_theme_mod( 'advance_automobile_linkedin_url') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_automobile_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-automobile' );?></span></a>
+                <?php } ?>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-2 col-md-3">
-            <div class="book-btn">
-              <?php if ( get_theme_mod('advance_automobile_book1','') != "" ) {?>
-                <a href="<?php echo esc_html(get_theme_mod('advance_automobile_book')); ?>"><?php echo esc_html(get_theme_mod('advance_automobile_book1','')); ?><span class="screen-reader-text"><?php esc_attr_e( 'Bookbtn','advance-automobile' );?></span></a>
-              <?php }?>
+            <div class="col-lg-2 col-md-3">
+              <div class="book-btn">
+                <?php if ( get_theme_mod('advance_automobile_book1','') != "" ) {?>
+                  <a href="<?php echo esc_html(get_theme_mod('advance_automobile_book')); ?>"><?php echo esc_html(get_theme_mod('advance_automobile_book1','')); ?><span class="screen-reader-text"><?php esc_attr_e( 'Bookbtn','advance-automobile' );?></span></a>
+                <?php }?>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <?php } ?>
     <div class="main-menu">
       <div class="container">
         <div class="row">

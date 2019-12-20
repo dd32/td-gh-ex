@@ -113,3 +113,14 @@
 			$custom_css .='right:0;';
 		$custom_css .='}';
 	}
+
+	$show_header = get_theme_mod( 'advance_automobile_slider_hide', true);
+		 if($show_header == false){
+			$custom_css .='#contact-details{';
+				$custom_css .='margin: 25px 0;';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page #header .main-menu{';
+				$custom_css .='border-bottom: 1px solid #000;';
+			$custom_css .='}';
+		}
+

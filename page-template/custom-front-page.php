@@ -65,69 +65,69 @@ get_header(); ?>
   <?php } ?>
 
   <?php do_action( 'advance_automobile_below_slider' ); ?>
-  <section id="contact-details">
-    <div class="container">
-      <div class="row m-0">
-        <?php if( get_theme_mod( 'advance_automobile_address') != '' || get_theme_mod( 'advance_automobile_address1' )!= '') { ?>
-        <div class="col-lg-4 col-md-4">
-          <div class="address">
-            <div class="row">
-              <div class="col-lg-2 col-md-3">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="col-lg-10 col-md-9">
-                <?php if( get_theme_mod('advance_automobile_address') != ''){ ?>
-                  <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_address','')); ?></p>
-                <?php } ?>
-                <?php if( get_theme_mod('advance_automobile_address1') != ''){ ?>
-                  <p><?php echo esc_html( get_theme_mod('advance_automobile_address1','')); ?></p>
-                <?php } ?>
-              </div>
-            </div>
-          </div>
-        </div>
-        <?php } ?>
-        <?php if( get_theme_mod( 'advance_automobile_time') != '' || get_theme_mod( 'advance_automobile_time1' )!= '') { ?>
-        <div class="col-lg-4 col-md-4">
-          <div class="time">
-            <div class="row">
-              <div class="col-lg-2 col-md-3">
-                <i class="far fa-clock"></i>
-              </div>
-              <div class="col-lg-10 col-md-9">
-                <?php if( get_theme_mod('advance_automobile_time') != ''){ ?>
-                  <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_time','')); ?></p>
-                <?php } ?>
-                <?php if( get_theme_mod('advance_automobile_time1') != ''){ ?>
-                  <p><?php echo esc_html( get_theme_mod('advance_automobile_time1','')); ?></p>
-                <?php } ?>
+    <section id="contact-details">
+      <div class="container">
+        <div class="row m-0">
+          <?php if( get_theme_mod( 'advance_automobile_address') != '' || get_theme_mod( 'advance_automobile_address1' )!= '') { ?>
+          <div class="col-lg-4 col-md-4">
+            <div class="address">
+              <div class="row">
+                <div class="col-lg-2 col-md-3">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="col-lg-10 col-md-9">
+                  <?php if( get_theme_mod('advance_automobile_address') != ''){ ?>
+                    <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_address','')); ?></p>
+                  <?php } ?>
+                  <?php if( get_theme_mod('advance_automobile_address1') != ''){ ?>
+                    <p><?php echo esc_html( get_theme_mod('advance_automobile_address1','')); ?></p>
+                  <?php } ?>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <?php } ?>
-        <?php if( get_theme_mod( 'advance_automobile_call') != '' || get_theme_mod( 'advance_automobile_call1' )!= '') { ?>
-        <div class="col-lg-4 col-md-4">
-          <div class="address">
-            <div class="row">
-              <div class="col-lg-2 col-md-3">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div class="col-lg-10 col-md-9">
-                <?php if( get_theme_mod('advance_automobile_call') != ''){ ?>
-                  <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_call','')); ?></p>
-                <?php } ?>
-                <?php if( get_theme_mod('advance_automobile_call1') != ''){ ?>
-                  <p><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></p>
-                <?php } ?>
+          <?php } ?>
+          <?php if( get_theme_mod( 'advance_automobile_time') != '' || get_theme_mod( 'advance_automobile_time1' )!= '') { ?>
+          <div class="col-lg-4 col-md-4">
+            <div class="time">
+              <div class="row">
+                <div class="col-lg-2 col-md-3">
+                  <i class="far fa-clock"></i>
+                </div>
+                <div class="col-lg-10 col-md-9">
+                  <?php if( get_theme_mod('advance_automobile_time') != ''){ ?>
+                    <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_time','')); ?></p>
+                  <?php } ?>
+                  <?php if( get_theme_mod('advance_automobile_time1') != ''){ ?>
+                    <p><?php echo esc_html( get_theme_mod('advance_automobile_time1','')); ?></p>
+                  <?php } ?>
+                </div>
               </div>
             </div>
           </div>
+          <?php } ?>
+          <?php if( get_theme_mod( 'advance_automobile_call') != '' || get_theme_mod( 'advance_automobile_call1' )!= '') { ?>
+          <div class="col-lg-4 col-md-4">
+            <div class="address">
+              <div class="row">
+                <div class="col-lg-2 col-md-3">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="col-lg-10 col-md-9">
+                  <?php if( get_theme_mod('advance_automobile_call') != ''){ ?>
+                    <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_call','')); ?></p>
+                  <?php } ?>
+                  <?php if( get_theme_mod('advance_automobile_call1') != ''){ ?>
+                    <p><?php echo esc_html( get_theme_mod('advance_automobile_call1','')); ?></p>
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php } ?>
         </div>
-        <?php } ?>
       </div>
-    </div>
-  </section>
+    </section>
   <?php do_action( 'advance_automobile_below_contact_section' ); ?>
 
   <?php if( get_theme_mod('advance_automobile_category3') != '' || get_theme_mod( 'advance_automobile_our_services_title' )!= ''){ ?>

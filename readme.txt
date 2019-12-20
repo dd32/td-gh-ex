@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.3
+Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.5
+Stable tag: 0.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,14 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added excerpt length option.
 * Added button text option.
 * Updated POT file.
+
+= 0.3.6 =
+* Added Footer widget area option in customizer.
+* Added scroll to top button in customizer.
+* Updated POT file.
+
+= 0.3.7 =
+* Added show / hide option for topbarin customizer.
 
 == Resources ==
 

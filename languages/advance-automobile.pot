@@ -116,7 +116,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:31
+#: footer.php:51
 msgid 'Copyright 2018'
 msgstr ""
 
@@ -153,30 +153,11 @@ msgstr ""
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:102
-msgid 'Footer Navigation 1'
+#: functions.php:105
+msgid 'Footer Nav '
 msgstr ""
 
-#: functions.php:103
-#: functions.php:113 
-#: functions.php:123 
-#: functions.php:133
-msgid 'Appears on footer'
-msgstr ""
-
-#: functions.php:112
-msgid 'Footer Navigation 2'
-msgstr ""
-
-#: functions.php:122
-msgid 'Footer Navigation 3'
-msgstr ""
-
-#: functions.php:132
-msgid 'Footer Navigation 4'
-msgstr ""
-
-#: functions.php:288
+#: functions.php:262
 msgid 'Automobile WordPress Theme.'
 msgstr ""
 
@@ -460,196 +441,240 @@ msgid 'H6 Font Size'
 msgstr ""
 
 #: inc/customizer.php:468
-msgid 'Topbar Section'
-msgstr ""
-
-#: inc/customizer.php:469
-msgid 'Add topbar content'
-msgstr ""
-
-#: inc/customizer.php:479
-msgid 'Mail Address'
-msgstr ""
-
-#: inc/customizer.php:489
-msgid 'Add Facebook link'
-msgstr ""
-
-#: inc/customizer.php:500
-msgid 'Add Twitter link'
-msgstr ""
-
-#: inc/customizer.php:511
-msgid 'Add Youtube link'
-msgstr ""
-
-#: inc/customizer.php:522
-msgid 'Add Google Plus link'
-msgstr ""
-
-#: inc/customizer.php:533
-msgid 'Add Linkedin link'
-msgstr ""
-
-#: inc/customizer.php:544
-msgid 'Button text'
-msgstr ""
-
-#: inc/customizer.php:554
-msgid 'Add Link'
-msgstr ""
-
-#: inc/customizer.php:562
-msgid 'Slider Settings'
-msgstr ""
-
-#: inc/customizer.php:573
-msgid 'Show / Hide slider'
-msgstr ""
-
-#: inc/customizer.php:584
-msgid 'Select Slide Image Page'
-msgstr ""
-
-#: inc/customizer.php:585
-msgid 'Size of image should be 1600 x 633'
-msgstr ""
-
-#: inc/customizer.php:593
-msgid 'Contact details'
-msgstr ""
-
-#: inc/customizer.php:594
-msgid 'Add Contact Details here'
-msgstr ""
-
-#: inc/customizer.php:604
-msgid 'Address Text'
-msgstr ""
-
-#: inc/customizer.php:614
-msgid 'Address'
-msgstr ""
-
-#: inc/customizer.php:624
-msgid 'Timing Text'
-msgstr ""
-
-#: inc/customizer.php:634
-msgid 'Open at'
-msgstr ""
-
-#: inc/customizer.php:644
-msgid 'Call Text'
-msgstr ""
-
-#: inc/customizer.php:654
-msgid 'Phone Number'
-msgstr ""
-
-#: inc/customizer.php:661
-msgid 'Our Services'
-msgstr ""
-
-#: inc/customizer.php:672
-msgid 'Section Title'
-msgstr ""
-
-#: inc/customizer.php:698
-msgid 'Select Category to display Latest Post'
-msgstr ""
-
-#: inc/customizer.php:699
-msgid 'Size of image should be 570 x 380'
-msgstr ""
-
-#: inc/customizer.php:705
-msgid 'Blog Page Settings'
-msgstr ""
-
-#: inc/customizer.php:715
-msgid 'Post Date'
-msgstr ""
-
-#: inc/customizer.php:725
-msgid 'Comments'
-msgstr ""
-
-#: inc/customizer.php:735
-msgid 'Author'
-msgstr ""
-
-#: inc/customizer.php:745
-msgid 'Single Post Tags'
-msgstr ""
-
-#: inc/customizer.php:757
-msgid 'Excerpt length'
-msgstr ""
-
-#: inc/customizer.php:770
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:771
-msgid 'Add some text for footer like copyright etc'
-msgstr ""
-
-#: inc/customizer.php:781
-msgid 'Copyright Text'
-msgstr ""
-
-#: inc/customizer.php:788
 msgid 'Layout Settings'
 msgstr ""
 
-#: inc/customizer.php:794
-#: inc/customizer.php:8803
+#: inc/customizer.php:474
+#: inc/customizer.php:483
 msgid 'Default'
 msgstr ""
 
-#: inc/customizer.php:799
+#: inc/customizer.php:479
 msgid 'Container Box'
 msgstr ""
 
-#: inc/customizer.php:800
+#: inc/customizer.php:480
 msgid 'Here you can change the Width layout.'
 msgstr ""
 
-#: inc/customizer.php:804
+#: inc/customizer.php:484
 msgid 'Container'
 msgstr ""
 
-#: inc/customizer.php:805
+#: inc/customizer.php:485
 msgid 'Box Container'
 msgstr ""
 
-#: inc/customizer.php:810
-#: inc/customizer.php:819
+#: inc/customizer.php:490
+#: inc/customizer.php:499
 msgid 'Right Sidebar'
 msgstr ""
 
-#: inc/customizer.php:815
+#: inc/customizer.php:495
 msgid 'Change Layouts'
 msgstr ""
 
-#: inc/customizer.php:818
+#: inc/customizer.php:498
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:820
+#: inc/customizer.php:500
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:821
+#: inc/customizer.php:501
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:905
+#: inc/customizer.php:507
+msgid 'Topbar Section'
+msgstr ""
+
+#: inc/customizer.php:508
+msgid 'Add topbar content'
+msgstr ""
+
+#: inc/customizer.php:418
+msgid 'Mail Address'
+msgstr ""
+
+#: inc/customizer.php:428
+msgid 'Add Facebook link'
+msgstr ""
+
+#: inc/customizer.php:539
+msgid 'Add Twitter link'
+msgstr ""
+
+#: inc/customizer.php:550
+msgid 'Add Youtube link'
+msgstr ""
+
+#: inc/customizer.php:561
+msgid 'Add Google Plus link'
+msgstr ""
+
+#: inc/customizer.php:572
+msgid 'Add Linkedin link'
+msgstr ""
+
+#: inc/customizer.php:583
+msgid 'Button text'
+msgstr ""
+
+#: inc/customizer.php:593
+msgid 'Add Link'
+msgstr ""
+
+#: inc/customizer.php:601
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:612
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:623
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:624
+msgid 'Size of image should be 1600 x 633'
+msgstr ""
+
+#: inc/customizer.php:632
+msgid 'Contact details'
+msgstr ""
+
+#: inc/customizer.php:633
+msgid 'Add Contact Details here'
+msgstr ""
+
+#: inc/customizer.php:643
+msgid 'Address Text'
+msgstr ""
+
+#: inc/customizer.php:653
+msgid 'Address'
+msgstr ""
+
+#: inc/customizer.php:663
+msgid 'Timing Text'
+msgstr ""
+
+#: inc/customizer.php:673
+msgid 'Open at'
+msgstr ""
+
+#: inc/customizer.php:683
+msgid 'Call Text'
+msgstr ""
+
+#: inc/customizer.php:693
+msgid 'Phone Number'
+msgstr ""
+
+#: inc/customizer.php:700
+msgid 'Our Services'
+msgstr ""
+
+#: inc/customizer.php:711
+msgid 'Section Title'
+msgstr ""
+
+#: inc/customizer.php:737
+msgid 'Select Category to display Latest Post'
+msgstr ""
+
+#: inc/customizer.php:738
+msgid 'Size of image should be 570 x 380'
+msgstr ""
+
+#: inc/customizer.php:744
+msgid 'Blog Page Settings'
+msgstr ""
+
+#: inc/customizer.php:754
+msgid 'Post Date'
+msgstr ""
+
+#: inc/customizer.php:764
+msgid 'Comments'
+msgstr ""
+
+#: inc/customizer.php:774
+msgid 'Author'
+msgstr ""
+
+#: inc/customizer.php:784
+msgid 'Single Post Tags'
+msgstr ""
+
+#: inc/customizer.php:796
+msgid 'Excerpt length'
+msgstr ""
+
+#: inc/customizer.php:812
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:819
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:830
+msgid 'Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:832
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:834
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:835
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:836
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:837
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:846
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:857
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:862
+#: inc/customizer.php:871
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:867
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:870
+msgid 'Left'
+msgstr ""
+
+#: inc/customizer.php:872
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:957
 msgid 'Advance Automobile'
 msgstr ""
 
-#: inc/customizer.php:906
+#: inc/customizer.php:958
 msgid 'Go Pro'
 msgstr ""
-
