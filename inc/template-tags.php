@@ -103,7 +103,7 @@ if (!function_exists('adventure_blog_post_thumbnail')) :
             $global_layout = adventure_blog_get_option('global_layout');
             if ($global_layout == 'no-sidebar'){ ?>
                 <div class="zoom-gallery">
-                    <a class="post-thumbnail" href="<?php the_post_thumbnail_url('full'); ?> " aria-hidden="true">
+                    <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
                         <?php
                         the_post_thumbnail('adventure-blog-full-1200-900', array(
                             'alt' => the_title_attribute(array(
@@ -112,10 +112,13 @@ if (!function_exists('adventure_blog_post_thumbnail')) :
                         ));
                         ?>
                     </a>
+                    <span class="enlarge-icon-zoomer" data-mfp-src="<?php the_post_thumbnail_url('full'); ?>">
+                        <span class="enlarge-icon"></span>
+                    </span>
                 </div>
             <?php } else { ?>
             <div class="zoom-gallery">
-                <a class="post-thumbnail" href="<?php the_post_thumbnail_url('full'); ?> " aria-hidden="true">
+                <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
                     <?php
                     the_post_thumbnail('adventure-blog-full-800-600', array(
                         'alt' => the_title_attribute(array(
@@ -124,6 +127,9 @@ if (!function_exists('adventure_blog_post_thumbnail')) :
                     ));
                     ?>
                 </a>
+                <span class="enlarge-icon-zoomer" data-mfp-src="<?php the_post_thumbnail_url('full'); ?>">
+                    <span class="enlarge-icon"></span>
+                </span>
             </div>
         <?php } ?>
         <?php endif; // End is_singular().

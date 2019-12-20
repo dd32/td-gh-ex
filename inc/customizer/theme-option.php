@@ -49,6 +49,38 @@ $wp_customize->add_control('enable_overlay_option',
 	)
 );
 
+// Setting - related_post.
+$wp_customize->add_setting('related_post',
+    array(
+        'default'           => $default['related_post'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'flash_blog_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('related_post',
+    array(
+        'label'    => esc_html__('Enable Related Post on Single post', 'adventure-blog'),
+        'section'  => 'theme_option_section_settings',
+        'type'     => 'checkbox',
+        'priority' => 100,
+    )
+);
+// Setting related_post_title.
+$wp_customize->add_setting('related_post_title',
+    array(
+        'default'           => $default['related_post_title'],
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control('related_post_title',
+    array(
+        'label'    => esc_html__('Related Post Title', 'adventure-blog'),
+        'section'  => 'theme_option_section_settings',
+        'type'     => 'text',
+        'priority' => 100,
+    )
+);
 /*Global Layout*/
 $wp_customize->add_setting('global_layout',
 	array(

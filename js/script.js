@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
             nextArrow: $('.next'),
         });
 
-        $(".gallery-columns-1, .wp-block-gallery.columns-1").each(function () {
+        $(".gallery-columns-1, ul.wp-block-gallery.columns-1, .wp-block-gallery.columns-1 .blocks-gallery-grid").each(function () {
             $(this).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
     });
 
     $(function () {
-        jQuery('.widget-area').theiaStickySidebar({
+        $('.widget-area').theiaStickySidebar({
             additionalMarginTop: 30
         });
     });
@@ -57,7 +57,7 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
-    $("div.gallery-icon, .blocks-gallery-item, div.zoom-gallery").each(function () {
+    $(".gallery, .wp-block-gallery").each(function () {
         $(this).magnificPopup({
             delegate: 'a',
             type: 'image',
@@ -72,6 +72,29 @@ jQuery(document).ready(function ($) {
             },
             gallery: {
                 enabled: true
+            },
+            zoom: {
+                enabled: true,
+                duration: 300,
+                opener: function (element) {
+                    return element.find('img');
+                }
+            }
+        });
+    });
+
+    $('.zoom-gallery').each(function () {
+        $(this).magnificPopup({
+            delegate: 'span',
+            type: 'image',
+            closeOnContentClick: false,
+            closeBtnInside: false,
+            mainClass: 'mfp-with-zoom mfp-img-mobile',
+            image: {
+                verticalFit: true,
+                titleSrc: function (item) {
+                    return item.el.attr('title');
+                }
             },
             zoom: {
                 enabled: true,

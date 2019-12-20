@@ -34,14 +34,15 @@ function adventure_blog_get_default_theme_options() {
 
     $defaults['enable_featured_blog'] = 0;
     $defaults['select_category_for_featured_blog'] = 1;
-
+    $defaults['related_post_title']    = esc_html__('Related Post', 'adventure-blog');
+    $defaults['related_post']            = 1;
     /*layout*/
 	$defaults['enable_overlay_option']    = 0;
 	$defaults['read_more_button_text']    = esc_html__('Continue Reading', 'adventure-blog');
 	$defaults['global_layout']            = 'right-sidebar';
 	$defaults['excerpt_length_global']    = 50;
 	$defaults['pagination_type']          = 'default';
-	$defaults['copyright_text']           = esc_html__('Copyright All right reserved', 'adventure-blog');
+	$defaults['copyright_text']           = esc_html__('Copyright All rights reserved', 'adventure-blog');
 
 	// Pass through filter.
 	$defaults = apply_filters('adventure_blog_filter_default_theme_options', $defaults);

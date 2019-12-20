@@ -22,7 +22,7 @@ function adventure_blog_setup() {
 	 * If you're building a theme based on Adventure Blog, use a find and replace
 	 * to change 'adventure-blog' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain('adventure-blog');
+    load_theme_textdomain('adventure-blog', get_template_directory() . '/languages');
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');

@@ -161,13 +161,15 @@ if (!function_exists('adventure_blog_single_title')):
      */
     function adventure_blog_single_title()
     { ?>
-        <div class="inner-banner">
-            <div class="banner-media">
-                <?php $global_banner_image = get_header_image(); ?>
-                <img src="<?php echo esc_url($global_banner_image); ?>">
-                <div class="overlay overlay-enable"></div>
+        <?php $global_banner_image = get_header_image(); ?>
+        <?php if (has_header_image()) { ?>
+            <div class="inner-banner">
+                <div class="banner-media">
+                    <img src="<?php echo esc_url($global_banner_image); ?>">
+                    <div class="overlay overlay-enable"></div>
+                </div>
             </div>
-        </div>
+        <?php } ?>
     <?php }
 endif;
 add_action('adventure_blog_action_single', 'adventure_blog_single_title', 10);
@@ -273,11 +275,14 @@ if (!function_exists('adventure_blog_featured_blog')):
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="photo-grid">
                                 <div class="photo-wrapper zoom-gallery">
-                                    <a href="<?php echo esc_url($large_image); ?>" class="zoom-image">
+                                    <a href="<?php the_permalink(); ?>" class="zoom-image">
                                         <?php
                                         echo '<img src="' . esc_url($small_image) . '">';
                                         ?>
                                     </a>
+                                    <span class="enlarge-icon-zoomer" data-mfp-src="<?php the_post_thumbnail_url('full'); ?>">
+                                        <span class="enlarge-icon"></span>
+                                    </span>
                                 </div>
                                 <header class="entry-header">
                                     <h2 class="entry-title">

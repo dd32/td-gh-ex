@@ -5,7 +5,7 @@ Contributors: unitedtheme
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.5
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -57,6 +57,10 @@ Image Used from pexels.com and is released under CC0 Creative Commons, https://w
 
 
 == Changelog ==
+= 1.0.3 - Dec 20 2019 =
+* Updated adding language file
+* Updated adding related post
+
 = 1.0.2 - Aug 18 2019 =
 * Added Theia Sticky Sidebar
 * Added the wp_body_open action.
