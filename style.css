@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Version: 0.4.8
+Version: 0.4.9
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -219,6 +219,7 @@ small{
 input[type="text"],
 input[type="email"],
 input[type="phno"],
+input[type="password"],
  textarea{
   border:1px solid #bcbcbc;
   width:100%;
@@ -290,7 +291,7 @@ input[type="submit"] {
   font-size: 30px;
 }
 .logo p{
-  font-size:12px;
+  font-size:13px;
   margin: 0;
   color: #000;
 }
@@ -936,6 +937,7 @@ table#wp-calendar {
   background:#000;
   color:#fff;
   clear:both;
+  padding: 10px 0;
 }
 #footer h3{
   text-align:left;
@@ -1192,10 +1194,22 @@ span.woocommerce-input-wrapper,
 #add_payment_method table.cart td, #add_payment_method table.cart th, .woocommerce-cart table.cart td, .woocommerce-cart table.cart th, .woocommerce-checkout table.cart td, .woocommerce-checkout table.cart th{
   font-size: 16px;
 }
-
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 40px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
 .innerlightbox {
   padding: 2% 0 0;
 }
+.woocommerce label {
+  margin-bottom: 10px;
+}
+
 /*------------- Sidebar -------------*/
 #sidebar caption{
   color: #000;
@@ -1532,11 +1546,6 @@ iframe{
     padding: 12px 10px;
   }
 }
-@media screen and (min-width: 425px) and (max-width: 999px) {
-.main-menu-navigation{
-    max-height: 285px !important;
-  }
-}
 @media screen and (max-width: 425px){
   #footer input[type="search"]{
     width: 100%;
@@ -1690,7 +1699,6 @@ iframe{
     display: block;
   }
   .main-menu-navigation{
-    max-height: 260px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }
