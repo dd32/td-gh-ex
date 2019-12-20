@@ -80,3 +80,23 @@
 			$custom_css .='padding-left:15px;';
 		$custom_css .='}';
 	}
+
+	$show_header = get_theme_mod( 'advance_coaching_display_topbar', true);
+	if($show_header == false){
+		$custom_css .='.page-template-custom-front-page .contact-content{';
+			$custom_css .='margin-top: 0;';
+		$custom_css .='}';
+	}
+
+	$show_slider = get_theme_mod( 'advance_coaching_slider_hide', true);
+	if($show_slider == false){
+		$custom_css .='.page-template-custom-front-page .contact-content{';
+			$custom_css .='background-color:#051f31; position: static;';
+		$custom_css .='}';
+		$custom_css .='.page-template-custom-front-page .menu-bar{';
+			$custom_css .='background-color:transparent;';
+		$custom_css .='}';
+		$custom_css .='.page-template-custom-front-page .primary-navigation a, .page-template-custom-front-page .sf-arrows .sf-with-ul:after, .page-template-custom-front-page .contact_data .mail p{';
+			$custom_css .='color:#fff;';
+		$custom_css .='}';
+	}

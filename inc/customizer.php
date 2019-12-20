@@ -497,6 +497,17 @@ function advance_coaching_customize_register($wp_customize) {
 		'panel' => 'advance_coaching_panel_id',
 	));
 
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_coaching_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_coaching_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-coaching' ),
+        'section' => 'advance_coaching_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_coaching_time',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',

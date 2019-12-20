@@ -21,46 +21,47 @@
 <header role="banner">
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-coaching' ); ?></a>
   <div id="header">
-    <div class="top-header"> 
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-3 p-0">
-            <?php if( get_theme_mod('advance_coaching_time') != ''){ ?>
-              <div class="time">
-                <div class="row m-0">
-                  <div class="col-lg-3 col-md-3">
-                    <i class="far fa-clock"></i>
+    <?php if( get_theme_mod('advance_coaching_display_topbar',true) != ''){ ?>
+      <div class="top-header"> 
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 p-0">
+              <?php if( get_theme_mod('advance_coaching_time') != ''){ ?>
+                <div class="time">
+                  <div class="row m-0">
+                    <div class="col-lg-3 col-md-3">
+                      <i class="far fa-clock"></i>
+                    </div>
+                    <div class="col-lg-9 col-md-9 p-0">
+                      <p><?php echo esc_html( get_theme_mod('advance_coaching_time','' )); ?></p>
+                    </div>
                   </div>
-                  <div class="col-lg-9 col-md-9 p-0">
-                    <p><?php echo esc_html( get_theme_mod('advance_coaching_time','' )); ?></p>
-                  </div>
-                </div>
-              </div>  
-            <?php } ?>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div class="welcome-text">
-              <?php if( get_theme_mod('advance_coaching_welcome_text') != ''){ ?>
-                <p><?php echo esc_html( get_theme_mod('advance_coaching_welcome_text','' )); ?></p>
+                </div>  
               <?php } ?>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-3">
-            <div class="request-btn">
-              <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
-                <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_attr_e( 'Requestbtn','advance-coaching' );?></span></span>
-              <?php }?>
+            <div class="col-lg-6 col-md-6">
+              <div class="welcome-text">
+                <?php if( get_theme_mod('advance_coaching_welcome_text') != ''){ ?>
+                  <p><?php echo esc_html( get_theme_mod('advance_coaching_welcome_text','' )); ?></p>
+                <?php } ?>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+              <div class="request-btn">
+                <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
+                  <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a><span class="screen-reader-text"><?php esc_attr_e( 'Requestbtn','advance-coaching' );?></span></span>
+                <?php }?>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    
+    <?php } ?>
     <div class="contact-content">
       <div class="container">
         <div class="menu-bar">
           <div class="row">
-            <div class="col-lg-3 col-md-3 logo_bar">
+            <div class="col-lg-3 col-md-4 logo_bar">
               <div class="logo">
                 <?php if ( has_custom_logo() ) : ?>
                   <div class="site-logo"><?php the_custom_logo(); ?></div>
@@ -84,7 +85,7 @@
                 <?php endif; ?>
               </div>
             </div>         
-            <div class="col-lg-9 col-md-9 p-0">
+            <div class="col-lg-9 col-md-8 p-0">
               <div class="toggle-menu responsive-menu">
                 <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
               </div>
