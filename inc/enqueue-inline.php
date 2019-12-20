@@ -110,6 +110,9 @@ function apex_business_enqueue_inline_css() {
 
      $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_logo_vertical_spacing_control', '.logo-vertical-spacing', array( 'padding-top', 'padding-bottom' ), array( 10, 10, 0 ), 'px' );
 
+     /** Header Navigation : Mobile header nav icons **/
+     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_header_mobile_header_icon_color_setting', '.header-container .main-header .nav-menu a .menubar-right, .header-container .main-header .mobile-menu-container .menubar-close, .header-container .main-header .mobile-menu-container .dropdown-toggle', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
     /***************************************************************************
     * Fixed header Settings
     ***************************************************************************/
@@ -149,7 +152,10 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .no-stick .main-nav > li > a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
      /** Header Navigation : text logo color **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_text_logo_color_setting', '.sticky-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_text_logo_color_setting', '.ct-transparent-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
+    /** Header Navigation : Mobile header icon color **/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_mobile_nav_icon_color_settings', '.ct-transparent-header .no-stick .nav-menu a .menubar-right', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
 
     /***************************************************************************

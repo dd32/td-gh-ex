@@ -216,6 +216,8 @@ nav a {
     position: absolute;
     top: 1rem;
     right: 0;
+    padding: 0 !important; // Override for parent padding
+    line-height: 1;
 
     -webkit-transition: -webkit-transform .2s ease-out;
     -moz-transition: -moz-transform .2s ease-out;
@@ -354,8 +356,8 @@ nav a {
     margin: 0 1.6rem;
 }
 
-.main-nav .is-focused > .sub-menu,
-.is-focused > .sub-menu {
+.main-nav > .menu-item-has-children > .is-focused,
+.main-nav > .menu-item-has-children > .is-focused > .menu-item-has-children > .is-focused {
     left: 50%;
     opacity: 1;
     visibility: visible;

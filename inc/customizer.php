@@ -15,7 +15,7 @@ define( 'APEX_BUSINESS_PRIMARY_COLOR', '#13aff0' );
 define( 'APEX_BUSINESS_TEXT_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_WHITE_COLOR', '#fff' );
 define( 'APEX_BUSINESS_DEEP_COLOR', '#2b3948' );
-define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba( 0, 0, 0, 0.6 )' );
+define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba(67, 198, 172, 0.8);' );
 
 define( 'APEX_BUSINESS_DEFAULT1_COLOR', 'rgb(150, 50, 220)' );
 define( 'APEX_BUSINESS_DEFAULT2_COLOR', 'rgba(50,50,50,0.8)' );

@@ -2,9 +2,9 @@
 Contributors: aruphash
 Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template, portfolio, grid-layout
 Requires at least: 4.0
-Tested up to: 5.3.1
+Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 0.0.12
+Stable tag: 0.0.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ Documentation
 https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 == Changelog ==
+
+= 0.0.13 - December 19 2019 =
+* Fixed bugs pointed by theme reviewer
 
 = 0.0.11 - December 10 2019 =
 * Updated readme and bug fixes

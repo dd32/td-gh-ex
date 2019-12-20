@@ -56,7 +56,7 @@ class Apex_Business_Dropdown_Toggle_Walker_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl( &$apex_business_output, $apex_business_depth = 0, $apex_business_args = array() ) {
         $apex_business_indent = str_repeat( "\t", $apex_business_depth );
         if( 'mobile_menu' == $apex_business_args->theme_location ) {
-            $apex_business_output .='<i class="fa fa-ellipsis-v dropdown-toggle"></i>';
+            $apex_business_output .='<a href="#" class="js-ct-dropdown-toggle dropdown-toggle"><i class="fa fa-ellipsis-v"></i></a>';
         }
         $apex_business_output .= "\n$apex_business_indent<ul class=\"sub-menu\">\n";
     }

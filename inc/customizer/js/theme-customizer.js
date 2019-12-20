@@ -193,6 +193,10 @@
     /** Header Navigation : Text Logo color **/
     ct_customizer_live_load( 'apex_business_header_text_logo_color_setting', '.site-logo div a', [ 'color' ] );
 
+    /** Header Navigation : Mobile header nav icons **/
+    ct_customizer_live_load( 'apex_business_header_mobile_header_icon_color_setting', '.header-container .main-header .nav-menu a .menubar-right, .header-container .main-header .mobile-menu-container .menubar-close, .header-container .main-header .mobile-menu-container .dropdown-toggle', [ 'color' ] );
+
+
     /***************************************************************************
     * Fixed header Settings
     ***************************************************************************/
@@ -240,6 +244,9 @@
 
     /** transparent header Navigation : Text Logo color **/
     ct_customizer_live_load( 'apex_business_transparent_header_text_logo_color_setting', '.ct-transparent-header .site-logo div a', [ 'color' ] );
+
+    /** transparent header Navigation : Mobile header icon color **/
+    ct_customizer_live_load( 'apex_business_transparent_mobile_nav_icon_color_settings', '.ct-transparent-header .no-stick .nav-menu a .menubar-right', [ 'color' ] );
 
     /***************************************************************************
     * topbar Settings
