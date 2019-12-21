@@ -59,3 +59,10 @@
 			$custom_css .='padding-left:20px;';
 		$custom_css .='}';
 	}
+
+	$show_header = get_theme_mod( 'bb_ecommerce_store_slider_hide_show', true);
+	if($show_header == false){
+		$custom_css .='#our-service{';
+			$custom_css .='margin: 2% 0;';
+		$custom_css .='}';
+	}

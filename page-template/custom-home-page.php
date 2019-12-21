@@ -109,7 +109,7 @@ get_header(); ?>
 
 				<?php do_action( 'bb_ecommerce_store_after_slider' ); ?>
 
-				<?php if( get_theme_mod('bb_ecommerce_store_services_category') != ''){ ?> 
+				<?php if( get_theme_mod('bb_ecommerce_store_services_category') != false){ ?> 
 					<section id="our-service">					
 						<div class="row">
 						    <?php 

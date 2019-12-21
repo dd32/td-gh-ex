@@ -20,40 +20,42 @@
 
 <header role="banner">
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'bb-ecommerce-store' ); ?></a>
-  <div class="topbar">
-    <div class="container">
-      <div class="row">
-        <div class="top-contact col-lg-3 col-md-3">
-          <?php if( get_theme_mod( 'bb_ecommerce_store_contact','' ) != '') { ?>
-          <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span>
-          <?php } ?>
-        </div>
-        <div class="top-contact col-lg-3 col-md-4">
-          <?php if( get_theme_mod( 'bb_ecommerce_store_email','' ) != '') { ?>
-          <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span>
-          <?php } ?>
-        </div>
-        <div class="social-media col-lg-6 col-md-5">
-          <?php if( get_theme_mod( 'bb_ecommerce_store_youtube_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','bb-ecommerce-store' );?></span></a>
-          <?php } ?>
-          <?php if( get_theme_mod( 'bb_ecommerce_store_facebook_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) ); ?>"><i class="fab fa-facebook" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','bb-ecommerce-store' );?></span></a>
-          <?php } ?>
-          <?php if( get_theme_mod( 'bb_ecommerce_store_twitter_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','bb-ecommerce-store' );?></span></a>
-          <?php } ?>
-          <?php if( get_theme_mod( 'bb_ecommerce_store_instagram_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_instagram_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-ecommerce-store' );?></span></a>
-          <?php } ?>
-          <?php if( get_theme_mod( 'bb_ecommerce_store_rss_url') != '') { ?>
-            <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'RSS','bb-ecommerce-store' );?></span></a>
-          <?php } ?>
+  <?php if( get_theme_mod('bb_ecommerce_store_display_topbar',true) != ''){ ?>
+    <div class="topbar">
+      <div class="container">
+        <div class="row">
+          <div class="top-contact col-lg-3 col-md-3">
+            <?php if( get_theme_mod( 'bb_ecommerce_store_contact','' ) != '') { ?>
+            <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact','' )); ?></span>
+            <?php } ?>
+          </div>
+          <div class="top-contact col-lg-3 col-md-4">
+            <?php if( get_theme_mod( 'bb_ecommerce_store_email','' ) != '') { ?>
+            <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email','') ); ?></span>
+            <?php } ?>
+          </div>
+          <div class="social-media col-lg-6 col-md-5">
+            <?php if( get_theme_mod( 'bb_ecommerce_store_youtube_url') != '') { ?>
+              <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','bb-ecommerce-store' );?></span></a>
+            <?php } ?>
+            <?php if( get_theme_mod( 'bb_ecommerce_store_facebook_url') != '') { ?>
+              <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_facebook_url','' ) ); ?>"><i class="fab fa-facebook" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','bb-ecommerce-store' );?></span></a>
+            <?php } ?>
+            <?php if( get_theme_mod( 'bb_ecommerce_store_twitter_url') != '') { ?>
+              <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','bb-ecommerce-store' );?></span></a>
+            <?php } ?>
+            <?php if( get_theme_mod( 'bb_ecommerce_store_instagram_url') != '') { ?>
+              <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_instagram_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-ecommerce-store' );?></span></a>
+            <?php } ?>
+            <?php if( get_theme_mod( 'bb_ecommerce_store_rss_url') != '') { ?>
+              <a href="<?php echo esc_url( get_theme_mod( 'bb_ecommerce_store_rss_url','' ) ); ?>"><i class="fas fa-rss" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'RSS','bb-ecommerce-store' );?></span></a>
+            <?php } ?>
+          </div>
         </div>
       </div>
+      <div class="clearfix"></div>
     </div>
-    <div class="clearfix"></div>
-  </div>
+  <?php } ?>
   <div class="toggle-menu responsive-menu">
     <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
   </div>

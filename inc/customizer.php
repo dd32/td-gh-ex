@@ -496,6 +496,17 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'panel' => 'bb_ecommerce_store_panel_id',
 	));
 
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'bb_ecommerce_store_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('bb_ecommerce_store_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','bb-ecommerce-store' ),
+        'section' => 'bb_ecommerce_store_topbar'
+    ));
+
 	$wp_customize->add_setting('bb_ecommerce_store_contact',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
