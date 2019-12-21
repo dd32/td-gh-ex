@@ -504,6 +504,18 @@ function advance_it_company_customize_register($wp_customize) {
 		'priority'	=> null,
 		'panel' => 'advance_it_company_panel_id',
 	));
+
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_it_company_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_it_company_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-it-company' ),
+        'section' => 'advance_it_company_topbar'
+    ));
+    
 	$wp_customize->add_setting('advance_it_company_mail',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',

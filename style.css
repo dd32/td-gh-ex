@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-it-company-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. CTA [call to action button] is one important advantage and with this, you visitors have the subscription option. Based on the Bootstrap technology, it comes with the stunning animations and possesses a secure and clean code. All these features are responsible for its credibility with the international clients. Above all, you are flabbergasted with its eye catching design and it is also accompanied with a WordPress customizer. It is active, possesses optimised codes and provides faster page load time. Demo: https://www.themeshopy.com/advance-it-company-pro/
-Version: 0.3.7
+Version: 0.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-it-company
@@ -279,7 +279,6 @@ input[type="submit"] {
 .logo h1{
   text-transform: uppercase;
   font-size:30px;
-  padding-top: 20px;
   padding-bottom: 0;
   font-weight:bold;
 }
@@ -294,8 +293,6 @@ input[type="submit"] {
 .logo p a{
   text-transform: uppercase;
   font-size: 30px;
-  padding-top: 20px;
-  padding-bottom: 0;
   font-weight: bold;
 }
 /* ---------HEADER--------- */
@@ -989,6 +986,7 @@ div#footer a:focus{
 	color:#fff;
 	clear:both;
   font-size:14px;
+  padding: 10px 0;
 }
 #footer h3{
   border-bottom: 1px solid;
@@ -1527,6 +1525,9 @@ iframe {
   #sidebar td{
 	  padding: 0px;
 	}
+  .main-menu{
+    margin: 0 !important;
+  }
   .woocommerce .products li {
     width: 45% !important;
   }
@@ -1555,6 +1556,9 @@ iframe {
   #slider .inner_carousel,.social-icons,.search-box{
 		text-align: center;
 	}
+  .main-menu{
+    margin: 0 !important;
+  }
   .cat-posts{
     margin:15px 0;
   }
@@ -1672,8 +1676,9 @@ iframe {
   #header{
     background: #fff;
   }
-  .menu-color{
-    margin: 0;
+  .menu-color,
+  .main-menu{
+    margin: 0 !important;
   }
   #slider .inner_carousel p{
     display: none;
@@ -1848,7 +1853,6 @@ iframe {
     padding: 6px;
   }
   .main-menu-navigation{
-    max-height: 266px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }
@@ -1897,7 +1901,6 @@ iframe {
   }
   #footer th,
   #footer td{
-    padding: 5px;
+    padding: 2px;
   } 
 }
- 
