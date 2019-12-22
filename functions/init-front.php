@@ -181,6 +181,9 @@ if ( ! function_exists('hu_print_widgets_in_location') ) {
     if ( false != hu_get_singular_meta_widget_zone( $location ) ) {
       $_eligible_zones[] = hu_get_singular_meta_widget_zone( $location );
     } else {
+      // filtered in :
+      // add_filter('hu_eligible_widget_zones', 'hu_get_widget_zones_in_location', 3, 10);
+      // add_filter('hu_eligible_widget_zones', 'hu_get_widget_zones_in_context', 3, 20);
       $_eligible_zones    = apply_filters(
           'hu_eligible_widget_zones',
           array(),
@@ -344,22 +347,37 @@ if ( ! function_exists( 'hu_print_social_links' ) ) {
         // links like tel:*** or skype:**** or call:**** should work
         // implemented for https://github.com/presscustomizr/social-links-modules/issues/7
         $social_link = 'javascript:void(0)';
+
+        $is_blank_target = ( isset($item['social-target']) && false != $item['social-target'] );
+
+        // set the relationship attribute
+        // fixes : https://github.com/presscustomizr/social-links-modules/issues/8
+        // fixes : https://github.com/presscustomizr/hueman/issues/842
+        $rel_attr = 'rel="nofollow"';
+        if ( $is_blank_target ) {
+            // fix potential performance and security issues with other attributes
+            // @see https://web.dev/external-anchors-use-rel-noopener
+            $rel_attr = 'rel="nofollow noopener noreferrer"';
+        }
+
         if ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) {
             if ( false !== strpos($item['social-link'], 'callto:') || false !== strpos($item['social-link'], 'tel:') || false !== strpos($item['social-link'], 'skype:') ) {
                 $social_link = esc_attr( $item['social-link'] );
+                $rel_attr = '';//we don't need to set a relationship attribute in this case
             } else {
                 $social_link = esc_url( $item['social-link'] );
             }
         }
 
         // Put them together
-        printf( '<li><a rel="nofollow" class="social-tooltip" %1$s title="%2$s" aria-label="%2$s" href="%3$s" %4$s %5$s><i class="%6$s"></i></a></li>',
+        printf( '<li><a %7$s class="social-tooltip" %1$s title="%2$s" aria-label="%2$s" href="%3$s" %4$s %5$s><i class="%6$s"></i></a></li>',
             ! hu_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'] ),
             isset($item['title']) ? esc_attr( $item['title'] ) : '',
             $social_link,
-            ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
+            $is_blank_target ? 'target="_blank"' : '',
             $style_attr,
-            $icon_class
+            $icon_class,
+            $rel_attr
         );
       }
     echo '</ul>';
@@ -841,11 +859,19 @@ add_filter( 'body_class', 'hu_body_class' );
 if ( ! function_exists( 'hu_favicon' ) ) {
 
   function hu_favicon() {
-    if ( hu_get_option('favicon') ) {
-      echo '<link rel="shortcut icon" href="'.hu_get_option('favicon').'" />'."\n";
+    // fixes https://github.com/presscustomizr/hueman/issues/619
+    if ( has_site_icon() )
+      return;
+    // retro compat if favicon has been set before implementation of built-in WP one
+    $favicon_url = hu_get_option('favicon');
+    if ( is_string($favicon_url) && !empty($favicon_url) ) {
+      // replace http by https if needed
+      if ( is_ssl() && is_string($favicon_url) && stripos($favicon_url, 'http://') === 0 ) {
+          $favicon_url = 'https' . substr($favicon_url, 4);
+      }
+      echo '<link rel="shortcut icon" href="'.$favicon_url.'" />'."\n";
     }
   }
-
 }
 add_filter( 'wp_head', 'hu_favicon' );
 
@@ -1161,6 +1187,8 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                     'desktop' => hu_is_checked('desktop-sticky-sb'),
                     'mobile' => hu_is_checked( 'mobile-sticky-sb' )
                 ),
+                'sidebarOneWidth' => apply_filters( 'hu_s1_width' , 340 ),
+                'sidebarTwoWidth' => apply_filters( 'hu_s2_with' , 260 ),
                 'isWPMobile' => wp_is_mobile(),
                 'menuStickyUserSettings' => array(
                     'desktop' => hu_normalize_stick_menu_opt( hu_get_option( 'header-desktop-sticky' ) ),
@@ -1465,7 +1493,7 @@ function hu_get_widget_zones_in_context( $_eligible_zones = array(), $location, 
   $_map_conditionals = array(
     'home'              => 'hu_is_home',
     'blog-page'         => 'hu_is_blogpage',
-    'page'              => 'is_page',
+    'page'              => 'is_page_but_not_frontpage',// @see https://github.com/presscustomizr/hueman/issues/759
     'single'            => 'is_single',
     'archive'           => 'is_archive',
     'archive-category'  => 'is_category',
@@ -1518,7 +1546,12 @@ function hu_get_widget_zone_allowed_contexts( $id, $_user_option = null ) {
 }
 
 
-
+// @return bool
+// introduced in dec 2019 to make sure that a static front page doesn't display widget zones assigned to "Pages"
+// @see https://github.com/presscustomizr/hueman/issues/759
+function is_page_but_not_frontpage() {
+    return is_page() && !hu_is_home();
+}
 
 
 //helper
