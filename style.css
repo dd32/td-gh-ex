@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-education-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, mentors, online library, educational websites and everything related to education, learning and teaching. It offers various layout options to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages. It is readily customizable to change its various elements to make it represent your brand. To keep visitors engaged, there are several sections like gallery, testimonial, faculty, contact form etc. Advance Education is made to score good rank in search engine results and its social media icons give the needed exposure to reach maximum people in minimum time. It is based on the latest WordPress version and hence yields a bug-free website. Its interface is simple to understand so any person with no previous coding skills can also use it to design a high performing and professional looking website. Demo: https://www.themeshopy.com/advance-education-pro/
-Version: 0.3.7
+Version: 0.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-education
@@ -282,6 +282,7 @@ input[type="submit"] {
   font-weight:bold;
   text-align:center;
   padding: 0;
+  line-height: 1.2;
   text-transform: capitalize;
 }
 .logo a{
@@ -354,7 +355,7 @@ input[type="submit"] {
   font-size: 15px;
 }
 .main-menu {
-  border-bottom: 2px solid #cc3333;
+  border-bottom: 1px solid #cc3333;
   box-shadow: 0px 2px 10px -2px #bbb;
 }
 #contact-info{
@@ -437,9 +438,6 @@ ul.list_nav {
 }
 ul.sub-menu {
   margin-top: 0px;
-}
-.main-menu {
-  border-bottom: 1px solid #000;
 }
 .primary-navigation li a:hover,
 .primary-navigation li:hover a, .primary-navigation li a:focus,
@@ -1026,6 +1024,7 @@ table#wp-calendar td a {
   background:#232323;
   color:#fff;
   clear:both;
+  padding: 10px 0;
 }
 #footer h3{
   text-align:left;
@@ -1955,7 +1954,6 @@ iframe, .entry-audio audio {
     padding: 6px;
   }
   .main-menu-navigation{
-    max-height: 175px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }

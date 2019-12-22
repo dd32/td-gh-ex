@@ -401,6 +401,17 @@ function advance_education_customize_register($wp_customize) {
 		'panel' => 'advance_education_panel_id',
 	));
 
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_education_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_education_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-education' ),
+        'section' => 'advance_education_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_education_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',

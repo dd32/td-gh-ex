@@ -101,3 +101,30 @@
 			$custom_css .='margin: 0 10px;';
 		$custom_css .='}';
 	}
+
+// css
+	$show_header = get_theme_mod( 'advance_education_slider_hide', true);
+		if($show_header == false){
+			$custom_css .='.page-template-custom-front-page .header-nav #header{';
+				$custom_css .='margin-top: 3.7em;';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page #header-top, .page-template-custom-front-page .top-header{';
+				$custom_css .='top: 0;background: #f5f5f5;';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page .logo{';
+				$custom_css .='padding:8px 0;box-shadow:none;position:static;';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page .main-menu{';
+				$custom_css .='border-bottom: 1px solid #cc3333; box-shadow: 0px 2px 10px -2px #bbb;';
+			$custom_css .='}';
+		}
+	$show_header = get_theme_mod( 'advance_education_display_topbar', true);
+		if($show_header == true){
+			$custom_css .='.page-template-custom-front-page .header-nav #header{';
+				$custom_css .=';';
+			$custom_css .='}';
+		}else if($show_header == false){
+			$custom_css .='.page-template-custom-front-page .header-nav #header{';
+				$custom_css .='margin-top: 0;';
+			$custom_css .='}';
+		}
