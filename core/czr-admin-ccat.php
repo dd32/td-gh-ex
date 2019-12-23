@@ -2,14 +2,6 @@
 /**
 * Init admin actions : loads the meta boxes,
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_admin_init' ) ) :
   class CZR_admin_init {
@@ -22,7 +14,8 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
 
       //Load the editor-style specific (post formats and RTL), the user style.css, the active skin
       //add user defined fonts in the editor style (@see the query args add_editor_style below)
-      add_action( 'after_setup_theme'     , array( $this, 'czr_fn_add_editor_style') );
+      //The hook used to be after_setup_theme, but, don't know from whic WP version, is_rtl() always returns false at that stage.
+      add_action( 'init'                  , array( $this, 'czr_fn_add_editor_style') );
 
       add_filter( 'tiny_mce_before_init'  , array( $this, 'czr_fn_user_defined_tinymce_css') );
       //refresh the post / CPT / page thumbnail on save. Since v3.3.2.
@@ -39,9 +32,9 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       add_action( 'admin_footer'                  , array( $this , 'czr_fn_write_ajax_dismis_script' ) );
 
       /* beautify admin notice text using some defaults the_content filter callbacks */
-      foreach ( array( 'wptexturize', 'convert_smilies', 'wpautop') as $callback )
+      foreach ( array( 'wptexturize', 'convert_smilies', 'wpautop') as $callback ) {
         add_filter( 'czr_update_notice', $callback );
-
+      }
     }
 
 
@@ -219,8 +212,13 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       //a) child-themes cannot override it
       //b) no check on the file existence will be made (producing the rtl error, for instance : https://github.com/presscustomizr/customizr/issues/926)
 
-      //as of v4.0.10 the editor-style.css is for classic
-      $_stylesheets = czr_fn_is_ms() ? array() : array( CZR_ASSETS_PREFIX . 'back/css/editor-style.css' );
+      //as of v4.0.10 the editor-style.css is the classic editor style for the Customizr classic style
+      //4.1.23 block editor style introduced for the Customizr modern style only
+
+      //as of 4.1.38 block editor style introduced for the Customizr modern style too
+      $_style_suffix = CZR_DEBUG_MODE || CZR_DEV_MODE ? '.css' : '.min.css' ;
+      $_stylesheets = czr_fn_is_ms() ? array( CZR_ASSETS_PREFIX . 'back/css/block-editor-style' . $_style_suffix ) : array( CZR_ASSETS_PREFIX . 'back/css/editor-style' . $_style_suffix, CZR_ASSETS_PREFIX . 'back/css/block-editor-style-cs' . $_style_suffix );
+
       $_stylesheets[] = 'style.css';
       if ( ! czr_fn_is_ms() ) {
         $_stylesheets[] = 'inc/assets/css/' . esc_attr( czr_fn_opt( 'tc_skin' ) );
@@ -229,6 +227,7 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       if ( apply_filters( 'czr_add_custom_fonts_to_editor' , false != $this -> czr_fn_maybe_add_gfonts_to_editor() ) )
         $_stylesheets = array_merge( $_stylesheets , $this -> czr_fn_maybe_add_gfonts_to_editor() );
       add_editor_style( $_stylesheets );
+
     }
 
 
@@ -326,6 +325,7 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       $opt_name                   = CZR_IS_PRO ? 'last_update_notice_pro' : 'last_update_notice';
       $last_update_notice_values  = czr_fn_opt($opt_name);
       $show_new_notice = false;
+      $display_ct = 50;
 
       if ( ! $last_update_notice_values || ! is_array($last_update_notice_values) ) {
         //first time user of the theme, the option does not exist
@@ -341,29 +341,33 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       $_db_version          = $last_update_notice_values["version"];
       $_db_displayed_count  = $last_update_notice_values["display_count"];
 
-      //user who just upgraded the theme will be notified until he clicks on the dismiss link
-      //when clicking on the dismiss link OR when the notice has been displayed 5 times.
+      // user who just upgraded the theme will be notified until he clicks on the dismiss link
+      // when clicking on the dismiss link OR when the notice has been displayed n times.
       // - version will be set to CUSTOMIZR_VER
       // - display_count reset to 0
       if ( version_compare( CUSTOMIZR_VER, $_db_version , '>' ) ) {
-        //CASE 1 : displayed less than 5 times
-        if ( $_db_displayed_count < 5 ) {
-          $show_new_notice = true;
-          //increments the counter
-          (int) $_db_displayed_count++;
-          $last_update_notice_values["display_count"] = $_db_displayed_count;
-          //updates the option val with the new count
-          czr_fn_set_option( $opt_name, $last_update_notice_values );
-        }
-        //CASE 2 : displayed 5 times => automatic dismiss
-        else {
-          //reset option value with new version and counter to 0
-          $new_val  = array( "version" => CUSTOMIZR_VER, "display_count" => 0 );
-          czr_fn_set_option( $opt_name, $new_val );
-        }//end else
+          //CASE 1 : displayed less than n times
+          if ( $_db_displayed_count < $display_ct ) {
+              $show_new_notice = true;
+              //increments the counter
+              (int) $_db_displayed_count++;
+              $last_update_notice_values["display_count"] = $_db_displayed_count;
+              //updates the option val with the new count
+              czr_fn_set_option( $opt_name, $last_update_notice_values );
+          }
+          //CASE 2 : displayed n times => automatic dismiss
+          else {
+              //reset option value with new version and counter to 0
+              $new_val  = array( "version" => CUSTOMIZR_VER, "display_count" => 0 );
+              czr_fn_set_option( $opt_name, $new_val );
+          }//end else
       }//end if
 
       if ( ! $show_new_notice )
+        return;
+
+      // prefixed CZR_Plugin_Activation because of the possible issue : https://github.com/presscustomizr/customizr/issues/1603
+      if ( ! czr_fn_is_plugin_active('nimble-builder/nimble-builder.php') && class_exists('CZR_Plugin_Activation') && ! CZR_Plugin_Activation::get_instance()->czr_fn_is_notice_dismissed() )
         return;
 
       ob_start();
@@ -373,7 +377,7 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
             echo apply_filters(
               'czr_update_notice',
               sprintf('<h3>%1$s %2$s %3$s %4$s :D</h3>',
-                __( "Good, you've just upgraded to", "customizr"),
+                __( "Good, you've recently upgraded to", "customizr"),
                 CZR_IS_PRO ? 'Customizr Pro' : 'Customizr',
                 __( "version", "customizr"),
                 CUSTOMIZR_VER
@@ -388,7 +392,7 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
                 CZR_WEBSITE . "category/customizr-releases/",
                 __( "Read the latest release notes" , "customizr" ),
                 ! CZR_IS_PRO ? sprintf( '<p style="position: absolute;right: 7px;top: 4px;"><a class="button button-primary upgrade-to-pro" href="%1$s" title="%2$s" target="_blank">%2$s &raquo;</a></p>',
-                  esc_url('presscustomizr.com/customizr-pro?ref=a'),
+                  esc_url('presscustomizr.com/customizr-pro?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=customizr-update-notice'),
                   __( "Upgrade to Customizr Pro", "customizr" )
                 ) : ''
               )
@@ -400,17 +404,6 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
               );
             ?>
           </p>
-          <?php if ( czr_fn_is_ms() ) : ?>
-            <p>
-              <?php
-              printf(
-                __( 'If you like %1$s please leave us a %2$s rating. A huge thanks in advance!', 'customizr' ),
-                sprintf( '<strong>%s</strong>', esc_html__( 'the Customizr theme', 'customizr' ) ),
-                sprintf( '<a href="%1$s" target="_blank" class="czr-rating-link">&#9733;&#9733;&#9733;&#9733;&#9733;</a>', esc_url( 'wordpress.org/support/theme/customizr/reviews/?filter=5#new-post') )
-              );
-              ?>
-            </p>
-          <?php endif; ?>
         </div>
         <?php
       $_html = ob_get_contents();
@@ -488,14 +481,6 @@ endif;
 /**
 * Init admin page actions : Welcome, help page
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_admin_page' ) ) :
   class CZR_admin_page {
@@ -515,7 +500,9 @@ if ( ! class_exists( 'CZR_admin_page' ) ) :
       //fix #wpfooter absolute positioning in the welcome and about pages
       add_action( 'admin_print_styles'     , array( $this, 'czr_fn_fix_wp_footer_link_style') );
       //knowledgebase
-      add_action( 'current_screen'         , array( $this , 'czr_schedule_welcome_page_actions') );
+      if ( CZR_IS_PRO ) {
+          add_action( 'current_screen'         , array( $this , 'czr_schedule_welcome_page_actions') );
+      }
     }
 
 
@@ -622,7 +609,7 @@ if ( ! class_exists( 'CZR_admin_page' ) ) :
 
                   <div class="last-feature col">
                     <h3 style="font-size:1.3em;"><?php _e( 'Follow us','customizr' ); ?></h3>
-                    <p class="tc-follow"><a href="<?php echo esc_url( CZR_WEBSITE . 'blog' ); ?>" target="_blank"><img style="border:none" src="<?php echo CZR_BASE_URL . CZR_ASSETS_PREFIX.'back/img/pc.png' ?>" alt="Press Customizr" /></a></p>
+                    <p class="tc-follow"><a href="<?php echo esc_url( CZR_WEBSITE . 'blog' ); ?>" target="_blank"><img style="border:none;width:auto;" src="<?php echo CZR_BASE_URL . CZR_ASSETS_PREFIX.'back/img/pc.png?' . CUSTOMIZR_VER ?>" alt="Press Customizr" /></a></p>
                     <!-- Place this tag where you want the widget to render. -->
 
                   </div><!-- .feature-section -->
@@ -633,15 +620,19 @@ if ( ! class_exists( 'CZR_admin_page' ) ) :
             <div id="extend" class="changelog">
               <h3 style="text-align:left;font-size:1.3em;"><?php _e("Go Customizr Pro" ,'customizr') ?></h3>
 
-              <div class="feature-section images-stagger-right">
-                <a class="" title="Go Pro" href="<?php echo esc_url( CZR_WEBSITE . 'customizr-pro?ref=a' ); ?>" target="_blank"><img style="border:none;" alt="Customizr Pro" src="<?php echo CZR_BASE_URL . CZR_ASSETS_PREFIX.'back/img/customizr-pro.png?'.CUSTOMIZR_VER ?>" class=""></a>
-                <h4 style="text-align: left;max-width:inherit"><?php _e('Easily take your web design one step further' ,'customizr') ?></h4></br>
+              <div class="feature-section two-col images-stagger-right">
+                <div class="col" style="float:right">
+                  <a class="" title="Go Pro" href="<?php echo esc_url( CZR_WEBSITE . 'customizr-pro?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=customizr-admin-page' ); ?>" target="_blank"><img style="border:none;width:auto;" alt="Customizr Pro" src="<?php echo CZR_BASE_URL . CZR_ASSETS_PREFIX.'back/img/customizr-pro.png?'.CUSTOMIZR_VER ?>" class=""></a>
+                </div>
+                <div class="col" style="float:left">
+                  <h4 style="text-align: left;"><?php _e('Easily take your web design one step further' ,'customizr') ?></h4></br>
 
-                <p style="text-align: lef;max-width:inherit"><?php _e("The Customizr Pro WordPress theme allows anyone to create a beautiful, professional and mobile friendly website in a few minutes. In the Pro version, you'll get all features included in the free version plus many conversion oriented ones, to help you attract and retain more visitors on your websites." , 'customizr') ?>
-                </p>
-                <p style="text-align:left;max-width:inherit">
-                    <a class="button-primary review-customizr hu-go-pro-btn" title="<?php _e("Discover Customizr Pro",'customizr') ?>" href="<?php echo esc_url( CZR_WEBSITE . 'customizr-pro?ref=a' ); ?>" target="_blank"><?php _e("Discover Customizr Pro",'customizr') ?> &raquo;</a>
-                </p>
+                  <p style="text-align: left;"><?php _e("The Customizr Pro WordPress theme allows anyone to create a beautiful, professional and mobile friendly website in a few minutes. In the Pro version, you'll get all features included in the free version plus many conversion oriented ones, to help you attract and retain more visitors on your websites." , 'customizr') ?>
+                  </p>
+                  <p style="text-align:left;">
+                      <a class="button-primary review-customizr hu-go-pro-btn" title="<?php _e("Discover Customizr Pro",'customizr') ?>" href="<?php echo esc_url( CZR_WEBSITE . 'customizr-pro?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=customizr-admin-page' ); ?>" target="_blank"><?php _e("Discover Customizr Pro",'customizr') ?> &raquo;</a>
+                  </p>
+                </div>
               </div>
             </div>
           <?php endif; //end if ! is_pro ?>
@@ -716,9 +707,15 @@ if ( ! class_exists( 'CZR_admin_page' ) ) :
     */
     function czr_fn_config_infos() {
       global $wpdb;
-
+      $theme_data   = wp_get_theme();
+      $theme        = $theme_data->Name . ' ' . $theme_data->Version;
+      $parent_theme = $theme_data->Template;
+      if ( ! empty( $parent_theme ) ) {
+        $parent_theme_data = wp_get_theme( $parent_theme );
+        $parent_theme      = $parent_theme_data->Name . ' ' . $parent_theme_data->Version;
+      }
       ?>
-<div class="wrap">
+<div class="wrap tc-config-info">
 <h3><?php _e( 'System Informations', 'customizr' ); ?></h3>
 <h4 style="text-align: left"><?php _e( 'Please include the following informations when posting support requests' , 'customizr' ) ?></h4>
 <textarea readonly="readonly" onclick="this.focus();this.select()" id="system-info-textarea" name="tc-sysinfo" title="<?php _e( 'To copy the system infos, click below then press Ctrl + C (PC) or Cmd + C (Mac).', 'customizr' ); ?>" style="width: 800px;min-height: 800px;font-family: Menlo,Monaco,monospace;background: 0 0;white-space: pre;overflow: auto;display:block;">
@@ -727,7 +724,10 @@ if ( ! class_exists( 'CZR_admin_page' ) ) :
 # HOME_URL:                 <?php echo home_url() . "\n"; ?>
 # IS MULTISITE :            <?php echo is_multisite() ? 'Yes' . "\n" : 'No' . "\n" ?>
 
-# THEME | VERSION :         <?php printf( '%1$s | v%2$s', sanitize_file_name( strtolower( CZR_THEMENAME ) ), CUSTOMIZR_VER ) . "\n"; ?>
+# ACTIVE THEME :            <?php echo $theme . "\n"; ?>
+<?php if ( $parent_theme !== $theme ) : ?>
+# PARENT THEME :            <?php echo $parent_theme . "\n"; ?>
+<?php endif; ?>
 # WP VERSION :              <?php echo get_bloginfo( 'version' ) . "\n"; ?>
 # PERMALINK STRUCTURE :     <?php echo get_option( 'permalink_structure' ) . "\n"; ?>
 
@@ -932,14 +932,6 @@ endif;
 /**
 * Posts, pages and attachment actions and filters
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_meta_boxes' ) ) :
    class CZR_meta_boxes {
@@ -1063,7 +1055,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
             return;
 
          call_user_func_array( 'add_meta_box',
-            $this -> czr_fn_build_metabox_arguments (
+            $this->czr_fn_build_metabox_arguments (
                "{$meta_box_key}id",
                call_user_func( array( $this, "czr_fn_{$meta_box_key}_metabox" ), $screen )
             )
@@ -1124,7 +1116,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
       }
 
       //hook : add_meta_boxes_post
-      function czr_fn_post_formats_meta_boxes() {
+      function czr_fn_post_formats_meta_boxes( $post ) {
          //if not czr4 return
          if ( ! ( defined( 'CZR_IS_MODERN_STYLE' ) && CZR_IS_MODERN_STYLE ) )
             return;
@@ -1139,7 +1131,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          }//end foreach
 
          if ( $_metabox_added )
-            do_action( 'czr_post_formats_metabox_added' );
+            do_action( 'czr_post_formats_metabox_added', $post );
 
       }
 
@@ -1258,14 +1250,13 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          wp_nonce_field( plugin_basename( __FILE__ ), 'format_link_noncename' );
 
          // The actual field for data entry
-         $link       = get_post_meta( $post -> ID, $key = 'czr_link_meta' , $single = true );
+         $link       = get_post_meta( $post->ID, $key = 'czr_link_meta' , $single = true );
 
          $link_title = esc_attr( isset( $link['link_title'] ) ? $link['link_title'] : '' );
          $link_url   = esc_url( isset( $link['link_url'] ) ? $link['link_url'] : '' );
 
 
          CZR_meta_boxes::czr_fn_generic_input_view( array(
-
             'input_name'  => 'czr_link_title',
             'custom_args' => 'style="max-width:50%"',
             'title'       => array(
@@ -1314,7 +1305,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          wp_nonce_field( plugin_basename( __FILE__ ), 'format_quote_noncename' );
 
          // The actual field for data entry
-         $quote        = get_post_meta( $post -> ID, $key = 'czr_quote_meta' , $single = true );
+         $quote        = get_post_meta( $post->ID, $key = 'czr_quote_meta' , $single = true );
 
          $quote_text   = esc_attr( isset( $quote['quote_text'] ) ? $quote['quote_text'] : '' );
          $quote_author = esc_attr( isset( $quote['quote_author'] ) ? $quote['quote_author'] : '' );
@@ -1367,7 +1358,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          wp_nonce_field( plugin_basename( __FILE__ ), 'format_audio_noncename' );
 
          // The actual field for data entry
-         $audio        = get_post_meta( $post -> ID, $key = 'czr_audio_meta' , $single = true );
+         $audio        = get_post_meta( $post->ID, $key = 'czr_audio_meta' , $single = true );
 
          $audio_url   = esc_url( isset( $audio['audio_url'] ) ? $audio['audio_url'] : '' );
 
@@ -1401,7 +1392,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          wp_nonce_field( plugin_basename( __FILE__ ), 'format_video_noncename' );
 
          // The actual field for data entry
-         $video        = get_post_meta( $post -> ID, $key = 'czr_video_meta' , $single = true );
+         $video        = get_post_meta( $post->ID, $key = 'czr_video_meta' , $single = true );
 
          $video_url   = esc_url( isset( $video['video_url'] ) ? $video['video_url'] : '' );
 
@@ -1444,32 +1435,32 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
            //Layout name setup
            $layout_id           = 'layout_field';
 
-           $layout_value         = esc_attr(get_post_meta( $post -> ID, $key = 'layout_key' , $single = true ));
+           $layout_value         = esc_attr(get_post_meta( $post->ID, $key = 'layout_key' , $single = true ));
 
            //Generates layouts select list array
            $layouts                    = array();
-           $global_layout              = apply_filters( 'tc_global_layout' , CZR_init::$instance -> global_layout );
+           $global_layout              = apply_filters( 'tc_global_layout' , CZR_init::$instance->global_layout );
            foreach ( $global_layout as $key => $value ) {
              $layouts[$key]            = call_user_func( '__' , $value['metabox'] , 'customizr' );
            }
 
            //by default we apply the global default layout
-           $tc_sidebar_default_context_layout  = esc_attr( czr_fn_opt( 'page' == $post -> post_type ? 'tc_sidebar_page_layout' : 'tc_sidebar_post_layout' ) );
+           $tc_sidebar_default_context_layout  = esc_attr( czr_fn_opt( 'page' == $post->post_type ? 'tc_sidebar_page_layout' : 'tc_sidebar_post_layout' ) );
 
 
            ?>
            <div class="meta-box-item-content">
              <?php if( $layout_value == null) : ?>
-               <p><?php printf(__( 'Default %1$s layout is set to : %2$s' , 'customizr' ), 'page' == $post -> post_type ? __( 'pages' , 'customizr' ):__( 'posts' , 'customizr' ), '<strong>'.$layouts[$tc_sidebar_default_context_layout].'</strong>' ) ?></p>
+               <p><?php printf(__( 'Default %1$s layout is set to : %2$s' , 'customizr' ), 'page' == $post->post_type ? __( 'pages' , 'customizr' ):__( 'posts' , 'customizr' ), '<strong>'.$layouts[$tc_sidebar_default_context_layout].'</strong>' ) ?></p>
              <?php endif; ?>
 
                  <i><?php printf(__( 'You can define a specific layout for %1$s by using the pre-defined left and right sidebars. The default layouts can be defined in the WordPress customizer screen %2$s.<br />' , 'customizr' ),
-                  $post -> post_type == 'page' ? __( 'this page' , 'customizr' ):__( 'this post' , 'customizr' ),
+                  $post->post_type == 'page' ? __( 'this page' , 'customizr' ):__( 'this post' , 'customizr' ),
                    '<a href="'.admin_url( 'customize.php' ).'" target="_blank">'.__( 'here' , 'customizr' ).'</a>'
                   ); ?>
                  </i>
                  <h4><?php printf(__( 'Select a specific layout for %1$s' , 'customizr' ),
-                 $post -> post_type == 'page' ? __( 'this page' , 'customizr' ):__( 'this post' , 'customizr' )); ?></h4>
+                 $post->post_type == 'page' ? __( 'this page' , 'customizr' ):__( 'this post' , 'customizr' )); ?></h4>
                  <select name="<?php echo $layout_id; ?>" id="<?php echo $layout_id; ?>">
                  <?php //no layout selected ?>
                   <option value="" <?php selected( $layout_value, $current = null, $echo = true ) ?>> <?php printf(__( 'Default layout %1s' , 'customizr' ),
@@ -1513,26 +1504,27 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
            // The actual fields for data entry
            //title check field setup
            $post_slider_check_id       = 'post_slider_check_field';
-           $post_slider_check_value    = esc_attr(get_post_meta( $post -> ID, $key = 'post_slider_check_key' , $single = true ));
+           $post_slider_check_value    = esc_attr(get_post_meta( $post->ID, $key = 'post_slider_check_key' , $single = true ));
 
            ?>
           <input name="tc_post_id" id="tc_post_id" type="hidden" value="<?php echo $post-> ID ?>"/>
           <div class="meta-box-item-title">
-               <h4><?php _e( 'Add a slider to this post/page' , 'customizr' ); ?></h4>
-                 <label for="<?php echo $post_slider_check_id; ?>">
-             </label>
+            <h4><label for="<?php echo $post_slider_check_id; ?>"><?php _e( 'Add a slider to this post/page' , 'customizr' ); ?></label></h4>
            </div>
            <div class="meta-box-item-content">
-              <?php
-                $post_slider_checked = false;
-                if ( $post_slider_check_value == 1)
-                 $post_slider_checked = true;
+               <?php
+                  $post_slider_checked = false;
+                  if ( $post_slider_check_value == 1) {
+                     $post_slider_checked = true;
+                  }
+                  CZR_meta_boxes::czr_fn_checkbox_view( array(
+                     'input_name'   => $post_slider_check_id,
+                     'input_state'  => $post_slider_checked,
+                  ));
                ?>
-             <input name="<?php echo $post_slider_check_id; ?>" type="hidden" value="0"/>
-             <input name="<?php echo $post_slider_check_id ?>" id="<?php echo $post_slider_check_id; ?>" type="checkbox" class="iphonecheck" value="1" <?php checked( $post_slider_checked, $current = true, $echo = true ) ?>/>
            </div>
            <div id="slider-fields-box">
-             <?php do_action( '__post_slider_infos' , $post -> ID ); ?>
+             <?php do_action( '__post_slider_infos' , $post->ID ); ?>
            </div>
          <?php
 
@@ -1599,7 +1591,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                <h4><?php _e("Choose a slider", 'customizr' ); ?></h4>
              </div>
          <?php
-             //build selectable slider -> ID => label
+             //build selectable slider->ID => label
              //Default in head
              $selectable_sliders = array_merge( array(
                -1 => __( '&mdash; Select a slider &mdash; ' , 'customizr' )
@@ -1647,9 +1639,11 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                   else {
                     $layout_check_value = false;
                   }
+                  CZR_meta_boxes::czr_fn_checkbox_view( array(
+                     'input_name'   => $layout_id,
+                     'input_state'  => $layout_check_value,
+                  ));
                   ?>
-                  <input name="<?php echo $layout_id; ?>" type="hidden" value="0"/>
-                  <input name="<?php echo $layout_id; ?>" id="<?php echo $layout_id; ?>" type="checkbox" class="iphonecheck" value="1"<?php checked( $layout_check_value, $current = true, $echo = true ) ?>/>
                </div>
                <?php if ( CZR_IS_MODERN_STYLE ) : ?>
                    <div class="meta-box-item-title">
@@ -1664,9 +1658,11 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                       else {
                         $overlay_check_value = false;
                       }
+                      CZR_meta_boxes::czr_fn_checkbox_view( array(
+                         'input_name'   => $overlay_id,
+                         'input_state'  => $overlay_check_value,
+                      ));
                       ?>
-                      <input name="<?php echo $overlay_id; ?>" type="hidden" value="0"/>
-                      <input name="<?php echo $overlay_id; ?>" id="<?php echo $overlay_id; ?>" type="checkbox" class="iphonecheck" value="1"<?php checked( $overlay_check_value, $current = true, $echo = true ) ?>/>
                    </div>
 
                    <div class="meta-box-item-title">
@@ -1680,9 +1676,11 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                       else {
                         $dots_check_value = false;
                       }
+                      CZR_meta_boxes::czr_fn_checkbox_view( array(
+                         'input_name'   => $dots_id,
+                         'input_state'  => $dots_check_value,
+                      ));
                       ?>
-                      <input name="<?php echo $dots_id; ?>" type="hidden" value="0"/>
-                      <input name="<?php echo $dots_id; ?>" id="<?php echo $dots_id; ?>" type="checkbox" class="iphonecheck" value="1"<?php checked( $dots_check_value, $current = true, $echo = true ) ?>/>
                    </div>
               <?php endif; ?>
                <?php if (isset( $current_post_slides)) : ?>
@@ -1749,17 +1747,17 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
         }
 
         //LINK
-        $this -> czr_fn_link_save( $post_id, $post_object );
+        $this->czr_fn_link_save( $post_id, $post_object );
 
 
         //QUOTE
-        $this -> czr_fn_quote_save( $post_id, $post_object );
+        $this->czr_fn_quote_save( $post_id, $post_object );
 
         //AUDIO
-        $this -> czr_fn_audio_save( $post_id, $post_object );
+        $this->czr_fn_audio_save( $post_id, $post_object );
 
         //VIDEO
-        $this -> czr_fn_video_save( $post_id, $post_object );
+        $this->czr_fn_video_save( $post_id, $post_object );
 
         ################# LAYOUT BOX #################
         // verify this came from our screen and with proper authorization,
@@ -1793,6 +1791,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
         // verify this came from our screen and with proper authorization,
         if ( isset( $_POST['post_slider_noncename']) && !wp_verify_nonce( $_POST['post_slider_noncename'], plugin_basename( __FILE__ ) ) )
            return;
+
 
         // OK, we're authenticated: we need to find and save the data
         //set up the fields array
@@ -2047,32 +2046,32 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
            // The actual fields for data entry
            //title check field setup
            $slider_check_id       = 'slider_check_field';
-           $slider_check_value    = esc_attr(get_post_meta( $post -> ID, $key = 'slider_check_key' , $single = true ));
+           $slider_check_value    = esc_attr(get_post_meta( $post->ID, $key = 'slider_check_key' , $single = true ));
 
            ?>
           <div class="meta-box-item-title">
-               <h4><?php _e( 'Add to a slider' , 'customizr' ); ?></h4>
-                 <label for="<?php echo $slider_check_id; ?>">
-               </i><?php _e( 'Add to a slider (create one if needed)' , 'customizr' ) ?></i>
-             </label>
+             <h4><label for="<?php echo $slider_check_id; ?>"><?php _e( 'Add to a slider (create one if needed)' , 'customizr' ) ?></label></h4>
            </div>
            <div class="meta-box-item-content">
-             <input name="tc_post_id" id="tc_post_id" type="hidden" value="<?php echo $post-> ID ?>"/>
+             <input name="tc_post_id" id="tc_post_id" type="hidden" value="<?php echo $post->ID ?>"/>
               <?php
-                $slider_checked = false;
-                if ( $slider_check_value == 1)
-                 $slider_checked = true;
+                  $slider_checked = false;
+                  if ( $slider_check_value == 1) {
+                     $slider_checked = true;
+                  }
+                  CZR_meta_boxes::czr_fn_checkbox_view( array(
+                     'input_name'   => $slider_check_id,
+                     'input_state'  => $slider_checked,
+                  ));
                ?>
-             <input name="<?php echo $slider_check_id; ?>" type="hidden" value="0"/>
-             <input name="<?php echo $slider_check_id ?>" id="<?php echo $slider_check_id; ?>" type="checkbox" class="iphonecheck" value="1" <?php checked( $slider_checked, $current = true, $echo = true ) ?>/>
            </div>
           <div id="slider-fields-box">
-            <?php do_action( '__attachment_slider_infos' , $post -> ID); ?>
+            <?php do_action( '__attachment_slider_infos' , $post->ID); ?>
           </div>
          <?php
 
-         do_action( 'czr_attachment_metabox_added' );
-         do_action( 'czr_slider_metabox_added' );
+         do_action( 'czr_attachment_metabox_added', $post );
+         do_action( 'czr_slider_metabox_added', $post );
       }
 
 
@@ -2223,7 +2222,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                  <option value="" <?php selected( $link_value, $current = null, $echo = true ) ?>> <?php _e( 'No link' , 'customizr' ); ?></option>
                  <?php foreach( $tc_all_posts as $type) : ?>
                     <?php foreach ( $type as $key => $item) : ?>
-                  <option value="<?php echo esc_attr( $item -> ID); ?>" <?php selected( $link_value, $current = $item -> ID, $echo = true ) ?>>{<?php echo esc_attr( $item -> post_type) ;?>}&nbsp;<?php echo esc_attr( $item -> post_title); ?></option>
+                  <option value="<?php echo esc_attr( $item->ID); ?>" <?php selected( $link_value, $current = $item->ID, $echo = true ) ?>>{<?php echo esc_attr( $item->post_type) ;?>}&nbsp;<?php echo esc_attr( $item->post_title); ?></option>
                     <?php endforeach; ?>
                 <?php endforeach; ?>
                </select><br />
@@ -2238,15 +2237,23 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                <h4><?php _e("Open link in a new page/tab", 'customizr' );  ?></h4>
            </div>
            <div class="meta-box-item-content">
-               <input name="<?php echo $link_target_id; ?>" type="hidden" value="0"/>
-               <input name="<?php echo $link_target_id; ?>" id="<?php echo $link_target_id; ?>" type="checkbox" class="iphonecheck" value="1" <?php checked( $link_target_value, $current = true, $echo = true ) ?>/>
+               <?php
+                  CZR_meta_boxes::czr_fn_checkbox_view( array(
+                     'input_name'   => $link_target_id,
+                     'input_state'  => $link_target_value,
+                  ));
+               ?>
            </div>
            <div class="meta-box-item-title">
                <h4><?php _e("Link the whole slide", 'customizr' );  ?></h4>
            </div>
            <div class="meta-box-item-content">
-               <input name="<?php echo $link_whole_slide_id; ?>" type="hidden" value="0"/>
-               <input name="<?php echo $link_whole_slide_id; ?>" id="<?php echo $link_whole_slide_id; ?>" type="checkbox" class="iphonecheck" value="1" <?php checked( $link_whole_slide_value, $current = true, $echo = true ) ?>/>
+               <?php
+                  CZR_meta_boxes::czr_fn_checkbox_view( array(
+                     'input_name'   => $link_whole_slide_id,
+                     'input_state'  => $link_whole_slide_value,
+                  ));
+               ?>
            </div>
            <div class="meta-box-item-title">
              <h4><?php _e("Choose a slider", 'customizr' ); ?></h4>
@@ -2453,12 +2460,12 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                         continue;
 
                       //check if slider is checked for this attachment => otherwise go to the next iteration
-                      $slider_check_value     = esc_attr(get_post_meta( $tc_slide -> ID, $key = 'slider_check_key' , $single = true ));
+                      $slider_check_value     = esc_attr(get_post_meta( $tc_slide->ID, $key = 'slider_check_key' , $single = true ));
                       if ( $slider_check_value == false)
                         continue;
 
                       //set up variables
-                      $id                   = $tc_slide -> ID;
+                      $id                   = $tc_slide->ID;
                       $slide_src             = wp_get_attachment_image_src( $id, 'thumbnail' );
                       $slide_url             = $slide_src[0];
                       $title                 = esc_attr(get_post_meta( $id, $key = 'slide_title_key' , $single = true ));
@@ -2819,7 +2826,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                }//end foreach
                //attachments
                if( $tc_post_type == 'attachment' )
-                 $this -> czr_fn_slide_save( $post_ID );
+                 $this->czr_fn_slide_save( $post_ID );
 
                do_action( "__after_ajax_save_slider_{$tc_post_type}", $_POST, $tc_slider_fields );
            }//function
@@ -2855,16 +2862,16 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
         $tc_post_id         = $_POST['tc_post_id'];
 
         //save $_POST var in DB
-        $this -> czr_fn_slider_ajax_save( $tc_post_id);
+        $this->czr_fn_slider_ajax_save( $tc_post_id);
 
         //check if we are in the post or attachment screen and select the appropriate rendering
         //we use the post_slider var defined in tc_ajax_slider.js
         if ( isset( $_POST['tc_post_type'])) {
          if( $_POST['tc_post_type'] == 'post' ) {
-           $this -> czr_fn_get_post_slider_infos( $tc_post_id );
+           $this->czr_fn_get_post_slider_infos( $tc_post_id );
          }
          else {
-           $this -> czr_fn_get_attachment_slider_infos( $tc_post_id );
+           $this->czr_fn_get_attachment_slider_infos( $tc_post_id );
          }
         }
         //echo $_POST['slider_id'];
@@ -2885,8 +2892,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
        * @since Customizr 1.0
        * @hook czr_slider_metabox_added
        */
-      function czr_fn_slider_admin_scripts( $hook) {
-         global $post;
+      function czr_fn_slider_admin_scripts( $post ) {
 
          $_min_version = ( !$this->_minify_resources ) ? '' : '.min';
 
@@ -2903,6 +2909,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          wp_enqueue_script( 'czr_ajax_slider' ,
             sprintf('%1$sback/js/tc_ajax_slider%2$s.js' , CZR_BASE_URL . CZR_ASSETS_PREFIX, $_min_version ),
             array( 'jquery' ),
+            ( defined('WP_DEBUG') && true === WP_DEBUG ) ? CUSTOMIZR_VER . time() : CUSTOMIZR_VER,
             true
          );
 
@@ -2915,17 +2922,6 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
                'SliderNonce' => wp_create_nonce( 'tc-slider-nonce' ),
                'SliderCheckNonce' => wp_create_nonce( 'tc-slider-check-nonce' ),
             )
-         );
-
-         //iphone like button style and script
-         wp_enqueue_style( 'iphonecheckcss' ,
-            sprintf('%1$sback/css/iphonecheck%2$s.css' , CZR_BASE_URL . CZR_ASSETS_PREFIX, $_min_version )
-         );
-
-         wp_enqueue_script( 'iphonecheck' ,
-            sprintf('%1$sback/js/jqueryIphonecheck%2$s.js' , CZR_BASE_URL . CZR_ASSETS_PREFIX, $_min_version ),
-            array('jquery'),
-            true
          );
 
          //thickbox
@@ -2959,10 +2955,12 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
             wp_enqueue_style( 'farbtastic' );
             wp_enqueue_script( 'farbtastic' );
             // load the minified version of custom script
-            wp_enqueue_script( 'cp_demo-custom' ,
-               sprintf('%1$sback/js/color-picker%2$s.js' ,  CZR_BASE_URL . CZR_ASSETS_PREFIX, $_min_version ),
-               array( 'jquery' , 'farbtastic' ),
-               true
+            wp_enqueue_script(
+              'cp_demo-custom' ,
+              sprintf('%1$sback/js/color-picker%2$s.js' ,  CZR_BASE_URL . CZR_ASSETS_PREFIX, $_min_version ),
+              array( 'jquery' , 'farbtastic' ),
+              ( defined('WP_DEBUG') && true === WP_DEBUG ) ? CUSTOMIZR_VER . time() : CUSTOMIZR_VER,
+              true
             );
          }
 
@@ -2977,7 +2975,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
        * @hook czr_post_formats_metabox_added
        */
 
-      function czr_fn_post_formats_admin_scripts( $hook ) {
+      function czr_fn_post_formats_admin_scripts( $post ) {
 
          $_ext = $this->_minify_resources ? '.min.js' : '.js';
 
@@ -2992,7 +2990,8 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          wp_localize_script( 'czr-post-formats',
             'CZRPostFormatsParams' ,
             array(
-               'postFormatSections' => $this -> czr_fn_get_post_meta_boxes_map()
+               'postFormatSections' => $this->czr_fn_get_post_meta_boxes_map(),
+               'currentPostFormat' => get_post_format( $post ),
             )
          );
 
@@ -3008,7 +3007,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
   ----------------------------------------------------------------
   */
    function czr_fn_attachment_filter( $form_fields, $post = null) {
-      $this -> czr_fn_attachment_slider_box ( $post);
+      $this->czr_fn_attachment_slider_box ( $post);
       return $form_fields;
    }
 
@@ -3017,7 +3016,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
       if ( isset( $_POST['tc_post_id']))
       $postid = $_POST['tc_post_id'];
 
-      $this -> czr_fn_slide_save( $postid );
+      $this->czr_fn_slide_save( $postid );
 
       return $post;
    }
@@ -3071,7 +3070,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
 
          $defaults = array(
             'input_name'     => '',
-            'input_class'    => 'iphonecheck',
+            'input_class'    => 'czr-toggle-check__input',
             'input_state'    => '',
             'echo'          => 1,
             'boxed'         => 1,
@@ -3084,10 +3083,10 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          extract( $args );
 
          CZR_meta_boxes::czr_fn_generic_input_view( array_merge( $args, array(
-            'content_before' => $content_before . '<input name="'. $input_name .'" type="hidden" value = "0" />',
-            'custom_args'    => checked( $input_state, $current = true, $c_echo = false)
+            'content_before' => $content_before . '<input name="'. $input_name .'" type="hidden" value = "0" /><span class="czr-toggle-check">',
+            'custom_args'    => checked( $input_state, $current = true, $c_echo = false),
+            'content_after'  => '<span class="czr-toggle-check__track"></span><span class="czr-toggle-check__thumb"></span></span>'
          )));
-
       }
 
 
@@ -3107,6 +3106,8 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
             'content_after'  => '',
             'choices'        => array(),
             'selected'       => '',
+            'wrapper_tag'   => 'div',
+            'wrapper_class' => 'meta-box-item-content',
          );
 
          $args = wp_parse_args( $args, $defaults );
@@ -3165,7 +3166,9 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          'echo'          => 1,
          'boxed'         => 1,
          'content_before' => '',
-         'content_after'  => ''
+         'content_after'  => '',
+         'wrapper_tag'   => 'div',
+         'wrapper_class' => 'meta-box-item-content',
         );
 
         $args = wp_parse_args( $args, $defaults );
@@ -3173,7 +3176,7 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
 
         $input_id = isset($input_id) ? $input_id : $input_name;
 
-        $content = sprintf('<input name="%1$s" id="%2$s" value="%3$s" %4$s class="%5$s" type="%6$s">',
+        $content = sprintf('<input name="%1$s" id="%2$s" value="%3$s" %4$s class="%5$s" type="%6$s" />',
             esc_attr( $input_name ),
             esc_attr( $input_id ),
             esc_attr( $input_value ),
@@ -3217,7 +3220,9 @@ if ( ! class_exists( 'CZR_meta_boxes' ) ) :
          'content_before' => '',
          'content_after'  => '',
          'rows'          => '5',
-         'cols'          => '40'
+         'cols'          => '40',
+         'wrapper_tag'   => 'div',
+         'wrapper_class' => 'meta-box-item-content',
         );
 
         $args = wp_parse_args( $args, $defaults );

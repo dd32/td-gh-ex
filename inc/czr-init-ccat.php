@@ -2,14 +2,6 @@
 /**
 * Fires the theme : constants definition, core classes loading
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR___' ) ) :
   final class CZR___ extends CZR_BASE {
@@ -270,13 +262,6 @@ endif;
 * Adds plugins compatibilities
 *
 *
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_init' ) ) :
   class CZR_init {
@@ -475,13 +460,6 @@ endif;
 /**
 * Handles various plugins compatibilty (Jetpack, Bbpress, Qtranslate, Woocommerce, The Event Calendar ...)
 *
-* @package      Customizr
-* @subpackage   classes
-* @since        3.3+
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_plugins_compat' ) ) :
   class CZR_plugins_compat {
@@ -524,6 +502,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       add_theme_support( 'wc-product-gallery-lightbox' );
       add_theme_support( 'wc-product-gallery-slider' );
       add_theme_support( 'the-events-calendar' );
+      add_theme_support( 'event-tickets' );
       add_theme_support( 'optimize-press' );
       add_theme_support( 'woo-sensei' );
       add_theme_support( 'visual-composer' );//or js-composer as they call it
@@ -544,80 +523,84 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
     */
     function czr_fn_plugins_compatibility() {
       /* Unlimited Featured Pages  */
-      if ( current_theme_supports( 'tc-unlimited-featured-pages' ) && $this -> czr_fn_is_plugin_active('tc-unlimited-featured-pages/tc_unlimited_featured_pages.php') )
+      if ( current_theme_supports( 'tc-unlimited-featured-pages' ) && czr_fn_is_plugin_active('tc-unlimited-featured-pages/tc_unlimited_featured_pages.php') )
         $this -> czr_fn_set_tc_unlimited_featured_pages_compat();
 
       /* JETPACK */
       //adds compatibilty with the jetpack image carousel and photon
-      if ( current_theme_supports( 'jetpack' ) && $this -> czr_fn_is_plugin_active('jetpack/jetpack.php') )
+      if ( current_theme_supports( 'jetpack' ) && czr_fn_is_plugin_active('jetpack/jetpack.php') )
         $this -> czr_fn_set_jetpack_compat();
 
 
       /* BBPRESS */
       //if bbpress is installed and activated, we can check the existence of the contextual boolean function is_bbpress() to execute some code
-      if ( current_theme_supports( 'bbpress' ) && $this -> czr_fn_is_plugin_active('bbpress/bbpress.php') )
+      if ( current_theme_supports( 'bbpress' ) && czr_fn_is_plugin_active('bbpress/bbpress.php') )
         $this -> czr_fn_set_bbpress_compat();
 
       /* BUDDYPRESS */
       //if buddypress is installed and activated, we can check the existence of the contextual boolean function is_buddypress() to execute some code
       // we have to use buddy-press instead of buddypress as string for theme support as buddypress makes some checks on current_theme_supports('buddypress') which result in not using its templates
-      if ( current_theme_supports( 'buddy-press' ) && $this -> czr_fn_is_plugin_active('buddypress/bp-loader.php') )
+      if ( current_theme_supports( 'buddy-press' ) && czr_fn_is_plugin_active('buddypress/bp-loader.php') )
         $this -> czr_fn_set_buddypress_compat();
 
       /*
       * QTranslatex
       * Credits : @acub, http://websiter.ro
       */
-      if ( current_theme_supports( 'qtranslate-x' ) && $this -> czr_fn_is_plugin_active('qtranslate-x/qtranslate.php') )
+      if ( current_theme_supports( 'qtranslate-x' ) && czr_fn_is_plugin_active('qtranslate-x/qtranslate.php') )
         $this -> czr_fn_set_qtranslatex_compat();
 
       /*
       * Polylang
       * Credits : Rocco Aliberti
       */
-      if ( current_theme_supports( 'polylang' ) && ( $this -> czr_fn_is_plugin_active('polylang/polylang.php') || $this -> czr_fn_is_plugin_active('polylang-pro/polylang.php') ) )
+      if ( current_theme_supports( 'polylang' ) && ( czr_fn_is_plugin_active('polylang/polylang.php') || czr_fn_is_plugin_active('polylang-pro/polylang.php') ) )
         $this -> czr_fn_set_polylang_compat();
 
       /*
       * WPML
       */
-      if ( current_theme_supports( 'wpml' ) && $this -> czr_fn_is_plugin_active('sitepress-multilingual-cms/sitepress.php') )
+      if ( current_theme_supports( 'wpml' ) && czr_fn_is_plugin_active('sitepress-multilingual-cms/sitepress.php') )
         $this -> czr_fn_set_wpml_compat();
 
       /* The Events Calendar */
-      if ( current_theme_supports( 'the-events-calendar' ) && $this -> czr_fn_is_plugin_active('the-events-calendar/the-events-calendar.php') )
+      if ( current_theme_supports( 'the-events-calendar' ) && czr_fn_is_plugin_active('the-events-calendar/the-events-calendar.php') )
         $this -> czr_fn_set_the_events_calendar_compat();
 
+      /* Event Tickets */
+      if ( current_theme_supports( 'event-tickets' ) && czr_fn_is_plugin_active('event-tickets/event-tickets.php') )
+        $this -> czr_fn_set_event_tickets_compat();
+
       /* Optimize Press */
-      if ( current_theme_supports( 'optimize-press' ) && $this -> czr_fn_is_plugin_active('optimizePressPlugin/optimizepress.php') )
+      if ( current_theme_supports( 'optimize-press' ) && czr_fn_is_plugin_active('optimizePressPlugin/optimizepress.php') )
         $this -> czr_fn_set_optimizepress_compat();
 
       /* Woocommerce */
-      if ( current_theme_supports( 'woocommerce' ) && $this -> czr_fn_is_plugin_active('woocommerce/woocommerce.php') )
+      if ( current_theme_supports( 'woocommerce' ) && czr_fn_is_plugin_active('woocommerce/woocommerce.php') )
         $this -> czr_fn_set_woocomerce_compat();
 
       /* Sensei woocommerce addon */
-      if ( current_theme_supports( 'woo-sensei') && $this -> czr_fn_is_plugin_active('woothemes-sensei/woothemes-sensei.php') )
+      if ( current_theme_supports( 'woo-sensei') && czr_fn_is_plugin_active('woothemes-sensei/woothemes-sensei.php') )
         $this -> czr_fn_set_sensei_compat();
 
       /* Visual Composer */
-      if ( current_theme_supports( 'visual-composer') && $this -> czr_fn_is_plugin_active('js_composer/js_composer.php') )
+      if ( current_theme_supports( 'visual-composer') && czr_fn_is_plugin_active('js_composer/js_composer.php') )
         $this -> czr_fn_set_vc_compat();
 
       /* Disqus Comment System */
-      if ( current_theme_supports( 'disqus') && $this -> czr_fn_is_plugin_active('disqus-comment-system/disqus.php') )
+      if ( current_theme_supports( 'disqus') && czr_fn_is_plugin_active('disqus-comment-system/disqus.php') )
         $this -> czr_fn_set_disqus_compat();
 
       /* Ultimate Responsive Image Slider  */
-      if ( current_theme_supports( 'uris' ) && $this -> czr_fn_is_plugin_active('ultimate-responsive-image-slider/ultimate-responsive-image-slider.php') )
+      if ( current_theme_supports( 'uris' ) && czr_fn_is_plugin_active('ultimate-responsive-image-slider/ultimate-responsive-image-slider.php') )
         $this -> czr_fn_set_uris_compat();
 
       /* LearnPress  */
-      if ( current_theme_supports( 'learnpress' ) && $this -> czr_fn_is_plugin_active('learnpress/learnpress.php') )
+      if ( current_theme_supports( 'learnpress' ) && czr_fn_is_plugin_active('learnpress/learnpress.php') )
         $this -> czr_fn_set_lp_compat();
 
       /* Coauthors-Plus */
-      if ( current_theme_supports( 'coauthors' ) && $this -> czr_fn_is_plugin_active('co-authors-plus/co-authors-plus.php') )
+      if ( current_theme_supports( 'coauthors' ) && czr_fn_is_plugin_active('co-authors-plus/co-authors-plus.php') )
         $this -> czr_fn_set_coauthors_compat();
     }//end of plugin compatibility function
 
@@ -1224,6 +1207,48 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
     }//end the-events-calendar compat
 
 
+    /**
+    * Event Tickets compat hooks
+    *
+    * @package Customizr
+    */
+    private function czr_fn_set_event_tickets_compat() {
+      /*
+      * Are we in the tickets attendees registration
+      */
+      if ( ! ( function_exists( 'czr_fn_is_et_attendees_registration' ) ) ) {
+        function czr_fn_is_et_attendees_registration() {
+          return function_exists( 'tribe' ) && tribe( 'tickets.attendee_registration' )->is_on_page();
+        }
+      }
+      // Workaround because of a bug on tec tickets that makes it require wp-content/themes/customizr/Custom Page Example (localized)
+      // in place of wp-content/themes/customizr/custom-page.php
+      add_filter( 'tribe_tickets_attendee_registration_page_template', 'czr_fn_et_ticket_fix_custom_page' );
+      function czr_fn_et_ticket_fix_custom_page( $what ) {
+        return str_replace( __( 'Custom Page Example', 'customizr' ), 'custom-page.php', $what );
+      }
+
+      // Attendees registration is displayed, wrongly, with our post lists classes, we have to prevent this
+      add_filter( 'tc_post_list_controller', 'czr_fn_et_disable_on_attendees_registration');
+      add_filter( 'tc_is_grid_enabled', 'czr_fn_et_disable_on_attendees_registration');
+      // hide tax archive title
+      add_filter( 'tc_show_tax_archive_title', 'czr_fn_et_disable_on_attendees_registration');
+      //hide navigation
+      add_filter( 'tc_show_post_navigation', 'czr_fn_et_disable_on_attendees_registration' );
+      function czr_fn_et_disable_on_attendees_registration( $bool ) {
+        return czr_fn_is_et_attendees_registration() ? false : $bool;
+      }
+
+      // Now we have to display a post or page content
+      add_filter( 'tc_show_single_post_content', 'czr_fn_et_show_content' );
+      function czr_fn_et_show_content( $bool ) {
+        return czr_fn_is_et_attendees_registration() ? true : $bool;
+      }
+
+    }//end event-tickets compat
+
+
+
 
     /**
     * OptimizePress compat hooks
@@ -1337,7 +1362,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       }//end of nested function
       //Helper
       function czr_fn_wc_is_checkout_cart() {
-        return is_checkout() || is_cart() || defined('WOOCOMMERCE_CHECKOUT') || defined('WOOCOMMERCE_CART');
+        return ( function_exists( 'is_checkout' ) && function_exists( 'is_cart' ) ) && ( is_checkout() || is_cart() || defined('WOOCOMMERCE_CHECKOUT') || defined('WOOCOMMERCE_CART') );
       }
       //Helper
       function czr_fn_woocommerce_shop_page_id( $id = null ){
@@ -1407,7 +1432,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       function czr_fn_woocommerce_disable_link_scroll( $excl ){
         if ( false == esc_attr( czr_fn_opt('tc_link_scroll') ) ) return $excl;
 
-        if ( function_exists('is_woocommerce') && is_woocommerce() ) {
+        if ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) {
           if ( ! is_array( $excl ) )
             $excl = array();
 
@@ -1427,7 +1452,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       //changes customizr meta boxes priority (slider and layout not on top) if displaying woocommerce products in admin
       add_filter( 'tc_post_meta_boxes_priority', 'czr_fn_woocommerce_change_meta_boxes_priority' , 2 , 10 );
       function czr_fn_woocommerce_change_meta_boxes_priority($priority , $screen) {
-         return ( 'product' == $screen ) ? 'default' : $priority ;
+        return ( 'product' == $screen ) ? 'default' : $priority ;
       }
 
 
@@ -1435,7 +1460,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       // Returns a callback function needed by 'active_callback' to enable the options in the customizer
       add_filter( 'tc_woocommerce_options_enabled', 'czr_fn_woocommerce_options_enabled_cb' );
       function czr_fn_woocommerce_options_enabled_cb() {
-        return '__return_true';
+        return function_exists( 'WC' ) ? '__return_true' : '__return_false';
       }
 
       /* rendering the cart icon in the header */
@@ -1459,6 +1484,9 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       add_action( '__navbar', 'czr_fn_woocommerce_header_cart', is_rtl() ? 9 : 19 );
       function czr_fn_woocommerce_header_cart() {
         if ( 1 != esc_attr( czr_fn_opt( 'tc_woocommerce_header_cart' ) ) )
+          return;
+
+        if ( ! function_exists( 'WC' ) )
           return;
 
         $_main_item_class = '';
@@ -1753,7 +1781,10 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
           return get_template_part( 'index' );
         }
       endif;
-      add_filter( 'template_include', 'tc_lp_maybe_fall_back_on_index' );
+      //See: plugins\learnpress\inc\class-lp-request-handler.php::process_request
+      //where lp processes the course Enroll request at template_include|50
+      //https://github.com/presscustomizr/customizr/issues/1589
+      add_filter( 'template_include', 'tc_lp_maybe_fall_back_on_index', 100 );
 
 
       // Disable post lists and single views in lp contexts
@@ -1768,15 +1799,8 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
       //do not display metas in lp archives
       add_filter( 'tc_opt_tc_show_post_metas', 'tc_lp_is_learnpress_archive_disable' );
 
-      //do not display post navigation in lp profile and lp checkout
-      add_filter( 'tc_opt_tc_show_post_navigation', 'tc_lp_maybe_disable_post_navigation' );
-      if ( ! function_exists( 'tc_lp_maybe_disable_post_navigation' ) ) {
-        function tc_lp_maybe_disable_post_navigation( $bool ) {
-          if ( function_exists( 'learn_press_is_profile' ) && function_exists( 'learn_press_is_checkout' ) ) {
-            return learn_press_is_profile() || learn_press_is_checkout() ? false : $bool;
-          }
-        }
-      }
+      //do not display post navigation, lp uses its own, when relevant
+      add_filter( 'tc_opt_tc_show_post_navigation', 'tc_lp_is_learnpress_disable' );
 
       //disable lp breadcrumb, we'll use our own
       remove_action( 'learn_press_before_main_content', 'learn_press_breadcrumb' );
@@ -1784,7 +1808,7 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
 
 
 
-    /* same in czr classic */
+    /* same in czr modern */
     /*
     * Coauthors-Plus plugin compat hooks
     */
@@ -1894,43 +1918,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
     }
 
 
-
-    /**
-    * HELPER
-    * Check whether the plugin is active by checking the active_plugins list.
-    * copy of is_plugin_active declared in wp-admin/includes/plugin.php
-    *
-    * @since 3.3+
-    *
-    * @param string $plugin Base plugin path from plugins directory.
-    * @return bool True, if in the active plugins list. False, not in the list.
-    */
-    function czr_fn_is_plugin_active( $plugin ) {
-      return in_array( $plugin, (array) get_option( 'active_plugins', array() ) ) || $this -> czr_fn_is_plugin_active_for_network( $plugin );
-    }
-
-
-    /**
-    * HELPER
-    * Check whether the plugin is active for the entire network.
-    * copy of is_plugin_active_for_network declared in wp-admin/includes/plugin.php
-    *
-    * @since 3.3+
-    *
-    * @param string $plugin Base plugin path from plugins directory.
-    * @return bool True, if active for the network, otherwise false.
-    */
-    function czr_fn_is_plugin_active_for_network( $plugin ) {
-      if ( ! is_multisite() )
-        return false;
-
-      $plugins = get_site_option( 'active_sitewide_plugins');
-      if ( isset($plugins[$plugin]) )
-        return true;
-
-      return false;
-    }
-
     /* same in czr modern */
     public function czr_fn_get_string_options_to_translate() {
       $string_options = array(
@@ -1959,14 +1946,6 @@ endif;
 * Defines the customizer setting map
 * On live context, used to generate the default option values
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_utils_settings_map' ) ) :
 class CZR_utils_settings_map {
@@ -2127,7 +2106,9 @@ class CZR_utils_settings_map {
                   'czr_fn_sidebars_option_map',
                   'czr_fn_responsive_option_map',
                   //FOOTER
-                  'czr_fn_footer_global_settings_option_map'
+                  'czr_fn_footer_global_settings_option_map',
+                  //WOOCOMMERCE PANEL OPTIONS
+                  'czr_fn_woocommerce_option_map'
             );
 
             foreach ( $_alter_settings_sections as $_alter_section_cb ) {
@@ -2157,6 +2138,15 @@ class CZR_utils_settings_map {
 
             if ( !is_array( $_map ) || empty( $_map ) ) {
                   return $_map;
+            }
+
+            //to unset
+            $_to_unset = array(
+                  'tc_title_next_logo',
+            );
+
+            foreach ( $_to_unset as $key ) {
+                  unset( $_map[ $key ] );
             }
 
             global $wp_version;
@@ -2233,7 +2223,7 @@ class CZR_utils_settings_map {
                               'control'   => 'CZR_controls',
                               'label'     => __('Randomize the skin', 'customizr'),
                               'section'   => 'skins_sec',
-                              'type'      => 'checkbox',
+                              'type'      => 'nimblecheck',
                               'notice'    => __( 'Apply a random color skin on each page load.' , 'customizr' )
                   ),
             );
@@ -2257,7 +2247,7 @@ class CZR_utils_settings_map {
                                 'control'     => 'CZR_controls' ,
                                 'label'         => __( "Fade effect on link hover" , 'customizr' ),
                                 'section'       => 'formatting_sec' ,
-                                'type'          => 'checkbox' ,
+                                'type'          => 'nimblecheck' ,
                                 'priority'      => 20,
                                 'transport'   => 'postMessage'
                   ),
@@ -2280,7 +2270,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Display an icon next to external links" , "customizr" ),
                                     'section'       => 'formatting_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'notice'    => __( 'This will be applied to the links included in post or page content only.' , 'customizr' ),
                                     'transport'     => 'postMessage'
                   ),
@@ -2290,7 +2280,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Open external links in a new tab" , "customizr" ),
                                     'section'       => 'formatting_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'notice'    => __( 'This will be applied to the links included in post or page content only.' , 'customizr' ),
                                     'transport'     => 'postMessage'
                   ),
@@ -2301,7 +2291,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'notice'         => __( "Apply a drop cap to the first paragraph of your post / page content" , "customizr" ),
                                     'section'       => 'formatting_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                   ),
                   'tc_dropcap_minwords'  =>  array(
                                     'default'       => 50,
@@ -2331,7 +2321,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'notice'         => __( "Apply a drop cap to the first paragraph of your single posts content" , "customizr" ),
                                     'section'       => 'formatting_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                   ),
                   'tc_page_dropcap'  =>  array(
                                     'default'       => 0,
@@ -2339,7 +2329,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'notice'         => __( "Apply a drop cap to the first paragraph of your pages" , "customizr" ),
                                     'section'       => 'formatting_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                   )
             );
 
@@ -2358,7 +2348,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'         => __( "Display icons next to titles" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 10,
                                     'notice'    => __( 'When this option is checked, a contextual icon is displayed next to the titles of pages, posts, archives, and WP built-in widgets.' , 'customizr' ),
                                     'transport'   => 'postMessage'
@@ -2368,7 +2358,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Display a page icon next to the page title" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 20,
                                     'transport'   => 'postMessage'
                   ),
@@ -2377,7 +2367,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'         => __( "Display a post icon next to the single post title" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 30,
                                     'transport'   => 'postMessage'
                   ),
@@ -2386,7 +2376,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'         => __( "Display an icon next to the archive title" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'notice'    => __( 'When this option is checked, an archive type icon is displayed in the heading of every types of archives, on the left of the title. An archive page can be : category, tag, author, date archive, custom taxonomies, search results.' , 'customizr' ),
                                     'priority'      => 40,
                                     'transport'   => 'postMessage'
@@ -2396,7 +2386,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'         => __( "Display an icon next to each post title in an archive page" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'notice'    => __( 'When this option is checked, a post type icon is displayed on the left of each post titles in an archive page. An archive page can be : category, tag, author, date archive, custom taxonomies, search results.' , 'customizr' ),
                                     'priority'      => 50,
                                     'transport'   => 'postMessage'
@@ -2406,7 +2396,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'         => __( "WP sidebar widgets : display icons next to titles" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 60,
                                     'transport'   => 'postMessage'
                   ),
@@ -2415,7 +2405,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'         => __( "WP footer widgets : display icons next to titles" , 'customizr' ),
                                     'section'       => 'titles_icons_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 70,
                                     'transport'   => 'postMessage'
                   )
@@ -2444,7 +2434,7 @@ class CZR_utils_settings_map {
                                     'control'   => 'CZR_controls' ,
                                     'label'       => __( 'Autoscale images on zoom' , 'customizr' ),
                                     'section'     => 'images_sec' ,
-                                    'type'        => 'checkbox' ,
+                                    'type'        => 'nimblecheck' ,
                                     'priority'    => 2,
                                     'notice'    => __( 'If enabled, this option will force images to fit the screen on lightbox zoom.' , 'customizr' ),
                   ),
@@ -2454,7 +2444,7 @@ class CZR_utils_settings_map {
                                     'control'   => 'CZR_controls' ,
                                     'label'       => __( "Sliders : display on loading icon before rendering the slides" , 'customizr' ),
                                     'section'     => 'images_sec' ,
-                                    'type'        => 'checkbox' ,
+                                    'type'        => 'nimblecheck' ,
                                     'priority'    => 15,
                                     'notice'    => __( 'When checked, this option displays a loading icon when the slides are being setup.' , 'customizr' ),
                   ),
@@ -2468,7 +2458,7 @@ class CZR_utils_settings_map {
                                     'control'     => 'CZR_controls' ,
                                     'label'       => __( 'Improve your page speed by loading smaller slider images for mobile devices' , 'customizr' ),
                                     'section'     => 'images_sec' ,
-                                    'type'        => 'checkbox' ,
+                                    'type'        => 'nimblecheck' ,
                                     'priority'    => 24,
                                     'ubq_section'   => array(
                                         'section' => 'performances_sec',
@@ -2507,6 +2497,10 @@ class CZR_utils_settings_map {
                   'tc_header_skin',
                   'tc_header_custom_bg_color',
                   'tc_header_custom_fg_color',
+                  'tc_highlight_contextually_active_menu_items',
+                  'tc_header_transparent_home',
+                  'tc_home_header_skin',
+                  'tc_header_no_borders',
                   'tc_header_title_underline',
                   'tc_header_show_topbar',
                   'tc_header_show_socials',
@@ -2523,7 +2517,7 @@ class CZR_utils_settings_map {
                                     'label'       => __( 'Social links in header' , 'customizr' ),
                                     'control'   =>  'CZR_controls' ,
                                     'section'     => 'header_layout_sec',
-                                    'type'        => 'checkbox' ,
+                                    'type'        => 'nimblecheck' ,
                                     'priority'      => 11,
                                     'transport'    => ( czr_fn_is_partial_refreshed_on() ) ? 'postMessage' : 'refresh',
                                     'ubq_section'   => array(
@@ -2537,7 +2531,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Display the tagline in the header" , "customizr" ),
                                     'section'       => 'header_layout_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 15,
                                     'transport'    => czr_fn_is_partial_refreshed_on() ? 'postMessage' : 'refresh',
                                     'ubq_section'   => array(
@@ -2551,7 +2545,7 @@ class CZR_utils_settings_map {
                                    'control'   => 'CZR_controls' ,
                                    'section'   => 'header_layout_sec',
                                    'notice'    => __( "WooCommerce: check to display a cart icon showing the number of items in your cart next to your header's tagline.", 'customizr' ),
-                                   'type'      => 'checkbox' ,
+                                   'type'      => 'nimblecheck' ,
                                    'priority'  => 18,
                                    'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' )
                   ),
@@ -2560,7 +2554,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Display menu in a box" , 'customizr' ),
                                     'section'       => 'header_layout_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 25,
                                     'transport'     => 'postMessage',
                                     'notice'        => __( 'If checked, this option wraps the header menu/tagline/social in a light grey box.' , 'customizr' ),
@@ -2571,7 +2565,7 @@ class CZR_utils_settings_map {
                                     'title'         => __( 'Sticky header settings' , 'customizr'),
                                     'label'         => __( "Sticky on scroll" , 'customizr' ),
                                     'section'       => 'header_layout_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 30,
                                     'transport'     => 'postMessage',
                                     'notice'    => __( 'If checked, this option makes the header stick to the top of the page on scroll down.' , 'customizr' )
@@ -2581,7 +2575,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Sticky header : display the tagline" , "customizr" ),
                                     'section'       => 'header_layout_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 40,
                                     'transport'     => 'postMessage',
                   ),
@@ -2590,7 +2584,7 @@ class CZR_utils_settings_map {
                                     'label'     => sprintf('<span class="dashicons dashicons-cart"></span> %s', __( "Sticky header: display the shopping cart" , "customizr" ) ),
                                     'control'   => 'CZR_controls' ,
                                     'section'   => 'header_layout_sec',
-                                    'type'      => 'checkbox' ,
+                                    'type'      => 'nimblecheck' ,
                                     'priority'  => 45,
                                     'transport' => 'postMessage',
                                     'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' ),
@@ -2601,7 +2595,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Sticky header : display the title / logo" , "customizr" ),
                                     'section'       => 'header_layout_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 50,
                                     'transport'     => 'postMessage',
                   ),
@@ -2610,7 +2604,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Sticky header : display the menu" , "customizr" ),
                                     'section'       => 'header_layout_sec' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 60,
                                     'transport'     => 'postMessage',
                                     'notice'        => __('Also applied to the secondary menu if any.' , 'customizr')
@@ -2693,7 +2687,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => sprintf('<span class="dashicons dashicons-smartphone"></span> %s', __( "For mobile devices (responsive), limit the height of the dropdown menu block to the visible viewport." , 'customizr' ) ),
                                     'section'       => 'nav' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 35,
                                     //'transport'     => 'postMessage',
                   ),
@@ -2702,7 +2696,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( "Display a label next to the menu button." , 'customizr' ),
                                     'section'       => 'nav' ,
-                                    'type'          => 'checkbox' ,
+                                    'type'          => 'nimblecheck' ,
                                     'priority'      => 45,
                                     'notice'        => __( 'Note : the label is hidden on mobile devices.' , 'customizr' ),
                   ),
@@ -2864,7 +2858,7 @@ class CZR_utils_settings_map {
                                     'title'         => __( 'Recent update notice after post titles' , 'customizr' ),
                                     'label'         => __( "Display a recent update notice" , 'customizr' ),
                                     'section'       => 'post_metas_sec',
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 65,
                                     'notice'    => __( 'If this option is checked, a customizable recent update notice is displayed next to the post title.' , 'customizr' )
                   ),
@@ -2962,7 +2956,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( 'Apply the grid layout to Home/Blog' , "customizr" ),
                                     'section'       => 'post_lists_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 57
                   ),
                   'tc_grid_in_archive'  =>  array(
@@ -2970,7 +2964,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( 'Apply the grid layout to Archives (archives, categories, author posts)' , "customizr" ),
                                     'section'       => 'post_lists_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 58
                   ),
                   'tc_grid_in_search'  =>  array(
@@ -2978,7 +2972,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( 'Apply the grid layout to Search results' , "customizr" ),
                                     'section'       => 'post_lists_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 60,
                                     'notice'        => __( 'Unchecked contexts are displayed with the alternate thumbnails layout.' , 'customizr' ),
                   ),
@@ -2987,7 +2981,7 @@ class CZR_utils_settings_map {
                                     'control'       => 'CZR_controls' ,
                                     'label'         => __( 'Display post format icons' , "customizr" ),
                                     'section'       => 'post_lists_sec' ,
-                                    'type'          => 'checkbox',
+                                    'type'          => 'nimblecheck',
                                     'priority'      => 63,
                                     'transport'     => 'postMessage'
                   ),
@@ -3198,7 +3192,7 @@ class CZR_utils_settings_map {
                                     'control'   => 'CZR_controls' ,
                                     'label'         => sprintf('<span class="dashicons dashicons-smartphone"></span> %s', __( 'Dynamic sidebar reordering on small devices' , 'customizr' ) ),
                                     'section'     => 'responsive_sec' ,
-                                    'type'        => 'checkbox' ,
+                                    'type'        => 'nimblecheck' ,
                                     'notice'    => __( 'Activate this option to move the sidebars (if any) after the main content block, for smartphones or tablets viewport.' , 'customizr' ),
                   )
             );
@@ -3236,6 +3230,40 @@ class CZR_utils_settings_map {
 
             return $_map;
       }
+
+
+
+
+
+
+
+
+
+      /******************************************************************************************************
+      *******************************************************************************************************
+      * PANEL : WOOCOMMERCE
+      *******************************************************************************************************
+      ******************************************************************************************************/
+      function czr_fn_woocommerce_option_map( $_map, $get_default = null ) {
+            if ( !is_array( $_map ) || empty( $_map ) ) {
+                  return $_map;
+            }
+
+            //to unset
+            $_to_unset = array(
+                  'tc_woocommerce_display_product_thumb_before_mw',
+            );
+
+            foreach ( $_to_unset as $key ) {
+                  unset( $_map[ $key ] );
+            }
+
+            return $_map;
+      }
+
+
+
+
 
 
       /***************************************************************
@@ -3357,14 +3385,6 @@ endif;
 /**
 * Defines filters and actions used in several templates/classes
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.4.39
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com> - Rocco ALIBERTI <rocco@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2017, Nicolas GUILLAUME, Rocco ALIBERTI
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_init_retro_compat' ) ) :
   class CZR_init_retro_compat {
@@ -3554,14 +3574,6 @@ endif;
 /**
 * Defines filters and actions used in several templates/classes
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_utils' ) ) :
   class CZR_utils {
@@ -3821,7 +3833,7 @@ if ( ! class_exists( 'CZR_utils' ) ) :
           $img_extensions_pattern = sprintf( "(?:%s)", implode( '|', $allowed_image_extentions ) );
           $pattern                = '#<a([^>]+?)href=[\'"]?([^\'"\s>]+\.'.$img_extensions_pattern.'[^\'"\s>]*)[\'"]?([^>]*)>#i';
 
-          $replacement = '<a$1href="$2"class="grouped_elements" rel="tc-fancybox-group'.$post -> ID.'"$3>';
+          $replacement = '<a$1href="$2" class="grouped_elements" rel="tc-fancybox-group'.$post -> ID.'"$3>';
 
           $r_content = preg_replace( $pattern, $replacement, $content);
           $content = $r_content ? $r_content : $content;
@@ -3911,14 +3923,6 @@ endif;
 /**
 * Loads front end stylesheets and scripts
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_resources' ) ) :
 	class CZR_resources {
@@ -4707,13 +4711,6 @@ endif;
 * CZR_utils::$inst -> footer_widgets for the footer
 * The widget area are then fired in the class below
 *
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_widgets' ) ) :
   class CZR_widgets {

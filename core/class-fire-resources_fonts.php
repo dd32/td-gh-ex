@@ -34,6 +34,8 @@ if ( ! class_exists( 'CZR_resources_fonts' ) ) :
         * @since Customizr 3.2.3
         */
         function czr_fn_maybe_enqueue_fa_icons() {
+              if ( czr_fn_is_full_nimble_tmpl() )
+                return;
               //Enqueue FontAwesome CSS
               if ( true == czr_fn_opt( 'tc_font_awesome_icons' ) ) {
                     $_path = apply_filters( 'czr_fa_css_path' , CZR_BASE_URL . CZR_ASSETS_PREFIX . 'shared/fonts/fa/css/' );
@@ -146,8 +148,12 @@ if ( ! class_exists( 'CZR_resources_fonts' ) ) :
 
       /*
       * TODO: implement modular scale
+      * oct 2019 => we don't change the editor font-size anymore based on user options
+      * invoked in CZR_admin_init::czr_fn_user_defined_tinymce_css
+      * @see https://github.com/presscustomizr/customizr/issues/1781
       */
-      if ( 15 != $_body_font_size ) {
+
+      if ( 15 != $_body_font_size && is_null( $_context ) ) {
 
           $_line_height = apply_filters('czr_body_line_height_ratio', 1.5 );
           if ( ! czr_fn_is_checked( 'tc_ms_respond_css' ) ) {
@@ -160,7 +166,9 @@ if ( ! class_exists( 'CZR_resources_fonts' ) ) :
                 line-height : {$_line_height}em;
               }\n";
           } else {
-            $emsize_medium = $_body_font_size * 0.833 / 16;//@see assets/css/front/stye-modular-scale.css
+            // June 2019 => increase the ratio from 0.833 to 0.9 to limit problems when deactivating modular scale.
+            // @see https://github.com/presscustomizr/customizr/issues/1755
+            $emsize_medium = $_body_font_size * 0.900 / 16;//@see assets/css/front/stye-modular-scale.css
             $emsize_medium = number_format( (float)$emsize_medium, 2, '.', '');
             $emsize_large = $_body_font_size * 0.9375 / 16;
             $emsize_large = number_format( (float)$emsize_large, 2, '.', '');

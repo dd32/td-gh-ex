@@ -2,14 +2,6 @@
 /**
 * Customizer actions and filters
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_customize' ) ) :
   class CZR_customize {
@@ -30,25 +22,27 @@ if ( ! class_exists( 'CZR_customize' ) ) :
       self::$instance =& $this;
 
       //add control class
-      add_action( 'customize_register'                       , array( $this , 'czr_fn_augment_customizer' ),10, 1);
+      add_action( 'customize_register'                       , array( $this, 'czr_fn_augment_customizer' ),10, 1);
 
       //Partial refreshs
-      add_action( 'customize_register'                       , array( $this,  'czr_fn_register_partials' ) );
+      add_action( 'customize_register'                       , array( $this, 'czr_fn_register_partials' ) );
 
       //add the customizer built with the builder below
-      add_action( 'customize_register'                       , array( $this , 'czr_fn_customize_register' ), 20, 1 );
+      add_action( 'customize_register'                       , array( $this, 'czr_fn_customize_register' ), 20, 1 );
 
       //modify some WP built-in settings / controls / sections
-      add_action( 'customize_register'                       , array( $this , 'czr_fn_alter_wp_customizer_settings' ), 1000, 1 );
-
+      add_action( 'customize_register'                       , array( $this, 'czr_fn_alter_wp_customizer_settings' ), 1000, 1 );
 
       //add grid/post list buttons in the control views
-      add_action( '__before_setting_control'                 , array( $this , 'czr_fn_render_grid_control_link') );
+      add_action( '__before_setting_control'                 , array( $this, 'czr_fn_render_grid_control_link' ) );
+
+      //remove old logo settong if the wp custom logo option has been set
+      add_action( 'customize_save_custom_logo'               , array( $this, 'czr_fn_remove_old_tc_logo_upload' ) );
 
       //load resources class
       $this -> czr_fn_fire_czr_resources();
-
     }
+
 
 
 
@@ -568,6 +562,24 @@ if ( ! class_exists( 'CZR_customize' ) ) :
       }
     }
 
+
+
+    //hook: customize_save_custom_logo
+    function czr_fn_remove_old_tc_logo_upload( $setting ) {
+      //make sure the custom_logo option is a theme mod
+      if ( 'theme_mod' !== $setting->type ) {
+        return;
+      }
+      $theme_options = czr_fn_get_unfiltered_theme_options();
+      unset( $theme_options['tc_logo_upload'] );
+      if ( is_array( $theme_options ) && ! empty( $theme_options ) ) {
+        update_option( CZR_THEME_OPTIONS, $theme_options );
+      }
+    }
+
+
+
+
     //ONLY FOR OLD CUSTOMIZR
     /*
     * hook : '__after_setting_control' (declared in class-tc-controls-settings.php)
@@ -577,6 +589,8 @@ if ( ! class_exists( 'CZR_customize' ) ) :
       if ( false !== strpos( $set_id, 'tc_sticky_logo_upload' ) )
         printf( '<h3 class="czr-customizr-title">%s</h3>', __( 'SITE ICON' , 'customizr') );
     }
+
+
 
 
     /**
@@ -623,14 +637,6 @@ endif;
 /**
 * Customizer actions and filters
 *
-*
-* @package      Customizr
-* @subpackage   classes
-* @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
-* @copyright    Copyright (c) 2013-2017, Nicolas GUILLAUME
-* @link         http://presscustomizr.com/customizr
-* @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'CZR_customize_resources' ) ) :
   class CZR_customize_resources {
@@ -913,7 +919,7 @@ if ( ! class_exists( 'CZR_controls' ) ) :
 
         do_action( '__before_setting_control' , $this -> id );
 
-        switch ( $this -> type) {
+        switch ( $this->type) {
             case 'hr':
               echo '<hr class="czr-customizer-separator" />';
             break;
@@ -940,7 +946,7 @@ if ( ! class_exists( 'CZR_controls' ) ) :
               <?php endif; ?>
               <label>
                 <span class="customize-control-title"><?php echo $this->label; ?></span>
-                <?php $this -> czr_fn_print_select_control( in_array( $this->id, array( CZR_THEME_OPTIONS.'[tc_fonts]', CZR_THEME_OPTIONS.'[tc_skin]' ) ) ? 'select2 no-selecter-js' : '' ) ?>
+                <?php $this -> czr_fn_print_select_control( in_array( $this->id, array( CZR_THEME_OPTIONS.'[tc_fonts]', CZR_THEME_OPTIONS.'[tc_skin]' ) ) ? 'czrSelect2 no-selecter-js' : '' ) ?>
                 <?php if(!empty( $this -> notice)) : ?>
                   <span class="czr-notice"><?php echo $this -> notice ?></span>
                 <?php endif; ?>
@@ -980,16 +986,32 @@ if ( ! class_exists( 'CZR_controls' ) ) :
               break;
 
             case 'checkbox':
+            case 'nimblecheck':
               ?>
               <?php if (isset( $this->title)) : ?>
                 <h3 class="czr-customizr-title"><?php echo esc_html( $this->title); ?></h3>
               <?php endif; ?>
-              <?php
+
+              <?php if ( 'checkbox' === $this->type ) : ?>
+                <?php
                     printf('<div class="czr-check-label"><label><span class="customize-control-title">%1$s</span></label></div>',
-                    $this->label
-                  );
-              ?>
-              <input <?php $this->link(); ?> type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>"  <?php czr_fn_checked( $this->value() ); ?> />
+                      $this->label
+                    );
+                ?>
+                <input <?php $this->link(); ?> type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>"  <?php czr_fn_checked( $this->value() ); ?> />
+              <?php elseif ( 'nimblecheck' === $this->type ) : ?>
+                <div class="czr-control-nimblecheck">
+                  <?php
+                    printf('<div class="czr-check-label"><label><span class="customize-control-title">%1$s</span></label></div>',
+                      $this->label
+                    );
+                  ?>
+                  <div class="nimblecheck-wrap">
+                    <input id="nimblecheck-<?php echo $this -> id; ?>" <?php $this->link(); ?> type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>"  <?php czr_fn_checked( $this->value() ); ?> class="nimblecheck-input">
+                    <label for="nimblecheck-<?php echo $this -> id; ?>" class="nimblecheck-label">Switch</label>
+                  </div>
+                </div>
+              <?php endif; ?>
 
               <?php if(!empty( $this -> notice)) : ?>
                <span class="czr-notice"><?php echo $this-> notice ?></span>
@@ -1138,25 +1160,6 @@ if ( ! class_exists( 'CZR_controls' ) ) :
 
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_style( 'wp-color-picker' );
-
-        // wp_enqueue_style(
-        //   'font-awesome',
-        //   sprintf('%1$s/css/fontawesome-all.min.css', CZR_BASE_URL . 'assets/shared/fonts/fa' ),
-        //   array(),
-        //   CUSTOMIZR_VER,
-        //   $media = 'all'
-        // );
-
-
-        // //select2 stylesheet
-        // //overriden by some specific style in theme-customzer-control.css
-        // wp_enqueue_style(
-        //   'select2-css',
-        //   sprintf('%1$sassets/czr/css/lib/select2.min.css', CZR_BASE_URL ),
-        //   array( 'customize-controls' ),
-        //   CUSTOMIZR_VER,
-        //   $media = 'all'
-        // );
     }
 
     /**
@@ -1349,7 +1352,7 @@ if ( ! class_exists( 'CZR_Customize_Multipicker_Categories_Control' ) ) :
               'echo'               => 0 ,
               'walker'             => new CZR_Walker_CategoryDropdown_Multipicker(),
               'hierarchical'       => 1,
-              'class'              => 'select2 no-selecter-js '.$this->type,
+              'class'              => 'czrSelect2 no-selecter-js '.$this->type,
               'selected'           => implode(',', $this->value() )
           )
       );
@@ -1626,9 +1629,9 @@ class CZR_Customize_Section_Pro extends WP_Customize_Section {
     public function json() {
       $json = parent::json();
       $json['pro_subtitle'] = $this->pro_subtitle;
-      $json['pro_doc_url']  = esc_url( $this->pro_doc_url );
+      $json['pro_doc_url']  = $this->pro_doc_url;
       $json['pro_text'] = $this->pro_text;
-      $json['pro_url']  = esc_url( $this->pro_url );
+      $json['pro_url']  = $this->pro_url;
       return $json;
     }
 

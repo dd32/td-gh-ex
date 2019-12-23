@@ -1,5 +1,5 @@
 /*!
- * Customizr v4.1.5
+ * Customizr v4.1.50
  *
  * Licensed under the GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
@@ -254,7 +254,18 @@ body {
 .row:after {
   clear: both;
 }
-[class*="span"] {
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 {
   float: left;
   min-height: 1px;
   margin-left: 20px;
@@ -4681,6 +4692,7 @@ a.badge:focus {
  => MEDIA PRINT
  => DEBUG
  => PURE CSS LOADER
+ => NIMBLE BUILDER
  ***** END OF CONTENT *****/
 /* ELEMENTS
   --------------------------------------------------- */
@@ -4749,8 +4761,6 @@ section {
 /* ICONS
   -------------------------------------------------- */
 .tc-wc-menu .nav > li > a:before,
-#wp-admin-bar-tc-customizr-help .ab-item:before,
-li#wp-admin-bar-tc-customizr-help a:before,
 a + span.tc-external:after,
 h2.comments-title:before,
 h3#reply-title:before,
@@ -5285,7 +5295,8 @@ h2.site-description {
 /* .tc-hover-menu.nav.nav li:hover > ul {
   display: block;
 } */
-.tc-hover-menu.nav li:hover > ul {
+.tc-hover-menu.nav li:hover > ul,
+.tc-hover-menu.nav li.czr-focusin > ul {
   display: block;
 }
 /* GENERAL MENU STYLE */
@@ -5472,7 +5483,7 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
 }
 .btn-toggle-nav .menu-btn:focus,
 .btn-toggle-nav .menu-btn:hover {
-  outline: none;
+  /* outline: none; for https://github.com/presscustomizr/customizr/issues/1771 */
   outline-offset: inherit;
   background: none;
 }
@@ -5574,7 +5585,7 @@ style when side nav visible is actually rendered inline TC_menu.tc_set_sidenav_s
   text-decoration: none;
   cursor: pointer;
   margin: 1px 5px 0px;
-  outline: 0;
+  /* outline: 0; for https://github.com/presscustomizr/customizr/issues/1771 */
   float: left;
 }
 .sn-toggle .btn {
@@ -6941,12 +6952,20 @@ article .no-thumb figcaption {
 }
 .wp-caption .wp-caption-text,
 .tc-gallery-style .gallery-caption,
-.entry-caption {
+.entry-caption,
+.wp-block-image figcaption {
   font-style: italic;
   font-size: 12px;
-  font-size: 0.7rem;
-  line-height: 1.3em;
+  font-size: 0.75rem;
+  line-height: 1.5em;
   color: #757575;
+}
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+  left: 0;
+  right: 0;
+  text-align: center;
+  width: auto;
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -7211,6 +7230,25 @@ ul {
   word-break: break-all;
   white-space: normal;
 }
+/* checkout label/radio/checkboxe alignment */
+#add_payment_method #payment ul.payment_methods label,
+.woocommerce-cart #payment ul.payment_methods label,
+.woocommerce-checkout #payment ul.payment_methods label {
+  display: inline-block;
+  margin-bottom: 0;
+}
+#add_payment_method #payment .payment_method_paypal .about_paypal,
+.woocommerce-cart #payment .payment_method_paypal .about_paypal,
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal {
+  line-height: 47px;
+}
+.woocommerce form .form-row .input-checkbox {
+  float: none;
+}
+.woocommerce form .form-row label.checkbox,
+.woocommerce-page form .form-row label.checkbox {
+  padding-left: 0;
+}
 /* FOOTER
     -------------------------------------------------- */
 footer#footer {
@@ -7372,33 +7410,6 @@ footer ol {
   font-size: 31px;
   cursor: pointer;
 }
-/* ADMIN BAR
-    -------------------------------------------------- */
-#wp-admin-bar-tc-customizr-help .ab-item:before,
-li#wp-admin-bar-tc-customizr-help a:before {
-  content: "\f1cd";
-  color: #FFF;
-  padding-right: 0;
-  margin-right: 0;
-  top: 2px;
-  position: relative;
-  font-weight: normal;
-}
-li#wp-admin-bar-tc-customizr-help a {
-  color: #FFF;
-  text-decoration: none;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #8DA65A;
-  background-image: -moz-linear-gradient(top, #008ec2, #006799);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008ec2), to(#006799));
-  background-image: -webkit-linear-gradient(top, #008ec2, #006799);
-  background-image: -o-linear-gradient(top, #008ec2, #006799);
-  background-image: linear-gradient(to bottom, #008ec2, #006799);
-  background-repeat: repeat-x;
-  border-color: #006799;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
 /* MEDIA PRINT
     -------------------------------------------------- */
 /* Remove links on print (twitter bootstrap displays them) */
@@ -7489,6 +7500,45 @@ li#wp-admin-bar-tc-customizr-help a {
   -webkit-animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
   animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
 }
+/*
+* NIMBLE BUILDER
+* Reduce the default spacing for Customizr custom locations
+*/
+.is-customizing .sektion-wrapper[data-sek-id="__before_main_wrapper"] {
+  min-height: inherit;
+  margin-top: 0;
+}
+.is-customizing .sektion-wrapper[data-sek-id="__after_header"] {
+  min-height: 20px;
+  margin-top: 10px;
+}
+.is-customizing .sektion-wrapper[data-sek-id="__after_header"] .sek-empty-location-placeholder,
+.is-customizing .sektion-wrapper[data-sek-id="__before_main_wrapper"] .sek-empty-location-placeholder {
+  min-height: inherit;
+  margin: 0;
+}
+/* fix for https://github.com/presscustomizr/nimble-builder/issues/186 */
+.sek-dragging .sektion-wrapper[data-sek-id="__after_header"] {
+  z-index: 1000;
+  position: relative;
+}
+/* Add space before the first sidebar below content on mobile devices
+  fixes https://github.com/presscustomizr/customizr/issues/1767
+*/
+hr.tc-mobile-separator {
+  display: none;
+}
+@media (max-width: 767px) {
+  .tc-l-sidebar hr.tc-mobile-separator {
+    display: block;
+  }
+  .tc-r-sidebar hr.tc-mobile-separator {
+    display: block;
+  }
+  .tc-b-sidebar hr.tc-mobile-separator {
+    display: block;
+  }
+}
 /*********************************************************************************
 ************************** Responsive T. Bootstrap Grid **************************
 **********************************************************************************/
@@ -7573,7 +7623,18 @@ li#wp-admin-bar-tc-customizr-help a {
   .row:after {
     clear: both;
   }
-  [class*="span"] {
+  .span1,
+  .span2,
+  .span3,
+  .span4,
+  .span5,
+  .span6,
+  .span7,
+  .span8,
+  .span9,
+  .span10,
+  .span11,
+  .span12 {
     float: left;
     min-height: 1px;
     margin-left: 30px;
@@ -7924,7 +7985,18 @@ li#wp-admin-bar-tc-customizr-help a {
   .row:after {
     clear: both;
   }
-  [class*="span"] {
+  .span1,
+  .span2,
+  .span3,
+  .span4,
+  .span5,
+  .span6,
+  .span7,
+  .span8,
+  .span9,
+  .span10,
+  .span11,
+  .span12 {
     float: left;
     min-height: 1px;
     margin-left: 20px;
@@ -8774,7 +8846,8 @@ li#wp-admin-bar-tc-customizr-help a {
     transition: all 0.2s ease-in-out;
   }
   .tc-submenu-fade .tc-hover-menu.nav li:hover > ul,
-  .tc-submenu-fade .nav li.open > ul {
+  .tc-submenu-fade .nav li.open > ul,
+  .tc-hover-menu.nav li.czr-focusin > ul {
     opacity: 1;
     top: 95%;
     visibility: visible;
