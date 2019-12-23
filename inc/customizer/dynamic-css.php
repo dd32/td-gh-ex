@@ -347,6 +347,7 @@ $css = '';
 		/* Buttons */
 		.widget_search .svg-fa-wrap,
 		.widget_search #searchsubmit,
+		.wp-block-search button,
 		.page-content .submit,
 		.page-content .blog-pagination.numeric a,
 		.page-content .post-password-form input[type="submit"],
