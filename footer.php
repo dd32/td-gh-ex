@@ -28,7 +28,7 @@
 	<?php endif; ?>
 </div><!-- #page -->
 <?php get_sidebar(); ?>
-<a href="#top" id="toTop" class="showTop"><i class="fa fa-angle-up"></i></a>
+<a href="#top" id="toTop" aria-hidden="true" class="showTop"><i class="fa fa-angle-up"></i></a>
 <?php if ($zenzero_hideSearch == 1 ) : ?>
 	<div id="open-search" class="showSearch"><i class="fa fa-search"></i></div>
 	<!-- Start: Search Form -->

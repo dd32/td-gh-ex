@@ -7,8 +7,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 		if ( '' != get_the_post_thumbnail() ) {
-			echo '<div class="entry-featuredImg"><a href="' .esc_url(get_permalink()). '"><span class="overlay-img"></span>';
-			the_post_thumbnail('zenzero-normal-post');
+			echo '<div class="entry-featuredImg"><a href="' .esc_url(get_permalink()). '" title="' .esc_attr(the_title_attribute('echo=0')). '"><span class="overlay-img"></span>';
+			the_post_thumbnail('zenzero-normal-post', array( 'alt' => get_the_title()));
 			echo '</a></div>';
 		}
 	?>

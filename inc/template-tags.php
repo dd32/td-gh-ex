@@ -17,7 +17,7 @@ function zenzero_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation">
+	<nav class="navigation paging-navigation" aria-label="<?php esc_attr_e('Posts', 'zenzero'); ?>">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'zenzero' ); ?></h2>
 		<div class="nav-links">
 
@@ -48,7 +48,7 @@ function zenzero_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation">
+	<nav class="navigation post-navigation" aria-label="<?php esc_attr_e('Posts', 'zenzero'); ?>">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'zenzero' ); ?></h2>
 		<div class="nav-links">
 			<?php

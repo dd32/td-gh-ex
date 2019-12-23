@@ -414,13 +414,27 @@ if( ! function_exists('zenzero_allowed_html')){
 			'dl' => array(),
 			'dt' => array(),
 			'em' => array(),
-			'h1' => array(),
-			'h2' => array(),
-			'h3' => array(),
-			'h4' => array(),
-			'h5' => array(),
-			'h6' => array(),
-			'i' => array(),
+			'h1' => array(
+				'class' => array(),
+			),
+			'h2' => array(
+				'class' => array(),
+			),
+			'h3' => array(
+				'class' => array(),
+			),
+			'h4' => array(
+				'class' => array(),
+			),
+			'h5' => array(
+				'class' => array(),
+			),
+			'h6' => array(
+				'class' => array(),
+			),
+			'i' => array(
+				'class' => array(),
+			),
 			'br' => array(),
 			'img' => array(
 				'alt'    => array(),
