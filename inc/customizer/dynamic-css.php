@@ -304,6 +304,7 @@ function ashe_true_false( $option ) {
 		/* Buttons */
 		.widget_search i,
 		.widget_search #searchsubmit,
+		.wp-block-search button,
 		.single-navigation i,
 		.page-content .submit,
 		.page-content .blog-pagination.numeric a,
