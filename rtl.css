@@ -837,6 +837,47 @@ iframe,
   text-align:center;
   padding:20px 0;
 }
+#footer ul.cart_list li a, #footer ul.product_list_widget li a , #footer ul.cart_list li .star-rating, #footer ul.product_list_widget li .star-rating{
+  margin-bottom: 5px;
+}
+#footer .widget_price_filter .ui-slider .ui-slider-range, #footer .widget_price_filter .ui-slider .ui-slider-handle{
+  background: #88d055;
+}
+#footer .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #fff;
+}
+#footer .woocommerce-product-search button{
+  font-size: 15px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  background: #88d055;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+#footer .woocommerce-product-search input[type="search"]{
+  border: 1px solid #ddd;
+  width: 100%;
+}
+#footer form.woocommerce-product-search{
+  border: none;
+}
+#footer li.woocommerce-mini-cart-item.mini_cart_item{
+  line-height: 25px;
+  margin-top: 10px;
+  padding: 0 2em 0 0 !important;
+}
+#footer ul.product_list_widget li {
+  line-height: 25px;
+  margin-top: 10px;
+}
+#footer .widget_rating_filter ul li {
+  line-height: 25px;
+}
 /* --------- Blog Page ------- */
 #our-services iframe{
   width: 100%;
@@ -1053,7 +1094,7 @@ h2#reply-title {
   width: 100%;
   float: right;
 }
-/* Sidebar */
+/*----------- Sidebar------------ */
 #sidebar .custom-social-icons {
   text-align: center;
 }
@@ -1175,6 +1216,41 @@ h2#reply-title {
   background: #88d055;
   color: #fff;
 }
+#sidebar ul.product_list_widget li{
+  line-height: 25px;
+  margin-top: 10px;
+}
+#sidebar .widget_shopping_cart .cart_list li a.remove, #sidebar.widget_shopping_cart .cart_list li a.remove {
+  position: absolute;
+  top: 0px;
+  right: 0;
+}
+#sidebar .widget_price_filter .ui-slider .ui-slider-range, #sidebar .widget_price_filter .ui-slider .ui-slider-handle{
+  background: #88d055;
+}
+#sidebar .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #000;
+}
+#sidebar ul.cart_list li a, #sidebar ul.product_list_widget li a, #sidebar ul.cart_list li .star-rating, #sidebar ul.product_list_widget li .star-rating {
+  margin-bottom: 5px;
+}
+#sidebar .woocommerce-product-search button{
+  border: none;
+  color: #fff;
+  padding: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+  letter-spacing: 1px;
+  background: #88d055;
+  text-transform: uppercase;
+}
+#sidebar .woocommerce-product-search input[type="search"]{
+  border: 1px solid #ddd;
+}
+#sidebar form.woocommerce-product-search{
+  border: none;
+}
 .nav-previous{
   clear:both;
 }
@@ -1232,13 +1308,11 @@ h2#reply-title {
   padding:0; 
 }
 .content-vw ul{
-  list-style:none;
   margin:0 10px 0 0;
   padding:10px 0 0; 
   font-size:16px;
 }
 .content-vw ol{
-  list-style: none;
   margin:0 15px 0 0;
   padding:10px 0 0 0; 
   font-size:16px;
@@ -1463,9 +1537,6 @@ a.checkout-button.button.alt.wc-forward {
   text-transform: uppercase;
   font-weight: bold;
 }
-.woocommerce .star-rating {
-  margin: 0 auto 10px !important;
-}
 .woocommerce span.onsale{
   background: #010203;
   padding: 0;
@@ -1488,7 +1559,7 @@ h2.woocommerce-loop-product__title,
   font-size: 15px
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
-  margin-bottom: 5px;
+  margin-bottom: 5px !important;
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
   background: #88d055;
@@ -1505,7 +1576,7 @@ h2.woocommerce-loop-product__title,
   color: #fff;
 }
 .woocommerce .quantity .qty {
-  width: 7em;
+  width: 6em;
   padding: 12px;
   border: solid 1px #010203;
   color: #010203;
@@ -1562,7 +1633,54 @@ span.posted_in {
 nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-MyAccount-content a, .woocommerce-info a, .woocommerce-privacy-policy-text a, td.product-name a, a.shipping-calculator-button{
   text-decoration: none !important;
 }
-
+.woocommerce div.product .product_title{
+  font-size: 30px;
+}
+.woocommerce .star-rating span, .woocommerce p.stars a{
+  color: #ffd400;
+}
+.woocommerce div.product .woocommerce-product-rating{
+  margin-bottom: 5px;
+}
+.woocommerce-Reviews #comments p{
+  float: none;
+}
+.woocommerce #comments ol li{
+  padding: 0px !important;
+}
+.woocommerce #reviews #comments h2{
+  font-size: 25px;
+}
+.woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img{
+  width: 50px;
+}
+.select2-container--default .select2-selection--single , input#billing_phone{
+  padding: 10px 0px;
+  border-radius: 0px;
+}
+.select2-container .select2-selection--single, .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 45px;
+}
+h3#order_review_heading{
+  margin-top: 10px;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  width: 29%;
+}
+section.related.products h2 {
+  text-align: right;
+  margin: 10px 0;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title{
+  text-align: center;
+  padding: 0
+}
+.woocommerce .products .star-rating{
+  margin: 10px auto;
+}
+.woocommerce .star-rating{
+  font-size: 15px;
+}
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width:720px) {
   #slider .inner_carousel,.logo,
@@ -1618,6 +1736,11 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
     border-bottom: 1px solid #fff;
     text-decoration:none !important;
   } 
+}
+@media screen and (max-width: 768px){
+  .related.products ul li {
+    width: 48% !important;
+  }
 }
 @media screen and (max-width: 424px){
   #slider .carousel-caption {
@@ -1823,7 +1946,6 @@ nav.woocommerce-MyAccount-navigation ul li a, .woocommerce-account .woocommerce-
     text-decoration:none !important;
   } 
 }
-
 @media screen and (min-width: 1024px) and (max-width: 1199px){
   .top-btn a{
     padding:12px 9px;

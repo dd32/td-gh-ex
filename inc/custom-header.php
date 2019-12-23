@@ -10,7 +10,7 @@ function automotive_centre_custom_header_setup() {
 		'default-text-color'     => 'fff',
 		'header-text' 			 =>	false,
 		'width'                  => 1600,
-		'height'                 => 184,
+		'height'                 => 183,
 		'wp-head-callback'       => 'automotive_centre_header_style',
 	) ) );
 }
