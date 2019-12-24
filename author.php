@@ -57,7 +57,7 @@ get_header();
 							<div class="row">
 								<div class="col-md-3">
 									<div class="avatar-part">
-										<?php printf( ' <img src="%1$s" alt="%2$s">', esc_url( get_avatar_url( get_the_author_meta( 'ID' ) ) ), esc_html( get_the_author() ) ); ?>
+										<?php printf( ' <img src="%1$s" alt="%2$s">', esc_url( get_avatar_url( get_the_author_meta( 'ID' ) ) ), esc_attr( get_the_author() ) ); ?>
 									</div>
 								</div>
 

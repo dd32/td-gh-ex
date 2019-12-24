@@ -82,11 +82,11 @@ if ( post_password_required() ) {
 				'author'  =>
 					'<div class="col-lg-4"><div class="comment-form-author form-comment">' .
 					'<label for="author">' . esc_html__( 'Name', 'aari' ) . '</label> ' .
-					'<input id="author" name="author" type="text" value="' . esc_html( $commenter['comment_author'] ) .
+					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 					'" size="30" /></div></div>',
 				'email'   =>
 					'<div class="col-lg-4"><div class="comment-form-email form-comment"><label for="email">' . esc_html__( 'Email', 'aari' ) . '</label> ' .
-					'<input id="email" name="email" type="text" value="' . sanitize_email( $commenter['comment_author_email'] ) .
+					'<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
 					'" size="30" /></div></div>',
 				'url'     =>
 					'<div class="col-lg-4"><div class="comment-form-url form-comment"><label for="email">' . esc_html__( 'Website', 'aari' ) . '</label>' .

@@ -148,6 +148,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 == Changelog ==
 
+= 2.2.6 - December 25 2019 =
+* Bug fix
+
 = 2.2.5 - November 20 2019 =
 * Bug fix
 * add yoast breadcrumb support

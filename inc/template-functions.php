@@ -173,21 +173,6 @@ add_filter(
 
 
 /*
- * Remove migrate js
- */
-
-function aari_dequeue_jquery_migrate( $scripts ) {
-	if ( ! is_admin() && ! empty( $scripts->registered['jquery'] ) ) {
-		$scripts->registered['jquery']->deps = array_diff(
-			$scripts->registered['jquery']->deps,
-			array( 'jquery-migrate' )
-		);
-	}
-}
-
-add_action( 'wp_default_scripts', 'aari_dequeue_jquery_migrate' );
-
-/*
  * create copyright info
  */
 
