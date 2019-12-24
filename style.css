@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/archie
 Author: Theme Palace
 Author URI: https://themepalace.com
 Description: Archie, with its aesthetically pleasant and modern looking design is a multipurpose WordPress theme fully capable of handling the needs and requirements of enormously vast range of websites, from personal to corporate but is particularly suited for the needs of people who want to start their blog, archietectural firms, interior design firms, landscaping firms, entertainment business and engineering firms that wish to establish their online presence. The theme is beautifully crafted, clean, easy to use, responsive, features different layouts with sidebar position and allows unlimited color selection. It has been designed for everybody with or without previous coding experience to effectively and helps to speedily put together polished, professional quality websites without having to so much as peek at a single line of code.
-Version: 1.1.2
+Version: 1.1.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: archie
@@ -1325,6 +1325,9 @@ table tbody {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 50px;
     padding-top: 50px;
+}
+#secondary .widget ul li a:hover {
+    text-decoration: underline;
 }
 #secondary .widget-title {
     text-transform: uppercase;

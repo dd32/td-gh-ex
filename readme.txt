@@ -4,8 +4,8 @@ Contributors: themepalace
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments, featured-images, footer-widgets, left-sidebar, editor-style, right-sidebar, full-width-template, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-logo, featured-image-header, blog, portfolio, entertainment
 
 Requires at least: 4.7
-Tested up to: 5.2.2
-Stable tag: 1.1.2
+Tested up to: 5.3.2
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,9 @@ https://demo.hamyarwp.com/archie/
 	One Click Demo Import is recommended to extract demo data for initial setup.
 
 == Changelog ==
+
+= 1.1.3 - Dec 24 2019 =
+* Updated widget css
 
 = 1.1.2 - Dec 6 2019 =
 * Updated widget css
