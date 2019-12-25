@@ -24,7 +24,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 
 	//TP Color Option
 	$wp_customize->add_section('adventure_travelling_color_option',array(
-        'title'         => __('TP Color Settings', 'adventure-travelling'),
+        'title'         => __('TP Color Option', 'adventure-travelling'),
         'panel' => 'adventure_travelling_panel_id'
     ) );
 
@@ -47,9 +47,9 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	    'settings' => 'adventure_travelling_tp_color_option_link',
   	)));
 
-	//TP General Settings
+	//TP General Option
 	$wp_customize->add_section('adventure_travelling_tp_general_settings',array(
-        'title'         => __('TP General Settings', 'adventure-travelling'),
+        'title'         => __('TP General Option', 'adventure-travelling'),
         'panel' => 'adventure_travelling_panel_id'
     ) );
 
@@ -106,6 +106,91 @@ function adventure_travelling_customize_register( $wp_customize ) {
         ),
 	) );
 
+	//TP Blog Option
+	$wp_customize->add_section('adventure_travelling_blog_option',array(
+        'title' => __('TP Blog Option', 'adventure-travelling'),
+        'panel' => 'adventure_travelling_panel_id'
+    ) );
+
+    $wp_customize->add_setting('adventure_travelling_remove_date',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_remove_date',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Date Option','adventure-travelling'),
+       'section' => 'adventure_travelling_blog_option',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_remove_author',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_remove_author',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Author Option','adventure-travelling'),
+       'section' => 'adventure_travelling_blog_option',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_remove_comments',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_remove_comments',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Comment Option','adventure-travelling'),
+       'section' => 'adventure_travelling_blog_option',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_remove_tags',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_remove_tags',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Tags Option','adventure-travelling'),
+       'section' => 'adventure_travelling_blog_option',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_remove_read_button',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_remove_read_button',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Read More Button','adventure-travelling'),
+       'section' => 'adventure_travelling_blog_option',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_read_more_text',array(
+		'default'=> 'Read More',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('adventure_travelling_read_more_text',array(
+		'label'	=> __('Edit Button Text','adventure-travelling'),
+		'section'=> 'adventure_travelling_blog_option',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting( 'adventure_travelling_excerpt_count', array(
+		'default'              => 35,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'adventure_travelling_excerpt_count', array(
+		'label'       => esc_html__( 'Edit Excerpt Limit','adventure-travelling' ),
+		'section'     => 'adventure_travelling_blog_option',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	// Top bar Section
 	$wp_customize->add_section( 'adventure_travelling_topbar', array(
     	'title'      => __( 'Contact Details', 'adventure-travelling' ),
     	'description' => __( 'Add your contact details', 'adventure-travelling' ),
