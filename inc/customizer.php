@@ -24,7 +24,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
 	//TP Color Option
 	$wp_customize->add_section('automobile_hub_color_option',array(
-        'title'         => __('TP Color Settings', 'automobile-hub'),
+        'title'         => __('TP Color Option', 'automobile-hub'),
         'panel' => 'automobile_hub_panel_id'
     ) );
 
@@ -49,7 +49,7 @@ function automobile_hub_customize_register( $wp_customize ) {
 
 	//Sidebar Position
 	$wp_customize->add_section('automobile_hub_tp_general_settings',array(
-        'title'         => __('TP General Settings', 'automobile-hub'),
+        'title'         => __('TP General Option', 'automobile-hub'),
         'panel' => 'automobile_hub_panel_id'
     ) );
 
@@ -106,6 +106,91 @@ function automobile_hub_customize_register( $wp_customize ) {
         ),
 	) );
 
+	//TP Blog Option
+	$wp_customize->add_section('automobile_hub_blog_option',array(
+        'title' => __('TP Blog Option', 'automobile-hub'),
+        'panel' => 'automobile_hub_panel_id'
+    ) );
+
+    $wp_customize->add_setting('automobile_hub_remove_date',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_remove_date',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Date Option','automobile-hub'),
+       'section' => 'automobile_hub_blog_option',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_remove_author',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_remove_author',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Author Option','automobile-hub'),
+       'section' => 'automobile_hub_blog_option',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_remove_comments',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_remove_comments',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Comment Option','automobile-hub'),
+       'section' => 'automobile_hub_blog_option',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_remove_tags',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_remove_tags',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Tags Option','automobile-hub'),
+       'section' => 'automobile_hub_blog_option',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_remove_read_button',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_remove_read_button',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Read More Button','automobile-hub'),
+       'section' => 'automobile_hub_blog_option',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_read_more_text',array(
+		'default'=> 'Read More',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('automobile_hub_read_more_text',array(
+		'label'	=> __('Edit Button Text','automobile-hub'),
+		'section'=> 'automobile_hub_blog_option',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting( 'automobile_hub_excerpt_count', array(
+		'default'              => 35,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'automobile_hub_excerpt_count', array(
+		'label'       => esc_html__( 'Edit Excerpt Limit','automobile-hub' ),
+		'section'     => 'automobile_hub_blog_option',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	// Top Bar
 	$wp_customize->add_section( 'automobile_hub_topbar', array(
     	'title'      => __( 'Contact Details', 'automobile-hub' ),
     	'description' => __( 'Add your contact details', 'automobile-hub' ),
