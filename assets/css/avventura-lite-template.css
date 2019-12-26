@@ -745,6 +745,7 @@ nav#mainmenu ul li.current-menu-ancestor > a {
 	color:#d14a2b;
 }
 
+nav#mainmenu ul.children , 
 nav#mainmenu ul.sub-menu { 
 	opacity:0; 
 	position: absolute;
@@ -762,6 +763,7 @@ nav#mainmenu ul.sub-menu {
 	transition: opacity 0.3s ease 0s;
 }
 
+nav#mainmenu ul.children li , 
 nav#mainmenu ul.sub-menu li { 
 	position:relative; 
 	margin:0;
@@ -780,6 +782,7 @@ nav#mainmenu li li.focus > ul {
 	left: 100%; 
 }
 
+nav#mainmenu ul.children li a , 
 nav#mainmenu ul.sub-menu li a { 
 	text-decoration:none; 
 	text-align:left; 
@@ -791,6 +794,7 @@ nav#mainmenu ul.sub-menu li a {
 	line-height:inherit !important 
  }
 
+nav#mainmenu ul.children li ul:before ,
 nav#mainmenu ul.sub-menu li ul:before {
 	display:none;
 }
