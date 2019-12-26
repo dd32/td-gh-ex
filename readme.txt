@@ -4,7 +4,7 @@ Contributors: ali_siddique
 Tags: blog, e-commerce, one-column, two-columns, right-sidebar, full-width-template, sticky-post, translation-ready
 
 Requires at least: WordPress 4.9.10
-Tested up to: WordPress 5.1.1
+Tested up to: WordPress 5.3.2
 Version: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

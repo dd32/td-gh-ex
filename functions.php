@@ -6,11 +6,11 @@
 
 //  Theme cache busting
 //  =================================================================
-    if ( site_url() == "http://localhost/LEARN_WP/THEME_DEV" ){
-        define ( "VERSION", time() );
-    }else{
+    if ( WP_DEBUG === true ):
         define ( "VERSION", wp_get_theme()->get( "Version" ) );
-    }
+    else:
+        define ( "VERSION", time() );
+    endif;
 
 //  Theme setup and theme supports
 //  =================================================================
