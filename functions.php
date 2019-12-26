@@ -41,7 +41,6 @@ function appdetail_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'appdetail-promo-post', 360, 261, array( 'top', 'bottom' ) ); //300 pixels wide (and unlimited height)
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -64,17 +63,6 @@ function appdetail_setup() {
 	 *
 	 * See: https://codex.wordpress.org/Post_Formats
 	 */
-	
-
-	$defaults = array(
-		'default-image'          => esc_url(get_template_directory_uri()) .'/assets/images/header.jpg',
-		'width'                  => 1920,
-		'height'                 => 600,
-		'uploads'                => true,
-		'wp-head-callback'       => 'appdetail_header_style',
-	);
-	add_theme_support( 'custom-header', $defaults );
-
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'appdetail_custom_background_args', array(
 		'default-color' => 'ffffff',
@@ -93,23 +81,6 @@ add_action( 'after_setup_theme', 'appdetail_setup' );
             'flex-height' => true,
             'flex-width' => true
         ) );
-/**
-	 * Styles the header text color displayed on the page header title
-	 */
-	function appdetail_header_style()
-	{
-		//Check if user has defined any header image.
-		if ( get_header_image() ) :
-		?>
-			<style type="text/css">				
-				.inner-banner-area{
-					background-image:url('<?php header_image(); ?>');
-				}				
-			</style>
-		<?php
-		endif;
-	}
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -283,8 +254,11 @@ require get_template_directory() . '/inc/theme-function.php';
  * Load hooks files
 */
 require get_template_directory() . '/inc/hooks/header.php';
-
 /**
  * Load hooks files
 */
 require get_template_directory() . '/inc/hooks/footer.php';
+/**
+ * Load custom Header Files
+*/
+require get_template_directory() . '/inc/custom-header.php';

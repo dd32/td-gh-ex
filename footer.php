@@ -13,6 +13,7 @@
 	 *
 	 * @hooked appdetail_container_closing_action - 10
 	 */
+  	
 	do_action( 'appdetail_container_closing_action' );
 
 

@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-screenshot-category', array(
     'priority'       => 160,
@@ -13,7 +13,7 @@ $wp_customize->add_section( 'appdetail-screenshot-category', array(
 /* screenshot cat selection */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-screenshot-cat]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['appdetail-screenshot-cat'],
+    'default'			=> $appdetail_defaults['appdetail-screenshot-cat'],
     'sanitize_callback' => 'absint'
 ) );
 
@@ -35,7 +35,7 @@ $wp_customize->add_control(
 /* screenshot Title Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-screenshot-title]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-screenshot-title'],
+    'default'           => $appdetail_defaults['appdetail-screenshot-title'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -51,7 +51,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-screenshot-title]'
 /* screenshot Decsription Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-screenshot-description]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-screenshot-description'],
+    'default'           => $appdetail_defaults['appdetail-screenshot-description'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 

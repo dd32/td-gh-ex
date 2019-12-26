@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-blog-category', array(
     'priority'       => 160,
@@ -13,7 +13,7 @@ $wp_customize->add_section( 'appdetail-blog-category', array(
 /* blog cat selection */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-blog-cat]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['appdetail-blog-cat'],
+    'default'			=> 1,
     'sanitize_callback' => 'absint'
 ) );
 
@@ -35,7 +35,7 @@ $wp_customize->add_control(
 /* blog Title Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-blog-title]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-blog-title'],
+    'default'           => $appdetail_defaults['appdetail-blog-title'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -51,7 +51,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-blog-title]', arra
 /* blog Decsription Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-blog-description]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-blog-description'],
+    'default'           => $appdetail_defaults['appdetail-blog-description'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 

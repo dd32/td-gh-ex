@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-feature-category', array(
     'priority'       => 160,
@@ -13,7 +13,7 @@ $wp_customize->add_section( 'appdetail-feature-category', array(
 /* feature cat selection */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-feature-cat]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['appdetail-feature-cat'],
+    'default'			=> $appdetail_defaults['appdetail-feature-cat'],
     'sanitize_callback' => 'absint'
 ) );
 
@@ -34,7 +34,7 @@ $wp_customize->add_control(
 /* Slider Image URL */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-slider-background-image]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-slider-background-image'],
+    'default'           => $appdetail_defaults['appdetail-slider-background-image'],
     'sanitize_callback' => 'esc_url_raw',
 ) );
 
@@ -50,7 +50,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-slider-background-
 /* Slider Title Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-slider-title]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-slider-title'],
+    'default'           => $appdetail_defaults['appdetail-slider-title'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -66,7 +66,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-slider-title]', ar
 /* Slider Decsription Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-slider-description]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-slider-description'],
+    'default'           => $appdetail_defaults['appdetail-slider-description'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -82,7 +82,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-slider-description
 /* Slider Video URL */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-slider-video-url]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-slider-video-url'],
+    'default'           => $appdetail_defaults['appdetail-slider-video-url'],
     'sanitize_callback' => 'esc_url_raw',
 ) );
 
@@ -97,7 +97,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-slider-video-url]'
 /* Slider Read More Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-slider-read-more]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['appdetail-slider-read-more'],
+    'default'			=> $appdetail_defaults['appdetail-slider-read-more'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 

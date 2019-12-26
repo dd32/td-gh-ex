@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-testimonial-category', array(
     'priority'       => 160,
@@ -13,7 +13,7 @@ $wp_customize->add_section( 'appdetail-testimonial-category', array(
 /* testimonial cat selection */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-testimonial-cat]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['appdetail-testimonial-cat'],
+    'default'			=> $appdetail_defaults['appdetail-testimonial-cat'],
     'sanitize_callback' => 'absint'
 ) );
 
@@ -35,7 +35,7 @@ $wp_customize->add_control(
 /* testimonial Title Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-testimonial-title]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-testimonial-title'],
+    'default'           => $appdetail_defaults['appdetail-testimonial-title'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -51,7 +51,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-testimonial-title]
 /* testimonial Decsription Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-testimonial-description]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-testimonial-description'],
+    'default'           => $appdetail_defaults['appdetail-testimonial-description'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 

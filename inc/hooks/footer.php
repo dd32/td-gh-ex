@@ -148,12 +148,7 @@ if ( ! function_exists( 'appdetail_footer_site_info' ) ) :
                 <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'appdetail' ) ); ?>"><?php printf( 
                    /* translators: 1: copyright. */
                     esc_html__( 'Proudly powered by %s', 'appdetail' ), 'WordPress' ); ?></a>
-                <span class="sep"> | </span>
-                <?php printf( 
-                    /* translators: 1: Theme name. */
-                    esc_html__( 'Theme: %1$s by %2$s.', 'appdetail' ), 'appdetail', '<a href="#" target="_blank"> Themes</a>' ); ?>	
 			</div>
-		
 		</div><!-- .site-info -->
 <?php
     }

@@ -375,20 +375,7 @@ if ( !function_exists('appdetail_posts_navigation') ) :
         if( 'default' == $appdetail_pagination_option ){
             the_posts_navigation();
         }
-        else{
-            echo"<ul class='pagination'>";
-            global $wp_query;
-            $big = 999999999; // need an unlikely integer
-            echo paginate_links(array(
-                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format' => '?paged=%#%',
-                'current' => max(1, get_query_var('paged')),
-                'total' => $wp_query->max_num_pages,
-                'prev_text' => __('&laquo; Prev', 'appdetail'),
-                'next_text' => __('Next &raquo;', 'appdetail'),
-            ));
-            echo "</ul>";
-        }
+     
     }
 endif;
 add_action( 'appdetail_action_navigation', 'appdetail_posts_navigation', 10 );

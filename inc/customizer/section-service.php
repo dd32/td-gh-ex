@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-service-category', array(
     'priority'       => 160,
@@ -13,7 +13,7 @@ $wp_customize->add_section( 'appdetail-service-category', array(
 /* service cat selection */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-service-cat]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['appdetail-service-cat'],
+    'default'			=> $appdetail_defaults['appdetail-service-cat'],
     'sanitize_callback' => 'absint'
 ) );
 
@@ -35,7 +35,7 @@ $wp_customize->add_control(
 /* service Title Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-service-title]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-service-title'],
+    'default'           => $appdetail_defaults['appdetail-service-title'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 
@@ -51,7 +51,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-service-title]', a
 /* service Decsription Text */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-service-description]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-service-description'],
+    'default'           => $appdetail_defaults['appdetail-service-description'],
     'sanitize_callback' => 'sanitize_text_field',
 ) );
 

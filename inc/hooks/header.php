@@ -105,35 +105,27 @@ if ( ! function_exists( 'appdetail_header_lower_section' ) ) :
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only"><?php __('Toggle navigation','appdetail'); ?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <?php
-                    if (has_custom_logo()) { ?>
-
+                    if ( has_custom_logo()) { ?>
                         <a class="navbar-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
-                            <?php  the_custom_logo();?>
+                            <?php  the_custom_logo(); ?>
                         </a>
                     <?php } 
                     else {
                         ?>  
                         <div class="togo-text">
                             <?php
-                            if ( is_front_page() && is_home() ) : ?>
+                            if (display_header_text()==true){ 
+                           ?>
                                 <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                            <?php else : ?>
-                                <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                                <?php
-                            endif;
-                            $description = get_bloginfo( 'description', 'display' );
-                            if ( $description || is_customize_preview() ) : ?>
-                                <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                                <?php
-                            endif; ?>
+                                <p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
                         </div>
-                    <?php } ?>                    
+                    <?php } } ?>                    
                 </div>
                 <div class="collapse navbar-collapse nav navbar-nav navbar-right" id="menu">
                     <?php 
@@ -153,17 +145,7 @@ if ( ! function_exists( 'appdetail_header_lower_section' ) ) :
                 </div>
             </div>
         </nav>
-        <script type="text/javascript">
-    /*----------------------------------------------
-    ----------- Slick Nav  --------------------
-    -------------------------------------------------*/
-    if (jQuery('#menu').length) {
-        jQuery('#menu').slicknav({
-            brand: '<a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <?php the_custom_logo(); ?></a>',
-            appendTo: 'header',
-        });
-    }
-      </script>
+
             <!-- menubar ends -->
     </header>
     <!-- ====== End Header Section ====== -->
@@ -385,8 +367,12 @@ if ( ! function_exists( 'appdetail_header_end_wrapper' ) ) :
      * @since 1.0.0
      */
     function appdetail_header_end_wrapper() { ?>
+<?php if(is_home() || is_front_page () ) { ?>
 
+        <div id="content" class="site-content s-pad last-front">
+<?php } else { ?>
     <div id="content" class="site-content s-pad">
+    <?php } ?>
     			<div class="container">
     				<div class="row">
 

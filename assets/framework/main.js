@@ -145,6 +145,16 @@ $(document).ready(function() {
       });
   }
 
+
+$(window).load(function(){
+   var logo_path = jQuery('.navbar-logo').html();
+  $('#menu').slicknav({
+      appendTo:'header',
+      removeClasses:true,
+      brand: logo_path
+  });
+  });
+
 	 
 	/*=======================================
 	 mouse move animation

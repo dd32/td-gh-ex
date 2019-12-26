@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for color Option*/
     $wp_customize->add_section( 'appdetail-color-option', array(
 
@@ -13,7 +13,7 @@ global $wp_customize, $defaults;
     /*Default Color Option */
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-default-color]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-default-color'],
+        'default'           => $appdetail_defaults['appdetail-default-color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
 
@@ -28,7 +28,7 @@ global $wp_customize, $defaults;
     /*Site title and Tagline Color Option */
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-title-tagline-color]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-title-tagline-color'],
+        'default'           => $appdetail_defaults['appdetail-title-tagline-color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
 
@@ -42,7 +42,7 @@ global $wp_customize, $defaults;
     /*Site Tagline Color Option */
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-tagline-color]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-tagline-color'],
+        'default'           => $appdetail_defaults['appdetail-tagline-color'],
         'sanitize_callback' => 'sanitize_hex_color'
     ) );
 

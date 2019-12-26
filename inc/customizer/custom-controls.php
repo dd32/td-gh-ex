@@ -1,5 +1,5 @@
 <?php
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'appdetail_Customize_Category_Dropdown_Control' )):
     /**
      * Custom Control for category dropdown

@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for footer options*/
     $wp_customize->add_section( 'appdetail-footer-option', array(
         'priority'       => 170,
@@ -12,7 +12,7 @@ global $wp_customize, $defaults;
 
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-footer-copyright]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-footer-copyright'],
+        'default'           => $appdetail_defaults['appdetail-footer-copyright'],
         'sanitize_callback' => 'wp_kses_post'
     ) );
 
@@ -29,7 +29,7 @@ global $wp_customize, $defaults;
 
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-footer-totop]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-footer-totop'],
+        'default'           => $appdetail_defaults['appdetail-footer-totop'],
         'sanitize_callback' => 'appdetail_sanitize_checkbox'
     ) );
 

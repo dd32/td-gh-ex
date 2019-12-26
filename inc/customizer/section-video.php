@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for category section in front page*/
 $wp_customize->add_section( 'appdetail-video-section', array(
     'priority'       => 160,
@@ -11,7 +11,7 @@ $wp_customize->add_section( 'appdetail-video-section', array(
 /* Video Image URL */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-video-background-image]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-video-background-image'],
+    'default'           => $appdetail_defaults['appdetail-video-background-image'],
     'sanitize_callback' => 'esc_url_raw',
 ) );
 
@@ -27,7 +27,7 @@ $wp_customize->add_control('appdetail_theme_options[appdetail-video-background-i
 /* Video URL */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-video-url]', array(
     'capability'        => 'edit_theme_options',
-    'default'           => $defaults['appdetail-video-url'],
+    'default'           => $appdetail_defaults['appdetail-video-url'],
     'sanitize_callback' => 'esc_url_raw',
 ) );
 

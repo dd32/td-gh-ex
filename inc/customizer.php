@@ -53,7 +53,7 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             'appdetail-service-cat'                  => 0,
             'appdetail-screenshot-cat'               => 0,
             'appdetail-testimonial-cat'              => 0,
-            'appdetail-blog-cat'                     => 0,
+            'appdetail-blog-cat'                     => 1,
             'appdetail-promo-cat'                    => 0,
             /***********************************Slider Section Setting**********************************/
             'appdetail-slider-background-image'      => esc_url('http://localhost/consulton/wp-content/uploads/2019/04/business_professional_teamwork_corporate_meeting_businessman_business_people_group-649367-1.jpg','appdetail'),
@@ -85,7 +85,7 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             'appdetail-read-more-text'               => esc_html__('read more','appdetail'),
             'appdetail-blog-pagination-type-options' => 'default',
             'appdetail-default-color'                => '#5424bf', 
-              'appdetail-header-disable'               => 0,
+            'appdetail-header-disable'               => 0,
             'appdetail-title-tagline-color'          => '#fff',
             'appdetail-tagline-color'                => '#fff', 
 );
@@ -102,10 +102,10 @@ function appdetail_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
     $wp_customize->get_setting( 'custom_logo' )->transport      = 'refresh';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'refresh';
 
     /*defaults options*/
-    $defaults = appdetail_get_theme_options();
+    $appdetail_defaults = appdetail_get_theme_options();
 
     $wp_customize->add_panel( 'appdetail_panel', array(
         'priority' => 30,

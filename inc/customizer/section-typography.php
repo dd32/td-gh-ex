@@ -1,5 +1,5 @@
 <?php 
-global $wp_customize, $defaults;
+global $wp_customize, $appdetail_defaults;
 /*adding sections for Typography Option*/
     $wp_customize->add_section( 'appdetail-typography-option', array(
 
@@ -13,7 +13,7 @@ global $wp_customize, $defaults;
     /*Typography Option For URL*/
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-font-family-url]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-font-family-url'],
+        'default'           => $appdetail_defaults['appdetail-font-family-url'],
         'sanitize_callback' => 'esc_url_raw'
     ) );
 
@@ -37,7 +37,7 @@ global $wp_customize, $defaults;
 
     $wp_customize->add_setting( 'appdetail_theme_options[appdetail-font-family-name]', array(
         'capability'        => 'edit_theme_options',
-        'default'           => $defaults['appdetail-font-family-name'],
+        'default'           => $appdetail_defaults['appdetail-font-family-name'],
         'sanitize_callback' => 'sanitize_text_field'
     ) );
 
