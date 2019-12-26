@@ -2,15 +2,6 @@
 
 function semperfi_navigation() {
     
-    function add_menu_attributes( $atts, $item, $args ) {
-        
-        $atts['itemprop'] = 'url';
-        return $atts;
-        
-    }
-
-    add_filter( 'nav_menu_link_attributes', 'add_menu_attributes', 10, 3 );
-    
     
     function semperfi_navigation_html() {
         
@@ -51,6 +42,16 @@ function semperfi_navigation() {
     }
     
     add_action( 'semperfi_do_action_assemble_customizer_array', 'semperfi_navigation_customizer_setup' );
+    
+    
+    function add_menu_attributes( $atts, $item, $args ) {
+        
+        $atts['itemprop'] = 'url';
+        return $atts;
+        
+    }
+
+    add_filter( 'nav_menu_link_attributes', 'add_menu_attributes', 10, 3 );
     
 }
 
