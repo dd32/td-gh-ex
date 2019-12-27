@@ -1637,7 +1637,7 @@ function apex_business_typography_settings_setup( $wp_customize ) {
       'capability'        => 'edit_theme_options',
       'default'           => 'inherit',
       'transport'         => 'postMessage',
-      'sanitize_callback' => 'apex_business_sanitize_select ',
+      'sanitize_callback' => 'apex_business_sanitize_select',
     ) );
 
     $wp_customize->add_control(
