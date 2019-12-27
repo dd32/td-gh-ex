@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-m
 Requires at least: 4.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 0.0.14
+Stable tag: 0.0.15
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ Documentation
 https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 == Changelog ==
+
+= 0.0.15 - December 27 2019 =
+* Fixed bugs
 
 = 0.0.14 - December 20 2019 =
 * Fixed bugs pointed by theme reviewer
