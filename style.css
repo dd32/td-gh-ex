@@ -4,7 +4,7 @@ Theme URI: https://themeix.com/product/axiohost-multi-purpose-hosting-business-w
 Author: Themeix
 Author URI: https://themeix.com
 Description: Axiohost is a responsive hosting theme for the digital products authors. This theme is compatible with Gutenberg, Elementor as well as other page builder plugins which helps you to deliever your content smoothly. Though it is best for hosting website but you can use that theme for any other business or corporate website. There used Bootstrap 4 framework to make the frontend of that theme. You can customize the colors, fonts and other things easily. 
-Version: 1.0.16
+Version: 1.0.17
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 Text Domain: axiohost
@@ -6306,6 +6306,10 @@ div#site-header-menu {
 		border-bottom-width: 0;
 	}
 
+.main-navigation ul ul li:last-child {
+    border-bottom: 1px solid #d1d1f1;
+}	
+
 	.main-navigation ul ul a {
 		white-space: normal;
 		width: 12.6875em;
@@ -6397,5 +6401,9 @@ nav#site-navigation a {
 }
 .main-navigation a {
 	color: #444;
+}
+.menu-main-menu-container {
+    box-shadow: 0 10px 30px -24px;
+    -webkit-box-shadow: 0 10px 30px -24px;
 }
 }

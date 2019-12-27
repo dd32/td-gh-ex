@@ -4,7 +4,7 @@ Contributors: themeix
 Tags: blog,block-styles, right-sidebar, footer-widgets, sticky-post, theme-options, full-width-template, custom-background, custom-logo, custom-menu, featured-images, flexible-header, threaded-comments, translation-ready
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 1.0.16
+Stable tag: 1.0.17
 Requires PHP: 5.6
 Author URI: https://themeix.com/
 Theme URI: https://themeix.com/product/axiohost-multi-purpose-hosting-business-wordpress-theme/
@@ -33,8 +33,12 @@ Axiohost is distributed under the terms of the GNU General Public License v2
 Axiohost includes support for contact form 7, Elementor Page Builder, Ajax Domain Checker, Redux Framework, Kirki Framework
 
 == Changelog ==
-= 1.0.13 =
+= 1.0.17
+* Menu CSS improved 
+
+= 1.0.13 - 1.0.16 =
 * Customizer Bug Fixed
+* Other Bug Fixed
 
 = 1.0.12 =
 * Licensing information added
