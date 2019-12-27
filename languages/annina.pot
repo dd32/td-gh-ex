@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2019-11-15 15:43+0100\n"
-"PO-Revision-Date: 2019-11-15 15:43+0100\n"
+"POT-Creation-Date: 2019-12-27 17:49+0100\n"
+"PO-Revision-Date: 2019-12-27 17:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -79,6 +79,10 @@ msgstr ""
 
 #: comments.php:81
 msgid "Email *"
+msgstr ""
+
+#: comments.php:82
+msgid "Website *"
 msgstr ""
 
 #: comments.php:82
@@ -612,6 +616,10 @@ msgstr ""
 
 #: inc/pro-button/class-customize.php:72
 msgid "More Info"
+msgstr ""
+
+#: inc/template-tags.php:23
+msgid "Posts"
 msgstr ""
 
 #: inc/template-tags.php:24

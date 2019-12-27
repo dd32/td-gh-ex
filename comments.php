@@ -77,9 +77,9 @@ if ( post_password_required() ) {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
 	$fields =  array(
-		'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Name *'  , 'annina' ) . '"/></p>',
-		'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Email *'  , 'annina' ) . '"/></p>',
-		'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Website'  , 'annina' ) . '"/></p>',
+		'author' => '<p class="comment-form-author"><label for="author"><span class="screen-reader-text">' . __( 'Name *'  , 'annina' ) . '</span></label><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Name *'  , 'annina' ) . '"/></p>',
+		'email'  => '<p class="comment-form-email"><label for="email"><span class="screen-reader-text">' . __( 'Email *'  , 'annina' ) . '</span></label><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Email *'  , 'annina' ) . '"/></p>',
+		'url'    => '<p class="comment-form-url"><label for="url"><span class="screen-reader-text">' . __( 'Website *'  , 'annina' ) . '</span></label><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Website'  , 'annina' ) . '"/></p>',
 	);
 	$required_text = __(' Required fields are marked ', 'annina').' <span class="required">*</span>';
 	?>
@@ -95,7 +95,7 @@ if ( post_password_required() ) {
 		'title_reply_to' => __( 'Leave a Reply to %s'  , 'annina' ),
 		'cancel_reply_link' => __( 'Cancel reply'  , 'annina' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'annina' ),
-		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . esc_attr__( 'Comment *'  , 'annina' ) . '"></textarea></p>'
+		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><label for="comment"><span class="screen-reader-text">' . __( 'Comment *'  , 'annina' ) . '</span></label><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . esc_attr__( 'Comment *'  , 'annina' ) . '"></textarea></p>'
 	)); 
 	?>
 
