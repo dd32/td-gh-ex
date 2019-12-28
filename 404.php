@@ -1,60 +1,43 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package Atomy
- */
+* 404.php
+*
+* @author    Franchi Design
+* @package   Atomy
+* @version   1.0.2
+*/
 
-get_header();
+get_header('404');
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'atomy' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'atomy' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'atomy' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$atomy_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'atomy' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$atomy_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<section class="at-404-page <?php echo esc_attr(get_theme_mod('atomy_enable_full_width_body','container') )?>" style="background: url('<?php echo esc_url( get_theme_mod( 'at_404_page_image' ) ); ?>') no-repeat center; background-size:cover;">
+</section>
+	<div class="container mt-3">
+      <div class="at-main text-center">
+        <span>
+			<?php echo esc_html('Oops!','atomy');?>
+		</span>
+		<h1><?php echo esc_html('404 That page can&rsquo;t be found.','atomy');?></h1>
+		<hr class="at-hr-404-page">
+		<p><?php echo esc_html('It looks like nothing was found at this location. Maybe try a search?','atomy');?></p>
+		<div class="container">	
+		<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+       <?php
+         get_search_form();
+       ?>
+	   </div>
+	   <div class="col-md-4"></div>
+	   </div>
+	   </div>
+       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+          <button class="button at-gen-act mt-5" style="border:none">
+		      <?php esc_html_e('Go Back To Home','atomy');?> 
+		  </button>
+	  </a>     
+</div>
+</div>
 
 <?php
-get_footer();
+get_footer('404');

@@ -1,32 +1,23 @@
 <?php
 /**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Atomy
- */
+* comments.php
+*
+* @author    Franchi Design
+* @package   Atomy
+* @version   1.0.2
+*/
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
 if ( post_password_required() ) {
 	return;
 }
 ?>
 
-<div id="comments" class="comments-area">
-
+<div id="comments" class="comments-area <?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?>">
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments-title mt-5 mb-5">
 			<?php
 			$atomy_comment_count = get_comments_number();
 			if ( '1' === $atomy_comment_count ) {
@@ -45,31 +36,34 @@ if ( post_password_required() ) {
 			}
 			?>
 		</h2><!-- .comments-title -->
-
 		<?php the_comments_navigation(); ?>
-
 		<ol class="comment-list">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
+				'style'      => 'ol', 
 				'short_ping' => true,
 			) );
 			?>
 		</ol><!-- .comment-list -->
-
 		<?php
 		the_comments_navigation();
-
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'atomy' ); ?></p>
+			<p class="no-comments">
+			 <?php esc_html_e('Comments are closed.','atomy');?>
+			</p>
 			<?php
 		endif;
-
 	endif; // Check for have_comments().
-
-	comment_form();
+	$comments_args = array(
+		'submit_button' => __('<button name="%1$s" type="submit" id="%2$s" class="button post-readmore at-gen-act" value="%4$s">Post Comment</button>','atomy'),
+	);
+	comment_form($comments_args);
 	?>
-
 </div><!-- #comments -->
+
+
+
+
+

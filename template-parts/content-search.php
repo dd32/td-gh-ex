@@ -1,35 +1,62 @@
 <?php
 /**
- * Template part for displaying results in search pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Atomy
- */
-
+* content-search.php
+* @author    Franchi Design
+* @package   Atomy
+* @version   1.0.2
+*/
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+   <div class="<?php echo esc_attr(get_theme_mod('atomy_enable_full_width_body','container'))?>">
+     <div class="row">
+       <div class="col-md-12 mb-4">
+         <?php atomy_post_thumbnail(); ?>
+      </div>
+      <div class="col-md-12 at-archive-padding">
+       <header class="entry-header">
+		<?php
+		if ( is_singular() ) :
+			the_title( '<h1 class="entry-title mb-4">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title mb-4"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			atomy_posted_on();
-			atomy_posted_by();
+		if ( 'post' === get_post_type() ) :
 			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
+			<div class="entry-meta">
+			<i class="far fa-calendar mr-2"></i> <?php echo get_the_date (); ?><span class="at-div-icon-blog"></span>
+			<i class="fas fa-user mr-2"></i> <?php the_author(); ?><span class="at-div-icon-blog"></span>
+			<i class="fas fa-comment mr-2"></i><?php comments_number( 'Comments (0)', 'Comment (1)', 'Comments (%)' ); ?>
+			 <?php
+              //atomy_posted_on();
+				//atomy_posted_by();
+				?>	
+			</div><!-- .entry-meta -->
+		<?php endif;?>
 	</header><!-- .entry-header -->
-
-	<?php atomy_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php atomy_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<div class="entry-content">
+		<?php
+		the_content( sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'atomy' ),
+				array(
+					'span'  => array(
+					'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		) );
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'atomy' ),
+			'after'  => '</div>',
+		) );
+		?>	
+	</div><!-- .entry-content -->
+</div>
+</div>
+</div>
 </article><!-- #post-<?php the_ID(); ?> -->
+

@@ -1,11 +1,11 @@
 <?php
 /**
- * Custom template tags for this theme
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package Atomy
- */
+* template-tags.php
+*
+* @author    Franchi Design
+* @package   Atomy
+* @version   1.0.2
+*/
 
 if ( ! function_exists( 'atomy_posted_on' ) ) :
 	/**
@@ -122,21 +122,15 @@ if ( ! function_exists( 'atomy_post_thumbnail' ) ) :
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
-
 		if ( is_singular() ) :
 			?>
-
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
-
+				<?php the_post_thumbnail('atomy_big', array( 'class' => 'images at-img-single img-fluid mb-4' )); ?>
 		<?php else : ?>
-
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
+				'alt'  => the_title_attribute( array(
+				'echo' => false,
 				) ),
 			) );
 			?>

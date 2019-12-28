@@ -1,16 +1,12 @@
 <?php
 /**
- * Functions which enhance the theme by hooking into WordPress
- *
- * @package Atomy
- */
+* template-functions.php
+*
+* @author    Franchi Design
+* @package   Atomy
+* @version   1.0.2
+*/
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
 function atomy_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {

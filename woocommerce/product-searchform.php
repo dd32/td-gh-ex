@@ -22,13 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <form class="at-search-form-header" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ) ?>">
-  <input type="search" class="form-control" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'atomy' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-  <span class="input-group-btn">
+  <input type="search" class="form-control" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field" placeholder="<?php esc_html_e('Search products&hellip;','atomy');?>" value="<?php echo get_search_query(); ?>" name="s" />
+<span class="input-group-btn">
   <button class="btn btn-secondary"><i class="fa fa-search"></i></button>
-                                </span>
+</span>
 </form>
 
 
-                               
+        
 
 
