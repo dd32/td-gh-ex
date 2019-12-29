@@ -257,17 +257,6 @@
     });
 
     /*-- DeopDown Menu --*/
-    $('.header-area .sub-menu').hide();
-    $('.header-area li').hover(
-        function() {
-            if ($(this).children('ul').size() > 0 && $(this).children().hasClass('sub-menu')) {
-                $(this).children().stop().slideDown(400);
-            }
-        },
-        function() {
-            $(this).children('.sub-menu').stop().slideUp(300);
-        }
-    );
     if ($(window).width() < 767) {
         $('.sub-menu').removeClass('sub-menu');
     }
@@ -314,21 +303,21 @@
     }
 
 
-	//Quickview
+	//nnfyquickview
 
 	//Add quick view box
 	$('body').append('<div class="woocommerce" id="nnfyquick-viewmodal"><button type="button" class="closeqv"><span class="ion-android-close"></span></button><div class="nnfymodal-dialog product"><div class="nnfymodal-content"><div class="nnfymodal-body ht-row"></div></div></div></div>');
 
 
 	//show quick view
-	$('.quickview').each(function(){
-	    var quickviewLink = $(this);
-	    var productID = quickviewLink.attr('data-quick-id');
-    	quickviewLink.on('click', function(event){
+	$('.nnfyquickview').each(function(){
+	    var nnfyquickviewLink = $(this);
+	    var productID = nnfyquickviewLink.attr('data-quick-id');
+    	nnfyquickviewLink.on('click', function(event){
     	 	event.preventDefault();
 
     	 	$('.nnfymodal-body').html(''); /*clear content*/
-    	 	$('body').addClass('quickview');
+    	 	$('body').addClass('nnfyquickview');
             $('#nnfyquick-viewmodal').addClass('open loading');
             $('.nnfymodal-body').html('<div class="nnfy-loading"><div class="lds-css ng-scope"><div style="width:100%;height:100%" class="lds-ripple"><div></div><div></div></div>');
 
@@ -336,13 +325,13 @@
     	 		$.post(
     	 		    nnfy_localize_vars.ajaxurl, 
         	 		{
-        	 		  'action': 'nnfy_product_quickview',
+        	 		  'action': 'nnfy_product_nnfyquickview',
         	 		  'data':   productID
         	 		},
         	 		function(response){
                         $('#nnfyquick-viewmodal').removeClass('loading');
                         $('.nnfymodal-dialog').css("background-color","#ffffff");
-        	 		 	$('.nnfymodal-body').html(response);
+                        $('.nnfymodal-body').html(response);
                         nnfy_tabs( $(".product-details-small"), '.nnfy-tab-pane' );
         	 		}
 
@@ -356,7 +345,7 @@
 	    $('#nnfyquick-viewmodal').removeClass('open');
         $('.nnfymodal-dialog').css("background-color","transparent");
     	window.setTimeout(function(){
-    	   $('body').removeClass('quickview');
+    	   $('body').removeClass('nnfyquickview');
     	}, 500 );
 	});
 

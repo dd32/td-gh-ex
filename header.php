@@ -9,8 +9,8 @@
  * @package 99fy
  */
 
-$page_title_status = get_theme_mod('nnfy_page_title', true);
-$breadcrumb_status = get_theme_mod('nnfy_breadcrumb', true);
+$page_title_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_page_title_status', get_the_ID(), true ) : true;
+$breadcrumb_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_breadcrumb_status', get_the_ID(), true ) : true;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -31,10 +31,9 @@ $breadcrumb_status = get_theme_mod('nnfy_breadcrumb', true);
 				get_template_part('inc/header/header-top-bar');
 				get_template_part('inc/header/default');
 				
-				if(!is_front_page() && ($page_title_status || $breadcrumb_status)){
+				if( !is_front_page() && ( $page_title_status || $breadcrumb_status ) ){
 					include get_template_directory().'/inc/breadcrumb/pagetitle.php';
 				}
-				
 			?>
 
 		<div id="content" class="site-content">

@@ -9,9 +9,9 @@
  * @package 99fy
  */
 
-$footer_top = get_theme_mod('nnfy_footer_top', 'on');
-$footer_copyright = get_theme_mod('nnfy_footer_copyright','on');
-$footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyright &copy; 2018 99fy All Right Reserved.','99fy'));
+$footer_top = get_option( 'nnfy_footer_top_status', '' );
+$footer_copyright = get_option('nnfy_footer_copyright_status','');
+$footer_copyright_text = get_option('nnfy_footer_copyright_text', __('Copyright &copy; 2019 99fy All Right Reserved.','99fy') );
 
 ?>
 
@@ -19,12 +19,12 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 
 <?php
     if(
-        $footer_top && 
+        $footer_top && (
         is_active_sidebar( 'sidebar-2' ) ||
         is_active_sidebar( 'sidebar-3' ) ||
         is_active_sidebar( 'sidebar-4' ) ||
         is_active_sidebar( 'sidebar-5' ) ||
-        is_active_sidebar( 'sidebar-6' )
+        is_active_sidebar( 'sidebar-6' ) )
     ){
         $footer_top = true;
     } else {
@@ -33,7 +33,7 @@ $footer_copyright_text = get_theme_mod('nnfy_footer_copyright_text', __('Copyrig
 
     if( $footer_top ):
 
-        $footer_col_size = get_theme_mod('nnfy_footer_col_size', 2);
+        $footer_col_size = get_option( 'nnfy_footer_col_size', 4 );
 
 ?>
 <div class="footer-top-area black-bg pt-120 pb-75">

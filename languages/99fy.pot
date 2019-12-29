@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 99fy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-09 08:32+0000\n"
+"POT-Creation-Date: 2019-12-19 08:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-5.2.3"
+"X-Loco-Version: 2.3.1; wp-5.3.2"
 
 #: template-parts/content-single.php:34
 msgid "% Comments"
@@ -73,6 +73,10 @@ msgstr ""
 msgid "99fy"
 msgstr ""
 
+#: inc/tgm-plugin/plugins.php:63
+msgid "99fy Core"
+msgstr ""
+
 #: inc/customizer/customizer.php:32
 msgid "99FY Options"
 msgstr ""
@@ -81,10 +85,11 @@ msgstr ""
 msgid ""
 "99FY – Free WooCommerce Theme is a 100% responsive and reliable WooCommerce "
 "WordPress theme for multipurpose website. It is adaptable to all the devices "
-"and screens.This simple but unique, vast but ambitious, and tech-savvy "
+"and screens. This simple but unique, vast but ambitious, and tech-savvy "
 "WordPress theme is perfectly suitable for furniture, home decors, home "
 "appliances, fashion, accessories, and other eCommerce related websites. "
-"CHECK LIVE DEMO HERE: https://wphash.com/themes/99fy/"
+"CHECK LIVE DEMO HERE: https://hasthemes.com/99fy-free-woocommerce-wordpress-"
+"theme/"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:261
@@ -162,7 +167,7 @@ msgstr ""
 msgid "Blog Options"
 msgstr ""
 
-#: template-parts/content.php:49
+#: template-parts/content.php:51
 msgid "By "
 msgstr ""
 
@@ -217,7 +222,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm-plugin/plugins.php:73
+#: inc/tgm-plugin/plugins.php:93
 msgid "Contact Form 7"
 msgstr ""
 
@@ -233,12 +238,12 @@ msgstr ""
 msgid "Continue Shopping"
 msgstr ""
 
-#: footer.php:14
-msgid "Copyright &copy; 2018 99fy All Right Reserved."
-msgstr ""
-
 #: inc/customizer/customizer.php:164
 msgid "Copyright &copy; 2018 All Right Reserved."
+msgstr ""
+
+#: footer.php:14
+msgid "Copyright &copy; 2019 99fy All Right Reserved."
 msgstr ""
 
 #: woocommerce/cart/cart.php:147
@@ -253,16 +258,12 @@ msgstr ""
 msgid "Cover"
 msgstr ""
 
-#: inc/global-functions.php:43
+#: inc/global-functions.php:50
 msgid "Create Menu"
 msgstr ""
 
 #: inc/customizer/customizer.php:227
 msgid "Default"
-msgstr ""
-
-#. Author of the theme
-msgid "DevItems"
 msgstr ""
 
 #: inc/customizer/customizer.php:70
@@ -279,7 +280,7 @@ msgstr ""
 msgid "Edit title"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:68
+#: inc/tgm-plugin/plugins.php:73
 msgid "Elementor"
 msgstr ""
 
@@ -367,8 +368,12 @@ msgstr ""
 msgid "Google Plus Link:"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:104
+#: inc/tgm-plugin/plugins.php:119
 msgid "HashBar"
+msgstr ""
+
+#. Author of the theme
+msgid "HasThemes"
 msgstr ""
 
 #: inc/customizer/customizer.php:41
@@ -379,16 +384,20 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:83
+#: inc/tgm-plugin/plugins.php:88
 msgid "HT Feed"
 msgstr ""
 
+#: inc/tgm-plugin/plugins.php:83
+msgid "HT Slider For Elementor"
+msgstr ""
+
 #. Author URI of the theme
-msgid "https://devitems.com"
+msgid "https://hasthemes.com"
 msgstr ""
 
 #. URI of the theme
-msgid "https://wphash.com/themes/99fy/"
+msgid "https://hasthemes.com/99fy-free-woocommerce-wordpress-theme/"
 msgstr ""
 
 #: woocommerce/wishlist-view.php:173
@@ -417,15 +426,15 @@ msgstr ""
 msgid "Linkedin Link:"
 msgstr ""
 
-#: inc/header/header-top-bar.php:49
+#: inc/header/header-top-bar.php:51
 msgid "login"
 msgstr ""
 
-#: inc/header/header-top-bar.php:53
+#: inc/header/header-top-bar.php:55
 msgid "Logout"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:78
+#: inc/tgm-plugin/plugins.php:98
 msgid "Mailchimp For WP"
 msgstr ""
 
@@ -433,7 +442,7 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
-#: inc/header/header-top-bar.php:52
+#: inc/header/header-top-bar.php:54
 msgid "Myaccount"
 msgstr ""
 
@@ -473,11 +482,11 @@ msgstr ""
 msgid "Older Comments"
 msgstr ""
 
-#: template-parts/content.php:49
+#: template-parts/content.php:51
 msgid "on"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:63
+#: inc/tgm-plugin/plugins.php:68
 msgid "One Click Demo Import"
 msgstr ""
 
@@ -580,17 +589,13 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: template-parts/content.php:52
-msgid "Read More"
-msgstr ""
-
 #: template-parts/content-none.php:20
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/header/header-top-bar.php:50
+#: inc/header/header-top-bar.php:52
 msgid "register"
 msgstr ""
 
@@ -724,15 +729,19 @@ msgstr ""
 msgid "Upload Image"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:88
+#: inc/tgm-plugin/plugins.php:103
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:93
+#: inc/tgm-plugin/plugins.php:108
 msgid "WooCommerce Variation Swatches"
 msgstr ""
 
-#: inc/tgm-plugin/plugins.php:98
+#: inc/tgm-plugin/plugins.php:78
+msgid "WooLentor - WooCommerce Elementor Addons + Builder"
+msgstr ""
+
+#: inc/tgm-plugin/plugins.php:113
 msgid "YITH WooCommerce Wishlist"
 msgstr ""
 

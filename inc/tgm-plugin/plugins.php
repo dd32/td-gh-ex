@@ -58,9 +58,9 @@ function nnfy_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-		// One Click Demo Import
+		
 		array(
-			'name'      => esc_html__('99fy Core', '99fy'), 
+			'name'      => esc_html__('99Fy Core', '99fy'), 
 			'slug'      => '99fy-core', 
 			'required'  => true,
 		),
@@ -80,6 +80,21 @@ function nnfy_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => esc_html__('HT Slider For Elementor', '99fy'), 
+			'slug'      => 'ht-slider-for-elementor', 
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('HT Feed', '99fy'), 
+			'slug'      => 'ht-instagram', 
+			'required'  => false,
+		),
+		array(
+			'name'      => esc_html__('HT Menu - WordPress Mega Menu Builder for Elementor', '99fy'), 
+			'slug'      => 'ht-menu-lite', 
+			'required'  => false,
+		),
+		array(
 			'name'      => esc_html__('Contact Form 7', '99fy'), 
 			'slug'      => 'contact-form-7',
 			'required'  => false,
@@ -87,11 +102,6 @@ function nnfy_register_required_plugins() {
 		array(
 			'name'      => esc_html__('Mailchimp For WP', '99fy'), 
 			'slug'      => 'mailchimp-for-wp', 
-			'required'  => false,
-		),
-		array(
-			'name'      => esc_html__('HT Feed', '99fy'), 
-			'slug'      => 'ht-instagram', 
 			'required'  => false,
 		),
 		array(

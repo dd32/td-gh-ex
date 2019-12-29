@@ -6,11 +6,11 @@
 
 <?php
 
-if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
-    $search = get_theme_mod('nnfy_topbar_search', 'on');
-    $myaccount = get_theme_mod('nnfy_topbar_myaccount', 'off');
-    $wishlist = get_theme_mod('nnfy_topbar_wishlist', 'off');
-    $cart = get_theme_mod('nnfy_topbar_cart', 'off');
+if( get_option('nnfy_topbar_status', false )  == true ):
+    $search         = get_option( 'nnfy_show_search', '' );
+    $myaccount      = get_option( 'nnfy_show_myaccount', '' );
+    $wishlist       = get_option( 'nnfy_show_wishlist', '' );
+    $cart           = get_option( 'nnfy_show_cart', '' );
 ?>
 
 <div class="header-top-area theme-bg ptb-15">
@@ -19,9 +19,11 @@ if(get_theme_mod('nnfy_topbar_status', 'off')  == 'on'):
             <div class="ht-col-lg-12">
                 <div class="header-top">
                     <div class="header-info">
-                        <ul>
-                            <li><?php echo esc_html( get_theme_mod('nnfy_topbar_left') ); ?></li>
-                        </ul>
+                        <?php
+                            if( function_exists('nnfy_generate_list') ){
+                                nnfy_generate_list( get_option('nnfy_topbar_left') ); 
+                            }
+                        ?>
                     </div>
                     <div class="header-search-cart">
 

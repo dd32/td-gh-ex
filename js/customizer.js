@@ -57,7 +57,7 @@
 	} );
 
 	// Page title section Background
-    wp.customize('nnfy_pt_section_bg_color', function( value ) {
+    wp.customize('nnfy_page_title_bgcolor', function( value ) {
       value.bind( function( newval ) {
         if ( newval ) {
           $( '.breadcrumb-area' ).css( 'background-color', newval );
@@ -65,7 +65,7 @@
       });
     });
 
-    wp.customize('nnfy_pt_section_bg_image_size', function( value ) {
+    wp.customize('nnfy_page_title_bg_image_size', function( value ) {
       value.bind( function( newval ) {
         if ( newval ) {
           $('.breadcrumb-area').css( 'background-size', newval );
@@ -73,7 +73,7 @@
       });
     });
 
-    wp.customize('nnfy_pt_section_padding', function( value ) {
+    wp.customize('nnfy_page_title_space', function( value ) {
       value.bind( function( newval ) {
         if ( newval ) {
           $('.breadcrumb-area').css( 'padding', newval );

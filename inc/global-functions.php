@@ -9,9 +9,16 @@
 * Register Post Excerpt Function
 */
 function nnfy_post_excerpt() {
-	$excerpt_length = get_theme_mod('nnfy_blog_excerpt_length', 20);
-
+	$excerpt_length = get_option( 'nnfy_blog_excerpt_length', 20 );
 	echo wp_trim_words( get_the_excerpt(), $excerpt_length, '' );
+}
+
+/**
+* Register Post Title Function
+*/
+function nnfy_post_title() {
+	$title_length = get_option( 'nnfy_blog_title_length', 8 );
+	echo wp_trim_words( get_the_title(), $title_length, '' );
 }
 
 /**

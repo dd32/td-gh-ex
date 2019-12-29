@@ -20,7 +20,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-$col_class = is_active_sidebar( 'sidebar-shop' ) ? 'ht-col-lg-9 ht-col-md-9 ht-col-xs-12' : 'ht-col-lg-12 ht-col-xs-12';
+$sidebar = get_option('nnfy_shop_sidebar', 'none');
+if( $sidebar != 'none' ){
+	$col_class = is_active_sidebar( 'sidebar-shop' ) ? 'ht-col-lg-9 ht-col-md-9 ht-col-xs-12' : 'ht-col-lg-12 ht-col-xs-12';
+}else{
+	$col_class = 'ht-col-lg-12 ht-col-xs-12';
+}
+
 
 get_header( 'shop' ); ?>
 
@@ -36,16 +42,18 @@ get_header( 'shop' ); ?>
 	?>
 
 	<div class="ht-row">
-		<div class="ht-col-lg-3 ht-col-md-3 ht-col-xs-12">
-			<?php
-				/**
-				 * woocommerce_sidebar hook.
-				 *
-				 * @hooked woocommerce_get_sidebar - 10
-				 */
-				do_action( 'woocommerce_sidebar' );
-			?>
-		</div><!-- /.col-lg-3 -->
+		<?php if( $sidebar == 'left' ): ?>
+			<div class="ht-col-lg-3 ht-col-md-3 ht-col-xs-12 <?php echo apply_filters( 'nnfy_shopsidebar_sticky_class', ' ' ); ?>">
+				<?php
+					/**
+					 * woocommerce_sidebar hook.
+					 *
+					 * @hooked woocommerce_get_sidebar - 10
+					 */
+					do_action( 'woocommerce_sidebar' );
+				?>
+			</div><!-- /.col-lg-3 -->
+		<?php endif; ?>
 
 		<div class="<?php echo esc_attr( $col_class ); ?>">
 			<?php echo wc_print_notices(); ?>
@@ -118,6 +126,19 @@ get_header( 'shop' ); ?>
 				<?php endif; ?>
 			</div><!-- /.shop-product-wrapper -->
 		</div><!-- /.col-lg-9 -->
+
+		<?php if( $sidebar == 'right' ): ?>
+			<div class="ht-col-lg-3 ht-col-md-3 ht-col-xs-12 <?php echo apply_filters( 'nnfy_shopsidebar_sticky_class', ' ' ); ?>">
+				<?php
+					/**
+					 * woocommerce_sidebar hook.
+					 *
+					 * @hooked woocommerce_get_sidebar - 10
+					 */
+					do_action( 'woocommerce_sidebar' );
+				?>
+			</div><!-- /.col-lg-3 -->
+		<?php endif; ?>
 
 	</div>
 

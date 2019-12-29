@@ -6,8 +6,9 @@
  *
  * @package 99fy
  */
-
-$blog_col_size = get_theme_mod('nnfy_blog_col_size', 3);
+$meta_status    = get_option( 'nnfy_blog_title_meta_status', false );
+$readmore       = get_option( 'nnfy_blog_read_more_txt', 'Read More' );
+$blog_col_size  = get_option( 'nnfy_blog_col_size', 3 );
 
 for($i = 1; $i <= $blog_col_size; $i++){
 
@@ -45,11 +46,17 @@ for($i = 1; $i <= $blog_col_size; $i++){
 	    	<?php endif; ?>
 
 	        <div class="blog-info">
-	            <h4><a href="<?php the_permalink( ); ?>"><?php the_title( ); ?></a></h4>
-	            <h6><?php echo esc_html__( 'By ', '99fy' ); ?><a href="<?php the_author_link(); ?>"><?php the_author_meta('nickname') ?></a> <?php echo esc_html__( 'on', '99fy' ); ?> <span><?php echo get_the_date(  get_option( 'date_format' ) ); ?></span></h6>
+	            <h4><a href="<?php the_permalink( ); ?>"><?php nnfy_post_title(); ?></a></h4>
+                <?php if( $meta_status != true ): ?>
+    	            <h6><?php echo esc_html__( 'By ', '99fy' ); ?><a href="<?php the_author_link(); ?>"><?php the_author_meta('nickname') ?></a> <?php echo esc_html__( 'on', '99fy' ); ?> <span><?php echo get_the_date(  get_option( 'date_format' ) ); ?></span></h6>
+                <?php endif; ?>
 
 	            <p><?php nnfy_post_excerpt(); ?></p>
-	            <a href="<?php the_permalink( ); ?>" class="read_more"><?php echo esc_html__( 'Read More', '99fy' ); ?></a>
+                <?php
+                    if( !empty( $readmore ) ){
+                        echo '<a href="'.esc_url( get_the_permalink() ).'" class="read_more">'.esc_html( $readmore ).'</a>';
+                    }
+                ?>
 	        </div>
 	    </div>
 	</article>

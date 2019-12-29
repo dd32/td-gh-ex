@@ -8,14 +8,14 @@
 $logo = get_theme_mod('custom_logo') ? wp_get_attachment_image_src( get_theme_mod('custom_logo'), 'full') : '';
 $logo_alt_text = '';
 if(get_theme_mod('custom_logo')){
-	$logo_alt_text = get_post_meta(get_theme_mod('custom_logo') , '_wp_attachment_image_alt', true );
+	$logo_alt_text = get_post_meta( get_theme_mod('custom_logo') , '_wp_attachment_image_alt', true );
 } else {
 	$logo_alt_text = get_bloginfo('name');
 }
 
 ?>
 
-<header  class="header-default main-header clearfix">
+<header  class="header-default main-header clearfix <?php echo apply_filters( 'nnfy_header_sticky_class', 'no-sticky' ); ?>">
 	<div class="header-area">
 		<div class="ht-container">
 			<div class="ht-row">
@@ -38,7 +38,7 @@ if(get_theme_mod('custom_logo')){
 										<?php echo esc_html( get_bloginfo( 'title', 'display' ) ); ?>
 									</a>
 								</h3>
-								<p><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
+								<p class="site-description"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
 
 							<?php endif ?>
 

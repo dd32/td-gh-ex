@@ -167,7 +167,7 @@ function nnfy_scripts() {
 
 	wp_enqueue_script( 'wc-add-to-cart-variation' );
 	wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
-	wp_enqueue_script( 'jquery-owl-carousels', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '2.2.1', false );
+	wp_enqueue_script( 'jquery-owl-carousels', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '2.2.1', true );
 	wp_enqueue_script( 'jquery-ui-core' );
 	wp_enqueue_script( 'jquery-ui-slider' );
 	wp_enqueue_script( 'jquery-easyzoom', get_template_directory_uri() . '/js/easyzoom.min.js', array('jquery'), '', true );
@@ -187,8 +187,8 @@ function nnfy_scripts() {
 	// localization
 	$nnfy_localize_vars = array();
 	$nnfy_localize_vars['ajaxurl'] = esc_url( admin_url( 'admin-ajax.php') );
-
 	wp_localize_script( "99fy-jquery-main", "nnfy_localize_vars", $nnfy_localize_vars );
+	
 }
 add_action( 'wp_enqueue_scripts', 'nnfy_scripts' );
 
@@ -232,12 +232,6 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer/customizer.php';
-require get_template_directory() . '/inc/customizer/sanitization-callbacks.php';
 
 /**
  * Load Jetpack compatibility file.

@@ -85,9 +85,7 @@ body {
 # Header Search
 ----------------------------------*/
 
-.header-search {
-    /*margin: 29px 0;*/
-}
+.header-search {}
 .header-search form {
     display: block;
     position: relative;
@@ -142,9 +140,7 @@ header.is-sticky {
 body.logged-in.admin-bar .is-sticky {
     padding-top: 32px;
 }
-header.is-sticky .default-menu nav > ul > li > a {
-    padding: 20px 15px;
-}
+
 /**
 * Text Logo Style 
 */
@@ -367,9 +363,8 @@ section.page__title__wrapper .page__title__inner {
 /**
 * Page Wrapper
 */
-
 .page-wrapper {
-    padding: 130px 0;
+    padding: 80px 0;
 }
 .page-template-template-full-width .page-wrapper{
      padding: 0;
@@ -821,40 +816,50 @@ form#searchbox input {
 }
 .primary-nav-wrap .menu li ul.sub-menu,
 .primary-nav-wrap .menu li ul.children {
-  background-color: #fff;
-  padding: 15px 0;
-  position: absolute;
-  top: 95%;
-  width: 190px;
-  z-index: 99;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
-  left: 0;
-  display: none;
+    background-color: #fff;
+    padding: 15px 0;
+    position: absolute;
+    top: 95%;
+    width: 190px;
+    z-index: 99;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    left: 0;
+    transition: all 0.4s ease 0s;
+    margin-top: 30px;
+    z-index: -999;
+    visibility: hidden;
+    opacity: 0;
+}
+.primary-nav-wrap .menu li:hover ul.sub-menu,.primary-nav-wrap .menu li:hover ul.children{
+    z-index: 999;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0;
 }
 .primary-nav-wrap .menu li:hover ul.children{
     display:block;
 }
-.header-area .menu li ul.sub-menu li,
-.header-area .menu li ul.children li {
+.primary-nav-wrap .menu li ul.sub-menu li,
+.primary-nav-wrap .menu li ul.children li {
     display: block;
     padding: 4px 0;
 }
-.header-area .menu li ul.sub-menu li:last-child,
-.header-area .menu li ul.children li:last-child {
+.primary-nav-wrap .menu li ul.sub-menu li:last-child,
+.primary-nav-wrap .menu li ul.children li:last-child {
     padding: 4px 0;
 }
-.header-area .menu li ul.sub-menu li a,
-.header-area .menu li ul.children li a {
+.primary-nav-wrap .menu li ul.sub-menu li a,
+.primary-nav-wrap .menu li ul.children li a {
   display: block;
     color: #5b5b5b;
     text-transform: capitalize;
 }
 
-.header-area .menu li ul.sub-menu li a:hover,
-.header-area .menu li ul.children li a:hover {
+.primary-nav-wrap .menu li ul.sub-menu li a:hover,
+.primary-nav-wrap .menu li ul.children li a:hover {
     color: #96bf48;
 }
-.header-area .menu li:hover a {
+.primary-nav-wrap .menu li:hover a {
   color: #96bf48;
 }
 .mobile-menu-area {
@@ -1522,7 +1527,7 @@ form#searchbox input {
 
 
 
-/* quickview */
+/* nnfyquickview */
 .nnfymodal-dialog {
   max-width: 960px;
   width: 100%;
@@ -1745,7 +1750,7 @@ form#searchbox input {
   -ms-appearance: none;
 }
 
-.quickview-plus-minus {
+.nnfyquickview-plus-minus {
   display: flex;
   justify-content: flex-start;
   padding-top: 5px;
@@ -1810,10 +1815,10 @@ input.cart-plus-minus-box {
   color: #fff;
   transform: translateY(-3px);
 }
-.quickview-btn-wishlist{
+.nnfyquickview-btn-wishlist{
     float: left;
 }
-.quickview-btn-wishlist a.add_to_wishlist {
+.nnfyquickview-btn-wishlist a.add_to_wishlist {
   border: 1px solid #dcdcdc;
   color: #727272;
   display: inline-block;
@@ -1822,14 +1827,14 @@ input.cart-plus-minus-box {
   z-index: 9;
   border-radius: 0;
 }
-.quickview-btn-wishlist a:hover {
+.nnfyquickview-btn-wishlist a:hover {
   border: 1px solid #96bf48;
   color: #fff;
   background-color: #96bf48;
     box-shadow: 0 10px 35px -7px rgba(150, 191, 72, 0.9);
     transform: translateY(-3px);
 }
-.quickview-btn-wishlist a i{
+.nnfyquickview-btn-wishlist a i{
     margin-right: 0;
 }
 
@@ -1955,8 +1960,10 @@ input.cart-plus-minus-box {
   color: #878787;
 }
 
-
-
+.owl-carousel .owl-item .single-testimonial img {
+    width: auto;
+    display: inline-block;
+}
 
 
 .team-member {
@@ -2555,7 +2562,7 @@ div.tawcvs-swatches{
     display: none;
 }
 .product-list-wishlist  a,
-.quickview-btn-wishlist a {
+.nnfyquickview-btn-wishlist a {
   border: 1px solid #dcdcdc;
   color: #727272;
   display: inline-block;
@@ -2564,7 +2571,7 @@ div.tawcvs-swatches{
   z-index: 9;
 }
 .product-list-wishlist  a:hover,
-.quickview-btn-wishlist a:hover {
+.nnfyquickview-btn-wishlist a:hover {
   background-color: #96bf48;
   border: 1px solid #96bf48;
   color: #fff;
@@ -3422,7 +3429,6 @@ h3.comment-reply-title {
 .woocommerce table.shop_table,
 .woocommerce table.shop_table thead th,
 .woocommerce table.shop_table td {
-    /*border: medium none;*/
     text-align: center;
     border-radius: 0;
     border-color: #ddd;

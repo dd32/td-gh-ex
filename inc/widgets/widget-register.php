@@ -33,7 +33,7 @@
 		}
 
 
-		$footer_columns = get_theme_mod('nnfy_footer_col_size', 4);
+		$footer_columns = get_option('nnfy_footer_col_size', 4 );
 
 		$j = 2;
 		for($i = 1; $i <= $footer_columns; $i++){

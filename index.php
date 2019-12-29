@@ -12,7 +12,7 @@
  * @package 99fy
  */
 
-$layout = get_theme_mod('nnfy_blog_layout', 'none');
+$layout = get_option('nnfy_blog_layout', 'none');
 
 $content_class = ($layout == 'left' || $layout == 'right') ? 'ht-col-md-12 ht-col-lg-8 ht-col-xs-12' : 'ht-col-lg-12 ht-col-xs-12';
 
@@ -23,7 +23,7 @@ get_header();
 			<div class="ht-row">
 				<?php
 					if($layout == 'left'){
-						echo '<div class="ht-col-md-12 ht-col-lg-4 ht-col-xs-12">';
+						echo '<div class="ht-col-md-12 ht-col-lg-4 ht-col-xs-12 '.apply_filters( 'nnfy_sidebar_sticky_class', ' ' ).'">';
 
 						get_sidebar( 'left' );
 
@@ -66,7 +66,7 @@ get_header();
 
 			     <?php
 			     	if($layout == 'right'){
-			     		echo '<div class="ht-col-md-12 ht-col-xs-12 ht-col-lg-4 ht-col-md-12">';
+			     		echo '<div class="ht-col-md-12 ht-col-xs-12 ht-col-lg-4 ht-col-md-12 '.apply_filters( 'nnfy_sidebar_sticky_class', ' ' ).'">';
 
 			     		get_sidebar( 'left' );
 

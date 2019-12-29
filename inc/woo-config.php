@@ -4,6 +4,7 @@
 
  add_theme_support( 'woocommerce' );
 
+
  // remove actions
  add_action( 'init', 'nnfy_wc_remove_actions' );
  function nnfy_wc_remove_actions(){
@@ -54,7 +55,7 @@ function nnfy_before_shop_loop_left_wrapper_end(){
 	echo "</div><!-- ./shop-found-selector -->";
 }
 
-add_action( 'woocommerce_before_shop_loop', 'nnfy_archive_view_switch', 40);
+add_action( 'woocommerce_before_shop_loop', 'nnfy_archive_view_switch', 40 );
 function nnfy_archive_view_switch(){
 	?>
 	<div class="shop-filter-tab">
@@ -153,7 +154,7 @@ function nnfy_wc_get_rating_html($html, $rating, $count){
 // wishlist button on single product
 add_action( 'woocommerce_after_add_to_cart_button', 'nnfy_wishlist_button_after_add_to_cart');
 function nnfy_wishlist_button_after_add_to_cart(){
-	echo '<div class="quickview-btn-wishlist">';
+	echo '<div class="nnfyquickview-btn-wishlist">';
 
 	if(function_exists('nnfy_add_to_wishlist_button')){
 		echo nnfy_add_to_wishlist_button();
@@ -177,7 +178,7 @@ function nnfy_woocommerce_template_loop_product_thumbnail(){
             <div class="product-action-style">
 				<?php woocommerce_template_loop_add_to_cart(); ?>
 				
-                <a class="action-eye quickview" title="Quick View" data-toggle="modal" data-target="#exampleModal" data-quick-id="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
+                <a class="action-eye nnfyquickview" title="Quick View" data-toggle="modal" data-target="#exampleModal" data-quick-id="<?php the_ID(); ?>" href="<?php the_permalink(); ?>">
                 	<i class="ion-ios-eye-outline"></i>
                 </a>
                
@@ -197,18 +198,20 @@ function nnfy_woocommerce_template_loop_product_thumbnail(){
 		<div class="product-size-color-wrapper">
 			
 		<?php
-			foreach($attributes as $item):
-						
-				$values = wc_get_product_terms( absint( $product->get_id() ), $item['name'], array( 'fields' => 'names' ) );
+			foreach( $attributes as $item ):
 
-				if($item['name'] == 'pa_size'):
+				$name = $item->get_name();
+
+				$values = wc_get_product_terms( $product->get_id(), $name, array( 'fields' => 'all' ) );
+
+				if( $item['name'] == 'pa_size'):
 				?>
 
 				<div class="product-size">
 					<?php
-						if($values){
+						if( $values ){
 							foreach ($values as $item) {
-								echo '<span>'.$item.' </span>';
+								echo '<span>'.$item->name.' </span>';
 							}
 						}
 					?>
@@ -217,14 +220,20 @@ function nnfy_woocommerce_template_loop_product_thumbnail(){
 				<?php elseif($item['name'] == 'pa_color'): ?>
 					<div class="product-color">
 						<ul>
-
-						<?php
-							if($values){
-								foreach ($values as $item) {
-									echo '<li class="'.strtolower($item).'">'. esc_html($item) .'</li>';
+							<?php
+								if($values){
+									foreach ($values as $item) {
+										$product_term_name = esc_html( $item->name );
+                                        $link = get_term_link( $item->term_id, $name );
+                                        $color = get_term_meta( $item->term_id, 'color', true );
+                                        if( !empty($link) ){
+											echo '<a href="'.esc_url( $link ).'"><li style="'.( !empty( $color ) ? 'background-color:'.$color : '' ).'" class="'.strtolower($product_term_name).'">'.esc_html($product_term_name).'</li></a>';
+                                        }else{
+                                        	echo '<li style="'.( !empty( $color ) ? 'background-color:'.$color : '' ).'" class="'.strtolower($product_term_name).'">'.esc_html($product_term_name).'</li>';
+                                        }
+									}
 								}
-							}
-						?>
+							?>
 						</ul>
 					</div>
 
@@ -266,10 +275,10 @@ function nnfy_woocommerce_template_loop_product_content_list(){
 	<?php
 }
 
-// quickview ajax
-add_action( 'wp_ajax_nnfy_product_quickview', 'nnfy_product_quickview' );
-add_action( 'wp_ajax_nopriv_nnfy_product_quickview', 'nnfy_product_quickview' );
-function nnfy_product_quickview() {
+// nnfyquickview ajax
+add_action( 'wp_ajax_nnfy_product_nnfyquickview', 'nnfy_product_nnfyquickview' );
+add_action( 'wp_ajax_nopriv_nnfy_product_nnfyquickview', 'nnfy_product_nnfyquickview' );
+function nnfy_product_nnfyquickview() {
 	$product_id = (int) $_POST['data'];
 
 	$params = array('p' => $product_id,'post_type' => array('product','product_variation'));

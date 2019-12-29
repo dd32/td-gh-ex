@@ -744,9 +744,6 @@
 }
 
 @media only screen and (min-width: 75em) {
-  /*.ht-container {
-    width: 76rem;
-  }*/
   .ht-container {
     width: 1200px;
   }
