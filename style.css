@@ -4,7 +4,7 @@ Theme URI: https://themearile.com/arilewp-theme/
 Author: ThemeArile
 Author URI: https://themearile.com
 Description: ArileWP is a powerful, modern and professional multipurpose WordPress theme with pixel perfect design and outstanding functionality. As well as sophisticated plus it has some exotic features like customization and clean code, advanced typography, sticky menu, logo upload, header image, Bootstrap 4 framework, built with SEO in mind, and theme info area besides being Mobile ready, translation ready (WPML, Polylang) and it's built to be beautiful on all screen sizes. The theme perfectly suited for business, consultant, finance, corporate, freelancer, agency, business promotion, electrician, industries, education, SEO, construction, fashion, online shop, health & medical, Beauty & spa salons, wedding, photography, gym, cafe, music, architecture, lawyer, restaurant, hotel, blog, magazine, travel agency and many other websites compatible. This theme supports the best Elementor page builder to create, edit and updates page designs as per the requirement. ArileWP also supports popular free and premium WordPress plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, Google Analytics and much more. Check the demo of ArileWP Pro https://demo.themearile.com/?theme=ArileWP%20Pro
-Version: 1.1.4
+Version: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arilewp
@@ -96,6 +96,9 @@ blockquote:before {
 	margin: 0;
 	text-align: center;
 	z-index: 1;
+}
+.wp-block-quote p {
+	padding: 0;
 }
 
 a:hover {
@@ -1919,7 +1922,6 @@ body.page-template-default .theme-blog .post .post-content { overflow: hidden; }
     padding: 0.7rem 2rem;
 }
 .wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper iframe {
-	
 	position: absolute;
     top: 0;
     right: 0;
@@ -1945,6 +1947,9 @@ embed, iframe, object {
 }
 .wp-block-latest-comments article {
     margin-bottom: 2rem;
+}
+.wp-block-cover, .wp-block-cover-image {
+    margin-bottom: 1.563rem;
 }
 
 
