@@ -17,7 +17,7 @@ function semplicemente_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation">
+	<nav class="navigation paging-navigation" aria-label="<?php esc_attr_e('Posts', 'semplicemente'); ?>">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'semplicemente' ); ?></h2>
 		<div class="nav-links">
 
@@ -48,7 +48,7 @@ function semplicemente_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation">
+	<nav class="navigation post-navigation" aria-label="<?php esc_attr_e('Posts', 'semplicemente'); ?>">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'semplicemente' ); ?></h2>
 		<div class="nav-links">
 			<?php

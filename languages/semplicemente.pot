@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2019-11-21 16:53+0100\n"
-"PO-Revision-Date: 2019-11-21 16:53+0100\n"
+"POT-Creation-Date: 2019-12-30 17:42+0100\n"
+"PO-Revision-Date: 2019-12-30 17:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -588,6 +588,10 @@ msgstr ""
 
 #: inc/semplicemente-dynamic.php:232
 msgid "More features? Upgrade to PRO"
+msgstr ""
+
+#: inc/template-tags.php:20 inc/template-tags.php:51
+msgid "Posts"
 msgstr ""
 
 #: inc/template-tags.php:21
