@@ -130,11 +130,6 @@ function bento_customize_register( $wp_customize ) {
 			}
 			echo '
 				<div class="bnt-customizer-help '.$bento_ep_activated.'">
-					<a class="bnt-customizer-link bnt-ep-link" href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">
-						<span class="dashicons dashicons-carrot">
-						</span>
-						'.esc_html__( 'Get Expansion Pack', 'bento' ).'
-					</a>
 					<a class="bnt-customizer-link bnt-rate-link" href="https://wordpress.org/support/theme/bento/reviews/" target="_blank">
 						<span class="dashicons dashicons-heart">
 						</span>
@@ -161,7 +156,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_theme_support', 
 		array(
-			'title' => esc_html__( 'Help & Expansion Pack', 'bento' ),
+			'title' => esc_html__( 'Manual & Help', 'bento' ),
 			'priority' => 19,
 		) 
 	);

@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 5.2.3
-Stable tag: 2.3.1
+Stable tag: 2.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.4 / 30 December 2019
+Removed the height:100% on body and html elements to avoid double scrollbars.
+Removed the Expansion Pack message from the theme's About page for activated users.
+Removed the Expansion Pack cues and mentions.
 
 * 2.3.1 / 31 October 2019
 Fixed same-page load behaviour for grid queries with unpublished posts.

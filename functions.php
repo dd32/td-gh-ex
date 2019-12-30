@@ -278,6 +278,7 @@ function bento_active() {
 				<div class="bento-welcome-actions">
 					<?php echo $actions_html; ?>
 				</div>
+				<?php if ( get_option( 'bento_ep_license_status' ) == 'na' ) { ?>
 				<div class="bento-welcome-upgrade">
 					<h2><?php esc_html_e( 'Supercharge your Bento', 'bento' ); ?> &mdash;</h2>
 					<div class="bento-welcome-upgrade-cta">
@@ -287,6 +288,7 @@ function bento_active() {
 						<?php echo $upgrade_html; ?>
 					</ul>
 				</div>
+				<?php } ?>
 			</div>
 		<?php
 	}

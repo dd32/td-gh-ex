@@ -43,5 +43,5 @@
 			<!-- .site-header -->
 						
 			<?php bento_post_header(); ?>
-				        
+			
         	<div class="site-content">
