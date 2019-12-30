@@ -3,12 +3,12 @@ Theme Name: Commodore
 Text Domain: commodore
 Description: Simple and lightweight responsive theme in the style of the good old Commodore 64. The search box has been modified - just type and press Return to search - classic blinking cursor included!
 Author: United Networks
-Version: 1.70
+Version: 1.80
 Tags: two-columns, one-column, right-sidebar, custom-menu
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Theme URI: http://unitednetworksonline.com/wordpress-themes/
-Author URI: http://unitednetworksonline.com
+Theme URI: https://unitednetworksonline.com/wordpress-themes/
+Author URI: https://unitednetworksonline.com
 */
 
 @font-face {
@@ -285,7 +285,6 @@ p.form-submit input {
 .wp-caption img {
  margin: 5px;
  border: none;
- margin: 0 0 2px 0;
 }
 
 .wp-caption p.wp-caption-text {

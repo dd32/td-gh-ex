@@ -6,13 +6,14 @@ Version: 1.70
 Tags: blue, light, two-columns, one-column, right-sidebar, fixed-width, custom-menu, responsive
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Theme URI: http://unitednetworksonline.com/wordpress-themes/
-Author URI: http://unitednetworksonline.com
+Theme URI: https://unitednetworksonline.com/wordpress-themes/
+Author URI: https://unitednetworksonline.com
 Based on the Terminally theme by Stinkyink: http://www.stinkyinkshop.co.uk/themes/
 C64 Font: http://style64.org/c64-truetype
 C64 Font License: http://style64.org/c64-truetype/license
 
 == Change Log ==
+1.8 - 12/30/19 - Minor CSS/readme tweaks. Seems to work fine with Gutenberg and the latest version of WordPress, 5.3.2.
 1.7 - 08/29/16 - This is a minor update that brings Commodore inline with the latest WordPress requirements, making it WordPress 4.6 compatible!
 1.6 - 05/20/15 - The 1.6 update includes a responsive layout for phones, full support for WordPress 4.2 and higher, and code and performance improvements. So much changed under the hood that we skipped v1.5!
 1.4 - 08/18/13 - Code now HTML5 and CSS3 Valid! Slightly modified post titles on homepage and article pages. WordPress 3.6 compatible. Minor code adjustments.
