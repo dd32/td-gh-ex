@@ -45,7 +45,7 @@ $alts = esc_attr( get_the_title( $post->ID  ) );
                         <?php the_post_thumbnail( 'appeal-featured', array( 
                               'itemprop' => 'image', 
                               'class' => 'img-responsive appeal-thumbnail',
-                              'alt' => $alts  ) ); ?></a>
+                              'alt' => $alts  ) ); ?></a><div class="clearfix"></div>
                         <?php } else {
                             // ends if has custom thumb size
                             ?>
@@ -56,7 +56,7 @@ $alts = esc_attr( get_the_title( $post->ID  ) );
                             <?php the_post_thumbnail('thumbnail', array( 
                                   'itemprop' => 'image', 
                                   'class' => 'img-responsive appeal-thumbnail',
-                                  'alt' => $alts ) ); ?></a>
+                                  'alt' => $alts ) ); ?></a><div class="clearfix"></div>
                             <?php }
                             //ends if has wp_thumbnail
                         ?>

@@ -240,8 +240,8 @@ function appeal_register_theme_customizer($wp_customize)
 			'section'		=> 'header_image',
 			'type'			=> 'checkbox',
 			'label'			=> __( 'Background Stretch', 'appeal' ),
-			'description'	=> __( 'Should the header background image stretch in full?', 
-			                       'appeal' ),
+            'description'	=> __( 'Should the header background image stretch in full? 
+                                Uncheck if your Background Repeat is checked!', 'appeal' ),
 		)
 	);
 

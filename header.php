@@ -21,10 +21,10 @@
             appeal_theme_custom_logo() ) ); ?></a>
             <?php endif; ?>
         
-            <p class="list-inline">
+            <p class="list-inline header-has-text">
             <span class="site-title">
                <a title="<?php bloginfo('description'); ?>"
-                  href="<?php echo esc_url(home_url('/')); ?>">
+                  href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                   <?php bloginfo('name') ?></a></span>
             <span class="site-description"><em> | </em></span>
             <span class="site-description"><?php bloginfo('description') ?></span></p>

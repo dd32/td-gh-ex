@@ -1,8 +1,8 @@
 === Appeal ===
-Theme URI:      https://larryjudd.us/appeal/
+Theme URI:      https://themes.tradesouthwest.com/appeal.php
 Theme Name:     Appeal
 Author:         Larry Judd Oliver
-Author URI:     http://tradesouthwest.com/
+Author URI:     https://tradesouthwest.com/
 Text Domain:    appeal
 Tags:           one-column, two-columns, three-columns, translation-ready, footer-widgets, full-width-template
 License:        GPL 3
@@ -35,7 +35,16 @@ Other Screenshot images:
 * To set up social media links in the page footer: Appearance > Menus - then <Custom Links> to the left. Footer does not support depths of the child links below it. (No drop downs)
 
 == Change Log ==
-1.2.61
+
+1.2.72 
+* fixed header callback
+* cleaned up inline styles for header text
+* repositioned list styles
+* set margins on h2 tag
+* fixed woocommerce support
+* add instruction to background image customizer
+
+1.2.71
 * schema.org changes to valid SSL
 
 1.2.6

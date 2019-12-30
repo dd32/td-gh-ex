@@ -97,12 +97,28 @@ function appeal_theme_setup() {
             'thumbnail_url' => $parenturl . '/assets/appeal-default-header-img-small.png',
             ), 
         );
-        register_default_headers( $suggested_imgs );
+    register_default_headers( $suggested_imgs );
     //woocommerce filters below setup
     add_theme_support( 'woocommerce' );
 }
 add_action('after_setup_theme','appeal_theme_setup');
 
+/**woo weady
+ * Removes woo wrappers and replace with this theme's content
+ * wrappers so that woo content fits in this theme.
+ * @https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
+*/
+add_action('woocommerce_before_main_content', 'appeal_theme_wrapper_start', 20);
+add_action('woocommerce_after_main_content', 'appeal_theme_wrapper_end', 10);
+
+    function appeal_theme_wrapper_start() {
+        echo '<div class="appeal-content-woocommerce">';
+    }
+    
+    function appeal_theme_wrapper_end() {
+        echo '</div>';
+    }
+ 
 /**
  * only enable js if the visitor is browsing either a page or a post    
  * or if comments are open for the entry, or threaded comments are enabled
@@ -253,42 +269,40 @@ function appeal_theme_custom_logo() {
  */
 function appeal_theme_header_style()
 {
-    $moda = ''; $modb = '';
+    $moda = $modb = $display_header_text = ''; 
+    $header_text_color = $header_image = $header_text = false; 
     $header_text_color = get_header_textcolor();
-    $header_image = get_header_image();
+    $header_image      = get_header_image();
+    $header_text       = display_header_text();
 
-    if ( $header_image )
-    { 
-     if( true === get_theme_mod( 'appeal_header_background_image_repeat_setting' ) ) : 
-         $modrepeat = "background-repeat: repeat"; 
-         else : 
-         $modrepeat = "background-repeat: no-repeat";  
-    endif;
-    
-    if ( true === get_theme_mod( 'appeal_header_background_image_size_setting' ) ) : 
-	    $modsize = "background-size: 100% 100%;";
-    	else : 
-    	$modsize = "";
-	endif;
-    ?>
-<style type="text/css">.site-head {background-image: url( <?php echo esc_url( $header_image ); ?>);<?php echo esc_attr( $modrepeat ); ?>;<?php echo esc_attr( $modsize ); ?>}</style>
-    <?php
-    } else { 
-/*
- * If no custom options for text are set, let's bail.
- * get_header_textcolor() options: Any hex value, 'blank' to hide text.
- */
-    echo '<style type="text/css">';
-
-        if ( ! display_header_text() )
-        {
-        echo '.site-title,.site-description{position: absolute;clip: rect(1px, 1px, 1px, 1px);';
+    if ( $header_text == true )
+    {
+    $display_header_text = '#inner-footer h4,.site-title a,.site-description{color: #'. esc_attr( $header_text_color ) .';}';
         } else {
-        echo '#inner-footer h4,.site-title a,.site-description{color:'; ?> #<?php echo esc_attr( $header_text_color ); ?>;}
-            <?php
-            }
-     echo '</style>'; 
-     } //ends else
+        $display_header_text = '.site-title,.site-description,.header-has-text{display:none;clip: rect(1px, 1px, 1px, 1px)}';
+    }
+
+    if ( $header_image ) 
+    {
+        if( true === get_theme_mod( 'appeal_header_background_image_repeat_setting' ) ) : 
+            $modrepeat = "background-repeat: repeat;"; 
+            else : 
+            $modrepeat = "background-repeat: no-repeat;";  
+        endif;
+    
+        if ( true === get_theme_mod( 'appeal_header_background_image_size_setting' ) ) : 
+            $modsize = "background-size: 100% 100%;";
+            else : 
+            $modsize = "background-size: auto";
+        endif;
+    ?>
+    <?php   
+    } //ends if header image 
+    /* Be careful if editing, some attributes may have semi-colons above and others below may not.
+     */
+    echo '<style type="text/css">.site-head{background-image: url(' . esc_url( $header_image ) . '); '
+         . esc_attr( $modrepeat ) . ' ' . esc_attr( $modsize ) . '} ' . esc_attr( $display_header_text ) . '</style>';
+
 }
 
 //https://themefoundation.com/wordpress-theme-customizer/
@@ -437,32 +451,6 @@ function appeal_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'appeal_pingback_header' );
-
-/**woo weady
- * Removes woo wrappers and replace with this theme's content
- * wrappers so that woo content fits in this theme.
- * @https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
-*/
-if ( class_exists( 'WooCommerce' ) ) : 
-function appeal_woocommerce_support() {
-   
-remove_action( 'woocommerce_before_main_content',
-               'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content',
-               'woocommerce_output_content_wrapper_end', 10);
-add_action(    'woocommerce_before_main_content',
-               'appeal_theme_wrapper_start', 10);
-add_action(    'woocommerce_after_main_content',
-               'appeal_theme_wrapper_end', 10);
-}
-function appeal_theme_wrapper_start() {
-    echo '<div id="content-woo">';
-}
-
-function appeal_theme_wrapper_end() {
-    echo '</div>';
-}
-endif;
 
 /**
  * @example for path if using a child theme

@@ -1,17 +1,15 @@
 /**
-Theme Name:  Appeal
-Description:  Appeal features a pull-quote block in the main content to display a short teaser. Theme has a Two-column Newspaper-style template, a Full-width, a Three-section-wide, an advert top-bar and an Author template with a modal box linked to every author. This is perfect for writers who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support; set color, width and number of words for pullquote teaser; set Post excerpt length. Parent navigation is mobile first yet has an off switch for desktop. Full Instructions. WooCommerce ready. Demo at https://larryjudd.us/appeal
-
+  Theme Name:  Appeal
+  Description: Appeal features a pull-quote block in the main content to display a short teaser. Theme has a Two-column Newspaper-style template, a Full-width, a Three-section-wide, an advert top-bar and an Author template with a modal box linked to every author. This is perfect for writers who want to self-promote their articles. Customize where title is shown, color of links and content backgrounds, custom featured image and header image with logo support; set color, width and number of words for pullquote teaser; set Post excerpt length. Parent navigation is mobile first yet has an off switch for desktop. Full Instructions. WooCommerce ready. Demo at https://larryjudd.us/appeal
   Author:      Larry Judd Oliver
-  Author URI:  http://tradesouthwest.com/
-  Theme URI:   https://larryjudd.us/appeal/theme/
-  Version:     1.2.71
+  Author URI:  https://tradesouthwest.com/
+  Theme URI:   https://themes.tradesouthwest.com/appeal.php
+  Version:     1.2.72
   Text Domain: appeal
   Tags:        one-column, two-columns, three-columns, translation-ready, right-sidebar, footer-widgets, full-width-template, featured-images, blog, e-commerce, news, custom-menu, post-formats, custom-background, custom-logo, editor-style, custom-header, threaded-comments
   License:     GPL 3
   License URI: https://www.gnu.org/licenses/quick-guide-gplv3.en.html
  */
-
 
 /**
  * All content is parsed from 'content' template file
@@ -581,7 +579,7 @@ h2 {
     font-size: 2.2em;
     font-weight: 500;
     line-height: 42px;
-    margin: 0 0 32px 0;
+    margin: 32px 0 24px;
 }
 
 h3 {
@@ -5670,7 +5668,9 @@ body {
     margin-bottom: 0;
     overflow-x: hidden;
 }
-
+.appeal-content-woocommerce{
+    background: inherit;
+}
 /* uncomment this to push theme to edges */
 /*
 #page-content .container  {
@@ -5713,7 +5713,12 @@ margin: 0 auto;
     padding: 7px 8px 15px 12px;
     word-wrap: break-word;
 }
-
+.page #sidebar-left .block ul.list-unstyled li:before{
+    content: "";
+}
+.page #sidebar-left .block ul.list-unstyled li{
+    margin-left:1.333em;
+}
 #sidebar-top h5 {
     padding-top: 7px;
     padding-bottom: 0;
@@ -6032,7 +6037,7 @@ img.wp-post-image.appeal-thumbnail {
 img.wp-post-image.appeal-thumbnail,
 .entry-content a.appeal-imglinks img {
     max-height: 320px;
-    width: auto;
+    width: auto; 
 }
 
 .article-inner {
