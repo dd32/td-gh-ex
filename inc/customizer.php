@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.6
+* @version   1.3.7
 */
 
 /* TABLE OF CONTENT
@@ -2953,6 +2953,22 @@ function avik_customize_register( $wp_customize ) {
 																															'priority'=> 10,
 																														)) );
 
+																	//Position Back To top
+
+																	$wp_customize->add_setting( 'avik_position_top',
+																	array(
+																		'default'   => 0,
+																		'transport' => 'refresh',
+																		'sanitize_callback' => 'avik_switch_sanitization'
+																	));
+
+																	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_position_top',
+																	array(
+																		'label'   => __( 'Enable Position Back To Top Left','avik' ),
+																		'section' => 'avik_section_settings_totop',
+																		'priority'=> 11,
+																	)) );
+
 																														// Enable/Disable Back To top Smartphone
 
 																														$wp_customize->add_setting( 'avik_enable_to_top_media',
@@ -3425,22 +3441,17 @@ function avik_customize_register( $wp_customize ) {
 																														##  2.14 Go Pro
 																														/* ------------------------------------------------------------------------------------------------------------*/
 
-																														$avikGopro = new Avik_WP_Customize_Panel( $wp_customize, 'avik_go_pro', array(
-																															'title'    => __('Go Pro','avik'),
-																															'priority' => 1,
-																														));
-
-																														$wp_customize->add_panel( $avikGopro );
+																													
 
 																														// Settings Go Pro
 
 																														$wp_customize->add_section(
 																															'avik_section_settings_go_pro',
 																															array(
-																																'title'      => __('Avik Pro Version','avik'),
-																																'priority'   => 10,
+																																'title'      => __('Go Pro','avik'),
+																																'priority'   => 1,
 																																'capability' => 'edit_theme_options',
-																																'panel'      => 'avik_go_pro',
+																																
 																															)
 																														);
 
@@ -3454,9 +3465,10 @@ function avik_customize_register( $wp_customize ) {
 
 																														$wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_go_pro_version',
 																														   array(
-																														      'label' => __( 'AVIK PRO','avik' ),
-																														      'description' => __( '<p>FOR COMPLETE EXPERIENCE<br>GO TO THE <button><a href="https://www.denisfranchi.com/avik-pro-10-0-0/" target="_blank">PRO VERSION</a></p></button>', 'avik' ),
-																														      'section' => 'avik_section_settings_go_pro'
+																														      'label' => __( 'AVIK PRO V 10','avik' ),
+																														      'description' => __( '<p style="text-align:center">FOR COMPLETE EXPERIENCE<br><hr><div style="text-align:center"><button class="av-bt-pro"><a href="https://www.denisfranchi.com/avik-pro-10-0-0/" target="_blank">PRO VERSION</a></p></button></div>', 'avik' ),
+																															  'section' => 'avik_section_settings_go_pro',
+																															 
 																														   )
 																														) );
 
@@ -3465,7 +3477,7 @@ function avik_customize_register( $wp_customize ) {
 
 $avikFont = new Avik_WP_Customize_Panel( $wp_customize, 'avik_font', array(
 	'title'    => __('Font Family','avik'),
-	'priority' => 1,
+	'priority' => 2,
 ));
 
 $wp_customize->add_panel( $avikFont );
@@ -3512,7 +3524,7 @@ $wp_customize->add_control(
 				'Covered By Your Grace'=> __('Covered By Your Grace','avik'),
 				'Aldrich'              => __('Aldrich','avik'),
 				'Nanum Gothic Coding'  => __('Nanum Gothic Coding','avik'),
-				'Carme'                => __('Carme','avik')
+				'Carme'                => __('Carme','avik'),'Courier Prime' => __('Courier Prime','avik'),'Orbitron'=>__('Orbitron','avik'),'Amatic SC'=>__('Amatic','avik'),'Permanent Marker'=>__('Permanent Marker','avik'),'Kalam'=>__('Kalam','avik')
 ) ) );
 
 // Subtitle
@@ -3547,8 +3559,11 @@ $wp_customize->add_control(
 				'Covered By Your Grace'=> __('Covered By Your Grace','avik'),
 				'Aldrich'              => __('Aldrich','avik'),
 				'Nanum Gothic Coding'  => __('Nanum Gothic Coding','avik'),
-				'Carme'                => __('Carme','avik')
+				'Carme'                => __('Carme','avik'),'Courier Prime' => __('Courier Prime','avik'),'Orbitron'=>__('Orbitron','avik'),'Amatic SC'=>__('Amatic','avik'),'Permanent Marker'=>__('Permanent Marker','avik'),'Kalam'=>__('Kalam','avik')
 ) ) );
+
+
+													
 													
 
 																													}

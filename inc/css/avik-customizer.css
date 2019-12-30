@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.6
+ * @version   1.3.7
 */
 
 /* TABLE OF CONTENT
@@ -37,7 +37,6 @@
 
 .customize-control select{
    border: none;
-   background: #fcfcff;
    position: relative;
    border-radius: 0;
    height: 27px;
@@ -781,4 +780,42 @@ input[type="number"]:focus {
 .google_fonts_select_control .google-fonts,
 .google_fonts_select_control .weight-style {
 	margin-bottom: 10px;
+}
+
+
+/* Go Pro */
+
+#accordion-section-avik_section_settings_go_pro h3{
+	background-color: #82B541!important;
+	color: #fff!important;
+	border-left-color: #5b7f2d!important;
+}
+
+#accordion-section-avik_section_settings_go_pro h3:after{
+	color:  #fff!important;
+}
+
+#customize-control-avik_go_pro_version span{
+	text-align: center!important;
+}
+
+button.av-bt-pro{
+	background-color:#82B541!important;
+}
+
+button.av-bt-pro a{
+	color: #fff!important;
+	letter-spacing: 2px;
+	font-weight: bold;
+    font-size: 12px;
+}
+
+button.av-bt-pro:hover{
+	background-color:#5b7f2d!important;
+}
+
+/* Customizer Color controll */
+
+.wp-picker-container .wp-color-result.button{
+	padding: 0 6px 0 30px!important;
 }

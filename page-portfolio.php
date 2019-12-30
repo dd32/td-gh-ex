@@ -7,7 +7,7 @@ Template Post Type: post
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.6
+* @version   1.3.7
 */
 
 if(is_single()) { get_header('post'); } else { get_header(); }

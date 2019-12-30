@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.6
+* @version   1.3.7
 */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

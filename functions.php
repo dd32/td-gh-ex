@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.6
+ * @version   1.3.7
  */
 
 /* TABLE OF CONTENT
@@ -28,12 +28,12 @@
 17 - Include Plugin
 18 - Multipost Thumbnails Plugin
 19 - Google Font
+20 - Notice Upload
+21 - Url Admin Upload 
 */
-
 
 /* 1 Dependecies
  ------------------------------------------------------------*/
-
 // Include custom navwalker
 
 require_once('assets/bs4navwalker.php');
@@ -794,6 +794,99 @@ if ( class_exists( 'MultiPostThumbnails' )) {
 -------------------------------------------------------- */
 
 function avik_custom_add_google_fonts() {
-	wp_enqueue_style( 'avik-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Aldrich:200,300,400,500,600,700,800,900|Carme:200,300,400,500,600,700,800,900|Covered+By+Your+Grace:200,300,400,500,600,700,800,900|Dancing+Script:200,300,400,500,600,700,800,900|Inconsolata:200,300,400,500,600,700,800,900|Indie+Flower:200,300,400,500,600,700,800,900|Lato:200,300,400,500,600,700,800,900|Montserrat:200,300,400,500,600,700,800,900|Nanum+Gothic+Coding:200,300,400,500,600,700,800,900|Rajdhani:200,300,400,500,600,700,800,900|Roboto:200,300,400,500,600,700,800,900|Sarala:200,300,400,500,600,700,800,900|Text+Me+One:200,300,400,500,600,700,800,900|Titillium+Web:200,300,400,700,900|Ubuntu:200,300,400,500,600,700,800,900',false );
+	wp_enqueue_style( 'avik-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Aldrich:200,300,400,500,600,700,800,900|Carme:200,300,400,500,600,700,800,900|Covered+By+Your+Grace:200,300,400,500,600,700,800,900|Dancing+Script:200,300,400,500,600,700,800,900|Inconsolata:200,300,400,500,600,700,800,900|Indie+Flower:200,300,400,500,600,700,800,900|Lato:200,300,400,500,600,700,800,900|Montserrat:200,300,400,500,600,700,800,900|Nanum+Gothic+Coding:200,300,400,500,600,700,800,900|Rajdhani:200,300,400,500,600,700,800,900|Roboto:200,300,400,500,600,700,800,900|Sarala:200,300,400,500,600,700,800,900|Text+Me+One:200,300,400,500,600,700,800,900|Titillium+Web:200,300,400,700,900|Ubuntu:200,300,400,500,600,700,800,900|Amatic+SC|Courier+Prime|Kalam|Orbitron|Permanent+Marker&display=swap',false );
 	}
 	add_action( 'wp_enqueue_scripts', 'avik_custom_add_google_fonts' );
+
+
+
+/* 20 Notice Promotion Themes
+-------------------------------------------------------- */
+
+	add_action( 'admin_enqueue_scripts', 'avik_add_script' );
+	function avik_add_script() {
+			wp_register_script( 'notice-update',  get_theme_file_uri( '/js/notice-update.js'),'','1.0', false );
+			wp_enqueue_style( 'avik-notice-style', get_theme_file_uri( '/css/notice.css' ), array(), '1.0' );
+			wp_localize_script( 'notice-update', 'notice_params', array(
+				ajaxurl => get_admin_url() . 'admin-ajax.php', 
+			));
+			
+			wp_enqueue_script(  'notice-update' );
+	}
+
+
+	if( get_option( 'avik_9_dismiss_notice' ) != true ) {
+
+		add_action( 'admin_notices', 'add_dismissible' );
+	}
+	function add_dismissible() {
+		  ?>
+		  <div class='notice notice-info avik-9-dismiss-notice avik-class-dismiss-notice is-dismissible'>
+			  <p><?php echo esc_html('For You','avik')?> <a href="<?php echo esc_url(avik_url_promotion); ?>"><?php echo esc_html('Avik Pro','atomy')?></a> <?php echo esc_html(' - 10% XMAS2019 until 01-01-2020','avik')?></p><hr>
+			  <p><?php echo esc_html('Happy New Year by Franchi Design','avik')?></p>
+		  </div>
+		  <?php
+	}
+
+	add_action( 'wp_ajax_avik_9_dismiss_notice', 'avik_9_dismiss_notice' );
+      function avik_9_dismiss_notice() {
+      update_option( 'avik_9_dismiss_notice', true );
+}
+
+
+
+
+if( get_option( 'avik_10_dismiss_notice' ) != true ) {
+
+	add_action( 'admin_notices', 'avik_add_dismissible' );
+}
+function avik_add_dismissible() {
+	  ?>
+	   <div class='notice notice-success avik-10-dismiss-notice avik-class-update is-dismissible'>
+			  <p style="text-align:center;font-weight:bold;font-size:18px ;"><?php echo esc_html('Changelog Avik v 1.3.7','avik')?> </p>
+			  <ul class="avik-ul-update">
+				  <li>
+					  <?php echo esc_html('Fixed some bugs','avik')?>
+				  </li>
+				  <li>
+					  <?php echo esc_html('Customizer graphics updated','avik')?>
+				  </li>
+				  <li>
+					  <?php echo esc_html('Added fantastic Family Fonts Title','avik')?>
+				  </li>
+				  <li>
+					  <?php echo esc_html('Added fantastic Family Fonts Subtitle','avik')?>
+				  </li>
+				  <li>
+					  <?php echo esc_html('Back To Top position added','avik')?>
+				  </li>
+			 </ul>
+			 <div style="text-align:center;margin-bottom:2em">
+			 <a class="avik-detail-update-a" href="<?php echo esc_url(avik_url_update_details); ?>"><?php echo esc_html('View Details','')?></a>
+	       </div>
+		  </div>
+	  <?php
+}
+
+add_action( 'wp_ajax_avik_10_dismiss_notice', 'avik_10_dismiss_notice' );
+  function avik_10_dismiss_notice() {
+  update_option( 'avik_10_dismiss_notice', true );
+}
+
+
+
+
+	/* 21 Url Admin Upload 
+	========================================================================== */
+	
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit; // Exit if accessed directly.
+	}
+	define('avik_url_promotion','https://www.denisfranchi.com/avik-pro-10-0-0/');// Go Pro
+	define('avik_url_update_details','https://www.denisfranchi.com/blog/2018/11/28/avik-1-2-7/');// Update Details
+	
+
+
+
+	
+

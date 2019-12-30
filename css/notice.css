@@ -1,0 +1,32 @@
+.avik-class-dismiss-notice{
+    text-align: center;
+}
+
+.avik-class-dismiss-notice p{
+    font-size: 28px;
+}
+
+.avik-class-dismiss-notice a{
+    color:#82B541;
+    text-decoration: none;
+}
+
+.avik-class-dismiss-notice a:hover{
+    text-decoration: underline;
+}
+
+ul.avik-ul-update{
+    list-style-type: disc;
+    margin-left: 2em;
+}
+
+a.avik-detail-update-a{
+    text-decoration: none;
+    color:#82B541;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a.avik-detail-update-a:hover{
+    text-decoration: underline;
+}

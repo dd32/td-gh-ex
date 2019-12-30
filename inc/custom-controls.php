@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.6
+* @version   1.3.7
 */
 
 /* TABLE OF CONTENT
@@ -315,12 +315,19 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
       ),
       'br' => array(),
       'em' => array(),
+      'hr'=> array(),
       'strong' => array(),
       'i' => array(
         'class' => array()
       ),
       'button' => array(
         'class' => array()
+      ),
+      'div' => array(
+        'style' => array()
+      ),
+      'p' => array(
+        'style' => array()
       ),
       'span' => array(
         'class' => array(),
@@ -364,7 +371,9 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
     .simple-notice-custom-control button {
     	background: transparent;
     	color: #000;
-    	padding: 8px;
+      padding-top: 16px;
+      padding-left: 10px;
+      padding-right: 10px;
     	font-size: 14px;
     	position: relative;
       margin-top: 10px;
@@ -417,12 +426,27 @@ function avik_customizer_css() {
 
   .avik-logo img{width:<?php echo esc_attr( get_theme_mod('avik_font_size_logo', '80')); ?>px ;}
 
-</style>
+  </style>
 
 <!-- 2.4 Responsive Enable Style  -->
 
 <!-- Scroll to top -->
+<?php if ( true == esc_html( get_theme_mod( 'avik_position_top', false) )) : ?>
+<style>
+#avik-scrol-to-top{
+  right: 40px;
+}
 
+</style>
+<?php endif; ?>
+<?php if ( false == esc_html( get_theme_mod( 'avik_position_top', false) )) : ?>
+<style>
+#avik-scrol-to-top{
+  left: 40px;
+}
+
+</style>
+<?php endif; ?>
 <?php if ( true == esc_html( get_theme_mod( 'avik_enable_to_top_media', false) )) : ?>
 
   <style>
