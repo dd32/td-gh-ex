@@ -92,7 +92,7 @@ if ( ! function_exists( 'unite_widgets_init' ) ) :
  */
 function unite_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'unite' ),
+		'name'          => esc_html__( 'Sidebar', 'unite' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -101,7 +101,7 @@ function unite_widgets_init() {
 	) );
 	register_sidebar(array(
 		'id'            => 'home1',
-		'name'          => 'Homepage Widget 1',
+		'name'          => esc_html__( 'Homepage Widget 1', 'unite' ),
 		'description'   => 'Used only on the homepage page template.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -111,7 +111,7 @@ function unite_widgets_init() {
 
     register_sidebar(array(
 		'id'            => 'home2',
-		'name'          => 'Homepage Widget 2',
+		'name'          => esc_html__( 'Homepage Widget 2', 'unite' ),
 		'description'   => 'Used only on the homepage page template.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -121,7 +121,7 @@ function unite_widgets_init() {
 
     register_sidebar(array(
 		'id'            => 'home3',
-		'name'          => 'Homepage Widget 3',
+		'name'          => esc_html__( 'Homepage Widget 3', 'unite' ),
 		'description'   => 'Used only on the homepage page template.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
@@ -185,6 +185,8 @@ function unite_ie_support_header() {
 endif;
 add_action( 'wp_head', 'unite_ie_support_header', 1 );
 
+require get_template_directory() . '/inc/class-unite-helper.php';
+
 /**
  * Implement the Custom Header feature.
  */
@@ -221,37 +223,6 @@ require get_template_directory() . '/inc/navwalker.php';
  */
 require get_template_directory() . '/inc/socialnav.php';
 
-/* All Globals variables */
-global $text_domain;
-$text_domain = 'unite';
-
-global $site_layout;
-$site_layout = array('side-pull-left' => esc_html__('Right Sidebar', 'unite'),'side-pull-right' => esc_html__('Left Sidebar', 'unite'),'no-sidebar' => esc_html__('No Sidebar', 'unite'),'full-width' => esc_html__('Full Width', 'unite'));
-
-// Option to switch between the_excerpt and the_content
-global $blog_layout;
-$blog_layout = array('1' => __('Display full content for each post', 'unite'),'2' => __('Display excerpt for each post', 'unite'));
-
-// Typography Options
-global $typography_options;
-$typography_options = array(
-        'sizes' => array( '6px' => '6px','10px' => '10px','12px' => '12px','14px' => '14px','15px' => '15px','16px' => '16px','18'=> '18px','20px' => '20px','24px' => '24px','28px' => '28px','32px' => '32px','36px' => '36px','42px' => '42px','48px' => '48px' ),
-        'faces' => array(
-                'arial'          => 'Arial',
-                'verdana'        => 'Verdana, Geneva',
-                'trebuchet'      => 'Trebuchet',
-                'georgia'        => 'Georgia',
-                'times'          => 'Times New Roman',
-                'tahoma'         => 'Tahoma, Geneva',
-                'Open Sans'      => 'Open Sans',
-                'palatino'       => 'Palatino',
-                'helvetica'      => 'Helvetica',
-                'helvetica-neue' => 'Helvetica Neue,Helvetica,Arial,sans-serif'
-        ),
-        'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-        'color'  => true
-);
-
 /**
  * Helper function to return the theme option value.
  * If no value has been saved, it returns $default.
@@ -259,8 +230,8 @@ $typography_options = array(
  *
  * Not in a class to support backwards compatibility in themes.
  */
-if ( ! function_exists( 'of_get_option' ) ) :
-function of_get_option( $name, $default = false ) {
+if ( ! function_exists( 'unite_get_option' ) ) :
+function unite_get_option( $name, $default = false ) {
 
   $option_name = '';
   // Get option settings from database

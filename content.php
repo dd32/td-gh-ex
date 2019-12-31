@@ -26,9 +26,9 @@
 	<?php else : ?>
 	<div class="entry-content">
 
-		<?php if(of_get_option('blog_settings') == 1 || !of_get_option('blog_settings')) : ?>
+		<?php if(unite_get_option('blog_settings') == 1 || !unite_get_option('blog_settings')) : ?>
 			<?php the_content( __( 'Continue reading <i class="fa fa-chevron-right"></i>', 'unite' ) ); ?>
-		<?php elseif (of_get_option('blog_settings') == 2) :?>
+		<?php elseif (unite_get_option('blog_settings') == 2) :?>
 			<?php the_excerpt(); ?>
 		<?php endif; ?>
 

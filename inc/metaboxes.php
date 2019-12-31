@@ -25,18 +25,13 @@ function unite_add_custom_box()
         );
 }
 
-/****************************************************************************************/
-
-global $site_layout;
-
-/****************************************************************************************/
-
 /**
  * Displays metabox to for sidebar layout
  */
 function unite_sidebar_layout()
 {
-    global $site_layout, $post;
+    global $post;
+    $site_layout = Unite_Helper::get_site_layout();
     // Use nonce for verification
     wp_nonce_field(basename(__FILE__), 'custom_meta_box_nonce'); ?>
 	
@@ -46,10 +41,10 @@ function unite_sidebar_layout()
                 <label class="description"><?php
                     $layout = get_post_meta($post->ID, 'site_layout', true);?>                        
                     <select name="site_layout" id="site_layout">
-                        <option value="">Default</option><?php
-                        foreach( $site_layout as $key=>$val ) { ?>
-                        <option value="<?php echo $key; ?>" <?php selected( $layout, $key ); ?> ><?php echo $val; ?></option><?php
-                        }?>
+                        <option value=""><?php esc_html_e( 'Default', 'unite' ); ?></option>
+                        <?php foreach( $site_layout as $key=>$val ) { ?>
+                        <option value="<?php echo esc_attr($key); ?>" <?php selected( $layout, $key ); ?> ><?php echo esc_html($val); ?></option>
+                        <?php } ?>
                     </select>                           
                 </label>
             </tr>
@@ -67,7 +62,8 @@ add_action('save_post', 'unite_save_custom_meta');
  */
 function unite_save_custom_meta($post_id)
 {
-    global $site_layout, $post;
+    global $post;
+    $site_layout = Unite_Helper::get_site_layout();
     
     // Verify the nonce before proceeding.
     if (!isset($_POST['custom_meta_box_nonce']) || !wp_verify_nonce($_POST['custom_meta_box_nonce'], basename(__FILE__)))
@@ -85,8 +81,9 @@ function unite_save_custom_meta($post_id)
     }
 
     if ( $_POST['site_layout'] ) {
-        update_post_meta($post_id, 'site_layout', $_POST['site_layout']);
+        $layout = isset( $site_layout[ $_POST['site_layout'] ] ) ? $_POST['site_layout'] : 'side-pull-left';
+        update_post_meta( $post_id, 'site_layout', $layout );
     } else{
-        delete_post_meta($post_id, 'site_layout');
+        delete_post_meta( $post_id, 'site_layout' );
     }
 }

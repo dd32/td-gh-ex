@@ -45,7 +45,7 @@ function unite_customizer( $wp_customize ) {
             'panel' => 'unite_main_options'
         ));
             // Layout options
-            global $blog_layout;
+            $blog_layout = Unite_Helper::get_blog_layout();
             $wp_customize->add_setting('unite[blog_settings]', array(
                  'default' => '1',
                  'type' => 'option',
@@ -58,7 +58,7 @@ function unite_customizer( $wp_customize ) {
                  'choices'    => $blog_layout
             ));
             
-            global $site_layout;
+            $site_layout = Unite_Helper::get_site_layout();
             $wp_customize->add_setting('unite[site_layout]', array(
                  'default' => 'side-pull-left',
                  'type' => 'option',
@@ -110,7 +110,7 @@ function unite_customizer( $wp_customize ) {
                     'color' => '#6B6B6B'
             );
             // Typography Options
-            global $typography_options;
+            $typography_options = Unite_Helper::get_typography_options();
             $wp_customize->add_setting('unite[main_body_typography][size]', array(
                 'default' => $typography_defaults['size'],
                 'type' => 'option',
@@ -411,7 +411,7 @@ function unite_sanitize_slidecat( $input ) {
  * @package Unite
  */
 function unite_sanitize_blog_layout( $input ) {
-    global $blog_layout;
+    $blog_layout = Unite_Helper::get_blog_layout();
     if ( array_key_exists( $input, $blog_layout ) ) {
         return $input;
     } else {
@@ -424,7 +424,7 @@ function unite_sanitize_blog_layout( $input ) {
  * @package Unite
  */
 function unite_sanitize_layout( $input ) {
-    global $site_layout;
+    $site_layout = Unite_Helper::get_site_layout();
     if ( array_key_exists( $input, $site_layout ) ) {
         return $input;
     } else {
@@ -490,34 +490,15 @@ class Unite_Important_Links extends WP_Customize_Control {
    public $type = "unite-important-links";
 
    public function render_content() {?>
-        <!-- Twitter -->
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-        <!-- Facebook -->
-        <div id="fb-root"></div>
-        <div id="fb-root"></div>
-        <script>
-            (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=328285627269392";
-            fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
 
         <div class="inside">
-            <div id="social-share">
-              <div class="fb-like" data-href="https://www.facebook.com/colorlib" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
-              <div class="tw-follow" ><a href="https://twitter.com/colorlib" class="twitter-follow-button" data-show-count="false">Follow @colorlib</a></div>
-            </div>
             <p><b><a href="http://colorlib.com/wp/support/unite"><?php _e('Unite Documentation','unite'); ?></a></b></p>
             <p><?php _e('The best way to contact us with <b>support questions</b> and <b>bug reports</b> is via','unite') ?> <a href="http://colorlib.com/wp/forums"><?php _e('Colorlib support forum','unite') ?></a>.</p>
             <p><?php _e('If you like this theme, I\'d appreciate any of the following:','unite') ?></p>
             <ul>
-                <li><a class="button" href="http://wordpress.org/support/view/theme-reviews/unite?filter=5" title="<?php esc_attr_e('Rate this Theme', 'unite'); ?>" target="_blank"><?php printf(__('Rate this Theme','unite')); ?></a></li>
-                <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php printf(__('Like on Facebook','unite')); ?></a></li>
-                <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php printf(__('Follow on Twitter','unite')); ?></a></li>
+                <li><a class="button" href="http://wordpress.org/support/view/theme-reviews/unite?filter=5" title="<?php esc_attr_e('Rate this Theme', 'unite'); ?>" target="_blank"><?php esc_html_e('Rate this Theme','unite'); ?></a></li>
+                <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php esc_html_e('Like on Facebook','unite'); ?></a></li>
+                <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php esc_html_e('Follow on Twitter','unite'); ?></a></li>
             </ul>
         </div><?php
    }

@@ -89,7 +89,7 @@ if ( function_exists( 'wp_body_open' ) ) {
                 $layout_class = get_post_meta($post->ID, 'site_layout', true);
             }
             else{
-                $layout_class = of_get_option( 'site_layout' );
+                $layout_class = unite_get_option( 'site_layout' );
             }
             ?>
-            <div class="row <?php echo $layout_class; ?>">
+            <div class="row <?php echo esc_attr($layout_class); ?>">

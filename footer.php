@@ -19,7 +19,7 @@
 
 				<div class="copyright col-md-6">
 					<?php do_action( 'unite_credits' ); ?>
-					<?php echo of_get_option( 'custom_footer_text', 'unite' ); ?>
+					<?php echo unite_get_option( 'custom_footer_text', 'unite' ); ?>
 					<?php do_action( 'unite_footer' ); ?>
 				</div>
 			</div>

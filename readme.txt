@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 2.0.5
+Version: 2.0.6
 Tested up to: WP 5.3
 
 #Copyright notice#

@@ -8,7 +8,7 @@
 	<header class="entry-header page-header">
 
 		<?php 
-                    if ( of_get_option( 'single_post_image', 1 ) == 1 ) :
+                    if ( unite_get_option( 'single_post_image', 1 ) == 1 ) :
                         the_post_thumbnail( 'unite-featured', array( 'class' => 'thumbnail' )); 
                     endif;
                   ?>
@@ -65,7 +65,6 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', 'unite' ), '<i class="fa fa-pencil-square-o"></i><span class="edit-link">', '</span>' ); ?>
-		<?php unite_setPostViews(get_the_ID()); ?>
 		<hr class="section-divider">
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
