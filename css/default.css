@@ -300,8 +300,7 @@ table th{
     .dropdown-submenu:hover>.dropdown-menu,
     .dropdown:hover>.dropdown-menu,
     .dropdown-submenu a:focus + .dropdown-menu, 
-    .dropdown a:focus + .dropdown-menu,
-    .dropdown.force-show>.dropdown-menu {
+    .dropdown a:focus + .dropdown-menu{
         display: block!important;
         position: absolute;
     } 

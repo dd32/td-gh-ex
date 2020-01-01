@@ -3,15 +3,6 @@
 <div id="myCarousel" class="carousel  <?php if($wl_theme_options['slider_anim']=="fadeIn") esc_html_e('fadein','enigma'); else esc_html_e('slide','enigma');?>" data-ride="carousel">
     <div class="carousel-inner">
 	  	<?php $wl_theme_options = weblizar_get_options(); 
-  		if ( $wl_theme_options['slider_image_speed']!='') {
-		echo '<script >
-				jQuery(document ).ready(function( $ ) {
-					jQuery("#myCarousel" ).carousel({
-						interval:'.esc_attr($wl_theme_options['slider_image_speed']).'
-				    });
-			   });
-			</script>';
-		} 
   		$j=1;
 		for( $i=1; $i<=3; $i++ ) { 
 			if ( $wl_theme_options['slide_image_'.$i] != '' ) { 

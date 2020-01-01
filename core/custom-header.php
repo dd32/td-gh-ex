@@ -27,50 +27,49 @@ function enigma_custom_header_setup() {
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'enigma_parallax_header_style',
+		'wp-head-callback'       => 'enigma_header_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'enigma_custom_header_setup' );
 
 if ( ! function_exists( 'enigma_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog.
- *
- * @see wp_news_custom_header_setup().
- */
-function enigma_header_style() {
-	$header_text_color = get_header_textcolor();
-
-	/*
-	 * If no custom options for text are set, let's bail.
-	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
+	/**
+	 * Styles the header image and text displayed on the blog.
+	 *
+	 * @see wp_news_custom_header_setup().
 	 */
-	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-		return;
-	}		
+	function enigma_header_style() {
+		$header_text_color = get_header_textcolor();
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :  ?>
-		.logo h1,.logo h1:hover {
-		color: rgba(241, 241, 241, 0);
-		position:absolute;
-		clip: rect(1px 1px 1px 1px);
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
 		}
-		.logo p {
-		color: rgba(241, 241, 241, 0);
-		position:absolute;
-		clip: rect(1px 1px 1px 1px);
-		}
-	<?php
-		// If the user has set a custom color for the text use that.
-		else :	?>
-		.logo h1, .logo p {
-			color: #<?php echo esc_attr( $header_text_color ); ?>;
-		}
-	<?php endif; ?>
-	</style>
-	<?php } endif; ?>
+
+		wp_enqueue_style(
+	        'custom-header-style',
+	        get_template_directory_uri() . '/css/custom-header-style.css'
+	    );
+	    if ( ! display_header_text() ) {
+	    	$custom_css = "
+	            .logo h1,.logo h1:hover {
+				color: rgba(241, 241, 241, 0);
+				position:absolute;
+				clip: rect(1px 1px 1px 1px);
+				}
+				.logo p {
+				color: rgba(241, 241, 241, 0);
+				position:absolute;
+				clip: rect(1px 1px 1px 1px);
+				}";
+	    } else {
+	    	$custom_css = ".logo h1, .logo p {
+				color: #".esc_attr( $header_text_color ).";
+			}";
+	    }
+	    wp_add_inline_style( 'custom-header-style', $custom_css );	
+	} 
+endif; 

@@ -26,8 +26,7 @@ if (!function_exists('enigma_display_theme_info_page')) {
 	            <div class="col-md-12" style="padding:0">
 					<?php $wl_th_info = wp_get_theme(); ?>
 					<h2><span class="elw_shortcode_heading"><?php esc_html_e('Welcome to Enigma - Version','enigma'); ?><?php echo esc_html( $wl_th_info->get('Version') ); ?> </span></h2>
-					<p style="font-size:19px;color: #555d66;"><?php esc_html_e('Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design.','enigma'); ?>
-						
+					<p style="font-size:19px;color: #555d66;"><?php esc_html_e('Enigma  is an outstanding superfine creation from weblizar, Enigma has become one of the most popular superfine multipurpose responsive theme with WPMLlovers by many professionals for its amazing capabilities and great designs. Enigma is multi function free WordPress theme with responsive and flexible light-weighted WooCommerce theme built by using core WordPress functions (BOOTSTRAP CSS framework) that works on All leading web browsers weather its mobile device or any other this makes it fast, simple and easy to customize! It has a promising design and powerful features with page layouts and sidebar widget that let your websites easy to design.','enigma'); ?>						
 					</p>
 	            </div>
 				
@@ -62,11 +61,11 @@ if (!function_exists('enigma_display_theme_info_page')) {
 
                             <div class="row p_plugin blog_gallery">
                                 <div class="col-xs-12 col-sm-7 col-md-7 p_plugin_pic">
-                                    <h4> <?php esc_html_e('Step 1: Create a Homepage','enigma'); ?></h4>
+                                    <h4> <?php esc_html_e('Step 1: Create a NewPage Name it > Home','enigma'); ?></h4>
 									<ol>
-									<li> <?php esc_html_e('Create a new page -> home and publish.','enigma'); ?> </li>
-									<li> <?php esc_html_e('Go to Appearance -> Customize > Homepage Settings -> select A static page option.','enigma'); ?> </li>
-									<li> <?php esc_html_e('In "Homepage", select the page that you created as a home page.','enigma'); ?> </li>
+									<li> <?php esc_html_e('Assigned Template - Home to previously created page, publish It.','enigma'); ?> </li>
+									<li> <?php esc_html_e('Go to Appearance -> Customize > Homepage Settings -> select A static page option. Select Page which is created in last step','enigma'); ?> </li>
+									
 									<li> <?php esc_html_e('Now Go to Customize -> Theme Options -> Theme General Options.','enigma'); ?> </li>
 									<li> <?php esc_html_e('select Show Front Page option','enigma'); ?> </li>
 									<li> <?php esc_html_e('Save changes','enigma'); ?> </li>

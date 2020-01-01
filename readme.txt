@@ -1,9 +1,9 @@
 === Enigma ===
 Contributors: weblizar
-Tags: left-sidebar, two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,  custom-logo , news , accesibility-ready 
+Tags: left-sidebar, two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,  custom-logo , news 
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 5.36
+Tested up to: 5.3.2
+Stable tag: 6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,9 +20,17 @@ Enigma is an outstanding superfine creation from weblizar, Enigma has become one
 Please drop your issues here <a href="https://wordpress.org/support/theme/enigma"> we'll try to triage issues reported on the theme forum, you'll get a faster response.
 
 == Changelog ==
+= 6.0 =
+** Accesibility Ready Implementation roll back.
+** Homepage as template added.
+** Remove In-line CSS and JS
+** Add WP Core Pagination
+** Bug Fix ( Escaping functions )
+** Gplus icon Removed
+** Code Optimized
+
 = 5.36 = 
 ** Accesibility Ready Implementation. 
-
 
 = 5.35 = 
 *Woo-commerce Checkout Page Design Issue Fixed.

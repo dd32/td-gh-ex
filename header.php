@@ -25,22 +25,31 @@
 				<div class="col-md-6 col-sm-12 wl_rtl" >					
 					<div claSS="logo logocenter">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-						$image = wp_get_attachment_image_src( $custom_logo_id,'full' ); ?>
-					 <?php if (has_custom_logo()) { ?> <img src="<?php echo esc_attr($image[0]); ?>" height="<?php echo esc_attr($wl_theme_options['logo_height']) ?>" width="<?php echo esc_attr($wl_theme_options['logo_width']) ?>"> <?php } else { ?> <h1><?php echo esc_html(get_bloginfo('name')); } ?></h1>
+					<?php 
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+						$image          = wp_get_attachment_image_src( $custom_logo_id,'full' ); 
+						if ( has_custom_logo() ) { 
+						?> <img src="<?php echo esc_attr($image[0]); ?>" height="<?php echo esc_attr($wl_theme_options['logo_height']) ?>" width="<?php echo esc_attr($wl_theme_options['logo_width']) ?>"> 
+						<?php } else { ?> 
+							<h1><?php echo esc_html( get_bloginfo('name') ); ?></h1>
+						<?php } ?>
 					</a>
-					<p><?php bloginfo( 'description' ); ?></p>
+					<p><?php esc_html( bloginfo( 'description' ) ); ?></p>
 					</div>
 				</div>
 			<?php } else { ?>
 				<div class="col-md-6 col-sm-12 wl_rtl" >					
 					<div claSS="logo">						
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-						$image = wp_get_attachment_image_src( $custom_logo_id,'full' ); ?>
-					<?php if (has_custom_logo()) { ?> <img src="<?php echo esc_attr($image[0]); ?>" height="<?php echo esc_attr($wl_theme_options['logo_height']) ?>" width="<?php echo esc_attr($wl_theme_options['logo_width']) ?>"> <?php } else { ?> <h1><?php echo esc_html(get_bloginfo('name')); } ?></h1>
+					<?php 
+						$custom_logo_id = get_theme_mod( 'custom_logo' );
+						$image          = wp_get_attachment_image_src( $custom_logo_id,'full' );
+						if (has_custom_logo()) { ?> <img src="<?php echo esc_attr($image[0]); ?>" height="<?php echo esc_attr($wl_theme_options['logo_height']) ?>" width="<?php echo esc_attr($wl_theme_options['logo_width']) ?>">
+					<?php } else { ?> 
+						<h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
+					<?php } ?>
 					</a>
-					<p><?php bloginfo( 'description' ); ?></p>
+					<p><?php esc_html( bloginfo( 'description' ) ); ?></p>
 					</div>
 				</div>
 			<?php } ?>
@@ -61,8 +70,6 @@
 							<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><a href="<?php echo esc_url($wl_theme_options['linkedin_link']); ?>"><i class="fab fa-linkedin-in"></i></a></li>
 						<?php } if($wl_theme_options['youtube_link']!='') { ?>
 							<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"><a href="<?php echo esc_url($wl_theme_options['youtube_link']) ; ?>"><i class="fab fa-youtube"></i></a></li>
-		                <?php } if($wl_theme_options['gplus']!='') { ?>
-							<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="gplus"><a href="<?php echo esc_url($wl_theme_options['gplus']) ; ?>"><i class="fab fa-google-plus-g"></i></a></li>
 		                <?php } if($wl_theme_options['instagram']!='') { ?>
 							<li class="instagram" data-toggle="tooltip" data-placement="bottom" title="instagram"><a href="<?php echo esc_url($wl_theme_options['instagram']) ; ?>"><i class="fab fa-instagram"></i></a></li>
 		                <?php } if($wl_theme_options['vk_link']!='') { ?>
@@ -92,13 +99,16 @@
 					</button>
 				</div>
 				<div id="menu" class="collapse navbar-collapse ">	
-					<?php wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'menu_class' => 'nav navbar-nav',
-						'fallback_cb' => 'weblizar_fallback_page_menu',
-						'walker' => new weblizar_nav_walker(),
-						)
-					);	?>				
+					<?php 
+						wp_nav_menu( 
+							array(
+								'theme_location' => 'primary',
+								'menu_class'     => 'nav navbar-nav',
+								'fallback_cb'    => 'weblizar_fallback_page_menu',
+								'walker'         => new weblizar_nav_walker(),
+							)
+						);	
+					?>				
 				</div>	
 			</nav>
 		</div>

@@ -13,12 +13,11 @@
 	<?php } ?>
 	<div class="container">	
 		<div id="enigma_blog_section">
-			
-			<?php 	if ( have_posts()) : 			
-				$posts_count =wp_count_posts()->publish;
+			<?php if ( have_posts()) : 			
+				$posts_count = wp_count_posts()->publish;
 				if($wl_theme_options['blog_category']) {
 					$category = $wl_theme_options['blog_category'];
-					$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1, 'cat' => $category);		
+					$args     = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1, 'cat' => $category);		
 				} else {
 				$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1);	 }	
 				$post_type_data = new WP_Query( $args );
@@ -41,14 +40,14 @@
 						</div>
 					</div>
 					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-					<?php if(get_the_tag_list() != '') { ?>
+					<?php if ( get_the_tag_list() != '') { ?>
 					<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
 					<?php } ?>
-					<p><?php echo esc_attr(substr(get_the_excerpt(),0,$wl_theme_options['excerpt_blog'] )); ?></p>
-					<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php if($wl_theme_options['read_more']) { echo esc_attr($wl_theme_options['read_more']); } ?></a>
+					<p><?php echo esc_attr( substr( get_the_excerpt(),0,$wl_theme_options['excerpt_blog'] ) ); ?></p>
+					<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php if ( $wl_theme_options['read_more'] ) { echo esc_attr( $wl_theme_options['read_more'] ); } ?></a>
 					<div class="enigma_blog_thumb_footer">
 						<ul class="enigma_blog_thumb_date">
-							<li><i class="fa fa-user"></i><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"><?php echo get_the_author(); ?></a></li>
+							<li><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo get_the_author(); ?></a></li>
 							<li><i class="fa fa-clock-o"></i>
 							<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>
 							<?php echo get_the_date('F d ,Y'); ?>
@@ -103,30 +102,3 @@
 		</div>
 	</div>
 </div>    
-<script>
-// jQuery CarouFredSel  For blog               
-jQuery('#enigma_blog_section').wl_caroufredsel({
-    width: '100%',
-    responsive: true,
-   scroll : {
-        items : 1,
-        duration : <?php echo esc_attr($wl_theme_options['blog_speed']) ?>,
-        timeoutDuration : 2000
-    },
-    circular: <?php if($wl_theme_options['autoplay']=='1') { ?> true <?php } else { ?> false <?php } ?>,
-    direction: 'left',
-    items: {
-        height: 'variable',
-        visible: {
-            min: 1,
-            max: 3
-        },
-        
-   },
-     prev: '#port-prev',
-    next: '#port-next',
-    auto: {
-        play: <?php if($wl_theme_options['autoplay']=='1') { ?> true <?php } else { ?> false <?php } ?>
-    } 
-});
-</script>

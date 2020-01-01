@@ -1,4 +1,6 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
+    'use strict';
+
     jQuery('.customizer-repeater-general-control-droppable').sortable({
         update: function() {
             icare_customizer_repeater_refresh_general_control_values();

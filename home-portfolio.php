@@ -15,8 +15,9 @@
 	<div class="container">
 		<div class="row" >
 			<div id="enigma_portfolio_section" class="enima_photo_gallery">
-				<?php for($i=1 ; $i<=4; $i++) { ?>
-				<?php if($wl_theme_options['port_'.$i.'_img'] !='') { ?>
+				<?php for($i=1 ; $i<=4; $i++) { 
+					if($wl_theme_options['port_'.$i.'_img'] !='') { 
+				?>
 				<div class="col-lg-3 col-md-3 col-sm-6 pull-left scrollimation fade-right d1"> 
 					<div class="img-wrapper">
 					
@@ -40,8 +41,7 @@
 					</div>
 					<div class="enigma_portfolio_shadow"></div>
 				</div>
-				<?php } ?>
-				<?php } ?>
+				<?php } } ?>
 			</div>
 		</div>
 	</div>

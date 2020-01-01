@@ -1,6 +1,8 @@
 <?php get_header(); 
-$wl_theme_options = weblizar_get_options(); 
-if($wl_theme_options['breadcrumb']!='') { ?>
+	$wl_theme_options = weblizar_get_options(); 
+	$class = '';
+	if($wl_theme_options['breadcrumb']!='') { 
+?>
 <div class="enigma_header_breadcrum_title">	
 	<div class="container">
 		<div class="row">
@@ -15,15 +17,11 @@ if($wl_theme_options['breadcrumb']!='') { ?>
 		</div>
 	</div>	
 </div>
-<?php } else { ?>
-<style>
-.enigma_blog_wrapper {
-    margin-top: 70px;
-}
-</style>
-<?php } ?>
+<?php } else {
+	$class = 'no-breadcrumb';
+} ?>
 <div class="container">
-	<div class="row enigma_blog_wrapper">
+	<div class="row enigma_blog_wrapper <?php echo esc_attr( $class ); ?>">
 		<div class="col-md-12 hc_404_error_section">
 			<div class="error_404">
 				<h2><?php esc_html_e('404','enigma'); ?></h2>

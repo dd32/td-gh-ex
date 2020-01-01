@@ -40,8 +40,6 @@
 						<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><a href="<?php echo esc_url($wl_theme_options['linkedin_link']); ?>"><i class="fab fa-linkedin-in"></i></a></li>
 						<?php } if($wl_theme_options['youtube_link']!='') { ?>
 						<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"><a href="<?php echo esc_url($wl_theme_options['youtube_link']) ; ?>"><i class="fab fa-youtube"></i></a></li>
-						<?php } if($wl_theme_options['gplus']!='') { ?>
-						<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="gplus"><a href="<?php echo esc_url($wl_theme_options['gplus']) ; ?>"><i class="fab fa-google-plus-g"></i></a></li>
 						<?php } if($wl_theme_options['instagram']!='') { ?>
 						<li class="instagram" data-toggle="tooltip" data-placement="bottom" title="instagram"><a href="<?php echo esc_url($wl_theme_options['instagram']) ; ?>"><i class="fab fa-instagram"></i></a></li>
 						<?php } if($wl_theme_options['vk_link']!='') { ?>

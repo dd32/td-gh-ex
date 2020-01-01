@@ -11,7 +11,6 @@ function wl_reset_general_setting()
 	$wl_theme_options['upload_image_logo']="";
 	$wl_theme_options['height']=55;
 	$wl_theme_options['width']=150;
-	$wl_theme_options['_frontpage'] ="1";
 	$wl_theme_options['upload_image_favicon']="";
 	$wl_theme_options['text_title']="";
 	$wl_theme_options['custom_css']="";		
@@ -52,12 +51,12 @@ function wl_reset_slide_image_setting()
 
 function wl_reset_portfolio_setting()
 {	
-	$ImageUrl4 = WL_TEMPLATE_DIR_URI ."/images/portfolio1.png";
-	$ImageUrl5 = WL_TEMPLATE_DIR_URI ."/images/portfolio2.png";
-	$ImageUrl6 = WL_TEMPLATE_DIR_URI ."/images/portfolio3.png";
-	$ImageUrl7 = WL_TEMPLATE_DIR_URI ."/images/portfolio4.png";
-	$ImageUrl8 = WL_TEMPLATE_DIR_URI ."/images/portfolio5.png";
-	$ImageUrl9 = WL_TEMPLATE_DIR_URI ."/images/portfolio6.png";
+	$ImageUrl4 = get_template_directory_uri() ."/images/portfolio1.png";
+	$ImageUrl5 = get_template_directory_uri() ."/images/portfolio2.png";
+	$ImageUrl6 = get_template_directory_uri() ."/images/portfolio3.png";
+	$ImageUrl7 = get_template_directory_uri() ."/images/portfolio4.png";
+	$ImageUrl8 = get_template_directory_uri() ."/images/portfolio5.png";
+	$ImageUrl9 = get_template_directory_uri() ."/images/portfolio6.png";
 	$wl_theme_options['portfolio_home'] = "";
 	$wl_theme_options['port_heading']="Recent Works";
 	$wl_theme_options['port_1_img']=$ImageUrl4;
@@ -125,18 +124,18 @@ function wl_reset_social_setting()
 
 function wl_reset_footer_customizations_setting()
 {
-	$wl_theme_options['footer_customizations']="@ 2015 Weblizar Theme";
+	$wl_theme_options['footer_customizations']="";
 	$wl_theme_options['developed_by_text']="Theme Developed By";
-	$wl_theme_options['developed_by_weblizar_text']="Weblizar";
-	$wl_theme_options['developed_by_link']="http://weblizar.com/";
+	$wl_theme_options['developed_by_weblizar_text']="";
+	$wl_theme_options['developed_by_link']="";
 	update_option('enigma_options',$wl_theme_options);
 }
 
 function wl_reset_footer_footercall_setting () {
 	$wl_theme_options['fc_home'] = '1';
 	$wl_theme_options['fc_title']="Lorem Ipsum is simply dummy text of the printing and typesetting industry. ";
-	$wl_theme_options['fc_btn_txt']="Weblizar";
-	$wl_theme_options['fc_btn_link']="http://weblizar.com/";
+	$wl_theme_options['fc_btn_txt']="";
+	$wl_theme_options['fc_btn_link']="";
 	update_option('enigma_options',$wl_theme_options);
 }
 

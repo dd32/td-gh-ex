@@ -1,0 +1,15 @@
+.enigma-notice.notice .hello-elementor-notice-inner .hello-elementor-notice-icon, .notice .hello-elementor-notice-inner .hello-elementor-notice-content{
+	display: table-cell;
+	vertical-align: middle;
+	padding-right : 160px;
+}
+.enigma-notice.notice h3 {
+	margin: 0 0 5px;
+}
+.enigma-notice.notice.updated.is-dismissible {
+	padding: 15px;
+}
+.enigma-notice.notice p {
+	padding: 0;
+	margin: 0;
+}

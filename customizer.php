@@ -1,9 +1,8 @@
 <?php add_action( 'customize_register', 'weblizar_gl_customizer' );
 
 function weblizar_gl_customizer( $wp_customize ) {
-	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
-	//wp_enqueue_style('FA', WL_TEMPLATE_DIR_URI .'/css/font-awesome-4.7.0/css/font-awesome.min.css');
-	wp_enqueue_style('FA-5.11.2', WL_TEMPLATE_DIR_URI .'/css/font-awesome-5.11.2/css/all.min.css');
+	wp_enqueue_style('customizr', get_template_directory_uri() .'/css/customizr.css');
+	wp_enqueue_style('FA-5.11.2', get_template_directory_uri() .'/css/font-awesome-5.11.2/css/all.min.css');
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
@@ -38,38 +37,6 @@ function weblizar_gl_customizer( $wp_customize ) {
     );
 
 	$wl_theme_options = weblizar_get_options();
-	$wp_customize->add_setting(
-		'enigma_options[_frontpage]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['_frontpage'],
-			'sanitize_callback'=>'enigma_sanitize_checkbox',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control( 'enigma_front_page', array(
-		'label'        => __( 'Show Front Page', 'enigma' ),
-		'type'=>'checkbox',
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[_frontpage]',
-	) );
-	/*
-	$wp_customize->add_setting(
-		'enigma_options[snoweffect]',
-		array(
-			'type'    => 'option',
-			'default'=>$wl_theme_options['snoweffect'],
-			'sanitize_callback'=>'enigma_sanitize_checkbox',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control( 'snoweffect', array(
-		'label'        => __( 'Snow effect on/off , Reload to view effect', 'enigma' ),
-		'type'=>'checkbox',
-		'section'    => 'general_sec',
-		'settings'   => 'enigma_options[snoweffect]',
-	) );
-	*/
 	$wp_customize->add_setting(
 		'enigma_options[title_position]',
 		array(
@@ -1409,22 +1376,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[linkedin_link]'
 	) );
-	
-	$wp_customize->add_setting(
-	'enigma_options[gplus]',
-		array(
-		'default'=>esc_attr($wl_theme_options['gplus']),
-		'type'=>'option',
-		'sanitize_callback'=>'esc_url_raw',
-		'capability'=>'edit_theme_options'
-		)
-	);
-		$wp_customize->add_control( 'gplus', array(
-		'label'        => __( 'Goole+', 'enigma' ),
-		'type'=>'url',
-		'section'    => 'social_section',
-		'settings'   => 'enigma_options[gplus]'
-	) );
+
 	$wp_customize->add_setting(
 	'enigma_options[youtube_link]',
 		array(

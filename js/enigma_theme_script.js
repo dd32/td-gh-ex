@@ -41,21 +41,3 @@ jQuery.browser = {};
 		jQuery.browser.version = RegExp.$1;
 	}
 })();
-
-
-
-jQuery(document).ready(function() {
-    jQuery(".navbar-nav").accessibleDropDown();
-});
-
-jQuery.fn.accessibleDropDown = function () {
-  var el = jQuery(this);
-
-  /* Make dropdown menus keyboard accessible */
-
-    jQuery("a", el).focus(function() {
-        jQuery(this).parents("li").addClass("force-show");
-    }).blur(function() {
-        jQuery(this).parents("li").removeClass("force-show");
-    });
-}

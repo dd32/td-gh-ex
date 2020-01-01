@@ -19,4 +19,5 @@
 	<?php comments_template( '', true ); ?>
 <?php
 endwhile;
-endif; ?>
+endif; 
+?>

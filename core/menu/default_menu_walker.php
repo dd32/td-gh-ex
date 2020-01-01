@@ -9,12 +9,10 @@ add_filter( 'wp_page_menu_args', 'weblizar_page_menu_args' );
  
 function weblizar_fallback_page_menu( $args = array() ) {
 
-	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
-	$args = wp_parse_args( $args, $defaults );
-	$args = apply_filters( 'wp_page_menu_args', $args );
-
-	$menu = '';
-
+	$defaults  = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
+	$args      = wp_parse_args( $args, $defaults );
+	$args      = apply_filters( 'wp_page_menu_args', $args );
+	$menu      = '';
 	$list_args = $args;
 
 	// Show Home in the menu
@@ -49,7 +47,7 @@ function weblizar_fallback_page_menu( $args = array() ) {
 	$menu = '<div class="' . esc_attr($args['container_class']) . '">' . $menu . "</div>\n";
 	$menu = apply_filters( 'wp_page_menu', $menu, $args );
 	if ( $args['echo'] )
-		echo $menu;
+		echo wp_kses_post( $menu );
 	else
 		return $menu;
 }

@@ -1,5 +1,6 @@
 <?php get_header(); 
-$wl_theme_options = weblizar_get_options(); 
+$wl_theme_options = weblizar_get_options();
+$class = '';
 if($wl_theme_options['breadcrumb']!='') { ?>
 	<div class="enigma_header_breadcrum_title">	
 		<div class="container">
@@ -15,22 +16,23 @@ if($wl_theme_options['breadcrumb']!='') { ?>
 			</div>
 		</div>	
 	</div>
-<?php } else { ?>
-	<style>
-	.row.enigma_blog_wrapper {
-	    margin-top: 70px;
-	}
-	</style>
-<?php } ?>
+<?php } else {
+	$class = 'no-breadcrumb';
+} ?>
 <div class="container">	
-	<div class="row enigma_blog_wrapper">
+	<div class="row enigma_blog_wrapper <?php echo esc_attr( $class ); ?>">
 		<div class="col-md-8">
 			<?php 
 			if( have_posts()): 
 				while ( have_posts() ): the_post();
 					get_template_part('post','content'); ?>	
 				<?php endwhile;
-				weblizar_navigation();
+			?>
+			<div class="text-center wl-theme-pagination">
+		        <?php echo esc_html( the_posts_pagination( array( 'mid_size' => 2 ) ) ); ?>
+		        <div class="clearfix"></div>
+		    </div>
+			<?php
 			else :
 				get_template_part('nocontent');
 			endif; ?>	 
