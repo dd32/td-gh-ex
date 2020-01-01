@@ -81,7 +81,7 @@
 			'fc_icon'                    => 'fa fa-thumbs-up', 
 			//Social media links
 			'header_social_media_in_enabled'     => '1',
-			'footer_section_social_media_enbled' => '1',
+			'footer_section_social_media_enbled' => '',
 			'twitter_link'               => "#",
 			'fb_link'                    => "#",
 			'linkedin_link'              => "#",
@@ -98,6 +98,10 @@
 			'developed_by_text'          => '',
 			'developed_by_weblizar_text' => '',
 			'developed_by_link'          => '',
+			'footer_customizations1'      => '',
+			'developed_by_text1'          => '',
+			'developed_by_weblizar_text1' => '',
+			'developed_by_link1'          => '',
 			'services_home'              => '1',
 			'home_service_heading'       => __('Our Services', 'enigma' ),
 			'service_1_title'            => __("Idea",'enigma' ),
@@ -407,48 +411,4 @@ if (is_admin()) {
 
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
-}
-
-/**
-* display notice 
-**/
-
-if ( $pagenow == 'index.php' || $pagenow == 'themes.php' ) {
-	add_action( 'admin_notices', 'enigma_activation_notice' );
-	add_action( 'admin_enqueue_scripts', 'enigma_admin_notice_assets' );
-}
-
-function enigma_activation_notice() {
-$my_theme = wp_get_theme();	
-?>
-    <div class="enigma-notice notice updated is-dismissible">
-		<div class="hello-elementor-notice-inner">
-			<div class="hello-elementor-notice-content">
-				<h3> <?php _e('Thank you for installing', 'enigma'); ?> <?php echo esc_html( $my_theme->get( 'Name' ) ); ?></h3>
-				<?php 
-				$msg = sprintf('<p> %1$s %2$s <span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span> %3$s <span style="color:red">&hearts;</span>  %4$s <a href=%5$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary"> %6$s </a>
-			 		<a href=%7$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%8$s</a>
-			 		<a href=%9$s   style="text-decoration: none; margin-left:10px;" class="button button-primary">%10$s</a>
-			 		</p>',
-				esc_html__(' If you like this ','enigma'),
-				esc_html__(' theme, please leave us a ','enigma'),
-				esc_html__(' Rating ','enigma'),
-				esc_html__(' Big thanks in advance. ','enigma'),
-				esc_url(enigma_THEME_REVIEW_URL),
-				esc_html__('Rate','enigma'),				
-				esc_url(enigma_THEME_URL),
-				esc_html__('Go Pro Version','enigma'),
-				esc_url(admin_url('/themes.php?page=enigma')),	
-				esc_html__('About Enigma','enigma') ); 
-				echo wp_kses_post($msg); ?>
-			</div>
-			<div class="hello-elementor-notice-icon"><h3><?php _e('Current WPORG Rating', 'enigma'); ?></h3>
-				<a target="_blank" href="https://wordpress.org/support/theme/enigma/reviews/?filter=5"><img src="<?php echo get_template_directory_uri() . '/images/admin-logo.png'; ?>" alt="Enigma Logo" />
-			</a></div>
-		</div>
-	</div>
-<?php } 
-
-function enigma_admin_notice_assets() {
-	wp_enqueue_style( 'enigma_admin_notice', get_template_directory_uri(). '/css/admin-notice.css' );
 }
