@@ -30,6 +30,7 @@
 <a href="#" id="scroll" class="move-top text-center scrollup" style="">
     <div class="circle"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 </a>
+<?php get_template_part('google', 'font'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

@@ -377,22 +377,73 @@ class astral_Customizer extends astral_Abstract_Main {
  
 		$wp_customize->add_control( 'astral_post_title_size',
 		   array(
-			  'label' => __( 'Post title size' ),
-			  'description' => esc_html__( 'size of post title in post page and single page' ),
+			  'label' => __( 'Post title size','astral' ),
+			  'description' => esc_html__( 'size of post title in post page and single page','astral' ),
 			  'section' => 'astral_typography',
 			  'priority' => 10,
 			  'type' => 'select',
 			  'capability' => 'edit_theme_options',
 			  'choices' => array( 
-				 '1' => __( 'H1' ),
-				 '2' => __( 'H2' ),
-				 '3' => __( 'H3' ),
-				 '4' => __( 'H4' ),
-				 '5' => __( 'H5' ),
-				 '6' => __( 'H6' ),
+				 '1' => __( 'H1','astral' ),
+				 '2' => __( 'H2','astral' ),
+				 '3' => __( 'H3','astral' ),
+				 '4' => __( 'H4','astral' ),
+				 '5' => __( 'H5','astral' ),
+				 '6' => __( 'H6','astral' ),
 			  )
 		   )
 		);
+		
+		$wp_customize->add_setting('main_heading_font',array(
+			'type' => 'theme_mod',
+			'sanitize_callback'=>'wp_filter_nohtml_kses',
+			'capability'=>'edit_theme_options',
+		));
+
+		$wp_customize->add_control(new astral_Font_Control($wp_customize, 'main_heading_font', array(
+		'label' => __('Logo Font Style', 'astral'),
+		/* 'type' => 'select', */
+		'section' => 'astral_typography',
+		'settings' => 'main_heading_font',
+		)));
+	
+	$wp_customize->add_setting(
+	'menu_font',
+	array(
+	'type' => 'theme_mod',
+	'sanitize_callback'=>'wp_filter_nohtml_kses',
+	'capability'=>'edit_theme_options'
+    ));
+
+	$wp_customize->add_control(new astral_Font_Control($wp_customize, 'menu_font', array(
+	'label' => __('Header Menu Font Style', 'astral'),
+	'section' => 'astral_typography',
+	'settings' => 'menu_font'
+	)));
+	
+	$wp_customize->add_setting('theme_title', array(
+	'type' => 'theme_mod',
+	'sanitize_callback'=>'wp_filter_nohtml_kses',
+	'capability'=>'edit_theme_options'
+    ));
+
+	$wp_customize->add_control(new astral_Font_Control($wp_customize, 'theme_title', array(
+	'label' => __('Theme Sesction Title Font Style', 'astral'),
+	'section' => 'astral_typography',
+	'settings' => 'theme_title'
+	)));
+	
+	$wp_customize->add_setting('desc_font_all', array(
+	'type' => 'theme_mod',
+	'sanitize_callback'=>'wp_filter_nohtml_kses',
+	'capability'=>'edit_theme_options'
+    ));
+
+	$wp_customize->add_control(new astral_Font_Control($wp_customize, 'desc_font_all', array(
+	'label' => __('Theme Section Description Font Style', 'astral'),
+	'section' => 'astral_typography',
+	'settings' => 'desc_font_all'
+	)));
 
 		function astral_sanitize_checkbox( $input ) {
 			return $input;

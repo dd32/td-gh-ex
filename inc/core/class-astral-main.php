@@ -86,6 +86,25 @@ class astral_main {
 		wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/js/bootstrap.min.js' );
 		wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/js/wow.js', array( 'jquery' ) );
 		wp_enqueue_script( 'astral-theme-script', get_template_directory_uri() . '/js/astral-theme-script.js' );
+		
+		wp_enqueue_style('Playfair-Display','//fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+		
+		/* web font */
+		$font_var          = '300,400,600,700,900,300italic,400italic,600italic,700italic,900italic';
+        $http              = ( ! empty( $_SERVER['HTTPS'] ) ) ? "https" : "http";
+		$main_heading_font1 = get_theme_mod('main_heading_font','Playfair Display');
+        $main_heading_font = str_replace( ' ' , '+', $main_heading_font1 );
+		$menu_font1 = get_theme_mod('menu_font', 'Playfair Display');
+        $menu_font         = str_replace( ' ' , '+', $menu_font1 );
+		$theme_title1 = get_theme_mod('theme_title', 'Playfair Display');
+        $theme_title       = str_replace( ' ' , '+', $theme_title1 );
+		$desc_font_all1 = get_theme_mod('desc_font_all', 'Playfair Display');
+        $desc_font_all     = str_replace( ' ' , '+', $desc_font_all1 );
+		
+        wp_enqueue_style('googleFonts', $http . '://fonts.googleapis.com/css?family=' . $main_heading_font . ':' . $font_var);	
+        wp_enqueue_style('menu_font', $http . '://fonts.googleapis.com/css?family=' . $menu_font . ':' . $font_var);	
+        wp_enqueue_style('theme_title', $http . '://fonts.googleapis.com/css?family=' . $theme_title . ':' . $font_var);
+        wp_enqueue_style('desc_font_all', $http . '://fonts.googleapis.com/css?family=' . $desc_font_all . ':' . $font_var);
 
 	}
 	

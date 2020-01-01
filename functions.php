@@ -27,6 +27,7 @@ require ASTRAL_PARENT_INC_DIR . '/core/class-astral-service-section.php';
 require ASTRAL_PARENT_INC_DIR . '/core/class-astral-contact-section.php';
 require ASTRAL_PARENT_INC_DIR . '/core/class-astral-blog-section.php';
 require ASTRAL_PARENT_INC_DIR . '/core/class_nav_social_walker.php';
+//require ASTRAL_PARENT_URI . '/google-font.php';
 
 /* 
  * customizer class
@@ -132,4 +133,33 @@ $my_theme = wp_get_theme();
 			</div>
 		</div>
 	</div>
-<?php } ?>
+<?php } 
+
+/* class for font-family */
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'astral_Font_Control' ) ) :
+class astral_Font_Control extends WP_Customize_Control 
+{  
+ public function render_content() 
+ {?>
+   <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+  <?php  $google_api_url = 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCEf2B8_jirXe78wunEHiuyYV0Jrqcw16g';
+			//lets fetch it
+			$response = wp_remote_retrieve_body( wp_remote_get($google_api_url, array('sslverify' => false )));
+			if($response==''){ echo '<script>jQuery(document).ready(function() {alert("Something went wrong! this works only when you are connected to Internet....!!");});</script>'; }
+			if( is_wp_error( $response ) ) {
+			   echo 'Something went wrong!';
+			} else {
+			$json_fonts = json_decode($response,  true);
+			// that's it
+			$items = $json_fonts['items'];
+			$i = 0; ?>
+   <select <?php $this->link(); ?> >
+   <?php foreach( $items as $item) { $i++; $str = $item['family']; ?>
+    <option  value="<?php echo esc_attr($str); ?>" <?php if($this->value()== $str) echo 'selected="selected"';?>><?php echo esc_attr($str); ?></option>
+   <?php } ?>
+    </select>
+	<?php 
+ }
+}
+}
+endif;
