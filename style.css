@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free support on our <a href="https://siteorigin.com/thread/">forum</a> (https://siteorigin.com/thread/).
-Version: 1.14.3
+Version: 1.14.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: vantage
@@ -610,6 +610,8 @@ body {
   margin-bottom: auto;
 }
 #masthead.masthead-logo-in-menu .logo {
+  align-items: center;
+  display: flex;
   padding: 10px 0;
   margin-right: 15px;
 }
@@ -629,6 +631,11 @@ body {
   font-size: 20px;
   font-weight: 100;
   padding: 7px 15px;
+}
+@media (max-width: 680px) {
+  #masthead.masthead-logo-in-menu.unconstrained-logo .logo {
+    flex-direction: column;
+  }
 }
 #masthead.masthead-logo-in-menu .site-description {
   clear: both;

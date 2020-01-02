@@ -1,4 +1,4 @@
-# Copyright (C) 2019 vantage
+# Copyright (C) 2020 vantage
 # This file is distributed under the same license as the vantage package.
 msgid ""
 msgstr ""
@@ -111,15 +111,15 @@ msgstr ""
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:590
+#: functions.php:593
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:595
+#: functions.php:598
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:600
+#: functions.php:603
 msgid "SiteOrigin CSS"
 msgstr ""
 
