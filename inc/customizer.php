@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.2
+* @version   1.0.3
 */
 
 function atomy_customize_register( $wp_customize ) {
@@ -23,35 +23,7 @@ function atomy_customize_register( $wp_customize ) {
 	));
 }
 
-/* Priority Section */
 
-add_action( 'customize_register', function( \WP_Customize_Manager $wp_customize )
-{
-    
-	$mypanel = $wp_customize->get_panel( 'nav_menus');
-	$colors = $wp_customize->get_section( 'colors' );
-	$title_tagline = $wp_customize->get_section( 'title_tagline' );
-	$header_image = $wp_customize->get_section( 'header_image' );
-	$static_front_page=$wp_customize->get_section( 'static_front_page' );$background_image= $wp_customize->get_section('background_image');
-
-	if( 
-		$mypanel instanceof \WP_Customize_Nav_Menus_Panel 
-	&&  $colors instanceof \WP_Customize_Section
-	&&  $title_tagline instanceof \WP_Customize_Section
-	&&  $header_image instanceof \WP_Customize_Section
-	&&  $static_front_page instanceof \WP_Customize_Section
-
-	){
-       
-		$mypanel ->priority   = 21;   
-		$colors->title     = 'Theme Styling'; 
-		$colors->priority  = 31; 
-		$title_tagline->priority= 10;
-		$header_image->priority= 20;
-		$static_front_page->priority= 27;$background_image->priority=22;
-	}
-
-}, 12 );
 
 
 /* Atomy General Settings

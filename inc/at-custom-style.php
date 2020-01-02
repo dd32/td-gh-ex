@@ -3,7 +3,7 @@
 * at-custom-style.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.2
+* @version   1.0.3
 */
 
 

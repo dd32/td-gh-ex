@@ -5,19 +5,6 @@
  * *******************************************************
  */
 
-import styles from './../sass/aos.scss';
-
-// Modules & helpers
-import throttle from 'lodash.throttle';
-import debounce from 'lodash.debounce';
-
-import observe from './libs/observer';
-
-import detect from './helpers/detector';
-import handleScroll from './helpers/handleScroll';
-import prepare from './helpers/prepare';
-import elements from './helpers/elements';
-
 /**
  * Private variables
  */

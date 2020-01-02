@@ -3,7 +3,7 @@
 * section-slide.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.2
+* @version   1.0.3
 *
 */
 ?>
@@ -26,13 +26,13 @@
 
   <?php
 			$atomy_slide_cat = esc_attr(get_theme_mod('atomy_category_slide'));
-			$at_product_slide = esc_attr(get_theme_mod('at_post_type_slide','post'));
-			$at_product_slide_cat = esc_attr(get_theme_mod('at_cat_product_slide'));
+			$atomy_product_slide = esc_attr(get_theme_mod('at_post_type_slide','post'));
+			$atomy_product_slide_cat = esc_attr(get_theme_mod('at_cat_product_slide'));
 			$atomy_carousel_slide_count = 0;
 			$atomy_args = array(
 			'cat' => $atomy_slide_cat ,
-			'product_cat' => $at_product_slide_cat, 
-			'post_type' => $at_product_slide,
+			'product_cat' => $atomy_product_slide_cat, 
+			'post_type' => $atomy_product_slide,
 			'showposts' => $atomy_carousel_slide_count );
 			$atomy_carousel_slide = new WP_Query($atomy_args);
 			if( $atomy_carousel_slide->have_posts() ) :

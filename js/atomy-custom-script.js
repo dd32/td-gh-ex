@@ -2,7 +2,7 @@
  * atom-custom-script.js
  * author    Franchi Design
  * package   Atomy
- * version   1.0.0
+ * version   1.0.3
  */
 
 /* ------------------------------------------------------------------------- *

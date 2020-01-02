@@ -2,7 +2,7 @@
  * at-snow.js
  * author    Franchi Design
  * package   Atomy
- * version   1.0.2
+ * version   1.0.3
  */
 
 // The star of every good animation

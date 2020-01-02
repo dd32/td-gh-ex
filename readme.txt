@@ -2,13 +2,13 @@
 
 Thema Name: Atomy
 Contributors: franchidesign
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 4.7
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Text Domain: atomy
-License: GNU General Public License v2 or later
+License:  GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: custom-menu, featured-images, full-width-template, one-column, two-columns, translation-ready,custom-logo, editor-style, right-sidebar,theme-options,flexible-header, custom-colors, custom-header, blog, e-commerce, portfolio
 
@@ -216,17 +216,17 @@ Link Images included in Atomy Theme
 
 Screenshot: 
 
-https://pxhere.com/it/photo/539956
+https://pxhere.com/it/photo/1200591
 
 https://pxhere.com/it/photo/1071636
 
 https://pxhere.com/it/photo/606746
 
-https://pxhere.com/it/photo/877604
+https://pxhere.com/it/photo/641687
 
-Import Demo:
+Screenshot Import Demo:
 
-https://pxhere.com/it/photo/539956
+https://pxhere.com/it/photo/1200591
 
 https://pxhere.com/it/photo/1071636
 
@@ -250,6 +250,21 @@ Atomy is distributed under the terms of the GNU GPL
 
 = 1.0.2 =
 * Corrected the code and added the final design
+
+= 1.0.3 =
+* Changed screenshots and demo screenscots
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

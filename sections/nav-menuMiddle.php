@@ -3,7 +3,7 @@
 * nav-menuMiddle.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.2
+* @version   1.0.3
 *
 */
 ?>
@@ -76,14 +76,14 @@
                            <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_cart_icon', true) )):?>	
                             <li class="cart">
                            <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-                            $count = WC()->cart->cart_contents_count;
+                            $atomy_count = WC()->cart->cart_contents_count;
                             ?>
                             <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" data-tooltip="<?php echo esc_html('Go to the cart','atomy');?>">
                              <i class="<?php echo esc_html( get_theme_mod( 'at_icon_cart_change','fas fa-shopping-cart')); ?>"></i>
                             <?php 
-                            if ( $count > 0 ) {
+                            if ( $atomy_count > 0 ) {
                             ?>
-                            <span class="cart-contents-count"><?php echo esc_html( $count,'atomy' ); ?></span>
+                            <span class="cart-contents-count"><?php echo esc_html( $atomy_count,'atomy' ); ?></span>
                            <?php  }?>
                            </a>
                           </li>
@@ -147,14 +147,14 @@
                            <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_cart_icon', true) )):?>	
                             <li class="cart">
                            <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-                            $count = WC()->cart->cart_contents_count;
+                            $atomy_count = WC()->cart->cart_contents_count;
                             ?>
                             <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" data-tooltip="<?php echo esc_html('Go to the cart','atomy');?>">
                                <i class="<?php echo esc_html( get_theme_mod( 'at_icon_cart_change','fas fa-shopping-cart')); ?>"></i>
                             <?php 
-                            if ( $count > 0 ) {
+                            if ( $atomy_count > 0 ) {
                             ?>
-                            <span class="cart-contents-count"><?php echo esc_html( $count,'atomy' ); ?></span>
+                            <span class="cart-contents-count"><?php echo esc_html( $atomy_count,'atomy' ); ?></span>
                            <?php  }?>
                            </a>
                           </li>

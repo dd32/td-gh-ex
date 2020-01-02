@@ -3,7 +3,7 @@
 * Portfolio 
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.2
+* @version   1.0.3
 *
 */
 ?> 
@@ -47,22 +47,22 @@
 <!-- Portfolio Tab One -->
 <?php
 if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_1', true ) )) :
-$tax_query_1 =array(
+$atomy_tax_query_1 =array(
   array(
     'taxonomy' => 'product_visibility',
     'field'    => 'name',
     'terms'    => 'featured',),);
 endif;
 	$atomy_portfolio2_tab_1_cat = esc_attr( get_theme_mod('atomy_category_portfolio2_tab_1'));
-	$at_post_type_portfolio2_tab_1 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_1','post'));
-	$at_product_portfolio2_tab_1 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_1'));
+	$atomy_post_type_portfolio2_tab_1 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_1','post'));
+	$atomy_product_portfolio2_tab_1 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_1'));
 	$atomy_portfolio2_tab_1_count = 0;
 	$atomy_args = array(
 	  'cat'         => $atomy_portfolio2_tab_1_cat ,
-    'post_type'   => $at_post_type_portfolio2_tab_1,
-    'product_cat' => $at_product_portfolio2_tab_1, 
+    'post_type'   => $atomy_post_type_portfolio2_tab_1,
+    'product_cat' => $atomy_product_portfolio2_tab_1, 
     'showposts'   => $atomy_portfolio2_tab_1_count ,
-    'tax_query'   => $tax_query_1 );
+    'tax_query'   => $atomy_tax_query_1 );
 	$atomy_portfolio2_tab_1 = new WP_Query($atomy_args);
 	if( $atomy_portfolio2_tab_1->have_posts() ) :
 		while ( $atomy_portfolio2_tab_1->have_posts() ) : $atomy_portfolio2_tab_1->the_post();?>
@@ -99,22 +99,22 @@ endif;
       <!-- Portfolio Tab Two -->
 <?php
 if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true ) )) :
-  $tax_query_2 =array(
+  $atomy_tax_query_2 =array(
     array(
       'taxonomy' => 'product_visibility',
       'field'    => 'name',
       'terms'    => 'featured',),);
   endif;
 	$atomy_portfolio2_tab_2_cat = esc_attr( get_theme_mod('atomy_category_portfolio2_tab_2'));
-	$at_post_type_portfolio2_tab_2 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_2','post'));
-	$at_product_portfolio2_tab_2 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_2'));
+	$atomy_post_type_portfolio2_tab_2 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_2','post'));
+	$atomy_product_portfolio2_tab_2 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_2'));
 	$atomy_portfolio2_tab_2_count = 0;
 	$atomy_args = array(
 	  'cat'        => $atomy_portfolio2_tab_2_cat ,
-    'post_type'  => $at_post_type_portfolio2_tab_2,
-    'product_cat'=> $at_product_portfolio2_tab_2, 
+    'post_type'  => $atomy_post_type_portfolio2_tab_2,
+    'product_cat'=> $atomy_product_portfolio2_tab_2, 
     'showposts'  => $atomy_portfolio2_tab_2_count,
-    'tax_query'  => $tax_query_2 );
+    'tax_query'  => $atomy_tax_query_2 );
 	$atomy_portfolio2_tab_2 = new WP_Query($atomy_args);
 	if( $atomy_portfolio2_tab_2->have_posts() ) :
 		while ( $atomy_portfolio2_tab_2->have_posts() ) : $atomy_portfolio2_tab_2->the_post();?>
@@ -152,22 +152,22 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
   <?php
   if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_3_portfolio2', false ) )) : 
   if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_3', true ) )) :
-      $tax_query_3 =array(
+      $atomy_tax_query_3 =array(
         array(
           'taxonomy' => 'product_visibility',
           'field'    => 'name',
           'terms'    => 'featured',),);
       endif;
 	$atomy_portfolio2_tab_3_cat = esc_attr( get_theme_mod('atomy_category_portfolio2_tab_3'));
-	$at_post_type_portfolio2_tab_3 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_3','post'));
-	$at_product_portfolio2_tab_3 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_3'));
+	$atomy_post_type_portfolio2_tab_3 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_3','post'));
+	$atomy_product_portfolio2_tab_3 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_3'));
 	$atomy_portfolio2_tab_3_count = 0;
 	$atomy_args = array(
 	  'cat' => $atomy_portfolio2_tab_3_cat ,
-    'post_type'   => $at_post_type_portfolio2_tab_3,
-    'product_cat' => $at_product_portfolio2_tab_3, 
+    'post_type'   => $atomy_post_type_portfolio2_tab_3,
+    'product_cat' => $atomy_product_portfolio2_tab_3, 
     'showposts'   => $atomy_portfolio2_tab_3_count,
-    'tax_query'   => $tax_query_3 );
+    'tax_query'   => $atomy_tax_query_3 );
 	$atomy_portfolio2_tab_3 = new WP_Query($atomy_args);
 	if( $atomy_portfolio2_tab_3->have_posts() ) :
 		while ( $atomy_portfolio2_tab_3->have_posts() ) : $atomy_portfolio2_tab_3->the_post();?>
@@ -205,22 +205,22 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       <!-- Portfolio Tab Four -->
   <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_4_portfolio2', false ) )) : 
   if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_4', true ) )) :
-    $tax_query_4 =array(
+    $atomy_tax_query_4 =array(
       array(
         'taxonomy' => 'product_visibility',
         'field'    => 'name',
         'terms'    => 'featured',),);
     endif;
 	$atomy_portfolio2_tab_4_cat = esc_attr( get_theme_mod('atomy_category_portfolio2_tab_4'));
-	$at_post_type_portfolio2_tab_4 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_4','post'));
-	$at_product_portfolio2_tab_4 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_4'));
+	$atomy_post_type_portfolio2_tab_4 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_4','post'));
+	$atomy_product_portfolio2_tab_4 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_4'));
 	$atomy_portfolio2_tab_4_count = 0;
 	$atomy_args = array(
 	  'cat'         => $atomy_portfolio2_tab_4_cat ,
-    'post_type'   => $at_post_type_portfolio2_tab_4,
-    'product_cat' => $at_product_portfolio2_tab_4, 
+    'post_type'   => $atomy_post_type_portfolio2_tab_4,
+    'product_cat' => $atomy_product_portfolio2_tab_4, 
     'showposts'   => $atomy_portfolio2_tab_4_count,
-    'tax_query'   => $tax_query_4 );
+    'tax_query'   => $atomy_tax_query_4 );
 	$atomy_portfolio2_tab_4 = new WP_Query($atomy_args);
 	if( $atomy_portfolio2_tab_4->have_posts() ) :
 		while ( $atomy_portfolio2_tab_4->have_posts() ) : $atomy_portfolio2_tab_4->the_post();?>
@@ -258,22 +258,22 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       <!-- Portfolio Tab Five -->
   <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_5_portfolio2', false ) )) : 
   if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_5', true ) )) :
-    $tax_query_5 =array(
+    $atomy_tax_query_5 =array(
       array(
         'taxonomy' => 'product_visibility',
         'field'    => 'name',
         'terms'    => 'featured',),);
     endif;
 	$atomy_portfolio2_tab_5_cat = esc_attr( get_theme_mod('atomy_category_portfolio2_tab_5'));
-	$at_post_type_portfolio2_tab_5 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_5','post'));
-	$at_product_portfolio2_tab_5 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_5'));
+	$atomy_post_type_portfolio2_tab_5 = esc_attr( get_theme_mod('atomy_post_type_portfolio2_tab_5','post'));
+	$atomy_product_portfolio2_tab_5 = esc_attr( get_theme_mod('at_product_cat_portfolio2_tab_5'));
 	$atomy_portfolio2_tab_5_count = 0;
 	$atomy_args = array(
 	  'cat'         => $atomy_portfolio2_tab_5_cat ,
-    'post_type'   => $at_post_type_portfolio2_tab_5,
-    'product_cat' => $at_product_portfolio2_tab_5, 
+    'post_type'   => $atomy_post_type_portfolio2_tab_5,
+    'product_cat' => $atomy_product_portfolio2_tab_5, 
     'showposts'   => $atomy_portfolio2_tab_5_count,
-    'tax_query'   => $tax_query_5 );
+    'tax_query'   => $atomy_tax_query_5 );
 	$atomy_portfolio2_tab_5 = new WP_Query($atomy_args);
 	if( $atomy_portfolio2_tab_5->have_posts() ) :
 		while ( $atomy_portfolio2_tab_5->have_posts() ) : $atomy_portfolio2_tab_5->the_post();?>

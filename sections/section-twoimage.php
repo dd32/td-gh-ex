@@ -3,24 +3,24 @@
 * section-twoimage.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.2
+* @version   1.0.3
 *
 */
 ?>
 
 <section class="at-two-image-extra container-fluid">
   <?php 
-        $post_name_twoImage = esc_attr(get_theme_mod('at_post_twoImage'));
-         $args_twoImage = array(
+        $atomy_post_name_twoImage = esc_attr(get_theme_mod('at_post_twoImage'));
+         $atomy_args_twoImage = array(
              'post_type'      => 'post',
              'order'          => 'ASC',
              'posts_per_page' => '-1',
-             'post__in' => array($post_name_twoImage));
-         $query_twoImage = new WP_Query( $args_twoImage);
+             'post__in' => array($atomy_post_name_twoImage));
+         $atomy_query_twoImage = new WP_Query( $atomy_args_twoImage);
          // The Loop
-    if  ($query_twoImage->have_posts() ) {
- while  ($query_twoImage->have_posts() ) {
-         $query_twoImage->the_post();  
+    if  ($atomy_query_twoImage->have_posts() ) {
+ while  ($atomy_query_twoImage->have_posts() ) {
+         $atomy_query_twoImage->the_post();  
     } 
   } 
   ?>
