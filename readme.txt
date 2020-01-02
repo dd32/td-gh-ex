@@ -1,10 +1,10 @@
 === Article Lite ===
 
 Contributors: blazethemes
-Requires at least: 4.7
-Tested up to: 5.0.0
-Stable tag: 1.0.0
-Tested up to: 7.2.9  
+Requires at least: 4.7.0
+Stable tag: 1.0.3
+Tested up to: 5.3.2
+Required Php version: 5.2.4  
 Tags: right-sidebar, custom-background, custom-header, custom-logo, portfolio, blog, education, custom-colors,featured-images, footer-widgets, theme-options, threaded-comments, post-formats
 
 A starter theme called Article.
@@ -38,6 +38,12 @@ Article Lite is a mimimal WordPress Theme design specially for bloggers. Providi
 = 1.0.1 - Dec 09 2019 =
 * Fixed escaping and function not found issue
 
+= 1.0.2 - Dec 24 2019 =
+* Fixed escaping and function not found issue
+
+= 1.0.3 - Jan 02 2020 =
+* Fixed escaping and function not found issue
+
 
 
 == License ==
@@ -54,6 +60,10 @@ Screenshot Image
 	* https://pxhere.com/en/photo/1451437
 	* https://pxhere.com/en/photo/1428661
 	* https://pxhere.com/en/photo/1428623
+	* https://pxhere.com/en/photo/1456587
+	* https://pxhere.com/en/photo/1417308
+
+
 
 Font awesome
 	*Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
