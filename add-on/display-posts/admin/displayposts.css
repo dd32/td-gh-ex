@@ -5,7 +5,8 @@
 	margin: 1em 0;
 }
 
-.post-panel > div {
+.post-panel > div,
+.tax-filter-content > div {
 	margin: 1em 0;
 }
 

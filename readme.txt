@@ -2,7 +2,7 @@
 
 Contributors: vedathemes
 tags: Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks, food-and-drink
-Requires at least: 4.7
+Requires at least: 4.9
 Tested up to: 5.3
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -15,10 +15,16 @@ Bayleaf is a multipurpose WordPress theme with elegant visual look and feel.
 Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website..
 
 == Frequently Asked Questions ==
-= What are the minimum requirmens for using this theme? =
-PHP 5.4+, IE11+, WordPress 4.7+
+= What are the minimum requirments for using this theme? =
+PHP 5.6+, IE11+, WordPress 4.9+
 
 == Changelog ==
+
+= 1.4.5 =
+* Error Fix: PHP error notice fixes in displayposts and widgetlayer addons.
+* Modify: Change theme's minimum requirment to PHP 5.6+ and WP 4.9+.
+* Modify: Make Javascript optimized and bloat free.
+* Modify: Minor CSS improvements and bugfixes.
 
 = 1.4.4 =
 * Error Fix: Ajax error in Appearance > Widget, if mc4wp plugin activated.

@@ -13,17 +13,17 @@
  */
 
 /**
- * Bayleaf only works with PHP 5.4 or later.
+ * Bayleaf only works with PHP 5.6 or later.
  */
-if ( version_compare( PHP_VERSION, '5.4', '<' ) ) {
+if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
 	require get_parent_theme_file_path( '/lib/php-backcompat.php' );
 	return;
 }
 
 /**
- * Bayleaf only works with WordPress 4.7 or later.
+ * Bayleaf only works with WordPress 4.9 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.9', '<' ) ) {
 	require get_parent_theme_file_path( '/lib/wp-backcompat.php' );
 	return;
 }

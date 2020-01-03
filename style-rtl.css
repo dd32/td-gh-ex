@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/bayleaf-premium/
 Author: Vedathemes
 Author URI: https://www.vedathemes.com
 Description: Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website.
-Version: 1.4.4
+Version: 1.4.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayleaf
@@ -2741,7 +2741,9 @@ h2.dp-title a:hover {
 	padding-top: 100%;
 }
 
-.grid-view3 .dp-categories a {
+.grid-view3 .dp-categories a,
+.grid-view3 .dp-categories a:hover,
+.grid-view3 .dp-categories a:focus {
 	color: #FFFFFF;
 }
 
@@ -3481,7 +3483,7 @@ h3.related-posts-title {
 		margin-bottom: 0;
 	}
 	.grid-view3 .dp-index-wrapper .sub-entry {
-		min-height: none;
+		min-height: 0;
 	}
 	.slider1 .sub-entry {
 		display: -webkit-box;

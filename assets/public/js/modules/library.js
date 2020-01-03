@@ -203,7 +203,7 @@ let library = {
 	objToArr(obj) {
 
 		let elemsArr;
-		if ('object' !== typeof obj || Array.isArray(obj)) return obj;
+		if (obj !== Object(obj) || Array.isArray(obj)) return obj;
 		elemsArr = Array.prototype.slice.call(obj);
 		if (0 === elemsArr.length) elemsArr.push(obj);
 		return elemsArr;

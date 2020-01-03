@@ -723,6 +723,8 @@ class WidgetLayer {
 			return $params;
 		}
 
+		$widget_data = false;
+
 		$widget_areas = $this->get_widget_areas();
 		foreach ( $widget_areas as $area ) {
 			if ( ! is_active_sidebar( $area ) ) {
