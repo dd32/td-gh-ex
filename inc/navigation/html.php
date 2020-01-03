@@ -5,7 +5,7 @@
             
             <meta itemprop="url" content="<?php echo esc_url( home_url( '/' ) ); ?>" />
         
-            <img itemprop="logo" src="<?php echo get_theme_mod( 'nav_main_img_1' , get_template_directory_uri() . '/images/bison-schwarttzy-text-logo.png' ); ?>" class="nav-logo" />
+            <img itemprop="logo" src="<?php echo get_theme_mod( 'nav_main_img_1' , get_template_directory_uri() . '/inc/navigation/images/default-naviagtion-moose-image.png' ); ?>" class="nav-logo" />
 
             <div class="menu-trick" id="hide-moble">
 

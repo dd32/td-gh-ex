@@ -5,7 +5,7 @@ $add_more_customizer_options = array(
     
     'nav_main_img' => array(
         'default_options'  => array(
-            1                   => get_template_directory_uri() . '/images/bison-schwarttzy-text-logo.png', ),
+            1                   => get_template_directory_uri() . '/inc/navigation/images/default-naviagtion-moose-image.png', ),
         'description'       => array(
             1                   => '', ),
         'input_attrs'       => array(
@@ -16,7 +16,7 @@ $add_more_customizer_options = array(
         'priority'          => 10,
         'section_title'     => __('Menu Title', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'img.nav-logo',
+        'selector'          => 'nav img.nav-logo',
         'type'              => 'img'),
 
     'nav_font_style' => array(
