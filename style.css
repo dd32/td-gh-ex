@@ -4,7 +4,7 @@ Theme URI: https://photricity.com/wordpress-themes/arix/
 Author: Josh Meyer
 Author URI: https://photricity.com
 Description: Arix is a simple and beautiful WordPress theme with a customizable background image that is lightened in the header and darkened in the footer. Arix has a mobile-friendly design with a responsive layout, and supports a custom logo, single-level submenus and widgetized sidebar and footer area. If you're looking to add a light, fresh, and modern touch to your website or blog, Arix is for you.
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, featured-images, sticky-post, editor-style, two-columns, right-sidebar, custom-background, custom-logo, footer-widgets, threaded-comments, blog
@@ -60,7 +60,8 @@ body:before {
 	color: #555;
 }
 
-#header a:hover {
+#header a:hover,
+#header a:focus {
 	color: #eb5b04;
 }
 
@@ -336,6 +337,16 @@ a:focus {
 	color: #eb5b04;
 	outline: 0;
 	text-decoration: none;
+}
+
+.skip-link {
+	position: absolute;
+	top: 5px;
+	left: -9999rem;
+}
+
+.skip-link:focus {
+	left: 5px;
 }
 
 
@@ -879,7 +890,8 @@ hr,
 		border-radius: 0.4em;
 	}
 
-	.menu li:hover ul {
+	.menu .menu-item-has-children:hover > ul,
+	.menu .menu-item-has-children:focus-within > ul {
 		display: block;
 	}
 
@@ -891,13 +903,14 @@ hr,
 		float: none;
 	}
 
-	.menu ul a {
+	#header li ul a {
 		margin: 0;
 		padding: 0.2em;
-		color: #fff !important;
+		color: #fff;
 	}
 
-	.menu ul a:hover {
+	.menu ul a:hover,
+	.menu ul a:focus {
 		color: #f7941e !important;
 	}
 }
@@ -1082,7 +1095,9 @@ input[type="submit"],
 }
 
 .button:hover,
+.button:focus,
 button:hover,
+button:focus,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,

@@ -1,6 +1,6 @@
 === Arix WordPress Theme ===
 Contributors: photricity
-Tested up to: WordPress 5.2.4
+Tested up to: WordPress 5.3
 Donate link: https://photricity.com/pay/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,10 @@ License: GPLv2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 
 == Changelog ==
+
+Version: 1.2.1
+Date: 1/3/2020
+Description: Fixes for compliance.
 
 Version: 1.2.0
 Date: 9/9/2019
