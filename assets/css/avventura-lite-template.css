@@ -673,7 +673,8 @@ body.is_customizer_panel.woocommerce-demo-store.logged-in #menu-wrapper.fixed.fi
 	line-height:0.8em
 } 
 
-#logo a:hover { 
+#logo a:hover , 
+#logo a:focus { 
 	text-decoration:none;
 	color:#d14a2b;
 	border-bottom:none;
@@ -1517,7 +1518,8 @@ post-article blockquote p {
 	padding:0; 
 }
 
-.post-container .link a:hover  { 
+.post-container .link a:hover , 
+.post-container .link a:focus { 
 	background: #d14a2b; 
 	color:#fff;
 }
