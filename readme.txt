@@ -43,6 +43,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.2.1 =
+* layout update
+
 = 1.2.0 =
 * Blocks CSS updates for WordPress 5.3
 * add Requires tags in style.css instead of readme.txt file
@@ -119,4 +122,4 @@ Installation using 'Add New Theme'
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png, © 2015 @skeeze https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/, CC0
+* screenshot.png, https://pxhere.com/bg/photo/129730, CC0
