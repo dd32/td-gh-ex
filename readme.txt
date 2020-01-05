@@ -1,15 +1,15 @@
 === Arrival ===
 
-Contributors: WPoperations
+Contributors: wpoperations
 Website: https://wpoperation.com/
 Email: support@wpoperation.com
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header,left-sidebar,rtl-language-support,block-styles,wide-blocks
 Requires at least: WordPress 4.7
-Tested up to: 5.3
+Tested up to: 5.3.2
 Requires PHP: 5.4
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 
 == Description ==
 

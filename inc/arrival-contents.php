@@ -78,7 +78,7 @@ class Arrival_Starter_Contents{
 
 	        //theme options
 	        'theme_mods' => array(
-				'arrival_top_header_email' => esc_html__('info@abc.com','arrival'),
+				'arrival_top_header_email' => esc_html__('info@example.com','arrival'),
 				'arrival_top_header_phone' => esc_html__('+023-5584-633','arrival'),
 
 			),
