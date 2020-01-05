@@ -3,7 +3,14 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
-= 1.4.52 - September 16 2019 =
+= 1.5.0 - 05 January 2020 =
+* Added wp_body_open function for WP 5.2+ compatibility.
+* Added new action hook "agama_loaded".
+* Modernized some parts of code.
+* Fixed minor customize bugs.
+* Dropped support for IE browsers.
+
+= 1.4.52 - 16 September 2019 =
 * Updated Kirki framework to the latest version.
 * Minor backend styling fixes.
 

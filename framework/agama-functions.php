@@ -5,6 +5,20 @@ if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+    /**
+     * Body Open
+     *
+     * The backward compatibility.
+     * Remove this function after 3 maojr WP releases.
+     *
+     * @since 1.5.0
+     */
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}
+
 /**
  * Content Width
  */

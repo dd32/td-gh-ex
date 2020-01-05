@@ -15,68 +15,47 @@
  * For more information on hooks, actions, and filters,
  * see http://codex.wordpress.org/Plugin_API
  *
- * @package Theme-Vision
+ * @package Theme Vision
  * @subpackage Agama
+ * @since 1.0.0
+ * @since 1.5.0 Updated the code.
  */
+
+use Agama\Theme;
+use Agama\Engine;
 
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Get Agama Core Class File
-get_template_part( 'framework/class-agama-core' );
+#####################################
+# INCLUDE THE AGAMA THEME CLASS FILE
+#####################################
+get_template_part( 'framework/class-agama-theme' );
 
 /**
- * Agama Theme Class
+ * Agama
  *
- * @package Theme-Vision
- * @since 1.3.7
+ * Access to the main "Theme" class instance.
+ *
+ * @since 1.5.0
+ * @return object
  */
-final class Agama_WP_Theme extends Agama_Core {
+function Agama() {
     
-    /**
-     * Class Constructor
-     *
-     * @since 1.3.7
-     */
-    function __construct() {
-        
-        // Theme Version
-        parent::$version = '1.4.52';
-        
-        // Development Mode
-        parent::$development = false;
-        
-        // Parent Constructor
-        parent::__construct();
-        
-        // Include Theme Files
-        self::get_template_parts();
-    }
+    return Theme::get_instance();
     
-    /**
-     * Get Template Parts
-     *
-     * @since 1.3.7
-     */
-    static function get_template_parts() {
-        get_template_part( 'framework/agama-actions' );
-        get_template_part( 'framework/agama-filters' );
-        get_template_part( 'framework/agama-functions' );
-        get_template_part( 'framework/class-agama-plugin-activation' );
-        get_template_part( 'framework/class-agama-helper' );
-		get_template_part( 'framework/class-agama-slider' );
-		get_template_part( 'framework/class-agama-core' );
-		get_template_part( 'framework/class-agama' );
-		get_template_part( 'framework/class-agama-wc' );
-		get_template_part( 'framework/class-agama-breadcrumb' );
-		get_template_part( 'framework/class-agama-frontpage-boxes' );
-		get_template_part( 'framework/widgets/widgets' );
-        get_template_part( 'framework/admin/customizer/builder/class-agama-page-builder' );
-		get_template_part( 'framework/admin/admin-init' );
-    }
 }
-new Agama_WP_Theme;
+
+############################################
+# INCLUDE THE AGAMA THEME ENGINE CLASS FILE
+############################################
+get_template_part( 'framework/class-agama-engine' );
+
+###############################
+# START THE AGAMA THEME ENGINE
+###############################
+Engine::run();
 
 /* Omit closing PHP tag to avoid "Headers already sent" issues. */

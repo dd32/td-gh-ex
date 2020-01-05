@@ -20,15 +20,15 @@ if( ! class_exists( 'Agama_About' ) ) {
 		 */
 		public function __construct() {
             
-			add_action('admin_menu', array( $this, 'register_page' ) );
-            add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+			add_action('admin_menu', [ $this, 'register_page' ] );
+            add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
             
 		}
         
         function admin_enqueue_scripts() {
             $screen = get_current_screen();
             if( $screen->base == 'appearance_page_about-agama' ) {
-                wp_enqueue_style( 'agama-about', AGAMA_CSS . 'backend-about.css', array(), agama_version );
+                wp_enqueue_style( 'agama-about', AGAMA_CSS . 'backend-about.css', [], Agama()->version() );
             }
         }
 		
@@ -39,11 +39,11 @@ if( ! class_exists( 'Agama_About' ) ) {
 		 */
 		public function register_page() {
 			add_theme_page( 
-				__( 'About Agama', 'agama' ), 
-				__( 'About Agama', 'agama' ), 
+				esc_html__( 'About Agama', 'agama' ), 
+				esc_html__( 'About Agama', 'agama' ), 
 				'edit_theme_options', 
 				'about-agama', 
-				array( $this, 'render_page' )
+				[ $this, 'render_page' ]
 			);
 		}
 		
@@ -56,13 +56,13 @@ if( ! class_exists( 'Agama_About' ) ) {
             $FuryScreenURI = AGAMA_IMG . 'promo/fury-screenshot.png';
             $readme = AGAMA_DIR . 'README.txt';
 			echo '<div class="wrap about-wrap">';
-				echo '<h1>'.sprintf( __( 'Welcome to Agama v%s', 'agama' ), agama_version ).'</h1>';
+				echo '<h1>'.sprintf( __( 'Welcome to Agama v%s', 'agama' ), Agama()->version() ).'</h1>';
 				
 				echo '<div class="about-text">';
-					echo __( 'Thank you for using Agama theme!', 'agama' ).'<br>';
-					echo __( 'Consider supporting us with any desired amount donation.', 'agama' ).'<br>';
-					echo __( 'Even the smallest donation amount means a lot for us.', 'agama' ).'<br>';
-					echo __( 'With donations you are helping us for faster theme development & updates.', 'agama' ).'<br><br>';
+				    echo esc_html__( 'Thank you for using Agama theme!', 'agama' ).'<br>';
+					echo esc_html__( 'Consider supporting us with any desired amount donation.', 'agama' ).'<br>';
+					echo esc_html__( 'Even the smallest donation amount means a lot for us.', 'agama' ).'<br>';
+					echo esc_html__( 'With donations you are helping us for faster theme development & updates.', 'agama' ).'<br><br>';
 					echo '<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 							<div class="paypal-donations">
 							<input type="hidden" name="cmd" value="_donations">

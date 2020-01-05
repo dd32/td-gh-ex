@@ -185,9 +185,19 @@ final class Agama_Customizer_Upsell {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'agama-upsell-js', AGAMA_MODULES_URI . 'agama-upsell/js/agama-upsell-customize-controls.js', array( 'customize-controls' ), agama_version );
+        wp_enqueue_script( 
+            'agama-upsell-js', 
+            AGAMA_MODULES_URI . 'agama-upsell/js/agama-upsell-customize-controls.js', 
+            [ 'customize-controls' ], 
+            Agama()->version() 
+        );
 
-        wp_enqueue_style( 'agama-theme-info-style', AGAMA_MODULES_URI . 'agama-upsell/css/style.css', array(), agama_version );
+        wp_enqueue_style( 
+            'agama-theme-info-style', 
+            AGAMA_MODULES_URI . 'agama-upsell/css/style.css', 
+            [], 
+            Agama()->version()
+        );
 
     }
 }

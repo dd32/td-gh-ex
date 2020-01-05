@@ -2,26 +2,17 @@
 /**
  * The Header template
  *
- * @package Theme-Vision
+ * @package Theme Vision
  * @subpackage Agama
- * @since Agama 1.0
+ * @since 1.0.0
  */ 
 
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 } ?>
-
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) & !(IE 8)]><!-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -35,6 +26,8 @@ if( ! defined( 'ABSPATH' ) ) {
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php wp_body_open(); ?>
 
 <!-- Main Wrapper Start -->
 <div id="agama-main-wrapper" class="<?php Agama::main_wrapper_class(); ?>">

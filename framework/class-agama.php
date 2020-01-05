@@ -5,6 +5,7 @@ if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+/*
 /**
  * Agama Class
  *
@@ -18,103 +19,7 @@ if( ! class_exists( 'Agama' ) ) {
 		 *
 		 * @since 1.1.1
 		 */
-		function __construct() {
-			
-			// Extends body class init
-			add_filter( 'body_class', array( $this, 'body_class' ) );
-			
-			// Excerpt lenght init
-			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ), 999 );
-			
-			// Excerpt "more" link init
-			add_filter('excerpt_more', array( $this, 'excerpt_more' ) );
-			
-			// Add button class to post edit links init
-			add_filter( 'edit_post_link', array( $this, 'edit_post_link' ) );
-			
-			// Add button class to comment edit links init
-			add_filter( 'edit_comment_link', array( $this, 'edit_comment_link' ) );
-		}
-		
-		/**
-		 * Extend the default WordPress body classes.
-		 *
-		 * @since Agama 1.0.0
-		 * @param array $classes Existing class values.
-		 * @return array Filtered class values.
-		 */
-		function body_class( $classes ) {
-			$background_color 	= esc_attr( get_background_color() );
-			$background_image 	= esc_url( get_background_image() );
-			$header 			= esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
-			$sidebar_position	= esc_attr( get_theme_mod( 'agama_sidebar_position', 'right' ) );
-			$blog_layout 		= esc_attr( get_theme_mod('agama_blog_layout', 'list') );
-            
-            if( is_customize_preview() ) {
-                $classes[] = 'customize-preview';
-            }
-            
-            if( is_404() ) {
-                $classes[] = 'vision-404';
-            }
-			
-			// Apply header style class.
-			switch( $header ) {
-				case 'transparent':
-					$classes[] = 'header_v1';
-				break;
-				case 'default':
-					$classes[] = 'header_v2';
-				break;
-				case 'sticky':
-					$classes[] = 'header_v3 sticky_header';
-				break;
-			}
-			
-			// Apply sidebar position class.
-			if( $sidebar_position == 'left' ) {
-				$classes[] = 'sidebar-left';
-			}
-			
-			// Apply blog layout class.
-			switch( $blog_layout ) {
-				case 'small_thumbs':
-					$classes[] = 'blog-small-thumbs';
-				break;
-				case 'grid':
-					$classes[] = 'blog-grid';
-				break;
-			}
-			
-			// Apply template full-width class.
-			if( is_page_template( 'page-templates/template-full-width.php' ) ) { 
-				$classes[] = 'template-full-width'; 
-			}
-            
-            // Apply template fluid class.
-            if( is_page_template( 'page-templates/template-fluid.php' ) ) { 
-				$classes[] = 'template-fluid'; 
-			}
-            
-            // Apply template empty class.
-            if( is_page_template( 'page-templates/template-empty.php' ) ) {
-                $classes[] = 'template-empty';
-            }
-			
-			// Apply empty background class.
-			if ( empty( $background_image ) ) {
-				if ( empty( $background_color ) )
-					$classes[] = 'custom-background-empty';
-				elseif ( in_array( $background_color, array( 'fff', 'ffffff' ) ) )
-					$classes[] = 'custom-background-white';
-			}
-			
-			// Apply single author class.
-			if ( ! is_multi_author() )
-				$classes[] = 'single-author';
-
-			return $classes;
-		}
+		function __construct() {}
         
         /**
          * Main Wrapper Class
@@ -188,49 +93,6 @@ if( ! class_exists( 'Agama' ) ) {
 				$class = 'tv-col-md-12';
 			}
 			return esc_attr( $class );
-		}
-		
-		/**
-		 * Excerpt Lenght
-		 *
-		 * @since 1.0.0
-		 */
-		function excerpt_length( $length ) {
-            $custom = esc_attr( get_theme_mod( 'agama_blog_excerpt', '60' ) );
-			return $length = intval( $custom );
-		}
-		
-		/**
-		 * Replaces Excerpt "more" Text by Link
-		 *
-		 * @since 1.1.1
-		 */
-		function excerpt_more( $more ) {
-			global $post;
-			if( get_theme_mod('agama_blog_readmore_url', true) ) {
-				return sprintf('<br><br><a class="more-link" href="%s">%s</a>', get_permalink($post->ID), __('Read More', 'agama'));
-			}
-			return;
-		}
-		
-		/**
-		 * Add Class to Post Edit Link
-		 *
-		 * @since 1.1.1
-		 */
-		function edit_post_link( $output ) {
-			$output = str_replace('class="post-edit-link"', 'class="button button-3d button-mini button-rounded"', $output);
-			return $output;
-		}
-		
-		/**
-		 * Add Class to Post Edit Comment Link
-		 *
-		 * @since 1.1.1
-		 */
-		function edit_comment_link( $output ) {
-			$output = str_replace('class="comment-edit-link"', 'class="button button-3d button-mini button-rounded"', $output);
-			return $output;
 		}
 		
 		/**

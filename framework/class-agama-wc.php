@@ -1,20 +1,55 @@
 <?php
+/**
+ * WooCommerce
+ *
+ * The Agama theme WooCommerce class.
+ *
+ * @package Theme Vision
+ * @subpackage Agama
+ * @since 1.0.0
+ * @since 1.5.0 Updated the code.
+ */
+
+namespace Agama;
 
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-/**
- * Agama WooCommerc Support
- *
- * @since Agama v1.0.0
- */
-if( ! class_exists( 'Agama_WC' ) && class_exists( 'Woocommerce' ) ) {
-	class Agama_WC {
+if( class_exists( 'Woocommerce' ) ) {
+    
+	class WooCommerce {
+        
+        /**
+         * Instance
+         *
+         * Single instance of this object.
+         *
+         * @since 1.5.0
+         * @access public
+         * @return null|object
+         */
+        public static $instance = null;
+
+        /**
+         * Get Instance
+         *
+         * Access the single instance of this class.
+         *
+         * @since 1.5.0
+         * @access public
+         * @return object
+         */
+        public static function get_instance() {
+            if ( null === self::$instance ) {
+                self::$instance = new self();
+            }
+            return self::$instance;
+        }
 		
 		/**
-		 * Agama WooCommerce Class Constructor
+		 * Class Constructor
 		 *
 		 * @since 1.0.0
 		 */
@@ -50,10 +85,11 @@ if( ! class_exists( 'Agama_WC' ) && class_exists( 'Woocommerce' ) ) {
 		 * Register WooCommerce Agama End Wrappers
 		 *
 		 * @since 1.0.0
+         * @since 1.5.0 Updated the code.
 		 */
 		function agama_wrapper_end() {
-				echo '</div>';
-			echo '</div>';
+				echo '</div><!-- #content -->';
+			echo '</div><!-- #primary -->';
 		}
 		
 		/**
@@ -65,5 +101,9 @@ if( ! class_exists( 'Agama_WC' ) && class_exists( 'Woocommerce' ) ) {
 			remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 		}
 	}
-	new Agama_WC;
+	
+    WooCommerce::get_instance();
+    
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */

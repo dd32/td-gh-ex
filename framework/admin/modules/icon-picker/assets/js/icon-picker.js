@@ -1112,7 +1112,7 @@
 					$target.val(options[0]+"|"+options[1]+"-"+title);
 					$button.removeClass().addClass("button agip-icon-picker "+options[0]+" "+options[1]+"-"+title);
                     var element = 'customize-control-' + $button.parent().attr("id");
-                    jQuery( '#'+ element +' #agip_icon' ).val(options[1]+"-"+title).trigger('change');
+                    jQuery( '#'+ element +' .agama-icon-picker' ).val(options[1]+"-"+title).trigger('change');
 					removePopup();
 				});
 	};

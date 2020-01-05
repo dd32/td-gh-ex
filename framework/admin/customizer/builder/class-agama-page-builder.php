@@ -50,11 +50,11 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
          * @since 1.3.8
          */
         function admin_scripts( $hook ) {
-            wp_enqueue_style( 'agama-page-builder-misc', $this->url_path . 'assets/css/widgets.css', array(), agama_version );
+            wp_enqueue_style( 'agama-page-builder-misc', $this->url_path . 'assets/css/widgets.css', [], Agama()->version() );
             if( 'widgets.php' == $hook || 'post.php' == $hook ){
                 wp_enqueue_style( 'wp-color-picker' );        
                 wp_enqueue_script( 'wp-color-picker' );
-                wp_enqueue_script( 'agama-widgets', $this->url_path . 'assets/js/widgets.min.js', ['jquery'], agama_version );
+                wp_enqueue_script( 'agama-widgets', $this->url_path . 'assets/js/widgets.min.js', [ 'jquery' ], Agama()->version() );
             }
         }
         
@@ -64,16 +64,23 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
          * @since 1.3.8
          */
         function customize_preview() {
-            $strings = array(
-                'skin_url' => AGAMA_CSS . 'skins/',
+            $strings = [
+                'skin_url'     => AGAMA_CSS . 'skins/',
                 'layout_style' => esc_attr( get_theme_mod( 'agama_layout_style', 'fullwidth' ) )
+            ];
+            
+            wp_register_script( 
+                'agama-customize-preview', 
+                AGAMA_JS . 'min/customize-preview.min.js', 
+                [ 'jquery', 'customize-preview' ], 
+                Agama()->version(), 
+                true 
             );
             
-            wp_register_script( 'agama-customize-preview', AGAMA_JS . 'min/customize-preview.min.js', [ 'jquery', 'customize-preview' ], agama_version, true );
             wp_localize_script( 'agama-customize-preview', '_AgamaPreviewData', $strings );
             wp_enqueue_script( 'agama-customize-preview' );
             
-            wp_register_style( 'agama-partial-refresh', $this->url_path . '/assets/css/partial-refresh.css', array(), agama_version );
+            wp_register_style( 'agama-partial-refresh', $this->url_path . '/assets/css/partial-refresh.css', [], Agama()->version() );
             wp_enqueue_style( 'agama-partial-refresh' );
         }
 
@@ -83,7 +90,7 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
          * @since 1.3.8
          */
         function customize_controls_print_scripts() {
-            $strings = array(
+            $strings = [
                 'ajax_url'          => admin_url( 'admin-ajax.php' ),
                 'agamaWidgetsLabel' => esc_html__( 'Agama Widgets', 'agama' ),
                 'otherWidgetsLabel' => esc_html__( 'Other Widgets', 'agama' ),
@@ -94,15 +101,15 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
                 'contactLabel'      => esc_html__( 'Contact', 'agama' ),
                 'mapsLabel'         => esc_html__( 'Maps', 'agama' ),
                 'comingSoonLabel'   => esc_html__( 'Coming Soon', 'agama' )
-            );
+            ];
             
             // Enqueue Page Builder Script
-            wp_register_script( 'agama-page-builder', AGAMA_JS . 'min/customize-controls.min.js', [ 'jquery' ], agama_version );
+            wp_register_script( 'agama-page-builder', AGAMA_JS . 'min/customize-controls.min.js', [ 'jquery' ], Agama()->version() );
             wp_localize_script( 'agama-page-builder', 'agama_builder', $strings );
             wp_enqueue_script( 'agama-page-builder' );
             
             // Enqueue Page Builder Stylesheet
-            wp_register_style( 'agama-page-builder', $this->url_path . 'assets/css/page-builder.css', [], agama_version );
+            wp_register_style( 'agama-page-builder', $this->url_path . 'assets/css/page-builder.css', [], Agama()->version() );
             wp_enqueue_style( 'agama-page-builder' );
         }
         
