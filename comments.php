@@ -2,10 +2,10 @@
 /**
  * The template for displaying comments
  *
- * @version    0.0.03
+ * @version    0.0.04
  * @package    axis-magazine
  * @author     Zidithemes
- * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
+ * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
  * 
@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 			$axis_magazine_comments_sum = get_comments_number();
 			if ( '1' === $axis_magazine_comments_sum ) {
 				/* translators: %s: post title */
-				printf(  esc_html( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'axis-magazine' ) ), get_the_title() );
+				printf(  esc_html( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'axis-magazine' ) ), esc_html(get_the_title()) );
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */
@@ -38,7 +38,7 @@ if ( post_password_required() ) {
 						'axis-magazine'
 					) ),
 					esc_html( number_format_i18n( $axis_magazine_comments_sum ) ),
-					get_the_title()
+					esc_html(get_the_title())
 				);
 			}
 			?>

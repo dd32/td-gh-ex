@@ -172,6 +172,31 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	    			   )
 	)));
 
+
+	//BEGIN MAGAZINE STACK MAG SECTION
+	$wp_customize->add_section('axis_magazine_stack_mag_section', array(
+		'title' => __('Axis Magazine Theme - Stack Mag Section', 'axis-magazine'),
+		'priority' => 10,
+		'panel' => 'axis_magazine_site_layout_option_panel',
+	));
+
+	$wp_customize->add_setting('axis_magazine_stack_mag_display_settings', array(
+	    'default' => __('block', 'axis-magazine'),
+	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_stack_mag_display_control', array(
+	    'label'    => __('Display Stack Mag Section', 'axis-magazine'),
+	    'section'  => 'axis_magazine_stack_mag_section',
+	    'settings' => 'axis_magazine_stack_mag_display_settings',
+	    'type'     	=> 'select',
+	    'choices'	=> array(
+	    				'block' => __('Yes', 'axis-magazine'),
+	    				'none' 	=> __('No', 'axis-magazine'),
+	    			   )
+	)));
+
+
 	//BEGIN BLOGBAND READ MORE BACKGROUND COLOR SECTION
 	$wp_customize->add_section('axis_magazine_readmore_section', array(
 		'title' => __('Axis Magazine Theme - Read More BG Color', 'axis-magazine'),
@@ -389,6 +414,13 @@ function axis_magazine_layout_custom_css(){
 .axis-magazine-index .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner .btn-case a {
 	background: <?php echo esc_html(get_theme_mod('axis_magazine_readmore_bg_color_settings')); ?>;
 	color: <?php echo esc_html( get_theme_mod('axis_magazine_readmore_text_color_settings')); ?>;
+}
+
+
+.axis-magazine-diff {
+	display: <?php echo esc_html(get_theme_mod('axis_magazine_stack_mag_display_settings')); ?>;
+	color: #fff;
+    margin: 20px 0px 10px 0px;
 }
 
 .sidebar .sidebar-inner .sidebar-items h2 {

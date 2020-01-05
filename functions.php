@@ -2,10 +2,10 @@
 /**
  * The template for functions 
  *
- * @version    0.0.03
+ * @version    0.0.04
  * @package    axis-magazine
  * @author     Zidithemes
- * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
+ * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
  * 
@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 require get_template_directory() . "/inc/axis-magazine-layout-customizer.php";
 require get_template_directory() . "/inc/axis-magazine-options.php";
 require get_template_directory() . "/inc/axis-magazine-adm-style-options.php";
+require get_template_directory() . "/inc/axis-magazine-customizer-pro-btn.php";
 
 
 function axis_magazine_setup(){

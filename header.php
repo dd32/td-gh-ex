@@ -2,10 +2,10 @@
 /**
  * The template for displaying code in the header section
  *
- * @version    0.0.03
+ * @version    0.0.04
  * @package    axis-magazine
  * @author     Zidithemes
- * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
+ * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
  * 
@@ -23,7 +23,7 @@
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'axis-magazine' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'axis-magazine' ); ?></a>
 
 <?php
 

@@ -1,5 +1,5 @@
 ( function( $ ) {
-
+	//js
 	wp.customize( 'axis_magazine_header_box_display_settings', function( value ) {
 		value.bind( function( val ) {
 			$( '.header-box' ).css('display', val );

@@ -2,10 +2,10 @@
 /**
  * The template for displaying details of the posts
  *
- * @version    0.0.03
+ * @version    0.0.04
  * @package    axis-magazine
  * @author     Zidithemes
- * @copyright  Copyright (C) 2019 zidithemes.tumblr.com. All Rights Reserved.
+ * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
  * 
