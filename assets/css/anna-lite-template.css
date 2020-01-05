@@ -1348,7 +1348,8 @@ post-article blockquote p {
 	padding:0; 
 }
 
-.post-container .link a:hover  { 
+.post-container .link a:hover , 
+.post-container .link a:focus { 
 	background: #d14a2b; 
 	color:#fff;
 }

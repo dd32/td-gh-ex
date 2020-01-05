@@ -38,15 +38,15 @@ if (!function_exists('anna_lite_slick_slider_function')) {
 				   
 						<div class="slick-article">
 
-							<img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo get_the_title(); ?>">
+							<img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
 							
 							<?php if ( !anna_lite_setting('anna_lite_slideshow_overlay') || anna_lite_setting('anna_lite_slideshow_overlay') == "on" ) : ?>
                                 
                                 <div class="slider-overlay">
                                     <div class="slider-overlay-content">
                                         <span class="entry-category"><?php the_category(' . '); ?></span>
-                                        <h2 class="title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>" tabindex="0"><?php echo get_the_title(); ?></a></h2>
-                                        <span class="entry-date"><?php echo esc_html__('On ','anna-lite') . get_the_date() . esc_html__(' by ','anna-lite') . get_the_author_posts_link(); ?></span>	
+                                        <h2 class="title"><a href="<?php echo esc_url(get_permalink($post->ID)); ?>" tabindex="0"><?php echo esc_html(get_the_title()); ?></a></h2>
+                                        <span class="entry-date"><?php echo esc_html__('On ','anna-lite') . esc_html(get_the_date()) . esc_html__(' by ','anna-lite') . wp_kses_post(get_the_author_posts_link()); ?></span>	
                                     </div>
                                 </div>
                                 
