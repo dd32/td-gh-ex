@@ -229,6 +229,8 @@ require get_template_directory() . '/inc/customizer/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+require get_template_directory() . '/inc/custom-metabox.php';
+
 /**
  * Load woocommerce function
  * */

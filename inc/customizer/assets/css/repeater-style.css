@@ -231,3 +231,23 @@ ul.accesspress-parallax-icon-list.clearfix li {
 #accesspress_parallax_section .background-params.enable-field{
     display: block;
 }
+
+/**
+* Upgrade To Pro
+*/
+.control-section-accesspress-parallax-upgrade{
+ display: block !important;
+}
+#customize-theme-controls .control-section-accesspress-parallax-upgrade h3.accordion-section-title {
+   background: #0073aa !important;
+   color: #FFF !important;
+   border: 0;
+}
+.control-section-accesspress-parallax-upgrade .accordion-section-title .button {
+   margin-top: -4px;
+   margin-left: 8px;
+   border: none;
+   color: #fff;
+   background: #28c503;
+   box-shadow: none;
+}

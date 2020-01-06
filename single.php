@@ -5,8 +5,16 @@
  * @package accesspress_parallax
  */
 get_header();
+
+$accesspress_parallax_page_metalayouts = get_post_meta( $post->ID, 'accesspress_parallax_page_layouts', true );
+
+if( empty($accesspress_parallax_page_metalayouts) ){
+    $accesspress_parallax_page_metalayouts = 'rightsidebar';
+}
+
+
 ?>
-<div class="mid-content clearfix">
+<div class="mid-content clearfix <?php echo esc_attr($accesspress_parallax_page_metalayouts);?>">
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
@@ -37,7 +45,11 @@ get_header();
         </main><!-- #main -->
     </div><!-- #primary -->
 
-    <?php get_sidebar(); ?>
+    <?php
+    if( $accesspress_parallax_page_metalayouts != 'nosidebar' ){
+        get_sidebar();
+    }
+      ?>
 </div>
 <?php
 get_footer();

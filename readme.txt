@@ -3,8 +3,8 @@ Contributors: AccessPress Themes
 Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
 Requires PHP: 5.3
 Requires at least: 4.5
-Tested up to: 5.1.1
-Stable tag: 1.0.0
+Tested up to: 5.3.2
+Stable tag: 3.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,11 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+
+= 3.3 =
+** Added option for sidebar metabox
+
+
 = 3.2 =
 ** Fixed Woocommerce widgets in Elementor
 
