@@ -4,13 +4,13 @@ Contributors: specia
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 3.0.6
-Version: 3.0.6
+Stable tag: 3.0.7
+Version: 3.0.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
 
-Benzer WordPress Theme, Copyright 2019 Specia Theme
+Benzer WordPress Theme, Copyright 2020 Specia Theme
 Benzer is distributed under the terms of the GNU GPL
 
 ##Description
@@ -25,7 +25,7 @@ Benzer is a trending WordPress theme with lots of powerful features, instantly g
 
 ## Credit & Copyright
 
-Benzer WordPress Theme is child theme of Specia WordPress Theme, Copyright 2019 Specia Theme
+Benzer WordPress Theme is child theme of Specia WordPress Theme, Copyright 2020 Specia Theme
 Benzer WordPress Theme is distributed under the terms of the GNU GPL
 
 i) Package Structure
@@ -81,6 +81,9 @@ License: CC0 Public Domain
 
 
 ##Changelog
+
+version 3.0.7
+* Copyright Updated
 
 version 3.0.6
 * Remove Unnecessary Code
