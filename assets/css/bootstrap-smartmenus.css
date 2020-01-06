@@ -26,7 +26,6 @@ Name: bootstrap-smartmenus.css
 =>> Site Branding Text & Navar Brand
 --------------------------------------------------*/
 
-
 .navbar-brand {
     padding-top: 0.375rem;
     padding-bottom: 0.375rem;
@@ -108,6 +107,10 @@ Name: bootstrap-smartmenus.css
 }
 a.bg-light:focus, a.bg-light:hover { 
 	background-color: transparent !important;
+}
+/*Multilevel Dropdown Active Colors*/
+.navbar .nav .dropdown-menu > .menu-item > ul.dropdown-menu > .menu-item > .dropdown-item {
+	color: #fff !important;
 }
 
 /*Navbar Header Wrap*/
@@ -235,6 +238,10 @@ a.bg-light:focus, a.bg-light:hover {
 	.navbar .nav .dropdown-item:hover {
 		background-color: transparent;
 	}
+	/*Multilevel Dropdown Active Colors*/
+	.navbar .nav .dropdown-menu > .menu-item > ul.dropdown-menu > .menu-item > .dropdown-item {
+		color: #212529 !important;
+	}
 }
 
 @media (min-width: 992px) {
@@ -285,7 +292,6 @@ a.bg-light:focus, a.bg-light:hover {
     .navbar.header-fixed-top .nav .dropdown-menu ul.dropdown-menu {
         top: auto !important;
     }
-		
 }
 
 

@@ -62,6 +62,20 @@ td a {
 		border-bottom: 3px solid #007bff !important; 
 	}
 }
+
+/*Multilevel Dropdown Active Colors*/
+
+.navbar .nav .dropdown-menu > .menu-item > ul.dropdown-menu > .menu-item > .dropdown-item:hover, 
+.navbar .nav .dropdown-menu > .menu-item > ul.dropdown-menu > .menu-item > .dropdown-item:focus {
+   color: #007bff !important;
+}
+.navbar .nav .dropdown-menu .menu-item.active .dropdown-item {
+    color: #007bff !important;
+}
+.navbar .nav .dropdown-menu > .menu-item > ul.dropdown-menu .menu-item.active .dropdown-item {
+    color: #007bff !important;
+}
+
 /*Add Menu*/
 .navbar .nav .menu-item .nav-link.add-menu {
     border: 2px solid #007bff;
