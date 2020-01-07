@@ -52,7 +52,7 @@
 
         $( '.js-ct-menubar-right' ).on( 'keyup keydown', function( e ) {
             var keyCode = e.keyCode || e.which;
-            if (keyCode == 32) {
+            if (keyCode == 13) {
                 e.preventDefault();
                 show_menu();
             }
@@ -60,7 +60,7 @@
 
         $( '.js-ct-menubar-close' ).on( 'keyup keydown', function( e ) {
             var keyCode = e.keyCode || e.which;
-            if (keyCode == 32) {
+            if (keyCode == 13) {
                 e.preventDefault();
                 hide_menu();
             }
@@ -68,7 +68,7 @@
 
         $( '.js-ct-dropdown-toggle' ).on( 'keydown', function( e ) {
             var keyCode = e.keyCode || e.which;
-            if (keyCode == 32) {
+            if (keyCode == 13) {
                 e.preventDefault();
                 $( this ).toggleClass( 'toggled' );
                 $( this ).next().slideToggle();

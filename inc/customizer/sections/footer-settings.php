@@ -667,7 +667,7 @@ function apex_business_footer_settings_setup( $wp_customize ) {
     $wp_customize->add_setting( 'apex_business_bottom_bar_content_control', array(
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_kses_post',
-        'default'           => __( '&copy; Copyright 2019 Apex Business WordPress Theme', 'apex-business'),
+        'default'           => __( 'Theme: Apex Business WordPress Theme', 'apex-business'),
     ) );
 
     $wp_customize->add_control(
