@@ -8,6 +8,9 @@ Changelog Legend:
 [x] = Deleted
 [!] = Bugs
 
+(08/01/20) = Fix - Version 4.0.2
+[!] = Fixed - If earlier layout is full-width-layout or full-width-no-box then default layout is set to fullwidth-content
+
 (08/01/20) = Fix - Version 4.0.1
 [!] = Fixed - prevent woocommerce css to be load on non-woocommerce pages
 

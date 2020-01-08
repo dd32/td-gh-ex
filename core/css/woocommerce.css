@@ -187,9 +187,6 @@ li.wc-block-grid__product {
     margin: 0 0 2.992em;
     padding: 0 5px; }
 
-  primary {
-    max-width: 100%; }
-
   .wc-block-grid.has-3-columns .wc-block-grid__product {
     flex: 1 0 50%;
     max-width: 50%; } }
