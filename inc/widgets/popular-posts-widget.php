@@ -27,7 +27,7 @@ class unite_popular_posts_widget extends WP_Widget {
 
 		/* Our variables from the widget settings. */
 		$number = $instance['number'];
-
+        $date_format = get_option('date_format');
 		?>
 
 
@@ -41,7 +41,6 @@ class unite_popular_posts_widget extends WP_Widget {
 
             <div class="tab-content">
                 <ul id="popular-posts" class="tab-pane active">
-
                     <?php
                         $recent_posts = new WP_Query(array('showposts' => $number, 'ignore_sticky_posts' => 1, 'post_status' => 'publish', 'order'=> 'DESC', 'showposts' => $number, 'meta_key' => 'post_views_count', 'orderby' => 'meta_value'));
                     ?>
@@ -49,14 +48,14 @@ class unite_popular_posts_widget extends WP_Widget {
                     <?php while($recent_posts->have_posts()): $recent_posts->the_post(); ?>
                         <li>
                             <?php if ( has_post_thumbnail() ) : ?>
-                            <a href="<?php echo get_permalink() ?>" class="tab-thumb thumbnail" rel="bookmark" title="<?php the_title(); ?>">
+                            <a href="<?php echo esc_url(get_permalink()); ?>" class="tab-thumb thumbnail" rel="bookmark" title="<?php the_title_attribute(); ?>">
                                 <?php the_post_thumbnail('tab-small'); ?>
                             </a>
                             <?php endif; ?>
                             <div class="content">
-                                <a class="tab-entry" href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                <a class="tab-entry" href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                                 <i>
-                                    <?php the_time('M j, Y') ?>
+                                    <?php the_time($date_format) ?>
                                 </i>
                             </div>
                         </li>
@@ -74,14 +73,14 @@ class unite_popular_posts_widget extends WP_Widget {
                     <?php while($recent_posts->have_posts()): $recent_posts->the_post(); ?>
                         <li>
                             <?php if ( has_post_thumbnail() ) : ?>
-                            <a href="<?php echo get_permalink() ?>" class="tab-thumb thumbnail" rel="bookmark" title="<?php the_title(); ?>">
+                            <a href="<?php echo esc_url(get_permalink()); ?>" class="tab-thumb thumbnail" rel="bookmark" title="<?php the_title_attribute(); ?>">
                                 <?php the_post_thumbnail('tab-small'); ?>
                             </a>
                             <?php endif; ?>
                             <div class="content">
-                                <a class="tab-entry" href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                <a class="tab-entry" href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                                 <i>
-                                    <?php the_time('M j, Y') ?>
+                                    <?php the_time($date_format) ?>
                                 </i>
                             </div>
                         </li>
@@ -103,7 +102,7 @@ class unite_popular_posts_widget extends WP_Widget {
                     <li>
                         <div class="content">
                             <?php if ( $comment->comment_author ) { echo $comment->comment_author; } else { _e('Anonymous','unite'); } ?> <?php _e('on','unite'); ?>
-                            <a href="<?php echo get_permalink($comment->comment_post_ID) ?>" rel="bookmark" title="<?php echo get_the_title($comment->comment_post_ID); ?>">
+                            <a href="<?php echo esc_url(get_permalink($comment->comment_post_ID)); ?>" rel="bookmark" title="<?php echo esc_attr(get_the_title($comment->comment_post_ID)); ?>">
                                 <?php echo get_the_title($comment->comment_post_ID); ?>
                             </a>
                             <p>

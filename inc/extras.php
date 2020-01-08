@@ -112,7 +112,8 @@ function unite_social(){
   $output = '<div id="social" class="social">';
   $output .= unite_social_item(unite_get_option('social_facebook'), 'Facebook', 'facebook');
   $output .= unite_social_item(unite_get_option('social_twitter'), 'Twitter', 'twitter');
-  $output .= unite_social_item(unite_get_option('social_google'), 'Google Plus', 'google-plus');
+  // Google plus discontinued
+  //$output .= unite_social_item(unite_get_option('social_google'), 'Google Plus', 'google-plus');
   $output .= unite_social_item(unite_get_option('social_youtube'), 'YouTube', 'youtube');
   $output .= unite_social_item(unite_get_option('social_linkedin'), 'LinkedIn', 'linkedin');
   $output .= unite_social_item(unite_get_option('social_pinterest'), 'Pinterest', 'pinterest');
@@ -169,7 +170,7 @@ endif;
  * function to show the footer info, copyright information
  */
 function unite_footer_info() {
-   $output = '<a href="http://colorlib.com/wp/unite" title="Unite Theme" target="_blank">Unite Theme</a> powered by <a href="http://wordpress.org" title="WordPress" target="_blank">WordPress</a>.';
+   $output = '<a href="http://colorlib.com/wp/unite" title="Unite Theme" target="_blank">'.esc_html__('Unite Theme','unite').'</a> '.esc_html__('powered by','unite').' <a href="http://wordpress.org" title="WordPress" target="_blank">WordPress</a>.';
    echo $output;
 }
 add_action( 'unite_footer', 'unite_footer_info', 30 );
@@ -250,15 +251,15 @@ function unite_options_display_sidebar() { ?>
           <div class="inside">
               <div id="social-share">
                 <div class="fb-like" data-href="https://www.facebook.com/colorlib" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
-                <div class="tw-follow" ><a href="https://twitter.com/colorlib" class="twitter-follow-button" data-show-count="false">Follow @colorlib</a></div>
+                <div class="tw-follow" ><a href="https://twitter.com/colorlib" class="twitter-follow-button" data-show-count="false"><?php esc_html_e('Follow','unite'); ?> @colorlib</a></div>
               </div>
                 <p><b><a href="http://colorlib.com/wp/support/unite"><?php _e('Unite Documentation','unite'); ?></a></b></p>
                 <p><?php _e('The best way to contact us with <b>support questions</b> and <b>bug reports</b> is via','unite') ?> <a href="http://colorlib.com/wp/forums"><?php _e('Colorlib support forum','unite') ?></a>.</p>
                 <p><?php _e('If you like this theme, I\'d appreciate any of the following:','unite') ?></p>
                 <ul>
                     <li><a class="button" href="http://wordpress.org/support/view/theme-reviews/unite?filter=5" title="<?php esc_attr_e('Rate this Theme', 'unite'); ?>" target="_blank"><?php printf(__('Rate this Theme','unite')); ?></a></li>
-                    <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php printf(__('Like on Facebook','unite')); ?></a></li>
-                    <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php printf(__('Follow on Twitter','unite')); ?></a></li>
+                    <li><a class="button" href="http://www.facebook.com/colorlib" title="<?php esc_attr_e('Like Colorlib on Facebook','unite'); ?>" target="_blank"><?php printf(__('Like on Facebook','unite')); ?></a></li>
+                    <li><a class="button" href="http://twitter.com/colorlib/" title="<?php esc_attr_e('Follow Colorlib on Twitter','unite'); ?>" target="_blank"><?php printf(__('Follow on Twitter','unite')); ?></a></li>
                 </ul>
           </div>
       </div>

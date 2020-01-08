@@ -102,7 +102,7 @@ function unite_widgets_init() {
 	register_sidebar(array(
 		'id'            => 'home1',
 		'name'          => esc_html__( 'Homepage Widget 1', 'unite' ),
-		'description'   => 'Used only on the homepage page template.',
+		'description'   => esc_html__('Used only on the homepage page template.','unite'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',
@@ -112,7 +112,7 @@ function unite_widgets_init() {
     register_sidebar(array(
 		'id'            => 'home2',
 		'name'          => esc_html__( 'Homepage Widget 2', 'unite' ),
-		'description'   => 'Used only on the homepage page template.',
+		'description'   => esc_html__('Used only on the homepage page template.','unite'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',
@@ -122,7 +122,7 @@ function unite_widgets_init() {
     register_sidebar(array(
 		'id'            => 'home3',
 		'name'          => esc_html__( 'Homepage Widget 3', 'unite' ),
-		'description'   => 'Used only on the homepage page template.',
+		'description'   => esc_html__('Used only on the homepage page template.','unite'),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widgettitle">',

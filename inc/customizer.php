@@ -73,7 +73,7 @@ function unite_customizer( $wp_customize ) {
             ));
 
             $wp_customize->add_setting('unite[element_color]', array(
-                'default' => '',
+                'default' => '#54397e',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -85,7 +85,7 @@ function unite_customizer( $wp_customize ) {
             )));
 
             $wp_customize->add_setting('unite[element_color_hover]', array(
-                'default' => '',
+                'default' => '#4b3371',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -153,7 +153,7 @@ function unite_customizer( $wp_customize ) {
             )));
 
             $wp_customize->add_setting('unite[heading_color]', array(
-                'default' => '',
+                'default' => '#54397E',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -163,7 +163,7 @@ function unite_customizer( $wp_customize ) {
                 'section' => 'unite_typography_options',
             )));
             $wp_customize->add_setting('unite[link_color]', array(
-                'default' => '',
+                'default' => '#54397E',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -173,7 +173,7 @@ function unite_customizer( $wp_customize ) {
                 'section' => 'unite_typography_options',
             )));
             $wp_customize->add_setting('unite[link_hover_color]', array(
-                'default' => '',
+                'default' => '#333',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -201,7 +201,7 @@ function unite_customizer( $wp_customize ) {
             'panel' => 'unite_main_options'
         ));
             $wp_customize->add_setting('unite[top_nav_bg_color]', array(
-                'default' => '',
+                'default' => '#54397E',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -211,7 +211,7 @@ function unite_customizer( $wp_customize ) {
                 'section' => 'unite_header_options',
             )));
             $wp_customize->add_setting('unite[top_nav_link_color]', array(
-                'default' => '',
+                'default' => '#fff',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -222,7 +222,7 @@ function unite_customizer( $wp_customize ) {
             )));
 
             $wp_customize->add_setting('unite[top_nav_dropdown_bg]', array(
-                'default' => '',
+                'default' => '#54397E',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -233,7 +233,7 @@ function unite_customizer( $wp_customize ) {
             )));
 
             $wp_customize->add_setting('unite[top_nav_dropdown_item]', array(
-                'default' => '',
+                'default' => '#fff',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -251,7 +251,7 @@ function unite_customizer( $wp_customize ) {
         ));
 
             $wp_customize->add_setting('unite[footer_bg_color]', array(
-                'default' => '',
+                'default' => '#54397E',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -261,7 +261,7 @@ function unite_customizer( $wp_customize ) {
             )));
 
             $wp_customize->add_setting('unite[footer_text_color]', array(
-                'default' => '',
+                'default' => '#999',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -271,7 +271,7 @@ function unite_customizer( $wp_customize ) {
             )));
 
             $wp_customize->add_setting('unite[footer_link_color]', array(
-                'default' => '',
+                'default' => '#eee',
                 'type'  => 'option',
                 'sanitize_callback' => 'unite_sanitize_hexcolor'
             ));
@@ -497,8 +497,8 @@ class Unite_Important_Links extends WP_Customize_Control {
             <p><?php _e('If you like this theme, I\'d appreciate any of the following:','unite') ?></p>
             <ul>
                 <li><a class="button" href="http://wordpress.org/support/view/theme-reviews/unite?filter=5" title="<?php esc_attr_e('Rate this Theme', 'unite'); ?>" target="_blank"><?php esc_html_e('Rate this Theme','unite'); ?></a></li>
-                <li><a class="button" href="http://www.facebook.com/colorlib" title="Like Colorlib on Facebook" target="_blank"><?php esc_html_e('Like on Facebook','unite'); ?></a></li>
-                <li><a class="button" href="http://twitter.com/colorlib/" title="Follow Colrolib on Twitter" target="_blank"><?php esc_html_e('Follow on Twitter','unite'); ?></a></li>
+                <li><a class="button" href="http://www.facebook.com/colorlib" title="<?php esc_attr_e('Like Colorlib on Facebook','unite'); ?>" target="_blank"><?php esc_html_e('Like on Facebook','unite'); ?></a></li>
+                <li><a class="button" href="http://twitter.com/colorlib/" title="<?php esc_attr_e('Follow Colorlib on Twitter','unite'); ?>" target="_blank"><?php esc_html_e('Follow on Twitter','unite'); ?></a></li>
             </ul>
         </div><?php
    }

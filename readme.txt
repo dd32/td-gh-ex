@@ -2,7 +2,7 @@
 
 Theme Name: Unite
 Theme URI: http://colorlib.com/wp/unite/
-Version: 2.0.6
+Version: 2.0.7
 Tested up to: WP 5.3
 
 #Copyright notice#
@@ -11,7 +11,7 @@ Tested up to: WP 5.3
 * Author URI: http://colorlib.com/wp/
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl.html
-* Unite theme, Copyright 2014-2015 http://colorlib.com
+* Unite theme, Copyright 2014-2019 http://colorlib.com
 * Unite WordPress theme is distributed under the terms of the GNU GPL
 * Unite is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
@@ -61,6 +61,9 @@ If you dismiss this notice, you can install this plugin later via Appearance->In
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
 #Changelog#
+
+####2.0.5 - 08.01.2020 ####
+* w[dot]org review fixes
 
 ####2.0.5 - 13.12.2019 ####
 * Updated TGMPA
