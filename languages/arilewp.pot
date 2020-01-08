@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArileWP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-11 11:33+0000\n"
+"POT-Creation-Date: 2020-01-07 12:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-5.3"
+"X-Loco-Version: 2.3.0; wp-5.3.2"
 
 #: comments.php:26
 #, php-format
@@ -54,15 +54,19 @@ msgstr ""
 msgid "//fontawesome.io/icons/"
 msgstr ""
 
+#: inc/admin/tabs/free-vs-pro-panel.php:55
+msgid "02 Unique Business Homepage Section Styles."
+msgstr ""
+
 #: inc/admin/tabs/free-vs-pro-panel.php:47
-msgid "02 Unique Business Homepage Styles."
+msgid "04 Unique Header Styles."
 msgstr ""
 
 #: inc/admin/getting-started.php:159
 msgid "1 Year Free Updates"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:181
+#: inc/admin/tabs/free-vs-pro-panel.php:206
 msgid "24/7 HelpDesk Professional Support"
 msgstr ""
 
@@ -76,7 +80,7 @@ msgstr ""
 msgid "About %1$s %2$s"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:56
+#: inc/admin/tabs/free-vs-pro-panel.php:64
 msgid ""
 "About 1, About 2, Service 1, Service 2, Contact 1, Contact 2, Portfolio 2, 3,"
 " 4 Columns"
@@ -112,11 +116,11 @@ msgstr ""
 msgid "Additional Css Box"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:79
+#: inc/admin/tabs/free-vs-pro-panel.php:96
 msgid "Advance Blog Layout Styles"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:71
+#: inc/admin/tabs/free-vs-pro-panel.php:88
 msgid "Advance Typography with Google Fonts Support"
 msgstr ""
 
@@ -161,7 +165,7 @@ msgstr ""
 msgid "ArileWP"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:147
+#: inc/admin/tabs/free-vs-pro-panel.php:172
 msgid ""
 "ArileWP comes in a boxed or a wide layout, and can easily be changed in the "
 "customizer."
@@ -223,14 +227,14 @@ msgstr ""
 msgid "Blog Options"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:81
+#: inc/admin/tabs/free-vs-pro-panel.php:98
 msgid ""
 "Blog Standard Right & Left Sidebar, Fullwidth, Blog Grid View Right & Left "
 "Sidebar, Blog Grid View Fullwidth, Blog List View Right & Left Sidebar, Blog "
 "List View Fullwidth, Blog Masonry 2, 3, 4 Column Layout."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:80
+#: inc/admin/tabs/free-vs-pro-panel.php:97
 msgid "Blog Standard Right Sidebar, Fullwidth."
 msgstr ""
 
@@ -238,7 +242,7 @@ msgstr ""
 msgid "Blog/Archive/Single"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:89
+#: inc/admin/tabs/free-vs-pro-panel.php:106
 msgid "Both free and pro version are fully translation ready."
 msgstr ""
 
@@ -300,7 +304,7 @@ msgid ""
 "an amazing contact form on your website."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:63
+#: inc/admin/tabs/free-vs-pro-panel.php:71
 msgid "Contact Form 7 Support"
 msgstr ""
 
@@ -321,7 +325,7 @@ msgstr ""
 
 #: footer.php:14 inc/customizer/arilewp-customizer-options.php:147
 msgid ""
-"Copyright &copy; 2019 | Powered by <a href=\"//wordpress.org/\">WordPress</a>"
+"Copyright &copy; 2020 | Powered by <a href=\"//wordpress.org/\">WordPress</a>"
 " <span class=\"sep\"> | </span> ArileWP theme by <a target=\"_blank\" "
 "href=\"//themearile.com/\">ThemeArile</a>"
 msgstr ""
@@ -330,7 +334,7 @@ msgstr ""
 msgid "Customizer Repeater"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:113
+#: inc/admin/tabs/free-vs-pro-panel.php:138
 msgid "Dark Color Style."
 msgstr ""
 
@@ -390,11 +394,11 @@ msgstr ""
 msgid "Extensive Documentation"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:54
+#: inc/admin/tabs/free-vs-pro-panel.php:62
 msgid "Extra Page Templates"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:180
+#: inc/admin/tabs/free-vs-pro-panel.php:205
 msgid "Fast & Friendly Support"
 msgstr ""
 
@@ -449,7 +453,7 @@ msgstr ""
 msgid "Footer Sidebar Two"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:112
+#: inc/admin/tabs/free-vs-pro-panel.php:137
 msgid "Footer Styles"
 msgstr ""
 
@@ -462,9 +466,10 @@ msgid "Footer Widgets"
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:38
-#: inc/admin/tabs/free-vs-pro-panel.php:55
+#: inc/admin/tabs/free-vs-pro-panel.php:63
 #: inc/admin/tabs/free-vs-pro-panel.php:80
-#: inc/admin/tabs/free-vs-pro-panel.php:113
+#: inc/admin/tabs/free-vs-pro-panel.php:97
+#: inc/admin/tabs/free-vs-pro-panel.php:138
 msgid "Free"
 msgstr ""
 
@@ -480,7 +485,7 @@ msgstr ""
 msgid "Frontpage Sections"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:55
+#: inc/admin/tabs/free-vs-pro-panel.php:63
 msgid "Frontpage, Blog Fullwidth"
 msgstr ""
 
@@ -498,7 +503,7 @@ msgid "General"
 msgstr ""
 
 #: inc/customizer/arilewp-customizer-options.php:175
-#: inc/admin/tabs/free-vs-pro-panel.php:188
+#: inc/admin/tabs/free-vs-pro-panel.php:213
 msgid "Get ArileWP Pro"
 msgstr ""
 
@@ -535,12 +540,16 @@ msgstr ""
 msgid "Google Fonts"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:172
+#: inc/admin/tabs/free-vs-pro-panel.php:197
 msgid "Google Map"
 msgstr ""
 
 #: inc/customizer/arilewp-panels-and-sections.php:20
 msgid "Header"
+msgstr ""
+
+#: inc/admin/tabs/free-vs-pro-panel.php:46
+msgid "Header Style Variations"
 msgstr ""
 
 #: inc/customizer/arilewp-panels-and-sections.php:98
@@ -571,8 +580,8 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:46
-msgid "Homepage Layout Styles"
+#: inc/admin/tabs/free-vs-pro-panel.php:54
+msgid "Homepage Section Layout Styles"
 msgstr ""
 
 #. Author URI of the theme
@@ -646,7 +655,15 @@ msgstr ""
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:114
+#: inc/admin/tabs/free-vs-pro-panel.php:81
+msgid "Light and Dark Color Skins"
+msgstr ""
+
+#: inc/admin/tabs/free-vs-pro-panel.php:80
+msgid "Light Color Skin"
+msgstr ""
+
+#: inc/admin/tabs/free-vs-pro-panel.php:139
 msgid "Light, Dark & Custom Color Style."
 msgstr ""
 
@@ -673,7 +690,11 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:97
+#: inc/admin/tabs/free-vs-pro-panel.php:114
+msgid "Make your business website in RTL Language support."
+msgstr ""
+
+#: inc/admin/tabs/free-vs-pro-panel.php:122
 msgid "Make your website fast on all devices."
 msgstr ""
 
@@ -705,7 +726,7 @@ msgstr ""
 msgid "Mobile Friendly Design"
 msgstr ""
 
-#: inc/admin/getting-started.php:158 inc/admin/tabs/free-vs-pro-panel.php:121
+#: inc/admin/getting-started.php:158 inc/admin/tabs/free-vs-pro-panel.php:146
 msgid "Multilingual Ready"
 msgstr ""
 
@@ -767,9 +788,10 @@ msgid "Primary"
 msgstr ""
 
 #: inc/admin/tabs/free-vs-pro-panel.php:39
-#: inc/admin/tabs/free-vs-pro-panel.php:56
+#: inc/admin/tabs/free-vs-pro-panel.php:64
 #: inc/admin/tabs/free-vs-pro-panel.php:81
-#: inc/admin/tabs/free-vs-pro-panel.php:114
+#: inc/admin/tabs/free-vs-pro-panel.php:98
+#: inc/admin/tabs/free-vs-pro-panel.php:139
 msgid "Pro"
 msgstr ""
 
@@ -834,6 +856,10 @@ msgstr ""
 msgid "Right Sidebar"
 msgstr ""
 
+#: inc/admin/tabs/free-vs-pro-panel.php:113
+msgid "RTL Support"
+msgstr ""
+
 #: searchform.php:2
 msgid "Search"
 msgstr ""
@@ -842,11 +868,11 @@ msgstr ""
 msgid "Search results for"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:138
+#: inc/admin/tabs/free-vs-pro-panel.php:163
 msgid "Section Reordering"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:164
+#: inc/admin/tabs/free-vs-pro-panel.php:189
 msgid "SEO (Search Engine Optimization) Ready"
 msgstr ""
 
@@ -867,7 +893,7 @@ msgstr ""
 msgid "Shortcode"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:173
+#: inc/admin/tabs/free-vs-pro-panel.php:198
 msgid "Shows the physical location with an interactive contact form."
 msgstr ""
 
@@ -921,7 +947,7 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:96
+#: inc/admin/tabs/free-vs-pro-panel.php:121
 msgid "Speed Performance"
 msgstr ""
 
@@ -985,18 +1011,22 @@ msgid ""
 "features of the theme, you have to go to our %1$s welcome page %2$s."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:122
+#: inc/admin/tabs/free-vs-pro-panel.php:147
 msgid ""
 "The Premium Version is fully compatible with WPML and Poylang. Create your "
 "website in multiple languages."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:64
+#: inc/admin/tabs/free-vs-pro-panel.php:72
 msgid "The theme fully supports the contact form 7 plugin."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:105
+#: inc/admin/tabs/free-vs-pro-panel.php:130
 msgid "The whole footer of ArileWP WordPress theme is widget ready."
+msgstr ""
+
+#: inc/admin/tabs/free-vs-pro-panel.php:79
+msgid "Theme Color Skins"
 msgstr ""
 
 #: inc/admin/getting-started.php:146
@@ -1022,11 +1052,11 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:130
+#: inc/admin/tabs/free-vs-pro-panel.php:155
 msgid "Top Header Bar Support"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:88
+#: inc/admin/tabs/free-vs-pro-panel.php:105
 msgid "Translation Ready"
 msgstr ""
 
@@ -1046,7 +1076,7 @@ msgstr ""
 msgid "Unlimited Business Sections"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:155
+#: inc/admin/tabs/free-vs-pro-panel.php:180
 msgid "Unlimited Color Options"
 msgstr ""
 
@@ -1101,11 +1131,11 @@ msgstr ""
 msgid "Welcome to %1$s - Version %2$s"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:165
+#: inc/admin/tabs/free-vs-pro-panel.php:190
 msgid "Which is help to increase the amount of visitors to a website."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:146
+#: inc/admin/tabs/free-vs-pro-panel.php:171
 msgid "Wide & Boxed Layout"
 msgstr ""
 
@@ -1113,7 +1143,7 @@ msgstr ""
 msgid "Wide & Boxed Layouts"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:104
+#: inc/admin/tabs/free-vs-pro-panel.php:129
 msgid "Widgetized Footer Area"
 msgstr ""
 
@@ -1125,13 +1155,13 @@ msgstr ""
 msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:131
+#: inc/admin/tabs/free-vs-pro-panel.php:156
 msgid ""
 "You can easily add/modify site info and social icons. Also change the header "
 "background color."
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:139
+#: inc/admin/tabs/free-vs-pro-panel.php:164
 msgid "You can easily drag and drop the front page sections with ordering."
 msgstr ""
 
@@ -1143,7 +1173,7 @@ msgstr ""
 msgid "You can Upload the Standrad size of logo (210px*39px)"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:156
+#: inc/admin/tabs/free-vs-pro-panel.php:181
 msgid "You can use any type of theme color as you want."
 msgstr ""
 
@@ -1153,7 +1183,7 @@ msgstr ""
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:72
+#: inc/admin/tabs/free-vs-pro-panel.php:89
 msgid ""
 "You will be able to change font style as you want and select your desired "
 "font."

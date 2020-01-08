@@ -43,8 +43,16 @@
 			  </tr>
 			  <tr>
 				 <td>
-					<h3><?php esc_html_e( 'Homepage Layout Styles', 'arilewp' ); ?></h3>
-					<p><?php esc_html_e( '02 Unique Business Homepage Styles.', 'arilewp' ); ?></p>
+					<h3><?php esc_html_e( 'Header Style Variations', 'arilewp' ); ?></h3>
+					<p><?php esc_html_e( '04 Unique Header Styles.', 'arilewp' ); ?></p>
+				 </td>
+				 <td class="only-lite font-18">01</span></td>
+				 <td class="only-lite font-18">04</span></td>
+			  </tr>
+			  <tr>
+				 <td>
+					<h3><?php esc_html_e( 'Homepage Section Layout Styles', 'arilewp' ); ?></h3>
+					<p><?php esc_html_e( '02 Unique Business Homepage Section Styles.', 'arilewp' ); ?></p>
 				 </td>
 				 <td class="only-lite font-18">01</span></td>
 				 <td class="only-lite font-18">02</span></td>
@@ -62,6 +70,15 @@
 				 <td>
 					<h3><?php esc_html_e( 'Contact Form 7 Support', 'arilewp' ); ?></h3>
 					<p><?php esc_html_e( 'The theme fully supports the contact form 7 plugin.', 'arilewp' ); ?></p>
+				 </td>
+				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+			  </tr>
+			  <tr>
+				 <td>
+					<h3><?php esc_html_e( 'Theme Color Skins', 'arilewp' ); ?></h3>
+					<p><b class="text-show"><?php esc_html_e( 'Free', 'arilewp' ); ?></b> - <?php esc_html_e( 'Light Color Skin', 'arilewp' ); ?></p>
+					<p><b class="text-show"><?php esc_html_e( 'Pro', 'arilewp' ); ?></b> - <?php esc_html_e( 'Light and Dark Color Skins', 'arilewp' ); ?></p>
 				 </td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
@@ -87,6 +104,14 @@
 				 <td>
 					<h3><?php esc_html_e( 'Translation Ready', 'arilewp' ); ?></h3>
 					<p><?php esc_html_e( 'Both free and pro version are fully translation ready.', 'arilewp' ); ?></p>
+				 </td>
+				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
+			  </tr>
+			  <tr>
+				 <td>
+					<h3><?php esc_html_e( 'RTL Support', 'arilewp' ); ?></h3>
+					<p><?php esc_html_e( 'Make your business website in RTL Language support.', 'arilewp' ); ?></p>
 				 </td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
 				 <td class="only-lite"><span class="dashicons-before dashicons-yes"></span></td>
