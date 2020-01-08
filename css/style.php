@@ -24,7 +24,6 @@ function unicon_lite_dynamic_styles() {
             #content .page_header_wrap #accesspress-breadcrumb span,
             .woocommerce .entry-header .woocommerce-breadcrumb span,
             .woocommerce ul.products li.product .price-cart .gridlist-buttonwrap a.button:hover,
-            .woocommerce ul.products li.product .price-cart .added_to_cart:hover,
             .woocommerce ul.products li.product .price-cart .add_to_cart_button,
             .woocommerce ul.products li.product .price-cart .added_to_cart,
             .woocommerce ul.products.grid li.product .onsale,

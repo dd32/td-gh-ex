@@ -47,6 +47,11 @@ Images
 
 
 == Changelog ==
+
+= 2.4.1 =
+** Fixed dynamic issues
+** fixed minor bugs
+
 = 2.4.0 =
 ** Added New Welcome page and removed old
 ** Added Demo Importer

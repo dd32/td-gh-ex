@@ -27,11 +27,24 @@
 					'filename' 	=> 'woocommerce.php',
 					'class' 	=> 'WooCommerce',
 				),
+
+				'yith-woocommerce-compare' => array(
+					'slug' 		=> 'yith-woocommerce-compare',
+					'filename' 	=> 'init.php',
+					'class' 	=> 'YITH_Woocompare',
+				),
+
 				'yith-woocommerce-wishlist' => array(
-					'slug'      => 'yith-woocommerce-wishlist',
-					'filename' 	=> 'yith-woocommerce-wishlist.php',
+					'slug' 		=> 'yith-woocommerce-wishlist',
+					'filename' 	=> 'init.php',
 					'class' 	=> 'YITH_WCWL',
 				),
+
+				'yith-woocommerce-quick-view' => array(
+					'slug' 		=> 'yith-woocommerce-quick-view',
+					'filename' 	=> 'init.php',
+					'class' 	=> 'YITH_WCQV',
+				)
 			),
 			'pro_plug' => array(
 
