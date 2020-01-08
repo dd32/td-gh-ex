@@ -31,15 +31,20 @@
  * @param  array $args Arguments to pass to Breadcrumb_Trail.
  * @return void
  */
-function breadcrumb_trail( $args = array() ) {
 
-	$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
+if (!function_exists('breadcrumb_trail')) :
 
-	if ( ! is_object( $breadcrumb ) )
-		$breadcrumb = new Breadcrumb_Trail( $args );
+	function breadcrumb_trail( $args = array() ) {
 
-	return $breadcrumb->trail();
-}
+		$breadcrumb = apply_filters( 'breadcrumb_trail_object', null, $args );
+
+		if ( ! is_object( $breadcrumb ) )
+			$breadcrumb = new Breadcrumb_Trail( $args );
+
+		return $breadcrumb->trail();
+	}
+
+endif;
 
 /**
  * Creates a breadcrumbs menu for the site based on the current page that's being viewed by the user.

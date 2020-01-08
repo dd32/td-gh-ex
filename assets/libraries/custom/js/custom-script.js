@@ -178,7 +178,7 @@
             focusOnSelect: true,
             dots: true
         });
-        e(".gallery-columns-1, .wp-block-gallery.columns-1").slick({
+        e(".gallery-columns-1, ul.wp-block-gallery.columns-1, .wp-block-gallery.columns-1 .blocks-gallery-grid").slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
@@ -217,6 +217,33 @@
             }, 1200);
         });
     };
+    n.MagnificPopup = function () {
+        e('.widget .gallery, .entry-content .gallery, .wp-block-gallery').each(function () {
+            e(this).magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                closeOnContentClick: false,
+                closeBtnInside: false,
+                mainClass: 'mfp-with-zoom mfp-img-mobile',
+                image: {
+                    verticalFit: true,
+                    titleSrc: function (item) {
+                        return item.el.attr('title');
+                    }
+                },
+                gallery: {
+                    enabled: true
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300,
+                    opener: function (element) {
+                        return element.find('img');
+                    }
+                }
+            });
+        });
+    };
     e(document).ready(function () {
         n.mobileMenu.init();
         n.DataBackground();
@@ -225,6 +252,7 @@
         n.Thememattic_preloader();
         n.parellex();
         n.scroll_up();
+        n.MagnificPopup();
     });
     e(window).scroll(function () {
         n.stickyMenu();

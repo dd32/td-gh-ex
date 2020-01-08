@@ -83,8 +83,8 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                     'type' => 'url',
                     'class' => 'widefat',
                 ),
-                'url-gp' => array(
-                    'label' => __('Googleplus URL:', 'best-education'),
+                'url-insta' => array(
+                    'label' => __('Instagram URL:', 'best-education'),
                     'type' => 'url',
                     'class' => 'widefat',
                 ),
@@ -133,9 +133,9 @@ if (!class_exists('Best_Education_Author_Post_widget')) :
                             <i class="tm-ion fa fa-twitter"></i>
                         </a>
                     <?php } ?>
-                    <?php if (!empty($params['url-gp'])) { ?>
-                        <a href="<?php echo esc_url($params['url-gp']); ?>" target="_blank">
-                            <i class="tm-ion fa fa-google-plus"></i>
+                    <?php if (!empty($params['url-insta'])) { ?>
+                        <a href="<?php echo esc_url($params['url-insta']); ?>" target="_blank">
+                            <i class="tm-ion fa fa-instagram"></i>
                         </a>
                     <?php } ?>
                 </div>

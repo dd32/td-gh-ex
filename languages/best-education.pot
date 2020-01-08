@@ -495,7 +495,7 @@ msgid "Global Layout"
 msgstr ""
 
 #: inc/widgets/widgets.php:87
-msgid "Googleplus URL:"
+msgid "Instagram URL:"
 msgstr ""
 
 #: inc/about/about.php:106

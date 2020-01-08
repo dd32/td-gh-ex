@@ -4,7 +4,7 @@ Theme URI: https://thememattic.com/theme/best-education
 Author: Thememattic
 Author URI: https://thememattic.com
 Description: Best Education is the flexible and highly responsive wordpress theme that helps in creating the best website for education instituitions like schools, colleges, primary schools, universities and various others business related to the education, teaching and learning. It has many features that supports all the functionalities of an educational website. Loaded with powerful plugin named "Education Connect", helps in creating the outstanding website for your school or college within a very less time. By featuring a responsive layout, it is clear that visitors can use any mobile device or desktop screen for reaching the website. It is perfectly optimized to support all the latest trends in SEO on-page optimization. View Live Preview: https://demo.thememattic.com/best-education and For Documentation: https://docs.thememattic.com/best-education
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-education
@@ -4236,4 +4236,29 @@ figcaption {
 
 .signature-image img {
     max-width: 180px;
+}
+ul.trail-items li:last-child a {
+    color: #fff;
+    cursor: default;
+    pointer-events: none;
+}
+.wp-block-gallery.columns-1{
+    display: block;
+}
+ul.wp-block-gallery.columns-1,
+.wp-block-gallery .blocks-gallery-grid,
+.wp-block-gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+@media only screen and (min-width: 1200px) {
+    .site-header.nav-affix .top-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 999;
+    }
 }

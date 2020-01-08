@@ -163,6 +163,7 @@ endif;
  */
 function best_education_scripts() {
 	$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG?'':'.min';
+	wp_enqueue_style('magnific-popup', get_template_directory_uri().'/assets/libraries/magnific-popup/magnific-popup.css');
 	wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/libraries/font-awesome/css/font-awesome'.$min.'.css');
 	wp_enqueue_style('bootstrap', get_template_directory_uri().'/assets/libraries/bootstrap/css/bootstrap'.$min.'.css');
 	wp_enqueue_style('slick', get_template_directory_uri().'/assets/libraries/slick/css/slick'.$min.'.css');
@@ -179,6 +180,7 @@ function best_education_scripts() {
 
 	wp_enqueue_script('jquery-bootstrap', get_template_directory_uri().'/assets/libraries/bootstrap/js/bootstrap'.$min.'.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-slick', get_template_directory_uri().'/assets/libraries/slick/js/slick'.$min.'.js', array('jquery'), '', true);
+	wp_enqueue_script('jquery-magnific-popup', get_template_directory_uri().'/assets/libraries/magnific-popup/jquery.magnific-popup'.$min.'.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-stellar', get_template_directory_uri().'/assets/libraries/stellar/jquery.stellar.js', array('jquery'), '', true);
 
 	wp_enqueue_script('best-education-script', get_template_directory_uri().'/assets/libraries/custom/js/custom-script.js', array('jquery'), '', 1);

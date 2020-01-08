@@ -4,7 +4,7 @@ Contributors: Thememattic
 
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,8 +60,14 @@ Best Education is distributed under the terms of the GNU GPL
 =Added rtl-tag as well as managed RTL support=
 =Added after body class hook and skip link managed=
 
-= 1.0.4 - Dec 02 2019 =
+= 1.0.5 - Dec 02 2019 =
 =Added breadcrums error fix and script optimize=
+
+= 1.0.5 - Jan 08 2020 =
+= Breadcrumb structure issue fix =
+= Update message widget =
+= Update gallery issue =
+= Add gallery lightbox =
 
 
 == Credits ==
@@ -109,6 +115,11 @@ License: Licensed under the MIT license
 Stellar:
 Author: Mark Dalgleish
 Source: https://github.com/markdalgleish/stellar.js and https://markdalgleish.mit-license.org/
+License: Licensed under the MIT license
+
+Magnific Popup
+Author: Chubby Ninja
+Source: https://github.com/dimsemenov/Magnific-Popup
 License: Licensed under the MIT license
 
 == Image Used ==
