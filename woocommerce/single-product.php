@@ -25,7 +25,7 @@ get_header( 'shop' ); ?>
 <div class="container">
 	<main role="main" id="maincontent">
 		<div class="row">
-			<div class="col-lg-9 col-md-9">
+			<div class="col-lg-8 col-md-8">
 				<?php
 					/**
 					 * woocommerce_before_main_content hook.
@@ -51,7 +51,7 @@ get_header( 'shop' ); ?>
 					do_action( 'woocommerce_after_main_content' );
 				?>
 			</div>
-			<div class="col-lg-3 col-md-3">
+			<div class="col-lg-4 col-md-4">
 				<?php
 					/**
 					 * woocommerce_sidebar hook.
