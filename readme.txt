@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.3.1
+Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.8
+Stable tag: 0.3.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -69,6 +69,9 @@ Advance Business is a powerful, bold, flexible, dynamic and neatly-structured bu
 
 = 0.3.8 =
   * Resolve css errors.
+
+= 0.3.9 =
+  * Changed woocommerce css customization.
 
 == Resources ==
 
