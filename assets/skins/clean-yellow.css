@@ -1,0 +1,166 @@
+.header-cart a span{
+    background-color: #ffdd59 !important;
+}
+.header-cart-widget{
+    border-top-color: #ffdd59 !important;
+}
+.header-cart-widget:before {
+    border-bottom-color: #ffdd59 !important;
+}
+
+#back-to-top i.open, 
+#back-to-top i:hover,
+#footer,
+#footer .widget,
+.post-article blockquote,
+span.button,
+.post-article span.button,
+.wpcf7-form input[type=submit],
+.comment-form input[type=submit],
+.contact-form input[type=submit],
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input#submit, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input {
+	border-color:#ffdd59;
+}
+
+.woocommerce input.button#place_order,
+.header-cart a span,
+.woocommerce nav.woocommerce-pagination ul li span.current,
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover,
+#back-to-top i.open, 
+#back-to-top i:hover,
+.post-container .link:hover,
+.post-container .quote:hover,
+.post-container .link a:hover,
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current,
+.wip-pagination span,
+.wip-pagination a span:hover {
+    background-color: #ffdd59;
+}
+
+.header-cart-widget .buttons a, 
+.header-cart-widget .woocommerce.widget_shopping_cart a.button { 
+	color:#ffdd59 !important  ;
+}
+
+.woocommerce .cart .button, 
+.woocommerce .cart input.button,
+.star-rating span,
+.woocommerce p.stars,
+.woocommerce p.stars a,
+.woocommerce p.stars:hover a,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input#submit, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce .wc-proceed-to-checkout input,
+.copyright a,
+span.button,
+.post-article span.button,
+.wpcf7-form input[type=submit],
+.comment-form input[type=submit],
+.contact-form input[type=submit] {
+    color: #ffdd59;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
+    color: #ffd32a;
+}
+
+.header-cart a span,
+.woocommerce input.button#place_order:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover ,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
+span.button:hover,
+.post-article span.button:hover,
+#sidebar .tagcloud a:hover,
+#footer .tagcloud a:hover,
+span.button:hover,
+.post-article span.button:hover,
+.wpcf7-form input[type=submit]:hover,
+.comment-form input[type=submit]:hover,
+.contact-form input[type=submit]:hover {
+    background-color: #ffd32a;
+}
+
+.header-cart-widget:before,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce a.button:hover,
+.woocommerce a.add_to_cart_button:hover,
+.woocommerce .woocommerce-message a.button:hover ,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce .wc-proceed-to-checkout input:hover,
+span.button:hover,
+.post-article span.button:hover,
+.wpcf7-form input[type=submit]:hover,
+.comment-form input[type=submit]:hover,
+.contact-form input[type=submit]:hover {
+    border-color: #ffd32a;
+}
+
+body.minimal_layout .widget_shopping_cart li,
+body.minimal_layout .product_list_widget li {
+    border-color: #ffdd59 !important;
+}
+
+.header-cart-widget .buttons a:hover {
+    border-color: #ffdd59 !important;
+}
+
+a:hover,
+#footer .copyright a:hover,
+.post-container .title a:hover,
+#footer a:hover,
+#footer ul.widget-category li:hover,
+#footer ul.widget-category li a:hover,
+.post-container .title a:hover,
+#logo a:hover {
+    color: #ffdd59;
+}
+
+#footer .title,
+#footer p,
+#footer li,
+#footer address,
+#footer dd,
+#footer blockquote,
+#footer td,
+#footer th,
+#footer .textwidget,
+#footer a,
+#footer ul,
+#footer p,
+#footer .copyright p,
+#footer .copyright a {
+    color: #ffffff;
+}
