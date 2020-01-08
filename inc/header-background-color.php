@@ -50,7 +50,7 @@ function adonis_custom_header_and_background() {
 		'width'                  => 1920,
 		'height'                 => 954,
 		'flex-height'            => true,
-		'flex-height'            => true,
+		'flex-width'             => true,
 		'wp-head-callback'       => 'adonis_header_style',
 		'video'                  => true,
 	) ) );

@@ -90,6 +90,8 @@ if ( ! function_exists( 'adonis_setup' ) ) :
 		add_theme_support( 'custom-logo', array(
 			'height'      => 225,
 			'width'       => 225,
+			'flex-height' => true,
+			'flex-width'  => true,
 		) );
 
 		// Add support for Block Styles.
