@@ -85,8 +85,8 @@ if ( ! function_exists( 'audioman_featured_image' ) ) :
 	 * @since Audioman 1.0
 	 */
 	function audioman_featured_image() {
-		if ( is_header_video_active() && has_header_video() ) {
-			return true;
+		if ( is_header_video_active() && has_header_video() ) { 
+			return get_header_image();
 		}
 		
 		$thumbnail = 'audioman-slider';
@@ -212,11 +212,11 @@ if ( ! function_exists( 'audioman_featured_overall_image' ) ) :
 		} elseif ( 'entire-site' === $enable ) {
 			// Check Entire Site
 			return audioman_featured_image();
-		} elseif ( 'entire-site-page-post' === $enable ) {
+		} elseif ( 'entire-site-page-post' === $enable ) { 
 			// Check Entire Site (Post/Page)
-			if ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
+			if ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) { 
 				return audioman_featured_page_post_image();
-			} else {
+			} else { 
 				return audioman_featured_image();
 			}
 		} elseif ( 'pages-posts' === $enable ) {
@@ -259,13 +259,22 @@ if ( ! function_exists( 'audioman_header_media_text' ) ):
 			<?php
 			$before = '<div class="section-title-wrapper"><h2 class="entry-title';
 
+			if ( is_singular() ) {
+				$before = '<div class="section-title-wrapper"><h1 class="entry-title';
+			}
+
 			if ( ! is_page() ) {
 				$before .= ' section-title';
 			}
 
 			$before .= '">';
 
-			audioman_header_title( $before, '</h2></div>' ); ?>
+			if ( is_singular() ) {
+				audioman_header_title( $before, '</h1></div>' );
+			} else {
+				audioman_header_title( $before, '</h2></div>' );
+			}
+			?>
 
 			<?php audioman_header_description( '<div class="site-header-text">', '</div>' ); ?>
 

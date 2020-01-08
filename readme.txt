@@ -3,7 +3,7 @@ Contributors: catchthemes
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
 Requires at least: 4.8
 Tested up to: 5.3
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,10 @@ You can check our Theme Demo at https://catchthemes.com/demo/audioman/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 2.0.3 (Released: January 07, 2020) =
+* Bug Fixed: h1 tag issue
+* Bug Fixed: Header Media Video URL issue
 
 = 2.0.2 (Released: November 15, 2019) =
 * Added: Soundcloud Social Icon

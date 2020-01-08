@@ -15,7 +15,7 @@
 		if ( 'disable' === $header_image ) : ?>
 
 		<header class="entry-header">
-			<?php the_title( '<h2 class="entry-title section-title">', '</h2>' ); ?>
+			<?php the_title( '<h1 class="entry-title section-title">', '</h1>' ); ?>
 
 			<?php
 			if ( 'post' === get_post_type() ) : ?>
