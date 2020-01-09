@@ -788,10 +788,27 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//Footer
 	$wp_customize->add_section( 'aagaz_startup_footer' , array(
-    	'title'      => __( 'Footer Text', 'aagaz-startup' ),
+    	'title'      => __( 'Footer Section', 'aagaz-startup' ),
 		'priority'   => null,
 		'panel' => 'aagaz_startup_panel_id'
 	) );
+
+	$wp_customize->add_setting('aagaz_startup_footer_widget',array(
+        'default'           => '4',
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices',
+    ));
+    $wp_customize->add_control('aagaz_startup_footer_widget',array(
+        'type'        => 'radio',
+        'label'       => __('No. of Footer widget area', 'aagaz-startup'),
+        'section'     => 'aagaz_startup_footer',
+        'description' => __('Select the number of footer widget areas and after that, go to Appearance > Widgets and add your widgets in the footer.', 'aagaz-startup'),
+        'choices' => array(
+            '1'     => __('One', 'aagaz-startup'),
+            '2'     => __('Two', 'aagaz-startup'),
+            '3'     => __('Three', 'aagaz-startup'),
+            '4'     => __('Four', 'aagaz-startup')
+        ),
+    )); 
 
 	$wp_customize->add_setting('aagaz_startup_hide_show_scroll',array(
         'default' => 'true',

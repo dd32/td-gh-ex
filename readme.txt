@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.8
+Stable tag: 0.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,10 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 
 = 0.3.8 =
   * Changed WooCommerce page css.
+
+= 0.3.9 =
+  * Added Footer widget area setting in cutomizer.
+  * Updated POT file.
   
 == Resources ==
 

@@ -95,6 +95,12 @@ msgstr ""
 msgid 'Comments are closed.'
 msgstr ""
 
+#: template-parts/footer/site-info.php:10
+#: template-parts/footer/site-info.php:12
+#: template-parts/footer/site-info.php:14
+msgid 'Scroll Up'
+msgstr ""
+
 #: template-parts/footer/site-info.php:19
 msgid 'By ThemesEye'
 msgstr ""
@@ -123,38 +129,19 @@ msgstr ""
 msgid 'Add widgets here to appear in your sidebar on Pages and archive pages.'
 msgstr ""
 
-#: functions.php:189
-msgid "Footer 1"
+#: functions.php:192
+msgid "Footer "
 msgstr ""
 
-#: functions.php:199
-msgid "Footer 2"
-msgstr ""
-
-#: functions.php:209
-msgid "Footer 3"
-msgstr ""
-
-#: functions.php:219
-msgid "Footer 4"
-msgstr ""
-
-#: functions.php:191
-#: functions.php:201
-#: functions.php:211
-#: functions.php:221
-msgid "Add widgets here to appear in your footer."
-msgstr ""
-
-#: functions.php:341
+#: functions.php:315
 msgid 'Expand child menu'
 msgstr ""
 
-#: functions.php:342
+#: functions.php:316
 msgid 'Collapse child menu'
 msgstr ""
 
-#: functions.php:399
+#: functions.php:373
 msgid 'Startup WordPress Theme'
 msgstr ""
 
@@ -560,42 +547,66 @@ msgid 'Add Button Text'
 msgstr ""
 
 #: inc/customizer.php:791
-msgid 'Footer Text'
+msgid 'Footer Section'
 msgstr ""
 
 #: inc/customizer.php:802
-msgid 'Show / Hide Scroll To Top'
+msgid 'No. of Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:804
+msgid 'Select the number of footer widget areas and after that, go to Appearance > Widgets and add your widgets in the footer.'
+msgstr ""
+
+#: inc/customizer.php:806
+msgid 'One'
 msgstr ""
 
 #: inc/customizer.php:807
-#: inc/customizer.php:817
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:808
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:809
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:819
+msgid 'Show / Hide Scroll To Top'
+msgstr ""
+
+#: inc/customizer.php:824
+#: inc/customizer.php:834
 msgid 'Right align'
 msgstr ""
 
-#: inc/customizer.php:812
+#: inc/customizer.php:829
 msgid 'Scroll To Top'
 msgstr ""
 
-#: inc/customizer.php:813
+#: inc/customizer.php:830
 msgid 'Here you can change the Footer layout.'
 msgstr ""
 
-#: inc/customizer.php:816
+#: inc/customizer.php:833
 msgid 'Left align'
 msgstr ""
 
-#: inc/customizer.php:818
+#: inc/customizer.php:835
 msgid 'Center align'
 msgstr ""
 
-#: inc/customizer.php:827
+#: inc/customizer.php:844
 msgid 'Add Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:957
+#: inc/customizer.php:974
 msgid 'Aagaz Startup Pro'
 msgstr ""
 
-#: inc/customizer.php:958
+#: inc/customizer.php:975
 msgid 'Go Pro'
 msgstr ""

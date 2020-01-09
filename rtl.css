@@ -1289,7 +1289,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 #sidebox{
 	margin-top: 10px;
 }
-#sidebox h2{
+#sidebox h3{
     background: #9fcd55;
     font-size: 20px;
     font-weight: 700;
@@ -1303,7 +1303,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 #sidebox .textwidget p a {
     text-decoration: underline;
 }
-.site-footer h2 {
+.site-footer h3 {
     font-size: 20px;
     font-weight: 700;
     color: #ffffff;

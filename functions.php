@@ -171,8 +171,8 @@ function aagaz_startup_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'aagaz-startup' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -181,49 +181,23 @@ function aagaz_startup_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar on Pages and archive pages.', 'aagaz-startup' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'aagaz-startup' ),
-		'id'            => 'footer-1',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'aagaz-startup' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'aagaz-startup' ),
-		'id'            => 'footer-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'aagaz-startup' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'aagaz-startup' ),
-		'id'            => 'footer-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'aagaz-startup' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'aagaz-startup' ),
-		'id'            => 'footer-4',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'aagaz-startup' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	//Footer widget areas
+	$widget_areas = get_theme_mod('aagaz_startup_footer_widget', '4');
+	for ($i=1; $i<=$widget_areas; $i++) {
+		register_sidebar( array(
+			'name'          => __( 'Footer ', 'aagaz-startup' ) . $i,
+			'id'            => 'footer-' . $i,
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}
 }
 add_action( 'widgets_init', 'aagaz_startup_widgets_init' );
 
