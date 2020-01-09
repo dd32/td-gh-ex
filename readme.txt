@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, custom-header, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo, custom-background
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Ansia WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -37,6 +37,9 @@ Ansia includes support for Infinite Scroll in Jetpack and WooCommerce.
 * Image used in Theme Screenshot (https://www.pexels.com/photo/adorable-beautiful-child-children-573285/) Pexels Free photos for commercial and personal works
 
 == Changelog ==
+= Version 1.1.2 =
+* Improved WooCommerce style in My Account page
+* Minor bug fixes
 
 = Version 1.1.1 =
 * Improved compatibility with WordPress 5.3

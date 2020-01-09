@@ -550,13 +550,27 @@ if( ! function_exists('ansia_allowed_html')){
 			'dl' => array(),
 			'dt' => array(),
 			'em' => array(),
-			'h1' => array(),
-			'h2' => array(),
-			'h3' => array(),
-			'h4' => array(),
-			'h5' => array(),
-			'h6' => array(),
-			'i' => array(),
+			'h1' => array(
+				'class' => array(),
+			),
+			'h2' => array(
+				'class' => array(),
+			),
+			'h3' => array(
+				'class' => array(),
+			),
+			'h4' => array(
+				'class' => array(),
+			),
+			'h5' => array(
+				'class' => array(),
+			),
+			'h6' => array(
+				'class' => array(),
+			),
+			'i' => array(
+				'class' => array(),
+			),
 			'br' => array(),
 			'img' => array(
 				'alt'    => array(),
@@ -684,7 +698,7 @@ if ( ! function_exists( 'wp_body_open' ) ) {
 function ansia_custom_css_styles() {
 	echo '<style id="ansia-custom-css">';
 		$backgroundColor = ansia_options('_main_background_color', '#ffffff');
-		$textColor = ansia_options('_main_text_color', '#404040');
+		$textColor = ansia_options('_main_text_color', '#413e4a');
 		$accentColor = ansia_options('_main_accent_color', '#b2dbbf');
 		$borderColor = ansia_options('_main_border_color', '#e0e0e0');
 		$footerBackgroundColor = ansia_options('_footer_background_color', '#202020');
@@ -1049,7 +1063,8 @@ function ansia_custom_css_styles() {
 		.woocommerce-message a:hover,
 		.return-to-shop a:hover,
 		.wc-proceed-to-checkout .button.checkout-button:hover,
-		.widget_shopping_cart p.buttons a:hover {
+		.widget_shopping_cart p.buttons a:hover,
+		.woocommerce-MyAccount-navigation ul li.is-active {
 			border-color: <?php echo esc_html($textColor); ?>;
 		}
 		.path {
@@ -1111,7 +1126,9 @@ function ansia_custom_css_styles() {
 		#order_review, #order_review_heading,
 		#payment,
 		#payment .payment_methods li,
-		.widget_shopping_cart p.total {
+		.widget_shopping_cart p.total,
+		ul.woocommerce-thankyou-order-details li,
+		.woocommerce-MyAccount-navigation ul li {
 			border-color: <?php echo esc_html($borderColor); ?>;
 		}
 		.site-main .comment-navigation, .site-main
