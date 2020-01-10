@@ -4,7 +4,7 @@ Theme URI: https://articlepress.pro
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress Is Clean and Modern design WordPress Blog Theme that let you build an exclusive website for Blog, Magazine, affiliate Site or any blogs site. Try this theme today, you will never think about alternatives.
-Version: 1.2.4
+Version: 1.2.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
@@ -1482,7 +1482,6 @@ h2.widget-title {
 }
 .widget {
     border: 1px solid #eae6e6;
-    background-color: #fff;
     margin-bottom: 50px;
 }
 section#search-2 {margin-bottom: 70px;}
@@ -1613,7 +1612,7 @@ button.btn.btn-blog.form-btn:hover i {
         -ms-transform: translateY(1px) translateX(10px);
             transform: translateY(1px) translateX(10px);
 }
-.articlepress-search-form{
+.articlepress-search-form {
     position: absolute;
     margin: auto;
     top: 0;
@@ -1626,10 +1625,10 @@ button.btn.btn-blog.form-btn:hover i {
     border-radius: 50%;
     -webkit-transition: all 1s;
     -o-transition: all 1s;
-    transition: all 1s;
+    transition: all .3s;
     z-index: 6;
     -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
     border: 0;
 }
 .articlepress-search-form:hover {
@@ -1697,9 +1696,8 @@ button.btn.btn-blog.form-btn:hover i {
 }
 .articlepress-search-form:hover {
     -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05);
-    background: #5bd5e8;
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
 }
 .search-input::-webkit-input-placeholder {
     color: white;
@@ -2102,4 +2100,8 @@ p.site-copyright {
     float: right;
     margin-left: 1em;
     margin-top: 60px !important;
+}
+
+.page-template-default.page .site-content {
+    margin-top: 60px;
 }
