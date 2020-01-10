@@ -21,29 +21,29 @@
       <div class="row m-0">
         <div class="col-lg-3 col-md-7 logo_bar">
           <div class="logo">
-            <?php if ( has_custom_logo() ) : ?>
-              <div class="site-logo"><?php the_custom_logo(); ?></div>
+        <?php if ( has_custom_logo() ) : ?>
+          <div class="site-logo"><?php the_custom_logo(); ?></div>
+          <?php endif; ?>
+          <?php $blog_info = get_bloginfo( 'name' ); ?>
+          <?php if ( ! empty( $blog_info ) ) : ?>
+            <?php if ( is_front_page() && is_home() ) : ?>
+              <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php else : ?>
+              <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
             <?php endif; ?>
-            <?php $blog_info = get_bloginfo( 'name' ); ?>
-            <?php if ( ! empty( $blog_info ) ) : ?>
-              <?php if ( is_front_page() && is_home() ) : ?>
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-              <?php else : ?>
-                <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-              <?php endif; ?>
-            <?php endif; ?>
-            <?php
-            $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) :
-              ?>
-            <p class="site-description">
-              <?php echo esc_html($description); ?>
-            </p>
-            <?php endif; ?>
-          </div>
+          <?php endif; ?>
+          <?php
+          $description = get_bloginfo( 'description', 'display' );
+          if ( $description || is_customize_preview() ) :
+            ?>
+          <p class="site-description">
+            <?php echo esc_html($description); ?>
+          </p>
+          <?php endif; ?>      
+      </div>
           <div class="toggle-menu responsive-menu">
             <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
-          </button>
+            </button>
           </div>
         </div>
         <div class="col-lg-9 col-md-5 padding0">

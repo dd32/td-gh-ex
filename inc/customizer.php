@@ -26,6 +26,22 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'panel' => 'automobile_car_dealer_panel_id'
 	) );
 
+	$wp_customize->add_setting('automobile_car_dealer_width_layout_options',array(
+        'default' => __('Default','automobile-car-dealer'),
+        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'
+	));
+	$wp_customize->add_control('automobile_car_dealer_width_layout_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','automobile-car-dealer'),
+        'description' => __('Here you can change the Width layout. ','automobile-car-dealer'),
+        'section' => 'automobile_car_dealer_option',
+        'choices' => array(
+            'Default' => __('Default','automobile-car-dealer'),
+            'Container Layout' => __('Container Layout','automobile-car-dealer'),
+            'Box Layout' => __('Box Layout','automobile-car-dealer'),
+        ),
+	) );
+
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('automobile_car_dealer_layout_options',array(
         'default' => __('Right Sidebar','automobile-car-dealer'),
