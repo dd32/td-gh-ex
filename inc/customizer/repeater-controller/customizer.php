@@ -72,7 +72,28 @@ $wp_customize->add_control(  new Arrival_Repeater_Controler( $wp_customize, 'arr
             )  
         )
 ));
-      
+
+
+/**
+* Open social icons in new tabs
+* @since 1.2.4
+*/
+$prefix     = 'arrival';
+$default    = arrival_get_default_theme_options();
+
+$wp_customize->add_setting($prefix.'_social_icons_new_tab', array(
+        'default'           => $default[$prefix.'_social_icons_new_tab'],
+        'sanitize_callback' => 'arrival_sanitize_checkbox',
+    )
+);
+
+$wp_customize->add_control( $prefix.'_social_icons_new_tab',array(
+        'label'       => esc_html__( 'Open In New Tab ?', 'arrival' ),
+        'description' => esc_html__('Check the box to open social icons in new tab.','arrival'),
+        'section'     => $prefix.'_social_icons_section',
+        'type'        => 'checkbox',
+
+));
     
     
 

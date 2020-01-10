@@ -231,9 +231,15 @@ add_filter( 'page_menu_link_attributes', 'arrival_add_nav_menu_aria_current', 10
 add_action('arrival_social_icons','arrival_social_icons');
 if( ! function_exists('arrival_social_icons')){
 	function arrival_social_icons(){
+        $default                  = arrival_get_default_theme_options();
+		$arrival_icons_value      = get_theme_mod('arrival_social_icons');
+	    $arrival_icons            = json_decode($arrival_icons_value);
+        $social_icons_new_tab    = get_theme_mod( 'arrival_social_icons_new_tab',$default['arrival_social_icons_new_tab'] );
 
-		$arrival_icons_value       =  get_theme_mod('arrival_social_icons');
-	    $arrival_icons             = json_decode($arrival_icons_value);
+        $target = '_self';
+        if( $social_icons_new_tab ){
+            $target = '_blank';
+        }
 	    ?>
 	    <ul class="social">
 	    	<?php 
@@ -242,7 +248,7 @@ if( ! function_exists('arrival_social_icons')){
 	    		$social_link = $arrival_icon->social_url;
 	    		$social_icon = $arrival_icon->social_icons; ?>
 		        <li>
-		        	<a href="<?php echo esc_url($social_link);?>">
+		        	<a href="<?php echo esc_url($social_link);?>" target="<?php echo esc_attr($target);?>">
 		        		<?php echo arrival_get_social_icon_svg($social_icon); ?>
 		        	</a>
 		        </li>

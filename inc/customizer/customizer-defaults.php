@@ -76,7 +76,8 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_site_footer_custom_template']       = 0;
     $defaults[$prefix.'_nav_header_padding']                = 0;
     $defaults[$prefix.'_transparent_header_enable']         = false;
-    $defaults[$prefix.'_breadcrumb_enable']                = 'yes';
+    $defaults[$prefix.'_social_icons_new_tab']              = false;
+    $defaults[$prefix.'_breadcrumb_enable']                 = 'yes';
     
    
 

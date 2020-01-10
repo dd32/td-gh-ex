@@ -1,3 +1,6 @@
+=== v1.2.4 ===
+- Added option to open social icons on new tab 
+
 === v1.2.3 === 
 - Changed default email for starter content
 
