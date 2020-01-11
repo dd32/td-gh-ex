@@ -26,7 +26,7 @@ function axis_magazine_theme_info_display() {
 	
 	?>
 	<div class="wrap axis-magazine-adm">
-		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.04', 'axis-magazine'); ?></h1>
+		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.05', 'axis-magazine'); ?></h1>
 		<div class="axis-magazine-adm-dsply-fl axis-magazine-adm-fl-wrap axis-magazine-adm-jc-sp-btw">
 
 			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">

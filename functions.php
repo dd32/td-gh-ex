@@ -2,7 +2,7 @@
 /**
  * The template for functions 
  *
- * @version    0.0.04
+ * @version    0.0.05
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
@@ -28,12 +28,6 @@ function axis_magazine_setup(){
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support('woocommerce');
-
-
-	//ADD IMAGE SIZES
-	add_image_size( 'axis-magazine-large', 590, 9999 );
-	add_image_size('axis-magazine-featured', 400, 250);
-	add_image_size( 'axis-magazine-medium', 800, 240 );
 
 	
 

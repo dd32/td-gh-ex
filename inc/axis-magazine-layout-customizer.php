@@ -9,11 +9,11 @@ function axis_magazine_sanitize_select( $input, $setting ) {
 	
 	// Get list of choices from the control
 	// associated with the setting
-	$choices = $setting->manager->get_control( $setting->id )->choices;
+	$choices = $setting->manager->get_control( $setting->id );
 	
 	// If the input is a valid key, return it;
 	// otherwise, return the default
-	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+	return ( array_key_exists( $input, $choices->choices ) ? $input : $setting->default );
 }
 
 function axis_magazine_layout_customizer_settings( $wp_customize ){
@@ -77,8 +77,8 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	    'settings' => 'axis_magazine_ad_img_display_settings',
 	    'type'     	=> 'select',
 	    'choices'	=> array(
-	    				'block' => 'Yes',
-	    				'none' 	=> 'No',
+	    				'block' => __('Yes', 'axis-magazine'),
+	    				'none' 	=> __('No', 'axis-magazine'),
 	    			   )
 	)));
 
@@ -147,7 +147,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	//BLOGBAND INDEX SECTION CLASS NAME
 	$wp_customize->add_section('axis_magazine_index_class_name_section', array(
 		'title' => __('Axis Magazine - Change Index Posts Style', 'axis-magazine'),
-		'priority' => 9,
+		'priority' => 8,
 		'panel'	=> 'axis_magazine_site_layout_option_panel',
 	));
 
@@ -169,6 +169,30 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	    				'axis-magazine-index-two' 	=> __('Grid Layout - Right Sidebar', 'axis-magazine'),
 	    				'axis-magazine-index-four' 	=> __('Grid Layout (Two Columns) - No Sidebar', 'axis-magazine'),
 	    				'axis-magazine-index-five' 	=> __('Grid Layout (Three Columns) - No Sidebar', 'axis-magazine'),
+	    			   )
+	)));
+
+
+		//BEGIN MAGAZINE FEATURED SECTION
+	$wp_customize->add_section('axis_magazine_feature_section', array(
+		'title' => __('Axis Magazine Theme - Featured Section', 'axis-magazine'),
+		'priority' => 9,
+		'panel' => 'axis_magazine_site_layout_option_panel',
+	));
+
+	$wp_customize->add_setting('axis_magazine_feature_display_settings', array(
+	    'default' => __('block', 'axis-magazine'),
+	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_feature_display_control', array(
+	    'label'    => __('Display Featured Section', 'axis-magazine'),
+	    'section'  => 'axis_magazine_feature_section',
+	    'settings' => 'axis_magazine_feature_display_settings',
+	    'type'     	=> 'select',
+	    'choices'	=> array(
+	    				'block' => __('Yes', 'axis-magazine'),
+	    				'none' 	=> __('No', 'axis-magazine'),
 	    			   )
 	)));
 
@@ -416,6 +440,9 @@ function axis_magazine_layout_custom_css(){
 	color: <?php echo esc_html( get_theme_mod('axis_magazine_readmore_text_color_settings')); ?>;
 }
 
+.axis-magazine-feature {
+	display: <?php echo esc_html(get_theme_mod('axis_magazine_feature_display_settings')); ?>;
+}
 
 .axis-magazine-diff {
 	display: <?php echo esc_html(get_theme_mod('axis_magazine_stack_mag_display_settings')); ?>;

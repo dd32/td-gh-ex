@@ -2,13 +2,13 @@
 /**
  * The template for displaying pages
  *
- * @version    0.0.04
+ * @version    0.0.05
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
  * @license    GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  *
- * TEMPLATE NAME: Page No Sidebar 
+ * TEMPLATE NAME: Page No Sidebar & No Title 
  * 
  */
 ?>
@@ -21,9 +21,9 @@
 		
 	</header>
 
-	<div  id="content" class="page-content">
+	<div  id="content"  class="page-content">
 
-		<div class="flowid axis-magazine-page-no-sidebar ">
+		<div class="flowid axis-magazine-page-no-sidebar-no-title ">
 
 		    <div class="mg-auto wid-90 mobwid-90">
 		        
@@ -40,10 +40,7 @@
 		                            <div class="items-inner dsply-fl fl-wrap  mn-dz">
 		                                <div class="img-box ov-fl-hd wid-100 relative">
 		                                	
-		                                	<h2 class="mg-bt-20 text-center">
-	                                        	<?php the_title(); ?>
-	                                        </h2>
-		                                    <div class="details-box ">
+		                                	<div class="details-box ">
 		                                        <div class="details-box-inner">
 		                                            <p><?php the_content(); ?></p>
 		                                            
@@ -58,7 +55,8 @@
 		                    <?php endwhile; else : ?>
 							<h2><?php esc_html__('No posts Found!', 'axis-magazine'); ?></h2>
 		                    <?php endif; ?>
-		                    <!-- SIDEBAR -->
+		                    <!-- NO SIDEBAR -->
+		                    
 		                </div>
 		                
 		            </div>

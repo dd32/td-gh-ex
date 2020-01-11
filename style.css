@@ -4,7 +4,7 @@ Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: http://www.zidithemes.tumblr.com/author
 Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.04
+Version: 0.0.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template
@@ -810,21 +810,24 @@ ul {
 .wid-34 { width: 34%; }
 
 /* BEGIN AXIS MAGAZINE SHOW */
-.axis-magazine-show {
+.axis-magazine-feature {
+
+}
+.axis-magazine-feature .axis-magazine-show {
     color: #fff;
     margin-top: 8px;
 }
 
-.axis-magazine-show .left-side {
+.axis-magazine-feature .axis-magazine-show .left-side {
     
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items {
     height: 447px;
 }
 
 
-.axis-magazine-show .left-side .axis-magazine-show-items .user-no-img-items {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .user-no-img-items {
     background: #a6a6a6;
     width: 100%;
     height: 100%;
@@ -836,22 +839,22 @@ ul {
     font-size: 50px;
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .user-no-img-items .user-no-img-items-inner {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .user-no-img-items .user-no-img-items-inner {
 
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items:nth-child(1) {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items:nth-child(1) {
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items:nth-child(2) {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items:nth-child(2) {
     
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items:nth-child(3) {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items:nth-child(3) {
     
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items img{
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items img{
     //height: 500px;
     width: 100%;
     height: 100%;
@@ -859,7 +862,7 @@ ul {
     display: block;
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content{
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content{
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
@@ -869,11 +872,11 @@ ul {
 }
 
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content .read-more {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content .read-more {
     display: none;
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content .date{
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content .date{
     display: inline-block;
     background: transparent;
     border: 1px solid #fff;
@@ -884,58 +887,58 @@ ul {
     letter-spacing: 1px;
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content .excerpt{
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content .excerpt{
     
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content h5 {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content h5 {
     font-size: 23px;
     margin: 6px 0px;
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content h5 a {
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content h5 a {
     
 }
 
-.axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content a{
+.axis-magazine-feature .axis-magazine-show .left-side .axis-magazine-show-items .axis-magazine-show-items-content a{
     color: #fff;
 }
 
 
 
-.axis-magazine-show .right-side {
+.axis-magazine-feature .axis-magazine-show .right-side {
     
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items {
     height: 410px;
 }
 
 
-.axis-magazine-show .right-side .axis-magazine-show-items:nth-child(1) {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(1) {
     display: none;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items:nth-child(2) {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(2) {
     height: 220px;
     width: 100%;
     margin-left: 5px;
     margin-bottom: 5px;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items:nth-child(3) {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(3) {
     height: 220px;
     width: 48.8% !important;
     margin-left: 5px;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items:nth-child(4) {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(4) {
     height: 220px;
     width: 48.8% !important;
     margin-left: 5px;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .user-no-img-items {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .user-no-img-items {
     background: #a6a6a6;
     width: 100%;
     height: 100%;
@@ -947,12 +950,12 @@ ul {
     font-size: 50px;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .user-no-img-items .user-no-img-items-inner {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .user-no-img-items .user-no-img-items-inner {
 
 }
 
 
-.axis-magazine-show .right-side .axis-magazine-show-items img{
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items img{
     //height: 500px;
     width: 100%;
     height: 100%;
@@ -960,7 +963,7 @@ ul {
     display: block;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content{
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content{
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
@@ -969,7 +972,7 @@ ul {
     background: linear-gradient(0deg, #0000008f 65%, transparent);
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content .date{
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content .date{
     display: inline-block;
     background: transparent;
     padding: 5px 20px;
@@ -980,24 +983,24 @@ ul {
     letter-spacing: 1px;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content .excerpt{
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content .excerpt{
     display: none;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content h5 {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content h5 {
     font-size: 19px;
     margin-top: 10px;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content h5 a {
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content h5 a {
     
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content .read-more{
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content .read-more{
     display: none;
 }
 
-.axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content a{
+.axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items .axis-magazine-show-items-content a{
     color: #fff;
 }
 
@@ -5711,6 +5714,15 @@ ul {
 
 
 /* BEGIN MOBILE SCREEN STYLE */
+
+@media screen and (max-width: 800px) 
+{
+
+    .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(3) {
+        width: 48.1% !important;
+    }
+
+}
 
 @media screen and (max-width: 767px)
 {
