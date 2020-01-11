@@ -1,7 +1,22 @@
-<?php get_header(); 
-$wl_theme_options = weblizar_get_options();
+<?php
+/**
+ * The template for displaying author's Posts
+ *
+ * Used to display author's Posts if nothing more specific matches a query.
+ * For example, puts together date-based Posts if no date.php file exists.
+ *
+ * If you'd like to further customize these author's views, you may create a
+ * new template file for each one. For example, author.php (Author archives), etc.
+ *
+ * Learn more: https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package enigma
+ */
+
+get_header();
 $class = '';
-if($wl_theme_options['breadcrumb']!='') { ?>
+if ( get_theme_mod( 'breadcrumb', 1 ) == 1 ) {  
+?>
 <div class="enigma_header_breadcrum_title">	
 	<div class="container">
 		<div class="row">

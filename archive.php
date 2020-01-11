@@ -1,7 +1,16 @@
-<?php get_header(); 
-$wl_theme_options = weblizar_get_options(); 
+<?php
+ /**
+ * The template for displaying Archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package enigma
+ */
+ 
+get_header();
 $class = '';
-if($wl_theme_options['breadcrumb']!='') { ?>
+if ( get_theme_mod( 'breadcrumb', 1 ) == 1 ) {  
+?>
 	<div class="enigma_header_breadcrum_title">	
 		<div class="container">
 			<div class="row">

@@ -34,7 +34,7 @@
 
 if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
-	/**
+    /**
 	 * Automatic plugin installation and activation library.
 	 *
 	 * Creates a way to automatically install and activate plugins from within themes.

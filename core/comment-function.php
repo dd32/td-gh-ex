@@ -10,7 +10,7 @@ function weblizar_comment( $comment, $args, $depth )
 	__('Reply','enigma'); ?>
     <div class="media enigma_comment_box">
 		<a class="pull_left_comment">
-        <?php echo esc_html( get_avatar( $comment,$size = '60' ) ); ?>
+        <?php echo wp_kses_post( get_avatar( $comment,$size = '60' ) ); ?>
         </a>
         <div class="media-body">
 		    <div class="enigma_comment_detail">

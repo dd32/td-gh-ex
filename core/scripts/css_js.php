@@ -1,6 +1,6 @@
 <?php 
 function weblizar_scripts() {     
-        $wl_theme_options = weblizar_get_options();
+        //$wl_theme_options = weblizar_get_options();
 
         /* Main CSS libraries */
         wp_enqueue_style('enigma-style-sheet', get_stylesheet_uri());
@@ -27,10 +27,10 @@ function weblizar_scripts() {
         			
         $font_var          = '300,400,600,700,900,300italic,400italic,600italic,700italic,900italic';
         $http              = ( ! empty( $_SERVER['HTTPS'] ) ) ? "https" : "http";
-        $main_heading_font = str_replace( ' ' , '+', $wl_theme_options['main_heading_font'] );
-        $menu_font         = str_replace( ' ' , '+', $wl_theme_options['menu_font'] );
-        $theme_title       = str_replace( ' ' , '+', $wl_theme_options['theme_title'] );
-        $desc_font_all     = str_replace( ' ' , '+', $wl_theme_options['desc_font_all'] );
+        $main_heading_font = str_replace( ' ' , '+', get_theme_mod( 'main_heading_font', 'Open Sans' ) );
+        $menu_font         = str_replace( ' ' , '+', get_theme_mod( 'menu_font', 'Open Sans' ) );
+        $theme_title       = str_replace( ' ' , '+', get_theme_mod( 'theme_title', 'Open Sans' ) );
+        $desc_font_all     = str_replace( ' ' , '+', get_theme_mod( 'desc_font_all', 'Open Sans' ) );
 
         wp_enqueue_style('googleFonts', $http . '://fonts.googleapis.com/css?family=' . $main_heading_font . ':' . $font_var);	
         wp_enqueue_style('menu_font', $http . '://fonts.googleapis.com/css?family=' . $menu_font . ':' . $font_var);	
@@ -43,11 +43,11 @@ function weblizar_scripts() {
         wp_enqueue_script('bootstrap-js', get_template_directory_uri() .'/js/bootstrap.js', array('jquery'), true, true );
         wp_enqueue_script('menu', get_template_directory_uri() .'/js/menu.js', array('jquery'), true, true );
         wp_enqueue_script('enigma-theme-script', get_template_directory_uri() .'/js/enigma_theme_script.js', array('jquery'), true, true );
-
+        
+        /*Carofredsul Slides*/
+        wp_enqueue_script('jquery.carouFredSel', get_template_directory_uri() .'/js/carouFredSel-6.2.1/jquery.carouFredSel-6.2.1.js', array('jquery'), true, true );
         if ( is_front_page() ) {
-                /*Carofredsul Slides*/
-                wp_enqueue_script('jquery.carouFredSel', get_template_directory_uri() .'/js/carouFredSel-6.2.1/jquery.carouFredSel-6.2.1.js', array('jquery'), true, true );
-
+                
                 /*PhotoBox JS*/
                 wp_enqueue_script('photobox-js', get_template_directory_uri() .'/js/jquery.photobox.js', array('jquery'), true, true );
                 wp_enqueue_style('photobox', get_template_directory_uri() . '/css/photobox.css');
@@ -59,8 +59,8 @@ function weblizar_scripts() {
         wp_enqueue_script('scroll', get_template_directory_uri() .'/js/scroll.js', array('jquery'), true, true );
         if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
-        if ( ! empty ( $wl_theme_options['slider_image_speed'] ) ) {
-                $image_speed = $wl_theme_options['slider_image_speed'];
+        if ( ! empty ( get_theme_mod('slider_image_speed' ) ) ) {
+                $image_speed = get_theme_mod( 'slider_image_speed', '2000' );
                 $speed       = true;
         } else {
                 $image_speed = '';
@@ -68,9 +68,9 @@ function weblizar_scripts() {
         }
 
         $ajax_data = array(
-                'blog_speed'  => $wl_theme_options['blog_speed'],
-                'autoplay'    => $wl_theme_options['autoplay'],
-                'image_speed' => $wl_theme_options['slider_image_speed'],
+                'blog_speed'  => get_theme_mod( 'blog_speed', '2000' ),
+                'autoplay'    => get_theme_mod( 'autoplay', 1 ),
+                'image_speed' => get_theme_mod( 'slider_image_speed', '2000' ),
                 'speed'       => $speed,
         );
 

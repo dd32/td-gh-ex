@@ -1,14 +1,10 @@
-<?php get_header(); 
-$wl_theme_options = weblizar_get_options(); 
-if($wl_theme_options['breadcrumb']!='') { 
-	get_template_part('breadcrums');  
-} else { ?>
-	<style>
-	.row.enigma_blog_wrapper {
-	    margin-top: 70px;
-	}
-	</style>
-<?php } ?>
+<?php get_header();
+$class            = '';  
+if ( get_theme_mod( 'breadcrumb', 1 ) == 1 ) {
+	get_template_part('breadcrums'); 
+} else {
+	$class = 'no-breadcrumb';
+} ?>
 <div class="container">
 	<div class="row enigma_blog_wrapper">
 		<div class="col-md-8">
