@@ -110,3 +110,15 @@
 		$custom_css .='width:100%;';
 		$custom_css .='} }';
 	}
+
+	// css
+
+	$show_header = get_theme_mod( 'bb_mobile_application_slider_hide_show', true);
+		if($show_header == false){
+			$custom_css .='.page-template-custom-front-page #header{';
+				$custom_css .=';';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page #header{';
+				$custom_css .='position: static;';
+			$custom_css .='}';
+		}

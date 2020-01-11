@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/wp-bb-mobile-application-theme/
 Author: ThemeShopy
 Author URI: https://www.themeshopy.com
 Description: Trying to create an interactive website with the help of a flexible option? If so, let us introduce a stunning solution! BB is a beautiful and responsive business WordPress theme. BB Mobile Application is a unique theme that can easily bring your website to perfection. Neat, dainty and extremely easy to use, this theme will truly make your website stand out. BB Mobile Application is a free WordPress theme for APP websites. BB App is an innovative and clean Lead Capture cum Landing Page WordPress Theme from Themeshopy. This theme is ideal for seeking reviews of upcoming products like mobile app, gadgets or any other business proposition, company corporate identity showcase, blog, one page, landing page, construction, travel, hotel, real estate, restaurant, photography, industrial, portfolio, gym, education, affiliate, job board and portal, jewelry, local business, creative agency, architecture, event, gallery, lifestyle, lens, listing, yoga, wedding, university, school, sports, quotes and similar websites. It is a highly suitable theme for APP post display. It has purpose oriented design, responsive layout and special features to manage Slider, service and footer from customize admin section. This user-friendly theme has secure and clean code due to which you can obtain faster page load time. It provides different personalization options making it effortless for you to customize the theme. So, get ready to create a professional website with this multipurpose theme which has optimized codes. Demo: https://www.themeshopy.com/bb-mobile-application-theme/
-Version: 1.2.8
+Version: 1.2.9
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-mobile-application
@@ -229,6 +229,7 @@ a.small-button:hover{
 input[type="text"],
 input[type="email"],
 input[type="phno"],
+input[type="password"],
 textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
@@ -696,8 +697,14 @@ a.r_button {
   right: 50%;
 }
 /*woocommerce*/
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
+  width: auto;
+}
+form.woocommerce-form.woocommerce-form-login.login{
+  display: inline-block;
+}
 .woocommerce-product-gallery__image {
-    padding: 5px;
+  padding: 5px;
 }
 .woocommerce #sidebar {
    margin-top: 2em;
@@ -723,6 +730,10 @@ h2.woocommerce-loop-product__title,
   color: #000;
   font-weight: 700;
   font-size: 24px !important;
+}
+.woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3{
+  text-align: center;
+  text-transform: capitalize;
 }
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
@@ -787,7 +798,7 @@ header.woocommerce-products-header {
   color: #000;
 }
 .woocommerce form .form-row .required,.woocommerce a.remove{
-  color: #df0000!important;
+  color: #df0000 !important;
 }
 .woocommerce .woocommerce-breadcrumb a,.woocommerce .woocommerce-breadcrumb{
   padding-top: 5px;
@@ -803,6 +814,135 @@ header.woocommerce-products-header {
 }
 .woocommerce-info a,.woocommerce-privacy-policy-text p a,.woocommerce-MyAccount-content p a, .woocommerce-info a, tr.woocommerce-cart-form__cart-item.cart_item a, form.woocommerce-shipping-calculator a, nav.woocommerce-MyAccount-navigation a{
   text-decoration: none;
+}
+.woocommerce #comments p {
+  float: left;
+  width: 100%;
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
+  font-size: 16px;
+}
+.woocommerce .product-title{
+  font-size: 17px;
+}
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 20px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
+.select2-container--default .select2-selection--single, input#billing_phone {
+  padding: 10px 0px;
+  border-radius: 0px;
+}
+.woocommerce form .form-row textarea{
+  height: 3em;
+}
+#sidebar .star-rating, #footer .star-rating{
+  margin: 0 !important;
+}
+#sidebar .product_list_widget .star-rating, #footer .product_list_widget .star-rating{
+  margin: 5px 0 10px 0 !important;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
+  background-color: #3ae0bf;
+}
+#sidebar .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #000;
+}
+#footer .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #fff;
+}
+#footer .price_label, #sidebar .price_label{
+  font-size: 14px;
+}
+.woocommerce .star-rating {
+    float: left;
+}
+.news-item.layout-two .news-text-wrap{
+  font-size: 14px;
+}
+.related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product{
+  float:none;
+  display: inline-table;
+  width: 29% !important;
+}
+.woocommerce .woocommerce-product-rating .star-rating {
+  margin: 0.5em 20px 0 0;
+}
+.woocommerce form.login .form-row,
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+  display: block;
+  float: none;
+}
+.woocommerce-Reviews .comment-text p.meta {
+  width: 100%;
+  float: left;
+  padding-top: 10px;
+}
+#sidebar a.remove.remove_from_cart_button , #footer a.remove.remove_from_cart_button{
+  font-size: 22px !important;
+}
+.woocommerce-Reviews .comment-text .description {
+  float: left;
+}
+.woocommerce #reviews #comments h2{
+  font-size: 25px;
+}
+.related.products h2 {
+  text-align: left;
+}
+.comment-form-rating label {
+  padding: 10px 0;
+}
+#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{
+  background: #3ae0bf ;
+  border-radius: 0px;
+  color: #000;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border: solid 1px #3ae0bf;
+}
+#sidebar form.woocommerce-product-search button{
+  margin-top: 0;
+}
+#sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img {
+  width: 50px;
+}
+#footer .woocommerce.widget_shopping_cart .cart_list li, #sidebar .woocommerce.widget_shopping_cart .cart_list li{
+  padding: 0 0 10px 2em;
+}
+#sidebar ul.woocommerce-mini-cart.cart_list.product_list_widget li.woocommerce-mini-cart-item.mini_cart_item, #footer ul.woocommerce-mini-cart.cart_list.product_list_widget li.woocommerce-mini-cart-item.mini_cart_item{
+  background:none;
+}
+.woocommerce ul.products li.product .star-rating{
+  margin:10px auto !important;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text{
+  font-size: 11px;
+  padding: 7px;
+}
+.woocommerce a.woocommerce-review-link{
+  color: #3ae0bf;
+}
+#footer .woocommerce a.button:hover, .woocommerce .widget_price_filter .price_slider_amount .button:hover{
+  background: #3ae0bf;
+  color: #000 !important;
+}
+#footer .woocommerce a.button{
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 600;
+
+}
+.woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover{
+  color: #000 !important;
 }
 /* Woocommerce CSS End*/
 
@@ -1123,6 +1263,11 @@ div#comments a{
 	color:#000;
 	width:100%;
 }
+.woocommerce-product-search input[type="search"]{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
 #sidebar label{
   width: 100%;
   display: inline-block;
@@ -1189,6 +1334,10 @@ label{
 }
 #sidebar .tagcloud a:hover{
 	background:rgba(20, 194, 160, 0.32);
+}
+#footer input#woocommerce-product-search-field-0 {
+  padding: 10px;
+  width: 100%;
 }
 /* Page */
 .title-box{
@@ -1377,11 +1526,25 @@ iframe{
     left: 40%;
     right: 50%;
   }
+  .related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product{
+    width: 100% !important;
+  }
 }
 @media screen and (min-width:720px) and (max-width: 768px){
 	.copyright-wrapper th{
 		padding: 0px;
 	}
+  .woocommerce .related.products ul.products[class*=columns-] li.product:nth-child(2n), section.related.products .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n){
+    float:none;
+    display: inline-table;
+  }
+  #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
+    width: 40px;
+  }
+  .related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product{
+    width: 47% !important;
+    margin-right: 10px;
+  }
 }
 @media screen and (min-width:768px) and (max-width: 992px){
   #sidebar th{
@@ -1391,8 +1554,6 @@ iframe{
     padding:0;
   }
 }
-/*------------------RESPONSIVE MEIDA-------------------*/
-
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
   a.closebtn.mobile-menu:focus{
@@ -1551,7 +1712,6 @@ iframe{
     width: 60%;
   }
   .main-menu-navigation{
-    max-height: 300px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }
@@ -1580,4 +1740,3 @@ iframe{
     border: none !important;
   }
 }
-
