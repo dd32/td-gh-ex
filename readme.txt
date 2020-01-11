@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 1.2.6
+Stable tag: 1.2.7
 License: GNU General Public License v3.0
 License URI:  http://www.gnu.org/licenses/gpl.html
 
@@ -97,6 +97,9 @@ BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage
 
 = 1.2.6 =
   * Resolve css errors.
+
+= 1.2.7 =
+  * Changed woocommerce css customization.
 
 == Resources ==
 
