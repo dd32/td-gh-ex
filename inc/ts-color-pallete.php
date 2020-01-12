@@ -127,4 +127,29 @@
 		$custom_css .='}';
 	}
 
-	
+	// css
+
+	$show_header = get_theme_mod( 'advance_startup_slider_hide', true);
+		if($show_header == false){
+			$custom_css .='.page-template-custom-front-page #header-top{';
+				$custom_css .=';';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page #header-top{';
+				$custom_css .='position: static;background: rgba(0, 0, 0, 1);';
+			$custom_css .='}';
+		}
+		if($show_header == false){
+			$custom_css .='.page-template-custom-front-page .main-menu{';
+				$custom_css .=';';
+			$custom_css .='}';
+			$custom_css .='.page-template-custom-front-page .main-menu{';
+				$custom_css .='margin:0; border-bottom-color: #906b00;border-bottom: 1px solid #906b00;padding:0;';
+			$custom_css .='}';
+		}
+
+		$show_header = get_theme_mod( 'advance_startup_title', true);
+		if($show_header == false){
+			$custom_css .='#we_provide{';
+				$custom_css .='padding:0;';
+			$custom_css .='}';
+		}

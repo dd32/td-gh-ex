@@ -21,50 +21,52 @@
 
 <header role="banner">
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-startup' ); ?></a>
-  <div class="top-header">
-    <div class="container">
-      <div class="row m-0">
-        <div class="col-lg-2 col-md-6 p-0 ">
-          <div class="phone">
-            <?php if( get_theme_mod('advance_startup_phone1') != ''){ ?>
-              <i class="fas fa-phone"></i><span><?php echo esc_html( get_theme_mod('advance_startup_phone1','' )); ?></span>
+  <?php if( get_theme_mod('advance_startup_display_topbar',true) != ''){ ?>
+    <div class="top-header">
+      <div class="container">
+        <div class="row m-0">
+          <div class="col-lg-2 col-md-6 p-0 ">
+            <div class="phone">
+              <?php if( get_theme_mod('advance_startup_phone1') != ''){ ?>
+                <i class="fas fa-phone"></i><span><?php echo esc_html( get_theme_mod('advance_startup_phone1','' )); ?></span>
+              <?php } ?>
+            </div> 
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="mail">
+              <?php if( get_theme_mod('advance_startup_mail1') != ''){ ?>
+                <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_startup_mail1','')); ?></span>
+              <?php } ?>
+            </div>  
+          </div>
+          <div class="col-lg-3 col-md-6 time p-0">
+            <?php if( get_theme_mod('advance_startup_time') != ''){ ?>
+              <i class="fas fa-clock"></i><span><?php echo esc_html( get_theme_mod('advance_startup_time','')); ?></span>
             <?php } ?>
-          </div> 
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="mail">
-            <?php if( get_theme_mod('advance_startup_mail1') != ''){ ?>
-              <i class="fas fa-envelope"></i><span><?php echo esc_html( get_theme_mod('advance_startup_mail1','')); ?></span>
-            <?php } ?>
-          </div>  
-        </div>
-        <div class="col-lg-3 col-md-6 time p-0">
-          <?php if( get_theme_mod('advance_startup_time') != ''){ ?>
-            <i class="fas fa-clock"></i><span><?php echo esc_html( get_theme_mod('advance_startup_time','')); ?></span>
-          <?php } ?>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="social-icons">
-            <?php if( get_theme_mod( 'advance_startup_facebook_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-startup' );?></span></a>
-            <?php } ?>
-            <?php if( get_theme_mod( 'advance_startup_twitter_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-startup' );?></span></a>
-            <?php } ?>
-            <?php if( get_theme_mod( 'advance_startup_youtube_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-startup' );?></span></a>
-            <?php } ?>
-            <?php if( get_theme_mod( 'advance_startup_google_plus_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-startup' );?></span></a>
-            <?php } ?>
-            <?php if( get_theme_mod( 'advance_startup_linkedin_url') != '') { ?>
-              <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-startup' );?></span></a>
-            <?php } ?>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="social-icons">
+              <?php if( get_theme_mod( 'advance_startup_facebook_url') != '') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-startup' );?></span></a>
+              <?php } ?>
+              <?php if( get_theme_mod( 'advance_startup_twitter_url') != '') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-startup' );?></span></a>
+              <?php } ?>
+              <?php if( get_theme_mod( 'advance_startup_youtube_url') != '') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-startup' );?></span></a>
+              <?php } ?>
+              <?php if( get_theme_mod( 'advance_startup_google_plus_url') != '') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-startup' );?></span></a>
+              <?php } ?>
+              <?php if( get_theme_mod( 'advance_startup_linkedin_url') != '') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-startup' );?></span></a>
+              <?php } ?>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div> 
+    </div> 
+  <?php } ?>
   <div id="header-top">
     <div class="container">
       <div class="row">

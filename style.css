@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-startup-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Startup is a resourceful, feature-rich, stylish and versatile startup WordPress theme to build high quality websites for startups, IT companies, entrepreneurs, joint business ventures, web development agencies, digital marketers, tech startup, online shop, innovative advertisers and ad agencies, corporate companies and newly establishing businesses of all scale and scope. It is a multipurpose theme which can be used as a startup blog or for resumes, journals and magazines. Being customizable, its look and feel can be changed by changing its colour, background, font, header and footer format, menu style, logo and various other components without indulging in coding. This startup WordPress theme is responsive, retina ready, translation ready, multiple browsers compatible and readily supports languages of RTL style. It is totally compatible with the recently launched WordPress version and has bug-free code. Its background interface is simple to understand and even simpler to use to set up and start using the theme for any website irrespective of your coding skills and knowledge. It has many layout options, all giving perfect professional look to website with utmost ease. Advance Startup is designed with a beautiful and attractive homepage slider, call to action (CTA) button, several sections and many useful predesigned inner pages. You can extend the theme’s functionality by using the plugins whenever required, because it is compatible with many third-party plugins such as contact form 7, elementor, Woocommerce, etc. Demo: https://www.themeshopy.com/advance-startup-pro/
-Version: 0.3.6
+Version: 0.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-startup
@@ -224,6 +224,7 @@ small{
 input[type="text"],
 input[type="email"],
 input[type="phno"],
+input[type="password"],
  textarea{
   border:1px solid #bcbcbc;
   width:100%;
@@ -932,12 +933,31 @@ section .innerlightbox{
   color: #fff;
   text-decoration: underline;
 }
-#footer input[type="search"] {
-  width: 95%;
+#footer input[type="search"]{
+  width: 100%;
   border: none;
-  padding: 7px 6px;
-  border: solid 1px #906b00 ;
+  padding: 10px 6px;
+  border: solid 1px #906b00;
   color: #fff;
+}
+#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{
+  background: #906b00 ;
+  border-radius: 0px;
+  color: #fff;
+  margin-top: 5px;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border: solid 1px #906b00;
+}
+#sidebar form.woocommerce-product-search button{
+  margin-top: 0;
+}
+#sidebar .woocommerce ul.cart_list li:before{
+  display: none;
+}
+#sidebar .woocommerce ul.cart_list li{
+  padding-left: 2em !important;
 }
 #footer input[type="submit"] {
   font-size: 10px;
@@ -1031,7 +1051,7 @@ table#wp-calendar {
   border-radius:5px;
 }
 #footer input[type="submit"] {
-  padding: 6px 0;
+  padding: 10px 0;
   float: right;
   background: #906b00 ;
   border-radius: 0px;
@@ -1069,6 +1089,9 @@ table#wp-calendar {
 #footer .entry-content a{
   text-decoration: underline;
   color: #fff;
+}
+#footer .news-text-wrap h2 a {
+    color: #fff;
 }
 /*scroll to top*/
 #scroll-top{
@@ -1185,9 +1208,7 @@ ol.comment-list li{
   margin:1em 0;
 }
 .woocommerce .products li {
-  width: 29% !important;
   text-align: center;
-  margin: 0px 20px 20px 0 !important;
   border: 1px solid #e7e7e7;
 }
 .woocommerce #sidebar {
@@ -1214,6 +1235,7 @@ h2.woocommerce-loop-product__title{
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #717171;
+  font-size: 16px;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
   margin-bottom: 5px;
@@ -1260,8 +1282,7 @@ span.woocommerce-input-wrapper{
 .woocommerce-product-gallery__image{
   padding: 2px;
 }
-.woocommerce .star-rating{
-  width: 40%;
+.woocommerce .related.products .star-rating,.woocommerce .products .star-rating{
   margin: 10px auto !important;
 }
 .woocommerce ul.products li.product .onsale {
@@ -1273,12 +1294,12 @@ span.woocommerce-input-wrapper{
 }
 .woocommerce ul.products li.product .woocommerce-loop-product__title{
   font-size: 22px !important;
+  text-align: center;
+  text-transform: capitalize;
 }
 .woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb{
   color: #717171;
-}
-.woocommerce span.tagged_as, .woocommerce .posted_in, .woocommerce #payment #place_order, .woocommerce-page #payment #place_order, .woocommerce-privacy-policy-text a, .woocommerce-terms-and-conditions-wrapper p{
-  color: #000;
+  margin-top: 5px;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce-cart .cart-collaterals .shipping-calculator-button, .woocommerce table.shop_table th, .woocommerce table.shop_table td{
   color: #717171;
@@ -1291,6 +1312,115 @@ nav.woocommerce-MyAccount-navigation li a {
 }
 .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover{
   color: #fff;
+}
+.woocommerce #reply-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.woocommerce .star-rating::before{
+  color: #6a6666;
+}
+.woocommerce #comments p {
+  float: left;
+  width: 100%;
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
+  font-size: 16px;
+}
+.woocommerce .product-title{
+  font-size: 17px;
+}
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 20px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
+.select2-container--default .select2-selection--single, input#billing_phone {
+  padding: 10px 0px;
+  border-radius: 0px;
+}
+.woocommerce form .form-row textarea{
+  height: 3em;
+}
+#sidebar .star-rating, #footer .star-rating{
+  margin: 0 !important;
+}
+#sidebar .product_list_widget .star-rating, #footer .product_list_widget .star-rating{
+  margin: 5px 0 10px 0 !important;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
+  background-color: #906b00;
+}
+#sidebar .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #000;
+}
+#footer .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #fff;
+}
+#footer .price_label, #sidebar .price_label{
+  font-size: 14px;
+}
+.woocommerce .star-rating {
+    float: left;
+}
+.news-item.layout-two .news-text-wrap{
+  font-size: 14px;
+}
+.related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product{
+  float:none;
+  display: inline-table;
+  width: 29% !important;
+}
+.woocommerce .woocommerce-product-rating .star-rating {
+  margin: 0.5em 20px 0 0;
+}
+.woocommerce form.login .form-row,
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+  display: block;
+  float: none;
+}
+.woocommerce-Reviews .comment-text p.meta {
+  width: 100%;
+  float: left;
+  padding-top: 10px;
+}
+#sidebar a.remove.remove_from_cart_button , #footer a.remove.remove_from_cart_button{
+  font-size: 22px !important;
+}
+.woocommerce-Reviews .comment-text .description {
+  float: left;
+}
+.woocommerce #reviews #comments h2{
+  font-size: 25px;
+}
+.related.products h2 {
+  text-align: left;
+}
+.comment-form-rating label {
+  padding: 10px 0;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text{
+  font-size: 11px;
+  padding: 7px;
+}
+#footer .woocommerce.widget_shopping_cart .cart_list li{
+  padding: 0 0 10px 2em;
+}
+#sidebar .widget_shopping_cart_content li:hover{
+  padding-left: 2em;
+}
+.woocommerce-Reviews .comment-form-rating label{
+  padding: 10px 0;
+}
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order{
+  width: auto;
+}
+form.woocommerce-form.woocommerce-form-login.login{
+  display: inline-block;
 }
 /*------------- Sidebar -------------*/
 #sidebar caption{
@@ -1356,7 +1486,7 @@ nav.woocommerce-MyAccount-navigation li a {
 }
 #sidebar ul li a{
   border-radius: 2px;
-  display: inline-block;
+  /*display: inline-block;*/
   padding: 5px 0;
   color: #262626;
 }
@@ -1401,8 +1531,21 @@ label{
 img.rss-widget-icon {
   width: auto !important;
 }
-#sidebar .woocommerce ul.product_list_widget li img {
-  width: 40%;
+#sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img {
+  width: 50px;
+}
+#sidebar .woocommerce ul.product_list_widget li{
+  position: relative;
+  padding: 0 0 10px 20px;
+  margin: 0;
+}
+#sidebar .woocommerce ul.product_list_widget li a{
+  padding: 0
+}
+#sidebar .woocommerce ul.product_list_widget li:before{
+  position: absolute;
+  left: 0;
+  top: 12px;
 }
 /* Page */
 .entry-title,
@@ -1520,8 +1663,10 @@ iframe, .entry-audio audio{
   .page-template-custom-front-page #header{
     position: static;
   }
-  .woocommerce .products li {
-    width: 45% !important;
+  .woocommerce .products li,
+  .related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product {
+    margin-right: 15px !important;
+    width: 46% !important
   }
   #slider .inner_carousel h2 {
     font-size: 30px;
@@ -1537,6 +1682,13 @@ iframe, .entry-audio audio{
   }
   .page-template-custom-front-page #header-top .talk-btn{
     margin:22px 0;
+  }
+  .woocommerce ul.products[class*=columns-] li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n){
+    float:none;
+    display: inline-table;
+  }
+  #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
+    width: 40px;
   }
 }
 @media screen and (max-width:720px) { 
@@ -1684,9 +1836,6 @@ iframe, .entry-audio audio{
   .top-header .account-btn{
     margin: 22px 0;
   }
-  .main-menu-navigation{
-    max-height: 270px !important;
-  }
   #menu-sidebar .primary-navigation a{
     padding: 15px !important;
   }
@@ -1704,6 +1853,7 @@ iframe, .entry-audio audio{
   }
   .toggle-menu {
     display: block;
+    text-align: left;
   }
   .toggle-menu i {
     font-size: 18px;
@@ -1907,7 +2057,6 @@ iframe, .entry-audio audio{
     display: block;
   }
   .main-menu-navigation{
-    max-height: 190px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }

@@ -505,6 +505,17 @@ function advance_startup_customize_register($wp_customize) {
 		'panel' => 'advance_startup_panel_id',
 	));
 
+	//Show /Hide Topbar
+	$wp_customize->add_setting( 'advance_startup_display_topbar',array(
+		'default' => 'true',
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_startup_display_topbar',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Topbar','advance-startup' ),
+        'section' => 'advance_startup_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_startup_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
