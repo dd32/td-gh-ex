@@ -64,11 +64,6 @@ class TGM_Activation {
 	public static function register_recommended_plugins() {
 		$plugins = [
 			[
-				'name'     => 'MailOptin - Lite',
-				'slug'     => 'mailoptin',
-				'required' => false,
-			],
-			[
 				'name'     => 'WP Gallery Enhancer',
 				'slug'     => 'wp-gallery-enhancer',
 				'required' => false,

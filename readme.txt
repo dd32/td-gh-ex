@@ -2,7 +2,7 @@
 
 Contributors: vedathemes
 tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
-Requires at least: WordPress 4.7
+Requires at least: WordPress 4.9
 Tested up to: WordPress 5.2.2
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -16,12 +16,17 @@ Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPr
 
 == Frequently Asked Questions ==
 = What are the minimum requirmens for using this theme? =
-PHP 5.4+, IE11+, WordPress 4.7+
+PHP 5.4+, IE11+, WordPress 4.9+
 
 = How to disable google fonts? =
 Aamla WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
+
+= 1.2.4 =
+* Error Fix: Style errors in core editor blocks.
+* Error Fix: Style errors in Gallery blocks.
+* Error Fix: Javascript scrollEnable script error.
 
 = 1.2.3 =
 * Modify: Minor CSS styling improvements.
