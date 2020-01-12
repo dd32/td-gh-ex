@@ -335,10 +335,10 @@ function advance_blogging_scripts() {
 			    font-family: '.esc_html($advance_blogging_h6_font_family).'!important;
 			    font-size: '.esc_html($advance_blogging_h6_font_size).'!important;
 			}
-			.menubox.nav, .footertown .tagcloud a:hover, .metabox, .cat-post::-webkit-scrollbar-thumb, .button-post a, .woocommerce span.onsale, woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .footertown input[type="submit"], #comments input[type="submit"].submit, .pagination span,.pagination a, input[type="submit"], .social-icons a:hover, .search-icon, #header .nav ul li:hover > ul li:hover, .blogbutton-mdall, #footer, #header .nav ul.sub-menu li a:hover,#sidebar .tagcloud a:hover, .primary-navigation ul, .primary-navigation ul ul a, #sidebar input[type="submit"],.sidebar,.toggle-menu, #comments a.comment-reply-link,a.button {
+			.menubox.nav, .footertown .tagcloud a:hover, .metabox, .cat-post::-webkit-scrollbar-thumb, .button-post a, .woocommerce span.onsale, woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .footertown input[type="submit"], #comments input[type="submit"].submit, .pagination span,.pagination a, input[type="submit"], .social-icons a:hover, .search-icon, #header .nav ul li:hover > ul li:hover, .blogbutton-mdall, #footer, #header .nav ul.sub-menu li a:hover,#sidebar .tagcloud a:hover, .primary-navigation ul, .primary-navigation ul ul a, #sidebar input[type="submit"],.sidebar,.toggle-menu, #comments a.comment-reply-link,a.button, .fixed-header, .woocommerce-product-search button[type="submit"], .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
 			    background-color:'.esc_html($advance_blogging_theme_color).';
 			}
-			.logo h1 a, .logo p, .logo p a, .cart-box, .cart-box i, .footertown .widget h3, p.logged-in-as a, #header .cart,.primary-navigation ul ul a:hover, #main p a, a, .tags a, code, span.post-title{
+			.logo h1 a, .logo p, .logo h1 a, .logo p.site-title a, .cart-box, .cart-box i, .footertown .widget h3, p.logged-in-as a, #header .cart,.primary-navigation ul ul a:hover, #main p a, a, .tags a, code, span.post-title{
 			    color:'.esc_html($advance_blogging_theme_color).';
 			}
 			@media screen and (max-width:1000px){
@@ -349,7 +349,7 @@ function advance_blogging_scripts() {
 			.cat-border, #slider .inner_carousel{
 			    border-left-color:'.esc_html($advance_blogging_theme_color).'!important;
 			}
-			input[type="submit"], #header,.tags a{
+			input[type="submit"], #header,.tags a, .primary-navigation ul ul{
 			    border-color:'.esc_html($advance_blogging_theme_color).'!important;
 			}
 			#sidebar h3,.serach_inner form.search-form{

@@ -168,7 +168,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	// Add the Theme Color Option section.
 	$wp_customize->add_setting( 'advance_blogging_theme_color', array(
-	    'default' => '#db0607',
+	    'default' => '',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_blogging_theme_color', array(
@@ -203,7 +203,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('advance_blogging_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_paragraph_font_size',array(
@@ -290,7 +290,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('advance_blogging_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h1_font_size',array(
@@ -327,7 +327,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('advance_blogging_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h2_font_size',array(
@@ -364,7 +364,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('advance_blogging_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h3_font_size',array(
@@ -401,7 +401,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('advance_blogging_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h4_font_size',array(
@@ -438,7 +438,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('advance_blogging_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h5_font_size',array(
@@ -475,7 +475,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('advance_blogging_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h6_font_size',array(
