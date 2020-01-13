@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -134,6 +134,9 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
 
 = 1.4.4 =
   * Added show / hide option for topbar.
+
+= 1.4.5 =
+  * Changed woocommerce css customization.
 
 == Resources ==
 
