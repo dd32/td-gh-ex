@@ -135,7 +135,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'label'    => __( 'Custom CSS', 'enigma' ),
 		'type'     => 'textarea',
 		'section'  => 'general_sec',
-		'settings' => 'custom_cs]'
+		'settings' => 'custom_css'
 	) );
 	/* Slider options */
 	$wp_customize->add_section(
@@ -598,10 +598,10 @@ function weblizar_gl_customizer( $wp_customize ) {
 	    'label'    => __( 'Home Service Title', 'enigma' ),
 	    'type'     => 'text',
 	    'section'  => 'service_section',
-	    'settings' => 'home_service_headin]'
+	    'settings' => 'home_service_heading'
     ) );
 
-    $wp_customize->selective_refresh->add_partial( 'home_service_heading]', array(
+    $wp_customize->selective_refresh->add_partial( 'home_service_heading', array(
 	    'selector' => '.enigma_service .enigma_heading_title h3',
     ));
 
@@ -1046,7 +1046,7 @@ function weblizar_gl_customizer( $wp_customize ) {
 	    'settings' => 'blog_title',
     ) );
 
-    $wp_customize->selective_refresh->add_partial( 'blog_title]', array(
+    $wp_customize->selective_refresh->add_partial( 'blog_title', array(
 	    'selector' => '.enigma_blog_area .enigma_heading_title h3',
     ));
 
@@ -1193,7 +1193,7 @@ function weblizar_gl_customizer( $wp_customize ) {
     $wp_customize->add_control( new enigma_Font_Control( $wp_customize, 'menu_font', array(
 	    'label'    => __( 'Header Menu Font Style', 'enigma' ),
 	    'section'  => 'font_section',
-	    'settings' => 'menu_fon]'
+	    'settings' => 'menu_font'
     ) ) );
 
     $wp_customize->add_setting(
@@ -1208,7 +1208,7 @@ function weblizar_gl_customizer( $wp_customize ) {
     $wp_customize->add_control( new enigma_Font_Control( $wp_customize, 'theme_title', array(
 	    'label'    => __( 'Theme Title Font Style', 'enigma' ),
 	    'section'  => 'font_section',
-	    'settings' => 'theme_titl]'
+	    'settings' => 'theme_title'
     ) ) );
 
     $wp_customize->add_setting(
@@ -1223,7 +1223,7 @@ function weblizar_gl_customizer( $wp_customize ) {
     $wp_customize->add_control( new enigma_Font_Control( $wp_customize, 'desc_font_all', array(
 	    'label'    => __( 'Theme Description Font Style', 'enigma' ),
 	    'section'  => 'font_section',
-	    'settings' => 'desc_font_al]'
+	    'settings' => 'desc_font_all'
     ) ) );
 
     /* Social options */
