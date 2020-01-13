@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>TopShop Premium </span><em>$25</em>', 'topshop' ) ); ?>
+                    <?php printf( __( '<span>TopShop Premium </span><em>$15</em>', 'topshop' ) ); ?>
                 </a>
             </div>
             
@@ -35,7 +35,7 @@
             
             <div class="topshop-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'TopShop Premium is a once off payment of $25<span>', 'topshop' ); ?></h3>
+                <h3><?php _e( 'TopShop Premium is a once off payment of $15<span>', 'topshop' ); ?></h3>
 
                 <div class="topshop-upgrade-block topshop-upgrade-block-layouts">
                     <div class="upgrade-page-right-box-img">

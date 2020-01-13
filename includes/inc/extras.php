@@ -125,9 +125,9 @@ function customizer_library_topshop_editor_styles() {
 				}';
 
 	if ( ! empty( $editor_css ) ) {
-		echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"topshop-custom-editor-css\">\n";
-		echo $editor_css;
-		echo "\n</style>\n<!-- End Custom CSS -->\n";
+		wp_register_style( 'topshop-custom-editor-css', false );
+		wp_enqueue_style( 'topshop-custom-editor-css' );
+		wp_add_inline_style( 'topshop-custom-editor-css', $editor_css );
 	}
 }
 endif;

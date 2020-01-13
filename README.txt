@@ -70,6 +70,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.24
+* Styling fixes/tweaks
+* Remove old deprecated code
+* Fixed editor CSS load issue
+* Updated language .pot file
+Premium: Added settings to show Uploaded logo with Site Title & tagline
+
 #### 1.3.23
 * Styling fixes/tweaks
 * Fix js customizer issue

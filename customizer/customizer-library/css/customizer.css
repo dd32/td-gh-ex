@@ -51,6 +51,7 @@
 
 #customize-control-blogdescription,
 #customize-control-topshop-header-image-logo-max-width,
+#customize-control-topshop-help-logo,
 #customize-control-topshop-disable-google-fonts,
 #customize-control-topshop-header-layout,
 #customize-control-topshop-show-header-top-bar,
@@ -78,4 +79,8 @@
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding: 25px 0 0;
     margin-top: 20px;
+}
+
+#customize-control-topshop-help-logo .kaira-help  {
+    margin: 0;
 }

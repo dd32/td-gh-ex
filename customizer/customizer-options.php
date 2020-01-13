@@ -43,6 +43,13 @@ function customizer_library_topshop_options() {
         'type'    => 'number',
         'description' => __( 'This only applies if a logo image is uploaded', 'topshop' )
     );
+
+    $options['topshop-help-logo'] = array(
+        'id' => 'topshop-help-logo',
+        'section' => $section,
+        'type'    => 'help',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Add Site Logo and Title & Tagline in Logo area', 'topshop' )
+    );
     
     
     $panel = 'topshop-panel-layout';

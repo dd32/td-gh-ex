@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.23' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.24' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -209,7 +209,6 @@ add_action( 'customize_controls_enqueue_scripts', 'topshop_load_customizer_scrip
  */
 function topshop_load_admin_script() {
     wp_enqueue_style( 'topshop-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
-	wp_enqueue_script( 'topshop-admin-js', get_template_directory_uri() . '/upgrade/js/admin.js', array('jquery'), TOPSHOP_THEME_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'topshop_load_admin_script' );
 
@@ -350,7 +349,7 @@ function topshop_add_license_notice() {
 				<span>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Premium now includes Page Layouts to import & is currently on a %1$s for only $15', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" target="_blank">flash sale</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Premium is %1$s for only $15', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" target="_blank">currently on sale</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</span>
 			</h4>
