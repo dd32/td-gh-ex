@@ -107,7 +107,9 @@
 
             // If Logged In
             if( $( document ).find( '#wpadminbar' ) ) {
-                adminbar_height = $( '#wpadminbar' ).height();
+                if ( $(window).width() > 768 ) {
+                    adminbar_height = $( '#wpadminbar' ).height();
+                }
             }
 
             // If Boxed Layout
@@ -174,7 +176,7 @@
                         // Replace main logo with transparent logo
                         $( trans_header ).attr( 'src', main_logo );
                     } else {
-                        header.removeClass( sticky + ' ' + fixed_boxed ).css( 'top', 'unset' );
+                        header.removeClass( sticky + ' ' + fixed_boxed ).css( 'top', 0 );
                         adjust_height.css( 'margin-bottom', 0 );
                         header.addClass( no_sticky );
 

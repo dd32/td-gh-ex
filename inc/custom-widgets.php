@@ -46,8 +46,8 @@ function apex_business_widgets_init() {
         'description'   => esc_html__( 'Add a Text widget here to appear in your left topbar address area.', 'apex-business' ),
         'before_widget' => '<span class="office-hour">',
         'after_widget'  => '</span>',
-        'before_title'  => '<span class="fas fa-map-marker-alt">',
-        'after_title'   => '</span>',
+        'before_title'  => '',
+        'after_title'   => '',
     ) );
 
     register_sidebar( array(
