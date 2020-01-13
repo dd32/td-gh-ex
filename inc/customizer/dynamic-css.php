@@ -916,7 +916,7 @@ $css = '';
 	if ( bard_options( 'single_page_show_dropcaps' ) === true ) {
 		$css .= "
 			.blog-classic-style .post-content > p:first-of-type:first-letter,
-			.single .post-content > p:first-of-type:first-letter,
+			.single .post-content > p:not(.wp-block-tag-cloud):first-of-type:first-letter,
 			article.page .post-content > p:first-child:first-letter {
 			  	float: left;
 				margin: 6px 9px 0 -1px;
@@ -932,7 +932,7 @@ $css = '';
 
 			@-moz-document url-prefix() {
 				.blog-classic-style .post-content > p:first-of-type:first-letter,
-				.single .post-content > p:first-of-type:first-letter,
+				.single .post-content > p:not(.wp-block-tag-cloud):first-of-type:first-letter,
 				article.page .post-content > p:first-child:first-letter {
 				    margin-top: 10px !important;
 				}
