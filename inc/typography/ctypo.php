@@ -358,7 +358,7 @@ function automotive_centre_typography_customize_register( $wp_customize ) {
 function automotive_centre_customize_controls_register_scripts() {
 	wp_enqueue_script( 'automotive-centre-ctypo-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/typography/js/customize-controls.js',array( 'customize-controls' )  );
 
-	wp_enqueue_style( 'automotive-centre-ctypo-customize-controls-style', trailingslashit( get_template_directory_uri() ) . 'css/customize-controls.css' );
+	wp_enqueue_style( 'automotive-centre-ctypo-customize-controls-style', trailingslashit( get_template_directory_uri() ) . '/assets/css/customize-controls.css' );
 }
 
 /**

@@ -145,3 +145,57 @@
 			$custom_css .='margin-top:10px;';
 		$custom_css .='}';
 	}
+
+	/*------------------------------Responsive Media -----------------------*/
+
+	$stickyheader = get_theme_mod( 'automotive_centre_stickyheader_hide_show',true);
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.header-fixed{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.header-fixed{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$stickyheader = get_theme_mod( 'automotive_centre_resp_slider_hide_show',true);
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$metabox = get_theme_mod( 'automotive_centre_metabox_hide_show',true);
+    if($metabox == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.post-info{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($metabox == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.post-info{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$sidebar = get_theme_mod( 'automotive_centre_sidebar_hide_show',true);
+    if($sidebar == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sidebar == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}

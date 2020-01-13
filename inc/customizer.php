@@ -448,6 +448,99 @@ function automotive_centre_customize_register( $wp_customize ) {
             'Left' => get_template_directory_uri().'/assets/images/blog-layout3.png',
     ))));
 
+    //404 Page Setting
+	$wp_customize->add_section('automotive_centre_404_page',array(
+		'title'	=> __('404 Page Settings','automotive-centre'),
+		'panel' => 'automotive_centre_panel_id',
+	));	
+
+	$wp_customize->add_setting('automotive_centre_404_page_title',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+
+	$wp_customize->add_control('automotive_centre_404_page_title',array(
+		'label'	=> __('Add Title','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( '404 Not Found', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_404_page',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('automotive_centre_404_page_content',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+
+	$wp_customize->add_control('automotive_centre_404_page_content',array(
+		'label'	=> __('Add Text','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( 'Looks like you have taken a wrong turn, Dont worry, it happens to the best of us.', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_404_page',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('automotive_centre_404_page_button_text',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automotive_centre_404_page_button_text',array(
+		'label'	=> __('Add Button Text','automotive-centre'),
+		'input_attrs' => array(
+            'placeholder' => __( 'GO BACK', 'automotive-centre' ),
+        ),
+		'section'=> 'automotive_centre_404_page',
+		'type'=> 'text'
+	));
+
+	//Responsive Media Settings
+	$wp_customize->add_section('automotive_centre_responsive_media',array(
+		'title'	=> __('Responsive Media','automotive-centre'),
+		'panel' => 'automotive_centre_panel_id',
+	));
+
+    $wp_customize->add_setting( 'automotive_centre_stickyheader_hide_show',array(
+          'default' => 1,
+          'transport' => 'refresh',
+          'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_stickyheader_hide_show',array(
+          'label' => esc_html__( 'Sticky Header','automotive-centre' ),
+          'section' => 'automotive_centre_responsive_media'
+    )));
+
+    $wp_customize->add_setting( 'automotive_centre_resp_slider_hide_show',array(
+          'default' => 1,
+          'transport' => 'refresh',
+          'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_resp_slider_hide_show',array(
+          'label' => esc_html__( 'Show / Hide Slider','automotive-centre' ),
+          'section' => 'automotive_centre_responsive_media'
+    )));
+
+	$wp_customize->add_setting( 'automotive_centre_metabox_hide_show',array(
+          'default' => 1,
+          'transport' => 'refresh',
+          'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_metabox_hide_show',array(
+          'label' => esc_html__( 'Show / Hide Metabox','automotive-centre' ),
+          'section' => 'automotive_centre_responsive_media'
+    )));
+
+    $wp_customize->add_setting( 'automotive_centre_sidebar_hide_show',array(
+          'default' => 1,
+          'transport' => 'refresh',
+          'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_sidebar_hide_show',array(
+          'label' => esc_html__( 'Show / Hide Sidebar','automotive-centre' ),
+          'section' => 'automotive_centre_responsive_media'
+    )));
+
 	//Content Creation
 	$wp_customize->add_section( 'automotive_centre_content_section' , array(
     	'title' => __( 'Customize Home Page Settings', 'automotive-centre' ),

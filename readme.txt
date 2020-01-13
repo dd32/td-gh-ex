@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.6
+Stable tag: 0.3.7
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -64,6 +64,11 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 
 = 0.3.6 =
 * Done the woocommerce css customization.
+
+= 0.3.7 =
+* Added new settings in customizer.
+* Added settings for responsive media in customizer.
+* Updated language folder.
 
 == Resources ==
 
