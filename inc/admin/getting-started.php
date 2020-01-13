@@ -157,14 +157,18 @@ function arilewp_getting_started_page() { ?>
 					<li class="customize-options"><i class="dashicons dashicons-admin-generic"></i><?php esc_html_e( 'Live Customizer', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-admin-site-alt"></i><?php esc_html_e( 'Multilingual Ready', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-thumbs-up"></i><?php esc_html_e( '1 Year Free Updates', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-buddicons-topics"></i><?php esc_html_e( 'Dark & Light Layout Styles', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-editor-textcolor"></i><?php esc_html_e( 'Google Font Support', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-admin-customizer"></i><?php esc_html_e( 'Unlimited Color Schemes', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-translation"></i><?php esc_html_e( 'RTL Support', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-feedback"></i><?php esc_html_e( 'Wide & Boxed Layouts', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-editor-ltr"></i><?php esc_html_e( 'Advanced Typography', 'arilewp' ); ?></li>
-					<li class="customize-options"><i class="dashicons dashicons-editor-insertmore"></i><?php esc_html_e( 'Unique Header Layouts', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-editor-insertmore"></i><?php esc_html_e( '4 Unique Header Layouts', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-feedback"></i><?php esc_html_e( 'Unlimited Business Sections', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-list-view"></i><?php esc_html_e( 'Advanced Blog Layouts', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-format-video"></i><?php esc_html_e( 'Video Tutorial', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-businesswoman"></i><?php esc_html_e( 'Priority Support', 'arilewp' ); ?></li>
+					
 				</div>
 			</div>
 		</div>
