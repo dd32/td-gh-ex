@@ -1,3 +1,6 @@
+=== v1.0.4 ===
+- Added default value for social ions new tabs
+
 === v1.0.3 ===
 - Added default value for breadcrumb on off setting
 
