@@ -165,3 +165,35 @@ if ( ! function_exists( 'wp_body_open' ) ) {
         do_action( 'wp_body_open' );
     }
 }
+
+//=============================================================
+// Function to include recommended plugins
+//=============================================================
+function agency_plus_register_required_plugins() {
+	
+	$plugins = array(
+				
+		array(
+			'name'      => esc_html__( 'Elementor Page Builder', 'agency-plus' ),
+			'slug'      => 'elementor',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => esc_html__( 'Post Grid Elementor Addon', 'agency-plus' ),
+			'slug'      => 'post-grid-elementor-addon',
+			'required'  => false,
+		),
+
+		array(
+			'name'      => esc_html__( 'Instagram Feed For Elementor', 'agency-plus' ),
+			'slug'      => 'ifeed-for-elementor',
+			'required'  => false,
+		),
+
+	);
+
+	tgmpa( $plugins );
+}
+
+add_action( 'tgmpa_register', 'agency_plus_register_required_plugins' );

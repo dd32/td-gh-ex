@@ -35,8 +35,8 @@ function agency_plus_theme_info_page(){
 		</div>
 
 		<p>
-			<a href="https://manesh.com.np/free-wordpress-themes/agency-plus/" class="button" target="_blank"><?php echo esc_html__( 'Theme Details', 'agency-plus' ); ?></a>
-			<a href="https://manesh.com.np/demo/agency-plus/" class="button button-primary" target="_blank"><?php echo esc_html__( 'View Demo', 'agency-plus' ); ?></a>
+			<a href="https://www.wpmanesh.com/free-wordpress-themes/agency-plus/" class="button" target="_blank"><?php echo esc_html__( 'Theme Details', 'agency-plus' ); ?></a>
+			<a href="https://wpmanesh.com/demo/agency-plus/" class="button button-primary" target="_blank"><?php echo esc_html__( 'View Demo', 'agency-plus' ); ?></a>
 		</p>
 
 		<div class="feature-section has-2-columns alignleft">
@@ -49,7 +49,7 @@ function agency_plus_theme_info_page(){
 			<div class="card">
 				<h3><?php echo esc_html__( 'Import Demo Data', 'agency-plus' ); ?></h3>
 				<p><?php echo esc_html__( 'Find step by step instructions to import demo content and setup theme easily.', 'agency-plus' ); ?></p>
-				<p><a target="_blank" href="https://manesh.com.np/free-wordpress-themes/agency-plus/#demo-import" class=""><?php echo esc_html__( 'Import Demo Content', 'agency-plus' ); ?></a></p>
+				<p><a target="_blank" href="https://www.wpmanesh.com/free-wordpress-themes/agency-plus/#demo-import" class=""><?php echo esc_html__( 'Import Demo Content', 'agency-plus' ); ?></a></p>
 			</div>
 
 		</div>

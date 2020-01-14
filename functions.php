@@ -161,7 +161,7 @@ function agency_plus_scripts() {
 
 	wp_enqueue_script( 'jquery-meanmenu', get_template_directory_uri() . '/assets/third-party/meanmenu/jquery.meanmenu.min.js', array('jquery'), '2.0.8', true );
 
-	wp_enqueue_script( 'agency-plus-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'agency-plus-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), '1.0.2', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -194,6 +194,11 @@ require get_template_directory() . '/inc/customizer/core.php';
  * Helper functions.
  */
 require get_template_directory() . '/inc/helpers.php';
+
+/**
+ * TGM Plugin activation.
+ */
+require_once trailingslashit( get_template_directory() ) . '/inc/class-tgm-plugin-activation.php';
 
 // Load woo-commerce overrides.
 if( class_exists( 'WooCommerce' ) ){
