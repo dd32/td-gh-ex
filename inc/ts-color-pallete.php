@@ -93,3 +93,12 @@
 			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; right:0';
 		$custom_css .='}';
 	}
+
+	// css
+	$show_header = get_theme_mod( 'advance_portfolio_page_settings', true);
+		if($show_header == false){
+			$custom_css .='.page-template-custom-front-page #header{';
+				$custom_css .='position:static; background-color: #ffdd65;';
+			$custom_css .='}';
+		}
+	
