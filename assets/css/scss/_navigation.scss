@@ -185,6 +185,16 @@ nav a {
     position: absolute;
     top: 0;
     right: 3.2rem;
+
+    ul > li {
+        > a {
+            color: $secondary-color;
+
+            &:hover {
+              color: $primary-color;
+            }
+        }
+    }
 }
 
 .menubar-right,

@@ -102,7 +102,7 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: darken( $primary-color, 15% );
+    color: $secondary-color;
   }
 }
 

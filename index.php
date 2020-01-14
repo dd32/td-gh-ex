@@ -39,7 +39,7 @@ get_header();
                 endif;
             ?>
             <div class="<?php echo esc_attr( $apex_business_fullwidth_stats ); ?>">
-                <div class="grid">
+                <div class="ct-grid">
                 <?php
                     while ( have_posts() ) : the_post();
 

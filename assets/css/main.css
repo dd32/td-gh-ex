@@ -46,7 +46,7 @@ a {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
   a:hover, a:focus, a:active {
-    color: #2c917d; }
+    color: #2b3948; }
 
 /* Pre Setup */
 .pre-font-family-1, body {
@@ -779,6 +779,8 @@ button, .button {
   line-height: 1.2; }
   .site-logo div a {
     display: inline-block; }
+    .site-logo div a:hover {
+      color: #43c6ac; }
 .site-logo img {
   max-width: 300px;
   height: auto;
@@ -1102,6 +1104,10 @@ nav a {
   position: absolute;
   top: 0;
   right: 3.2rem; }
+  .mobile-menu-container ul > li > a {
+    color: #2b3948; }
+    .mobile-menu-container ul > li > a:hover {
+      color: #43c6ac; }
 
 .menubar-right,
 .menubar-close {
@@ -1241,11 +1247,11 @@ nav a {
   opacity: 1;
   visibility: visible; }
 
-@media screen and (max-width: 782px){
-   .admin-bar .mobile-menu-open {
-        top: 46px; } }
-.mobile-navigation .mobile-nav{
-    margin-top:20px; }
+@media screen and (max-width: 782px) {
+  .admin-bar .mobile-menu-open {
+    top: 46px; } }
+.mobile-navigation .mobile-nav {
+  margin-top: 20px; }
 
 /*=========================
     14. BLOG SECTION

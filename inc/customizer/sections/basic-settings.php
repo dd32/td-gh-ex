@@ -89,7 +89,7 @@ function apex_business_accent_color_setup( $wp_customize ) {
     );
 
     $wp_customize->add_setting( 'apex_business_link_hover_color_setting', array(
-        'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+        'default'           => APEX_BUSINESS_HOVER_COLOR,
         'type'              => 'theme_mod',
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'apex_business_sanitize_alpha_color',

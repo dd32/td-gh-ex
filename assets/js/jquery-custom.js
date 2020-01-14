@@ -66,6 +66,14 @@
             }
         } );
 
+        // Hide menu on escape press
+        $('body').on( 'keyup keydown', function( e ) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode == 27) {
+                hide_menu();
+            }
+        } );
+
         $( '.js-ct-dropdown-toggle' ).on( 'keydown', function( e ) {
             var keyCode = e.keyCode || e.which;
             if (keyCode == 13) {
@@ -235,7 +243,7 @@
     */
 
     if ( jQuery().masonry ) {
-        var $grid = $( '.grid' ).masonry( {
+        var $grid = $( '.ct-grid' ).masonry( {
             // options
             itemSelector: '.grid-item'
         } );
@@ -257,6 +265,67 @@
         // Adjust if it's off the screen
         if( menu.is( ':off-right' ) ) {
             menu.addClass( 'to-left' );
+        }
+    } );
+
+        /**
+     * 4.0 - Infinite Scroll
+     */
+    jQuery(document).ready( function(){
+        if ( document.querySelector('.load-more-infinite') !== null ) {
+            var loading = true;
+            $(window).scroll(function() { //detact scroll
+                if( loading && $(window).scrollTop() + $(window).height() >= $(document).height()*.8) { //scrolled to bottom of the page
+                    loading = false;
+                    var that            = $('.load-more-infinite');
+                    var page            = that.data('page');
+                    var new_page        = page+1;
+                    var ajaxurl         = that.data('url');
+                    var taxonomy_val    = that.data('taxonomy-val');
+                    var taxonomy_type   = that.data('taxonomy-type');
+                    var author          = that.data('author');
+
+                    $.ajax( {
+                        url     :   ajaxurl,
+                        type    :   'post',
+                        data    :   {
+                            page            :   page,
+                            taxonomy_type   :   taxonomy_type,
+                            taxonomy_val    :   taxonomy_val,
+                            author          :   author,
+                            action          :   'apex_business_load_more'
+                        },
+                        error   :   function( response ) {
+                            console.log( response );
+                        },
+                        success :   function( response ) {
+
+                            if ( response == 0 ) {
+                                $( '.spinner' ).removeClass( 'spinner' ).addClass( 'no-posts button' ).html( '<p>No More Post</p>' ).delay(1500).queue(function(next) {
+                                        $(this).addClass("hide");
+                                        next();
+                                    });
+                            }
+
+                            that.data( 'page', new_page );
+                            var el = jQuery( response );
+
+                            $grid = $( '.ct-grid' );
+
+                            if ( jQuery().masonry ) {
+                                $grid.append( el ).imagesLoaded(function(){
+                                    $grid.masonry( 'appended', el );
+                                });
+                            } else {
+                                $grid.append( el );
+                            }
+
+                            loading = true;
+                        },
+                    } );
+
+                }
+            });
         }
     } );
 

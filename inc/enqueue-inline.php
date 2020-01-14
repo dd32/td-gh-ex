@@ -31,7 +31,7 @@ function apex_business_enqueue_inline_css() {
     ***************************************************************************/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.footer-bottom', 'border-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.site-logo a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.site-logo a, .site-logo div a:hover', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.entry-meta li span::before', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 

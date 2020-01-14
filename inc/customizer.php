@@ -11,7 +11,8 @@
  * @see _wp_customize_include()
  */
 
-define( 'APEX_BUSINESS_PRIMARY_COLOR', '#13aff0' );
+define( 'APEX_BUSINESS_PRIMARY_COLOR', '#43c6ac' );
+define( 'APEX_BUSINESS_HOVER_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_TEXT_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_WHITE_COLOR', '#fff' );
 define( 'APEX_BUSINESS_DEEP_COLOR', '#2b3948' );
