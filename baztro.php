@@ -1,12 +1,11 @@
 <?php
-ob_start();
 function promax_backg() { ?>
 
 	   <?php
-	if (of_get_option('promax_boxheight') =='fixed') {
+	if (get_theme_mod('promax_post_style') =='enable') {
             echo '<style type="text/css">.imag{height:355px !important;}</style>' . "\n";
         }
-	elseif (of_get_option('promax_boxheight') =='auto') {
+	elseif (get_theme_mod('promax_post_style') =='disable') {
 		echo '<style type="text/css">.imag{height:auto !important;}</style>' . "\n";
 	}
 	else { echo '<style type="text/css">.imag{height:355px !important;}</style>' . "\n";}?>
@@ -14,14 +13,7 @@ function promax_backg() { ?>
 <?php if ( get_header_image() ) : ?>	
 		#header{background-image:url("<?php esc_url(header_image());?>");}
 		<?php endif; ?>
-#header-inner,
-#page-inner,
-#bottom-menu-inner,
-#footer-inner,
-#ltpost,
-.nav,
-#pronav-inner { max-width: <?php echo of_get_option( 'promax_maxwidth', '1200' ); ?>px !important;}
-		
+#header-inner, #page-inner, #bottom-menu-inner, #footer-inner, #ltpost, .nav, #pronav-inner{ max-width: <?php echo get_theme_mod( 'promax_website_width', '1200' ); ?>px !important;}
 	</style>
     
 <?php };
@@ -113,26 +105,4 @@ function promax_breadcrumbs() {
     }
 
     echo '</div>';
-}
-
-	function promax_tiltechange() {
-	if (of_get_option('promax_latestchange') != '') {
-            echo '' . of_get_option('promax_latestchange') . '' . "\n";
-        }
-	else {echo 'Latest Posts' . "\n";
-	}	
-	}
-/*********************************/
-/* WooCommerce Quick Checkout
-*******************************************/
-if(of_get_option('promax_quickcheckout')!=='off'){
-	function promax_addtocart_button_func() {
-			// Echo content.
-			global $product;
-			$pid = $product->get_id();
-			$quicklink = WC()->cart->get_checkout_url();
-			echo '<div class="quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_attr(of_get_option('promax_quickcheckoutname','Quick Checkout')).'</a></div>';
-	}
-	add_action( 'woocommerce_after_add_to_cart_button', 'promax_addtocart_button_func' );
-
 }

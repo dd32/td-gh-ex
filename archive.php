@@ -39,7 +39,7 @@
 					</div>
 					</div>
 					<?php endif; ?>
-					<?php load_template(get_template_directory() . '/includes/pagenav.php'); ?>
+					<?php get_template_part('/includes/pagenav'); ?>
 					</div> <!-- end div #content -->
 			<?php get_sidebar(); ?>
 			<?php get_footer(); ?>

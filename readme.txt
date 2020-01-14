@@ -1,8 +1,19 @@
+== Promax ==
+
+Contributors: sandy786
+Requires at least:  WordPress 4.5
+Tested up to:       WordPress 5.3.2
+Requires PHP:       5.4
+Version:            2.4
+Stable tag:         2.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 --------------------------------------------------------
 Thanks for Downloading ProMax theme
 --------------------------------------------------------
 I made this for free to use if you find any bug or error please
-You can directly contact us: http://www.insertcart.com/product/promax-wordpress-theme/
+You can directly contact us: https://www.insertcart.com/product/promax-wordpress-theme/
 also suggestion are welcome 
 
 

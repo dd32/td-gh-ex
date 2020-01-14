@@ -32,6 +32,42 @@ li#accordion-section-promax_responsive > h3.accordion-section-title:before {
     font-family: dashicons;
     padding: 3px;
 	color: #0073aa;
+}	
+li#accordion-section-promax_social_section > h3.accordion-section-title:before {
+    content: "\f237";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
+}
+li#accordion-section-promax_woo_set > h3.accordion-section-title:before {
+    content: "\f174";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
+}
+li#accordion-section-colors > h3.accordion-section-title:before {
+    content: "\f309";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
+}
+li#accordion-panel-nav_menus > h3.accordion-section-title:before {
+    content: "\f329";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
+}
+li#accordion-panel-widgets > h3.accordion-section-title:before {
+    content: "\f489";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
+}
+li#accordion-section-title_tagline > h3.accordion-section-title:before {
+    content: "\f11f";
+    font-family: dashicons;
+    padding: 3px;
+	color: #0073aa;
 }
 #accordion-panel-nav_menus > ul{
     margin-top: -290px !important;

@@ -1,6 +1,6 @@
 <div id="sidebar">
 	<?php
-		if (of_get_option('promax_popular' ) =='1' ) {
+		if (get_theme_mod('promax_popular_posts' )!=='disable' ) {
 			get_template_part('/includes/popular');
 			}
 		dynamic_sidebar('prosidebar');

@@ -1,10 +1,6 @@
 <?php
-
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 include_once('baztro.php');
 include_once('includes/installs.php');
-include_once('includes/core/core.php');
 include_once('includes/metaboxpage.php');
 include_once('includes/metaboxsingle.php');
 include_once('includes/template-tags.php');
@@ -18,16 +14,9 @@ function promax_scripts() {
 	wp_enqueue_style( 'promax-font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
-	
-		if (of_get_option('promax_favicon') != '') {
-			echo '<link rel="shortcut icon" href="' . esc_url(of_get_option('promax_favicon')) . '"/>' . "\n";
-	}
 	if ( is_rtl() ) {
 	wp_enqueue_style( 'promax-rtl-css', get_template_directory_uri() . '/css/rtl.css' );
-}
-		//Custom css output	
-		$custom_css = html_entity_decode(of_get_option('promax_customcss'));
-		wp_add_inline_style( 'promax-style', $custom_css );	  
+	}  
 }
 add_action( 'wp_enqueue_scripts', 'promax_scripts' );
 
@@ -76,9 +65,6 @@ $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
     print "<img src='$main' alt='$the_title' class='frame' />";
   endif;
 }
-
-
-
 	
 function promax_theme_setup() { 
 		if ( function_exists( 'add_theme_support' ) ) { 
@@ -90,9 +76,9 @@ function promax_theme_setup() {
 		add_image_size( 'promax_singlefull', 816, 500 );
 		//woocommerce plugin support
 		add_theme_support( 'woocommerce' );
-			if(of_get_option('promax_woozoom')=='on'){ add_theme_support( 'wc-product-gallery-zoom' );}
-	if(of_get_option('promax_woolightbox')!=='off'){ add_theme_support( 'wc-product-gallery-lightbox' );}
-	if(of_get_option('promax_wooslider')=='on'){ add_theme_support( 'wc-product-gallery-slider' );}
+	if(get_theme_mod('promax_zoom_images')=='enable'){ add_theme_support( 'wc-product-gallery-zoom' );}
+	if(get_theme_mod('promax_lightbox_images')!=='disable'){ add_theme_support( 'wc-product-gallery-lightbox' );}
+	if(get_theme_mod('promax_slide_images')=='enable'){ add_theme_support( 'wc-product-gallery-slider' );}
 global $content_width;
 		if ( ! isset( $content_width ) ) {
 		$content_width = 670;
@@ -156,7 +142,23 @@ global $content_width;
     echo $output;
     }
 
-	
+/* ----------------------------------------------------------------------------------- */
+/* Social Icons
+/*----------------------------------------------------------------------------------- */
+if ( ! function_exists( 'promax_socialprofiles' ) ) :
+	function promax_socialprofiles(){		
+			/*
+			** Template to Render Social Icons on Top Bar
+			*/
+				echo '<div id="TopMenuSocial" class="socialfb">';
+				for ($i = 1; $i < 8; $i++) : 
+				$social = esc_attr(get_theme_mod('promax_social_'.$i));
+				if ( ($social != 'none') && ($social != '') ) : ?>
+				<a class="hvr-ripple-out" href="<?php echo esc_url( get_theme_mod('promax_social_url'.$i) ); ?>"><i class="fa fa-<?php echo esc_attr($social); ?>"></i></a>
+				<?php endif; endfor;
+				echo '</div>';
+	}
+endif;	
 
 /* Widgets ********************************************/
 
@@ -193,7 +195,7 @@ global $content_width;
 	    'after_widget' => '</div>',
 	    'before_title' => '<h4>',
 	    'after_title' => '</h4>',
-	));
+	));	
 	register_sidebar(array(
 		'name' => __( 'Below Navigation Widget', 'promax' ),
 		'id' => 'belownaviwid',
@@ -228,7 +230,14 @@ global $content_width;
 	    'before_title' => '<h4>',
 	    'after_title' => '</h4>',
 	));	
-
+	register_sidebar(array(
+		'name' => __( 'Before Footer Widget', 'promax' ),
+		'id' => 'beforefooter',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));
 	
 }
 add_action('widgets_init', 'promax_widgets_init');
@@ -333,5 +342,94 @@ function promax_comment_form( $argsbutton ) {
     return $argsbutton;
 }
 
+/* ----------------------------------------------------------------------------------- */
+/* WooCommerce floating cart
+/*----------------------------------------------------------------------------------- */
 
-?>
+if ( class_exists( 'WooCommerce' ) ) {
+  // code that requires WooCommerce
+ if(get_theme_mod('promax_floating_cart')=='enable'){
+	 function promax_floating_cart() {
+		 ?>
+		<a class="cart-flotingcarte" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View cart','promax' ); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+		<?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(),'promax' ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
+		<?php }
+		}
+}
+
+/******************************************/
+/* WooCommerce Quick Checkout
+*******************************************/
+if (get_theme_mod('promax_quick_checkout' ) !=='disable' ) {
+function promax_addtocart_button_func() {
+        // echo content.
+		global $product;
+		$pid = $product->get_id();
+		$quicklink = WC()->cart->get_checkout_url();
+        echo '<div class="button quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_attr(get_theme_mod('promax_quick_checkout_text','Quick Checkout')).'</a></div>';
+}
+add_action( 'woocommerce_after_add_to_cart_button', 'promax_addtocart_button_func' );
+}
+
+
+/* ------------------------------------------- */
+/* Latest Posts
+/*------------------------------------------- */
+if (get_theme_mod('promax_latest_posts' ) !=='disable' ) {
+function promax_latets_posts(){ ?>
+
+<div id="ltpost">
+<?php 
+$promax_args = array( 
+ 'ignore_sticky_posts' => true,
+ 'showposts' => 5,
+'orderby' => 'date',  );
+$the_query = new WP_Query( $promax_args );
+ if ( $the_query->have_posts() ) :
+while ( $the_query->have_posts() ) : $the_query->the_post();
+			 ?>
+<div class="latest-post">
+	<?php if ( has_post_thumbnail() ) {the_post_thumbnail('latestpostthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
+<?php } ?> 
+	 <a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><br />
+	 <div class="clear"></div>
+</div>
+<?php endwhile; endif; wp_reset_postdata(); ?>
+	</div>
+<div style="clear:both;"></div>
+			
+<?php }
+add_action( 'promax_below_navigation', 'promax_latets_posts' );
+}
+
+
+/* ------------------------------------------- */
+/* Author Profile
+/*------------------------------------------- */
+if ( get_theme_mod('promax_author' ) !=='disable' ) {
+	function promax_author_profile(){
+	?>
+<div id="author-bio">
+	<h3><?php _e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
+<?php echo get_avatar( get_the_author_meta('ID'), 64 ); ?>
+       <?php the_author_meta('description'); ?>                        
+</div>
+<?php
+	}
+	add_action( 'promax_after_single_page', 'promax_author_profile' );
+	add_action( 'promax_after_single_post', 'promax_author_profile' );
+}
+/* ------------------------------------------- */
+/* Author Stamp
+/*------------------------------------------- */
+
+if ( get_theme_mod('promax_authstamp' ) !=='disable') {
+	function promax_thumbnail_bottom_date_author(){
+	?>
+	<span class="authmt">
+	<?php 
+	echo promax_meta_date(); 
+	echo promax_meta_author();
+	?></span><?php }
+	add_action( 'promax_thumbnail_bottom', 'promax_thumbnail_bottom_date_author' );
+}

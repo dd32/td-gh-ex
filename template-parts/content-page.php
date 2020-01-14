@@ -37,10 +37,7 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-	<?php
-	if ( of_get_option('promax_author' ) =='1' ) {
-				get_template_part( 'includes/author' );
-			}
+	<?php do_action('promax_after_single_page'); 
 			if ( !dynamic_sidebar('aftersinglepage') ) :  endif; 
 		?>
 	

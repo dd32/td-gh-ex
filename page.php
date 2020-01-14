@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 	<!-- BEGIN PAGE -->
 	<div id="page">
-	<?php if (of_get_option('promax_latest' ) =='1' ) {
-		get_template_part( 'includes/ltposts' );
-		} ?>
+<?php do_action('promax_below_navigation'); ?>
     <div id="page-inner" class="clearfix">
 		<div id="pagecont"><?php promax_breadcrumbs(); ?>
 		
@@ -24,10 +22,7 @@
 		endwhile;
 		?>
 
-	</main><!-- .site-main -->
-			  <div id="footerads">
-<?php if ( of_get_option('promax_ad1') <> "" ) { echo stripslashes(of_get_option('promax_ad1')); } ?>
-</div>    										
+	</main><!-- .site-main -->									
 		</div> <!-- end div #content -->
 			
 <?php get_sidebar(); ?>

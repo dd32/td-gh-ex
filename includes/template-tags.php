@@ -80,17 +80,10 @@ if ( ! function_exists( 'promax_post_navigation' ) ) :
  * Displays Single Post Navigation
  */
 function promax_post_navigation() {
-
-
-	if ( of_get_option('promax_links' ) =='on') {
-
 		the_post_navigation( array(
 			'prev_text' => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'promax' ) . '</span>%title',
 			'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next Post:', 'post navigation', 'promax' ) . '</span>%title',
 		) );
-
-	}
-
 }
 endif;
 
@@ -160,8 +153,7 @@ if(get_the_tag_list()) {
 	// Get tags.
 	$tag_list = get_the_tag_list( '', '' );
 
-	// Display tags.
-	if ( of_get_option('promax_tags' ) =='1') : ?>
+ ?>
 
 		<div class="entry-tags clearfix">
 			<span class="tags">
@@ -170,7 +162,6 @@ if(get_the_tag_list()) {
 		</div><!-- .entry-tags -->
 
 	<?php
-	endif;
 }
 
 } // promax_entry_tags()

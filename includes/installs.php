@@ -15,8 +15,8 @@ function promax_notice() {
 		}
 		$return .= '</strong> <a href="' . esc_url(home_url('/')) . '">' . __( 'Visit site', 'promax' ) . '</a></p>';
 		$return .= '<p>';
-		$return .= ' <a class="button button-primary theme-options" href="' . admin_url( 'themes.php?page=options-framework' ) . '">' . __( 'Theme Options', 'promax' ) . '</a>';
-		$return .= ' <a class="button button-primary help" href="http://forum.insertcart.com">' . __( 'Help Forum', 'promax' ) . '</a>';
+		$return .= ' <a class="button button-primary theme-options" href="' . admin_url( 'customize.php' ) . '">' . __( 'Theme Options', 'promax' ) . '</a>';
+		$return .= ' <a class="button button-primary help" href="https://www.insertcart.com">' . __( 'Help Forum', 'promax' ) . '</a>';
 		$return .= '</p></div>';
 		echo $return;
 	}

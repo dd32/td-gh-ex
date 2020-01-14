@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="page">
-	<?php if (of_get_option('promax_latest' ) =='1' ) {	get_template_part( 'includes/ltposts' ); } ?>
+	<?php do_action('promax_below_navigation'); ?>
 	<div id="page-inner" class="clearfix">	
 		<div id="singlecontent">
 		<?php promax_breadcrumbs(); ?>		

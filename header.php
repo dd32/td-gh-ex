@@ -9,23 +9,21 @@
 </head>
 
 <body <?php body_class(); ?> id="top">
+<?php wp_body_open(); ?>
 <div class="wrapper">
+<a class="skip-link screen-reader-text" href="#page">
+<?php _e( 'Skip to content', 'esell' ); ?></a>
 <!-- BEGIN HEADER -->
 	<div id="header">
     <div id="header-inner" class="clearfix">
-		<div id="logo">
-<?php if (of_get_option( 'promax_logo' )): ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url(of_get_option( 'promax_logo' )); ?>" max-height="88px" max-width="470px" alt="<?php bloginfo( 'name' ); ?>"/></a>
-      			<?php else : ?>        
+		<div id="logo">   
 				
-					<?php promax_site_logo();?>
-					<?php promax_site_title(); ?>
-					<?php promax_site_description(); ?>
-	  <?php endif; ?>	
+					<?php promax_site_logo();
+					promax_site_title(); 
+					promax_site_description(); ?>	
 		</div>		
 		
-		<div id="banner-top">	<?php echo wp_kses_post(of_get_option( 'banner_top')); ?>
-		<?php if ( !dynamic_sidebar('headerban') ) :  endif; ?>
+		<div id="banner-top"><?php if ( !dynamic_sidebar('headerban') ) :  endif; ?>
 		</div>		
     </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
@@ -33,19 +31,19 @@
 	<!-- END HEADER -->
 
 	<!-- BEGIN TOP NAVIGATION -->
-	<?php if (of_get_option('promax_topmenushow') !=='off') { ?>
+	<?php if (get_theme_mod('promax_topnavi') !=='disable') { ?>
 <div id="navigation" ><div class="nav">
     <div id="navigation-inner" class="clearfix">
 		<div class="secondary">
 		<?php wp_nav_menu( array( 'theme_location' => 'promax-navigation', 'fallback_cb' => 'promax_hdmenu','menu_class' => 'nav-menu') );	?>
 		</div><!-- end div #nav secondry -->
 	    </div> <!-- end div #navigation-inner -->
-		<?php get_template_part('/includes/social'); ?>
+		<?php echo wp_kses_post( promax_socialprofiles() ); ?>
 	    </div> <!-- end div #navigation-inner -->
 	</div> <!-- end div #navigation -->
 	<!-- END TOP NAVIGATION -->
 <?php } ?>
-<?php if (of_get_option('promax_navimenushow') !=='off') { ?>
+<?php if (get_theme_mod('promax_main_navi') !=='disable') { ?>
 	<div id="pronav"> 
     <div id="pronav-inner" class=" nav clearfix">
 		<div class="secondary">		
