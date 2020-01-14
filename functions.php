@@ -47,11 +47,11 @@ function arix_functions() {
 
 	// custom background image support
 	add_theme_support( 'custom-background', array(
-		'default-image'       => get_template_directory_uri() . '/images/arix-background.jpg',
-		'default-repeat'      => 'no-repeat',
-		'default-position-x'  => 'center',
-		'default-position-y'  => 'center',
-		'default-attachment'  => 'fixed',
+		'default-image'      => get_template_directory_uri() . '/images/arix-background.jpg',
+		'default-repeat'     => 'no-repeat',
+		'default-position-x' => 'center',
+		'default-position-y' => 'center',
+		'default-attachment' => 'fixed',
 	) );
 
 	// custom logo support
@@ -65,7 +65,7 @@ function arix_functions() {
 
 	// navigation menu
 	register_nav_menus( array(
-	    'main_menu' => __( 'Main Menu', 'arix' )
+		'main_menu' => __( 'Main Menu', 'arix' ),
 	) );
 
 	add_theme_support( 'editor-styles' );
@@ -104,6 +104,3 @@ function arix_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'arix_content_width', 1200 );
 }
 add_action( 'after_setup_theme', 'arix_content_width', 0 );
-
-
-?>

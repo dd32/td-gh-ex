@@ -4,4 +4,3 @@ the_posts_pagination( array(
 	'prev_text' => __( '&larr;', 'arix' ),
 	'next_text' => __( '&rarr;', 'arix' ),
 ) );
-?>

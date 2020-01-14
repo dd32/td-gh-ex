@@ -11,7 +11,7 @@
 				</div>
 
 				<div class="widget">
-					<h3><?php _e( 'Recent Posts', 'arix' ) ?></h3>
+					<h3><?php esc_html_e( 'Recent Posts', 'arix' ); ?></h3>
 					<ul>
 						<?php
 						$arix_recent = new WP_Query( array(
@@ -20,7 +20,8 @@
 						) );
 
 						if ( $arix_recent->have_posts() ) :
-							while ( $arix_recent->have_posts() ) : $arix_recent->the_post();
+							while ( $arix_recent->have_posts() ) :
+								$arix_recent->the_post();
 								the_title( '<li><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
 							endwhile;
 							wp_reset_postdata();

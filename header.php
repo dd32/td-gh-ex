@@ -15,7 +15,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 	<header id="header">
-		<a class="skip-link button" href="#content"><?php _e( 'Skip to Content', 'arix' ); ?></a>
+		<a class="skip-link button" href="#content"><?php esc_html_e( 'Skip to Content', 'arix' ); ?></a>
 
 		<nav id="nav">
 			<?php

@@ -1,16 +1,21 @@
-<?php get_header(); ?>
+<?php
+get_header();
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<?php get_template_part( 'template-parts/content' ); ?>
 
-	<?php endwhile; ?>
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( 'template-parts/content' );
 
-	<?php get_template_part( 'template-parts/pagination' ); ?>
+	endwhile;
 
-	<?php else : ?>
-		<?php get_template_part( 'template-parts/content-none' ); ?>
+	get_template_part( 'template-parts/pagination' );
 
-	<?php endif; ?>
+	else :
+		get_template_part( 'template-parts/content-none' );
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+endif;
+
+
+get_sidebar();
+get_footer();

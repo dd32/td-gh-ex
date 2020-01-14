@@ -1,20 +1,23 @@
 <?php get_header(); ?>
 
-	<h2 class="title"><?php _e( 'Search:', 'arix' ); ?> <?php echo esc_attr( get_search_query() ); ?></h2>
 
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-		<?php get_template_part( 'template-parts/content-search' ); ?>
+<h2 class="title"><?php esc_html_e( 'Search:', 'arix' ); ?> <?php echo esc_attr( get_search_query() ); ?></h2>
+
+<?php
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+		get_template_part( 'template-parts/content-search' );
+
+	endwhile;
+
+	get_template_part( 'template-parts/pagination' );
+
+	else :
+		get_template_part( 'template-parts/content-none' );
+
+endif;
 
 
-	<?php endwhile; ?>
-
-	<?php get_template_part( 'template-parts/pagination' ); ?>
-
-	<?php else : ?>
-		<?php get_template_part( 'template-parts/content-none' ); ?>
-
-	<?php endif; ?>
-
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_sidebar();
+get_footer();

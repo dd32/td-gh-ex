@@ -8,12 +8,7 @@ if ( post_password_required() ) {
 
 <?php if ( have_comments() ) : ?>
 
-	<h3 class="comments-title">
-		<?php
-		printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'arix' ),
-			number_format_i18n( get_comments_number() ) );
-		?>
-	</h3>
+	<h3 class="comments-title"><?php esc_html_e( 'Comments', 'arix' ); ?></h3>
 
 	<div class="comment-list">
 		<?php
@@ -25,15 +20,10 @@ if ( post_password_required() ) {
 		?>
 	</div><!--.comment-list-->
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav class="comment-navigation">
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'arix' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'arix' ) ); ?></div>
-		</nav>
-	<?php endif; ?>
+	<?php the_comments_navigation(); ?>
 
 	<?php if ( ! comments_open() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'arix' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'arix' ); ?></p>
 	<?php endif; ?>
 
 <?php endif; ?>
