@@ -118,7 +118,9 @@
 						 ) ); ?>
 					</div>
 				</nav><!-- #site-navigation -->
-				<div class="menu-mobile"></div> <!--  .mobile menu -->
+				<div class="menu-mobile">
+					<span class="screen-reader-text">Menu</span>
+				</div> <!--  .mobile menu -->
 			<?php if( $hideSearchBar == 1 ) : ?>
 				<div id="top-search">
 					<div class="top-search-relative">

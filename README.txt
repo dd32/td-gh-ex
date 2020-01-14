@@ -2,8 +2,10 @@
 Contributors: rakib8373
 Tags: white,  one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images,  sticky-post, threaded-comments, translation-ready, rtl-language-support
 Requires at least: 3.8
-Tested up to: 4.0
-License: GPL 2.0
+Tested up to: 5.3
+ajaira WordPress Theme, Copyright (C) 2020, rakib
+ajaira is distributed under the terms of the GNU GPL
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
@@ -33,3 +35,47 @@ Ajaira is a clean responsive blogging theme, Focused on content.
 
 = 1.0.4 = 
 - Bug fixed
+
+= 1.0.5 = 
+- Bug fixed
+
+
+
+== Copyright ==
+
+ajaira WordPress Theme, Copyright 2020 rakib8373
+ajaira is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+
+
+ajaira bundles the following third-party resources:
+
+Font Awesome 4.7.0 
+by @davegandy - http://fontawesome.io - @fontawesome
+License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+
+
+Bootstrap v3.3.7 (http://getbootstrap.com)
+Copyright 2011-2016 Twitter, Inc.
+Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+
+SlickNav Responsive Mobile Menu v1.0.10
+(c) 2016 Josh Cope
+licensed under MIT
+
+
+= Images bundled with the theme =
+screenshot.png - Screenshot by rakib8373
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
