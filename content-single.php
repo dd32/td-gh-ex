@@ -60,7 +60,7 @@
 				$meta_text,
 				$category_list,
 				$tag_list,
-				get_permalink()
+				esc_url(get_permalink())
 			);
 		?>
 

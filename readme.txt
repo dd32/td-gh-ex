@@ -1,23 +1,23 @@
-#About Theme#
-
-Theme Name: Unite
+== Unite ==
+Contributors: silkalns
 Theme URI: http://colorlib.com/wp/unite/
-Version: 2.0.7
+Version: 2.0.8
 Tested up to: WP 5.3
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
 
-#Copyright notice#
+== Copyright notice ==
 
 * Author: Aigars Silkalns
 * Author URI: http://colorlib.com/wp/
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl.html
-* Unite theme, Copyright 2014-2019 http://colorlib.com
+* Unite theme, Copyright 2014-2015 http://colorlib.com
 * Unite WordPress theme is distributed under the terms of the GNU GPL
 * Unite is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
-#Credits#
 
-Unite theme uses:
+== Resources ==
 
 * CPT Bootstrap Carousel licensed under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * FontAwesome (http://fontawesome.io) licensed under the SIL OFL 1.1 http://scripts.sil.org/OFL)
@@ -26,13 +26,15 @@ Unite theme uses:
 * [respond.js](https://github.com/scottjehl/Respond) by Scott Jehl licensed under the MIT license
 * [html5shiv.js](https://github.com/aFarkas/html5shiv) by Alexander Farkas licensed under a dual license system (MIT or GPL version 2)
 
-#Description#
+
+== Description ==
 
 Unite is a clean, modern and fully responsive WordPress wedding theme built using Bootstrap 3 which makes it optimized for tablets and mobile. It is a highly customizable theme with unlimited color variations that can be tweaked via simple yet powerful Theme Options. Theme has a built-in Popular Posts Widget, Infinite Scroll (powered by Jatpack) and translation support. It's now available in German and French. Theme features fancy image slider, SEO friendly structure, logo support, social links and widgetized homepage.  This theme was built to be used for wedding related websites but can be tweaked to be used as any other image-centric blog such as travel. Unite theme now supports WooCommerce to create your own eStore.
 
 For questions, comments or bug reports, visit Colorlib support forum (http://colorlib.com/wp/forums).
 
-#Installation#
+
+== Installation ==
 
 You can install the theme through the WordPress installer under "Themes" > "Install themes" by searching for "Unite".
 
@@ -42,7 +44,8 @@ Right after you activate Unite, you'll see message on top of your screen, asking
 
 If you dismiss this notice, you can install this plugin later via Appearance->Install plugins.
 
-#Theme Features#
+
+== Theme Features ==
 
 * Bootstrap 3 integration
 * Responsive design
@@ -56,14 +59,26 @@ If you dismiss this notice, you can install this plugin later via Appearance->In
 * Threaded Comments
 * Gravatar ready
 
-#Documentation#
+
+== Documentation ==
 
 Theme documentation is available on http://colorlib.com/wp/support/unite
 
-#Changelog#
 
-####2.0.5 - 08.01.2020 ####
-* w[dot]org review fixes
+= Images bundled with the theme =
+* screenshot.png - Screenshot of the theme by Colorlib
+* landscape-nature-night-relaxation-36478 by Pixababy
+ https://www.pexels.com/photo/landscape-nature-night-relaxation-36478/; Image used in screenshot.png
+
+== Changelog ==
+
+####2.0.8 - 14.01.2020 ####
+* Update screenshot
+* Fixed some escaping
+* Fixed some prefixing
+* Added subject tags
+* Translation fixes
+
 
 ####2.0.5 - 13.12.2019 ####
 * Updated TGMPA

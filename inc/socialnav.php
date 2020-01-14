@@ -81,10 +81,6 @@ function unite_social_css(){ ?>
         .fa-pinterest:before {
             content: "\f0d2"
         }
-        #social li a[href*="plus.google.com"] .fa:before,
-        .fa-google-plus:before {
-            content: "\f0d5"
-        }
         #social li a[href*="linkedin.com"] .fa:before,
         .fa-linkedin:before {
             content: "\f0e1"
@@ -137,7 +133,6 @@ function unite_social_css(){ ?>
         
         .social-icons li a[href*="facebook.com"]:hover {color: #3b5998 !important;}
         .social-icons li a[href*="twitter.com"]:hover {color: #00aced !important;}
-        .social-icons li a[href*="plus.google.com"]:hover {color: #dd4b39 !important;}
         .social-icons li a[href*="youtube.com"]:hover {color: #bb0000 !important;}
         .social-icons li a[href*="github.com"]:hover {color: #4183C4 !important;}
         .social-icons li a[href*="linkedin.com"]:hover {color: #007bb6 !important;}

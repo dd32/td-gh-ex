@@ -53,7 +53,7 @@ function unite_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'unite-featured', 730, 410, true );
-	add_image_size( 'tab-small', 60, 60 , true); // Small Thumbnail
+	add_image_size( 'unite-tab-small', 60, 60 , true); // Small Thumbnail
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -154,36 +154,29 @@ if ( ! function_exists( 'unite_scripts' ) ) :
  */
 function unite_scripts() {
 
-	wp_enqueue_style( 'unite-bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
 
 	wp_enqueue_style( 'unite-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
 	wp_enqueue_style( 'unite-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('unite-bootstrapjs', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
+	wp_enqueue_script('bootstrap', get_template_directory_uri().'/inc/js/bootstrap.min.js', array('jquery') );
 
 	wp_enqueue_script( 'unite-functions', get_template_directory_uri() . '/inc/js/main.min.js', array('jquery') );
+
+    wp_enqueue_script( 'html5', get_template_directory_uri() . '/inc/js/html5shiv.min.js' , array());
+    wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+
+    wp_enqueue_script( 'respond', get_template_directory_uri() . '/inc/js/respond.min.js' , array());
+    wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 endif;
 add_action( 'wp_enqueue_scripts', 'unite_scripts' );
-
-
-if ( ! function_exists( 'unite_ie_support_header' ) ) :
-/**
- * Add HTML5 shiv and Respond.js for IE8 support of HTML5 elements and media queries
- */
-function unite_ie_support_header() {
-    echo '<!--[if lt IE 9]>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/html5shiv.min.js' ) . '"></script>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/inc/js/respond.min.js' ) . '"></script>'. "\n";
-    echo '<![endif]-->'. "\n";
-}
-endif;
-add_action( 'wp_head', 'unite_ie_support_header', 1 );
 
 require get_template_directory() . '/inc/class-unite-helper.php';
 

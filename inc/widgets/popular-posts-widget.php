@@ -62,7 +62,7 @@ class unite_popular_posts_widget extends WP_Widget {
                     <?php endwhile; ?>
 
                 </ul>
-                <?php wp_reset_query(); ?>
+                <?php wp_reset_postdata(); ?>
 
                 <ul id="recent" class="tab-pane">
 
@@ -86,7 +86,7 @@ class unite_popular_posts_widget extends WP_Widget {
                         </li>
                     <?php endwhile; ?>
                 </ul>
-                <?php wp_reset_query(); ?>
+                <?php wp_reset_postdata(); ?>
 
                 <ul id="messages" class="tab-pane">
 

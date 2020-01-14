@@ -508,9 +508,9 @@ class Unite_Important_Links extends WP_Customize_Control {
 /*
  * Custom Scripts
  */
-add_action( 'customize_controls_print_footer_scripts', 'customizer_custom_scripts' );
+add_action( 'customize_controls_print_footer_scripts', 'unite_customizer_custom_scripts' );
 
-function customizer_custom_scripts() { ?>
+function unite_customizer_custom_scripts() { ?>
 <style>
     li#accordion-section-unite_important_links h3.accordion-section-title, li#accordion-section-unite_important_links h3.accordion-section-title:focus { background-color: #00cc00 !important; color: #fff !important; }
     li#accordion-section-unite_important_links h3.accordion-section-title:hover { background-color: #00b200 !important; color: #fff !important; }

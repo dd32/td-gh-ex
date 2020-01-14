@@ -76,8 +76,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 		                'container'         => 'div',
 		                'container_class'   => 'collapse navbar-collapse navbar-ex1-collapse',
 		                'menu_class'        => 'nav navbar-nav',
-		                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-		                'walker'            => new wp_bootstrap_navwalker())
+		                'fallback_cb'       => 'unite_wp_bootstrap_navwalker::fallback',
+		                'walker'            => new unite_wp_bootstrap_navwalker())
 		            );
 		        ?>
 		    </div>
