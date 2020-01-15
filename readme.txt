@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 5.2.3
 Requires PHP: 5.2.4
-Version: 1.0.6
+Version: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -35,23 +35,27 @@ Limitations will be added when raised.
 
 == Copyright ==
 
-Alante WordPress Theme, Copyright 2017 Think Up Themes Ltd
+Alante WordPress Theme, Copyright 2020 Think Up Themes Ltd
 Alante is distributed under the terms of the GNU GPL
 
 Alante Engage is a child theme or Alante and as such uses the same opensource projects as its parent theme.
 
     [1.01] Item:        image shown in mobile device on screenshot.png.
-           Item URL:    https://www.pexels.com/photo/aerial-view-bridge-foggy-hazy-545161/
+           Item URL:    https://pxhere.com/en/photo/1596447
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
     [1.02] Item:        image shown in mobile device on screenshot.png.
-           Item URL:    https://www.pexels.com/photo/black-and-white-board-boardroom-business-260689/
+           Item URL:    https://pxhere.com/en/photo/735694
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Changelog ==
+
+= 1.0.7
+- Updated: Image licensed updated to use pxhere.com.
+- Updated: Copyright date updated to be 2020 within readme.txt.
 
 = 1.0.6
 - Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.2.3.
