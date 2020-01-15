@@ -14,7 +14,7 @@ function promax_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
-	$wp_customize->get_section( 'colors'  )->title				= 'Color & Design';
+	$wp_customize->get_section( 'colors'  )->title				= __('Color & Design', 'promax');
 	//$wp_customize->get_section( 'background_image'  )->section	= 'promax_responsive';
 
      
@@ -89,7 +89,7 @@ $wp_customize->add_section( 'promax_responsive' ,
 //Label Name
 $wp_customize->add_setting('promax_index_label',
 	array(
-		'default'			=> 'Latest Posts',
+		'default'			=> __( 'Latest Posts', 'promax' ),
 		'type'				=> 'theme_mod',
 		'capability'		=> 'edit_theme_options',
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -168,7 +168,7 @@ $wp_customize->add_control('promax_popular_posts',
 //Popular post Label Name
 $wp_customize->add_setting('promax_popular_label',
 	array(
-		'default'			=> 'Popular Posts',
+		'default'			=> __( 'Popular Posts', 'promax' ),
 		'type'				=> 'theme_mod',
 		'capability'		=> 'edit_theme_options',
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -246,7 +246,7 @@ $wp_customize->add_control('promax_author',
 //Copyright 
 $wp_customize->add_setting('promax_copyright_label',
 	array(
-		'default'			=> 'Copyright © 2020',
+		'default'			=> __( 'Copyright © 2020', 'promax' ),
 		'type'				=> 'theme_mod',
 		'capability'		=> 'edit_theme_options',
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -450,7 +450,7 @@ $wp_customize->add_control('promax_quick_checkout',array (
 	)); 
 	
 $wp_customize->add_setting('promax_quick_checkout_text',array(
-	'default'		=> 'Quick Checkout',
+	'default'		=> __('Quick Checkout','promax'),
 	'sanitize_callback'	=> 'sanitize_text_field'
 	));	 
  
@@ -565,7 +565,7 @@ function promax_sanitize_select( $input, $setting ) {
 
 
 function promax_registers() {
-    wp_register_script( 'promax_jquery_ui', '//code.jquery.com/ui/1.10.4/jquery-ui.js', array("jquery"), '20120206', true  );
+    wp_register_script( 'promax_jquery_ui', get_template_directory_uri() . '/js/jquery-ui.js', array("jquery"), '20120206', true  );
 	wp_enqueue_script( 'promax_jquery_ui' );
 	wp_register_script( 'promax_customizer_script', get_template_directory_uri() . '/js/customizer.js', array("jquery","promax_jquery_ui"), '20120206', true  );
 	wp_enqueue_script( 'promax_customizer_script' );

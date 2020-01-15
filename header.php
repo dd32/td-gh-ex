@@ -12,7 +12,7 @@
 <?php wp_body_open(); ?>
 <div class="wrapper">
 <a class="skip-link screen-reader-text" href="#page">
-<?php _e( 'Skip to content', 'esell' ); ?></a>
+<?php esc_attr_e( 'Skip to content', 'promax' ); ?></a>
 <!-- BEGIN HEADER -->
 	<div id="header">
     <div id="header-inner" class="clearfix">

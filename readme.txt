@@ -46,6 +46,10 @@ Custom Css:
 
 
 == Change log ==
+= 2.5 =
+* Moved to new customizer API
+* Updated Code and Fixed issue
+* Mobile Responsive
 
 = 1.6.2 =
 * Added instagram
@@ -142,12 +146,50 @@ Custom Css:
 
 == License ==
 
-*Option Framework : Author is "Devin Price" provided at http://www.wptheming.com under License GPLv2 (All file Included in "inc" folder)
 *For Responsive Menu Public code Used as ref. for http://wordpress.stackexchange.com/questions/74633/convert-wp-menu-to-a-drop-down-for-mobile-browser/98257
-*Social Icons: are provided by "Konstantin Kovshenin" URL: http://kovshenin.com/2011/freebies-a-simple-social-icon-set-gpl/ Which in under GPL v2
-*Images into /images/ folder that's are created by me abno.png, cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
+*Images into /images/ folder that's are created by me boxauto.png, cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
 *Fonts Open Sans: Designed by Steve Matteson Director of Ascender Corp. Styled by: https://profiles.google.com/107777320916704234605/about License: Apache License, version 2.0 with GPL
 * Font Awesome License: SIL OFL 1.1 URL: http://scripts.sil.org/OFL
 
+= Bootstrap Responsive v2.2.2 =
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ * https://bootstrapdocs.com/v2.2.2/docs/
+ 
+= TGM-Plugin-Activation =
+ * version   2.5.2
+ * link      http://tgmpluginactivation.com/
+ * author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+ * copyright Copyright (c) 2011, Thomas Griffin
+ * license   GPL-2.0+
 
+ 
+= jQuery UI - v1.10.4 - 2014-01-17 =
+	* http://jqueryui.com
+	* Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.position.js, jquery.ui.accordion.js, jquery.ui.autocomplete.js, jquery.ui.button.js, jquery.ui.datepicker.js, jquery.ui.dialog.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.effect.js, jquery.ui.effect-blind.js, jquery.ui.effect-bounce.js, jquery.ui.effect-clip.js, jquery.ui.effect-drop.js, jquery.ui.effect-explode.js, jquery.ui.effect-fade.js, jquery.ui.effect-fold.js, jquery.ui.effect-highlight.js, jquery.ui.effect-pulsate.js, jquery.ui.effect-scale.js, jquery.ui.effect-shake.js, jquery.ui.effect-slide.js, jquery.ui.effect-transfer.js, jquery.ui.menu.js, jquery.ui.progressbar.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.slider.js, jquery.ui.sortable.js, jquery.ui.spinner.js, jquery.ui.tabs.js, jquery.ui.tooltip.js
+	* Copyright 2014 jQuery Foundation and other contributors; 
+	Licensed MIT
+ 
+= Images into /images/ folder =
+ * Created by me boxauto.png, boxfixed.png logo.jpg, noimage.png, s1.png s2.png, thumb.png
+ * license publish Under gpl v2
+ * Copyright sandy786
+ 
+ 
+ = Screenshot =
+ * All images are licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode.txt)
+ 
+1. https://pxhere.com/en/photo/1433619
+2. https://pxhere.com/en/photo/1418586
+3. https://pxhere.com/en/photo/1418540
+4. https://pxhere.com/en/photo/1602282
+5. https://pxhere.com/en/photo/877703
+6. https://pxhere.com/en/photo/1435385
+7. https://pxhere.com/en/photo/879283
+8. https://pxhere.com/en/photo/758989
+
+* screenshot.png self made and licensed under GPL.
+ 
 **This theme and file are created by me & publish under GPL

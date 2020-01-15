@@ -17,7 +17,7 @@
 				<?php promax_breadcrumbs(); ?>
 				<?php /* If this is a tag archive */  } elseif( is_tag() ) { ?>
 				<?php promax_breadcrumbs(); ?>
-				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>		<?php _e('Archive for', 'promax'); ?> <?php the_time('F jS, Y'); ?>
+				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>		<?php esc_attr_e('Archive for', 'promax'); ?> <?php the_time('F jS, Y'); ?>
 				<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
 				<?php promax_breadcrumbs(); ?>
 				<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
@@ -26,7 +26,7 @@
 				<?php promax_breadcrumbs(); ?>
 				<?php /* If this is an author archive */ } elseif (is_author()) { ?>
 				<?php promax_breadcrumbs(); ?>
-				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php _e('Blog Archives', 'promax'); ?> <?php } ?>
+				<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php esc_attr_e('Blog Archives', 'promax'); ?> <?php } ?>
 				<?php while(have_posts())  : the_post(); ?>
 				
 					<div class="imag"><?php get_template_part('/includes/post'); ?></div>
@@ -34,7 +34,7 @@
 					<?php else : ?>
 					<div class="post">
 					<div class="posttitle">
-					<h2><?php _e('404 Error&#58; Not Found', 'promax'); ?></h2>
+					<h2><?php esc_attr_e('404 Error&#58; Not Found', 'promax'); ?></h2>
 					<span class="posttime"></span>
 					</div>
 					</div>

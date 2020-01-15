@@ -9,7 +9,7 @@ function promax_core_style() {
 	wp_enqueue_style( 'bootstrap', $directory_uri . '/includes/core/bootstrap/css/bootstrap.css' );
 	wp_enqueue_style( 'bootstrap-responsive', $directory_uri . '/includes/core/bootstrap/css/bootstrap-responsive.css', 'bootstrap' );
 	wp_enqueue_style( 'promax-responsive', $directory_uri . '/includes/core/bootstrap/css/responsive.css', array( 'bootstrap', 'bootstrap-responsive' ) );
-	wp_enqueue_style( 'core_style', get_template_directory_uri() . '/includes/core/css/core.css' );
+	wp_enqueue_style( 'promax-core_style', get_template_directory_uri() . '/includes/core/css/core.css' );
 }
 
 // Add core page to the menu.
@@ -44,7 +44,7 @@ function promax_display_core() {
 							</a>
 						</h2>
 
-						<h3><?php _e( 'You Should Try Our Other Themes Also', 'promax' ); ?></h3>
+						<h3><?php esc_attr_e( 'You Should Try Our Other Themes Also', 'promax' ); ?></h3>
 					</div>
 				</div>
 
@@ -79,8 +79,8 @@ function promax_display_core() {
 									</div>
 								</div>
 								<div class="theme-details active">
-									<span class="theme-name"><?php echo $theme->name; ?><?php _e(': Current','promax'); ?></span>
-									<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php _e('Customize','promax'); ?></a>
+									<span class="theme-name"><?php echo $theme->name; ?><?php esc_attr_e(': Current','promax'); ?></span>
+									<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php esc_attr_e('Customize','promax'); ?></a>
 								</div>
 							</div>
 
@@ -129,7 +129,7 @@ function promax_display_core() {
 
 										<!-- Activate Button -->
 										<a  class="button button-primary activate right"
-											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" ><?php _e('Activate','promax'); ?></a>
+											href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" ><?php esc_attr_e('Activate','promax'); ?></a>
 									<?php }
 									else {
 
@@ -140,11 +140,11 @@ function promax_display_core() {
 											), self_admin_url( 'update.php' ) );
 									?>
 										<!-- Install Button -->
-										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e('Install Now','promax'); ?></a>
+										<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php esc_attr_e('Install Now','promax'); ?></a>
 									<?php } ?>
 
 									<!-- Preview button -->
-									<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e('Live Preview','promax'); ?></a>
+									<a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php esc_attr_e('Live Preview','promax'); ?></a>
 								</div>
 							</div>
 							<?php

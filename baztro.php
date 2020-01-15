@@ -13,7 +13,7 @@ function promax_backg() { ?>
 <?php if ( get_header_image() ) : ?>	
 		#header{background-image:url("<?php esc_url(header_image());?>");}
 		<?php endif; ?>
-#header-inner, #page-inner, #bottom-menu-inner, #footer-inner, #ltpost, .nav, #pronav-inner{ max-width: <?php echo get_theme_mod( 'promax_website_width', '1200' ); ?>px !important;}
+#header-inner, #page-inner, #bottom-menu-inner, #footer-inner, #ltpost, .nav, #pronav-inner{ max-width: <?php echo esc_html(get_theme_mod( 'promax_website_width', '1200' )); ?>px !important;}
 	</style>
     
 <?php };

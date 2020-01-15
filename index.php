@@ -4,7 +4,7 @@
 	<?php do_action('promax_below_navigation'); ?>
 		<div id="page-inner" class="clearfix">
 						<div id="content">
-					<div class="posthd"><?php echo get_theme_mod('promax_index_label','Latest Posts' ); ?></div>
+					<div class="posthd"><?php echo esc_html(get_theme_mod('promax_index_label','Latest Posts' )); ?></div>
 					<div class="three-columns group">
 					<?php if(have_posts()) : ?>
 					<?php while(have_posts())  : the_post(); ?>
@@ -13,7 +13,7 @@
 					<?php else : ?>
 							<div class="post">
 								<div class="posttitle">
-									<h2><?php _e('404 Error&#58; Not Found', 'promax' ); ?></h2>
+									<h2><?php esc_attr_e('404 Error&#58; Not Found', 'promax' ); ?></h2>
 									<span class="posttime"></span>
 								</div>
 						</div>

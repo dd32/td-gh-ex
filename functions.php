@@ -2,6 +2,7 @@
 include_once('baztro.php');
 include_once('includes/installs.php');
 include_once('includes/metaboxpage.php');
+include_once('includes/core/core.php');
 include_once('includes/metaboxsingle.php');
 include_once('includes/template-tags.php');
 
@@ -11,7 +12,7 @@ require get_template_directory() . '/includes/customizer.php';
 
 function promax_scripts() {
 	wp_enqueue_style( 'promax-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'promax-font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	if ( is_rtl() ) {
@@ -24,7 +25,7 @@ add_action( 'wp_enqueue_scripts', 'promax_scripts' );
  * Enqueue script for custom customize control.
  */
 function promax_custom_customize_enqueue() {
-	wp_enqueue_style( 'customizer-css', get_stylesheet_directory_uri() . '/css/customizer-css.css' );
+	wp_enqueue_style( 'promax-customizer-css', get_stylesheet_directory_uri() . '/css/customizer-css.css' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'promax_custom_customize_enqueue' );
 
@@ -70,9 +71,9 @@ function promax_theme_setup() {
 		if ( function_exists( 'add_theme_support' ) ) { 
 		add_theme_support( 'post-thumbnails' );
 	}	
-		add_image_size( 'defaultthumb', 262, 200, true);
-		add_image_size( 'popularpost', 340, 154, true);
-		add_image_size( 'latestpostthumb', 75, 75, true);
+		add_image_size( 'promax-defaultthumb', 262, 200, true);
+		add_image_size( 'promax-popularpost', 340, 154, true);
+		add_image_size( 'promax-latestpostthumb', 75, 75, true);
 		add_image_size( 'promax_singlefull', 816, 500 );
 		//woocommerce plugin support
 		add_theme_support( 'woocommerce' );
@@ -351,7 +352,7 @@ if ( class_exists( 'WooCommerce' ) ) {
  if(get_theme_mod('promax_floating_cart')=='enable'){
 	 function promax_floating_cart() {
 		 ?>
-		<a class="cart-flotingcarte" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View cart','promax' ); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 
+		<a class="cart-flotingcarte" href="<?php echo wc_get_cart_url(); ?>" title="<?php esc_attr_e( 'View cart','promax' ); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> 
 		<?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(),'promax' ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
 		<?php }
 		}
@@ -366,7 +367,7 @@ function promax_addtocart_button_func() {
 		global $product;
 		$pid = $product->get_id();
 		$quicklink = WC()->cart->get_checkout_url();
-        echo '<div class="button quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_attr(get_theme_mod('promax_quick_checkout_text','Quick Checkout')).'</a></div>';
+        echo '<div class="button quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_html(get_theme_mod('promax_quick_checkout_text','Quick Checkout')).'</a></div>';
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'promax_addtocart_button_func' );
 }
@@ -389,7 +390,7 @@ $the_query = new WP_Query( $promax_args );
 while ( $the_query->have_posts() ) : $the_query->the_post();
 			 ?>
 <div class="latest-post">
-	<?php if ( has_post_thumbnail() ) {the_post_thumbnail('latestpostthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
+	<?php if ( has_post_thumbnail() ) {the_post_thumbnail('promax-latestpostthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
 <?php } ?> 
 	 <a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a><br />
 	 <div class="clear"></div>
@@ -410,7 +411,7 @@ if ( get_theme_mod('promax_author' ) !=='disable' ) {
 	function promax_author_profile(){
 	?>
 <div id="author-bio">
-	<h3><?php _e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
+	<h3><?php esc_attr_e('About', 'promax'); ?><?php the_author_posts_link(); ?></h3>
 <?php echo get_avatar( get_the_author_meta('ID'), 64 ); ?>
        <?php the_author_meta('description'); ?>                        
 </div>

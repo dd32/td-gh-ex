@@ -13,7 +13,7 @@
 <div class="entry"><?php promax_excerpt('promax_excerptlength_index', 'promax_excerptmore'); ?></div></span>
 </article>
 <?php else : ?><?php if ( get_theme_mod('promax_homecat' )!=='disable') { ?><span class="homecat"><?php the_category(', '); ?></span><?php } ?>
-<div class="thumbnail"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php if ( has_post_thumbnail() ) {the_post_thumbnail('defaultthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
+<div class="thumbnail"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php if ( has_post_thumbnail() ) {the_post_thumbnail('promax-defaultthumb');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/thumb.jpg" />
 <?php } ?>  </a>
 </div>
 <?php do_action('promax_thumbnail_bottom'); ?>

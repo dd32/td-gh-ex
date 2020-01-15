@@ -1,5 +1,5 @@
 <h4><i class="fa fa-line-chart" aria-hidden="true"></i>
- <?php echo get_theme_mod('promax_popular_label','Popular Posts' ); ?></h4>
+ <?php echo esc_html(get_theme_mod('promax_popular_label','Popular Posts' )); ?></h4>
 <div id="populars">
 <?php 
 $args = array( 
@@ -12,7 +12,7 @@ while ( $the_query->have_posts() ) : $the_query->the_post();
 			 ?>							
 <a title="<?php the_title(); ?>" href="<?php the_permalink() ?>" rel="bookmark">
 <div class="pop">
-<?php if ( has_post_thumbnail() ) {the_post_thumbnail('popularpost');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/noimage.jpg" /><?php } ?>
+<?php if ( has_post_thumbnail() ) {the_post_thumbnail('promax-popularpost');} else { ?><img src="<?php echo get_template_directory_uri(); ?>/images/noimage.jpg" /><?php } ?>
 
 <span class="ltl"><?php the_title(); ?></span>
 

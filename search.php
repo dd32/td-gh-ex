@@ -12,7 +12,7 @@
 			<?php else : ?>
 				<div class="post">
 					<div class="posttitle">
-						<h2><?php _e('404 Error&#58; Not Found', 'promax'); ?></h2>
+						<h2><?php esc_attr_e('404 Error&#58; Not Found', 'promax'); ?></h2>
 						<span class="posttime"></span>
 					</div>
 				</div>

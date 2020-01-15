@@ -25,10 +25,10 @@ function promaxpage_build_meta_box( $post ){
 
 		<h4><?php echo $upgradetopro; ?></h4>
 		<p>
-			<input type="radio" name="promaxpagemeta" value="rsd" <?php checked( $current_promaxpagemeta, 'rsd' ); ?> /> <?php _e('Right Sidebar - Default','promax'); ?><br />
-			<input type="radio" name="promaxpagemeta" value="ls" <?php checked( $current_promaxpagemeta, 'ls' ); ?> /> <?php _e('Left Sidebar','promax'); ?><br/>
-			<input type="radio" name="promaxpagemeta" value="lr" <?php checked( $current_promaxpagemeta, 'lr' ); ?> />  <?php _e('Left - Right Sidebars','promax'); ?> <br/>
-			<input type="radio" name="promaxpagemeta" value="fc" <?php checked( $current_promaxpagemeta, 'fc' ); ?> /> <?php _e('Full Content - No Sidebar','promax'); ?>
+			<input type="radio" name="promaxpagemeta" value="rsd" <?php checked( $current_promaxpagemeta, 'rsd' ); ?> /> <?php esc_attr_e('Right Sidebar - Default','promax'); ?><br />
+			<input type="radio" name="promaxpagemeta" value="ls" <?php checked( $current_promaxpagemeta, 'ls' ); ?> /> <?php esc_attr_e('Left Sidebar','promax'); ?><br/>
+			<input type="radio" name="promaxpagemeta" value="lr" <?php checked( $current_promaxpagemeta, 'lr' ); ?> />  <?php esc_attr_e('Left - Right Sidebars','promax'); ?> <br/>
+			<input type="radio" name="promaxpagemeta" value="fc" <?php checked( $current_promaxpagemeta, 'fc' ); ?> /> <?php esc_attr_e('Full Content - No Sidebar','promax'); ?>
 		</p>
 
 		

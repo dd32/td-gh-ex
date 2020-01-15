@@ -7,7 +7,7 @@ if ( ! function_exists( 'promax_post_image' ) ) :
  * @param string $size Post thumbnail size.
  * @param array  $attr Post thumbnail attributes.
  */
-function promax_post_image( $size = 'defaultthumb', $attr = array() ) {
+function promax_post_image( $size = 'promax-defaultthumb', $attr = array() ) {
 
 	// Display Post Thumbnail.
 	if ( has_post_thumbnail() ) : ?>
@@ -171,9 +171,9 @@ endif;
 */
 
 function promax_search_form( $form ) {
-	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . esc_url(home_url('/')) . '" >
 	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','promax' ) . '</label>
-	<input type="text" placeholder="'. esc_attr__( 'Search..','promax' ) .'" value="' . get_search_query() . '" name="s" id="s" />
+	<input type="text" placeholder="'. esc_attr__( 'Search..','promax' ) .'" value="' . trim(get_search_query()) . '" name="s" id="s" />
 	<button type="submit" id="searchsubmit" class="input-group-button button"><i class="fa fa-search"></i></button>
 	</div>
 	</form>';
