@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 5.2.3
 Requires PHP: 5.2.4
-Version: 1.7.1
+Version: 1.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-logo, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -35,7 +35,7 @@ Limitations will be added when raised.
 
 == Copyright ==
 
-Minamaze WordPress Theme, Copyright 2019 Think Up Themes Ltd
+Minamaze WordPress Theme, Copyright 2020 Think Up Themes Ltd
 Minamaze is distributed under the terms of the GNU GPL
 
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
@@ -78,6 +78,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.7.2
+- Updated: Copyright date updated to be 2020 within readme.txt.
 
 = 1.7.1
 - Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.2.3.
