@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 5.2.3
 Requires PHP: 5.2.4
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -35,34 +35,38 @@ Limitations will be added when raised.
 
 == Copyright ==
 
-Alante WordPress Theme, Copyright 2018 Think Up Themes Ltd
+Alante WordPress Theme, Copyright 2020 Think Up Themes Ltd
 Alante is distributed under the terms of the GNU GPL
 
 Alante Corporate is a child theme or Alante and as such uses the same opensource projects as its parent theme.
 
     [1.01] Item:        image shown in slider on screenshot.png.
-           Item URL:    https://pixabay.com/en/abstract-background-texture-design-2055567/
+           Item URL:    https://pxhere.com/en/photo/1430853
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
     [1.02] Item:        image shown in device on screenshot.png.
-           Item URL:    https://pixabay.com/en/workplace-team-business-meeting-1245776/
+           Item URL:    https://pxhere.com/en/photo/559565
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
     [1.03] Item:        image shown in device on screenshot.png.
-           Item URL:    https://pixabay.com/en/entrepreneur-startup-start-up-man-593378/
+           Item URL:    https://pxhere.com/en/photo/764640
            Licence:     CC0
            Licence URL: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Changelog ==
 
+= 1.0.4
+- Updated: Image licensed updated to use pxhere.com.
+- Updated: Copyright date updated to be 2020 within readme.txt.
+
 = 1.0.3
 - Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.2.3.
 
 = 1.0.2
-- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.1.1.
+- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.1.1
 
 = 1.0.1
 - Updated: "Requires PHP" information added to readme.txt.
