@@ -17,7 +17,7 @@ add_action( 'wp_enqueue_scripts', 'alante_thinkup_child_frontscripts' );
 // ----------------------------------------------------------------------------------
 
 // Add child theme color values to options array
-function alante_thinkup_updateoption_child_color() {
+function alante_thinkup_updateoption_child_settings() {
 
 	// Set theme name combinations
 	$name_theme_upper = 'Alante';
@@ -31,15 +31,15 @@ function alante_thinkup_updateoption_child_color() {
 	$options_free = get_option( $name_options_free );
 
 	// Get child color values
-	$options_child_color = get_option( $name_child_color );
+	$options_child_settings = get_option( $name_child_color );
 
 	if( ! empty( $options_free ) ) {
 
 		// Only set child color values if not already set 
-		if ( $options_child_color != 1 ) {
+		if ( $options_child_settings != 1 ) {
 
-			$options_free['thinkup_styles_colorswitch'] = '1';
-			$options_free['thinkup_styles_colorcustom'] = '#2d88de';
+			$options_free['thinkup_styles_skinswitch'] = '1';
+			$options_free['thinkup_styles_skin']       = 'business';
 
 			// Add child color to theme options array
 			update_option( $name_options_free, $options_free );
@@ -48,8 +48,8 @@ function alante_thinkup_updateoption_child_color() {
 	}
 
 	// Set the child color flag
-	update_option( $options_child_color, 1 );
+	update_option( $options_child_settings, 1 );
 
 }
-add_action( 'init', 'alante_thinkup_updateoption_child_color', 999 );
+add_action( 'init', 'alante_thinkup_updateoption_child_settings', 999 );
 
