@@ -205,7 +205,7 @@ $contact_subtitle = better_health_get_option('better_health_contact_subtitle_tex
                       <span><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'better-health' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'better-health' ), 'WordPress' ); ?></a>
                       </span>
                       <span class="sep"> | </span>
-                     <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'better-health' ), 'BetterHealth', '<a href="http://www.canyonthemes.com" rel="designer">CanyonThemes</a>' ); ?>
+                     <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'better-health' ), 'BetterHealth', '<a href="https://www.canyonthemes.com">CanyonThemes</a>' ); ?>
                   </div>
               </div>
           </div>
