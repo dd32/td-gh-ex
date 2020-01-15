@@ -113,6 +113,7 @@ function app_landing_page_scripts() {
   	$app_landing_page_query_args = array(
   		'family' => 'Lato:400,400italic,700,900,300',
   	);
+    $ed_scrollbar = get_theme_mod( 'app_landing_page_ed_scrollbar', '' );
 
     wp_enqueue_style( 'app-landing-page-google-fonts', add_query_arg( $app_landing_page_query_args, "//fonts.googleapis.com/css" ) );
     wp_enqueue_style( 'animate.light', get_template_directory_uri() . '/css' . $build . '/animate' . $suffix . '.css' );
@@ -129,7 +130,10 @@ function app_landing_page_scripts() {
     
     wp_enqueue_script( 'wow', get_template_directory_uri() . '/js' . $build . '/wow' . $suffix . '.js', array('jquery'), '1.1.2', true );
     wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/js' . $build . '/jquery.countdown' . $suffix . '.js', array('jquery'), '2.1.0', true );
-    wp_enqueue_script( 'nice-scroll', get_template_directory_uri() . '/js' . $build . '/nice-scroll' . $suffix . '.js', array('jquery'), '3.6.6', true );
+    if ( $ed_scrollbar ) {
+      wp_enqueue_script( 'nice-scroll', get_template_directory_uri() . '/js' . $build . '/nice-scroll' . $suffix . '.js', array('jquery'), '3.6.6', true );
+    }
+
     wp_enqueue_script( 'app-landing-page-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), APP_LANDING_PAGE_THEME_VERSION, true );
 
     $app_landing_page_year = get_theme_mod( 'app_landing_page_date_year', date('Y') );
@@ -160,9 +164,9 @@ function app_landing_page_scripts() {
             $app_landing_page_date = date( 'Y/m/d' );
         }
 
-
         $app_landing_page_array = array(
-            'date'      => esc_attr( $app_landing_page_date )
+            'date'         => esc_attr( $app_landing_page_date ),
+            'ed_scrollbar' => get_theme_mod( 'app_landing_page_ed_scrollbar', '' ),
         );
         wp_localize_script( 'app-landing-page-custom', 'app_landing_page_data', $app_landing_page_array );
     }

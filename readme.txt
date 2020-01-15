@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: WordPress 4.7
 Requires PHP: 5.6
-Tested up to: WordPress 5.3.1
-Stable tag: 1.1.2
+Tested up to: WordPress 5.3.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
@@ -156,14 +156,7 @@ Font Awesome https://fortawesome.github.io/Font-Awesome/, (C) Dave Gandy, http:/
 -- Images --
 All images are under Creative Commons Public Domain deed CC0.
 https://pixabay.com/en/girl-woman-hand-hands-holding-791389/
-https://www.pexels.com/photo/person-woman-hand-apple-3627/
-http://www.freepik.com/free-vector/m-letter-logo-template_840925.htm#term=logo&page=1&position=4
-http://www.freepik.com/free-vector/a-abstract-logo-design_822546.htm
-http://www.freepik.com/free-vector/logo-made-with-abstract-outlined-shape_842827.htm
-http://www.freepik.com/free-vector/harmony-logo_799644.htm
-http://www.freepik.com/free-vector/logo-with-abstract-s_825161.htm
-http://www.freepik.com/free-vector/real-estate-logo-template_761503.htm
-
+https://pxhere.com/en/photo/1458009
 
 -- JS --
 All the JS are licensed under GPLv2 or later
@@ -190,8 +183,11 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
 
-== Change Log ==
-  
+== Change Log ==    
+    1.1.3
+    * Fixed stat counter design issue in responisive
+    * Added enable\disable option for scrollbar.
+
     1.1.2
     * changed free vs pro image
     * Fixed dropdown menu for edge

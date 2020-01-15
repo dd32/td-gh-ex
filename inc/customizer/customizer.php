@@ -12,7 +12,7 @@
  */
 
 $app_landing_page_sections = array( 'banner' , 'featured', 'features', 'vedio', 'intro', 'service', 'stats', 'subscribe', 'social' );
-$app_landing_page_settings = array( 'default', 'home', 'breadcrumb', 'footer' );
+$app_landing_page_settings = array( 'default', 'home', 'scrollbar', 'breadcrumb', 'footer' );
 
 /* Option list of all post */	
 $app_landing_page_options_posts = array();

@@ -1,14 +1,16 @@
 jQuery(document).ready(function($){
 
-	$("body").niceScroll({
-		cursorcolor: "#5fbd3e",
-		zindex: "999999",
-		cursorborder: "none",
-		cursoropacitymin: "0",
-		cursoropacitymax: "1",
-		cursorwidth: "8px",
-		cursorborderradius: "0px;"
-	});
+    if ( app_landing_page_data.ed_scrollbar ) {
+    	$("body").niceScroll({
+    		cursorcolor: "#5fbd3e",
+    		zindex: "999999",
+    		cursorborder: "none",
+    		cursoropacitymin: "0",
+    		cursoropacitymax: "1",
+    		cursorwidth: "8px",
+    		cursorborderradius: "0px;"
+    	});
+    }
     
     /* Date Picker */
     $( "#datepicker" ).datepicker();
