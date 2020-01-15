@@ -7,8 +7,7 @@
  * @since Catch Kathmandu 1.0
  */
 //Getting data from Theme Options Panel and Meta Box 
-global $catchkathmandu_options_settings;
-$options = $catchkathmandu_options_settings; 
+$options = catchkathmandu_get_options(); 
 //More Tag
 $moretag = $options['more_tag_text'];  
 ?>

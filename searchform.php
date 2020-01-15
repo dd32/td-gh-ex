@@ -8,8 +8,7 @@
  */
 
 // get the data value from theme options
-global $catchkathmandu_options_settings;
-$options = $catchkathmandu_options_settings;
+$options = catchkathmandu_get_options();
 ?>
 	<form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 		<label for="s" class="assistive-text"><?php esc_html_e( 'Search', 'catch-kathmandu' ); ?></label>

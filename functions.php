@@ -212,8 +212,8 @@ if ( ! function_exists( 'catchkathmandu_get_theme_layout' ) ) :
 	 * @since Catch Kathmandu 4.7
 	 */
 	function catchkathmandu_get_theme_layout() {
-		global $post, $wp_query, $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
+		global $post, $wp_query;
+		$options = catchkathmandu_get_options();
 
 		// Front page displays in Reading Settings
 		$page_on_front = get_option('page_on_front') ;
@@ -290,8 +290,7 @@ function catchkathmandu_logo_migrate() {
 		/**
 		 * Get Theme Options Values
 		 */
-		global $catchkathmandu_options_settings;
-	   	$options = $catchkathmandu_options_settings;
+		$options = catchkathmandu_get_options();
 
 		if ( isset( $options['featured_header_image'] ) && '' != $options['featured_header_image'] ) {
 			$header_image_id             = attachment_url_to_postid( $options['featured_header_image'] );
@@ -344,8 +343,7 @@ function catchkathmandu_custom_css_migrate(){
 	    /**
 		 * Get Theme Options Values
 		 */
-		global $catchkathmandu_options_settings;
-	   	$options = $catchkathmandu_options_settings;
+		$options = catchkathmandu_get_options();
 
 	    if ( '' != $options['custom_css'] ) {
 			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.

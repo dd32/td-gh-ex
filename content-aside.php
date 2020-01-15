@@ -8,8 +8,7 @@
  */
  
 //Getting data from Theme Options Panel
-global $catchkathmandu_options_settings;
-$options = $catchkathmandu_options_settings;
+$options = catchkathmandu_get_options();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -9,10 +9,11 @@
 
 get_header(); 
 
-	global $post, $wp_query, $catchkathmandu_options_settings;
+	global $post, $wp_query;
 
 	// Getting data from Theme Options
-	$options = $catchkathmandu_options_settings;
+    $options  = catchkathmandu_get_options();
+    $defaults = catchkathmandu_get_defaults();
 	$enable_post = $options['enable_posts_home'];
 
 	// Front page displays in Reading Settings

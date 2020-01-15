@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.8
-Tested up to: 5.2.3
-Stable tag: 4.0
+Tested up to: 5.3
+Stable tag: 4.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 4.0.1 (Released: January 14, 2020) =
+* Updated: Replaced global variable allocation to function for theme options and default options
 
 = 4.0 (Released: September 25, 2019) =
 * Added: Support for wp_body_open action

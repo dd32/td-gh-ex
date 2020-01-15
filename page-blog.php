@@ -17,9 +17,7 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); 
 
-global $catchkathmandu_options_settings; 
-//Getting data from Theme Options Panel and Meta Box  
-$options = $catchkathmandu_options_settings;
+$options = catchkathmandu_get_options();
 
 //Content Layout
 $current_content_layout = $options['content_layout'];

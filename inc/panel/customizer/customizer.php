@@ -16,11 +16,8 @@
  * @since Catch Kathmandu 3.2
  */
 function catchkathmandu_customize_register( $wp_customize ) {
-	global $catchkathmandu_options_settings, $catchkathmandu_options_defaults;
-
-    $options = $catchkathmandu_options_settings;
-
-	$defaults = $catchkathmandu_options_defaults;
+	$options = catchkathmandu_get_options();
+	$defaults = catchkathmandu_get_defaults();
 
 	//Custom Controls
 	require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-custom-controls.php';
@@ -1461,10 +1458,6 @@ add_action( 'customize_register', 'catchkathmandu_customize_register' );
 function catchkathmandu_customize_preview() {
 	//Remove transients on preview
 	catchkathmandu_themeoption_invalidate_caches();
-
-	global $catchkathmandu_options_defaults ,$catchkathmandu_options_settings;
-
-	$catchkathmandu_options_settings = catchkathmandu_options_set_defaults( $catchkathmandu_options_defaults );
 }
 add_action( 'customize_preview_init', 'catchkathmandu_customize_preview' );
 add_action( 'customize_save', 'catchkathmandu_customize_preview' );
@@ -1535,3 +1528,51 @@ function catchkathmandu_post_invalidate_caches(){
 }
 //Add action hook here save post
 add_action( 'save_post', 'catchkathmandu_post_invalidate_caches' );
+
+/**
+ * Function to reset date with respect to condition
+ */
+function catchkathmandu_reset_data() {
+	$options = catchkathmandu_get_options();
+
+    if ( $options['reset_all_settings'] ) {
+    	remove_theme_mods();
+
+    	delete_option( 'catchkathmandu_options' );
+
+        return;
+    }
+
+	// Reset Header Featured Image Options
+	if ( $options['reset_featured_image'] ) {
+		unset( $options['enable_featured_header_image'] );
+		unset( $options['page_featured_image'] );
+		unset( $options['featured_header_image_position'] );
+		unset( $options['featured_header_image_alt'] );
+		unset( $options['featured_header_image_url'] );
+		unset( $options['featured_header_image_base'] );
+		unset( $options['reset_featured_image'] );
+
+        remove_theme_mod( 'header_image' );
+	}
+
+	//Reset Color Options
+	if ( $options['reset_moretag'] ) {
+		unset( $options['more_tag_text'] );
+		unset( $options['excerpt_length'] );
+
+		unset( $options['reset_moretag'] );
+	}
+
+	//Reset Color Options
+	if ( $options['reset_layout'] ) {
+		unset( $options['sidebar_layout'] );
+		unset( $options['content_layout'] );
+
+        unset( $options['reset_layout'] );
+	}
+
+	update_option( 'catchkathmandu_options', $options );
+
+}
+add_action( 'customize_save_after', 'catchkathmandu_reset_data' );

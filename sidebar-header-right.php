@@ -13,8 +13,7 @@
  */
 do_action( 'catchkathmandu_before_header_right' ); ?>
 <?php
-global $catchkathmandu_options_settings;
-$options = $catchkathmandu_options_settings;
+$options = catchkathmandu_get_options();
 
 if ( $options['disable_header_right_sidebar'] == "0" ) {	?>
     <div id="header-right" class="header-sidebar widget-area">

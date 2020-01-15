@@ -16,8 +16,9 @@
 function catchkathmandu_scripts() {
 
 	//Getting Ready to load data from Theme Options Panel
-	global $post, $wp_query, $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	global $post, $wp_query;
+
+   	$options = catchkathmandu_get_options();;
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
@@ -130,8 +131,7 @@ function catchkathmandu_responsive() {
 	//delete_transient('catchkathmandu_responsive');
 
 	if ( !$catchkathmandu_responsive = get_transient( 'catchkathmandu_responsive' ) ) {
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options = catchkathmandu_get_options();
 
 		if ( $options['disable_responsive'] == '0' ) {
 			$catchkathmandu_responsive = '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
@@ -159,10 +159,11 @@ function catchkathmandu_featured_image() {
 	//delete_transient( 'catchkathmandu_featured_image' );
 
 	// Getting Data from Theme Options Panel
-	global $catchkathmandu_options_settings, $catchkathmandu_options_defaults;
-   	$options = $catchkathmandu_options_settings;
-	$defaults = $catchkathmandu_options_defaults;
+	$options = catchkathmandu_get_options();
+	$defaults = catchkathmandu_get_defaults();
+
 	$enableheaderimage = $options['enable_featured_header_image'];
+	$catchkathmandu_featured_image = '';
 
 	// Check function exists for WordPress version >= 4.5
 	if ( function_exists( 'has_custom_logo' ) ) {
@@ -282,8 +283,8 @@ if ( ! function_exists( 'catchkathmandu_featured_page_post_image' ) ) :
  */
 function catchkathmandu_featured_page_post_image() {
 
-	global $post, $wp_query, $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	global $post, $wp_query;
+   	$options  = catchkathmandu_get_options();
 	$featured_image = $options['page_featured_image'];
 
 
@@ -348,8 +349,8 @@ if ( ! function_exists( 'catchkathmandu_featured_overall_image' ) ) :
  */
 function catchkathmandu_featured_overall_image() {
 
-	global $post, $wp_query, $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	global $post, $wp_query;
+   	$options  = catchkathmandu_get_options();
 	$enableheaderimage =  $options['enable_featured_header_image'];
 
 	// Front page displays in Reading Settings
@@ -444,8 +445,7 @@ function catchkathmandu_content_image() {
 	}
 
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 	$featured_image = $options['featured_image'];
 
@@ -490,8 +490,7 @@ function catchkathmandu_inline_css() {
 
 	if ( ( !$output = get_transient( 'catchkathmandu_inline_css' ) ) ) {
 		// Getting data from Theme Options
-		global $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
+		$options  = catchkathmandu_get_options();
 
 		echo '<!-- refreshing cache -->' . "\n";
 		if ( !empty( $options['custom_css'] ) ) {
@@ -518,8 +517,7 @@ add_action('wp_head', 'catchkathmandu_inline_css');
  */
 function catchkathmandu_excerpt_length( $length ) {
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 	return $options['excerpt_length'];
 }
@@ -531,8 +529,7 @@ add_filter( 'excerpt_length', 'catchkathmandu_excerpt_length' );
  */
 function catchkathmandu_continue_reading() {
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 	$more_tag_text = $options['more_tag_text'];
 	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' .  $more_tag_text . '</a>';
@@ -569,8 +566,7 @@ add_filter( 'get_the_excerpt', 'catchkathmandu_custom_excerpt' );
  */
 function catchkathmandu_more_link( $more_link, $more_link_text ) {
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 	$more_tag_text = $options['more_tag_text'];
 
@@ -584,8 +580,7 @@ add_filter( 'the_content_more_link', 'catchkathmandu_more_link', 10, 2 );
  */
 function catchkathmandu_rss_redirect() {
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
     if ($options['feed_url']) {
 		$url = 'Location: '.$options['feed_url'];
@@ -605,8 +600,7 @@ add_action('template_redirect', 'catchkathmandu_rss_redirect');
  * @since Catch Kathmandu 1.0
  */
 function catchkathmandu_body_classes( $classes ) {
-	global $catchkathmandu_options_settings;
-	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 	if ( is_page_template( 'page-blog.php') ) {
 		$classes[] = 'page-blog';
@@ -689,8 +683,7 @@ add_filter( 'wp_page_menu', 'catchkathmandu_wp_page_menu' );
  * Function to pass the slider effect parameters from php file to js file.
  */
 function catchkathmandu_pass_slider_value() {
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 	$transition_effect = $options['transition_effect'];
 	$transition_delay = $options['transition_delay'] * 1000;
@@ -721,8 +714,7 @@ function catchkathmandu_post_sliders() {
 	//delete_transient( 'catchkathmandu_post_sliders' );
 
 	global $post;
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 
 	if ( ( !$catchkathmandu_post_sliders = get_transient( 'catchkathmandu_post_sliders' ) ) && !empty( $options['featured_slider'] ) ) {
@@ -791,8 +783,7 @@ function catchkathmandu_category_sliders() {
 	//delete_transient( 'catchkathmandu_category_sliders' );
 
 	global $post;
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
 
 	if ( ( !$catchkathmandu_category_sliders = get_transient( 'catchkathmandu_category_sliders' ) ) ) {
@@ -930,8 +921,8 @@ function catchkathmandu_default_sliders() {
  * Shows Slider
  */
 function catchkathmandu_slider_display() {
-	global $post, $wp_query, $catchkathmandu_options_settings;;
-   	$options = $catchkathmandu_options_settings;
+	global $post, $wp_query;
+   	$options  = catchkathmandu_get_options();
 
 	// get data value from theme options
 	$enableslider = $options['enable_slider'];
@@ -975,8 +966,8 @@ if ( ! function_exists( 'catchkathmandu_homepage_headline' ) ) :
 function catchkathmandu_homepage_headline() {
 	//delete_transient( 'catchkathmandu_homepage_headline' );
 
-	global $post, $wp_query, $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	global $post, $wp_query;
+   	$options  = catchkathmandu_get_options();
 
 	// Getting data from Theme Options
 	$disable_headline = $options['disable_homepage_headline'];
@@ -1036,8 +1027,7 @@ function catchkathmandu_default_featured_content() {
 	//delete_transient( 'catchkathmandu_default_featured_content' );
 
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 	$disable_homepage_featured = $options['disable_homepage_featured'];
 	$headline = $options['homepage_featured_headline'];
 	$layouts = $options['homepage_featured_layout'];
@@ -1150,8 +1140,7 @@ function catchkathmandu_homepage_featured_content() {
 	//delete_transient( 'catchkathmandu_homepage_featured_content' );
 
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 	$disable_homepage_featured = $options['disable_homepage_featured'];
 	$quantity = $options['homepage_featured_qty'];
 	$headline = $options['homepage_featured_headline'];
@@ -1281,10 +1270,10 @@ endif; // catchkathmandu_homepage_featured_content
  *
  */
 function catchkathmandu_homepage_featured_display() {
-	global $wp_query, $catchkathmandu_options_settings;
+	global $wp_query;
 
 	// Getting data from Theme Options
-   	$options = $catchkathmandu_options_settings;
+   	$options  = catchkathmandu_get_options();
 	$disable_homepage_featured = $options['disable_homepage_featured'];
 
 	// Front page displays in Reading Settings
@@ -1319,8 +1308,7 @@ if ( ! function_exists( 'catchkathmandu_homepage_featured_position' ) ) :
  */
 function catchkathmandu_homepage_featured_position() {
 	// Getting data from Theme Options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 	$moveposition = $options['move_posts_home'];
 
 	if ( empty( $moveposition ) ) {
@@ -1413,18 +1401,18 @@ if ( ! function_exists( 'catchkathmandu_footer_content' ) ) :
 function catchkathmandu_footer_content() {
 	//delete_transient( 'catchkathmandu_footer_content' );
 
-	if ( ( !$catchkathmandu_footer_content = get_transient( 'catchkathmandu_footer_content' ) ) ) {
+	if ( ! $catchkathmandu_footer_content = get_transient( 'catchkathmandu_footer_content_new' ) ) {
 		echo '<!-- refreshing cache -->';
 
 		// get the data value from theme options
-		global $catchkathmandu_options_settings;
-   	 	$options = $catchkathmandu_options_settings;
+		$options = catchkathmandu_get_options();
 
       	$catchkathmandu_footer_content = $options['footer_code'];
 
-    	set_transient( 'catchkathmandu_footer_content', $catchkathmandu_footer_content, 86940 );
+    	set_transient( 'catchkathmandu_footer_content_new', $catchkathmandu_footer_content, 86940 );
     }
-	echo do_shortcode( $catchkathmandu_footer_content );
+    
+	echo $catchkathmandu_footer_content;
 }
 endif;
 add_action( 'catchkathmandu_site_generator', 'catchkathmandu_footer_content', 10 );
@@ -1436,8 +1424,7 @@ add_action( 'catchkathmandu_site_generator', 'catchkathmandu_footer_content', 10
  */
 function catchkathmandu_alter_home( $query ){
 	if ( $query->is_main_query() && $query->is_home() ) {
-		global $catchkathmandu_options_settings;
-	   	$options = $catchkathmandu_options_settings;
+		$options  = catchkathmandu_get_options();
 
 	    $cats = $options['front_page_category'];
 
@@ -1466,8 +1453,7 @@ function catchkathmandu_social_networks() {
 	//delete_transient( 'catchkathmandu_social_networks' );
 
 	// get the data value from theme options
-	global $catchkathmandu_options_settings;
-   	$options = $catchkathmandu_options_settings;
+	$options  = catchkathmandu_get_options();
 
     $elements = array();
 
@@ -1697,8 +1683,7 @@ function catchkathmandu_webmaster() {
 	if ( ( !$catchkathmandu_webmaster = get_transient( 'catchkathmandu_webmaster' ) ) ) {
 
 		// get the data value from theme options
-		global $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
+		$options  = catchkathmandu_get_options();
 		echo '<!-- refreshing cache -->';
 
 		$catchkathmandu_webmaster = '';
@@ -1740,8 +1725,7 @@ function catchkathmandu_footercode() {
 	if ( ( !$catchkathmandu_footercode = get_transient( 'catchkathmandu_footercode' ) ) ) {
 
 		// get the data value from theme options
-		global $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
+		$options  = catchkathmandu_get_options();
 		echo '<!-- refreshing cache -->';
 
 		//site stats, analytics header code
@@ -1898,8 +1882,7 @@ function catchkathmandu_scrollup() {
 	if ( !$catchkathmandu_scrollup = get_transient( 'catchkathmandu_scrollup' ) ) {
 
 		// get the data value from theme options
-		global $catchkathmandu_options_settings;
-   		$options = $catchkathmandu_options_settings;
+		$options  = catchkathmandu_get_options();
 		echo '<!-- refreshing cache -->';
 
 		//site stats, analytics header code

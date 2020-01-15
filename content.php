@@ -8,8 +8,7 @@
  */
  
 //Getting data from Theme Options Panel and Meta Box 
-global $catchkathmandu_options_settings;
-$options = $catchkathmandu_options_settings;
+$options = catchkathmandu_get_options();
 
 //Content Layout
 $current_content_layout = $options['content_layout'];
