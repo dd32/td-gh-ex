@@ -28,6 +28,10 @@
 /*	01.	ANIMATION							 	*/
 /* ---------------------------------------------------------------------------- */
 
+.animated[class*="start-"] {
+	opacity: 0 !important;
+}
+
 .anim-start-ltr,
 .anim-start-btt,
 .anim-start-ttb,

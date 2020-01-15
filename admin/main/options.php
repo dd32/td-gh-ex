@@ -24,7 +24,7 @@ function alante_thinkup_customizer_theme_options( $wp_customize ) {
 				'title'        => __( 'Alante Pro', 'alante' ),
 				'priority'     => 1,
 				'button_text' => __( 'Upgrade Now', 'alante' ),
-				'button_url'  => '//www.thinkupthemes.com/themes/alante/',
+				'button_url'  => 'https://www.thinkupthemes.com/themes/alante/',
 				'button_class' => 'button-primary',
 			)
 		)
@@ -2865,7 +2865,7 @@ function alante_thinkup_customizer_theme_options( $wp_customize ) {
 			array(
 				'settings'        => $prefix_name . 'thinkup_redux_variables[thinkup_upgrade_content]',
 				'section'         => $prefix_name . 'thinkup_customizer_section_upgrade_inner',
-				'upgrade_url'     => '//www.thinkupthemes.com/themes/alante/',
+				'upgrade_url'     => 'https://www.thinkupthemes.com/themes/alante/',
 				'price_discount'  => __( 'Upgrade for $31 (10% off)', 'alante' ),
 				'price_normal'	  => __( 'Normally $35. Use coupon at checkout.', 'alante' ),
 				'coupon'	      => __( 'alante31', 'alante' ),

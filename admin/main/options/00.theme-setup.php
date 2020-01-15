@@ -93,7 +93,7 @@ $thinkup_general_breadcrumbdelimeter = alante_thinkup_var ( 'thinkup_general_bre
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				$output .= ' ' . get_the_title();
+				$output .= ' ' . html_entity_decode( esc_html( get_the_title() ) );
 			} else {
 
 				// Count Total categories
@@ -135,14 +135,17 @@ $thinkup_general_breadcrumbdelimeter = alante_thinkup_var ( 'thinkup_general_bre
 			$output .= __( 'Error 404 - Not Found.', 'alante' );
 		} elseif ( is_archive() ) {
 			$output .= get_the_archive_title();
+		} elseif( is_tax() ) {
+			$output .= esc_html( get_queried_object()->name );
 		} elseif ( alante_thinkup_check_isblog() ) {
 			$output .= __( 'Blog', 'alante' );
 		} else {
-			$output .= esc_html( get_the_title() );
+			$output .= html_entity_decode( esc_html( get_the_title() ) );
 		}
+
 		$output .=  '</div></div>';
 	   
-	   return $output;
+		return $output;
     }
 }
 
