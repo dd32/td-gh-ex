@@ -4,7 +4,7 @@ Tags: custom-background, custom-colors, custom-header, custom-menu, featured-ima
 Requires PHP: 5.3
 Requires at least: 4.5
 Tested up to: 5.3.2
-Stable tag: 3.3
+Stable tag: 3.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,9 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+
+= 3.4 = 
+** Minor bugs fixed
 
 = 3.3 =
 ** Added option for sidebar metabox
