@@ -75,8 +75,8 @@ select {
   z-index: 1;
 }
 .p_plugin {
-  margin: -24px 0;
-  padding: 20px 10px;
+    margin: -28px 0;
+    padding: 20px 10px;
 }
 .p_plugin_pic .img-thumbnail{
 padding:0;

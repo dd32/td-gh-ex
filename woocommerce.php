@@ -4,11 +4,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>
-                        <?php global $wp;
-                        echo esc_html($current_url) = (add_query_arg(array(), esc_html($wp->request))); ?>
+                        <?php 
+                            global $wp;
+                            $current_url = ( add_query_arg( array(), esc_html( $wp->request ) ) ); echo esc_html( $current_url ); 
+                        ?>
                     </h1>
                     <!-- BreadCrumb -->
-                    <?php if (function_exists('weblizar_breadcrumbs')) weblizar_breadcrumbs(); ?>
+                    <?php if ( function_exists( 'weblizar_breadcrumbs' ) ) weblizar_breadcrumbs(); ?>
                     <!-- BreadCrumb -->
                 </div>
             </div>

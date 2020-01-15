@@ -21,9 +21,11 @@
  * @uses enigma_header_style()
  */
 function enigma_custom_header_setup() {
+
 	add_theme_support( 'custom-header', apply_filters( 'enigma_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
+		'header-text'            => true,
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,

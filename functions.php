@@ -365,6 +365,14 @@ function enigna_parallax_custom_css()
         $output .= get_theme_mod('custom_css') . "\n";
     }
 
+    $header_text_color = get_header_textcolor();
+
+    if ( ! empty ( $header_text_color ) ) {
+        $output = ".logo h1, .logo p {
+                color: #".esc_attr( $header_text_color ).";
+            }";
+    }
+
     wp_register_style('custom-header-style', false);
     wp_enqueue_style('custom-header-style', get_template_directory_uri() . '/css/custom-header-style.css');
     wp_add_inline_style('custom-header-style', $output);

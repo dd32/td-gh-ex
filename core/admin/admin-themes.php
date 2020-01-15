@@ -9,9 +9,9 @@ add_action('admin_menu', 'enigma_info_page');
 
 function enigma_admin_info(){
 	// CSS
-	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.css');
-	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
-	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome-5.11.2/css/all.min.css');
+	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/css/bootstrap.css' );
+	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css' );
+	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome-5.11.2/css/all.min.css' );
 	//JS
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'popper-js', get_template_directory_uri() .'/js/popper.js', array('jquery'), true, true );
@@ -27,8 +27,8 @@ if (!function_exists('enigma_display_theme_info_page')) {
 	<div class="jumbotron">
 		<div class="row">
 			<div class="col-md-10">
-				<h1><?php esc_html_e( 'Welcome to Enigma Parallax - Version ', 'enigma' ); echo esc_html( $wl_th_info->get('Version') ); ?></h1>
-	  			<p><?php esc_html_e( 'enigma is a feature-loaded, user-friendly, fully responsive  WordPress theme built with care and is loaded with SEO optimized code.Theme features a frontpage slider, animated callouts with over 600 icons to choose from, Portfolio , Services , Testimonials and comes with contact-from on Home Page. Enigma allows you to fully customize your site without having to work with code. Enigma also features a live customizer, allowing you to change settings and preview them live.', 'enigma' ); ?></p>
+				<h1><?php esc_html_e( 'Welcome to Enigma - Version ', 'enigma' ); echo esc_html( $wl_th_info->get('Version') ); ?></h1>
+	  			<p><?php esc_html_e( 'Enigma is a feature-loaded, user-friendly, fully responsive  WordPress theme built with care and is loaded with SEO optimized code.Theme features a frontpage slider, animated callouts with over 600 icons to choose from, Portfolio , Services , Testimonials and comes with contact-from on Home Page. Enigma allows you to fully customize your site without having to work with code. Enigma also features a live customizer, allowing you to change settings and preview them live.', 'enigma' ); ?></p>
 			</div>
 			<div class="col-md-2">
 				<div class="update_pro">
@@ -48,9 +48,14 @@ if (!function_exists('enigma_display_theme_info_page')) {
 		  	<!-- Nav tabs -->
 		 	 <ul class="nav nav-tabs">
 			    <li class="nav-item">
-			      	<a class="nav-link active" data-toggle="tab" href="#home"><?php esc_html_e( 'Getting Started', 'enigma' ); ?></a>
+			      	<a class="nav-link active" data-toggle="tab" href="#home"><?php esc_html_e( 'Getting Started', 'enigma-parallax' ); ?></a>
 			    </li>
-			    
+			    <li class="nav-item">
+			      	<a class="nav-link" data-toggle="tab" href="#menu1"><?php esc_html_e( 'Enigma premium', 'enigma-parallax' ); ?></a>
+			    </li>
+			    <li class="nav-item">
+			      	<a class="nav-link" data-toggle="tab" href="#menu2"><?php esc_html_e( 'Free Vs Pro', 'enigma-parallax' ); ?></a>
+			    </li>
 		  	</ul>
 
 			<!-- Tab panes -->
@@ -94,7 +99,7 @@ if (!function_exists('enigma_display_theme_info_page')) {
                         <div class="col-xs-12 col-sm-5 col-md-3 p_plugin_desc">
                             <div class="row p-box">
                                  <div class="img-thumbnail">
-								<img src="<?php echo get_template_directory_uri(); ?>/images/recover.jpg" class="img-responsive" alt="img"/>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/recover.png" class="img-responsive" alt="img"/>
                             </div>
                             </div>
                         </div>
