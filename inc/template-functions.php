@@ -214,6 +214,9 @@ require get_template_directory() . '/css/animation-speed.php';
 require get_template_directory() . '/js/viewportchecker.php';
 require get_template_directory() . '/inc/breadcrumbs.php';
 require get_template_directory() . '/inc/pro/pro.php';
+//require get_template_directory() . '/inc/recommends/recommends.php';
+require get_template_directory() . '/inc/plugins/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/plugins/tgm-plugin-activation.php';
 
 
 /**
