@@ -249,7 +249,6 @@ function attesa_scripts() {
 		}
 		wp_enqueue_style( 'attesa-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 	}
-	wp_enqueue_script( 'attesa-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix'.$min.'.js', array(), '20151215', true );
 	wp_enqueue_script( 'attesa-custom', get_template_directory_uri() . '/js/jquery.attesa'.$min.'.js', array('jquery'), wp_get_theme()->get('Version'), true );
 	if ( attesa_options('_smooth_scroll', '1') == 1) {
 		wp_enqueue_script( 'attesa-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll'.$min.'.js', array('jquery'), '1.4.10', true );
@@ -263,6 +262,24 @@ function attesa_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'attesa_scripts' );
+
+/**
+* Fix skip link focus in IE11.
+*
+* This does not enqueue the script because it is tiny and because it is only for IE11,
+* thus it does not warrant having an entire dedicated blocking script being loaded.
+*
+* @link https://git.io/vWdr2
+*/
+function attesa_skip_link_focus_fix() {
+    // The unminified version of this code is in /js/skip-link-focus-fix.js
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'attesa_skip_link_focus_fix' );
 
 /**
  * Register all Elementor locations

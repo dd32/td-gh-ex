@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2019-12-11 10:26+0100\n"
-"PO-Revision-Date: 2019-12-11 10:26+0100\n"
+"POT-Creation-Date: 2020-01-16 18:21+0100\n"
+"PO-Revision-Date: 2020-01-16 18:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -2319,13 +2319,13 @@ msgid "Next"
 msgstr ""
 
 #. translators: %s: post title
-#: inc/template-tags.php:38
+#: inc/template-tags.php:41
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/template-tags.php:76 template-parts/content-page.php:42
+#: inc/template-tags.php:84 template-parts/content-page.php:42
 #: template-parts/content.php:71
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"

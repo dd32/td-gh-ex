@@ -12,6 +12,9 @@ if ( ! function_exists( 'attesa_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function attesa_posted_on() {
+		
+		do_action( 'attesa_before_posted_on' );
+		
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s" '. attesa_get_schema_markup('data-pub') .'>%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -47,6 +50,8 @@ if ( ! function_exists( 'attesa_posted_on' ) ) :
 			);
 			echo '</span>';
 		}
+		
+		do_action( 'attesa_after_posted_on' );
 
 	}
 endif;
@@ -56,6 +61,9 @@ if ( ! function_exists( 'attesa_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function attesa_entry_footer() {
+		
+		do_action( 'attesa_before_entry_footer' );
+		
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			$categories_list = get_the_category_list( ', ' );
@@ -85,6 +93,9 @@ if ( ! function_exists( 'attesa_entry_footer' ) ) :
 			'<span class="edit-link smallText"><i class="' . esc_attr(attesa_get_fontawesome_icons('edit')) . ' spaceRight" aria-hidden="true"></i>',
 			'</span>'
 		);
+		
+		do_action( 'attesa_after_entry_footer' );
+		
 	}
 endif;
 
