@@ -7,14 +7,24 @@
 
 get_header();
 
+$azuma_post_type = get_query_var( 'post_type' );
+
+if ( $azuma_post_type == 'download' ) {
+	$grid_theme_mod = 'grid_layout_edd';
+	$dl_grid_class = 'edd_downloads_list ';
+} else {
+	$grid_theme_mod = 'grid_layout';
+	$dl_grid_class = '';
+}
+
 if ( ! is_active_sidebar( 'azuma-sidebar' ) ) {
 	$page_full_width = ' full-width';
 } else {
 	$page_full_width = '';
 }
 
-$grid_layout = get_theme_mod( 'grid_layout', '4' );
-$grid_loop_layout = ' class="layout-'. esc_attr( $grid_layout ) .'"';
+$grid_layout = get_theme_mod( $grid_theme_mod, '4' );
+$grid_loop_layout = ' class="'. $dl_grid_class .'layout-'. esc_attr( $grid_layout ) .'"';
 $grid_loop_main = ' infinite-grid layout-'. esc_attr( $grid_layout );
 ?>
 
@@ -39,7 +49,13 @@ $grid_loop_main = ' infinite-grid layout-'. esc_attr( $grid_layout );
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'search' ); ?>
+					<?php
+					if ( $azuma_post_type == 'download' ) {
+						get_template_part( 'content', 'archive-download' );
+					} else {
+						get_template_part( 'content', 'search' );
+					}
+					?>
 
 				<?php endwhile; ?>
 
@@ -59,6 +75,12 @@ $grid_loop_main = ' infinite-grid layout-'. esc_attr( $grid_layout );
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php
+if ( $azuma_post_type == 'download' ) {
+	get_sidebar( 'edd' );
+} else {
+	get_sidebar();
+}
+?>
 
 <?php get_footer(); ?>

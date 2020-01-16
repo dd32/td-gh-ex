@@ -101,7 +101,7 @@ if ( !function_exists( 'azuma_header_title_home' ) ) {
 			$bg_image_url = get_header_image();
 		}
 
-		$home_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $blog_page_id ) );
+		$home_excerpt = wp_kses_post( wpautop( get_post_field( 'post_excerpt', $blog_page_id ) ) );
 
 		?>
 		<header class="archive-header with-image full" style="background-image: url('<?php echo $bg_image_url; ?>')">
@@ -132,8 +132,27 @@ if ( !function_exists( 'azuma_header_title_archive' ) ) {
 			<div class="title-meta-wrapper">
 				<div class="container">
 					<?php
-					the_archive_title( '<h1 class="archive-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
+					if ( is_search() ) {
+						echo '<h1 class="archive-title search">';
+						printf( esc_html__( 'Search results for: %s', 'azuma' ), '<span class="search-query">' . get_search_query() . '</span>' );
+						echo'</h1>';
+					} else {
+						if ( is_post_type_archive( 'download' ) ) {
+							if ( get_theme_mod( 'edd_archive_title' ) ) {
+								echo '<h1 class="archive-title downloads">' . esc_html( get_theme_mod( 'edd_archive_title' ) ) . '</h1>';
+							} else {
+								the_archive_title( '<h1 class="archive-title downloads">', '</h1>' );
+							}
+							if ( get_theme_mod( 'edd_archive_description' ) ) {
+								echo '<div class="archive-description downloads">' . wp_kses_post( wpautop( get_theme_mod( 'edd_archive_description' ) ) ) . '</div>';
+							} else {
+								the_archive_description( '<div class="archive-description downloads">', '</div>' );
+							}
+						} else {
+							the_archive_title( '<h1 class="archive-title">', '</h1>' );
+							the_archive_description( '<div class="archive-description">', '</div>' );
+						}
+					}					
 					?>
 				</div>
 			</div>
@@ -267,7 +286,7 @@ if ( !function_exists( 'azuma_header_title_shop' ) ) {
 
 		add_filter( 'woocommerce_show_page_title', '__return_false' );
 
-		$shop_page_id = woocommerce_get_page_id( 'shop' );
+		$shop_page_id = wc_get_page_id( 'shop' );
 
 		$bg_image_url = get_the_post_thumbnail_url( $shop_page_id, 'full' );
 
@@ -275,7 +294,7 @@ if ( !function_exists( 'azuma_header_title_shop' ) ) {
 			$bg_image_url = get_header_image();
 		}
 
-		$shop_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $shop_page_id ) );
+		$shop_excerpt = wp_kses_post( wpautop( get_post_field( 'post_excerpt', $shop_page_id ) ) );
 
 		?>
 		<header class="archive-header with-image full" style="background-image: url('<?php echo $bg_image_url; ?>')">

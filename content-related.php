@@ -71,11 +71,11 @@ if ( count( $related_posts ) > 0 ) {
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php $related_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $related_id ) );
+					<?php $related_excerpt = wp_kses_post( wpautop( get_post_field( 'post_excerpt', $related_id ) ) );
 					if ( $related_excerpt == '' ) {
-						$related_excerpt = wp_kses_post( '<p>' . wp_trim_words( get_post_field( 'post_content', $related_id ), 20 ) . '</p>' );
+						$related_excerpt = wpautop( wp_trim_words( get_post_field( 'post_content', $related_id ), 20 ) );
 					}
-					if ( $related_excerpt != '' && $related_excerpt != '<p></p>' ) {
+					if ( $related_excerpt != '' ) {
 						echo $related_excerpt;
 					}
 					if ( 'post' === get_post_type($related_id)) : ?>
@@ -90,4 +90,3 @@ if ( count( $related_posts ) > 0 ) {
 
 <?php
 }
-?>

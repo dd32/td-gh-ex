@@ -175,6 +175,24 @@ function azuma_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'archive_img_size',
+		array(
+			'default'			=> 'medium',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'archive_img_size',
+		array(
+			'label'		=> esc_html__( 'Blog - Posts Image Size', 'azuma' ),
+			'description'	=> esc_html__( 'See: "Settings" > "Media" (or any active plugins that control image sizes)', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'layout_options',
+			'choices' => azuma_image_size_options(),
+		)
+	);
+
+	$wp_customize->add_setting(
 		'sidebar_position',
 		array(
 			'default'			=> 'right',
@@ -513,6 +531,425 @@ function azuma_customize_register( $wp_customize ) {
 	);
 
 
+if ( function_exists( 'EDD' ) ) {
+
+	// Section - EDD
+	$wp_customize->add_section( 'edd_section' , array(
+		'title'      => esc_html__( 'EDD Options', 'azuma' ),
+		'priority'   => 80,
+		'description' => esc_html__( 'Easy Digital Downloads options for Azuma theme. Requires Easy Digital Downloads plugin.', 'azuma' ),
+	) );
+
+	$wp_customize->add_setting(
+		'edd_color_note',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'edd_color_note',
+			array(
+				'settings'		=> 'edd_color_note',
+				'section'		=> 'edd_section',
+				'description'	=> esc_html__( 'Selecting "Azuma Theme" in Downloads > Settings > Styles > Default Button Color will make the EDD buttons follow the theme color/styling.', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_search',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'edd_search',
+		array(
+			'label'		=> esc_html__( 'Header Search', 'azuma' ),
+			'description'		=> esc_html__( 'What should be searched for? Select downloads or all content.', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'edd_section',
+			'choices'	=> array(
+				''	=> esc_html__( 'Downloads', 'azuma' ),
+				'all'	=> esc_html__( 'All content', 'azuma' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_account_heading',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Large(
+			$wp_customize,
+			'edd_account_heading',
+			array(
+				'settings'		=> 'edd_account_heading',
+				'section'		=> 'edd_section',
+				'label'			=> esc_html__( 'Header Account', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_account_heading_in',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'edd_account_heading_in',
+			array(
+				'settings'		=> 'edd_account_heading_in',
+				'section'		=> 'edd_section',
+				'label'			=> esc_html__( 'User Logged In', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_account_page',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_account_page',
+		array(
+			'settings'		=> 'edd_account_page',
+			'section'		=> 'edd_section',
+			'type'			=> 'dropdown-pages',
+			'label'			=> esc_html__( 'Customer Account/Profile Page', 'azuma' ),
+			'description'	=> esc_html__( 'If you have created a customer account page, select it here and the account icon will link to it.', 'azuma' )
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_purchase_history',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_purchase_history',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable Purchase History in Account Dropdown', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_download_history',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_download_history',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable Download History in Account Dropdown', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_profile',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_profile',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable Profile Editor in Account Dropdown', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_account_heading_out',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'edd_account_heading_out',
+			array(
+				'settings'		=> 'edd_account_heading_out',
+				'section'		=> 'edd_section',
+				'label'			=> esc_html__( 'User Not Logged In', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_loginreg_page',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_loginreg_page',
+		array(
+			'settings'		=> 'edd_loginreg_page',
+			'section'		=> 'edd_section',
+			'type'			=> 'dropdown-pages',
+			'label'			=> esc_html__( 'Customer Login/Registration Page', 'azuma' ),
+			'description'	=> esc_html__( 'If you have created a customer login and registration page, select it here and the account icon will link to it.', 'azuma' )
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_account_login',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_account_login',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable Login Form in Account Dropdown', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_account_reg',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_account_reg',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable Registration Form in Account Dropdown', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		new Azuma_Customize_Extra_Control(
+			$wp_customize,
+			'edd_account_reg_line',
+			array(
+				'section'   => 'edd_section',
+				'type'      => 'line',
+				'label'		=> '',
+				'url'		=> '',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'grid_layout_edd',
+		array(
+			'default'			=> '4',
+			'transport'			=> 'postMessage',
+			'sanitize_callback' => 'azuma_sanitize_radio_select'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Image_Radio_Control(
+		$wp_customize,
+		'grid_layout_edd',
+		array(
+			'type' => 'radio',
+			'label' => esc_html__( 'Downloads - Grid Layout', 'azuma' ),
+			'description' => esc_html__( 'Download product archives, categories, search results. Note: pages using [downloads] shortcode should use columns option e.g. [downloads columns="4"]', 'azuma' ),
+			'section' => 'edd_section',
+			'settings' => 'grid_layout_edd',
+			'choices' => array(
+				'1' => get_template_directory_uri() . '/images/mag-layout-1.png',
+				'2' => get_template_directory_uri() . '/images/mag-layout-2.png',
+				'3' => get_template_directory_uri() . '/images/mag-layout-3.png',
+				'4' => get_template_directory_uri() . '/images/mag-layout-4.png',
+				)
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_archive_title',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_archive_title',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Downloads Archive Title', 'azuma' ),
+			'description'	=> esc_html__( 'When you create at least one download, EDD creates a special "/downloads/" archive with "Downloads" page title. Change this here.', 'azuma' ),
+			'type'       	=> 'text',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_archive_description',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_archive_description',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Downloads Archive Description', 'azuma' ),
+			'type'       	=> 'textarea',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_archive_img_size',
+		array(
+			'default'			=> 'medium',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'edd_archive_img_size',
+		array(
+			'label'		=> esc_html__( 'Download Image Size', 'azuma' ),
+			'description'	=> esc_html__( 'See: "Settings" > "Media" (or any active plugins that control image sizes)', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'edd_section',
+			'choices' => azuma_image_size_options(),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_placeholder',
+		array(
+			'default'           => get_template_directory_uri() . '/images/edd-placeholder.png',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control(
+			$wp_customize,
+			'edd_placeholder',
+			array(
+				'label'    => esc_html__( 'Download Placeholder Image', 'azuma' ),
+				'section'  => 'edd_section',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'heading_edd_sidebar',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_edd_sidebar',
+			array(
+				'section'		=> 'edd_section',
+				'label'			=> esc_html__( 'Sidebar', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_single_sidebar',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_single_sidebar',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable EDD Sidebar on Single Download Pages', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'edd_shortcode_sidebar',
+		array(
+			'default'			=> 0,
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'edd_shortcode_sidebar',
+		array(
+			'section'		=> 'edd_section',
+			'label'			=> esc_html__( 'Enable EDD Sidebar instead of Page Sidebar on Standard Pages containing the [downloads] Shortcode. Please note this can use a lot of resources if you have pages with a large amount of content.', 'azuma' ),
+			'type'       	=> 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'heading_edd_sidebar2',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_edd_sidebar2',
+			array(
+				'section'		=> 'edd_section',
+				'description'	=> esc_html__( 'Sidebar will only be visible if it contains active widget(s).', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'heading_edd_sidebar3',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_edd_sidebar3',
+			array(
+				'section'		=> 'edd_section',
+				'description'	=> esc_html__( 'See also "No Sidebar" template in page/download editor.', 'azuma' )
+			)
+		)
+	);
+}
+
 	// Section - Go Pro
 	$wp_customize->add_section( 'go_pro_sec' , array(
 		'title'      => esc_html__( 'Go Pro', 'azuma' ),
@@ -834,6 +1271,11 @@ endif;
  * Sanitization functions
  */
 
+function azuma_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+
+
 function azuma_sanitize_choices( $input, $setting ) {
     global $wp_customize;
  
@@ -889,4 +1331,46 @@ function azuma_sanitize_woo_tabs( $input ){
 	}
 
 	return trim( esc_attr( implode( ',', $output ) ) );
+}
+
+
+function azuma_get_image_sizes() {
+	global $_wp_additional_image_sizes;
+
+	$sizes = array();
+
+	foreach ( get_intermediate_image_sizes() as $_size ) {
+		if ( in_array( $_size, array('thumbnail', 'medium', 'medium_large', 'large') ) ) {
+			$sizes[ $_size ]['width']  = get_option( "{$_size}_size_w" );
+			$sizes[ $_size ]['height'] = get_option( "{$_size}_size_h" );
+			$sizes[ $_size ]['crop']   = (bool) get_option( "{$_size}_crop" );
+		} elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
+			$sizes[ $_size ] = array(
+				'width'  => $_wp_additional_image_sizes[ $_size ]['width'],
+				'height' => $_wp_additional_image_sizes[ $_size ]['height'],
+				'crop'   => $_wp_additional_image_sizes[ $_size ]['crop'],
+			);
+		}
+	}
+
+	return $sizes;
+}
+
+function azuma_image_size_options() {
+	$image_size_configs = azuma_get_image_sizes();
+	// Hardcoded 'full' because not a registered image size
+	// 'full' will result in the original uploaded image size being used
+	$sizes = array(
+		'full' => esc_html__( 'Full (original full size image)', 'azuma' ),
+	);
+	foreach( $image_size_configs as $name => $size_config) {
+		if ( $size_config['crop'] == 1 ) {
+			$hardcrop = esc_html__( '(exact dimensions)', 'azuma' );
+		} else {
+			$hardcrop = esc_html__( '(proportional)', 'azuma' );
+		}
+		$sizes[$name] = ucwords(preg_replace('/[-_]/', ' ', $name)) . ' (' . $size_config['width'] . 'x' . $size_config['height'] . ') ' . $hardcrop;
+	}
+
+	return $sizes;
 }

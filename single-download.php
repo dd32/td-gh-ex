@@ -1,30 +1,16 @@
 <?php
 /**
- * The template for displaying standard pages
+ * The template for displaying single download (EDD)
  *
  * @package Azuma
  */
 
 get_header();
 
-if ( in_array( 'edd-page', get_body_class() ) ) {
-	$sidebar = 'edd';
-} else {
-	if ( function_exists( 'EDD' ) && get_theme_mod( 'edd_shortcode_sidebar' ) ) {
-		if ( has_shortcode( $post->post_content, 'downloads') ) {
-			$sidebar = 'edd';
-		} else {
-			$sidebar = 'page';
-		}
-	} else {
-		$sidebar = 'page';
-	}
-}
-
-if ( ! is_active_sidebar( 'azuma-sidebar-' . $sidebar ) ) {
-	$page_full_width = ' full-width';
-} else {
+if ( get_theme_mod( 'edd_single_sidebar' ) && is_active_sidebar( 'azuma-sidebar-edd' ) ) {
 	$page_full_width = '';
+} else {
+	$page_full_width = ' full-width';
 }
 ?>
 
@@ -47,6 +33,8 @@ if ( ! is_active_sidebar( 'azuma-sidebar-' . $sidebar ) ) {
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar( $sidebar ); ?>
+<?php if ( get_theme_mod( 'edd_single_sidebar' ) ) {
+get_sidebar( 'edd' );
+} ?>
 
 <?php get_footer(); ?>

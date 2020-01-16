@@ -139,7 +139,7 @@ if ( ! function_exists( 'azuma_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
+			the_post_thumbnail( get_theme_mod( 'archive_img_size', 'medium' ), array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
@@ -161,7 +161,7 @@ if ( ! function_exists( 'azuma_related_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink($related_id); ?>" aria-hidden="true">
 			<?php
-			echo get_the_post_thumbnail( $related_id, 'post-thumbnail', array(
+			echo get_the_post_thumbnail( $related_id, get_theme_mod( 'archive_img_size', 'medium' ), array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 					'post' => $related_id,
@@ -179,10 +179,13 @@ if ( ! function_exists( 'azuma_single_excerpt' ) ) :
 	 * Displays the post excerpt.
 	 *
 	 * Do not display auto-generated excerpt, only manually added excerpt.
+	 * [get_the_excerpt] and [apply_filters( 'the_excerpt', get_post_field( 'post_excerpt') )]
+	 * are not suitable because some plugins are auto-generating unwanted excerpts.
+	 *
 	 */
 	function azuma_single_excerpt() {
 
-		$single_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt') );
+		$single_excerpt = wp_kses_post( wpautop( get_post_field( 'post_excerpt') ) );
 		if ( $single_excerpt ) { ?>
 			<div class="single-excerpt">
 				<?php echo $single_excerpt; ?>

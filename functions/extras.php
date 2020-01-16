@@ -87,209 +87,17 @@ if ( !function_exists( 'azuma_archive_title_prefix' ) ) {
 			$title = single_tag_title( '', false );
 		} elseif ( is_author() ) {
 			$title = '<span class="author vcard">' . get_avatar( get_the_author_meta( 'ID' ), '80' ) . esc_html( get_the_author() ) . '</span>' ;
+		} elseif ( is_tax( 'download_category' ) ) {
+			$title = single_cat_title( '', false );
+		} elseif ( is_tax( 'download_tag' ) ) {
+			$title = single_tag_title( '', false );
+		} elseif ( is_post_type_archive() ) {
+			$title = post_type_archive_title( '', false );
 		}
 		return $title;
 	}
 }
 add_filter( 'get_the_archive_title', 'azuma_archive_title_prefix' );
-
-
-if ( !function_exists( 'azuma_css_font_family' ) ) {
-	function azuma_css_font_family( $font_family ) {
-		if ( strpos( $font_family, ':' ) ) {
-			$font_family = substr( $font_family, 0, strpos( $font_family, ':' ) );
-			return 'font-family:\'' . $font_family . '\'';
-		} else {			
-			return 'font-family:' . $font_family;
-		}
-	}
-}
-
-
-if ( !function_exists( 'azuma_dynamic_style' ) ) {
-	function azuma_dynamic_style( $css = array() ) {
-
-		$font_content = get_theme_mod( 'font_content' );
-		$font_headings = get_theme_mod( 'font_headings' );
-		$font_site_title = get_theme_mod( 'font_site_title' );
-		$font_nav = get_theme_mod( 'font_nav' );
-
-		if ( $font_content ) {
-			$font_site_title_on = 1;
-			$font_nav_on = 1;
-			$css[] = 'body,button,input,select,textarea{' . azuma_css_font_family( $font_content ) . ';}';
-			if ( $font_site_title ) {
-				$css[] = '.site-title{' . azuma_css_font_family( $font_site_title ) . ';}';
-			} else {
-				$css[] = '.site-title{font-family:\'Rajdhani\';}';
-			}
-			if ( $font_nav ) {
-				$css[] = '#site-navigation{' . azuma_css_font_family( $font_nav ) . ';}';
-			} else {
-				$css[] = '#site-navigation{font-family:\'Rajdhani\';}';
-			}
-		} else {
-			$font_site_title_on = 0;
-			$font_nav_on = 0;
-		}
-
-		if ( $font_headings ) {
-			$css[] = 'h1:not(.site-title),h2,h3,h4,h5,h6{' . azuma_css_font_family( $font_headings ) . ';}';
-		}
-
-		if ( $font_site_title && $font_site_title_on == 0 ) {
-			$css[] = '.site-title{' . azuma_css_font_family( $font_site_title ) . ';}';
-		}
-
-		if ( $font_nav && $font_nav_on == 0 ) {
-			$css[] = '#site-navigation{' . azuma_css_font_family( $font_nav ) . ';}';
-		}
-		
-		$fs_site_title = get_theme_mod( 'fs_site_title', '44' );
-		if ( $fs_site_title && $fs_site_title != '44' ) {
-			$css[] = '.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}';
-		}
-		$fw_site_title = get_theme_mod( 'fw_site_title', '700' );
-		if ( $fw_site_title && $fw_site_title != '700' ) {
-			$css[] = '.site-title{font-weight:' . esc_attr($fw_site_title) . ';}';
-		}
-		$ft_site_title = get_theme_mod( 'ft_site_title', 'uppercase' );
-		if ( $ft_site_title && $ft_site_title != 'uppercase' ) {
-			$css[] = '.site-title{text-transform:' . esc_html($ft_site_title) . ';}';
-		}		
-		$fl_site_title = get_theme_mod( 'fl_site_title', '2' );
-		if ( $fl_site_title && $fl_site_title != '2' ) {
-			$css[] = '.site-title{letter-spacing:' . esc_attr($fl_site_title) . 'px;}';
-		}
-
-		if ( class_exists( 'WooCommerce' ) ) {
-			$woo_uncat_id = term_exists( 'uncategorized', 'product_cat' );
-			if ( $woo_uncat_id != NULL ) {
-				$woo_uncat_id = $woo_uncat_id['term_id'];
-				$css[] = '#shop-filters .widget_product_categories li.cat-item-' . $woo_uncat_id . '{display:none;}';
-			}
-		}
-
-		$container_width = get_theme_mod( 'container_width', '1920' );
-		if ( $container_width && $container_width != '1920' ) {
-			$css[] = '.container{max-width:' . esc_attr($container_width) . 'px;}';
-		}
-
-		$header_textcolor = get_theme_mod( 'header_textcolor', 'ffffff' );
-		if ( $header_textcolor && $header_textcolor != 'ffffff' && $header_textcolor != 'blank' ) {
-			$css[] = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after{color:#' . esc_attr($header_textcolor) . ';}';
-		}
-
-		$hi_color = get_theme_mod( 'hi_color', '#ff7800' );
-		if ( $hi_color && $hi_color != '#ff7800' ) {
-			$hi_color = esc_attr($hi_color);
-			$hi_color_rgb = azuma_hex2RGB($hi_color);
-			
-			$css[] = '.button,a.button,button,input[type="button"],input[type="reset"],input[type="submit"],#infinite-handle span button,#infinite-handle span button:hover,#infinite-handle span button:focus,#infinite-handle span button:active,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce #respond input#submit.alt,.woocommerce a.button.alt,.woocommerce button.button.alt,.woocommerce input.button.alt,.woocommerce a.added_to_cart,.woocommerce #respond input#submit.alt.disabled,.woocommerce #respond input#submit.alt.disabled:hover,.woocommerce #respond input#submit.alt:disabled,.woocommerce #respond input#submit.alt:disabled:hover,.woocommerce #respond input#submit.alt:disabled[disabled],.woocommerce #respond input#submit.alt:disabled[disabled]:hover,.woocommerce a.button.alt.disabled,.woocommerce a.button.alt.disabled:hover,.woocommerce a.button.alt:disabled,.woocommerce a.button.alt:disabled:hover,.woocommerce a.button.alt:disabled[disabled],.woocommerce a.button.alt:disabled[disabled]:hover,.woocommerce button.button.alt.disabled,.woocommerce button.button.alt.disabled:hover,.woocommerce button.button.alt:disabled,.woocommerce button.button.alt:disabled:hover,.woocommerce button.button.alt:disabled[disabled],.woocommerce button.button.alt:disabled[disabled]:hover,.woocommerce input.button.alt.disabled,.woocommerce input.button.alt.disabled:hover,.woocommerce input.button.alt:disabled,.woocommerce input.button.alt:disabled:hover,.woocommerce input.button.alt:disabled[disabled],.woocommerce input.button.alt:disabled[disabled]:hover,.bx-wrapper .bx-controls-direction a:hover,#primary-menu li.highlight > a,.featured-post:hover .featured-icon,#footer-menu a[href^="mailto:"]:before,.widget_nav_menu a[href^="mailto:"]:before,#footer-menu a[href^="tel:"]:before,.widget_nav_menu a[href^="tel:"]:before,.bx-wrapper .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active{background:' . $hi_color . ';}';
-			
-			$css[] = '.woocommerce .sale-flash,.woocommerce ul.products li.product .sale-flash,#yith-quick-view-content .onsale,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{background-color:' . $hi_color . ';}';
-			
-			$css[] = 'a,#masthead a.azuma-cart.items .azuma-icon-shopping-cart,#masthead a.azuma-cart.items .item-count,.site-title a,.site-title a:hover,.site-title a:active,.site-title a:focus,#primary-menu li.current-menu-item > a,.pagination a:hover,.pagination .current,.woocommerce nav.woocommerce-pagination ul li a:focus,.woocommerce nav.woocommerce-pagination ul li a:hover,.woocommerce nav.woocommerce-pagination ul li span.current,#wc-sticky-addtocart .options-button,#add_payment_method .cart-collaterals .cart_totals .discount td,.woocommerce-cart .cart-collaterals .cart_totals .discount td,.woocommerce-checkout .cart-collaterals .cart_totals .discount td,.infinite-loader{color:' . $hi_color . ';}';
-			
-			$css[] = '.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#primary-menu ul,.woocommerce-info,.woocommerce-message,.bx-wrapper .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active{border-color:' . $hi_color . ';}';
-
-			$css[] = '.featured-post:hover .featured-icon{box-shadow: 0px 0px 0px 4px rgba('.$hi_color_rgb['r'].','.$hi_color_rgb['g'].','.$hi_color_rgb['b'].',.5);}';
-
-		}
-
-		$hi_color2 = get_theme_mod( 'hi_color2', '#2d364c' );
-		if ( $hi_color2 && $hi_color2 != '#2d364c' ) {
-			$hi_color2 = esc_attr($hi_color2);
-			$hi_color2_rgb = azuma_hex2RGB($hi_color2);
-			
-			$css[] = '.button:hover,a.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,#infinite-handle span button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce a.added_to_cart,.woocommerce a.added_to_cart:hover,#grid-loop article:hover,#main.infinite-grid .infinite-wrap article:hover,.woocommerce ul.products li.product:hover,.woocommerce-page ul.products li.product:hover,.single .entry-footer,aside,#site-usp,#shop-filters,.comment-navigation .nav-previous a,.comment-navigation .nav-next a,.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#home-hero-section .widget_media_image:before,#primary-menu ul,.posts-navigation,.post-navigation,.featured-post:hover,.featured-post .featured-icon{background:' . $hi_color2 . ';}';
-			
-			$css[] = '#masthead.not-full,#masthead.full.scrolled,#colophon{background-color:' . $hi_color2 . ';}';
-			
-			$css[] = '#grid-loop article:hover a.button:hover,#main.infinite-grid .infinite-wrap article:hover a.button:hover,.woocommerce ul.products li.product:hover a.button:hover,.woocommerce ul.products li.product:hover button.button:hover,.woocommerce ul.products li.product:hover input.button:hover,.woocommerce ul.products li.product:hover a.button.alt:hover,.woocommerce ul.products li.product:hover button.button.alt:hover,.woocommerce ul.products li.product:hover input.button.alt:hover,.woocommerce ul.products li.product:hover a.added_to_cart,.woocommerce ul.products li.product:hover a.added_to_cart:hover{color:' . $hi_color2 . ';}';
-			
-			$css[] = '.top-account p.mini-account-footer,#wc-sticky-addtocart{border-color:' . $hi_color2 . ';}';
-
-			$css[] = '.sticky{border-top:5px solid ' . $hi_color2 . ';}';
-
-			$css[] = '.comment-navigation .nav-next a:after{border-left:11px solid ' . $hi_color2 . ';}';
-
-			$css[] = '.comment-navigation .nav-previous a:after{border-right:11px solid ' . $hi_color2 . ';}';
-
-			$css[] = '.entry-header.with-image,.archive-header.with-image{background-color:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
-
-			$css[] = '.entry-header .title-meta-wrapper,.archive-header .title-meta-wrapper{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.7);}';
-
-			$css[] = '.entry-header.with-image.full:before,.archive-header.with-image.full:before{background:rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
-
-			$css[] = '.featured-post .featured-icon{box-shadow: 0px 0px 0px 4px rgba('.$hi_color2_rgb['r'].','.$hi_color2_rgb['g'].','.$hi_color2_rgb['b'].',.5);}';
-
-			$css[] = '@media only screen and (max-width: 1024px){#site-navigation{background:' . $hi_color2 . ';}}';
-			
-		}
-
-		if ( get_theme_mod( 'header_search_off' ) ) {
-			$css[] = '#masthead .top-search{display:none;}';
-		}
-
-		return implode( '', $css );
-
-	}
-}
-
-
-if ( !function_exists( 'azuma_editor_dynamic_style' ) ) {
-	function azuma_editor_dynamic_style( $mceInit, $css = array() ) {
-
-		$font_content = get_theme_mod( 'font_content' );
-		if ( $font_content ) {
-			$css[] = 'body.mce-content-body{' . azuma_css_font_family( $font_content ) . ';}';
-		}
-
-		$font_headings = get_theme_mod( 'font_headings' );
-		if ( $font_headings ) {
-			$css[] = '.mce-content-body h1,.mce-content-body h2,.mce-content-body h3,.mce-content-body h4,.mce-content-body h5,.mce-content-body h6{' . azuma_css_font_family( $font_headings ) . ';}';
-		}
-
-		$hi_color = get_theme_mod( 'hi_color' );
-		if ( $hi_color ) {
-			$css[] = '.mce-content-body a:not(.button),.mce-content-body a:hover:not(.button),.mce-content-body a:focus:not(.button),.mce-content-body a:active:not(.button){color:' . esc_attr( $hi_color ) . '}';
-		}
-
-		$styles = implode( '', $css );
-
-		if ( isset( $mceInit['content_style'] ) ) {
-			$mceInit['content_style'] .= ' ' . $styles . ' ';
-		} else {
-			$mceInit['content_style'] = $styles . ' ';
-		}
-		return $mceInit;
-
-	}
-}
-add_filter( 'tiny_mce_before_init', 'azuma_editor_dynamic_style' );
-
-
-function azuma_block_editor_dynamic_style( $css = array() ) {
-
-	$font_content = get_theme_mod( 'font_content', 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' );
-	if ($font_content && $font_content != 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' ) {
-		$css[] = '.editor-default-block-appender textarea.editor-default-block-appender__content,.editor-styles-wrapper p,.editor-styles-wrapper ul,.editor-styles-wrapper li{' . azuma_css_font_family( $font_content ) . ';}';
-	}
-
-	$font_headings = get_theme_mod( 'font_headings', 'Rajdhani:300,400,500,600,700' );
-	if ($font_headings && $font_headings != 'Rajdhani:300,400,500,600,700' ) {
-		$css[] = '.editor-post-title__block .editor-post-title__input,.editor-styles-wrapper h1,.editor-styles-wrapper h2,.editor-styles-wrapper h3,.editor-styles-wrapper h4,.editor-styles-wrapper h5,.editor-styles-wrapper h6{' . azuma_css_font_family( $font_headings ) . ';}';
-	}
-
-	$hi_color = get_theme_mod( 'hi_color' );
-	if ($hi_color && $hi_color != "#ff7800") {		
-		$css[] = '.editor-rich-text__tinymce a,.editor-rich-text__tinymce a:hover,.editor-rich-text__tinymce a:focus,.editor-rich-text__tinymce a:active{color:'.esc_attr($hi_color).'}';
-	}
-
-	return implode( '', $css );
-
-}
 
 
 if ( !function_exists( 'azuma_header_menu' ) ) {
@@ -346,6 +154,9 @@ if ( !function_exists( 'azuma_header_content_extra' ) ) {
 }
 
 
+/**
+ * Login/register/account in header. Priority is WooCommerce, then EDD
+ */
 if ( !function_exists( 'azuma_header_account' ) ) {
 	function azuma_header_account() {
 		if ( class_exists( 'WooCommerce' ) ) { ?>
@@ -367,7 +178,58 @@ if ( !function_exists( 'azuma_header_account' ) ) {
 				} ?>
 				</div>
 			</div>
-		<?php }
+		<?php } else {
+
+
+			if ( function_exists( 'EDD' ) ) { ?>
+
+				<div class="top-account">
+				<?php if ( is_user_logged_in() ) {
+					$edd_account_page_id = get_theme_mod( 'edd_account_page' );
+				} else {
+					$edd_account_page_id = get_theme_mod( 'edd_loginreg_page' );
+				}
+				
+				if ( $edd_account_page_id ) {
+					$edd_account_page_url = get_permalink( $edd_account_page_id ); ?>
+					<a class="azuma-account" href="<?php echo get_permalink( $edd_account_page_id ); ?>" role="button"><span id="icon-user" class="icons azuma-icon-user"></span></a>
+				<?php } else {
+					$edd_account_page_url = wp_login_url( get_permalink() ); ?>
+					<span class="azuma-account" role="button"><span id="icon-user" class="icons azuma-icon-user"></span></span>
+				<?php } ?>
+					
+				<?php if ( is_user_logged_in() ) {
+					if ( get_theme_mod( 'edd_purchase_history' ) || get_theme_mod( 'edd_download_history' ) || get_theme_mod( 'edd_profile' ) ) { ?>
+						<div class="mini-account">
+						<?php if ( get_theme_mod( 'edd_purchase_history' ) ) {
+							edd_get_template_part( 'history-purchases' );
+						}
+						if ( get_theme_mod( 'edd_download_history' ) ) {
+							edd_get_template_part( 'history-downloads' );
+						}
+						if ( get_theme_mod( 'edd_profile' ) ) {
+							edd_get_template_part( 'shortcode', 'profile-editor' );
+						} ?>
+						</div>
+					<?php }
+				} else {
+					if ( get_theme_mod( 'edd_account_login' ) || get_theme_mod( 'edd_account_reg' ) ) { ?>
+						<div class="mini-account">
+						<?php if ( get_theme_mod( 'edd_account_login' ) ) {
+							echo do_shortcode( '[edd_login redirect="' . azuma_current_page_url() . '"]' );
+						}
+						if ( get_theme_mod( 'edd_account_reg' ) ) {
+							echo do_shortcode( '[edd_register redirect="' . azuma_current_page_url() . '"]' );
+						} ?>
+						</div>
+					<?php }
+				} ?>
+					
+				</div>
+
+			<?php }
+
+		}
 	}
 }
 
@@ -416,10 +278,31 @@ if ( !function_exists( 'azuma_header_search' ) ) {
 			<?php if ( class_exists( 'WooCommerce' ) ) {
 				get_product_search_form();
 			} else {
-				get_search_form();
+				if ( function_exists( 'EDD' ) && get_theme_mod( 'edd_search' ) == '' ) {
+					azuma_edd_search_form();
+				} else {
+					get_search_form();
+				}
 			} ?>
 			</div>
 		</div>
+	<?php }
+}
+
+
+if ( !function_exists( 'azuma_edd_search_form' ) ) {
+	function azuma_edd_search_form() {
+		?>
+
+		<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+			<label>
+				<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'azuma' ); ?></span>
+				<input type="search" class="search-field" placeholder="<?php echo esc_attr__( 'Search downloads&hellip;', 'azuma' ); ?>" value="<?php echo get_search_query();?>" name="s" />
+			</label>
+			<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'azuma' ); ?>"><?php echo esc_html_x( 'Search', 'submit button', 'azuma' ); ?></button>
+			<input type="hidden" name="post_type" value="download" />
+		</form>
+		
 	<?php }
 }
 
@@ -450,8 +333,12 @@ add_action( 'wp_ajax_yith_wcwl_update_wishlist_count', 'azuma_update_wishlist_co
 add_action( 'wp_ajax_nopriv_yith_wcwl_update_wishlist_count', 'azuma_update_wishlist_count' );
 
 
+/**
+ * Shopping cart in header. Priority is WooCommerce, then EDD
+ */
 if ( !function_exists( 'azuma_header_cart' ) ) {
 	function azuma_header_cart() {
+
 		if ( class_exists( 'WooCommerce' ) ) {
 			$cart_items = WC()->cart->get_cart_contents_count();
 			if ( $cart_items > 0 ) {
@@ -460,7 +347,15 @@ if ( !function_exists( 'azuma_header_cart' ) ) {
 				$cart_class = '';
 			} ?>
 					<div class="top-cart"><a class="azuma-cart<?php echo $cart_class; ?>" href="<?php echo esc_url( wc_get_cart_url() ); ?>" role="button"><span class="icons azuma-icon-shopping-cart"></span><?php echo sprintf ( '<span class="item-count">%d</span>', $cart_items ); ?></a><div class="mini-cart"><?php woocommerce_mini_cart();?></div></div>
-		<?php }
+		<?php } else {
+
+			if ( function_exists( 'EDD' ) ) {
+				$cart_items = edd_get_cart_quantity(); ?>
+						<div class="top-cart"><a class="azuma-cart" href="<?php echo esc_url( edd_get_checkout_uri() ); ?>" role="button"><span class="icons azuma-icon-shopping-cart"></span><?php echo sprintf ( '<span class="item-count edd-cart-quantity">%d</span>', $cart_items ); ?></a><div class="mini-cart"><?php the_widget( 'edd_cart_widget' );?></div></div>
+			<?php }
+
+		}
+
 	}
 }
 
@@ -837,19 +732,21 @@ if ( !function_exists('azuma_home_nonwoo_section') ) {
 			foreach ($tabs as $tab) {
 				$tab = explode(":", $tab);
 				$tab_id = $tab[0];
-				$tab_active = $tab[1];
-				$tab_shortcode = $woo_tabs[$tab_id]['shortcode'];
-
-				if ( $tab_active == 1 ) {
-					echo '<div id="section-'.$tab_id.'" class="section '.$tab_id.'">';
-						if ( $woo_tabs[$tab_id]['shortcode'] == 'services' ) {
-							azuma_homepage_features();
-						} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'page_content' ) {
-							azuma_homepage_content();
-						}
-					echo '</div>';
+				if ( $tab_id == 'categories' || $tab_id == 'recent' || $tab_id == 'featured' || $tab_id == 'sale' || $tab_id == 'best' || $tab_id == 'rated' ) {
+					// no WC sections if WC not active
+				} else {
+					$tab_active = $tab[1];
+					$tab_shortcode = $woo_tabs[$tab_id]['shortcode'];
+					if ( $tab_active == 1 ) {
+						echo '<div id="section-'.$tab_id.'" class="section '.$tab_id.'">';
+							if ( $woo_tabs[$tab_id]['shortcode'] == 'services' ) {
+								azuma_homepage_features();
+							} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'page_content' ) {
+								azuma_homepage_content();
+							}
+						echo '</div>';
+					}
 				}
-
 			}
 
 			echo '</div>';
@@ -943,11 +840,11 @@ if ( !function_exists('azuma_homepage_features') ) {
 						<h4><?php echo wp_kses_post( get_the_title($recent["ID"]) ); ?></h4></a>
 						<div class="featured-excerpt">
 						<?php
-						$featured_page_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $recent["ID"] ) );
+						$featured_page_excerpt = wp_kses_post( wpautop( get_post_field( 'post_excerpt', $recent["ID"] ) ) );
 						if ( $featured_page_excerpt == '' ) {
-							$featured_page_excerpt = wp_kses_post( '<p>' . wp_trim_words( strip_shortcodes( get_post_field( 'post_content', $recent["ID"] ) ), 15 ) . '</p>' );
+							$featured_page_excerpt = wpautop( wp_trim_words( strip_shortcodes( get_post_field( 'post_content', $recent["ID"] ) ), 15 ) );
 						}
-						if ( $featured_page_excerpt != '' && $featured_page_excerpt != '<p></p>' ) {
+						if ( $featured_page_excerpt != '' ) {
 							echo $featured_page_excerpt;
 						}
 						if ( $enable_featured_link ) {
@@ -974,11 +871,11 @@ if ( !function_exists('azuma_homepage_features') ) {
 						<h4><?php echo wp_kses_post( get_the_title($featured_page_link) ); ?></h4></a>
 						<div class="featured-excerpt">
 						<?php
-						$featured_page_excerpt = apply_filters( 'the_excerpt', get_post_field( 'post_excerpt', $featured_page_link ) );
+						$featured_page_excerpt = wp_kses_post( wpautop( get_post_field( 'post_excerpt', $featured_page_link ) ) );
 						if ( $featured_page_excerpt == '' ) {
-							$featured_page_excerpt = wp_kses_post( '<p>' . wp_trim_words( strip_shortcodes( get_post_field( 'post_content', $featured_page_link ) ), 15 ) . '</p>' );
+							$featured_page_excerpt = wpautop( wp_trim_words( strip_shortcodes( get_post_field( 'post_content', $featured_page_link ) ), 15 ) );
 						}
-						if ( $featured_page_excerpt != '' && $featured_page_excerpt != '<p></p>' ) {
+						if ( $featured_page_excerpt != '' ) {
 							echo $featured_page_excerpt;
 						}
 						if ( $enable_featured_link ) {
@@ -1013,39 +910,6 @@ function azuma_featured_icon_defaults( $input ) {
 		$output = 'fa fa-check';
 	}
 	return $output;
-}
-
-
-function azuma_hex2RGB( $hex ) {
-	$hex = str_replace("#", "", $hex);
-
-	preg_match("/^#{0,1}([0-9a-f]{1,6})$/i",$hex,$match);
-	if ( !isset( $match[1] ) ) {
-		return false;
-	}
-
-	if ( strlen( $match[1] ) == 6 ) {
-		list($r, $g, $b) = array($hex[0].$hex[1],$hex[2].$hex[3],$hex[4].$hex[5]);
-	}
-	elseif ( strlen($match[1]) == 3 ) {
-		list($r, $g, $b) = array($hex[0].$hex[0],$hex[1].$hex[1],$hex[2].$hex[2]);
-	}
-	elseif ( strlen($match[1]) == 2 ) {
-		list($r, $g, $b) = array($hex[0].$hex[1],$hex[0].$hex[1],$hex[0].$hex[1]);
-	}
-	elseif ( strlen($match[1]) == 1 ) {
-		list($r, $g, $b) = array($hex.$hex,$hex.$hex,$hex.$hex);
-	}
-	else {
-		return false;
-	}
-
-	$color = array();
-	$color['r'] = hexdec($r);
-	$color['g'] = hexdec($g);
-	$color['b'] = hexdec($b);
-
-	return $color;
 }
 
 
@@ -1127,3 +991,75 @@ if ( !function_exists( 'azuma_google_fonts_array' ) ) {
 	);
 	}
 }
+
+
+if ( !function_exists( 'azuma_edd_button_colors' ) ) {
+	function azuma_edd_button_colors( $colors ) {
+		$azuma_colors = array(
+			'azuma'	=> array(
+				'label' => esc_html__( 'Azuma Theme', 'azuma' ),
+				'hex'   => '#ff7800'
+			)
+		);
+		$colors = array_merge( $azuma_colors, $colors );
+		return $colors;
+	}
+}
+add_filter( 'edd_button_colors', 'azuma_edd_button_colors' );
+
+
+if ( !function_exists( 'azuma_edd_registered_settings' ) ) {
+	function azuma_edd_registered_settings( $edd_settings ) {
+		$azuma_section_query['autofocus[section]'] = 'edd_section';
+		$azuma_section_link = add_query_arg( $azuma_section_query, admin_url( 'customize.php' ) );
+		$azuma_edd_settings = array(
+			'azuma' => array(
+				'main' => array(
+					'azuma_help' => array(
+						'id'   => 'azuma_help',
+						'name' => esc_html__( 'Azuma Theme', 'azuma' ),
+						'desc' => sprintf(
+							wp_kses(
+								/* translators: %s: link to the customizer */
+								__( 'More options can be found at Appearance &gt; <a href="%s">Customize</a>', 'azuma' ),
+								array(
+									'a' => array(
+										'href' => array(),
+									),
+								)
+							),
+							$azuma_section_link
+						),
+						'type' => 'descriptive_text',
+					),
+				),
+			)
+		);
+		$edd_settings = array_merge( $edd_settings, $azuma_edd_settings );
+		return $edd_settings;
+	}
+}
+add_filter( 'edd_registered_settings', 'azuma_edd_registered_settings' );
+
+
+if ( !function_exists( 'azuma_edd_settings_tab' ) ) {
+	function azuma_edd_settings_tab( $tabs ) {
+		$tabs['azuma'] = esc_html__( 'Azuma Theme', 'azuma' );
+		return $tabs;
+	}
+}
+add_filter( 'edd_settings_tabs', 'azuma_edd_settings_tab' );
+
+
+if ( !function_exists( 'azuma_edd_settings_section' ) ) {
+	function azuma_edd_settings_section( $sections ) {
+		$azuma_section = array(
+			'azuma' => array(
+				'main' => ''
+			)
+		);
+		$sections = array_merge( $sections, $azuma_section );
+		return $sections;
+	}
+}
+add_filter( 'edd_settings_sections', 'azuma_edd_settings_section' );

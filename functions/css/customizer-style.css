@@ -55,6 +55,10 @@ h5.azuma-accordion-section-title{
 	clear: none;
 }
 
+#customize-control-edd_placeholder img{
+	max-width: 60%;
+}
+
 /*Theme Info*/
 .azuma-info{
 	margin-top: 10px;

@@ -160,6 +160,16 @@ function azuma_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => esc_html__( 'EDD Sidebar', 'azuma' ),
+		'id'            => 'azuma-sidebar-edd',
+		'description'   => esc_html__( 'For EDD pages including checkout, Download archives, category, tags and search pages. Requires Easy Digital Downloads plugin.', 'azuma' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="edd-sidebar-widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
 		'name'          => esc_html__( 'Shop Filters', 'azuma' ),
 		'id'            => 'azuma-sidebar-shop-filters',
 		'description'   => esc_html__( 'Horizontal widget area for product archives. Requires WooCommerce plugin.', 'azuma' ),
@@ -422,6 +432,7 @@ require get_template_directory() . '/functions/template-tags.php';
  * Custom functions.
  */
 require get_template_directory() . '/functions/extras.php';
+require get_template_directory() . '/functions/style-output.php';
 require get_template_directory() . '/functions/header-title.php';
 require get_template_directory() . '/functions/icons.php';
 
