@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-fitness-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPress theme for gyms, fitness clubs, yoga classes, weight loss centres, personal trainers, aerobics classes, healthcare centres, spa, workout studios, zumba classes, physiotherapists, health consultants and all the fitness freaks who are on a mission to make people healthy and fit. This multipurpose theme has an inviting design to make people turn their heads towards your website at least once. The Bootstrap framework gives a strong base with responsive layout yielding a beautiful look on different sizes of mobiles, tablets and desktops. Facility for customization is provided right at your fingertips, through theme customizer, without requiring any coding knowledge. Advance Fitness Gym loads on all browsers and can be translated into numerous local and international languages. It is optimized for search engines and integrated with social media icons. It offers interactive features and animated transitions to make the site stand apart among others. With multiple layouts for header, footer and sidebars, you can style your website to suit your brand. It comes with thorough documentation that will let you make the most of your website irrespective of your skills. Demo: https://themeshopy.com/advance-fitness-gym-pro/
-Version: 0.3.7
+Version: 0.3.8
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-fitness-gym
@@ -121,11 +121,6 @@ input[type='submit']:hover{
 	margin:0;
 	padding:0;
 }
-.screen-reader-text {
-	position: absolute;
-	top:-9999em;
-	left:-9999em;
-}
 /* Text meant only for screen readers. */
 .screen-reader-text {
 border: 0;
@@ -217,7 +212,8 @@ small{
 }
 input[type="text"],
 input[type="email"],
-input[type="phno"],
+input[type="phone"],
+input[type="password"],
  textarea{
 	border:1px solid #bcbcbc;
 	width:100%;
@@ -266,10 +262,10 @@ input#pwbox-1168 {
 }
 #header .top-contact {
   color: #fff;
-  top: 6px;
 }  
 #header .contact{
   padding: 8px;
+  display: inline-block;
 }
 #header .top-contact i {
   color: #f05d29;
@@ -769,7 +765,7 @@ section .innerlightbox{
 }
 
 /* Footer Section */
-#footer label{
+#footer .search-form label{
   width: 100%;
 }
 
@@ -843,6 +839,9 @@ table#wp-calendar {
 }
 #footer ul {
 	margin: 0;
+}
+#footer aside {
+  margin-bottom: 10px;
 }
 #footer{
 	background:#000;
@@ -1135,8 +1134,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 .woocommerce .woocommerce-ordering select{
 	padding: 10px;
 }
-span.woocommerce-input-wrapper,
-.woocommerce label {
+span.woocommerce-input-wrapper {
  width: 100%;
 }
 .woocommerce div.product form.cart .button {
@@ -1166,6 +1164,112 @@ tr.woocommerce-cart-form__cart-item.cart_item a{
 .woocommerce-product-gallery__image {
   padding: 5px;
 }
+#footer form.woocommerce-product-search button, #sidebar form.woocommerce-product-search button{
+  background: #fe5e24 ;
+  border-radius: 0px;
+  color: #000;
+  margin-top: 5px;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border: solid 1px #fe5e24;
+  font-weight: 600;
+  font-size: 18px;
+}
+#sidebar form.woocommerce-product-search button{
+  margin-top: 0;
+}
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
+  font-size: 16px;
+}
+.woocommerce .product-title{
+  font-size: 17px;
+}
+.woocommerce .select2-container .select2-selection--single{
+  height: 40px;
+}
+.woocommerce .select2-container--default .select2-selection--single .select2-selection__rendered{
+  line-height: 20px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+  top:70%;
+}
+.select2-container--default .select2-selection--single, input#billing_phone {
+  padding: 10px 0px;
+  border-radius: 0px;
+}
+.woocommerce form .form-row textarea{
+  height: 3em;
+}
+#sidebar .star-rating, #footer .star-rating{
+  margin: 0 !important;
+}
+#sidebar .product_list_widget .star-rating, #footer .product_list_widget .star-rating{
+  margin: 5px 0 10px 0 !important;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
+  background-color: #fe5e24;
+}
+#sidebar .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #000;
+}
+#footer .widget_price_filter .price_slider_wrapper .ui-widget-content{
+  background-color: #fff;
+}
+#footer .price_label, #sidebar .price_label{
+  font-size: 14px;
+}
+.woocommerce .star-rating {
+    float: left;
+}
+.news-item.layout-two .news-text-wrap{
+  font-size: 14px;
+}
+.related.products ul.products li.product, .related.products .woocommerce-page ul.products li.product{
+  float:none;
+  display: inline-table;
+}
+.woocommerce .woocommerce-product-rating .star-rating {
+  margin: 0.5em 20px 0 0;
+}
+.woocommerce .related.products .star-rating, .woocommerce .products .star-rating{
+  margin: 10px auto !important;
+}
+#sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img {
+  width: 50px;
+}
+.woocommerce-cart table.cart td.actions .coupon .input-text{
+  font-size: 10px;
+}
+#footer .woocommerce.widget_shopping_cart .cart_list li{
+  padding: 0 0 10px 2em;
+}
+#footer .woocommerce a.button:hover{
+  background: #fe5e24;
+  color: #000 !important;
+}
+#sidebar a.remove.remove_from_cart_button, #footer a.remove.remove_from_cart_button{
+  font-size: 20px;
+}
+.related.products h2{
+  font-size: 25px;
+}
+.woocommerce-Reviews .comment-form-rating label{
+  padding: 10px 0;
+}
+.woocommerce-Reviews .comment-text p.meta {
+  width: 100%;
+  float: left;
+  padding-top: 10px;
+}
+form.woocommerce-form.woocommerce-form-login.login {
+  display: inline-block;
+}
+.woocommerce form.login .form-row,
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit{
+  display: block;
+  float: none;
+}
 /*------------- Sidebar -------------*/
 #sidebar {
   margin-top: 2%;
@@ -1192,13 +1296,13 @@ tr.woocommerce-cart-form__cart-item.cart_item a{
 }
 #sidebar input[type="search"] {
 	border: solid 1px #bbb;
-	padding: 9px 10px;
+	padding:10px;
 	font-size: 15px;
   color: #000;
 	width: 100%;
 	margin-bottom: 15px;
 }
-#sidebar label{
+#sidebar .search-form label{
 	width:100%;
 }
 #sidebar input[type="submit"]{
@@ -1250,9 +1354,6 @@ label{
 }
 img.rss-widget-icon {
   width: auto !important;
-}
-#sidebar .woocommerce ul.product_list_widget li img {
-  width: 40%;
 }
 /* Page */
 h2.entry-title,
@@ -1382,7 +1483,7 @@ iframe{
 	 padding: 4px;
 	}	
   .woocommerce .products li {
-    width: 45% !important;
+    width: 44% !important;
   }
   #slider .inner_carousel p {
     margin-top: 0px; 
@@ -1398,6 +1499,16 @@ iframe{
   }
   .logo a {
     font-size: 21px;
+  }
+  .woocommerce ul.products[class*=columns-] li.product:nth-child(2n), .woocommerce-page ul.products[class*=columns-] li.product:nth-child(2n){
+    float: none;
+    display: inline-table;
+  }
+  .woocommerce-cart table.cart td.actions .coupon .input-text {
+    font-size: 16px;
+  }
+  #sidebar .woocommerce ul.product_list_widget li img, #footer .woocommerce ul.product_list_widget li img{
+    width: 40px;
   }
 }
 @media screen and (max-width:720px) {	
@@ -1512,6 +1623,7 @@ iframe{
 	.woocommerce-page ul.products[class*=columns-] li.product{
 		width: 100% !important;
 		float: none !important;
+    margin: 0px 0 20px 0 !important;
 	}
 }
 
@@ -1689,7 +1801,6 @@ iframe{
     display: block;
   }
   .main-menu-navigation{
-    max-height: 223px;
     overflow-y: scroll;
     scroll-behavior: auto;
   }

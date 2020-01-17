@@ -60,7 +60,7 @@ get_header(); ?>
 
   <?php do_action( 'advance_fitness_gym_below_slider' ); ?>
 
-  <?php if( get_theme_mod( 'advance_fitness_gym_product_service') != '') { ?>
+  <?php if( get_theme_mod( 'advance_fitness_gym_product_service') == true) { ?>
     <section id="fitness-content">
       <div class="container">
         <div class="fitnes-post">      

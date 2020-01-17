@@ -67,3 +67,15 @@
 			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto;';
 		$custom_css .='}';
 	}
+
+	// css
+
+	$show_header = get_theme_mod( 'advance_fitness_gym_slider_hide', true);
+		if($show_header == false){
+			$custom_css .='.fitnes-post{';
+				$custom_css .=';';
+			$custom_css .='}';
+			$custom_css .='.fitnes-post{';
+				$custom_css .='margin-top: 0%;padding:0;';
+			$custom_css .='}';
+		}
