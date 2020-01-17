@@ -94,12 +94,14 @@ Images
 ---------------------------------------------
 == Changelog ==
 
+= 3.5 = 
+** Minor bugs fixed
+
 = 3.4 = 
 ** Minor bugs fixed
 
 = 3.3 =
 ** Added option for sidebar metabox
-
 
 = 3.2 =
 ** Fixed Woocommerce widgets in Elementor

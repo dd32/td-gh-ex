@@ -1,87 +1,27 @@
 <?php
+// Load the JS and CSS.
 
-/**
- * AccessPress Parallax Customizer Class
- * @package AccessPress Themes
- */
 
-if(class_exists( 'WP_Customize_Control')){
-    /**
-     * Pro customizer section.
-     *
-     * @since  1.0.0
-     * @access public
-     */
-    class Accesspress_Parallax_Customize_Section_Pro extends WP_Customize_Section {
+add_action( 'customize_controls_enqueue_scripts', function() {
 
-        /**
-         * The type of customize section being rendered.
-         *
-         * @since  1.0.0
-         * @access public
-         * @var    string
-         */
-        public $type = 'accesspress-parallax-upgrade';
+    $version = wp_get_theme()->get( 'Version' );
 
-        /**
-         * Custom button text to output.
-         *
-         * @since  1.0.0
-         * @access public
-         * @var    string
-         */
-        public $pro_text = '';
-        public $pro_text1 = '';
-        public $title1 = '';
+    wp_enqueue_script(
+        'wptrt-customize-section-button',
+        get_theme_file_uri( '/inc/customizer/pro/public/js/customize-controls.js' ),
+        [ 'customize-controls' ],
+        $version,
+        true
+    );
 
-        /**
-         * Custom pro button URL.
-         *
-         * @since  1.0.0
-         * @access public
-         * @var    string
-         */
-        public $pro_url = '';
-        public $pro_url1 = '';
+    wp_enqueue_style(
+        'wptrt-customize-section-button',
+        get_theme_file_uri( '/inc/customizer/pro/public/css/customize-controls.css' ),
+        [ 'customize-controls' ],
+        $version
+    );
 
-        /**
-         * Add custom parameters to pass to the JS via JSON.
-         *
-         * @since  1.0.0
-         * @access public
-         * @return void
-         */
-        public function json() {
-            $json = parent::json();
-            $json['pro_text'] = $this->pro_text;
-            $json['title1'] = $this->title1;
-            $json['pro_text1'] = $this->pro_text1;
-            $json['pro_url']  = esc_url( $this->pro_url );
-            $json['pro_url1']  = $this->pro_url1;
-            return $json;
-        }
-
-        /**
-         * Outputs the Underscore.js template.
-         *
-         * @since  1.0.0
-         * @access public
-         * @return void
-         */
-        protected function render_template() { ?>
-
-            <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
-                <h3 class="accordion-section-title">
-                    {{ data.title1 }}
-                    <# if ( data.pro_text1 && data.pro_url1 ) { #>
-                        <a href="{{ data.pro_url1 }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text1 }}</a>
-                    <# } #>
-                </h3>
-            </li>
-        <?php }
-    }
-}
-
+} );
 
 
 defined( 'Accesspress_Parallax_THEME_CDIR' ) or define( 'Accesspress_Parallax_THEME_CDIR', get_template_directory() . '/inc/customizer/' ); //plugin version
@@ -144,6 +84,9 @@ if ( !class_exists( 'Accesspress_Parallax_Customizer_Class' ) ) {
          */
         public function all_customizer_options( $wp_customize ) {
 
+            include get_theme_file_path( '/inc/customizer/pro/src/Button.php' );
+
+
             $dir = Accesspress_Parallax_THEME_CDIR;
 
             $files = array(
@@ -167,3 +110,21 @@ if ( !class_exists( 'Accesspress_Parallax_Customizer_Class' ) ) {
 
     new Accesspress_Parallax_Customizer_Class();
 }
+
+use WPTRT\Customize\Section\Button;
+
+// Register the "button" section.
+
+add_action( 'customize_register', function( $manager ) {
+
+    $manager->register_section_type( Button::class );
+
+    $manager->add_section(
+        new Button( $manager, 'themeslug_pro', [
+            'title'       => __( 'AccessPress Parallax', 'accesspress-parallax' ),
+            'button_text' => __( 'Go Pro',        'accesspress-parallax' ),
+            'button_url'  => 'https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/'
+        ] )
+    );
+
+} );

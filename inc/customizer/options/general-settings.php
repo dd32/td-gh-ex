@@ -1,38 +1,5 @@
 <?php
 
-
-// Register custom section types.
-$wp_customize->register_section_type( 'Accesspress_Parallax_Customize_Section_Pro' );
-
-// Register sections.
-$wp_customize->add_section(
-    new Accesspress_Parallax_Customize_Section_Pro(
-        $wp_customize,
-        'accesspress-parallax-upgrade',
-        array(
-            'title1'    => esc_html__( 'Free Vs Pro', 'accesspress-parallax' ),
-            'pro_text1' => esc_html__( 'Compare','accesspress-parallax' ),
-            'pro_url1'  => admin_url( 'themes.php?page=welcome-page#free_vs_pro'),
-            'priority' => 1,
-        )
-    )
-);
-$wp_customize->add_setting(
-    'fotography_pro_upbuton',
-    array(
-        'section' => 'accesspress-parallax-upgrade',
-        'sanitize_callback' => 'esc_attr',
-    )
-);
-
-$wp_customize->add_control(
-    'fotography_pro_upbuton',
-    array(
-        'section' => 'accesspress-parallax-upgrade'
-    )
-);
-
-
 /** General Settings * */
 $wp_customize->add_panel( 'accesspress_parallax_general_settings_panel', array(
     'title' => __( 'General Settings', 'accesspress-parallax' ),
