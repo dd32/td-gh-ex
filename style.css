@@ -6,10 +6,10 @@
  * Description: "BA Hotel light" is a hotel/hostel booking theme developed for mini hotels and property rental businesses. It's based on the fast and flexible free booking engine ("BA Book Everything" plugin) and allows you to start your online rental business in an hours!
 You can easily create different booking rules and categories, flexible rates (define minimum/maximum booking period, days of the week to which the rate applies, days of the week in which the reservation can be started), variable prices based on number of the guests or/and nights, seasonal prices and discounts. Sell additional services with booking (breakfast, dinner, etc.), use special offers, promo codes (discount coupons), and more. Clear landing design looks great on both desktop and mobile screens thanks to Bootstrap 4 framework, touch-ready and responsive sliders, great google and icon fonts.
 Full-featured theme version ("BA Hotel") is completed with payment gateways (PayPal, Stripe) and extra settings to easily customize the theme to suit your needs.
- * Version: 1.0.17
- * License: GNU General Public License v3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: ba-hotel-light
+ * Version: 1.0.2
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: ba-hotel
  * Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
  */
 
@@ -152,16 +152,11 @@ input[type=submit]:hover{
 /*============Navigation================*/
 
 .navbar-brand {
-   display: flex;
-   align-items: center;
+   display: block;
    max-height: 80px;
    line-height: 1;
    padding: 0 12px;
    margin-right: 20px;
-}
-
-.brand_text_wrapper{
-    vertical-align: middle;
 }
 
 .navbar-brand h1{
@@ -251,7 +246,6 @@ img.site-logo{
     opacity: 0;
     filter: alpha(opacity=0);
     -moz-opacity: 0;
-    background-color: #2e2e2e;
 }
 
 .dropdown-toggle::after{
@@ -386,11 +380,7 @@ body.header_transparent .navbar-toggler:hover{
    } 
 }
 
-@media (min-width: 992px){
-
-    #site-navigation .container{
-        justify-content: center;
-    }
+@media (min-width: 992px){  
     
    #site-navigation #nav_menu > .menu-item > .nav-link{
     padding: 0;
@@ -420,7 +410,7 @@ body.header_transparent .navbar-toggler:hover{
     margin: 0 20px;
   }
     
-  #site-navigation .dropdown:hover > .dropdown-menu, #site-navigation .dropdown.dropdown-expanded > .dropdown-menu, #site-navigation .dropdown-submenu.dropdown-submenu-expanded > .dropdown-menu {
+  #site-navigation .dropdown:hover > .dropdown-menu {
     display: block;
     transition: all .35s ease, opacity 1s ease-in-out;
     -webkit-transition: all .35s ease, opacity 1s ease-in-out;
@@ -429,12 +419,8 @@ body.header_transparent .navbar-toggler:hover{
     -moz-opacity: 1;
   }
 
-  #site-navigation .dropdown-submenu:hover > .dropdown-menu, #site-navigation .dropdown-submenu.dropdown-submenu-expanded > .dropdown-menu{
+  #site-navigation .dropdown-submenu:hover > .dropdown-menu{
     top: -9px;
-  }
-
-  .mobile-menu-close{
-      display: none;
   }
 
 }
@@ -444,10 +430,6 @@ body.header_transparent .navbar-toggler:hover{
    #site-navigation {
       padding: 24px 0;
    }
-
-    .mobile-menu-close{
-        margin-bottom: 10px;
-    }
    
    .navbar-brand{
     -webkit-transform: scale(0.9);
@@ -521,6 +503,7 @@ body.header_transparent .navbar-toggler:hover{
       top: 8px;
       min-height: 80px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
    }
 
@@ -624,6 +607,7 @@ aside input[type="text"]{
 
 .widget-area section[class^='widget_babe_'], .widget-area section[class*=' widget_babe_']{
     padding: 20px;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -811,14 +795,10 @@ aside input[type="text"]{
 .entry-header-container .entry-title-wrap{
     flex-grow: 2;
     text-align: left;
-    width: 100%;
-    width: -webkit-calc(100% - 130px);
-    width: -o-calc(100% - 130px);
-    width: calc(100% - 130px);
 }
 
 .entry-header-container h2.entry-title{
-    margin-bottom: 0;
+    margin-bottom: 0; 
 }
 
 .entry-header-container .posted-on{
@@ -1917,6 +1897,7 @@ input[type=radio]:checked:before {
     margin-left: auto;
     margin-right: auto;
     max-width: 991px;
+    box-shadow: 3px;
     -webkit-box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.10);
@@ -1942,6 +1923,7 @@ input[type=radio]:checked:before {
    #search-box.search_form_over_header #search_form{
     margin-top: 0;
     padding-top: 19px;
+    box-shadow: 3px;
     -webkit-box-shadow: 0px 6px 6px 1px rgba(0,0,0,0.05);
     -moz-box-shadow: 0px 6px 6px 1px rgba(0,0,0,0.05);
     box-shadow: 0px 6px 6px 1px rgba(0,0,0,0.05);
@@ -2360,6 +2342,7 @@ body .ui-widget-header .ui-state-hover, body .ui-widget-header .ui-state-focus {
     align-content: center;
     justify-content: center;
     padding: 50px 20px;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -2527,6 +2510,7 @@ body .ui-widget-header .ui-state-hover, body .ui-widget-header .ui-state-focus {
 .checkout_order_items_wrap {
     padding: 50px 20px 20px 20px;
     margin-bottom: 40px;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -2534,6 +2518,7 @@ body .ui-widget-header .ui-state-hover, body .ui-widget-header .ui-state-focus {
 
 .checkout_form_wrap {
     padding: 50px 40px 20px 40px;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -2717,6 +2702,7 @@ table td.order_items_row_total {
     padding: 50px;
     margin-bottom: 40px;
     text-align: center;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -3327,6 +3313,7 @@ body.single-to_book .collapse-body.block_active, body.single-to_book .site-conte
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -3498,6 +3485,7 @@ body.single-to_book .collapse-body.block_active, body.single-to_book .site-conte
 
 .my_account_page_content_wrapper {
     background-color: #ffffff;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -3536,6 +3524,7 @@ body.single-to_book .collapse-body.block_active, body.single-to_book .site-conte
     border: none;
     padding: 20px;
     margin-right: 30px;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -3956,6 +3945,7 @@ body.single-event .block_event .event-title-group{
 
 .front_top_block.services_block .service_list .entry-header {
     background-color: #ffffff;
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -4503,6 +4493,7 @@ body.single-event .block_event .event-title-group{
 }
 
 .offer_item_block_inner{
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
@@ -4629,6 +4620,7 @@ body.single-event .block_event .event-title-group{
 }
 
 .address_item_inner{
+    box-shadow: 1px;
     -webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     -moz-box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);
     box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.10);

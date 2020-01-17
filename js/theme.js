@@ -142,59 +142,6 @@ $(document).ready(function(){
     }
     
   /////////////NavBar///////////
-
-    $('.navbar-toggler').keydown(function(e){
-        if(e.which == 13){ // enter
-            e.preventDefault();
-            $(this).click();
-            $(this).parents().eq(1).find('.navbar-nav a:first').focus();
-        }
-    });
-
-    $('.header-menu-row .navbar-nav a').focus( function(e){
-        if ( $(window).width() > 991 ) {
-            var par = $(this).parent();
-            $(par).siblings('li').find('ul li').trigger('mouseout');
-            $(par).trigger('mouseover');
-        }
-    });
-
-    $('.header-menu-row .navbar-nav a.dropdown-toggle').keydown(function(e){
-        if( e.which == 9) { // tab
-            if ( $(window).width() <= 991 ) { // tab
-                e.preventDefault();
-                $(this).find('.caret').click();
-                $(this).parent().siblings('.dropdown-menu-active').find('.caret').click();
-                $(this).parent().find('.dropdown-menu a:first').focus();
-            }
-        }
-    });
-
-    $('.header-menu-row .navbar-nav a').focus( function(e){
-        if ( $(window).width() <= 991 ) {
-            var par = $(this).parents().eq(1);
-            if ($(par).hasClass('navbar-nav')){
-                $(par).find('.caret i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-                $(par).find('li.dropdown-menu-active').removeClass('dropdown-menu-active');
-            }
-        }
-    });
-
-    $('.header-menu-row .navbar-nav a:last').keydown(function(e){
-        if(e.which == 9){ // tab
-            if ( $(window).width() <= 991 ) {
-                e.preventDefault();
-                $('.header-menu-row .navbar-nav a:first').focus();
-            }
-        }
-    });
-
-    $('.navbar-nav a.mobile-menu-close-link').keydown(function(e){
-        if(e.which == 13){ // enter
-            e.preventDefault();
-            $('.header-top-row').find('.navbar-toggler').click().focus();
-        }
-    });
   
   $(window).scroll(function (event) {
       var scroll = $(window).scrollTop();
@@ -241,21 +188,24 @@ $(document).ready(function(){
             if (menu_links[i].parentNode.classList.contains("active")) {
                 menu_links[i].parentNode.classList.remove("active");
              }
+             // menu_links[i].style.opacity = "0.25";
         }
         
         this.parentNode.classList.add("active");
-
+        // this.style.opacity = "1";
         var computedStyle = getComputedStyle(this);
         
-        var block_top = parseInt(this.parentNode.offsetTop);
+        var par_computedStyle = getComputedStyle(this.parentNode.parentNode);
+        
+        var block_top = parseInt(par_computedStyle.paddingTop);
         
         const width = this.getBoundingClientRect().width - parseInt(computedStyle.paddingLeft) - parseInt(computedStyle.paddingRight);
-
+        //const height = this.getBoundingClientRect().height;
         const left = this.getBoundingClientRect().left + parseInt(computedStyle.paddingLeft);
         const top = block_top + parseInt(computedStyle.paddingTop) + parseInt(computedStyle.lineHeight);
         
         menu_underline.style.width = `${width}px`;
-
+        //menu_underline.style.height = `${height}px`;
         menu_underline.style.left = `${left}px`;
         menu_underline.style.top = `${top}px`;
         menu_underline.style.transform = "none";
@@ -283,14 +233,17 @@ $(document).ready(function(){
    
     if (active) {   
         var computedStyle = getComputedStyle(active);
-
-        var block_top = parseInt(active.parentNode.offsetTop);
+        
+        var par_computedStyle = getComputedStyle(active.parentNode.parentNode);
+        var block_top = parseInt(par_computedStyle.paddingTop);
         
         const width = active.getBoundingClientRect().width - parseInt(computedStyle.paddingLeft) - parseInt(computedStyle.paddingRight);
+        //const height = active.getBoundingClientRect().height;
         const left = active.getBoundingClientRect().left + parseInt(computedStyle.paddingLeft);
         const top = block_top + parseInt(computedStyle.paddingTop) + parseInt(computedStyle.lineHeight);
         
         menu_underline.style.width = `${width}px`;
+        //menu_underline.style.height = `${height}px`;
         menu_underline.style.left = `${left}px`;
         menu_underline.style.top = `${top}px`;
         menu_underline.style.transform = "none";
@@ -337,7 +290,7 @@ $(document).ready(function(){
         
       var window_width = $(window).width();
         
-      if(window_width >= 992){
+      if(window_width >= 992){  
         
         var parent_dropdown = $(this).parent();
         var subdropdown = $(this).find('.dropdown-menu').first();
@@ -356,13 +309,11 @@ $(document).ready(function(){
                css_left = '-'+css_left;
                caret_class_new = 'fa-chevron-left';
             }
-
-            $(this).addClass('dropdown-submenu-expanded');
+            
             subdropdown.css('left', css_left);
             
         } else {
-
-            $(this).addClass('dropdown-expanded');
+            
             subdropdown.css('top', 'calc(100% - 3px)');
             
         }
@@ -375,9 +326,7 @@ $(document).ready(function(){
     $('.dropdown').on('mouseout', function(ev){
      
       if($(window).width() >= 992){
-
-          $(this).removeClass('dropdown-expanded');
-          $(this).removeClass('dropdown-submenu-expanded');
+       // var parent_dropdown = $(this).parent();
         var subdropdown = $(this).find('.dropdown-menu').first();
         var caret = $(this).find('.caret i').first();
         

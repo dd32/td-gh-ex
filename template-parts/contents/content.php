@@ -8,7 +8,7 @@
 
      $column_wrapper_end = false;
         
-     if ( is_home() && 2 == apply_filters( 'bahotel_l_option', '', 'blog_columns' ) && Bahotel_L_Settings::$layout_vars['width']['main'] == 12){
+     if ( is_home() && 2 == apply_filters( 'bahotel_l_option', '', 'blog_columns' ) && BAH_L_Settings::$layout_vars['width']['main'] == 12){
         
         $column_wrapper_end = true;
             
@@ -74,7 +74,7 @@
             <?php
             
             $read_more = sprintf( '<div class="more-link-wrapper"><a class="more-link" href="%1$s">%2$s</a></div>',
-              esc_url(get_permalink( get_the_ID() )),
+              get_permalink( get_the_ID() ),
               __( 'Read more', 'ba-hotel-light' )
             );
             echo wp_kses_post($read_more);

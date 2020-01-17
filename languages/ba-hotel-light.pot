@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BA Hotel light\n"
-"POT-Creation-Date: 2020-02-15 03:42+0200\n"
+"POT-Creation-Date: 2019-10-17 19:30+0300\n"
 "PO-Revision-Date: 2018-04-10 13:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: https://ba-booking.com\n"
@@ -10,19 +10,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;_x;_n;_nx;esc_html__;esc_html_e;esc_html_x;"
-"esc_attr__;esc_attr_x\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;_x;_n;_nx;esc_html__;esc_html_e;"
+"esc_html_x\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: admin/ReduxCore\n"
 "X-Poedit-SearchPathExcluded-1: js\n"
 "X-Poedit-SearchPathExcluded-2: css\n"
 "X-Poedit-SearchPathExcluded-3: fonts\n"
-"X-Poedit-SearchPathExcluded-4: languages\n"
-"X-Poedit-SearchPathExcluded-5: admin/css\n"
-"X-Poedit-SearchPathExcluded-6: admin/images\n"
 
 #: 404.php:15
 msgid "That page can&rsquo;t be found."
@@ -32,35 +29,23 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: comments-to_book.php:25 comments.php:76
-msgid "Your Name *"
-msgstr ""
-
 #: comments-to_book.php:26 comments.php:77
 msgid "Your Email *"
 msgstr ""
 
-#: comments-to_book.php:27 comments.php:78
-msgid "Website"
-msgstr ""
-
-#: comments-to_book.php:34
+#: comments-to_book.php:35
 msgid "City/Country (where are you from) *"
 msgstr ""
 
-#: comments-to_book.php:35
-msgid "Review text *"
-msgstr ""
-
-#: comments-to_book.php:38 comments-to_book.php:39
+#: comments-to_book.php:39 comments-to_book.php:40
 msgid "Leave a Review"
 msgstr ""
 
-#: comments-to_book.php:40
+#: comments-to_book.php:41
 msgid "Cancel Review"
 msgstr ""
 
-#: comments-to_book.php:41
+#: comments-to_book.php:42
 msgid "Post Review"
 msgstr ""
 
@@ -89,15 +74,11 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:85
-msgid "Your message *"
-msgstr ""
-
 #: functions.php:91
 msgid "Primary Menu"
 msgstr ""
 
-#: header.php:26
+#: header.php:29
 msgid "Skip to content"
 msgstr ""
 
@@ -142,22 +123,6 @@ msgstr ""
 msgid "Service subtitle"
 msgstr ""
 
-#: includes/class-nav-menu.php:346
-msgid "Home"
-msgstr ""
-
-#: includes/class-nav-menu.php:347
-msgid "About Us"
-msgstr ""
-
-#: includes/class-nav-menu.php:348
-msgid "Gallery"
-msgstr ""
-
-#: includes/class-nav-menu.php:349
-msgid "Contact Us"
-msgstr ""
-
 #: includes/class-page-options.php:63
 msgid "Theme default"
 msgstr ""
@@ -194,650 +159,650 @@ msgstr ""
 msgid "Page template options"
 msgstr ""
 
-#: includes/class-redux.php:87
+#: includes/class-redux.php:90
 msgid "New update available!"
 msgstr ""
 
-#: includes/class-redux.php:88
+#: includes/class-redux.php:91
 msgid "Version "
 msgstr ""
 
-#: includes/class-redux.php:88 includes/class-tgm-plugin-activation.php:2729
+#: includes/class-redux.php:91 includes/class-tgm-plugin-activation.php:2729
 msgid "Update"
 msgstr ""
 
-#: includes/class-redux.php:170
+#: includes/class-redux.php:173
 #, php-format
 msgid "BA Hotel light options %1$sTheme Documentation%2$s"
 msgstr ""
 
-#: includes/class-redux.php:181
+#: includes/class-redux.php:184
 msgid "Theme Options"
 msgstr ""
 
-#: includes/class-redux.php:182
+#: includes/class-redux.php:185
 msgid "BA Hotel light options"
 msgstr ""
 
-#: includes/class-redux.php:286
+#: includes/class-redux.php:289
 msgid "Documentation"
 msgstr ""
 
-#: includes/class-redux.php:346
+#: includes/class-redux.php:355
 msgid "Logo image"
 msgstr ""
 
-#: includes/class-redux.php:361
+#: includes/class-redux.php:370
 msgid "Site Title"
 msgstr ""
 
-#: includes/class-redux.php:378
+#: includes/class-redux.php:387
 msgid "Tagline"
 msgstr ""
 
-#: includes/class-redux.php:395
+#: includes/class-redux.php:404
 msgid "Site Identity"
 msgstr ""
 
-#: includes/class-redux.php:407
+#: includes/class-redux.php:416
 msgid "Footer logo image"
 msgstr ""
 
-#: includes/class-redux.php:432
+#: includes/class-redux.php:441
 msgid "General"
 msgstr ""
 
-#: includes/class-redux.php:441
+#: includes/class-redux.php:450
 msgid "Header settings"
 msgstr ""
 
-#: includes/class-redux.php:448
+#: includes/class-redux.php:457
 msgid "Use default header background pattern"
 msgstr ""
 
-#: includes/class-redux.php:456
+#: includes/class-redux.php:465
 msgid "Header background pattern image"
 msgstr ""
 
-#: includes/class-redux.php:462
+#: includes/class-redux.php:471
 msgid "Header with transparent background (over header image)"
 msgstr ""
 
-#: includes/class-redux.php:469
+#: includes/class-redux.php:478
 msgid "Sticky header"
 msgstr ""
 
-#: includes/class-redux.php:476
+#: includes/class-redux.php:485
 msgid "Gallery settings"
 msgstr ""
 
-#: includes/class-redux.php:483
+#: includes/class-redux.php:492
 msgid "Gallery style"
 msgstr ""
 
-#: includes/class-redux.php:486
+#: includes/class-redux.php:495
 msgid "Masonry"
 msgstr ""
 
-#: includes/class-redux.php:487
+#: includes/class-redux.php:496
 msgid "3 columns"
 msgstr ""
 
-#: includes/class-redux.php:500
+#: includes/class-redux.php:509
 msgid "Layouts"
 msgstr ""
 
-#: includes/class-redux.php:510
+#: includes/class-redux.php:519
 msgid "Default page/post layout"
 msgstr ""
 
-#: includes/class-redux.php:511
+#: includes/class-redux.php:520
 msgid ""
 "This layout will be applied if no specific layout has been assigned to the current "
 "page/post."
 msgstr ""
 
-#: includes/class-redux.php:524
+#: includes/class-redux.php:533
 msgid "Front Page"
 msgstr ""
 
-#: includes/class-redux.php:536
+#: includes/class-redux.php:545
 #, php-format
 msgid ""
 "To use shortcodes like on %1$sDemo site%2$s, you need to download from theme's "
 "site and install our free %3$sBA Theme core plugin%4$s."
 msgstr ""
 
-#: includes/class-redux.php:543
+#: includes/class-redux.php:552
 msgid "Use slideshow"
 msgstr ""
 
-#: includes/class-redux.php:544
+#: includes/class-redux.php:553
 msgid ""
 "If it's enabled, Slide posts will be used to get images and titles for slideshow. "
 "Otherwise, the page featured image will be displayed."
 msgstr ""
 
-#: includes/class-redux.php:556
+#: includes/class-redux.php:565
 msgid "Room Page"
 msgstr ""
 
-#: includes/class-redux.php:565
+#: includes/class-redux.php:574
 msgid "Room post layout"
 msgstr ""
 
-#: includes/class-redux.php:573
+#: includes/class-redux.php:582
 msgid "Show thumbnails in slideshow"
 msgstr ""
 
-#: includes/class-redux.php:580 includes/class-redux.php:910
+#: includes/class-redux.php:589 includes/class-redux.php:919
 msgid "Show star rating in room details?"
 msgstr ""
 
-#: includes/class-redux.php:587
+#: includes/class-redux.php:596
 msgid "Show book now button"
 msgstr ""
 
-#: includes/class-redux.php:594
+#: includes/class-redux.php:603
 msgid "Show features section"
 msgstr ""
 
-#: includes/class-redux.php:601
+#: includes/class-redux.php:610
 msgid "Show booking form at the page bottom"
 msgstr ""
 
-#: includes/class-redux.php:608
+#: includes/class-redux.php:617
 msgid "Show reviews section"
 msgstr ""
 
-#: includes/class-redux.php:615
+#: includes/class-redux.php:624
 msgid "Show \"add review\" form"
 msgstr ""
 
-#: includes/class-redux.php:627
+#: includes/class-redux.php:636
 #: template-parts/content-tags/content-tag-header-thumbnail.php:73
 msgid "Blog"
 msgstr ""
 
-#: includes/class-redux.php:636 includes/class-redux.php:692
-#: includes/class-redux.php:738
+#: includes/class-redux.php:645 includes/class-redux.php:701
+#: includes/class-redux.php:747
 msgid "Use default header image"
 msgstr ""
 
-#: includes/class-redux.php:644
+#: includes/class-redux.php:653
 msgid "Blog Header image"
 msgstr ""
 
-#: includes/class-redux.php:650 includes/class-redux.php:706
-#: includes/class-redux.php:752
+#: includes/class-redux.php:659 includes/class-redux.php:715
+#: includes/class-redux.php:761
 msgid "Archive layout"
 msgstr ""
 
-#: includes/class-redux.php:658
+#: includes/class-redux.php:667
 msgid "Blog archive columns"
 msgstr ""
 
-#: includes/class-redux.php:659
+#: includes/class-redux.php:668
 msgid "Only for full width layouts"
 msgstr ""
 
-#: includes/class-redux.php:661 includes/class-redux.php:894
+#: includes/class-redux.php:670 includes/class-redux.php:903
 msgid "1 column"
 msgstr ""
 
-#: includes/class-redux.php:662 includes/class-redux.php:895
+#: includes/class-redux.php:671 includes/class-redux.php:904
 msgid "2 columns"
 msgstr ""
 
-#: includes/class-redux.php:670 includes/class-redux.php:783
+#: includes/class-redux.php:679 includes/class-redux.php:792
 msgid "Single post layout"
 msgstr ""
 
-#: includes/class-redux.php:683
+#: includes/class-redux.php:692
 msgid "Archive Page"
 msgstr ""
 
-#: includes/class-redux.php:700
+#: includes/class-redux.php:709
 msgid "Archive Header image"
 msgstr ""
 
-#: includes/class-redux.php:719
+#: includes/class-redux.php:728
 msgid "Events"
 msgstr ""
 
-#: includes/class-redux.php:731
+#: includes/class-redux.php:740
 #, php-format
 msgid ""
 "To use event post type and shortcodes like on %1$sDemo site%2$s, you need to "
 "download from theme's site and install our free %3$sBA Theme core plugin%4$s."
 msgstr ""
 
-#: includes/class-redux.php:746
+#: includes/class-redux.php:755
 msgid "Events Header image"
 msgstr ""
 
-#: includes/class-redux.php:760
+#: includes/class-redux.php:769
 msgid "Archive events order by"
 msgstr ""
 
-#: includes/class-redux.php:762 includes/class-redux.php:815
+#: includes/class-redux.php:771 includes/class-redux.php:824
 msgid "Event date"
 msgstr ""
 
-#: includes/class-redux.php:763 includes/class-redux.php:816
+#: includes/class-redux.php:772 includes/class-redux.php:825
 msgid "Post modified date"
 msgstr ""
 
-#: includes/class-redux.php:764 includes/class-redux.php:817
+#: includes/class-redux.php:773 includes/class-redux.php:826
 msgid "Title"
 msgstr ""
 
-#: includes/class-redux.php:772
+#: includes/class-redux.php:781
 msgid "Archive events order"
 msgstr ""
 
-#: includes/class-redux.php:774 includes/class-redux.php:827
+#: includes/class-redux.php:783 includes/class-redux.php:836
 msgid "DESC"
 msgstr ""
 
-#: includes/class-redux.php:775 includes/class-redux.php:828
+#: includes/class-redux.php:784 includes/class-redux.php:837
 msgid "ASC"
 msgstr ""
 
-#: includes/class-redux.php:791
+#: includes/class-redux.php:800
 msgid "Front end event date format"
 msgstr ""
 
-#: includes/class-redux.php:792
+#: includes/class-redux.php:801
 msgid "See more in PHP docs, https://www.php.net/manual/en/function.date.php"
 msgstr ""
 
-#: includes/class-redux.php:799
+#: includes/class-redux.php:808
 msgid "Title for related events section"
 msgstr ""
 
-#: includes/class-redux.php:806
+#: includes/class-redux.php:815
 msgid "Subtitle for related events section"
 msgstr ""
 
-#: includes/class-redux.php:813
+#: includes/class-redux.php:822
 msgid "Related events order by"
 msgstr ""
 
-#: includes/class-redux.php:825
+#: includes/class-redux.php:834
 msgid "Related events order"
 msgstr ""
 
-#: includes/class-redux.php:841
+#: includes/class-redux.php:850
 msgid "Search Form"
 msgstr ""
 
-#: includes/class-redux.php:849
+#: includes/class-redux.php:858
 msgid "Setup fields in Search Form Builder"
 msgstr ""
 
-#: includes/class-redux.php:850
+#: includes/class-redux.php:859
 msgid "Search Form Builder"
 msgstr ""
 
-#: includes/class-redux.php:856
+#: includes/class-redux.php:865
 msgid "Use background on search form"
 msgstr ""
 
-#: includes/class-redux.php:863
+#: includes/class-redux.php:872
 msgid "Place search form over header image"
 msgstr ""
 
-#: includes/class-redux.php:870
+#: includes/class-redux.php:879
 msgid "Make header search form collapsible on mobile screens"
 msgstr ""
 
-#: includes/class-redux.php:882
+#: includes/class-redux.php:891
 msgid "Search Results"
 msgstr ""
 
-#: includes/class-redux.php:891
+#: includes/class-redux.php:900
 msgid "Search result columns"
 msgstr ""
 
-#: includes/class-redux.php:903
+#: includes/class-redux.php:912
 msgid "Show \"sort by\" filter?"
 msgstr ""
 
-#: includes/class-redux.php:921
+#: includes/class-redux.php:930
 msgid "Footer"
 msgstr ""
 
-#: includes/class-redux.php:930
+#: includes/class-redux.php:939
 msgid "Copyrights"
 msgstr ""
 
-#: includes/class-redux.php:937
+#: includes/class-redux.php:946
 msgid "Copyrights text"
 msgstr ""
 
-#: includes/class-redux.php:938 includes/template-functions.php:1001
+#: includes/class-redux.php:947 includes/template-functions.php:1001
 msgid "Copyright &copy; {year}, {sitename}"
 msgstr ""
 
-#: includes/class-redux.php:960
+#: includes/class-redux.php:969
 msgid "Fonts"
 msgstr ""
 
-#: includes/class-redux.php:972 includes/class-redux.php:996
+#: includes/class-redux.php:981 includes/class-redux.php:1005
 #, php-format
 msgid "These options are available in %1$sBA Hotel theme%2$s only."
 msgstr ""
 
-#: includes/class-redux.php:984
+#: includes/class-redux.php:993
 msgid "Colors"
 msgstr ""
 
-#: includes/class-redux.php:1056
+#: includes/class-redux.php:1075
 msgid "Exclude search form from post types"
 msgstr ""
 
-#: includes/class-redux.php:1077
+#: includes/class-redux.php:1096
 msgid "Add room terms"
 msgstr ""
 
-#: includes/class-redux.php:1078
+#: includes/class-redux.php:1097
 msgid "Show terms in the room preview from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:1098
+#: includes/class-redux.php:1117
 msgid "Room terms section"
 msgstr ""
 
-#: includes/class-redux.php:1099
+#: includes/class-redux.php:1118
 msgid "Show term icons on the room page from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:1123
+#: includes/class-redux.php:1142
 msgid "Archive excerpt term icons"
 msgstr ""
 
-#: includes/class-redux.php:1124
+#: includes/class-redux.php:1143
 msgid "Show terms on the services archive from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:1151
+#: includes/class-redux.php:1170
 msgid "None"
 msgstr ""
 
-#: includes/class-redux.php:1176
+#: includes/class-redux.php:1195
 msgid "Add terms from selected taxonomy to the search form filters."
 msgstr ""
 
-#: includes/class-settings.php:198
+#: includes/class-settings.php:193
 msgid "No sidebars"
 msgstr ""
 
-#: includes/class-settings.php:199
+#: includes/class-settings.php:194
 msgid "No sidebars (wide)"
 msgstr ""
 
-#: includes/class-settings.php:200
+#: includes/class-settings.php:195
 msgid "Left sidebar"
 msgstr ""
 
-#: includes/class-settings.php:201
+#: includes/class-settings.php:196
 msgid "Right sidebar"
 msgstr ""
 
-#: includes/class-settings.php:202
+#: includes/class-settings.php:197
 msgid "Front page"
 msgstr ""
 
-#: includes/class-settings.php:525
+#: includes/class-settings.php:520
 msgid "Left Sidebar"
 msgstr ""
 
-#: includes/class-settings.php:529
+#: includes/class-settings.php:524
 msgid "Right Sidebar"
 msgstr ""
 
-#: includes/class-settings.php:532
+#: includes/class-settings.php:527
 msgid "Before-Header panel"
 msgstr ""
 
-#: includes/class-settings.php:535
+#: includes/class-settings.php:530
 msgid "Header panel"
 msgstr ""
 
-#: includes/class-settings.php:538
+#: includes/class-settings.php:533
 msgid "Before-Footer panel"
 msgstr ""
 
-#: includes/class-settings.php:541
+#: includes/class-settings.php:536
 msgid "Footer panel"
 msgstr ""
 
-#: includes/class-settings.php:544
+#: includes/class-settings.php:539
 msgid "Footer left panel"
 msgstr ""
 
-#: includes/class-settings.php:547
+#: includes/class-settings.php:542
 msgid "Footer middle left panel"
 msgstr ""
 
-#: includes/class-settings.php:550
+#: includes/class-settings.php:545
 msgid "Footer middle right panel"
 msgstr ""
 
-#: includes/class-settings.php:553
+#: includes/class-settings.php:548
 msgid "Footer right panel"
 msgstr ""
 
-#: includes/class-settings.php:559
+#: includes/class-settings.php:554
 msgid "Site brand name"
 msgstr ""
 
-#: includes/class-settings.php:565
+#: includes/class-settings.php:560
 msgid "Header menu"
 msgstr ""
 
-#: includes/class-settings.php:573
+#: includes/class-settings.php:568
 msgid "Header second menu"
 msgstr ""
 
-#: includes/class-settings.php:579
+#: includes/class-settings.php:574
 msgid "Header page title"
 msgstr ""
 
-#: includes/class-settings.php:585
+#: includes/class-settings.php:580
 msgid "Header frontpage title"
 msgstr ""
 
-#: includes/class-settings.php:593
+#: includes/class-settings.php:588
 msgid "Header page subtitle"
 msgstr ""
 
-#: includes/class-settings.php:600
+#: includes/class-settings.php:595
 msgid "Header breadcrumbs"
 msgstr ""
 
-#: includes/class-settings.php:606 includes/class-settings.php:1251
+#: includes/class-settings.php:601 includes/class-settings.php:1246
 msgid "H1"
 msgstr ""
 
-#: includes/class-settings.php:613 includes/class-settings.php:1266
+#: includes/class-settings.php:608 includes/class-settings.php:1261
 msgid "H2"
 msgstr ""
 
-#: includes/class-settings.php:622 includes/class-settings.php:1280
+#: includes/class-settings.php:617 includes/class-settings.php:1275
 msgid "H3"
 msgstr ""
 
-#: includes/class-settings.php:629 includes/class-settings.php:1296
+#: includes/class-settings.php:624 includes/class-settings.php:1292
 msgid "H4"
 msgstr ""
 
-#: includes/class-settings.php:637 includes/class-settings.php:1311
+#: includes/class-settings.php:632 includes/class-settings.php:1308
 msgid "H5"
 msgstr ""
 
-#: includes/class-settings.php:643 includes/class-settings.php:1324
+#: includes/class-settings.php:638 includes/class-settings.php:1322
 msgid "H6"
 msgstr ""
 
-#: includes/class-settings.php:649
+#: includes/class-settings.php:644
 msgid "Feature title"
 msgstr ""
 
-#: includes/class-settings.php:655 includes/class-settings.php:1399
+#: includes/class-settings.php:650 includes/class-settings.php:1398
 msgid "Buttons"
 msgstr ""
 
-#: includes/class-settings.php:666 includes/class-settings.php:1101
+#: includes/class-settings.php:661 includes/class-settings.php:1096
 msgid "Main text"
 msgstr ""
 
-#: includes/class-settings.php:678
+#: includes/class-settings.php:673
 msgid "Main text blockquote"
 msgstr ""
 
-#: includes/class-settings.php:684
+#: includes/class-settings.php:679
 msgid "Post meta"
 msgstr ""
 
-#: includes/class-settings.php:690
+#: includes/class-settings.php:685
 msgid "Footer title"
 msgstr ""
 
-#: includes/class-settings.php:696 includes/class-settings.php:1629
+#: includes/class-settings.php:691 includes/class-settings.php:1628
 msgid "Footer text"
 msgstr ""
 
-#: includes/class-settings.php:702
+#: includes/class-settings.php:697
 msgid "Frontpage block title"
 msgstr ""
 
-#: includes/class-settings.php:710
+#: includes/class-settings.php:705
 msgid "Frontpage block subtitle"
 msgstr ""
 
-#: includes/class-settings.php:720
+#: includes/class-settings.php:715
 msgid "Frontpage block article title"
 msgstr ""
 
-#: includes/class-settings.php:728
+#: includes/class-settings.php:723
 msgid "Frontpage block label"
 msgstr ""
 
-#: includes/class-settings.php:734
+#: includes/class-settings.php:729
 msgid "Room page H1"
 msgstr ""
 
-#: includes/class-settings.php:740
+#: includes/class-settings.php:735
 msgid "Room page H2"
 msgstr ""
 
-#: includes/class-settings.php:747
+#: includes/class-settings.php:742
 msgid "Room page icon label"
 msgstr ""
 
-#: includes/class-settings.php:1076
+#: includes/class-settings.php:1071
 msgid "Color scheme"
 msgstr ""
 
-#: includes/class-settings.php:1077
+#: includes/class-settings.php:1072
 msgid "Color scheme."
 msgstr ""
 
-#: includes/class-settings.php:1080
+#: includes/class-settings.php:1075
 msgid "Links"
 msgstr ""
 
-#: includes/class-settings.php:1134
+#: includes/class-settings.php:1129
 msgid "Light text"
 msgstr ""
 
-#: includes/class-settings.php:1154
+#: includes/class-settings.php:1149
 msgid "Extra Light text"
 msgstr ""
 
-#: includes/class-settings.php:1164
+#: includes/class-settings.php:1159
 msgid "Yellow text"
 msgstr ""
 
-#: includes/class-settings.php:1212
+#: includes/class-settings.php:1207
 msgid "Widget title"
 msgstr ""
 
-#: includes/class-settings.php:1223
+#: includes/class-settings.php:1218
 msgid "Block title"
 msgstr ""
 
-#: includes/class-settings.php:1337
+#: includes/class-settings.php:1336
 msgid "Menu items"
 msgstr ""
 
-#: includes/class-settings.php:1350
+#: includes/class-settings.php:1349
 msgid "Menu current item"
 msgstr ""
 
-#: includes/class-settings.php:1378
+#: includes/class-settings.php:1377
 msgid "Current item"
 msgstr ""
 
-#: includes/class-settings.php:1388
+#: includes/class-settings.php:1387
 msgid "Icons"
 msgstr ""
 
-#: includes/class-settings.php:1435
+#: includes/class-settings.php:1434
 msgid "Alternative buttons"
 msgstr ""
 
-#: includes/class-settings.php:1464
+#: includes/class-settings.php:1463
 msgid "Grey buttons"
 msgstr ""
 
-#: includes/class-settings.php:1476
+#: includes/class-settings.php:1475
 msgid "Buttons text"
 msgstr ""
 
-#: includes/class-settings.php:1510
+#: includes/class-settings.php:1509
 msgid "Important text"
 msgstr ""
 
-#: includes/class-settings.php:1523
+#: includes/class-settings.php:1522
 msgid "Header background"
 msgstr ""
 
-#: includes/class-settings.php:1542
+#: includes/class-settings.php:1541
 msgid "Header text"
 msgstr ""
 
-#: includes/class-settings.php:1571
+#: includes/class-settings.php:1570
 msgid "Main background"
 msgstr ""
 
-#: includes/class-settings.php:1586
+#: includes/class-settings.php:1585
 msgid "Text color with Main background"
 msgstr ""
 
-#: includes/class-settings.php:1611
+#: includes/class-settings.php:1610
 msgid "Footer background"
 msgstr ""
 
-#: includes/class-settings.php:1620
+#: includes/class-settings.php:1619
 msgid "Footer titles"
 msgstr ""
 
-#: includes/class-settings.php:1646
+#: includes/class-settings.php:1645
 msgid "Search form: Background"
 msgstr ""
 
-#: includes/class-settings.php:1656
+#: includes/class-settings.php:1655
 msgid "Search form: Button"
 msgstr ""
 
-#: includes/class-settings.php:1665
+#: includes/class-settings.php:1664
 msgid "Search form: Button hover"
 msgstr ""
 
-#: includes/class-settings.php:1678
+#: includes/class-settings.php:1677
 msgid "Search form: Button text"
 msgstr ""
 
@@ -913,10 +878,6 @@ msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:403
 msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:528
-msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:529
@@ -1283,11 +1244,11 @@ msgstr ""
 msgid "Your reservation"
 msgstr ""
 
-#: includes/template-functions.php:1810 includes/template-functions.php:1962
+#: includes/template-functions.php:1810 includes/template-functions.php:1963
 msgid "Check In:"
 msgstr ""
 
-#: includes/template-functions.php:1813 includes/template-functions.php:1980
+#: includes/template-functions.php:1813 includes/template-functions.php:1981
 msgid "Check Out:"
 msgstr ""
 
@@ -1320,35 +1281,35 @@ msgstr ""
 msgid "Order #%1$s"
 msgstr ""
 
-#: includes/template-functions.php:2312
+#: includes/template-functions.php:2313
 msgid "Check availability"
 msgstr ""
 
-#: includes/template-functions.php:2473
+#: includes/template-functions.php:2474
 msgid "Room size:"
 msgstr ""
 
-#: includes/template-functions.php:2480
+#: includes/template-functions.php:2481
 msgid "Guests:"
 msgstr ""
 
-#: includes/template-functions.php:2488
+#: includes/template-functions.php:2489
 msgid "Beds:"
 msgstr ""
 
-#: includes/template-functions.php:2835
+#: includes/template-functions.php:2850
 msgid "Previous page"
 msgstr ""
 
-#: includes/template-functions.php:2836
+#: includes/template-functions.php:2851
 msgid "Next page"
 msgstr ""
 
-#: includes/template-functions.php:2837
+#: includes/template-functions.php:2852
 msgid "Page"
 msgstr ""
 
-#: includes/template-functions.php:2910
+#: includes/template-functions.php:2925
 msgid "There is no excerpt because this is a protected post."
 msgstr ""
 

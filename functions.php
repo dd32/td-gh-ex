@@ -14,15 +14,30 @@
  * System defines.
  */
 define( 'BAHOTEL_L', __FILE__ );
-define( 'BAHOTEL_L_VERSION', '1.0.17' );
+define( 'BAHOTEL_L_VERSION', '1.0.2' );
 define( 'BAHOTEL_L_NAME', 'BA Hotel light' );
 define( 'BAHOTEL_L_URI', get_template_directory_uri() );
 define( 'BAHOTEL_L_STYLESHEET_URI', get_stylesheet_directory_uri() );
 define( 'BAHOTEL_L_DIR', untrailingslashit( dirname( BAHOTEL_L ) ) );
 define( 'BAHOTEL_L_TEXTDOMAIN', 'ba-hotel-light' );
-define( 'BAHOTEL_L_AUTHOR', 'Booking Algorithms' );
+define( 'BAHOTEL_L_AUTHOR', 'Booking Algorythms' );
 define( 'BAHOTEL_L_AUTHOR_URL', 'https://ba-booking.com/' );
 define( 'BAHOTEL_L_DEV', true );
+
+//////////////////////////////////////
+
+add_action( 'init', 'bahotel_l_setup_env_vars', 1);
+function bahotel_l_setup_env_vars(){
+    
+  $batheme_current = get_option('batheme_current');
+  $batheme_version = get_option('batheme_version');
+
+  if ( $batheme_current != 'bahotel_l' || version_compare( $batheme_version, BAHOTEL_L_VERSION, '!=' ) ){
+    update_option('batheme_current', 'bahotel_l');
+    update_option('batheme_version', BAHOTEL_L_VERSION);
+  }
+
+}
 
 //////////////////////////////////////
 
@@ -37,37 +52,33 @@ function bahotel_l_setup(){
 	add_theme_support( 'title-tag' );
     
     /* Add post formats support */
-	add_theme_support( 'post-formats', [ 'audio', 'gallery', 'video' ] );
+	add_theme_support( 'post-formats', array( 'audio', 'gallery', 'video' ) );
     
     // Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	/* Support for HTML5 */
-	add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
-
-    load_theme_textdomain( 'ba-hotel-light' );
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 	/* Automatic Feed Links */
 	add_theme_support( 'automatic-feed-links' );
     
     add_theme_support( 'yoast-seo-breadcrumbs' );
-
-    add_theme_support( 'ba-theme-core', [ 'current' => 'bahotel_l', 'version' => BAHOTEL_L_VERSION ] );
     
     add_theme_support(
 		'custom-logo', apply_filters(
-			'bahotel_l_custom_logo_args', [
+			'bahotel_l_custom_logo_args', array(
 				'height'      => 80,
                 'width'       => 200,
                 'flex-height' => true,
                 'flex-width'  => true,
-                'header-text' => [ 'site-title', 'site-description' ],
-			]
+                'header-text' => array( 'site-title', 'site-description' ),
+			)
 		)
 	);
     
     /* Add image sizes */
-	$image_sizes = Bahotel_L_Settings::$image_sizes;
+	$image_sizes = BAH_L_Settings::$image_sizes;
 	if ( !empty( $image_sizes ) ) {
 		foreach ( $image_sizes as $id => $size ) {
 			add_image_size( $id, $size['width'], $size['height'], $size['crop'] );
@@ -94,7 +105,7 @@ add_action( 'wp_enqueue_scripts', 'bahotel_l_enqueue_scripts', 30, 1 );
 function bahotel_l_enqueue_scripts(){
     
         // Output Google fonts if set.
-        $google_fonts = Bahotel_L_Settings::google_font_styles();
+        $google_fonts = BAH_L_Settings::google_font_styles();
         if ( $google_fonts ) {
             wp_enqueue_style( 'bahotel-l-gfonts', esc_url( $google_fonts ), false );
         }
@@ -107,10 +118,10 @@ function bahotel_l_enqueue_scripts(){
         
         if (BAHOTEL_L_DEV){
            //included into theme style.min.css
-           $styles = [
+           $styles = array(
 			'normalize' => 'normalize.css', 
             'bootstrap' => 'bootstrap.min.css',
-		   ];
+		   );
 
 		   foreach ( $styles as $id => $style ) {
 			 wp_enqueue_style( 'bahotel-l-' . $id, BAHOTEL_L_URI . '/css/' . $style, false, BAHOTEL_L_VERSION );
@@ -125,7 +136,7 @@ function bahotel_l_enqueue_scripts(){
         }
         
         //// custom styles
-        wp_add_inline_style( 'bahotel-l-main', Bahotel_L_Settings::inline_styles() );
+        wp_add_inline_style( 'bahotel-l-main', BAH_L_Settings::inline_styles() );
     
         wp_enqueue_style( 'bahotel-l-slick' , BAHOTEL_L_URI . '/js/slick/slick.css', false, BAHOTEL_L_VERSION );
         
@@ -198,7 +209,7 @@ add_action( 'widgets_init', 'bahotel_l_widgets_init', 10 );
 
 function bahotel_l_widgets_init(){
       
-     foreach (Bahotel_L_Settings::$sidebars as $id => $sidebar){
+     foreach (BAH_L_Settings::$sidebars as $id => $sidebar){
         
         $h_tag = $id == 'left' || $id == 'right' ? 'h3' : 'h2';
         
@@ -252,6 +263,7 @@ function bahotel_l_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
 	return $attr;
 }
+
 
 //////////////////////////////////////////////////
 

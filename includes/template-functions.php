@@ -18,21 +18,21 @@ function bahotel_l_get_header_image_thumbnail_id() {
         
          $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
          
-    elseif ( ( (is_single() && 'post' == $post->post_type) || is_home() )  && !apply_filters( 'bahotel_l_option', '', 'blog_header_default' ) && isset(Bahotel_L_Settings::$settings['blog_header_image']['id'])):
+    elseif ( ( (is_single() && 'post' == $post->post_type) || is_home() )  && !apply_filters( 'bahotel_l_option', '', 'blog_header_default' ) && isset(BAH_L_Settings::$settings['blog_header_image']['id'])):
     
-         $thumbnail_id = Bahotel_L_Settings::$settings['blog_header_image']['id'];
+         $thumbnail_id = BAH_L_Settings::$settings['blog_header_image']['id'];
     
-    elseif (is_post_type_archive('event') && !apply_filters( 'bahotel_l_option', '', 'events_header_default' ) && isset(Bahotel_L_Settings::$settings['events_header_image']['id'])):
+    elseif (is_post_type_archive('event') && !apply_filters( 'bahotel_l_option', '', 'events_header_default' ) && isset(BAH_L_Settings::$settings['events_header_image']['id'])):
          
-         $thumbnail_id = Bahotel_L_Settings::$settings['events_header_image']['id'];
+         $thumbnail_id = BAH_L_Settings::$settings['events_header_image']['id'];
     
-    elseif (is_post_type_archive('service') && !apply_filters( 'bahotel_l_option', '', 'services_header_default' ) && isset(Bahotel_L_Settings::$settings['services_header_image']['id'])):
+    elseif (is_post_type_archive('service') && !apply_filters( 'bahotel_l_option', '', 'services_header_default' ) && isset(BAH_L_Settings::$settings['services_header_image']['id'])):
          
-         $thumbnail_id = Bahotel_L_Settings::$settings['services_header_image']['id'];
+         $thumbnail_id = BAH_L_Settings::$settings['services_header_image']['id'];
     
-    elseif (is_archive() && !apply_filters( 'bahotel_l_option', '', 'archive_header_default' ) && isset(Bahotel_L_Settings::$settings['archive_header_image']['id'])):
+    elseif (is_archive() && !apply_filters( 'bahotel_l_option', '', 'archive_header_default' ) && isset(BAH_L_Settings::$settings['archive_header_image']['id'])):
          
-         $thumbnail_id = Bahotel_L_Settings::$settings['archive_header_image']['id'];
+         $thumbnail_id = BAH_L_Settings::$settings['archive_header_image']['id'];
     
     endif;
         
@@ -54,7 +54,7 @@ if ( ! function_exists( 'bahotel_l_background_spinner' ) ) :
      */
      function bahotel_l_background_spinner($spinner_url) {
         
-        return Bahotel_L_Settings::$default_spinner;
+        return BAH_L_Settings::$default_spinner;
         
      }
 
@@ -397,7 +397,7 @@ if ( ! function_exists( 'bahotel_l_filter_block_classes' ) ) :
 		*/
 		function bahotel_l_filter_block_classes( $output = '', $args = array() ) {
 		    
-            if (Bahotel_L_Settings::$layout_current == 'frontpage' || Bahotel_L_Settings::$layout_current == 'no-sidebars-wide') {
+            if (BAH_L_Settings::$layout_current == 'frontpage' || BAH_L_Settings::$layout_current == 'no-sidebars-wide') { 
                 $output .= ' container';
             }
             
@@ -428,7 +428,7 @@ if ( ! function_exists( 'bahotel_l_terms_block' ) ) :
                'hide_empty' => false,
             ) );
 			
-			if ( ! empty( $terms ) && !is_wp_error($terms) ) {
+			if ( ! empty( $terms ) ) {
 			    
                 $results = array();
 				
@@ -447,7 +447,7 @@ if ( ! function_exists( 'bahotel_l_terms_block' ) ) :
 									
 							$term_output = '
 								<div class="bahotel_l_term_img">
-									<img src="'.esc_url($src_arr[0]).'">
+									<img src="'.esc_attr($src_arr[0]).'">
 										';
 						 } elseif ( isset( $term_meta['lnr_class'] ) && $term_meta['lnr_class'][0] ) {	
 									// Linear icons.
@@ -569,6 +569,35 @@ if ( ! function_exists( 'bahotel_l_filter_news_block_item' ) ) :
             
 		}
 
+endif;
+
+/////////////////////////////
+
+add_action( 'comment_post', 'bahotel_l_comment_meta_save', 10, 3 );
+if ( ! function_exists( 'bahotel_l_comment_meta_save' ) ) :
+/**
+ * Save comment meta
+ * 
+ * @param int $comment_id
+ * @param int|string $comment_approved
+ * @param array $commentdata
+ * @return
+ */
+   function bahotel_l_comment_meta_save($comment_id, $comment_approved, $commentdata) {
+    
+       if (isset($_POST['from_city']) && $_POST['from_city']){ // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+        
+           $city = sanitize_text_field(wp_unslash($_POST['from_city']));
+           
+           if ($city){
+              update_comment_meta( $comment_id, 'from_city', $city );
+           }
+        
+       }
+       
+       return;
+   }
+        
 endif;
 
 //////////////////////////////
@@ -738,13 +767,13 @@ if ( ! function_exists( 'bahotel_l_footer_before' ) ) :
  */
    function bahotel_l_footer_before() {
     
-        $thumbnail_id = isset(Bahotel_L_Settings::$settings['footer_logo']['id']) ? absint(Bahotel_L_Settings::$settings['footer_logo']['id']) : 0;
+        $thumbnail_id = isset(BAH_L_Settings::$settings['footer_logo']['id']) ? absint(BAH_L_Settings::$settings['footer_logo']['id']) : 0;
         
         if ($thumbnail_id){
             
             $img_full_src = wp_get_attachment_image_src( $thumbnail_id, 'full' );
             
-            echo '<div class="footer-logo-image"><img src="' . esc_url( $img_full_src[0] ) . '"></div>';
+            echo '<div class="footer-logo-image"><img src="' . esc_attr( $img_full_src[0] ) . '"></div>';
             
         }
         
@@ -768,9 +797,9 @@ if ( ! function_exists( 'bahotel_l_get_panel' ) ):
      */
     function bahotel_l_get_panel( $sidebar_name ) {
         
-        if (isset(Bahotel_L_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
+        if (isset(BAH_L_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
             
-            $sidebar_width = isset(Bahotel_L_Settings::$layout_vars['width'][$sidebar_name]) ? Bahotel_L_Settings::$layout_vars['width'][$sidebar_name] : 12;
+            $sidebar_width = isset(BAH_L_Settings::$layout_vars['width'][$sidebar_name]) ? BAH_L_Settings::$layout_vars['width'][$sidebar_name] : 12;
             
             if ($sidebar_width){
                 
@@ -784,9 +813,9 @@ if ( ! function_exists( 'bahotel_l_get_panel' ) ):
                     
                     $sidebar_width_class =  'col-12 col-sm-6 col-md-4 col-lg-'.$sidebar_width;
                     
-                    if (isset(Bahotel_L_Settings::$layout_vars['offset'][$sidebar_name]) && Bahotel_L_Settings::$layout_vars['offset'][$sidebar_name]){
+                    if (isset(BAH_L_Settings::$layout_vars['offset'][$sidebar_name]) && BAH_L_Settings::$layout_vars['offset'][$sidebar_name]){
                         
-                        $sidebar_width_class .=  ' offset-lg-'.Bahotel_L_Settings::$layout_vars['offset'][$sidebar_name];
+                        $sidebar_width_class .=  ' offset-lg-'.BAH_L_Settings::$layout_vars['offset'][$sidebar_name];
                         
                     }
                     
@@ -845,11 +874,11 @@ if ( ! function_exists( 'bahotel_l_style_content' ) ):
         
         if ($region == 'content'){
             
-           if (Bahotel_L_Settings::$layout_current == 'frontpage' || Bahotel_L_Settings::$layout_current == 'no-sidebars-wide') {
+           if (BAH_L_Settings::$layout_current == 'frontpage' || BAH_L_Settings::$layout_current == 'no-sidebars-wide') {
             $class = 'container-fluid';
             }
             
-            $class .= ' '.Bahotel_L_Settings::$layout_current;
+            $class .= ' '.BAH_L_Settings::$layout_current;
             
         }
         
@@ -873,7 +902,7 @@ if ( ! function_exists( 'bahotel_l_column_width_content' ) ):
      */
     function bahotel_l_column_width_content( $class, $region ) {
         
-        if ($region == 'content' && (Bahotel_L_Settings::$layout_current == 'frontpage' || Bahotel_L_Settings::$layout_current == 'no-sidebars-wide')){
+        if ($region == 'content' && (BAH_L_Settings::$layout_current == 'frontpage' || BAH_L_Settings::$layout_current == 'no-sidebars-wide')){
             
             $class = '';
             
@@ -895,17 +924,13 @@ if ( ! function_exists( 'bahotel_l_header_navbar_after' ) ):
      * @return
      */
     function bahotel_l_header_navbar_after() {
-
-        if ( !class_exists('BABE_Settings') ){
-            return;
-        }
         
         $title = is_user_logged_in() ? '<span class="eleganticon icon_lock-open_alt"></span>'.esc_html__( 'My account', 'ba-hotel-light' ) : '<span class="eleganticon icon_lock_alt"></span>'.esc_html__( 'Login', 'ba-hotel-light' );
-        $url = BABE_Settings::get_my_account_page_url();
+        $url = class_exists('BABE_Settings') ? BABE_Settings::get_my_account_page_url() : '#';
         
         /// $title is already escaped
         echo '<div class="header-login">';
-        echo '  <a href="' . esc_url( $url ) . '" tabindex="0">' . $title . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '  <a href="' . esc_url( $url ) . '">' . $title . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '</div>';
         
         return;
@@ -913,24 +938,22 @@ if ( ! function_exists( 'bahotel_l_header_navbar_after' ) ):
 
 endif;
 
-///////////////////////////////
+//////////////////////////////
+add_action('wp_head', 'bahotel_l_remove_auto_p', 10);
 
-add_filter( 'wp_nav_menu_items', 'bahotel_l_wp_nav_menu_primary_items', 10, 2 );
-
-if ( ! function_exists( 'bahotel_l_wp_nav_menu_primary_items' ) ):
+if ( ! function_exists( 'bahotel_l_remove_auto_p' ) ):
     /**
-     * Filters the HTML list content for a specific navigation menu.
-     *
-     * @param string   $items The HTML list content for the menu items.
-     * @param stdClass $args  An object containing wp_nav_menu() arguments.
+     * Remove auto p from front page.
+     * 
+     * @return
      */
-    function bahotel_l_wp_nav_menu_primary_items($items, $args) {
-
-        if ( $args->theme_location == 'primary' ){
-            $items .= '<div class="mobile-menu-close text-center"><a class="mobile-menu-close-link" href="#" tabindex="0"><span class="eleganticon icon_close_alt2"></span></a></div>';
+    function bahotel_l_remove_auto_p() {
+        
+        if ( is_front_page() && is_main_query() ) {
+           remove_filter( 'the_content', 'wpautop' );
         }
-
-        return $items;
+        
+        return;
     }
 
 endif;
@@ -1013,7 +1036,7 @@ if ( ! function_exists( 'bahotel_l_comment_callback' ) ) :
 
             <li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
             <div class="comment-body">
-                <?php esc_html_e( 'Pingback:', 'ba-hotel-light' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'ba-hotel-light' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php esc_attr_e( 'Pingback:', 'ba-hotel-light' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'ba-hotel-light' ), '<span class="edit-link">', '</span>' ); ?>
             </div>
 
         <?php else : ?>
@@ -1045,7 +1068,7 @@ if ( ! function_exists( 'bahotel_l_comment_callback' ) ) :
                                </span>
                             </div>
                             <?php if ( '0' == $comment->comment_approved ) : ?>
-                            <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'ba-hotel-light' ); ?></p>
+                            <p class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'ba-hotel-light' ); ?></p>
                             <?php endif; ?>
                             <?php 
                             remove_filter( 'get_comment_text', array( 'BABE_Rating', 'get_comment_text'), 10, 3);                            
@@ -1106,22 +1129,22 @@ endif;
                 $rel = $adjacent == 'previous' ? 'prev' : 'next';
                 
                 $output = '<div class="nav-'.$adjacent.'">
-                <a href="' . esc_url(get_permalink( $post )) . '" rel="'.$rel.'"><div class="nav-prevnext-wrapper nav-'.$rel.'-wrapper">';
+                <a href="' . get_permalink( $post ) . '" rel="'.$rel.'"><div class="nav-prevnext-wrapper nav-'.$rel.'-wrapper">';
                 
                 if ($adjacent == 'previous'){
                     
                    $output .= '<div class="nav-prevnext-chevron"><span class="lnr lnr-chevron-left"></span></div>
                   <div class="nav-prevnext-text">
-                    <div class="nav-prevnext-title">'.esc_html($title).'</div>
-                    <div class="nav-prevnext-label">'.esc_html__( 'Previous post', 'ba-hotel-light' ).'</div>
+                    <div class="nav-prevnext-title">'.$title.'</div>
+                    <div class="nav-prevnext-label">'.__( 'Previous post', 'ba-hotel-light' ).'</div>
                   </div>'; 
                     
                 } else {
                     
                     $output .= '
                   <div class="nav-prevnext-text">
-                    <div class="nav-prevnext-title">'.esc_html($title).'</div>
-                    <div class="nav-prevnext-label">'.esc_html__( 'Next post', 'ba-hotel-light' ).'</div>
+                    <div class="nav-prevnext-title">'.$title.'</div>
+                    <div class="nav-prevnext-label">'.__( 'Next post', 'ba-hotel-light' ).'</div>
                   </div>
                   <div class="nav-prevnext-chevron"><span class="lnr lnr-chevron-right"></span></div>';
                     
@@ -1170,7 +1193,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 $output = apply_filters( 'bahotel_l_room_entry_header', $output, $post_type);
 			}
             
-			echo wp_kses($output, Bahotel_L_Settings::$wp_allowedposttags);
+			echo wp_kses($output, BAH_L_Settings::$wp_allowedposttags);
 			
 			return;
 		}
@@ -1198,7 +1221,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 			
 			$room_info .= '
 				<div class="room_page_slideshow">
-					' . wp_kses($slides, Bahotel_L_Settings::$wp_allowedposttags) . '
+					' . $slides . '
 				</div>
 			';
             
@@ -1208,7 +1231,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             $room_info .= '
             <div class="room_info_group">
                <div class="room_info_group_title">
-                <h1 class="entry-title room_title"><span class="entry-title-border background-yellow"></span> '.esc_html(get_the_title()).'</h1>';
+                <h1 class="entry-title room_title"><span class="entry-title-border background-yellow"></span> '.get_the_title().'</h1>';
               
             /////////////////////////////////    
 			
@@ -1219,7 +1242,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               ';
             
             if (apply_filters( 'bahotel_l_option', '', 'room_rating' )){  
-                $room_info .= wp_kses(BABE_Rating::post_stars_rendering($post->ID), Bahotel_L_Settings::$wp_allowedposttags);
+                $room_info .= BABE_Rating::post_stars_rendering($post->ID);
             }
               
             $room_info .= '
@@ -1299,7 +1322,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				$room_info .= '
 					<div class="room_info_size">
 						'.apply_filters('bahotel_l_icon', '', 'size').'
-                        <label>'.wp_kses($room_size, Bahotel_L_Settings::$wp_allowedposttags).'</label>
+                        <label>'.$room_size.'</label>
 					</div>
 				';
 			  }
@@ -1314,7 +1337,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                
             $prices = BABE_Post_types::get_post_price_from($post_id);   
             
-            $price_old = $prices['discount_price_from'] < $prices['price_from'] ? '<span class="room_info_price_old">' . wp_kses_post(BABE_Currency::get_currency_price( $prices['price_from'] )) . '</span>' : '';
+            $price_old = $prices['discount_price_from'] < $prices['price_from'] ? '<span class="room_info_price_old">' . BABE_Currency::get_currency_price( $prices['price_from'] ) . '</span>' : '';
 				
 				$discount = $prices['discount'] ? '<div class="room_info_price_discount">-' . $prices['discount'] . '%</div>' : '';
 				
@@ -1323,13 +1346,13 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                                     '.apply_filters('bahotel_l_icon', '', 'price').'
 									<label class="room_info_before_price">' . esc_html__( 'From', 'ba-hotel-light' ) . '</label>
 									' . $price_old . '
-									<span class="room_info_price_new">' . wp_kses_post(BABE_Currency::get_currency_price( $prices['discount_price_from'] ) ). '</span>
+									<span class="room_info_price_new">' . BABE_Currency::get_currency_price( $prices['discount_price_from'] ) . '</span>
 								</div>
                                 ' : '
                                 <div class="room_info_price">
 									<label class="room_info_before_price">' . esc_html__( 'From', 'ba-hotel-light' ) . '</label>
 									' . $price_old . '
-									<span class="room_info_price_new">' . wp_kses_post(BABE_Currency::get_currency_price( $prices['discount_price_from'] )) . '</span><span class="room_info_after_price">' . esc_html__( '/Night', 'ba-hotel-light' ) . '</span>
+									<span class="room_info_price_new">' . BABE_Currency::get_currency_price( $prices['discount_price_from'] ) . '</span><span class="room_info_after_price">' . esc_html__( '/Night', 'ba-hotel-light' ) . '</span>
 								</div>
                                 ';                    
 			
@@ -1549,7 +1572,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             $output .= '
 				<div class="room_page_room_content">
 					<div class="room_page_block_inner">
-							' . wp_kses( $content, Bahotel_L_Settings::$wp_allowedposttags) . '
+							' . $content . '
 					</div>
 				</div>
 			';
@@ -1579,10 +1602,10 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 $step_title = isset( $rules_cat['category_meta']['categories_step_title'] ) && ! empty( $rules_cat['category_meta']['categories_step_title'] ) ? $rules_cat['category_meta']['categories_step_title'] : __( 'Details', 'ba-hotel-light' );
                 
                 $output .= '
-				<h2 class="room_sub_title">'. esc_html($step_title) .'</h2>
+				<h2 class="room_sub_title">'.$step_title.'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
-						' . wp_kses( $block_steps, Bahotel_L_Settings::$wp_allowedposttags) . '
+						' . $block_steps . '
 					</div>
 			    ';
                 
@@ -1595,10 +1618,10 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 $faq_title = isset( $rules_cat['category_meta']['categories_faq_title'] ) && ! empty( $rules_cat['category_meta']['categories_faq_title'] ) ? $rules_cat['category_meta']['categories_faq_title'] : __( 'Questions & Answers', 'ba-hotel-light' );
                 
                 $output .= '
-				<h2 class="room_sub_title">'.esc_html($faq_title).'</h2>
+				<h2 class="room_sub_title">'.$faq_title.'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
-						' . wp_kses( $block_faq, Bahotel_L_Settings::$wp_allowedposttags) . '
+						' . $block_faq . '
 					</div>
 			';
                 
@@ -1609,7 +1632,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				<h2 class="room_sub_title">'.__( 'Book this room', 'ba-hotel-light' ).'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
                     <div class="room_page_block_inner">
-						' . wp_kses( BABE_html::booking_form($post_id), Bahotel_L_Settings::$wp_allowedposttags) . '
+						' . BABE_html::booking_form($post_id) . '
 					</div>
 			';
             
@@ -1827,7 +1850,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
           
                $message .= '
             <div class="bahotel_l_message_order bahotel_l_message_order_status_'.$args['order_status'].'">
-               ' . wp_kses( BABE_Settings::$settings['message_'.$args['order_status']], Bahotel_L_Settings::$wp_allowedposttags) . '
+               ' . BABE_Settings::$settings['message_'.$args['order_status']] . '
             </div>';
             
             }
@@ -1835,7 +1858,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             if ($args['order_status'] == 'payment_expected'){
                
                $message .= '<div class="babe_order_confirm">
-              <a href="' . esc_url( BABE_Order::get_order_payment_page($order_id) ) . '" class="btn button babe_button_order_to_pay">'.esc_html__('Pay now', 'ba-hotel-light').' <span class="lnr lnr-arrow-right"></span></a>
+              <a href="' . esc_url( BABE_Order::get_order_payment_page($order_id) ) . '" class="btn button babe_button_order_to_pay">'.__('Pay now', 'ba-hotel-light').' <span class="lnr lnr-arrow-right"></span></a>
             </div>';
             }
             
@@ -1862,11 +1885,12 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               <h3 class="checkout_order_items_title">'.esc_html__('Your reservation', 'ba-hotel-light').'</h3>
               <div class="checkout_sub_title_bottom"><div class="checkout_sub_title_bottom_line"></div></div>
               <h2>' . wp_kses_post( sprintf(
-                 /* translators: %1$s: Order number */
+                 /* translators: %s: Order number */
                  __('Order #%1$s', 'ba-hotel-light'),
                  $args['order_num']
-                   ) . '</h2>'.BABE_html::order_items($order_id).bahotel_l_order_customer_details($order_id)
-                ).'
+                 ) . '</h2>
+              '.BABE_html::order_items($order_id).'
+              '.bahotel_l_order_customer_details($order_id) ).'
               </div>
             </div>
             <div class="col-md-12 col-lg-8 order-first order-lg-last">
@@ -1906,8 +1930,8 @@ if ( class_exists( 'BABE_Post_types' ) ) {
         foreach($order_meta as $field_name => $field_content){
             $output .= '
             <div class="order_customer_details_row">
-              <div class="order_customer_details_label">'.esc_html(BABE_html::checkout_field_label($field_name)).':</div>
-              <div class="order_customer_details_content">'.esc_html($field_content).'</div>
+              <div class="order_customer_details_label">'.BABE_html::checkout_field_label($field_name).':</div>
+              <div class="order_customer_details_content">'.$field_content.'</div>
             </div>
             ';
         }
@@ -1979,7 +2003,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 			
 			$output .= '
 				<div class="button-mobile-block">
-					<a href="' . esc_url($url) . '" class="btn button' . esc_attr($classes) . '">' . esc_html($title) . '</a>
+					<a href="' . $url . '" class="btn button' . $classes . '">' . $title . '</a>
 				</div>
 			';
 			
@@ -2024,7 +2048,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 						
 						$results = array();
 						
-						$taxonomy_title = $with_title ? ( $style != 'text' ? '<h3 class="bahotel_l_terms_block_title">' . $taxonomy_terms['name'] . '</h3>' : '<label class="bahotel_l_terms_block_title">' . esc_html($taxonomy_terms['name']) . ':</label>' ) : '';
+						$taxonomy_title = $with_title ? ( $style != 'text' ? '<h3 class="bahotel_l_terms_block_title">' . $taxonomy_terms['name'] . '</h3>' : '<label class="bahotel_l_terms_block_title">' . $taxonomy_terms['name'] . ':</label>' ) : '';
 						
 						foreach( $taxonomy_terms['terms'] as $term ) {
 							
@@ -2043,7 +2067,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 									
 									$term_output = '
 										<div class="bahotel_l_term_img">
-											<img src="'.esc_url($src_arr[0]).'">
+											<img src="'.esc_attr($src_arr[0]).'">
 											';
 								} elseif ( isset( $term['lnr_class'] ) && $term['lnr_class'] ) {	
 									// Linear icons.
@@ -2145,7 +2169,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 								$src_arr = wp_get_attachment_image_src( $term['image_id'], 'full' );
 								
 								$term_output = '
-									<img src="'.esc_url($src_arr[0]).'">
+									<img src="'.esc_attr($src_arr[0]).'">
 									';
 							} elseif ( isset( $term['lnr_class'] ) && $term['lnr_class'] ) {	
 								// Linear icons.
@@ -2223,14 +2247,14 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 									
 				$output .= '
 					<div class="bahotel_l_preview_term_img">
-						<img src="' . esc_url($src_arr[0]) . '">
+						<img src="' . $src_arr[0] . '">
 					</div>
 					';
 			} elseif ( $lnr_class ) {
 				// Fontawesome.
 				$output .= '
 					<div class="bahotel_l_preview_term_icon">
-						<span class="' . esc_attr($lnr_class) . '"></span>
+						<span class="' . $lnr_class . '"></span>
 					</div>
 				';
 									
@@ -2238,7 +2262,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				// Fontawesome.
 				$output .= '
 					<div class="bahotel_l_preview_term_icon">
-						<span class="' . esc_attr($el_class) . '"></span>
+						<span class="' . $el_class . '"></span>
 					</div>
 				';
 									
@@ -2246,7 +2270,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				// Fontawesome.
 				$output .= '
 					<div class="bahotel_l_preview_term_icon">
-						<i class="' . esc_attr($fa_class) . '"></i>
+						<i class="' . $fa_class . '"></i>
 					</div>
 				';
 									
@@ -2291,7 +2315,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 
             }
             
-            echo wp_kses( bahotel_l_search_form_html(), Bahotel_L_Settings::$wp_allowedposttags);
+            echo wp_kses( bahotel_l_search_form_html(), BAH_L_Settings::$wp_allowedposttags);
             
         }
         
@@ -2514,7 +2538,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				
 			 $item_url = BABE_Functions::get_page_url_with_args($post['ID'], $_GET);
 				
-			 $image = '<a href="' . esc_url($item_url) . '">' . $image_html . '</a>';
+			 $image = '<a href="' . $item_url . '">' . $image_html . '</a>';
 				
 				
 			 $price_old = $post['discount_price_from'] < $post['price_from'] ? '<span class="room_info_price_old">' . BABE_Currency::get_currency_price( $post['price_from'] ) . '</span>' : '';
@@ -2534,13 +2558,13 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               $output .= '
                             <div class="search_res_text">
                                 <div class="search_res_title">
-                                   <h3><a href="' . esc_url($item_url) . '"><span class="entry-title-border background-yellow"></span> ' . esc_html($post['post_title']) . '</a></h3>';
+                                   <h3><a href="' . $item_url . '"><span class="entry-title-border background-yellow"></span> ' . $post['post_title'] . '</a></h3>';                    
               
               $output .= bahotel_l_room_info_tags($post['ID'], $info_tags).'
                               </div>
                               <div class="search_res_description">
                                     <div class="search_res_tags_line">
-										' . wp_kses( $icons, Bahotel_L_Settings::$wp_allowedposttags) . '
+										' . $icons . '
 									</div>
 							  </div>
 						   </div>
@@ -2602,7 +2626,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 		 */
 		function bahotel_l_body_custom_class( $classes ) {
 		  
-            $classes[] = Bahotel_L_Settings::$layout_current;
+            $classes[] = BAH_L_Settings::$layout_current;
             
             if (apply_filters( 'bahotel_l_option', '', 'header_transparent' )){
                 $classes[] = 'header_transparent';
@@ -2731,7 +2755,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 
                 $img_html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $img_html );
                 
-                $image_output = '<a href="'.esc_url($img_full_src[0]).'" itemprop="contentUrl" data-size="'.esc_attr($img_full_src[1]).'x'.esc_attr($img_full_src[2]).'">'.$img_html.'</a>';
+                $image_output = '<a href="'.esc_attr($img_full_src[0]).'" itemprop="contentUrl" data-size="'.esc_attr($img_full_src[1]).'x'.esc_attr($img_full_src[2]).'">'.$img_html.'</a>';
                 
                 $image_meta = wp_get_attachment_metadata( $id );
                 
@@ -2751,6 +2775,20 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 <{$icontag} class='gallery-icon {$orientation}' data-index='{$i}'>
                    $image_output
                 </{$icontag}>";
+                
+                /*
+                $output .= '
+                <div class="gallery-item-hover">
+                   <div class="gallery-item-hover-cross"><span class="eleganticon arrow_move fa-rotate-45"></span></div>';
+                
+                if ( trim($attachment->post_excerpt) ) {
+                    $output .= '
+                   <div class="gallery-item-hover-desc">' . wptexturize($attachment->post_excerpt) . '</div>';
+                }
+                
+                $output .= '
+                </div>';
+                */
                 
                 if ( $captiontag && trim($attachment->post_excerpt) ) {
                     $output .= "
@@ -2950,13 +2988,41 @@ if ( ! function_exists( 'bahotel_l_get_excerpt' ) ) :
         
         $excerpt = implode(' ', $words);
         
-        $output = $excerpt ? '<p>'.wp_kses_post($excerpt) .'</p>' : '';
+        $output = $excerpt ? '<p>'.$excerpt.'</p>' : '';
     
     }
     
     return $output;
     
   }
+
+endif;
+
+///////////////////////////////////////
+
+add_action( 'wp_insert_post', 'bahotel_l_updates_on_insert_post', 10, 3 );
+
+if ( ! function_exists( 'bahotel_l_updates_on_insert_post' ) ) :
+   /**
+    * Clear postmeta '_post_excerpt' when post is updated
+    * 
+    * @param int $post_id
+    * @param obj $post WP_Post
+    * @param boolean $update
+    *
+    * @return
+    */
+    function bahotel_l_updates_on_insert_post( $post_id, $post, $update ) {
+
+      remove_action( 'wp_insert_post', 'bahotel_l_updates_on_insert_post', 10, 3 );
+      
+      if ( metadata_exists( 'post', $post_id, '_post_excerpt' ) ){
+          delete_post_meta($post_id, '_post_excerpt');
+      }
+    
+      return;
+    
+    }
 
 endif;
 
@@ -2992,3 +3058,13 @@ if ( ! function_exists( 'bahotel_l_strip_tags_content' ) ) :
     }
     
 endif;
+
+////////////////////////////
+if ( ! function_exists( 'wp_body_open' ) ) {
+    /**
+     * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
+     */
+    function wp_body_open() {
+        do_action( 'wp_body_open' );
+    }
+}

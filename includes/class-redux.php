@@ -22,7 +22,7 @@ if ( ! class_exists( 'Redux' ) ) {
  * Theme administration.
  *
  */
-class Bahotel_L_Redux {
+class BAH_L_Redux {
 
 	//////////////////////////////////////////////////
 	/**
@@ -39,11 +39,14 @@ class Bahotel_L_Redux {
         
         add_action( 'admin_enqueue_scripts', array( __CLASS__, 'load_assets' ), 10, 1 );
         
-        add_filter( 'redux/options/' . Bahotel_L_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
+        add_filter( 'redux/options/' . BAH_L_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
         
 		// Save WP site options.
-		add_filter( 'redux/options/' . Bahotel_L_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
-
+		add_filter( 'redux/options/' . BAH_L_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
+        
+		// Look through Redux data for debug
+		// add_action( 'redux/options/' . BAH_L_Settings::$option_name . '/validate', array( __CLASS__, 'validate_redux' ), 10, 1 );
+		
 		// Cleaning, as it's embeded in theme
 		add_action( 'redux/extensions/before', array( __CLASS__, 'remove_dev_mode' ), 100, 1 );
         add_action( 'admin_menu', array( __CLASS__, 'remove_redux_page'), 99 );
@@ -85,7 +88,7 @@ class Bahotel_L_Redux {
         
 		if ( isset( $current->response['ba-hotel-light'] ) ) {
 			$message_html = '<span class="update-message">'.esc_html__('New update available!', 'ba-hotel-light').'</span>
-				<span class="update-actions">'.esc_html__('Version ', 'ba-hotel-light').$current->response['ba-hotel-light']['new_version'].': <a href="'.esc_url(admin_url( 'update-core.php' )).'">'.esc_html__('Update', 'ba-hotel-light').'</a></span>';
+				<span class="update-actions">'.esc_html__('Version ', 'ba-hotel-light').$current->response['ba-hotel-light']['new_version'].': <a href="'.admin_url( 'update-core.php' ).'">'.esc_html__('Update', 'ba-hotel-light').'</a></span>';                
 		}
 
 		return $message_html;
@@ -139,6 +142,8 @@ class Bahotel_L_Redux {
 			    update_option( 'blogdescription', $return_array['options']['blogdescription'] );
 			}
 		}
+        
+        update_option( '_bahotel_l_custom_css', '' );
 		
 		return $return_array;
 	}
@@ -161,7 +166,7 @@ class Bahotel_L_Redux {
 
 		$args = array(
 			// TYPICAL -> Change these values as you need/desire
-			'opt_name'             => Bahotel_L_Settings::$option_name,
+			'opt_name'             => BAH_L_Settings::$option_name,
 			// This is where your data is stored in the database and also becomes your global variable name.
 			'display_name'         => sprintf(
                 /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
@@ -284,7 +289,13 @@ class Bahotel_L_Redux {
 			'title' => esc_html__( 'Documentation', 'ba-hotel-light' ),
 		);
 		
-		Redux::setArgs( Bahotel_L_Settings::$option_name, $args );
+		// Panel Intro text -> before the form
+		//$args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'ba-hotel-light' );
+
+		// Add content after the form.
+		//$args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'ba-hotel-light' );
+		
+		Redux::setArgs( BAH_L_Settings::$option_name, $args );
 	}
 	
 	//////////////////////////////////////////////////
@@ -296,10 +307,10 @@ class Bahotel_L_Redux {
 	static function set_help() {
 		
 		$tabs = array();
-		Redux::setHelpTab( Bahotel_L_Settings::$option_name, $tabs );
+		Redux::setHelpTab( BAH_L_Settings::$option_name, $tabs );
 		
 		$content = '';
-		Redux::setHelpSidebar( Bahotel_L_Settings::$option_name, $content );
+		Redux::setHelpSidebar( BAH_L_Settings::$option_name, $content );
 	}
 	
 	//////////////////////////////////////////////////
@@ -318,7 +329,7 @@ class Bahotel_L_Redux {
 		 */
 		$flag_update_options = false;
 		
-		$options = Bahotel_L_Settings::$settings;
+		$options = BAH_L_Settings::$settings; 
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$logo_wp = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		$logo_wp_thumbnail = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );   
@@ -383,9 +394,10 @@ class Bahotel_L_Redux {
 			$flag_update_options = true;
 		}
 		
-		// Update theme options from WP data.
+		// Update option from WP data.
 		if ( $flag_update_options ) {
-			update_option( Bahotel_L_Settings::$option_name, $options );
+			
+			$result = update_option( BAH_L_Settings::$option_name, $options );
 		}
 		
 		$sections[] = array(
@@ -410,9 +422,9 @@ class Bahotel_L_Redux {
         
         $layout_options = array();
 		
-		foreach ( Bahotel_L_Settings::$layouts as $layout_id => $layout_title ) {
+		foreach ( BAH_L_Settings::$layouts as $layout_id => $layout_title ) {
 			
-			$preview = isset(Bahotel_L_Settings::$layout_previews[$layout_id]) ? Bahotel_L_Settings::$layout_previews[$layout_id] : '';
+			$preview = isset(BAH_L_Settings::$layout_previews[$layout_id]) ? BAH_L_Settings::$layout_previews[$layout_id] : '';
 			
 			$layout_options[ $layout_id ] = array(
 				'alt' => '',
@@ -575,7 +587,7 @@ class Bahotel_L_Redux {
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Show star rating in room details?', 'ba-hotel-light' ),
-                    'default'    => (isset(Bahotel_L_Settings::$settings['room_rating']) ? Bahotel_L_Settings::$settings['room_rating'] : ''),
+                    'default'    => (isset(BAH_L_Settings::$settings['room_rating']) ? BAH_L_Settings::$settings['room_rating'] : ''),
 				),
                 array(
 					'id'         => 'room_booknow_button',
@@ -844,28 +856,28 @@ class Bahotel_L_Redux {
 					'id'         => 'search_form_info',
 					'type'       => 'info',
 					'title'      => esc_html__( 'Setup fields in Search Form Builder', 'ba-hotel-light' ),
-					'desc'    => '<a href="'.esc_url(get_admin_url().'edit.php?post_type=to_book&page=search_form').'" target="_blank">'.__( 'Search Form Builder', 'ba-hotel-light' ).'</a>',
+					'desc'    => '<a href="'.get_admin_url().'edit.php?post_type=to_book&page=search_form" target="_blank">'.__( 'Search Form Builder', 'ba-hotel-light' ).'</a>',
 				),
                 array(
 					'id'         => 'search_form_bg',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Use background on search form', 'ba-hotel-light' ),
-                    'default'    => (isset(Bahotel_L_Settings::$settings['search_form_bg']) ? Bahotel_L_Settings::$settings['search_form_bg'] : ''),
+                    'default'    => (isset(BAH_L_Settings::$settings['search_form_bg']) ? BAH_L_Settings::$settings['search_form_bg'] : ''),
 				),
                 array(
 					'id'         => 'search_form_over_header',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Place search form over header image', 'ba-hotel-light' ),
-                    'default'    => (isset(Bahotel_L_Settings::$settings['search_form_over_header']) ? Bahotel_L_Settings::$settings['search_form_over_header'] : ''),
+                    'default'    => (isset(BAH_L_Settings::$settings['search_form_over_header']) ? BAH_L_Settings::$settings['search_form_over_header'] : ''),
 				),
                 array(
 					'id'         => 'search_form_collapsible',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Make header search form collapsible on mobile screens', 'ba-hotel-light' ),
-                    'default'    => (isset(Bahotel_L_Settings::$settings['search_form_collapsible']) ? Bahotel_L_Settings::$settings['search_form_collapsible'] : ''),
+                    'default'    => (isset(BAH_L_Settings::$settings['search_form_collapsible']) ? BAH_L_Settings::$settings['search_form_collapsible'] : ''),
 				),
             ),
 		);
@@ -891,21 +903,21 @@ class Bahotel_L_Redux {
                          'col1_s' => esc_html__( '1 column', 'ba-hotel-light' ),
                          'col2' => esc_html__( '2 columns', 'ba-hotel-light' ),
                     ),
-					'default'    => (isset(Bahotel_L_Settings::$settings['search_result_view']) ? Bahotel_L_Settings::$settings['search_result_view'] : 'col1_s'),
+					'default'    => (isset(BAH_L_Settings::$settings['search_result_view']) ? BAH_L_Settings::$settings['search_result_view'] : 'col1_s'),
 				),
                 array(
 					'id'         => 'search_result_sortby',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Show "sort by" filter?', 'ba-hotel-light' ),
-                    'default'    => (isset(Bahotel_L_Settings::$settings['search_result_sortby']) ? Bahotel_L_Settings::$settings['search_result_sortby'] : ''),
+                    'default'    => (isset(BAH_L_Settings::$settings['search_result_sortby']) ? BAH_L_Settings::$settings['search_result_sortby'] : ''),
 				),
                 array(
 					'id'         => 'search_result_rating',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Show star rating in room details?', 'ba-hotel-light' ),
-                    'default'    => (isset(Bahotel_L_Settings::$settings['search_result_rating']) ? Bahotel_L_Settings::$settings['search_result_rating'] : ''),
+                    'default'    => (isset(BAH_L_Settings::$settings['search_result_rating']) ? BAH_L_Settings::$settings['search_result_rating'] : ''),
 				),
             ),
 		);
@@ -1004,7 +1016,7 @@ class Bahotel_L_Redux {
         
 		foreach ( $sections as $section ) {
 			
-			Redux::setSection( Bahotel_L_Settings::$option_name, $section );
+			Redux::setSection( BAH_L_Settings::$option_name, $section );
 		}
 	}
 	
@@ -1045,6 +1057,16 @@ class Bahotel_L_Redux {
 				case 'search-form':
 					
 					$fields = $sections[ $section_key ]['fields'];
+				/*	
+                    array_unshift($fields, array(
+						'id'          => 'search_form_add_taxonomy',
+						'type'        => 'callback',
+						'full_width'  => false,
+						'title'       => esc_html__( 'Add taxonomy select field', 'ba-hotel-light' ),
+						'description' => esc_html__( 'Add terms from selected taxonomy to the search form filters.', 'ba-hotel-light' ),
+                        'callback'    => array( __CLASS__, 'callback_radio_taxonomies' ),
+					));
+                    */
 					
 					$fields[] = array(
 					  'id'         => 'search_form_exclude_post_types',
@@ -1312,5 +1334,5 @@ class Bahotel_L_Redux {
 /**
  * Calling to setup class.
  */
-Bahotel_L_Redux::init();
+BAH_L_Redux::init();
 

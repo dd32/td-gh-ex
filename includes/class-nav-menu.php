@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Nav menu walker.
  *
  */
-class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
+class BAH_L_Nav_Menu extends Walker_Nav_Menu {
 	
 	//////////////////////////////////////////////////
 	public static function init() {
@@ -142,11 +142,11 @@ class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 			
 		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
 			
-			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_html( $item->title );
+			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
 			
 		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
 			
-			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_html( $item->title ) . '</a>';
+			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 			
 		} else {
 
@@ -227,6 +227,7 @@ class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 			}
 
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
+
 			
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
@@ -237,8 +238,6 @@ class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}
-
-            //$attributes .= ' tabindex="0"';
 
 			$item_output = $args->before;
 
@@ -315,16 +314,16 @@ class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 
 		if ( $container ) {
 			
-			$fb_output = '<' . esc_attr($container);
+			$fb_output = '<' . $container;
 
 			if ( $container_id ) {
 				
-				$fb_output .= ' id="' . esc_attr($container_id) . '"';
+				$fb_output .= ' id="' . $container_id . '"';
 			}
 
 			if ( $container_class ) {
 				
-				$fb_output .= ' class="' . esc_attr($container_class) . '"';
+				$fb_output .= ' class="' . $container_class . '"';
 			}
 
 			$fb_output .= '>';
@@ -334,24 +333,24 @@ class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 
 		if ( $menu_id ) {
 			
-			$fb_output .= ' id="' . esc_attr($menu_id) . '"';
+			$fb_output .= ' id="' . $menu_id . '"';
 		}
 
 		if ( $menu_class ) {
 			
-			$fb_output .= ' class="' . esc_attr($menu_class) . '"';
+			$fb_output .= ' class="' . $menu_class . '"';
 		}
 
 		$fb_output .= '>';
-		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">' . esc_html__( 'Home', 'ba-hotel-light' ) . '<div class="menu-top-border"></div></a></li>';
-		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">' . esc_html__( 'About Us', 'ba-hotel-light' ) . '<div class="menu-top-border"></div></a></li>';
-		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">' . esc_html__( 'Gallery', 'ba-hotel-light' ) . '<div class="menu-top-border"></div></a></li>';
-		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">' . esc_html__( 'Contact Us', 'ba-hotel-light' ) . '<div class="menu-top-border"></div></a></li>';
+		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">Home<div class="menu-top-border"></div></a></li>';
+		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">About Us<div class="menu-top-border"></div></a></li>';
+		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">Gallery<div class="menu-top-border"></div></a></li>';
+		$fb_output .= '<li class="nav-item menu-item"><a href="#" class="nav-link">Contact Us<div class="menu-top-border"></div></a></li>';
 		$fb_output .= '</ul>';
 
 		if ( $container ) {
 			
-			$fb_output .= '</' . esc_attr($container) . '>';
+			$fb_output .= '</' . $container . '>';
 		}
         
         $fb_output = apply_filters( 'bahotel_l_nav_menu_fallback_html', $fb_output, $args );
@@ -369,5 +368,5 @@ class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 /**
  * Call to setup class.
  */
-Bahotel_L_Nav_Menu::init();
+BAH_L_Nav_Menu::init();
 
