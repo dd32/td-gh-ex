@@ -45,7 +45,7 @@
 		$custom_css .='}';
 	}
 	if($advance_education_theme_color != false){
-		$custom_css .='.logo p,page-box-single h1, #sidebar ul li a:hover, #sidebar ul li a:active, #sidebar ul li a:focus, .read-more-btn a:hover{';
+		$custom_css .='.logo p,page-box-single h1, #sidebar ul li a:active, #sidebar ul li a:focus, .read-more-btn a:hover{';
 			$custom_css .='color: '.esc_html($advance_education_theme_color).'!important;';
 		$custom_css .='}';
 	}
