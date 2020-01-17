@@ -517,6 +517,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 			
 			),
 
+			array(
+				
+				'label' => esc_html__( 'Gallery lightbox.','suevafree'),
+				'description' => esc_html__( 'Select one of available gallery lightbox.','suevafree'),
+				'id' => 'suevafree_gallery_lightbox',
+				'type' => 'select',
+				'section' => 'settings_section',
+				'options' => array (
+				   'prettyphoto' => esc_html__( 'prettyPhoto','suevafree'),
+				   'swipebox' => esc_html__( 'Swipebox','suevafree'),
+				),
+				
+				'std' => 'prettyphoto',
+			
+			),
+
 			/* LAYOUTS SECTION */ 
 
 			array( 
