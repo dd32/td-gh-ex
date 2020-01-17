@@ -224,6 +224,15 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'rss_url',
 	'label' =>  __( 'Replace published date with last updated date', 'iconic-one' ),
 	'section' => 'io_posts_settings',
 	));
+	$wp_customize->add_setting( 'iconic_one_auto_featured_image', array(
+	'default' => '',
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	));
+	$wp_customize->add_control('iconic_one_auto_featured_image',array(
+	'type' => 'checkbox',
+	'label' =>  __( 'Auto display featured image below post title in single post pages', 'iconic-one' ),
+	'section' => 'io_posts_settings',
+	));
 	// Add Section for Pro Version 
 	$wp_customize->add_section( 'iopro-upgrade', array(
 	'title'    => __( 'PRO Version', 'iconic-one' ),

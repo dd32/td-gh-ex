@@ -49,6 +49,9 @@
 					<?php iconic_one_excerpts() ?>	
 				<?php else : ?>
 					<div class="entry-content">
+						<?php if( get_theme_mod( 'iconic_one_auto_featured_image' , '0' ) == '1' ) { ?>
+							<?php the_post_thumbnail('post-thumbnail'); ?>
+						<?php } ?>
 						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'iconic-one' ) ); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'iconic-one' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->

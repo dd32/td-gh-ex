@@ -23,6 +23,10 @@ Live demo: https://demo.themonic.com/io/
 
 == Changelog ==
 
+= 2.1.2=
+* Released: January 17, 2020
+* New: Added option to auto display the set featured image below post title. Available in Customizer -> Post Settings
+
 = 2.1.1=
 * Released: November 18, 2019
 * Fix: Image Captions alignment
