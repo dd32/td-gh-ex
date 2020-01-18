@@ -1399,7 +1399,7 @@ if ( ! function_exists( 'catchkathmandu_footer_content' ) ) :
  * @since Catch Kathmandu Pro 1.0
  */
 function catchkathmandu_footer_content() {
-	//delete_transient( 'catchkathmandu_footer_content' );
+	//delete_transient( 'catchkathmandu_footer_content_new' );
 
 	if ( ! $catchkathmandu_footer_content = get_transient( 'catchkathmandu_footer_content_new' ) ) {
 		echo '<!-- refreshing cache -->';
@@ -1411,7 +1411,7 @@ function catchkathmandu_footer_content() {
 
     	set_transient( 'catchkathmandu_footer_content_new', $catchkathmandu_footer_content, 86940 );
     }
-    
+
 	echo $catchkathmandu_footer_content;
 }
 endif;

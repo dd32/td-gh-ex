@@ -1509,7 +1509,7 @@ function catchkathmandu_themeoption_invalidate_caches() {
     delete_transient( 'catchkathmandu_default_sliders' ); //Default slider
     delete_transient( 'catchkathmandu_homepage_headline' ); // Homepage Headline Message
     delete_transient( 'catchkathmandu_featured_content' ); // Featured Content
-    delete_transient( 'catchkathmandu_footer_content' ); // Footer Content
+    delete_transient( 'catchkathmandu_footer_content_new' ); // Footer Content New
     delete_transient( 'catchkathmandu_social_networks' ); // Social Networks
     delete_transient( 'catchkathmandu_webmaster' ); // scripts which loads on header
     delete_transient( 'catchkathmandu_footercode' ); // scripts which loads on footer

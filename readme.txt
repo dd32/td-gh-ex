@@ -73,6 +73,9 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 4.0.2 (Released: January 14, 2020) =
+* Bug Fixed: Cache issue in Footer Content (Reported by chickadeesharon)
+
 = 4.0.1 (Released: January 14, 2020) =
 * Updated: Replaced global variable allocation to function for theme options and default options
 
