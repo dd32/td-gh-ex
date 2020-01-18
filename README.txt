@@ -3,6 +3,7 @@ Contributors: rakib8373
 Tags: white,  one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images,  sticky-post, threaded-comments, translation-ready, rtl-language-support
 Requires at least: 3.8
 Tested up to: 5.3
+Requires PHP: 5.6
 ajaira WordPress Theme, Copyright (C) 2020, rakib
 ajaira is distributed under the terms of the GNU GPL
 License: GPLv2 or later
@@ -38,6 +39,9 @@ Ajaira is a clean responsive blogging theme, Focused on content.
 
 = 1.0.5 = 
 - Bug fixed
+
+= 1.0.6 = 
+- Bug fixed, Editiorial Style added
 
 
 
@@ -75,7 +79,7 @@ SlickNav Responsive Mobile Menu v1.0.10
 licensed under MIT
 
 
-= Images bundled with the theme =
-screenshot.png - Screenshot by rakib8373
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Illustrations in screenshot.png by rakib8373
+License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/  
+

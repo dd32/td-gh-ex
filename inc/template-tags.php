@@ -13,7 +13,7 @@ function ajaira_categories() {
 	/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'ajaira' ) );
 		if ( $categories_list && ajaira_categorized_blog() ) {
-			printf( '<span class="cat-links">'. '<i class="fa fa-folder-open" aria-hidden="true"></i>' . esc_html__( '%1$s', 'ajaira' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">'. '<i class="fa fa-folder-open" aria-hidden="true"></i>' . esc_html( '%1$s', 'ajaira' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 }
 
@@ -37,7 +37,7 @@ function ajaira_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( ' %s', 'post date', 'ajaira' ),
+		esc_html( ' %s', 'post date', 'ajaira' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -69,7 +69,7 @@ function ajaira_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'ajaira' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . '<i class="fa fa-tags" aria-hidden="true"></i>'. esc_html__( '  %1$s', 'ajaira' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . '<i class="fa fa-tags" aria-hidden="true"></i>'. esc_html( '  %1$s', 'ajaira' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 

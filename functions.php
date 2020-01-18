@@ -67,6 +67,10 @@ function ajaira_setup() {
 		'default-image' => '',
 	) ) );
 
+
+	// Editor style
+	add_editor_style( array( '/css/editor-style.css', 'https://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather', '/css/font-awesome.min.css') );
+
 }
 endif;
 add_action( 'after_setup_theme', 'ajaira_setup' );
