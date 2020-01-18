@@ -49,7 +49,7 @@ function weblizar_fallback_page_menu( $args = array() ) {
 	if ( $args['echo'] )
 		echo wp_kses_post( $menu );
 	else
-		return $menu;
+		return wp_kses_post( $menu );
 }
 class weblizar_walker_page_menu extends Walker_Page{
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
@@ -90,4 +90,3 @@ class weblizar_walker_page_menu extends Walker_Page{
 		}
 	}
 }
-?>

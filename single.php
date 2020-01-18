@@ -18,7 +18,7 @@ if (get_theme_mod('breadcrumb', 1) == 1) {
             <div class="col-md-8">
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <?php get_template_part('post', 'content');
-                    get_template_part('author', 'intro');
+                    get_template_part('authorintro');
                 endwhile;
                 else :
                     get_template_part('nocontent');

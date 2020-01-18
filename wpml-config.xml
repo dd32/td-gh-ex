@@ -29,7 +29,6 @@
             <key name="developed_by_weblizar_text"/>
             <key name="developed_by_link"/>
             <key name="home_service_heading"/>
-
             <key name="service_1_title"/>
             <key name="service_1_text"/>
             <key name="service_1_link"/>
@@ -39,8 +38,6 @@
             <key name="service_3_title"/>
             <key name="service_3_text"/>
             <key name="service_3_link"/>
-
-
             <key name="port_heading"/>
             <key name="port_1_title"/>
             <key name="port_1_link"/>

@@ -1,4 +1,4 @@
- //enigma  social tooltip js
+//enigma  social tooltip js
  jQuery(function(){
 	jQuery('li').tooltip();
 	jQuery("[data-toggle='tooltip']").tooltip();

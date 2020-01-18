@@ -6,7 +6,7 @@
 #customize-controls [id*=enigma_theme_option]>h3:before {}
 
 #accordion-section-enigma_more h3.accordion-section-title {
-    background: ##e91e63;
+    background: #e91e63;
     color: #fff
 }
 

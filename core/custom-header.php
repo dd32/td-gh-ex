@@ -25,7 +25,6 @@ function enigma_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'enigma_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => 'ffffff',
-		'header-text'            => true,
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
@@ -41,22 +40,14 @@ if ( ! function_exists( 'enigma_header_style' ) ) :
 	 * @see wp_news_custom_header_setup().
 	 */
 	function enigma_header_style() {
+
 		$header_text_color = get_header_textcolor();
+		$header_image      = get_header_image();
 
-		/*
-		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: HEADER_TEXTCOLOR.
-		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-			return;
-		}
+		$custom_css = "";
 
-		wp_enqueue_style(
-	        'custom-header-style',
-	        get_template_directory_uri() . '/css/custom-header-style.css'
-	    );
 	    if ( ! display_header_text() ) {
-	    	$custom_css = "
+	    	$custom_css .= "
 	            .logo h1,.logo h1:hover {
 				color: rgba(241, 241, 241, 0);
 				position:absolute;
@@ -68,10 +59,22 @@ if ( ! function_exists( 'enigma_header_style' ) ) :
 				clip: rect(1px 1px 1px 1px);
 				}";
 	    } else {
-	    	$custom_css = ".logo h1, .logo p {
+	    	$custom_css .= ".logo h1, .logo p {
 				color: #".esc_attr( $header_text_color ).";
 			}";
 	    }
-	    wp_add_inline_style( 'custom-header-style', $custom_css );	
+
+	    if ( has_header_image() ) { 
+	    	$custom_css .= ".header_section.hd_cover{
+	    		background-image: url(".$header_image.");
+	    		background-size:cover;
+			}";
+	    } 
+
+	    wp_enqueue_style(
+	        'custom-header-style1',
+	        get_template_directory_uri() . '/css/custom-header-style.css'
+	    );
+	    wp_add_inline_style( 'custom-header-style1', $custom_css );	
 	} 
 endif; 

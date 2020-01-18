@@ -10,7 +10,6 @@ if (get_theme_mod('breadcrumb_title', 1) == 1) {
         <div class="row">
             <div class="col-md-12">
                 <?php
-                //$wl_theme_options = weblizar_get_options();
                 if (get_theme_mod('breadcrumb_title', 1) == 1) {
                     ?>
                     <h1><?php if (is_home()) {

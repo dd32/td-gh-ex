@@ -312,8 +312,9 @@ if (is_admin()) {
 add_action('wp_enqueue_scripts', 'enigna_parallax_custom_css');
 function enigna_parallax_custom_css()
 {
-
-    $output = '.logo a, .logo p {
+    $output = '';
+    
+    $output .= '.logo a h1, .logo p {
 		font-family: ' . get_theme_mod('main_heading_font', 'Open Sans') . ';
 		}
 		.navbar-default .navbar-nav > li > a, .dropdown-menu > li > a{
@@ -361,16 +362,9 @@ function enigna_parallax_custom_css()
 		}';
 
     //custom css
-    if (!empty (get_theme_mod('custom_css'))) {
+    $custom_css = get_theme_mod('custom_css') ; 
+    if (!empty ($custom_css)) {
         $output .= get_theme_mod('custom_css') . "\n";
-    }
-
-    $header_text_color = get_header_textcolor();
-
-    if ( ! empty ( $header_text_color ) ) {
-        $output = ".logo h1, .logo p {
-                color: #".esc_attr( $header_text_color ).";
-            }";
     }
 
     wp_register_style('custom-header-style', false);
@@ -399,7 +393,7 @@ function enigma__activation_notice() {
     <div class="enigma-notice updated notice notice-success updated my-dismiss-notice is-dismissible">
         <div class="hello-elementor-notice-inner">
             <div class="hello-elementor-notice-content">
-                <h3> <?php _e( 'Thank you for installing', 'enigma' ); ?><?php echo $my_theme->get( 'Name' ); ?></h3>
+                <h3> <?php esc_html_e( 'Thank you for installing', 'enigma' ); ?><?php echo $my_theme->get( 'Name' ); ?></h3>
                 <?php
                 $msg = sprintf( '<p> %1$s %2$s <span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span> %3$s <span style="color:red">&hearts;</span>  %4$s <br><a href=%5$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary"> %6$s </a>
                     <a href=%7$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%8$s</a>
@@ -420,10 +414,10 @@ function enigma__activation_notice() {
             </div>
             <div class="restore-notice border-two">
                 <p>
-                    <b><?php _e( 'Recentely we update our theme Code ( according to wordpress guidelines ).', 'enigma' ); ?></b>
+                    <b><?php esc_html_e( 'Recentely we update our theme Code ( according to WordPress guidelines ).', 'enigma' ); ?></b>
                 </p>
-                <p><?php _e( 'By this your data will be reset for homepage, but you can restore it and get back your homepage same as previous.', 'enigma' ); ?></p>
-                <p><?php _e( 'Just Go to [ About Enigma Tab ] ', 'enigma' ) . ' ' . wp_kses_post( '<a href="' . admin_url( 'admin.php?page=enigma#home' ) . '">here</a> ' ) . '' . _e( 'and follow the steps.!!.', 'enigma' ); ?></p>
+                <p><?php esc_html_e( 'By this your data will be reset for homepage, but you can restore it and get back your homepage same as previous.', 'enigma' ); ?></p>
+                <p><?php esc_html_e( 'Just Go to [ About Enigma Tab ] ', 'enigma' ) . ' ' . wp_kses_post( '<a href="' . admin_url( 'admin.php?page=enigma#home' ) . '">here</a> ' ) . '' . esc_html_e( 'and follow the steps.!!.', 'enigma' ); ?></p>
             </div>
         </div>
         <button type="button" class="notice-dismiss">

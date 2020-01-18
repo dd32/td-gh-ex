@@ -56,16 +56,16 @@
             </div>
             <?php the_content(__('Read More', 'enigma'));
             $defaults = array(
-                'before' => '<div class="enigma_blog_pagination"><div class="enigma_blog_pagi">' . __('Pages:', 'enigma'),
-                'after' => '</div></div>',
-                'link_before' => '',
-                'link_after' => '',
-                'next_or_number' => 'number',
-                'separator' => ' ',
-                'nextpagelink' => __('Next page', 'enigma'),
+                'before'           => '<div class="enigma_blog_pagination"><div class="enigma_blog_pagi">' . __('Pages:', 'enigma'),
+                'after'            => '</div></div>',
+                'link_before'      => '',
+                'link_after'       => '',
+                'next_or_number'   => 'number',
+                'separator'        => ' ',
+                'nextpagelink'     => __('Next page', 'enigma'),
                 'previouspagelink' => __('Previous page', 'enigma'),
-                'pagelink' => '%',
-                'echo' => 1
+                'pagelink'         => '%',
+                'echo'             => 1
             );
             wp_link_pages($defaults); ?>
         </div>

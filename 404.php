@@ -35,7 +35,7 @@ if (get_theme_mod('breadcrumb', 1) == 1) {
                 <div class="error_404">
                     <h2><?php esc_html_e('404', 'enigma'); ?></h2>
                     <h4><?php esc_html_e('Whoops... Page Not Found !!!', 'enigma'); ?></h4>
-                    <p><?php esc_html_e('We`re sorry, but the page you are looking for doesn`t exist.', 'enigma'); ?></p>
+                    <p><?php esc_html_e('We are sorry, but the page you are looking for does not exist.', 'enigma'); ?></p>
                     <p><a href="<?php echo esc_url(home_url('/')); ?>">
                             <button class="enigma_send_button"
                                     type="submit"><?php esc_html_e('Go To Homepage', 'enigma'); ?></button>

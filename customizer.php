@@ -2,14 +2,14 @@
 
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style( 'customizr', get_template_directory_uri() . '/css/customizr.css' );
-	wp_enqueue_style( 'FA-5.11.2', get_template_directory_uri() . '/css/font-awesome-5.11.2/css/all.min.css' );
-	$ImageUrl1 = esc_url( get_template_directory_uri() . "/images/1.png" );
-	$ImageUrl2 = esc_url( get_template_directory_uri() . "/images/2.png" );
-	$ImageUrl3 = esc_url( get_template_directory_uri() . "/images/3.png" );
-	$port['1'] = esc_url( get_template_directory_uri() . "/images/portfolio1.png" );
-	$port['2'] = esc_url( get_template_directory_uri() . "/images/portfolio2.png" );
-	$port['3'] = esc_url( get_template_directory_uri() . "/images/portfolio3.png" );
-	$port['4'] = esc_url( get_template_directory_uri() . "/images/portfolio4.png" );
+	wp_enqueue_style( 'FA-5.11.2', get_template_directory_uri() . '/css/font-awesome-5.11.2/css/all.css' );
+	$ImageUrl1 = esc_url( get_template_directory_uri() . "/images/1.jpg" );
+	$ImageUrl2 = esc_url( get_template_directory_uri() . "/images/2.jpg" );
+	$ImageUrl3 = esc_url( get_template_directory_uri() . "/images/3.jpg" );
+	$port['1'] = esc_url( get_template_directory_uri() . "/images/portfolio1.jpg" );
+	$port['2'] = esc_url( get_template_directory_uri() . "/images/portfolio2.jpg" );
+	$port['3'] = esc_url( get_template_directory_uri() . "/images/portfolio3.jpg" );
+	$port['4'] = esc_url( get_template_directory_uri() . "/images/portfolio4.jpg" );
 
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.logo h1',
@@ -36,7 +36,6 @@ function weblizar_gl_customizer( $wp_customize ) {
 		)
 	);
 
-	//$wl_theme_options = weblizar_get_options();
 	$wp_customize->add_setting(
 		'title_position',
 		array(
@@ -1764,10 +1763,10 @@ endif;
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Enigma_Customizer_Icon_Picker_Control' ) ) :
 	class Enigma_Customizer_Icon_Picker_Control extends WP_Customize_Control {
 		public function enqueue() {
-			wp_enqueue_script( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/js/fontawesome-iconpicker.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'iconpicker-control', get_template_directory_uri() . '/iconpicker-control/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
-			wp_enqueue_style( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/css/fontawesome-iconpicker.min.css' );
-			wp_enqueue_style( 'font-awesome-latest', get_template_directory_uri() . '/css/font-awesome-5.11.2/css/all.min.css' );
+			wp_enqueue_style( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/css/fontawesome-iconpicker.css' );
+			wp_enqueue_style( 'font-awesome-latest', get_template_directory_uri() . '/css/font-awesome-5.11.2/css/all.css' );
 		}
 
 
@@ -1930,8 +1929,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_animation
 		public function render_content() { ?>
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 			<?php
-//			$wl_theme_options = weblizar_get_options();
-			//$animate_slider   = $wl_theme_options['animate_type_title'];
+			$animate_slider   = get_theme_mod( 'animate_type_title', 'fadeIn' );
 			$animation        = array(
 				'fadeIn',
 				'fadeInUp',

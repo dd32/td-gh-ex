@@ -83,4 +83,3 @@ function weblizar_nav_menu_css_class( $classes ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'weblizar_nav_menu_css_class' );
-?>

@@ -1,10 +1,12 @@
 <div class="enigma_blog_area ">
-    <?php if (!empty (get_theme_mod('blog_title', 'Home Blog Title'))) { ?>
+    <?php 
+    $blog_title = get_theme_mod('blog_title', 'Home Blog Title');
+    if ( ! empty ( $blog_title ) ) { ?>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="enigma_heading_title">
-                        <h3><?php esc_html_e(get_theme_mod('blog_title', 'Latest News'), 'enigma'); ?></h3>
+                        <h3><?php echo esc_html( get_theme_mod( 'blog_title', 'Latest News' ) ); ?></h3>
                     </div>
                 </div>
             </div>
@@ -13,7 +15,8 @@
     <div class="container">
         <div id="enigma_blog_section">
             <?php if (have_posts()) : $posts_count = wp_count_posts()->publish;
-                if (get_theme_mod('blog_category', '1')) {
+                $blog_category = get_theme_mod('blog_category', '1');
+                if ($blog_category) {
                     $category = get_theme_mod('blog_category', '1');
                     $args = array('post_type' => 'post', 'posts_per_page' => $posts_count, 'ignore_sticky_posts' => 1, 'cat' => $category);
                 } else {
@@ -46,8 +49,10 @@
                             <p><?php echo esc_attr(substr(get_the_excerpt(), 0, get_theme_mod('excerpt_blog', '55'))); ?></p>
                             <a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i
                                         class="fa fa-plus-circle"></i>
-                                <?php if (!empty (get_theme_mod('read_more', 'Read More'))) {
-                                    esc_html_e(get_theme_mod('read_more', 'Read More'), 'enigma');
+                                <?php 
+                                $read_more = get_theme_mod('read_more', 'Read More');
+                                if (!empty ($read_more)) {
+                                    echo esc_html(get_theme_mod('read_more', 'Read More') );
                                 } ?>
                             </a>
                             <div class="enigma_blog_thumb_footer">
@@ -76,4 +81,4 @@
             <div id="port-prev" class="enigma_carousel-next"><i class="fa fa-arrow-right"></i></div>
         </div>
     </div>
-</div>    
+</div>
