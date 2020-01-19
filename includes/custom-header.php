@@ -30,7 +30,7 @@ function promax_header_style() {
 
 		// If we get this far, we have custom styles. Let's do this.
 		?>
-		<style id="twentyseventeen-custom-header-styles" type="text/css">
+		<style id="promax-custom-header-styles" type="text/css">
 		<?php
 		// Has the text been hidden?
 		if ( 'blank' === $header_text_color ) :

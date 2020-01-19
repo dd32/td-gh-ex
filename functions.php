@@ -2,7 +2,7 @@
 include_once('baztro.php');
 include_once('includes/installs.php');
 include_once('includes/metaboxpage.php');
-include_once('includes/core/core.php');
+//include_once('includes/core/core.php');
 include_once('includes/metaboxsingle.php');
 include_once('includes/template-tags.php');
 
@@ -11,16 +11,31 @@ require get_template_directory() . '/includes/custom-header.php';
 require get_template_directory() . '/includes/customizer.php';
 
 function promax_scripts() {
+	
+	
+		$theme_version = wp_get_theme()->get( 'Version' );
+
+wp_enqueue_script( 'promax-js', get_template_directory_uri() . '/js/index.js', array(), $theme_version, false );
+wp_enqueue_script( 'promax-loadscript-js', get_template_directory_uri() . '/js/loadscripts.js', array(), $theme_version, false );
+wp_enqueue_script('jquery');
+}
+add_action( 'wp_enqueue_scripts', 'promax_scripts' );
+
+function promax_styles() {
+	
+	
 	wp_enqueue_style( 'promax-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	if ( is_rtl() ) {
 	wp_enqueue_style( 'promax-rtl-css', get_template_directory_uri() . '/css/rtl.css' );
-	}  
-}
-add_action( 'wp_enqueue_scripts', 'promax_scripts' );
+	} 
+	
+	
 
+}
+add_action( 'wp_enqueue_scripts', 'promax_styles' );
 /**
  * Enqueue script for custom customize control.
  */
@@ -367,7 +382,7 @@ function promax_addtocart_button_func() {
 		global $product;
 		$pid = $product->get_id();
 		$quicklink = WC()->cart->get_checkout_url();
-        echo '<div class="button quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_html(get_theme_mod('promax_quick_checkout_text','Quick Checkout')).'</a></div>';
+        echo '<div class="button quickcheckout"><a href="'.$quicklink.'?add-to-cart='.$pid.'">'.esc_html(get_theme_mod('promax_quick_checkout_text',__('Quick Checkout','promax'))).'</a></div>';
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'promax_addtocart_button_func' );
 }

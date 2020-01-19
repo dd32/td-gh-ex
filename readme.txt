@@ -4,8 +4,8 @@ Contributors: sandy786
 Requires at least:  WordPress 4.5
 Tested up to:       WordPress 5.3.2
 Requires PHP:       5.4
-Version:            2.4
-Stable tag:         2.4
+Version:            2.6
+Stable tag:         2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,7 +46,7 @@ Custom Css:
 
 
 == Change log ==
-= 2.5 =
+= 2.6 =
 * Moved to new customizer API
 * Updated Code and Fixed issue
 * Mobile Responsive

@@ -15,7 +15,7 @@
 	<div id="footer">
 	<div id="footer-inner" class="clearfix">
 	
-<?php echo esc_html(get_theme_mod('promax_copyright_label','Copyright &#169; 2020' )); ?>
+<?php echo esc_html(get_theme_mod('promax_copyright_label',__('Copyright &#169; 2020','promax') )); ?> 
 <a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> | <?php esc_attr_e(' Theme ', 'promax'); ?><a href="<?php echo esc_url( __( 'https://www.insertcart.com/product/promax-wordpress-theme/', 'promax' ) ); ?>" title="<?php esc_attr_e( 'InsertCart', 'promax' ); ?>"><?php printf( __( 'ProMax %s', 'promax' ),''); ?></a>	   
 	<?php wp_nav_menu( array( 'theme_location' => 'footer-menu','menu_id' => 'footerhorizontal','echo' => true,'depth' =>'1','fallback_cb' => false ) ); ?>	
 	</div> <!-- end div #footer-inner -->

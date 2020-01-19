@@ -1,5 +1,5 @@
 <h4><i class="fa fa-line-chart" aria-hidden="true"></i>
- <?php echo esc_html(get_theme_mod('promax_popular_label','Popular Posts' )); ?></h4>
+ <?php echo esc_html(get_theme_mod('promax_popular_label',__('Popular Posts','promax') )); ?></h4>
 <div id="populars">
 <?php 
 $args = array( 

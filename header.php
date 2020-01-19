@@ -31,27 +31,9 @@
 	<!-- END HEADER -->
 
 	<!-- BEGIN TOP NAVIGATION -->
-	<?php if (get_theme_mod('promax_topnavi') !=='disable') { ?>
-<div id="navigation" ><div class="nav">
-    <div id="navigation-inner" class="clearfix">
-		<div class="secondary">
-		<?php wp_nav_menu( array( 'theme_location' => 'promax-navigation', 'fallback_cb' => 'promax_hdmenu','menu_class' => 'nav-menu') );	?>
-		</div><!-- end div #nav secondry -->
-	    </div> <!-- end div #navigation-inner -->
-		<?php echo wp_kses_post( promax_socialprofiles() ); ?>
-	    </div> <!-- end div #navigation-inner -->
-	</div> <!-- end div #navigation -->
-	<!-- END TOP NAVIGATION -->
-<?php } ?>
-<?php if (get_theme_mod('promax_main_navi') !=='disable') { ?>
-	<div id="pronav"> 
-    <div id="pronav-inner" class=" nav clearfix">
-		<div class="secondary">		
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</div><!-- end div #nav secondry -->
-	    </div> <!-- end div #pronav-inner -->
-	</div> <!-- end div #pronav -->
-	<!-- END TOP NAVIGATION -->
-<?php } ?>
+	<?php
+	
+	if (get_theme_mod('promax_topnavi') !=='disable') { get_template_part('template-parts/menu'); } ?>
+<?php if (get_theme_mod('promax_main_navi') !=='disable') { get_template_part('template-parts/nav-menu'); } ?>
 <div class="promaxwid">
 <?php if ( !dynamic_sidebar('belownaviwid') ) :  endif; ?></div>
