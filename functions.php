@@ -99,6 +99,19 @@ function astral_activation_notice(){
 $my_theme = wp_get_theme();	
 ?>
     <style>
+		a.reply-btn {
+			display: initial;
+			margin: 0 auto;
+			border-radius: 4px;
+			color: #fff;
+			background: #0e6ec4;
+			padding: 10px;
+			text-decoration: none;
+		}
+		.hello-elementor-notice-content {
+			padding: 28px;
+			text-align: center;
+		}
 		.notice h3 {
 			margin: 0 0 5px;
 		}
@@ -116,19 +129,29 @@ $my_theme = wp_get_theme();
 			margin-left: 10px;
 			text-decoration: none;
 		}
+		.review-page {
+			background: rgba(221, 240, 249, 0.8) !important;
+			padding: 15px;
+			border-left-color: #e0f0f7 !important;
+		}
+		.notice.updated.is-dismissible.review-page {
+			border-left: 1px solid #ccd0d4 !important;
+		}
 	</style>
 
-    <div class="notice updated is-dismissible">
+    <div class="notice updated is-dismissible review-page">
 		<div class="hello-elementor-notice-inner">
 			<div class="hello-elementor-notice-content">
-				<h3> <?php _e('Thank you for installing', 'astral'); ?> <?php echo $my_theme->get( 'Name' ); ?></h3>
+				<h3> <?php _e('Thank you for installing', 'astral'); ?> <?php echo $my_theme->get( 'Name' ); ?>
+				<?php echo esc_html_e('Version - ','astral'); ?>
+				 <?php echo esc_html( $my_theme->get('Version') ); ?>
+				</h3>
 				
-				<p><?php 
+				<p style="margin-bottom: 18px;"><?php 
 				_e(' Are you are enjoying Astral? We would love to hear your feedback. Big thanks in advance.','astral'); ?> </p>
-				<a target="_blank" class="rate-btn" href="https://wordpress.org/support/theme/astral/reviews/?filter=5"> <?php _e('Submit a review','astral'); ?> </a>
+				<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
 				
-				<a target="_blank" class="support-btn" href="https://wordpress.org/support/theme/astral/"> <?php _e('Contact Support','astral'); ?> </a>
-				
+				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Welcome Page','astral'); ?> </a>
 				
 			</div>
 		</div>
@@ -163,3 +186,7 @@ class astral_Font_Control extends WP_Customize_Control
 }
 }
 endif;
+
+if (is_admin()) {
+	require_once('inc/astral-pro-intro.php');
+}

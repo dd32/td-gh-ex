@@ -27,6 +27,10 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 1.5 =
+* welcome page added
+* Minor Changes Rate us banner
+
 = 1.4 =
 * google font added
 
