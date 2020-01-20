@@ -20,13 +20,16 @@ line-height: 16px;
     font-weight: 600;
     padding: 8px 0;
 }
-
+li#accordion-section-promax_important_links > h3.accordion-section-title {
+    background: #FF9800 !important;
+    color: #ffffff !important;
+}
 li#accordion-section-promax_important_links > h3.accordion-section-title:before {
 	content: "\f317";
     font-family: dashicons;
     padding: 3px;
 	vertical-align: bottom;
-    color: #FF9800;}
+    }
 li#accordion-section-promax_responsive > h3.accordion-section-title:before {
     content: "\f472";
     font-family: dashicons;

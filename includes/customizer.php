@@ -17,7 +17,6 @@ function promax_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'colors'  )->title				= __('Color & Design', 'promax');
 	//$wp_customize->get_section( 'background_image'  )->section	= 'promax_responsive';
 
-     
 // Theme important links started
    class promax_Important_Links extends WP_Customize_Control {
 
@@ -570,12 +569,12 @@ function promax_registers() {
 	wp_register_script( 'promax_customizer_script', get_template_directory_uri() . '/js/customizer.js', array("jquery","promax_jquery_ui"), '20120206', true  );
 	wp_enqueue_script( 'promax_customizer_script' );
 	
-	wp_localize_script( 'promax_customizer_script', 'promax', array(
+/* 	wp_localize_script( 'promax_customizer_script', 'promax', array(
 		'documentation' => __( 'Documentation', 'promax' ),
 		'pro' => __('Upgrade to Pro','promax'),
 		'support' => __('Need Support?','promax')
 		
-	) );
+	) ); */
 }
 add_action( 'customize_controls_enqueue_scripts', 'promax_registers' );
 
