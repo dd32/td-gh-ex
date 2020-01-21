@@ -1,14 +1,14 @@
 <!-- Start: Footer Sidebar
 ============================= -->
 <?php if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
-<footer id="footer-widgets" class="footer-sidebar">
-	<div class="container">
-		<div class="row">
-			<?php  dynamic_sidebar( 'footer-widget-area' ); } ?>
+	<footer id="footer-widgets" class="footer-sidebar">
+		<div class="container">
+			<div class="row">
+				<?php  dynamic_sidebar( 'footer-widget-area' ); ?>
+			</div>
 		</div>
-	</div>
-</footer>
-
+	</footer>
+<?php } ?>
 <!-- End: Footer Sidebar
 ============================= -->
 <?php 
