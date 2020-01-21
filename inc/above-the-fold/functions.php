@@ -9,7 +9,7 @@ function semperfi_above_the_fold() {
     }
 
     add_action( 'semperfi_front_page_after_header', 'semperfi_above_the_fold_html' );
-    add_action( 'semperfi_index_after_header', 'semperfi_above_the_fold_html' );
+    //add_action( 'semperfi_index_after_header', 'semperfi_above_the_fold_html' );
     
     
     function semperfi_above_the_fold_css() {
