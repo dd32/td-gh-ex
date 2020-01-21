@@ -1,14 +1,14 @@
-# <!=Copyright (C) 2019 nikeo
+# <!=Copyright (C) 2020 nikeo
 # This file is distributed under the GNU General Public License v2.0 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Customizr 4.1.50\n"
+"Project-Id-Version: Customizr 4.1.51\n"
 "Report-Msgid-Bugs-To: https://presscustomizr.com/contact/\n"
-"POT-Creation-Date: 2019-12-23 17:58:11+00:00\n"
+"POT-Creation-Date: 2020-01-21 16:41:00+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Nicolas <contact@presscustomizr.com>\n"
 "Language-Team: Customizr translation contributors "
 "<contact@presscustomizr.com>\n"
@@ -5494,14 +5494,14 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: build/free/customizr/templates/parts/modules/search/searchform.php:10
-#: templates/parts/modules/search/searchform.php:10
+#: build/free/customizr/templates/parts/modules/search/searchform.php:11
+#: templates/parts/modules/search/searchform.php:11
 msgctxt "label"
 msgid "Search"
 msgstr ""
 
-#: build/free/customizr/templates/parts/modules/search/searchform.php:11
-#: templates/parts/modules/search/searchform.php:11
+#: build/free/customizr/templates/parts/modules/search/searchform.php:12
+#: templates/parts/modules/search/searchform.php:12
 msgctxt "title"
 msgid "Search &hellip;"
 msgstr ""

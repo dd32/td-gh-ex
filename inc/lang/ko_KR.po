@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: * Customizr v4.1.50\n"
+"Project-Id-Version: * Customizr v4.1.51\n"
 "Report-Msgid-Bugs-To: https://presscustomizr.com/contact/\n"
-"POT-Creation-Date: 2019-12-23 17:58:11+00:00\n"
+"POT-Creation-Date: 2020-01-21 16:29:51+00:00\n"
 "PO-Revision-Date: 2015-08-22 17:04+0200\n"
 "Last-Translator: Nicolas <contact@presscustomizr.com>\n"
 "Language-Team: Nicolas G. <contact@presscustomizr.com>\n"
@@ -5689,14 +5689,14 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: build/free/customizr/templates/parts/modules/search/searchform.php:10
-#: templates/parts/modules/search/searchform.php:10
+#: build/free/customizr/templates/parts/modules/search/searchform.php:11
+#: templates/parts/modules/search/searchform.php:11
 msgctxt "label"
 msgid "Search"
 msgstr ""
 
-#: build/free/customizr/templates/parts/modules/search/searchform.php:11
-#: templates/parts/modules/search/searchform.php:11
+#: build/free/customizr/templates/parts/modules/search/searchform.php:12
+#: templates/parts/modules/search/searchform.php:12
 msgctxt "title"
 msgid "Search &hellip;"
 msgstr ""
