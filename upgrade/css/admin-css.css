@@ -106,10 +106,12 @@ body.avant-footer-layout-standard.widgets-php #avant-site-footer-standard {
     line-height: 1.2;
     color: #212121;
 }
-.avant-admin-notice h4 span {
-    margin: 0 0 0 20px;
-    color: #00b83f;
+.avant-admin-notice h5 {
+    color: #43b3ec;
     font-size: 18px;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
 }
 .avant-admin-notice h4 b {
     font-weight: normal;
@@ -134,7 +136,7 @@ body.avant-footer-layout-standard.widgets-php #avant-site-footer-standard {
 }
 .avant-admin-notice-blocks {
     border-top: 1px solid rgba(0, 0, 0, 0.08);
-    margin: 20px 0 0px;
+    margin: 20px 0;
     padding: 24px 10px 5px;
 }
 .avant-admin-notice-block {

@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.35
+* Fixed Missing / Incorrect escaping & translations
+* Reduced the size of the Avant help notice on start
+* Updated the language .pot file
+
 #### 1.1.34
 * Style tweaks/fixes
 * Added Customizer note

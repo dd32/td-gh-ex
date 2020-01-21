@@ -1,7 +1,7 @@
 <div class="wrap upgrade-page-wrap">
     
     <h2 class="upgrade-page-title">
-        <?php _e( 'About Avant', 'avant' ); ?>
+        <?php esc_html_e( 'About Avant', 'avant' ); ?>
     </h2>
     
     <div class="upgrade-page-inner-wrap">
@@ -10,15 +10,13 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Avant Premium </span><em>$29</em>', 'avant' ) ); ?>
+                    <?php printf( __( '<span>Avant Premium </span><em>$25</em>', 'avant' ) ); ?>
                 </a>
-                <div class="upgrade-order-offer">
-                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">once off payment of $29 for lifetime updates</a></b>', 'avant' ); ?>
-                </div>
+                <p><?php esc_html_e( 'Once-off Payment, NO subscription payments are set up', 'avant' ); ?></p>
             </div>
             
             <p class="avant-upgrade-p">
-                <?php printf( __( 'Read more here on  <strong><a href="%s" target="_blank">what is included in premium</a></strong> or see <a href="%2" target="_blank"><b>how to install premium</b></a>', 'avant' ), 'https://kairaweb.com/go/what-premium-offers-page/', 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>
+                <?php printf( __( 'Read more here on  <strong><a href="%s" target="_blank">what is included in Avant Premium</a></strong> or see <a href="%2" target="_blank"><b>how to install premium</b></a>', 'avant' ), 'https://kairaweb.com/go/what-premium-offers-page/', 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>
             </p>
             <p class="avant-upgrade-p">
                 <?php printf( __( '<strong>All settings for Avant</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'avant' ) , admin_url( 'customize.php' ) ); ?>
@@ -31,15 +29,13 @@
             
             <div class="avant-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'Avant Premium is a once off payment!', 'avant' ); ?></h3>
-                
                 <div class="avant-upgrade-block avant-upgrade-block-layouts">
                     <div class="upgrade-page-right-box-img">
-                        <h4><?php _e( 'Page Layouts', 'avant' ); ?></h4>
+                        <h4><?php esc_html_e( 'Page Layouts', 'avant' ); ?></h4>
                         <?php _e( 'Avant Premium offers a bunch on Elementor Page layouts built into the theme<br />so you can simply import page layouts to use.', 'avant' ); ?>
                         <p>
                             <a href="<?php echo esc_url( 'https://kairaweb.com/go/layouts/' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                                <?php _e( 'View OR Download all the page layouts offered with Avant Premium', 'avant' ); ?>
+                                <?php esc_html_e( 'View OR Download all the page layouts offered with Avant Premium', 'avant' ); ?>
                             </a>
                         </p>
                         <div class="upgrade-page-right-box-image"></div>
@@ -48,57 +44,57 @@
 
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
-                        <?php _e( 'View the Avant Premium Demo, and try out all the settings neatly built into the Customizer', 'avant' ); ?>
+                        <?php esc_html_e( 'View the Avant Premium Demo, and try out all the settings neatly built into the Customizer', 'avant' ); ?>
                     </div>
                     <div class="avant-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://demo.kairaweb.com/#avant' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                            <?php _e( 'Avant Premium Demo', 'avant' ); ?>
+                            <?php esc_html_e( 'Avant Premium Demo', 'avant' ); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
-                        <?php _e( 'Download a working Child Theme for Avant', 'avant' ); ?><br />
+                        <?php esc_html_e( 'Download a working Child Theme for Avant', 'avant' ); ?><br />
                         <?php printf( __( 'Or learn more on creating/editing a <a href="%s" target="_blank">Child Theme</a>', 'avant' ) , 'https://codex.wordpress.org/Child_Themes' ); ?>
                     </div>
                     <div class="avant-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/avant-child-theme/' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                            <?php _e( 'Avant Child Theme', 'avant' ); ?>
+                            <?php esc_html_e( 'Avant Child Theme', 'avant' ); ?>
                         </a>
                     </div>
                 </div>
 
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
-                        <?php _e( 'See what we suggest when building your website.', 'avant' ); ?><br />
+                        <?php esc_html_e( 'See what we suggest when building your website.', 'avant' ); ?><br />
                     </div>
                     <div class="avant-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                            <?php _e( 'Recommended Resources', 'avant' ); ?>
+                            <?php esc_html_e( 'Recommended Resources', 'avant' ); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
-                        <?php _e( 'We have on-growing documentation on setting up your website with the Avant theme', 'avant' ); ?>
+                        <?php esc_html_e( 'We have on-growing documentation on setting up your website with the Avant theme', 'avant' ); ?>
                     </div>
                     <div class="avant-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                            <?php _e( 'Documentation', 'avant' ); ?>
+                            <?php esc_html_e( 'Documentation', 'avant' ); ?>
                         </a>
                     </div>
                 </div>
                 
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
-                        <?php _e( 'Have you enjoyed using Avant?', 'avant' ); ?><br />
+                        <?php esc_html_e( 'Have you enjoyed using Avant?', 'avant' ); ?><br />
                         <?php printf( __( 'Please help by giving us a rating on WordPress.org :)', 'avant' ) , 'https://kairaweb.com/' ); ?>
                     </div>
                     <div class="avant-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/avant/reviews/#new-post' ) ?>" target="_blank" class="avant-upgrade-result-button">
-                            <?php _e( 'Give Avant a rating', 'avant' ); ?>
+                            <?php esc_html_e( 'Give Avant a rating', 'avant' ); ?>
                         </a>
                     </div>
                 </div>
@@ -120,7 +116,7 @@
                 
             </div>
             
-            <h3 class="upgrade-page-sub-title"><?php _e( 'Theme Ratings', 'avant' ); ?></h3>
+            <h3 class="upgrade-page-sub-title"><?php esc_html_e( 'Theme Ratings', 'avant' ); ?></h3>
             
             <div class="upgrade-page-right-box">
                 
@@ -169,6 +165,10 @@
                     </div>
                     <div class="clearboth"></div>
                 </div>
+
+                <div class="upgrade-page-right-box-lnk">
+                    <?php printf( __( 'See all of <a href="%s" target="_blank">Avant\'s 5 Star Ratings</a>!', 'avant' ) , 'https://wordpress.org/support/theme/avant/reviews/?filter=5' ); ?>
+                </div>
                 
             </div>
             
@@ -179,6 +179,13 @@
         <div class="upgrade-changelog">
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
             
+            <ul>
+                <li class="upgrade-changelog-v">#### 1.1.35</li>
+                <li>Fixed Missing / Incorrect escaping & translations</li>
+                <li>Reduced the size of the Avant help notice on start</li>
+                <li>Updated the language .pot file</li>
+            </ul>
+
             <ul>
                 <li class="upgrade-changelog-v">#### 1.1.34</li>
                 <li>Style fixes/tweaks</li>

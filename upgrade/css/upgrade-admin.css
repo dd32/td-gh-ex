@@ -61,6 +61,17 @@ a.upgrade-btn:hover {
 	color: #fff !important;
 	text-decoration: none;
 }
+.upgrade-order-number-info-btns-link p {
+	color: #000;
+	font-weight: bold;
+}
+.upgrade-page-right-box-lnk {
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 20px 0 10px;
+    padding: 15px 0 0;
+    font-weight: bold;
+    color: #000;
+}
 
 a.upgrade-page-link {
 	display: inline-block;
@@ -176,6 +187,7 @@ a.upgrade-page-link:hover {
 	background-color: #0952A9;
 }
 .upgrade-page-right-box-img .avant-upgrade-result-button {
+	margin: 10px 0;
 	padding: 4px 10px 5px;
     font-size: 13px;
 }

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-12-11 11:01+0200\n"
+"POT-Creation-Date: 2020-01-21 20:27+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1289,126 +1289,73 @@ msgstr ""
 msgid "Thank you for trying out Avant!"
 msgstr ""
 
-#: functions.php:535
-#, php-format
-msgid "Premium is currently on a %1$s for only $19"
-msgstr ""
-
-#: functions.php:535
+#: functions.php:533
 #, php-format
 msgid ""
-"<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
-"target=\"_blank\">35% flash sale</a>"
-msgstr ""
-
-#: functions.php:539
-msgid ""
-"We're here to help... Please read through our help notes below on getting "
+"We pride ourselves on <a href=\"%s\" target=\"_blank\">good products and 5 "
+"Star Support</a>! Please read through our help notes below on getting "
 "started with Avant:"
 msgstr ""
 
+#: functions.php:536
+msgid "Popular links to get you started"
+msgstr ""
+
+#: functions.php:538
+msgid ""
+"Go to the About Avant page and see our quick start links & documentation"
+msgstr ""
+
 #: functions.php:542
-msgid "About Avant:"
+msgid "Read more About Avant"
 msgstr ""
 
-#: functions.php:544
+#: functions.php:546
+msgid "Start customizing your site:"
+msgstr ""
+
+#: functions.php:548
 msgid ""
-"Avant is a widely used and loved WordPress theme which gives you 7 header "
-"layouts, multiple blog and footer layouts, and lots of customization "
-"settings... so you can easily change the look of your site any time."
+"All Avant Settings are built into the WordPress Customizer for easy, visual "
+"site editing."
 msgstr ""
 
-#: functions.php:549
-#, php-format
-msgid ""
-"Read through our %1$s and %2$s and we'll help you build a professional "
-"website easily."
+#: functions.php:551
+msgid "Start Customizing Avant"
 msgstr ""
 
-#: functions.php:549
-msgid ""
-"<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
-"target=\"_blank\">Recommended Resources</a>"
-msgstr ""
-
-#: functions.php:549
-msgid ""
-"<a href=\"https://kairaweb.com/documentation/\" target=\"_blank\">Kaira "
-"Documentation</a>"
-msgstr ""
-
-#: functions.php:553
-msgid "Read More About Avant"
+#: functions.php:555
+msgid "Need Help with Avant?"
 msgstr ""
 
 #: functions.php:557
-msgid "Using Avant:"
+msgid ""
+"Need help upgrading? Have a question about using the Avant theme? We're here "
+"to help... Contact us."
 msgstr ""
 
-#: functions.php:561
+#: functions.php:560
+msgid "Get in contact"
+msgstr ""
+
+#: functions.php:567
 #, php-format
+msgid "Avant Premium is %1$s for all the extra %2$s"
+msgstr ""
+
+#: functions.php:567
 msgid ""
-"See our recommended %1$s and how to get ready before you start building your "
-"website after you've %2$s."
+"<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
+"target=\"_blank\">currently selling for only $25</a>"
 msgstr ""
 
-#: functions.php:561
+#: functions.php:567
 msgid ""
-"<a href=\"https://kairaweb.com/documentation/our-recommended-wordpress-basic-"
-"setup/\" target=\"_blank\">WordPress basic setup</a>"
+"<a href=\"https://kairaweb.com/wordpress-theme/avant/#premium-features\" "
+"target=\"_blank\">Avant Premium features</a>"
 msgstr ""
 
-#: functions.php:561
-msgid ""
-"<a href=\"https://kairaweb.com/wordpress-hosting/\" target=\"_blank\">setup "
-"WordPress Hosting</a>"
-msgstr ""
-
-#: functions.php:565 upgrade/tpl/upgrade-page.php:78
-msgid "Recommended Resources"
-msgstr ""
-
-#: functions.php:568
-msgid ""
-"We've neatly built most of the Avant settings into the WordPress Customizer "
-"so you can see all your changes happen as you built your site."
-msgstr ""
-
-#: functions.php:571
-msgid "Start Customizing Your Website"
-msgstr ""
-
-#: functions.php:575
-msgid "Popular FAQ's:"
-msgstr ""
-
-#: functions.php:577
-msgid ""
-"See our list of popular help links for building your website and/or any "
-"issues you may have."
-msgstr ""
-
-#: functions.php:581
-msgid "Setup the Avant default slider"
-msgstr ""
-
-#: functions.php:584
-msgid "Adding Custom CSS to WordPress"
-msgstr ""
-
-#: functions.php:587
-msgid "Mobile Menu is not working"
-msgstr ""
-
-#: functions.php:590
-msgid "What does Avant Premium offer extra"
-msgstr ""
-
-#: functions.php:594
-msgid "See More Documentation"
-msgstr ""
-
-#: functions.php:598
+#: functions.php:570
 msgid "Dismiss Notice"
 msgstr ""
 
@@ -1969,24 +1916,21 @@ msgid "About Avant"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:13
-msgid "<span>Avant Premium </span><em>$29</em>"
+msgid "<span>Avant Premium </span><em>$25</em>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:16
-msgid ""
-"<b>Time limited offer, only advertised here</b>... Get Avant Premium now for "
-"a <b><a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium"
-"\" target=\"_blank\">once off payment of $29 for lifetime updates</a></b>"
+#: upgrade/tpl/upgrade-page.php:15
+msgid "Once-off Payment, NO subscription payments are set up"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:21
+#: upgrade/tpl/upgrade-page.php:19
 msgid ""
 "Read more here on  <strong><a href=\"%s\" target=\"_blank\">what is included "
-"in premium</a></strong> or see <a href=\"%2\" target=\"_blank\"><b>how to "
-"install premium</b></a>"
+"in Avant Premium</a></strong> or see <a href=\"%2\" target=\"_blank\"><b>how "
+"to install premium</b></a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:24
+#: upgrade/tpl/upgrade-page.php:22
 #, php-format
 msgid ""
 "<strong>All settings for Avant</strong> are neatly built into the <a href="
@@ -1995,106 +1939,106 @@ msgid ""
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:34
-msgid "Avant Premium is a once off payment!"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:38
 msgid "Page Layouts"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:39
+#: upgrade/tpl/upgrade-page.php:35
 msgid ""
 "Avant Premium offers a bunch on Elementor Page layouts built into the "
 "theme<br />so you can simply import page layouts to use."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:42
+#: upgrade/tpl/upgrade-page.php:38
 msgid "View OR Download all the page layouts offered with Avant Premium"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:51
+#: upgrade/tpl/upgrade-page.php:47
 msgid ""
 "View the Avant Premium Demo, and try out all the settings neatly built into "
 "the Customizer"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:55
+#: upgrade/tpl/upgrade-page.php:51
 msgid "Avant Premium Demo"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:62
+#: upgrade/tpl/upgrade-page.php:58
 msgid "Download a working Child Theme for Avant"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:63
+#: upgrade/tpl/upgrade-page.php:59
 #, php-format
 msgid ""
 "Or learn more on creating/editing a <a href=\"%s\" target=\"_blank\">Child "
 "Theme</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:67
+#: upgrade/tpl/upgrade-page.php:63
 msgid "Avant Child Theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:74
+#: upgrade/tpl/upgrade-page.php:70
 msgid "See what we suggest when building your website."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:85
+#: upgrade/tpl/upgrade-page.php:74
+msgid "Recommended Resources"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:81
 msgid ""
 "We have on-growing documentation on setting up your website with the Avant "
 "theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:89
+#: upgrade/tpl/upgrade-page.php:85
 msgid "Documentation"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:96
+#: upgrade/tpl/upgrade-page.php:92
 msgid "Have you enjoyed using Avant?"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:97
+#: upgrade/tpl/upgrade-page.php:93
 msgid "Please help by giving us a rating on WordPress.org :)"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:101
+#: upgrade/tpl/upgrade-page.php:97
 msgid "Give Avant a rating"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:106
+#: upgrade/tpl/upgrade-page.php:102
 #, php-format
 msgid "Theme: Avant, built by <a href=\"%s\" target=\"_blank\">Kaira</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:115
+#: upgrade/tpl/upgrade-page.php:111
 msgid ""
 "We aim to keep our prices cheaper than other theme shops, while still "
 "offering you the best WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:117
+#: upgrade/tpl/upgrade-page.php:113
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:119
+#: upgrade/tpl/upgrade-page.php:115
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:123
+#: upgrade/tpl/upgrade-page.php:119
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:135
+#: upgrade/tpl/upgrade-page.php:131
 msgid "Karmawordz"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:138
+#: upgrade/tpl/upgrade-page.php:134
 msgid ""
 "The Avant theme works. It is stable, reliable and amazing. I had a few "
 "questions and Zack answered them almost instantly. Great attitude and an "
@@ -2102,21 +2046,21 @@ msgid ""
 "woocommerce themes I have ever used!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:144
+#: upgrade/tpl/upgrade-page.php:140
 msgid "Adrigrove"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:147
+#: upgrade/tpl/upgrade-page.php:143
 msgid ""
 "By far the most beautiful and customizable free theme available.<br /><br /"
 ">The support has been extremely quick and professional. Highly recommended!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:153
+#: upgrade/tpl/upgrade-page.php:149
 msgid "PixieLauren"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:156
+#: upgrade/tpl/upgrade-page.php:152
 msgid ""
 "This theme is so pretty. It's customizable, it's fast, and even the free "
 "version offers lots of options to get the look you want for your site.<br /"
@@ -2124,17 +2068,22 @@ msgid ""
 "features - it's really affordable for such a great theme. Love it!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:162
+#: upgrade/tpl/upgrade-page.php:158
 msgid "AllisonMandel"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:165
+#: upgrade/tpl/upgrade-page.php:161
 msgid ""
 "This theme has a clean design with many options for customization. "
 "Flexibility is key, especially with an online store.<br /><br />Plus, when I "
 "had a question with formatting, Zack responded very quickly. His support was "
 "helpful and friendly. I'm happy I chose this theme and I would definitely "
 "recommend it to other users."
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:170
+#, php-format
+msgid "See all of <a href=\"%s\" target=\"_blank\">Avant's 5 Star Ratings</a>!"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:180
