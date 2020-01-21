@@ -369,13 +369,13 @@ function automobile_car_dealer_ie_stylesheet(){
 }
 
 add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
-define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO','https://buywptemplates.com/automobile-car-dealer-pro/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_BUY_PRO','https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_FREE_DOC','https://buywptemplates.com/demo/docs/free-automobile-car-dealer/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT','https://www.buywptemplates.com/support/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_FREE_SUPPORT','https://wordpress.org/support/theme/automobile-car-dealer/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO','https://buywptemplates.com/automobile-car-dealer-pro/');
+define('AUTOMOBILE_CAR_DEALER_BUY_PRO','https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/');
+define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/');
+define('AUTOMOBILE_CAR_DEALER_FREE_DOC','https://buywptemplates.com/demo/docs/free-automobile-car-dealer/');
+define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT','https://www.buywptemplates.com/support/');
+define('AUTOMOBILE_CAR_DEALER_FREE_SUPPORT','https://wordpress.org/support/theme/automobile-car-dealer/');
+define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme/');
 
 if ( ! function_exists( 'automobile_car_dealer_credit' ) ) {
 	function automobile_car_dealer_credit(){

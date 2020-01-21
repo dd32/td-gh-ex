@@ -45,6 +45,12 @@ jQuery(document).ready(function () {
 	    }, 600);
 	    return false;
 	});
+
 });
 
-
+jQuery(function($){
+	$(window).load(function() {
+		$(".loader").delay(2000).fadeOut("slow");
+	    $(".frame").delay(2000).fadeOut("slow");
+	})
+});

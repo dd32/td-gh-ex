@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.2
+Stable tag: 0.4.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time.
@@ -89,6 +89,11 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 = 0.4.2 =
 * Added width layout option in customizer.
 
+= 0.4.3 =
+* Added Preloader.
+* Added show/hide option for Preloader.
+* Resolved theme sniffer errors.
+
 == Resources ==
 
 Automobile Car Dealer WordPress Theme, Copyright 2017 Buywptemplates
@@ -129,6 +134,12 @@ Theme is Built using the following resource bundles.
   Font-awesome.css
   -- Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
 	-- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+
+  jQuery Superfish Menu Plugin
+  -- Copyright (c) 2013 Joel Birch
+  -- Dual licensed under the MIT and GPL licenses:
+      http://www.opensource.org/licenses/mit-license.php
+      http://www.gnu.org/licenses/gpl.html
 
 * Tether MIT License
 	https://github.com/HubSpot/tether/blob/master/LICENSE

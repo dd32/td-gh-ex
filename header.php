@@ -13,7 +13,15 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
+<?php if(get_theme_mod('automobile_car_dealer_preloader',true)){ ?>
+    <div class="frame">
+      <div class="loader">
+        <div class="dot-1"></div>
+        <div class="dot-2"></div>
+        <div class="dot-3"></div>
+      </div>
+    </div>
+<?php }?>
 <header role="banner">
   <a class="screen-reader-text skip-link" href="#skip_content"><?php esc_html_e( 'Skip to content', 'automobile-car-dealer' ); ?></a>
   <div id="header">
