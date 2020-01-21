@@ -18,6 +18,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.1.1 - January 21, 2020
+Fix for large page/post titles sometimes appearing behind masthead
+Added extra Site Title size options for tablet and mobile
+Minor update for large/tall custom logo
+Minor update to entry footer author info
+
 1.1 - January 16, 2020
 Added support for Easy Digital Downloads
 Added image size selection option for blog archive posts

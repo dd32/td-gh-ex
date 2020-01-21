@@ -61,8 +61,8 @@ if ( ! function_exists( 'azuma_entry_footer' ) ) :
 				$author_post_count_output = '';
 			}
 
-			echo '<p><span class="author-name">' . esc_html( get_the_author() ) . '</span>' . $author_post_count_output . '</p>';
-			echo '<p><span class="author-description">' . the_author_meta( 'description' ) . '</span></p>';
+			echo '<span class="author-name-wrap"><span class="author-name">' . esc_html( get_the_author() ) . '</span>' . $author_post_count_output . '</span>';
+			echo '<span class="author-description">' . wpautop( get_the_author_meta( 'description' ) ) . '</span>';
 
 			/* translators: used between list items, there is a space after the comma */
 			$list_item_seperator = esc_html__( ', ', 'azuma' );

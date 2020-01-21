@@ -530,6 +530,132 @@ function azuma_customize_register( $wp_customize ) {
 			)
 	);
 
+	$wp_customize->add_setting(
+		'heading_font_site_title_laptop',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_font_site_title_laptop',
+			array(
+				'settings'		=> 'heading_font_site_title_laptop',
+				'section'		=> 'typography',
+				'label'			=> esc_html__( 'Site Title', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'fs_site_title_laptop',
+		array(
+			'default'			=> '56',
+			'transport'			=> 'postMessage',
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+			'fs_site_title_laptop',
+			array(
+				'settings'		=> 'fs_site_title_laptop',
+				'section'		=> 'typography',
+				'label'			=> esc_html__( 'Size', 'azuma' ),
+				'type'       	=> 'number',
+				'input_attrs' => array(
+                'min'   => 14,
+                'max'   => 80,
+                'step'  => 1,
+            ),
+			)
+	);
+
+	$wp_customize->add_setting(
+		'heading_font_site_title_tablet',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_font_site_title_tablet',
+			array(
+				'settings'		=> 'heading_font_site_title_tablet',
+				'section'		=> 'typography',
+				'label'			=> esc_html__( 'Site Title', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'fs_site_title_tablet',
+		array(
+			'default'			=> '56',
+			'transport'			=> 'postMessage',
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+			'fs_site_title_tablet',
+			array(
+				'settings'		=> 'fs_site_title_tablet',
+				'section'		=> 'typography',
+				'label'			=> esc_html__( 'Size', 'azuma' ),
+				'type'       	=> 'number',
+				'input_attrs' => array(
+                'min'   => 14,
+                'max'   => 80,
+                'step'  => 1,
+            ),
+			)
+	);
+
+	$wp_customize->add_setting(
+		'heading_font_site_title_mobile',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Small(
+			$wp_customize,
+			'heading_font_site_title_mobile',
+			array(
+				'settings'		=> 'heading_font_site_title_mobile',
+				'section'		=> 'typography',
+				'label'			=> esc_html__( 'Site Title', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'fs_site_title_mobile',
+		array(
+			'default'			=> '56',
+			'transport'			=> 'postMessage',
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+			'fs_site_title_mobile',
+			array(
+				'settings'		=> 'fs_site_title_mobile',
+				'section'		=> 'typography',
+				'label'			=> esc_html__( 'Size', 'azuma' ),
+				'type'       	=> 'number',
+				'input_attrs' => array(
+                'min'   => 14,
+                'max'   => 80,
+                'step'  => 1,
+            ),
+			)
+	);
+
 
 if ( function_exists( 'EDD' ) ) {
 

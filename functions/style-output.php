@@ -54,11 +54,37 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 		if ( $font_nav && $font_nav_on == 0 ) {
 			$css[] = '#site-navigation{' . azuma_css_font_family( $font_nav ) . ';}';
 		}
-		
-		$fs_site_title = get_theme_mod( 'fs_site_title', '56' );
-		if ( $fs_site_title && $fs_site_title != '56' ) {
-			$css[] = '.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}';
+
+		if ( azuma_get_installed_version() < '1.1.1' ) {
+			$fs_site_title = get_theme_mod( 'fs_site_title', '56' );
+			if ( $fs_site_title && $fs_site_title != '56' ) {
+				$css[] = '.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}';
+			}
+		} else {
+			$fs_site_title = get_theme_mod( 'fs_site_title' );
+			$fs_site_title_laptop = get_theme_mod( 'fs_site_title_laptop' );
+			$fs_site_title_tablet = get_theme_mod( 'fs_site_title_tablet' );
+			$fs_site_title_mobile = get_theme_mod( 'fs_site_title_mobile' );
+			if ( $fs_site_title_laptop || $fs_site_title_tablet || $fs_site_title_mobile ) {
+				if ( $fs_site_title ) {
+					$css[] = '@media only screen and (min-width: 1025px){.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}}';
+				}
+				if ( $fs_site_title_laptop ) {
+					$css[] = '@media only screen and (min-width: 769px) and (max-width: 1024px){.site-title{font-size:' . esc_attr($fs_site_title_laptop) . 'px;}}';
+				}
+				if ( $fs_site_title_tablet ) {
+					$css[] = '@media only screen and (min-width: 481px) and (max-width: 768px){.site-title{font-size:' . esc_attr($fs_site_title_tablet) . 'px;}}';
+				}
+				if ( $fs_site_title_mobile ) {
+					$css[] = '@media only screen and (max-width: 480px){.site-title{font-size:' . esc_attr($fs_site_title_mobile) . 'px;}}';
+				}
+			} else {
+				if ( $fs_site_title && $fs_site_title != '56' ) {
+					$css[] = '.site-title{font-size:' . esc_attr($fs_site_title) . 'px;}';
+				}
+			}
 		}
+
 		$fw_site_title = get_theme_mod( 'fw_site_title', '700' );
 		if ( $fw_site_title && $fw_site_title != '700' ) {
 			$css[] = '.site-title{font-weight:' . esc_attr($fw_site_title) . ';}';
@@ -86,8 +112,8 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 		}
 
 		$header_textcolor = get_theme_mod( 'header_textcolor', 'ffffff' );
-		if ( $header_textcolor && $header_textcolor != 'ffffff' && $header_textcolor != 'blank' ) {
-			$css[] = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after{color:#' . esc_attr($header_textcolor) . ';}';
+		if ( $header_textcolor && $header_textcolor != 'ffffff' ) {
+			$css[] = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,#site-top-right h1,#site-top-right h2,#site-top-right h3,#site-top-right h4,#site-top-right h5,#site-top-right h6,.top-account h2,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after,#masthead .search-form input[type="search"]::placeholder, #masthead .woocommerce-product-search input[type="search"]::placeholder{color:#' . esc_attr($header_textcolor) . ';}';
 		}
 
 		$hi_color = get_theme_mod( 'hi_color', '#ff7800' );

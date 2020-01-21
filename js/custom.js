@@ -14,6 +14,11 @@ jQuery(document).ready(function($){
             $('#masthead').css({'top' : adminbarheight + 'px'});
         }
 
+        if ( $('#masthead.full').length ) {
+            var mastfullheight = parseInt( $('#masthead').outerHeight() );
+            $('.entry-header.full .title-meta-wrapper, .archive-header.full .title-meta-wrapper').css({'padding-top' : mastfullheight + 'px'});
+        }
+
         var footerheight = parseInt( $('#colophon').height() );
         footerheight = footerheight - 1;
         $('#page.sticky-footer').css({'padding-bottom' : footerheight + 'px'});

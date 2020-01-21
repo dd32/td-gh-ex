@@ -23,7 +23,8 @@
 				$( 'body' ).addClass( 'title-tagline-hidden' );
 			} else {
 				$( 'body' ).removeClass( 'title-tagline-hidden' );
-				$('.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,.toggle-nav').css('color', to );
+				var style = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,#site-top-right h1,#site-top-right h2,#site-top-right h3,#site-top-right h4,#site-top-right h5,#site-top-right h6,.top-account h2,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after,#masthead .search-form input[type="search"]::placeholder, #masthead .woocommerce-product-search input[type="search"]::placeholder{color:' + to + ';}';
+				$('head').append('<style>' + style + '</style>');
 			}			
 		} );
 	} );
@@ -167,7 +168,7 @@
 
 	wp.customize('fs_site_title', function( value ) {
 		value.bind( function( to ) {
-			$('.site-title').css( {'font-size': to + 'px'} );
+			$('head').append('<style>@media only screen and (min-width: 1025px){.site-title{font-size:' + to + 'px;}}</style>');
 		} );
 	} );
 	wp.customize('fw_site_title', function( value ) {
@@ -186,6 +187,23 @@
 		} );
 	} );
 
+	wp.customize('fs_site_title_laptop', function( value ) {
+		value.bind( function( to ) {
+			$('head').append('<style>@media only screen and (min-width: 769px) and (max-width: 1024px){.site-title{font-size:' + to + 'px;}}</style>');
+		} );
+	} );
+
+	wp.customize('fs_site_title_tablet', function( value ) {
+		value.bind( function( to ) {
+			$('head').append('<style>@media only screen and (min-width: 481px) and (max-width: 768px){.site-title{font-size:' + to + 'px;}}</style>');
+		} );
+	} );
+
+	wp.customize('fs_site_title_mobile', function( value ) {
+		value.bind( function( to ) {
+			$('head').append('<style>@media only screen and (max-width: 480px){.site-title{font-size:' + to + 'px;}}</style>');
+		} );
+	} );
 
 } )( jQuery );
 

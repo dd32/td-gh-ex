@@ -4,7 +4,7 @@ Theme URI: https://uxlthemes.com/theme/azuma/
 Author: UXL Themes
 Author URI: https://uxlthemes.com
 Description: Azuma is a customizable WordPress theme which features a sticky header, homepage hero or slider using the standard WordPress image widget, sortable homepage sections, custom colors and fonts, grid layout options and support for video posts/articles. Support for Easy Digital Downloads (EDD) and WooCommerce ecommerce plugins along with Wishlist and Quick View plugins is included along with an auto-updating shopping cart, sticky add-to-cart panel on single product pages and a horizontal product filter widget area.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azuma
@@ -1163,11 +1163,21 @@ article{
 	margin-top: 10px;
 }
 
+.entry-footer .author-name-wrap,
 .entry-footer .cat-links,
 .entry-footer .tags-links,
 .entry-footer .edit-link{
 	display: block;
 	clear: both;
+}
+
+.entry-footer span.author-name-wrap,
+.entry-footer span.author-description{
+	margin-bottom: 10px;
+}
+
+.entry-footer span.author-description p{
+	margin-bottom: 10px;
 }
 
 .entry-footer span.tags-links{
@@ -2451,6 +2461,18 @@ span.mini-account .form-row-last{
 	margin: 0;
 	padding: 0;
 	line-height: 1;
+}
+
+#masthead #site-branding img.custom-logo{
+	max-height: 200px;
+	width: auto;
+	transition: all .5s;
+}
+
+#masthead.scrolled #site-branding img.custom-logo{
+	max-height: 100px;
+	width: auto;
+	transition: all .5s;
 }
 
 .site-title{
@@ -3999,6 +4021,11 @@ p.has-background{
 	top: .4em
 }
 
+#bottom-footer .menu-item-has-children:after,
+.footer-menu .menu-item-has-children:after{
+	display: none;
+}
+
 #primary-menu:hover .menu-item-has-children:after{
 	opacity: .4;
 }
@@ -4224,6 +4251,11 @@ p.has-background{
 		display: block;
 	}
 
+	#masthead > .container {
+		grid-template-columns: minmax(auto,60%) auto minmax(auto,24px);
+		grid-template-columns: minmax(auto, calc(100% - 204px) ) 180px 24px;
+	}
+
 	#site-top-right {
 		grid-column: 2/3;
 		grid-row: 1/2;
@@ -4428,6 +4460,7 @@ p.has-background{
 
 	#masthead > .container {
 		grid-template-columns: minmax(auto,60%) auto minmax(auto,24px);
+		grid-template-columns: minmax(auto, calc(100% - 179px) ) 155px 24px;
 	}
 
 	#masthead .top-account:hover .mini-account,
@@ -4513,10 +4546,6 @@ p.has-background{
 }
 
 @media only screen and (max-width: 580px){
-
-	#masthead > .container {
-		grid-template-columns: minmax(auto,50%) auto minmax(auto,24px);
-	}
 
 	#comments{
 		padding: 15px;
