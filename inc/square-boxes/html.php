@@ -12,7 +12,7 @@
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod('square_boxes_url_1' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_1' , __( 'WordPress' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod('square_boxes_url_1' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_1' , __( 'WordPress' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -27,7 +27,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_2' , true ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_2' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_2' , __( 'HTML5' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_2' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_2' , __( 'HTML5' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -42,7 +42,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_3' , true ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_3' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_3' , __( 'CSS3' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_3' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_3' , __( 'CSS3' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -57,7 +57,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_4' , true ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_4' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_4' , __( 'JavaScript Free' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_4' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_4' , __( 'JavaScript Free' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -71,7 +71,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_5' , false ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_5' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_5' , __( 'CSS3' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_5' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_5' , __( 'CSS3' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -86,7 +86,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_6' , false ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_6' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_6' , __( 'HTML5' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_6' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_6' , __( 'HTML5' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -101,7 +101,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_7' , false ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_7' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_7' , __( 'CSS3' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_7' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_7' , __( 'CSS3' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 
@@ -116,7 +116,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_8' , false ) ) ) : ?>
 
             <h3>
                 
-                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_8' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_8' , __( 'JavaScript Free' , 'semper-fi-lite' ) ); ?></a>
+                <a href="<?php echo esc_url( get_theme_mod( 'square_boxes_url_8' , get_admin_url() . 'customize.php' ) ); ?>"><?php echo esc_html( get_theme_mod( 'square_boxes_text_8' , __( 'JavaScript Free' , 'semper-fi-lite' ) ) ); ?></a>
             
             </h3>
 

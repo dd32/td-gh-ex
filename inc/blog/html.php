@@ -40,7 +40,7 @@ if ( $wp_query->have_posts() ) : ?>
 <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php if (!has_post_thumbnail()) : post_class( array( 'the-blog' , 'no-post-thumbnail' ) ); else : post_class( array( 'the-blog' ) );  endif; ?> itemscope itemtype="http://schema.org/BlogPosting">
 
-                <?php edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ); ?>
+                <?php edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); ?>
                 
                 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
                 
