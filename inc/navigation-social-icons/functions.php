@@ -14,7 +14,7 @@ function semperfi_navigation_social_icons() {
     
     function semperfi_navigation_social_icons_font() {
         
-        wp_enqueue_style( 'semperfi-navigation-social-icons-font' , get_theme_file_uri( '/fonts/schwarz.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+        wp_enqueue_style( 'semperfi-navigation-social-icons-font' , get_theme_file_uri( '/inc/navigation-social-icons/fonts/schwarz.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
 
     }
     
@@ -28,15 +28,19 @@ function semperfi_navigation_social_icons() {
     add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_navigation_social_icons_font', 9 );
     
     
-    function semperfi_navigation_social_icons_customizer_setup() {
+    function semperfi_navigation_social_customizer_setup( $semperfi_customizer_customizer_options_array ) {
         
         require get_parent_theme_file_path( '/inc/navigation-social-icons/customizer.php' );
+        
+        $semperfi_customizer_customizer_options_array = array_merge_recursive( $semperfi_customizer_customizer_options_array , $semperfi_navigation_social_customizer_options_array );
+        
+        return $semperfi_customizer_customizer_options_array;
     
     }
     
-    add_action( 'semperfi_do_action_assemble_customizer_array', 'semperfi_navigation_social_icons_customizer_setup' );
+    add_filter( 'semperfi_add_to_customizer_options_array' , 'semperfi_navigation_social_customizer_setup' );
     
     
 }
 
-add_action( 'functions-hook', 'semperfi_navigation_social_icons' );
+add_action( 'semperfi-functions-hook', 'semperfi_navigation_social_icons' );

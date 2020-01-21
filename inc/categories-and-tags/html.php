@@ -11,13 +11,13 @@
 
 ?>
 
-            <section id="categories-and-tags" style="background-image:url(<?php echo get_theme_mod( 'categories_and_tags_img_1' , get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg' ); ?>);">
+            <section id="categories-and-tags" style="background-image:url(<?php echo esc_url( get_theme_mod( 'categories_and_tags_img_1' , get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg' ) ); ?>);">
 
                 <?php if ( is_customize_preview() ) echo '<div class="customizer-categories-and-tags"></div>';
                 
                 if ( is_404() ) { ?>
 
-                <h3>Next we have a list of all the pages that the website contains.</h3>
+                <h3><?php _e( 'Next we have a list of all the pages that the website contains.' , 'semper-fi-lite' ); ?></h3>
 
                 <ul class="post-categories" >
 

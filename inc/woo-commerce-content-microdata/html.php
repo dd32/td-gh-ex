@@ -8,9 +8,9 @@
                     
                     <p>
 
-                        <?php if ( $product->get_manage_stock() && $product->get_stock_status() ) : ?><b><span itemprop="brand"><?php bloginfo('name'); ?></span></b> currently has <b/><?php echo $product->get_stock_quantity();?></b> <meta itemprop="availability" content="http://schema.org/InStock" />in stock and ready to ship.<?php endif; ?>
+                        <?php if ( $product->get_manage_stock() && $product->get_stock_status() ) : ?><b><span itemprop="brand"><?php bloginfo('name'); ?></span></b> <?php _e( 'currently has' , 'semper-fi-lite' ); ?> <b/><?php echo $product->get_stock_quantity();?></b> <meta itemprop="availability" content="http://schema.org/InStock" /><?php _e( 'in stock and ready to ship.' , 'semper-fi-lite' ); ?><?php endif; ?>
 
-                        <?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?> have a shipping weight of <b><?php echo wc_get_weight( $product->get_weight(), 'lbs' ); ?></b>, and the dimensions <b><?php echo wc_format_dimensions($product->get_dimensions(false)); ?></b> when shipped.
+                        <?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?> <?php _e( 'have a shipping weight of' , 'semper-fi-lite' ); ?> <b><?php echo wc_get_weight( $product->get_weight(), 'lbs' ); ?></b><?php _e( ', and the dimensions' , 'semper-fi-lite' ); ?> <b><?php echo wc_format_dimensions($product->get_dimensions(false)); ?></b> <?php _e( 'when shipped.' , 'semper-fi-lite' ); ?>
                         
                     </p>
                 

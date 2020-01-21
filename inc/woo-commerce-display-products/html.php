@@ -31,11 +31,11 @@
             // Add Shopping cart
             $product_seo_id .= '-store'; ?>
     
-    <article id="<?php echo $product_seo_id; ?>" class="store-front" style="background-image:url(<?php echo get_theme_mod( 'woocommerce_shop_img_' . $i , get_template_directory_uri() . '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg' ); ?>);">
+    <article id="<?php echo $product_seo_id; ?>" class="store-front" style="background-image:url(<?php echo esc_url( get_theme_mod( 'woocommerce_shop_img_' . $i , get_template_directory_uri() . '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg' ) ); ?>);">
         
         <header id="h3-hummer" class="store-header">
 
-            <h2 itemprop="headline"><?php echo $cat->name; ?></h2>
+            <h2 class='header-text' itemprop="headline"><?php echo $cat->name; ?></h2>
             <?php if ( is_customize_preview() ) echo '<div class="customizer-store-front"></div>'; ?>
 
         </header>

@@ -7,9 +7,7 @@
  * @since 14
  */
 
-/**
-* An Array containing every font to be used as choices for theme options
-*/
+// An Array containing every font to be used as choices for theme options
 $google_font_array = array(
     'default',
     'Abel',
@@ -307,3 +305,5 @@ $google_font_array = array(
 
 // Set Array Key the same as Value so array will work with Customizer
 $finalized_google_font_array = array_combine($google_font_array, $google_font_array);
+
+return $finalized_google_font_array;

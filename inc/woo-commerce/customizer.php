@@ -1,7 +1,8 @@
 <?php
 
-$add_more_customizer_options = array(
-    
+$semperfi_woo_commerce_customizer_options_array = array(
+
+
     'woocommerce_shop_title' => array(
         'default_options'  => array(
             1                   => "The Store Front",),
@@ -15,15 +16,16 @@ $add_more_customizer_options = array(
         'section_priority'  => 11,
         'selector'          => '.store-front:nth-of-type(~) .customizer-store-front h2',
         'type'              => 'text'),
+
     
     'woocommerce_shop_img' => array(
         'default_options'  => array(
-            1                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
-            2                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
-            3                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
-            4                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
-            5                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
-            6                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg', ),
+            1                   => get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
+            2                   => get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
+            3                   => get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
+            4                   => get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
+            5                   => get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg',
+            6                   => get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg', ),
         'description'       => array(
             1                   => '',
             2                   => '',
@@ -42,10 +44,7 @@ $add_more_customizer_options = array(
         'selector'          => '.store-front:nth-of-type(~) .customizer-store-front',
         'type'              => 'img'),
 
+
 );
 
-$semperfi_customizer_array_of_options = get_theme_mod('semperfi_theme_mod_assembling_customizer_array');
-
-$semperfi_customizer_array_of_options = array_merge_recursive ( $semperfi_customizer_array_of_options , $add_more_customizer_options );
-
-set_theme_mod( 'semperfi_theme_mod_assembling_customizer_array', $semperfi_customizer_array_of_options );
+return $semperfi_woo_commerce_customizer_options_array;

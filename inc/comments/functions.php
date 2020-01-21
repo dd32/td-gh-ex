@@ -36,4 +36,4 @@ function semperfi_comments() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_comments' );
+add_action( 'semperfi-functions-hook' , 'semperfi_comments' );

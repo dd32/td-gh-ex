@@ -214,7 +214,7 @@ nav#for-mobile ul.navigation-widgets > li {
 
 nav#for-mobile ul.navigation-widgets > li:last-of-type {
     font-size: .7em;
-    text-align: justify;
+    text-align: center;
 }
 
 nav#for-mobile ul.navigation-widgets a {

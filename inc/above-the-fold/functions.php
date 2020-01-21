@@ -16,47 +16,17 @@ function semperfi_above_the_fold() {
         
         wp_enqueue_style( 'semperfi-above-the-fold' , get_theme_file_uri( '/inc/above-the-fold/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
         
-        // For Customizer Preview, otherwise wouldn't see the changes in preview
-        if ( is_customize_preview() ) {
+        // Get Array for CSS Generation
+        require get_parent_theme_file_path( '/inc/above-the-fold/customizer.php' );
         
-            $customized_css = get_theme_mod( 'semperfi_customizer_semperfi-above-the-fold_temporary' );
-
-            $final_customized_css = '';
-
-            if ( is_array( $customized_css ) ) {
-
-                foreach( $customized_css as $key => $value ) {
-
-                    if ( $key != 'fake_key' ) {
-
-                        $final_customized_css .= $value;
-
-                    }
-
-                }
-
-                wp_add_inline_style( 'semperfi-above-the-fold', $final_customized_css );
-
-            }
-            
-        }
+        // Set to a standard name to be passed to
+        $semperfi_customizer_inline_this_css = $semperfi_above_the_fold_customizer_options_array;
         
-        if ( !is_customize_preview() ) {
-            
-            // For when sheet styles have been customized
-            $semperfi_customizer_semperfi_above_the_fold_finalized = get_theme_mod( 'semperfi_customizer_semperfi-above-the-fold_finalized' );
-
-            if ( !empty( $semperfi_customizer_semperfi_above_the_fold_finalized ) ) {
-
-                wp_add_inline_style( 'semperfi-above-the-fold', $semperfi_customizer_semperfi_above_the_fold_finalized );
-
-            }
-            
-        }
+        // Generate CSS Code for wp_add_inline_stye
+        require get_parent_theme_file_path( '/inc/customizer/customizer-inline-css.php' );
         
-        //print_r( get_theme_mod( 'semperfi_customizer_testing' ) );
-
     }
+        
     
     add_action( 'semperfi_404_the_header' , 'semperfi_above_the_fold_css', 9 );
     add_action( 'semperfi_attachment_the_header' , 'semperfi_above_the_fold_css', 9 );
@@ -68,14 +38,18 @@ function semperfi_above_the_fold() {
     add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_above_the_fold_css', 9 );
     
     
-    function semperfi_above_the_fold_customizer_setup() {
+    function semperfi_above_the_fold_customizer_setup( $semperfi_customizer_customizer_options_array ) {
         
         require get_parent_theme_file_path( '/inc/above-the-fold/customizer.php' );
+
+        $semperfi_customizer_customizer_options_array = array_merge_recursive( $semperfi_customizer_customizer_options_array , $semperfi_above_the_fold_customizer_options_array );
+        
+        return $semperfi_customizer_customizer_options_array;
     
     }
     
-    add_action( 'semperfi_do_action_assemble_customizer_array', 'semperfi_above_the_fold_customizer_setup' );
+    add_filter( 'semperfi_add_to_customizer_options_array' , 'semperfi_above_the_fold_customizer_setup' );
     
 }
 
-add_action( 'functions-hook', 'semperfi_above_the_fold' );
+add_action( 'semperfi-functions-hook', 'semperfi_above_the_fold' );

@@ -35,6 +35,19 @@ function semperfi_footer() {
     add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_footer_css', 9 );
     
     
+    function semperfi_footer_customizer_setup( $semperfi_customizer_customizer_options_array ) {
+        
+        require get_parent_theme_file_path( '/inc/footer/customizer.php' );
+        
+        $semperfi_customizer_customizer_options_array = array_merge_recursive( $semperfi_customizer_customizer_options_array , $semperfi_footer_customizer_options_array );
+        
+        return $semperfi_customizer_customizer_options_array;
+    
+    }
+    
+    add_filter( 'semperfi_add_to_customizer_options_array' , 'semperfi_footer_customizer_setup' );
+    
+    
 }
 
-add_action( 'functions-hook' , 'semperfi_footer' );
+add_action( 'semperfi-functions-hook' , 'semperfi_footer' );

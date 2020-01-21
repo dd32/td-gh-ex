@@ -22,7 +22,6 @@ function semperfi_header() {
     function semperfi_header_css() {
         
         wp_enqueue_style( 'semperfi' , get_theme_file_uri( '/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
-        wp_enqueue_style( 'semperfi-google-font' , 'https://fonts.googleapis.com/css?family=Open+Sans|Teko:500&amp;subset=latin-ext' , false , '' , 'all' );
 
     }
     
@@ -37,4 +36,4 @@ function semperfi_header() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_header' );
+add_action( 'semperfi-functions-hook' , 'semperfi_header' );

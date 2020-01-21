@@ -53,7 +53,7 @@ $semperfi_customizer_multi_dimensional_array = array(
 
 
 // Loop through and create the sections
-foreach($semperfi_customizer_array_of_options as $key => $value) {
+foreach($semperfi_customizer_customizer_options_array as $key => $value) {
     
     $i = 1;
     

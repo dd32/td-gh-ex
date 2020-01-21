@@ -30,7 +30,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
         <section itemscope itemtype="http://schema.org/Product">
 
-            <?php edit_post_link('Edit this Product'); ?>
+            <?php edit_post_link( __( 'Edit this Product' , 'semper-fi-lite' ); ?>
 			
 			<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
 				
@@ -56,7 +56,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             
                 <meta itemprop="priceCurrency" content="<?php echo get_woocommerce_currency(); ?>" />
                 
-                <a href="<?php the_permalink() ?>" itemprop="url"><?php echo get_woocommerce_currency_symbol(); ?><span itemprop="price" itemprop="lowPrice"><?php echo floor($product->get_price()); ?></span></a>
+                <a href="<?php the_permalink() ?>" itemprop="url"><?php echo get_woocommerce_currency_symbol(); ?><span itemprop="price" itemprop="lowPrice"><?php echo floor( $product->get_price() ); ?></span></a>
                 
                 <meta itemprop="availability" content="https://schema.org/InStock" />
             

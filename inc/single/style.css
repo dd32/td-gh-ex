@@ -7,7 +7,7 @@ main#the-article:after {
 }
 
 main#the-article {
-    background: url(images/moose-aaaaaa.jpg);
+    background: url(images/moose-eeeeee-300x300.jpg);
     background-color: #eeeeee;
     background-position: 2% bottom;
     background-repeat: no-repeat;
@@ -15,6 +15,12 @@ main#the-article {
     padding: 3em 5% 3em 5%;
     position: relative;
     text-align: left;
+}
+
+main#the-article .customizer {
+    bottom: 5em;
+    left: .5em;
+    position: fixed;
 }
 
 main#the-article h1,

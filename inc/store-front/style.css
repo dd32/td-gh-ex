@@ -1,6 +1,6 @@
 article.store-front {
     align-items: center;
-    background: url(images/moose-aaaaaa.jpg);
+    background: url(images/moose-aaaaaa-300x300.jpg);
     background-attachment: fixed !important;
     background-color: #c52b30;
     background-position: center center !important;
@@ -161,7 +161,7 @@ article.store-front section div.price a:after {
 article.store-front section p {
     color: #333333;
     font-size: .7em;
-    padding: 0 0 1em;
+    padding: 1em 0;
 }
 
 article.store-front section a.continue-reading {

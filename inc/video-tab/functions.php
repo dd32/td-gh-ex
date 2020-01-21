@@ -27,4 +27,4 @@ function semperfi_video_tab() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_video_tab' );
+add_action( 'semperfi-functions-hook' , 'semperfi_video_tab' );

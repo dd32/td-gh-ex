@@ -13,10 +13,10 @@
                 <?php the_post_thumbnail('1920x1080', array( 'class' => 'featured_image', 'itemprop' => 'image' )); ?>
 
 <?php else :?>
-        <img src="<?php echo get_theme_mod( 'default_header_img' , get_template_directory_uri() . '/images/moose-aaaaaa-300x300.jpg' ); ?>" class="featured_image"  itemprop="image" />
+        <img src="<?php echo esc_url( get_theme_mod( 'default_header_img' , get_template_directory_uri() . '/images/moose-aaaaaa-300x300.jpg' ) ); ?>" class="featured_image"  itemprop="image" />
 
 <?php endif; ?>
-            <h2 itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+            <h2 class='header-text' itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
                 
                 <meta itemprop="priceCurrency" content="<?php echo get_woocommerce_currency(); ?>" />
                 
@@ -32,7 +32,7 @@
 
         </header>
             
-        <main id="the-article" itemprop="description" style="background-image:url(<?php echo get_theme_mod( 'main_background_img_1' , get_template_directory_uri() . '/images/moose-aaaaaa-300x300.jpg'); ?>);" >
+        <main id="the-article" itemprop="description" style="background-image:url(<?php echo get_theme_mod( 'main_background_img_1' , get_template_directory_uri() . '/inc/single/images/moose-eeeeee-300x300.jpg'); ?>);" >
             
             <?php do_action('woo_commerce_content_microdata'); ?>
             

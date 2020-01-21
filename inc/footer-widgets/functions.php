@@ -13,4 +13,4 @@ function semperfi_footer_widgets() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_footer_widgets' );
+add_action( 'semperfi-functions-hook' , 'semperfi_footer_widgets' );

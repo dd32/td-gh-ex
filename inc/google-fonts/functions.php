@@ -5,45 +5,40 @@ function semperfi_google_fonts() {
     
     function semperfi_google_fonts_css() {
         
-        // For Customizer Preview, otherwise wouldn't see the changes in preview
-        if ( is_customize_preview() ) {
+        // Generate CSS Code for wp_add_inline_stye
+        require get_parent_theme_file_path( '/inc/customizer/customizer-options.php' );
         
-            $customized_css = get_theme_mod( 'semperfi_customizer_google_fonts_temporary' );
+        $semperfi_default_fonts = 'Open+Sans|Teko:500';
+        
+        foreach( $semperfi_customizer_customizer_options_array as $option => $values ) {
+            
+            $i = 1;
 
-            $final_customized_css = 'https://fonts.googleapis.com/css?family=';
+            while ( $i <=  count( $values['default_options'] ) ) {
+                
+                if ( $values['type'] == 'font' ) {
+                        
+                    $input = esc_html( get_theme_mod( $option . '_' . $i ) );
+                    
+                        if ( $input != 'default'  && 'Open+Sans' && 'Teko' ) {
 
-            if ( is_array( $customized_css ) ) {
+                            if ( ( $input != $values[ 'default_options' ][ $i ] ) && ( $input != '' ) ) {
 
-                foreach( $customized_css as $key => $value ) {
+                                $semperfi_default_fonts .= '|' . $input;
 
-                    if ( $key != 'fake_key' ) {
-
-                        $final_customized_css .= $value;
-
-                    }
-
+                            }
+                            
+                        }
+                    
                 }
-
-                wp_add_inline_style( 'semperfi-above-the-fold', $final_customized_css );
-
+                
+                $i++;
+                
             }
             
         }
         
-        if ( !is_customize_preview() ) {
-            
-            // For when sheet styles have been customized
-            $semperfi_customizer_semperfi_above_the_fold_finalized = get_theme_mod( 'semperfi_customizer_google_fonts' );
-
-            if ( !empty( $semperfi_customizer_semperfi_above_the_fold_finalized ) ) {
-
-                wp_add_inline_style( 'semperfi-google-fonts', $semperfi_customizer_semperfi_above_the_fold_finalized );
-
-            }
-            
-        }
-        
-        wp_enqueue_style( 'semperfi-above-the-fold' , get_theme_file_uri( '/inc/above-the-fold/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+        wp_enqueue_style( 'semperfi-google-font' , 'https://fonts.googleapis.com/css?family=' . $semperfi_default_fonts . '&amp;subset=latin-ext' , false , '' , 'all' );
 
     }
     
@@ -58,4 +53,4 @@ function semperfi_google_fonts() {
     
 }
 
-add_action( 'functions-hook', 'semperfi_google_fonts' );
+add_action( 'semperfi-functions-hook', 'semperfi_google_fonts' );

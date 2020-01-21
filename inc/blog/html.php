@@ -1,17 +1,5 @@
 <?php
 
-if ( get_theme_mod ( 'fresh_install_display_1' , true ) && ( get_option( 'page_on_front' ) == 0 ) ) {
-
-    $remove_from_blog = 0;
-
-}
-
-else {
-    
-    $remove_from_blog = get_the_ID();
-
-}
-
 global $paged;
 global $wp_query;
 
@@ -36,17 +24,23 @@ $wp_query = new WP_Query( array(
     'post_status'       => 'publish',
     'post_type'         => 'post',
     'posts_per_page'    => get_option( 'posts_per_page' ),
-    'post__not_in'      => array( $remove_from_blog ),
     'paged'             => $paged, ) );
 
 if ( $wp_query->have_posts() ) : ?>
 
+        <header id="blog-title-and-image" style="background-image: url('<?php echo esc_url( get_theme_mod( 'blog_background_img_1' , get_template_directory_uri() . '/inc/blog/images/Schwarttzy-Australia-Noosa-Beach-1920x1080.jpg' ) ); ?>');">
+
+            <h2 class='header-text' itemprop="headline"><?php echo esc_attr( get_theme_mod( 'blog_title_text_1' , __( 'Blog' , 'semper-fi-lite' ) ) ); ?></h2>
+            <?php if ( is_customize_preview() ) echo '<div class="customizer-tite-image"></div><div class="customizer-tite-image-2"></div><div class="customizer-tite-image-3"></div>'; ?>
+
+        </header>
+
         <section id="the-posts">
 
 <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php if (!has_post_thumbnail()) : post_class(array('the-blog','no-post-thumbnail')); else : post_class(array('the-blog'));  endif; ?> itemscope itemtype="http://schema.org/BlogPosting">
+            <article id="post-<?php the_ID(); ?>" <?php if (!has_post_thumbnail()) : post_class( array( 'the-blog' , 'no-post-thumbnail' ) ); else : post_class( array( 'the-blog' ) );  endif; ?> itemscope itemtype="http://schema.org/BlogPosting">
 
-                <?php edit_post_link('Edit this Post'); ?>
+                <?php edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ); ?>
                 
                 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://google.com/article"/>
                 
@@ -57,7 +51,7 @@ if ( $wp_query->have_posts() ) : ?>
 
                         <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('850x478', array('itemprop' => 'image')); ?></a>
 
-                        <meta itemprop="url" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ); ?>">
+                        <meta itemprop="url" content="<?php echo esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) ); ?>">
 
                         <meta itemprop="width" content="850">
 
@@ -91,9 +85,9 @@ if ( $wp_query->have_posts() ) : ?>
 
                     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
 
-                        <img src="<?php echo get_theme_mod( 'publisher_logo_img_1' , get_template_directory_uri() . '/images/publisher-logo.jpg' ); ?>" class="microdata-publisher-logo"/>
+                        <img src="<?php echo esc_url( get_theme_mod( 'publisher_logo_img_1' , get_template_directory_uri() . '/inc/blog/images/publisher-logo-600x60.jpg' ) ); ?>" class="microdata-publisher-logo"/>
 
-                        <meta itemprop="url" content="<?php echo get_theme_mod( 'publisher_logo_img_1' , get_template_directory_uri() . '/images/publisher-logo.jpg' ); ?>">
+                        <meta itemprop="url" content="<?php echo esc_url( get_theme_mod( 'publisher_logo_img_1' , get_template_directory_uri() . '/inc/blog/images/publisher-logo-600x60.jpg' ) ); ?>">
 
                         <meta itemprop="width" content="600">
 

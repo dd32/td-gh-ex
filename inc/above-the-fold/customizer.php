@@ -1,25 +1,8 @@
 <?php
 
-$add_more_customizer_options = array(
+$semperfi_above_the_fold_customizer_options_array = array(
 
-    
-    'above_the_fold_img' => array(
-        'default_options'  => array(
-            1                   => get_template_directory_uri() . '/images/moose-logo-1920x1080.jpg' , ),
-        'label'             => __('Default Header Image', 'semper-fi-lite'),
-        'description'       => array(
-            1                   => "This image only appears whent the post or page doesn't have a featured image.", ),
-        'input_attrs'       => array(
-            'img_size'          => '1920x1080', ),
-        'panel_title'       => __('Above The Fold', 'semper-fi-lite'),
-        'panel_priority'    => 106,
-        'priority'          => 10,
-        'section_title'     => __('Static Image', 'semper-fi-lite'),
-        'section_priority'  => 11,
-        'selector'          => 'header#title-and-image div.customizer-tite-image',
-        'type'              => 'img'),
 
-    
     'above_the_fold_title' => array(
         'default_options'  => array(
             1                   => 'default',),
@@ -27,14 +10,14 @@ $add_more_customizer_options = array(
             1                   => '', ),
         'input_attrs'       => array(
             'stylesheet_handle' => 'semperfi-above-the-fold',
-            'css'               => "    header#title-and-image h2 { font-family: $", ),
+            'css'               => "    header > h2.header-text { font-family: $", ),
         'label'             => __('Font', 'semper-fi-lite'),
-        'panel_title'       => __('Above The Fold', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'panel_priority'    => 2,
         'priority'          => 10,
-        'section_title'     => __('Static Image', 'semper-fi-lite'),
+        'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'header#title-and-image h2',
+        'selector'          => 'header > h2.header-text',
         'type'              => 'font'),
 
 
@@ -45,44 +28,45 @@ $add_more_customizer_options = array(
             1                   => '', ),
         'input_attrs'       => array(
             'stylesheet_handle' => 'semperfi-above-the-fold',
-            'css'               => '    header#title-and-image h2 { font-size: $em', ),
+            'css'               => '    header > h2.header-text { font-size: $em', ),
         'label'             => __('Font Size', 'semper-fi-lite'),
-        'panel_title'       => __('Above The Fold', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'panel_priority'    => 2,
         'priority'          => 10,
-        'section_title'     => __('Static Image', 'semper-fi-lite'),
+        'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
-        'selector'          => 'header#title-and-image h2',
+        'selector'          => 'header > h2.header-text',
         'type'              => 'range',
         'high'              => '12.00',
         'low'               => '0.00',
-        'step'              => '.05',
+        'step'              => '.025',
         'units'             => 'em',
         'type'              => 'range'),
 
 
-    'above_the_fold_position_from_top' => array(
+    'above_the_fold_position_from_bottom' => array(
         'default_options'  => array(
-            1                   => '5',),
+            1                   => '-.15',),
         'description'       => array(
             1                   => '', ),
         'input_attrs'       => array(
             'stylesheet_handle' => 'semperfi-above-the-fold',
-            'css'               => '    header#title-and-image h2 { top: $em', ),
-        'label'             => __('Postion of the Title From Top', 'semper-fi-lite'),
-        'panel_title'       => __('Above The Fold', 'semper-fi-lite'),
+            'css'               => '    header > h2.header-text { bottom: $em', ),
+        'label'             => __('Postion of the Title From Bottom', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'panel_priority'    => 2,
         'priority'          => 10,
-        'section_title'     => __('Static Image', 'semper-fi-lite'),
+        'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
-        'selector'          => 'header#title-and-image h2',
+        'selector'          => 'header > h2.header-text',
         'type'              => 'range',
         'high'              => '12.00',
-        'low'               => '0.00',
-        'step'              => '.05',
+        'low'               => '-12.00',
+        'step'              => '.025',
         'units'             => 'em',
         'type'              => 'range'),
 
+    
     'above_the_fold_title_color' => array(
         'default_options'  => array(
             1                   => '#ffffff',),
@@ -90,20 +74,17 @@ $add_more_customizer_options = array(
             1                   => '', ),
         'input_attrs'       => array(
             'stylesheet_handle' => 'semperfi-above-the-fold',
-            'css'               => '    header#title-and-image h2 { color: $', ),
+            'css'               => '    header > h2.header-text { color: $', ),
         'label'             => __('Color', 'semper-fi-lite'),
-        'panel_title'       => __('Above The Fold', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'panel_priority'    => 2,
         'priority'          => 10,
-        'section_title'     => __('Static Image', 'semper-fi-lite'),
+        'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
-        'selector'          => 'header#title-and-image h2',
+        'selector'          => 'header > h2.header-text',
         'type'              => 'color'),
 
-);
 
-$semperfi_customizer_array_of_options = get_theme_mod('semperfi_theme_mod_assembling_customizer_array');
+        );
 
-$semperfi_customizer_array_of_options = array_merge_recursive ( $semperfi_customizer_array_of_options , $add_more_customizer_options );
-
-set_theme_mod( 'semperfi_theme_mod_assembling_customizer_array', $semperfi_customizer_array_of_options );
+return $semperfi_above_the_fold_customizer_options_array;

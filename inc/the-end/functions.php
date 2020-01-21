@@ -18,4 +18,4 @@ function semperfi_the_end() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_the_end' );
+add_action( 'semperfi-functions-hook' , 'semperfi_the_end' );

@@ -1,17 +1,18 @@
 <?php
 
-$add_more_customizer_options = array(
+$semperfi_store_front_customizer_options_array = array(
+
 
     'store_front_front_img' => array(
         'default_options'  => array(
-            1                   => get_template_directory_uri() . '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg', ),
+            1                   => get_template_directory_uri() . '/inc/store-front/images/Schwarttzy-Skyvan-Chicago-Lake-Front-Michigan-1920x1080.jpg', ),
         'description'       => array(
             1                   => '',  ),
         'input_attrs'       => array(
             'img_size'          => '1920x1080', ),
         'label'             => __('Image', 'semper-fi-lite'),
-        'panel_title'       => __('Store Front', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('Store Front Background', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -20,15 +21,15 @@ $add_more_customizer_options = array(
 
     'store_front_img' => array(
         'default_options'  => array(
-            1                   => get_template_directory_uri() . '/images/Hybrid-Skydiving-Jerrid-Cody-Hunter-Mario-Jon-Tasha-576x324.jpg',
-            2                   => get_template_directory_uri() . '/images/Kara_Skydiving_Sitfly-576x324.jpg',
-            3                   => get_template_directory_uri() . '/images/Clinton-Skydive-Sunset-Flocking-576x324.jpg',
-            4                   => get_template_directory_uri() . '/images/Head-Down-Freeflying-Casey-Heather-Paul-576x324.jpg',
-            5                   => get_template_directory_uri() . '/images/Tandem-Skydive-Cody-576x324.jpg',
-            6                   => get_template_directory_uri() . '/images/Klash-Tandem-Hanycam-576x324.jpg',
-            7                   => get_template_directory_uri() . '/images/Head-Down-Jenny-Steve-576x324.jpg',
-            8                   => get_template_directory_uri() . '/images/undy-hundy-jon-klash-clint-hunter-576x324.jpg',
-            9                   => get_template_directory_uri() . '/images/astronaut-cats-red-dot-576x324.jpg',
+            1                   => get_template_directory_uri() . '/inc/store-front/images/Hybrid-Skydiving-Jerrid-Cody-Hunter-Mario-Jon-Tasha-500x500.jpg',
+            2                   => get_template_directory_uri() . '/inc/store-front/images/Kara-Skydiving-Sitfly-500x500.jpg',
+            3                   => get_template_directory_uri() . '/inc/store-front/images/Clinton-Skydive-Sunset-Flocking-500x500.jpg',
+            4                   => get_template_directory_uri() . '/inc/store-front/images/Head-Down-Freeflying-Casey-Heather-Paul-500x500.jpg',
+            5                   => get_template_directory_uri() . '/inc/store-front/images/Tandem-Skydive-Cody-500x500.jpg',
+            6                   => get_template_directory_uri() . '/inc/store-front/images/Klash-Tandem-Hanycam-500x500.jpg',
+            7                   => get_template_directory_uri() . '/inc/store-front/images/Head-Down-Steve-500x500.jpg',
+            8                   => get_template_directory_uri() . '/inc/store-front/images/Undy-Hundy-Jon-Klash-Clint-Hunter-500x500.jpg',
+            9                   => get_template_directory_uri() . '/inc/store-front/images/Jenny-Grabing-Jennys-Butt-500x500.jpg',
             10                  => get_template_directory_uri() . '/inc/store-front/images/Moab-Schwarttzy-H3-Hummer-Top-of-the-World-Over-Hang-Off-Road-4x4-500x500.jpg', ),
         'description'       => array(
             1                   => '',
@@ -44,8 +45,8 @@ $add_more_customizer_options = array(
         'input_attrs'       => array(
             'img_size'          => '576x324', ),
         'label'             => __('Image', 'semper-fi-lite'),
-        'panel_title'       => __('Store Front', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -76,8 +77,8 @@ $add_more_customizer_options = array(
             9                   => '',
             10                  => '', ),
         'label'             => __('Title', 'semper-fi-lite'),
-        'panel_title'       => __('Store Front', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -108,8 +109,8 @@ $add_more_customizer_options = array(
             9                   => '',
             10                  => '', ),
         'label'             => __('Paragraph', 'semper-fi-lite'),
-        'panel_title'       => __('Store Front', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -140,8 +141,8 @@ $add_more_customizer_options = array(
             9                   => '',
             10                  => '', ),
         'label'             => __('Paragraph', 'semper-fi-lite'),
-        'panel_title'       => __('Store Front', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -172,18 +173,15 @@ $add_more_customizer_options = array(
             9                   => '',
             10                  => '', ),
         'label'             => __('Link', 'semper-fi-lite'),
-        'panel_title'       => __('Store Front', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 11,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
         'selector'          => 'article#store-front section:nth-of-type(1) p a',
         'type'              => 'url'),
-    
+
+
 );
 
-$semperfi_customizer_array_of_options = get_theme_mod('semperfi_theme_mod_assembling_customizer_array');
-
-$semperfi_customizer_array_of_options = array_merge_recursive ( $semperfi_customizer_array_of_options , $add_more_customizer_options );
-
-set_theme_mod( 'semperfi_theme_mod_assembling_customizer_array', $semperfi_customizer_array_of_options );
+return $semperfi_store_front_customizer_options_array;

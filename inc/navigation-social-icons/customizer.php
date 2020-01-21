@@ -1,7 +1,7 @@
 <?php
 
+$semperfi_navigation_social_customizer_options_array = array(
 
-$add_more_customizer_options = array(
 
     'social_icon_display' => array(
         'default_options'  => array(
@@ -24,7 +24,7 @@ $add_more_customizer_options = array(
             17                  => true,
             18                  => true,
             19                  => true,
-            20                  => true,),
+            20                  => true, ),
         'description'       => array(
             1                   => '',
             2                   => '',
@@ -47,11 +47,11 @@ $add_more_customizer_options = array(
             19                  => '',
             20                  => '',),
         'label'             => __('Enable Icon?', 'semper-fi-lite'),
-        'panel_title'       => __('Navigation', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Social Icons', 'semper-fi-lite'),
+        'panel_priority'    => 2,
         'priority'          => 10,
         'section_title'     => array(
-            1                   => __('All Social Icon', 'semper-fi-lite'),
+            1                   => __('All Social Icons', 'semper-fi-lite'),
             2                   => __('Bitcoin - Social Icon', 'semper-fi-lite'),
             3                   => __('Beer - Social Icon', 'semper-fi-lite'),
             4                   => __('Compass - Social Icon', 'semper-fi-lite'),
@@ -97,8 +97,8 @@ $add_more_customizer_options = array(
         'choices' => array(
             true             => 'Yes',
             false            => 'No')),
-    
-    
+
+
 
     'social_icon_url' => array(
         'default_options'  => array(
@@ -144,11 +144,11 @@ $add_more_customizer_options = array(
             19                  => '',
             20                  => '',),
         'label'             => __('Link', 'semper-fi-lite'),
-        'panel_title'       => __('Navigation', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; Social Icons', 'semper-fi-lite'),
+        'panel_priority'    => 2,
         'priority'          => 11,
         'section_title'     => array(
-            1                   => __('All Social Icon', 'semper-fi-lite'),
+            1                   => __('All Social Icons', 'semper-fi-lite'),
             2                   => __('Bitcoin - Social Icon', 'semper-fi-lite'),
             3                   => __('Beer - Social Icon', 'semper-fi-lite'),
             4                   => __('Compass - Social Icon', 'semper-fi-lite'),
@@ -192,10 +192,7 @@ $add_more_customizer_options = array(
             20                  => 'nav#for-mobile ul.social li.youtube a',),
         'type'              => 'url'),
 
+
 );
 
-$semperfi_customizer_array_of_options = get_theme_mod('semperfi_theme_mod_assembling_customizer_array');
-
-$semperfi_customizer_array_of_options = array_merge_recursive ( $semperfi_customizer_array_of_options , $add_more_customizer_options );
-
-set_theme_mod( 'semperfi_theme_mod_assembling_customizer_array', $semperfi_customizer_array_of_options );
+return $semperfi_navigation_social_customizer_options_array;

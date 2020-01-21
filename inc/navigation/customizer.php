@@ -1,8 +1,8 @@
 <?php
 
-$add_more_customizer_options = array(
-    
-    
+$semperfi_navigation_customizer_options_array = array(
+
+
     'nav_main_img' => array(
         'default_options'  => array(
             1                   => get_template_directory_uri() . '/inc/navigation/images/default-naviagtion-moose-image.png', ),
@@ -11,10 +11,10 @@ $add_more_customizer_options = array(
         'input_attrs'       => array(
             'img_size'          => '100x350', ),
         'label'             => __('Navigation Logo', 'semper-fi-lite'),
-        'panel_title'       => __('Navigation', 'semper-fi-lite'),
-        'panel_priority'    => 106,
-        'priority'          => 10,
-        'section_title'     => __('Menu Title', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
+        'panel_priority'    => 1,
+        'priority'          => 12,
+        'section_title'     => __('Navigation', 'semper-fi-lite'),
         'section_priority'  => 11,
         'selector'          => 'nav img.nav-logo',
         'type'              => 'img'),
@@ -29,10 +29,10 @@ $add_more_customizer_options = array(
             'css'               => "    nav#for-mobile h1 { font-family: $", ),
         'label'             => __('Font', 'semper-fi-lite'),
         'panel_priority'    => 1,
-        'panel_title'       => __('Navigation', 'semper-fi-lite'),
-        'priority'          => 10,
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
+        'priority'          => 12,
         'section_priority'  => 10,
-        'section_title'     => __('Menu Title', 'semper-fi-lite'),
+        'section_title'     => __('Navigation', 'semper-fi-lite'),
         'selector'          => 'nav#for-mobile h1',
         'type'              => 'font', ),
 
@@ -44,10 +44,10 @@ $add_more_customizer_options = array(
         'label'             => __('Title Font Size', 'semper-fi-lite'),
         'description'       => array(
             1                   => '', ),
-        'panel_title'       => __('Navigation', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'panel_priority'    => 1,
-        'priority'          => 10,
-        'section_title'     => __('Menu Title', 'semper-fi-lite'),
+        'priority'          => 12,
+        'section_title'     => __('Navigation', 'semper-fi-lite'),
         'section_priority'  => 10,
         'selector'          => 'nav#for-mobile h1',
         'type'              => 'range',
@@ -56,10 +56,8 @@ $add_more_customizer_options = array(
         'step'              => '.05',
         'units'             => 'em',
         'type'              => 'text'),
+
+
 );
 
-$semperfi_customizer_array_of_options = get_theme_mod('semperfi_theme_mod_assembling_customizer_array');
-
-$semperfi_customizer_array_of_options = array_merge_recursive ( $semperfi_customizer_array_of_options , $add_more_customizer_options );
-
-set_theme_mod( 'semperfi_theme_mod_assembling_customizer_array', $semperfi_customizer_array_of_options );
+return $semperfi_navigation_customizer_options_array;

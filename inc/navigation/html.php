@@ -5,13 +5,13 @@
             
             <meta itemprop="url" content="<?php echo esc_url( home_url( '/' ) ); ?>" />
         
-            <img itemprop="logo" src="<?php echo get_theme_mod( 'nav_main_img_1' , get_template_directory_uri() . '/inc/navigation/images/default-naviagtion-moose-image.png' ); ?>" class="nav-logo" />
+            <img itemprop="logo" src="<?php echo esc_url( get_theme_mod( 'nav_main_img_1' , get_template_directory_uri() . '/inc/navigation/images/default-naviagtion-moose-image.png' ) ); ?>" class="nav-logo" />
 
             <div class="menu-trick" id="hide-moble">
 
-                <a class="enable-drop-down" href="#for-mobile">Open<br>Menu</a>
+                <a class="enable-drop-down" href="#for-mobile"><?php _e( 'Open' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
 
-                <a class="disable-drop-down" href="#hide-moble">Close<br>Menu</a>
+                <a class="disable-drop-down" href="#hide-moble"><?php _e( 'Close' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
 
             </div>
 <?php do_action('navigation_social_icons'); ?>
@@ -37,7 +37,7 @@
             
             <?php if (!dynamic_sidebar('menu widgets')) : ?><?php endif; ?>
             
-            <li>Good Old Fashioned Hand Written <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'ThemeURI' );?>" title="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Name' );?> - v<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'Version' );?>">WordPress Theme</a> by <a href="<?php $my_theme = wp_get_theme(); echo $my_theme->get( 'AuthorURI' );?>" title="Eric J Schwarz"><?php echo $my_theme->get( 'Author' );?></a></li>
+            <li><?php $my_theme = wp_get_theme(); echo __( 'Good Old Fashioned Hand Written Code by' , 'semper-fi-lite' ) . '<a href="' . $my_theme->get( 'AuthorURI' ) . '" title="Eric J Schwarz">' . $my_theme->get( 'Author' ) . '</a>'; ?></li>
         
         </ul>
 

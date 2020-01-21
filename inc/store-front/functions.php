@@ -54,15 +54,19 @@ function semperfi_store_front() {
     add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_store_front_css', 9 );
     
     
-    function semperfi_store_front_customizer_setup() {
+    function semperfi_store_front_customizer_setup( $semperfi_customizer_customizer_options_array ) {
         
         require get_parent_theme_file_path( '/inc/store-front/customizer.php' );
+        
+        $semperfi_customizer_customizer_options_array = array_merge_recursive( $semperfi_customizer_customizer_options_array , $semperfi_store_front_customizer_options_array );
+        
+        return $semperfi_customizer_customizer_options_array;
     
     }
     
-    add_action( 'semperfi_do_action_assemble_customizer_array', 'semperfi_store_front_customizer_setup' );
+    add_filter( 'semperfi_add_to_customizer_options_array' , 'semperfi_store_front_customizer_setup' );
     
     
 }
 
-add_action( 'functions-hook', 'semperfi_store_front' );
+add_action( 'semperfi-functions-hook', 'semperfi_store_front' );

@@ -7,8 +7,6 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php the_permalink() ?>"/>
             
             <header id="title-and-image">
-            
-            <?php if ( is_customize_preview() ) echo '<div class="customizer-tite-image"></div><div class="customizer-tite-image-2"></div><div class="customizer-tite-image-3"></div>'; ?>
 
 <?php if ( has_post_thumbnail() ) : ?>
                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -23,15 +21,12 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <meta itemprop="height" content="<?php $image_height = $image_data[2]; echo $image_height; ?>">
                     
                 </div>
-<?php else :?>
-            <img src="<?php echo get_theme_mod( 'above_the_fold_img_1' , get_template_directory_uri() . '/images/moose-logo-1920x1080.jpg' ); ?>" class="featured_image" />
-
 <?php endif; ?>
-                <h2 itemprop="headline"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></h2>
+                <h2 class='header-text' itemprop="headline"><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></h2>
             
             </header>
             
-            <main id="the-article" itemprop="articleBody" style="background-image:url(<?php echo get_theme_mod( 'main_background_img_1' , get_template_directory_uri() . '/images/moose-aaaaaa-300x300.jpg' ); ?>);" >
+            <main id="the-article" itemprop="articleBody" style="background-image:url(<?php echo get_theme_mod( 'main_background_img_1' , get_template_directory_uri() . '/inc/single/images/moose-eeeeee-300x300.jpg' ); ?>);" >
                 
                 <?php do_action( 'semperfi_content_data' ); ?>
                 
@@ -46,6 +41,8 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 do_action( 'semperfi_display_comments' );
     
 endwhile; ?>
+            
+            <?php if ( is_customize_preview() ) echo '<div class="customizer"></div>'; ?>
 
         </article>
 

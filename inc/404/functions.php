@@ -21,6 +21,19 @@ function semperfi_404() {
     add_action( 'semperfi_404_the_header' , 'semperfi_404_css', 9 );
     
     
+    function semperfi_404_customizer_setup( $semperfi_customizer_customizer_options_array ) {
+        
+        require get_parent_theme_file_path( '/inc/404/customizer.php' );
+
+        $semperfi_customizer_customizer_options_array = array_merge_recursive( $semperfi_customizer_customizer_options_array , $semperfi_404_customizer_options_array );
+        
+        return $semperfi_customizer_customizer_options_array;
+        
+    }
+    
+    add_filter( 'semperfi_add_to_customizer_options_array' , 'semperfi_404_customizer_setup' );
+    
+    
 }
 
-add_action( 'functions-hook' , 'semperfi_404' );
+add_action( 'semperfi-functions-hook' , 'semperfi_404' );

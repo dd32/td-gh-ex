@@ -21,4 +21,4 @@ function semperfi_attachment() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_attachment' );
+add_action( 'semperfi-functions-hook' , 'semperfi_attachment' );

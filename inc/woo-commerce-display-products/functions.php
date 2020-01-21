@@ -93,4 +93,4 @@ function semperfi_woo_commerce_display_products_front_page() {
     
 }
 
-add_action( 'functions-hook', 'semperfi_woo_commerce_display_products_front_page' );
+add_action( 'semperfi-functions-hook', 'semperfi_woo_commerce_display_products_front_page' );

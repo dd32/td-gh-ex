@@ -25,7 +25,7 @@ if ( $max_value && $min_value === $max_value ) {
 	/* translators: %s: Quantity. */
 	$labelledby = ! empty( $args['product_name'] ) ? sprintf( __( '%s quantity', 'semper-fi-lite' ), strip_tags( $args['product_name'] ) ) : '';
 	?>
-    <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'semper-fi-lite' ); ?></label>
+    <label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php _e( 'Quantity', 'semper-fi-lite' ); ?></label>
     <input
         type="number"
         id="<?php echo esc_attr( $input_id ); ?>"

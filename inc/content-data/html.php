@@ -9,7 +9,7 @@
                         
                         </strong>
                         
-                        published "<?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?>" on 
+                        <?php _e( 'published "' , 'semper-fi-lite' ); if ( get_the_title() ) { the_title();} else { _e( '(No Title)', 'semper-fi-lite' ); } ?>" <?php _e( 'on ' , 'semper-fi-lite' ); ?>
                         
                         <time itemprop="datePublished" content="<?php the_time('Y-m-d H:i') ?>" >
                             
@@ -17,7 +17,7 @@
                         
                         </time>
                         
-                        and was last modified on 
+                        <?php _e( 'and was last modified on ' , 'semper-fi-lite' ); ?>
                         
                         <time itemprop="dateModified" content="<?php the_modified_date('Y-m-d H:i'); ?>">
                             
@@ -30,9 +30,9 @@
                         
                         <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
                             
-                            <img src="<?php echo get_theme_mod('publisher_logo_img'); ?>" class="microdata-publisher-logo"/>
+                            <img src="<?php echo esc_url( get_theme_mod( 'publisher_logo_img_1' , get_template_directory_uri() . '/inc/blog/images/publisher-logo-600x60.jpg' ) ); ?>" class="microdata-publisher-logo"/>
                             
-                            <meta itemprop="url" content="<?php echo get_theme_mod( 'publisher_logo_img' , get_template_directory_uri() . '/images/publisher-logo.jpg' ); ?>">
+                            <meta itemprop="url" content="<?php echo esc_url( get_theme_mod( 'publisher_logo_img_1' , get_template_directory_uri() . '/inc/blog/images/publisher-logo-600x60.jpg' ) ); ?>">
                             
                             <meta itemprop="width" content="600">
                             

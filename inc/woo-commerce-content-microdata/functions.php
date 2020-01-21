@@ -25,4 +25,4 @@ function semperfi_woo_commerce_content_data() {
     
 }
 
-add_action( 'functions-hook' , 'semperfi_woo_commerce_content_data' );
+add_action( 'semperfi-functions-hook' , 'semperfi_woo_commerce_content_data' );
