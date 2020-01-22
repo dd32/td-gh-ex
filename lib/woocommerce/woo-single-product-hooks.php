@@ -1,7 +1,5 @@
 <?php
 /*
------------------------------------------------------------------------------------*/
-/*
  This theme supports WooCommerce */
 /*-----------------------------------------------------------------------------------*/
 if ( ! defined( 'ABSPATH' ) ) {
@@ -75,26 +73,21 @@ function ascend_single_woocommerce_support() {
 			remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 		}
 
-		// Redefine woocommerce_output_related_products()
-		function ascend_woo_related_products_limit() {
-			global $product, $woocommerce;
-			if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
-				$related = wc_get_related_products( $product->get_id(), 12 );
-			} else {
-				$related = $product->get_related( 12 );
+		/**
+		 * Function to filter how many related posts show.
+		 *
+		 * @param array $args current args.
+		 */
+		function ascend_product_related_products_limit( $args ) {
+			$ascend = ascend_get_options();
+			if ( ! empty( $ascend['related_item_column'] ) ) {
+				$args['columns'] = $ascend['related_item_column'];
 			}
-			$args = array(
-				'post_type'           => 'product',
-				'no_found_rows'       => 1,
-				'posts_per_page'      => 8,
-				'ignore_sticky_posts'   => 1,
-				'orderby'               => 'rand',
-				'post__in'              => $related,
-				'post__not_in'          => array( $product->get_id() ),
-			);
+			$args['posts_per_page'] = 8;
+
 			return $args;
 		}
-		add_filter( 'woocommerce_related_products_args', 'ascend_woo_related_products_limit' );
+		add_filter( 'woocommerce_output_related_products_args', 'ascend_product_related_products_limit' );
 
 		// Display product tabs?
 		add_action( 'wp_head', 'ascend_woo_tab_check' );

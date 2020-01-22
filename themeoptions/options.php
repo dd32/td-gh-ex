@@ -4078,6 +4078,13 @@ Redux::setSection( $opt_name, array(
     'title' => __('Misc Settings', 'ascend'),
     'desc' => "<div class='redux-info-field'><h3>".__('Misc Settings', 'ascend')."</h3></div>",
     'fields' => array(
+    	array(
+			'id'       => 'guten_preview',
+			'type'     => 'switch',
+			'title'    => __( 'Use Theme Options Colors in Gutenberg', 'ascend' ),
+			'subtitle' => __( 'Turn off if you do not want the content background to effect the gutenberg interface.', 'ascend' ),
+			'default'  => 1,
+		),
         array(
             'id'=>'info_sidebars',
             'type' => 'info',

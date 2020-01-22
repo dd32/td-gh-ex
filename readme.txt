@@ -28,6 +28,13 @@ Yes, go here: https://www.kadencewp.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.4.4 | 22nd January 2020 =
+* Add: option to have background colors effect Gutenberg editor.
+* Update: Remove woocommerce notice about out of date template.
+* Remove: data-vocabulary.org from breadcrumbs.
+* Fix: Gutenberg Styling issue.
+* Fix: Styling issue with elementor nav widget.
+
 = Version 1.4.3 | 15th October 2019 =
 * Update: Better Elementor Pro Support.
 * Update: Breadcrumbs, new class better rank math support.

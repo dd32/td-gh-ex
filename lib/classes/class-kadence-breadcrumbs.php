@@ -103,9 +103,9 @@ if ( ! class_exists( 'Kadence_Breadcrumbs' ) ) {
 					'delimiter'        => apply_filters( 'kadence_breadcrumb_delimiter', '&raquo;' ),
 					'delimiter_before' => '<span class="bc-delimiter">',
 					'delimiter_after'  => '</span>',
-					'link_before'      => '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">',
+					'link_before'      => '<span>',
 					'link_after'       => '</span>',
-					'link_in_before'   => '<span itemprop="title">',
+					'link_in_before'   => '<span>',
 					'link_in_after'    => '</span>',
 				)
 			);

@@ -7,8 +7,43 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Ascend_Nav_Walker extends Walker_Nav_Menu {
 
-	function start_lvl( &$output, $depth = 0, $args = array() ) {
-		$output .= "\n<ul class=\"sub-menu sf-dropdown-menu dropdown\">\n";
+	/**
+	 * Starts the list before the elements are added.
+	 *
+	 * @since 3.0.0
+	 *
+	 * @see Walker::start_lvl()
+	 *
+	 * @param string   $output Used to append additional content (passed by reference).
+	 * @param int      $depth  Depth of menu item. Used for padding.
+	 * @param stdClass $args   An object of wp_nav_menu() arguments.
+	 */
+	public function start_lvl( &$output, $depth = 0, $args = null ) {
+		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+			$t = '';
+			$n = '';
+		} else {
+			$t = "\t";
+			$n = "\n";
+		}
+		$indent = str_repeat( $t, $depth );
+
+		// Default class.
+		$classes = array( 'sub-menu' );
+
+		/**
+		 * Filters the CSS class(es) applied to a menu list element.
+		 *
+		 * @since 4.8.0
+		 *
+		 * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element.
+		 * @param stdClass $args    An object of `wp_nav_menu()` arguments.
+		 * @param int      $depth   Depth of menu item. Used for padding.
+		 */
+		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
+		$output .= "{$n}{$indent}<ul$class_names>{$n}";
 	}
 
 }
@@ -30,6 +65,20 @@ function ascend_menu_nav_args($args, $item, $depth) {
 	return $args;
 }
 add_filter( 'nav_menu_item_args', 'ascend_menu_nav_args', 20, 3 );
+
+/**
+ * Add Classes to menu.
+ *
+ * @param object $classes the menu item args.
+ * @param object $args the menu item object.
+ * @param int    $depth the menu item depth.
+ */
+function ascend_menu_submenu_nav_args( $classes, $args, $depth ) {
+	$classes[] = 'sf-dropdown-menu';
+	$classes[] = 'dropdown';
+	return $classes;
+}
+add_filter( 'nav_menu_submenu_css_class', 'ascend_menu_submenu_nav_args', 10, 3 );
 
 /**
 * add classes
@@ -71,10 +120,6 @@ function ascend_nav_menu_args( $args = '' ) {
 		$ascend_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
 	}
 
-	if ( ! $args['walker'] ) {
-		$ascend_args['walker'] = new Ascend_Nav_Walker();
-	}
-
 	return array_merge( $args, $ascend_args );
 }
 add_filter( 'wp_nav_menu_args', 'ascend_nav_menu_args', '10' );
@@ -84,10 +129,10 @@ add_filter( 'wp_nav_menu_args', 'ascend_nav_menu_args', '10' );
  */
 class ascend_mobile_walker extends Walker_Nav_Menu {
 
-  function start_lvl(&$output, $depth = 0, $args = array()) {
+  function start_lvl(&$output, $depth = 0, $args = null) {
     $output .= "\n<ul class=\"sub-menu sf-dropdown-menu collapse\">\n";
   }
-  function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+  function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
     global $wp_query;
 
     $indent = ($depth) ? str_repeat("\t", $depth) : '';
