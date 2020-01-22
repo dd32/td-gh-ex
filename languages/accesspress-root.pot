@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessPress Root 1.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-26 07:53+0000\n"
+"POT-Creation-Date: 2020-01-22 05:40+0000\n"
 "POT-Revision-Date: Fri Aug 19 2016 11:49:21 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
@@ -158,7 +158,11 @@ msgstr ""
 msgid "Footer 4"
 msgstr ""
 
-#: header.php:44
+#: header.php:29
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:49
 msgid "Menu"
 msgstr ""
 
@@ -689,11 +693,11 @@ msgstr ""
 
 #: inc/panel/accesspress-root-customizer.php:73
 #: inc/panel/accesspress-root-customizer.php:171
-#: inc/panel/accesspress-root-customizer.php:684
-#: inc/panel/accesspress-root-customizer.php:750
-#: inc/panel/accesspress-root-customizer.php:816
-#: inc/panel/accesspress-root-customizer.php:882
-#: inc/panel/accesspress-root-customizer.php:948
+#: inc/panel/accesspress-root-customizer.php:696
+#: inc/panel/accesspress-root-customizer.php:762
+#: inc/panel/accesspress-root-customizer.php:828
+#: inc/panel/accesspress-root-customizer.php:894
+#: inc/panel/accesspress-root-customizer.php:960
 #: inc/panel/accesspress-root-sanitize.php:44
 msgid "Image"
 msgstr ""
@@ -744,156 +748,148 @@ msgstr ""
 msgid "Image & Text"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:180
+#: inc/panel/accesspress-root-customizer.php:182
+#: inc/welcome/sections/getting_started.php:11
+msgid "Upload Logo"
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:183
+msgid "Upload image for logo."
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:192
 msgid "Single Post"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:181
+#: inc/panel/accesspress-root-customizer.php:193
 msgid "Setup Single Post Settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:190
+#: inc/panel/accesspress-root-customizer.php:202
 msgid "Single Post Layout"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:191
+#: inc/panel/accesspress-root-customizer.php:203
 msgid "Choose layout of single post."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:206
+#: inc/panel/accesspress-root-customizer.php:218
 msgid "Single Page"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:207
+#: inc/panel/accesspress-root-customizer.php:219
 msgid "Setup Single Page Settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:216
+#: inc/panel/accesspress-root-customizer.php:228
 msgid "Single Page Layout"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:217
+#: inc/panel/accesspress-root-customizer.php:229
 msgid "Choose layout of single page."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:232
+#: inc/panel/accesspress-root-customizer.php:244
 msgid "Archive Post"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:233
+#: inc/panel/accesspress-root-customizer.php:245
 msgid "Setup Archive Page Settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:242
+#: inc/panel/accesspress-root-customizer.php:254
 msgid "Archive Page Layout"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:243
+#: inc/panel/accesspress-root-customizer.php:255
 msgid "Choose layout of archive page."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:261
+#: inc/panel/accesspress-root-customizer.php:273
 msgid "Blog Post Layout"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:262
+#: inc/panel/accesspress-root-customizer.php:274
 msgid "Choose layout of Blog Post Layout."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:267
+#: inc/panel/accesspress-root-customizer.php:279
 #: inc/panel/accesspress-root-sanitize.php:118
 #: inc/panel/accesspress-root-sanitize.php:134
 msgid "Blog with Large Image"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:268
+#: inc/panel/accesspress-root-customizer.php:280
 #: inc/panel/accesspress-root-sanitize.php:119
 #: inc/panel/accesspress-root-sanitize.php:135
 msgid "Blog with Medium Image"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:269
+#: inc/panel/accesspress-root-customizer.php:281
 #: inc/panel/accesspress-root-sanitize.php:120
 #: inc/panel/accesspress-root-sanitize.php:136
 msgid "Blog Image Alternate Medium"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:270
+#: inc/panel/accesspress-root-customizer.php:282
 #: inc/panel/accesspress-root-sanitize.php:121
 #: inc/panel/accesspress-root-sanitize.php:137
 msgid "Blog Full Content"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:280
+#: inc/panel/accesspress-root-customizer.php:292
 msgid "Exclude From Blog"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:281
+#: inc/panel/accesspress-root-customizer.php:293
 msgid "Check the categories to exclude from blog page."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:291
+#: inc/panel/accesspress-root-customizer.php:303
 msgid "Setup Homepage"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:292
+#: inc/panel/accesspress-root-customizer.php:304
 msgid "Setup homepage settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:295
+#: inc/panel/accesspress-root-customizer.php:307
 msgid "Text Slider"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:296
+#: inc/panel/accesspress-root-customizer.php:308
 msgid "Setup Text Slider Section settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:304
+#: inc/panel/accesspress-root-customizer.php:316
 msgid "text Category"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:305
+#: inc/panel/accesspress-root-customizer.php:317
 msgid "Select the category to show post in Text slider Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:314
+#: inc/panel/accesspress-root-customizer.php:326
 msgid "Call to Action"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:315
+#: inc/panel/accesspress-root-customizer.php:327
 msgid "Setup Call to Action Section settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:323
 #: inc/panel/accesspress-root-customizer.php:335
+#: inc/panel/accesspress-root-customizer.php:347
 msgid "Call to Action Title"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:324
 #: inc/panel/accesspress-root-customizer.php:336
+#: inc/panel/accesspress-root-customizer.php:348
 msgid "Enter text to show title in call to action."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:327
+#: inc/panel/accesspress-root-customizer.php:339
 #: inc/welcome/welcome-config.php:174
 msgid "AccessPress Root"
-msgstr ""
-
-#: inc/panel/accesspress-root-customizer.php:347
-#: inc/panel/accesspress-root-customizer.php:720
-#: inc/panel/accesspress-root-customizer.php:786
-#: inc/panel/accesspress-root-customizer.php:852
-#: inc/panel/accesspress-root-customizer.php:918
-#: inc/panel/accesspress-root-customizer.php:984
-msgid "Button Text"
-msgstr ""
-
-#: inc/panel/accesspress-root-customizer.php:348
-msgid "Enter text to change text of button in Call to Action Section."
-msgstr ""
-
-#: inc/panel/accesspress-root-customizer.php:351
-msgid "Download Now"
 msgstr ""
 
 #: inc/panel/accesspress-root-customizer.php:359
@@ -902,157 +898,159 @@ msgstr ""
 #: inc/panel/accesspress-root-customizer.php:864
 #: inc/panel/accesspress-root-customizer.php:930
 #: inc/panel/accesspress-root-customizer.php:996
-msgid "Button Link"
+msgid "Button Text"
 msgstr ""
 
 #: inc/panel/accesspress-root-customizer.php:360
+msgid "Enter text to change text of button in Call to Action Section."
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:363
+msgid "Download Now"
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:371
+#: inc/panel/accesspress-root-customizer.php:744
+#: inc/panel/accesspress-root-customizer.php:810
+#: inc/panel/accesspress-root-customizer.php:876
+#: inc/panel/accesspress-root-customizer.php:942
+#: inc/panel/accesspress-root-customizer.php:1008
+msgid "Button Link"
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:372
 msgid "Enter link to change link of button in Call to Action Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:368
+#: inc/panel/accesspress-root-customizer.php:380
 msgid "Featured Post"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:369
+#: inc/panel/accesspress-root-customizer.php:381
 msgid "Setup Featured Section settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:377
+#: inc/panel/accesspress-root-customizer.php:389
 msgid "Featured Title"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:378
+#: inc/panel/accesspress-root-customizer.php:390
 msgid "Enter text to change title of Featured Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:388
+#: inc/panel/accesspress-root-customizer.php:400
 msgid "Featured Description"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:389
+#: inc/panel/accesspress-root-customizer.php:401
 msgid "Enter text to change description of Featured Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:399
+#: inc/panel/accesspress-root-customizer.php:411
 msgid "Featured Post 1"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:400
+#: inc/panel/accesspress-root-customizer.php:412
 msgid "Choose post to show as 1st Featured Post."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:412
+#: inc/panel/accesspress-root-customizer.php:424
 msgid "Featured Post 2"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:413
+#: inc/panel/accesspress-root-customizer.php:425
 msgid "Choose post to show as 2nd Featured Post."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:425
+#: inc/panel/accesspress-root-customizer.php:437
 msgid "Featured Post 3"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:426
+#: inc/panel/accesspress-root-customizer.php:438
 msgid "Choose post to show as 3rd Featured Post."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:438
+#: inc/panel/accesspress-root-customizer.php:450
 msgid "Featured Post 4"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:439
+#: inc/panel/accesspress-root-customizer.php:451
 msgid "Choose post to show as 4th Featured Post."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:451
-#: inc/panel/accesspress-root-customizer.php:605
+#: inc/panel/accesspress-root-customizer.php:463
+#: inc/panel/accesspress-root-customizer.php:617
 msgid "Read More Text"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:452
+#: inc/panel/accesspress-root-customizer.php:464
 msgid "Enter text to change text of Read More button in Featured Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:455
-#: inc/panel/accesspress-root-customizer.php:609
+#: inc/panel/accesspress-root-customizer.php:467
+#: inc/panel/accesspress-root-customizer.php:621
 msgid "Read More"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:460
+#: inc/panel/accesspress-root-customizer.php:472
 msgid "Service Section"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:461
+#: inc/panel/accesspress-root-customizer.php:473
 msgid "Setup Service Section settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:469
-#: inc/panel/accesspress-root-customizer.php:480
+#: inc/panel/accesspress-root-customizer.php:481
+#: inc/panel/accesspress-root-customizer.php:492
 msgid "Service"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:470
+#: inc/panel/accesspress-root-customizer.php:482
 msgid "Enter text to change title of Service."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:481
+#: inc/panel/accesspress-root-customizer.php:493
 msgid "Enter text to change description of Service."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:491
+#: inc/panel/accesspress-root-customizer.php:503
 msgid "Service 1"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:492
+#: inc/panel/accesspress-root-customizer.php:504
 msgid "Choose post to show as 1st Service."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:504
+#: inc/panel/accesspress-root-customizer.php:516
 msgid "Service 2"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:505
+#: inc/panel/accesspress-root-customizer.php:517
 msgid "Choose post to show as 2nd Service."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:517
+#: inc/panel/accesspress-root-customizer.php:529
 msgid "Service 3"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:518
+#: inc/panel/accesspress-root-customizer.php:530
 msgid "Choose post to show as 3rd Service."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:530
+#: inc/panel/accesspress-root-customizer.php:542
 msgid "Service 4"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:531
+#: inc/panel/accesspress-root-customizer.php:543
 msgid "Choose post to show as 4th Service."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:541
+#: inc/panel/accesspress-root-customizer.php:553
 msgid "Latest Post"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:542
+#: inc/panel/accesspress-root-customizer.php:554
 msgid "Setup Latest Section settings."
-msgstr ""
-
-#: inc/panel/accesspress-root-customizer.php:550
-#: inc/panel/accesspress-root-customizer.php:637
-#: inc/panel/accesspress-root-customizer.php:696
-#: inc/panel/accesspress-root-customizer.php:762
-#: inc/panel/accesspress-root-customizer.php:828
-#: inc/panel/accesspress-root-customizer.php:894
-#: inc/panel/accesspress-root-customizer.php:960
-msgid "Title"
-msgstr ""
-
-#: inc/panel/accesspress-root-customizer.php:551
-#: inc/panel/accesspress-root-customizer.php:638
-msgid "Enter text to change title of Latest Section."
 msgstr ""
 
 #: inc/panel/accesspress-root-customizer.php:562
@@ -1062,342 +1060,357 @@ msgstr ""
 #: inc/panel/accesspress-root-customizer.php:840
 #: inc/panel/accesspress-root-customizer.php:906
 #: inc/panel/accesspress-root-customizer.php:972
-msgid "Description"
+msgid "Title"
 msgstr ""
 
 #: inc/panel/accesspress-root-customizer.php:563
 #: inc/panel/accesspress-root-customizer.php:650
-msgid "Enter text to change description of Latest Section."
-msgstr ""
-
-#: inc/panel/accesspress-root-customizer.php:573
-msgid "No. of Post"
+msgid "Enter text to change title of Latest Section."
 msgstr ""
 
 #: inc/panel/accesspress-root-customizer.php:574
+#: inc/panel/accesspress-root-customizer.php:661
+#: inc/panel/accesspress-root-customizer.php:720
+#: inc/panel/accesspress-root-customizer.php:786
+#: inc/panel/accesspress-root-customizer.php:852
+#: inc/panel/accesspress-root-customizer.php:918
+#: inc/panel/accesspress-root-customizer.php:984
+msgid "Description"
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:575
+#: inc/panel/accesspress-root-customizer.php:662
+msgid "Enter text to change description of Latest Section."
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:585
+msgid "No. of Post"
+msgstr ""
+
+#: inc/panel/accesspress-root-customizer.php:586
 msgid "Enter number to how total post in Latest Post Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:583
+#: inc/panel/accesspress-root-customizer.php:595
 msgid "Project"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:584
+#: inc/panel/accesspress-root-customizer.php:596
 msgid "Setup Project Section settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:592
+#: inc/panel/accesspress-root-customizer.php:604
 msgid "Choose Page"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:593
+#: inc/panel/accesspress-root-customizer.php:605
 msgid "Choose page to show project title and desc in project section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:606
+#: inc/panel/accesspress-root-customizer.php:618
 msgid "Enter text to change text of Read More button in Project Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:617
+#: inc/panel/accesspress-root-customizer.php:629
 msgid "Project Category"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:618
+#: inc/panel/accesspress-root-customizer.php:630
 msgid "Select the category to show post in Project Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:628
+#: inc/panel/accesspress-root-customizer.php:640
 msgid "Testimonial"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:629
+#: inc/panel/accesspress-root-customizer.php:641
 msgid "Setup Testimonial Section settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:660
+#: inc/panel/accesspress-root-customizer.php:672
 msgid "Testimonial Category"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:661
+#: inc/panel/accesspress-root-customizer.php:673
 msgid "Select the category to show post in Testimonial Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:671
+#: inc/panel/accesspress-root-customizer.php:683
 msgid "Slider Section"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:672
+#: inc/panel/accesspress-root-customizer.php:684
 msgid "Setup Slider settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:677
+#: inc/panel/accesspress-root-customizer.php:689
 msgid "Slide 1"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:678
-#: inc/panel/accesspress-root-customizer.php:744
-#: inc/panel/accesspress-root-customizer.php:810
-#: inc/panel/accesspress-root-customizer.php:876
-#: inc/panel/accesspress-root-customizer.php:942
+#: inc/panel/accesspress-root-customizer.php:690
+#: inc/panel/accesspress-root-customizer.php:756
+#: inc/panel/accesspress-root-customizer.php:822
+#: inc/panel/accesspress-root-customizer.php:888
+#: inc/panel/accesspress-root-customizer.php:954
 msgid "Setup Slider Slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:685
+#: inc/panel/accesspress-root-customizer.php:697
 msgid "Upload image for 1st slides of Slider."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:697
+#: inc/panel/accesspress-root-customizer.php:709
 msgid "Enter text to change title of 1st slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:709
+#: inc/panel/accesspress-root-customizer.php:721
 msgid "Enter text to change description of 1st slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:721
+#: inc/panel/accesspress-root-customizer.php:733
 msgid "Enter text to change text of button of 1st slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:733
+#: inc/panel/accesspress-root-customizer.php:745
 msgid "Enter link to change link of button of 1st slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:743
+#: inc/panel/accesspress-root-customizer.php:755
 msgid "Slide 2"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:751
+#: inc/panel/accesspress-root-customizer.php:763
 msgid "Upload image for 2nd slides of Slider."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:763
+#: inc/panel/accesspress-root-customizer.php:775
 msgid "Enter text to change title of 2nd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:775
+#: inc/panel/accesspress-root-customizer.php:787
 msgid "Enter text to change description of 2nd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:787
+#: inc/panel/accesspress-root-customizer.php:799
 msgid "Enter text to change text of button of 2nd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:799
+#: inc/panel/accesspress-root-customizer.php:811
 msgid "Enter link to change link of button of 2nd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:809
+#: inc/panel/accesspress-root-customizer.php:821
 msgid "Slide 3"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:817
+#: inc/panel/accesspress-root-customizer.php:829
 msgid "Upload image for 3rd slides of Slider."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:829
+#: inc/panel/accesspress-root-customizer.php:841
 msgid "Enter text to change title of 3rd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:841
+#: inc/panel/accesspress-root-customizer.php:853
 msgid "Enter text to change description of 3rd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:853
+#: inc/panel/accesspress-root-customizer.php:865
 msgid "Enter text to change text of button of 3rd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:865
+#: inc/panel/accesspress-root-customizer.php:877
 msgid "Enter link to change link of button of 3rd slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:875
+#: inc/panel/accesspress-root-customizer.php:887
 msgid "Slide 4"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:883
+#: inc/panel/accesspress-root-customizer.php:895
 msgid "Upload image for 4th slides of Slider."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:895
+#: inc/panel/accesspress-root-customizer.php:907
 msgid "Enter text to change title of 4th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:907
+#: inc/panel/accesspress-root-customizer.php:919
 msgid "Enter text to change description of 4th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:919
+#: inc/panel/accesspress-root-customizer.php:931
 msgid "Enter text to change text of button of 4th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:931
+#: inc/panel/accesspress-root-customizer.php:943
 msgid "Enter link to change link of button of 4th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:941
+#: inc/panel/accesspress-root-customizer.php:953
 msgid "Slide 5"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:949
+#: inc/panel/accesspress-root-customizer.php:961
 msgid "Upload image for 5th slides of Slider."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:961
+#: inc/panel/accesspress-root-customizer.php:973
 msgid "Enter text to change title of 5th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:973
+#: inc/panel/accesspress-root-customizer.php:985
 msgid "Enter text to change description of 5th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:985
+#: inc/panel/accesspress-root-customizer.php:997
 msgid "Enter text to change text of button of 5th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:997
+#: inc/panel/accesspress-root-customizer.php:1009
 msgid "Enter link to change link of button of 5th slides."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1007
+#: inc/panel/accesspress-root-customizer.php:1019
 msgid "Slider Settings"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1008
+#: inc/panel/accesspress-root-customizer.php:1020
 msgid "Setup Slider Setting."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1014
+#: inc/panel/accesspress-root-customizer.php:1026
 msgid "Show Slider"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1015
+#: inc/panel/accesspress-root-customizer.php:1027
 msgid "Select Yes to enable slider in Slider Section of Homepage."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1021
-#: inc/panel/accesspress-root-customizer.php:1038
-#: inc/panel/accesspress-root-customizer.php:1055
-#: inc/panel/accesspress-root-customizer.php:1071
-#: inc/panel/accesspress-root-customizer.php:1126
+#: inc/panel/accesspress-root-customizer.php:1033
+#: inc/panel/accesspress-root-customizer.php:1050
+#: inc/panel/accesspress-root-customizer.php:1067
+#: inc/panel/accesspress-root-customizer.php:1083
+#: inc/panel/accesspress-root-customizer.php:1138
 msgid "Yes"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1022
-#: inc/panel/accesspress-root-customizer.php:1039
-#: inc/panel/accesspress-root-customizer.php:1056
-#: inc/panel/accesspress-root-customizer.php:1072
-#: inc/panel/accesspress-root-customizer.php:1127
+#: inc/panel/accesspress-root-customizer.php:1034
+#: inc/panel/accesspress-root-customizer.php:1051
+#: inc/panel/accesspress-root-customizer.php:1068
+#: inc/panel/accesspress-root-customizer.php:1084
+#: inc/panel/accesspress-root-customizer.php:1139
 msgid "No"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1031
+#: inc/panel/accesspress-root-customizer.php:1043
 msgid "Show Pager"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1032
+#: inc/panel/accesspress-root-customizer.php:1044
 msgid "Select Yes to enable slider pager in Slider Section of Homepage."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1048
+#: inc/panel/accesspress-root-customizer.php:1060
 msgid "Show Controls"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1049
+#: inc/panel/accesspress-root-customizer.php:1061
 msgid "Select Yes to enable slider controls in Slider Section of Homepage."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1064
+#: inc/panel/accesspress-root-customizer.php:1076
 msgid "Enable Auto Transition"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1065
+#: inc/panel/accesspress-root-customizer.php:1077
 msgid ""
 "Select Yes to enable slider auto transition in Slider Section of Homepage."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1080
+#: inc/panel/accesspress-root-customizer.php:1092
 msgid "Slider Type"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1085
+#: inc/panel/accesspress-root-customizer.php:1097
 #: inc/panel/accesspress-root-sanitize.php:105
 msgid "Fade"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1086
+#: inc/panel/accesspress-root-customizer.php:1098
 #: inc/panel/accesspress-root-sanitize.php:106
 msgid "Slide"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1095
+#: inc/panel/accesspress-root-customizer.php:1107
 msgid "Slider Speed"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1096
+#: inc/panel/accesspress-root-customizer.php:1108
 msgid "Enter number to control slider speed in Slider Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1107
+#: inc/panel/accesspress-root-customizer.php:1119
 msgid "Slider Pause"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1108
+#: inc/panel/accesspress-root-customizer.php:1120
 msgid "Enter number to control slider pause time in Slider Section."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1119
+#: inc/panel/accesspress-root-customizer.php:1131
 msgid "Show Caption"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1120
+#: inc/panel/accesspress-root-customizer.php:1132
 msgid "Select Yes to enable slider caption in Slider Section of Homepage."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1134
+#: inc/panel/accesspress-root-customizer.php:1146
 msgid "Social Link Setting"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1135
+#: inc/panel/accesspress-root-customizer.php:1147
 msgid "Setup Social settings."
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1141
+#: inc/panel/accesspress-root-customizer.php:1153
 msgid "Facebook"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1152
+#: inc/panel/accesspress-root-customizer.php:1164
 msgid "Twitter"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1163
+#: inc/panel/accesspress-root-customizer.php:1175
 msgid "Google Plus"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1174
+#: inc/panel/accesspress-root-customizer.php:1186
 msgid "Youtube"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1185
+#: inc/panel/accesspress-root-customizer.php:1197
 msgid "Pinterest"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1196
+#: inc/panel/accesspress-root-customizer.php:1208
 msgid "Linkedin"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1207
+#: inc/panel/accesspress-root-customizer.php:1219
 msgid "Instagram"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1218
+#: inc/panel/accesspress-root-customizer.php:1230
 msgid "Stumbleupon"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1229
+#: inc/panel/accesspress-root-customizer.php:1241
 msgid "Skype"
 msgstr ""
 
-#: inc/panel/accesspress-root-customizer.php:1230
+#: inc/panel/accesspress-root-customizer.php:1242
 msgid "Enter skype id."
 msgstr ""
 
@@ -2200,10 +2213,6 @@ msgstr ""
 
 #: inc/welcome/sections/getting_started.php:5
 msgid "Links to Customizer Settings"
-msgstr ""
-
-#: inc/welcome/sections/getting_started.php:11
-msgid "Upload Logo"
 msgstr ""
 
 #: inc/welcome/sections/getting_started.php:16

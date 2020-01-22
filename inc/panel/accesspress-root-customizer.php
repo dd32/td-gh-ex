@@ -175,6 +175,18 @@
 					'sanitize_callback'	=> 'accesspress_root_sanitize_logo'
 					)
 				);
+			Kirki::add_field( 'accesspress_root_config', 
+				array(
+					'type'        => 'upload',
+					'settings'    => 'logo',
+					'label'       => esc_html__( 'Upload Logo', 'accesspress-root' ),
+					'description' => esc_html__( 'Upload image for logo.', 'accesspress-root' ),
+					'section'     => 'accesspress_root_header',
+					'priority'    => 20,
+		        	'default'	=> '',
+		        	'sanitize_callback'	=> 'esc_url_raw',
+				)
+			);
 			
 		Kirki::add_section( 'accesspress_root_single_post', array(
 		    'title'          => esc_html__( 'Single Post', 'accesspress-root' ),

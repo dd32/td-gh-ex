@@ -108,6 +108,9 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+= 2.01 =
+** Fixed logo option in backend
+
 = 2.0 =
 ** Removed old welcome page and added new
 ** Added Demo Importer
