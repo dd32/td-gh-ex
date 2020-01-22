@@ -3,7 +3,7 @@ Contributors: catchthemes
 Tags: black, blue, gray, white, dark,light, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout,  custom-background, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.8
 Tested up to: 5.3
-Stable tag: 4.0.1
+Stable tag: 4.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,9 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/catc
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 4.0.3 (Released: January 21, 2020) =
+* Bug Fixed: Cache issue in Footer Content (Reported by chickadeesharon)
 
 = 4.0.2 (Released: January 14, 2020) =
 * Bug Fixed: Cache issue in Footer Content (Reported by chickadeesharon)

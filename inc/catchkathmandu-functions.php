@@ -1404,8 +1404,8 @@ function catchkathmandu_footer_content() {
 	if ( ! $catchkathmandu_footer_content = get_transient( 'catchkathmandu_footer_content_new' ) ) {
 		echo '<!-- refreshing cache -->';
 
-		// get the data value from theme options
-		$options = catchkathmandu_get_options();
+		// get value from default value.
+		$options = catchkathmandu_get_defaults();
 
       	$catchkathmandu_footer_content = $options['footer_code'];
 
