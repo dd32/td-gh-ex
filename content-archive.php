@@ -22,6 +22,7 @@
 	<div class="entry-content">
         <?php
             $archive_template = of_get_option( 'global_archive_template', 'archive-default' );
+            echo 'aa'.  $archive_template;
             switch ( $archive_template ) {
             	case 'archive-default':
             		$image_size = 'accesspress-mag-singlepost-default';
@@ -47,12 +48,6 @@
         <?php 
             }
              
-			/* translators: %s: Name of current post */
-			/*the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'accesspress-mag' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-            */
             if( has_excerpt() ) {
                 the_excerpt();
             } else {

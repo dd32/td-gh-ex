@@ -14,9 +14,10 @@
 get_header(); 
 ?>
 
-<?php do_action( 'accesspress_mag_before_body_content' ); ?>
-
-<div class="apmag-container">
+<?php do_action( 'accesspress_mag_before_body_content' ); 
+$sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
+?>
+<div class="apmag-container <?php echo esc_attr($sidebar_option); ?>">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -46,7 +47,14 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar( 'right' ); ?>
+<?php
+$sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
+
+if( $sidebar_option != 'no-sidebar' ){
+    $option_value = explode( '-', $sidebar_option );
+    get_sidebar( $option_value[0] );
+}
+?>
 </div>
 
 <?php do_action( 'accesspress_mag_after_body_content' ); ?>

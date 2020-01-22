@@ -167,8 +167,8 @@
     /* Sanitization for Image Type */
     function accesspress_mag_sanitize_weblayout($accesspress_mag_input){
         $accesspress_mag_output = array(
-                    'Fullwidth'   => esc_html__( 'Fullwidth', 'accesspress-mag' ),
-                    'Boxed' => esc_html__( 'Boxed', 'accesspress-mag' ),
+                    'full-width'   => esc_html__( 'Full Width', 'accesspress-mag' ),
+                    'boxed' => esc_html__( 'Boxed', 'accesspress-mag' )
                     );
         if(array_key_exists($accesspress_mag_input,$accesspress_mag_output)){
             return $accesspress_mag_input;

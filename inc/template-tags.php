@@ -108,7 +108,7 @@ if ( ! function_exists( 'accesspress_mag_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function accesspress_mag_posted_on() {
-    $show_post_date = of_get_option( 'post_show_date', '1' );
+    $show_post_date = of_get_option( 'show_date_option', '1' );
     $show_author = of_get_option( 'show_author_name', '1' );
     
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';

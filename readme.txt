@@ -83,6 +83,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+= 2.5.8 =
+ ** Fixed Sidebar issues
+ ** Fixed minor css issues
+
 = 2.5.7 =
  ** Fixed Sanitization function issues
  ** Refined functions
