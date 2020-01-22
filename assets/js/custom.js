@@ -103,10 +103,6 @@ if( clasCheck >0){
 
     });
 }
-/*agency-lite-service-page-wrap height equalizing*/
-// var height = $('.agency_lite_featured-content').outerHeight();
-// $('.agency-lite-featured-image').outerHeight(height);
-/*agency-lite-service-page-wrap height equalizing end*/
 
 //add class while onclick
     $('.agency-lite-team-logo-icon').on('mouseenter', function () {

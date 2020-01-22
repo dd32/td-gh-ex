@@ -36,6 +36,12 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 * Screenshot banner Image, https://pixabay.com/en/wood-wooden-desktop-table-desk-3271749/, © 2018 Pixabay, [Creative Commons CC0]https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+
+= 1.1.2 - Jan 22 2020 =
+** Added Excerpt Option in Archive Page
+** Fixed Sanitization issues
+** Added Meta Data Show Hide Option 
+
 = 1.1.1 - Dec 01 2019 =
 ** Added Skip Link Content Option
 ** Added keyboard Navigation option

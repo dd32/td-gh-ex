@@ -28,18 +28,18 @@ if( ! function_exists('agency_lite_social_icons')){
 	function agency_lite_social_icons(){
 		
 		$social_icons = array('facebook','twitter','googlePlus','dribbble','youtube','linkedin');
-            foreach( $social_icons as $social_icon){
-                $agency_lite_social_icons = get_theme_mod ('agency_lite_'.$social_icon.'_url');
-                if( $agency_lite_social_icons ){
-                    echo '<a href="'. esc_url($agency_lite_social_icons).'" target="_blank">';
-                    if( $social_icon == 'googlePlus' ){
-                        echo '<i class ="fa fa-google-plus"></i>'; 
-                    }else{
-                        echo '<i class ="fa fa-'. esc_attr($social_icon).'"></i>';    
-                    }
-                    echo '</a>';
+        foreach( $social_icons as $social_icon){
+            $agency_lite_social_icons = get_theme_mod ('agency_lite_'.$social_icon.'_url');
+            if( $agency_lite_social_icons ){
+                echo '<a href="'. esc_url($agency_lite_social_icons).'" target="_blank">';
+                if( $social_icon == 'googlePlus' ){
+                    echo '<i class ="fa fa-google-plus"></i>'; 
+                }else{
+                    echo '<i class ="fa fa-'. esc_attr($social_icon).'"></i>';    
                 }
+                echo '</a>';
             }
+        }
     }
 }
 
@@ -60,35 +60,35 @@ add_action( 'wp_head', 'agency_lite_pingback_header' );
 
 function agency_lite_post_lists(){
     $agency_lite_post_list = 
-        array(
-            'post_type' => 'post',
-            'posts_per_page' => -1,
-        );
-        $posts_lists = array();
-        $posts_lists[] = esc_html__('--Choose--','agency-lite');
-        $agency_lite_post = new WP_Query ($agency_lite_post_list);
-        while( $agency_lite_post->have_posts() ):
-            $agency_lite_post->the_post();
+    array(
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+    );
+    $posts_lists = array();
+    $posts_lists[] = esc_html__('--Choose--','agency-lite');
+    $agency_lite_post = new WP_Query ($agency_lite_post_list);
+    while( $agency_lite_post->have_posts() ):
+        $agency_lite_post->the_post();
         $posts_lists[ get_the_ID() ] = get_the_title();   
-        endwhile;    
-        return $posts_lists;
+    endwhile;    
+    return $posts_lists;
 }
 
 //display page in custom
 function agency_lite_page_lists(){
     $agency_lite_page_lists = 
-        array(
-            'post_type' => 'page',
-            'posts_per_page' => -1,
-        );
-        $pages_lists = array();
-        $pages_lists[] = esc_html__('--Choose--','agency-lite');
-        $agency_lite_page = new WP_Query ($agency_lite_page_lists);
-        while( $agency_lite_page->have_posts() ):
-            $agency_lite_page->the_post();
+    array(
+        'post_type' => 'page',
+        'posts_per_page' => -1,
+    );
+    $pages_lists = array();
+    $pages_lists[] = esc_html__('--Choose--','agency-lite');
+    $agency_lite_page = new WP_Query ($agency_lite_page_lists);
+    while( $agency_lite_page->have_posts() ):
+        $agency_lite_page->the_post();
         $pages_lists[ get_the_ID() ] = get_the_title();   
-        endwhile;    
-        return $pages_lists;
+    endwhile;    
+    return $pages_lists;
 }
 /**
 *image display function
@@ -96,28 +96,28 @@ function agency_lite_page_lists(){
 **/
 
 function agency_lite_slider_control(){
-?>
-<div class="mail-slider-header-wrap container">
-    <div id="header-slider-wrap" class="carousel-main-slider agency-carousel-main-slider owl-carousel">
-    <?php 
-        $home_sliders = array('one','two', 'three' );
-        foreach ($home_sliders as $home_slider) {
-     
-            $my_slider_cat = get_theme_mod('agency_lite_slider_page_'.$home_slider.'_control');
-            $agency_lite_slider_btn_control = get_theme_mod('agency_lite_slider_'.$home_slider.'_btn_control');
-            $agency_lite_slider_url_control = get_theme_mod('agency_lite_slider_'.$home_slider.'_url_control');
+    ?>
+    <div class="mail-slider-header-wrap container">
+        <div id="header-slider-wrap" class="carousel-main-slider agency-carousel-main-slider owl-carousel">
+            <?php 
+            $home_sliders = array('one','two', 'three' );
+            foreach ($home_sliders as $home_slider) {
 
-            if($my_slider_cat){
-                $my_slider_args = array(
-                    'post_type' => 'page',
-                    'post_status' => 'publish',
-                    'p' => absint($my_slider_cat)
-                );
+                $my_slider_cat = get_theme_mod('agency_lite_slider_page_'.$home_slider.'_control');
+                $agency_lite_slider_btn_control = get_theme_mod('agency_lite_slider_'.$home_slider.'_btn_control');
+                $agency_lite_slider_url_control = get_theme_mod('agency_lite_slider_'.$home_slider.'_url_control');
 
-                $my_slider_query = new WP_Query($my_slider_args);
-                if($my_slider_query->have_posts()):
-                    ?>
-                    <?php
+                if($my_slider_cat){
+                    $my_slider_args = array(
+                        'post_type' => 'page',
+                        'post_status' => 'publish',
+                        'p' => absint($my_slider_cat)
+                    );
+
+                    $my_slider_query = new WP_Query($my_slider_args);
+                    if($my_slider_query->have_posts()):
+                        ?>
+                        <?php
                         while($my_slider_query->have_posts()):
                             $my_slider_query->the_post();
                             $agency_slider_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
@@ -126,7 +126,7 @@ function agency_lite_slider_control(){
                                 ?>
                                 <div class="content-slider">
                                     <?php if($agency_image_url){ ?>
-                                        <img src="<?php echo esc_url($agency_image_url); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" />
+                                    <img src="<?php echo esc_url($agency_image_url); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" />
                                     <?php } ?>
                                     <div class="slider-content-wrap">
                                         <div class="title">
@@ -152,15 +152,15 @@ function agency_lite_slider_control(){
                             }
                         endwhile;
                         wp_reset_postdata();
-                    ?>
-            <?php
-        endif;
+                        ?>
+                        <?php
+                    endif;
+                }
             }
-        }
-    ?>
+            ?>
+        </div>
     </div>
-</div>
-<?php
+    <?php
 }
 
 
@@ -189,42 +189,42 @@ function agency_lite_cat_lists()
 *
 */
 function agency_lite_header_banner_x() {   
-   if( get_header_image() ){
-     
-        $overlay = '<div class="img-overlay"></div>';
-    }else{
-    
-        $overlay = '' ;
-    }
+ if( get_header_image() ){
 
-    $agency_lite_breadcrumb_image_enable  = get_theme_mod('agency_lite_breadcrumb_image_enable'); 
-    
-    if( $agency_lite_breadcrumb_image_enable == 'on' ){
+    $overlay = '<div class="img-overlay"></div>';
+}else{
+
+    $overlay = '' ;
+}
+
+$agency_lite_breadcrumb_image_enable  = get_theme_mod('agency_lite_breadcrumb_image_enable'); 
+
+if( $agency_lite_breadcrumb_image_enable == 'on' ){
   ?>
 
-    <div class="header-banner-container">
-        <?php echo $overlay;  // WPCS: XSS OK. ?>
-            <div class="agency-lite-container">
-                <div class="page-title-wrap">
-                        <?php
-                            if(is_archive()) {
+  <div class="header-banner-container">
+    <?php echo $overlay;  // WPCS: XSS OK. ?>
+    <div class="agency-lite-container">
+        <div class="page-title-wrap">
+            <?php
+            if(is_archive()) {
                                 echo agency_lite_cat_title(); // WPCS: XSS OK.
                             }elseif( is_home() ){ ?>
-                              <h1 class="page-title"> <?php single_post_title(); ?></h1>
+                            <h1 class="page-title"> <?php single_post_title(); ?></h1>
                             <?php
-                            } elseif(is_single() || is_singular('page')) {
-                                the_title('<h1 class="page-title">', '</h1>');
-                            } elseif(is_search()) {
-                                ?>
-                                <h1 class="page-title"><?php printf( 
-                                    /* translators: Search Title */
-                                    esc_html__( 'Search Results for: %s', 'agency-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-                                <?php
-                            } elseif(is_404()) {
-                                ?>
-                                <h1 class="page-title"><?php esc_html_e( '404 Error', 'agency-lite' ); ?></h1>
-                                <?php
-                            }
+                        } elseif(is_single() || is_singular('page')) {
+                            the_title('<h1 class="page-title">', '</h1>');
+                        } elseif(is_search()) {
+                            ?>
+                            <h1 class="page-title"><?php printf( 
+                                /* translators: Search Title */
+                                esc_html__( 'Search Results for: %s', 'agency-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                            <?php
+                        } elseif(is_404()) {
+                            ?>
+                            <h1 class="page-title"><?php esc_html_e( '404 Error', 'agency-lite' ); ?></h1>
+                            <?php
+                        }
                         ?>
                         <?php 
                         $breadcrumb_args = array(
@@ -233,47 +233,47 @@ function agency_lite_header_banner_x() {
                         );
                         breadcrumb_trail( $breadcrumb_args );
                         ?>
+                    </div>
                 </div>
             </div>
-    </div>
-<?php
+            <?php
+        }
+
     }
-    
-}
-add_action('agency_lite_header_banner', 'agency_lite_header_banner_x');
+    add_action('agency_lite_header_banner', 'agency_lite_header_banner_x');
 
-function agency_lite_sanitize_breadcrumb($input){
-    $all_tags = array(
-        'a'=>array(
-            'href'=>array()
-        )
-     );
-    return wp_kses($input,$all_tags);
-}
+    function agency_lite_sanitize_breadcrumb($input){
+        $all_tags = array(
+            'a'=>array(
+                'href'=>array()
+            )
+        );
+        return wp_kses($input,$all_tags);
+    }
 
-function agency_lite_cat_title(){
-    $archive_title = get_the_archive_title(); 
-    $explod        =  (explode(":",$archive_title));
-    $cat_name      = end($explod);
-    ?>
-    <h1 class="page-title">
-        <?php echo wp_kses_post($cat_name); ?>
-    </h1>
-<?php
-}
+    function agency_lite_cat_title(){
+        $archive_title = get_the_archive_title(); 
+        $explod        =  (explode(":",$archive_title));
+        $cat_name      = end($explod);
+        ?>
+        <h1 class="page-title">
+            <?php echo wp_kses_post($cat_name); ?>
+        </h1>
+        <?php
+    }
 
-/** Exclude Categories from Blog Page **/
-function agency_lite_exclude_category_from_blogpost($query) {
-   $exclude_category = get_theme_mod('agency_lite_exclude_cat'); 
-   $ex_cats = explode(',', $exclude_category);
-   array_pop($ex_cats);
-   
-   if ( $query->is_home() ) {
-       $query->set('category__not_in', $ex_cats);
-   }
-   return $query;
-}
-add_filter('pre_get_posts', 'agency_lite_exclude_category_from_blogpost');
+    /** Exclude Categories from Blog Page **/
+    function agency_lite_exclude_category_from_blogpost($query) {
+     $exclude_category = get_theme_mod('agency_lite_exclude_cat'); 
+     $ex_cats = explode(',', $exclude_category);
+     array_pop($ex_cats);
+
+     if ( $query->is_home() ) {
+         $query->set('category__not_in', $ex_cats);
+     }
+     return $query;
+ }
+ add_filter('pre_get_posts', 'agency_lite_exclude_category_from_blogpost');
 
 /**
  * Change comment form textarea to use placeholder
@@ -292,7 +292,7 @@ add_filter( 'comment_form_defaults', 'agency_lite_comment_textarea_placeholder' 
  *
  */
 function agency_lite_comment_form_fields( $fields ) {
-     
+
     foreach( $fields as &$field ) {
         $field = str_replace( 'id="author"', 'id="author" placeholder="Your Name*"', $field );
         $field = str_replace( 'id="email"', 'id="email" placeholder="Your Email Address*"', $field );
@@ -314,9 +314,43 @@ function agency_lite_sanitize_textarea($input){
 * Move comment fields at bottom
 */
 function agency_lite_move_comment_field_to_bottom( $fields ) {
-   $comment_field = $fields['comment'];
-   unset( $fields['comment'] );
-   $fields['comment'] = $comment_field;
-   return $fields;
+ $comment_field = $fields['comment'];
+ unset( $fields['comment'] );
+ $fields['comment'] = $comment_field;
+ return $fields;
 }
 add_filter( 'comment_form_fields', 'agency_lite_move_comment_field_to_bottom' );
+
+
+//sanitize show hide
+function agency_lite_sanitize_show_hide($input){
+    $valid_keys = array(
+        'on'           => esc_html__( 'Show', 'agency-lite' ),
+        'off'          => esc_html__( 'Hide', 'agency-lite' )
+    );
+    if(array_key_exists($input,$valid_keys)){
+        return $input;
+    }else{
+        return 'off';
+    }
+}
+
+/**
+ * Function for excerpt length
+ */
+if( ! function_exists('agency_lite_get_excerpt_content')):
+    function agency_lite_get_excerpt_content($count){
+    if( empty($count)){
+        return;
+    }
+    $permalink = get_permalink( get_the_ID() );
+    $excerpt   = get_the_content();
+    $excerpt   = strip_tags($excerpt);   
+    $excerpt   = substr($excerpt, 0, $count);
+
+    if($count){
+        $excerpt   = '<div class="expert-content"><p>'.$excerpt.'</p></div>'.'<a href="'.esc_url($permalink).'" class="read-more">'.esc_html__("Read More","agency-lite").'</a>';
+    }
+    return $excerpt;
+    }
+endif;
