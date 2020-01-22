@@ -56,7 +56,7 @@
       <div class="clearfix"></div>
     </div>
   <?php } ?>
-  <div class="toggle-menu responsive-menu">
+  <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
   </div>
   <div class="header">
@@ -100,7 +100,7 @@
           <div class=" col-lg-3 col-md-3">
           </div>
           <div class=" col-lg-9 col-md-9">
-            <div id="menu-sidebar" class="nav sidebar">
+            <div id="menu-sidebar" class="nav sidebar <?php if( get_theme_mod( 'bb_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-ecommerce-store' ); ?>">
                 <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-ecommerce-store'); ?></span></a>
                 <?php 

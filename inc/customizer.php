@@ -164,7 +164,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	) )	);
 	
   	$wp_customize->add_setting( 'bb_ecommerce_store_theme_color', array(
-	    'default' => '#e22626',
+	    'default' => '',
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
@@ -504,6 +504,16 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
     $wp_customize->add_control('bb_ecommerce_store_display_topbar',array(
     	'type' => 'checkbox',
         'label' => __( 'Show / Hide Topbar','bb-ecommerce-store' ),
+        'section' => 'bb_ecommerce_store_topbar'
+    ));
+
+    //Sticky Header
+	$wp_customize->add_setting( 'bb_ecommerce_store_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('bb_ecommerce_store_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','bb-ecommerce-store' ),
         'section' => 'bb_ecommerce_store_topbar'
     ));
 

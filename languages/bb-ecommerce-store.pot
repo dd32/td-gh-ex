@@ -469,167 +469,175 @@ msgid 'Topbar Section'
 msgstr ""
 
 #: inc/customizer.php:494
-#: inc/customizer.php:524
+#: inc/customizer.php:545
 msgid 'Add Header Content here'
 msgstr ""
 
-#: inc/customizer.php:504
+#: inc/customizer.php:506
+msgid 'Show / Hide Topbar'
+msgstr ""
+
+#: inc/customizer.php:516
+msgid 'Sticky Header'
+msgstr ""
+
+#: inc/customizer.php:525
 msgid 'Add Phone Number'
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:536
 msgid 'Add Email'
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:544
 msgid 'Social Icon Section'
 msgstr ""
 
-#: inc/customizer.php:534
+#: inc/customizer.php:555
 msgid 'Add Youtube link'
 msgstr ""
 
-#: inc/customizer.php:545
+#: inc/customizer.php:566
 msgid 'Add Facebook link'
 msgstr ""
 
-#: inc/customizer.php:556
+#: inc/customizer.php:577
 msgid 'Add Twitter link'
 msgstr ""
 
-#: inc/customizer.php:567
+#: inc/customizer.php:588
 msgid 'Add Instagram link'
 msgstr ""
 
-#: inc/customizer.php:578
+#: inc/customizer.php:599
 msgid 'Add RSS link'
 msgstr ""
 
-#: inc/customizer.php:586
+#: inc/customizer.php:607
 msgid 'Slider Settings.'
 msgstr ""
 
-#: inc/customizer.php:596
+#: inc/customizer.php:617
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:608
+#: inc/customizer.php:629
 msgid 'Select Slide Image Pager'
 msgstr ""
 
-#: inc/customizer.php:616
+#: inc/customizer.php:637
 msgid 'Services'
 msgstr ""
 
-#: inc/customizer.php:617
+#: inc/customizer.php:638
 msgid 'This section will appear below the slider.'
 msgstr ""
 
-#: inc/customizer.php:640
+#: inc/customizer.php:661
 msgid 'Select Category to display post'
 msgstr ""
 
-#: inc/customizer.php:646
+#: inc/customizer.php:667
 msgid 'Products'
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:668
 msgid 'This section will appear below the services.'
 msgstr ""
 
-#: inc/customizer.php:656
+#: inc/customizer.php:677
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:667
+#: inc/customizer.php:688
 msgid 'Select Page'
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:695
 msgid 'Blog Page Settings'
 msgstr ""
 
-#: inc/customizer.php:684
+#: inc/customizer.php:705
 msgid 'Post Date'
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:715
 msgid 'Comments'
 msgstr ""
 
-#: inc/customizer.php:704
+#: inc/customizer.php:725
 msgid 'Author'
 msgstr ""
 
-#: inc/customizer.php:714
+#: inc/customizer.php:735
 msgid 'Single Post Tags'
 msgstr ""
 
-#: inc/customizer.php:726
+#: inc/customizer.php:747
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:746
+#: inc/customizer.php:763
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:749
+#: inc/customizer.php:770
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:760
+#: inc/customizer.php:781
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:762
+#: inc/customizer.php:783
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:764
+#: inc/customizer.php:785
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:765
+#: inc/customizer.php:786
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:766
+#: inc/customizer.php:787
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:767
+#: inc/customizer.php:788
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:776
+#: inc/customizer.php:797
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:787
+#: inc/customizer.php:808
 msgid 'Show / Hide Scroll Top Button'
 msgstr ""
 
-#: inc/customizer.php:792
-#: inc/customizer.php:801
+#: inc/customizer.php:813
+#: inc/customizer.php:822
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:797
+#: inc/customizer.php:818
 msgid 'Scroll Back to Top Position'
 msgstr ""
 
-#: inc/customizer.php:800
+#: inc/customizer.php:821
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:802
+#: inc/customizer.php:823
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:887
+#: inc/customizer.php:908
 msgid 'BB Ecommerce Pro'
 msgstr ""
 
-#: inc/customizer.php:888
+#: inc/customizer.php:909
 msgid 'Go Pro'
 msgstr ""
