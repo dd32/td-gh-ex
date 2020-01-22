@@ -16,6 +16,6 @@
 	do_action( 'bahotel_l_after_dynamic_sidebar', $sidebar_name );
 	?>
 	
-</aside><!-- #sidebar-<?php echo esc_attr($sidebar_name); ?> -->
+</aside>
 
 <?php

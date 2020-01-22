@@ -142,11 +142,11 @@ class BAH_L_Nav_Menu extends Walker_Nav_Menu {
 			
 		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
 			
-			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
+			$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_html( $item->title );
 			
 		} else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
 			
-			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
+			$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_html( $item->title ) . '</a>';
 			
 		} else {
 

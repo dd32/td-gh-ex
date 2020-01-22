@@ -447,7 +447,7 @@ if ( ! function_exists( 'bahotel_l_terms_block' ) ) :
 									
 							$term_output = '
 								<div class="bahotel_l_term_img">
-									<img src="'.esc_attr($src_arr[0]).'">
+									<img src="'.esc_url($src_arr[0]).'">
 										';
 						 } elseif ( isset( $term_meta['lnr_class'] ) && $term_meta['lnr_class'][0] ) {	
 									// Linear icons.
@@ -773,7 +773,7 @@ if ( ! function_exists( 'bahotel_l_footer_before' ) ) :
             
             $img_full_src = wp_get_attachment_image_src( $thumbnail_id, 'full' );
             
-            echo '<div class="footer-logo-image"><img src="' . esc_attr( $img_full_src[0] ) . '"></div>';
+            echo '<div class="footer-logo-image"><img src="' . esc_url( $img_full_src[0] ) . '"></div>';
             
         }
         
@@ -1036,7 +1036,7 @@ if ( ! function_exists( 'bahotel_l_comment_callback' ) ) :
 
             <li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'media' ); ?>>
             <div class="comment-body">
-                <?php esc_attr_e( 'Pingback:', 'ba-hotel-light' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'ba-hotel-light' ), '<span class="edit-link">', '</span>' ); ?>
+                <?php esc_html_e( 'Pingback:', 'ba-hotel-light' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'ba-hotel-light' ), '<span class="edit-link">', '</span>' ); ?>
             </div>
 
         <?php else : ?>
@@ -1068,7 +1068,7 @@ if ( ! function_exists( 'bahotel_l_comment_callback' ) ) :
                                </span>
                             </div>
                             <?php if ( '0' == $comment->comment_approved ) : ?>
-                            <p class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'ba-hotel-light' ); ?></p>
+                            <p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'ba-hotel-light' ); ?></p>
                             <?php endif; ?>
                             <?php 
                             remove_filter( 'get_comment_text', array( 'BABE_Rating', 'get_comment_text'), 10, 3);                            
@@ -2067,7 +2067,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 									
 									$term_output = '
 										<div class="bahotel_l_term_img">
-											<img src="'.esc_attr($src_arr[0]).'">
+											<img src="'.esc_url($src_arr[0]).'">
 											';
 								} elseif ( isset( $term['lnr_class'] ) && $term['lnr_class'] ) {	
 									// Linear icons.
@@ -2169,7 +2169,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 								$src_arr = wp_get_attachment_image_src( $term['image_id'], 'full' );
 								
 								$term_output = '
-									<img src="'.esc_attr($src_arr[0]).'">
+									<img src="'.esc_url($src_arr[0]).'">
 									';
 							} elseif ( isset( $term['lnr_class'] ) && $term['lnr_class'] ) {	
 								// Linear icons.
@@ -2247,14 +2247,14 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 									
 				$output .= '
 					<div class="bahotel_l_preview_term_img">
-						<img src="' . $src_arr[0] . '">
+						<img src="' . esc_url($src_arr[0]) . '">
 					</div>
 					';
 			} elseif ( $lnr_class ) {
 				// Fontawesome.
 				$output .= '
 					<div class="bahotel_l_preview_term_icon">
-						<span class="' . $lnr_class . '"></span>
+						<span class="' . esc_attr($lnr_class) . '"></span>
 					</div>
 				';
 									
@@ -2262,7 +2262,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				// Fontawesome.
 				$output .= '
 					<div class="bahotel_l_preview_term_icon">
-						<span class="' . $el_class . '"></span>
+						<span class="' . esc_attr($el_class) . '"></span>
 					</div>
 				';
 									
@@ -2270,7 +2270,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				// Fontawesome.
 				$output .= '
 					<div class="bahotel_l_preview_term_icon">
-						<i class="' . $fa_class . '"></i>
+						<i class="' . esc_attr($fa_class) . '"></i>
 					</div>
 				';
 									
@@ -2755,7 +2755,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 
                 $img_html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $img_html );
                 
-                $image_output = '<a href="'.esc_attr($img_full_src[0]).'" itemprop="contentUrl" data-size="'.esc_attr($img_full_src[1]).'x'.esc_attr($img_full_src[2]).'">'.$img_html.'</a>';
+                $image_output = '<a href="'.esc_url($img_full_src[0]).'" itemprop="contentUrl" data-size="'.esc_attr($img_full_src[1]).'x'.esc_attr($img_full_src[2]).'">'.$img_html.'</a>';
                 
                 $image_meta = wp_get_attachment_metadata( $id );
                 
