@@ -30,17 +30,17 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
         <section itemscope itemtype="http://schema.org/Product">
 
-            <?php edit_post_link( __( 'Edit this Product' , 'semper-fi-lite' ); ?>
+            <?php edit_post_link( __( 'Edit this Product' , 'semper-fi-lite' ) ); ?>
 			
 			<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
 				
-				<meta itemprop="name" content="<?php bloginfo('name');?>" />
+				<meta itemprop="name" content="<?php bloginfo( 'name' );?>" />
 			
 			</div>
             
             <h5>
 
-                <a href="<?php the_permalink() ?>"><span itemprop="name" content="<?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?>" ><?php if ( get_the_title() ) { the_title();} else { _e('(No Title)', 'semper-fi-lite'); } ?></span></a>
+                <a href="<?php the_permalink() ?>"><span itemprop="name" content="<?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite' ); } ?>" ><?php if ( get_the_title() ) { the_title();} else { _e( '(No Title)' , 'semper-fi-lite' ); } ?></span></a>
 
             </h5>
             

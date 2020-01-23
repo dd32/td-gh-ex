@@ -71,7 +71,7 @@ nav#for-mobile ul.social {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    padding: 0 1.5em 1em 1em;
+    padding: 0 1.5em .25em 1em;
     text-align: center;
     width: calc( 100% - 2.5em );
 }
