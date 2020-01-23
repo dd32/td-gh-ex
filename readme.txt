@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.9
+Stable tag: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,11 @@ Advanced IT company theme crafted by the experts at Themeshopy, is highly applic
 
 = 0.3.9 =
 * Changed woocommerce css customization.
+
+= 0.4 =
+* Added sticky header option in customizer.
+* Updated POT file.
+* Resolved theme sniffer errors.
 
 == Resources ==
 

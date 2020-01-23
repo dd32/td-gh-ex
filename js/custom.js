@@ -42,3 +42,24 @@ function resMenu_close() {
       return false;
     });
   });
+
+(function( $ ) {
+
+  $(window).scroll(function(){
+    var sticky = $('.sticky-header'),
+        scroll = $(window).scrollTop();
+
+    if (scroll >= 100) sticky.addClass('fixed-header');
+    else sticky.removeClass('fixed-header');
+  });
+
+  $(window).scroll(function(){
+    var sticky = $('.logo-sticky-header'),
+      scroll = $(window).scrollTop();
+
+    if (scroll >= 100) sticky.addClass('fixed-logo');
+    else sticky.removeClass('fixed-logo');
+  });
+
+})( jQuery );
+

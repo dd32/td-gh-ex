@@ -515,6 +515,16 @@ function advance_it_company_customize_register($wp_customize) {
         'label' => __( 'Show / Hide Topbar','advance-it-company' ),
         'section' => 'advance_it_company_topbar'
     ));
+
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_it_company_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_it_company_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-it-company' ),
+        'section' => 'advance_it_company_topbar'
+    ));
     
 	$wp_customize->add_setting('advance_it_company_mail',array(
 		'default'	=> '',

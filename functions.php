@@ -257,7 +257,7 @@ function advance_it_company_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_IT_COMPANY_CREDIT', 'https://www.themeshopy.com/themes/free-it-company-wordpress-theme/', 'advance-it-company');
+define('ADVANCE_IT_COMPANY_CREDIT', 'https://www.themeshopy.com/themes/free-it-company-wordpress-theme/');
 
 if (!function_exists('advance_it_company_credit')) {
 	function advance_it_company_credit() {
@@ -379,11 +379,11 @@ function advance_it_company_scripts() {
 }
 add_action('wp_enqueue_scripts', 'advance_it_company_scripts');
 
-define('ADVANCE_IT_COMPANY_BUY_NOW','https://www.themeshopy.com/themes/it-company-wordpress-theme/','advance-it-company');
-define('ADVANCE_IT_COMPANY_LIVE_DEMO','https://www.themeshopy.com/advance-it-company-pro/','advance-it-company');
-define('ADVANCE_IT_COMPANY_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-it-company-pro/','advance-it-company');
-define('ADVANCE_IT_COMPANY_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-it-company/','advance-it-company');
-define('ADVANCE_IT_COMPANY_CONTACT','https://wordpress.org/support/theme/advance-it-company/','advance-it-company');
+define('ADVANCE_IT_COMPANY_BUY_NOW','https://www.themeshopy.com/themes/it-company-wordpress-theme/');
+define('ADVANCE_IT_COMPANY_LIVE_DEMO','https://www.themeshopy.com/advance-it-company-pro/');
+define('ADVANCE_IT_COMPANY_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-it-company-pro/');
+define('ADVANCE_IT_COMPANY_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-it-company/');
+define('ADVANCE_IT_COMPANY_CONTACT','https://wordpress.org/support/theme/advance-it-company/');
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';
