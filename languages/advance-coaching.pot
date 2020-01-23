@@ -516,175 +516,183 @@ msgid 'Topbar Section'
 msgstr ""
 
 #: inc/customizer.php:495
-#: inc/customizer.php:545
+#: inc/customizer.php:566
 msgid 'Add Content here'
 msgstr ""
 
-#: inc/customizer.php:505
+#: inc/customizer.php:507
+msgid 'Show / Hide Topbar'
+msgstr ""
+
+#: inc/customizer.php:517
+msgid 'Sticky Header'
+msgstr ""
+
+#: inc/customizer.php:526
 msgid 'Timing'
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:536
 msgid 'Welcome Text'
 msgstr ""
 
-#: inc/customizer.php:525
+#: inc/customizer.php:546
 msgid 'Button text'
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:556
 msgid 'Add Link'
 msgstr ""
 
-#: inc/customizer.php:544
+#: inc/customizer.php:565
 msgid 'Contact Section'
 msgstr ""
 
-#: inc/customizer.php:555
+#: inc/customizer.php:576
 msgid 'Email Text'
 msgstr ""
 
-#: inc/customizer.php:565
+#: inc/customizer.php:586
 msgid 'Mail Address'
 msgstr ""
 
-#: inc/customizer.php:575
+#: inc/customizer.php:596
 msgid 'Phone Number Text'
 msgstr ""
 
-#: inc/customizer.php:585
+#: inc/customizer.php:606
 msgid 'Phone Number'
 msgstr ""
 
-#: inc/customizer.php:595
+#: inc/customizer.php:616
 msgid 'Address Text'
 msgstr ""
 
-#: inc/customizer.php:605
+#: inc/customizer.php:626
 msgid 'Address'
 msgstr ""
 
-#: inc/customizer.php:612
+#: inc/customizer.php:633
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:644
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:635
+#: inc/customizer.php:656
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:636
+#: inc/customizer.php:657
 msgid 'Size of image should be 1600 x 680'
 msgstr ""
 
-#: inc/customizer.php:644
+#: inc/customizer.php:665
 msgid 'Service Services'
 msgstr ""
 
-#: inc/customizer.php:645
+#: inc/customizer.php:666
 msgid 'Add  section below.'
 msgstr ""
 
-#: inc/customizer.php:654
+#: inc/customizer.php:675
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:678
+#: inc/customizer.php:699
 msgid 'Select Category to display post'
 msgstr ""
 
-#: inc/customizer.php:679
+#: inc/customizer.php:700
 msgid 'Size of image should be 370 x 240'
 msgstr ""
 
-#: inc/customizer.php:685
+#: inc/customizer.php:706
 msgid 'Blog Page Settings'
 msgstr ""
 
-#: inc/customizer.php:695
+#: inc/customizer.php:716
 msgid 'Post Date'
 msgstr ""
 
-#: inc/customizer.php:705
+#: inc/customizer.php:726
 msgid 'Comments'
 msgstr ""
 
-#: inc/customizer.php:715
+#: inc/customizer.php:736
 msgid 'Author'
 msgstr ""
 
-#: inc/customizer.php:725
+#: inc/customizer.php:746
 msgid 'Single Post Tags'
 msgstr ""
 
-#: inc/customizer.php:737
+#: inc/customizer.php:758
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:753
+#: inc/customizer.php:774
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:760
+#: inc/customizer.php:781
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:771
+#: inc/customizer.php:792
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:773
+#: inc/customizer.php:794
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:775
+#: inc/customizer.php:796
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:776
+#: inc/customizer.php:797
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:777
+#: inc/customizer.php:798
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:778
+#: inc/customizer.php:799
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:787
+#: inc/customizer.php:808
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:798
+#: inc/customizer.php:819
 msgid 'Show / Hide Scroll Top Button'
 msgstr ""
 
-#: inc/customizer.php:803
-#: inc/customizer.php:812
+#: inc/customizer.php:824
+#: inc/customizer.php:833
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:808
+#: inc/customizer.php:829
 msgid 'Scroll Back to Top Position'
 msgstr ""
 
-#: inc/customizer.php:811
+#: inc/customizer.php:832
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:813
+#: inc/customizer.php:834
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:898
+#: inc/customizer.php:919
 msgid 'Coaching Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:899
+#: inc/customizer.php:920
 msgid 'Go Pro'
 msgstr ""

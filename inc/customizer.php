@@ -508,6 +508,16 @@ function advance_coaching_customize_register($wp_customize) {
         'section' => 'advance_coaching_topbar'
     ));
 
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_coaching_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_coaching_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-coaching' ),
+        'section' => 'advance_coaching_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_coaching_time',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
