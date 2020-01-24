@@ -3,7 +3,7 @@
 * nav-menuMiddle.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.3
+* @version   1.0.4
 *
 */
 ?>
@@ -104,7 +104,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-8 col-md-8">
             <!-- Logo -->
             <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' );?></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php __('Toggle navigation','atomy')?>">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -168,46 +168,3 @@
     <div class="at-border-top-menu <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     </div>
 
-<?php
-
-/**
- * Menu fallback. Link to the menu editor if that is useful.
- *
- * @param  array $args
- * @return string
- */
-function atomy_link_to_menu_editor( $args )
-{
-    if ( ! current_user_can( 'manage_options' ) )
-    {
-        return;
-    }
-
-    // see wp-includes/nav-menu-template.php for available arguments
-    extract( $args );
-
-    $link = $link_before
-        . '<a href="' .admin_url( 'nav-menus.php' ) . '">' . $before .__('Add a menu','atomy') . $after . '</a>'
-        . $link_after;
-
-    // We have a list
-    if ( FALSE !== stripos( $items_wrap, '<ul' )
-        or FALSE !== stripos( $items_wrap, '<ol' )
-    )
-    {
-        $link = "<li>$link</li>";
-    }
-
-    $output = sprintf( $items_wrap, $menu_id, $menu_class, $link );
-    if ( ! empty ( $container ) )
-    {
-        $output  = "<$container class='$container_class' id='$container_id'>$output</$container>";
-    }
-
-    if ( $echo )
-    {
-        echo $output;
-    }
-
-    return $output;
-}

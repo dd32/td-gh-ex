@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.3
+* @version   1.0.4
 */
 
 function atomy_customize_register( $wp_customize ) {
@@ -22,8 +22,6 @@ function atomy_customize_register( $wp_customize ) {
 			'render_callback' => 'atomy_customize_partial_blogdescription',
 	));
 }
-
-
 
 
 /* Atomy General Settings

@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.3
+* @version   1.0.4
 */
 
 
@@ -311,6 +311,46 @@ function atomy_add_class_to_items_link( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'atomy_add_class_to_items_link', 10, 3 );
+
+
+/* Add Menu Fallback
+========================================================================== */
+
+function atomy_link_to_menu_editor( $args )
+{
+    if ( ! current_user_can( 'manage_options' ) )
+    {
+        return;
+    }
+
+    // see wp-includes/nav-menu-template.php for available arguments
+    extract( $args );
+
+    $link = $link_before
+        . '<a href="' .admin_url( 'nav-menus.php' ) . '">' . $before .__('Add a menu','atomy') . $after . '</a>'
+        . $link_after;
+
+    // We have a list
+    if ( FALSE !== stripos( $items_wrap, '<ul' )
+        or FALSE !== stripos( $items_wrap, '<ol' )
+    )
+    {
+        $link = "<li>$link</li>";
+    }
+
+    $output = sprintf( $items_wrap, $menu_id, $menu_class, $link );
+    if ( ! empty ( $container ) )
+    {
+        $output  = "<$container class='$container_class' id='$container_id'>$output</$container>";
+    }
+
+    if ( $echo )
+    {
+        echo $output;
+    }
+
+    return $output;
+}
 
 
 /* Include script and styles for class add Panel
@@ -798,7 +838,7 @@ function atomy_register_required_plugins() {
 ========================================================================== */
 
  function atomy_page_create() {
-     add_theme_page('Atomy', 'ATOMY', 'edit_theme_options', 'atomy_page', 'atomy_page_display','dashicons-screenoption');
+     add_theme_page('Atomy', 'ATOMY', 'edit_theme_options', 'atomy_page', 'atomy_page_display',1);
 
  }
 
@@ -826,9 +866,9 @@ function atomy_import_files() {
 	return array(
 		array(
 			'import_file_name'             => __('Atomy Baby','atomy'),
-			'local_import_file'            => trailingslashit( get_template_directory() ) . 'assets/demo/baby/atomybaby.WordPress.2019-11-30.xml',
-			'local_import_widget_file'     => trailingslashit( get_template_directory() ) . 'assets/demo/baby/www.denisfranchi.com-atomy-baby-widgets.wie',
-			'local_import_customizer_file' => trailingslashit( get_template_directory() ) . 'assets/demo/baby/atomy-export.dat',
+			'import_file_url'              => 'https://www.denisfranchi.com/demo-atomy/baby/atomybaby.WordPress.2019-11-30.xml',
+			'import_widget_file_url'       => 'https://www.denisfranchi.com/demo-atomy/baby/www.denisfranchi.com-atomy-baby-widgets.wie',
+			'import_customizer_file_url'   => 'https://www.denisfranchi.com/demo-atomy/baby/atomy-export.dat',
 			'import_preview_image_url'     => get_template_directory_uri() . '/assets/demo/baby/demo-atomy-baby.png',
 			'import_notice'                => __( 'It takes about 6 minutes to import this demo!', 'atomy' ),
 			'preview_url'                  => 'https://www.denisfranchi.com/atomy-baby/',
@@ -898,6 +938,8 @@ define('atomy_url_faq_2_support','https://www.denisfranchi.com/community/index.p
 define('atomy_url_faq_3_support','https://www.denisfranchi.com/community/index.php?threads/atomy-installation.16/');// Faq 3 Support
 define('atomy_url_faq_4_support','https://www.denisfranchi.com/community/index.php?threads/atomy-installation.16/');// Faq 4 Support
 define('atomy_url_copyright_theme','https://www.denisfranchi.com/');// Franchi Design Copyright
+
+
 
 
 

@@ -3,7 +3,7 @@
 * section-iconsheader.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.3
+* @version   1.0.4
 *
 */
 ?>
