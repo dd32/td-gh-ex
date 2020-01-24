@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.36
+* Reduced the size of the Avant help notice to suit WP handbook guidelines
+* Updated the language .pot file
+
 #### 1.1.35
 * Fixed Missing / Incorrect escaping & translations
 * Reduced the size of the Avant help notice on start

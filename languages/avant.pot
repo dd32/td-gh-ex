@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2020-01-21 20:27+0200\n"
+"POT-Creation-Date: 2020-01-24 14:42+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1285,77 +1285,88 @@ msgstr ""
 msgid "HubSpot"
 msgstr ""
 
-#: functions.php:531
-msgid "Thank you for trying out Avant!"
+#: functions.php:533
+msgid "Thank you for using Avant!"
 msgstr ""
 
-#: functions.php:533
+#: functions.php:535
 #, php-format
 msgid ""
-"We pride ourselves on <a href=\"%s\" target=\"_blank\">good products and 5 "
-"Star Support</a>! Please read through our help notes below on getting "
-"started with Avant:"
+"We pride ourselves on <a href=\"%1$s\" target=\"_blank\">good products and 5 "
+"Star Support</a>! Please read through our <a href=\"%2$s\">About Avant</a> "
+"page for more help on using the Avant theme"
 msgstr ""
 
-#: functions.php:536
+#: functions.php:539
 msgid "Popular links to get you started"
 msgstr ""
 
-#: functions.php:538
-msgid ""
-"Go to the About Avant page and see our quick start links & documentation"
+#: functions.php:541
+msgid "See what the Avant Premium theme offers"
 msgstr ""
 
 #: functions.php:542
-msgid "Read more About Avant"
+msgid "Setting up the Avant default slider"
 msgstr ""
 
-#: functions.php:546
+#: functions.php:543
+msgid "How to install Avant Premium"
+msgstr ""
+
+#: functions.php:544
+msgid "Adding Custom CSS to WordPress"
+msgstr ""
+
+#: functions.php:547
+msgid "Go To Documentation"
+msgstr ""
+
+#: functions.php:551
 msgid "Start customizing your site:"
 msgstr ""
 
-#: functions.php:548
+#: functions.php:553
 msgid ""
 "All Avant Settings are built into the WordPress Customizer for easy, visual "
 "site editing."
 msgstr ""
 
-#: functions.php:551
+#: functions.php:556
 msgid "Start Customizing Avant"
 msgstr ""
 
-#: functions.php:555
+#: functions.php:560
 msgid "Need Help with Avant?"
 msgstr ""
 
-#: functions.php:557
+#: functions.php:562
 msgid ""
 "Need help upgrading? Have a question about using the Avant theme? We're here "
 "to help... Contact us."
 msgstr ""
 
-#: functions.php:560
+#: functions.php:565
 msgid "Get in contact"
 msgstr ""
 
-#: functions.php:567
+#: functions.php:572
 #, php-format
 msgid "Avant Premium is %1$s for all the extra %2$s"
 msgstr ""
 
-#: functions.php:567
+#: functions.php:572
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
 "target=\"_blank\">currently selling for only $25</a>"
 msgstr ""
 
-#: functions.php:567
+#: functions.php:572
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#premium-features\" "
 "target=\"_blank\">Avant Premium features</a>"
 msgstr ""
 
-#: functions.php:570
+#: functions.php:576
 msgid "Dismiss Notice"
 msgstr ""
 
@@ -1920,7 +1931,7 @@ msgid "<span>Avant Premium </span><em>$25</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:15
-msgid "Once-off Payment, NO subscription payments are set up"
+msgid "Once-off Payment, Lifetime Updates, NO subscription"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:19

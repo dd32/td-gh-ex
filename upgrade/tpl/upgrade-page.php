@@ -12,7 +12,7 @@
                 <a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
                     <?php printf( __( '<span>Avant Premium </span><em>$25</em>', 'avant' ) ); ?>
                 </a>
-                <p><?php esc_html_e( 'Once-off Payment, NO subscription payments are set up', 'avant' ); ?></p>
+                <p><?php esc_html_e( 'Once-off Payment, Lifetime Updates, NO subscription', 'avant' ); ?></p>
             </div>
             
             <p class="avant-upgrade-p">

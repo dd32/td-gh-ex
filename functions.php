@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.35' );
+define( 'AVANT_THEME_VERSION' , '1.1.36' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -522,51 +522,57 @@ add_filter( 'widget_categories_dropdown_args', 'avant_set_widget_categories_drop
  * Admin notice to enter a purchase license
  */
 function avant_add_license_notice() {
+	global $pagenow;
 	global $current_user;
 	$avant_user_id = $current_user->ID;
+	$avantpage = isset( $_GET['page'] ) ? $pagenow . '?page=' . $_GET['page'] : $pagenow;
 
-	if ( !get_user_meta( $avant_user_id, 'avant_flash_notice_ignore' ) ) : ?>
+	if ( !get_user_meta( $avant_user_id, 'avant_admin_notice_ignore' ) ) : ?>
 		<div class="notice notice-info avant-admin-notice avant-notice-add">
-		<h4>
-				<?php esc_html_e( 'Thank you for trying out Avant!', 'avant' ); ?>
+			<h4>
+				<?php esc_html_e( 'Thank you for using Avant!', 'avant' ); ?>
 			</h4>
-			<p><?php printf( __( 'We pride ourselves on <a href="%s" target="_blank">good products and 5 Star Support</a>! Please read through our help notes below on getting started with Avant:', 'avant' ) , 'https://wordpress.org/support/theme/avant/reviews/?filter=5' ); ?></p>
-			<div class="avant-admin-notice-blocks">
-				<div class="avant-admin-notice-block">
-					<h5><?php esc_html_e( 'Popular links to get you started', 'avant' ); ?></h5>
-					<p>
-					<?php esc_html_e( 'Go to the About Avant page and see our quick start links & documentation', 'avant' ); ?>
-					</p>
-					</ul>
-					<a href="<?php echo esc_url( admin_url( 'themes.php?page=avant_theme_info' ) ) ?>" class="avant-admin-notice-btn-grey">
-						<?php esc_html_e( 'Read more About Avant', 'avant' ); ?>
-					</a>
+			<p><?php printf( __( 'We pride ourselves on <a href="%1$s" target="_blank">good products and 5 Star Support</a>! Please read through our <a href="%2$s">About Avant</a> page for more help on using the Avant theme', 'avant' ), 'https://wordpress.org/support/theme/avant/reviews/?filter=5', admin_url( 'themes.php?page=avant_theme_info' ) ); ?></p>
+			<?php if ( $avantpage == 'themes.php?page=avant_theme_info' ) : ?>
+				<div class="avant-admin-notice-blocks">
+					<div class="avant-admin-notice-block">
+						<h5><?php esc_html_e( 'Popular links to get you started', 'avant' ); ?></h5>
+						<ul>
+							<li><a href="<?php echo esc_url( 'https://kairaweb.com/wordpress-theme/avant/#premium-features' ); ?>"><?php esc_html_e( 'See what the Avant Premium theme offers', 'avant' ); ?></a></li>
+							<li><a href="<?php echo esc_url( 'https://kairaweb.com/documentation/setting-up-the-default-slider/' ); ?>"><?php esc_html_e( 'Setting up the Avant default slider', 'avant' ); ?></a></li>
+							<li><a href="<?php echo esc_url( 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>"><?php esc_html_e( 'How to install Avant Premium', 'avant' ); ?></a></li>
+							<li><a href="<?php echo esc_url( 'https://kairaweb.com/documentation/adding-custom-css-to-wordpress/' ); ?>"><?php esc_html_e( 'Adding Custom CSS to WordPress', 'avant' ); ?></a></li>
+						</ul>
+						<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="avant-admin-notice-btn-grey">
+							<?php esc_html_e( 'Go To Documentation', 'avant' ); ?>
+						</a>
+					</div>
+					<div class="avant-admin-notice-block">
+						<h5><?php esc_html_e( 'Start customizing your site:', 'avant' ); ?></h5>
+						<p>
+							<?php esc_html_e( 'All Avant Settings are built into the WordPress Customizer for easy, visual site editing.', 'avant' ); ?>
+						</p>
+						<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="avant-admin-notice-btn">
+							<?php esc_html_e( 'Start Customizing Avant', 'avant' ); ?>
+						</a>
+					</div>
+					<div class="avant-admin-notice-block avant-nomargin">
+						<h5><?php esc_html_e( 'Need Help with Avant?', 'avant' ); ?></h5>
+						<p>
+							<?php esc_html_e( 'Need help upgrading? Have a question about using the Avant theme? We\'re here to help... Contact us.', 'avant' ); ?>
+						</p>
+						<a href="<?php echo esc_url( 'https://kairaweb.com/contact/' ) ?>" class="avant-admin-notice-btn-in" target="_blank">
+							<?php esc_html_e( 'Get in contact', 'avant' ); ?>
+						</a>
+					</div>
 				</div>
-				<div class="avant-admin-notice-block">
-					<h5><?php esc_html_e( 'Start customizing your site:', 'avant' ); ?></h5>
-					<p>
-						<?php esc_html_e( 'All Avant Settings are built into the WordPress Customizer for easy, visual site editing.', 'avant' ); ?>
-					</p>
-					<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="avant-admin-notice-btn">
-						<?php esc_html_e( 'Start Customizing Avant', 'avant' ); ?>
-					</a>
-				</div>
-				<div class="avant-admin-notice-block avant-nomargin">
-					<h5><?php esc_html_e( 'Need Help with Avant?', 'avant' ); ?></h5>
-					<p>
-						<?php esc_html_e( 'Need help upgrading? Have a question about using the Avant theme? We\'re here to help... Contact us.', 'avant' ); ?>
-					</p>
-					<a href="<?php echo esc_url( 'https://kairaweb.com/contact/' ) ?>" class="avant-admin-notice-btn-in" target="_blank">
-						<?php esc_html_e( 'Get in contact', 'avant' ); ?>
-					</a>
-				</div>
-			</div>
-			<h5>
-				<?php
-				/* translators: %s: 'Recommended Resources' */
-				printf( esc_html__( 'Avant Premium is %1$s for all the extra %2$s', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">currently selling for only $25</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank">Avant Premium features</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
-				?>
-			</h5>
+				<h5>
+					<?php
+					/* translators: %s: 'Recommended Resources' */
+					printf( esc_html__( 'Avant Premium is %1$s for all the extra %2$s', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">currently selling for only $25</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank">Avant Premium features</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					?>
+				</h5>
+			<?php endif; ?>
 			<a href="?avant_add_license_notice_ignore=" class="avant-notice-close"><?php esc_html_e( 'Dismiss Notice', 'avant' ); ?></a>
 		</div><?php
 	endif;
@@ -580,7 +586,7 @@ function avant_add_license_notice_ignore() {
 	$avant_user_id = $current_user->ID;
 
     if ( isset( $_GET['avant_add_license_notice_ignore'] ) ) {
-		update_user_meta( $avant_user_id, 'avant_flash_notice_ignore', true );
+		update_user_meta( $avant_user_id, 'avant_admin_notice_ignore', true );
     }
 }
 add_action( 'admin_init', 'avant_add_license_notice_ignore' );

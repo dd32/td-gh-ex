@@ -218,6 +218,10 @@ body.avant-footer-layout-standard.widgets-php #avant-site-footer-standard {
 .avant-admin-notice p.avant-note b {
     color: #006CC9;
 }
+.avant-admin-notice-block ul {
+    margin: 0;
+    padding: 0;
+}
 
 @media only screen and (max-width: 1024px) {
     .avant-admin-notice-block {
