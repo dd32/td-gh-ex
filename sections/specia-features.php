@@ -2,7 +2,7 @@
 	$hide_show_features= get_theme_mod('hide_show_features','on'); 
 	$features_title= get_theme_mod('features_title'); 
 	$features_description= get_theme_mod('features_description'); 
-	$features_background_setting= get_theme_mod('features_background_setting'); 
+	$features_background_setting= get_theme_mod('features_background_setting',''); 
 	$features_background_position= get_theme_mod('features_background_position','fixed'); 	
 	if($hide_show_features == 'on') {
 ?>
