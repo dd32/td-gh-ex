@@ -314,9 +314,9 @@ msgstr ""
 #: page-template/custom-frontpage.php:118
 #: template-parts/content-audio.php:38
 #: template-parts/content-gallery.php:28
-#: template-parts/content-image.php:28
-#: template-parts/content-video.php:44
-#: template-parts/content.php:28
+#: template-parts/content-image.php:32
+#: template-parts/content-video.php:53
+#: template-parts/content.php:37
 #: template-parts\grid-layout.php:22
 msgid 'READ MORE'
 msgstr ""
@@ -567,21 +567,37 @@ msgid 'Select Category to display Latest Post'
 msgstr ""
 
 #: inc/customizer.php:687
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:688
-msgid 'This section will appear in the .'
+msgid "Post Settings"
 msgstr ""
 
 #: inc/customizer.php:697
+msgid "Enable / Disable Post Date"
+msgstr ""
+
+#: inc/customizer.php:707
+msgid "Enable / Disable Post Author"
+msgstr ""
+
+#: inc/customizer.php:717
+msgid "Enable / Disable Post Comments"
+msgstr ""
+
+#: inc/customizer.php:723
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:724
+msgid 'This section will appear in the .'
+msgstr ""
+
+#: inc/customizer.php:733
 msgid 'Text'
 msgstr ""
 
-#: inc/customizer.php:783
+#: inc/customizer.php:819
 msgid 'Advance Blogging'
 msgstr ""
 
-#: inc/customizer.php:784
+#: inc/customizer.php:820
 msgid 'Go Pro'
 msgstr ""

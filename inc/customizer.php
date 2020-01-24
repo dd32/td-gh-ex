@@ -682,6 +682,42 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'section' => 'advance_blogging_latest_post',
 	));
 
+	//Blog Post
+	$wp_customize->add_section('advance_blogging_blog_post',array(
+		'title'	=> __('Post Settings','advance-blogging'),
+		'panel' => 'advance_blogging_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_blogging_date_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_date_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Post Date','advance-blogging'),
+       'section' => 'advance_blogging_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_author_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_author_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Post Author','advance-blogging'),
+       'section' => 'advance_blogging_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_comment_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_comment_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Post Comments','advance-blogging'),
+       'section' => 'advance_blogging_blog_post'
+    ));
+
 	//Footer
 	$wp_customize->add_section('advance_blogging_footer',array(
 		'title'	=> __('Footer Text','advance-blogging'),

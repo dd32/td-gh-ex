@@ -24,7 +24,7 @@
     <div class="new-text">
       <div class="box-content">
         <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
-        <div class="entry-content"><p><?php echo the_excerpt(); ?></p></div>
+        <div class="entry-content"><p><?php the_excerpt(); ?></p></div>
         <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-mdall" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-blogging' );?></span></a>
       </div>
     </div>

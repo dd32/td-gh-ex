@@ -14,11 +14,20 @@
 ?>
 <article>
 	<h1><?php the_title(); ?></h1>
-	<div class="metbox">
-		<span class="entry-date"><i class="far fa-calendar-alt"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
-		<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
-		<span class="entry-comments"><i class="fa fa-comments" aria-hidden="true"></i><?php comments_number( __('0 Comment', 'advance-blogging'), __('0 Comments', 'advance-blogging'), __('% Comments', 'advance-blogging') ); ?> </span>
-    </div><!-- metabox -->
+	<?php if( get_theme_mod( 'advance_blogging_date_hide',true) != '' || get_theme_mod( 'advance_blogging_comment_hide',true) != '' || get_theme_mod( 'advance_blogging_author_hide',true) != '') { ?>
+		<div class="metbox">
+			<?php if( get_theme_mod( 'advance_blogging_date_hide',true) != '') { ?>
+				<span class="entry-date"><i class="far fa-calendar-alt"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
+			<?php } ?>
+			<?php if( get_theme_mod( 'advance_blogging_author_hide',true) != '') { ?>
+				<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
+			<?php } ?>
+
+			<?php if( get_theme_mod( 'advance_blogging_comment_hide',true) != '') { ?>
+				<span class="entry-comments"><i class="fa fa-comments" aria-hidden="true"></i><?php comments_number( __('0 Comment', 'advance-blogging'), __('0 Comments', 'advance-blogging'), __('% Comments', 'advance-blogging') ); ?> </span>
+			<?php } ?>
+	    </div><!-- metabox -->
+    <?php } ?>
 	<?php if(has_post_thumbnail()) { ?>
 		<hr>
 		<div class="feature-box">	
