@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.7
+* @version   1.3.8
 */
 
 if(is_page()) { get_header('post'); } else { get_header(); }

@@ -5,7 +5,7 @@
 *
 * @package Avik
 *
-*  @version   1.3.7
+*  @version   1.3.8
 */
 ?>
 
@@ -35,7 +35,7 @@ background-position: center center;background-size: cover;" >
 			<br>
 			<?php esc_html_e('For a complete experience, go to the','avik');?>
 		<button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url('https://www.denisfranchi.com/avik-pro-10-0-0/' ); ?>"><?php esc_html_e('Pro Version', 'avik'); ?></a></button></p>
-			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.7','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
+			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.8','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
 	</div>
 	<!-- Guides -->
 	<div id="DOCUMENTATION" class="tabcontent">

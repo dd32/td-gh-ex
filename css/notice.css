@@ -30,3 +30,55 @@ a.avik-detail-update-a{
 a.avik-detail-update-a:hover{
     text-decoration: underline;
 }
+
+
+.df-logo{
+    background-color: #323232;
+    max-width: 100%;
+    margin-top: 1em;
+    border-radius: 4px;
+    padding: 1em;
+}
+
+.df-logo img{
+    height: auto;
+    transition: all .5s ease-in-out;
+    width: 65px;
+    border: 2px solid #82B541;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.df-logo span{
+   color: #fff;
+   font-size: 15px;
+   font-family: 'Inconsolata';
+   letter-spacing: 1px;
+}
+
+.df-logo img:hover{
+    transform: rotate(180deg);
+    transition: all .5s ease-in-out;
+}
+
+.df-logo a{
+    text-decoration: none;
+}
+
+.df-logo h2{
+    text-align:center;
+    font-weight:bold;
+    font-size:22px;
+    color: #fff;
+    margin-top: -1.5em;
+    letter-spacing: 2px;
+    font-family: 'Inconsolata';
+}
+
+
+@media(max-width:724px){
+    .df-logo h2{
+       margin-top: 1em!important;
+    }
+    
+}

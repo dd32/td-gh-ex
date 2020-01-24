@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.7
+ * @version   1.3.8
  */
 
 /* TABLE OF CONTENT
@@ -800,52 +800,38 @@ function avik_custom_add_google_fonts() {
 
 
 
-/* 20 Notice Promotion Themes
+/* 20 Notice Upload Themes
 -------------------------------------------------------- */
 
-	add_action( 'admin_enqueue_scripts', 'avik_add_script' );
-	function avik_add_script() {
-			wp_register_script( 'notice-update',  get_theme_file_uri( '/js/notice-update.js'),'','1.0', false );
-			wp_enqueue_style( 'avik-notice-style', get_theme_file_uri( '/css/notice.css' ), array(), '1.0' );
-			wp_localize_script( 'notice-update', 'notice_params', array(
-				ajaxurl => get_admin_url() . 'admin-ajax.php', 
-			));
-			
-			wp_enqueue_script(  'notice-update' );
-	}
-
-
-	if( get_option( 'avik_9_dismiss_notice' ) != true ) {
-
-		add_action( 'admin_notices', 'add_dismissible' );
-	}
-	function add_dismissible() {
-		  ?>
-		  <div class='notice notice-info avik-9-dismiss-notice avik-class-dismiss-notice is-dismissible'>
-			  <p><?php echo esc_html('For You','avik')?> <a href="<?php echo esc_url(avik_url_promotion); ?>"><?php echo esc_html('Avik Pro','atomy')?></a> <?php echo esc_html(' - 10% XMAS2019 until 01-01-2020','avik')?></p><hr>
-			  <p><?php echo esc_html('Happy New Year by Franchi Design','avik')?></p>
-		  </div>
-		  <?php
-	}
-
-	add_action( 'wp_ajax_avik_9_dismiss_notice', 'avik_9_dismiss_notice' );
-      function avik_9_dismiss_notice() {
-      update_option( 'avik_9_dismiss_notice', true );
+add_action( 'admin_enqueue_scripts', 'avik_add_script' );
+function avik_add_script() {
+		wp_register_script( 'notice-update',  get_theme_file_uri( '/js/notice-update.js'),'','1.0', false );
+		wp_enqueue_style( 'avik-notice-style', get_theme_file_uri( '/css/notice.css' ), array(), '1.0' );
+		wp_localize_script( 'notice-update', 'notice_params', array(
+			ajaxurl => get_admin_url() . 'admin-ajax.php', 
+		));
+		
+		wp_enqueue_script(  'notice-update' );
 }
 
 
+if( get_option( 'avik_1_dismiss_notice' ) != true ) {
 
-
-if( get_option( 'avik_10_dismiss_notice' ) != true ) {
-
-	add_action( 'admin_notices', 'avik_add_dismissible' );
+add_action( 'admin_notices', 'avik_add_dismissible' );
 }
 function avik_add_dismissible() {
-	  ?>
-	   <div class='notice notice-success avik-10-dismiss-notice avik-class-update is-dismissible'>
-			  <p style="text-align:center;font-weight:bold;font-size:18px ;"><?php echo esc_html('Changelog Avik v 1.3.7','avik')?> </p>
-			  <ul class="avik-ul-update">
-				  <li>
+  ?>
+   <div class='notice notice-success avik-1-dismiss-notice avik-class-update is-dismissible'>
+	   <div class="df-logo">
+		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
+	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
+	   <span><?php echo esc_html('Franchi Design','atomy')?></span>
+	   </a>
+	   <h2><?php echo esc_html('Welcome to Avik','avik')?></h2>
+      </div>
+		  <p style="font-weight:bold;font-size:18px ;"><?php echo esc_html('Changelog Avik v 1.3.8','avik')?> </p>
+		  <ul class="avik-ul-update">
+		  <li>
 					  <?php echo esc_html('Fixed some bugs','avik')?>
 				  </li>
 				  <li>
@@ -860,30 +846,29 @@ function avik_add_dismissible() {
 				  <li>
 					  <?php echo esc_html('Back To Top position added','avik')?>
 				  </li>
-			 </ul>
-			 <div style="text-align:center;margin-bottom:2em">
-			 <a class="avik-detail-update-a" href="<?php echo esc_url(avik_url_update_details); ?>"><?php echo esc_html('View Details','')?></a>
-	       </div>
-		  </div>
-	  <?php
+		 </ul>
+		 <div style="text-align:center;margin-bottom:2em">
+		 <a target="_blank" class="avik-detail-update-a" href="<?php echo esc_url(avik_url_update_details); ?>"><?php echo esc_html('View Details','avik')?></a>
+	   </div>
+	  </div>
+  <?php
 }
 
-add_action( 'wp_ajax_avik_10_dismiss_notice', 'avik_10_dismiss_notice' );
-  function avik_10_dismiss_notice() {
-  update_option( 'avik_10_dismiss_notice', true );
+add_action( 'wp_ajax_avik_1_dismiss_notice', 'avik_1_dismiss_notice' );
+function avik_1_dismiss_notice() {
+update_option( 'avik_1_dismiss_notice', true );
 }
 
 
-
-
-	/* 21 Url Admin Upload 
-	========================================================================== */
+/* 21 Url Admin Upload 
+========================================================================== */
 	
-	if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 		exit; // Exit if accessed directly.
-	}
-	define('avik_url_promotion','https://www.denisfranchi.com/avik-pro-10-0-0/');// Go Pro
-	define('avik_url_update_details','https://www.denisfranchi.com/blog/2018/11/28/avik-1-2-7/');// Update Details
+}
+define('avik_url_promotion','https://www.denisfranchi.com/avik-pro-10-0-0/');// Go Pro
+define('avik_url_update_details','https://www.denisfranchi.com/blog/2018/11/28/avik-1-2-7/');// Update Details
+define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design
 	
 
 
