@@ -514,6 +514,16 @@ function advance_fitness_gym_customize_register($wp_customize) {
         'section' => 'advance_fitness_gym_topbar'
     ));
 
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_fitness_gym_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_fitness_gym_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-fitness-gym' ),
+        'section' => 'advance_fitness_gym_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_fitness_gym_contact',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'

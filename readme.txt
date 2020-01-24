@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.8
+Stable tag: 0.3.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -70,6 +70,11 @@ Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPres
 = 0.3.8 =
   * Added show / hide option for topbar in customizer.
   * Changed woocommerce css customization.
+
+= 0.3.9 =
+  * Added sticky header option in customizer.
+  * Updated POT file.
+  * Resolved theme sniffer error.
 
 == Resources ==
 
