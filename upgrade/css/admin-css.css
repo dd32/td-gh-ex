@@ -87,7 +87,7 @@ span.premium-link {
 }
 .topshop-admin-notice p {
     font-size: 15px;
-    margin: 4px 0 0;
+    margin: -10px 0 0;
     color: #72777c;
 }
 .topshop-admin-notice-blocks::after {
@@ -186,6 +186,12 @@ span.premium-link {
 .topshop-admin-notice p.topshop-note b {
     color: #006CC9;
 }
+.topshop-admin-notice-top .topshop-admin-notice-btn {
+    padding: 5px 12px;
+}
+/* .topshop-admin-notice:hover .topshop-attract {
+    color: #32d601;
+} */
 
 @media only screen and (max-width: 1024px) {
     .topshop-admin-notice-block {

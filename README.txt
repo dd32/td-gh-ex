@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.25
+* Reduced size of admin notice to fit WP guidlines
+* Remove old deprecated code
+* Updated language .pot file
+
 #### 1.3.24
 * Styling fixes/tweaks
 * Remove old deprecated code

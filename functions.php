@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.24' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.25' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -339,79 +339,81 @@ function topshop_cat_columns_array_push_after( $src, $topshop_cat_in, $pos ) {
  * Admin notice to enter a purchase license
  */
 function topshop_add_license_notice() {
+	global $pagenow;
 	global $current_user;
 	$topshop_user_id = $current_user->ID;
+	$topshoppage = isset( $_GET['page'] ) ? $pagenow . '?page=' . $_GET['page'] : $pagenow;
 
-	if ( !get_user_meta( $topshop_user_id, 'topshop_flash_notice_ignore' ) ) : ?>
-		<div class="notice notice-info topshop-admin-notice topshop-notice-add">
+	if ( !get_user_meta( $topshop_user_id, 'topshop_admin_notice_ignore' ) ) : ?>
+		<div class="notice notice-info topshop-admin-notice topshop-notice-add <?php echo $topshoppage != 'themes.php?page=theme_info' ? sanitize_html_class( 'topshop-attract-notice' ) : ''; ?>">
 			<h4>
-				<?php esc_html_e( 'Thank you for trying out TopShop!', 'topshop' ); ?> -
-				<span>
-					<?php
-					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Premium is %1$s for only $15', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" target="_blank">currently on sale</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
-					?>
-				</span>
+				<?php esc_html_e( 'Thank you for using TopShop!', 'topshop' ); ?>
 			</h4>
-			<p><?php esc_html_e( 'We\'re here to help... Please read through our help notes below on getting started with TopShop:', 'topshop' ); ?></p>
-			<div class="topshop-admin-notice-blocks">
-				<div class="topshop-admin-notice-block">
-					<h5><?php esc_html_e( 'About TopShop:', 'topshop' ); ?></h5>
-					<p>
-						<?php esc_html_e( 'TopShop is a widely used and much loved WordPress theme which gives you lots of different customization settings... so you can easily change the look of your site any time.', 'topshop' ); ?>
-					</p>
-					<p>
-						<?php
-						/* translators: %s: 'Recommended Resources' */
-						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/support/wordpress-recommended-resources/" target="_blank">Recommended Resources</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
-						?>
-					</p>
-					<a href="<?php echo esc_url( admin_url( 'themes.php?page=theme_info' ) ) ?>" class="topshop-admin-notice-btn">
-						<?php esc_html_e( 'Read More About TopShop', 'topshop' ); ?>
-					</a>
+			<p class="topshop-admin-notice-top">
+				<?php
+				/* translators: 1: '5 star support', 2: 'help on getting started', 3: 'Get In Contact', 4:'Currently selling for only $22'. */
+				printf( esc_html__( 'We promise %1$s with TopShop. Read our %2$s or for theme support on using TopShop - %3$s -- TopShop Pro is %4$s', 'topshop' ), wp_kses( '<a href="' . esc_url( 'https://wordpress.org/support/theme/topshop/reviews/?filter=5' ) . '" class="topshop-attract" target="_blank">' . __( '5 star support', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ), wp_kses( '<a href="' . admin_url( 'themes.php?page=theme_info' ) . '" class="topshop-admin-notice-btn">' . __( 'help on getting started', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'class' => array() ) ) ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/contact/' ) . '" target="_blank" class="topshop-admin-notice-btn">' . __( 'Get In Contact', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ), wp_kses( '<a href="' . esc_url( 'https://kairaweb.com/wordpress-theme/topshop/#purchase-premium' ) . '" class="topshop-attract" target="_blank">' . __( 'Currently selling for only $22', 'topshop' ) . '</a>', array( 'a' => array( 'href' => array(), 'target' => array(), 'class' => array() ) ) ) ); ?>
+			</p>
+			<?php if ( $topshoppage == 'themes.php?page=theme_info' ) : ?>
+				<div class="topshop-admin-notice-blocks">
+					<div class="topshop-admin-notice-block">
+						<h5><?php esc_html_e( 'About TopShop:', 'topshop' ); ?></h5>
+						<p>
+							<?php esc_html_e( 'TopShop is a widely used and much loved WordPress theme which gives you lots of different customization settings... so you can easily change the look of your site any time.', 'topshop' ); ?>
+						</p>
+						<p>
+							<?php
+							/* translators: %s: 'Recommended Resources' */
+							printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/support/wordpress-recommended-resources/" target="_blank">Recommended Resources</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+							?>
+						</p>
+						<a href="<?php echo esc_url( admin_url( 'themes.php?page=theme_info' ) ) ?>" class="topshop-admin-notice-btn">
+							<?php esc_html_e( 'Read More About TopShop', 'topshop' ); ?>
+						</a>
+					</div>
+					<div class="topshop-admin-notice-block">
+						<h5><?php esc_html_e( 'Using TopShop:', 'topshop' ); ?></h5>
+						<p>
+							<?php
+							/* translators: %s: 'set up your site in WordPress' */
+							printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+							?>
+						</p>
+						<a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" class="topshop-admin-notice-btn-in" target="_blank">
+							<?php esc_html_e( 'Recommended Resources', 'topshop' ); ?>
+						</a>
+						<p>
+							<?php esc_html_e( 'We\'ve neatly built most of the TopShop settings into the WordPress Customizer so you can see all your changes happen as you built your site.', 'topshop' ); ?>
+						</p>
+						<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="topshop-admin-notice-btn-grey">
+							<?php esc_html_e( 'Start Customizing Your Website', 'topshop' ); ?>
+						</a>
+					</div>
+					<div class="topshop-admin-notice-block topshop-nomargin">
+						<h5><?php esc_html_e( 'Popular FAQ\'s:', 'topshop' ); ?></h5>
+						<p>
+						<?php esc_html_e( 'See our list of popular help links for building your website and/or any issues you may have.', 'topshop' ); ?>
+						</p>
+						<ul>
+							<li>
+								<a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php esc_html_e( 'Setup the TopShop default slider', 'topshop' ); ?></a>
+							</li>
+							<li>
+								<a href="https://kairaweb.com/documentation/adding-custom-css-to-wordpress/" target="_blank"><?php esc_html_e( 'Adding Custom CSS to WordPress', 'topshop' ); ?></a>
+							</li>
+							<li>
+								<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'topshop' ); ?></a>
+							</li>
+							<li>
+								<a href="https://kairaweb.com/wordpress-theme/topshop/#premium-features" target="_blank"><?php esc_html_e( 'What does TopShop Premium offer extra', 'topshop' ); ?></a>
+							</li>
+						</ul>
+						<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="topshop-admin-notice-btn-grey" target="_blank">
+							<?php esc_html_e( 'See More Documentation', 'topshop' ); ?>
+						</a>
+					</div>
 				</div>
-				<div class="topshop-admin-notice-block">
-					<h5><?php esc_html_e( 'Using TopShop:', 'topshop' ); ?></h5>
-					<p>
-						<?php
-						/* translators: %s: 'set up your site in WordPress' */
-						printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
-						?>
-					</p>
-					<a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" class="topshop-admin-notice-btn-in" target="_blank">
-						<?php esc_html_e( 'Recommended Resources', 'topshop' ); ?>
-					</a>
-					<p>
-						<?php esc_html_e( 'We\'ve neatly built most of the TopShop settings into the WordPress Customizer so you can see all your changes happen as you built your site.', 'topshop' ); ?>
-					</p>
-					<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="topshop-admin-notice-btn-grey">
-						<?php esc_html_e( 'Start Customizing Your Website', 'topshop' ); ?>
-					</a>
-				</div>
-				<div class="topshop-admin-notice-block topshop-nomargin">
-					<h5><?php esc_html_e( 'Popular FAQ\'s:', 'topshop' ); ?></h5>
-					<p>
-					<?php esc_html_e( 'See our list of popular help links for building your website and/or any issues you may have.', 'topshop' ); ?>
-					</p>
-					<ul>
-						<li>
-							<a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php esc_html_e( 'Setup the TopShop default slider', 'topshop' ); ?></a>
-						</li>
-						<li>
-							<a href="https://kairaweb.com/documentation/adding-custom-css-to-wordpress/" target="_blank"><?php esc_html_e( 'Adding Custom CSS to WordPress', 'topshop' ); ?></a>
-						</li>
-						<li>
-							<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'topshop' ); ?></a>
-						</li>
-						<li>
-							<a href="https://kairaweb.com/wordpress-theme/topshop/#premium-features" target="_blank"><?php esc_html_e( 'What does TopShop Premium offer extra', 'topshop' ); ?></a>
-						</li>
-					</ul>
-					<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="topshop-admin-notice-btn-grey" target="_blank">
-						<?php esc_html_e( 'See More Documentation', 'topshop' ); ?>
-					</a>
-				</div>
-			</div>
+			<?php endif; ?>
 			<a href="?topshop_add_license_notice_ignore=" class="topshop-notice-close"><?php esc_html_e( 'Dismiss Notice', 'topshop' ); ?></a>
 		</div><?php
 	endif;
@@ -425,7 +427,7 @@ function topshop_add_license_notice_ignore() {
 	$topshop_user_id = $current_user->ID;
 
     if ( isset( $_GET['topshop_add_license_notice_ignore'] ) ) {
-		update_user_meta( $topshop_user_id, 'topshop_flash_notice_ignore', true );
+		update_user_meta( $topshop_user_id, 'topshop_admin_notice_ignore', true );
     }
 }
 add_action( 'admin_init', 'topshop_add_license_notice_ignore' );

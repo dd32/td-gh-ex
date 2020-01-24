@@ -75,7 +75,7 @@ final class Topshop_Premium_Customize {
 				array(
 					'title'    => esc_html__( 'Topshop', 'topshop' ),
 					'pro_text' => esc_html__( 'Upgrade to Premium', 'topshop' ),
-					'pro_url'  => 'https://kairaweb.com/theme/topshop/#purchase-premium'
+					'pro_url'  => 'https://kairaweb.com/wordpress-theme/topshop/#purchase-premium'
 				)
 			)
 		);

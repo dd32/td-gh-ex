@@ -10,8 +10,9 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>TopShop Premium </span><em>$15</em>', 'topshop' ) ); ?>
+                    <?php printf( __( '<span>TopShop Premium </span><em>$22</em>', 'topshop' ) ); ?>
                 </a>
+                <p><?php _e( 'Once-Off Payment, No Subscription', 'topshop' ); ?></p>
             </div>
             
             <p class="topshop-upgrade-p">
@@ -21,21 +22,12 @@
                 <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'topshop' ) , 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>
             </p>
 
-            <h3><?php _e( 'Latest Features added to TopShop Premium', 'topshop' ); ?></h3>
-            <ul>
-                <li><?php _e( 'Set a custom font for the Main Navigation', 'topshop' ); ?></li>
-                <li><?php _e( 'Edit the size of the Main Navigation font', 'topshop' ); ?></li>
-                <li><?php _e( 'Styling fixes & tweaks', 'topshop' ); ?></li>
-            </ul>
-            
         </div>
         <div class="clearboth"></div>
         
         <div class="upgrade-page-left">
             
             <div class="topshop-upgrade-page-inner-wrap">
-                
-                <h3><?php _e( 'TopShop Premium is a once off payment of $15<span>', 'topshop' ); ?></h3>
 
                 <div class="topshop-upgrade-block topshop-upgrade-block-layouts">
                     <div class="upgrade-page-right-box-img">
@@ -45,13 +37,24 @@
                     </div>
                 </div>
                 
-                <div class="topshop-upgrade-block">
+                <div class="topshop-upgrade-block topshop-upgrade-block-alt">
                     <div class="topshop-upgrade-block-left">
                         <?php _e( 'View the TopShop Premium Demo, and try out all the settings neatly built into the Customizer', 'topshop' ); ?>
                     </div>
                     <div class="topshop-upgrade-block-right">
                         <a href="<?php echo esc_url( 'https://demo.kairaweb.com/#topshop' ) ?>" target="_blank" class="topshop-upgrade-result-button">
                             <?php _e( 'TopShop Premium Demo', 'topshop' ); ?>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="topshop-upgrade-block">
+                    <div class="topshop-upgrade-block-left">
+                        <?php _e( 'See our list of Recommended Plugins for building good websites', 'topshop' ); ?>
+                    </div>
+                    <div class="topshop-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" target="_blank" class="topshop-upgrade-result-button">
+                            <?php _e( 'Recommended Plugins', 'topshop' ); ?>
                         </a>
                     </div>
                 </div>

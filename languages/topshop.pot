@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2020-01-13 11:26+0200\n"
+"POT-Creation-Date: 2020-01-24 13:01+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -690,129 +690,135 @@ msgstr ""
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:348
-msgid "Thank you for trying out TopShop!"
+#: functions.php:350
+msgid "Thank you for using TopShop!"
 msgstr ""
 
-#: functions.php:352
+#: functions.php:355
 #, php-format
-msgid "Premium is %1$s for only $15"
-msgstr ""
-
-#: functions.php:352
 msgid ""
-"<a href=\"https://kairaweb.com/wordpress-theme/topshop/#purchase-premium\" "
-"target=\"_blank\">currently on sale</a>"
+"We promise %1$s with TopShop. Read our %2$s or for theme support on using "
+"TopShop - %3$s -- TopShop Pro is %4$s"
 msgstr ""
 
-#: functions.php:356
-msgid ""
-"We're here to help... Please read through our help notes below on getting "
-"started with TopShop:"
+#: functions.php:355
+msgid "5 star support"
 msgstr ""
 
-#: functions.php:359
+#: functions.php:355
+msgid "help on getting started"
+msgstr ""
+
+#: functions.php:355
+msgid "Get In Contact"
+msgstr ""
+
+#: functions.php:355
+msgid "Currently selling for only $22"
+msgstr ""
+
+#: functions.php:360
 msgid "About TopShop:"
 msgstr ""
 
-#: functions.php:361
+#: functions.php:362
 msgid ""
 "TopShop is a widely used and much loved WordPress theme which gives you lots "
 "of different customization settings... so you can easily change the look of "
 "your site any time."
 msgstr ""
 
-#: functions.php:366
+#: functions.php:367
 #, php-format
 msgid ""
 "Read through our %1$s and %2$s and we'll help you build a professional "
 "website easily."
 msgstr ""
 
-#: functions.php:366
+#: functions.php:367
 msgid ""
 "<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
 "target=\"_blank\">Recommended Resources</a>"
 msgstr ""
 
-#: functions.php:366
+#: functions.php:367
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/\" target=\"_blank\">Kaira "
 "Documentation</a>"
 msgstr ""
 
-#: functions.php:370
+#: functions.php:371
 msgid "Read More About TopShop"
 msgstr ""
 
-#: functions.php:374
+#: functions.php:375
 msgid "Using TopShop:"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 #, php-format
 msgid ""
 "See our recommended %1$s and how to get ready before you start building your "
 "website after you've %2$s."
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/our-recommended-wordpress-basic-"
 "setup/\" target=\"_blank\">WordPress basic setup</a>"
 msgstr ""
 
-#: functions.php:378
+#: functions.php:379
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-hosting/\" target=\"_blank\">setup "
 "WordPress Hosting</a>"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:383
 msgid "Recommended Resources"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:386
 msgid ""
 "We've neatly built most of the TopShop settings into the WordPress "
 "Customizer so you can see all your changes happen as you built your site."
 msgstr ""
 
-#: functions.php:388
+#: functions.php:389
 msgid "Start Customizing Your Website"
 msgstr ""
 
-#: functions.php:392
+#: functions.php:393
 msgid "Popular FAQ's:"
 msgstr ""
 
-#: functions.php:394
+#: functions.php:395
 msgid ""
 "See our list of popular help links for building your website and/or any "
 "issues you may have."
 msgstr ""
 
-#: functions.php:398
+#: functions.php:399
 msgid "Setup the TopShop default slider"
 msgstr ""
 
-#: functions.php:401
+#: functions.php:402
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:404
+#: functions.php:405
 msgid "Mobile Menu is not working"
 msgstr ""
 
-#: functions.php:407
+#: functions.php:408
 msgid "What does TopShop Premium offer extra"
 msgstr ""
 
-#: functions.php:411
+#: functions.php:412
 msgid "See More Documentation"
 msgstr ""
 
-#: functions.php:415
+#: functions.php:417
 msgid "Dismiss Notice"
 msgstr ""
 
@@ -1468,10 +1474,14 @@ msgid "About TopShop"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:13
-msgid "<span>TopShop Premium </span><em>$15</em>"
+msgid "<span>TopShop Premium </span><em>$22</em>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:18
+#: upgrade/tpl/upgrade-page.php:15
+msgid "Once-Off Payment, No Subscription"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:19
 #, php-format
 msgid ""
 "<strong>All settings for TopShop</strong> are neatly built into the <a href="
@@ -1479,141 +1489,129 @@ msgid ""
 "what happens before saving and making any of the changes live"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:21
+#: upgrade/tpl/upgrade-page.php:22
 #, php-format
 msgid ""
 "Help on how to <strong><a href=\"%s\" target=\"_blank\">install the premium "
 "theme</a></strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:24
-msgid "Latest Features added to TopShop Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:26
-msgid "Set a custom font for the Main Navigation"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:27
-msgid "Edit the size of the Main Navigation font"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:28
-msgid "Styling fixes & tweaks"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:38
-msgid "TopShop Premium is a once off payment of $15<span>"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:42
+#: upgrade/tpl/upgrade-page.php:34
 msgid "Page Layouts"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:43
+#: upgrade/tpl/upgrade-page.php:35
 msgid ""
 "TopShop Premium offers a bunch on Elementor Page layouts built into the "
 "theme<br />so you can simply import page layouts to use."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:50
+#: upgrade/tpl/upgrade-page.php:42
 msgid ""
 "View the TopShop Premium Demo, and try out all the settings neatly built "
 "into the Customizer"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:54
+#: upgrade/tpl/upgrade-page.php:46
 msgid "TopShop Premium Demo"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:61
+#: upgrade/tpl/upgrade-page.php:53
+msgid "See our list of Recommended Plugins for building good websites"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:57
+msgid "Recommended Plugins"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:64
 msgid "Download a working Child Theme for TopShop"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:62
+#: upgrade/tpl/upgrade-page.php:65
 #, php-format
 msgid ""
 "Or learn more on creating/editing a <a href=\"%s\" target=\"_blank\">Child "
 "Theme</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:66
+#: upgrade/tpl/upgrade-page.php:69
 msgid "TopShop Child Theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:73
+#: upgrade/tpl/upgrade-page.php:76
 msgid ""
 "We have on-growing documentation on setting up your website with the TopShop "
 "theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:77
+#: upgrade/tpl/upgrade-page.php:80
 msgid "Documentation"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:84
+#: upgrade/tpl/upgrade-page.php:87
 msgid "Have you enjoyed using TopShop?"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:85
+#: upgrade/tpl/upgrade-page.php:88
 msgid "Please help by giving us a 5 star rating on WordPress.org :)"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:89
+#: upgrade/tpl/upgrade-page.php:92
 msgid "Rate TopShop 5 stars"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:94
+#: upgrade/tpl/upgrade-page.php:97
 #, php-format
 msgid "Theme: TopShop, built by <a href=\"%s\" target=\"_blank\">Kaira</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:103
+#: upgrade/tpl/upgrade-page.php:106
 msgid ""
 "We aim to keep our prices cheaper than other theme shops, while still "
 "offering you the best WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:105
+#: upgrade/tpl/upgrade-page.php:108
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:107
+#: upgrade/tpl/upgrade-page.php:110
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:111
+#: upgrade/tpl/upgrade-page.php:114
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:123
+#: upgrade/tpl/upgrade-page.php:126
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:126
+#: upgrade/tpl/upgrade-page.php:129
 msgid "Very user-friendly theme with excellent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:132
+#: upgrade/tpl/upgrade-page.php:135
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:135
+#: upgrade/tpl/upgrade-page.php:138
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:141
+#: upgrade/tpl/upgrade-page.php:144
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:144
+#: upgrade/tpl/upgrade-page.php:147
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "
