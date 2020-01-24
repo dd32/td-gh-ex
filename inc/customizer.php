@@ -412,6 +412,16 @@ function advance_education_customize_register($wp_customize) {
         'section' => 'advance_education_topbar'
     ));
 
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_education_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_education_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-education' ),
+        'section' => 'advance_education_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_education_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
