@@ -5,9 +5,9 @@ Author: Grace Themes
 Author URI: https://gracethemes.com/
 Description: BeautiPlus is a beautiful, responsive, colorful, stylish and free modern WordPress theme. BeautiPlus is an easy to use and highly intuitive multipurpose WordPress website theme. BeautiPlus has been designed with the main objective to provide website building platform for fashion and blogging website webmasters that are looking for professional quality and creativity. It is perfect for fashion, news blog, photography, wedding, fitness, health, gym, business, corporate, personal, construction, massage and spa, beauty saloon, bakery, cake shop, modeling, education, charity, glamour, music, blogging and any small business. Demo Link: https://gracethemes.com/demo/beautiplus/
 
-Version: 1.3.0
-License: GNU General Public License
-License URI: http://www.gnu.org/licenses/gpl.html
+Version: 2.1
+License: GNU General Public License version 2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beautiplus
 Tags:blog,two-columns,right-sidebar,custom-logo,full-width-template,custom-colors,custom-header,featured-images,editor-style,custom-background,custom-menu,threaded-comments,theme-options, translation-ready
 
@@ -38,11 +38,11 @@ img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border
 .right{ float:right;}
 .space50{ clear:both; height:50px;}
 .space100{ clear:both; height:100px;}
+
 .pagination{display:table; clear:both;}
 .pagination ul{list-style:none; margin:20px 0;}
-.pagination ul li{display:inline; float:left; margin-right:5px;}
-.pagination ul li span, .pagination ul li a{background:#646262; color:#fff; padding:5px 10px; display:inline-block;}
-.pagination ul li .current, .pagination ul li a:hover{background:#34c6f6;}
+nav.pagination .page-numbers{ background-color:#ccc; padding:10px 15px; font-size:15px; font-weight:600; color:#444;}
+nav.pagination .page-numbers.current, nav.pagination .page-numbers:hover{background-color:#e80f6f; color:#fff;}
 
 #comment-nav-above .nav-previous, #comment-nav-below .nav-previous{ float:none !important; margin:10px 0;}
 ol.comment-list li{ list-style:none; margin-bottom:5px;}
@@ -50,7 +50,7 @@ ol.comment-list li{ list-style:none; margin-bottom:5px;}
 .logo{ z-index:999; padding:20px 0;  color:#111; display:block; text-align:center;}
 .logo h1{font-weight:400; margin:0; line-height:36px; color:#111; text-transform:uppercase;}
 .logo a{ color:#111;}
-.logo span{ color:#111; display:block;}
+.logo p{ color:#111; display:block;}
 .container{ width:1100px; margin:0 auto; position:relative;}
 .pagebanner{ height:280px; overflow:hidden; text-align:center;}
 .pagebanner img{ position: relative; background-size:cover; width:100%; height:auto;}
@@ -134,8 +134,8 @@ h2.section-title {color:#454545; font:300 36px/40px 'Montserrat',san-serif; text
 .site-main{ width:740px; margin:0; padding:0; float:left;}
 .fullwidth{ width:100% !important; float:none  !important;}
 .fullwidth p{ margin-bottom:15px;}
-.page_content{ padding:25px 0;}
-.page_content p{ margin-bottom:20px; line-height:20px;}
+#page_content{ padding:25px 0;}
+#page_content p{ margin-bottom:20px; line-height:20px;}
 
 .blog_lists{ margin-bottom:30px; }
 .blog_lists h3{ margin-bottom:0px;}
@@ -201,12 +201,11 @@ h1.product_title, p.price{ margin-bottom:10px;}
 .woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price{ color:inherit !important;}
 .woocommerce table.shop_table th, .woocommerce table.shop_table td{ border-bottom:0px !important}
 
-/* Text meant only for screen readers. */
-.screen-reader-text {clip: rect(1px, 1px, 1px, 1px);position: absolute !important;	height: 1px;width: 1px;	overflow: hidden;}
-.screen-reader-text:focus {	background-color: #f1f1f1;	border-radius: 3px;	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);	clip: auto !important;	color: #21759b;	display: block;
-	font-size: 14px;font-size: 0.875rem;font-weight: bold;	height: auto;left: 5px;	line-height: normal;padding: 15px 23px 14px;text-decoration: none;	top: 5px;	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
-}
+.woocommerce .quantity .qty{ padding:7px; border:1px solid #ccc;}
+.woocommerce-Price-amount.amount{font-size:14px !important;}
+.woocommerce div.product .product_title{ padding-bottom:20px !important;}
+.woocommerce div.product form.cart{ margin-top:15px !important;}
+
 /* ============= Contact Page =========== */
 .wpcf7{ margin:30px 0 0; padding:0;}
 .wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"]{ width:40%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:35px; padding:0 15px; color:#797979; margin-bottom:0;}
@@ -222,3 +221,74 @@ h3#reply-title{font:300 18px 'Montserrat',san-serif;}
 nav#nav-below{ margin-top:15px;}
 .textwidget select{ width:100%;}
 table{ width:100%}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; 
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#page_content[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+
+/* = Navigation Focus CSS
+-------------------------------------------- */
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+a:focus {
+	outline: thin dotted #e80f6f;
+}

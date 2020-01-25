@@ -13,7 +13,7 @@
 get_header(); ?>
 
 	<div class="container">
-      <div class="page_content">
+      <div id="page_content">
     		 <section class="site-main">               
             		<?php while( have_posts() ) : the_post(); ?>                               
 						<?php get_template_part( 'content', 'page' ); ?>

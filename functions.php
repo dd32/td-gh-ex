@@ -24,12 +24,12 @@ function beautiplus_setup() {
 	load_theme_textdomain( 'beautiplus', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support('woocommerce');
-	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'custom-header', array( 
-		'default-text-color' => false,
-		'header-text' => false,
-	) );
-	add_theme_support( 'title-tag' );	
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+	add_theme_support('html5');
+	add_theme_support( 'post-thumbnails' );	
+	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 80,
 		'width'       => 200,
@@ -159,6 +159,11 @@ define('BEAUTIPLUS_THEME_DOC','https://gracethemes.com/documentation/beautiplus-
 define('BEAUTIPLUS_PROTHEME_URL','https://gracethemes.com/themes/modern-wordpress-theme/','beautiplus');
 define('BEAUTIPLUS_LIVE_DEMO','https://gracethemes.com/demo/beautiplus/','beautiplus');
 
+/**
+ * Customize Pro included.
+ */
+require_once get_template_directory() . '/customize-pro/example-1/class-customize.php';
+
 
 /**
  * Implement the Custom Header feature.
@@ -203,3 +208,21 @@ function beautiplus_the_custom_logo() {
 	}
 }
 endif;
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function beautiplus_skip_link_focus_fix() {  
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'beautiplus_skip_link_focus_fix' );

@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="page_content">
+     <div id="page_content">
         <section class="site-main">
 			<?php if ( have_posts() ) : ?>
                 <header class="page-header">
@@ -22,12 +22,12 @@ get_header(); ?>
 				<div class="blog-post">
 					<?php /* Start the Loop */ ?>
                     <?php while ( have_posts() ) : the_post(); ?>
-                        <?php get_template_part( 'content', get_post_format() ); ?>
+                        <?php get_template_part( 'content'); ?>
                     <?php endwhile; ?>
                 </div>
                 <?php the_posts_pagination(); ?>
             <?php else : ?>
-                <?php get_template_part( 'no-results', 'archive' ); ?>
+                <?php get_template_part( 'no-results' ); ?>
             <?php endif; ?>
         </section>
        <?php get_sidebar();?>       

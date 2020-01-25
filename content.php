@@ -22,7 +22,7 @@
         <?php if ( is_search() || !is_single() ) : // Only display Excerpts for Search ?>
         <div class="entry-summary">
            	<?php the_excerpt(); ?>
-            <a class="ReadMore" href="<?php echo esc_url( get_permalink() ); ?>"><?php _e('Read More &raquo;','beautiplus'); ?></a>
+            <a class="ReadMore" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e('Read More &raquo;','beautiplus'); ?></a>
         </div><!-- .entry-summary -->
         <?php else : ?>
         <div class="entry-content">

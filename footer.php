@@ -27,12 +27,13 @@
         <div class="copyright-wrapper">
         	<div class="container">
             	<div class="copyright-txt">
-				  <?php bloginfo('name'); ?> <?php _e('All Rights Reserved', 'beautiplus');?>              
+				  <?php bloginfo('name'); ?> <?php esc_html_e('All Rights Reserved', 'beautiplus');?>              
                 </div>
-                <div class="design-by">
-                    <a href="<?php echo esc_url( __( 'https://gracethemes.com/themes/free-modern-wordpress-theme/', 'beautiplus' ) ); ?>" target="_blank">
-                      <?php printf( __( 'Designed by %s', 'beautiplus' ), 'Grace Themes' ); ?>
-                    </a>
+                <div class="design-by">                    
+                    <a href="<?php echo esc_url( __( 'https://gracethemes.com/themes/free-modern-wordpress-theme/', 'beautiplus' ) ); ?>">
+					<?php esc_html_e( 'Theme by Grace Themes', 'beautiplus' ); ?>
+				   </a>
+                    
                 </div>
                 <div class="clear"></div>
             </div><!--.container-->            

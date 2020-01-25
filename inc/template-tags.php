@@ -7,56 +7,7 @@
  * @package Beautiplus
  */
 
-if ( ! function_exists( 'beautiplus_comment' ) ) :
-/**
- * Template for comments and pingbacks.
- *
- * Used as a callback by wp_list_comments() for displaying the comments.
- */
-function beautiplus_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
-
-	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
-
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-		<div class="comment-body">
-			<?php _e( 'Pingback:', 'beautiplus' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'beautiplus' ), '<span class="edit-link">', '</span>' ); ?>
-		</div>
-
-	<?php else : ?>
-
-	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
-		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-			<footer class="comment-meta">
-				<div class="comment-author vcard">
-					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, 34 ); ?>
-				</div><!-- .comment-author -->
-				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'beautiplus' ); ?></p>
-				<?php endif; ?>
-			</footer><!-- .comment-meta -->
-
-			<div class="comment-content">
-				<?php comment_text(); ?>
-			</div><!-- .comment-content -->
-
-			<?php
-				comment_reply_link( array_merge( $args, array(
-					'add_below' => 'div-comment',
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-					'before'    => '<div class="reply">',
-					'after'     => '</div>',
-				) ) );
-			?>
-		</article><!-- .comment-body -->
-
-	<?php      
-	endif; 
-}
-endif; // ends check for beautiplus_comment()
-
-if ( ! function_exists( 'beautiplus_the_attached_image' ) ) :
+if ( ! function_exists( 'beautiplus_the_attached_image' ) ) : 
 /**
  * Prints the attached image with a link to the next attached image.
  */
@@ -74,7 +25,7 @@ function beautiplus_the_attached_image() {
 	$attachment_ids = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
-		'numberposts'    => -1,
+		'numberposts'    => '',
 		'post_status'    => 'inherit',
 		'post_type'      => 'attachment',
 		'post_mime_type' => 'image',
@@ -106,36 +57,6 @@ function beautiplus_the_attached_image() {
 	);
 }
 endif;
-
-if ( ! function_exists( 'beautiplus_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function beautiplus_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
-
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
-
-	printf( __( '<span class="posted-on">Published %1$s</span><span class="byline"> by %2$s</span>', 'beautiplus' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
-			$time_string
-		),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		)
-	);
-}
-endif;
-
 /**
  * Returns true if a blog has more than 1 category
  */

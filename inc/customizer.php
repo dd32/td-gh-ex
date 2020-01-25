@@ -100,7 +100,7 @@ function beautiplus_customize_register( $wp_customize ) {
 	 ));// Slider Read more	
 	
 	$wp_customize->add_setting('disabled_slides',array(
-			'default' => true,
+			'default' => false,
 			'sanitize_callback' => 'beautiplus_sanitize_checkbox',
 			'capability' => 'edit_theme_options',
 	));	 
@@ -108,7 +108,7 @@ function beautiplus_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'disabled_slides', array(
 		   'settings' => 'disabled_slides',
 		   'section'   => 'slider_section',
-		   'label'     => __('Uncheck To Enable This Section','beautiplus'),
+		   'label'     => __('Check To show This Section','beautiplus'),
 		   'type'      => 'checkbox'
 	 ));//Disable Slider Section
 	
@@ -223,6 +223,8 @@ function beautiplus_custom_css(){
 					.pagination ul li .current, .pagination ul li a:hover, 
 					#commentform input#submit:hover,					
 					.nivo-controlNav a.active,
+					nav.pagination .page-numbers.current, 
+					nav.pagination .page-numbers:hover,
 					.ReadMore:hover,
 					.appbutton:hover,					
 					.slide_info .slide_more,				
@@ -237,7 +239,7 @@ function beautiplus_custom_css(){
 					
 					
 			</style> 
-<?php                       
+<?php                         
 }
          
 add_action('wp_head','beautiplus_custom_css');	 

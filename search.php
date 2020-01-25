@@ -8,12 +8,13 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="page_content">
+     <div id="page_content">
         <section class="site-main">
             <div class="blog-post">
 				<?php if ( have_posts() ) : ?>
                     <header>
-                        <h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'beautiplus' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                        <h1 class="entry-title"><?php /* translators: %s: search term */ 
+						printf( esc_attr__( 'Search Results for: %s', 'beautiplus' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
                     </header>
                     <?php while ( have_posts() ) : the_post(); ?>
                         <?php get_template_part( 'content', 'search' ); ?>

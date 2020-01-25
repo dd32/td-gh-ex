@@ -15,7 +15,7 @@
 	// Site tagline.
 	api( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.logo span' ).text( to );
+			$( '.logo p' ).text( to );
 		} );
 	} );
 } )( jQuery );
