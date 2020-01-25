@@ -366,7 +366,7 @@ function aagaz_startup_sanitize_dropdown_pages( $page_id, $setting ) {
 }
 
 //footer Link
-define('AAGAZ_STARTUP_CREDIT','https://www.themeseye.com/wordpress/free-startup-wordpress-theme/','aagaz-startup');
+define('AAGAZ_STARTUP_CREDIT',__('https://www.themeseye.com/wordpress/free-startup-wordpress-theme/', 'aagaz-startup'));
 
 if ( ! function_exists( 'aagaz_startup_credit' ) ) {
 	function aagaz_startup_credit(){
