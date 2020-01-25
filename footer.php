@@ -46,23 +46,22 @@
 					$footer_Payment_icon= get_theme_mod('footer_Payment_icon'); 					
 				?>
 				
-					<?php if($hide_show_payment == '1') { ?>
+				<?php if($hide_show_payment == '1') { ?>
 					<ul class="payment-icon">
-					<?php
-			
-					$footer_Payment_icon = json_decode($footer_Payment_icon);
-					if( $footer_Payment_icon!='' )
-					{
-					foreach($footer_Payment_icon as $footer_Payment_item){
-					$icon = ! empty( $footer_Payment_item->icon_value ) ? apply_filters( 'startkit_translate_single_string', $footer_Payment_item->icon_value, 'footer section' ) : '';	
-					$icon_link = ! empty( $footer_Payment_item->link ) ? apply_filters( 'startkit_translate_single_string', $footer_Payment_item->link, 'footer section' ) : '';	
-				?>
-						<?php if ( ! empty( $icon ) ) :?>
-									<li><a href="<?php echo esc_url($icon_link); ?>"><i class="fa <?php echo esc_attr( $icon ); ?>"></i></a></li>
-						<?php endif; ?>
-					<?php  } } } ?>
+						<?php
+							$footer_Payment_icon = json_decode($footer_Payment_icon);
+							if( $footer_Payment_icon!='' )
+							{
+							foreach($footer_Payment_icon as $footer_Payment_item){
+							$icon = ! empty( $footer_Payment_item->icon_value ) ? apply_filters( 'startkit_translate_single_string', $footer_Payment_item->icon_value, 'footer section' ) : '';	
+							$icon_link = ! empty( $footer_Payment_item->link ) ? apply_filters( 'startkit_translate_single_string', $footer_Payment_item->link, 'footer section' ) : '';	
+						?>
+							<?php if ( ! empty( $icon ) ) :?>
+										<li><a href="<?php echo esc_url($icon_link); ?>"><i class="fa <?php echo esc_attr( $icon ); ?>"></i></a></li>
+							<?php endif; ?>
+						<?php  } } ?>
 					</ul>
-					
+				<?php } ?>	
             </div>
 		</div>
 	</div>
