@@ -3,11 +3,11 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Attesa WordPress Theme, Copyright 2019 Rizzo Andrea
+Attesa WordPress Theme, Copyright 2020 Rizzo Andrea
 Attesa is distributed under the terms of the GNU GPL
 
 == Description ==
@@ -40,6 +40,9 @@ License: Pxhere.com CC0 license https://creativecommons.org/publicdomain/zero/1.
 Image Source: https://pxhere.com/en/photo/1565417
 
 == Changelog ==
+
+= Version 1.1.8 =
+* Minor bug fixes
 
 = Version 1.1.7 =
 * Improved theme customization with hooks

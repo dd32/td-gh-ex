@@ -53,9 +53,9 @@ function attesa_body_classes( $classes ) {
 	}
 	
 	// Add a class for the choosen icon pack
-	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
+	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		$classes[] = 'with_fa4';
-	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five_comp') {
+	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five_comp') {
 		$classes[] = 'with_fa5_comp';
 	} else {
 		$classes[] = 'with_fa5';
@@ -669,7 +669,7 @@ if ( ! function_exists('attesa_font_awesome_5_icon_array_general')) {
 }
 
 function attesa_get_font_awesome_general() {
-	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
+	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		return attesa_font_awesome_icon_array_general();
 	} else {
 		return attesa_font_awesome_5_icon_array_general();
@@ -677,7 +677,7 @@ function attesa_get_font_awesome_general() {
 }
 
 function attesa_get_font_awesome_cart() {
-	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
+	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		return attesa_font_awesome_icon_array_cart();
 	} else {
 		return attesa_font_awesome_5_icon_array_cart();
@@ -685,7 +685,7 @@ function attesa_get_font_awesome_cart() {
 }
 
 function attesa_get_font_awesome_scrolltop() {
-	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
+	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		return attesa_font_awesome_icon_array_scrolltop();
 	} else {
 		return attesa_font_awesome_5_icon_array_scrolltop();
@@ -800,7 +800,7 @@ function attesa_get_posts_navigation() {
 /* Get FontAwesome Icons based on version */
 if ( ! function_exists( 'attesa_get_fontawesome_icons' ) ) {
 	function attesa_get_fontawesome_icons($icon) {
-		$iconPack = attesa_options('_choose_icon_pack', 'font_awesome_four');
+		$iconPack = attesa_options('_choose_icon_pack', 'font_awesome_five');
 		if ($iconPack == 'font_awesome_four') {
 			if ('calendar' == $icon) {
 				$current_icon = 'fa fa-calendar-o';
@@ -883,7 +883,7 @@ if ( ! function_exists( 'attesa_get_schema_markup' ) ) {
 		if ( ! attesa_options('_schema_markup', '') ) {
 			return null;
 		}
-		if ('body' == $position) {
+		if ('html' == $position) {
 			if ( is_singular() ) {
 				$markup = 'itemscope itemtype="http://schema.org/WebPage"';
 			} else {
