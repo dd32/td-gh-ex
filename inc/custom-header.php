@@ -8,7 +8,7 @@
  */
 function beautiplus_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'beautiplus_custom_header_args', array(		
-		'default-text-color'     => 'fff',
+		'default-text-color'     => '303030',
 		'width'                  => 1400,
 		'height'                 => 280,
 		'wp-head-callback'       => 'beautiplus_header_style',		
