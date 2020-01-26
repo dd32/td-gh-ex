@@ -19,33 +19,31 @@
 <body <?php body_class(); ?>>
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-ecommerce-store' ); ?></a>
-
-    <div id="responsive-navbar">
-      <div class="container">
-        <div class="toggle-menu mobile-menu">
-          <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
-        </div>
-        <div id="res-sidebar" class="nav sidebar">
-          <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Responsive Menu', 'advance-ecommerce-store' ); ?>">
-            <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
-            <?php 
-              wp_nav_menu( array( 
-                'theme_location' => 'resposive-menu',
-                'container_class' => 'main-menu-navigation clearfix' ,
-                'menu_class' => 'clearfix',
-                'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                'fallback_cb' => 'wp_page_menu',
-              ) ); 
-            ?>
-            <div id="contact-info">
-              <?php get_search_form();?>
-              <?php dynamic_sidebar('social'); ?>
-            </div>
-          </nav>
+      <div id="responsive-navbar" class="<?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+        <div class="container">
+          <div class="toggle-menu mobile-menu">
+            <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
+          </div>
+          <div id="res-sidebar" class="nav sidebar">
+            <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Responsive Menu', 'advance-ecommerce-store' ); ?>">
+              <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
+              <?php 
+                wp_nav_menu( array( 
+                  'theme_location' => 'resposive-menu',
+                  'container_class' => 'main-menu-navigation clearfix' ,
+                  'menu_class' => 'clearfix',
+                  'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                  'fallback_cb' => 'wp_page_menu',
+                ) ); 
+              ?>
+              <div id="contact-info">
+                <?php get_search_form();?>
+                <?php dynamic_sidebar('social'); ?>
+              </div>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
-
     <div id="header">   
       <div class="top-menu">
         <div class="container">
@@ -123,21 +121,21 @@
         </div>
       </div>
       </div>
-      <div class="main-menu">
-        <div class="container">
-          <div id="menu-sidebar" class="nav sidebar">
-            <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
-              <?php 
-                wp_nav_menu( array( 
-                  'theme_location' => 'primary',
-                  'container_class' => 'main-menu-navigation clearfix' ,
-                  'menu_class' => 'clearfix',
-                  'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                  'fallback_cb' => 'wp_page_menu',
-                ) ); 
-              ?>
-            </nav>
+        <div class="main-menu <?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>" >
+          <div class="container">
+            <div id="menu-sidebar" class="nav sidebar">
+              <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
+                <?php 
+                  wp_nav_menu( array( 
+                    'theme_location' => 'primary',
+                    'container_class' => 'main-menu-navigation clearfix' ,
+                    'menu_class' => 'clearfix',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                    'fallback_cb' => 'wp_page_menu',
+                  ) ); 
+                ?>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
   </header>

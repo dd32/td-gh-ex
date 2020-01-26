@@ -381,12 +381,12 @@ function advance_ecommerce_store_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_ECOMMERCE_STORE_BUY_NOW','https://www.themeshopy.com/themes/wordpress-ecommerce-theme/','advance-ecommerce-store');
-define('ADVANCE_ECOMMERCE_STORE_LIVE_DEMO','https://themeshopy.com/advance-ecommerce-store-pro/','advance-ecommerce-store');
-define('ADVANCE_ECOMMERCE_STORE_PRO_DOC','https://themeshopy.com/demo/docs/advance-ecommerce-store-pro/','advance-ecommerce-store');
-define('ADVANCE_ECOMMERCE_STORE_FREE_DOC','https://themeshopy.com/demo/docs/free-advance-ecommerce/','advance-ecommerce-store');
-define('ADVANCE_ECOMMERCE_STORE_CONTACT','https://wordpress.org/support/theme/advance-ecommerce-store/','advance-ecommerce-store');
-define('ADVANCE_ECOMMERCE_STORE_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/', 'advance-ecommerce-store');
+define('ADVANCE_ECOMMERCE_STORE_BUY_NOW','https://www.themeshopy.com/themes/wordpress-ecommerce-theme/');
+define('ADVANCE_ECOMMERCE_STORE_LIVE_DEMO','https://themeshopy.com/advance-ecommerce-store-pro/');
+define('ADVANCE_ECOMMERCE_STORE_PRO_DOC','https://themeshopy.com/demo/docs/advance-ecommerce-store-pro/');
+define('ADVANCE_ECOMMERCE_STORE_FREE_DOC','https://themeshopy.com/demo/docs/free-advance-ecommerce/');
+define('ADVANCE_ECOMMERCE_STORE_CONTACT','https://wordpress.org/support/theme/advance-ecommerce-store/');
+define('ADVANCE_ECOMMERCE_STORE_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/');
 
 if (!function_exists('advance_ecommerce_store_credit')) {
 	function advance_ecommerce_store_credit() {

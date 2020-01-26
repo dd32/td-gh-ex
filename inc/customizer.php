@@ -44,6 +44,16 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'panel'    => 'advance_ecommerce_store_panel_id',
 	));
 
+	//Sticky Header
+	$wp_customize->add_setting( 'advance_ecommerce_store_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_ecommerce_store_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-ecommerce-store' ),
+        'section' => 'advance_ecommerce_store_left_right'
+    ));
+
 	$wp_customize->add_setting('advance_ecommerce_store_theme_options',array(
         'default' => __('Default','advance-ecommerce-store'),
 	        'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
