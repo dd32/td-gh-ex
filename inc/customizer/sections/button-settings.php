@@ -7,6 +7,7 @@ function apex_business_button_settings_setup( $wp_customize ) {
 
     $wp_customize->add_section( 'apex_business_button_settings_section', array(
         'title'       =>  __( 'Button', 'apex-business' ),
+        'capability'  => 'edit_theme_options',
         'priority'    =>  10,
     ) );
 
@@ -138,7 +139,7 @@ function apex_business_button_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_button_text_color_setting',
         array(
-            'default'           => APEX_BUSINESS_TEXT_COLOR,
+            'default'           => APEX_BUSINESS_WHITE_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',
@@ -170,7 +171,7 @@ function apex_business_button_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_button_bgcolor_setting',
         array(
-            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'default'           => APEX_BUSINESS_TEXT_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'transport'         => 'postMessage',

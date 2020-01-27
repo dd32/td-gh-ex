@@ -164,9 +164,10 @@
             height: 60px;
             float: left;
             margin-right: 2rem;
-            border: 4px solid $primary-color;
+            border: 4px solid $white-color;
             border-radius: 50%;
             vertical-align: middle;
+            @extend .pre-shadow;
         }
 
         .comment-info{
@@ -193,7 +194,7 @@
     }
 }
 
-.fa-facebook-f:before, .fa-facebook:before {
+.fa-facebook:before {
     font-family: FontAwesome;
 }
 

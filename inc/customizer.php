@@ -11,11 +11,12 @@
  * @see _wp_customize_include()
  */
 
-define( 'APEX_BUSINESS_PRIMARY_COLOR', '#13aff0' );
+define( 'APEX_BUSINESS_PRIMARY_COLOR', '#43c6ac' );
+define( 'APEX_BUSINESS_HOVER_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_TEXT_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_WHITE_COLOR', '#fff' );
 define( 'APEX_BUSINESS_DEEP_COLOR', '#2b3948' );
-define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba( 0, 0, 0, 0.6 )' );
+define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba(67, 198, 172, 0.8);' );
 
 define( 'APEX_BUSINESS_DEFAULT1_COLOR', 'rgb(150, 50, 220)' );
 define( 'APEX_BUSINESS_DEFAULT2_COLOR', 'rgba(50,50,50,0.8)' );
@@ -50,92 +51,8 @@ function apex_business_customizer_live_previw() {
 }
 add_action('customize_preview_init','apex_business_customizer_live_previw');
 
-/*******************************************************************************
- * Register Panels
- ******************************************************************************/
-function apex_business_register_panels_setup( $wp_customize ) {
-  $wp_customize->add_panel( 'apex_business_general_panel', array(
-    'title' => __( 'General Settings', 'apex-business' ),
-    'priority' => 10,
-  ) );
-}
 
-add_action( 'customize_register', 'apex_business_register_panels_setup');
-
-function apex_business_register_header_navigation_panels_setup( $wp_customize ) {
-  $wp_customize->add_panel( 'apex_business_header_panel', array(
-    'title' => __( 'Header', 'apex-business' ),
-    'priority' => 10,
-  ) );
-}
-
-add_action( 'customize_register', 'apex_business_register_header_navigation_panels_setup');
-
-function apex_business_register_footer_panels_setup( $wp_customize ) {
-  $wp_customize->add_panel( 'apex_business_footer_panel', array(
-    'title' => __( 'Footer & Bottom Bar', 'apex-business' ),
-    'priority' => 10,
-  ) );
-}
-
-add_action( 'customize_register', 'apex_business_register_footer_panels_setup');
-
-function apex_business_register_blog_panels_setup( $wp_customize ) {
-  $wp_customize->add_panel( 'apex_business_blog_panel', array(
-    'title' => __( 'Blog', 'apex-business' ),
-    'priority' => 10,
-  ) );
-}
-
-add_action( 'customize_register', 'apex_business_register_blog_panels_setup');
-
-/*******************************************************************************
- * Accent Color
- ******************************************************************************/
-
-function apex_business_accent_color_setup( $wp_customize ) {
-
-  /******************************** Primary Color *****************************/
-    $wp_customize->add_setting( 'apex_business_primary_color_setting', array(
-      'default'   => '#145c99',
-      'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'apex_business_primary_color_control', array(
-      'section'  => 'colors',
-      'label'    => esc_html__( 'Primary Color', 'apex-business' ),
-      'settings' =>  'apex_business_primary_color_setting',
-    ) ) );
-
-    /******************************** Secondary Color *****************************/
-    $wp_customize->add_setting( 'apex_business_secondary_color_setting', array(
-      'default'   => '#f6f163',
-      'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'apex_business_secondary_color_control', array(
-      'section'  => 'colors',
-      'label'    => esc_html__( 'Secondary Color', 'apex-business' ),
-      'settings' =>  'apex_business_secondary_color_setting',
-    ) ) );
-
-  /******************************** Site Description Switch *****************************/
-  $wp_customize->add_setting( 'apex_business_site_description_switch_setting', array(
-    'capability'        => 'edit_theme_options',
-    'sanitize_callback' => 'absint',
-    'default'           => false
-  ) );
-
-  $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control( $wp_customize, 'apex_business_site_description_switch_control', array(
-    'label'       => __( 'Enable Site Desctiption?', 'apex-business' ),
-    'section'     => 'title_tagline',
-    'settings'    => 'apex_business_site_description_switch_setting',
-    'type'        => 'ios',
-  ) ) );
-}
-
-add_action( 'customize_register', 'apex_business_accent_color_setup');
-
+get_template_part( 'inc/customizer/sections/basic-settings' );
 get_template_part( 'inc/customizer/sections/topbar-settings' );
 get_template_part( 'inc/customizer/sections/layout-settings' );
 get_template_part( 'inc/customizer/sections/typography-settings' );
@@ -145,6 +62,7 @@ get_template_part( 'inc/customizer/sections/sidebar-settings' );
 get_template_part( 'inc/customizer/sections/footer-settings' );
 get_template_part( 'inc/customizer/sections/banner-settings' );
 get_template_part( 'inc/customizer/sections/blog-settings' );
+get_template_part( 'inc/customizer/sections/breadcurmb-settings' );
 
 get_template_part( 'inc/customizer/active-callbacks' );
 

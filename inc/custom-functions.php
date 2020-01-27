@@ -3,6 +3,42 @@
  * All theme custom functions are delared here
  */
 
+/*************************************************************************************************************************
+ * Loads google fonts to the theme
+ * Thanks to themeshaper.com
+ ************************************************************************************************************************/
+
+if ( ! function_exists( 'apex_business_default_fonts_url' ) ) :
+
+function apex_business_default_fonts_url() {
+  $fonts_url  = '';
+  $poppins   = _x( 'on', 'Poppins font: on or off', 'apex-business' );
+  $roboto = _x( 'on', 'Roboto font: on or off', 'apex-business' );
+
+  if ( 'off' !== $poppins || 'off' !== $roboto ) {
+    $font_families = array();
+
+    if ( 'off' !== $poppins ) {
+      $font_families[] = 'poppins:400,500,600';
+    }
+
+    if ( 'off' !== $roboto ) {
+      $font_families[] = 'Roboto:400,500';
+    }
+  }
+
+  $query_args = array(
+    'family' => urlencode( implode( '|', $font_families ) ),
+    'subset' => urlencode( 'cyrillic-ext,cyrillic,vietnamese,latin-ext,latin' )
+  );
+
+  $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+  return esc_url_raw( $fonts_url );
+}
+
+endif;
+
 /*******************************************************************************
  * Set the content width
  *******************************************************************************/
@@ -20,7 +56,7 @@ class Apex_Business_Dropdown_Toggle_Walker_Nav_Menu extends Walker_Nav_Menu {
     function start_lvl( &$apex_business_output, $apex_business_depth = 0, $apex_business_args = array() ) {
         $apex_business_indent = str_repeat( "\t", $apex_business_depth );
         if( 'mobile_menu' == $apex_business_args->theme_location ) {
-            $apex_business_output .='<i class="fa fa-ellipsis-v dropdown-toggle"></i>';
+            $apex_business_output .='<a href="#" class="js-ct-dropdown-toggle dropdown-toggle"><i class="fa fa-ellipsis-v"></i></a>';
         }
         $apex_business_output .= "\n$apex_business_indent<ul class=\"sub-menu\">\n";
     }

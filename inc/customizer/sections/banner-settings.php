@@ -6,6 +6,7 @@
 function apex_business_banner_settings_setup( $wp_customize ) {
 
     $wp_customize->add_section( 'apex_business_banner_settings_section', array(
+        'capability'  => 'edit_theme_options',
         'title'       =>  __( 'Banner', 'apex-business' ),
         'panel'       =>  'apex_business_general_panel'
     ) );
@@ -88,6 +89,7 @@ function apex_business_banner_settings_setup( $wp_customize ) {
         'capability'        => 'edit_theme_options',
         'transport'         => 'postMessage',
         'sanitize_callback' => 'apex_business_validate_image',
+        'default'           => get_template_directory_uri() . '/assets/images/banner.jpg',
     ) );
 
     $wp_customize->add_control(
@@ -329,11 +331,11 @@ function apex_business_banner_settings_setup( $wp_customize ) {
         )
     );
 
-
     $wp_customize->add_setting( 'apex_business_archive_banner_image_setting', array(
         'capability'        => 'edit_theme_options',
         'transport'         => 'postMessage',
         'sanitize_callback' => 'apex_business_validate_image',
+        'default'           => get_template_directory_uri() . '/assets/images/banner.jpg',
     ) );
 
     $wp_customize->add_control(

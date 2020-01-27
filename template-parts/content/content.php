@@ -8,8 +8,8 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class( esc_attr( apex_business_blog_layout() ) ); ?>>
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="blog-image image-container thumbnail-image">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail(); ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                <?php the_post_thumbnail( '', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
             </a>
             <?php if ( get_theme_mod( 'apex_business_display_date_setting', 1 ) ) : ?>
                 <span class="post-date"><?php echo esc_html( get_the_date() ); ?></span>
@@ -27,6 +27,10 @@
                     </div><!-- /.author-img -->
                 </div><!-- /.author-container -->
             <?php endif; ?>
+
+            <?php
+                the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+            ?>
 
             <ul class="entry-meta">
                 <?php if( get_theme_mod( 'apex_business_display_author_setting', 1 ) ) : ?>
@@ -75,9 +79,6 @@
                     endif;
                 ?>
             </ul><!-- /.entry-meta -->
-            <?php
-                the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-            ?>
         </div><!-- /.entry-header -->
         <div class="entry-content">
             <?php

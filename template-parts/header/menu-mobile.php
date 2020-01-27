@@ -7,7 +7,6 @@
     <div class="row">
         <div class="mobile-navigation">
             <nav class="nav-parent">
-                <span class="menubar-close fa fa-times"></span>
                 <?php
                     if ( has_nav_menu( 'mobile_menu' ) ) :
                         wp_nav_menu( array(
@@ -28,6 +27,8 @@
                         ) );
                     endif;
                 ?>
+                <a href="#" class="js-ct-menubar-close menubar-close"><span class="fa fa-times"></span></a>
+                <a href="#" class="js-blank-loop"></a>
             </nav>
         </div> <!-- /.mobile-navigation -->
     </div><!-- /.row -->

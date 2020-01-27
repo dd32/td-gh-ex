@@ -8,6 +8,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_section( 'apex_business_header_navigation_section', array(
         'title'       =>  __( 'Primary Header', 'apex-business' ),
         'priority'    =>  10,
+        'capability'  => 'edit_theme_options',
         'panel'       =>  'apex_business_header_panel'
     ) );
 
@@ -64,6 +65,9 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
                             'apex_business_dropdown_animation_control',
                             'apex_business_nav_link_rl_padding_control',
                             'apex_business_header_text_logo_color_control',
+                            'apex_business_header_dropdown_hover_color_control',
+                            'apex_business_header_mobile_header_control',
+                            'apex_business_header_mobile_header_icon_color_control',
                         ),
                     ),
                 ),
@@ -122,25 +126,6 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
-    $wp_customize->add_setting( 'apex_business_transparent_header_switch_setting', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'absint',
-        'default'           => false
-    ) );
-
-    $wp_customize->add_control(
-        new Apex_Business_Customizer_Toggle_Control(
-            $wp_customize, 'apex_business_transparent_header_switch_control',
-            array(
-                'label'       => __( 'Enable Transparent Header?', 'apex-business' ),
-                'priority'    => 25,
-                'section'     => 'apex_business_header_navigation_section',
-                'settings'    => 'apex_business_transparent_header_switch_setting',
-                'type'        => 'ios',
-            )
-        )
-    );
-
     $wp_customize->add_setting( 'apex_business_navigation_last_item_setting', array(
       'capability'        => 'edit_theme_options',
       'default'           => 'none',
@@ -153,7 +138,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
             'label'         => __( 'Menu Last Item Type', 'apex-business' ),
             'section'       => 'apex_business_header_navigation_section',
             'settings'      => 'apex_business_navigation_last_item_setting',
-            'type'          =>  'select',
+            'type'          => 'select',
             'priority'      => 25,
             'choices'       =>  array(
                     'none'          =>  __( 'None', 'apex-business' ),
@@ -303,19 +288,19 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
                 'input_attr'    => array(
                     'mobile'  => array(
                         'min'           => 0,
-                        'max'           => 1000,
+                        'max'           => 500,
                         'step'          => 1,
                         'default_value' => 300,
                     ),
                     'tablet'  => array(
                         'min'           => 0,
-                        'max'           => 1000,
+                        'max'           => 500,
                         'step'          => 1,
                         'default_value' => 300,
                     ),
                     'desktop' => array(
                         'min'           => 0,
-                        'max'           => 1000,
+                        'max'           => 500,
                         'step'          => 1,
                         'default_value' => 300,
                     ),
@@ -451,7 +436,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_control(
         new Apex_Business_Customizer_Range_Value_Control(
             $wp_customize, 'apex_business_header_font_size_control', array(
-                'label'         => esc_html__( 'header Font Size (px)', 'apex-business' ),
+                'label'         => esc_html__( 'Header Font Size (px)', 'apex-business' ),
                 'section'       => 'apex_business_header_navigation_section',
                 'type'          => 'range-value',
                 'priority'      => 25,
@@ -522,7 +507,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_control(
         new Apex_Business_Customizer_Range_Value_Control(
             $wp_customize, 'apex_business_header_line_height_control', array(
-                'label'             => esc_html__( 'header Line Height (px)', 'apex-business' ),
+                'label'             => esc_html__( 'Header Line Height (px)', 'apex-business' ),
                 'section'           => 'apex_business_header_navigation_section',
                 'type'              => 'range-value',
                 'media_query'       => true,
@@ -757,9 +742,9 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
                 'show_opacity'  => false, // Optional.
                 'palette'       => array(
                     APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
-                    APEX_BUSINESS_DEFAULT1_COLOR,
-                    APEX_BUSINESS_DEFAULT1_COLOR, // Different spacing = no problem
-                    APEX_BUSINESS_DEFAULT1_COLOR // Mix of color types = no problem
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
                 )
             )
         )
@@ -925,29 +910,91 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
-    $wp_customize->add_setting( 'apex_business_dropdown_animation_setting', array(
+    $wp_customize->add_setting(
+        'apex_business_header_dropdown_hover_color_setting',
+        array(
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'type'              => 'theme_mod',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage'
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_header_dropdown_hover_color_control',
+            array(
+                'label'         => __( 'Dropdown Hover Link Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_header_navigation_section',
+                'settings'      => 'apex_business_header_dropdown_hover_color_setting',
+                'show_opacity'  => false, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+    // Mobile Manu customization
+    // Headline Setting
+    $wp_customize->add_setting( 'apex_business_header_mobile_header_setting', array(
       'capability'        => 'edit_theme_options',
-      'default'           => 'slide',
-      'sanitize_callback' => 'apex_business_sanitize_select',
+      'sanitize_callback' => 'absint',
     ) );
 
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize, 'apex_business_dropdown_animation_control', array(
-                'label'       => __( 'Dropdown Animation', 'apex-business' ),
-                'section'     => 'apex_business_header_navigation_section',
-                'settings'    => 'apex_business_dropdown_animation_setting',
-                'type'        =>  'select',
-                'priority'    => 25,
-                'choices'     =>  array(
-                        'fade'      =>  __( 'Fade', 'apex-business' ),
-                        'slide'     =>  __( 'Slide', 'apex-business' ),
-                    ),
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'apex_business_header_mobile_header_control', array(
+        'label'           => esc_html__( 'Mobile Manu', 'apex-business' ),
+        'section'         => 'apex_business_header_navigation_section',
+        'settings'        => 'apex_business_header_mobile_header_setting',
+        'type'            => 'hidden',
+        'priority'        => 25,
     ) ) );
 
+    $wp_customize->add_setting(
+        'apex_business_header_mobile_header_icon_color_setting',
+        array(
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+     // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_header_mobile_header_icon_color_control',
+            array(
+                'label'         => __( 'Text Logo Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_header_navigation_section',
+                'settings'      => 'apex_business_header_mobile_header_icon_color_setting',
+                'show_opacity'  => false, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+
+    // Fixed Header customization
     $wp_customize->add_section( 'apex_business_fixed_header_section', array(
         'title'       =>  __( 'Fixed Header', 'apex-business' ),
         'priority'    =>  25,
+        'capability'  => 'edit_theme_options',
         'panel'       =>  'apex_business_header_panel'
     ) );
 
@@ -1167,6 +1214,262 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
+    //Transparent Header
+
+    $wp_customize->add_section( 'apex_business_transparent_header_section', array(
+        'title'       =>  __( 'Transparent Header', 'apex-business' ),
+        'priority'    =>  25,
+        'capability'  => 'edit_theme_options',
+        'panel'       =>  'apex_business_header_panel'
+    ) );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_navigation_control', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_range_value',
+            'transport'         => 'postMessage',
+        )
+    );
+
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Range_Value_Control(
+            $wp_customize, 'apex_business_transparent_navigation_control', array(
+                'label'         => esc_html__( 'Transparent Header Height', 'apex-business' ),
+                'section'       => 'apex_business_transparent_header_section',
+                'type'          => 'range-value',
+                'media_query'   => true,
+                'priority'      => 25,
+                'input_attr'    => array(
+                    'mobile'  => array(
+                        'min'           => 0,
+                        'max'           => 150,
+                        'step'          => 1,
+                        'default_value' => 10,
+                    ),
+                    'tablet'  => array(
+                        'min'           => 10,
+                        'max'           => 150,
+                        'step'           => 1,
+                        'default_value' => 10,
+                    ),
+                    'desktop' => array(
+                        'min'           => 0,
+                        'max'           => 150,
+                        'step'          => 1,
+                        'default_value' => 10,
+                    ),
+                ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_logo_size_control', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_range_value',
+            'transport'         => 'postMessage',
+        )
+    );
+
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Range_Value_Control(
+            $wp_customize, 'apex_business_transparent_logo_size_control', array(
+                'label'         => esc_html__( 'Transparent Logo Size','apex-business' ),
+                'section'       => 'apex_business_transparent_header_section',
+                'type'          => 'range-value',
+                'media_query'   => true,
+                'priority'      => 25,
+                'input_attr'    => array(
+                    'mobile'  => array(
+                        'min'           => 0,
+                        'max'           => 500,
+                        'step'          => 1,
+                        'default_value' => 300,
+                    ),
+                    'tablet'  => array(
+                        'min'           => 0,
+                        'max'           => 500,
+                        'step'          => 1,
+                        'default_value' => 300,
+                    ),
+                    'desktop' => array(
+                        'min'           => 0,
+                        'max'           => 500,
+                        'step'          => 1,
+                        'default_value' => 300,
+                    ),
+                ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_text_logo_size_control', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_range_value',
+            'transport'         => 'postMessage',
+        )
+    );
+
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Range_Value_Control(
+            $wp_customize, 'apex_business_transparent_text_logo_size_control', array(
+                'label'         => esc_html__( 'Transparent Text Logo Size', 'apex-business' ),
+                'section'       => 'apex_business_transparent_header_section',
+                'type'          => 'range-value',
+                'media_query'   => true,
+                'priority'      => 25,
+                'input_attr'    => array(
+                    'mobile'  => array(
+                        'min'           => 0,
+                        'max'           => 100,
+                        'step'          => 1,
+                        'default_value' => 32,
+                    ),
+                    'tablet'  => array(
+                        'min'           => 0,
+                        'max'           => 100,
+                        'step'          => 1,
+                        'default_value' => 32,
+                    ),
+                    'desktop' => array(
+                        'min'           => 0,
+                        'max'           => 100,
+                        'step'          => 1,
+                        'default_value' => 32,
+                    ),
+                ),
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_header_text_logo_color_setting',
+        array(
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+     // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_transparent_header_text_logo_color_control',
+            array(
+                'label'         => __( 'Text Logo Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_transparent_header_section',
+                'settings'      => 'apex_business_transparent_header_text_logo_color_setting',
+                'show_opacity'  => false, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_header_bgcolor_setting',
+        array(
+            'default'           =>  APEX_BUSINESS_WHITE_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_transparent_header_bgcolor_control',
+            array(
+                'label'         => __( 'Transparent Header Background Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_transparent_header_section',
+                'settings'      => 'apex_business_transparent_header_bgcolor_setting',
+                'show_opacity'  => true, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_nav_link_color_setting',
+        array(
+            'default'           =>  APEX_BUSINESS_TEXT_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_transparent_nav_link_color_control',
+            array(
+                'label'         => __( 'Link Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_transparent_header_section',
+                'settings'      => 'apex_business_transparent_nav_link_color_setting',
+                'show_opacity'  => true, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
+    $wp_customize->add_setting(
+        'apex_business_transparent_mobile_nav_icon_color_settings',
+        array(
+            'default'           =>  APEX_BUSINESS_TEXT_COLOR,
+            'type'              => 'theme_mod',
+            'capability'        => 'edit_theme_options',
+            'transport'         => 'postMessage',
+            'sanitize_callback' => 'apex_business_sanitize_alpha_color',
+        )
+    );
+
+    // Alpha Color Picker control.
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Alpha_Color_Control(
+            $wp_customize,
+            'apex_business_transparent_mobile_nav_icon_color_control',
+            array(
+                'label'         => __( 'Mobile Header Manu Icon Color', 'apex-business' ),
+                'priority'      => 25,
+                'section'       => 'apex_business_transparent_header_section',
+                'settings'      => 'apex_business_transparent_mobile_nav_icon_color_settings',
+                'show_opacity'  => true, // Optional.
+                'palette'       => array(
+                    APEX_BUSINESS_DEFAULT1_COLOR, // RGB, RGBa, and hex values supported
+                    APEX_BUSINESS_DEFAULT2_COLOR,
+                    APEX_BUSINESS_DEFAULT3_COLOR, // Different spacing = no problem
+                    APEX_BUSINESS_DEFAULT4_COLOR // Mix of color types = no problem
+                )
+            )
+        )
+    );
 }
 
 add_action( 'customize_register', 'apex_business_header_navigation_settings_setup');

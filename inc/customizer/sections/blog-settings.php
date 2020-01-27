@@ -10,6 +10,7 @@ function apex_business_blog_settings_setup( $wp_customize ) {
     $wp_customize->add_section( 'apex_business_blog_layout_section', array(
         'title'       =>  __( 'Blog Layout', 'apex-business' ),
         'priority'    =>  1,
+        'capability'  => 'edit_theme_options',
         'panel'       =>  'apex_business_blog_panel',
     ) );
 
@@ -397,89 +398,6 @@ function apex_business_blog_settings_setup( $wp_customize ) {
             'label'             => __( 'Display Tags', 'apex-business' ),
             'settings'          => 'apex_business_single_display_tags_setting',
             'section'           => 'apex_business_single_section',
-            'priority'          => 25,
-            'type'              => 'checkbox',
-            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
-       )
-    );
-
-    // Social Share
-    $wp_customize->add_section( 'apex_business_social_share_section', array(
-        'title'       =>  __( 'Social Share', 'apex-business' ),
-        'priority'    =>  1,
-        'panel'       =>  'apex_business_blog_panel',
-    ) );
-
-    $wp_customize->add_setting( 'apex_business_share_fb_icon_setting',
-       array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'absint',
-            'default'           => 0,
-       )
-    );
-
-    $wp_customize->add_control( 'apex_business_share_fb_icon_control',
-       array(
-            'label'             => __( 'Facebook', 'apex-business' ),
-            'settings'          => 'apex_business_share_fb_icon_setting',
-            'section'           => 'apex_business_social_share_section',
-            'priority'          => 25,
-            'type'              => 'checkbox',
-            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
-       )
-    );
-
-    $wp_customize->add_setting( 'apex_business_share_twitter_icon_setting',
-       array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'absint',
-            'default'           => 0,
-       )
-    );
-
-    $wp_customize->add_control( 'apex_business_share_twitter_icon_control',
-       array(
-            'label'             => __( 'Twitter', 'apex-business' ),
-            'settings'          => 'apex_business_share_twitter_icon_setting',
-            'section'           => 'apex_business_social_share_section',
-            'priority'          => 25,
-            'type'              => 'checkbox',
-            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
-       )
-    );
-
-    $wp_customize->add_setting( 'apex_business_share_linkedin_icon_setting',
-       array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'absint',
-            'default'           => 0,
-       )
-    );
-
-    $wp_customize->add_control( 'apex_business_share_linkedin_icon_control',
-       array(
-            'label'             => __( 'Linkedin', 'apex-business' ),
-            'settings'          => 'apex_business_share_linkedin_icon_setting',
-            'section'           => 'apex_business_social_share_section',
-            'priority'          => 25,
-            'type'              => 'checkbox',
-            'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
-       )
-    );
-
-    $wp_customize->add_setting( 'apex_business_share_insta_icon_setting',
-       array(
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'absint',
-            'default'           => 0,
-       )
-    );
-
-    $wp_customize->add_control( 'apex_business_share_insta_icon_control',
-       array(
-            'label'             => __( 'Instagram', 'apex-business' ),
-            'settings'          => 'apex_business_share_insta_icon_setting',
-            'section'           => 'apex_business_social_share_section',
             'priority'          => 25,
             'type'              => 'checkbox',
             'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'

@@ -1,63 +1,3 @@
-/*
------------------------------------------------------
-Project Name:   Pabble - Multipurpose HTML Template
-Version:        1.0
-Type:           HTML Template
-Author:         aruphash
-Primary use:    Multipurpose HTML Websites
------------------------------------------------------
-*/
-
-
-/* Google Fonts */
-
-
-/*
- * font-family: 'Poppins', sans-serif;
- * font-family: 'Roboto', sans-serif;
- */
-
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:400,500&display=swap');
-
-/*------------------------------------------------------------------------
-[Table of Contents]
-
-01. PRE SETUP
-02. GENERAL STYLE
-03. HEADER
-04. NAVIGATION
-05. MAIN SLIDER
-06. ABOUT
-07. SERVICES
-08. COUNTER
-09. PORTFOLIO
-10. TEAM MEMBER
-11. PRICING TABLE
-12. TESTIMONIALS
-13. CALL TO ACTION
-14. BLOG
-15. CLIENTS SLIDER
-16. CONTACT
-17. OTHER PAGES
-  17.1. ABOUT PAGE
-  17.2. BLOG PAGE
-  17.3. 404 PAGE
-  17.4. SINGLE BLOG PAGE
-  17.5. SINGLE SERVICES PAGE
-18. FOOTER
-19. MEDIA QUERIES
-
-/*----------------------------------------------------------------------------
-
-[Typography]
-
-Body:   font-size: 16px, font-family: 'Roboto', sans-serif;
-Heading:  font-family: 'Poppins', sans-serif;
-Paragraph:  font-size: 16px, font-family: 'Roboto', sans-serif;
-
--------------------------------------------------------------------------------*/
-
 /*=========================
     01. PRE SETUP
 ===========================*/
@@ -66,7 +6,7 @@ Paragraph:  font-size: 16px, font-family: 'Roboto', sans-serif;
 # [Color Codes]
 --------------------------------------------------------------------------------*/
 
-$primary-color: #13aff0;
+$primary-color: #43c6ac;
 $secondary-color: #2b3948;
 $white-color: #fff;
 
@@ -107,6 +47,12 @@ $smaller-padding: 6px;
 }
 
 /* Typography */
+
+* {
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
 html {
   overflow-x: hidden;
 }
@@ -134,12 +80,11 @@ h4,
 h5,
 h6 {
   @extend .pre-font-family-2;
+  color: $secondary-color;
 }
 
-body,
-span {
+body{
   @extend .pre-font-family-1;
-  color: $para-color;
 }
 
 /* Basics */
@@ -157,7 +102,7 @@ a {
   &:hover,
   &:focus,
   &:active {
-    color: darken( $primary-color, 15% );
+    color: $secondary-color;
   }
 }
 
