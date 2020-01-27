@@ -14,13 +14,13 @@
  * System defines.
  */
 define( 'BAHOTEL_L', __FILE__ );
-define( 'BAHOTEL_L_VERSION', '1.0.3' );
+define( 'BAHOTEL_L_VERSION', '1.0.4' );
 define( 'BAHOTEL_L_NAME', 'BA Hotel light' );
 define( 'BAHOTEL_L_URI', get_template_directory_uri() );
 define( 'BAHOTEL_L_STYLESHEET_URI', get_stylesheet_directory_uri() );
 define( 'BAHOTEL_L_DIR', untrailingslashit( dirname( BAHOTEL_L ) ) );
 define( 'BAHOTEL_L_TEXTDOMAIN', 'ba-hotel-light' );
-define( 'BAHOTEL_L_AUTHOR', 'Booking Algorythms' );
+define( 'BAHOTEL_L_AUTHOR', 'Booking Algorithms' );
 define( 'BAHOTEL_L_AUTHOR_URL', 'https://ba-booking.com/' );
 define( 'BAHOTEL_L_DEV', true );
 

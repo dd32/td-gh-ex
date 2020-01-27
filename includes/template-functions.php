@@ -2776,20 +2776,6 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                    $image_output
                 </{$icontag}>";
                 
-                /*
-                $output .= '
-                <div class="gallery-item-hover">
-                   <div class="gallery-item-hover-cross"><span class="eleganticon arrow_move fa-rotate-45"></span></div>';
-                
-                if ( trim($attachment->post_excerpt) ) {
-                    $output .= '
-                   <div class="gallery-item-hover-desc">' . wptexturize($attachment->post_excerpt) . '</div>';
-                }
-                
-                $output .= '
-                </div>';
-                */
-                
                 if ( $captiontag && trim($attachment->post_excerpt) ) {
                     $output .= "
                 <{$captiontag} class='wp-caption-text gallery-caption' id='$selector-$id'>

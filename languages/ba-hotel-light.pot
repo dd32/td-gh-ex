@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BA Hotel light\n"
-"POT-Creation-Date: 2020-01-22 14:28+0200\n"
+"POT-Creation-Date: 2020-01-24 11:53+0200\n"
 "PO-Revision-Date: 2018-04-10 13:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: https://ba-booking.com\n"
@@ -137,6 +137,22 @@ msgstr ""
 
 #: includes/class-cmb2-admin.php:174
 msgid "Service subtitle"
+msgstr ""
+
+#: includes/class-nav-menu.php:345
+msgid "Home"
+msgstr ""
+
+#: includes/class-nav-menu.php:346
+msgid "About Us"
+msgstr ""
+
+#: includes/class-nav-menu.php:347
+msgid "Gallery"
+msgstr ""
+
+#: includes/class-nav-menu.php:348
+msgid "Contact Us"
 msgstr ""
 
 #: includes/class-page-options.php:63
@@ -1317,19 +1333,19 @@ msgstr ""
 msgid "Beds:"
 msgstr ""
 
-#: includes/template-functions.php:2850
+#: includes/template-functions.php:2836
 msgid "Previous page"
 msgstr ""
 
-#: includes/template-functions.php:2851
+#: includes/template-functions.php:2837
 msgid "Next page"
 msgstr ""
 
-#: includes/template-functions.php:2852
+#: includes/template-functions.php:2838
 msgid "Page"
 msgstr ""
 
-#: includes/template-functions.php:2925
+#: includes/template-functions.php:2911
 msgid "There is no excerpt because this is a protected post."
 msgstr ""
 
