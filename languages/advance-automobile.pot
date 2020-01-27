@@ -494,187 +494,195 @@ msgstr ""
 msgid 'Add topbar content'
 msgstr ""
 
-#: inc/customizer.php:418
-msgid 'Mail Address'
+#: inc/customizer.php:520
+msgid 'Show / Hide Topbar'
 msgstr ""
 
-#: inc/customizer.php:428
-msgid 'Add Facebook link'
+#: inc/customizer.php:530
+msgid 'Sticky Header'
 msgstr ""
 
 #: inc/customizer.php:539
+msgid 'Mail Address'
+msgstr ""
+
+#: inc/customizer.php:549
+msgid 'Add Facebook link'
+msgstr ""
+
+#: inc/customizer.php:560
 msgid 'Add Twitter link'
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:571
 msgid 'Add Youtube link'
 msgstr ""
 
-#: inc/customizer.php:561
+#: inc/customizer.php:582
 msgid 'Add Google Plus link'
 msgstr ""
 
-#: inc/customizer.php:572
+#: inc/customizer.php:593
 msgid 'Add Linkedin link'
 msgstr ""
 
-#: inc/customizer.php:583
+#: inc/customizer.php:604
 msgid 'Button text'
 msgstr ""
 
-#: inc/customizer.php:593
+#: inc/customizer.php:614
 msgid 'Add Link'
 msgstr ""
 
-#: inc/customizer.php:601
+#: inc/customizer.php:622
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:612
+#: inc/customizer.php:633
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:644
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:624
+#: inc/customizer.php:645
 msgid 'Size of image should be 1600 x 633'
 msgstr ""
 
-#: inc/customizer.php:632
+#: inc/customizer.php:653
 msgid 'Contact details'
 msgstr ""
 
-#: inc/customizer.php:633
+#: inc/customizer.php:654
 msgid 'Add Contact Details here'
 msgstr ""
 
-#: inc/customizer.php:643
+#: inc/customizer.php:664
 msgid 'Address Text'
 msgstr ""
 
-#: inc/customizer.php:653
+#: inc/customizer.php:674
 msgid 'Address'
 msgstr ""
 
-#: inc/customizer.php:663
+#: inc/customizer.php:684
 msgid 'Timing Text'
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:694
 msgid 'Open at'
 msgstr ""
 
-#: inc/customizer.php:683
+#: inc/customizer.php:704
 msgid 'Call Text'
 msgstr ""
 
-#: inc/customizer.php:693
+#: inc/customizer.php:714
 msgid 'Phone Number'
 msgstr ""
 
-#: inc/customizer.php:700
+#: inc/customizer.php:721
 msgid 'Our Services'
 msgstr ""
 
-#: inc/customizer.php:711
+#: inc/customizer.php:732
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:737
+#: inc/customizer.php:758
 msgid 'Select Category to display Latest Post'
 msgstr ""
 
-#: inc/customizer.php:738
+#: inc/customizer.php:759
 msgid 'Size of image should be 570 x 380'
 msgstr ""
 
-#: inc/customizer.php:744
+#: inc/customizer.php:765
 msgid 'Blog Page Settings'
 msgstr ""
 
-#: inc/customizer.php:754
+#: inc/customizer.php:775
 msgid 'Post Date'
 msgstr ""
 
-#: inc/customizer.php:764
+#: inc/customizer.php:785
 msgid 'Comments'
 msgstr ""
 
-#: inc/customizer.php:774
+#: inc/customizer.php:795
 msgid 'Author'
 msgstr ""
 
-#: inc/customizer.php:784
+#: inc/customizer.php:805
 msgid 'Single Post Tags'
 msgstr ""
 
-#: inc/customizer.php:796
+#: inc/customizer.php:815
 msgid 'Excerpt length'
 msgstr ""
 
-#: inc/customizer.php:812
+#: inc/customizer.php:833
 msgid 'Add Button Text'
 msgstr ""
 
-#: inc/customizer.php:819
+#: inc/customizer.php:840
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:830
+#: inc/customizer.php:851
 msgid 'Footer widget area'
 msgstr ""
 
-#: inc/customizer.php:832
+#: inc/customizer.php:853
 msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
 msgstr ""
 
-#: inc/customizer.php:834
+#: inc/customizer.php:855
 msgid 'One'
 msgstr ""
 
-#: inc/customizer.php:835
+#: inc/customizer.php:856
 msgid 'Two'
 msgstr ""
 
-#: inc/customizer.php:836
+#: inc/customizer.php:857
 msgid 'Three'
 msgstr ""
 
-#: inc/customizer.php:837
+#: inc/customizer.php:858
 msgid 'Four'
 msgstr ""
 
-#: inc/customizer.php:846
+#: inc/customizer.php:867
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:857
+#: inc/customizer.php:878
 msgid 'Show / Hide Scroll Top Button'
 msgstr ""
 
-#: inc/customizer.php:862
-#: inc/customizer.php:871
+#: inc/customizer.php:883
+#: inc/customizer.php:892
 msgid 'Right'
 msgstr ""
 
-#: inc/customizer.php:867
+#: inc/customizer.php:888
 msgid 'Scroll Back to Top Position'
 msgstr ""
 
-#: inc/customizer.php:870
+#: inc/customizer.php:891
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:872
+#: inc/customizer.php:893
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:957
+#: inc/customizer.php:978
 msgid 'Advance Automobile'
 msgstr ""
 
-#: inc/customizer.php:958
+#: inc/customizer.php:979
 msgid 'Go Pro'
 msgstr ""

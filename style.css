@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme. Demo: https://themeshopy.com/advance-automobile-pro/
-Version: 0.3.8
+Version: 0.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
@@ -276,6 +276,17 @@ input[type="submit"] {
   background: #06393a;
   color: #fff;
 }
+
+/*----------Sticky Header------*/
+.fixed-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 2px 2px 10px 0px #2d2d2d;
+  z-index: 999999;
+}
+
 /* ---------Logo Middle Header--------- */
 .logo h1{
   text-align: left;
@@ -1371,6 +1382,9 @@ span.woocommerce-input-wrapper{
 }
 .woocommerce-Address{
   max-width: 100%;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+  text-align: center;
 }
 #sidebar .star-rating, #footer .star-rating{
   margin: 0 !important;

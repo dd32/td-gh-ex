@@ -521,6 +521,16 @@ function advance_automobile_customize_register($wp_customize) {
         'section' => 'advance_automobile_topbar'
     ));
 
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_automobile_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_automobile_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-automobile' ),
+        'section' => 'advance_automobile_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_automobile_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
