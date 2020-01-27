@@ -36,7 +36,7 @@ E.g for Facebook - http://facebook.com/yourprofile, for Twitter - http://twitter
 
 == Changelog ==
 
-= 27/1/2020 - (v1.3)
+= 27/1/2020 - (v1.3.1)
 * Fixed a bug with the search field
 * Fixed a bug with infinite scroll on homepage
 
