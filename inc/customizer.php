@@ -515,6 +515,16 @@ function advance_pet_care_customize_register($wp_customize) {
         'label' => __( 'Show / Hide Topbar','advance-pet-care' ),
         'section' => 'advance_pet_care_topbar'
     ));
+
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_pet_care_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_pet_care_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-pet-care' ),
+        'section' => 'advance_pet_care_topbar'
+    ));
 	
 	$wp_customize->add_setting('advance_pet_care_mail1',array(
 		'default'	=> '',
@@ -577,7 +587,6 @@ function advance_pet_care_customize_register($wp_customize) {
 	));
 
 	//social icons
-
 	$wp_customize->add_section('advance_pet_care_social_icons',array(
 		'title'	=> __('Social Icons','advance-pet-care'),
 		'description'	=> __('Add social links','advance-pet-care'),
@@ -771,7 +780,6 @@ function advance_pet_care_customize_register($wp_customize) {
 		'section'=> 'advance_pet_care_blog_post',
 		'type'=> 'text'
 	));
-
 
 	//footer
 	$wp_customize->add_section('advance_pet_care_footer_section', array(

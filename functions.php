@@ -245,12 +245,12 @@ function advance_pet_care_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_PET_CARE_BUY_NOW','https://www.themeshopy.com/themes/pet-wordpress-theme/','advance-pet-care');
-define('ADVANCE_PET_CARE_LIVE_DEMO','https://themeshopy.com/advance-pet-care-pro/','advance-pet-care');
-define('ADVANCE_PET_CARE_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-pet-care-pro/','advance-pet-care');
+define('ADVANCE_PET_CARE_BUY_NOW','https://www.themeshopy.com/themes/pet-wordpress-theme/');
+define('ADVANCE_PET_CARE_LIVE_DEMO','https://themeshopy.com/advance-pet-care-pro/');
+define('ADVANCE_PET_CARE_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-pet-care-pro/');
 define('ADVANCE_PET_CARE_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-pet-care/');
-define('ADVANCE_PET_CARE_CONTACT','https://wordpress.org/support/theme/advance-pet-care/','advance-pet-care');
-define('ADVANCE_PET_CARE_CREDIT', 'https://www.themeshopy.com/themes/free-pet-wordpress-theme/', 'advance-pet-care');
+define('ADVANCE_PET_CARE_CONTACT','https://wordpress.org/support/theme/advance-pet-care/');
+define('ADVANCE_PET_CARE_CREDIT', 'https://www.themeshopy.com/themes/free-pet-wordpress-theme/');
 
 if (!function_exists('advance_pet_care_credit')) {
 	function advance_pet_care_credit() {

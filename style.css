@@ -3,8 +3,8 @@ Theme Name: Advance Pet Care
 Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
-Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, translation ready and deeply customizable. It does not matter whether you are an experienced web developer or a WordPress newbie, setting up your own website with this theme does not need coding knowledge. This pet WordPress theme is optimized for search engines and will give your website higher rank. It has banners and sliders to make the theme more impressive. Advance Pet Care has sections like gallery and supports various post formats like image, gallery, video etc. It is embedded with social media icons. It is extensible with third party plugins. You can set up your very own online store and start selling products, all with the help of WooCommerce plugin which is compatible with it. Demo: https://www.themeshopy.com/advance-pet-care-pro/
-Version: 0.4.9
+Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, deeply customizable and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
+Version: 0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -284,6 +284,16 @@ input[type="submit"] {
   color: #000 !important;
   text-align:center;
   margin: 0;
+}
+
+/*----------Sticky Header------*/
+.fixed-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 2px 2px 10px 0px #2d2d2d;
+  z-index: 999999;
 }
 
 /* ---------HEADER--------- */

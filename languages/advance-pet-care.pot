@@ -19,20 +19,20 @@ msgstr ""
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
 #: 404.php:13
-msgid 'Not Found'
+msgid "Not Found"
 msgstr ""
 
 #: 404.php:14
-msgid 'Looks like you have taken a wrong turn&hellip'
+msgid "Looks like you have taken a wrong turn&hellip"
 msgstr ""
 
 #: 404.php:15 
 #: no-results.php:21
-msgid 'Dont worry&hellip it happens to the best of us'
+msgid "Dont worry&hellip it happens to the best of us"
 msgstr ""
 
 #: 404.php:17
-msgid 'Back to Home Page'
+msgid "Back to Home Page"
 msgstr ""
 
 #: archive.php:38 
@@ -55,7 +55,7 @@ msgstr ""
 #: search.php:90
 #: search.php:115
 #: search.php:144 
-msgid 'Previous page'
+msgid "Previous page"
 msgstr ""
 
 #: archive.php:39
@@ -78,7 +78,7 @@ msgstr ""
 #: search.php:91
 #: search.php:116
 #: search.php:145 
-msgid 'Next page'
+msgid "Next page"
 msgstr ""
 
 #: archive.php:40
@@ -101,100 +101,100 @@ msgstr ""
 #: search.php:92
 #: search.php:117
 #: search.php:146 
-msgid 'page'
+msgid "page"
 msgstr ""
 
 #: comments.php:28
-msgid 'comments title'
+msgid "comments title"
 msgstr ""
 
 #: comments.php:38
-msgid 'comments title'
+msgid "comments title"
 msgstr ""
 
 #: comments.php:68
-msgid 'Comments are closed'
+msgid "Comments are closed"
 msgstr ""
 
 #: footer.php:51
-msgid 'Copyright 2018'
+msgid "Copyright 2018"
 msgstr ""
 
 #: functions.php:30
-msgid 'Primary Menu'
+msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:60
-msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
+msgid "Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you."
 msgstr ""
 
 #: functions.php:61
-msgid 'Click here...'
+msgid "Click here..."
 msgstr ""
 
 #: functions.php:68
-msgid 'Blog Sidebar'
+msgid "Blog Sidebar"
 msgstr ""
 
 #: functions.php:69
-msgid 'Appears on blog page sidebar'
+msgid "Appears on blog page sidebar"
 msgstr ""
 
 #: functions.php:78
-msgid 'page sidebar'
+msgid "page sidebar"
 msgstr ""
 
 #: functions.php:79
 #: functions.php:89
-msgid 'Appears on page sidebar'
+msgid "Appears on page sidebar"
 msgstr ""
 
 #: functions.php:88
-msgid 'Third Column Sidebar'
+msgid "Third Column Sidebar"
 msgstr ""
 
 #: functions.php:101
-msgid 'Footer Nav '
+msgid "Footer Nav"
 msgstr ""
 
 #: functions.php:257
-msgid 'Pet WordPress Theme'
+msgid "Pet WordPress Theme"
 msgstr ""
 
 #: header.php:135
-msgid 'Open Menu'
+msgid "Open Menu"
 msgstr ""
 
 #: header.php:138
-msgid 'Top Menu'
+msgid "Top Menu"
 msgstr ""
 
 #: header.php:139
-msgid 'Close Menu'
+msgid "Close Menu"
 msgstr ""
 
 #: header.php:184
-msgid 'Search'
+msgid "Search"
 msgstr ""
 
 #: header.php:194
-msgid 'serach-outer'
+msgid "serach-outer"
 msgstr ""
 
 #: no-results.php:12
-msgid 'Nothing Found'
+msgid "Nothing Found"
 msgstr ""
 
 #: no-results.php:17
-msgid 'Ready to publish your first post? Get started here'
+msgid "Ready to publish your first post? Get started here"
 msgstr ""
 
 #: no-results.php:19
-msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords'
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords"
 msgstr ""
 
 #: no-results.php:24
-msgid 'Return to Home Page'
+msgid "Return to Home Page"
 msgstr ""
 
 #: search.php:21
@@ -202,28 +202,28 @@ msgstr ""
 #: search.php:75 
 #: search.php:100
 #: search.php:129 
-msgid 'Results For: %s'
+msgid "Results For: %s"
 msgstr ""
 
 #: searchform.php:12
 #: searchform.php:14
-msgid 'Search'
+msgid "Search"
 msgstr ""
 
 #: searchform.php:12
-msgid 'placeholder'
+msgid "placeholder"
 msgstr ""
 
 #: searchform.php:14
-msgid 'submit button'
+msgid "submit button"
 msgstr ""
 
 #: sidebar.php:11
-msgid 'Archives'
+msgid "Archives"
 msgstr ""
 
 #: sidebar.php:17
-msgid 'Meta'
+msgid "Meta"
 msgstr ""
 
 #: template-parts/content-single.php:24
@@ -233,7 +233,7 @@ msgstr ""
 #: template-parts/content-video.php:51
 #: template-parts/content.php:31
 #: template-parts/grid-layout.php:32
-msgid '0 Comment'
+msgid "0 Comment"
 msgstr ""
 
 #: template-parts/content-audio.php:55
@@ -242,15 +242,15 @@ msgstr ""
 #: template-parts/content-video.php:56
 #: template-parts/content.php:36
 #: template-parts/grid-layout.php:37
-msgid 'READ MORE'
+msgid "READ MORE"
 msgstr ""
 
 #: template-parts/image-layout.php:29
-msgid 'Pages:'
+msgid "Pages:"
 msgstr ""
 
 #: template-parts/image-layout.php:43
-msgid 'Parent post link'
+msgid "Parent post link"
 msgstr ""
 
 #: single.php:32
@@ -259,7 +259,7 @@ msgstr ""
 #: single.php:108
 #: single.php:136
 #: template-parts/image-layout.php:47
-msgid 'Next'
+msgid "Next"
 msgstr ""
 
 #: single.php:33
@@ -268,7 +268,7 @@ msgstr ""
 #: single.php:109
 #: single.php:137
 #: template-parts/image-layout.php:48
-msgid 'Next post:'
+msgid "Next post:"
 msgstr ""
 
 #: single.php:34
@@ -277,7 +277,7 @@ msgstr ""
 #: single.php:110
 #: single.php:138
 #: template-parts/image-layout.php:50
-msgid 'Previous'
+msgid "Previous"
 msgstr ""
 
 #: single.php:35
@@ -286,353 +286,361 @@ msgstr ""
 #: single.php:111
 #: single.php:139
 #: template-parts/image-layout.php:51
-msgid 'Previous post:'
+msgid "Previous post:"
 msgstr ""
 
 #: template-parts/image-layout.php:34
-msgid 'Edit'
+msgid "Edit"
 msgstr ""
 
 #: inc/customizer.php:20
-msgid 'Theme Settings'
+msgid "Theme Settings"
 msgstr ""
 
 #: inc/customizer.php:21
-msgid 'Description of what this panel does.'
+msgid "Description of what this panel does."
 msgstr ""
 
 #: inc/customizer.php:26
-msgid 'Theme Color Option'
+msgid "Theme Color Option"
 msgstr ""
 
 #: inc/customizer.php:35
 #: inc/customizer.php:46
-msgid 'One can change complete theme color on just one click.'
+msgid "One can change complete theme color on just one click."
 msgstr ""
 
 #: inc/customizer.php:147
-msgid 'Typography'
+msgid "Typography"
 msgstr ""
 
 #: inc/customizer.php:158
-msgid 'Paragraph Color'
+msgid "Paragraph Color"
 msgstr ""
 
 #: inc/customizer.php:172
-msgid 'Paragraph Fonts'
+msgid "Paragraph Fonts"
 msgstr ""
 
 #: inc/customizer.php:182
-msgid 'Paragraph Font Size'
+msgid "Paragraph Font Size"
 msgstr ""
 
 #: inc/customizer.php:194
-msgid '"a" Tag Color'
+msgid ""a" Tag Color"
 msgstr ""
 
 #: inc/customizer.php:208
-msgid '"a" Tag Fonts'
+msgid ""a" Tag Fonts"
 msgstr ""
 
 #: inc/customizer.php:219
-msgid '"li" Tag Color'
+msgid ""li" Tag Color"
 msgstr ""
 
 #: inc/customizer.php:233
-msgid '"li" Tag Fonts'
+msgid ""li" Tag Fonts"
 msgstr ""
 
 #: inc/customizer.php:244
-msgid 'H1 Color'
+msgid "H1 Color"
 msgstr ""
 
 #: inc/customizer.php:258
-msgid 'H1 Fonts'
+msgid "H1 Fonts"
 msgstr ""
 
 #: inc/customizer.php:269
-msgid 'H1 Font Size'
+msgid "H1 Font Size"
 msgstr ""
 
 #: inc/customizer.php:281
-msgid 'H2 Color'
+msgid "H2 Color"
 msgstr ""
 
 #: inc/customizer.php:295
-msgid 'H2 Fonts'
+msgid "H2 Fonts"
 msgstr ""
 
 #: inc/customizer.php:306
-msgid 'H2 Font Size'
+msgid "H2 Font Size"
 msgstr ""
 
 #: inc/customizer.php:318
-msgid 'H3 Color'
+msgid "H3 Color"
 msgstr ""
 
 #: inc/customizer.php:332
-msgid 'H3 Fonts'
+msgid "H3 Fonts"
 msgstr ""
 
 #: inc/customizer.php:343
-msgid 'H3 Font Size'
+msgid "H3 Font Size"
 msgstr ""
 
 #: inc/customizer.php:355
-msgid 'H4 Color'
+msgid "H4 Color"
 msgstr ""
 
 #: inc/customizer.php:369
-msgid 'H4 Fonts'
+msgid "H4 Fonts"
 msgstr ""
 
 #: inc/customizer.php:380
-msgid 'H4 Font Size'
+msgid "H4 Font Size"
 msgstr ""
 
 #: inc/customizer.php:392
-msgid 'H5 Color'
+msgid "H5 Color"
 msgstr ""
 
 #: inc/customizer.php:406
-msgid 'H5 Fonts'
+msgid "H5 Fonts"
 msgstr ""
 
 #: inc/customizer.php:417
-msgid 'H5 Font Size'
+msgid "H5 Font Size"
 msgstr ""
 
 #: inc/customizer.php:429
-msgid 'H6 Color'
+msgid "H6 Color"
 msgstr ""
 
 #: inc/customizer.php:443
-msgid 'H6 Fonts'
+msgid "H6 Fonts"
 msgstr ""
 
 #: inc/customizer.php:454
-msgid 'H6 Font Size'
+msgid "H6 Font Size"
 msgstr ""
 
 #: inc/customizer.php:462
-msgid 'Layout Settings'
+msgid "Layout Settings"
 msgstr ""
 
 #: inc/customizer.php:468
 #: inc/customizer.php:477
-msgid 'Default'
+msgid "Default"
 msgstr ""
 
 #: inc/customizer.php:473
-msgid 'Container Box'
+msgid "Container Box"
 msgstr ""
 
 #: inc/customizer.php:474
-msgid 'Here you can change the Width layout.'
+msgid "Here you can change the Width layout."
 msgstr ""
 
 #: inc/customizer.php:478
-msgid 'Container'
+msgid "Container"
 msgstr ""
 
 #: inc/customizer.php:479
-msgid 'Box Container'
+msgid "Box Container"
 msgstr ""
 
 #: inc/customizer.php:485
 #: inc/customizer.php:494
-msgid 'Right Sidebar'
+msgid "Right Sidebar"
 msgstr ""
 
 #: inc/customizer.php:490
-msgid 'Change Layouts'
+msgid "Change Layouts"
 msgstr ""
 
 #: inc/customizer.php:493
-msgid 'Left Sidebar'
+msgid "Left Sidebar"
 msgstr ""
 
 #: inc/customizer.php:495
-msgid 'One Column'
+msgid "One Column"
 msgstr ""
 
 #: inc/customizer.php:496
-msgid 'Grid Layout'
+msgid "Grid Layout"
 msgstr ""
 
 #: inc/customizer.php:502
-msgid 'Topbar Section'
+msgid "Topbar Section"
 msgstr ""
 
 #: inc/customizer.php:503
-msgid 'Add topbar content'
+msgid "Add topbar content"
 msgstr ""
 
-#: inc/customizer.php:513
-msgid 'Mail Address'
+#: inc/customizer.php:515
+msgid "Show / Hide Topbar"
 msgstr ""
 
-#: inc/customizer.php:523
-msgid 'Phone Number'
+#: inc/customizer.php:525
+msgid "Sticky Header"
 msgstr ""
 
-#: inc/customizer.php:533
-msgid 'Timing Text'
+#: inc/customizer.php:534
+msgid "Mail Address"
 msgstr ""
 
-#: inc/customizer.php:543
-msgid 'Open at'
+#: inc/customizer.php:544
+msgid "Phone Number"
 msgstr ""
 
-#: inc/customizer.php:553
-msgid 'Address Text'
+#: inc/customizer.php:554
+msgid "Timing Text"
 msgstr ""
 
-#: inc/customizer.php:563
-msgid 'Address'
+#: inc/customizer.php:564
+msgid "Open at"
 msgstr ""
 
-#: inc/customizer.php:571
-msgid 'Social Icons'
+#: inc/customizer.php:574
+msgid "Address Text"
 msgstr ""
 
-#: inc/customizer.php:572
-msgid 'Add social links'
+#: inc/customizer.php:584
+msgid "Address"
 msgstr ""
 
-#: inc/customizer.php:582
-msgid 'Add Facebook link'
+#: inc/customizer.php:591
+msgid "Social Icons"
 msgstr ""
 
-#: inc/customizer.php:593
-msgid 'Add Twitter link'
+#: inc/customizer.php:592
+msgid "Add social links"
 msgstr ""
 
-#: inc/customizer.php:604
-msgid 'Add Youtube link'
+#: inc/customizer.php:602
+msgid "Add Facebook link"
 msgstr ""
 
-#: inc/customizer.php:615
-msgid 'Add Google Plus link'
+#: inc/customizer.php:613
+msgid "Add Twitter link"
 msgstr ""
 
-#: inc/customizer.php:626
-msgid 'Add Instagram link'
+#: inc/customizer.php:624
+msgid "Add Youtube link"
 msgstr ""
 
-#: inc/customizer.php:634
-msgid 'Slider Settings'
+#: inc/customizer.php:635
+msgid "Add Google Plus link"
 msgstr ""
 
-#: inc/customizer.php:645
-msgid 'Show / Hide slider'
+#: inc/customizer.php:646
+msgid "Add Instagram link"
 msgstr ""
 
-#: inc/customizer.php:657
-msgid 'Select Slide Image Page'
+#: inc/customizer.php:654
+msgid "Slider Settings"
 msgstr ""
 
-#: inc/customizer.php:658
-msgid 'Size of image should be 1600 x 633'
+#: inc/customizer.php:665
+msgid "Show / Hide slider"
 msgstr ""
 
-#: inc/customizer.php:666
-msgid 'Welcome Section'
+#: inc/customizer.php:677
+msgid "Select Slide Image Page"
 msgstr ""
 
-#: inc/customizer.php:667
-msgid 'Add Welcome sections below.'
+#: inc/customizer.php:678
+msgid "Size of image should be 1600 x 633"
 msgstr ""
 
-#: inc/customizer.php:685
-msgid 'Select post'
+#: inc/customizer.php:686
+msgid "Welcome Section"
 msgstr ""
 
-#: inc/customizer.php:691
-msgid 'Blog Page Settings'
+#: inc/customizer.php:687
+msgid "Add Welcome sections below."
 msgstr ""
 
-#: inc/customizer.php:701
-msgid 'Post Date'
+#: inc/customizer.php:705
+msgid "Select post"
 msgstr ""
 
 #: inc/customizer.php:711
-msgid 'Comments'
+msgid "Blog Page Settings"
 msgstr ""
 
 #: inc/customizer.php:721
-msgid 'Author'
+msgid "Post Date"
 msgstr ""
 
 #: inc/customizer.php:731
-msgid 'Single Post Tags'
+msgid "Comments"
 msgstr ""
 
-#: inc/customizer.php:743
-msgid 'Excerpt length'
+#: inc/customizer.php:741
+msgid "Author"
 msgstr ""
 
-#: inc/customizer.php:759
-msgid 'Add Button Text'
+#: inc/customizer.php:751
+msgid "Single Post Tags"
 msgstr ""
 
-#: inc/customizer.php:767
-msgid 'Footer Text'
+#: inc/customizer.php:763
+msgid "Excerpt length"
 msgstr ""
 
-#: inc/customizer.php:778
-msgid 'Footer widget area'
+#: inc/customizer.php:779
+msgid "Add Button Text"
 msgstr ""
 
-#: inc/customizer.php:780
-msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+#: inc/customizer.php:786
+msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:782
-msgid 'One'
+#: inc/customizer.php:797
+msgid "Footer widget area"
 msgstr ""
 
-#: inc/customizer.php:783
-msgid 'Two'
+#: inc/customizer.php:799
+msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
 msgstr ""
 
-#: inc/customizer.php:784
-msgid 'Three'
+#: inc/customizer.php:801
+msgid "One"
 msgstr ""
 
-#: inc/customizer.php:785
-msgid 'Four'
+#: inc/customizer.php:802
+msgid "Two"
 msgstr ""
 
-#: inc/customizer.php:794
-msgid 'Copyright Text'
+#: inc/customizer.php:803
+msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:805
-msgid 'Show / Hide Scroll Top Button'
+#: inc/customizer.php:804
+msgid "Four"
 msgstr ""
 
-#: inc/customizer.php:810
-#: inc/customizer.php:819
-msgid 'Right'
+#: inc/customizer.php:813
+msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:815
-msgid 'Scroll Back to Top Position'
+#: inc/customizer.php:824
+msgid "Show / Hide Scroll Top Button"
 msgstr ""
 
-#: inc/customizer.php:818
-msgid 'Left'
+#: inc/customizer.php:829
+#: inc/customizer.php:838
+msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:820
-msgid 'Center'
+#: inc/customizer.php:834
+msgid "Scroll Back to Top Position"
 msgstr ""
 
-#: inc/customizer.php:904
-msgid 'Pet Care Theme'
+#: inc/customizer.php:837
+msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:905
-msgid 'Go Pro'
+#: inc/customizer.php:839
+msgid "Center"
+msgstr ""
+
+#: inc/customizer.php:923
+msgid "Pet Care Theme"
+msgstr ""
+
+#: inc/customizer.php:924
+msgid "Go Pro"
 msgstr ""

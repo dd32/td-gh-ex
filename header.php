@@ -129,7 +129,7 @@
         </div>
       </div>
     </div>
-    <div class="main-menu">
+    <div class="main-menu <?php if( get_theme_mod( 'advance_pet_care_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-md-7 col-4">
