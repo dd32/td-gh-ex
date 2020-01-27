@@ -38,7 +38,7 @@ function arilewp_sidebar_layout_callback(){
  
 <table class="form-table">
     <tr>
-        <td colspan="4"><em class="f13"><?php esc_html_e( 'Choose Sidebar Template for the Defult Page Templates', 'arilewp' ); ?></em></td>
+        <td colspan="4"><em class="f13"><?php esc_html_e( 'Choose Sidebar Template for the Default Page Templates', 'arilewp' ); ?></em></td>
     </tr>
 
     <tr>

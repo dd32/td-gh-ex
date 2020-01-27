@@ -276,7 +276,7 @@ msgid "Check recommended actions"
 msgstr ""
 
 #: inc/metabox.php:41
-msgid "Choose Sidebar Template for the Defult Page Templates"
+msgid "Choose Sidebar Template for the Default Page Templates"
 msgstr ""
 
 #: inc/customizer/customizer-repeater/class/customizer-repeater-control.php:333
