@@ -18,7 +18,7 @@
 <body <?php body_class(); ?>>
 
 
-<header role="banner">
+<header role="banner" id="testing">
 	<a class="screen-reader-text skip-link" href="#tp_content"><?php esc_html_e( 'Skip to content', 'adventure-travelling' ); ?></a>
 	<?php
 		get_template_part( 'template-parts/header/top', 'bar' );

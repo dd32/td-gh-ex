@@ -618,7 +618,6 @@ span.posted_in {
   margin: 5px;
 }
 
-
 /*--------------------------------------------------------------
 Posts Numbers
 --------------------------------------------------------------*/
@@ -909,6 +908,19 @@ Comments
   letter-spacing: 1px;
   cursor: pointer;
 }
+input[type="text"],
+input[type="email"],
+input[type="phno"],
+input[type="password"], 
+textarea{
+  border:1px solid #c8c8c8;
+  width:100%; 
+  font-size:16px;
+  padding:10px 10px; 
+  margin:0 0 23px 0;
+  height:auto;
+}
+
 /*--------------------------------------------------------------
 Commen CSS
 --------------------------------------------------------------*/
@@ -1007,6 +1019,50 @@ Footer
   margin-bottom: 0;
   text-align: center;
   color: #999;
+}
+
+/*--------------------------------------------------------------
+Scroll Top
+--------------------------------------------------------------*/
+
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  right: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
 }
 
 /*--------------------------------------------------------------
@@ -1258,13 +1314,6 @@ Media Queries
   .call{
     text-align: center;
   }
-  .menubox {
-    width: 75%;
-    float: right;
-  }
-  .search-box {
-    width: 10%;
-  }
   .serach_outer{
     top: auto;
   }
@@ -1274,5 +1323,13 @@ Media Queries
   }
   #slider .carousel-caption{
     left: auto;
+  }
+  .woocommerce ul.products.columns-3 li.product, 
+  .woocommerce-page ul.products.columns-3 li.product{
+    width: 100%;
+  }
+  .woocommerce .woocommerce-ordering, 
+  .woocommerce-page .woocommerce-ordering{
+    float: none;
   }
 }
