@@ -1,6 +1,6 @@
 <?php
 /* 	D5 Creation Theme's Sub Functions
-	Copyright: 2012-2019, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 */
 
 // 	Link Open in Same/New Window

@@ -1,10 +1,10 @@
 === AssociationX ===
 
-Contributors: D5 Creation
+Contributors: d5creation
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
-Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 1.01
+Requires at least: 5.0
+Tested up to: 5.3.2
+Stable tag: 1.03
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,12 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
 == Changelog ==
+
+= 1.03 =
+* Review Findings Fix
+
+= 1.02 =
+* Review Findings Fix
 
 = 1.01 =
 * Security Improvement

@@ -1,6 +1,14 @@
-jQuery(document).ready(function(){ 'use strict'; jQuery("#main-menu-con ul ul").css({display: "none"}); jQuery('#main-menu-con ul li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });  
-
-jQuery(document).ready(function(){ 'use strict';		
+jQuery(document).ready(function(){ 'use strict';
+								  
+	jQuery(".page_item_has_children").addClass("menu-item-has-children");							  
+	jQuery( "#main-menu-con .menu-item-has-children" ).focusout(function() {
+  		jQuery(this).removeClass("focusmenu");
+	});							  
+								  
+	jQuery( "#main-menu-con .menu-item-has-children" ).focusin(function() {
+  		jQuery(this).addClass("focusmenu");
+	});								  
+								  
 	//jQuery('.go-top').click(function(event) { event.preventDefault(); jQuery('html, body').animate({scrollTop: 0}, 500); }); 
 	jQuery(window).scroll(function() { if (jQuery(this).scrollTop() > jQuery('#header').outerHeight(true)) { jQuery('.go-top').fadeIn(150); } else { jQuery('.go-top').fadeOut(150); } });
 	jQuery("#main-menu-con .menu-item-home").removeClass("current-menu-item current_page_item");
@@ -52,7 +60,7 @@ jQuery(window).on('load resize', function () { 	'use strict';
 });
 	
 jQuery(window).on('load resize', function () { 	'use strict';
-    jQuery(".menu-item-has-children, .page_item_has_children").on('mouseenter mouseleave', function () { 
+    jQuery(".menu-item-has-children, .page_item_has_children").on('mouseenter mouseleave focusin focusout', function () { 
         if (jQuery('ul', this).length) {
             var elm = jQuery('ul:first', this);
             var off = elm.offset();

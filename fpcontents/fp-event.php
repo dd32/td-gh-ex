@@ -1,7 +1,7 @@
 <?php
 
 /* 	AssociationX Theme's Events Part of Front Page
-	Copyright: 2012-2019, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.9
 */
@@ -28,8 +28,8 @@ if($associationx_portfbnum && is_numeric($associationx_portfbnum)):
 			$associationx_getattpost = get_post( $associationx_portfpostid );
 			$associationx_portitemlink = get_permalink( $associationx_getattpost->ID );
 			$associationx_portitemlinkt = 1;
-			$portft = $associationx_getattpost->post_title;
-			$portftdes = $associationx_getattpost->post_excerpt;
+			$portft = esc_html($associationx_getattpost->post_title);
+			$portftdes = wp_kses_post($associationx_getattpost->post_excerpt);
 		endif;		
 
 		if($associationx_portimg) $associationx_portimg = '<div class="poftfitem-image"><img src="'.$associationx_portimg.'" alt="'.$portft.'" /></div>';

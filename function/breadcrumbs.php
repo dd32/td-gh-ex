@@ -34,7 +34,7 @@
 function associationx_breadcrumb_trail( $args = array() ) {
 	
 	// Return if breadcrumbs are disabled
-	if ( esc_attr(associationx_get_option('bcrumbs','0')) != '1' ||  is_front_page() || is_page_template( 'front-page.php' ) || is_page_template( '100container.php' ) || is_page_template( 'fullcontainer.php' ) || is_page_template( 'page100.php' ) ) { return; }
+	if ( esc_attr(associationx_get_option('bcrumbs','')) != '1' ||  is_front_page() || is_page_template( 'front-page.php' ) || is_page_template( '100container.php' ) || is_page_template( 'fullcontainer.php' ) || is_page_template( 'page100.php' ) ) { return; }
 	
 	// Disable if Yoast Breadcrumbs Enabled
 	if ( function_exists( 'yoast_breadcrumb' ) && current_theme_supports( 'yoast-seo-breadcrumbs' ) ) { yoast_breadcrumb('<div class="breadcrumbs">','</div>'); return; }

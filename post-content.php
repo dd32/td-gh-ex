@@ -1,7 +1,7 @@
 <?php
 
 /* 	AssociationX Theme's Post Content
-	Copyright: 2012-2019, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
@@ -13,7 +13,7 @@ do_action('associationx_before_content');
 <div id="content">	
 	<?php
 	do_action('associationx_starting_content');
-	if (is_archive()) : $post = $posts[0]; ?>
+	if (is_archive()) :  ?>
 		<div class="arctitledes">
 			<h1 class="arc-post-title"><?php the_archive_title(); ?></h1>
 			<div class="description"><?php echo the_archive_description(); ?></div>

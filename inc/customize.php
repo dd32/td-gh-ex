@@ -7,6 +7,28 @@ function associationx_customize_register($wp_customize){
 	foreach( $categories as $category ) {
     	$cats[$category->term_id] = $category->name;
 	} 
+	
+	//checkbox sanitization function
+    function associationx_sanitize_checkbox( $input ){              
+    	//returns true if checkbox is checked
+      	return ( ( isset( $input ) && true == $input ) ? true : false );
+    }
+	
+	//file input sanitization function
+    function associationx_sanitize_image( $file, $setting ) {
+    	//allowed file types
+        $mimes = array(
+        	'jpg|jpeg|jpe' => 'image/jpeg',
+        	'gif'          => 'image/gif',
+        	'png'          => 'image/png'
+        );
+              
+        //check file type from file name
+      	$file_ext = wp_check_filetype( $file, $mimes );
+              
+        //if file has a valid mime type return it, otherwise return default
+        return ( $file_ext['ext'] ? $file : $setting->default );
+	}
 
 // AssociationX Options ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ // 
 	
@@ -28,7 +50,7 @@ function associationx_customize_register($wp_customize){
 	//  Responsive Layout
     $wp_customize->add_setting('associationx[responsive]', array(
         'default'        	=> '1',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -46,7 +68,7 @@ function associationx_customize_register($wp_customize){
 	//  Top Menu Bar
     $wp_customize->add_setting('associationx[showtmbar]', array(
         'default'        	=> '1',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -97,7 +119,7 @@ function associationx_customize_register($wp_customize){
 	//  Breadcrumbs
     $wp_customize->add_setting('associationx[bcrumbs]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -132,7 +154,7 @@ function associationx_customize_register($wp_customize){
     $wp_customize->add_setting('associationx[nf404-image]', array(
         'default'           => esc_url(get_template_directory_uri() . '/images/404.jpg'),
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'associationx_sanitize_image',
         'type'           	=> 'option'
     ));
 
@@ -156,7 +178,7 @@ function associationx_customize_register($wp_customize){
 	// Show the Featured Boxes
     $wp_customize->add_setting('associationx[slidebox]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -176,7 +198,7 @@ function associationx_customize_register($wp_customize){
     $wp_customize->add_setting('associationx[slide-image'. $opsinumber .']', array(
         'default'           => '',
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'associationx_sanitize_image',
         'type'           	=> 'option'
     ));
 
@@ -190,7 +212,7 @@ function associationx_customize_register($wp_customize){
 	//  Automatically Add Image Title, Caption and Links
     $wp_customize->add_setting('associationx[slide-imageautomaticall-'.$opsinumber.']', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -218,7 +240,7 @@ function associationx_customize_register($wp_customize){
 	//  Show the Featured Links
     $wp_customize->add_setting('associationx[srflinks]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -235,7 +257,7 @@ function associationx_customize_register($wp_customize){
 	//  Show the Featured Links from Featured Links Navigation Menu
     $wp_customize->add_setting('associationx[flinksfrommenu]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -263,7 +285,7 @@ function associationx_customize_register($wp_customize){
 	// Show the About Us
     $wp_customize->add_setting('associationx[showaboutus]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -280,7 +302,7 @@ function associationx_customize_register($wp_customize){
 	// About Us Section from a Page
     $wp_customize->add_setting('associationx[aboutus_fromm_page]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -297,7 +319,7 @@ function associationx_customize_register($wp_customize){
 	// Select a Page
     $wp_customize->add_setting('associationx[aboutus_page]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'absint',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -324,7 +346,7 @@ function associationx_customize_register($wp_customize){
 	//  Show the Featured Boxes
     $wp_customize->add_setting('associationx[frfbox]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -341,7 +363,7 @@ function associationx_customize_register($wp_customize){
 	//  Show the Featured Boxes from the Sticky Posts
     $wp_customize->add_setting('associationx[frfboxfstk]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -369,7 +391,7 @@ function associationx_customize_register($wp_customize){
 	// Show the Noticeboard
     $wp_customize->add_setting('associationx[noticebv]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -386,7 +408,7 @@ function associationx_customize_register($wp_customize){
 	// Select a Category
     $wp_customize->add_setting('associationx[noticecat1]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'absint',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -404,7 +426,7 @@ function associationx_customize_register($wp_customize){
 	// Show the News Box
     $wp_customize->add_setting('associationx[newsbv]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -422,7 +444,7 @@ function associationx_customize_register($wp_customize){
 	// Select a Category
     $wp_customize->add_setting('associationx[nboxcat'.$newsbnumn.']', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'absint',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -451,7 +473,7 @@ function associationx_customize_register($wp_customize){
 	//  Show the E-Commerce/WooCommerce
     $wp_customize->add_setting('associationx[ecombox]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -465,27 +487,27 @@ function associationx_customize_register($wp_customize){
 		'type' 		 => 'checkbox'
     ));
 	
-	//  WooCommerce ShortCode
-    $wp_customize->add_setting('associationx[wooshortcod]', array(
-        'default'        	=> '[products limit="4"]',
-    	'sanitize_callback' => 'wp_kses_post',
+	// E-Commerce/WooCommerce Page
+    $wp_customize->add_setting('associationx[woo_page]', array(
+        'default'        	=> '',
+    	'sanitize_callback' => 'absint',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
     ));
 
-    $wp_customize->add_control('associationx_wooshortcod', array(
-        'label'      => esc_html__('ShortCode for E-Commerce/WooCommerce', 'associationx'),
+    $wp_customize->add_control('associationx_woo_page', array(
+        'label'      => esc_html__('Select a E-Commerce/WooCommerce Page to Show the Content in this Section', 'associationx'),
         'section'    => 'associationx_woocom',
-        'settings'   => 'associationx[wooshortcod]',
-		'description' => wp_kses_post(__('Example:', 'associationx')).' <b>[products limit="4"]</b>',
-		'type' 		 => 'text'
-    ));
+        'settings'   => 'associationx[woo_page]',
+		'description' => esc_html__('You can Select a Page to Show the Content as E-Commerce/WooCommerce Part', 'associationx'),
+		'type' 		 => 'dropdown-pages'
+    ));	
 	
 	//  Set Transparent Background of the Product Items
     $wp_customize->add_setting('associationx[wooitembtrns]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -502,7 +524,7 @@ function associationx_customize_register($wp_customize){
 	//  Show Border of the Product Items
     $wp_customize->add_setting('associationx[wooitembdr]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -519,7 +541,7 @@ function associationx_customize_register($wp_customize){
 	//  Show Box Shadow of the Product Items
     $wp_customize->add_setting('associationx[wooitembsdw]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -536,7 +558,7 @@ function associationx_customize_register($wp_customize){
 	//  Show No Padding Space of the Product Items
     $wp_customize->add_setting('associationx[wooitemnpspc]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -553,7 +575,7 @@ function associationx_customize_register($wp_customize){
 	//  Show Product Items Image Border
     $wp_customize->add_setting('associationx[wooiimgbdr]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -580,7 +602,7 @@ function associationx_customize_register($wp_customize){
 	// Show the Event Boxes
     $wp_customize->add_setting('associationx[portfoliobox]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -600,7 +622,7 @@ function associationx_customize_register($wp_customize){
     $wp_customize->add_setting('associationx[portfb-image'. $associationx_portfbnumn .']', array(
         'default'           => '',
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'associationx_sanitize_image',
         'type'           	=> 'option'
     ));
 
@@ -614,7 +636,7 @@ function associationx_customize_register($wp_customize){
 	//  Automatically Add Image Title, Caption and Links
     $wp_customize->add_setting('associationx[portfb-image-automatic'.$associationx_portfbnumn.']', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -643,7 +665,7 @@ function associationx_customize_register($wp_customize){
 	// Show the Event Boxes
     $wp_customize->add_setting('associationx[staffbox]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -663,7 +685,7 @@ function associationx_customize_register($wp_customize){
     $wp_customize->add_setting('associationx[staffboxes-image'. $staffboxsnumber .']', array(
         'default'           => '',
         'capability'        => 'edit_theme_options',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'associationx_sanitize_image',
         'type'           	=> 'option'
     ));
 
@@ -677,7 +699,7 @@ function associationx_customize_register($wp_customize){
 	//  Automatically Add Image Title, Caption and Links
     $wp_customize->add_setting('associationx[staffboxes-image-automatic'.$staffboxsnumber.']', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -706,7 +728,7 @@ function associationx_customize_register($wp_customize){
 	// Show a Page Content
     $wp_customize->add_setting('associationx[fp-pagecheck]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -723,7 +745,7 @@ function associationx_customize_register($wp_customize){
 	// Select a Page
     $wp_customize->add_setting('associationx[fp-page]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'absint',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -750,7 +772,7 @@ function associationx_customize_register($wp_customize){
 //  Show the Featured Links
     $wp_customize->add_setting('associationx[tes-cln]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -767,7 +789,7 @@ function associationx_customize_register($wp_customize){
 //  Show Testimonilas from the Latest Comments
     $wp_customize->add_setting('associationx[testifrmlcomnts]', array(
         'default'        	=> '',
-    	'sanitize_callback' => 'esc_attr',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
@@ -795,7 +817,7 @@ function associationx_customize_register($wp_customize){
 	//  Social Link
     $wp_customize->add_setting('associationx[sl'.$slinks.']', array(
         'default'        	=> '#',
-    	'sanitize_callback' => 'esc_url',
+    	'sanitize_callback' => 'esc_url_raw',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 

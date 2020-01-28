@@ -1,6 +1,6 @@
 <?php 
 /* 	AssociationX Theme's Noticeboard and News Box Part
-	Copyright: 2012-2019, D5 Creation, www.d5creation.com
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
@@ -76,7 +76,7 @@ if(!$noticebv && !$newsbv) return;
 									<div id="nboxcat-<?php echo $nboxcatid; ?>" class="nboardcat <?php echo $nboxcattpos; ?>">
 										<?php 
 										$nbcatnamef = '<div class="nbcattitle"><h3 class="nbcatt">'.$nboxcatname.'</h3></div>'; 
-										echo associationx_linkandtarget($nbcatnamef,$nboxcatlink,$nboxitemlt,'','nbcatlink');
+										echo wp_kses_post(associationx_linkandtarget($nbcatnamef,$nboxcatlink,$nboxitemlt,'','nbcatlink'));
 										while ($nboxitem_query->have_posts()): 
 											$nboxitem_query->the_post(); $pcount++;
 											$nbitlink = get_the_permalink();									
