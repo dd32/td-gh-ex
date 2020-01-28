@@ -41,7 +41,7 @@
 	?>
 	<footer id="colophon" role="contentinfo">
 		<div class="copyright">
-			<?php echo wp_kses_post( get_theme_mod( 'aeonblog-copyright-text', __( 'All Right Reserved', 'aeonblog' ) ) ); ?>
+			<?php echo wp_kses_post( get_theme_mod( 'aeonblog-copyright-text', __( 'All Rights Reserved', 'aeonblog' ) ) ); ?>
 		</div>
 
 		<div class="site-info">

@@ -130,7 +130,7 @@ add_action( 'customize_register', 'aeonblog_font_customize_register' );
  * Enqueue the list of fonts.
  */
 function aeonblog_customizer_fonts() {
-	wp_enqueue_style( 'aeonblog_customizer_fonts', 'https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans+SC|Arimo|Bree+Serif|Cherry+Swash|Cinzel|Exo+2|Fondamento|Gentium+Book+Basic|Grand+Hotel|Hind|Josefin+Sans|Karla|La+Belle+Aurore|Lato|Libre+Baskerville|Lobster+Two|Lora|Merriweather|Montserrat|Muli|Noticia+Text|Noto+Sans|Noto+Serif|Old+Standard+TT|Open+Sans|Oswald|Pacifico|Playfair+Display|Quando|Raleway|Roboto+Slab|Sorts+Mill+Goudy|Tangerine|Ubuntu|Vollkorn', array(), null );
+	wp_enqueue_style( 'aeonblog_customizer_fonts', 'https://fonts.googleapis.com/css?family=Alegreya:400,700|Alegreya+Sans+SC:400,700|Arimo:400,700|Bree+Serif|Cherry+Swash:400,700|Cinzel:400,700|Exo+2:400,700|Fondamento|Gentium+Book+Basic:400,700|Grand+Hotel|Hind:400,700|Josefin+Sans:400,700|Karla:400,700|La+Belle+Aurore|Lato:400,700|Libre+Baskerville:400,700|Lobster+Two:400,700|Lora:400,700|Merriweather:400,700|Montserrat:400,700|Muli:400,700|Noticia+Text:400,700|Noto+Sans:400,700|Noto+Serif:400,700|Old+Standard+TT:400,700|Open+Sans:400,700|Oswald:400,700|Pacifico|Playfair+Display:400,700|Quando|Raleway:400,700|Roboto+Slab:400,700|Sorts+Mill+Goudy|Tangerine:400,700|Ubuntu:400,700|Vollkorn:400,700', array(), null );
 }
 add_action( 'customize_controls_print_styles', 'aeonblog_customizer_fonts' );
 add_action( 'customize_preview_init', 'aeonblog_customizer_fonts' );

@@ -353,7 +353,7 @@ function aeonblog_customize_register( $wp_customize ) {
 		array(
 			'capability'        => 'edit_theme_options',
 			'transport'         => 'refresh',
-			'default'           => esc_html__( 'All Right Reserved', 'aeonblog' ),
+			'default'           => esc_html__( 'All Rights Reserved', 'aeonblog' ),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);

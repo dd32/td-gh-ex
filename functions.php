@@ -213,8 +213,8 @@ if ( ! function_exists( 'aeonblog_fonts_url' ) ) {
 		$fonts_url = '';
 
 		$font_families   = array();
-		$font_families[] = get_theme_mod( 'aeonblog_body_font', 'Open Sans' );
-		$font_families[] = get_theme_mod( 'aeonblog_title_font', 'Josefin Sans' );
+		$font_families[] = get_theme_mod( 'aeonblog_body_font', 'Open Sans' ) . ':400,700';
+		$font_families[] = get_theme_mod( 'aeonblog_title_font', 'Josefin Sans' ) . ':400,700';
 
 		$font_families = array_unique( $font_families );
 
