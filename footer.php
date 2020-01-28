@@ -15,6 +15,9 @@
 
 				get_template_part( 'template-parts/footer/site', 'info' );
 			?>
+			<div class="return-to-header">
+				<a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
+			</div>
 		</footer>
 	</div>
 </div>

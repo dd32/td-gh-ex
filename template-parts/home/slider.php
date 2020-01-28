@@ -28,7 +28,7 @@
         $query = new WP_Query( $args );
         if ( $query->have_posts() ) :
           $i = 1;
-    ?>     
+    ?>
     <div class="carousel-inner" role="listbox">
       <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
         <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
