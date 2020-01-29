@@ -747,6 +747,11 @@ require get_template_directory() . '/inc/widget-social-icons.php';
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 /**
+ * Load JSON_LD Breadcrumb file.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/json-ld-schema.php';
+
+/**
  * Register the required plugins for this theme.
  *
  * In this example, we register five plugins:

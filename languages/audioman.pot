@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audioman\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-01-07 22:28-0800\n"
+"POT-Creation-Date: 2020-01-29 13:04-0800\n"
 "PO-Revision-Date: 2016-12-07 01:05-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -184,31 +184,31 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: ../inc/breadcrumb.php:21
+#: ../inc/breadcrumb.php:21 ../inc/json-ld-schema.php:25
 msgid "Home"
 msgstr ""
 
-#: ../inc/breadcrumb.php:23
+#: ../inc/breadcrumb.php:23 ../inc/json-ld-schema.php:26
 #, php-format
 msgid "%1$s Archive for %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:25
+#: ../inc/breadcrumb.php:25 ../inc/json-ld-schema.php:27
 #, php-format
 msgid "%1$sSearch results for: %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:27
+#: ../inc/breadcrumb.php:27 ../inc/json-ld-schema.php:28
 #, php-format
 msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:29
+#: ../inc/breadcrumb.php:29 ../inc/json-ld-schema.php:29
 #, php-format
 msgid "%1$sView all posts by %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:30
+#: ../inc/breadcrumb.php:30 ../inc/json-ld-schema.php:30
 msgid "Error 404"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: ../inc/breadcrumb.php:174
+#: ../inc/breadcrumb.php:174 ../inc/json-ld-schema.php:169
 #, php-format
 msgid "Page %s"
 msgstr ""

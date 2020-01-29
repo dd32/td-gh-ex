@@ -37,16 +37,16 @@ if ( ! function_exists( 'audioman_breadcrumb' ) ) :
 
 		global $post, $paged, $page;
 		$homeLink   = home_url( '/' );
-		$linkBefore = '<span class="breadcrumb" typeof="v:Breadcrumb">';
+		$linkBefore = '<span class="breadcrumb">';
 		$linkAfter  = '</span>';
-		$linkAttr   = ' rel="v:url" property="v:title"';
+		$linkAttr   = '';
 		$link       = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . wp_kses_post( $delimiter ) . $linkAfter;
 
 		global $post, $paged, $page;
 		$homeLink   = home_url( '/' );
-		$linkBefore = '<span class="breadcrumb" typeof="v:Breadcrumb">';
+		$linkBefore = '<span class="breadcrumb">';
 		$linkAfter  = '</span>';
-		$linkAttr   = ' rel="v:url" property="v:title"';
+		$linkAttr   = '';
 		$link       = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . wp_kses_post( $delimiter ) . $linkAfter;
 
 		if ( is_front_page() ) {

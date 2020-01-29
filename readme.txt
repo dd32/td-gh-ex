@@ -1,9 +1,9 @@
 === Audioman ===
 Contributors: catchthemes
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
-Requires at least: 4.8
+Requires at least: 4.9
 Tested up to: 5.3
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,9 @@ You can check our Theme Demo at https://catchthemes.com/demo/audioman/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 2.0.4 (Released: January 29, 2020) =
+* Updated: data-vocabulary-org-schema deprecated now replaced by schema-org's JSON-LD
 
 = 2.0.3 (Released: January 07, 2020) =
 * Bug Fixed: h1 tag issue
