@@ -1,8 +1,9 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-09-17 12:04+0100\n"
+"POT-Creation-Date: 2020-01-29 14:18+0100\n"
 "PO-Revision-Date: 2016-09-17 12:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -10,13 +11,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -34,11 +35,11 @@ msgstr ""
 msgid "Enter password to view comments."
 msgstr ""
 
-#: comments.php:23 inc/template-tags.php:199
+#: comments.php:23 inc/template-tags.php:210
 msgid "One comment"
 msgstr ""
 
-#: comments.php:23 inc/template-tags.php:199
+#: comments.php:23 inc/template-tags.php:210
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -51,260 +52,112 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:99
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:100
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:101
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:150 sidebar.php:14
+#: functions.php:110
+msgctxt "Gutenberg Color Palette"
+msgid "Primary"
+msgstr ""
+
+#: functions.php:115
+msgctxt "Gutenberg Color Palette"
+msgid "White"
+msgstr ""
+
+#: functions.php:120
+msgctxt "Gutenberg Color Palette"
+msgid "Light Gray"
+msgstr ""
+
+#: functions.php:125
+msgctxt "Gutenberg Color Palette"
+msgid "Dark Gray"
+msgstr ""
+
+#: functions.php:130
+msgctxt "Gutenberg Color Palette"
+msgid "Black"
+msgstr ""
+
+#: functions.php:161 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:163
 msgid "Appears on posts and pages except the full width template."
 msgstr ""
 
-#: search.php:15
-#, php-format
-msgid "Search Results for: %s"
+#: header.php:15
+msgid "Skip to content"
 msgstr ""
 
-#: search.php:41
-msgid "No matches"
-msgstr ""
-
-#: search.php:45
-msgid ""
-"Please try again, or use the navigation menus to find what you search for."
-msgstr ""
-
-#: searchform.php:4
-msgctxt "label"
-msgid "Search for:"
-msgstr ""
-
-#: searchform.php:5
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr ""
-
-#: sidebar.php:16
-msgid ""
-"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
-msgstr ""
-
-#: inc/featured-content.php:348
-msgid "Featured Content"
-msgstr ""
-
-#: inc/featured-content.php:349
-#, php-format
-msgid ""
-"Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> or a "
-"tag of your choice. Your theme supports up to %2$s posts in its featured "
-"content area."
-msgstr ""
-
-#: inc/featured-content.php:376
-msgid "Tag name"
-msgstr ""
-
-#: inc/featured-content.php:381
-msgid "Hide tag from displaying in post meta and tag clouds."
-msgstr ""
-
-#: inc/featured-content.php:387
-msgid "Display featured posts in latest blog post listing."
-msgstr ""
-
-#: inc/template-tags.php:175
-#, php-format
-msgid "View all posts by %s"
-msgstr ""
-
-#: inc/template-tags.php:199
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:324
-#, php-format
-msgid "Powered by %1$s and %2$s."
-msgstr ""
-
-#: inc/template-tags.php:358
-msgid ""
-"Please go to Appearance &#8594; Menus and create a new custom menu with "
-"custom links to all your social networks. Then click on \"Manage Locations\" "
-"tab and assign your created menu to the \"Social Icons\" location."
-msgstr ""
-
-#: inc/template-tags.php:377
-msgid "Pingback:"
-msgstr ""
-
-#: inc/template-tags.php:378 inc/template-tags.php:397
-msgid "(Edit)"
-msgstr ""
-
-#: inc/template-tags.php:408
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: inc/theme-info.php:19 inc/theme-info.php:40
-#, php-format
-msgid "Welcome to %1$s %2$s"
-msgstr ""
-
-#: inc/theme-info.php:20
-msgid "Theme Info"
-msgstr ""
-
-#: inc/theme-info.php:46 inc/customizer/customizer.php:136
-msgid "Theme Links"
-msgstr ""
-
-#: inc/theme-info.php:47 inc/customizer/customizer.php:139
-msgid "https://themezee.com/themes/rubine/"
-msgstr ""
-
-#: inc/theme-info.php:47 inc/customizer/customizer.php:140
-msgid "Theme Page"
-msgstr ""
-
-#: inc/theme-info.php:48 inc/customizer/customizer.php:146
-msgid "Theme Demo"
-msgstr ""
-
-#: inc/theme-info.php:49 inc/theme-info.php:70
-#: inc/customizer/customizer.php:151
-msgid "https://themezee.com/docs/rubine-documentation/"
-msgstr ""
-
-#: inc/theme-info.php:49 inc/theme-info.php:64
-#: inc/customizer/customizer.php:152
-msgid "Theme Documentation"
-msgstr ""
-
-#: inc/theme-info.php:50 inc/theme-info.php:152
-#: inc/customizer/customizer.php:157
-msgid "https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5"
-msgstr ""
-
-#: inc/theme-info.php:50 inc/customizer/customizer.php:158
-msgid "Rate this theme"
-msgstr ""
-
-#: inc/theme-info.php:57
-#, php-format
-msgid "Getting Started with %s"
-msgstr ""
-
-#: inc/theme-info.php:67
-msgid ""
-"You need help to setup and configure this theme? We got you covered with an "
-"extensive theme documentation on our website."
-msgstr ""
-
-#: inc/theme-info.php:71
-#, php-format
-msgid "View %s Documentation"
-msgstr ""
-
-#: inc/theme-info.php:77 inc/customizer/customizer.php:28
+#: inc/customizer/customizer.php:28 inc/theme-info.php:77
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info.php:80
-#, php-format
-msgid ""
-"%s makes use of the Customizer for all theme settings. Click on \"Customize "
-"Theme\" to open the Customizer now."
-msgstr ""
-
-#: inc/theme-info.php:83
-msgid "Customize Theme"
-msgstr ""
-
-#: inc/theme-info.php:103
-msgid "Get more features"
-msgstr ""
-
-#: inc/theme-info.php:110
-msgid "Pro Version Add-on"
-msgstr ""
-
-#: inc/theme-info.php:113
-#, php-format
-msgid ""
-"Purchase the %s Pro Add-on and get additional features and advanced "
-"customization options."
-msgstr ""
-
-#: inc/theme-info.php:116 inc/customizer/functions/custom-controls.php:49
-msgid "https://themezee.com/addons/rubine-pro/"
-msgstr ""
-
-#: inc/theme-info.php:117 inc/customizer/functions/custom-controls.php:50
-#, php-format
-msgid "Learn more about %s Pro"
-msgstr ""
-
-#: inc/theme-info.php:127
-msgid "Recommended Plugins"
-msgstr ""
-
-#: inc/theme-info.php:130
-msgid ""
-"Extend the functionality of your WordPress website with our free and easy to "
-"use plugins."
-msgstr ""
-
-#: inc/theme-info.php:134
-msgid "Install Plugins"
-msgstr ""
-
-#: inc/theme-info.php:149
-#, php-format
-msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
-msgstr ""
-
-#: inc/theme-info.php:151
-msgid "https://themezee.com/"
-msgstr ""
-
-#: inc/theme-info.php:152
-msgid "Review Rubine"
-msgstr ""
-
-#: inc/theme-info.php:152
-msgid "rate it"
-msgstr ""
-
-#: inc/customizer/customizer.php:38
+#: inc/customizer/customizer.php:34
 msgid "Background"
 msgstr ""
 
-#: inc/customizer/customizer.php:49
+#: inc/customizer/customizer.php:59
 msgid "Display Site Title"
 msgstr ""
 
-#: inc/customizer/customizer.php:66
-msgid "Display Tagline below site title."
+#: inc/customizer/customizer.php:76
+msgid "Display Tagline"
 msgstr ""
 
-#: inc/customizer/customizer.php:83
+#: inc/customizer/customizer.php:93
 msgid "Header Image Link"
 msgstr ""
 
-#: inc/customizer/customizer.php:100
+#: inc/customizer/customizer.php:110
 msgid "Hide header image on front page"
+msgstr ""
+
+#: inc/customizer/customizer.php:162 inc/theme-info.php:46
+msgid "Theme Links"
+msgstr ""
+
+#: inc/customizer/customizer.php:165 inc/theme-info.php:47
+msgid "https://themezee.com/themes/rubine/"
+msgstr ""
+
+#: inc/customizer/customizer.php:166 inc/theme-info.php:47
+msgid "Theme Page"
+msgstr ""
+
+#: inc/customizer/customizer.php:172 inc/theme-info.php:48
+msgid "Theme Demo"
+msgstr ""
+
+#: inc/customizer/customizer.php:177 inc/theme-info.php:49
+#: inc/theme-info.php:70
+msgid "https://themezee.com/docs/rubine-documentation/"
+msgstr ""
+
+#: inc/customizer/customizer.php:178 inc/theme-info.php:49
+#: inc/theme-info.php:64
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/customizer/customizer.php:183 inc/theme-info.php:50
+#: inc/theme-info.php:152
+msgid "https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5"
+msgstr ""
+
+#: inc/customizer/customizer.php:184 inc/theme-info.php:50
+msgid "Rate this theme"
 msgstr ""
 
 #: inc/customizer/functions/custom-controls.php:42
@@ -316,6 +169,15 @@ msgstr ""
 msgid ""
 "Purchase the Pro Version of %s to get additional features and advanced "
 "customization options."
+msgstr ""
+
+#: inc/customizer/functions/custom-controls.php:49 inc/theme-info.php:116
+msgid "https://themezee.com/addons/rubine-pro/"
+msgstr ""
+
+#: inc/customizer/functions/custom-controls.php:50 inc/theme-info.php:117
+#, php-format
+msgid "Learn more about %s Pro"
 msgstr ""
 
 #: inc/customizer/functions/custom-controls.php:58
@@ -362,14 +224,6 @@ msgstr ""
 
 #: inc/customizer/sections/customizer-general.php:68
 msgid "Display Social Icons in footer"
-msgstr ""
-
-#: inc/customizer/sections/customizer-general.php:86
-msgid "Default Fonts"
-msgstr ""
-
-#: inc/customizer/sections/customizer-general.php:103
-msgid "Deactivate Google Fonts in case your language is not compatible."
 msgstr ""
 
 #: inc/customizer/sections/customizer-header.php:14
@@ -438,4 +292,168 @@ msgstr ""
 
 #: inc/customizer/sections/customizer-upgrade.php:14
 msgid "More Features"
+msgstr ""
+
+#: inc/featured-content.php:241
+msgid "Featured Content"
+msgstr ""
+
+#: inc/featured-content.php:242
+#, php-format
+msgid ""
+"Easily feature all posts with the <a href=\"%1$s\">\"featured\" tag</a> or a "
+"tag of your choice. Your theme supports up to %2$s posts in its featured "
+"content area."
+msgstr ""
+
+#: inc/featured-content.php:264
+msgid "Tag name"
+msgstr ""
+
+#: inc/featured-content.php:269
+msgid "Display featured posts in latest blog post listing."
+msgstr ""
+
+#: inc/template-tags.php:184
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:210
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:336
+#, php-format
+msgid "Powered by %1$s and %2$s."
+msgstr ""
+
+#: inc/template-tags.php:370
+msgid ""
+"Please go to Appearance &#8594; Menus and create a new custom menu with "
+"custom links to all your social networks. Then click on \"Manage Locations\" "
+"tab and assign your created menu to the \"Social Icons\" location."
+msgstr ""
+
+#: inc/template-tags.php:389
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:390 inc/template-tags.php:409
+msgid "(Edit)"
+msgstr ""
+
+#: inc/template-tags.php:420
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/theme-info.php:19 inc/theme-info.php:40
+#, php-format
+msgid "Welcome to %1$s %2$s"
+msgstr ""
+
+#: inc/theme-info.php:20
+msgid "Theme Info"
+msgstr ""
+
+#: inc/theme-info.php:57
+#, php-format
+msgid "Getting Started with %s"
+msgstr ""
+
+#: inc/theme-info.php:67
+msgid ""
+"You need help to setup and configure this theme? We got you covered with an "
+"extensive theme documentation on our website."
+msgstr ""
+
+#: inc/theme-info.php:71
+#, php-format
+msgid "View %s Documentation"
+msgstr ""
+
+#: inc/theme-info.php:80
+#, php-format
+msgid ""
+"%s makes use of the Customizer for all theme settings. Click on \"Customize "
+"Theme\" to open the Customizer now."
+msgstr ""
+
+#: inc/theme-info.php:83
+msgid "Customize Theme"
+msgstr ""
+
+#: inc/theme-info.php:103
+msgid "Get more features"
+msgstr ""
+
+#: inc/theme-info.php:110
+msgid "Pro Version Add-on"
+msgstr ""
+
+#: inc/theme-info.php:113
+#, php-format
+msgid ""
+"Purchase the %s Pro Add-on and get additional features and advanced "
+"customization options."
+msgstr ""
+
+#: inc/theme-info.php:127
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/theme-info.php:130
+msgid ""
+"Extend the functionality of your WordPress website with our free and easy to "
+"use plugins."
+msgstr ""
+
+#: inc/theme-info.php:134
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/theme-info.php:149
+#, php-format
+msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
+msgstr ""
+
+#: inc/theme-info.php:151
+msgid "https://themezee.com/"
+msgstr ""
+
+#: inc/theme-info.php:152
+msgid "Review Rubine"
+msgstr ""
+
+#: inc/theme-info.php:152
+msgid "rate it"
+msgstr ""
+
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:41
+msgid "No matches"
+msgstr ""
+
+#: search.php:45
+msgid ""
+"Please try again, or use the navigation menus to find what you search for."
+msgstr ""
+
+#: searchform.php:4
+msgctxt "label"
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:5
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: sidebar.php:16
+msgid ""
+"Please go to Appearance &#8594; Widgets and add some widgets to your sidebar."
 msgstr ""

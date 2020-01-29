@@ -26,6 +26,9 @@ For more information about Rubine Lite please go to https://themezee.com/themes/
 
 == Changelog ==
 
+= 1.5.3 =
+* added Skip-to-Content link for improved accessibility
+
 = 1.5.2 =
 * fixed missing featured content tag bug in WordPress Block Editor
 
