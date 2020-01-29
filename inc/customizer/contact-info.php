@@ -42,7 +42,7 @@ function adonis_contact_options( $wp_customize ) {
 
 	adonis_register_option( $wp_customize, array(
 			'name'              => 'adonis_contact_description',
-			'default'           => wp_kses_data( __( 'For further details about my services, availability and inquiry, please fell free to contact me with the information below', 'adonis' ) ),
+			'default'           => wp_kses_data( __( 'For further details about my services, availability and inquiry, please feel free to contact me with the information below', 'adonis' ) ),
 			'sanitize_callback' => 'wp_kses_data',
 			'active_callback'   => 'adonis_is_contact_active',
 			'label'             => esc_html__( 'Description', 'adonis' ),

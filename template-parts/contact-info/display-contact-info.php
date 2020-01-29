@@ -15,7 +15,7 @@ if ( ! adonis_check_section( $enable ) ) {
 }
 
 $title       = get_theme_mod( 'adonis_contact_title', esc_html__( 'Contact', 'adonis' ) );
-$description = get_theme_mod( 'adonis_contact_description', wp_kses_data( __( 'For further details about my services, availability and inquiry, please fell free to contact me with the information below', 'adonis' ) ) );
+$description = get_theme_mod( 'adonis_contact_description', wp_kses_data( __( 'For further details about my services, availability and inquiry, please feel free to contact me with the information below', 'adonis' ) ) );
 ?>
 
 <div id="contact-section" class="section">
