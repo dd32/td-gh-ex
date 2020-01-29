@@ -95,8 +95,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget_container"><h2 class="widget-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget_container"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
 	) );
 
 	register_sidebar( array(
@@ -105,8 +105,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your pages and posts', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget_container"><h2 class="widget-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget_container"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
 	) );
 
 	register_sidebar( array(
@@ -115,8 +115,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your pages and posts', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<div class="widget_container"><h2 class="widget-title">',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget_container"><h3 class="widget-title">',
+		'after_title'   => '</h3></div>',
 	) );
 
 	register_sidebar( array(
@@ -125,8 +125,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -135,8 +135,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -145,8 +145,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 
 	register_sidebar( array(
@@ -155,8 +155,8 @@ function akhada_fitness_gym_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your footer.', 'akhada-fitness-gym' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'akhada_fitness_gym_widgets_init' );
@@ -238,15 +238,15 @@ function akhada_fitness_gym_sanitize_choices( $input, $setting ) {
 }
 
 //footer Link
-define('AKHADA_FITNESS_GYM_LIVE_DEMO','https://www.luzuk.com/demo/akhada-fitness/','akhada-fitness-gym');
-define('AKHADA_FITNESS_GYM_PRO_DOCS','https://luzuk.com/demo/akhada-fitness/documentation/','akhada-fitness-gym');
-define('AKHADA_FITNESS_GYM_BUY_NOW','https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/','akhada-fitness-gym');
-define('AKHADA_FITNESS_GYM_SUPPORT','https://wordpress.org/support/theme/akhada-fitness-gym/','akhada-fitness-gym');
-define('AKHADA_FITNESS_GYM_CREDIT','https://www.luzuk.com/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_LIVE_DEMO',__('https://www.luzuk.com/demo/akhada-fitness/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_PRO_DOCS',__('https://luzuk.com/demo/akhada-fitness/documentation/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_BUY_NOW',__('https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_SUPPORT',__('https://wordpress.org/support/theme/akhada-fitness-gym/','akhada-fitness-gym'));
+define('AKHADA_FITNESS_GYM_CREDIT',__('https://www.luzuk.com/themes/free-fitness-wordpress-theme/','akhada-fitness-gym'));
 
 if ( ! function_exists( 'akhada_fitness_gym_credit' ) ) {
 	function akhada_fitness_gym_credit(){
-		echo "<a href=".esc_url(AKHADA_FITNESS_GYM_CREDIT)." target='_blank' alt='".esc_html__('Luzuk','akhada-fitness-gym')."'>".esc_html__('Luzuk','akhada-fitness-gym')."</a>";
+		echo "<a href=".esc_url(AKHADA_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Fitness WordPress Theme','akhada-fitness-gym')."</a>";
 	}
 }
 

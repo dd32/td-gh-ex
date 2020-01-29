@@ -1,10 +1,10 @@
 === Akhada Fitness Gym ===
 Contributors: Luzuk
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-colors, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, full-width-template, threaded-comments, translation-ready, blog, e-commerce, news
-Requires at least: 4.8
-Tested up to: 5.2.4
+Requires at least: 5.0
+Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3
+Stable tag: 0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,19 +17,25 @@ Akhada Fitness Gym is an impactful, modern and stylish WordPress theme dedicated
 == Changelog ==
 
 = 0.1 =
-* Initial Version Released.
+	- Initial Version Released.
 
 = 0.2 =
-* Added Post Formats.
-* Addded POT file.
-* Changed Screenshot.
-* Changed in readme file.
+	- Added Post Formats.
+	- Addded POT file.
+	- Changed Screenshot.
+	- Changed in readme file.
 
 = 0.3 =
-* Changed Navigation style.
-* Resolved minor errors.
-* Updated POT file.
-* Added Skip to content part.
+	- Changed Navigation style.
+	- Resolved minor errors.
+	- Updated POT file.
+	- Added Skip to content part.
+
+= 0.4 =
+	- Added keyboard Navigation.
+	- Changed headings as per accessability.
+	- Changes done in readme.txt file.
+  - Changed some code in function.php file.
 
 == Resources ==
 Akhada Fitness Gym WordPress Theme, Copyright 2018 Luzuk
@@ -37,20 +43,33 @@ Akhada Fitness Gym is distributed under the terms of the GNU GPL
 
 Akhada Fitness Gym bundles the following third-party resources:
 
-* CSS bootstrap.css
-	Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
+* Bootstrap
+  - Mark Otto and Jacob Thornton
+  - copyright 2011-2018, Mark Otto and Jacob Thornton
+  - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip 
+  - License: MIT License (MIT) 
+  - https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-* JS bootstrap.js
-	Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-	https://github.com/twbs/bootstrap/blob/master/LICENSE
+* HTML5 Shiv 
+  - Alexander Farkas
+  - Copyright 2014, Alexander Farkas
+  - https://github.com/aFarkas/html5shiv
+  - Licenses: MIT/GPL2
+  - https://github.com/aFarkas/html5shiv
 
-* HTML5 Shiv, Copyright 2014 Alexander Farkas
-	Licenses: MIT/GPL2
-	Source: https://github.com/aFarkas/html5shiv
+* Font Awesome 
+  - Dave Gandy
+  - Copyright July 12, 2018, Dave Gandy 
+  - https://github.com/FortAwesome/Font-Awesome.git
+  - License: Font Awesome Free 5.0.6
+  - http://fontawesome.com/license
 
-* Font Awesome icons, Copyright Dave Gandy
-	License: SIL Open Font License, version 1.1.
-	Source: http://fontawesome.io/
+* Superfish 
+  - Joeldbirch 
+  - Copyright 2013, Justin Tadlock 
+  - https://github.com/joeldbirch/superfish.git 
+  - License: Free to use and abuse under the MIT license. v1.7.9 
+  - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 
 * Stocksnap Images, 
 	License: CC0 1.0 Universal (CC0 1.0)
@@ -60,6 +79,8 @@ Akhada Fitness Gym bundles the following third-party resources:
 	License: CC0 1.0 Universal (CC0 1.0)
 	Source: https://stocksnap.io/photo/M5791YB6J9
 
-* Customizer Pro, Copyright 2016 © Justin Tadlock.
-	License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-	Source: https://github.com/justintadlock/trt-customizer-pro
+* Customizer Pro
+  - Justin Tadlock 
+  - Copyright 2016, Justin Tadlock.
+  - License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
+  - https://github.com/justintadlock/trt-customizer-pro

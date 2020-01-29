@@ -32,7 +32,7 @@ get_header(); ?>
 	          	<?php the_post_thumbnail(); ?>
 	          	<div class="carousel-caption">
 		            <div class="inner_carousel">
-		              	<h2><?php the_title(); ?></h2>
+		              	<h1><?php the_title(); ?></h1>
 		              	<p><?php the_excerpt(); ?></p>
 		              	<div class="more-btn">
 		                	<a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','akhada-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e('READ MORE','akhada-fitness-gym'); ?></span></a>
@@ -64,7 +64,7 @@ get_header(); ?>
 <?php /*--OUR SERVICES--*/?>
 <section id="our-services">
 	<?php if( get_theme_mod('akhada_fitness_gym_service_title') != ''){ ?>
-      	<h3 class="subtitle"><?php echo esc_html(get_theme_mod('akhada_fitness_gym_service_title','')); ?></h3>
+      	<h2 class="subtitle"><?php echo esc_html(get_theme_mod('akhada_fitness_gym_service_title','')); ?></h2>
     <?php }?>
  	<div class="container">
       	<div class="row">
@@ -88,7 +88,7 @@ get_header(); ?>
             	<div class="col-lg-3 col-md-6">
 	                <div class="service-main-box">
 	                	<?php the_post_thumbnail(); ?>
-                      	<h4><?php the_title(); ?></h4>
+                      	<h3><?php the_title(); ?></h3>
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( akhada_fitness_gym_string_limit_words( $excerpt,30 ) ); ?></p>
                         <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','akhada-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e('READ MORE','akhada-fitness-gym'); ?></span></a>
 	                </div>

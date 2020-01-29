@@ -4,7 +4,7 @@ Theme URI: https://www.luzuk.com/themes/free-fitness-wordpress-theme/
 Author: Luzuk
 Author URI: https://www.luzuk.com/
 Description: Akhada Fitness Gym is an impactful, modern and stylish WordPress theme dedicatedly designed for gyms, fitness centres, yoga classes, weight loss centres, personal trainers, aerobics and workout centres. Use it for spa, health and wellness centre, physiotherapy, health consultancy and other fitness related sites with perfect ease. The theme has clean design with user-friendly interface to help user find what they are looking for within few seconds of their landing. It is a responsive theme looking beautiful on all mobiles, tablets and desktops. This fitness theme is cross-browser compatible, translation ready and retina ready looking crisp on every device. It allows customization for almost every part of the theme. With banners and life-size sliders, make the site all the more attractive. Multiple page and blog layouts, template structure, slides, unlimited colours give the option to make your site personalize. The theme is search engine optimized giving higher rank to your site in Google search. Among various sections, testimonial section will speak for your work and services. Faster page loading is what makes the site compatible to today’s speeding world. Videos, audios, columns, various file formats and other things and embedded using shortcodes to make coding clean and secure. Use this theme to make people go crazy for fitness. Demo: https://luzuk.com/demo/akhada-fitness/
-Version: 0.3
+Version: 0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: akhada-fitness-gym
@@ -72,9 +72,19 @@ a:active,
 a:hover {
 	outline-width: 0;	
 }
-a:focus{
-	outline:1px dotted #000;
+a:focus, input:focus, textarea:focus, button:focus, 
+.woocommerce form .form-row input.input-text:focus, 
+.woocommerce form .form-row textarea:focus{
+	color: unset;
+	text-decoration: none;
+	outline: 1px dotted #000;
 	border-bottom: 1px dotted #000;
+}
+.copyright a:focus, .site-footer a:focus, .site-footer button:focus,
+#slider .read-btn a:focus, .nav-menu ul ul a:focus, #top-header input:focus,
+#top-header button:focus{
+	outline-color: #fff;
+	border-bottom-color: #fff;
 }
 abbr[title] {
 	border-bottom: 1px #767676 dotted;
@@ -261,9 +271,6 @@ template {
 
 [hidden] {
 	display: none;
-}
-.content-area {
-    padding-top: 2%;
 }
 
 /*---- Accessibility------ */
@@ -828,12 +835,15 @@ ul.list_nav {
 .logo{
 	padding: 10px 0;
 }
-.logo h1 {
+.logo h1,
+.logo p.site-title {
     font-size: 30px;
     margin: 0;
+    line-height: 1.2;
     font-weight: bold;
 }
-.logo h1 a {
+.logo h1 a,
+.logo p.site-title a {
     color: #fff;
 }
 
@@ -871,7 +881,7 @@ ul.list_nav {
   top: 50%;
   transform: translateY(-50%);  
 }
-#slider .inner_carousel h2 {
+#slider .inner_carousel h1 {
   	margin: 0;
     font-size: 40px;
     letter-spacing: 1px;
@@ -903,7 +913,7 @@ ul.list_nav {
     text-align: center;
     letter-spacing: 1px;
 }
-#our-services h3 {
+#our-services h2 {
     font-size: 28px;
     font-weight: 800;
     letter-spacing: 1px;
@@ -913,8 +923,8 @@ ul.list_nav {
     padding: 15px;
     border: solid 1px #dcdcdc;
 }
-.service-main-box h4 {
-    font-size: 15px;
+.service-main-box h3 {
+    font-size: 16px;
     color: #2b2b2b;
     font-weight: 500;
     padding: 10px 0;
@@ -1002,18 +1012,6 @@ nav.woocommerce-MyAccount-navigation ul li a{
 #masthead .wrap {
 	position: relative;
 }
-
-.site-title {
-	clear: none;
-	font-size: 24px;
-	font-weight: 800;
-	line-height: 1.25;
-	letter-spacing: 0.08em;
-	margin: 0;
-	padding: 0;
-	text-transform: uppercase;
-}
-
 .site-title,
 .site-title a {
 	color: #222;
@@ -1329,6 +1327,7 @@ h3.entry-title a {
 .next.page-numbers {
 	float: right;
 	font-size: 15px;
+	padding: 10px;
 }
 
 p.link-more {
@@ -1605,10 +1604,6 @@ nav.social-navigation :hover {
 	margin: 0 0 1.5em;
 }
 
-.page:not(.home) #content {
-	padding-bottom: 1.5em;
-}
-
 /* 404 page */
 .error404 .page-content {
 	padding-bottom: 4em;
@@ -1786,7 +1781,7 @@ nav.social-navigation :hover {
 	border: solid 1px #dcdcdc;
     padding: 15px;
 }
-h2.widget-title {
+h3.widget-title {
 	color: #fff;
 	font-size: 15px;
 	font-weight: 800;
@@ -1794,7 +1789,7 @@ h2.widget-title {
 	margin-bottom: 1.5em;
 	text-transform: uppercase;
 }
-#sidebar h2.widget-title {
+#sidebar h3.widget-title {
     padding: 10px;
     background-color: #687b22;
     color: #fff;
@@ -1802,7 +1797,7 @@ h2.widget-title {
     letter-spacing: 2px;
     font-weight: 600;
 }
-#sidebar h2.widget-title a{
+#sidebar h3.widget-title a{
 	color: #fff;
 }
 #sidebar .tagcloud a:hover {
@@ -1831,7 +1826,7 @@ div#sidebar a {
 .widget ul li,
 .widget ol li {
 	border-bottom: 1px solid #ddd;
-	padding: 0.5em 0;
+	padding: 5px 0;
 }
 
 .widget ul li + li {
@@ -2862,24 +2857,6 @@ object {
 		left: -1.5em;
 	}
 
-	/* Pages */
-
-	.page.page-one-column .entry-header,
-	.akhada-fitness-gym-front-page.page-one-column .entry-header,
-	.archive.page-one-column:not(.has-sidebar) .page-header {
-		margin-bottom: 4em;
-	}
-
-	.page:not(.home) #content {
-		padding-bottom: 3.25em;
-	}
-
-	/* 404 page */
-
-	.error404 .page-content {
-		padding-bottom: 9em;
-	}
-
 	/* Comments */
 
 	#comments {
@@ -2923,8 +2900,8 @@ object {
 
 	/* Widgets */
 
-	h2.widget-title {
-		font-size: 15px;
+	h3.widget-title {
+		font-size: 20px;
 		margin-bottom: 1em;
 		letter-spacing: 1px;
 	}
@@ -2934,7 +2911,6 @@ object {
 	.site-footer {
 		font-size: 14px;
 		line-height: 1.6;
-		margin-top: 3em;
 	}
 	.social-navigation {
 		clear: left;
@@ -3036,7 +3012,7 @@ object {
   	margin-bottom: 10px;
   	display: block;
   }
-  #slider .inner_carousel h2{
+  #slider .inner_carousel h1{
   	display: none;
   }
 }

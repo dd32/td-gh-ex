@@ -11,17 +11,15 @@
 <div class="col-lg-4 col-md-4">
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="article_content">
-			<header class="entry-header">
-				<?php		
-					if ( is_single() ) {
-						the_title( '<h1 class="entry-title">', '</h1>' );
-					} elseif ( is_front_page() && is_home() ) {
-						the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-					} else {
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-					}
-				?>
-			</header>
+			<?php		
+				if ( is_single() ) {
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				} elseif ( is_front_page() && is_home() ) {
+					the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+				} else {
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				}
+			?>
 
 			<?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
 				<div class="post-thumbnail">
