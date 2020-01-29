@@ -46,8 +46,7 @@ if( $blog_section_title || $blog_section_content ){
                             if( has_post_thumbnail() ){ 
                                 the_post_thumbnail( 'benevolent-blog', array( 'itemprop' => 'image' ) ); 
                             }else{
-                                $placeholder_src = get_template_directory_uri() . '/images/benevolent-blog.jpg';
-                                echo '<img src="' . esc_url( $placeholder_src ) . '" alt="' . esc_attr( strip_tags( get_the_title() ) ) . '" itemprop="image"/>';
+                               benevolent_get_fallback_svg( 'benevolent-blog' );
                             }
                         ?>
                         </a>

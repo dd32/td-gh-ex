@@ -62,9 +62,13 @@ if ( ! class_exists('Benevolent_Recent_Post') ) {
 						<li>
 							<?php if( has_post_thumbnail() && $show_thumb ){ ?>
 								<a href="<?php the_permalink();?>" class="post-thumbnail">
-									<?php the_post_thumbnail( 'benevolent-recent-post', array( 'itemprop' => 'image' ) );?>
+									<?php the_post_thumbnail( 'benevolent-recent-post', array( 'itemprop' => 'image' ) ); ?>
 								</a>
-							<?php }?>
+							<?php }elseif( ! has_post_thumbnail() && $show_thumb ){ ?>
+								<a href="<?php the_permalink();?>" class="post-thumbnail">
+									<?php benevolent_get_fallback_svg( 'benevolent-recent-post' ); ?>
+								</a>
+							<?php } ?>
 							<div class="entry-header">
 								<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
 								<?php if( $show_date ){?>

@@ -621,19 +621,23 @@ endif;
 if( ! function_exists( 'benevolent_change_comment_form_default_fields' ) ) :
 /**
  * Change Comment form default fields i.e. author, email & url.
+ * https://blog.josemcastaneda.com/2016/08/08/copy-paste-hurting-theme/
 */
 function benevolent_change_comment_form_default_fields( $fields ){    
     // get the current commenter if available
     $commenter = wp_get_current_commenter();
  
     // core functionality
-    $req = get_option( 'require_name_email' );
-    $aria_req = ( $req ? " aria-required='true'" : '' );    
+    $req      = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $required = ( $req ? " required" : '' );
+    $author   = ( $req ? __( 'Name*', 'benevolent' ) : __( 'Name', 'benevolent' ) );
+    $email    = ( $req ? __( 'Email*', 'benevolent' ) : __( 'Email', 'benevolent' ) );
  
     // Change just the author field
-    $fields['author'] = '<p class="comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( 'Name*', 'benevolent' ) . '</label><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['author'] = '<p class="comment-form-author"><label class="screen-reader-text" for="author">' . esc_html__( 'Name', 'benevolent' ) . '<span class="required">*</span></label><input id="author" name="author" placeholder="' . esc_attr( $author ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $required . ' /></p>';
     
-    $fields['email'] = '<p class="comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( 'Email*', 'benevolent' ) . '</label><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'benevolent' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' /></p>';
+    $fields['email'] = '<p class="comment-form-email"><label class="screen-reader-text" for="email">' . esc_html__( 'Email', 'benevolent' ) . '<span class="required">*</span></label><input id="email" name="email" placeholder="' . esc_attr( $email ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . $required. ' /></p>';
     
     $fields['url'] = '<p class="comment-form-url"><label class="screen-reader-text" for="url">' . esc_html__( 'Website', 'benevolent' ) . '</label><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>'; 
     
@@ -645,15 +649,15 @@ add_filter( 'comment_form_default_fields', 'benevolent_change_comment_form_defau
 if( ! function_exists( 'benevolent_change_comment_form_defaults' ) ) :
 /**
  * Change Comment Form defaults
+ * https://blog.josemcastaneda.com/2016/08/08/copy-paste-hurting-theme/
 */
-function benevolent_change_comment_form_defaults( $fields ){ 
-    $comment_field = $fields['comment'];   
-    $fields['comment'] = '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( 'Comment', 'benevolent' ) . '</label><textarea id="comment" name="comment" cols="40" rows="8" required="required" placeholder="' . esc_attr__( 'Comment','benevolent' ) . '"></textarea></p>';;
+function benevolent_change_comment_form_defaults( $defaults ){    
+    $defaults['comment_field'] = '<p class="comment-form-comment"><label class="screen-reader-text" for="comment">' . esc_html__( 'Comment', 'benevolent' ) . '</label><textarea id="comment" name="comment" placeholder="' . esc_attr__( 'Comment', 'benevolent' ) . '" cols="45" rows="8" aria-required="true" required></textarea></p>';
     
-    return $fields;    
+    return $defaults;    
 }
 endif;
-add_filter( 'comment_form_fields', 'benevolent_change_comment_form_defaults' );
+add_filter( 'comment_form_defaults', 'benevolent_change_comment_form_defaults' );
 
 if( ! function_exists( 'wp_body_open' ) ) :
 /**
@@ -665,5 +669,64 @@ function wp_body_open() {
 	 * Triggered after the opening <body> tag.
     */
 	do_action( 'wp_body_open' );
+}
+endif;
+
+if( ! function_exists( 'benevolent_get_image_sizes' ) ) :
+/**
+ * Get information about available image sizes
+ */
+function benevolent_get_image_sizes( $size = '' ) {
+ 
+    global $_wp_additional_image_sizes;
+ 
+    $sizes = array();
+    $get_intermediate_image_sizes = get_intermediate_image_sizes();
+ 
+    // Create the full array with sizes and crop info
+    foreach( $get_intermediate_image_sizes as $_size ) {
+        if ( in_array( $_size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
+            $sizes[ $_size ]['width'] = get_option( $_size . '_size_w' );
+            $sizes[ $_size ]['height'] = get_option( $_size . '_size_h' );
+            $sizes[ $_size ]['crop'] = (bool) get_option( $_size . '_crop' );
+        } elseif ( isset( $_wp_additional_image_sizes[ $_size ] ) ) {
+            $sizes[ $_size ] = array( 
+                'width' => $_wp_additional_image_sizes[ $_size ]['width'],
+                'height' => $_wp_additional_image_sizes[ $_size ]['height'],
+                'crop' =>  $_wp_additional_image_sizes[ $_size ]['crop']
+            );
+        }
+    } 
+    // Get only 1 size if found
+    if ( $size ) {
+        if( isset( $sizes[ $size ] ) ) {
+            return $sizes[ $size ];
+        } else {
+            return false;
+        }
+    }
+    return $sizes;
+}
+endif;
+
+if ( ! function_exists( 'benevolent_get_fallback_svg' ) ) :    
+/**
+ * Get Fallback SVG
+*/
+function benevolent_get_fallback_svg( $post_thumbnail ) {
+    if( ! $post_thumbnail ){
+        return;
+    }
+    
+    $image_size = benevolent_get_image_sizes( $post_thumbnail );
+     
+    if( $image_size ){ ?>
+        <div class="svg-holder">
+             <svg class="fallback-svg" viewBox="0 0 <?php echo esc_attr( $image_size['width'] ); ?> <?php echo esc_attr( $image_size['height'] ); ?>" preserveAspectRatio="none">
+                    <rect width="<?php echo esc_attr( $image_size['width'] ); ?>" height="<?php echo esc_attr( $image_size['height'] ); ?>" style="fill:#d0cfcf;"></rect>
+            </svg>
+        </div>
+        <?php
+    }
 }
 endif;
