@@ -75,7 +75,7 @@ final class Apex_Business_Customize {
 				array(
 					'title'    => esc_html__( 'Premium Verison', 'apex-business' ),
 					'pro_text' => esc_html__( 'Get All Features',  'apex-business' ),
-					'pro_url'  => 'https://www.crafthemes.com/apex-business-pro/',
+					'pro_url'  => 'https://www.crafthemes.com/apex-business/',
 					'priority' => 0
 				)
 			)

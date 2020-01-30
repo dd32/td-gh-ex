@@ -23,7 +23,7 @@ function apex_business_get_started_setup( $wp_customize ) {
         new WP_Customize_Control(
             $wp_customize, 'apex_business_get_started_button_control', array(
                 /* Translators: %s: Get Started Link */
-                'description'    => sprintf( __( 'Make sure you\'ve Activated & Published your changes %1$sGet Started with Apex Business%2$s', 'apex-business' ), '<a class="jquery-btn-get-started ct-customizer-getstarted button button-primary" href="' . esc_url( '#' ) . '">', '</a>' ),
+                'description'    => sprintf( __( 'Make sure you\'ve Activated & Published your changes %1$sGet Started with Apex Business%2$s <small>This will install and activate crafthemes demo import plugin</small>', 'apex-business' ), '<a class="jquery-btn-get-started ct-customizer-getstarted button button-primary" href="' . esc_url( '#' ) . '">', '</a>' ),
                 'section'         => 'apex_business_get_started_section',
                 'settings'        => 'apex_business_get_started_button_setting',
                 'type'            => 'hidden',

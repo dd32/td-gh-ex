@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-m
 Requires at least: 4.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 0.0.21
+Stable tag: 0.0.22
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,8 +39,11 @@ https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 == Changelog ==
 
-= 0.0.21 - January 21 2020 =
-* Fixed bugs pointed by theme reviewer
+= 0.0.22 - January 30 2020 =
+* Fixed bugs
+
+= 0.0.21 - January 30 2020 =
+* Fixed bugs
 
 = 0.0.20 - January 21 2020 =
 * Fixed bugs pointed by theme reviewer
@@ -113,6 +116,10 @@ Source: http://getbootstrap.com
 jQuery offscreen plugin, Copyright Cory LaViska
 jQuery offscreen plugin is licensed under the MIT license
 Source: https://gist.github.com/claviska/7240757
+
+Icon Picker Customizer Control, Copyright Hardeep Asrani
+Icon Picker Customizer Control is licensed under the GNU General Public License
+Source: https://github.com/HardeepAsrani/o2
 
 Customizer Controls, Copyright CodeinWp
 Customizer Controls is licensed under the MIT license

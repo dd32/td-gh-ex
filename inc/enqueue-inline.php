@@ -53,9 +53,9 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_section_height_setting', '.theme-padding', array( 'padding-top', 'padding-bottom' ), array( 72, 72, 72 ), 'px' );
 
     /** Loading Bar Color **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_loading_bar_color_setting', '#loading #pulse span', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_loading_bar_color_setting', '#loading #pulse span', 'background', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
-    if (  !get_theme_mod( 'apex_business_loading_bar_color_setting', APEX_BUSINESS_PRIMARY_COLOR ) ) {
+    if (  get_theme_mod( 'apex_business_loading_bar_color_setting', APEX_BUSINESS_PRIMARY_COLOR ) != '' ) {
         $apex_business_custom_css   .= '@keyframes pulse_animation { 0% { box-shadow: 0 0 0 0 ' . esc_attr( get_theme_mod( 'apex_business_loading_bar_color_setting' ) ) . '; } 100% { box-shadow: 0 0 0 40px rgba(43, 57, 72, 0); } }';
     }
 

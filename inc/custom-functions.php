@@ -7,9 +7,9 @@
  *  Theme State
  *******************************************************************************/
 
-define('CT_THEME_STATE', 'free');
+define('CT_THEME_STATE', 'pro');
 
-if ( CT_THEME_STATE == 'pro' ) {
+if ( CT_THEME_STATE == 'free' ) {
     require_once( get_template_directory() . '/premium/premium-functions.php' );
 }
 
