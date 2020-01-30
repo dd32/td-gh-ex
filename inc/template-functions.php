@@ -89,6 +89,8 @@ if( ! function_exists( 'bakery_shop_header_bottom' ) ) :
  * @since 1.0.1
 */
 function bakery_shop_header_bottom(){
+
+    $ed_curtain = get_theme_mod( 'bakery_shop_ed_curtain' );
     ?>
     <div class="header-bottom">    
         <div class="container">
@@ -99,6 +101,9 @@ function bakery_shop_header_bottom(){
                 <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
             </nav><!-- #site-navigation -->
         </div>
+        <?php if( $ed_curtain ){
+            echo '<div class="curtain"><div class="curtain-holder"></div></div>';
+        } ?>
     </div>
     <?php 
 }
@@ -244,11 +249,15 @@ global $bakery_shop_default_post;
                                                 echo '<a href="' . esc_url( get_the_permalink() ) .'">';
                                                     the_post_thumbnail( 'bakery-shop-recent-post' ); 
                                                 echo '</a>';
-                                            }
+                                            }else{
+                                            echo '<a href="' . esc_url( get_the_permalink() ) .'">';
+                                                echo '<i class="fa ' . esc_attr( $bakery_shop_featured_page_icon ) .'"></i>';
+                                            echo '</a>';
+                                        } 
                                         ?>
                                         <div class="featured-text">
                                             <a href="<?php the_permalink(); ?>"><?php the_title('<h3>','</h3>'); ?></a>
-                                            <?php echo esc_attr(wp_trim_words(get_the_content(),11,'&hellip;')); ?>
+                                            <?php echo esc_html(wp_trim_words(get_the_content(),11,'&hellip;')); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -281,30 +290,24 @@ function bakery_shop_welcome(){
     if( $welcome_enable ){
         echo '<section id="about" class="about-section">';
             echo '<div class="container">';
-                echo '<div class="row">';
                 if( have_posts() ){
                     while( have_posts() ){
                         the_post();
                     ?>
                     
                     <div class="about-item">
-                        <div class="col-6">
-                            <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'bakery-shop-welcome' ); } ?>
-                        </div>
-                        <div class="col-6">
-                            <div class="about-text">
-                                <?php
-                                    the_title('<h1 class="section-title">', '</h1>');
-                                    the_content(); 
-                                ?>
-                            </div>
+                        <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'bakery-shop-welcome' ); } ?>
+                        <div class="about-text">
+                            <?php
+                                the_title('<h1 class="section-title">', '</h1>');
+                                the_content(); 
+                            ?>
                         </div>
                     </div>
                     <?php
                     }
                 }
                 wp_reset_postdata();  
-                echo '</div>'; 
             echo '</div>'; 
         echo '</section>';     
     }    
@@ -512,20 +515,20 @@ function bakery_shop_cta(){
                <section id="cta" class="cta-section" <?php if( has_post_thumbnail() ) echo 'style="background: url(' . esc_url( get_the_post_thumbnail_url() ) . ')no-repeat; background-size: cover; background-position: center; background-attachment: fixed;"';?> >
                     <div class="container">
                         <div class="row">
-                                <?php
-                                    the_title('<h1 class="section-title">', '</h1>');
-                                    the_content(); 
+                            <?php
+                                the_title('<h1 class="section-title">', '</h1>');
+                                echo '<div class="cta-content">';
+                                the_content(); 
+                                echo '</div>';
+                            ?>
+                            <div class="cta-btn">
+                                <?php 
+                                    if( $cta_one && $cta_one_url ) { 
+                                        echo '<a class="btn pink" href="' . esc_url( $cta_one_url ) . '">';
+                                            echo esc_html( $cta_one ); 
+                                        echo '</a>';
+                                    } 
                                 ?>
-                                <div class="cta-btn">
-                                    <?php 
-                                        if( $cta_one && $cta_one_url ) { 
-                                            echo '<a class="btn pink" href="' . esc_url( $cta_one_url ) . '">';
-                                                echo esc_html( $cta_one ); 
-                                            echo '</a>';
-                                        } 
-                                    ?>
-                                </div>
-                            
                             </div>
                         </div>
                     </div> 
@@ -538,6 +541,7 @@ function bakery_shop_cta(){
 }
 
 endif;
+
 
 if( ! function_exists( 'bakery_shop_team' ) ) :
 /**
@@ -583,7 +587,7 @@ function bakery_shop_team(){
                             <div class="team-item">
                                 <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'bakery-shop-teams' ); }
                                     else{
-                                        echo '<img src="' . get_template_directory_uri().'/images/team-one.png">';
+                                        echo '<img src="' . esc_url( get_template_directory_uri() ).'/images/team-one.png">';
                                     } ?>
                                 <div class="team-mask">
                                     <a href="<?php the_permalink(); ?>"><?php the_title( '<h3>', '</h3>'); ?></a>
@@ -651,7 +655,7 @@ function bakery_shop_testimonial(){
                                 <div class="testimonial-thumbnail">
                                     <?php if( has_post_thumbnail() ){ the_post_thumbnail( 'thumbnail' ); }
                                     else{
-                                        echo '<img src="' . get_template_directory_uri().'/images/team-profile-non.jpg">';
+                                        echo '<img src="' . esc_url( get_template_directory_uri() ).'/images/team-profile-non.jpg">';
                                     } ?>
                                     <div class="testimonial-info">
                                         <h3><?php the_title(); ?></h3>
@@ -683,7 +687,7 @@ function bakery_shop_content_start(){
     $ed_slider = get_theme_mod( 'bakery_shop_ed_slider','1' );
     $class = is_404() ? 'error-holder' : 'row' ;
     
-    if( ! is_page_template( 'template-home.php' ) && !( $ed_slider && is_front_page() ) ){
+    if( !( $ed_slider && is_front_page() && !is_home()) ){
     ?>
     <div id="content" class="site-content">
         <div class="container">
@@ -704,8 +708,6 @@ function bakery_shop_page_content_image(){
     if( has_post_thumbnail() ){
         echo '<div class="post-thumbnail">';
             if( is_active_sidebar( 'right-sidebar' ) && ( $sidebar_layout == 'right-sidebar' ) ) {
-                the_post_thumbnail( 'bakery-shop-with-sidebar' );
-            }else{ 
                 the_post_thumbnail( 'bakery-shop-without-sidebar' );    
             }
         echo '</div>';
@@ -837,7 +839,7 @@ function bakery_shop_content_end(){
 
     $ed_slider = get_theme_mod( 'bakery_shop_ed_slider','1' );
     
-    if( ! is_page_template( 'template-home.php' ) && !( $ed_slider && is_front_page() ) ){
+    if( !( $ed_slider && is_front_page() && ! is_home() ) ){
         echo '</div></div></div>';// .row /#content /.container
     }
 }
@@ -904,7 +906,7 @@ function bakery_shop_footer_credit(){
                 echo esc_html( '&copy;&nbsp;'. date_i18n( 'Y' ), 'bakery-shop' );
                 echo ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
 
-                printf( '&nbsp;%s', '<a href="'. esc_url( __( 'http://prosystheme.com/wordpress-themes/bakery-shop/', 'bakery-shop' ) ) .'" target="_blank">'. esc_html__( 'Bakery Shop By Prosys Theme. ', 'bakery-shop' ) .'</a>' );
+                printf( '&nbsp;%s', '<a href="'. esc_url( __( 'http://prosysthemes.com/wordpress-themes/bakery-shop/', 'bakery-shop' ) ) .'" target="_blank">'. esc_html__( 'Bakery Shop By Prosys Theme. ', 'bakery-shop' ) .'</a>' );
                 printf( esc_html__( 'Powered by %s', 'bakery-shop' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'bakery-shop' ) ) .'" target="_blank">'. esc_html__( 'WordPress', 'bakery-shop' ) . '</a>' );
             echo '</div>';
         echo '</div>';

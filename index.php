@@ -40,7 +40,11 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination( array(
+	   			'mid_size' => 2,
+	  			'prev_text' => __( '<span class="fa fa-angle-double-left"></span>', 'bakery-shop' ),
+	   			'next_text' => __( '<span class="fa fa-angle-double-right"></span>', 'bakery-shop' ),
+			) ); 
 
 		else :
 

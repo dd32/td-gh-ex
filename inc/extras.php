@@ -236,8 +236,8 @@ if( ! function_exists( 'bakery_shope_breadcrumbs_cb' ) ) :
 function bakery_shop_breadcrumbs_cb() {
   
     $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-    $delimiter = esc_html( get_theme_mod( 'bakery_shop_breadcrumb_separator', '>' ) ); // delimiter between crumbs
-    $home = esc_html( get_theme_mod( 'bakery_shop_breadcrumb_home_text', __( 'Home', 'bakery-shop' ) ) ); // text for the 'Home' link
+    $delimiter = get_theme_mod( 'bakery_shop_breadcrumb_separator', '>' ); // delimiter between crumbs
+    $home = get_theme_mod( 'bakery_shop_breadcrumb_home_text', __( 'Home', 'bakery-shop' ) ); // text for the 'Home' link
     $showCurrent = get_theme_mod( 'bakery_shop_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $before = '<span class="current">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
@@ -256,7 +256,7 @@ function bakery_shop_breadcrumbs_cb() {
         
             if ( is_category() ) {
                 $thisCat = get_category( get_query_var( 'cat' ), false );
-                if ( $thisCat->parent != 0 ) echo get_category_parents( $thisCat->parent, TRUE, ' <span class="separator">' . $delimiter . '</span> ' );
+                if ( $thisCat->parent != 0 ) echo get_category_parents( $thisCat->parent, TRUE, ' <span class="separator">' . esc_html( $delimiter ) . '</span> ' );
                 echo $before .  esc_html( single_cat_title( '', false ) ) . $after;
             
             } elseif ( is_search() ) {
