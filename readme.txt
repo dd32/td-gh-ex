@@ -4,7 +4,7 @@ Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-m
 Requires at least: 4.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 0.0.20
+Stable tag: 0.0.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,7 +39,10 @@ https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 == Changelog ==
 
-= 0.0.20 - January 27 2020 =
+= 0.0.21 - January 21 2020 =
+* Fixed bugs pointed by theme reviewer
+
+= 0.0.20 - January 21 2020 =
 * Fixed bugs pointed by theme reviewer
 
 = 0.0.19 - January 15 2020 =
@@ -47,15 +50,6 @@ https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 = 0.0.18 - January 13 2020 =
 * Fixed bugs pointed by theme reviewer
-
-= 0.0.17 - January 7 2020 =
-* Fixed bugs pointed by theme reviewer
-
-= 0.0.16 - December 27 2019 =
-* Fixed bugs
-
-= 0.0.15 - December 27 2019 =
-* Fixed bugs
 
 = 0.0.14 - December 20 2019 =
 * Fixed bugs pointed by theme reviewer
@@ -154,4 +148,16 @@ License: CC0 Public Domain
 
 https://stocksnap.io/photo/0SHBIHYBNJ
 Copyright Bruce Mars
+License: CC0 Public Domain
+
+https://stocksnap.io/photo/E5GUBD8MWN
+Copyright Bruce Mars
+License: CC0 Public Domain
+
+https://pxhere.com/en/photo/1431655
+rawpixel.com
+License: CC0 Public Domain
+
+https://pxhere.com/en/photo/1434827
+rawpixel.com
 License: CC0 Public Domain

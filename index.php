@@ -15,9 +15,9 @@ get_header();
 <section class="main-banner-area blog-banner">
     <div class="banner">
         <div class="color-overlay"></div><!-- /.color-overlay -->
-        <?php if ( get_theme_mod( 'apex_business_blog_banner_content_setting', esc_html__( 'Blog', 'apex-business' ) ) != '' ) : ?>
+        <?php if ( get_theme_mod( 'apex_business_blog_banner_content_setting', 'Blog' ) != '' ) : ?>
             <div class="banner-content">
-                <h1><?php echo esc_html( get_theme_mod( 'apex_business_blog_banner_content_setting', esc_html__( 'Blog', 'apex-business' ) ) ); ?></h1>
+                <h1><?php echo esc_html( get_theme_mod( 'apex_business_blog_banner_content_setting', 'Blog' ) ); ?></h1>
             </div><!-- /.banner-content -->
         <?php endif; ?>
     </div><!-- /.banner -->
@@ -57,9 +57,12 @@ get_header();
         </div><!-- /.row -->
         <?php
             // Pagination
-            get_template_part( 'template-parts/pagination/pagination', get_post_format() );
+           if ( function_exists( 'apex_business_pagination_op' ) ) {
+                apex_business_pagination_op();
+           } else {
+                get_template_part( 'template-parts/pagination/pagination', get_post_format() );
+           }
         ?>
-
     </div><!-- /.container -->
 </section><!-- /.news-section theme-padding -->
 <?php

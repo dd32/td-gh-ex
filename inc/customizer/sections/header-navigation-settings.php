@@ -817,7 +817,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_header_link_color_setting',
         array(
-            'default'           => APEX_BUSINESS_TEXT_COLOR,
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',
@@ -974,7 +974,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
             $wp_customize,
             'apex_business_header_mobile_header_icon_color_control',
             array(
-                'label'         => __( 'Text Logo Color', 'apex-business' ),
+                'label'         => __( 'Mobile menu icon Color', 'apex-business' ),
                 'priority'      => 25,
                 'section'       => 'apex_business_header_navigation_section',
                 'settings'      => 'apex_business_header_mobile_header_icon_color_setting',
@@ -1354,6 +1354,10 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
+    if ( function_exists( 'apex_business_transparent_header_border' ) ) {
+        apex_business_transparent_header_border( $wp_customize );
+    }
+
      // Alpha Color Picker control.
     $wp_customize->add_control(
         new Apex_Business_Customizer_Alpha_Color_Control(
@@ -1442,7 +1446,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_transparent_mobile_nav_icon_color_settings',
         array(
-            'default'           =>  APEX_BUSINESS_TEXT_COLOR,
+            'default'           =>  APEX_BUSINESS_PRIMARY_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'transport'         => 'postMessage',

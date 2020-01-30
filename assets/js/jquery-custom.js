@@ -45,7 +45,7 @@
         $( '.mobile-nav>li:first-child a' ).focus();
     } );
 
-    $( '.mobile-nav>li:first-child a' ).keydown(function(e) {
+    $( '.mobile-nav li:first-child a' ).keydown(function(e) {
         if( e.which  == 9 && e.shiftKey ){
             e.preventDefault();
             $( this ).parents( '.mobile-nav' ).siblings( '.js-ct-menubar-close' ).focus();

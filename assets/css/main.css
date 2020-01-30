@@ -116,8 +116,12 @@ select {
   height: auto;
   color: #2b3948;
   padding: 10px;
-  border: 1px solid #dee0e0;
+  border: 1px solid transparent;
   border-radius: 3px; }
+
+/*woocommerce code*/
+.woocommerce .quantity .qty {
+  padding: 5px; }
 
 input[type="button"],
 input[type="submit"],
@@ -136,6 +140,9 @@ button {
 
 ::placeholder {
   font-size: 14px; }
+
+.search-field, input {
+  border: 1px solid #f5f5f5; }
 
 /*=========================
     02. GENERAL STYLE
@@ -174,6 +181,10 @@ body {
       #loading #pulse span:nth-child(2) {
         animation-delay: 0.3s;
         /* Start the second wave with some delay */ }
+
+.ct-content-area .hentry {
+  padding-right: 0;
+  padding-left: 0; }
 
 .grid-item {
   margin-bottom: 30px; }
@@ -568,19 +579,17 @@ body {
 /**
  * Website button
  */
-button:hover, .button:hover {
+.nav-button:hover, .nav-button:hover {
   background-color: #43c6ac;
   color: white; }
 
-button, .button {
+.nav-button {
   color: white; }
 
-button, .button {
-  height: 100%;
-  width: 80px;
+.nav-button {
   font-size: 12px;
   padding: 6px 6px;
-  background-color: #2b3948;
+  background-color: #43c6ac;
   border-radius: 3px;
   text-align: center;
   border-style: solid;
@@ -694,6 +703,16 @@ button, .button {
 .loop-list-layout:last-child .entry-container {
   margin-bottom: 0; }
 
+.elementor-template-full-width,
+.page-template-template-fullwidth {
+  background-color: white; }
+
+.wpcf7-form .col-md-4 *,
+.wpcf7-form .col-md-3 *,
+.wpcf7-form .col-md-2 * {
+  display: block;
+  min-width: 100%; }
+
 /*=====================
     03. HEADER
 =======================*/
@@ -705,7 +724,7 @@ button, .button {
   line-height: 1.2; }
 
 /* Larger than tablet */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .header-widgets-right {
     display: none; } }
 /**
@@ -718,7 +737,9 @@ button, .button {
   width: 100%;
   z-index: 9999; }
   .ct-transparent-header .no-stick {
-    background-color: transparent; }
+    background-color: transparent;
+    padding-top: 10px;
+    padding-bottom: 10px; }
 
 .topbar-content {
   display: inline-block;
@@ -767,6 +788,10 @@ button, .button {
 
 .main-header {
   background-color: white; }
+
+.header-spacing {
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .sticky-header {
   transition: all .2s ease; }
@@ -884,6 +909,9 @@ button, .button {
 .ct-transparent-header {
   box-shadow: none; }
 
+.ct-trans-bar.no-stick {
+  border-bottom: 1px solid #dee0e0; }
+
 /**
  *
  * #.# Search Dropdown
@@ -993,6 +1021,12 @@ button, .button {
 
 .ct-transparent-header .site-logo div a {
   color: white; }
+
+@media screen and (max-width: 782px) {
+  .admin-bar .mobile-menu-open {
+    top: 46px; } }
+.mobile-navigation .mobile-nav {
+  margin-top: 20px; }
 
 /*=========================
     04. NAVIGATION MENU
@@ -1283,6 +1317,28 @@ nav a {
   to {
     -webkit-transform: rotate(359deg); } }
 
+.spinner {
+  position: relative;
+  height: 5rem; }
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 6px solid #ccc;
+  border-top-color: #43c6ac;
+  animation: spin .6s linear infinite; }
+
+.hidden {
+  visibility: hidden; }
+
 /* 17.2 BLOG PAGE */
 .pagination span {
   font-size: 18px;
@@ -1436,9 +1492,8 @@ nav a {
       margin-left: 100px; }
       .comment-area .comment-body .comment-info .reply span {
         padding-right: 5px; }
-
-.children {
-  border-bottom: 1px solid #eee; }
+  .comment-area .children {
+    border-bottom: 1px solid #eee; }
 
 .post-next-prev-nav {
   padding: 20px 0 0 0; }
@@ -1571,8 +1626,10 @@ nav a {
   border-width: 0;
   padding: 15px;
   border-color: #43c6ac; }
-  .footer-bottom .copyright-content p {
-    margin-bottom: 0; }
+  .footer-bottom .copyright-content {
+    font-size: 14px; }
+    .footer-bottom .copyright-content p {
+      margin-bottom: 0; }
 
 /* Footer Widget Gallery*/
 .gallery-columns-3 .gallery-item {
@@ -1640,6 +1697,15 @@ input[type="search"] {
     display: inline-block;
     margin-left: 6px; }
 
+@media (max-width: 768px) {
+  .footer-bottom .footer-menu-items {
+    text-align: center; }
+
+  .footer-bottom .copyright-content {
+    text-align: center; }
+
+  #footer-menu li {
+    margin-left: 0; } }
 .footer-menu-items {
   text-align: right; }
 
@@ -1652,6 +1718,9 @@ input[type="search"] {
 .footer-right {
   text-align: right; }
 
+.ct-footer-bg {
+  background-color: #2b3948; }
+
 /*=========================
     19. MEDIA QUERIES
 ===========================*/
@@ -1662,10 +1731,10 @@ input[type="search"] {
     margin-top: 16px; }
 
   .horizontal-center, .cta-container, .pagination {
-    display: block; } }
-@media screen and (max-width: 782px) {
-  .admin-bar .mobile-menu-open {
-    top: 46px; } }
+    display: block; }
+
+  .ct-content-area {
+    margin-bottom: 30px; } }
 /*WordPress Unit test css*/
 /* =WordPress Core
 -------------------------------------------------------------- */

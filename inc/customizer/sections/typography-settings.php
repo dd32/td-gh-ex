@@ -831,7 +831,7 @@ function apex_business_typography_settings_setup( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'apex_business_h6_font_headline_control', array(
-        'label'           => esc_html__( 'Heading 5 (H5) Font', 'apex-business' ),
+        'label'           => esc_html__( 'Heading 6 (H6) Font', 'apex-business' ),
         'section'         => 'apex_business_typography_settings_section',
         'settings'        => 'apex_business_h6_font_headline_setting',
         'type'            => 'hidden',
@@ -2114,7 +2114,7 @@ function apex_business_typography_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_blockquote_color_setting',
         array(
-            'default'           => 'rgba( 85,85,85 )',
+            'default'           => APEX_BUSINESS_TEXT_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',

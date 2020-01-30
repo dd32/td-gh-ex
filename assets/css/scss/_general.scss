@@ -43,6 +43,13 @@ body {
   }
 }
 
+.ct-content-area {
+  .hentry {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 .grid-item {
     margin-bottom: 30px;
 
@@ -602,20 +609,18 @@ body {
 /**
  * Website button
  */
-button:hover, .button:hover {
+.nav-button:hover, .nav-button:hover {
   background-color: $primary-color;
   color:$white-color;
 }
 
-button, .button {
+.nav-button {
   color: white;
 }
-button, .button {
-  height: 100%;
-  width: 80px;
+.nav-button {
   font-size: 12px;
   padding: 6px 6px;
-  background-color: #2b3948;
+  background-color: #43c6ac;;
   border-radius: 3px;
   text-align: center;
   border-style: solid;
@@ -703,4 +708,16 @@ button, .button {
   .entry-container {
     margin-bottom: 0;
   }
+}
+
+.elementor-template-full-width,
+.page-template-template-fullwidth {
+  background-color: $white-color;
+}
+
+.wpcf7-form .col-md-4 *,
+.wpcf7-form .col-md-3 *,
+.wpcf7-form .col-md-2 * {
+  display: block;
+  min-width: 100%;
 }

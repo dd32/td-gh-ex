@@ -36,6 +36,10 @@ function apex_business_blog_settings_setup( $wp_customize ) {
         )
     );
 
+    if ( function_exists( 'apex_business_post_scroll_option_customizer' ) ) {
+       apex_business_post_scroll_option_customizer( $wp_customize );
+    }
+
     $wp_customize->add_setting(
         'apex_business_masonry_column_number_control', array(
             'capability'        => 'edit_theme_options',
@@ -302,6 +306,7 @@ function apex_business_blog_settings_setup( $wp_customize ) {
        )
     );
 
+
     // single Section
     $wp_customize->add_section( 'apex_business_single_section', array(
         'title'       =>  __( 'Single Metas', 'apex-business' ),
@@ -316,6 +321,10 @@ function apex_business_blog_settings_setup( $wp_customize ) {
             'default'           => 1,
        )
     );
+
+    if ( function_exists( 'apex_business_single_post_option_customizer' ) ) {
+       apex_business_single_post_option_customizer( $wp_customize );
+    }
 
     $wp_customize->add_control( 'apex_business_single_display_author_control',
        array(
@@ -403,6 +412,10 @@ function apex_business_blog_settings_setup( $wp_customize ) {
             'capability'        => 'edit_theme_options', // Optional. Default: 'edit_theme_options'
        )
     );
+
+    if ( function_exists( 'apex_business_social_share_customizer' ) ) {
+        apex_business_social_share_customizer( $wp_customize );
+    }
 
 }
 

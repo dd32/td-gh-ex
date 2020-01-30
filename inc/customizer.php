@@ -11,10 +11,10 @@
  * @see _wp_customize_include()
  */
 
-define( 'APEX_BUSINESS_PRIMARY_COLOR', '#43c6ac' );
-define( 'APEX_BUSINESS_HOVER_COLOR', '#2b3948' );
+define( 'APEX_BUSINESS_PRIMARY_COLOR', ' #43c6ac' );
+define( 'APEX_BUSINESS_HOVER_COLOR', '#1e6254' );
 define( 'APEX_BUSINESS_TEXT_COLOR', '#2b3948' );
-define( 'APEX_BUSINESS_WHITE_COLOR', '#fff' );
+define( 'APEX_BUSINESS_WHITE_COLOR', '#ffffff' );
 define( 'APEX_BUSINESS_DEEP_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba(67, 198, 172, 0.8);' );
 
@@ -52,6 +52,7 @@ function apex_business_customizer_live_previw() {
 add_action('customize_preview_init','apex_business_customizer_live_previw');
 
 
+get_template_part( 'inc/customizer/sections/get-started' );
 get_template_part( 'inc/customizer/sections/basic-settings' );
 get_template_part( 'inc/customizer/sections/topbar-settings' );
 get_template_part( 'inc/customizer/sections/layout-settings' );

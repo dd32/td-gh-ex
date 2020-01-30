@@ -28,3 +28,15 @@ function apex_business_enqueue_cs_js() {
 endif;
 
 add_action( 'wp_enqueue_scripts', 'apex_business_enqueue_cs_js' );
+
+if ( ! function_exists( 'apex_business_admin_scripts' ) ) :
+function apex_business_admin_scripts() {
+    wp_enqueue_media();
+    wp_enqueue_script( 'apex-business-jquery-admin-script', get_template_directory_uri() . '/assets/js/jquery-admin-script.js', array( 'jquery' ), '', true );
+    wp_localize_script( 'apex-business-jquery-admin-script', 'ct_ajax_object',
+        array( 'ajax_url' => admin_url( 'admin-ajax.php' ) )
+    );
+}
+endif;
+add_action( 'admin_enqueue_scripts', 'apex_business_admin_scripts' );
+add_action( 'customize_controls_enqueue_scripts', 'apex_business_admin_scripts' );

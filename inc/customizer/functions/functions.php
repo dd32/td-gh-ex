@@ -122,5 +122,5 @@ function apex_business_backgorund_image( $setting, $css_selector ) {
         return $return;
     }
 
-    return false;
+    return '';
 }
