@@ -23,7 +23,7 @@
 				$( 'body' ).addClass( 'title-tagline-hidden' );
 			} else {
 				$( 'body' ).removeClass( 'title-tagline-hidden' );
-				var style = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,#site-top-right h1,#site-top-right h2,#site-top-right h3,#site-top-right h4,#site-top-right h5,#site-top-right h6,.top-account h2,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after,#masthead .search-form input[type="search"]::placeholder, #masthead .woocommerce-product-search input[type="search"]::placeholder{color:' + to + ';}';
+				var style = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,#site-top-right h1,#site-top-right h2,#site-top-right h3,#site-top-right h4,#site-top-right h5,#site-top-right h6,.top-account h2,.toggle-nav,.toggle-nav:hover,.toggle-nav:focus,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after,#masthead .search-form input[type="search"]::placeholder, #masthead .woocommerce-product-search input[type="search"]::placeholder{color:' + to + ';}';
 				$('head').append('<style>' + style + '</style>');
 			}			
 		} );

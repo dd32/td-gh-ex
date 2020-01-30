@@ -175,7 +175,7 @@ if ( !function_exists( 'azuma_header_account' ) ) {
 			<?php } ?>
 				<div class="mini-account">
 				<?php if ( is_user_logged_in() ) {
-					woocommerce_account_content();
+					echo '<p class="display-name"><i class="fa fa-user"></i> <strong>' . esc_html( wp_get_current_user()->display_name ) . '</strong></p>';
 					woocommerce_account_navigation();
 				} else {
 					wc_get_template( 'myaccount/form-login.php' );

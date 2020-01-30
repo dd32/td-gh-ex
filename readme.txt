@@ -18,6 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.1.2 - January 30, 2020
+CSS update for forms and buttons
+Removed woocommerce_account_content() from header account dropdown
+
 1.1.1 - January 21, 2020
 Fix for large page/post titles sometimes appearing behind masthead
 Added extra Site Title size options for tablet and mobile

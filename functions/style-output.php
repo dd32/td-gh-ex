@@ -113,7 +113,7 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 
 		$header_textcolor = get_theme_mod( 'header_textcolor', 'ffffff' );
 		if ( $header_textcolor && $header_textcolor != 'ffffff' ) {
-			$css[] = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,#site-top-right h1,#site-top-right h2,#site-top-right h3,#site-top-right h4,#site-top-right h5,#site-top-right h6,.top-account h2,.toggle-nav,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after,#masthead .search-form input[type="search"]::placeholder, #masthead .woocommerce-product-search input[type="search"]::placeholder{color:#' . esc_attr($header_textcolor) . ';}';
+			$css[] = '.site-description,#primary-menu,#primary-menu li a,#primary-menu li.highlight.current-menu-item > a,#site-top-right,#site-top-right a,#site-top-right h1,#site-top-right h2,#site-top-right h3,#site-top-right h4,#site-top-right h5,#site-top-right h6,.top-account h2,.toggle-nav,.toggle-nav:hover,.toggle-nav:focus,#masthead .search-form input[type="search"],#masthead .woocommerce-product-search input[type="search"],#masthead .search-form input[type="submit"]:after,#masthead .woocommerce-product-search button[type="submit"]:after,#masthead .search-form input[type="search"]::placeholder, #masthead .woocommerce-product-search input[type="search"]::placeholder{color:#' . esc_attr($header_textcolor) . ';}';
 		}
 
 		$hi_color = get_theme_mod( 'hi_color', '#ff7800' );

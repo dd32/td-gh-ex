@@ -4,7 +4,7 @@ Theme URI: https://uxlthemes.com/theme/azuma/
 Author: UXL Themes
 Author URI: https://uxlthemes.com
 Description: Azuma is a customizable WordPress theme which features a sticky header, homepage hero or slider using the standard WordPress image widget, sortable homepage sections, custom colors and fonts, grid layout options and support for video posts/articles. Support for Easy Digital Downloads (EDD) and WooCommerce ecommerce plugins along with Wishlist and Quick View plugins is included along with an auto-updating shopping cart, sticky add-to-cart panel on single product pages and a horizontal product filter widget area.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: azuma
@@ -488,12 +488,11 @@ input[type="submit"],
 	font-weight: initial;
 	text-transform: uppercase;
 	background: #ff7800;
-	padding: 0 20px;
+	padding: .618em 1em;
 	color: #fff;
 	border: 0;
 	border-radius: 2px;
-	line-height: 36px;
-	height: 36px;
+	line-height: 1;
 	transition: all .3s ease;
 }
 
@@ -542,7 +541,7 @@ textarea{
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-webkit-transition:all 0.3s ease-in-out;
-	height: 36px;
+	padding: .618em 1em;
 	width: 100%;
 }
 
@@ -594,26 +593,7 @@ select:focus{
 	outline: 2px dotted #2f3032;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"]{
-	padding: 3px 8px;
-}
-
 textarea{
-	padding: 3px 8px;
 	width: 100%;
 	min-height: 100px;
 }
@@ -1121,6 +1101,10 @@ article{
 
 #grid-loop article .post-thumbnail{
 	margin-bottom: 0;
+}
+
+#grid-loop article .post-thumbnail img{
+	width: 100%;
 }
 
 .entry-content p{
@@ -2072,6 +2056,15 @@ object{
 	transition: all 0.3s ease;
 }
 
+#masthead .top-account .mini-account .display-name{
+	border-bottom: 1px solid rgba(255,255,255,.2);
+	padding: 0 0 .75em 0;
+}
+
+.mini-account .display-name .fa{
+	width: 20px;
+}
+
 #masthead .top-account .mini-account #edd_login_form legend,
 #masthead .top-account .mini-account #edd_register_form legend{
 	font-size: inherit;
@@ -2637,9 +2630,11 @@ span.mini-account .form-row-last{
 
 .toggle-nav:hover{
 	background: transparent;
+	color: #fff;
 }
 
 .toggle-nav:focus{
+	color: #fff;
 	outline: 1px dotted;
 }
 
@@ -4168,7 +4163,7 @@ p.has-background{
 	width: 20px;
 }
 .woocommerce-MyAccount-navigation-link--dashboard:before{
-	content: "\f007";
+	content: "\f58d";
 }
 .woocommerce-MyAccount-navigation-link--orders:before{
 	content: "\f0d1";
