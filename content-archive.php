@@ -22,7 +22,6 @@
 	<div class="entry-content">
         <?php
             $archive_template = of_get_option( 'global_archive_template', 'archive-default' );
-            echo 'aa'.  $archive_template;
             switch ( $archive_template ) {
             	case 'archive-default':
             		$image_size = 'accesspress-mag-singlepost-default';

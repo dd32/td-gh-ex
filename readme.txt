@@ -82,6 +82,9 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+= 2.5.9 =
+ ** Fixed Minor issues
+ ** Refined functions
 
 = 2.5.8 =
  ** Fixed Sidebar issues

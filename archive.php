@@ -57,10 +57,8 @@ $sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
 <?php
  $sidebar_option = of_get_option( 'global_archive_sidebar', 'right-sidebar' );
 
- echo 'aa'. $sidebar_option;
  if( $sidebar_option != 'no-sidebar' ){
         $option_value = explode( '-', $sidebar_option );
- echo 'aa'. $option_value;
         get_sidebar( $option_value[0] );
     }
 ?>
