@@ -1,14 +1,11 @@
 === Academic ===
 
-By Theme Palace
-
+Contributors: themepalace
 Tags: education, translation-ready, custom-background, theme-options, custom-menu, threaded-comments, one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-logo, custom-header, footer-widgets, blog
-
-Contributors: Theme Palace
 Requires at least: 4.5
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -130,7 +127,10 @@ Whereas in Category blog second, you can choose what to display either the categ
 
 == Changelog ==
 
-= 2.2 - Jan 8, 2019
+= 2.3 - Jan 30, 2020
+* Updated tagcloud widget design
+
+= 2.2 - Jan 8, 2020
 * Updated widget css
 
 = 2.1 - Dec 20, 2019
