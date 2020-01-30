@@ -136,7 +136,7 @@ function associationx_customize_register($wp_customize){
 	//  Show This Section in Front Page
     $wp_customize->add_setting('associationx[show_fp_wpblog]', array(
         'default'        	=> '1',
-    	'sanitize_callback' => 'esc_html',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 
