@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audioman\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-01-29 13:04-0800\n"
+"POT-Creation-Date: 2020-01-31 01:01-0800\n"
 "PO-Revision-Date: 2016-12-07 01:05-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -225,7 +225,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: ../inc/breadcrumb.php:174 ../inc/json-ld-schema.php:169
+#: ../inc/breadcrumb.php:174 ../inc/json-ld-schema.php:160
 #, php-format
 msgid "Page %s"
 msgstr ""

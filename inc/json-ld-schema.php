@@ -35,7 +35,7 @@ class Audioman_Json_Ld_Schema {
 		/* === END OF OPTIONS === */
 
 		global $post, $paged, $page;
-		$home_link  = home_url( '/' );
+		$home_link = home_url( '/' );
 
 		if ( is_front_page() ) {
 			if ( $show_on_home ) {
@@ -48,17 +48,14 @@ class Audioman_Json_Ld_Schema {
 					$this->breadcrumb_list[] = $this->add_crumbs( get_the_title( get_option( 'page_for_posts', true ) ), esc_url( $home_link ) );
 				}
 			} elseif ( is_category() ) {
-				$this_cat = get_category( get_query_var( 'cat' ), false );
-				if ( 0 != $this_cat->parent ) {
-					$cats = get_category_parents( $this_cat->parent, true, false );
-					$pos  = strpos( $cats, '<a' );
-					preg_match( '/<a[^>]*>(.*?)<\/a>/i', $cats, $matches );
-					while ( false !== $pos ) {
-						$href = substr( $cats, 0, $pos ) . substr( $cats, strpos( $cats, 'href="', $pos ) + 6 );
-						$href = substr( $href, 0, strpos( $href, '"', $pos ) ) . substr( $href, strpos( $href, '</a>', $pos ) + 4 );
-						$pos  = strpos( $href, '<a' );
+				$cat = get_category( get_query_var( 'cat' ), false );
+				if ( 0 != $cat->parent ) {
+					$cats    = get_category_parents( $this_cat->parent, true, false );
+					$parents = get_ancestors( $cat->term_id, 'category' );
+					$parents = array_reverse( $parents );
+					foreach ( $parents as $parent ) {
+						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
-					$this->breadcrumb_list[] = $this->add_crumbs( $matches[1], $href );
 				}
 				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['category'], '<span class="archive-text">', '&nbsp</span>' . single_cat_title( '', false ) ) );
 
@@ -88,20 +85,18 @@ class Audioman_Json_Ld_Schema {
 						$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 					}
 				} else {
-					$cat  = get_the_category();
-					$cat  = $cat[0];
-					$cats = get_category_parents( $cat, true, '' );
-					if ( 0 == $show_current ) {
-							$cats = preg_replace( '#^(.+)$#', '$1', $cats );
+					$cat = get_the_category();
+					$cat = $cat[0];
+
+					$parents = get_ancestors( $cat->term_id, 'category' );
+					$parents = array_reverse( $parents );
+					foreach ( $parents as $parent ) {
+						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
-					$pos = strpos( $cats, '<a' );
-					preg_match( '/<a[^>]*>(.*?)<\/a>/i', $cats, $matches );
-					while ( false !== $pos ) {
-						$href = substr( $cats, 0, $pos ) . substr( $cats, strpos( $cats, 'href="', $pos ) + 6 );
-						$href = substr( $href, 0, strpos( $href, '"', $pos ) ) . substr( $href, strpos( $href, '</a>', $pos ) + 4 );
-						$pos  = strpos( $href, '<a' );
-					}
-					$this->breadcrumb_list[] = $this->add_crumbs( $matches[1], $href );
+
+					$this->breadcrumb_list[] = $this->add_crumbs( $cat->name, get_category_link( $cat->term_id ) );
+					/* var_dump( $cat->name );
+					var_dump( get_term_link( $cat->term_id ) ); */
 					if ( 1 == $show_current ) {
 						$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 					}
@@ -119,15 +114,11 @@ class Audioman_Json_Ld_Schema {
 				}
 
 				if ( $cat ) {
-					$cats = get_category_parents( $cat, true );
-					$pos  = strpos( $cats, '<a' );
-					preg_match( '/<a[^>]*>(.*?)<\/a>/i', $cats, $matches );
-					while ( false !== $pos ) {
-						$href = substr( $cats, 0, $pos ) . substr( $cats, strpos( $cats, 'href="', $pos ) + 6 );
-						$href = substr( $href, 0, strpos( $href, '"', $pos ) ) . substr( $href, strpos( $href, '</a>', $pos ) + 4 );
-						$pos  = strpos( $href, '<a' );
+					$parents = get_ancestors( $cat->term_id, 'category' );
+					$parents = array_reverse( $parents );
+					foreach ( $parents as $parent ) {
+						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
-					$this->breadcrumb_list[] = $this->add_crumbs( $matches[1], $href );
 				}
 				$this->breadcrumb_list[] = $this->add_crumbs( $parent->post_title, get_permalink( $parent ) );
 				if ( 1 == $show_current ) {
@@ -158,7 +149,7 @@ class Audioman_Json_Ld_Schema {
 
 			} elseif ( is_author() ) {
 				global $author;
-				$userdata          = get_userdata( $author );
+				$userdata                = get_userdata( $author );
 				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['author'], '<span class="author-text">', '&nbsp</span>' . $userdata->display_name ) );
 
 			} elseif ( is_404() ) {
