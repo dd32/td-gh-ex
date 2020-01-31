@@ -73,7 +73,7 @@
 	}
 	
 //	WooCommerce Cart Icon Add
-	if ( esc_html(associationx_get_option('woo-cart-icon', '1')) && associationx_woo_check() ) {
+	if ( esc_attr(associationx_get_option('woo-cart-icon', '1')) && associationx_woo_check() ) {
 	function associationx_wc_cart_count($d5wmenu, $wargs) {
     if( $wargs->theme_location == 'main-menu'):
 	$wcsccount = WC()->cart->get_cart_contents_count();
@@ -174,9 +174,9 @@
 			'. get_avatar( get_the_author_meta('user_email') , 110 ). '
             </div>
             <div class="author-description">
-            <h3 class="author-name">'.$authorname.' ' . get_the_author() .'</h3>
+            <h3 class="author-name">'.$authorname.' ' . esc_attr(get_the_author()) .'</h3>
             
-			' . get_the_author_meta('description'). '
+			' . wp_kses_post(get_the_author_meta('description')). '
             </div>
             </div>';  
 			

@@ -6,7 +6,7 @@
 	Since AssociationX 1.0
 */
 get_header(); 
-$swcf = esc_html__('SORRY, NOT FOUND ANYTHING', 'associationx');
+$swcf = esc_attr__('SORRY, NOT FOUND ANYTHING', 'associationx');
 $nf404img = esc_url(associationx_get_option('nf404-image', get_template_directory_uri() . '/images/404.jpg'));
 if($nf404img) $nf404img = '<img class="nfep404" src="'.$nf404img.'" alt="'.$swcf.'" />';
 ?>

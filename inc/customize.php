@@ -36,7 +36,7 @@ function associationx_customize_register($wp_customize){
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> esc_html__('AssociationX OPTIONS', 'associationx'),
-		'description'   => ' <div class="infohead">' . esc_html__('We appreciate an','associationx') . ' <a href="http://wordpress.org/support/view/theme-reviews/associationx" target="_blank">' . esc_html__('Honest Review','associationx') . '</a> ' . esc_html__('of this Theme if you Love our Work','associationx') . '<br /> <br />
+		'description'   => ' <div class="infohead">' . esc_html__('We appreciate an','associationx') . ' <a href="'.esc_url('http://wordpress.org/support/view/theme-reviews/associationx').'" target="_blank">' . esc_html__('Honest Review','associationx') . '</a> ' . esc_html__('of this Theme if you Love our Work','associationx') . '<br /> <br />
 
 ' . esc_html__('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','associationx') . '<a href="' . esc_url('https://d5creation.com/theme/associationx/') .'
 " target="_blank"><strong>' . esc_html__('AssociationX Extend','associationx') . '</strong></a><br /> <br /> 

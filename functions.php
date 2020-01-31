@@ -122,7 +122,7 @@
 	
 	function associationx_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . esc_html__('Read More', 'associationx') . '</a>';
+	return '<a href="'. esc_url(get_permalink($post->ID)) . '" class="read-more">' . esc_html__('Read More', 'associationx') . '</a>';
 	}
 	add_filter('excerpt_more', 'associationx_excerpt_more');
 	
