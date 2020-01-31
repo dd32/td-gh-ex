@@ -152,7 +152,7 @@ function audioman_sanitize_category_list( $input ) {
 function audioman_sanitize_number_range( $number, $setting ) {
 
     // Ensure input is an absolute integer.
-    $number = esc_attr( $number );
+    $number = absint( $number );
 
     // Get the input attributes associated with the setting.
     $atts = $setting->manager->get_control( $setting->id )->input_attrs;

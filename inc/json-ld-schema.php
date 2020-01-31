@@ -23,10 +23,10 @@ class Audioman_Json_Ld_Schema {
 	function audioman_custom_breadcrumbs_json_ld( $show_on_home ) {
 		/* === OPTIONS === */
 		$text['home']     = __( 'Home', 'audioman' ); // text for the 'Home' link
-		$text['category'] = __( '%1$s Archive for %2$s', 'audioman' ); // text for a category page
-		$text['search']   = __( '%1$sSearch results for: %2$s', 'audioman' ); // text for a search results page
-		$text['tag']      = __( '%1$sPosts tagged %2$s', 'audioman' ); // text for a tag page
-		$text['author']   = __( '%1$sView all posts by %2$s', 'audioman' ); // text for an author page
+		$text['category'] = __( 'Archive for ', 'audioman' ); // text for a category page
+		$text['search']   = __( 'Search results for: ', 'audioman' ); // text for a search results page
+		$text['tag']      = __( 'Posts tagged ', 'audioman' ); // text for a tag page
+		$text['author']   = __( 'View all posts by ', 'audioman' ); // text for an author page
 		$text['404']      = __( 'Error 404', 'audioman' ); // text for the 404 page
 
 		$show_current = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -50,17 +50,16 @@ class Audioman_Json_Ld_Schema {
 			} elseif ( is_category() ) {
 				$cat = get_category( get_query_var( 'cat' ), false );
 				if ( 0 != $cat->parent ) {
-					$cats    = get_category_parents( $this_cat->parent, true, false );
 					$parents = get_ancestors( $cat->term_id, 'category' );
 					$parents = array_reverse( $parents );
 					foreach ( $parents as $parent ) {
 						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
 				}
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['category'], '<span class="archive-text">', '&nbsp</span>' . single_cat_title( '', false ) ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['category'] . single_cat_title( '', false ) );
 
 			} elseif ( is_search() ) {
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['search'], '<span class="search-text">', '&nbsp</span>' . get_search_query() ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['search'] . get_search_query() );
 
 			} elseif ( is_day() ) {
 
@@ -95,8 +94,6 @@ class Audioman_Json_Ld_Schema {
 					}
 
 					$this->breadcrumb_list[] = $this->add_crumbs( $cat->name, get_category_link( $cat->term_id ) );
-					/* var_dump( $cat->name );
-					var_dump( get_term_link( $cat->term_id ) ); */
 					if ( 1 == $show_current ) {
 						$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 					}
@@ -145,19 +142,16 @@ class Audioman_Json_Ld_Schema {
 					$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 				}
 			} elseif ( is_tag() ) {
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['tag'], '<span class="tag-text">', '&nbsp</span>' . single_tag_title( '', false ) ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['tag'] . single_tag_title( '', false ) );
 
 			} elseif ( is_author() ) {
 				global $author;
 				$userdata                = get_userdata( $author );
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['author'], '<span class="author-text">', '&nbsp</span>' . $userdata->display_name ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['author'] . $userdata->display_name );
 
 			} elseif ( is_404() ) {
 				$this->breadcrumb_list[] = $this->add_crumbs( $text['404'] );
 
-			}
-			if ( get_query_var( 'paged' ) ) {
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( __( 'Page %s', 'audioman' ), max( $paged, $page ) ) );
 			}
 		}
 		$this->breadcrumb['itemListElement'] = $this->breadcrumb_list;
