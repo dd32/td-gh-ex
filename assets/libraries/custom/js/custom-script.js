@@ -244,6 +244,11 @@
             });
         });
     };
+    n.thememattic_matchheight = function () {
+        e('.widget-area').theiaStickySidebar({
+            additionalMarginTop: '70',
+        });
+    };
     e(document).ready(function () {
         n.mobileMenu.init();
         n.DataBackground();
@@ -253,6 +258,7 @@
         n.parellex();
         n.scroll_up();
         n.MagnificPopup();
+        n.thememattic_matchheight();
     });
     e(window).scroll(function () {
         n.stickyMenu();

@@ -182,7 +182,7 @@ function best_education_scripts() {
 	wp_enqueue_script('jquery-slick', get_template_directory_uri().'/assets/libraries/slick/js/slick'.$min.'.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-magnific-popup', get_template_directory_uri().'/assets/libraries/magnific-popup/jquery.magnific-popup'.$min.'.js', array('jquery'), '', true);
 	wp_enqueue_script('jquery-stellar', get_template_directory_uri().'/assets/libraries/stellar/jquery.stellar.js', array('jquery'), '', true);
-
+	wp_enqueue_script('theiaStickySidebar', get_template_directory_uri() . '/assets/libraries/theiaStickySidebar/theia-sticky-sidebar.min.js', array('jquery'), '', true);
 	wp_enqueue_script('best-education-script', get_template_directory_uri().'/assets/libraries/custom/js/custom-script.js', array('jquery'), '', 1);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {

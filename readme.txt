@@ -4,7 +4,7 @@ Contributors: Thememattic
 
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -63,11 +63,14 @@ Best Education is distributed under the terms of the GNU GPL
 = 1.0.5 - Dec 02 2019 =
 =Added breadcrums error fix and script optimize=
 
-= 1.0.5 - Jan 08 2020 =
+= 1.0.6 - Jan 08 2020 =
 = Breadcrumb structure issue fix =
 = Update message widget =
 = Update gallery issue =
 = Add gallery lightbox =
+
+= 1.0.7 - Jan 16 2020 =
+= Added Theia Sticky Sidebar =
 
 
 == Credits ==
@@ -120,6 +123,11 @@ License: Licensed under the MIT license
 Magnific Popup
 Author: Chubby Ninja
 Source: https://github.com/dimsemenov/Magnific-Popup
+License: Licensed under the MIT license
+
+Theia Sticky Sidebar
+Author: Liviu Cristian Mirea Ghiban
+Source: https://github.com/WeCodePixels/theia-sticky-sidebar
 License: Licensed under the MIT license
 
 == Image Used ==
