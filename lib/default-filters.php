@@ -164,6 +164,7 @@ function bayleaf_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 			'getpocket.com'   => 'get-pocket',
 			'reddit.com'      => 'reddit-alien',
 			'skype.com'       => 'skype',
+			'slack.com'       => 'slack',
 			'skype:'          => 'skype',
 			'slideshare.net'  => 'slideshare',
 			'snapchat.com'    => 'snapchat-ghost',

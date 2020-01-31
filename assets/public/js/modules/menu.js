@@ -71,9 +71,13 @@ class Menu {
 	 * 
 	 * @since 1.3.5
 	 */
-	toggleItem() {
-
-		lib.toggleClass(this, conf.cls.toggled);
+	toggleItem(e) {
+		const eType = e.type;
+		if ('mouseenter' === eType) {
+			lib.addClass(this, conf.cls.toggled);
+		} else if ('mouseleave' === eType) {
+			lib.removeClass(this, conf.cls.toggled);
+		}
 	}
 
 	/**
@@ -81,11 +85,18 @@ class Menu {
 	 * 
 	 * @since 1.3.5
 	 */
-	toggleLinkItems() {
+	toggleLinkItems(e) {
 
 		let el = this;
+		const eType = e.type;
 		while (null !== el && ! lib.hasClass(el, 'nav-menu')) {
-			if (lib.hasClass(el, 'menu-item, page_item')) lib.toggleClass(el, conf.cls.toggled);
+			if (lib.hasClass(el, 'menu-item, page_item')) {
+				if ( 'focus' === eType ) {
+					lib.addClass(el, conf.cls.toggled);
+				} else {
+					lib.removeClass(el, conf.cls.toggled);
+				}
+			}
 			el = el.parentElement;
 		}
 	}

@@ -632,12 +632,12 @@ class Display_Posts {
 
 		$navigation  = sprintf(
 			'<button class="dp-prev-slide">%1$s<span class="screen-reader-text">%2$s</span></button>',
-			bayleaf_get_icon( [ 'icon' => 'angle-left' ] ),
+			bayleaf_get_icon( [ 'icon' => 'flickity-button' ] ),
 			esc_html__( 'Previous Slide', 'bayleaf' )
 		);
 		$navigation .= sprintf(
 			'<button class="dp-next-slide">%1$s<span class="screen-reader-text">%2$s</span></button>',
-			bayleaf_get_icon( [ 'icon' => 'angle-right' ] ),
+			bayleaf_get_icon( [ 'icon' => 'flickity-button' ] ),
 			esc_html__( 'Next Slide', 'bayleaf' )
 		);
 

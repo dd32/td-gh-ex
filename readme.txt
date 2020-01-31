@@ -20,6 +20,14 @@ PHP 5.6+, IE11+, WordPress 4.9+
 
 == Changelog ==
 
+= 1.4.6 =
+* Error Fix: Sub-Menu reappear after click on any of the Sub Menu links.
+* Error Fix: Bricklayer styling error on smaller screens.
+* Error Fix: Image caption styling error.
+* Add: New font icons for social sites.
+* Modify: Font style changes
+* Modify: Minor design improvements
+
 = 1.4.5 =
 * Error Fix: PHP error notice fixes in displayposts and widgetlayer addons.
 * Modify: Change theme's minimum requirment to PHP 5.6+ and WP 4.9+.
@@ -138,6 +146,7 @@ PHP 5.6+, IE11+, WordPress 4.9+
 * Font Awesome SVG icons http://fontawesome.io/, (C) Dave Gandy, [CC BY 4.0](https://fontawesome.com/license/free)
 * Icomoon SVG icons https://icomoon.io, (C) Roonas, [GPL / CC BY 4.0](https://icomoon.io/icons-icomoon.html)
 * Feather SVG icons https://github.com/feathericons/feather, (C) Colebemis, [MIT](http://opensource.org/licenses/MIT)
+* SVG Logos icons https://github.com/gilbarbara/logos, (C) Gil Barbara, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Genericons Neue SVG icons https://github.com/Automattic/genericons-neue, (C) Automattic, [GPL](https://github.com/Automattic/genericons-neue/blob/master/LICENSE.md)
 * Image in screenshot https://pxhere.com/en/photo/1440153, (C) rawpixel.com, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Image in screenshot https://pxhere.com/en/photo/666692, (C) pxhere, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)

@@ -342,7 +342,7 @@ function bayleaf_font_url() {
 	 * by Montserrat, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'bayleaf' ) ) {
-		$fonts[] = 'Montserrat:400,700,400italic,700italic';
+		$fonts[] = 'Montserrat:500,600,500italic,600italic';
 	}
 
 	/*
@@ -350,7 +350,7 @@ function bayleaf_font_url() {
 	 * by Poppins, translate this to 'off'. Do not translate into your own language.
 	 */
 	if ( 'off' !== _x( 'on', 'Poppins font: on or off', 'bayleaf' ) ) {
-		$fonts[] = 'Poppins:400,600,700,400italic,700italic';
+		$fonts[] = 'Poppins:400,600,400italic,600italic';
 	}
 
 	/**

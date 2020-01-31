@@ -228,6 +228,9 @@ function bayleaf_inline_dynamic_css( $css ) {
 		.site-footer {
 			background-color: rgba( %2$s, 0.05 );
 		}
+		.bp-slider3-nav .is-selected.dp-slider-nav-title {
+			border-color: %1$s;
+		}
 		',
 		$color,
 		$rgb_color
@@ -260,6 +263,11 @@ function bayleaf_inline_dynamic_css( $css ) {
 			input[type="search"],
 			input[type="tel"],
 			input[type="number"],
+			a.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"],
 			textarea,
 			select {
 				border-radius: %1$spx;

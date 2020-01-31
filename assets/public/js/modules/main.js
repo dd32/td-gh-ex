@@ -1,3 +1,4 @@
+import PolyFill from './polyfill';
 import lib from './library';
 import ScrollToTop from './scrolltop';
 import Menu from './menu';
@@ -5,7 +6,6 @@ import Styling from './styling';
 import ResVid from './resvid';
 import Hwidget from './hwidget';
 import Comments from './comments';
-import PolyFill from './polyfill';
 
 class Main {
 
@@ -17,6 +17,9 @@ class Main {
 	 * @param {string} id Podcast player ID.
 	 */
 	constructor(id) {
+
+		// Include required polyfills.
+		this.polyfill();
 
 		// Update global data on window scroll.
 		lib.updateOnScroll();
@@ -45,11 +48,9 @@ class Main {
 		// Add header widget toggle functionality.
 		this.headerWidgetToggle();
 
-		// Include required polyfills.
-		this.polyfill();
-
 		// Add reveal on scroll functionality to brick elements.
-		lib.addRosObject('.brick', 'fadein', 20, 100);
+		lib.addRosObject('.widgetlayer:not(.footer-widget-area) .brick', 'fadein', 20, 100);
+		lib.addRosObject('.footer-widget-area .brick', 'fadein', 20, 600);
 		lib.addRosObject('.dp-grid > .dp-entry, .fc-main-content, .mfc-feature, .fc-featured-images', '', 0, 600, 150);
 	}
 

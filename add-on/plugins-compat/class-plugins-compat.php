@@ -344,7 +344,7 @@ class Plugins_Compat {
 					'goo-sans-serif',
 					'Montserrat',
 				),
-				'weights'   => array( '400', '400italic', '700', '700italic' ),
+				'weights'   => array( '500', '500italic', '700', '700italic' ),
 				'selectors' => 'body',
 			),
 			array(

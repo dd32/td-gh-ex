@@ -31,7 +31,8 @@ bayleaf_add_markup_for( 'home_above_content_area', 'after_header' );
 // Display primary site content.
 bayleaf_add_markup_for( 'blog_title', 'before_main_content' );
 bayleaf_add_markup_for( 'page_header', 'inside_main_content' );
-bayleaf_add_markup_for( 'page_entry_header', 'inside_main_content' );
+bayleaf_add_markup_for( 'page_entry_title', 'on_top_of_site_content' );
+bayleaf_add_markup_for( 'page_entry_thumbnail', 'inside_main_content' );
 bayleaf_add_markup_for( 'main_loop', 'inside_main_content' );
 bayleaf_add_markup_for( 'hentry', 'inside_entry' );
 
@@ -325,9 +326,34 @@ function bayleaf_home_below_content_area() {
  *
  * @since 1.0.0
  */
-function bayleaf_page_entry_header() {
+function bayleaf_page_entry_title() {
 
 	if ( is_front_page() ) {
+		return;
+	}
+
+	if ( is_singular( [ 'post', 'page' ] ) ) {
+
+		if ( is_page_template( 'page-templates/full-width.php' ) ) {
+			return;
+		}
+
+		bayleaf_markup( 'page-entry-header-main-title', [ 'bayleaf_page_entry_header_items' ] );
+	}
+}
+
+/**
+ * Page Entry header wrapper markup.
+ *
+ * @since 1.0.0
+ */
+function bayleaf_page_entry_thumbnail() {
+
+	if ( is_front_page() ) {
+		return;
+	}
+
+	if ( ! has_post_thumbnail() ) {
 		return;
 	}
 
@@ -340,7 +366,6 @@ function bayleaf_page_entry_header() {
 		bayleaf_markup(
 			'page-entry-header',
 			[
-				'bayleaf_page_entry_header_items',
 				[ 'bayleaf_get_template_partial', 'template-parts/post', 'entry-thumbnail' ],
 			]
 		);
