@@ -23,10 +23,10 @@ class Adonis_Json_Ld_Schema {
 	function adonis_custom_breadcrumbs_json_ld( $show_on_home ) {
 		/* === OPTIONS === */
 		$text['home']     = __( 'Home', 'adonis' ); // text for the 'Home' link
-		$text['category'] = __( '%1$s Archive for %2$s', 'adonis' ); // text for a category page
-		$text['search']   = __( '%1$sSearch results for: %2$s', 'adonis' ); // text for a search results page
-		$text['tag']      = __( '%1$sPosts tagged %2$s', 'adonis' ); // text for a tag page
-		$text['author']   = __( '%1$sView all posts by %2$s', 'adonis' ); // text for an author page
+		$text['category'] = __( 'Archive for ', 'adonis' ); // text for a category page
+		$text['search']   = __( 'Search results for: ', 'adonis' ); // text for a search results page
+		$text['tag']      = __( 'Posts tagged ', 'adonis' ); // text for a tag page
+		$text['author']   = __( 'View all posts by ', 'adonis' ); // text for an author page
 		$text['404']      = __( 'Error 404', 'adonis' ); // text for the 404 page
 
 		$show_current = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -35,7 +35,7 @@ class Adonis_Json_Ld_Schema {
 		/* === END OF OPTIONS === */
 
 		global $post, $paged, $page;
-		$home_link  = home_url( '/' );
+		$home_link = home_url( '/' );
 
 		if ( is_front_page() ) {
 			if ( $show_on_home ) {
@@ -48,22 +48,18 @@ class Adonis_Json_Ld_Schema {
 					$this->breadcrumb_list[] = $this->add_crumbs( get_the_title( get_option( 'page_for_posts', true ) ), esc_url( $home_link ) );
 				}
 			} elseif ( is_category() ) {
-				$this_cat = get_category( get_query_var( 'cat' ), false );
-				if ( 0 != $this_cat->parent ) {
-					$cats = get_category_parents( $this_cat->parent, true, false );
-					$pos  = strpos( $cats, '<a' );
-					preg_match( '/<a[^>]*>(.*?)<\/a>/i', $cats, $matches );
-					while ( false !== $pos ) {
-						$href = substr( $cats, 0, $pos ) . substr( $cats, strpos( $cats, 'href="', $pos ) + 6 );
-						$href = substr( $href, 0, strpos( $href, '"', $pos ) ) . substr( $href, strpos( $href, '</a>', $pos ) + 4 );
-						$pos  = strpos( $href, '<a' );
+				$cat = get_category( get_query_var( 'cat' ), false );
+				if ( 0 != $cat->parent ) {
+					$parents = get_ancestors( $cat->term_id, 'category' );
+					$parents = array_reverse( $parents );
+					foreach ( $parents as $parent ) {
+						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
-					$this->breadcrumb_list[] = $this->add_crumbs( $matches[1], $href );
 				}
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['category'], '<span class="archive-text">', '&nbsp</span>' . single_cat_title( '', false ) ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['category'] . single_cat_title( '', false ) );
 
 			} elseif ( is_search() ) {
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['search'], '<span class="search-text">', '&nbsp</span>' . get_search_query() ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['search'] . get_search_query() );
 
 			} elseif ( is_day() ) {
 
@@ -88,20 +84,16 @@ class Adonis_Json_Ld_Schema {
 						$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 					}
 				} else {
-					$cat  = get_the_category();
-					$cat  = $cat[0];
-					$cats = get_category_parents( $cat, true, '' );
-					if ( 0 == $show_current ) {
-							$cats = preg_replace( '#^(.+)$#', '$1', $cats );
+					$cat = get_the_category();
+					$cat = $cat[0];
+
+					$parents = get_ancestors( $cat->term_id, 'category' );
+					$parents = array_reverse( $parents );
+					foreach ( $parents as $parent ) {
+						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
-					$pos = strpos( $cats, '<a' );
-					preg_match( '/<a[^>]*>(.*?)<\/a>/i', $cats, $matches );
-					while ( false !== $pos ) {
-						$href = substr( $cats, 0, $pos ) . substr( $cats, strpos( $cats, 'href="', $pos ) + 6 );
-						$href = substr( $href, 0, strpos( $href, '"', $pos ) ) . substr( $href, strpos( $href, '</a>', $pos ) + 4 );
-						$pos  = strpos( $href, '<a' );
-					}
-					$this->breadcrumb_list[] = $this->add_crumbs( $matches[1], $href );
+
+					$this->breadcrumb_list[] = $this->add_crumbs( $cat->name, get_category_link( $cat->term_id ) );
 					if ( 1 == $show_current ) {
 						$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 					}
@@ -119,15 +111,11 @@ class Adonis_Json_Ld_Schema {
 				}
 
 				if ( $cat ) {
-					$cats = get_category_parents( $cat, true );
-					$pos  = strpos( $cats, '<a' );
-					preg_match( '/<a[^>]*>(.*?)<\/a>/i', $cats, $matches );
-					while ( false !== $pos ) {
-						$href = substr( $cats, 0, $pos ) . substr( $cats, strpos( $cats, 'href="', $pos ) + 6 );
-						$href = substr( $href, 0, strpos( $href, '"', $pos ) ) . substr( $href, strpos( $href, '</a>', $pos ) + 4 );
-						$pos  = strpos( $href, '<a' );
+					$parents = get_ancestors( $cat->term_id, 'category' );
+					$parents = array_reverse( $parents );
+					foreach ( $parents as $parent ) {
+						$this->breadcrumb_list[] = $this->add_crumbs( get_cat_name( $parent ), get_category_link( $parent ) );
 					}
-					$this->breadcrumb_list[] = $this->add_crumbs( $matches[1], $href );
 				}
 				$this->breadcrumb_list[] = $this->add_crumbs( $parent->post_title, get_permalink( $parent ) );
 				if ( 1 == $show_current ) {
@@ -154,19 +142,15 @@ class Adonis_Json_Ld_Schema {
 					$this->breadcrumb_list[] = $this->add_crumbs( get_the_title() );
 				}
 			} elseif ( is_tag() ) {
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['tag'], '<span class="tag-text">', '&nbsp</span>' . single_tag_title( '', false ) ) );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['tag'] . single_tag_title( '', false ) );
 
 			} elseif ( is_author() ) {
 				global $author;
-				$userdata          = get_userdata( $author );
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( $text['author'], '<span class="author-text">', '&nbsp</span>' . $userdata->display_name ) );
+				$userdata                = get_userdata( $author );
+				$this->breadcrumb_list[] = $this->add_crumbs( $text['author'] . $userdata->display_name );
 
 			} elseif ( is_404() ) {
 				$this->breadcrumb_list[] = $this->add_crumbs( $text['404'] );
-
-			}
-			if ( get_query_var( 'paged' ) ) {
-				$this->breadcrumb_list[] = $this->add_crumbs( sprintf( __( 'Page %s', 'adonis' ), max( $paged, $page ) ) );
 			}
 		}
 		$this->breadcrumb['itemListElement'] = $this->breadcrumb_list;

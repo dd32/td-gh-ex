@@ -3,7 +3,7 @@ Contributors: catchthemes
 Tags: two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Requires at least: 4.9
 Tested up to: 5.3
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,9 @@ You can check our Theme Demo at https://catchthemes.com/demo/adonis/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.3.7 (Released: January 31, 2020) =
+* Bug Fixed: Child Category breadcrumb issue
 
 = 1.3.6 (Released: January 29, 2020) =
 * Bug Fixed: Typo issue
