@@ -341,3 +341,8 @@ form {
 .ct-getstarted .ct-notice-h2, .ct-getstarted .plugin-install-notice {
   margin-bottom: 15px;
 }
+
+.ct-small {
+  display: block;
+  text-align: center;
+}

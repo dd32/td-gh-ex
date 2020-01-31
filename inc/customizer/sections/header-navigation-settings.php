@@ -1343,20 +1343,20 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
+    if ( function_exists( 'apex_business_transparent_header_border' ) ) {
+        apex_business_transparent_header_border( $wp_customize );
+    }
+
     $wp_customize->add_setting(
         'apex_business_transparent_header_text_logo_color_setting',
         array(
-            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+            'default'           => APEX_BUSINESS_WHITE_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'transport'         => 'postMessage',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',
         )
     );
-
-    if ( function_exists( 'apex_business_transparent_header_border' ) ) {
-        apex_business_transparent_header_border( $wp_customize );
-    }
 
      // Alpha Color Picker control.
     $wp_customize->add_control(
@@ -1414,7 +1414,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_transparent_nav_link_color_setting',
         array(
-            'default'           =>  APEX_BUSINESS_TEXT_COLOR,
+            'default'           =>  APEX_BUSINESS_WHITE_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'transport'         => 'postMessage',

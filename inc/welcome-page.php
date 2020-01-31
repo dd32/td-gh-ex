@@ -39,6 +39,7 @@ function apex_business_about() {
         <div class="six columns apex-screenshot clearfix">
             <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/screenshot.png" class="screenshot" alt="Theme Screenshot" />
             <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ); ?></a>
+            <small class="ct-small"><?php esc_html_e( 'This will install and activate Crafthemes Demo Import plugin.', 'apex-business' ); ?></small>
         </div><!-- /.six columns -->
 
         <div class="six columns">
@@ -49,15 +50,9 @@ function apex_business_about() {
                 </p>
             </div><!-- /.apex-n-doc -->
             <div class="ct-content">
-                <h3><a href="https://www.crafthemes-demo.com/<?php echo esc_attr( $theme_slug ); ?>" target="_blank"><?php esc_html_e( 'Live Demo', 'apex-business' ); ?></a></h3>
+                <h3><a href="https://www.crafthemes.com/<?php echo esc_attr( $theme_slug ); ?>" target="_blank"><?php esc_html_e( 'Live Demo', 'apex-business' ); ?></a></h3>
                 <p>
                     <?php esc_html_e( 'Checkout the live demo of Apex Business.', 'apex-business' ); ?>
-                </p>
-            </div><!-- /.apex-n-doc -->
-            <div class="ct-content">
-                <h3><a href="<?php echo esc_url( 'https://www.crafthemes.com/docs/apex-business-documentation/demo-content-installation/' ); ?>" target="_blank"><?php esc_html_e( 'Import Demo Content', 'apex-business' ); ?></a></h3>
-                <p>
-                    <?php esc_html_e( 'Tutorial on how to import demo data to look your website same as the demo website.', 'apex-business' ); ?>
                 </p>
             </div><!-- /.apex-n-doc -->
         </div><!-- /.six columns -->

@@ -216,10 +216,10 @@ function apex_business_ajax_notice_handler() {
 function apex_business_deprecated_hook_admin_notice() {
         // Check if it's been dismissed...
         if ( ! get_option('dismissed-get_started', FALSE ) ) {
-            // Added the class "notice-my-class" so jQuery pick it up and pass via AJAX,
+            // Added the class "notice-get-started-class" so jQuery pick it up and pass via AJAX,
             // and added "data-notice" attribute in order to track multiple / different notices
             // multiple dismissible notice states ?>
-            <div class="updated notice ct-getstarted notice-get-started-class is-dismissible" data-notice="get_started">
+            <div class="updated notice notice-get-started-class is-dismissible" data-notice="get_started">
                 <div class="crafthemes-getting-started-notice">
                     <h2 class="ct-notice-h2"><?php esc_html_e( 'Thank you for choosing Apex Business. Please proceed towards the welcome page and give us the privilege to serve you.', 'apex-business' ) ?></h2>
 

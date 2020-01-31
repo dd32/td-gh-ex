@@ -1,10 +1,10 @@
 === Apex Business ===
 Contributors: aruphash
-Tags: blog, news, one-column, two-columns, right-sidebar, left-sidebar, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template, portfolio, grid-layout
+Tags: blog, news, two-columns, one-column, right-sidebar, left-sidebar, custom-menu, custom-colors, custom-background, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, full-width-template, portfolio
 Requires at least: 4.0
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 0.0.22
+Stable tag: 0.0.23
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,8 +36,15 @@ GNU General Public License for more details.
 
 Documentation
 https://www.crafthemes.com/docs/apex-business-documentation/installation/
+Demo data Installation
+https://www.crafthemes.com/docs/apex-business-documentation/demo-content-installation/
 
 == Changelog ==
+
+= 0.0.23 - January 31 2020 =
+* Added Pro notice
+* Added Get started Admin notice
+* Changed Screenshot
 
 = 0.0.22 - January 30 2020 =
 * Fixed bugs
@@ -53,6 +60,15 @@ https://www.crafthemes.com/docs/apex-business-documentation/installation/
 
 = 0.0.18 - January 13 2020 =
 * Fixed bugs pointed by theme reviewer
+
+= 0.0.17 - January 7 2020 =
+* Fixed bugs pointed by theme reviewer
+
+= 0.0.16 - December 27 2019 =
+* Fixed bugs
+
+= 0.0.15 - December 27 2019 =
+* Fixed bugs
 
 = 0.0.14 - December 20 2019 =
 * Fixed bugs pointed by theme reviewer
@@ -124,6 +140,10 @@ Source: https://github.com/HardeepAsrani/o2
 Customizer Controls, Copyright CodeinWp
 Customizer Controls is licensed under the MIT license
 Source: https://github.com/Codeinwp/customizer-controls
+
+Customize Pro, Copyright Justin Tadlock
+Normalize.css is licensed under GPL 2.0 License
+Source: https://github.com/justintadlock/trt-customizer-pro
 
 WordPress Customizer Toggle Control, Copyright CodeinWp
 WordPress Customizer Toggle Control is licensed under GNU General Public License v2

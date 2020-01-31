@@ -21,7 +21,7 @@ get_header();
                     <?php get_sidebar(); ?>
                 <?php endif; ?>
                 <div class="<?php echo esc_attr( $apex_business_fullwidth_stats ); ?>">
-c                    <div class="ct-grid">
+                    <div class="ct-grid">
                         <?php
                             while ( have_posts() ) : the_post();
 

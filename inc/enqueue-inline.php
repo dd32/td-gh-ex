@@ -156,10 +156,10 @@ function apex_business_enqueue_inline_css() {
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_bgcolor_setting', '.ct-transparent-header', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
     /** Header Navigation : Navigation active Link color**/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .no-stick .main-nav > li > a', 'color', array( APEX_BUSINESS_TEXT_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_nav_link_color_setting', '.ct-transparent-header .no-stick .main-nav > li > a', 'color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
      /** Header Navigation : text logo color **/
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_text_logo_color_setting', '.ct-transparent-header .site-logo div a', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_header_text_logo_color_setting', '.ct-transparent-header .site-logo div a', 'color', array( APEX_BUSINESS_WHITE_COLOR ) );
 
     /** Header Navigation : Mobile header icon color **/
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_transparent_mobile_nav_icon_color_settings', '.ct-transparent-header .no-stick .nav-menu a .menubar-right', 'color', array( APEX_BUSINESS_PRIMARY_COLOR ) );

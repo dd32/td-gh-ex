@@ -66,7 +66,7 @@
     </footer>
 
     <?php
-        $apex_business_editor       = get_theme_mod( 'apex_business_bottom_bar_content_control', __( '&copy; Copyright 2019 Apex Business WordPress Theme', 'apex-business') );
+        $apex_business_editor       = get_theme_mod( 'apex_business_bottom_bar_content_control', __( 'Apex Business WordPress Theme', 'apex-business') );
         $apex_business_layout_type  = get_theme_mod( 'apex_business_footer_layout_control', 'default-bottom-bar' );
 
         $apex_business_layout_grid  = '6';
