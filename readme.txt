@@ -1,7 +1,7 @@
 === Atwood ===
 Contributors: themeora
 Requires at least: 4.9.1
-Tested up to: 5.2.3
+Tested up to: 5.3.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -58,18 +58,17 @@ Screenshot images are from stockSnap.io and licenced under the CC0 License
 
 https://stocksnap.io/photo/KWVTIEAN3M
 https://stocksnap.io/photo/SVXFGAE7NB
-https://stocksnap.io/photo/26TCI436RB
-https://stocksnap.io/photo/V1XVGEFUP0
-https://stocksnap.io/photo/SH9D3TMYID
-https://stocksnap.io/photo/NLD7XULIEB
-https://stocksnap.io/photo/SPYOGV0DTL
-https://stocksnap.io/photo/SVXFGAE7NB
 
 Other icons and images are created by Themeora and licensed under GPL.
 --------------------------------------------------------------------------------
 
 
 == Changelog ==
+
+v1.2.7
+- Tweak: Removed customizer options
+- Tweak: Minor fixes
+- Tweak: Improved accessibility
 
 v1.2.6
 - Tweak: minor style fixes

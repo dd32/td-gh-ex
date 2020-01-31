@@ -1,3 +1,4 @@
+</div><!-- end content wrap -->
 
 <footer class="full-width-container primary-footer" id="primary-footer">
     <div class="container">
@@ -17,11 +18,17 @@
         <?php endif; ?>
         <div class="row">
             <div class="col-md-12 aligncenter footer-bottom">
-                <p><?php 
-                    if ( get_theme_mod( 'footer_copyright') ) {  
-                        echo html_entity_decode(get_theme_mod( 'footer_copyright')); 
+                <p><?php
+                    if ( get_theme_mod( 'footer_copyright') ) {
+                        echo html_entity_decode(get_theme_mod( 'footer_copyright'));
                     } else {
-                        echo '&copy; '.date("Y").'. WordPress Theme - ' . 'atwood' . ' by <a href="http://themeora.com">Themeora</a>';
+                        echo '&copy; '.date("Y") . ' ' . get_bloginfo() . '. WordPress Theme - ' . 'atwood';
+                        if ( is_home() ) {
+                             echo ' by <a href="http://themeora.com">Themeora</a>';
+                        }
+                        else {
+                            echo ' by Themeora';
+                        }
                     }?>
                 </p>
             </div>
@@ -29,7 +36,7 @@
     </div><!-- end container -->
 </footer><!-- end full-width-container -->
 
-    
+
 </div><!-- end page wrapper -->
 
 <?php wp_footer(); ?>

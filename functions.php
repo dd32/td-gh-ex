@@ -38,7 +38,8 @@ if ( ! function_exists( 'themeora_theme_setup' ) ) :
         add_theme_support( 'custom-background' );
         add_theme_support( 'post-formats', array( 'audio', 'gallery', 'image', 'quote', 'video', 'link' ) );
         add_theme_support( "title-tag" );
-
+        add_theme_support('custom-logo');
+        
         $defaults = array(
             'default-image'          => '',
             'random-default'         => false,

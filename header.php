@@ -13,6 +13,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <?php
 $fixed_nav = get_theme_mod('navbar_fixed', 'no');
@@ -20,24 +21,25 @@ $fixed_nav = 'fixed_nav_' . $fixed_nav;
 ?>
 
 <div class="page-wrapper <?php echo $fixed_nav; ?>">
+    <a class="skip-link screen-reader-text" href="#content-wrap"><?php _e( 'Skip to content', 'atwood' ); ?></a>
+
     <!-- BEGIN NAV -->
     <nav class="primary-navigation navbar" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <?php
-                //logo image
-                if( get_theme_mod( 'img-upload-logo' )) { // CUSTOMIZER LOGO ?>
-                <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="<?php _e( 'home', 'atwood' ) ?>"><img style="width:<?php echo esc_html( get_theme_mod( 'img-upload-logo-width' ) ); ?>px;" src="<?php echo esc_html( get_theme_mod( 'img-upload-logo' ) )?>" class="logo-uploaded" alt="<?php echo get_bloginfo( 'name' ); ?>" /></a>
-                <?php }
-
-                //typography logo
-                else { ?>
-                    <a href="<?php echo home_url(); ?>" title="<?php echo get_bloginfo( 'name' ); ?>" rel="<?php _e( 'home', 'atwood' ) ?>"><div class="logo-text" style="font-size: <?php echo esc_html( get_theme_mod( 'type_logo_size' ) ); ?>px; line-height: <?php echo esc_html( get_theme_mod( 'type_logo_lineheight' ) )?>px"><?php bloginfo( 'name' ); ?></div></a>
-                <?php } ?>
+                $custom_logo_id = get_theme_mod( 'custom_logo' );
+                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                if ( has_custom_logo() ) {
+                        echo '<a href="' . home_url() . '" title="' . get_bloginfo( 'name' ) . '"><img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '"></a>';
+                } else {
+                        echo '<a href="' . home_url() . '" title="' . get_bloginfo( 'name' ) . '">' .  bloginfo( 'name' ) . '</a>';
+                }
+                ?>
 
                 <?php
                     $description = get_bloginfo ( 'description' );
-                    if ( strlen( $description ) > 0 ) : ?>
+                    if ( strlen( $description ) > 0 && display_header_text() == true ) : ?>
                     <div class="site-description subtext">
                         <?php echo get_bloginfo ( 'description' ); ?>
                     </div>
@@ -86,3 +88,5 @@ $fixed_nav = 'fixed_nav_' . $fixed_nav;
 	<?php endif; ?>
 
     <!-- END NAV -->
+
+    <div id="content-wrap">
