@@ -159,6 +159,11 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Imdb URL', 'blogghiamo')
 	);
+	$socialmedia[] = array(
+	'slug'=>'twitchurl', 
+	'default' => '',
+	'label' => __('Twitch URL', 'blogghiamo')
+	);
 	
 	foreach( $socialmedia as $blogghiamo_theme_options ) {
 		// SETTINGS
@@ -403,13 +408,27 @@ if( ! function_exists('blogghiamo_allowed_html')){
 			'dl' => array(),
 			'dt' => array(),
 			'em' => array(),
-			'h1' => array(),
-			'h2' => array(),
-			'h3' => array(),
-			'h4' => array(),
-			'h5' => array(),
-			'h6' => array(),
-			'i' => array(),
+			'h1' => array(
+				'class' => array(),
+			),
+			'h2' => array(
+				'class' => array(),
+			),
+			'h3' => array(
+				'class' => array(),
+			),
+			'h4' => array(
+				'class' => array(),
+			),
+			'h5' => array(
+				'class' => array(),
+			),
+			'h6' => array(
+				'class' => array(),
+			),
+			'i' => array(
+				'class' => array(),
+			),
 			'br' => array(),
 			'img' => array(
 				'alt'    => array(),

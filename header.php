@@ -58,6 +58,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				$xingURL = get_theme_mod('blogghiamo_theme_options_xingurl', '');
 				$telegramURL = get_theme_mod('blogghiamo_theme_options_telegramurl', '');
 				$imdbURL = get_theme_mod('blogghiamo_theme_options_imdburl', '');
+				$twitchURL = get_theme_mod('blogghiamo_theme_options_twitchurl', '');
 				$emailURL = get_theme_mod('blogghiamo_theme_options_emailurl', '#');
 			?>
 
@@ -116,6 +117,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 					
 					<?php if (!empty($imdbURL)) : ?>
 						<a href="<?php echo esc_url($imdbURL); ?>" title="<?php esc_attr_e( 'Imdb', 'blogghiamo' ); ?>"><i class="fa fa-imdb spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Imdb', 'blogghiamo' ); ?></span></i></a>
+					<?php endif; ?>
+					
+					<?php if (!empty($twitchURL)) : ?>
+						<a href="<?php echo esc_url($twitchURL); ?>" title="<?php esc_attr_e( 'Twitch', 'blogghiamo' ); ?>"><i class="fa fa-twitch spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'blogghiamo' ); ?></span></i></a>
 					<?php endif; ?>
 					
 					<?php if (!empty($emailURL)) : ?>
