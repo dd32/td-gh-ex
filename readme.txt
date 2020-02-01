@@ -1,8 +1,8 @@
 === DarkElements ===
 Contributors: Guido07111975
-Version: 6.3
-Requires at least: 4.2
-Tested up to: 4.9
+Version: 6.4
+Requires at least: 5.2
+Tested up to: 5.3
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, left-sidebar, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
@@ -44,6 +44,7 @@ You can set a page title and content above your posts via WordPress Dashboard > 
 
 And you can change the way how posts are displayed via WordPress Dashboard > Appearance > Customize.
 
+
 == Copyright ==
 = Fonts =
 * Font: Open Sans
@@ -67,6 +68,7 @@ And you can change the way how posts are displayed via WordPress Dashboard > App
 * Author URI: https://meyerweb.com/ 
 * License: none (public domain) 
 
+
 == Notes ==
 = Translation =
 This theme is translation-ready and supports language packs from wordpress.org
@@ -80,5 +82,5 @@ Without the WordPress codex and help from the WordPress community I was not able
 If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in Support Forum.
 
 
-== Changelog == 
+== Changelog ==
 See separate file called changelog.

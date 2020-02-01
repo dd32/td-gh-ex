@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 <div id="content">
-	<?php if ( is_home() ) { ?> 
+	<?php if ( is_home() ) { ?>
 		<?php if ( get_theme_mod( 'darkelements_blog_title' ) ) : ?>
 			<h1 class="page-title">
 				<?php echo esc_attr( get_theme_mod('darkelements_blog_title') ); ?>

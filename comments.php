@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php 
+<?php
 if ( post_password_required() )
 	return;
 ?>
@@ -12,7 +12,7 @@ if ( post_password_required() )
 <div id="comments">
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comments-title">
-			<?php printf( _n( '%1$s comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'darkelements' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?> 
+			<?php printf( _n( '%1$s comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'darkelements' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
 		</h3>
 
 		<ol class="comment-list">
@@ -27,7 +27,7 @@ if ( post_password_required() )
 			<div class="comment-nav">
 				<?php previous_comments_link(); ?>
 				<?php next_comments_link(); ?>
-			</div>	
+			</div>
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>
