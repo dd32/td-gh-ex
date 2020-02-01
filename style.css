@@ -1,7 +1,7 @@
 /*
 Theme Name: PrivateBusiness
 Theme URI: https://www.guido.site/themes
-Version: 7.0
+Version: 7.1
 Author: Guido
 Author URI: https://www.guido.site
 Description: PrivateBusiness is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -58,16 +58,16 @@ table {
 }
 
 
-/* CLEAR DIVS THAT CONTAIN FLOATING ELEMENTS */
-#header-first:after, #homepage-widgets:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
-
-
 /* HTML */
 html {-webkit-text-size-adjust:100%;}
 
 
 /* BODY */
 body {background:#eee; color:#333; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
+
+
+/* CLEARINGS */
+#header-first:after, #homepage-widgets:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADINGS */
@@ -99,8 +99,8 @@ hr {height:1px; background:#ccc; border:0; margin:0 0 10px;}
 
 
 /* ALIGNMENTS */
-.alignright {float:right;}
-.alignleft {float:left;}
+.alignright {float:right; display:inline; margin-left:1em;}
+.alignleft {float:left; display:inline; margin-right:1em;}
 .aligncenter {clear:both; display:block; margin-left:auto; margin-right:auto;}
 
 
@@ -129,7 +129,7 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* CONTAINER */
-#container {max-width:1200px; clear:both; margin:10px auto; padding:20px 0 0; background:#fff;}
+#container {max-width:1200px; clear:both; margin:20px auto; background:#fff;}
 
 
 /* MAIN CONTENT AREA */
@@ -138,14 +138,14 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* HEADER FIRST */
-#header-first {clear:both; padding:0 2% 10px;}
+#header-first {clear:both; padding:20px 2% 0;}
 
 
 /* HEADER FIRST LOGO */
-.logo {width:40%; float:left; padding:0 0 10px;}
+.logo {width:40%; float:left; padding:0 0 20px;}
 .logo h1 {margin:0;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {margin:0; padding:5px 0 5px 20px; font-size:1.45em;}
+.logo .site-tagline {padding:5px 0 0 20px; font-size:1.45em;}
 
 
 /* HEADER FIRST SECONDARY MENU */
@@ -159,7 +159,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* HEADER FIRST SECONDARY SUBMENU */
 .nav-head-secondary ul ul {display:none; position:absolute; top:100%;}
-.nav-head-secondary ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head-secondary ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head-secondary ul ul a {width:12em; padding:5px 10px; background:#333; color:#fff; text-align:left;}
 .nav-head-secondary ul li:hover > ul {display:block;}
 .nav-head-secondary ul li ul li {margin:0;}
@@ -190,7 +190,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* HEADER SECOND PRIMARY SUBMENU */
 .nav-head-primary ul ul {display:none; position:absolute; top:100%;}
-.nav-head-primary ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head-primary ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head-primary ul ul a {width:12em; padding:5px 10px; background:#333; color:#fff;}
 .nav-head-primary ul li:hover > ul {display:block;}
 .nav-head-primary ul li ul li {margin:0;}
@@ -203,9 +203,9 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* HOMEPAGE WIDGET AREA */
-#homepage-widgets {clear:both; border-bottom:3px solid #0066ff;}
-.home-left {float:left; width:47%; margin:20px 0 0 2%;}
-.home-right {float:right; width:47%; margin:20px 2% 0 0;}
+#homepage-widgets {clear:both; padding:0 2%; border-bottom:3px solid #0066ff;}
+.home-left {float:left; width:49%; margin:20px 0 0;}
+.home-right {float:right; width:49%; margin:20px 0 0;}
 
 
 /* PAGE */
@@ -253,7 +253,7 @@ img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
-.wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
+.list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
 .wp-caption-text {text-align:center;}
 
@@ -295,47 +295,66 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-next {float:right; padding:10px 0;}
 
 
-/* SIDEBAR AND WIDGETS */
+/* SIDEBAR */
 #sidebar {width:34%; float:right; padding:20px 2% 0 0;}
+
+
+/* WIDGETS */
 .widget {margin:0 0 20px; padding:15px; background:#f8f8f8; border:1px solid #ccc;}
 .widgettitle {margin:0 0 10px;}
 
 
 /* FOOTER */
 #footer {clear:both;}
-.site-info {clear:both; padding:10px; background:#0066ff; color:#fff; text-align:center;}
+.site-info {clear:both; padding:20px; background:#0066ff; color:#fff; text-align:center;}
 .site-info a {color:#fff;}
 
 
 /* FOOTER WIDGET AREA */
-#footer-widgets {clear:both; border-top:3px solid #0066ff;}
-.footer-left {float:left; width:47%; margin:20px 0 0 2%;}
-.footer-right {float:right; width:47%; margin:20px 2% 0 0;}
+#footer-widgets {clear:both; padding:0 2%; border-top:3px solid #0066ff;}
+.footer-left {float:left; width:49%; margin:20px 0 0;}
+.footer-right {float:right; width:49%; margin:20px 0 0;}
+
+
+/* TABLET */
+@media screen and (min-width:768px) and (max-width:1200px) {
+	/* CONTAINER */
+	#container {width:96%;}	
+}
+@media screen and (min-width:768px) and (max-width:1023px) {
+	/* HEADER FIRST LOGO */
+	.logo {width:100%; clear:both; padding:0 0 20px; text-align:center;}
+	.logo .site-tagline {padding:0;}
+
+	/* HEADER FIRST SECONDARY MENU */
+	.nav-head-secondary {width:100%; clear:both; float:left; margin:0 0 20px; text-align:center;}
+	.nav-head-secondary ul li {margin:0 10px;}
+}
 
 
 /* MOBILE */
-@media screen and (max-width:767px) { 
+@media screen and (max-width:767px) {
 	/* BODY */
 	body.custom-background {background-image:none !important;}
 
 	/* CONTAINER */
-	#container {margin:0 auto; padding:10px 2% 0;}
+	#container {width:92%; margin:0 auto; padding:0 4%;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+	#content, #content-full {width:100%; clear:both; float:left; padding:10px 0 20px;}
 
 	/* HEADER FIRST */
-	#header-first {width:100%; padding:0;}
+	#header-first {padding:20px 0 0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {width:100%; clear:both; padding:10px 0 20px; text-align:center;}
-	.logo h2 {padding:0;}
+	.logo {width:100%; clear:both; padding:0 0 20px; text-align:center;}
+	.logo .site-tagline {padding:0;}
 
 	/* HEADER FIRST SECONDARY MENU */
 	.nav-head-secondary {display:none;} 
 
 	/* HEADER FIRST SECONDARY MOBILE MENU */
-	.mobile-nav-secondary-container {display:block; clear:both; margin:0 0 20px;}
+	.mobile-nav-secondary-container {display:block; clear:both; padding:0 0 20px;}
 	.mobile-nav-secondary-toggle {display:block; clear:both; padding:10px 20px; background:#0066ff; color:#fff; cursor:pointer;}
 	.mobile-nav-secondary-toggle:hover {color:#ccc;}
 	.mobile-nav-secondary {clear:both; padding:10px 20px; background:#f8f8f8; border-bottom:1px solid #ccc;}
@@ -349,7 +368,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.nav-head-primary {display:none;} 
 
 	/* HEADER SECOND PRIMARY MOBILE MENU */
-	.mobile-nav-primary-container {display:block; clear:both; margin:0 0 20px;}
+	.mobile-nav-primary-container {display:block; clear:both; padding:0 0 20px;}
 	.mobile-nav-primary-toggle {display:block; clear:both; padding:10px 20px; background:#0066ff; color:#fff; cursor:pointer;}
 	.mobile-nav-primary-toggle:hover {color:#ccc;}
 	.mobile-nav-primary {clear:both; padding:10px 20px; background:#f8f8f8; border-bottom:1px solid #ccc;}
@@ -363,17 +382,16 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.header-img {margin:0 0 20px;}
 
 	/* HOMEPAGE WIDGET AREA */
-	#homepage-widgets {border:0;}
-	.home-right, .home-left {width:100%; clear:both; float:left; margin:0;} 
+	#homepage-widgets {padding:0; border:0;}
+	.home-right, .home-left {width:100%; clear:both; float:left; margin:0;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image {max-width:50%;}
+	.list-image, .single-image {max-width:50%;}
 
-	/* SIDEBAR AND WIDGETS */
+	/* SIDEBAR */
 	#sidebar {width:100%; clear:both; float:left; padding:0;}
-	.widget {padding:10px;}
 
 	/* FOOTER WIDGET AREA */
-	#footer-widgets {border:0;}
-	.footer-right, .footer-left {width:100%; clear:both; float:left; margin:0;} 
+	#footer-widgets {padding:0; border:0;}
+	.footer-right, .footer-left {width:100%; clear:both; float:left; margin:0;}
 }

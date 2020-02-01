@@ -1,17 +1,17 @@
 /*
- * DISPLAY MOBILE NAV SECONDARY
+ * DISPLAY MOBILE NAV
  */
 
-jQuery(document).ready(function($) { 
-	// Hide mobile menu by default	
+jQuery(document).ready(function($) {
+	// Hide mobile menu by default
 	$('.mobile-nav-secondary').hide();
 
-	// Display mobile menu when clicked	
-	$( ".mobile-nav-secondary-toggle" ).click(function() { 
-		$( ".mobile-nav-secondary" ).toggle(); 
-	}); 
+	// Display mobile menu when clicked
+	$( ".mobile-nav-secondary-toggle" ).click(function() {
+		$( ".mobile-nav-secondary" ).toggle();
+	});
 
-	// Hide mobile submenu by default	
+	// Hide mobile submenu by default
 	$('.mobile-nav-secondary .sub-menu').hide();
 
 	// Add toggle that displays mobile submenu
@@ -19,8 +19,8 @@ jQuery(document).ready(function($) {
 		.append( "+" );
 	$( ".mobile-nav-secondary .menu" ).find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( subnavToggle );
 
-	// Display mobile submenu when clicked	
-	$( ".subnav-toggle" ).click(function() { 
-		$(this).next('.mobile-nav-secondary .children, .mobile-nav-secondary .sub-menu').toggle(); 
-	}); 
+	// Display mobile submenu when clicked
+	$( ".subnav-toggle" ).click(function() {
+		$(this).next('.mobile-nav-secondary .children, .mobile-nav-secondary .sub-menu').toggle();
+	});
 });

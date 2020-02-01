@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php 
+<?php
 if ( post_password_required() )
 	return;
 ?>
@@ -27,7 +27,7 @@ if ( post_password_required() )
 			<div class="comment-nav">
 				<?php previous_comments_link(); ?>
 				<?php next_comments_link(); ?>
-			</div>	
+			</div>
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() && get_comments_number() ) : ?>

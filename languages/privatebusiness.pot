@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PrivateBusiness\n"
-"POT-Creation-Date: 2018-06-11 00:10+0200\n"
+"POT-Creation-Date: 2020-01-25 17:56+0100\n"
 "PO-Revision-Date: 2015-11-15 22:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -43,11 +43,11 @@ msgstr ""
 msgid "Read More &raquo;"
 msgstr ""
 
-#: content-none.php:8 content-none.php:12
+#: content-none.php:7
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:9 content-none.php:13
+#: content-none.php:8
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -105,80 +105,80 @@ msgstr ""
 msgid "Secondary Navigation"
 msgstr ""
 
-#: functions.php:43
+#: functions.php:46
 msgid "Default header"
 msgstr ""
 
-#: functions.php:102
+#: functions.php:94
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:104 functions.php:114 functions.php:124 functions.php:134
-#: functions.php:144
+#: functions.php:96 functions.php:105 functions.php:114 functions.php:123
+#: functions.php:132
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:112
+#: functions.php:103
 msgid "Homepage Right"
 msgstr ""
 
-#: functions.php:122
+#: functions.php:112
 msgid "Homepage Left"
 msgstr ""
 
-#: functions.php:132
+#: functions.php:121
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:130
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:188 functions.php:197
+#: functions.php:172 functions.php:181
 msgid "Logo"
 msgstr ""
 
-#: functions.php:190
+#: functions.php:174
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:202
+#: functions.php:186
 msgid "Blog Page"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:188
 msgid "Set a page title and content above your posts."
 msgstr ""
 
-#: functions.php:211
+#: functions.php:195
 msgid "Title"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:204
 msgid "Content"
 msgstr ""
 
-#: functions.php:226
+#: functions.php:210
 msgid "Posts"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:212
 msgid "Customize the way how posts are displayed."
 msgstr ""
 
-#: functions.php:236
+#: functions.php:220
 msgid "Show a summary"
 msgstr ""
 
-#: functions.php:241 functions.php:256
+#: functions.php:225 functions.php:240
 msgid "Yes"
 msgstr ""
 
-#: functions.php:242 functions.php:257
+#: functions.php:226 functions.php:241
 msgid "No"
 msgstr ""
 
-#: functions.php:251
+#: functions.php:235
 msgid "Show Read More button"
 msgstr ""
 
