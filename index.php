@@ -5,12 +5,12 @@
 ?>
 
 <?php get_header(); ?>
-<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?> 
+<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?>
 	<div id="content">
 <?php } else { ?>
 	<div id="content-full">
 <?php } ?>
-	<?php if ( is_home() ) { ?> 
+	<?php if ( is_home() ) { ?>
 		<?php if ( get_theme_mod( 'gridbulletin_blog_title' ) ) : ?>
 			<h1 class="page-title">
 				<?php echo esc_attr( get_theme_mod('gridbulletin_blog_title') ); ?>
@@ -38,7 +38,7 @@
 
 	<?php endif; ?>
 </div>
-<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?> 
+<?php if(get_theme_mod('gridbulletin_blog_sidebar') == 'yes') { ?>
 	<?php get_sidebar(); ?>
 <?php } ?>
 <?php get_footer(); ?>
