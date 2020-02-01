@@ -10,8 +10,8 @@
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
 
-		<?php if ( has_post_thumbnail() ) { 
-			the_post_thumbnail('single', array('class' => 'single-image')); 
+		<?php if ( has_post_thumbnail() ) {
+			the_post_thumbnail('post-thumbnail', array('class' => 'single-image'));
 		} ?>
 
 		<?php the_content(); ?>

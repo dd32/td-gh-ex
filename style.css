@@ -1,7 +1,7 @@
 /*
 Theme Name: Medical
 Theme URI: https://www.guido.site/themes
-Version: 6.0
+Version: 6.1
 Author: Guido
 Author URI: https://www.guido.site
 Description: Medical is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -58,16 +58,16 @@ table {
 }
 
 
-/* CLEAR DIVS THAT CONTAIN FLOATING ELEMENTS */
-#main-content:after, #header-first:after, #header-second:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
-
-
 /* HTML */
 html {-webkit-text-size-adjust:100%;}
 
 
 /* BODY */
 body {background:#fff url('images/border.png') repeat-x; background-position:50% 250px; color:#333; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
+
+
+/* CLEARINGS */
+#main-content:after, #header-first:after, #header-second:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADINGS */
@@ -99,8 +99,8 @@ hr {height:1px; background:#ddd; border:0; margin:0 0 10px;}
 
 
 /* ALIGNMENTS */
-.alignright {float:right;}
-.alignleft {float:left;}
+.alignright {float:right; display:inline; margin-left:1em;}
+.alignleft {float:left; display:inline; margin-right:1em;}
 .aligncenter {clear:both; display:block; margin-left:auto; margin-right:auto;}
 
 
@@ -153,7 +153,7 @@ button {font-size:inherit; font-family:inherit;}
 .logo {width:35%; float:right; text-align:right;}
 .logo h1 {margin:0;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {margin:0; font-style:italic; font-size:1em;}
+.logo .site-tagline {font-style:italic;}
 
 
 /* HEADER FIRST MENU */
@@ -167,7 +167,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* HEADER FIRST SUBMENU */
 .nav-head ul ul {display:none; position:absolute; top:100%;}
-.nav-head ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head ul ul a {width:12em; padding:5px 10px; background:#333; color:#fff; text-align:left;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
@@ -239,7 +239,7 @@ img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
-.wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
+.list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
 .wp-caption-text {text-align:center;}
 
@@ -281,15 +281,18 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-next {float:right; padding:10px 0;}
 
 
-/* SIDEBAR AND WIDGETS */
+/* SIDEBAR */
 #sidebar {width:31%; float:right; padding:20px 0 0;}
+
+
+/* WIDGETS */
 .widget {margin:0 0 20px; padding:0 0 10px; border-bottom:1px solid #ddd;}
 .widgettitle {margin:0 0 10px;}
 
 
 /* FOOTER */
 #footer {clear:both;}
-.site-info {clear:both; padding:10px 0; text-align:center;}
+.site-info {clear:both; padding:20px 0; text-align:center;}
 
 
 /* FOOTER WIDGET AREA */
@@ -299,30 +302,43 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .footer-right {float:right; width:32%; margin:20px 0 0;}
 
 
+/* TABLET */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	/* HEADER FIRST LOGO */
+	.logo {width:100%; clear:both; float:left; padding:10px 0 20px; text-align:center;}
+	.logo .site-tagline {font-size:1.2em;}
+
+	/* HEADER FIRST MENU */
+	.nav-head {width:100%; clear:both; margin:0 0 10px; text-align:center;}
+	.nav-head ul li {margin:0 5px;}
+}
+
+
 /* MOBILE */
-@media screen and (max-width:767px) { 
+@media screen and (max-width:767px) {
 	/* BODY */
 	body {background:none;}
 	body.custom-background {background-image:none !important;}
 
 	/* CONTAINER */
-	#container {padding:10px 2%;}
+	#container {width:92%; padding:0 4%;}
 
 	/* MAIN CONTENT AREA */
+	#main-content {padding:0 4%;}
 	#content, #content-full {width:100%; clear:both; float:left;}
 
 	/* HEADER FIRST */
-	#header-first {padding:0;}
+	#header-first {padding:20px 0 0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {width:100%; clear:both; float:left; padding:10px 0 20px; text-align:center;}
-	.logo h2 {font-size:1.45em;}
+	.logo {width:100%; clear:both; float:left; padding:0 0 20px; text-align:center;}
+	.logo .site-tagline {font-size:1.2em;}
 
 	/* HEADER FIRST MENU */
 	.nav-head {display:none;} 
 
 	/* HEADER FIRST MOBILE MENU */
-	.mobile-nav-container {display:block; clear:both; margin:0 0 20px;}
+	.mobile-nav-container {display:block; clear:both; padding:0 0 20px;}
 	.mobile-nav-toggle {display:block; clear:both; padding:10px 20px; background:#08a0ff; color:#fff; cursor:pointer;}
 	.mobile-nav-toggle:hover {color:#ddd;}
 	.mobile-nav {clear:both; padding:10px 20px; background:#f8f8f8; border-bottom:1px solid #ddd;}
@@ -343,14 +359,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.sidebar-homepage {width:100%; clear:both; float:left; margin:0; border-radius:15px;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image {max-width:50%;}
+	.list-image, .single-image {max-width:50%;}
 
-	/* SIDEBAR AND WIDGETS */
+	/* SIDEBAR */
 	#sidebar {width:100%; clear:both; float:left; padding:0 0 10px;}
 
-	/* FOOTER */
-	#footer {padding:20px 0 0;}
-
 	/* FOOTER WIDGET AREA */
+	#footer-widgets {padding:20px 0 0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
 }

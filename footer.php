@@ -6,13 +6,13 @@
 
 </div><!-- #main-content -->
 <div id="footer">
-	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
+	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?>
 	<div id="footer-widgets">
-		<div class="footer-left"> 
+		<div class="footer-left">
 			<?php dynamic_sidebar( 'footer-left' ); ?>
 		</div>
 
-		<div class="footer-middle"> 
+		<div class="footer-middle">
 			<?php dynamic_sidebar( 'footer-middle' ); ?>
 		</div>
 
@@ -20,10 +20,10 @@
 			<?php dynamic_sidebar( 'footer-right' ); ?>
 		</div>
 	</div>
-	<?php } ?>	
+	<?php } ?>
 
 	<div class="site-info">
-		<?php _e('Copyright', 'medical'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>  
+		<?php _e('Copyright', 'medical'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
 	</div>
 </div>
 </div><!-- #container -->
