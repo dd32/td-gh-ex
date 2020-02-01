@@ -37,7 +37,7 @@ function apex_business_enqueue_inline_css() {
 
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '#theme-footer .ct-footer-border-top', 'border-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
-    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.back-to-top span, .link-pages .page-numbers:hover, .link-pages .current .page-numbers', 'background-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.back-to-top span, .link-pages .page-numbers:hover, .link-pages .current .page-numbers, .pagination .nav-links .current, .pagination .nav-links a:hover', 'background-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
 
     /******************************************************************************

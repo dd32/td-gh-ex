@@ -52,6 +52,7 @@ function apex_business_customizer_live_previw() {
 add_action('customize_preview_init','apex_business_customizer_live_previw');
 
 get_template_part( 'inc/customizer/sections/basic-settings' );
+get_template_part( 'inc/customizer/sections/get-started' );
 get_template_part( 'inc/customizer/sections/topbar-settings' );
 get_template_part( 'inc/customizer/sections/layout-settings' );
 get_template_part( 'inc/customizer/sections/typography-settings' );
