@@ -4,14 +4,13 @@
  */
 ?>
 
-<?php 
+<?php
 if ( post_password_required() )
 	return;
 ?>
 
 <div id="comments">
 	<?php if ( have_comments() ) : ?>
-
 		<h3 class="comments-title">
 			<?php printf( _n( '%1$s comment on %2$s', '%1$s comments on %2$s', get_comments_number(), 'bluegray' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
 		</h3>
@@ -25,7 +24,7 @@ if ( post_password_required() )
 		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			<div class="comment-nav">	
+			<div class="comment-nav">
 				<?php previous_comments_link(); ?>
 				<?php next_comments_link(); ?>
 			</div>
