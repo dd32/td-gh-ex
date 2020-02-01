@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenzero\n"
-"POT-Creation-Date: 2019-12-23 15:20+0100\n"
-"PO-Revision-Date: 2019-12-23 15:20+0100\n"
+"POT-Creation-Date: 2020-02-01 16:17+0100\n"
+"PO-Revision-Date: 2020-02-01 16:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -359,7 +359,7 @@ msgstr ""
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:337 inc/zenzero-dynamic.php:337
+#: inc/admin/zenzero-admin-page.php:337 inc/zenzero-dynamic.php:346
 msgid "Loading Page"
 msgstr ""
 
@@ -367,27 +367,27 @@ msgstr ""
 msgid "Font switcher"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:347 inc/zenzero-dynamic.php:341
+#: inc/admin/zenzero-admin-page.php:347 inc/zenzero-dynamic.php:350
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:352 inc/zenzero-dynamic.php:340
+#: inc/admin/zenzero-admin-page.php:352 inc/zenzero-dynamic.php:349
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:357 inc/zenzero-dynamic.php:343
+#: inc/admin/zenzero-admin-page.php:357 inc/zenzero-dynamic.php:352
 msgid "7 Shortcodes"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:362 inc/zenzero-dynamic.php:344
+#: inc/admin/zenzero-admin-page.php:362 inc/zenzero-dynamic.php:353
 msgid "5 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:367 inc/zenzero-dynamic.php:345
+#: inc/admin/zenzero-admin-page.php:367 inc/zenzero-dynamic.php:354
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/zenzero-admin-page.php:372 inc/zenzero-dynamic.php:346
+#: inc/admin/zenzero-admin-page.php:372 inc/zenzero-dynamic.php:355
 msgid "Information About Author Box"
 msgstr ""
 
@@ -451,183 +451,191 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:52
+#: inc/zenzero-dynamic.php:53
 msgid "Facebook"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:55
+#: inc/zenzero-dynamic.php:56
 msgid "Twitter"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:58
+#: inc/zenzero-dynamic.php:59
 msgid "Google Plus"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:61
+#: inc/zenzero-dynamic.php:62
 msgid "Linkedin"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:64
+#: inc/zenzero-dynamic.php:65
 msgid "Instagram"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:67
+#: inc/zenzero-dynamic.php:68
 msgid "YouTube"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:70
+#: inc/zenzero-dynamic.php:71
 msgid "Pinterest"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:73
+#: inc/zenzero-dynamic.php:74
 msgid "Tumblr"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:76
+#: inc/zenzero-dynamic.php:77
 msgid "VK"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:79
+#: inc/zenzero-dynamic.php:80
 msgid "Xing"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:82
+#: inc/zenzero-dynamic.php:83
 msgid "Vimeo"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:85
+#: inc/zenzero-dynamic.php:86
 msgid "Imdb"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:88
+#: inc/zenzero-dynamic.php:89
+msgid "Twitch"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:92
 msgid "RSS"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:104
+#: inc/zenzero-dynamic.php:108
 msgid "Box Text Color"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:110
+#: inc/zenzero-dynamic.php:114
 msgid "Box Background Color"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:116
+#: inc/zenzero-dynamic.php:120
 msgid "Header / Footer / Sidebar Background Color"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:122
+#: inc/zenzero-dynamic.php:126
 msgid "Header / Footer / Sidebar Text Color"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:152
+#: inc/zenzero-dynamic.php:156
 msgid "Zenzero Theme Options"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:165
+#: inc/zenzero-dynamic.php:169
 msgid "Facebook URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:170
+#: inc/zenzero-dynamic.php:174
 msgid "Twitter URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:175
+#: inc/zenzero-dynamic.php:179
 msgid "Google Plus URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:180
+#: inc/zenzero-dynamic.php:184
 msgid "Linkedin URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:185
+#: inc/zenzero-dynamic.php:189
 msgid "Instagram URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:190
+#: inc/zenzero-dynamic.php:194
 msgid "YouTube URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:195
+#: inc/zenzero-dynamic.php:199
 msgid "Pinterest URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:200
+#: inc/zenzero-dynamic.php:204
 msgid "Tumblr URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:205
+#: inc/zenzero-dynamic.php:209
 msgid "VK URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:210
+#: inc/zenzero-dynamic.php:214
 msgid "Xing URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:215
+#: inc/zenzero-dynamic.php:219
 msgid "Vimeo URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:220
+#: inc/zenzero-dynamic.php:224
 msgid "Imdb URL"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:255
+#: inc/zenzero-dynamic.php:229
+msgid "Twitch URL"
+msgstr ""
+
+#: inc/zenzero-dynamic.php:264
 msgid "Show RSS Button"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:273
+#: inc/zenzero-dynamic.php:282
 msgid "Show Search Button"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:291
+#: inc/zenzero-dynamic.php:300
 msgid "Show Social Button in the header"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:308
+#: inc/zenzero-dynamic.php:317
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:309
+#: inc/zenzero-dynamic.php:318
 msgid "Get the PRO version to remove CrestaProject credits"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:323
+#: inc/zenzero-dynamic.php:332
 msgid "Get Zenzero PRO WP Theme for only"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:328
+#: inc/zenzero-dynamic.php:337
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:331
+#: inc/zenzero-dynamic.php:340
 msgid "Get Zenzero PRO Theme"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:335
+#: inc/zenzero-dynamic.php:344
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:336
+#: inc/zenzero-dynamic.php:345
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:338
+#: inc/zenzero-dynamic.php:347
 msgid "Font Switcher"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:339
+#: inc/zenzero-dynamic.php:348
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:342
+#: inc/zenzero-dynamic.php:351
 msgid "Post format"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:347
+#: inc/zenzero-dynamic.php:356
 msgid "And much more..."
 msgstr ""
 
-#: inc/zenzero-dynamic.php:353
+#: inc/zenzero-dynamic.php:362
 msgid "More features? Upgrade to PRO"
 msgstr ""
 

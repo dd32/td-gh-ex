@@ -46,6 +46,7 @@ if ( ! function_exists( 'zenzero_social_button' ) ) {
 		$xingURL = get_theme_mod('zenzero_theme_options_xingurl', '');
 		$vimeoURL = get_theme_mod('zenzero_theme_options_vimeourl', '');
 		$imdbURL = get_theme_mod('zenzero_theme_options_imdburl', '');
+		$twitchURL = get_theme_mod('zenzero_theme_options_twitchurl', '');
 		?>
 		<div class="site-social smallPart">
 			<?php if (!empty($facebookURL)) : ?>
@@ -83,6 +84,9 @@ if ( ! function_exists( 'zenzero_social_button' ) ) {
 			<?php endif; ?>
 			<?php if (!empty($imdbURL)) : ?>
 				<a href="<?php echo esc_url($imdbURL); ?>" title="<?php esc_attr_e( 'Imdb', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-imdb"><span class="screen-reader-text"><?php esc_html_e( 'Imdb', 'zenzero' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if (!empty($twitchURL)) : ?>
+				<a href="<?php echo esc_url($twitchURL); ?>" title="<?php esc_attr_e( 'Twitch', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-twitch"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'zenzero' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($hideRss == 1 ) : ?>
 				<a href="<?php esc_url(bloginfo( 'rss2_url' )); ?>" title="<?php esc_attr_e( 'RSS', 'zenzero' ); ?>"><i class="fa spaceLeftRight fa-rss"><span class="screen-reader-text"><?php esc_html_e( 'RSS', 'zenzero' ); ?></span></i></a>
@@ -218,6 +222,11 @@ function zenzero_color_primary_register( $wp_customize ) {
 	'slug'=>'imdburl', 
 	'default' => '',
 	'label' => __('Imdb URL', 'zenzero')
+	);
+	$socialmedia[] = array(
+	'slug'=>'twitchurl', 
+	'default' => '',
+	'label' => __('Twitch URL', 'zenzero')
 	);
 	
 	foreach( $socialmedia as $zenzero_theme_options ) {

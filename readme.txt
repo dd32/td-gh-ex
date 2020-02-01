@@ -3,7 +3,8 @@ Contributors: CrestaProject
 Tags: one-column, left-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, blog, news
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.6.7
+Stable tag: 1.6.8
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Zenzero WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -32,9 +33,13 @@ Zenzero includes support for Infinite Scroll in Jetpack.
 * Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
 * nanoScrollerJS (https://github.com/jamesflorentino/nanoScrollerJS) licensed under MIT
 * Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
-* Image used in Theme Screenshot (http://pixabay.com/it/home-office-workstation-ufficio-336378/) Pexels Free photos for commercial and personal works
+* Image used in Theme Screenshot by PxHere https://pxhere.com/en/photo/927544 licensed under CC0
 
 == Changelog ==
+= Version 1.6.8 =
+* Added Twitch social icon
+* Minor bug fixes
+
 = Version 1.6.7 =
 * Minor bug fixes
 
