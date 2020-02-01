@@ -25,7 +25,7 @@ get_header();
 					if($layout == 'left'){
 						echo '<div class="ht-col-md-12 ht-col-lg-4 ht-col-xs-12 '.apply_filters( 'nnfy_sidebar_sticky_class', ' ' ).'">';
 
-						get_sidebar( 'left' );
+						get_sidebar();
 
 						echo '</div>';
 					}
@@ -68,7 +68,7 @@ get_header();
 			     	if($layout == 'right'){
 			     		echo '<div class="ht-col-md-12 ht-col-xs-12 ht-col-lg-4 ht-col-md-12 '.apply_filters( 'nnfy_sidebar_sticky_class', ' ' ).'">';
 
-			     		get_sidebar( 'left' );
+			     		get_sidebar();
 
 			     		echo '</div>';
 			     	}

@@ -65,11 +65,6 @@ function nnfy_register_required_plugins() {
 			'required'  => true,
 		),
 		array(
-			'name'      => esc_html__('One Click Demo Import', '99fy'), 
-			'slug'      => 'one-click-demo-import', 
-			'required'  => false,
-		),
-		array(
 			'name'      => esc_html__('Elementor', '99fy'), 
 			'slug'      => 'elementor', 
 			'required'  => false,
@@ -95,8 +90,8 @@ function nnfy_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => esc_html__('Contact Form 7', '99fy'), 
-			'slug'      => 'contact-form-7',
+			'name'      => esc_html__('WP Plugin Manager', '99fy'), 
+			'slug'      => 'wp-plugin-manager',
 			'required'  => false,
 		),
 		array(

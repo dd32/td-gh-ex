@@ -35,10 +35,9 @@
 
 		$footer_columns = get_option('nnfy_footer_col_size', 4 );
 
-		$j = 2;
+		$j = 1;
 		for($i = 1; $i <= $footer_columns; $i++){
 			$j++;
-
 			register_sidebar( array(
 				'name'          => esc_html__( 'Footer ', '99fy' ) . esc_html( $i ),
 				'id'            => 'sidebar-'.$j,

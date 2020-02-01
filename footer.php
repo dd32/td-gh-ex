@@ -41,8 +41,9 @@ $footer_copyright_text = get_option('nnfy_footer_copyright_text', __('Copyright 
         <div class="ht-row">
 
             <?php
+                $j = 1;
                 for($i = 1; $i <= $footer_col_size; $i++):
-
+                    $j++;
                     switch ($footer_col_size) {
                         case '1':
                              $col_class = 'ht-col-lg-12 ht-col-xs-12';
@@ -68,7 +69,7 @@ $footer_copyright_text = get_option('nnfy_footer_copyright_text', __('Copyright 
 
             <div class="<?php echo esc_attr($col_class); ?>">
                 <div class="footer-widget mb-40">
-                    <?php dynamic_sidebar( 'footer-'.$i ); ?>
+                    <?php dynamic_sidebar( 'sidebar-'.$j ); ?>
                 </div>
             </div>
 
