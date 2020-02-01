@@ -1,8 +1,8 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
-Version: 6.3
-Requires at least: 4.7
-Tested up to: 4.9
+Version: 6.4
+Requires at least: 5.2
+Tested up to: 5.3
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, microformats, translation-ready
@@ -41,10 +41,10 @@ You can set a page title and content above your posts via WordPress Dashboard > 
 
 And you can change the way how posts are displayed via WordPress Dashboard > Appearance > Customize.
 
-= Create a knowledgebase =
-The knowledgebase uses the native WordPress categories and posts.
+= Create a knowledge base =
+The knowledge base uses the native WordPress categories and posts.
 
-Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
+Create a new page and select the knowledge base page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
 Via WordPress Dashboard > Appearance > Customize you can:
 
@@ -53,22 +53,20 @@ Via WordPress Dashboard > Appearance > Customize you can:
 * Set amount of posts for each category
 * Order posts by date or name
 
-Parent and subcategories are listed the same way.
+Parent and subcategories are listed separately.
 
 If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 
 = Create a link portal =
 To display a list of website links you can install this plugin: https://wordpress.org/plugins/page-links-to
 
-While creating a post you can add the URL (website) of your choice.
+While creating a post you can set a redirect to an URL (website) of your choice.
 
-When you click the post link in frontend it will redirect you to this URL (so the post will not open).
+When you click the post link in the frontend of your website it will redirect you to this URL (so the post will not open).
 
 = Search bar title =
 You can change the search bar title via WordPress Dashboard > Appearance > Customize.
 
-= Browser support =
-The knowledgebase might not display properly in IE8 and older because I have used CSS selector "nth-of-type".
 
 == Copyright ==
 = Fonts =
@@ -92,6 +90,7 @@ The knowledgebase might not display properly in IE8 and older because I have use
 * Author URI: https://meyerweb.com/ 
 * License: none (public domain) 
 
+
 == Notes ==
 = Translation =
 This theme is translation-ready and supports language packs from wordpress.org
@@ -103,5 +102,5 @@ Without the WordPress codex and help from the WordPress community I was not able
 If you have a question or problem using this WordPress theme, please visit the WordPress Theme Directory and post a message in Support Forum.
 
 
-== Changelog == 
+== Changelog ==
 See separate file called changelog.

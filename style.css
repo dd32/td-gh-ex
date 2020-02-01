@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: https://www.guido.site/themes
-Version: 6.3
+Version: 6.4
 Author: Guido
 Author URI: https://www.guido.site
 Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the native categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -58,16 +58,16 @@ table {
 }
 
 
-/* CLEAR DIVS THAT CONTAIN FLOATING ELEMENTS */
-#header-first:after, #header-second:after, #header-third:after, #categories-three:after, #categories-four:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
-
-
 /* HTML */
 html {-webkit-text-size-adjust:100%;}
 
 
 /* BODY */
 body {background:#fff; color:#333; font-family:'Open Sans', sans-serif; font-size:15px; line-height:1.5; text-align:left; word-wrap:break-word;}
+
+
+/* CLEARINGS */
+#header-first:after, #header-second:after, #header-third:after, #categories-three:after, #categories-four:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADINGS */
@@ -99,8 +99,8 @@ hr {height:1px; background:#eee; border:0; margin:0 0 10px;}
 
 
 /* ALIGNMENTS */
-.alignright {float:right;}
-.alignleft {float:left;}
+.alignright {float:right; display:inline; margin-left:1em;}
+.alignleft {float:left; display:inline; margin-right:1em;}
 .aligncenter {clear:both; display:block; margin-left:auto; margin-right:auto;}
 
 
@@ -163,7 +163,7 @@ button {font-size:inherit; font-family:inherit;}
 .logo {width:35%; float:left;}
 .logo h1 {margin:0;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {margin:0; font-style:italic; font-size:1.20em;}
+.logo .site-tagline {font-style:italic; font-size:1.2em;}
 
 
 /* HEADER FIRST MENU */
@@ -177,7 +177,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* HEADER FIRST SUBMENU */
 .nav-head ul ul {display:none; position:absolute; top:100%;}
-.nav-head ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head ul ul a {width:12em; padding:5px 10px; background:#333; color:#fff; text-align:left;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
@@ -205,7 +205,7 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* HEADER THIRD */
-#header-third {clear:both; padding:10px 2%; background:#08a0ff; color:#fff;}
+#header-third {clear:both; padding:10px 20px; background:#08a0ff; color:#fff;}
 
 
 /* HEADER THIRD SEARCH BAR */
@@ -276,7 +276,7 @@ img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
-.wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
+.list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
 .wp-caption-text {text-align:center;}
 
@@ -318,50 +318,63 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-next {float:right; padding:10px 0;}
 
 
-/* SIDEBAR AND WIDGETS */
+/* SIDEBAR */
 #sidebar {width:33%; float:right; padding:20px 0 0;}
+
+
+/* WIDGETS */
 .widget {margin:0 0 20px; padding:0 0 10px; border-bottom:1px solid #eee;}
 .widgettitle {margin:0 0 10px;}
 
 
 /* FOOTER */
-#footer {clear:both; padding:0 2%; background:#08a0ff; color:#fff;}
+#footer {clear:both; background:#08a0ff; color:#fff;}
 #footer a {color:#fff;}
 #footer .widget {border-bottom:1px solid #fff;}
 #footer .widgettitle {color:#fff;}
-.site-info {clear:both; padding:10px 0; text-align:center;}
+.site-info {clear:both; padding:20px; text-align:center;}
 
 
 /* FOOTER WIDGET AREA */
-#footer-widgets {clear:both;}
+#footer-widgets {clear:both; padding:0 20px;}
 .footer-left {float:left; width:32%; margin:20px 0 0;}
 .footer-middle {float:left; width:32%; margin:20px 2% 0;}
 .footer-right {float:right; width:32%; margin:20px 0 0;}
 
 
+/* TABLET */
+@media screen and (min-width:768px) and (max-width:1023px) {
+	/* HEADER FIRST LOGO */
+	.logo {width:100%; clear:both; padding:0 0 20px; text-align:center;}
+
+	/* HEADER FIRST MENU */
+	.nav-head {width:100%; clear:both; float:left; margin:0 0 10px; text-align:center;}
+	.nav-head ul li {margin:0 10px;}
+}
+
+
 /* MOBILE */
-@media screen and (max-width:767px) { 
+@media screen and (max-width:767px) {
 	/* BODY */
 	body.custom-background {background-image:none !important;}
 
 	/* CONTAINER */
-	#container {padding:10px 2% 0;}
+	#container {width:92%; padding:0 4%;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+	#content, #content-full {width:100%; clear:both; float:left; padding:10px 0 20px;}
 
 	/* HEADER FIRST */
-	#header-first {padding:0;}
+	#header-first {padding:20px 0 0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {width:100%; clear:both; padding:10px 0 20px; text-align:center;}
-	.logo h2 {font-size:1.45em;}
+	.logo {width:100%; clear:both; padding:0 0 20px; text-align:center;}
 
 	/* HEADER FIRST MENU */
 	.nav-head {display:none;} 
 
 	/* HEADER FIRST MOBILE MENU */
-	.mobile-nav-container {display:block; clear:both; margin:0 0 20px;}
+	.mobile-nav-container {display:block; clear:both; padding:0 0 20px;}
 	.mobile-nav-toggle {display:block; clear:both; padding:10px 20px; background:#08a0ff; color:#fff; cursor:pointer;}
 	.mobile-nav-toggle:hover {color:#eee;}
 	.mobile-nav {clear:both; padding:10px 20px; background:#f8f8f8; border-bottom:1px solid #eee;}
@@ -375,12 +388,10 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.image-homepage {width:100%; clear:both;}
 
 	/* HEADER SECOND HOMEPAGE SIDEBAR */
-	.sidebar-homepage {width:100%; clear:both; float:left; padding:10px 0 0;}
-	#header-second .widget {padding:0 3%;}
-	#header-second .widgettitle {padding:0; background:none;}
+	.sidebar-homepage {width:100%; clear:both; float:left;}
 
 	/* HEADER THIRD */
-	#header-third {margin:0 0 20px; padding:5px 3% 10px;}
+	#header-third {margin:0 0 20px; padding:5px 20px 10px;}
 
 	/* HEADER THIRD SEARCH BAR */
 	#header-third .searchbar-title {width:100%; clear:both; text-align:center;}
@@ -399,16 +410,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	#categories-four ul:nth-of-type(2n+2) {margin:0 0 20px 0;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image {max-width:50%;}
+	.list-image, .single-image {max-width:50%;}
 
-	/* SIDEBAR AND WIDGETS */
+	/* SIDEBAR */
 	#sidebar {width:100%; clear:both; float:left; padding:0;}
-	.widgettitle {padding:5px 3%; background:#08a0ff; color:#fff;}
-
-	/* FOOTER */
-	#footer {padding:10px 3%;}
-	#footer .widgettitle {padding:0; background:none;}
 
 	/* FOOTER WIDGET AREA */
+	#footer-widgets {padding:20px 20px 0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
 }

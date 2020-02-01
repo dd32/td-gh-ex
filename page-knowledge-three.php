@@ -11,10 +11,10 @@
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php if ( get_theme_mod( 'myknowledgebase_page_title' ) == 'yes' ) { ?>
 			<h1 class="page-title"><?php the_title(); ?></h1>
-		<?php } ?> 
+		<?php } ?>
 
-		<?php if ( has_post_thumbnail() ) { 
-			the_post_thumbnail('single', array('class' => 'single-image')); 
+		<?php if ( has_post_thumbnail() ) {
+			the_post_thumbnail('post-thumbnail', array('class' => 'single-image'));
 		} ?>
 
 		<?php the_content(); ?>
@@ -37,12 +37,12 @@
 
 		$myknowledgebase_cats = get_categories( $myknowledgebase_cat_args );
 
-		foreach ( $myknowledgebase_cats as $cat ) :
-			echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';	
+		foreach ( $myknowledgebase_cats as $category ) :
+			echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $category->cat_ID ) . '" title="' . $category->name . '" >' . $category->name . '</a></li>';
 
 			if ( get_theme_mod( 'myknowledgebase_cat_description' ) == 'yes' ) :
-				if ( category_description( $cat->cat_ID ) ) :
-					echo '<div class="cat-description">'. wp_kses_post( category_description( $cat->cat_ID ) ) .'</div>'; 
+				if ( category_description( $category->cat_ID ) ) :
+					echo '<div class="cat-description">'. wp_kses_post( category_description( $category->cat_ID ) ) .'</div>';
 				endif;
 			endif;
 
@@ -53,34 +53,34 @@
 			endif;
 
 			if ( get_theme_mod( 'myknowledgebase_order' ) == 'name' ) :
-				$orderby = 'name';
-				$order = 'asc';
+				$order_by = 'name';
+				$the_order = 'asc';
 			else :
-				$orderby = 'date';
-				$order = 'desc';
+				$order_by = 'date';
+				$the_order = 'desc';
 			endif;
 
 			$myknowledgebase_post_args = array(
 				'post_type' => 'post',
-				'tax_query' => array( 
-					array( 
+				'tax_query' => array(
+					array(
 						'taxonomy' => 'category',
-						'field' => 'term_id', 
-						'terms' => $cat->term_id, 
+						'field' => 'term_id',
+						'terms' => $category->term_id,
 						'include_children' => false,
-					) 
-				), 
+					)
+				),
 				'posts_per_page' => $posts_per_page,
-				'orderby' => $orderby,
-				'order' => $order
+				'orderby' => $order_by,
+				'order' => $the_order
 			);
 
-			$myknowledgebase_posts = get_posts( $myknowledgebase_post_args ); 
+			$myknowledgebase_posts = get_posts( $myknowledgebase_post_args );
 
 			foreach( $myknowledgebase_posts AS $single_post ) :
-				echo '<li class="post-name"><a href="'. get_permalink( $single_post->ID ) .'" rel="bookmark" title="'. get_the_title( $single_post->ID ) .'">'. get_the_title( $single_post->ID ) .'</a></li>'; 
+				echo '<li class="post-name"><a href="'. get_permalink( $single_post->ID ) .'" rel="bookmark" title="'. get_the_title( $single_post->ID ) .'">'. get_the_title( $single_post->ID ) .'</a></li>';
 			endforeach;
-	
+
 			echo '</ul>';
 		endforeach; ?>
 	</div>
