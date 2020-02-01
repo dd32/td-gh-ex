@@ -251,7 +251,7 @@ function advance_education_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_EDUCATION_CREDIT', 'https://www.themeshopy.com/themes/free-education-wordpress-theme/');
+define('ADVANCE_EDUCATION_CREDIT',__('https://www.themeshopy.com/themes/free-education-wordpress-theme/','advance-education'));
 
 if (!function_exists('advance_education_credit')) {
 	function advance_education_credit() {
@@ -374,11 +374,11 @@ function advance_education_scripts() {
 
 add_action('wp_enqueue_scripts', 'advance_education_scripts');
 
-define('ADVANCE_EDUCATION_BUY_NOW','https://www.themeshopy.com/themes/education-wordpress-theme/');
-define('ADVANCE_EDUCATION_LIVE_DEMO','https://www.themeshopy.com/advance-education-pro/');
-define('ADVANCE_EDUCATION_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-education-pro/');
-define('ADVANCE_EDUCATION_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-education/');
-define('ADVANCE_EDUCATION_CONTACT','https://wordpress.org/support/theme/advance-education/');
+define('ADVANCE_EDUCATION_BUY_NOW',__('https://www.themeshopy.com/themes/education-wordpress-theme/','advance-education'));
+define('ADVANCE_EDUCATION_LIVE_DEMO',__('https://www.themeshopy.com/advance-education-pro/','advance-education'));
+define('ADVANCE_EDUCATION_PRO_DOC',__('https://www.themeshopy.com/demo/docs/advance-education-pro/','advance-education'));
+define('ADVANCE_EDUCATION_FREE_DOC',__('https://www.themeshopy.com/demo/docs/free-advance-education/','advance-education'));
+define('ADVANCE_EDUCATION_CONTACT',__('https://wordpress.org/support/theme/advance-education/','advance-education'));
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';
