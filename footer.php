@@ -7,18 +7,18 @@
 <div id="footer">
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-left' ) ) { ?>
 	<div id="footer-widgets">
-		<div class="footer-right"> 
+		<div class="footer-right">
 			<?php dynamic_sidebar( 'footer-right' ); ?>
 		</div>
-		
-		<div class="footer-left"> 
+
+		<div class="footer-left">
 			<?php dynamic_sidebar( 'footer-left' ); ?>
 		</div>
 	</div>
-	<?php } ?> 
+	<?php } ?>
 
 	<div class="site-info">
-		<?php _e('Copyright', 'shipyard'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>  
+		<?php _e('Copyright', 'shipyard'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
 	</div>
 </div>
 </div><!-- #container -->

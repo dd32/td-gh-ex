@@ -1,7 +1,7 @@
 /*
 Theme Name: Shipyard
 Theme URI: https://www.guido.site/themes
-Version: 6.4
+Version: 6.5
 Author: Guido
 Author URI: https://www.guido.site
 Description: Shipyard is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -58,16 +58,16 @@ table {
 }
 
 
-/* CLEAR DIVS THAT CONTAIN FLOATING ELEMENTS */
-.entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
-
-
 /* HTML */
 html {-webkit-text-size-adjust:100%;}
 
 
 /* BODY */
 body {background:#f8f8f8; color:#333; font-family:'Open Sans', sans-serif; font-size:16px; line-height:1.5; text-align:left; word-wrap:break-word;}
+
+
+/* CLEARINGS */
+.entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADINGS */
@@ -99,8 +99,8 @@ hr {height:1px; background:#ccc; border:0; margin:0 0 10px;}
 
 
 /* ALIGNMENTS */
-.alignright {float:right;}
-.alignleft {float:left;}
+.alignright {float:right; display:inline; margin-left:1em;}
+.alignleft {float:left; display:inline; margin-right:1em;}
 .aligncenter {clear:both; display:block; margin-left:auto; margin-right:auto;}
 
 
@@ -129,7 +129,7 @@ button {font-size:inherit; font-family:inherit;}
 
 
 /* CONTAINER */
-#container {max-width:1160px; clear:both; margin:10px auto; padding:20px; background:#fff; border:1px solid #ccc; border-radius:5px;}
+#container {max-width:1160px; clear:both; margin:20px auto; padding:20px; background:#fff; border:1px solid #ccc; border-radius:5px;}
 
 
 /* MAIN CONTENT AREA */
@@ -149,7 +149,7 @@ button {font-size:inherit; font-family:inherit;}
 .logo {clear:both; padding:0 0 20px;}
 .logo h1 {margin:0;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
-.logo h2 {margin:0; padding:5px 0 5px 20px; font-size:1.45em;}
+.logo .site-tagline {padding:0 0 0 20px; font-size:1.45em;}
 
 
 /* HEADER MENU */
@@ -163,7 +163,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* HEADER SUBMENU */
 .nav-head ul ul {display:none; position:absolute; top:100%;}
-.nav-head ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head ul ul a {width:12em; background:#333; color:#fff; padding:5px 10px;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
@@ -220,7 +220,7 @@ img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
-.wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
+.list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
 .wp-caption-text {text-align:center;}
 
@@ -262,15 +262,18 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-next {float:right; padding:10px 0;}
 
 
-/* SIDEBAR AND WIDGETS */
+/* SIDEBAR */
 #sidebar {width:38%; float:right; padding:20px 0 0;}
+
+
+/* WIDGETS */
 .widget {margin:0 0 20px; padding:15px; border:1px solid #ccc; border-radius:5px;}
 .widgettitle {margin:0 0 10px; padding:5px 10px; background:#f8f8f8; color:#333; border:1px solid #ccc; border-radius:5px;}
 
 
 /* FOOTER */
 #footer {clear:both;}
-.site-info {clear:both; padding:5px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px; text-align:center;}
+.site-info {clear:both; padding:5px 20px; background:#f8f8f8; border:1px solid #ccc; border-radius:5px; text-align:center;}
 
 
 /* FOOTER WIDGET AREA */
@@ -279,26 +282,33 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .footer-right {float:right; width:49%;}
 
 
+/* TABLET */
+@media screen and (min-width:768px) and (max-width:1200px) {
+	/* CONTAINER */
+	#container {width:92%; padding:20px 2%;}
+}
+
+
 /* MOBILE */
-@media screen and (max-width:767px) { 
+@media screen and (max-width:767px) {
 	/* BODY */
 	body.custom-background {background-image:none !important;}
 
 	/* CONTAINER */
-	#container {width:92%; padding:10px 2% 20px;}
+	#container {width:92%; margin:0 auto; padding:20px 4%; border:0; border-radius:0;}
 
 	/* MAIN CONTENT AREA */
-	#content, #content-full {width:100%; clear:both; float:left; padding:0 0 20px;}
+	#content, #content-full {width:100%; clear:both; float:left; padding:10px 0 20px;}
 
 	/* HEADER LOGO */
-	.logo {padding:10px 0 20px; text-align:center;}
-	.logo h2 {padding:0;}
+	.logo {padding:0 0 20px; text-align:center;}
+	.logo .site-tagline {padding:0;}
 
 	/* HEADER MENU */
 	.nav-head {display:none;} 
 
 	/* HEADER MOBILE MENU */
-	.mobile-nav-container {display:block; clear:both; margin:0 0 20px;}
+	.mobile-nav-container {display:block; clear:both; padding:0 0 20px;}
 	.mobile-nav-toggle {display:block; clear:both; padding:10px 20px; background:#f26535; color:#fff; cursor:pointer;}
 	.mobile-nav-toggle:hover {color:#ccc;}
 	.mobile-nav {clear:both; padding:10px 20px; background:#f8f8f8; border-bottom:1px solid #ccc;}
@@ -312,9 +322,9 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.header-img {margin:0 0 20px;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image {max-width:50%;}
+	.list-image, .single-image {max-width:50%;}
 
-	/* SIDEBAR AND WIDGETS */
+	/* SIDEBAR */
 	#sidebar {width:100%; clear:both; float:left; padding:0;}
 
 	/* FOOTER WIDGET AREA */
