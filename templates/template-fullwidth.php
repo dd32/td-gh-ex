@@ -6,7 +6,7 @@
 
 get_header();
 ?>
-<fiv id="site-content">
+<div id="site-content">
 
     <?php
 

@@ -7,8 +7,13 @@
     if ( get_theme_mod( 'apex_business_sticky_header_switch_setting' ) ) {
         $apex_business_fixed_header = 'fixed-header';
     }
+
+    $apex_business_transparent_bar = '';
+    if ( get_theme_mod( 'apex_business_transparent_header_buttom_border_setting', 1 ) == 1 ) {
+        $apex_business_transparent_bar = ( get_post_meta( get_the_ID(), '_header_option_value_key', TRUE ) == 'ct-transparent-header' ) ? 'ct-trans-bar' : '';
+    }
 ?>
-<div class="main-header header-spacing no-stick <?php echo esc_attr( $apex_business_fixed_header ); ?>">
+<div class="main-header header-spacing no-stick <?php echo esc_attr( $apex_business_fixed_header ); ?>  <?php echo esc_attr( $apex_business_transparent_bar ); ?>">
     <div class="container">
         <div class="row nav-menu">
             <div class="col-md-12 vertical-center header-col">
@@ -20,7 +25,7 @@
 
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>
-                <i class="fa fa-bars menubar-right"></i>
+                    <a href="#" class="js-ct-menubar-right menubar-right"><i class="fa fa-bars"></i></a>
                 <?php endif; ?>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->

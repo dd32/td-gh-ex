@@ -161,6 +161,24 @@ function apex_business_layout_settings_setup( $wp_customize ) {
        'priority'    => 25,
        'type'        => 'ios',
     ) ) );
+
+    $wp_customize->add_setting( 'apex_business_loading_bar_color_setting', array(
+        'default'           => APEX_BUSINESS_PRIMARY_COLOR,
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color',
+    ) );
+
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize, 'apex_business_loading_bar_color_control',
+            array(
+                'section'  => 'apex_business_layout_settings_section',
+                'priority' => 25,
+                'label'    => esc_html__( 'Loading Bar Color', 'apex-business' ),
+                'settings' => 'apex_business_loading_bar_color_setting',
+            )
+        )
+    );
 }
 
 add_action( 'customize_register', 'apex_business_layout_settings_setup');

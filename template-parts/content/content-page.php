@@ -12,7 +12,7 @@
         </div><!-- /.post-image -->
     <?php endif; ?>
 
-    <div class="entry-container">
+    <div id="content" class="entry-container">
         <?php
             if ( get_theme_mod( 'apex_business_breadcurmb_switch_setting', false ) == true ) :
                 $apex_business_allowed_html = array(

@@ -95,6 +95,10 @@
                 )
             );
 
+            if ( function_exists( 'apex_business_social_share_output' ) ) {
+                apex_business_social_share_output();
+            }
+
         ?>
 
         <div class="row ">
