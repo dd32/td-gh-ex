@@ -4,8 +4,8 @@ Contributors: specia
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 3.0.6
-Version: 3.0.6
+Stable tag: 3.0.7
+Version: 3.0.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
@@ -74,11 +74,14 @@ Source: https://github.com/matthieua/WOW
 Images
 =================================================================================================
 Screenshot Image
-URL: https://pxhere.com/en/photo/1523587
+URL: https://pxhere.com/en/photo/1323639
 Source: https://pxhere.com
 License: CC0 License
 
 ##Changelog
+
+version 3.0.7
+* Screenshot Link Updated
 
 version 3.0.6
 * Copyright Updated
