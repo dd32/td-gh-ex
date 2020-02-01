@@ -355,12 +355,12 @@ function advance_coaching_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_COACHING_BUY_NOW','https://www.themeshopy.com/themes/coaching-wordpress-theme/');
-define('ADVANCE_COACHING_LIVE_DEMO','https://themeshopy.com/advance-coaching-pro/');
-define('ADVANCE_COACHING_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-coaching-pro/');
-define('ADVANCE_COACHING_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-coaching/');
-define('ADVANCE_COACHING_CONTACT','https://wordpress.org/support/theme/advance-coaching/');
-define('ADVANCE_COACHING_CREDIT', 'https://www.themeshopy.com/themes/free-coaching-wordpress-theme/');
+define('ADVANCE_COACHING_BUY_NOW',__('https://www.themeshopy.com/themes/coaching-wordpress-theme/','advance-coaching'));
+define('ADVANCE_COACHING_LIVE_DEMO',__('https://themeshopy.com/advance-coaching-pro/','advance-coaching'));
+define('ADVANCE_COACHING_PRO_DOC',__('https://www.themeshopy.com/demo/docs/advance-coaching-pro/','advance-coaching'));
+define('ADVANCE_COACHING_FREE_DOC',__('https://www.themeshopy.com/demo/docs/free-advance-coaching/','advance-coaching'));
+define('ADVANCE_COACHING_CONTACT',__('https://wordpress.org/support/theme/advance-coaching/','advance-coaching'));
+define('ADVANCE_COACHING_CREDIT',__('https://www.themeshopy.com/themes/free-coaching-wordpress-theme/','advance-coaching'));
 
 if (!function_exists('advance_coaching_credit')) {
 	function advance_coaching_credit() {

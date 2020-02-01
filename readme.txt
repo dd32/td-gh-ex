@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-c
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4
+Stable tag: 0.4.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -77,6 +77,11 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Added sticky header option in customizer.
   * Updated POT file.
   * Resolved theme sniffer errors.
+
+= 0.4.1 =
+  * Added slider content alignment setting in customizer.
+  * Added slider excerpt length setting in customizer.
+  * Added slider image opacity setting in customizer.
 
 == Resources ==
 

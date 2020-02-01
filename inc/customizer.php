@@ -660,6 +660,66 @@ function advance_coaching_customize_register($wp_customize) {
 		) );
 	}
 
+	//content layout
+    $wp_customize->add_setting('advance_coaching_slider_content_alignment',array(
+    'default' => __('Left','advance-coaching'),
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','advance-coaching'),
+        'section' => 'advance_coaching_slider',
+        'choices' => array(
+            'Center' => __('Center','advance-coaching'),
+            'Left' => __('Left','advance-coaching'),
+            'Right' => __('Right','advance-coaching'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_coaching_slider_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_coaching_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','advance-coaching' ),
+		'section'     => 'advance_coaching_slider',
+		'type'        => 'number',
+		'settings'    => 'advance_coaching_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_coaching_slider_image_opacity',array(
+      'default'              => 0.7,
+      'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_coaching_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','advance-coaching' ),
+	'section'     => 'advance_coaching_slider',
+	'type'        => 'select',
+	'settings'    => 'advance_coaching_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-coaching'),
+		'0.1' =>  esc_attr('0.1','advance-coaching'),
+		'0.2' =>  esc_attr('0.2','advance-coaching'),
+		'0.3' =>  esc_attr('0.3','advance-coaching'),
+		'0.4' =>  esc_attr('0.4','advance-coaching'),
+		'0.5' =>  esc_attr('0.5','advance-coaching'),
+		'0.6' =>  esc_attr('0.6','advance-coaching'),
+		'0.7' =>  esc_attr('0.7','advance-coaching'),
+		'0.8' =>  esc_attr('0.8','advance-coaching'),
+		'0.9' =>  esc_attr('0.9','advance-coaching')
+	),
+	));
+
 	//Service Section
 	$wp_customize->add_section('advance_coaching_category',array(
 		'title'	=> __('Service Section','advance-coaching'),
