@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MultiColors\n"
-"POT-Creation-Date: 2018-06-11 00:09+0200\n"
+"POT-Creation-Date: 2020-01-25 17:55+0100\n"
 "PO-Revision-Date: 2015-11-15 20:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -43,11 +43,11 @@ msgstr ""
 msgid "Read More &raquo;"
 msgstr ""
 
-#: content-none.php:8 content-none.php:12
+#: content-none.php:7
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:9 content-none.php:13
+#: content-none.php:8
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
@@ -101,92 +101,92 @@ msgstr ""
 msgid "Primary Navigation"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:45
 msgid "Default header"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:92
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:102 functions.php:112 functions.php:122 functions.php:132
-#: functions.php:142 functions.php:152 functions.php:162 functions.php:172
+#: functions.php:94 functions.php:103 functions.php:112 functions.php:121
+#: functions.php:130 functions.php:140 functions.php:149 functions.php:158
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:110
+#: functions.php:101
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:120
+#: functions.php:110
 msgid "Homepage Right"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:119
 msgid "Homepage Middle"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:128
 msgid "Homepage Left"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:138
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:147
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:156
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:216 functions.php:225
+#: functions.php:198 functions.php:207
 msgid "Logo"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:200
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:230
+#: functions.php:212
 msgid "Blog Page"
 msgstr ""
 
-#: functions.php:232
+#: functions.php:214
 msgid "Set a page title and content above your posts."
 msgstr ""
 
-#: functions.php:239
+#: functions.php:221
 msgid "Title"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:230
 msgid "Content"
 msgstr ""
 
-#: functions.php:254
+#: functions.php:236
 msgid "Posts"
 msgstr ""
 
-#: functions.php:256
+#: functions.php:238
 msgid "Customize the way how posts are displayed."
 msgstr ""
 
-#: functions.php:264
+#: functions.php:246
 msgid "Show a summary"
 msgstr ""
 
-#: functions.php:269 functions.php:284
+#: functions.php:251 functions.php:266
 msgid "Yes"
 msgstr ""
 
-#: functions.php:270 functions.php:285
+#: functions.php:252 functions.php:267
 msgid "No"
 msgstr ""
 
-#: functions.php:279
+#: functions.php:261
 msgid "Show Read More button"
 msgstr ""
 

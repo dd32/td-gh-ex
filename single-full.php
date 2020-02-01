@@ -11,7 +11,7 @@
 <div id="content-full">
 	<?php while (have_posts()) : the_post(); ?>
 
-		<div id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>> 
+		<div id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>>
 			<h1 class="post-title-single entry-title"><?php the_title(); ?></h1>
 
 			<?php get_template_part( 'content-postmeta' ); ?>

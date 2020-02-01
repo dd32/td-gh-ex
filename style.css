@@ -1,7 +1,7 @@
 /*
 Theme Name: MultiColors
 Theme URI: https://www.guido.site/themes
-Version: 6.2
+Version: 6.3
 Author: Guido
 Author URI: https://www.guido.site
 Description: MultiColors is a free, clean, minimalistic, responsive, mobile-friendly, colorful WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -58,16 +58,16 @@ table {
 }
 
 
-/* CLEAR DIVS THAT CONTAIN FLOATING ELEMENTS */
-#main-content:after, #header-third:after, #homepage-widgets:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
-
-
 /* HTML */
 html {-webkit-text-size-adjust:100%;}
 
 
 /* BODY */
 body {background:#800080; color:#eee; font-family:'Open Sans', sans-serif; font-size:16px; line-height:1.5; text-align:left; word-wrap:break-word;}
+
+
+/* CLEARINGS */
+#main-content:after, #header-third:after, #homepage-widgets:after, .entry-content:after, .more:after, .post-nav:after, .comment-nav:after, #footer-widgets:after {content:''; display:block; height:0; clear:both;}
 
 
 /* HEADINGS */
@@ -99,8 +99,8 @@ hr {height:1px; background:#eee; border:0; margin:0 0 10px;}
 
 
 /* ALIGNMENTS */
-.alignright {float:right;}
-.alignleft {float:left;}
+.alignright {float:right; display:inline; margin-left:1em;}
+.alignleft {float:left; display:inline; margin-right:1em;}
 .aligncenter {clear:both; display:block; margin-left:auto; margin-right:auto;}
 
 
@@ -166,7 +166,7 @@ button {font-size:inherit; font-family:inherit;}
 .logo h1 {margin:0;}
 .logo h1 a {color:#eee; text-decoration:none;}
 .logo h1 a:hover {color:#333; text-decoration:none;}
-.logo h2 {margin:0; text-align:right; font-size:1.45em;}
+.logo .site-tagline {text-align:right; font-size:1.45em;}
 
 
 /* HEADER SECOND */
@@ -184,7 +184,7 @@ button {font-size:inherit; font-family:inherit;}
 
 /* HEADER SECOND SUBMENU */
 .nav-head ul ul {display:none; position:absolute; top:100%;}
-.nav-head ul ul ul {display:none; position:absolute; top:30%; left:100%;}
+.nav-head ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head ul ul a {width:12em; padding:5px 10px; background:#333; color:#eee;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
@@ -269,7 +269,7 @@ img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
-.wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
+.list-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
 .wp-caption-text {text-align:center;}
 
@@ -311,9 +311,12 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 .comment-next {float:right; padding:10px 0;}
 
 
-/* SIDEBAR AND WIDGETS */
+/* SIDEBAR */
 #sidebar {width:32%; float:right; padding:20px 0 0;}
-.widget {margin:0 0 20px; padding:15px 5%; background:#eee; color:#333;}
+
+
+/* WIDGETS */
+.widget {margin:0 0 20px; padding:15px 20px; background:#eee; color:#333;}
 .widget a {color:#00aaff; text-decoration:none;}
 .widget a:hover {text-decoration:underline;}
 .widgettitle {margin:0 0 10px; padding:0 0 5px; border-bottom:2px solid #00aaff; color:#00aaff;}
@@ -323,7 +326,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 #footer {clear:both; background:#800080;}
 #footer .widget {padding:0; background:none; color:#eee;}
 #footer .widgettitle {padding:0; border:0; color:#eee;}
-.site-info {max-width:1160px; clear:both; margin:0 auto; padding:15px 20px; text-align:center;}
+.site-info {max-width:1160px; clear:both; margin:0 auto; padding:20px; text-align:center;}
 
 
 /* FOOTER WIDGET AREA */
@@ -334,23 +337,23 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 
 
 /* MOBILE */
-@media screen and (max-width:767px) { 
+@media screen and (max-width:767px) {
 	/* BODY */
 	body.custom-background {background-image:none !important;}
 
 	/* MAIN CONTENT AREA */
-	#main-content {padding:0 2%;}
+	#main-content {padding:0 4%;}
 	#content, #content-full {width:100%; clear:both; float:left; padding:20px 0;}
 
 	/* HEADER FIRST LOGO */
-	.logo {padding:20px 2%; text-align:center;}
-	.logo h2 {margin:10px 0 0; text-align:center;}
+	.logo {padding:20px 4%; text-align:center;}
+	.logo .site-tagline {text-align:center;}
 
 	/* HEADER SECOND MENU */
 	.nav-head {display:none;}
 
 	/* HEADER SECOND MOBILE MENU */
-	.mobile-nav-container {display:block; clear:both; padding:20px 2%; text-align:left;}
+	.mobile-nav-container {display:block; clear:both; padding:20px 4%; text-align:left;}
 	.mobile-nav-toggle {display:block; clear:both; padding:10px 20px; background:#ff6200; color:#eee; cursor:pointer;}
 	.mobile-nav-toggle:hover {color:#ddd;}
 	.mobile-nav {clear:both; padding:10px 20px; background:#eee;}
@@ -361,7 +364,7 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.mobile-nav .sub-menu li {margin:0 0 0 20px;}
 
 	/* HEADER THIRD */
-	#header-third {padding:20px 2% 0;}
+	#header-third {padding:20px 4% 0;}
 
 	/* HEADER THIRD HOMEPAGE IMAGE */
 	.image-homepage {width:100%; clear:both;}
@@ -370,24 +373,19 @@ img.aligncenter {clear:both; display:block; margin:0.4em auto 0.4em auto;}
 	.sidebar-homepage {width:100%; clear:both; float:left;}
 
 	/* HOMEPAGE WIDGET AREA */
-	#homepage-widgets {padding:20px 2% 0;}
+	#homepage-widgets {padding:20px 4% 0;}
 	.home-right, .home-middle, .home-left {width:100%; clear:both; float:left; margin:0;} 
 
 	/* POST */
 	.post-home, .post-home.left {width:100%; clear:both; float:left; margin:0 0 20px;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image {max-width:50%;}
+	.list-image, .single-image {max-width:50%;}
 
-	/* SIDEBAR AND WIDGETS */
+	/* SIDEBAR */
 	#sidebar {width:100%; clear:both; float:left; padding:0;}
-	.widget {padding:5px 2%;} 
-
-	/* FOOTER */
-	#footer {padding:15px 2%;}
-	.site-info {padding:10px 0;}
 
 	/* FOOTER WIDGET AREA */
-	#footer-widgets {padding:0;}
+	#footer-widgets {padding:20px 4% 0;}
 	.footer-right, .footer-middle, .footer-left {width:100%; clear:both; float:left; margin:0;} 
 }
