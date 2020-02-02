@@ -53,6 +53,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				$tumblrURL = get_theme_mod('semplicemente_theme_options_tumblrurl', '#');
 				$vkURL = get_theme_mod('semplicemente_theme_options_vkurl', '#');
 				$xingURL = get_theme_mod('semplicemente_theme_options_xingurl', '');
+				$twitchURL = get_theme_mod('semplicemente_theme_options_twitchurl', '');
 				$emailURL = get_theme_mod('semplicemente_theme_options_emailurl', '');
 			?>
 
@@ -97,6 +98,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 					
 					<?php if (!empty($xingURL )) : ?>
 						<a href="<?php echo esc_url($xingURL ); ?>" title="<?php esc_attr_e( 'Xing', 'semplicemente' ); ?>"><i class="fa fa-xing spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'semplicemente' ); ?></span></i></a>
+					<?php endif; ?>
+					
+					<?php if (!empty($twitchURL )) : ?>
+						<a href="<?php echo esc_url($twitchURL ); ?>" title="<?php esc_attr_e( 'Twitch', 'semplicemente' ); ?>"><i class="fa fa-twitch spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'semplicemente' ); ?></span></i></a>
 					<?php endif; ?>
 					
 					<?php if (!empty($emailURL)) : ?>

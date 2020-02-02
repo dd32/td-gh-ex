@@ -117,6 +117,11 @@ function semplicemente_custom_settings_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Xing URL', 'semplicemente')
 	);
+	$socialmedia[] = array(
+	'slug'=>'twitchurl', 
+	'default' => '',
+	'label' => __('Twitch URL', 'semplicemente')
+	);
 	
 	foreach( $socialmedia as $semplicemente_theme_options ) {
 		// SETTINGS

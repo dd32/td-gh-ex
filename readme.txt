@@ -3,7 +3,8 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, rtl-language-support, blog, news
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.9.8
+Stable tag: 1.9.9
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Semplicemente WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -30,7 +31,7 @@ Semplicemente includes support for Infinite Scroll in Jetpack.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * FontAwesome http://fontawesome.io/ Font licensed under SIL OFL 1.1 and Code lisensed under MIT
 * Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
-* Image used in Theme Screenshot https://picjumbo.com/a-girl-drinking-milkshake-drink-in-caffe/ Picjumbo Free photos for commercial and personal works
+* Image used in Theme Screenshot by PxFuel https://www.pxfuel.com/en/free-photo-ejozm licensed under CC0
 
 == Changelog ==
 = Version 1.0 =
@@ -238,4 +239,8 @@ Semplicemente includes support for Infinite Scroll in Jetpack.
 * Minor bug fixes
 
 = Version 1.9.8 =
+* Minor bug fixes
+
+= Version 1.9.9 =
+* Added Twitch social icon
 * Minor bug fixes
