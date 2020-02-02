@@ -106,8 +106,10 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                                     <form class="p-0 m-0" method="get" action="<?php echo home_url('/') ?>">
                                         <?php if(function_exists('WC')){ ?>
                                             <input type="hidden" name="post_type" value="product" />
+                                        <?php } else if(function_exists('WPDM')) { ?>
+                                            <input type="hidden" name="post_type" value="wpdmpro" />
                                         <?php } ?>
-                                        <input type="search" name="s" placeholder="Search<?php if(function_exists('WC')) echo ' Product' ?>..." class="form-control input-lg" />
+                                        <input type="search" value="<?php echo wpdm_query_var('s', 'txt'); ?>" name="s" placeholder="Search<?php if(function_exists('WC')) echo ' Product' ?>..." class="form-control input-lg" />
                                     </form>
                                 </div>
                             </div>
@@ -120,6 +122,14 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                                 else { ?>
                                     <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="btn btn-outline-gray attire-tip" title="<?php _e('Login / Register','attire'); ?>"><i class="fas fa-user-circle"></i></a>
                                 <?php } ?>
+                                <?php } else if(function_exists('WPDM')){ ?>
+                                    <a href="<?php echo wpdmpp_cart_page(); ?>" class="btn btn-outline-gray attire-tip"><i class="fas fa-shopping-bag"></i></a>
+                                    <?php if ( is_user_logged_in() ) { ?>
+                                        <a href="<?php echo wpdm_user_dashboard_url(); ?>" class="btn btn-outline-gray attire-tip" title="<?php _e('Account','attire'); ?>"><i class="fas fa-user-circle"></i></a>
+                                    <?php }
+                                    else { ?>
+                                        <a href="<?php echo wpdm_user_dashboard_url(); ?>" class="btn btn-outline-gray attire-tip" title="<?php _e('Login / Register','attire'); ?>"><i class="fas fa-user-circle"></i></a>
+                                    <?php } ?>
                                 <?php } ?>
 
                             </div>

@@ -2,8 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
     <meta http-equiv="Content-Type"

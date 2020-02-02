@@ -250,7 +250,7 @@ blockquote cite {
 
 .input-group-text,
 .card-header, .card-footer {
-    background-color: #fafafa;
+    background-color: rgba(0,0,0,0.025);
 }
 
 .card + .card {
@@ -2139,7 +2139,6 @@ article.post.product:before {
     text-align: right;
 }
 
-#wpdm-dashboard-sidebar #tabs,
 #theme-user-dashboard #wpdm-dashboard-sidebar {
     padding: 15px;
     width: 240px;
@@ -2147,6 +2146,10 @@ article.post.product:before {
     border-radius: 4px;
     margin-right: 25px;
     max-width: 100%;
+}
+
+.w3eden.author-dashbboard #wpdm-dashboard-sidebar .adp-item{
+    color: #354788;
 }
 
 #theme-user-dashboard #wpdm-dashboard-sidebar .adp-item i {

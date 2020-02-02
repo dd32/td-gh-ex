@@ -134,3 +134,13 @@ class AttireBase {
 }
 
 new AttireBase();
+
+function hb_toman_currency( $all_currencies ) {
+    //Maybe modify $example in some way.
+    $array = array('IRT' => array ( 'numeric_code'  => 365 , 'code' => 'IRT', 'name' => 'Iranian Toman', 'symbol' => 'تومان', 'fraction_name' => 'Toman', 'decimals' => 0 ));
+    $result = array_merge($array,$all_currencies);
+    return $result;
+}
+add_filter( 'wpdmpp_currencies', 'hb_toman_currency' );
+
+
