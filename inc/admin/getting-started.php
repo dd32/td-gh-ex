@@ -164,6 +164,7 @@ function arilewp_getting_started_page() { ?>
 					<li class="customize-options"><i class="dashicons dashicons-feedback"></i><?php esc_html_e( 'Wide & Boxed Layouts', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-editor-ltr"></i><?php esc_html_e( 'Advanced Typography', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-editor-insertmore"></i><?php esc_html_e( '4 Unique Header Layouts', 'arilewp' ); ?></li>
+					<li class="customize-options"><i class="dashicons dashicons-list-view"></i><?php esc_html_e( 'Section Reordering', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-feedback"></i><?php esc_html_e( 'Unlimited Business Sections', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-list-view"></i><?php esc_html_e( 'Advanced Blog Layouts', 'arilewp' ); ?></li>
 					<li class="customize-options"><i class="dashicons dashicons-format-video"></i><?php esc_html_e( 'Video Tutorial', 'arilewp' ); ?></li>

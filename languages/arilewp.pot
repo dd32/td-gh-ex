@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArileWP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-11 08:22+0000\n"
+"POT-Creation-Date: 2020-02-01 12:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Advance Typography with Google Fonts Support"
 msgstr ""
 
-#: inc/admin/getting-started.php:168
+#: inc/admin/getting-started.php:169
 msgid "Advanced Blog Layouts"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Comment navigation"
 msgstr ""
 
-#: inc/admin/getting-started.php:205
+#: inc/admin/getting-started.php:206
 #, php-format
 msgid "Congratulations, Welcome to %1$s Theme"
 msgstr ""
@@ -515,7 +515,7 @@ msgstr ""
 msgid "Get ArileWP Pro"
 msgstr ""
 
-#: inc/admin/getting-started.php:209
+#: inc/admin/getting-started.php:210
 msgid "Get started with ArileWP"
 msgstr ""
 
@@ -795,7 +795,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: inc/admin/getting-started.php:170
+#: inc/admin/getting-started.php:171
 msgid "Priority Support"
 msgstr ""
 
@@ -880,7 +880,7 @@ msgstr ""
 msgid "Search results for"
 msgstr ""
 
-#: inc/admin/tabs/free-vs-pro-panel.php:163
+#: inc/admin/getting-started.php:167 inc/admin/tabs/free-vs-pro-panel.php:163
 msgid "Section Reordering"
 msgstr ""
 
@@ -1016,7 +1016,7 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: inc/admin/getting-started.php:207
+#: inc/admin/getting-started.php:208
 #, php-format
 msgid ""
 "Thank you for choosing ArileWP theme. To take full advantage of the complete "
@@ -1080,7 +1080,7 @@ msgstr ""
 msgid "Typography Options"
 msgstr ""
 
-#: inc/admin/getting-started.php:167
+#: inc/admin/getting-started.php:168
 msgid "Unlimited Business Sections"
 msgstr ""
 
@@ -1106,7 +1106,7 @@ msgid ""
 "of the theme."
 msgstr ""
 
-#: inc/admin/getting-started.php:169
+#: inc/admin/getting-started.php:170
 msgid "Video Tutorial"
 msgstr ""
 
