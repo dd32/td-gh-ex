@@ -241,10 +241,12 @@ function ashe_true_false( $option ) {
 			color: '. esc_html(ashe_options( 'colors_content_accent' )) .';
 		}
 
+		/* Disable TMP
 		.page-content .elementor a,
 		.page-content .elementor a:hover {
 			color: inherit;
 		}
+		*/
 		
 		.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
 			background: '. esc_html(ashe_options( 'colors_content_accent' )) .';
