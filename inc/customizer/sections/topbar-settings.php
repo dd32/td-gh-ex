@@ -20,7 +20,12 @@ function apex_business_topbar_settings_setup( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'apex_business_topbar_description_control', array(
-      'description'     => __( 'Goto Widgets section and add widgets for topbar contents. For Social Media links, goto Menus and create a menu and add your social media links and set the menu location as Social Menu.', 'apex-business' ),
+       /* translators: %1$s: Widget Link Start, %2$s: Link End, %3$s: Nav Menu Link */
+      'description'     => sprintf( __( 'Goto %1$sWidget areas%2$s and add widgets for topbar contents. For Social Media links, goto %3$sMenus%2$s and create a menu and add your social media links and set the menu location as Social Menu.', 'apex-business' ),
+                                '<a href="javascript:wp.customize.panel( \'widgets\' ).focus();">',
+                                '</a>',
+                                '<a href="javascript:wp.customize.panel( \'nav_menus\' ).focus();">'
+                            ),
       'section'         => 'apex_business_topbar_section',
       'settings'        => 'apex_business_topbar_description_setting',
       'type'            => 'hidden',

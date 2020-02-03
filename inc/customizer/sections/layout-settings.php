@@ -152,7 +152,7 @@ function apex_business_layout_settings_setup( $wp_customize ) {
     $wp_customize->add_setting( 'apex_business_loading_bar_setting', array(
        'capability'        => 'edit_theme_options',
        'sanitize_callback' => 'absint',
-       'default'           => false
+       'default'           => true
     ) );
     $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control( $wp_customize, 'apex_business_loading_bar_switch_control', array(
        'label'       => __( 'Enable Loading Bar?', 'apex-business' ),

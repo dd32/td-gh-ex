@@ -105,7 +105,7 @@ h6 {
 .inner-section {
   margin-bottom: 48px; }
 
-.text-center, .banner .banner-content {
+.text-center {
   text-align: center; }
 
 .form-input,
@@ -718,6 +718,9 @@ body {
 
 .ct-col {
   padding: 120px 0; }
+
+.elementor-editor-active .ct-transparent-header {
+  visibility: hidden; }
 
 /*=====================
     03. HEADER

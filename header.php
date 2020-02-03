@@ -29,7 +29,7 @@
     <a class="skip-link" href="#content">
     <?php esc_html_e( 'Skip to content', 'apex-business' ); ?></a>
 
-    <?php if ( get_theme_mod( 'apex_business_loading_bar_setting', false ) ) : ?>
+    <?php if ( get_theme_mod( 'apex_business_loading_bar_setting', true ) ) : ?>
         <div id="loading">
           <div id="pulse">
             <span></span> <!-- Wave 1 -->

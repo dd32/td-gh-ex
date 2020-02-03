@@ -718,6 +718,11 @@ function apex_business_footer_settings_setup( $wp_customize ) {
         )
     );
 
+    $wp_customize->selective_refresh->add_partial( 'apex_business_bottom_bar_content_partial', array(
+        'selector'            => '.copyright-content',
+        'container_inclusive' => true,
+        'settings'            => 'apex_business_bottom_bar_content_control',
+    ) );
 
     $wp_customize->add_setting(
         'apex_business_bottom_bar_top_border_control', array(

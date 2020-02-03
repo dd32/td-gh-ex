@@ -46,6 +46,12 @@ function apex_business_banner_settings_setup( $wp_customize ) {
         )
     );
 
+    $wp_customize->selective_refresh->add_partial( 'apex_business_blog_banner_content_partial', array(
+        'selector'            => '.banner-content',
+        'container_inclusive' => true,
+        'settings'            => 'apex_business_blog_banner_content_setting',
+    ) );
+
     $wp_customize->add_setting(
         'apex_business_blog_banner_font_size_control', array(
             'capability'        => 'edit_theme_options',

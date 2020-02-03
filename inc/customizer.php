@@ -23,8 +23,6 @@ define( 'APEX_BUSINESS_DEFAULT2_COLOR', 'rgba(50,50,50,0.8)' );
 define( 'APEX_BUSINESS_DEFAULT3_COLOR', 'rgba( 255, 255, 255, 0.2 )' );
 define( 'APEX_BUSINESS_DEFAULT4_COLOR', '#00CC99' );
 
-
-
 if ( class_exists( 'WP_Customize_Control' ) ) {
   get_template_part( '/inc/customizer/customizer-toggle/class-customizer-toggle' );
 }

@@ -9,7 +9,7 @@
     }
 
     $apex_business_transparent_bar = '';
-    if ( get_theme_mod( 'apex_business_transparent_header_buttom_border_setting', 1 ) == 1 ) {
+    if ( get_theme_mod( 'apex_business_transparent_header_buttom_border_setting', 0 ) == 1 ) {
         $apex_business_transparent_bar = ( get_post_meta( get_the_ID(), '_header_option_value_key', TRUE ) == 'ct-transparent-header' ) ? 'ct-trans-bar' : '';
     }
 ?>

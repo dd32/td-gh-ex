@@ -526,7 +526,6 @@ body {
         top: 50%;
         left: 50%;
 
-        @extend .text-center;
         @include transform( translate( -50%, -50% ) );
 
         h1 {
@@ -728,4 +727,10 @@ body {
 
 .ct-col {
   padding: 120px 0;
+}
+
+.elementor-editor-active {
+  .ct-transparent-header {
+    visibility: hidden;
+  }
 }
