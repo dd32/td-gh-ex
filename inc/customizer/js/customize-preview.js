@@ -89,7 +89,9 @@
 
 		$( '.page-content a' ).not( selectors ).css( 'color', val );
 
+		/* Disable TMP
 		$( '.page-content .elementor a' ).css( 'color', 'inherit' );
+		*/
 		
 		var css = '\
 		#top-bar a:hover,\

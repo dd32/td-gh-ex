@@ -278,10 +278,12 @@ $css = '';
 			color: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 		
+		/* Disable TMP
 		.page-content .elementor a,
 		.page-content .elementor a:hover {
 			color: inherit;
 		}
+		*/
 
 		.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y,
 		.read-more a:after {
