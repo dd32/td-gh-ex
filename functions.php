@@ -136,7 +136,6 @@ function masonry_scripts() {
 	wp_enqueue_style( 'masonry-typicons', get_template_directory_uri() . '/css/typicons.css', array(), '2.0.6' );
 
 	// Enqueue masonry
-	wp_enqueue_script( 'masonry' );
 
 	wp_enqueue_script( 'masonry-helpers', get_template_directory_uri() . '/js/helpers.js', array(), '1.0.0', true );
 

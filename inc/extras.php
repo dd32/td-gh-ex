@@ -90,6 +90,6 @@ add_filter( 'excerpt_length', 'masonry_excerpt_length', 999 );
  * Masonry is using "Read More" and [...] string in the excerpt.
  */
 function masonry_excerpt_more( $more ) {
-	return '<span class="more-dots"><a href="' . get_permalink( get_the_ID() ) . '">[ ... ]</span>' . '</a>';
+	return '<span class="more-dots"><a href="' . esc_url( get_permalink() ) . '">[ ... ]</span>' . '</a>';
 }
 add_filter( 'excerpt_more', 'masonry_excerpt_more' );
