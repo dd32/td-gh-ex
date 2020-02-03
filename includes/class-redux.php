@@ -43,10 +43,7 @@ class BAH_L_Redux {
         
 		// Save WP site options.
 		add_filter( 'redux/options/' . BAH_L_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
-        
-		// Look through Redux data for debug
-		// add_action( 'redux/options/' . BAH_L_Settings::$option_name . '/validate', array( __CLASS__, 'validate_redux' ), 10, 1 );
-		
+
 		// Cleaning, as it's embeded in theme
 		add_action( 'redux/extensions/before', array( __CLASS__, 'remove_dev_mode' ), 100, 1 );
         add_action( 'admin_menu', array( __CLASS__, 'remove_redux_page'), 99 );
@@ -288,12 +285,6 @@ class BAH_L_Redux {
 			'href'  => esc_url('https://ba-booking.com/ba-hotel/documentation/introduction/'),
 			'title' => esc_html__( 'Documentation', 'ba-hotel-light' ),
 		);
-		
-		// Panel Intro text -> before the form
-		//$args['intro_text'] = __( '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'ba-hotel-light' );
-
-		// Add content after the form.
-		//$args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'ba-hotel-light' );
 		
 		Redux::setArgs( BAH_L_Settings::$option_name, $args );
 	}

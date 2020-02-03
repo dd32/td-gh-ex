@@ -3,8 +3,8 @@ Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Version: 1.0.4
-Stable tag: 1.0.4
+Version: 1.0.5
+Stable tag: 1.0.5
 License: GNU GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -40,6 +40,10 @@ Source: https://stocksnap.io/photo/VIWIBCR4L9
 
 == Changelog ==
 
+= 1.0.5 =
+* Removed comment code
+* Added source link and licence Url for Js and Css
+
 = 1.0.4 =
 * Fixed missing escaping issues, missing translations, removed comment code
 
@@ -59,11 +63,43 @@ Source: https://stocksnap.io/photo/VIWIBCR4L9
 * Initial release
 
 == Resources ==
-* normalize.css, © 2012-2019 Nicolas Gallagher and Jonathan Neal, MIT
-* Underscores, © 2012-2019 Automattic, Inc., GNU GPL v2 or later
-* Font Awesome icons, © Dave Gandy, SIL Open Font License, version 1.1, http://fontawesome.io/
-* Font Awesome Icon Picker, © Javi Aguilar, MIT, https://farbelous.io/fontawesome-iconpicker/
-* Bootstrap 4.3.1, © 2011-2019 Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors) and Twitter, Inc.(https://twitter.com), MIT
-* Elegant font, © 2019 Elegant Themes, GNU GPL v2 or MIT
-* Linearicons Free v1.0.0, © 2018 Linearicons.com, creator - Perxis (https://perxis.com), GNU GPL v3
 
+normalize.css Version - 8.0.1
+  Source: https://github.com/necolas/normalize.css
+  License: The MIT License (MIT) copyright © 2012-2019 Nicolas Gallagher and Jonathan Neal
+  license URL: https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+
+Font Awesome Free 5.6.3 by @fontawesome
+  Source: https://fontawesome.com/
+  License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+  license URL: https://fontawesome.com/license/free
+
+Slick Version - 1.9.0
+  Source: http://github.com/kenwheeler/slick
+  License: The MIT License (MIT) copyright © 2013-2016
+  license Url : https://github.com/kenwheeler/slick/blob/master/LICENSE
+
+Font Awesome Icon Picker
+  Source: https://github.com/itsjavi/fontawesome-iconpicker
+  License: The MIT License (MIT) copyright © 2016 Javi Aguilar
+  license Url : https://github.com/itsjavi/fontawesome-iconpicker/blob/master/LICENSE
+
+Bootstrap Version - 4.3.1
+  Source: https://getbootstrap.com
+  License: The MIT License (MIT) copyright © 2011-2020 Twitter, Inc., copyright (c) 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  license Url : https://github.com/twbs/bootstrap/blob/master/LICENSE
+
+Elegant font
+  Source: https://www.elegantthemes.com/blog/resources/elegant-icon-font
+  License: These icons are dual licensed under the GPL 2.0 and MIT
+  license Url : https://www.elegantthemes.com/blog/resources/elegant-icon-font
+
+Linearicons Free Version - 1.0.0
+  Source: https://linearicons.com/free
+  License: CC BY-SA 4.0, © 2018 Linearicons.com, creator - Perxis (https://perxis.com)
+  license Url : https://linearicons.com/free#license
+
+Underscores
+  Source: https://underscores.me
+  License: GNU GPL v2 or later, © 2012-2020 Automattic, Inc.
+  license Url : https://underscores.me
