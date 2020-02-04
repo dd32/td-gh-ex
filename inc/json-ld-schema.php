@@ -176,12 +176,21 @@ class Audioman_Json_Ld_Schema {
 	function json_ld_breadcrumbs() {
 
 		if ( get_theme_mod( 'audioman_breadcrumb_option', 1 ) ) {
-			$show_on_home = get_theme_mod( 'audioman_breadcrumb_on_homepage' ) ? '1' : '0';
+			$show_on_home = get_theme_mod( 'audioman_breadcrumb_on_homepage' ) ? 1 : 0;
 
 			$breadcrumb = $this->audioman_custom_breadcrumbs_json_ld( $show_on_home );
-			echo '<script type="application/ld+json">';
-			echo json_encode( $breadcrumb );
-			echo '</script>';
+			$json       = '';
+			$json      .= '<script type="application/ld+json">';
+			$json      .= json_encode( $breadcrumb );
+			$json      .= '</script>';
+
+			if ( '1' == $show_on_home && ( is_home() || is_front_page() ) ) {
+			    echo $json;
+			} elseif ( '1' != $show_on_home && is_front_page() && ! is_home() ) {
+			} elseif ( '1' != $show_on_home && is_front_page() && is_home() ) {
+			} else {
+			    echo $json;
+			}
 		}
 	}
 

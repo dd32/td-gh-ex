@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audioman\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2020-01-31 01:01-0800\n"
+"POT-Creation-Date: 2020-02-03 23:55-0800\n"
 "PO-Revision-Date: 2016-12-07 01:05-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;_ex:1,2c;_nx:4c,1,2;"
 "_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -188,22 +188,22 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: ../inc/breadcrumb.php:23 ../inc/json-ld-schema.php:26
+#: ../inc/breadcrumb.php:23
 #, php-format
 msgid "%1$s Archive for %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:25 ../inc/json-ld-schema.php:27
+#: ../inc/breadcrumb.php:25
 #, php-format
 msgid "%1$sSearch results for: %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:27 ../inc/json-ld-schema.php:28
+#: ../inc/breadcrumb.php:27
 #, php-format
 msgid "%1$sPosts tagged %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:29 ../inc/json-ld-schema.php:29
+#: ../inc/breadcrumb.php:29
 #, php-format
 msgid "%1$sView all posts by %2$s"
 msgstr ""
@@ -225,7 +225,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: ../inc/breadcrumb.php:174 ../inc/json-ld-schema.php:160
+#: ../inc/breadcrumb.php:174
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -1199,6 +1199,22 @@ msgstr ""
 
 #: ../inc/header-background-color.php:67
 msgid "Pause background video"
+msgstr ""
+
+#: ../inc/json-ld-schema.php:26
+msgid "Archive for "
+msgstr ""
+
+#: ../inc/json-ld-schema.php:27
+msgid "Search results for: "
+msgstr ""
+
+#: ../inc/json-ld-schema.php:28
+msgid "Posts tagged "
+msgstr ""
+
+#: ../inc/json-ld-schema.php:29
+msgid "View all posts by "
 msgstr ""
 
 #: ../inc/metabox/metabox.php:68
