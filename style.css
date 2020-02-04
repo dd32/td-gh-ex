@@ -5,12 +5,12 @@ Author: Nayra Themes
 Author URI: https://www.nayrathemes.com/
 Description: Arowana is a child of the StartKit theme with lots of powerful features. Arowana is suited for any type of website and works with all popular plugins. Get 24x7 support with both the free and the Pro versions. Explore the Pro demo - https://www.nayrathemes.com/demo/pro/?theme=arowana
 Template: startkit
-Version: 2.0.19
+Version: 2.0.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: arowana
 Slug: arowana
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -22,42 +22,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
     Navigation
 ==========================================
 */
-
-.active-1 ul li a:after,
-.active-1 ul li a:before {
-	width: 10px;
-    height: 10px;
-    background: transparent;
-}
-
-.active-1 ul li a:after {
-	top: 16px;
-    left: 12px;
-	border-top: 2px solid;
-    border-left: 2px solid;
-}
-
-.active-1 ul li a:before {
-    bottom: 16px;
-    right: 12px;
-    border-bottom: 2px solid;
-    border-right: 2px solid;
-}
-
-.active-1 ul li.active a:after,
-.active-1 ul li.focus a:after,
-.active-1 ul li:hover a:after {
-    top: 8px;
-    left: 0px;
-}
-
-.active-1 ul li.active a:before,
-.active-1 ul li.focus a:before,
-.active-1 ul li:hover a:before {
-    bottom: 8px;
-    right: 0px;
-}
-
 .normal-h {
     background: #fff !important;
     background-image: none;
