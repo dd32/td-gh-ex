@@ -58,6 +58,19 @@ if( ! function_exists('arrival_woo_shop_header_wrapp_end')):
 endif;
 
 /**
+* Cart Icon
+*
+* @since 1.2.5
+*/
+add_action('arrival_cart_icon_disp','arrival_cart_icon_disp');
+
+if( ! function_exists('arrival_cart_icon_disp')){
+  function arrival_cart_icon_disp(){
+    echo arrival_get_icon_svg('cart');
+  }
+}
+
+/**
 * Cart counter
 *
 */
@@ -65,7 +78,7 @@ if (! function_exists('arrival_header_cart_counter')){
   function arrival_header_cart_counter(){ ?>
 
     <a class="cart-contentsone" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'arrival' ); ?>">
-         <?php echo arrival_get_icon_svg('cart'); ?>
+         <?php do_action('arrival_cart_icon_disp'); ?>
          <span class="cart-count"><?php echo wp_kses_data( sprintf(  WC()->cart->get_cart_contents_count() ) ); ?></span>
     </a>
   <?php 
@@ -87,6 +100,7 @@ if ( ! function_exists( 'arrival_header_cart' ) ) {
     <ul class="site-header-cart">
       <li class="<?php echo esc_attr( $class ); ?> avl-cart">
         <?php arrival_header_cart_counter(); ?>
+        <?php do_action('arrival_header_cart_text'); // header cart text ?>
       </li>
       <?php if( ! wp_is_mobile() ){ ?>
         <li class="cart-itm">

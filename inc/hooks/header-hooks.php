@@ -192,7 +192,7 @@ if( ! function_exists('arrival_top_header')){
 	<?php
 	}
 	
-	arrival_after_top_header(); //after top header contents
+	do_action('arrival_after_top_header_content'); //after top header contents
 	}
 }
 
@@ -277,6 +277,8 @@ if( ! function_exists('arrival_top_header_right')){
 *
 */
 apply_filters('arrival_after_top_header','arrival_after_top_header');
+
+add_action('arrival_after_top_header_content','arrival_after_top_header');
 
 if(! function_exists('arrival_after_top_header')){
 	function arrival_after_top_header(){
