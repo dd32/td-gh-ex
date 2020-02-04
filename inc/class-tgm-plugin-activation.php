@@ -563,7 +563,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				global $tab, $body_id;
 				$body_id = 'plugin-information';
 				// @codingStandardsIgnoreStart
-				$tab     = 'plugin-information';
+				$tab = 'plugin-information';
 				// @codingStandardsIgnoreEnd
 
 				install_plugin_information();

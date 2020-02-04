@@ -516,6 +516,16 @@ function advance_startup_customize_register($wp_customize) {
         'section' => 'advance_startup_topbar'
     ));
 
+    //Sticky Header
+	$wp_customize->add_setting( 'advance_startup_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_startup_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-startup' ),
+        'section' => 'advance_startup_topbar'
+    ));
+
 	$wp_customize->add_setting('advance_startup_mail1',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field',
@@ -660,6 +670,66 @@ function advance_startup_customize_register($wp_customize) {
 			'type'     => 'dropdown-pages'
 		) );
 	}
+
+	//content layout
+    $wp_customize->add_setting('advance_startup_slider_content_alignment',array(
+    'default' => __('Center','advance-startup'),
+        'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_startup_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','advance-startup'),
+        'section' => 'advance_startup_slider',
+        'choices' => array(
+            'Center' => __('Center','advance-startup'),
+            'Left' => __('Left','advance-startup'),
+            'Right' => __('Right','advance-startup'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_startup_slider_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_startup_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','advance-startup' ),
+		'section'     => 'advance_startup_slider',
+		'type'        => 'number',
+		'settings'    => 'advance_startup_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_startup_slider_image_opacity',array(
+      'default'              => 0.4,
+      'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_startup_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','advance-startup' ),
+	'section'     => 'advance_startup_slider',
+	'type'        => 'select',
+	'settings'    => 'advance_startup_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-startup'),
+		'0.1' =>  esc_attr('0.1','advance-startup'),
+		'0.2' =>  esc_attr('0.2','advance-startup'),
+		'0.3' =>  esc_attr('0.3','advance-startup'),
+		'0.4' =>  esc_attr('0.4','advance-startup'),
+		'0.5' =>  esc_attr('0.5','advance-startup'),
+		'0.6' =>  esc_attr('0.6','advance-startup'),
+		'0.7' =>  esc_attr('0.7','advance-startup'),
+		'0.8' =>  esc_attr('0.8','advance-startup'),
+		'0.9' =>  esc_attr('0.9','advance-startup')
+	),
+	));
 
 	//We Provide
 	$wp_customize->add_section('advance_startup_category',array(
