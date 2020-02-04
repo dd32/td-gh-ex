@@ -699,10 +699,6 @@ msgstr ""
 msgid "Older Comments"
 msgstr ""
 
-#: inc/custom-functions.php:177 inc/about/about.php:85 inc/about/about.php:139
-msgid "One Click Demo Import"
-msgstr ""
-
 #: inc/hooks/header-inner-page.php:41
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""

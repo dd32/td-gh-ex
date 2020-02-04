@@ -4,7 +4,7 @@ Contributors: Thememattic
 
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,8 @@ Best Education is distributed under the terms of the GNU GPL
 = 1.0.7 - Jan 16 2020 =
 = Added Theia Sticky Sidebar =
 
+= 1.0.8 - Feb 04 2020 =
+= Removed One Click Demo Import =
 
 == Credits ==
 

@@ -1,8 +1,4 @@
 <?php
-/**
- * Collection of other function file.
- */
-require get_template_directory().'/inc/ocdi-functions.php';
 
 /*load tgm plugin activation*/
 require get_template_directory().'/assets/libraries/tgm/class-tgm-plugin-activation.php';

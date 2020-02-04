@@ -92,28 +92,6 @@ function best_education_setup() {
 endif;
 add_action('after_setup_theme', 'best_education_setup');
 
-if (!function_exists('best_education_ocdi_files')):
-/**
- * OCDI files.
- *
- * @since 1.0.0
- *
- * @return array Files.
- */
-function best_education_ocdi_files() {
-
-	return array(
-		array(
-			'import_file_name'             => esc_html__('Theme Demo Content', 'best-education'),
-			'local_import_file'            => trailingslashit(get_template_directory()).'demo-content/best-education.xml',
-			'local_import_widget_file'     => trailingslashit(get_template_directory()).'demo-content/best-education.wie',
-			'local_import_customizer_file' => trailingslashit(get_template_directory()).'demo-content/best-education.dat',
-		),
-	);
-}
-endif;
-add_filter('pt-ocdi/import_files', 'best_education_ocdi_files');
-
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

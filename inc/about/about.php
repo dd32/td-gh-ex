@@ -23,8 +23,6 @@ if ( ! function_exists( 'best_education_about_setup' ) ) :
 			'tabs' => array(
 				'getting-started' => esc_html__( 'Getting Started', 'best-education' ),
 				'support'         => esc_html__( 'Support', 'best-education' ),
-				'useful-plugins'  => esc_html__( 'Useful Plugins', 'best-education' ),
-				'demo-content'    => esc_html__( 'Demo Content', 'best-education' ),
 				),
 
 			// Quick links.
@@ -79,14 +77,6 @@ if ( ! function_exists( 'best_education_about_setup' ) ) :
 					'button_url'  => admin_url( 'widgets.php' ),
 					'button_type' => 'secondary',
 					),
-				'five' => array(
-					'title'       => esc_html__( 'Demo Content', 'best-education' ),
-					'icon'        => 'dashicons dashicons-layout',
-					'description' => sprintf( esc_html__( '%1$s plugin should be installed and activated. After plugin is activated, visit Import Demo Data menu under Appearance.', 'best-education' ), esc_html__( 'One Click Demo Import', 'best-education' ) ),
-					'button_text' => esc_html__( 'Demo Content', 'best-education' ),
-					'button_url'  => admin_url( 'themes.php?page=best-education-about&tab=demo-content' ),
-					'button_type' => 'secondary',
-					),
 				'six' => array(
 					'title'       => esc_html__( 'Theme Preview', 'best-education' ),
 					'icon'        => 'dashicons dashicons-welcome-view-site',
@@ -136,7 +126,7 @@ if ( ! function_exists( 'best_education_about_setup' ) ) :
 
 			// Demo content.
 			'demo_content' => array(
-				'description' => sprintf( esc_html__( 'To import demo content for this theme, %1$s plugin is needed. Please make sure plugin is installed and activated. After plugin is activated, you will see Import Demo Data menu under Appearance.', 'best-education' ), '<a href="https://wordpress.org/plugins/one-click-demo-import/" target="_blank">' . esc_html__( 'One Click Demo Import', 'best-education' ) . '</a>' ),
+				'description' => sprintf( esc_html__( 'After plugin is activated', 'best-education' ), '<a href="https://wordpress.org/plugins/one-click-demo-import/" target="_blank">' . esc_html__( 'After plugin is activated', 'best-education' ) . '</a>' ),
 				),
 
 			// Upgrade to pro.
