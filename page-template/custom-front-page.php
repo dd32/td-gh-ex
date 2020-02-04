@@ -77,7 +77,7 @@ get_header(); ?>
                       <div class="inner_carousel">
                         <h1><?php the_title(); ?></h1>
                         <hr class="slidehr">
-                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,20 ) ); ?></p>
+                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','20')))); ?></p>
                         <div class="more-btn">              
                           <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-ecommerce-store' ); ?></span></a>
                         </div>

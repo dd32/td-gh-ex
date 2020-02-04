@@ -17,6 +17,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-ecommerce-store' ); ?></a>
       <div id="responsive-navbar" class="<?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
