@@ -701,8 +701,6 @@ if (!function_exists('avventura_lite_scripts_styles')) {
 
 	function avventura_lite_scripts_styles() {
 
-		wp_enqueue_style( 'avventura-lite-style', get_stylesheet_uri(), array() );
-
 		$googleFontsArgs = array(
 			'family' =>	str_replace('|', '%7C','Cinzel+Decorative|Merriweather:300,400,400i,700,900|Playfair+Display:400,700,900'),
 			'subset' =>	'latin,latin-ext'
@@ -714,10 +712,15 @@ if (!function_exists('avventura_lite_scripts_styles')) {
 		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '4.7.0' );
 		wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/assets/css/prettyPhoto.css', array(), '3.1.4' );
 		wp_enqueue_style('slick', get_template_directory_uri() . '/assets/css/slick.css', array(), '1.8.0' );
-		wp_enqueue_style('avventura-lite-template', get_template_directory_uri() . '/assets/css/avventura-lite-template.css', array(), '1.0.0' );
+		wp_enqueue_style('avventura-lite-style', get_stylesheet_uri(), array() );
 		wp_enqueue_style('avventura-lite-woocommerce', get_template_directory_uri() . '/assets/css/avventura-lite-woocommerce.css', array(), '1.0.0' );
 
-		wp_enqueue_style( 'avventura-lite-' . get_theme_mod('avventura_lite_skin', 'orange') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('avventura_lite_skin', 'orange') . '.css', array( 'avventura-lite-template' ), '1.0.0' ); 
+		wp_enqueue_style(
+			'avventura-lite-' . esc_attr(get_theme_mod('avventura_lite_skin', 'orange')),
+			get_template_directory_uri() . '/assets/skins/' . esc_attr(get_theme_mod('avventura_lite_skin', 'orange')) . '.css',
+			array( 'avventura-lite-style' ),
+			'1.0.0'
+		); 
 
 		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), '1.3', TRUE ); 
 		wp_enqueue_script( 'jquery-nicescroll', get_template_directory_uri() . '/assets/js/jquery.nicescroll.js' , array('jquery'), '3.7.6', TRUE ); 

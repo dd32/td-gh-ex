@@ -738,8 +738,8 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 			
 			array( 
 
-				'label' => esc_html__( 'Whatsapp Number','avventura-lite'),
-				'description' => esc_html__( 'Insert Whatsapp number (leave empty if you want to hide the button)','avventura-lite'),
+				'label' => esc_html__( 'WhatsApp Number','avventura-lite'),
+				'description' => esc_html__( 'Insert WhatsApp number (leave empty if you want to hide the button)','avventura-lite'),
 				'id' => 'avventura_lite_footer_whatsapp_button',
 				'type' => 'button',
 				'section' => 'footer_section',
@@ -756,6 +756,50 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 				'section' => 'footer_section',
 				'std' => '',
 
+			),
+
+			array( 
+	
+				'label' => esc_html__( 'Trello Account','avventura-lite'),
+				'description' => esc_html__( 'Insert Trello Account (leave empty if you want to hide the button)','avventura-lite'),
+				'id' => 'avventura_lite_footer_trello_button',
+				'type' => 'button',
+				'section' => 'footer_section',
+				'std' => '',
+	
+			),
+	
+			array( 
+	
+				'label' => esc_html__( 'Twitch Account','avventura-lite'),
+				'description' => esc_html__( 'Insert Twitch Account (leave empty if you want to hide the button)','avventura-lite'),
+				'id' => 'avventura_lite_footer_twitch_button',
+				'type' => 'button',
+				'section' => 'footer_section',
+				'std' => '',
+	
+			),
+	
+			array( 
+	
+				'label' => esc_html__( 'Tripadvisor Account','avventura-lite'),
+				'description' => esc_html__( 'Insert Tripadvisor Account (leave empty if you want to hide the button)','avventura-lite'),
+				'id' => 'avventura_lite_footer_tripadvisor_button',
+				'type' => 'button',
+				'section' => 'footer_section',
+				'std' => '',
+	
+			),
+	
+			array( 
+	
+				'label' => esc_html__( 'Vine Account','avventura-lite'),
+				'description' => esc_html__( 'Insert Vine Account (leave empty if you want to hide the button)','avventura-lite'),
+				'id' => 'avventura_lite_footer_vine_button',
+				'type' => 'button',
+				'section' => 'footer_section',
+				'std' => '',
+	
 			),
 
 			array( 

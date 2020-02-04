@@ -241,7 +241,7 @@ if (!function_exists('avventura_lite_css_custom')) {
 
 		/* =================== END TITLE STYLE =================== */
 		
-		wp_add_inline_style( 'avventura-lite-template', $css );
+		wp_add_inline_style( 'avventura-lite-style', $css );
 		
 	}
 
