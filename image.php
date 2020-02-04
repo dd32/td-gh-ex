@@ -31,7 +31,7 @@ get_header(); ?>
                                                 absint($metadata['width']),
                                                 absint($metadata['height']),
                                                 esc_url( get_permalink( $post->post_parent ) ),
-                                                get_the_title( $post->post_parent )
+                                                esc_html(get_the_title( $post->post_parent ))
                                             );
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
@@ -90,7 +90,7 @@ get_header(); ?>
                                                 absint($metadata['width']),
                                                 absint($metadata['height']),
                                                 esc_url( get_permalink( $post->post_parent ) ),
-                                                get_the_title( $post->post_parent )
+                                                esc_html(get_the_title( $post->post_parent ))
                                             );
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
@@ -149,7 +149,7 @@ get_header(); ?>
                                             absint($metadata['width']),
                                             absint($metadata['height']),
                                             esc_url( get_permalink( $post->post_parent ) ),
-                                            get_the_title( $post->post_parent )
+                                            esc_html(get_the_title( $post->post_parent ))
                                         );
             
                                         edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
@@ -208,7 +208,7 @@ get_header(); ?>
                                                 absint($metadata['width']),
                                                 absint($metadata['height']),
                                                 esc_url( get_permalink( $post->post_parent ) ),
-                                                get_the_title( $post->post_parent )
+                                                esc_html(get_the_title( $post->post_parent ))
                                             );
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
@@ -269,7 +269,7 @@ get_header(); ?>
                                                 absint($metadata['width']),
                                                 absint($metadata['height']),
                                                 esc_url( get_permalink( $post->post_parent ) ),
-                                                get_the_title( $post->post_parent )
+                                                esc_html(get_the_title( $post->post_parent ))
                                             );
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
@@ -330,7 +330,7 @@ get_header(); ?>
                                                 absint($metadata['width']),
                                                 absint($metadata['height']),
                                                 esc_url( get_permalink( $post->post_parent ) ),
-                                                get_the_title( $post->post_parent )
+                                                esc_html(get_the_title( $post->post_parent ))
                                             );
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );
@@ -390,7 +390,7 @@ get_header(); ?>
                                                 absint($metadata['width']),
                                                 absint($metadata['height']),
                                                 esc_url( get_permalink( $post->post_parent ) ),
-                                                get_the_title( $post->post_parent )
+                                                esc_html(get_the_title( $post->post_parent ))
                                             );
                 
                                             edit_post_link( __( 'Edit', 'bb-mobile-application' ), '<span class="edit-link">', '</span>' );

@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 1.2.9
+Stable tag: 1.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -149,6 +149,13 @@ Trying to create an interactive website with the help of a flexible option? If s
   * Resolved css errors.
   * Changed woocommerce css customization.
 
+= 1.3 =
+  * Added sticky header option in customizer.
+  * Added slider content alignment setting in customizer.
+  * Added slider excerpt length setting in customizer.
+  * Added slider image opacity setting in customizer.
+  * Resolved theme sniffer errors.
+
 == Resources ==
 
 BB Mobile Application WordPress Theme, Copyright 2018 ThemeShopy
@@ -156,32 +163,42 @@ BB Mobile Application is distributed under the terms of the GNU GPL
 
 Theme is Built using the following resource bundles.
 
-* PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
-  License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
+1. Bootstrap 
+    - Mark Otto
+    - copyright 2011-2020, Mark Otto
+    - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
+    - License: Code released under the MIT License. v4.4.1
+    - https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-* CSS bootstrap.css
-  -- Copyright 2011-2018 The Bootstrap Authors
-  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
-  
-  JS bootstrap.js
-  -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+2. Font-Awesome 
+    - Davegandy
+    - copyright July 12, 2018, Davegandy
+    - https://github.com/FortAwesome/Font-Awesome.git
+    - License: Font Awesome Free License v5.0.0
+    - https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
-* All the icons taken from fontawesome licensed under GPL License.
-  https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
+3. Customizer Pro 
+    - Justin Tadlock
+    - Copyright 2016, Justin Tadlock
+    - https://github.com/justintadlock/trt-customizer-pro.git
+    - License: GNU General Public License v2.0
+    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-* Customizer Pro, Copyright 2016 © Justin Tadlock.
-  License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-  Source: https://github.com/justintadlock/trt-customizer-pro
+4. Superfish 
+    - Joeldbirch
+    - Copyright 2013, Justin Tadlock
+    - https://github.com/joeldbirch/superfish.git
+    - License: Free to use and abuse under the MIT license. v1.7.9
+    - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 
-* Screenshot Images.
-  License: CC0 1.0 Universal (CC0 1.0) 
-  Source: https://stocksnap.io/license
+5. Screenshot Images.
+    License: CC0 1.0 Universal (CC0 1.0) 
+    Source: https://stocksnap.io/license
 
-  Slider image, Copyright Mohi Syed
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/9JO1KDKQFK
+    Slider image, Copyright Mohi Syed
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/9JO1KDKQFK
 
-  Feature image, Copyright Mohi Syed
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/9JO1KDKQFK
+    Feature image, Copyright Mohi Syed
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/9JO1KDKQFK

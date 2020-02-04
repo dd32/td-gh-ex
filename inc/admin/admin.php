@@ -7,7 +7,7 @@ function bb_mobile_application_abouttheme() {
 
 // Add a Custom CSS file to WP Admin Area
 function bb_mobile_application_admin_theme_style() {
-   wp_enqueue_style('custom-admin-style', get_template_directory_uri() .'/inc/admin/admin.css');
+   wp_enqueue_style('bb-mobile-application-custom-admin-style', get_template_directory_uri() .'/inc/admin/admin.css');
 }
 add_action('admin_enqueue_scripts', 'bb_mobile_application_admin_theme_style');
 

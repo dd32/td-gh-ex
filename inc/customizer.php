@@ -27,6 +27,16 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'panel' => 'bb_mobile_application_panel_id'
 	) );
 
+	//Sticky Header
+	$wp_customize->add_setting( 'bb_mobile_application_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('bb_mobile_application_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','bb-mobile-application' ),
+        'section' => 'bb_mobile_application_left_right'
+    ));
+
 	$wp_customize->add_setting('bb_mobile_application_width_theme_options',array(
         'default' => __('Default','bb-mobile-application'),
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
@@ -520,6 +530,66 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 			'type'     => 'dropdown-pages'
 		) );
 	}
+
+	//content layout
+    $wp_customize->add_setting('bb_mobile_application_slider_content_alignment',array(
+    'default' => __('Center','bb-mobile-application'),
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_mobile_application_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','bb-mobile-application'),
+        'section' => 'bb_mobile_application_slidersettings',
+        'choices' => array(
+            'Center' => __('Center','bb-mobile-application'),
+            'Left' => __('Left','bb-mobile-application'),
+            'Right' => __('Right','bb-mobile-application'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'bb_mobile_application_slider_excerpt_length', array(
+		'default'              => 10,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'bb_mobile_application_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','bb-mobile-application' ),
+		'section'     => 'bb_mobile_application_slidersettings',
+		'type'        => 'number',
+		'settings'    => 'bb_mobile_application_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('bb_mobile_application_slider_image_opacity',array(
+      'default'              => 0.3,
+      'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control( 'bb_mobile_application_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','bb-mobile-application' ),
+	'section'     => 'bb_mobile_application_slidersettings',
+	'type'        => 'select',
+	'settings'    => 'bb_mobile_application_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','bb-mobile-application'),
+		'0.1' =>  esc_attr('0.1','bb-mobile-application'),
+		'0.2' =>  esc_attr('0.2','bb-mobile-application'),
+		'0.3' =>  esc_attr('0.3','bb-mobile-application'),
+		'0.4' =>  esc_attr('0.4','bb-mobile-application'),
+		'0.5' =>  esc_attr('0.5','bb-mobile-application'),
+		'0.6' =>  esc_attr('0.6','bb-mobile-application'),
+		'0.7' =>  esc_attr('0.7','bb-mobile-application'),
+		'0.8' =>  esc_attr('0.8','bb-mobile-application'),
+		'0.9' =>  esc_attr('0.9','bb-mobile-application')
+	),
+	));
 
 	//Creative Feature
 	$wp_customize->add_section('bb_mobile_application_creative_section',array(
