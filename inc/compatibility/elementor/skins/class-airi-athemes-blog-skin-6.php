@@ -5,7 +5,7 @@
  */
 
 
-	class Airi_aThemes_Blog_Skin_2 extends Elementor\Skin_Base {
+	class Airi_aThemes_Blog_Skin_6 extends Elementor\Skin_Base {
 		
 		public function __construct( Elementor\Widget_Base $parent ) {
 			parent::__construct( $parent );
@@ -13,19 +13,18 @@
 		}
      
 		public function get_id() {
-			return 'airi_athemes_blog_skin_2';
+			return 'airi_athemes_blog_skin_6';
 		}
 
 		public function get_title() {
-			return __( 'Style 3', 'airi' );
+			return __( 'Style 6', 'airi' );
 		}
 
 		public function register_controls( $controls ) {
 
-
 			//Cat
 			$controls->add_control(
-				'heading_s2_cat',
+				'heading_s6_cat',
 				[
 					'label' => __( 'Category', 'airi' ),
 					'type' => \Elementor\Controls_Manager::HEADING,
@@ -36,7 +35,7 @@
 				]
 			);
 			$controls->add_control(
-				'cat_s2_color',
+				'cat_s6_color',
 				[
 					'label' => __( 'Color', 'airi' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
@@ -54,40 +53,6 @@
 					],				
 				]
 			);		
-
-
-			//Comments
-			$controls->add_control(
-				'heading_s2_comments',
-				[
-					'label' => __( 'Comments', 'airi' ),
-					'type' => \Elementor\Controls_Manager::HEADING,
-					'separator' => 'before',
-					'condition' => [
-						'_skin' => $this->get_id(),
-					],					
-				]
-			);
-			$controls->add_control(
-				'comments_s2_color',
-				[
-					'label' => __( 'Color', 'airi' ),
-					'type' => \Elementor\Controls_Manager::COLOR,
-					'default' => '',
-					'selectors' => [
-						'{{WRAPPER}} .athemes-blog .comments-number' => 'color: {{VALUE}};',
-					],
-					'scheme' => [
-						'type' => \Elementor\Scheme_Color::get_type(),
-						'value' => \Elementor\Scheme_Color::COLOR_1,
-					],
-					'condition' => [
-						'_skin' => $this->get_id(),
-					],				
-				]
-			);	
-
-
 
 		}
 
@@ -108,18 +73,32 @@
 			<div class="row">	
 			<?php if ( $query->have_posts() ) : ?>
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="post-item">
 							<?php if ( has_post_thumbnail() ) : ?>
-								<?php the_post_thumbnail( 'airi-360-360' ); ?>
+								<?php
+								$image_id = get_post_thumbnail_id();
+								$args = [
+									'image_size'    =>  'custom',
+									'image_custom_dimension' => [
+										'width' =>  356,
+										'height' =>  270,
+									],
+								];
+								$image_src = Elementor\Group_Control_Image_Size::get_attachment_image_src( $image_id, 'image', $args );
+								if ( ! empty( $image_src ) )
+								{
+									echo '<div class="thumbnail">';
+									echo sprintf( '<img src="%s" title="%s" alt="%s" />', esc_attr( $image_src ), Elementor\Control_Media::get_image_title( $image_id ), Elementor\Control_Media::get_image_alt( $image_id ) );
+									echo '</div>';
+								}
+								?>
 							<?php endif; ?>					
-							<div class="post-content">	
+							<div class="post-content">
 								<?php airi_posted_on(); ?>
-								<span class="sol">&sol;</span>
-								<?php airi_first_category(); ?>
 								<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
-								<?php airi_get_comments_number(); ?>
-							</div>	
+								<?php airi_first_category(); ?>
+							</div>
 						</div>				
 					</div>
 				<?php
@@ -134,7 +113,7 @@
 	}
 
 add_action( 'elementor/widget/athemes-blog/skins_init', function( $widget ) {
-   $widget->add_skin( new Airi_aThemes_Blog_Skin_2( $widget ) );
+   $widget->add_skin( new Airi_aThemes_Blog_Skin_6( $widget ) );
 } );
 
 
