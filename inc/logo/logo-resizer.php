@@ -109,7 +109,7 @@ function advance_automobile_min_max( $short, $long, $short_max, $long_max, $perc
  * JS handlers for Customizer Controls
  */
 function advance_automobile_customize_controls_js() {
-	wp_enqueue_script( 'advance-automobile-customizer-controls', get_template_directory_uri() . 'inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
+	wp_enqueue_script( 'advance-automobile-customizer-controls', get_template_directory_uri() . '/inc/logo/js/customize-controls.js', array( 'jquery', 'customize-preview' ), '201709071000', true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'advance_automobile_customize_controls_js' );
 

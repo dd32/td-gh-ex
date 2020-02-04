@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme. Demo: https://themeshopy.com/advance-automobile-pro/
-Version: 0.3.9
+Version: 0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
@@ -1737,9 +1737,7 @@ iframe , .entry-audio audio{
     padding: 0px;
   }
   #slider .inner_carousel h1 {
-    font-size: 30px;
     padding: 0px 2px;
-    font-weight: 500;
   }
   #slider .inner_carousel p,
   #category .text-content p {
@@ -1805,6 +1803,11 @@ iframe , .entry-audio audio{
     left: 40%;
     right: 50%;
   }
+  #slider .carousel-caption, #slider .inner_carousel{
+    text-align: center !important;
+    left: 0 !important;
+    right:0 !important;
+  }
 }
 @media screen and (min-width:720px){
   #footer input[type="submit"]{
@@ -1857,8 +1860,11 @@ iframe , .entry-audio audio{
   #slider .carousel-control-prev, #slider .carousel-control-next{
     top:0;
   }
+  #slider .carousel-control-next{
+    right: 15%;
+  }
   #slider .carousel-control-prev{
-    left: 21%;
+    left: 15%;
   }
   .social-icons i{
     margin-left: 10px;
@@ -1916,7 +1922,7 @@ iframe , .entry-audio audio{
     left: 73%;
   }
   #slider .carousel-caption {
-    top: 50%;
+    top: 45%;
   }
 }
 @media screen and (min-width: 1025px){

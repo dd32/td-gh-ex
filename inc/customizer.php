@@ -648,6 +648,66 @@ function advance_automobile_customize_register($wp_customize) {
 		) );
 	}
 
+	//content layout
+    $wp_customize->add_setting('advance_automobile_slider_content_alignment',array(
+    'default' => __('Left','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','advance-automobile'),
+        'section' => 'advance_automobile_slider',
+        'choices' => array(
+            'Center' => __('Center','advance-automobile'),
+            'Left' => __('Left','advance-automobile'),
+            'Right' => __('Right','advance-automobile'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_automobile_slider_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_automobile_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','advance-automobile' ),
+		'section'     => 'advance_automobile_slider',
+		'type'        => 'number',
+		'settings'    => 'advance_automobile_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_automobile_slider_image_opacity',array(
+      'default'              => 0.7,
+      'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_automobile_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','advance-automobile' ),
+	'section'     => 'advance_automobile_slider',
+	'type'        => 'select',
+	'settings'    => 'advance_automobile_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-automobile'),
+		'0.1' =>  esc_attr('0.1','advance-automobile'),
+		'0.2' =>  esc_attr('0.2','advance-automobile'),
+		'0.3' =>  esc_attr('0.3','advance-automobile'),
+		'0.4' =>  esc_attr('0.4','advance-automobile'),
+		'0.5' =>  esc_attr('0.5','advance-automobile'),
+		'0.6' =>  esc_attr('0.6','advance-automobile'),
+		'0.7' =>  esc_attr('0.7','advance-automobile'),
+		'0.8' =>  esc_attr('0.8','advance-automobile'),
+		'0.9' =>  esc_attr('0.9','advance-automobile')
+	),
+	));
+
 	//contact details
 	$wp_customize->add_section('advance_automobile_contact_details',array(
 		'title'	=> __('Contact details','advance-automobile'),

@@ -250,12 +250,12 @@ function advance_automobile_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_AUTOMOBILE_BUY_NOW','https://www.themeshopy.com/themes/automobile-wordpress-theme/');
-define('ADVANCE_AUTOMOBILE_LIVE_DEMO','https://themeshopy.com/advance-automobile-pro/');
-define('ADVANCE_AUTOMOBILE_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-automobile-pro/');
-define('ADVANCE_AUTOMOBILE_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-automobile/');
-define('ADVANCE_AUTOMOBILE_CONTACT','https://wordpress.org/support/theme/advance-automobile/');
-define('ADVANCE_AUTOMOBILE_CREDIT', 'https://www.themeshopy.com/themes/free-automobile-wordpress-theme/');
+define('ADVANCE_AUTOMOBILE_BUY_NOW',__('https://www.themeshopy.com/themes/automobile-wordpress-theme/', 'advance-automobile'));
+define('ADVANCE_AUTOMOBILE_LIVE_DEMO',__('https://themeshopy.com/advance-automobile-pro/', 'advance-automobile'));
+define('ADVANCE_AUTOMOBILE_PRO_DOC',__('https://www.themeshopy.com/demo/docs/advance-automobile-pro/', 'advance-automobile'));
+define('ADVANCE_AUTOMOBILE_FREE_DOC',__('https://www.themeshopy.com/demo/docs/free-advance-automobile/', 'advance-automobile'));
+define('ADVANCE_AUTOMOBILE_CONTACT',__('https://wordpress.org/support/theme/advance-automobile/', 'advance-automobile'));
+define('ADVANCE_AUTOMOBILE_CREDIT',__('https://www.themeshopy.com/themes/free-automobile-wordpress-theme/', 'advance-automobile'));
 
 if (!function_exists('advance_automobile_credit')) {
 	function advance_automobile_credit() {
