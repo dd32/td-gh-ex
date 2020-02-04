@@ -65,16 +65,3 @@ function autoshop_widgets_init()
 }
 add_action('widgets_init', 'autoshop_widgets_init', 11);
 
-/*Add the demo file*/
-function autoshop_add_demo_files($demos) {
-    $demos[] = array(
-        'import_file_name'             => esc_html__( 'Child - Autoshop', 'autoshop' ),
-        'local_import_file'            => trailingslashit( get_stylesheet_directory() ) . 'demo-content/autoshop/storecommerce.xml',
-        'local_import_widget_file'     => trailingslashit( get_stylesheet_directory() ) . 'demo-content/autoshop/storecommerce.wie',
-        'local_import_customizer_file' => trailingslashit( get_stylesheet_directory() ) . 'demo-content/autoshop/storecommerce.dat',
-        'import_preview_image_url'     => trailingslashit( get_stylesheet_directory_uri() ) . 'demo-content/assets/storecommerce-autoshop.jpg',
-        'preview_url'                  => 'https://demo.afthemes.com/storecommerce/autoshop',
-    );
-    return $demos;
-}
-add_filter( 'aft_demo_import_files', 'autoshop_add_demo_files');

@@ -3,7 +3,7 @@
 Contributors: AF themes
 Requires at least: 4.0
 Tested up to: 5
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
@@ -36,7 +36,11 @@ Autoshop is a child theme of StoreCommerce, an advanced, powerful and flexible, 
 
 Autoshop includes support for Infinite Scroll in Jetpack.
 
+
 == Changelog ==
+= 1.0.1 - Feb 04 2020 =
+* Fixed some design glitch
+
 = 1.0.0 - Dec 30 2018 =
 * Initial release
 
