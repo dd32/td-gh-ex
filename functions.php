@@ -365,12 +365,12 @@ function advance_fitness_gym_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_FITNESS_GYM_BUY_NOW','https://www.themeshopy.com/themes/wordpress-fitness-theme/');
-define('ADVANCE_FITNESS_GYM_LIVE_DEMO','https://themeshopy.com/advance-fitness-gym-pro/');
-define('ADVANCE_FITNESS_GYM_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-fitness-gym-pro/');
-define('ADVANCE_FITNESS_GYM_FREE_DOC','https://themeshopy.com/demo/docs/free-advance-fitness-gym/');
-define('ADVANCE_FITNESS_GYM_CONTACT','https://wordpress.org/support/theme/advance-fitness-gym/');
-define('ADVANCE_FITNESS_GYM_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-fitness-theme/');
+define('ADVANCE_FITNESS_GYM_BUY_NOW',__('https://www.themeshopy.com/themes/wordpress-fitness-theme/', 'advance-fitness-gym'));
+define('ADVANCE_FITNESS_GYM_LIVE_DEMO',__('https://themeshopy.com/advance-fitness-gym-pro/', 'advance-fitness-gym'));
+define('ADVANCE_FITNESS_GYM_PRO_DOC',__('https://www.themeshopy.com/demo/docs/advance-fitness-gym-pro/', 'advance-fitness-gym'));
+define('ADVANCE_FITNESS_GYM_FREE_DOC',__('https://themeshopy.com/demo/docs/free-advance-fitness-gym/', 'advance-fitness-gym'));
+define('ADVANCE_FITNESS_GYM_CONTACT',__('https://wordpress.org/support/theme/advance-fitness-gym/', 'advance-fitness-gym'));
+define('ADVANCE_FITNESS_GYM_CREDIT',__('https://www.themeshopy.com/themes/free-wordpress-fitness-theme/', 'advance-fitness-gym'));
 
 if (!function_exists('advance_fitness_gym_credit')) {
 	function advance_fitness_gym_credit() {

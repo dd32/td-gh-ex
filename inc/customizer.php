@@ -639,6 +639,66 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		) );
 	}
 
+	//content layout
+    $wp_customize->add_setting('advance_fitness_gym_slider_content_alignment',array(
+    'default' => __('Center','advance-fitness-gym'),
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','advance-fitness-gym'),
+        'section' => 'advance_fitness_gym_slider',
+        'choices' => array(
+            'Center' => __('Center','advance-fitness-gym'),
+            'Left' => __('Left','advance-fitness-gym'),
+            'Right' => __('Right','advance-fitness-gym'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_fitness_gym_slider_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_fitness_gym_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','advance-fitness-gym' ),
+		'section'     => 'advance_fitness_gym_slider',
+		'type'        => 'number',
+		'settings'    => 'advance_fitness_gym_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_fitness_gym_slider_image_opacity',array(
+      'default'              => 0.7,
+      'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_fitness_gym_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','advance-fitness-gym' ),
+	'section'     => 'advance_fitness_gym_slider',
+	'type'        => 'select',
+	'settings'    => 'advance_fitness_gym_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-fitness-gym'),
+		'0.1' =>  esc_attr('0.1','advance-fitness-gym'),
+		'0.2' =>  esc_attr('0.2','advance-fitness-gym'),
+		'0.3' =>  esc_attr('0.3','advance-fitness-gym'),
+		'0.4' =>  esc_attr('0.4','advance-fitness-gym'),
+		'0.5' =>  esc_attr('0.5','advance-fitness-gym'),
+		'0.6' =>  esc_attr('0.6','advance-fitness-gym'),
+		'0.7' =>  esc_attr('0.7','advance-fitness-gym'),
+		'0.8' =>  esc_attr('0.8','advance-fitness-gym'),
+		'0.9' =>  esc_attr('0.9','advance-fitness-gym')
+	),
+	));
+
 	//Products Service
 	$wp_customize->add_section( 'advance_fitness_gym_services_section' , array(
     	'title'      => __( 'Services', 'advance-fitness-gym' ),
