@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2020-01-24 14:42+0200\n"
+"POT-Creation-Date: 2020-02-05 15:42+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -216,11 +216,11 @@ msgstr ""
 
 #: customizer/customizer-options.php:163
 msgid ""
-"<b>Premium Extra Features:</b><br />- Add your own \"Site Built By\" "
-"backlink in the Footer<br />- Add Title & Tagline with uploaded logo and "
-"adjust<br />- Set custom website container width<br />- Set custom Sidebar "
-"width<br />- Change Side Social Links design<br />- Change Site Attribution "
-"text"
+"<b>Premium Extra Features:</b><br />- Add Full Website Loader & design "
+"settings<br />- Add your own \"Site Built By\" backlink in the Footer<br />- "
+"Add Title & Tagline with uploaded logo and adjust<br />- Set custom website "
+"container width<br />- Set custom Sidebar width<br />- Change Side Social "
+"Links design<br />- Change Site Attribution text"
 msgstr ""
 
 #: customizer/customizer-options.php:171 customizer/customizer-options.php:1225
@@ -780,7 +780,7 @@ msgid ""
 "Adjust Footer top & bottom padding"
 msgstr ""
 
-#: customizer/customizer-options.php:825 functions.php:356
+#: customizer/customizer-options.php:825 functions.php:365
 msgid "WooCommerce"
 msgstr ""
 
@@ -1261,112 +1261,114 @@ msgstr ""
 msgid "The footer will divide into however many widgets are placed here."
 msgstr ""
 
-#: functions.php:361
+#: functions.php:370
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:376
 msgid "Contact Form by WPForms"
 msgstr ""
 
-#: functions.php:372
+#: functions.php:381
 msgid "WooCustomizer"
 msgstr ""
 
-#: functions.php:377
+#: functions.php:386
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:382
+#: functions.php:391
 msgid "Linkt"
 msgstr ""
 
-#: functions.php:387
+#: functions.php:396
 msgid "HubSpot"
 msgstr ""
 
-#: functions.php:533
+#: functions.php:542
 msgid "Thank you for using Avant!"
 msgstr ""
 
-#: functions.php:535
+#: functions.php:544
 #, php-format
 msgid ""
 "We pride ourselves on <a href=\"%1$s\" target=\"_blank\">good products and 5 "
-"Star Support</a>! Please read through our <a href=\"%2$s\">About Avant</a> "
-"page for more help on using the Avant theme"
+"Star Support</a>! Please read through our <a href=\"%2$s\" class=\"avant-"
+"admin-notice-topbtn\">About Avant</a> page for more help on using the Avant "
+"theme, or for theme support - <a href=\"%2$s\" class=\"avant-admin-notice-"
+"topbtn\">Get In Contact</a>"
 msgstr ""
 
-#: functions.php:539
+#: functions.php:548
 msgid "Popular links to get you started"
 msgstr ""
 
-#: functions.php:541
+#: functions.php:550
 msgid "See what the Avant Premium theme offers"
 msgstr ""
 
-#: functions.php:542
+#: functions.php:551
 msgid "Setting up the Avant default slider"
 msgstr ""
 
-#: functions.php:543
+#: functions.php:552
 msgid "How to install Avant Premium"
 msgstr ""
 
-#: functions.php:544
+#: functions.php:553
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:547
+#: functions.php:556
 msgid "Go To Documentation"
 msgstr ""
 
-#: functions.php:551
+#: functions.php:560
 msgid "Start customizing your site:"
 msgstr ""
 
-#: functions.php:553
+#: functions.php:562
 msgid ""
 "All Avant Settings are built into the WordPress Customizer for easy, visual "
 "site editing."
 msgstr ""
 
-#: functions.php:556
+#: functions.php:565
 msgid "Start Customizing Avant"
 msgstr ""
 
-#: functions.php:560
+#: functions.php:569
 msgid "Need Help with Avant?"
 msgstr ""
 
-#: functions.php:562
+#: functions.php:571
 msgid ""
 "Need help upgrading? Have a question about using the Avant theme? We're here "
 "to help... Contact us."
 msgstr ""
 
-#: functions.php:565
+#: functions.php:574
 msgid "Get in contact"
 msgstr ""
 
-#: functions.php:572
+#: functions.php:581
 #, php-format
 msgid "Avant Premium is %1$s for all the extra %2$s"
 msgstr ""
 
-#: functions.php:572
+#: functions.php:581
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#purchase-premium\" "
 "target=\"_blank\">currently selling for only $25</a>"
 msgstr ""
 
-#: functions.php:572
+#: functions.php:581
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/avant/#premium-features\" "
 "target=\"_blank\">Avant Premium features</a>"
 msgstr ""
 
-#: functions.php:576
+#: functions.php:585
 msgid "Dismiss Notice"
 msgstr ""
 

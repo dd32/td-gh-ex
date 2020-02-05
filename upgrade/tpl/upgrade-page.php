@@ -180,6 +180,18 @@
             <h4><?php esc_html_e( 'Avant Changelog:', 'avant' ); ?></h4>
             
             <ul>
+                <li class="upgrade-changelog-v">#### 1.1.37</li>
+                <li>Style fixes/tweaks</li>
+                <li>Edit Recent & Categories widgets to be able to exclude specified blog categories</li>
+                <li>Added quick edit links / partials for theme text into WP Customizer</li>
+                <li>Added support & backwards compatibility for new wp_body_open hook</li>
+                <li>Change Skip Link Focus js to functions file, too small to load own file</li>
+                <li>Updated language .pot file</li>
+                <li><span>Premium: NEW</span> Added Full Site Loader to Vogue - Customize -> Vogue Theme Settings -> Site Layout</li>
+                <li><span>Premium: NEW</span> Customize design and loader icon of new Site Loader feature</li>
+            </ul>
+
+            <ul>
                 <li class="upgrade-changelog-v">#### 1.1.35</li>
                 <li>Fixed Missing / Incorrect escaping & translations</li>
                 <li>Reduced the size of the Avant help notice on start</li>

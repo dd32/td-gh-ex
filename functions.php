@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.36' );
+define( 'AVANT_THEME_VERSION' , '1.1.37' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -204,13 +204,22 @@ function avant_scripts() {
 		wp_enqueue_script( 'avant-jetpack-scroll', get_template_directory_uri() . '/js/jetpack-infinite-scroll.js', array('jquery'), AVANT_THEME_VERSION, true );
 	endif;
 
-	wp_enqueue_script( 'avant-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), AVANT_THEME_VERSION, true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'avant_scripts' );
+
+/**
+ * Fix skip link focus in IE11. Too small to load as own script
+ */
+function avant_custom_footer_scripts() {
+	// The following is minified via 'terser --compress --mangle -- js/skip-link-focus-fix.js' ?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script><?php
+}
+add_action( 'wp_print_footer_scripts', 'avant_custom_footer_scripts' );
 
 /**
  * To maintain backwards compatibility with older versions of WordPress
@@ -468,10 +477,10 @@ function avant_cat_columns_array_push_after( $src, $avant_cat_in, $pos ) {
 }
 
 /**
- * Adjust the Recent Posts widget query if avant-slider-cats is set
+ * Adjust the Recent Posts widget query if avant-blog-cats is set
  */
 function avant_filter_recent_posts_widget_parameters( $params ) {
-	$slider_categories = get_theme_mod( 'avant-slider-cats' );
+	$slider_categories = get_theme_mod( 'avant-blog-cats' );
     $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
 	
 	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
@@ -486,10 +495,10 @@ function avant_filter_recent_posts_widget_parameters( $params ) {
 add_filter( 'widget_posts_args', 'avant_filter_recent_posts_widget_parameters' );
 
 /**
- * Adjust the widget categories query if avant-slider-cats is set
+ * Adjust the widget categories query if avant-blog-cats is set
  */
 function avant_set_widget_categories_args($args){
-	$slider_categories = get_theme_mod( 'avant-slider-cats' );
+	$slider_categories = get_theme_mod( 'avant-blog-cats' );
     $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
 	
 	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
@@ -504,7 +513,7 @@ function avant_set_widget_categories_args($args){
 add_filter( 'widget_categories_args', 'avant_set_widget_categories_args' );
 
 function avant_set_widget_categories_dropdown_arg($args){
-	$slider_categories = get_theme_mod( 'avant-slider-cats' );
+	$slider_categories = get_theme_mod( 'avant-blog-cats' );
     $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
 	
 	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
@@ -532,7 +541,7 @@ function avant_add_license_notice() {
 			<h4>
 				<?php esc_html_e( 'Thank you for using Avant!', 'avant' ); ?>
 			</h4>
-			<p><?php printf( __( 'We pride ourselves on <a href="%1$s" target="_blank">good products and 5 Star Support</a>! Please read through our <a href="%2$s">About Avant</a> page for more help on using the Avant theme', 'avant' ), 'https://wordpress.org/support/theme/avant/reviews/?filter=5', admin_url( 'themes.php?page=avant_theme_info' ) ); ?></p>
+			<p><?php printf( __( 'We pride ourselves on <a href="%1$s" target="_blank">good products and 5 Star Support</a>! Please read through our <a href="%2$s" class="avant-admin-notice-topbtn">About Avant</a> page for more help on using the Avant theme, or for theme support - <a href="%2$s" class="avant-admin-notice-topbtn">Get In Contact</a>', 'avant' ), 'https://wordpress.org/support/theme/avant/reviews/?filter=5', admin_url( 'themes.php?page=avant_theme_info' ) ); ?></p>
 			<?php if ( $avantpage == 'themes.php?page=avant_theme_info' ) : ?>
 				<div class="avant-admin-notice-blocks">
 					<div class="avant-admin-notice-block">

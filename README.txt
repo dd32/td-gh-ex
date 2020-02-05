@@ -68,6 +68,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.37
+* Style tweaks/fixes
+* Edit Recent & Categories widgets to be able to exclude specified blog categories
+* Added quick edit links / partials for theme text into WP Customizer
+* Added support & backwards compatibility for new wp_body_open hook
+* Change Skip Link Focus js to functions file, too small to load own file
+* Updated the language .pot file
+* PREMIUM: NEW: Added Full Site Loader to Vogue - Customize -> Vogue Theme Settings -> Site Layout
+* PREMIUM: NEW: Customize design and loader icon of new Site Loader feature
+
 #### 1.1.36
 * Reduced the size of the Avant help notice to suit WP handbook guidelines
 * Updated the language .pot file
@@ -81,8 +91,8 @@ View the theme settings under "Appearance" -> Customize.
 * Style tweaks/fixes
 * Added Customizer note
 * Updated the language .pot file
-Premium: Added Numberic Pagination for Blog List & search pages
-Premium: Added extra settings for new Numeric Pagination
+* PREMIUM: Added Numberic Pagination for Blog List & search pages
+* PREMIUM: Added extra settings for new Numeric Pagination
 
 #### 1.1.33
 * Style tweaks/fixes
@@ -95,7 +105,7 @@ Premium: Added extra settings for new Numeric Pagination
 * Remove old deprecated JS code
 * Added Chanelog to Appearance -> About Avant Page
 * Updated the language .pot file
-Premium: Added Spotify to theme Social Links
+* PREMIUM: Added Spotify to theme Social Links
 
 #### 1.1.31
 * Style tweaks/fixes
@@ -114,26 +124,26 @@ Premium: Added Spotify to theme Social Links
 #### 1.1.28
 * Style tweaks/fixes
 * Updated the language .pot file
-Premium: Added Airbnb to Social Links
-Premium: Added Kickstarter to Social Links
-Premium: Added setting to show a single post author blocks
-Premium: Added settings to change the design of the author block
+* PREMIUM: Added Airbnb to Social Links
+* PREMIUM: Added Kickstarter to Social Links
+* PREMIUM: Added setting to show a single post author blocks
+* PREMIUM: Added settings to change the design of the author block
 
 #### 1.1.27
 * Style tweaks/fixes
 * Added fix for Mega Menu plugin to control the navigation area - Customize -> Plugin Support
 * Updated the language .pot file
-Premium: Added setting to show logo & tagline ONLY on home page for Header Layout One
+* PREMIUM: Added setting to show logo & tagline ONLY on home page for Header Layout One
 
 #### 1.1.26
 * Style tweaks/fixes
 * Added indent for Product categories sub-categories
 * Updated the language .pot file
-Premium: Updated Page Layouts Import functionality
+* PREMIUM: Updated Page Layouts Import functionality
 
 #### 1.1.25
 * HTML & CSS fix
-Premium: Fixed WhatsApp Social Links to open WhatsApp chat
+* PREMIUM: Fixed WhatsApp Social Links to open WhatsApp chat
 
 #### 1.1.24
 * Style tweaks/fixes
@@ -148,7 +158,7 @@ Premium: Fixed WhatsApp Social Links to open WhatsApp chat
 #### 1.1.22
 * Added CSS fix for Catalogue Mode plugin
 * Style tweaks/fixes
-Premium: Added WhatssApp to theme social links
+* PREMIUM: Added WhatssApp to theme social links
 
 #### 1.1.21
 * Updated Font Awesome - v5.9.0
@@ -163,7 +173,7 @@ Premium: Added WhatssApp to theme social links
 * Added php 7.2 fix for slider setting
 * Added setting to disable only the default theme fonts
 * Updated language .pot file
-Premium: Added setting to remove Product Single Page Related Products
+* PREMIUM: Added setting to remove Product Single Page Related Products
 
 #### 1.1.19
 * Style tweaks/fixes
@@ -173,7 +183,7 @@ Premium: Added setting to remove Product Single Page Related Products
 * Style tweaks/fixes
 * Added setting to adjust Primary Navigation Font size
 * Updated language .pot file
-Premium: Updated Page Layouts to Import section
+* PREMIUM: Updated Page Layouts to Import section
 
 #### 1.1.17
 * WooCommerce style tweaks/fixes
@@ -181,14 +191,14 @@ Premium: Updated Page Layouts to Import section
 * Added code to remove Slider Posts from the Recent Posts Widget
 * Added missing translations
 * Updated language .pot file
-Premium: Added Elementor Page Layouts to import into the theme Dashboard -> Appearance -> Page Layouts
+* PREMIUM: Added Elementor Page Layouts to import into the theme Dashboard -> Appearance -> Page Layouts
 
 #### 1.1.16
 * Fixed Remove archive pre-text setting
 * Removed old/deprecated code
 * Neatened up code/comments
 * Updated language .pot file
-Premium: Add a setting to build your own "Site Built By" backlink in the Footer
+* PREMIUM: Add a setting to build your own "Site Built By" backlink in the Footer
 
 #### 1.1.15
 * Fixed Social Footer Icons breaking
@@ -199,8 +209,8 @@ Premium: Add a setting to build your own "Site Built By" backlink in the Footer
 * Set pingback only if is_singular() && pings_open()
 * Remove unused code
 * Updated the language .pot file
-Premium: Added setting to adjust Header Bottom spacing
-Premium: Added setting to adjust Footer Top spacing
+* PREMIUM: Added setting to adjust Header Bottom spacing
+* PREMIUM: Added setting to adjust Footer Top spacing
 
 #### 1.1.13
 * Style tweaks/fixes
@@ -213,8 +223,8 @@ Premium: Added setting to adjust Footer Top spacing
 * Style fixes/tweaks
 * Fix menu not opening bug
 * Updated the language .pot file
-Premium: Add setting to adjust Social Footer icon spacing
-Premium: Added the options to change the social icons to color - Customize -> Avant Social Links
+* PREMIUM: Add setting to adjust Social Footer icon spacing
+* PREMIUM: Added the options to change the social icons to color - Customize -> Avant Social Links
 
 #### 1.1.11
 * Style fixes/tweaks
@@ -234,9 +244,9 @@ Premium: Added the options to change the social icons to color - Customize -> Av
 * Added setting to adjust the side social top position
 * Fixed js bug in Customizer settings
 * Updated the language .pot file
-Premium: Added the option to add a custom non brand Social Icon
-Premium: Added setting to remove WooCommerce Product Gallery Zoom
-Premium: Added setting to remove WooCommerce Product Gallery LightBox
+* PREMIUM: Added the option to add a custom non brand Social Icon
+* PREMIUM: Added setting to remove WooCommerce Product Gallery Zoom
+* PREMIUM: Added setting to remove WooCommerce Product Gallery LightBox
 
 #### 1.1.08
 * Style tweaks/fixes
@@ -245,7 +255,7 @@ Premium: Added setting to remove WooCommerce Product Gallery LightBox
 * Added setting to customize all titles (Site Title, Desctiprtion, Widget Titles, Posts) for better SEO
 * Fixed the Blog to work with JetPack Infinite Scroll
 * Updated the language .pot file
-Premium: Added setting to adjust Social Footer Icons sizing
+* PREMIUM: Added setting to adjust Social Footer Icons sizing
 
 #### 1.1.07
 * Style tweaks/fixes - GDPR
@@ -267,10 +277,10 @@ Premium: Added setting to adjust Social Footer Icons sizing
 * Added setting to set Column width for the WooCommerce Product Single Pages
 * Added compatibility for Header Footer Elementor plugin: https://wordpress.org/plugins/header-footer-elementor/
 * Updated the language .pot file
-Premium: Changed sticky navigation to show on mobile by default
-Premium: Added setting to remove sticky nav on mobile - Customize -> Avant Mobile Settings
-Premium: Added settings to change Mobile Slide our Navigation colors
-Premium: Added extra setting to center Footer Custom Layout One width custom width
+* PREMIUM: Changed sticky navigation to show on mobile by default
+* PREMIUM: Added setting to remove sticky nav on mobile - Customize -> Avant Mobile Settings
+* PREMIUM: Added settings to change Mobile Slide our Navigation colors
+* PREMIUM: Added extra setting to center Footer Custom Layout One width custom width
 
 #### 1.1.04
 * Changed default to show 2 WooCommerce products on mobile
@@ -309,8 +319,8 @@ Premium: Added extra setting to center Footer Custom Layout One width custom wid
 * Added setting to change Site Tagline to lowercase
 * Added setting to change main Navigation to lowercase
 * Updated the language .pot file
-Premium: Fixed WC 3.3 update - broke blog full sidebar/width settings
-Premium: Added setting to replace default search with any other plugin search shortcode
+* PREMIUM: Fixed WC 3.3 update - broke blog full sidebar/width settings
+* PREMIUM: Added setting to replace default search with any other plugin search shortcode
 
 #### 1.0.96
 * Style tweaks/fixes
@@ -321,11 +331,11 @@ Premium: Added setting to replace default search with any other plugin search sh
 * Added new color setting - Navigation custom hover/active color
 * Added help links for building the Footer
 * Updated the language .pot file
-Premium: Added setting to apply custom url to Default Slider slides
-Premium: Added setting to adjust Site Title color
-Premium: Added setting to adjust Site Tagline color
-Premium: Added new Social Links - Digg, Vine, StumbleUpon & Amazon
-Premium: Added a bunch more WooCommerce settings
+* PREMIUM: Added setting to apply custom url to Default Slider slides
+* PREMIUM: Added setting to adjust Site Title color
+* PREMIUM: Added setting to adjust Site Tagline color
+* PREMIUM: Added new Social Links - Digg, Vine, StumbleUpon & Amazon
+* PREMIUM: Added a bunch more WooCommerce settings
 
 #### 1.0.95
 * Style fixes
@@ -335,7 +345,7 @@ Premium: Added a bunch more WooCommerce settings
 * Fix Home Page Slider do_shortcode not working
 * Header fix - To work with Savant child theme
 * Updated the language .pot file
-Premium: Added setting to change Side Social Links design - Square or Round
+* PREMIUM: Added setting to change Side Social Links design - Square or Round
 
 #### 1.0.93
 * Fixed CSS handle names to work with Child Theme
@@ -344,13 +354,13 @@ Premium: Added setting to change Side Social Links design - Square or Round
 * Admin style tweaks/fixes
 * Added NEW side social icons
 * Updated the language .pot file
-Premium: Added setting to remove Header Main Navigation
+* PREMIUM: Added setting to remove Header Main Navigation
 
 #### 1.0.92
 * Style tweaks/fixes
 * Updated the language .pot file
-Premium: Added new social link for SoundCloud (requested)
-Premium: Added new social link for Xing
+* PREMIUM: Added new social link for SoundCloud (requested)
+* PREMIUM: Added new social link for Xing
 
 #### 1.0.91
 * Style tweaks/fixes
@@ -362,9 +372,9 @@ Premium: Added new social link for Xing
 * Fixed search bar not showing if Top Bar is removed on header 1 & 3
 * Added Customizer inter links to help/improve user experience
 * Updated the language .pot file
-Premium: Added settings to show Site Title & Tagline with an uploaded logo
-Premium: Added settings to adjust logo positions
-Premium: Fixed bug with Sticky Header & Elementor Page Builder Conflict
+* PREMIUM: Added settings to show Site Title & Tagline with an uploaded logo
+* PREMIUM: Added settings to adjust logo positions
+* PREMIUM: Fixed bug with Sticky Header & Elementor Page Builder Conflict
 
 #### 1.0.7
 * Admin CSS edits
@@ -374,8 +384,8 @@ Premium: Fixed bug with Sticky Header & Elementor Page Builder Conflict
 * Style tweaks/fixes
 * Fixed Slider CSS class output not working
 * Change slider default setting
-Premium: Added setting to add/enable WooCommerce drop down basket
-Premium: Added color settings for new WooCOmmerce drop down cart
+* PREMIUM: Added setting to add/enable WooCommerce drop down basket
+* PREMIUM: Added color settings for new WooCOmmerce drop down cart
 
 #### 1.0.5
 * Admin style tweaks/fixes

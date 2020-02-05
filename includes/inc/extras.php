@@ -5,9 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features
  *
  * @package Avant
- */
-
-/**
+ *
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
@@ -22,6 +20,54 @@ function avant_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'avant_body_classes' );
+
+/**
+ * Add postMessage support for site title and description & theme text for the Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function avant_customize_register( $wp_customize ) {
+	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'blogname', array(
+			'selector'        => '.site-title a',
+			'render_callback' => 'avant_customize_partial_blogname',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+			'selector'        => '.site-description',
+			'render_callback' => 'avant_customize_partial_blogdescription',
+		) );
+		// Header Partials
+		$wp_customize->selective_refresh->add_partial( 'avant-website-head-no', array(
+			'selector'        => '.header-phone',
+			'render_callback' => 'avant_customize_partial_header_phone',
+		) );
+		$wp_customize->selective_refresh->add_partial( 'avant-website-site-add', array(
+			'selector'        => '.header-address',
+			'render_callback' => 'avant_customize_partial_header_address',
+		) );
+	}
+}
+add_action( 'customize_register', 'avant_customize_register' );
+
+/**
+ * Render Header partials.
+ */
+function avant_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+function avant_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+function avant_customize_partial_header_phone() {
+	bloginfo( 'avant-website-head-no' );
+}
+function avant_customize_partial_header_address() {
+	bloginfo( 'avant-website-site-add' );
+}
 
 /**
  * Enqueue Google Fonts for Blocks Editor
