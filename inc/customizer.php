@@ -55,6 +55,16 @@ function advance_portfolio_customize_register($wp_customize) {
 		'panel'    => 'advance_portfolio_panel_id',
 	));
 
+	//Sticky Header
+	$wp_customize->add_setting( 'advance_portfolio_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_portfolio_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-portfolio' ),
+        'section' => 'advance_portfolio_left_right'
+    ));
+
 	$wp_customize->add_setting('advance_portfolio_theme_options',array(
         'default' => __('Default','advance-portfolio'),
         'sanitize_callback' => 'advance_portfolio_sanitize_choices'
@@ -590,6 +600,67 @@ function advance_portfolio_customize_register($wp_customize) {
 		'section'     => 'advance_portfolio_banner',
 		'type'        => 'dropdown-pages',
 	));
+
+	//content layout
+    $wp_customize->add_setting('advance_portfolio_banner_content_alignment',array(
+    'default' => __('Left','advance-portfolio'),
+        'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_portfolio_banner_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Banner Content Alignment','advance-portfolio'),
+        'section' => 'advance_portfolio_banner',
+        'choices' => array(
+            'Center' => __('Center','advance-portfolio'),
+            'Left' => __('Left','advance-portfolio'),
+            'Right' => __('Right','advance-portfolio'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_portfolio_banner_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_portfolio_banner_excerpt_length', array(
+		'label'       => esc_html__( 'Banner Excerpt length','advance-portfolio' ),
+		'section'     => 'advance_portfolio_banner',
+		'type'        => 'number',
+		'settings'    => 'advance_portfolio_banner_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_portfolio_banner_image_opacity',array(
+      'default'              => 0.6,
+      'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_portfolio_banner_image_opacity', array(
+	'label'       => esc_html__( 'Banner Image Opacity','advance-portfolio' ),
+	'section'     => 'advance_portfolio_banner',
+	'type'        => 'select',
+	'settings'    => 'advance_portfolio_banner_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-portfolio'),
+		'0.1' =>  esc_attr('0.1','advance-portfolio'),
+		'0.2' =>  esc_attr('0.2','advance-portfolio'),
+		'0.3' =>  esc_attr('0.3','advance-portfolio'),
+		'0.4' =>  esc_attr('0.4','advance-portfolio'),
+		'0.5' =>  esc_attr('0.5','advance-portfolio'),
+		'0.6' =>  esc_attr('0.6','advance-portfolio'),
+		'0.7' =>  esc_attr('0.7','advance-portfolio'),
+		'0.8' =>  esc_attr('0.8','advance-portfolio'),
+		'0.9' =>  esc_attr('0.9','advance-portfolio')
+	),
+	));
+
 
 	//AWESOME PORTFOLIO
 	$wp_customize->add_section('advance_portfolio_page_awesome', array(

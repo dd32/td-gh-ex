@@ -276,16 +276,16 @@ add_filter('loop_shop_columns', 'advance_portfolio_loop_columns');
 	return 3; // 3 products per row
 	}
 }
-define('ADVANCE_PORTFOLIO_BUY_NOW','https://www.themeshopy.com/themes/wordpress-portfolio-theme/','advance-portfolio');
-define('ADVANCE_PORTFOLIO_LIVE_DEMO','https://themeshopy.com/advance-portfolio-pro/','advance-portfolio');
-define('ADVANCE_PORTFOLIO_PRO_DOC','https://themeshopy.com/demo/docs/advance-portfolio-pro/','advance-portfolio');
-define('ADVANCE_PORTFOLIO_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-portfolio/','advance-portfolio');
-define('ADVANCE_PORTFOLIO_CONTACT','https://wordpress.org/support/theme/advance-portfolio','advance-portfolio');
-define('ADVANCE_PORTFOLIO_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/', 'advance-portfolio');
+define('ADVANCE_PORTFOLIO_BUY_NOW',__('https://www.themeshopy.com/themes/wordpress-portfolio-theme/','advance-portfolio'));
+define('ADVANCE_PORTFOLIO_LIVE_DEMO',__('https://themeshopy.com/advance-portfolio-pro/','advance-portfolio'));
+define('ADVANCE_PORTFOLIO_PRO_DOC',__('https://themeshopy.com/demo/docs/advance-portfolio-pro/','advance-portfolio'));
+define('ADVANCE_PORTFOLIO_FREE_DOC',__('https://www.themeshopy.com/demo/docs/free-advance-portfolio/','advance-portfolio'));
+define('ADVANCE_PORTFOLIO_CONTACT',__('https://wordpress.org/support/theme/advance-portfolio','advance-portfolio'));
+define('ADVANCE_PORTFOLIO_CREDIT',__('https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/', 'advance-portfolio'));
 
 if (!function_exists('advance_portfolio_credit')) {
 	function advance_portfolio_credit() {
-		echo "<a href=".esc_url(ADVANCE_PORTFOLIO_CREDIT).">".esc_html__('Advance Portfolio WordPress Theme', 'advance-portfolio')."</a>";
+		echo "<a href=".esc_url(ADVANCE_PORTFOLIO_CREDIT).">".esc_html__('Portfolio WordPress Theme', 'advance-portfolio')."</a>";
 	}
 }
 

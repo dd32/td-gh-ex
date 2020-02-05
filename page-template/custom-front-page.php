@@ -28,7 +28,7 @@ get_header(); ?>
         </div>
         <div class="box-content">
           <h1><?php the_title(); ?></h1>
-          <p><?php the_excerpt(); ?></p>                  
+          <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_portfolio_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_portfolio_banner_excerpt_length','25')))); ?></p>                  
           <div class="social-media">
             <?php if( get_theme_mod( 'advance_portfolio_facebook_url') != '') { ?>
               <a href="<?php echo esc_url( get_theme_mod( 'advance_portfolio_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-portfolio' );?></span></a>
