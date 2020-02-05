@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/simple-catch
 Author: Catch Themes Team
 Author URI: https://catchthemes.com
 Description: Simple Catch is a Highly Customizable Simple, Clean and Responsive WordPress Theme for anyone looking to give their website a professional look. It's easy customization through WordPress theme customizer, ultra-readable typography, large thumbnail and featured slider makes it outstanding. It comes with a wide variety of options: like Custom Menu, Custom Widgets, Custom Layouts, Featured Post Slider, Header Logo, Footer Logo, Fav Icon, Header Image, Background Image, Social Icons, Color Schemes, Custom CSS Styles, Excerpt settings and scroll up. This theme is translation ready and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/simple-catch/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/simplecatch/
-Version: 3.6.3
+Version: 3.6.4
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: simple-catch
@@ -952,6 +952,7 @@ ul.social-profile li.email a:focus {
 #access ul li a:hover,
 #access ul li a:focus,
 #access ul li.current-menu-item a, #access ul li:hover > a,
+#access ul li.current-menu-item a, #access ul li.focus > a,
 #access ul li.current-menu-item a, #access ul li:focus > a {
 	background-color: #444;
 	color: #fff;
@@ -963,26 +964,31 @@ ul.social-profile li.email a:focus {
 .fixed-layout #access ul li ul,
 .fixed-layout #access ul li:hover ul li ul,
 .fixed-layout #access ul li:focus ul li ul {
-	display: none;
+	opacity: 0;
 	list-style: none;
 	z-index: 9999;
 }
 .fixed-layout #access ul.menu li:hover > ul,
 .fixed-layout #access ul.menu li:focus > ul {
-	display: block;
+	left: auto;
+	opacity: 1;
+}
+
+.fixed-layout #access ul.menu ul li:hover > ul,
+.fixed-layout #access ul.menu ul li:focus > ul {
+	left: 100%;
 }
 
 #access ul li ul {
 	position: absolute;
 	background-color: #444;
-	top: 48px;
-	left: 0px;
+	top: 100%;
+	left: -999em;
 	padding: 0px;
 	width: 185px;
 	margin: 0px;
 }
 #access ul li ul li ul {
-	left: 185px;
 	top: 0px;
 }
 #access ul li ul li {

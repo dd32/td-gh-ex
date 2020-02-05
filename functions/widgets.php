@@ -16,7 +16,7 @@ function simplecatch_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Main Sidebar', 'simple-catch' ),
 		'id'            => 'sidebar',
-		'description'   => __( 'This is main sideabar', 'simple-catch' ),
+		'description'   => __( 'This is main sidebar', 'simple-catch' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',

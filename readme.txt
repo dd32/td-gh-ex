@@ -1,9 +1,9 @@
 === Simple Catch ===
 Contributors: catchthemes
 Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
-Requires at least: 4.8
-Tested up to: 5.2.1
-Stable tag: 3.6.3
+Requires at least: 4.9
+Tested up to: 5.3
+Stable tag: 3.6.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -63,6 +63,10 @@ Added Translation for Brazilian Portuguese by Giovanna Chinellato (Email: giovan
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 3.6.4 (Released: February 04, 2020) =
+* Bug Fixed: Keyboard navigation accessibility issue
+* Bug Fixed: Typo issue
 
 = 3.6.3 (Released: June 03, 2019) =
 * Added: Support for wp_body_open action
