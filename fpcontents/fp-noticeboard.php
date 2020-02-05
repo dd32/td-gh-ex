@@ -30,14 +30,14 @@ if(!$noticebv && !$newsbv) return;
 							$nbargs = array('orderby'=> 'post_date', 'order'=> 'DESC', 'cat'=> $nbcatid, 'posts_per_page'=> $nbcatnnum, 'ignore_sticky_posts' => 1 );
 							$nbitem_query = new WP_Query($nbargs);
 							if ($nbitem_query->have_posts()): ?> 
-								<div id="nbcat-<?php echo $nbcatid; ?>" class="nboardcat <?php echo $nbcattpos; ?>">
+								<div id="nbcat-<?php echo esc_attr($nbcatid); ?>" class="nboardcat <?php echo $nbcattpos; ?>">
 									<?php 
-									$nbcatnamef = '<div class="nbcattitle"><h3 class="nbcatt">'.$nbcatname.'</h3></div>'; 
+									$nbcatnamef = '<div class="nbcattitle"><h3 class="nbcatt">'.esc_html($nbcatname).'</h3></div>'; 
 									echo associationx_linkandtarget($nbcatnamef,$nbcatlink,$nbitemlt,'','nbcatlink');
 									echo '<div class="noticeitemtitles">';
 									while ($nbitem_query->have_posts()): 
 										$nbitem_query->the_post(); 
-										$nbittite = '<div class="nbitemtitle '.$nbitemicon.'"><h4>' .get_the_title(). '</h4></div>';
+										$nbittite = '<div class="nbitemtitle '.$nbitemicon.'"><h4>' .esc_html(get_the_title()). '</h4></div>';
 										$nbitlink = get_the_permalink();
 										echo associationx_linkandtarget($nbittite,$nbitlink,$nbitemlt,'','nbitmplink');
 									endwhile; wp_reset_postdata(); 
@@ -73,9 +73,9 @@ if(!$noticebv && !$newsbv) return;
 								$nboxargs = array('orderby'=> 'post_date', 'order'=> 'DESC', 'cat'=> $nboxcatid, 'posts_per_page'=> $nboxcatnnum, 'ignore_sticky_posts' => 1 );
 								$nboxitem_query = new WP_Query($nboxargs);
 								if ($nboxitem_query->have_posts()): $pcount = 0; ?>											
-									<div id="nboxcat-<?php echo $nboxcatid; ?>" class="nboardcat <?php echo $nboxcattpos; ?>">
+									<div id="nboxcat-<?php echo esc_attr($nboxcatid); ?>" class="nboardcat <?php echo $nboxcattpos; ?>">
 										<?php 
-										$nbcatnamef = '<div class="nbcattitle"><h3 class="nbcatt">'.$nboxcatname.'</h3></div>'; 
+										$nbcatnamef = '<div class="nbcattitle"><h3 class="nbcatt">'.esc_html($nboxcatname).'</h3></div>'; 
 										echo wp_kses_post(associationx_linkandtarget($nbcatnamef,$nboxcatlink,$nboxitemlt,'','nbcatlink'));
 										while ($nboxitem_query->have_posts()): 
 											$nboxitem_query->the_post(); $pcount++;
@@ -87,8 +87,8 @@ if(!$noticebv && !$newsbv) return;
 											else: 	
 												$thumbimg = $thumbimg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID ));
 											endif;
-											if($thumbimg): $thumbimg ='<img class="nboxtimg" src="'.$thumbimg[0].'" alt="'.get_the_title().'" />'; else: $thumbimg =''; $nfimage = 'nofimage'; endif; 
-											$nbittite = '<div class="nbitemtitle '.$nfimage.'"><h4>' .get_the_title(). '</h4></div>';										
+											if($thumbimg): $thumbimg ='<img class="nboxtimg" src="'.esc_url($thumbimg[0]).'" alt="'.esc_html(get_the_title()).'" />'; else: $thumbimg =''; $nfimage = 'nofimage'; endif; 
+											$nbittite = '<div class="nbitemtitle '.$nfimage.'"><h4>' .esc_html(get_the_title()). '</h4></div>';										
 											echo associationx_linkandtarget($thumbimg.$nbittite,$nbitlink,$nboxitemlt,'','nbitmplink '.$nboxfpost);
 										endwhile; wp_reset_postdata(); 
 										echo associationx_linkandtarget($nboxcatrall,$nboxcatlink,$nboxitemlt,'','nbcatlinkra');

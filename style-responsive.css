@@ -67,8 +67,8 @@
 	.about-us-title, .boxtoptitle, .nboxhdes .boxtoptitle, .nboxhdes .boxtoptitle, .tesheading, #testimonial-box-item .tesheading{ font-size: 35px; }
 	
 	#mobile-menu{ display: inline-flex; }
-	#main-menu-con{ position: absolute; top: 100%; left: 0; }
-	#main-menu-con.mmenumobile{ visibility: hidden; }
+	#main-menu-con{ position: absolute; top: 100%; left: 0; opacity: 1; transition: all .5s; }
+	#main-menu-con.mmenumobile{ visibility: hidden; opacity: 0; }
 	#main-menu-con ul { display: inline-block; margin: 0 auto; width: 100%; }
 	#main-menu-con li{ float: none; width: 225px; margin: 0 !important; border: none !important; background-color: #051039 !important; }
 	#main-menu-con a{ width: 100%; text-align: left; font-size: 14px; }	

@@ -51,14 +51,14 @@ if(!$slidebox) return;
 					$slidecap = ''; 
 					$flexcaptions = '';
 					if  ($associationx_counter == 1):  
-						if($capa) $slidecap .= '<p class="title1 captionDelay6 FromTop">'.$capa.'</p>';
-						if($capb) $slidecap .= '<p class="title2 captionDelay4 FromTop">'.$capb.'</p>';
-						if($capc) $slidecap .= '<p class="title3 captionDelay2 FromTop">'.$capc.'</p>';
+						if($capa) $slidecap .= '<p class="title1 captionDelay6 FromTop">'.esc_html($capa).'</p>';
+						if($capb) $slidecap .= '<p class="title2 captionDelay4 FromTop">'.wp_kses_post($capb).'</p>';
+						if($capc) $slidecap .= '<p class="title3 captionDelay2 FromTop">'.wp_kses_post($capc).'</p>';
 					endif;						
 					if  ($associationx_counter == 2):  
-					if($capa) $slidecap .= '<p class="title1 captionDelay2 FromBottom">'.$capa.'</p>';
-						if($capb) $slidecap .= '<p class="title2 captionDelay4 FromBottom">'.$capb.'</p>';
-						if($capc) $slidecap .= '<p class="title3 captionDelay6 FromBottom">'.$capc.'</p>';
+					if($capa) $slidecap .= '<p class="title1 captionDelay2 FromBottom">'.esc_html($capa).'</p>';
+						if($capb) $slidecap .= '<p class="title2 captionDelay4 FromBottom">'.wp_kses_post($capb).'</p>';
+						if($capc) $slidecap .= '<p class="title3 captionDelay6 FromBottom">'.wp_kses_post($capc).'</p>';
 					endif;
 					if($slidecap) $flexcaptions .= '<div class="flex_caption1">'.$slidecap.'</div>';
 					if($slidelinks) $flexcaptions .= '<div class="slide-links FadeIn FadeInDelay"><div class="sldbtnh">'.$slidelinks.'</div></div>';

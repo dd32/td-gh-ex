@@ -17,6 +17,6 @@ if ( !$associationx_aboutus ) return;
 ?>
 <div id="about-us-box-item">
 	<div class="box90 about-us-part" data-sr='enter top, move 50px, over 1s, wait 0.3s'>    
-		<?php echo $associationx_aboutus;  ?>
+		<?php echo wp_kses_post($associationx_aboutus);  ?>
      </div>
 </div>

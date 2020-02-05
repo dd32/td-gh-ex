@@ -1,13 +1,7 @@
 jQuery(document).ready(function(){ 'use strict';
-								  
-	jQuery(".page_item_has_children").addClass("menu-item-has-children");							  
-	jQuery( "#main-menu-con .menu-item-has-children" ).focusout(function() {
-  		jQuery(this).removeClass("focusmenu");
-	});							  
-								  
-	jQuery( "#main-menu-con .menu-item-has-children" ).focusin(function() {
-  		jQuery(this).addClass("focusmenu");
-	});								  
+	jQuery(".page_item_has_children").addClass("menu-item-has-children");
+	jQuery( "#main-menu-con .menu-item-has-children" ).focusout(function() { jQuery(this).removeClass("focusmenu"); });			 
+	jQuery( "#main-menu-con .menu-item-has-children" ).focusin(function() { jQuery(this).addClass("focusmenu"); });			  
 								  
 	//jQuery('.go-top').click(function(event) { event.preventDefault(); jQuery('html, body').animate({scrollTop: 0}, 500); }); 
 	jQuery(window).scroll(function() { if (jQuery(this).scrollTop() > jQuery('#header').outerHeight(true)) { jQuery('.go-top').fadeIn(150); } else { jQuery('.go-top').fadeOut(150); } });
@@ -35,15 +29,18 @@ jQuery(document).ready(function(){ 'use strict';
 	jQuery(document).click(function () {  jQuery('#fsearchbox').hide(); });
 	
 	jQuery('#mobile-menu').click(function(){ 
-		jQuery('#main-menu-con').toggleClass('mmenumobile'); jQuery(this).toggleClass('mmenuclose'); 		 
+		jQuery('#main-menu-con').toggleClass('mmenumobile'); jQuery(this).toggleClass('mmenuclose'); jQuery('#mobilemenuclose').toggleClass('mmenuclose');		 
 	});
+								  
+	jQuery( "#mobilemenuclose" ).focusin(function() { jQuery('#main-menu-con').toggleClass('mmenumobile'); jQuery("#mobile-menu").toggleClass('mmenuclose').focus(); jQuery('#mobilemenuclose').toggleClass('mmenuclose'); });		
 								  
 });		
 
 jQuery(window).on('load resize', function () { 	'use strict';
 	var resMwdtx = jQuery('#resmwdt').width();
-	if( resMwdtx < 10 ){  jQuery('#main-menu-con').addClass('mmenumobile'); }
-	jQuery('#mobile-menu').removeClass('mmenuclose');										  
+	if( resMwdtx < 10 ){  jQuery('#main-menu-con').addClass('mmenumobile'); jQuery('#mobilemenuclose').removeClass('mmenuclose'); }
+	jQuery('#mobile-menu').removeClass('mmenuclose');
+	jQuery('#mobilemenuclose').addClass('mmenuclose');
 											  
 	var docW = jQuery("#site-container").width();
 	//var t = jQuery("#site-container").offset().left;	

@@ -73,7 +73,7 @@
 	}
 	
 //	WooCommerce Cart Icon Add
-	if ( esc_attr(associationx_get_option('woo-cart-icon', '1')) && associationx_woo_check() ) {
+	if ( associationx_get_option('woo-cart-icon', '1') && associationx_woo_check() ) {
 	function associationx_wc_cart_count($d5wmenu, $wargs) {
     if( $wargs->theme_location == 'main-menu'):
 	$wcsccount = WC()->cart->get_cart_contents_count();
@@ -174,7 +174,7 @@
 			'. get_avatar( get_the_author_meta('user_email') , 110 ). '
             </div>
             <div class="author-description">
-            <h3 class="author-name">'.$authorname.' ' . esc_attr(get_the_author()) .'</h3>
+            <h3 class="author-name">'.$authorname.' ' . esc_html(get_the_author()) .'</h3>
             
 			' . wp_kses_post(get_the_author_meta('description')). '
             </div>
@@ -197,3 +197,15 @@ function associationx_description_to_menu($item_output, $item, $depth, $args) {
     return $item_output;
 }
 add_filter('walker_nav_menu_start_el', 'associationx_description_to_menu', 10, 4);
+
+//	Add a Close Menu Item with the Main Mneu
+function associationx_main_menu_close($d5xmenu, $wargs) {
+    if( $wargs->theme_location == 'main-menu'):
+	$newmenup = '<li id="mobilemenuclose" class="mmenuclose"><a class="menu-close-icon  fa-times" href="#"></a></li>';
+	$newmenun = $d5xmenu . $newmenup;
+	return $newmenun;
+	else: 
+	return $d5xmenu;
+	endif;
+	}
+	add_filter('wp_nav_menu_items','associationx_main_menu_close', 10, 2);

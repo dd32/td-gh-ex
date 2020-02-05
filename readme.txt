@@ -4,7 +4,8 @@ Contributors: d5creation
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
 Requires at least: 5.0
 Tested up to: 5.3.2
-Stable tag: 1.05
+Requires PHP: 5.4
+Stable tag: 1.07
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,10 +32,7 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 == Changelog ==
 
-= 1.03 =
-* Review Findings Fix
-
-= 1.02 =
+= 1.07 =
 * Review Findings Fix
 
 = 1.01 =
@@ -45,11 +43,48 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 * Initial Release
 
 == Resources ==
-* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
-* FontAwesome5: https://fontawesome.com/icons?d=gallery&m=free, GPL Friendly License
-* jquery.flexslider.js: https://github.com/woothemes/FlexSlider, GPL2
-* modernizr.js: https://modernizr.com, BSD and MIT
-* smooth-scroll.js: https://github.com/cferdinandi/smooth-scroll, MIT
 
-* 404.jpg: https://stocksnap.io/photo/KJRKODUZQN
-* screenshot.png: https://www.pexels.com/photo/group-of-people-having-neon-party-1684187, Free to Use
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
+
+* FontAwesome5 Free Fonts (webfonts):
+Source: https://fontawesome.com/
+License:  SIL OFL 1.1, Copyright (c) @fontawesome
+License Url : https://fontawesome.com/license/free
+
+* fawsome-all.css:
+Source: https://fontawesome.com/
+License:  MIT, Copyright (c) @fontawesome
+License Url : https://fontawesome.com/license/free
+
+* jquery.flexslider.js:
+Source: https://github.com/woothemes/FlexSlider
+License:  GPL2, Copyright (c) 2012 WooThemes
+License Url : https://github.com/woocommerce/FlexSlider/blob/master/LICENSE.md
+
+* flexslider.css:
+Source: https://github.com/woothemes/FlexSlider
+License:  GPL2, Copyright (c) 2012 WooThemes
+License Url : https://github.com/woocommerce/FlexSlider/blob/master/LICENSE.md
+
+* modernizr.js:
+Source: https://modernizr.com
+License: MIT, Copyright (c) Faruk Ates, Paul Irish, Alex Sexton
+License Url : https://modernizr.com/license
+
+* smooth-scroll.js:
+Source: https://github.com/cferdinandi/smooth-scroll
+License: MIT, Copyright (c) 2019 Chris Ferdinandi
+License Url : https://github.com/cferdinandi/smooth-scroll/blob/master/LICENSE.md
+
+* 404.jpg:
+Source: https://stocksnap.io/photo/KJRKODUZQN
+License: CC0, Copyright (c) Studio 7042
+License Url : https://stocksnap.io/license
+
+* screenshot.png:
+Source: https://pxhere.com/en/photo/938674
+License: CC0, Copyright (c) Not Mentioned
+License Url : https://pxhere.com/en/license
