@@ -877,13 +877,55 @@ if ( ! function_exists( 'attesa_fontawesome_icons' ) ) {
 	}
 }
 
+/* Check the meta */
+if ( ! function_exists( 'attesa_check_meta' ) ) {
+	function attesa_check_meta($meta) {
+		if ( 'post' === get_post_type() && is_singular() ) {
+			if ('date' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_post_date', '1') );
+			}
+			elseif ('author' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_post_author', '1') );
+			}
+			elseif ('comments' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_post_comments', '1') );
+			}
+			elseif ('tags' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_post_tags', '1') );
+			}
+			elseif ('categories' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_post_categories', '1') );
+			}
+		} elseif(is_home() || is_archive() || is_search() ) {
+			if ('date' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_archive_post_date', '1') );
+			}
+			elseif ('author' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_archive_post_author', '1') );
+			}
+			elseif ('comments' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_archive_post_comments', '1') );
+			}
+			elseif ('tags' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_archive_post_tags', '') );
+			}
+			elseif ('categories' == $meta) {
+				$attesa_meta = apply_filters( 'attesa_meta_filter', attesa_options('_show_archive_post_categories', '') );
+			}
+		} else {
+			$attesa_meta = true;
+		}
+		return apply_filters( 'attesa_meta_filter', $attesa_meta );
+	}
+}
+
 /* Get the scherma markup if active */
 if ( ! function_exists( 'attesa_get_schema_markup' ) ) {
 	function attesa_get_schema_markup($position) {
 		if ( ! attesa_options('_schema_markup', '') ) {
 			return null;
 		}
-		if ('html' == $position) {
+		if ('body' == $position) {
 			if ( is_singular() ) {
 				$markup = 'itemscope itemtype="http://schema.org/WebPage"';
 			} else {
@@ -999,4 +1041,18 @@ function attesa_get_entry_header() {
 	} else {
 		the_title( '<h1 class="entry-title" '. attesa_get_schema_markup('name') .'>', '</h1>' );
 	}
+}
+
+/* Filters and functions for the 404 page */
+function attesa_404_show_search_form() {
+	return apply_filters('attesa_404_show_search_form_filter', true);
+}
+function attesa_404_show_recent_posts() {
+	return apply_filters('attesa_404_show_recent_posts_filter', true);
+}
+function attesa_404_show_archives() {
+	return apply_filters('attesa_404_show_archives_filter', true);
+}
+function attesa_404_show_tags() {
+	return apply_filters('attesa_404_show_tags_filter', true);
 }

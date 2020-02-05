@@ -29,10 +29,13 @@ if ( ! function_exists( 'attesa_posted_on' ) ) :
 
 		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 		$byline = '<span class="author vcard" '. attesa_get_schema_markup('author') .'><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
-
-		echo '<span class="posted-on"><i class="' . esc_attr(attesa_get_fontawesome_icons('calendar')) . ' spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="' . esc_attr(attesa_get_fontawesome_icons('user')) . ' spaceRight" aria-hidden="true"></i>' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		
-		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		if (attesa_check_meta('date')) {
+			echo '<span class="posted-on"><i class="' . esc_attr(attesa_get_fontawesome_icons('calendar')) . ' spaceRight" aria-hidden="true"></i>' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		if (attesa_check_meta('author')) {
+			echo '<span class="byline"><i class="' . esc_attr(attesa_get_fontawesome_icons('user')) . ' spaceRight" aria-hidden="true"></i>' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		if ( attesa_check_meta('comments') && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link"><i class="' . esc_attr(attesa_get_fontawesome_icons('comments')) . ' spaceRight" aria-hidden="true"></i>';
 			comments_popup_link(
 				sprintf(
@@ -67,12 +70,12 @@ if ( ! function_exists( 'attesa_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			$categories_list = get_the_category_list( ', ' );
-			if ( $categories_list ) {
+			if ( $categories_list && attesa_check_meta('categories') ) {
 				echo '<span class="cat-links smallText"><i class="' . esc_attr(attesa_get_fontawesome_icons('categories')) . ' spaceRight" aria-hidden="true"></i>' . $categories_list . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			$tags_list = get_the_tag_list( '', ', ' );
-			if ( $tags_list ) {
+			if ( $tags_list && attesa_check_meta('tags') ) {
 				echo '<span class="tags-links smallText"><i class="' . esc_attr(attesa_get_fontawesome_icons('tags')) . ' spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}

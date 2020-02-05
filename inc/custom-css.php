@@ -206,7 +206,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.attesa-portfolio-filter li a,
 				.attesa-portfolio-grid .attesa-portfolio-readmore p a,
 				ul.woocommerce-thankyou-order-details li,
-				.woocommerce-MyAccount-navigation ul li {
+				.woocommerce-MyAccount-navigation ul li,
+				.attesa-infinite-button-container .attesa-infinite-scroll-more-button {
 					border-radius: '.intval($borderRadius).'px;
 				}
 				#wp-calendar > caption {
@@ -632,7 +633,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:hover,
 			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:focus,
 			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:active,
-			.attesaFeatBoxContainer .attesaproFeatBoxButton a {
+			.attesaFeatBoxContainer .attesaproFeatBoxButton a,
+			.attesa-infinite-button-container .attesa-infinite-scroll-more-button {
 				background-color: '.esc_html($generalLinkColor).';
 			}
 			input[type="text"]:focus,
@@ -762,7 +764,10 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesaFeatBoxContainer .attesaproFeatBoxButton a:hover,
 			.attesaFeatBoxContainer .attesaproFeatBoxButton a:focus,
 			.attesaFeatBoxContainer .attesaproFeatBoxButton a:active,
-			.menu-full-screen-icon .icon-full-screen .square-full-screen {
+			.menu-full-screen-icon .icon-full-screen .square-full-screen,
+			.attesa-infinite-button-container .attesa-infinite-scroll-more-button:hover,
+			.attesa-infinite-button-container .attesa-infinite-scroll-more-button:focus,
+			.attesa-infinite-button-container .attesa-infinite-scroll-more-button:active			{
 				background-color: '.esc_html($generalTextColor).';
 			}
 			.hamburger-menu .menu__circle {
@@ -890,7 +895,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			footer.entry-footer .read-more a,
 			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:hover,
 			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:focus,
-			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:active {
+			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a:active,
+			.attesa-infinite-button-container .attesa-infinite-scroll-more-button {
 				color: '.esc_html($alternativeBackgroundColor).';
 			}';
 			/* Choose content text color */

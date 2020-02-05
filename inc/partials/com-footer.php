@@ -93,7 +93,9 @@ function attesa_get_sub_footer() {
 				$showInFooter = attesa_options('_social_footer', '1');
 				if ($showInFooter == 1) {
 					echo attesa_show_social_network('footer'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				} ?>
+				}
+				do_action('attesa_after_social_footer');
+				?>
 			</div><!-- .site-social -->
 		</div>
 		<?php $showFooterMenu = attesa_options('_show_footer_menu', '1');
@@ -102,6 +104,7 @@ function attesa_get_sub_footer() {
 				<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu', 'depth' => 1, 'fallback_cb' => false ) ); ?>
 			</nav>
 		<?php endif; ?>
+		<?php do_action('attesa_after_last_bottom_area'); ?>
 	</div>
 	<?php
 }

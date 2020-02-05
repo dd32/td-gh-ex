@@ -2268,6 +2268,76 @@ function attesa_customize_register( $wp_customize ) {
         'type'       => 'checkbox',
 		'priority' => 5,
     ) );
+	/* Show post date */
+	$wp_customize->add_setting('attesa_theme_options[_show_archive_post_date]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_archive_post_date]', array(
+        'label'      => __( 'Show post date', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_archive_post_date]',
+        'type'       => 'checkbox',
+		'priority' => 5,
+    ) );
+	/* Show post author */
+	$wp_customize->add_setting('attesa_theme_options[_show_archive_post_author]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_archive_post_author]', array(
+        'label'      => __( 'Show post author', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_archive_post_author]',
+        'type'       => 'checkbox',
+		'priority' => 5,
+    ) );
+	/* Show post comment */
+	$wp_customize->add_setting('attesa_theme_options[_show_archive_post_comments]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_archive_post_comments]', array(
+        'label'      => __( 'Show post comments link', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_archive_post_comments]',
+        'type'       => 'checkbox',
+		'priority' => 5,
+    ) );
+	/* Show post tags */
+	$wp_customize->add_setting('attesa_theme_options[_show_archive_post_tags]', array(
+        'default'    => '',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_archive_post_tags]', array(
+        'label'      => __( 'Show post tags', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_archive_post_tags]',
+        'type'       => 'checkbox',
+		'priority' => 5,
+    ) );
+	/* Show post categories */
+	$wp_customize->add_setting('attesa_theme_options[_show_archive_post_categories]', array(
+        'default'    => '',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_archive_post_categories]', array(
+        'label'      => __( 'Show post categories', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_archive_post_categories]',
+        'type'       => 'checkbox',
+		'priority' => 5,
+    ) );
 	/* Heading single blog pages section */
 	$wp_customize->add_setting('attesa_theme_options[_heading_singleblog_page]', array(
 		'sanitize_callback' => 'sanitize_text_field',
@@ -2391,6 +2461,76 @@ function attesa_customize_register( $wp_customize ) {
 			'insidecontent' => __( 'Inside the content', 'attesa'),
 			'insideheader' => __( 'Inside the header', 'attesa'),
 		),
+    ) );
+	/* Show post date */
+	$wp_customize->add_setting('attesa_theme_options[_show_post_date]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_post_date]', array(
+        'label'      => __( 'Show post date', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_post_date]',
+        'type'       => 'checkbox',
+		'priority' => 13,
+    ) );
+	/* Show post author */
+	$wp_customize->add_setting('attesa_theme_options[_show_post_author]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_post_author]', array(
+        'label'      => __( 'Show post author', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_post_author]',
+        'type'       => 'checkbox',
+		'priority' => 13,
+    ) );
+	/* Show post comment */
+	$wp_customize->add_setting('attesa_theme_options[_show_post_comments]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_post_comments]', array(
+        'label'      => __( 'Show post comments link', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_post_comments]',
+        'type'       => 'checkbox',
+		'priority' => 13,
+    ) );
+	/* Show post tags */
+	$wp_customize->add_setting('attesa_theme_options[_show_post_tags]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_post_tags]', array(
+        'label'      => __( 'Show post tags', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_post_tags]',
+        'type'       => 'checkbox',
+		'priority' => 13,
+    ) );
+	/* Show post categories */
+	$wp_customize->add_setting('attesa_theme_options[_show_post_categories]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_post_categories]', array(
+        'label'      => __( 'Show post categories', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_postpage',
+        'settings'   => 'attesa_theme_options[_show_post_categories]',
+        'type'       => 'checkbox',
+		'priority' => 13,
     ) );
 	/* Show previous and next post */
 	$wp_customize->add_setting('attesa_theme_options[_show_prevnext_section]', array(
@@ -3019,6 +3159,24 @@ function attesa_customize_register( $wp_customize ) {
 	/**
 	* ################ SECTION SOCIAL BUTTONS
 	*/	
+	/* Open social links */
+	$wp_customize->add_setting('attesa_theme_options[_social_open_links]', array(
+        'default'    => '_self',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_select',
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_social_open_links]', array(
+        'label'      => __( 'Open social links', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_social',
+        'settings'   => 'attesa_theme_options[_social_open_links]',
+        'type'       => 'select',
+		'priority' => 1,
+		'choices' => array(
+			'_self' => __( 'Same window', 'attesa'),
+			'_blank' => __( 'New Window', 'attesa'),
+		),
+    ) );
 	foreach( attesa_register_all_social_network() as $attesa_theme_options ) {
 		// SETTINGS
 		$wp_customize->add_setting(
@@ -3038,24 +3196,6 @@ function attesa_customize_register( $wp_customize ) {
 			)
 		);
 	}
-	/* Open social links */
-	$wp_customize->add_setting('attesa_theme_options[_social_open_links]', array(
-        'default'    => '_self',
-        'type'       => 'option',
-        'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'attesa_sanitize_select',
-    ) );
-	$wp_customize->add_control('attesa_theme_options[_social_open_links]', array(
-        'label'      => __( 'Open social links', 'attesa' ),
-        'section'    => 'section_attesa_theme_options_social',
-        'settings'   => 'attesa_theme_options[_social_open_links]',
-        'type'       => 'select',
-		'priority' => 4,
-		'choices' => array(
-			'_self' => __( 'Same window', 'attesa'),
-			'_blank' => __( 'New Window', 'attesa'),
-		),
-    ) );
 }
 add_action( 'customize_register', 'attesa_customize_register' );
 
