@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.8
+* @version   1.3.9
 */
 ?>
 <div class="container brands">
@@ -14,10 +14,10 @@
   </div>
   <div class="avik-brands slider">
     <?php
-    $brands_cat = esc_url( get_theme_mod('avik_brands_category'));
-    $brands_count =8;
-    $new_query = new WP_Query( array( 'cat' => $brands_cat  , 'showposts' => $brands_count ));
-    while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+    $avik_brands_cat = esc_url( get_theme_mod('avik_brands_category'));
+    $avik_brands_count =8;
+    $avik_new_query = new WP_Query( array( 'cat' => $avik_brands_cat  , 'showposts' => $avik_brands_count ));
+    while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
     <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_brand');?>
     <div class="slide">
       <a href="<?php the_permalink();?>">

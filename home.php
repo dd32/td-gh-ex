@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.8
+* @version   1.3.9
 */
 ?>
 
@@ -17,10 +17,10 @@ get_template_part( 'template-parts/content',esc_html( get_theme_mod('avik_order_
 <!-- Section Who we are -->
 <?php if ( false == esc_html( get_theme_mod( 'avik_enable_whoweare', false) )):?>
 <?php
-$whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
-$whoweare_count = 1;
-$mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
-while ( $mod->have_posts() ) : $mod->the_post(); { ?>
+$avik_whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
+$avik_whoweare_count = 1;
+$avik_mod = new WP_Query( array( 'page_id' => $avik_whowearecontent ,'showposts' => $avik_whoweare_count ) );
+while ( $avik_mod->have_posts() ) : $avik_mod->the_post(); { ?>
   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
   <section id="who-we-are" class="avik-who-we-are">
     <div class="container">
@@ -69,10 +69,10 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
         <div class="tab__subheading tab-fade animated text-right"><h2><?php echo esc_html( get_theme_mod( 'avik_subtitle_services')); ?></h2></div>
         <ul class="tabs__list cf">
           <?php
-          $services_cat = esc_attr( get_theme_mod('avik_services_category'));
-          $services_count =4;
-          $new_query = new WP_Query( array( 'cat' => $services_cat  , 'showposts' => $services_count ));
-          while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+          $avik_services_cat = esc_attr( get_theme_mod('avik_services_category'));
+          $avik_services_count =4;
+          $avik_new_query = new WP_Query( array( 'cat' => $avik_services_cat  , 'showposts' => $avik_services_count ));
+          while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
           <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_services');?>
           <li class="tab__development tabs__list-item tabs__list-item--fourth animated wow fadeInUp tab-fadeup">
             <div class="tab__development-img" data-aos="fade-left" data-aos-duration="2000">
@@ -114,10 +114,10 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
         <!-- Column 1 -->
         <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_1', false) )):?>
         <?php 
-        $portfolio_c_1_cat = esc_url( get_theme_mod('avik_portfolio_c_1_category'));
-        $portfolio_c_1_count =6;
-        $new_query = new WP_Query( array( 'cat' => $portfolio_c_1_cat , 'showposts' => $portfolio_c_1_count ));     
-        while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+        $avik_portfolio_c_1_cat = esc_url( get_theme_mod('avik_portfolio_c_1_category'));
+        $avik_portfolio_c_1_count =6;
+        $avik_new_query = new WP_Query( array( 'cat' => $avik_portfolio_c_1_cat , 'showposts' => $avik_portfolio_c_1_count ));     
+        while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
         <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
         <div class="col-md-4 col-ms-6 column 1 tabcontent">
           <div class="content avik-portfolio">
@@ -133,10 +133,10 @@ wp_reset_query();?>
           <!-- Column 2 -->
           <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_2', false) )):?>
           <?php
-          $portfolio_c_2_cat = esc_url( get_theme_mod('avik_portfolio_c_2_category'));
-          $portfolio_c_2_count =6;
-          $new_query = new WP_Query( array( 'cat' => $portfolio_c_2_cat  , 'showposts' => $portfolio_c_2_count ));
-          while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+          $avik_portfolio_c_2_cat = esc_url( get_theme_mod('avik_portfolio_c_2_category'));
+          $avik_portfolio_c_2_count =6;
+          $avik_new_query = new WP_Query( array( 'cat' => $avik_portfolio_c_2_cat  , 'showposts' => $avik_portfolio_c_2_count ));
+          while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
           <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
           <div class="col-md-4 col-ms-6 column 2 tabcontent">
             <div class="content avik-portfolio">
@@ -151,10 +151,10 @@ wp_reset_query();?>
             <!-- Column 3 -->
             <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_3', false) )):?>
             <?php
-            $portfolio_c_3_cat = esc_url( get_theme_mod('avik_portfolio_c_3_category'));
-            $portfolio_c_3_count =6;
-            $new_query = new WP_Query( array( 'cat' => $portfolio_c_3_cat  , 'showposts' => $portfolio_c_3_count ));
-            while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+            $avik_portfolio_c_3_cat = esc_url( get_theme_mod('avik_portfolio_c_3_category'));
+            $avik_portfolio_c_3_count =6;
+            $avik_new_query = new WP_Query( array( 'cat' => $avik_portfolio_c_3_cat  , 'showposts' => $avik_portfolio_c_3_count ));
+            while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
             <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
             <div class="col-md-4 col-ms-6 column 3 tabcontent">
               <div class="content avik-portfolio">
@@ -180,10 +180,10 @@ wp_reset_query();?>
                 <h2 class="text-right blog pb-5" data-aos="zoom-in"><?php echo esc_html( get_theme_mod( 'avik_title_blog')); ?></h2>
                 <div class="row">
                   <?php
-                  $blog_cat = esc_url( get_theme_mod('avik_blog_category'));
-                  $blog_count =3;
-                  $new_query = new WP_Query( array( 'cat' => $blog_cat  , 'showposts' => $blog_count ));
-                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+                  $avik_blog_cat = esc_url( get_theme_mod('avik_blog_category'));
+                  $avik_blog_count =3;
+                  $avik_new_query = new WP_Query( array( 'cat' => $avik_blog_cat  , 'showposts' => $avik_blog_count ));
+                  while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
                   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_news');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                     <div class="blog-image">
@@ -213,10 +213,10 @@ wp_reset_query();?>
             <!-- Address -->
             <div class="col-lg-6 address">
               <?php
-              $contact_cat = esc_url( get_theme_mod('avik_contact_category'));
-              $contact_count =1;
-              $new_query = new WP_Query( array( 'cat' => $contact_cat  , 'showposts' => $contact_count ));
-              while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+              $avik_contact_cat = esc_url( get_theme_mod('avik_contact_category'));
+              $avik_contact_count =1;
+              $avik_new_query = new WP_Query( array( 'cat' => $avik_contact_cat  , 'showposts' => $avik_contact_count ));
+              while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
               <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
               <h3 data-aos="fade-up"><?php the_title(); ?></h3>
               <?php the_content(); ?>

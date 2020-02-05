@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.8
+ * @version   1.3.9
  */
 
 /* TABLE OF CONTENT
@@ -17,7 +17,7 @@
  6 - Breadcrumb
  7 - Breadcrumb Archive
  8 - Breadcrumb Search
-9 - Add Custom Styles Editor
+ 9 - Add Custom Styles Editor
 10 - Carousel featured image
 11 - Avik Support Page
 12 - Lightbox popup image
@@ -459,7 +459,7 @@ add_image_size( 'carousel-pic', 480, 320, true );
 add_action('admin_menu', 'avik_page_create');
 
 function avik_page_create() {
-    add_theme_page('Avik', 'AVIK', 'edit_theme_options', 'avik_page', 'avik_page_display','dashicons-universal-access-alt');
+    add_theme_page('Avik', 'AVIK', 'edit_theme_options', 'avik_page', 'avik_page_display',null);
 
 }
 
@@ -742,16 +742,16 @@ function avik_register_required_plugins() {
 }
 
 
-$header_info = array(
+$avik_header_info = array(
     'width'         => 1400,
 	'height'        => 750,
 	'flex-width'    => true,
     'flex-height'   => true,
     'default-image' => get_template_directory_uri() . '/img/static.jpg',
 );
-add_theme_support( 'custom-header', $header_info );
+add_theme_support( 'custom-header', $avik_header_info );
 
-$header_images = array(
+$avik_header_images = array(
     'city' => array(
             'url'           => get_template_directory_uri() . '/img/static.jpg',
             'thumbnail_url' => get_template_directory_uri() . '/img/static_thumbnail.jpg',
@@ -763,7 +763,7 @@ $header_images = array(
             'description'   => 'Man',
     ),
 );
-register_default_headers( $header_images );
+register_default_headers( $avik_header_images );
 
 
 /* 18 Multipost Thumbnails Plugin
@@ -808,20 +808,20 @@ function avik_add_script() {
 		wp_register_script( 'notice-update',  get_theme_file_uri( '/js/notice-update.js'),'','1.0', false );
 		wp_enqueue_style( 'avik-notice-style', get_theme_file_uri( '/css/notice.css' ), array(), '1.0' );
 		wp_localize_script( 'notice-update', 'notice_params', array(
-			ajaxurl => get_admin_url() . 'admin-ajax.php', 
+			'ajax_url' => get_admin_url() . 'admin-ajax.php', 
 		));
 		
 		wp_enqueue_script(  'notice-update' );
 }
 
 
-if( get_option( 'avik_1_dismiss_notice' ) != true ) {
+if( get_option( 'avik_4_dismiss_notice' ) != true ) {
 
 add_action( 'admin_notices', 'avik_add_dismissible' );
 }
 function avik_add_dismissible() {
   ?>
-   <div class='notice notice-success avik-1-dismiss-notice avik-class-update is-dismissible'>
+   <div class='notice notice-success avik-4-dismiss-notice avik-class-update is-dismissible'>
 	   <div class="df-logo">
 		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
 	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
@@ -829,24 +829,21 @@ function avik_add_dismissible() {
 	   </a>
 	   <h2><?php echo esc_html('Welcome to Avik','avik')?></h2>
       </div>
-		  <p style="font-weight:bold;font-size:18px ;"><?php echo esc_html('Changelog Avik v 1.3.8','avik')?> </p>
-		  <ul class="avik-ul-update">
-		  <li>
+		  <p style="font-weight:bold;font-size:18px ;"><?php echo esc_html('Changelog Avik v 1.3.9','avik')?></p>
+		    <ul class="avik-ul-update">
+		          <li>
 					  <?php echo esc_html('Fixed some bugs','avik')?>
 				  </li>
 				  <li>
-					  <?php echo esc_html('Customizer graphics updated','avik')?>
+					  <?php echo esc_html('Added keyboard accessibility','avik')?>
 				  </li>
 				  <li>
-					  <?php echo esc_html('Added fantastic Family Fonts Title','avik')?>
+					  <?php echo esc_html('Changed the main navigation menu design for accessibility','avik')?>
 				  </li>
 				  <li>
-					  <?php echo esc_html('Added fantastic Family Fonts Subtitle','avik')?>
+					  <?php echo esc_html('Changed name of three templates for theme security,please see the details to reset these templates','avik')?>
 				  </li>
-				  <li>
-					  <?php echo esc_html('Back To Top position added','avik')?>
-				  </li>
-		 </ul>
+		    </ul>
 		 <div style="text-align:center;margin-bottom:2em">
 		 <a target="_blank" class="avik-detail-update-a" href="<?php echo esc_url(avik_url_update_details); ?>"><?php echo esc_html('View Details','avik')?></a>
 	   </div>
@@ -854,9 +851,9 @@ function avik_add_dismissible() {
   <?php
 }
 
-add_action( 'wp_ajax_avik_1_dismiss_notice', 'avik_1_dismiss_notice' );
-function avik_1_dismiss_notice() {
-update_option( 'avik_1_dismiss_notice', true );
+add_action( 'wp_ajax_avik_4_dismiss_notice', 'avik_4_dismiss_notice' );
+function avik_4_dismiss_notice() {
+update_option( 'avik_4_dismiss_notice', true );
 }
 
 
@@ -873,5 +870,4 @@ define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design
 
 
 
-	
 

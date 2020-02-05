@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.8
+* @version   1.3.9
 */
 ?>
 </div> <!--Content -->
@@ -28,7 +28,7 @@
     <?php endif; ?>
     <p class="title-power">
       <?php
-      $avik_theme_author = esc_url( 'https://www.denisfranchi.com/' );
+      $avik_theme_author = esc_url(franchi_design_url );
       printf( esc_html__( 'Avik by %1$s', 'avik' ), '<a href="'.$avik_theme_author.'" rel="designer">Franchi Design</a>' );
       ?>
     </p>

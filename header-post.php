@@ -14,7 +14,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.1.1
+* @version   1.3.9
 */
 
 ?>
@@ -28,6 +28,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'avik' ); ?></a>
   <!-- Preloader -->
   <div class="avik-loader">
     <div class="loader"></div>

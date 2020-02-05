@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.8
+* @version   1.3.9
 */
 
 /* TABLE OF CONTENT
@@ -354,7 +354,7 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
     }
 
     .simple-notice-custom-control span{
-      padding: 1em;
+      padding:0 5px 0 5px;
     }
 
     .simple-notice-custom-control{
@@ -370,21 +370,22 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
 
     .simple-notice-custom-control button {
     	background: transparent;
-    	color: #000;
-      padding-top: 16px;
+    	color: #fff;
+      padding-top: 10px;
       padding-left: 10px;
       padding-right: 10px;
+      padding-bottom:10px;
     	font-size: 14px;
     	position: relative;
       margin-top: 10px;
       margin-bottom: 10px;
       border-radius: 4px;
       border:1px solid #ccc!important;
-      margin-left:5px;
+      background-color:#82B541!important
     }
 
     .simple-notice-custom-control a{
-      color: #666;
+      color: #fff;
       text-decoration: none;
     }
 

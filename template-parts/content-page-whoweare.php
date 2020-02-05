@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.8
+ * @version   1.3.9
  */
  ?>
 
@@ -17,10 +17,10 @@
 			      <span id="typed"></span>
         </div>
         <?php
-             $whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
-             $whoweare_count = 1;
-             $mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
-             while ( $mod->have_posts() ) : $mod->the_post(); { ?>
+             $avik_whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
+             $avik_whoweare_count = 1;
+             $avik_mod = new WP_Query( array( 'page_id' => $avik_whowearecontent ,'showposts' => $avik_whoweare_count ) );
+             while ( $avik_mod->have_posts() ) : $avik_mod->the_post(); { ?>
              <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
         <img class="img-whoweare-header" src="<?php if ( $avik_image_attributes[0] ) :
            echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/img/whoweare.jpg'; endif; ?>"/>
@@ -113,10 +113,10 @@
          <div class="row">
           <div class="frame col-md-4" id="wth-1">
                    <?php
-	                  $team_cat = esc_html( get_theme_mod('avik_team_1_category'));
-	                  $team_count =1;
-	                  $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
-	                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+	                  $avik_team_cat = esc_html( get_theme_mod('avik_team_1_category'));
+	                  $avik_team_count =1;
+	                  $avik_new_query = new WP_Query( array( 'cat' => $avik_team_cat  , 'showposts' => $avik_team_count ));
+	                  while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
                      <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_team');?>
                     <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                          <img src="<?php if ( $avik_image_attributes[0] ) :
@@ -163,10 +163,10 @@
               </div>
                 <div class="frame col-md-4" id="wth-2">
                  <?php
-                  $team_cat = esc_html( get_theme_mod('avik_team_2_category'));
-                  $team_count =1;
-                  $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
-                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+                  $avik_team_cat = esc_html( get_theme_mod('avik_team_2_category'));
+                  $avik_team_count =1;
+                  $avik_new_query = new WP_Query( array( 'cat' => $avik_team_cat  , 'showposts' => $avik_team_count ));
+                  while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
                    <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_team');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                        <img src="<?php if ( $avik_image_attributes[0] ) :
@@ -213,10 +213,10 @@
          </div>
          <div class="frame col-md-4" id="wth-3">
                  <?php
-                  $team_cat = esc_url( get_theme_mod('avik_team_3_category'));
-                  $team_count =1;
-                  $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
-                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+                  $avik_team_cat = esc_url( get_theme_mod('avik_team_3_category'));
+                  $avik_team_count =1;
+                  $avik_new_query = new WP_Query( array( 'cat' => $avik_team_cat  , 'showposts' => $avik_team_count ));
+                  while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
                    <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_team');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                        <img src="<?php if ( $avik_image_attributes[0] ) :

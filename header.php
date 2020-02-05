@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.8
+* @version   1.3.9
 */
 
 ?>
@@ -18,6 +18,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'avik' ); ?></a>
 	<!-- Preloader -->
 	<div class="avik-loader">
 		<div class="loader"></div>
@@ -54,7 +55,7 @@
 				'container'       => 'div',
 				'container_id'    => 'bs4navbar',
 				'container_class' => 'collapse navbar-collapse',
-				'menu_id'         => false,
+				'menu_id'         => true,
 				'menu_class'      => 'navbar-nav ml-auto',
 				'depth'           => 2,
 				'fallback_cb'     => 'bs4navwalker::fallback',

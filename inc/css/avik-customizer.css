@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.8
+ * @version   1.3.9
 */
 
 /* TABLE OF CONTENT
@@ -801,6 +801,8 @@ input[type="number"]:focus {
 
 button.av-bt-pro{
 	background-color:#82B541!important;
+	padding-bottom: 0px!important;
+    padding-top: 10px!important;
 }
 
 button.av-bt-pro a{

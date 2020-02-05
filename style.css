@@ -2,7 +2,7 @@
 Theme Name:   Avik
 Theme URI:   	https://www.denisfranchi.com/avik-pro-10-0-0/
 Description:  Avik Portfolio is perfect for anyone who wants an easy theme to use and with a clean code. You can use this portfolio theme for: freelancer, photography studios, sound and music, musican, agency, architect agency, painter portfolio, artworks, art, trainer, projects, artist portfolio,personal portfolio, web design works, illustrators, freelance designer.
-Version:     	1.3.8
+Version:     	1.3.9
 Author:     	Denis Franchi
 Author URI:   https://www.denisfranchi.com/
 Site:         https://www.denisfranchi.com
@@ -952,15 +952,6 @@ textarea{
   line-height: normal!important;
 }
 
-input:focus{
-  outline: none!important;
-}
-
-textarea:focus{
-  outline: none!important;
-}
-
-
 /*-----------------------
 ## 1.15 General Widget
 -----------------------*/
@@ -1028,13 +1019,11 @@ aside .widget{
 -----------------------*/
 .alignleft {
   display: inline;
-  float: left;
   margin-right: 1.5em;
 }
 
 .alignright {
   display: inline;
-  float: right;
   margin-left: 1.5em;
 }
 
@@ -1307,9 +1296,6 @@ object {
 /*-----------------------
 ## 2.1 Menu
 -----------------------*/
-button:focus{
-  outline: none!important;
-}
 
 .navbar a{
   color:#000;
@@ -1326,11 +1312,14 @@ button:focus{
   color: #777777!important;
 }
 
+.navbar.hide-menu{
+  background-color: transparent;
+}
+
 .navbar {
   background-color: #fff;
   -webkit-box-shadow: 1px -4px 12px 1px #000000;
   box-shadow: 1px -4px 12px 1px #000000;
-
 }
 
 .dropdown-menu{
@@ -1338,9 +1327,6 @@ button:focus{
   text-align: center !important;
 }
 
-.navbar-expand-lg.hide-menu{
-  display: none;
-}
 
 .navbar-toggler.navbar-toggler-right{
   color: #d5f83e;
@@ -2335,10 +2321,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   padding: 0;
 }
 
-.slick-list:focus{
-  outline: none;
-}
-
 .slick-slider .slick-track,
 .slick-slider .slick-list{
   -webkit-transform: translate3d(0, 0, 0);
@@ -3120,11 +3102,9 @@ article{
 
 .wpcf7-text:focus{
   border-color:#777777!important;
-  outline: none!important;
 }
 
 .wpcf7-textarea:focus{
-  outline: none!important;
   border-color:#777777!important;
 }
 
@@ -3143,10 +3123,6 @@ article{
   background-color: #000;
   color: #d5f83e;
   border: none;
-}
-
-.wpcf7-submit:focus{
-  outline: none!important;
 }
 
 div.wpcf7-validation-errors, div.wpcf7-acceptance-missing{
@@ -3554,6 +3530,13 @@ h2.bold-text-404{
   /* ------------------------- *
   ##  13.2  Menu */
   /* ------------------------- */
+
+  @media (max-width: 988px) {
+
+  .navbar.hide-menu{
+    background-color: #fff;
+  }
+}
 
   @media (max-width: 699px) {
   .navbar-nav{

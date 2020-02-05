@@ -7,7 +7,7 @@ Template Post Type: post,page
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.8
+* @version   1.3.9
 *
 */
 
@@ -41,10 +41,10 @@ if(is_single()) { get_header('post'); } else { get_header(); }?>
 				</div>
 				<div class="tabs__list cf">
 					<?php
-					$services_cat = esc_attr( get_theme_mod('avik_services_category'));
-					$services_count =4;
-					$new_query = new WP_Query( array( 'cat' => $services_cat  , 'showposts' => $services_count ));
-					while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+					$avik_services_cat = esc_attr( get_theme_mod('avik_services_category'));
+					$avik_services_count =4;
+					$avik_new_query = new WP_Query( array( 'cat' => $avik_services_cat  , 'showposts' => $avik_services_count ));
+					while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
 					<?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_services');?>
 					<li class="tab__development tabs__list-item tabs__list-item--fourth animated wow fadeInUp tab-fadeup">
 						<div class="tab__development-img" data-aos="fade-left" data-aos-duration="2000">
@@ -70,10 +70,10 @@ if(is_single()) { get_header('post'); } else { get_header(); }?>
 				<div class="container">
 					<div class="row gray-effect-partenrs">
 						<?php
-						$partners_cat = esc_url( get_theme_mod('avik_partners_category'));
-						$partners_count =12;
-						$new_query = new WP_Query( array( 'cat' => $partners_cat  , 'showposts' => $partners_count ));
-						while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+						$avik_ = esc_url( get_theme_mod('avik_partners_category'));
+						$avik_partners_count =12;
+						$avik_new_query = new WP_Query( array( 'cat' => $avik_partners_cat  , 'showposts' => $avik_partners_count ));
+						while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
 						<div class="col-md-3 col-xs-12 partenrs-services">
 							<a href="<?php the_permalink();?>">
 								<?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>

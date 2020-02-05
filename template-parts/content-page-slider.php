@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.8
+ * @version   1.3.9
  */
  ?>
 
@@ -20,10 +20,10 @@
     <!-- Slider 1 -->
     <div class="slideshow__slide js-slider-home-slide is-current" data-slide="1">
     <?php
-     $slider_cat = esc_url( get_theme_mod('avik_category_slider_1'));
-     $slider_count = 1;
-	   $new_query = new WP_Query( array( 'cat' => $slider_cat ,'showposts' => $slider_count ));
-     while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+     $avik_slider_cat = esc_url( get_theme_mod('avik_category_slider_1'));
+     $avik_slider_count = 1;
+	   $avik_new_query = new WP_Query( array( 'cat' => $avik_slider_cat ,'showposts' => $avik_slider_count ));
+     while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
        <?php $avik_image_attributes =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
        <div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#slider">
         <div class="slideshow__slide-background-load-wrap background-absolute">
@@ -62,10 +62,10 @@
     <!-- Slider 2 -->
     <div class="slideshow__slide js-slider-home-slide is-next" data-slide="2">
     <?php
-      $slider_cat = esc_url( get_theme_mod('avik_category_slider_2'));
-      $slider_count = 1;
-	    $new_query = new WP_Query( array( 'cat' => $slider_cat ,'showposts' => $slider_count ));
-	    while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+      $avik_slider_cat = esc_url( get_theme_mod('avik_category_slider_2'));
+      $avik_slider_count = 1;
+	    $avik_new_query = new WP_Query( array( 'cat' => $avik_slider_cat ,'showposts' => $avik_slider_count ));
+	    while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
       <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
       <div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#slider">
         <div class="slideshow__slide-background-load-wrap background-absolute">
@@ -104,10 +104,10 @@
     <!-- Slider 3 -->
     <div class="slideshow__slide js-slider-home-slide is-prev" data-slide="3">
     <?php
-      $slider_cat = esc_html( get_theme_mod('avik_category_slider_3'));
-      $slider_count = 1;
-	    $new_query = new WP_Query( array( 'cat' => $slider_cat ,'showposts' => $slider_count ));
-	    while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+      $avik_slider_cat = esc_html( get_theme_mod('avik_category_slider_3'));
+      $avik_slider_count = 1;
+	    $avik_new_query = new WP_Query( array( 'cat' => $avik_slider_cat ,'showposts' => $avik_slider_count ));
+	    while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
       <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
       <div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1" data-position="top" data-target="#slider">
         <div class="slideshow__slide-background-load-wrap background-absolute">
