@@ -359,12 +359,12 @@ function advance_business_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-define('ADVANCE_BUSINESS_BUY_NOW','https://www.themeshopy.com/themes/wordpress-theme-for-business/','advance-business');
-define('ADVANCE_BUSINESS_LIVE_DEMO','https://themeshopy.com/advance-business-pro/','advance-business');
-define('ADVANCE_BUSINESS_PRO_DOC','https://themeshopy.com/demo/docs/advance-business-pro/','advance-business');
-define('ADVANCE_BUSINESS_FREE_DOC','https://themeshopy.com/demo/docs/free-advance-business/','advance-business');
-define('ADVANCE_BUSINESS_CONTACT','https://wordpress.org/support/theme/advance-business/','advance-business');
-define('ADVANCE_BUSINESS_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-theme-for-business/', 'advance-business');
+define('ADVANCE_BUSINESS_BUY_NOW',__('https://www.themeshopy.com/themes/wordpress-theme-for-business/','advance-business'));
+define('ADVANCE_BUSINESS_LIVE_DEMO',__('https://themeshopy.com/advance-business-pro/','advance-business'));
+define('ADVANCE_BUSINESS_PRO_DOC',__('https://themeshopy.com/demo/docs/advance-business-pro/','advance-business'));
+define('ADVANCE_BUSINESS_FREE_DOC',__('https://themeshopy.com/demo/docs/free-advance-business/','advance-business'));
+define('ADVANCE_BUSINESS_CONTACT',__('https://wordpress.org/support/theme/advance-business/','advance-business'));
+define('ADVANCE_BUSINESS_CREDIT',__('https://www.themeshopy.com/themes/free-wordpress-theme-for-business/', 'advance-business'));
 
 if (!function_exists('advance_business_credit')) {
 	function advance_business_credit() {

@@ -86,7 +86,6 @@
 	}
 
 //css
- 
 	$show_header = get_theme_mod( 'advance_business_slider_hide', true);
 		if($show_header == false){
 			$custom_css .='.contact-box{';
@@ -95,4 +94,73 @@
 			$custom_css .='.page-template-custom-front-page #header{';
 				$custom_css .='position: static;border-bottom: 1px solid #000;';
 			$custom_css .='}';
+		}
+
+	$show_header = get_theme_mod( 'advance_business_sticky_header', true);
+		if($show_header == true){
+			$custom_css .='.page-template-custom-front-page .fixed-header #header{';
+				$custom_css .=' box-shadow: 2px 2px 10px 0px #2d2d2d; background-color:#fff;';
+			$custom_css .='}';
+		}
+
+	/*---------------------------Slider Content Layout -------------------*/
+
+	$theme_lay = get_theme_mod( 'advance_business_slider_content_alignment','Left');
+    if($theme_lay == 'Left'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:left; left:13%; right:40%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Center'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:center; left:20%; right:20%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Right'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:right; left:40%; right:13%;';
+		$custom_css .='}';
+	}
+
+	/*--------------------------- Slider Opacity -------------------*/
+
+	$theme_lay = get_theme_mod( 'advance_business_slider_image_opacity','0.3');
+	if($theme_lay == '0'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0';
+		$custom_css .='}';
+		}else if($theme_lay == '0.1'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.1';
+		$custom_css .='}';
+		}else if($theme_lay == '0.2'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.2';
+		$custom_css .='}';
+		}else if($theme_lay == '0.3'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.3';
+		$custom_css .='}';
+		}else if($theme_lay == '0.4'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.4';
+		$custom_css .='}';
+		}else if($theme_lay == '0.5'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.5';
+		$custom_css .='}';
+		}else if($theme_lay == '0.6'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.6';
+		$custom_css .='}';
+		}else if($theme_lay == '0.7'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.7';
+		$custom_css .='}';
+		}else if($theme_lay == '0.8'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.8';
+		$custom_css .='}';
+		}else if($theme_lay == '0.9'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.9';
+		$custom_css .='}';
 		}

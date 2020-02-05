@@ -45,6 +45,16 @@ function advance_business_customize_register($wp_customize) {
 		'panel'    => 'advance_business_panel_id',
 	));
 
+	//Sticky Header
+	$wp_customize->add_setting( 'advance_business_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_business_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','advance-business' ),
+        'section' => 'advance_business_left_right'
+    ));
+
 	$wp_customize->add_setting('advance_business_theme_options',array(
         'default' => __('Default','advance-business'),
         'sanitize_callback' => 'advance_business_sanitize_choices'
@@ -517,6 +527,66 @@ function advance_business_customize_register($wp_customize) {
 			'type'     => 'dropdown-pages'
 		) );
 	}
+
+	//content layout
+    $wp_customize->add_setting('advance_business_slider_content_alignment',array(
+    'default' => __('Left','advance-business'),
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','advance-business'),
+        'section' => 'advance_business_slider',
+        'choices' => array(
+            'Center' => __('Center','advance-business'),
+            'Left' => __('Left','advance-business'),
+            'Right' => __('Right','advance-business'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_business_slider_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_business_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','advance-business' ),
+		'section'     => 'advance_business_slider',
+		'type'        => 'number',
+		'settings'    => 'advance_business_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_business_slider_image_opacity',array(
+      'default'              => 0.3,
+      'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_business_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','advance-business' ),
+	'section'     => 'advance_business_slider',
+	'type'        => 'select',
+	'settings'    => 'advance_business_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-business'),
+		'0.1' =>  esc_attr('0.1','advance-business'),
+		'0.2' =>  esc_attr('0.2','advance-business'),
+		'0.3' =>  esc_attr('0.3','advance-business'),
+		'0.4' =>  esc_attr('0.4','advance-business'),
+		'0.5' =>  esc_attr('0.5','advance-business'),
+		'0.6' =>  esc_attr('0.6','advance-business'),
+		'0.7' =>  esc_attr('0.7','advance-business'),
+		'0.8' =>  esc_attr('0.8','advance-business'),
+		'0.9' =>  esc_attr('0.9','advance-business')
+	),
+	));
 
 	//Contact Detail section
 	$wp_customize->add_section('advance_business_contact_detail',array(
