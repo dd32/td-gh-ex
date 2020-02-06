@@ -6,7 +6,7 @@
     <div class="container">
         <?php if ( have_posts() ) { ?> 
             <div class="archive-box main-blog">
-                <h1><span><?php esc_html_e( 'Search results for', 'arimolite' ); ?>:</span>&nbsp;<?php printf( esc_html__( '%s', 'arimolite' ), get_search_query() ); ?></h1>
+                <h1><span><?php esc_html_e( 'Search results for', 'arimolite' ); ?>:</span>&nbsp;<?php echo esc_html( get_search_query() ); ?></h1>                
             </div>
             <div class="row wrapper-main-content">
                 <div class="<?php echo esc_attr( $col ); ?>">

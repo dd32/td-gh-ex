@@ -1,16 +1,3 @@
-/*------------------------------------------------------------------/*
-Theme Name: arimolite
-Theme URI: http://arimolite.theme-xoda.com
-Description: A WordPress Blog + Shop Theme
-Author URI: https://theme-xoda.com
-Author: AZ-Theme
-Version: 1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text domain: arimolite
-Tags: blog, news, photography
-*/
-
 === ArimoLite ===
 
 Contributors: themexoda

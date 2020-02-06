@@ -4,5 +4,9 @@
         <i class="fas fa-tag"></i><?php the_tags('',', '); ?>
     </div>
     <?php } ?>
-	<?php get_template_part('template-parts/post', 'share'); ?>
+	<?php
+		if ( function_exists( 'arimolite_core_post_share' ) ) {
+			arimolite_core_post_share();
+		}
+	?>
 </div>

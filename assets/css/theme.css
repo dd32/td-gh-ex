@@ -1,6 +1,10 @@
 .arimolite-primary{
 	padding: 70px 0;
 }
+.page-content.has-sidebar .sidebar-left{
+	order: 1;
+}
+.main-page-content.main-right{order: 2;}
 /*--------------------------
 		1.HEADER
 ---------------------------*/
@@ -496,7 +500,7 @@ div.arimolite-main-menu > ul > li.current_page_item > a{
 	padding: 0;
 	list-style: none;
 }
-.comment-body{margin-bottom: 30px;}
+.comment-body{margin-bottom: 40px;overflow: hidden;}
 .comment-body .comment-author{
 	float: left;
 	margin-right: 20px;
@@ -528,6 +532,7 @@ div.arimolite-main-menu > ul > li.current_page_item > a{
 .comment-content .comment-text {
 	margin-top: 15px;
 }
+.comment-content .comment-text p:last-child{margin-bottom: 0}
 .comment-list ol.children{
 	list-style: none;
 }
@@ -873,6 +878,10 @@ div.icon-touch {
 	}
 	.promobox-item .title-promobox{padding: 7px 15px}
 	.promobox-item .image-promobox::after{padding-top: 86%}
+}
+@media(max-width: 767.98px){
+	.page-content.has-sidebar .sidebar-left{order: 2;}
+	.main-page-content.main-right{order: 1;}
 }
 @media (max-width: 575.98px){
 	.item-post-feature .post-info{padding: 30px 35px;}

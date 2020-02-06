@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArimoLite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-11 02:44+0000\n"
+"POT-Creation-Date: 2020-02-06 11:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,23 +13,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.1; wp-5.2.4"
+"X-Loco-Version: 2.3.1; wp-5.2.5"
 
-#: functions.php:170
+#: functions.php:169
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
-
-#: search.php:9
-#, php-format
-msgid "%s"
 msgstr ""
 
 #: core/functions/customizer/arimolite_custom_controll.php:48
 msgid "&mdash; Select &mdash;"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:172
 msgid "(Edit)"
 msgstr ""
 
@@ -51,6 +46,10 @@ msgstr ""
 
 #. Name of the theme
 msgid "ArimoLite"
+msgstr ""
+
+#: functions.php:219
+msgid "Arimolite Core"
 msgstr ""
 
 #: core/functions/customizer/arimolite_customizer_settings.php:11
@@ -81,7 +80,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:212
+#: functions.php:211
 msgid "Contact Form 7"
 msgstr ""
 
@@ -94,9 +93,9 @@ msgstr ""
 msgid "Facebook URL"
 msgstr ""
 
-#: page.php:23 page-templates/page-full-width.php:18
-#: page-templates/page-left-sidebar.php:15
-#: page-templates/page-right-sidebar.php:15
+#: page.php:23 page-templates/template-full-width.php:26
+#: page-templates/template-left-sidebar.php:21
+#: page-templates/template-right-sidebar.php:21
 msgid "Featured Image"
 msgstr ""
 
@@ -152,7 +151,7 @@ msgstr ""
 msgid "Logged in as"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:215
 msgid "MailChimp for WordPress"
 msgstr ""
 
@@ -199,7 +198,7 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/single-post-related.php:21
+#: template-parts/single-post-related.php:19
 msgid "Related Posts"
 msgstr ""
 
@@ -213,10 +212,6 @@ msgstr ""
 
 #: search.php:9
 msgid "Search results for"
-msgstr ""
-
-#: template-parts/post-share.php:6
-msgid "Share : "
 msgstr ""
 
 #: functions.php:80
@@ -257,8 +252,12 @@ msgstr ""
 msgid "Your comment ..."
 msgstr ""
 
-#: functions.php:177
+#: functions.php:176
 msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: footer.php:28
+msgid "Your Copyright Text"
 msgstr ""
 
 #: comments.php:7

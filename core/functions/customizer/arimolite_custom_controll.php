@@ -2,7 +2,7 @@
 add_action('customize_register', 'arimolite_customize_register');
 function arimolite_customize_register($wp_customize)
 {
-	class Customize_Number_Control extends WP_Customize_Control
+	class ArimoLite_Customize_Number_Control extends WP_Customize_Control
     {
 		public $type = 'number';
 	 
@@ -17,7 +17,7 @@ function arimolite_customize_register($wp_customize)
 		}
 	}
 	
-	class Customize_CustomCss_Control extends WP_Customize_Control
+	class ArimoLite_Customize_CustomCss_Control extends WP_Customize_Control
     {
 		public $type = 'custom_css';
 
@@ -34,7 +34,7 @@ function arimolite_customize_register($wp_customize)
 }
 
 if (class_exists('WP_Customize_Control')) {
-    class WP_Customize_Category_Control extends WP_Customize_Control {
+    class ArimoLite_Customize_Category_Control extends WP_Customize_Control {
         /**
          * Render the control's content.
          *

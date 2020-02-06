@@ -1,7 +1,7 @@
 <?php
-$post_class_3cols = ( is_active_sidebar('sidebar') ) ? 'col-md-6 col-lg-6' : 'col-md-6 col-lg-4';
-$word = 30;
-$post_class = $post_class_3cols;
+$arimolite_post_class_3cols = ( is_active_sidebar('sidebar') ) ? 'col-md-6 col-lg-6' : 'col-md-6 col-lg-4';
+$arimolite_word = 30;
+$arimolite_post_class = $arimolite_post_class_3cols;
 
 ?>
 <div class="arimolite-blogs blog-grid">
@@ -10,7 +10,7 @@ $post_class = $post_class_3cols;
         <?php while ( have_posts() ) { ?>
             <?php
                the_post(); ?>
-                <article <?php post_class($post_class); ?>>
+                <article <?php post_class($arimolite_post_class); ?>>
                     <div class="post-inner">
                         <div class="post-header">
                             <?php get_template_part('template-parts/post', 'format'); ?>
@@ -34,7 +34,7 @@ $post_class = $post_class_3cols;
                             <div class="post-cats"><i class="far fa-bookmark"></i><?php the_category(', '); ?></div>
                             <h3 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                             <?php get_template_part('template-parts/post', 'meta'); ?>                      
-                            <div class="post-content"><?php echo wp_trim_words( get_the_excerpt(), $word , '...' ) ?></div>
+                            <div class="post-content"><?php echo esc_html( wp_trim_words( get_the_excerpt(), $arimolite_word , '...' ) ) ?></div>
                             <?php get_template_part('template-parts/post', 'footer'); ?>
                         </div>
                     </div>

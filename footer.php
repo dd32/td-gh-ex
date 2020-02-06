@@ -25,7 +25,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <div class="copyright"><?php echo wp_kses_post(get_theme_mod('arimolite_footer_copyright_text', '&copy; Your Copyright Text')); ?></div>
+                <div class="copyright"><?php echo wp_kses_post(get_theme_mod('arimolite_footer_copyright_text',  __('Your Copyright Text', 'arimolite' ) ) ); ?></div>
             </div>
         </div>
     </footer>

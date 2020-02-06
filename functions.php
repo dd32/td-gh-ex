@@ -145,7 +145,6 @@ function arimolite_social_network( $header = true )
 
 # Comment Layout
 function arimolite_custom_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
 
 	if ( 'div' == $args['style'] ) {
@@ -216,6 +215,12 @@ function arimolite_register_required_plugins()
 			'name'   => esc_html__('MailChimp for WordPress', 'arimolite'),
 			'slug'   => 'mailchimp-for-wp'
 		),
+        array(
+            'name'   => esc_html__('Arimolite Core', 'arimolite'),
+            'slug'   => 'arimolite-core',
+            'source' => esc_url( 'https://plugins.theme-xoda.com/arimolite-core.zip' ),
+            'required' => true
+        ),
 	);
 
 	$config = array(

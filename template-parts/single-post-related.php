@@ -1,7 +1,5 @@
 <?php 
-$orig_post = $post;
-global $post;
-$categories = get_the_category($post->ID);
+$categories = get_the_category(get_the_ID());
 if ($categories) :
 	$category_ids = array();
 	foreach($categories as $individual_category) {
@@ -45,5 +43,4 @@ if ($categories) :
     </div>
     <?php endif; ?>
 <?php endif;
-$post = $orig_post;
 wp_reset_query();

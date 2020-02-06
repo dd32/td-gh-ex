@@ -6,12 +6,20 @@
      */
     get_header();
 
-	while ( have_posts() ) : the_post(); ?>
+
+	while ( have_posts() ) : the_post();
+        $featured_image = null;
+        if ( has_post_thumbnail() ) {
+            $featured_image = arimolite_resize_image( get_post_thumbnail_id(), null, 1300, 750, true, false );
+            $featured_image = $featured_image['url'];
+        }
+
+    ?>
 		<div class="main-contaier">
             <div class="container">
             	<div class="page-content">
                 <?php if ( get_the_title() ) : ?>
-                    <h1 class="page-title"><?php the_title(); ?></h1>
+                    <h1 class="page-title text-center"><?php the_title(); ?></h1>
                 <?php endif; ?>
                 <?php if ( $featured_image ) { ?>                        
                 <div class="page-image">
