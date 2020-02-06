@@ -1,0 +1,614 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Automobile Car Dealer\n"
+"POT-Creation-Date: 2016-02-11 19:00+0530\n"
+"PO-Revision-Date: 2020-01-28 17:14+0530\n"
+"Language-Team: buywptemplates <support@buywptemplates.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Language: ar\n"
+
+#: 404.php:11
+msgid "Not Found"
+msgstr "لم يتم العثور على"
+
+#: 404.php:12
+msgid "Looks like you have taken a wrong turn"
+msgstr "يبدو أنك قد اتخذت منعطفا خاطئا"
+
+#: 404.php:13 no-results.php:18
+msgid "Dont worry it happens to the best of us."
+msgstr "لا تقلق أنه يحدث لأفضل منا."
+
+#: 404.php:15 no-results.php:20
+msgid "Back to Home Page"
+msgstr "العودة إلى الصفحة الرئيسية"
+
+#: archive.php:31 archive.php:60 archive.php:91 archive.php:124 archive.php:155
+#: archive.php:184 archive.php:214 index.php:28 index.php:53 index.php:80
+#: index.php:106 index.php:130 index.php:157 index.php:182 search.php:28
+#: search.php:54 search.php:82 search.php:112 search.php:140 search.php:166
+#: search.php:193 template-parts/single-post.php:63
+msgid "Previous page"
+msgstr "الصفحة السابقة"
+
+#: archive.php:32 archive.php:61 archive.php:92 archive.php:125 archive.php:156
+#: archive.php:185 archive.php:215 index.php:29 index.php:54 index.php:81
+#: index.php:107 index.php:131 index.php:158 index.php:183 search.php:29
+#: search.php:55 search.php:83 search.php:113 search.php:141 search.php:167
+#: search.php:194 template-parts/single-post.php:60
+msgid "Next page"
+msgstr "الصفحة التالية"
+
+#: archive.php:33 archive.php:62 archive.php:93 archive.php:126 archive.php:157
+#: archive.php:186 archive.php:216 index.php:30 index.php:55 index.php:82
+#: index.php:108 index.php:132 index.php:159 index.php:184 search.php:30
+#: search.php:56 search.php:84 search.php:114 search.php:142 search.php:168
+#: search.php:195 page.php:29 template-parts/single-post.php:48
+msgid "page"
+msgstr "صفحة"
+
+#: comments.php:19
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "فكره واحده بخصوص"
+
+#: comments.php:33
+msgid "comments title"
+msgstr "عنوان التعليقات"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "التعليقات مغلقة."
+
+#: footer.php:10 footer.php:12 footer.php:14
+msgid "Scroll Up"
+msgstr "انتقل إلى أعلى"
+
+#: footer.php:58
+msgid "Copyright 2019"
+msgstr "حقوق الطبع والنشر 2019"
+
+#: functions.php:27
+msgid "Primary Menu"
+msgstr "القائمة الأساسية"
+
+#: functions.php:69
+msgid "Blog Sidebar"
+msgstr "مدونة الشريط الجانبي"
+
+#: functions.php:70 functions.php:80 functions.php:90
+msgid "Appears on posts and pages"
+msgstr "يظهر على المشاركات والصفحات"
+
+#: functions.php:79
+msgid "Posts and Pages Sidebar"
+msgstr "المشاركات والصفحات الشريط الجانبي"
+
+#: functions.php:89
+msgid "Third Column Sidebar"
+msgstr "العمود الثالث الشريط الجانبي"
+
+#: functions.php:99
+msgid "Footer 1"
+msgstr "تذييل 1"
+
+#: functions.php:109
+msgid "Footer 2"
+msgstr "تذييل 2"
+
+#: functions.php:119
+msgid "Footer 3"
+msgstr "تذييل 3"
+
+#: functions.php:129
+msgid "Footer 4"
+msgstr "تذييل 4"
+
+#: functions.php:100 functions.php:110 functions.php:120 functions.php:130
+msgid "Appears on footer"
+msgstr "يظهر على تذييل الصفحة"
+
+#: functions.php:142
+msgid "Footer Widget"
+msgstr "تذييل القطعة"
+
+#: functions.php:382
+msgid "Automobile WordPress Theme"
+msgstr "وورد موضوع السيارات"
+
+#: header.php:26
+msgid "Skip to content"
+msgstr "تخطى الى المحتوى"
+
+#: header.php:53
+msgid "Open Menu"
+msgstr "افتح القائمة"
+
+#: header.php:71 header.php:123
+msgid "Facebook"
+msgstr "موقع التواصل الاجتماعي الفيسبوك"
+
+#: header.php:74 header.php:126
+msgid "Twitter"
+msgstr "تويتر"
+
+#: header.php:77 header.php:129
+msgid "Google"
+msgstr "جوجل"
+
+#: header.php:80 header.php:132
+msgid "Pinterest"
+msgstr "موقع Pinterest"
+
+#: header.php:83 header.php:135
+msgid "Tumblr"
+msgstr "نعرفكم"
+
+#: header.php:89 searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr "بحث"
+
+#: header.php:94
+msgid "Close"
+msgstr "قريب"
+
+#: header.php:103
+msgid "Top Menu"
+msgstr "القائمة العلوية"
+
+#: header.php:104
+msgid "Close Menu"
+msgstr "إغلاق القائمة"
+
+#: header.php:142
+msgid "MAKE AN APPOINTMENT"
+msgstr "إحجز موعد"
+
+#: image.php:35 image.php:71 image.php:105 image.php:140 image.php:177
+#: image.php:214 image.php:251 page.php:25 template-parts/single-post.php:44
+msgid "Pages:"
+msgstr "الصفحات:"
+
+#: image.php:40 image.php:76 image.php:110 image.php:145 image.php:182
+#: image.php:219 image.php:256
+msgid "Edit"
+msgstr "تعديل"
+
+#: search.php:14 search.php:40 search.php:68 search.php:96 search.php:126
+#: search.php:152 search.php:179
+msgid "Search Results for: %s"
+msgstr "نتائج البحث ل:٪ س"
+
+#: no-results.php:9
+msgid "Nothing Found"
+msgstr "لم يتم العثور على شيء"
+
+#: no-results.php:13
+msgid "Ready to publish your first post? Get started here."
+msgstr "مستعد لنشر أول منشوراتك؟ ابدأ هنا"
+
+#: no-results.php:15
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"آسف ، ولكن لا شيء يطابق مصطلحات البحث الخاصة بك. أرجو المحاولة مرة أخرى "
+"بإستخدام كلمات أخرى."
+
+#: searchform.php:10
+msgid "placeholder"
+msgstr "نائب"
+
+#: searchform.php:12
+msgid "submit button"
+msgstr "زر الإرسال"
+
+#: sidebar.php:10
+msgid "Archives"
+msgstr "أرشيف"
+
+#: sidebar.php:16
+msgid "Meta"
+msgstr "ميتا"
+
+#: inc/customizer.php:18
+msgid "Theme Settings"
+msgstr "إعدادات الموضوع"
+
+#: inc/customizer.php:19
+msgid "Description of what this panel does."
+msgstr "وصف ما تفعله هذه اللوحة."
+
+#: inc/customizer.php:24
+msgid "Layout Settings"
+msgstr "إعدادات الشكل الظاهري"
+
+#: inc/customizer.php:35
+msgid "Show / Hide Preloader"
+msgstr "إظهار / إخفاء Preloader"
+
+#: inc/customizer.php:40 inc/customizer.php:49
+msgid "Default"
+msgstr "إفتراضي"
+
+#: inc/customizer.php:45
+msgid "Container Box"
+msgstr "صندوق الحاوية"
+
+#: inc/customizer.php:46
+msgid "Here you can change the Width layout. "
+msgstr "هنا يمكنك تغيير تخطيط العرض."
+
+#: inc/customizer.php:50
+msgid "Container Layout"
+msgstr "تصميم الحاويات"
+
+#: inc/customizer.php:51
+msgid "Box Layout"
+msgstr "تخطيط مربع"
+
+#: inc/customizer.php:62
+msgid "Do you want this section"
+msgstr "هل تريد هذا القسم"
+
+#: inc/customizer.php:57 inc/customizer.php:70
+msgid "Right Sidebar"
+msgstr "الشريط الجانبي الأيمن"
+
+#: inc/customizer.php:65
+msgid "One Column"
+msgstr "عمود واحد"
+
+#: inc/customizer.php:66
+msgid "Three Columns"
+msgstr "ثلاثة أعمدة"
+
+#: inc/customizer.php:67
+msgid "Four Columns"
+msgstr "أربعة أعمدة"
+
+#: inc/customizer.php:68
+msgid "Grid Layout"
+msgstr "تخطيط الشبكة"
+
+#: inc/customizer.php:69
+msgid "Left Sidebar"
+msgstr "الشريط الجانبي الأيسر"
+
+#: inc/customizer.php:171
+msgid "Typography"
+msgstr "طباعة"
+
+#: inc/customizer.php:181
+msgid "Paragraph Color"
+msgstr "لون الفقرة"
+
+#: inc/customizer.php:194
+msgid "Paragraph Fonts"
+msgstr "خطوط الفقرة"
+
+#: inc/customizer.php:204
+msgid "Paragraph Font Size"
+msgstr "حجم خط الفقرة"
+
+#: inc/customizer.php:216
+msgid "\"a\" Tag Color"
+msgstr "لون العلامة"
+
+#: inc/customizer.php:229
+msgid "\"a\" Tag Fonts"
+msgstr "\"الخطوط\" علامة"
+
+#: inc/customizer.php:240
+msgid "\"li\" Tag Color"
+msgstr "\"لي\" لون العلامة"
+
+#: inc/customizer.php:253
+msgid "\"li\" Tag Fonts"
+msgstr "\"li\" علامة الخطوط"
+
+#: inc/customizer.php:264
+msgid "H1 Color"
+msgstr "H1 اللون"
+
+#: inc/customizer.php:277
+msgid "H1 Fonts"
+msgstr "الخطوط H1"
+
+#: inc/customizer.php:288
+msgid "H1 Font Size"
+msgstr "حجم الخط H1"
+
+#: inc/customizer.php:300
+msgid "h2 Color"
+msgstr "h2 اللون"
+
+#: inc/customizer.php:313
+msgid "h2 Fonts"
+msgstr "h2 الخطوط"
+
+#: inc/customizer.php:324
+msgid "h2 Font Size"
+msgstr "حجم الخط h2"
+
+#: inc/customizer.php:336
+msgid "H3 Color"
+msgstr "H3 اللون"
+
+#: inc/customizer.php:349
+msgid "H3 Fonts"
+msgstr "الخطوط H3"
+
+#: inc/customizer.php:360
+msgid "H3 Font Size"
+msgstr "حجم الخط H3"
+
+#: inc/customizer.php:372
+msgid "H4 Color"
+msgstr "H4 اللون"
+
+#: inc/customizer.php:385
+msgid "H4 Fonts"
+msgstr "الخطوط H4"
+
+#: inc/customizer.php:396
+msgid "H4 Font Size"
+msgstr "حجم الخط H4"
+
+#: inc/customizer.php:408
+msgid "H5 Color"
+msgstr "H5 اللون"
+
+#: inc/customizer.php:421
+msgid "H5 Fonts"
+msgstr "الخطوط H5"
+
+#: inc/customizer.php:432
+msgid "H5 Font Size"
+msgstr "حجم الخط H5"
+
+#: inc/customizer.php:444
+msgid "H6 Color"
+msgstr "H6 اللون"
+
+#: inc/customizer.php:457
+msgid "H6 Fonts"
+msgstr "الخطوط H6"
+
+#: inc/customizer.php:468
+msgid "H6 Font Size"
+msgstr "حجم الخط H6"
+
+#: inc/customizer.php:476
+msgid "Theme Color Option"
+msgstr "خيار لون الموضوع"
+
+#: inc/customizer.php:485
+msgid "Highlight Color"
+msgstr "تسليط الضوء على اللون"
+
+#: inc/customizer.php:492
+msgid "Post General Settings"
+msgstr "نشر الإعدادات العامة"
+
+#: inc/customizer.php:502
+msgid "Show / Hide Date"
+msgstr "إظهار / إخفاء التاريخ"
+
+#: inc/customizer.php:512
+msgid "Show / Hide Author"
+msgstr "إظهار / إخفاء المؤلف"
+
+#: inc/customizer.php:522
+msgid "Show / Hide Comments"
+msgstr "إظهار / إخفاء التعليقات"
+
+#: inc/customizer.php:535
+msgid "Blog Post Content Limit"
+msgstr "بلوق وظيفة الحد المحتوى"
+
+#: inc/customizer.php:551
+msgid "Add Button Text"
+msgstr "إضافة نص الزر"
+
+#: inc/customizer.php:558
+msgid "Social Icon Section"
+msgstr "قسم الأيقونات الاجتماعية"
+
+#: inc/customizer.php:559
+msgid "Add Social Link here"
+msgstr "أضف رابط اجتماعي هنا"
+
+#: inc/customizer.php:569
+msgid "Add Facebook link"
+msgstr "إضافة رابط الفيسبوك"
+
+#: inc/customizer.php:580
+msgid "Add Twitter link"
+msgstr "أضف رابط Twitter"
+
+#: inc/customizer.php:591
+msgid "Add Google Plus link"
+msgstr "إضافة رابط جوجل بلس"
+
+#: inc/customizer.php:602
+msgid "Add Pinterest link"
+msgstr "إضافة رابط بينتيريست"
+
+#: inc/customizer.php:613
+msgid "Add Tumblr link"
+msgstr "أضف رابط نعرفكم"
+
+#: inc/customizer.php:621
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: inc/customizer.php:622
+msgid "Add contact us here"
+msgstr "إضافة الاتصال بنا هنا"
+
+#: inc/customizer.php:632
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: inc/customizer.php:642
+msgid "Phone No"
+msgstr "رقم الهاتف"
+
+#: inc/customizer.php:652
+msgid "Appointment us url"
+msgstr "موعد لنا رابط"
+
+#: inc/customizer.php:660
+msgid "Slider Settings"
+msgstr "إعدادات شريط التمرير"
+
+#: inc/customizer.php:671
+msgid "Show / Hide slider"
+msgstr "إظهار / إخفاء شريط التمرير"
+
+#: inc/customizer.php:684
+msgid "Select Slide Image Page"
+msgstr "حدد صفحة صورة الشريحة"
+
+#: inc/customizer.php:699
+msgid "Slider Content Limit"
+msgstr "حد محتوى شريط التمرير"
+
+#: inc/customizer.php:712
+msgid "Our Project Section"
+msgstr "قسم مشروعنا"
+
+#: inc/customizer.php:713
+msgid "Add Our Project sections below."
+msgstr "إضافة أقسام مشروعنا أدناه."
+
+#: inc/customizer.php:722
+msgid "Title"
+msgstr "عنوان"
+
+#: inc/customizer.php:742
+msgid "Select post"
+msgstr "اختيار وظيفة"
+
+#: inc/customizer.php:765
+msgid "Select Category to display Latest Post"
+msgstr "حدد فئة لعرض آخر مشاركة"
+
+#: inc/customizer.php:778
+msgid "Project Content Limit"
+msgstr "حد محتوى المشروع"
+
+#: inc/customizer.php:798
+msgid "Category Content Limit"
+msgstr "حد محتوى الفئة"
+
+#: inc/customizer.php:811
+msgid "Footer Text"
+msgstr "نص تذييل الصفحة"
+
+#: inc/customizer.php:821
+msgid "Footer widget area"
+msgstr "منطقة تذييل القطعة"
+
+#: inc/customizer.php:823
+msgid ""
+"Select the number of widget areas you want in the footer. After that, go to "
+"Appearance > Widgets and add your widgets"
+msgstr ""
+"حدد عدد مناطق عنصر واجهة التعامل التي تريدها في التذييل. بعد ذلك ، انتقل إلى "
+"Appearance> Widgets وقم بإضافة الحاجيات الخاصة بك"
+
+#: inc/customizer.php:825
+msgid "One"
+msgstr "واحد"
+
+#: inc/customizer.php:826
+msgid "Two"
+msgstr "اثنان"
+
+#: inc/customizer.php:827
+msgid "Three"
+msgstr "ثلاثة"
+
+#: inc/customizer.php:828
+msgid "Four"
+msgstr "أربعة"
+
+#: inc/customizer.php:838
+msgid "Enable / Disable Back To Top"
+msgstr "تمكين / تعطيل العودة إلى الأعلى"
+
+#: inc/customizer.php:843 inc/customizer.php:852
+msgid "Right align"
+msgstr "محاذاة اليمين"
+
+#: inc/customizer.php:848
+msgid "Back To Top"
+msgstr "العودة إلى الأعلى"
+
+#: inc/customizer.php:851
+msgid "Left align"
+msgstr "اليسار محاذاة"
+
+#: inc/customizer.php:853
+msgid "Center align"
+msgstr "مركز محاذاة"
+
+#: inc/customizer.php:862
+msgid "Copyright Text"
+msgstr "نص حقوق النشر"
+
+#: inc/customizer.php:864
+msgid "Add some text for footer like copyright etc."
+msgstr "أضف بعض النصوص لتذييل الصفحة مثل حقوق الطبع"
+
+#: inc/customizer.php:946
+msgid "Automobile Pro"
+msgstr "السيارات برو"
+
+#: inc/customizer.php:947
+msgid "Go Pro"
+msgstr "جو برو"
+
+#: template-parts/content-audio.php:38 template-parts/content-gallery.php:27
+#: template-parts/content-image.php:22 template-parts/content-video.php:38
+#: template-parts/content.php:22 template-parts/grid-layout.php:23
+msgid "VIEW MORE"
+msgstr "عرض المزيد"
+
+#: template-parts/single-post.php:26
+msgid "0 Comment"
+msgstr "0 تعليق"
+
+#: template-parts/single-post.php:26
+msgid "% Comment"
+msgstr "٪ تعليق"
+
+#: template-parts/single-post.php:55
+msgid "Parent post link"
+msgstr "رابط مشاركة الوالد"
+
+#: template-parts/single-post.php:61
+msgid "Next post:"
+msgstr "المنشور التالي:"
+
+#: template-parts/single-post.php:64
+msgid "Previous post:"
+msgstr "المنشور السابق:"
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid "You must be logged in to checkout."
+msgstr "يجب عليك أن تقوم بتسجيل الدخول إلى الخروج."
+
+#: woocommerce/checkout/form-checkout.php:52
+msgid "Your order"
+msgstr "طلبك"

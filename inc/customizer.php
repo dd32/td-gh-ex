@@ -284,7 +284,6 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'default'           => '50px',
 		'sanitize_callback' => 'sanitize_text_field',
 	));
-
 	$wp_customize->add_control('automobile_car_dealer_h1_font_size', array(
 		'label'   => __('H1 Font Size', 'automobile-car-dealer'),
 		'section' => 'automobile_car_dealer_typography',
@@ -865,10 +864,11 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'description'	=> __('Add some text for footer like copyright etc.','automobile-car-dealer'),
 		'type'		=> 'text'
 	));
-
+	
 }
 
 add_action( 'customize_register', 'automobile_car_dealer_customize_register' );	
+
 /**
  * Singleton class for handling the theme's customizer integration.
  *
