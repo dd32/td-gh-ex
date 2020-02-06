@@ -137,6 +137,7 @@ function bakery_shop_scripts() {
     wp_enqueue_style( 'jquery-sidr-light', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
     wp_enqueue_style( 'bakery-shop-style', get_stylesheet_uri(), BAKERY_SHOP_THEME_VERSION );   
 
+    wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/js/skip-link-focus-fix.js' );
     wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.2.1', true );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '2.2.1', true );
     wp_register_script( 'bakery-shop-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), BAKERY_SHOP_THEME_VERSION, true );
