@@ -632,6 +632,46 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		) );
 	}
 
+	//content layout
+    $wp_customize->add_setting('bb_ecommerce_store_slider_content_alignment',array(
+    'default' => __('Right','bb-ecommerce-store'),
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_slidersettings',
+        'choices' => array(
+            'Center' => __('Center','bb-ecommerce-store'),
+            'Left' => __('Left','bb-ecommerce-store'),
+            'Right' => __('Right','bb-ecommerce-store'),
+        ),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('bb_ecommerce_store_slider_image_opacity',array(
+      'default'              => 0.7,
+      'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control( 'bb_ecommerce_store_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','bb-ecommerce-store' ),
+	'section'     => 'bb_ecommerce_store_slidersettings',
+	'type'        => 'select',
+	'settings'    => 'bb_ecommerce_store_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','bb-ecommerce-store'),
+		'0.1' =>  esc_attr('0.1','bb-ecommerce-store'),
+		'0.2' =>  esc_attr('0.2','bb-ecommerce-store'),
+		'0.3' =>  esc_attr('0.3','bb-ecommerce-store'),
+		'0.4' =>  esc_attr('0.4','bb-ecommerce-store'),
+		'0.5' =>  esc_attr('0.5','bb-ecommerce-store'),
+		'0.6' =>  esc_attr('0.6','bb-ecommerce-store'),
+		'0.7' =>  esc_attr('0.7','bb-ecommerce-store'),
+		'0.8' =>  esc_attr('0.8','bb-ecommerce-store'),
+		'0.9' =>  esc_attr('0.9','bb-ecommerce-store')
+	),
+	));
+
 	// SERVICES
 	$wp_customize->add_section('bb_ecommerce_store_services',array(
 		'title'	=> __('Services','bb-ecommerce-store'),

@@ -66,3 +66,65 @@
 			$custom_css .='margin: 2% 0;';
 		$custom_css .='}';
 	}
+
+	/*---------------------------Slider Content Layout -------------------*/
+
+	$theme_lay = get_theme_mod( 'bb_ecommerce_store_slider_content_alignment','Right');
+    if($theme_lay == 'Left'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:left; left:10%; right:40%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Center'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .readbutton{';
+			$custom_css .='text-align:center; left:20%; right:20%;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Right'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel{';
+			$custom_css .='left:40%; right:10%;';
+		$custom_css .='}';
+	}
+
+	/*--------------------------- Slider Opacity -------------------*/
+
+	$theme_lay = get_theme_mod( 'bb_ecommerce_store_slider_image_opacity','0.7');
+	if($theme_lay == '0'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0';
+		$custom_css .='}';
+		}else if($theme_lay == '0.1'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.1';
+		$custom_css .='}';
+		}else if($theme_lay == '0.2'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.2';
+		$custom_css .='}';
+		}else if($theme_lay == '0.3'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.3';
+		$custom_css .='}';
+		}else if($theme_lay == '0.4'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.4';
+		$custom_css .='}';
+		}else if($theme_lay == '0.5'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.5';
+		$custom_css .='}';
+		}else if($theme_lay == '0.6'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.6';
+		$custom_css .='}';
+		}else if($theme_lay == '0.7'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.7';
+		$custom_css .='}';
+		}else if($theme_lay == '0.8'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.8';
+		$custom_css .='}';
+		}else if($theme_lay == '0.9'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.9';
+		$custom_css .='}';
+		}

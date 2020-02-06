@@ -15,8 +15,8 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-ecommerce-store' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 <header role="banner">
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'bb-ecommerce-store' ); ?></a>
