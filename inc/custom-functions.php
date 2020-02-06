@@ -216,12 +216,24 @@ function apex_business_deprecated_hook_admin_notice() {
             // and added "data-notice" attribute in order to track multiple / different notices
             // multiple dismissible notice states ?>
             <div class="updated notice notice-get-started-class is-dismissible" data-notice="get_started">
-                <div class="crafthemes-getting-started-notice">
-                    <h2 class="ct-notice-h2"><?php esc_html_e( 'Thank you for choosing Apex Business. Please proceed towards the welcome page and give us the privilege to serve you.', 'apex-business' ) ?></h2>
+                <div class="crafthemes-getting-started-notice clearfix">
+                    <div class="ct-theme-screenshot">
+                        <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/screenshot.png" class="screenshot" alt="<?php esc_attr_e( 'Theme Screenshot', 'apex-business' ); ?>" />
+                    </div><!-- /.ct-theme-screenshot -->
+                    <div class="ct-theme-notice-content">
+                        <h2 class="ct-notice-h2">
+                            <?php
+                                /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+                                printf( esc_html__( 'Thank you for choosing Apex Business. Please proceed towards the %1$sWelcome page%2$s and give us the privilege to serve you.', 'apex-business' ),
+                                    '<a href="'. esc_url( admin_url( 'themes.php?page=about_apex_business' ) ) . '">',
+                                    '</a>' );
+                            ?>
+                        </h2>
 
-                    <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Crafthemes demo import plugin.', 'apex-business' ) ?></p>
+                        <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Crafthemes demo import plugin.', 'apex-business' ) ?></p>
 
-                    <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ) ?></a>
+                        <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ) ?></a>
+                    </div><!-- /.ct-theme-notice-content -->
                 </div>
             </div>
         <?php }
@@ -259,5 +271,50 @@ function apex_business_install_plugin() {
     // Activate plugin.
     if ( current_user_can( 'activate_plugin' ) ) {
         $result = activate_plugin( 'crafthemes-demo-import/crafthemes-demo-import.php' );
+    }
+}
+
+/*******************************************************************************
+ *  Custom Plugin Installer
+ *******************************************************************************/
+add_action( 'wp_ajax_install_act_plugin_custom', 'apex_business_install_plugin_custom' );
+
+function apex_business_install_plugin_custom() {
+    /**
+     * Install Plugin.
+     */
+    include_once ABSPATH . '/wp-admin/includes/file.php';
+    include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+    include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+    $plugin_name = '';
+    if ( isset( $_POST['plugin'] ) ) {
+        $plugin_name = sanitize_text_field( wp_unslash( $_POST['plugin'] ) );
+    }
+
+    if ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin_name ) ) {
+        $api = plugins_api( 'plugin_information', array(
+            'slug'   => sanitize_key( wp_unslash( $plugin_name ) ),
+            'fields' => array(
+                'sections' => false,
+            ),
+        ) );
+
+        $skin     = new WP_Ajax_Upgrader_Skin();
+        $upgrader = new Plugin_Upgrader( $skin );
+        $result   = $upgrader->install( $api->download_link );
+
+        // Activate plugin.
+        $install_status = install_plugin_install_status( $api );
+        // If user can activate plugin and if the plugin is not active
+        if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
+            $result = activate_plugin( $install_status['file'] );
+
+            if ( is_wp_error( $result ) ) {
+                $status['errorCode']    = $result->get_error_code();
+                $status['errorMessage'] = $result->get_error_message();
+                wp_send_json_error( $status );
+            }
+        }
     }
 }

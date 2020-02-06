@@ -7,6 +7,20 @@
               location.href = 'admin.php?page=ct-crafthemes-demo-import&ct_notice=dismiss-get-started';
           } );
       } );
+
+      function ct_plugin_installer( pl_class, pl_slug ) {
+          $( pl_class ).one( 'click', function( e ) {
+            e.preventDefault();
+            $( this ).html( 'Installing...' ).addClass( 'updating-message' );
+            $.post( ct_ajax_object.ajax_url, { 'action' : 'install_act_plugin_custom', 'plugin' : pl_slug }, function( response ){
+                $( pl_class ).html( 'Installed & Activated' ).removeClass( 'updating-message js-btn-cf7 button-primary' );
+            } );
+        } );
+      }
+
+      ct_plugin_installer( '.js-btn-cf7', 'contact-form-7' );
+      ct_plugin_installer( '.js-btn-eae', 'elegant-addons-for-elementor' );
+      ct_plugin_installer( '.js-btn-elementor', 'elementor' );
     } );
 
     $( document ).on( 'click', '.notice-get-started-class .notice-dismiss', function () {

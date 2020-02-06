@@ -29,20 +29,63 @@ function apex_business_about() {
         <div class="twelve columns clearfix">
             <?php /* translators: %s: theme name. */ ?>
             <h1><?php printf( esc_html__( 'Getting started with %s', 'apex-business' ), esc_html( $theme_name ) ); ?></h1>
-            <?php /* translators: %1$s: user name. %2$s: theme name. */ ?>
-            <p><?php printf( esc_html__( 'Hi %1$s, thank you for installing %2$s!', 'apex-business' ), esc_html( $theme_user->display_name ), esc_html( $theme_name ) ); ?> <?php echo esc_html( $theme_description ); ?></p>
         </div><!-- /.apex-desh-hl -->
     </div>
 
-    <div class="row">
+    <div class="row apex-screenshot">
         <?php /* translators: 1: Theme user name. 2: Theme name */ ?>
-        <div class="six columns apex-screenshot clearfix">
+        <div class="six columns clearfix">
             <img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/screenshot.png" class="screenshot" alt="<?php esc_attr_e( 'Theme Screenshot', 'apex-business' ); ?>" />
             <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ); ?></a>
             <small class="ct-small"><?php esc_html_e( 'This will install and activate Crafthemes Demo Import plugin.', 'apex-business' ); ?></small>
         </div><!-- /.six columns -->
 
         <div class="six columns">
+            <h3><?php esc_html_e( 'Recommended Plugins', 'apex-business' ); ?></h3>
+            <div class="ct-plugin-section">
+                <div class="row ct-re-plugin">
+                    <div class="six columns">
+                        <div class="ct-recommended-p">
+                            <p><?php echo esc_html__( 'Contact Form 7', 'apex-business' ); ?></p>
+                        </div><!-- /.ct-recommended-p -->
+                    </div><!-- /.columns -->
+                    <div class="six columns">
+                        <?php if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
+                                <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Active', 'apex-business' ); ?></a>
+                        <?php } else { ?>
+                                <a class="js-btn-cf7 button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
+                        <?php } ?>
+                    </div><!-- /.one columns -->
+                </div><!-- /.row -->
+                <div class="row ct-re-plugin">
+                    <div class="six columns">
+                        <div class="ct-recommended-p">
+                            <p><?php echo esc_html__( 'Elementor Page Builder', 'apex-business' ); ?></p>
+                        </div><!-- /.ct-recommended-p -->
+                    </div><!-- /.columns -->
+                    <div class="six columns">
+                        <?php if ( is_plugin_active( 'elementor/elementor.php' ) ) { ?>
+                            <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Active', 'apex-business' ); ?></a>
+                        <?php } else { ?>
+                            <a class="js-btn-elementor button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
+                        <?php } ?>
+                    </div><!-- /.one columns -->
+                </div><!-- /.row -->
+                <div class="row ct-re-plugin">
+                    <div class="six columns">
+                        <div class="ct-recommended-p">
+                            <p><?php echo esc_html__( 'Elegant Addons For Elementor', 'apex-business' ); ?></p>
+                        </div><!-- /.ct-recommended-p -->
+                    </div><!-- /.columns -->
+                    <div class="six columns">
+                        <?php if ( is_plugin_active( 'elegant-addons-for-elementor/elegant-addons-for-elementor.php' ) ) { ?>
+                            <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Active', 'apex-business' ); ?></a>
+                        <?php } else { ?>
+                            <a class="js-btn-eae button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
+                        <?php } ?>
+                    </div><!-- /.one columns -->
+                </div><!-- /.row -->
+            </div><!-- /.ct-plugin-section -->
             <div class="ct-content">
                 <h3><a href="https://www.crafthemes.com/docs/<?php echo esc_attr( $theme_slug ); ?>-documentation/" target="_blank">    <?php esc_html_e( 'Theme Documentation', 'apex-business' ); ?></a></h3>
                 <p>

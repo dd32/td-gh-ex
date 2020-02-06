@@ -66,7 +66,11 @@
     </footer>
 
     <?php
-        $apex_business_editor       = get_theme_mod( 'apex_business_bottom_bar_content_control', __( 'Apex Business WordPress Theme', 'apex-business') );
+        /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+        $apex_business_editor       = get_theme_mod( 'apex_business_bottom_bar_content_control', sprintf( __( 'Apex Business WordPress Theme | Designed by %1$sCrafthemes%2$s', 'apex-business' ),
+                                    '<a href="https://www.crafthemes.com">',
+                                    '</a>'
+                                ) );
         $apex_business_layout_type  = get_theme_mod( 'apex_business_footer_layout_control', 'default-bottom-bar' );
 
         $apex_business_layout_grid  = '6';
@@ -77,6 +81,7 @@
             $apex_business_center_class = 'footer-center';
         }
     ?>
+        <?php if ( get_theme_mod( 'apex_business_bottom_bar_switch_setting', 'true' ) ) : ?>
          <div class="footer-bottom ct-footer-bottom-bg">
             <div class="container">
                 <div class="row">
@@ -111,7 +116,6 @@
                             }
                         ?>
                     </div><!-- /.col-md-? -->
-
                     <?php if ( ( $apex_business_layout_type == 'center-bottom-bar' ) || ( $apex_business_layout_type == 'left-bottom-bar' ) ) : ?>
                         <?php
                             $apex_business_right_class = '';
@@ -128,9 +132,11 @@
                             <?php endif; ?>
                         </div><!-- /.col-md-? -->
                     <?php endif; ?>
+
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </div><!-- /.footer-bottom -->
+        <?php endif; ?>
     <!--== End footer Area ==-->
 
     <?php if ( get_theme_mod( 'apex_business_box_layout_switch_setting' ) ) : ?>

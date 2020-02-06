@@ -45,7 +45,7 @@ a {
   -webkit-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
-  a:hover, a:focus, a:active {
+  a:hover, a:active {
     color: #2b3948; }
 
 /* Pre Setup */
@@ -143,6 +143,9 @@ button {
 
 .search-field, input {
   border: 1px solid #f5f5f5; }
+
+.ct-col {
+  padding: 120px 0; }
 
 /*=========================
     02. GENERAL STYLE
@@ -580,20 +583,18 @@ body {
  * Website button
  */
 .nav-button:hover, .nav-button:hover {
-  background-color: #9632dc;
-  color: white; }
+  background-color: white;
+  color: #9632dc; }
 
 .nav-button {
-  color: white; }
-
-.nav-button {
+  color: white;
   font-size: 12px;
   padding: 6px 6px;
   background-color: #9632dc;
   border-radius: 3px;
   text-align: center;
   border-style: solid;
-  border-width: 0;
+  border: 1px solid #9632dc;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
 
 /* Menu uses Font Awesome icons */
@@ -1038,6 +1039,9 @@ body {
     top: 46px; } }
 .mobile-navigation .mobile-nav {
   margin-top: 20px; }
+
+.sub-menu li {
+  padding: 5px 0 5px 0; }
 
 /*=========================
     04. NAVIGATION MENU

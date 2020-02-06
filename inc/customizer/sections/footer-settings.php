@@ -455,6 +455,21 @@ function apex_business_footer_settings_setup( $wp_customize ) {
         'priority'    =>  10,
     ) );
 
+     $wp_customize->add_setting( 'apex_business_bottom_bar_switch_setting', array(
+       'capability'        => 'edit_theme_options',
+       'sanitize_callback' => 'absint',
+       'default'           => true
+    ) );
+
+    $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control( $wp_customize, 'apex_business_bottom_bar_switch_control', array(
+       'label'       => __( 'Enable & Disable Bottom Bar', 'apex-business' ),
+       'section'     => 'apex_business_bottom_bar_settings_section',
+       'settings'    => 'apex_business_bottom_bar_switch_setting',
+       'priority'    => 25,
+       'type'        => 'ios',
+    ) ) );
+
+
     $wp_customize->add_setting(
         'apex_business_footer_layout_control', array(
             'default'           => 'default-bottom-bar',
@@ -705,7 +720,11 @@ function apex_business_footer_settings_setup( $wp_customize ) {
     $wp_customize->add_setting( 'apex_business_bottom_bar_content_control', array(
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'wp_kses_post',
-        'default'           => __( 'Apex Business WordPress Theme', 'apex-business'),
+        /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+        'default'           => sprintf( __( 'Apex Business WordPress Theme | Designed by %1$sCrafthemes%2$s', 'apex-business' ),
+                                    '<a href="https://www.crafthemes.com">',
+                                    '</a>'
+                                ),
     ) );
 
     $wp_customize->add_control(
@@ -745,19 +764,19 @@ function apex_business_footer_settings_setup( $wp_customize ) {
                         'min'           => 0,
                         'max'           => 10,
                         'step'          => 1,
-                        'default_value' => 2,
+                        'default_value' => 0,
                     ),
                     'tablet'  => array(
                         'min'           => 0,
                         'max'           => 10,
                         'step'          => 1,
-                        'default_value' => 2,
+                        'default_value' => 0,
                     ),
                     'desktop' => array(
                         'min'           => 0,
                         'max'           => 10,
                         'step'          => 1,
-                        'default_value' => 2,
+                        'default_value' => 0,
                     ),
                 ),
             )

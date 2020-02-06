@@ -68,6 +68,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
                             'apex_business_header_dropdown_hover_color_control',
                             'apex_business_header_mobile_header_control',
                             'apex_business_header_mobile_header_icon_color_control',
+                            'apex_business_header_dd_spacing_control',
                         ),
                     ),
                 ),
@@ -158,6 +159,11 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
             $wp_customize, 'apex_business_navigation_last_button_text_control',
             array(
                 'label'             => __( 'Button Text', 'apex-business' ),
+                /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+                'description'       =>  sprintf( __( 'Goto %1$sButton Style%2$s Section to style this button.', 'apex-business' ),
+                                            '<a href="javascript:wp.customize.section( \'apex_business_button_settings_section\' ).focus();">',
+                                            '</a>'
+                                        ),
                 'section'           => 'apex_business_header_navigation_section',
                 'settings'          => 'apex_business_navigation_last_button_text_setting',
                 'priority'          => 25,
@@ -404,6 +410,46 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
                 'type'            => 'hidden',
                 'priority'        => 25,
     ) ) );
+
+    $wp_customize->add_setting(
+        'apex_business_header_dd_spacing_control', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'apex_business_sanitize_range_value',
+            'transport'         => 'postMessage',
+        )
+    );
+
+    $wp_customize->add_control(
+        new Apex_Business_Customizer_Range_Value_Control(
+            $wp_customize, 'apex_business_header_dd_spacing_control', array(
+                'label'         => esc_html__( 'Dropdown Link Spacing', 'apex-business' ),
+                'section'       => 'apex_business_header_navigation_section',
+                'type'          => 'range-value',
+                'priority'      => 25,
+                'media_query'   => true,
+                'input_attr'    => array(
+                    'mobile'    => array(
+                        'min'           => 0,
+                        'max'           => 200,
+                        'step'          => 1,
+                        'default_value' => 2,
+                    ),
+                    'tablet'    => array(
+                        'min'           => 0,
+                        'max'           => 200,
+                        'step'          => 1,
+                        'default_value' => 3,
+                    ),
+                    'desktop'   => array(
+                        'min'           => 0,
+                        'max'           => 200,
+                        'step'          => 1,
+                        'default_value' => 5,
+                    ),
+                ),
+            )
+        )
+    );
 
     $wp_customize->add_setting(
         'apex_business_header_font_family_control', array(

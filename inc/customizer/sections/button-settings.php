@@ -6,7 +6,7 @@
 function apex_business_button_settings_setup( $wp_customize ) {
 
     $wp_customize->add_section( 'apex_business_button_settings_section', array(
-        'title'       =>  __( 'Button', 'apex-business' ),
+        'title'       =>  __( 'Button Style', 'apex-business' ),
         'capability'  => 'edit_theme_options',
         'priority'    =>  10,
     ) );
@@ -311,19 +311,19 @@ function apex_business_button_settings_setup( $wp_customize ) {
                         'min'           => 0,
                         'max'           => 10,
                         'step'          => 1,
-                        'default_value' => 0,
+                        'default_value' => 1,
                     ),
                     'tablet'  => array(
                         'min'           => 0,
                         'max'           => 10,
                         'step'          => 1,
-                        'default_value' => 0,
+                        'default_value' => 1,
                     ),
                     'desktop' => array(
                         'min'           => 0,
                         'max'           => 10,
                         'step'          => 1,
-                        'default_value' => 0,
+                        'default_value' => 1,
                     ),
                 ),
             )
@@ -486,7 +486,7 @@ function apex_business_button_settings_setup( $wp_customize ) {
     $wp_customize->add_setting(
         'apex_business_button_hover_text_color_setting',
         array(
-            'default'           => APEX_BUSINESS_WHITE_COLOR,
+            'default'           => APEX_BUSINESS_PRIMARY_COLOR,
             'type'              => 'theme_mod',
             'capability'        => 'edit_theme_options',
             'sanitize_callback' => 'apex_business_sanitize_alpha_color',

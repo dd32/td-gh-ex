@@ -101,7 +101,6 @@ a {
   @include transition( all .2s ease-in-out );
 
   &:hover,
-  &:focus,
   &:active {
     color: $secondary-color;
   }
@@ -214,4 +213,8 @@ $typo-p-padding: 11px;
 
 .search-field, input {
   border: 1px solid #f5f5f5;
+}
+
+.ct-col {
+    padding: 120px 0;
 }

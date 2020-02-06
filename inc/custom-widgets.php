@@ -79,7 +79,6 @@ function apex_business_widgets_init() {
         'before_title'  => '',
         'after_title'   => '',
     ) );
-
     register_sidebar( array(
         'name'          => esc_html__( 'Header Widget', 'apex-business' ),
         'id'            => 'apex_business_header_widget',

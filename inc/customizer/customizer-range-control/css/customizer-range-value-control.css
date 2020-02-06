@@ -17,6 +17,7 @@
     height: 5px;
     width: 67%;
     padding: 0;
+    margin-bottom: 0;
     cursor: pointer;
     outline: none;
     -webkit-transition: background .5s;

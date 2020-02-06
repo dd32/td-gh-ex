@@ -44,3 +44,11 @@ function apex_business_flag_back_to_top_disabled() {
     return false;
 }
 
+function apex_business_flag_bottom_bar_disabled() {
+    $apex_business_flag = get_theme_mod( 'apex_business_bottom_bar_switch_setting' );
+    if( $apex_business_flag == true ) {
+        return true;
+    }
+    return false;
+}
+

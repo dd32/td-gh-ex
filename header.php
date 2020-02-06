@@ -47,6 +47,7 @@
             <?php if ( is_active_sidebar( 'apex-business-topbar-address' )
                     || is_active_sidebar( 'apex-business-topbar-office-hours' )
                     || is_active_sidebar( 'apex-business-topbar-email' )
+                    || is_active_sidebar( 'apex-business-topbar-phone' )
                     || has_nav_menu( 'social_menu' ) ) : ?>
                 <div class="top-bar">
                     <div class="container">
@@ -62,6 +63,11 @@
                                     <?php if ( is_active_sidebar( 'apex-business-topbar-office-hours' ) ) : ?>
                                         <span class="office-hour topbar-content"><span class="fa-clock-o"></span>
                                             <?php dynamic_sidebar( 'apex-business-topbar-office-hours' ); ?>
+                                        </span>
+                                    <?php endif; ?>
+                                    <?php if ( is_active_sidebar( 'apex-business-topbar-phone' ) ) : ?>
+                                        <span class="phone topbar-content"><span class="fa fa-phone"></span>
+                                            <?php dynamic_sidebar( 'apex-business-topbar-phone' ); ?>
                                         </span>
                                     <?php endif; ?>
                                 </div><!-- /.topbar-widgets -->

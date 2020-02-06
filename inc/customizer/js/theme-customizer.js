@@ -196,6 +196,10 @@
     /** Header Navigation : Mobile header nav icons **/
     ct_customizer_live_load( 'apex_business_header_mobile_header_icon_color_setting', '.header-container .main-header .nav-menu a.menubar-right, .header-container .main-header .mobile-menu-container .menubar-close, .header-container .main-header .mobile-menu-container .dropdown-toggle', [ 'color' ] );
 
+    /** Header Navigation : Dropdown link padding **/
+    range_live_media_load( 'apex_business_header_dd_spacing_control', '.sub-menu li', [ 'padding-top', 'padding-bottom'], 'px' );
+
+
 
     /***************************************************************************
     * Fixed header Settings
@@ -361,10 +365,10 @@
     ct_customizer_live_load( 'apex_business_bottom_bar_text_color_setting', '.ct-copyright-content-color', [ 'color' ] );
 
     /** Bottom bar Settings : link color **/
-    ct_customizer_live_load( 'apex_business_bottom_bar_link_color_setting', '.footer-bottom li a', [ 'color' ] );
+    ct_customizer_live_load( 'apex_business_bottom_bar_link_color_setting', '.footer-bottom .copyright-content a, .footer-bottom li a', [ 'color' ] );
 
     /** Bottom bar Settings : Font-size **/
-    range_live_media_load( 'apex_business_bottom_bar_text_size_control', '.copyright-content', [ 'font-size' ], 'px' );
+    range_live_media_load( 'apex_business_bottom_bar_text_size_control', '.footer-bottom .copyright-content', [ 'font-size' ], 'px' );
 
     /** Bottom bar Settings : Font-size **/
     range_live_media_load( 'apex_business_bottom_bar_menu_text_size_control', '#footer-menu li a', [ 'font-size' ], 'px' );

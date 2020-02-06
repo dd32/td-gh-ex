@@ -609,23 +609,20 @@ body {
  * Website button
  */
 .nav-button:hover, .nav-button:hover {
-  background-color: $primary-color;
-  color:$white-color;
+  background-color: $white-color;
+  color:$primary-color;
 }
 
 .nav-button {
   color: white;
-}
-.nav-button {
   font-size: 12px;
   padding: 6px 6px;
   background-color: $primary-color;
   border-radius: 3px;
   text-align: center;
   border-style: solid;
-  border-width:0;
+  border: 1px solid $primary-color;
   transition: all 0.2s cubic-bezier(.4,0,.2,1);
-
 }
 
 /* Menu uses Font Awesome icons */
