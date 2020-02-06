@@ -4,7 +4,7 @@ Theme URI:  https://www.themeshopy.com/themes/bb-free-wedding-bliss-wordpress-th
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website. Demo: http://themeshopy.com/bb-wedding-bliss-theme/
-Version: 1.2.7
+Version: 1.2.8
 License: GNU General Public License
 License URI: license.txt
 Text Domain: bb-wedding-bliss
@@ -336,6 +336,19 @@ a.button{
 .read-moresec{
 	padding: 10px 0 30px 0;
 }	
+/*----------Sticky Header------*/
+.fixed-header {
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 2px 2px 10px 0px #2d2d2d;
+  z-index: 999999;
+}
+.page-template-custom-front-page .fixed-header #header{
+	background: #151c27;
+	box-shadow: 2px 2px 10px 0px #2d2d2d;
+}
 /* ---------HEADER--------- */
 .logo{
 	margin:0;
@@ -1674,9 +1687,6 @@ iframe{
 		padding: 0;
 		border: none;
 	}
-	#slider h1 {
-	    display: none;
-	}
 	#slider .carousel-caption {
 	    top: 40%;
 	    transform: translateY(-60%);
@@ -1697,6 +1707,14 @@ iframe{
 	}
 	.products li{
 		width: 100% !important;
+	}
+	#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1{
+	    text-align: center !important;
+	    left: 0% !important;
+	    right: 0% !important;
+	  }
+	#slider .inner_carousel h1 a{
+		font-size: 25px;
 	}
 }
 

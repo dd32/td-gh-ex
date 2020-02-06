@@ -27,6 +27,16 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'panel' => 'bb_wedding_bliss_panel_id'
 	) );
 
+	//Sticky Header
+	$wp_customize->add_setting( 'bb_wedding_bliss_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('bb_wedding_bliss_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','bb-wedding-bliss' ),
+        'section' => 'bb_wedding_bliss_left_right'
+    ));
+
 	$wp_customize->add_setting('bb_wedding_bliss_theme_options',array(
         'default' => __('Default','bb-wedding-bliss'),
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
@@ -616,6 +626,46 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 			'type'     => 'dropdown-pages'
 		) );
 	}
+
+	//content layout
+    $wp_customize->add_setting('bb_wedding_bliss_slider_content_alignment',array(
+    'default' => __('Center','bb-wedding-bliss'),
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_slidersettings',
+        'choices' => array(
+            'Center' => __('Center','bb-wedding-bliss'),
+            'Left' => __('Left','bb-wedding-bliss'),
+            'Right' => __('Right','bb-wedding-bliss'),
+        ),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('bb_wedding_bliss_slider_image_opacity',array(
+      'default'              => 0.6,
+      'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control( 'bb_wedding_bliss_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','bb-wedding-bliss' ),
+	'section'     => 'bb_wedding_bliss_slidersettings',
+	'type'        => 'select',
+	'settings'    => 'bb_wedding_bliss_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','bb-wedding-bliss'),
+		'0.1' =>  esc_attr('0.1','bb-wedding-bliss'),
+		'0.2' =>  esc_attr('0.2','bb-wedding-bliss'),
+		'0.3' =>  esc_attr('0.3','bb-wedding-bliss'),
+		'0.4' =>  esc_attr('0.4','bb-wedding-bliss'),
+		'0.5' =>  esc_attr('0.5','bb-wedding-bliss'),
+		'0.6' =>  esc_attr('0.6','bb-wedding-bliss'),
+		'0.7' =>  esc_attr('0.7','bb-wedding-bliss'),
+		'0.8' =>  esc_attr('0.8','bb-wedding-bliss'),
+		'0.9' =>  esc_attr('0.9','bb-wedding-bliss')
+	),
+	));
 
 	//Love Story
 	$wp_customize->add_section('bb_wedding_bliss_lovestory',array(
