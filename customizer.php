@@ -70,7 +70,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#31a3dd',
+    'default'           => '',
     'transport'         =>'auto',
     'output'            => array(
         array(
@@ -1280,7 +1280,7 @@ Kirki::add_field('awada_theme', array(
     'type'              => 'switch',
     'priority'          => 10,
     'default'           => 1,
-	'transport'         => 'postMessage',
+	//'transport'         => 'postMessage',
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
@@ -1401,11 +1401,11 @@ Kirki::add_field('awada_theme', array(
 	'default'			=> '#fff',
     'output'            => array(
         array(
-            'element'  => '#awada_footer_area .recent_posts_widget > li > a, #awada_footer_area p',
+            'element'  => '#awada_footer_area p',
             'property' => 'color',
         ),
     ),
-	'transport'         => 'auto',
+	//'transport'         => 'auto',
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -1422,7 +1422,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'color',
         ),
     ),
-	'transport'         => 'auto',
+	//'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'copyright_section_bg_color',
@@ -1438,7 +1438,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'background',
         ),
     ),
-    'transport'         => 'auto',
+    //'transport'         => 'auto',
 	'choices'     => array(
 		'alpha' => true,
 	),

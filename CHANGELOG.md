@@ -1,3 +1,5 @@
+###Version 2.1.5 [7-Feb-2020]
+* Minor issue fixed.
 ###Version 2.1.5 [28-NOV-2019]
 * gutenberg block styling.
 * skin color issue fixed.

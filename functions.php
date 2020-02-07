@@ -22,8 +22,6 @@ function awada_customizer_config()
         'option_type'  => 'option',
         'option_name'  => 'awada_theme_options',
         'compiler'     => array(),
-        'color_accent' => '#27bebe',
-        'width'        => '23%',
         'description'  => __('Visit our site for more great Products.If you like this theme please rate us 5 star', 'awada'),
     );
     return $args;
