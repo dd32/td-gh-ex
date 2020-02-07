@@ -11,12 +11,12 @@
 	
 	// *********************************** WooCommerce ***********************************		
 	$custom_css .= '#ecom-box-item .woocommerce ul.products li.product, .woocommerce-page ul.products li.product{';
-	if ( esc_attr(associationx_get_option('wooitembtrns', ''))) $custom_css .= 'background-color: transparent !important;';
-	if ( esc_attr(associationx_get_option('wooitembdr', ''))) $custom_css .= 'border: 1px solid #eeeeee;';
-	if ( esc_attr(associationx_get_option('wooitembsdw', ''))) $custom_css .= 'box-shadow: 0 0 5px 0 #eeeeee;';
-	if ( esc_attr(associationx_get_option('wooitemnpspc', ''))) $custom_css .= 'padding: 0;';
+	if ( associationx_get_option('wooitembtrns', '')) $custom_css .= 'background-color: transparent !important;';
+	if ( associationx_get_option('wooitembdr', '')) $custom_css .= 'border: 1px solid #eeeeee;';
+	if ( associationx_get_option('wooitembsdw', '')) $custom_css .= 'box-shadow: 0 0 5px 0 #eeeeee;';
+	if ( associationx_get_option('wooitemnpspc', '')) $custom_css .= 'padding: 0;';
 	$custom_css .= '}';
-	if ( esc_attr(associationx_get_option('wooiimgbdr', ''))) $custom_css .= '#ecom-box-item .woocommerce ul.products li.product a img, .woocommerce-page ul.products li.product a img { border: 1px solid #eeeeee; }';		
+	if ( associationx_get_option('wooiimgbdr', '')) $custom_css .= '#ecom-box-item .woocommerce ul.products li.product a img, .woocommerce-page ul.products li.product a img { border: 1px solid #eeeeee; }';		
 	// *********************************** Community/BuddyPress ***********************************
 			
 	//////////////////////	

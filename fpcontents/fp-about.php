@@ -4,10 +4,10 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-$associationx_showaboutus = esc_attr(associationx_get_option('showaboutus', '')); if(!$associationx_showaboutus) return;
+$associationx_showaboutus = associationx_get_option('showaboutus', ''); if(!$associationx_showaboutus) return;
 $associationx_aboutus = '';
-$associationx_aboutus_fromm_page = esc_attr(associationx_get_option('aboutus_fromm_page', '0'));
-$associationx_aboutus_page = esc_attr(associationx_get_option('aboutus_page', '0'));
+$associationx_aboutus_fromm_page = associationx_get_option('aboutus_fromm_page', '0');
+$associationx_aboutus_page = associationx_get_option('aboutus_page', '0');
 
 if($associationx_aboutus_fromm_page && $associationx_aboutus_page ):
 	$associationx_my_query = new WP_Query('page_id='.$associationx_aboutus_page); while ($associationx_my_query->have_posts()) : $associationx_my_query->the_post(); $associationx_aboutus = get_the_content(); endwhile; wp_reset_query();

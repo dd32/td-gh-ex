@@ -6,7 +6,7 @@
 	Since AssociationX 1.0
 */
 $showtmbar = 0;
-$showtmbar = esc_attr(associationx_get_option('showtmbar','1'));
+$showtmbar = associationx_get_option('showtmbar','1');
 $tmnucls=''; if(!$showtmbar) $tmnucls='notopmenu'; 
 ?>
 <div class="box100 top-menu-con-container <?php echo $tmnucls; ?>"><?php 
@@ -19,7 +19,7 @@ $tmnucls=''; if(!$showtmbar) $tmnucls='notopmenu';
 				associationx_social_links('1'); 
 				if ($connumber):echo '<div class="flexcenter connumber">'.$connumber. '</div>';  endif; 
 				if ($extnumber): echo '<div class="flexcenter extranumber fa-envelope">'.$extnumber.'</div>'; endif;
-				if (esc_html(associationx_get_option ('sbox-check', '1'))) get_search_form();
+				if (associationx_get_option ('sbox-check', '1')) get_search_form();
 				?>  	
 			</div>
 		</div><?php 

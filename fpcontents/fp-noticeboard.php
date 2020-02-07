@@ -4,8 +4,8 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-$noticebv= esc_attr(associationx_get_option('noticebv',''));
-$newsbv= esc_attr(associationx_get_option('newsbv',''));
+$noticebv= associationx_get_option('noticebv','');
+$newsbv= associationx_get_option('newsbv','');
 if(!$noticebv && !$newsbv) return;
 ?>
 <div id="noticenews-item">
@@ -16,7 +16,7 @@ if(!$noticebv && !$newsbv) return;
 				<div class="noticebox" data-sr="enter left, move 60px, over 1s, wait 0.5s">
 					<div class="notbitems">
 						<?php
-						$nbcatid = esc_attr(associationx_get_option('noticecat1', ''));						
+						$nbcatid = associationx_get_option('noticecat1', '');						
 						if($nbcatid):
 							$nbcatname = get_cat_name($nbcatid);
 							$nbcatlink = get_category_link($nbcatid);
@@ -61,7 +61,7 @@ if(!$noticebv && !$newsbv) return;
 						<?php					
 						$newsbnum = 3;
 						foreach (range(1, 3 ) as $newsbnumn ) {
-							$nboxcatid = esc_attr(associationx_get_option('nboxcat'.$newsbnumn, ''));						
+							$nboxcatid = associationx_get_option('nboxcat'.$newsbnumn, '');						
 							if($nboxcatid):
 								$nboxcatname = get_cat_name($nboxcatid);
 								$nboxcatlink = get_category_link($nboxcatid);

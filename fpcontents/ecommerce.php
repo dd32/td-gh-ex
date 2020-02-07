@@ -9,7 +9,7 @@ $associationx_shopurl = esc_url( home_url( '/' ) ).'shop';
 $associationx_shopttl = ''; $associationx_shopttl = wp_kses_post(__('Our <b>Awesome</b> Products', 'associationx'));
 if($associationx_shopttl) $associationx_shopttl = '<h2 class="boxtoptitle">'.$associationx_shopttl.'</h2>';
 
-$associationx_shopcontent = ''; $associationx_shopcontent = esc_attr(associationx_get_option('woo_page', '')); 
+$associationx_shopcontent = ''; $associationx_shopcontent = associationx_get_option('woo_page', ''); 
 
 if($associationx_shopcontent):
 ?>

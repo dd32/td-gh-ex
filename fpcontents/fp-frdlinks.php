@@ -4,8 +4,8 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-$flinksv = esc_attr(associationx_get_option('srflinks', '')); if(!$flinksv) return;
-$flinksfrommenu = esc_attr(associationx_get_option('flinksfrommenu', ''));
+$flinksv = associationx_get_option('srflinks', ''); if(!$flinksv) return;
+$flinksfrommenu = associationx_get_option('flinksfrommenu', '');
 
 if ( $flinksfrommenu && has_nav_menu( 'flink-menu' ) ): ?>
 	<div id="flinks-item">

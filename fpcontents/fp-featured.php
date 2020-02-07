@@ -5,7 +5,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.9
 */
-$frfbox = esc_attr(associationx_get_option('frfbox', ''));
+$frfbox = associationx_get_option('frfbox', '');
 if(!$frfbox) return;
 ?>
 <!--- ============  FEATURED BOXES  =========== ------------>

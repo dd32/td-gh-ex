@@ -4,4 +4,4 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-if (esc_html( associationx_get_option('ecombox', '')))   get_template_part( 'fpcontents/ecommerce' );
+if (associationx_get_option('ecombox', ''))   get_template_part( 'fpcontents/ecommerce' );

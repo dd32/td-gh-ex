@@ -8,7 +8,7 @@
 ?>
 <!--- ============  TESTIMONIALS  =========== ------------>
 <?php 	
-$testiv = esc_attr(associationx_get_option('tes-cln', ''));
+$testiv = associationx_get_option('tes-cln', '');
 if(!$testiv) return;
 $cltes = 7;
 ?>
@@ -19,7 +19,7 @@ $cltes = 7;
 		$tesheading = wp_kses_post(__('Sweet Words from our <b>Proud Members</b> Worldwide', 'associationx'));
 		if($tesheading) echo '<h3 class="tesheading">'.$tesheading.'</h3>';			
 		
-		$testifrmcomnt = esc_attr(associationx_get_option('testifrmlcomnts', ''));
+		$testifrmcomnt = associationx_get_option('testifrmlcomnts', '');
 		$testicomnt = ''; 
 		if($testifrmcomnt ):
 			$testicomnt = get_comments(array( 'status' => 'approve', 'number' => $cltes ));

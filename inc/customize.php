@@ -826,7 +826,8 @@ function associationx_customize_register($wp_customize){
     $wp_customize->add_control('associationx_sl'.$slinks, array(
         'label'      => esc_html__('Social Link', 'associationx'),
         'section'    => 'associationx_sl',
-        'settings'   => 'associationx[sl'.$slinks.']'
+        'settings'   => 'associationx[sl'.$slinks.']',
+		'type'       => 'url'
     ));
 	}
 	

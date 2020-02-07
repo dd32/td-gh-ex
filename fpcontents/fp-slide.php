@@ -7,7 +7,7 @@
 */
 
 $slidebox = ''; 
-if (is_front_page() ) $slidebox = esc_attr(associationx_get_option('slidebox', ''));
+if (is_front_page() ) $slidebox = associationx_get_option('slidebox', '');
 if(!$slidebox) return;
 ?>
 <script type="text/javascript">
@@ -32,7 +32,7 @@ if(!$slidebox) return;
 			if($sldimg ) $sldimgf = 'style="background-image:url('.$sldimg.');"';								
 			
 			$slidcapfromimg = ''; $slideimageid = ''; $attachurl = ''; $associationx_getattpost = '';
-			$slidcapfromimg = esc_attr(associationx_get_option('slide-imageautomaticall-'. $opsinumber, ''));
+			$slidcapfromimg = associationx_get_option('slide-imageautomaticall-'. $opsinumber, '');
 			if($sldimg && $slidcapfromimg ):
 				$slideimageid = attachment_url_to_postid($sldimg);
 				$associationx_getattpost = get_post( $slideimageid );

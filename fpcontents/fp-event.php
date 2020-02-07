@@ -9,7 +9,7 @@
 
 <!--- ============  EVENTS  =========== ------------>
 <?php 	
-$associationx_portfboxv = esc_attr(associationx_get_option('portfoliobox', ''));  
+$associationx_portfboxv = associationx_get_option('portfoliobox', '');  
 if(!$associationx_portfboxv) return;
 
 $associationx_portheading = esc_html__('Our Upcoming Events', 'associationx');
@@ -22,7 +22,7 @@ if($associationx_portfbnum && is_numeric($associationx_portfbnum)):
 		$associationx_portimg = ''; $associationx_portfautomatic = ''; $associationx_portfpostid = ''; $associationx_getattpost = ''; $associationx_portitemlink = ''; $associationx_portitemlinkt = ''; $portft = ''; $portftdes= '';
 		$associationx_portimg = esc_url(associationx_get_option('portfb-image' . $associationx_portfbnumn, ''));
 		
-		$associationx_portfautomatic = esc_attr(associationx_get_option('portfb-image-automatic' . $associationx_portfbnumn, '0'));
+		$associationx_portfautomatic = associationx_get_option('portfb-image-automatic' . $associationx_portfbnumn, '0');
 		if($associationx_portimg && $associationx_portfautomatic ):
 			$associationx_portfpostid = attachment_url_to_postid($associationx_portimg);
 			$associationx_getattpost = get_post( $associationx_portfpostid );

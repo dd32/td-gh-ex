@@ -5,8 +5,8 @@
 	Since AssociationX 2.5
 */
 
-$pagev = esc_attr(associationx_get_option('fp-pagecheck', ''));
-$fppage = esc_attr(associationx_get_option('fp-page', ''));
+$pagev = associationx_get_option('fp-pagecheck', '');
+$fppage = associationx_get_option('fp-page', '');
 if(!$pagev || !$fppage ) return;
 ?>
 <!--- ============  SPECIFIC PAGE  =========== ------------>

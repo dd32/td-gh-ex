@@ -8,7 +8,7 @@
 ?>
 <!--- ============  STAFFS  =========== ------------>
 <?php 	
-$stfboxv = esc_attr(associationx_get_option('staffbox', ''));
+$stfboxv = associationx_get_option('staffbox', '');
 if ( !$stfboxv ) return; 
 
 $stfbtitle = ''; $stfbtitle = esc_html__('Our Members', 'associationx');
@@ -19,7 +19,7 @@ $viewstaffboxes = '';
 		$stfimg = ''; $stfimgautomatic = ''; $stfpostid = ''; $stfautoname = ''; $stfautodesig = ''; $stfautolink = '';
 		$stfimg = esc_url(associationx_get_option('staffboxes-image' . $staffboxsnumber, ''));
 		
-		$stfimgautomatic = esc_attr(associationx_get_option('staffboxes-image-automatic' . $staffboxsnumber, ''));
+		$stfimgautomatic = associationx_get_option('staffboxes-image-automatic' . $staffboxsnumber, '');
 		if( $stfimg && $stfimgautomatic ):
 			$stfpostid = attachment_url_to_postid($stfimg);
 			$associationx_getattpost = get_post( $stfpostid );

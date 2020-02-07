@@ -33,7 +33,7 @@
 			'after_title' => '</h3>',
 		) );
 
-		if(esc_html(associationx_get_option('show_fp_wpblog', '1'))) {	
+		if(associationx_get_option('show_fp_wpblog', '1')) {	
 			register_sidebar( array(
 				'name' => esc_html__('Front Page Sidebar', 'associationx'),
 				'id' => 'sidebar-3',
@@ -91,7 +91,7 @@
 			$fwnum = $fwclmnn+3;
 			register_sidebar( array(
 				'name' => esc_html__('Footer Area ', 'associationx').$fwclmnn,
-				'id' => 'sidebar-'.$fwnum,
+				'id' => 'sidebar-'.esc_attr($fwnum),
 				'description' =>  esc_html__('An optional widget area for your site footer', 'associationx'),
 				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 				'after_widget' => "</aside>",

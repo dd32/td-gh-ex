@@ -4,7 +4,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-$associationx_frfboxfstk = esc_attr(associationx_get_option('frfboxfstk', ''));
+$associationx_frfboxfstk = associationx_get_option('frfboxfstk', '');
 $associationx_fboxnum = 4;
 if( !$associationx_frfboxfstk ) return;
 ?>

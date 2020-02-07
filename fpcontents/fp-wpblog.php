@@ -4,7 +4,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since AssociationX 1.0
 */
-$fpostex = esc_html(associationx_get_option('show_fp_wpblog', '1'));
+$fpostex = associationx_get_option('show_fp_wpblog', '1');
 if (!$fpostex) return; 
 $postorpage = get_option( 'show_on_front' );
 $fpwpbcls = 'fpbpages';
