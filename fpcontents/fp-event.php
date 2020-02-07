@@ -26,7 +26,7 @@ if($associationx_portfbnum && is_numeric($associationx_portfbnum)):
 		if($associationx_portimg && $associationx_portfautomatic ):
 			$associationx_portfpostid = attachment_url_to_postid($associationx_portimg);
 			$associationx_getattpost = get_post( $associationx_portfpostid );
-			$associationx_portitemlink = get_permalink( $associationx_getattpost->ID );
+			$associationx_portitemlink = esc_url(get_permalink( $associationx_getattpost->ID ));
 			$associationx_portitemlinkt = 1;
 			$portft = esc_html($associationx_getattpost->post_title);
 			$portftdes = wp_kses_post($associationx_getattpost->post_excerpt);

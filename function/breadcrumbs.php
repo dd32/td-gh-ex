@@ -508,7 +508,7 @@ class associationx_breadcrumb_trail {
 			$this->add_post_parents( $post->post_parent );
 
 		// Get the page title.
-		$title = get_the_title( $post_id );
+		$title = esc_html(get_the_title( $post_id ));
 
 		// Add the posts page item.
 		if ( is_paged() )
@@ -636,7 +636,7 @@ class associationx_breadcrumb_trail {
 				$post_id = get_option( 'page_for_posts' );
 
 				if ( 'posts' !== get_option( 'show_on_front' ) && 0 < $post_id )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), esc_html(get_the_title( $post_id )) );
 
 			// If the post type is not 'post'.
 			} else {
@@ -721,7 +721,7 @@ class associationx_breadcrumb_trail {
 
 		// Add the author's display name to the trail end.
 		if ( is_paged() )
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $user_id ) ), get_the_author_meta( 'display_name', $user_id ) );
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $user_id ) ), esc_html(get_the_author_meta( 'display_name', $user_id )) );
 
 		elseif ( true === $this->args['show_title'] )
 			$this->items[] = get_the_author_meta( 'display_name', $user_id );
@@ -952,7 +952,7 @@ class associationx_breadcrumb_trail {
 				break;
 
 			// Add the formatted post link to the array of parents.
-			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), get_the_title( $post_id ) );
+			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_permalink( $post_id ) ), esc_html(get_the_title( $post_id )) );
 
 			// If there's no longer a post parent, break out of the loop.
 			if ( 0 >= $post->post_parent )
@@ -1085,7 +1085,7 @@ class associationx_breadcrumb_trail {
 				$this->add_term_parents( $term->parent, $taxonomy );
 
 			// Add the category archive link to the trail.
-			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
+			$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), esc_html($term->name) );
 		}
 	}
 
@@ -1169,7 +1169,7 @@ class associationx_breadcrumb_trail {
 			$term = get_term( $term_id, $taxonomy );
 
 			// Add the formatted term link to the array of parent terms.
-			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), $term->name );
+			$parents[] = sprintf( '<a href="%s">%s</a>', esc_url( get_term_link( $term, $taxonomy ) ), esc_html($term->name) );
 
 			// Set the parent term's parent as the parent ID.
 			$term_id = $term->parent;
@@ -1226,7 +1226,7 @@ class associationx_breadcrumb_trail {
 
 				// If using the %author% tag, add a link to the post author archive.
 				elseif ( '%author%' == $tag )
-					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $post->post_author ) ), get_the_author_meta( 'display_name', $post->post_author ) );
+					$this->items[] = sprintf( '<a href="%s">%s</a>', esc_url( get_author_posts_url( $post->post_author ) ), esc_html(get_the_author_meta( 'display_name', $post->post_author )) );
 
 				// If using the %category% tag, add a link to the first category archive to match permalinks.
 				elseif ( taxonomy_exists( trim( $tag, '%' ) ) ) {

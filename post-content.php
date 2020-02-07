@@ -16,7 +16,7 @@ do_action('associationx_before_content');
 	if (is_archive()) :  ?>
 		<div class="arctitledes">
 			<h1 class="arc-post-title"><?php the_archive_title(); ?></h1>
-			<div class="description"><?php echo the_archive_description(); ?></div>
+			<div class="description"><?php the_archive_description(); ?></div>
 		</div>
 		<div class="clear">&nbsp;</div>
 	<?php endif; ?>
