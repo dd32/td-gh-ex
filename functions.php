@@ -246,36 +246,6 @@ add_action( 'wp_enqueue_scripts', 'atento_scripts' );
 /*--------------------------------------------------------------
 # Back-End Enqueue scripts and styles.
 --------------------------------------------------------------*/
-//if ( !function_exists( 'atento_admin_scripts' ) ) {
-//    function atento_admin_scripts() {
-//
-//        $min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-//
-//        // Get Current Screen Name
-//        $current_screen = get_current_screen();
-//        $screen_id      = $current_screen->id;
-//
-//        // Enqueue Google Fonts
-//        wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Roboto:300,400,500,700', array(), ATENTO_THEME_VERSION, '' );
-//
-//        // Widgets Specific enqueue.
-//        if ( in_array( $screen_id, array( 'widgets', 'customize' ) ) ) {
-//            wp_enqueue_style( 'atento-customizer-style', ATENTO_THEME_URI .'/assets/back-end/css/customizer-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
-//        }
-//
-//        // Enqueue Style
-//        wp_enqueue_style( 'atento-admin-style', ATENTO_THEME_URI .'/assets/back-end/css/admin-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
-//
-//        // Enqueue Script
-//        wp_enqueue_script( 'atento-admin-script', ATENTO_THEME_URI . '/assets/back-end/js/admin-script' . $min . '.js', array( 'jquery' ), ATENTO_THEME_VERSION, true );
-//
-//    }
-//}
-//add_action( 'admin_enqueue_scripts', 'atento_admin_scripts' );
-
-/*--------------------------------------------------------------
-# Back-End Enqueue scripts and styles.
---------------------------------------------------------------*/
 if ( !function_exists( 'atento_admin_scripts' ) ) {
     function atento_admin_scripts() {
 
@@ -306,6 +276,24 @@ if ( !function_exists( 'atento_admin_scripts' ) ) {
     }
 }
 add_action( 'admin_enqueue_scripts', 'atento_admin_scripts' );
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function atento_skip_link_focus_fix() {
+    // The following is minified via `terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
+    ?>
+    <script>
+        /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+    </script>
+    <?php
+}
+add_action( 'wp_print_footer_scripts', 'atento_skip_link_focus_fix' );
 
 /**
  * Load template functions.
@@ -351,7 +339,4 @@ if ( is_admin() ) {
     // Welcome Page.
     require ATENTO_THEME_DIR . '/inc/framework/welcome-screen/class-welcome-screen.php';
     require ATENTO_THEME_DIR . '/inc/framework/welcome-screen/persist-admin-notices-dismissal.php';
-
-    // Demo.
-    require ATENTO_THEME_DIR . '/inc/framework/demo-importer/class-demo.php';
 }
