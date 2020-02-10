@@ -4,7 +4,7 @@ Theme URI: http://colorlib.com/wp/travelify/
 Author: Colorlib
 Author URI: http://colorlib.com/wp/
 Description: Travelify is a clan, simple and fully responsive WordPress WooCommerce theme that looks awesome on any device. It adjusts automatically to any screen size including tablets and smartphones as well as Retina displays. Theme is built using HTML5 / CSS3 and is SEO friendly. This WordPress theme was built with travel, adventures, languages and nature in mind but it can be used for anything so be creative and unleash its full potential in blogging, eCommerce, business and other websites. Along the awesome design this theme is customizable via a simple but yet powerful theme options. Some of the nicest features are featured post slider, social icons, custom logo, translation ready (compatible with WPML plugin) and many more. This theme out-of-the-box plays nicely with WooCommerce, Breadcrumb NavXT, WP-PageNavi, Contact Form 7 and other popular plugins. Theme available in English, French, German, Hungarian, Italian, Spanish, Dutch, Hebrew, Slovak, Turkish, Swedish, Brazilian Portuguese, Polish, Finnish, Bulgarian, Persian (Farsi), Greek, Russian and Chinese.
-Version: 3.0.7
+Version: 3.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, light, green, custom-background, custom-header, custom-menu, fluid-layout, featured-images, full-width-template, left sidebar, right sidebar, one-column, two columns, three-columns, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -48,7 +48,7 @@ The exceptions to this license are as follows:
 * TGM Plugin Activation library (https://github.com/thomasgriffin/TGM-Plugin-Activation) licensed under GNU General Public License v2.0 or later
 * [html5shiv.js](https://github.com/aFarkas/html5shiv) by Alexander Farkas licensed under a dual license system (MIT or GPL version 2)
 * [jquery-cloneya.js](https://github.com/Yapapaya/jquery-cloneya) by Saurabh Shukla licensed under the MIT license
-* [jquery-cloneya.js](http://jquery.malsup.com/cycle/) by M. Alsup licensed under a dual license system (MIT and GPL)
+* [jquery-cycle.js](http://jquery.malsup.com/cycle/) by M. Alsup licensed under a dual license system (MIT and GPL)
 * [TinyNav.js](http://tinynav.com/) by @viljamis licensed under MIT license
 * Genericons font(https://github.com/Automattic/genericons-neue) is licensed under GPL
 

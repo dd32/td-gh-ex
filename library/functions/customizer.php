@@ -407,17 +407,17 @@ function travelify_options_register_theme_customizer($wp_customize)
             'section' => 'travelify_slide_effect_options',
             'type'    => 'select',
             'choices'    => array(
-                'fade'          =>  'fade',
-                'wipe'          =>  'wipe',
-                'scrollUp'      =>  'scrollUp',
-                'scrollDown'    =>  'scrollDown',
-                'scrollLeft'    =>  'scrollLeft',
-                'scrollRight'   =>  'scrollRight',
-                'blindX'        =>  'blindX',
-                'blindY'        =>  'blindY',
-                'blindZ'        =>  'blindZ',
-                'cover'         =>  'cover',
-                'shuffle'       =>  'shuffle'
+                'fade'          =>  esc_html__( 'Fade', 'travelify' ),
+                'wipe'          =>  esc_html__( 'Wipe', 'travelify' ),
+                'scrollUp'      =>  esc_html__( 'ScrollUp', 'travelify' ),
+                'scrollDown'    =>  esc_html__( 'ScrollDown', 'travelify' ),
+                'scrollLeft'    =>  esc_html__( 'ScrollLeft', 'travelify' ),
+                'scrollRight'   =>  esc_html__( 'ScrollRight', 'travelify' ),
+                'blindX'        =>  esc_html__( 'BlindX', 'travelify' ),
+                'blindY'        =>  esc_html__( 'BlindY', 'travelify' ),
+                'blindZ'        =>  esc_html__( 'BlindZ', 'travelify' ),
+                'cover'         =>  esc_html__( 'Cover', 'travelify' ),
+                'shuffle'       =>  esc_html__( 'Shuffle', 'travelify' ),
             ),
         ));
 
@@ -484,7 +484,10 @@ function travelify_options_register_theme_customizer($wp_customize)
         }
 
     /* Other options Section */
-    $wp_customize->add_section('travelify_others_options', array(
+    // We don't need this section as there is and Additional CSS default by wordpress
+    // @todo: delete commented lines after we migrated the Custom CSS code into WP default Additional CSS
+    // @todo: but first lets see if there are any problems
+    /*$wp_customize->add_section('travelify_others_options', array(
         'priority' => 19,
         'capability' => 'edit_theme_options',
         'theme_supports' => '',
@@ -502,7 +505,7 @@ function travelify_options_register_theme_customizer($wp_customize)
             'section' => 'travelify_others_options',
             'settings' => 'travelify_theme_options[custom_css]',
             'type' => 'textarea'
-        ));
+        ));*/
 
     $wp_customize->add_section('travelify_important_links', array(
         'priority' => 6,
