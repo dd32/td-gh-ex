@@ -94,6 +94,34 @@ jQuery(document).ready(function($) {
         });
     }
 
+/*--------------------------------------------------------
+                Keyboard Navigation
+----------------------------------------------------------*/
+if( $(window).width() < 1024 ) {
+        $( '#primary-menu > li:last-child' ).bind( 'keydown', function(e) {
+            if( e.which === 9 ) {
+                e.preventDefault();
+                $('#masthead').find('.menu-toggle').focus();
+            }
+        });
+    }
+    else {
+        $( '#primary-menu > li:last-child' ).unbind('keydown');
+    }
+    $(window).resize(function() {
+        if( $(window).width() < 1024 ) {
+            $( '#primary-menu > li:last-child' ).bind( 'keydown', function(e) {
+                if( e.which === 9 ) {
+                    e.preventDefault();
+                    $('#masthead').find('.menu-toggle').focus();
+                }
+            });
+        }
+        else {
+            $( '#primary-menu > li:last-child' ).unbind('keydown');
+        }
+    });
+
 
 
 /*------------------------------------------------
