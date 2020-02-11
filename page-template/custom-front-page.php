@@ -34,7 +34,7 @@ get_header(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
                   <h1><?php the_title(); ?></h1>
-                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_pet_care_string_limit_words( $excerpt,20 ) ); ?></p>
+                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_pet_care_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_pet_care_slider_excerpt_length','20')))); ?></p>
                   <div class="get-apt-btn">
                     <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('GET APPOINTMENT','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'GET APPOINTMENT','advance-pet-care' );?></span></a>
                   </div>

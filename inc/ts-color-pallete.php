@@ -101,3 +101,78 @@
 			$custom_css .='max-width: 1140px; width: 100%; padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; right:0';
 		$custom_css .='}';
 	}
+
+
+	/*--------------------------- Slider Opacity -------------------*/
+
+	$slider_lay = get_theme_mod( 'advance_pet_care_slider_image_opacity','0.6');
+	if($slider_lay == '0'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0';
+		$custom_css .='}';
+	}else if($theme_lay == '0.1'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.1';
+		$custom_css .='}';
+	}else if($theme_lay == '0.2'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.2';
+		$custom_css .='}';
+	}else if($theme_lay == '0.3'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.3';
+		$custom_css .='}';
+	}else if($theme_lay == '0.4'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.4';
+		$custom_css .='}';
+	}else if($theme_lay == '0.5'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.5';
+		$custom_css .='}';
+	}else if($theme_lay == '0.6'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.6';
+		$custom_css .='}';
+	}else if($theme_lay == '0.7'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.7';
+		$custom_css .='}';
+	}else if($theme_lay == '0.8'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.8';
+		$custom_css .='}';
+	}else if($theme_lay == '0.9'){
+		$custom_css .='#slider img{';
+			$custom_css .='opacity:0.9';
+		$custom_css .='}';
+	}
+
+	/*----------Slider Content Alignment ------------*/
+
+	$slider_lay = get_theme_mod( 'advance_pet_care_slider_content_alignment','Left');
+    if($slider_lay == 'Left'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel,#slider .inner_carousel h1{';
+			$custom_css .='text-align:left; left:10%; right:50%;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 720px){
+		#slider .carousel-caption{';
+		$custom_css .='left: 15%; right: 40%;';
+		$custom_css .='} }';
+
+	}else if($slider_lay == 'Center'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel,#slider .inner_carousel h1{';
+			$custom_css .='text-align:center; left:15%; right:15%;';
+		$custom_css .='}';
+
+	}else if($slider_lay == 'Right'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel,#slider .inner_carousel h1{';
+			$custom_css .='text-align:right; right:10%; left:50%;';
+		$custom_css .='}';
+		$custom_css .='
+		@media screen and (max-width: 720px){
+		#slider .carousel-caption{';
+		$custom_css .='left: 40%; right: 15%;';
+		$custom_css .='} }';
+	}

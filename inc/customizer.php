@@ -681,6 +681,65 @@ function advance_pet_care_customize_register($wp_customize) {
 		) );
 	}
 
+	//content layout
+    $wp_customize->add_setting('advance_pet_care_slider_content_alignment',array(
+    'default' => __('Left','advance-pet-care'),
+        'sanitize_callback' => 'advance_pet_care_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_pet_care_slider_content_alignment',array(
+        'type' => 'radio',
+        'label' => __('Slider Content Alignment','advance-pet-care'),
+        'section' => 'advance_pet_care_slider',
+        'choices' => array(
+            'Center' => __('Center','advance-pet-care'),
+            'Left' => __('Left','advance-pet-care'),
+            'Right' => __('Right','advance-pet-care'),
+        ),
+	) );
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_pet_care_slider_excerpt_length', array(
+		'default'              => 20,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_pet_care_slider_excerpt_length', array(
+		'label'       => esc_html__( 'Slider Excerpt length','advance-pet-care' ),
+		'section'     => 'advance_pet_care_slider',
+		'type'        => 'number',
+		'settings'    => 'advance_pet_care_slider_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Opacity
+	$wp_customize->add_setting('advance_pet_care_slider_image_opacity',array(
+      'default'              => 0.6,
+      'sanitize_callback' => 'advance_pet_care_sanitize_choices'
+	));
+	$wp_customize->add_control( 'advance_pet_care_slider_image_opacity', array(
+	'label'       => esc_html__( 'Slider Image Opacity','advance-pet-care' ),
+	'section'     => 'advance_pet_care_slider',
+	'type'        => 'select',
+	'settings'    => 'advance_pet_care_slider_image_opacity',
+	'choices' => array(
+		'0' =>  esc_attr('0','advance-pet-care'),
+		'0.1' =>  esc_attr('0.1','advance-pet-care'),
+		'0.2' =>  esc_attr('0.2','advance-pet-care'),
+		'0.3' =>  esc_attr('0.3','advance-pet-care'),
+		'0.4' =>  esc_attr('0.4','advance-pet-care'),
+		'0.5' =>  esc_attr('0.5','advance-pet-care'),
+		'0.6' =>  esc_attr('0.6','advance-pet-care'),
+		'0.7' =>  esc_attr('0.7','advance-pet-care'),
+		'0.8' =>  esc_attr('0.8','advance-pet-care'),
+		'0.9' =>  esc_attr('0.9','advance-pet-care')
+	),
+	));
+
 	// Welcome Setting
 	$wp_customize->add_section('advance_pet_care_welcome',array(
 		'title'	=> __('Welcome Section','advance-pet-care'),
