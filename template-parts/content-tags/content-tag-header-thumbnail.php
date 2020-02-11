@@ -95,7 +95,6 @@ global $post;
          endif;
         ?>   
            </div>
-        </div>
 	</div><!-- .post-thumbnail -->
 
 <?php

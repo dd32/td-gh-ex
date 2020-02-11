@@ -1048,16 +1048,6 @@ class BAH_L_Redux {
 				case 'search-form':
 					
 					$fields = $sections[ $section_key ]['fields'];
-				/*	
-                    array_unshift($fields, array(
-						'id'          => 'search_form_add_taxonomy',
-						'type'        => 'callback',
-						'full_width'  => false,
-						'title'       => esc_html__( 'Add taxonomy select field', 'ba-hotel-light' ),
-						'description' => esc_html__( 'Add terms from selected taxonomy to the search form filters.', 'ba-hotel-light' ),
-                        'callback'    => array( __CLASS__, 'callback_radio_taxonomies' ),
-					));
-                    */
 					
 					$fields[] = array(
 					  'id'         => 'search_form_exclude_post_types',

@@ -26,7 +26,7 @@
         
      <div class="header-top-row">   
         
-        <div class="header-menu-row">
+        <div class="header-menu-row" role="navigation">
 		
 		<!-- Main menu -->
 		<?php
@@ -52,7 +52,7 @@
         
         <!-- Toggler/collapsible button -->
         <div class="header-contacts-toggler navbar-toggler">
-		  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse-primary" aria-controls="primary-menu" aria-expanded="false">
+		  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse-primary" aria-controls="primary-menu" aria-expanded="false" tabindex="0">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
         </div>

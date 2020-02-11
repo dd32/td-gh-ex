@@ -177,6 +177,7 @@ class BAH_L_Settings {
            'action' => array(),
            'method' => array(),
            'id' => array(),
+           'data-post-id' => array(),
         );
         self::$wp_allowedposttags['input'] = array(
            'type' => array(),
@@ -185,7 +186,8 @@ class BAH_L_Settings {
            'name' => array(),
            'value' => array(),
            'placeholder' => array(),
-            'tabindex' => array(),
+           'tabindex' => array(),
+           'data-post-id' => array(),
         );
 
         self::$wp_allowedposttags['div']['tabindex'] = array();

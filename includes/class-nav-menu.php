@@ -227,7 +227,6 @@ class BAH_L_Nav_Menu extends Walker_Nav_Menu {
 			}
 
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
-
 			
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
@@ -238,6 +237,8 @@ class BAH_L_Nav_Menu extends Walker_Nav_Menu {
 					$attributes .= ' ' . $attr . '="' . $value . '"';
 				}
 			}
+
+            //$attributes .= ' tabindex="0"';
 
 			$item_output = $args->before;
 

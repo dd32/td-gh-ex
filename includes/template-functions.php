@@ -930,7 +930,7 @@ if ( ! function_exists( 'bahotel_l_header_navbar_after' ) ):
         
         /// $title is already escaped
         echo '<div class="header-login">';
-        echo '  <a href="' . esc_url( $url ) . '">' . $title . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        echo '  <a href="' . esc_url( $url ) . '" tabindex="0">' . $title . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
         echo '</div>';
         
         return;
@@ -1129,22 +1129,22 @@ endif;
                 $rel = $adjacent == 'previous' ? 'prev' : 'next';
                 
                 $output = '<div class="nav-'.$adjacent.'">
-                <a href="' . get_permalink( $post ) . '" rel="'.$rel.'"><div class="nav-prevnext-wrapper nav-'.$rel.'-wrapper">';
+                <a href="' . esc_url(get_permalink( $post )) . '" rel="'.$rel.'"><div class="nav-prevnext-wrapper nav-'.$rel.'-wrapper">';
                 
                 if ($adjacent == 'previous'){
                     
                    $output .= '<div class="nav-prevnext-chevron"><span class="lnr lnr-chevron-left"></span></div>
                   <div class="nav-prevnext-text">
-                    <div class="nav-prevnext-title">'.$title.'</div>
-                    <div class="nav-prevnext-label">'.__( 'Previous post', 'ba-hotel-light' ).'</div>
+                    <div class="nav-prevnext-title">'.esc_html($title).'</div>
+                    <div class="nav-prevnext-label">'.esc_html__( 'Previous post', 'ba-hotel-light' ).'</div>
                   </div>'; 
                     
                 } else {
                     
                     $output .= '
                   <div class="nav-prevnext-text">
-                    <div class="nav-prevnext-title">'.$title.'</div>
-                    <div class="nav-prevnext-label">'.__( 'Next post', 'ba-hotel-light' ).'</div>
+                    <div class="nav-prevnext-title">'.esc_html($title).'</div>
+                    <div class="nav-prevnext-label">'.esc_html__( 'Next post', 'ba-hotel-light' ).'</div>
                   </div>
                   <div class="nav-prevnext-chevron"><span class="lnr lnr-chevron-right"></span></div>';
                     
@@ -1231,7 +1231,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             $room_info .= '
             <div class="room_info_group">
                <div class="room_info_group_title">
-                <h1 class="entry-title room_title"><span class="entry-title-border background-yellow"></span> '.get_the_title().'</h1>';
+                <h1 class="entry-title room_title"><span class="entry-title-border background-yellow"></span> '.esc_html(get_the_title()).'</h1>';
               
             /////////////////////////////////    
 			
@@ -1337,7 +1337,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                
             $prices = BABE_Post_types::get_post_price_from($post_id);   
             
-            $price_old = $prices['discount_price_from'] < $prices['price_from'] ? '<span class="room_info_price_old">' . BABE_Currency::get_currency_price( $prices['price_from'] ) . '</span>' : '';
+            $price_old = $prices['discount_price_from'] < $prices['price_from'] ? '<span class="room_info_price_old">' . wp_kses_post(BABE_Currency::get_currency_price( $prices['price_from'] )) . '</span>' : '';
 				
 				$discount = $prices['discount'] ? '<div class="room_info_price_discount">-' . $prices['discount'] . '%</div>' : '';
 				
@@ -1346,13 +1346,13 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                                     '.apply_filters('bahotel_l_icon', '', 'price').'
 									<label class="room_info_before_price">' . esc_html__( 'From', 'ba-hotel-light' ) . '</label>
 									' . $price_old . '
-									<span class="room_info_price_new">' . BABE_Currency::get_currency_price( $prices['discount_price_from'] ) . '</span>
+									<span class="room_info_price_new">' . wp_kses_post(BABE_Currency::get_currency_price( $prices['discount_price_from'] ) ). '</span>
 								</div>
                                 ' : '
                                 <div class="room_info_price">
 									<label class="room_info_before_price">' . esc_html__( 'From', 'ba-hotel-light' ) . '</label>
 									' . $price_old . '
-									<span class="room_info_price_new">' . BABE_Currency::get_currency_price( $prices['discount_price_from'] ) . '</span><span class="room_info_after_price">' . esc_html__( '/Night', 'ba-hotel-light' ) . '</span>
+									<span class="room_info_price_new">' . wp_kses_post(BABE_Currency::get_currency_price( $prices['discount_price_from'] )) . '</span><span class="room_info_after_price">' . esc_html__( '/Night', 'ba-hotel-light' ) . '</span>
 								</div>
                                 ';                    
 			
@@ -1632,7 +1632,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				<h2 class="room_sub_title">'.__( 'Book this room', 'ba-hotel-light' ).'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
                     <div class="room_page_block_inner">
-						' . BABE_html::booking_form($post_id) . '
+						' . wp_kses( BABE_html::booking_form($post_id), BAH_L_Settings::$wp_allowedposttags) . '
 					</div>
 			';
             
@@ -1850,7 +1850,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
           
                $message .= '
             <div class="bahotel_l_message_order bahotel_l_message_order_status_'.$args['order_status'].'">
-               ' . BABE_Settings::$settings['message_'.$args['order_status']] . '
+               ' . wp_kses( BABE_Settings::$settings['message_'.$args['order_status']], BAH_L_Settings::$wp_allowedposttags) . '
             </div>';
             
             }
@@ -1858,7 +1858,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             if ($args['order_status'] == 'payment_expected'){
                
                $message .= '<div class="babe_order_confirm">
-              <a href="' . esc_url( BABE_Order::get_order_payment_page($order_id) ) . '" class="btn button babe_button_order_to_pay">'.__('Pay now', 'ba-hotel-light').' <span class="lnr lnr-arrow-right"></span></a>
+              <a href="' . esc_url( BABE_Order::get_order_payment_page($order_id) ) . '" class="btn button babe_button_order_to_pay">'.esc_html__('Pay now', 'ba-hotel-light').' <span class="lnr lnr-arrow-right"></span></a>
             </div>';
             }
             
@@ -1885,12 +1885,10 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               <h3 class="checkout_order_items_title">'.esc_html__('Your reservation', 'ba-hotel-light').'</h3>
               <div class="checkout_sub_title_bottom"><div class="checkout_sub_title_bottom_line"></div></div>
               <h2>' . wp_kses_post( sprintf(
-                 /* translators: %s: Order number */
+                 /* translators: %1$s: Order number */
                  __('Order #%1$s', 'ba-hotel-light'),
                  $args['order_num']
-                 ) . '</h2>
-              '.BABE_html::order_items($order_id).'
-              '.bahotel_l_order_customer_details($order_id) ).'
+                 ) . '</h2>'.BABE_html::order_items($order_id).bahotel_l_order_customer_details($order_id) ).'
               </div>
             </div>
             <div class="col-md-12 col-lg-8 order-first order-lg-last">
@@ -1930,8 +1928,8 @@ if ( class_exists( 'BABE_Post_types' ) ) {
         foreach($order_meta as $field_name => $field_content){
             $output .= '
             <div class="order_customer_details_row">
-              <div class="order_customer_details_label">'.BABE_html::checkout_field_label($field_name).':</div>
-              <div class="order_customer_details_content">'.$field_content.'</div>
+              <div class="order_customer_details_label">'.esc_html(BABE_html::checkout_field_label($field_name)).':</div>
+              <div class="order_customer_details_content">'.esc_html($field_content).'</div>
             </div>
             ';
         }

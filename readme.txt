@@ -3,8 +3,8 @@ Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Version: 1.0.5
-Stable tag: 1.0.5
+Version: 1.0.6
+Stable tag: 1.0.6
 License: GNU GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -39,6 +39,10 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/VIWIBCR4L9
 
 == Changelog ==
+
+= 1.0.6 =
+* Fixed missing escaping issues, removed comment code
+* Fixed issue "keyword navigation is not working for mobile menu"
 
 = 1.0.5 =
 * Removed comment code

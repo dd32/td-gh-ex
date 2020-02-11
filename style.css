@@ -6,7 +6,7 @@
  * Description: "BA Hotel light" is a hotel/hostel booking theme developed for mini hotels and property rental businesses. It's based on the fast and flexible free booking engine ("BA Book Everything" plugin) and allows you to start your online rental business in an hours!
 You can easily create different booking rules and categories, flexible rates (define minimum/maximum booking period, days of the week to which the rate applies, days of the week in which the reservation can be started), variable prices based on number of the guests or/and nights, seasonal prices and discounts. Sell additional services with booking (breakfast, dinner, etc.), use special offers, promo codes (discount coupons), and more. Clear landing design looks great on both desktop and mobile screens thanks to Bootstrap 4 framework, touch-ready and responsive sliders, great google and icon fonts.
 Full-featured theme version ("BA Hotel") is completed with payment gateways (PayPal, Stripe) and extra settings to easily customize the theme to suit your needs.
- * Version: 1.0.5
+ * Version: 1.0.6
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ba-hotel
@@ -246,6 +246,7 @@ img.site-logo{
     opacity: 0;
     filter: alpha(opacity=0);
     -moz-opacity: 0;
+    background-color: #2e2e2e;
 }
 
 .dropdown-toggle::after{
@@ -410,7 +411,7 @@ body.header_transparent .navbar-toggler:hover{
     margin: 0 20px;
   }
     
-  #site-navigation .dropdown:hover > .dropdown-menu {
+  #site-navigation .dropdown:hover > .dropdown-menu, #site-navigation .dropdown.dropdown-expanded > .dropdown-menu, #site-navigation .dropdown-submenu.dropdown-submenu-expanded > .dropdown-menu {
     display: block;
     transition: all .35s ease, opacity 1s ease-in-out;
     -webkit-transition: all .35s ease, opacity 1s ease-in-out;
@@ -419,7 +420,7 @@ body.header_transparent .navbar-toggler:hover{
     -moz-opacity: 1;
   }
 
-  #site-navigation .dropdown-submenu:hover > .dropdown-menu{
+  #site-navigation .dropdown-submenu:hover > .dropdown-menu, #site-navigation .dropdown-submenu.dropdown-submenu-expanded > .dropdown-menu{
     top: -9px;
   }
 

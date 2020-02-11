@@ -23,7 +23,7 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	
-	<a class="skip-link screen-reader-text" href="#content" tabindex="1"><?php esc_html_e( 'Skip to content', 'ba-hotel-light' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content" tabindex="0"><?php esc_html_e( 'Skip to content', 'ba-hotel-light' ); ?></a>
 	
 	<?php do_action( 'bahotel_l_get_panel', 'before-header' ); ?>
 	
