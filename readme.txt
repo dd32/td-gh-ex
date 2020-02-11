@@ -2,10 +2,9 @@
 
 Contributors: themepalace
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments, featured-images, footer-widgets, left-sidebar, editor-style, right-sidebar, full-width-template, two-columns, four-columns, grid-layout, custom-header, custom-logo, featured-image-header, blog, portfolio, entertainment
-
 Requires at least: 4.7
 Tested up to: 5.3.2
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,6 +87,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 	Contact Form 7 is recommended to use for contact forms for contact page.
 
 == Changelog ==
+
+= 1.1.3 - Feb 10 2020 =
+* Updated accessibility
 
 = 1.1.2 - Jan 6 2019 =
 *  Updated minor  css
