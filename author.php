@@ -44,7 +44,7 @@ get_header();
 	================================================== -->
 	<div id="content_full" class="section-padding">
 		<div id="content" class="container">
-			<div class="row sticky-container <?php echo ( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
+			<div class="row sticky-container <?php echo esc_attr( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
 
 
 
@@ -63,7 +63,7 @@ get_header();
 
 								<div class="col-md-9">
 									<div class="text">
-										<?php printf( '<h1 class="page-title">%1$s</h1><h5 class="btExcerpt">%2$s</h5>', esc_html( get_the_author() ), esc_textarea( get_the_author_meta( 'description' ) ) ); ?>
+										<?php printf( '<h1 class="page-title">%1$s</h1><h5 class="btExcerpt">%2$s</h5>', esc_html( get_the_author() ), esc_html( get_the_author_meta( 'description' ) ) ); ?>
 									</div>
 								</div>
 							</div>

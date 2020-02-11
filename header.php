@@ -59,8 +59,8 @@
 								'depth'          => 5,
 								'container'      => 'ul',
 								'menu_class'     => 'menu-items',
-								'fallback_cb'    => 'wp_bootstrap_navwalker::fallback',
-								'walker'         => new WP_Bootstrap_Navwalker(),
+								'fallback_cb'    => 'AARI_Wp_Bootstrap_Navwalker::fallback',
+								'walker'         => new AARI_Wp_Bootstrap_Navwalker(),
 
 							)
 						);

@@ -40,7 +40,7 @@
 			the_title( '<div class="post_header"><h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3></div>' );
 		endif;
 		?>
-		<div class="post_info_wrapper <?php echo esc_html( get_post_format() ); ?>">
+		<div class="post_info_wrapper <?php echo esc_attr( get_post_format() ); ?>">
 			<?php
 			the_content(
 				sprintf(

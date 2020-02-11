@@ -15,20 +15,18 @@ class Aari_Recentpost_Widget extends WP_Widget {
 			'customize_selective_refresh' => true,
 		);
 
-		parent::__construct( 'Aari_Recentpost_Widget', __( 'aari Latest Posts', 'aari' ), $widget_ops );
+		parent::__construct( 'Aari_Recentpost_Widget', __( 'Aari Latest Posts', 'aari' ), $widget_ops );
 	}
 
 	private $widget_fields = array(
 		array(
-			'label'   => 'Number of posts to show',
 			'id'      => 'numberofpoststo_number',
 			'default' => '5',
 			'type'    => 'number',
 		),
 		array(
-			'label' => 'Display post date?',
-			'id'    => 'displaypostdate_checkbox',
-			'type'  => 'checkbox',
+			'id'   => 'displaypostdate_checkbox',
+			'type' => 'checkbox',
 		),
 	);
 
@@ -37,7 +35,7 @@ class Aari_Recentpost_Widget extends WP_Widget {
 		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'] );
 		}
 
 		$aari_the_query = new WP_Query(
@@ -63,7 +61,7 @@ class Aari_Recentpost_Widget extends WP_Widget {
 					if ( has_post_thumbnail() ) :
 						?>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>">
-							<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'medium' ) ); ?>" alt="<?php echo esc_html( get_the_title() ); ?>" class="img-fluid">
+							<img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'medium' ) ); ?>" alt="<?php the_title_attribute(); ?>" class="img-fluid">
 						</a>
 						<?php
 					endif;
@@ -71,7 +69,7 @@ class Aari_Recentpost_Widget extends WP_Widget {
 				</div>
 
 				<div class="wb">
-					<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
+					<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title_attribute(); ?></a>
 
 					<?php if ( $instance['displaypostdate_checkbox'] ) : ?>
 						<span class="post-date"><?php echo esc_html( get_the_date() ); ?></span>
@@ -101,41 +99,17 @@ class Aari_Recentpost_Widget extends WP_Widget {
 				case 'checkbox':
 					$output .= '<p>';
 					$output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, true, false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" value="1">';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html( $widget_field['label'] ) . '</label>';
+					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html__( 'Number of posts to show', 'aari' ) . '</label>';
 					$output .= '</p>';
 					break;
 				default:
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html( $widget_field['label'] ) . ':</label> ';
-					$output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
+					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html__( 'Display post date?', 'aari' ) . ':</label> ';
+					$output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . esc_attr( $widget_field['type'] ) . '" value="' . esc_attr( $widget_value ) . '">';
 					$output .= '</p>';
 			}
 		}
-
-		// echo $output;
-
-		$arr = array(
-			'p'     => array(),
-			'input' => array(
-				'class'   => array(),
-				'type'    => array(
-					'checkbox' => array(),
-				),
-				'id'      => array(),
-				'name'    => array(),
-				'value'   => array(
-					'true'  => array(),
-					'false' => array(),
-					'1'     => array(),
-					'0'     => array(),
-				),
-				'checked' => array(),
-			),
-			'label' => array(
-				'for' => array(),
-			),
-		);
-		echo wp_kses( $output, $arr );
+		echo $output;
 
 	}
 

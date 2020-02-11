@@ -62,7 +62,7 @@ if ( ! function_exists( 'aari_related_posts' ) ) :
 				$layout .= '<div class="col-lg-4">';
 				$layout .= '<div class="related_posts_item">';
 				if ( $post_thumb ) {
-					$layout .= '<a class="post_card_thumbnail" href="' . esc_url( get_permalink() ) . '" title="' . esc_html( get_the_title() ) . '">' . get_the_post_thumbnail() . '</a>';
+					$layout .= '<a class="post_card_thumbnail" href="' . esc_url( get_permalink() ) . '" title="' . the_title_attribute() . '">' . get_the_post_thumbnail() . '</a>';
 				}
 				$layout .= '<div class="post_card_body">';
 				$layout .= '<h3 class="post_card_title"><a href="' . esc_url( get_permalink() ) . '">' . wp_kses_post( get_the_title() ) . '</a></h3>';
@@ -187,7 +187,7 @@ function aari_copyright() {
 		echo esc_html( substr( $first_date, 0, 4 ) ) . '-' . esc_html( date( 'Y' ) );
 	}
 
-	esc_attr_e( '&nbsp;', 'aari' ) . bloginfo( 'name', 'display' ) . esc_html_e( '. All rights reserved.', 'aari' );
+	esc_html_e( '&nbsp;', 'aari' ) . bloginfo( 'name', 'display' ) . esc_html_e( '. All rights reserved.', 'aari' );
 }
 
 /*

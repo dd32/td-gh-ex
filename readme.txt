@@ -3,15 +3,15 @@ Contributors: emtiaz51921
 Author URI: https://imtiazshamim.com/
 Donate link: https://imtiazshamim.com/contact/
 Requires at least: 4.0
-Tested up to: 5.3
+Tested up to: 5.3.1
 Requires PHP: 5.5
 Stable tag: 2.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
 
 ====Copyright===
-Aari, Copyright 2019 emtiaz51921
+Aari, Copyright 2020 emtiaz51921
 Aari is distributed under the terms of the GNU GPL .
 
 
@@ -147,6 +147,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 
 == Changelog ==
+
+= 2.2.7 - February 11 2020 =
+* Bug fix
 
 = 2.2.6 - December 25 2019 =
 * Bug fix

@@ -32,8 +32,8 @@ while ( have_posts() ) :
 	<!-- main content -->
 	<div id="content_full" class="main_p main_p_v_2 section-padding">
 	<div id="content" class="container">
-		<div class="row <?php echo( get_theme_mod( 'post_layout' ) === 'fullwidth' ? '' : 'sticky-container' ); ?>">
-			<div class="content <?php echo( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'col-lg-12' : 'col-lg-8' ); ?>">
+		<div class="row <?php echo esc_attr( get_theme_mod( 'post_layout' ) === 'fullwidth' ? '' : 'sticky-container' ); ?>">
+			<div class="content <?php echo esc_attr( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'col-lg-12' : 'col-lg-8' ); ?>">
 				<div class="p_content entry_header_small">
 
 					<?php

@@ -114,9 +114,9 @@ if ( ! function_exists( 'aari_single_post_header' ) ) :
 		}
 		$time_string = sprintf(
 			$time_string,
-			esc_html( get_the_date( DATE_W3C ) ),
+			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
-			esc_html( get_the_modified_date( DATE_W3C ) ),
+			esc_attr( get_the_modified_date( DATE_W3C ) ),
 			esc_html( get_the_modified_date() )
 		);
 
@@ -130,7 +130,7 @@ if ( ! function_exists( 'aari_single_post_header' ) ) :
 						'datetime' => array(),
 					),
 				);
-				printf( '<div class="post-subtitle-container"><div class="post-date"><a href="%1$s">%2$s</a></div><div class="post-author"><a href="%3$s">%4$s</a></div></div>', esc_html( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), wp_kses( $time_string, $arr_tags ), esc_url( get_author_posts_url( $get_author_id ) ), esc_html( get_the_author() ) );
+				printf( '<div class="post-subtitle-container"><div class="post-date"><a href="%1$s">%2$s</a></div><div class="post-author"><a href="%3$s">%4$s</a></div></div>', esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), wp_kses( $time_string, $arr_tags ), esc_url( get_author_posts_url( $get_author_id ) ), esc_html( get_the_author() ) );
 			endif;
 		}
 	}
@@ -211,10 +211,10 @@ if ( ! function_exists( 'aari_post_footer_author' ) ) :
 
 		$time_string    = sprintf(
 			$time_string,
-			esc_html( get_the_date( 'c' ) ),
+			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
-		$author_details = '<div class="post_bottom_meta"><div class="half_width"><ul class="post_meta"><li><span class="author"><img src="%1$s" class="avatar" alt>By <a href="%2$s">%3$s</a></span></li><li><span class="date">%4$s</span></li></ul></div></div>';
+		$author_details = '<div class="post_bottom_meta"><div class="half_width"><ul class="post_meta"><li><span class="author"><img src="%1$s" class="avatar" alt> ' . __( 'By', 'aari' ) . ' <a href="%2$s">%3$s</a></span></li><li><span class="date">%4$s</span></li></ul></div></div>';
 
 		$arr_tags = array(
 			'time' => array(
@@ -261,7 +261,7 @@ if ( ! function_exists( 'aari_related_post_ext' ) ) :
 			esc_html( get_the_date() )
 		);
 
-		$cats .= sprintf( '<span class="posted_on"><a href="%1$s">%2$s</a> </span>', get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ), $time_string );
+		$cats .= sprintf( '<span class="posted_on"><a href="%1$s">%2$s</a> </span>', esc_url( get_day_link( get_post_time( 'Y' ), get_post_time( 'm' ), get_post_time( 'j' ) ) ), $time_string );
 
 		return $cats;
 	}

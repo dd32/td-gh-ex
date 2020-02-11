@@ -4,11 +4,11 @@ Theme URI:
 Author: Imtiaz Shamim
 Author URI: https://imtiazshamim.com
 Description: Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to blogs. Aari provides a responsive layout with unlimited colors. It allows you to change the way you introduce posts for pictures and texts for an appealing look. It is modern, clean, colorful and responsive. The feature includes a full-width template, sidebar template, custom widgets, post carousel, image lightbox, etc.
-Version: 2.2.6
+Version: 2.2.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aari
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -45,8 +45,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-
-
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -54,26 +52,11 @@ html {
 }
 body {
 	margin: 0;
-
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
 	display: block;
 }
-audio,
-canvas,
-progress,
-video {
+audio, canvas, progress, video {
 	display: inline-block;
 	vertical-align: baseline;
 }
@@ -81,16 +64,14 @@ audio:not([controls]) {
 	display: none;
 	height: 0;
 }
-[hidden],
-template {
+[hidden], template {
 	display: none;
 }
 a {
 	background-color: transparent;
 	color: #fd4145;
 }
-a:active,
-a:hover {
+a:active, a:hover {
 	outline: 0;
 }
 abbr[title] {
@@ -106,8 +87,7 @@ mark {
 small {
 	font-size: 80%;
 }
-sub,
-sup {
+sub, sup {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
@@ -135,18 +115,11 @@ hr {
 pre {
 	overflow: auto;
 }
-code,
-kbd,
-pre,
-samp {
+code, kbd, pre, samp {
 	font-family: monospace, monospace;
 	font-size: 1em;
 }
-button,
-input,
-optgroup,
-select,
-textarea {
+button, input, optgroup, select, textarea {
 	color: inherit;
 	font: inherit;
 	margin: 0;
@@ -154,40 +127,31 @@ textarea {
 button {
 	overflow: visible;
 }
-button,
-select {
+button, select {
 	text-transform: none;
 }
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
 }
-button[disabled],
-html input[disabled] {
+button[disabled], html input[disabled] {
 	cursor: default;
 }
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
 input {
 	line-height: normal;
 }
-input[type="checkbox"],
-input[type="radio"] {
+input[type="checkbox"], input[type="radio"] {
 	box-sizing: border-box;
 	padding: 0;
 }
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
 	height: auto;
 }
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 fieldset {
@@ -208,8 +172,7 @@ optgroup {
 li > ul, li > ol {
 	padding-left: 2rem;
 }
-ul,
-ol {
+ul, ol {
 	margin: 0 0 28px 0;
 	padding: 0;
 }
@@ -219,33 +182,19 @@ ul {
 ol {
 	list-style: decimal;
 }
-li > ul,
-li > ol {
+li > ul, li > ol {
 	margin: 0 0 0 23px;
 }
-.entry-content li,
-.comment-content li,
-.mu_register li {
+.entry-content li, .comment-content li, .mu_register li {
 	margin: 0 0 0 36px;
 	margin: 0 0 0 2.571428571rem;
 }
-.entry-content ol,
-.comment-content ol,
-.entry-content ul,
-.comment-content ul,
-.mu_register ul {
+.entry-content ol, .comment-content ol, .entry-content ul, .comment-content ul, .mu_register ul {
 	margin: 0 0 24px;
 	margin: 0 0 1.714rem;
 	line-height: 1.714285714;
 }
-.entry-content ul ul,
-.comment-content ul ul,
-.entry-content ol ol,
-.comment-content ol ol,
-.entry-content ul ol,
-.comment-content ul ol,
-.entry-content ol ul,
-.comment-content ol ul {
+.entry-content ul ul, .comment-content ul ul, .entry-content ol ol, .comment-content ol ol, .entry-content ul ol, .comment-content ul ol, .entry-content ol ul, .comment-content ol ul {
 	margin-bottom: 0;
 }
 table {
@@ -253,16 +202,13 @@ table {
 	border-spacing: 0;
 	margin-bottom: 20px;
 }
-td,
-th {
+td, th {
 	padding: 0;
 }
-td,
-th {
+td, th {
 	border: 1px solid #ddd;
 	padding: 8px;
 }
-
 tr:hover {
 	background-color: #ddd;
 }
@@ -271,47 +217,35 @@ th {
 	padding-bottom: 12px;
 	text-align: left;
 }
-.entry-content dl,
-.comment-content dl {
+.entry-content dl, .comment-content dl {
 	margin: 0 24px;
 	margin: 0 1.714285714rem;
 }
-.entry-content dt,
-.comment-content dt {
+.entry-content dt, .comment-content dt {
 	font-weight: bold;
 	line-height: 1.714285714;
 }
-
 dd {
 	margin: 0 1rem 1rem !important;
 }
-
 .format-quote blockquote {
 	border-left: 2px solid #fd4145;
 	margin-left: 0;
 	padding: 0 0 0 1rem;
 }
-
-.entry-content dd,
-.comment-content dd {
+.entry-content dd, .comment-content dd {
 	line-height: 1.714285714;
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
-.entry-content address,
-.comment-content address {
+.entry-content address, .comment-content address {
 	display: block;
 	line-height: 1.714285714;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
 	font-style: italic;
 }
-.entry-content abbr,
-.comment-content abbr,
-.entry-content dfn,
-.comment-content dfn,
-.entry-content acronym,
-.comment-content acronym {
+.entry-content abbr, .comment-content abbr, .entry-content dfn, .comment-content dfn, .entry-content acronym, .comment-content acronym {
 	border-bottom: 1px dotted #666 !important;
 	cursor: help;
 }
@@ -322,15 +256,10 @@ ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
-.entry-content img {}
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+.entry-content img {
+}
+/*-------------------------------------------------------------- # Forms --------------------------------------------------------------*/
+button, input[type="button"], input[type="reset"], input[type="submit"] {
 	border: 1px solid;
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
@@ -341,59 +270,19 @@ input[type="submit"] {
 	line-height: 1;
 	padding: .6em 1em .4em;
 }
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
 }
-button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
+button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, input[type="submit"]:focus {
 	border-color: #aaa #bbb #bbb;
 }
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
 	color: #111;
 }
 select {
@@ -402,10 +291,7 @@ select {
 textarea {
 	width: 100%;
 }
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- # Accessibility --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -420,12 +306,10 @@ textarea {
 	word-wrap: normal !important;
 	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
-
 .screen-reader-text:focus {
 	background-color:#fd4145;
 	border-radius: 3px;
-	box-shadow: 0px 1px 3px 0px
-	rgba(106, 106, 106, 0.6);
+	box-shadow: 0px 1px 3px 0px rgba(106, 106, 106, 0.6);
 	clip: auto !important;
 	clip-path: none;
 	color:#fff;
@@ -441,18 +325,13 @@ textarea {
 	top: 20px;
 	width: auto;
 	z-index: 100000;
-	border: 1px solid
-	#fd4145;
+	border: 1px solid #fd4145;
 }
 /* Do not show the outline on the skip link target. */
-
 #primary[tabindex="-1"]:focus {
 	outline: 0;
 }
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- # Alignments --------------------------------------------------------------*/
 .alignleft {
 	float: left;
 	margin: 7px 28px 28px 0;
@@ -466,8 +345,7 @@ textarea {
 	display: block;
 	margin: 7px auto;
 }
-.alignleft,
-.alignright {
+.alignleft, .alignright {
 	/* Let's work to make this !important unnecessary */
 }
 .alignleft figcaption {
@@ -476,8 +354,7 @@ textarea {
 .alignright figcaption {
 	clear: right;
 }
-.alignleft img,
-.alignleft figcaption {
+.alignleft img, .alignleft figcaption {
 	float: left;
 	margin-right: 1.5em;
 }
@@ -495,12 +372,7 @@ textarea {
 	margin-left: auto;
 	margin-right: auto;
 }
-.entry-content img,
-.comment-content img,
-.widget img,
-img.header-image,
-.author-avatar img,
-img.wp-post-image {
+.entry-content img, .comment-content img, .widget img, img.header-image, .author-avatar img, img.wp-post-image {
 	border-radius: 3px;
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
@@ -508,8 +380,7 @@ img.wp-post-image {
 	height: auto;
 	width: auto;
 }
-img.alignleft,
-.wp-caption.alignleft {
+img.alignleft, .wp-caption.alignleft {
 	margin: 12px 24px 12px 0;
 	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
 }
@@ -535,10 +406,7 @@ article.format-aside .aside {
 	padding: 0px;
 	line-height: 1.6em;
 }
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- # Widgets --------------------------------------------------------------*/
 .widget-area {
 	width: 25%;
 }
@@ -549,50 +417,32 @@ article.format-aside .aside {
 .widget select {
 	max-width: 100%;
 }
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- # Infinite scroll --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
+.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
 	/* Theme Footer (when set to scrolling) */
 	display: none;
 }
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
+/*-------------------------------------------------------------- # Media --------------------------------------------------------------*/
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley {
 	border: none;
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
 }
 /* Make sure embeds and iframes fit their containers. */
-
-embed,
-iframe,
-object {
+embed, iframe, object {
 	max-width: 100%;
 }
 /* Make sure logo link wraps around logo image. */
-
 .custom-logo-link {
 	display: inline-block;
 }
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- ## Captions --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -610,10 +460,7 @@ object {
 .wp-caption-text {
 	text-align: center;
 }
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- ## Galleries --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
 }
@@ -631,9 +478,11 @@ object {
 .gallery .gallery-icon a {
 	width: 100%
 }
-.gallery-caption {} .gallery-columns-2 .gallery-item {
-						max-width: 50%;
-					}
+.gallery-caption {
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
 .gallery-columns-3 .gallery-item {
 	max-width: 33.3333333333%;
 }
@@ -658,9 +507,7 @@ object {
 .gallery-caption {
 	display: block;
 }
-/* =Single audio/video attachment view
--------------------------------------------------------------- */
-
+/* =Single audio/video attachment view -------------------------------------------------------------- */
 .attachment .entry-content .mejs-audio {
 	max-width: 400px;
 }
@@ -670,50 +517,27 @@ object {
 .mejs-container {
 	width: 650px !important;
 }
-/*--------------------------------------------------------------
-# Others
---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------- # Others --------------------------------------------------------------*/
 .main_p .entry_header_small .tagcloud span.namee {
 	font-weight: 500;
 	font-size: 14px;
 }
-
 .main_p .entry_header_small .catloud {
 	margin-bottom: 10px;
 }
-
 figure {
 	width: auto;
 }
-
-
-/*
-figure.wp-block-image.alignwide {
-	margin-left: 0px;
-	margin-right: 0px;
-}
-
-figure.wp-block-image.alignfull {
-	margin-left: 0px;
-	margin-right: 0px;
-}
-*/
-
-
 .post_info_wrapper {
 	display: inline-block;
 	width: 100%;
 }
-
 .post_info_wrapper .page-links {
 	clear: both;
 }
-
 .entry-content .post_bottom_meta {
 	margin-bottom: 20px;
 }
-
 .bypostauthor {
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
@@ -728,12 +552,10 @@ figure.wp-block-image.alignfull {
 	text-transform: none;
 	vertical-align: top;
 }
-
 .navbar-brand:focus {
 	border: 1px dashed #fd4145;
 	box-shadow: 2px 2px 2px #6c6c6c;
 }
-
 .header-overlay .navbar a.navbar-brand:focus > img {
 	border: 1px dashed #fd4145;
 	box-shadow: 3px 3px 5px #626161;

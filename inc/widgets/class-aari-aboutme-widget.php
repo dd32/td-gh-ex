@@ -21,14 +21,12 @@ class Aari_Aboutme_Widget extends WP_Widget {
 
 	private $widget_fields = array(
 		array(
-			'label' => 'Image Upload',
-			'id'    => 'imageupload_media',
-			'type'  => 'media',
+			'id'   => 'imageupload_media',
+			'type' => 'media',
 		),
 		array(
-			'label' => 'Description',
-			'id'    => 'description_textarea',
-			'type'  => 'textarea',
+			'id'   => 'description_textarea',
+			'type' => 'textarea',
 		),
 	);
 
@@ -37,14 +35,16 @@ class Aari_Aboutme_Widget extends WP_Widget {
 		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
+			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'] );
 		}
 
 		$author_image = wp_get_attachment_image_src( $instance['imageupload_media'], 'thumbnail' );
 		// Output generated fields
 		echo '<div class="about-widget">';
-		echo '<img src="' . esc_url( $author_image[0] ) . '" alt="' . esc_html__( 'About Me', 'aari' ) . '" class="rounded-circle">';
-		echo '<p>' . esc_textarea( $instance['description_textarea'] ) . '</p>';
+		if ( $author_image[0] ) {
+			echo '<img src="' . esc_url( $author_image[0] ) . '" alt="' . esc_attr__( 'About Me', 'aari' ) . '" class="rounded-circle">';
+		}
+		echo '<p>' . esc_html( $instance['description_textarea'] ) . '</p>';
 		echo '</div>';
 
 		echo wp_kses_post( $args['after_widget'] );
@@ -102,63 +102,28 @@ class Aari_Aboutme_Widget extends WP_Widget {
 						$media_url = wp_get_attachment_url( $widget_value );
 					}
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html( $widget_field['label'] ) . ':</label> ';
-					$output .= '<input style="display:none;" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
+					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html__( 'Image Upload', 'aari' ) . ':</label> ';
+					$output .= '<input style="display:none;" class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . esc_attr( $widget_field['type'] ) . '" value="' . esc_attr( $widget_value ) . '">';
 					$output .= '<span id="preview' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" style="margin-right:10px;border:2px solid #eee;display:block;width: 100px;height:100px;background-image:url(' . esc_url( $media_url ) . ');background-size:contain;background-repeat:no-repeat;"></span>';
 					$output .= '<button id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" class="button select-media custommedia">' . esc_html__( 'Add Media', 'aari' ) . '</button>';
-					$output .= '<input style="width: 19%;" class="button remove-media" id="buttonremove" name="buttonremove" type="button" value="Clear" />';
+					$output .= '<input style="width: 19%;" class="button remove-media" id="buttonremove" name="buttonremove" type="button" value="' . esc_attr__( 'Clear', 'aari' ) . '" />';
 					$output .= '</p>';
 					break;
 				case 'textarea':
 					$output .= '<p>';
-					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html( $widget_field['label'] ) . ':</label> ';
+					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html__( 'Description', 'aari' ) . ':</label> ';
 					$output .= '<textarea class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" rows="6" cols="6" value="' . esc_attr( $widget_value ) . '">' . esc_html( $widget_value ) . '</textarea>';
 					$output .= '</p>';
 					break;
 				default:
 					$output .= '<p>';
 					$output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '">' . esc_html( $widget_field['label'] ) . ':</label> ';
-					$output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . $widget_field['type'] . '" value="' . esc_attr( $widget_value ) . '">';
+					$output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field['id'] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field['id'] ) ) . '" type="' . esc_attr( $widget_field['type'] ) . '" value="' . esc_attr( $widget_value ) . '">';
 					$output .= '</p>';
 			}
 		}
 
-		$arr = array(
-			'p'        => array(),
-			'input'    => array(
-				'style' => array(),
-				'class' => array(),
-				'id'    => array(),
-				'name'  => array(),
-				'type'  => array(),
-				'value' => array(),
-			),
-			'div'      => array(
-				'id'    => array(),
-				'style' => array(),
-			),
-			'span'     => array(
-				'id'    => array(),
-				'style' => array(),
-			),
-			'button'   => array(
-				'id'    => array(),
-				'class' => array(),
-			),
-			'label'    => array(
-				'for' => array(),
-			),
-			'textarea' => array(
-				'class' => array(),
-				'id'    => array(),
-				'name'  => array(),
-				'rows'  => array(),
-				'cols'  => array(),
-				'value' => array(),
-			),
-		);
-
-		echo wp_kses( $output, $arr );
+		echo $output;
 
 	}
 

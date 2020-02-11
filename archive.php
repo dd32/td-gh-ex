@@ -43,7 +43,7 @@ get_header();
 		================================================== -->
 		<div id="content_full" class="section-padding">
 			<div id="content" class="container">
-				<div class="row sticky-container <?php echo( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
+				<div class="row sticky-container <?php echo esc_attr( get_theme_mod( 'post_layout' ) === 'fullwidth' ? 'justify-content-center' : '' ); ?>">
 
 					<!-- latest-posts -->
 					<div class="content col-lg-8">

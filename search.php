@@ -26,7 +26,7 @@ get_header();
 			<h1>
 				<?php
 				/* translators: %s: search query. */
-				printf( esc_html__( 'Search Results for: <span> %s </span>', 'aari' ), get_search_query() );
+				printf( esc_html__( 'Search Results for:  %s ', 'aari' ), get_search_query() );
 				?>
 			</h1>
 

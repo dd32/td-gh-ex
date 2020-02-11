@@ -327,7 +327,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Load bootstrap navwalker
  */
-require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+require get_template_directory() . '/inc/class-aari-wp-bootstrap-navwalker.php';
 
 /**
  * Load Comments Walker
