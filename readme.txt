@@ -32,7 +32,7 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 == Changelog ==
 
-= 1.09 =
+= 1.10 =
 * Review Findings Fix
 
 = 1.01 =
