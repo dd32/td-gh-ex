@@ -79,6 +79,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.18
+* Removed TGM enternal link
+* Added extra config strings to prevent conflict with SiteOrigin page builder TGM
+* Updated the language .pot file
+
 #### 1.3.17
 * Styling fixes/tweaks
 * Fix js customizer issue

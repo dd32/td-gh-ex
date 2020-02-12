@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.17' );
+define( 'CONICA_THEME_VERSION' , '1.3.18' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -317,7 +317,6 @@ function conica_register_required_plugins() {
             'name'      => __( 'Elementor Page Builder', 'conica' ),
             'slug'      => 'elementor',
             'required'  => false,
-			'external_url' => 'https://kairaweb.com/go/elementor/'
         ),
 		array(
 			'name'      => __( 'WooCommerce', 'conica' ),
@@ -338,6 +337,20 @@ function conica_register_required_plugins() {
 	$config = array(
 		'id'           => 'conica',
 		'menu'         => 'tgmpa-install-plugins',
+		'strings'     => array(
+			'notice_can_install_recommended'  => _n_noop(
+				/* translators: 1: plugin name(s). */
+				'Conica recommends the following plugin: %1$s.',
+				'Conica recommends the following plugins: %1$s.',
+				'conica'
+			),
+			'notice_ask_to_update'            => _n_noop(
+				/* translators: 1: plugin name(s). */
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with Conica: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with Conica: %1$s.',
+				'conica'
+			),
+		),
 	);
 
 	tgmpa( $plugins, $config );

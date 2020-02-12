@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2019-11-22 11:35+0200\n"
+"POT-Creation-Date: 2020-02-12 11:51+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -466,7 +466,7 @@ msgid ""
 "added to the footer"
 msgstr ""
 
-#: customizer/customizer-options.php:457 functions.php:323
+#: customizer/customizer-options.php:457 functions.php:322
 msgid "WooCommerce"
 msgstr ""
 
@@ -804,138 +804,138 @@ msgstr ""
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:327
 msgid "WooCustomizer"
 msgstr ""
 
-#: functions.php:333
+#: functions.php:332
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:392
+#: functions.php:405
 msgid "Thank you for trying out Conica!"
 msgstr ""
 
-#: functions.php:396
+#: functions.php:409
 #, php-format
 msgid "Conica Premium is currently on a %1$s"
 msgstr ""
 
-#: functions.php:396
+#: functions.php:409
 #, php-format
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-theme/conica/#purchase-premium\" "
 "target=\"_blank\">40% sale for only $15</a>"
 msgstr ""
 
-#: functions.php:400
+#: functions.php:413
 msgid ""
 "We're here to help... Please read through our help notes below on getting "
 "started with Conica:"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:416
 msgid "About Conica:"
 msgstr ""
 
-#: functions.php:405
+#: functions.php:418
 msgid ""
 "Conica is a widely used and much loved WordPress theme which gives you lots "
 "of different customization settings... so you can easily change the look of "
 "your site any time."
 msgstr ""
 
-#: functions.php:410
+#: functions.php:423
 #, php-format
 msgid ""
 "Read through our %1$s and %2$s and we'll help you build a professional "
 "website easily."
 msgstr ""
 
-#: functions.php:410
+#: functions.php:423
 msgid ""
 "<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
 "target=\"_blank\">Recommended Resources</a>"
 msgstr ""
 
-#: functions.php:410
+#: functions.php:423
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/\" target=\"_blank\">Kaira "
 "Documentation</a>"
 msgstr ""
 
-#: functions.php:414
+#: functions.php:427
 msgid "Read More About Conica"
 msgstr ""
 
-#: functions.php:418
+#: functions.php:431
 msgid "Using Conica:"
 msgstr ""
 
-#: functions.php:422
+#: functions.php:435
 #, php-format
 msgid ""
 "See our recommended %1$s and how to get ready before you start building your "
 "website after you've %2$s."
 msgstr ""
 
-#: functions.php:422
+#: functions.php:435
 msgid ""
 "<a href=\"https://kairaweb.com/documentation/our-recommended-wordpress-basic-"
 "setup/\" target=\"_blank\">WordPress basic setup</a>"
 msgstr ""
 
-#: functions.php:422
+#: functions.php:435
 msgid ""
 "<a href=\"https://kairaweb.com/wordpress-hosting/\" target=\"_blank\">setup "
 "WordPress Hosting</a>"
 msgstr ""
 
-#: functions.php:426
+#: functions.php:439
 msgid "Recommended Resources"
 msgstr ""
 
-#: functions.php:429
+#: functions.php:442
 msgid ""
 "We've neatly built most of the Conica settings into the WordPress Customizer "
 "so you can see all your changes happen as you built your site."
 msgstr ""
 
-#: functions.php:432
+#: functions.php:445
 msgid "Start Customizing Your Website"
 msgstr ""
 
-#: functions.php:436
+#: functions.php:449
 msgid "Popular FAQ's:"
 msgstr ""
 
-#: functions.php:438
+#: functions.php:451
 msgid ""
 "See our list of popular help links for building your website and/or any "
 "issues you may have."
 msgstr ""
 
-#: functions.php:442
+#: functions.php:455
 msgid "Setup the Conica default slider"
 msgstr ""
 
-#: functions.php:445
+#: functions.php:458
 msgid "Adding Custom CSS to WordPress"
 msgstr ""
 
-#: functions.php:448
+#: functions.php:461
 msgid "Mobile Menu is not working"
 msgstr ""
 
-#: functions.php:451
+#: functions.php:464
 msgid "What does Conica Premium offer extra"
 msgstr ""
 
-#: functions.php:455
+#: functions.php:468
 msgid "See More Documentation"
 msgstr ""
 
-#: functions.php:459
+#: functions.php:472
 msgid "Dismiss Notice"
 msgstr ""
 
