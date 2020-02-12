@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.25' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.26' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -268,7 +268,6 @@ function topshop_register_required_plugins() {
             'name'      => __( 'Elementor Page Builder', 'topshop' ),
             'slug'      => 'elementor',
 			'required'  => false,
-			'external_url' => 'https://kairaweb.com/go/elementor/'
         ),
 		array(
 			'name'      => __( 'WooCommerce', 'topshop' ),
@@ -294,6 +293,20 @@ function topshop_register_required_plugins() {
 	$config = array(
 		'id'           => 'topshop',
 		'menu'         => 'tgmpa-install-plugins',
+		'strings'     => array(
+			'notice_can_install_recommended'  => _n_noop(
+				/* translators: 1: plugin name(s). */
+				'TopShop recommends the following plugin: %1$s.',
+				'TopShop recommends the following plugins: %1$s.',
+				'topshop'
+			),
+			'notice_ask_to_update'            => _n_noop(
+				/* translators: 1: plugin name(s). */
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with TopShop: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with TopShop: %1$s.',
+				'topshop'
+			),
+		),
 	);
 
 	tgmpa( $plugins, $config );

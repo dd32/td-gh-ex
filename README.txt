@@ -70,6 +70,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.26
+* Removed TGM enternal link
+* Added extra config strings to prevent conflict with SiteOrigin page builder TGM
+* Updated the language .pot file
+
 #### 1.3.25
 * Reduced size of admin notice to fit WP guidlines
 * Remove old deprecated code
