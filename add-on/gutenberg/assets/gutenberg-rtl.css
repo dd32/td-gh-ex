@@ -9,7 +9,7 @@
 
 .alignleft.wp-block-pullquote {
 	float: none;
-	margin: 0 0 1.618rem;
+	margin: 0 0 1.75rem;
 	max-width: none;
 	width: 100%;
 }
@@ -25,7 +25,7 @@
 
 .alignright.wp-block-pullquote {
 	float: none;
-	margin: 0 0 1.618rem;
+	margin: 0 0 1.75rem;
 }
 
 .alignfull,
@@ -54,11 +54,11 @@
 .wp-block-gallery,
 .wp-block-image,
 .wp-block-embed {
-	margin-bottom: 1.618rem;
+	margin-bottom: 1.75rem;
 }
 
 .wp-block-audio {
-	margin-bottom: 1.618rem;
+	margin-bottom: 1.75rem;
 }
 
 .wp-block-audio audio {
@@ -71,7 +71,7 @@
 }
 
 .wp-block-quote > p {
-	margin-bottom: 0.809rem;
+	margin-bottom: 0.875rem;
 }
 
 ul.wp-block-gallery,
@@ -112,7 +112,7 @@ ul.blocks-gallery-grid.columns-1 .blocks-gallery-item {
 .widget ul.wp-block-gallery,
 .widget
 ul.blocks-gallery-grid {
-	margin-bottom: 1.618rem;
+	margin-bottom: 1.75rem;
 }
 
 ul.wp-block-gallery li.blocks-gallery-item figure,
@@ -178,7 +178,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-cover {
-	margin-bottom: 1.618rem;
+	margin-bottom: 1.75rem;
 }
 
 .wp-block-cover-image .wp-block-cover__inner-container,
@@ -199,7 +199,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-button .wp-block-button__link {
 	position: relative;
 	display: inline-block;
-	padding: 0.809em 1.2135em;
+	padding: 0.875em 1.3125em;
 	border: none;
 	border-radius: 25px;
 	text-decoration: none;
@@ -233,7 +233,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-pullquote {
-	margin: 0 0 1.618rem;
+	margin: 0 0 1.75rem;
 }
 
 .wp-block-gallery .blocks-gallery-item figure {
@@ -244,24 +244,24 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 	.wp-block-image .alignleft {
 		float: right;
-		margin: 0.4045rem 0 0.809rem 1.618rem;
+		margin: 0.4375rem 0 0.875rem 1.75rem;
 	}
 
 	.alignleft.wp-block-pullquote {
 		float: right;
-		margin: 0.4045rem 0 0.809rem 1.618rem;
-		width: calc( 50% - 1.618rem);
+		margin: 0.4375rem 0 0.875rem 1.75rem;
+		width: calc( 50% - 1.75rem);
 	}
 
 	.wp-block-image .alignright {
 		float: left;
-		margin: 0.4045rem 1.618rem 0.809rem 0;
+		margin: 0.4375rem 1.75rem 0.875rem 0;
 	}
 
 	.alignright.wp-block-pullquote {
 		float: left;
-		margin: 0.4045rem 1.618rem 0.809rem 0;
-		width: calc( 50% - 1.618rem);
+		margin: 0.4375rem 1.75rem 0.875rem 0;
+		width: calc( 50% - 1.75rem);
 	}
 
 	.wp-block-columns.has-2-columns .wp-block-column {

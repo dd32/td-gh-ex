@@ -321,16 +321,16 @@ class Display_Posts {
 						$this->meta_alt();
 						break;
 					case 'thumbnail-small':
-						$this->featured( 'thumbnail', $style, $fetch );
+						$this->featured( 'thumbnail', $instance, $fetch );
 						break;
 					case 'thumbnail-medium':
-						$this->featured( 'bayleaf-medium', $style, $fetch );
+						$this->featured( 'bayleaf-medium', $instance, $fetch );
 						break;
 					case 'thumbnail-large':
-						$this->featured( 'bayleaf-large', $style, $fetch );
+						$this->featured( 'bayleaf-large', $instance, $fetch );
 						break;
 					case 'no-thumb':
-						$this->featured( false, $style, $fetch );
+						$this->featured( false, $instance, $fetch );
 						break;
 					default:
 						do_action( 'bayleaf_display_dp_item', $args );
@@ -433,21 +433,22 @@ class Display_Posts {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $size Thumbanil Size.
-	 * @param str $style Current display post style.
-	 * @param str $fetch Media type to be fetched from post content.
+	 * @param str   $size Thumbanil Size.
+	 * @param array $instance Current display post settings.
+	 * @param str   $fetch Media type to be fetched from post content.
 	 */
-	public function featured( $size, $style = '', $fetch = false ) {
+	public function featured( $size, $instance, $fetch = false ) {
+		$style = $instance['styles'];
 		if ( bayleaf_get_mod( 'bayleaf_thumbnail_placeholder', 'none' ) || has_post_thumbnail() ) {
 
 			if ( $style && false !== strpos( $style, 'slider' ) ) {
 				$featured_content = [
-					[ [ $this, 'thumbnail' ], $size ],
+					[ [ $this, 'thumbnail' ], $size, $instance ],
 				];
 			} else {
 				$featured_content = [
 					[ 'bayleaf_get_template_partial', 'template-parts/meta', 'meta-permalink' ],
-					[ [ $this, 'thumbnail' ], $size ],
+					[ [ $this, 'thumbnail' ], $size, $instance ],
 				];
 			}
 
@@ -463,29 +464,88 @@ class Display_Posts {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param str $size Thumbanil Size.
+	 * @param str   $size Thumbanil Size.
+	 * @param array $instance Current display post settings.
 	 */
-	public function thumbnail( $size ) {
-		if ( ! has_post_thumbnail() ) {
+	public function thumbnail( $size, $instance ) {
+		if ( ! has_post_thumbnail() || ! $size ) {
 			return;
 		}
 
+		$full    = 1280;
 		$class   = '';
+		$attr    = [];
+		$width   = 0;
+		$sizes   = '';
+		$pad     = '';
 		$id      = get_post_thumbnail_id();
 		$imgmeta = wp_get_attachment_metadata( $id );
-		if ( isset( $imgmeta['width'] ) && isset( $imgmeta['height'] ) ) {
-			if ( $imgmeta['width'] > $imgmeta['height'] ) {
-				$class = 'landscape';
-			} else {
-				$class = 'portrait';
+		if ( is_array( $imgmeta ) ) {
+			if ( isset( $imgmeta['height'] ) && $imgmeta['height'] && isset( $imgmeta['width'] ) && $imgmeta['width'] ) {
+				if ( isset( $instance['img_aspect'] ) && 'ncrop' === $instance['img_aspect'] ) {
+					$pad = $imgmeta['height'] / $imgmeta['width'] * 100;
+				}
+			}
+			$size_array = $this->get_image_size_from_meta( $size, $imgmeta );
+			if ( $size_array ) {
+				$width = absint( $size_array[0] );
+			}
+			if ( $width ) {
+				if ( isset( $instance['styles'] ) && false !== strpos( $instance['styles'], 'grid' ) ) {
+					if ( 'bp-grid5' === $instance['styles'] ) {
+						$sizes = '(max-width: 639px) 100vw, (max-width: 1279px) 50vw, (min-width: 1280px) 640px, 100vw';
+					} else {
+						$sizes = '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, (max-width: 1365px) 33vw';
+						if ( isset( $instance['colnum'] ) && absint( $instance['colnum'] ) ) {
+							$lapsize = ceil( $full / absint( $instance['colnum'] ) );
+							$lapsize = sprintf( ', (min-width: 1366px) %spx, 100vw', $lapsize );
+							$sizes   = $sizes . $lapsize;
+						} else {
+							$lapsize = ceil( $full / 3 );
+							$lapsize = sprintf( ', (min-width: 1366px) %spx, 100vw', $lapsize );
+							$sizes   = $sizes . $lapsize;
+						}
+					}
+				}
+				$attr['sizes'] = $sizes;
 			}
 		}
 
 		if ( $size ) {
-			echo '<div class="dp-thumbnail ' . esc_attr( $class ) . '">';
-			the_post_thumbnail( $size );
+			$style = '';
+			if ( empty( $attr ) ) {
+				$attr = '';
+			}
+			if ( $pad ) {
+				$style = 'style="position: relative; padding-top: ' . $pad . '%;"';
+			}
+			echo '<div class="dp-thumbnail ' . esc_attr( $class ) . '" ' . $style . '>';
+			the_post_thumbnail( $size, $attr );
 			echo '</div>';
 		}
+	}
+
+	/**
+	 * Get the image size as array from its meta data.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param str   $size_name  Image size. Accepts any valid image size name.
+	 * @param array $image_meta The image meta data.
+	 */
+	public function get_image_size_from_meta( $size_name, $image_meta ) {
+		if ( 'full' === $size_name ) {
+			return array(
+				absint( $image_meta['width'] ),
+				absint( $image_meta['height'] ),
+			);
+		} elseif ( ! empty( $image_meta['sizes'][ $size_name ] ) ) {
+			return array(
+				absint( $image_meta['sizes'][ $size_name ]['width'] ),
+				absint( $image_meta['sizes'][ $size_name ]['height'] ),
+			);
+		}
+		return false;
 	}
 
 	/**
@@ -681,7 +741,7 @@ class Display_Posts {
 		echo '<div class="dp-meta-alt">';
 		echo get_avatar( get_the_author_meta( 'user_email' ), 42 );
 		echo '<div class="meta-info-alt"><div class="dp-author-alt">';
-		echo esc_html_e( 'Written by', 'bayleaf' );
+		echo esc_html_e( 'By', 'bayleaf' );
 		$this->author();
 		echo '</div>';
 		$this->date();

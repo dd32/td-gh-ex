@@ -174,6 +174,10 @@ function bayleaf_get_icon( $args = [] ) {
 		return esc_html__( 'Please define an SVG icon filename.', 'bayleaf' );
 	}
 
+	// Add icon to icon loader array.
+	$loader = bayleaf\Icon_Loader::get_instance();
+	$loader->add( $args['icon'] );
+
 	// Set defaults.
 	$defaults = [
 		'icon'     => '',

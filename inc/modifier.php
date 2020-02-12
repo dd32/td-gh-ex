@@ -200,10 +200,27 @@ function bayleaf_inline_dynamic_css( $css ) {
 		input[type="button"],
 		input[type="reset"],
 		input[type="submit"],
+		.fc-style .fc-buttons .fc-secondary:hover,
+		.fc-style .fc-buttons .fc-secondary:focus,
 		.ui-slider .ui-slider-range.ui-slider-range,
 		.ui-slider .ui-slider-handle.ui-slider-handle,
 		.ui-widget-content {
 			background-color: %1$s;
+		}
+		a.button:hover,
+		button:hover,
+		input[type="button"]:hover,
+		input[type="reset"]:hover,
+		input[type="submit"]:hover,
+		a.button:focus,
+		button:focus,
+		input[type="button"]:focus,
+		input[type="reset"]:focus,
+		input[type="submit"]:focus,
+		.fc-style .fc-buttons .fc-secondary {
+			background-color: transparent;
+			color: %1$s;
+			border-color: %1$s;
 		}
 		input[type="date"]:focus,
 		input[type="time"]:focus,
@@ -222,21 +239,30 @@ function bayleaf_inline_dynamic_css( $css ) {
 			-webkit-box-shadow: inset 0 0 1px %1$s;
 	        		box-shadow: inset 0 0 1px %1$s;
 		}
-		.site-description {
-			background-color: rgba( %2$s, 0.8 );
-		}
 		.site-footer {
 			background-color: rgba( %2$s, 0.05 );
 		}
+		a.button,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
 		.bp-slider3-nav .is-selected.dp-slider-nav-title {
 			border-color: %1$s;
+		}
+		@media only screen and (min-width: 768px) {
+			.fc-style.txt-light .fc-buttons .fc-primary,
+			.fc-style.txt-light .fc-buttons .fc-secondary:hover,
+			.fc-style.txt-light .fc-buttons .fc-secondary:focus {
+				color: %1$s;
+			}
 		}
 		',
 		$color,
 		$rgb_color
 	);
 
-	if ( $brad && 8 !== $brad ) {
+	if ( 8 !== $brad ) {
 		$css .= sprintf(
 			'
 			.loop-product-wrapper,

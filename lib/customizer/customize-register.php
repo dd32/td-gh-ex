@@ -368,7 +368,7 @@ function bayleaf_sanitize_number( $option, $setting, $attr ) {
 		$option = absint( $option );
 	}
 
-	if ( $option ) {
+	if ( $option || 0 === $option ) {
 		return $option;
 	}
 

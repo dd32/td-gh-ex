@@ -50,9 +50,6 @@ bayleaf_add_markup_for( 'footer_widgets', 'inside_footer' );
 bayleaf_add_markup_for( 'footer_items', 'inside_footer' );
 bayleaf_add_markup_for( 'scroll_to_top', 'inside_footer' );
 
-// Include svg file at the bottom of '<body>' tag.
-add_action( 'wp_footer', 'bayleaf_svg_icons', 9999 );
-
 /*
  * Wrapper functions for displaying site items.
  *
@@ -784,17 +781,4 @@ function bayleaf_footer_text() {
 	$output = str_replace( '[copy_symbol]', '&copy;', $output );
 
 	printf( '<div class="footer-text">%1$s</div>', $output ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-}
-
-/**
- * Add SVG definitions to the site footer.
- *
- * @since 1.0.0
- */
-function bayleaf_svg_icons() {
-	if ( has_nav_menu( 'social' ) ) {
-		include_once get_parent_theme_file_path( 'assets/images/icons-with-social.svg' );
-	} else {
-		include_once get_parent_theme_file_path( 'assets/images/icons.svg' );
-	}
 }

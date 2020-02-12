@@ -54,6 +54,7 @@ function bayleaf_setup() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'bayleaf-small', 320, 9999, false );
+	add_image_size( 'bayleaf-smlmed', 450, 9999, false );
 	add_image_size( 'bayleaf-medium', 720, 9999, false );
 	add_image_size( 'bayleaf-large', 1280, 9999, false );
 
@@ -182,6 +183,7 @@ function bayleaf_setup() {
 	add_theme_support( 'custom-header', $header_args );
 
 	// Load core files. These files provide basic functionality to this theme.
+	require_once get_parent_theme_file_path( 'lib/icons/class-icon-loader.php' );
 	require_once get_parent_theme_file_path( 'lib/multiuse-functions.php' );
 	require_once get_parent_theme_file_path( 'lib/default-filters.php' );
 	require_once get_parent_theme_file_path( 'lib/customizer/customize-frontend.php' );
@@ -426,11 +428,7 @@ function bayleaf_scripts() {
 	$l10n = apply_filters(
 		'bayleaf_localize_script_data',
 		array(
-			'menu'   => 'primary-menu', // ID of nav-menu first UL element.
-			'play'   => bayleaf_get_icon( array( 'icon' => 'play' ) ),
-			'pause'  => bayleaf_get_icon( array( 'icon' => 'pause' ) ),
-			'volume' => bayleaf_get_icon( array( 'icon' => 'volume' ) ),
-			'mute'   => bayleaf_get_icon( array( 'icon' => 'mute' ) ),
+			'menu' => 'primary-menu', // ID of nav-menu first UL element.
 		)
 	);
 

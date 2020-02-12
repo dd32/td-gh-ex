@@ -20,6 +20,11 @@ PHP 5.6+, IE11+, WordPress 4.9+
 
 == Changelog ==
 
+= 1.4.7 =
+* Social Navigation performance improvements.
+* Better social icons.
+* Bayleaf styling improvements.
+
 = 1.4.6 =
 * Error Fix: Sub-Menu reappear after click on any of the Sub Menu links.
 * Error Fix: Bricklayer styling error on smaller screens.
@@ -146,6 +151,7 @@ PHP 5.6+, IE11+, WordPress 4.9+
 * Font Awesome SVG icons http://fontawesome.io/, (C) Dave Gandy, [CC BY 4.0](https://fontawesome.com/license/free)
 * Icomoon SVG icons https://icomoon.io, (C) Roonas, [GPL / CC BY 4.0](https://icomoon.io/icons-icomoon.html)
 * Feather SVG icons https://github.com/feathericons/feather, (C) Colebemis, [MIT](http://opensource.org/licenses/MIT)
+* Simple icons https://github.com/simple-icons/simple-icons, (C) Dan Leech, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * SVG Logos icons https://github.com/gilbarbara/logos, (C) Gil Barbara, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Genericons Neue SVG icons https://github.com/Automattic/genericons-neue, (C) Automattic, [GPL](https://github.com/Automattic/genericons-neue/blob/master/LICENSE.md)
 * Image in screenshot https://pxhere.com/en/photo/1440153, (C) rawpixel.com, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)

@@ -554,7 +554,7 @@ class WidgetLayer {
 					$field  = sprintf( '<p class="%s widget-setting">%s</p>', esc_attr( $setting ), $field );
 					break;
 				case 'checkbox':
-					$field  = sprintf( '<input name="%s" id="%s" type="checkbox" value="yes" %s />', $name, $id, checked( $instance[ $setting ], 'yes' ) );
+					$field  = sprintf( '<input name="%s" id="%s" type="checkbox" value="yes" %s />', $name, $id, checked( $instance[ $setting ], 'yes', false ) );
 					$field .= '<label for="' . $id . '">' . $value['label'] . '</label>';
 					$field .= $description;
 					$field  = sprintf( '<p class="%s widget-small-text">%s</p>', esc_attr( $setting ), $field );

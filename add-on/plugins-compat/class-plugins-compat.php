@@ -344,7 +344,7 @@ class Plugins_Compat {
 					'goo-sans-serif',
 					'Montserrat',
 				),
-				'weights'   => array( '500', '500italic', '700', '700italic' ),
+				'weights'   => array( '500', '500italic', '600', '600italic' ),
 				'selectors' => 'body',
 			),
 			array(
@@ -354,7 +354,7 @@ class Plugins_Compat {
 					'goo-serif',
 					'Poppins',
 				),
-				'weights'   => array( '400', '600', '700', '400italic', '700italic' ),
+				'weights'   => array( '400', '600', '400italic', '600italic' ),
 				'selectors' => 'h1,h2,h3,h4,h5,h6,.site-title',
 			),
 		);
