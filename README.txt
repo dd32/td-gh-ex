@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.38
+* Removed TGM enternal link
+* Added extra config strings to prevent conflict with SiteOrigin page builder TGM
+* Updated the language .pot file
+
 #### 1.1.37
 * Style tweaks/fixes
 * Edit Recent & Categories widgets to be able to exclude specified blog categories

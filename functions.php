@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.37' );
+define( 'AVANT_THEME_VERSION' , '1.1.38' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -370,7 +370,6 @@ function avant_register_required_plugins() {
 			'name'      => __( 'Elementor Page Builder', 'avant' ),
 			'slug'      => 'elementor',
 			'required'  => false,
-			'external_url' => 'https://kairaweb.com/go/elementor/'
 		),
 		array(
 			'name'      => __( 'Contact Form by WPForms', 'avant' ),
@@ -401,6 +400,20 @@ function avant_register_required_plugins() {
 	$config = array(
 		'id'           => 'avant',
 		'menu'         => 'tgmpa-install-plugins',
+		'strings'     => array(
+			'notice_can_install_recommended'  => _n_noop(
+				/* translators: 1: plugin name(s). */
+				'Avant recommends the following plugin: %1$s.',
+				'Avant recommends the following plugins: %1$s.',
+				'avant'
+			),
+			'notice_ask_to_update'            => _n_noop(
+				/* translators: 1: plugin name(s). */
+				'The following plugin needs to be updated to its latest version to ensure maximum compatibility with Avant: %1$s.',
+				'The following plugins need to be updated to their latest version to ensure maximum compatibility with Avant: %1$s.',
+				'avant'
+			),
+		),
 	);
 
 	tgmpa( $plugins, $config );
