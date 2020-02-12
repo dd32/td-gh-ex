@@ -183,7 +183,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 // Load Custom Dashboard
-include get_template_directory() . '/inc/dashboard.php';
+//include get_template_directory() . '/inc/dashboard.php';
 
 
 /**
