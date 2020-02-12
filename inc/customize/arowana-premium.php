@@ -12,7 +12,7 @@ function arowana_premium_setting( $wp_customize ) {
 	Add Buttons
 	=========================================*/
 	
-	class Arowana_WP_Buttons_Customize_Control extends WP_Customize_Control {
+	class WP_Buttons_Customize_Control extends WP_Customize_Control {
 	public $type = 'upgrade_premium';
 
 	   function render_content() {
@@ -42,8 +42,9 @@ function arowana_premium_setting( $wp_customize ) {
 		)	
 	);
 	
-	$wp_customize->add_control( new Arowana_WP_Buttons_Customize_Control( $wp_customize, 'premium_info_buttons', array(
+	$wp_customize->add_control( new WP_Buttons_Customize_Control( $wp_customize, 'premium_info_buttons', array(
 		'section' => 'upgrade_premium',
+		'setting' => 'premium_info_buttons',
     ))
 );
 }

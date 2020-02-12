@@ -2,13 +2,13 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.4.2
+Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.29
-Version: 2.0.29
+Stable tag: 2.0.3
+Version: 2.0.3
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
 
 == Copyright ==
 
@@ -98,103 +98,19 @@ Source: https://github.com/soderlind/class-customizer-toggle-control
 License -  GNU GENERAL PUBLIC LICENSE (https://www.gnu.org/licenses/)
 Source: https://github.com/soderlind/class-customizer-toggle-control
 
-12) Customizer Repeater Control
-=================================================================================================
-License -  MIT LICENSE (https://github.com/cristian-ungureanu/customizer-repeater/blob/production/LICENSE)
-Source: https://github.com/cristian-ungureanu/customizer-repeater
-
-13) Screenshot Image
+12) Screenshot Image
 =================================================================================================
 Screenshot Image
 URL: https://pxhere.com/en/photo/1446785
 Source: https://pxhere.com
 License: CC0 Public Domain
 
-14) Image Folder Images
+13) Image Folder Images
 =================================================================================================
 All other Images have been used in images folder, Created by Nayra Themes. Also they are GPL Licensed and free to use and free to redistribute further.
 
 
 == Changelog ==
-
-@version 2.0.29
-* Added User Icon in Blog Meta
-
-@version 2.0.28
-* Code Improvement in Header
-
-@version 2.0.27
-* Code Improvement
-
-@version 2.0.26
-* Removed Unnecessary Styles
-
-@version 2.0.25
-* Screenshot Updated
-
-@version 2.0.24
-* Customizer Repeater Control Licence Added
-
-@version 2.0.23
-* Tested With WordPress 5.4.2
-
-@version 2.0.22
- * Code Improvement in Footer
- 
-@version 2.0.21
- * Improved wp_body_open Function
-
-@version 2.0.20
-* Tested up to & Requires PHP Fields Added in Style.css
-
-@version 2.0.19
-* Removed Unnecessary Styles
-
-@version 2.0.18
-* Removed Unnecessary Styles
-
-@version 2.0.17
-* Tested With WordPress 5.4.1 
-
-@version 2.0.16
-* Subject Tag Updated
-
-@version 2.0.15
-* Code Improvement
-
-@version 2.0.14
-* Keyboard Navigation Improved
-* Code Improvement
-
-@version 2.0.13
-* Tested With WordPress 5.4 
-
-@version 2.0.12
-* Code Improvement In Blog Section
-
-@version 2.0.11
-* Remove Unnecessary Styles
-
-@version 2.0.10
-* Prefixing Issues Resolved
-
-@version 2.0.9
-* Remove Unnecessary Styles
-
-@version 2.0.8
-* Screenshot Updated
-
-@version 2.0.7
-* Menu Active Style Added
-
-@version 2.0.6
-* Code Optimize In Navigation File
-
-@version 2.0.5
-* Code Optimize In Navigation
-
-@version 2.0.4
-* Remove Unnecessary Style
 
 @version 2.0.3
 * Remove Unnecessary Style
