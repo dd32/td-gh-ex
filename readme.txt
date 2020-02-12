@@ -35,6 +35,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.9 - feb 12 2020 =
+* List item further enhanced.
+
 = 1.0.8 - feb 10 2020 =
 * List item further enhanced, text area increased
 
@@ -63,6 +66,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.0.9 - feb 12 2020 =
+* List item further enhanced.
 
 = 1.0.8 - feb 10 2020 =
 * List item further enhanced, text area increased up to 100%
