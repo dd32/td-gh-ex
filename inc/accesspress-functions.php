@@ -44,9 +44,9 @@ function accesspress_parallax_bxslidercb() {
     global $post;
     $next_link = accesspress_parallax_of_get_option( 'next_link' );
     $accesspress_slider_category = accesspress_parallax_of_get_option( 'slider_category' );
-    $accesspress_slider_full_window = accesspress_parallax_of_get_option( 'slider_full_window' );
+    $accesspress_slider_full_window = accesspress_parallax_of_get_option( 'slider_full_window','yes' );
     $accesspress_show_slider = accesspress_parallax_of_get_option( 'show_slider', 'yes' );
-    $accesspress_show_caption = accesspress_parallax_of_get_option( 'show_caption' );
+    $accesspress_show_caption = accesspress_parallax_of_get_option( 'show_caption','yes' );
     $accesspress_enable_parallax = accesspress_parallax_of_get_option( 'enable_parallax' );
     ?>
 
@@ -78,7 +78,8 @@ function accesspress_parallax_bxslidercb() {
                             ?>
                             <div class="main-slides" <?php echo $image_url; // WPCS: XSS OK.                      ?>>
 
-                                <?php if ( $accesspress_slider_full_window == "no" ) : ?>		
+                                <?php 
+                                if ( $accesspress_slider_full_window == "no" ) : ?>		
                                     <img src="<?php echo esc_url( $image[ 0 ] ); ?>">
                                 <?php endif; ?>
 
