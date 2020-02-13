@@ -14,11 +14,11 @@
 			<div class="row">
 				<div class="<?php if( get_theme_mod( 'automotive_centre_search_hide_show') != '') { ?>col-lg-11 col-md-10 col-6"<?php } else { ?>col-lg-12 col-md-12 <?php } ?> ">
 					<div class="toggle-nav mobile-menu">
-					    <button role="tab" onclick="menu_openNav()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Button','automotive-centre'); ?></span></button>
+					    <button role="tab" onclick="menu_openNav()"><i class="<?php echo esc_html(get_theme_mod('automotive_centre_res_open_menu_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Button','automotive-centre'); ?></span></button>
 					</div>
 					<div id="mySidenav" class="nav sidenav">
 			          	<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'automotive-centre' ); ?>">
-				            <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="menu_closeNav()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Button','automotive-centre'); ?></span></a>
+				            <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="menu_closeNav()"><i class="<?php echo esc_html(get_theme_mod('automotive_centre_res_close_menu_icon','fas fa-times')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Close Button','automotive-centre'); ?></span></a>
 				            <?php 
 				              wp_nav_menu( array( 
 				                'theme_location' => 'primary',

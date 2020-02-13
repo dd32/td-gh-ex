@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.7
+Stable tag: 0.3.8
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -70,6 +70,12 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 * Added settings for responsive media in customizer.
 * Updated language folder.
 
+= 0.3.8 =
+* Added button text option in customizer.
+* Added fontawesome icon option for the icons in customizer.
+* Resolved theme sniffer errors.
+* Updated language folder.
+
 == Resources ==
 
 Automotive Centre WordPress Theme, Copyright 2019 VWthemes
@@ -77,27 +83,40 @@ Automotive Centre is distributed under the terms of the GNU GPL.
 
 Theme is Built using the following resource bundles.
 
-* CSS bootstrap.css
--- Copyright 2011-2018 The Bootstrap Authors
--- https://github.com/twbs/bootstrap/blob/master/LICENSE
-    
-* JS bootstrap.js
--- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
--- https://github.com/twbs/bootstrap/blob/master/LICENSE
+= Bootstrap =
+* Mark Otto
+* copyright 2011-2020, Mark Otto
+* https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
+* License: Code released under the MIT License. v4.4.1
+* https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-* Free to use and abuse under the MIT license.
--- http://www.opensource.org/licenses/mit-license.php
--- font-awesome.css and fonts folder
-Font Awesome 5.0.0 by @davegandy - http://fontawesome.io - @fontawesome
--- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+= Font-Awesome =
+* Davegandy
+* copyright July 12, 2018, Davegandy
+* https://github.com/FortAwesome/Font-Awesome.git
+* License: Font Awesome Free License v5.0.0
+* https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
-* Customizer Pro, Copyright 2016 © Justin Tadlock.
-License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-Source: https://github.com/justintadlock/trt-customizer-pro
+= Customizer Pro =
+* Justin Tadlock
+* Copyright 2016, Justin Tadlock
+* https://github.com/justintadlock/trt-customizer-pro.git
+* License: GNU General Public License v2.0
+* http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
-* Theme Typography, Copyright 2016 © Justin Tadlock.
-License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-Source: https://github.com/justintadlock/customizer-typography
+= Superfish =
+* Joeldbirch
+* Copyright 2013, Justin Tadlock
+* https://github.com/joeldbirch/superfish.git
+* License: Free to use and abuse under the MIT license. v1.7.9
+* https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
+
+= Typography =
+* Justin Tadlock
+* Copyright 2015, Justin Tadlock
+* https://github.com/justintadlock/customizer-typography.git
+* License: GNU General Public License v2.0
+* https://github.com/justintadlock/customizer-typography/blob/master/license.md
 
 * Stocksnap Images, 
 License: CC0 1.0 Universal (CC0 1.0)

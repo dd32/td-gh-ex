@@ -20,6 +20,7 @@ class Automotive_Centre_Social_Widget extends WP_Widget {
 		<div class="widget">
 		<?php
 		
+		$title = $instance['title'];
 		$title = apply_filters('widget_title', esc_html($instance['title']));
 		$facebook = $instance['facebook'];
         $twitter = $instance['twitter'];

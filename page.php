@@ -20,7 +20,7 @@ get_header(); ?>
             if($theme_lay == 'One Column'){ ?>
                 <?php while ( have_posts() ) : the_post();
 
-                    get_template_part( 'template-parts/page-content'); 
+                    get_template_part( 'template-parts/content-page'); 
               
                 endwhile; ?>
         <?php }else if($theme_lay == 'Right Sidebar'){ ?>
@@ -28,7 +28,7 @@ get_header(); ?>
                 <div class="col-lg-8 col-md-8">
                     <?php while ( have_posts() ) : the_post();
 
-                        get_template_part( 'template-parts/page-content'); 
+                        get_template_part( 'template-parts/content-page'); 
                   
                     endwhile; ?>
                 </div>
@@ -44,7 +44,7 @@ get_header(); ?>
                 <div class="col-lg-8 col-md-8">
                     <?php while ( have_posts() ) : the_post();
 
-                        get_template_part( 'template-parts/page-content'); 
+                        get_template_part( 'template-parts/content-page'); 
                   
                     endwhile; ?>
                 </div>
@@ -54,7 +54,7 @@ get_header(); ?>
                 <div class="col-lg-8 col-md-8">
                     <?php while ( have_posts() ) : the_post();
 
-                        get_template_part( 'template-parts/page-content'); 
+                        get_template_part( 'template-parts/content-page'); 
                   
                     endwhile; ?>
                 </div>

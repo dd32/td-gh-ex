@@ -41,9 +41,11 @@
         <hr>
       </div>      
       <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p></div>
-      <div class="more-btn">
-        <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'READ MORE', 'automotive-centre' ); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','automotive-centre' );?></span></a>
-      </div>
+      <?php if( get_theme_mod('automotive_centre_button_text','READ MORE') != ''){ ?>
+        <div class="more-btn">
+          <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_theme_mod('automotive_centre_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','automotive-centre' );?></span></a>
+        </div>
+      <?php } ?>
     </div>
   </div>
 </article>

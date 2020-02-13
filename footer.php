@@ -59,11 +59,11 @@
             <?php if( get_theme_mod( 'automotive_centre_hide_show_scroll',true) != '') { ?>
                 <?php $theme_lay = get_theme_mod( 'automotive_centre_scroll_top_alignment','Right');
                 if($theme_lay == 'Left'){ ?>
-                    <a href="#" class="scrollup left"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automotive-centre' ); ?></span></a>
+                    <a href="#" class="scrollup left"><i class="<?php echo esc_html(get_theme_mod('automotive_centre_scroll_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automotive-centre' ); ?></span></a>
                 <?php }else if($theme_lay == 'Center'){ ?>
-                    <a href="#" class="scrollup center"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automotive-centre' ); ?></span></a>
+                    <a href="#" class="scrollup center"><i class="<?php echo esc_html(get_theme_mod('automotive_centre_scroll_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automotive-centre' ); ?></span></a>
                 <?php }else{ ?>
-                    <a href="#" class="scrollup"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automotive-centre' ); ?></span></a>
+                    <a href="#" class="scrollup"><i class="<?php echo esc_html(get_theme_mod('automotive_centre_scroll_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automotive-centre' ); ?></span></a>
                 <?php }?>
             <?php }?>
       	</div>

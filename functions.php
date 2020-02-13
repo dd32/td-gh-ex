@@ -321,16 +321,16 @@ function automotive_centre_string_limit_words($string, $word_limit) {
 }
 
 //define
-define('AUTOMOTIVE_FREE_THEME_DOC','https://www.vwthemesdemo.com/docs/free-automotive/','automotive-centre');
-define('AUTOMOTIVE_SUPPORT','https://wordpress.org/support/theme/automotive-centre/','automotive-centre');
-define('AUTOMOTIVE_REVIEW','https://wordpress.org/support/theme/automotive-centre/reviews/','automotive-centre');
-define('AUTOMOTIVE_BUY_NOW','https://www.vwthemes.com/themes/automotive-wordpress-theme/','automotive-centre');
-define('AUTOMOTIVE_LIVE_DEMO','https://www.vwthemes.net/vw-automotive-pro/','automotive-centre');
-define('AUTOMOTIVE_PRO_DOC','https://www.vwthemesdemo.com/docs/automotive-centre-pro/','automotive-centre');
-define('AUTOMOTIVE_FAQ','https://www.vwthemes.com/faqs/','automotive-centre');
-define('AUTOMOTIVE_CHILD_THEME','https://developer.wordpress.org/themes/advanced-topics/child-themes/','automotive-centre');
-define('AUTOMOTIVE_CONTACT','https://www.vwthemes.com/contact/','automotive-centre');
-define('AUTOMOTIVE_CREDIT','https://www.vwthemes.com/themes/free-automotive-wordpress-theme/','automotive-centre');
+define('AUTOMOTIVE_FREE_THEME_DOC',__('https://www.vwthemesdemo.com/docs/free-automotive/','automotive-centre'));
+define('AUTOMOTIVE_SUPPORT',__('https://wordpress.org/support/theme/automotive-centre/','automotive-centre'));
+define('AUTOMOTIVE_REVIEW',__('https://wordpress.org/support/theme/automotive-centre/reviews/','automotive-centre'));
+define('AUTOMOTIVE_BUY_NOW',__('https://www.vwthemes.com/themes/automotive-wordpress-theme/','automotive-centre'));
+define('AUTOMOTIVE_LIVE_DEMO',__('https://www.vwthemes.net/vw-automotive-pro/','automotive-centre'));
+define('AUTOMOTIVE_PRO_DOC',__('https://www.vwthemesdemo.com/docs/automotive-centre-pro/','automotive-centre'));
+define('AUTOMOTIVE_FAQ',__('https://www.vwthemes.com/faqs/','automotive-centre'));
+define('AUTOMOTIVE_CHILD_THEME',__('https://developer.wordpress.org/themes/advanced-topics/child-themes/','automotive-centre'));
+define('AUTOMOTIVE_CONTACT',__('https://www.vwthemes.com/contact/','automotive-centre'));
+define('AUTOMOTIVE_CREDIT',__('https://www.vwthemes.com/themes/free-automotive-wordpress-theme/','automotive-centre'));
 
 if ( ! function_exists( 'automotive_centre_credit' ) ) {
 	function automotive_centre_credit(){
