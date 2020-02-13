@@ -84,8 +84,6 @@
 	
 	wp_enqueue_script( 'associationx-fixed-header', get_template_directory_uri(). '/js/fixedheader.js');
 		
-	wp_enqueue_script( 'associationx-rghtsbenadis', get_template_directory_uri(). '/js/rightsbaronoff.js' );	
-		
 	wp_enqueue_style('associationx-bbpress', get_template_directory_uri(). '/css/bbp.css' );
 	
 	if (associationx_get_option('responsive', '1')) wp_enqueue_style('associationx-responsive', get_template_directory_uri(). '/style-responsive.css' ); 	 
