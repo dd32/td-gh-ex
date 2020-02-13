@@ -65,6 +65,9 @@ Other icons and images are created by Themeora and licensed under GPL.
 
 == Changelog ==
 
+v1.2.8
+- Tweak: Added translation string to search box
+
 v1.2.7
 - Tweak: Removed customizer options
 - Tweak: Minor fixes
