@@ -1,6 +1,6 @@
 <?php
 /**
- * Header Layout: Centered Header
+ * Header Layout: Widget Header
  */
 
     $apex_business_fixed_header = '';
@@ -8,7 +8,7 @@
         $apex_business_fixed_header = 'fixed-header';
     }
 ?>
-<div class="main-header header-spacing">
+<div class="main-header header-spacing header-widget">
     <div class="container">
         <div class="row nav-menu layout-center">
             <div class="col-md-12 vertical-center logo-container">
@@ -24,6 +24,7 @@
                     </ul><!-- /.header-widgets -->
                 </div><!-- /.header-widgets-right -->
 
+                <?php get_template_part( 'template-parts/header/menu', 'search' ); ?>
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>
                     <a href="#" class="js-ct-menubar-right menubar-right"><i class="fa fa-bars"></i></a>

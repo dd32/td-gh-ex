@@ -298,6 +298,23 @@ function apex_business_banner_settings_setup( $wp_customize ) {
       )
     );
 
+    $wp_customize->add_setting( 'apex_business_archive_banner_disable_setting', array(
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'absint',
+        'default'           => true
+    ) );
+
+    $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control(
+        $wp_customize, 'apex_business_archive_banner_disable_control',
+            array(
+                'label'       => __( 'Enable Archive Banner?', 'apex-business' ),
+                'section'     => 'apex_business_banner_settings_section',
+                'settings'    => 'apex_business_archive_banner_disable_setting',
+                'type'        => 'ios',
+            )
+        )
+    );
+
     $wp_customize->add_setting(
         'apex_business_archive_banner_font_size_control', array(
             'capability'        => 'edit_theme_options',

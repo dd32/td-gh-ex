@@ -185,7 +185,7 @@
 
                     // If small device and in centered header
                     if ( $( window ).width() < 768 ) {
-                        if ( $( '.menu-container' ).hasClass( 'fixed-header' ) ) {
+                        if ( $( '.menu-container' ).hasClass( 'sticky-header' ) ) {
                             logo_container.addClass( sticky + ' ' + fixed_boxed ).css( 'top', adminbar_height );
                             adjust_height.css( 'margin-bottom', header_c_height-1 );
                             header.removeClass( no_sticky );
@@ -244,9 +244,9 @@
      * Search Icon Switch
      */
     var $search_icon        =   $( '.search-icon' );
-    var $search_dropdown    =   $( '.search-dropdown' );
 
     $search_icon.on( 'click', function( e ) {
+        var $search_dropdown    =   $( this ).next( '.search-dropdown' );
 
         if ( $search_dropdown.hasClass( 'search-hidden' ) || $search_dropdown.hasClass( 'search-default' ) ) {
 

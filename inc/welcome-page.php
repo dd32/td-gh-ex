@@ -51,7 +51,7 @@ function apex_business_about() {
                     </div><!-- /.columns -->
                     <div class="six columns">
                         <?php if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
-                                <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Active', 'apex-business' ); ?></a>
+                                <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Actived', 'apex-business' ); ?></a>
                         <?php } else { ?>
                                 <a class="js-btn-cf7 button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
                         <?php } ?>
@@ -65,26 +65,43 @@ function apex_business_about() {
                     </div><!-- /.columns -->
                     <div class="six columns">
                         <?php if ( is_plugin_active( 'elementor/elementor.php' ) ) { ?>
-                            <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Active', 'apex-business' ); ?></a>
+                            <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Actived', 'apex-business' ); ?></a>
                         <?php } else { ?>
                             <a class="js-btn-elementor button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
                         <?php } ?>
                     </div><!-- /.one columns -->
                 </div><!-- /.row -->
-                <div class="row ct-re-plugin">
-                    <div class="six columns">
-                        <div class="ct-recommended-p">
-                            <p><?php echo esc_html__( 'Elegant Addons For Elementor', 'apex-business' ); ?></p>
-                        </div><!-- /.ct-recommended-p -->
-                    </div><!-- /.columns -->
-                    <div class="six columns">
-                        <?php if ( is_plugin_active( 'elegant-addons-for-elementor/elegant-addons-for-elementor.php' ) ) { ?>
-                            <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Active', 'apex-business' ); ?></a>
-                        <?php } else { ?>
-                            <a class="js-btn-eae button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
-                        <?php } ?>
-                    </div><!-- /.one columns -->
-                </div><!-- /.row -->
+                <?php if( CT_THEME_STATE == 'free' ) : ?>
+                    <div class="row ct-re-plugin">
+                        <div class="six columns">
+                            <div class="ct-recommended-p">
+                                <p><?php echo esc_html__( 'Elegant Addons For Elementor', 'apex-business' ); ?></p>
+                            </div><!-- /.ct-recommended-p -->
+                        </div><!-- /.columns -->
+                        <div class="six columns">
+                            <?php if ( is_plugin_active( 'elegant-addons-for-elementor/elegant-addons-for-elementor.php' ) ) { ?>
+                                <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Actived', 'apex-business' ); ?></a>
+                            <?php } else { ?>
+                                <a class="js-btn-eae button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
+                            <?php } ?>
+                        </div><!-- /.one columns -->
+                    </div><!-- /.row -->
+                <?php else : ?>
+                     <div class="row ct-re-plugin">
+                        <div class="six columns">
+                            <div class="ct-recommended-p">
+                                <p><?php echo esc_html__( 'Elegant Addons For Elementor Premium', 'apex-business' ); ?></p>
+                            </div><!-- /.ct-recommended-p -->
+                        </div><!-- /.columns -->
+                        <div class="six columns">
+                            <?php if ( is_plugin_active( 'elegant-addons-for-elementor-premium/elegant-addons-for-elementor-premium.php' ) ) { ?>
+                                <a class="button button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Installed & Actived', 'apex-business' ); ?></a>
+                            <?php } else { ?>
+                                <a class="js-btn-eaep button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Install Now', 'apex-business' ); ?></a>
+                            <?php } ?>
+                        </div><!-- /.one columns -->
+                    </div><!-- /.row -->
+                <?php endif; ?>
             </div><!-- /.ct-plugin-section -->
             <div class="ct-content">
                 <h3><a href="https://www.crafthemes.com/docs/<?php echo esc_attr( $theme_slug ); ?>-documentation/" target="_blank">    <?php esc_html_e( 'Theme Documentation', 'apex-business' ); ?></a></h3>

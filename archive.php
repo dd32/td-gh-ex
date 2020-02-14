@@ -6,6 +6,18 @@
  */
 get_header();
 ?>
+
+<?php if ( get_theme_mod( 'apex_business_archive_banner_disable_setting', true ) != '' ) : ?>
+<section class="main-banner-area archive-banner">
+    <div class="banner">
+        <div class="color-overlay"></div><!-- /.color-overlay -->
+            <div class="banner-content">
+                <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+            </div><!-- /.banner-content -->
+    </div><!-- /.banner -->
+</section><!-- /.main-banner-area -->
+<?php endif; ?>
+
  <?php if ( have_posts() ) : ?>
     <section id="content"  class="theme-padding">
         <div class="container">

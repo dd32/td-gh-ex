@@ -12,16 +12,16 @@
 
 get_header();
 ?>
+<?php if ( get_theme_mod( 'apex_business_blog_banner_content_setting', esc_html__( 'Blog', 'apex-business' ) ) != '' ) : ?>
 <section class="main-banner-area blog-banner">
     <div class="banner">
         <div class="color-overlay"></div><!-- /.color-overlay -->
-        <?php if ( get_theme_mod( 'apex_business_blog_banner_content_setting', esc_html__( 'Blog', 'apex-business' ) ) != '' ) : ?>
             <div class="banner-content">
                 <h1><?php echo esc_html( get_theme_mod( 'apex_business_blog_banner_content_setting', esc_html__( 'Blog', 'apex-business' ) ) ); ?></h1>
             </div><!-- /.banner-content -->
-        <?php endif; ?>
     </div><!-- /.banner -->
 </section><!-- /.main-banner-area -->
+<?php endif; ?>
 
 <?php if ( have_posts() ) : ?>
 <section id="content" class="theme-padding">

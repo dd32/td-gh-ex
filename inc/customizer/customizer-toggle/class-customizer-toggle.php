@@ -65,7 +65,7 @@ class Apex_Business_Customizer_Toggle_Control extends WP_Customize_Control {
                                                         'strong' => array(),
                                                     );
             ?>
-            <span class="description customize-control-description"><?php echo wp_kses( $this->description, $apex_business_allowed_html ) ?></span>
+            <span class="description customize-control-description"><?php echo wp_kses( $this->description, $apex_business_allowed_html, 'javascript' ) ?></span>
             <?php endif; ?>
         </label>
         <?php

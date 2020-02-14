@@ -21,6 +21,8 @@
                     <?php get_template_part( 'template-parts/header/logo', 'default' ); ?>
                 </div><!-- /.site-logo -->
 
+                <?php get_template_part( 'template-parts/header/menu', 'search' ); ?>
+
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>
                     <a href="#" class="js-ct-menubar-right menubar-right"><i class="fa fa-bars"></i></a>

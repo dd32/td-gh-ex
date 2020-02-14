@@ -17,4 +17,14 @@
     .ct-content-area {
         margin-bottom: $inner-padding;
     }
+    .container {
+        .ct-content-area,
+        .ct-sidebar {
+            width: 100%;
+        }
+    }
+
+    .search-dropdown {
+        width: 100%;
+    }
 }

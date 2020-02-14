@@ -22,6 +22,7 @@
                 </div><!-- /.site-logo -->
 
                 <?php get_template_part( 'template-parts/header/menu', 'main' ); ?>
+                <?php get_template_part( 'template-parts/header/menu', 'search' ); ?>
 
                 <!-- Mobile Menu Icon -->
                 <?php if ( has_nav_menu( 'mobile_menu' ) || has_nav_menu( 'header_menu' ) ) : ?>

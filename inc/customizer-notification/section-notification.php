@@ -73,13 +73,12 @@ class Apex_Business_Customize_Section_Notification extends WP_Customize_Section 
 		if ( ! get_option('dismissed-customizer_get_started', FALSE ) ) {
 			?>
 			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
-
 				<h3 class="accordion-section-title">
 					{{ data.title }}
 				</h3>
 
 				<div class="notice notice-info ct-notice-box js-customizer-notice-get-started-class" data-notice="customizer_get_started" style="position: relative; margin-top:0; margin-bottom: 1px;">
-					<button type="button" id="crafthemes_customizer_get_started" class="notice-dismiss" data-action="dismiss" style="z-index: 1;"></button>
+					<button type="button" id="crafthemes_customizer_get_started" class="notice-dismiss" data-action="dismiss" data-hide="hide-accordian" style="z-index: 1;"></button>
 
 					<h3 style="padding-right: 36px">
 						{{ data.get_started_title }}

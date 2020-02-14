@@ -41,6 +41,8 @@ function apex_business_enqueue_inline_css() {
 
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.spinner:before', 'border-top-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
 
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_primary_color_setting', '.blog-image .post-date', 'background-color', array( APEX_BUSINESS_PRIMARY_COLOR ) );
+
     /******************************************************************************
     * General Settings : Layout Settings
     ******************************************************************************/
@@ -372,7 +374,7 @@ function apex_business_enqueue_inline_css() {
 
     /** Sidebar : Sidebar Width **/
     $apex_business_sidebar_width =  esc_attr( get_theme_mod( 'apex_business_sidebar_width_control' ) );
-    if (   $apex_business_sidebar_width != 33 && !empty( $apex_business_sidebar_width ) ) {
+    if ( $apex_business_sidebar_width != 33 && !empty( $apex_business_sidebar_width ) ) {
         $apex_business_content_width =  ( 100 - $apex_business_sidebar_width );
         $apex_business_custom_css   .= '.ct-sidebar { width: ' . $apex_business_sidebar_width . '%; } ';
         $apex_business_custom_css   .= '.ct-content-area { width: ' . $apex_business_content_width . '%; }';

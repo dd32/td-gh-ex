@@ -16,7 +16,7 @@ function apex_business_register_panels_setup( $wp_customize ) {
     $wp_customize->add_panel( 'apex_business_header_panel', array(
         'capability'    => 'edit_theme_options',
         'title'         => __( 'Header', 'apex-business' ),
-        'priority'      => 10,
+        'priority'      => 2,
     ) );
 
     $wp_customize->add_panel( 'apex_business_footer_panel', array(

@@ -34,5 +34,9 @@ jQuery(document).ready(function ($) {
                 console.log(jqXHR + ' :: ' + textStatus + ' :: ' + errorThrown);
             }
           } );
+
+        if ( $( this ).data( 'hide' ) == 'hide-accordian' ) {
+            $( this ).parents( 'li' ).addClass( 'ct-accordian-hidden' );;
+        }
     } );
 });

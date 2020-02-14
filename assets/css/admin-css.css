@@ -370,3 +370,8 @@ form {
 .ct-content h3 {
     margin-bottom: 10px;
 }
+.ct-push-down {
+    padding-top: 15px;
+    display: inline-block;
+    padding-left: 8px;
+}

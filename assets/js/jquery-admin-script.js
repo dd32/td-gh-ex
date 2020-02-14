@@ -20,6 +20,7 @@
 
       ct_plugin_installer( '.js-btn-cf7', 'contact-form-7' );
       ct_plugin_installer( '.js-btn-eae', 'elegant-addons-for-elementor' );
+      ct_plugin_installer( '.js-btn-eaep', 'elegant-addons-for-elementor-premium' );
       ct_plugin_installer( '.js-btn-elementor', 'elementor' );
     } );
 

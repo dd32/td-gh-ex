@@ -232,7 +232,15 @@ function apex_business_deprecated_hook_admin_notice() {
 
                         <p class="plugin-install-notice"><?php esc_html_e( 'Clicking the button below will install and activate the Crafthemes demo import plugin.', 'apex-business' ) ?></p>
 
-                        <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ) ?></a>
+                        <a class="jquery-btn-get-started button button-primary button-hero ct-button-padding" href="#" data-name="" data-slug=""><?php esc_html_e( 'Get started with Apex Business', 'apex-business' ) ?></a><span class="ct-push-down">
+                        <?php
+                            /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+                            printf(
+                                'or %1$sCustomize theme%2$s</a></span>',
+                                '<a href="' . esc_url( admin_url( 'customize.php' ) ) . '">',
+                                '</a>'
+                            );
+                        ?>
                     </div><!-- /.ct-theme-notice-content -->
                 </div>
             </div>
@@ -292,19 +300,33 @@ function apex_business_install_plugin_custom() {
         $plugin_name = sanitize_text_field( wp_unslash( $_POST['plugin'] ) );
     }
 
+    $api = plugins_api( 'plugin_information', array(
+        'slug'   => sanitize_key( wp_unslash( $plugin_name ) ),
+        'fields' => array(
+            'sections' => false,
+        ),
+    ) );
+
+    // Install plugin if not installed
     if ( ! file_exists( WP_PLUGIN_DIR . '/' . $plugin_name ) ) {
-        $api = plugins_api( 'plugin_information', array(
-            'slug'   => sanitize_key( wp_unslash( $plugin_name ) ),
-            'fields' => array(
-                'sections' => false,
-            ),
-        ) );
+        if ( strpos( $plugin_name , 'premium' ) ) {
+            $premium_plugin_url = 'https://www.crafthemes.com/xml/eae/update/' . $plugin_name . '.zip';
+            $upgrader = new Plugin_Upgrader();
+            $result = $upgrader->install( $premium_plugin_url );
+        } else {
+            $skin     = new WP_Ajax_Upgrader_Skin();
+            $upgrader = new Plugin_Upgrader( $skin );
+            $result   = $upgrader->install( $api->download_link );
+        }
+    }
 
-        $skin     = new WP_Ajax_Upgrader_Skin();
-        $upgrader = new Plugin_Upgrader( $skin );
-        $result   = $upgrader->install( $api->download_link );
-
-        // Activate plugin.
+    // Activate plugin
+    if ( strpos( $plugin_name , 'premium' ) ) {
+        if ( current_user_can( 'activate_plugin' ) && is_plugin_inactive( $plugin_name . '/' . $plugin_name . '.php' ) ) {
+            $eae_free_slug = str_replace( '-premium', '', $plugin_name );
+            activate_plugin( $plugin_name . '/' . $plugin_name . '.php' );
+        }
+    } else {
         $install_status = install_plugin_install_status( $api );
         // If user can activate plugin and if the plugin is not active
         if ( current_user_can( 'activate_plugin', $install_status['file'] ) && is_plugin_inactive( $install_status['file'] ) ) {
@@ -318,3 +340,18 @@ function apex_business_install_plugin_custom() {
         }
     }
 }
+
+/*******************************************************************************
+ *  Remove Archive Pretexts from archive pages
+ *******************************************************************************/
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+    if ( is_category() ) {
+            $title = single_cat_title( '', false );
+        } elseif ( is_tag() ) {
+            $title = single_tag_title( '', false );
+        } elseif ( is_author() ) {
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+        }
+    return $title;
+});

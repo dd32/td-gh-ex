@@ -108,108 +108,11 @@ nav a {
                 }
             }
         }
-
-       // >ul>.menu-item-has-children {
-       //      >ul {
-       //          left: 85%;
-       //          opacity: 0;
-       //          visibility: hidden;
-       //      }
-
-       //      &:hover,
-       //      &:focus {
-       //          >ul {
-       //              opacity: 1;
-       //              visibility: visible;
-       //              @include transform( translate( -10px, -2.4rem ) );
-       //          }
-       //      }
-
-       //      >a {
-       //          &::after {
-       //              content: "\f105";
-       //              display: inline-block;
-
-       //              font: normal normal normal 1.8rem/1 FontAwesome;
-
-       //              right: 0;
-       //              padding-top: 2px;
-       //              position: absolute;
-       //          }
-       //      }
-       //  }
     }
     .menu-item-has-children > ul.is-focused {
         opacity: 1;
         visibility: visible;
     }
-    // .menu-item-has-children {
-    //     position: relative;
-
-    //     li {
-    //         line-height: 2.2;
-    //     }
-
-    //     &:hover,
-    //     &:focus {
-    //         >a {
-    //             &::after {
-    //                 color: $primary-color;
-    //             }
-    //         }
-    //     }
-
-    //     >ul {
-    //         position: absolute;
-    //         top: 125%;
-    //         left: 50%;
-
-    //         background-color: $white-color;
-    //         margin-left: -1.1rem;
-    //         padding: 1.6rem 2.4rem;
-    //         width: 220px;
-
-    //         @include transform( translateY(-2.4rem) );
-    //         @include transition( all .2s );
-    //     }
-
-    //     .to-left {
-    //         left: unset !important; // Override by Js right positioning of rightmost menu item submenus
-    //         right: 25%;
-    //     }
-
-    //     &:hover,
-    //     &:focus {
-    //         >ul {
-    //             left: 50%;
-    //             @include transform( translate( -10px, -2.4rem ) );
-    //         }
-
-    //         >a {
-    //             &::after {
-    //                 color: $primary-color;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // li ul li a {
-    //     color: $dark-color;
-    // }
-    // .menu-item-has-children {
-    //     .sub-menu {
-    //         li {
-    //             a:hover,
-    //             a:focus {
-    //                     color: $primary-color;
-    //                 }
-
-    //             a {
-    //                 color:$secondary-color;
-    //             }
-    //         }
-    //     }
-    // }
 }
 
 /* Mobile Navigation Menu */
@@ -383,7 +286,8 @@ nav a {
 /* Larger than tablet */
 @media (min-width: 768px) {
     .mobile-navigation,
-    .menubar-right {
+    .menubar-right,
+    .logo-container .search-icon {
         display: none !important;
     }
 }
@@ -392,8 +296,13 @@ nav a {
 @media (max-width: 767.98px) {
     .main-nav,
     .nav-button,
-    .header-navigation {
+    .header-navigation,
+    .menu-wrapper .search-icon {
         display: none;
+    }
+
+    .search-icon {
+        margin-right: 3.2rem;
     }
 }
 

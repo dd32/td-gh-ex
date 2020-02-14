@@ -119,6 +119,11 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
             $wp_customize, 'apex_business_sticky_header_switch_control',
             array(
                 'label'       => __( 'Enable Sticky header?', 'apex-business' ),
+                /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+                'description'       =>  sprintf( __( 'Goto %1$sFixed Header%2$s Section to style your Sticky header.', 'apex-business' ),
+                                            '<a href="javascript:wp.customize.section( \'apex_business_fixed_header_section\' ).focus();">',
+                                            '</a>'
+                                        ),
                 'priority'    => 25,
                 'section'     => 'apex_business_header_navigation_section',
                 'settings'    => 'apex_business_sticky_header_switch_setting',
@@ -988,7 +993,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
-    // Mobile Manu customization
+    // Mobile Menu customization
     // Headline Setting
     $wp_customize->add_setting( 'apex_business_header_mobile_header_setting', array(
       'capability'        => 'edit_theme_options',
@@ -996,7 +1001,7 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
     ) );
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'apex_business_header_mobile_header_control', array(
-        'label'           => esc_html__( 'Mobile Manu', 'apex-business' ),
+        'label'           => esc_html__( 'Mobile Menu', 'apex-business' ),
         'section'         => 'apex_business_header_navigation_section',
         'settings'        => 'apex_business_header_mobile_header_setting',
         'type'            => 'hidden',

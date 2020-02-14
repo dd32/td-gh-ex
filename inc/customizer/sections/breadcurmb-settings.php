@@ -8,7 +8,7 @@ function apex_business_bredcurmb_settings_setup( $wp_customize ) {
     $wp_customize->add_section( 'apex_business_breadcurmb_section', array(
         'title'       =>  __( 'Breadcurmb', 'apex-business' ),
         'capability'  => 'edit_theme_options',
-        'priority'    =>  1
+        'priority'    =>  10
     ) );
 
     $wp_customize->add_setting( 'apex_business_breadcurmb_switch_setting', array(

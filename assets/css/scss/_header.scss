@@ -15,6 +15,7 @@
         display: none;
     }
 }
+
 /**
  *
  * #.# Top Bar
@@ -326,6 +327,7 @@
 
 .search-icon {
     display: inline-block;
+    margin-right: 1.5rem;
     padding: 2.2rem 0;
     float: right;
     line-height: 1;
@@ -334,8 +336,8 @@
     cursor: pointer;
 }
 
-.search-icon {
-    margin-right: 1.5rem;
+.header-widget .search-icon {
+    margin-left: auto;
 }
 
 .search-default {
