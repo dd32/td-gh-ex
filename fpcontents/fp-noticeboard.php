@@ -16,7 +16,7 @@ if(!$noticebv && !$newsbv) return;
 				<div class="noticebox" data-sr="enter left, move 60px, over 1s, wait 0.5s">
 					<div class="notbitems">
 						<?php
-						$nbcatid = associationx_get_option('noticecat1', '');						
+						$nbcatid = absint(associationx_get_option('noticecat1', ''));						
 						if($nbcatid):
 							$nbcatname = get_cat_name($nbcatid);
 							$nbcatlink = get_category_link($nbcatid);
@@ -61,7 +61,7 @@ if(!$noticebv && !$newsbv) return;
 						<?php					
 						$newsbnum = 3;
 						foreach (range(1, 3 ) as $newsbnumn ) {
-							$nboxcatid = associationx_get_option('nboxcat'.$newsbnumn, '');						
+							$nboxcatid = absint(associationx_get_option('nboxcat'.$newsbnumn, ''));						
 							if($nboxcatid):
 								$nboxcatname = get_cat_name($nboxcatid);
 								$nboxcatlink = get_category_link($nboxcatid);
@@ -87,7 +87,7 @@ if(!$noticebv && !$newsbv) return;
 											else: 	
 												$thumbimg = $thumbimg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID ));
 											endif;
-											if($thumbimg): $thumbimg ='<img class="nboxtimg" src="'.esc_url($thumbimg[0]).'" alt="'.esc_html(get_the_title()).'" />'; else: $thumbimg =''; $nfimage = 'nofimage'; endif; 
+											if($thumbimg): $thumbimg ='<img class="nboxtimg" src="'.esc_url($thumbimg[0]).'" alt="'.esc_attr(get_the_title()).'" />'; else: $thumbimg =''; $nfimage = 'nofimage'; endif; 
 											$nbittite = '<div class="nbitemtitle '.$nfimage.'"><h4>' .esc_html(get_the_title()). '</h4></div>';										
 											echo associationx_linkandtarget($thumbimg.$nbittite,$nbitlink,$nboxitemlt,'','nbitmplink '.$nboxfpost);
 										endwhile; wp_reset_postdata(); 

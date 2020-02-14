@@ -64,7 +64,7 @@
 	$testiv = associationx_get_option('tes-cln', '');
 	if (is_front_page() && ( $slidebox || $associationx_portfboxv || $testiv ) ):
 		wp_enqueue_style('associationx-slider-css', get_template_directory_uri(). '/css/flexslider.css' ); 
-		wp_enqueue_script( 'associationx-slider-js', get_template_directory_uri(). '/js/jquery.flexslider-min.js' );		
+		wp_enqueue_script( 'associationx-slider-js', get_template_directory_uri(). '/js/jquery.flexslider.js' );		
 		if($associationx_portfboxv) wp_enqueue_style('associationx-portfolio-component-css', get_template_directory_uri(). '/css/portfolio-component.css' );		
 	endif;
 	$stfboxv = associationx_get_option('staffbox', '');	
@@ -80,7 +80,6 @@
 	wp_enqueue_style('font-awesome5', get_template_directory_uri(). '/css/fawsome-all.css' );
 	wp_enqueue_script( 'associationx-modernizr', get_template_directory_uri(). '/js/modernizr.min.js');	
 	wp_enqueue_script( 'associationx-ss-js', get_template_directory_uri(). '/js/smooth-scroll.min.js');
-	wp_enqueue_script( 'associationx-toucheffects-js', get_template_directory_uri(). '/js/toucheffects.js' );	
 	
 	wp_enqueue_script( 'associationx-fixed-header', get_template_directory_uri(). '/js/fixedheader.js');
 		

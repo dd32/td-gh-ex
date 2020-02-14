@@ -6,7 +6,7 @@
 */
 
 $pagev = associationx_get_option('fp-pagecheck', '');
-$fppage = associationx_get_option('fp-page', '');
+$fppage = absint(associationx_get_option('fp-page', ''));
 if(!$pagev || !$fppage ) return;
 ?>
 <!--- ============  SPECIFIC PAGE  =========== ------------>

@@ -93,7 +93,7 @@
         	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>"><?php esc_html_e('View Pricing and Features', 'associationx'); ?></a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo esc_url(get_template_directory_uri()).'/inc/images/bottom.png'; ?>" alt="<?php esc_html_e('D5 Creation Themes', 'associationx'); ?>"/></div>
+        <div class="bottom"><img src="<?php echo esc_url(get_template_directory_uri()).'/inc/images/bottom.png'; ?>" alt="<?php esc_attr_e('D5 Creation Themes', 'associationx'); ?>"/></div>
         
 <div class="floatcntr">
 		<h2 class="spetitle"><?php esc_html_e('World Class, Responsive and Premium WordPress Themes', 'associationx'); ?></h2>
@@ -106,7 +106,7 @@
 <br />
  
 		
-        <img width="100%" src="<?php echo esc_url(get_template_directory_uri()) . '/inc/images/themefeatures.png' ?>" alt="<?php esc_html_e('D5 Creation Themes', 'associationx'); ?>" />
+        <img width="100%" src="<?php echo esc_url(get_template_directory_uri()) . '/inc/images/themefeatures.png' ?>" alt="<?php esc_attr_e('D5 Creation Themes', 'associationx'); ?>" />
 	</div>
     
     <div class="specialmsg">

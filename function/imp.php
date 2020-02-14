@@ -78,7 +78,7 @@
     if( $wargs->theme_location == 'main-menu'):
 	$wcsccount = WC()->cart->get_cart_contents_count();
 	$wclink = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : WC()->cart->get_cart_url();
-	$newmenup = '<li><a class="wccart-icon  fa-shopping-cart" href="'. $wclink . '"> ' . $wcsccount . '</a></li>';
+	$newmenup = '<li><a class="wccart-icon  fa-shopping-cart" href="'. esc_url($wclink) . '"> ' . absint($wcsccount) . '</a></li>';
 	$newmenun = $d5wmenu . $newmenup;
 	return $newmenun;
 	else: 
@@ -174,7 +174,7 @@
 			'. get_avatar( get_the_author_meta('user_email') , 110 ). '
             </div>
             <div class="author-description">
-            <h3 class="author-name">'.$authorname.' ' . esc_html(get_the_author()) .'</h3>
+            <h3 class="author-name">'.esc_html($authorname).' ' . esc_html(get_the_author()) .'</h3>
             
 			' . wp_kses_post(get_the_author_meta('description')). '
             </div>

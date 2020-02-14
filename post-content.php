@@ -25,7 +25,7 @@ do_action('associationx_before_content');
 		<div class="searchinfo narrowwidth">
 			<h1 class="page-title fa-search-plus"><?php echo esc_html__('SEARCH RESULTS', 'associationx'); ?></h1>
 			<h3 class="arc-src"><span><?php echo esc_html__('Search Term', 'associationx'); ?>: </span><?php the_search_query(); ?></h3>
-			<h3 class="arc-src"><span><?php echo esc_html__('Number of Results', 'associationx'); ?>: </span><?php echo $numposts; ?></h3><br />
+			<h3 class="arc-src"><span><?php echo esc_html__('Number of Results', 'associationx'); ?>: </span><?php echo absint($numposts); ?></h3><br />
 		</div>
 		<div class="clear"></div>
 	<?php endif; ?>
@@ -74,7 +74,7 @@ do_action('associationx_before_content');
 				$relpsttitle = esc_html__('Related Posts', 'associationx');
 				if($relpsttitle) $relpsttitle = '<h2 class="related-post-tile">'.$relpsttitle.'</h2>';
 				$relpstcat = get_the_category();
-				$pstarg = $args = array( 'cat' => $relpstcat[0]->cat_ID, 'orderby'  => 'post_date', 'order' => 'DESC', 'post_type' => 'post', 'post_status'  => 'publish', 'ignore_sticky_posts' => 1, 'posts_per_page'  => $numrelpost, 'suppress_filters' => true, 'post__not_in' => $duppost );
+				$pstarg = $args = array( 'cat' => absint($relpstcat[0]->cat_ID), 'orderby'  => 'post_date', 'order' => 'DESC', 'post_type' => 'post', 'post_status'  => 'publish', 'ignore_sticky_posts' => 1, 'posts_per_page'  => $numrelpost, 'suppress_filters' => true, 'post__not_in' => absint($duppost) );
 				$relpst = new WP_Query($pstarg); 
 				if ( $relpst->have_posts() ):					
 					echo $relpsttitle;

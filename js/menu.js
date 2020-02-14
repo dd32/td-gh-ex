@@ -3,12 +3,10 @@ jQuery(document).ready(function(){ 'use strict';
 	jQuery( "#main-menu-con .menu-item-has-children" ).focusout(function() { jQuery(this).removeClass("focusmenu"); });			 
 	jQuery( "#main-menu-con .menu-item-has-children" ).focusin(function() { jQuery(this).addClass("focusmenu"); });			  
 								  
-	//jQuery('.go-top').click(function(event) { event.preventDefault(); jQuery('html, body').animate({scrollTop: 0}, 500); }); 
 	jQuery(window).scroll(function() { if (jQuery(this).scrollTop() > jQuery('#header').outerHeight(true)) { jQuery('.go-top').fadeIn(150); } else { jQuery('.go-top').fadeOut(150); } });
 	jQuery("#main-menu-con .menu-item-home").removeClass("current-menu-item current_page_item");
 	jQuery('#respond .comment-form-author, #respond .comment-form-email, #respond .comment-form-url').addClass('flexboxitem');	
 								  
-	//var scroll = new SmoothScroll('a[href*="#"]', { ignore: 'a[href="#"]' });
 	var scroll = new SmoothScroll('a.smscroll[href*="#"]', { ignore: 'a[href="#"]' });
 
 	var PageclsName = jQuery('#pagename').attr('class');
@@ -43,7 +41,6 @@ jQuery(window).on('load resize', function () { 	'use strict';
 	jQuery('#mobilemenuclose').addClass('mmenuclose');
 											  
 	var docW = jQuery("#site-container").width();
-	//var t = jQuery("#site-container").offset().left;	
 	var fSCbottom = parseInt( jQuery("#site-container").css("marginBottom") );										  
 	jQuery('#header, #footer').css({'width':docW });
 		

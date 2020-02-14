@@ -2,9 +2,9 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2020-02-06 02:19+0600\n"
-"PO-Revision-Date: 2015-10-29 02:02+0600\n"
+"Project-Id-Version: AssociationX\n"
+"POT-Creation-Date: 2020-02-14 23:17+0600\n"
+"PO-Revision-Date: 2020-02-14 23:17+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -280,11 +280,11 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:125 functions.php:131
+#: functions.php:122 functions.php:128
 msgid "Read More"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:150
 msgid "(Untitled)"
 msgstr ""
 
@@ -1009,7 +1009,7 @@ msgstr ""
 msgid "View Pricing and Features"
 msgstr ""
 
-#: inc/theme-about.php:96
+#: inc/theme-about.php:96 inc/theme-about.php:109
 msgid "D5 Creation Themes"
 msgstr ""
 

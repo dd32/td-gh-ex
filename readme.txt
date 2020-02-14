@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-sup
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 5.4
-Stable tag: 1.11
+Stable tag: 1.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 == Changelog ==
 
-= 1.10 =
+= 1.12 =
 * Review Findings Fix
 
 = 1.01 =
@@ -78,6 +78,11 @@ License Url : https://modernizr.com/license
 Source: https://github.com/cferdinandi/smooth-scroll
 License: MIT, Copyright (c) 2019 Chris Ferdinandi
 License Url : https://github.com/cferdinandi/smooth-scroll/blob/master/LICENSE.md
+
+* breadcrumbs.php:
+Source: https://themehybrid.com/plugins/breadcrumb-trail, https://wordpress.org/plugins/breadcrumb-trail/
+License: GPL2, Copyright (c) 2008-2017 Justin Tadlock
+License Url : http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 * 404.jpg:
 Source: https://stocksnap.io/photo/KJRKODUZQN
