@@ -15,8 +15,9 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-blogging' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?> class="main-bodybox">
+  <?php wp_body_open(); ?>
+  
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'advance-blogging' ); ?></a>
     <?php if( get_theme_mod('advance_blogging_topbar_hide',true) != ''){ ?>

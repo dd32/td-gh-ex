@@ -269,7 +269,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'sanitize_hex_color'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_blogging_h1_color', array(
-		'label' => __('H1 Color', 'advance-blogging'),
+		'label' => __('h1 Color', 'advance-blogging'),
 		'section' => 'advance_blogging_typography',
 		'settings' => 'advance_blogging_h1_color',
 	)));
@@ -283,7 +283,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 	    'advance_blogging_h1_font_family', array(
 	    'section'  => 'advance_blogging_typography',
-	    'label'    => __( 'H1 Fonts','advance-blogging'),
+	    'label'    => __( 'h1 Fonts','advance-blogging'),
 	    'type'     => 'select',
 	    'choices'  => $font_array,
 	));
@@ -294,7 +294,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_blogging_h1_font_size',array(
-		'label'	=> __('H1 Font Size','advance-blogging'),
+		'label'	=> __('h1 Font Size','advance-blogging'),
 		'section'	=> 'advance_blogging_typography',
 		'setting'	=> 'advance_blogging_h1_font_size',
 		'type'	=> 'text'
@@ -720,10 +720,27 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//Footer
 	$wp_customize->add_section('advance_blogging_footer',array(
-		'title'	=> __('Footer Text','advance-blogging'),
-		'description'=> __('This section will appear in the .','advance-blogging'),
+		'title'	=> __('Footer Section','advance-blogging'),
+		'description'=> __('This section will appear in the footer.','advance-blogging'),
 		'panel' => 'advance_blogging_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_blogging_footer_widget_layout',array(
+        'default'           => '4',
+        'sanitize_callback' => 'advance_blogging_sanitize_choices',
+    ));
+    $wp_customize->add_control('advance_blogging_footer_widget_layout',array(
+        'type'        => 'radio',
+        'label'       => __('Footer widget layout', 'advance-blogging'),
+        'section'     => 'advance_blogging_footer',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'advance-blogging'),
+        'choices' => array(
+            '1'     => __('One', 'advance-blogging'),
+            '2'     => __('Two', 'advance-blogging'),
+            '3'     => __('Three', 'advance-blogging'),
+            '4'     => __('Four', 'advance-blogging')
+        ),
+    ));
 
 	$wp_customize->add_setting('advance_blogging_footer_copy',array(
 		'default'=> '',
