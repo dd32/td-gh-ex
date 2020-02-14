@@ -1,8 +1,8 @@
 ﻿=== BC Shop ===
 Contributors: athemeart
 Requires at least: 4.0
-Tested up to: 4.9.6
-Stable tag: 1.3
+Tested up to: 5.3.3
+Stable tag: 1.7
 Template:  BC Business Consulting
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -47,6 +47,8 @@ BC Business Consulting  WordPress Theme is distributed under the terms of the GN
 * https://www.pexels.com/photo/black-framed-hippie-sunglasses-701877/ ( CC0 License )
 
 == Changelog ==
+= 1.4 =
+* check with Woocommerce version 3.9.2  
  
 = 1.4 =
 * Woocommerce product filter fixed
