@@ -74,7 +74,7 @@
             <?php
             
             $read_more = sprintf( '<div class="more-link-wrapper"><a class="more-link" href="%1$s">%2$s</a></div>',
-              get_permalink( get_the_ID() ),
+              esc_url(get_permalink( get_the_ID() )),
               __( 'Read more', 'ba-hotel-light' )
             );
             echo wp_kses_post($read_more);

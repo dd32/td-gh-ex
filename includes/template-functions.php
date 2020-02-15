@@ -1221,7 +1221,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 			
 			$room_info .= '
 				<div class="room_page_slideshow">
-					' . $slides . '
+					' . wp_kses($slides, BAH_L_Settings::$wp_allowedposttags) . '
 				</div>
 			';
             
@@ -1242,7 +1242,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               ';
             
             if (apply_filters( 'bahotel_l_option', '', 'room_rating' )){  
-                $room_info .= BABE_Rating::post_stars_rendering($post->ID);
+                $room_info .= wp_kses(BABE_Rating::post_stars_rendering($post->ID), BAH_L_Settings::$wp_allowedposttags);
             }
               
             $room_info .= '
@@ -1322,7 +1322,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				$room_info .= '
 					<div class="room_info_size">
 						'.apply_filters('bahotel_l_icon', '', 'size').'
-                        <label>'.$room_size.'</label>
+                        <label>'.wp_kses($room_size, BAH_L_Settings::$wp_allowedposttags).'</label>
 					</div>
 				';
 			  }
@@ -1605,7 +1605,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				<h2 class="room_sub_title">'.$step_title.'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
-						' . $block_steps . '
+						' . wp_kses( $block_steps, BAH_L_Settings::$wp_allowedposttags) . '
 					</div>
 			    ';
                 
@@ -1618,10 +1618,10 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 $faq_title = isset( $rules_cat['category_meta']['categories_faq_title'] ) && ! empty( $rules_cat['category_meta']['categories_faq_title'] ) ? $rules_cat['category_meta']['categories_faq_title'] : __( 'Questions & Answers', 'ba-hotel-light' );
                 
                 $output .= '
-				<h2 class="room_sub_title">'.$faq_title.'</h2>
+				<h2 class="room_sub_title">'.esc_html($faq_title).'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
-						' . $block_faq . '
+						' . wp_kses( $block_faq, BAH_L_Settings::$wp_allowedposttags) . '
 					</div>
 			';
                 
@@ -1888,7 +1888,8 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                  /* translators: %1$s: Order number */
                  __('Order #%1$s', 'ba-hotel-light'),
                  $args['order_num']
-                 ) . '</h2>'.BABE_html::order_items($order_id).bahotel_l_order_customer_details($order_id) ).'
+                   ) . '</h2>'.BABE_html::order_items($order_id).bahotel_l_order_customer_details($order_id)
+                ).'
               </div>
             </div>
             <div class="col-md-12 col-lg-8 order-first order-lg-last">
@@ -2001,7 +2002,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 			
 			$output .= '
 				<div class="button-mobile-block">
-					<a href="' . $url . '" class="btn button' . $classes . '">' . $title . '</a>
+					<a href="' . esc_url($url) . '" class="btn button' . esc_attr($classes) . '">' . esc_html($title) . '</a>
 				</div>
 			';
 			
@@ -2046,7 +2047,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 						
 						$results = array();
 						
-						$taxonomy_title = $with_title ? ( $style != 'text' ? '<h3 class="bahotel_l_terms_block_title">' . $taxonomy_terms['name'] . '</h3>' : '<label class="bahotel_l_terms_block_title">' . $taxonomy_terms['name'] . ':</label>' ) : '';
+						$taxonomy_title = $with_title ? ( $style != 'text' ? '<h3 class="bahotel_l_terms_block_title">' . $taxonomy_terms['name'] . '</h3>' : '<label class="bahotel_l_terms_block_title">' . esc_html($taxonomy_terms['name']) . ':</label>' ) : '';
 						
 						foreach( $taxonomy_terms['terms'] as $term ) {
 							
@@ -2536,7 +2537,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				
 			 $item_url = BABE_Functions::get_page_url_with_args($post['ID'], $_GET);
 				
-			 $image = '<a href="' . $item_url . '">' . $image_html . '</a>';
+			 $image = '<a href="' . esc_url($item_url) . '">' . $image_html . '</a>';
 				
 				
 			 $price_old = $post['discount_price_from'] < $post['price_from'] ? '<span class="room_info_price_old">' . BABE_Currency::get_currency_price( $post['price_from'] ) . '</span>' : '';
@@ -2556,7 +2557,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               $output .= '
                             <div class="search_res_text">
                                 <div class="search_res_title">
-                                   <h3><a href="' . $item_url . '"><span class="entry-title-border background-yellow"></span> ' . $post['post_title'] . '</a></h3>';                    
+                                   <h3><a href="' . esc_url($item_url) . '"><span class="entry-title-border background-yellow"></span> ' . $post['post_title'] . '</a></h3>';
               
               $output .= bahotel_l_room_info_tags($post['ID'], $info_tags).'
                               </div>

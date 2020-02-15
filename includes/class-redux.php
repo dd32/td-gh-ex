@@ -85,7 +85,7 @@ class BAH_L_Redux {
         
 		if ( isset( $current->response['ba-hotel-light'] ) ) {
 			$message_html = '<span class="update-message">'.esc_html__('New update available!', 'ba-hotel-light').'</span>
-				<span class="update-actions">'.esc_html__('Version ', 'ba-hotel-light').$current->response['ba-hotel-light']['new_version'].': <a href="'.admin_url( 'update-core.php' ).'">'.esc_html__('Update', 'ba-hotel-light').'</a></span>';                
+				<span class="update-actions">'.esc_html__('Version ', 'ba-hotel-light').$current->response['ba-hotel-light']['new_version'].': <a href="'.esc_url(admin_url( 'update-core.php' )).'">'.esc_html__('Update', 'ba-hotel-light').'</a></span>';
 		}
 
 		return $message_html;
@@ -847,7 +847,7 @@ class BAH_L_Redux {
 					'id'         => 'search_form_info',
 					'type'       => 'info',
 					'title'      => esc_html__( 'Setup fields in Search Form Builder', 'ba-hotel-light' ),
-					'desc'    => '<a href="'.get_admin_url().'edit.php?post_type=to_book&page=search_form" target="_blank">'.__( 'Search Form Builder', 'ba-hotel-light' ).'</a>',
+					'desc'    => '<a href="'.esc_url(get_admin_url().'edit.php?post_type=to_book&page=search_form').'" target="_blank">'.__( 'Search Form Builder', 'ba-hotel-light' ).'</a>',
 				),
                 array(
 					'id'         => 'search_form_bg',
