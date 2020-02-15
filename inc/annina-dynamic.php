@@ -160,6 +160,11 @@ function annina_color_primary_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Reddit URL', 'annina')
 	);
+	$socialmedia[] = array(
+	'slug'=>'twitchurl',
+	'default' => '',
+	'label' => __('Twitch URL', 'annina')
+	);
 	
 	foreach( $socialmedia as $annina_theme_options ) {
 		// SETTINGS

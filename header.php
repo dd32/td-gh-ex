@@ -36,6 +36,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 	$vkURL = get_theme_mod('annina_theme_options_vkurl', '#');
 	$soundcloudURL = get_theme_mod('annina_theme_options_soundcloudurl', '');
 	$redditURL = get_theme_mod('annina_theme_options_redditurl', '');
+	$twitchURL = get_theme_mod('annina_theme_options_twitchurl', '');
 	$emailURL = get_theme_mod('annina_theme_options_emailurl', '#');
 ?>
 <?php if ( $hideSearch == 1 ) : ?>
@@ -116,6 +117,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 				
 				<?php if (!empty($redditURL)) : ?>
 					<a href="<?php echo esc_url($redditURL); ?>" title="<?php esc_attr_e( 'Reddit', 'annina' ); ?>"><i class="fa fa-reddit spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Reddit', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($twitchURL)) : ?>
+					<a href="<?php echo esc_url($twitchURL); ?>" title="<?php esc_attr_e( 'Twitch', 'annina' ); ?>"><i class="fa fa-twitch spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>

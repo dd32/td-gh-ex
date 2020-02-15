@@ -3,7 +3,8 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, blog, news
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.7.3
+Stable tag: 1.7.4
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Annina WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -28,15 +29,19 @@ Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry 
 * Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
 * imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
 * Images used in Theme Screenshot
-	1. Pixabay (http://pixabay.com/it/home-office-workstation-ufficio-336373/) Free photos for commercial and personal works
-	2. Pixabay (http://pixabay.com/it/iphone-6-apple-ios-iphone-ios-8-458153/) Free photos for commercial and personal works
+	1. PxHere https://pxhere.com/en/photo/106481 licensed under CC0
+	2. PxHere https://pxhere.com/en/photo/1333672 licensed under CC0
 	3. Pixabay (http://pixabay.com/it/servizio-computer-riparazione-428540/) Free photos for commercial and personal works
-	4. Pixabay (http://pixabay.com/it/notebook-portatile-lavoro-pc-405755/) Free photos for commercial and personal works
-	5. Pixabay (http://pixabay.com/it/tastiera-apple-ingresso-tasti-338510/) Free photos for commercial and personal works
-	6. Pixabay (http://pixabay.com/it/notebook-penne-stilografiche-penna-428293/) Free photos for commercial and personal works
-	7. Pixabay (http://pixabay.com/it/iphone-modello-mockup-mock-up-500291/) Free photos for commercial and personal works
+	4. PxHere https://pxhere.com/en/photo/949610 licensed under CC0
+	5. PxHere https://pxhere.com/en/photo/970472 licensed under CC0
+	6. PxHere https://pxhere.com/en/photo/941491 licensed under CC0
+	7. PxHere https://pxhere.com/en/photo/1476815 licensed under CC0
 
 == Changelog ==
+= Version 1.7.4 =
+* Added Twitch social icon
+* Minor bug fixes
+
 = Version 1.7.3 =
 * Minor bug fixes
 
