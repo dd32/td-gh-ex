@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4
+Stable tag: 0.4.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -79,6 +79,10 @@ Advance Business is a powerful, bold, flexible, dynamic and neatly-structured bu
   * Added slider excerpt length setting in customizer.
   * Added slider image opacity setting in customizer.
   * Resolved theme sniffer errors.
+
+= 0.4.1 =
+  * Added border radius and button Padding option for home page and blog page in customizer.
+  * Added show and hide preloader option in customizer.
 
 == Resources ==
 

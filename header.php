@@ -20,8 +20,14 @@
 <?php wp_body_open(); ?>
 
 <header role="banner">  
+  <?php if(get_theme_mod('advance_business_preloader_option',true)){ ?>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  <?php }?>
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-business' ); ?></a>
-
   <div class="<?php if( get_theme_mod( 'advance_business_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <div id="header">
       <div class="container">
@@ -29,24 +35,24 @@
           <div class="row">
             <div class="logo col-lg-3 col-md-5 col-9">
               <?php if ( has_custom_logo() ) : ?>
-              <div class="site-logo"><?php the_custom_logo(); ?></div>
+                <div class="site-logo"><?php the_custom_logo(); ?></div>
               <?php else: ?>
-              <?php $blog_info = get_bloginfo( 'name' ); ?>
-              <?php if ( ! empty( $blog_info ) ) : ?>
-                <?php if ( is_front_page() && is_home() ) : ?>
-                  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php else : ?>
-                  <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                <?php $blog_info = get_bloginfo( 'name' ); ?>
+                <?php if ( ! empty( $blog_info ) ) : ?>
+                  <?php if ( is_front_page() && is_home() ) : ?>
+                    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                  <?php else : ?>
+                    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                  <?php endif; ?>
                 <?php endif; ?>
+                <?php
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) :
+                  ?>
+                <p class="site-description">
+                  <?php echo esc_html($description); ?>
+                </p>
               <?php endif; ?>
-              <?php
-              $description = get_bloginfo( 'description', 'display' );
-              if ( $description || is_customize_preview() ) :
-                ?>
-              <p class="site-description">
-                <?php echo esc_html($description); ?>
-              </p>
-            <?php endif; ?>
             <?php endif; ?>
             </div>
             <div class="col-lg-8 col-md-7 col-3">

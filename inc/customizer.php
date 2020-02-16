@@ -45,6 +45,67 @@ function advance_business_customize_register($wp_customize) {
 		'panel'    => 'advance_business_panel_id',
 	));
 
+	$wp_customize->add_setting('advance_business_preloader_option',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_preloader_option',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','advance-business'),
+       'section' => 'advance_business_left_right'
+    ));
+
+    // Button
+	$wp_customize->add_section( 'advance_business_theme_button', array(
+		'title' => __('Button Option','advance-business'),
+		'panel' => 'advance_business_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_business_button_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_button_padding_top_bottom',array(
+		'label'	=> __('Top and Bottom Padding','advance-business'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_business_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_business_button_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_button_padding_left_right',array(
+		'label'	=> __('Left and Right Padding','advance-business'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_business_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_business_button_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_business_button_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','advance-business' ),
+		'section'     => 'advance_business_theme_button',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
 	//Sticky Header
 	$wp_customize->add_setting( 'advance_business_sticky_header',array(
       	'sanitize_callback'	=> 'sanitize_text_field'
@@ -216,7 +277,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_paragraph_font_size',array(
@@ -303,7 +364,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('advance_business_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_h1_font_size',array(
@@ -340,7 +401,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('advance_business_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_h2_font_size',array(
@@ -377,7 +438,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('advance_business_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_h3_font_size',array(
@@ -414,7 +475,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('advance_business_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_h4_font_size',array(
@@ -451,7 +512,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('advance_business_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_h5_font_size',array(
@@ -488,7 +549,7 @@ function advance_business_customize_register($wp_customize) {
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('advance_business_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_h6_font_size',array(
@@ -747,15 +808,12 @@ function advance_business_customize_register($wp_customize) {
 
     $wp_customize->add_setting( 'advance_business_excerpt_number', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
 	$wp_customize->add_control( 'advance_business_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-business' ),
 		'section'     => 'advance_business_blog_post',
-		'type'        => 'input',
+		'type'        => 'text',
 		'settings'    => 'advance_business_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
