@@ -146,7 +146,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('aagaz_startup_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_paragraph_font_size',array(
@@ -233,7 +233,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('aagaz_startup_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_h1_font_size',array(
@@ -270,7 +270,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('aagaz_startup_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_h2_font_size',array(
@@ -307,7 +307,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('aagaz_startup_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_h3_font_size',array(
@@ -344,7 +344,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('aagaz_startup_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_h4_font_size',array(
@@ -381,7 +381,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('aagaz_startup_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_h5_font_size',array(
@@ -418,7 +418,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('aagaz_startup_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_h6_font_size',array(
@@ -464,6 +464,57 @@ function aagaz_startup_customize_register( $wp_customize ) {
             'Wide Layout' => __('Wide Layout','aagaz-startup'),
             'Box Layout' => __('Box Layout','aagaz-startup'),
         ),
+	) );
+
+	// Button Settings
+	$wp_customize->add_section( 'aagaz_startup_button_option', array(
+		'title' => 'Button',
+		'panel' => 'aagaz_startup_panel_id',
+	));
+
+	$wp_customize->add_setting('aagaz_startup_top_bottom_padding',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_top_bottom_padding',array(
+		'label'	=> __('Top and Bottom Padding ','aagaz-startup'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'aagaz_startup_button_option',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('aagaz_startup_left_right_padding',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_left_right_padding',array(
+		'label'	=> __('Left and Right Padding','aagaz-startup'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'aagaz_startup_button_option',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'aagaz_startup_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'aagaz_startup_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','aagaz-startup' ),
+		'section'     => 'aagaz_startup_button_option',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
 	) );
 
 	$wp_customize->add_section( 'aagaz_startup_general_option', array(

@@ -12,6 +12,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'aagaz-startup' ); ?></a>
 	<div id="page" class="site">
 		<?php if( get_theme_mod('aagaz_startup_show_hide_topbar',true) != ''){ ?>

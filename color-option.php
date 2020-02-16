@@ -155,3 +155,20 @@
 			$custom_css .='top: 0;';
 		$custom_css .='}';
 	}
+
+	/*------------------------------ Button Settings option-----------------------*/
+
+	$aagaz_startup_top_bottom_padding = get_theme_mod('aagaz_startup_top_bottom_padding');
+	$aagaz_startup_left_right_padding = get_theme_mod('aagaz_startup_left_right_padding');
+	if($aagaz_startup_top_bottom_padding != false || $aagaz_startup_left_right_padding != false){
+		$custom_css .='.post-link a, #slider .readbutton a, .form-submit input[type="submit"], #about .aboutbtn a{';
+			$custom_css .='padding-top: '.esc_html($aagaz_startup_top_bottom_padding).'px; padding-bottom: '.esc_html($aagaz_startup_top_bottom_padding).'px; padding-left: '.esc_html($aagaz_startup_left_right_padding).'px; padding-right: '.esc_html($aagaz_startup_left_right_padding).'px; display:inline-block;';
+		$custom_css .='}';
+	}
+
+	$aagaz_startup_border_radius = get_theme_mod('aagaz_startup_border_radius');
+	if($aagaz_startup_border_radius != false){
+		$custom_css .='.post-link a,#slider .readbutton a, .form-submit input[type="submit"], #about .aboutbtn a{';
+			$custom_css .='border-radius: '.esc_html($aagaz_startup_border_radius).'px;';
+		$custom_css .='}';
+	}
