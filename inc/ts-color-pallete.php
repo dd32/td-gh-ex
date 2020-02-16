@@ -172,6 +172,25 @@
 		$custom_css .='}';
 		}
 
+	/*------------------------------ Button Settings option-----------------------*/
+
+	$advance_it_company_button_padding_top_bottom = get_theme_mod('advance_it_company_button_padding_top_bottom');
+	$advance_it_company_button_padding_left_right = get_theme_mod('advance_it_company_button_padding_left_right');
+	if($advance_it_company_button_padding_top_bottom != false || $advance_it_company_button_padding_left_right != false){
+		$custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"]{';
+			$custom_css .='padding-top: '.esc_html($advance_it_company_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_it_company_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_it_company_button_padding_left_right).'px; padding-right: '.esc_html($advance_it_company_button_padding_left_right).'px; display:inline-block;';
+		$custom_css .='}';
+	}
+
+	$advance_it_company_button_border_radius = get_theme_mod('advance_it_company_button_border_radius');
+	if($advance_it_company_button_border_radius != false){
+		$custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .readbtn a, #comments .form-submit input[type="submit"]{';
+			$custom_css .='border-radius: '.esc_html($advance_it_company_button_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+
+
 
 
 		
