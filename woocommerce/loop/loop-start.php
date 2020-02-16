@@ -18,4 +18,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="row products flex columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+<ul class="row products flex columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">

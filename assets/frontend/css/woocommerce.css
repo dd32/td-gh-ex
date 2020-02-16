@@ -411,6 +411,45 @@ table.shop_table_responsive tr td.download-actions .button {
 	text-decoration: none;
 }
 
+.woocommerce .products.columns-4 .product-category{
+	width: 25%;
+	float: left;
+}
+
+.woocommerce .products.columns-3 .product-category{
+	width: 33.33%;
+	float: left;
+}
+
+.woocommerce .products .product-category{
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+}
+
+.woocommerce .products .product-category a{
+	background-color: #fff;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid #e1e7ec;
+	display: block;
+	text-decoration: none;
+}
+
+.woocommerce .products .product-category h2{
+	font-size: 14px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+    margin-top: 0;
+	padding: 15px 0;
+}
+
+.woocommerce .products .product-category h2 mark{
+	background: transparent;
+    font-size: 14px;
+}
+
 
 /**
 * Single product
@@ -1322,4 +1361,59 @@ p.no-comments {
 
 .products  .collection-inner .count{
 	background: none;
+}
+
+.products .product .button.yith-wcqv-button{
+	display: block;
+    font-size: 0;
+    padding: 0;
+    position: absolute;
+    vertical-align: top;
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+    float: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    -moz-border-radius: 0;
+    top: 7.5px;
+    right: 7.5px;
+    text-align: center;
+    background: #fafafa;
+    border-radius: 100%;
+}
+
+.products .product .button.yith-wcqv-button:before{
+	content: "\f06e";
+    font-family: "FontAwesome";
+    font-size: 15px;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    left: 0;
+    color: #000000;
+}
+
+@media screen and (max-width: 767px) {
+	.woocommerce .products.columns-4 .product-category,
+	.woocommerce .products.columns-3 .product-category{
+		width: 50%;
+		clear: none !important;
+	}
+}
+
+@media screen and (max-width: 572px) {
+	.woocommerce .section-result .woocommerce-result-count{
+		display: block;
+	    width: 100%;
+	    text-align: center;
+	    margin-bottom: 15px;
+	}
+
+	.woocommerce .section-result .woocommerce-ordering{
+		display: block;
+	    width: 100%;
+	    text-align: center;
+	}
 }
