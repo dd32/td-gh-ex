@@ -5,7 +5,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: left-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header
 Tested up to: 5.3
 Requires PHP: 5.6
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 
 Our Masonry theme is based on the popular and efficient grid library, suitable for creatives, photographers or bloggers.
 
@@ -46,14 +46,14 @@ E.g for Facebook - http://facebook.com/yourprofile, for Twitter - http://twitter
 
 * Masonry was designed by Emil Uzelac (https://theme.bz/)
 * Masonry was based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-* Images from Unsplash - https://unsplash.com/license 
-* https://unsplash.com/photos/v4e3JI7DDHI - Author Sebastian Unrau
-* https://unsplash.com/photos/BXasVMRGsuo - Author Eberhard Grossgasteiger
-* https://unsplash.com/photos/F1oeYBKJsdw - Author Keghan Crossland
-* https://unsplash.com/photos/V9nLp8zE_eQ - Author Matthew Brodeur
-* https://unsplash.com/photos/VowIFDxogG4 - Author Luca Bravo
-* https://unsplash.com/photos/oWS_3i0Y5sI - Author Rural Explorer
-* /images/default-image.jpg https://unsplash.com/photos/wiUBNZZkP4Y - Author Shawn Rodgers
+* Images from stocksnap.io - https://stocksnap.io 
+* https://stocksnap.io/photo/CTYDCWIKGP - Pawan Kawan
+* https://stocksnap.io/photo/1CFKSWRR5X - Johannes Plenio
+* https://stocksnap.io/photo/HAOETHJSSF - Dimitri Tyan
+* https://stocksnap.io/photo/U4ML8WV1I2 - Henry Gressmann
+* https://stocksnap.io/photo/LY9CPZ4NDL - Nirzar Pangarkar
+* https://stocksnap.io/photo/MRPOWZS4HM - Stefan Kunze
+* Header image - https://stocksnap.io/photo/LY9CPZ4NDL - Nirzar Pangarkar
 * /fonts/ (C) 2014 Stephen Hutchings http://typicons.com/ released under the SIL Open Font License.
 
 == Copyright ==
@@ -63,6 +63,9 @@ Masonry is distributed under the terms of the GNU GPL
 
 
 == Changelog ==
+
+= 17/02/2020 =
+* Change all image links and screenshot
 
 = 31/01/2020 - (v1.3.2)
 * Added images link 
