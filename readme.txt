@@ -4,7 +4,7 @@ Contributors: Thememattic
 
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -75,6 +75,9 @@ Best Education is distributed under the terms of the GNU GPL
 = 1.0.8 - Feb 04 2020 =
 = Removed One Click Demo Import =
 
+= 1.0.9 - Feb 17 2020 =
+= Removed Theme About Page =
+
 == Credits ==
 
 Underscores:
@@ -131,6 +134,11 @@ Theia Sticky Sidebar
 Author: Liviu Cristian Mirea Ghiban
 Source: https://github.com/WeCodePixels/theia-sticky-sidebar
 License: Licensed under the MIT license
+
+TGM-Plugin-Activation:
+Author: Thomas Griffin (thomasgriffinmedia.com)
+URL:  https://github.com/TGMPA/TGM-Plugin-Activation
+License: GNU General Public License, version 2
 
 == Image Used ==
 https://pixabay.com/en/johns-hopkins-university-gilman-hall-1590925/

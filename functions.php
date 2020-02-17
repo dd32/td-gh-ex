@@ -205,14 +205,6 @@ require get_template_directory().'/inc/customizer/customizer.php';
 require get_template_directory().'/inc/jetpack.php';
 
 /**
- * Load about.
- */
-if (is_admin()) {
-	require_once trailingslashit(get_template_directory()).'inc/about/class.about.php';
-	require_once trailingslashit(get_template_directory()).'inc/about/about.php';
-}
-
-/**
  * Customizer control scripts and styles.
  *
  * @since 1.0.5
