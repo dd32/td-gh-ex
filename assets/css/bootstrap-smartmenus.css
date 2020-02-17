@@ -204,11 +204,12 @@ a.bg-light:focus, a.bg-light:hover {
 	}
 	.site-branding-text, .navbar.header-fixed-top .site-branding-text {
 		display: block;
-		margin-top: 1.238rem;
+		margin-top: 0.700rem;
 		margin-right: 0rem;
 	}
 	.navbar-light .navbar-toggler {
 		margin-top: 1.238rem;
+		margin-bottom: 0.800rem;
 	}
 	.row.align-self-center .align-self-center {
 		text-align: center;
