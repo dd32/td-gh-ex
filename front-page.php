@@ -28,8 +28,8 @@ if (esc_html(newspress_get_option('fpostex', '0')) == '1' || 'posts' != get_opti
 	'suppress_filters' => true );
  
  $newspress_query = new WP_Query($newspress_args); $newspress_counter = 0;
- if ($newspress_query->have_posts()) : 
- while ( $newspress_query->have_posts()) : $newspress_query->the_post(); $newspress_counter++; 
+ if ($newspress_query->have_posts()) : $numpost = $newspress_query->found_posts;
+ while ( $newspress_query->have_posts()) : $newspress_query->the_post();  $newspress_counter++; 
  
  if ( $newspress_counter == 1 || $newspress_counter == 2 ): ?>
  <!-- Start of Slide Container -->  
@@ -57,7 +57,7 @@ if (esc_html(newspress_get_option('fpostex', '0')) == '1' || 'posts' != get_opti
                 </p>
   
 			</div>
- <?php if ( $newspress_counter == 2 ): ?>
+ <?php if ( $newspress_counter == 2 || $numpost == 1  ): ?>
 		</div>
 	</div>
  </div> 
@@ -93,7 +93,7 @@ if (esc_html(newspress_get_option('fpostex', '0')) == '1' || 'posts' != get_opti
  		</div>
     </div>
     <?php if ( $newspress_counter == 5 || $newspress_counter == 7  ): ?><div class="clear"> </div><?php endif; ?>
- <?php if ( $newspress_counter == 9 ): ?>
+ <?php if ( $newspress_counter == 9 || $newspress_counter == $numpost ): ?>
  </div>
  <?php endif; ?>
  <?php endif; ?>
@@ -169,5 +169,4 @@ endforeach; wp_reset_postdata(); ?>
 
 <?php endif; if (esc_html(newspress_get_option('fpostex', '0')) != '1' ): get_template_part( 'front-page-content' ); endif; ?>
 
-<?php get_footer(); ?>
-
+<?php get_footer();

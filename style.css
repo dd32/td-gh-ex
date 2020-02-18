@@ -7,7 +7,7 @@ Author URI: https://d5creation.com/
 
 Description: NewsPress is a Multipurpose WordPress Theme. The best use can be operating News Media, News Paper, Online News Agency etc.  Multi Layer Slider will give extra impression to your readers. Easy and Flexible NewsPress Theme is fully RESPONSIVE which can be fit within any screen of devices. NewsPress Extend is one of the most popular News Themes. You can find the Demo Here: http://demo.d5creation.com/themes/?theme=NewsPress
 
-Version: 2.5
+Version: 2.7
 
 Tags: two-columns, right-sidebar, blog, news, entertainment, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, featured-images, footer-widgets, rtl-language-support
 
@@ -70,12 +70,17 @@ img{max-width:100%;border:0 none}
 #container,#header{ margin:0 auto;padding:0 2%;width:96% }
 #top-menu-container{ height:30px;padding:7px 2%;width:96% }
 
-#searchform { height: 35px; overflow: hidden; width: 100%; max-width: 550px; display: inline-flex;}
-#top-menu-container #searchform { width: auto; float:right; display: inline-block; margin-top: -3px; }
-#searchsubmit { background: #111111 url("images/search.png") no-repeat scroll center center; border-radius: 0 3px 3px 0; box-shadow: none; font-size: 16px; font-weight: normal; margin: 0 0 0 -5px; padding: 4px 20px; text-indent: -90000px; vertical-align: top; height: 100%; width: 45px;  }
-input#s { border-radius: 3px 0 0 3px; vertical-align: top; max-width: 100%; min-width: 100px; height: 100%; padding: 0 10px; transition: all .4s; width: calc(100% - 40px); }
-#top-menu-container input#s { background: #555555; color: #ffffff; max-width: none; min-width: 100px; width: 120px; border: 1px solid #333333; }
-#top-menu-container input#s:focus { width: 210px; color: #ffffff; background: #777777; box-shadow: none; }
+#searchform, #searchform *, .search-form, .search-form *{ box-sizing: border-box; }
+#searchform, .search-form { height: 35px; overflow: hidden; width: 100%; max-width: 550px; display: inline-flex;}
+#top-menu-container #searchform, #top-menu-container .search-form { width: auto; float: right; margin-top: -2px; }
+#searchsubmit, .search-form .search-submit { background: #111111 url("images/search.png") no-repeat scroll center center; border-radius: 0 3px 3px 0; box-shadow: none; font-size: 16px; font-weight: normal; margin: 0 0 0 -5px; padding: 4px 20px; text-indent: -90000px; vertical-align: top; height: 100%; width: 55px; background-size: auto 70%;
+background-position: center center;  }
+input#s, .search-form .search-field { border-radius: 3px 0 0 3px; vertical-align: top; max-width: 100%; min-width: 100px; height: 100%; padding: 5px 10px; transition: all .4s; width: calc(100% - 50px); }
+#top-menu-container input#s, #top-menu-container .search-form .search-field { background: #555555; color: #ffffff; max-width: none; min-width: 100px; width: 120px; border: 1px solid #333333; }
+#top-menu-container input#s:focus, #top-menu-container .search-form .search-field:focus { width: 210px; color: #ffffff; background: #777777; box-shadow: none; }
+
+.search-form label{ margin: 0; width: calc(100% - 50px); }
+.search-form .search-field{ width: 100%; }
 
 #header{min-height:100px}
 #header-content{display:table;width:100%}
@@ -119,7 +124,11 @@ h4.fcpt li{list-style:square inside none}
 #social a::before{content:'\f408';display:inline-block;padding:0 7px;font-family:'Genericons';font-size:20px;vertical-align:top;-webkit-font-smoothing:antialiased}
 #social a:hover:before{font-size:21px}
 #social a[href*="wordpress.org"]::before,#social a[href*="wordpress.com"]::before{content:'\f205';color:#09b6db}
+#social a[href*="facebook.com"]::before{content:'\f204';color:#455afa}
+#social a[href*="twitter.com"]::before{content:'\f202';color:#3cf}
 #social a[href*="dribbble.com"]::before{content:'\f201';color:#ea4c89}
+#social a[href*="plus.google.com"]::before{content:'\f218';color:#f32e0d}
+#social a[href*="pinterest.com"]::before{content:'\f210';color:#c8232c}
 #social a[href*="github.com"]::before{content:'\f200';color:#555}
 #social a[href*="tumblr.com"]::before{content:'\f214';color:#455afa}
 #social a[href*="youtube.com"]::before{content:'\f213';color:#F90909}
@@ -164,20 +173,19 @@ embed{max-width:100%}
 #newspress-top-menu li a:hover { color: #ffffff; }
 #newspress-top-menu ul ul {display: none;}
 
-.mobile-menu { background: rgba(250, 10, 10, .9);  color: #eeeeee; padding: 3px 20px; text-align: left; clear: both; font-size: 15px; font-weight: bold; cursor: pointer; display: none; margin: 10px 0 0; width: 205px; position: relative; border-bottom: 1px solid rgba(255,255,255,.3)  }
+.mobile-menu { background: rgba(250, 10, 10, .9);  color: #eeeeee; padding: 3px 20px; text-align: left; clear: both; font-size: 15px; font-weight: bold; cursor: pointer; display: none; margin: 10px 0 0; width: 205px; position: relative; border-bottom: 1px solid rgba(255,255,255,.3); align-items: center; }
 #main-menu-con { font-family: 'Oswald',Impact,Helvetica,SolaimanLipi,Genericonssans-serif; float: left; width: 100%; padding: 0 25px; background: #cccccc; 	text-align: center; background-image: linear-gradient(to bottom, #ffffff 0%, #cccccc 100%, #f6f6f6 100%); box-sizing: border-box; }
 
 #main-menu-con ul { list-style: none outside none; padding: 0; margin: 0; display: inline-block; 	vertical-align: middle; border-left: 1px solid #dddddd; }
-#main-menu-con li { float: left; position: relative; transition: all .5s; }
+#main-menu-con li { float: left; position: relative; transition: all .25s; }
 #main-menu-con a { display: block; font-size: 13px; padding: 10px 15px; position: relative; text-align: center; text-transform: uppercase; color: #555555; border-right: 1px solid #dddddd; font-weight: 300; }
 #main-menu-con li ul { float: left; position: relative; margin: 0; }
-#main-menu-con ul ul, .sub-menu, .sub-menu ul ul { display: none; float: left; left: 0; position: absolute; font-family: "Lucida Sans Unicode", "Lucida Grande",SolaimanLipi,sans-serif; z-index: 10000; border-bottom: 5px solid #111111; 	border-radius: 0 0 5px 5px; border-left: none; }
+#main-menu-con ul ul, .sub-menu, .sub-menu ul ul { display: none; float: left; left: 0; position: absolute; font-family: "Lucida Sans Unicode", "Lucida Grande",SolaimanLipi,sans-serif; z-index: 10000; border-bottom: 5px solid #111111; 	border-radius: 0 0 5px 5px; border-left: none; background: rgba(250, 10, 10, .75); }
 #main-menu-con ul li ul li { margin:0; }
 #main-menu-con ul ul ul { left: 100%; top: 0; z-index: 999; }
-#main-menu-con ul ul a  { padding: 5px 10px; width: 210px; text-align: left; text-transform: none; border-left: none; border-bottom: 1px dotted #bbbbbb;
-color: #eeeeee;	 }
+#main-menu-con ul ul a  { padding: 5px 10px; width: 210px; text-align: left; text-transform: none; border-left: none; border-bottom: 1px dotted #bbbbbb; color: #eeeeee;	 }
 #newspress-main-menu ul li:hover > ul { display: block; }
-#newspress-main-menu a:hover, #main-menu-con .current-menu-item > a, #main-menu-con .selected a, #main-menu-con .current-menu-ancestor > a, #main-menu-con .current_page_item > a, #main-menu-con .current_page_ancestor > a { background: rgba(250, 10, 10, .9); color: #ffffff; }
+#newspress-main-menu a:hover, #main-menu-con .current-menu-item > a, #main-menu-con .selected a, #main-menu-con .current-menu-ancestor > a, #main-menu-con .current_page_item > a, #main-menu-con .current_page_ancestor > a { background: rgba(250, 10, 10, .75); color: #ffffff; }
 #main-menu-con ul ul a:hover, #main-menu-con ul ul .current-menu-item > a, #main-menu-con ul ul .current-menu-ancestor > a, #main-menu-con ul ul .current_page_item > a, #main-menu-con ul ul .current_page_ancestor > a { background: rgba(85, 85, 85, .9); }
 #main-menu-con .menu-item-has-children a, #main-menu-con .page_item_has_children a { padding-right: 25px;  }
 #main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after, .mobile-menu:after { content: '\f431'; right:5px; position: absolute; top: 50%; transform:translate(0px, -50%); font-family: Genericons; font-size: 17px; }
@@ -361,7 +369,7 @@ h1.notfound{background:#FFF;color:#F90909;font-size:70px;margin:100px auto;paddi
 #respond .form-submit{margin:12px 0}
 #respond .form-submit input{font-size:14px;width:auto}
 ul,li,img,a,p,ol,textarea,input,button,h1,h2,h3,h4,h5,h6{transition:all 1.5s;-moz-transition:all 1.5s;-o-transition:all 1.5s;-webkit-transition:all 1.5s}
-.bx-wrapper li,.bx-wrapper a,.breakingnews li,.breakingnews p{transition:none;-moz-transition:none;-o-transition:none;-webkit-transition:none}
+.bx-wrapper li,.bx-wrapper a,.breakingnews li,.breakingnews p, #main-menu-con ul {transition:none;-moz-transition:none;-o-transition:none;-webkit-transition:none}
 
 .go-top{position:fixed;bottom:10px;right:10px;display:none}
 .go-top::before{content:'\f432';font-family:'Genericons';float:right;background:#111;border-radius:50px;font-size:25px;padding:1px 9px;opacity:.7}

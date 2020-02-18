@@ -7,7 +7,7 @@ Author URI: https://d5creation.com/
 
 Description: NewsPress is a Multipurpose WordPress Theme. The best use can be operating News Media, News Paper, Online News Agency etc.  Multi Layer Slider will give extra impression to your readers. Easy and Flexible NewsPress Theme is fully RESPONSIVE which can be fit within any screen of devices. NewsPress Extend is one of the most popular News Themes. You can find the Demo Here: http://demo.d5creation.com/themes/?theme=NewsPress
 
-Version: 2.5
+Version: 2.7
 
 Tags: two-columns, right-sidebar, blog, news, entertainment, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, featured-images, footer-widgets, rtl-language-support
 
@@ -27,75 +27,66 @@ Text Domain: newspress-lite
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
 
-caption, th, td {
-	text-align: right;
+caption,th,td {
+	text-align:right;
 }
 
 /* =WordPress Core and Addition
 -------------------------------------------------------------- */
-.alignnone,
-#content .alignnone,
-#content-full .alignnone,
-div .alignnone {
-	margin: 5px 0 20px 20px;
+.alignnone,#content .alignnone,#content-full .alignnone,div .alignnone {
+	margin:5px 0 20px 20px;
 }
 
-.alignleft,
-#content .alignleft,
-#content-full .alignleft,
-div .alignleft {
+.alignleft,#content .alignleft,#content-full .alignleft,div .alignleft {
 	float:left;
-	margin: 5px 20px 20px 0;
+	margin:5px 20px 20px 0;
 }
 
-.alignright,
-#content .alignright,
-#content-full .alignright,
-div .alignright {
+.alignright,#content .alignright,#content-full .alignright,div .alignright {
 	float:right;
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 a img.alignleft {
 	float:left;
-	margin: 5px 20px 20px 0;
+	margin:5px 20px 20px 0;
 }
 
 a img.alignnone {
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 a img.alignright {
 	float:right;
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 a img.aligncenter {
-	margin-right: auto;
-	margin-left: auto;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 .wp-caption.alignnone {
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 .wp-caption.alignright {
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 .wp-caption.alignleft {
-	margin: 5px 20px 20px 0;
+	margin:5px 20px 20px 0;
 }
 
 /* =Structure
 ----------------------------------------------- */
 
-#top-menu-container #searchform {
+#top-menu-container #searchform, #top-menu-container .search-form {
 	float: left;
 }
 
-#top-menu-container #searchsubmit {
-	margin: 0 -5px 0 -1px;
+#searchsubmit, .search-form .search-submit {
+	margin: 0 -5px 0 0;
 }
 
 #content {
@@ -103,54 +94,51 @@ a img.aligncenter {
 }
 
 .fsubheading {
-	float: right;
+	float:right;
 }
 
 .special-cat-sub {
-	float: right;
-	padding-left: 4%;
+	float:right;
+	padding-left:4%;
 	padding-right: 0;
 }
 
 .fpage-catg {
-	float: right;
+	float:right;
 }
 
-#left-sidebar {
-	float: left;
+#right-sidebar {
+	float:left;
 }
 
 #social {
-	float: left;
-	margin-left: 20px;
+	float:left;
+	margin-left:20px;
 	margin-right: auto;
 }
 
 #social a {
-	margin-right: 5px;
+	margin-right:5px;
 	margin-left: auto;
 }
 
 #creditline {
-	text-align: right;
+	text-align:right;
 }
 
 /* Common Elements 
 ------------------------------------------------------------- */
-ol, 
-ul {
-	padding: 0 20px 10px 0;
+ol,ul {
+	padding:0 20px 10px 0;
 }
 
 address {
-	text-align: left;
+	text-align:left;
 }
 
 /* Menu Elements 
 ------------------------------------------------------------- */
-
 #newspress-top-menu {
-	float: right;
 	border-right: 1px solid #111111;
 	border-left: 1px solid #555555;
 }
@@ -164,13 +152,16 @@ address {
 	border-left: 1px solid #111111;
 }
 
+.mobile-menu {
+	text-align: right;
+}
+
 #main-menu-con {
 	float: right;
-	background-image: -webkit-gradient( linear, right top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #CCCCCC), color-stop(1, #F6F6F6) );
 }
 
 #main-menu-con ul {
-	border-right: 1px solid #DDDDDD;
+	border-right: 1px solid #dddddd;
 	border-left: none;
 }
 
@@ -179,7 +170,7 @@ address {
 }
 
 #main-menu-con a {
-	border-left: 1px solid #DDDDDD;
+	border-left: 1px solid #dddddd;
 	border-right: none;
 }
 
@@ -187,8 +178,7 @@ address {
 	float: right;
 }
 
-#main-menu-con ul ul, 
-.sub-menu, .sub-menu ul ul {
+#main-menu-con ul ul, .sub-menu, .sub-menu ul ul {
 	float: right;
 	right: 0;
 	border-right: none;
@@ -212,26 +202,50 @@ address {
 	padding-right: 0;
 }
 
-#main-menu-con li.menu-item-has-children a:after, #main-menu-con li.page_item_has_children a:after {
-	left:0;
+#main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after, .mobile-menu:after {
+	left:5px;
 	right: auto;
+}
+
+.mobile-menu::before {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.mobile-menu::after {
+	left: 10px;
+	right: auto;
+}
+
+#main-menu-con li.smedge > ul {
+	right:auto;
+	left:0;
+}
+
+#main-menu-con li li.smedge > ul {
+	right:auto;
+	left:100%;
+}
+
+#main-menu-con.m-menu-fixed {
+	right: 0;
+	left: auto;
 }
 
 /* Wedget Elements 
 ------------------------------------------------------------- */
 
-.widget ul,
-.widget ol {
-	margin-right: 15px;
+.widget ul,.widget ol {
+	margin-right:15px;
 	margin-left: auto;
 }
 
-#left-sidebar .widget {
-	float: left;
+#right-sidebar .widget {
+	float:left;
 }
 
-#left-sidebar .widget h3, h3.fpgal-title {
-	text-align: right;
+#right-sidebar .widget h3,h3.fpgal-title {
+	text-align:right;
 }
 
 #footer-sidebar .first-widget {
@@ -245,92 +259,82 @@ address {
 }
 
 .widget li {
-	padding: 3px 5px 3px 0;
+	padding:3px 5px 3px 0;
 }
 
 /* Design Elements 
 ------------------------------------------------------------- */
 
-button,
-input[type="reset"],
-input[type="button"],
-input[type="submit"],
-#respond .form-submit input#submit,
-#wp-submit {
-	background-image: -webkit-gradient( linear, right top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #CCCCCC), color-stop(1, #F6F6F6) );
+button,input[type="reset"],input[type="button"],input[type="submit"],#respond .form-submit input#submit,#wp-submit {
+	background-image:-webkit-gradient(linear,right top,right bottom,color-stop(0,#FFF),color-stop(1,#CCC),color-stop(1,#F6F6F6));
 }
 
+/*Gallery Post
+----------------------------*/
+
 blockquote:before {
-	margin-left:.20em;
+	margin-left:.2em;
 	margin-right: auto;
 }
 
 blockquote:after {
-	margin-right:.20em;
+	margin-right:.2em;
 	margin-left: auto;
 }
 
-#content .attachment-post-page,
-#content .attachment-post-thumbnail,
-#content .attachment-single-page,
-#content .attachment-cat-page, .fi-full-width, .fi-full-width-cat {
-	float: right;
-	margin: 5px 0 5px 10px;
+#content .attachment-post-page,#content .attachment-post-thumbnail,#content .attachment-single-page,#content .attachment-cat-page,.fi-full-width,.fi-full-width-cat {
+	float:right;
+	margin:5px 0 5px 10px;
 }
 
 .mostdis {
-	float: left;
-	margin-right: 10px;
+	float:left;
+	margin-right:10px;
 	margin-left: auto;
 }
 
-h1.page-title, 
-h1.page-title a,
-h1.arc-post-title {
-	text-align: right;
+h1.page-title,h1.page-title a,h1.arc-post-title {
+	text-align:right;
 }
 
-h2.post-title, 
-h2.comments, 
-h3#reply-title, 
-h2.post-title-color {
-	text-align: right;
+h2.post-title,h2.comments,h3#reply-title,h2.post-title-color {
+	text-align:right;
 }
 
 .read-more:after {
-	margin: -13px 7px 0 0;
+	margin:-13px 7px 0 0;
 }
 
-.fccontainer .read-more:after, .fpage-catspecial .read-more:after {
-	margin: -10px 7px 0 0;
+.fccontainer .read-more:after,.fpage-catspecial .read-more:after {
+	margin:-10px 7px 0 0;
 }
 
 .rarrow {
-	border-right: 13px solid #F90909;
+	border-right:13px solid #F90909;
 	border-left: none;
 }
 
 .fpgcontainert .read-more:after {
-	margin: -13px 7px 0 0;
+	margin:-13px 7px 0 0;
 }
 
 .post-edit-link:before {
-	margin-left: 10px;
+	margin-left:10px;
 	margin-right: auto;
 }
 
-.post-tag, .post-category, .post-comments {
-	margin-left: 20px;
+.post-tag,.post-category,.post-comments {
+	margin-left:20px;
 	margin-right: auto;
 }
 
 .floatright {
-	float: right;
+	float:right;
 	text-align:right;
 }
 
 .floatleft {
-	float: left;
+	float:left;
 	text-align:left;
 }
 
@@ -342,21 +346,19 @@ h2.post-title-color {
 	text-align:right;
 }
 
-/* D5 CORPORATE GREEN CSS */
-
 blockquote {
-	border-right: 10px solid #DDDDDD;
-	border-left: 10px solid #DDDDDD;
+	border-right:10px solid #DDD;
+	border-left:10px solid #DDD;
 }
 
 #commentsbox img.avatar {
-	right: 0;
+	right:0;
 	left: auto;
 }
 
 .comment-body:after {
-	border-left: 15px solid #FFFFFF;
-	margin: 0 -25px 0 0;
+	border-left:15px solid #FFF;
+	margin:0 -25px 0 0;
 	border-right: none;
 }
 
@@ -365,7 +367,7 @@ blockquote {
 }
 
 .comment-edit-link {
-	float: left;
+	float:left;
 }
 
 #commentsbox .commentlist .children li {
@@ -373,78 +375,64 @@ blockquote {
 }
 
 #respond .required {
-	margin-right: 5px;
+	margin-right:5px;
 	margin-left: auto;
 }
 
-ul.lboxd {
-	float:left;
-}
-
-a.loginicon::before, a.loginicon:hover::before {
-	float:left;
-}
-
-ul.lboxd ul {
-	padding:20px 20px 20px 40px;
-	left:-20px;
-	right: auto;
-}
-
 .go-top {
-	left: 10px;
+	left:10px;
 	right: auto;
 }
 
 .go-top::before {
-	float: left;
+	float:left;
 }
 
 .fpgallery {
-	margin: 1% 2% 1% 0;
-	float: right;
+	margin:1% 2% 1% 0;
+	float:right;
 }
 
 .fpgcontainer {
-	float: right;
+	float:right;
 }
 
 .fpgcontainert {
-	float: left;
+	float:left;
 }
 
 .fpmost-read {
-	margin: 1% 0 0 2%;
-	float: left;
+	margin:1% 0 0 2%;
+	float:left;
 }
 
 .fpec {
-	margin: 1% 2% 0 0;
-	float: right;
+	margin:1% 2% 0 0;
+	float:right;
 }
 
 .fpmost-read .bx-wrapper .bx-viewport {
-	right: -10px;
+	right:-10px;
 	left: auto;
 }
 
 .fpgallery .bx-wrapper .bx-viewport {
-	right: -10px;
+	right:-10px;
 	left: auto;
 }
 
 .fpgallery .bx-wrapper .bx-caption span {
-	padding: 5px 10px 5px 30px;
+	padding:5px 10px 5px 30px;
 }
 
 .fpec .bx-wrapper .bx-viewport {
-	right: 0;
+	right:0;
 	left: auto;
 }
 
-#left-sidebar li.cat-item, #left-sidebar .menu li {
-	float: right;
-	margin-left: 3%;
+#right-sidebar li.cat-item,#right-sidebar .menu li {
+	float:right;
+	margin-left:3%;
 	margin-right: auto;
 }
 
@@ -454,4 +442,3 @@ ul.lboxd ul {
 	right: 5px;
 	left: auto;
 }
-

@@ -42,7 +42,7 @@ function newspress_customize_register($wp_customize){
         'label'      => __('Social Link - ',  'newspress-lite'). $numslinksn,
         'section'    => 'newspress_options',
         'settings'   => 'newspress[sl' . $numslinksn .']',
-		'description' => __('Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/d5creation/</b>.  If you do not want to show anything here leave the box blank. This Version supports only WordPress, Dribbble, Github, Tumblr, YouTube, Flickr, Vimeo, Instagram, Codepen and LinkedIn  ', 'newspress-lite'),
+		'description' => __('Input Your Social Page Link. Example: <b>https://facebook.com/d5creation/</b>', 'newspress-lite'),
     ));	
 	}
 	

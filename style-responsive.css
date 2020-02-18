@@ -9,16 +9,33 @@
 @media screen and (max-width:1023px){ 
 	/* .fslidedescription { display:  none; } */
 	#slide-container {z-index: 999;}
-	#content { width: 100%; float: none; } .right-sidebar, #footer-sidebar { width: auto; margin: 10px -20px; float: none; text-align: center; } .right-sidebar .widget, #footer-sidebar .first-widget, #footer-sidebar .widgets  { width: 300px; margin: 0 10px 20px; text-align: left; display:  inline-block; vertical-align: top; float: none; } .fpage-cat { min-width: calc(33.33% - 48px); } .fvcatnews .special-cat-sub { min-width: calc(25% - 48px); } .topadlft,.topadrt,.fpgcontainert { display:  none; } .fpgcontainer { float: none; width: 100%; } .special-cat-sub, .special-cat-list, .fsubheading { min-width: 110px; width: calc(33.33% - 30px) !important; } .sinvpage .spvideo { max-width: 100%; height: 450px; } .sinvpage .spvideo iframe { height: 420px; }	.right-sidebar.slider-sidebar { float: right; margin: 0; } .right-sidebar.slider-sidebar .widget { margin: 0; }
-	#main-menu-con { display: none; width: 246px; padding: 0 !important; background: rgba(249,9,9,0.75);  z-index: 9999;}	
-	.mobile-menu { display: block; }
+	#content { width: 100%; float: none; } 
+	#right-sidebar, #footer-sidebar { width: auto; margin: 10px -20px; float: none; text-align: center; } 
+	#right-sidebar .widget, #footer-sidebar .first-widget, #footer-sidebar .widgets  { width: 300px; margin: 0 10px 20px; text-align: left; display:  inline-block; vertical-align: top; float: none; } 
+	.fpage-cat { min-width: calc(33.33% - 48px); } 
+	.fvcatnews .special-cat-sub { min-width: calc(25% - 48px); } 
+	.topadlft,.topadrt,.fpgcontainert { display:  none; } 
+	
+	.fpgcontainer { float: none; width: 100%; } 
+	.fsubhcontainer{ display: flex; flex-wrap: wrap; justify-content: center; }
+	.fsubheading {  }
+	
+	.special-cat-sub, .special-cat-list, .fsubheading { min-width: 110px; width: 27.33%; }
+	
+	.sinvpage .spvideo { max-width: 100%; height: 450px; } 
+	.sinvpage .spvideo iframe { height: 420px; }	
+	#right-sidebar.slider-sidebar { float: right; margin: 0; } 
+	#right-sidebar.slider-sidebar .widget { margin: 0; }
+	#main-menu-con { display: none; position: absolute; width: 246px; padding: 0 !important; background: rgba(249,9,9,0.75);  z-index: 999999;}	
+	.mobile-menu { display: flex; }
 	#main-menu-con ul { display: block; }
 	#main-menu-con li { display: block; clear: both; width: 100%; }
 	#main-menu-con li a { text-align: left; border-bottom: 1px dotted rgba(255,255,255,.55); color: #ffffff; }
 	#main-menu-con ul ul, .sub-menu, .sub-menu ul ul { left: 10px; border-left: 1px solid rgba(0,0,0,.5); }
 	#main-menu-con ul ul ul { left: 10px; top: auto; }
 	.shnewsexcerpt .shnewslink { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
-	.attachment-post-page {width: 100% !important;}
+	.attachment-post-page {width: 100% !important;}	
+	.clear-cat{ display: none; }
 } 
 
 @media screen and (max-width:900px){ 
@@ -26,7 +43,7 @@
 }
 
 @media screen and (max-width:700px){ 
-	.attachment-single-page { width: 100% !important; } #top-menu-container { justify-content: center;} #newspress-top-menu li a { padding: 4px; } .nptitems { margin: 0 0 5px; } .main-slider {width: 100% !important; } .fslidedescription, .fslidelink, .right-sidebar.slider-sidebar { display: none; } .fslidersubtitle { font-size: 17px; } .subtitle, p.subtitle #content p.subtitle { font-size: 16px !important; } .fsubheading h2.post-title { font-size: 19px !important; }
+	.attachment-single-page { width: 100% !important; } #top-menu-container { justify-content: center;} #newspress-top-menu li a { padding: 4px; } .nptitems { margin: 0 0 5px; } .main-slider {width: 100% !important; } .fslidedescription, .fslidelink, #right-sidebar.slider-sidebar { display: none; } .fslidersubtitle { font-size: 17px; } .subtitle, p.subtitle #content p.subtitle { font-size: 16px !important; } .fsubheading h2.post-title { font-size: 19px !important; }
 	.pagenavlink {width: 100%; margin-bottom: 5px !important;}
 	.special-cat-sub, .special-cat-list, .fsubheading { min-width: 110px; width: calc(50% - 30px) !important; }
 }

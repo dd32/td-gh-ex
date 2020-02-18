@@ -56,11 +56,4 @@ wp_head(); ?>
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
        </nav>
       <div class="clear"> </div>
-      <div id="container"> 
-      
-      
-      
-      
-      
-      
-	  
+      <div id="container">

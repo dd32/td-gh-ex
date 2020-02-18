@@ -1,50 +1,86 @@
-----------------------------------
-NewsPress Lite
-----------------------------------
-Version: 	2.5
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== NewsPress Lite ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: d5creation
+Tags: two-columns, right-sidebar, blog, news, entertainment, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, featured-images, footer-widgets, rtl-language-support
+Requires at least: 5.0
+Tested up to: 5.3.2
+Requires PHP: 5.4
+Stable tag: 2.7
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 	GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+NewsPress Responsive News & Magazine Theme
 
-This Product is provided "as is" with no waranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
+== Description ==
 
+NewsPress is a Multipurpose WordPress Theme. The best use can be operating News Media, News Paper, Online News Agency etc.  Multi Layer Slider will give extra impression to your readers. Easy and Flexible NewsPress Theme is fully RESPONSIVE which can be fit within any screen of devices. NewsPress Extend is one of the most popular News Themes. You can find the Demo Here: http://demo.d5creation.com/themes/?theme=NewsPress
 
-1. Some Part of screenshot.png, License: Public Domain CC0, https://pixabay.com/en/woman-hat-the-elegance-jewelry-1028398/, https://pixabay.com/en/girl-snow-dress-red-life-blonde-1163269/, https://pixabay.com/en/girl-portrait-beauty-long-hair-755864/
+== Frequently Asked Questions ==
 
-2. jQuery Fraction Slider, License: MIT, Author: Mario Jäckle, Source: http://fractionslider.jacksbox.de
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Theme Options/Settings there 
 
-3. Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com/
+= Why is NewsPress? =
+NewsPress is designed for News & Magazine Sites. But it can also be used for Personal, Corporate, Community, Forum and Multipurpose Websites
 
-All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites and Even for Smart Blogs
 
-NB: No Sub Menus will be shown in the Top Menu
-
-Version 2.5
---------------------
-- Style Update
-
-Version 2.3
---------------------
-- Narrow Width Template Added
-
-Version 1.9
---------------------
-- Code Cleanup
-
-Version 1.7
---------------------
-- Code Cleanup
-- Some Tags Added
+= Is it only for News ? =
+No, It is for News, Blogs, Company, Personal, Community, Forum Websites etc.
 
 
-Version 1.5
---------------------
-The 1.5 Version is a Major Version
-- Added Customize for Theme Options
-- Removed Options Framework
-- Translation Ready
+== Changelog ==
+
+= 2.7 =
+* Better Responsive Layout
+* Issue Fix for less news/post in Front Page
+
+= 2.5 =
+* Style Update
+
+= 2.3 =
+* Narrow Width Template Added
+
+= 1.9 =
+* Code Cleanup
+
+= 1.7 =
+* Code Cleanup
+
+= 1.0 =
+* Initial Release
+
+== Resources ==
+
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
+
+* jquery.fractionslider.js:
+Source: https://github.com/jacksbox/jquery.fractionslider
+License:  MIT, Copyright (c) 2013 jacksbox.design
+License Url : http://www.opensource.org/licenses/mit-license.php
+
+* Genericons Fonts (fonts/genericons):
+Source: https://github.com/Automattic/Genericons
+License:  GPL2, Copyright (c) Automattic
+License Url : https://github.com/Automattic/Genericons/blob/master/LICENSE.txt
+
+* screenshot.png:
+Source: https://pxhere.com/en/photo/1435385
+License: CC0, Copyright (c) Not Specified
+License Url : https://pxhere.com/en/license
+
+Source: https://stocksnap.io/photo/JPJIQMAJCF
+License: CC0, Copyright (c) nahid
+License Url : https://stocksnap.io/license
+
+Source: https://stocksnap.io/photo/2R354XL83Z
+License: CC0, Copyright (c) Lesly Juarez
+License Url : https://stocksnap.io/license
+
+Source: https://stocksnap.io/photo/5GPNLFT4ID
+License: CC0, Copyright (c) Veronika Balasyuk
+License Url : https://stocksnap.io/license

@@ -21,7 +21,7 @@
 // 	Tell WordPress for the Feed Link
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
-
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
     add_theme_support( 'post-thumbnails' );
 	add_image_size( 'post-page', 350, 175, true );
 	add_image_size( 'cat-page', 400, 200, true );
@@ -42,8 +42,8 @@
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,
-	'flex-height'            => false,
-	'flex-width'             => false,
+	'flex-height'            => true,
+	'flex-width'             => true,
 	'default-text-color'     => '000000',
 	'header-text'            => false,
 	'uploads'                => true,
@@ -67,7 +67,7 @@
 	
 	if (is_front_page()):
 	wp_enqueue_script( 'newspress-main-slider', get_template_directory_uri() . '/js/jquery.fractionslider.min.js', array( 'jquery' ) );
-	wp_enqueue_style('newspress-main-slider-css', get_template_directory_uri(). '/css/fractionslider.css' );
+	wp_enqueue_style('newspress-main-slider-css', get_template_directory_uri(). '/css/main-slider.css' );
 	endif;
 	
 	wp_enqueue_style('newspress-responsive', get_template_directory_uri(). '/style-responsive.css' ); 
