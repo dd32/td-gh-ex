@@ -19,54 +19,7 @@
 			return '';
 		endif;
 	}
-
-// 	CSS Property Change from Options
-	function associationx_cngstyle($option, $default, $items='', $property='', $unit='', $isimportant='', $extrainside='', $extraoutside='', $countzerovalasfalse='' ) { 
-		$result = '';
-		if ($option && $default):		 
-		$itemvalue = associationx_get_option($option,$default);
-		if($countzerovalasfalse =='1' || $countzerovalasfalse =='true'): if(empty($itemvalue) || $itemvalue == '0'): $itemvalue ='false'; $unit=''; endif; endif;			
-			if ( $isimportant == '1' || $isimportant == 'true'): $isimportant = '!important'; endif;
-				if ($itemvalue != $default):
-					if ( $items && $property ):
-						if ( $property == 'background-image' ): $itemvalue = 'url("'.$itemvalue.'")'; endif;
-						$result= $items.'{'.$property.':'.$itemvalue.''.$unit.''.$isimportant.';'.$extrainside.'}'.$extraoutside.''; 
-					else: 
-							$result=$extraoutside; 
-					endif;
-			endif;
-		endif;			
-	return $result;		
-	}
 	
-//	Background Change
-	function associationx_backchange($option, $itemforback, $image ='', $color = '', $repeat = 'repeat', $position='top left', $attachment = 'scroll' ){
-		$optionval = associationx_get_option($option);
-		if ( $optionval && $itemforback ):
-			$nimage = $optionval['image']; 
-			$ncolor = $optionval['color']; 
-			$nrepeat = $optionval['repeat']; 
-			$nposition = $optionval['position']; 
-			$nattachment = $optionval['attachment'];
-			if ( $nimage == $image && $ncolor == $color && $nrepeat == $repeat && $nposition == $position && $nattachment == $attachment ) : 	return ''; 
-			else: 
-				$nfoutput = '';				
-				if($ncolor && $ncolor != $color) $nfoutput .= 'background-color:'. $ncolor . ';';				
-				if($nimage):
-					if($nimage && $nimage != $image): $nfoutput .= 'background-image: url("'.$nimage.'");'; endif;
-					if($nrepeat && $nrepeat != $repeat ): $nfoutput .= 'background-repeat:'. $nrepeat . ';'; endif; 
-					if($nposition && $nposition != $position): $nfoutput .= 'background-position:'. $nposition . ';'; endif;
-					if($nattachment && $nattachment != $attachment): $nfoutput .= 'background-attachment:'. $nattachment . ';'; endif;
-				else:
-					$nfoutput .= 'background-image:none;';		
-				endif;
-				if($nfoutput): return $itemforback .'{'.$nfoutput.'}'; else: return ''; endif;
-			endif;
-		else: 
-			return '';
-		endif;
-	}
-
 //	WooCommerce Check
 	function associationx_woo_check() {
 		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) )): return true; else: return false; endif;
@@ -190,22 +143,22 @@
 	add_action('associationx_starting_content', 'associationx_breadcrumbs');
 
 //	Menu Description
-function associationx_description_to_menu($item_output, $item, $depth, $args) {
-    if (strlen($item->description) > 0 ) {
-        $item_output .= sprintf('<div class="menu-description">%s</div>', esc_html($item->description));
-    }
-    return $item_output;
-}
-add_filter('walker_nav_menu_start_el', 'associationx_description_to_menu', 10, 4);
+	function associationx_description_to_menu($item_output, $item, $depth, $args) {
+    	if (strlen($item->description) > 0 ) {
+        	$item_output .= sprintf('<div class="menu-description">%s</div>', esc_html($item->description));
+    	}
+    	return $item_output;
+	}
+	add_filter('walker_nav_menu_start_el', 'associationx_description_to_menu', 10, 4);
 
 //	Add a Close Menu Item with the Main Mneu
-function associationx_main_menu_close($d5xmenu, $wargs) {
-    if( $wargs->theme_location == 'main-menu'):
-	$newmenup = '<li id="mobilemenuclose" class="mmenuclose"><a class="menu-close-icon  fa-times" href="#"></a></li>';
-	$newmenun = $d5xmenu . $newmenup;
-	return $newmenun;
-	else: 
-	return $d5xmenu;
-	endif;
+	function associationx_main_menu_close($d5xmenu, $wargs) {
+    	if( $wargs->theme_location == 'main-menu'):
+			$newmenup = '<li id="mobilemenuclose" class="mmenuclose"><a class="menu-close-icon  fa-times" href="#"></a></li>';
+			$newmenun = $d5xmenu . $newmenup;
+			return $newmenun;
+		else: 
+			return $d5xmenu;
+		endif;
 	}
 	add_filter('wp_nav_menu_items','associationx_main_menu_close', 10, 2);
