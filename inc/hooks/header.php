@@ -101,7 +101,7 @@ if ( ! function_exists( 'appdetail_header_lower_section' ) ) :
 
         <!-- ====== Header Section ====== -->
     <header class="appin-menu">
-        <nav class="navbar navbar-default menubar main-menu multi-menu-bar" data-spy="affix" data-offset-top="100">
+        <nav class="navbar navbar-default menubar main-menu multi-menu-bar"  data-offset-top="100">
             <div class="container">
                 <div class="navbar-header">
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
@@ -148,6 +148,7 @@ if ( ! function_exists( 'appdetail_header_lower_section' ) ) :
 
             <!-- menubar ends -->
     </header>
+	<div id="content" class="site-content"></div>
     <!-- ====== End Header Section ====== -->
     <?php
     	}

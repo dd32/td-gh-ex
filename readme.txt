@@ -5,7 +5,7 @@ Tags: right-sidebar, custom-background, custom-colors, custom-menu, featured-ima
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.2.4
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,18 +22,9 @@ Appdetail is a simple and easy to use, modern and creative, user friendly and el
 
 == Changelog ==
 
-= 1.3 =
-* Reviewer suggestion
 
-= 1.2 =
-* Reviewer suggestion
-
-= 1.1 =
-* Reviewer suggestion
-
-= 1.0 =
-First version
-
+= 1.4 =
+Skip Links added
 
 == License ==
 Appdetail   is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.

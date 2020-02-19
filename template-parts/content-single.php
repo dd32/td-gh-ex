@@ -41,7 +41,7 @@
             </ul>
             <?php the_content(); ?>
             <div class="co-blog-sidebar">
-                <?php the_tags( '<h4>Tags :</h4><div class="tags-cloud">', '', '</div>' ); ?> 
+                <?php esc_html(the_tags( '<h4>Tags :</h4><div class="tags-cloud">', '', '</div>' )); ?> 
             </div> 
         </div>
     </div> 
