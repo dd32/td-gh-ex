@@ -224,11 +224,6 @@ require get_template_directory() . '/inc/agleelite-functions.php';
  * Load Aglee Lite Theme Recommendations
  */
 require get_template_directory() . '/welcome/welcome-config.php';
-add_filter('adi_git_config_location', 'aglee_lite_git_url_config' );
-function aglee_lite_git_url_config(){
-	$git_url = 'https://raw.githubusercontent.com/8degreethemes/8degreethemes.github.io/master/demos/aglee-lite/config.json';
-	return $git_url;
-}
 
  /**
  * 

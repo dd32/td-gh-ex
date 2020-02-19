@@ -63,6 +63,9 @@ License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
 
+= 1.1.1 - 19th February, 2020 =
+** Removed git url as recommended by the @trtmessenger.
+
 = 1.1.0 - 18th November, 2019 =
 ** Removed Demo contents from theme and made to be able to import from plugin from git.
 ** Files organised and minor fixes.
