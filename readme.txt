@@ -3,7 +3,7 @@ Contributors: aThemeArt
 Requires at least: 4.6
 Tested up to: 5.3.0
 Requires PHP: 5.2.4
-Version: 1.0.0
+Version: 1.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -45,6 +45,10 @@ https://pxhere.com/en/photo/1588791
 License:  CC0 Public Domain
 
 == Changelog =
+
+= 1.0.1
+- Screenshot update
+- recommended 4 woocomerce plugins
 
 = 1.0.0
 - New:     Initial release.
