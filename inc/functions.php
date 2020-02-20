@@ -42,9 +42,13 @@ function freedom_scripts_styles_method() {
 	 * Enqueue Slider setup js file.
 	 */
 	if ( is_front_page() && get_theme_mod( 'freedom_activate_slider', '0' ) == '1' ) {
-		wp_enqueue_script( 'freedom_slider', FREEDOM_JS_URL . '/freedom-slider-setting.js', array( 'jquery_cycle' ), false, true );
+		wp_enqueue_script( 'jquery_cycle');
 	}
 	wp_enqueue_script( 'freedom-navigation', FREEDOM_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
+
+	// Skip link focus fix JS enqueue.
+	wp_enqueue_script( 'freedom-skip-link-focus-fix', FREEDOM_JS_URL . '/skip-link-focus-fix.js', array(), false, true );
+
 	wp_enqueue_script( 'freedom-custom', FREEDOM_JS_URL . '/freedom-custom.js', array( 'jquery' ) );
 
 	wp_enqueue_style( 'freedom-fontawesome', get_template_directory_uri() . '/fontawesome/css/font-awesome.css', array(), '4.2.1' );
@@ -633,4 +637,42 @@ if ( ! function_exists( 'freedom_related_posts_function' ) ) {
 			return $query;
 	}
 
+}
+
+if ( ! function_exists( 'freedom_pingback_header' ) ) :
+
+	/**
+	 * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+	 */
+	function freedom_pingback_header() {
+		if ( is_singular() && pings_open() ) {
+			printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+		}
+	}
+
+endif;
+
+add_action( 'wp_head', 'freedom_pingback_header' );
+
+/**
+ * Compare user's current version of plugin.
+ */
+if ( ! function_exists( 'freedom_plugin_version_compare' ) ) {
+	function freedom_plugin_version_compare( $plugin_slug, $version_to_compare ) {
+
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		$installed_plugins = get_plugins();
+
+		// Plugin not installed.
+		if ( ! isset( $installed_plugins[ $plugin_slug ] ) ) {
+			return false;
+		}
+
+		$tdi_user_version = $installed_plugins[ $plugin_slug ]['Version'];
+
+		return version_compare( $tdi_user_version, $version_to_compare, '<' );
+	}
 }

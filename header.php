@@ -14,7 +14,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php
 	/**
 	 * This hook is important for wordpress plugins and other many things
@@ -24,8 +23,17 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
+
 <?php do_action( 'before' ); ?>
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'freedom' ); ?></a>
+
 	<?php do_action( 'freedom_before_header' ); ?>
 	<header id="masthead" class="site-header clearfix">
 		<div id="header-text-nav-container" class="clearfix">

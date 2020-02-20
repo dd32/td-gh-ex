@@ -51,6 +51,16 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.1.8 2020-02-20 =
+* Fix - Gallery padding for Gutenberg
+* Tweak - Update `screen-reader-text` CSS.
+* Tweak - Added `skip-link` to content area.
+* Tweak - Modify menu CSS for keyboard accessibility.
+* Tweak - Add alt attributes to missed img tags
+* Tweak - Utilize single custom JS file for required theme JS settings.
+* Tweak - separate customize control class via different file
+* Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
+
 = Version 1.1.7 2018-11-26 =
 * Added - Gutenberg compatibility
 * Remove - Backward compatible for header logo
