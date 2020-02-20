@@ -65,6 +65,10 @@ function accelerate_scripts_styles_method() {
 	}
 
 	wp_enqueue_script( 'accelerate-navigation', ACCELERATE_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
+
+	// Skip link focus fix JS enqueue.
+	wp_enqueue_script( 'accelerate-skip-link-focus-fix', ACCELERATE_JS_URL . '/skip-link-focus-fix.js', array(), false, true );
+
 	wp_enqueue_script( 'accelerate-custom', ACCELERATE_JS_URL . '/accelerate-custom.js', array( 'jquery' ) );
 
 	wp_enqueue_style( 'accelerate-fontawesome', get_template_directory_uri() . '/fontawesome/css/font-awesome.css', array(), '4.7.0' );
@@ -695,5 +699,23 @@ if ( ! function_exists( 'accelerate_related_posts_function' ) ) {
 
 		return $query;
 
+	}
+}
+
+/**
+ * Compare user's current version of plugin.
+ */
+if ( ! function_exists( 'accelerate_plugin_version_compare' ) ) {
+	function accelerate_plugin_version_compare( $plugin_slug, $version_to_compare ) {
+		$installed_plugins = get_plugins();
+
+		// Plugin not installed.
+		if ( ! isset( $installed_plugins[ $plugin_slug ] ) ) {
+			return false;
+		}
+
+		$tdi_user_version = $installed_plugins[ $plugin_slug ]['Version'];
+
+		return version_compare( $tdi_user_version, $version_to_compare, '<' );
 	}
 }
