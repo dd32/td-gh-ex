@@ -252,3 +252,10 @@ require get_template_directory() . '/inc/hooks/footer.php';
  * Load custom Header Files
 */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Load Upsell Button In Customizer
+ * 2016 &copy; [Justin Tadlock](http://justintadlock.com).
+ */
+require_once  get_template_directory()  . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory(). '/inc/hook-tgm.php';

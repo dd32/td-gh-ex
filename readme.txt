@@ -5,7 +5,7 @@ Tags: right-sidebar, custom-background, custom-colors, custom-menu, featured-ima
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.2.4
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,9 +62,10 @@ Appdetail   is distributed under the terms of the GNU General Public License v2
 
 == Image used in screenshot ==
 
-==licence==
+==Images licence==
 https://pxhere.com/en/license
 
-https://pxhere.com/en/photo/1430833
-https://pxhere.com/en/photo/1333694
 https://pxhere.com/en/photo/1170475
+
+https://pxhere.com/en/photo/1584907
+https://pxhere.com/en/photo/1575609

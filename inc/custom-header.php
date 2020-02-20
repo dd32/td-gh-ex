@@ -52,11 +52,6 @@ if ( !function_exists('appdetail_header_style') ) :
                 // Has the text been hidden?
                 if (  display_header_text() ) :
             ?>
-            .inner-banner-area
-           {
-            background-image:url('<?php header_image(); ?>');
-
-           }
            
             .site-title a,
             .site-description {
@@ -64,6 +59,12 @@ if ( !function_exists('appdetail_header_style') ) :
             }
 
             <?php endif; ?>
+			
+			 .inner-banner-area
+           {
+            background-image:url('<?php header_image(); ?>') !important;
+
+           }
         </style>
         <?php
     }

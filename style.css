@@ -3,8 +3,8 @@ Theme Name: Appdetail
 Theme URI:
 Author: Mapro Collins
 Author URI: https://profiles.wordpress.org/ratinatemplates/
-Description: Appdetail  is a simple and easy to use, modern and creative, user friendly and elegant, WordPress theme for blog, news and magazine sites. It is responsive, cross browser compatible, SEO friendly theme with lots of highly created features. Theme comes with beautiful slider section, featured post column, footer options, sidebar options, site design options and many more. It is very light weighted theme based on customizer. Added custom widgets for author information and advertisement will make your site awesome. Try Product today and blog away. Our dedicated support team will guide you in every steps while using theme.
-Version: 1.4
+Description: Appdetail  is a simple and easy to use, modern and creative, user friendly and elegant, WordPress theme for blog, news and magazine sites. It is responsive, cross browser compatible, SEO friendly theme with lots of highly created features. Theme have 2 images in slider section as well as video option make theme attractive in looking. Theme customization is very easy in use. Theme comes with beautiful slider section, featured post column, footer options, sidebar options, site design options and many more. It is very light weighted theme based on customizer. Added custom widgets for author information and advertisement will make your site awesome. Try Product today and blog away. Our dedicated support team will guide you in every steps while using theme.
+Version: 1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: appdetail
@@ -2318,6 +2318,7 @@ font-size: 12px;
   float: left;
   width: 100%;
   margin-bottom: 1.5em;
+  margin-top:30px;
 }
 /**
  * 11.4.1 - Comment form
@@ -3170,4 +3171,8 @@ color: #5424bf;
 .last-front{
 
     display: none;
+}
+.appin-menu .navbar-default>.container{ 
+
+    flex-wrap: nowrap;
 }
