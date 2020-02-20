@@ -171,7 +171,6 @@ if ( ! function_exists( 'antreas_add_styles' ) ) {
 	function antreas_add_styles() {
 
 		wp_register_style( 'antreas-magnific', ANTREAS_ASSETS_CSS . 'magnific.css', array(), ANTREAS_VERSION );
-		wp_register_style( 'antreas-fontawesome', ANTREAS_ASSETS_CSS . 'icon-fontawesome.css', array(), ANTREAS_VERSION );
 
 		// Common styles.
 		wp_enqueue_style( 'antreas-main', ANTREAS_ASSETS_CSS . 'style.css', array(), ANTREAS_VERSION );
@@ -187,7 +186,7 @@ if ( ! function_exists( 'antreas_add_admin_styles' ) ) {
 		if ( 'post' == isset( $screen->base ) && $screen->base ) {
 			add_editor_style( ANTREAS_ASSETS_CSS . 'editor.css' );
 			wp_enqueue_style( 'antreas_admin', ANTREAS_ASSETS_CSS . 'admin.css', array(), ANTREAS_VERSION );
-			wp_enqueue_style( 'antreas-fontawesome', ANTREAS_ASSETS_CSS . 'icon-fontawesome.css', array(), ANTREAS_VERSION );
+            wp_enqueue_style( 'antreas-fontawesome', ANTREAS_ASSETS_CSS . 'icon-fontawesome.css', array(), ANTREAS_VERSION );
 		}
 
 		wp_enqueue_style( 'antreas-selectize-css', ANTREAS_ASSETS_CSS . 'selectize.css', array(), ANTREAS_VERSION );

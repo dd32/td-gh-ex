@@ -82,9 +82,11 @@ if ( ! function_exists( 'antreas_meta_save' ) ) {
 			return;
 		}
 
-		if ( ! wp_verify_nonce( $_POST['antreas_nonce'], 'antreas_savemeta' ) ) {
-			return;
-		}
+
+         if (!isset($_POST['antreas_nonce']) || !wp_verify_nonce($_POST['antreas_nonce'], 'antreas_savemeta')) {
+           return;
+         }
+
 
 		$metaboxes = $option;
 		$post_id       = $_POST['post_ID'];

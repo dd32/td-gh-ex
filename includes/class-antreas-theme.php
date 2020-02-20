@@ -15,7 +15,6 @@ class Antreas_Theme {
 		$this->plugins = array(
 			'kali-forms'                 => array( 'recommended' => true ),
 			'modula-best-grid-gallery'   => array( 'recommended' => true ),
-			'simple-author-box'          => array( 'recommended' => true ),
 		);
 
 		// Recommended Actions

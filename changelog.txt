@@ -1,3 +1,9 @@
+Version 1.0.3
+Security Fixes
+Removed Simple Author Box from recommended plugins
+Update Icons
+Customizer JS error fix
+
 Version 1.0.2
 Improved accesibility with keyboard navigation
 

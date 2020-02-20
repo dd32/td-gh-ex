@@ -15,9 +15,9 @@
 				quicktags: true
 			});
 
-			$( document ).on( 'tinymce-editor-init' , function( event, editor ) {
+		jQuery( document ).on( 'tinymce-editor-init' , function( event, editor ) {
 				editor.on( 'Change Paste ExecCommand NodeChange' , function( e ) {
-					$( '#'+editor.id ).trigger( 'change' );
+					jQuery( '#'+editor.id ).trigger( 'change' );
 					tinyMCE.triggerSave();
 				});
 			});
@@ -25,7 +25,7 @@
 		}
 	});
 
- 	$.extend( api.controlConstructor, {
+ 	jQuery.extend( api.controlConstructor, {
 		'antreas-tinymce-control': api.AntreasTinymceControl,
     });
 
