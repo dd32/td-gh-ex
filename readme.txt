@@ -41,6 +41,12 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.4 - 2020-02-20 =
+* Tweak - Update `screen-reader-text` CSS.
+* Tweak - Added `skip-link` to content area.
+* Tweak - Modify menu CSS for keyboard accessibility.
+* Fix 	- Input type CSS for comments
+
 = Version 1.4.3 - 2019-07-12 =
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
 * Tweak - Separate customize control class via different file

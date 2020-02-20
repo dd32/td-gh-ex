@@ -63,6 +63,9 @@ function esteem_scripts_styles_method() {
 
 	wp_enqueue_script( 'esteem-navigation', ESTEEM_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
 
+	// Skip link focus fix JS enqueue.
+	wp_enqueue_script( 'esteem-skip-link-focus-fix', ESTEEM_JS_URL . '/skip-link-focus-fix.js', array(), false, true );
+
 }
 
 add_action( 'admin_print_styles', 'esteem_admin_styles' );
@@ -499,3 +502,26 @@ if ( ! function_exists( 'esteem_pingback_header' ) ) :
 endif;
 
 add_action( 'wp_head', 'esteem_pingback_header' );
+
+
+/**
+ * Compare user's current version of plugin.
+ */
+if ( ! function_exists( 'esteem_plugin_version_compare' ) ) {
+	function esteem_plugin_version_compare( $plugin_slug, $version_to_compare ) {
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		$installed_plugins = get_plugins();
+
+		// Plugin not installed.
+		if ( ! isset( $installed_plugins[ $plugin_slug ] ) ) {
+			return false;
+		}
+
+		$tdi_user_version = $installed_plugins[ $plugin_slug ]['Version'];
+
+		return version_compare( $tdi_user_version, $version_to_compare, '<' );
+	}
+}
