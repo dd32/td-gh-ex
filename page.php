@@ -1,7 +1,7 @@
 <?php  get_header(); ?>
 <?php  //get_search_form(); ?>
-	<?php 
-	
+	<?php
+
 	if (have_posts()) :
 	while (have_posts()) :
 	the_post();
@@ -12,27 +12,28 @@
 	    	</header>
 		    <section>
 
-					<?php 
+					<?php
 						if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-							the_post_thumbnail();
-						} 
+							the_post_thumbnail('large');
+
+						}
 					?>
 
-				  <?php  the_content(__('Read the rest of this entry &raquo;','Commodore')); ?>
+				  <?php  the_content(__('Read the rest of this entry &raquo;','commodore')); ?>
           <hr class="clearfix" />
           <?php  wp_link_pages('before=<p>&after=</p>&next_or_number=number&pagelink=page %'); ?>
-				  <?php  edit_post_link(__('Edit','Commodore'), '<p>', '</p>'); ?>
+				  <?php  edit_post_link(__('Edit','commodore'), '<p>', '</p>'); ?>
 			  </section>
 				<hr class="clearfix" />
 			</article>
       <?php
-	
+
 	if(comments_open()) {
 		comments_template();
 	}
 
 	?>
 	<?php  endwhile; else : ?>
-		<p><?php _e("Sorry, no posts matched your criteria.","Commodore"); ?></p>
+		<p><?php _e("Sorry, no posts matched your criteria.","commodore"); ?></p>
 	<?php  endif; ?>
 <?php  get_footer(); ?>

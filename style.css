@@ -3,13 +3,15 @@ Theme Name: Commodore
 Text Domain: commodore
 Description: Simple and lightweight responsive theme in the style of the good old Commodore 64. The search box has been modified - just type and press Return to search - classic blinking cursor included!
 Author: United Networks
-Version: 1.80
-Tags: two-columns, one-column, right-sidebar, custom-menu
+Version: 1.90
+Tags: two-columns, one-column, right-sidebar, custom-menu, custom-header, editor-style, threaded-comments, featured-image-header
+Subject: blog, entertainment, education
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Theme URI: https://unitednetworksonline.com/wordpress-themes/
 Author URI: https://unitednetworksonline.com
 */
+
 
 @font-face {
  font-family: c64;
@@ -120,7 +122,15 @@ body.has_sidebar .content {
  position: relative;
  display: inline-block;
  vertical-align: top;
+ cursor: none;
+ left: 0px;
 }
+
+img.attachment-large {
+  margin: 0 auto;
+  width: 100%;
+}
+
 
 section {
  display: block;
@@ -303,7 +313,7 @@ hr.clearfix {
  padding: 15px;
 }
 
-.pie_search_form #s {
+.pie_search_form #s, form#searchform #s {
  left: -1000px;
  position: absolute;
  border: 0 none;
@@ -312,8 +322,12 @@ hr.clearfix {
  font-family: c64,courier,monospaced;
  font-size: 14px;
  line-height: 1.7em;
+ text-align: left;
 }
 
+form#searchform {
+    text-align: left;
+}
 #terminal {
  margin: 1px 1px 15px;
  cursor: text;
@@ -335,7 +349,7 @@ hr.clearfix {
 }
 
 #getter {
- margin: 1px;
+ margin: 24px;
 }
 
 .menu li {
@@ -372,6 +386,7 @@ code {
  font-size: 10px;
 }
 
+
 /* Standard Smartphones */
 @media only screen and (max-width: 767px) {
 #container { margin: 20px auto; }
@@ -382,8 +397,8 @@ nav { float: none; padding: 5px; width: 100%; }
 #commentform p input, #commentform p textarea { width: 100%; }
 .prevnext { padding-bottom: 50px; }
  }
- 
-/* iPhone6 */ 
+
+/* iPhone6 */
 @media only screen and (max-device-width : 667px) {
 #container { margin: 20px auto; padding: 2%; }
 #wrapper { width: 100%; }
@@ -393,7 +408,7 @@ nav { float: none; padding: 5px; width: 100%; }
 #commentform p input, #commentform p textarea { width: 100%; }
 .prevnext { padding-bottom: 50px; }
  }
- 
+
  @media only screen and (max-device-width : 736px) {
 #container { margin: 20px auto; padding: 2%; }
 #wrapper { width: 100%; }
