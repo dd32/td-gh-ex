@@ -37,6 +37,8 @@ function axis_magazine_setup(){
 	    )
 	  );
 
+	load_theme_textdomain( 'axis-magazine' );
+
 
 	// SET CONTENT WIDTH
 	if ( ! isset( $content_width ) ) $content_width = 600;

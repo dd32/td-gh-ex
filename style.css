@@ -3,11 +3,11 @@ Theme Name: Axis Magazine
 Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: http://www.zidithemes.tumblr.com/author
-Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.05
+Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
+Version: 0.0.06
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template
+Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
 Text Domain: axis-magazine
 */
 
@@ -1013,6 +1013,15 @@ ul {
 
     
 .axis-magazine-index {}   
+
+.axis-magazine-index a {
+    transition: .6s linear;
+}  
+
+.axis-magazine-index a:hover {
+    color: #848484 !important;
+}  
+
 .axis-magazine-index .blog-2-col-inner .mg-tp{
     margin: 20px 0px 10px 0px;
     justify-content: space-between;
@@ -1075,12 +1084,13 @@ ul {
 }        
 
 .axis-magazine-index .blog-2-col-inner .items  .items-inner .img-box .img-thumb {
+    height: 415px;
 }   
 
 .axis-magazine-index .blog-2-col-inner .items  .items-inner .img-box .img-thumb img{
     display: block;
     width: 100%;
-    height: 100%;
+    height: 415px;
     box-sizing: border-box;
 } 
         
@@ -2674,7 +2684,7 @@ ul {
 }        
 
 .axis-magazine-index-six .blog-2-col-inner .items  .items-inner .img-box .img-wrap {
-
+    padding: 0px 25px;
 }   
 
 .axis-magazine-index-six .blog-2-col-inner .items  .items-inner .img-box .img-wrap img{
@@ -3838,8 +3848,27 @@ ul {
     outline: none;
 }
 
+.wrap-comments .comment-respond .comment-form .comment-form-comment textarea:focus-within{
+    border-color: blue;
+}
+
 .wrap-comments .comment-respond .comment-form .comment-form-author{
     margin-top: 20px;
+}
+.wrap-comments .comment-respond .comment-form .comment-form-author #author:focus-within {
+    border-color: blue;
+}
+
+.wrap-comments .comment-respond .comment-form .comment-form-email #email:focus-within {
+    border-color: blue;
+}
+
+.wrap-comments .comment-respond .comment-form .comment-form-url #url:focus-within {
+    border-color: blue;
+}
+
+.wrap-comments .comment-respond .comment-form .form-submit .submit:focus-within {
+    border-color: blue;
 }
 
 .wrap-comments .comment-respond .comment-form .comment-form-author label{
@@ -3992,6 +4021,13 @@ ul {
 /***** BEGIN SIDEBAR *****/
 .sidebar {}
 
+.sidebar a{
+    transition: .6s linear;
+}
+.sidebar a:hover {
+    color: #848484 !important;
+}
+
 .sidebar .sidebar-inner{
     margin: 20px 0px 0px 20px;
 }
@@ -4121,6 +4157,10 @@ ul {
     outline: none;
 }
 
+.sidebar .sidebar-inner .sidebar-items .searchform div #s:focus-within {
+    border-color: blue;
+}
+
 .sidebar .sidebar-inner .sidebar-items .searchform div #searchsubmit {
     color: #616161;
     display: inline-block;
@@ -4135,6 +4175,10 @@ ul {
     letter-spacing: 0.7px;
     cursor: pointer;
     outline: none;
+}
+
+.sidebar .sidebar-inner .sidebar-items .searchform div #searchsubmit:focus-within {
+    border-color: blue;
 }
 
 .sidebar .sidebar-inner .sidebar-items h2 {
@@ -5448,7 +5492,15 @@ ul {
     background: #353535; 
     color: #fff;
 }   
-        
+
+.footer-4-col a{ 
+    transition: .6s linear;
+}   
+
+.footer-4-col a:hover{ 
+    color: #848484 !important;
+}   
+               
 .footer-4-col  .inner{} 
         
 .footer-4-col  .inner .footer{}
@@ -5919,6 +5971,14 @@ ul {
     .sidebar .sidebar-inner{
         margin: 20px 0px 0px 0px;
     }
+
+    /* BEGIN AXIS INDEX ONE */
+
+    .axis-magazine-index .blog-2-col-inner .items  .items-inner .img-box .img-thumb {
+        height: auto !important;
+    }   
+
+    /* END AXIS INDEX ONE */
 
     /* BEGIN axis INDEX TWO  */
 

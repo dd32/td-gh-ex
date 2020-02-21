@@ -26,7 +26,7 @@ function axis_magazine_theme_info_display() {
 	
 	?>
 	<div class="wrap axis-magazine-adm">
-		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.05', 'axis-magazine'); ?></h1>
+		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.06', 'axis-magazine'); ?></h1>
 		<div class="axis-magazine-adm-dsply-fl axis-magazine-adm-fl-wrap axis-magazine-adm-jc-sp-btw">
 
 			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
@@ -60,6 +60,16 @@ function axis_magazine_theme_info_display() {
 				<p>
 					<a href="<?php echo esc_url('http://zidithemes.tumblr.com/post/189552213279/axis-magazine-pro'); ?>" class="button button-primary" target="_blank">
 						<?php esc_html_e('Upgrade to Axis Magazine Pro', 'axis-magazine'); ?>
+					</a>
+				</p>
+			</div>
+
+			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
+				<h4><?php esc_html_e('Watch Tutorial on Axis Magazine','axis-magazine'); ?></h4>
+				<p><?php esc_html_e('Watch Youtube tutorial on how to install and use Axis Magazine theme.', 'axis-magazine'); ?></p>
+				<p>
+					<a href="<?php echo esc_url('https://www.youtube.com/watch?v=sApxRjRWn8E'); ?>" class="button button-secondary button-youtube" target="_blank">
+						<?php esc_html_e('Watch Axis Magazine Tutorial', 'axis-magazine'); ?>
 					</a>
 				</p>
 			</div>

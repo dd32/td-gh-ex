@@ -3,6 +3,14 @@
 
 }
 
+.button-youtube {
+	background: #e00909 !important;
+	border-color: #e00909 !important;
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 14px !important;
+}
+
 .axis-magazine-adm .theme-upgrade{
 	background: #fff;
     border: 1px solid #ababab;
