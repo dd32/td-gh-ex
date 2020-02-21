@@ -52,6 +52,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			$pinterestURL = get_theme_mod('storto_theme_options_pinteresturl', '#');
 			$tumblrURL = get_theme_mod('storto_theme_options_tumblrurl', '#');
 			$vkURL = get_theme_mod('storto_theme_options_vkurl', '#');
+			$twitchURL = get_theme_mod('storto_theme_options_twitchurl', '');
 		?>
 		<div class="socialLine smallPart">
 			<?php if (!empty($facebookURL)) : ?>
@@ -80,6 +81,9 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<?php endif; ?>
 			<?php if (!empty($vkURL)) : ?>
 				<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'storto' ); ?>"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'storto' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if (!empty($twitchURL)) : ?>
+				<a href="<?php echo esc_url($twitchURL); ?>" title="<?php esc_attr_e( 'Twitch', 'storto' ); ?>"><i class="fa spaceRightDouble fa-twitch"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'storto' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($hideSearch == 1 ) : ?>
 				<a href="#" class="top-search" aria-hidden="true"><i class="fa spaceRightDouble fa-search"></i></a>

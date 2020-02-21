@@ -3,7 +3,8 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.5.9
+Stable tag: 1.6.0
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Storto WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -20,10 +21,11 @@ Storto is a simple and modern WordPress Theme useful for blog or personal page. 
 3. Click Activate to use your new theme right away.
 
 == Resources ==
-* Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
+* FontAwesome (https://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
 * Theia Sticky Sidebar script (https://github.com/WeCodePixels/theia-sticky-sidebar) licensed under MIT
 * Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
-* Image used in Theme Screenshot: Picjumbo (http://picjumbo.com/morning-musli/) Free photos for commercial and personal works
+* First image used in Theme Screenshot by Piqsels https://www.piqsels.com/en/public-domain-photo-szfte licensed under CC0
+* Second image used in Theme Screenshot by PxFuel https://www.pxfuel.com/en/free-photo-ejozm licensed under CC0
 
 == Changelog ==
 = Version 1.0 =
@@ -169,4 +171,8 @@ Storto is a simple and modern WordPress Theme useful for blog or personal page. 
 * Minor bug fixes
 
 = Version 1.5.9 =
+* Minor bug fixes
+
+= Version 1.6.0 =
+* Added Twitch social icon
 * Minor bug fixes

@@ -106,6 +106,11 @@ function storto_custom_settings_register( $wp_customize ) {
 	'default' => '#',
 	'label' => __('VK URL', 'storto')
 	);
+	$socialmedia[] = array(
+	'slug'=>'twitchurl', 
+	'default' => '',
+	'label' => __('Twitch URL', 'storto')
+	);
 	
 	foreach( $socialmedia as $storto_theme_options ) {
 		// SETTINGS
