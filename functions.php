@@ -217,7 +217,7 @@ function automobile_hub_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template','automobile_hub_front_page_template' );
 
-define('AUTOMOBILE_HUB_CREDIT','https://www.themespride.com/themes/free-automobile-wordpress-theme/');
+define('AUTOMOBILE_HUB_CREDIT',__('https://www.themespride.com/themes/free-automobile-wordpress-theme/','automobile-hub') );
 if ( ! function_exists( 'automobile_hub_credit' ) ) {
 	function automobile_hub_credit(){
 		echo "<a href=".esc_url(AUTOMOBILE_HUB_CREDIT)." target='_blank'>".esc_html__('Themespride','automobile-hub')."</a>";
