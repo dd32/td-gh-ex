@@ -27,7 +27,8 @@
 
 <!-- Main Content
 ================================================== -->
-<main id="mainContent">
+<div id="mainContent">
+
 	<div class="sidebar-overlay"></div>
 
 	<!-- Nav Bar

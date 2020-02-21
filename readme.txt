@@ -1,7 +1,7 @@
 === Aari ===
 Contributors: emtiaz51921
-Author URI: https://imtiazshamim.com/
-Donate link: https://imtiazshamim.com/contact/
+Author URI:
+Donate link:
 Requires at least: 4.0
 Tested up to: 5.3.1
 Requires PHP: 5.5
@@ -147,6 +147,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 
 == Changelog ==
+
+= 2.2.8 - February 21 2020 =
+* Bug fix
 
 = 2.2.7 - February 11 2020 =
 * Bug fix

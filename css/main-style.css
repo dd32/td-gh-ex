@@ -831,8 +831,9 @@ a:hover{
 	background:rgba(254, 166, 168, 0.16);
 	-webkit-transition: height 250ms;
 	transition: height 250ms;
+	border: 1px dashed #fd4145;
+	box-shadow: 2px 2px 2px #6c6c6c;
 }
-
 
 img {
 	width: 100%;
@@ -913,6 +914,7 @@ p {
 	line-height: 1.6;
 	font-weight: 400;
 	margin-bottom: 15px;
+	word-break: break-word;
 }
 
 /* -------------------------------------------------------
@@ -4549,6 +4551,7 @@ body.single-post .footer_bottom.section-padding {
 }
 .main_p .comment_sec {
 	position: relative;
+	width: 100%;
 }
 .main_p .comment_sec .title {
 	position: relative;

@@ -14,6 +14,7 @@
 
 
 			//initiate colorbox
+
 			$( 'a[href*=".jpg"], a[href*=".jpeg"], a[href*=".png"], a[href*=".gif"]' ).colorbox(
 				{
 					transition:'elastic',
@@ -100,8 +101,10 @@
 				)
 			}
 
+
+
 			function scrollAnimate() {
-				$( 'a[href*="#"]:not( [href="#"], a.comment-reply-link)' ).on(
+				$( 'a[href*="#"]:not( [href="#content"], a.comment-reply-link)' ).on(
 					"click",
 					function () {
 						if (location.pathname.replace( /^\//, "" ) == this.pathname.replace( /^\//, "" ) || location.hostname == this.hostname) {
@@ -126,6 +129,8 @@
 					}
 				)
 			}
+
+
 
 			function textSearch() {
 				$( ".search-trigger" ).on(
