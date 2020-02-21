@@ -167,7 +167,7 @@ function adventure_travelling_scripts() {
 	wp_enqueue_script( 'jquery-superfish', get_theme_file_uri( '/assets/js/jquery.superfish.js' ), array( 'jquery' ), '2.1.2', true );
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array( 'jquery' ), true );
 
-	wp_enqueue_script( 'custom-scripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), true);
+	wp_enqueue_script( 'adventure-travelling-custom-scripts', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), true);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -217,7 +217,7 @@ function adventure_travelling_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template',  'adventure_travelling_front_page_template' );
 
-define('ADVENTURE_TRAVELLING_CREDIT','https://www.themespride.com/themes/free-travel-agency-wordpress-theme/');
+define('ADVENTURE_TRAVELLING_CREDIT',__('https://www.themespride.com/themes/free-travel-agency-wordpress-theme/','adventure-travelling') );
 if ( ! function_exists( 'adventure_travelling_credit' ) ) {
 	function adventure_travelling_credit(){
 		echo "<a href=".esc_url(ADVENTURE_TRAVELLING_CREDIT)." target='_blank'>".esc_html__('Themespride','adventure-travelling')."</a>";

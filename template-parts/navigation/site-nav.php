@@ -30,7 +30,7 @@
         		</div>
 	    	</div>	    	
 	    	<div class="search-box col-lg-1 col-md-1 col-4">
-		        <span><i class="fas fa-search"></i></span>
+		        <span><a href="#"><i class="fas fa-search"></i></a></span>
 	      	</div>
 	    </div>
 	    <div class="serach_outer">

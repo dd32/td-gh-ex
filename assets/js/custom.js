@@ -6,7 +6,7 @@ jQuery(function($){
     speed:       'fast'                         
   });
 
-  $('.search-box span i').click(function(){
+  $('.search-box span a').click(function(){
     $(".serach_outer").toggle();
   });
 });
