@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.7 | 21st February 2020 = 
+* Fix: PHP 7.4 issue.
+
 = 1.7.6 | 16th December 2019 = 
 * Update: Fix notice dismiss off screen.
 

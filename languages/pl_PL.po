@@ -1,83 +1,79 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Pinnacle\n"
 "POT-Creation-Date: 2019-12-19 12:31-0700\n"
-"PO-Revision-Date: 2015-04-13 14:43-0700\n"
+"PO-Revision-Date: 2019-12-19 12:31-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.4\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__;_x:1,2c;_ex:1,2c;"
-"esc_attr_x:1,2c;esc_html_x:1,2c\n"
-"X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: assets/js\n"
-"X-Poedit-SearchPathExcluded-1: lib/icons/js\n"
-"X-Poedit-SearchPathExcluded-2: themeoptions/options_assets/extensions/"
-"vendor_support/vendor/select2\n"
-"X-Poedit-SearchPathExcluded-3: themeoptions/redux/assets/js\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: ..\n"
 
 #: 404.php:7
 msgid "Sorry, but the page you were trying to view does not exist."
-msgstr ""
+msgstr "Przykro nam, ale strona, którą próbujesz wyświetlić nie istnieje."
 
 #: 404.php:9
 msgid "It looks like this was the result of either:"
-msgstr ""
+msgstr "Wygląda na to, że był to wynik:"
 
 #: 404.php:11
 msgid "a mistyped address"
-msgstr ""
+msgstr "nieprawidłowy adres email"
 
 #: 404.php:12
 msgid "an out-of-date link"
-msgstr ""
+msgstr "nieaktualny link"
 
 #: 404.php:13
 msgid "incorrect permalink settings"
-msgstr ""
+msgstr "błędne ustawienia permalink"
 
 #: 404.php:15
 msgid ""
 "You can return back to the site's homepage and see if you can find what you "
 "are looking for or use the search form below."
 msgstr ""
+"Możesz wrócić do strony głównej witryny i sprawdzić, czy możesz znaleźć to, "
+"czego szukasz, lub skorzystać z poniższego formularza wyszukiwania."
 
 #: archive.php:42 index.php:10 search.php:9 taxonomy-portfolio-type.php:78
 msgid "Sorry, no results were found."
-msgstr ""
+msgstr "Brak wyników wyszukiwania."
 
 #: archive.php:82 front-page.php:159 home.php:53 index.php:25 search.php:43
 #: taxonomy-portfolio-type.php:112 template-blog-grid.php:70
 #: template-blog.php:88 template-portfolio-grid.php:165
 msgid "&larr; Older posts"
-msgstr ""
+msgstr "&larr; Starszy wpis"
 
 #: archive.php:83 front-page.php:160 home.php:54 index.php:26 search.php:44
 #: taxonomy-portfolio-type.php:113 template-blog-grid.php:71
 #: template-blog.php:89 template-portfolio-grid.php:166
 msgid "Newer posts &rarr;"
-msgstr ""
+msgstr "Nowszy wpis &rarr;"
 
 #: lib/authorbox.php:6
 msgid "About Author"
-msgstr ""
+msgstr "O Autorze"
 
 #: lib/authorbox.php:7 lib/utils.php:16 themeoptions/theme_options.php:493
 msgid "Latest Posts"
-msgstr ""
+msgstr "Ostatnie posty"
 
 #: lib/authorbox.php:13 lib/authorbox.php:16 lib/authorbox.php:20
 #: lib/authorbox.php:24 lib/authorbox.php:28 lib/authorbox.php:32
 #: lib/authorbox.php:36 lib/authorbox.php:40 lib/authorbox.php:44
 #: lib/authorbox.php:48 lib/authorbox.php:52
 msgid "Follow"
-msgstr ""
+msgstr "Podąrzaj"
 
 #: lib/authorbox.php:16
 msgid "on Facebook"
@@ -121,20 +117,20 @@ msgstr ""
 
 #: lib/authorbox.php:69
 msgid "Latest posts from"
-msgstr ""
+msgstr "Ostatnie wpisy"
 
 #: lib/class-tgm-plugin-activation.php:303 lib/plugin-activate.php:161
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "Zainstaluj wymagane wtyczki"
 
 #: lib/class-tgm-plugin-activation.php:304 lib/plugin-activate.php:162
 msgid "Install Plugins"
-msgstr ""
+msgstr "Instalowanie wtyczek"
 
 #: lib/class-tgm-plugin-activation.php:305 lib/plugin-activate.php:163
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr ""
+msgstr "Instalacja wtyczki %s"
 
 #: lib/class-tgm-plugin-activation.php:306 lib/plugin-activate.php:164
 msgid "Something went wrong with the plugin API."
@@ -142,23 +138,24 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:368 lib/plugin-activate.php:175
 msgid "Return to Required Plugins Installer"
-msgstr ""
+msgstr "Powrót  istalatora wymaganych wtyczek"
 
 #: lib/class-tgm-plugin-activation.php:369
 msgid "Return to the dashboard"
-msgstr ""
+msgstr "Powrót do kokpitu"
 
 #: lib/class-tgm-plugin-activation.php:370
 #: lib/class-tgm-plugin-activation.php:3052 lib/plugin-activate.php:176
 msgid "Plugin activated successfully."
-msgstr ""
+msgstr "Aktywacja wtyczek zakończyła się pomyślnie."
 
 #: lib/class-tgm-plugin-activation.php:371
 #: lib/class-tgm-plugin-activation.php:2873
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Wtytczka został aktywowana pomyślnie:"
+msgstr[1] "Następujące wtyczki został aktywowany pomyślnie:"
+msgstr[2] "Następujące wtyczki został aktywowany pomyślnie:"
 
 #: lib/class-tgm-plugin-activation.php:372
 #, php-format
@@ -175,11 +172,11 @@ msgstr ""
 #: lib/class-tgm-plugin-activation.php:374
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
+msgstr "Następujące wtyczki został aktywowany pomyślnie. %1$s"
 
 #: lib/class-tgm-plugin-activation.php:375
 msgid "Dismiss this notice"
-msgstr ""
+msgstr "Anuluj ostreżenie"
 
 #: lib/class-tgm-plugin-activation.php:376
 msgid "Please contact the administrator of this site for help."
@@ -191,9 +188,10 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:1115
 #: lib/class-tgm-plugin-activation.php:2869
+#, fuzzy
 msgctxt "plugin A *and* plugin B"
 msgid "and"
-msgstr ""
+msgstr "Losowy"
 
 #: lib/class-tgm-plugin-activation.php:1937
 #, php-format
@@ -203,35 +201,35 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:2218
 msgid "Required"
-msgstr ""
+msgstr "Wymagane"
 
 #: lib/class-tgm-plugin-activation.php:2221
 msgid "Recommended"
-msgstr ""
+msgstr "Zalecane"
 
 #: lib/class-tgm-plugin-activation.php:2238
 msgid "WordPress Repository"
-msgstr ""
+msgstr "Repozytorium Wordpress"
 
 #: lib/class-tgm-plugin-activation.php:2242
 msgid "External Source"
-msgstr ""
+msgstr "Link zewnętrzny"
 
 #: lib/class-tgm-plugin-activation.php:2246
 msgid "Pre-Packaged"
-msgstr ""
+msgstr "Pakowane"
 
 #: lib/class-tgm-plugin-activation.php:2265
 msgid "Not Installed"
-msgstr ""
+msgstr "Nie zainstalowane"
 
 #: lib/class-tgm-plugin-activation.php:2269
 msgid "Installed But Not Activated"
-msgstr ""
+msgstr "Zaintalowane ale nieaktywowane"
 
 #: lib/class-tgm-plugin-activation.php:2271
 msgid "Active"
-msgstr ""
+msgstr "Uruchom"
 
 #: lib/class-tgm-plugin-activation.php:2277
 msgid "Required Update not Available"
@@ -239,11 +237,11 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:2280
 msgid "Requires Update"
-msgstr ""
+msgstr "Wymaga aktualizacji"
 
 #: lib/class-tgm-plugin-activation.php:2283
 msgid "Update recommended"
-msgstr ""
+msgstr "Zalecana aktualizacja"
 
 #: lib/class-tgm-plugin-activation.php:2291
 #, php-format
@@ -257,6 +255,7 @@ msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: lib/class-tgm-plugin-activation.php:2348
 #, php-format
@@ -264,6 +263,7 @@ msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: lib/class-tgm-plugin-activation.php:2352
 #, php-format
@@ -271,6 +271,7 @@ msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
 
 #: lib/class-tgm-plugin-activation.php:2445
 msgctxt "as in: \"version nr unknown\""
@@ -279,15 +280,15 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:2453
 msgid "Installed version:"
-msgstr ""
+msgstr "Zainstalowana wersja:"
 
 #: lib/class-tgm-plugin-activation.php:2461
 msgid "Minimum required version:"
-msgstr ""
+msgstr "Minimalna wymagana wersja:"
 
 #: lib/class-tgm-plugin-activation.php:2473
 msgid "Available version:"
-msgstr ""
+msgstr "Dostępna wersja:"
 
 #: lib/class-tgm-plugin-activation.php:2497
 #, php-format
@@ -295,18 +296,20 @@ msgid ""
 "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
 "Dashboard</a>"
 msgstr ""
+"Brak wtyczek do zainstalowania lub aktywowania. <a href=\"%1$s\" title="
+"\"Return do Kokpitu \"> Powrót do Kokpitu </a>"
 
 #: lib/class-tgm-plugin-activation.php:2513
 msgid "Plugin"
-msgstr ""
+msgstr "Wtyczka"
 
 #: lib/class-tgm-plugin-activation.php:2514
 msgid "Source"
-msgstr ""
+msgstr "Źródło"
 
 #: lib/class-tgm-plugin-activation.php:2515
 msgid "Type"
-msgstr ""
+msgstr "Rodzaj"
 
 #: lib/class-tgm-plugin-activation.php:2519
 msgid "Version"
@@ -314,37 +317,40 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:2520
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: lib/class-tgm-plugin-activation.php:2544
-#, php-format
+#, fuzzy, php-format
+#| msgid "Install"
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Install %2$s"
-msgstr ""
+msgstr "Instaluj"
 
 #: lib/class-tgm-plugin-activation.php:2550
-#, php-format
+#, fuzzy, php-format
+#| msgid "Update"
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Update %2$s"
-msgstr ""
+msgstr "Aktualizuj"
 
 #: lib/class-tgm-plugin-activation.php:2556
-#, php-format
+#, fuzzy, php-format
+#| msgid "Activate"
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Activate %2$s"
-msgstr ""
+msgstr "Aktywuj"
 
 #: lib/class-tgm-plugin-activation.php:2660
 msgid "Install"
-msgstr ""
+msgstr "Instaluj"
 
 #: lib/class-tgm-plugin-activation.php:2666
 msgid "Update"
-msgstr ""
+msgstr "Aktualizuj"
 
 #: lib/class-tgm-plugin-activation.php:2669
 msgid "Activate"
-msgstr ""
+msgstr "Aktywuj"
 
 #: lib/class-tgm-plugin-activation.php:2730
 msgid "No plugins are available to be installed at this time."
@@ -356,12 +362,12 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:3051
 msgid "Plugin activation failed."
-msgstr ""
+msgstr "Aktywacja nieudana."
 
 #: lib/class-tgm-plugin-activation.php:3390
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Instalowanie wtyczki %1$s (%2$d/%3$d)"
 
 #: lib/class-tgm-plugin-activation.php:3394
 #, php-format
@@ -371,13 +377,13 @@ msgstr ""
 #: lib/class-tgm-plugin-activation.php:3395
 #, php-format
 msgid "The installation of %1$s failed."
-msgstr ""
+msgstr "Instalacja zakończona %1$s niepowodzeniem."
 
 #: lib/class-tgm-plugin-activation.php:3399
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
-msgstr ""
+msgstr "Rozpoczą się proces instalacji i aktywacji. Proszę o cierpliwość."
 
 #: lib/class-tgm-plugin-activation.php:3400
 #, php-format
@@ -386,12 +392,12 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:3401
 msgid "All installations and activations have been completed."
-msgstr ""
+msgstr "Zakończono instalacje i aktywację."
 
 #: lib/class-tgm-plugin-activation.php:3402
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Innstalcja i aktywacja Wtyczki %1$s (%2$d/%3$d)"
 
 #: lib/class-tgm-plugin-activation.php:3406
 msgid ""
@@ -401,34 +407,36 @@ msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:3408
 msgid "All installations have been completed."
-msgstr ""
+msgstr "Instalacja zakończona."
 
 #: lib/class-tgm-plugin-activation.php:3409
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Instalowanie wtyczki %1$s (%2$d/%3$d)"
 
 #: lib/cleanup.php:71 lib/custom.php:164
 #: templates/content-post-grid-carousel.php:36
 msgid "Read More"
-msgstr ""
+msgstr "Czytaj więcej"
 
 #: lib/comments.php:38 templates/comment.php:11
 #, php-format
 msgid "%1$s"
-msgstr ""
+msgstr "%1$s"
 
 #: lib/comments.php:43
 msgid "| (Edit)"
-msgstr ""
+msgstr "| (Edytuj)"
 
 #: lib/comments.php:49 templates/comment.php:19
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Twój komentarz wymaga akcetacji."
 
 #: lib/custom.php:85
+#, fuzzy
+#| msgid "Working..."
 msgid "Loading..."
-msgstr ""
+msgstr "Przetwarzanie..."
 
 #: lib/custom.php:86
 msgid "of"
@@ -440,23 +448,23 @@ msgstr ""
 
 #: lib/custom.php:481 templates/entry-post-links.php:3
 msgid "Previous Post"
-msgstr ""
+msgstr "Wcześniejszy wpis"
 
 #: lib/custom.php:481 templates/entry-post-links.php:6
 msgid "Next Post"
-msgstr ""
+msgstr "Następny wpis"
 
 #: lib/init.php:15
 msgid "Primary Navigation"
-msgstr ""
+msgstr "Menu główne"
 
 #: lib/init.php:16
 msgid "Topbar Navigation"
-msgstr ""
+msgstr "Topbar Menu"
 
 #: lib/init.php:17
 msgid "Footer Navigation"
-msgstr ""
+msgstr "Menu - Stopka"
 
 #: lib/init.php:33 themeoptions/theme_options.php:989
 #: themeoptions/theme_options.php:2176
@@ -477,15 +485,15 @@ msgstr ""
 
 #: lib/metaboxes.php:32 lib/metaboxes.php:103
 msgid "All Blog Posts"
-msgstr ""
+msgstr "Wszyskie wpisy na blgu"
 
 #: lib/metaboxes.php:87 lib/metaboxes.php:315 lib/metaboxes.php:363
 msgid "All"
-msgstr ""
+msgstr "Wszystko"
 
 #: lib/metaboxes.php:188
 msgid "Standard Post Options"
-msgstr ""
+msgstr "Opcje standardowe wpisu"
 
 #: lib/metaboxes.php:193 lib/metaboxes.php:230
 msgid "Post Summary"
@@ -499,7 +507,7 @@ msgstr ""
 #: themeoptions/theme_options.php:1966 themeoptions/theme_options.php:1984
 #: themeoptions/theme_options.php:2016 themeoptions/theme_options.php:2050
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #: lib/metaboxes.php:200 lib/metaboxes.php:237
 #: themeoptions/theme_options.php:1967 themeoptions/theme_options.php:1985
@@ -519,7 +527,7 @@ msgstr ""
 
 #: lib/metaboxes.php:213
 msgid "Head Content"
-msgstr ""
+msgstr "Treść nagłówka"
 
 #: lib/metaboxes.php:218 lib/metaboxes.php:235
 msgid "Image Post Default"
@@ -527,13 +535,13 @@ msgstr ""
 
 #: lib/metaboxes.php:219 themeoptions/theme_options.php:1999
 msgid "Image"
-msgstr ""
+msgstr "Obraz"
 
 #: lib/metaboxes.php:220 themeoptions/theme_options.php:489
 #: themeoptions/theme_options.php:679 themeoptions/theme_options.php:1998
 #: themeoptions/theme_options.php:2031 themeoptions/theme_options.php:2064
 msgid "None"
-msgstr ""
+msgstr "Brak"
 
 #: lib/metaboxes.php:224
 msgid "Max Image Width"
@@ -547,11 +555,11 @@ msgstr ""
 
 #: lib/metaboxes.php:243
 msgid "Post Options"
-msgstr ""
+msgstr "Opcje wpisu"
 
 #: lib/metaboxes.php:248 lib/metaboxes.php:400
 msgid "Display Sidebar?"
-msgstr ""
+msgstr "Wyświetl pasek boczny?"
 
 #: lib/metaboxes.php:249 lib/metaboxes.php:401
 msgid "Choose if layout is fullwidth or sidebar"
@@ -561,53 +569,53 @@ msgstr ""
 #: themeoptions/redux/framework.php:1824 themeoptions/theme_options.php:973
 #: themeoptions/theme_options.php:986 themeoptions/theme_options.php:1000
 msgid "Default"
-msgstr ""
+msgstr "Domyślny"
 
 #: lib/metaboxes.php:254 lib/metaboxes.php:273 lib/metaboxes.php:406
 #: themeoptions/theme_options.php:1714
 msgid "Yes"
-msgstr ""
+msgstr "Tak"
 
 #: lib/metaboxes.php:255 lib/metaboxes.php:272 lib/metaboxes.php:283
 #: lib/metaboxes.php:405 themeoptions/theme_options.php:1713
 msgid "No"
-msgstr ""
+msgstr "Nie"
 
 #: lib/metaboxes.php:259 lib/metaboxes.php:410
 msgid "Choose Sidebar"
-msgstr ""
+msgstr "Wybierz pasek boczny"
 
 #: lib/metaboxes.php:266
 msgid "Author Info"
-msgstr ""
+msgstr "Info autora"
 
 #: lib/metaboxes.php:267
 msgid "Display an author info box?"
-msgstr ""
+msgstr "Wyświetlić informacje o autorze?"
 
 #: lib/metaboxes.php:277
 msgid "Posts Carousel"
-msgstr ""
+msgstr "Karuzela wpisów"
 
 #: lib/metaboxes.php:278
 msgid "Display a carousel with similar or recent posts?"
-msgstr ""
+msgstr "Wyświtlić karuzelę z najnowszymi wpisami?"
 
 #: lib/metaboxes.php:284 themeoptions/theme_options.php:1947
 msgid "Yes - Display Recent Posts"
-msgstr ""
+msgstr "Tak - Pokaż ostatnie wpisy"
 
 #: lib/metaboxes.php:285 themeoptions/theme_options.php:1948
 msgid "Yes - Display Similar Posts"
-msgstr ""
+msgstr "Tak - Pokaż podobne wpisy"
 
 #: lib/metaboxes.php:289
 msgid "Carousel Title"
-msgstr ""
+msgstr "Karuzlea tytułów"
 
 #: lib/metaboxes.php:290
 msgid "ex. Similar Posts"
-msgstr ""
+msgstr "np. Podobne wpisy"
 
 #: lib/metaboxes.php:298
 msgid "Blog List Options"
@@ -708,16 +716,16 @@ msgstr ""
 #: lib/metaboxes.php:387 themeoptions/theme_options.php:1309
 #: themeoptions/theme_options.php:1418
 msgid "Four Column"
-msgstr ""
+msgstr "4 Kolumny"
 
 #: lib/metaboxes.php:388 themeoptions/theme_options.php:1308
 #: themeoptions/theme_options.php:1417
 msgid "Three Column"
-msgstr ""
+msgstr "3 Kolumny"
 
 #: lib/metaboxes.php:389
 msgid "Two Column"
-msgstr ""
+msgstr "2 Kolumny"
 
 #: lib/metaboxes.php:394
 msgid "Sidebar Options"
@@ -726,20 +734,26 @@ msgstr ""
 #. translators: %s: <strong>
 #. translators: %s: <strong> <a>
 #: lib/plugin-activate.php:48 lib/plugin-activate.php:104
+#, fuzzy
+#| msgid "Activate"
 msgid "Activating..."
-msgstr ""
+msgstr "Aktywuj"
 
 #: lib/plugin-activate.php:48 lib/plugin-activate.php:104
 msgid "Activated"
-msgstr ""
+msgstr "Uruchom"
 
 #: lib/plugin-activate.php:48 lib/plugin-activate.php:104
+#, fuzzy
+#| msgid "Install"
 msgid "Installing..."
-msgstr ""
+msgstr "Instaluj"
 
 #: lib/plugin-activate.php:48 lib/plugin-activate.php:104
+#, fuzzy
+#| msgid "Install"
 msgid "Installed"
-msgstr ""
+msgstr "Instaluj"
 
 #: lib/plugin-activate.php:177
 #, php-format
@@ -758,9 +772,10 @@ msgstr ""
 
 #. translators: %s is the author name
 #: lib/utils.php:44
-#, php-format
+#, fuzzy, php-format
+#| msgid "Author:"
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor:"
 
 #. translators: %s is the day
 #: lib/utils.php:49
@@ -786,23 +801,23 @@ msgstr ""
 
 #: lib/widgets.php:48
 msgid "Topbar Widget"
-msgstr ""
+msgstr "Topbar widżet"
 
 #: lib/widgets.php:71 lib/widgets.php:112 lib/widgets.php:143
 msgid "Footer Column 1"
-msgstr ""
+msgstr "Stopka Kolumna 1"
 
 #: lib/widgets.php:81 lib/widgets.php:122 lib/widgets.php:153
 msgid "Footer Column 2"
-msgstr ""
+msgstr "Stopka Kolumna 2"
 
 #: lib/widgets.php:91 lib/widgets.php:132
 msgid "Footer Column 3"
-msgstr ""
+msgstr "Stopka Kolumna 3"
 
 #: lib/widgets.php:101
 msgid "Footer Column 4"
-msgstr ""
+msgstr "Stopka Kolumna 4"
 
 #: lib/widgets.php:178
 msgid "Use this widget to add a Vcard to your site"
@@ -815,43 +830,43 @@ msgstr ""
 #: lib/widgets.php:247 lib/widgets.php:391 lib/widgets.php:527
 #: lib/widgets.php:649
 msgid "Title:"
-msgstr ""
+msgstr "Tytuł:"
 
 #: lib/widgets.php:251
 msgid "Company Name:"
-msgstr ""
+msgstr "Nazwa Firmy:"
 
 #: lib/widgets.php:255
 msgid "Name:"
-msgstr ""
+msgstr "Imię:"
 
 #: lib/widgets.php:259
 msgid "Street Address:"
-msgstr ""
+msgstr "Ulica:"
 
 #: lib/widgets.php:263
 msgid "City/Locality:"
-msgstr ""
+msgstr "Miejscowość:"
 
 #: lib/widgets.php:267
 msgid "State/Region:"
-msgstr ""
+msgstr "Region:"
 
 #: lib/widgets.php:271
 msgid "Zipcode/Postal Code:"
-msgstr ""
+msgstr "Kod pocztowy:"
 
 #: lib/widgets.php:275
 msgid "Mobile Telephone:"
-msgstr ""
+msgstr "Telefon komórkowy:"
 
 #: lib/widgets.php:279
 msgid "Fixed Telephone:"
-msgstr ""
+msgstr "Telefon:"
 
 #: lib/widgets.php:283
 msgid "Email:"
-msgstr ""
+msgstr "eMail:"
 
 #: lib/widgets.php:295
 msgid "Simple way to add Social Icons"
@@ -923,7 +938,7 @@ msgstr ""
 
 #: lib/widgets.php:472 templates/recentblog-carousel.php:7
 msgid "Recent Posts"
-msgstr ""
+msgstr "Ostatnie posty"
 
 #: lib/widgets.php:530
 msgid "Number of posts to show:"
@@ -948,11 +963,11 @@ msgstr ""
 
 #: lib/widgets.php:654
 msgid "Blog Posts"
-msgstr ""
+msgstr "Wpisy na blogu"
 
 #: lib/widgets.php:655
 msgid "Portfolio"
-msgstr ""
+msgstr "Portfolio"
 
 #: lib/widgets.php:658
 msgid "If Post - Choose Category (Optional):"
@@ -1000,7 +1015,7 @@ msgstr ""
 #: themeoptions/redux/inc/fields/background/field_background.php:314
 #: themeoptions/redux/inc/fields/media/field_media.php:198
 msgid "Upload"
-msgstr ""
+msgstr "Wczytaj"
 
 #: lib/widgets.php:753
 msgid "Image opens in"
@@ -1016,7 +1031,7 @@ msgstr ""
 
 #: product-searchform.php:26 searchform.php:2
 msgid "Search for:"
-msgstr ""
+msgstr "Szuklaj w:"
 
 #: product-searchform.php:27
 msgid "Search for products"
@@ -1024,30 +1039,30 @@ msgstr ""
 
 #: searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "Szukaj"
 
 #: template-blog-grid.php:59 template-blog.php:77
 #: templates/home/blog-home.php:51 templates/home/latest-slider.php:58
 #: templates/recentblog-carousel.php:39 templates/similarblog-carousel.php:45
 msgid "Sorry, no blog entries found."
-msgstr ""
+msgstr "Przepraszamy, nie znaleziono żadnych wpisów w blogu."
 
 #: template-portfolio-grid.php:156 templates/bottomportfolio-carousel.php:180
 #: templates/home/portfolio-carousel.php:233
 msgid "Sorry, no portfolio entries found."
-msgstr ""
+msgstr "Przepraszamy, nie znaleziono żadnych wpisów portfolio."
 
 #: templates/account-sidebar.php:18
 msgid "Edit Account"
-msgstr ""
+msgstr "Edytuj"
 
 #: templates/account-sidebar.php:21
 msgid "Logout"
-msgstr ""
+msgstr "Logo"
 
 #: templates/bottomportfolio-carousel.php:9
 msgid "Recent Projects"
-msgstr ""
+msgstr "Ostatnie projekty"
 
 #: templates/bottomportfolio-carousel.php:135
 #: templates/content-loop-portfolio.php:25
@@ -1057,64 +1072,65 @@ msgstr ""
 
 #: templates/comment.php:15
 msgid "(Edit)"
-msgstr ""
+msgstr "(Edytuj)"
 
 #: templates/comments.php:9
 #, php-format
 msgid "One Response "
 msgid_plural "%1$s Responses "
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Jedna odpowiedz "
+msgstr[1] "%1$s Odpowiedzi "
+msgstr[2] "%1$s Odpowiedzi "
 
 #: templates/comments.php:18
 msgid "&larr; Older comments"
-msgstr ""
+msgstr "&larr; Starsze komentarze"
 
 #: templates/comments.php:21
 msgid "Newer comments &rarr;"
-msgstr ""
+msgstr "Nowsze komentarze &rarr;"
 
 #: templates/comments.php:34 templates/comments.php:51
 msgid "Comments are closed."
-msgstr ""
+msgstr "Komentarze zostały wyłączone."
 
 #: templates/comments.php:61
 msgid "Name"
-msgstr ""
+msgstr "Imię"
 
 #: templates/comments.php:63
 msgid "Email (will not be published)"
-msgstr ""
+msgstr "Email (nie będzie publikowany)"
 
 #: templates/comments.php:65
 msgid "Website"
-msgstr ""
+msgstr "Strona"
 
 #: templates/comments.php:69
 msgid "Comment"
-msgstr ""
+msgstr "Teść komentarza"
 
 #: templates/comments.php:76
 msgid "Leave a Reply"
-msgstr ""
+msgstr "Zostaw Komentarz"
 
 #: templates/comments.php:77
 #, php-format
 msgid "Leave a Reply to %s"
-msgstr ""
+msgstr "Zostaw Komentarz do %s"
 
 #: templates/comments.php:78
 msgid "Submit Comment"
-msgstr ""
+msgstr "Wyślij"
 
 #: templates/content-fullpost.php:138 templates/content-fullpostfull.php:138
 #: templates/content-single.php:150 templates/content-singleportfolio.php:185
 msgid "Pages:"
-msgstr ""
+msgstr "Strony"
 
 #: templates/entry-meta-subhead.php:3
 msgid "by"
-msgstr ""
+msgstr "przez"
 
 #: templates/entry-meta-subhead.php:5
 msgid "on"
@@ -1134,21 +1150,21 @@ msgstr ""
 
 #: templates/home/blog-home.php:6
 msgid "Latest from the Blog"
-msgstr ""
+msgstr "Najnowsze z bloga"
 
 #: templates/similarblog-carousel.php:6
 msgid "Similar Posts"
-msgstr ""
+msgstr "Podobne wpisy"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:50
 msgid "Icon"
-msgstr ""
+msgstr "Ikona"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:55
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:53
 #, php-format
 msgid "New %s"
-msgstr ""
+msgstr "Nowy %s"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:110
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:178
@@ -1165,7 +1181,7 @@ msgstr ""
 #: themeoptions/redux/inc/fields/multi_text/field_multi_text.php:73
 #: themeoptions/redux/inc/fields/multi_text/field_multi_text.php:76
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:119
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:184
@@ -1177,7 +1193,7 @@ msgstr ""
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:121
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:166
 msgid "URL"
-msgstr ""
+msgstr "Link"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:140
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:205
@@ -1185,14 +1201,14 @@ msgstr ""
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:168
 #: themeoptions/theme_options.php:1050
 msgid "Title"
-msgstr ""
+msgstr "Tytuł"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:141
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:207
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:123
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:170
 msgid "Description"
-msgstr ""
+msgstr "Opis"
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:142
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:209
@@ -1213,12 +1229,12 @@ msgstr ""
 
 #: themeoptions/options_assets/extensions/kad_icons/kad_icons/field_kad_icons.php:226
 msgid "Add Icon"
-msgstr ""
+msgstr "Dodaj ikonę"
 
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:48
 #: themeoptions/theme_options.php:616 themeoptions/theme_options.php:797
 msgid "Slide"
-msgstr ""
+msgstr "Przesuwanie"
 
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:124
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:172
@@ -1233,7 +1249,7 @@ msgstr ""
 #: themeoptions/options_assets/extensions/kad_slides/kad_slides/field_kad_slides.php:188
 #, php-format
 msgid "Add %s"
-msgstr ""
+msgstr "Dodaj obraz %s"
 
 #: themeoptions/redux/core/enqueue.php:446
 #: themeoptions/redux/inc/extensions/customizer/extension_customizer.php:685
@@ -1258,7 +1274,7 @@ msgstr ""
 
 #: themeoptions/redux/core/enqueue.php:477
 msgid "Please Wait"
-msgstr ""
+msgstr "Proszę czekać"
 
 #: themeoptions/redux/core/enqueue.php:488
 msgid "There was an error saving. Here is the result of your action:"
@@ -1275,31 +1291,33 @@ msgstr ""
 
 #: themeoptions/redux/core/panel.php:141
 msgid "Settings Imported!"
-msgstr ""
+msgstr "Ustawienia zaimportowane"
 
 #: themeoptions/redux/core/panel.php:156
 msgid "All Defaults Restored!"
-msgstr ""
+msgstr "Ustawienia domyśne przywrócene!"
 
 #: themeoptions/redux/core/panel.php:170
 msgid "Section Defaults Restored!"
-msgstr ""
+msgstr "Przywrócono ustawienia domyślen sekcji"
 
 #: themeoptions/redux/core/panel.php:184
+#, fuzzy
+#| msgid "Settings updated."
 msgid "Settings Saved!"
-msgstr ""
+msgstr "Ustawienia zaktualizowane."
 
 #: themeoptions/redux/core/panel.php:204
 msgid "Settings have changed, you should save them!"
-msgstr ""
+msgstr "Ustawienia zostały zmienione, należy je zapisać!"
 
 #: themeoptions/redux/core/panel.php:212
 msgid "error(s) were found!"
-msgstr ""
+msgstr "znaleziono błędy"
 
 #: themeoptions/redux/core/panel.php:220
 msgid "warning(s) were found!"
-msgstr ""
+msgstr "znaleiono ostrzeżenia"
 
 #: themeoptions/redux/core/panel.php:312
 msgid ""
@@ -1319,7 +1337,7 @@ msgstr ""
 
 #: themeoptions/redux/framework.php:224 themeoptions/redux/framework.php:228
 msgid "Options"
-msgstr ""
+msgstr "Opcje"
 
 #: themeoptions/redux/framework.php:1675
 msgid "Enable"
@@ -1472,7 +1490,7 @@ msgstr ""
 #: themeoptions/redux/inc/extensions/import_export/extension_import_export.php:120
 #: themeoptions/theme_options.php:2806
 msgid "Import / Export"
-msgstr ""
+msgstr "Imoprt / eksport"
 
 #: themeoptions/redux/inc/extensions/import_export/import_export/field_import_export.php:104
 msgid ""
@@ -1500,50 +1518,60 @@ msgid ""
 msgstr ""
 
 #: themeoptions/redux/inc/extensions/options_object/extension_options_object.php:82
+#, fuzzy
 msgid "Options Object"
-msgstr ""
+msgstr "Opcje"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:124
 #: themeoptions/redux/inc/fields/color/field_color.php:73
+#, fuzzy
 msgid "Transparent"
-msgstr ""
+msgstr "Przezroczysty nagłówek"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:141
+#, fuzzy
 msgid "Background Repeat"
-msgstr ""
+msgstr "Tło"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:157
+#, fuzzy
 msgid "Background Clip"
-msgstr ""
+msgstr "Kolor tła"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:173
+#, fuzzy
 msgid "Background Origin"
-msgstr ""
+msgstr "Tło"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:188
+#, fuzzy
 msgid "Background Size"
-msgstr ""
+msgstr "Tło"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:203
+#, fuzzy
 msgid "Background Attachment"
-msgstr ""
+msgstr "Obrazek tła"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:223
+#, fuzzy
 msgid "Background Position"
-msgstr ""
+msgstr "Pozycja tła obrazka"
 
 #: themeoptions/redux/inc/fields/background/field_background.php:277
 #: themeoptions/redux/inc/fields/media/field_media.php:149
 msgid "No media selected"
-msgstr ""
+msgstr "zostaw ustawienia domyślne "
 
 #: themeoptions/redux/inc/fields/multi_text/field_multi_text.php:61
+#, fuzzy
 msgid "Add More"
-msgstr ""
+msgstr "Czytah więcej"
 
 #: themeoptions/redux/inc/fields/select/field_select.php:83
+#, fuzzy
 msgid "Select an item"
-msgstr ""
+msgstr "Wybierz opcję"
 
 #: themeoptions/redux/inc/fields/select/field_select.php:134
 msgid "No items of this type were found."
@@ -1551,29 +1579,32 @@ msgstr ""
 
 #: themeoptions/redux/inc/fields/switch/field_switch.php:41
 msgid "On"
-msgstr ""
+msgstr "Wł"
 
 #: themeoptions/redux/inc/fields/switch/field_switch.php:44
 msgid "Off"
-msgstr ""
+msgstr "Wył"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:231
 msgid "Font Family"
-msgstr ""
+msgstr "Rodzaj czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:232
+#, fuzzy
 msgid "Font family"
-msgstr ""
+msgstr "Rodzaj czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:258
 #: themeoptions/redux/inc/fields/typography/field_typography.php:259
+#, fuzzy
 msgid "Backup Font Family"
-msgstr ""
+msgstr "Rodzaj czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:273
 #: themeoptions/redux/inc/fields/typography/field_typography.php:281
+#, fuzzy
 msgid "Font style"
-msgstr ""
+msgstr "Styl ikony"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:274
 msgid "Font Weight &amp; Style"
@@ -1581,87 +1612,102 @@ msgstr ""
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:281
 msgid "Style"
-msgstr ""
+msgstr "Styl"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:321
+#, fuzzy
 msgid "Font subsets"
-msgstr ""
+msgstr "Rozmiar ikony"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:323
+#, fuzzy
 msgid "Font Subsets"
-msgstr ""
+msgstr "Rozmiar ikony"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:325
+#, fuzzy
 msgid "Subsets"
-msgstr ""
+msgstr "Rozmiar ikony"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:325
+#, fuzzy
 msgid "Font script"
-msgstr ""
+msgstr "Rodzaj czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:342
 #: themeoptions/redux/inc/fields/typography/field_typography.php:343
 #: themeoptions/redux/inc/fields/typography/field_typography.php:344
+#, fuzzy
 msgid "Text Align"
-msgstr ""
+msgstr "Wyrównanie"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:365
 #: themeoptions/redux/inc/fields/typography/field_typography.php:366
 #: themeoptions/redux/inc/fields/typography/field_typography.php:367
+#, fuzzy
+#| msgid "Text Tag"
 msgid "Text Transform"
-msgstr ""
+msgstr "Rodzaj tekstu"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:388
 #: themeoptions/redux/inc/fields/typography/field_typography.php:389
 #: themeoptions/redux/inc/fields/typography/field_typography.php:390
+#, fuzzy
 msgid "Font Variant"
-msgstr ""
+msgstr "Rodzaj czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:408
 #: themeoptions/redux/inc/fields/typography/field_typography.php:409
 #: themeoptions/redux/inc/fields/typography/field_typography.php:410
+#, fuzzy
 msgid "Text Decoration"
-msgstr ""
+msgstr "Resetuj sekcję"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:432
 #: themeoptions/redux/inc/fields/typography/field_typography.php:433
+#, fuzzy
 msgid "Font Size"
-msgstr ""
+msgstr "Rozmiar ikony"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:433
 msgid "Size"
-msgstr ""
+msgstr "Rozmiar"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:441
 #: themeoptions/redux/inc/fields/typography/field_typography.php:442
+#, fuzzy
 msgid "Line Height"
-msgstr ""
+msgstr "Wysokość wideo"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:442
 msgid "Height"
-msgstr ""
+msgstr "Wysokość"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:450
 #: themeoptions/redux/inc/fields/typography/field_typography.php:451
+#, fuzzy
 msgid "Word Spacing"
-msgstr ""
+msgstr "Górny"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:459
 #: themeoptions/redux/inc/fields/typography/field_typography.php:460
+#, fuzzy
 msgid "Letter Spacing"
-msgstr ""
+msgstr "Lewy"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:478
 msgid "Font Color"
-msgstr ""
+msgstr "Kolor czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:480
+#, fuzzy
 msgid "Font color"
-msgstr ""
+msgstr "Kolor czcionki"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:890
+#, fuzzy
 msgid "Standard Fonts"
-msgstr ""
+msgstr "Opcje standardowe wpisu"
 
 #: themeoptions/redux/inc/fields/typography/field_typography.php:991
 msgid "Google Webfonts"
@@ -1685,8 +1731,10 @@ msgid ""
 msgstr ""
 
 #: themeoptions/redux/inc/themecheck/checks/embedded.php:38
+#, fuzzy
+#| msgid "Options"
 msgid "Optional"
-msgstr ""
+msgstr "Opcje"
 
 #: themeoptions/redux/inc/themecheck/checks/embedded.php:40
 msgid ""
@@ -1704,8 +1752,10 @@ msgid "Redux Resting Diles"
 msgstr ""
 
 #: themeoptions/redux/inc/themecheck/checks/full_package.php:18
+#, fuzzy
+#| msgid "Header Style"
 msgid "Redux Code Styles"
-msgstr ""
+msgstr "Styl nagłówka"
 
 #: themeoptions/redux/inc/themecheck/checks/full_package.php:19
 msgid "Redux Unit Testing"
@@ -1738,8 +1788,9 @@ msgstr ""
 #: themeoptions/redux/inc/validation/color/validation_color.php:15
 #: themeoptions/redux/inc/validation/color_rgba/validation_color_rgba.php:14
 #: themeoptions/redux/inc/validation/colorrgba/validation_colorrgba.php:16
+#, fuzzy
 msgid "This field must be a valid color value."
-msgstr ""
+msgstr "To pole jest wymagane"
 
 #: themeoptions/redux/inc/validation/comma_numeric/validation_comma_numeric.php:16
 msgid ""
@@ -1751,8 +1802,9 @@ msgid "Unsafe strings were found in your CSS and have been filtered out."
 msgstr ""
 
 #: themeoptions/redux/inc/validation/date/validation_date.php:16
+#, fuzzy
 msgid "This field must be a valid date."
-msgstr ""
+msgstr "To pole jest wymagane"
 
 #: themeoptions/redux/inc/validation/email/validation_email.php:16
 #: themeoptions/redux/inc/validation/email_not_empty/validation_email_not_empty.php:16
@@ -1771,8 +1823,9 @@ msgid ""
 msgstr ""
 
 #: themeoptions/redux/inc/validation/not_empty/validation_not_empty.php:16
+#, fuzzy
 msgid "This field cannot be empty. Please provide a value."
-msgstr ""
+msgstr "To pole jest wymagane"
 
 #: themeoptions/redux/inc/validation/numeric/validation_numeric.php:16
 #: themeoptions/redux/inc/validation/numeric_not_empty/validation_numeric_not_empty.php:16
@@ -1793,22 +1846,22 @@ msgstr ""
 #: themeoptions/redux/templates/panel/footer.tpl.php:57
 #: themeoptions/redux/templates/panel/header_stickybar.tpl.php:21
 msgid "Save Changes"
-msgstr ""
+msgstr "Zapisz zmiany"
 
 #: themeoptions/redux/templates/panel/footer.tpl.php:61
 #: themeoptions/redux/templates/panel/header_stickybar.tpl.php:25
 msgid "Reset Section"
-msgstr ""
+msgstr "Resetuj sekcję"
 
 #: themeoptions/redux/templates/panel/footer.tpl.php:62
 #: themeoptions/redux/templates/panel/header_stickybar.tpl.php:26
 msgid "Reset All"
-msgstr ""
+msgstr "Resetuj wszystko"
 
 #: themeoptions/redux/templates/panel/footer.tpl.php:67
 #: themeoptions/redux/templates/panel/header_stickybar.tpl.php:29
 msgid "Working..."
-msgstr ""
+msgstr "Przetwarzanie..."
 
 #: themeoptions/redux/templates/panel/header.tpl.php:11
 #: themeoptions/redux/templates/panel/header.tpl.php:49
@@ -1824,8 +1877,9 @@ msgid "you are working in a localhost environment"
 msgstr ""
 
 #: themeoptions/redux/templates/panel/header.tpl.php:31
+#, fuzzy
 msgid "and"
-msgstr ""
+msgstr "Losowy"
 
 #: themeoptions/redux/templates/panel/header.tpl.php:34
 msgid "This has been automatically enabled because"
@@ -1843,7 +1897,7 @@ msgstr ""
 
 #: themeoptions/redux/templates/panel/header_stickybar.tpl.php:15
 msgid "Expand"
-msgstr ""
+msgstr "Rozwiń"
 
 #: themeoptions/theme_options.php:36 themeoptions/theme_options.php:37
 msgid "Theme Options"
@@ -1857,87 +1911,97 @@ msgstr ""
 
 #: themeoptions/theme_options.php:120
 msgid "Site Header"
-msgstr ""
+msgstr "Nagłówek strony"
 
 #: themeoptions/theme_options.php:123
 msgid "Welcome to Pinnacle Theme Options"
-msgstr ""
+msgstr "Witaj w opcjach szablonu Pinnacle"
 
 #: themeoptions/theme_options.php:124
 msgid "This theme was developed by"
-msgstr ""
+msgstr "Temat ten został opracowany przez"
 
 #: themeoptions/theme_options.php:125
 msgid "For theme documentation visit"
-msgstr ""
+msgstr "Dokumentacja"
 
 #: themeoptions/theme_options.php:127
 msgid "For support please visit"
-msgstr ""
+msgstr "Wsparcie: zobacz"
 
 #: themeoptions/theme_options.php:135
 msgid "Header Height"
-msgstr ""
+msgstr "Wysokośc nagłówka"
 
 #: themeoptions/theme_options.php:146
 msgid "Transparent Header"
-msgstr ""
+msgstr "Przezroczysty nagłówek"
 
 #: themeoptions/theme_options.php:152
+#, fuzzy
+#| msgid "Enable Transparent header until scrolled?"
 msgid "Enable Transparent header?"
-msgstr ""
+msgstr "Włączyć przezroczysty nagłówek?"
 
 #: themeoptions/theme_options.php:153
 msgid "This will make the page header background fill to the top of the page."
 msgstr ""
+"Tło nagłówka będzie przeźroczyste do momentu przewinięcia strony w dół."
 
 #: themeoptions/theme_options.php:159
 msgid "Menu Text Color (For Transparent Header)"
-msgstr ""
+msgstr "Kolor tekstu Menu (Dla przezroczystego nagłówka)"
 
 #: themeoptions/theme_options.php:160
+#, fuzzy
+#| msgid ""
+#| "Choose the font color of the menu font while background is transparent."
 msgid "Choose the font color of the menu font while background is transparent"
-msgstr ""
+msgstr "Wybierz kolor czcionki menu, kiedy tło jest przezroczyste."
 
 #: themeoptions/theme_options.php:170
 msgid "Border Color (For Transparent Header)"
-msgstr ""
+msgstr "Kolor obramowania (Dla Przezroczystego nagłówka)"
 
 #: themeoptions/theme_options.php:171
+#, fuzzy
+#| msgid "Choose the color of bottom border while background is transparent."
 msgid "Choose the color of bottom border while background is transparent"
-msgstr ""
+msgstr "Wybierz kolor dolnego obramowania, kiedy tło jest przezroczyste."
 
 #: themeoptions/theme_options.php:181
 msgid "Site title font Color (For Transparent Header)"
-msgstr ""
+msgstr "Kolor czcionki tytułu strony (Dla Przezroczystego nagłówka)"
 
 #: themeoptions/theme_options.php:182
+#, fuzzy
+#| msgid "Choose the font color for the logo while background is transparent."
 msgid "Choose the font color for the logo while background is transparent"
-msgstr ""
+msgstr "Wybierz kolor czcionki logo, kiedy tło jest przezroczyste."
 
 #: themeoptions/theme_options.php:194
 msgid "Logo (For Transparent Header)"
-msgstr ""
+msgstr "Logo (Dla Przezroczystego nagłówka)"
 
 #: themeoptions/theme_options.php:195
 msgid "Upload your Logo."
-msgstr ""
+msgstr "Prześlij swoje Logo."
 
 #: themeoptions/theme_options.php:202
 msgid "@2x Logo (For Transparent Header) "
-msgstr ""
+msgstr "@2 Logo (Dla Przezroczystego nagłówka) "
 
 #: themeoptions/theme_options.php:203 themeoptions/theme_options.php:245
 msgid "Should be twice the pixel size of your normal logo."
-msgstr ""
+msgstr "logo dla ekranów Retina."
 
 #: themeoptions/theme_options.php:214
 msgid "Logo Options"
-msgstr ""
+msgstr "Opcje Loga"
 
 #: themeoptions/theme_options.php:220
 msgid "Logo Container Width"
-msgstr ""
+msgstr "Szerokość dla kontenera Loga"
 
 #: themeoptions/theme_options.php:222
 msgid "16%"
@@ -1961,73 +2025,73 @@ msgstr ""
 
 #: themeoptions/theme_options.php:236
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #: themeoptions/theme_options.php:237
 msgid "Upload your Logo. If left blank theme will use site name."
-msgstr ""
+msgstr "Wczytaj Logo. Brak logo ustawi domyślną nazwę strony."
 
 #: themeoptions/theme_options.php:244
 msgid "Upload Your @2x Logo for Retina Screens"
-msgstr ""
+msgstr "Prześlij swoje logo @2x"
 
 #: themeoptions/theme_options.php:250
 msgid "Sitename Logo Font"
-msgstr ""
+msgstr "Ustawienia czcionki Loga"
 
 #: themeoptions/theme_options.php:264
 msgid "Choose size and style your sitename, if you don't use an image logo."
-msgstr ""
+msgstr "Ustawienia czcionki (Kolor, rozmiar itp.)"
 
 #: themeoptions/theme_options.php:281 themeoptions/theme_options.php:490
 #: themeoptions/theme_options.php:681
 msgid "Page Title"
-msgstr ""
+msgstr "Tutuł strony Ustawienia"
 
 #: themeoptions/theme_options.php:287
 msgid "Show the page title by default"
-msgstr ""
+msgstr "Pokaż tytuł strony domyślnie"
 
 #: themeoptions/theme_options.php:288 themeoptions/theme_options.php:1511
 #: themeoptions/theme_options.php:1641 themeoptions/theme_options.php:1851
 msgid "This can be overridden on each page."
-msgstr ""
+msgstr "Włącz tytuł strony na wszystkich stronach."
 
 #: themeoptions/theme_options.php:296
 msgid "Page Header Default Background"
-msgstr ""
+msgstr "Domyśłne tło dla Tytułu strony"
 
 #: themeoptions/theme_options.php:301
 msgid "Page Title Color"
-msgstr ""
+msgstr "Tytułu strony kolor"
 
 #: themeoptions/theme_options.php:302
 msgid "Choose the default pagetitle color for your site."
-msgstr ""
+msgstr "Wybierz kolor czcionki dla tytułu strony."
 
 #: themeoptions/theme_options.php:312
 msgid "Page Subtitle Color"
-msgstr ""
+msgstr "Podpis dla tytyłu strony kolor"
 
 #: themeoptions/theme_options.php:313
 msgid "Choose the default subtitle color for your site."
-msgstr ""
+msgstr "Wybierz kolor czcionki dla podpisu tytułu strony."
 
 #: themeoptions/theme_options.php:323
 msgid "Page Title Align"
-msgstr ""
+msgstr "Wyrównanie dla tekstu Tytułu strony"
 
 #: themeoptions/theme_options.php:325
 msgid "Center"
-msgstr ""
+msgstr "Środek"
 
 #: themeoptions/theme_options.php:326
 msgid "Left"
-msgstr ""
+msgstr "Lewa"
 
 #: themeoptions/theme_options.php:327
 msgid "Right"
-msgstr ""
+msgstr "Prawa"
 
 #: themeoptions/theme_options.php:337
 msgid ""
@@ -2037,75 +2101,75 @@ msgstr ""
 
 #: themeoptions/theme_options.php:348
 msgid "Footer Layout"
-msgstr ""
+msgstr "Wygląd stopki - ustawienia"
 
 #: themeoptions/theme_options.php:354
 msgid "Footer Widget Layout"
-msgstr ""
+msgstr "Wygląd stopki Widget"
 
 #: themeoptions/theme_options.php:355
 msgid "Select how many columns for footer widgets"
-msgstr ""
+msgstr " Wybierz ilość kolumn w stopce"
 
 #: themeoptions/theme_options.php:381
 msgid "Topbar Settings"
-msgstr ""
+msgstr "Topbar ustawienia"
 
 #: themeoptions/theme_options.php:387
 msgid "Use Topbar?"
-msgstr ""
+msgstr "Włączyć Topbar?"
 
 #: themeoptions/theme_options.php:388
 msgid "Choose to show or hide topbar"
-msgstr ""
+msgstr "Pokazuje lub ukrywa pasek Topbar"
 
 #: themeoptions/theme_options.php:395
 msgid "Topbar Height"
-msgstr ""
+msgstr "Wysokość Topbar"
 
 #: themeoptions/theme_options.php:405
 msgid "Hide on mobile?"
-msgstr ""
+msgstr "Ukryć dla mobilnych?"
 
 #: themeoptions/theme_options.php:406
 msgid "Choose to show or hide topbar on mobile"
-msgstr ""
+msgstr "pokaż/ukryj dla mobilnych "
 
 #: themeoptions/theme_options.php:413
 msgid "Use Topbar Icon Menu?"
-msgstr ""
+msgstr "Użyć menu ikony na pasku górnym?"
 
 #: themeoptions/theme_options.php:414
 msgid "Choose to show or hide topbar icon Menu"
-msgstr ""
+msgstr "daje możliwość użycia ikon w pasku górnym"
 
 #: themeoptions/theme_options.php:421
 msgid "Topbar Icon Menu"
-msgstr ""
+msgstr "Dodawanie ikon do Topbar"
 
 #: themeoptions/theme_options.php:422
 msgid "Choose your icons for the topbar icon menu."
-msgstr ""
+msgstr "wybierz w ikony do swojego pasku górnym"
 
 #: themeoptions/theme_options.php:427
 msgid "Icon menu font size"
-msgstr ""
+msgstr "Rozmiar ikon w menu Topbar"
 
 #: themeoptions/theme_options.php:438
 msgid "Show Cart total in topbar?"
-msgstr ""
+msgstr "Pokaż koszyk w pasku górnym?"
 
 #: themeoptions/theme_options.php:439
 msgid "This only works if using woocommerce"
-msgstr ""
+msgstr "Działa tylko z wtyczką woocommerce"
 
 #: themeoptions/theme_options.php:446
 msgid "Display Search in Topbar?"
-msgstr ""
+msgstr "Wyświetlić wyszukiwanie na pasku górnym?"
 
 #: themeoptions/theme_options.php:447
 msgid "Choose to show or hide search in topbar"
-msgstr ""
+msgstr "Włącz jeżeli chcesz wyświetlić ikonę "
 
 #: themeoptions/theme_options.php:454
 msgid "Enable widget area in left of Topbar?"
@@ -2113,19 +2177,19 @@ msgstr ""
 
 #: themeoptions/theme_options.php:461
 msgid "Topbar Layout Switch"
-msgstr ""
+msgstr "Zamiana miejscami"
 
 #: themeoptions/theme_options.php:462
 msgid "This moves the left items to the right and right items to the left."
-msgstr ""
+msgstr "Przenies opcje z prawej do lewej i odwrotnie."
 
 #: themeoptions/theme_options.php:474
 msgid "Home Slider"
-msgstr ""
+msgstr "Suwak główny"
 
 #: themeoptions/theme_options.php:475
 msgid "Home Page Slider Options"
-msgstr ""
+msgstr "Ustawienia suwaka dla Strony Głównej"
 
 #: themeoptions/theme_options.php:481
 msgid ""
@@ -2135,19 +2199,20 @@ msgstr ""
 
 #: themeoptions/theme_options.php:486
 msgid "Choose a Home Image Slider"
-msgstr ""
+msgstr "Wybierz rodzaj suwaka"
 
 #: themeoptions/theme_options.php:487
 msgid "If you don't want an image slider on your home page choose none."
 msgstr ""
+"Wybierz opcje \"brak\" jeżeli nie chcesz mieć suwaka na Stronie Głównej."
 
 #: themeoptions/theme_options.php:491 themeoptions/theme_options.php:680
 msgid "Flex Slider"
-msgstr ""
+msgstr "Elastyczny suwak"
 
 #: themeoptions/theme_options.php:492
 msgid "Carousel Slider"
-msgstr ""
+msgstr "Adres strony"
 
 #: themeoptions/theme_options.php:494 themeoptions/theme_options.php:682
 #: themeoptions/theme_options.php:2053 themeoptions/theme_options.php:2065
@@ -2156,230 +2221,234 @@ msgstr ""
 
 #: themeoptions/theme_options.php:504
 msgid "Place behind Header"
-msgstr ""
+msgstr "Umieść za nagłówkiem"
 
 #: themeoptions/theme_options.php:505
 msgid "This enabled the transparent header on the home page."
-msgstr ""
+msgstr "Włącza przezroczysty nagłówek na stronie głównej."
 
 #: themeoptions/theme_options.php:512 themeoptions/theme_options.php:692
 msgid "Home Page Title"
-msgstr ""
+msgstr "Tytuł strony głównej"
 
 #: themeoptions/theme_options.php:521 themeoptions/theme_options.php:701
 msgid "Home Page SubTitle"
-msgstr ""
+msgstr "Podtytuł strony głównej"
 
 #: themeoptions/theme_options.php:522 themeoptions/theme_options.php:702
 msgid "optional text below home page title"
-msgstr ""
+msgstr "opcjonalny tekst pod tytułem strony głównej"
 
 #: themeoptions/theme_options.php:531 themeoptions/theme_options.php:711
 msgid "Home Page Title Padding Top"
-msgstr ""
+msgstr "Tytuł strony głównej górny odstęp"
 
 #: themeoptions/theme_options.php:542 themeoptions/theme_options.php:722
 msgid "Home Page Title Padding Bottom"
-msgstr ""
+msgstr "Strona główna Tytuł dolny odstęp"
 
 #: themeoptions/theme_options.php:559 themeoptions/theme_options.php:740
 msgid "Slider Images"
-msgstr ""
+msgstr "Suwak zdjęć"
 
 #: themeoptions/theme_options.php:560 themeoptions/theme_options.php:741
 msgid "Use large images for best results."
-msgstr ""
+msgstr "Użyj dużych rozmiarów zdjęć do lepszego efektu."
 
 #: themeoptions/theme_options.php:567 themeoptions/theme_options.php:748
 msgid "Slider Max Height"
-msgstr ""
+msgstr "Maksymalna wysokość suwaka"
 
 #: themeoptions/theme_options.php:568 themeoptions/theme_options.php:580
 #: themeoptions/theme_options.php:749 themeoptions/theme_options.php:761
 msgid "Note: does not work if images are smaller than max."
-msgstr ""
+msgstr "Uwaga: Nie działa jeżeli rozmiar zdjęcia jest mniejszy niż max"
 
 #: themeoptions/theme_options.php:579 themeoptions/theme_options.php:760
 msgid "Slider Max Width"
-msgstr ""
+msgstr "Maksymalan szerokość suwaka"
 
 #: themeoptions/theme_options.php:591 themeoptions/theme_options.php:772
 msgid "Auto Play?"
-msgstr ""
+msgstr "Auto przewijanie?"
 
 #: themeoptions/theme_options.php:592 themeoptions/theme_options.php:773
 msgid "This determines if a slider automatically scrolls"
-msgstr ""
+msgstr "Funkcja auto przewijania dla suwaka"
 
 #: themeoptions/theme_options.php:600 themeoptions/theme_options.php:781
 msgid "Slider Pause Time"
-msgstr ""
+msgstr "Czas Zamiany zdjęć w suwaku"
 
 #: themeoptions/theme_options.php:601 themeoptions/theme_options.php:782
 msgid "How long to pause on each slide, in milliseconds."
-msgstr ""
+msgstr "Czas wyświetlania dla suwaka - określany w milisekundach."
 
 #: themeoptions/theme_options.php:612 themeoptions/theme_options.php:793
 msgid "Transition Type"
-msgstr ""
+msgstr "Efekt przejścia"
 
 #: themeoptions/theme_options.php:613 themeoptions/theme_options.php:794
 msgid "Choose a transition type"
-msgstr ""
+msgstr "Wybierz efekt przejścia"
 
 #: themeoptions/theme_options.php:615 themeoptions/theme_options.php:796
 msgid "Fade"
-msgstr ""
+msgstr "Wygaszenie"
 
 #: themeoptions/theme_options.php:625 themeoptions/theme_options.php:806
 msgid "Slider Transition Time"
-msgstr ""
+msgstr "Czas przejścia"
 
 #: themeoptions/theme_options.php:626 themeoptions/theme_options.php:807
 msgid "How long for slide transitions, in milliseconds."
-msgstr ""
+msgstr "Ustaw czas przejścia, W milisekundach."
 
 #: themeoptions/theme_options.php:637 themeoptions/theme_options.php:818
 msgid "Show Captions?"
-msgstr ""
+msgstr "Pokaż tytuły?"
 
 #: themeoptions/theme_options.php:638 themeoptions/theme_options.php:819
 msgid "Choose to show or hide captions"
-msgstr ""
+msgstr "Pokaż ukryj tytuły na suwaku"
 
 #: themeoptions/theme_options.php:646 themeoptions/theme_options.php:827
 msgid "Video Embed Code"
-msgstr ""
+msgstr "Kod HTML Wideo"
 
 #: themeoptions/theme_options.php:647 themeoptions/theme_options.php:828
 msgid "If your using a video on the home page place video embed code here."
-msgstr ""
+msgstr "Jeśli używasz wideo na stronie głównej umieścić kod  tutaj."
 
 #: themeoptions/theme_options.php:661
 msgid "Home Mobile Slider"
-msgstr ""
+msgstr "Suwak dla komórek"
 
 #: themeoptions/theme_options.php:662
+#, fuzzy
+#| msgid "Create a more lightweight home slider for your mobile visitors."
 msgid "Create a different home slider for your mobile visitors."
-msgstr ""
+msgstr "Utwórz suwak dla urządzeń mobilnych."
 
 #: themeoptions/theme_options.php:668
 msgid "Would you like to use this feature?"
-msgstr ""
+msgstr "Czy chcesz używać suwak dla urządzeń mobilnych?"
 
 #: themeoptions/theme_options.php:669
 msgid ""
 "Choose if you would like to show a different slider on your home page for "
 "your mobile visitors."
 msgstr ""
+"Wybierz \"on\", jak chcesz, wybrać inny suwak na stronie głównej dla "
+"mobilnych użytkowników."
 
 #: themeoptions/theme_options.php:676
 msgid "Choose a Slider for Mobile"
-msgstr ""
+msgstr "Wybierz rodzaj suwaka"
 
 #: themeoptions/theme_options.php:677
 msgid "Choose which slider you would like to show for mobile viewers."
-msgstr ""
+msgstr "Wybierz rodzaj suwak dla urządzeń mobilnych."
 
 #: themeoptions/theme_options.php:841
 msgid "Home Layout"
-msgstr ""
+msgstr "Strona Główna"
 
 #: themeoptions/theme_options.php:849
 msgid "Display a sidebar on the Home Page?"
-msgstr ""
+msgstr "Wyświetlić pasek boczny na stronie głównej?"
 
 #: themeoptions/theme_options.php:850
 msgid "This determines if there is a sidebar on the home page."
-msgstr ""
+msgstr "Strona główna z paskiem bocznym lub bez."
 
 #: themeoptions/theme_options.php:867
 msgid "Choose a Sidebar for your Home Page"
-msgstr ""
+msgstr "Wybierz paskek boczny dla strony głównej"
 
 #: themeoptions/theme_options.php:876
 msgid "Homepage Layout Manager"
-msgstr ""
+msgstr " Menadżer strony głównej"
 
 #: themeoptions/theme_options.php:877
 msgid "Organize how you want the layout to appear on the homepage"
-msgstr ""
+msgstr "Zarządzaj wyglądem strony głównej"
 
 #: themeoptions/theme_options.php:880
 msgid "Portfolio Carousel"
-msgstr ""
+msgstr "Karuzela z portfolio"
 
 #: themeoptions/theme_options.php:881 themeoptions/theme_options.php:1089
 msgid "Icon Menu"
-msgstr ""
+msgstr "Menu ikon"
 
 #: themeoptions/theme_options.php:882
 msgid "Call to Action"
-msgstr ""
+msgstr "CTA"
 
 #: themeoptions/theme_options.php:883
 msgid "Latest Blog Posts"
-msgstr ""
+msgstr "Ostatnie wpisy na blogu"
 
 #: themeoptions/theme_options.php:886
 msgid "Page Content"
-msgstr ""
+msgstr "Treść strony"
 
 #: themeoptions/theme_options.php:894
 msgid "Home Blog Settings"
-msgstr ""
+msgstr "Strona główna - Ustawienia blogu"
 
 #: themeoptions/theme_options.php:900
 msgid "Home Blog Title"
-msgstr ""
+msgstr "Strona główna Bloga - Tytuł"
 
 #: themeoptions/theme_options.php:901
 msgid "e.g. = Latest from the blog"
-msgstr ""
+msgstr "przykład = Najnowsze z bloga"
 
 #: themeoptions/theme_options.php:906
 msgid "Choose How many posts on Homepage"
-msgstr ""
+msgstr "Wybierz Ile postów na stronie głównej"
 
 #: themeoptions/theme_options.php:916
 msgid "Choose how many post columns on Homepage"
-msgstr ""
+msgstr "Wybierz liczbę kolumn postów na stronie głównej"
 
 #: themeoptions/theme_options.php:928
 msgid "Limit posts to a Category"
-msgstr ""
+msgstr "Ogranicz posty do kategorii"
 
 #: themeoptions/theme_options.php:929
 msgid "Leave blank to select all"
-msgstr ""
+msgstr "Pozostaw puste, aby zaznaczyć wszystkie"
 
 #: themeoptions/theme_options.php:936
 msgid "Home Portfolio Carousel Settings"
-msgstr ""
+msgstr "Strona główna Portfolio Ustawienia karuzeli"
 
 #: themeoptions/theme_options.php:942
 msgid "Home Portfolio Carousel title"
-msgstr ""
+msgstr "Strona główna Portfolio - Tytuł"
 
 #: themeoptions/theme_options.php:943
 msgid "e.g. = Portfolio Carousel title"
-msgstr ""
+msgstr "przykład = Moje portfolio"
 
 #: themeoptions/theme_options.php:954
 msgid "Portfolio Carousel Category Type"
-msgstr ""
+msgstr "Karuzela portfolio - kategoria"
 
 #: themeoptions/theme_options.php:955
 msgid "Leave blank to select all types"
-msgstr ""
+msgstr "Pozostaw puste, aby wybrać wszystkie typy"
 
 #: themeoptions/theme_options.php:961
 msgid "Choose how many columns are in carousel"
-msgstr ""
+msgstr "Wybierz ile kolumny jest w karuzeli"
 
 #: themeoptions/theme_options.php:971
 msgid "Portfolio Layout Style"
-msgstr ""
+msgstr "Styl układu portfolio "
 
 #: themeoptions/theme_options.php:974 themeoptions/theme_options.php:1612
 msgid "Post Boxes"
@@ -2391,7 +2460,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:984
 msgid "Portfolio Hover Style"
-msgstr ""
+msgstr "Portfolio styl po najechaniu myszą (hover)"
 
 #: themeoptions/theme_options.php:987
 msgid "Light"
@@ -2403,7 +2472,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:998
 msgid "Portfolio Image Ratio"
-msgstr ""
+msgstr "Współczynnik obrazu portfolio"
 
 #: themeoptions/theme_options.php:1001
 msgid "Square 1:1"
@@ -2423,23 +2492,23 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1013
 msgid "Choose how many portfolio items are in carousel"
-msgstr ""
+msgstr "Wybierz, ile elementów portfolio znajduje się w karuzeli"
 
 #: themeoptions/theme_options.php:1023
 msgid "Choose the carousel speed (in seconds)."
-msgstr ""
+msgstr "Szybkość przewijania."
 
 #: themeoptions/theme_options.php:1033
 msgid "Portfolio Carousel Scroll"
-msgstr ""
+msgstr "Przesuwanie się karuzeli portfolio"
 
 #: themeoptions/theme_options.php:1034
 msgid "Choose how the portfolio items scroll."
-msgstr ""
+msgstr "Wybierz sposób przewijania elementów portfolio."
 
 #: themeoptions/theme_options.php:1036
 msgid "One Item"
-msgstr ""
+msgstr "Jeden"
 
 #: themeoptions/theme_options.php:1037
 msgid "All Visible"
@@ -2447,63 +2516,64 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1046
 msgid "Portfolio Carousel Order by"
-msgstr ""
+msgstr "Karuzela portfolio Sortuj według"
 
 #: themeoptions/theme_options.php:1047
 msgid "Choose how the portfolio items should be ordered in the carousel."
 msgstr ""
+"Wybierz, w jaki sposób elementy portfolio powinno znajdować się w karuzeli."
 
 #: themeoptions/theme_options.php:1049
 msgid "Menu Order"
-msgstr ""
+msgstr "Menu Zamówień"
 
 #: themeoptions/theme_options.php:1051
 msgid "Date"
-msgstr ""
+msgstr "Data"
 
 #: themeoptions/theme_options.php:1052
 msgid "Random"
-msgstr ""
+msgstr "Losowy"
 
 #: themeoptions/theme_options.php:1062
 msgid "Display lightbox link in portfolio item?"
-msgstr ""
+msgstr "Wyświetlić link lightbox w pozycji portfolio?"
 
 #: themeoptions/theme_options.php:1069
 msgid "Display Portfolio Types under Title"
-msgstr ""
+msgstr "Wyświetl typy portfolio pod tytułem"
 
 #: themeoptions/theme_options.php:1076
 msgid "Display Portfolio excerpt under Title"
-msgstr ""
+msgstr "Wyświetl fragment portfolio w tytule"
 
 #: themeoptions/theme_options.php:1083
 msgid "Home Icon Menu"
-msgstr ""
+msgstr "Strona główna Menu Ikon"
 
 #: themeoptions/theme_options.php:1090
 msgid "Choose your icons for the icon menu."
-msgstr ""
+msgstr "Wybierz swoje ikony w menu ikon."
 
 #: themeoptions/theme_options.php:1096
 msgid "Choose how many columns in each row"
-msgstr ""
+msgstr "Wybierz liczbę kolumn w każdym wierszu"
 
 #: themeoptions/theme_options.php:1106
 msgid "Icon menu button text (optional)"
-msgstr ""
+msgstr "Tekst przycisku menu ikony (opcjonalnie)"
 
 #: themeoptions/theme_options.php:1107 themeoptions/theme_options.php:1185
 msgid "e.g. = Read More"
-msgstr ""
+msgstr "np:. = Czytaj więcej"
 
 #: themeoptions/theme_options.php:1113
 msgid "Icon Color"
-msgstr ""
+msgstr "Kolor ikony"
 
 #: themeoptions/theme_options.php:1114
 msgid "Choose the color for icon."
-msgstr ""
+msgstr "Wybierz kolor ikony."
 
 #: themeoptions/theme_options.php:1125
 msgid "Icon Background Color"
@@ -2514,30 +2584,32 @@ msgid ""
 "Choose the background color for icon. * Note the hover color is set by your "
 "primary color in basic styling."
 msgstr ""
+"Wybierz kolor tła ikony. * Uwaga: kolor najechania jest ustawiony przez "
+"kolor podstawowy w podstawowej stylizacji."
 
 #: themeoptions/theme_options.php:1135
 msgid "Title and Description Font Color"
-msgstr ""
+msgstr "Tytuł i opis - kolor czcionki"
 
 #: themeoptions/theme_options.php:1136
 msgid "Choose the color for icon menu title and description Font."
-msgstr ""
+msgstr "Wybierz kolor dla tytułu i opisu menu ikony Czcionka."
 
 #: themeoptions/theme_options.php:1149
 msgid "Home Call To Action Settings"
-msgstr ""
+msgstr "Strona główna Ustawienia CTA"
 
 #: themeoptions/theme_options.php:1155
 msgid "Call to Action Text"
-msgstr ""
+msgstr "Tekst dla CTA"
 
 #: themeoptions/theme_options.php:1161
 msgid "Call to Action Text Color"
-msgstr ""
+msgstr "Kolor tekstu dla CTA"
 
 #: themeoptions/theme_options.php:1170
 msgid "Text Tag"
-msgstr ""
+msgstr "Rodzaj tekstu"
 
 #: themeoptions/theme_options.php:1172
 msgid "h1"
@@ -2557,63 +2629,65 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1184
 msgid "Call to Action Button Text"
-msgstr ""
+msgstr "Tekst dla guzika CTA"
 
 #: themeoptions/theme_options.php:1191
 msgid "Call to Action Button Link"
-msgstr ""
+msgstr "Tekst dla guzika CTA"
 
 #: themeoptions/theme_options.php:1197
 msgid "Button Text Color"
-msgstr ""
+msgstr "Kolor tekstu guzika"
 
 #: themeoptions/theme_options.php:1207
 msgid "Button Background Color"
-msgstr ""
+msgstr "Kolor tła"
 
 #: themeoptions/theme_options.php:1216
 msgid "Button Hover Text Color"
-msgstr ""
+msgstr "Kolor tekstu guzika HOVER"
 
 #: themeoptions/theme_options.php:1226
 msgid "Button Hover Background Color"
-msgstr ""
+msgstr "Kolor tła guzika HOVER"
 
 #: themeoptions/theme_options.php:1235
 msgid "Call to action top and bottom padding."
-msgstr ""
+msgstr "Odstęp górny i dolny dla CTA."
 
 #: themeoptions/theme_options.php:1246
 msgid "Call to action background"
-msgstr ""
+msgstr "Ustawienia tła dla pola CTA"
 
 #: themeoptions/theme_options.php:1252
 msgid "Page Content Options (if home page is latest post page)"
-msgstr ""
+msgstr "Opcje treści strony (jeśli strona główna jest najnowszą stroną posta)"
 
 #: themeoptions/theme_options.php:1258
 msgid "Latest Post Display"
-msgstr ""
+msgstr "Wyświetlanie ostatniego wpisu"
 
 #: themeoptions/theme_options.php:1259
 msgid "If Latest Post page is front page. Choose how to show the posts."
 msgstr ""
+"Jeśli strona ostatni wpis jest stroną pierwszą. Wybierz sposób wyświetlania "
+"postów."
 
 #: themeoptions/theme_options.php:1261 themeoptions/theme_options.php:2082
 msgid "Normal Post Excerpt"
-msgstr ""
+msgstr "Przycięta treść wpisu"
 
 #: themeoptions/theme_options.php:1262 themeoptions/theme_options.php:2083
 msgid "Normal Full Post"
-msgstr ""
+msgstr "Pełna treść wwpisu"
 
 #: themeoptions/theme_options.php:1263 themeoptions/theme_options.php:2084
 msgid "Grid Post"
-msgstr ""
+msgstr "Wcześniejszy wpis"
 
 #: themeoptions/theme_options.php:1272
 msgid "Post Grid Columns"
-msgstr ""
+msgstr "Sitaka kolumn wpisów"
 
 #: themeoptions/theme_options.php:1274 themeoptions/theme_options.php:2095
 msgid "Two"
@@ -2635,23 +2709,25 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1298
 msgid "Shop Settings"
-msgstr ""
+msgstr "Sklep ustawinia"
 
 #: themeoptions/theme_options.php:1299
+#, fuzzy
+#| msgid "Shop Archive Page Settings"
 msgid "Shop Archive Page Settings (Woocommerce plugin required)"
-msgstr ""
+msgstr "Ustawienia dla Strony sklepu"
 
 #: themeoptions/theme_options.php:1305
 msgid "Shop Product Column Layout"
-msgstr ""
+msgstr "Wygląd dla strony sklepu"
 
 #: themeoptions/theme_options.php:1306
 msgid "Choose how many product columns on the shop and category pages"
-msgstr ""
+msgstr "Wybierz ilość kolumn dla strony z produkatami"
 
 #: themeoptions/theme_options.php:1319
 msgid "Display the sidebar on Shop Page?"
-msgstr ""
+msgstr "Pokazać pasek boczny dla strony sklepu?"
 
 #: themeoptions/theme_options.php:1320
 msgid "This determines if there is a sidebar on the shop page."
@@ -2659,7 +2735,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1337
 msgid "Choose a Sidebar for your shop page"
-msgstr ""
+msgstr "Wybierz pasek boczny dla sklepu"
 
 #: themeoptions/theme_options.php:1347
 msgid "Display the sidebar on Product Category Pages?"
@@ -2773,7 +2849,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1503
 msgid "Product Settings"
-msgstr ""
+msgstr "Produkty ustawienia"
 
 #: themeoptions/theme_options.php:1504
 msgid "Single Product Page Header (Woocommerce plugin required)"
@@ -2846,7 +2922,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1586
 msgid "Portfolio Options"
-msgstr ""
+msgstr "Opcje portfolio"
 
 #: themeoptions/theme_options.php:1587
 msgid "Portfolio Options (Pinnacle Toolkit plugin required)"
@@ -2897,8 +2973,10 @@ msgid "Single Portfolio Page Header"
 msgstr ""
 
 #: themeoptions/theme_options.php:1654
+#, fuzzy
+#| msgid "Portfolio Layout Style"
 msgid "Portfolio Default Title Text"
-msgstr ""
+msgstr "Styl układu portfolio "
 
 #: themeoptions/theme_options.php:1656
 msgid "Category of Portfolio"
@@ -2938,11 +3016,11 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1725
 msgid "All Portfolio Posts"
-msgstr ""
+msgstr "Całe Portfolio"
 
 #: themeoptions/theme_options.php:1726
 msgid "Only of same Portfolio Type"
-msgstr ""
+msgstr "Ten sam typ"
 
 #: themeoptions/theme_options.php:1735
 msgid "Choose how many columns to show on recent portfolio carousel."
@@ -2958,7 +3036,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1766 themeoptions/theme_options.php:1767
 msgid "Blog Options"
-msgstr ""
+msgstr "Blog ustawienia"
 
 #: themeoptions/theme_options.php:1773
 msgid "Show Comments Closed Text?"
@@ -3050,7 +3128,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:1860
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: themeoptions/theme_options.php:1861
 msgid "Post Title"
@@ -3199,19 +3277,19 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2140 themeoptions/theme_options.php:2141
 msgid "Page Options"
-msgstr ""
+msgstr "Strona Ustawienia"
 
 #: themeoptions/theme_options.php:2147
 msgid "Allow Comments on Pages"
-msgstr ""
+msgstr "Zezwalaj na komentarze na stronach"
 
 #: themeoptions/theme_options.php:2148
 msgid "Turn on to allow comments on pages."
-msgstr ""
+msgstr "Włącz, aby umożliwić komentowanie na stronach."
 
 #: themeoptions/theme_options.php:2160
 msgid "Basic Styling"
-msgstr ""
+msgstr "Style podstawowe"
 
 #: themeoptions/theme_options.php:2161
 msgid "Basic Stylng"
@@ -3249,7 +3327,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2219
 msgid "Advanced Styling"
-msgstr ""
+msgstr "Style zaawansowane"
 
 #: themeoptions/theme_options.php:2220
 msgid "Main Content Background"
@@ -3261,11 +3339,11 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2233 themeoptions/theme_options.php:2240
 msgid "Topbar Background"
-msgstr ""
+msgstr "Tobar - Tło"
 
 #: themeoptions/theme_options.php:2246 themeoptions/theme_options.php:2264
 msgid "Header Background"
-msgstr ""
+msgstr "Nagłówek - tło"
 
 #: themeoptions/theme_options.php:2251
 msgid "Header Background Style"
@@ -3277,7 +3355,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2271
 msgid "Header Background Color"
-msgstr ""
+msgstr "Nagłówek - Kolor tła"
 
 #: themeoptions/theme_options.php:2281
 msgid "If background is color, select Transparency"
@@ -3313,7 +3391,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2375
 msgid "Typography"
-msgstr ""
+msgstr "Typografia"
 
 #: themeoptions/theme_options.php:2376
 msgid "Header Font Options"
@@ -3387,11 +3465,11 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2587
 msgid "Menu Settings"
-msgstr ""
+msgstr "Menu ustawienia"
 
 #: themeoptions/theme_options.php:2588
 msgid "Primary Menu Options"
-msgstr ""
+msgstr "Menu Główne opcje"
 
 #: themeoptions/theme_options.php:2594
 msgid ""
@@ -3401,7 +3479,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2599
 msgid "Primary Menu Font"
-msgstr ""
+msgstr "Menu Główne - czcionka"
 
 #: themeoptions/theme_options.php:2615
 msgid "Choose Size and Style for primary menu"
@@ -3437,7 +3515,7 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2704 themeoptions/theme_options.php:2705
 msgid "Misc Settings"
-msgstr ""
+msgstr "Różne ustawienia"
 
 #: themeoptions/theme_options.php:2712
 msgid "Custom Favicon"
@@ -3451,41 +3529,47 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2719
 msgid "Footer Copyright Text"
-msgstr ""
+msgstr "Tekst Copyright w stopce"
 
 #: themeoptions/theme_options.php:2720
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
+"Napisz swój tekst autorskich tutaj. Możesz użyć następujących shortcodes w "
+"tekście stopki: [copyright] [site-name] [the-year]"
 
 #: themeoptions/theme_options.php:2727
+#, fuzzy
+#| msgid "Search Results - choose Sidebar"
 msgid "Search Results Sidebars"
-msgstr ""
+msgstr "Wyniki wyszukiwania - pasek boczny"
 
 #: themeoptions/theme_options.php:2732
 msgid "Search Results - choose Sidebar"
-msgstr ""
+msgstr "Wyniki wyszukiwania - pasek boczny"
 
 #: themeoptions/theme_options.php:2742
 msgid "Create Sidebars"
-msgstr ""
+msgstr "Dodaj pasek boczy"
 
 #: themeoptions/theme_options.php:2748
 msgid "Create Custom Sidebars"
-msgstr ""
+msgstr "Dodaj własny pasek boczy"
 
 #: themeoptions/theme_options.php:2749
 msgid "Type new sidebar name into textbox"
-msgstr ""
+msgstr "Nazwa paska bocznego"
 
 #: themeoptions/theme_options.php:2750
 msgid "Extra Sidebar"
-msgstr ""
+msgstr "Dodatkowe paski boczne"
 
 #: themeoptions/theme_options.php:2756
+#, fuzzy
+#| msgid "WordPress Repository"
 msgid "WordPress Galleries"
-msgstr ""
+msgstr "Repozytorium Wordpress"
 
 #: themeoptions/theme_options.php:2762
 msgid "Enable Pinnacle Galleries to override WordPress"
@@ -3509,32 +3593,1929 @@ msgstr ""
 
 #: themeoptions/theme_options.php:2788 themeoptions/theme_options.php:2795
 msgid "Custom CSS"
-msgstr ""
+msgstr "Własny CSS"
 
 #: themeoptions/theme_options.php:2789
 msgid "Custom CSS Box"
-msgstr ""
+msgstr "Własny CSS"
 
 #: themeoptions/theme_options.php:2796
 msgid "Quickly add some CSS to your theme by adding it to this block."
-msgstr ""
+msgstr "Dodaj własne style CSS - kodowanie jak w zwykłym pliku CSS."
 
 #: themeoptions/theme_options.php:2807
 msgid "Import and Export your Theme Options from text or URL."
-msgstr ""
+msgstr "Import i eksport opcje tematyczne z tekstu lub URL."
 
 #: woocommerce/loop/rating.php:31
 msgid "not rated"
-msgstr ""
+msgstr "brak ocen"
 
 #: woocommerce/loop/sale-flash.php:14
 msgid "Sale!"
-msgstr ""
+msgstr "Wyprzedaż!"
 
 #: woocommerce/single-product/add-to-cart/variable.php:29
 msgid "This product is currently out of stock and unavailable."
-msgstr ""
+msgstr "Ten produkt jest obecnie niedostępny."
 
 #: woocommerce/single-product/add-to-cart/variable.php:41
 msgid "Clear selection"
-msgstr ""
+msgstr "Wyczyść zaznaczenie"
+
+#~ msgid ""
+#~ "You are using an <strong>outdated</strong> browser. Please <a href="
+#~ "\"http://browsehappy.com/\">upgrade your browser</a> to improve your "
+#~ "experience."
+#~ msgstr "Twoja przeglądarka jest nieaktualna."
+
+#~ msgid "portfolio"
+#~ msgstr "portfolio"
+
+#~ msgid "API License Activation"
+#~ msgstr "Aktywacja licencji API"
+
+#~ msgid "API License Deactivation"
+#~ msgstr "Dezaktywacja licencji API"
+
+#, php-format
+#~ msgid ""
+#~ "The theme update API License Key has not been activated! %sClick here%s "
+#~ "to activate the license api key."
+#~ msgstr ""
+#~ "Klucz licencyjny interfejsu API aktualizacji motywu nie został "
+#~ "aktywowany! % s Kliknij tutaj% s, aby aktywować klucz interfejsu API "
+#~ "licencji."
+
+#, php-format
+#~ msgid ""
+#~ "<b>Warning!</b> You're blocking external requests which means you won't "
+#~ "be able to get %s updates. Please add %s to %s."
+#~ msgstr ""
+#~ "<b> Ostrzeżenie! </b> Blokujesz żądania zewnętrzne, co oznacza, że nie "
+#~ "będziesz w stanie uzyskać% s aktualizacji. Dodaj% s do% s."
+
+#~ msgid "Saving"
+#~ msgstr "Zapisywanie"
+
+#~ msgid "Getting Started with Pinnacle Premium"
+#~ msgstr "Dostęp do licencji Pinnacle Premium"
+
+#~ msgid "Theme activation, recomended plugins and helpful links."
+#~ msgstr "Aktywacja motywu, zalecane wtyczki i pomocne linki."
+
+#~ msgid "Helpful Links"
+#~ msgstr "Przydatne linki"
+
+#~ msgid "Recomended Plugins"
+#~ msgstr "Zalecane wtyczki"
+
+#~ msgid "Demo Content"
+#~ msgstr "Pobierz Demo"
+
+#~ msgid "Getting Started"
+#~ msgstr "Pierwsze kroki"
+
+#~ msgid "Pinnacle Documention"
+#~ msgstr "Dokumentacja"
+
+#~ msgid "Pinnacle Demo Content"
+#~ msgstr "Demo strony"
+
+#~ msgid "Pinnacle Tutorials"
+#~ msgstr "Tutoriale"
+
+#~ msgid "Support"
+#~ msgstr "Wsparcie"
+
+#~ msgid "Pinnacle Support Forms"
+#~ msgstr "Wsparcie na forum"
+
+#~ msgid "Premium Bundled Plugins"
+#~ msgstr "Wtyczki dołączone do Premium"
+
+#~ msgid ""
+#~ "These are premium plugins bundled with this theme. They are not required. "
+#~ "Just some cool plugins with cool features."
+#~ msgstr ""
+#~ "Są to wtyczki premium dołączone do tego motywu. Nie są wymagane. Tylko "
+#~ "kilka fajnych wtyczek z fajnymi funkcjami."
+
+#~ msgid "Suggested Plugins"
+#~ msgstr "Sugerowane wtyczki"
+
+#~ msgid "Please activate your theme license"
+#~ msgstr "Aktywuj licencję"
+
+#~ msgid "Install Demo Content Importer"
+#~ msgstr "Zainstaluj narzędzie do importowania treści demonstracyjnych"
+
+#~ msgid ""
+#~ "This importer plugin allows you to fill your site with demo content from "
+#~ "one of the theme demos."
+#~ msgstr ""
+#~ "Ta wtyczka importera umożliwia wypełnienie witryny treściami "
+#~ "demonstracyjnymi z jednego z pokazów motywów."
+
+#~ msgid "Manage Plugins"
+#~ msgstr "Zarządzaj wtyczkami"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgid "System Status"
+#~ msgstr "Status"
+
+#, fuzzy
+#~| msgid "Topbar Settings"
+#~ msgid "KT Extra Gallery Settings"
+#~ msgstr "Topbar ustawienia"
+
+#~ msgid "Slider"
+#~ msgstr "Suwak"
+
+#~ msgid "Carousel"
+#~ msgstr "Karuzela"
+
+#~ msgid "Mosaic"
+#~ msgstr "Mozaika"
+
+#~ msgid "Custom Grid"
+#~ msgstr "Niestandardowa siatka"
+
+#~ msgid "Show Captions"
+#~ msgstr "Pokaż napisy"
+
+#~ msgid "Slider Option - Settings"
+#~ msgstr "Ustawienia suwaka"
+
+#~ msgid "Width"
+#~ msgstr "Szerokość"
+
+#~ msgid "Search results for"
+#~ msgstr "Wyniki szukania dla"
+
+#~ msgid "Error 404"
+#~ msgstr "Błąd 404"
+
+#~ msgid " - Page"
+#~ msgstr " - Strona"
+
+#, php-format
+#~ msgid "Updating Plugin: %s"
+#~ msgstr "Instalacja wtyczki: %s"
+
+#~ msgid "Return to the Dashboard"
+#~ msgstr "Powrót do kokpitu"
+
+#~ msgid "No boxes found."
+#~ msgstr "Brak pracowników."
+
+#~ msgid "Insert Shortcode"
+#~ msgstr "Dodaj shortcode"
+
+#~ msgid "Your Cart"
+#~ msgstr "Twój koszyk"
+
+#~ msgid "Enable Large Menu"
+#~ msgstr "Włącz duże menu"
+
+#~ msgid "Number of Columns"
+#~ msgstr "Liczba kolumn"
+
+#, php-format
+#~ msgid "%s (Invalid)"
+#~ msgstr "%s (nieprawidłowa)"
+
+#, php-format
+#~ msgid "%s (Pending)"
+#~ msgstr "%s (Czeka na)"
+
+#~ msgid "Move up"
+#~ msgstr "Do góry"
+
+#~ msgid "Move down"
+#~ msgstr "Na dół"
+
+#~ msgid "Edit Menu Item"
+#~ msgstr "Edycja Menu Elementów"
+
+#~ msgid "Navigation Label"
+#~ msgstr "Menu Mobilne"
+
+#~ msgid "Title Attribute"
+#~ msgstr "Atrybuty"
+
+#, fuzzy
+#~| msgid "Open link in a new window/tab"
+#~ msgid "Open link in a new tab"
+#~ msgstr "Otwórz w nowym oknie"
+
+#~ msgid "CSS Classes (optional)"
+#~ msgstr "Klasy CSS (opcja)"
+
+#~ msgid "Move"
+#~ msgstr "Przesuń"
+
+#~ msgid "Up one"
+#~ msgstr "W górę"
+
+#~ msgid "Down one"
+#~ msgstr "Na dół"
+
+#~ msgid "To the top"
+#~ msgstr "Góra"
+
+#~ msgid "Cancel"
+#~ msgstr "Anuluj"
+
+#~ msgid "Example Home"
+#~ msgstr "Przykład Strony gółównej"
+
+#~ msgid "A basic home layout with pagebuilder"
+#~ msgstr "Podstawowy układ strony"
+
+#~ msgid "Product Video"
+#~ msgstr "Produk Video"
+
+#~ msgid "Custom Tab"
+#~ msgstr "Dowolna zakładka"
+
+#~ msgid "Choose an option"
+#~ msgstr "Wybierz opcje"
+
+#~ msgid "Padding Top"
+#~ msgstr "Odstęp górny"
+
+#~ msgid "Padding Bottom"
+#~ msgstr "Odstęp dolny"
+
+#~ msgid "Padding Left"
+#~ msgstr "Odstęp lewy"
+
+#~ msgid "Padding Right"
+#~ msgstr "Odstęp prawy"
+
+#~ msgid "Background Image"
+#~ msgstr "Obrazek tła"
+
+#~ msgid "Background Image Position"
+#~ msgstr "Pozycja tła obrazka"
+
+#~ msgid "Left Top"
+#~ msgstr "Lewa góra"
+
+#~ msgid "Left Center"
+#~ msgstr "Lewa środek"
+
+#~ msgid "Left Bottom"
+#~ msgstr "Lewa dół"
+
+#~ msgid "Center Top"
+#~ msgstr "Środek góra"
+
+#~ msgid "Center Center"
+#~ msgstr "Wyśrodkowany"
+
+#~ msgid "Center Bottom"
+#~ msgstr "Środek dół"
+
+#~ msgid "Right Top"
+#~ msgstr "Prawa góra"
+
+#~ msgid "Right Center"
+#~ msgstr "Pawa środek"
+
+#~ msgid "Right Bottom"
+#~ msgstr "Prawy dół"
+
+#~ msgid "Mobile Navigation"
+#~ msgstr "Menu Mobilne"
+
+#~ msgid "Columns"
+#~ msgstr "Kolumny"
+
+#~ msgid "Two Columns"
+#~ msgstr "Dwie kolumny"
+
+#~ msgid "Two Columns offset Right"
+#~ msgstr "Dwie kolumny w prawo"
+
+#~ msgid "Two Columns offset Left"
+#~ msgstr "Dwie kolumny w lewo"
+
+#~ msgid "Three Columns"
+#~ msgstr "Trzy kolumny"
+
+#~ msgid "Four Columns"
+#~ msgstr "Cztery kolumny"
+
+#~ msgid "Columns (just a number)"
+#~ msgstr "Kolumny (tylko liczba)"
+
+#~ msgid "Extra Rows (just a number)"
+#~ msgstr "Dodatkowe wiersze (tylko liczba)"
+
+#~ msgid "Divider"
+#~ msgstr "Separator"
+
+#~ msgid "Line"
+#~ msgstr "Linia"
+
+#~ msgid "Dots"
+#~ msgstr "Kropki"
+
+#~ msgid "Gradient"
+#~ msgstr "Gradient"
+
+#~ msgid "Color"
+#~ msgstr "Kolor"
+
+#~ msgid "Spacing"
+#~ msgstr "Odstęp"
+
+#~ msgid "Tabs"
+#~ msgstr "Zakładki"
+
+#~ msgid "Accordion"
+#~ msgstr "Akordeon"
+
+#~ msgid "Pull-Quotes"
+#~ msgstr "Cytat"
+
+#~ msgid "Align"
+#~ msgstr "Wyrównanie"
+
+#~ msgid "Pull-Quote Text"
+#~ msgstr "Tekst cytatu"
+
+#~ msgid "Block-Quotes"
+#~ msgstr "Blok cytatu"
+
+#~ msgid "Block-Quote Text"
+#~ msgstr "Tekst bliku cytatu"
+
+#~ msgid "Padding Bottom (just a number)"
+#~ msgstr "Odstęp dolny"
+
+#~ msgid "Background Color"
+#~ msgstr "Kolor tła"
+
+#~ msgid "Background Color Opacity"
+#~ msgstr "Kolor tła"
+
+#~ msgid "Content Text"
+#~ msgstr "Tekst guzika"
+
+#~ msgid "Button"
+#~ msgstr "Guzik"
+
+#~ msgid "Button Text"
+#~ msgstr "Tekst guzika"
+
+#~ msgid "Open Link In New Tab?"
+#~ msgstr "Otwierać w nowym oknie?"
+
+#~ msgid "Font Hover Color"
+#~ msgstr "Kolor czcionki"
+
+#~ msgid "Button Background Hover Color"
+#~ msgstr "Kolor tła"
+
+#~ msgid "Link URL"
+#~ msgstr "Link"
+
+#~ msgid "Button Size"
+#~ msgstr "Rzomiar guzika"
+
+#~ msgid "Large"
+#~ msgstr "Duży"
+
+#~ msgid "Small"
+#~ msgstr "Mały"
+
+#~ msgid "H1 Family"
+#~ msgstr "H1"
+
+#~ msgid "Choose an Icon (optional)"
+#~ msgstr "Wybierz ikonę (opcjonalnie)"
+
+#~ msgid "Google Map"
+#~ msgstr "Mapa Google"
+
+#~ msgid "Address One"
+#~ msgstr "Adres 1"
+
+#~ msgid "Address Title One"
+#~ msgstr "Adres 1 - Tytuł"
+
+#~ msgid "Displays in Popup e.g. = Business Name"
+#~ msgstr "Wyświetl w Popupie np. Nazwa"
+
+#~ msgid "Map Height"
+#~ msgstr "Wysokość"
+
+#~ msgid "Just a number e.g. = 400"
+#~ msgstr "Tylko liczba np: 400"
+
+#~ msgid "Map Zoom"
+#~ msgstr "Powiększenie"
+
+#~ msgid "Map Type"
+#~ msgstr "Rodzaj mapy"
+
+#~ msgid "ROADMAP"
+#~ msgstr "Roadmap"
+
+#~ msgid "HYBRID"
+#~ msgstr "Hybryda"
+
+#~ msgid "TERRAIN"
+#~ msgstr "Teren"
+
+#~ msgid "SATELLITE"
+#~ msgstr "Satelita"
+
+#~ msgid "Address Two"
+#~ msgstr "Adres 2"
+
+#~ msgid "Address Title Two"
+#~ msgstr "Adres 2 - Tytuł"
+
+#~ msgid "Address Three"
+#~ msgstr "Adres 3"
+
+#~ msgid "Address Title Three"
+#~ msgstr "Adres 3 - Tytuł"
+
+#~ msgid "Address Four"
+#~ msgstr "Adres 4"
+
+#~ msgid "Address Title Four"
+#~ msgstr "Adres 4 - Tytuł"
+
+#~ msgid "Map Center"
+#~ msgstr "Wyśrodkuj"
+
+#~ msgid "Defaults to Address One"
+#~ msgstr "Domyślny adres"
+
+#~ msgid "Choose an Icon"
+#~ msgstr "Wybierz ikonę"
+
+#~ msgid "Icon Size"
+#~ msgstr "Rozmiar ikony"
+
+#~ msgid "Icon Float"
+#~ msgstr "Opływanie ikony"
+
+#~ msgid "Icon Style"
+#~ msgstr "Styl ikony"
+
+#~ msgid "Circle"
+#~ msgstr "Okrag"
+
+#~ msgid "Small Circle"
+#~ msgstr "Mały okrąg"
+
+#~ msgid "Square"
+#~ msgstr "Kwadrat"
+
+#~ msgid "Small Square"
+#~ msgstr "Mały kwadrat"
+
+#~ msgid "Icon Box"
+#~ msgstr "Ikona box"
+
+#, fuzzy
+#~| msgid "Choose an Icon (optional)"
+#~ msgid "Third Sentence (optional)"
+#~ msgstr "Wybierz ikonę (opcjonalnie)"
+
+#~ msgid "Video URL"
+#~ msgstr "URL wideo"
+
+#~ msgid "Video Width"
+#~ msgstr "Szerokość wideo"
+
+#~ msgid "Just a number e.g. = 600"
+#~ msgstr "Tylko liczba np: 600"
+
+#~ msgid "Video Height"
+#~ msgstr "Wysokość wideo"
+
+#~ msgid "Video Max Width"
+#~ msgstr "Maksymalna szerokość video"
+
+#~ msgid "Hide Controls"
+#~ msgstr "Ukryj kolntrolki"
+
+#~ msgid "Auto Play"
+#~ msgstr "Autoodtwarzanie"
+
+#~ msgid "Order By"
+#~ msgstr "Zamówienie Produktów Wg"
+
+#~ msgid "Number of Posts"
+#~ msgstr "Liczba postów"
+
+#~ msgid "Modal"
+#~ msgstr "Modalny"
+
+#~ msgid "Button Title"
+#~ msgstr "Tekst guzika"
+
+#~ msgid "Button Font Color"
+#~ msgstr "Kolor guzika"
+
+#~ msgid "Modal Title"
+#~ msgstr "Karuzlea tytułów"
+
+#~ msgid "Modal Content"
+#~ msgstr "Treść nagłówka"
+
+#~ msgid "Testimonial Form"
+#~ msgstr "Opinie"
+
+#~ msgid "Show Location Field?"
+#~ msgstr "Pokaż pole lokalizacji?"
+
+#~ msgid "Show Position Field?"
+#~ msgstr "Pokazać  pole?"
+
+#~ msgid "Show Link Field?"
+#~ msgstr "Pokazać link?"
+
+#~ msgid "Name Field Label"
+#~ msgstr "Etykieta pola"
+
+#~ msgid "Default: Name"
+#~ msgstr "Domyślna: Nazwa"
+
+#~ msgid "Testimonial Field Label"
+#~ msgstr "Opinie"
+
+#~ msgid "Default: Testimonial"
+#~ msgstr "Nowa"
+
+#~ msgid "Location Field Label"
+#~ msgstr "Położenie pola"
+
+#~ msgid "Default: Submit"
+#~ msgstr "Domyślna: Wyślij"
+
+#~ msgid "Choose a shortcode"
+#~ msgstr "Wybierz shortcode"
+
+#~ msgid "Add Shortcode"
+#~ msgstr "Dadaj shortcode"
+
+#~ msgid "Sorry, no post entries found."
+#~ msgstr "Przepraszamy, nie znaleziono żadnych wpisów."
+
+#~ msgid "Close"
+#~ msgstr "Zamknij"
+
+#~ msgid "Filter Projects"
+#~ msgstr "Filtr projektu"
+
+#~ msgid "Filter Staff"
+#~ msgstr "Edytuj"
+
+#~ msgid "Sorry, no staff entries found."
+#~ msgstr "Przepraszamy, nie znaleziono żadnych wpisów personelu."
+
+#~ msgid "Testimonial"
+#~ msgstr "Opinie"
+
+#~ msgid "Image Upload - optional"
+#~ msgstr "Wczytaj obraz - opcjonalnie"
+
+#~ msgid "Submit"
+#~ msgstr "Zapisz"
+
+#~ msgid "Check your math."
+#~ msgstr "Sprawdź równanie."
+
+#~ msgid "Please enter your name."
+#~ msgstr "Proszę wpisać swoje imię."
+
+#~ msgid "Sorry, an error occured."
+#~ msgstr "Przepraszamy, wystąpił błąd."
+
+#~ msgid "This field is required."
+#~ msgstr "To pole jest wymagane."
+
+#~ msgid "Please enter a valid email address."
+#~ msgstr "Podaj prawidłowy adres email."
+
+#~ msgid " Testimonial Post"
+#~ msgstr " Opinie"
+
+#~ msgid "From "
+#~ msgstr "Kontakt ze strony "
+
+#~ msgid "Sorry, no testimonial entries found."
+#~ msgstr "Niestety, nie znaleziono wpisów w referencjach."
+
+#~ msgid "Page Title and Subtitle"
+#~ msgstr "Strona tysułowa i opis"
+
+#~ msgid "Subtitle"
+#~ msgstr "Opis"
+
+#~ msgid "Subtitle will go below page title"
+#~ msgstr "Podtytuł poniżej tytułu strony"
+
+#~ msgid "Show"
+#~ msgstr "Pokaż"
+
+#~ msgid "Don't place behind Header"
+#~ msgstr "Nie umieszczaj za nagłówkiem"
+
+#~ msgid "Carousel Slider - (Caroufedsel Slider)"
+#~ msgstr "Slajder Karuzela"
+
+#~ msgid "Portfolio Post Options"
+#~ msgstr "Opcje Portfolio"
+
+#~ msgid "Above"
+#~ msgstr "Powyżej"
+
+#~ msgid "Three Rows"
+#~ msgstr "3 Wiersze"
+
+#~ msgid "Project Options"
+#~ msgstr "Opcje projektu"
+
+#~ msgid "Image Grid"
+#~ msgstr "Obraz"
+
+#~ msgid "Five Column"
+#~ msgstr "5 kolumn"
+
+#~ msgid "Six Column"
+#~ msgstr "6 kolumn"
+
+#~ msgid "Choose Portfolio Parent Page"
+#~ msgstr "Wybierz Stronę Portfolio"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Phone"
+#~ msgstr "Telefon"
+
+#~ msgid "Portfolio Page Options"
+#~ msgstr "Portfolio Ustawienia"
+
+#~ msgid "Filter?"
+#~ msgstr "Filtr?"
+
+#~ msgid "Portfolio Work Types"
+#~ msgstr "Rodzaje Portfolio"
+
+#~ msgid "Order Items By"
+#~ msgstr "Zamówienie Produktów Wg"
+
+#~ msgid "Items per Page"
+#~ msgstr "Produkty na stronie"
+
+#~ msgid "How many portfolio items per page"
+#~ msgstr "Ilość elementów portfolio na jednej stronie"
+
+#~ msgid "Content"
+#~ msgstr "Treść nagłówka"
+
+#, fuzzy
+#~| msgid "Order by"
+#~ msgid "Orderby"
+#~ msgstr "Zamówienie Produktów Wg"
+
+#~ msgid "Limit Testimonial Text"
+#~ msgstr "Edycja"
+
+#~ msgid "Link Text"
+#~ msgstr "Tekst"
+
+#~ msgid "eg: Read More"
+#~ msgstr "np. Czytaj więcej"
+
+#~ msgid "Add/Edit Gallery"
+#~ msgstr "Dodaj/Edytuj galerię"
+
+#~ msgid "Clear Gallery"
+#~ msgstr "Wyczyść galerię"
+
+#~ msgid "All Groups"
+#~ msgstr "Wszystkie grupy"
+
+#, fuzzy
+#~| msgid "All Groups"
+#~ msgid "All Types"
+#~ msgstr "Wszystkie grupy"
+
+#, fuzzy
+#~| msgid "This determines if there is a sidebar on the home page."
+#~ msgid "This determines how its displayed in the portfolio grid page"
+#~ msgstr "Strona główna z paskiem bocznym lub bez"
+
+#, fuzzy
+#~| msgid "Five Column"
+#~ msgid "Five Columns"
+#~ msgstr "5 kolumn"
+
+#, fuzzy
+#~| msgid "Six Column"
+#~ msgid "Six Columns"
+#~ msgstr "6 kolumn"
+
+#, fuzzy
+#~| msgid "Custom Tab"
+#~ msgid "Custom Tab 01"
+#~ msgstr "Dowolna zakładka"
+
+#, fuzzy
+#~| msgid "Custom Tab"
+#~ msgid "Custom Tab 02"
+#~ msgstr "Dowolna zakładka"
+
+#, fuzzy
+#~| msgid "Custom Tab"
+#~ msgid "Custom Tab 03"
+#~ msgstr "Dowolna zakładka"
+
+#, fuzzy
+#~| msgid "How many portfolio items per page"
+#~ msgid "How many staff items per page"
+#~ msgstr "Ilość elementów portfolio na jednej stronie"
+
+#, fuzzy
+#~| msgid "Default: Testimonial"
+#~ msgid "Default Animation Delay"
+#~ msgstr "Nowa"
+
+#~ msgid "Default animation delay time in milliseconds."
+#~ msgstr "Czas wyświetlania dla suwaka - określny w milisekundach"
+
+#, fuzzy
+#~| msgid "Transition Type"
+#~ msgid "Animation Type"
+#~ msgstr "Efekt przejścia"
+
+#, fuzzy
+#~| msgid "Choose a transition type"
+#~ msgid "Choose an animation style"
+#~ msgstr "Wybierz efekt przejścia"
+
+#, fuzzy
+#~| msgid "Default: Testimonial"
+#~ msgid "Default Duration"
+#~ msgstr "Nowa"
+
+#, fuzzy
+#~| msgid "Default"
+#~ msgid "Default Delay"
+#~ msgstr "Domyślny"
+
+#, fuzzy
+#~| msgid "Theme Recommended Plugins"
+#~ msgid "Theme Plugins"
+#~ msgstr "Zalecane"
+
+#~ msgid "Portfolio Item"
+#~ msgstr "Element Portfolio"
+
+#~ msgid "Add New"
+#~ msgstr "Dodaj nowy"
+
+#~ msgid "All Portfolio"
+#~ msgstr "Wszystko"
+
+#~ msgid "Portfolio Type"
+#~ msgstr "Kategorie"
+
+#~ msgid "Add New Type"
+#~ msgstr "Dodaj nowy rodzaj"
+
+#~ msgid "Portfolio Tags"
+#~ msgstr "Tagi"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search Tags"
+#~ msgstr "Szukaj"
+
+#~ msgid "All Tag"
+#~ msgstr "Wszystko"
+
+#, fuzzy
+#~| msgid "Edit Staff"
+#~ msgid "Edit Tag"
+#~ msgstr "Edytuj"
+
+#, fuzzy
+#~| msgid "Update"
+#~ msgid "Update Tag"
+#~ msgstr "Aktualizuj"
+
+#~ msgid "Add New Tag"
+#~ msgstr "Dodaj nowy"
+
+#~ msgid "New Tag Name"
+#~ msgstr "Nazwa"
+
+#~ msgid "Testimonials"
+#~ msgstr "Opinie"
+
+#~ msgid "Add New Testimonial"
+#~ msgstr "Dodaj nową opinię"
+
+#~ msgid "Edit Testimonial"
+#~ msgstr "Edycja"
+
+#~ msgid "New Testimonial"
+#~ msgstr "Nowa"
+
+#~ msgid "All Testimonials"
+#~ msgstr "Wszystkie"
+
+#~ msgid "View Testimonial"
+#~ msgstr "Podgląd"
+
+#~ msgid "Search Testimonials"
+#~ msgstr "Szukaj"
+
+#~ msgid "No Testimonials found"
+#~ msgstr "Nie znaleziono opinii"
+
+#~ msgid "No Testimonials found in Trash"
+#~ msgstr "Brak w koszu"
+
+#~ msgid "Search Groups"
+#~ msgstr "Szukaj"
+
+#~ msgid "Edit Group"
+#~ msgstr "Edytuj"
+
+#~ msgid "Update Group"
+#~ msgstr "Aktualizuj"
+
+#~ msgid "Add New Group"
+#~ msgstr "Dodaj nową grupę"
+
+#~ msgid "New Group Name"
+#~ msgstr "Nazwa nowej grupy"
+
+#~ msgid "Staff"
+#~ msgstr "Pracownicy"
+
+#~ msgid "Add New Staff"
+#~ msgstr "Dodaj nowego pracownika"
+
+#~ msgid "Edit Staff"
+#~ msgstr "Edytuj"
+
+#~ msgid "New Staff"
+#~ msgstr "Nowy"
+
+#~ msgid "All Staff"
+#~ msgstr "Wszyscy"
+
+#~ msgid "View Staff"
+#~ msgstr "Podgląd"
+
+#~ msgid "Search Staff"
+#~ msgstr "Szukaj"
+
+#~ msgid "No Staff found"
+#~ msgstr "Brak pracowników"
+
+#~ msgid "No Staff found in Trash"
+#~ msgstr "Brak w koszu"
+
+#~ msgid "Staff Group"
+#~ msgstr "Grupy pracowników"
+
+#~ msgid "Portfolio Posts"
+#~ msgstr "Portfolio"
+
+#~ msgid "Portfolio Fullwidth"
+#~ msgstr "Portfolio Pełna szerokość"
+
+#~ msgid "Order by"
+#~ msgstr "Zamówienie Produktów Wg"
+
+#~ msgid "Blog Post Category"
+#~ msgstr "Kategoria"
+
+#~ msgid "Portfolio Category"
+#~ msgstr "Kategoria"
+
+#~ msgid "Product Category"
+#~ msgstr "Produk Video"
+
+#~ msgid "Or upload a custom icon"
+#~ msgstr "Lub wczytaj własną ikonę"
+
+#~ msgid "Icon Background Color (e.g. = #444444)"
+#~ msgstr "Kolor tła Ikony (np = # 444444)"
+
+#~ msgid "Icon Color (e.g. = #f2f2f2)"
+#~ msgstr "Kolor Ikony (np = # f2f2f2)"
+
+#~ msgid "Link:"
+#~ msgstr "Link:"
+
+#~ msgid "Button Text:"
+#~ msgstr "Tekst guzika:"
+
+#~ msgid "Button Link:"
+#~ msgstr "Rozmiar guzika:"
+
+#~ msgid "Link Target"
+#~ msgstr "Duży"
+
+#~ msgid "Image Size"
+#~ msgstr "Rozmiar obrazka"
+
+#~ msgid "Upload an image"
+#~ msgstr "Wczytaj obraz"
+
+#, fuzzy
+#~| msgid "Page Content"
+#~ msgid "Pinnacle: Split Content"
+#~ msgstr "Treść strony"
+
+#, fuzzy
+#~| msgid "Page Content"
+#~ msgid "Image content"
+#~ msgstr "Treść strony"
+
+#~ msgid "Image Background Color (optional)"
+#~ msgstr "Kolor tła obrazu (opcjonalnie)"
+
+#~ msgid "Image align:"
+#~ msgstr "Wyrównanie obrazka:"
+
+#, fuzzy
+#~| msgid "Head Content"
+#~ msgid "Text content"
+#~ msgstr "Treść nagłówka"
+
+#~ msgid "Button Text (optional)"
+#~ msgstr "Tekst przycisku (opcjonalnie)"
+
+#~ msgid "Button Link (optional)"
+#~ msgstr "Link przycisku (opcjonalnie)"
+
+#, fuzzy
+#~| msgid "CSS Classes (optional)"
+#~ msgid "Link link_Target (optional)"
+#~ msgstr "Klasy CSS (opcja)"
+
+#~ msgid "Text Content Background Color (optional)"
+#~ msgstr "Kolor tła tekstu (opcjonalny)"
+
+#~ msgid "Category Image"
+#~ msgstr "Obrazek tła"
+
+#~ msgid "Repeat Background Image"
+#~ msgstr "Powtarzanie tła"
+
+#~ msgid "Background Cover"
+#~ msgstr "Tło okładka"
+
+#~ msgid "Page Link"
+#~ msgstr "Link"
+
+#~ msgid "Post Link"
+#~ msgstr "Opcje wpisu"
+
+#~ msgid "Link Options:"
+#~ msgstr "Opcje linków:"
+
+#, fuzzy
+#~| msgid "Small"
+#~ msgid "Small Below"
+#~ msgstr "Mały"
+
+#, fuzzy
+#~| msgid "Large"
+#~ msgid "Large Below"
+#~ msgstr "Duży"
+
+#, fuzzy
+#~| msgid "Slider Images"
+#~ msgid "Align Image"
+#~ msgstr "Suwak zdjęć"
+
+#, fuzzy
+#~| msgid "Image Size"
+#~ msgid "Image Shape"
+#~ msgstr "Rozmiar obrazka"
+
+#, fuzzy
+#~| msgid "Image Size"
+#~ msgid "Image size"
+#~ msgstr "Rozmiar obrazka"
+
+#, fuzzy
+#~| msgid "Custom Grid"
+#~ msgid "Custom Width"
+#~ msgstr "Niestandardowa siatka"
+
+#, fuzzy
+#~| msgid "Custom Grid"
+#~ msgid "Custom Height"
+#~ msgstr "Niestandardowa siatka"
+
+#, fuzzy
+#~| msgid "Pinnacle Tutorials"
+#~ msgid "Pinnacle: Tabs & Accordions"
+#~ msgstr "Tutoriale"
+
+#~ msgid "Pane title:"
+#~ msgstr "Tutuł strony Ustawienia:"
+
+#~ msgid "Pane content:"
+#~ msgstr "Treść strony:"
+
+#, fuzzy
+#~| msgid "Remove Image"
+#~ msgid "Remove pane"
+#~ msgstr "Usuń obraz"
+
+#, fuzzy
+#~| msgid "Add New Type"
+#~ msgid "Add new pane"
+#~ msgstr "Dodaj nowy rodzaj"
+
+#~ msgid "Please enter your email address."
+#~ msgstr "Podaj swój adres e-mail."
+
+#~ msgid "You entered an invalid email address."
+#~ msgstr "Wprowadzono nieprawidłowy adres e-mail."
+
+#~ msgid "Please enter a message."
+#~ msgstr "Proszę wpisać wiadomość."
+
+#~ msgid "Contact"
+#~ msgstr "Kontakt"
+
+#~ msgid "From"
+#~ msgstr "Formularz"
+
+#~ msgid "Thanks, your email was sent successfully."
+#~ msgstr ""
+#~ "Dziękujemy za wysłanie wiadomości. Odpowiedź zostanie wysłana jak "
+#~ "najszybciej."
+
+#~ msgid "Message:"
+#~ msgstr "Wiadomość:"
+
+#~ msgid "Send Email"
+#~ msgstr "Wyślij wiadomość"
+
+#~ msgid "Featured News"
+#~ msgstr "Wybarne nowości"
+
+#~ msgid "Best Selling Products"
+#~ msgstr "Najlepiej sprzedające się produkty"
+
+#~ msgid "default"
+#~ msgstr "domyślnie"
+
+#~ msgid "Center Logo with menu on sides"
+#~ msgstr "Logo centralnie z menu po bokach"
+
+#~ msgid ""
+#~ "*Note the left menu is the left menu and the right menu is the right "
+#~ "menu. The header is set with two menus."
+#~ msgstr ""
+#~ "*menu dla prawej lub lewej strony ustawiaj osobno. Logo znajdować się "
+#~ "będzie miedzy nimi."
+
+#~ msgid "Enable Sticky Header?"
+#~ msgstr "Włącz stały nagłówek?"
+
+#~ msgid "Choose to enable fixed header. Automatically off for mobile"
+#~ msgstr "Stały nagłówek - automatyczne wyłączanie dla urządzeń mobilnych"
+
+#~ msgid "Enable Mobile Sticky Header?"
+#~ msgstr "Włącz stały nagłówek dla urządzeń mobilnych?"
+
+#~ msgid "Choose to enable fixed header for mobile"
+#~ msgstr "Włącz stały nagłówek dla urządzeń mobilnych"
+
+#~ msgid "Enable Shrink Header?"
+#~ msgstr "Włączyć nagłówek kurczący się?"
+
+#~ msgid "Choose to enable a shrinking sticky header."
+#~ msgstr ""
+#~ "Włączenie aktywuje nagłówek ktróy kurczy się podczas przewijania strony."
+
+#~ msgid ""
+#~ "This will make the page header background fill to the top of the page. "
+#~ "(Home page set on home slider tab)"
+#~ msgstr ""
+#~ "Tło nagłówka będzie przeźroczyste do momentu przewinięcia strony w dół."
+#~ "(Zobacz ustawienia zakładka Suwak główny)"
+
+#~ msgid "(Home page set on home slider tab)"
+#~ msgstr "(Zobacz ustawienia zakłądka Suwak główny)"
+
+#~ msgid "Page Header background Overlay color"
+#~ msgstr " Kolor tła nakładki dla Tytułu strony"
+
+#~ msgid "Note this will apply to all page title areas."
+#~ msgstr "Przykrycie tytułu strony dodatkowym kolorem"
+
+#~ msgid "Page Header background Overlay Opacity"
+#~ msgstr "Przezroczystość dla nakładki Tytułu strony"
+
+#~ msgid "Footer"
+#~ msgstr "Stopka ustawienia"
+
+#~ msgid "Sitewide Footer Call To Action"
+#~ msgstr "Call To Action dla całej szerokości stron"
+
+#~ msgid "Use Sitewide Footer Call to Action"
+#~ msgstr "Włącz Call To Action dla stopki"
+
+#~ msgid "Sitewide Footer Shortcode"
+#~ msgstr "Shortcode dla Stopki"
+
+#~ msgid "Add shortcode here for output just above footer."
+#~ msgstr "Dodaj tutaj shortcode tuż powyżej stopki."
+
+#~ msgid "Revolution Slider"
+#~ msgstr "Suwak Revolution"
+
+#, fuzzy
+#~| msgid "Add Shortcode"
+#~ msgid "Shortcode Entry"
+#~ msgstr "Dadaj shortcode"
+
+#~ msgid "Kadence Slider Pro"
+#~ msgstr "Kadence Slider Pro"
+
+#~ msgid "Kadence Slider Legacy"
+#~ msgstr "Kadence Slider Legacy"
+
+#~ msgid "Latest Posts Slider Style"
+#~ msgstr "Wygląd suwaka"
+
+#~ msgid "Choose how you want the latest post slider to look"
+#~ msgstr "Wybierz wygląd suwaka dla wpisów "
+
+#~ msgid "Post Slider (Flex)"
+#~ msgstr "Karuzela wpisów elastyczna"
+
+#~ msgid "Post Carousel"
+#~ msgstr "Karuzela wpisów"
+
+#~ msgid "Carousel Image Size"
+#~ msgstr "Rozmiar obrazu karuzeli"
+
+#~ msgid "Choose the image size for the full width carousel"
+#~ msgstr "Wybierz rozmiar obrazu dla karuzeli o pełnej szerokości"
+
+#~ msgid "Choose your Revolution Slider Here"
+#~ msgstr " Użyj Suwaka Revolution"
+
+#~ msgid "If Kadence Slider Pro Slider"
+#~ msgstr "Jeżeli suwak Kadence Slider Pro"
+
+#~ msgid "Choose your Kadence Slider here"
+#~ msgstr "Użyj Suwaka Kadence"
+
+#~ msgid "If Kadence Slider Legacy"
+#~ msgstr "Jeżeli suwak Kadence Slider Legacy"
+
+#~ msgid "Add arrow at the bottom of slider"
+#~ msgstr "Dodaj nawigację suwaka"
+
+#~ msgid "This adds a little arrow link that scrolls down into the content"
+#~ msgstr "Pokaż strzałkę przewijania w strony w dół treści"
+
+#~ msgid "Paste shortcode here"
+#~ msgstr "Wybierz shortcode"
+
+#~ msgid "Show for tablet also?"
+#~ msgstr "Pokaż dla tabletu?"
+
+#~ msgid "Choose if you would like to show the mobile slider for tablets also."
+#~ msgstr "Wybierz rodzaj suwak dla urządzeń mobilnych."
+
+#~ msgid "Choose your Kadence Slider Here"
+#~ msgstr "Użyj Suwaka Revolution"
+
+#~ msgid "Image Menu"
+#~ msgstr "Menu obrazkowe"
+
+#~ msgid "Portfolio Full"
+#~ msgstr "Pełne portfolio"
+
+#~ msgid "On Sale Products"
+#~ msgstr "Produkty w sprzedaży"
+
+#~ msgid "Custom Carousel"
+#~ msgstr "Dowolna karuzela"
+
+#~ msgid "Home Image Menu"
+#~ msgstr "Menu Strona główna Zdjęcia"
+
+#~ msgid "Add images, descriptions, titles, and links"
+#~ msgstr "Dodaj zdjęcia, opisy, tytuły i linki"
+
+#~ msgid "Choose the Text Color."
+#~ msgstr "Wybierz kolor tekstu."
+
+#~ msgid "Image Menu Height"
+#~ msgstr "Wysokość menu"
+
+#~ msgid "Height set by"
+#~ msgstr "Ustawienie wysokości"
+
+#~ msgid "Choose how the image menu height will be set."
+#~ msgstr "Wybierz rodzaj wysokość menu obrazkowego."
+
+#~ msgid "Height setting above"
+#~ msgstr "Wysokość menu taka jak wyżej"
+
+#~ msgid "Home Featured Product Settings"
+#~ msgstr "Strona główna Polecane Produkty Ustawienia"
+
+#~ msgid "Home Product Carousel Title"
+#~ msgstr "Strona główna Karuzela tytułów"
+
+#~ msgid "e.g. = Featured Products"
+#~ msgstr "np. polecane produkty"
+
+#~ msgid "Choose how many products are in carousel"
+#~ msgstr "Wybierz ile produktów jest w karuzeli"
+
+#~ msgid "Carousel Scroll"
+#~ msgstr "Karuzela"
+
+#~ msgid "Choose how the product items scroll."
+#~ msgstr "Wybierz rodzaj przewijania."
+
+#~ msgid "Home On Sale Product Settings"
+#~ msgstr "Strona główna Ustawienia produktu na wyprzedaży"
+
+#~ msgid "Home On Sale Product Carousel Title"
+#~ msgstr "Strona główna Na sprzedaż Produkt Karuzela - Tytuł"
+
+#~ msgid "e.g. = On Sale Products"
+#~ msgstr "przykład = Produkty na wyprzedaży"
+
+#~ msgid "Home Best Selling Product Settings"
+#~ msgstr "Strona główna Ustawienia najlepiej sprzedających się produktów"
+
+#~ msgid "Home Best Selling Product Carousel Title"
+#~ msgstr ""
+#~ "Strona główna Tytuł dla karuzeli - najlepiej sprzedające się produkty"
+
+#~ msgid "e.g. = Best Selling Products"
+#~ msgstr "przykład = Najlepiej sprzedające się produkty"
+
+#~ msgid "Flat no Margin"
+#~ msgstr "Płaski - bez marginesów "
+
+#~ msgid "Use full width layout?"
+#~ msgstr "Używać układu o pełnej szerokości?"
+
+#~ msgid "Home Custom Carousel Settings"
+#~ msgstr "Strona główna Niestandardowa karuzela - ustawienia"
+
+#~ msgid "Home Custom Carousel Title"
+#~ msgstr "Strona główna Niestandardowa karuzela - Tytuł"
+
+#~ msgid "e.g. = Featured News"
+#~ msgstr "przykład = Zobacz koniecznie"
+
+#~ msgid "Custom Carousel Items"
+#~ msgstr "Niestandardowa karuzela - elementy"
+
+#~ msgid "Custom Carousel Scroll"
+#~ msgstr "Niestandardowa karuzela - przewijanie"
+
+#~ msgid "Choose how the custom items scroll."
+#~ msgstr "Wybierz sposób przewijania niestandardowych elementów."
+
+#~ msgid "Enable custom image ratio for carousel"
+#~ msgstr "Włącz niestandardowy współczynnik obrazu dla karuzeli"
+
+#~ msgid "Show button on hover"
+#~ msgstr "Pokaż przycisk po najechaniu myszką"
+
+#~ msgid "Home Portfolio Full Settings"
+#~ msgstr "Strona główna całe Portfolio - Ustawienia"
+
+#~ msgid "Home Portfolio Full Title"
+#~ msgstr "Strona główna całe  Portfolio - Tytuł"
+
+#~ msgid "e.g. = Our Work"
+#~ msgstr "przykład = Nasza praca"
+
+#~ msgid "Portfolio Full Category Type"
+#~ msgstr "Całe Portfolio typ kategorii"
+
+#~ msgid "Choose type for the Portfolio Full"
+#~ msgstr "Wybierz typ dla całego  portfela"
+
+#~ msgid "Choose how many Portfolio Items on Homepage"
+#~ msgstr "Wybierz ilość elementów dla całego Portfolio na stronie głównej"
+
+#~ msgid "Portfolio full Order by"
+#~ msgstr "Całe portfolio sortowanie"
+
+#~ msgid "Choose how the portfolio items should be ordered."
+#~ msgstr "Wybierz sposób wyświetlania elementów portfolio."
+
+#~ msgid "Choose how many Portfolio columns"
+#~ msgstr "Wybierz liczbę kolumn Portfolio"
+
+#~ msgid "Use masonry Layout?"
+#~ msgstr "Używać widoku blokowego?"
+
+#~ msgid "Use Isotope Filter?"
+#~ msgstr "Używać filtra dynamicznego?"
+
+#~ msgid "Photo Post"
+#~ msgstr "Zdjęcie wpisu"
+
+#, fuzzy
+#~| msgid "Add Shortcode"
+#~ msgid "If Shortcode Entry"
+#~ msgstr "Dadaj shortcode"
+
+#~ msgid "Post Excerpt Length"
+#~ msgstr "Długość wpisu"
+
+#~ msgid "Choose how many items to show on recent/similar post carousel."
+#~ msgstr "Ilość elementów portfolio na jednej stronie."
+
+#~ msgid "Enable Search in Primary Menu?"
+#~ msgstr "Włącz wyszukiwarkę w menu głównym?"
+
+#~ msgid "Choose to enable a search button in the header menu"
+#~ msgstr "Włącz ikonę wyszukiwania w nagłówku menu"
+
+#~ msgid "Choose to enable a Cart button in the header menu"
+#~ msgstr "Włącz koszyk w stałym nagłówku Menu"
+
+#~ msgid "Language Settings"
+#~ msgstr "Ustawienia języka"
+
+#~ msgid "Quick Language Settings"
+#~ msgstr "Ustawienia języka"
+
+#~ msgid "Topbar Cart Total Text"
+#~ msgstr "Wyszwietl w topbar sumę koszyka"
+
+#~ msgid "Standard: Read More"
+#~ msgstr "Czytaj więcej"
+
+#~ msgid "Standard: Clear selection"
+#~ msgstr "Wyczyść zaznaczenie"
+
+#~ msgid "Standard: You may also like&hellip;"
+#~ msgstr "Może zainteresuje cię like&hellip;"
+
+#~ msgid "Breadcrumbs"
+#~ msgstr "Okruszki"
+
+#~ msgid "Choose to show or hide breadcrumbs on your single staff posts"
+#~ msgstr "Pokaż/ukryj okruszki dla mobilnych"
+
+#~ msgid "Search Results"
+#~ msgstr "Wyniki wyszukiwania"
+
+#~ msgid "Leave Off"
+#~ msgstr "Zostaw"
+
+#~ msgid "Enable Auto Hide"
+#~ msgstr "Włącz autoukrywanie"
+
+#~ msgid "Theme Lightbox"
+#~ msgstr "Wysokość menu"
+
+#~ msgid "Header and Footer Scripts"
+#~ msgstr "Skrypty nagłówka i stopki"
+
+#~ msgid "Header Output"
+#~ msgstr "Nagłówek"
+
+#~ msgid "Footer Output"
+#~ msgstr "Stopka"
+
+#~ msgid "Custom 404 Page"
+#~ msgstr "Strona niestandardowa"
+
+#~ msgid "Choose a 404 page"
+#~ msgstr "Wybierz stronę 404"
+
+#~ msgid "Enable Notice for Pagebuilder"
+#~ msgstr "Włącz stały nagłówek"
+
+#~ msgid "Filter Products"
+#~ msgstr "Filtr produktów"
+
+#~ msgid "Sold"
+#~ msgstr "Brak"
+
+#~ msgid "Related Products"
+#~ msgstr "Ocena produktów"
+
+#~ msgid "You may also like&hellip;"
+#~ msgstr "Może zainteresuje cię like&hellip;"
+
+#~ msgid "Please Try Again"
+#~ msgstr "Spróbuj Ponownie"
+
+#~ msgid "Add Group"
+#~ msgstr "Dodaj nową grupę"
+
+#~ msgid "Remove Group"
+#~ msgstr "Usuń grupę"
+
+#~ msgid "Add Row"
+#~ msgstr "Dodaj wiersz"
+
+#~ msgid "No terms"
+#~ msgstr "Brak wyników"
+
+#~ msgid "Add or Upload File"
+#~ msgstr "Dodaj lub Wczytaj Plik"
+
+#~ msgid "File:"
+#~ msgstr "Plik:"
+
+#~ msgid "Download"
+#~ msgstr "Pobierz"
+
+#~ msgid "Clear"
+#~ msgstr "Czyść"
+
+#~ msgid "Select Color"
+#~ msgstr "Wybierz Kolor"
+
+#~ msgid "Current Color"
+#~ msgstr "Aktualny kolor"
+
+#~ msgid "Select / Deselect All"
+#~ msgstr "Zaznacz / usuń wszstko"
+
+#~ msgid "Save"
+#~ msgstr "Zapisz"
+
+#~ msgid "Out of stock"
+#~ msgstr "Brak w magazynie"
+
+#~ msgid "Something went wrong."
+#~ msgstr "Coś poszło nie tak"
+
+#~ msgid ""
+#~ "No plugins to install or activate. <a href=\"%1$s\">Return to the "
+#~ "Dashboard</a>"
+#~ msgstr ""
+#~ "Brak zainstalowanych pluginów lub są nieaktywowane.<a href=\"%1$s"
+#~ "\">Powrót do pulpitu</a>"
+
+#~ msgid "Install package not available."
+#~ msgstr "Instalowany pakiet jest niedostępny"
+
+#~ msgid ""
+#~ "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+#~ msgstr "Pobieranie pakietów z <span class=\"code\">%s</span>&#8230;"
+
+#~ msgid "Unpacking the package&#8230;"
+#~ msgstr "Rozpakowanie pakietu &#8230;"
+
+#~ msgid "Installing the plugin&#8230;"
+#~ msgstr "Instalowanie wyczki &#8230;"
+
+#~ msgid "Plugin install failed."
+#~ msgstr "Instalacja niudana"
+
+#~ msgid "Plugin installed successfully."
+#~ msgstr "Instalacja zakończyła się pomyślnie"
+
+#~ msgid "Icon Class (e.g. icon-home)"
+#~ msgstr "Klasa ikony (np. icon-home)"
+
+#~ msgid "Import Options"
+#~ msgstr "Import Opcji"
+
+#~ msgid "Import from URL"
+#~ msgstr "Import z linku"
+
+#, fuzzy
+#~ msgid "Export Options"
+#~ msgstr "Import Opcji"
+
+#, fuzzy
+#~ msgid "Download Data File"
+#~ msgstr "Pobierz"
+
+#~ msgid "Page"
+#~ msgstr "Strona"
+
+#~ msgid "View your shopping cart"
+#~ msgstr "Zobacz swój Koszyk"
+
+#~ msgid "Example Page"
+#~ msgstr "Przykłądowa strona"
+
+#~ msgid "Example Page 2"
+#~ msgstr "Przykłądowa strona"
+
+#~ msgid "Featured Projects"
+#~ msgstr "Wbrane projekty"
+
+#~ msgid "Add images"
+#~ msgstr "Dodaj obraz"
+
+#~ msgid "Add Images to Gallery"
+#~ msgstr "Dodaj obraz do galerii"
+
+#~ msgid "Add to gallery"
+#~ msgstr "Dodaj do galerii"
+
+#~ msgid "Secondary Navigation"
+#~ msgstr "Drugie menu"
+
+#~ msgid "Icon/Font Color"
+#~ msgstr "Kolor czcionki ikony"
+
+#~ msgid "Hover Icon/Font Color"
+#~ msgstr "Kolro ikony HOVER"
+
+#~ msgid "Hover Background Color"
+#~ msgstr "Kolor tła HOVER "
+
+#~ msgid "Grid View"
+#~ msgstr "Siatka"
+
+#~ msgid "List View"
+#~ msgstr "Lista"
+
+#~ msgid "Site Default"
+#~ msgstr "Domyślna strona"
+
+#~ msgid "Crop images to equal height"
+#~ msgstr "Przycinanie zdjęć do równej wysokości"
+
+#~ msgid "If cropped rows will be equal"
+#~ msgstr "Jeśli przycięte rzędy będą równe"
+
+#~ msgid "Set image height if cropping"
+#~ msgstr "Ustaw wysokość obrazu jeśli są kadrowane"
+
+#~ msgid "Default is 1:1 ratio (Note: just input number, example: 350)"
+#~ msgstr ""
+#~ "Domyślnie jest to 1: 1 (Uwaga: liczba tylko wejście, na przykład: 350)"
+
+#~ msgid "Portfolio Category Page Options"
+#~ msgstr "Opcje Portfolio"
+
+#~ msgid "Image link to Lightbox"
+#~ msgstr "Wysokość menu"
+
+#~ msgid "Image Carousel Slider"
+#~ msgstr "Adres strony"
+
+#~ msgid "Display Shortcode Slider above Header"
+#~ msgstr "Suwak poniżej nagłówka"
+
+#~ msgid "Icon Size (e.g. = 48)"
+#~ msgstr "Rozmiar ikony (np. = 48)"
+
+#~ msgid "Virtue: Image Menu Item"
+#~ msgstr "Menu Strona główna Zdjęcia"
+
+#~ msgid "Virtue: Recent Posts"
+#~ msgstr "Virtue: Ostatnie posty"
+
+#~ msgid "Message: "
+#~ msgstr "Widomość"
+
+#~ msgid "1 Comment"
+#~ msgstr "Teść komentarza"
+
+#~ msgid "% Comments"
+#~ msgstr "Teść komentarza"
+
+#~ msgid "Comments are Closed"
+#~ msgstr "Komentarze zostały wyłączone."
+
+#~ msgid "posted in:"
+#~ msgstr "wpis w:"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "Main Settings"
+#~ msgstr "Ustawienia główne"
+
+#~ msgid "Welcome to Virtue Theme Options"
+#~ msgstr "Witamy w opcjach tematu Virtue "
+
+#~ msgid "Site Layout Style"
+#~ msgstr "Ukłąd strony"
+
+#~ msgid "Select Boxed or Wide Site Layout Style"
+#~ msgstr "Wybierz układ strony"
+
+#~ msgid "Choose a Header Style"
+#~ msgstr "Wybierz rodzaj nagłówka"
+
+#~ msgid "Header Start Height"
+#~ msgstr "Wysokość bazowa nagłówka"
+
+#~ msgid "Note: This header style does not have secondary menu support."
+#~ msgstr "Uwaga: Ten styl nagłówka nie działa dla Drugiego Menu"
+
+#~ msgid "Choose how many menu items per Side"
+#~ msgstr "Ilość pozycji menu po jednej stronie"
+
+#~ msgid ""
+#~ "This determines how many menu items fit on each side of the logo, each "
+#~ "menu is set in the appernace > menus page."
+#~ msgstr "Wybierz ilość pozycji menu dla każdej ze stron Loga"
+
+#~ msgid "Enable Shrink with Center Header?"
+#~ msgstr "Włącz stały nagówek"
+
+#~ msgid "Choose to enable a shink a header shrink"
+#~ msgstr "Włącz stałe kurczące się menu"
+
+#~ msgid "Choose how you want your logo to be laid out"
+#~ msgstr "Wybierz położenie położenia loga w nagłówku"
+
+#~ msgid "Site Tagline - Below Logo\""
+#~ msgstr "Opis pod logiem\""
+
+#~ msgid "An optional line of text below your logo"
+#~ msgstr "Dodatkowy opis pod logiem"
+
+#~ msgid "Site Tagline Font"
+#~ msgstr "Ustawienia czcionki"
+
+#~ msgid "Choose size and style your site tagline"
+#~ msgstr "Ustawienia czcionki (Kolor, rozmiar itp.)"
+
+#~ msgid "Logo Spacing"
+#~ msgstr "Logo - Odstęp"
+
+#~ msgid "Bottom Spacing"
+#~ msgstr "Dolny"
+
+#~ msgid "Right Spacing"
+#~ msgstr "Prawy"
+
+#~ msgid "Primary Menu Spacing"
+#~ msgstr "Gówne menu - Odstęp"
+
+#~ msgid "Sitewide Banner"
+#~ msgstr "Banner całej witryny"
+
+#~ msgid "Upload a banner for bottom of header."
+#~ msgstr "Wczytaj baner poniżej nagłówka."
+
+#~ msgid "Banner Link"
+#~ msgstr "Link"
+
+#~ msgid "Enable topbar mobile menu layout."
+#~ msgstr "Włącz topbar dla urządzeń mobilnych"
+
+#~ msgid ""
+#~ "This will convert your menu to a mobile friendly layout and move the "
+#~ "search box into the menu."
+#~ msgstr "Dostosuj ładniejszy wygląd tobar dla urządzeń mobilnych"
+
+#~ msgid "Enable widget area in right of Topbar?"
+#~ msgstr "Aktywuj widget w pasku Topbar"
+
+#~ msgid ""
+#~ "Note this will hide remove search (you can re-enable it my adding it to "
+#~ "the widget area)"
+#~ msgstr "w tej konfiguracji może dodać ikonę szukania jako widged"
+
+#~ msgid "Thumb Slider"
+#~ msgstr "Suwak z miniaturek"
+
+#~ msgid "Move Slider above Header"
+#~ msgstr "Suwak poniżej nagłówka"
+
+#~ msgid "This works great for full screen sliders"
+#~ msgstr "Zaleca się dla pełnoekranowych suwaków"
+
+#~ msgid "Create a more lightweight Home slider for your mobile visitors."
+#~ msgstr ""
+#~ "Dodaj mniejszy suwak dla urządzeń mobilnych celem szybszego ładowania "
+#~ "strony"
+
+#~ msgid "Masonry Style"
+#~ msgstr "Styl ikony"
+
+#~ msgid "Post Excerpt"
+#~ msgstr "Długość wpisu "
+
+#~ msgid ""
+#~ "This determines if the image and product title layout on single product "
+#~ "pages."
+#~ msgstr "Strona główna z paskiem bocznym lub bez"
+
+#~ msgid "Choose how many portfolio items show on portfolio catagory pages."
+#~ msgstr "Ilość elementów portfolio na jednej stronie"
+
+#~ msgid "Display Similar Posts in random order?"
+#~ msgstr "Tak - Pokaż podobne wpisy"
+
+#~ msgid "Full Post"
+#~ msgstr "Wszyskie wpisy na blgu"
+
+#~ msgid "Upload background image or texture"
+#~ msgstr "Wczytaj obraz tła lub teksturę"
+
+#~ msgid "Topbar Background Color"
+#~ msgstr "Topbar - Kolor tła"
+
+#~ msgid "Enable Mini Cart in Primary Menu?"
+#~ msgstr "Włącz mini koszyk w menu głównym"
+
+#~ msgid "Arrrow navigation for single testimonial post?"
+#~ msgstr "Pokaż strzałkę nawigacji dla pojedynczego postu Referncji? "
+
+#~ msgid "Grid Link for testimonial navigation"
+#~ msgstr "Siatka linów nawigacyjnych dla Referencji"
+
+#~ msgid "Hide Image Border"
+#~ msgstr "Ukryj obramowanie obrazu"
+
+#~ msgid "Choose to show or hide image border"
+#~ msgstr "Wybierz, aby wyświetlić lub ukryć obramowanie obrazu"
+
+#~ msgid "Contact Form Email"
+#~ msgstr "Formularz kontakowy"
+
+#~ msgid "Sets the email for the contact page email form."
+#~ msgstr "Ustawia Email do strony kontaktowej formularza e-mail."
+
+#~ msgid "Enter a valid email address."
+#~ msgstr "Wpisz poprawny adres email."
+
+#~ msgid "Search Results Layout"
+#~ msgstr "Wyniki wyszukiwania wygląd"
+
+#~ msgid "Grid"
+#~ msgstr "Siatka"
+
+#~ msgid "Single Column"
+#~ msgstr "Jedna kolumna"
+
+#~ msgid "Advanced Settings"
+#~ msgstr "Ustawienia zaawansowane "
+
+#~ msgid "Site Title"
+#~ msgstr "Tytuł strony"
+
+#~ msgid "Site Description"
+#~ msgstr "Opis strony"
+
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Oceninanie %d na 5"
+
+#~ msgid "out of 5"
+#~ msgstr "z 5"
+
+#~ msgid "Your comment is awaiting approval"
+#~ msgstr "Twój komentarz czeka na zatwierdzenie"
+
+#~ msgid "verified owner"
+#~ msgstr "własciciel potwierdzony"
+
+#~ msgid "Logo Layout"
+#~ msgstr "Położenie Loga"
+
+#~ msgid "Private Repository"
+#~ msgstr "Prywatne repozytorium"
+
+#~ msgid "Hide Details"
+#~ msgstr "Ukryj szczegóły"
+
+#~ msgid "%1$s installed successfully."
+#~ msgstr "%1$s instlacja zakończyła się powodzeniem"
+
+#~ msgid "Wide Parallax"
+#~ msgstr "Szeroki Parallax"
+
+#, fuzzy
+#~ msgid "Wide Content"
+#~ msgstr "Treść strony"
+
+#, fuzzy
+#~ msgid "Order ID"
+#~ msgstr "Zamówienie Produktów Wg"
+
+#, fuzzy
+#~ msgid "Billing Email"
+#~ msgstr "Wyślij wiadomość"
+
+#, fuzzy
+#~ msgid "There are no reviews yet."
+#~ msgstr "Brak wcześniejszych ustawień"
+
+#, fuzzy
+#~ msgid "Your Rating"
+#~ msgstr "Twój koszyk"
+
+#~ msgid "Rated %s out of 5"
+#~ msgstr "Oceninanie %s na 5"
+
+#~ msgid "%s customer review"
+#~ msgid_plural "%s customer reviews"
+#~ msgstr[0] "%s Ocena klienta"
+#~ msgstr[1] "%s Oceny klientów"
+
+#~ msgid "Name: "
+#~ msgstr "Imię:"
+
+#~ msgid "Copy and Paste this code into the theme options import feature"
+#~ msgstr "Skopiuj i wklej ten kod opcji tematu"
+
+#~ msgid "System Info"
+#~ msgstr "Informacje o systemie"
+
+#~ msgid "Import from file"
+#~ msgstr "Import z pliku"
+
+#, fuzzy
+#~ msgid "our documentation"
+#~ msgstr "Dokumentacja"
+
+#, fuzzy
+#~ msgid "Email address"
+#~ msgstr "nieprawidłowy adres email"
+
+#, fuzzy
+#~ msgid "Feature"
+#~ msgstr "Wybarne nowości"
+
+#, fuzzy
+#~ msgid "More Features"
+#~ msgstr "Wybarne nowości"
+
+#, fuzzy
+#~ msgid "description"
+#~ msgstr "Opis"
+
+#, fuzzy
+#~ msgid "Additional Updates"
+#~ msgstr "Dadatkowe informacje"
+
+#, fuzzy
+#~ msgid "cool thing description."
+#~ msgstr "Opis produktu"
+
+#, fuzzy
+#~ msgid "Product Price"
+#~ msgstr "Produk Video"
+
+#, fuzzy
+#~ msgid "Flexible Product Grids"
+#~ msgstr "Ocena produktów"
+
+#, fuzzy
+#~ msgid "Additional Display Options"
+#~ msgstr "Dadatkowe informacje"
+
+#~ msgid "Top"
+#~ msgstr "Góra"
+
+#~ msgid "Bottom"
+#~ msgstr "Dół"
+
+#~ msgid "Border style"
+#~ msgstr "Styl obramowania"
+
+#~ msgid "Units"
+#~ msgstr "Jednostki"
+
+#~ msgid "Add"
+#~ msgstr "Dodaj"
+
+#~ msgid "Posts tagged &ldquo;"
+#~ msgstr "Oznaczone wpisy &ldquo;"
+
+#~ msgid "Username or email"
+#~ msgstr "Użytkownik lub email"
+
+#~ msgid "Login"
+#~ msgstr "Login"
+
+#~ msgid "Lost Password?"
+#~ msgstr "Nie pamiętasz hasła?"
