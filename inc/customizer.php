@@ -350,6 +350,11 @@ function ansia_custom_settings_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Reddit URL', 'ansia')
 	);
+	$socialmedia[] = array(
+	'slug'=>'_twitchurl', 
+	'default' => '',
+	'label' => __('Twitch URL', 'ansia')
+	);
 	foreach( $socialmedia as $ansia_theme_options ) {
 		// SETTINGS
 		$wp_customize->add_setting(
@@ -638,6 +643,7 @@ if( ! function_exists('ansia_show_social_network')){
 		$vkURL = ansia_options('_vkurl', '');
 		$xingURL = ansia_options('_xingurl', '');
 		$redditURL = ansia_options('_redditurl', '');
+		$twitchURL = ansia_options('_twitchurl', '');
 		?>
 		<div class="ansia-social-button <?php echo $position == 'sidebar' ? 'inSidebar' : 'inFooter' ?>">
 			<?php if ($position == 'float') : ?>
@@ -677,6 +683,9 @@ if( ! function_exists('ansia_show_social_network')){
 			<?php endif; ?>
 			<?php if ($redditURL) : ?>
 				<a class="ansia-social" href="<?php echo esc_url($redditURL); ?>" target="<?php echo esc_attr($openLinks); ?>" <?php echo esc_attr($attribute); ?> title="<?php esc_attr_e( 'Reddit', 'ansia' ); ?>"><i class="fa fa-reddit-alien spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Reddit', 'ansia' ); ?></span></i></a>
+			<?php endif; ?>
+			<?php if ($twitchURL) : ?>
+				<a class="ansia-social" href="<?php echo esc_url($twitchURL); ?>" target="<?php echo esc_attr($openLinks); ?>" <?php echo esc_attr($attribute); ?> title="<?php esc_attr_e( 'Twitch', 'ansia' ); ?>"><i class="fa fa-twitch spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 		</div>
 		<?php

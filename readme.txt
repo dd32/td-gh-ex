@@ -3,7 +3,8 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, custom-header, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo, custom-background
 Requires at least: 4.5
 Tested up to: 5.3
-Stable tag: 1.1.2
+Stable tag: 1.1.3
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Ansia WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -33,10 +34,14 @@ Ansia includes support for Infinite Scroll in Jetpack and WooCommerce.
 * nanoScrollerJS (https://github.com/jamesflorentino/nanoScrollerJS) licensed under MIT
 * SmoothScroll (https://github.com/galambalazs/smoothscroll-for-websites) licensed under MIT
 * Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
-* Image used in Theme Screenshot (https://www.pexels.com/photo/green-woven-frame-70346/) Pexels Free photos for commercial and personal works
-* Image used in Theme Screenshot (https://www.pexels.com/photo/adorable-beautiful-child-children-573285/) Pexels Free photos for commercial and personal works
+* Image used in Theme Screenshot by PxHere https://pxhere.com/en/photo/1128503 licensed under CC0
+* Image used in Theme Screenshot by Piqsels https://www.piqsels.com/en/public-domain-photo-frzdk licensed under CC0
 
 == Changelog ==
+= Version 1.1.3 =
+* Added Twitch social button
+* Minor bug fixes
+
 = Version 1.1.2 =
 * Improved WooCommerce style in My Account page
 * Minor bug fixes

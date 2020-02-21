@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2020-01-09 15:23+0100\n"
-"PO-Revision-Date: 2020-01-09 15:23+0100\n"
+"POT-Creation-Date: 2020-02-21 19:06+0100\n"
+"PO-Revision-Date: 2020-02-21 19:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -646,64 +646,72 @@ msgstr ""
 msgid "Reddit URL"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:356
+msgid "Twitch URL"
+msgstr ""
+
+#: inc/customizer.php:385
 msgid "Open social links"
 msgstr ""
 
-#: inc/customizer.php:386
+#: inc/customizer.php:391
 msgid "Same window"
 msgstr ""
 
-#: inc/customizer.php:387
+#: inc/customizer.php:392
 msgid "New Window"
 msgstr ""
 
-#: inc/customizer.php:646
+#: inc/customizer.php:652
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:649
+#: inc/customizer.php:655
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:652
+#: inc/customizer.php:658
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:661
 msgid "Linkedin"
 msgstr ""
 
-#: inc/customizer.php:658
+#: inc/customizer.php:664
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:667
 msgid "YouTube"
 msgstr ""
 
-#: inc/customizer.php:664
+#: inc/customizer.php:670
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:667
+#: inc/customizer.php:673
 msgid "Tumblr"
 msgstr ""
 
-#: inc/customizer.php:670
+#: inc/customizer.php:676
 msgid "Flickr"
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:679
 msgid "VK"
 msgstr ""
 
-#: inc/customizer.php:676
+#: inc/customizer.php:682
 msgid "Xing"
 msgstr ""
 
-#: inc/customizer.php:679
+#: inc/customizer.php:685
 msgid "Reddit"
+msgstr ""
+
+#: inc/customizer.php:688
+msgid "Twitch"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:72
