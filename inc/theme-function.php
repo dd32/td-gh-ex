@@ -318,10 +318,10 @@ if (!function_exists('appdetail_home_blog')) :
                 <div class="col-md-4 col-sm-6">
                     <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
                         <div class="blog-top">
-                            <img alt="blog" src="<?php echo esc_url($image_url[0]);?>">
+                            <img src="<?php echo esc_url($image_url[0]);?>">
                         </div>
                         <div class="blog-admin">
-                            <img alt="admin" src="<?php echo esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>">
+                            <img src="<?php echo esc_url( get_avatar_url( get_the_author_meta('ID') ) ); ?>">
                         </div>
                         <div class="blog-bottom">
                             <h4 class="h-border"><?php echo esc_html__( 'By', 'appdetail' ); ?> <?php the_author(); ?>
@@ -341,6 +341,7 @@ if (!function_exists('appdetail_home_blog')) :
         </div>
     <!-- ====== End client ====== -->
 <?php   } endif;
+
 
 /**
  * Goto Top functions

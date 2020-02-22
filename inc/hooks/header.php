@@ -145,7 +145,17 @@ if ( ! function_exists( 'appdetail_header_lower_section' ) ) :
                 </div>
             </div>
         </nav>
-
+        <script type="text/javascript">
+    /*----------------------------------------------
+    ----------- Slick Nav  --------------------
+    -------------------------------------------------*/
+    if (jQuery('#menu').length) {
+        jQuery('#menu').slicknav({
+            brand: '<a href="<?php echo esc_url( home_url( '/' ) ); ?>">  <?php if (has_custom_logo()) {  the_custom_logo(); } else { bloginfo( 'name' );?> <br> <?php bloginfo( 'description' ); }  ?> </a>',
+            appendTo: 'header',
+        });
+    }
+      </script>
             <!-- menubar ends -->
     </header>
 	<div id="content" class="site-content"></div>
@@ -343,8 +353,13 @@ if ( ! function_exists( 'appdetail_header_blog_action' ) ) :
         $appdetail_category_cat   = $appdetail_theme_options['appdetail-blog-cat'];
         if( $appdetail_category_cat > 0 ){ ?>
             <section id="blog" class="blog s-pad">
-                    <?php if(is_home() || is_front_page () ) {
+                    <?php if(!is_home() || !is_front_page () ) {
                         appdetail_home_blog();
+                    }
+                    else{
+
+                        require get_template_directory() . '/index.php';
+
                     }
                     ?>
             </section>

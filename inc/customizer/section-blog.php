@@ -13,7 +13,7 @@ $wp_customize->add_section( 'appdetail-blog-category', array(
 /* blog cat selection */
 $wp_customize->add_setting( 'appdetail_theme_options[appdetail-blog-cat]', array(
     'capability'		=> 'edit_theme_options',
-    'default'			=> 1,
+    'default'			=> $appdetail_defaults['appdetail-blog-cat'],
     'sanitize_callback' => 'absint'
 ) );
 
