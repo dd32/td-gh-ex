@@ -5,7 +5,7 @@
 *
 * @package Atomy
 *
-*  @version 1.0.4
+*  @version 1.0.5
 */
 
 function atomy_page_display() {
@@ -14,7 +14,7 @@ function atomy_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html('Atomy','atomy');?></h2>
-		  	<span><?php echo esc_html('V 1.0.4','atomy');?></span>
+		  	<span><?php echo esc_html('V 1.0.5','atomy');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
@@ -57,38 +57,38 @@ function atomy_page_display() {
     </div>
 		<h3 class="atomy-welkome-support-title"><?php esc_html_e('Frequently Asked Questions','atomy' ); ?></h3>
 		<a href="#" class="togglefaq"><span class="dashicons dashicons-plus at-plus"></span>
-		  <?php esc_html_e('When installing the theme it gives me an error, the style sheet is missing, what am I doing wrong?','atomy')?>
+		  <?php esc_html_e('When I install the Atomy theme does the shop not appear?','atomy')?>
 		  <p class="at-number"><?php esc_html_e('1','atomy')?></p>
 		</a>
           <div class="faqanswer">
-            <p><?php esc_html_e('To solve the problem you need to: unzip the downloaded zip file, inside you can find (Documentation.zip/Licensing/Theme Files), open Theme Files, inside you find (atomy-child.zip/atomy.zip), use atomy.zip','atomy')?></p>
+            <p><?php esc_html_e('To see the shop you have to follow these simple steps!','atomy')?></p>
             <div class="at-full-article">
               <a target="_blank" href="<?php echo esc_url(atomy_url_faq_1_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','atomy')?></a>
          </div>
     </div>
 	   <a href="#" class="togglefaq"><span class="dashicons dashicons-plus"></span>
-		<?php esc_html_e('I entered the shortcode to display the Social Networks icons in a Widgets, but they do not appear, how can I do?','atomy')?>
+		<?php esc_html_e('What are the shop settings?','atomy')?>
 		  <p class="at-number"><?php esc_html_e('2','atomy')?></p></a>
           <div class="faqanswer">
-			 <p><?php esc_html_e('If they do not appear it means that you have not installed and activated the franchi-shortcode plugin','atomy')?></p>
+			 <p><?php esc_html_e('Here how to properly configure the Atomy plugins. Below you will find the configurations and explanations of some plugins, those not mentioned do not need particular cunfigurations.','atomy')?></p>
 			 <div class="at-full-article">
                <a target="_blank" href="<?php echo esc_url(atomy_url_faq_2_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','atomy')?></a>
              </div>
           </div>
 		<a href="#" class="togglefaq"><span class="dashicons dashicons-plus"></span>
-		<?php esc_html_e('How do I import a demo?','atomy')?>
+		<?php esc_html_e('There are many customizations, how do you make us orient myself?','atomy')?>
 		 <p class="at-number"><?php esc_html_e('3','atomy')?></p></a>
           <div class="faqanswer">
-			 <p><?php esc_html_e('To import a demo you need to install the One Click Demo Import plugin, then go to Appearance -> ATOMY Import Demo','atomy')?></p>
+			 <p><?php esc_html_e('With Atomy you have the possibility to customize your site, let see how to do it step by step.','atomy')?></p>
 			 <div class="at-full-article">
               <a target="_blank" href="<?php echo esc_url(atomy_url_faq_3_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','atomy')?></a>
             </div>
          </div>    
 		   <a href="#" class="togglefaq"><span class="dashicons dashicons-plus"></span>
-			<?php esc_html_e('The Customize is a bit slow to open up, how can I speed it up?','atomy')?>
+			<?php esc_html_e('How do I know the size of the images to be set?','atomy')?>
 			 <p class="at-number"><?php esc_html_e('4','atomy')?></p></a>
           <div class="faqanswer">
-			 <p><?php esc_html_e('Atomy is, in total, customizable, so it has many controls in the Customize, to speed up its loading you can go to Appearance-> ATOMY -> Options','atomy')?></p>
+			 <p><?php esc_html_e('In Atomy there are several sizes for the images, below is a list of recommended sizes.','atomy')?></p>
 			 <div class="at-full-article">
               <a target="_blank" href="<?php echo esc_url(atomy_url_faq_4_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','atomy')?></a>
             </div>
@@ -106,12 +106,12 @@ function atomy_page_display() {
 			<div class="comparison">
 				<table>
 					<thead>
-						<tr>
+ 						<tr>
 							<th class="tl tl2"></th>
 							<th class="product" style="background:#82B541;border-top-left-radius: 5px; border-left:0px;"><?php esc_html_e('FREE','atomy');?></th>
 							<th class="product" style="background:#82B541;"><?php esc_html_e('PRO','atomy');?></th>
-							</tr>
-							<tr>
+ 							</tr>
+ 							<tr>
 								<th></th>
 								<th class="price-info">
 									<div class="price-now"><span><?php esc_html_e('ATOMY - THEME','atomy');?></span><br>
@@ -122,404 +122,423 @@ function atomy_page_display() {
 									<div class="price-now"><span><?php esc_html_e('ATOMY - THEME','atomy');?></span>
 									</div>
 								</th>
-							</tr>
+ 							</tr>
 						</thead>
 						<tbody>
 							<!-- Logo -->
-							<tr>
+ 							<tr>
 								<td></td>
 									<td colspan="3"><?php esc_html_e('Logo Upload','atomy');?></td>
-							</tr>
-							<tr class="compare-row">
+ 							</tr>
+ 							<tr class="compare-row">
 								<td><?php esc_html_e('Logo Upload','atomy');?></td>
 								<td><span><i class="fa fa-check"></i></span>
 								</td>
 								<td><span><i class="fa fa-check"></i></span></td>
 							</td>
-						</tr>
+ 						</tr>
 						<!-- Font Awesome -->
-						<tr>
+ 						<tr>
 							<td></td>
 							<td colspan="3"><?php esc_html_e('Font Awesome Icons v5','atomy');?></td>
-						</tr>
-						<tr>
+ 						</tr>
+ 						<tr>
 							<td><?php esc_html_e('Font Awesome Icons v5','atomy');?></td>
 							<td><span><i class="fa fa-check"></i></span>
 							</td>
 							<td><span><i class="fa fa-check"></i></span></td>
 						</td>
-					</tr>
+ 					</tr>
 					<!-- Ready Retina -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Retina Ready','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Retina Ready','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span>
 						</td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Responsive -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Responsive Design','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Responsive Design','atomy');?></td>
-						<td><span><i class="fa fa-check"></i></span>
-						</td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+						<td><span><i class="fa fa-check"></i></span></td>
+ 					</tr>
 					<!-- Color Change -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Skin Color','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Skin Color','atomy');?></td>
 						<td><span><?php esc_html_e('2','atomy');?></span>
 						</td>
 						<td><span><?php esc_html_e('8','atomy');?></span></td>
-					</tr>
-					<tr>
+ 					</tr>
+					<!-- Custom color -->
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Custom Color','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Custom Color','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span>
 						</td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Font Family -->
-					<tr>
+ 					<tr>
 						<td></td>
-						<td colspan="3"><?php esc_html_e('Font Family','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+						<td><?php esc_html_e('Font Family','atomy');?></td>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Font Family','atomy');?></td>
 						<td><span><?php esc_html_e('8','atomy');?></span>
 						</td>
 						<td><span><?php esc_html_e('15','atomy');?></span></td>
-					</tr>
-					<tr>
+ 					</tr>
+					<!-- Custom Font -->
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Custom Font','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Custom Font','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span>
 						</td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Layou setting -->
-					<tr>
+ 					<tr>
 						<td></td>
-						<td colspan="3"><?php esc_html_e('Layout Settings','atomy');?></td>
-					</tr>
-					<tr>
+						<td colspan="4"><?php esc_html_e('Layout Settings','atomy');?></td>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Layout Settings','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
-					<!-- Slides -->
-					<tr>
+ 					</tr>
+					<!-- Slider -->
+ 					<tr class="compare-row">
 						<td></td>
 						<td colspan="4"><?php esc_html_e('Slider','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Slider','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- More Widgets -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="4"><?php esc_html_e('More Areas Widgets','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('More Areas Widgets','atomy');?></td>
 						<td><span><?php esc_html_e('8','atomy');?></span></td>
 						<td><span><?php esc_html_e('17','atomy');?></span></td>
-					</tr>
+ 					</tr>
 					<!-- Menu types -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="4"><?php esc_html_e('Menu Types','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Menu Types','atomy');?></td>
 						<td><span><?php esc_html_e('1','atomy');?></span></td>
 						<td><span><?php esc_html_e('2','atomy');?></span></td>
-					</tr>
-					<tr>
+ 					</tr>
+					<!-- Menu Layout -->
+ 					<tr>
 						<td></td>
 						<td colspan="4"><?php esc_html_e('Menu Layout','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Menu Layout','atomy');?></td>
 						<td><span><?php esc_html_e('1','atomy');?></span></td>
 						<td><span><?php esc_html_e('2','atomy');?></span></td>
-					</tr>
+ 					</tr>
 					<!-- Page Template -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Page Templates','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Page Templates','atomy');?></td>
 						<td><span><?php esc_html_e('1','atomy');?></span></td>
 						<td><span><?php esc_html_e('5','atomy');?></span></td>
-					</tr>
-					<tr>
+ 					</tr>
+					<!-- Sectiopn Template -->
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Section Templates','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Section Templates','atomy');?></td>
 						<td><span><?php esc_html_e('11','atomy');?></span></td>
 						<td><span><?php esc_html_e('36','atomy');?></span></td>
-					</tr>
+ 					</tr>
 					<!-- Blog Layout -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Blog Layouts','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Blog Layouts','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><i class="fa fa-check"></i></td>
-					</tr>
-					<!-- Pop-ip Light Box -->
-					<tr>
+ 					</tr>
+					<!-- Pop-up Light Box -->
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Pop-up Light Box','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Pop-up Light Box','atomy');?></td>
 						<td><i class="fa fa-check"></i></td>
 						<td><i class="fa fa-check"></i></td>
-					</tr>
+ 					</tr>
 					<!-- Gutenberg -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Gutenberg Compatible','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Gutenberg Compatible','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Portfolio -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="4"><?php esc_html_e('Portfolio','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Portfolio','atomy');?></td>
 						<td><span><?php esc_html_e('Section Only','atomy');?></span></td>
 						<td><span><?php esc_html_e('Section and Page','atomy');?></span></td>
-					</tr>
+ 					</tr>
 					<!-- Woocommerce compatible -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Woocommerce Complatible','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Woocommerce Complatible','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Woocommerce Template -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Woocommerce Templates','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Woocommerce Templates','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Dropdown Menu -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Dropdown Menu','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Dropdown Menu','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 						<!-- Menu Sticky -->
-						<tr>
+ 						<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Menu Sticky','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Menu Sticky','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Logo in Footer-->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Logo in Footer','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Logo in Footer','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- 404 Customizable error page -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('404 Customizable error page','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('404 Customizable error page','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Child-Theme Included -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Child-Theme Included','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Child-Theme Included','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<!-- Demos -->
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Demos Included','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Demos Included','atomy');?></td>
-						<td><span><?php esc_html_e('1','atomy');?></span></td>
+						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><?php esc_html_e('4','atomy');?></span></td>
-					</tr>
+ 					</tr>
 						<!-- Shotcode -->
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Shortcode','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Shortcode','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 						<!-- Banner -->
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Banner','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Banner','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 						<!-- Popup -->
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Custom Popup','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Custom Popup','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 						<!-- Effect hover icons-->
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Effect hover icons','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Effect hover icons','atomy');?></td>
 						<td><span><?php esc_html_e('2','atomy');?></span></td>
 						<td><span><?php esc_html_e('15','atomy');?></span></td>
-					</tr>
+ 					</tr>
 					<!-- Header top area-->
 					<td></td>
 						<td colspan="3"><?php esc_html_e('Header top area','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Header top area','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 						<!-- Preloader -->
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Preloader','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Preloader','atomy');?></td>
 						<td><span><?php esc_html_e('2 Icons','atomy');?></span></td>
 						<td><span><?php esc_html_e('6 + Icons','atomy');?></span></td>
-					</tr>
+ 					</tr>
+					<!-- Snow -->
+					<td></td>
+						<td colspan="3"><?php esc_html_e('Effect Snow','atomy');?></td>
+ 					</tr>
+ 					<tr>
+						<td><?php esc_html_e('Effect Snow','atomy');?></td>
+						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+ 					</tr>
+					<!-- Automatic cursor -->
+					<td></td>
+						<td colspan="3"><?php esc_html_e('Automatic cursor','atomy');?></td>
+ 					</tr>
+ 					<tr class="compare-row">
+						<td><?php esc_html_e('Automatic cursor','atomy');?></td>
+						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+ 					</tr>
+					<!-- Services -->
+					<td></td>
+						<td colspan="3"><?php esc_html_e('Services Post','atomy');?></td>
+ 					</tr>
+ 					<tr>
+						<td><?php esc_html_e('Services Post','atomy');?></td>
+						<td><span><?php esc_html_e('3','atomy');?></span></td>
+						<td><span><?php esc_html_e('5','atomy');?></span></td>
+ 					</tr>
 					<!-- Transition Ready -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Transition Ready','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr class="compare-row"> 
 						<td><?php esc_html_e('Transition Ready','atomy');?></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Multy Language -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Multy Language','atomy');?></td>
-					</tr>
-					<tr>
+ 					</tr>
+ 					<tr>
 						<td><?php esc_html_e('Multy Language','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
+ 					</tr>
 					<!-- Full Support -->
-					<tr>
+ 					<tr>
 						<td></td>
 						<td colspan="3"><?php esc_html_e('Full Support','atomy');?></td>
-					</tr>
-					<tr class="compare-row">
+ 					</tr>
+ 					<tr class="compare-row">
 						<td><?php esc_html_e('Full Support','atomy');?></td>
 						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
-					</tr>
-					<tr>
+ 					</tr>
+					 <!-- Preloader Time -->
+ 					<tr>
 						<td></td>
-					</tr>
-					<tr>
+						<td colspan="3"><?php esc_html_e('Duration preloader','atomy');?></td>
+ 					</tr>
+ 					<tr>
+						<td><?php esc_html_e('Duration preloader','atomy');?></td>
+						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+ 					</tr>
+ 					<tr>
+						<td></td>
+ 					</tr>
+ 					<tr>
 						<td></td>
 						<td><div class="avik-no-button-free"></div></td>
 						<td><a href="<?php echo esc_url(atomy_url_go_pro_theme);?>" class="price-buy" target="_blank"><?php esc_html_e('GO PRO','atomy');?><span class="hide-mobile"></span></a></td>
-					</tr>
+ 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<div class="avik-clear-guide-support-admin"></div>
-
-
 </div>
-<script>
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
-
-
-<script>
-//faq toggle stuff 
-jQuery(function($){ 
-$('.togglefaq').click(function(e) {
-e.preventDefault();
-var notthis = $('.active').not(this);
-notthis.find('.dashicons-minus').addClass('dashicons-plus').removeClass('dashicons-minus');
-notthis.toggleClass('active').next('.faqanswer').slideToggle(300);
- $(this).toggleClass('active').next().slideToggle("fast");
-$(this).children('span').toggleClass('dashicons-plus dashicons-minus');
-});
-});
-</script>
 
 <?php
 /* And Settings Page */

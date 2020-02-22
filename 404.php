@@ -4,13 +4,13 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 
-get_header('404');
+get_header();
 ?>
 
-<section class="at-404-page <?php echo esc_attr(get_theme_mod('atomy_enable_full_width_body','container') )?>" style="background: url('<?php echo esc_url( get_theme_mod( 'at_404_page_image' ) ); ?>') no-repeat center; background-size:cover;">
+<section class="at-404-page <?php echo esc_attr(get_theme_mod('atomy_enable_full_width_body','container') )?>">
 </section>
 	<div class="container mt-3">
       <div class="at-main text-center">
@@ -30,14 +30,9 @@ get_header('404');
 	   </div>
 	   <div class="col-md-4"></div>
 	   </div>
-	   </div>
-       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-          <button class="button at-gen-act mt-5" style="border:none">
-		      <?php esc_html_e('Go Back To Home','atomy');?> 
-		  </button>
-	  </a>     
+	   </div>   
 </div>
 </div>
 
 <?php
-get_footer('404');
+get_footer();

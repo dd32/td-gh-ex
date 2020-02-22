@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 
 get_header('cat'); 

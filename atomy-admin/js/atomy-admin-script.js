@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Atomy
- * version   1.0.4
+ * version   1.0.5
  */
 
 
@@ -30,4 +30,21 @@ function atomyopenGuide(evt, guideName) {
     evt.currentTarget.className += " active";
 }
 
+
+// Get the element with id="defaultOpen" and click on it
+jQuery(function($){ 
+document.getElementById("defaultOpen").click();
+});
+
+//faq toggle stuff 
+jQuery(function($){ 
+    $('.togglefaq').click(function(e) {
+    e.preventDefault();
+    var notthis = $('.active').not(this);
+    notthis.find('.dashicons-minus').addClass('dashicons-plus').removeClass('dashicons-minus');
+    notthis.toggleClass('active').next('.faqanswer').slideToggle(300);
+     $(this).toggleClass('active').next().slideToggle("fast");
+    $(this).children('span').toggleClass('dashicons-plus dashicons-minus');
+});
+});
 

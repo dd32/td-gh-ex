@@ -3,7 +3,7 @@
 *
 * author    Denis Franchi
 * package   Atomy
-* version   1.0.4
+* version   1.0.5
 */
 
 (function($) {

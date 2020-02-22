@@ -657,3 +657,10 @@ span.customize-advise-description-shortcode{
 	background-color: #ccc;
     padding: 3px;
 }
+
+
+/* Colors */
+
+.wp-picker-container .wp-color-result.button{
+	padding: 1px 1px 1px 30px;
+}

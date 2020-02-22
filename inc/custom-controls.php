@@ -3,7 +3,7 @@
 * at-custom-controls.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 
 /* ------------------------------------------------------------------------- *
@@ -618,16 +618,6 @@ function atomy_enable_twitter_social($control) {
 	 
 }
 
-// Google_plus
-
-function atomy_enable_google_plus_social($control) {
-  
- $option = $control->manager->get_setting('atomy_enable_google_plus_social');
-		
- return $option->value() == 'atomy_link_google_plus_social';
-		
-}
-
 // Dribbble
 
 function atomy_enable_dribbble_social($control) {
@@ -753,73 +743,6 @@ function atomy_enable_preloader_1($control) {
 	return $option->value() == 'at_image_preloader';							 
  }
 
-// Preloader
-function atomy_enable_preloader_2($control) {
-	$option = $control->manager->get_setting('atomy_enable_preloader');			 
-	return $option->value() == 'at_duration_preloader';							 
- }
-
-// Header Media padding text top
-function atomy_enable_write_auto($control) {
-	$option = $control->manager->get_setting('atomy_enable_write_auto');			 
-	return $option->value() == 'at_padding_top_write';							 
-}
-
-// Header Media padding text left
-function atomy_enable_write_auto_1($control) {
-	$option = $control->manager->get_setting('atomy_enable_write_auto');			 
-	return $option->value() == 'at_padding_left_write';							 
-}
-
-// Header Media color text
-function atomy_enable_write_auto_2($control) {
-	$option = $control->manager->get_setting('atomy_enable_write_auto');			 
-	return $option->value() == 'at_color_text_write_header_media';							 
-}
-
-// Header Media color cursor
-function atomy_enable_write_auto_3($control) {
-	$option = $control->manager->get_setting('atomy_enable_write_auto');			 
-	return $option->value() == 'at_color_text_write_header_media_cursor';							 
-}
-
-// Header Media size text
-function atomy_enable_write_auto_4($control) {
-	$option = $control->manager->get_setting('atomy_enable_write_auto');			 
-	return $option->value() == 'at_font_size_text';							 
-}
-
-// Header Media size Cursor
-function atomy_enable_write_auto_5($control) {
-	$option = $control->manager->get_setting('atomy_enable_write_auto');			 
-	return $option->value() == 'at_font_size_cursor';							 
-}
-
-// Header Media Title 1
-function atomy_enable_write_auto_6($control) {
-	$option = $control->manager->get_setting('at_title_write_1');			 
-	return $option->value() == 'at_font_size_cursor';							 
-}
-
-// Header Media Title 2
-function atomy_enable_write_auto_7($control) {
-	$option = $control->manager->get_setting('at_title_write_2');			 
-	return $option->value() == 'at_font_size_cursor';							 
-}
-
-// Header Media Title 3
-function atomy_enable_write_auto_8($control) {
-	$option = $control->manager->get_setting('at_title_write_3');			 
-	return $option->value() == 'at_font_size_cursor';							 
-}
-
-// Header Media Title 4
-function atomy_enable_write_auto_9($control) {
-	$option = $control->manager->get_setting('at_title_write_4');			 
-	return $option->value() == 'at_font_size_cursor';							 
-}
- 
-
 // Height Auto or Custom Image Portfolio 2 Featured
 function atomy_height_auto_portfolio2_image($control) {
 	$option = $control->manager->get_setting('atomy_height_auto_portfolio2_image');			 
@@ -850,8 +773,7 @@ function atomy_enable_button_action_static($control) {
 // Enable/Disable Call-to-action button Parallax
 function atomy_enable_button_action_parallax($control) {
 	$option = $control->manager->get_setting('atomy_enable_button_action_parallax');			 
-	return $option->value() == 'at_title_action_parallax';
-	return $option->value() == 'atomy_link_action_parallax';							 
+	return $option->value() == 'at_title_action_parallax';						 
 }
 
 

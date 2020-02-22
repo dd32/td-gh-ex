@@ -2,11 +2,11 @@
 
 Thema Name: Atomy
 Contributors: franchidesign
-Version: 1.0.4
+Version: 1.0.5
 Requires at least: 4.7
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.3
+Stable tag: 1.0.5
 Text Domain: atomy
 License:  GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -120,11 +120,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ----------------------------------------------------------------------------------------------
 
-== Jquery ==
+== Sizzle ==
 
-/*!
- * jQuery JavaScript Library v3.3.1
- * https://jquery.com/
+/*
  *
  * Includes Sizzle.js
  * https://sizzlejs.com/
@@ -224,11 +222,9 @@ https://pxhere.com/it/photo/606746
 
 https://pxhere.com/it/photo/641687
 
-Screenshot Import Demo:
+Default image:
 
 https://pxhere.com/it/photo/1200591
-
-https://pxhere.com/it/photo/1071636
 
 
 
@@ -256,6 +252,10 @@ Atomy is distributed under the terms of the GNU GPL
 
 = 1.0.4 =
 * Fixed some bugs
+
+= 1.0.5 =
+* Fixed some bugs
+* Accessibility added
 
 
 

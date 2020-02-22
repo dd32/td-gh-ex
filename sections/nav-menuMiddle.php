@@ -3,7 +3,7 @@
 * nav-menuMiddle.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 *
 */
 ?>
@@ -18,7 +18,7 @@
                      <div class="input-group"> 
                     <?php
                       // Check if WooCommerce is active 
-                      if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+                      if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'atomy_active_plugins', get_option( 'active_plugins' ) ) ) ) {
                       // Put your plugin code here
                       get_product_search_form();
                        }
@@ -75,7 +75,7 @@
                            <!-- Cart -->
                            <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_cart_icon', true) )):?>	
                             <li class="cart">
-                           <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+                           <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'atomy_active_plugins', get_option( 'active_plugins' ) ) ) ) {
                             $atomy_count = WC()->cart->cart_contents_count;
                             ?>
                             <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" data-tooltip="<?php echo esc_html('Go to the cart','atomy');?>">
@@ -101,7 +101,7 @@
     <header class="shop_header_area">
         <div class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_header','container'))?>">
         <div class="row mr-0 ml-0">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-8 col-md-8">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-8 col-md-8" role="navigation">
             <!-- Logo -->
             <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' );?></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php __('Toggle navigation','atomy')?>">
@@ -146,7 +146,7 @@
                            <!-- Cart -->
                            <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_cart_icon', true) )):?>	
                             <li class="cart">
-                           <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+                           <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'atomy_active_plugins', get_option( 'active_plugins' ) ) ) ) {
                             $atomy_count = WC()->cart->cart_contents_count;
                             ?>
                             <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" data-tooltip="<?php echo esc_html('Go to the cart','atomy');?>">
@@ -167,4 +167,5 @@
     </header>
     <div class="at-border-top-menu <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     </div>
+
 

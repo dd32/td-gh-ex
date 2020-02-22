@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 
 
@@ -13,7 +13,7 @@
 
 if ( ! function_exists( 'atomy_setup' ) ) : 
     function atomy_setup() {
-		load_theme_textdomain( 'atomy', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'atomy');
 		// Add default posts and comments RSS feed links to head
 		add_theme_support( 'automatic-feed-links' );
         // Add theme support Title-tag
@@ -63,6 +63,9 @@ add_action('after_setup_theme','atomy_setup');
 /* Layout
 ========================================================================== */
 function atomy_content_width() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters('atomy_content_width',640);
 }
 add_action('after_setup_theme','atomy_content_width',0);
@@ -180,7 +183,7 @@ function atomy_scripts() {
 	wp_enqueue_script('aos-js',get_template_directory_uri() . '/js/aos.min.js', array(), '2.0.0', false );
 	wp_enqueue_style('aos-css', get_template_directory_uri(). '/css/aos.min.css');
 	// Atom Script
-	wp_enqueue_script('atomy-custom-script-js', get_template_directory_uri() . '/js/atomy-custom-script.js', array(), 'v1.0.0', true );
+	wp_enqueue_script('atomy-custom-script-js', get_template_directory_uri() . '/js/atomy-custom-script.js', array(), 'v1.0.5', true );
 	wp_enqueue_script('skip-link-focus-fix-js', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script('navigation-js', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	// Comments
@@ -735,12 +738,6 @@ function atomy_register_required_plugins() {
 			'slug'      => 'yith-woocommerce-zoom-magnifier',
 			'required'  => false,
 		),
-		// On Click Demo Import
-		array(
-			'name'      => __('One Click Demo Import','atomy'),
-			'slug'      => 'one-click-demo-import',
-			'required'  => false,
-		),
 	);
 
 	$config = array(
@@ -847,8 +844,7 @@ function atomy_register_required_plugins() {
  require get_template_directory() . '/atomy-admin/atomy-support.php';
  
 
- //Include Admin Style
-
+//Include Admin Style
 function atomy_load_admin_style($hook) {
 	if( $hook == 'appearance_page_atomy_page' ) {
 	 wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/atomy-admin/css/atomy-admin-style.css', false, '1.0.0' );
@@ -860,69 +856,6 @@ function atomy_load_admin_style($hook) {
 add_action( 'admin_enqueue_scripts', 'atomy_load_admin_style' );
 
 
-/* Plugin One Click Demo Import
-========================================================================== */
-function atomy_import_files() {
-	return array(
-		array(
-			'import_file_name'             => __('Atomy Baby','atomy'),
-			'import_file_url'              => 'https://www.denisfranchi.com/demo-atomy/baby/atomybaby.WordPress.2019-11-30.xml',
-			'import_widget_file_url'       => 'https://www.denisfranchi.com/demo-atomy/baby/www.denisfranchi.com-atomy-baby-widgets.wie',
-			'import_customizer_file_url'   => 'https://www.denisfranchi.com/demo-atomy/baby/atomy-export.dat',
-			'import_preview_image_url'     => get_template_directory_uri() . '/assets/demo/baby/demo-atomy-baby.png',
-			'import_notice'                => __( 'It takes about 6 minutes to import this demo!', 'atomy' ),
-			'preview_url'                  => 'https://www.denisfranchi.com/atomy-baby/',
-		),
-		array(
-			'import_file_name'             => __('Coming soon','atomy'),
-			'import_preview_image_url'     => get_template_directory_uri() . '/images/atomy-default.jpg',
-			'import_notice'                => __( 'There will be another demo soon!', 'atomy' ),
-			),
-	);
-}
-add_filter( 'pt-ocdi/import_files', 'atomy_import_files' );
-
-// Menu and Page
-function atomy_after_import_setup() {
-	// Assign menus to their locations.
-	$menu_1 = get_term_by( 'name', 'Primary', 'nav_menu' );
-	
-	set_theme_mod( 'nav_menu_locations', array(
-			'menu-1' => $menu_1->term_id, 
-		)
-	);
-
-	// Assign front page and posts page (blog page).
-	$front_page_id = get_page_by_title( 'Store' );
-	$blog_page_id  = get_page_by_title( 'Blog' );
-
-	update_option( 'show_on_front', 'page' );
-	update_option( 'page_on_front', $front_page_id->ID );
-	update_option( 'page_for_posts', $blog_page_id->ID );
-
-}
-add_action( 'pt-ocdi/after_import', 'atomy_after_import_setup' );
-
-// Custim Text Plugin
-function atomy_plugin_intro_text( $default_text ) {
-	$default_text .= __('<div class="ocdi__intro-text" style="margin-bottom:3em;">Select the Demo you prefer!</div>','atomy');
-
-	return $default_text;
-}
-add_filter( 'pt-ocdi/plugin_intro_text', 'atomy_plugin_intro_text' );
-
-// Custom Title Plugin
-function atomy_plugin_page_setup( $default_settings ) {
-	$default_settings['parent_slug'] = 'themes.php';
-	$default_settings['page_title']  = esc_html__( 'One Click Demo Import' , 'atomy' );
-	$default_settings['menu_title']  = esc_html__( 'ATOMY Import Demo' , 'atomy' );
-	$default_settings['capability']  = 'import';
-	$default_settings['menu_slug']   = 'pt-one-click-demo-import';
-
-	return $default_settings;
-}
-add_filter( 'pt-ocdi/plugin_page_setup', 'atomy_plugin_page_setup' );
-
 /* Url Admin Support / Copyright
 ========================================================================== */
 
@@ -933,10 +866,10 @@ define('atomy_url_go_pro_theme','https://www.denisfranchi.com/atomy/');// Go Pro
 define('atomy_url_updates_theme','https://www.denisfranchi.com/updates/');// Update Theme
 define('atomy_url_documentation_theme','https://www.denisfranchi.com/community/index.php?forums/guides.20/');// Documentation Theme
 define('atomy_url_support_theme','https://www.denisfranchi.com/community/index.php?forums/support.22/');// Support Theme
-define('atomy_url_faq_1_support','https://www.denisfranchi.com/community/index.php?threads/atomy-installation.16/');// Faq 1 Support
-define('atomy_url_faq_2_support','https://www.denisfranchi.com/community/index.php?threads/franchi-shortcodes-plugin.19/');// Faq 2 Support
-define('atomy_url_faq_3_support','https://www.denisfranchi.com/community/index.php?threads/atomy-installation.16/');// Faq 3 Support
-define('atomy_url_faq_4_support','https://www.denisfranchi.com/community/index.php?threads/atomy-installation.16/');// Faq 4 Support
+define('atomy_url_faq_1_support','https://www.denisfranchi.com/community/index.php?threads/initial-settings-atomy-free.29/#post-40');// Faq 1 Support
+define('atomy_url_faq_2_support','https://www.denisfranchi.com/community/index.php?threads/plugin-settings.18/');// Faq 2 Support
+define('atomy_url_faq_3_support','https://www.denisfranchi.com/community/index.php?threads/atomy-customize.17/');// Faq 3 Support
+define('atomy_url_faq_4_support','https://www.denisfranchi.com/community/index.php?threads/image-size.20/');// Faq 4 Support
 define('atomy_url_copyright_theme','https://www.denisfranchi.com/');// Franchi Design Copyright
 
 

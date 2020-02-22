@@ -3,7 +3,7 @@
 * section-social.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 ?>
 <ul class="header_social">
@@ -22,14 +22,6 @@
 	</a>
 </li>
 <?php endif; ?>	
-
-<!-- Google Plus-->
-<?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_google_plus_social', true) )) : ?>
-<li><a <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_blank_link', true) )):?> target="_blank" <?php endif; ?> href="<?php echo esc_url( get_theme_mod( 'atomy_link_google_plus_social' )); ?>">
-		<i class="fab fa-google-plus-g"></i>
-	</a>
-</li>
-<?php endif; ?>
 
 <!-- Dribbble-->
 <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_dribbble_social', true ) )) : ?>

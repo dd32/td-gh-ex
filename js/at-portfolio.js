@@ -2,7 +2,7 @@
  * at-portfolio.js
  * author    Franchi Design
  * package   Atomy
- * version   1.0.3
+ * version   1.0.5
  */
 
 

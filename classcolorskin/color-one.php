@@ -88,7 +88,7 @@ a:hover,a:focus,a:active,.woocommerce div.product p.price,.product_meta a:hover,
 }
 
 .shop_header_area .navbar .navbar-nav li.submenu .dropdown-menu li a{
-    color:#fff!important;
+    color:#fff;
 }
 
 .shop_header_area .navbar .navbar-nav li.submenu .dropdown-menu li:hover a, .shop_header_area .navbar .navbar-nav li.submenu .dropdown-menu li.active a{

@@ -3,7 +3,7 @@
 * section-category.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 * 
 */
 ?>
@@ -16,7 +16,7 @@
 <div class="row ml-0 mr-0">
 <?php
                       // Check if WooCommerce is active 
-                      if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+                      if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'atomy_active_plugins', get_option( 'active_plugins' ) ) ) ) {
                       // Put your plugin code here
                      
      if ( woocommerce_product_loop() ) {

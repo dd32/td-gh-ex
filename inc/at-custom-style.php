@@ -3,11 +3,11 @@
 * at-custom-style.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 
 
-get_template_part('classcolorskin/color',esc_attr(get_theme_mod('at_color_skin','one')));?>
+get_template_part('classcolorskin/color',esc_attr(get_theme_mod('at_color_skin','four')));?>
 <style>
 
 /* Font Family Title */
@@ -304,7 +304,6 @@ if (false == esc_attr(get_theme_mod('atomy_enable_auto_image_single', true))) : 
 
 .at-box-parallax{
     height:<?php echo esc_attr(get_theme_mod('at_height_parallax_image',518));?>px;
-    background-image: url("<?php echo esc_url( get_theme_mod( 'at_upload_primary_img_parallax' ) ); ?>");
 } 
 
 .at-text-parallax{

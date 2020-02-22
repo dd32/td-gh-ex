@@ -549,38 +549,10 @@ wp.customize('at_color_parallax_text', function(control) {
 	});
 });
 
-// Title Who We Are
-wp.customize( 'at_title_whoweare', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-text-image-about-img h2' ).html( newval );
-	} );
-} );
-
-// Subtitle Who We Are
-wp.customize( 'at_subtitle_whoweare', function( value ) {
-	value.bind( function( newval ) {
-		$( 'p.at-subtitle-whoweare' ).html( newval );
-	} );
-} );
-
-// Content Who We Are
-wp.customize( 'at_content_whoweare', function( value ) {
-	value.bind( function( newval ) {
-		$( 'p.at-content-whoweare' ).html( newval );
-	} );
-} );
-
 // Title Call-to-action button Static
 wp.customize( 'at_title_action_static', function( value ) {
 	value.bind( function( newval ) {
 		$( '.at-button-action-static a' ).html( newval );
-	} );
-} );
-
-// Title Parallax
-wp.customize( 'at_title_parallax', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-text-parallax h1' ).html( newval );
 	} );
 } );
 
@@ -619,13 +591,6 @@ wp.customize( 'at_title_icon_1_services_section', function( value ) {
 	} );
 } );
 
-// Subtitle Icon 1 Services Section
-wp.customize( 'at_subtitle_icon_1_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-1 p' ).html( newval );
-	} );
-} );
-
 // Color Icon 2 Services Section
 wp.customize('at_color_icon_2_services_section', function(control) {
 	control.bind(function( controlValue ) {
@@ -637,13 +602,6 @@ wp.customize('at_color_icon_2_services_section', function(control) {
 wp.customize( 'at_title_icon_2_services_section', function( value ) {
 	value.bind( function( newval ) {
 		$( '.at-cl-s-2 h6' ).html( newval );
-	} );
-} );
-
-// Subtitle Icon 2 Services Section
-wp.customize( 'at_subtitle_icon_2_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-2 p' ).html( newval );
 	} );
 } );
 
@@ -660,55 +618,6 @@ wp.customize( 'at_title_icon_3_services_section', function( value ) {
 		$( '.at-cl-s-3 h6' ).html( newval );
 	} );
 } );
-
-// Subtitle Icon 3 Services Section
-wp.customize( 'at_subtitle_icon_3_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-3 p' ).html( newval );
-	} );
-} );
-
-// Color Icon 4 Services Section
-wp.customize('at_color_icon_4_services_section', function(control) {
-	control.bind(function( controlValue ) {
-		$('.at-cl-s-i-4 i').css('color', controlValue );
-	});
-});
-
-// Title Icon 4 Services Section
-wp.customize( 'at_title_icon_4_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-4 h6' ).html( newval );
-	} );
-} );
-
-// Subtitle Icon 4 Services Section
-wp.customize( 'at_subtitle_icon_4_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-4 p' ).html( newval );
-	} );
-} );
-
-// Color Icon 5 Services Section
-wp.customize('at_color_icon_5_services_section', function(control) {
-	control.bind(function( controlValue ) {
-		$('.at-cl-s-i-5 i').css('color', controlValue );
-	});
-});
-
-// Title Icon 5 Services Section
-wp.customize( 'at_title_icon_5_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-5 h6' ).html( newval );
-	} );
-} );
-
-// Subtitle Icon 5 Services Section
-wp.customize( 'at_subtitle_icon_5_services_section', function( value ) {
-	value.bind( function( newval ) {
-		$( '.at-cl-s-5 p' ).html( newval );
-	} );
-} ); 
 
 // Section Two Image
 

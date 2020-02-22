@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 */
 
 function atomy_customize_register( $wp_customize ) {
@@ -227,21 +227,38 @@ $wp_customize->add_control(new Atomy_Text_Radio_Button_Custom_Control($wp_custom
 		   'unset' => __('None','atomy')
 ))) );
 
-// Write auto Media Header
-$wp_customize->add_setting('atomy_enable_write_auto',
-array(
-	'default'           => 1,
-	'transport'         => 'refresh',
-	'sanitize_callback' => 'atomy_switch_sanitization'
+// Title Static
+$wp_customize->add_setting('at_title_write_1',array(
+	'capability'        => 'edit_theme_options',
+	'default'           => __('STATIC','atomy'),
+	'sanitize_callback' => 'wp_filter_nohtml_kses',
+) );
+
+$wp_customize->add_control('at_title_write_1',array(
+	'type'            => 'text',
+	'section'         => 'header_image',
+	'priority'        => 200,
+	'label'           => __('Title Static','atomy'),
+) );
+
+// Font Size Text
+$wp_customize->add_setting('at_font_size_text',
+   array(
+	 'default'           => 22,
+	 'transport'         => 'postMessage',
+	 'sanitize_callback' => 'atomy_sanitize_integer'
 ));
 
-$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'atomy_enable_write_auto',
+$wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_font_size_text',
    array(
-	'label'       => __('Enable or disable automatic writing cursor.','atomy'),
-	'description' => __('Important: disable if you do not use the image or video in the header','atomy'),
-	'section'     => 'header_image',
-	'priority'    => 200,
-)) );
+	 'label'           => esc_html__('Font size Text (Pixel Unit)','atomy'),
+     'section'         => 'header_image',
+     'priority'        => 210,
+	 'input_attrs'     => array(
+			        'min'  => 2, 
+			        'max'  => 100, 
+			        'step' => 1, 
+),)) );
 
 // Padding Top Text
 $wp_customize->add_setting('at_padding_top_write',
@@ -253,10 +270,9 @@ $wp_customize->add_setting('at_padding_top_write',
  
 $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_padding_top_write',
    array(
-        'label'           => esc_html__('Padding top automatic writing cursor (Em Unit)','atomy'),
+        'label'           => esc_html__('Padding top Text (Em Unit)','atomy'),
 		'section'         => 'header_image',
-		'active_callback' => 'atomy_enable_write_auto',
-        'priority'        => 210,
+        'priority'        => 220,
         'input_attrs'     => array(
                        'min'  => 22, 
                        'max'  => 60, 
@@ -273,95 +289,14 @@ $wp_customize->add_setting('at_padding_left_write',
  
 $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_padding_left_write',
    array(
-        'label'           => esc_html__('Padding left automatic writing cursor (Em Unit)','atomy'),
+        'label'           => esc_html__('Padding left Text (Em Unit)','atomy'),
 		'section'         => 'header_image',
-		'active_callback' => 'atomy_enable_write_auto',
-	    'priority'        => 220,
+	    'priority'        => 230,
         'input_attrs'     => array(
                       'min'  => 1, 
                       'max'  => 70, 
                       'step' => 1, 
 ),)) );
-
-// Font Size Text
-$wp_customize->add_setting('at_font_size_text',
-   array(
-	 'default'           => 22,
-	 'transport'         => 'postMessage',
-	 'sanitize_callback' => 'atomy_sanitize_integer'
-));
-
-$wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_font_size_text',
-   array(
-	 'label'           => esc_html__('Font size Text (Pixel Unit)','atomy'),
-     'section'         => 'header_image',
-     'active_callback' => 'atomy_enable_write_auto',
-     'priority'        => 230,
-	 'input_attrs'     => array(
-			        'min'  => 2, 
-			        'max'  => 100, 
-			        'step' => 1, 
-),)) );
-
-// Title Write 1
-$wp_customize->add_setting('at_title_write_1',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Atomy is Ecommerce Perfect','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_title_write_1',array(
-	'type'            => 'text',
-	'section'         => 'header_image',
-	'active_callback' => 'atomy_enable_write_auto',
-	'priority'        => 240,
-	'label'           => __('Title Write 1','atomy'),
-) );
-
-// Title Write 2
-$wp_customize->add_setting('at_title_write_2',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Atomy is Performing.','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_title_write_2',array(
-	'type'            => 'text',
-	'section'         => 'header_image',
-	'active_callback' => 'atomy_enable_write_auto',
-	'priority'        => 250,
-	'label'           => __('Title Write 2','atomy' ),
-) );
-
-// Title Write 3
-$wp_customize->add_setting('at_title_write_3',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Atomy is Special!','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_title_write_3',array(
-	'type'            => 'text',
-	'section'         => 'header_image',
-	'active_callback' => 'atomy_enable_write_auto',
-	'priority'        => 260,
-	'label'           => __('Title Write 3','atomy'),
-) );
-
-// Title Write 4
-$wp_customize->add_setting('at_title_write_4',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Atomy is Dinamic.','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_title_write_4',array(
-	'type'            => 'text',
-	'section'         => 'header_image',
-	'active_callback' => 'atomy_enable_write_auto',
-	'priority'        => 270,
-	'label'           => __('Title Write 4','atomy'),
-) );
 
 // Enable/Disable Call-to-action button Static
 $wp_customize->add_setting('atomy_enable_button_action_static',
@@ -440,8 +375,6 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_pad
 /*  Footer
 ========================================================================== */
  
-if ( false == esc_attr( get_option( 'atomy_customize_enable_footer', false ) )) : // Enable Footer
-
 $wp_customize->add_section('atomy_footer',
   array(
 	 'title'      => __('Footer','atomy'),
@@ -513,13 +446,13 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_mar
                 'step' => 1, 
 ),)) );
 
-
- endif; // And Enable Footer
+$wp_customize->selective_refresh->add_partial( 'at_margin_footer',
+   array(
+      'selector' => '.footer_area h5',
+));
 
 /*  Shopping Atomy
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_shop', false ) )) : // Enable Shop
 
 $atomyShop = new Atomy_WP_Customize_Panel($wp_customize,'atomyShop',array(
 	'title'    => __('Shop Settings','atomy'),
@@ -716,7 +649,7 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_hei
 // Object-Fit Image Single Product
 $wp_customize->add_setting('at_object_image_single_product',
 	array(
-		 'default'           => 'none',
+		 'default'           => 'unset',
 		 'transport'         => 'postMessage',
 		 'sanitize_callback' => 'atomy_radio_sanitization'
 ));
@@ -818,12 +751,8 @@ $wp_customize->add_control(new Atomy_Text_Radio_Button_Custom_Control($wp_custom
 			'disc' => __( 'Disc','atomy' ),
 ))) );
   
-endif; // And Enable Shop 
-
 /*  Blog
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_blog', false ) )) : // Enable Blog
  
 $wp_customize->add_section('atomy_blog_section',
  array(
@@ -912,12 +841,8 @@ array(
   'priority'   => 70,
 )) );
 
-endif; // And Enable Blog
-
 /*  Pages
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_page', false ) )) : // Enable Page
 
 $atomyPages = new Atomy_WP_Customize_Panel($wp_customize,'atomyPages',array(
 	'title'    => __('Pages','atomy'),
@@ -951,7 +876,6 @@ $wp_customize->add_control(new Atomy_Simple_Advise_Custom_control($wp_customize,
    'section'    => 'atomy_section_contact',
    'priority'   => 1,
 )) );
-
 
 // Enable or Disable title Contact Page
 $wp_customize->add_setting('at_enable_title_atomy_contact_page',
@@ -1038,12 +962,8 @@ array(
  'show_opacity' => true,
 )) );
 
-endif; // And Enable Page
-
 /*  Section
 ========================================================================== */
-
- if ( false == esc_attr( get_option( 'atomy_customize_enable_section', false ) )) : // Enable Section
 
 $atomySection = new Atomy_WP_Customize_Panel($wp_customize,'atomySection',array(
 	'title'    => __('Section','atomy'),
@@ -1442,6 +1362,11 @@ array(
 			      'max'  => 50, 
 			      'step' => 1, 
 ),)) );
+
+$wp_customize->selective_refresh->add_partial( 'at_border_block_icons',
+   array(
+      'selector' => '.at-block-icon-header-s .atom-text-header.1 h4',
+));
 
 // Padding
 $wp_customize->add_setting('at_padding_block_icons',
@@ -2190,7 +2115,7 @@ $wp_customize->add_section('atomy_section_parallax',
 // Enable Full Large Section Parallax
 $wp_customize->add_setting('atomy_enable_full_width_parallax',
 array(
-	'default'           => 1,
+	'default'           => 0,
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'atomy_switch_sanitization'
 ));
@@ -2202,21 +2127,25 @@ array(
 	'priority'   => 1,
 )) );
 
-// Primary Image
-$wp_customize->add_setting('at_upload_primary_img_parallax',
-	  array(
-		 'capability'        => 'edit_theme_options',
-		 'sanitize_callback' => 'atomy_sanitize_file'	
+// Post 
+$wp_customize->add_setting( 'at_post_parallax',
+array(
+	 'default'           => '',
+	 'sanitize_callback' => 'absint'
 ));
-  
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'at_upload_primary_img_parallax',
-	 array(
-	   'label'       => __('Select Image for Primary Image Parallax','atomy'),
-	   'description' => __('Upload Image', 'atomy' ),
-	   'section'     => 'atomy_section_parallax',
-	   'priority'    => 5,
-	   'settings'    => 'at_upload_primary_img_parallax',
-)));
+
+$wp_customize->add_control(new Atomy_Dropdown_Posts_Custom_Control($wp_customize,'at_post_parallax',
+array(
+	 'label'       => __('Post', 'atomy' ),
+	 'description' => __('Select Post for Parallax', 'atomy' ),
+	 'section'     => 'atomy_section_parallax',
+	 'priority'       => 2,
+	 'input_attrs' => array(
+			'posts_per_page' => -1,
+			'orderby'        => 'name',
+			'order'          => 'ASC',
+			'post_type'      => 'post',		
+),)));
 
 // Height Image Parallax	
 $wp_customize->add_setting('at_height_parallax_image',
@@ -2348,27 +2277,10 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_bor
 	   'step' => 1, 
 ),)) );
 
-// Title Text 
-$wp_customize->add_setting('at_title_parallax',
-   array(
-	  'default'           => '',
-	  'capability'        => 'edit_theme_options',
-      'transport'         => 'postMessage',
-      'sanitize_callback' => 'wp_filter_nohtml_kses'
-));
-
-$wp_customize->add_control('at_title_parallax',
-   array(
-	     'type'      => 'textarea',
-         'label'     => __('Title Parallax','atomy'),
-	     'section'   => 'atomy_section_parallax',
-	     'priority'  => 75,
-) );
-
 // Enable/Disable Call-to-action button Parallax
 $wp_customize->add_setting('atomy_enable_button_action_parallax',
 array(
-	'default'           => 1,
+	'default'           => 0,
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'atomy_switch_sanitization'
 ));
@@ -2396,26 +2308,10 @@ $wp_customize->add_control( 'at_title_action_parallax',array(
 	'label'   => __('Title Call-to-action button Parallax','atomy' ),
 ) );
 
-// Url Call-to-action button Parallax
-$wp_customize->add_setting('atomy_link_action_parallax',
+$wp_customize->selective_refresh->add_partial( 'at_title_action_parallax',
    array(
-	'default'           => '',
-	'transport'         => 'refresh',
-	'sanitize_callback' => 'esc_url_raw',
+      'selector' => '.at-parallax-a a',
 ));
-
-$wp_customize->add_control('atomy_link_action_parallax',
-  array(
-	'label'           => __('Link Call-to-action button Parallax','atomy' ),
-	'section'         => 'atomy_section_parallax',
-	'active_callback' => 'atomy_enable_button_action_parallax',
-	'type'            => 'url',
-	'priority'        => 78,
-	'input_attrs'     => array(
-		       'class'       => 'my-custom-class',
-		       'style'       => 'border: 1px solid #2885bb',
-		       'placeholder' => __('Enter link...','atomy'),
-), ));
 
 // Text Align
 $wp_customize->add_setting('at_text_align_parallax',
@@ -2523,6 +2419,11 @@ $wp_customize->add_control('at_title_portfolio_section',array(
  'priority'=> 3,
  'label'   => __('Title Portfolio Section','atomy'),
 ) );
+
+$wp_customize->selective_refresh->add_partial( 'at_title_portfolio_section',
+   array(
+      'selector' => '.at_portfolio_2 h2',
+));
 
 // Effect Title Portfolio Section
 $wp_customize->add_setting('at_effect_title_portfolio_section',
@@ -3514,20 +3415,6 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize,'at_effect_ti
 	 'zoom-out-right'     => __('Zoom Out Right','atomy'),
 ))) );
 
-// Enable/Disable 4/5 Columns Services Section
-$wp_customize->add_setting('atomy_enable_columns_4_5_services_section',
-array(
- 'default'           => 0,
- 'transport'         => 'refresh',
- 'sanitize_callback' => 'atomy_switch_sanitization'
-));
-
-$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'atomy_enable_columns_4_5_services_section',
-array(
- 'label'   => __('Enable/Disable 4/5 Columns Services Section','atomy'),
- 'section' => 'atomy_section_services_section',
- 'priority'=> 30,
-)) );
 
 // Column 1 Services Section
 $wp_customize->add_section('atomy_section_services_column_1',
@@ -3747,25 +3634,11 @@ $wp_customize->add_setting('at_title_icon_1_services_section',array(
 ) );
 
 $wp_customize->add_control('at_title_icon_1_services_section',array(
- 'type'    => 'text',
- 'section' => 'atomy_section_services_column_1',
- 'priority'=> 60,
- 'label'   => __('Title Icon 1 Services Section','atomy' ),
-) );
-
-// Subtitle Icon 1 Services Section
-$wp_customize->add_setting('at_subtitle_icon_1_services_section',array(
- 'capability'        => 'edit_theme_options',
- 'default'           => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod adipisicing elit ipsum dolor.','atomy'),
- 'transport'         => 'postMessage',
- 'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_subtitle_icon_1_services_section',array(
- 'type'    => 'textarea',
- 'section' => 'atomy_section_services_column_1',
- 'priority'=> 70,
- 'label'   => __('Subtitle Icon 1 Services Section','atomy' ),
+ 'type'       => 'text',
+ 'section'    => 'atomy_section_services_column_1',
+ 'priority'   => 60,
+ 'label'      => __('Title Icon 1 Services Section','atomy' ),
+ 'description'=> __('For Subtitle add Widget','atomy'),
 ) );
 
 // Column 2 Services Section
@@ -3986,27 +3859,13 @@ $wp_customize->add_setting('at_title_icon_2_services_section',array(
 ) );
    
 $wp_customize->add_control('at_title_icon_2_services_section',array(
-	'type'    => 'text',
-	'section' => 'atomy_section_services_column_2',
-	'priority'=> 60,
-	'label'   => __('Title Icon 2 Services Section','atomy' ),
+	'type'       => 'text',
+	'section'    => 'atomy_section_services_column_2',
+	'priority'   => 60,
+	'label'      => __('Title Icon 2 Services Section','atomy' ),
+	'description'=> __('For Subtitle add Widget','atomy'),
  ) );
-   
-// Subtitle Icon 2 Services Section
-$wp_customize->add_setting('at_subtitle_icon_2_services_section',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod adipisicing elit ipsum dolor.','atomy'),
-	'transport' => 'postMessage',
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
- ) );
-   
-$wp_customize->add_control('at_subtitle_icon_2_services_section',array(
-	'type'    => 'textarea',
-	'section' => 'atomy_section_services_column_2',
-	'priority'=> 70,
-	'label'   => __('Subtitle Icon 2 Services Section','atomy' ),
-) );
-   
+
 // Column 3 Services Section
 $wp_customize->add_section('atomy_section_services_column_3',
 	array(
@@ -4225,537 +4084,13 @@ $wp_customize->add_setting('at_title_icon_3_services_section',array(
 ) );
    
 $wp_customize->add_control('at_title_icon_3_services_section',array(
-	'type'    => 'text',
-	'section' => 'atomy_section_services_column_3',
-	'priority'=> 60,
-	'label'   => __('Title Icon 3 Services Section','atomy' ),
+	'type'       => 'text',
+	'section'    => 'atomy_section_services_column_3',
+	'priority'   => 60,
+	'label'      => __('Title Icon 3 Services Section','atomy' ),
+	'description'=> __('For Subtitle add Widget','atomy'),
 ) );
-   
-// Subtitle Icon 3 Services Section
-$wp_customize->add_setting('at_subtitle_icon_3_services_section',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod adipisicing elit ipsum dolor.','atomy'),
-	'transport' => 'postMessage',
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
- ) );
-   
-$wp_customize->add_control('at_subtitle_icon_3_services_section', array(
-	'type'    => 'textarea',
-	'section' => 'atomy_section_services_column_3',
-	'priority'=> 70,
-	'label'   => __('Subtitle Icon 3 Services Section','atomy' ),
-) );
-   
- // Column 4 Services Section
-$wp_customize->add_section('atomy_section_services_column_4',
-	  array(
-		'title'      => __('Column 4 Services Section','atomy'),
-		'priority'   => 50,
-		'capability' => 'edit_theme_options',
-		'panel'      => 'atomyServicesSection',
-));
-   
-// Notice Column 4 Services Section
-$wp_customize->add_setting( 'at_notice_atomy_section_services_column_4',
-   array(
-	  'default' => '',
-	  'transport' => 'postMessage',
-	  'sanitize_callback' => 'atomy_text_sanitization'
-));
-   
-$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_notice_atomy_section_services_column_4',
-	array(
-	  'label'      => __('Important!','atomy'),
-	  'description'=> __('These controls only work if you have enabled 4/5 columns in the Services Section Settings','atomy'),
-	  'section'    => 'atomy_section_services_column_4',
-	  'priority'   => 5,
- )) );
-   
-// Effect Column 4 Services Section
-$wp_customize->add_setting('at_effect_column_4_services_section',
-   array(
-	 'default'    => 'no-effect',
-	 'type'       => 'theme_mod', 
-	 'capability' => 'edit_theme_options', 'sanitize_callback' => 'atomy_text_sanitization',
-));
-   
-$wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_column_4_services_section', 
-	  array(
-		'label'   => __('Effect Column 4 Services Section','atomy'),
-		'section' => 'atomy_section_services_column_4',
-		'settings'=> 'at_effect_column_4_services_section', 
-		'priority'=> 22,
-		'type'    => 'select',
-		'choices' => array(
-		'no-effect'          => __('No Effect','atomy'),
-		'fade-up'            => __('Fade Up','atomy'),
-		'fade-down'          => __('Fade Down','atomy'),
-		'fade-right'         => __('Fade Right','atomy'),
-		'fade-up-right'      => __('Fade Up Right','atomy'),
-		'fade-down-right'    => __('Fade Down Right','atomy'),
-		'flip-right'         => __('Flip Right','atomy'),
-		'flip-up'            => __('Flip Up','atomy'),
-		'flip-down'          => __('Flip Down','atomy'),
-		'zoom-in'            => __('Zoom In','atomy'),
-		'zoom-in-up'         => __('Zoom In Up','atomy'),
-		'zoom-in-down'       => __('Zoom In Down','atomy'),
-		'zoom-in-right'      => __('Zoom In Right','atomy'),
-		'zoom-out'           => __('Zoom Out','atomy'),
-		'zoom-out-up'        => __('Zoom Out Up','atomy'),
-		'zoom-out-down'      => __('Zoom Out Down','atomy'),
-		'zoom-out-right'     => __('Zoom Out Right','atomy'),
-))) );
-   
-// Icon 4
-$wp_customize->add_setting('at_icon_4_services_section',array(
-	'default'    => 'fas fa-rocket',
-	'type'       => 'theme_mod', 
-	'capability' => 'edit_theme_options', 'sanitize_callback' => 'atomy_text_sanitization',
-) );
-   
-$wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_icon_4_services_section', 
-   array(
-	'label'   => __('Icon 4','atomy'),
-	'section' => 'atomy_section_services_column_4',
-	'settings'=> 'at_icon_4_services_section', 
-	'priority'=> 30,
-	'type'    => 'select',
-	'choices' => array(
-	'no icons'                     =>__('No icons','atomy'),'fas fa-anchor'=> __('anchor','atomy'),
-	'far fa-address-book'          => __('address-book','atomy'),
-	'far fa-address-card'          => __('address-card','atomy'),
-	'fas fa-adjust'                => __('adjust','atomy'),
-	'fas fa-ambulance'             => __('ambulance','atomy'),
-	'fas fa-archive'               => __('archive','atomy'),
-	'fas fa-balance-scale'         => __('balance-scale','atomy'),
-	'fas fa-battery-three-quarters'=> __('battery','atomy'),
-	'fas fa-bell'                  => __('bel','atomy'),
-	'fas fa-bicycle'               => __('bicycle','atomy'),
-	'fas fa-blind'                 => __('blind','atomy'),
-	'fas fa-bolt'                  => __('bolt','atomy'),
-	'fas fa-book'                  => __('book','atomy'),
-	'fas fa-briefcase-medical'     => __('briefcase','atomy'),
-	'fas fa-bullhorn'              => __('bullhorn','atomy'),
-	'fas fa-bus'                   => __('bus','atomy'),
-	'fas fa-calculator'            => __('calculator','atomy'),
-	'fas fa-camera-retro'          => __('camera retro','atomy'),
-	'fas fa-car'                   => __('car','atomy'),
-	'far fa-credit-card'           => __('credit-card','atomy'),
-	'fab fa-cc-visa'               => __('cc-visa','atomy'),
-	'fab fa-cc-mastercard'         => __('cc-mastercard','atomy'),
-	'fab fa-cc-paypal'             => __('fa-cc-paypal','atomy'),
-	'fas fa-chevron-circle-down'   => __('chevron-circle-down','atomy'),
-	'fas fa-child'                 => __('child','atomy'),
-	'fas fa-cog'                   => __('cog','atomy'),
-	'fas fa-cogs'                  => __('cogs','atomy'),
-	'fas fa-comments'              => __('comments','atomy'),
-	'fas fa-coffee'                => __('coffee','atomy'),
-	'fas fa-cut'                   => __('cut','atomy'),
-	'fas fa-clock'                 => __('clock','atomy'),
-	'fas fa-clipboard'             => __('clipboard','atomy'),
-	'fas fa-clone'                 => __('clone','atomy'),
-	'fas fa-database'              => __('database','atomy'),
-	'fas fa-desktop'               => __('desktop','atomy'),
-	'fas fa-edit'                  => __('edit','atomy'),
-	'fas fa-envelope'              => __('envelepo','atomy'),
-	'fas fa-eye'                   => __('eye','atomy'),
-	'fas fa-eye-slash'             => __('eye-slash','atomy'),
-	'fas fa-female'                => __('female','atomy'),
-	'fas fa-file'                  => __('file','atomy'),
-	'fas fa-file-alt'              => __('file-alt','atomy'),
-	'fas fa-file-video'            => __('file-video','atomy'),
-	'fas fa-file-word'             => __('file-word','atomy'),
-	'far fa-flag'                  => __('flag','atomy'),
-	'fas fa-flask'                 => __('flask','atomy'),
-	'fas fa-folder'                => __('folder','atomy'),
-	'fas fa-folder-open'           => __('folder-open','atomy'),
-	'fas fa-gamepad'               => __('gamepad','atomy'),
-	'fas fa-gavel'                 => __('gavel','atomy'),
-	'fas fa-glass-martini'         => __('glass-martini','atomy'),
-	'fas fa-globe'                 => __('globe','atomy'),
-	'fas fa-graduation-cap'        => __('graduation-cap','atomy'),
-	'fas fa-handshake'             => __('handshake','atomy'),'fas fa-hand-holding-usd'=>__('hand-holding','atomy'),
-	'fas fa-home'                  => __('home','atomy'),
-	'fas fa-hourglass'             => __('hourglass','atomy'),
-	'fas fa-image'                 => __('image','atomy'),
-	'fas fa-info'                  => __('info','atomy'),
-	'fas fa-key'                   => __('key','atomy'),
-	'fas fa-laptop'                => __('laptop','atomy'),
-	'fas fa-lightbulb'             => __('lightbulb','atomy'),
-	'fas fa-link'                  => __('link','atomy'),
-	'fas fa-lock'                  => __('lock','atomy'),
-	'fas fa-male'                  => __('male','atomy'),
-	'fas fa-map'                   => __('map','atomy'),
-	'fas fa-map-marker'            => __('map-marker','atomy'),
-	'fas fa-music'                 => __('music','atomy'),
-	'fas fa-paint-brush'           => __('paint-brush','atomy'),
-	'fas fa-paper-plane'           => __('paper-plane','atomy'),
-	'fas fa-paperclip'             => __('paperclip','atomy'),
-	'fas fa-paste'                 => __('paste','atomy'),'fas fa-parachute-box'=>__('parachute','atomy'),
-	'fas fa-phone'                 => __('phone','atomy'),
-	'fas fa-phone-volume'          => __('phone-volume','atomy'),
-	'fas fa-plane'                 => __('plane','atomy'),
-	'fas fa-play'                  => __('play','atomy'),
-	'fas fa-plug'                  => __('plug','atomy'),
-	'fas fa-plus'                  => __('plus','atomy'),
-	'fas fa-power-off'             => __('power-off','atomy'),
-	'fas fa-print'                 => __('print','atomy'),
-	'fas fa-question'              => __('question','atomy'),
-	'fas fa-road'                  => __('road','atomy'),
-	'fas fa-rocket'                => __('rocket','atomy'),
-	'fas fa-rss'                   => __('rss','atomy'),
-	'fas fa-rss-square'            => __('rss-square','atomy'),
-	'fas fa-save'                  => __('save','atomy'),
-	'fas fa-search'                => __('search','atomy'),
-	'fas fa-server'                => __('server','atomy'),
-	'fas fa-share-alt'             => __('share-alt','atomy'),
-	'fas fa-shield-alt'            => __('shield-alt','atomy'),
-	'fas fa-shopping-bag'          => __('shopping-bag','atomy'),
-	'fas fa-signal'                => __('signal','atomy'),
-	'fas fa-shopping-basket'       => __('shopping-basket','atomy'),
-	'fas fa-shopping-cart'         => __('shopping-cart','atomy'),
-	'fas fa-sitemap'               => __('sitemap','atomy'),
-	'far fa-smile'                 => __('smile','atomy'),
-	'fas fa-snowflake'             => __('snowflake','atomy'),
-	'fab fa-stack-overflow'        => __('stack-overflow','atomy'),
-	'fas fa-space-shuttle'         => __('space-shuttle','atomy'),
-	'fas fa-star'                  => __('star','atomy'),
-	'fas fa-street-view'           => __('street-view','atomy'),
-	'fas fa-subway'                => __('subway','atomy'),
-	'fas fa-tag'                   => __('tag','atomy'),
-	'fas fa-tags'                  => __('tags','atomy'),
-	'fas fa-tachometer-alt'        => __('tachometer-alt','atomy'),
-	'fas fa-tasks'                 => __('tasks','atomy'),
-	'fas fa-taxi'                  => __('taxi','atomy'),
-	'fas fa-thumbtack'             => __('thumbtack','atomy'),
-	'fas fa-tint'                  => __('tint','atomy'),
-	'fas fa-toggle-off'            => __('toggle-off','atomy'),
-	'fas fa-toggle-on'             => __('toggle-on','atomy'),
-	'fas fa-trash-alt'             => __('trash-alt','atomy'),
-	'fas fa-tree'                  => __('tree','atomy'),
-	'fas fa-truck'                 => __('truck','atomy'),
-	'fas fa-tv'                    => __('tv','atomy'),
-	'fas fa-umbrella'              => __('umbrella','atomy'),
-	'fas fa-universal-access'      => __('universal-access','atomy'),
-	'fas fa-university'            => __('university','atomy'),
-	'fas fa-unlock'                => __('unlock','atomy'),
-	'fas fa-user'                  => __('user','atomy'),
-	'fas fa-users'                 => __('users','atomy'),
-	'fas fa-user-secret'           => __('user-secret','atomy'),
-	'fas fa-utensils'              => __('utensils','atomy'),
-	'fas fa-video'                 => __('video','atomy'),
-	'fas fa-volume-up'             => __('volume-up','atomy'),
-	'fas fa-wifi'                  => __('wifi','atomy'),
-	'fas fa-wrench'                => __('wrench','atomy'),
-))) );
-   
-// Effect Hover Icon 4
-$wp_customize->add_setting('at_effect_hover_ico_4',
-   array(
-	'default'    => 'no-effect',
-	'type'       => 'theme_mod', 
-	'capability' => 'edit_theme_options', 'sanitize_callback' => 'atomy_text_sanitization',
-));
-   
-$wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_hover_ico_4', 
-	 array(
-	   'label'       => __('Effect Icon 4','atomy'), 
-	   'description' => __('Select a hover effect for the icon 4','atomy'),
-	   'settings'    => 'at_effect_hover_ico_4', 
-	   'priority'    => 40,
-	   'section'     => 'atomy_section_services_column_4', 
-	   'type'        => 'select',
-	   'choices'     => array(
-		'no-effect'  => __('No Effect','atomy'),
-		'One'        => __('Effect One','atomy'),
-		'Two'        => __('Effect Two','atomy'),
-))) );
-  
-// Title Icon 4 Services Section
-$wp_customize->add_setting('at_title_icon_4_services_section',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Digital Marketing','atomy'),
-	'transport'         => 'postMessage',
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-   
-$wp_customize->add_control('at_title_icon_4_services_section',array(
-	'type'    => 'text',
-	'section' => 'atomy_section_services_column_4',
-	'priority'=> 60,
-	'label'   => __('Title Icon 4 Services Section','atomy'),
- ) );
-   
-// Subtitle Icon 4 Services Section
-$wp_customize->add_setting('at_subtitle_icon_4_services_section',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod adipisicing elit ipsum dolor.','atomy'),
-	'transport'         => 'postMessage',
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-   
-$wp_customize->add_control('at_subtitle_icon_4_services_section',array(
-	'type'    => 'textarea',
-	'section' => 'atomy_section_services_column_4',
-	'priority'=> 70,
-	'label'   => __('Subtitle Icon 4 Services Section','atomy' ),
-) );
-   
-// Column 5 Services Section
-$wp_customize->add_section('atomy_section_services_column_5',
-	  array(
-		'title'      => __('Column 5 Services Section','atomy'),
-		'priority'   => 60,
-		'capability' => 'edit_theme_options',
-		'panel'      => 'atomyServicesSection',
-));
-   
-// Notice Column 5 Services Section
-$wp_customize->add_setting('at_notice_atomy_section_services_column_5',
-   array(
-	  'default'           => '',
-	  'transport'         => 'postMessage',
-	  'sanitize_callback' => 'atomy_text_sanitization'
-));
-   
-$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_notice_atomy_section_services_column_5',
-	 array(
-	  'label' => __('Important!','atomy'),
-	  'description'=> __('These controls only work if you have enabled 4/5 columns in the Services Section Settings','atomy'),
-	  'section' => 'atomy_section_services_column_5',
-	  'priority'=> 5,
-)) );
-   
-// Effect Column 5 Services Section
-$wp_customize->add_setting('at_effect_column_5_services_section',
-   array(
-	 'default'    => 'no-effect',
-	 'type'       => 'theme_mod', 
-	 'capability' => 'edit_theme_options', 'sanitize_callback' => 'atomy_text_sanitization',
-));
-   
-$wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_column_5_services_section', 
-	array(
-		'label'    => __('Effect Column 5 Services Section','atomy'),
-		'section'  => 'atomy_section_services_column_5',
-		'settings' => 'at_effect_column_5_services_section', 
-		'priority' => 22,
-		'type'     => 'select',
-		'choices'  => array(
-		'no-effect'          => __('No Effect','atomy'),
-		'fade-up'            => __('Fade Up','atomy'),
-		'fade-down'          => __('Fade Down','atomy'),
-		'fade-right'         => __('Fade Right','atomy'),
-		'fade-up-right'      => __('Fade Up Right','atomy'),
-		'fade-down-right'    => __('Fade Down Right','atomy'),
-		'flip-right'         => __('Flip Right','atomy'),
-		'flip-up'            => __('Flip Up','atomy'),
-		'flip-down'          => __('Flip Down','atomy'),
-		'zoom-in'            => __('Zoom In','atomy'),
-		'zoom-in-up'         => __('Zoom In Up','atomy'),
-		'zoom-in-down'       => __('Zoom In Down','atomy'),
-		'zoom-in-right'      => __('Zoom In Right','atomy'),
-		'zoom-out'           => __('Zoom Out','atomy'),
-		'zoom-out-up'        => __('Zoom Out Up','atomy'),
-		'zoom-out-down'      => __('Zoom Out Down','atomy'),
-		'zoom-out-right'     => __('Zoom Out Right','atomy'),
-))) );
-   
-// Icon 5
-$wp_customize->add_setting('at_icon_5_services_section',array(
-	'default'   => 'fas fa-rocket',
-	'type'       => 'theme_mod', 
-	'capability' => 'edit_theme_options', 'sanitize_callback' => 'atomy_text_sanitization',
-) );
-   
-$wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_icon_5_services_section', 
-   array(
-	'label'    => __('Icon 5','atomy'),
-	'section'  => 'atomy_section_services_column_5',
-	'settings' => 'at_icon_5_services_section', 
-	'priority' => 30,
-	'type'     => 'select',
-	'choices'  => array(
-	'no icons'                     =>__('No icons','atomy'),'fas fa-anchor'=> __('anchor','atomy'),
-	'far fa-address-book'          => __('address-book','atomy'),
-	'far fa-address-card'          => __('address-card','atomy'),
-	'fas fa-adjust'                => __('adjust','atomy'),
-	'fas fa-ambulance'             => __('ambulance','atomy'),
-	'fas fa-archive'               => __('archive','atomy'),
-	'fas fa-balance-scale'         => __('balance-scale','atomy'),
-	'fas fa-battery-three-quarters'=> __('battery','atomy'),
-	'fas fa-bell'                  => __('bel','atomy'),
-	'fas fa-bicycle'               => __('bicycle','atomy'),
-	'fas fa-blind'                 => __('blind','atomy'),
-	'fas fa-bolt'                  => __('bolt','atomy'),
-	'fas fa-book'                  => __('book','atomy'),
-	'fas fa-briefcase-medical'     => __('briefcase','atomy'),
-	'fas fa-bullhorn'              => __('bullhorn','atomy'),
-	'fas fa-bus'                   => __('bus','atomy'),
-	'fas fa-calculator'            => __('calculator','atomy'),
-	'fas fa-camera-retro'          => __('camera retro','atomy'),
-	'fas fa-car'                   => __('car','atomy'),
-	'far fa-credit-card'           => __('credit-card','atomy'),
-	'fab fa-cc-visa'               => __('cc-visa','atomy'),
-	'fab fa-cc-mastercard'         => __('cc-mastercard','atomy'),
-	'fab fa-cc-paypal'             => __('fa-cc-paypal','atomy'),
-	'fas fa-chevron-circle-down'   => __('chevron-circle-down','atomy'),
-	'fas fa-child'                 => __('child','atomy'),
-	'fas fa-cog'                   => __('cog','atomy'),
-	'fas fa-cogs'                  => __('cogs','atomy'),
-	'fas fa-comments'              => __('comments','atomy'),
-	'fas fa-coffee'                => __('coffee','atomy'),
-	'fas fa-cut'                   => __('cut','atomy'),
-	'fas fa-clock'                 => __('clock','atomy'),
-	'fas fa-clipboard'             => __('clipboard','atomy'),
-	'fas fa-clone'                 => __('clone','atomy'),
-	'fas fa-database'              => __('database','atomy'),
-	'fas fa-desktop'               => __('desktop','atomy'),
-	'fas fa-edit'                  => __('edit','atomy'),
-	'fas fa-envelope'              => __('envelepo','atomy'),
-	'fas fa-eye'                   => __('eye','atomy'),
-	'fas fa-eye-slash'             => __('eye-slash','atomy'),
-	'fas fa-female'                => __('female','atomy'),
-	'fas fa-file'                  => __('file','atomy'),
-	'fas fa-file-alt'              => __('file-alt','atomy'),
-	'fas fa-file-video'            => __('file-video','atomy'),
-	'fas fa-file-word'             => __('file-word','atomy'),
-	'far fa-flag'                  => __('flag','atomy'),
-	'fas fa-flask'                 => __('flask','atomy'),
-	'fas fa-folder'                => __('folder','atomy'),
-	'fas fa-folder-open'           => __('folder-open','atomy'),
-	'fas fa-gamepad'               => __('gamepad','atomy'),
-	'fas fa-gavel'                 => __('gavel','atomy'),
-	'fas fa-glass-martini'         => __('glass-martini','atomy'),
-	'fas fa-globe'                 => __('globe','atomy'),
-	'fas fa-graduation-cap'        => __('graduation-cap','atomy'),
-	'fas fa-handshake'             => __('handshake','atomy'),'fas fa-hand-holding-usd'=>__('hand-holding','atomy'),
-	'fas fa-home'                  => __('home','atomy'),
-	'fas fa-hourglass'             => __('hourglass','atomy'),
-	'fas fa-image'                 => __('image','atomy'),
-	'fas fa-info'                  => __('info','atomy'),
-	'fas fa-key'                   => __('key','atomy'),
-	'fas fa-laptop'                => __('laptop','atomy'),
-	'fas fa-lightbulb'             => __('lightbulb','atomy'),
-	'fas fa-link'                  => __('link','atomy'),
-	'fas fa-lock'                  => __('lock','atomy'),
-	'fas fa-male'                  => __('male','atomy'),
-	'fas fa-map'                   => __('map','atomy'),
-	'fas fa-map-marker'            => __('map-marker','atomy'),
-	'fas fa-music'                 => __('music','atomy'),
-	'fas fa-paint-brush'           => __('paint-brush','atomy'),
-	'fas fa-paper-plane'           => __('paper-plane','atomy'),
-	'fas fa-paperclip'             => __('paperclip','atomy'),
-	'fas fa-paste'                 => __('paste','atomy'),'fas fa-parachute-box'=>__('parachute','atomy'),
-	'fas fa-phone'                 => __('phone','atomy'),
-	'fas fa-phone-volume'          => __('phone-volume','atomy'),
-	'fas fa-plane'                 => __('plane','atomy'),
-	'fas fa-play'                  => __('play','atomy'),
-	'fas fa-plug'                  => __('plug','atomy'),
-	'fas fa-plus'                  => __('plus','atomy'),
-	'fas fa-power-off'             => __('power-off','atomy'),
-	'fas fa-print'                 => __('print','atomy'),
-	'fas fa-question'              => __('question','atomy'),
-	'fas fa-road'                  => __('road','atomy'),
-	'fas fa-rocket'                => __('rocket','atomy'),
-	'fas fa-rss'                   => __('rss','atomy'),
-	'fas fa-rss-square'            => __('rss-square','atomy'),
-	'fas fa-save'                  => __('save','atomy'),
-	'fas fa-search'                => __('search','atomy'),
-	'fas fa-server'                => __('server','atomy'),
-	'fas fa-share-alt'             => __('share-alt','atomy'),
-	'fas fa-shield-alt'            => __('shield-alt','atomy'),
-	'fas fa-shopping-bag'          => __('shopping-bag','atomy'),
-	'fas fa-signal'                => __('signal','atomy'),
-	'fas fa-shopping-basket'       => __('shopping-basket','atomy'),
-	'fas fa-shopping-cart'         => __('shopping-cart','atomy'),
-	'fas fa-sitemap'               => __('sitemap','atomy'),
-	'far fa-smile'                 => __('smile','atomy'),
-	'fas fa-snowflake'             => __('snowflake','atomy'),
-	'fab fa-stack-overflow'        => __('stack-overflow','atomy'),
-	'fas fa-space-shuttle'         => __('space-shuttle','atomy'),
-	'fas fa-star'                  => __('star','atomy'),
-	'fas fa-street-view'           => __('street-view','atomy'),
-	'fas fa-subway'                => __('subway','atomy'),
-	'fas fa-tag'                   => __('tag','atomy'),
-	'fas fa-tags'                  => __('tags','atomy'),
-	'fas fa-tachometer-alt'        => __('tachometer-alt','atomy'),
-	'fas fa-tasks'                 => __('tasks','atomy'),
-	'fas fa-taxi'                  => __('taxi','atomy'),
-	'fas fa-thumbtack'             => __('thumbtack','atomy'),
-	'fas fa-tint'                  => __('tint','atomy'),
-	'fas fa-toggle-off'            => __('toggle-off','atomy'),
-	'fas fa-toggle-on'             => __('toggle-on','atomy'),
-	'fas fa-trash-alt'             => __('trash-alt','atomy'),
-	'fas fa-tree'                  => __('tree','atomy'),
-	'fas fa-truck'                 => __('truck','atomy'),
-	'fas fa-tv'                    => __('tv','atomy'),
-	'fas fa-umbrella'              => __('umbrella','atomy'),
-	'fas fa-universal-access'      => __('universal-access','atomy'),
-	'fas fa-university'            => __('university','atomy'),
-	'fas fa-unlock'                => __('unlock','atomy'),
-	'fas fa-user'                  => __('user','atomy'),
-	'fas fa-users'                 => __('users','atomy'),
-	'fas fa-user-secret'           => __('user-secret','atomy'),
-	'fas fa-utensils'              => __('utensils','atomy'),
-	'fas fa-video'                 => __('video','atomy'),
-	'fas fa-volume-up'             => __('volume-up','atomy'),
-	'fas fa-wifi'                  => __('wifi','atomy'),
-	'fas fa-wrench'                => __('wrench','atomy'),
-))) );
-   
-// Effect Hover Icon 5
-$wp_customize->add_setting('at_effect_hover_ico_5',
-   array(
-	'default'    => 'no-effect',
-	'type'       => 'theme_mod', 
-	'capability' => 'edit_theme_options', 'sanitize_callback' => 'atomy_text_sanitization',
-));
-   
-$wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_hover_ico_5', 
-	array(
-		'label'      => __('Effect Icon 5','atomy'), 
-		'description'=> __('Select a hover effect for the icon 5','atomy'),
-		'settings'   => 'at_effect_hover_ico_5', 
-		'priority'   => 40,
-		'section'    => 'atomy_section_services_column_5', 
-		'type'       => 'select',
-		'choices'    => array(
-		'no-effect'  => __('No Effect','atomy'),
-		'One'        => __('Effect One','atomy'),
-		'Two'        => __('Effect Two','atomy'),
-))) );
-   
-// Title Icon 5 Services Section
-$wp_customize->add_setting('at_title_icon_5_services_section',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Digital Marketing','atomy'),
-	'transport'         => 'postMessage',
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-   
-$wp_customize->add_control('at_title_icon_5_services_section',array(
-	'type'    => 'text',
-	'section' => 'atomy_section_services_column_5',
-	'priority'=> 60,
-	'label'   => __('Title Icon 5 Services Section','atomy' ),
-) );
-   
-// Subtitle Icon 5 Services Section
-$wp_customize->add_setting('at_subtitle_icon_5_services_section',array(
-	'capability'        => 'edit_theme_options',
-	'default'           => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod adipisicing elit ipsum dolor.','atomy'),
-	'transport'         => 'postMessage',
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-   
- $wp_customize->add_control('at_subtitle_icon_5_services_section',array(
-	'type'    => 'textarea',
-	'section' => 'atomy_section_services_column_5',
-	'priority'=> 70,
-	'label'   => __('Subtitle Icon 5 Services Section','atomy'),
-) );
-   
+
 /* Section Who we are
 ========================================================================== */
 
@@ -4766,21 +4101,6 @@ $wp_customize->add_section('atomy_section_woweare_about',
 		'capability' => 'edit_theme_options',
 		'panel'      => 'atomySection',
 ));
-
-// Title Who We Are
-$wp_customize->add_setting('at_title_whoweare',array(
-	'capability'        => 'edit_theme_options',
-	'transport'         => 'postMessage',
-	'default'           => __('Who We Are','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_title_whoweare',array(
-	'type'    => 'text',
-	'section' => 'atomy_section_woweare_about',
-	'priority'=> 10,
-	'label'   => __('Title Who We Are','atomy'),
-) );
 
 // Effect Title Who We Are
 $wp_customize->add_setting('at_effect_title_whoweare',
@@ -4817,35 +4137,30 @@ $wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_tit
 		'zoom-out-right'     => __('Zoom Out Right','atomy'),
  ))) );
 
-// Subtitle Who We Are
-$wp_customize->add_setting('at_subtitle_whoweare',array(
-	'capability'        => 'edit_theme_options',
-	'transport'         => 'postMessage',
-	'default'           => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit massa enim. Nullam id varius nunc.','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
+ $wp_customize->selective_refresh->add_partial( 'at_effect_title_whoweare',
+   array(
+      'selector' => '.at-text-image-about-img h2',
+));
 
-$wp_customize->add_control('at_subtitle_whoweare',array(
-	'type'    => 'textarea',
-	'section' => 'atomy_section_woweare_about',
-	'priority'=> 30,
-	'label'   => __('Subtitle Who We Are','atomy'),
-) );
+// Post 
+$wp_customize->add_setting( 'at_post_whoweare',
+array(
+	 'default'           => '',
+	 'sanitize_callback' => 'absint'
+));
 
-// Content Who We Are
-$wp_customize->add_setting('at_content_whoweare',array(
-	'capability'        => 'edit_theme_options',
-	'transport'         => 'postMessage',
-	'default'           => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc. Vivamus bibendum magna ex, et faucibus lacus venenatis eget','atomy'),
-	'sanitize_callback' => 'wp_filter_nohtml_kses',
-) );
-
-$wp_customize->add_control('at_content_whoweare',array(
-	'type'    => 'textarea',
-	'section' => 'atomy_section_woweare_about',
-	'priority'=> 40,
-	'label'   => __('Content Who We Are','atomy'),
-) );
+$wp_customize->add_control(new Atomy_Dropdown_Posts_Custom_Control($wp_customize,'at_post_whoweare',
+array(
+	 'label'       => __('Post', 'atomy' ),
+	 'description' => __('Select Post for Who We Are', 'atomy' ),
+	 'section'     => 'atomy_section_woweare_about',
+	 'priority'       => 40,
+	 'input_attrs' => array(
+			'posts_per_page' => -1,
+			'orderby'        => 'name',
+			'order'          => 'ASC',
+			'post_type'      => 'post',		
+),)));
 
 // Image upload 1
 $wp_customize->add_setting('at_upload_img_whoweare_1',
@@ -4985,22 +4300,6 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_d_e
 				 'step' => 100, 
 ),)) );
 
-// Image upload 3
-$wp_customize->add_setting('at_upload_img_whoweare_3',
-		array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'atomy_sanitize_file'			
-));
-	 
-$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'at_upload_img_whoweare_3',
-		array(
-			'label'       => __('Select Image 3','atomy'),
-			'description' => __('Upload Image','atomy'),
-			'section'     => 'atomy_section_woweare_about',
-			'priority'    => 110,
-			'settings'    => 'at_upload_img_whoweare_3',
-)));
-
 // Effect Image 3
 $wp_customize->add_setting('at_effect_img_text_3_about',
 	  array(
@@ -5011,12 +4310,13 @@ $wp_customize->add_setting('at_effect_img_text_3_about',
 	
 $wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_img_text_3_about', 
 		 array(
-			'label'    => __('Effect Image 3','atomy'),
-			'section'  => 'atomy_section_woweare_about',
-			'settings' => 'at_effect_img_text_3_about', 
-			'priority' => 120,
-			'type'     => 'select',
-			'choices'  => array(
+			'label'      => __('Effect Image 3','atomy'),
+			'description'=>__('This is the featured image','atomy'),
+			'section'    => 'atomy_section_woweare_about',
+			'settings'   => 'at_effect_img_text_3_about', 
+			'priority'   => 120,
+			'type'       => 'select',
+			'choices'    => array(
 			'no-effect'          => __('No Effec','atomy'),'fade-up'=> __('Fade Up','atomy'),
 			'fade-down'          => __('Fade Down','atomy'),
 			'fade-right'         => __('Fade Right','atomy'),
@@ -5054,12 +4354,8 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_d_e
 				   'step' => 100, 
 ),)) );
 
-endif; // And Enable Section 
-
 /* Other Settings
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_other', false ) )) : // Enable Other Settings
 
 $wp_customize->add_section(
 	'atomy_settings_section',
@@ -5211,55 +4507,6 @@ $wp_customize->add_control(new Atomy_Image_Radio_Button_Custom_Control($wp_custo
 		'image'    => trailingslashit(get_template_directory_uri()) .'images/preloader/at-preloader-1.gif',),
 		'/images/preloader/at-preloader-2.gif'=> array('image'=> trailingslashit(get_template_directory_uri()) .'images/preloader/at-preloader-2.gif',),
 ))) );
-// Duration Preloader
-$wp_customize->add_setting('at_duration_preloader',
-   array(
-      'default'           => 2000,
-      'sanitize_callback' => 'atomy_sanitize_integer'
-));
- 
-$wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_duration_preloader',
-   array(
-	  'label'           => esc_html__('Preloader visibility duration','atomy'),
-	  'description'     =>__('Seconds Unit (1000=1 second)','atomy'),
-	  'section'         => 'atomy_settings_section',
-	  'priority'        => 54,
-	  'active_callback' => 'atomy_enable_preloader',
-      'input_attrs'     => array(
-                'min'   => 500, 
-                'max'   => 8000, 
-                'step'  => 100, 
-),)));
-
-// Snow
-$wp_customize->add_setting('at_entry_meta_notice_other_snow',
-   array(
-      'default'           => '',
-      'transport'         => 'postMessage',
-      'sanitize_callback' => 'atomy_text_sanitization'
-));
- 
-$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_entry_meta_notice_other_snow',
-    array(
-	  'label'           => __('Snow','atomy'),
-	  'section'         => 'atomy_settings_section',
-	  'priority'        => 55,
-)) );
-
-// Enable/Disable Snow
-$wp_customize->add_setting('atomy_enable_snow',
-array(
-	'default'           => 1,
-	'transport'         => 'refresh',
-	'sanitize_callback' => 'atomy_switch_sanitization'
-));
-
-$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'atomy_enable_snow',
-array(
-	'label'   => __('Enable or disable Snow Effect','atomy'),
-	'section' => 'atomy_settings_section',
-	'priority'=> 56,
-)) );
 
 // Breadcrumbs
 $wp_customize->add_setting('at_entry_meta_notice_other_breadcrubs',
@@ -5334,14 +4581,8 @@ $wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,
 	'priority'=> 520,
 )) );
 
-
-
-endif; // And Enable Other Settings 
-
 /* Typography
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_typography', false ) )) : // Enable Typography
 
 $wp_customize->add_section('atomy_google_font',
 	array(
@@ -5740,12 +4981,8 @@ $wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,
 	'priority'=> 300,
 )) );
 
-endif; // And Enable Typography
-
 /* Social Networks
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_social', false ) )) : // Enable Social
 
 $wp_customize->add_section('atomy_section_settings_social',
      array(
@@ -5824,42 +5061,6 @@ $wp_customize->add_control('atomy_link_twitter_social',
 		    'class'       => 'my-custom-class',
 		    'style'       => 'border: 1px solid #2885bb',
 		    'placeholder' => __('Enter link...','atomy'),
-), ));
-
-// Google Plus
-$wp_customize->add_setting('atomy_enable_google_plus_social',
-  array(
-	'default'           => 1,
-	'transport'         => 'refresh',
-	'sanitize_callback' => 'atomy_switch_sanitization'
-));
-
-$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'atomy_enable_google_plus_social',
-  array(
-	'label'   => __('Google Plus','atomy'),
-	'section' => 'atomy_section_settings_social',
-	'priority'=> 50,
-)) );
-
-// Url Google Plus
-$wp_customize->add_setting('atomy_link_google_plus_social',
-   array(
-	'default'           => '',
-	'transport'         => 'refresh',
-	'sanitize_callback' => 'esc_url_raw',
-));
-
-$wp_customize->add_control('atomy_link_google_plus_social',
-  array(
-	'label'           => __('Link Google Plus','atomy'),
-	'section'         => 'atomy_section_settings_social',
-	'active_callback' => 'atomy_enable_google_plus_social',
-	'type'            => 'url',
-	'priority'        => 60,
-	'input_attrs'     => array(
-		  'class'       => 'my-custom-class',
-		  'style'       => 'border: 1px solid #2885bb',
-		  'placeholder' => __('Enter link...','atomy'),
 ), ));
 
 // Dribbble
@@ -6150,12 +5351,8 @@ $wp_customize->add_control('atomy_link_github_social',
 		       'placeholder' => __('Enter link...','atomy'),
 ), ));
 
-endif; // And Enable Social
-
 /*  Color General
 ========================================================================== */
-
-if ( false == esc_attr( get_option( 'atomy_customize_enable_styling', false ) )) : // Enable Color
 
 // Notice Body Color
 $wp_customize->add_setting('at_notice_body_color',
@@ -6174,7 +5371,7 @@ $wp_customize->add_control( new Atomy_Simple_Notice_Custom_control( $wp_customiz
 // Select predefined skins
 $wp_customize->add_setting('at_color_skin',
    array(
-      'default'           => 'one',
+      'default'           => 'four',
       'transport'         => 'refresh',
       'sanitize_callback' => 'atomy_text_sanitization'
 ));
@@ -6194,16 +5391,9 @@ $wp_customize->add_control(new Atomy_Image_Radio_Button_Custom_Control($wp_custo
 		         
 ))) );
 
-
-
-
-
-endif; // And Enable Color
-
 /*  Extra Section Two Image
 ========================================================================== */
 
-if ( false == esc_attr( get_option( 'atomy_customize_enable_section', false ) )) : // Enable Section
 // Two Image
 $wp_customize->add_section('atomy_section_twoimage',
 	array(
@@ -6338,6 +5528,7 @@ $wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,
 	    'priority'  => 50,
 )));
 
+
 // Margin left image
 $wp_customize->add_setting('at_margin_left_img_left',
   array(
@@ -6356,6 +5547,11 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_mar
 			 'max'  => 20, 
 			 'step' => 1, 
 ),)) );
+
+$wp_customize->selective_refresh->add_partial( 'at_margin_left_img_left',
+   array(
+      'selector' => '.at-two-image-text h2',
+));
 
 // Margin top image
 $wp_customize->add_setting('at_margin_top_img_left',
@@ -6463,8 +5659,6 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_rot
 			 'step' => 1, 
 ),)) );
 
-endif;// And Enable Section
-
 /*  Extra for Header
 ========================================================================== */
 
@@ -6531,6 +5725,11 @@ $wp_customize->add_control( new Atomy_Text_Radio_Button_Custom_Control( $wp_cust
 				'text-right'  => __( 'Right','atomy' ),
 ))) );
 
+$wp_customize->selective_refresh->add_partial( 'at_text_align_title_services',
+   array(
+      'selector' => '.at-services h2',
+));
+
 /* Extra Controll for Wo We Are*/
 
 // Enable/Disable image 1
@@ -6565,7 +5764,6 @@ array(
 
 /* Extra Controll For Slide Section */
 
-if ( false == esc_attr( get_option( 'atomy_customize_enable_section', false ) )) : // Enable Section
 // Slider
 $wp_customize->add_section('atomy_section_slide',
 		array(
@@ -6723,6 +5921,11 @@ $wp_customize->add_control(new WP_Customize_Control($wp_customize,'at_effect_ban
 		'zoom-out-right'     => __('Zoom Out Right','atomy'),
 ))) );
 
+$wp_customize->selective_refresh->add_partial( 'at_effect_banner_slide',
+   array(
+      'selector' => '.at-col-slide',
+));
+
 // Effect Carousel
 $wp_customize->add_setting('at_effect_carousel_slide',
    array(
@@ -6857,8 +6060,6 @@ array(
 			'step' => 1, 
 ),)) );
 
-endif; // End Enable Section
-
 /* Extra for Product/Categories Section */
 
 // Margin Top
@@ -6898,7 +6099,6 @@ array(
 			'max'  => 12, 
 			'step' => 1, 
 ),)) );
-
 
 /* Extra for  Section */
 
@@ -7225,7 +6425,6 @@ array(
  'show_opacity' => true,
 )) );
 
-
 // Color Sidebar Blog link
 $wp_customize->add_setting('at_color_sidebar_blog_a',
 array(
@@ -7270,7 +6469,6 @@ $wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,
 	'section' => 'atomy_section_settings_social',
 	'priority'=> 7,
 	)) );
-
 
 }
 add_action( 'customize_register', 'atomy_customize_register' );

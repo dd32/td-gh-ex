@@ -3,7 +3,7 @@
 * section-twoimage.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 *
 */
 ?>
@@ -38,7 +38,9 @@
       <div class="col-md-4 at-two-image-right">
         <?php $atomy_image_attributes_twoImage =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'atomy_card_4')?>
 	       <img src="<?php if ( $atomy_image_attributes_twoImage[0] ) :
-             echo esc_url($atomy_image_attributes_twoImage[0]);  endif ?>"/>
+             echo esc_url($atomy_image_attributes_twoImage[0]); else :?>"/>
+              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
+             <?php  endif;?>
       </div>
    </div>
    <?php

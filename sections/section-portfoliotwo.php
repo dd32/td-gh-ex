@@ -3,7 +3,7 @@
 * Portfolio 
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.4
+* @version   1.0.5
 *
 */
 ?> 
@@ -70,7 +70,9 @@ endif;
       <a href="<?php the_permalink();?>">
         <div class="portfolio-wrapper">
             <!-- Image -->
-            <?php the_post_thumbnail('atomy_portfolio')?>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('atomy_portfolio');else :?>
+              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
+               <?php endif;?>
             <?php
                 global $atomy_woocommerce;
                 $atomy_currency = get_woocommerce_currency_symbol();
@@ -122,7 +124,9 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       <a href="<?php the_permalink();?>">
       <div class="portfolio-wrapper">
             <!-- Image -->
-            <?php the_post_thumbnail('atomy_portfolio')?>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('atomy_portfolio');else :?>
+              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
+               <?php endif;?>
             <?php
                 global $atomy_woocommerce;
                 $atomy_currency = get_woocommerce_currency_symbol();
@@ -175,7 +179,9 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       <a href="<?php the_permalink();?>">
       <div class="portfolio-wrapper">
             <!-- Image -->
-            <?php the_post_thumbnail('atomy_portfolio')?>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('atomy_portfolio');else :?>
+              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
+               <?php endif;?>
             <?php
                 global $atomy_woocommerce;
                 $atomy_currency = get_woocommerce_currency_symbol();
@@ -228,7 +234,9 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       <a href="<?php the_permalink();?>">
       <div class="portfolio-wrapper">
             <!-- Image -->
-            <?php the_post_thumbnail('atomy_portfolio')?>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('atomy_portfolio');else :?>
+              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
+               <?php endif;?>
             <?php
                 global $atomy_woocommerce;
                 $atomy_currency = get_woocommerce_currency_symbol();
@@ -281,7 +289,9 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       <a href="<?php the_permalink();?>">
       <div class="portfolio-wrapper">
             <!-- Image -->
-            <?php the_post_thumbnail('atomy_portfolio')?>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('atomy_portfolio');else :?>
+              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
+               <?php endif;?>
             <?php
                 global $atomy_woocommerce;
                 $atomy_currency = get_woocommerce_currency_symbol();
@@ -311,9 +321,6 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
 </div>
 </div>
 </section>
-
-
-<?php wp_enqueue_script('at-portfolio-js', get_template_directory_uri() . '/js/at-portfolio.js', array(), 'v1.0.0', true );?>
-
+<?php wp_enqueue_script('at-portfolio-js', get_template_directory_uri() . '/js/at-portfolio.js', array(), 'v1.0.5', true );?>
 
 
