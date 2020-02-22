@@ -1572,7 +1572,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             $output .= '
 				<div class="room_page_room_content">
 					<div class="room_page_block_inner">
-							' . $content . '
+							' . wp_kses( $content, BAH_L_Settings::$wp_allowedposttags) . '
 					</div>
 				</div>
 			';
@@ -1602,7 +1602,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 $step_title = isset( $rules_cat['category_meta']['categories_step_title'] ) && ! empty( $rules_cat['category_meta']['categories_step_title'] ) ? $rules_cat['category_meta']['categories_step_title'] : __( 'Details', 'ba-hotel-light' );
                 
                 $output .= '
-				<h2 class="room_sub_title">'.$step_title.'</h2>
+				<h2 class="room_sub_title">'. esc_html($step_title) .'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
 						' . wp_kses( $block_steps, BAH_L_Settings::$wp_allowedposttags) . '
@@ -2557,13 +2557,13 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               $output .= '
                             <div class="search_res_text">
                                 <div class="search_res_title">
-                                   <h3><a href="' . esc_url($item_url) . '"><span class="entry-title-border background-yellow"></span> ' . $post['post_title'] . '</a></h3>';
+                                   <h3><a href="' . esc_url($item_url) . '"><span class="entry-title-border background-yellow"></span> ' . esc_html($post['post_title']) . '</a></h3>';
               
               $output .= bahotel_l_room_info_tags($post['ID'], $info_tags).'
                               </div>
                               <div class="search_res_description">
                                     <div class="search_res_tags_line">
-										' . $icons . '
+										' . wp_kses( $icons, BAH_L_Settings::$wp_allowedposttags) . '
 									</div>
 							  </div>
 						   </div>
@@ -2973,7 +2973,7 @@ if ( ! function_exists( 'bahotel_l_get_excerpt' ) ) :
         
         $excerpt = implode(' ', $words);
         
-        $output = $excerpt ? '<p>'.$excerpt.'</p>' : '';
+        $output = $excerpt ? '<p>'.wp_kses_post($excerpt) .'</p>' : '';
     
     }
     
