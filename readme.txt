@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 License: GNU General Public License v3.0
 License URI:  http://www.gnu.org/licenses/gpl.html
 
@@ -108,6 +108,10 @@ BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage
   * Added slider image opacity setting in customizer.
   * Resolved theme sniffer errors.
 
+= 1.2.9 =
+  * Added border radius and button Padding option for blog page in customizer.
+  * Added show and hide preloader option in customizer.
+
 == Resources ==
 
 BB wedding bliss WordPress Theme, Copyright 2017 Themeshopy
@@ -116,53 +120,53 @@ BB wedding bliss is distributed under the terms of the GNU GPL
 Theme is Built using the following resource bundles.
 
 1. Bootstrap 
-    - Mark Otto
-    - copyright 2011-2020, Mark Otto
-    - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
-    - License: Code released under the MIT License. v4.4.1
-    - https://github.com/twbs/bootstrap/blob/master/LICENSE
+  - Mark Otto
+  - copyright 2011-2020, Mark Otto
+  - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
+  - License: Code released under the MIT License. v4.4.1
+  - https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 2. Font-Awesome 
-    - Davegandy
-    - copyright July 12, 2018, Davegandy
-    - https://github.com/FortAwesome/Font-Awesome.git
-    - License: Font Awesome Free License v5.0.0
-    - https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
+  - Davegandy
+  - copyright July 12, 2018, Davegandy
+  - https://github.com/FortAwesome/Font-Awesome.git
+  - License: Font Awesome Free License v5.0.0
+  - https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
 3. Customizer Pro 
-    - Justin Tadlock
-    - Copyright 2016, Justin Tadlock
-    - https://github.com/justintadlock/trt-customizer-pro.git
-    - License: GNU General Public License v2.0
-    - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+  - Justin Tadlock
+  - Copyright 2016, Justin Tadlock
+  - https://github.com/justintadlock/trt-customizer-pro.git
+  - License: GNU General Public License v2.0
+  - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 4. Superfish 
-    - Joeldbirch
-    - Copyright 2013, Justin Tadlock
-    - https://github.com/joeldbirch/superfish.git
-    - License: Free to use and abuse under the MIT license. v1.7.9
-    - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
+  - Joeldbirch
+  - Copyright 2013, Justin Tadlock
+  - https://github.com/joeldbirch/superfish.git
+  - License: Free to use and abuse under the MIT license. v1.7.9
+  - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 
 5. Screenshot Images
-    License: CC0 1.0 Universal (CC0 1.0) 
-    Source: https://stocksnap.io/license
+  License: CC0 1.0 Universal (CC0 1.0) 
+  Source: https://stocksnap.io/license
 
-    Slider image, Copyright Wu Jianxiong
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://stocksnap.io/photo/HB1CUEWMRS
+  Slider image, Copyright Wu Jianxiong
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/HB1CUEWMRS
 
-    Post image, Copyright Anggoro Sakti
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://stocksnap.io/photo/DSGMWWUKM8
+  Post image, Copyright Anggoro Sakti
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/DSGMWWUKM8
 
-    Post image, Copyright maryna
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://stocksnap.io/photo/4V5A467UNZ
+  Post image, Copyright maryna
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/4V5A467UNZ
 
-    Post image, Copyright The Lazy Artist Gallery
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://stocksnap.io/photo/PDRQFBMYET
+  Post image, Copyright The Lazy Artist Gallery
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/PDRQFBMYET
 
-    Post image, Copyright Alvin Mahmudov
-    License: CC0 1.0 Universal (CC0 1.0)
-    Source: https://stocksnap.io/photo/JQYJR3DCYX
+  Post image, Copyright Alvin Mahmudov
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/JQYJR3DCYX

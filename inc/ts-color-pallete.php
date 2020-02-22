@@ -155,6 +155,24 @@
 		$custom_css .='}';
 		}
 
+	/*------------------------------ Button Settings option-----------------------*/
+
+	$bb_wedding_bliss_button_padding_top_bottom = get_theme_mod('bb_wedding_bliss_button_padding_top_bottom');
+	$bb_wedding_bliss_button_padding_left_right = get_theme_mod('bb_wedding_bliss_button_padding_left_right');
+	if($bb_wedding_bliss_button_padding_top_bottom != false || $bb_wedding_bliss_button_padding_left_right != false){
+		$custom_css .='.blogbutton-small, #comments .form-submit input[type="submit"]{';
+			$custom_css .='padding-top: '.esc_html($bb_wedding_bliss_button_padding_top_bottom).'px; padding-bottom: '.esc_html($bb_wedding_bliss_button_padding_top_bottom).'px; padding-left: '.esc_html($bb_wedding_bliss_button_padding_left_right).'px; padding-right: '.esc_html($bb_wedding_bliss_button_padding_left_right).'px; display:inline-block;';
+		$custom_css .='}';
+	}
+
+	$bb_wedding_bliss_button_border_radius = get_theme_mod('bb_wedding_bliss_button_border_radius');
+	if($bb_wedding_bliss_button_border_radius != false){
+		$custom_css .='.blogbutton-small, #comments .form-submit input[type="submit"], .hvr-sweep-to-right:before, .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active{';
+			$custom_css .='border-radius: '.esc_html($bb_wedding_bliss_button_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+
 
 
 		

@@ -22,6 +22,13 @@
   
   <div class="<?php if( get_theme_mod( 'bb_wedding_bliss_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
+      <?php if(get_theme_mod('bb_wedding_bliss_preloader_option',true)){ ?>
+        <div id="loader-wrapper">
+          <div id="loader"></div>
+          <div class="loader-section section-left"></div>
+          <div class="loader-section section-right"></div>
+        </div>
+      <?php }?>
       <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'bb-wedding-bliss' ); ?><span class="screen-reader-text"><?php esc_html_e('Skip to content','bb-wedding-bliss'); ?></span></a>
       <div id="header">
         <div class="container">

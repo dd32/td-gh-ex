@@ -27,6 +27,16 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'panel' => 'bb_wedding_bliss_panel_id'
 	) );
 
+	$wp_customize->add_setting('bb_wedding_bliss_preloader_option',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_preloader_option',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','bb-wedding-bliss'),
+       'section' => 'bb_wedding_bliss_left_right'
+    ));
+
 	//Sticky Header
 	$wp_customize->add_setting( 'bb_wedding_bliss_sticky_header',array(
       	'sanitize_callback'	=> 'sanitize_text_field'
@@ -74,6 +84,57 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	        ),
 	    )
     );
+
+    // Button
+	$wp_customize->add_section( 'bb_wedding_bliss_theme_button', array(
+		'title' => __('Button Option','bb-wedding-bliss'),
+		'panel' => 'bb_wedding_bliss_panel_id',
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_button_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_button_padding_top_bottom',array(
+		'label'	=> __('Top and Bottom Padding','bb-wedding-bliss'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'bb_wedding_bliss_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_button_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_button_padding_left_right',array(
+		'label'	=> __('Left and Right Padding','bb-wedding-bliss'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'bb_wedding_bliss_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_button_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'bb_wedding_bliss_button_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','bb-wedding-bliss' ),
+		'section'     => 'bb_wedding_bliss_theme_button',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
 
     $font_array = array(
         '' =>'No Fonts',
@@ -231,7 +292,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_paragraph_font_size',array(
@@ -318,7 +379,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('bb_wedding_bliss_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_h1_font_size',array(
@@ -355,7 +416,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('bb_wedding_bliss_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_h2_font_size',array(
@@ -392,7 +453,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('bb_wedding_bliss_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_h3_font_size',array(
@@ -429,7 +490,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('bb_wedding_bliss_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_h4_font_size',array(
@@ -466,7 +527,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('bb_wedding_bliss_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_h5_font_size',array(
@@ -503,7 +564,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('bb_wedding_bliss_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_h6_font_size',array(
