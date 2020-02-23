@@ -7,61 +7,34 @@
  * @package Aileron
  */
 
-if ( ! function_exists( 'aileron_paging_nav' ) ) :
+if ( ! function_exists( 'aileron_the_posts_pagination' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void
  */
-function aileron_paging_nav() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'aileron' ); ?></h1>
-		<div class="nav-links">
-
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> Older posts', 'aileron' ) ); ?></div>
-			<?php endif; ?>
-
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>', 'aileron' ) ); ?></div>
-			<?php endif; ?>
-
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
+function aileron_the_posts_pagination() {
+	// Previous/next posts navigation @since 4.1.0
+	the_posts_pagination( array(
+		'prev_text'          => '<span class="screen-reader-text">' . esc_html__( 'Previous Page', 'aileron' ) . '</span>',
+		'next_text'          => '<span class="screen-reader-text">' . esc_html__( 'Next Page', 'aileron' ) . '</span>',
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'aileron' ) . ' </span>',
+	) );
 }
 endif;
 
-if ( ! function_exists( 'aileron_post_nav' ) ) :
+if ( ! function_exists( 'aileron_the_post_pagination' ) ) :
 /**
- * Display navigation to next/previous post when applicable.
+ * Previous/next post navigation.
  *
  * @return void
  */
-function aileron_post_nav() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
-
-	if ( ! $next && ! $previous ) {
-		return;
-	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'aileron' ); ?></h1>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> %title', 'Previous post link', 'aileron' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>', 'Next post link',     'aileron' ) );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
+function aileron_the_post_pagination() {
+	// Previous/next post navigation @since 4.1.0.
+	the_post_navigation( array(
+		'next_text' => '<span class="meta-nav">' . esc_html__( 'Next', 'aileron' ) . '</span> ' . '<span class="post-title">%title</span>',
+		'prev_text' => '<span class="meta-nav">' . esc_html__( 'Prev', 'aileron' ) . '</span> ' . '<span class="post-title">%title</span>',
+	) );
 }
 endif;
 
@@ -70,9 +43,15 @@ if ( ! function_exists( 'aileron_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function aileron_posted_on() {
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	// No need to display date for sticky posts
+	if ( aileron_has_sticky_post() ) {
+		return;
+	}
+
+	// Time String
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -82,13 +61,12 @@ function aileron_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on"><span class="posted-on-label">Posted on</span> %1$s</span>', 'aileron' ),
-		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
-			esc_url( get_permalink() ),
-			$time_string
-		)
+	// Posted On
+	printf( '<span class="posted-on entry-meta-icon"><span class="screen-reader-text">%1$s</span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+		esc_html_x( 'Posted on', 'post date', 'aileron' ),
+		esc_url( get_permalink() ),
+		wp_kses( $time_string, array( 'time' => array( 'class' => array(), 'datetime' => array() ) ) )
 	);
-
 }
 endif;
 
@@ -97,34 +75,184 @@ if ( ! function_exists( 'aileron_posted_by' ) ) :
  * Prints author.
  */
 function aileron_posted_by() {
+	// Global Post
+	global $post;
 
-	printf( __( '<span class="byline"> by %1$s</span>', 'aileron' ),
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_html( get_the_author() )
-		)
+	// We need to get author meta data from both inside/outside the loop.
+	$post_author_id = get_post_field( 'post_author', $post->ID );
+
+	// Post Author
+	printf( '<span class="byline entry-meta-icon">%1$s <span class="author vcard"><a class="entry-author-link url fn n" href="%2$s" rel="author"><span class="entry-author-name">%3$s</span></a></span></span>',
+		/* translators: %s: post author */
+		esc_html_x( 'by', 'post author', 'aileron' ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID', $post_author_id ) ) ),
+		esc_html( get_the_author_meta( 'display_name', $post_author_id ) )
 	);
+}
+endif;
 
+if ( ! function_exists( 'aileron_comment_count' ) ) :
+	/**
+	 * Prints HTML with the comment count for the current post.
+	 */
+	function aileron_comment_count() {
+		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+			echo '<span class="comments-link entry-meta-icon">';
+
+			/* translators: %s: Name of current post. Only visible to screen readers. */
+			comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'aileron' ), get_the_title() ) );
+
+			echo '</span>';
+		}
+	}
+endif;
+
+if ( ! function_exists( 'aileron_sticky_post' ) ) :
+/**
+ * Prints HTML label for the sticky post.
+ */
+function aileron_sticky_post() {
+	// Sticky Post Validation
+	if ( ! aileron_has_sticky_post() ) {
+		return;
+	}
+
+	// Sticky Post HTML
+	printf( '<span class="post-label post-label-sticky entry-meta-icon">%1$s</span>',
+		/* translators: %s: sticky post label */
+		esc_html_x( 'Featured', 'sticky post label', 'aileron' )
+	);
+}
+endif;
+
+if ( ! function_exists( 'aileron_post_edit_link' ) ) :
+/**
+ * Prints post edit link.
+ *
+ * @return void
+*/
+function aileron_post_edit_link() {
+	// Post edit link Validation
+	if ( aileron_has_post_edit_link() ) {
+		// Post Edit Link
+		printf( '<span class="post-edit-link-meta entry-meta-icon"><span class="screen-reader-text">%1$s</span><a class="post-edit-link" href="%2$s">%3$s</a></span>',
+			esc_html( get_the_title() ),
+			esc_url( get_edit_post_link() ),
+			/* translators: %s: post edit link label */
+			esc_html_x( 'Edit', 'post edit link label', 'aileron' )
+		);
+	}
+}
+endif;
+
+if ( ! function_exists( 'aileron_post_category' ) ) :
+/**
+ * Prints category for the current post.
+ *
+ * @return void
+*/
+function aileron_post_category() {
+	// An array of categories to return for the post.
+	$categories = get_the_category();
+
+	// Validation
+	if ( ! empty( $categories ) && $categories[0] ) {
+		// Post Category List
+		$category_list = '';
+		foreach ( $categories as $category ) {
+			$category_list .= sprintf(
+				'<a href="%1$s" title="%2$s">%3$s</a>, ',
+				esc_url( get_category_link( $category->term_id ) ),
+				esc_attr( $category->cat_name ),
+				esc_html( $category->cat_name )
+			);
+
+			// Bail if display Post First Category Only
+			if ( aileron_mod( 'aileron_archive_co_post_first_category' ) ) {
+				break;
+			}
+		}
+
+		// Post Category HTML
+		$html = printf(
+			'<span class="post-category cat-links entry-meta-icon">%1$s</span>',
+			wp_kses_post( rtrim( $category_list, ', ' ) )
+		);
+	}
+}
+endif;
+
+if ( ! function_exists( 'aileron_read_more_link' ) ) :
+	/**
+	 * Prints Read More Link.
+	 */
+	function aileron_read_more_link() {
+		// Bail Early
+		if ( ! aileron_has_read_more_label() ) {
+			return;
+		}
+
+		// Read More Label
+		$read_more_label = aileron_mod( 'aileron_read_more_label' );
+
+		// Read More Link
+		printf( '<div class="more-link-wrapper"><a href="%1$s" class="more-link">%2$s</a></div>',
+			esc_url( get_permalink() ),
+			esc_html( $read_more_label )
+		);
+	}
+endif;
+
+if ( ! function_exists( 'aileron_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function aileron_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' === get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( _x(', ', 'Used between category, there is a space after the comma.', 'aileron' ) );
+		if ( $categories_list && aileron_categorized_blog() ) {
+			/* translators: %s: posted in categories */
+			printf( '<span class="cat-links cat-links-single">' . esc_html__( 'Posted in %1$s', 'aileron' ) . '</span>', wp_kses_post( $categories_list ) );
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', _x(', ', 'Used between tag, there is a space after the comma.', 'aileron' ) );
+		if ( $tags_list ) {
+			/* translators: %s: posted in tags */
+			printf( '<span class="tags-links tags-links-single">' . esc_html__( 'Tagged %1$s', 'aileron' ) . '</span>', wp_kses_post( $tags_list ) );
+		}
+	}
+
+	/* translators: %s: post title */
+	edit_post_link( sprintf( esc_html__( 'Edit %1$s', 'aileron' ), '<span class="screen-reader-text">' . the_title_attribute( 'echo=0' ) . '</span>' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
 /**
  * Returns true if a blog has more than 1 category.
+ *
+ * @return bool
  */
 function aileron_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	if ( false === ( $all_the_cool_cats = get_transient( 'aileron_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
+		$all_the_cool_cats = get_categories( array (
+			'fields'     => 'ids',
 			'hide_empty' => 1,
+
+			// We only need to know if there is more than one category.
+			'number'     => 2,
 		) );
 
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+		set_transient( 'aileron_categories', $all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( $all_the_cool_cats > 1 ) {
 		// This blog has more than 1 category so aileron_categorized_blog should return true.
 		return true;
 	} else {
@@ -137,103 +265,127 @@ function aileron_categorized_blog() {
  * Flush out the transients used in aileron_categorized_blog.
  */
 function aileron_category_transient_flusher() {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
+	delete_transient( 'aileron_categories' );
 }
 add_action( 'edit_category', 'aileron_category_transient_flusher' );
 add_action( 'save_post',     'aileron_category_transient_flusher' );
 
+if ( ! function_exists( 'aileron_post_thumbnail_single' ) ) :
+	/**
+	 * Display an optional post thumbnail for single posts or pages.
+	 *
+	 * @return void
+	*/
+	function aileron_post_thumbnail_single() {
+		// Context Bail
+		if (
+			is_singular( 'post' ) && ! aileron_mod( 'aileron_single_co_featured_image_post' ) ||
+			is_singular( 'page' ) && ! aileron_mod( 'aileron_single_co_featured_image_page' )
+		) {
+			return;
+		}
+
+		// Post Thumbnail Validation
+		if ( aileron_has_post_thumbnail() ) {
+			// Post Thumbnail
+			$post_thumbnail = get_the_post_thumbnail( null, 'aileron-featured-image-single', array( 'class' => 'img-featured img-responsive' ) );
+
+			// Post Thumbnail HTML
+			printf(
+				'<div class="entry-image-wrapper-single"><figure class="post-thumbnail">%1$s</figure></div>',
+				wp_kses_post( $post_thumbnail )
+			);
+		}
+	}
+endif;
+
+if ( ! function_exists( 'aileron_post_thumbnail' ) ) :
 /**
- * Display an optional post thumbnail.
+ * Display an optional post thumbnail for archives.
  *
- * Wraps the post thumbnail in an anchor element on index
- * views, or a div element when on single views.
- *
+ * @param array $args
  * @return void
 */
-function aileron_post_thumbnail() {
-
-	// Post password check
-	if ( post_password_required() || ! has_post_thumbnail() ) {
+function aileron_post_thumbnail( $args = array() ) {
+	// Let bail
+	if ( ! aileron_mod( 'aileron_archive_co_featured_image' ) ) {
 		return;
 	}
 
-	if ( is_singular() ) :
-	?>
+	// Defaults
+	$defaults = array (
+ 		'size'  => 'aileron-featured-image',
+ 		'class' => 'entry-image-wrapper',
+	);
 
-	<figure class="post-thumbnail post-thumbnail-single">
-		<?php the_post_thumbnail( 'aileron-featured-image', array( 'class' => 'img-featured img-responsive' ) ); ?>
-	</figure><!-- .post-thumbnail -->
+	// Parse incoming $args into an array and merge it with $defaults
+	$args = wp_parse_args( $args, $defaults );
 
-	<?php else : ?>
+	// Post Thumbnail Validation
+	if ( aileron_has_post_thumbnail() ) {
+		// Post Thumbnail
+		$post_thumbnail = get_the_post_thumbnail( null, $args['size'], array( 'class' => 'img-featured img-responsive' ) );
 
-	<figure class="post-thumbnail">
-		<a href="<?php the_permalink(); ?>">
-		<?php the_post_thumbnail( 'aileron-featured-image', array( 'class' => 'img-featured img-responsive' ) ); ?>
-		</a>
-	</figure><!-- .post-thumbnail -->
-
-	<?php endif; // End is_singular()
+		// Post Thumbnail HTML
+		printf( '<div class="%1$s"><a href="%2$s"><figure class="post-thumbnail">%3$s</figure></a></div>',
+			esc_attr( $args['class'] ),
+			esc_url( get_the_permalink() ),
+			wp_kses_post( $post_thumbnail )
+		);
+	}
 }
+endif;
 
 /**
- * Display first category of the post.
- *
- * @return void
-*/
-function aileron_first_category() {
-
-	// Show the First Category Name Only
-	$category = get_the_category();
-	if( $category[0] ) :
-	?>
-
-	<span class="entry-meta-first-category">
-		<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ); ?>"><?php echo esc_html( $category[0]->cat_name ); ?></a>
-	</span>
-
-	<?php
-	endif;
-}
-
-/**
- * Retrieve the layout classes.
+ * Display the layout classes.
  *
  * @param string $section - Name of the section to retrieve the classes
- * @return string
+ * @return void
  */
-function aileron_blog_layout_class( $section = 'content' ) {
+function aileron_layout_class( $section = 'content' ) {
+	// Sidebar Position
+	$sidebar_position = aileron_mod( 'aileron_sidebar_position' );
+	if ( ! aileron_has_sidebar() ) {
+		$sidebar_position = 'no';
+	}
 
-	// Blog layout option
-	$blog_layout = aileron_option( 'blog_layout' );
-
-	// Blog layouts
-	$blog_layout_skeleton = array(
+	// Layout Skeleton
+	$layout_skeleton = array(
+		'content' => array(
+			'content' => 'col',
+		),
 
 		'content-sidebar' => array(
-			'content' => 'col-xs-12 col-sm-12 col-md-8 col-lg-8',
-			'sidebar' => 'col-xs-12 col-sm-12 col-md-4 col-lg-4',
+			'content' => 'col-16 col-sm-16 col-md-16 col-lg-11 col-xl-11 col-xxl-11',
+			'sidebar' => 'col-16 col-sm-16 col-md-16 col-lg-5 col-xl-5 col-xxl-5',
 		),
 
 		'sidebar-content' => array(
-			'content' => 'col-xs-12 col-sm-12 col-md-8 col-lg-8 col-md-push-4 col-lg-push-4',
-			'sidebar' => 'col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-pull-8 col-lg-pull-8',
+			'content' => 'col-16 col-sm-16 col-md-16 col-lg-11 col-xl-11 col-xxl-11 order-lg-2 order-xl-2 order-xxl-2',
+			'sidebar' => 'col-16 col-sm-16 col-md-16 col-lg-5 col-xl-5 col-xxl-5 order-lg-1 order-xl-1 order-xxl-1',
 		),
-
 	);
 
-	switch( $blog_layout ) {
+	// Layout Classes
+	switch( $sidebar_position ) {
 
-		case 'sidebar-content':
-		$layout_classes = ( 'sidebar' == $section )? $blog_layout_skeleton['sidebar-content']['sidebar'] : $blog_layout_skeleton['sidebar-content']['content'];
+		case 'no':
+		$layout_classes = $layout_skeleton['content']['content'];
 		break;
 
-		case 'content-sidebar':
+		case 'left':
+		$layout_classes = ( 'sidebar' === $section )? $layout_skeleton['sidebar-content']['sidebar'] : $layout_skeleton['sidebar-content']['content'];
+		break;
+
+		case 'right':
 		default:
-		$layout_classes = ( 'sidebar' == $section )? $blog_layout_skeleton['content-sidebar']['sidebar'] : $blog_layout_skeleton['content-sidebar']['content'];
+		$layout_classes = ( 'sidebar' === $section )? $layout_skeleton['content-sidebar']['sidebar'] : $layout_skeleton['content-sidebar']['content'];
 
 	}
 
-	return $layout_classes;
-
+	echo esc_attr( $layout_classes );
 }

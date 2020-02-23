@@ -1,55 +1,69 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages.
  *
  * @package Aileron
  */
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+	<div class="page-header-wrapper">
+		<div class="container">
 
-	<div class="container">
-		<div class="row">
-
-			<div id="primary" class="content-area col-xs-12 col-sm-12 col-md-8 col-lg-8">
-				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-
-				<?php if ( have_posts() ) : ?>
+			<div class="row">
+				<div class="col">
 
 					<header class="page-header">
-						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'aileron' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+						<?php printf( '<h1 class="page-title">%1$s <span>%2$s</span></h1>', esc_html__( 'Search Results for:', 'aileron' ), get_search_query() ); ?>
 					</header><!-- .page-header -->
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+				</div><!-- .col -->
+			</div><!-- .row -->
 
-						<?php
-							/* Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'content', get_post_format() );
-						?>
+		</div><!-- .container -->
+	</div><!-- .page-header-wrapper -->
 
-					<?php endwhile; ?>
+	<div class="site-content-inside">
+		<div class="container">
+			<div class="row">
 
-					<?php aileron_paging_nav(); ?>
+				<div id="primary" class="content-area <?php aileron_layout_class( 'content' ); ?>">
+					<main id="main" class="site-main">
 
-				<?php else : ?>
+					<?php if ( have_posts() ) : ?>
 
-				<?php get_template_part( 'content', 'none' ); ?>
+						<div id="post-wrapper" class="post-wrapper post-wrapper-archive post-wrapper-archive-search">
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php endif; ?>
+							<?php
+								/* Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								get_template_part( 'template-parts/content', get_post_format() );
+							?>
 
-				</main><!-- #main -->
-			</div><!-- #primary -->
+						<?php endwhile; ?>
+						</div><!-- .post-wrapper -->
 
-			<?php get_sidebar(); ?>
+						<?php aileron_the_posts_pagination(); ?>
 
-		</div><!-- .row -->
-	</div><!-- .container -->
+					<?php else : ?>
 
-</div><!-- #content -->
+					<div class="post-wrapper post-wrapper-single post-wrapper-single-notfound">
+						<?php get_template_part( 'template-parts/content', 'none' ); ?>
+					</div><!-- .post-wrapper -->
+
+					<?php endif; ?>
+
+					</main><!-- #main -->
+				</div><!-- #primary -->
+
+				<?php get_sidebar(); ?>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .site-content-inside -->
 
 <?php get_footer(); ?>

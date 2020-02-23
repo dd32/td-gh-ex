@@ -2,33 +2,25 @@
 /**
  * The template for displaying the footer.
  *
+ * Contains the closing of the #content div and all content after
+ *
  * @package Aileron
  */
 ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+	</div><!-- #content -->
 
-		<div class="site-info">
-			<div class="site-info-inside">
-
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-
-							<div class="credits-wrapper">
-								<?php do_action( 'aileron_credits' ); ?>
-							</div><!-- .credits-wrapper -->
-
-						</div><!-- .col -->
-					</div><!-- .row -->
-				</div><!-- .container -->
-
-			</div><!-- .site-info-inside -->
-		</div><!-- .site-info -->
-
+	<footer id="colophon" class="site-footer">
+		<?php
+		// Site Info
+		get_template_part( 'template-parts/site-info' );
+		?>
 	</footer><!-- #colophon -->
 
-</div> <!-- #page .site-wrapper -->
+</div><!-- #page .site-wrapper -->
+
+<div class="overlay-effect"></div><!-- .overlay-effect -->
+
 <?php wp_footer(); ?>
 </body>
 </html>

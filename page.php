@@ -12,35 +12,35 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+	<div class="site-content-inside">
+		<div class="container">
+			<div class="row">
 
-	<div class="container">
-		<div class="row">
+				<div id="primary" class="content-area <?php aileron_layout_class( 'content' ); ?>">
+					<main id="main" class="site-main">
 
-			<div id="primary" class="content-area col-xs-12 col-sm-12 col-md-8 col-lg-8">
-				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
+						<div id="post-wrapper" class="post-wrapper post-wrapper-single post-wrapper-single-page">
+						<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php while ( have_posts() ) : the_post(); ?>
+							<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-						<?php get_template_part( 'content', 'page' ); ?>
+							<?php
+								// If comments are open or we have at least one comment, load up the comment template
+								if ( comments_open() || '0' != get_comments_number() ) :
+									comments_template();
+								endif;
+							?>
 
-						<?php
-							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || '0' != get_comments_number() ) :
-								comments_template();
-							endif;
-						?>
+						<?php endwhile; // end of the loop. ?>
+						</div><!-- .post-wrapper -->
 
-					<?php endwhile; // end of the loop. ?>
+					</main><!-- #main -->
+				</div><!-- #primary -->
 
-				</main><!-- #main -->
-			</div><!-- #primary -->
+				<?php get_sidebar(); ?>
 
-			<?php get_sidebar(); ?>
-
-		</div><!-- .row -->
-	</div><!-- .container -->
-
-</div><!-- #content -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .site-content-inside -->
 
 <?php get_footer(); ?>

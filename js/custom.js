@@ -1,70 +1,262 @@
-/*
+/*!
  * Custom v1.0
- * ThemeCot.com
+ * Contains handlers for the different site functions
  *
- * Copyright (c) 2013-2014 ThemeCot.com
- *
+ * Copyright (c) 2020 ThemeCot.com
  * License: GNU General Public License v2 or later
  * http://www.gnu.org/licenses/gpl-2.0.html
- *
  */
 
-( function( $ ) {
+/* global enquire:true */
 
+( function( $ ) {
 	var aileron = {
 
-		// Menu
-		menuInit: function() {
+		// Responsive Menu Build
+		responsiveMenuBuild: function () {
+			// Site Header Menu Wrapper
+			var $menuWrapper = $( '.site-header-menu-wrapper' );
 
+			// Add dropdown toggle that display child menu items.
+			$( '.site-header-menu .page_item_has_children > a, .site-header-menu .menu-item-has-children > a' ).append( '<button class="dropdown-toggle" aria-expanded="false"/>' );
+			$( '.site-header-menu .dropdown-toggle' ).off( 'click' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).toggleClass( 'toggle-on' );
+				$( this ).parent().next( '.children, .sub-menu' ).toggleClass( 'toggle-on' );
+				$( this ).attr( 'aria-expanded', $( this ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			} );
+
+			// Add Close Button Markup
+			$menuWrapper.prepend( '<div class="site-header-menu-responsive-close-wrapper"><button class="site-header-menu-responsive-close">&times;</button></div>' );
+		},
+
+		// Responsive Menu Destroy
+		responsiveMenuDestroy: function () {
+			// Site Header Menu
+			var $menuWrapper = $( '.site-header-menu-wrapper' );
+
+			// Remove Dropdown Toggles
+			$menuWrapper.find( '.dropdown-toggle' ).remove();
+
+			// Remove Close Button
+			$menuWrapper.find( '.site-header-menu-responsive-close-wrapper' ).remove();
+		},
+
+		// SF Menu Build
+		sfMenuBuild: function () {
 			// Superfish Menu
-			$( 'ul.sf-menu' ).superfish({
-				delay: 			1200,
-				animation: 		{ opacity : 'show', height : 'show' },
-				speed: 			'fast',
-				autoArrows: 	false,
-				cssArrows: 		true
-			});
-
+			$( 'ul.sf-menu' ).superfish( {
+				delay: 1500,
+				animation: { opacity: 'show', height: 'show' },
+				speed: 'fast',
+				autoArrows: false,
+				cssArrows: true,
+			} );
 		},
 
-		// CSS3 Animation
-		animationInit: function() {
+		// SF Menu Destroy
+		sfMenuDestroy: function () {
+			// Superfish Menu Destroy
+			$( 'ul.sf-menu' ).superfish( 'destroy' );
+		},
 
-			// On Hover
-			$( '.img-postlist, .img-featured' ).hover(
-				function() {
-					$( this ).addClass( 'img-grayscale' );
-				}, function() {
-					$( this ).removeClass( 'img-grayscale' );
+		// Big Screen Match
+		bigScreenMatch: function () {
+			// Site Header Menu Wrapper
+			var $menuWrapper = $( '.site-header-menu-wrapper' );
+			$menuWrapper.removeClass( 'site-header-menu-responsive-wrapper' );
+
+			// Site Header Menu
+			var $menu = $( '.site-header-menu' );
+			$menu.removeClass( 'site-header-menu-responsive' );
+			$menu.addClass( 'sf-menu' );
+
+			// Superfish Menu Build
+			aileron.sfMenuBuild();
+		},
+
+		// Big Screen UnMatch
+		bigScreenUnMatch: function () {
+			// Superfish Menu Destroy
+			aileron.sfMenuDestroy();
+
+			// Site Header Menu
+			var $menu = $( '.site-header-menu' );
+			$menu.addClass( 'site-header-menu-responsive' );
+			$menu.removeClass( 'sf-menu' );
+
+			// Site Header Menu Wrapper
+			var $menuWrapper = $( '.site-header-menu-wrapper' );
+			$menuWrapper.addClass( 'site-header-menu-responsive-wrapper' );
+		},
+
+		// Small Screen Match
+		smallScreenMatch: function () {
+			// Responsive Menu Build
+			aileron.responsiveMenuBuild();
+
+			// Sliding Panels for Menu
+			aileron.slidePanelInit();
+
+			// Responsive Tables
+			$( '.entry-content, .sidebar' ).find( 'table' ).wrap( '<div class="table-responsive"></div>' );
+		},
+
+		// Small Screen UnMatch
+		smallScreenUnMatch: function () {
+			// Responsive Menu Destroy
+			aileron.responsiveMenuDestroy();
+
+			// Responsive Menu Close
+			aileron.slidePanelCloseInit();
+
+			// Responsive Tables Undo
+			$( '.entry-content, .sidebar' ).find( 'table' ).unwrap( '<div class="table-responsive"></div>' );
+		},
+
+		// Open Slide Panel - Responsive Mobile Menu
+		slidePanelInit: function () {
+			// Elements
+			var $menuWrapper = $( '.site-header-menu-wrapper' );
+			var $overlayEffect = $( '.overlay-effect' );
+			var $menuClose = $( '.site-header-menu-responsive-close' );
+
+			// Responsive Menu Slide
+			$( '.toggle-menu-control' ).off( 'click' ).on( 'click', function( e ) {
+				// Prevent Default
+				e.preventDefault();
+				e.stopPropagation();
+
+				// ToggleClass
+				$menuWrapper.toggleClass( 'show' );
+				$overlayEffect.toggleClass( 'open' );
+
+				// Add Body Class
+				if ( $overlayEffect.hasClass( 'open' ) ) {
+					$( 'body' ).addClass( 'has-responsive-menu' );
 				}
-			);
+			} );
 
+			// Responsive Menu Close
+			$menuClose.off( 'click' ).on( 'click', function( e ) {
+				// Prevent Default
+				e.preventDefault();
+				e.stopPropagation();
+
+				// Close Slide Panel
+				aileron.slidePanelCloseInit();
+			} );
+
+			// Overlay Slide Close
+			$overlayEffect.off( 'click' ).on( 'click', function() {
+				aileron.slidePanelCloseInit();
+			} );
 		},
 
-		// Fitvids
-		fitvidsInit: function() {
+		// Close Slide Panel
+		slidePanelCloseInit: function () {
+			// Elements
+			var $menuWrapper = $( '.site-header-menu-wrapper' );
+			var $overlayEffect = $( '.overlay-effect' );
 
-			// Fitvids - For responsive videos
-			setTimeout( function() {
-				$( '.entry-content' ).fitVids();
-			}, 500 );
+			// Slide Panel Close Logic
+			if ( $overlayEffect.hasClass( 'open' ) ) {
+				// Remove Body Class
+				$( 'body' ).removeClass( 'has-responsive-menu' );
 
-		}
+				// For Menu
+				if ( $menuWrapper.hasClass( 'show' ) ) {
+					$menuWrapper.toggleClass( 'show' );
+				}
 
-	}
+				// Toggle Overlay Slide
+				$overlayEffect.toggleClass( 'open' );
+			}
+		},
 
-	/** Document Ready */
+		// Responsive Videos
+		responsiveVideosInit: function () {
+			$( '.entry-content, .sidebar' ).fitVids();
+		},
+
+		// Widget Logic
+		widgetLogicInit: function () {
+			// Social Menu Widget
+			$( '.widget_nav_menu > div[class^="menu-social-"] > ul > li > a' ).wrapInner( '<span class="screen-reader-text"></span>' );
+
+			// Custom Menu Widget
+			$( '.widget_nav_menu .menu-item-has-children > a' ).append( '<span class="custom-menu-toggle" aria-expanded="false"></span>' );
+			$( '.widget_nav_menu .custom-menu-toggle' ).off( 'click' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).toggleClass( 'toggle-on' );
+				$( this ).parent().next( '.sub-menu' ).toggleClass( 'toggle-on' );
+				$( this ).attr( 'aria-expanded', $( this ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			} );
+
+			// Pages Widget
+			$( '.widget_pages .page_item_has_children > a' ).append( '<span class="page-toggle" aria-expanded="false"></span>' );
+			$( '.widget_pages .page-toggle' ).off( 'click' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).toggleClass( 'toggle-on' );
+				$( this ).parent().next( '.children' ).toggleClass( 'toggle-on' );
+				$( this ).attr( 'aria-expanded', $( this ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			} );
+
+			// Categories Widget
+			$( '.widget_categories' ).find( '.children' ).parent().addClass( 'category_item_has_children' );
+			$( '.widget_categories .category_item_has_children > a' ).append( '<span class="category-toggle" aria-expanded="false"></span>' );
+			$( '.widget_categories .category-toggle' ).off( 'click' ).on( 'click', function( e ) {
+				e.preventDefault();
+				$( this ).toggleClass( 'toggle-on' );
+				$( this ).parent().next( '.children' ).toggleClass( 'toggle-on' );
+				$( this ).attr( 'aria-expanded', $( this ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			} );
+		},
+
+		// Media Queries
+		mqInit: function () {
+			enquire
+				.register( 'screen and ( min-width: 992px )', {
+					match() {
+						// Big Screen Match
+						aileron.bigScreenMatch();
+					},
+					unmatch() {
+						// Big Screen UnMatch
+						aileron.bigScreenUnMatch();
+					},
+				} )
+				.register( 'screen and ( max-width: 991px )', {
+					match() {
+						// Small Screen Match
+						aileron.smallScreenMatch();
+					},
+					unmatch() {
+						// Small Screen UnMatch
+						aileron.smallScreenUnMatch();
+					},
+				} );
+		},
+	};
+
+	// Document Ready
 	$( document ).ready( function() {
+		// Responsive Videos
+		aileron.responsiveVideosInit();
 
-		// Menu
-		aileron.menuInit();
+		// Widget Logic
+		aileron.widgetLogicInit();
 
-		// CSS3 Animation
-		aileron.animationInit();
-
-		// Fitvids - For responsive videos
-		aileron.fitvidsInit();
-
+		// Media Queries
+		aileron.mqInit();
 	} );
 
-} )( jQuery );
+	// Document Keyup
+	$( document ).keyup( function( e ) {
+		// Escape Key
+		if ( e.keyCode === 27 ) {
+			// Make the escape key to close the slide panel
+			aileron.slidePanelCloseInit();
+		}
+	} );
+}( jQuery ) );

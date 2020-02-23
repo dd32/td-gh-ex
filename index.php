@@ -13,45 +13,65 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+	<?php if ( ! have_posts() ) : ?>
+	<div class="page-header-wrapper">
+		<div class="container">
 
-	<div class="container">
-		<div class="row">
+			<div class="row">
+				<div class="col">
 
-			<div id="primary" class="content-area col-xs-12 col-sm-12 col-md-8 col-lg-8">
-				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+					<header class="page-header">
+						<?php printf( '<h1 class="page-title">%1$s</h1>', esc_html__( 'Nothing Found', 'aileron' ) ); ?>
+					</header><!-- .page-header -->
 
-				<?php if ( have_posts() ) : ?>
+				</div><!-- .col -->
+			</div><!-- .row -->
 
-					<?php /* Start the Loop */ ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+		</div><!-- .container -->
+	</div><!-- .page-header-wrapper -->
+	<?php endif; ?>
 
-						<?php
-							/* Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'content', get_post_format() );
-						?>
+	<div class="site-content-inside">
+		<div class="container">
+			<div class="row">
 
-					<?php endwhile; ?>
+				<div id="primary" class="content-area <?php aileron_layout_class( 'content' ); ?>">
+					<main id="main" class="site-main">
 
-					<?php aileron_paging_nav(); ?>
+					<?php if ( have_posts() ) : ?>
 
-				<?php else : ?>
+						<div id="post-wrapper" class="post-wrapper post-wrapper-archive">
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'none' ); ?>
+							<?php
+								/* Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+								 */
+								get_template_part( 'template-parts/content', get_post_format() );
+							?>
 
-				<?php endif; ?>
+						<?php endwhile; ?>
+						</div><!-- .post-wrapper -->
 
-				</main><!-- #main -->
-			</div><!-- #primary -->
+						<?php aileron_the_posts_pagination(); ?>
 
-			<?php get_sidebar(); ?>
+					<?php else : ?>
 
-		</div><!-- .row -->
-	</div><!-- .container -->
+						<div class="post-wrapper post-wrapper-single post-wrapper-single-notfound">
+							<?php get_template_part( 'template-parts/content', 'none' ); ?>
+						</div><!-- .post-wrapper -->
 
-</div><!-- #content -->
+					<?php endif; ?>
+
+					</main><!-- #main -->
+				</div><!-- #primary -->
+
+				<?php get_sidebar(); ?>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .site-content-inside -->
 
 <?php get_footer(); ?>
