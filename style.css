@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
 Description: Simple and Minimal WordPress Theme ideal for a blog, with two columns, unlimited colors and theme options created by CrestaProject.com. Compatible with Gutenberg. Live demo https://crestaproject.com/demo/blogghiamo/
-Version: 1.8.1
+Version: 1.8.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -1560,8 +1560,6 @@ object {
 	}
 	#secondary aside {
 		-webkit-column-break-inside: avoid;
-		-moz-column-break-inside: avoid;
-		column-break-inside: avoid;
 	}
 	.site-title {
 		font-size: 50px;
@@ -1612,8 +1610,6 @@ object {
 	}
 	#secondary aside {
 		-webkit-column-break-inside: initial;
-		-moz-column-break-inside: initial;
-		column-break-inside: initial;
 	}
 	.theTop, .comments-area, .site-main .post-navigation {
 		padding: 1.5em 0.5em;
