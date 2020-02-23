@@ -123,6 +123,7 @@ function graphene_setup() {
 
 	/* Add responsive embeds */
 	add_filter( 'embed_oembed_html', 'graphene_responsive_embed', 10, 3 );
+	add_theme_support( 'responsive-embeds' );
         
     do_action( 'graphene_setup' );
 }

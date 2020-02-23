@@ -7,7 +7,7 @@ if ( ! function_exists( 'graphene_comment' ) ) :
 function graphene_comment( $comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; 
 	?>
-		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+		<li id="comment-<?php comment_ID(); ?>" <?php comment_class( 'comment' ); ?>>
 			<div class="row">
 				<?php do_action( 'graphene_before_comment' ); ?>
 				
@@ -134,6 +134,7 @@ function graphene_get_comment_count( $type = 'comments', $only_approved_comments
 	if ( ! get_the_ID() ) return;
 	if 		( $type == 'comments' ) 	$type_sql = 'comment_type = ""';
 	elseif 	( $type == 'pings' )		$type_sql = 'comment_type != ""';
+	elseif 	( $type == 'review' ) 		$type_sql = 'comment_type = "review"';
 	elseif 	( $type == 'trackbacks' ) 	$type_sql = 'comment_type = "trackback"';
 	elseif 	( $type == 'pingbacks' )	$type_sql = 'comment_type = "pingback"';
 	

@@ -73,8 +73,7 @@ p cite {
 }
 .entry-content .wp-block-gallery {
 	padding: 0;
-	margin-left: -8px;
-	margin-right: -8px;
+    max-width: 100%;
 }
 .wp-block-gallery .blocks-gallery-image img, 
 .wp-block-gallery .blocks-gallery-item img {
@@ -189,6 +188,10 @@ table tr,
 }
 .wp-block-cover-image {
 	display: flex !important;
+}
+.entry-content .blocks-gallery-grid {
+    padding: 0;
+    max-width: 100%;
 }
 
 @media only screen and (min-width: 768px) {

@@ -43,6 +43,7 @@ global $graphene_settings;
 <?php /* Get the comments and pings count */ 
 	global $graphene_tabbed_comment;
 	$comments_num = graphene_get_comment_count();
+    
 	// to also show comments awaiting approval
 	$allcomments_num = graphene_get_comment_count( 'comments', false );
 	$pings_num = graphene_get_comment_count( 'pings' );

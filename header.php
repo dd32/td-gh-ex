@@ -96,26 +96,19 @@
                         $show_title = ( ! in_array( get_theme_mod( 'header_textcolor', apply_filters( 'graphene_header_textcolor', 'ffffff' ) ), array( 'blank', '' ) ) ) ? true : false;
                         $title_tag_class = 'header_title';
                         if ( ! $show_title ) $title_tag_class .= ' mobile-only';
+                    ?>
 
-                        if ( is_front_page() || is_home() ) { 
-                            $title_tag = ( ! $graphene_settings['slider_as_header'] ) ? 'h1' : 'p';
-                            $desc_tag = 'h2';
-                        } else {
-                            $title_tag = 'h2';
-                            $desc_tag = 'h3';
-                        }
-                        ?>
-                        <?php graphene_container_wrapper( 'start' ); ?>
-	                        <?php echo "<$title_tag class=\"$title_tag_class\">"; ?>
-	                            <?php if ( ! is_front_page() ) : ?><a href="<?php echo apply_filters( 'graphene_header_link' , home_url() ); ?>" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>"><?php endif; ?>
-	                                <?php bloginfo( 'name' ); ?>
-	                            <?php if ( ! is_front_page() ) : ?></a><?php endif; ?>
-	                        <?php echo "</$title_tag>"; ?>
-                        
-	                        <?php if ( ! $graphene_settings['slider_as_header'] && $show_title ) : ?>
-	                            <?php echo "<$desc_tag class=\"header_desc\">"; ?><?php bloginfo( 'description' ); ?><?php echo "</$desc_tag>"; ?>
-	                        <?php endif; ?>
-                        <?php graphene_container_wrapper( 'end' ); ?>
+                    <?php graphene_container_wrapper( 'start' ); ?>
+                        <p class="<?php echo $title_tag_class; ?>">
+                            <?php if ( ! is_front_page() ) : ?><a href="<?php echo apply_filters( 'graphene_header_link' , home_url() ); ?>" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>"><?php endif; ?>
+                                <?php bloginfo( 'name' ); ?>
+                            <?php if ( ! is_front_page() ) : ?></a><?php endif; ?>
+                        </p>
+                    
+                        <?php if ( ! $graphene_settings['slider_as_header'] && $show_title ) : ?>
+                            <p class="header_desc"><?php bloginfo( 'description' ); ?></p>
+                        <?php endif; ?>
+                    <?php graphene_container_wrapper( 'end' ); ?>
 
                     <?php do_action( 'graphene_navbar_header' ); ?>
                 </div>

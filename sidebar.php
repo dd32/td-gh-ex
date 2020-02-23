@@ -7,7 +7,13 @@
  * @since graphene 1.0
  */
 global $graphene_settings;
-?>	
+
+/* Load WooCommerce sidebar template when using Graphene Plus and WooCommerce installed */
+if ( class_exists( 'WooCommerce' ) && function_exists( 'graphene_wc_widgets_init' ) ) {
+	get_template_part( 'plus/woocommerce/sidebar' );
+	return;
+}
+?>
     
 <div id="sidebar1" <?php graphene_grid( 'sidebar sidebar-right widget-area', 0, $graphene_settings['column_width']['two_col']['sidebar'], $graphene_settings['column_width']['three_col']['sidebar_right'] ); ?>>
 

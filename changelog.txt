@@ -4,6 +4,13 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.7.2
+	* Added: Responsive embed in block editor
+	* Added: Ensure text are visible before webfonts are loaded
+	* Fixed: Background colour for homepage panes
+	* Fixed: Images in gallery block overflows the content area in Microsoft Edge
+	* Changed: Site title and description no longer use heading elements
+
 Version 2.7.1
 	* Fixed: Error when checking for theme updates in certain multisite configurations
 	* Fixed: Ads appear in front page when using Static Front Page, when it should be disabled
