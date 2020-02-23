@@ -2,21 +2,21 @@
 
 Contributors: Nayrathemes
 Requires at least: 4.4
-Tested up to: 5.6
+Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.39
-Version: 2.0.39
+Stable tag: 2.0.4
+Version: 2.0.4
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
 
 == Copyright ==
 
-Arowana WordPress Theme, Copyright 2021 Nayra Themes
+Arowana WordPress Theme, Copyright 2020 Nayra Themes
 Arowana is distributed under the terms of the GPLv2 or later
 
 
-StartKit WordPress Theme, Copyright 2021 Nayra Themes. StartKit WordPress Theme is distributed under the terms of the GPLv2 or later
+StartKit WordPress Theme, Copyright 2020 Nayra Themes. StartKit WordPress Theme is distributed under the terms of the GPLv2 or later
 
 == Description ==
 
@@ -98,130 +98,19 @@ Source: https://github.com/soderlind/class-customizer-toggle-control
 License -  GNU GENERAL PUBLIC LICENSE (https://www.gnu.org/licenses/)
 Source: https://github.com/soderlind/class-customizer-toggle-control
 
-12) Customizer Repeater Control
-=================================================================================================
-License -  MIT LICENSE (https://github.com/cristian-ungureanu/customizer-repeater/blob/production/LICENSE)
-Source: https://github.com/cristian-ungureanu/customizer-repeater
-
-13) Screenshot Image
+12) Screenshot Image
 =================================================================================================
 Screenshot Image
 URL: https://pxhere.com/en/photo/1446785
 Source: https://pxhere.com
 License: CC0 Public Domain
 
-14) Image Folder Images
+13) Image Folder Images
 =================================================================================================
 All other Images have been used in images folder, Created by Nayra Themes. Also they are GPL Licensed and free to use and free to redistribute further.
 
 
 == Changelog ==
-
-@version 2.0.39
-*Copyright Updated
-
-@version 2.0.38
-*Upsale Section Position Changed in Customizer
-
-@version 2.0.37
-* Tested With WordPress 5.6
-
-@version 2.0.36
-* Added Functionality for Import Data of Parent Theme
-
-@version 2.0.35
-* Tested With WordPress 5.5.3
-
-@version 2.0.34
-* Code Improvement
-
-@version 2.0.33
-* Readme Updated
-
-@version 2.0.32
-* Tested With WordPress 5.5.1
-
-@version 2.0.31
-* Changed Escaping in Footer Copyright
-
-@version 2.0.30 
-* Tested with WordPress 5.5
-
-@version 2.0.29
-* Added User Icon in Blog Meta
-
-@version 2.0.28
-* Code Improvement in Header
-
-@version 2.0.27
-* Code Improvement
-
-@version 2.0.26
-* Removed Unnecessary Styles
-
-@version 2.0.25
-* Screenshot Updated
-
-@version 2.0.24
-* Customizer Repeater Control Licence Added
-
-@version 2.0.23
-* Tested With WordPress 5.4.2
-
-@version 2.0.22
- * Code Improvement in Footer
- 
-@version 2.0.21
- * Improved wp_body_open Function
-
-@version 2.0.20
-* Tested up to & Requires PHP Fields Added in Style.css
-
-@version 2.0.19
-* Removed Unnecessary Styles
-
-@version 2.0.18
-* Removed Unnecessary Styles
-
-@version 2.0.17
-* Tested With WordPress 5.4.1 
-
-@version 2.0.16
-* Subject Tag Updated
-
-@version 2.0.15
-* Code Improvement
-
-@version 2.0.14
-* Keyboard Navigation Improved
-* Code Improvement
-
-@version 2.0.13
-* Tested With WordPress 5.4 
-
-@version 2.0.12
-* Code Improvement In Blog Section
-
-@version 2.0.11
-* Remove Unnecessary Styles
-
-@version 2.0.10
-* Prefixing Issues Resolved
-
-@version 2.0.9
-* Remove Unnecessary Styles
-
-@version 2.0.8
-* Screenshot Updated
-
-@version 2.0.7
-* Menu Active Style Added
-
-@version 2.0.6
-* Code Optimize In Navigation File
-
-@version 2.0.5
-* Code Optimize In Navigation
 
 @version 2.0.4
 * Remove Unnecessary Style
@@ -237,3 +126,91 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 @version 2.0
 * Code Improvement
+
+@version 1.9
+* Remove Unnecessary Style
+
+@version 1.8
+* Copyright Updated
+
+@version 1.7
+* Remove Unnecessary Style
+
+@version 1.6
+* Remove Unnecessary Style
+
+@version 1.5
+* Tested With WordPress 5.3.2
+
+@version 1.4
+* Remove Unnecessary Style
+
+@version 1.3
+* Code Improvement
+
+@version 1.2
+* Screenshot Updated
+
+@version 1.0.20
+* Tested With WordPress 5.3.1
+* Style Improvement
+
+@version 1.0.19
+* Add Upsale Button
+
+@version 1.0.18
+* Site Title Styled
+
+@version 1.0.17
+* Screenshot Changed
+
+@version 1.0.16
+* Screenshot Changed
+
+@version 1.0.15
+* Style Improvement
+
+@version 1.0.14
+* Subject Tags Updated
+
+@version 1.0.13
+* Resolve Escaping Issue
+
+@version 1.0.12
+* Theme Description Changed
+
+@version 1.0.11
+* Theme Description Changed
+
+@version 1.0.10
+* Remove Unnecessary Style
+
+@version 1.0.9
+* Tested With WordPress 5.3
+
+@version 1.0.8
+* Screenshot Updated
+
+@version 1.0.7
+* Screenshot Updated
+
+@version 1.0.6
+* Remove Unnecessary Style
+
+@version 1.0.5
+* Remove Unnecessary Style
+
+@version 1.0.4
+* Style Improvement
+
+@version 1.0.3
+* Theme URI Added
+
+@version 1.0.2
+* Theme Review Issues Resolved
+
+@version 1.0.1
+* Theme Review Issues Resolved
+
+@version 1.0
+* Initial release
