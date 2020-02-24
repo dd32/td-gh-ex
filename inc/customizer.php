@@ -31,7 +31,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_first', array(
-  		'label' => 'First Color Option',
+  		'label' => __( 'First Color Option', 'advance-automobile' ),
   		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
 	    'section' => 'advance_automobile_theme_color_option',
 	    'settings' => 'advance_automobile_theme_color_first',
@@ -42,7 +42,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'sanitize_callback' => 'sanitize_hex_color'
   	));
   	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_second', array(
-  		'label' => 'Second Color Option',
+  		'label' => __( 'Second Color Option', 'advance-automobile' ),
   		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
 	    'section' => 'advance_automobile_theme_color_option',
 	    'settings' => 'advance_automobile_theme_color_second',
@@ -176,7 +176,7 @@ function advance_automobile_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_automobile_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_paragraph_font_size',array(
@@ -263,7 +263,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('advance_automobile_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_h1_font_size',array(
@@ -300,10 +300,9 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('advance_automobile_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_automobile_h2_font_size',array(
 		'label'	=> __('h2 Font Size','advance-automobile'),
 		'section'	=> 'advance_automobile_typography',
@@ -338,10 +337,9 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('advance_automobile_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_automobile_h3_font_size',array(
 		'label'	=> __('h3 Font Size','advance-automobile'),
 		'section'	=> 'advance_automobile_typography',
@@ -376,10 +374,9 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('advance_automobile_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_automobile_h4_font_size',array(
 		'label'	=> __('h4 Font Size','advance-automobile'),
 		'section'	=> 'advance_automobile_typography',
@@ -414,10 +411,9 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('advance_automobile_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_automobile_h5_font_size',array(
 		'label'	=> __('h5 Font Size','advance-automobile'),
 		'section'	=> 'advance_automobile_typography',
@@ -452,10 +448,9 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('advance_automobile_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_automobile_h6_font_size',array(
 		'label'	=> __('h6 Font Size','advance-automobile'),
 		'section'	=> 'advance_automobile_typography',
@@ -469,6 +464,16 @@ function advance_automobile_customize_register($wp_customize) {
 		'priority' => null,
 		'panel'    => 'advance_automobile_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_automobile_preloader_option',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_preloader_option',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','advance-automobile'),
+       'section' => 'advance_automobile_left_right'
+    ));
 
 	$wp_customize->add_setting('advance_automobile_theme_options',array(
         'default' => __('Default','advance-automobile'),
@@ -501,6 +506,57 @@ function advance_automobile_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-automobile')
 		),
 	));
+
+	// Button
+	$wp_customize->add_section( 'advance_automobile_theme_button', array(
+		'title' => __('Button Option','advance-automobile'),
+		'panel' => 'advance_automobile_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_automobile_button_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_button_padding_top_bottom',array(
+		'label'	=> __('Top and Bottom Padding','advance-automobile'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_automobile_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_automobile_button_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_button_padding_left_right',array(
+		'label'	=> __('Left and Right Padding','advance-automobile'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_automobile_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_automobile_button_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_automobile_button_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','advance-automobile' ),
+		'section'     => 'advance_automobile_theme_button',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
 
 	//Top Bar
 	$wp_customize->add_section('advance_automobile_topbar',array(

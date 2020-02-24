@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4
+Stable tag: 0.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 
 == Description ==
 
-Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme.
+Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme.
 
 == Changelog ==
 
@@ -81,6 +81,11 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added slider excerpt length setting in customizer.
 * Added slider image opacity setting in customizer.
 
+= 0.4.1 =
+* Added border radius and button Padding option for home page and blog page in customizer.
+* Added show and hide preloader option in customizer.
+* Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
 == Resources ==
 
 Advance Automobile WordPress Theme, Copyright 2018 Themeshopy
@@ -146,7 +151,7 @@ Theme is Built using the following resource bundles.
  	- License: The MIT License (MIT)
  	- https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE
 
-7. Screenshot Images.
+7. Screenshot Images
 	License: CC0 1.0 Universal (CC0 1.0) 
 	Source: https://stocksnap.io/license
 
