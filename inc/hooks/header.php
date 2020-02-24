@@ -383,11 +383,11 @@ if ( ! function_exists( 'appdetail_header_end_wrapper' ) ) :
      * @since 1.0.0
      */
     function appdetail_header_end_wrapper() { ?>
-<?php if(is_home() || is_front_page () ) { ?>
+<?php if(is_home() || !is_front_page () ) { ?>
 
         <div id="content" class="site-content s-pad last-front">
 <?php } else { ?>
-    <div id="content" class="site-content s-pad">
+    <div id="content" class="site-content s-pad main-home-post">
     <?php } ?>
     			<div class="container">
     				<div class="row">

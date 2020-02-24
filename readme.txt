@@ -5,7 +5,7 @@ Tags: right-sidebar, custom-background, custom-colors, custom-menu, featured-ima
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.2.4
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
