@@ -1142,33 +1142,5 @@ background-size:cover;background-color:transparent;box-sizing:border-box;"; // c
 
 
 
-		function weaverx_trim_excerpt( $text = '' ) {
-			$raw_excerpt = $text;
-			if ( '' == $text ) {
-				$text          = get_the_content( '' );
-				$orig_text_len = strlen( $text );
-
-				$text = strip_shortcodes( $text );
-				// $stripped_text_len = strlen( $text );
-
-				$text              = apply_filters( 'the_content', $text );
-				$text              = str_replace( ']]>', ']]&gt;', $text );
-				$excerpt_length    = apply_filters( 'excerpt_length', 55 );
-				$excerpt_more      = apply_filters( 'excerpt_more', ' ' . '[...]' );
-				$text              = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-				$stripped_text_len = strlen( $text );
-			}
-			if ( '' == $raw_excerpt && $orig_text_len > $stripped_text_len && get_post_format() == '' && ! empty( $excerpt_more ) ) {    // have stripped shortcodes
-				if ( strpos( $text, $excerpt_more ) === false ) {
-					$text .= $excerpt_more;
-				}
-			}
-
-			return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
-		}
-		//--
-
-		remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
-		add_filter( 'get_the_excerpt', 'weaverx_trim_excerpt' );
-
+		// function weaverx_trim_excerpt( $text = '' ) // removed 4.3.4 - custom version was breaking new block editor handling
 

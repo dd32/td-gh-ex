@@ -2,7 +2,7 @@
  * Weaver Xtreme JavaScript support Library
  *
  * Author: WeaverTheme - www.weavertheme.com
- * @version 4.1
+ * @version 4.1.1
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Bruce Wampler
  *
@@ -16,7 +16,7 @@
 var agent = navigator.userAgent;
 
 	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
-	// we can force the JS to fix it. For whatever reason, the Safari agend string included both Chrome and Safari. Bizarre!
+	// we can force the JS to fix it. For whatever reason, the Safari agent string included both Chrome and Safari. Bizarre!
 
 	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {	// run document ready just for Safari to get around full width issues
 		jQuery(document).ready(weaverxOnResize);
@@ -605,24 +605,24 @@ function weaverxOnResize() {
     if (width > 767)
         theBody.addClass('is-menu-default');
 
-    var device = 'is-desktop';
+    var device = 'is-weaver is-desktop';
 
     // do things when we resize
     if (width >= 768) { // on the desktop
-        theBody.removeClass("is-phone is-smalltablet is-mobile");
-        device = 'is-desktop';
+        theBody.removeClass("is-weaver is-phone is-smalltablet is-mobile");
+        device = 'is-weaver is-desktop';
     } else if (width > 580) { // small tablet
-        theBody.removeClass("is-phone is-desktop");
-        device = 'is-smalltablet is-mobile';
+        theBody.removeClass("is-weaver is-phone is-desktop");
+        device = 'is-weaver is-smalltablet is-mobile';
     } else { // phone
-        theBody.removeClass("is-desktop is-smalltablet");
-        device = 'is-phone is-mobile';
+        theBody.removeClass("is-weaver is-desktop is-smalltablet");
+        device = 'is-weaver is-phone is-mobile';
     }
 
     var agent = navigator.userAgent;
 
 	// Safari is breaking our generated extend width CSS, so by removing the .wvrx-not-safari class from body,
-	// we can force the JS to fix it. For whatever reason, the Safari agend string included both Chrome and Safari. Bizarre!
+	// we can force the JS to fix it. For whatever reason, the Safari agent string included both Chrome and Safari. Bizarre!
 
 	if (agent.match(/Safari/i) && !agent.match(/Chrome/i)) {
 		//alert('Safari');
@@ -635,7 +635,7 @@ function weaverxOnResize() {
     if (agent.match(/iPad/i) || agent.match(/iPhone/i) || agent.match(/iPod/i)) {
         device = device + ' is-ios';
         if (agent.match(/iPad/i))
-            device = device + ' is-ipad';
+            device = device + ' is-ipad is-not-pados';
         if (agent.match(/iPod/i))
             device = device + ' is-ipod';
         if (agent.match(/iPhone/i))
@@ -647,8 +647,15 @@ function weaverxOnResize() {
 
     if (agent.match(/Windows/i))
         device = device + ' is-windows';
-    if (agent.match(/Intel Mac OS X/i))
-        device = device + ' is-macos';
+
+    if ( agent.match( /Macintosh/i) ) {
+        if ( navigator.maxTouchPoints > 1 ) {       // iPad OS 13.3 - kludge test for new Safari as desktop on iPad
+            device = device + ' is-ios is-ipad is-pados';
+        } else {
+            device = device + ' is-macos';
+        }
+    }
+
 
     theBody.addClass(device);
 

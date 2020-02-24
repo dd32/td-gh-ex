@@ -20,12 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /* Version Information */
 
-define( 'WEAVERX_VERSION', '4.3.2.1' );
+define( 'WEAVERX_VERSION', '4.3.3' );
 define( 'WEAVERX_VERSION_ID', 100 );
 define( 'WEAVERX_THEMENAME', 'Weaver Xtreme' );
 define( 'WEAVERX_SETTINGS_VERSION', 'Settings:4.2' );
 define( 'WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION );
-define( 'WEAVERX_MIN_WPVERSION', '4.9' );
+define( 'WEAVERX_MIN_WPVERSION', '5.1' );
 define( 'WVRX_PAGEBUILDERS', true );
 
 define( 'WEAVERX_LEVEL_BEGINNER', 1 );

@@ -470,7 +470,7 @@ if ( weaverx_getopt( 'link_site_image' ) ) {
 		?>
 		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class( 'tagline' ); ?>><?php echo $tagline; ?></span></h2>
 		<?php if ( $logo ) { ?>
-			<div id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo $logo; ?></div>
+			<div id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo do_shortcode( $logo ); ?></div>
 		<?php }
 
 		if ( ! weaverx_is_checked_page_opt( '_pp_hide_mini_menu' ) )    // just don'e emit at all if per page
