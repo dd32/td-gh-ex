@@ -124,51 +124,51 @@ msgstr "Виджет нижнего колонтитула"
 msgid "Automobile WordPress Theme"
 msgstr "Автомобильная Тема WordPress"
 
-#: header.php:26
+#: header.php:28
 msgid "Skip to content"
 msgstr "перейти к содержанию"
 
-#: header.php:53
+#: header.php:55
 msgid "Open Menu"
 msgstr "Открытое меню"
 
-#: header.php:71 header.php:123
+#: header.php:72 header.php:125
 msgid "Facebook"
 msgstr "facebook"
 
-#: header.php:74 header.php:126
+#: header.php:75 header.php:128
 msgid "Twitter"
 msgstr "щебет"
 
-#: header.php:77 header.php:129
+#: header.php:78 header.php:131
 msgid "Google"
 msgstr "Google"
 
-#: header.php:80 header.php:132
+#: header.php:81 header.php:134
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:83 header.php:135
+#: header.php:84 header.php:137
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:89 searchform.php:10 searchform.php:12
+#: header.php:90 searchform.php:10 searchform.php:12
 msgid "Search"
 msgstr "Поиск"
 
-#: header.php:94
+#: header.php:95
 msgid "Close"
 msgstr "близко"
 
-#: header.php:103
+#: header.php:105
 msgid "Top Menu"
 msgstr "Верхнее меню"
 
-#: header.php:104
+#: header.php:106
 msgid "Close Menu"
 msgstr "Закрыть меню"
 
-#: header.php:142
+#: header.php:144
 msgid "MAKE AN APPOINTMENT"
 msgstr "ЗАПИСАТЬСЯ НА ПРИЕМ"
 
@@ -455,71 +455,96 @@ msgstr "Связаться с нами"
 msgid "Add contact us here"
 msgstr "Добавить свяжитесь с нами здесь"
 
-#: inc/customizer.php:632
+#: inc/customizer.php:633
+msgid "Enable / Disable Sticky Header"
+msgstr "Включить / отключить закрепленный заголовок"
+
+#: inc/customizer.php:642
 msgid "Email"
 msgstr "Эл. адрес"
 
-#: inc/customizer.php:642
+#: inc/customizer.php:652
 msgid "Phone No"
 msgstr "Телефонный номер"
 
-#: inc/customizer.php:652
+#: inc/customizer.php:662
 msgid "Appointment us url"
 msgstr "Назначение нам URL"
 
-#: inc/customizer.php:660
+#: inc/customizer.php:670
 msgid "Slider Settings"
 msgstr "Настройки слайдера"
 
-#: inc/customizer.php:671
+#: inc/customizer.php:681
 msgid "Show / Hide slider"
 msgstr "Показать / Скрыть слайдер"
 
-#: inc/customizer.php:684
+#: inc/customizer.php:694
 msgid "Select Slide Image Page"
 msgstr "Выберите страницу слайд-изображения"
 
-#: inc/customizer.php:699
+#: inc/customizer.php:702
+#: inc/customizer.php:710
+msgid "Center"
+msgstr "Центр"
+
+#: inc/customizer.php:707
+msgid "Slider Content Layout"
+msgstr "Макет содержимого слайдера"
+
+#: inc/customizer.php:711
+msgid "Left"
+msgstr "Осталось"
+
+#: inc/customizer.php:712
+msgid "Right"
+msgstr "Правильно"
+
+#: inc/customizer.php:725
 msgid "Slider Content Limit"
 msgstr "Ограничение содержания слайдера"
 
-#: inc/customizer.php:712
+#: inc/customizer.php:742
+msgid "Slider Image Opacity"
+msgstr "Непрозрачность слайдера"
+
+#: inc/customizer.php:762
 msgid "Our Project Section"
 msgstr "Наш раздел проекта"
 
-#: inc/customizer.php:713
+#: inc/customizer.php:763
 msgid "Add Our Project sections below."
 msgstr "Добавьте разделы нашего проекта ниже."
 
-#: inc/customizer.php:722
+#: inc/customizer.php:772
 msgid "Title"
 msgstr "заглавие"
 
-#: inc/customizer.php:742
+#: inc/customizer.php:792
 msgid "Select post"
 msgstr "Выберите сообщение"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:815
 msgid "Select Category to display Latest Post"
 msgstr "Выберите категорию для отображения последнего сообщения"
 
-#: inc/customizer.php:778
+#: inc/customizer.php:828
 msgid "Project Content Limit"
 msgstr "Предел содержания проекта"
 
-#: inc/customizer.php:798
+#: inc/customizer.php:848
 msgid "Category Content Limit"
 msgstr "Ограничение содержания категории"
 
-#: inc/customizer.php:811
+#: inc/customizer.php:861
 msgid "Footer Text"
 msgstr "Текст нижнего колонтитула"
 
-#: inc/customizer.php:821
+#: inc/customizer.php:871
 msgid "Footer widget area"
 msgstr "Область виджета нижнего колонтитула"
 
-#: inc/customizer.php:823
+#: inc/customizer.php:873
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets"
@@ -528,55 +553,55 @@ msgstr ""
 "колонтитуле. После этого зайдите в Внешний вид> Виджеты и добавьте свои "
 "виджеты."
 
-#: inc/customizer.php:825
+#: inc/customizer.php:875
 msgid "One"
 msgstr "Один"
 
-#: inc/customizer.php:826
+#: inc/customizer.php:876
 msgid "Two"
 msgstr "Два"
 
-#: inc/customizer.php:827
+#: inc/customizer.php:877
 msgid "Three"
 msgstr "Три"
 
-#: inc/customizer.php:828
+#: inc/customizer.php:878
 msgid "Four"
 msgstr "четыре"
 
-#: inc/customizer.php:838
+#: inc/customizer.php:888
 msgid "Enable / Disable Back To Top"
 msgstr "Включить / отключить Вернуться к началу"
 
-#: inc/customizer.php:843 inc/customizer.php:852
+#: inc/customizer.php:893 inc/customizer.php:902
 msgid "Right align"
 msgstr "Выровнять по правому краю"
 
-#: inc/customizer.php:848
+#: inc/customizer.php:898
 msgid "Back To Top"
 msgstr "Вернуться в начало"
 
-#: inc/customizer.php:851
+#: inc/customizer.php:901
 msgid "Left align"
 msgstr "Выровнять по левому краю"
 
-#: inc/customizer.php:853
+#: inc/customizer.php:903
 msgid "Center align"
 msgstr "Выровнять по центру"
 
-#: inc/customizer.php:862
+#: inc/customizer.php:912
 msgid "Copyright Text"
 msgstr "Авторский текст"
 
-#: inc/customizer.php:864
+#: inc/customizer.php:914
 msgid "Add some text for footer like copyright etc."
 msgstr "Добавьте текст для нижнего колонтитула, как авторское право и т. Д."
 
-#: inc/customizer.php:946
+#: inc/customizer.php:996
 msgid "Automobile Pro"
 msgstr "Автомобили Про"
 
-#: inc/customizer.php:947
+#: inc/customizer.php:997
 msgid "Go Pro"
 msgstr "Go Pro"
 

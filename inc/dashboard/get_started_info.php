@@ -6,7 +6,7 @@ function automobile_car_dealer_gettingstarted() {
 }
 
 function automobile_car_dealer_admin_theme_style() {
-   wp_enqueue_style('custom-admin-style', get_template_directory_uri() . '/inc/dashboard/get_started_info.css');
+   wp_enqueue_style('automobile-car-dealer-custom-admin-style', get_template_directory_uri() . '/inc/dashboard/get_started_info.css');
 }
 add_action('admin_enqueue_scripts', 'automobile_car_dealer_admin_theme_style');
 

@@ -123,51 +123,51 @@ msgstr "Altbilgi Widget'ı"
 msgid "Automobile WordPress Theme"
 msgstr "Otomobil WordPress Teması"
 
-#: header.php:26
+#: header.php:28
 msgid "Skip to content"
 msgstr "İçeriğe geç"
 
-#: header.php:53
+#: header.php:55
 msgid "Open Menu"
 msgstr "Menüyü Aç"
 
-#: header.php:71 header.php:123
+#: header.php:72 header.php:125
 msgid "Facebook"
 msgstr "Facebook"
 
-#: header.php:74 header.php:126
+#: header.php:75 header.php:128
 msgid "Twitter"
 msgstr "heyecan"
 
-#: header.php:77 header.php:129
+#: header.php:78 header.php:131
 msgid "Google"
 msgstr "Google"
 
-#: header.php:80 header.php:132
+#: header.php:81 header.php:134
 msgid "Pinterest"
 msgstr "pinterest"
 
-#: header.php:83 header.php:135
+#: header.php:84 header.php:137
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:89 searchform.php:10 searchform.php:12
+#: header.php:90 searchform.php:10 searchform.php:12
 msgid "Search"
 msgstr "Arama"
 
-#: header.php:94
+#: header.php:95
 msgid "Close"
 msgstr "Kapat"
 
-#: header.php:103
+#: header.php:105
 msgid "Top Menu"
 msgstr "Üst Menü"
 
-#: header.php:104
+#: header.php:106
 msgid "Close Menu"
 msgstr "Menüyü Kapat"
 
-#: header.php:142
+#: header.php:144
 msgid "MAKE AN APPOINTMENT"
 msgstr "RANDEVU AL"
 
@@ -454,71 +454,96 @@ msgstr "Bize Ulaşın"
 msgid "Add contact us here"
 msgstr "Bize buradan ekleyin"
 
-#: inc/customizer.php:632
+#: inc/customizer.php:633
+msgid "Enable / Disable Sticky Header"
+msgstr "Yapışkan Başlığı Etkinleştir / Devre Dışı Bırak"
+
+#: inc/customizer.php:642
 msgid "Email"
 msgstr "E-posta"
 
-#: inc/customizer.php:642
+#: inc/customizer.php:652
 msgid "Phone No"
 msgstr "Telefon yok"
 
-#: inc/customizer.php:652
+#: inc/customizer.php:662
 msgid "Appointment us url"
 msgstr "Bize URL atama"
 
-#: inc/customizer.php:660
+#: inc/customizer.php:670
 msgid "Slider Settings"
 msgstr "Kaydırıcı Ayarları"
 
-#: inc/customizer.php:671
+#: inc/customizer.php:681
 msgid "Show / Hide slider"
 msgstr "Kaydırıcıyı Göster / Gizle"
 
-#: inc/customizer.php:684
+#: inc/customizer.php:694
 msgid "Select Slide Image Page"
 msgstr "Slayt Görüntüsü Sayfasını Seçin"
 
-#: inc/customizer.php:699
+#: inc/customizer.php:702
+#: inc/customizer.php:710
+msgid "Center"
+msgstr "merkez"
+
+#: inc/customizer.php:707
+msgid "Slider Content Layout"
+msgstr "Slider İçerik Düzeni"
+
+#: inc/customizer.php:711
+msgid "Left"
+msgstr "Ayrıldı"
+
+#: inc/customizer.php:712
+msgid "Right"
+msgstr "Sağ"
+
+#: inc/customizer.php:725
 msgid "Slider Content Limit"
 msgstr "Slider İçerik Sınırı"
 
-#: inc/customizer.php:712
+#: inc/customizer.php:742
+msgid "Slider Image Opacity"
+msgstr "Slider Görüntü Opaklığı"
+
+#: inc/customizer.php:762
 msgid "Our Project Section"
 msgstr "Proje Bölümümüz"
 
-#: inc/customizer.php:713
+#: inc/customizer.php:763
 msgid "Add Our Project sections below."
 msgstr "Aşağıdaki Proje bölümlerimizi ekleyin."
 
-#: inc/customizer.php:722
+#: inc/customizer.php:772
 msgid "Title"
 msgstr "Başlık"
 
-#: inc/customizer.php:742
+#: inc/customizer.php:792
 msgid "Select post"
 msgstr "Gönderi seç"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:815
 msgid "Select Category to display Latest Post"
 msgstr "Son Gönderiyi görüntülemek için Kategori seçin"
 
-#: inc/customizer.php:778
+#: inc/customizer.php:828
 msgid "Project Content Limit"
 msgstr "Proje İçerik Sınırı"
 
-#: inc/customizer.php:798
+#: inc/customizer.php:848
 msgid "Category Content Limit"
 msgstr "Kategori İçerik Sınırı"
 
-#: inc/customizer.php:811
+#: inc/customizer.php:861
 msgid "Footer Text"
 msgstr "Altbilgi metni"
 
-#: inc/customizer.php:821
+#: inc/customizer.php:871
 msgid "Footer widget area"
 msgstr "Altbilgi widget alanı"
 
-#: inc/customizer.php:823
+#: inc/customizer.php:873
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets"
@@ -526,19 +551,19 @@ msgstr ""
 "Altbilgide istediğiniz widget alanı sayısını seçin. Bundan sonra Görünüm> "
 "Widget'lar'a gidin ve widget'larınızı ekleyin"
 
-#: inc/customizer.php:825
+#: inc/customizer.php:875
 msgid "One"
 msgstr "Bir"
 
-#: inc/customizer.php:826
+#: inc/customizer.php:876
 msgid "Two"
 msgstr "İki"
 
-#: inc/customizer.php:827
+#: inc/customizer.php:877
 msgid "Three"
 msgstr "Üç"
 
-#: inc/customizer.php:828
+#: inc/customizer.php:878
 msgid "Four"
 msgstr "dört"
 
@@ -546,35 +571,35 @@ msgstr "dört"
 msgid "Enable / Disable Back To Top"
 msgstr "Başa Dön Etkinleştir / Devre Dışı Bırak"
 
-#: inc/customizer.php:843 inc/customizer.php:852
+#: inc/customizer.php:893 inc/customizer.php:902
 msgid "Right align"
 msgstr "Sağa hizala"
 
-#: inc/customizer.php:848
+#: inc/customizer.php:898
 msgid "Back To Top"
 msgstr "Başa dönüş"
 
-#: inc/customizer.php:851
+#: inc/customizer.php:901
 msgid "Left align"
 msgstr "Sola hizala"
 
-#: inc/customizer.php:853
+#: inc/customizer.php:903
 msgid "Center align"
 msgstr "Ortaya hizala"
 
-#: inc/customizer.php:862
+#: inc/customizer.php:912
 msgid "Copyright Text"
 msgstr "Telif Hakkı Metni"
 
-#: inc/customizer.php:864
+#: inc/customizer.php:914
 msgid "Add some text for footer like copyright etc."
 msgstr "Altbilgi için telif hakkı vb. Gibi bazı metinler ekleyin."
 
-#: inc/customizer.php:946
+#: inc/customizer.php:996
 msgid "Automobile Pro"
 msgstr "Otomobil Pro"
 
-#: inc/customizer.php:947
+#: inc/customizer.php:997
 msgid "Go Pro"
 msgstr "Profesyonel Olun"
 

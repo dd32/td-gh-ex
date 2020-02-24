@@ -95,51 +95,11 @@ function automobile_car_dealer_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
-		'id'            => 'footer-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
-		'id'            => 'footer-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 3', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
-		'id'            => 'footer-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 4', 'automobile-car-dealer' ),
-		'description'   => __( 'Appears on footer', 'automobile-car-dealer' ),
-		'id'            => 'footer-4',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
 	//Footer widget areas
 	$widget_areas = get_theme_mod('footer_widget_areas', '3');
 	for ($i=1; $i<=$widget_areas; $i++) {
 		register_sidebar( array(
-			'name'          => __( 'Footer Widget', 'automobile-car-dealer' ) . $i,
+			'name'          => __( 'Footer Widget ', 'automobile-car-dealer' ) . $i,
 			'id'            => 'footer-' . $i,
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -369,13 +329,13 @@ function automobile_car_dealer_ie_stylesheet(){
 }
 
 add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
-define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO','https://buywptemplates.com/automobile-car-dealer-pro/');
-define('AUTOMOBILE_CAR_DEALER_BUY_PRO','https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/');
-define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/');
-define('AUTOMOBILE_CAR_DEALER_FREE_DOC','https://buywptemplates.com/demo/docs/free-automobile-car-dealer/');
-define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT','https://www.buywptemplates.com/support/');
-define('AUTOMOBILE_CAR_DEALER_FREE_SUPPORT','https://wordpress.org/support/theme/automobile-car-dealer/');
-define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme/');
+define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO',__('https://buywptemplates.com/automobile-car-dealer-pro/', 'automobile-car-dealer'));
+define('AUTOMOBILE_CAR_DEALER_BUY_PRO',__('https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/', 'automobile-car-dealer'));
+define('AUTOMOBILE_CAR_DEALER_PRO_DOC',__('https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/', 'automobile-car-dealer'));
+define('AUTOMOBILE_CAR_DEALER_FREE_DOC',__('https://buywptemplates.com/demo/docs/free-automobile-car-dealer/', 'automobile-car-dealer'));
+define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT',__('https://www.buywptemplates.com/support/', 'automobile-car-dealer'));
+define('AUTOMOBILE_CAR_DEALER_FREE_SUPPORT',__('https://wordpress.org/support/theme/automobile-car-dealer/', 'automobile-car-dealer'));
+define('AUTOMOBILE_CAR_DEALER_CREDIT',__('https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme/', 'automobile-car-dealer'));
 
 if ( ! function_exists( 'automobile_car_dealer_credit' ) ) {
 	function automobile_car_dealer_credit(){

@@ -16,7 +16,7 @@ if ( post_password_required() )
 		    if ( 1 === $comments_number ) {
 
 		        /* translators: %s: post title */
-		        printf( esc_html__( 'One thought on &ldquo;%s&rdquo;', 'automobile-car-dealer' ), esc_html (get_the_title()) );
+		        printf( esc_html__( 'One thought on &ldquo;%s&rdquo;', 'automobile-car-dealer' ), esc_html(get_the_title()) );
 
 		    } else {
 
@@ -35,7 +35,7 @@ if ( post_password_required() )
 				    ),
 
 		            esc_html (number_format_i18n( $comments_number ) ),
-		            esc_html (get_the_title() )
+		            esc_html(get_the_title() )
 
 		        );
 

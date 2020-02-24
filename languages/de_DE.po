@@ -123,51 +123,51 @@ msgstr "Fußzeilen-Widget"
 msgid "Automobile WordPress Theme"
 msgstr "Automobil WordPress Theme"
 
-#: header.php:26
+#: header.php:28
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: header.php:53
+#: header.php:55
 msgid "Open Menu"
 msgstr "Menü öffnen"
 
-#: header.php:71 header.php:123
+#: header.php:72 header.php:125
 msgid "Facebook"
 msgstr "Facebook"
 
-#: header.php:74 header.php:126
+#: header.php:75 header.php:128
 msgid "Twitter"
 msgstr "Twitter"
 
-#: header.php:77 header.php:129
+#: header.php:78 header.php:131
 msgid "Google"
 msgstr "Google"
 
-#: header.php:80 header.php:132
+#: header.php:81 header.php:134
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:83 header.php:135
+#: header.php:84 header.php:137
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:89 searchform.php:10 searchform.php:12
+#: header.php:90 searchform.php:10 searchform.php:12
 msgid "Search"
 msgstr "Suche"
 
-#: header.php:94
+#: header.php:95
 msgid "Close"
 msgstr "Schließen"
 
-#: header.php:103
+#: header.php:105
 msgid "Top Menu"
 msgstr "Hauptmenü"
 
-#: header.php:104
+#: header.php:106
 msgid "Close Menu"
 msgstr "Menü schließen"
 
-#: header.php:142
+#: header.php:144
 msgid "MAKE AN APPOINTMENT"
 msgstr "EINEN TERMIN MACHEN"
 
@@ -454,71 +454,96 @@ msgstr "Kontaktiere uns"
 msgid "Add contact us here"
 msgstr "Hinzufügen kontaktieren Sie uns hier"
 
-#: inc/customizer.php:632
+#: inc/customizer.php:633
+msgid "Enable / Disable Sticky Header"
+msgstr "Sticky Header aktivieren / deaktivieren"
+
+#: inc/customizer.php:642
 msgid "Email"
 msgstr "Email"
 
-#: inc/customizer.php:642
+#: inc/customizer.php:652
 msgid "Phone No"
 msgstr "Telefonnummer"
 
-#: inc/customizer.php:652
+#: inc/customizer.php:662
 msgid "Appointment us url"
 msgstr "Ernennen Sie uns url"
 
-#: inc/customizer.php:660
+#: inc/customizer.php:670
 msgid "Slider Settings"
 msgstr "Slider-Einstellungen"
 
-#: inc/customizer.php:671
+#: inc/customizer.php:681
 msgid "Show / Hide slider"
 msgstr "Schieberegler ein- / ausblenden"
 
-#: inc/customizer.php:684
+#: inc/customizer.php:694
 msgid "Select Slide Image Page"
 msgstr "Wählen Sie Slide Image Page"
 
-#: inc/customizer.php:699
+#: inc/customizer.php:702
+#: inc/customizer.php:710
+msgid "Center"
+msgstr "Center"
+
+#: inc/customizer.php:707
+msgid "Slider Content Layout"
+msgstr "Slider-Inhaltslayout"
+
+#: inc/customizer.php:711
+msgid "Left"
+msgstr "Links"
+
+#: inc/customizer.php:712
+msgid "Right"
+msgstr "Richtig"
+
+#: inc/customizer.php:725
 msgid "Slider Content Limit"
 msgstr "Slider-Inhaltslimit"
 
-#: inc/customizer.php:712
+#: inc/customizer.php:742
+msgid "Slider Image Opacity"
+msgstr "Deckkraft des Schiebereglers"
+
+#: inc/customizer.php:762
 msgid "Our Project Section"
 msgstr "Unser Projektbereich"
 
-#: inc/customizer.php:713
+#: inc/customizer.php:763
 msgid "Add Our Project sections below."
 msgstr "Fügen Sie unsere Projektabschnitte unten hinzu."
 
-#: inc/customizer.php:722
+#: inc/customizer.php:772
 msgid "Title"
 msgstr "Titel"
 
-#: inc/customizer.php:742
+#: inc/customizer.php:792
 msgid "Select post"
 msgstr "Beitrag auswählen"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:815
 msgid "Select Category to display Latest Post"
 msgstr "Wählen Sie Kategorie, um den neuesten Beitrag anzuzeigen"
 
-#: inc/customizer.php:778
+#: inc/customizer.php:828
 msgid "Project Content Limit"
 msgstr "Projektinhaltslimit"
 
-#: inc/customizer.php:798
+#: inc/customizer.php:848
 msgid "Category Content Limit"
 msgstr "Category Content Limit"
 
-#: inc/customizer.php:811
+#: inc/customizer.php:861
 msgid "Footer Text"
 msgstr "Fusszeile"
 
-#: inc/customizer.php:821
+#: inc/customizer.php:871
 msgid "Footer widget area"
 msgstr "Footer-Widget-Bereich"
 
-#: inc/customizer.php:823
+#: inc/customizer.php:873
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets"
@@ -527,55 +552,55 @@ msgstr ""
 "werden sollen. Gehen Sie danach zu Darstellung> Widgets und fügen Sie Ihre "
 "Widgets hinzu"
 
-#: inc/customizer.php:825
+#: inc/customizer.php:875
 msgid "One"
 msgstr "Eins"
 
-#: inc/customizer.php:826
+#: inc/customizer.php:876
 msgid "Two"
 msgstr "Zwei"
 
-#: inc/customizer.php:827
+#: inc/customizer.php:877
 msgid "Three"
 msgstr "Drei"
 
-#: inc/customizer.php:828
+#: inc/customizer.php:878
 msgid "Four"
 msgstr "Vier"
 
-#: inc/customizer.php:838
+#: inc/customizer.php:888
 msgid "Enable / Disable Back To Top"
 msgstr "Zurück nach oben aktivieren / deaktivieren"
 
-#: inc/customizer.php:843 inc/customizer.php:852
+#: inc/customizer.php:893 inc/customizer.php:902
 msgid "Right align"
 msgstr "Rechts ausrichten"
 
-#: inc/customizer.php:848
+#: inc/customizer.php:898
 msgid "Back To Top"
 msgstr "Zurück nach oben"
 
-#: inc/customizer.php:851
+#: inc/customizer.php:901
 msgid "Left align"
 msgstr "Links ausrichten"
 
-#: inc/customizer.php:853
+#: inc/customizer.php:903
 msgid "Center align"
 msgstr "Zentriert ausrichten"
 
-#: inc/customizer.php:862
+#: inc/customizer.php:912
 msgid "Copyright Text"
 msgstr "Copyright-Text"
 
-#: inc/customizer.php:864
+#: inc/customizer.php:914
 msgid "Add some text for footer like copyright etc."
 msgstr "Füge Text für Fußzeilen wie Copyright etc. hinzu."
 
-#: inc/customizer.php:946
+#: inc/customizer.php:996
 msgid "Automobile Pro"
 msgstr "Automobile Pro"
 
-#: inc/customizer.php:947
+#: inc/customizer.php:997
 msgid "Go Pro"
 msgstr "Gehen Sie Pro"
 

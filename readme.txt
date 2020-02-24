@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.4
+Stable tag: 0.4.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time.
@@ -97,6 +97,11 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 = 0.4.4 =
 * Added mo and po files of different languages.
 
+= 0.4.5 =
+* Added enable/disable option for sticky header.
+* Added slider content layout setting.
+* Added slider image opacity setting.
+
 == Resources ==
 
 Automobile Car Dealer WordPress Theme, Copyright 2017 Buywptemplates
@@ -118,64 +123,68 @@ along with this program.  If not, see .
 Automobile Car Dealer WordPress Theme incorporates code from VW Restaurant Lite WordPress Theme, Copyright 2017 VW Themes
 VW Restaurant Lite WordPress Theme is distributed under the terms of the GNU GPL
 
-
 Theme is Built using the following resource bundles.
 
-* Open Sans font - https://www.google.com/fonts/specimen/Open+Sans
-	PT Sans font - https://fonts.google.com/specimen/PT+Sans
-	Roboto font - https://fonts.google.com/specimen/Roboto
-	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
-
-*	CSS bootstrap.css
-  -- Copyright 2011-2018 The Bootstrap Authors
-  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
-  
-  JS bootstrap.js
-  -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+* Bootstrap 
+  -- Mark Otto
+  -- copyright 2011-2020, Mark Otto
+  -- https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip
+  -- License: Code released under the MIT License. v4.4.1
   -- https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-  Font-awesome.css
-  -- Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
-	-- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+* Font-Awesome 
+  -- Davegandy
+  -- copyright July 12, 2018, Davegandy
+  -- https://github.com/FortAwesome/Font-Awesome.git
+  -- License: Font Awesome Free License v5.0.0
+  -- https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 
-  jQuery Superfish Menu Plugin
-  -- Copyright (c) 2013 Joel Birch
-  -- Dual licensed under the MIT and GPL licenses:
-      http://www.opensource.org/licenses/mit-license.php
-      http://www.gnu.org/licenses/gpl.html
+* Customizer Pro 
+  -- Justin Tadlock
+  -- Copyright 2016, Justin Tadlock
+  -- https://github.com/justintadlock/trt-customizer-pro.git
+  -- License: GNU General Public License v2.0
+  -- http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+* Superfish 
+  -- Joeldbirch
+  -- Copyright 2013, Justin Tadlock
+  -- https://github.com/joeldbirch/superfish.git
+  -- License: Free to use and abuse under the MIT license. v1.7.9
+  -- https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 
 * Tether MIT License
-	https://github.com/HubSpot/tether/blob/master/LICENSE
-	https://github.com/HubSpot/tether
-
-* Stocksnap Images, 
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/license
-
-  Header Image, Copyright Evgeny Tchebotarev
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/O5SWVS90WZ
-
-  Our Product Image, Copyright Mike Birdy
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/4JQNHSXUDH
-
-  Post Image, Copyright Dietmar Becker
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/45B9E561EC
-
-  Post Image, Copyright Ylanite Koppens
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/8QKIFL9ZUI
-
-  Post Image, Copyright Mike Birdy
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/ZDD3CJV4L0
-
-  Post Image, Copyright Martha Dominguez
-  License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/5JFB8N1XI1
+  -- HubSpot, Inc.
+  -- Copyright © 2017, MIT License
+  -- https://github.com/HubSpot/tether
+  -- License: MIT license
+  -- https://github.com/HubSpot/tether/blob/master/LICENSE
 	
-* Customizer Pro, Copyright 2016 © Justin Tadlock.
-  License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-  Source: https://github.com/justintadlock/trt-customizer-pro
+* Stocksnap Images 
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/license
+
+    Header Image, Copyright Evgeny Tchebotarev
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/O5SWVS90WZ
+
+    Our Product Image, Copyright Mike Birdy
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/4JQNHSXUDH
+
+    Post Image, Copyright Dietmar Becker
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/45B9E561EC
+
+    Post Image, Copyright Ylanite Koppens
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/8QKIFL9ZUI
+
+    Post Image, Copyright Mike Birdy
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/ZDD3CJV4L0
+
+    Post Image, Copyright Martha Dominguez
+    License: CC0 1.0 Universal (CC0 1.0)
+    Source: https://stocksnap.io/photo/5JFB8N1XI1
+	

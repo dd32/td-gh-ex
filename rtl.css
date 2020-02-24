@@ -364,14 +364,14 @@ input.search-field {
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 1px;
+  padding: 0;
 }
 #slider p{
-  margin: 10px;
+  margin: 10px 0;
 }
 .slide-button a {
   color: #fff;
   font-size: 15px;
-  padding: 10px 15px;
   font-weight: bold;
 }
 .slide-button a:focus{
@@ -379,7 +379,7 @@ input.search-field {
   border-bottom: 1px solid #fff;
 }
 .slide-button {
-  margin: 20px;
+  margin: 20px 0;
   text-align: center;
 }
 #slider i{
@@ -392,6 +392,15 @@ input.search-field {
 }
 #sidebar .woocommerce a.remove{
   display: none;
+}
+/*----------Sticky Header------*/
+.fixed-header {
+  position: fixed;
+  top:0; right:0;
+  width: 100%;
+  background: #fff;
+  box-shadow: -2px 2px 10px 0px #2d2d2d;
+  z-index: 999999;
 }
 /*--------------header-------------*/
 .page-template-custom-home-page #header {
@@ -1891,6 +1900,16 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
     margin: 20px 0 0 0;
     min-height: auto;
   }
+  #slider .carousel-caption, #slider .inner_carousel, 
+  .slide-button{
+    text-align: center !important;
+  }
+  #slider .carousel-caption h1{
+    display: none;
+  }
+  #slider .carousel-caption{
+    top: 50%;
+  }
 }
 @media screen and (max-width: 720px) and (min-width: 320px){
   .blog-section .new-line {
@@ -1956,6 +1975,9 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
 }
 /*------------------RESPONSIVE MEIDA-------------------*/
 @media screen and (max-width: 1000px){
+  .topbar{
+    padding: 0;
+  }
   #navbar-header form.search-form{
     display: block;
   }
@@ -2025,8 +2047,7 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
     display: none;
     position: absolute;
     left: 30px;
-    height: 30px;
-    width: 30px;
+    top: 20px;
     cursor: pointer;
     text-align: left;
   }
@@ -2111,10 +2132,6 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
     position: static;
     width: 100%;
   }
-  .primary-navigation ul ul a:hover, .primary-navigation ul ul a:focus{
-    color: #000 !important;
-    background-color: #fff;
-  }
   .primary-navigation li{
     padding: 0;
   }
@@ -2172,14 +2189,23 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
     outline: 1px dotted #000 !important;
     border-bottom: 1px solid #000 !important;
   }
-  #slider .carousel-caption h1{
-    display: none;
-  }
   .scrollbutton.center i{
     right: 44%;
     left: 50%;
   }
   .scrollbutton.left i {
     right: 18px;
+  }
+  .toggle-menu.fixed-header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
+  .toggle-menu.fixed-header i{
+    padding: 10px;
+  }
+  .fixed-header{
+    position: static;
   }
 }

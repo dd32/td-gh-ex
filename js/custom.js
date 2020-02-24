@@ -54,3 +54,15 @@ jQuery(function($){
 	    $(".frame").delay(2000).fadeOut("slow");
 	})
 });
+
+(function( $ ) {
+
+	$(window).scroll(function(){
+	  var sticky = $('.sticky-header'),
+	      scroll = $(window).scrollTop();
+
+	  if (scroll >= 100) sticky.addClass('fixed-header');
+	  else sticky.removeClass('fixed-header');
+	});
+
+})( jQuery );
