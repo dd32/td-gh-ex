@@ -5,7 +5,7 @@ Tags: right-sidebar, custom-background, custom-colors, custom-menu, featured-ima
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.2.4
-Stable tag: 1.6
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,11 +20,6 @@ Appdetail is a simple and easy to use, modern and creative, user friendly and el
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Changelog ==
-
-
-= 1.4 =
-Skip Links added
 
 == License ==
 Appdetail   is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
