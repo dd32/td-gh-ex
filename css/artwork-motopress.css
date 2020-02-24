@@ -12,8 +12,6 @@
 }
 .artwork .motopress-tabs-obj.ui-tabs.motopress-tabs-vertical .ui-tabs-nav li.ui-state-active a,
 .artwork .motopress-tabs-obj.ui-tabs.motopress-tabs-no-vertical .ui-tabs-nav li.ui-state-active a {
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
   box-shadow: none !important;
   border-color: #ef953e !important;
   color: #ef953e !important;
@@ -58,17 +56,8 @@
   border: 0 solid !important;
   width: 3.625em;
   height: 3.438em;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  -webkit-transition-property: background-color;
   transition-property: background-color;
-  -moz-transition-duration: 0.1s;
-  -o-transition-duration: 0.1s;
-  -webkit-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  -moz-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 .motopress-accordion-obj.ui-accordion.mp-theme-accordion-brand .ui-accordion-header .ui-icon:before {
@@ -337,8 +326,6 @@
 .artwork .motopress-image-slider-obj .flex-control-paging li a {
   opacity: 1;
   border-radius: 100%;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 .artwork .motopress-image-slider-obj .flex-control-paging li a.flex-active, .artwork .motopress-image-slider-obj .flex-control-paging li a:hover {
@@ -353,8 +340,6 @@
 .artwork .motopress-image-slider-obj.flexslider {
   padding: 0.188em;
   border-radius: 0;
-  -moz-box-shadow: 0 0.063em 0.25em transparent;
-  -webkit-box-shadow: 0 0.063em 0.25em transparent;
   box-shadow: 0 0.063em 0.25em transparent;
 }
 
@@ -412,8 +397,6 @@
 .wrapper-mce-lite .motopress-cta-obj .motopress-cta.motopress-cta-style-3d {
   background-color: #ef953e;
   color: #ffffff;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 

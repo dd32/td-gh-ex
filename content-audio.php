@@ -22,7 +22,7 @@ global $mp_artwork_page_template;
 		?> 
 	</header>
     <section class="entry entry-content">
-        <?php echo mp_artwork_get_first_embed_media($post->ID); ?>        
+        <?php echo mp_artwork_get_first_embed_media($post->ID); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
         <div class="clearfix"></div>
     </section>    
     <?php mp_artwork_post_meta($post); ?>

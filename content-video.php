@@ -12,7 +12,7 @@ global $mp_artwork_page_template;
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-in-blog post'); ?>>
-    <?php echo mp_artwork_get_first_embed_media($post->ID); ?>
+    <?php echo mp_artwork_get_first_embed_media($post->ID); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) :

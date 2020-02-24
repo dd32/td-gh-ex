@@ -51,14 +51,10 @@ function mp_artwork_register_required_plugins() {
     // By setting 'is_callable' to either a function from that plugin or a class method
     // `array( 'class', 'method' )` similar to how you hook in to actions and filters, TGMPA can still
     // recognize the plugin as being installed.
-     if (!(is_plugin_active('motopress-content-editor/motopress-content-editor.php'))) {
-     array_push($plugins, array(
-        'name' => 'MotoPress Content Editor Lite',
-        'slug' => 'motopress-content-editor-lite',
-        'is_callable' => 'motopress-content-editor',
-            )
-    );
-     }
+     array_push( $plugins, array(
+        'name' => 'Getwid - Gutenberg Blocks',
+        'slug' => 'getwid',
+     ) );
    
     array_push($plugins, array(
         'name' => 'Artwork Theme Engine',

@@ -15,8 +15,6 @@ div.bbp-template-notice p,
 #bbpress-forums #bbp-your-profile fieldset input:focus, #bbpress-forums #bbp-your-profile fieldset textarea:focus {
   border: 0 solid;
   border-bottom: 3px solid #707070;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
   outline-color: rgba(240, 255, 240, 0);
 }

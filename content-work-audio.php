@@ -26,14 +26,14 @@ global $mp_artwork_page_template;
                             <?php
                             $mp_artwork_title = the_title('<h2 class="entry-title h4"><a href="'.get_permalink().'" rel="bookmark">', '</a></h2>', false);
                             if ($mp_artwork_title) {
-                                echo $mp_artwork_title;
+                                echo $mp_artwork_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             } else {
                                 mp_artwork_posted_on_meta($post);
                             }
                             ?> 
                         </header>
                         <section class="entry entry-content">
-                            <?php echo mp_artwork_get_first_embed_media($post->ID); ?>                            
+                            <?php echo mp_artwork_get_first_embed_media($post->ID); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>
                             <div class="clearfix"></div>
                         </section>
                         <?php

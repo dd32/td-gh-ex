@@ -21,8 +21,8 @@ get_header();
                 <?php else : ?>
                 <article id="post-0" class="post no-results not-found">
                     <div class="entry-content">
-                        <h3 class="entry-title"><?php _e('Nothing Found', 'artwork-lite'); ?></h3>
-                        <p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'artwork-lite'); ?></p>
+                        <h3 class="entry-title"><?php esc_html_e('Nothing Found', 'artwork-lite'); ?></h3>
+                        <p><?php esc_html_e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'artwork-lite'); ?></p>
                     </div><!-- .entry-content -->
                 </article><!-- #post-0 -->
             <?php endif; ?>

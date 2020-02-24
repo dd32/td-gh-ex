@@ -125,8 +125,6 @@
 
 .panel {
   margin-bottom: 1.375em;
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -527,8 +525,6 @@ td.label {
   max-width: 70px;
 }
 .shop_table.cart img {
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
   width: 70px;
 }

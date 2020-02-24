@@ -38,7 +38,6 @@ function mp_artwork_content_nav( $mp_artwork_html_id ) {
  */
 
 function mp_artwork_theme_comment( $mp_artwork_comment, $mp_artwork_args, $mp_artwork_depth ) {
-	$GLOBALS['comment'] = $mp_artwork_comment;
 	extract( $mp_artwork_args, EXTR_SKIP );
 
 	if ( 'div' == $mp_artwork_args['style'] ) {
@@ -49,7 +48,7 @@ function mp_artwork_theme_comment( $mp_artwork_comment, $mp_artwork_args, $mp_ar
 		$mp_artwork_add_below = 'div-comment';
 	}
 	?>
-	<<?php echo $mp_artwork_tag ?><?php comment_class( empty( $mp_artwork_args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	<<?php echo $mp_artwork_tag ?><?php comment_class( empty( $mp_artwork_args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>"> <?php // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 	<?php if ( 'div' != $mp_artwork_args['style'] ) : ?>
 		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 		<div class="comment-description">
@@ -65,11 +64,12 @@ function mp_artwork_theme_comment( $mp_artwork_comment, $mp_artwork_args, $mp_ar
 
 			<?php printf( '<h6 class="fn">%s</h6>', get_comment_author_link() ); ?>
 			<?php if ( $mp_artwork_comment->comment_approved == '0' ) : ?>
-				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'artwork-lite' ); ?></em>
+				<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'artwork-lite' ); ?></em>
 				<br/>
 			<?php endif; ?>
 			<div class="comment-meta date-post">
 				<?php
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				printf( __( '%1$s <span>at %2$s</span>', 'artwork-lite' ), get_comment_date( 'F j, Y' ), get_comment_time() );
 				?>
 				<?php edit_comment_link( __( '(Edit)', 'artwork-lite' ), '  ', '' ); ?>
@@ -141,7 +141,7 @@ function mp_artwork_posted_on_meta( $mp_artwork_post ) {
 	
 	<div class="entry-meta">
         <span>
-    <?php _e( 'Posted on', 'artwork-lite' ); ?>
+    <?php esc_html_e( 'Posted on', 'artwork-lite' ); ?>
         </span>
 		<?php mp_artwork_posted_on( $mp_artwork_post ); ?>
 	</div>
@@ -156,7 +156,7 @@ function mp_artwork_posted_on_meta( $mp_artwork_post ) {
 
 function mp_artwork_get_term_list( $term_list ) {
 	foreach ( $term_list as $mp_artwork_term ) {
-		echo '<a href="' . get_term_link( $mp_artwork_term ) . '">' . $mp_artwork_term->name . '</a>';
+		echo '<a href="' . get_term_link( $mp_artwork_term ) . '">' . $mp_artwork_term->name . '</a>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		if ( $mp_artwork_term != end( $term_list ) ) :
 			echo ", ";
 		endif;
@@ -174,8 +174,8 @@ function mp_artwork_post_category( $mp_artwork_post ) {
 			<?php $mp_artwork_categories = get_the_category_list( '<span>,</span> ', 'multiple', $mp_artwork_post->ID ); ?>
 			<?php if ( ! empty( $mp_artwork_categories ) ) : ?>
 			<span class="seporator">/</span>
-			<span><?php _e( 'Posted in', 'artwork-lite' ); ?></span>
-			<?php echo $mp_artwork_categories; ?>
+			<span><?php esc_html_e( 'Posted in', 'artwork-lite' ); ?></span>
+			<?php echo $mp_artwork_categories; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		<?php endif; ?>
 			<?php
 		else:
@@ -186,7 +186,7 @@ function mp_artwork_post_category( $mp_artwork_post ) {
 				?>
 				<?php if ( ! empty( $mp_artwork_term_list ) ) : ?>
 				<span class="seporator">/</span>
-				<span><?php _e( 'Posted in', 'artwork-lite' ); ?></span>
+				<span><?php esc_html_e( 'Posted in', 'artwork-lite' ); ?></span>
 				<?php
 				mp_artwork_get_term_list( $mp_artwork_term_list );
 				?>
@@ -205,7 +205,7 @@ function mp_artwork_post_first_category( $mp_artwork_post ) {
 	if ( get_theme_mod( mp_artwork_get_prefix() . 'show_categories', '1' ) === '1' || get_theme_mod( mp_artwork_get_prefix() . 'show_categories' ) ):
 		$mp_artwork_category = get_the_category();
 		if ( $mp_artwork_category ) {
-			echo '<a href="' . get_category_link( $mp_artwork_category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'artwork-lite' ), $mp_artwork_category[0]->name ) . '" ' . ' class="category-wrapper">' . $mp_artwork_category[0]->name . '</a> ';
+			echo '<a href="' . esc_url(get_category_link( $mp_artwork_category[0]->term_id )) . '" title="' . sprintf( __( "View all posts in %s", 'artwork-lite' ), $mp_artwork_category[0]->name ) . '" ' . ' class="category-wrapper">' . $mp_artwork_category[0]->name . '</a> '; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	endif;
 }
@@ -227,7 +227,7 @@ function mp_artwork_post_tag( $mp_artwork_post ) {
 				if ( ! empty( $mp_artwork_term_list ) ) :
 					?>
 					<span class="seporator">/</span>
-					<span><?php _e( 'Tagged with', 'artwork-lite' ); ?></span>
+					<span><?php esc_html_e( 'Tagged with', 'artwork-lite' ); ?></span>
 					<?php
 					mp_artwork_get_term_list( $mp_artwork_term_list );
 				endif;
@@ -246,7 +246,7 @@ function mp_artwork_post_meta( $mp_artwork_post ) {
 		<footer class="entry-footer">
 			<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'show_meta', '1' ) === '1' || get_theme_mod( mp_artwork_get_prefix() . 'show_meta' ) ): ?>
 				<div class="entry-meta">
-					<span class="author"><?php _e( 'Posted by', 'artwork-lite' ); ?> </span><?php the_author_posts_link(); ?>
+					<span class="author"><?php esc_html_e( 'Posted by', 'artwork-lite' ); ?> </span><?php the_author_posts_link(); ?>
 					<span class="seporator">/</span>
 					<?php mp_artwork_posted_on( $mp_artwork_post ); ?>
 					<?php if ( comments_open() ) : ?>
@@ -297,7 +297,7 @@ function mp_artwork_get_content_theme( $mp_artwork_content_length ) {
 	if ( strlen( $mp_artwork_content ) > $mp_artwork_content_length ) {
 		$mp_artwork_content = extension_loaded( 'mbstring' ) ? mb_substr( $mp_artwork_content, 0, $mp_artwork_content_length ) . '...' : substr( $mp_artwork_content, 0, $mp_artwork_content_length ) . '...';
 	}
-	echo $mp_artwork_content;
+	echo $mp_artwork_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	?>
 	<?php
 }
@@ -377,7 +377,7 @@ function mp_artwork_page_short_menu() {
 	$mp_artwork_count = 0;
 	foreach ( $mp_artwork_pages as $mp_artwork_page ) {
 		$mp_artwork_count ++;
-		echo $mp_artwork_page;
+		echo $mp_artwork_page; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		if ( $mp_artwork_count == 3 ) {
 			break;
 		}
@@ -433,7 +433,7 @@ function mp_artwork_post_thumbnail( $mp_artwork_post, $mp_artwork_page_template 
 		<?php if ( $mp_artwork_page_template == 'template-two-columns-blog.php' ): ?>
 		<div class="entry-thumbnail empty-entry-thumbnail">
 			<a href="<?php the_permalink(); ?>" rel="external" title="<?php the_title(); ?>"><span class="date-post">
-            <?php echo get_post_time( 'j M' ); ?>
+            <?php echo esc_html(get_post_time( 'j M' )); ?>
                     </span></a>
 		</div>
 	<?php endif; ?>

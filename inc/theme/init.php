@@ -23,6 +23,7 @@ class MP_Artwork {
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
 		add_action( 'after_setup_theme', array( $this, 'woocommerce_support' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'generate_editor_font_style' ) );
 	}
 
 	/**
@@ -90,7 +91,10 @@ class MP_Artwork {
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
-		add_editor_style();
+		$font_family = get_theme_mod( $this->get_prefix() . "text_font_family", "Josefin Sans" );
+		$editor_google_font = 'https://fonts.googleapis.com/css?family='.str_replace( " ", "+", $font_family ) . ":100,100italic,300,300italic,400,400italic,600,600italic,700italic,700" ;
+		add_theme_support('editor-styles');
+		add_editor_style(array('css/artwork-editor-style.css', $editor_google_font, $this->generate_editor_font_style()));
 		/*
 		 * Makes Artwork available for translation.
 		 *
@@ -142,6 +146,39 @@ class MP_Artwork {
 		add_filter( 'use_default_gallery_style', '__return_false' );
 
 		$this->add_theme_image_sizes();
+
+		add_theme_support('editor-color-palette', array(
+			array(
+				'name' => esc_html__('Color-1', 'artwork-lite' ),
+				'slug' => 'color-1',
+				'color' => '#707070'
+			),
+			array(
+				'name' => esc_html__('Color-2', 'artwork-lite' ),
+				'slug' => 'color-2',
+				'color' => '#ef953e'
+			),
+			array(
+				'name' => esc_html__('Color-3', 'artwork-lite' ),
+				'slug' => 'color-3',
+				'color' => '#753249'
+			),
+			array(
+				'name' => esc_html__('Color-4', 'artwork-lite' ),
+				'slug' => 'color-4',
+				'color' => '#2e3f59'
+			),
+			array(
+				'name' => esc_html__('Color-5', 'artwork-lite' ),
+				'slug' => 'color-5',
+				'color' => '#171717'
+			),
+			array(
+				'name' => esc_html__('Color-6', 'artwork-lite' ),
+				'slug' => 'color-6',
+				'color' => '#f6f6f6'
+			),
+		));
 	}
 
 	/*
@@ -439,6 +476,25 @@ class MP_Artwork {
 		$theme_info = wp_get_theme( get_template() );
 
 		return $theme_info->get( 'Version' );
+	}
+
+	function generate_editor_font_style(){
+
+		$font_family = get_theme_mod( $this->get_prefix() . "text_font_family", false );
+
+		if (!$font_family) {
+			return;
+		}
+
+		$css = <<<CSS
+		.editor-styles-wrapper{
+			font-family: {$font_family} !important;
+		}
+CSS;
+		wp_register_style( 'artwork-editor-font', false );
+		wp_enqueue_style( 'artwork-editor-font' );
+		wp_add_inline_style( 'artwork-editor-font', $css );
+
 	}
 }
 

@@ -2,7 +2,7 @@
 Contributors: MotoPress
 Tags: one-column,two-columns,right-sidebar,responsive-layout,custom-colors,custom-menu,featured-images,full-width-template,post-formats,theme-options,translation-ready
 Requires at least: 4.1
-Tested up to: 4.9
+Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,3 +50,35 @@ You can change the colors of your site easily.
 * labelauty, code is licensed under MIT License, https://github.com/fntneves/jquery-labelauty
 * image on the screenshot is licensed under the Creative Commons Zero (CC0) license https://creativecommons.org/publicdomain/zero/1.0/,
 https://unsplash.com/photos/0WQOCx1g8hw, https://unsplash.com/license
+
+== Changelog ==
+
+= 1.5.0, Feb 24 2020 =
+* Added theme support for WordPress 5.x (Gutenberg Editor).
+* Added theme support for Getwid plugin - collection of 40+ comprehensive Gutenberg blocks.
+
+= 1.4.1, Jul 27 2018 =
+* Bugfixes and improvements.
+
+= 1.4.0 =
+* Bugfixes and improvements.
+
+= 1.3.0 =
+* Improved compatibility with WooCommerce plugin
+
+= 1.2.3 =
+* Added the ability to make a navigation menu always visible without a mouseover.
+* New custom sidebar added to WooCommerce page.
+
+= 1.2.2 =
+* Bug fix: fixed the issue with image scaling on mobile devices
+* Content Editor plugin updated to version 2.1.0
+
+= 1.2.1 =
+* Bug fix: fixed the issue with widgets in footer
+
+= 1.2.0 =
+* Minor bugfixes and improvements
+
+= 1.0 =
+* Initial release

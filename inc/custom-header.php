@@ -88,7 +88,7 @@ class MP_Artwork_Custom_Header {
 		}
 		if ( strcasecmp( $font_family, "Niconne" ) != 0 ) {
 			?>
-			<link id='theme-title-font-family' href="https://fonts.googleapis.com/css?family=<?php echo str_replace( " ", "+", $font_family ) . ":" . $font_weight_style . ( $font_weight_style != '400' ? ',400' : '' ); ?>" rel='stylesheet' type='text/css'>
+			<link id='theme-title-font-family' href="https://fonts.googleapis.com/css?family=<?php echo esc_html(str_replace( " ", "+", $font_family )) . ":" . esc_html($font_weight_style) . esc_html( $font_weight_style != '400' ? ',400' : '' ); ?>" rel='stylesheet' type='text/css'> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet?>
 			<?php
 		}
 		$font_family_text       = esc_html( get_theme_mod( $this->get_prefix() . "text_font_family", "Josefin Sans" ) );
@@ -104,7 +104,7 @@ class MP_Artwork_Custom_Header {
 		$font_size_text = esc_html( get_theme_mod( $this->get_prefix() . "text_font_size", "16px" ) );
 		if ( strcasecmp( $font_family_text, "Josefin Sans" ) != 0 ) {
 			?>
-			<link id='theme-text-font-family' href="https://fonts.googleapis.com/css?family=<?php echo str_replace( " ", "+", $font_family_text ) . ":" . $font_weight_style_text . ( $font_weight_style_text != '400' ? ',400' : '' ); ?>" rel='stylesheet' type='text/css'>
+			<link id='theme-text-font-family' href="https://fonts.googleapis.com/css?family=<?php echo esc_html(str_replace( " ", "+", $font_family_text )) . ":" . esc_html($font_weight_style_text) . esc_html( $font_weight_style_text != '400' ? ',400' : '' ); ?>" rel='stylesheet' type='text/css'> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet?>
 			<?php
 		}
 		$tagline_font = esc_html( get_theme_mod( $this->get_prefix() . "tagline_font", 0 ) );
@@ -123,33 +123,33 @@ class MP_Artwork_Custom_Header {
 			<?php endif; ?>
 			<?php if (strcasecmp($tagline_font, "0") != 0) { ?>
 				.site-tagline {
-					font-family: <?php echo $font_family; ?>;
-					font-weight: <?php echo $font_weight; ?>;
-					font-style: <?php echo $font_style; ?>;
+					font-family: <?php echo esc_attr($font_family); ?>;
+					font-weight: <?php echo esc_attr($font_weight); ?>;
+					font-style: <?php echo esc_attr($font_style); ?>;
 				}
 			<?php } ?>
 
 			.site-wrapper {
-				font-family: <?php echo $font_family_text; ?>;
-				font-size: <?php echo $font_size_text; ?>;
-				font-weight: <?php echo $font_weight_text; ?>;
-				font-style: <?php echo $font_style_text; ?>
+				font-family: <?php echo esc_attr($font_family_text); ?>;
+				font-size: <?php echo esc_attr($font_size_text); ?>;
+				font-weight: <?php echo esc_attr($font_weight_text); ?>;
+				font-style: <?php echo esc_attr($font_style_text); ?>
 			}
 			.site-header .site-title,
 			.site-footer .site-title {
-				font-family: <?php echo $font_family; ?>;
-				font-weight: <?php echo $font_weight; ?>;
-				font-style: <?php echo $font_style; ?>;
+				font-family: <?php echo esc_attr($font_family); ?>;
+				font-weight: <?php echo esc_attr($font_weight); ?>;
+				font-style: <?php echo esc_attr($font_style); ?>;
 			}
 			.site-header .site-title {
-				font-size: <?php echo $font_size; ?>;
+				font-size: <?php echo esc_attr($font_size); ?>;
 			}
 
 			<?php if ($header_text_color != '676767' && $header_text_color != ''){ ?>
 				.sf-menu ul,
 				.site-header .site-tagline,
 				.sf-menu > li > a {
-					color: #<?php echo $header_text_color; ?>;
+					color: #<?php echo esc_attr($header_text_color); ?>;
 				}
 			<?php } ?>
 
@@ -167,7 +167,7 @@ class MP_Artwork_Custom_Header {
 				select,
 				textarea,
 				.work-post.format-link .entry-header a:after {
-					color: <?php echo $color_text; ?>;
+					color: <?php echo esc_attr($color_text); ?>;
 				}
 
 				.form-control,
@@ -180,11 +180,11 @@ class MP_Artwork_Custom_Header {
 				input[type="tel"],
 				textarea,
 				.form-control:focus {
-					border-color: <?php echo $color_text; ?>;
+					border-color: <?php echo esc_attr($color_text); ?>;
 				}
 
 				.radio-labelauty + label > span.labelauty-checked-image:before {
-					background: <?php echo $color_text; ?>;
+					background: <?php echo esc_attr($color_text); ?>;
 				}
 			<?php } ?>
 			<?php if ($brand_color != MP_ARTWORK_BRAND_COLOR && $brand_color != '') { ?>
@@ -194,15 +194,15 @@ class MP_Artwork_Custom_Header {
 				.site-footer a:focus,
 				blockquote:before,
 				.brand-color {
-					color: <?php echo $brand_color; ?>;
+					color: <?php echo esc_attr($brand_color); ?>;
 				}
 
 				.button:hover, .button:focus, button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-					background: <?php echo $brand_color; ?>;
+					background: <?php echo esc_attr($brand_color); ?>;
 				}
 
 				blockquote {
-					border-color: <?php echo $brand_color; ?>;
+					border-color: <?php echo esc_attr($brand_color); ?>;
 				}
 				<?php if (is_plugin_active('motopress-content-editor/motopress-content-editor.php') || is_plugin_active('motopress-content-editor-lite/motopress-content-editor.php')) { ?>
 					.artwork .motopress-cta-obj .motopress-button-wrap .mp-theme-button-white:hover, .artwork .motopress-cta-obj .motopress-button-wrap .mp-theme-button-white:focus,
@@ -210,7 +210,7 @@ class MP_Artwork_Custom_Header {
 					.motopress-list-obj .motopress-list-type-icon .fa,
 					.artwork .motopress-button-obj .mp-theme-button-white:hover, .artwork .motopress-button-obj .mp-theme-button-white:focus, .artwork .motopress-modal-obj .mp-theme-button-white:hover, .artwork .motopress-modal-obj .mp-theme-button-white:focus, .artwork .motopress-download-button-obj .mp-theme-button-white:hover, .artwork .motopress-download-button-obj .mp-theme-button-white:focus, .artwork .motopress-button-group-obj .mp-theme-button-white:hover, .artwork .motopress-button-group-obj .mp-theme-button-white:focus,
 					.motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-outline-rounded .motopress-ce-icon-bg .motopress-ce-icon-preview, .motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-outline-circle .motopress-ce-icon-bg .motopress-ce-icon-preview, .motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-outline-square .motopress-ce-icon-bg .motopress-ce-icon-preview {
-						color: <?php echo $brand_color; ?>;
+						color: <?php echo esc_attr($brand_color); ?>;
 					}
 
 					.motopress-countdown_timer.mp-theme-countdown-timer-brand .countdown-section,
@@ -219,40 +219,40 @@ class MP_Artwork_Custom_Header {
 					.motopress-service-box-obj.motopress-service-box-brand .motopress-service-box-icon-holder-rounded, .motopress-service-box-obj.motopress-service-box-brand .motopress-service-box-icon-holder-square, .motopress-service-box-obj.motopress-service-box-brand .motopress-service-box-icon-holder-circle,
 					.artwork .motopress-service-box-obj .motopress-service-box-button-section .mp-theme-button-brand:hover, .artwork .motopress-service-box-obj .motopress-service-box-button-section .mp-theme-button-brand:focus, .artwork .motopress-button-group-obj .mp-theme-button-brand:hover, .artwork .motopress-button-group-obj .mp-theme-button-brand:focus, .artwork .motopress-button-obj .mp-theme-button-brand:hover, .artwork .motopress-button-obj .mp-theme-button-brand:focus, .artwork .motopress-modal-obj .mp-theme-button-brand:hover, .artwork .motopress-modal-obj .mp-theme-button-brand:focus, .artwork .motopress-download-button-obj .mp-theme-button-brand:hover, .artwork .motopress-download-button-obj .mp-theme-button-brand:focus,
 					.motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-rounded .motopress-ce-icon-bg, .motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-square .motopress-ce-icon-bg, .motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-circle .motopress-ce-icon-bg {
-						background: <?php echo $brand_color; ?>;
+						background: <?php echo esc_attr($brand_color); ?>;
 					}
 
 					.artwork .motopress-button-obj .mp-theme-button-white:hover, .artwork .motopress-button-obj .mp-theme-button-white:focus, .artwork .motopress-modal-obj .mp-theme-button-white:hover, .artwork .motopress-modal-obj .mp-theme-button-white:focus, .artwork .motopress-download-button-obj .mp-theme-button-white:hover, .artwork .motopress-download-button-obj .mp-theme-button-white:focus, .artwork .motopress-button-group-obj .mp-theme-button-white:hover, .artwork .motopress-button-group-obj .mp-theme-button-white:focus,
 					.motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-outline-rounded .motopress-ce-icon-bg, .motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-outline-circle .motopress-ce-icon-bg, .motopress-ce-icon-obj.mp-theme-icon-bg-brand.motopress-ce-icon-shape-outline-square .motopress-ce-icon-bg {
-						border-color: <?php echo $brand_color; ?>;
+						border-color: <?php echo esc_attr($brand_color); ?>;
 					}
 
 					.artwork .motopress-tabs-obj.ui-tabs.motopress-tabs-vertical .ui-tabs-nav li.ui-state-active a, .artwork .motopress-tabs-obj.ui-tabs.motopress-tabs-no-vertical .ui-tabs-nav li.ui-state-active a {
-						border-color: <?php echo $brand_color; ?> !important;
-						color: <?php echo $brand_color; ?> !important;
+						border-color: <?php echo esc_attr($brand_color); ?> !important;
+						color: <?php echo esc_attr($brand_color); ?> !important;
 					}
 				<?php } ?>
 				<?php if (is_plugin_active('woocommerce/woocommerce.php')) { ?>
 					.woocommerce-pagination a:hover, .woocommerce-pagination span, .woocommerce-pagination a.page-numbers:hover, .woocommerce-pagination .page-numbers.current,
 					.woocommerce span.onsale {
-						background: <?php echo $brand_color; ?>;
+						background: <?php echo esc_attr($brand_color); ?>;
 					}
 
 					.widget.widget_product_search .woocommerce-product-search:before,
 					.woocommerce p.stars a.active:after, .woocommerce p.stars a:hover:after,
 					.single-product ol.commentlist time,
 					.woocommerce .star-rating span {
-						color: <?php echo $brand_color; ?>;
+						color: <?php echo esc_attr($brand_color); ?>;
 					}
 
 					.woocommerce .woocommerce-message, .woocommerce .woocommerce-info,
 					.wc-tabs li.active a {
-						border-color: <?php echo $brand_color; ?>;
+						border-color: <?php echo esc_attr($brand_color); ?>;
 					}
 				<?php } ?>
 				<?php if (is_plugin_active('bbpress/bbpress.php')) { ?>
 					#bbp-search-form:before {
-						color: <?php echo $brand_color; ?>;
+						color: <?php echo esc_attr($brand_color); ?>;
 					}
 				<?php } ?>
 			<?php } ?>
@@ -260,26 +260,26 @@ class MP_Artwork_Custom_Header {
 			<?php if ($second_brand_color != MP_ARTWORK_SECOND_BRAND_COLOR && $second_brand_color != '') { ?>
 				.page-wrapper,
 				.two-col-works .work-element {
-					background-color: <?php echo $second_brand_color; ?>;
+					background-color: <?php echo esc_attr($second_brand_color); ?>;
 				}
 			<?php } ?>
 
 			<?php if ($section_color_primary != MP_ARTWORK_BRAND_COLOR && $section_color_primary != '') { ?>
 				.two-col-works .work-element:nth-child(4n+2),
 				.page-wrapper:nth-child(4n+2) {
-					background-color: <?php echo $section_color_primary; ?>;
+					background-color: <?php echo esc_attr($section_color_primary); ?>;
 				}
 			<?php }
 			 if ($third_brand_color != MP_ARTWORK_THIRD_BRAND_COLOR && $third_brand_color != '') :?>
 				.two-col-works .work-element:nth-child(4n+3),
 				.page-wrapper:nth-child(4n+3) {
-					background-color: <?php echo $third_brand_color; ?>;
+					background-color: <?php echo esc_attr($third_brand_color); ?>;
 				}
 			<?php endif; ?>
 			<?php if ($fourth_brand_color != MP_ARTWORK_FOURTH_BRAND_COLOR && $fourth_brand_color != '') : ?>
 				.two-col-works .work-element:nth-child(4n+4),
 				.page-wrapper:nth-child(4n+4) {
-					background-color: <?php echo $fourth_brand_color; ?>;
+					background-color: <?php echo esc_attr($fourth_brand_color); ?>;
 				}
 			<?php endif; ?>
 		</style>

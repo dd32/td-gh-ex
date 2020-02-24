@@ -16,7 +16,7 @@ global $mp_artwork_page_template;
     $mp_artwork_img = mp_artwork_get_post_image();
     if (!empty($mp_artwork_img)): ?>
         <div class="entry-thumbnail">              
-            <a href = "<?php the_permalink(); ?>"><img src="<?php echo $mp_artwork_img ?>" class="attachment-post-thumbnail wp-post-image" alt="<?php the_title(); ?>"></a>
+            <a href = "<?php the_permalink(); ?>"><img src="<?php echo $mp_artwork_img // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>" class="attachment-post-thumbnail wp-post-image" alt="<?php the_title(); ?>"></a>
         </div>
         <?php
     else:

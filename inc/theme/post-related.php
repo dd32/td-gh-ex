@@ -212,13 +212,13 @@ class MP_Artwork_Related {
         <?php
         if ($mp_artwork_feat_image_url):
             ?>
-            <a href="<?php the_permalink(); ?>" class="work-element" id="post-<?php echo $post->ID; ?>">
+            <a href="<?php the_permalink(); ?>" class="work-element" id="post-<?php echo esc_attr($post->ID); ?>">
                 <div class="work-wrapper work-wrapper-bg <?php echo  esc_attr($mp_artwork_work_bg); ?> <?php echo esc_attr($mp_artwork_class_page); ?>" style="background-image: url(<?php echo esc_url($mp_artwork_feat_image_url[0]); ?>)">
                 </div>
             <?php the_title('<div class="work-content"><div class="work-header"><h5>', '</h5></div></div>'); ?>                            
             </a>
             <?php else: ?>
-            <a href="<?php the_permalink(); ?>" class="work-element default-elemet"  id="post-<?php echo $post->ID; ?>">
+            <a href="<?php the_permalink(); ?>" class="work-element default-elemet"  id="post-<?php echo esc_attr($post->ID); ?>">
                 <div class="work-wrapper <?php echo  esc_attr($mp_artwork_work_bg); ?> <?php echo esc_attr($mp_artwork_class_page); ?>" >
                 </div>
             <?php the_title('<div class="work-content"><div class="work-header"><h5>', '</h5></div></div>'); ?>  

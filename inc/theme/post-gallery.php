@@ -52,7 +52,7 @@ class MP_Artwork_Gallery {
             $html .= $this->get_img_attr($id, $src, 'thumb-large-blog');
             $html .=' srcset="' . $image_thumbnails[0] . '   720w, ' . $image_medium[0] . '   940w, ' . $src . '  1170w, " sizes=" (min-width:1230px) 1170px, (min-width:992px) 940px,  720px" width="1170" height="543"></a></div>';
         }
-        echo $html;
+        echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
     }
 
     private function get_post_gallery_class($mp_artwork_feat_image_url) {
@@ -140,14 +140,14 @@ class MP_Artwork_Gallery {
                     $gallery = get_post_gallery(get_the_ID(), false);
                     if (empty($gallery["ids"])) {
                         $size = sizeof($gallery["src"]);
-                        echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][0] . '"></a></div>';
+                        echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][0] . '"></a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         if ($size > 1) {
-                            echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][1] . '"></a></div>';
+                            echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][1] . '"></a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             if ($size > 2) {
-                                echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][2] . '"></a></div>';
+                                echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][2] . '"></a></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             }
                         }
-                        echo '</div></div>';
+                        echo '</div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                         return;
                     }
                     $id_gallery = explode(',', $gallery["ids"]);

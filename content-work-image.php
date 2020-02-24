@@ -19,7 +19,7 @@ global $mp_artwork_page_template;
             if (!empty($mp_artwork_img)):
                 ?>
                 <div class="entry-thumbnail">              
-                    <a href = "<?php the_permalink(); ?>"><img src="<?php echo $mp_artwork_img ?>" class="attachment-post-thumbnail wp-post-image" alt="<?php the_title(); ?>"></a>
+                    <a href = "<?php the_permalink(); ?>"><img src="<?php echo $mp_artwork_img // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped?>" class="attachment-post-thumbnail wp-post-image" alt="<?php the_title(); ?>"></a>
                 </div>
                 <?php
             else:
@@ -34,7 +34,7 @@ global $mp_artwork_page_template;
                             <?php
                             $mp_artwork_title = the_title('<h2 class="entry-title h4"><a href="' . get_permalink() . '" rel="bookmark">', '</a></h2>', false);
                             if ($mp_artwork_title) {
-                                echo $mp_artwork_title;
+                                echo $mp_artwork_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             } else {
                                 mp_artwork_posted_on_meta($post);
                             }

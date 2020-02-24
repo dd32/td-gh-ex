@@ -22,7 +22,7 @@ global $mp_artwork_page_template;
                             <?php
                             $mp_artwork_title = the_title('<h2 class="entry-title h4"><a href="' . get_permalink() . '" rel="bookmark">', '</a></h2>', false);
                             if ($mp_artwork_title) {
-                                echo $mp_artwork_title;
+                                echo $mp_artwork_title; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
                             } else {
                                 mp_artwork_posted_on_meta($post);
                             }
@@ -43,7 +43,7 @@ global $mp_artwork_page_template;
             if ($mp_artwork_media === false):
                 mp_artwork_post_thumbnail($post, $mp_artwork_page_template);
             else:
-                echo $mp_artwork_media;
+                echo $mp_artwork_media; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
             endif;
             ?>
         </div>  
