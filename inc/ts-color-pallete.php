@@ -134,6 +134,24 @@
 		$custom_css .='}';
 		}
 
+	/*------------------------------ Button Settings option-----------------------*/
+
+	$advance_ecommerce_store_button_padding_top_bottom = get_theme_mod('advance_ecommerce_store_button_padding_top_bottom');
+	$advance_ecommerce_store_button_padding_left_right = get_theme_mod('advance_ecommerce_store_button_padding_left_right');
+	if($advance_ecommerce_store_button_padding_top_bottom != false || $advance_ecommerce_store_button_padding_left_right != false){
+		$custom_css .='.second-border a, #slider .more-btn a, #comments .form-submit input[type="submit"], .product-page .woocommerce ul.products li.product .button{';
+			$custom_css .='padding-top: '.esc_html($advance_ecommerce_store_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_ecommerce_store_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_ecommerce_store_button_padding_left_right).'px; padding-right: '.esc_html($advance_ecommerce_store_button_padding_left_right).'px; display:inline-block;';
+		$custom_css .='}';
+	}
+
+	$advance_ecommerce_store_button_border_radius = get_theme_mod('advance_ecommerce_store_button_border_radius');
+	if($advance_ecommerce_store_button_border_radius != false){
+		$custom_css .='.second-border a,#slider .more-btn a, #comments .form-submit input[type="submit"], .product-page .woocommerce ul.products li.product .button{';
+			$custom_css .='border-radius: '.esc_html($advance_ecommerce_store_button_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+
 
 
 

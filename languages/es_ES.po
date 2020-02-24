@@ -1,0 +1,609 @@
+# <!=Copyright (C) 2018 Themeshopy
+# This file is distributed under the GNU General Public License.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Advance Ecommerce Store 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2020-02-18 11:02+0530\n"
+"Language-Team: \n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language: es\n"
+"X-Poedit-SearchPath-0: ../../advance-ecommerce-store\n"
+
+#: 404.php:13
+msgid "404"
+msgstr "cuatrocientos cuatro"
+
+#: 404.php:13
+msgid "Not Found"
+msgstr "No encontrado"
+
+#: 404.php:14
+msgid "Looks like you have taken a wrong turn&hellip"
+msgstr "Parece que has tomado un giro equivocado"
+
+#: 404.php:15 no-results.php:21
+msgid "Dont worry&hellip it happens to the best of us"
+msgstr "No te preocupes y demonios, nos pasa a los mejores"
+
+#: 404.php:17
+msgid "Back to Home Page"
+msgstr "Volver a la página de inicio"
+
+#: archive.php:38 archive.php:66 archive.php:96 archive.php:124 archive.php:154
+#: archive.php:184 archive.php:215 image.php:38 image.php:66 image.php:96
+#: image.php:124 image.php:154 image.php:184 image.php:215 index.php:39
+#: index.php:63 index.php:89 index.php:113 index.php:139 index.php:164
+#: index.php:187 search.php:36 search.php:62 search.php:90 search.php:116
+#: search.php:144 search.php:172 search.php:201
+msgid "Previous page"
+msgstr "Pagina anterior"
+
+#: archive.php:39 archive.php:67 archive.php:97 archive.php:125 archive.php:155
+#: archive.php:185 archive.php:216 image.php:39 image.php:67 image.php:97
+#: image.php:125 image.php:155 image.php:185 image.php:216 index.php:40
+#: index.php:64 index.php:90 index.php:114 index.php:140 index.php:165
+#: index.php:188 search.php:37 search.php:63 search.php:91 search.php:117
+#: search.php:145 search.php:173 search.php:202
+msgid "next page"
+msgstr "siguiente página"
+
+#: archive.php:40 archive.php:68 archive.php:98 archive.php:126 archive.php:157
+#: archive.php:186 archive.php:217 image.php:40 image.php:68 image.php:98
+#: image.php:126 image.php:156 image.php:186 image.php:217 index.php:41
+#: index.php:65 index.php:91 index.php:115 index.php:141 index.php:166
+#: index.php:189 search.php:38 search.php:64 search.php:92 search.php:118
+#: search.php:146 search.php:174 search.php:203
+#: template-parts/single-post.php:32
+msgid "page"
+msgstr "página"
+
+#: comments.php:28
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Un pensamiento sobre & ldquo;% s & rdquo;"
+
+#: comments.php:38
+msgid "comments title"
+msgstr "título de comentarios"
+
+#: comments.php:68
+msgid "Comments are closed"
+msgstr "los comentarios están cerrados"
+
+#: footer.php:50
+msgid "Copyright 2018"
+msgstr "Copyright 2018"
+
+#: footer.php:57 footer.php:59 footer.php:61
+msgid "Scroll to Top"
+msgstr "Vuelve al comienzo"
+
+#: functions.php:33
+msgid "Primary Menu"
+msgstr "Menú Primaria"
+
+#: functions.php:34 header.php:64
+msgid "Woocommerce Menu"
+msgstr "Menú de Woocommerce"
+
+#: functions.php:35 header.php:36
+msgid "Responsive Menu"
+msgstr "Menú receptivo"
+
+#: functions.php:68
+msgid ""
+"Thank you for choosing ThemeShopy. We are sincerely obliged to offer our "
+"best services to you. Please proceed towards welcome page and give us the "
+"privilege to serve you."
+msgstr ""
+"Gracias por elegir ThemeShopy. Estamos sinceramente obligados a ofrecerle "
+"nuestros mejores servicios. Continúe hacia la página de bienvenida y dénos "
+"el privilegio de servirle."
+
+#: functions.php:69
+msgid "Click here..."
+msgstr "Haga clic aquí..."
+
+#: functions.php:76
+msgid "Blog Sidebar"
+msgstr "Blog Sidebar"
+
+#: functions.php:77
+msgid "Appears on blog page sidebar"
+msgstr "Aparece en la barra lateral de la página del blog"
+
+#: functions.php:86
+msgid "page sidebar"
+msgstr "barra lateral de página"
+
+#: functions.php:87 functions.php:97
+msgid "Appears on page sidebar"
+msgstr "Aparece en la barra lateral de la página"
+
+#: functions.php:96
+msgid "Third Column Sidebar"
+msgstr "Barra lateral de la tercera columna"
+
+#: functions.php:109
+msgid "Footer Nav"
+msgstr "Footer Nav"
+
+#: functions.php:120
+msgid "Home Page Sidebar"
+msgstr "Barra lateral de la página de inicio"
+
+#: functions.php:121
+msgid "Appears on home page"
+msgstr "Aparece en la página de inicio"
+
+#: functions.php:130
+msgid "Social Media Widget"
+msgstr "Widget de redes sociales"
+
+#: functions.php:131
+msgid "Appears on topbar"
+msgstr "Aparece en la barra superior"
+
+#: functions.php:393
+msgid "Ecommerce Wordpress Theme"
+msgstr "Tema de Wordpress de comercio electrónico"
+
+#: header.php:29
+msgid "Skip to content"
+msgstr "saltar al contenido"
+
+#: header.php:33
+msgid "Open Menu"
+msgstr "Menú abierto"
+
+#: header.php:37
+msgid "Close Menu"
+msgstr "Cerrar menú"
+
+#: header.php:112
+msgid "My Account"
+msgstr "Mi cuenta"
+
+#: header.php:124
+msgid "SHOPPING CART"
+msgstr "CARRITO DE COMPRAS"
+
+#: header.php:135
+msgid "Top Menu"
+msgstr "Menu principal"
+
+#: no-results.php:11
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#: no-results.php:16
+msgid "Ready to publish your first post? Get started here"
+msgstr "Listo para publicar su primer post? Comience aquí"
+
+#: no-results.php:18
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords"
+msgstr ""
+"Lo sentimos, pero nada coincide con sus términos de búsqueda. Intente "
+"nuevamente con algunas palabras clave diferentes"
+
+#: no-results.php:21
+msgid "Dont worry&hellip it happens to the best of us."
+msgstr "No te preocupes y hellip le pasa a lo mejor de nosotros."
+
+#: no-results.php:23
+msgid "Return to Home Page"
+msgstr "Regresar a la página principal"
+
+#: search.php:22 search.php:48 search.php:76 search.php:102 search.php:130
+#: search.php:158 search.php:187
+msgid "Results For: %s"
+msgstr "Resultados para:% s"
+
+#: searchform.php:12 searchform.php:14
+msgid "Search"
+msgstr "Buscar"
+
+#: searchform.php:12
+msgid "placeholder"
+msgstr "marcador de posición"
+
+#: searchform.php:14
+msgid "submit button"
+msgstr "botón de enviar"
+
+#: sidebar.php:11
+msgid "Archives"
+msgstr "Archivo"
+
+#: sidebar.php:17
+msgid "Meta"
+msgstr "Meta"
+
+#: template-parts/single-post.php:28 template-parts/content.php:28
+#: template-parts/grid-layout.php:29 template-parts/content-audio.php:37
+#: template-parts/content-gallery.php:28 template-parts/content-image.php:28
+#: template-parts/content-video.php:36
+msgid "0 Comment"
+msgstr "0 comentario"
+
+#: template-parts/image-layout.php:29
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: template-parts/single-post.php:66 template-parts/image-layout.php:44
+msgid "Parent post link"
+msgstr "Enlace de publicación principal"
+
+#: template-parts/single-post.php:71 template-parts/image-layout.php:49
+msgid "Next"
+msgstr "Próximo"
+
+#: template-parts/single-post.php:72 template-parts/image-layout.php:50
+msgid "Next post:"
+msgstr "Siguiente post:"
+
+#: template-parts/single-post.php:74 template-parts/image-layout.php:53
+msgid "Previous post:"
+msgstr "Publicación anterior:"
+
+#: template-parts/single-post.php:73 template-parts/image-layout.php:52
+msgid "Previous"
+msgstr "Previo"
+
+#: page-template/custom-front-page.php:13
+msgid "CATEGORIES"
+msgstr "CATEGORIAS"
+
+#: page-template/custom-front-page.php:82 template-parts/content.php:36
+#: template-parts/grid-layout.php:37 template-parts/content-audio.php:56
+#: template-parts/content-gallery.php:45 template-parts/content-image.php:36
+#: template-parts/content-video.php:55
+msgid "READ MORE"
+msgstr "LEE MAS"
+
+#: template-parts/image-layout.php:34
+msgid "Edit"
+msgstr "Editar"
+
+#: inc/customizer.php:20
+msgid "Theme Settings"
+msgstr "Ajustes de tema"
+
+#: inc/customizer.php:21
+msgid "Description of what this panel does."
+msgstr "Descripción de lo que hace este panel."
+
+#: inc/customizer.php:27
+msgid "Theme Color Option"
+msgstr "Opción de color del tema"
+
+#: inc/customizer.php:36
+msgid "One can change complete theme color on just one click."
+msgstr "Se puede cambiar el color completo del tema con solo un clic."
+
+#: inc/customizer.php:43
+msgid "Layout Settings"
+msgstr "opciones de diseño"
+
+#: inc/customizer.php:53
+msgid "Show / Hide Preloader"
+msgstr "Mostrar / Ocultar precargador"
+
+#: inc/customizer.php:63
+msgid "Sticky Header"
+msgstr "Encabezado pegajoso"
+
+#: inc/customizer.php:68 inc/customizer.php:77
+msgid "Default"
+msgstr "Defecto"
+
+#: inc/customizer.php:73
+msgid "Container Box"
+msgstr "Caja de contenedor"
+
+#: inc/customizer.php:74
+msgid "Here you can change the Width layout."
+msgstr "Aquí puede cambiar el diseño de Ancho."
+
+#: inc/customizer.php:78
+msgid "Container"
+msgstr "Envase"
+
+#: inc/customizer.php:79
+msgid "Box Container"
+msgstr "Caja contenedor"
+
+#: inc/customizer.php:85 inc/customizer.php:94
+msgid "Right Sidebar"
+msgstr "Barra lateral derecha"
+
+#: inc/customizer.php:90
+msgid "Change Layouts"
+msgstr "Cambiar diseños"
+
+#: inc/customizer.php:93
+msgid "Left Sidebar"
+msgstr "Barra lateral izquierda"
+
+#: inc/customizer.php:95
+msgid "One Column"
+msgstr "Una columna"
+
+#: inc/customizer.php:96
+msgid "Three Columns"
+msgstr "Tres columnas"
+
+#: inc/customizer.php:97
+msgid "Four Columns"
+msgstr "Cuatro columnas"
+
+#: inc/customizer.php:98
+msgid "Grid Layout"
+msgstr "Diseño de cuadrícula"
+
+#: inc/customizer.php:104
+msgid "Button Option"
+msgstr "Opción de botón"
+
+#: inc/customizer.php:113
+msgid "Top and Bottom Padding"
+msgstr "Acolchado Superior e Inferior"
+
+#: inc/customizer.php:128
+msgid "Left and Right Padding"
+msgstr "Acolchado Izquierdo y Derecho"
+
+#: inc/customizer.php:143
+msgid "Button Border Radius"
+msgstr "Radio del borde del botón"
+
+#: inc/customizer.php:249
+msgid "Typography"
+msgstr "Tipografía"
+
+#: inc/customizer.php:260
+msgid "Paragraph Color"
+msgstr "Color del párrafo"
+
+#: inc/customizer.php:274
+msgid "Paragraph Fonts"
+msgstr "Fuentes de párrafo"
+
+#: inc/customizer.php:284
+msgid "Paragraph Font Size"
+msgstr "Tamaño de fuente del párrafo"
+
+#: inc/customizer.php:296
+msgid "\"a\" Tag Color"
+msgstr "Color de etiqueta \"a\""
+
+#: inc/customizer.php:310
+msgid "\"a\" Tag Fonts"
+msgstr "Fuentes de etiqueta \"a\""
+
+#: inc/customizer.php:321
+msgid "\"li\" Tag Color"
+msgstr "Color de etiqueta \"li\""
+
+#: inc/customizer.php:335
+msgid "\"li\" Tag Fonts"
+msgstr "Fuentes de etiqueta \"li\""
+
+#: inc/customizer.php:346
+msgid "H1 Color"
+msgstr "Color H1"
+
+#: inc/customizer.php:360
+msgid "H1 Fonts"
+msgstr "Fuentes H1"
+
+#: inc/customizer.php:371
+msgid "H1 Font Size"
+msgstr "Tamaño de fuente H1"
+
+#: inc/customizer.php:383
+msgid "H2 Color"
+msgstr "Color H2"
+
+#: inc/customizer.php:397
+msgid "H2 Fonts"
+msgstr "Fuentes H2"
+
+#: inc/customizer.php:408
+msgid "H2 Font Size"
+msgstr "Tamaño de fuente H2"
+
+#: inc/customizer.php:420
+msgid "H3 Color"
+msgstr "Color H3"
+
+#: inc/customizer.php:434
+msgid "H3 Fonts"
+msgstr "Fuentes H3"
+
+#: inc/customizer.php:445
+msgid "H3 Font Size"
+msgstr "Tamaño de fuente H3"
+
+#: inc/customizer.php:457
+msgid "H4 Color"
+msgstr "Color H4"
+
+#: inc/customizer.php:471
+msgid "H4 Fonts"
+msgstr "Fuentes H4"
+
+#: inc/customizer.php:482
+msgid "H4 Font Size"
+msgstr "Tamaño de fuente H4"
+
+#: inc/customizer.php:494
+msgid "H5 Color"
+msgstr "Color H5"
+
+#: inc/customizer.php:508
+msgid "H5 Fonts"
+msgstr "Fuentes H5"
+
+#: inc/customizer.php:519
+msgid "H5 Font Size"
+msgstr "Tamaño de fuente H5"
+
+#: inc/customizer.php:531
+msgid "H6 Color"
+msgstr "Color H6"
+
+#: inc/customizer.php:545
+msgid "H6 Fonts"
+msgstr "Fuentes H6"
+
+#: inc/customizer.php:556
+msgid "H6 Font Size"
+msgstr "Tamaño de fuente H6"
+
+#: inc/customizer.php:564
+msgid "Slider Settings"
+msgstr "Configuración del control deslizante"
+
+#: inc/customizer.php:575
+msgid "Show / Hide slider"
+msgstr "Mostrar / Ocultar control deslizante"
+
+#: inc/customizer.php:587
+msgid "Select Slide Image Page"
+msgstr "Seleccionar página de imagen de diapositiva"
+
+#: inc/customizer.php:595 inc/customizer.php:604 inc/customizer.php:838
+msgid "Left"
+msgstr "Izquierdo"
+
+#: inc/customizer.php:600
+msgid "Slider Content Alignment"
+msgstr "Alineación de contenido del control deslizante"
+
+#: inc/customizer.php:603 inc/customizer.php:840
+msgid "Center"
+msgstr "Centrar"
+
+#: inc/customizer.php:605 inc/customizer.php:830 inc/customizer.php:839
+msgid "Right"
+msgstr "Derecho"
+
+#: inc/customizer.php:618
+msgid "Slider Excerpt length"
+msgstr "Longitud del extracto del deslizador"
+
+#: inc/customizer.php:635
+msgid "Slider Image Opacity"
+msgstr "Slider Image Opacity"
+
+#: inc/customizer.php:655
+msgid "Product Services"
+msgstr "Servicios de producto"
+
+#: inc/customizer.php:679
+msgid "Select Category to display Services"
+msgstr "Seleccione categoría para mostrar servicios"
+
+#: inc/customizer.php:685
+msgid "New Arrivals"
+msgstr "Los recién llegados"
+
+#: inc/customizer.php:695
+msgid "Section Title"
+msgstr "Sección de título"
+
+#: inc/customizer.php:705
+msgid "Select Page"
+msgstr "Seleccionar página"
+
+#: inc/customizer.php:712
+msgid "Blog Page Settings"
+msgstr "Configuración de la página del blog"
+
+#: inc/customizer.php:722
+msgid "Post Date"
+msgstr "Fecha de publicación"
+
+#: inc/customizer.php:732
+msgid "Comments"
+msgstr "Comentarios"
+
+#: inc/customizer.php:742
+msgid "Author"
+msgstr "Autor"
+
+#: inc/customizer.php:752
+msgid "Single Post Tags"
+msgstr "Etiquetas de publicaciones individuales"
+
+#: inc/customizer.php:764
+msgid "Excerpt length"
+msgstr "Longitud del extracto"
+
+#: inc/customizer.php:780
+msgid "Add Button Text"
+msgstr "Agregar texto de botón"
+
+#: inc/customizer.php:787
+msgid "Footer Text"
+msgstr "Texto de pie de página"
+
+#: inc/customizer.php:798
+msgid "Footer widget area"
+msgstr "Área de widget de pie de página"
+
+#: inc/customizer.php:800
+msgid ""
+"Select the number of widget areas you want in the footer. After that, go to "
+"Appearance > Widgets and add your widgets."
+msgstr ""
+"Seleccione el número de áreas de widgets que desea en el pie de página. "
+"Después de eso, ve a Apariencia> Widgets y agrega tus widgets."
+
+#: inc/customizer.php:802
+msgid "One"
+msgstr "Uno"
+
+#: inc/customizer.php:803
+msgid "Two"
+msgstr "Dos"
+
+#: inc/customizer.php:804
+msgid "Three"
+msgstr "Tres"
+
+#: inc/customizer.php:805
+msgid "Four"
+msgstr "Cuatro"
+
+#: inc/customizer.php:814
+msgid "Copyright Text"
+msgstr "Texto de copyright"
+
+#: inc/customizer.php:825
+msgid "Show / Hide Scroll To Top"
+msgstr "Mostrar / Ocultar Desplazarse hacia arriba"
+
+#: inc/customizer.php:835
+msgid "Scroll Back to Top Position"
+msgstr "Desplazarse hacia atrás a la posición superior"
+
+#: inc/customizer.php:925
+msgid "Ecommerce Pro Theme"
+msgstr "Ecommerce Pro Theme"
+
+#: inc/customizer.php:926
+msgid "Go Pro"
+msgstr "Go Pro"

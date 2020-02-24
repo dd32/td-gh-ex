@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.5.2
+Stable tag: 0.5.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -12,7 +12,7 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 
 == Description ==
 
-Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention.
+Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention.
 
 == Changelog ==
 
@@ -87,6 +87,11 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Added slider content alignment setting in customizer.
 * Added slider excerpt length setting in customizer.
 * Added slider image opacity setting in customizer.
+
+= 0.5.3 =
+* Added border radius and button Padding option for home page and blog page in customizer.
+* Added show and hide preloader option in customizer.
+* Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
 
 == Resources ==
 

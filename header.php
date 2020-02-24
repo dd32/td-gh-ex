@@ -19,6 +19,13 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <header role="banner">
+    <?php if(get_theme_mod('advance_ecommerce_store_preloader_option',true)){ ?>
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
+    <?php }?>
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-ecommerce-store' ); ?></a>
       <div id="responsive-navbar" class="<?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
         <div class="container">
