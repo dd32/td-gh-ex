@@ -40,9 +40,19 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	//Layouts
 	$wp_customize->add_section('advance_fitness_gym_left_right', array(
 		'title'    => __('Layout Settings', 'advance-fitness-gym'),
-		'priority' => 30,
+		'priority' => null,
 		'panel'    => 'advance_fitness_gym_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_fitness_gym_preloader_option',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_fitness_gym_preloader_option',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','advance-fitness-gym'),
+       'section' => 'advance_fitness_gym_left_right'
+    ));
 
 	$wp_customize->add_setting('advance_fitness_gym_theme_options',array(
         'default' => __('Default','advance-fitness-gym'),
@@ -78,6 +88,57 @@ function advance_fitness_gym_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-fitness-gym')
 		),
 	));
+
+	// Button
+	$wp_customize->add_section( 'advance_fitness_gym_theme_button', array(
+		'title' => __('Button Option','advance-fitness-gym'),
+		'panel' => 'advance_fitness_gym_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_button_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_button_padding_top_bottom',array(
+		'label'	=> __('Top and Bottom Padding','advance-fitness-gym'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_fitness_gym_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_button_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_fitness_gym_button_padding_left_right',array(
+		'label'	=> __('Left and Right Padding','advance-fitness-gym'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_fitness_gym_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_fitness_gym_button_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_fitness_gym_button_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','advance-fitness-gym' ),
+		'section'     => 'advance_fitness_gym_theme_button',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
 
 	$font_array = array(
         '' =>'No Fonts',

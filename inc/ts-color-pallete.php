@@ -140,3 +140,21 @@
 			$custom_css .='opacity:0.9';
 		$custom_css .='}';
 		}
+
+	/*------------------------------ Button Settings option-----------------------*/
+
+	$advance_fitness_gym_button_padding_top_bottom = get_theme_mod('advance_fitness_gym_button_padding_top_bottom');
+	$advance_fitness_gym_button_padding_left_right = get_theme_mod('advance_fitness_gym_button_padding_left_right');
+	if($advance_fitness_gym_button_padding_top_bottom != false || $advance_fitness_gym_button_padding_left_right != false){
+		$custom_css .='.new-text .second-border a, #comments .form-submit input[type="submit"], #fitness-togym .know-btn a.blogbutton-small{';
+			$custom_css .='padding-top: '.esc_html($advance_fitness_gym_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_fitness_gym_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_fitness_gym_button_padding_left_right).'px; padding-right: '.esc_html($advance_fitness_gym_button_padding_left_right).'px; display:inline-block;';
+		$custom_css .='}';
+	}
+
+	$advance_fitness_gym_button_border_radius = get_theme_mod('advance_fitness_gym_button_border_radius');
+	if($advance_fitness_gym_button_border_radius != false){
+		$custom_css .='.new-text .second-border a, #comments .form-submit input[type="submit"], #fitness-togym .know-btn a.blogbutton-small{';
+			$custom_css .='border-radius: '.esc_html($advance_fitness_gym_button_border_radius).'px;';
+		$custom_css .='}';
+	}
+
