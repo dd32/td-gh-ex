@@ -44,7 +44,8 @@ V2.0.0 - 2017-11-21 Complete Rebuild based on the Foundation 6 Front-End Framewo
 V2.0.1 - 2017-11-23 Fix in inc/richwp-options
 V2.0.2 - 2017-11-29 WooCommerce cart.php update, removel of one WooCommerce widget area, theme description edit
 V2.0.3 - 2018-06-29 Footer bug fix
-V2.0.3 - 2018-06-29 Translation fix
+V2.0.4 - 2018-06-29 Translation fix
+V2.0.5 - 2020-02-25 Woocommerce v.# update
 
 
 ########################################################
