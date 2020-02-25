@@ -71,7 +71,7 @@ function advance_education_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_education_paragraph_font_size',array(
-		'default'	=> '12px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_paragraph_font_size',array(
@@ -158,7 +158,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//This is H1 FontSize setting
 	$wp_customize->add_setting('advance_education_h1_font_size',array(
-		'default'	=> '50px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h1_font_size',array(
@@ -195,7 +195,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//This is H2 FontSize setting
 	$wp_customize->add_setting('advance_education_h2_font_size',array(
-		'default'	=> '45px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h2_font_size',array(
@@ -232,7 +232,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//This is H3 FontSize setting
 	$wp_customize->add_setting('advance_education_h3_font_size',array(
-		'default'	=> '36px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h3_font_size',array(
@@ -269,7 +269,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//This is H4 FontSize setting
 	$wp_customize->add_setting('advance_education_h4_font_size',array(
-		'default'	=> '30px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h4_font_size',array(
@@ -306,7 +306,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//This is H5 FontSize setting
 	$wp_customize->add_setting('advance_education_h5_font_size',array(
-		'default'	=> '25px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h5_font_size',array(
@@ -343,7 +343,7 @@ function advance_education_customize_register($wp_customize) {
 
 	//This is H6 FontSize setting
 	$wp_customize->add_setting('advance_education_h6_font_size',array(
-		'default'	=> '18px',
+		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h6_font_size',array(
@@ -359,6 +359,16 @@ function advance_education_customize_register($wp_customize) {
 		'priority' => null,
 		'panel'    => 'advance_education_panel_id',
 	));
+
+	$wp_customize->add_setting('advance_education_preloader_option',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_preloader_option',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','advance-education'),
+       'section' => 'advance_education_left_right'
+    ));
 	
 	$wp_customize->add_setting('advance_education_theme_options',array(
         'default' => __('Default','advance-education'),
@@ -392,6 +402,57 @@ function advance_education_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-education')
 		),
 	));
+
+	// Button
+	$wp_customize->add_section( 'advance_education_theme_button', array(
+		'title' => __('Button Option','advance-education'),
+		'panel' => 'advance_education_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_education_button_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_button_padding_top_bottom',array(
+		'label'	=> __('Top and Bottom Padding','advance-education'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_education_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_education_button_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_button_padding_left_right',array(
+		'label'	=> __('Left and Right Padding','advance-education'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_education_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_education_button_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_education_button_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','advance-education' ),
+		'section'     => 'advance_education_theme_button',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
 
 	//Top Bar
 	$wp_customize->add_section('advance_education_topbar',array(
@@ -632,15 +693,12 @@ function advance_education_customize_register($wp_customize) {
 
     $wp_customize->add_setting( 'advance_education_excerpt_number', array(
 		'default'              => 20,
-		'type'                 => 'theme_mod',
-		'transport' 		   => 'refresh',
-		'sanitize_callback'    => 'absint',
-		'sanitize_js_callback' => 'absint',
+		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
 	$wp_customize->add_control( 'advance_education_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-education' ),
 		'section'     => 'advance_education_blog_post',
-		'type'        => 'textfield',
+		'type'        => 'text',
 		'settings'    => 'advance_education_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
