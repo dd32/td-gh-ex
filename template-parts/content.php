@@ -64,11 +64,6 @@
 	                            <span><?php echo absint( get_comments_number() ); ?></span>
 	                        </a>
 	                    </li>
-	                    <?php if( function_exists( '_simple_share_buttons_adder_add_action_links' ) ): ?>
-	                        <li class="ssbutton_adder">    
-	                            <?php echo do_shortcode('[ssba-buttons]'); ?>    
-	                        </li>
-	                    <?php endif;  ?>
 	                </ul>
 	            </div>
 	        </div>

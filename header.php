@@ -44,23 +44,20 @@
 			</div><!-- .site-branding -->
 
 			<!-- social navigation -->
-			<nav class="top-social-menu">
-				<?php if ( has_nav_menu( 'top-social' ) ) :
-							              wp_nav_menu( array(	 'theme_location' => 'top-social', 'depth' => 1, 'container' => false, 'menu_class' => 'top-social' ) );
-	                endif; ?>
-	        </nav>
+	
 
-			<nav id="site-navigation" class="main-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<nav id="site-navigation" class="main-navigation"">
 				<div class="toggle-container visible-xs visible-sm hidden-md hidden-lg">
-	               <button class="menu-toggle"><?php esc_html_e( 'Menu', 'article-lite' ); ?></button>
-	            </div>
-
-	             <?php if ( has_nav_menu( 'primary' ) ) {
-	                wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) );
-	                } else {
-	                    wp_nav_menu( array(	'container' => '', 'menu_class' => '', 'title_li' => '' ));
-	                }
-	            ?>
+                    <button class="menu-toggle"><?php esc_html_e( 'Menu', 'article-lite' ); ?></button>
+                </div>
+                <div class="menu-main menu-container">
+		            <?php if ( has_nav_menu( 'primary' ) ) {
+		                wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) );
+		                } else {
+		                    wp_nav_menu( array(	'container' => '', 'menu_class' => '', 'title_li' => '' ));
+		                }
+		            ?>
+		        </div>
 			</nav><!-- #site-navigation -->
 			<div class="header_search_form">
 	            <?php get_search_form(); ?>
@@ -87,4 +84,4 @@
 		    <div id="breadcrumb-wrapper">
 		        <?php get_sidebar( 'breadcrumbs' ); ?>
 		    </div>
-		<?php endif; ?>
+		<?php endif;

@@ -44,6 +44,8 @@ Article Lite is a mimimal WordPress Theme design specially for bloggers. Providi
 = 1.0.3 - Jan 02 2020 =
 * Fixed escaping and function not found issue
 
+= 1.0.4 - Feb 26 2020 =
+* Fixed menu accessibility
 
 
 == License ==

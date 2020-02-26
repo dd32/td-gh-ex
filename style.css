@@ -1,10 +1,10 @@
 /***
 Theme Name: Article Lite
-Theme URI: https://blazethemes.com/themes/article-lite
+Theme URI: https://blazethemes.com/theme/article-lite
 Author: Blaze Themes
 Author URI: https://blazethemes.com/
 Description: Article Lite is a mimimal WordPress Theme design specially for bloggers. Providing all the loved featured by bloggers like stiky post, post formats like audio, video, gallary, Easy access to social share, simple layout for blog. You can check demo at http://demo.blazethemes.com/article-lite.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: article-lite
@@ -4129,4 +4129,14 @@ display: block;
     background-color: #f9f9f9;
     background-image: none;
     border: 1px solid #d9d9d9;
+}
+
+
+/*Web accessable */
+button.wahout:focus {
+outline: #ff0000 4px solid !important;
+}
+
+.nav-menu ul.sub-menu li a.focused{
+	outline: 1px solid #8e8b8b;;
 }

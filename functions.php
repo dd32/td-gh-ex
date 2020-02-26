@@ -149,6 +149,7 @@ function article_lite_scripts() {
 
 	wp_enqueue_script( 'article-moveup', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '1.0.0', true );	
 	wp_enqueue_script( 'article-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
 	wp_enqueue_script( 'article-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	//stickey sidebar js
