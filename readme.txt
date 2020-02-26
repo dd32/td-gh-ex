@@ -1,13 +1,12 @@
 === Chip Life ===
 Contributors: life.object
 Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
-Requires at least: WordPress 4.8
-Tested up to: WordPress 5.0.3
+Requires at least: WordPress 5.1
+Tested up to: WordPress 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 
 == Description ==
 Chip Life is an elegant theme powered by an advanced code architecture and grid system. Along with the elegant design the theme is easily customizable with numerous theme options. Make it yours with a custom menu, logo, and background.
@@ -54,9 +53,10 @@ Please see the file headers for more information.
 
 = FONTS =
 
-Font Awesome v4.6.3, Copyright: Dave Gandy, https://twitter.com/davegandy
-License: http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-Source: http://fontawesome.io - @fontawesome
+Font Awesome Free 5.0.13
+Copyright: Dave Gandy, https://twitter.com/davegandy
+License: https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+Source: https://fontawesome.com - @fontawesome
 
 = CSS =
 
@@ -69,6 +69,11 @@ Source: http://getbootstrap.com
 Awesome Media Queries in JavaScript v2.1.2, Copyright (c) 2014 Nick Williams
 License: MIT
 Source: http://wicky.nillia.ms/enquire.js
+
+FitVids v1.1
+Copyright 2013, Chris Coyier - http://css-tricks.com + Dave Rupert - http://daverupert.com
+License: WTFPL
+Source: https://github.com/davatron5000/FitVids.js
 
 hoverIntent r7, Copyright 2007, 2013 Brian Cherne
 License: MIT
@@ -88,6 +93,12 @@ Source: https://unsplash.com/
 - https://unsplash.com/photos/JmS0fkLlUtA
 
 == Changelog ==
+
+= 2.0.8 =
+Released: February 26, 2020
+
+* Code improvements.
+* POT file updated.
 
 = 2.0.7 =
 Released: January 18, 2019

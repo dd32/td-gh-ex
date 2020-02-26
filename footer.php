@@ -34,6 +34,8 @@
 
 </div><!-- #page .site-wrapper -->
 
+<div class="overlay-effect"></div><!-- .overlay-effect -->
+
 <?php wp_footer(); ?>
 </body>
 </html>

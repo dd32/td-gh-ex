@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 					printf(
 						/* translators: %s: post title */
 						esc_html( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'chip-life' ) ),
-						get_the_title()
+						wp_kses_post( get_the_title() )
 					);
 				} else {
 					printf(
@@ -46,16 +46,16 @@ if ( post_password_required() ) {
 							'comments title',
 							'chip-life'
 						) ),
-						number_format_i18n( $comments_number ),
-						get_the_title()
+						esc_html( number_format_i18n( $comments_number ) ),
+						wp_kses_post( get_the_title() )
 					);
 				}
 			?>
 		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation comment-navigation-above" role="navigation">
-			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'chip-life' ); ?></h1>
+		<nav id="comment-nav-above" class="navigation comment-navigation comment-navigation-above">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'chip-life' ); ?></h2>
 			<div class="nav-links">
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'chip-life' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'chip-life' ) ); ?></div>
@@ -74,8 +74,8 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation comment-navigation-below" role="navigation">
-			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'chip-life' ); ?></h1>
+		<nav id="comment-nav-below" class="navigation comment-navigation comment-navigation-below">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'chip-life' ); ?></h2>
 			<div class="nav-links">
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'chip-life' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'chip-life' ) ); ?></div>

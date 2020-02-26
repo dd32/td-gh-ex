@@ -13,74 +13,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
 <?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="site-wrapper site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'chip-life' ); ?></a>
 
-	<?php do_action( 'chip_life_before' ); ?>
-	<header id="masthead" class="site-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-xxl-12">
-
-					<div class="site-header-inside">
-
-						<div class="site-branding-wrapper">
-							<?php
-							// Site Logo
-							chip_life_the_custom_logo();
-							?>
-
-							<div class="site-branding">
-								<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
-								<?php
-								$description = get_bloginfo( 'description', 'display' );
-								if ( $description || is_customize_preview() ) :
-								?>
-								<h3 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h3>
-								<?php endif; ?>
-							</div>
-						</div><!-- .site-branding-wrapper -->
-
-						<div class="toggle-menu-wrapper">
-							<a href="#main-navigation-responsive" title="<?php esc_attr_e( 'Menu', 'chip-life' ); ?>" class="toggle-menu-control">
-								<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'chip-life' ); ?></span>
-							</a>
-						</div>
-
-					</div><!-- .site-header-inside -->
-
-				</div><!-- .col-xxl-12 -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</header><!-- #masthead -->
-
-	<nav id="site-navigation" class="main-navigation">
-		<div class="container">
-			<div class="row">
-				<div class="col-xxl-12">
-
-					<div class="main-navigation-inside">
-
-						<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'chip-life' ); ?></a>
-
-						<?php
-						wp_nav_menu( apply_filters( 'chip_life_primary_menu_args', array(
-							'container'       => 'div',
-							'container_class' => 'site-primary-menu',
-							'theme_location'  => 'primary',
-							'menu_class'      => 'primary-menu sf-menu',
-							'depth'           => 3,
-						) ) );
-						?>
-
-					</div><!-- .main-navigation-inside -->
-
-				</div><!-- .col-xxl-12 -->
-			</div><!-- .row -->
-		</div><!-- .container -->
-	</nav><!-- .main-navigation -->
+	<?php
+	// Site Header
+	get_template_part( 'template-parts/site-header' );
+	?>
 
 	<div id="content" class="site-content">

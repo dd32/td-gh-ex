@@ -109,7 +109,7 @@ endif;
  */
 function chip_life_page_menu_args( $args ) {
 	$args['show_home'] = true;
-	$args['menu_class'] = 'site-primary-menu';
+	$args['menu_class'] = 'site-header-menu-wrapper';
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'chip_life_page_menu_args' );
@@ -118,7 +118,7 @@ add_filter( 'wp_page_menu_args', 'chip_life_page_menu_args' );
  * Add ID and CLASS attributes to the first <ul> occurence in wp_page_menu
  */
 function chip_life_page_menu_class( $class ) {
-  return preg_replace( '/<ul>/', '<ul class="primary-menu sf-menu">', $class, 1 );
+  return preg_replace( '/<ul>/', '<ul class="site-header-menu sf-menu">', $class, 1 );
 }
 add_filter( 'wp_page_menu', 'chip_life_page_menu_class' );
 
@@ -182,6 +182,21 @@ function chip_life_the_content_more_link_scroll( $link ) {
 add_filter( 'the_content_more_link', 'chip_life_the_content_more_link_scroll' );
 
 /**
+ * New wp_body_open Theme Hook - WordPress 5.2
+ * Backward Compatibility
+ * This can be removed at the launch of WordPress 5.4
+ *
+ * @see https://make.wordpress.org/core/2019/04/24/miscellaneous-developer-updates-in-5-2/
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedFunctionFound
+	function wp_body_open() {
+		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
+		do_action( 'wp_body_open' );
+    }
+}
+
+/**
  * Filter 'the_site_logo'
  *
  * @return string
@@ -242,16 +257,14 @@ add_filter( 'body_class', 'chip_life_body_classes' );
  * @return void
  */
 function chip_life_copyright() {
+	// Blog Credits HTML
 	$html = '<div class="copyright chip-life-copyright">'. chip_life_mod( 'chip_life_copyright' ) .'</div>';
 
-	/**
-	 * Filters the Blog Copyright HTML.
-	 *
-	 * @param string $html Blog Copyright HTML.
-	 */
-	$html = apply_filters( 'chip_life_copyright_html', $html );
+	// Convert Chars
+	$html = convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $html ) ) ) ) ) );
 
-	echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $html ) ) ) ) ) ); // WPCS: XSS OK.
+	// Sanitization
+	echo wp_kses_post( $html );
 }
 add_action( 'chip_life_credits', 'chip_life_copyright' );
 
@@ -261,28 +274,12 @@ add_action( 'chip_life_credits', 'chip_life_copyright' );
  * @return void
  */
 function chip_life_credits_designer() {
-	$designer_string = sprintf( '<a href="%1$s" title="%2$s">%3$s</a> %4$s <span>&sdot;</span> %5$s <a href="%6$s" title="%7$s">%8$s</a>',
-		esc_url( 'http://www.tutorialchip.com' ),
-		esc_attr( 'Chip Life Theme' ),
-		esc_html( 'Chip Life Theme' ),
-		esc_html( 'by TutorialChip' ),
+	printf( '<div class="designer chip-life-designer">%1$s <a href="%2$s" title="TutorialChip">TutorialChip</a> <span>&sdot;</span> %3$s <a href="%4$s" title="WordPress">WordPress</a></div>',
+		esc_html__( 'Chip Life Theme by', 'chip-life' ),
+		esc_url( 'https://www.tutorialchip.com' ),
 		esc_html__( 'Powered by', 'chip-life' ),
-		esc_url( 'https://wordpress.org' ),
-		esc_attr( 'WordPress' ),
-		esc_html( 'WordPress' )
+		esc_url( __( 'https://wordpress.org', 'chip-life' ) )
 	);
-
-	// Designer HTML
-	$html = '<div class="designer chip-life-designer">'. $designer_string .'</div>';
-
-	/**
-	 * Filters the Designer HTML.
-	 *
-	 * @param string $html Designer HTML.
-	 */
-	$html = apply_filters( 'chip_life_credits_designer_html', $html );
-
-	echo $html; // WPCS: XSS OK.
 }
 add_action( 'chip_life_credits', 'chip_life_credits_designer' );
 

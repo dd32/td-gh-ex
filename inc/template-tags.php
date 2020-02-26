@@ -61,24 +61,12 @@ function chip_life_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf( '<span class="screen-reader-text">%1$s</span><a href="%2$s" rel="bookmark"> %3$s</a>',
+	// Posted On
+	printf( '<span class="posted-on"><span class="screen-reader-text">%1$s</span><a href="%2$s" rel="bookmark">%3$s</a></span>',
 		esc_html_x( 'Posted on', 'post date', 'chip-life' ),
 		esc_url( get_permalink() ),
-		$time_string
+		wp_kses( $time_string, array( 'time' => array( 'class' => array(), 'datetime' => array() ) ) )
 	);
-
-	// Posted On HTML
-	$html = '<span class="posted-on">' . $posted_on . '</span>'; // // WPCS: XSS OK.
-
-	/**
-	 * Filters the Posted On HTML.
-	 *
-	 * @param string $html Posted On HTML.
-	 */
-	$html = apply_filters( 'chip_life_posted_on_html', $html );
-
-	echo $html; // WPCS: XSS OK.
-
 }
 endif;
 
@@ -87,68 +75,19 @@ if ( ! function_exists( 'chip_life_posted_by' ) ) :
  * Prints author.
  */
 function chip_life_posted_by() {
-
 	// Global Post
 	global $post;
 
 	// We need to get author meta data from both inside/outside the loop.
 	$post_author_id = get_post_field( 'post_author', $post->ID );
 
-	// Byline
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'chip-life' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID', $post_author_id ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post_author_id ) ) . '</a></span>'
+	// Post Author
+	printf( '<span class="byline">%1$s <span class="author vcard"><a class="entry-author-link url fn n" href="%2$s" rel="author"><span class="entry-author-name">%3$s</span></a></span></span>',
+		/* translators: %s: post author */
+		esc_html_x( 'by', 'post author', 'chip-life' ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID', $post_author_id ) ) ),
+		esc_html( get_the_author_meta( 'display_name', $post_author_id ) )
 	);
-
-	// Posted By HTML
-	$html = '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-	/**
-	 * Filters the Posted By HTML.
-	 *
-	 * @param string $html Posted By HTML.
-	 */
-	$html = apply_filters( 'chip_life_posted_by_html', $html );
-
-	echo $html; // WPCS: XSS OK.
-
-}
-endif;
-
-if ( ! function_exists( 'chip_life_post_format' ) ) :
-/*
- * Return the post format, linked to the post format archive
- *
- * @param string $before Optional. Display before post format link.
- * @param string $after  Optional. Display after post format link.
- */
-function chip_life_post_format( $before = '', $after = '' ) {
-	$post_format  = get_post_format();
-	$post_formats = get_theme_support( 'post-formats' );
-
-	if ( 'post' === get_post_type() && $post_format && in_array( $post_format, $post_formats[0] ) ) {
-
-		$post_format_string = '<span class="post-format-label post-format-label-%1$s"><a class="post-format-link" href="%2$s" title="%3$s"><span class="screen-reader-text">%4$s</span></a></span>';
-		$post_format_string = sprintf( $post_format_string,
-			esc_attr( strtolower( $post_format ) ),
-			esc_url( get_post_format_link( $post_format ) ),
-			esc_attr( sprintf( __( 'All %s posts', 'chip-life'  ), strtolower( $post_format ) ) ),
-			esc_attr( get_post_format_string( $post_format ) )
-		);
-
-		// Post Format HTML
-		$html = $before . $post_format_string . $after; // WPCS: XSS OK.
-
-		/**
-		 * Filters the Post Format HTML.
-		 *
-		 * @param string $html Post Format HTML.
-		 */
-		$html = apply_filters( 'chip_life_post_format_html', $html );
-
-		echo $html; // WPCS: XSS OK.
-
-	}
 }
 endif;
 
@@ -159,49 +98,18 @@ if ( ! function_exists( 'chip_life_post_first_category' ) ) :
  * @return void
 */
 function chip_life_post_first_category() {
-
 	// An array of categories to return for the post.
 	$categories = get_the_category();
-	if ( $categories[0] ) {
 
+	// Validation
+	if ( ! empty( $categories ) && $categories[0] ) {
 		// Post First Category HTML
-		$html = sprintf( '<span class="post-first-category"><a href="%1$s" title="%2$s">%3$s</a></span>',
+		printf( '<span class="post-first-category cat-links entry-meta-icon"><a href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_attr( esc_url( get_category_link( $categories[0]->term_id ) ) ),
 			esc_attr( $categories[0]->cat_name ),
 			esc_html( $categories[0]->cat_name )
 		);
-
-		/**
-		 * Filters the Post First Category HTML.
-		 *
-		 * @param string $html Post First Category HTML.
-		 * @param array $categories An array of categories to return for the post.
-		 */
-		$html = apply_filters( 'chip_life_post_first_category_html', $html, $categories );
-
-		echo $html; // WPCS: XSS OK.
-
 	}
-}
-endif;
-
-if ( ! function_exists( 'chip_life_get_link_url' ) ) :
-/**
- * Returns the URL from the post.
- *
- * @uses get_the_link() to get the URL in the post meta (if it exists) or
- * the first link found in the post content.
- *
- * Falls back to the post permalink if no URL is found in the post.
- *
- * @return string URL
- */
-function chip_life_get_link_url() {
-
-	// The first link found in the post content
-	$has_url = get_url_in_content( get_the_content() );
-	return ( $has_url && has_post_format( 'link' ) ) ? $has_url : apply_filters( 'the_permalink', get_permalink() );
-
 }
 endif;
 
@@ -216,13 +124,15 @@ function chip_life_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'chip-life' ) );
 		if ( $categories_list && chip_life_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'chip-life' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			/* translators: %s: posted in categories */
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'chip-life' ) . '</span>', wp_kses_post( $categories_list ) );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'chip-life' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'chip-life' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			/* translators: %s: posted in tags */
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'chip-life' ) . '</span>', wp_kses_post( $tags_list ) );
 		}
 	}
 
@@ -303,36 +213,10 @@ function chip_life_post_thumbnail() {
 	if ( ! empty( $post_thumbnail ) ) {
 
 		// Post Thumbnail HTML
-		$html = sprintf( '<div class="entry-image-wrapper"><figure class="post-thumbnail"><a href="%1$s">%2$s</a></figure></div>',
+		printf( '<div class="entry-image-wrapper"><figure class="post-thumbnail"><a href="%1$s">%2$s</a></figure></div>',
 			esc_attr( esc_url( get_the_permalink() ) ),
-			$post_thumbnail
+			wp_kses_post( $post_thumbnail )
 		);
-	}
-
-	/**
-	 * Filters the Post Thumbnail HTML.
-	 *
-	 * @param string $html Post Thumbnail HTML.
-	 */
-	$html = apply_filters( 'chip_life_post_thumbnail_html', $html );
-
-	// Print HTML
-	if ( ! empty( $html ) ) {
-		echo $html; // WPCS: XSS OK.
-	}
-
-}
-endif;
-
-if ( ! function_exists( 'chip_life_the_custom_logo' ) ) :
-/**
- * Displays the optional custom logo.
- *
- * Does nothing if the custom logo is not available.
- */
-function chip_life_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
 	}
 }
 endif;

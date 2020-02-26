@@ -14,7 +14,7 @@
 		<div class="entry-data-wrapper">
 			<div class="entry-header-wrapper entry-header-wrapper-archive">
 				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( chip_life_get_link_url() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+					<?php the_title( sprintf( '<h1 class="entry-title"><a href="%1$s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 				</header><!-- .entry-header -->
 
 				<?php if ( 'post' == get_post_type() ) : // For Posts ?>

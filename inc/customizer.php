@@ -105,10 +105,10 @@ function chip_life_customize_register ( $wp_customize ) {
 			array(
 				'label'         => esc_html__( 'Chip Life Theme', 'chip-life' ),
 				'section'       => 'chip_life_support',
-				'type'          => 'button',
+				'type'          => 'chip-life-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
-				'button_href'   => 'http://www.tutorialchip.com/chip-life/',
+				'button_href'   => 'https://www.tutorialchip.com/chip-life/',
 				'button_target' => '_blank',
 			)
 		)
@@ -126,10 +126,10 @@ function chip_life_customize_register ( $wp_customize ) {
 			array(
 				'label'         => esc_html__( 'Chip Life Support', 'chip-life' ),
 				'section'       => 'chip_life_support',
-				'type'          => 'button',
+				'type'          => 'chip-life-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
-				'button_href'   => 'http://www.tutorialchip.com/contact/',
+				'button_href'   => 'https://www.tutorialchip.com/contact/',
 				'button_target' => '_blank',
 			)
 		)
@@ -155,7 +155,7 @@ function chip_life_customize_register ( $wp_customize ) {
 			array(
 				'label'         => esc_html__( 'Review on WordPress.org', 'chip-life' ),
 				'section'       => 'chip_life_review',
-				'type'          => 'button',
+				'type'          => 'chip-life-button',
 				'button_tag'    => 'a',
 				'button_class'  => 'button button-primary',
 				'button_href'   => 'https://wordpress.org/support/theme/chip-life/reviews',
@@ -167,16 +167,16 @@ function chip_life_customize_register ( $wp_customize ) {
 add_action( 'customize_register', 'chip_life_customize_register' );
 
 /**
- * Button Control Class
+ * New Control Type: Button
+ * @see wp-includes/class-wp-customize-control.php
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
-
 	class Chip_Life_Button_Control extends WP_Customize_Control {
 		/**
 		 * @access public
 		 * @var string
 		 */
-		public $type = 'button';
+		public $type = 'chip-life-button';
 
 		/**
 		 * HTML tag to render button object.
@@ -228,7 +228,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			<span class="center">
 				<?php
 				// Print open tag
-				echo '<' . esc_html( $this->button_tag );
+				echo '<' . $this->button_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 				// button class
 				if ( ! empty( $this->button_class ) ) {
@@ -258,13 +258,12 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 				echo esc_html( $this->label );
 
 				// Print close tag
-				echo '</' . esc_html( $this->button_tag ) . '>';
+				echo '</' . $this->button_tag . '>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 			</span>
 		<?php
 		}
 	}
-
 }
 
 /**

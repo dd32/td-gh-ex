@@ -59,7 +59,7 @@ function chip_life_setup() {
 
 	// This theme uses wp_nav_menu() in four locations.
 	register_nav_menus( array (
-		'primary'   => esc_html__( 'Primary Menu', 'chip-life' ),
+		'header-menu' => esc_html__( 'Header Menu', 'chip-life' ),
 	) );
 
 	// This theme styles the visual editor to resemble the theme style.
@@ -71,14 +71,6 @@ function chip_life_setup() {
 	 */
 	add_theme_support( 'html5', array (
 		'comment-form', 'comment-list', 'gallery', 'caption'
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array (
-		'aside', 'audio', 'gallery', 'image', 'link', 'quote', 'video',
 	) );
 
 	// Setup the WordPress core custom background feature.
@@ -102,6 +94,7 @@ add_action( 'after_setup_theme', 'chip_life_setup' );
  * @global int $content_width
  */
 function chip_life_content_width() {
+	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'chip_life_content_width', 756 );
 }
 add_action( 'after_setup_theme', 'chip_life_content_width', 0 );
@@ -138,6 +131,9 @@ function chip_life_scripts() {
 	// Enquire
 	wp_enqueue_script( 'enquire', get_template_directory_uri() . '/js/enquire.js', array( 'jquery' ), '2.1.2', true );
 
+	// Fitvids
+	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.js', array( 'jquery' ), '1.1', true );
+
 	// Superfish Menu
 	wp_enqueue_script( 'hover-intent', get_template_directory_uri() . '/js/hover-intent.js', array( 'jquery' ), 'r7', true );
 	wp_enqueue_script( 'superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), '1.7.5', true );
@@ -162,8 +158,10 @@ function chip_life_scripts() {
 	// Bootstrap
 	wp_enqueue_style( 'chip-life-bootstrap-grid', get_template_directory_uri() . '/css/bootstrap-grid.css' );
 
-	// Fontawesome
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
+	// Font Awesome 5
+	// For Reviewer and Others: Unique Handle `font-awesome-5` is required to avoid the conflict with Font Awesome 4+ library.
+	// Font Awesome 5+ library is totally rewritten and is different from Font Awesome 4+ library.
+	wp_enqueue_style( 'font-awesome-5', get_template_directory_uri() . '/css/fontawesome-all.css' );
 
 	// Google Fonts
 	wp_enqueue_style( 'chip-life-fonts', chip_life_fonts_url(), array(), null );

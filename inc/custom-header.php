@@ -67,6 +67,7 @@ function chip_life_header_style() {
 		.site-description {
 			clip: rect(1px, 1px, 1px, 1px);
 			position: absolute;
+			visibility: hidden;
 		}
 	<?php
 		// If the user has set a custom color for the text use that

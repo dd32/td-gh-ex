@@ -16,7 +16,7 @@ get_header(); ?>
 				<?php if ( have_posts() ) : ?>
 
 					<header class="page-header">
-						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'chip-life' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+						<?php printf( '<h1 class="page-title"><span class="page-title-label">%1$s</span> <span class="page-title-value">%2$s</span></h1>', esc_html__( 'Search Results for:', 'chip-life' ), get_search_query() ); ?>
 					</header><!-- .page-header -->
 
 					<?php /* Start the Loop */ ?>

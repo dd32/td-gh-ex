@@ -12,7 +12,6 @@
 			<ul>
 				<li><?php chip_life_posted_on(); ?></li>
 				<li><?php chip_life_posted_by(); ?></li>
-				<?php chip_life_post_format( '<li>', '</li>' ); ?>
 			</ul>
 		</div><!-- .entry-meta -->
 

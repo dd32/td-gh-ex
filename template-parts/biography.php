@@ -27,7 +27,13 @@
 		<p class="author-bio">
 			<?php the_author_meta( 'description' ); ?>
 			<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-				<?php printf( esc_html__( 'View all posts by %s', 'chip-life' ), get_the_author() ); ?>
+				<?php
+				printf(
+					/* translators: %1$s: post author */
+					esc_html__( 'View all posts by %s', 'chip-life' ),
+					esc_html( get_the_author() )
+					);
+				?>
 			</a>
 		</p><!-- .author-bio -->
 	</div><!-- .author-description -->
