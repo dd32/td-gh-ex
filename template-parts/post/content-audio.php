@@ -50,8 +50,10 @@
       </div>
     <?php }?>
     <div class="text"><p><?php $excerpt = get_the_excerpt(); echo esc_html( aagaz_startup_string_limit_words( $excerpt, esc_attr(get_theme_mod('aagaz_startup_excerpt_number','20')))); ?></p></div>
-    <div class="post-link">
-      <a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html(get_theme_mod('aagaz_startup_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_attr_e( 'READ MORE','aagaz-startup' );?></span></a>
-    </div>
+    <?php if( get_theme_mod('aagaz_startup_button_text','READ MORE') != ''){ ?>
+      <div class="post-link">
+        <a href="<?php echo esc_url( get_permalink() ); ?>"><?php echo esc_html(get_theme_mod('aagaz_startup_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_attr_e( 'READ MORE','aagaz-startup' );?></span></a>
+      </div>
+    <?php }?>
   </div>
 </article>

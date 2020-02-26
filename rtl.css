@@ -1206,6 +1206,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
     padding: 10px 20px;
     border-radius: 25px;
     background: #9fcd55;
+    border: 2px solid #9fcd55;
 }
 .post-link a:hover {
     background: transparent;
@@ -1223,7 +1224,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
     margin: 10px 0;
 }
 .post-info {
-    font-size: 16px;
+    font-size: 14px;
     text-align: right;
     background: #9fcd55;
     padding: 5px;
@@ -1238,8 +1239,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
   margin-right: 1%;
   margin-left: 1%;
   color: #323c47;
-  font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .post-navigation .nav-next a{
   font-size: 15px;
@@ -2803,6 +2803,9 @@ p > object:only-child {
 }
 
 @media screen and (max-width:1024px) and (min-width: 1000px){
+	.post-info{
+		font-size: 12px;
+	}
 	#slider .carousel-control-prev{
 		left: 10%;
 	}

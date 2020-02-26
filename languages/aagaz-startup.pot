@@ -234,11 +234,13 @@ msgstr ""
 msgid 'Menu'
 msgstr ""
 
-#: template-parts/post/content-audio.php:54
-#: template-parts/post/content-gallery.php:43
-#: template-parts/post/content-image.php:34
-#: template-parts/post/content-video.php:53
-#: template-parts/post/content.php:36
+#: template-parts/post/content-audio.php:55
+#: template-parts/post/content-gallery.php:44
+#: template-parts/post/content-image.php:37
+#: template-parts/post/content-image.php:65
+#: template-parts/post/content-video.php:54
+#: template-parts/post/content.php:39
+#: template-parts/post/content.php:69
 #: template-parts/post/grid-layout:37
 msgid 'READ MORE'
 msgstr ""
@@ -538,7 +540,24 @@ msgstr ""
 msgid 'Post Tags'
 msgstr ""
 
-#: inc/customizer.php:768
+#: inc/customizer.php:813
+#: inc/customizer.php:821
+msgid 'Default'
+msgstr ""
+
+#: inc/customizer.php:818
+msgid 'Post Layout Option'
+msgstr ""
+
+#: inc/customizer.php:822
+msgid 'Center'
+msgstr ""
+
+#: inc/customizer.php:823
+msgid 'Image and Content'
+msgstr ""
+
+#: inc/customizer.php:835
 msgid 'Excerpt length'
 msgstr ""
 

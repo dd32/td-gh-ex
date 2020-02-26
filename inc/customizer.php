@@ -808,6 +808,22 @@ function aagaz_startup_customize_register( $wp_customize ) {
        'section' => 'aagaz_startup_blog_post'
     ));
 
+    //Blog layout
+    $wp_customize->add_setting('aagaz_startup_blog_post_layout',array(
+        'default' => __('Default','aagaz-startup'),
+        'sanitize_callback' => 'aagaz_startup_sanitize_choices'
+    ));
+    $wp_customize->add_control('aagaz_startup_blog_post_layout',array(
+        'type' => 'radio',
+        'label' => __('Post Layout Option','aagaz-startup'),
+        'section' => 'aagaz_startup_blog_post',
+        'choices' => array(
+            'Default' => __('Default','aagaz-startup'),
+            'Center' => __('Center','aagaz-startup'),
+            'Image and Content' => __('Image and Content','aagaz-startup'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'aagaz_startup_excerpt_number', array(
 		'default'              => 20,
 		'type'                 => 'theme_mod',

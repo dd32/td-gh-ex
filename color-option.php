@@ -156,7 +156,7 @@
 		$custom_css .='}';
 	}
 
-	/*------------------------------ Button Settings option-----------------------*/
+	/*--------------- Button Settings option----------------*/
 
 	$aagaz_startup_top_bottom_padding = get_theme_mod('aagaz_startup_top_bottom_padding');
 	$aagaz_startup_left_right_padding = get_theme_mod('aagaz_startup_left_right_padding');
@@ -170,5 +170,31 @@
 	if($aagaz_startup_border_radius != false){
 		$custom_css .='.post-link a,#slider .readbutton a, .form-submit input[type="submit"], #about .aboutbtn a{';
 			$custom_css .='border-radius: '.esc_html($aagaz_startup_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+	/*--------------------Blog Layout -----------------*/
+
+	$theme_lay = get_theme_mod( 'aagaz_startup_blog_post_layout','Default');
+    if($theme_lay == 'Default'){
+		$custom_css .='.blogger{';
+			$custom_css .='';
+		$custom_css .='}';
+	}else if($theme_lay == 'Center'){
+		$custom_css .='.blogger, .blogger h2, .post-info, .text p, .blogger .post-link{';
+			$custom_css .='text-align:center;';
+		$custom_css .='}';
+		$custom_css .='.post-info{';
+			$custom_css .='margin-top:10px;';
+		$custom_css .='}';
+		$custom_css .='.blogger .post-link{';
+			$custom_css .='margin-top:25px;';
+		$custom_css .='}';
+	}else if($theme_lay == 'Image and Content'){
+		$custom_css .='.blogger, .blogger h2, .post-info, .text p, #our-services p{';
+			$custom_css .='text-align:Left;';
+		$custom_css .='}';
+		$custom_css .='.blogger .post-link{';
+			$custom_css .='text-align:right;';
 		$custom_css .='}';
 	}
