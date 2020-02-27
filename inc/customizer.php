@@ -64,9 +64,6 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             /***********************************Service Section Setting********************************/
             'appdetail-service-title'                 => esc_html__('Service Title','appdetail'), 
             'appdetail-service-description'           => esc_html__('Service Description','appdetail'),
-            /***********************************Video Section Setting**********************************/ 
-            'appdetail-video-background-image'      => esc_url('http://localhost/consulton/wp-content/uploads/2019/04/laptop.png','appdetail'),
-            'appdetail-video-url'                    => esc_url('//www.youtube.com/watch?v=XSGBVzeBUbk','appdetail'), 
             /***********************************Screenshot Section Setting*****************************/
             'appdetail-screenshot-title'                 => esc_html__('Screenshot Title','appdetail'), 
             'appdetail-screenshot-description'           => esc_html__('Screenshot Description','appdetail'),
@@ -81,7 +78,6 @@ if ( !function_exists('appdetail_default_theme_options') ) :
             'appdetail-layout'                       => 'right-sidebar',
             'appdetail-font-family-url'              => esc_url('//fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500', 'appdetail'),
             'appdetail-font-family-name'             => esc_html__('Montserrat, sans-serif','appdetail'),           
-            'appdetail-footer-totop'                 => 1,
             'appdetail-read-more-text'               => esc_html__('read more','appdetail'),
             'appdetail-blog-pagination-type-options' => 'default',
             'appdetail-default-color'                => '#5424bf', 

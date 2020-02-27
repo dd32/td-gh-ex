@@ -107,6 +107,10 @@
 	 */
 	do_action('appdetail_header_service_section_action');
 
+
+
+	do_action('appdetail_content_section_action');
+
 	/**
 	 * Hook - appdetail_header_screenshot_action.
 	 *

@@ -42,7 +42,23 @@ if (!function_exists('appdetail_breadcrumb')) :
         </div>
     </div>
     <!-- ====== ends Top-banner ====== -->
-    <?php } else { ?>
+    <?php } else if(is_search()) { ?>
+
+ <div class="row">
+        <div class="col-md-12">
+            <div class="inner-banner-box">
+                <h2><?php echo  esc_html__('Search Results For ', 'appdetail') . ' " ' . get_search_query() . ' "'; ?></h2>
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><?php echo  esc_html__('Search Results For ', 'appdetail') . ' " ' . get_search_query() . ' "'; ?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <?php  } else { ?>
     <!-- ====== top-banner starts ====== -->
     <div class="row">
         <div class="col-md-12">
@@ -160,6 +176,7 @@ if (!function_exists('appdetail_home_video')) :
     function appdetail_home_video()
     {
         global $appdetail_theme_options;
+
         ?>
    <div class="row">
         <div class="col-sm-12">

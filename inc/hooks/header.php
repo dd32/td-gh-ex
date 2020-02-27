@@ -251,6 +251,38 @@ if ( ! function_exists( 'appdetail_header_service_action' ) ) :
 endif;
 add_action( 'appdetail_header_service_section_action', 'appdetail_header_service_action', 10 );
 
+
+
+if ( ! function_exists( 'appdetail_content_action' ) ) :
+    /**
+     * Header section hook of the theme.
+     *
+     * @since 1.0.0
+     */
+    function appdetail_content_action() {
+        global $appdetail_theme_options;
+        $appdetail_theme_options  = appdetail_get_theme_options();
+
+if(have_posts()) : 
+while(have_posts()) : the_post();
+if(get_the_content()!= "")
+{
+?>
+<section>
+  <div class="container">
+    <div class="row">
+    <?php the_content(); ?> 
+    </div>
+  </div> 
+</section>  
+<?php 
+} 
+endwhile;
+endif;     
+    }
+endif;
+add_action( 'appdetail_content_section_action', 'appdetail_content_action', 10 );
+
 /* -----------------------
 * Header Lower section hook of the theme.
 * @since 1.0.0
@@ -266,7 +298,10 @@ if ( ! function_exists( 'appdetail_header_video_action' ) ) :
         global $appdetail_theme_options;
         $appdetail_theme_options  = appdetail_get_theme_options();
         $appdetail_category_cat   = $appdetail_theme_options['appdetail-service-cat'];
-        if( $appdetail_category_cat > 0 ){ ?>
+        if( $appdetail_category_cat > 0 ){ 
+        if( !empty($appdetail_theme_options['appdetail-video-background-image'])):
+
+          ?>
             <section id="video" class="video s-pad text-center">
                 <div class="container">
                     <?php if(is_home() || is_front_page () ) {
@@ -276,6 +311,7 @@ if ( ! function_exists( 'appdetail_header_video_action' ) ) :
                 </div>
             </section>
             <?php
+          endif;
         }
     }
 endif;
@@ -356,11 +392,7 @@ if ( ! function_exists( 'appdetail_header_blog_action' ) ) :
                     <?php if(!is_home() || !is_front_page () ) {
                         appdetail_home_blog();
                     }
-                    else{
-
-                        require get_template_directory() . '/index.php';
-
-                    }
+                   
                     ?>
             </section>
             <?php

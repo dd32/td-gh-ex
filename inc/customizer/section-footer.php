@@ -24,19 +24,3 @@ global $wp_customize, $appdetail_defaults;
         'priority'  => 10
 
     ) );
-
-    /*go to top*/
-
-    $wp_customize->add_setting( 'appdetail_theme_options[appdetail-footer-totop]', array(
-        'capability'        => 'edit_theme_options',
-        'default'           => $appdetail_defaults['appdetail-footer-totop'],
-        'sanitize_callback' => 'appdetail_sanitize_checkbox'
-    ) );
-
-    $wp_customize->add_control( 'appdetail-footer-totop', array(
-        'label'     => __( 'Go To Top Option', 'appdetail' ),
-        'section'   => 'appdetail-footer-option',
-        'settings'  => 'appdetail_theme_options[appdetail-footer-totop]',
-        'type'      => 'checkbox',
-        'priority'  => 10
-    ) );
