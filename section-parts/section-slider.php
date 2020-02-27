@@ -14,14 +14,18 @@ $better_health_slider_section_option = better_health_get_option('better_health_h
 if ($better_health_slider_section_option != 'hide') {
 
     $better_health_slider_section_cat_id = better_health_get_option('better_health_slider_cat_id');
-
     $better_health_slider_view_more_txt = better_health_get_option('better_health_slider_view_more_txt');
-
     $better_health_get_started_text = better_health_get_option('better_health_slider_get_started_txt');
-
     $better_health_get_started_text_link = better_health_get_option('better_health_slider_get_started_link');
 
     $better_health_slider_category = get_category($better_health_slider_section_cat_id);
+
+    //if polylang active
+    if ( ! empty( $active_plugins ) && in_array( 'polylang/polylang.php', $active_plugins ) ) { 
+        $better_health_slider_view_more_txt = pll__('Slider View More Text');
+        $better_health_get_started_text = pll__('Get Started Text');
+    }
+
     if(!empty($better_health_slider_section_cat_id))
     {
         

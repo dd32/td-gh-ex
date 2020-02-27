@@ -18,6 +18,12 @@ get_header();
  $better_health_breadcrump_option = better_health_get_option('better_health_breadcrumb_setting_option');
  $better_health_designlayout = better_health_get_option('better_health_sidebar_layout_option');
  $better_health_hide_breadcrump_option = better_health_get_option('better_health_hide_breadcrumb_front_page_option');
+
+ //if polylang active
+ if ( ! empty( $active_plugins ) && in_array( 'polylang/polylang.php', $active_plugins ) ) { 
+    $blog_page_title = pll__('Page Title');
+ }
+
  if( ($better_health_hide_breadcrump_option== 1 && is_front_page()) || !is_front_page())
 {
 ?>

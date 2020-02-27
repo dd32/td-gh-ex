@@ -356,3 +356,35 @@ if ($dynamic_css_options == "do-not-reset" || $dynamic_css_options == "") {
 */
 require get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.php';
 
+$active_plugins = (array) get_option( 'active_plugins', array() );
+if ( ! empty( $active_plugins ) && in_array( 'polylang/polylang.php', $active_plugins ) ) {
+
+    //header
+    pll_register_string('Top Header Address', 'Top Header Address', 'Top Header');
+    pll_register_string('Top Header Mobile', 'Top Header Mobile', 'Top Header');
+    pll_register_string('Top Header Email', 'Top Header Email', 'Top Header');
+    pll_register_string('Top Header Appointment Text', 'Top Header Appointment Text', 'Top Header');
+
+    //index.php
+    pll_register_string('Page Title', 'Page Title', 'Index');
+
+    //searchform
+    pll_register_string('Search Placeholder', 'Search Placeholder', 'Searchform');
+
+    //section-slider
+    pll_register_string('Slider View More Text', 'Slider View More Text', 'Slider');
+    pll_register_string('Get Started Text', 'Get Started Text', 'Slider');
+
+    //footer
+    pll_register_string('Copyright', 'Copyright', 'Footer');
+    pll_register_string('Footer Button Text', 'Footer Button Text', 'Footer');
+    pll_register_string('Footer Address Label', 'Footer Address Label', 'Footer');
+    pll_register_string('Footer Address', 'Footer Address', 'Footer');
+    pll_register_string('Footer Phone Number Label', 'Footer Phone Number Label', 'Footer');
+    pll_register_string('Footer Phone Number', 'Footer Phone Number', 'Footer');
+    pll_register_string('Footer Email Label', 'Footer Email Label', 'Footer');
+    pll_register_string('Footer Email', 'Footer Email', 'Footer');
+    pll_register_string('Contact', 'Contact Title', 'Footer');
+    pll_register_string('Contact', 'Contact Subtitle', 'Footer');
+}
+

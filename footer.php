@@ -59,6 +59,21 @@ $contact_title = better_health_get_option('better_health_contact_title_text');
 //Retrieving Top Contact Subtitle  from customizer field 
 $contact_subtitle = better_health_get_option('better_health_contact_subtitle_text');
 
+//if polylang active
+$active_plugins = (array) get_option( 'active_plugins', array() );
+if ( ! empty( $active_plugins ) && in_array( 'polylang/polylang.php', $active_plugins ) ) {
+  $copyright = pll__('Copyright');
+  $button_text = pll__('Footer Button Text');
+  $address_label = pll__('Footer Address Label');
+  $address = pll__('Footer Address');
+  $phone_number_label = pll__('Footer Phone Number Label');
+  $phone_number = pll__('Footer Phone Number');
+  $email_label = pll__('Footer Email Label');
+  $email = pll__('Footer Email');
+  $contact_title = pll__('Contact Title');
+  $contact_subtitle = pll__('Contact Subtitle');
+}
+
 //Condition to Show/Hide top footer Contact Information
  if($show_top_footer_contact_info=="show")
  { ?>

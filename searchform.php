@@ -13,7 +13,11 @@ global  $better_health_placeholder_option;
             <label for="menu-search" class="screen-reader-text"></label>
             <?php
             $better_health_placeholder_text = '';
-             $better_health_placeholder_option = better_health_get_option( 'better_health_post_search_placeholder_option');
+            $better_health_placeholder_option = better_health_get_option( 'better_health_post_search_placeholder_option');
+            //if polylang active
+            if ( ! empty( $active_plugins ) && in_array( 'polylang/polylang.php', $active_plugins ) ) { 
+                $better_health_placeholder_option = pll__('Search Placeholder');
+            }
             if ( !empty( $better_health_placeholder_option) ):
                 $better_health_placeholder_text = 'placeholder="'.esc_attr ( $better_health_placeholder_option ). '"';
             endif; ?>
