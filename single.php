@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="innerpage_fixer">
+     <div id="innerpage_fixer">
         <section class="innerpage_contentpart">            
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php get_template_part( 'content', 'single' ); ?>

@@ -19,6 +19,16 @@
 </head>
 <body <?php body_class(); ?>>
 <?php
+	//wp_body_open hook from WordPress 5.2
+	if ( function_exists( 'wp_body_open' ) ) {
+	    wp_body_open();
+	}
+?>
+<a class="skip-link screen-reader-text" href="#innerpage_fixer">
+<?php esc_html_e( 'Skip to content', 'agronomics-lite' ); ?>
+</a>
+
+<?php
 $agronomics_lite_show_header_contact_info 	  			= get_theme_mod('agronomics_lite_show_header_contact_info', false);
 $agronomics_lite_showslide_area 	  		            = get_theme_mod('agronomics_lite_showslide_area', false);
 $agronomics_lite_show_3colservices_section 	  	        = get_theme_mod('agronomics_lite_show_3colservices_section', false);
@@ -41,7 +51,7 @@ $inner_cls = 'siteinner';
 }
 ?>
 
-<div class="site-header <?php echo $inner_cls; ?>">      
+<div class="site-header <?php echo esc_attr($inner_cls); ?>">      
 <div class="container">  
      <div class="logo">
         <?php agronomics_lite_the_custom_logo(); ?>
@@ -151,9 +161,9 @@ $thumbnail_id = get_post_thumbnail_id( $post->ID );
 $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true); 
 ?>
 <?php if(!empty($image)){ ?>
-<img src="<?php echo esc_url( $image ); ?>" title="#slidecaption<?php echo $i; ?>" alt="<?php echo esc_attr($alt); ?>" />
+<img src="<?php echo esc_url( $image ); ?>" title="#slidecaption<?php echo esc_attr( $i ); ?>" alt="<?php echo esc_attr($alt); ?>" />
 <?php }else{ ?>
-<img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider-default.jpg" title="#slidecaption<?php echo $i; ?>" alt="<?php echo esc_attr($alt); ?>" />
+<img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider-default.jpg" title="#slidecaption<?php echo esc_attr( $i ); ?>" alt="<?php echo esc_attr($alt); ?>" />
 <?php } ?>
 <?php $i++; endwhile; ?>
 </div>   
@@ -162,7 +172,7 @@ $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
 $j=1;
 $slidequery->rewind_posts();
 while( $slidequery->have_posts() ) : $slidequery->the_post(); ?>                 
-    <div id="slidecaption<?php echo $j; ?>" class="nivo-html-caption">     
+    <div id="slidecaption<?php echo esc_attr( $j ); ?>" class="nivo-html-caption">     
       <div class="custominfo">       
     	<h2><?php the_title(); ?></h2>
     	<?php the_excerpt(); ?>
@@ -190,7 +200,7 @@ for($n=1; $n<=3; $n++) {
 if( get_theme_mod('agronomics_lite_servicescol'.$n,false)) {      
 	$queryvar = new WP_Query('page_id='.absint(get_theme_mod('agronomics_lite_servicescol'.$n,true)) );		
 	while( $queryvar->have_posts() ) : $queryvar->the_post(); ?>     
-	<div class="features_column rdbx<?php echo $n; ?>">                                       
+	<div class="features_column rdbx<?php echo esc_attr( $n ); ?>">                                       
 		<?php if(has_post_thumbnail() ) { ?>
 		<div class="imagebox"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail();?></a></div>        
 		<?php } ?>		

@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="innerpage_fixer">
+    <div id="innerpage_fixer">
         <section class="innerpage_contentpart">
             <header class="page-header">
                 <h1 class="entry-title"><?php esc_html_e( '404 Not Found', 'agronomics-lite' ); ?></h1>                

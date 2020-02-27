@@ -13,7 +13,7 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="innerpage_fixer">
+     <div id="innerpage_fixer">
         <section class="innerpage_contentpart">
             <header class="page-header">
 				 <?php

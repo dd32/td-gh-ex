@@ -5,7 +5,7 @@ Author: Grace Themes
 Author URI: https://gracethemes.com/
 Description: Agronomics Lite is a creative and unbounded, sophisticated and modern, colorful and youthful, beautiful and outspoken, highly customizable and readily responsive organic farm WordPress theme. This theme help you create an impressive website for agriculture, food, gardening, landscaping, lawn, organic and health stores. This amazingly flexible, fast loading and multipurpose theme well suited for fulfilling the requirement of all type of websites. It can be used to develop a website for corporate, business, portfolio, product catalog, personal blog and services web pages. You can also use it for construction, real estate, traveling, tourism websites, eCommerce ventures, hotel projects and more.  Demo Link: http://www.gracethemesdemo.com/agronomics/
 
-Version: 1.0
+Version: 1.1
 License: GNU General Public License version 2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: agronomics-lite
@@ -242,8 +242,8 @@ h2.section_title{ font-weight:600; font-size:48px; margin-bottom:40px; position:
 
 .boxlayout{ width:1210px; margin:0 auto; background-color:#fff; position:relative; box-shadow:0 -8px 8px #111;}
 .fulllayout{ width:100% !important;}
-.innerpage_fixer{ padding:50px 0;}
-.innerpage_fixer p{ margin-bottom:30px;}
+#innerpage_fixer{ padding:50px 0;}
+#innerpage_fixer p{ margin-bottom:30px;}
 
 .blogpost_lyout{ width:45%; float:left; margin:0 5% 30px 0}
 .blogpost_lyout .post-thumb{ width:100%; height:225px; overflow:hidden; margin:0 0 20px 0;}
@@ -318,13 +318,6 @@ a.ReadMore:hover{ background-color:#ffae00; color:#fff; }
 .wpcf7 textarea{width:60%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:150px; color:#797979; margin-bottom:25px; font:12px arial; padding:10px; padding-right:0;}
 .wpcf7 input[type="submit"]{background-color:#efc62c; width:auto; border:none; cursor:pointer; font:18px/22px 'Open Sans',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}
 
-/* Text meant only for screen readers. */
-.screen-reader-text {clip: rect(1px, 1px, 1px, 1px);position: absolute !important;	height: 1px;width: 1px;	overflow: hidden;}
-.screen-reader-text:focus {	background-color: #f1f1f1;	border-radius: 3px;	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);	clip: auto !important;	color: #21759b;	display: block;
-	font-size: 14px;font-size: 0.875rem;font-weight: bold;	height: auto;left: 5px;	line-height: normal;padding: 15px 23px 14px;text-decoration: none;	top: 5px;	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
-}
-
 /* = Comment Form css
 -------------------------------------------------------------- */
 h1.screen-reader-text{font:22px 'Open Sans',san-serif;}
@@ -385,3 +378,74 @@ h1.product_title, p.price{ margin-bottom:10px;}
 .woocommerce-Price-amount.amount{font-size:14px !important;}
 .woocommerce div.product .product_title{ padding-bottom:20px !important;}
 .woocommerce div.product form.cart{ margin-top:15px !important;}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; 
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#innerpage_fixer[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+
+/* = Navigation Focus CSS
+-------------------------------------------- */
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+a:focus {
+	outline: thin dotted #101010;
+}

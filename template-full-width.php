@@ -13,7 +13,7 @@
 get_header(); ?>
 
 <div class="container">
-<div class="innerpage_fixer">
+<div id="innerpage_fixer">
      <section class="innerpage_contentpart fullwidth">               
             <?php while( have_posts() ) : the_post(); ?>
 				  <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>    

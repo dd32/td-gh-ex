@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="innerpage_fixer">
+     <div id="innerpage_fixer">
         <section class="innerpage_contentpart">
 			<?php if ( have_posts() ) : ?>
                 <header class="page-header">

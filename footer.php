@@ -41,9 +41,7 @@
             <div class="container">            	
                 <div class="design-by">
 				  <?php bloginfo('name'); ?>. <?php esc_html_e('All Rights Reserved', 'agronomics-lite');?>
-                  <a href="<?php echo esc_url( __( 'https://gracethemes.com/themes/free-organic-farm-wordpress-theme/', 'agronomics-lite' ) ); ?>" target="_blank">
-				    <?php printf( __( 'Theme by %s', 'agronomics-lite' ), 'Grace Themes' ); ?>
-                  </a>
+                  <?php esc_html_e('Theme by Grace Themes','agronomics-lite'); ?>  
                 </div>
              </div><!--end .container-->             
         </div><!--end .footer-copyright-->  

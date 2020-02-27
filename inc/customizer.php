@@ -470,10 +470,11 @@ function agronomics_lite_custom_css(){
 			
 		.welcome_imagebx	        
             { box-shadow:15px 15px 0 0 <?php echo esc_html( get_theme_mod('agronomics_lite_color_scheme','#71b002')); ?>;}			
+						
 			
          	
     </style> 
-<?php           
+<?php            
 }
          
 add_action('wp_head','agronomics_lite_custom_css');	 
