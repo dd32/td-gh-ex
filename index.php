@@ -13,19 +13,36 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+	<?php if ( ! have_posts() ) : ?>
+	<div class="page-header-wrapper">
+		<div class="container">
 
-	<div class="container">
-		<div class="row">
+			<div class="row">
+				<div class="col">
 
-			<div id="primary" class="content-area col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+					<header class="page-header">
+						<?php printf( '<h1 class="page-title">%1$s</h1>', esc_html__( 'Nothing Found', 'keratin' ) ); ?>
+					</header><!-- .page-header -->
 
-				<?php if ( have_posts() ) : ?>
+				</div><!-- .col -->
+			</div><!-- .row -->
 
-					<div class="masonry-spinner"></div>
-					<div class="masonry-wrapper">
+		</div><!-- .container -->
+	</div><!-- .page-header-wrapper -->
+	<?php endif; ?>
 
+	<div class="site-content-inside">
+		<div class="container">
+			<div class="row">
+
+				<div id="primary" class="content-area <?php keratin_layout_class( 'content' ); ?>">
+					<main id="main" class="site-main">
+
+					<?php if ( have_posts() ) : ?>
+
+						<div id="post-wrapper" class="post-wrapper post-wrapper-archive">
+							<div class="grid-sizer"></div>
+							<div class="gutter-sizer"></div>
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 
@@ -34,29 +51,29 @@ get_header(); ?>
 								 * If you want to override this in a child theme, then include a file
 								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 								 */
-								get_template_part( 'content', get_post_format() );
+								get_template_part( 'template-parts/content', get_post_format() );
 							?>
 
 						<?php endwhile; ?>
+						</div><!-- .post-wrapper -->
 
-					</div><!-- .masonry-wrapper -->
+						<?php keratin_the_posts_pagination(); ?>
 
-					<?php keratin_paging_nav(); ?>
+					<?php else : ?>
 
-				<?php else : ?>
+						<div class="post-wrapper post-wrapper-single post-wrapper-single-notfound">
+							<?php get_template_part( 'template-parts/content', 'none' ); ?>
+						</div><!-- .post-wrapper -->
 
-				<?php get_template_part( 'content', 'none' ); ?>
+					<?php endif; ?>
 
-				<?php endif; ?>
+					</main><!-- #main -->
+				</div><!-- #primary -->
 
-				</main><!-- #main -->
-			</div><!-- #primary -->
+				<?php get_sidebar(); ?>
 
-			<?php get_sidebar(); ?>
-
-		</div><!-- .row -->
-	</div><!-- .container -->
-
-</div><!-- #content -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .site-content-inside -->
 
 <?php get_footer(); ?>

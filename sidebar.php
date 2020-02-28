@@ -4,34 +4,13 @@
  *
  * @package Keratin
  */
+
+if ( ! keratin_has_sidebar() ) {
+	return;
+}
 ?>
-<div class="sidebar-area col-xs-12 col-sm-12 col-md-3 col-lg-3">
-	<div id="secondary" class="sidebar widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
-
-		<?php do_action( 'before_sidebar' ); ?>
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-
-			<aside id="search" class="widget widget_search">
-				<?php get_search_form(); ?>
-			</aside>
-
-			<aside id="archives" class="widget">
-				<h2 class="widget-title"><?php _e( 'Archives', 'keratin' ); ?></h2>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
-
-			<aside id="meta" class="widget">
-				<h2 class="widget-title"><?php _e( 'Meta', 'keratin' ); ?></h2>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-
-		<?php endif; // end sidebar widget area ?>
-
-	</div><!-- #secondary -->
+<div id="site-sidebar" class="sidebar-area <?php keratin_layout_class( 'sidebar' ); ?>">
+	<div id="secondary" class="sidebar widget-area sidebar-widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div><!-- .sidebar -->
 </div><!-- .col-* columns of main sidebar -->

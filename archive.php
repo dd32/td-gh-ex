@@ -9,82 +9,41 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
+	<div class="page-header-wrapper">
+		<div class="container">
 
-	<div class="container">
-		<div class="row">
-
-			<section id="primary" class="content-area col-xs-12 col-sm-12 col-md-9 col-lg-9">
-				<main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-
-				<?php if ( have_posts() ) : ?>
+			<div class="row">
+				<div class="col">
 
 					<header class="page-header">
-						<h1 class="page-title">
-							<?php
-								if ( is_category() ) :
-									single_cat_title();
-
-								elseif ( is_tag() ) :
-									single_tag_title();
-
-								elseif ( is_author() ) :
-									printf( __( 'Author: %s', 'keratin' ), '<span class="vcard">' . get_the_author() . '</span>' );
-
-								elseif ( is_day() ) :
-									printf( __( 'Day: %s', 'keratin' ), '<span>' . get_the_date() . '</span>' );
-
-								elseif ( is_month() ) :
-									printf( __( 'Month: %s', 'keratin' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'keratin' ) ) . '</span>' );
-
-								elseif ( is_year() ) :
-									printf( __( 'Year: %s', 'keratin' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'keratin' ) ) . '</span>' );
-
-								elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-									_e( 'Asides', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-									_e( 'Galleries', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-									_e( 'Images', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-									_e( 'Videos', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-									_e( 'Quotes', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-									_e( 'Links', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-									_e( 'Statuses', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-									_e( 'Audios', 'keratin' );
-
-								elseif ( is_tax( 'post_format', 'post-format-chat' ) ) :
-									_e( 'Chats', 'keratin' );
-
-								else :
-									_e( 'Archives', 'keratin' );
-
-								endif;
-							?>
-						</h1>
 						<?php
-							// Show an optional term description.
-							$term_description = term_description();
-							if ( ! empty( $term_description ) ) :
-								printf( '<div class="taxonomy-description">%s</div>', $term_description );
-							endif;
+						if ( have_posts() ) :
+							the_archive_title( '<h1 class="page-title">', '</h1>' );
+							the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						else :
+							printf( '<h1 class="page-title">%1$s</h1>', esc_html__( 'Nothing Found', 'keratin' ) );
+						endif;
 						?>
 					</header><!-- .page-header -->
 
-					<div class="masonry-spinner"></div>
-					<div class="masonry-wrapper">
+				</div><!-- .col -->
+			</div><!-- .row -->
 
+		</div><!-- .container -->
+	</div><!-- .page-header-wrapper -->
+
+	<div class="site-content-inside">
+		<div class="container">
+			<div class="row">
+
+				<div id="primary" class="content-area <?php keratin_layout_class( 'content' ); ?>">
+					<main id="main" class="site-main">
+
+					<?php if ( have_posts() ) : ?>
+
+						<div id="post-wrapper" class="post-wrapper post-wrapper-archive">
+							<div class="grid-sizer"></div>
+							<div class="gutter-sizer"></div>
 						<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 
@@ -93,29 +52,29 @@ get_header(); ?>
 								 * If you want to override this in a child theme, then include a file
 								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 								 */
-								get_template_part( 'content', get_post_format() );
+								get_template_part( 'template-parts/content', get_post_format() );
 							?>
 
 						<?php endwhile; ?>
+						</div><!-- .post-wrapper -->
 
-					</div><!-- .masonry-wrapper -->
+						<?php keratin_the_posts_pagination(); ?>
 
-					<?php keratin_paging_nav(); ?>
+					<?php else : ?>
 
-				<?php else : ?>
+						<div class="post-wrapper post-wrapper-single post-wrapper-single-notfound">
+							<?php get_template_part( 'template-parts/content', 'none' ); ?>
+						</div><!-- .post-wrapper -->
 
-				<?php get_template_part( 'content', 'none' ); ?>
+					<?php endif; ?>
 
-				<?php endif; ?>
+					</main><!-- #main -->
+				</div><!-- #primary -->
 
-				</main><!-- #main -->
-			</section><!-- #primary -->
+				<?php get_sidebar(); ?>
 
-			<?php get_sidebar(); ?>
-
-		</div><!-- .row -->
-	</div><!-- .container -->
-
-</div><!-- #content -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .site-content-inside -->
 
 <?php get_footer(); ?>

@@ -27,58 +27,58 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 	<div class="comments-area-wrapper">
 
-        <h2 class="comments-title">
+		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
-				printf(
-				/* translators: %s: post title */
-					esc_html( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'keratin' ) ),
-					get_the_title()
-				);
-			} else {
-				printf(
-				/* translators: 1: number of comments, 2: post title */
-					esc_html( _nx(
-						'%1$s thought on &ldquo;%2$s&rdquo;',
-						'%1$s thoughts on &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'keratin'
-					) ),
-					number_format_i18n( $comments_number ),
-					get_the_title()
-				);
-			}
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					printf(
+						/* translators: %s: post title */
+						esc_html( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'keratin' ) ),
+						wp_kses_post( get_the_title() )
+					);
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						esc_html( _nx(
+							'%1$s Reply to &ldquo;%2$s&rdquo;',
+							'%1$s Replies to &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'keratin'
+						) ),
+						esc_html( number_format_i18n( $comments_number ) ),
+						wp_kses_post( get_the_title() )
+					);
+				}
 			?>
-        </h2>
+		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'keratin' ); ?></h1>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		<nav id="comment-nav-above" class="navigation comment-navigation comment-navigation-above">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'keratin' ); ?></h2>
 			<div class="nav-links">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> Older Comments', 'keratin' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>', 'keratin' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'keratin' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'keratin' ) ); ?></div>
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
 
 		<ol class="comment-list">
 			<?php
-			wp_list_comments( array(
-				'style'       => 'ol',
-				'short_ping'  => true,
-				'avatar_size' => 68,
-			) );
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 68,
+				) );
 			?>
-        </ol><!-- .comment-list -->
+		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'keratin' ); ?></h1>
+		<nav id="comment-nav-below" class="navigation comment-navigation comment-navigation-below">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'keratin' ); ?></h2>
 			<div class="nav-links">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav"><i class="fa fa-chevron-left"></i></span> Older Comments', 'keratin' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav"><i class="fa fa-chevron-right"></i></span>', 'keratin' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'keratin' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'keratin' ) ); ?></div>
 			</div><!-- .nav-links -->
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
@@ -87,11 +87,11 @@ if ( post_password_required() ) {
 	<?php endif; // have_comments() ?>
 
 	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	// If comments are closed and there are comments, let's leave a little note, shall we?
+	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 	<div class="no-comments-wrapper">
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'keratin' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'keratin' ); ?></p>
 	</div><!-- .comments-area-wrapper -->
 	<?php endif; ?>
 

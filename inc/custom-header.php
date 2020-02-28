@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup the WordPress core custom header feature.
+ * Sample implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
  *
  * @package Keratin
@@ -13,11 +13,11 @@
  */
 function keratin_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'keratin_custom_header_args', array(
-		'default-text-color'     => '181818',
-		'width'                  => 1920,
-		'height'                 => 250,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'keratin_header_style',
+		'default-text-color' => '3d3d3d',
+		'width'              => 1920,
+		'height'             => 250,
+		'flex-height'        => true,
+		'wp-head-callback'   => 'keratin_header_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'keratin_custom_header_setup' );
@@ -45,7 +45,8 @@ function keratin_header_style() {
 	</style>
 	<?php endif; ?>
 
-<?php
+	<?php
+	// Header Text Color
 	$header_text_color = get_header_textcolor();
 
 	// If no custom color for text is set, let's bail.
@@ -64,6 +65,7 @@ function keratin_header_style() {
 		.site-description {
 			clip: rect(1px, 1px, 1px, 1px);
 			position: absolute;
+			visibility: hidden;
 		}
 	<?php
 		// If the user has set a custom color for the text use that
