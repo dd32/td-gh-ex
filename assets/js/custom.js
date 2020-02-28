@@ -14,3 +14,15 @@ function resMenu_open() {
 function resMenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
+
+(function( $ ) {
+
+	$(window).scroll(function(){
+	  var sticky = $('.sticky-menubox'),
+	      scroll = $(window).scrollTop();
+
+	  if (scroll >= 100) sticky.addClass('fixed-menubox');
+	  else sticky.removeClass('fixed-menubox');
+	});
+
+})( jQuery );

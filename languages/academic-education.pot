@@ -320,15 +320,15 @@ msgstr ""
 msgid 'READ MORE...'
 msgstr ""
 
-#: inc/customizer.php:18
+#: inc/customizer.php:19
 msgid 'Theme Settings'
 msgstr ""
 
-#: inc/customizer.php:19
+#: inc/customizer.php:20
 msgid "Description of what this panel does."
 msgstr ""
 
-#: inc/customizer.php:23
+#: inc/customizer.php:24
 msgid "General Settings"
 msgstr ""
 
@@ -336,7 +336,7 @@ msgstr ""
 msgid 'Do you want this section'
 msgstr ""
 
-#: inc/customizer.php:30
+#: inc/customizer.php:31
 #: inc/customizer.php:40
 msgid "One Column"
 msgstr ""
@@ -361,79 +361,83 @@ msgstr ""
 msgid "Grid Layout"
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:146
 msgid "Topbar"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:147
 msgid "Add Topbar Content here"
 msgstr ""
 
 #: inc/customizer.php:157
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer.php:166
 msgid 'Add Timmings'
 msgstr ""
 
-#: inc/customizer.php:169
+#: inc/customizer.php:177
 msgid 'Add Call Text'
 msgstr ""
 
-#: inc/customizer.php:181
+#: inc/customizer.php:188
 msgid 'Add Phone Number'
 msgstr ""
 
-#: inc/customizer.php:193
+#: inc/customizer.php:199
 msgid 'Add Email Text'
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:210
 msgid 'Add Email'
 msgstr ""
 
-#: inc/customizer.php:217
+#: inc/customizer.php:222
 msgid 'Topbar Color'
 msgstr ""
 
-#: inc/customizer.php:229
+#: inc/customizer.php:233
 msgid 'Topbar Font Size'
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:245
 msgid 'Logo'
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:258
 msgid 'Logo Font'
 msgstr ""
 
-#: inc/customizer.php:266
+#: inc/customizer.php:269
 msgid 'Logo Font Size'
 msgstr ""
 
-#: inc/customizer.php:278
+#: inc/customizer.php:281
 msgid 'Description Color'
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:294
 msgid 'Description Fonts'
 msgstr ""
 
-#: inc/customizer.php:302
+#: inc/customizer.php:304
 msgid 'Description Font Size'
 msgstr ""
 
-#: inc/customizer.php:314
+#: inc/customizer.php:316
 msgid 'Contact Color'
 msgstr ""
 
-#: inc/customizer.php:327
+#: inc/customizer.php:328
 msgid 'Contact Font Size'
 msgstr ""
 
-#: inc/customizer.php:335
+#: inc/customizer.php:336
 msgid 'Social Media'
 msgstr ""
 
-#: inc/customizer.php:336
+#: inc/customizer.php:337
 msgid 'Add Social Media Url here'
 msgstr ""
 
@@ -441,110 +445,110 @@ msgstr ""
 msgid 'Add Facebook link'
 msgstr ""
 
-#: inc/customizer.php:359
+#: inc/customizer.php:358
 msgid 'Add Twitter link'
 msgstr ""
 
-#: inc/customizer.php:371
+#: inc/customizer.php:369
 msgid 'Add Google link'
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:380
 msgid 'Add Youtube link'
 msgstr ""
 
-#: inc/customizer.php:395
+#: inc/customizer.php:391
 msgid 'Add Pinterest link'
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:399
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:414
+#: inc/customizer.php:410
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:427
+#: inc/customizer.php:421
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:438
-#: inc/customizer.php:590
+#: inc/customizer.php:433
+#: inc/customizer.php:576
 msgid 'Title Color'
 msgstr ""
 
-#: inc/customizer.php:451
-#: inc/customizer.php:603
+#: inc/customizer.php:446
+#: inc/customizer.php:589
 msgid 'Title Fonts'
 msgstr ""
 
-#: inc/customizer.php:463
-#: inc/customizer.php:615
+#: inc/customizer.php:457
+#: inc/customizer.php:600
 msgid 'Title Font Size'
 msgstr ""
 
-#: inc/customizer.php:475
-#: inc/customizer.php:627
+#: inc/customizer.php:469
+#: inc/customizer.php:612
 msgid 'Content Color'
 msgstr ""
 
-#: inc/customizer.php:488
-#: inc/customizer.php:640
+#: inc/customizer.php:482
+#: inc/customizer.php:625
 msgid 'Content Fonts'
 msgstr ""
 
-#: inc/customizer.php:499
-#: inc/customizer.php:651
+#: inc/customizer.php:492
+#: inc/customizer.php:635
 msgid 'Content Font Size'
 msgstr ""
 
-#: inc/customizer.php:511
-#: inc/customizer.php:663
+#: inc/customizer.php:504
+#: inc/customizer.php:647
 msgid 'Button color'
 msgstr ""
 
-#: inc/customizer.php:524
-#: inc/customizer.php:676
+#: inc/customizer.php:517
+#: inc/customizer.php:660
 msgid 'Button Font'
 msgstr ""
 
-#: inc/customizer.php:533
+#: inc/customizer.php:524
 msgid 'Courses Section'
 msgstr ""
 
-#: inc/customizer.php:534
+#: inc/customizer.php:525
 msgid 'This section will appear below the slider.'
 msgstr ""
 
-#: inc/customizer.php:556
+#: inc/customizer.php:543
 msgid 'Select post'
 msgstr ""
 
-#: inc/customizer.php:580
+#: inc/customizer.php:566
 msgid 'Select Category'
 msgstr ""
 
-#: inc/customizer.php:687
+#: inc/customizer.php:670
 msgid 'Button Font Size'
 msgstr ""
 
-#: inc/customizer.php:695
+#: inc/customizer.php:678
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:696
+#: inc/customizer.php:679              
 msgid 'Add some text for footer like copyright etc.'
 msgstr ""
 
-#: inc/customizer.php:706
+#: inc/customizer.php:688
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:789
+#: inc/customizer.php:771
 msgid 'Academic Education Pro'
 msgstr ""
 
-#: inc/customizer.php:790
+#: inc/customizer.php:772
 msgid 'Go Pro'
 msgstr ""

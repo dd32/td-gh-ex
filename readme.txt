@@ -1,9 +1,9 @@
 === Academic Education ===
 Contributors: LogicalThemes
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
-Requires at least: 4.9
-Tested up to: 5.3
-Stable tag: 0.2.5
+Requires at least: 5.0
+Tested up to: 5.3.2
+Stable tag: 0.2.6
 Requires PHP: 7.2.14
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,11 @@ Academic Education theme is suitable for college, School, university, LMS, Train
   * Done Keyboard navigation.
   * Pot file updated.
 
+= 0.2.6 =
+  * Added sticky header option.
+  * Changed some theme code.
+  * Updated POT file.
+
 == Resources ==
 
 Academic Education WordPress Theme, Copyright 2017 LogicalThemes
@@ -63,29 +68,37 @@ Academic Education is distributed under the terms of the GNU GPL
 
 Theme is Built using the following resource bundles.
 
-* Open Sans font - https://www.google.com/fonts/specimen/Open+Sans
-  PT Sans font - https://fonts.google.com/specimen/PT+Sans
-  Roboto font - https://fonts.google.com/specimen/Roboto
-  License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/ LICENSE-2.0.html
+  Bootstrap
+  - Mark Otto and Jacob Thornton
+  - copyright 2011-2018, Mark Otto and Jacob Thornton
+  - https://github.com/twbs/bootstrap/releases/download/v4.0.0/bootstrap-4.0.0-dist.zip 
+  - License: MIT License (MIT) 
+  - https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-* CSS bootstrap.css
-  Code and documentation copyright 2011-2016 Twitter, Inc. Code released under the MIT license. Docs released  under Creative Commons.
+  Font Awesome 
+  - Dave Gandy
+  - Copyright July 12, 2018, Dave Gandy 
+  - https://github.com/FortAwesome/Font-Awesome.git
+  - License: Font Awesome Free 5.0.6
+  - http://fontawesome.com/license
 
-* Font License:font-awesome/fonts/.
-  License: SIL OFL 1.1
-  URL: http://scripts.sil.org/OFL
+  Superfish 
+  - Joeldbirch 
+  - Copyright 2013, Justin Tadlock 
+  - https://github.com/joeldbirch/superfish.git 
+  - License: Free to use and abuse under the MIT license. v1.7.9 
+  - https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt
 
-* Code License: font-awesome/css/, font-awesome/less/, and font-awesome/scss/.
-  License: MIT License
-  URL: http://opensource.org/licenses/mit-license.html
+  Customizer Pro
+  - Justin Tadlock 
+  - Copyright 2016, Justin Tadlock.
+  - License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
+  - https://github.com/justintadlock/trt-customizer-pro
 
-* Pexels Images
+  Pexels Images
   License: CC0 1.0 Universal (CC0 1.0)
   Source: https://www.pexels.com/photo-license/
 
   Screenshot banner image: Copyright Tookapic
   License: CC0 1.0 Universal (CC0 1.0)
   Source: https://www.pexels.com/photo/brown-building-near-grass-field-83133/
-
-* Customizer Pro
-  Source: https://github.com/justintadlock/trt-customizer-pro

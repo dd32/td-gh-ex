@@ -8,6 +8,7 @@
 /**
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
+
 function academic_education_customize_register( $wp_customize ) {	
 
 	//add home page setting pannel
@@ -30,7 +31,6 @@ function academic_education_customize_register( $wp_customize ) {
         'default' => __( 'One Column', 'academic-education' ),
         'sanitize_callback' => 'academic_education_sanitize_choices'	        
 	));
-
 	$wp_customize->add_control('academic_education_theme_options',
 	    array(
 	        'type' => 'radio',
@@ -140,6 +140,7 @@ function academic_education_customize_register( $wp_customize ) {
         'Kavoon' =>'Kavoon',
         'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
     );
+
 	//Topbar section
 	$wp_customize->add_section('academic_education_topbar',array(
 		'title'	=> __('Topbar','academic-education'),
@@ -148,11 +149,19 @@ function academic_education_customize_register( $wp_customize ) {
 		'panel' => 'academic_education_panel_id',
 	));
 
+	$wp_customize->add_setting( 'academic_education_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('academic_education_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Sticky Header','academic-education' ),
+        'section' => 'academic_education_topbar'
+    ));
+
 	$wp_customize->add_setting('academic_education_timming',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_timming',array(
 		'label'	=> __('Add Timmings','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -164,7 +173,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_call_text',array(
 		'label'	=> __('Add Call Text','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -176,7 +184,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_call',array(
 		'label'	=> __('Add Phone Number','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -188,7 +195,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_mail_text',array(
 		'label'	=> __('Add Email Text','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -200,7 +206,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_mail',array(
 		'label'	=> __('Add Email','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -224,7 +229,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_topbar_paragraph_font_size',array(
 		'label'	=> __('Topbar Font Size','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -261,7 +265,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_topbar_heading_font_size',array(
 		'label'	=> __('Logo Font Size','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -297,7 +300,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_description_font_size',array(
 		'label'	=> __('Description Font Size','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -322,7 +324,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_contact_font_size',array(
 		'label'	=> __('Contact Font Size','academic-education'),
 		'section'	=> 'academic_education_topbar',
@@ -342,7 +343,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('academic_education_facebook_url',array(
 		'label'	=> __('Add Facebook link','academic-education'),
 		'section'	=> 'academic_education_social_media',
@@ -354,7 +354,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('academic_education_twitter_url',array(
 		'label'	=> __('Add Twitter link','academic-education'),
 		'section'	=> 'academic_education_social_media',
@@ -366,7 +365,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('academic_education_google_url',array(
 		'label'	=> __('Add Google link','academic-education'),
 		'section'	=> 'academic_education_social_media',
@@ -378,7 +376,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('academic_education_youtube_url',array(
 		'label'	=> __('Add Youtube link','academic-education'),
 		'section'	=> 'academic_education_social_media',
@@ -390,7 +387,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));
-	
 	$wp_customize->add_control('academic_education_pint_url',array(
 		'label'	=> __('Add Pinterest link','academic-education'),
 		'section'	=> 'academic_education_social_media',
@@ -421,13 +417,11 @@ function academic_education_customize_register( $wp_customize ) {
 			'default'           => '',
 			'sanitize_callback' => 'academic_education_sanitize_dropdown_pages'
 		) );
-
 		$wp_customize->add_control( 'academic_education_slidersettings_page' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'academic-education' ),
 			'section'  => 'academic_education_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
-
 	}
 
 	// This is Title Color picker setting
@@ -459,7 +453,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_slider_heading_font_size',array(
 		'label'	=> __('Title Font Size','academic-education'),
 		'section'	=> 'academic_education_slidersettings',
@@ -495,7 +488,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_slider_paragraph_font_size',array(
 		'label'	=> __('Content Font Size','academic-education'),
 		'section'	=> 'academic_education_slidersettings',
@@ -541,15 +533,10 @@ function academic_education_customize_register( $wp_customize ) {
 	foreach($post_list as $post){
 		$pst[$post->post_title] = $post->post_title;
 	}
-	
-	$wp_customize->add_setting('academic_education_single_post',array(
-		'sanitize_callback' => 'academic_education_sanitize_choices',
-	));	
 
 	$wp_customize->add_setting('academic_education_single_post',array(
 		'sanitize_callback' => 'academic_education_sanitize_choices',
 	));
-
 	$wp_customize->add_control('academic_education_single_post',array(
 		'type'    => 'select',
 		'choices' => $pst,
@@ -573,7 +560,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> 'select',
 		'sanitize_callback' => 'academic_education_sanitize_choices',
 	));
-
 	$wp_customize->add_control('academic_education_category',array(
 		'type'    => 'select',
 		'choices' => $cat_post,
@@ -610,7 +596,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_course_heading_font_size',array(
 		'label'	=> __('Title Font Size','academic-education'),
 		'section'	=> 'academic_education_about',
@@ -646,7 +631,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_course_paragraph_font_size',array(
 		'label'	=> __('Content Font Size','academic-education'),
 		'section'	=> 'academic_education_about',
@@ -682,7 +666,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_course_atag_font_size',array(
 		'label'	=> __('Button Font Size','academic-education'),
 		'section'	=> 'academic_education_about',
@@ -701,7 +684,6 @@ function academic_education_customize_register( $wp_customize ) {
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('academic_education_footer_copy',array(
 		'label'	=> __('Copyright Text','academic-education'),
 		'section'	=> 'academic_education_footer_section',

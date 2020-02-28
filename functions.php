@@ -66,12 +66,12 @@ function academic_education_activation_notice() {
 }
 
 /*Site URL*/
-define('ACADEMIC_EDUCATION_FREE_THEME_DOC','https://logicalthemes.com/docs/free-academic-education/','academic-education');
-define('ACADEMIC_EDUCATION_SUPPORT','https://wordpress.org/support/theme/academic-education/','academic-education');
-define('ACADEMIC_EDUCATION_BUY_NOW','https://www.logicalthemes.com/themes/premium-academic-education-wordpress-theme/','academic-education');
-define('ACADEMIC_EDUCATION_LIVE_DEMO','https://logicalthemes.com/academic-education-pro/','academic-education');
-define('ACADEMIC_EDUCATION_PRO_DOC','https://logicalthemes.com/docs/academic-education-pro/','academic-education');
-define('ACADEMIC_EDUCATION_CREDIT','https://www.logicalthemes.com/themes/free-academic-education-wordpress-theme/','academic-education');
+define('ACADEMIC_EDUCATION_FREE_THEME_DOC',__('https://logicalthemes.com/docs/free-academic-education/','academic-education'));
+define('ACADEMIC_EDUCATION_SUPPORT',__('https://wordpress.org/support/theme/academic-education/','academic-education'));
+define('ACADEMIC_EDUCATION_BUY_NOW',__('https://www.logicalthemes.com/themes/premium-academic-education-wordpress-theme/','academic-education'));
+define('ACADEMIC_EDUCATION_LIVE_DEMO',__('https://logicalthemes.com/academic-education-pro/','academic-education'));
+define('ACADEMIC_EDUCATION_PRO_DOC',__('https://logicalthemes.com/docs/academic-education-pro/','academic-education'));
+define('ACADEMIC_EDUCATION_CREDIT',__('https://www.logicalthemes.com/themes/free-academic-education-wordpress-theme/','academic-education'));
 if ( ! function_exists( 'academic_education_credit' ) ) {
 	function academic_education_credit(){
 		echo "<a href=".esc_url(ACADEMIC_EDUCATION_CREDIT)." target='_blank'>".esc_html__('Education WordPress Theme','academic-education')."</a>";

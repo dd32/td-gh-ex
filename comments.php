@@ -14,7 +14,7 @@ if ( post_password_required() )
 				$comments_number = get_comments_number();
 				if ( 1 === $comments_number ) {
 					/* translators: %s: post title */
-					printf( esc_html__('One thought on &ldquo;%s&rdquo;', 'academic-education' ), get_the_title() );
+					printf( esc_html__('One thought on &ldquo;%s&rdquo;', 'academic-education' ), esc_html(get_the_title()) );
 				} else {
 					 printf(
 					/* translators: 1: number of comments, 2: post title */
@@ -29,7 +29,7 @@ if ( post_password_required() )
 
 					    ) ),
 					    esc_html (number_format_i18n( $comments_number ) ),
-					    get_the_title()
+					    esc_html(get_the_title())
 
 					);
 				}

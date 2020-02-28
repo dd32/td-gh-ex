@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-5">
-          <div class="social-media">
+        <div class="social-media">
             <?php if( get_theme_mod( 'academic_education_facebook_url') != '') { ?>
               <a href="<?php echo esc_url( get_theme_mod( 'academic_education_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','academic-education' );?></span></a>
             <?php } ?>
@@ -32,7 +32,7 @@
               <a href="<?php echo esc_url( get_theme_mod( 'academic_education_pint_url','' ) ); ?>"><i class="fab fa-pinterest"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','academic-education' );?></span></a>
             <?php } ?>
           </div>
-       </div>
+        </div>
       <div class="clearfix"></div>
     </div>
   </div>
