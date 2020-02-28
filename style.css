@@ -4,7 +4,7 @@
  * Author: Booking Algorithms
  * Author URI: https://ba-booking.com/
  * Description: BA Tours light is a booking theme developed for travel agencies and tour operators of any size. It's a first theme based on a true fast and flexible free booking engine – BA Book Everything plugin. You no longer need any shopping plugins, so this theme doesn't support Woocommerce. The booking engine allows you to create different booking rules and categories for different tours (with or without ages in prices), set seasonal prices and discounts, use promo codes (discount coupons), sell additional services with booking (extra tickets etc.), and add as many taxonomies (attributes) for filtering tours in search requests as you like. Clear landing design looks great on both desktop and mobile screens. Modern responsive design, based on Bootstrap 4 framework, touch-ready and responsive sliders, Fontawesome 5 beautiful icons, customizable theme typography, and more.
- * Version: 1.0.10
+ * Version: 1.0.11
  * License: GNU GPL v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ba-tours-light
@@ -2778,6 +2778,8 @@ body.single-to_book .collapse-body.block_active, body.single-to_book .site-conte
     text-align: center;
     padding: 2rem;
     max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .my_account_page_content_wrapper #loginform label{

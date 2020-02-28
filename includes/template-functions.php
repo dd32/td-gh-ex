@@ -366,7 +366,7 @@ if ( ! function_exists( 'batourslight_custom_menu_item' ) ) {
 			
             $output = apply_filters( 'batourslight_tour_entry_header', $output, $post_type);
             
-			echo wp_kses_post($output);
+			echo wp_kses($output, batourslight_Settings::$wp_allowedposttags);
 			
 			return;
 		}
@@ -482,6 +482,10 @@ if ( ! function_exists( 'batourslight_custom_menu_item' ) ) {
                                    ' . $discount . ' 
 								</div>
                                 ';
+
+            if ( method_exists('BABE_html', 'get_post_schema') ){
+                $tour_info .= BABE_html::get_post_schema($babe_post);
+            }
                                 
             $tour_info .= '<div class="tour_info_book_now">
                 <a class="btn btn-red" href="#booking_form_block">' . __( 'Book now', 'ba-tours-light' ) . '</a>
@@ -743,14 +747,18 @@ if ( ! function_exists( 'batourslight_custom_menu_item' ) ) {
 			';
 			
 			$output .= apply_filters( 'batourslight_tour_content_after_slideshow', '', $content, $post_id, $post );
-			
-            /*
-			$output .= '<h2 class="babe_post_content_title">' . __( 'Calendar & Prices', 'ba-tours-light' ) . '</h2>' . BABE_html::block_calendar( $post );
-            */
-            
-			/*
-			$output .= batourslight_button_mobile( __( 'Book now', 'ba-tours-light' ), '#widget-babe-booking-form' );
-			*/
+
+            if(!BABE_Settings::$settings['av_calendar_remove'] && $rules_cat['rules']['basic_booking_period'] != 'single_custom'){
+                $output .= '
+                <div class="front_top_block tour_page_steps">
+					<div class="front_top_bg_inner">
+						<h2 class="babe_post_content_title container">' . __( 'Calendar & Prices', 'ba-tours-light' ) . '</h2>
+						<div class="front_top_inner container">
+							' . BABE_html::block_calendar( $post ) . '
+						</div>
+					</div>
+				</div>';
+            }
             
 			$output .= apply_filters( 'babe_post_content_after_calendar', '', $content, $post_id, $post );
 			

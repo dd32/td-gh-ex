@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BA Tours light\n"
-"POT-Creation-Date: 2019-10-03 15:54+0300\n"
+"POT-Creation-Date: 2020-02-29 00:13+0200\n"
 "PO-Revision-Date: 2018-04-10 13:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: https://ba-booking.com\n"
@@ -10,14 +10,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.2\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;_x;_n;_nx;esc_html__;esc_html_e;esc_html_x\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;_x;_n;_nx;esc_html__;esc_html_e;esc_html_x;"
+"esc_attr__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
 "X-Poedit-SearchPathExcluded-1: css\n"
 "X-Poedit-SearchPathExcluded-2: languages\n"
+"X-Poedit-SearchPathExcluded-3: admin/css\n"
+"X-Poedit-SearchPathExcluded-4: admin/images\n"
 
 #: 404.php:15
 msgid "That page can&rsquo;t be found."
@@ -310,175 +313,175 @@ msgstr ""
 msgid "Add terms from selected taxonomy to the search form filters."
 msgstr ""
 
-#: includes/class-settings.php:119
+#: includes/class-settings.php:149
 msgid "No sidebars"
 msgstr ""
 
-#: includes/class-settings.php:120
+#: includes/class-settings.php:150
 msgid "No sidebars (wide)"
 msgstr ""
 
-#: includes/class-settings.php:121
+#: includes/class-settings.php:151
 msgid "Left sidebar"
 msgstr ""
 
-#: includes/class-settings.php:122
+#: includes/class-settings.php:152
 msgid "Right sidebar"
 msgstr ""
 
-#: includes/class-settings.php:123
+#: includes/class-settings.php:153
 msgid "Two sidebars"
 msgstr ""
 
-#: includes/class-settings.php:124
+#: includes/class-settings.php:154
 msgid "Front page"
 msgstr ""
 
-#: includes/class-settings.php:208
+#: includes/class-settings.php:238
 msgid "Left Sidebar"
 msgstr ""
 
-#: includes/class-settings.php:212
+#: includes/class-settings.php:242
 msgid "Right Sidebar"
 msgstr ""
 
-#: includes/class-settings.php:215
+#: includes/class-settings.php:245
 msgid "Before-Header panel"
 msgstr ""
 
-#: includes/class-settings.php:218
+#: includes/class-settings.php:248
 msgid "Header panel"
 msgstr ""
 
-#: includes/class-settings.php:221
+#: includes/class-settings.php:251
 msgid "Before-Footer panel"
 msgstr ""
 
-#: includes/class-settings.php:224
+#: includes/class-settings.php:254
 msgid "Footer panel"
 msgstr ""
 
-#: includes/class-settings.php:227
+#: includes/class-settings.php:257
 msgid "Footer left panel"
 msgstr ""
 
-#: includes/class-settings.php:230
+#: includes/class-settings.php:260
 msgid "Footer middle panel"
 msgstr ""
 
-#: includes/class-settings.php:233
+#: includes/class-settings.php:263
 msgid "Footer right panel"
 msgstr ""
 
-#: includes/class-settings.php:239 includes/class-settings.php:440
+#: includes/class-settings.php:269 includes/class-settings.php:470
 msgid "H1"
 msgstr ""
 
-#: includes/class-settings.php:245 includes/class-settings.php:446
+#: includes/class-settings.php:275 includes/class-settings.php:476
 msgid "H2"
 msgstr ""
 
-#: includes/class-settings.php:251 includes/class-settings.php:452
+#: includes/class-settings.php:281 includes/class-settings.php:482
 msgid "H3"
 msgstr ""
 
-#: includes/class-settings.php:257 includes/class-settings.php:458
+#: includes/class-settings.php:287 includes/class-settings.php:488
 msgid "H4"
 msgstr ""
 
-#: includes/class-settings.php:263 includes/class-settings.php:464
+#: includes/class-settings.php:293 includes/class-settings.php:494
 msgid "H5"
 msgstr ""
 
-#: includes/class-settings.php:269 includes/class-settings.php:470
+#: includes/class-settings.php:299 includes/class-settings.php:500
 msgid "H6"
 msgstr ""
 
-#: includes/class-settings.php:275 includes/class-settings.php:476
+#: includes/class-settings.php:305 includes/class-settings.php:506
 msgid "Buttons and menus"
 msgstr ""
 
-#: includes/class-settings.php:288 includes/class-settings.php:489
+#: includes/class-settings.php:318 includes/class-settings.php:519
 msgid "Text"
 msgstr ""
 
-#: includes/class-settings.php:519
+#: includes/class-settings.php:549
 msgid "Color scheme"
 msgstr ""
 
-#: includes/class-settings.php:520
+#: includes/class-settings.php:550
 msgid "Color scheme."
 msgstr ""
 
-#: includes/class-settings.php:523
+#: includes/class-settings.php:553
 msgid "Main text color"
 msgstr ""
 
-#: includes/class-settings.php:543
+#: includes/class-settings.php:573
 msgid "Light text color"
 msgstr ""
 
-#: includes/class-settings.php:555
+#: includes/class-settings.php:585
 msgid "Yellow text color"
 msgstr ""
 
-#: includes/class-settings.php:573
+#: includes/class-settings.php:603
 msgid "Titles color"
 msgstr ""
 
-#: includes/class-settings.php:591
+#: includes/class-settings.php:621
 msgid "Light Titles color"
 msgstr ""
 
-#: includes/class-settings.php:600
+#: includes/class-settings.php:630
 msgid "Links color"
 msgstr ""
 
-#: includes/class-settings.php:622
+#: includes/class-settings.php:652
 msgid "Icons color"
 msgstr ""
 
-#: includes/class-settings.php:633
+#: includes/class-settings.php:663
 msgid "Buttons color"
 msgstr ""
 
-#: includes/class-settings.php:664
+#: includes/class-settings.php:701
 msgid "Alternative buttons color"
 msgstr ""
 
-#: includes/class-settings.php:681
+#: includes/class-settings.php:718
 msgid "Buttons text color"
 msgstr ""
 
-#: includes/class-settings.php:713
+#: includes/class-settings.php:750
 msgid "Important text"
 msgstr ""
 
-#: includes/class-settings.php:726
+#: includes/class-settings.php:763
 msgid "Header background color"
 msgstr ""
 
-#: includes/class-settings.php:738
+#: includes/class-settings.php:775
 msgid "Header text color"
 msgstr ""
 
-#: includes/class-settings.php:760
+#: includes/class-settings.php:797
 msgid "Main background color"
 msgstr ""
 
-#: includes/class-settings.php:782
+#: includes/class-settings.php:819
 msgid "Text color with Main background"
 msgstr ""
 
-#: includes/class-settings.php:806
+#: includes/class-settings.php:843
 msgid "Gray background color"
 msgstr ""
 
-#: includes/class-settings.php:825
+#: includes/class-settings.php:862
 msgid "Footer background color"
 msgstr ""
 
-#: includes/class-settings.php:835
+#: includes/class-settings.php:872
 msgid "Footer text color"
 msgstr ""
 
@@ -554,6 +557,10 @@ msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:403
 msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:528
+msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:529
@@ -847,99 +854,103 @@ msgstr ""
 msgid "Tour Code:"
 msgstr ""
 
-#: includes/template-functions.php:479 includes/template-functions.php:1421
+#: includes/template-functions.php:479 includes/template-functions.php:1429
 msgid "from"
 msgstr ""
 
-#: includes/template-functions.php:487
+#: includes/template-functions.php:491
 msgid "Book now"
 msgstr ""
 
-#: includes/template-functions.php:510
+#: includes/template-functions.php:514
 msgid "Start time"
 msgstr ""
 
-#: includes/template-functions.php:520
+#: includes/template-functions.php:524
 msgid "Duration"
 msgstr ""
 
-#: includes/template-functions.php:529
+#: includes/template-functions.php:533
 msgid "Age"
 msgstr ""
 
-#: includes/template-functions.php:570
+#: includes/template-functions.php:574
 msgid "Age restriction"
 msgstr ""
 
-#: includes/template-functions.php:573
+#: includes/template-functions.php:577
 msgid "Any, 18+, 7+ years, etc."
 msgstr ""
 
-#: includes/template-functions.php:574
+#: includes/template-functions.php:578
 msgid "7+ years"
 msgstr ""
 
-#: includes/template-functions.php:765
+#: includes/template-functions.php:755
+msgid "Calendar & Prices"
+msgstr ""
+
+#: includes/template-functions.php:773
 msgid "Details"
 msgstr ""
 
-#: includes/template-functions.php:777
+#: includes/template-functions.php:785
 msgid "Questions & Answers"
 msgstr ""
 
-#: includes/template-functions.php:798
+#: includes/template-functions.php:806
 msgid "Book this tour"
 msgstr ""
 
-#: includes/template-functions.php:875
+#: includes/template-functions.php:883
 msgid "Date and time"
 msgstr ""
 
-#: includes/template-functions.php:888
+#: includes/template-functions.php:896
 msgid "Tickets"
 msgstr ""
 
-#: includes/template-functions.php:888
+#: includes/template-functions.php:896
 msgid "Guests"
 msgstr ""
 
-#: includes/template-functions.php:891
+#: includes/template-functions.php:899
 msgid "please, select date first"
 msgstr ""
 
-#: includes/template-functions.php:919
+#: includes/template-functions.php:927
 msgid "Select meeting point"
 msgstr ""
 
-#: includes/template-functions.php:945
+#: includes/template-functions.php:953
 msgid "Total:"
 msgstr ""
 
-#: includes/template-functions.php:951
+#: includes/template-functions.php:959
 msgid "Please fill in all the data."
 msgstr ""
 
-#: includes/template-functions.php:960
+#: includes/template-functions.php:968
 msgid "Book Now"
 msgstr ""
 
-#: includes/template-functions.php:1601
+#: includes/template-functions.php:1609
 msgid "Previous"
 msgstr ""
 
-#: includes/template-functions.php:1601
+#: includes/template-functions.php:1609
 msgid "Previous page"
 msgstr ""
 
-#: includes/template-functions.php:1602
+#: includes/template-functions.php:1610
 msgid "Next page"
 msgstr ""
 
-#: includes/template-functions.php:1602
+#: includes/template-functions.php:1610
 msgid "Next"
 msgstr ""
 
-#: includes/template-functions.php:1603
+#: includes/template-functions.php:1611
 msgid "Page"
 msgstr ""
 

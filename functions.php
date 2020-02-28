@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BATOURSLIGHT', __FILE__ );
-define( 'BATOURSLIGHT_VERSION', '1.0.10' );
+define( 'BATOURSLIGHT_VERSION', '1.0.11' );
 define( 'BATOURSLIGHT_NAME', 'BA Tours light' );
 define( 'BATOURSLIGHT_URI', get_template_directory_uri() );
 define( 'BATOURSLIGHT_DIR', untrailingslashit( dirname( BATOURSLIGHT ) ) );

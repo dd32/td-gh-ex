@@ -111,7 +111,9 @@ class batourslight_Settings {
         global $allowedposttags;
         
         self::$wp_allowedposttags = $allowedposttags;
-        self::$wp_allowedposttags['script'] = array();
+        self::$wp_allowedposttags['script'] = array(
+            'type' => array('application/ld+json'),
+        );
         self::$wp_allowedposttags['time'] = array(
            'class' => array(),
            'datetime' => array(),
