@@ -27,6 +27,9 @@ StockSnap uses is the Creative Commons CC0 license.
 
 == Changelog ==
 
+= 1.7 =
+* Header and Menu layout option added
+
 = 1.6 =
 * boxed layout added
 

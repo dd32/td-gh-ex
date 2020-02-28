@@ -76,6 +76,31 @@ class astral_Customizer extends astral_Abstract_Main {
 			  )
 		   )
 		);
+		
+		/* header section */
+		$wp_customize->add_section( 'astral_header', array(
+			'title'      => __( 'Header Settings', 'astral' ),
+			'panel'      => 'astral_theme_option',
+			'capability' => 'edit_theme_options',
+			'priority'   => 34,
+		) );
+		
+		$wp_customize->add_setting( 'layout_picker_setting', array(
+            'type'              => 'theme_mod',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'capability'        => 'edit_theme_options',
+        ) );
+		
+        $wp_customize->add_control( new Layout_Picker_Custom_Control( $wp_customize, 'layout_picker_setting', array(
+			'type' => 'radio',
+            'label'   => 'Header and Menu Layout Picker Setting',
+            'section' => 'astral_header',
+            'settings'   => 'layout_picker_setting',
+            'choices' => array(
+				'left_layout' => get_template_directory_uri() . '/images/left.png',
+				'center_layout' => get_template_directory_uri() . '/images/center.png',
+        )
+        ) ) );
 
 		/* footer section */
 		$wp_customize->add_section( 'astral_footer', array(

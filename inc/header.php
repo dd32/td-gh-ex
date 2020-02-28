@@ -50,7 +50,52 @@ if ( ! function_exists( 'astral_page_start' ) ) :
         <header id="home" <?php if ( has_header_image() ) { ?> style="background-image:url(<?php echo esc_url( get_header_image() ); ?>)" <?php } ?>>
             <div class="container">
                 <div class="row">
-                    <div class="header col-md-6 col-sm-12">
+				<?php if(get_theme_mod('layout_picker_setting')=="center_layout") : ?>
+					<div class="header col-md-12 col-sm-12 logo-center">
+                        <!-- logo -->
+                        <div id="logo">
+                            <h1>
+                                <a style="color: #<?php echo esc_attr( get_theme_mod( 'header_textcolor' ) ); ?>"
+                                   title="<?php the_title_attribute(); ?>" href="<?php echo esc_url( home_url() ); ?>">
+
+									<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+									$image                = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+
+									if ( has_custom_logo() ) { ?>
+                                        <img src="<?php echo esc_url( $image[0] ); ?>"/>
+									<?php } elseif ( display_header_text() ) {
+										echo esc_html( get_bloginfo( 'name' ) );
+									} ?>
+
+                                </a>
+                            </h1>
+
+                            <p style="color: #<?php echo esc_attr( get_theme_mod( 'header_textcolor' ) ); ?>">
+								<?php
+								if ( display_header_text() ) {
+									echo esc_html( get_bloginfo( 'description' ) );
+								}
+								?>
+                            </p>
+							
+							<div class="social center-social">
+							<?php if ( has_nav_menu( 'social' ) ) : 
+									wp_nav_menu(
+										array(
+											'theme_location' => 'social',
+											'menu_class'     => 'social-network ',
+											'walker' => new WO_Nav_Social_Walker(),
+											'depth'          => 1,
+											'link_before'    => '<span class="screen-reader-text">',
+											'link_after'     => '</span>',
+										)
+									);
+							endif; ?>
+							</div>							
+						</div>
+                    </div>
+					<?php else : ?>
+					<div class="header col-md-6 col-sm-12">
                         <!-- logo -->
                         <div id="logo">
                             <h1>
@@ -93,6 +138,7 @@ if ( ! function_exists( 'astral_page_start' ) ) :
 							);
 					endif; ?>
                     </div>
+					<?php endif; ?>
                 </div>
             </div>
         </header>
@@ -112,7 +158,8 @@ if ( ! function_exists( 'astral_menus' ) ) :
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div id="navbarNavDropdown" class="navbar-collapse collapse">
+					<?php if(get_theme_mod('layout_picker_setting')=="center_layout") : $astral_menu_layout="center_menu_layout"; endif; ?>
+                    <div id="navbarNavDropdown" class="navbar-collapse collapse <?php echo $astral_menu_layout; ?>">
 						<?php
 						wp_nav_menu( array(
 							'theme_location'  => 'primary',
