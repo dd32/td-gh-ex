@@ -39,17 +39,7 @@
 			<!-- Nav -->
 			<div class="col-lg-6 d-none d-lg-block">
 				<nav class="text-right main-menu">
-					<?php 
-					wp_nav_menu( 
-						array(  
-							'theme_location' => 'primary_menu',
-							'container'  => '',
-							'menu_class' => '',
-							'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-							'walker' => new WP_Bootstrap_Navwalker()
-							 ) 
-						);
-					?>
+					<?php startkit_navigation(); ?>
 				</nav>
 			</div>
 			<!-- Nav End -->
@@ -78,17 +68,7 @@
                         <div class="col-md-12">
                             <div class="mobile-menu">
                                 <nav class="mobile-menu-active">
-                                    <?php 
-										wp_nav_menu( 
-											array(  
-												'theme_location' => 'primary_menu',
-												'container'  => '',
-												'menu_class' => '',
-												'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-												'walker' => new WP_Bootstrap_Navwalker()
-												 ) 
-											);
-										?>
+                                    <?php startkit_navigation(); ?>
                                 </nav>
                                 
                             </div>
