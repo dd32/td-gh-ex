@@ -153,17 +153,17 @@ class Core {
             'headerImage'					=> esc_attr( get_header_image() ),
             'top_navigation'				=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) ),
             'background_image'				=> esc_attr( get_header_image() ),
-            'primaryColor' 					=> esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ),
+            'primaryColor' 					=> esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ),
             'header_top_margin'				=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0' ) ),
             'slider_particles'				=> esc_attr( get_theme_mod( 'agama_slider_particles', true ) ),
             'slider_enable'					=> esc_attr( get_theme_mod( 'agama_slider_enable', true ) ),
             'slider_height'					=> esc_attr( get_theme_mod( 'agama_slider_height', '0' ) ),
             'slider_time'					=> esc_attr( get_theme_mod( 'agama_slider_time', '7000' ) ),
-            'slider_particles_circle_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_circle_color', '#FE6663' ) ),
-            'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#FE6663' ) ),
+            'slider_particles_circle_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_circle_color', '#ffd700' ) ),
+            'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#ffd700' ) ),
             'header_image_particles'		=> esc_attr( get_theme_mod( 'agama_header_image_particles', true ) ),
-            'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#FE6663' ) ),
-            'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#FE6663' ) ),
+            'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#ffd700' ) ),
+            'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#ffd700' ) ),
             'blog_layout'                   => esc_attr( get_theme_mod( 'agama_blog_style', 'list' ) ),
             'infinite_scroll'               => esc_attr( get_theme_mod( 'agama_blog_infinite_scroll', false ) ),
             'infinite_trigger'              => esc_attr( get_theme_mod( 'agama_blog_infinite_trigger', 'button' ) )
@@ -412,7 +412,7 @@ class Core {
         // If current theme version is bigger than "1.2.9.1" apply next updates.
         if( version_compare( '1.2.9.1', $version, '<' ) ) {
             if( ! get_option( '_agama_1291_migrated' ) ) {
-                $nav_color 			= esc_attr( get_theme_mod( 'agama_header_nav_color', '#fe6663' ) );
+                $nav_color 			= esc_attr( get_theme_mod( 'agama_header_nav_color', '#ffd700' ) );
                 $nav_hover_color	= esc_attr( get_theme_mod( 'agama_header_nav_hover_color', '#000' ) );
                 set_theme_mod( 'agama_nav_top_color', $nav_color );
                 set_theme_mod( 'agama_nav_top_hover_color', $nav_hover_color );

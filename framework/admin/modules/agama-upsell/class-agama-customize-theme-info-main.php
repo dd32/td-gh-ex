@@ -86,9 +86,9 @@ class Agama_Customizer_Theme_Info_Main extends WP_Customize_Section {
 		<li id="accordion-section-{{ data.id }}"
 			class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 			<h3 class="accordion-section-title">
-				{{data.theme_info_title}}
+				<!--{{data.theme_info_title}}-->
 				<# if ( data.label_text && data.label_url ) { #>
-					<a class="button button-primary alignright" href="{{data.label_url}}" target="_blank">
+					<a class="btn btn-primary aligncenter" href="{{data.label_url}}" target="_blank">
 						{{data.label_text}}
 					</a>
 					<# } #>

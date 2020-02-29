@@ -99,7 +99,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_logo_color',
 		'type'			=> 'color',
         'transport'		=> 'auto',
-        'default'		=> '#FE6663',
+        'default'		=> '#ffd700',
 		'output'		=> [
 			[
 				'element'	=> '#masthead h1 a',
@@ -289,7 +289,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 			],
 		],
 		'transport'		=> 'auto',
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	] );
     Kirki::add_field( 'agama_options', [
         'type'        => 'custom',
@@ -804,7 +804,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_image_particles_circle_color',
 		'section'		=> 'header_image',
 		'type'			=> 'color',
-		'default'		=> '#FE6663',
+		'default'		=> '#ffd700',
 		'priority'		=> 1
 	) );
 	Kirki::add_field( 'agama_options', array(
@@ -813,7 +813,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_image_particles_lines_color',
 		'section'		=> 'header_image',
 		'type'			=> 'color',
-		'default'		=> '#FE6663',
+		'default'		=> '#ffd700',
 		'priority'		=> 1
 	) );
     ##########################################################
@@ -1268,7 +1268,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_slider_particles_circle_color',
 		'section'		=> 'agama_slider_particles_section',
 		'type'			=> 'color',
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Particles Lines Color', 'agama' ),
@@ -1276,7 +1276,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_slider_particles_lines_color',
 		'section'		=> 'agama_slider_particles_section',
 		'type'			=> 'color',
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	###################################################
 	# SLIDE 1 SECTION
@@ -1388,7 +1388,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'background-color'
 			)
 		),
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	###################################################
 	# SLIDE 2 SECTION
@@ -1500,7 +1500,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'background-color'
 			)
 		),
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 ###################################################################################
 # BREADCRUMB
@@ -1715,7 +1715,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			    => __( 'Image', 'agama' ),
@@ -1834,7 +1834,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Image', 'agama' ),
@@ -1953,7 +1953,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Image', 'agama' ),
@@ -2072,7 +2072,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#FE6663'
+		'default'		=> '#ffd700'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Image', 'agama' ),
@@ -2695,10 +2695,10 @@ function agama_customize_css() { ?>
 		top: <?php echo esc_attr( get_theme_mod( 'agama_slider_content_top_2', '40' ) ); ?>%;
 	}
 	#agama_slider .slide-content.slide-1 a.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_1', '#FE6663' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_1', '#ffd700' ) ); ?> !important;
 	}
 	#agama_slider .slide-content.slide-2 a.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#FE6663' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#ffd700' ) ); ?> !important;
 	}
 	<?php endif; ?>
         
@@ -2716,36 +2716,36 @@ function agama_customize_css() { ?>
 	<?php endif; ?>
 	
 	.sm-form-control:focus {
-		border: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?> !important;
+		border: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?> !important;
 	}
 	
 	.entry-content .more-link {
-		border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
-		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	.comment-content .comment-author cite {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
-		border: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		border: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	#respond #submit {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	<?php if( is_rtl() ): ?>
 	blockquote {
-		border-right: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		border-right: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	<?php else: ?>
 	blockquote {
-		border-left: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		border-left: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	<?php endif; ?>
 	
-	#page-title a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>; }
+	#page-title a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>; }
 	
-	.breadcrumb a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>; }
+	.breadcrumb a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>; }
 	
 	<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
 	#infscr-loading {
@@ -2758,27 +2758,27 @@ function agama_customize_css() { ?>
 	button,
 	.button,
 	.entry-date .date-box {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?> !important;
 	}
 	
 	.entry-date .format-box i {
-		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	.vision_tabs #tabs li.active a {
-		border-top: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		border-top: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	#toTop:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	
 	.footer-widgets .widget-title:after {
-		background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#FE6663' ) ); ?>;
+		background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
 	}
 	</style>
 	<?php
@@ -2889,8 +2889,8 @@ function customize_styles_agama_support( $input ) { ?>
 		.menu-item-bar .item-delete:focus:before, 
 		.wp-customizer .menu-item .submitbox .submitdelete:focus, 
 		.wp-customizer button:focus .toggle-indicator:after {
-			-webkit-box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#FE6663', 0.8 ); ?>;
-			box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#FE6663', 0.8 ); ?>;
+			-webkit-box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#ffd700', 0.8 ); ?>;
+			box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#ffd700', 0.8 ); ?>;
 		}
 		#customize-controls .control-section .accordion-section-title:focus, 
 		#customize-controls .control-section .accordion-section-title:hover, 
@@ -2922,7 +2922,7 @@ function customize_styles_agama_support( $input ) { ?>
 		/* Override Kirki Default Colors */
 		.kirki-reset-section:hover, 
 		.kirki-reset-section:active {
-			background: #FE6663 !important;
+			background: #ffd700 !important;
 		}
 		/* Theme Info */
 		ul.theme-info li {

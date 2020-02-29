@@ -108,7 +108,7 @@ class Agama_Customizer_Upsell_Section extends WP_Customize_Section {
 				<# } #>
 
 					<# if ( data.button_text && data.button_url ) { #>
-						<a target="_blank" href="{{ data.button_url }}" class="button button-primary" target="_blank">{{
+						<a target="_blank" href="{{ data.button_url }}" class="btn btn-primary" target="_blank">{{
 							data.button_text }}</a>
 						<# } #>
 

@@ -4,7 +4,7 @@
  Author: Theme Vision
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap 4 framework with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.5.0
+ Version: 1.5.1
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, buddypress, custom-background, custom-header, custom-logo, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, full-width-template, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, education, entertainment, photography
@@ -344,7 +344,7 @@ ul.agama-navigation li:hover > a,
 ul.agama-navigation li.current_page_item > a,
 ul.agama-navigation li.current-menu-item > a,
 ul.agama-navigation li.current-menu-ancestor > a { 
-    color: #FE6663; 
+    color: #ffd700; 
 }
 
 body.no-superfish ul.agama-navigation li:hover > ul:not(.mega-menu-column) { 
@@ -357,7 +357,7 @@ ul.agama-navigation ul:not(.mega-menu-column) {
 	width: 220px;
 	background-color: #FFF;
 	box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
-	border-top: 2px solid #FE6663;
+	border-top: 2px solid #ffd700;
 	height: auto;
 	z-index: 199;
 	top: 100%;
@@ -409,7 +409,7 @@ ul.agama-navigation ul li > a i {
 ul.agama-navigation ul li:hover > a {
 	background-color: rgba(0, 0, 0, 0.05);
 	padding-left: 18px;
-	color: #FE6663;
+	color: #ffd700;
 }
 
 ul.agama-navigation ul > li.menu-item-has-children > a,
@@ -552,8 +552,8 @@ ul.agama-navigation ul > li.page_item_has_children:hover > a {
     color: #999;
 }
 .agama-build-page-wrapper:hover .add-new-widget {
-    border-color: #fe6663;
-    color: #fe6663;
+    border-color: #ffd700;
+    color: #ffd700;
 }
 .agama-build-page-wrapper .agama-build-page-action {
     text-align: center;
@@ -744,7 +744,7 @@ ol.breadcrumb > li > a > i {
 }
 #header.transparent-header + #page-title.page-title-parallax .breadcrumb { margin-top: 35px !important; }
 .breadcrumb a { color: #555; }
-.breadcrumb a:hover { color: #FE6663; }
+.breadcrumb a:hover { color: #ffd700; }
 .breadcrumb i { 
     font-size: 16px;
     width: auto !important; 
@@ -994,7 +994,7 @@ button,
 button,
 .button.button-3d {
 	border-radius: 3px;
-	border-bottom: 3px solid rgba(0,0,0,0.15);
+	border-bottom: 3px solid rgba(0,0,0,0.1);
 	-webkit-transition: none;
 	-o-transition: none;
 	transition: none;
@@ -1023,7 +1023,7 @@ button,
 .wpcf7-text:focus,
 .wpcf7-email:focus,
 .wpcf7-textarea:focus {
-    border-color: #FE6663;
+    border-color: #ffd700;
 }
 
 /* Inputs */
@@ -1590,7 +1590,7 @@ a:hover {
     background-color: #00588B; 
 }
 .tv-phone:hover { 
-    background-color: #FE6663; 
+    background-color: #ffd700; 
 }
 .tv-dropbox:hover { 
     background-color: #3D9AE8; 
@@ -1738,7 +1738,7 @@ a[rel="prev"] {
 #masthead:not(.header_v1) {
     border-top-width: 3px;
     border-top-style: solid;
-    border-top-color: #FE6663;
+    border-top-color: #ffd700;
 }
 #masthead.header_v1 {
     background-color: transparent;
@@ -1987,7 +1987,7 @@ header.has_mobile .logo-mobile {
 	text-align: center;
 	padding-top: 5px;
 	width: 100%;
-	color: #FE6663;
+	color: #ffd700;
 }
 .mobile-menu-toggle-inner {
 	display: block;
@@ -1999,7 +1999,7 @@ header.has_mobile .logo-mobile {
 .mobile-menu-toggle-inner::after {
 	width: 40px;
 	height: 4px;
-	background-color: #FE6663;
+	background-color: #ffd700;
 	border-radius: 4px;
 	position: absolute;
 	transition-property: transform;
@@ -2335,7 +2335,7 @@ body.sidebar-left #primary.tv-col-md-9 {
     bottom: 0px;
     width: 70px;
     height: 3px;
-    background: #FE6663;
+    background: #ffd700;
 }
 .footer-widgets .widget a {
 	color: #cddeee;
@@ -2528,7 +2528,7 @@ article.sticky .featured-post {
 	text-align: center;
 }
 .entry-date .date-box {
-	border-bottom: 3px solid rgba(0,0,0,0.15);
+	border-bottom: 3px solid rgba(0,0,0,0.1);
 	padding: 8px 0 5px 0px;
 	color: #fff;
 }
@@ -2542,11 +2542,12 @@ article.sticky .featured-post {
 	line-height: 24px;
 }
 .entry-date .format-box {
+    font-size: 24px;
 	margin-top: 3px;
-	background-color: #eef0f2;
+	background-color: rgba(250, 215, 0, .1);
 	padding-top: 12px;
 	padding-bottom: 15px;
-	border-bottom: 3px solid rgba(0,0,0,0.15);
+	border-bottom: rgba(0, 0, 0, .1);
 }
 .entry-content,
 .entry-summary,
@@ -3482,8 +3483,8 @@ body:not(.device-touch) .tagcloud a {
 	transition: all .3s ease-in-out;
 }
 .tagcloud a:hover {
-	border-color: #FE6663;
-	color: #FE6663;
+	border-color: #ffd700;
+	color: #ffd700;
 }
 
 /* =Widgets

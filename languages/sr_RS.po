@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agama\n"
-"POT-Creation-Date: 2019-07-16 17:11+0200\n"
-"PO-Revision-Date: 2019-07-16 17:11+0200\n"
+"POT-Creation-Date: 2020-02-29 16:18+0100\n"
+"PO-Revision-Date: 2020-02-29 16:18+0100\n"
 "Last-Translator: Theme Vision <support@theme-vision.com>\n"
 "Language-Team: Theme-Vision <support@theme-vision.com>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Izgleda da ništa ne možemo da pronađemo za vas. Možda će pretraživač pomoći."
 
-#: author.php:63 author.php:108 framework/class-agama.php:457
+#: author.php:63 author.php:108 framework/class-agama.php:322
 #, php-format
 msgid "About %s"
 msgstr "O nama %s "
@@ -68,69 +68,6 @@ msgstr "Komentari nisu doyvoljeni."
 #: content-page.php:38 framework/blog/grid.php:51 image.php:40
 msgid "Edit"
 msgstr "Uredi"
-
-#: framework/admin/about.php:42 framework/admin/about.php:43
-msgid "About Agama"
-msgstr "Agama Detalji"
-
-#: framework/admin/about.php:59
-#, php-format
-msgid "Welcome to Agama v%s"
-msgstr "Dobro došli u Agama v%s"
-
-#: framework/admin/about.php:62
-msgid "Thank you for using Agama theme!"
-msgstr "Hvala što koristite Agama temu!"
-
-#: framework/admin/about.php:63
-msgid "Consider supporting us with any desired amount donation."
-msgstr "Razmislite da nas podržite donacijom sa vašim željenim iznosom."
-
-#: framework/admin/about.php:64
-msgid "Even the smallest donation amount means a lot for us."
-msgstr "Čak i ona najmanja suma nam znači mnogo."
-
-#: framework/admin/about.php:65
-msgid ""
-"With donations you are helping us for faster theme development & updates."
-msgstr "Sa donacijama nam pomažete u bržem razvijanju i ažuriranju teme."
-
-#: framework/admin/about.php:80
-msgid "or"
-msgstr "ili"
-
-#: framework/admin/about.php:82
-#, php-format
-msgid ""
-"You can support us by Buying an %s theme with allot new features & "
-"extensions!"
-msgstr ""
-"Možete nas podržati tako što ćete kupiti %s temu sa mnogo novih opcija i "
-"ekstenzija!"
-
-#: framework/admin/about.php:86
-msgid "What's New"
-msgstr "Šta je Novo"
-
-#: framework/admin/about.php:90
-msgid "Theme Changelog"
-msgstr ""
-
-#: framework/admin/about.php:101
-msgid "Our Themes"
-msgstr ""
-
-#: framework/admin/about.php:109 framework/admin/about.php:114
-msgid "Fury Theme"
-msgstr ""
-
-#: framework/admin/about.php:111
-msgid "Demo"
-msgstr ""
-
-#: framework/admin/about.php:115
-msgid "Download"
-msgstr ""
 
 #: framework/admin/animate.php:13
 msgid "Bounce"
@@ -431,6 +368,10 @@ msgstr ""
 #: framework/admin/animate.php:87
 msgid "Roll Out"
 msgstr ""
+
+#: framework/admin/class-menu.php:78 framework/admin/class-menu.php:79
+msgid "About Agama"
+msgstr "Agama Detalji"
 
 #: framework/admin/customizer.php:65
 msgid "Page Builder"
@@ -1347,7 +1288,7 @@ msgstr ""
 msgid "Set posts lenght on blog loop page."
 msgstr ""
 
-#: framework/admin/customizer.php:2204 framework/class-agama.php:208
+#: framework/admin/customizer.php:2204 framework/class-agama-filters.php:187
 msgid "Read More"
 msgstr ""
 
@@ -1452,7 +1393,7 @@ msgid "Social Icon"
 msgstr "Društvene Mreže"
 
 #: framework/admin/customizer.php:2392
-#: framework/admin/customizer/builder/class-agama-page-builder.php:119
+#: framework/admin/customizer/builder/class-agama-page-builder.php:126
 #, fuzzy
 #| msgid "Add New"
 msgid "Add New"
@@ -1783,41 +1724,41 @@ msgstr "Društvene Mreže"
 msgid "Set custom color for social icons in footer area."
 msgstr "Omogući društvene mreže u footer ?"
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:88
+#: framework/admin/customizer/builder/class-agama-page-builder.php:95
 msgid "Agama Widgets"
 msgstr ""
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:89
+#: framework/admin/customizer/builder/class-agama-page-builder.php:96
 #, fuzzy
 #| msgid "Footer Widget 1"
 msgid "Other Widgets"
 msgstr "Footer Vidžet 1"
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:90
+#: framework/admin/customizer/builder/class-agama-page-builder.php:97
 msgid "Upgrade to PRO to unlock this widget."
 msgstr ""
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:91
+#: framework/admin/customizer/builder/class-agama-page-builder.php:98
 msgid "Testimonial"
 msgstr ""
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:92
+#: framework/admin/customizer/builder/class-agama-page-builder.php:99
 msgid "Portfolio"
 msgstr "Portfolio"
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:93
+#: framework/admin/customizer/builder/class-agama-page-builder.php:100
 msgid "Countdown"
 msgstr ""
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:94
+#: framework/admin/customizer/builder/class-agama-page-builder.php:101
 msgid "Contact"
 msgstr ""
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:95
+#: framework/admin/customizer/builder/class-agama-page-builder.php:102
 msgid "Maps"
 msgstr ""
 
-#: framework/admin/customizer/builder/class-agama-page-builder.php:96
+#: framework/admin/customizer/builder/class-agama-page-builder.php:103
 msgid "Coming Soon"
 msgstr ""
 
@@ -2241,10 +2182,27 @@ msgid ""
 "defined as an array of arrays."
 msgstr ""
 
-#: framework/admin/kirki/core/class-kirki-init.php:277
+#: framework/admin/kirki/core/class-kirki-init.php:289
 msgid ""
 "We detected you're using Kirki_Init::get_variables(). Please use Kirki_Util::"
 "get_variables() instead."
+msgstr ""
+
+#: framework/admin/kirki/core/class-kirki-init.php:365
+msgid ""
+"Your theme uses a Font Awesome field for icons. To avoid issues with missing "
+"icons on your frontend we recommend you install the official Font Awesome "
+"plugin."
+msgstr ""
+
+#: framework/admin/kirki/core/class-kirki-init.php:368
+#, fuzzy
+#| msgid "Install Plugins"
+msgid "Install Plugin"
+msgstr "Instaliraj Dodatke"
+
+#: framework/admin/kirki/core/class-kirki-init.php:369
+msgid "Don't show this again"
 msgstr ""
 
 #: framework/admin/kirki/core/class-kirki.php:237
@@ -2342,80 +2300,80 @@ msgstr ""
 msgid "Collapse data"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:209
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:210
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:198
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:199
 msgid "Ultra-Light 100"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:211
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:200
 msgid "Ultra-Light 100 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:212
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:201
 msgid "Light 200"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:213
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:202
 msgid "Light 200 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:214
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:203
 msgid "Book 300"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:215
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:204
 msgid "Book 300 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:216
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:217
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:205
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:206
 msgid "Normal 400"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:218
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:207
 msgid "Normal 400 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:219
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:208
 msgid "Medium 500"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:220
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:209
 msgid "Medium 500 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:221
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:222
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:210
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:211
 msgid "Semi-Bold 600"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:223
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:212
 msgid "Semi-Bold 600 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:224
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:213
 msgid "Bold 700"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:225
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:214
 msgid "Bold 700 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:226
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:227
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:215
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:216
 msgid "Extra-Bold 800"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:228
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:217
 msgid "Extra-Bold 800 Italic"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:229
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:230
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:218
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:219
 msgid "Ultra-Bold 900"
 msgstr ""
 
-#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:231
+#: framework/admin/kirki/modules/webfonts/class-kirki-fonts.php:220
 msgid "Ultra-Bold 900 Italic"
 msgstr ""
 
@@ -2515,6 +2473,50 @@ msgstr "Page Opcije"
 msgid "Front Page Box #8"
 msgstr "Page Opcije"
 
+#: framework/admin/pages/about.php:20
+#, fuzzy
+#| msgid "Agama Options"
+msgid "Agama"
+msgstr "Agama Opcije"
+
+#: framework/admin/pages/about.php:20
+#: framework/class-agama-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: framework/admin/pages/about.php:46
+msgid "Customizable"
+msgstr ""
+
+#: framework/admin/pages/about.php:47
+msgid ""
+"The Agama theme is build in mind to be easily customizable/extendable by "
+"amateurs or skilled developers."
+msgstr ""
+
+#: framework/admin/pages/about.php:49 framework/admin/pages/about.php:60
+#: framework/admin/pages/about.php:71
+#, fuzzy
+#| msgid "Learn More"
+msgid "Learn more"
+msgstr "Saznaj Više"
+
+#: framework/admin/pages/about.php:57
+msgid "Multilanguage"
+msgstr ""
+
+#: framework/admin/pages/about.php:58
+msgid ""
+"The Agama theme is translated to multiple languages already such as Spanish, "
+"Russian & German."
+msgstr ""
+
+#: framework/admin/pages/about.php:69
+msgid ""
+"The Agama theme is coded with passion and love. More than 5 years of "
+"development says more than thousands words."
+msgstr ""
+
 #: framework/admin/partial-refresh.php:157
 msgid ""
 "Powerful Layout with Responsive functionality that can be adapted to any "
@@ -2573,7 +2575,7 @@ msgstr ""
 msgid "Share"
 msgstr ""
 
-#: framework/agama-actions.php:261 framework/class-agama.php:412
+#: framework/agama-actions.php:261 framework/class-agama.php:277
 msgid " comments"
 msgstr "komentari"
 
@@ -2618,49 +2620,49 @@ msgstr ""
 msgid "Leave a"
 msgstr ""
 
-#: framework/agama-functions.php:209 framework/class-agama.php:427
+#: framework/agama-functions.php:223 framework/class-agama.php:292
 msgid "Post navigation"
 msgstr "Članci navigacija"
 
-#: framework/agama-functions.php:210
+#: framework/agama-functions.php:224
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Stariji članci"
 
-#: framework/agama-functions.php:211
+#: framework/agama-functions.php:225
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Noviji članci <span class=\"meta-nav\">&rarr;</span>"
 
-#: framework/agama-functions.php:236
+#: framework/agama-functions.php:250
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: framework/agama-functions.php:236
+#: framework/agama-functions.php:250
 msgid "(Edit)"
 msgstr "(Uredi)"
 
-#: framework/agama-functions.php:259
+#: framework/agama-functions.php:273
 msgid "author"
 msgstr ""
 
-#: framework/agama-functions.php:265
+#: framework/agama-functions.php:279
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: framework/agama-functions.php:275
+#: framework/agama-functions.php:289
 msgid "Your comment is awaiting moderation."
 msgstr "Vaš komentar čeka odobrenje."
 
-#: framework/agama-functions.php:297 framework/agama-functions.php:300
+#: framework/agama-functions.php:311 framework/agama-functions.php:314
 msgid ", "
 msgstr ", "
 
-#: framework/agama-functions.php:311
+#: framework/agama-functions.php:325
 #, php-format
 msgid "View all posts by %s"
 msgstr "Pogledaj sve postove od %s"
 
-#: framework/agama-functions.php:317
+#: framework/agama-functions.php:331
 #, php-format
 msgid ""
 "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
@@ -2669,7 +2671,7 @@ msgstr ""
 "Ovaj unos je objavljen u %1$s i tagovan %2$s na %3$s<span class=\"by-author"
 "\"> by %4$s</span>."
 
-#: framework/agama-functions.php:319
+#: framework/agama-functions.php:333
 #, php-format
 msgid ""
 "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
@@ -2678,7 +2680,7 @@ msgstr ""
 "Ovaj unost je objavljen u %1$s na %3$s<span class=\"by-author\"> od %4$s</"
 "span>."
 
-#: framework/agama-functions.php:321
+#: framework/agama-functions.php:335
 #, php-format
 msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
 msgstr ""
@@ -2748,43 +2750,43 @@ msgstr ""
 msgid "Page not Found"
 msgstr ""
 
-#: framework/class-agama-core.php:286
+#: framework/class-agama-core.php:214
 msgid "Top Menu"
 msgstr "Top Meni"
 
-#: framework/class-agama-core.php:287
+#: framework/class-agama-core.php:215
 msgid "Primary Menu"
 msgstr "Glavni Meni"
 
-#: framework/class-agama-core.php:388
+#: framework/class-agama-core.php:316
 #: framework/class-agama-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr "Instaliraj Potrebne Dodatke"
 
-#: framework/class-agama-core.php:389
+#: framework/class-agama-core.php:317
 #: framework/class-agama-plugin-activation.php:328
 msgid "Install Plugins"
 msgstr "Instaliraj Dodatke"
 
-#: framework/class-agama-core.php:390
+#: framework/class-agama-core.php:318
 #: framework/class-agama-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr "Instaliranje Dodatka: %s"
 
-#: framework/class-agama-core.php:391
+#: framework/class-agama-core.php:319
 #: framework/class-agama-plugin-activation.php:332
 #, fuzzy, php-format
 #| msgid "Installing Plugin: %s"
 msgid "Updating Plugin: %s"
 msgstr "Instaliranje Dodatka: %s"
 
-#: framework/class-agama-core.php:392
+#: framework/class-agama-core.php:320
 #: framework/class-agama-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr "Nešto nije bilo u redu sa API-jem dodatka"
 
-#: framework/class-agama-core.php:394
+#: framework/class-agama-core.php:322
 #: framework/class-agama-plugin-activation.php:336
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
@@ -2793,7 +2795,7 @@ msgstr[0] "Ova tema zahteva sledeći dodatak: %1$s."
 msgstr[1] "Ova tema zahteva sledeći dodatak: %1$s."
 msgstr[2] "Ova tema zahteva sledeće dodatke: %1$s."
 
-#: framework/class-agama-core.php:399
+#: framework/class-agama-core.php:327
 #: framework/class-agama-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
@@ -2802,7 +2804,7 @@ msgstr[0] "Ova tema preporučuje sledeći dodatak: %1$s."
 msgstr[1] "Ova tema preporučuje sledeći dodataka: %1$s."
 msgstr[2] "Ova tema preporučuje sledeće dodatke: %1$s."
 
-#: framework/class-agama-core.php:404
+#: framework/class-agama-core.php:332
 #: framework/class-agama-plugin-activation.php:348
 #, php-format
 msgid ""
@@ -2815,7 +2817,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: framework/class-agama-core.php:409
+#: framework/class-agama-core.php:337
 #: framework/class-agama-plugin-activation.php:354
 #, php-format
 msgid "There is an update available for: %1$s."
@@ -2824,7 +2826,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: framework/class-agama-core.php:414
+#: framework/class-agama-core.php:342
 #: framework/class-agama-plugin-activation.php:360
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
@@ -2833,7 +2835,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: framework/class-agama-core.php:419
+#: framework/class-agama-core.php:347
 #: framework/class-agama-plugin-activation.php:366
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -2842,7 +2844,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: framework/class-agama-core.php:424
+#: framework/class-agama-core.php:352
 #: framework/class-agama-plugin-activation.php:371
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
@@ -2850,7 +2852,7 @@ msgstr[0] "Počni sa instaliranjem dodatka"
 msgstr[1] "Počni sa instaliranjem dodataka"
 msgstr[2] "Počni sa instaliranjem dodatka"
 
-#: framework/class-agama-core.php:429
+#: framework/class-agama-core.php:357
 #: framework/class-agama-plugin-activation.php:376
 #, fuzzy
 #| msgid "Begin activating plugin"
@@ -2861,7 +2863,7 @@ msgstr[0] "Počni sa aktivacijom dodatka"
 msgstr[1] "Počni sa aktivacijom dodataka"
 msgstr[2] "Počni sa aktivacijom dodatka"
 
-#: framework/class-agama-core.php:434
+#: framework/class-agama-core.php:362
 #: framework/class-agama-plugin-activation.php:381
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
@@ -2869,18 +2871,18 @@ msgstr[0] "Počni sa aktivacijom dodatka"
 msgstr[1] "Počni sa aktivacijom dodataka"
 msgstr[2] "Počni sa aktivacijom dodatka"
 
-#: framework/class-agama-core.php:438
+#: framework/class-agama-core.php:366
 #: framework/class-agama-plugin-activation.php:385
 msgid "Return to Required Plugins Installer"
 msgstr "Vrati se na instaler potrebnih dodataka"
 
-#: framework/class-agama-core.php:439
+#: framework/class-agama-core.php:367
 #: framework/class-agama-plugin-activation.php:387
 #: framework/class-agama-plugin-activation.php:3159
 msgid "Plugin activated successfully."
 msgstr "Dodatak je uspešno aktiviran."
 
-#: framework/class-agama-core.php:440
+#: framework/class-agama-core.php:368
 #: framework/class-agama-plugin-activation.php:388
 #: framework/class-agama-plugin-activation.php:2952
 msgid "The following plugin was activated successfully:"
@@ -2889,13 +2891,13 @@ msgstr[0] "Sledeći dodatak je uspešno aktiviran:"
 msgstr[1] "Sledeći dodaci su uspešno aktivirani:"
 msgstr[2] "Sledeći dodatak je uspešno aktiviran:"
 
-#: framework/class-agama-core.php:441
+#: framework/class-agama-core.php:369
 #: framework/class-agama-plugin-activation.php:390
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: framework/class-agama-core.php:442
+#: framework/class-agama-core.php:370
 #: framework/class-agama-plugin-activation.php:392
 #, php-format
 msgid ""
@@ -2903,25 +2905,25 @@ msgid ""
 "Please update the plugin."
 msgstr ""
 
-#: framework/class-agama-core.php:443
+#: framework/class-agama-core.php:371
 #: framework/class-agama-plugin-activation.php:394
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Svi dodaci su instalirani i uspešno aktivirani. %1$s"
 
-#: framework/class-agama-core.php:444
+#: framework/class-agama-core.php:372
 #: framework/class-agama-plugin-activation.php:395
 msgid "Dismiss this notice"
 msgstr "Odbaci ovo obaveštenje"
 
-#: framework/class-agama-core.php:445
+#: framework/class-agama-core.php:373
 #: framework/class-agama-plugin-activation.php:396
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: framework/class-agama-core.php:446
+#: framework/class-agama-core.php:374
 #: framework/class-agama-plugin-activation.php:397
 msgid "Please contact the administrator of this site for help."
 msgstr ""
@@ -3113,10 +3115,6 @@ msgstr "Izvor"
 msgid "Type"
 msgstr "Tip"
 
-#: framework/class-agama-plugin-activation.php:2553
-msgid "Version"
-msgstr ""
-
 #: framework/class-agama-plugin-activation.php:2554
 msgid "Status"
 msgstr "Status"
@@ -3257,17 +3255,17 @@ msgstr "Sve instalacije su završene."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Instaliranje dodatka %1$s (%2$d/%3$d)"
 
-#: framework/class-agama.php:428
+#: framework/class-agama.php:293
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
-#: framework/class-agama.php:429
+#: framework/class-agama.php:294
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "&rarr;"
 
-#: framework/class-agama.php:461
+#: framework/class-agama.php:326
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Pogledaj sve postove od %s <span class=\"meta-nav\">&rarr;</span>"
@@ -3483,6 +3481,37 @@ msgstr "Rezultat pretrage za: %s"
 msgid "Tag Archives: %s"
 msgstr "Tag Arhive: %s"
 
+#, php-format
+#~ msgid "Welcome to Agama v%s"
+#~ msgstr "Dobro došli u Agama v%s"
+
+#~ msgid "Thank you for using Agama theme!"
+#~ msgstr "Hvala što koristite Agama temu!"
+
+#~ msgid "Consider supporting us with any desired amount donation."
+#~ msgstr "Razmislite da nas podržite donacijom sa vašim željenim iznosom."
+
+#~ msgid "Even the smallest donation amount means a lot for us."
+#~ msgstr "Čak i ona najmanja suma nam znači mnogo."
+
+#~ msgid ""
+#~ "With donations you are helping us for faster theme development & updates."
+#~ msgstr "Sa donacijama nam pomažete u bržem razvijanju i ažuriranju teme."
+
+#~ msgid "or"
+#~ msgstr "ili"
+
+#, php-format
+#~ msgid ""
+#~ "You can support us by Buying an %s theme with allot new features & "
+#~ "extensions!"
+#~ msgstr ""
+#~ "Možete nas podržati tako što ćete kupiti %s temu sa mnogo novih opcija i "
+#~ "ekstenzija!"
+
+#~ msgid "What's New"
+#~ msgstr "Šta je Novo"
+
 #~ msgid "Daily Archives: %s"
 #~ msgstr "Dnevna Archiva: %s"
 
@@ -3536,11 +3565,6 @@ msgstr "Tag Arhive: %s"
 
 #~ msgid "VK URL"
 #~ msgstr "VK link"
-
-#, fuzzy
-#~| msgid "Agama Options"
-#~ msgid "Agama Pro"
-#~ msgstr "Agama Opcije"
 
 #, fuzzy
 #~| msgid "Social Icons"
