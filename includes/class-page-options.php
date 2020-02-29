@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Individual page template options handeling.
  *
  */
-class BAH_L_Page_Options {
+class Bahotel_L_Page_Options {
 
 	//////////////////////////////////////////////////
 	/**
@@ -59,7 +59,7 @@ class BAH_L_Page_Options {
 	 */
 	static function init_options() {
 	   
-       $options = BAH_L_Settings::$layouts;
+       $options = Bahotel_L_Settings::$layouts;
        $options[0] = __( 'Theme default', 'ba-hotel-light' );
 		
 		// Options set.
@@ -335,5 +335,5 @@ class BAH_L_Page_Options {
 /**
  * Calling to setup class.
  */
-BAH_L_Page_Options::init();
+Bahotel_L_Page_Options::init();
 

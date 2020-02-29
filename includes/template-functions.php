@@ -18,21 +18,21 @@ function bahotel_l_get_header_image_thumbnail_id() {
         
          $thumbnail_id = get_post_thumbnail_id( get_the_ID() );
          
-    elseif ( ( (is_single() && 'post' == $post->post_type) || is_home() )  && !apply_filters( 'bahotel_l_option', '', 'blog_header_default' ) && isset(BAH_L_Settings::$settings['blog_header_image']['id'])):
+    elseif ( ( (is_single() && 'post' == $post->post_type) || is_home() )  && !apply_filters( 'bahotel_l_option', '', 'blog_header_default' ) && isset(Bahotel_L_Settings::$settings['blog_header_image']['id'])):
     
-         $thumbnail_id = BAH_L_Settings::$settings['blog_header_image']['id'];
+         $thumbnail_id = Bahotel_L_Settings::$settings['blog_header_image']['id'];
     
-    elseif (is_post_type_archive('event') && !apply_filters( 'bahotel_l_option', '', 'events_header_default' ) && isset(BAH_L_Settings::$settings['events_header_image']['id'])):
+    elseif (is_post_type_archive('event') && !apply_filters( 'bahotel_l_option', '', 'events_header_default' ) && isset(Bahotel_L_Settings::$settings['events_header_image']['id'])):
          
-         $thumbnail_id = BAH_L_Settings::$settings['events_header_image']['id'];
+         $thumbnail_id = Bahotel_L_Settings::$settings['events_header_image']['id'];
     
-    elseif (is_post_type_archive('service') && !apply_filters( 'bahotel_l_option', '', 'services_header_default' ) && isset(BAH_L_Settings::$settings['services_header_image']['id'])):
+    elseif (is_post_type_archive('service') && !apply_filters( 'bahotel_l_option', '', 'services_header_default' ) && isset(Bahotel_L_Settings::$settings['services_header_image']['id'])):
          
-         $thumbnail_id = BAH_L_Settings::$settings['services_header_image']['id'];
+         $thumbnail_id = Bahotel_L_Settings::$settings['services_header_image']['id'];
     
-    elseif (is_archive() && !apply_filters( 'bahotel_l_option', '', 'archive_header_default' ) && isset(BAH_L_Settings::$settings['archive_header_image']['id'])):
+    elseif (is_archive() && !apply_filters( 'bahotel_l_option', '', 'archive_header_default' ) && isset(Bahotel_L_Settings::$settings['archive_header_image']['id'])):
          
-         $thumbnail_id = BAH_L_Settings::$settings['archive_header_image']['id'];
+         $thumbnail_id = Bahotel_L_Settings::$settings['archive_header_image']['id'];
     
     endif;
         
@@ -54,7 +54,7 @@ if ( ! function_exists( 'bahotel_l_background_spinner' ) ) :
      */
      function bahotel_l_background_spinner($spinner_url) {
         
-        return BAH_L_Settings::$default_spinner;
+        return Bahotel_L_Settings::$default_spinner;
         
      }
 
@@ -397,7 +397,7 @@ if ( ! function_exists( 'bahotel_l_filter_block_classes' ) ) :
 		*/
 		function bahotel_l_filter_block_classes( $output = '', $args = array() ) {
 		    
-            if (BAH_L_Settings::$layout_current == 'frontpage' || BAH_L_Settings::$layout_current == 'no-sidebars-wide') { 
+            if (Bahotel_L_Settings::$layout_current == 'frontpage' || Bahotel_L_Settings::$layout_current == 'no-sidebars-wide') {
                 $output .= ' container';
             }
             
@@ -767,7 +767,7 @@ if ( ! function_exists( 'bahotel_l_footer_before' ) ) :
  */
    function bahotel_l_footer_before() {
     
-        $thumbnail_id = isset(BAH_L_Settings::$settings['footer_logo']['id']) ? absint(BAH_L_Settings::$settings['footer_logo']['id']) : 0;
+        $thumbnail_id = isset(Bahotel_L_Settings::$settings['footer_logo']['id']) ? absint(Bahotel_L_Settings::$settings['footer_logo']['id']) : 0;
         
         if ($thumbnail_id){
             
@@ -797,9 +797,9 @@ if ( ! function_exists( 'bahotel_l_get_panel' ) ):
      */
     function bahotel_l_get_panel( $sidebar_name ) {
         
-        if (isset(BAH_L_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
+        if (isset(Bahotel_L_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
             
-            $sidebar_width = isset(BAH_L_Settings::$layout_vars['width'][$sidebar_name]) ? BAH_L_Settings::$layout_vars['width'][$sidebar_name] : 12;
+            $sidebar_width = isset(Bahotel_L_Settings::$layout_vars['width'][$sidebar_name]) ? Bahotel_L_Settings::$layout_vars['width'][$sidebar_name] : 12;
             
             if ($sidebar_width){
                 
@@ -813,9 +813,9 @@ if ( ! function_exists( 'bahotel_l_get_panel' ) ):
                     
                     $sidebar_width_class =  'col-12 col-sm-6 col-md-4 col-lg-'.$sidebar_width;
                     
-                    if (isset(BAH_L_Settings::$layout_vars['offset'][$sidebar_name]) && BAH_L_Settings::$layout_vars['offset'][$sidebar_name]){
+                    if (isset(Bahotel_L_Settings::$layout_vars['offset'][$sidebar_name]) && Bahotel_L_Settings::$layout_vars['offset'][$sidebar_name]){
                         
-                        $sidebar_width_class .=  ' offset-lg-'.BAH_L_Settings::$layout_vars['offset'][$sidebar_name];
+                        $sidebar_width_class .=  ' offset-lg-'.Bahotel_L_Settings::$layout_vars['offset'][$sidebar_name];
                         
                     }
                     
@@ -874,11 +874,11 @@ if ( ! function_exists( 'bahotel_l_style_content' ) ):
         
         if ($region == 'content'){
             
-           if (BAH_L_Settings::$layout_current == 'frontpage' || BAH_L_Settings::$layout_current == 'no-sidebars-wide') {
+           if (Bahotel_L_Settings::$layout_current == 'frontpage' || Bahotel_L_Settings::$layout_current == 'no-sidebars-wide') {
             $class = 'container-fluid';
             }
             
-            $class .= ' '.BAH_L_Settings::$layout_current;
+            $class .= ' '.Bahotel_L_Settings::$layout_current;
             
         }
         
@@ -902,7 +902,7 @@ if ( ! function_exists( 'bahotel_l_column_width_content' ) ):
      */
     function bahotel_l_column_width_content( $class, $region ) {
         
-        if ($region == 'content' && (BAH_L_Settings::$layout_current == 'frontpage' || BAH_L_Settings::$layout_current == 'no-sidebars-wide')){
+        if ($region == 'content' && (Bahotel_L_Settings::$layout_current == 'frontpage' || Bahotel_L_Settings::$layout_current == 'no-sidebars-wide')){
             
             $class = '';
             
@@ -1193,7 +1193,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 $output = apply_filters( 'bahotel_l_room_entry_header', $output, $post_type);
 			}
             
-			echo wp_kses($output, BAH_L_Settings::$wp_allowedposttags);
+			echo wp_kses($output, Bahotel_L_Settings::$wp_allowedposttags);
 			
 			return;
 		}
@@ -1221,7 +1221,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 			
 			$room_info .= '
 				<div class="room_page_slideshow">
-					' . wp_kses($slides, BAH_L_Settings::$wp_allowedposttags) . '
+					' . wp_kses($slides, Bahotel_L_Settings::$wp_allowedposttags) . '
 				</div>
 			';
             
@@ -1242,7 +1242,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
               ';
             
             if (apply_filters( 'bahotel_l_option', '', 'room_rating' )){  
-                $room_info .= wp_kses(BABE_Rating::post_stars_rendering($post->ID), BAH_L_Settings::$wp_allowedposttags);
+                $room_info .= wp_kses(BABE_Rating::post_stars_rendering($post->ID), Bahotel_L_Settings::$wp_allowedposttags);
             }
               
             $room_info .= '
@@ -1322,7 +1322,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				$room_info .= '
 					<div class="room_info_size">
 						'.apply_filters('bahotel_l_icon', '', 'size').'
-                        <label>'.wp_kses($room_size, BAH_L_Settings::$wp_allowedposttags).'</label>
+                        <label>'.wp_kses($room_size, Bahotel_L_Settings::$wp_allowedposttags).'</label>
 					</div>
 				';
 			  }
@@ -1572,7 +1572,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
             $output .= '
 				<div class="room_page_room_content">
 					<div class="room_page_block_inner">
-							' . wp_kses( $content, BAH_L_Settings::$wp_allowedposttags) . '
+							' . wp_kses( $content, Bahotel_L_Settings::$wp_allowedposttags) . '
 					</div>
 				</div>
 			';
@@ -1605,7 +1605,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				<h2 class="room_sub_title">'. esc_html($step_title) .'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
-						' . wp_kses( $block_steps, BAH_L_Settings::$wp_allowedposttags) . '
+						' . wp_kses( $block_steps, Bahotel_L_Settings::$wp_allowedposttags) . '
 					</div>
 			    ';
                 
@@ -1621,7 +1621,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				<h2 class="room_sub_title">'.esc_html($faq_title).'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
 					<div class="room_page_block_inner">
-						' . wp_kses( $block_faq, BAH_L_Settings::$wp_allowedposttags) . '
+						' . wp_kses( $block_faq, Bahotel_L_Settings::$wp_allowedposttags) . '
 					</div>
 			';
                 
@@ -1632,7 +1632,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 				<h2 class="room_sub_title">'.__( 'Book this room', 'ba-hotel-light' ).'</h2>
                 <div class="room_sub_title_bottom"><div class="room_sub_title_bottom_line"></div></div>
                     <div class="room_page_block_inner">
-						' . wp_kses( BABE_html::booking_form($post_id), BAH_L_Settings::$wp_allowedposttags) . '
+						' . wp_kses( BABE_html::booking_form($post_id), Bahotel_L_Settings::$wp_allowedposttags) . '
 					</div>
 			';
             
@@ -1850,7 +1850,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
           
                $message .= '
             <div class="bahotel_l_message_order bahotel_l_message_order_status_'.$args['order_status'].'">
-               ' . wp_kses( BABE_Settings::$settings['message_'.$args['order_status']], BAH_L_Settings::$wp_allowedposttags) . '
+               ' . wp_kses( BABE_Settings::$settings['message_'.$args['order_status']], Bahotel_L_Settings::$wp_allowedposttags) . '
             </div>';
             
             }
@@ -2314,7 +2314,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                 
             }
             
-            echo wp_kses( bahotel_l_search_form_html(), BAH_L_Settings::$wp_allowedposttags);
+            echo wp_kses( bahotel_l_search_form_html(), Bahotel_L_Settings::$wp_allowedposttags);
             
         }
         
@@ -2563,7 +2563,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
                               </div>
                               <div class="search_res_description">
                                     <div class="search_res_tags_line">
-										' . wp_kses( $icons, BAH_L_Settings::$wp_allowedposttags) . '
+										' . wp_kses( $icons, Bahotel_L_Settings::$wp_allowedposttags) . '
 									</div>
 							  </div>
 						   </div>
@@ -2625,7 +2625,7 @@ if ( class_exists( 'BABE_Post_types' ) ) {
 		 */
 		function bahotel_l_body_custom_class( $classes ) {
 		  
-            $classes[] = BAH_L_Settings::$layout_current;
+            $classes[] = Bahotel_L_Settings::$layout_current;
             
             if (apply_filters( 'bahotel_l_option', '', 'header_transparent' )){
                 $classes[] = 'header_transparent';
@@ -3043,13 +3043,3 @@ if ( ! function_exists( 'bahotel_l_strip_tags_content' ) ) :
     }
     
 endif;
-
-////////////////////////////
-if ( ! function_exists( 'wp_body_open' ) ) {
-    /**
-     * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
-     */
-    function wp_body_open() {
-        do_action( 'wp_body_open' );
-    }
-}

@@ -12,9 +12,9 @@ if ( post_password_required() || is_attachment() ) {
 
 global $post;
 
-    $img_src = BAH_L_Settings::$default_header_image_full;
-    $img_thumbnail_src = BAH_L_Settings::$default_header_image_thumbnail;
-    $img_thumbnail_md_src = BAH_L_Settings::$default_header_image_thumbnail_md;
+    $img_src = Bahotel_L_Settings::$default_header_image_full;
+    $img_thumbnail_src = Bahotel_L_Settings::$default_header_image_thumbnail;
+    $img_thumbnail_md_src = Bahotel_L_Settings::$default_header_image_thumbnail_md;
     $thumbnail_id = bahotel_l_get_header_image_thumbnail_id();
     
     if ($thumbnail_id):
@@ -36,7 +36,7 @@ global $post;
 
 	?>
 
-	<div class="post-thumbnail header-post-thumbnail" style="background-image: url('<?php echo esc_url(BAH_L_Settings::$default_spinner); ?>'); background-size: 80px 80px;" data-imgsrc="url('<?php echo esc_url($img_src); ?>')" data-imgsrc-md="url('<?php echo esc_url($img_thumbnail_md_src); ?>')" data-imgsrc-sm="url('<?php echo esc_url($img_thumbnail_src); ?>')">
+	<div class="post-thumbnail header-post-thumbnail" style="background-image: url('<?php echo esc_url(Bahotel_L_Settings::$default_spinner); ?>'); background-size: 80px 80px;" data-imgsrc="url('<?php echo esc_url($img_src); ?>')" data-imgsrc-md="url('<?php echo esc_url($img_thumbnail_md_src); ?>')" data-imgsrc-sm="url('<?php echo esc_url($img_thumbnail_src); ?>')">
         <div class="header-post-thumbnail-inner">
         
         <?php

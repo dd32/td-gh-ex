@@ -22,7 +22,7 @@ if ( ! class_exists( 'Redux' ) ) {
  * Theme administration.
  *
  */
-class BAH_L_Redux {
+class Bahotel_L_Redux {
 
 	//////////////////////////////////////////////////
 	/**
@@ -39,10 +39,10 @@ class BAH_L_Redux {
         
         add_action( 'admin_enqueue_scripts', array( __CLASS__, 'load_assets' ), 10, 1 );
         
-        add_filter( 'redux/options/' . BAH_L_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
+        add_filter( 'redux/options/' . Bahotel_L_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
         
 		// Save WP site options.
-		add_filter( 'redux/options/' . BAH_L_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
+		add_filter( 'redux/options/' . Bahotel_L_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
 
 		// Cleaning, as it's embeded in theme
 		add_action( 'redux/extensions/before', array( __CLASS__, 'remove_dev_mode' ), 100, 1 );
@@ -163,7 +163,7 @@ class BAH_L_Redux {
 
 		$args = array(
 			// TYPICAL -> Change these values as you need/desire
-			'opt_name'             => BAH_L_Settings::$option_name,
+			'opt_name'             => Bahotel_L_Settings::$option_name,
 			// This is where your data is stored in the database and also becomes your global variable name.
 			'display_name'         => sprintf(
                 /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
@@ -286,7 +286,7 @@ class BAH_L_Redux {
 			'title' => esc_html__( 'Documentation', 'ba-hotel-light' ),
 		);
 		
-		Redux::setArgs( BAH_L_Settings::$option_name, $args );
+		Redux::setArgs( Bahotel_L_Settings::$option_name, $args );
 	}
 	
 	//////////////////////////////////////////////////
@@ -298,10 +298,10 @@ class BAH_L_Redux {
 	static function set_help() {
 		
 		$tabs = array();
-		Redux::setHelpTab( BAH_L_Settings::$option_name, $tabs );
+		Redux::setHelpTab( Bahotel_L_Settings::$option_name, $tabs );
 		
 		$content = '';
-		Redux::setHelpSidebar( BAH_L_Settings::$option_name, $content );
+		Redux::setHelpSidebar( Bahotel_L_Settings::$option_name, $content );
 	}
 	
 	//////////////////////////////////////////////////
@@ -320,7 +320,7 @@ class BAH_L_Redux {
 		 */
 		$flag_update_options = false;
 		
-		$options = BAH_L_Settings::$settings; 
+		$options = Bahotel_L_Settings::$settings;
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$logo_wp = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		$logo_wp_thumbnail = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );   
@@ -388,7 +388,7 @@ class BAH_L_Redux {
 		// Update option from WP data.
 		if ( $flag_update_options ) {
 			
-			$result = update_option( BAH_L_Settings::$option_name, $options );
+			$result = update_option( Bahotel_L_Settings::$option_name, $options );
 		}
 		
 		$sections[] = array(
@@ -413,9 +413,9 @@ class BAH_L_Redux {
         
         $layout_options = array();
 		
-		foreach ( BAH_L_Settings::$layouts as $layout_id => $layout_title ) {
+		foreach ( Bahotel_L_Settings::$layouts as $layout_id => $layout_title ) {
 			
-			$preview = isset(BAH_L_Settings::$layout_previews[$layout_id]) ? BAH_L_Settings::$layout_previews[$layout_id] : '';
+			$preview = isset(Bahotel_L_Settings::$layout_previews[$layout_id]) ? Bahotel_L_Settings::$layout_previews[$layout_id] : '';
 			
 			$layout_options[ $layout_id ] = array(
 				'alt' => '',
@@ -578,7 +578,7 @@ class BAH_L_Redux {
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Show star rating in room details?', 'ba-hotel-light' ),
-                    'default'    => (isset(BAH_L_Settings::$settings['room_rating']) ? BAH_L_Settings::$settings['room_rating'] : ''),
+                    'default'    => (isset(Bahotel_L_Settings::$settings['room_rating']) ? Bahotel_L_Settings::$settings['room_rating'] : ''),
 				),
                 array(
 					'id'         => 'room_booknow_button',
@@ -854,21 +854,21 @@ class BAH_L_Redux {
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Use background on search form', 'ba-hotel-light' ),
-                    'default'    => (isset(BAH_L_Settings::$settings['search_form_bg']) ? BAH_L_Settings::$settings['search_form_bg'] : ''),
+                    'default'    => (isset(Bahotel_L_Settings::$settings['search_form_bg']) ? Bahotel_L_Settings::$settings['search_form_bg'] : ''),
 				),
                 array(
 					'id'         => 'search_form_over_header',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Place search form over header image', 'ba-hotel-light' ),
-                    'default'    => (isset(BAH_L_Settings::$settings['search_form_over_header']) ? BAH_L_Settings::$settings['search_form_over_header'] : ''),
+                    'default'    => (isset(Bahotel_L_Settings::$settings['search_form_over_header']) ? Bahotel_L_Settings::$settings['search_form_over_header'] : ''),
 				),
                 array(
 					'id'         => 'search_form_collapsible',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Make header search form collapsible on mobile screens', 'ba-hotel-light' ),
-                    'default'    => (isset(BAH_L_Settings::$settings['search_form_collapsible']) ? BAH_L_Settings::$settings['search_form_collapsible'] : ''),
+                    'default'    => (isset(Bahotel_L_Settings::$settings['search_form_collapsible']) ? Bahotel_L_Settings::$settings['search_form_collapsible'] : ''),
 				),
             ),
 		);
@@ -894,21 +894,21 @@ class BAH_L_Redux {
                          'col1_s' => esc_html__( '1 column', 'ba-hotel-light' ),
                          'col2' => esc_html__( '2 columns', 'ba-hotel-light' ),
                     ),
-					'default'    => (isset(BAH_L_Settings::$settings['search_result_view']) ? BAH_L_Settings::$settings['search_result_view'] : 'col1_s'),
+					'default'    => (isset(Bahotel_L_Settings::$settings['search_result_view']) ? Bahotel_L_Settings::$settings['search_result_view'] : 'col1_s'),
 				),
                 array(
 					'id'         => 'search_result_sortby',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Show "sort by" filter?', 'ba-hotel-light' ),
-                    'default'    => (isset(BAH_L_Settings::$settings['search_result_sortby']) ? BAH_L_Settings::$settings['search_result_sortby'] : ''),
+                    'default'    => (isset(Bahotel_L_Settings::$settings['search_result_sortby']) ? Bahotel_L_Settings::$settings['search_result_sortby'] : ''),
 				),
                 array(
 					'id'         => 'search_result_rating',
 					'type'       => 'switch',
 					'full_width' => false,
 					'title'      => esc_html__( 'Show star rating in room details?', 'ba-hotel-light' ),
-                    'default'    => (isset(BAH_L_Settings::$settings['search_result_rating']) ? BAH_L_Settings::$settings['search_result_rating'] : ''),
+                    'default'    => (isset(Bahotel_L_Settings::$settings['search_result_rating']) ? Bahotel_L_Settings::$settings['search_result_rating'] : ''),
 				),
             ),
 		);
@@ -1007,7 +1007,7 @@ class BAH_L_Redux {
         
 		foreach ( $sections as $section ) {
 			
-			Redux::setSection( BAH_L_Settings::$option_name, $section );
+			Redux::setSection( Bahotel_L_Settings::$option_name, $section );
 		}
 	}
 	
@@ -1315,5 +1315,5 @@ class BAH_L_Redux {
 /**
  * Calling to setup class.
  */
-BAH_L_Redux::init();
+Bahotel_L_Redux::init();
 

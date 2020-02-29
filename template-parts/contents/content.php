@@ -8,7 +8,7 @@
 
      $column_wrapper_end = false;
         
-     if ( is_home() && 2 == apply_filters( 'bahotel_l_option', '', 'blog_columns' ) && BAH_L_Settings::$layout_vars['width']['main'] == 12){
+     if ( is_home() && 2 == apply_filters( 'bahotel_l_option', '', 'blog_columns' ) && Bahotel_L_Settings::$layout_vars['width']['main'] == 12){
         
         $column_wrapper_end = true;
             

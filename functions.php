@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BAHOTEL_L', __FILE__ );
-define( 'BAHOTEL_L_VERSION', '1.0.8' );
+define( 'BAHOTEL_L_VERSION', '1.0.9' );
 define( 'BAHOTEL_L_NAME', 'BA Hotel light' );
 define( 'BAHOTEL_L_URI', get_template_directory_uri() );
 define( 'BAHOTEL_L_STYLESHEET_URI', get_stylesheet_directory_uri() );
@@ -78,7 +78,7 @@ function bahotel_l_setup(){
 	);
     
     /* Add image sizes */
-	$image_sizes = BAH_L_Settings::$image_sizes;
+	$image_sizes = Bahotel_L_Settings::$image_sizes;
 	if ( !empty( $image_sizes ) ) {
 		foreach ( $image_sizes as $id => $size ) {
 			add_image_size( $id, $size['width'], $size['height'], $size['crop'] );
@@ -105,7 +105,7 @@ add_action( 'wp_enqueue_scripts', 'bahotel_l_enqueue_scripts', 30, 1 );
 function bahotel_l_enqueue_scripts(){
     
         // Output Google fonts if set.
-        $google_fonts = BAH_L_Settings::google_font_styles();
+        $google_fonts = Bahotel_L_Settings::google_font_styles();
         if ( $google_fonts ) {
             wp_enqueue_style( 'bahotel-l-gfonts', esc_url( $google_fonts ), false );
         }
@@ -136,7 +136,7 @@ function bahotel_l_enqueue_scripts(){
         }
         
         //// custom styles
-        wp_add_inline_style( 'bahotel-l-main', BAH_L_Settings::inline_styles() );
+        wp_add_inline_style( 'bahotel-l-main', Bahotel_L_Settings::inline_styles() );
     
         wp_enqueue_style( 'bahotel-l-slick' , BAHOTEL_L_URI . '/js/slick/slick.css', false, BAHOTEL_L_VERSION );
         
@@ -209,7 +209,7 @@ add_action( 'widgets_init', 'bahotel_l_widgets_init', 10 );
 
 function bahotel_l_widgets_init(){
       
-     foreach (BAH_L_Settings::$sidebars as $id => $sidebar){
+     foreach (Bahotel_L_Settings::$sidebars as $id => $sidebar){
         
         $h_tag = $id == 'left' || $id == 'right' ? 'h3' : 'h2';
         

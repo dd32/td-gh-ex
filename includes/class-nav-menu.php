@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Nav menu walker.
  *
  */
-class BAH_L_Nav_Menu extends Walker_Nav_Menu {
+class Bahotel_L_Nav_Menu extends Walker_Nav_Menu {
 	
 	//////////////////////////////////////////////////
 	public static function init() {
@@ -369,5 +369,5 @@ class BAH_L_Nav_Menu extends Walker_Nav_Menu {
 /**
  * Call to setup class.
  */
-BAH_L_Nav_Menu::init();
+Bahotel_L_Nav_Menu::init();
 

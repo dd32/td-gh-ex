@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Theme settings
  */
-class BAH_L_Settings {
+class Bahotel_L_Settings {
     
 	static $settings = array();
     
@@ -1861,4 +1861,4 @@ class BAH_L_Settings {
 /**
  * Calling to setup class.
  */
-BAH_L_Settings::init();
+Bahotel_L_Settings::init();

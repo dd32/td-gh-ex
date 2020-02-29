@@ -3,8 +3,8 @@ Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Version: 1.0.8
-Stable tag: 1.0.8
+Version: 1.0.9
+Stable tag: 1.0.9
 License: GNU GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -39,6 +39,11 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/VIWIBCR4L9
 
 == Changelog ==
+
+= 1.0.9 =
+* Fixed issue "the site title and tagline are not displaying when there is logo"
+* Set prefix same for both class and function name
+* Fixed missing licensing of html5
 
 = 1.0.8 =
 * Fixed missing escaping issues
@@ -78,6 +83,11 @@ normalize.css Version - 8.0.1
   Source: https://github.com/necolas/normalize.css
   License: The MIT License (MIT) copyright © 2012-2019 Nicolas Gallagher and Jonathan Neal
   license URL: https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+
+HTML5 Shiv, Copyright 2014 Alexander Farkas
+  Source: https://github.com/aFarkas/html5shiv
+  Licenses: MIT/GPL2
+  license URL: https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
 
 Font Awesome Free 5.6.3 by @fontawesome
   Source: https://fontawesome.com/
