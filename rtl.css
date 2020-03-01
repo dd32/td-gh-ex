@@ -602,6 +602,7 @@ input.search-field {
 }
 form.search-form label {
   float: right;
+  width: 100%;
 }
 /* --------- SLIDER--------- */
 #slider{ 
@@ -617,6 +618,7 @@ form.search-form label {
 }
 #slider .carousel-control-next, #slider .carousel-control-prev{
   opacity: 1;
+  width: 5%;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon{
   width: auto;
@@ -759,7 +761,7 @@ span.entry-comments i,
   color: #fff;
 }
 hr.metahr {
-  border-top: solid 1px;
+  border-top: solid 1px #fff;
 }
 .month {
   margin-top: 5px;
@@ -994,6 +996,36 @@ a.woocommerce-privacy-policy-link,
   color: #000;
 }
 
+/* Back to top button css */
+.scrollup {
+  color: #db0607;
+  position: fixed;
+  display: none;
+  bottom: 108px;
+  left: 0;
+  margin:0;
+  transform: rotate(90deg);
+}
+.scrollup.left{
+  right: 0;
+  left: auto;
+}
+.scrollup.center{
+  right: 45%;
+  left: 45%;
+}
+.scrollup:focus,
+.scrollup:hover{
+  color: #db0607;
+}
+.scrollup span {
+  display: inline-block;
+  font-size: 16px;
+}
+.scrollup i{
+  margin-right: 10px;
+}
+
 /* Footer Section */
 .footertown {
   background: #000;
@@ -1176,7 +1208,7 @@ a.woocommerce-privacy-policy-link,
 }
 .metbox {
   margin-bottom: 10px;
-  background: #db0607;
+  background:#f73637;
   padding: 5px;
   color:#fff;
   margin-bottom: 10px;
@@ -1539,7 +1571,7 @@ span.post-page-numbers.current {
   .woocommerce[class*=columns-] ul.products li.product {
     width: 100%;
   }
-   .nav,
+  .nav,
   #slider .inner_carousel p,
   #slider .inner_carousel h1{
     display:none;

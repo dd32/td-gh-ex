@@ -4,7 +4,7 @@ Theme URI: https://www.themescaliber.com/themes/free-blog-wordpress-theme/
 Author: ThemesCaliber
 Author URI: https://www.themescaliber.com/
 Description: Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc. You can translate this theme into different languages such as Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese. Demo: https://www.themescaliber.com/advance-blogging-pro/
-Version: 0.6.8
+Version: 0.6.9
 License: GNU General Public License
 License URI: license.txt
 Text Domain: advance-blogging
@@ -635,6 +635,7 @@ form.search-form label {
 }
 #slider .carousel-control-next, #slider .carousel-control-prev{
   opacity: 1;
+  width: 5%;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon{
   width: auto;
@@ -1010,6 +1011,38 @@ a.woocommerce-privacy-policy-link,
 }
 #sidebar .widget_price_filter .price_slider_amount{
   color: #000;
+}
+
+/* Back to top button css */
+.scrollup {
+  color: #db0607;
+  position: fixed;
+  display: none;
+  bottom: 108px;
+  right: 0;
+  margin:0;
+  font-size: 18px;
+  font-weight: 600;
+  transform: rotate(-90deg);
+  text-shadow: 1px 1px #fff;
+}
+.scrollup.left{
+  left: 0;
+  right: auto;
+}
+.scrollup.center{
+  left: 25%;
+  right: 25%;
+}
+.scrollup:focus,
+.scrollup:hover{
+  color: #db0607;
+}
+.scrollup span {
+  display: inline-block;
+}
+.scrollup i{
+  margin-left: 10px;
 }
 
 /* Footer Section */
@@ -1557,7 +1590,7 @@ span.post-page-numbers.current {
   .woocommerce[class*=columns-] ul.products li.product {
     width: 100%;
   }
-   .nav,
+  .nav,
   #slider .inner_carousel p,
   #slider .inner_carousel h1{
     display:none;

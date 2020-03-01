@@ -44,9 +44,18 @@ msgstr "заголовок комментария"
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: footer.php:33
+#: footer.php:53
 msgid "Copyright 2018"
 msgstr "Авторское право 2018"
+
+#: footer.php:62
+#: footer.php:62
+#: footer.php:64
+#: footer.php:64
+#: footer.php:66
+#: footer.php:66
+msgid "Back to Top"
+msgstr "Вернуться к началу"
 
 #: header.php:21
 msgid "Skip to content"
@@ -192,54 +201,39 @@ msgid "Previous post"
 msgstr "Предыдущий пост"
 
 #: functions.php:32
+#: functions.php:104
 msgid "Primary Menu"
 msgstr "основное меню"
 
-#: functions.php:58
+#: functions.php:127
 msgid "Blog Sidebar"
 msgstr "Боковая панель блога"
 
-#: functions.php:59
+#: functions.php:128
 msgid "Appears on blog page sidebar"
 msgstr "Появляется на боковой панели страницы блога"
 
-#: functions.php:68
+#: functions.php:137
 msgid "Page Sidebar"
 msgstr "Боковая панель страницы"
 
-#: functions.php:69 functions.php:79 functions.php:129
+#: functions.php:138 functions.php:148 functions.php:158
 msgid "Appears on Page sidebar"
 msgstr "Появляется на боковой панели страницы"
 
-#: functions.php:78
+#: functions.php:147
 msgid "Third Column Sidebar"
 msgstr "Боковая панель третьего столбца"
 
-#: functions.php:88
-msgid "Footer Nav 1"
-msgstr "Нижний колонтитул Nav 1"
-
-#: functions.php:98
-msgid "Footer Nav 2"
-msgstr "Нижний колонтитул Nav 2"
-
-#: functions.php:108
-msgid "Footer Nav 3"
-msgstr "Нижний колонтитул Nav 3"
-
-#: functions.php:118
-msgid "Footer Nav 4"
-msgstr "Нижний колонтитул Nav 4"
-
-#: functions.php:89 functions.php:99 functions.php:109 functions.php:119
-msgid "Appears on footer"
-msgstr "Появляется в нижнем колонтитуле"
-
-#: functions.php:128
+#: functions.php:157
 msgid "Home Page Sidebar"
 msgstr "Домашняя страница Боковая панель"
 
-#: functions.php:419
+#: functions.php:170
+msgid "Footer Nav "
+msgstr "Нижний колонтитул Nav "
+
+#: functions.php:477
 msgid "Blogging WordPress Theme"
 msgstr "Тема WordPress для блогов"
 
@@ -254,274 +248,319 @@ msgstr "ПОДРОБНЕЕ"
 msgid "0 Comment"
 msgstr "0 комментариев"
 
-#: inc/customizer.php:20
+#: inc/customizer.php:38
 msgid "Theme Settings"
 msgstr "Настройки темы"
 
-#: inc/customizer.php:21
+#: inc/customizer.php:39
 msgid "Description of what this panel does."
 msgstr "Описание того, что делает эта панель."
 
-#: inc/customizer.php:26
+#: inc/customizer.php:44
 msgid "Theme Layout Settings"
 msgstr "Настройки макета темы"
 
-#: inc/customizer.php:32 inc/customizer.php:40
+#: inc/customizer.php:50 inc/customizer.php:58
 msgid "Full Layout"
 msgstr "Полный макет"
 
-#: inc/customizer.php:37
+#: inc/customizer.php:55
 msgid "Select Site Layout"
 msgstr "Выберите макет сайта"
 
-#: inc/customizer.php:41
+#: inc/customizer.php:59
 msgid "Contained Layout"
 msgstr "Содержит Макет"
 
-#: inc/customizer.php:42
+#: inc/customizer.php:60
 msgid "Boxed Layout"
 msgstr "В штучной упаковке"
 
-#: inc/customizer.php:54
+#: inc/customizer.php:72
 msgid "Do you want this section."
 msgstr "Вы хотите этот раздел."
 
-#: inc/customizer.php:57
+#: inc/customizer.php:75
 msgid "Left Sidebar"
 msgstr "Левая боковая панель"
 
-#: inc/customizer.php:58
+#: inc/customizer.php:76
 msgid "Right Sidebar"
 msgstr "Правая боковая панель"
 
-#: inc/customizer.php:59
+#: inc/customizer.php:77
 msgid "One Column"
 msgstr "Одна колонна"
 
-#: inc/customizer.php:60
+#: inc/customizer.php:78
 msgid "Three Columns"
 msgstr "Три колонны"
 
-#: inc/customizer.php:61
+#: inc/customizer.php:79
 msgid "Four Columns"
 msgstr "Четыре колонны"
 
-#: inc/customizer.php:62
+#: inc/customizer.php:80
 msgid "Grid Layout"
 msgstr "Макет сетки"
 
-#: inc/customizer.php:164
+#: inc/customizer.php:182
 msgid "Color / Font Pallete"
 msgstr "Цвет / Шрифт Паллет"
 
-#: inc/customizer.php:186
+#: inc/customizer.php:204
 msgid "Paragraph Color"
 msgstr "Цвет абзаца"
 
-#: inc/customizer.php:200
+#: inc/customizer.php:218
 msgid "Paragraph Fonts"
 msgstr "Шрифты абзаца"
 
-#: inc/customizer.php:210
+#: inc/customizer.php:228
 msgid "Paragraph Font Size"
 msgstr "Размер шрифта абзаца"
 
-#: inc/customizer.php:222
+#: inc/customizer.php:240
 msgid "\"a\" Tag Color"
 msgstr "Цвет метки \"а\""
 
-#: inc/customizer.php:236
+#: inc/customizer.php:254
 msgid "\"a\" Tag Fonts"
 msgstr "Тэг шрифты \"a\""
 
-#: inc/customizer.php:247
+#: inc/customizer.php:265
 msgid "\"li\" Tag Color"
 msgstr "Цвет тега \"li\""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:279
 msgid "\"li\" Tag Fonts"
 msgstr "теги \"li\""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:290
 msgid "h1 Color"
 msgstr "цвет h1"
 
-#: inc/customizer.php:286
+#: inc/customizer.php:304
 msgid "h1 Fonts"
 msgstr "h1 шрифты"
 
-#: inc/customizer.php:297
+#: inc/customizer.php:315
 msgid "h1 Font Size"
 msgstr "Размер шрифта h1"
 
-#: inc/customizer.php:309
+#: inc/customizer.php:327
 msgid "h2 Color"
 msgstr "цвет h2"
 
-#: inc/customizer.php:323
+#: inc/customizer.php:341
 msgid "h2 Fonts"
 msgstr "h2 шрифты"
 
-#: inc/customizer.php:334
+#: inc/customizer.php:352
 msgid "h2 Font Size"
 msgstr "Размер шрифта h2"
 
-#: inc/customizer.php:346
+#: inc/customizer.php:364
 msgid "h3 Color"
 msgstr "цвет h3"
 
-#: inc/customizer.php:360
+#: inc/customizer.php:378
 msgid "h3 Fonts"
 msgstr "h3 шрифты"
 
-#: inc/customizer.php:371
+#: inc/customizer.php:389
 msgid "h3 Font Size"
 msgstr "Размер шрифта h3"
 
-#: inc/customizer.php:383
+#: inc/customizer.php:401
 msgid "h4 Color"
 msgstr "цвет h4"
 
-#: inc/customizer.php:397
+#: inc/customizer.php:415
 msgid "h4 Fonts"
 msgstr "Шрифты h4"
 
-#: inc/customizer.php:408
+#: inc/customizer.php:426
 msgid "h4 Font Size"
 msgstr "Размер шрифта h4"
 
-#: inc/customizer.php:420
+#: inc/customizer.php:438
 msgid "h5 Color"
 msgstr "цвет h5"
 
-#: inc/customizer.php:434
+#: inc/customizer.php:452
 msgid "h5 Fonts"
 msgstr "h5 шрифты"
 
-#: inc/customizer.php:445
+#: inc/customizer.php:463
 msgid "h5 Font Size"
 msgstr "Размер шрифта h5"
 
-#: inc/customizer.php:457
+#: inc/customizer.php:475
 msgid "h6 Color"
 msgstr "цвет h6"
 
-#: inc/customizer.php:471
+#: inc/customizer.php:489
 msgid "h6 Fonts"
 msgstr "Шрифты h6"
 
-#: inc/customizer.php:482
+#: inc/customizer.php:500
 msgid "h6 Font Size"
 msgstr "Размер шрифта h6"
 
-#: inc/customizer.php:490
+#: inc/customizer.php:508
 msgid "Top Header"
 msgstr "Верхний колонтитул"
 
-#: inc/customizer.php:491
+#: inc/customizer.php:509
 msgid "Add Header Content here"
 msgstr "Добавить содержимое заголовка здесь"
 
-#: inc/customizer.php:503
+#: inc/customizer.php:521
 msgid "Show / Hide Topbar"
 msgstr "Показать / Скрыть Topbar"
 
-#: inc/customizer.php:513
+#: inc/customizer.php:531
 msgid "Sticky Header"
 msgstr "Липкий Заголовок"
 
-#: inc/customizer.php:522
+#: inc/customizer.php:548
 msgid "Add Facebook link"
 msgstr "Добавить ссылку на Facebook"
 
-#: inc/customizer.php:533
+#: inc/customizer.php:559
 msgid "Add Twitter link"
 msgstr "Добавить ссылку на Твиттер"
 
-#: inc/customizer.php:544
+#: inc/customizer.php:570
 msgid "Add Google Plus link"
 msgstr "Добавить ссылку Google Plus"
 
-#: inc/customizer.php:555
+#: inc/customizer.php:581
 msgid "Add Pinterest link"
 msgstr "Добавить ссылку на Pinterest"
 
-#: inc/customizer.php:566
+#: inc/customizer.php:592
 msgid "Add Linkedin link"
 msgstr "Добавить ссылку Linkedin"
 
-#: inc/customizer.php:577
+#: inc/customizer.php:603
 msgid "Add Instagram link"
 msgstr "Добавить ссылку в Instagram"
 
-#: inc/customizer.php:588
+#: inc/customizer.php:614
 msgid "Add Youtube link"
 msgstr "Добавить ссылку на Youtube"
 
-#: inc/customizer.php:596
+#: inc/customizer.php:622
 msgid "Slider Settings."
 msgstr "Настройки слайдера."
 
-#: inc/customizer.php:607
+#: inc/customizer.php:641
 msgid "Show / Hide slider"
 msgstr "Показать / Скрыть слайдер"
 
-#: inc/customizer.php:619
+#: inc/customizer.php:653
 msgid "Select Slide Image Page"
 msgstr "Выберите страницу слайд-изображения"
 
-#: inc/customizer.php:628
+#: inc/customizer.php:662
 msgid "Category Post"
 msgstr "Сообщение категории"
 
-#: inc/customizer.php:629
+#: inc/customizer.php:663
 msgid "This section will appear below the slider."
 msgstr "Этот раздел появится под слайдером."
 
-#: inc/customizer.php:651 inc/customizer.php:681
+#: inc/customizer.php:693 inc/customizer.php:731
 msgid "Select Category to display Latest Post"
 msgstr "Выберите категорию для отображения последнего сообщения"
 
-#: inc/customizer.php:658
+#: inc/customizer.php:700
 msgid "Latest Post"
 msgstr "Последний пост"
 
-#: inc/customizer.php:659
+#: inc/customizer.php:701
 msgid "This section will appear below the category post."
 msgstr "Этот раздел появится под категорией сообщений."
 
-#: inc/customizer.php:687
+#: inc/customizer.php:737
 msgid "Post Settings"
 msgstr "Настройки сообщений"
 
-#: inc/customizer.php:697
+#: inc/customizer.php:747
 msgid "Enable / Disable Post Date"
 msgstr "Включить / отключить дату публикации"
 
-#: inc/customizer.php:707
+#: inc/customizer.php:757
 msgid "Enable / Disable Post Author"
 msgstr "Включить / отключить публикацию автора"
 
-#: inc/customizer.php:717
+#: inc/customizer.php:767
 msgid "Enable / Disable Post Comments"
 msgstr "Включить / отключить комментарии"
 
-#: inc/customizer.php:723
+#: inc/customizer.php:773
 msgid "Footer Text"
 msgstr "Текст нижнего колонтитула"
 
-#: inc/customizer.php:724
+#: inc/customizer.php:774
 msgid "This section will appear in the footer."
 msgstr "Этот раздел появится в нижнем колонтитуле."
 
-#: inc/customizer.php:733
+#: inc/customizer.php:792
+msgid "Show/Hide Back to Top Button"
+msgstr "Показать / Скрыть кнопку «Вверх»"
+
+#: inc/customizer.php:797
+#: inc/customizer.php:806
+msgid "Right"
+msgstr "Правильно"
+
+#: inc/customizer.php:802
+msgid "Back to Top Button Alignment"
+msgstr "Back to Top Выравнивание кнопок"
+
+#: inc/customizer.php:805
+msgid "Left"
+msgstr "Осталось"
+
+#: inc/customizer.php:807
+msgid "Center"
+msgstr "Центр"
+
+#: inc/customizer.php:817
+msgid "Footer widget layout"
+msgstr "Макет виджета нижнего колонтитула"
+
+#: inc/customizer.php:819
+msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
+msgstr "Выберите количество областей виджетов, которые вы хотите в нижнем колонтитуле. После этого зайдите в Внешний вид> Виджеты и добавьте свои виджеты."
+
+#: inc/customizer.php:821
+msgid "One"
+msgstr "Один"
+
+#: inc/customizer.php:822
+msgid "Two"
+msgstr "Два"
+
+#: inc/customizer.php:823
+msgid "Three"
+msgstr "Три"
+
+#: inc/customizer.php:824
+msgid "Four"
+msgstr "четыре"
+
+#: inc/customizer.php:841
 msgid "Text"
 msgstr "Текст"
 
-#: inc/customizer.php:819
+#: inc/customizer.php:927
 msgid "Advance Blogging"
 msgstr "Предварительный блог"
 
-#: inc/customizer.php:820
+#: inc/customizer.php:928
 msgid "Go Pro"
 msgstr "Go Pro"

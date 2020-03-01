@@ -43,9 +43,18 @@ msgstr "titolo dei commenti"
 msgid "Comments are closed."
 msgstr "I commenti sono chiusi."
 
-#: footer.php:33
+#: footer.php:53
 msgid "Copyright 2018"
 msgstr "Copyright 2018"
+
+#: footer.php:62
+#: footer.php:62
+#: footer.php:64
+#: footer.php:64
+#: footer.php:66
+#: footer.php:66
+msgid "Back to Top"
+msgstr "Torna in cima"
 
 #: header.php:21
 msgid "Skip to content"
@@ -191,54 +200,39 @@ msgid "Previous post"
 msgstr "Messaggio precedente"
 
 #: functions.php:32
+#: functions.php:104
 msgid "Primary Menu"
 msgstr "Menù primario"
 
-#: functions.php:58
+#: functions.php:127
 msgid "Blog Sidebar"
 msgstr "Blog Sidebar"
 
-#: functions.php:59
+#: functions.php:128
 msgid "Appears on blog page sidebar"
 msgstr "Appare nella barra laterale della pagina del blog"
 
-#: functions.php:68
+#: functions.php:137
 msgid "Page Sidebar"
 msgstr "Barra laterale della pagina"
 
-#: functions.php:69 functions.php:79 functions.php:129
+#: functions.php:138 functions.php:148 functions.php:158
 msgid "Appears on Page sidebar"
 msgstr "Appare nella barra laterale della pagina"
 
-#: functions.php:78
+#: functions.php:147
 msgid "Third Column Sidebar"
 msgstr "Barra laterale della terza colonna"
 
-#: functions.php:88
-msgid "Footer Nav 1"
-msgstr "Footer Nav 1"
-
-#: functions.php:98
-msgid "Footer Nav 2"
-msgstr "Footer Nav 2"
-
-#: functions.php:108
-msgid "Footer Nav 3"
-msgstr "Footer Nav 3"
-
-#: functions.php:118
-msgid "Footer Nav 4"
-msgstr "Footer Nav 4"
-
-#: functions.php:89 functions.php:99 functions.php:109 functions.php:119
-msgid "Appears on footer"
-msgstr "Appare a piè di pagina"
-
-#: functions.php:128
+#: functions.php:157
 msgid "Home Page Sidebar"
 msgstr "Barra laterale della home page"
 
-#: functions.php:419
+#: functions.php:170
+msgid "Footer Nav "
+msgstr "Footer Nav "
+
+#: functions.php:477
 msgid "Blogging WordPress Theme"
 msgstr "Tema WordPress per blog"
 
@@ -253,274 +247,319 @@ msgstr "LEGGI DI PIÙ"
 msgid "0 Comment"
 msgstr "0 commento"
 
-#: inc/customizer.php:20
+#: inc/customizer.php:38
 msgid "Theme Settings"
 msgstr "Impostazioni tema"
 
-#: inc/customizer.php:21
+#: inc/customizer.php:39
 msgid "Description of what this panel does."
 msgstr "Descrizione di ciò che fa questo pannello."
 
-#: inc/customizer.php:26
+#: inc/customizer.php:44
 msgid "Theme Layout Settings"
 msgstr "Impostazioni layout tema"
 
-#: inc/customizer.php:32 inc/customizer.php:40
+#: inc/customizer.php:50 inc/customizer.php:58
 msgid "Full Layout"
 msgstr "Layout completo"
 
-#: inc/customizer.php:37
+#: inc/customizer.php:55
 msgid "Select Site Layout"
 msgstr "Seleziona Layout del sito"
 
-#: inc/customizer.php:41
+#: inc/customizer.php:59
 msgid "Contained Layout"
 msgstr "Layout contenuto"
 
-#: inc/customizer.php:42
+#: inc/customizer.php:60
 msgid "Boxed Layout"
 msgstr "Layout in scatola"
 
-#: inc/customizer.php:54
+#: inc/customizer.php:72
 msgid "Do you want this section."
 msgstr "Vuoi questa sezione."
 
-#: inc/customizer.php:57
+#: inc/customizer.php:75
 msgid "Left Sidebar"
 msgstr "Barra laterale sinistra"
 
-#: inc/customizer.php:58
+#: inc/customizer.php:76
 msgid "Right Sidebar"
 msgstr "Barra laterale destra"
 
-#: inc/customizer.php:59
+#: inc/customizer.php:77
 msgid "One Column"
 msgstr "Una colonna"
 
-#: inc/customizer.php:60
+#: inc/customizer.php:78
 msgid "Three Columns"
 msgstr "Tre colonne"
 
-#: inc/customizer.php:61
+#: inc/customizer.php:79
 msgid "Four Columns"
 msgstr "Quattro colonne"
 
-#: inc/customizer.php:62
+#: inc/customizer.php:80
 msgid "Grid Layout"
 msgstr "Layout della griglia"
 
-#: inc/customizer.php:164
+#: inc/customizer.php:182
 msgid "Color / Font Pallete"
 msgstr "Colore / Carattere Pallete"
 
-#: inc/customizer.php:186
+#: inc/customizer.php:204
 msgid "Paragraph Color"
 msgstr "Colore paragrafo"
 
-#: inc/customizer.php:200
+#: inc/customizer.php:218
 msgid "Paragraph Fonts"
 msgstr "Caratteri di paragrafo"
 
-#: inc/customizer.php:210
+#: inc/customizer.php:228
 msgid "Paragraph Font Size"
 msgstr "Dimensione carattere paragrafo"
 
-#: inc/customizer.php:222
+#: inc/customizer.php:240
 msgid "\"a\" Tag Color"
 msgstr "\"a\" Colore etichetta"
 
-#: inc/customizer.php:236
+#: inc/customizer.php:254
 msgid "\"a\" Tag Fonts"
 msgstr "Caratteri tag \"a\""
 
-#: inc/customizer.php:247
+#: inc/customizer.php:265
 msgid "\"li\" Tag Color"
 msgstr "Colore etichetta \"li\""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:279
 msgid "\"li\" Tag Fonts"
 msgstr "Caratteri tag \"li\""
 
-#: inc/customizer.php:272
+#: inc/customizer.php:290
 msgid "h1 Color"
 msgstr "h1 Colore"
 
-#: inc/customizer.php:286
+#: inc/customizer.php:304
 msgid "h1 Fonts"
 msgstr "font h1"
 
-#: inc/customizer.php:297
+#: inc/customizer.php:315
 msgid "h1 Font Size"
 msgstr "h1 Dimensione carattere"
 
-#: inc/customizer.php:309
+#: inc/customizer.php:327
 msgid "h2 Color"
 msgstr "colore h2"
 
-#: inc/customizer.php:323
+#: inc/customizer.php:341
 msgid "h2 Fonts"
 msgstr "font h2"
 
-#: inc/customizer.php:334
+#: inc/customizer.php:352
 msgid "h2 Font Size"
 msgstr "h2 Dimensione carattere"
 
-#: inc/customizer.php:346
+#: inc/customizer.php:364
 msgid "h3 Color"
 msgstr "h3 Colore"
 
-#: inc/customizer.php:360
+#: inc/customizer.php:378
 msgid "h3 Fonts"
 msgstr "Caratteri h3"
 
-#: inc/customizer.php:371
+#: inc/customizer.php:389
 msgid "h3 Font Size"
 msgstr "h3 Dimensione carattere"
 
-#: inc/customizer.php:383
+#: inc/customizer.php:401
 msgid "h4 Color"
 msgstr "colore h4"
 
-#: inc/customizer.php:397
+#: inc/customizer.php:415
 msgid "h4 Fonts"
 msgstr "Caratteri h4"
 
-#: inc/customizer.php:408
+#: inc/customizer.php:426
 msgid "h4 Font Size"
 msgstr "h4 Dimensione carattere"
 
-#: inc/customizer.php:420
+#: inc/customizer.php:438
 msgid "h5 Color"
 msgstr "h5 Colore"
 
-#: inc/customizer.php:434
+#: inc/customizer.php:452
 msgid "h5 Fonts"
 msgstr "Caratteri h5"
 
-#: inc/customizer.php:445
+#: inc/customizer.php:463
 msgid "h5 Font Size"
 msgstr "h5 Dimensione carattere"
 
-#: inc/customizer.php:457
+#: inc/customizer.php:475
 msgid "h6 Color"
 msgstr "h6 Colore"
 
-#: inc/customizer.php:471
+#: inc/customizer.php:489
 msgid "h6 Fonts"
 msgstr "Caratteri h6"
 
-#: inc/customizer.php:482
+#: inc/customizer.php:500
 msgid "h6 Font Size"
 msgstr "h6 Dimensione carattere"
 
-#: inc/customizer.php:490
+#: inc/customizer.php:508
 msgid "Top Header"
 msgstr "Intestazione principale"
 
-#: inc/customizer.php:491
+#: inc/customizer.php:509
 msgid "Add Header Content here"
 msgstr "Aggiungi qui il contenuto dell'intestazione"
 
-#: inc/customizer.php:503
+#: inc/customizer.php:521
 msgid "Show / Hide Topbar"
 msgstr "Mostra / Nascondi barra superiore"
 
-#: inc/customizer.php:513
+#: inc/customizer.php:531
 msgid "Sticky Header"
 msgstr "Testata appiccicosa"
 
-#: inc/customizer.php:522
+#: inc/customizer.php:548
 msgid "Add Facebook link"
 msgstr "Aggiungi link Facebook"
 
-#: inc/customizer.php:533
+#: inc/customizer.php:559
 msgid "Add Twitter link"
 msgstr "Aggiungi link Twitter"
 
-#: inc/customizer.php:544
+#: inc/customizer.php:570
 msgid "Add Google Plus link"
 msgstr "Aggiungi link Google Plus"
 
-#: inc/customizer.php:555
+#: inc/customizer.php:581
 msgid "Add Pinterest link"
 msgstr "Aggiungi il link Pinterest"
 
-#: inc/customizer.php:566
+#: inc/customizer.php:592
 msgid "Add Linkedin link"
 msgstr "Aggiungi link Linkedin"
 
-#: inc/customizer.php:577
+#: inc/customizer.php:603
 msgid "Add Instagram link"
 msgstr "Aggiungi link Instagram"
 
-#: inc/customizer.php:588
+#: inc/customizer.php:614
 msgid "Add Youtube link"
 msgstr "Aggiungi link Youtube"
 
-#: inc/customizer.php:596
+#: inc/customizer.php:622
 msgid "Slider Settings."
 msgstr "Impostazioni del dispositivo di scorrimento."
 
-#: inc/customizer.php:607
+#: inc/customizer.php:641
 msgid "Show / Hide slider"
 msgstr "Mostra / Nascondi cursore"
 
-#: inc/customizer.php:619
+#: inc/customizer.php:653
 msgid "Select Slide Image Page"
 msgstr "Seleziona Pagina immagine diapositiva"
 
-#: inc/customizer.php:628
+#: inc/customizer.php:662
 msgid "Category Post"
 msgstr "Post di categoria"
 
-#: inc/customizer.php:629
+#: inc/customizer.php:663
 msgid "This section will appear below the slider."
 msgstr "Questa sezione apparirà sotto il cursore."
 
-#: inc/customizer.php:651 inc/customizer.php:681
+#: inc/customizer.php:693 inc/customizer.php:731
 msgid "Select Category to display Latest Post"
 msgstr "Seleziona la categoria per visualizzare l'ultimo post"
 
-#: inc/customizer.php:658
+#: inc/customizer.php:700
 msgid "Latest Post"
 msgstr "L'ultimo post"
 
-#: inc/customizer.php:659
+#: inc/customizer.php:701
 msgid "This section will appear below the category post."
 msgstr "Questa sezione apparirà sotto il post della categoria."
 
-#: inc/customizer.php:687
+#: inc/customizer.php:737
 msgid "Post Settings"
 msgstr "Impostazioni post"
 
-#: inc/customizer.php:697
+#: inc/customizer.php:747
 msgid "Enable / Disable Post Date"
 msgstr "Abilita / disabilita la data di pubblicazione"
 
-#: inc/customizer.php:707
+#: inc/customizer.php:757
 msgid "Enable / Disable Post Author"
 msgstr "Abilita / Disabilita Post Autore"
 
-#: inc/customizer.php:717
+#: inc/customizer.php:767
 msgid "Enable / Disable Post Comments"
 msgstr "Abilita / disabilita commenti post"
 
-#: inc/customizer.php:723
+#: inc/customizer.php:773
 msgid "Footer Text"
 msgstr "Piè di pagina di testo"
 
-#: inc/customizer.php:724
+#: inc/customizer.php:774
 msgid "This section will appear in the footer."
 msgstr "Questa sezione apparirà nel piè di pagina."
 
-#: inc/customizer.php:733
+#: inc/customizer.php:792
+msgid "Show/Hide Back to Top Button"
+msgstr "Mostra / Nascondi pulsante Torna all'inizio"
+
+#: inc/customizer.php:797
+#: inc/customizer.php:806
+msgid "Right"
+msgstr "Destra"
+
+#: inc/customizer.php:802
+msgid "Back to Top Button Alignment"
+msgstr "Torna all'inizio Allineamento dei pulsanti"
+
+#: inc/customizer.php:805
+msgid "Left"
+msgstr "Sinistra"
+
+#: inc/customizer.php:807
+msgid "Center"
+msgstr "Centro"
+
+#: inc/customizer.php:817
+msgid "Footer widget layout"
+msgstr "Layout del widget piè di pagina"
+
+#: inc/customizer.php:819
+msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
+msgstr "Seleziona il numero di aree del widget che desideri nel piè di pagina. Successivamente, vai su Aspetto> Widget e aggiungi i tuoi widget."
+
+#: inc/customizer.php:821
+msgid "One"
+msgstr "Una"
+
+#: inc/customizer.php:822
+msgid "Two"
+msgstr "Due"
+
+#: inc/customizer.php:823
+msgid "Three"
+msgstr "Tre"
+
+#: inc/customizer.php:824
+msgid "Four"
+msgstr "quattro"
+
+#: inc/customizer.php:841
 msgid "Text"
 msgstr "Testo"
 
-#: inc/customizer.php:819
+#: inc/customizer.php:927
 msgid "Advance Blogging"
 msgstr "Advance Blogging"
 
-#: inc/customizer.php:820
+#: inc/customizer.php:928
 msgid "Go Pro"
 msgstr "Go Pro"

@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.6.8
+Stable tag: 0.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,12 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 = 0.6.8 =
 * Added footer widget layout setting in customizer.
 * Added .mo and .po files of Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese languages.
+
+= 0.6.9 =
+* Added show/hide Back to Top button and its alignment.
+* Starter content is added in theme.
+* Selective Refresh is added in theme.
+* Updated .po file of Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese languages.
 
 == Resources ==
 

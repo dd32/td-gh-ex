@@ -55,6 +55,18 @@
             <div class="clear"></div>  
         </div>
     </div>
+
+    <?php if( get_theme_mod( 'advance_blogging_show_back_to_top',true) != '') { ?>
+        <?php $scroll_lay = get_theme_mod( 'advance_blogging_back_to_top_alignment','Right');
+            if($scroll_lay == 'Left'){ ?>
+               <a href="#" class="scrollup left"><span><?php esc_html_e('Back to Top', 'advance-blogging'); ?><i class="fas fa-arrow-right"></i></span><span class="screen-reader-text"><?php esc_html_e('Back to Top', 'advance-blogging'); ?></span></a>
+            <?php }else if($scroll_lay == 'Center'){ ?>
+              <a href="#" class="scrollup center"><span><?php esc_html_e('Back to Top', 'advance-blogging'); ?><i class="fas fa-arrow-right"></i></span><span class="screen-reader-text"><?php esc_html_e('Back to Top', 'advance-blogging'); ?></span></a>
+            <?php }else{ ?>
+              <a href="#" class="scrollup right"><span><?php esc_html_e('Back to Top', 'advance-blogging'); ?><i class="fas fa-arrow-right"></i></span><span class="screen-reader-text"><?php esc_html_e('Back to Top', 'advance-blogging'); ?></span></a>
+        <?php }?>
+    <?php }?>
+
     <?php wp_footer(); ?>
 </footer>
 
