@@ -44,11 +44,6 @@ if ( ! class_exists( 'ArileWP_Customizer_Partials' ) ) {
 			return get_bloginfo( 'description' );
 		}
 		
-		// Slider
-		public static function customize_partial_arilewp_main_theme_slider() {
-			return get_theme_mod( 'arilewp_main_theme_slider' );
-		}
-		
 		// service title
 		public static function customize_partial_arilewp_service_area_title() {
 			return get_theme_mod( 'arilewp_service_area_title' );
