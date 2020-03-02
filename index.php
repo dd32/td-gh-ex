@@ -4,8 +4,8 @@
  *
  * @file           index.php
  * @package        Responsive
- * @author         Emil Uzelac
- * @copyright      2003 - 2014 CyberChimps
+ * @author         CyberChimps
+ * @copyright      2020 CyberChimps
  * @license        license.txt
  * @version        Release: 1.0
  * @filesource     wp-content/themes/responsive/index.php
@@ -22,70 +22,84 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-get_header(); ?>
-<?php responsive_wrapper_top(); // before wrapper content hook. ?>
-<div id="wrapper" class="clearfix">
-	<div class="content-outer">
-<?php responsive_in_wrapper(); // wrapper hook. ?>
-<div id="primary" class="grid col-620" role="main">
 
-	<?php if ( have_posts() ) : ?>
+get_header();
+responsive_wrapper_top(); // before wrapper content hook.
+// Elementor `archive` location.
+if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) {
+?>
+<div id="wrapper" class="site-content clearfix">
+	<div class="content-outer container">
+		<div class="row">
+			<?php responsive_in_wrapper(); // wrapper hook. ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
+			<main id="primary" class="content-area grid col-620" role="main">
 
-			<?php responsive_entry_before(); ?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<?php responsive_entry_top(); ?>
+			<?php if ( have_posts() ) : ?>
+				<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
 
-				<?php get_template_part( 'post-meta', get_post_type() ); ?>
+						<?php responsive_entry_before(); ?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<?php responsive_entry_top(); ?>
 
-				<div class="post-entry">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" <?php responsive_schema_markup( 'url' ); ?>>
-							<?php the_post_thumbnail(); ?>
-						</a>
-					<?php endif; ?>
-					<?php the_content( __( 'Read more &#8250;', 'responsive' ) ); ?>
-					<?php
-					wp_link_pages(
-						array(
-							'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ),
-							'after'  => '</div>',
-						)
-					);
-					?>
-				</div><!-- end of .post-entry -->
+						<?php get_template_part( 'post-meta', get_post_type() ); ?>
 
-				<?php get_template_part( 'post-data', get_post_type() ); ?>
+						<div class="post-entry">
+							<?php if ( has_post_thumbnail() ) : ?>
+								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" <?php responsive_schema_markup( 'url' ); ?>>
+									<?php the_post_thumbnail(); ?>
+								</a>
+							<?php endif; ?>
+							<?php the_content( __( 'Read more &#8250;', 'responsive' ) ); ?>
+							<?php
+							wp_link_pages(
+								array(
+									'before' => '<div class="pagination">' . __( 'Pages:', 'responsive' ),
+									'after'  => '</div>',
+								)
+							);
+							?>
+						</div><!-- end of .post-entry -->
 
-				<?php responsive_entry_bottom(); ?>
-			</div><!-- end of #post-<?php the_ID(); ?> -->
-			<?php responsive_entry_after(); ?>
+							<?php get_template_part( 'post-data', get_post_type() ); ?>
 
-			<?php responsive_comments_before(); ?>
-			<?php comments_template( '', true ); ?>
-			<?php responsive_comments_after(); ?>
+							<?php responsive_entry_bottom(); ?>
+					</div><!-- end of #post-
 
-			<?php
-		endwhile;
+						<?php
+						the_ID();
+						responsive_entry_after();
+						responsive_comments_before();
+						comments_template( '', true );
+						responsive_comments_after();
 
-		get_template_part( 'loop-nav', get_post_type() );
+				endwhile;
 
-		else :
+					get_template_part( 'loop-nav', get_post_type() );
 
-			get_template_part( 'loop-no-posts', get_post_type() );
+				?>
 
-	endif;
-		?>
+				<?php
+				else :
+					// Elementor `404` location.
+					if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
 
-</div><!-- end of #content -->
+						get_template_part( 'loop-no-posts', get_post_type() );
+					}
 
-<?php get_sidebar(); ?>
-</div>
-<?php responsive_wrapper_bottom(); // after wrapper content hook. ?>
+				endif;
+				?>
+
+			</div><!-- end of #content -->
+
+		<?php get_sidebar(); ?>
+	</main><!-- end of #primary -->
+	</div>
+	<?php responsive_wrapper_bottom(); // after wrapper content hook. ?>
 </div> <!-- end of #wrapper -->
-<?php responsive_wrapper_end(); // after wrapper hook. ?>
+    <?php }
+    responsive_wrapper_end(); // after wrapper hook. ?>
 <?php get_footer(); ?>
