@@ -15,25 +15,7 @@
 		<div class="row">
 			<div class="col-lg-3 col-6 my-auto">
 				<div class="logo main">
-						<?php
-							if(has_custom_logo())
-							{	
-								the_custom_logo();
-							}
-							else { 
-						?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								<h2 class="site-title"><?php echo esc_html(bloginfo('name')); ?></h2>
-							</a>	
-						<?php 		
-							}
-						?>
-						
-						<?php
-							$description = get_bloginfo( 'description');
-							if ($description) : ?>
-								<p class="site-description"><?php echo esc_html($description); ?></p>
-						<?php endif; ?>
+					<?php if ( function_exists( 'startkit_logo_title_description' ) ) :	startkit_logo_title_description(); endif; ?>
 				</div>
 			</div>
 			<!-- Nav -->
