@@ -2,9 +2,31 @@
  * Air theme JavaScript.
  */
 
+// Import modules (comment to disable)
+
+import './skip-link-focus-fix';
+import MoveTo from 'moveto';
+import './sticky-nav.js'
+// import slick from 'slick-carousel';
+import 'what-input';
+import './navigation.js';
+import './lazyload.js';
+
+
+
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
+
+// Init lazyload
+// Usage example on template side when air-helper enabled:
+// <?php image_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
+let images = document.querySelectorAll('.lazyload');
+lazyload(images, {
+     root: null,
+     rootMargin: "0px",
+     threshold: 0
+});
 
 // jQuery start
 ( function( $ ) {

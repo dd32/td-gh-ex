@@ -5,10 +5,14 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-03-02 10:51:24
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
+
+namespace Air_Light;
 
  /*
  * If the current post is protected by a password and
@@ -17,8 +21,7 @@
  */
 if ( post_password_required() ) {
 	return;
-}
-?>
+} ?>
 
 <div id="comments" class="comments-area">
 
@@ -32,14 +35,14 @@ if ( post_password_required() ) {
           printf(
             /* translators: 1: title. */
             esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'air-light' ),
-            '<span>' . get_the_title() . '</span>'
+            '<span>' . esc_html( get_the_title() ) . '</span>'
           );
         } else {
         printf( // WPCS: XSS OK.
           /* translators: 1: comment count number, 2: title. */
           esc_html( _nx( '%1$s comment %2$s', '%1$s comments %2$s', $comment_count, 'comments title', 'air-light' ) ),
           number_format_i18n( $comment_count ),
-          '<span class="screen-reader-text">on &ldquo;' . get_the_title() . '&rdquo;</span>'
+          '<span class="screen-reader-text">on &ldquo;' . esc_html( get_the_title() ) . '&rdquo;</span>'
         );
       }
       ?>
@@ -62,7 +65,7 @@ if ( post_password_required() ) {
         wp_list_comments( array(
           'style'      => 'ol',
           'short_ping' => true,
-          'callback' => 'air_light_comments',
+          'callback'   => __NAMESPACE__ . '\single_comment',
         ) );
       ?>
     </ol><!-- .comment-list -->

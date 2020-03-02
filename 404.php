@@ -2,10 +2,14 @@
 /**
  * The template for displaying 404 pages (not found)
  *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:38:49
  * @package air-light
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  */
+
+namespace Air_Light;
 
 get_header();
 
@@ -30,5 +34,4 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php
-get_footer();
+<?php get_footer();
