@@ -15,10 +15,13 @@ get_header(); ?>
 			<?php endwhile; endif; wp_reset_query(); ?>
             </ul></div>  
       	</div>
-          
-<h1 id="heading"><?php echo esc_textarea(smallbusiness_get_option('heading_text', 'Go with Small Business Extend for exciting Post Options, Theme Options and Extra Functionalities')); ?></h1>
+ 
+<?php
+$heading = wp_kses_post(smallbusiness_get_option('heading_text', ''));
+if($heading): echo '<h1 id="heading">'.$heading.'</h1>'; endif; 
 
-<?php get_template_part( 'featured-box' );  ?><br />
+get_template_part( 'featured-box' );  
+?>
 
 <div id="content">
 <?php if (have_posts()) : while (have_posts()) : the_post();?><div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -41,10 +44,8 @@ get_header(); ?>
 <?php get_sidebar( 'frontpage' ); ?>
 <div class="clear"> </div>
 
-<div class="content-ver-sep"> </div>
-<div id="customers-comment">
-<blockquote><?php echo esc_textarea(smallbusiness_get_option('bottom-quotation', 'All the developers of D5 Creation have come from the disadvantaged part or group of the society. All have established themselves after a long and hard struggle in their life ----- D5 Creation Team')); ?></blockquote>
-</div>
+<?php
+$quotetext = wp_kses_post(smallbusiness_get_option('bottom-quotation', ''));
+if($quotetext): echo '<div class="content-ver-sep"></div><div id="customers-comment"><blockquote>'.$quotetext.'</blockquote></div>'; endif;
 
-
-<?php get_footer(); ?>
+get_footer();

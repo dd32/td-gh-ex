@@ -126,7 +126,7 @@
 	}
 	add_filter( 'wp_page_menu_args', 'smallbusiness_page_menu_args' );
 	function smallbusiness_credit() {
-		echo '&nbsp;| Small Business Theme by: <a href="'.esc_url('https://d5creation.com').'" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+		echo '&nbsp;| Small Business Theme by: <a href="'.esc_url('https://d5creation.com').'" target="_blank"> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
 	}
 
 //	Registers the Widgets and Sidebars for the site
@@ -191,6 +191,23 @@
             return '(Untitled)';
         } else { return $title; } 
     }
+
+// 	Link Open in Same/New Window
+	function smallbusiness_linkosn($losnv = '0' ) { if ( $losnv == '1' ): return ' target="_blank" '; else: return ' '; endif; }
+
+// 	Link and Target
+	function smallbusiness_linkandtarget($contentt, $linkurl = '', $linktarget ='', $linkid ='', $linkclass ='', $nolnknotxt = '', $excontent = '' ) {
+		if ($contentt): 
+			$linkstart = ''; $linkend = '';
+			if($linkid) $linkid =' id="'.$linkid.'" ';  if($linkclass) $linkclass =' class="'.$linkclass.'" ';
+			if ( esc_url($linkurl) && $linkurl != "#"  ): $linkstart = '<a '.$linkid.' '.$linkclass.' href="'.esc_url($linkurl).'" '.smallbusiness_linkosn($linktarget).' '.$excontent.'>'; $linkend = '</a>'; endif;
+			$routput = ''; $routput = $linkstart . $contentt . $linkend;
+			if ( $nolnknotxt == '1' && $routput == $contentt  ) $routput = ''; 
+			return $routput;
+		else:
+			return '';
+		endif;
+	}
 
 //	Remove WordPress Custom Header Support for the theme smallbusiness
 //	remove_theme_support('custom-header');

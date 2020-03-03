@@ -6,15 +6,8 @@
 */
 ?>
 
-
-
-
-
 <div id="footer">
-
 <div id="footer-content">
-
-
 <?php
    	get_sidebar( 'footer' );
 ?>

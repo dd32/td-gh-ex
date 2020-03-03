@@ -14,9 +14,9 @@ function smallbusiness_customize_register($wp_customize){
 	
 // Front Page Heading
     $wp_customize->add_setting('smallbusiness[heading_text]', array(
-        'default'        	=> __('Go with Small Business Extend for exciting Post Options, Theme Options and Extra Functionalities','small-business'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
 
     ));
@@ -32,9 +32,9 @@ function smallbusiness_customize_register($wp_customize){
 	  
 // Featured Image Title
     $wp_customize->add_setting('smallbusiness[featured-title' . $fbsinumber . ']', array(
-        'default'        	=> __('Small Business Theme','small-business'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
 
     ));
@@ -48,9 +48,9 @@ function smallbusiness_customize_register($wp_customize){
 
 // Featured Image Description
     $wp_customize->add_setting('smallbusiness[featured-description' . $fbsinumber . ']', array(
-        'default'        	=> __('The Customizable Background and other options of Small Business will give the WordPress Driven Site an attractive look.  Small Business Extend will give your Extra Freedom and Functionality which you must love','small-business'),
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
-    	'sanitize_callback' => 'esc_textarea',
+    	'sanitize_callback' => 'wp_kses_post',
         'type'           	=> 'option'
 
     ));
@@ -64,7 +64,7 @@ function smallbusiness_customize_register($wp_customize){
 	
 // Featured Links
     $wp_customize->add_setting('smallbusiness[featured-link' . $fbsinumber . ']', array(
-        'default'        	=> '#',
+        'default'        	=> '',
         'capability'     	=> 'edit_theme_options',
     	'sanitize_callback' => 'esc_url',
         'type'           	=> 'option'
@@ -81,8 +81,8 @@ function smallbusiness_customize_register($wp_customize){
   
  //  Quote Text
     $wp_customize->add_setting('smallbusiness[bottom-quotation]', array(
-        'default'        	=> __('All the developers of D5 Creation have come from the disadvantaged part or group of the society. All have established themselves after a long and hard struggle in their life ----- D5 Creation Team',  'small-business'),
-    	'sanitize_callback' => 'esc_textarea',
+        'default'        	=> '',
+    	'sanitize_callback' => 'wp_kses_post',
         'capability'     	=> 'edit_theme_options',
         'type'           	=> 'option'
 

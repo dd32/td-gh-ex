@@ -4,30 +4,48 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Small Business 1.0
 */
-?>
 
-<div id="featured-boxs">
+$fboxcons = '';
 
-<span class="featured-box-first">
-<a href="<?php echo esc_url(smallbusiness_get_option('featured-link1', '#')); ?>">
-<h2><?php echo esc_textarea(smallbusiness_get_option('featured-title1', 'Small Business Theme')); ?></h2>
-</a>
-<p><?php echo esc_textarea(smallbusiness_get_option('featured-description1', 'The Customizable Background and other options of Small Business will give the WordPress Driven Site an attractive look.  Small Business Pro will give your Extra Freedom and Functionality which you must love')); ?><a href="<?php echo esc_url(smallbusiness_get_option('featured-link1', '#')); ?>"><?php echo __(' ... Read More ... ', 'small-business'); ?></a></p>
-</span>
+$fboxttl = ''; $fboxdes = ''; $fboxlnk = '';
+$fboxcon = '';
+$fboxttl = wp_kses_post(smallbusiness_get_option('featured-title1', ''));
+$fboxdes = wp_kses_post(smallbusiness_get_option('featured-description1', ''));
+$fboxlnk = esc_url(smallbusiness_get_option('featured-link1', ''));
 
-<span class="featured-box">
-<a href="<?php echo esc_url(smallbusiness_get_option('featured-link2', '#')); ?>">
-<h2><?php echo esc_textarea(smallbusiness_get_option('featured-title2', 'Small Business Theme')); ?></h2>
-</a>
-<p><?php echo esc_textarea(smallbusiness_get_option('featured-description2', 'The Customizable Background and other options of Small Business will give the WordPress Driven Site an attractive look.  Small Business Pro will give your Extra Freedom and Functionality which you must love')); ?><a href="<?php echo esc_url(smallbusiness_get_option('featured-link2', '#')); ?>"><?php echo __(' ... Read More ... ', 'small-business'); ?></a></p>
-</span>
+if($fboxttl): $fboxttl = smallbusiness_linkandtarget('<h2>'.$fboxttl.'</h2>',$fboxlnk); endif;
+if($fboxdes): $fboxdes = '<p>'.$fboxdes.'</p>'; endif;
+if($fboxlnk): $fboxlnk = smallbusiness_linkandtarget(__(' ... Read More ... ', 'small-business'),$fboxlnk,'','','fealink','1'); endif;
+$fboxcon = $fboxttl.$fboxdes.$fboxlnk;
 
-<span class="featured-box">
-<a href="<?php echo esc_url(smallbusiness_get_option('featured-link3', '#')); ?>">
-<h2><?php echo esc_textarea(smallbusiness_get_option('featured-title3', 'Small Business Theme')); ?></h2>
-</a>
-<p><?php echo esc_textarea(smallbusiness_get_option('featured-description3', 'The Customizable Background and other options of Small Business will give the WordPress Driven Site an attractive look.  Small Business Pro will give your Extra Freedom and Functionality which you must love')); ?><a href="<?php echo esc_url(smallbusiness_get_option('featured-link3', '#')); ?>"><?php echo __(' ... Read More ... ', 'small-business'); ?></a></p>
-</span>
+if($fboxcon): $fboxcons .= '<div class="featured-box-first">'.$fboxcon.'</div>';  endif;
 
-</div> <!-- featured-boxs -->
-<div class="content-ver-sep"> </div>
+
+$fboxttl = ''; $fboxdes = ''; $fboxlnk = '';
+$fboxcon = '';
+$fboxttl = wp_kses_post(smallbusiness_get_option('featured-title2', ''));
+$fboxdes = wp_kses_post(smallbusiness_get_option('featured-description2', ''));
+$fboxlnk = esc_url(smallbusiness_get_option('featured-link2', ''));
+
+if($fboxttl): $fboxttl = smallbusiness_linkandtarget('<h2>'.$fboxttl.'</h2>',$fboxlnk); endif;
+if($fboxdes): $fboxdes = '<p>'.$fboxdes.'</p>'; endif;
+if($fboxlnk): $fboxlnk = smallbusiness_linkandtarget(__(' ... Read More ... ', 'small-business'),$fboxlnk,'','','fealink','1'); endif;
+$fboxcon = $fboxttl.$fboxdes.$fboxlnk;
+
+if($fboxcon): $fboxcons .= '<div class="featured-box">'.$fboxcon.'</div>';  endif;
+
+
+$fboxttl = ''; $fboxdes = ''; $fboxlnk = '';
+$fboxcon = '';
+$fboxttl = wp_kses_post(smallbusiness_get_option('featured-title3', ''));
+$fboxdes = wp_kses_post(smallbusiness_get_option('featured-description3', ''));
+$fboxlnk = esc_url(smallbusiness_get_option('featured-link3', ''));
+
+if($fboxttl): $fboxttl = smallbusiness_linkandtarget('<h2>'.$fboxttl.'</h2>',$fboxlnk); endif;
+if($fboxdes): $fboxdes = '<p>'.$fboxdes.'</p>'; endif;
+if($fboxlnk): $fboxlnk = smallbusiness_linkandtarget(__(' ... Read More ... ', 'small-business'),$fboxlnk,'','','fealink','1'); endif;
+$fboxcon = $fboxttl.$fboxdes.$fboxlnk;
+
+if($fboxcon): $fboxcons .= '<div class="featured-box">'.$fboxcon.'</div>';  endif;
+
+if($fboxcons): echo '<div id="featured-boxs">'.$fboxcons.'</div><div class="content-ver-sep"></div><br>'; endif;

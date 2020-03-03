@@ -3,8 +3,8 @@
 Contributors: D5 Creation
 Tags: two-columns, right-sidebar, blog, portfolio, education, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, full-width-template, theme-options
 Requires at least: 4.0
-Tested up to: 5.2.3-alpha
-Stable tag: 3.3
+Tested up to: 5.3.2
+Stable tag: 3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,10 @@ No, It is for Business, Companies, Blogs, Corporates, Personal Websites etc.
 
 
 == Changelog ==
+
+= 3.5 =
+* Code Cleanup
+* Style Improvement
 
 = 3.3 =
 * Adding new readme.txt

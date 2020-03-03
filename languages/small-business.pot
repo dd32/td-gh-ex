@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Small Business\n"
-"POT-Creation-Date: 2016-01-23 02:39+0600\n"
-"PO-Revision-Date: 2016-01-23 02:33+0600\n"
+"POT-Creation-Date: 2020-03-04 00:39+0600\n"
+"PO-Revision-Date: 2020-03-04 00:39+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Or Return to the Home Page"
 msgstr ""
 
-#: 404.php:16 archive.php:73 index.php:43 search.php:51
+#: 404.php:16 archive.php:73 blog.php:44 index.php:43 search.php:51
 msgid "You can also Visit the Following. These are the Featured Contents"
 msgstr ""
 
@@ -74,8 +74,8 @@ msgstr ""
 msgid " on"
 msgstr ""
 
-#: archive.php:48 fullwidth.php:18 functions.php:118 index.php:18 page.php:18
-#: search.php:29
+#: archive.php:48 blog.php:22 fullwidth.php:16 functions.php:118 index.php:18
+#: page.php:18 search.php:29
 msgid "Read the rest of this page &raquo;"
 msgstr ""
 
@@ -103,16 +103,36 @@ msgstr ""
 msgid "Tags: "
 msgstr ""
 
-#: archive.php:61 front-page.php:34 index.php:28 search.php:39
+#: archive.php:61 blog.php:32 front-page.php:32 index.php:28 search.php:39
 msgid "&laquo; Previous Entries"
 msgstr ""
 
-#: archive.php:62 front-page.php:35 index.php:29 search.php:40
+#: archive.php:62 blog.php:33 front-page.php:33 index.php:29 search.php:40
 msgid "Next Entries &raquo;"
 msgstr ""
 
 #: archive.php:71 search.php:49
 msgid "Browse the Home Page"
+msgstr ""
+
+#: blog.php:18 index.php:12
+msgid "Posted by: "
+msgstr ""
+
+#: blog.php:18 index.php:12
+msgid " on "
+msgstr ""
+
+#: blog.php:39 index.php:35
+msgid "Sorry, we could not find anything that matched your search"
+msgstr ""
+
+#: blog.php:41
+msgid "You Can Try Another Search..."
+msgstr ""
+
+#: blog.php:43
+msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
 #: comments.php:14
@@ -135,7 +155,7 @@ msgstr ""
 msgid " ... Read More ... "
 msgstr ""
 
-#: fullwidth.php:20 page.php:25
+#: fullwidth.php:18 page.php:25
 msgid "Edit This Entry"
 msgstr ""
 
@@ -257,11 +277,11 @@ msgstr ""
 msgid "Entry Date: "
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:11
 msgid "Search Text Here"
 msgstr ""
 
-#: searchform.php:13
+#: searchform.php:12
 msgid "Search"
 msgstr ""
 
@@ -327,20 +347,20 @@ msgid "Small Business"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/theme/smallbusiness/"
+msgid "https://d5creation.com/theme/smallbusiness"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Small Business is a theme for Business. Customizable Background and other "
-"options will give the WordPress Driven Site an attractive look.  Small "
-"Business is super elegant and Professional Theme which will create the "
-"business widely expressed. The Slider will show the featured images and "
-"contents of posts  automatically.  Front Page, Right and Footer Sidebar will "
-"be usable for showing the widgets and PlugIns items. Full Wide page can be "
-"used for showing showcase or other pages. Small Business Pro has come with "
-"exciting Post Options, Theme Options and Extra Functionalities. D5 "
-"Creation's Support will be with you, Always!"
+"Small Business is a Theme for Business. It can be used for Small to Large "
+"Business Sites.  Small Business Theme is Super Elegant and Professional "
+"Theme which will create the business widely expressed. The Built-in Slider "
+"will show the Featured Contents from the posts automatically.  Front Page, "
+"Right and Footer Sidebar will be usable for showing the widgets and Plugins "
+"items. Full Wide Page Template can be used for showing showcase or other "
+"pages. Small Business Extend has come with Exciting Post Options, Theme "
+"Options and Hundreds of Advanced Features. You can find the Theme Page and "
+"Demo Here: https://d5creation.com/theme/smallbusiness/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -348,5 +368,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "https://d5creation.com"
 msgstr ""
