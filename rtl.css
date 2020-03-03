@@ -67,6 +67,7 @@ blockquote {
   border-width: 0 4px 0 0;
   font-style: italic;
 }
+
 @media screen and (min-width: 48em) {
   blockquote {
     padding: 0.92308em 1.53846em 1.42308em 0;
@@ -118,9 +119,8 @@ select {
 .top-navigation-right .menu-item-has-children .dropdown-toggle.toggled-on:after,
 .main-navigation .menu-item-has-children .dropdown-toggle.toggled-on:after {
   display: block;
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -133,14 +133,17 @@ select {
     right: 14px;
   }
 }
+
 .footer-navigation ul ul li,
 .top-navigation-right ul ul li,
 .main-navigation ul ul li {
   margin: 0;
   margin-right: -1px;
 }
+
 @media screen and (min-width: 62em) {
-  .footer-navigation ul ul li:hover > ul, .footer-navigation ul ul li.focus > ul,
+  .footer-navigation ul ul li:hover > ul,
+  .footer-navigation ul ul li.focus > ul,
   .top-navigation-right ul ul li:hover > ul,
   .top-navigation-right ul ul li.focus > ul,
   .main-navigation ul ul li:hover > ul,
@@ -149,12 +152,14 @@ select {
     right: 100%;
   }
 }
+
 .footer-navigation ul ul a,
 .top-navigation-right ul ul a,
 .main-navigation ul ul a {
   padding-right: 1.06667em;
   padding-left: 0;
 }
+
 @media screen and (min-width: 62em) {
   .footer-navigation ul ul a,
   .top-navigation-right ul ul a,
@@ -162,12 +167,14 @@ select {
     padding: 0.625em 1em;
   }
 }
+
 .footer-navigation ul ul ul a,
 .top-navigation-right ul ul ul a,
 .main-navigation ul ul ul a {
   padding-right: 2.13333em;
   padding-left: 0;
 }
+
 @media screen and (min-width: 62em) {
   .footer-navigation ul ul ul a,
   .top-navigation-right ul ul ul a,
@@ -175,12 +182,14 @@ select {
     padding: 0.625em 1em;
   }
 }
+
 .footer-navigation ul ul ul ul a,
 .top-navigation-right ul ul ul ul a,
 .main-navigation ul ul ul ul a {
   padding-right: 3.2em;
   padding-left: 0;
 }
+
 @media screen and (min-width: 62em) {
   .footer-navigation ul ul ul ul a,
   .top-navigation-right ul ul ul ul a,
@@ -188,6 +197,7 @@ select {
     padding: 0.625em 1em;
   }
 }
+
 @media screen and (min-width: 62em) {
   .footer-navigation ul li > ul,
   .top-navigation-right ul li > ul,
@@ -204,7 +214,6 @@ select {
 }
 
 .top-navigation-right .sub-menu .menu-item-has-children > a:after, .main-navigation .sub-menu .menu-item-has-children > a:after {
-  -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   transform: rotate(90deg);
@@ -232,14 +241,17 @@ select {
   margin-left: 1.09091em;
   float: right;
 }
+
 .pagination a .prev:before {
   content: "";
 }
+
 .pagination a .next {
   margin-left: 0.90909em;
   margin-right: 1.09091em;
   float: left;
 }
+
 .pagination a .next:before {
   content: "";
 }
@@ -297,6 +309,7 @@ select {
 .search-modal .search-form {
   margin: 0 0 0 2em;
 }
+
 .search-modal .close-search-modal {
   float: left;
 }
@@ -355,6 +368,7 @@ select {
   margin-right: 2.25em;
   padding-right: 1.875em;
 }
+
 @media screen and (min-width: 48em) {
   .reply {
     margin-right: 4em;
@@ -369,6 +383,7 @@ select {
   margin-right: 2em;
   padding-right: 1.66667em;
 }
+
 @media screen and (min-width: 48em) {
   .comment-body + .comment-respond,
   .comment-list .children > li,
@@ -380,6 +395,7 @@ select {
 .comment-content {
   padding-bottom: 1.05556em;
 }
+
 .comment-content ul, .comment-content ol {
   margin: 0 1.25em 1.5em 0;
 }

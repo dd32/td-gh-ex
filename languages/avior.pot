@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Avior\n"
-"POT-Creation-Date: 2019-05-24 11:05+0300\n"
+"POT-Creation-Date: 2020-03-03 11:17+0200\n"
 "PO-Revision-Date: 2017-05-25 15:36+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -74,70 +74,94 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:72
+msgid "Color 1"
+msgstr ""
+
+#: functions.php:77
+msgid "Color 2"
+msgstr ""
+
+#: functions.php:82
+msgid "Color 3"
+msgstr ""
+
+#: functions.php:87
+msgid "Color 4"
+msgstr ""
+
+#: functions.php:92
+msgid "Color 5"
+msgstr ""
+
+#: functions.php:97
+msgid "Color 6"
+msgstr ""
+
+#: functions.php:134
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:101 functions.php:137
+#: functions.php:136 functions.php:172
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:108
+#: functions.php:143
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:110 functions.php:119 functions.php:128
+#: functions.php:145 functions.php:154 functions.php:163
 msgid "Appears in the footer section of the site."
 msgstr ""
 
-#: functions.php:117
+#: functions.php:152
 msgid "Footer Center"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:161
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:170
 msgid "Shop"
 msgstr ""
 
-#: functions.php:161
+#: functions.php:196
 msgid "Expand menu"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:197
 msgid "Collapse menu"
 msgstr ""
 
-#: functions.php:235
+#: functions.php:270
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:245
+#: functions.php:280
 msgctxt "Source Serif Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:255
+#: functions.php:290
 msgctxt "Source Code Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: header.php:22
+#: header.php:23
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:49
+#: header.php:50
 msgid "Top Links Menu"
 msgstr ""
 
-#: header.php:71
+#: header.php:72
 msgid "Menu"
 msgstr ""
 
-#: header.php:71
+#: header.php:72
 msgid "Close"
 msgstr ""
 

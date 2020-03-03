@@ -63,7 +63,42 @@ if ( ! function_exists( 'avior_setup' ) ) :
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
+
+		add_theme_support('editor-styles');
 		add_editor_style( array( 'css/editor-style.css', avior_fonts_url() ) );
+
+		add_theme_support('editor-color-palette', array(
+			array(
+				'name' => esc_html__('Color 1', 'avior'),
+				'slug' => 'color-1',
+				'color' => '#1ca4d3'
+			),
+			array(
+				'name' => esc_html__('Color 2', 'avior'),
+				'slug' => 'color-2',
+				'color' => '#1f2429'
+			),
+			array(
+				'name' => esc_html__('Color 3', 'avior'),
+				'slug' => 'color-3',
+				'color' => '#333333'
+			),
+			array(
+				'name' => esc_html__('Color 4', 'avior'),
+				'slug' => 'color-4',
+				'color' => '#d9d9d9'
+			),
+			array(
+				'name' => esc_html__('Color 5', 'avior'),
+				'slug' => 'color-5',
+				'color' => '#f5f3f1'
+			),
+			array(
+				'name' => esc_html__('Color 6', 'avior'),
+				'slug' => 'color-6',
+				'color' => '#202b34'
+			),
+		));
 	}
 endif;
 add_action( 'after_setup_theme', 'avior_setup' );
