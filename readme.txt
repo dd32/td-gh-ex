@@ -3,8 +3,8 @@ Contributors: wpkoithemes
 Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, featured-images
 Requires at least: WordPress 4.9
 Requires PHP: 5.6
-Tested up to: WordPress 5.2.3
-Stable tag: 1.1.0
+Tested up to: WordPress 5.3.2
+Stable tag: 1.1.1
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -188,6 +188,9 @@ Copyright Shotstash.com
 License: https://creativecommons.org/publicdomain/zero/1.0/
 
 == Change Log ==
+
+= 1.1.1 =
+Fixed: compatibility with PHP 7.3
 
 = 1.1.0 =
 Fixed: Icon compatibility with newest Elementor

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'ASURA_VERSION', '1.1.0' );
+define( 'ASURA_VERSION', '1.1.1' );
 
 if ( ! function_exists( 'asura_setup' ) ) {
 	add_action( 'after_setup_theme', 'asura_setup' );
@@ -120,8 +120,8 @@ require get_template_directory() . '/inc/structure/post-meta.php';
 require get_template_directory() . '/inc/structure/sidebars.php';
 require get_template_directory() . '/inc/structure/social-bar.php';
 
-define('ASURA_THEME_URL','https://wpkoi.com/asura-wpkoi-wordpress-theme/','asura');
-define('ASURA_WPKOI_AUTHOR_URL','https://wpkoi.com/','asura');
-define('ASURA_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/','asura');
-define('ASURA_WORDPRESS_REVIEW','https://wordpress.org/support/theme/asura/reviews/?filter=5','asura');
-define('ASURA_DOCUMENTATION','https://wpkoi.com/docs/','asura');
+define('ASURA_THEME_URL','https://wpkoi.com/asura-wpkoi-wordpress-theme/');
+define('ASURA_WPKOI_AUTHOR_URL','https://wpkoi.com/');
+define('ASURA_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/');
+define('ASURA_WORDPRESS_REVIEW','https://wordpress.org/support/theme/asura/reviews/?filter=5');
+define('ASURA_DOCUMENTATION','https://wpkoi.com/docs/');
