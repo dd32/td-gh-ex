@@ -483,7 +483,7 @@ if( ! function_exists( 'accesspress_mag_home_posted_on_cb' ) ):
     	} else {
             $posted_on = '';
         }
-        echo '<span class="posted-on">' . wp_kses_post($posted_on) . '</span>';
+        echo '<span class="posted-on">' . ($posted_on) . '</span>';
         if($show_comment_count==1){
             $post_comment_count = get_comments_number( $post->ID );
             echo '<span class="comment_count"><i class="fa fa-comments"></i>'.esc_attr( $post_comment_count ).'</span>';

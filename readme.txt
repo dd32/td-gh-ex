@@ -82,6 +82,9 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+= 2.6.0 =
+ ** Fixed Double Date Issues
+
 = 2.5.9 =
  ** Fixed Minor issues
  ** Refined functions

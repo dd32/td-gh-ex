@@ -12,7 +12,7 @@
     
 	<?php
         $accesspress_mag_show_footer_switch = of_get_option( 'footer_switch', '1' );
-        $accesspress_mag_footer_layout = of_get_option( 'footer_layout' );
+        $accesspress_mag_footer_layout = of_get_option( 'footer_layout','column4' );
         $accesspress_mag_sub_footer_switch = of_get_option( 'sub_footer_switch', '1' );
         $accesspress_mag_copyright_text = of_get_option( 'mag_footer_copyright' );
         $accesspress_mag_copyright_symbol = of_get_option( 'copyright_symbol', '1' );
