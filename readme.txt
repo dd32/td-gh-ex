@@ -4,7 +4,7 @@ Tags: one-column, two-columns, right-sidebar footer-widgets, Blog, News, e-comme
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.2.4
-Stable tag: 0.0.06
+Stable tag: 0.0.07
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,11 @@ Axis Magazine WordPress Theme, Copyright 2020 Zidithemes
 Axis Magazine is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 0.0.07 =
+* Released: March 6, 2020
+
+made changes to style.css Author URI.
 
 = 0.0.06 =
 * Released: February 21, 2020
@@ -59,7 +64,3 @@ Initial release
 * https://stocksnap.io/photo/WJPTGEFNOG © 2020 Burst and Stocksnap.io, CC0
 * https://stocksnap.io/photo/HR6N4GPCRQ © 2020 Burst and Stocksnap.io, CC0
 * https://stocksnap.io/photo/UXVE8KR1TN © 2020 Humphrey Muleba and Stocksnap.io, CC0
-* https://stocksnap.io/photo/B3LJ2P1AKX © 2020 Mike Moloney and Stocksnap.io, CC0
-* https://stocksnap.io/photo/15MSMABWGU © 2020 Oriana Ortiz and Stocksnap.io, CC0
-* https://stocksnap.io/photo/7RKWHUXLMQ © 2020 Christian Mackie and Stocksnap.io, CC0
-* https://stocksnap.io/photo/ZT9SCKS111 © 2020 Travel Photographer and Stocksnap.io, CC0
