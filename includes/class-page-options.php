@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Individual page template options handeling.
  *
  */
-class BAH_L_Page_Options {
+class Bahotel_L_Page_Options {
 
 	//////////////////////////////////////////////////
 	/**
@@ -59,7 +59,7 @@ class BAH_L_Page_Options {
 	 */
 	static function init_options() {
 	   
-       $options = BAH_L_Settings::$layouts;
+       $options = Bahotel_L_Settings::$layouts;
        $options[0] = __( 'Theme default', 'ba-hotel-light' );
 		
 		// Options set.
@@ -219,14 +219,14 @@ class BAH_L_Page_Options {
 		foreach( $options_set as $id => $field ) {
 
 			?>
-			<p><label for="<?php echo esc_html( $settings_id ); ?>_<?php echo esc_attr( $id ); ?>"><strong><?php echo esc_html( $field['label'] ); ?></strong></label></p>
+			<p><label for="<?php echo esc_attr( $settings_id ); ?>_<?php echo esc_attr( $id ); ?>"><strong><?php echo esc_html( $field['label'] ); ?></strong></label></p>
 			<?php
 
 			switch( $field['type'] ) {
 
 				case 'select':
 					?>
-					<select name="<?php echo esc_html( $settings_id ); ?>[<?php echo esc_attr( $id ) ?>]" id="<?php echo esc_html( $settings_id ); ?>_<?php echo esc_attr( $id ) ?>">
+					<select name="<?php echo esc_attr( $settings_id ); ?>[<?php echo esc_attr( $id ) ?>]" id="<?php echo esc_attr( $settings_id ); ?>_<?php echo esc_attr( $id ) ?>">
 						<?php foreach( $field['options'] as $field_option_id => $filed_option_title ) : ?>
 							<option value="<?php echo esc_attr( $field_option_id ); ?>" <?php selected( $values[ $id ], $field_option_id ); ?>><?php echo esc_html( $filed_option_title ); ?></option>
 						<?php endforeach; ?>
@@ -238,14 +238,14 @@ class BAH_L_Page_Options {
 					
 				case 'checkbox':
 					?>
-					<label><input type="checkbox" name="<?php echo esc_html( $settings_id ); ?>[<?php echo esc_attr( $id ); ?>]" <?php checked( $values[ $id ], 1 ); ?> value="1" /><?php echo esc_html( $field['checkbox_label'] ); ?></label>
+					<label><input type="checkbox" name="<?php echo esc_attr( $settings_id ); ?>[<?php echo esc_attr( $id ); ?>]" <?php checked( $values[ $id ], 1 ); ?> value="1" /><?php echo esc_html( $field['checkbox_label'] ); ?></label>
 					<?php
 					break;
 
 					
 				case 'text':
 				default :
-					?><input type="text" name="<?php echo esc_html( $settings_id ); ?>[<?php echo esc_attr( $id ); ?>]" id="<?php echo esc_html( $settings_id ); ?>_<?php echo esc_attr( $id ); ?>" value="<?php echo esc_attr( $values[ $id ] ); ?>" /><?php
+					?><input type="text" name="<?php echo esc_attr( $settings_id ); ?>[<?php echo esc_attr( $id ); ?>]" id="<?php echo esc_attr( $settings_id ); ?>_<?php echo esc_attr( $id ); ?>" value="<?php echo esc_attr( $values[ $id ] ); ?>" /><?php
 					break;
 
 			}
@@ -335,5 +335,5 @@ class BAH_L_Page_Options {
 /**
  * Calling to setup class.
  */
-BAH_L_Page_Options::init();
+Bahotel_L_Page_Options::init();
 

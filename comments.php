@@ -74,7 +74,7 @@ if ( post_password_required() ) {
     
     $comment_fields = array(
          'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="'.esc_attr__( 'Your Name *', 'ba-hotel-light' ).'" required="required"></p>',
-         'email' => '<p class="comment-form-email"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="'.esc_html__( 'Your Email *', 'ba-hotel-light' ).'" required="required"></p>',
+         'email' => '<p class="comment-form-email"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="'.esc_attr__( 'Your Email *', 'ba-hotel-light' ).'" required="required"></p>',
          'url' => '<p class="comment-form-url"><input id="url" name="url" type="url" value="" size="30" maxlength="200" placeholder="'.esc_attr__( 'Website', 'ba-hotel-light' ).'"></p>',
     );
 

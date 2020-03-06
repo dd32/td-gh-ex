@@ -23,8 +23,7 @@ if (apply_filters( 'bahotel_l_option', '', 'room_reviews_open' )) :
     
     $comment_fields = array(
          'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="" size="30" maxlength="245" placeholder="'.esc_attr__( 'Your Name *', 'ba-hotel-light' ).'" required="required"></p>',
-         'email' => '<p class="comment-form-email"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="'.esc_html__( 'Your Email *', 'ba-hotel-light' ).'" required="required"></p>',
-      //   'from_city' => '<p class="comment-form-from-city"><input id="from_city" name="from_city" type="text" value="" size="30" maxlength="100" placeholder="'.esc_html__( 'City/Country (where are you from) *', 'ba-hotel-light' ).'" required="required"></p>',
+         'email' => '<p class="comment-form-email"><input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" placeholder="'.esc_attr__( 'Your Email *', 'ba-hotel-light' ).'" required="required"></p>',
          'url' => '<p class="comment-form-url"><input id="url" name="url" type="url" value="" size="30" maxlength="200" placeholder="'.esc_attr__( 'Website', 'ba-hotel-light' ).'"></p>',
     );
 
@@ -32,7 +31,7 @@ if (apply_filters( 'bahotel_l_option', '', 'room_reviews_open' )) :
          'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
          'title_reply_after' => '</h2>',
          'fields' => $comment_fields,
-         'comment_field' => '<p class="comment-form-from-city"><input id="from_city" name="from_city" type="text" value="" size="30" maxlength="100" placeholder="'.esc_html__( 'City/Country (where are you from) *', 'ba-hotel-light' ).'" required="required"></p>
+         'comment_field' => '<p class="comment-form-from-city"><input id="from_city" name="from_city" type="text" value="" size="30" maxlength="100" placeholder="'.esc_attr__( 'City/Country (where are you from) *', 'ba-hotel-light' ).'" required="required"></p>
          <p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="5" maxlength="65525" placeholder="'.esc_attr__( 'Review text *', 'ba-hotel-light' ).'" required="required"></textarea></p>',
          'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s <span class="lnr lnr-arrow-right"></span></button>',//HTML format for the Submit button
          'class_submit' => 'submit comment-submit button-grey',

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 //////////////////////////////////////////////////
 
-class BAH_L_CMB2_Admin {
+class Bahotel_L_CMB2_Admin {
 
 	//////////////////////////////////////////////////
 	/**
@@ -137,7 +137,7 @@ class BAH_L_CMB2_Admin {
         $output = $field_type->input( array( 'type' => 'text', 'class' => 'fontawesome-icon-select regular-text' ) );
         $output = apply_filters( 'bahotel_l_cmb2_render_fontawesome_icon', $output, $field, $field_type );
 		
-		echo wp_kses( $output, BAH_L_Settings::$wp_allowedposttags );
+		echo wp_kses( $output, Bahotel_L_Settings::$wp_allowedposttags );
 	}
 	
 	//////////////////////////////////////////////////
@@ -187,4 +187,4 @@ class BAH_L_CMB2_Admin {
 /**
  * Calling to setup class.
  */
-BAH_L_CMB2_Admin::init();
+Bahotel_L_CMB2_Admin::init();

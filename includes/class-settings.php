@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Theme settings
  */
-class BAH_L_Settings {
+class Bahotel_L_Settings {
     
 	static $settings = array();
     
@@ -177,6 +177,7 @@ class BAH_L_Settings {
            'action' => array(),
            'method' => array(),
            'id' => array(),
+           'data-post-id' => array(),
         );
         self::$wp_allowedposttags['input'] = array(
            'type' => array(),
@@ -185,7 +186,11 @@ class BAH_L_Settings {
            'name' => array(),
            'value' => array(),
            'placeholder' => array(),
+           'tabindex' => array(),
+           'data-post-id' => array(),
         );
+
+        self::$wp_allowedposttags['div']['tabindex'] = array();
         
         self::$map_icon_url = BAHOTEL_L_STYLESHEET_URI . '/css/images/map_marker.png';
         
@@ -1281,7 +1286,6 @@ class BAH_L_Settings {
                 'h3 a:hover',
                 'h3 a:visited',
                 'h3 a:active',
-				'h3 a:focus',
                 '.search_res_text_side h3 a',
                 '.address_item_title',
                 '.why_choose_us_item_title',
@@ -1298,7 +1302,6 @@ class BAH_L_Settings {
                 'h4 a:hover',
                 'h4 a:visited',
                 'h4 a:active',
-				'h4 a:focus',
                 '.comment-author-name',
                 '.nav-prevnext-title',
 			),
@@ -1314,7 +1317,6 @@ class BAH_L_Settings {
                 'h5 a:hover',
                 'h5 a:visited',
                 'h5 a:active',
-				'h5 a:focus',
 			),
 		),
 	),
@@ -1328,7 +1330,6 @@ class BAH_L_Settings {
                 'h6 a:hover',
                 'h6 a:visited',
                 'h6 a:active',
-				'h6 a:focus',
 			),
 		),
 	),
@@ -1860,4 +1861,4 @@ class BAH_L_Settings {
 /**
  * Calling to setup class.
  */
-BAH_L_Settings::init();
+Bahotel_L_Settings::init();

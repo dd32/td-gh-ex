@@ -10,9 +10,6 @@
 
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -23,10 +20,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php do_action( 'wp_body_open' ); ?>
 <div id="page" class="site">
 	
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ba-hotel-light' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content" tabindex="0"><?php esc_html_e( 'Skip to content', 'ba-hotel-light' ); ?></a>
 	
 	<?php do_action( 'bahotel_l_get_panel', 'before-header' ); ?>
 	
@@ -49,7 +46,7 @@
 	<!-- Content -->
     
 	<div id="content" class="site-content <?php echo esc_attr(apply_filters( 'bahotel_l_style', 'container', 'content' ));
-    if (BAH_L_Settings::$layout_current != 'frontpage'){ 
+    if (Bahotel_L_Settings::$layout_current != 'frontpage'){
        echo apply_filters( 'bahotel_l_page_option', true, 'header_margin' ) ? ' content-margin' : '';
     } 
     ?>">
@@ -60,7 +57,7 @@
 			
 			<?php do_action( 'bahotel_l_get_panel', 'left' ); ?>
 			
-			<div id="primary" class="content-area <?php echo esc_attr(apply_filters( 'bahotel_l_column_width', 'col-lg-'.BAH_L_Settings::$layout_vars['width']['main'], 'primary' )); ?>">
+			<div id="primary" class="content-area <?php echo esc_attr(apply_filters( 'bahotel_l_column_width', 'col-lg-'.Bahotel_L_Settings::$layout_vars['width']['main'], 'primary' )); ?>">
 				
 				<div id="content-main" class="row">
 				
