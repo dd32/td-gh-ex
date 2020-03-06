@@ -358,6 +358,29 @@ function automobile_car_dealer_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
+
+/**
+* Switch sanitization
+*/
+if ( ! function_exists( 'automobile_car_dealer_switch_sanitization' ) ) {
+	function automobile_car_dealer_switch_sanitization( $input ) {
+		if ( true === $input ) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+}
+
+/**
+ * Integer sanitization
+ */
+if ( ! function_exists( 'automobile_car_dealer_sanitize_integer' ) ) {
+	function automobile_car_dealer_sanitize_integer( $input ) {
+		return (int) $input;
+	}
+}
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'automobile_car_dealer_loop_columns');
 	if (!function_exists('automobile_car_dealer_loop_columns')) {

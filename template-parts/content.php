@@ -19,6 +19,6 @@
     <?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_post_excerpt_number','30')))); ?>
   </div> 
   <div class="postbtn">
-    <a class="read-more" href="<?php the_permalink(); ?>"><i class="fas fa-long-arrow-alt-right"></i><?php echo esc_html(get_theme_mod('automobile_car_dealer_button_text','VIEW MORE'));?><span class="screen-reader-text"><?php esc_html_e( 'VIEW MORE','automobile-car-dealer' );?></span></a>
+    <a class="read-more" href="<?php the_permalink(); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_button_icon','fas fa-long-arrow-alt-right')); ?>"></i><?php echo esc_html(get_theme_mod('automobile_car_dealer_button_text',__('VIEW MORE','automobile-car-dealer' )));?><span class="screen-reader-text"><?php esc_html_e( 'VIEW MORE','automobile-car-dealer' );?></span></a>
   </div>
 </article>

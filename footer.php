@@ -5,15 +5,15 @@
  */
 ?>
     <?php if( get_theme_mod( 'automobile_car_dealer_hide_show_scroll',true) != '') { ?>
-        <?php $theme_lay = get_theme_mod( 'automobile_car_dealer_footer_options','Right');
-            if($theme_lay == 'Left align'){ ?>
-                <a href="#" id="scrollbutton" class="left"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automobile-car-dealer' ); ?></span></a>
-            <?php }else if($theme_lay == 'Center align'){ ?>
-                <a href="#" id="scrollbutton" class="center"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automobile-car-dealer' ); ?></span></a>
-            <?php }else{ ?>
-                <a href="#" id="scrollbutton"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'automobile-car-dealer' ); ?></span></a>
-        <?php }?>
+    <?php $theme_lay = get_theme_mod( 'automobile_car_dealer_footer_options','Right');
+        if($theme_lay == 'Left align'){ ?>
+            <a href="#" id="scrollbutton" class="left"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>
+        <?php }else if($theme_lay == 'Center align'){ ?>
+            <a href="#" id="scrollbutton" class="center"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>
+        <?php }else{ ?>
+            <a href="#" id="scrollbutton"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>
     <?php }?>
+<?php }?>
     <footer role="contentinfo">
         <?php //Set widget areas classes based on user choice
             $widget_areas = get_theme_mod('footer_widget_areas', '3');
