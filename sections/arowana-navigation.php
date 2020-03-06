@@ -10,7 +10,7 @@
 ?>
 <header id="header" role="banner">
 <!-- Navigation Starts -->
-	<div class="navbar-area normal-h <?php echo esc_attr(startkit_sticky_menu()); ?>">
+	<div class="navbar-area normal-h <?php echo esc_attr(startkit_sticky_menu()); ?> active-1">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-6 my-auto">
@@ -19,13 +19,13 @@
 				</div>
 			</div>
 			<!-- Nav -->
-			<div class="col-lg-6 d-none d-lg-block">
+			<div class="col-lg-6 d-none d-lg-block my-auto">
 				<nav class="text-right main-menu">
 					<?php startkit_navigation(); ?>
 				</nav>
 			</div>
 			<!-- Nav End -->
-			<div class="col-lg-3 col-6">
+			<div class="col-lg-3 col-6 my-auto">
 				<div class="header-right-bar">                            
 					<ul>
 						<?php if($cart_header_setting == '1') { ?>
@@ -51,8 +51,7 @@
                             <div class="mobile-menu">
                                 <nav class="mobile-menu-active">
                                     <?php startkit_navigation(); ?>
-                                </nav>
-                                
+                                </nav>                                
                             </div>
                         </div>
                     </div>

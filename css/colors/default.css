@@ -36,8 +36,9 @@ h2.site-title::first-letter,
 }
 
 /* 03. Custom Navigation */
-.main-menu ul li.active a,
-.main-menu ul li a:hover {
+.main-menu > ul > li.focus > a,
+.main-menu > ul > li.active > a,
+.main-menu > ul > li > a:hover {
     color: #ee591f  !important;
 }
 
@@ -137,7 +138,7 @@ a.book-now {
     background: #ee591f ;
 }
 
-.scrollup {
+.scrollup, .scrollup:focus {
     background-color: #ee591f ;
     border-color: #ee591f ;
 
