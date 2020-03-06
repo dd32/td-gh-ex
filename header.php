@@ -22,20 +22,15 @@
 <?php
 if ( function_exists( 'wp_body_open' ) ) {
     wp_body_open();
-}
+}?>
+<?php
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+$home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
 //$home_template = $accesspresslite_settings['accesspresslite_home_template'];
 ?>
 <div id="page" class="site">
-	<?php if(is_home() || is_front_page() ){ ?>
-	<a class="skip-link screen-reader-text" href="#home-content"><?php esc_html_e( 'Skip to content', 'accesspress-lite' ); ?></a>
-	<?php 
-	}else{?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-lite' ); ?></a>
-	<?php 
-	} ?>
 	<header id="masthead" class="site-header">
     <?php
         if($home_template == 'template_two' || $home_template == ''){

@@ -13,7 +13,7 @@
 	<?php 
 		$accesspresslite_options = accesspress_default_setting_value();
 		$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-        $home_template  = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+        $home_template  = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
 		if ( is_active_sidebar( 'footer-1' ) ||  is_active_sidebar( 'footer-2' )  || is_active_sidebar( 'footer-3' )  || is_active_sidebar( 'footer-4' ) ) : ?>
 		<div id="top-footer">
 		<div class="ak-container">

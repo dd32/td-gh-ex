@@ -1,7 +1,7 @@
 <?php 
 $accesspresslite_options  = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : 'Default';
+$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : '';
 $accesspresslite_welcome_post_id  = isset( $accesspresslite_settings[ 'welcome_post' ] ) ? $accesspresslite_settings[ 'welcome_post' ] : '';
 $accesspresslite_event_category  = isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
 $featured_section_title  = isset( $accesspresslite_settings[ 'featured_section_title' ] ) ? $accesspresslite_settings[ 'featured_section_title' ] : '';
@@ -293,9 +293,8 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
         		        		<div class="event-excerpt_two">
         		        			<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 100 )); ?>
         		        		</div>
-                                 <?php
-                                $show_eventdate  = isset( $accesspresslite_settings[ 'show_eventdate' ] ) ? $accesspresslite_settings[ 'show_eventdate' ] : 1;
-								if($show_eventdate == 1){  ?>
+                                 <?php 
+    						if($accesspresslite_settings['show_eventdate'] == 1){ ?>
     							<div class="event-date_two">
     							<span class="event-date-day_two"><?php echo get_the_date('j'); ?></span>
     							<span class="event-date-month_two"><?php echo get_the_date('M'); ?></span>

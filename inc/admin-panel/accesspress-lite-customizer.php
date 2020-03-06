@@ -159,17 +159,6 @@
             	'sanitize_callback'	=> 'accesspress_lite_sanitize_category_lists',
 			] );
 
-			Kirki::add_field( 'accesspress_lite_config', [
-				'type'        => 'text',
-				'settings'    => 'view_all_text',
-				'label'       => esc_html__( 'Testimonial View All Text', 'accesspress-lite' ),
-				'description' => esc_html__( 'Leave blank if you don\'t want to show View All Text', 'accesspress-lite' ),
-				'section'     => 'accesspress_lite_other',
-				'priority'    => 20,
-            	'default'	=> '',
-				'sanitize_callback' => 'sanitize_text_field',
-			] );
-
 		Kirki::add_section( 'accesspress_lite_footer_setting', array(
 		    'priority'    => 80,
 		    'title'          => esc_html__( 'Footer Setting', 'accesspress-lite' ),
@@ -845,6 +834,16 @@
 		    'priority'       => 10,
 		) );
 
+		Kirki::add_field( 'accesspress_lite_config', [
+				'type'        => 'text',
+				'settings'    => 'view_all_text',
+				'label'       => esc_html__( 'View All Text', 'accesspress-lite' ),
+				'description' => esc_html__( 'Leave blank if you don\'t want to show View All Text', 'accesspress-lite' ),
+				'section'     => 'accesspresslite_other_settings',
+				'priority'    => 20,
+            	'default'	=> '',
+				'sanitize_callback' => 'sanitize_text_field',
+			] );
     
     Kirki::add_section( 'accesspresslite_sc_icons_settings', array(
 		    'title'          => esc_html__( 'Social Icons Options', 'accesspress-lite' ),

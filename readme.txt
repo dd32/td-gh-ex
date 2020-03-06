@@ -65,10 +65,14 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+
+= 2.85 =
+** Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
+** Added Skip to Content Link
+
 = 2.84 =
 ** Added new welcome page and demo importer
 ** Removed theme options and Added Customizer options
-** Added Skip to Content link Options
 
 = 2.83 =
 ** Added Styles for Guttenberg Compatible

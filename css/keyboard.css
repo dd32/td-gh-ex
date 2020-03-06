@@ -9,7 +9,6 @@ a:focus{
 .bttn:focus{
     color:#FFF;
 }
-
 .navigation .nav-links a:focus,
 .bttn:focus,
 button:focus,
@@ -36,12 +35,12 @@ input[type="submit"]:focus {
 	background: #04A3ED;
 }
 
-.main-navigation ul ul li:focus > a {
+.main-navigation ul ul li:focus > a ,
+.main-navigation ul ul li.current-menu-item > a {
     color:#01AEFD;
 }
 
-.main-navigation ul li:focus > ul,
-.main-navigation ul li:focus-within > ul {
+.main-navigation ul li:focus > ul {
 	display: block;
 }
 

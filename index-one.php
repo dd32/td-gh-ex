@@ -2,7 +2,7 @@
 $accesspresslite_options = accesspress_default_setting_value();
 $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 
-$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : 'Default';
+$accesspresslite_layout  = isset( $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_page_layout' ] : '';
 $accesspresslite_welcome_post_id  = isset( $accesspresslite_settings[ 'welcome_post' ] ) ? $accesspresslite_settings[ 'welcome_post' ] : '';
 $accesspresslite_event_category  = isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
 $featured_section_title  = isset( $accesspresslite_settings[ 'featured_section_title' ] ) ? $accesspresslite_settings[ 'featured_section_title' ] : '';
@@ -118,7 +118,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						<?php } ?>
 						
 						<?php 
-						$show_eventdate  = isset( $accesspresslite_settings[ 'show_eventdate' ] ) ? $accesspresslite_settings[ 'show_eventdate' ] : 1;
+						$show_eventdate  = isset( $accesspresslite_settings[ 'show_eventdate' ] ) ? $accesspresslite_settings[ 'show_eventdate' ] : '';
 						if($show_eventdate == 1){ ?>
 							<div class="event-date">
 							<span class="event-date-day"><?php echo get_the_date('j'); ?></span>

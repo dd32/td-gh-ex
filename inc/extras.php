@@ -21,7 +21,7 @@ function accesspresslite_body_classes( $classes ) {
     $accesspresslite_options = accesspress_default_setting_value();
     $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
     //$home_template = $accesspresslite_settings['accesspresslite_home_template'];
-    $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+    $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
     if ($home_template == 'template_two' || $home_template == '') {
 		$classes[] = 'body_template_two';
 	}
@@ -159,7 +159,7 @@ function accesspresslite_scripts() {
 	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
 //    $layout_home = $accesspresslite_settings['accesspresslite_home_template'];
-    $layout_home            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+    $layout_home            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
 	$query_args = array(
 		'family' => 'Open+Sans:400,400italic,300italic,300,600,600italic|Lato:400,100,300,700|Roboto:400,300italic,300,700',
 	);
@@ -171,7 +171,7 @@ function accesspresslite_scripts() {
 	wp_enqueue_style( 'accesspresslite-woo-commerce-style', get_template_directory_uri() . '/css/woocommerce.css' );
 	wp_enqueue_style( 'accesspresslite-font-style', get_template_directory_uri() . '/css/fonts.css' );
 	wp_enqueue_style( 'accesspresslite-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'accesspress-lite-keyboard-css', get_template_directory_uri() . '/css/keyboard.css');
+	wp_enqueue_style( 'accesspresslite-keyboard', get_template_directory_uri() . '/css/keyboard.css' );
     if($layout_home == 'template_two' || $layout_home == ''){
         wp_enqueue_style('accesspresslite-templatetwo-style',get_template_directory_uri().'/css/template-two.css');
 
@@ -351,7 +351,7 @@ function accesspresslite_bxslidercb(){
 				speed:'<?php echo esc_attr($slider_speed); ?>',
 				<?php } ?>
                 <?php 
-                $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+                $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
                 if($home_template == 'template_two'|| $home_template == ''){ ?>
                 nextSelector: '#slider-next',
                 prevSelector: '#slider-prev',
@@ -490,7 +490,7 @@ function accesspresslite_call_to_action_cb()
 {
 	$accesspresslite_options = accesspress_default_setting_value();
 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-	$home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+	$home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
     //$home_template = $accesspresslite_settings['accesspresslite_home_template'];
     
 	if(!empty($accesspresslite_settings['action_text']))

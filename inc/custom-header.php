@@ -19,7 +19,7 @@ function accesspresslite_custom_header_setup() {
     $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
     //$home_template = $accesspresslite_settings['accesspresslite_home_template'];
 
-    $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : 'template_one';
+    $home_template            = isset( $accesspresslite_settings[ 'accesspresslite_home_template' ] ) ? $accesspresslite_settings[ 'accesspresslite_home_template' ] : '';
  
     if($home_template == 'template_one'){       
 		add_theme_support( 'custom-header', apply_filters( 'accesspresslite_custom_header_args', array(
