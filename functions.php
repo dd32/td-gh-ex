@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'BHAGA_VERSION', '1.0.0' );
+define( 'BHAGA_VERSION', '1.0.1' );
 
 if ( ! function_exists( 'bhaga_setup' ) ) {
 	add_action( 'after_setup_theme', 'bhaga_setup' );
@@ -120,9 +120,9 @@ require get_template_directory() . '/inc/structure/post-meta.php';
 require get_template_directory() . '/inc/structure/sidebars.php';
 require get_template_directory() . '/inc/structure/social-bar.php';
 
-define('BHAGA_THEME_URL','https://wpkoi.com/bhaga-wpkoi-wordpress-theme/','bhaga');
-define('BHAGA_WPKOI_AUTHOR_URL','https://wpkoi.com/','bhaga');
-define('BHAGA_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/','bhaga');
-define('BHAGA_WORDPRESS_REVIEW','https://wordpress.org/support/theme/bhaga/reviews/?filter=5','bhaga');
-define('BHAGA_DOCUMENTATION','https://wpkoi.com/docs/','bhaga');
-define('BHAGA_FONT_AWESOME_LINK','https://fontawesome.com/icons','bhaga');
+define('BHAGA_THEME_URL','https://wpkoi.com/bhaga-wpkoi-wordpress-theme/');
+define('BHAGA_WPKOI_AUTHOR_URL','https://wpkoi.com/');
+define('BHAGA_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/');
+define('BHAGA_WORDPRESS_REVIEW','https://wordpress.org/support/theme/bhaga/reviews/?filter=5');
+define('BHAGA_DOCUMENTATION','https://wpkoi.com/docs/');
+define('BHAGA_FONT_AWESOME_LINK','https://fontawesome.com/icons');
