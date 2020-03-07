@@ -2113,7 +2113,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 	}
 }
 
-if ( ! function_exists( 'arimolite' ) ) {
+if ( ! function_exists( 'tgmpa' ) ) {
 	/**
 	 * Helper function to register a collection of required plugins.
 	 *

@@ -42,7 +42,7 @@ function arimolite_enqueue_googlefonts()
         $font_families = array();
         if ( 'off' !== $Poppins ) $font_families[] = 'Poppins:300,500,600';
         $query_args = array('family' => urlencode(implode('|', $font_families)), 'subset' => urlencode('latin,latin-ext'));
-        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+        $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
     }
 
     wp_enqueue_style('arimolite-googlefonts', esc_url_raw($fonts_url), array(), null);
@@ -51,7 +51,7 @@ function arimolite_enqueue_googlefonts()
 add_action( 'enqueue_block_editor_assets', 'arimolite_enqueue_googlefonts' );
 
 # Enqueue Scripts
-add_action( 'wp_enqueue_scripts', 'arimolite_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'arimolite_load_scripts', 15 );
 function arimolite_load_scripts()
 {
     # CSS
@@ -62,7 +62,6 @@ function arimolite_load_scripts()
     wp_enqueue_style('arimolite-theme-style', get_theme_root_uri() . '/arimolite/assets/css/theme.css');
 
     # JS
-    wp_enqueue_script('jquery');
 	wp_enqueue_script('fitvids', ARIMOLITE_LIBS_URI . 'fitvids/fitvids.js', array(), false, true);
     wp_enqueue_script('chosen', ARIMOLITE_LIBS_URI . 'chosen/chosen.js', array(), false, true);
     wp_enqueue_script('arimolite-scripts', get_template_directory_uri() . '/assets/js/arimolite-scripts.js', array(), false, true);
@@ -77,7 +76,7 @@ function arimolite_load_scripts()
 add_action( 'widgets_init', 'arimolite_widgets_init' );
 function arimolite_widgets_init() {
     register_sidebar(array(
-		'name'            => esc_html__('Sidebar', 'arimolite'),
+		'name'            => __('Sidebar', 'arimolite'),
 		'id'              => 'sidebar',
 		'before_widget'   => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'    => '</div>',
@@ -85,7 +84,7 @@ function arimolite_widgets_init() {
 		'after_title'     => '</h4>'
 	));
     register_sidebar(array(
-		'name'            => esc_html__('Footer Instagram', 'arimolite'),
+		'name'            => __('Footer Instagram', 'arimolite'),
 		'id'              => 'footer-ins',
 		'before_widget'   => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'    => '</div>',
@@ -188,7 +187,7 @@ function arimolite_custom_comment($comment, $args, $depth) {
 function arimolite_pagination()
 {
     global $wp_query;
-    if ( (int)$wp_query->found_posts > (int)get_option('posts_per_page') ) : ?>
+    if ( get_the_posts_pagination() ) : ?>
     <div class="arimolite-pagination"><?php
         $args = array(
             'prev_text' => '<span class="fa fa-angle-left"></span>',
@@ -208,18 +207,17 @@ function arimolite_register_required_plugins()
 {
 	$plugins = array(
 		array(
-			'name'   => esc_html__('Contact Form 7', 'arimolite'),
+			'name'   => __('Contact Form 7', 'arimolite'),
 			'slug'   => 'contact-form-7'
 		),
         array(
-			'name'   => esc_html__('MailChimp for WordPress', 'arimolite'),
+			'name'   => __('MailChimp for WordPress', 'arimolite'),
 			'slug'   => 'mailchimp-for-wp'
 		),
         array(
-            'name'   => esc_html__('Arimolite Core', 'arimolite'),
+            'name'   => __('Arimolite Core', 'arimolite'),
             'slug'   => 'arimolite-core',
-            'source' => esc_url( 'https://plugins.theme-xoda.com/arimolite-core.zip' ),
-            'required' => true
+            'source' => esc_url( 'https://plugins.theme-xoda.com/arimolite-core.zip' )
         ),
 	);
 

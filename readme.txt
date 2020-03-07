@@ -1,6 +1,6 @@
 === ArimoLite ===
 
-Contributors: themexoda
+Contributors: Theme-XoDa
 Requires PHP: 5.6
 Requires at least: 5.0
 Tested up to: 5.2.1
@@ -11,11 +11,11 @@ Tags: blog, news, photography,custom-colors, custom-background, custom-logo, cus
 == Description ==
 
 Minimal & Modern Blog WordPress Theme
-Get FREE SUPPORT: http://theme-xoda.net and LIVE DEMO: http://arimolite.theme-xoda.net
+Get FREE SUPPORT: http://theme-xoda.com and LIVE DEMO: http://arimolite.theme-xoda.com
 
 == Copyright and License ==
 
-ArimoLite Blog WordPress Theme, Copyright (C) 2019, themexoda.
+ArimoLite Blog WordPress Theme, Copyright (C) 2019, Theme-XoDa.
 ArimoLite Blog is distributed under the terms of the GNU GPL
 
 == Credits ==
