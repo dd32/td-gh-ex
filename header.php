@@ -22,6 +22,7 @@
 </head>
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<?php wp_body_open(); ?>
 <div id="page" class="hfeed site fullwidth ">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'article-lite' ); ?></a>
 
@@ -46,7 +47,7 @@
 			<!-- social navigation -->
 	
 
-			<nav id="site-navigation" class="main-navigation"">
+			<nav id="site-navigation" class="main-navigation">
 				<div class="toggle-container visible-xs visible-sm hidden-md hidden-lg">
                     <button class="menu-toggle"><?php esc_html_e( 'Menu', 'article-lite' ); ?></button>
                 </div>

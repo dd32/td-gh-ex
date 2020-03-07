@@ -15,7 +15,7 @@
     
     if ( has_post_thumbnail() ) {        
         echo '<div class="featured-image-wrapper">';
-        the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title(), 'itemprop' => "image"));
+        the_post_thumbnail( 'post-thumbnail' );
         echo '</div>';
     }
     ?>

@@ -7,7 +7,7 @@
  * @package Article Lite
  */
 
-if ( ! function_exists( 'article_lite_lite_setup' ) ) :
+if ( ! function_exists( 'article_lite_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'article_lite_lite_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function article_lite_lite_setup() {
+	function article_lite_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -113,7 +113,7 @@ if ( ! function_exists( 'article_lite_lite_setup' ) ) :
 
 	}
 endif;
-add_action( 'after_setup_theme', 'article_lite_lite_setup' );
+add_action( 'after_setup_theme', 'article_lite_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
