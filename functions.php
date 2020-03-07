@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'ARAVAN_VERSION', '1.0.0' );
+define( 'ARAVAN_VERSION', '1.0.1' );
 
 if ( ! function_exists( 'aravan_setup' ) ) {
 	add_action( 'after_setup_theme', 'aravan_setup' );
@@ -120,9 +120,9 @@ require get_template_directory() . '/inc/structure/post-meta.php';
 require get_template_directory() . '/inc/structure/sidebars.php';
 require get_template_directory() . '/inc/structure/social-bar.php';
 
-define('ARAVAN_THEME_URL','https://wpkoi.com/aravan-wpkoi-wordpress-theme/','aravan');
-define('ARAVAN_WPKOI_AUTHOR_URL','https://wpkoi.com/','aravan');
-define('ARAVAN_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/','aravan');
-define('ARAVAN_WORDPRESS_REVIEW','https://wordpress.org/support/theme/aravan/reviews/?filter=5','aravan');
-define('ARAVAN_DOCUMENTATION','https://wpkoi.com/docs/','aravan');
-define('ARAVAN_FONT_AWESOME_LINK','https://fontawesome.com/icons','aravan');
+define('ARAVAN_THEME_URL','https://wpkoi.com/aravan-wpkoi-wordpress-theme/');
+define('ARAVAN_WPKOI_AUTHOR_URL','https://wpkoi.com/');
+define('ARAVAN_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/');
+define('ARAVAN_WORDPRESS_REVIEW','https://wordpress.org/support/theme/aravan/reviews/?filter=5');
+define('ARAVAN_DOCUMENTATION','https://wpkoi.com/docs/');
+define('ARAVAN_FONT_AWESOME_LINK','https://fontawesome.com/icons');
