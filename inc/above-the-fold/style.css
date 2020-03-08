@@ -1,0 +1,175 @@
+header#title-and-image,
+header#blog-title-and-image {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #eeeeee;
+    height: 35em;
+    overflow: hidden;
+    position: relative;
+    text-shadow: .05em -.05em .05em #2c2e32;
+}
+
+header#title-and-image img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+header h2.header-text {
+    bottom: -.275em;
+    font-size: 5em;
+    line-height: 1em;
+    padding: 0 0 0 5%;
+    position: absolute;
+    max-height: 1em;
+    overflow: hidden;
+    text-align: left;
+    width: 100vw;
+}
+
+header h2.header-text span.woo-commerce-product-price {
+    background: #ffffff;
+    display: inline-block;
+    font-family: 'Abril Fatface', cursive;
+    font-size: .6em;
+    height: 3.2em;
+    margin: .1em .7em .1em .1em;
+    position: relative;
+    top: 1.3em;
+    width: 3.2em;
+    z-index: 3;
+}
+
+header h2.header-text span.woo-commerce-product-price:before,
+header h2.header-text span.woo-commerce-product-price:after {
+    background: #ffffff;
+    content: "";
+    height: 3.2em;
+    left: -.1em;
+    margin: .1em;
+    position: absolute;
+    top: -.1em;
+    width: 3.2em;
+    z-index: -1;
+}
+
+header h2.header-text span.woo-commerce-product-price:before,
+header h2.header-text span.woo-commerce-product-price:before {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+header h2.header-text span.woo-commerce-product-price:after,
+header h2.header-text span.woo-commerce-product-price:after {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+header h2.header-text span.woo-commerce-product-price span {
+    background: #c52b30;
+    color: #ffffff;
+    display: block;
+    height: 3em;
+    line-height: 3em;
+    margin: .1em;
+    position: absolute;
+    text-shadow: .05em .05em .05em #111111;
+    width: 3em;
+    z-index: 3;
+}
+
+header h2.header-text span.woo-commerce-product-price span:before,
+header h2.header-text span.woo-commerce-product-price span:after {
+    background: #c52b30;
+    content: "";
+    height: 3em;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 3em;
+    z-index: -1;
+}
+
+header h2.header-text span.woo-commerce-product-price span:before,
+header h2.header-text span.woo-commerce-product-price span:before {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+header h2.header-text span.woo-commerce-product-price span:after,
+header h2.header-text span.woo-commerce-product-price span:after {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    -o-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+header#title-and-image div.customizer-tite-image,
+header#blog-title-and-image div.customizer-tite-image, {
+    bottom: 3em;
+    left: 2.5em;
+    position: absolute;
+    z-index: 10;
+}
+
+header#title-and-image div.customizer-tite-image-2,
+header#blog-title-and-image div.customizer-tite-image-2 {
+    left: 2.5em;
+    position: absolute;
+    top: 3em;
+    z-index: 10;
+}
+
+header#title-and-image div.customizer-tite-image-3,
+header#blog-title-and-image div.customizer-tite-image-3 {
+    left: 6em;
+    position: absolute;
+    top: 3em;
+    z-index: 10;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    header#title-and-image img {
+        height: auto;
+        left: 66%;
+        position: absolute;
+        min-height: 100%;
+        min-width: 135%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+    }
+    
+}
+
+@supports (-ms-ime-align: auto) {
+
+    header#title-and-image img {
+        height: auto;
+        left: 66%;
+        position: absolute;
+        min-height: 100%;
+        min-width: 135%;
+        top: 50%;
+        transform: translate(-66%, -50%);
+        width: auto;
+    }
+    
+}
