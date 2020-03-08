@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.4.2 =
+** Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
+** Added Skip Link Content
+
 = 2.4.1 =
 ** Fixed dynamic issues
 ** fixed minor bugs

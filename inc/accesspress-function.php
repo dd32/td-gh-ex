@@ -180,6 +180,8 @@ function accesspress_store_scripts() {
 
 	wp_enqueue_style( 'accesspress-store-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'accesspress-store-keyboard', get_template_directory_uri() . '/css/keyboard.css' );
+
 	wp_enqueue_style( 'accesspress-store-minify-style', get_template_directory_uri() . '/css/responsive.css');		
 	
 	wp_enqueue_script( 'accesspress-store-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

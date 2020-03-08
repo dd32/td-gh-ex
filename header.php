@@ -16,8 +16,12 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+}?> 
 <div id="page" class="hfeed site">
-
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'accesspress-store' ); ?></a>
 <?php
     $header_layout = esc_attr( get_theme_mod( 'accesspress_header_layout_type', 'headertwo' ) );
     if( $header_layout == 'headerone' ){
