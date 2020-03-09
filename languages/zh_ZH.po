@@ -2,12 +2,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-01-30 12:05+0530\n"
+"PO-Revision-Date: 2020-03-07 10:39+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -47,60 +47,55 @@ msgstr "评论被关闭。"
 msgid "Copyright 2018"
 msgstr "版权2018"
 
-#: footer.php:62
-#: footer.php:62
-#: footer.php:64
-#: footer.php:64
-#: footer.php:66
-#: footer.php:66
+#: footer.php:62 footer.php:64 footer.php:66
 msgid "Back to Top"
 msgstr "回到顶部"
 
-#: header.php:21
+#: header.php:22
 msgid "Skip to content"
 msgstr "跳到内容"
 
-#: header.php:28
+#: header.php:29
 msgid "Facebook"
 msgstr "脸书"
 
-#: header.php:31
+#: header.php:32
 msgid "Twitter"
 msgstr "推特"
 
-#: header.php:34
-msgid "Google plus"
-msgstr "谷歌加"
+#: header.php:35
+msgid "Tumblr"
+msgstr "Tumblr"
 
-#: header.php:37
+#: header.php:38
 msgid "Pinterest"
 msgstr "Pinterest的"
 
-#: header.php:40
+#: header.php:41
 msgid "Linkedin"
 msgstr "领英"
 
-#: header.php:43
+#: header.php:44
 msgid "Instagram"
 msgstr "Instagram的"
 
-#: header.php:46
+#: header.php:47
 msgid "Youtube"
 msgstr "优酷"
 
-#: header.php:90
+#: header.php:94
 msgid "Open Menu"
 msgstr "开启选单"
 
-#: header.php:93
+#: header.php:97
 msgid "Top Menu"
 msgstr "顶部菜单"
 
-#: header.php:94
+#: header.php:98
 msgid "Close Menu"
 msgstr "关闭选单"
 
-#: header.php:110
+#: header.php:114
 msgid "CART"
 msgstr "大车"
 
@@ -197,8 +192,7 @@ msgstr "<i class =“ fas fa-chevron-left”> </ i>上一篇文章"
 msgid "Previous post"
 msgstr "上一篇"
 
-#: functions.php:32
-#: functions.php:104
+#: functions.php:32 functions.php:104
 msgid "Primary Menu"
 msgstr "主菜单"
 
@@ -230,11 +224,11 @@ msgstr "主页侧边栏"
 msgid "Footer Nav "
 msgstr "页脚导航"
 
-#: functions.php:477
+#: functions.php:511
 msgid "Blogging WordPress Theme"
 msgstr "博客WordPress主题"
 
-#: page-template/custom-frontpage.php:118 template-parts/content-audio.php:38
+#: page-template/custom-frontpage.php:128 template-parts/content-audio.php:38
 #: template-parts/content-gallery.php:28 template-parts/content-image.php:32
 #: template-parts/content-video.php:53 template-parts/content.php:37
 #: template-parts\grid-layout.php:22
@@ -244,6 +238,26 @@ msgstr "阅读更多"
 #: template-parts\single-post.php:15
 msgid "0 Comment"
 msgstr "0条留言"
+
+#: page-template\custom-frontpage.php:61
+msgid "Previous"
+msgstr "以前"
+
+#: page-template\custom-frontpage.php:64
+msgid "Next"
+msgstr "下一个"
+
+#: inc/logo/logo-width.php:19
+msgid "Logo Width"
+msgstr "徽标宽度"
+
+#: inc/logo/logo-width.php:41
+msgid "Show / Hide Site Title"
+msgstr "显示/隐藏网站标题"
+
+#: inc/logo/logo-width.php:51
+msgid "Show / Hide Site Description"
+msgstr "显示/隐藏网站说明"
 
 #: inc/customizer.php:38
 msgid "Theme Settings"
@@ -430,8 +444,8 @@ msgid "Add Twitter link"
 msgstr "添加Twitter链接"
 
 #: inc/customizer.php:570
-msgid "Add Google Plus link"
-msgstr "添加Google Plus链接"
+msgid "Add Tumblr link"
+msgstr "添加Tumblr链接"
 
 #: inc/customizer.php:581
 msgid "Add Pinterest link"
@@ -461,103 +475,143 @@ msgstr "显示/隐藏滑块"
 msgid "Select Slide Image Page"
 msgstr "选择幻灯片图像页面"
 
-#: inc/customizer.php:662
-msgid "Category Post"
-msgstr "分类发布"
+#: inc/customizer.php:666
+msgid "Show / Hide slider Title"
+msgstr "显示/隐藏滑块标题"
 
-#: inc/customizer.php:663
-msgid "This section will appear below the slider."
-msgstr "此部分将显示在滑块下方。"
+#: inc/customizer.php:676
+msgid "Show / Hide slider Content"
+msgstr "显示/隐藏滑块内容"
 
-#: inc/customizer.php:693 inc/customizer.php:731
-msgid "Select Category to display Latest Post"
-msgstr "选择类别以显示最新帖子"
+#: inc/customizer.php:689
+msgid "Slider Excerpt length"
+msgstr "滑块摘录长度"
 
-#: inc/customizer.php:700
-msgid "Latest Post"
-msgstr "最新的帖子"
-
-#: inc/customizer.php:701
-msgid "This section will appear below the category post."
-msgstr "此部分将显示在类别帖子下方。"
-
-#: inc/customizer.php:737
-msgid "Post Settings"
-msgstr "发布设置"
-
-#: inc/customizer.php:747
-msgid "Enable / Disable Post Date"
-msgstr "启用/禁用发布日期"
-
-#: inc/customizer.php:757
-msgid "Enable / Disable Post Author"
-msgstr "启用/禁用帖子作者"
-
-#: inc/customizer.php:767
-msgid "Enable / Disable Post Comments"
-msgstr "启用/禁用帖子评论"
-
-#: inc/customizer.php:773
-msgid "Footer Text"
-msgstr "页脚文字"
-
-#: inc/customizer.php:774
-msgid "This section will appear in the footer."
-msgstr "此部分将显示在页脚中。"
-
-#: inc/customizer.php:792
-msgid "Show/Hide Back to Top Button"
-msgstr "显示/隐藏返回顶部按钮"
-
-#: inc/customizer.php:797
-#: inc/customizer.php:806
-msgid "Right"
-msgstr "对"
-
-#: inc/customizer.php:802
-msgid "Back to Top Button Alignment"
-msgstr "返回页首按钮对齐"
-
-#: inc/customizer.php:805
+#: inc/customizer.php:702 inc/customizer.php:711 inc/customizer.php:759
+#: inc/customizer.php:954
 msgid "Left"
 msgstr "剩下"
 
-#: inc/customizer.php:807
+#: inc/customizer.php:707
+msgid "Slider Content Alignment"
+msgstr "滑块内容对齐"
+
+#: inc/customizer.php:710 inc/customizer.php:746
 msgid "Center"
 msgstr "中央"
 
-#: inc/customizer.php:817
+#: inc/customizer.php:712 inc/customizer.php:774 inc/customizer.php:936
+#: inc/customizer.php:945
+msgid "Right"
+msgstr "对"
+
+#: inc/customizer.php:720
+msgid "Slider Content Spacing"
+msgstr "滑块内容间距"
+
+#: inc/customizer.php:729
+msgid "Top"
+msgstr "最佳"
+
+#: inc/customizer.php:744
+msgid "Bottom"
+msgstr "底部"
+
+#: inc/customizer.php:789
+msgid "Slider Speed"
+msgstr "滑块速度"
+
+#: inc/customizer.php:801
+msgid "Category Post"
+msgstr "分类发布"
+
+#: inc/customizer.php:802
+msgid "This section will appear below the slider."
+msgstr "此部分将显示在滑块下方。"
+
+#: inc/customizer.php:832 inc/customizer.php:870
+msgid "Select Category to display Latest Post"
+msgstr "选择类别以显示最新帖子"
+
+#: inc/customizer.php:833
+msgid "Category Image Size (300x225 )"
+msgstr "类别图片大小（300x225）"
+
+#: inc/customizer.php:839
+msgid "Latest Post"
+msgstr "最新的帖子"
+
+#: inc/customizer.php:840
+msgid "This section will appear below the category post."
+msgstr "此部分将显示在类别帖子下方。"
+
+#: inc/customizer.php:876
+msgid "Post Settings"
+msgstr "发布设置"
+
+#: inc/customizer.php:886
+msgid "Enable / Disable Post Date"
+msgstr "启用/禁用发布日期"
+
+#: inc/customizer.php:896
+msgid "Enable / Disable Post Author"
+msgstr "启用/禁用帖子作者"
+
+#: inc/customizer.php:906
+msgid "Enable / Disable Post Comments"
+msgstr "启用/禁用帖子评论"
+
+#: inc/customizer.php:912
+msgid "Footer Section"
+msgstr "页脚部分"
+
+#: inc/customizer.php:913
+msgid "This section will appear in the footer."
+msgstr "此部分将显示在页脚中。"
+
+#: inc/customizer.php:931
+msgid "Show/Hide Back to Top Button"
+msgstr "显示/隐藏返回顶部按钮"
+
+#: inc/customizer.php:941
+msgid "Back to Top Button Alignment"
+msgstr "返回页首按钮对齐"
+
+#: inc/customizer.php:956
 msgid "Footer widget layout"
 msgstr "页脚小部件布局"
 
-#: inc/customizer.php:819
-msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
-msgstr "在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加您的小部件。"
+#: inc/customizer.php:958
+msgid ""
+"Select the number of widget areas you want in the footer. After that, go to "
+"Appearance > Widgets and add your widgets."
+msgstr ""
+"在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加您的小部件。"
 
-#: inc/customizer.php:821
+#: inc/customizer.php:960
 msgid "One"
 msgstr "一"
 
-#: inc/customizer.php:822
+#: inc/customizer.php:961
 msgid "Two"
 msgstr "二"
 
-#: inc/customizer.php:823
+#: inc/customizer.php:962
 msgid "Three"
 msgstr "三"
 
-#: inc/customizer.php:824
+#: inc/customizer.php:963
 msgid "Four"
 msgstr "四个"
 
-#: inc/customizer.php:841
+#: inc/customizer.php:980
 msgid "Text"
 msgstr "文本"
 
-#: inc/customizer.php:927
+#: inc/customizer.php:1066
 msgid "Advance Blogging"
 msgstr "高级博客"
 
-#: inc/customizer.php:928
+#: inc/customizer.php:1067
 msgid "Go Pro"
 msgstr "专业版"

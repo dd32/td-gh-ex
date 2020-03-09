@@ -13,3 +13,18 @@
 	margin-left:  0;
 	margin-right: 8px;
 }
+
+input#_customize-input-advance_blogging_content_spacing{
+	display: none;
+}
+li#customize-control-advance_blogging_button_padding{
+	margin: 0;
+}
+li#customize-control-advance_blogging_slider_top_spacing,
+li#customize-control-advance_blogging_slider_bottom_spacing,
+li#customize-control-advance_blogging_slider_left_spacing,
+li#customize-control-advance_blogging_slider_right_spacing {
+    width: 20%;
+    clear: none;
+    margin-right: 10px;
+}

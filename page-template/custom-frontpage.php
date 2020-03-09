@@ -17,7 +17,7 @@ get_header(); ?>
 				<div class="col-lg-8 col-md-8 p-0">
 					<?php if( get_theme_mod('advance_blogging_slider_arrows') != ''){?>
 						<div class="slider">
-						  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+						  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod( 'advance_blogging_slider_speed',3000)) ?>"> 
 							    <?php $slider_pages = array();
 							      for ( $count = 1; $count <= 4; $count++ ) {
 							        $mod = intval( get_theme_mod( 'advance_blogging_slider_page' . $count ));
@@ -41,8 +41,12 @@ get_header(); ?>
 							            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
 		          				        <div class="carousel-caption">
 								            <div class="inner_carousel">
-								              <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
-								              <p><?php the_excerpt(); ?></p>
+								            	<?php if( get_theme_mod('advance_blogging_slider_title',true) != ''){ ?>
+								            		<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>
+								            	<?php }?>
+								                <?php if( get_theme_mod('advance_blogging_slider_content',true) != ''){ ?>
+								                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_blogging_string_limit_words( $excerpt,esc_attr(get_theme_mod('advance_blogging_slider_excerpt','35')) ) ); ?></p>
+								                <?php }?>
 								            </div>
 								        </div>
 							        </div>

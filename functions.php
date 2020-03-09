@@ -419,6 +419,40 @@ function advance_blogging_scripts() {
 		$custom_css .='}';
 	}
 
+	/*-------------Slider Content Layout ------------*/
+
+	$slider_layout = get_theme_mod( 'advance_blogging_slider_content_option','Left');
+    if($slider_layout == 'Left'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .read-btn{';
+			$custom_css .='text-align:left;';
+		$custom_css .='}';
+	}else if($slider_layout == 'Center'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .read-btn{';
+			$custom_css .='text-align:center;';
+		$custom_css .='}';
+		$custom_css .='#slider .inner_carousel{';
+			$custom_css .='padding-left:0; border-left:0;';
+		$custom_css .='}';
+	}else if($slider_layout == 'Right'){
+		$custom_css .='#slider .carousel-caption, #slider .inner_carousel, #slider .inner_carousel h1, #slider .inner_carousel p, #slider .read-btn{';
+			$custom_css .='text-align:right;';
+		$custom_css .='}';
+		$custom_css .='#slider .inner_carousel{';
+			$custom_css .='padding-left:0; border-left:0; padding-right:15px; border-right: solid 3px #db0607;';
+		$custom_css .='}';
+	}
+
+	/* Slider content spacing */
+	$top_spacing = get_theme_mod('advance_blogging_slider_top_spacing');
+	$bottom_spacing = get_theme_mod('advance_blogging_slider_bottom_spacing');
+	$left_spacing = get_theme_mod('advance_blogging_slider_left_spacing');
+	$right_spacing = get_theme_mod('advance_blogging_slider_right_spacing');
+	if($top_spacing != false || $bottom_spacing != false || $left_spacing != false || $right_spacing != false){
+		$custom_css .='#slider .inner_carousel{';
+			$custom_css .='margin-top: '.esc_html($top_spacing).'px; margin-bottom: '.esc_html($bottom_spacing).'px; margin-left: '.esc_html($left_spacing).'px; margin-right: '.esc_html($right_spacing).'px;';
+		$custom_css .='}';
+	}
+
 	wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
 	wp_enqueue_script( 'advance-blogging-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'jquery-superfish', get_template_directory_uri() . '/js/jquery.superfish.js', array('jquery') ,'',true);

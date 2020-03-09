@@ -562,14 +562,14 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'	=> 'url'
 	));
 
-	$wp_customize->add_setting('advance_blogging_googleplus_url',array(
+	$wp_customize->add_setting('advance_blogging_tumblr_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
 	));	
-	$wp_customize->add_control('advance_blogging_googleplus_url',array(
-		'label'	=> __('Add Google Plus link','advance-blogging'),
+	$wp_customize->add_control('advance_blogging_tumblr_url',array(
+		'label'	=> __('Add Tumblr link','advance-blogging'),
 		'section'	=> 'advance_blogging_topbar_header',
-		'setting'	=> 'advance_blogging_googleplus_url',
+		'setting'	=> 'advance_blogging_tumblr_url',
 		'type'	=> 'url'
 	));
 
@@ -657,6 +657,145 @@ function advance_blogging_customize_register( $wp_customize ) {
 		) );
 	}
 
+	$wp_customize->add_setting('advance_blogging_slider_title',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_slider_title',array(
+	   'type' => 'checkbox',
+	   'label' => __('Show / Hide slider Title','advance-blogging'),
+	   'section' => 'advance_blogging_slider_section',
+	));
+
+	$wp_customize->add_setting('advance_blogging_slider_content',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_slider_content',array(
+	   'type' => 'checkbox',
+	   'label' => __('Show / Hide slider Content','advance-blogging'),
+	   'section' => 'advance_blogging_slider_section',
+	));
+
+    //Slider excerpt
+	$wp_customize->add_setting( 'advance_blogging_slider_excerpt', array(
+		'default'              => 35,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'advance_blogging_slider_excerpt', array(
+		'label' => esc_html__( 'Slider Excerpt length','advance-blogging' ),
+		'section'     => 'advance_blogging_slider_section',
+		'type'        => 'number',
+		'settings'    => 'advance_blogging_slider_excerpt',
+		'input_attrs' => array(
+			'step' => 1,
+			'min' => 0,
+			'max' => 50,
+		),
+	) );
+
+	//content Alignment
+    $wp_customize->add_setting('advance_blogging_slider_content_option',array(
+    	'default' => __('Left','advance-blogging'),
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_blogging_slider_content_option',array(
+        'type' => 'select',
+        'label' => __('Slider Content Alignment','advance-blogging'),
+        'section' => 'advance_blogging_slider_section',
+        'choices' => array(
+            'Center' => __('Center','advance-blogging'),
+            'Left' => __('Left','advance-blogging'),
+            'Right' => __('Right','advance-blogging'),
+        ),
+	) );
+
+	$wp_customize->add_setting('advance_blogging_content_spacing',array(
+		'sanitize_callback'	=> 'esc_html'
+	));
+	$wp_customize->add_control('advance_blogging_content_spacing',array(
+		'label'	=> esc_html__('Slider Content Spacing','advance-blogging'),
+		'section'=> 'advance_blogging_slider_section',
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_slider_top_spacing', array(
+		'default'  => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_slider_top_spacing', array(
+		'label' => esc_html__( 'Top','advance-blogging' ),
+		'section' => 'advance_blogging_slider_section',
+		'type'  => 'number',
+		'input_attrs' => array(
+			'step' => 1,
+			'min' => 0,
+			'max' => 100,
+		),
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_slider_bottom_spacing', array(
+		'default'  => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_slider_bottom_spacing', array(
+		'label' => esc_html__( 'Bottom','advance-blogging' ),
+		'section' => 'advance_blogging_slider_section',
+		'type'  => 'number',
+		'input_attrs' => array(
+			'step' => 1,
+			'min' => 0,
+			'max' => 100,
+		),
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_slider_left_spacing', array(
+		'default'  => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_slider_left_spacing', array(
+		'label' => esc_html__( 'Left','advance-blogging'),
+		'section' => 'advance_blogging_slider_section',
+		'type'  => 'number',
+		'input_attrs' => array(
+			'step' => 1,
+			'min' => 0,
+			'max' => 100,
+		),
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_slider_right_spacing', array(
+		'default'  => '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_slider_right_spacing', array(
+		'label' => esc_html__('Right','advance-blogging'),
+		'section' => 'advance_blogging_slider_section',
+		'type'  => 'number',
+		'input_attrs' => array(
+			'step' => 1,
+			'min' => 0,
+			'max' => 100,
+		),
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_slider_speed', array(
+		'default'  => 3000,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_slider_speed', array(
+		'label' => esc_html__('Slider Speed','advance-blogging'),
+		'section' => 'advance_blogging_slider_section',
+		'type'  => 'number',
+		'input_attrs' => array(
+			'step' => 500,
+			'min' => 500,
+			'max' => 5000,
+		),
+	) );
+
 	// Category Post
 	$wp_customize->add_section('advance_blogging_category_post',array(
 		'title'	=> __('Category Post','advance-blogging'),
@@ -691,7 +830,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'    => 'select',
 		'choices' => $cats,
 		'label' => __('Select Category to display Latest Post','advance-blogging'),
-			'description' => 'Category Image Size (300x225 )',
+			'description' => __('Category Image Size (300x225 )', 'advance-blogging'),
 		'section' => 'advance_blogging_category_post',
 	));
 

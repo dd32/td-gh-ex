@@ -31,8 +31,8 @@
               <?php if( get_theme_mod( 'advance_blogging_twitter_url' ) != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-blogging' );?></span></a>
               <?php } ?>
-              <?php if( get_theme_mod( 'advance_blogging_googleplus_url' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_googleplus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google plus','advance-blogging' );?></span></a>
+              <?php if( get_theme_mod( 'advance_blogging_tumblr_url' ) != '') { ?>
+                <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_tumblr_url','' ) ); ?>"><i class="fab fa-tumblr"></i><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr','advance-blogging' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_blogging_pinterest_url' ) != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','advance-blogging' );?></span></a>
@@ -64,7 +64,8 @@
       <div class="logo">
         <?php if ( has_custom_logo() ) : ?>
           <div class="site-logo"><?php the_custom_logo(); ?></div>
-        <?php else: ?>
+        <?php endif; ?>
+        <?php if( get_theme_mod( 'advance_blogging_site_title',true) != '') { ?>
           <?php $blog_info = get_bloginfo( 'name' ); ?>
           <?php if ( ! empty( $blog_info ) ) : ?>
             <?php if ( is_front_page() && is_home() ) : ?>
@@ -73,6 +74,8 @@
               <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
             <?php endif; ?>
           <?php endif; ?>
+        <?php }?>
+        <?php if( get_theme_mod( 'advance_blogging_site_tagline',true) != '') { ?>
           <?php
           $description = get_bloginfo( 'description', 'display' );
           if ( $description || is_customize_preview() ) :
@@ -81,7 +84,7 @@
               <?php echo esc_html($description); ?>
             </p>
           <?php endif; ?>
-        <?php endif; ?>
+        <?php }?>
       </div>
       <div class="<?php if( get_theme_mod( 'advance_blogging_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
         <div class="container">
