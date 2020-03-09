@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.5.3
+Stable tag: 0.5.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -92,6 +92,11 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Added border radius and button Padding option for home page and blog page in customizer.
 * Added show and hide preloader option in customizer.
 * Added Arabic, Chinese, French, German, Spanish, Italian, Japanese, Russian, and Turkish languages files.
+
+= 0.5.4 =
+* Added setting for 404 page title, 404 page content and 404 page button text.
+* Added responsive setting for mobile media.
+* Added show / hide option for product page and single product page sidebar.
 
 == Resources ==
 
