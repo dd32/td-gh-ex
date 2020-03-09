@@ -120,6 +120,26 @@ function advance_fitness_gym_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	));
+
+	register_sidebar( array(
+		'name'          => __( 'Shop Page Sidebar', 'advance-fitness-gym' ),
+		'description'   => __( 'Appears on shop page', 'advance-fitness-gym' ),
+		'id'            => 'woocommerce_sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Single Product Page Sidebar', 'advance-fitness-gym' ),
+		'description'   => __( 'Appears on shop page', 'advance-fitness-gym' ),
+		'id'            => 'woocommerce-single-sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 add_action('widgets_init', 'advance_fitness_gym_widgets_init');
