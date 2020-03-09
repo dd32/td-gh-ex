@@ -4,11 +4,11 @@ Author: ThemeArile
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.5
-Version: 2.0.5
+Stable tag: 2.0.6
+Version: 2.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns ,right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
 
 == Description ==
 
@@ -52,6 +52,9 @@ License: MIT (http://opensource.org/licenses/MIT)
 License: CC0 Public Domain
 
 == Changelog ==
+
+= Version 2.0.6
+* Fixed the bottom space of input drop down box in the blog post.
 
 = Version 2.0.5
 * Fixed slider selective refresh issue in the customizer.
