@@ -18,10 +18,19 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' ); ?>
+
+<?php
+ $advance_education_shop_page_sidebar = get_theme_mod( 'advance_education_shop_page_sidebar',true );
+ if ( false == $advance_education_shop_page_sidebar ) {
+   $colmd = 'col-lg-12 col-md-12';
+ } else { 
+   $colmd = 'col-lg-8 col-md-8';
+ } 
+?>
 	<div class="container">
 		<main role="main" id="maincontent">
 			<div class="row m-0">
-				<div class="col-lg-8 col-md-8">
+				<div class="<?php echo esc_html( $colmd ); ?>">
 					<?php
 						/**
 						 * Hook: woocommerce_before_main_content.
@@ -102,16 +111,11 @@ get_header( 'shop' ); ?>
 					do_action( 'woocommerce_after_main_content' );?>
 
 				</div>
-				<div class="col-lg-4 col-md-4">
-					<?php
-						/**
-						 * Hook: woocommerce_sidebar.
-						 *
-						 * @hooked woocommerce_get_sidebar - 10
-						 */
-						do_action( 'woocommerce_sidebar' );
-					?>
-				</div>
+				<?php if ( false != $advance_education_shop_page_sidebar ) {?>
+					<div class="col-lg-4 col-md-4" id="sidebar">
+						<?php dynamic_sidebar('woocommerce_sidebar'); ?>
+					</div>
+				<?php } ?>
 			</div>
 		</main>
 	</div>

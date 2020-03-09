@@ -64,7 +64,7 @@
   <?php } ?>
 </header>
 
-<div class="<?php if( get_theme_mod( 'advance_education_sticky_header') != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+<div class="<?php if( get_theme_mod( 'advance_education_sticky_header') != '' || get_theme_mod( 'advance_education_responsive_sticky_header') != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
   <div class="toggle-menu responsive-menu">
     <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
   </div>

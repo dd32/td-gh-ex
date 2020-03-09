@@ -12,31 +12,100 @@
  */
 function advance_education_customize_register($wp_customize) {
 
-	//add home page setting pannel
-	$wp_customize->add_panel('advance_education_panel_id', array(
-		'priority'       => 10,
-		'capability'     => 'edit_theme_options',
-		'theme_supports' => '',
-		'title'          => __('Theme Settings', 'advance-education'),
-		'description'    => __('Description of what this panel does.', 'advance-education'),
-	));	
-
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_education_theme_color_option', array( 
-		'panel' => 'advance_education_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'advance-education' ) 
-	) );
-
-  	$wp_customize->add_setting( 'advance_education_theme_color', array(
-	    'default' => '#cc3333',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_theme_color', array(
-  		'label' => 'Color Option',
-	    'description' => __('One can change complete theme color on just one click.', 'advance-education'),
-	    'section' => 'advance_education_theme_color_option',
-	    'settings' => 'advance_education_theme_color',
-  	)));
+	// font array
+	$font_array = array(
+        '' => 'No Fonts',
+        'Abril Fatface' => 'Abril Fatface',
+        'Acme' => 'Acme',
+        'Anton' => 'Anton',
+        'Architects Daughter' => 'Architects Daughter',
+        'Arimo' => 'Arimo',
+        'Arsenal' => 'Arsenal', 
+        'Arvo' => 'Arvo',
+        'Alegreya' => 'Alegreya',
+        'Alfa Slab One' => 'Alfa Slab One',
+        'Averia Serif Libre' => 'Averia Serif Libre',
+        'Bangers' => 'Bangers', 
+        'Boogaloo' => 'Boogaloo',
+        'Bad Script' => 'Bad Script',
+        'Bitter' => 'Bitter',
+        'Bree Serif' => 'Bree Serif',
+        'BenchNine' => 'BenchNine', 
+        'Cabin' => 'Cabin', 
+        'Cardo' => 'Cardo',
+        'Courgette' => 'Courgette',
+        'Cherry Swash' => 'Cherry Swash',
+        'Cormorant Garamond' => 'Cormorant Garamond',
+        'Crimson Text' => 'Crimson Text',
+        'Cuprum' => 'Cuprum', 
+        'Cookie' => 'Cookie', 
+        'Chewy' => 'Chewy', 
+        'Days One' => 'Days One', 
+        'Dosis' => 'Dosis',
+        'Droid Sans' => 'Droid Sans',
+        'Economica' => 'Economica',
+        'Fredoka One' => 'Fredoka One',
+        'Fjalla One' => 'Fjalla One',
+        'Francois One' => 'Francois One',
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre',
+        'Gloria Hallelujah' => 'Gloria Hallelujah',
+        'Great Vibes' => 'Great Vibes',
+        'Handlee' => 'Handlee', 
+        'Hammersmith One' => 'Hammersmith One',
+        'Inconsolata' => 'Inconsolata', 
+        'Indie Flower' => 'Indie Flower', 
+        'IM Fell English SC' => 'IM Fell English SC', 
+        'Julius Sans One' => 'Julius Sans One',
+        'Josefin Slab' => 'Josefin Slab', 
+        'Josefin Sans' => 'Josefin Sans', 
+        'Kanit' => 'Kanit', 
+        'Lobster' => 'Lobster', 
+        'Lato' => 'Lato',
+        'Lora' => 'Lora', 
+        'Libre Baskerville' =>'Libre Baskerville',
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' =>'Merriweather', 
+        'Monda' => 'Monda',
+        'Montserrat' => 'Montserrat',
+        'Muli' => 'Muli', 
+        'Marck Script' => 'Marck Script',
+        'Noto Serif' => 'Noto Serif',
+        'Open Sans' => 'Open Sans', 
+        'Overpass' => 'Overpass',
+        'Overpass Mono' => 'Overpass Mono',
+        'Oxygen' => 'Oxygen', 
+        'Orbitron' => 'Orbitron', 
+        'Patua One' => 'Patua One', 
+        'Pacifico' => 'Pacifico',
+        'Padauk' => 'Padauk', 
+        'Playball' => 'Playball',
+        'Playfair Display' => 'Playfair Display', 
+        'PT Sans' => 'PT Sans',
+        'Philosopher' => 'Philosopher',
+        'Permanent Marker' => 'Permanent Marker',
+        'Poiret One' => 'Poiret One', 
+        'Quicksand' => 'Quicksand', 
+        'Quattrocento Sans' => 'Quattrocento Sans', 
+        'Raleway' => 'Raleway', 
+        'Rubik' => 'Rubik', 
+        'Rokkitt' => 'Rokkitt', 
+        'Russo One' => 'Russo One', 
+        'Righteous' => 'Righteous', 
+        'Slabo' => 'Slabo', 
+        'Source Sans Pro' => 'Source Sans Pro', 
+        'Shadows Into Light Two' =>'Shadows Into Light Two', 
+        'Shadows Into Light' => 'Shadows Into Light', 
+        'Sacramento' => 'Sacramento', 
+        'Shrikhand' => 'Shrikhand', 
+        'Tangerine' => 'Tangerine',
+        'Ubuntu' => 'Ubuntu', 
+        'VT323' => 'VT323', 
+        'Varela Round' => 'Varela Round', 
+        'Vampiro One' => 'Vampiro One',
+        'Vollkorn' => 'Vollkorn',
+        'Volkhov' => 'Volkhov', 
+        'Yanone Kaffeesatz' => 'Yanone Kaffeesatz',
+    );
 
 	//Typography
 	$wp_customize->add_section( 'advance_education_typography', array(
@@ -67,7 +136,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	$wp_customize->add_setting('advance_education_paragraph_font_size',array(
@@ -103,7 +172,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -128,7 +197,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -153,7 +222,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H1 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -174,7 +243,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_hex_color'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h2_color', array(
-		'label' => __('H2 Color', 'advance-education'),
+		'label' => __('h2 Color', 'advance-education'),
 		'section' => 'advance_education_typography',
 		'settings' => 'advance_education_h2_color',
 	)));
@@ -188,9 +257,9 @@ function advance_education_customize_register($wp_customize) {
 	$wp_customize->add_control(
 	    'advance_education_h2_font_family', array(
 	    'section'  => 'advance_education_typography',
-	    'label'    => __( 'H2 Fonts','advance-education'),
+	    'label'    => __( 'h2 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -199,7 +268,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h2_font_size',array(
-		'label'	=> __('H2 Font Size','advance-education'),
+		'label'	=> __('h2 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
 		'setting'	=> 'advance_education_h2_font_size',
 		'type'	=> 'text'
@@ -211,7 +280,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_hex_color'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h3_color', array(
-		'label' => __('H3 Color', 'advance-education'),
+		'label' => __('h3 Color', 'advance-education'),
 		'section' => 'advance_education_typography',
 		'settings' => 'advance_education_h3_color',
 	)));
@@ -225,9 +294,9 @@ function advance_education_customize_register($wp_customize) {
 	$wp_customize->add_control(
 	    'advance_education_h3_font_family', array(
 	    'section'  => 'advance_education_typography',
-	    'label'    => __( 'H3 Fonts','advance-education'),
+	    'label'    => __( 'h3 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -236,7 +305,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h3_font_size',array(
-		'label'	=> __('H3 Font Size','advance-education'),
+		'label'	=> __('h3 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
 		'setting'	=> 'advance_education_h3_font_size',
 		'type'	=> 'text'
@@ -248,7 +317,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_hex_color'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h4_color', array(
-		'label' => __('H4 Color', 'advance-education'),
+		'label' => __('h4 Color', 'advance-education'),
 		'section' => 'advance_education_typography',
 		'settings' => 'advance_education_h4_color',
 	)));
@@ -262,9 +331,9 @@ function advance_education_customize_register($wp_customize) {
 	$wp_customize->add_control(
 	    'advance_education_h4_font_family', array(
 	    'section'  => 'advance_education_typography',
-	    'label'    => __( 'H4 Fonts','advance-education'),
+	    'label'    => __( 'h4 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -273,7 +342,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h4_font_size',array(
-		'label'	=> __('H4 Font Size','advance-education'),
+		'label'	=> __('h4 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
 		'setting'	=> 'advance_education_h4_font_size',
 		'type'	=> 'text'
@@ -285,7 +354,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_hex_color'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h5_color', array(
-		'label' => __('H5 Color', 'advance-education'),
+		'label' => __('h5 Color', 'advance-education'),
 		'section' => 'advance_education_typography',
 		'settings' => 'advance_education_h5_color',
 	)));
@@ -299,9 +368,9 @@ function advance_education_customize_register($wp_customize) {
 	$wp_customize->add_control(
 	    'advance_education_h5_font_family', array(
 	    'section'  => 'advance_education_typography',
-	    'label'    => __( 'H5 Fonts','advance-education'),
+	    'label'    => __( 'h5 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -310,7 +379,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h5_font_size',array(
-		'label'	=> __('H5 Font Size','advance-education'),
+		'label'	=> __('h5 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
 		'setting'	=> 'advance_education_h5_font_size',
 		'type'	=> 'text'
@@ -322,7 +391,7 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_hex_color'
 	));
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h6_color', array(
-		'label' => __('H6 Color', 'advance-education'),
+		'label' => __('h6 Color', 'advance-education'),
 		'section' => 'advance_education_typography',
 		'settings' => 'advance_education_h6_color',
 	)));
@@ -336,9 +405,9 @@ function advance_education_customize_register($wp_customize) {
 	$wp_customize->add_control(
 	    'advance_education_h6_font_family', array(
 	    'section'  => 'advance_education_typography',
-	    'label'    => __( 'H6 Fonts','advance-education'),
+	    'label'    => __( 'h6 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => 'font_array',
+	    'choices'  => $font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -347,11 +416,37 @@ function advance_education_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_education_h6_font_size',array(
-		'label'	=> __('H6 Font Size','advance-education'),
+		'label'	=> __('h6 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
 		'setting'	=> 'advance_education_h6_font_size',
 		'type'	=> 'text'
 	));
+
+	//add home page setting pannel
+	$wp_customize->add_panel('advance_education_panel_id', array(
+		'priority'       => 10,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '',
+		'title'          => __('Theme Settings', 'advance-education'),
+		'description'    => __('Description of what this panel does.', 'advance-education'),
+	));	
+
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_education_theme_color_option', array( 
+		'panel' => 'advance_education_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-education' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_education_theme_color', array(
+	    'default' => '#cc3333',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-education'),
+	    'section' => 'advance_education_theme_color_option',
+	    'settings' => 'advance_education_theme_color',
+  	)));
 
 	//Layouts
 	$wp_customize->add_section('advance_education_left_right', array(
@@ -368,6 +463,26 @@ function advance_education_customize_register($wp_customize) {
        'type' => 'checkbox',
        'label' => __('Show / Hide Preloader','advance-education'),
        'section' => 'advance_education_left_right'
+    ));
+
+    $wp_customize->add_setting( 'advance_education_shop_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_education_shop_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Shop Page Sidebar','advance-education'),
+		'section' => 'advance_education_left_right'
+    ));
+
+	$wp_customize->add_setting( 'advance_education_wocommerce_single_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_education_wocommerce_single_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Single Product Page Sidebar','advance-education'),
+		'section' => 'advance_education_left_right'
     ));
 	
 	$wp_customize->add_setting('advance_education_theme_options',array(
@@ -644,6 +759,88 @@ function advance_education_customize_register($wp_customize) {
 		'description'	=> __('Size of image should be 370 x 240','advance-education'),
 		'section' => 'advance_education_category',
 	));
+
+	//404 Page Setting
+	$wp_customize->add_section('advance_education_404_page_setting',array(
+		'title'	=> __('404 Page','advance-education'),
+		'panel' => 'advance_education_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_education_title_404_page',array(
+		'default'=> '404 Not Found',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_title_404_page',array(
+		'label'	=> __('404 Page Title','advance-education'),
+		'section'=> 'advance_education_404_page_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_education_content_404_page',array(
+		'default'=> 'Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_content_404_page',array(
+		'label'	=> __('404 Page Content','advance-education'),
+		'section'=> 'advance_education_404_page_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_education_button_404_page',array(
+		'default'=> 'Back to Home Page',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_education_button_404_page',array(
+		'label'	=> __('404 Page Button','advance-education'),
+		'section'=> 'advance_education_404_page_setting',
+		'type'=> 'text'
+	));
+
+	//Responsive Media Settings
+	$wp_customize->add_section('advance_education_responsive_setting',array(
+		'title'	=> __('Responsive Setting','advance-education'),
+		'panel' => 'advance_education_panel_id',
+	));
+
+    $wp_customize->add_setting('advance_education_responsive_sticky_header',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_responsive_sticky_header',array(
+       'type' => 'checkbox',
+       'label' => __('Sticky Header','advance-education'),
+       'section' => 'advance_education_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_education_responsive_slider',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_responsive_slider',array(
+       'type' => 'checkbox',
+       'label' => __('Slider','advance-education'),
+       'section' => 'advance_education_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_education_responsive_metabox',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_responsive_metabox',array(
+       'type' => 'checkbox',
+       'label' => __('Metabox','advance-education'),
+       'section' => 'advance_education_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_education_responsive_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_education_responsive_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Sidebar','advance-education'),
+       'section' => 'advance_education_responsive_setting'
+    ));
 
 	//Blog Post
 	$wp_customize->add_section('advance_education_blog_post',array(
