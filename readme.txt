@@ -148,6 +148,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 == Changelog ==
 
+= 2.2.9 - March 09 2020 =
+* Bug fix
+
 = 2.2.8 - February 21 2020 =
 * Bug fix
 

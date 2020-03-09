@@ -846,6 +846,12 @@ span, a {
 	display: inline-block;
 }
 
+a:focus {
+	color: #fd4145;
+	border: 1px dashed #fd4145;
+	box-shadow: 2px 2px 2px #6c6c6c;
+}
+
 iframe {
 	border: none !important;
 }
@@ -2439,9 +2445,11 @@ p {
 	-webkit-transform: scale(1.1, 1.1);
 	transform: scale(1.1, 1.1);
 }
-#content_full .latest-posts .post .post_banner .gallery_image_1 a:focus img {
-	-webkit-transform: scale(1.1, 1.1);
-	transform: scale(1.1, 1.1);
+#content_full .latest-posts .post .post_banner a:focus img {
+	border: 1px dashed #fd4145;
+	margin: 0px auto;
+	box-shadow: 2px 2px 2px #6c6c6c;
+	display: block;
 }
 
 
@@ -4743,11 +4751,25 @@ body.single-post .footer_bottom.section-padding {
 	transition: box-shadow 0.15s linear;
 	transition: box-shadow 0.15s linear, -webkit-box-shadow 0.15s linear;
 }
-.main_p .comment_sec .comment-respond .comment-form .form-submit input:hover, .main_p .comment_sec .comment-respond .comment-form .form-submit input:focus  {
+.main_p .comment_sec .comment-respond .comment-form .form-submit input:hover{
 	-webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 	box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
 	background-color: #000;
 }
+
+.main_p .comment_sec .comment-respond .comment-form .form-submit input:focus  {
+	-webkit-box-shadow: 2px 2px 2px #6c6c6c;
+	background-color: #000;
+	border: 1px dashed #fd4145;
+	box-shadow: 2px 2px 2px #6c6c6c;
+}
+
+video:focus, audio:focus, iframe:focus  {
+	-webkit-box-shadow: 2px 2px 2px #6c6c6c !important;
+	border: 1px dashed #fd4145 !important;
+	box-shadow: 2px 2px 2px #6c6c6c;
+}
+
 
 .comment-form .form-submit {
 	padding-left: 15px;

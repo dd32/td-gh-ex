@@ -104,7 +104,7 @@
 
 
 			function scrollAnimate() {
-				$( 'a[href*="#"]:not( [href="#content"], a.comment-reply-link)' ).on(
+				$( 'a[href*="#"]:not( [href="#content"], a.comment-reply-link, a.search-trigger )' ).on(
 					"click",
 					function () {
 						if (location.pathname.replace( /^\//, "" ) == this.pathname.replace( /^\//, "" ) || location.hostname == this.hostname) {
