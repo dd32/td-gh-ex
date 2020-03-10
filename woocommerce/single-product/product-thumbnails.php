@@ -40,10 +40,10 @@ if ( $attachment_ids && has_post_thumbnail() ) {
 		$attributes      = array(
 			'title'                   => get_post_field( 'post_title', $attachment_id ),
 			'data-caption'            => get_post_field( 'post_excerpt', $attachment_id ),
-			'data-src'                => $full_size_image[0],
-			'data-large_image'        => $full_size_image[0],
-			'data-large_image_width'  => $full_size_image[1],
-			'data-large_image_height' => $full_size_image[2],
+			'data-src'                => (isset($full_size_image[0]) ? $full_size_image[0] : ''),
+			'data-large_image'        => (isset($full_size_image[0]) ? $full_size_image[0] : ''),
+			'data-large_image_width'  => (isset($full_size_image[1]) ? $full_size_image[1] : ''),
+			'data-large_image_height' => (isset($full_size_image[2]) ? $full_size_image[2] : ''),
 		);
 
 		$class = $i == 1 ? 'nnfyactive' : '';

@@ -40,12 +40,14 @@ for($i = 1; $i <= $blog_col_size; $i++){
 <div class="<?php echo esc_attr($col_class); ?>">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
 	    <div class="product-wrapper mb-30">
-            <?php $audio_url = get_post_meta( get_the_ID(), 'nnfy_audio_link', true ); ?>
-            <?php if ( $audio_url ) { ?>
-                <div class="blog-audio embed-responsive embed-responsive-16by9">
-                    <?php echo wp_oembed_get( $audio_url ); ?>
-                </div>
-            <?php } ?>
+	    	<?php if(has_post_thumbnail()): ?>
+	        <div class="blog-img">
+	            <a href="<?php the_permalink( ); ?>">
+	                <?php the_post_thumbnail( $nnfybl_image_size ); ?>
+	            </a>
+	        </div>
+	    	<?php endif; ?>
+
 	        <div class="blog-info">
 	            <h4><a href="<?php the_permalink( ); ?>"><?php nnfy_post_title(); ?></a></h4>
                 <?php if( $meta_status != true ): ?>

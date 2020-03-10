@@ -9,6 +9,7 @@
  add_action( 'init', 'nnfy_wc_remove_actions' );
  function nnfy_wc_remove_actions(){
  	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+ 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10 );
  	remove_action( 'woocommerce_before_shop_loop', 'wc_print_notices', 10 );
 
  	//content product
@@ -155,11 +156,9 @@ function nnfy_wc_get_rating_html($html, $rating, $count){
 add_action( 'woocommerce_after_add_to_cart_button', 'nnfy_wishlist_button_after_add_to_cart');
 function nnfy_wishlist_button_after_add_to_cart(){
 	echo '<div class="nnfyquickview-btn-wishlist">';
-
-	if(function_exists('nnfy_add_to_wishlist_button')){
-		echo nnfy_add_to_wishlist_button();
-	}
-	
+		if(function_exists('nnfy_add_to_wishlist_button')){
+			echo nnfy_add_to_wishlist_button();
+		}
 	echo '</div>';
 }
 

@@ -81,12 +81,12 @@ h6 a {
     color: inherit
 }
 p {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: normal;
-    line-height: 24px;
-    color: #878787;
+    line-height: 28px;
+    color: #333333;
     margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: Open Sans,sans-serif;
 }
 .f-left {
     float: left

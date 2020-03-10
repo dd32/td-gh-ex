@@ -66,9 +66,9 @@ get_header( 'shop' ); ?>
 				<div class="shop-bar pb-30">
 					<?php
 						/**
-						 * woocommerce_before_shop_loop hook.
+						 * Hook: woocommerce_before_shop_loop.
 						 *
-						 * @hooked wc_print_notices - 10
+						 * @hooked woocommerce_output_all_notices - 10
 						 * @hooked woocommerce_result_count - 20
 						 * @hooked woocommerce_catalog_ordering - 30
 						 */

@@ -39,13 +39,14 @@ $attachment_ids = $product->get_gallery_image_ids();
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
 	<div class="product-details-large">
 		<?php
+
 		$attributes = array(
 			'title'                   => get_post_field( 'post_title', $post_thumbnail_id ),
 			'data-caption'            => get_post_field( 'post_excerpt', $post_thumbnail_id ),
-			'data-src'                => $full_size_image[0],
-			'data-large_image'        => $full_size_image[0],
-			'data-large_image_width'  => $full_size_image[1],
-			'data-large_image_height' => $full_size_image[2],
+			'data-src'                => (isset($full_size_image[0]) ? $full_size_image[0] : ''),
+			'data-large_image'        => (isset($full_size_image[0]) ? $full_size_image[0] : ''),
+			'data-large_image_width'  => (isset($full_size_image[1]) ? $full_size_image[1] : ''),
+			'data-large_image_height' => (isset($full_size_image[2]) ? $full_size_image[2] : ''),
 		);
 		
 		if ( has_post_thumbnail() ) {
@@ -55,7 +56,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 				$html .= '<div class="easyzoom easyzoom--overlay  is-ready">';
 			}
 
-			$html  .= '<a href="'. esc_url( $full_size_image[0] ) .'">';
+			$html  .= '<a href="'. esc_url( (isset($full_size_image[0]) ? $full_size_image[0] : '#') ) .'">';
 			$html  .= get_the_post_thumbnail( $post->ID, 'woocommerce_single', $attributes );
 			$html  .= '</a>';
 
@@ -80,7 +81,7 @@ $attachment_ids = $product->get_gallery_image_ids();
 				if(is_single()){
 					$html .= '<div class="easyzoom easyzoom--overlay  is-ready">';
 				}
-				$html  .= '<a href="'. esc_url( $tab_full_size_image[0] ) .'">';
+				$html  .= '<a href="'. esc_url( ( isset($tab_full_size_image[0]) ? $tab_full_size_image[0] : '#' ) ) .'">';
 				$html  .= wp_get_attachment_image( $attachment_id, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), $attributes );
 				$html  .= '</a>';
 				if(is_single()){

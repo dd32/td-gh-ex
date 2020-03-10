@@ -108,7 +108,7 @@ add_action( 'after_setup_theme', 'nnfy_setup' );
  */
 
  if ( !function_exists( 'nnfy_content_width')){
-	 	function nnfy_content_width() {
+ 	function nnfy_content_width() {
 		$GLOBALS['content_width'] = apply_filters( 'nnfy_content_width', 640 );
 	}
 } 
@@ -266,3 +266,4 @@ require get_template_directory().'/inc/comment-form.php';
  Woocommerce config
 */
 require get_template_directory().'/inc/woo-config.php';
+require get_template_directory().'/inc/custom-meta-box.php';

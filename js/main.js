@@ -120,10 +120,13 @@
 	/**
 	* Blog Gallery Post
 	*/
-	$('.blog-gallery').owlCarousel({
+	$('.blog-gallery,.blog-img-gallery').owlCarousel({
 	    loop:true,
 	    nav:true,
 	    navText:['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
 	    responsive:{
 	        0:{
 	            items:1
