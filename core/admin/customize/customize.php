@@ -154,6 +154,22 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 
 			array(
 				
+				'label' => esc_html__( 'Sticky header','avventura-lite'),
+				'description' => esc_html__( 'Do you want to enable the sticky header?','avventura-lite'),
+				'id' => 'avventura_lite_sticky_header',
+				'type' => 'select',
+				'section' => 'settings_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','avventura-lite'),
+				   'on' => esc_html__( 'Yes','avventura-lite'),
+				),
+				
+				'std' => 'on',
+			
+			),
+
+			array(
+				
 				'label' => esc_html__( 'Category title','avventura-lite'),
 				'description' => esc_html__( 'Do you want to view the category title, under the black container?','avventura-lite'),
 				'id' => 'avventura_lite_view_category_title',
@@ -346,6 +362,23 @@ if (!function_exists('avventura_lite_customize_panel_function')) {
 				),
 				
 				'std' => 'on',
+			
+			),
+			
+			array(
+				
+				'label' => esc_html__('WooCommerce header cart icon','avventura-lite'),
+				'description' => esc_html__('Select the icon for WooCommerce header cart (Please clear the cookies to display the new icon)','avventura-lite'),
+				'id' => 'avventura_lite_woocommerce_header_icon',
+				'type' => 'select',
+				'section' => 'woocommerce_section',
+				'options' => array (
+				   'fa-shopping-basket' => esc_html__( 'Icon 1','avventura-lite'),
+				   'fa-shopping-cart' => esc_html__( 'Icon 2','avventura-lite'),
+				   'fa-cart-plus' => esc_html__( 'Icon 3','avventura-lite'),
+				),
+				
+				'std' => 'fa-shopping-basket',
 			
 			),
 

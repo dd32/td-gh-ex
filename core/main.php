@@ -412,6 +412,14 @@ if (!function_exists('avventura_lite_body_classes_function')) {
 			$classes[] = 'is_customizer_panel';
 				
 		endif;
+		
+		if ( avventura_lite_setting('avventura_lite_sticky_header') == 'on' ) :
+
+			$classes[] = 'sticky_header';
+				
+		endif;
+		
+		
 
 		return $classes;
 	

@@ -32,32 +32,36 @@ jQuery.noConflict()(function($){
 
 	function avventura_lite_header() {
 
-		if ( $(window).width() > 992 ) {
+		if( $('body').hasClass('sticky_header') ) {
 	
-			var menuHeight = $('#menu-wrapper').innerHeight();
-			var headerHeight = $('#header').innerHeight() + $('#logo-wrapper').innerHeight();
-	
-			if( $(window).scrollTop() > headerHeight ) {
-				$('#menu-wrapper').addClass('fixed');
-				$('body').css({'padding-top': menuHeight});
+			if ( $(window).width() > 992 ) {
+		
+				var menuHeight = $('#menu-wrapper').innerHeight();
+				var headerHeight = $('#header').innerHeight() + $('#logo-wrapper').innerHeight();
+		
+				if( $(window).scrollTop() > headerHeight ) {
+					$('#menu-wrapper').addClass('fixed');
+					$('body').css({'padding-top': menuHeight});
+				} else {
+					$('#menu-wrapper').removeClass('fixed');
+					$('body').css({'padding-top': 0});
+				}
+				
 			} else {
-				$('#menu-wrapper').removeClass('fixed');
-				$('body').css({'padding-top': 0});
-			}
-			
-		} else {
-
-			var adminBarHeight = $('#wpadminbar').innerHeight();
-			var mobileHeaderHeight = $('#header').innerHeight();
 	
-			if( $(window).scrollTop() > mobileHeaderHeight ) {
-				$('#header').addClass('fixed').css({'top': adminBarHeight});
-				$('body').css({'padding-top': mobileHeaderHeight});
-			} else {
-				$('#header').removeClass('fixed').css({'top': 0});
-				$('body').css({'padding-top': 0});
+				var adminBarHeight = $('#wpadminbar').innerHeight();
+				var mobileHeaderHeight = $('#header').innerHeight();
+		
+				if( $(window).scrollTop() > mobileHeaderHeight ) {
+					$('#header').addClass('fixed').css({'top': adminBarHeight});
+					$('body').css({'padding-top': mobileHeaderHeight});
+				} else {
+					$('#header').removeClass('fixed').css({'top': 0});
+					$('body').css({'padding-top': 0});
+				}
+	
 			}
-
+		
 		}
 	
 	}
