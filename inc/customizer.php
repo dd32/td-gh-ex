@@ -41,7 +41,7 @@ function advance_business_customize_register($wp_customize) {
 	//Layouts
 	$wp_customize->add_section('advance_business_left_right', array(
 		'title'    => __('Layout Settings', 'advance-business'),
-		'priority' => 30,
+		'priority' => 10,
 		'panel'    => 'advance_business_panel_id',
 	));
 
@@ -55,65 +55,33 @@ function advance_business_customize_register($wp_customize) {
        'section' => 'advance_business_left_right'
     ));
 
-    // Button
-	$wp_customize->add_section( 'advance_business_theme_button', array(
-		'title' => __('Button Option','advance-business'),
-		'panel' => 'advance_business_panel_id',
-	));
-
-	$wp_customize->add_setting('advance_business_button_padding_top_bottom',array(
-		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control('advance_business_button_padding_top_bottom',array(
-		'label'	=> __('Top and Bottom Padding','advance-business'),
-		'input_attrs' => array(
-            'step'             => 1,
-			'min'              => 0,
-			'max'              => 50,
-        ),
-		'section'=> 'advance_business_theme_button',
-		'type'=> 'number'
-	));
-
-	$wp_customize->add_setting('advance_business_button_padding_left_right',array(
-		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control('advance_business_button_padding_left_right',array(
-		'label'	=> __('Left and Right Padding','advance-business'),
-		'input_attrs' => array(
-            'step'             => 1,
-			'min'              => 0,
-			'max'              => 50,
-        ),
-		'section'=> 'advance_business_theme_button',
-		'type'=> 'number'
-	));
-
-	$wp_customize->add_setting( 'advance_business_button_border_radius', array(
-		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	) );
-	$wp_customize->add_control( 'advance_business_button_border_radius', array(
-		'label'       => esc_html__( 'Button Border Radius','advance-business' ),
-		'section'     => 'advance_business_theme_button',
-		'type'        => 'number',
-		'input_attrs' => array(
-			'step'             => 1,
-			'min'              => 0,
-			'max'              => 50,
-		),
-	) );
-
-	//Sticky Header
 	$wp_customize->add_setting( 'advance_business_sticky_header',array(
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_business_sticky_header',array(
     	'type' => 'checkbox',
-        'label' => __( 'Sticky Header','advance-business' ),
+        'label' => __( 'Show / Hide Sticky Header','advance-business' ),
         'section' => 'advance_business_left_right'
+    ));
+
+    $wp_customize->add_setting( 'advance_business_shop_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_business_shop_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Shop Page Sidebar','advance-business'),
+		'section' => 'advance_business_left_right'
+    ));
+
+	$wp_customize->add_setting( 'advance_business_wocommerce_single_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_business_wocommerce_single_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Single Product Page Sidebar','advance-business'),
+		'section' => 'advance_business_left_right'
     ));
 
 	$wp_customize->add_setting('advance_business_theme_options',array(
@@ -559,6 +527,57 @@ function advance_business_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+    // Button
+	$wp_customize->add_section( 'advance_business_theme_button', array(
+		'title' => __('Button Option','advance-business'),
+		'panel' => 'advance_business_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_business_button_padding_top_bottom',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_button_padding_top_bottom',array(
+		'label'	=> __('Top and Bottom Padding','advance-business'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_business_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_business_button_padding_left_right',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_button_padding_left_right',array(
+		'label'	=> __('Left and Right Padding','advance-business'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_business_theme_button',
+		'type'=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_business_button_border_radius', array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_business_button_border_radius', array(
+		'label'       => esc_html__( 'Button Border Radius','advance-business' ),
+		'section'     => 'advance_business_theme_button',
+		'type'        => 'number',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
 	//Slider
 	$wp_customize->add_section( 'advance_business_slider' , array(
     	'title'      => __( 'Slider Settings', 'advance-business' ),
@@ -759,6 +778,88 @@ function advance_business_customize_register($wp_customize) {
 		'description'	=> __('Size of image should be 268 x 250','advance-business'),
 		'section' => 'advance_business_category',
 	));
+
+	//404 Page Setting
+	$wp_customize->add_section('advance_business_404_page_setting',array(
+		'title'	=> __('404 Page','advance-business'),
+		'panel' => 'advance_business_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_business_title_404_page',array(
+		'default'=> '404 Not Found',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_title_404_page',array(
+		'label'	=> __('404 Page Title','advance-business'),
+		'section'=> 'advance_business_404_page_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_business_content_404_page',array(
+		'default'=> 'Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_content_404_page',array(
+		'label'	=> __('404 Page Content','advance-business'),
+		'section'=> 'advance_business_404_page_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_business_button_404_page',array(
+		'default'=> 'Back to Home Page',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_business_button_404_page',array(
+		'label'	=> __('404 Page Button','advance-business'),
+		'section'=> 'advance_business_404_page_setting',
+		'type'=> 'text'
+	));
+
+	//Responsive Media Settings
+	$wp_customize->add_section('advance_business_responsive_setting',array(
+		'title'	=> __('Responsive Setting','advance-business'),
+		'panel' => 'advance_business_panel_id',
+	));
+
+    $wp_customize->add_setting('advance_business_responsive_sticky_header',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_responsive_sticky_header',array(
+       'type' => 'checkbox',
+       'label' => __('Sticky Header','advance-business'),
+       'section' => 'advance_business_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_business_responsive_slider',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_responsive_slider',array(
+       'type' => 'checkbox',
+       'label' => __('Slider','advance-business'),
+       'section' => 'advance_business_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_business_responsive_metabox',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_responsive_metabox',array(
+       'type' => 'checkbox',
+       'label' => __('Metabox','advance-business'),
+       'section' => 'advance_business_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_business_responsive_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_responsive_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Sidebar','advance-business'),
+       'section' => 'advance_business_responsive_setting'
+    ));
 
 	//Blog Post
 	$wp_customize->add_section('advance_business_blog_post',array(
