@@ -20,7 +20,7 @@
 <?php wp_body_open(); ?>
 
 <header role="banner">
-  <?php if(get_theme_mod('advance_automobile_preloader_option',true)){ ?>
+  <?php if(get_theme_mod('advance_automobile_preloader_option',true) || get_theme_mod('advance_automobile_responsive_preloader',true)){ ?>
     <div id="loader-wrapper">
       <div id="loader"></div>
       <div class="loader-section section-left"></div>
@@ -70,7 +70,7 @@
         </div>
       </div>
     <?php } ?>
-      <div class="main-menu <?php if( get_theme_mod( 'advance_automobile_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+      <div class="main-menu <?php if( get_theme_mod( 'advance_automobile_sticky_header') != '' || get_theme_mod( 'advance_automobile_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
         <div class="container">
           <div class="row">
             <div class="col-lg-3 col-md-4 col-9">

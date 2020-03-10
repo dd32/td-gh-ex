@@ -475,6 +475,26 @@ function advance_automobile_customize_register($wp_customize) {
        'section' => 'advance_automobile_left_right'
     ));
 
+	$wp_customize->add_setting( 'advance_automobile_shop_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_automobile_shop_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Shop Page Sidebar','advance-automobile'),
+		'section' => 'advance_automobile_left_right'
+    ));
+
+	$wp_customize->add_setting( 'advance_automobile_wocommerce_single_page_sidebar',array(
+		'default' => 'true',
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_automobile_wocommerce_single_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Single Product Page Sidebar','advance-automobile'),
+		'section' => 'advance_automobile_left_right'
+    ));
+
 	$wp_customize->add_setting('advance_automobile_theme_options',array(
         'default' => __('Default','advance-automobile'),
         'sanitize_callback' => 'advance_automobile_sanitize_choices'
@@ -875,6 +895,88 @@ function advance_automobile_customize_register($wp_customize) {
 	    'description'	=> __('Size of image should be 570 x 380','advance-automobile'),
 	    'section' => 'advance_automobile_category_section',
 	));
+
+	//404 Page Setting
+	$wp_customize->add_section('advance_automobile_404_page_setting',array(
+		'title'	=> __('404 Page','advance-automobile'),
+		'panel' => 'advance_automobile_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_automobile_title_404_page',array(
+		'default'=> '404 Not Found',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_title_404_page',array(
+		'label'	=> __('404 Page Title','advance-automobile'),
+		'section'=> 'advance_automobile_404_page_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_automobile_content_404_page',array(
+		'default'=> 'Dont worry&hellip it happens to the best of us.',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_content_404_page',array(
+		'label'	=> __('404 Page Content','advance-automobile'),
+		'section'=> 'advance_automobile_404_page_setting',
+		'type'=> 'text'
+	));
+
+	$wp_customize->add_setting('advance_automobile_button_404_page',array(
+		'default'=> 'Back to Home Page',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_automobile_button_404_page',array(
+		'label'	=> __('404 Page Button','advance-automobile'),
+		'section'=> 'advance_automobile_404_page_setting',
+		'type'=> 'text'
+	));
+
+	//Responsive Media Settings
+	$wp_customize->add_section('advance_automobile_responsive_setting',array(
+		'title'	=> __('Responsive Setting','advance-automobile'),
+		'panel' => 'advance_automobile_panel_id',
+	));
+
+    $wp_customize->add_setting('advance_automobile_responsive_sticky_header',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_responsive_sticky_header',array(
+       'type' => 'checkbox',
+       'label' => __('Sticky Header','advance-automobile'),
+       'section' => 'advance_automobile_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_automobile_responsive_slider',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_responsive_slider',array(
+       'type' => 'checkbox',
+       'label' => __('Slider','advance-automobile'),
+       'section' => 'advance_automobile_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_automobile_responsive_metabox',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_responsive_metabox',array(
+       'type' => 'checkbox',
+       'label' => __('Metabox','advance-automobile'),
+       'section' => 'advance_automobile_responsive_setting'
+    ));
+
+    $wp_customize->add_setting('advance_automobile_responsive_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_automobile_responsive_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Sidebar','advance-automobile'),
+       'section' => 'advance_automobile_responsive_setting'
+    ));
 
 	//Blog Post
 	$wp_customize->add_section('advance_automobile_blog_post',array(
