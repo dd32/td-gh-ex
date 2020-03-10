@@ -10,15 +10,17 @@
  */
 function virtue_setup() {
 
-	register_nav_menus( array(
-		'primary_navigation'   => __( 'Primary Navigation', 'virtue' ),
-		'secondary_navigation' => __( 'Secondary Navigation', 'virtue' ),
-		'mobile_navigation'    => __( 'Mobile Navigation', 'virtue' ),
-		'topbar_navigation'    => __( 'Topbar Navigation', 'virtue' ),
-		'footer_navigation'    => __( 'Footer Navigation', 'virtue' ),
-	) );
+	register_nav_menus(
+		array(
+			'primary_navigation'   => __( 'Primary Navigation', 'virtue' ),
+			'secondary_navigation' => __( 'Secondary Navigation', 'virtue' ),
+			'mobile_navigation'    => __( 'Mobile Navigation', 'virtue' ),
+			'topbar_navigation'    => __( 'Topbar Navigation', 'virtue' ),
+			'footer_navigation'    => __( 'Footer Navigation', 'virtue' ),
+		)
+	);
 
-	define( 'VIRTUE_VERSION', '3.3.9' );
+	define( 'VIRTUE_VERSION', '3.4.0' );
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
@@ -61,6 +63,7 @@ function virtue_setup() {
 		),
 	) );
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'responsive-embeds' );
 
 	if ( ! function_exists( 'wp_body_open' ) ) {
 		/**

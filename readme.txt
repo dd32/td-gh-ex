@@ -30,6 +30,14 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.4.0 | 10th March 2020 =
+* Update: Front page title logic to allow page meta to override theme options.
+* Update: Menu Classes, fixes issues with elementor nav widget.
+* Fix: Few php notices.
+* Update: CSS for gutenberg.
+* Update: Better responsive youtube embeds.
+* Update: Woocommerce 4.0 support.
+
 = Version 3.3.9 | 17th September 2019 = 
 * Add: Event Organizer Support
 
