@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="header" class="<?php if( get_theme_mod( 'advance_startup_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+<div id="header" class="<?php if( get_theme_mod( 'advance_startup_sticky_header') != '' || get_theme_mod( 'advance_startup_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
   <div class="main-menu">
     <div class="container">
       <div class="menu-color">

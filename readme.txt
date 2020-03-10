@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.8
+Stable tag: 0.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,13 @@ Advance Startup is a resourceful, feature-rich, stylish and versatile startup Wo
 * Added slider excerpt length setting in customizer.
 * Added slider image opacity setting in customizer.
 * Resolved theme sniffer errors.
+
+= 0.3.9 =
+* Added border radius and button Padding option for home page and blog page in customizer.
+* Added show and hide preloader option in customizer.
+* Added setting for 404 page title, 404 page content and 404 page button text.
+* Added responsive setting for mobile media.
+* Added show / hide option for product page and single product page sidebar.
 
 == Resources ==
 

@@ -20,6 +20,13 @@
 <?php wp_body_open(); ?>
 
 <header role="banner">
+  <?php if(get_theme_mod('advance_startup_preloader_option',true)){ ?>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  <?php }?>
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-startup' ); ?></a>
   <?php if( get_theme_mod('advance_startup_display_topbar',true) != ''){ ?>
     <div class="top-header">
@@ -54,9 +61,6 @@
               <?php } ?>
               <?php if( get_theme_mod( 'advance_startup_youtube_url') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-startup' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_startup_google_plus_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-startup' );?></span></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_startup_linkedin_url') != '') { ?>
                 <a href="<?php echo esc_url( get_theme_mod( 'advance_startup_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-startup' );?></span></a>
