@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   
-  <div class="<?php if( get_theme_mod( 'bb_wedding_bliss_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+  <div class="<?php if( get_theme_mod( 'bb_wedding_bliss_sticky_header') != '' || get_theme_mod( 'bb_wedding_bliss_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
       <?php if(get_theme_mod('bb_wedding_bliss_preloader_option',true)){ ?>
         <div id="loader-wrapper">
@@ -91,9 +91,6 @@
                             <?php } ?>
                             <?php if( get_theme_mod( 'bb_wedding_bliss_insta_url') != '') { ?>
                               <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_insta_url','' ) ); ?>"><i class="fab fa-instagram" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','bb-wedding-bliss' );?></span></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'bb_wedding_bliss_google_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_google_url','' ) ); ?>"><i class="fab fa-google-plus-g" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','bb-wedding-bliss' );?></span></a>
                             <?php } ?>
                             <?php if( get_theme_mod( 'bb_wedding_bliss_pint_url') != '') { ?>
                               <a href="<?php echo esc_url( get_theme_mod( 'bb_wedding_bliss_pint_url','' ) ); ?>"><i class="fab fa-pinterest-p" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest','bb-wedding-bliss' );?></span></a>

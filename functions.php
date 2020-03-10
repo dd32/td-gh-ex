@@ -111,6 +111,26 @@ function bb_wedding_bliss_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
+
+	register_sidebar( array(
+		'name'          => __( 'Shop Page Sidebar', 'bb-wedding-bliss' ),
+		'description'   => __( 'Appears on shop page', 'bb-wedding-bliss' ),
+		'id'            => 'woocommerce_sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Single Product Page Sidebar', 'bb-wedding-bliss' ),
+		'description'   => __( 'Appears on shop page', 'bb-wedding-bliss' ),
+		'id'            => 'woocommerce-single-sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'bb_wedding_bliss_widgets_init' );
 

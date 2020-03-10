@@ -172,6 +172,65 @@
 		$custom_css .='}';
 	}
 
+	/*-----------------------------Responsive Setting --------------------*/
+
+	$stickyheader = get_theme_mod( 'bb_wedding_bliss_responsive_sticky_header',true);
+	if($stickyheader == true && get_theme_mod( 'bb_wedding_bliss_sticky_header') == false){
+    	$custom_css .='.fixed-header{';
+			$custom_css .='position:static;';
+		$custom_css .='} ';
+	}
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.fixed-header{';
+			$custom_css .='position:fixed;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.fixed-header{';
+			$custom_css .='position:static;';
+		$custom_css .='} }';
+	}
+
+	$stickyheader = get_theme_mod( 'bb_wedding_bliss_responsive_slider',true);
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$metabox = get_theme_mod( 'bb_wedding_bliss_responsive_metabox',true);
+    if($metabox == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.metabox{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($metabox == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.metabox{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$sidebar = get_theme_mod( 'bb_wedding_bliss_responsive_sidebar',true);
+    if($sidebar == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sidebar == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
 
 
 
