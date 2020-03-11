@@ -10,12 +10,13 @@ get_header(); ?>
 <main role="main" id="maincontent" class="content-ts">
 	<div class="container">
         <div class="middle-align">
-			<h1><?php printf( '<strong>%s</strong> %s', esc_html__( '404', 'advance-coaching' ), esc_html__( 'Not Found', 'advance-coaching' ) ) ?></h1>
-			<p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn&hellip', 'advance-coaching' ); ?></p>
-			<p class="text-404"><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-coaching' ); ?></p>
-			<div class="read-moresec">
-        		<a href="<?php echo esc_url(home_url() ) ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-coaching' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back','advance-coaching' );?></span></a>
-        	</div>
+			<h1><?php echo esc_html(get_theme_mod('advance_coaching_title_404_page',__('404 Not Found','advance-coaching')));?></h1>
+			<p class="text-404"><?php echo esc_html(get_theme_mod('advance_coaching_content_404_page',__('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','advance-coaching')));?></p>
+			<?php if( get_theme_mod('advance_coaching_button_404_page','Back to Home Page') != ''){ ?>
+				<div class="read-moresec">
+	        		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php echo esc_html(get_theme_mod('advance_coaching_button_404_page',__('Back to Home Page','advance-coaching')));?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-coaching' ); ?></span></a>
+	        	</div>
+        	<?php } ?>
 			<div class="clearfix"></div>
         </div>
 	</div>

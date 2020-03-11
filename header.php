@@ -19,6 +19,13 @@
 <body <?php body_class(); ?>>
   
 <header role="banner">
+  <?php if(get_theme_mod('advance_coaching_preloader_option',true)){ ?>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  <?php }?>
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-coaching' ); ?></a>
   <div id="header">
     <?php if( get_theme_mod('advance_coaching_display_topbar',true) != ''){ ?>
@@ -89,7 +96,7 @@
               
               <div class="topbar">
 
-                <div class="<?php if( get_theme_mod( 'advance_coaching_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+                <div class="<?php if( get_theme_mod( 'advance_coaching_sticky_header') != '' || get_theme_mod( 'advance_coaching_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
                   <div class="toggle-menu responsive-menu">
                     <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
                   </div>

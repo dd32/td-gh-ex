@@ -38,3 +38,11 @@ input#_customize-input-advance_coaching_slider_excerpt_length,
 input#_customize-input-advance_coaching_slider_image_opacity {
     width: 100%;
 }
+input#_customize-input-advance_coaching_button_padding_top_bottom, input#_customize-input-advance_coaching_button_padding_left_right,
+input#_customize-input-advance_coaching_button_border_radius{
+  width: 30%;
+  float:right;
+}
+.customize-control-title{
+  display: inline-block;
+}
