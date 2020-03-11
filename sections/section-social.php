@@ -3,7 +3,7 @@
 * section-social.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.6
+* @version   1.0.7
 */
 ?>
 <ul class="header_social">

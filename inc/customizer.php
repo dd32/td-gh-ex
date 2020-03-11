@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.6
+* @version   1.0.7
 */
 
 function atomy_customize_register( $wp_customize ) {

@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.6
+* @version   1.0.7
 */
 
 
@@ -261,9 +261,9 @@ function atomy_change_breadcrumb_delimiter( $defaults ) {
 
 // Script custom select
 function atomy_select_dropdown() {
-	wp_enqueue_script( 'select2js', get_stylesheet_directory_uri() . '/js/select2.min.js', array( 'jquery' ), '4.0.6', true );
-	wp_enqueue_style( 'atomy-select2css', get_stylesheet_directory_uri() . '/css/atomy-select2.css' , array(), '4.0.6', 'all' );
-	wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/select2-init.js', array( 'select2js' ), '1.0.0', true );
+	wp_enqueue_script( 'select2js', get_template_directory_uri() . '/js/select2.min.js', array( 'jquery' ), '4.0.6', true );
+	wp_enqueue_style( 'atomy-select2css', get_template_directory_uri() . '/css/atomy-select2.css' , array(), '4.0.6', 'all' );
+	wp_enqueue_script( 'selectinit', get_template_directory_uri() . '/js/select2-init.js', array( 'select2js' ), '1.0.0', true );
 
 }
 add_action('wp_enqueue_scripts', 'atomy_select_dropdown');
@@ -509,14 +509,14 @@ function atomy_custom_breadcrumbs() {
 
 add_action('wp_enqueue_scripts', 'atomy_enqueue_magnificpopup_styles');
 	function atomy_enqueue_magnificpopup_styles() {
-				 wp_enqueue_style('magnific_popup_style', get_stylesheet_directory_uri().'/magnific-popup/magnific-popup.css', array());
+				 wp_enqueue_style('magnific_popup_style', get_template_directory_uri().'/magnific-popup/magnific-popup.css', array());
 	}
 	 
 add_action('wp_enqueue_scripts', 'atomy_enqueue_magnificpopup_scripts');
 	function atomy_enqueue_magnificpopup_scripts() {
-				wp_enqueue_script('magnific_popup_script', get_stylesheet_directory_uri().'/magnific-popup/jquery.magnific-popup.min.js', array('jquery'));
+				wp_enqueue_script('magnific_popup_script', get_template_directory_uri().'/magnific-popup/jquery.magnific-popup.min.js', array('jquery'));
 	 
-				 wp_enqueue_script('magnific_init_script', get_stylesheet_directory_uri().'/magnific-popup/jquery.magnific-popup-init.js', array('jquery'));
+				 wp_enqueue_script('magnific_init_script', get_template_directory_uri().'/magnific-popup/jquery.magnific-popup-init.js', array('jquery'));
 	}
 
 

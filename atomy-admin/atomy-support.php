@@ -5,7 +5,7 @@
 *
 * @package Atomy
 *
-*  @version 1.0.6
+*  @version 1.0.7
 */
 
 function atomy_page_display() {
@@ -14,7 +14,7 @@ function atomy_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html__('Atomy','atomy');?></h2>
-		  	<span><?php echo esc_html__('V 1.0.6','atomy');?></span>
+		  	<span><?php echo esc_html__('V 1.0.7','atomy');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
