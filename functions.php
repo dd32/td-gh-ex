@@ -111,6 +111,26 @@ function advance_it_company_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
+
+	register_sidebar( array(
+		'name'          => __( 'Shop Page Sidebar', 'advance-it-company' ),
+		'description'   => __( 'Appears on shop page', 'advance-it-company' ),
+		'id'            => 'woocommerce_sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Single Product Page Sidebar', 'advance-it-company' ),
+		'description'   => __( 'Appears on shop page', 'advance-it-company' ),
+		'id'            => 'woocommerce-single-sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 add_action('widgets_init', 'advance_it_company_widgets_init');

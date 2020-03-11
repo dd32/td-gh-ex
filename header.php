@@ -31,7 +31,7 @@
     <div id="header">
       <div class="container-fluid">
         <div class="row">
-          <div class="offset-lg-1 col-lg-3 col-md-12 <?php if( get_theme_mod( 'advance_it_company_sticky_header') != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+          <div class="offset-lg-1 col-lg-3 col-md-12 <?php if( get_theme_mod( 'advance_it_company_responsive_sticky_header') != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
             <div class="logo">
               <?php if ( has_custom_logo() ) : ?>
               <div class="site-logo"><?php the_custom_logo(); ?></div>
@@ -128,9 +128,6 @@
                     <?php if( get_theme_mod( 'advance_it_company_instagram_url') != '') { ?>
                       <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_instagram_url','' ) ); ?>"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-it-company' );?></span><i class="fab fa-instagram"></i></a>
                     <?php } ?>
-                    <?php if( get_theme_mod( 'advance_it_company_google_plus_url') != '') { ?>
-                      <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-it-company' );?></span></a>
-                    <?php } ?>
                     <?php if( get_theme_mod( 'advance_it_company_youtube_url') != '') { ?>
                       <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-it-company' );?></span></a>
                     <?php } ?>
@@ -166,9 +163,6 @@
                             <?php } ?>
                             <?php if( get_theme_mod( 'advance_it_company_instagram_url') != '') { ?>
                               <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_instagram_url','' ) ); ?>"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-it-company' );?></span><i class="fab fa-instagram"></i></a>
-                            <?php } ?>
-                            <?php if( get_theme_mod( 'advance_it_company_google_plus_url') != '') { ?>
-                              <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-it-company' );?></span></a>
                             <?php } ?>
                             <?php if( get_theme_mod( 'advance_it_company_youtube_url') != '') { ?>
                               <a href="<?php echo esc_url( get_theme_mod( 'advance_it_company_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-it-company' );?></span></a>

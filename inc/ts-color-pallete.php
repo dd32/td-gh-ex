@@ -189,6 +189,48 @@
 		$custom_css .='}';
 	}
 
+	/*-----------------------------Responsive Setting --------------------*/
+
+	$stickyheader = get_theme_mod( 'advance_it_company_responsive_slider',true);
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$metabox = get_theme_mod( 'advance_it_company_responsive_metabox',true);
+    if($metabox == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.metabox{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($metabox == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.metabox{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$sidebar = get_theme_mod( 'advance_it_company_responsive_sidebar',true);
+    if($sidebar == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sidebar == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+
 
 
 
