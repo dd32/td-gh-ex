@@ -47,3 +47,9 @@ function resMenu_close() {
 
 })( jQuery );
 
+jQuery(function($){
+  $(window).load(function() {
+    $("#loader-wrapper").delay(1000).fadeOut("slow");
+      $("#loader").delay(1000).fadeOut("slow");
+  })
+});

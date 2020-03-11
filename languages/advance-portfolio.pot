@@ -296,346 +296,439 @@ msgstr ""
 msgid 'Edit'
 msgstr ""
 
-#: inc/customizer.php:20
+#: inc/customizer.php:111
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer.php:122
+msgid "Paragraph Color"
+msgstr ""
+
+#: inc/customizer.php:136
+msgid "Paragraph Fonts"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid "Paragraph Font Size"
+msgstr ""
+
+#: inc/customizer.php:158
+msgid ""a" Tag Color"
+msgstr ""
+
+#: inc/customizer.php:172
+msgid ""a" Tag Fonts"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid ""li" Tag Color"
+msgstr ""
+
+#: inc/customizer.php:197
+msgid ""li" Tag Fonts"
+msgstr ""
+
+#: inc/customizer.php:208
+msgid "H1 Color"
+msgstr ""
+
+#: inc/customizer.php:222
+msgid "H1 Fonts"
+msgstr ""
+
+#: inc/customizer.php:233
+msgid "H1 Font Size"
+msgstr ""
+
+#: inc/customizer.php:245
+msgid "H2 Color"
+msgstr ""
+
+#: inc/customizer.php:259
+msgid "H2 Fonts"
+msgstr ""
+
+#: inc/customizer.php:270
+msgid "H2 Font Size"
+msgstr ""
+
+#: inc/customizer.php:282
+msgid "H3 Color"
+msgstr ""
+
+#: inc/customizer.php:296
+msgid "H3 Fonts"
+msgstr ""
+
+#: inc/customizer.php:307
+msgid "H3 Font Size"
+msgstr ""
+
+#: inc/customizer.php:319
+msgid "H4 Color"
+msgstr ""
+
+#: inc/customizer.php:333
+msgid "H4 Fonts"
+msgstr ""
+
+#: inc/customizer.php:344
+msgid "H4 Font Size"
+msgstr ""
+
+#: inc/customizer.php:356
+msgid "H5 Color"
+msgstr ""
+
+#: inc/customizer.php:370
+msgid "H5 Fonts"
+msgstr ""
+
+#: inc/customizer.php:381
+msgid "H5 Font Size"
+msgstr ""
+
+#: inc/customizer.php:393
+msgid "H6 Color"
+msgstr ""
+
+#: inc/customizer.php:407
+msgid "H6 Fonts"
+msgstr ""
+
+#: inc/customizer.php:418
+msgid "H6 Font Size"
+msgstr ""
+
+#: inc/customizer.php:429
 msgid 'Theme Settings'
 msgstr ""
 
-#: inc/customizer.php:21
+#: inc/customizer.php:430
 msgid 'Description of what this panel does.'
 msgstr ""
 
-#: inc/customizer.php:26
+#: inc/customizer.php:435
 msgid 'Theme Color Option'
 msgstr ""
 
-#: inc/customizer.php:35
-#: inc/customizer.php:46
+#: inc/customizer.php:444
+#: inc/customizer.php:455
 msgid 'One can change complete theme color on just one click.'
 msgstr ""
 
-#: inc/customizer.php:53
+#: inc/customizer.php:462
 msgid 'Layout Settings'
 msgstr ""
 
-#: inc/customizer.php:59
-#: inc/customizer.php:68
+#: inc/customizer.php:473
+msgid 'Show / Hide Preloader'
+msgstr ""
+
+#: inc/customizer.php:483
+msgid 'Sticky Header'
+msgstr ""
+
+#: inc/customizer.php:493
+msgid 'Show / Hide Woocommerce Page Sidebar'
+msgstr ""
+
+#: inc/customizer.php:503
+msgid 'Show / Hide Single Product Page Sidebar'
+msgstr ""
+
+#: inc/customizer.php:508
+#: inc/customizer.php:517
 msgid 'Default'
 msgstr ""
 
-#: inc/customizer.php:64
+#: inc/customizer.php:513
 msgid 'Container Box'
 msgstr ""
 
-#: inc/customizer.php:65
+#: inc/customizer.php:514
 msgid 'Here you can change the Width layout.'
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:518
 msgid 'Container'
 msgstr ""
 
-#: inc/customizer.php:70
+#: inc/customizer.php:519
 msgid 'Box Container'
 msgstr ""
 
-#: inc/customizer.php:76
-#: inc/customizer.php:85
+#: inc/customizer.php:525
+#: inc/customizer.php:534
 msgid 'Right Sidebar'
 msgstr ""
 
-#: inc/customizer.php:81
+#: inc/customizer.php:530
 msgid 'Sidebar Layouts'
 msgstr ""
 
-#: inc/customizer.php:84
+#: inc/customizer.php:533
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:86
+#: inc/customizer.php:535
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:536
 msgid 'Three Columns'
 msgstr ""
 
-#: inc/customizer.php:88
+#: inc/customizer.php:537
 msgid 'Four Columns'
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:538
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:189
-msgid 'Typography'
+#: inc/customizer.php:544
+msgid 'Button Option'
 msgstr ""
 
-#: inc/customizer.php:200
-msgid 'Paragraph Color'
+#: inc/customizer.php:553
+msgid 'Top and Bottom Padding'
 msgstr ""
 
-#: inc/customizer.php:214
-msgid 'Paragraph Fonts'
+#: inc/customizer.php:568
+msgid 'Left and Right Padding'
 msgstr ""
 
-#: inc/customizer.php:224
-msgid 'Paragraph Font Size'
+#: inc/customizer.php:583
+msgid 'Button Border Radius'
 msgstr ""
 
-#: inc/customizer.php:236
-msgid '"a" Tag Color'
-msgstr ""
-
-#: inc/customizer.php:250
-msgid '"a" Tag Fonts'
-msgstr ""
-
-#: inc/customizer.php:261
-msgid '"li" Tag Color'
-msgstr ""
-
-#: inc/customizer.php:275
-msgid '"li" Tag Fonts'
-msgstr ""
-
-#: inc/customizer.php:286
-msgid 'H1 Color'
-msgstr ""
-
-#: inc/customizer.php:300
-msgid 'H1 Fonts'
-msgstr ""
-
-#: inc/customizer.php:311
-msgid 'H1 Font Size'
-msgstr ""
-
-#: inc/customizer.php:323
-msgid 'h2 Color'
-msgstr ""
-
-#: inc/customizer.php:337
-msgid 'h2 Fonts'
-msgstr ""
-
-#: inc/customizer.php:348
-msgid 'h2 Font Size'
-msgstr ""
-
-#: inc/customizer.php:360
-msgid 'h3 Color'
-msgstr ""
-
-#: inc/customizer.php:374
-msgid 'h3 Fonts'
-msgstr ""
-
-#: inc/customizer.php:385
-msgid 'h3 Font Size'
-msgstr ""
-
-#: inc/customizer.php:397
-msgid 'h4 Color'
-msgstr ""
-
-#: inc/customizer.php:411
-msgid 'h4 Fonts'
-msgstr ""
-
-#: inc/customizer.php:422
-msgid 'h4 Font Size'
-msgstr ""
-
-#: inc/customizer.php:434
-msgid 'h5 Color'
-msgstr ""
-
-#: inc/customizer.php:448
-msgid 'h5 Fonts'
-msgstr ""
-
-#: inc/customizer.php:459
-msgid 'h5 Font Size'
-msgstr ""
-
-#: inc/customizer.php:471
-msgid 'h6 Color'
-msgstr ""
-
-#: inc/customizer.php:485
-msgid 'h6 Fonts'
-msgstr ""
-
-#: inc/customizer.php:496
-msgid 'h6 Font Size'
-msgstr ""
-
-#: inc/customizer.php:504
+#: inc/customizer.php:595
 msgid 'Social Icon link'
 msgstr ""
 
-#: inc/customizer.php:505
+#: inc/customizer.php:596
 msgid 'Add Top Bar Content here'
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:606
 msgid 'Add Facebook link'
 msgstr ""
 
-#: inc/customizer.php:526
+#: inc/customizer.php:617
 msgid 'Add Twitter link'
 msgstr ""
 
-#: inc/customizer.php:537
+#: inc/customizer.php:628
 msgid 'Add Linkedin link'
 msgstr ""
 
-#: inc/customizer.php:548
+#: inc/customizer.php:639
 msgid 'Add Instagram link'
 msgstr ""
 
-#: inc/customizer.php:559
+#: inc/customizer.php:650
 msgid 'Add Youtube link'
 msgstr ""
 
-#: inc/customizer.php:570
+#: inc/customizer.php:661
 msgid 'Add Behance link'
 msgstr ""
 
-#: inc/customizer.php:578
+#: inc/customizer.php:669
 msgid 'Banner'
 msgstr ""
 
-#: inc/customizer.php:579
+#: inc/customizer.php:670
 msgid 'This section will appear below the social icons section'
 msgstr ""
 
-#: inc/customizer.php:588
+#: inc/customizer.php:679
 msgid 'Select Banner Page'
 msgstr ""
 
-#: inc/customizer.php:589
+#: inc/customizer.php:680
 msgid 'Size of image should be 1600x800'
 msgstr ""
 
-#: inc/customizer.php:596
-msgid 'Awesome Portfolio'
+#: inc/customizer.php:687
+#: inc/customizer.php:696
+msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:597
-msgid 'This section will appear below the banner.'
+#: inc/customizer.php:692
+msgid "Banner Content Alignment"
 msgstr ""
 
-#: inc/customizer.php:606
-msgid 'Section Title'
+#: inc/customizer.php:695
+msgid "Center"
 msgstr ""
 
-#: inc/customizer.php:626
-#:inc/customizer.php:645
-#:inc/customizer.php:664
-#:inc/customizer.php:683
-msgid 'Select post'
-msgstr ""
-
-#: inc/customizer.php:627
-#:inc/customizer.php:646
-msgid 'Size of image should be 270x270'
-msgstr ""
-
-#: inc/customizer.php:665
-msgid 'Size of image should be 570x270'
-msgstr ""
-
-#: inc/customizer.php:684
-msgid 'Size of image should be 570x570'
-msgstr ""
-
-#: inc/customizer.php:690
-msgid 'Blog Page Settings'
-msgstr ""
-
-#: inc/customizer.php:700
-msgid 'Post Date'
+#: inc/customizer.php:697
+msgid "Right"
 msgstr ""
 
 #: inc/customizer.php:710
-msgid 'Comments'
+msgid "Banner Excerpt length"
 msgstr ""
 
-#: inc/customizer.php:720
-msgid 'Author'
+#: inc/customizer.php:727
+msgid "Banner Image Opacity"
 msgstr ""
 
-#: inc/customizer.php:730
-msgid 'Single Post Tags'
+#: inc/customizer.php:747
+msgid 'Awesome Portfolio'
 msgstr ""
 
-#: inc/customizer.php:742
-msgid 'Excerpt length'
+#: inc/customizer.php:748
+msgid 'This section will appear below the banner.'
 msgstr ""
 
-#: inc/customizer.php:758
-msgid 'Add Button Text'
+#: inc/customizer.php:757
+msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:765
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:776
-msgid 'Footer widget area'
+#: inc/customizer.php:777
+#:inc/customizer.php:796
+#:inc/customizer.php:815
+#:inc/customizer.php:834
+msgid 'Select post'
 msgstr ""
 
 #: inc/customizer.php:778
-msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
-msgstr ""
-
-#: inc/customizer.php:780
-msgid 'One'
-msgstr ""
-
-#: inc/customizer.php:781
-msgid 'Two'
-msgstr ""
-
-#: inc/customizer.php:782
-msgid 'Three'
-msgstr ""
-
-#: inc/customizer.php:783
-msgid 'Four'
-msgstr ""
-
-#: inc/customizer.php:792
-msgid 'Copyright Text'
-msgstr ""
-
-#: inc/customizer.php:803
-msgid 'Show / Hide Scroll Top Button'
-msgstr ""
-
-#: inc/customizer.php:808
-#: inc/customizer.php:817
-msgid 'Right'
-msgstr ""
-
-#: inc/customizer.php:813
-msgid 'Scroll Back to Top Position'
+#:inc/customizer.php:797
+msgid 'Size of image should be 270x270'
 msgstr ""
 
 #: inc/customizer.php:816
+msgid 'Size of image should be 570x270'
+msgstr ""
+
+#: inc/customizer.php:835
+msgid 'Size of image should be 570x570'
+msgstr ""
+
+#: inc/customizer.php:841
+msgid "404 Page"
+msgstr ""
+
+#: inc/customizer.php:850
+msgid "404 Page Title"
+msgstr ""
+
+#: inc/customizer.php:860
+msgid "404 Page Content"
+msgstr ""
+
+#: inc/customizer.php:870
+msgid "404 Page Button"
+msgstr ""
+
+#: inc/customizer.php:877
+msgid "Responsive Setting"
+msgstr ""
+
+#: inc/customizer.php:887
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/customizer.php:897
+msgid "Slider"
+msgstr ""
+
+#: inc/customizer.php:907
+msgid "Metabox"
+msgstr ""
+
+#: inc/customizer.php:917
+msgid "Sidebar"
+msgstr ""
+
+#: inc/customizer.php:923
+msgid 'Blog Page Settings'
+msgstr ""
+
+#: inc/customizer.php:933
+msgid 'Post Date'
+msgstr ""
+
+#: inc/customizer.php:943
+msgid 'Comments'
+msgstr ""
+
+#: inc/customizer.php:953
+msgid 'Author'
+msgstr ""
+
+#: inc/customizer.php:963
+msgid 'Single Post Tags'
+msgstr ""
+
+#: inc/customizer.php:975
+msgid 'Excerpt length'
+msgstr ""
+
+#: inc/customizer.php:991
+msgid 'Add Button Text'
+msgstr ""
+
+#: inc/customizer.php:998
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:1009
+msgid 'Footer widget area'
+msgstr ""
+
+#: inc/customizer.php:1011
+msgid 'Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.'
+msgstr ""
+
+#: inc/customizer.php:1013
+msgid 'One'
+msgstr ""
+
+#: inc/customizer.php:1014
+msgid 'Two'
+msgstr ""
+
+#: inc/customizer.php:1015
+msgid 'Three'
+msgstr ""
+
+#: inc/customizer.php:1016
+msgid 'Four'
+msgstr ""
+
+#: inc/customizer.php:1025
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:1036
+msgid 'Show / Hide Scroll Top Button'
+msgstr ""
+
+#: inc/customizer.php:1041
+#: inc/customizer.php:1050
+msgid 'Right'
+msgstr ""
+
+#: inc/customizer.php:1046
+msgid 'Scroll Back to Top Position'
+msgstr ""
+
+#: inc/customizer.php:1049
 msgid 'Left'
 msgstr ""
 
-#: inc/customizer.php:818
+#: inc/customizer.php:1051
 msgid 'Center'
 msgstr ""
 
-#: inc/customizer.php:902
+#: inc/customizer.php:1135
 msgid 'Portfolio Pro'
 msgstr ""
 
-#: inc/customizer.php:903
+#: inc/customizer.php:1136
 msgid 'Go Pro'
 msgstr ""

@@ -19,8 +19,15 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   
-  <div class="main-menu <?php if( get_theme_mod( 'advance_portfolio_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+  <div class="main-menu <?php if( get_theme_mod( 'advance_portfolio_sticky_header') != '' || get_theme_mod( 'advance_portfolio_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
+      <?php if(get_theme_mod('advance_portfolio_preloader_option',true)){ ?>
+        <div id="loader-wrapper">
+          <div id="loader"></div>
+          <div class="loader-section section-left"></div>
+          <div class="loader-section section-right"></div>
+        </div>
+      <?php }?>
       <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-portfolio' ); ?></a>
       <div id="header">
         <div class="container">
