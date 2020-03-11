@@ -4,10 +4,10 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 */
 get_header('portfolio');
-if ( false == esc_attr(get_theme_mod('atomy_enable_breadcrumbs_page',false))) :?>
+if ( false == get_theme_mod('atomy_enable_breadcrumbs_page',false)) :?>
 <div class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_header','container'))?> at-woocommerce-breadcrumbs">
 <?php atomy_custom_breadcrumbs(); ?>
 </div>

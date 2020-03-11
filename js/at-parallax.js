@@ -2,7 +2,7 @@
  * at-parallax.js
  * author    Franchi Design
  * package   Atomy
- * version   1.0.5
+ * version   1.0.6
  */
 
 jQuery(function($){

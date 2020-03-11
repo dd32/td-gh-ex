@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 */
 
 get_header();
@@ -15,11 +15,11 @@ get_header();
 	<div class="container mt-3">
       <div class="at-main text-center">
         <span>
-			<?php echo esc_html('Oops!','atomy');?>
+			<?php echo esc_html__('Oops!','atomy');?>
 		</span>
-		<h1><?php echo esc_html('404 That page can&rsquo;t be found.','atomy');?></h1>
+		<h1><?php echo esc_html__('404 That page can&rsquo;t be found.','atomy');?></h1>
 		<hr class="at-hr-404-page">
-		<p><?php echo esc_html('It looks like nothing was found at this location. Maybe try a search?','atomy');?></p>
+		<p><?php echo esc_html__('It looks like nothing was found at this location. Maybe try a search?','atomy');?></p>
 		<div class="container">	
 		<div class="row">
 		<div class="col-md-4"></div>

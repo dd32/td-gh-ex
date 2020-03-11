@@ -5,7 +5,7 @@
 *
 * @package Atomy
 *
-*  @version 1.0.5
+*  @version 1.0.6
 */
 
 function atomy_page_display() {
@@ -13,8 +13,8 @@ function atomy_page_display() {
 
  <div class="at-header-admin">
       <div class="at-logo-admin">
-		   	<h2><?php echo esc_html('Atomy','atomy');?></h2>
-		  	<span><?php echo esc_html('V 1.0.5','atomy');?></span>
+		   	<h2><?php echo esc_html__('Atomy','atomy');?></h2>
+		  	<span><?php echo esc_html__('V 1.0.6','atomy');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
@@ -44,11 +44,11 @@ function atomy_page_display() {
 	<div id="Help" class="tabcontent">
 		<div class="at-documentation">
 	<div class="at-header-help">
-	  <h2><?php echo esc_html('Documentation','atomy');?></h2>
+	  <h2><?php echo esc_html__('Documentation','atomy');?></h2>
 	</div>
 	<div class="at-header-help-p">
-	   <p><?php echo esc_html('In this page you can view general frequently asked questions to help you get started. Support is only available for the','atomy')?> <a target="_blank" href="<?php echo esc_url(atomy_url_go_pro_theme);?>"><?php echo esc_html('PRO version!','atomy')?></a>
-	      <?php echo esc_html('For more, refer to our documentation site or click the links below:','atomy')?></p>
+	   <p><?php echo esc_html__('In this page you can view general frequently asked questions to help you get started. Support is only available for the','atomy')?> <a target="_blank" href="<?php echo esc_url(atomy_url_go_pro_theme);?>"><?php echo esc_html('PRO version!','atomy')?></a>
+	      <?php echo esc_html__('For more, refer to our documentation site or click the links below:','atomy')?></p>
           <div class="at-button-documentation">
 		   	<a class="at-read-documentation" target="_blank" href="<?php echo esc_url(atomy_url_documentation_theme); ?>"><?php echo esc_html('Read Documentation','atomy');?></a>
 		   <a class="at-theme-support" target="_blank" href="<?php echo esc_url(atomy_url_support_theme); ?>"><?php echo esc_html('Theme Support','atomy');?></a>

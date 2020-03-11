@@ -2,7 +2,7 @@
 
 Thema Name: Atomy
 Contributors: franchidesign
-Version: 1.0.5
+Version: 1.0.6
 Requires at least: 4.7
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
@@ -257,19 +257,9 @@ Atomy is distributed under the terms of the GNU GPL
 * Fixed some bugs
 * Accessibility added
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+= 1.0.6 =
+* Fixed some bugs
+* Accessibility Fixed some bugs
+* Breadcrumbs changed
 
 

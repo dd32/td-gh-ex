@@ -3,13 +3,13 @@
 * section-paralax.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 *
 */
 ?>
 
 <!-- Section Parallax -->
-<section class="mb-5 at-about-parallax <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_width_parallax', false) )):?>container-fluid pl-0 pr-0<?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_width_parallax', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+<section class="mb-5 at-about-parallax <?php if ( false == get_theme_mod('atomy_enable_full_width_parallax', false) ):?>container-fluid pl-0 pr-0<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_parallax', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
   <?php 
          $atomy_post_name_parallax = esc_attr(get_theme_mod('at_post_parallax'));
          $atomy_args_parallax = array(
@@ -30,14 +30,14 @@
           <div class="at-text-parallax">
 	        <div class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?>">
 	           <div class="row at-button-action-general">
-	              <div class="col-md-12 <?php echo esc_html(get_theme_mod('at_text_align_parallax','text-left'));?>">
+	              <div class="col-md-12 <?php echo esc_attr(get_theme_mod('at_text_align_parallax','text-left'));?>">
 		              <h1>
                     <?php the_title_attribute(); ?>
                   </h1>
 		          </div>
 		          <!-- Button General Action -->
-			     <?php if ( false == esc_attr(get_theme_mod('atomy_enable_button_action_parallax', false) )):?>
-	             <div class="col-md-12 at-parallax-a pt-4 <?php echo esc_html(get_theme_mod('at_text_align_parallax','text-left'));?>">
+			     <?php if ( false == get_theme_mod('atomy_enable_button_action_parallax', false) ):?>
+	             <div class="col-md-12 at-parallax-a pt-4 <?php echo esc_attr(get_theme_mod('at_text_align_parallax','text-left'));?>">
                   <a href="<?php the_permalink();?>" class="checkout-button button alt wc-forward">
 		                  <?php echo esc_html(get_theme_mod( 'at_title_action_parallax',__('SHOP NOW','atomy')));?>
                   </a>

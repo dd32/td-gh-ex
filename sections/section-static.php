@@ -3,18 +3,18 @@
 * section-static.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 *
 */
 ?>
 
 <!-- Section Static -->
-<section class="at-header-media  pb-5 <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_width_static', true) )):?>container-fluid pl-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_width_static', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+<section class="at-header-media  pb-5 <?php if ( false == get_theme_mod('atomy_enable_full_width_static', true) ):?>container-fluid pl-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_static', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
 	<div class="row">
     <?php the_custom_header_markup() ?>
 </div>
  	<!-- Button General Action -->
-   <?php if ( false == esc_attr(get_theme_mod('atomy_enable_button_action_static', true) )):?>
+   <?php if ( false == get_theme_mod('atomy_enable_button_action_static', true) ):?>
 	<div class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?>">
   <div class="row image-caption at-button-action-general text-center at-button-action-static">
   <div class="col-md-12">

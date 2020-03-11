@@ -3,7 +3,7 @@
 * section-slide.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 *
 */
 ?>
@@ -12,7 +12,7 @@
 <section class="container-fluid at-slide">
 <div class="row">
 <!-- Banner -->
-<div class="col-md-3 at-col-slide offset-md-3 col-xs-12" data-aos="<?php echo esc_html(get_theme_mod( 'at_effect_banner_slide'));?>" data-aos-duration="800">
+<div class="col-md-3 at-col-slide offset-md-3 col-xs-12" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_banner_slide'));?>" data-aos-duration="800">
 <a href="<?php echo esc_url(get_theme_mod('atomy_link_slide'))?>" class="at-banner-slide text-center" style="background-image:url('<?php echo esc_url(get_template_directory_uri()).'/images/bg_banner_club.png'?>')">
      <h2><?php echo esc_html(get_theme_mod( 'at_title_slide',__('Join the Atomy World','atomy')));?></h2>
      <h5><?php echo esc_html(get_theme_mod( 'at_subtitle_slide',__('Ask where you can find the nearest Atomy store!','atomy')));?></h5>
@@ -20,7 +20,7 @@
 </a>
 </div>
 <!-- Carousel -->
-<div class="col-md-4 offset-md-1 text-center col-xs-12" data-aos="<?php echo esc_html(get_theme_mod( 'at_effect_carousel_slide'));?>" data-aos-duration="800">
+<div class="col-md-4 offset-md-1 text-center col-xs-12" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_carousel_slide'));?>" data-aos-duration="800">
 <div id="carouselslide" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
 

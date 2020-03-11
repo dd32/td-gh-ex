@@ -4,13 +4,13 @@
 * Template Post Type: page
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 *
 */
 
 get_header('portfolio');
 
-if ( false == esc_attr(get_theme_mod('atomy_enable_breadcrumbs_page',false))) :?>
+if ( false == get_theme_mod('atomy_enable_breadcrumbs_page',false)) :?>
 <div class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_header','container'))?> at-woocommerce-breadcrumbs">
 <?php atomy_custom_breadcrumbs(); ?>
 </div>
@@ -22,7 +22,7 @@ if (have_posts() ) : while (have_posts() ):the_post(); ?>
 </div>
 <div class="container at-content-contact mt-5 mb-5">
 <!-- Title and Content -->
-<?php if (false == esc_attr(get_theme_mod('at_enable_title_atomy_contact_page',false))):?>
+<?php if (false == get_theme_mod('at_enable_title_atomy_contact_page',false)):?>
 <h2 class="text-center mb-4"><?php the_title_attribute();?></h2>
 <?php the_content();?>
 <?php endif;?>

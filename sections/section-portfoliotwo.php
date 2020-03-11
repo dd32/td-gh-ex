@@ -3,13 +3,13 @@
 * Portfolio 
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 *
 */
 ?> 
 
-<section class="at_portfolio_2 <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_width_portfolio', true) )):?>container-fluid<?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_width_portfolio', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">  
-<h2 class="<?php echo esc_html(get_theme_mod('at_text_align_title_portfolio'));?> mb-2 col-md-12" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_title_portfolio_section','no-effect'));?>" data-aos-duration="500">
+<section class="at_portfolio_2 <?php if ( false == get_theme_mod('atomy_enable_full_width_portfolio', true) ):?>container-fluid<?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_width_portfolio', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">  
+<h2 class="<?php echo esc_attr(get_theme_mod('at_text_align_title_portfolio'));?> mb-2 col-md-12" data-aos="<?php echo esc_attr(get_theme_mod( 'at_effect_title_portfolio_section','no-effect'));?>" data-aos-duration="500">
 <?php echo esc_html(get_theme_mod( 'at_title_portfolio_section',__('Portfolio','atomy')));?>
 </h2>
 <div class="row mr-0 ml-0">
@@ -24,17 +24,17 @@
       <li><span class="filter attab2" data-filter=".two">
       <?php echo esc_html(get_theme_mod( 'at_title_portfolio2_tab_2',__('Two','atomy')));?>
       </span></li>
-      <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_3_portfolio2', false ) )) : ?>
+      <?php if ( false ==  get_theme_mod( 'atomy_enable_tab_3_portfolio2', false ) ) : ?>
       <li class="at-nav-portfolio-responsive-3"><span class="filter attab3" data-filter=".three">
       <?php echo esc_html(get_theme_mod( 'at_title_portfolio2_tab_3',__('Three','atomy')));?>
       </span></li>
       <?php endif;?>
-      <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_4_portfolio2', false ) )) : ?>
+      <?php if ( false ==  get_theme_mod( 'atomy_enable_tab_4_portfolio2', false ) ) : ?>
       <li class="at-nav-portfolio-responsive-4"><span class="filter attab4" data-filter=".four">
       <?php echo esc_html(get_theme_mod( 'at_title_portfolio2_tab_4',__('Four','atomy')));?>
       </span></li>
       <?php endif;?>
-      <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_5_portfolio2', false ) )) : ?>
+      <?php if ( false ==  get_theme_mod( 'atomy_enable_tab_5_portfolio2', false ) ) : ?>
       <li class="at-nav-portfolio-responsive-5"><span class="filter attab5" data-filter=".five">
       <?php echo esc_html(get_theme_mod( 'at_title_portfolio2_tab_5',__('Five','atomy')));?>
       </span></li>
@@ -46,7 +46,7 @@
 <div class="row">
 <!-- Portfolio Tab One -->
 <?php
-if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_1', true ) )) :
+if ( false ==  get_theme_mod( 'atomy_enable_featured_product_1', true ) ) :
 $atomy_tax_query_1 =array(
   array(
     'taxonomy' => 'product_visibility',
@@ -81,13 +81,13 @@ endif;
               ?>
           <!-- Text -->
           <div class="label">
-            <div class="label-text <?php if (false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> text-center <?php endif?>">
+            <div class="label-text <?php if (false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> text-center <?php endif?>">
             <?php if($atomy_sale) : ?>
                 <p class="at-product-price at-product-price-portfolio"><del><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></del><?php echo esc_html($atomy_currency); echo esc_html($atomy_sale); ?></p>    
                 <?php elseif($atomy_price) : ?>
                 <p class="at-product-price at-product-price-portfolio"><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></p>    
                 <?php endif; ?>	
-              <a <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> style="display:none" <?php endif?> href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
+              <a <?php if ( false == get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> style="display:none" <?php endif?> href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
             </div>
             <div class="label-bg"></div>
           </div>
@@ -100,7 +100,7 @@ endif;
 
       <!-- Portfolio Tab Two -->
 <?php
-if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true ) )) :
+if ( false == get_theme_mod( 'atomy_enable_featured_product_2', true ) ) :
   $atomy_tax_query_2 =array(
     array(
       'taxonomy' => 'product_visibility',
@@ -135,13 +135,13 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
               ?>
           <!-- Text -->
           <div class="label">
-          <div class="label-text <?php if (false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> text-center <?php endif?>">
+          <div class="label-text <?php if (false == get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> text-center <?php endif?>">
             <?php if($atomy_sale) : ?>
                 <p class="at-product-price at-product-price-portfolio"><del><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></del><?php echo esc_html($atomy_currency); echo esc_html($atomy_sale); ?></p>    
                 <?php elseif($atomy_price) : ?>
                 <p class="at-product-price at-product-price-portfolio"><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></p>    
                 <?php endif; ?>	
-              <a <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> style="display:none" <?php endif?>  href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
+              <a <?php if ( false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> style="display:none" <?php endif?>  href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
             </div>
             <div class="label-bg"></div>
           </div>
@@ -154,8 +154,8 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
 
   <!-- Portfolio Tab Three -->
   <?php
-  if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_3_portfolio2', false ) )) : 
-  if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_3', true ) )) :
+  if ( false ==  get_theme_mod( 'atomy_enable_tab_3_portfolio2', false ) ) : 
+  if ( false ==  get_theme_mod( 'atomy_enable_featured_product_3', true ) ) :
       $atomy_tax_query_3 =array(
         array(
           'taxonomy' => 'product_visibility',
@@ -190,13 +190,13 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
               ?>
           <!-- Text -->
           <div class="label">
-          <div class="label-text <?php if (false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> text-center <?php endif?>">
+          <div class="label-text <?php if (false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> text-center <?php endif?>">
             <?php if($atomy_sale) : ?>
                 <p class="at-product-price at-product-price-portfolio"><del><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></del><?php echo esc_html($atomy_currency); echo esc_html($atomy_sale); ?></p>    
                 <?php elseif($atomy_price) : ?>
                 <p class="at-product-price at-product-price-portfolio"><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></p>    
                 <?php endif; ?>	
-              <a <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> style="display:none" <?php endif?> href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
+              <a <?php if ( false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> style="display:none" <?php endif?> href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
             </div>
             <div class="label-bg"></div>
           </div>
@@ -209,8 +209,8 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       endif; ?>
 
       <!-- Portfolio Tab Four -->
-  <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_4_portfolio2', false ) )) : 
-  if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_4', true ) )) :
+  <?php if ( false ==  get_theme_mod( 'atomy_enable_tab_4_portfolio2', false ) ) : 
+  if ( false ==  get_theme_mod( 'atomy_enable_featured_product_4', true ) ) :
     $atomy_tax_query_4 =array(
       array(
         'taxonomy' => 'product_visibility',
@@ -245,13 +245,13 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
               ?>
           <!-- Text -->
           <div class="label">
-          <div class="label-text <?php if (false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> text-center <?php endif?>">
+          <div class="label-text <?php if (false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> text-center <?php endif?>">
             <?php if($atomy_sale) : ?>
                 <p class="at-product-price at-product-price-portfolio"><del><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></del><?php echo esc_html($atomy_currency); echo esc_html($atomy_sale); ?></p>    
                 <?php elseif($atomy_price) : ?>
                 <p class="at-product-price at-product-price-portfolio"><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></p>    
                 <?php endif; ?>	
-              <a <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> style="display:none" <?php endif?> href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
+              <a <?php if ( false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> style="display:none" <?php endif?> href="<?php the_permalink();?>"class="text-title"><?php the_title_attribute (); ?></a>
             </div>
             <div class="label-bg"></div>
           </div>
@@ -264,8 +264,8 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
       endif; ?>
 
       <!-- Portfolio Tab Five -->
-  <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_tab_5_portfolio2', false ) )) : 
-  if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_5', true ) )) :
+  <?php if ( false ==  get_theme_mod( 'atomy_enable_tab_5_portfolio2', false ) ) : 
+  if ( false ==  get_theme_mod( 'atomy_enable_featured_product_5', true ) ) :
     $atomy_tax_query_5 =array(
       array(
         'taxonomy' => 'product_visibility',
@@ -300,7 +300,7 @@ if ( false == esc_attr( get_theme_mod( 'atomy_enable_featured_product_2', true )
               ?>
           <!-- Text -->
           <div class="label">
-          <div class="label-text <?php if (false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?> text-center <?php endif?>">
+          <div class="label-text <?php if (false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?> text-center <?php endif?>">
             <?php if($atomy_sale) : ?>
                 <p class="at-product-price at-product-price-portfolio"><del><?php echo esc_html($atomy_currency); echo esc_html($atomy_price); ?></del><?php echo esc_html($atomy_currency); echo esc_html($atomy_sale); ?></p>    
                 <?php elseif($atomy_price) : ?>

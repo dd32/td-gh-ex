@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 */
 
 ?>
@@ -15,13 +15,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<?php get_template_part('inc/at-custom','style');?>
 </head>
-<!-- Back To Top -->
-<?php if ( false == esc_attr( get_theme_mod('atomy_enable_back_to_top', false))) :?><div class="btn-back-to-top"><i class="fa fa-angle-up"></i></div><?php endif;?>
 <body <?php body_class(); ?>>
-<?php get_template_part('inc/at-custom','style');?>
+<!-- Back To Top -->
+<?php if ( false == get_theme_mod('atomy_enable_back_to_top', false)) :?><div class="btn-back-to-top"><i class="fa fa-angle-up"></i></div><?php endif;?>
 <!-- Preloader-->
-<?php if (false == esc_attr( get_theme_mod( 'atomy_enable_preloader', true ) )) : ?>
+<?php if (false ==  get_theme_mod( 'atomy_enable_preloader', true ) ) : ?>
   <div id="preloader" style="background-color:<?php echo esc_attr(get_theme_mod('at_background_preloader','#fff'));?>">
     <div id="status" style="background-image: url('<?php if (get_template_directory_uri().get_theme_mod('at_image_preloader')) : 
       echo get_template_directory_uri().get_theme_mod('at_image_preloader'); else: echo get_template_directory_uri().'/images/preloader/at-preloader-1.gif'; endif; ?>');">&nbsp;</div>

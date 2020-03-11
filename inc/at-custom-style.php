@@ -3,7 +3,7 @@
 * at-custom-style.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 */
 
 
@@ -21,14 +21,14 @@ get_template_part('classcolorskin/color',esc_attr(get_theme_mod('at_color_skin',
 }
 </style>
  
-<?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_custom_font_heading', true ) )) : ?>
+<?php if ( false ==  get_theme_mod( 'atomy_enable_custom_font_heading', true )) : ?>
 <style>
 .entry-header h1,.entry-header h2,.entry-header h3,.entry-header h4,.entry-header h5,.entry-header h6,h1,h2,h3,h4,h5,h6,.entry-header a{
    font-family:'<?php echo esc_attr( get_theme_mod('at_custom_font_heading')) ?>'<?php echo esc_attr( get_theme_mod('at_custom_font_family_heading')) ?>;
 }
 </style>
 <?php endif;?>
-<?php if ( true== esc_attr( get_theme_mod( 'atomy_enable_custom_font_heading', true) )) : ?>
+<?php if ( true==  get_theme_mod( 'atomy_enable_custom_font_heading', true) ) : ?>
 <style>
 .entry-header h1,.entry-header h2,.entry-header h3,.entry-header h4,.entry-header h5,.entry-header h6,h1,h2,h3,h4,h5,h6,.entry-header a{
     font-family:'<?php echo esc_attr(get_theme_mod('atomy_title_font','Montserrat')); ?>';
@@ -49,14 +49,14 @@ p,.entry-meta{
 }
 
 </style>
-<?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_custom_font_primary', true ) )) : ?>
+<?php if ( false ==  get_theme_mod( 'atomy_enable_custom_font_primary', true ) ) : ?>
 <style>
 p,.entry-meta{
    font-family:'<?php echo esc_attr( get_theme_mod('at_custom_font_primary')) ?>'<?php echo esc_attr( get_theme_mod('at_custom_font_family_primary')) ?>;
 }
 </style>
 <?php endif;?>
-<?php if ( true == esc_attr( get_theme_mod( 'atomy_enable_custom_font_primary', true ) )) : ?>
+<?php if ( true ==  get_theme_mod( 'atomy_enable_custom_font_primary', true ) ) : ?>
 <style>
 p,.entry-meta{
     font-family:'<?php echo esc_attr(get_theme_mod('atomy_title_font_meta','Montserrat')); ?>';
@@ -82,7 +82,7 @@ a:hover{
 
 </style>   
 
-<?php if ( false == esc_attr( get_theme_mod( 'at_text_underline_title_hover', true) )):?>
+<?php if ( false ==  get_theme_mod( 'at_text_underline_title_hover', true) ):?>
 <style>
 a:hover{
     text-decoration:underline!important;
@@ -90,14 +90,14 @@ a:hover{
 </style>
 <?php endif; ?>
 
-<?php if ( false == esc_attr(get_theme_mod('atomy_enable_custom_font_link', true ) )) : ?>
+<?php if ( false == get_theme_mod('atomy_enable_custom_font_link', true ) ) : ?>
 <style>
 a,.at_portfolio_2 span{
    font-family:'<?php echo esc_attr( get_theme_mod('at_custom_font_link')) ?>'<?php echo esc_attr( get_theme_mod('at_custom_font_family_link')) ?>;
 }
 </style>
 <?php endif;?>
-<?php if ( true == esc_attr(get_theme_mod('atomy_enable_custom_font_link', true ) )) : ?>
+<?php if ( true == get_theme_mod('atomy_enable_custom_font_link', true ) ) : ?>
 <style>
 a,.at_portfolio_2 span{
     font-family:'<?php echo esc_attr(get_theme_mod('atomy_title_font_meta_a','Montserrat')); ?>';
@@ -118,7 +118,7 @@ a,.at_portfolio_2 span{
 
 <!-- Enable back to top in device -->
 
-<?php if ( true == esc_attr( get_theme_mod( 'atomy_enable_back_to_top_device', true) )):?>
+<?php if ( true ==  get_theme_mod( 'atomy_enable_back_to_top_device', true) ):?>
 <style>
 @media (max-width: 799px){
 .btn-back-to-top{
@@ -159,7 +159,7 @@ a,.at_portfolio_2 span{
 
 </style>
                                             
-<?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_effect_image_category', true) )) : ?>
+<?php if ( false ==  get_theme_mod( 'atomy_enable_effect_image_category', true) ) : ?>
 <style>
 
     
@@ -230,7 +230,7 @@ object-fit:<?php echo esc_attr(get_theme_mod('at_object_media_header','unset'));
 </style>
 <?php
 /* Shop Image Featured Page */
- if ( true == esc_attr( get_theme_mod( 'atomy_enable_auto_cart_image', false ) )) : ?>
+ if ( true ==  get_theme_mod( 'atomy_enable_auto_cart_image', false ) ) : ?>
  <style>
 .woocommerce-page img.at-img-single{
     height:auto;
@@ -248,7 +248,7 @@ object-fit:<?php echo esc_attr(get_theme_mod('at_object_media_header','unset'));
 </style>
 <?php
 /* Single Product */
-if (false == esc_attr(get_theme_mod('atomy_enable_auto_image_single', true))) : ?>
+if (false == get_theme_mod('atomy_enable_auto_image_single', true)) : ?>
 <style>
 .woocommerce .woocommerce-product-gallery__image img.wp-post-image,.woocommerce .yith_magnifier_zoom_wrap img{
     height:<?php echo esc_attr(get_theme_mod('at_height_image_single_product',450));?>px!important;
@@ -326,7 +326,7 @@ if (false == esc_attr(get_theme_mod('atomy_enable_auto_image_single', true))) : 
 </style>
 
 <!-- Sidebar Blog -->
-<?php if ( true == esc_attr( get_theme_mod( 'at_enable_sidebar_media', false) )):?>
+<?php if ( true ==  get_theme_mod( 'at_enable_sidebar_media', false) ):?>
 
 <style>
 
@@ -341,14 +341,14 @@ if (false == esc_attr(get_theme_mod('atomy_enable_auto_image_single', true))) : 
 <?php endif;?>
 
 <!--  Woocommerce product -->
-<?php if ( true == esc_attr( get_theme_mod( 'at_enable_add_basket', false) )):?>
+<?php if ( true == get_theme_mod( 'at_enable_add_basket', false) ):?>
 <style>
 .add-to-cart a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart{
  display:none;
 }
 </style>
 <?php endif;?>
-<?php if ( true == esc_attr( get_theme_mod( 'at_enable_preview', false) )):?>
+<?php if ( true ==  get_theme_mod( 'at_enable_preview', false) ):?>
 <style>
 .add-to-cart a.button.yith-wcqv-button{
  display:none;
@@ -357,7 +357,7 @@ if (false == esc_attr(get_theme_mod('atomy_enable_auto_image_single', true))) : 
 <?php endif;?>
 
 
-<?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_width_static', false) )):?>
+<?php if ( true == get_theme_mod('atomy_enable_full_width_static', false) ):?>
 <style>
 /* Button play video header image */
 .wp-custom-header-video-button{
@@ -508,7 +508,7 @@ figure.snip1418{
 
 /* Price Portfolio */
 
-<?php if (true == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?>
+<?php if (true ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?>
 
 .at-product-price.at-product-price-portfolio{
     position: absolute;
@@ -516,7 +516,7 @@ figure.snip1418{
 
 <?php endif?>
 
-<?php if (false == esc_attr( get_theme_mod( 'atomy_enable_only_price_portfolio', true ) )) :?>
+<?php if (false ==  get_theme_mod( 'atomy_enable_only_price_portfolio', true ) ) :?>
 
 .at-product-price.at-product-price-portfolio{
     position: relative;

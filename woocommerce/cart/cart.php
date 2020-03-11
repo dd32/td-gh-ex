@@ -27,10 +27,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<tr>
 				<th class="product-remove">&nbsp;</th>
 				<th class="product-thumbnail">&nbsp;</th>
-				<th class="product-name"><?php esc_html_e( 'Product', 'atomy' ); ?></th>
-				<th class="product-price"><?php esc_html_e( 'Price', 'atomy' ); ?></th>
-				<th class="product-quantity"><?php esc_html_e( 'Quantity', 'atomy' ); ?></th>
-				<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'atomy' ); ?></th>
+				<th class="product-name"><?php esc_attr_e( 'Product', 'atomy' ); ?></th>
+				<th class="product-price"><?php esc_attr_e( 'Price', 'atomy' ); ?></th>
+				<th class="product-quantity"><?php esc_attr_e( 'Quantity', 'atomy' ); ?></th>
+				<th class="product-subtotal"><?php esc_attr_e( 'Subtotal', 'atomy' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>

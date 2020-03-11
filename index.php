@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 */
 
 get_header();
@@ -12,7 +12,7 @@ get_header();
 
 	<div id="primary" class="content-area <?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?> mt-5 mb-5">
 		<div class="row">
-		<main id="main" class="site-main <?php if (false == esc_attr(get_theme_mod( 'at_layout_sidebar_blog', false))):?>col-md-9<?php endif; ?>">
+		<main id="main" class="site-main <?php if (false == get_theme_mod( 'at_layout_sidebar_blog', false)):?>col-md-9<?php endif; ?>">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) :
@@ -38,7 +38,7 @@ get_header();
 		endif;
 		?>
 		</main><!-- #main -->
-		<?php if ( false == esc_attr(get_theme_mod( 'at_layout_sidebar_blog', false) )):?>
+		<?php if ( false == get_theme_mod( 'at_layout_sidebar_blog', false) ):?>
 		<div class="at-sidebar col-md-3">
    <?php get_sidebar(); ?>
 	</div>

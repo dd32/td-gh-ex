@@ -4,12 +4,12 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 */
 
 get_header('cat'); 
 
-if ( false == esc_attr(get_theme_mod('atomy_enable_breadcrumbs_blog',false))) :?>
+if ( false == get_theme_mod('atomy_enable_breadcrumbs_blog',false)) :?>
 <div class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_header','container'))?> at-woocommerce-breadcrumbs">
 <?php atomy_custom_breadcrumbs(); ?>
 </div>
@@ -17,7 +17,7 @@ if ( false == esc_attr(get_theme_mod('atomy_enable_breadcrumbs_blog',false))) :?
 
 <div id="primary" class="content-area <?php echo esc_attr( get_theme_mod('atomy_enable_full_width_body','container') )?>">
 	  <div class="row">
-		<main id="main" class="at-archive site-main <?php if ( false == esc_attr( get_theme_mod( 'at_layout_sidebar_blog', false) )):?>col-md-9 <?php endif; ?>">
+		<main id="main" class="at-archive site-main <?php if ( false == get_theme_mod( 'at_layout_sidebar_blog', false) ):?>col-md-9 <?php endif; ?>">
 		<?php if ( have_posts() ) : ?>
          <header class="page-header">
 	       <?php
@@ -42,7 +42,7 @@ if ( false == esc_attr(get_theme_mod('atomy_enable_breadcrumbs_blog',false))) :?
 		    endif;
 		    ?>
 		</main><!-- #main -->
-		<?php if ( false == esc_attr( get_theme_mod( 'at_layout_sidebar_blog', false) )):?>
+		<?php if ( false == get_theme_mod( 'at_layout_sidebar_blog', false) ):?>
 		<div class="at-sidebar at-sid-blog col-md-3 pl-0 mt-0">
    <?php get_sidebar(); ?>
 </div>

@@ -34,7 +34,7 @@ get_header('portfolio');?>
 
 	
 <!-- Section Category -->
-<section class="<?php echo esc_html( get_theme_mod( 'atomy_enable_full_width_body','container') )?>">
+<section class="<?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?>">
 <div class="row ml-0 mr-0">
 	<?php // verify that this is a product category page
     if (is_product_category()){

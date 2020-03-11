@@ -3,7 +3,7 @@
 * nav-menuMiddle.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.5
+* @version   1.0.6
 *
 */
 ?>
@@ -50,40 +50,40 @@
                        <!-- Icons header -->
                        <ul class="top_right">
                            <!-- Login -->
-                           <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_login_icon', true) )):?>
+                           <?php if ( false ==  get_theme_mod( 'atomy_enable_login_icon', true) ):?>
                           <li class="user">
                             <?php if ( is_user_logged_in() ) { ?>
-                            <a data-tooltip="<?php echo esc_html('Customer Area','atomy');?>" class="login-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>">
+                            <a data-tooltip="<?php echo esc_attr('Customer Area','atomy');?>" class="login-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>">
                              <i class="fas fa-user"></i>
                             </a>
                            <?php } 
                            else { ?>
-                           <a data-tooltip="<?php echo esc_html('Register or Login','atomy');?>" class="register-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id')) ); ?>">
+                           <a data-tooltip="<?php echo esc_attr('Register or Login','atomy');?>" class="register-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id')) ); ?>">
                              <i class="far fa-user"></i>
                            </a>
                            <?php } ?>
                             </li>
                             <?php endif; ?>	
                              <!-- Wishlist -->
-                             <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_wishlist_icon', true) )):?>
+                             <?php if ( false ==  get_theme_mod( 'atomy_enable_wishlist_icon', true) ):?>
                             <li class="user">
-                            <div data-tooltip="<?php echo esc_html('Wishlist','atomy');?>">
+                            <div data-tooltip="<?php echo esc_attr('Wishlist','atomy');?>">
                             <?php echo do_shortcode("[ti_wishlist_products_counter]");?>
                            </div>
                            </li>
                            <?php endif; ?>
                            <!-- Cart -->
-                           <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_cart_icon', true) )):?>	
+                           <?php if ( false ==  get_theme_mod( 'atomy_enable_cart_icon', true) ):?>	
                             <li class="cart">
                            <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'atomy_active_plugins', get_option( 'active_plugins' ) ) ) ) {
                             $atomy_count = WC()->cart->cart_contents_count;
                             ?>
-                            <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" data-tooltip="<?php echo esc_html('Go to the cart','atomy');?>">
-                             <i class="<?php echo esc_html( get_theme_mod( 'at_icon_cart_change','fas fa-shopping-cart')); ?>"></i>
+                            <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" data-tooltip="<?php echo esc_attr('Go to the cart','atomy');?>">
+                             <i class="<?php echo esc_attr( get_theme_mod( 'at_icon_cart_change','fas fa-shopping-cart')); ?>"></i>
                             <?php 
                             if ( $atomy_count > 0 ) {
                             ?>
-                            <span class="cart-contents-count"><?php echo esc_html( $atomy_count,'atomy' ); ?></span>
+                            <span class="cart-contents-count"><?php echo esc_attr( $atomy_count,'atomy' ); ?></span>
                            <?php  }?>
                            </a>
                           </li>
@@ -95,7 +95,7 @@
             </div>
         </div>
     </div>
-    <div class="at-div-header <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+    <div class="at-div-header <?php if ( false == get_theme_mod('atomy_enable_full_menu_header', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     </div> 
     <!-- Second Nav Menu -->
     <header class="shop_header_area">
@@ -121,40 +121,40 @@
                     <!-- Icons header only sticky-->
                     <ul class="top_right">
                            <!-- Login -->
-                           <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_login_icon', true) )):?>
+                           <?php if ( false ==  get_theme_mod( 'atomy_enable_login_icon', true) ):?>
                           <li class="user">
                             <?php if ( is_user_logged_in() ) { ?>
-                            <a data-tooltip="<?php echo esc_html('Customer Area','atomy');?>" class="login-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>">
+                            <a data-tooltip="<?php echo esc_attr('Customer Area','atomy');?>" class="login-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id') )); ?>">
                              <i class="fas fa-user"></i>
                             </a>
                            <?php } 
                            else { ?>
-                           <a data-tooltip="<?php echo esc_html('Register or Login','atomy');?>" class="register-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id')) ); ?>">
+                           <a data-tooltip="<?php echo esc_attr('Register or Login','atomy');?>" class="register-contents" href="<?php echo esc_url(get_permalink( get_option('woocommerce_myaccount_page_id')) ); ?>">
                              <i class="far fa-user"></i>
                            </a>
                            <?php } ?>
                             </li>
                             <?php endif; ?>	
                              <!-- Wishlist -->
-                             <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_wishlist_icon', true) )):?>
+                             <?php if ( false ==  get_theme_mod( 'atomy_enable_wishlist_icon', true) ):?>
                             <li class="user">
-                            <div data-tooltip="<?php echo esc_html('Wishlist','atomy');?>">
+                            <div data-tooltip="<?php echo esc_attr('Wishlist','atomy');?>">
                             <?php echo do_shortcode("[ti_wishlist_products_counter]");?>
                            </div>
                            </li>
                            <?php endif; ?>
                            <!-- Cart -->
-                           <?php if ( false == esc_attr( get_theme_mod( 'atomy_enable_cart_icon', true) )):?>	
+                           <?php if ( false ==  get_theme_mod( 'atomy_enable_cart_icon', true) ):?>	
                             <li class="cart">
                            <?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'atomy_active_plugins', get_option( 'active_plugins' ) ) ) ) {
                             $atomy_count = WC()->cart->cart_contents_count;
                             ?>
-                            <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" data-tooltip="<?php echo esc_html('Go to the cart','atomy');?>">
-                               <i class="<?php echo esc_html( get_theme_mod( 'at_icon_cart_change','fas fa-shopping-cart')); ?>"></i>
+                            <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" data-tooltip="<?php echo esc_attr('Go to the cart','atomy');?>">
+                               <i class="<?php echo esc_attr( get_theme_mod( 'at_icon_cart_change','fas fa-shopping-cart')); ?>"></i>
                             <?php 
                             if ( $atomy_count > 0 ) {
                             ?>
-                            <span class="cart-contents-count"><?php echo esc_html( $atomy_count,'atomy' ); ?></span>
+                            <span class="cart-contents-count"><?php echo esc_attr( $atomy_count,'atomy' ); ?></span>
                            <?php  }?>
                            </a>
                           </li>
@@ -165,7 +165,7 @@
                 </div>
     </div>
     </header>
-    <div class="at-border-top-menu <?php if ( false == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == esc_attr(get_theme_mod('atomy_enable_full_menu_header', true) )):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
+    <div class="at-border-top-menu <?php if ( false == get_theme_mod('atomy_enable_full_menu_header', true) ):?>container-fluid pl-0 pr-0 <?php endif;?> <?php if ( true == get_theme_mod('atomy_enable_full_menu_header', true) ):?><?php echo esc_attr( get_theme_mod( 'atomy_enable_full_width_body','container') )?><?php endif;?>">
     </div>
 
 
