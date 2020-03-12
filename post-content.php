@@ -32,7 +32,7 @@ do_action('associationx_before_content');
   	<div class="contentin narrowwidth">
 		<?php
 		$duppost = array();
-		if ( have_posts() ): while ( have_posts() ) : the_post(); $duppost[] = $post->ID;			
+		if ( have_posts() ): while ( have_posts() ) : the_post(); $duppost[] = absint($post->ID);			
 			$havefimage = 'nofimage';			
 			?>    
 			<div <?php post_class('postandpage'); ?> id="post-<?php the_ID(); ?>">
@@ -48,7 +48,7 @@ do_action('associationx_before_content');
 					endif; ?>        		
 					<div class="entrytext <?php echo $havefimage; ?>">
 						<?php if ( !is_singular() ): ?>
-							<a href="<?php the_permalink(); ?>"><h2 class="post-title"><?php the_title(); ?></h2></a><div class="content-ver-sep"></div><?php
+							<a href="<?php the_permalink(); ?>" class="post-title-link"><h2 class="post-title"><?php the_title(); ?></h2></a><div class="content-ver-sep"></div><?php
 						else: ?>
 							<h1 class="page-title"><?php the_title(); ?></h1><div class="content-ver-sep"></div><div class="beforecontent"></div><?php
 						endif;
@@ -74,7 +74,7 @@ do_action('associationx_before_content');
 				$relpsttitle = esc_html__('Related Posts', 'associationx');
 				if($relpsttitle) $relpsttitle = '<h2 class="related-post-tile">'.$relpsttitle.'</h2>';
 				$relpstcat = get_the_category();
-				$pstarg = $args = array( 'cat' => absint($relpstcat[0]->cat_ID), 'orderby'  => 'post_date', 'order' => 'DESC', 'post_type' => 'post', 'post_status'  => 'publish', 'ignore_sticky_posts' => 1, 'posts_per_page'  => $numrelpost, 'suppress_filters' => true, 'post__not_in' => absint($duppost) );
+				$pstarg = array( 'cat' => absint($relpstcat[0]->cat_ID), 'orderby'  => 'post_date', 'order' => 'DESC', 'post_type' => 'post', 'post_status'  => 'publish', 'ignore_sticky_posts' => 1, 'posts_per_page'  => $numrelpost, 'suppress_filters' => true, 'post__not_in' => $duppost );
 				$relpst = new WP_Query($pstarg); 
 				if ( $relpst->have_posts() ):					
 					echo $relpsttitle;
@@ -95,7 +95,7 @@ do_action('associationx_before_content');
 			endif;
 			// End of Related Posts			
 			
-			if ( is_singular() ) comments_template('', true); 
+			if ( is_singular() ): comments_template('', true); endif;
 			associationx_page_nav();
 		else:
 			associationx_not_found();

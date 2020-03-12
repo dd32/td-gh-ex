@@ -87,7 +87,7 @@
         <h1 class="page-title fa-times-circle"><?php echo esc_html__('SORRY, NOT FOUND ANYTHING', 'associationx'); ?></h1>
 		<h3 class="arc-src"><span><?php echo esc_html__('You Can Try Another Search...', 'associationx'); ?></span></h3>
 		<?php get_search_form(); ?>
-		<p class="backhome"><a href="<?php echo esc_url(home_url()); ?>" >&laquo; <?php echo esc_html__('Or Return to the Home Page', 'associationx'); ?></a></p>
+		<p class="backhome"><a href="<?php echo esc_url(home_url('/')); ?>" >&laquo; <?php echo esc_html__('Or Return to the Home Page', 'associationx'); ?></a></p>
         </div>
         <br />
     <?php }		

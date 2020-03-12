@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: AssociationX\n"
-"POT-Creation-Date: 2020-02-14 23:17+0600\n"
+"POT-Creation-Date: 2020-03-13 01:59+0600\n"
 "PO-Revision-Date: 2020-02-14 23:17+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,19 +20,19 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:9 function/imp.php:134
+#: 404.php:9 function/imp.php:87
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: comments.php:13 function/imp.php:114
+#: comments.php:13 function/imp.php:67
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:13 function/imp.php:114
+#: comments.php:13 function/imp.php:67
 msgid "One Comment"
 msgstr ""
 
-#: comments.php:13 function/imp.php:114
+#: comments.php:13 function/imp.php:67
 msgid "Comments"
 msgstr ""
 
@@ -50,6 +50,10 @@ msgstr ""
 
 #: footer.php:32
 msgid "Powered by:"
+msgstr ""
+
+#: footer.php:32
+msgid "http://wordpress.org"
 msgstr ""
 
 #: fpcontents/ecommerce.php:9
@@ -200,31 +204,31 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: function/imp.php:114
+#: function/imp.php:67
 msgid "Edit"
 msgstr ""
 
-#: function/imp.php:135
+#: function/imp.php:88
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: function/imp.php:137
+#: function/imp.php:90
 msgid "Or Return to the Home Page"
 msgstr ""
 
-#: function/imp.php:146
+#: function/imp.php:99
 msgid ":Newer"
 msgstr ""
 
-#: function/imp.php:147
+#: function/imp.php:100
 msgid "Older: "
 msgstr ""
 
-#: function/imp.php:150
+#: function/imp.php:103
 msgid "Newer"
 msgstr ""
 
-#: function/imp.php:151
+#: function/imp.php:104
 msgid "Older"
 msgstr ""
 
@@ -280,11 +284,11 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:122 functions.php:128
+#: functions.php:124 functions.php:130
 msgid "Read More"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:152
 msgid "(Untitled)"
 msgstr ""
 

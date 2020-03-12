@@ -10,7 +10,7 @@ $associationx_aboutus_fromm_page = associationx_get_option('aboutus_fromm_page',
 $associationx_aboutus_page = absint(associationx_get_option('aboutus_page', '0'));
 
 if($associationx_aboutus_fromm_page && $associationx_aboutus_page ):
-	$associationx_my_query = new WP_Query('page_id='.$associationx_aboutus_page); while ($associationx_my_query->have_posts()) : $associationx_my_query->the_post(); $associationx_aboutus = get_the_content(); endwhile; wp_reset_query();
+	$associationx_my_query = new WP_Query('page_id='.$associationx_aboutus_page); while ($associationx_my_query->have_posts()) : $associationx_my_query->the_post(); $associationx_aboutus = get_the_content(); endwhile; wp_reset_postdata();
 endif;
 
 if ( !$associationx_aboutus ) return;

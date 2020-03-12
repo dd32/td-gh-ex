@@ -7,7 +7,7 @@ Author URI: https://d5creation.com/
 
 Description: AssociationX is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. This Theme is designed for Multi Purposes. You can develop a Community Site using the Plugin BuddyPress easily with this Theme. You can also use bbPress Forum in your Site. AssociationX Theme is E-Commerce ready by WooCommerce. You can use this Theme for Personal Blog, Travel Blog, Company Website, Corporate Website, Association Website, Alumni Website, University/School/College Websites, E-Commerce Product Selling Websites etc. You can add Extra Page Contents in Front Page from the Theme Options. This is very helpful for Page Builder Pages like Elementor. You can show Exciting Multilayer Slider, Featured Links, About Section, Featured Boxes, Events Boxes, Members Boxes, Partners/Clients List, Testimonials with Title, Text, Name and Avatar. The Theme can be decorated Smartly with all Devices as it is Fully Responsive. The Gallery and Image Presentation system of this Theme is really Awesome.  You can find details in the Theme Page Here: https://d5creation.com/theme/associationx/
 
-Version: 1.13
+Version: 1.14
 
 Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, buddypress, custom-logo, e-commerce, education
 
@@ -86,6 +86,7 @@ img{max-width:100%;border:0 none;}
 #header{ width: 100%; top: 0; z-index: 9999; position: relative; background: rgba(6,4,84,0.55); }
 #header-content { display: flex; justify-content: space-between; align-items: center; margin:auto;  position: relative; padding:0; flex-wrap: wrap; transition: all .3s; }
 #logotitle { width: auto; position: relative; max-width: 25%; display: inline-flex; flex-direction: column; align-items: center; }
+.logoandtitle:focus{ outline: thin dotted #ffffff; }
 img.site-logo{ height:auto;padding:5px 0; transition: all .5s; }
 #logotitle.stitle-oneline{ max-width: none; }
 .site-title { display: block; min-height: 30px; font-weight: 500; color: #ffffff; font-size: 39px; padding:0; transition: all .5s; text-align: center; margin: 0; }
@@ -337,7 +338,7 @@ p{margin-bottom:15px;}
 
 a {color:#0d35ca; text-decoration:none; transition: all .5s; }
 a:hover { color:#088be6; }
-a:focus{ outline: thin dotted;}
+a:focus{ outline: 1px dotted;}
 
 b, strong{font-weight:bold;}
 .displaynone{display:none;}
@@ -457,6 +458,7 @@ iframe { max-width: 100%; max-height: 100%; }
 
 h1.page-title{font-size:43px; text-align:left; color:#02365a; font-weight: 500; line-height: 1.21; }
 h2.post-title, h2.commentsbox, h3#reply-title, h2.post-title-color{font-size:35px; margin-bottom: 3px; font-weight: 400; text-align: left; line-height: 1.15; }
+.post-title-link:focus{ text-shadow: 1px 1px 0 #000000; }
 #wpbpcontainer h2.post-title{ font-size: 27px; }
 h2.commentsbox:before { font-size: 35px; padding-right: 10px; content: "\f086"; }
 
@@ -560,6 +562,7 @@ h3 span{color:#777777;}
 .read-more:hover{ background: #777777; }
 .read-more:after { content: "\f061"; font-size: 15px; padding:0 5px; transition:all .3s;  }
 .read-more:hover:after{ padding:0 9px; }
+.read-more:focus{ outline: 1px dashed #111111; background: #333333; }
 
 /* ================ Post Meta and Others  ============== */
 .post-meta { display: flex; font-weight: 500; margin: 0; justify-content: center; align-items: center; flex-wrap: wrap; padding: 3px 10px; background: #f5f5f5; width: 100%; font-size: 13px; }
@@ -742,6 +745,7 @@ iframe { max-width: 100%; max-height: 100%; }
 /* ================ Social Links ============== */
 .social { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; } 
 .social a{ width: auto; }
+.social a:focus{ outline: thin dotted #ffffff; }
 .social a::before, .social a.sliconimg { background-color: rgba(0,0,0,0.35); font-size: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 5px; height: 50px; width: 50px; margin: 5px; transition:all 1s; }
 
 .social a:hover { transform: rotate(30deg); }

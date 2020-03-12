@@ -19,7 +19,7 @@ if($associationx_shopcontent):
 		echo associationx_linkandtarget($associationx_shopttl, $associationx_shopurl,'1', '', 'ecomtlinks');
      	if($associationx_shopcontent): ?>
      		<div class="d5woospace">
-     			<?php $associationx_query = new WP_Query('page_id='.$associationx_shopcontent); while ($associationx_query->have_posts()) : $associationx_query->the_post(); the_content(); endwhile; wp_reset_query(); ?>
+     			<?php $associationx_query = new WP_Query('page_id='.$associationx_shopcontent); while ($associationx_query->have_posts()) : $associationx_query->the_post(); the_content(); endwhile; wp_reset_postdata(); ?>
      		</div>
      	<?php endif; ?>
     </div>

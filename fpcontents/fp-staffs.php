@@ -24,7 +24,7 @@ $viewstaffboxes = '';
 			$stfpostid = attachment_url_to_postid($stfimg);
 			$associationx_getattpost = get_post( $stfpostid );
 			$stfautolink = esc_url(get_permalink( $associationx_getattpost->ID ));
-			$stfautoname = esc_html($associationx_getattpost->post_title);
+			$stfautoname = esc_attr($associationx_getattpost->post_title);
 			$stfautodesig = wp_kses_post($associationx_getattpost->post_excerpt);
 		endif;		
 

@@ -12,7 +12,7 @@ if(!$pagev || !$fppage ) return;
 <!--- ============  SPECIFIC PAGE  =========== ------------>
 <div class="clear"></div>
 <div id="fpagec-box-item" class="fpagecbox boxrel box90">
-	<?php $associationx_query = new WP_Query('page_id='.$fppage); while ($associationx_query->have_posts()) : $associationx_query->the_post(); the_content(); endwhile; wp_reset_query(); ?>
+	<?php $associationx_query = new WP_Query('page_id='.$fppage); while ($associationx_query->have_posts()) : $associationx_query->the_post(); the_content(); endwhile; wp_reset_postdata(); ?>
 </div>
 <div class="clear"></div>
 <!--- ============  END OF SPECIFIC PAGE  =========== ------------>

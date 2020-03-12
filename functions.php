@@ -56,7 +56,7 @@
 	wp_register_style('associationx-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
 	wp_enqueue_style('associationx-gfonts1');
 	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_script( 'associationx-html5', get_template_directory_uri().'/js/html5.js'); 
+	wp_enqueue_script( 'associationx-html5', get_template_directory_uri().'/js/html5.min.js'); 
     wp_script_add_data( 'associationx-html5', 'conditional', 'lt IE 9' );		
 		
 	$slidebox = associationx_get_option('slidebox', '');
@@ -109,12 +109,14 @@
 
 //	function tied to the excerpt_more filter hook.
 	function associationx_excerpt_length( $length ) {
-	global $associationx_ExLength;
-	if ($associationx_ExLength) {
-    return $associationx_ExLength;
-	} else {
-    return 50; //default value
-    } }
+		if( is_admin() ) { return $length; }
+		global $associationx_ExLength;
+		if ($associationx_ExLength) {
+    		return $associationx_ExLength;
+		} else {
+    		return 50; //default value
+    	} 
+	}
 	add_filter( 'excerpt_length', 'associationx_excerpt_length', 999 );
 	
 	function associationx_excerpt_more($more) {

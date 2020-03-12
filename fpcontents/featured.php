@@ -19,6 +19,6 @@ if( !$associationx_frfboxfstk ) return;
 					<a href="<?php the_permalink(); ?>" target="_blank" ><div class="fboxiconimgt flexallcenter"><?php the_post_thumbnail('associationx-fpage-thumb', ['class' => 'box-fimage']); ?><h3 class="ftitle"><?php the_title(); ?></h3></div></a>
 					<?php the_excerpt(); ?>
 				</div>
-		<?php endwhile; endif; wp_reset_query(); $associationx_ExLength = 50;   ?>
+		<?php endwhile; endif; wp_reset_postdata(); $associationx_ExLength = 50;   ?>
 	</div> <!-- featured-boxs -->
 </div>
