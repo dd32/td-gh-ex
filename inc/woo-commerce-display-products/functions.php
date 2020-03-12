@@ -4,7 +4,11 @@ function semperfi_woo_commerce_display_products_shopping_cart() {
     
     function semperfi_woo_commerce_display_products_shopping_cart_html() {
         
-        require get_parent_theme_file_path( '/inc/woo-commerce-display-products/html.php' );
+        if( !is_paged() ) {
+        
+            require get_parent_theme_file_path( '/inc/woo-commerce-display-products/html.php' );
+            
+        }
 
     }
     
@@ -12,7 +16,7 @@ function semperfi_woo_commerce_display_products_shopping_cart() {
 
         add_action( 'semperfi_page_after_content' , 'semperfi_woo_commerce_display_products_shopping_cart_html' );
         add_action( 'semperfi_page_after_footer', 'semperfi_woo_commerce_display_products_css' );
-        remove_action( 'categories-and-tags-single' , 'semperfi_categories_and_tages_single' );
+        remove_action( 'semperfi-categories-and-tags-single' , 'semperfi_categories_and_tages_single' );
         remove_action( 'semperfi_page_after_footer' , 'semperfi_categories_and_tags_css' );
         
     }

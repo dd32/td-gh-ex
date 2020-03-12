@@ -3,6 +3,7 @@
 if ( is_front_page() && is_home() ) {
     
     // Just seems easier to write it this way so that "Customizer" - > "Homepage Settings" - > "Homepage" - > (selected static page) displays properly
+    return;
 
 } elseif ( is_front_page() ) {
 
@@ -22,9 +23,9 @@ if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
                     <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url( '850x478' ) ); ?>">
 
-                    <meta itemprop="width" content="<?php $image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '850x478' ); $image_width = $image_data[1]; echo absint( $image_width ); ?>">
+                    <meta itemprop="width" content="<?php $semperfi_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '850x478' ); $semperfi_featured_image_width = $semperfi_featured_image_data[1]; echo absint( $semperfi_featured_image_width ); ?>">
 
-                    <meta itemprop="height" content="<?php $image_height = $image_data[2]; echo absint( $image_height ); ?>">
+                    <meta itemprop="height" content="<?php $semperfi_featured_image_width = $semperfi_featured_image_data[2]; echo absint( $semperfi_featured_image_width ); ?>">
 
             </div>
 <?php else : ?>

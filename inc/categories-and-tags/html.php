@@ -1,4 +1,3 @@
-        
 <?php
 /**
  * Semper Fi Lite: Customizer
@@ -25,9 +24,17 @@
 
                 </ul>
                 
+                <?php } elseif ( is_front_page() || is_home() ) { ?>
+            
+                <?php if ( get_next_posts_link( 'Older News' , $semperfi_blog_wp_query->max_num_pages ) ) : ?><h3 class="older-blog-posts"><?php next_posts_link( 'Older News' , $semperfi_blog_wp_query->max_num_pages ); // display older posts link ?></h3><?php endif; ?>
+
+                <?php if ( get_previous_posts_link( 'Newer News' )) : ?><h3 class="newer-blog-posts"><?php previous_posts_link( 'Newer News' ); // display newer posts link ?></h3><?php endif; ?>
+                                                            
                 <?php } elseif ( is_singular() ) {
                 
                 if ( get_the_category_list() != '' ) : ?>
+                
+                echo?
     
                 <ul class="post-categories" itemprop="about">
 
@@ -47,13 +54,7 @@
                 
                     endif;
                     
-                } elseif ( !is_singular() && !is_404() ) { ?>
-            
-                <?php if ( get_next_posts_link( 'Older News' , $wp_query->max_num_pages ) ) : ?><h3 class="older-blog-posts"><?php next_posts_link( 'Older News' , $wp_query->max_num_pages ); // display older posts link ?></h3><?php endif; ?>
-
-                <?php if ( get_previous_posts_link( 'Newer News' )) : ?><h3 class="newer-blog-posts"><?php previous_posts_link( 'Newer News' ); // display newer posts link ?></h3><?php endif; ?>
-                                                            
-                <?php } ?>
+                } ?>
 
             </section>
 

@@ -10,10 +10,6 @@ do_action( 'semperfi_attachment_the_content' );
 
 do_action( 'semperfi_attachment_after_content' );
 
-do_action( 'semperfi_attachment_before_comments' );
-
-do_action( 'semperfi_attachment_the_comments' );
-
 do_action( 'semperfi_attachment_after_comments' );
 
 do_action( 'semperfi_attachment_before_footer' );

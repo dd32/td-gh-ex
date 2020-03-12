@@ -3,8 +3,12 @@
 function semperfi_above_the_fold() {
     
     function semperfi_above_the_fold_html() {
+            
+        if ( !is_paged() ) {
         
-        require get_parent_theme_file_path( '/inc/above-the-fold/html.php' );
+            require get_parent_theme_file_path( '/inc/above-the-fold/html.php' );
+            
+        }
         
     }
 
@@ -24,6 +28,9 @@ function semperfi_above_the_fold() {
         
         // Generate CSS Code for wp_add_inline_stye
         require get_parent_theme_file_path( '/inc/customizer/customizer-inline-css.php' );
+        
+        // Attach the customizer generated modified CSS to the enqueue style
+        wp_add_inline_style( 'semperfi-above-the-fold', $semperfi_customizer_generated_css_modifiers );
         
     }
         

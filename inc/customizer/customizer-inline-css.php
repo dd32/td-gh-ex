@@ -8,42 +8,38 @@
  */
 
 // Generate the CSS to be inlined
-$css_modified = '';        
+$semperfi_customizer_generated_css_modifiers = '';        
         
-foreach( $semperfi_customizer_inline_this_css as $option => $values ) {
+foreach( $semperfi_customizer_inline_this_css as $semperfi_customizer_option => $semperfi_customizer_values ) {
 
-    $i = 1;
+    $semperfi_generate_css_count = 1;
 
-    while ( $i <=  count( $values['default_options'] ) ) {
+    while ( $semperfi_generate_css_count <=  count( $semperfi_customizer_values[ 'default_options' ] ) ) {
 
-        $input = esc_html( get_theme_mod( $option . '_' . $i ) );
+        $semperfi_customizer_multi_option_retrieved_theme_mod = esc_html( get_theme_mod( $semperfi_customizer_option . '_' . $semperfi_generate_css_count ) );
 
-        if ( ( $input != $values['default_options'][$i] ) && ( $input != '' ) ) {
+        if ( ( $semperfi_customizer_multi_option_retrieved_theme_mod != $semperfi_customizer_values[ 'default_options' ][ $semperfi_generate_css_count ] ) && ( $semperfi_customizer_multi_option_retrieved_theme_mod != '' ) ) {
 
-            if ( $values['type'] == 'font' ) {
+            if ( $semperfi_customizer_values[ 'type' ] == 'font' ) {
 
-                $input = preg_replace( '/[^a-zA-Z0-9]+/' , ' ' , $input );
+                $semperfi_customizer_multi_option_retrieved_theme_mod = preg_replace( '/[^a-zA-Z0-9]+/' , ' ' , $semperfi_customizer_multi_option_retrieved_theme_mod );
 
             }
 
-            $stylesheet_handle = $values[ 'input_attrs' ][ 'stylesheet_handle' ];
+            $semperfi_css_customizer_selectors = $semperfi_customizer_values[ 'input_attrs' ][ 'css' ];
 
-            $css = $values[ 'input_attrs' ]['css'];
+            $semperfi_customizer_generated_css_modifiers .= str_replace( "$" , $semperfi_customizer_multi_option_retrieved_theme_mod , $semperfi_css_customizer_selectors );
 
-            $css_modified .= str_replace( "$" , $input , $css );
+            $semperfi_customizer_generated_css_modifiers = str_replace( "@" , abs( $semperfi_customizer_multi_option_retrieved_theme_mod ) , $semperfi_customizer_generated_css_modifiers );
 
-            $css_modified = str_replace( "@" , abs( $input ) , $css_modified );
-
-            $css_modified .= "; }\n";
+            $semperfi_customizer_generated_css_modifiers .= "; }\n";
 
         }
 
-        $i++;
+        $semperfi_generate_css_count++;
 
     }
 
 }
 
-$css_modified = substr( $css_modified , 0 , -1 );
-
-wp_add_inline_style( 'semperfi-above-the-fold', $css_modified );
+$semperfi_customizer_generated_css_modifiers = substr( $semperfi_customizer_generated_css_modifiers , 0 , -1 );

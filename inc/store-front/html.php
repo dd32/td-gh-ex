@@ -80,7 +80,7 @@
                     <img width="500" height="500" src="<?php echo esc_url( get_theme_mod( 'store_front_img_3' , get_template_directory_uri() . '/inc/store-front/images/Clinton-Skydive-Sunset-Flocking-500x500.jpg' ) ); ?>" />            
                 </a>
 
-                <p><?php echo esc_html( get_theme_mod( 'store_front_text_3' , __( "JavaScript (JS) is a lightweight, interpreted, programming language with first-class functions. When setting up a Wordpress a theme can run into JavaScript conflicts which would cause issues. Although a WordPress.org theme could avoid all possible conflicts with Plugins, WordPress Updates, and Custom Coding if JavaScript is never used." , 'semper-fi-lite' ) ) ); ?></p>
+                <p><?php echo esc_html( get_theme_mod( 'store_front_text_3' , __( "JavaScript (JS) is a lightweight, interpreted, programming language with first-class functions. When setting up a WordPress a theme can run into JavaScript conflicts which would cause issues. Although a WordPress.org theme could avoid all possible conflicts with Plugins, WordPress Updates, and Custom Coding if JavaScript is never used." , 'semper-fi-lite' ) ) ); ?></p>
 
                 <div class="price">
 
@@ -108,7 +108,7 @@
                     <img width="500" height="500" src="<?php echo esc_url( get_theme_mod( 'store_front_img_4' , get_template_directory_uri() . '/inc/store-front/images/Head-Down-Freeflying-Casey-Heather-Paul-500x500.jpg' ) ); ?>" />            
                 </a>
 
-                <p><?php echo esc_html( get_theme_mod( 'store_front_text_4' , __( "The Theme Customization API, added in WordPress 3.4, allows developers to customize and add controls to the 'Appearance' → 'Customize' admin screen. A theme with automatically generated WordPress Customizer Controls would allow the rapid deployment of custom customizer features. Meaning, it would have one of the most powerful theme customizers ever thought up." , 'semper-fi-lite' ) ) ); ?></p>
+                <p><?php echo esc_html( get_theme_mod( 'store_front_text_4' , __( "The Theme Customization API, added in WordPress 3.4, allows developers to customize and add controls to the 'Appearance' -> 'Customize' admin screen. A theme with automatically generated WordPress Customizer Controls would allow the rapid deployment of custom customizer features. Meaning, it would have one of the most powerful theme customizers ever thought up." , 'semper-fi-lite' ) ) ); ?></p>
 
                 <div class="price">
 
@@ -292,4 +292,4 @@
 
     </article>
 
-<?php do_action( 'after_store_front' ); ?>
+<?php do_action( 'semperfi_after_store_front' ); ?>

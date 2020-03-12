@@ -3,20 +3,18 @@
 // Exit if accessed directly
 if ( !defined('ABSPATH')) exit; ?><?php
 
-// Global Content Width, Kind of a Joke with this theme, lol
-if ( !isset($content_width) ) $content_width = 1350;
-
 // Ladies, Gentalmen, boys and girls let's start our engines
-add_action('after_setup_theme', 'semperfi_setup_theme');
+add_action( 'after_setup_theme' , 'semperfi_setup_theme' );
 
-if (!function_exists('semperfi_setup_theme')):
+if ( !function_exists( 'semperfi_setup_theme' ) ):
 
 function semperfi_setup_theme() {
-
-global $content_width; 
 			
 // Add Callback for Custom TinyMCE editor stylesheets.
 //add_editor_style( $stylesheet = 'style.css' );
+    
+// Content Width is such dated idea
+if ( ! isset( $content_width ) ) $content_width = 1920;
 
 // This feature enables post and comment RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
@@ -85,10 +83,6 @@ add_theme_support( 'html5',
                       'gallery',
                       'search-form',
                       'widgets', ) );
-
-
-// Set max comments depth
-add_filter( 'thread_comments_depth_max', function( $max ){ return 3;} );
 
 
 // Add in that jumping comment reply thingy
@@ -172,11 +166,11 @@ function semperfi_post_link_attributes($output) {
     $code = 'class="previous_post_link"';
     return str_replace('<a href=', '<a '.$code.' href=', $output);}
 
-add_filter('next_posts_link_attributes', 'previous_posts_link_attributes');
-function next_posts_link_attributes() {return 'class="next_post_link"';}
+add_filter( 'next_posts_link_attributes' , 'semperfi_previous_posts_link_attributes' );
+function semperfi_previous_posts_link_attributes() { return 'class="previous_post_link"'; }
 
-add_filter('previous_posts_link_attributes', 'next_posts_link_attributes');
-function previous_posts_link_attributes() {return 'class="previous_post_link"';}
+add_filter( 'previous_posts_link_attributes' , 'semperfi_next_posts_link_attributes' );
+function semperfi_next_posts_link_attributes() { return 'class="next_post_link"'; }
 
 // Make images float properly
 function semperfi_filter_ptags_on_images($content){
@@ -223,10 +217,10 @@ $semperfi_load_in_all_sections = array(
     'video-tab', );
 
 // Loop through and load in all the different sections
-foreach( $semperfi_load_in_all_sections as $i ){
+foreach( $semperfi_load_in_all_sections as $semperfi_one_loaded_section ){
     
-    // Load up '$i' Functions page
-    require get_parent_theme_file_path( '/inc/' . $i . '/functions.php' );
+    // Load up '$semperfi_one_loaded_section' Functions page
+    require get_parent_theme_file_path( '/inc/' . $semperfi_one_loaded_section . '/functions.php' );
                                        
 }
 

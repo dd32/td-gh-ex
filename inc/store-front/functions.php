@@ -25,19 +25,6 @@ function semperfi_store_front() {
     add_action( 'semperfi_front_page_after_content', 'semperfi_store_front_html_front_page_after_content' , 5 );
     
     
-    function semperfi_store_front_html_front_page_before_footer() {
-    
-        if ( is_paged() ) {
-        
-            require get_parent_theme_file_path( '/inc/store-front/html.php' );
-            
-        }
-
-    }
-    
-    add_action( 'semperfi_front_page_before_footer', 'semperfi_store_front_html_front_page_before_footer' , 15 );
-    
-    
     function semperfi_store_front_css() {
         
         wp_enqueue_style( 'semperfi-store-front' , get_theme_file_uri( '/inc/store-front/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );

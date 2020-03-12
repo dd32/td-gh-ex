@@ -1,6 +1,6 @@
-    <?php
+<?php
 
-        $product_categories = array_reverse(
+        $semperfi_product_categories = array_reverse(
             get_terms( 
                 array(
                     'taxonomy'   => "product_cat",
@@ -8,53 +8,53 @@
                     'orderby'    => $orderby,
                     'order'      => $order,
                     'hide_empty' => $hide_empty,
-                    'include'    => $ids , ) ) , true );
+                    'include'    => $semperfi_woocommerce_category_countds , ) ) , true );
 
-    $i = 1;
+    $semperfi_woocommerce_category_count = 1;
 
-    foreach( $product_categories as $cat ) { 
+    foreach( $semperfi_product_categories as $semperfi_single_category ) { 
 
-        if ( ( $cat->name != '' ) && ( $cat->name != 'Uncategorized' ) ) {
+        if ( ( $semperfi_single_category->name != '' ) && ( $semperfi_single_category->name != 'Uncategorized' ) ) {
 
             //Lower case everything
-            $product_seo_id = strtolower( $cat->name );
+            $semperfi_product_seo_id = strtolower( $semperfi_single_category->name );
 
             //Make alphanumeric (removes all other characters)
-            $product_seo_id = preg_replace( "/[^a-z0-9_\s-]/" , "" , $product_seo_id );
+            $semperfi_product_seo_id = preg_replace( "/[^a-z0-9_\s-]/" , "" , $semperfi_product_seo_id );
 
             //Clean up multiple dashes or whitespaces
-            $product_seo_id = preg_replace( "/[\s-]+/" , " " , $product_seo_id );
+            $semperfi_product_seo_id = preg_replace( "/[\s-]+/" , " " , $semperfi_product_seo_id );
 
             //Convert whitespaces and underscore to dash
-            $product_seo_id = preg_replace( "/[\s_]/" , "-" , $product_seo_id );
+            $semperfi_product_seo_id = preg_replace( "/[\s_]/" , "-" , $semperfi_product_seo_id );
 
             // Add Shopping cart
-            $product_seo_id .= '-store'; ?>
+            $semperfi_product_seo_id .= '-store'; ?>
     
-    <article id="<?php echo $product_seo_id; ?>" class="store-front" style="background-image:url(<?php echo esc_url( get_theme_mod( 'woocommerce_shop_img_' . $i , get_template_directory_uri() . '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg' ) ); ?>);">
+    <article id="<?php echo $semperfi_product_seo_id; ?>" class="store-front" style="background-image:url(<?php echo esc_url( get_theme_mod( 'woocommerce_shop_img_' . $semperfi_woocommerce_category_count , get_template_directory_uri() . '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg' ) ); ?>);">
         
         <header id="h3-hummer" class="store-header">
 
-            <h2 class='header-text' itemprop="headline"><?php echo $cat->name; ?></h2>
+            <h2 class='header-text' itemprop="headline"><?php echo $semperfi_single_category->name; ?></h2>
             <?php if ( is_customize_preview() ) echo '<div class="customizer-store-front"></div>'; ?>
 
         </header>
         
         <section>
         
-            <?php $product_posts = new WP_Query(
+            <?php $semperfi_product_posts = new WP_Query(
 
                 array(
                     'post_type'         => array('product'),
-                    'product_cat'       => $cat->name,
+                    'product_cat'       => $semperfi_single_category->name,
                     'orderby'           => 'title',
                     'posts_per_page'    => 1000, ) );
 
-            if ( $product_posts->have_posts() ) {
+            if ( $semperfi_product_posts->have_posts() ) {
 
-                while ( $product_posts->have_posts() ) {
+                while ( $semperfi_product_posts->have_posts() ) {
 
-                    $product_posts->the_post();
+                    $semperfi_product_posts->the_post();
 
                     wc_get_template_part( 'content', 'product' );
 
@@ -64,7 +64,7 @@
         </section>
 
     </article>
-    <?php } $i++;
+    <?php } $semperfi_woocommerce_category_count++;
     
     } ?>
 

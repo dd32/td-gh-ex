@@ -26,8 +26,8 @@
 <?php endif; ?>       
             
 <?php 
-$current_user = wp_get_current_user();
-$user_identity = $current_user->user_login;
+$semperfi_current_user = wp_get_current_user();
+$semperfi_user_identity = $semperfi_current_user->user_login;
                                                           
 comment_form(
     array(
@@ -42,7 +42,7 @@ comment_form(
         'logged_in_as'          => '
             <p>' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>.
 
-                <a class="log-out-link" href="%3$s" title="Log out of this account">Log out?</a>', 'semper-fi-lite' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '
+                <a class="log-out-link" href="%3$s" title="Log out of this account">Log out?</a>', 'semper-fi-lite' ), admin_url( 'profile.php' ), $semperfi_user_identity, wp_logout_url( apply_filters( 'semperfi_the_permalink', get_permalink( ) ) ) ) . '
 
             </p>
 ',

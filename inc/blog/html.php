@@ -1,32 +1,32 @@
 <?php
 
-global $paged;
-global $wp_query;
+global $semperfi_get_paged_query;
+global $semperfi_blog_wp_query;
 
-if ( get_query_var('paged') ) :
+if ( get_query_var( 'paged' ) ) :
 
-    $paged = get_query_var('paged');
+    $semperfi_get_paged_query = get_query_var( 'paged' );
 
 elseif ( get_query_var('page') ) :
     
     // 'page' is used instead of 'paged' on Static Front Page
-    $paged = get_query_var('page');
+    $semperfi_get_paged_query = get_query_var('page');
 
 else :
 
-    $paged = 1;
+    $semperfi_get_paged_query = 1;
 
 endif;
 
-$wp_query = new WP_Query( array(
+$semperfi_blog_wp_query = new WP_Query( array(
     'order'             => 'DESC',
     'orderby'           => 'date',
     'post_status'       => 'publish',
     'post_type'         => 'post',
     'posts_per_page'    => get_option( 'posts_per_page' ),
-    'paged'             => $paged, ) );
+    'paged'             => $semperfi_get_paged_query, ) );
 
-if ( $wp_query->have_posts() ) : ?>
+if ( $semperfi_blog_wp_query->have_posts() ) : ?>
 
         <header id="blog-title-and-image" style="background-image: url('<?php echo esc_url( get_theme_mod( 'blog_background_img_1' , get_template_directory_uri() . '/inc/blog/images/Schwarttzy-Australia-Noosa-Beach-1920x1080.jpg' ) ); ?>');">
 
@@ -37,7 +37,7 @@ if ( $wp_query->have_posts() ) : ?>
 
         <section id="the-posts">
 
-<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+<?php while ( $semperfi_blog_wp_query->have_posts() ) : $semperfi_blog_wp_query->the_post(); ?>
             <article id="post-<?php the_ID(); ?>" <?php if ( !has_post_thumbnail() ) : post_class( array( 'the-blog' , 'no-post-thumbnail' ) ); else : post_class( array( 'the-blog' ) );  endif; ?> itemscope itemtype="http://schema.org/BlogPosting">
 
                 <?php edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); ?>
@@ -104,6 +104,6 @@ if ( $wp_query->have_posts() ) : ?>
 <?php endwhile; ?>
         </section>
 
-<?php do_action_ref_array( 'categories-and-tags-single' ,  array( &$wp_query ) );
+<?php do_action_ref_array( 'semperfi-categories-and-tags-single' ,  array( &$semperfi_blog_wp_query ) );
 
 wp_reset_postdata(); endif;

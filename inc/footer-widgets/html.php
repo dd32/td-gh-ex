@@ -1,27 +1,27 @@
- <?php if ( !dynamic_sidebar( 'Footer Widgets' ) ) : ?>
+<?php if ( !dynamic_sidebar( 'Footer Widgets' ) ) : ?>
             
             <aside class="footer_widget">
     
-                <h4><?php _( 'H3 Hummer' ); ?></h4>
+                <h4><?php __( 'H3 Hummer' , 'semper-fi-lite' ); ?></h4>
 
                 <ul>
                     <li>
-                        <a href="<?php echo get_admin_url() . 'widgets.php'; ?>"><?php _( 'Hands Free Calling' ); ?></a>
+                        <a href="<?php echo get_admin_url() . 'widgets.php'; ?>"><?php __( 'Hands Free Calling' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Hidden Winch Mount' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Hidden Winch Mount' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Skid Plate' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Skid Plate' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Rock Sliders' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Rock Sliders' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'HVAC Light Bulbs' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'HVAC Light Bulbs' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( "Owner's Manuals" ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( "Owner's Manuals" , 'semper-fi-lite' ); ?></a>
                     </li>
                 </ul>
 
@@ -33,22 +33,22 @@
 
                 <ul>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Semper Fi Lite' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Semper Fi Lite' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Adventure' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Adventure' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Plugins' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Plugins' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Theme Upgrades' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Theme Upgrades' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'WordPress Support' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'WordPress Support' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Website Design' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Website Design' , 'semper-fi-lite' ); ?></a>
                     </li>
                 </ul>
 
@@ -60,22 +60,22 @@
 
                 <ul>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'About Me' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'About Me' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Blog' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Blog' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Skydiving' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Skydiving' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Off-Roading' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Off-Roading' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Accessories' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Accessories' , 'semper-fi-lite' ); ?></a>
                     </li>
                     <li>
-                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php _( 'Contact Me' ); ?></a>
+                        <a href=<?php echo get_admin_url() . 'widgets.php'; ?>><?php __( 'Contact Me' , 'semper-fi-lite' ); ?></a>
                     </li>
                 </ul>
 

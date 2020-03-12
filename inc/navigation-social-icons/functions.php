@@ -9,7 +9,7 @@ function semperfi_navigation_social_icons() {
 
     }
     
-    add_action( 'navigation_social_icons', 'semperfi_navigation_social_icons_html' );
+    add_action( 'semperfi_navigation_social_icons', 'semperfi_navigation_social_icons_html' );
     
     
     function semperfi_navigation_social_icons_font() {

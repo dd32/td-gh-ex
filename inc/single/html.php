@@ -16,9 +16,9 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
                     <meta itemprop="url" content="<?php echo the_post_thumbnail_url( '1920x1080' ); ?>">
 
-                    <meta itemprop="width" content="<?php $image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '1920x1080' ); $image_width = $image_data[1]; echo $image_width; ?>">
+                    <meta itemprop="width" content="<?php $semperfi_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '850x478' ); $semperfi_featured_image_width = $semperfi_featured_image_data[1]; echo absint( $semperfi_featured_image_width ); ?>">
 
-                    <meta itemprop="height" content="<?php $image_height = $image_data[2]; echo $image_height; ?>">
+                    <meta itemprop="height" content="<?php $semperfi_featured_image_width = $semperfi_featured_image_data[2]; echo absint( $semperfi_featured_image_width ); ?>">
                     
                 </div>
 <?php endif; ?>
@@ -36,9 +36,9 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             
             </main>
     
-<?php do_action('categories-and-tags-single');
+<?php do_action('semperfi-categories-and-tags-single');
 
-do_action( 'semperfi_display_comments' );
+comments_template();
     
 endwhile; ?>
             

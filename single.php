@@ -10,10 +10,6 @@ do_action( 'semperfi_single_the_content' );
 
 do_action( 'semperfi_single_after_content' );
 
-do_action( 'semperfi_single_before_comments' );
-
-do_action( 'semperfi_single_the_comments' );
-
 do_action( 'semperfi_single_after_comments' );
 
 do_action( 'semperfi_single_before_footer' );

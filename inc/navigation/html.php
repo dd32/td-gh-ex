@@ -14,7 +14,7 @@
                 <a class="disable-drop-down" href="#hide-moble"><?php _e( 'Close' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
 
             </div>
-<?php do_action('navigation_social_icons'); ?>
+<?php do_action( 'semperfi_navigation_social_icons' ); ?>
             
         </div>
         <?php if ( has_nav_menu( 'touch_menu' ) ) :
@@ -37,7 +37,7 @@
             
             <?php if (!dynamic_sidebar('menu widgets')) : ?><?php endif; ?>
             
-            <li><?php $my_theme = wp_get_theme(); echo __( 'Good Old Fashioned Hand Written Code by' , 'semper-fi-lite' ) . '<a href="' . $my_theme->get( 'AuthorURI' ) . '" title="Eric J Schwarz">' . $my_theme->get( 'Author' ) . '</a>'; ?></li>
+            <li><?php $semperfi_them_info = wp_get_theme(); echo __( 'Good Old Fashioned Hand Written Code by' , 'semper-fi-lite' ) . '<a href="' . $semperfi_them_info->get( 'AuthorURI' ) . '" title="Eric J Schwarz">' . $semperfi_them_info->get( 'Author' ) . '</a>'; ?></li>
         
         </ul>
 

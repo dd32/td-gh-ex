@@ -2,7 +2,7 @@
             
         <header id="title-and-image">
             
-            <video autoplay loop muted><source src="<?php $video = absint ( get_theme_mod( '404_video_1' ) ); if ( $video != '' ) { echo  wp_get_attachment_url( $video ); } else { echo get_template_directory_uri() . '/inc/404/images/bradley-and-mousse-are-thirsty.mp4'; } ?>" type="video/mp4" /></video>
+            <video autoplay loop muted><source src="<?php $semperfi_404_video = absint ( get_theme_mod( '404_video_1' ) ); if ( $semperfi_404_video != '' ) { echo  esc_url( wp_get_attachment_url( $semperfi_404_video ) ); } else { echo esc_url( get_template_directory_uri() ) . '/inc/404/images/bradley-and-mousse-are-thirsty.mp4'; } ?>" type="video/mp4" /></video>
             
             <?php echo attachment_url_to_postid( get_template_directory_uri() . '/inc/404/images/bradley-and-mousse-are-thirsty.mp4' ); ?>
             
@@ -26,7 +26,7 @@
             
         </main>
             
-<?php do_action('categories-and-tags-single'); ?>
+<?php do_action('semperfi-categories-and-tags-single'); ?>
 
         <main id="the-article">
 

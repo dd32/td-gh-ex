@@ -15,16 +15,16 @@
                 
                 <p style="text-align: center;"><img src="<?php echo esc_url(  wp_get_attachment_image_url( get_the_ID(), 'full' ) ); ?>" class="featured_image" /></p>
             
-                <p style="text-align: center;"><?php $images = array();
-                $image_sizes = get_intermediate_image_sizes();
-                array_unshift( $image_sizes, 'full' );
-                foreach( $image_sizes as $image_size ) {
-                    if ( ( $image_size == '1920x1080' ) || ( $image_size == '850x478' ) || ( $image_size == __( 'small' , 'semper-fi-lite' ) ) || ( $image_size == __( 'thumbnail' , 'semper-fi-lite' ) ) ) {
-                    $image = wp_get_attachment_image_src( get_the_ID(), $image_size );
-                    $name = $image_size . ' (' . $image[1] . 'x' . $image[2] . ')';
-                    $images[] = '<a href="' . $image[0] . '">' . ucfirst(strtolower($name)) . '</a>';}}
+                <p style="text-align: center;"><?php $semperfi_images = array();
+                $semperfi_image_sizes = get_intermediate_image_sizes();
+                array_unshift( $semperfi_image_sizes, 'full' );
+                foreach( $semperfi_image_sizes as $semperfi_image_size ) {
+                    if ( ( $semperfi_image_size == '1920x1080' ) || ( $semperfi_image_size == '850x478' ) || ( $semperfi_image_size == __( 'small' , 'semper-fi-lite' ) ) || ( $semperfi_image_size == __( 'thumbnail' , 'semper-fi-lite' ) ) ) {
+                    $semperfi_image = wp_get_attachment_image_src( get_the_ID(), $semperfi_image_size );
+                    $semperfi_name = $semperfi_image_size . ' (' . $semperfi_image[1] . 'x' . $semperfi_image[2] . ')';
+                    $semperfi_images[] = '<a href="' . $semperfi_image[0] . '">' . ucfirst(strtolower($semperfi_name)) . '</a>';}}
 
-                echo implode( ' | ', $images ); ?></p>
+                echo implode( ' | ', $semperfi_images ); ?></p>
             
             </main>
 

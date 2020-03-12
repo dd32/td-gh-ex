@@ -8,7 +8,7 @@ function semperfi_footer_widgets() {
 
     }
     
-    add_action( 'footer_widgets' , 'semperfi_footer_widgets_html' );
+    add_action( 'semperfi_footer_widgets_action' , 'semperfi_footer_widgets_html' );
     
     
 }

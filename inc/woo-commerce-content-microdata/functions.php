@@ -8,7 +8,7 @@ function semperfi_woo_commerce_content_data() {
 
     }
     
-    //add_action( 'woo_commerce_content_microdata' , 'semperfi_woo_commerce_content_data_html' );
+    //add_action( 'semperfi_woo_commerce_content_microdata' , 'semperfi_woo_commerce_content_data_html' );
     
     function semperfi_woo_commerce_content_data_css() {
     

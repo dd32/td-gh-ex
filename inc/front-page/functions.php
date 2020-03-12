@@ -4,8 +4,12 @@ function semperfi_front_page() {
         
     
         function semperfi_front_page_html() {
-
-            require get_parent_theme_file_path( '/inc/front-page/html.php' );
+            
+            if ( !is_paged() ) {
+                
+                require get_parent_theme_file_path( '/inc/front-page/html.php' );
+                
+            }
 
         }
 
@@ -13,8 +17,12 @@ function semperfi_front_page() {
 
 
         function semperfi_front_page_css() {
+            
+            if ( !is_paged() ) {
 
-            wp_enqueue_style( 'semperfi-front-page' , get_theme_file_uri( '/inc/single/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+                wp_enqueue_style( 'semperfi-front-page' , get_theme_file_uri( '/inc/single/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+                
+            }
 
         }
 

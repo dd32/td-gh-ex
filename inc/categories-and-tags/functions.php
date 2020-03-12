@@ -3,13 +3,13 @@
 function semperfi_categories_and_tags() {
     
     
-    function semperfi_categories_and_tages_single( $wp_query ) {
+    function semperfi_categories_and_tages_single( $semperfi_blog_wp_query ) {
         
         require get_parent_theme_file_path( '/inc/categories-and-tags/html.php' );
 
     }
     
-    add_action( 'categories-and-tags-single' , 'semperfi_categories_and_tages_single' );
+    add_action( 'semperfi-categories-and-tags-single' , 'semperfi_categories_and_tages_single' );
     
     
     function semperfi_categories_and_tags_css() {

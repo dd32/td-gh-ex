@@ -140,7 +140,7 @@ function semperfi_customize_register( $wp_customize ) {
                     'sanitize_callback' => 'wp_filter_nohtml_kses', ) );
 
                 $wp_customize->add_control( $option . '_' . $i , array(
-                    'choices'           => $finalized_google_font_array,
+                    'choices'           => $semperfi_finalized_google_font_array,
                     'description'       => $values['description'][$i],
                     'input_attrs'       => array(
                             'stylesheet_handle' => $values[ 'input_attrs' ][ 'stylesheet_handle' ],

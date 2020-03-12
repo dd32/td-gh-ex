@@ -22,6 +22,18 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 == Changelog ==
 
+= 103 =
+* Added content width back in, feels so pointless
+* Can't use the real "->"
+
+= 102 =
+* in semper-fi-lite/inc/footer-widgets/html.php "_()" changed to "__()"
+* learned about the plugin "Theme Sniffer" and fixed all the errors
+* fixed issue with the single page comments not displaying
+* fixed issue where the customizer modifed css for navigation wouldn't enqueue properly
+* updated semper-fi-lite/woocommerce/global/quantity-input.php to reflect the chances made in the woocommerce 4.0 update
+* After clicking "Older News" the "Square Boxes", "Above the Fold", and "Store Front / Woocommerce Display Products" no longer display
+
 = 101 =
 * Removed theme promotions on semper-fi-lite\inc\store-front\html.php and semper-fi-lite\inc\store-front\customizer.php
 * Moved semper-fi-lite\inc\open-graph-protocol\ from the theme over to the premium plugin because a third party api key is plugin territory
@@ -40,8 +52,14 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 == Upgrade Notice ==
 
+= 103 =
+* Theme Failed, minor changes
+
+= 102 =
+* Mostly improvements to the theme based on the plugin Theme Sniffer recommendations, and couple for errors fixed
+
 = 101 =
-* Improvements to the theme based on WordPress.org Review Recommendations.
+* Improvements to the theme based on WordPress.org Review recommendations.
 
 = 100 =
 * Completely redesigned theme under the hood with many fixes, new features.
