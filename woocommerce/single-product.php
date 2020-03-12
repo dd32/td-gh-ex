@@ -22,10 +22,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+<?php
+ $bb_ecommerce_store_wocommerce_single_page_sidebar = get_theme_mod( 'bb_ecommerce_store_wocommerce_single_page_sidebar', true);
+ if ( false == $bb_ecommerce_store_wocommerce_single_page_sidebar ) {
+   $colmd = 'col-lg-12 col-md-12';
+ } else { 
+   $colmd = 'col-lg-8 col-md-8';
+ } 
+?>
+
 <div class="container">
 	<main role="main" id="maincontent">
 		<div class="row">
-			<div class="col-lg-8 col-md-8">
+			<div class="<?php echo esc_html( $colmd ); ?>">
 				<?php
 					/**
 					 * woocommerce_before_main_content hook.
@@ -51,16 +60,11 @@ get_header( 'shop' ); ?>
 					do_action( 'woocommerce_after_main_content' );
 				?>
 			</div>
-			<div class="col-lg-4 col-md-4">
-				<?php
-					/**
-					 * woocommerce_sidebar hook.
-					 *
-					 * @hooked woocommerce_get_sidebar - 10
-					 */
-					do_action( 'woocommerce_sidebar' );
-				?>
-			</div>
+			<?php if ( false != $bb_ecommerce_store_wocommerce_single_page_sidebar ) {?>
+				<div class="col-lg-4 col-md-4" id="sidebar">
+					<?php dynamic_sidebar( 'woocommerce-single-sidebar' ); ?>
+				</div>
+			<?php } ?>
 		</div>
 	</main>
 </div>

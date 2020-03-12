@@ -17,8 +17,14 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-
 <header role="banner">
+  <?php if(get_theme_mod('bb_ecommerce_store_preloader_option',true)){ ?>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  <?php }?>
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'bb-ecommerce-store' ); ?></a>
   <?php if( get_theme_mod('bb_ecommerce_store_display_topbar',true) != ''){ ?>
     <div class="topbar">
@@ -56,7 +62,7 @@
       <div class="clearfix"></div>
     </div>
   <?php } ?>
-  <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+  <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',true) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
   </div>
   <div class="header">
