@@ -33,3 +33,12 @@ li#customize-control-logo_size {
     background: #fff;
     padding: 4px;
 }
+input#_customize-input-bb_mobile_application_button_padding_top_bottom, input#_customize-input-bb_mobile_application_button_padding_left_right,
+input#_customize-input-bb_mobile_application_button_border_radius{
+  width: 30%;
+  float:right;
+}
+.customize-control-title{
+  display: inline-block;
+}
+
