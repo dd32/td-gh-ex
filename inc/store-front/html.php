@@ -192,7 +192,7 @@
                     <img width="500" height="500" src="<?php echo esc_url( get_theme_mod( 'store_front_img_7' , get_template_directory_uri() . '/inc/store-front/images/Head-Down-Steve-500x500.jpg' ) ); ?>" />            
                 </a>
 
-                <p><?php echo esc_html( get_theme_mod( 'store_front_text_7' , __( "In April 2017, a total of 1,986,324 websites used WooCommerce, also 23,724 of the world’s top million websites used WooComerce. That’s 0.5% of all websites or 2.8% of the top million websites. A WordPress theme customized with WooCommerce code has a clean and simple shopping cart experience ready to go. Making it easy to set up an e-commerce shop quickly and focus on the products instead of the website design." , 'semper-fi-lite' ) ) ); ?></p>
+                <p><?php echo esc_html( get_theme_mod( 'store_front_text_7' , __( "In April 2017, a total of 1,986,324 websites used WooCommerce, also 23,724 of the worlds top million websites used WooComerce. Thats 0.5% of all websites or 2.8% of the top million websites. A WordPress theme customized with WooCommerce code has a clean and simple shopping cart experience ready to go. Making it easy to set up an e-commerce shop quickly and focus on the products instead of the website design." , 'semper-fi-lite' ) ) ); ?></p>
 
                 <div class="price">
 
@@ -248,7 +248,7 @@
                     <img width="500" height="500" src="<?php echo esc_url( get_theme_mod( 'store_front_img_9' , get_template_directory_uri() . '/inc/store-front/images/Jenny-Grabing-Jennys-Butt-500x500.jpg' ) ); ?>" />            
                 </a>
 
-                <p><?php echo esc_html( get_theme_mod( 'store_front_text_9' , __( "All of the themes on WordPress.org are created, developed, and maintained free of charge by the author. Theme developers are allowed to upsell their theme but displaying “obtrusive” upselling isn't allowed. Only one link on the top level in the customizer is allowed. This must be done using the customizer API (no injecting via JavaScript). Further unobtrusive links are allowed in a separate section." , 'semper-fi-lite' ) ) ); ?></p>
+                <p><?php echo esc_html( get_theme_mod( 'store_front_text_9' , __( "All of the themes on WordPress.org are created, developed, and maintained free of charge by the author. Theme developers are allowed to upsell their theme but displaying obtrusive upselling isn't allowed. Only one link on the top level in the customizer is allowed. This must be done using the customizer API (no injecting via JavaScript). Further unobtrusive links are allowed in a separate section." , 'semper-fi-lite' ) ) ); ?></p>
 
                 <div class="price">
 
