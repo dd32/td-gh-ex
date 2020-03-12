@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 */
 ?>
 <!doctype html>
@@ -18,7 +18,7 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- Back To Top -->
-<?php if ( false ==  get_theme_mod('atomy_enable_back_to_top', false )) :?> <div class="btn-back-to-top"><i class="fa fa-angle-up"></i></div> <?php endif;?>
+<?php if ( false ==  get_theme_mod('atomy_enable_back_to_top', false )) :?> <div class="btn-back-to-top"><button><i class="fa fa-angle-up"></i></button></div><?php endif;?>
 <!-- Preloader -->
 <?php if ( false == get_theme_mod('atomy_enable_preloader', true )) : ?>
 <!-- Preloader -->

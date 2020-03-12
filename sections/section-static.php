@@ -3,7 +3,7 @@
 * section-static.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 *
 */
 ?>

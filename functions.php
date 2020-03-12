@@ -4,7 +4,7 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 */
 
 
@@ -455,7 +455,7 @@ function atomy_custom_breadcrumbs() {
 	// Start the breadcrumb with a link to your homepage
         echo '<div id="breadcrumbs">';
         echo '<a href="';
-        echo home_url();
+        echo esc_url(home_url());
         echo '">';
         bloginfo('name');
         echo '</a>' . $sep;
@@ -501,8 +501,6 @@ function atomy_custom_breadcrumbs() {
         echo '</div>';
     }
 }
-
-
 
 /* Magnific popup - https://dimsemenov.com/plugins/magnific-popup/
 ========================================================================== */

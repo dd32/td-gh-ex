@@ -3,7 +3,7 @@
 * footer.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 */
 
 ?>
@@ -19,7 +19,7 @@
                        &copy;<?php echo esc_html(date("Y")); echo " "; echo bloginfo('name'); ?>
                        <?php endif; // End Function Customize Enable Copyright Footer ?>
                        <span>
-                        <a rel="author" target="_blank" href=""<?php echo esc_url(atomy_url_copyright_theme); ?>">
+                        <a rel="author" target="_blank" href="<?php echo esc_url(atomy_url_copyright_theme); ?>">
                         <?php  echo esc_html__('By Franchi Design','atomy');?></a>
                        </span>
                     </h5>

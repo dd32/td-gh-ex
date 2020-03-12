@@ -109,7 +109,7 @@ a:hover,a:focus,a:active,.woocommerce div.product p.price,.product_meta a:hover,
 
 /* Back To Top */
 
-.btn-back-to-top{
+.btn-back-to-top button{
     background-color:#171717;
 }
 
@@ -474,4 +474,48 @@ hr.at-hr{
 .soldout {
   background: #000;
 color: #fff;
+}
+
+
+/* Accessibility */
+
+input[type="search"]{
+  border: 2px solid #82B541;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color:#82B541!important;
+}
+
+input[type="search"]:focus{
+	border: 3px solid #82B541!important;
+}
+
+select {
+	border: 1px solid #82B541;
+}
+
+
+a:focus {
+	outline: 2px solid #82B541;
+	color:#82B541!important
+}
+
+a:hover, a:active {
+	outline: 0;
+	color:#82B541!important;
 }

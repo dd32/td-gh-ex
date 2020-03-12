@@ -3,7 +3,7 @@
 * Portfolio 
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 *
 */
 ?> 
@@ -96,7 +96,7 @@ endif;
       </div>
       <?php endwhile;
              endif;
-      wp_reset_query(); // End Query Portfolio Tab One ?>
+             wp_reset_postdata(); // End Query Portfolio Tab One ?>
 
       <!-- Portfolio Tab Two -->
 <?php
@@ -150,7 +150,7 @@ if ( false == get_theme_mod( 'atomy_enable_featured_product_2', true ) ) :
       </div>
       <?php endwhile;
              endif;
-      wp_reset_query(); // End Query Portfolio Tab Two ?>
+             wp_reset_postdata(); // End Query Portfolio Tab Two ?>
 
   <!-- Portfolio Tab Three -->
   <?php
@@ -205,7 +205,7 @@ if ( false == get_theme_mod( 'atomy_enable_featured_product_2', true ) ) :
       </div>
       <?php endwhile;
              endif;
-      wp_reset_query(); // End Query Portfolio Tab Three 
+             wp_reset_postdata(); // End Query Portfolio Tab Three 
       endif; ?>
 
       <!-- Portfolio Tab Four -->
@@ -260,7 +260,7 @@ if ( false == get_theme_mod( 'atomy_enable_featured_product_2', true ) ) :
       </div>
       <?php endwhile;
              endif;
-      wp_reset_query(); // End Query Portfolio Tab Four 
+             wp_reset_postdata(); // End Query Portfolio Tab Four 
       endif; ?>
 
       <!-- Portfolio Tab Five -->
@@ -315,7 +315,7 @@ if ( false == get_theme_mod( 'atomy_enable_featured_product_2', true ) ) :
       </div>
       <?php endwhile;
              endif;
-      wp_reset_query(); // End Query Portfolio Tab Five 
+             wp_reset_postdata(); // End Query Portfolio Tab Five 
       endif; ?>
 </div>
 </div>

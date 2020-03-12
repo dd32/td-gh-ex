@@ -3,7 +3,7 @@
 * nav-menuMiddle.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 *
 */
 ?>
@@ -104,7 +104,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-8 col-md-8" role="navigation">
             <!-- Logo -->
             <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ), 'full' );?></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php __('Toggle navigation','atomy')?>">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr__('Toggle navigation','atomy')?>">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

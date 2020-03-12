@@ -3,7 +3,7 @@
 * section-slide.php
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.7
+* @version   1.0.8
 *
 */
 ?>
@@ -50,7 +50,7 @@
   </div>
     <?php endwhile;
         endif;
-      wp_reset_query(); // End Query Slider Header ?>
+        wp_reset_postdata(); // End Query Slider Header ?>
   </div>
 </div>
   <!-- Carousel Control -->
