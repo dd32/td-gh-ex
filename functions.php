@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'ASAGI_VERSION', '1.1.0' );
+define( 'ASAGI_VERSION', '1.2.0' );
 
 if ( ! function_exists( 'asagi_setup' ) ) {
 	add_action( 'after_setup_theme', 'asagi_setup' );
@@ -119,8 +119,8 @@ require get_template_directory() . '/inc/structure/navigation.php';
 require get_template_directory() . '/inc/structure/post-meta.php';
 require get_template_directory() . '/inc/structure/sidebars.php';
 
-define('ASAGI_THEME_URL','http://wpkoi.com/asagi-wpkoi-wordpress-theme/','asagi');
-define('ASAGI_WPKOI_AUTHOR_URL','http://wpkoi.com','asagi');
-define('ASAGI_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/','asagi');
-define('ASAGI_WORDPRESS_REVIEW','https://wordpress.org/support/theme/asagi/reviews/?filter=5','asagi');
-define('ASAGI_DOCUMENTATION','http://wpkoi.com/docs/','asagi');
+define('ASAGI_THEME_URL','http://wpkoi.com/asagi-wpkoi-wordpress-theme/');
+define('ASAGI_WPKOI_AUTHOR_URL','http://wpkoi.com');
+define('ASAGI_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/');
+define('ASAGI_WORDPRESS_REVIEW','https://wordpress.org/support/theme/asagi/reviews/?filter=5');
+define('ASAGI_DOCUMENTATION','http://wpkoi.com/docs/');
