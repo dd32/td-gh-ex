@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-sup
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 5.4
-Stable tag: 1.14
+Stable tag: 1.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,8 +32,10 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 == Changelog ==
 
-= 1.14 =
+= 1.15 =
 * Review Findings Fix
+* Code Cleanup
+* Style Improvement
 
 = 1.13 =
 * Review Findings Fix

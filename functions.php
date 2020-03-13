@@ -65,7 +65,8 @@
 	if (is_front_page() && ( $slidebox || $associationx_portfboxv || $testiv ) ):
 		wp_enqueue_style('associationx-slider-css', get_template_directory_uri(). '/css/flexslider.css' ); 
 		wp_enqueue_script( 'associationx-slider-js', get_template_directory_uri(). '/js/jquery.flexslider.js' );		
-		if($associationx_portfboxv) wp_enqueue_style('associationx-portfolio-component-css', get_template_directory_uri(). '/css/portfolio-component.css' );		
+		if($associationx_portfboxv) wp_enqueue_style('associationx-portfolio-component-css', get_template_directory_uri(). '/css/portfolio-component.css' );
+		wp_enqueue_script( 'associationx_custom_script', get_template_directory_uri(). '/js/custom-script.js', '', '', true );
 	endif;
 	$stfboxv = associationx_get_option('staffbox', '');	
 	if (is_front_page() && $stfboxv ):	
@@ -85,8 +86,10 @@
 		
 	wp_enqueue_style('associationx-bbpress', get_template_directory_uri(). '/css/bbp.css' );
 	
-	if (associationx_get_option('responsive', '1')) wp_enqueue_style('associationx-responsive', get_template_directory_uri(). '/style-responsive.css' ); 	 
+	if (associationx_get_option('responsive', '1')) wp_enqueue_style('associationx-responsive', get_template_directory_uri(). '/style-responsive.css' );
+			
 	}
+
 	add_action( 'wp_enqueue_scripts', 'associationx_enqueue_scripts' );
 
 	// 	Functions for adding script to Admin Area

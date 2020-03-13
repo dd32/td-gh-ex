@@ -50,26 +50,8 @@ if( !$associationx_portheading && !$associationx_portfitem ) return; ?>
 	<?php
 	echo $associationx_portheading; 
 	if($associationx_portfitem):
-		echo '<div id="portfslider" class="box90 portfolioslider posrel"><ul class="grid-portfolio slides  cs-style-3">'.$associationx_portfitem.'</ul></div>';			
-		
+		echo '<div id="portfslider" class="box90 portfolioslider posrel"><ul class="grid-portfolio slides  cs-style-3">'.$associationx_portfitem.'</ul></div>';	
 	?>
-       	<script type="text/javascript">
-			jQuery(window).load(function() {
-  				jQuery('#portfslider').flexslider({
-					animation: "slide",
-    				animationLoop: false,
-    				itemWidth: 300,
-    				itemMargin: 1,
-    				minItems: 1,
-    				maxItems: 4,
-					slideshow: true,
-					controlNav: false,
-					directionNav: true, 
-					prevText: "",       
- 					nextText: ""		
-				});
-			});
-		</script>
 	<?php endif; ?>
 </div>
 <div class="clear"></div>

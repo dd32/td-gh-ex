@@ -66,10 +66,4 @@ if(!$stfbtitle && !$gridstaffbox) return;
 	</div>
 </div>
 <div class="clear"></div>
-
-<script type="text/javascript">	
-	jQuery(window).load(function() {
-  		jQuery( '#grid-staff' ).hoverfold();
-	});	
-</script>
 <!--- ============  END OF STAFFS  =========== ------------>

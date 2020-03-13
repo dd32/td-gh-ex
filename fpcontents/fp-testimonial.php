@@ -48,22 +48,4 @@ $cltes = 7;
 		?>
 	</div>
 </div>
-
-<script type="text/javascript">
-jQuery(window).load(function() {
-  jQuery('.testimonialslider').flexslider({
-    animation: "slide",
-    animationLoop: false,
-    itemWidth: 200,
-    itemMargin: 1,
-    minItems: 1,
-    maxItems: 3,
-	slideshow: true,
-	controlNav: true,
-	directionNav: false,
-	prevText: "",       
- 	nextText: ""		
-  });
-});
-</script>
 <!--- ============  END OF TESTIMONIALS  =========== ------------>

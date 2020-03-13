@@ -53,7 +53,7 @@
 	#header-content{ flex-direction: row-reverse; align-items: center; }
 	#logotitle{ max-width: calc(100% - 55px); }
 	
-	#sldvidcon{ margin-top: 0 !important; }
+	#sldvidcon{ margin-top: 0 !important; position: relative; }
 	.slidecaptions{ padding-top: 0 !important; }
 	#mainslider.main-slider .title1 { font-size: 5vw; }
 	#mainslider.main-slider .title2 { font-size: 3vw; }

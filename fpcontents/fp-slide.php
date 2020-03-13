@@ -10,17 +10,6 @@ $slidebox = '';
 if (is_front_page() ) $slidebox = associationx_get_option('slidebox', '');
 if(!$slidebox) return;
 ?>
-<script type="text/javascript">
-	jQuery(window).on('load resize', function () { 	'use strict';										  
-		var hHeight = jQuery('#header').outerHeight(true);	
-		var sWidth = jQuery('#sldvidcon').outerWidth(true);
-		var sHeight = sWidth*0.45;										  
-		jQuery('#sldvidcon, #slidevideo, #mainslider, #mainslider .slides .slideitem').css({ 'height': sHeight  });
-		jQuery('#sldvidcon').css({ 'margin-top': -hHeight });
-		jQuery('#mainslider .slidecaptions').css({ 'padding-top': hHeight });						  
-	});	
-</script>
-
 <div id="sldvidcon">
 	<div id="mainslider" class="flexslider main-slider" >
 		<ul class="slides">
@@ -68,24 +57,7 @@ if(!$slidebox) return;
 				</div>
 			</li>
 			<?php } ?>
-			</ul>
-		</div>
-		<script type="text/javascript">
-			jQuery(window).load(function(){
-				jQuery(this).scrollTop(0);
-				//Top Slider
-				jQuery('#mainslider').flexslider({
-					animation: 'fade', 		   
-					controlNav: true,   	
-					directionNav: true,
-					slideshow: true,
-					slideshowSpeed: 7000,   
-					animationSpeed: 600,   
-					pauseOnHover: true,   
-					prevText: "",        
-					nextText: ""		
-				});		
-			});											  
-		</script>
+		</ul>
+	</div>		
 </div>
 <div id="clear-top" class="clear"></div>
