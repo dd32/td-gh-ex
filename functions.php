@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'BEKKO_VERSION', '1.1.0' );
+define( 'BEKKO_VERSION', '1.2.0' );
 
 if ( ! function_exists( 'bekko_setup' ) ) {
 	add_action( 'after_setup_theme', 'bekko_setup' );
@@ -119,8 +119,8 @@ require get_template_directory() . '/inc/structure/navigation.php';
 require get_template_directory() . '/inc/structure/post-meta.php';
 require get_template_directory() . '/inc/structure/sidebars.php';
 
-define('BEKKO_THEME_URL','http://wpkoi.com/bekko-wpkoi-wordpress-theme/','bekko');
-define('BEKKO_WPKOI_AUTHOR_URL','http://wpkoi.com','bekko');
-define('BEKKO_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/','bekko');
-define('BEKKO_WORDPRESS_REVIEW','https://wordpress.org/support/theme/bekko/reviews/?filter=5','bekko');
-define('BEKKO_DOCUMENTATION','http://wpkoi.com/docs/','bekko');
+define('BEKKO_THEME_URL','http://wpkoi.com/bekko-wpkoi-wordpress-theme/');
+define('BEKKO_WPKOI_AUTHOR_URL','http://wpkoi.com');
+define('BEKKO_WPKOI_SOCIAL_URL','https://www.facebook.com/wpkoithemes/');
+define('BEKKO_WORDPRESS_REVIEW','https://wordpress.org/support/theme/bekko/reviews/?filter=5');
+define('BEKKO_DOCUMENTATION','http://wpkoi.com/docs/');
