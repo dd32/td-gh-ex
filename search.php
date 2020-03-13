@@ -1,37 +1,47 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
-		<div id="container">
-			<div id="content" role="main">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-<?php if ( have_posts() ) : ?>
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'artblog' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<?php if ( have_posts() ) : ?>
+
+				<header class="page-header">
+					<h1 class="page-title">
+						<?php
+						/* translators: %s: search query. */
+						printf( esc_html__( 'Search Results for: %s', 'artblog' ), '<span>' . get_search_query() . '</span>' );
+						?>
+					</h1>
+				</header><!-- .page-header -->
+
 				<?php
-				/* Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called loop-search.php and that will be used instead.
-				 */
-				 get_template_part( 'loop', 'search' );
-				?>
-<?php else : ?>
-				<div id="post-0" class="post no-results not-found">
-					<h2 class="entry-title"><?php _e( 'Nothing Found', 'artblog' ); ?></h2>
-					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'artblog' ); ?></p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</div><!-- #post-0 -->
-<?php endif; ?>
-			</div><!-- #content -->
-		</div><!-- #container -->
+				while ( have_posts() ) :
+					the_post();
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+					get_template_part( 'template-parts/content', 'search' );
+
+				endwhile;
+
+				artblog_the_posts_navigation();
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif;
+			?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();

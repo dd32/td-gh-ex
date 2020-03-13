@@ -1,37 +1,46 @@
 <?php
 /**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * The main template file
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
 
- 
-get_header(); ?>
+get_header();
+?>
 
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-    	<div id="container">
-                                   
-			<div id="content" role="main">
-                                  
-            
 			<?php
-			/* Run the loop to output the posts.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-index.php and that will be used instead.
-			 */
-			 get_template_part( 'loop', 'index' );
-			?>
-			</div><!-- #content -->
-		</div><!-- #container -->
+			if ( have_posts() ) :
 
-            <?php get_sidebar(); ?>
-    
-<?php get_footer(); ?>
+				if ( is_home() && ! is_front_page() ) :
+					?>
+					<header>
+						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					</header>
+					<?php
+				endif;
+
+				while ( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/content', get_post_type() );
+
+				endwhile;
+
+				artblog_the_posts_navigation();
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif;
+			?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();

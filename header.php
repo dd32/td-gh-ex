@@ -1,119 +1,74 @@
 <?php
-    /**
-    * The Header for our theme.
-    *
-    * Displays all of the <head> section and everything up till <div id="main">
-    *
-    * @package Artblog
-    * @author  Simon Hansen
-    * @since Artblog 1.0
-    */
-?><!DOCTYPE html>
+/**
+ * The header for our theme
+ *
+ * @package Artblog
+ */
+
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>" />
-    <title><?php
-            /*
-            * Print the <title> tag based on what is being viewed.
-            */
-            global $page, $paged;
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-            wp_title( '|', true, 'right' );
-
-            // Add the blog name.
-            bloginfo( 'name' );
-
-            // Add the blog description for the home/front page.
-            $site_description = get_bloginfo( 'description', 'display' );
-            if ( $site_description && ( is_home() || is_front_page() ) )
-                echo " | $site_description";
-
-            // Add a page number if necessary:
-            if ( $paged >= 2 || $page >= 2 )
-                echo ' | ' . sprintf( __( 'Page %s', 'artblog' ), max( $paged, $page ) );
-
-    ?></title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-
-    <?php wp_enqueue_style('artblog-style', get_stylesheet_uri(), false);?>
-
-
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <?php
-        /* We add some JavaScript to pages with the comment form
-        * to support sites with threaded comments (when in use).
-        */
-        if ( is_singular() && get_option( 'thread_comments' ) )
-            wp_enqueue_script( 'comment-reply' );
-
-        /* Always have wp_head() just before the closing </head>
-        * tag of your theme, or you will break many plugins, which
-        * generally use this hook to add elements to <head> such
-        * as styles, scripts, and meta tags.
-        */
-        wp_head();
-    ?>
+	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'artblog' ); ?></a>
+
+	<header id="masthead" class="site-header">
+		<div class="container">
+			<div class="site-branding">
+				<?php
+
+				echo '<div class="site-identity-wrap-outer">';
+				the_custom_logo();
+
+				echo '<div class="site-identity-wrapper">';
+				if ( is_front_page() && is_home() ) :
+					?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php
+					else :
+						?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						<?php
+					endif;
+					$artblog_description = get_bloginfo( 'description', 'display' );
+					if ( $artblog_description || is_customize_preview() ) :
+						?>
+						<p class="site-description"><?php echo $artblog_description; // phpcs:ignore WordPress.Security.EscapeOutput ?></p>
+					<?php endif; ?>
+				<?php echo '</div><!-- .site-identity-wrapper -->'; ?>
+				<?php echo '</div><!-- .site-identity-wrap-outer -->'; ?>
+
+				<div class="main-navigation-wrap">
+					<button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" type="button">
+						<?php esc_html_e( 'Primary Menu', 'artblog' ); ?>
+					</button>
+					<nav id="main-navigation" class="site-navigation" role="navigation" aria-label='<?php esc_attr_e( 'Primary Menu', 'artblog' ); ?>'>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'container'      => 'ul',
+								'menu_id'        => 'primary-menu',
+								'menu_class'     => 'menu',
+								'fallback_cb'    => 'artblog_primary_navigation_fallback',
+							)
+						);
+						?>
+					</nav><!-- #site-navigation -->
+				</div><!-- .main-navigation-wrap -->
+			</div><!-- .site-branding -->
+		</div><!-- .container -->
 
 
+	</header><!-- #masthead -->
 
-
-
-<div id="wrapper" class="hfeed">
-
-<div id="left-column" >
-
-
-
-<?php
-    // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-    if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-    has_post_thumbnail( $post->ID ) &&
-    ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-    $image[1] >= HEADER_IMAGE_WIDTH ) :
-        // Houston, we have a new header image!
-        echo get_the_post_thumbnail( $post->ID );
-        elseif ( get_header_image() ) : ?>
-
-    <img  src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-    <?php endif; ?>
-
-
-
-
-
-<div id="logo">
-<span class="site-name"><a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a></span><br />
-<span class="site-description"><?php bloginfo('description'); ?></span>
-</div>
-
-
-<div id="rightMenu">
-    <?php    
-
-        wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) );
-
-
-        echo '    </div>';
-
-        // A second sidebar for widgets, just because.
-        if ( is_active_sidebar( 'secondary-widget-area' ) ) : ?>
-
-        <div id="secondary" class="widget-area" role="complementary">
-            <ul class="xoxo">
-                <?php dynamic_sidebar( 'secondary-widget-area' ); ?>
-            </ul>
-        </div><!-- #secondary .widget-area -->
-
-        <?php endif; 
-
-
-    ?>
-
-
- </div>
-                
-
-     <div id="main" >  
+	<div id="content" class="site-content">

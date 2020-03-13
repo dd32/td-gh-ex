@@ -1,41 +1,33 @@
 <?php
 /**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content
- * after.  Calls sidebar-footer.php for bottom widgets.
+ * The template for displaying the footer
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
-?>
-	</div><!-- #main -->
 
-
-   <br class="clear-both" />
-</div><!-- #wrapper -->
-<div class="footer-border" ></div>
-    <div id="footer" role="contentinfo">
-
-<?php
-    /* A sidebar in the footer? Yep. You can can customize
-     * your footer with four columns of widgets.
-     */
-    get_sidebar( 'footer' );
 ?>
 
+	</div><!-- #content -->
 
+	<?php get_template_part( 'template-parts/footer-widgets' ); ?>
 
+	<footer id="colophon" class="site-footer">
+		<div class="container col-2">
+			<div class="copyright">
+				<?php echo wp_kses_post( artblog_get_option( 'copyright_text' ) ); ?>
+			</div><!-- .copyright -->
 
-    </div><!-- #footer -->
-<?php
-	/* Always have wp_footer() just before the closing </body>
-	 * tag of your theme, or you will break many plugins, which
-	 * generally use this hook to reference JavaScript files.
-	 */
+			<div class="site-info">
+					<?php
+					/* translators: %s: Theme author */
+					printf( esc_html__( 'Artblog by %s', 'artblog' ), '<a href="https://www.wpmanesh.com/">Manesh</a>' );
+					?>
+			</div><!-- .site-info -->
+		</div><!-- .container -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
-	wp_footer();
-?>
+<?php wp_footer(); ?>
+
 </body>
 </html>

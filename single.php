@@ -1,27 +1,37 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying single.
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
-		<div id="container">
-			<div id="content" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
 			<?php
-			/* Run the loop to output the post.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-single.php and that will be used instead.
-			 */
-			get_template_part( 'loop', 'single' );
+			while ( have_posts() ) :
+				the_post();
+
+				get_template_part( 'template-parts/content', 'single' );
+
+				if ( 'post' === get_post_type() ) {
+					the_post_navigation();
+				}
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile;
 			?>
 
-			</div><!-- #content -->
-		</div><!-- #container -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

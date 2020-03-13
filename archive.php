@@ -1,61 +1,45 @@
 <?php
 /**
- * The template for displaying Archive pages.
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying archive pages
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
 
-get_header(); ?>
-
-		<div id="container">
-			<div id="content" role="main">
-
-<?php
-	/* Queue the first post, that way we know
-	 * what date we're dealing with (if that is the case).
-	 *
-	 * We reset this later so we can run the loop
-	 * properly with a call to rewind_posts().
-	 */
-	if ( have_posts() )
-		the_post();
+get_header();
 ?>
 
-			<h1 class="page-title">
-<?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: <span>%s</span>', 'artblog' ), get_the_date() ); ?>
-<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'artblog' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'artblog' ) ) ); ?>
-<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'artblog' ), get_the_date( _x( 'Y', 'yearly archives date format', 'artblog' ) ) ); ?>
-<?php else : ?>
-				<?php _e( 'Blog Archives', 'artblog' ); ?>
-<?php endif; ?>
-			</h1>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			<?php if ( have_posts() ) : ?>
+
+				<header class="page-header">
+					<?php
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+					?>
+				</header><!-- .page-header -->
+
+				<?php
+				while ( have_posts() ) :
+					the_post();
+
+					get_template_part( 'template-parts/content', get_post_type() );
+
+				endwhile;
+
+				artblog_the_posts_navigation();
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif;
+			?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
-	/* Since we called the_post() above, we need to
-	 * rewind the loop back to the beginning that way
-	 * we can run the loop properly, in full.
-	 */
-	rewind_posts();
-
-	/* Run the loop for the archives page to output the posts.
-	 * If you want to overload this in a child theme then include a file
-	 * called loop-archive.php and that will be used instead.
-	 */
-	 get_template_part( 'loop', 'archive' );
-?>
-
-			</div><!-- #content -->
-		</div><!-- #container -->
-
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+get_sidebar();
+get_footer();

@@ -1,79 +1,79 @@
 <?php
 /**
- * The template for displaying Comments.
- *
- * The area of the page that contains both current comments
- * and the comment form.  The actual display of comments is
- * handled by a callback to artblog_comment which is
- * located in the functions.php file.
+ * The template for displaying comments
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
+}
 ?>
 
-			<div id="comments">
-<?php if ( post_password_required() ) : ?>
-				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'artblog' ); ?></p>
-			</div><!-- #comments -->
-<?php
-		/* Stop the rest of comments.php from being processed,
-		 * but don't kill the script entirely -- we still have
-		 * to fully load the template.
-		 */
-		return;
-	endif;
-?>
+<div id="comments" class="comments-area">
 
-<?php
-	// You can start editing here -- including this comment!
-?>
+	<?php
+	$artblog_comment_count = absint( get_comments_number() );
+	?>
 
-<?php if ( have_comments() ) : ?>
-			<h3 id="comments-title"><?php
-			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'artblog' ),
-			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
-			?></h3>
+	<?php
+	if ( have_comments() ) :
+		?>
+		<h2 class="comments-title">
+			<?php
+			if ( ! have_comments() ) {
+				esc_html_e( 'Leave a comment', 'artblog' );
+			} elseif ( 1 === $artblog_comment_count ) {
+				/* translators: %s: post title */
+				printf( esc_html_x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'artblog' ), esc_html( get_the_title() ) );
+			} else {
+				echo sprintf(
+					/* translators: 1: number of comments, 2: post title */
+					_nx(
+						'%1$s reply on &ldquo;%2$s&rdquo;',
+						'%1$s replies on &ldquo;%2$s&rdquo;',
+						$artblog_comment_count,
+						'comments title',
+						'artblog'
+					),
+					number_format_i18n( $artblog_comment_count ),
+					esc_html( get_the_title() )
+				);
+			}
+			?>
+		</h2><!-- .comments-title -->
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'artblog' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'artblog' ) ); ?></div>
-			</div> <!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+		<?php the_comments_navigation(); ?>
 
-			<ol class="commentlist">
-				<?php
-					/* Loop through and list the comments. Tell wp_list_comments()
-					 * to use artblog_comment() to format the comments.
-					 * If you want to overload this in a child theme then you can
-					 * define artblog_comment() and that will be used instead.
-					 * See artblog_comment() in artblog/functions.php for more.
-					 */
-					wp_list_comments( array( 'callback' => 'artblog_comment' ) );
-				?>
-			</ol>
+		<ol class="comment-list">
+			<?php
+			wp_list_comments(
+				array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				)
+			);
+			?>
+		</ol><!-- .comment-list -->
 
-<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'artblog' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'artblog' ) ); ?></div>
-			</div><!-- .navigation -->
-<?php endif; // check for comment navigation ?>
+		<?php
+		the_comments_navigation();
 
-<?php else : // or, if we don't have comments:
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() ) :
+			?>
+			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'artblog' ); ?></p>
+			<?php
+		endif;
 
-	/* If there are no comments and comments are closed,
-	 * let's leave a little note, shall we?
-	 */
-	if ( ! comments_open() ) :
-?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'artblog' ); ?></p>
-<?php endif; // end ! comments_open() ?>
+	endif; // Check for have_comments().
 
-<?php endif; // end have_comments() ?>
-
-<?php comment_form(); ?>
+	comment_form();
+	?>
 
 </div><!-- #comments -->

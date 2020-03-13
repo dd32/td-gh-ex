@@ -1,0 +1,77 @@
+/* container*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* media*/
+@media (min-width: 1200px){
+	.container {
+	    max-width: 1200px;
+	}
+}
+
+/* col-width*/
+.col-1 {
+	display: -ms-grid;
+    display: grid;
+	-ms-grid-columns: 1fr;
+	grid-template-columns: 1fr;
+	grid-gap: 30px;
+}
+.col-2 {
+	display: -ms-grid;
+    display: grid;
+	-ms-grid-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 30px;
+	@include for-size(phone-only) {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+.col-3 {
+	display: -ms-grid;
+    display: grid;
+	-ms-grid-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 30px;
+	@include for-size(phone-only) {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+.col-4 {
+	display: -ms-grid;
+    display: grid;
+	-ms-grid-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 30px;
+	@include for-size(tablet-portrait-up) {
+		-ms-grid-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include for-size(phone-only) {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+
+.col-5 {
+	display: -ms-grid;
+    display: grid;
+	-ms-grid-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 30px;
+	@include for-size(tablet-portrait-up) {
+		-ms-grid-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(1, 1fr);
+	}
+	@include for-size(phone-only) {
+		-ms-grid-columns: 1fr;
+		grid-template-columns: 1fr;
+	}
+}
+

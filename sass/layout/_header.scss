@@ -1,0 +1,50 @@
+.site {
+	overflow: hidden;
+}
+
+.site-content {
+	max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.site-header {
+	margin-bottom: 50px;
+	background: $color_body;
+	padding: 20px 0;
+	.site-branding {
+		@include flexbox(true, center, space-between);
+		// padding: 40px 0 0;
+		@include for-size(desktop-up) {
+			position: relative;
+		}
+		.site-title {
+			font-family: $font_family_heading;
+			font-size: $font_size_site_title;
+			margin-bottom: 0;
+			line-height: 1;
+			@include for-size(phone-only) {
+				font-size: $font_size_heading;
+			} 
+		}
+		.site-description {
+			line-height: 1;
+			margin-top: 10px;
+			margin-bottom: 0;
+		}
+		.custom-logo-link {
+			display: inline-block;
+			max-width: 250px;
+			margin-right: 10px;
+			line-height: 0;
+			img {
+				width: auto;
+				max-height: 60px;
+			}
+		}
+		.site-identity-wrap-outer {
+			@include flexbox (true, center, flex-start)
+		}
+	}
+}
+

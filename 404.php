@@ -1,26 +1,29 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
+ * The template for displaying 404 pages (not found)
  *
  * @package Artblog
- * @author  Simon Hansen
- * @since Artblog 1.0
  */
 
-get_header(); ?>
+get_header();
+?>
 
-	<div id="container">
-		<div id="content" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-			<div id="post-0" class="post error404 not-found">
-				<h1 class="entry-title"><?php _e( 'Not Found', 'artblog' ); ?></h1>
-				<div class="entry-content">
-					<p><?php _e( 'Apologies, but the page you requested could not be found. Perhaps searching will help.', 'artblog' ); ?></p>
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'artblog' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'artblog' ); ?></p>
 					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</div><!-- #post-0 -->
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
 
-		</div><!-- #content -->
-	</div><!-- #container -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

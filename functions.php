@@ -1,445 +1,237 @@
 <?php
-    /**
+/**
+ * Theme functions and definitions
+ *
+ * @package Artblog
+ */
 
-    * @package Artblog
-    * @author  Simon Hansen
-    * @since Artblog 1.0
-    */
+if ( ! function_exists( 'artblog_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * @since 1.0.0
+	 */
+	function artblog_setup() {
+		// Make theme available for translation.
+		load_theme_textdomain( 'artblog', get_template_directory() . '/languages' );
 
-    /**
-    * Set the content width based on the theme's design and stylesheet.
-    *
-    * Used to set the width of images and content. Should be equal to the width the theme
-    * is designed for, generally via the style.css stylesheet.
-    */
-    if ( ! isset( $content_width ) )
-        $content_width = 650;
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-    /** Tell WordPress to run artblog_setup() when the 'after_setup_theme' hook is run. */
-    add_action( 'after_setup_theme', 'artblog_setup' );
+		// Let WordPress manage the document title.
+		add_theme_support( 'title-tag' );
 
-    if ( ! function_exists( 'artblog_setup' ) ):
-        /**
-        * Sets up theme defaults and registers support for various WordPress features.
-        *
-        * Note that this function is hooked into the after_setup_theme hook, which runs
-        * before the init hook. The init hook is too late for some features, such as indicating
-        * support post thumbnails.
-        *
-        * To override artblog_setup() in a child theme, add your own artblog_setup to your child theme's
-        * functions.php file.
-        *
-        * @uses add_theme_support() To add support for post thumbnails and automatic feed links. And custom header
-        * @uses register_nav_menus() To add support for navigation menus.
-        * @uses add_custom_background() To add support for a custom background.
-        * @uses add_editor_style() To style the visual editor.
-        * @uses load_theme_textdomain() For translation/localization support.
-        * @uses register_default_headers() To register the default custom header images provided with the theme.
-        * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
-        *
-        */
+		// Enable support for Post Thumbnails.
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'artblog-thumb', 282, 282, true );
+		add_image_size( 'artblog-slider', 796, 400, true );
 
+		// Register menu locations.
+		register_nav_menus(
+			array(
+				'menu-1' => esc_html__( 'Primary Menu', 'artblog' ),
+				'social' => esc_html__( 'Social Menu', 'artblog' ),
+			)
+		);
 
+		// Add support for HTML5 markup.
+		add_theme_support(
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'style',
+				'script',
+				'caption',
+			)
+		);
 
-        function artblog_setup() {
+		// Add support for custom background.
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'artblog_custom_background_args',
+				array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				)
+			)
+		);
 
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
-            // This theme styles the visual editor with editor-style.css to match the theme style.
-            add_editor_style();
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
 
-            // Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-            add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
 
-            // This theme uses post thumbnails
-            add_theme_support( 'post-thumbnails' );
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );
 
-            // Add default posts and comments RSS feed links to head
-            add_theme_support( 'automatic-feed-links' );
+		// Add support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+	}
 
-            // Make theme available for translation
-            // Translations can be filed in the /languages/ directory
-            load_theme_textdomain( 'artblog', get_template_directory() . '/languages' );
+endif;
 
-            $locale = get_locale();
+add_action( 'after_setup_theme', 'artblog_setup' );
 
-            $locale_file = get_template_directory() . "/languages/$locale.php";
-            if ( is_readable( $locale_file ) )
-                require_once( $locale_file );
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @since 1.0.0
+ *
+ * @global int $content_width
+ */
+function artblog_content_width() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( 'artblog_content_width', 819 );
+}
 
-            // This theme uses wp_nav_menu() in one location.
-            register_nav_menus( array(
-                'primary' => __( 'Primary Navigation', 'artblog' ),
-            ) );
+add_action( 'after_setup_theme', 'artblog_content_width', 0 );
 
-            // This theme allows users to set a custom background
-            //add_custom_background();
+/**
+ * Register widget area.
+ *
+ * @since 1.0.0
+ */
+function artblog_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'artblog' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'artblog' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 
-            // Your changeable header business starts here
-            if ( ! defined( 'HEADER_TEXTCOLOR' ) )
-                define( 'HEADER_TEXTCOLOR', '' );
+	for ( $i = 1; $i <= 4; $i++ ) {
+		register_sidebar(
+			array(
+				/* translators: 1: Widget number. */
+				'name'          => sprintf( esc_html__( 'Footer %d', 'artblog' ), $i ),
+				'id'            => 'footer-' . $i,
+				'before_widget' => '<section id="%1$s" class="widget footer-widgets %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
+	}
+}
 
-            // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-            if ( ! defined( 'HEADER_IMAGE' ) )
-                define( 'HEADER_IMAGE', '%s/images/headers/ugle.jpg' );
+add_action( 'widgets_init', 'artblog_widgets_init' );
 
-            // The height and width of your custom header. You can hook into the theme's own filters to change these values.
-            // Add a filter to artblog_header_image_width and artblog_header_image_height to change these values.
-            define( 'HEADER_IMAGE_WIDTH', apply_filters( 'artblog_header_image_width', 200 ) );
-            define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'artblog_header_image_height', 200) );
+/**
+ * Enqueue scripts and styles.
+ *
+ * @since 1.0.0
+ */
+function artblog_scripts() {
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-            // We'll be using post thumbnails for custom header images on posts and pages.
-            // We want them to be 940 pixels wide by 198 pixels tall.
-            // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-            set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+	wp_enqueue_style( 'artblog-font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/all' . $min . '.css', '', '5.12.0' );
 
-            // Don't support text inside the header image.
-            if ( ! defined( 'NO_HEADER_TEXT' ) )
-                define( 'NO_HEADER_TEXT', true );
+	wp_enqueue_style( 'jquery-slick', get_template_directory_uri() . '/third-party/slick/slick' . $min . '.css', '', '1.8.1' );
 
-            // Add a way for the custom header to be styled in the admin panel that controls
-            // custom headers. See artblog_admin_header_style(), below.
-        
-         
-            $defaults = array(
-                'default-image'          => '',
-                'random-default'         => false,
-                'width'                  => 0,
-                'height'                 => 0,
-                'flex-height'            => false,
-                'flex-width'             => false,
-                'default-text-color'     => '',
-                'header-text'            => true,
-                'uploads'                => true,
-                'wp-head-callback'       => '',
-                'admin-head-callback'    => '',
-                'admin-preview-callback' => '',
-            );
+	$fonts_url = artblog_fonts_url();
 
+	if ( ! empty( $fonts_url ) ) {
+		wp_enqueue_style( 'artblog-google-fonts', $fonts_url, array(), '1.0.0' );
+	}
 
-                add_theme_support( 'custom-header',$defaults );
+	wp_enqueue_style( 'artblog-style', get_stylesheet_uri(), array(), '1.0.0' );
 
+	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/third-party/slick/slick' . $min . '.js', array( 'jquery' ), '1.8.1', true );
 
+	wp_enqueue_script( 'artblog-custom', get_template_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '1.0.0', true );
 
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
+	wp_localize_script(
+		'artblog-custom',
+		'artblogScreenReaderText',
+		array(
+			'expandMain'    => esc_html__( 'Open main menu', 'artblog' ),
+			'collapseMain'  => esc_html__( 'Close main menu', 'artblog' ),
+			'expandChild'   => esc_html__( 'Expand submenu', 'artblog' ),
+			'collapseChild' => esc_html__( 'Collapse submenu', 'artblog' ),
+		)
+	);
+}
 
-            // ... and thus ends the changeable header business.
+add_action( 'wp_enqueue_scripts', 'artblog_scripts' );
 
-            // Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-            register_default_headers( array(
-                'berries' => array(
-                    'url' => '%s/images/headers/ugle.jpg',
-                    'thumbnail_url' => '%s/images/headers/ugle-thumbnail.jpg',
-                    /* translators: header image description */
-                    'description' => __( 'Berries', 'artblog' )
-                )
-            ) );
-        }
-        endif;
+/**
+ * Enqueue admin scripts and styles.
+ *
+ * @since 1.0.0
+ *
+ * @param string $hook Hook name.
+ */
+function artblog_admin_scripts( $hook ) {
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-    if ( ! function_exists( 'artblog_admin_header_style' ) ) :
-        /**
-        *
-        *
-        */
-        function artblog_admin_header_style() {
-        ?>
-        <style type="text/css">
-            /* Shows the same border as on front end */
-            #headimg {
-                border-bottom: 1px solid #000;
-                border-top: 4px solid #000;
-            }
-            /* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-            #headimg #name { }
-            #headimg #desc { }
-            */
-        </style>
-        <?php
-        }
-        endif;
+	if ( 'widgets.php' === $hook ) {
+		wp_enqueue_style( 'artblog-widgets', get_template_directory_uri() . '/css/widgets' . $min . '.css', array(), '1.0.0' );
+		wp_enqueue_script( 'artblog-widgets', get_template_directory_uri() . '/js/widgets' . $min . '.js', array( 'jquery' ), '1.0.0', true );
+	}
+}
 
-    /**
-    * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
-    *
-    * To override this in a child theme, remove the filter and optionally add
-    * your own function tied to the wp_page_menu_args filter hook.
-    *
-    */
-    function artblog_page_menu_args( $args ) {
-        $args['show_home'] = true;
-        return $args;
-    }
-    add_filter( 'wp_page_menu_args', 'artblog_page_menu_args' );
+add_action( 'admin_enqueue_scripts', 'artblog_admin_scripts' );
 
-    /**
-    * Sets the post excerpt length to 40 characters.
-    *
-    * To override this length in a child theme, remove the filter and add your own
-    * function tied to the excerpt_length filter hook.
-    *
-    * @return int
-    */
-    function artblog_excerpt_length( $length ) {
-        return 40;
-    }
-    add_filter( 'excerpt_length', 'artblog_excerpt_length' );
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
 
-    /**
-    * Returns a "Continue Reading" link for excerpts
-    *
-    * @return string "Continue Reading" link
-    */
-    function artblog_continue_reading_link() {
-        return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'artblog' ) . '</a>';
-    }
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
 
-    /**
-    * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and artblog_continue_reading_link().
-    *
-    * To override this in a child theme, remove the filter and add your own
-    * function tied to the excerpt_more filter hook.
-    *
-    * @return string An ellipsis
-    */
-    function artblog_auto_excerpt_more( $more ) {
-        return ' &hellip;' . artblog_continue_reading_link();
-    }
-    add_filter( 'excerpt_more', 'artblog_auto_excerpt_more' );
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
 
-    /**
-    * Adds a pretty "Continue Reading" link to custom post excerpts.
-    *
-    * To override this link in a child theme, remove the filter and add your own
-    * function tied to the get_the_excerpt filter hook.
-    *
-    * @return string Excerpt with a pretty "Continue Reading" link
-    */
-    function artblog_custom_excerpt_more( $output ) {
-        if ( has_excerpt() && ! is_attachment() ) {
-            $output .= artblog_continue_reading_link();
-        }
-        return $output;
-    }
-    add_filter( 'get_the_excerpt', 'artblog_custom_excerpt_more' );
+/**
+ * Load helpers.
+ */
+require get_template_directory() . '/inc/helpers.php';
 
-    /**
-    * Remove inline styles printed when the gallery shortcode is used.
-    *
-    * Galleries are styled by the theme in Artblog's style.css. This is just
-    * a simple filter call that tells WordPress to not use the default styles.
-    *
-    */
-    add_filter( 'use_default_gallery_style', '__return_false' );
+/*
+ * Load core.
+ */
+require get_template_directory() . '/inc/core.php';
 
-    /**
-    * Deprecated way to remove inline styles printed when the gallery shortcode is used.
-    *
-    * This function is no longer needed or used. Use the use_default_gallery_style
-    * filter instead, as seen above.
-    *
-    *
-    * @return string The gallery style filter, with the styles themselves removed.
-    */
-    function artblog_remove_gallery_css( $css ) {
-        return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
-    }
-    // Backwards compatibility with WordPress 3.0.
-    if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
-        add_filter( 'gallery_style', 'artblog_remove_gallery_css' );
+/*
+ * Load widgets.
+ */
+require get_template_directory() . '/inc/widget.php';
 
-    if ( ! function_exists( 'artblog_comment' ) ) :
-        /**
-        * Template for comments and pingbacks.
-        *
-        * To override this walker in a child theme without modifying the comments template
-        * simply create your own artblog_comment(), and that function will be used instead.
-        *
-        * Used as a callback by wp_list_comments() for displaying the comments.
-        *
-        */
-        function artblog_comment( $comment, $args, $depth ) {
-            $GLOBALS['comment'] = $comment;
-            switch ( $comment->comment_type ) :
-            case '' :
-            ?>
-            <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-            <div id="comment-<?php comment_ID(); ?>">
-                <div class="comment-author vcard">
-                    <?php echo get_avatar( $comment, 40 ); ?>
-                    <?php printf( __( '%s <span class="says">says:</span>', 'artblog' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
-                </div><!-- .comment-author .vcard -->
-                <?php if ( $comment->comment_approved == '0' ) : ?>
-                    <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'artblog' ); ?></em>
-                    <br />
-                    <?php endif; ?>
+/*
+ * Admin page.
+ */
+require get_template_directory() . '/inc/admin/admin.php';
 
-                <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-                        <?php
-                            /* translators: 1: date, 2: time */
-                        printf( __( '%1$s at %2$s', 'artblog' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'artblog' ), ' ' );
-                    ?>
-                </div><!-- .comment-meta .commentmetadata -->
-
-                <div class="comment-body"><?php comment_text(); ?></div>
-
-                <div class="reply">
-                    <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-                </div><!-- .reply -->
-            </div><!-- #comment-##  -->
-
-            <?php
-                break;
-            case 'pingback'  :
-            case 'trackback' :
-            ?>
-            <li class="post pingback">
-            <p><?php _e( 'Pingback:', 'artblog' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'artblog' ), ' ' ); ?></p>
-            <?php
-                break;
-                endswitch;
-        }
-        endif;
-
-    /**
-    * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
-    *
-    * To override artblog_widgets_init() in a child theme, remove the action hook and add your own
-    * function tied to the init hook.
-    *
-    * @uses register_sidebar
-    */
-    function artblog_widgets_init() {
-        // Area 1, located at the top of the sidebar.
-        register_sidebar( array(
-            'name' => __( 'Primary Widget Area', 'artblog' ),
-            'id' => 'primary-widget-area',
-            'description' => __( 'The primary widget area', 'artblog' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ) );
-
-        // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
-        register_sidebar( array(
-            'name' => __( 'Secondary Widget Area', 'artblog' ),
-            'id' => 'secondary-widget-area',
-            'description' => __( 'The secondary widget area', 'artblog' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ) );
-
-        // Area 3, located in the footer. Empty by default.
-        register_sidebar( array(
-            'name' => __( 'First Footer Widget Area', 'artblog' ),
-            'id' => 'first-footer-widget-area',
-            'description' => __( 'The first footer widget area', 'artblog' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ) );
-
-        // Area 4, located in the footer. Empty by default.
-        register_sidebar( array(
-            'name' => __( 'Second Footer Widget Area', 'artblog' ),
-            'id' => 'second-footer-widget-area',
-            'description' => __( 'The second footer widget area', 'artblog' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ) );
-
-        // Area 5, located in the footer. Empty by default.
-        register_sidebar( array(
-            'name' => __( 'Third Footer Widget Area', 'artblog' ),
-            'id' => 'third-footer-widget-area',
-            'description' => __( 'The third footer widget area', 'artblog' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ) );
-
-        // Area 6, located in the footer. Empty by default.
-        register_sidebar( array(
-            'name' => __( 'Fourth Footer Widget Area', 'artblog' ),
-            'id' => 'fourth-footer-widget-area',
-            'description' => __( 'The fourth footer widget area', 'artblog' ),
-            'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-            'after_widget' => '</li>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ) );
-
-
-
-
-
-    }
-    /** Register sidebars by running artblog_widgets_init() on the widgets_init hook. */
-    add_action( 'widgets_init', 'artblog_widgets_init' );
-
-    /**
-    * Removes the default styles that are packaged with the Recent Comments widget.
-    *
-    * To override this in a child theme, remove the filter and optionally add your own
-    * function tied to the widgets_init action hook.
-    *
-    *
-    */
-    function artblog_remove_recent_comments_style() {
-        add_filter( 'show_recent_comments_widget_style', '__return_false' );
-    }
-    add_action( 'widgets_init', 'artblog_remove_recent_comments_style' );
-
-    if ( ! function_exists( 'artblog_posted_on' ) ) :
-        /**
-        * Prints HTML with meta information for the current post-date/time and author.
-        *
-        */
-        function artblog_posted_on() {
-            printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'artblog' ),
-                'meta-prep meta-prep-author',
-                sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-                    get_permalink(),
-                    esc_attr( get_the_time() ),
-                    get_the_date()
-                ),
-                sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-                    get_author_posts_url( get_the_author_meta( 'ID' ) ),
-                    esc_attr( sprintf( __( 'View all posts by %s', 'artblog' ), get_the_author() ) ),
-                    get_the_author()
-                )
-            );
-        }
-        endif;
-
-    if ( ! function_exists( 'artblog_posted_in' ) ) :
-        /**
-        * Prints HTML with meta information for the current post (category, tags and permalink).
-        *
-        */
-        function artblog_posted_in() {
-            // Retrieves tag list of current post, separated by commas.
-            $tag_list = get_the_tag_list( '', ', ' );
-            if ( $tag_list ) {
-                $posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'artblog' );
-            } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-                $posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'artblog' );
-            } else {
-                $posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'artblog' );
-            }
-            // Prints the string, replacing the placeholders.
-            printf(
-                $posted_in,
-                get_the_category_list( ', ' ),
-                $tag_list,
-                get_permalink(),
-                the_title_attribute( 'echo=0' )
-            );
-        }
-        endif;
