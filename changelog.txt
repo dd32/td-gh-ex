@@ -1,3 +1,6 @@
+Version 1.0.4
+Fixed error in menu edit
+
 Version 1.0.3
 Security Fixes
 Removed Simple Author Box from recommended plugins

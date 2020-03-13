@@ -188,19 +188,23 @@ class Antreas_Menu_Edit_Walker extends Walker_Nav_Menu {
 				</p>
 				<?php /* Custom fields */ ?>
 				<p class="field-custom description description-thin">
-					<label for="edit-menu-item-icon-<?php echo $item_id; ?>">
-						<?php wp_enqueue_style( 'antreas-fontawesome' ); ?>
-						<?php _e( 'Icon', 'antreas' ); ?><br />
-						<?php echo antreas_form_select( 'menu-item-icon[' . $item_id . ']', $item->icon, array_merge( array( '0' => ' ' ), antreas_metadata_fontawesome() ), array( 'class' => 'fontawesome widefat' ) ); ?>
-					</label>
-				</p>
-				<p class="field-custom description description-thin">
 					<label for="edit-menu-item-style-<?php echo $item_id; ?>">
 						<?php _e( 'Style', 'antreas' ); ?><br />
 						<?php echo antreas_form_select( 'menu-item-style[' . $item_id . ']', esc_attr( $item->style ), antreas_metadata_menu_style(), array( 'class' => 'widefat' ) ); ?>
 					</label>
 				</p>
+
+				<div class="description-wide menu-item-iconlist">
+					<label><?php esc_html_e( 'Icon', 'antreas' ); ?></label>
+				<?php 
+				$name = 'menu-item-icon[' . $item_id . ']';
+				$value = antreas_check_fontawesome_compatibility( html_entity_decode( $item->icon ) );
+				if ( is_array( $value ) ) {
+					$value = implode( '-', $value );
+				}
+				echo antreas_form_iconlist( $name, htmlentities($value) ) ?>
 				<?php /* End custom fields */ ?>
+				</div>
 
 				<p class="field-move hide-if-no-js description description-wide">
 					<label>

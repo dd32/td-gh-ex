@@ -187,6 +187,14 @@ input.cpothemes-submit:hover { }
 .cpotheme-iconlist .selected { background:#1e8cbe; color:#fff; }
 .cpotheme-iconlist input[type=radio] { display:none; }
 
+.menu-item-iconlist .cpotheme-iconlist {
+	width: 100%;
+}
+.menu-item-iconlist .cpotheme-iconlist label {
+	width: 8.33%;
+	box-sizing: border-box;
+}
+
 
 /* Small Screens */
 @media only screen and (max-width:1024px){
