@@ -141,11 +141,11 @@ class Aari_Aboutme_Widget extends WP_Widget {
 
 	public function update( $new_instance, $old_instance ) {
 		$instance          = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
 		foreach ( $this->widget_fields as $widget_field ) {
 			switch ( $widget_field['type'] ) {
 				default:
-					$instance[ $widget_field['id'] ] = ( ! empty( $new_instance[ $widget_field['id'] ] ) ) ? strip_tags( $new_instance[ $widget_field['id'] ] ) : '';
+					$instance[ $widget_field['id'] ] = ( ! empty( $new_instance[ $widget_field['id'] ] ) ) ? sanitize_text_field( $new_instance[ $widget_field['id'] ] ) : '';
 			}
 		}
 		return $instance;
