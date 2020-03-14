@@ -2,7 +2,7 @@
 /**
  * The template for displaying index page
  *
- * @version    0.0.07
+ * @version    0.0.08
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
@@ -34,7 +34,7 @@ if ( ! $is_elementor_theme_exist || ! elementor_theme_do_location( 'index' ) ) {
 			<?php if ( !empty( $axis_magazine_index_cn )): ?>
 				<?php echo esc_html($axis_magazine_index_cn); ?>
 				<?php else: ?> 
-				<?php echo 'axis-magazine-index'; ?>
+				<?php echo 'axis-magazine-index-six'; ?>
 			<?php endif; ?> ">
 
             <!-- BEGIN SHOW -->

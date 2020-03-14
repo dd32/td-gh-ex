@@ -153,7 +153,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 
 	
 	$wp_customize->add_setting('axis_magazine_index_class_name_settings', array(
-	    'default' => __('axis-magazine-index', 'axis-magazine'),
+	    'default' => __('axis-magazine-index-six', 'axis-magazine'),
 	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
 	));
 

@@ -2,7 +2,7 @@
 /**
  * The template for displaying categories pages
  *
- * @version    0.0.07
+ * @version    0.0.08
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
