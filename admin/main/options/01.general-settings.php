@@ -277,7 +277,7 @@ $thinkup_general_fixedlayoutswitch = thinkup_var ( 'thinkup_general_fixedlayouts
 		);
 
 		echo '<div id="header-responsive">',
-			 '<a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">',
+			 '<a class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse" tabindex="0">',
 			 '<span class="icon-bar"></span>',
 			 '<span class="icon-bar"></span>',
 			 '<span class="icon-bar"></span>',
