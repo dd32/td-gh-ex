@@ -294,7 +294,7 @@ $thinkup_general_fixedlayoutswitch = alante_thinkup_var ( 'thinkup_general_fixed
 	if ( $thinkup_general_fixedlayoutswitch !== '1' ) {
 
 		echo '<div id="header-nav">',
-		     '<a class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse">',
+		     '<a class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse" tabindex="0">',
 		     '<span class="icon-bar"></span>',
 		     '<span class="icon-bar"></span>',
 		     '<span class="icon-bar"></span>',

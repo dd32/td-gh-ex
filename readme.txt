@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 5.2.3
 Requires PHP: 5.2.4
-Version: 1.1.10
+Version: 1.1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -103,6 +103,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.1.11
+- Updated: Responsive dropdown menu fully accessible with keyboard navigation.
 
 = 1.1.10
 - Updated: Copyright date updated to be 2020 within readme.txt.
