@@ -729,8 +729,9 @@ function czr_fn_get_logo_atts( $logo_type = '', $backward_compatibility = true )
     $_cache_key         = "czr{$logo_type_sep}logo_atts";
     $_logo_atts         = wp_cache_get( $_cache_key );
 
-    if ( false !== $_logo_atts )
+    if ( false !== $_logo_atts ) {
       return $_logo_atts;
+    }
 
     $_logo_atts = array();
 
@@ -742,7 +743,9 @@ function czr_fn_get_logo_atts( $logo_type = '', $backward_compatibility = true )
     $_width             = false;
     $_height            = false;
     $_attachment_id     = false;
-    $_logo_option       = esc_attr( czr_fn_opt( "tc{$logo_type_sep}logo_upload") );
+    //for the standard logo use the wp custom logo feature if set, otherwise fall back on the customizr custom logo
+    $_logo_option       = '' === $logo_type ? get_theme_mod( 'custom_logo', '' ) : '';
+    $_logo_option       = $_logo_option ? $_logo_option : esc_attr( czr_fn_opt( "tc{$logo_type_sep}logo_upload") );
     //check if option is an attachement id or a path (for backward compatibility)
     if ( is_numeric($_logo_option) ) {
       $_attachment_id   = $_logo_option;
@@ -1321,10 +1324,9 @@ function czr_fn_render_thumb_view( $_thumb_model , $layout = 'span3', $_echo = t
     $no_effect_class  = ( esc_attr( czr_fn_opt( 'tc_center_img') ) || ! isset($tc_thumb) || empty($tc_thumb_height) || empty($tc_thumb_width) ) ? '' : $no_effect_class;
 
     //default hover effect
-    $thumb_wrapper    = sprintf('<div class="%5$s %1$s"><div class="round-div"></div><a class="round-div %1$s" href="%2$s" title="%3$s"></a>%4$s</div>',
+    $thumb_wrapper    = sprintf('<div class="%4$s %1$s"><div class="round-div"></div><a class="round-div %1$s" href="%2$s"></a>%3$s</div>',
                                   implode( " ", apply_filters( 'czr_thumbnail_link_class', array( $no_effect_class ) ) ),
                                   get_permalink( get_the_ID() ),
-                                  esc_attr( strip_tags( get_the_title( get_the_ID() ) ) ),
                                   $thumb_img,
                                   implode( " ", apply_filters( 'czr_thumb_wrapper_class', array('thumb-wrapper') ) )
     );
@@ -1361,20 +1363,14 @@ if ( ! function_exists( 'czr_fn_get_placeholder_thumb' ) ) {
       $_requested_size = 'thumb-medium';
 
     //default $img_src
-    $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "/front/img/{$_requested_size}.png" );
+    $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "front/img/{$_requested_size}.png" );
     if ( apply_filters( 'czr-use-svg-thumb-placeholder', true ) ) {
         $_size = $_requested_size . '-empty';
-        $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "/front/img/{$_size}.png" );
+        $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "front/img/{$_size}.png" );
         $_svg_height = in_array($_size, array( 'thumb-medium', 'thumb-standard' ) ) ? 100 : 60;
         ob_start();
         ?>
         <svg class="czr-svg-placeholder <?php echo $_size; ?>" id="<?php echo $_unique_id; ?>" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z"/></svg>
-
-        <script type="text/javascript">
-          jQuery( function($){
-            $( '#<?php echo $_unique_id; ?>' ).animateSvg( { svg_opacity : 0.3, filter_opacity : 0.5 } );
-          });
-        </script>
         <?php
         $_svg_placeholder = ob_get_clean();
     }
@@ -1382,25 +1378,37 @@ if ( ! function_exists( 'czr_fn_get_placeholder_thumb' ) ) {
     $filter = apply_filters( 'czr_placeholder_thumb_filter', false );
     //make sure we did not lose the img_src
     if ( false == $_img_src )
-      $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "/front/img/{$_requested_size}.png" );
+      $_img_src = czr_fn_get_theme_file_url( CZR_ASSETS_PREFIX . "front/img/{$_requested_size}.png" );
+
+    $thumb_to_sizes = array(
+      //thumb => width, height
+      'thumb-medium' => array( '520', '245' ),
+      'thumb-small' => array( '160', '160' ),
+      'thumb-standard' => array( '300', '300' )
+    );
 
     $attr = array(
       'class'             => 'czr-img-placeholder',
       'src'               => $_img_src,
       'alt'               => trim( strip_tags( get_the_title() ) ),
-      'data-czr-post-id'  => $_unique_id,   
+      'data-czr-post-id'  => $_unique_id,
+      //$_requested_size is always forced to have a value present in this array $_sizes = array( 'thumb-medium', 'thumb-small', 'thumb-standard' );
+      'width'             => $thumb_to_sizes[$_requested_size][0],
+      'height'            => $thumb_to_sizes[$_requested_size][1]
     );
 
     $attr = apply_filters( 'czr_placeholder_image_attributes', $attr );
     $attr = array_filter( array_map( 'esc_attr', $attr ) );
 
-    return sprintf( '%1$s%2$s<img class="%3$s" src="%4$s" alt="%5$s" data-czr-post-id="%6$s" />',
+    return sprintf( '%1$s%2$s<img class="%3$s" src="%4$s" alt="%5$s" data-czr-post-id="%6$s" width="%7$s" height="%8$s"/>',
       isset($_svg_placeholder) ? $_svg_placeholder : '',
       false !== $filter ? $filter : '',
       isset( $attr[ 'class' ] ) ? $attr[ 'class' ] : '',
       isset( $attr[ 'src' ] ) ? $attr[ 'src' ] : '',
       isset( $attr[ 'alt' ] ) ? $attr[ 'alt' ] : '',
-      isset( $attr[ 'data-czr-post-id' ] ) ? $attr[ 'data-czr-post-id' ] : ''
+      isset( $attr[ 'data-czr-post-id' ] ) ? $attr[ 'data-czr-post-id' ] : '',
+      isset( $attr[ 'width' ] ) ? $attr[ 'width' ] : '',
+      isset( $attr[ 'height' ] ) ? $attr[ 'height' ] : ''
     );
   }
 }
@@ -1585,7 +1593,7 @@ if ( ! function_exists( 'czr_fn_rgb2rgba' ) ) {
 
       $rgb   = is_array( $rgb ) ? $rgb : explode( ',', $rgb );
       $rgb   = is_array( $rgb) ? $rgb : array( $rgb );
-      $rgb   = count( $rgb ) < 3 ? array_pad( $rgb, 3, 255 ) : $rgb;
+      $rgb   = $rgba = count( $rgb ) < 3 ? array_pad( $rgb, 3, 255 ) : $rgb;
 
       $rgba[] = $alpha;
 
@@ -1794,13 +1802,13 @@ function czr_fn_rgb_invert( $rgb )  {
       255 - $rgb[1],
       255 - $rgb[2]
    );
-   
+
    return $rgb_inverted;
 }
 
 /* Returns the complementary hsl color
 /* ------------------------------------ */
-function czr_fn_hex_invert( $hex, $make_prop_value = true )  {   
+function czr_fn_hex_invert( $hex, $make_prop_value = true )  {
    $rgb           = czr_fn_hex2rgb( $hex, $array = true );
    $rgb_inverted  = czr_fn_rgb_invert( $rgb );
 

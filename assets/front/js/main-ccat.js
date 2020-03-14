@@ -177,7 +177,8 @@ var czrapp = czrapp || {};
                           czrapp.errorLog( 'setupDOMListeners : selector must be a string not empty. Aborting setup of action(s) : ' + _event.actions.join(',') );
                           return;
                     }
-                    args.dom_el.on( _event.trigger , _event.selector, function( e, event_params ) {
+                    var once = _event.once ? _event.once : false;
+                    args.dom_el[ once ? 'one' : 'on' ]( _event.trigger , _event.selector, function( e, event_params ) {
                           e.stopPropagation();
                           if ( czrapp.isKeydownButNotEnterEvent( e ) ) {
                             return;
@@ -824,7 +825,7 @@ var czrapp = czrapp || {};
                             zeroTopAdjust : 0,
                             oncustom : ['smartload', 'simple_load', 'block_resized', 'fpu-recenter']
                         });
-                        if ( ! czrapp.localized.imgSmartLoadEnabled ) {
+                        if ( 1 != czrapp.localized.imgSmartLoadEnabled ) {
                             czrapp.base.triggerSimpleLoad( $_fpuEl.find("img:not(.tc-holder-img)") );
                         } else {
                             $_fpuEl.find("img:not(.tc-holder-img)").each( function() {
@@ -833,7 +834,7 @@ var czrapp = czrapp || {};
                                     }
                             });
                         }
-                        if ( _isFPUimgCentered && ! czrapp.localized.imgSmartLoadEnabled ) {
+                        if ( _isFPUimgCentered && 1 != czrapp.localized.imgSmartLoadEnabled ) {
                               var $_holder_img = $_fpuEl.find("img.tc-holder-img");
                               if ( 0 < $_holder_img.length ) {
                                   czrapp.base.triggerSimpleLoad( $_holder_img );
@@ -2545,7 +2546,7 @@ var czrapp = czrapp || {};
                 self = this,
                 $_links = $('a[data-anchor-scroll="true"][href^="#"]').not( _excl_sels );
             if ( czrapp.localized.isAnchorScrollEnabled ) {
-                $_links = $_links.add( '#content a[href^="#"]').not( _excl_sels );
+                $_links = $_links.add( '#tc-page-wrap a[href^="#"],#tc-sn a[href^="#"]').not( _excl_sels );
             }
             var   _links,
                   _deep_excl = _.isObject( czrapp.localized.anchorSmoothScrollExclude.deep ) ? czrapp.localized.anchorSmoothScrollExclude.deep : null;
@@ -2572,7 +2573,90 @@ var czrapp = czrapp || {};
                   }
                   return false;
             });//click
-          },
+      },
+      gutenbergAlignfull : function() {
+            var _isPage   = czrapp.$_body.hasClass( 'page' ),
+                  _isSingle = czrapp.$_body.hasClass( 'single' ),
+                  _coverImageSelector = '.czr-full-layout.czr-no-sidebar .entry-content .alignfull[class*=wp-block-cover]',
+                  _alignFullSelector  = '.czr-full-layout.czr-no-sidebar .entry-content .alignfull[class*=wp-block]',
+                  _alignTableSelector = [
+                                    '.czr-boxed-layout .entry-content .wp-block-table.alignfull',
+                                    '.czr-boxed-layout .entry-content .wp-block-table.alignwide',
+                                    '.czr-full-layout.czr-no-sidebar .entry-content .wp-block-table.alignwide'
+                                    ];
+            if ( ! ( _isPage || _isSingle ) ) {
+                  return;
+            }
+
+            if ( _isSingle ) {
+                  _coverImageSelector = '.single' + _coverImageSelector;
+                  _alignFullSelector  = '.single' + _alignFullSelector;
+                  _alignTableSelector = '.single' + _alignTableSelector.join(',.single');
+            } else {
+                  _coverImageSelector = '.page' + _coverImageSelector;
+                  _alignFullSelector  = '.page' + _alignFullSelector;
+                  _alignTableSelector = '.page' + _alignTableSelector.join(',.page');
+            }
+
+
+            var _coverWParallaxImageSelector   = _coverImageSelector + '.has-parallax',
+                  _classParallaxTreatmentApplied = 'czr-alignfull-p',
+                  $_refWidthElement              = $('#tc-page-wrap'),
+                  $_refContainedWidthElement     = $( '.container[role="main"]', $_refWidthElement );
+
+            if ( $( _alignFullSelector ).length > 0 ) {
+                  _add_alignelement_style( $_refWidthElement, _alignFullSelector, 'czr-gb-alignfull' );
+                  if ( $(_coverWParallaxImageSelector).length > 0 ) {
+                  _add_parallax_treatment_style();
+                  }
+                  czrapp.userXP.windowWidth.bind( function() {
+                        _add_alignelement_style( $_refWidthElement, _alignFullSelector, 'czr-gb-alignfull' );
+                        _add_parallax_treatment_style();
+                  });
+            }
+            if ( $( _alignTableSelector ).length > 0 ) {
+                  _add_alignelement_style( $_refContainedWidthElement, _alignTableSelector, 'czr-gb-aligntable' );
+                  czrapp.userXP.windowWidth.bind( function() {
+                        _add_alignelement_style( $_refContainedWidthElement, _alignTableSelector, 'czr-gb-aligntable' );
+                  });
+            }
+            function _add_parallax_treatment_style() {
+                  $( _coverWParallaxImageSelector ).each(function() {
+                        $(this)
+                              .css( 'left', '' )
+                              .css( 'left', -1 * $(this).offset().left )
+                              .addClass(_classParallaxTreatmentApplied);
+                  });
+            }
+            function _add_alignelement_style( $_refElement, _selector, _styleId ) {
+                  var newElementWidth = $_refElement[0].getBoundingClientRect().width,
+                        $_style         = $( 'head #' + _styleId );
+
+                  if ( 1 > $_style.length ) {
+                        $_style = $('<style />', { 'id' : _styleId });
+                        $( 'head' ).append( $_style );
+                        $_style = $( 'head #' + _styleId );
+                  }
+                  $_style.html( _selector + '{width:'+ newElementWidth +'px}' );
+            }
+      },
+
+      mayBeLoadFontAwesome : function() {
+          jQuery( function() {
+                if ( ! CZRParams.deferFontAwesome )
+                  return;
+                var $candidates = $('[class*=fa-]');
+                if ( $candidates.length < 1 )
+                  return;
+                if ( $('head').find( '[href*="fontawesome-all.min.css"]' ).length < 1 ) {
+                    var link = document.createElement('link');
+                    link.setAttribute('href', CZRParams.fontAwesomeUrl );
+                    link.setAttribute('id', 'czr-font-awesome');
+                    link.setAttribute('rel', 'stylesheet' );
+                    document.getElementsByTagName('head')[0].appendChild(link);
+                }
+          });
+      }
 
    };//_methods{}
 
@@ -2654,6 +2738,8 @@ var czrapp = czrapp || {};
       return czrapp.$_body.hasClass('czr-sticky-footer');
     },
     _get_full_height : function() {
+      if ( this.$_page.length < 1 )
+        return $(window).outerHeight(true);
       var _full_height = this.$_page.outerHeight(true) + this.$_page.offset().top,
           _push_height = 'block' == this.$_push.css('display') ? this.$_push.outerHeight() : 0;
 
@@ -2690,7 +2776,7 @@ var czrapp = czrapp || {};
     },//init()
     sideNavEventListener : function() {
       var self = this;
-      czrapp.$_body.on( this._toggle_event, '[data-toggle="sidenav"]', function( evt ) {
+      czrapp.$_body.on( this._toggle_event, this._toggler_selector, function( evt ) {
         evt.preventDefault(); //<- avoid on link click reaction which adds '#' to the browser history
         self.sideNavEventHandler( evt, 'toggle' );
       });
@@ -2761,6 +2847,7 @@ var czrapp = czrapp || {};
 
                       case 'sn-open'  :
                           self._end_visibility_toggle();
+                          $( self._toggler_selector, self._sidenav_selector ).focus();
                       break;
 
                       case 'sn-close' :
@@ -3177,6 +3264,8 @@ var czrapp = czrapp || {};
       SHOWN: 'shown' + EVENT_KEY,
       CLICK: 'click' + EVENT_KEY,
       CLICK_DATA_API: 'click' + EVENT_KEY + DATA_API_KEY,
+      FOCUSOUT_DATA_API: 'focusout' + EVENT_KEY + DATA_API_KEY,
+      FOCUSIN_DATA_API: 'focusin' + EVENT_KEY + DATA_API_KEY,
       KEYDOWN_DATA_API: 'keydown' + EVENT_KEY + DATA_API_KEY,
       KEYUP_DATA_API: 'keyup' + EVENT_KEY + DATA_API_KEY
     };
@@ -3206,7 +3295,7 @@ var czrapp = czrapp || {};
           this._addEventListeners();
         }
 
-        czrDropdown.prototype.toggle = function() {
+        czrDropdown.prototype.toggle = function(evt) {
 
           if (this.disabled || $(this).hasClass(ClassName.DISABLED)) {
             return false;
@@ -3323,6 +3412,17 @@ var czrapp = czrapp || {};
           return _parentNode || element.parentNode;
         };
 
+        czrDropdown._dataApiFocusinHandler = function(evt) {
+          var self = this;
+          _.delay( function() {
+            var parent = czrDropdown._getParentFromElement(self),
+                isActive = $(parent).hasClass(ClassName.SHOW);
+            if ( ! isActive ) {
+              $(self).trigger('click');
+            }
+          }, 150); // a little delay so that we avoid a race condition when both focus and click events are triggered on mouse click.
+        };
+
         czrDropdown._dataApiKeydownHandler = function(event) {
           if (!REGEXP_KEYDOWN.test(event.which) || /button/i.test(event.target.tagName) && event.which === SPACE_KEYCODE ||
              /input|textarea/i.test(event.target.tagName)) {
@@ -3341,12 +3441,6 @@ var czrapp = czrapp || {};
 
           if (!isActive && ( event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE ) ||
                isActive && ( event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE ) ) {
-
-            if (event.which === ESCAPE_KEYCODE) {
-              var toggle = $(parent).find(Selector.DATA_TOGGLE)[0];
-              $(toggle).trigger('focus');
-            }
-
             $(this).trigger('click');
             return;
           }
@@ -3386,8 +3480,9 @@ var czrapp = czrapp || {};
       $(document)
         .on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, czrDropdown._dataApiKeydownHandler)
         .on(Event.KEYDOWN_DATA_API, Selector.MENU, czrDropdown._dataApiKeydownHandler)
-        .on(Event.CLICK_DATA_API + ' ' + Event.KEYUP_DATA_API, czrDropdown._clearMenus)
+        .on(Event.CLICK_DATA_API + ' ' + Event.KEYUP_DATA_API + Event.FOCUSOUT_DATA_API , czrDropdown._clearMenus)
         .on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, czrDropdown.prototype.toggle)
+        .on(Event.FOCUSIN_DATA_API, Selector.NAVBAR_NAV + ' ' + Selector.DATA_TOGGLE, czrDropdown._dataApiFocusinHandler)
         .on(Event.CLICK_DATA_API, Selector.FORM_CHILD, function (e) {
           e.stopPropagation();
       });
@@ -3435,6 +3530,7 @@ var czrapp = czrapp || {};
       czrapp.ready          = $.Deferred();
       czrapp.bind( 'czrapp-ready', function() {
             czrapp.ready.resolve();
+            $('body').trigger('czrapp-ready');
       });
       var _instantianteAndFireOnDomReady = function( newMap, previousMap, isInitial ) {
             if ( ! _.isObject( newMap ) )
@@ -3533,6 +3629,7 @@ var czrapp = czrapp || {};
                             'setupUIListeners',//<= setup various observable values like this.isScrolling, this.scrollPosition, ...
 
                             'stickifyHeader',
+                            'gutenbergAlignfull',
 
                             'outline',
 
@@ -3554,6 +3651,7 @@ var czrapp = czrapp || {};
                             'anchorSmoothScroll',
 
                             'mayBePrintFrontNote',
+                            'mayBeLoadFontAwesome'
                       ]
                 },
                 stickyFooter : {

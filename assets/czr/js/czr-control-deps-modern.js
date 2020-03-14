@@ -63,8 +63,9 @@
                                   //not sure the cross dependency actually works ... :/
                                   //otherwise this shouldn't be needed ... right?
                                   if ( 'tc_show_post_navigation_home' == servusShortId ) {
-                                    return ( 'posts' == to  ) && _is_checked( api( api.CZR_Helpers.build_setId( 'tc_show_post_navigation' ) ).get() );
+                                    return ( 'nothing' != to  ) && _is_checked( api( api.CZR_Helpers.build_setId( 'tc_show_post_navigation' ) ).get() );
                                   }
+                                  // tc_blog_restrict_by_cat.
                                   if ( 'posts' == to ) {
                                     return true;
                                   }
@@ -474,6 +475,33 @@
                                   return 'custom' == to;
                             }
                     },
+                    {
+                            dominus : 'tc_header_transparent_home',
+                            servi   : [
+                              'tc_home_header_skin',
+                              'tc_header_custom_bg_color',
+                              'tc_header_custom_fg_color',
+                              'tc_header_skin',
+                              'tc_header_no_borders'
+                            ],
+                            visibility: function (to, servusShortId ) {
+                                  var bool;
+                                  switch( servusShortId ) {
+                                      case 'tc_header_custom_bg_color' :
+                                      case 'tc_header_custom_fg_color' :
+                                          bool = ! _is_checked(to) && 'custom' === api( api.CZR_Helpers.build_setId( 'tc_header_skin' ) )();
+                                      break;
+                                      case 'tc_header_skin' :
+                                          bool = ! _is_checked(to);
+                                      break;
+                                      case 'tc_header_no_borders' :
+                                      case 'tc_home_header_skin' :
+                                          bool = _is_checked(to);
+                                      break;
+                                  }
+                                  return bool;
+                            }
+                    },
                     /*
                     * temporary:
                     * as I think the contact info can be a module like the social links, as we might want to create
@@ -732,6 +760,20 @@
                             servi   : ['nav_menu_locations[mobile]'],
                             visibility: function (to) {
                                   return 'mobile_menu' == to;
+                            }
+                    },
+                    {
+                            dominus : 'tc_single_post_thumb_natural',
+                            servi   : ['tc_single_post_thumb_height', 'tc_single_post_thumb_smartphone_height'],
+                            visibility: function (to) {
+                                  return !_is_checked(to);
+                            }
+                    },
+                    {
+                            dominus : 'tc_single_page_thumb_natural',
+                            servi   : ['tc_single_page_thumb_height', 'tc_single_page_thumb_smartphone_height'],
+                            visibility: function (to) {
+                                  return !_is_checked(to);
                             }
                     }
 

@@ -60,7 +60,6 @@ class CZR_menu_model_class extends CZR_Model {
 
                     'element_class'       => array( 'primary-nav__menu-wrapper', $menu_position_class ),
                     'theme_location'      => 'main',
-                    'menu_id'             => 'primary-nav',
                     'menu_class'          => array( 'primary-nav__menu', 'regular-nav', 'nav__menu' ),
                     'dropdown_type'       => $this->dropdown_type ? $this->dropdown_type : esc_attr( czr_fn_opt( 'tc_menu_type' ) ),
                     'dropdown_on'         => 'link-action'
@@ -87,7 +86,7 @@ class CZR_menu_model_class extends CZR_Model {
 
                     'element_class'       => array( 'primary-nav__menu-wrapper', $menu_position_class ),
                     'theme_location'      => 'secondary',
-                    'menu_id'             => 'secondary-nav',
+                    'menu_id'             => 'secondary-menu',
                     'menu_class'          => array( 'primary-nav__menu', 'regular-nav', 'nav__menu' ),
                     'dropdown_type'       => $this->dropdown_type ? $this->dropdown_type : esc_attr( czr_fn_opt( 'tc_menu_type' ) ),
                     'dropdown_on'         => 'link-action'
@@ -202,7 +201,7 @@ class CZR_menu_model_class extends CZR_Model {
 
         //menu class
         if ( ! is_array( $this->menu_class ) )
-            $menu_class = explode( $this->menu_class );
+            $menu_class = explode( ' ', $this->menu_class );
         else
             $menu_class = $this->menu_class;
 
@@ -210,7 +209,7 @@ class CZR_menu_model_class extends CZR_Model {
 
         //element class
         if ( ! is_array( $this->element_class ) )
-            $element_class  = explode( $this->element_class );
+            $element_class  = explode( ' ', $this->element_class );
         else
             $element_class =  $this->element_class;
 
