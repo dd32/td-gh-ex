@@ -241,11 +241,10 @@ $(document).ready(function(){
             if (menu_links[i].parentNode.classList.contains("active")) {
                 menu_links[i].parentNode.classList.remove("active");
              }
-             // menu_links[i].style.opacity = "0.25";
         }
         
         this.parentNode.classList.add("active");
-        // this.style.opacity = "1";
+
         var computedStyle = getComputedStyle(this);
         
         var par_computedStyle = getComputedStyle(this.parentNode.parentNode);
@@ -253,12 +252,12 @@ $(document).ready(function(){
         var block_top = parseInt(par_computedStyle.paddingTop);
         
         const width = this.getBoundingClientRect().width - parseInt(computedStyle.paddingLeft) - parseInt(computedStyle.paddingRight);
-        //const height = this.getBoundingClientRect().height;
+
         const left = this.getBoundingClientRect().left + parseInt(computedStyle.paddingLeft);
         const top = block_top + parseInt(computedStyle.paddingTop) + parseInt(computedStyle.lineHeight);
         
         menu_underline.style.width = `${width}px`;
-        //menu_underline.style.height = `${height}px`;
+
         menu_underline.style.left = `${left}px`;
         menu_underline.style.top = `${top}px`;
         menu_underline.style.transform = "none";
@@ -291,12 +290,10 @@ $(document).ready(function(){
         var block_top = parseInt(par_computedStyle.paddingTop);
         
         const width = active.getBoundingClientRect().width - parseInt(computedStyle.paddingLeft) - parseInt(computedStyle.paddingRight);
-        //const height = active.getBoundingClientRect().height;
         const left = active.getBoundingClientRect().left + parseInt(computedStyle.paddingLeft);
         const top = block_top + parseInt(computedStyle.paddingTop) + parseInt(computedStyle.lineHeight);
         
         menu_underline.style.width = `${width}px`;
-        //menu_underline.style.height = `${height}px`;
         menu_underline.style.left = `${left}px`;
         menu_underline.style.top = `${top}px`;
         menu_underline.style.transform = "none";
@@ -384,7 +381,6 @@ $(document).ready(function(){
 
           $(this).removeClass('dropdown-expanded');
           $(this).removeClass('dropdown-submenu-expanded');
-       // var parent_dropdown = $(this).parent();
         var subdropdown = $(this).find('.dropdown-menu').first();
         var caret = $(this).find('.caret i').first();
         
