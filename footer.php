@@ -29,7 +29,7 @@
 					</div>
 					<?php  get_sidebar( 'footer' ); ?>
 				</div><!-- #footer-content -->
-				<div id="creditline" class="box100"><?php echo '&copy; ' . date_i18n("Y"). ': ' . esc_html(get_bloginfo('name')) .','; ?> <span class="credit">| AssociationX <?php esc_html_e('Theme by:', 'associationx'); ?> <a href="<?php echo esc_url('https://d5creation.com'); ?>" target="_blank">D5 Creation</a> | <?php esc_html_e('Powered by:', 'associationx'); ?> <a href="<?php echo esc_url(__('http://wordpress.org', 'associationx')); ?>" target="_blank">WordPress</a></span></div>						
+				<div id="creditline" class="box100"><?php echo '&copy; ' . date_i18n( __( 'Y', 'associationx' ) ). ': ' . esc_html(get_bloginfo('name')) .','; ?> <span class="credit">| AssociationX <?php esc_html_e('Theme by:', 'associationx'); ?> <a href="<?php echo esc_url('https://d5creation.com'); ?>" target="_blank">D5 Creation</a> | <?php esc_html_e('Powered by:', 'associationx'); ?> <a href="<?php echo esc_url(__('http://wordpress.org', 'associationx')); ?>" target="_blank">WordPress</a></span></div>						
 			</div><!-- #footer -->						
 		</div><!-- #sitebottompart -->
 		<div class="clear"></div>

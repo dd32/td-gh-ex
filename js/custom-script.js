@@ -1,6 +1,6 @@
 // Custom Script  
 	
-function sldreadyresize() { 'use strict';
+function associationx_sldreadyresize() { 'use strict';
 	if ( jQuery( "#mainslider" ).length ) {
 		var hHeight = jQuery('#header').outerHeight(true);	
 		var sWidth = jQuery('#sldvidcon').outerWidth(true);
@@ -11,8 +11,8 @@ function sldreadyresize() { 'use strict';
 	}
 }
 
-jQuery(document).ready(sldreadyresize);
-jQuery(window).on('resize',sldreadyresize);
+jQuery(document).ready(associationx_sldreadyresize);
+jQuery(window).on('resize',associationx_sldreadyresize);
 
 jQuery(document).ready(function(){ 'use strict';
 	if ( jQuery( "#mainslider" ).length ) {

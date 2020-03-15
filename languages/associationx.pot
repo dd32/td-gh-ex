@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: AssociationX\n"
-"POT-Creation-Date: 2020-03-13 01:59+0600\n"
+"POT-Creation-Date: 2020-03-15 11:50+0600\n"
 "PO-Revision-Date: 2020-02-14 23:17+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -45,6 +45,10 @@ msgid "Comments are Closed"
 msgstr ""
 
 #: footer.php:32
+msgid "Y"
+msgstr ""
+
+#: footer.php:32
 msgid "Theme by:"
 msgstr ""
 
@@ -72,11 +76,11 @@ msgstr ""
 msgid "A Few From Our Activities"
 msgstr ""
 
-#: fpcontents/fp-slide.php:43
+#: fpcontents/fp-slide.php:32
 msgid "Show Image"
 msgstr ""
 
-#: fpcontents/fp-slide.php:44
+#: fpcontents/fp-slide.php:33
 msgid "About Image"
 msgstr ""
 
@@ -284,11 +288,11 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:124 functions.php:130
+#: functions.php:127 functions.php:133
 msgid "Read More"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:155
 msgid "(Untitled)"
 msgstr ""
 
