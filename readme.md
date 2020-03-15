@@ -1,4 +1,4 @@
-# Hueman v3.4.9
+# Hueman v3.5.0
 ![Hueman - Free Wordpress Theme](/screenshot.png)
 
 > The Hueman theme helps you increase your traffic and engage your visitors. It loads fast and is 100% mobile-friendly according to Google. Best rated theme for blogs and magazines on WordPress.org. Powering 70K+ websites around the world.
@@ -18,6 +18,143 @@ The Nimble Builder plugin is documented [here](https://docs.presscustomizr.com/c
 The **Hueman WordPress theme** theme is nothing but 100% GPLv3. See headers of files for further details.[GNU GPL v3.0 or later](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
 ## Changelog
+https://github.com/presscustomizr/hueman/releases
+= 3.4.39 February 8th, 2020 =
+* fixed : [html] element div not allowed as child of element button
+* fixed : [html] Bad value for attribute datetime on element time as per HTML specs : the literal did not satisfy the time-datetime format.
+* fixed : adapt social links for Viber link type.
+* fixed : style for .entry h2 span not compliant with accessibility standards. fixes #850
+* fixed : featured image can be stretched when displayed in featured posts. fixes #851
+* added : new options to control the visibility of post metas ( date and categories ) in post lists. fixes #849
+
+= 3.4.38 January 31st, 2020 =
+* added : single post featured image => added new options, similar to the one of the page. fixes #846
+* added : allow users to chose if featured image is cropped or not when displayed in a single post or page. for #846
+* improved : implemented a CSS flexbox display for the search button
+
+= 3.4.37 January 20th, 2020 =
+* added : sidebars => new options to customize the topbox default texts "Follow" and "More". Fixes #845
+
+= 3.4.36 January 7th, 2020 =
+* fixed : added noopener noreferrer relationship attributes to footer credit link
+* added : an option allowing users to wrap the site title or logo in an H1 tag. fixes #844
+* added : Flipboard icon to social icons
+
+= 3.4.35 December 22nd, 2019 =
+* fixed : old option favicon still printed, no way to remove it from the customizer. fixes #619
+* fixed : social media links in the sidebar and footer should be using rel="noopener" or rel="noreferrer" when using target _blank. fixes #842
+* fixed : search results as standard post list layout do not display page featured image. fixes #748
+* fixed : Sidebar icon toggles: namespace their CSS class name to avoid conflicting plugins issues. fixes #749
+* fixed : custom widget zones: a static front page shows widget zones assigned to "Pages". fixes #759
+* fixed : The mobile menu doesn't automatically close when clicking on an internal anchor link item. fixes #830
+* fixed : searchform input not compliant with latest accessibility standards + generating problems with cache plugins. fixes #826
+* fixed : sidebar width in js code => localize width values instead of using hardcoded values. fixes #843
+
+= 3.4.34 December 9th, 2019 =
+* fixed : header's height and single post content layout can be broken in some cases. fixes #839
+* fixed : removed spurious quote in the logo img tag. fixes #840
+
+= 3.4.33 December 2nd, 2019 =
+* added : filters to WP_Query in Tabs widgets. fixes #838
+* improved : reduce theme folder size. fixes #837
+* updated : Nimble Builder recommendation notification in admin, and allow deactivation with a php constant
+
+= 3.4.32 November 19th, 2019 =
+* fixed : class-oembed.php is deprecated in 5.3, use class-wp-oembed.php instead. Fixes #836
+* fixed : adapt image caption style for block editor. Fixes #835
+
+= 3.4.31 November 14th, 2019 =
+* fixed : a bug with the latest version of Chrome browser which displayed an horizontal scrollbar in some cases. fixes #834
+* improved : provide child theme info in config page
+
+= 3.4.30 October 22nd, 2019 =
+* fixed : block editor quote "style large" issue. fixes #831
+* improved : implement skip to content for TRT requirement. fixes #824
+
+= 3.4.29 September 13th, 2019 =
+* fixed : shortcodes not processed in html widgets
+
+= 3.4.28 September 10th, 2019 =
+* fixed : add do_shortcode filter cb to widget_text filter hook only if needed. fixes #823
+* fixed : post format meta boxes for the block editor. fixes #821
+
+= 3.4.27 August 27th, 2019 =
+* fixed : admin notice style on mobile. fixes #816
+* improved : better keyboard navigation to comply with new TRT requirements : https://make.wordpress.org/themes/2019/08/03/planning-for-keyboard-navigation/
+* improved : option tree updated to v2.7.3
+
+= 3.4.26 July 18th, 2019 =
+* fixed : styling issue for comment form cookies consent not correctly displayed. fixes #809
+
+= 3.4.25 June 30th, 2019 =
+* fixed : get rid of the perspective property which causes issues in recent chrome versions. see #799
+* improved : added image dimensions to the logo. fixes #797
+* added : new option to control tags visiblity in single posts. fixes #801
+* added : new options to control single author and date post meta visibility. fixes #776
+
+= 3.4.24 June 4th, 2019 =
+* improved : Hueman custom widgets can now be overriden from a child theme. fixes #798
+
+= 3.4.23 May 29th, 2019 =
+* fixed : possible fatal error in admin
+
+= 3.4.22 May 29th, 2019 =
+* fixed : add image dimensions into header image customization using the standard wp function get_header_image_tag. fixes #790 #300
+* improved : add an option to control the singular page featured image visibility disabled by default. fixes #793
+
+= 3.4.21 May 8th, 2019 =
+* added : new wp_body_open theme Hook. fixes #784
+
+= 3.4.20 April 24th, 2019 =
+* fixed : smooth scroll throwing JS errors in latest chrome. fixes #787
+* improved : sidebar => add an option to set an order on mobile devices. fixes #779
+
+= 3.4.19 April 9th, 2019 =
+* fixed : make sure a default option using 'nimblecheck' type is turned into a boolean.
+
+= 3.4.18 April 5th, 2019 =
+* fixed : display correctly taxonomy/post_type_archive titles. fixes #750
+* improved : new style for checkboxes in customizer controls. 
+
+= 3.4.17 March 20th, 2019 =
+* fixed : possible fatal error in WooCommerce single products. fixes #780
+
+= 3.4.16 March 2nd, 2019 =
+* fixed : possible PHP error when upgrading server to PHP 7.0+. fixes #775
+
+= 3.4.15 February 27th, 2019 =
+* fixed : wp commentform cookies consent checkbox style. fixes #770
+* fixed : search button in the topbar menu now displayed on tablet. fixes #653
+* fixed : style blockquotes in comments. fixes #772
+* improved : footer credits now uses parsable tags like {{year}}.
+
+= 3.4.14 February 13th, 2019 =
+* fixed : BBPress profile links displaying unwanted dots. fixes #765
+* added : a new RGB+ alpha color control in the customizer, allowing transparency customization. fixes #767
+
+= 3.4.13 February 11th, 2019 =
+* fixed : Custom subheading option not reachable. fixes #760
+* fixed : the blog category filter for pro infinite scroll. fixes #755
+* fixed : social icon links like tel:*** or skype:**** or call:**** should be allowed
+* fixed : the back to top icon font-size should be fixed and not in em. fixes #758
+* fixed : removed title attribute "Permalink To" on thumbnails links in post lists. fixes #763
+* fixed : white-space CSS rule problem with long tag. fixes #764
+* improved : compatibility with Disqus comments system. fixes #754
+
+= 3.4.12 January 16th, 2019 =
+* improved : use default browser title tooltip for the social icons. fixes #731
+* added : the option to filter the home/blog posts by category. fixes #659
+
+= 3.4.11 December 19th, 2018 =
+* improved : the new block editor style. Especially to enlarge the editor content width. fixes #732
+
+= 3.4.10 December 15th, 2018 =
+* fixed : admin style not compatible with WP5.0
+* fixed : WooCommerce related product position in some cases. fixes #729
+* improved : update FontAwesome to v5.5.0. fixes #727
+* improved : compatibility with Nimble Builder v1.4.0
+* improved : analytics params to external links
+
 = 3.4.9 November 23rd 2018 =
 * fixed : set only the featured posts thumbnail img width to 100%. fixes #703
 * fixed : hu_is_customize_left_panel() => the check on $pagenow does not work on multisite install
@@ -27,16 +164,12 @@ The **Hueman WordPress theme** theme is nothing but 100% GPLv3. See headers of f
 * improved : Nimble Builder compatibility. Don't load css and javascript front assets when using the full Nimble template
 * improved : replace select2 with our namespaced czrSelect2
 
-= 3.4.8 November 7th 2018 =
-* improved : make sure to use the more proper the_title_attribute wp function. fixes #713
-* improved : add responsive embeds (videos) support for the new WordPress editor. fixes #708
-* added : social icons line, map, discord
-
 = 3.4.7 October 24th 2018 =
 fixed : The "cover image" block of the new WP editor has been renamed "cover". See https://github.com/WordPress/gutenberg/pull/10659, but posts created with the former cover-image block will still use the wp-block-cover-image css class. related to #702
 
 = 3.4.6 October 24th 2018 =
 * added : support for new WordPress editor, block cover image alignwide/alignfull
+* improved : readme.txt file, according to the latest TRT requirements https://make.wordpress.org/themes/2015/04/29/a-revised-readme/
 
 = 3.4.5 October 13th 2018 =
 * fixed : prefixed TGMPA class with HU_ to fix potential collision with other plugins using the same class. see issue https://github.com/presscustomizr/customizr/issues/1603
@@ -131,7 +264,7 @@ fixed : The "cover image" block of the new WP editor has been renamed "cover". S
 * fixed : the images of the featured post could be too high in some scenario. Two new image sizes have been added and a max-height depending on the culumn layout has been set in the css rules. fixes #525.
 
 = 3.3.14 June 29th 2017 =
-* fixed : Restrict the front ajax query when user has checked the sticky sidebars for either mobile devices or desktops, or both. Fixes #523.
+* fixed : huajax used to set the browser agent when the sticky sidebar is on might be too slow. Restrict the ajax query only when user has checked the sticky sidebars for either mobile devices or desktops, or both. Fixes #523.
 * fixed : related posts should not inherit the main post-title fittext font-size
 * added : new option in Adanced options > Mobile Devices > Make font sizes flexible. , responsive font-size is unchecked by default. Fixes #522
 
@@ -428,7 +561,6 @@ fixed : The "cover image" block of the new WP editor has been renamed "cover". S
 * fixed : Use get_option date_format for all dates
 * added : background image option
 * added : social links partial refresh in the customizer
-
 
 = 3.1.3 May 4th 2016 =
 * fixed : the author link in posts

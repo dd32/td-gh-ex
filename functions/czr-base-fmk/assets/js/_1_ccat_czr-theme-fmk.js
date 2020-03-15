@@ -406,14 +406,15 @@ $.extend( CZRLayoutSelectMths , {
       api.CZRUploadControl          = api.Control.extend( CZRUploadMths );
       api.CZRLayoutControl          = api.Control.extend( CZRLayoutSelectMths );
       api.CZRMultiplePickerControl  = api.Control.extend( CZRMultiplePickerMths );
-
+      api.CZRColorAlpha = api.Control.extend({ready: api.ColorControl.prototype.ready});//api.CZRColorAlpha
 
       $.extend( api.controlConstructor, {
             czr_upload     : api.CZRUploadControl,
             //czr_sidebars   : api.CZRWidgetAreasControl,
             //czr_socials    : api.CZRSocialControl,
             czr_multiple_picker : api.CZRMultiplePickerControl,
-            czr_layouts    : api.CZRLayoutControl
+            czr_layouts    : api.CZRLayoutControl,
+            wp_color_alpha : api.CZRColorAlpha,
             //czr_background : api.CZRBackgroundControl
       });
 
@@ -938,7 +939,7 @@ $.extend( CZRLayoutSelectMths , {
             /* CHECKBOXES */
             api.czrSetupCheckbox = function( controlId, refresh ) {
                   var _ctrl = api.control( controlId );
-                  $('input[type=checkbox]', _ctrl.container ).each( function() {
+                  $('input[type=checkbox]:not(.nimblecheck-input)', _ctrl.container ).each( function() {
                         //Exclude font customizer
                         if ( 'tc_font_customizer_settings' == _ctrl.params.section )
                           return;
@@ -983,7 +984,6 @@ $.extend( CZRLayoutSelectMths , {
 
             /* NUMBER INPUT */
             api.czrSetupStepper = function( controlId, refresh ) {
-                  //Exclude no-selecter-js
                   var _ctrl = api.control( controlId );
                   $('input[type="number"]', _ctrl.container ).each( function() { $(this).stepper(); });
             };//api.czrSetupStepper()

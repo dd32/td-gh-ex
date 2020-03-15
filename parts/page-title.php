@@ -1,5 +1,5 @@
 <?php if ( ! hu_is_home_empty() ) : ?>
-    <div class="page-title pad group">
+    <div class="page-title hu-pad group">
       <?php //prints the relevant metas (cat, tag, author, date, ...) for a given context : home, single post, page, 404, search, archive...  ?>
     	<?php if ( is_home() && hu_is_checked('blog-heading-enabled') ) : ?>
     		<h2><?php echo hu_blog_title(); ?></h2>
@@ -23,6 +23,10 @@
     		<h1><?php echo hu_get_term_page_title(); ?></h1>
     	<?php elseif ( is_day() || is_month() || is_year() ) : ?>
     		<h1><?php echo hu_get_date_archive_title(); ?></h1>
+    	<?php elseif ( is_tax() ) : ?>
+    		<h1><?php the_archive_title(); ?></h1>
+    	<?php elseif ( is_post_type_archive() ) : ?>
+    		<h1><?php post_type_archive_title(); ?></h1>
     	<?php else: ?>
         <?php if ( ! is_home() && ! hu_is_checked('blog-heading-enabled') ) : ?>
     		  <h2><?php the_title(); ?></h2>

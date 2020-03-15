@@ -60,7 +60,7 @@
         <section class="container" id="footer-widgets">
           <div class="container-inner">
 
-            <div class="pad group">
+            <div class="hu-pad group">
 
               <?php for ($i = 1; $i <= $_footer_columns ;$i++ ) : ?>
                   <div class="footer-widget-<?php echo $i; ?> grid <?php echo $class; ?> <?php if ( $i == $_footer_columns ) { echo 'last'; } ?>">
@@ -68,7 +68,7 @@
                   </div>
               <?php endfor; ?>
 
-            </div><!--/.pad-->
+            </div><!--/.hu-pad-->
 
           </div><!--/.container-inner-->
         </section><!--/.container-->
@@ -100,7 +100,7 @@
 
         <a id="back-to-top" href="#"><i class="fas fa-angle-up"></i></a>
 
-        <div class="pad group">
+        <div class="hu-pad group">
 
           <div class="grid one-half">
             <?php $_footer_logo_img_src = apply_filters( 'hu_footer_logo_src', hu_get_img_src_from_option('footer-logo') ); ?>
@@ -109,11 +109,7 @@
             <?php endif; ?>
 
             <div id="copyright">
-              <?php if ( hu_get_option( 'copyright' ) ) : ?>
-                <p><?php echo wp_kses_post( hu_get_option( 'copyright' ) ); ?></p>
-              <?php else: ?>
-                <p><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'hueman' ); ?></p>
-              <?php endif; ?>
+                <p><?php echo apply_filters('hu_parse_template_tags', wp_kses_post( hu_get_option( 'copyright' ) ) ); ?></p>
             </div><!--/#copyright-->
 
             <?php if ( hu_is_checked( 'credit' ) || hu_is_customizing() ) : ?>
@@ -122,7 +118,7 @@
               ?>
               <?php ob_start(); ?>
                   <div id="credit" style="<?php echo ! hu_is_checked( 'credit' ) ? 'display:none' : ''; ?>">
-                    <p><?php _e('Powered by','hueman'); ?>&nbsp;<a class="fab fa-wordpress" title="<?php _e( 'Powered by WordPress', 'hueman' ) ?>" href="<?php echo esc_url( __( 'https://wordpress.org/', 'hueman' ) ); ?>" target="_blank"></a> - <?php _e('Designed with the','hueman'); ?>&nbsp;<a href="<?php echo $hu_theme -> get('ThemeURI'); ?>" title="<?php _e('Hueman theme','hueman'); ?>"><?php _e('Hueman theme','hueman'); ?></a></p>
+                    <p><?php _e('Powered by','hueman'); ?>&nbsp;<a class="fab fa-wordpress" title="<?php _e( 'Powered by WordPress', 'hueman' ) ?>" href="<?php echo esc_url( __( 'https://wordpress.org/', 'hueman' ) ); ?>" target="_blank" rel="noopener noreferrer"></a> - <?php _e('Designed with the','hueman'); ?>&nbsp;<a href="<?php echo $hu_theme -> get('ThemeURI'); ?>" title="<?php _e('Hueman theme','hueman'); ?>"><?php _e('Hueman theme','hueman'); ?></a></p>
                   </div><!--/#credit-->
               <?php
                 $credits_html = ob_get_contents();
@@ -149,7 +145,7 @@
             <?php endif; ?>
           </div>
 
-        </div><!--/.pad-->
+        </div><!--/.hu-pad-->
 
       </div><!--/.container-inner-->
     </section><!--/.container-->

@@ -18,9 +18,9 @@ if ( ! function_exists( 'hu_get_content') ) {
     ob_start();
     ?>
       <?php do_action( '__before_content_section', $tmpl ); ?>
-        <section class="content">
+        <section class="content" id="content">
           <?php hu_get_template_part('parts/page-title'); ?>
-          <div class="pad group">
+          <div class="hu-pad group">
             <?php
               foreach ( $seks as $_id ) {
                   if ( 'wp' == $_id )
@@ -29,7 +29,7 @@ if ( ! function_exists( 'hu_get_content') ) {
                     hu_print_sek( $_id );
               }
             ?>
-          </div><!--/.pad-->
+          </div><!--/.hu-pad-->
         </section><!--/.content-->
       <?php do_action( '__after_content_section', $tmpl ); ?>
     <?php
@@ -79,13 +79,13 @@ if ( ! function_exists( 'hu_print_mobile_btn' ) ) {
             <span class="ham-toggler-menu__span"></span>
           </div>
         </div> -->
-        <div class="ham__navbar-toggler-two collapsed" title="Menu" aria-expanded="false">
-          <div class="ham__navbar-span-wrapper">
+        <button class="ham__navbar-toggler-two collapsed" title="Menu" aria-expanded="false">
+          <span class="ham__navbar-span-wrapper">
             <span class="line line-1"></span>
             <span class="line line-2"></span>
             <span class="line line-3"></span>
-          </div>
-        </div>
+          </span>
+        </button>
       <?php endif; ?>
       <?php
     }
@@ -181,6 +181,9 @@ if ( ! function_exists('hu_print_widgets_in_location') ) {
     if ( false != hu_get_singular_meta_widget_zone( $location ) ) {
       $_eligible_zones[] = hu_get_singular_meta_widget_zone( $location );
     } else {
+      // filtered in :
+      // add_filter('hu_eligible_widget_zones', 'hu_get_widget_zones_in_location', 3, 10);
+      // add_filter('hu_eligible_widget_zones', 'hu_get_widget_zones_in_context', 3, 20);
       $_eligible_zones    = apply_filters(
           'hu_eligible_widget_zones',
           array(),
@@ -341,14 +344,40 @@ if ( ! function_exists( 'hu_print_social_links' ) ) {
         }
         $icon_class            = "{$fa_group} {$icon_class}";
 
+        // links like tel:*** or skype:**** or call:**** should work
+        // implemented for https://github.com/presscustomizr/social-links-modules/issues/7
+        $social_link = 'javascript:void(0)';
+
+        $is_blank_target = ( isset($item['social-target']) && false != $item['social-target'] );
+
+        // set the relationship attribute
+        // fixes : https://github.com/presscustomizr/social-links-modules/issues/8
+        // fixes : https://github.com/presscustomizr/hueman/issues/842
+        $rel_attr = 'rel="nofollow"';
+        if ( $is_blank_target ) {
+            // fix potential performance and security issues with other attributes
+            // @see https://web.dev/external-anchors-use-rel-noopener
+            $rel_attr = 'rel="nofollow noopener noreferrer"';
+        }
+
+        if ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) {
+            if ( false !== strpos($item['social-link'], 'callto:') || false !== strpos($item['social-link'], 'tel:') || false !== strpos($item['social-link'], 'skype:') || false !== strpos($item['social-link'], 'viber:') ) {
+                $social_link = esc_attr( $item['social-link'] );
+                $rel_attr = '';//we don't need to set a relationship attribute in this case
+            } else {
+                $social_link = esc_url( $item['social-link'] );
+            }
+        }
+
         // Put them together
-        printf( '<li><a rel="nofollow" class="social-tooltip" %1$s title="%2$s" aria-label="%2$s" href="%3$s" %4$s %5$s><i class="%6$s"></i></a></li>',
+        printf( '<li><a %7$s class="social-tooltip" %1$s title="%2$s" aria-label="%2$s" href="%3$s" %4$s %5$s><i class="%6$s"></i></a></li>',
             ! hu_is_customizing() ? '' : sprintf( 'data-model-id="%1$s"', ! isset( $item['id'] ) ? 'hu_socials_'. $key : $item['id'] ),
             isset($item['title']) ? esc_attr( $item['title'] ) : '',
-            ( isset($item['social-link']) && ! empty( $item['social-link'] ) ) ? esc_url( $item['social-link'] ) : 'javascript:void(0)',
-            ( isset($item['social-target']) && false != $item['social-target'] ) ? 'target="_blank"' : '',
+            $social_link,
+            $is_blank_target ? 'target="_blank"' : '',
             $style_attr,
-            $icon_class
+            $icon_class,
+            $rel_attr
         );
       }
     echo '</ul>';
@@ -359,10 +388,18 @@ if ( ! function_exists( 'hu_print_social_links' ) ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_render_header_image' ) ) {
   function hu_render_header_image( $_header_img_src = null ) {
-    echo sprintf('<a href="%1$s" rel="home"><img class="site-image" src="%2$s" alt="%3$s"></a>',
+    $attr = array(
+      'class' => 'site-image'
+    );
+
+    $_header_img_src = trim( $_header_img_src );
+    if ( $_header_img_src ) {
+      $attr['src'] = $_header_img_src;
+    }
+
+    printf('<a href="%1$s" rel="home">%2$s</a>',
         home_url('/'),
-        get_header_image(),
-        get_bloginfo('name')
+        get_header_image_tag( $attr )
     );
   }
 }
@@ -377,7 +414,7 @@ if ( ! function_exists( 'hu_render_header_image' ) ) {
 function hu_get_logo_title( $is_mobile_menu = false ) {
     // Text or image?
     // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
-    $logo_src = false;
+    $logo_source = false;
     $is_logo_src_set = false;
     $logo_or_title = hu_is_checked( 'display-header-title' ) ? get_bloginfo( 'name' ) : '';
 
@@ -386,16 +423,21 @@ function hu_get_logo_title( $is_mobile_menu = false ) {
     if ( apply_filters( 'hu_display_header_logo', hu_is_checked( 'display-header-logo' ) ) ) {
         //if $is_mobile_menu, let's check if we have a specific logo for mobile set
         if ( $is_mobile_menu ) {
-            $logo_src = hu_get_img_src_from_option( 'mobile-header-logo' );
-            $is_logo_src_set = false !== $logo_src && ! empty( $logo_src );
+            $logo_source = hu_get_img_source_from_option( 'mobile-header-logo' );
+            $is_logo_src_set = false !== $logo_source && ! empty( $logo_source[0] );
         }
         if ( ( $is_mobile_menu && ! $is_logo_src_set ) || ! $is_mobile_menu ) {
-            $logo_src = hu_get_img_src_from_option( 'custom-logo' );
-            $is_logo_src_set = false !== $logo_src && ! empty( $logo_src );
+            $logo_source = hu_get_img_source_from_option( 'custom-logo' );
+            $is_logo_src_set = false !== $logo_source && ! empty( $logo_source[0] );
         }
         if ( $is_logo_src_set ) {
-            $logo_src = apply_filters( 'hu_header_logo_src' , $logo_src, $is_mobile_menu );
-            $logo_or_title = '<img src="'. $logo_src . '" alt="' . get_bloginfo('name'). '">';
+            $logo_source = apply_filters( 'hu_header_logo_source' , $logo_source, $is_mobile_menu );
+            $logo_or_title = sprintf( '<img src="%1$s" alt="%2$s" %3$s %4$s/>',
+                esc_url( $logo_source[0] ),
+                esc_attr( get_bloginfo('name') ),
+                $logo_source[1] ? sprintf( 'width="%1$s"', esc_attr( $logo_source[1] ) ) : '',
+                $logo_source[2] ? sprintf( 'height="%1$s"', esc_attr( $logo_source[2] ) ): ''
+            );
         }
     }//if apply_filters( 'hu_display_header_logo', hu_is_checked( 'display-header-logo' )
     return $logo_or_title;
@@ -404,14 +446,18 @@ function hu_get_logo_title( $is_mobile_menu = false ) {
 
 if ( ! function_exists( 'hu_print_logo_or_title' ) ) {
     function hu_print_logo_or_title( $echo = true, $is_mobile_menu = false ) {
+        $wrap_in_h_one = hu_booleanize_checkbox_val( hu_get_option('wrap_in_h_one') );
         $logo_or_title = hu_get_logo_title( $is_mobile_menu );
         // => If no logo is set and  ! hu_is_checked( 'display-header-title' ), the logo title is empty.
         ob_start();
             do_action( '__before_logo_or_site_title', $logo_or_title );
             if ( ! empty( $logo_or_title ) ) {
+                // added january 2020 for https://github.com/presscustomizr/hueman/issues/844
+                echo $wrap_in_h_one ? '<h1 class="site-title">' : '<p class="site-title">';
                 ?>
-                  <p class="site-title"><?php hu_do_render_logo_site_tite( $logo_or_title ) ?></p>
+                  <?php hu_do_render_logo_site_tite( $logo_or_title ) ?>
                 <?php
+                echo $wrap_in_h_one ? '</h1>' : '</p>';
             }
             do_action( '__after_logo_or_site_title', $logo_or_title );
         $html = ob_get_contents();
@@ -736,16 +782,6 @@ if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
         $_svg_height = in_array($_size, array( 'thumb-medium', 'thumb-standard' ) ) ? 100 : 60;
         ?>
         <svg class="hu-svg-placeholder <?php echo $_size; ?>" id="<?php echo $_unique_id; ?>" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z"/></svg>
-
-        <script type="text/javascript">
-          jQuery( function($){
-            if ( $('#flexslider-featured').length ) {
-              $('#flexslider-featured').on('featured-slider-ready', function() {
-                $( '#<?php echo $_unique_id; ?>' ).animateSvg();
-              });
-            } else { $( '#<?php echo $_unique_id; ?>' ).animateSvg( { svg_opacity : 0.3, filter_opacity : 0.5 } ); }
-          });
-        </script>
         <?php
     }
 
@@ -784,8 +820,15 @@ if ( ! function_exists( 'hu_body_class' ) ) {
     $classes[] = hu_is_checked( 'boxed' ) ? 'boxed' : 'full-width';
     if ( hu_has_nav_menu('topbar') ) { $classes[] = 'topbar-enabled'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1' ) { $classes[] = 'mobile-sidebar-hide-s1'; }
-    if ( hu_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
-    if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
+    elseif ( hu_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
+    elseif ( hu_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
+    if ( hu_is_checked( 'mobile-sidebar-primary-first' ) ) {
+      // Add a class to force the primary sidebar showing as first block in smartphone mobile devices only
+      // if a primary sidebar is actually shown for them.
+      if ( ! in_array( hu_get_option( 'mobile-sidebar-hide' ), array( 's1', 's1-s2' ) ) ) {
+        $classes[] = 'mobile-primary-sidebar-first';
+      }
+    }
     if ( wp_is_mobile() ) { $classes[] = 'wp-is-mobile'; };
 
     //Stickyness of menus
@@ -810,11 +853,19 @@ add_filter( 'body_class', 'hu_body_class' );
 if ( ! function_exists( 'hu_favicon' ) ) {
 
   function hu_favicon() {
-    if ( hu_get_option('favicon') ) {
-      echo '<link rel="shortcut icon" href="'.hu_get_option('favicon').'" />'."\n";
+    // fixes https://github.com/presscustomizr/hueman/issues/619
+    if ( has_site_icon() )
+      return;
+    // retro compat if favicon has been set before implementation of built-in WP one
+    $favicon_url = hu_get_option('favicon');
+    if ( is_string($favicon_url) && !empty($favicon_url) ) {
+      // replace http by https if needed
+      if ( is_ssl() && is_string($favicon_url) && stripos($favicon_url, 'http://') === 0 ) {
+          $favicon_url = 'https' . substr($favicon_url, 4);
+      }
+      echo '<link rel="shortcut icon" href="'.$favicon_url.'" />'."\n";
     }
   }
-
 }
 add_filter( 'wp_head', 'hu_favicon' );
 
@@ -833,10 +884,10 @@ if ( ! function_exists( 'hu_set_custom_logo' ) ) {
     if ( false == $custom_logo_id || empty($custom_logo_id) )
       return $_src;
 
-    return hu_get_img_src( $custom_logo_id );
+    return hu_get_img_source( $custom_logo_id );
   }
 }
-add_filter( 'hu_img_src_from_option', 'hu_set_custom_logo', 10, 2 );
+add_filter( 'hu_img_source_from_option', 'hu_set_custom_logo', 10, 2 );
 
 
 
@@ -1022,6 +1073,27 @@ add_filter( 'hu_front_js_localized_params', 'hu_add_fittext_js_front_params' );
 /* ------------------------------------------------------------------------- */
 /*  Enqueue javascript
 /* ------------------------------------ */
+// March 2020 for https://github.com/presscustomizr/hueman/issues/863
+// Adds `async` and `defer` support for scripts registered or enqueued
+// and for which we've added an attribute with wp_script_add_data( $_hand, 'async', true );
+// inspired from Twentytwenty WP theme
+// @see https://core.trac.wordpress.org/ticket/12009
+function hu_filter_script_loader_tag( $tag, $handle ) {
+  foreach ( [ 'async', 'defer' ] as $attr ) {
+    if ( ! wp_scripts()->get_data( $handle, $attr ) ) {
+      continue;
+    }
+    // Prevent adding attribute when already added in #12009.
+    if ( ! preg_match( ":\s$attr(=|>|\s):", $tag ) ) {
+      $tag = preg_replace( ':(?=></script>):', " $attr", $tag, 1 );
+    }
+    // Only allow async or defer, not both.
+    break;
+  }
+  return $tag;
+}
+add_filter( 'script_loader_tag', 'hu_filter_script_loader_tag', 10, 2 );
+
 //hook : wp_enqueue_scripts
 if ( ! function_exists( 'hu_scripts' ) ) {
   function hu_scripts() {
@@ -1037,7 +1109,7 @@ if ( ! function_exists( 'hu_scripts' ) ) {
       );
     }
 
-    if ( has_post_format( 'gallery' ) || ( is_home() && ! is_paged() && ( hu_get_option('featured-posts-count') != '0' ) ) ) {
+    if ( has_post_format( 'gallery' ) || ( is_home() && ! is_paged() && ( hu_is_checked('featured-posts-enabled') && hu_get_option('featured-posts-count') != '0' ) ) ) {
       wp_enqueue_script(
         'flexslider',
         get_template_directory_uri() . '/assets/front/js/libs/jquery.flexslider.min.js',
@@ -1057,13 +1129,25 @@ if ( ! function_exists( 'hu_scripts' ) ) {
       );
     }
 
-    wp_enqueue_script(
+    if ( hu_is_checked('defer_front_script') ) {
+       wp_enqueue_script(
+          'hu-init-js',
+          sprintf('%1$s/assets/front/js/hu-init%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
+          array('jquery','underscore'),
+          ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+          true
+      );
+    } else {
+      wp_enqueue_script(
         'hu-front-scripts',
         sprintf('%1$s/assets/front/js/scripts%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
         array( 'jquery', 'underscore' ),
         ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
         true
-    );
+      );
+      wp_script_add_data( 'hu-front-scripts', 'defer', true );
+    }
+
 
     if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
       wp_enqueue_script( 'comment-reply' );
@@ -1091,11 +1175,8 @@ if ( ! function_exists( 'hu_scripts' ) ) {
         }
     }
 
-    //user started with
-    $started_on = get_transient( 'hu_start_date' );
-
     wp_localize_script(
-          'hu-front-scripts',
+          hu_is_checked('defer_front_script') ? 'hu-init-js' : 'hu-front-scripts',
           'HUParams',
           apply_filters( 'hu_front_js_localized_params' , array(
                 '_disabled'          => apply_filters( 'hu_disabled_front_js_parts', array() ),
@@ -1133,6 +1214,8 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                     'desktop' => hu_is_checked('desktop-sticky-sb'),
                     'mobile' => hu_is_checked( 'mobile-sticky-sb' )
                 ),
+                'sidebarOneWidth' => apply_filters( 'hu_s1_width' , 340 ),
+                'sidebarTwoWidth' => apply_filters( 'hu_s2_with' , 260 ),
                 'isWPMobile' => wp_is_mobile(),
                 'menuStickyUserSettings' => array(
                     'desktop' => hu_normalize_stick_menu_opt( hu_get_option( 'header-desktop-sticky' ) ),
@@ -1149,15 +1232,21 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                 'frontNonce'   => array( 'id' => 'HuFrontNonce', 'handle' => wp_create_nonce( 'hu-front-nonce' ) ),
 
                 //Welcome
-                'userStarted' => array(
-                      'with' => get_transient( HU_IS_PRO ? 'started_using_hueman_pro' : 'started_using_hueman' ),
-                      'on' => is_object( $started_on ) ? (array)$started_on : $started_on
-                ),
                 'isWelcomeNoteOn' => $is_welcome_note_on,
                 'welcomeContent'  => $welcome_note_content,
                 'i18n' => array(
                   'collapsibleExpand'   => __( 'Expand', 'hueman' ),
                   'collapsibleCollapse' => __( 'Collapse', 'hueman' )
+                ),
+                'deferFontAwesome' => hu_is_checked( 'defer_font_awesome' ),
+                'fontAwesomeUrl' => sprintf('%1$s/assets/front/css/font-awesome.min.css?%2$s',
+                    get_template_directory_uri(),
+                    ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER
+                ),
+                'mainScriptUrl' => sprintf('%1$s/assets/front/js/scripts%2$s.js?%3$s'
+                  , get_template_directory_uri(),
+                  ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min',
+                  ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER
                 ),
             )
         )//end of filter
@@ -1203,15 +1292,17 @@ function hu_normalize_stick_menu_opt( $opt_val = 'stick_up' ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_styles' ) ) {
   function hu_styles() {
-    if ( hu_is_full_nimble_tmpl() )
-      return;
+    // Dec 2018 : When using the full nimble template, header + content + footer, we still need to load the Hueman stylesheet to have the Hueman widgets style
+    // if ( hu_is_full_nimble_tmpl() )
+    //   return;
+
     //Registered only if child theme => will be loaded as a dependency when enqueuing wp child style.css
     if ( is_child_theme() ) {
         wp_register_style(
             'hueman-main-style',
             hu_get_front_style_url(),//defined in init-core
             array(),
-            ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+            ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : get_stylesheet()->version,
             'all'
         );
     } else {
@@ -1242,16 +1333,18 @@ if ( ! function_exists( 'hu_styles' ) ) {
 
     //can be dequeued() if already loaded by a plugin.
     //=> wp_dequeue_style( 'hueman-font-awesome' )
-    wp_enqueue_style(
-        'hueman-font-awesome',
-        sprintf('%1$s/assets/front/css/%2$s',
-            get_template_directory_uri(),
-            hu_is_checked('minified-css') ? 'font-awesome.min.css' : 'dev-font-awesome.css'
-        ),
-        is_child_theme() ? array( 'theme-stylesheet' ) : array(),
-        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
-        'all'
-    );
+    if ( !hu_is_checked( 'defer_font_awesome' ) ) {
+        wp_enqueue_style(
+            'hueman-font-awesome',
+            sprintf('%1$s/assets/front/css/%2$s',
+                get_template_directory_uri(),
+                hu_is_checked('minified-css') ? 'font-awesome.min.css' : 'dev-font-awesome.css'
+            ),
+            is_child_theme() ? array( 'theme-stylesheet' ) : array(),
+            ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+            'all'
+        );
+    }
 
 
   }
@@ -1439,7 +1532,7 @@ function hu_get_widget_zones_in_context( $_eligible_zones = array(), $location, 
   $_map_conditionals = array(
     'home'              => 'hu_is_home',
     'blog-page'         => 'hu_is_blogpage',
-    'page'              => 'is_page',
+    'page'              => 'is_page_but_not_frontpage',// @see https://github.com/presscustomizr/hueman/issues/759
     'single'            => 'is_single',
     'archive'           => 'is_archive',
     'archive-category'  => 'is_category',
@@ -1492,7 +1585,12 @@ function hu_get_widget_zone_allowed_contexts( $id, $_user_option = null ) {
 }
 
 
-
+// @return bool
+// introduced in dec 2019 to make sure that a static front page doesn't display widget zones assigned to "Pages"
+// @see https://github.com/presscustomizr/hueman/issues/759
+function is_page_but_not_frontpage() {
+    return is_page() && !hu_is_home();
+}
 
 
 //helper
@@ -1808,7 +1906,68 @@ function hu_include_cpt_in_lists( $query ) {
     $query->set('post_type', $post_types );
 }
 
+/* ------------------------------------------------------------------------- *
+ *  Filter home/blog posts by category
+/* ------------------------------------------------------------------------- */
+add_action( 'pre_get_posts', 'ha_filter_home_blog_posts_by_tax' );
+/**
+ * hook : pre_get_posts
+ * Filter home/blog posts by tax: cat
+*/
+function ha_filter_home_blog_posts_by_tax( $query ) {
+    _ha_filter_home_blog_posts_by_tax( $query );
+}
 
+//Make sure the infinite scroll query object is filtered as well
+add_filter ( 'infinite_scroll_query_object' , 'ha_filter_home_blog_infinite_posts_by_tax' );
+/**
+ * hook : infinite_scroll_query_object
+ * Filter infinite home/blog posts by tax: cat
+*/
+function ha_filter_home_blog_infinite_posts_by_tax( $query ) {
+    return _ha_filter_home_blog_posts_by_tax( $query, $reset_cat_category_name = true );
+}
+
+function _ha_filter_home_blog_posts_by_tax( $query, $reset_cat_category_name = false ) {
+    // when we have to filter?
+    // in home and blog page
+    if ( is_admin() || ! $query->is_main_query() || ! ( ( is_home() && 'posts' == get_option('show_on_front') ) || $query->is_posts_page ) ) {
+        return $query;
+    }
+
+    // temp: do not filter in when classic grid enabled and infinite scroll enabled in home/blog
+    // we do something similar in Customizr.
+    // The problem is that in our infinite scroll "binding" we have a code to modify the main query
+    // when the classic-grid layout is selected, in order to fill all the grid rows.
+    // For some reason, setting the query category__in var below makes the query (hence the whole page) act like a category archive,
+    if ( 'classic-grid' === esc_attr( hu_get_option( 'pro_post_list_design' ) ) &&
+            class_exists( 'PC_HAPINF' ) && esc_attr( hu_get_option( 'infinite-scroll' ) ) ) {
+        return $query;
+    }
+
+    // categories
+    // we have to ignore sticky posts (do not prepend them)
+    $cats = hu_get_option( 'blog-restrict-by-cat' );
+    $cats = array_filter( $cats, 'hu_category_id_exists' );
+    if ( is_array( $cats ) && ! empty( $cats ) ){
+        // Fix for https://github.com/presscustomizr/hueman-pro/issues/25
+        // Basically when we filtering the blog with more than one category
+        // "infinte posts" are filtered by the category with the smaller ID defined in $cats.
+        // The reason is that the infinite scroll query takes ar arguments the query vars of the
+        // "first page" query, that are localized and then sent back in the ajax request, and
+        // when we apply the category__in 'filter' to the blog page, for some reason, the main wp_query
+        // vars "cat" and "category_name" are set as the ID and the name of the smaller ID defined in $cats.
+        // With the if block below we vaoid this unwanted behavior.
+        if ( $reset_cat_category_name ) {
+            $query->set( 'cat', '' );
+            $query->set( 'category_name', '' );
+        }
+        $query->set( 'category__in', $cats );
+        $query->set( 'ignore_sticky_posts', 1 );
+    }
+
+    return $query;
+}
 
 
 

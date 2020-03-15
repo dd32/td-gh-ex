@@ -46,6 +46,7 @@ if( ! defined( 'HU_WEBSITE' ) )         define( 'HU_WEBSITE' , $hu_base_data['au
 //define useful constants
 if( ! defined( 'HU_DYN_WIDGETS_SECTION' ) )      define( 'HU_DYN_WIDGETS_SECTION' , 'dyn_widgets_section' );
 
+if( ! defined( 'REC_NOTICE_ID' ) )  define( 'REC_NOTICE_ID' , 'rec-notice-hueman-1119' );
 
 /* ------------------------------------------------------------------------- *
  *  Loads Pluggable Functions
@@ -178,15 +179,22 @@ function hu_set_specific_nimble_template( $path, $file_name ) {
     return $path;
 }
 
-add_action( '__after_header', 'hu_render_nimble_sections_on_specific_hueman_hook', PHP_INT_MAX );
-function hu_render_nimble_sections_on_specific_hueman_hook() {
+add_action( '__after_header', 'hu_render_nimble_sections_after_header', PHP_INT_MAX );
+function hu_render_nimble_sections_after_header() {
+    if ( function_exists( 'Nimble\sek_page_uses_nimble_header_footer' ) && \Nimble\sek_page_uses_nimble_header_footer() )
+      return;
+
+    hu_do_render_nimble_sections();
     // this occurs only when user pick the nimble template for a given context
     // 'nimble-tmpl.php' is the Hueman theme template overriding the Nimble one. Located in HU_BASE .'tmpl/nimble-tmpl.php'
+}
+
+function hu_do_render_nimble_sections() {
     if ( function_exists( 'Nimble\sek_get_locale_template' ) && 'nimble-tmpl.php' === basename( \Nimble\sek_get_locale_template() ) ) {
-        if ( function_exists('Nimble\Nimble_Manager') && function_exists('Nimble\sek_get_local_locations') ) {
+        if ( function_exists('Nimble\Nimble_Manager') && function_exists('Nimble\sek_get_local_content_locations') ) {
             if ( method_exists( \Nimble\Nimble_Manager(), 'render_nimble_locations') ) {
                 \Nimble\Nimble_Manager()->render_nimble_locations(
-                    array_keys( \Nimble\sek_get_local_locations() ),//array( 'loop_start', 'before_content', 'after_content', 'loop_end'),
+                    array_keys( \Nimble\sek_get_local_content_locations() ),//array( 'loop_start', 'before_content', 'after_content', 'loop_end'),
                     array(
                         // the location rendered even if empty.
                         // This way, the user starts customizing with only one location for the content instead of four
