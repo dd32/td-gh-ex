@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION', '1.14.4' );
+define( 'SITEORIGIN_THEME_VERSION', '1.14.5' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 define( 'SITEORIGIN_THEME_CSS_PREFIX', '.min' );
 
@@ -370,6 +370,14 @@ function vantage_scripts() {
 }
 endif;
 add_action( 'wp_enqueue_scripts', 'vantage_scripts' );
+
+/**
+ * Enqueue Block Editor styles.
+ */
+function vantage_block_editor_styles() {
+	wp_enqueue_style( 'vantage-block-editor-styles', get_template_directory_uri() . '/style-editor.css', SITEORIGIN_THEME_VERSION );
+}
+add_action( 'enqueue_block_editor_assets', 'vantage_block_editor_styles' );
 
 if ( ! function_exists( 'vantage_top_text_area' ) ) :
 /**

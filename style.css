@@ -4,7 +4,7 @@ Author: SiteOrigin
 Author URI: https://siteorigin.com/
 Theme URI: https://siteorigin.com/theme/vantage/
 Description: Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Smart Slider 3 for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store. We offer free support on our <a href="https://siteorigin.com/thread/">forum</a> (https://siteorigin.com/thread/).
-Version: 1.14.4
+Version: 1.14.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: vantage
@@ -258,7 +258,7 @@ sup {
   bottom: 1ex;
 }
 sub {
-  top: .5ex;
+  top: 0.5ex;
 }
 small {
   font-size: 75%;
@@ -370,57 +370,84 @@ input[type="radio"] {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
-  /* Addresses excess padding in IE8/9 */
 }
 input[type="search"] {
-  /* Addresses appearance set to searchfield in S5, Chrome */
-  -webkit-appearance: textfield;
-  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-appearance: textfield;
 }
 input[type="search"]::-webkit-search-decoration {
-  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
   -webkit-appearance: none;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
   border: 0;
   padding: 0;
 }
-input[type=text],
-input[type=email],
-input[type=password],
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea {
-  -ms-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #666;
   border: 1px solid #ccc;
   border-radius: 3px;
+  box-sizing: border-box;
+  color: #666;
+  font-weight: normal;
+  line-height: normal;
+  outline: none;
+  padding: 9px 12px;
+  max-width: 100%;
+  -webkit-appearance: none;
 }
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
 textarea:focus {
   color: #111;
 }
-input[type=text],
-input[type=email],
-input[type=password] {
-  padding: 3px;
+input[type="checkbox"] {
+  margin-right: 2px;
+}
+select {
+  border: 1px solid #ccc;
+  max-width: 100%;
 }
 textarea {
-  /* Removes default vertical scrollbar in IE6/7/8/9 */
   overflow: auto;
-  /* Improves readability and alignment in all browsers */
   vertical-align: top;
+  width: 100%;
 }
 /* Alignment */
+.alignnone,
+.aligncenter {
+  margin-bottom: 1.6em;
+}
 .alignleft {
   display: inline;
   float: left;
@@ -434,7 +461,8 @@ textarea {
 .aligncenter {
   clear: both;
   display: block;
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* Text meant only for screen readers */
 .assistive-text {
@@ -1367,12 +1395,12 @@ article.page .author-box .box-content .box-title h3 {
   font-size: 1.25em;
   line-height: 1.1em;
   font-weight: 500;
-  margin: .6em 0 0;
+  margin: 0.6em 0 0;
 }
 article.post .author-box .box-content .author-posts a,
 article.page .author-box .box-content .author-posts a {
   color: #777;
-  font-size: .9em;
+  font-size: 0.9em;
   text-decoration: none;
 }
 article.post .author-box .box-content .author-posts a:hover,
@@ -1652,7 +1680,7 @@ article.page.post-with-thumbnail-icon .entry-main {
 }
 .entry-content {
   zoom: 1;
-  line-height: 1.6em;
+  line-height: 1.6;
   color: #666666;
   /* WordPress Images */
 }
@@ -1735,7 +1763,7 @@ article.page.post-with-thumbnail-icon .entry-main {
   bottom: 1ex;
 }
 .entry-content sub {
-  top: .5ex;
+  top: 0.5ex;
 }
 .entry-content .gallery {
   margin: 15px 0 25px 0;
@@ -2528,7 +2556,7 @@ html[xmlns] .slides {
   opacity: 0;
   position: absolute;
   text-indent: -99999px;
-  transition: .2s opacity ease;
+  transition: 0.2s opacity ease;
   top: 50%;
   width: 32px;
   z-index: 200;
@@ -2574,7 +2602,6 @@ html[xmlns] .slides {
 }
 .widget .searchform input {
   width: 100%;
-  padding: 5px;
   outline: none;
 }
 .textwidget p:first-child {
@@ -2975,7 +3002,7 @@ html[xmlns] .slides {
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .widget_circleicon-widget .circle-icon-box a.more-button i {
-    background: url(images/retina/more-icon.png);
+    background: url(./images/retina/more-icon.png);
     background-size: 5px 8px;
   }
 }
@@ -3515,7 +3542,7 @@ html[xmlns] .slides {
 }
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .vantage-grid-loop article a.more-button i {
-    background: url(images/retina/more-icon.png);
+    background: url(./images/retina/more-icon.png);
     background-size: 5px 8px;
   }
 }
@@ -3724,6 +3751,18 @@ span.jwcontrols span button {
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0;
+}
+/*!
+Version: dev
+*/
+.block-editor-page .wp-block {
+  max-width: 770px;
+}
+.block-editor-page .wp-block[data-align="wide"] {
+  max-width: 1080px;
+}
+.block-editor-page .wp-block[data-align="full"] {
+  max-width: none;
 }
 /* Prevent iOS Safari from overriding the colors for phone numbers */
 a[href^="tel"] {

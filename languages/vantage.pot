@@ -107,19 +107,19 @@ msgstr ""
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:391
+#: functions.php:399
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:593
+#: functions.php:601
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:598
+#: functions.php:606
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:603
+#: functions.php:611
 msgid "SiteOrigin CSS"
 msgstr ""
 
