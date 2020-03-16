@@ -1,0 +1,685 @@
+/* Spacing Below Blocks */
+.wp-block-button,
+.wp-block-image,
+.wp-block-quote,
+.wp-block-quote.is-style-large,
+.wp-block-pullquote,
+.wp-block-media-text,
+.entry-content .wp-block-gallery,
+.wp-block-audio,
+.wp-block-video,
+.wp-block-ainoblocks-advanced-buttons {
+	@include push--auto;
+	margin-bottom: $spacing-mobile-4;
+	@include breakpoint(m) {
+		margin-bottom: $spacing-desktop-4;
+	}
+}
+
+/* Alignwide and alignfull */
+.hentry .entry-content > * {
+
+	&.alignwide,
+	.alignwide {
+		max-width: $col12;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		clear: both;
+		padding-left: 24px;
+		padding-right: 24px;
+
+		@include breakpoint(m) {
+			padding-left: 48px;
+			padding-right: 48px;
+		}
+
+		@include breakpoint(l) {
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+	}
+
+	&.alignfull {
+		position: relative;
+		width: 100vw;
+		margin-left: calc( 50% - 50vw );
+		max-width: none;
+	}
+}
+
+/* Nested Block Alignment: alignwide inside alignfull */
+.hentry .entry-content .alignfull {
+
+	.alignwide {
+		max-width: $col12;
+		clear: both;
+		overflow: hidden;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 24px;
+		padding-right: 24px;
+
+		@include breakpoint(s) {
+			padding-left: 48px;
+			padding-right: 48px;
+		}
+
+		@include breakpoint(l) {
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+	}
+}
+
+/* Heading */
+.entry-content h2.display {
+
+	@include font-h2;
+	margin-bottom: $spacing-mobile-4;
+
+	@include breakpoint(m) {
+		margin-bottom: $spacing-desktop-4;
+	}
+}
+
+/* Paragraph */
+.entry-content p {
+
+	&.has-background {
+		padding: $spacing-mobile-4;
+		@include breakpoint(m) {
+			padding: $spacing-desktop-4;
+		}
+	}
+
+	&.has-drop-cap:not(:focus):first-letter {
+		float: left;
+		margin: 5px 8px 0 -8px;
+		line-height: 0.77;
+		text-transform: uppercase;
+		font-style: normal;
+		font-size: 100px;
+		@include breakpoint(m) {
+			font-size: 120px;
+			line-height: 0.77;
+			margin: 6px 12px 0 -8px;
+		}
+	}
+
+	&.intro.has-drop-cap:not(:focus):first-letter {
+		@include breakpoint(m) {
+			font-size: 142px;
+		}
+	}
+}
+
+/* Columns */
+.wp-block-columns {
+	display: block;
+
+	.wp-block-column > * {
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.wp-block-column {
+		margin-left: $spacing-3;
+		margin-right: $spacing-3;
+		margin-bottom: $spacing-mobile-6;
+
+		@include breakpoint(s) {
+			margin-left: $spacing-desktop-6;
+			margin-right: $spacing-desktop-6;
+		}
+	}
+
+	@include breakpoint(s) {
+
+		@include flexbox;
+		flex-basis: calc(50% - 32px);
+		flex-grow: 0;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		padding-left: $spacing-desktop-4;
+		padding-right: $spacing-desktop-4;
+		margin-bottom: 0;
+
+		.wp-block-column {
+			flex-basis: calc(50% - 32px);
+			margin-left: $spacing-2;
+			margin-right: $spacing-2;
+			margin-bottom: $spacing-desktop-6;
+			flex: 1 0 21%;
+		}
+
+		.wp-block-column:nth-last-child(3):first-child,
+		.wp-block-column:nth-last-child(3):first-child ~ * {
+			flex: 1 0 21%;
+		}
+
+		.wp-block-column:nth-last-child(4):first-child,
+		.wp-block-column:nth-last-child(4):first-child ~ * {
+			flex: 1 0 33%;
+		}
+
+		.wp-block-column:nth-last-child(6):first-child,
+		.wp-block-column:nth-last-child(6):first-child ~ * {
+			flex: 1 0 21%;
+		}
+	}
+
+	@include breakpoint(m) {
+
+		flex-basis: calc(50% - 48px);
+		padding-left: 0;
+		padding-right: 0;
+
+		.wp-block-column {
+			flex-basis: calc(50% - 48px);
+			margin-left: $spacing-3;
+			margin-right: $spacing-3;
+			flex: 1 0 25%;
+		}
+
+		.wp-block-column:nth-last-child(4):first-child,
+		.wp-block-column:nth-last-child(4):first-child ~ * {
+			flex: 1 0 15%;
+		}
+	}
+
+	@include breakpoint(l) {
+
+		.wp-block-column:nth-last-child(6):first-child,
+		.wp-block-column:nth-last-child(6):first-child ~ * {
+			flex: 1 0 10%;
+		}
+	}
+
+}
+
+.hentry .entry-content .wp-block-columns.alignwide {
+	@include breakpoint(m) {
+		padding-left: $spacing-3;
+		padding-right: $spacing-3;
+	}
+}
+
+/* Button */
+.wp-block-button {
+
+	.wp-block-button__link {
+		@include btn;
+		@include btn-m;
+		@include btn-primary;
+		border: none;
+		box-sizing: border-box;
+		text-decoration: none;
+		outline: none;
+		height: auto;
+		background: $color__primary;
+		box-shadow: none;
+
+		&:not(.has-background) {
+			background-color: $color__primary;
+		}
+	}
+
+	&:not(.is-style-squared) .wp-block-button__link {
+		border-radius: 16px;
+	}
+
+	&.is-style-outline {
+
+		.wp-block-button__link {
+			@include btn-outline;
+			box-shadow: none;
+
+			&:not(.has-background) {
+				background: transparent;
+			}
+
+			&:hover {
+				color: $color__primary;
+				fill: $color__primary;
+			}
+		}
+	}
+}
+
+/* Image */
+.wp-block-image {
+
+	&.alignright {
+		display: block;
+		float: none;
+		margin-bottom: $spacing-mobile-5;
+		@include breakpoint(s) {
+			float: right;
+			margin: $spacing-1 0 $spacing-desktop-4 $spacing-desktop-4;
+		}
+	}
+
+	&.alignleft {
+		float: left;
+		margin-right: 1em;
+		@include breakpoint(s) {
+			float: left;
+			margin: $spacing-1 $spacing-desktop-4 $spacing-desktop-4 0;
+		}
+	}
+
+	&.aligncenter {
+		clear: both;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+
+	&.aligncenter,
+	&.alignleft,
+	&.alignright,
+	&.is-resized {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	&.alignfull img {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+}
+
+.wp-block-image figcaption,
+.wp-block-video figcaption,
+.wp-block-audio figcaption,
+.wp-block-embed figcaption {
+	display: block;
+	margin: $spacing-2 0 0;
+	text-align: center;
+	@include font-body-xs;
+}
+.wp-block-image .aligncenter>figcaption,
+.wp-block-image .alignleft>figcaption,
+.wp-block-image .alignright>figcaption,
+.wp-block-image.is-resized>figcaption {
+	display: block;
+}
+
+.wp-caption.alignleft .wp-caption-text,
+.wp-caption.alignright .wp-caption-text {
+	margin-bottom: 0;
+}
+
+/* Gallery */
+ul.wp-block-gallery {
+	padding: 0;
+	list-style: none;
+
+	& li {
+		padding: 0;
+	}
+
+	&.alignwide {
+		@include breakpoint(m) {
+			margin-left: calc(31.75% - 31.75vw);
+			margin-right: calc(31.75% - 31.75vw);
+		}
+	}
+
+	&.blocks-gallery-image figcaption,
+	&.wp-block-gallery .blocks-gallery-item figcaption {
+		@include font-body-xs;
+	}
+}
+
+/* Blockquote + Pullquote */
+.wp-block-quote,
+.wp-block-pullquote {
+	padding: 0;
+
+	&.is-style-default {
+		background-color: transparent;
+	}
+
+	&.is-style-solid-color .has-text-color a {
+		text-decoration: underline;
+		box-shadow: none;
+	}
+
+	.has-text-color a:hover {
+		color: $color__primary;
+	}
+
+	&.is-style-large {
+		padding: 0;
+	}
+
+	&.is-style-large p {
+		margin: 0;
+		@include font-body-l;
+		font-style: normal;
+	}
+
+	&.is-style-large cite,
+	& cite {
+		text-align: left;
+		@include font-body-xs;
+	}
+}
+
+.wp-block-pullquote {
+	border: none;
+	text-align: left;
+	padding: 0;
+	@include border-radius-m;
+
+	& p,
+	&.is-style-solid-color blockquote p {
+		margin: 0;
+		@include font-body-m;
+		font-style: normal;
+	}
+
+	&.is-style-solid-color blockquote {
+		max-width: 100%;
+		padding: $spacing-3;
+	}
+
+	&.alignleft {
+		margin-left: 0;
+		padding: 0;
+	}
+
+	&.alignright {
+		margin-right: 0;
+		padding: 0;
+	}
+
+	&.alignleft blockquote,
+	&.alignright blockquote {
+		padding: 0;
+	}
+}
+
+/* Cover */
+.wp-block-cover {
+
+	.wp-block-cover__inner-container {
+
+		width: 100%;
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image .wp-block-cover-text,
+.wp-block-cover-image h2,
+.wp-block-cover .wp-block-cover-image-text,
+.wp-block-cover .wp-block-cover-text,
+.wp-block-cover h2 {
+	z-index: 1;
+	margin-bottom: 0;
+}
+
+/* Video */
+.wp-block-video iframe,
+.wp-block-video video {
+	max-width: 100%;
+}
+
+.wp-block-embed .jetpack-video-wrapper {
+	margin: 0;
+}
+
+/* Audio */
+.wp-block-audio {
+	display: block;
+}
+
+.wp-block-audio audio {
+	width: 100%;
+}
+
+/* Table */
+.wp-block-table {
+	display: table;
+}
+
+.wp-block-table.alignfull {
+	width: 96vw;
+}
+
+/* Verse */
+.wp-block-verse {
+	background-color: transparent;
+	padding: 0;
+	color: $color__text_one;
+}
+
+/* Separator */
+.wp-block-separator {
+	border: none;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+	margin: 0 0 $spacing-mobile-6;
+	@include breakpoint(m) {
+		margin: 0 0 $spacing-desktop-6;
+	}
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 100px;
+	@include push--auto;
+}
+
+.wp-block-separator.is-style-dots {
+		background: none;
+		border: none;
+}
+
+.wp-block-separator.is-style-dots:before {
+		color: $color__text_two;
+		content: "\00b7 \00b7 \00b7";
+		font-family: serif;
+		@include font-body-l;
+		letter-spacing: 1em;
+		padding-left: 1em;
+}
+
+/* Latest Posts and Categories */
+.wp-block-categories,
+.wp-block-latest-posts__post-date {
+	margin: 0 0 $spacing-mobile-6;
+	@include breakpoint(m) {
+		margin: 0 0 $spacing-desktop-6;
+	}
+}
+
+.wp-block-categories-list,
+.wp-block-categories-list li,
+.wp-block-latest-posts,
+.wp-block-latest-posts li {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.entry-content .wp-block-categories-list li a,
+.entry-content .wp-block-latest-posts li a {
+	border: none;
+}
+
+/* Preformatted */
+.wp-block-preformatted {
+	background-color: $color__code_two;
+	overflow: auto;
+	padding: $spacing-mobile-4;
+	margin-bottom: $spacing-mobile-4;
+	@include border-radius-m;
+	@include font-code;
+	color: $color__code_one;
+
+	@include breakpoint(m) {
+		padding: $spacing-desktop-4;
+		margin-bottom: $spacing-desktop-4;
+	}
+}
+
+/* Group */
+.wp-block-group {
+
+	h1, h2, h3, h4, h5, h6 {
+		.wp-block-group__inner-container & {
+			margin-top: 0;
+		}
+	}
+
+	.wp-block-group__inner-container > *:last-child {
+		margin-bottom: 0;
+	}
+
+}
+
+/* Custom Color Palette */
+.entry-content {
+
+	.has-primary-one-color {
+		color: $color__primary;
+		fill: $color__primary;
+	}
+
+	p.has-primary-one-color a {
+		text-decoration: underline;
+	}
+
+	.has-primary-one-background-color {
+		background: $color__primary;
+		border-color: $color__primary;
+	}
+
+	.has-text-one-color {
+		color: $color__text_one;
+		fill: $color__text_one;
+	}
+
+	.has-text-one-background-color {
+		background: $color__text_one;
+		border-color: $color__text_one;
+	}
+
+	.has-text-two-color {
+		color: $color__text_two;
+		fill: $color__text_two;
+	}
+
+	.has-text-two-background-color {
+		background: $color__text_two;
+		border-color: $color__text_two;
+	}
+
+	.has-border-color {
+		color: $color__border;
+		fill: $color__border;
+	}
+
+	.has-border-background-color {
+		background: $color__border;
+		border-color: $color__border;
+	}
+
+	.has-background-color {
+		color: $color__background;
+		fill: $color__background;
+	}
+
+	.has-background-background-color {
+		background: $color__background;
+		border-color: $color__background;
+	}
+
+	.has-white-color {
+		color: $color__white;
+		fill: $color__white;
+	}
+
+	.has-white-background-color {
+		background: $color__white;
+		border-color: $color__white;
+	}
+
+	.has-black-color {
+		color: $color__black;
+		fill: $color__black;
+	}
+
+	.has-black-background-color {
+		background: $color__black;
+		border-color: $color__black;
+	}
+}
+
+/* Custom Gradients Palette */
+.entry-content {
+
+	.has-grayish-blue-to-dark-grayish-blue-gradient-background {
+		background: linear-gradient(0deg, rgb(91, 108, 114) 0%,rgb(60, 68, 72) 100%);
+	}
+	.has-soft-orange-to-desaturated-dark-cyan-gradient-background {
+		background: linear-gradient(270deg, rgb(67, 92, 103) 0%, rgb(114, 164, 163) 46%,rgb(251, 162, 137) 74%, rgb(252, 202, 164) 100%);
+	}
+	.has-light-grayish-magenta-to-very-dark-grayish-pink-gradient-background {
+		background: linear-gradient(0deg, rgb(237, 221, 237) 0%, rgb(230, 196, 223) 21%,rgb(196, 165, 191) 50%, rgb(112, 93, 99) 100%);
+	}
+	.has-light-grayish-red-to-dark-red-gradient-background {
+		background: linear-gradient(0deg, rgb(143, 34, 40) 0%, rgb(250, 110, 115) 50%, rgb(219, 191, 193) 100%);
+	}
+	.has-slightly-desaturated-cyan-to-very-soft-red-gradient-background {
+		background: linear-gradient(0deg, rgb(129, 195, 198) 0%, rgb(251, 198, 167) 48%, rgb(250, 168, 182) 100%);
+	}
+	.has-very-soft-orange-to-very-soft-pink-gradient-background {
+		background: radial-gradient(circle at bottom, rgb(251, 219, 190) 0%, rgb(252, 170, 161) 26%, rgb(250, 152, 162) 54%, rgb(246, 182, 211) 75%, rgb(250, 232, 243) 100%);
+	}
+	.has-grayish-violet-to-soft-orange-gradient-background {
+		background: linear-gradient(180deg, rgb(173, 160, 191) 0%, rgb(225, 205, 236) 29%, rgb(243, 206, 225) 51%, rgb(241, 196, 141) 72%, rgb(240, 193, 97) 100%);
+	}
+	.has-light-grayish-red-to-dark-grayish-blue-gradient-background {
+		background: linear-gradient(180deg, rgb(252, 202, 210) 0%, rgb(222, 158, 167) 46%, rgb(118, 119, 135) 100%);
+	}
+	.has-light-grayish-red-to-very-soft-blue-gradient-background {
+		background: linear-gradient(135deg, rgb(237, 204, 211) 0%, rgb(177, 181, 225) 100%);
+	}
+	.has-soft-blue-to-lime-green-gradient-background {
+		background: linear-gradient(0deg, rgb(104, 134, 254) 0%, rgb(255, 255, 255) 49%, rgb(255, 255, 255) 61%, rgb(213, 233, 207) 75%, rgb(8, 179, 82) 100%);
+	}
+	.has-soft-blue-to-dark-moderate-violet-gradient-background {
+		background: linear-gradient(135deg, rgb(103, 125, 239) 0%, rgb(117, 72, 166) 100%);
+	}
+	.has-soft-red-to-very-soft-blue-gradient-background {
+		background: linear-gradient(0deg, rgb(250, 110, 90) 0%, rgb(255, 202, 192) 24%, rgb(255, 255, 255) 48%, rgb(255, 255, 255) 62%, rgb(223, 227, 255) 77%, rgb(157, 144, 250) 100%);
+	}
+	.has-dark-blue-to-mostly-black-blue-gradient-background {
+		background: radial-gradient(circle at bottom, rgb(19, 20, 143) 0%, rgb(13, 11, 24) 100%);
+	}
+	.has-very-soft-blue-to-dark-grayish-blue-gradient-background {
+		background: radial-gradient(circle at bottom, rgb(153, 203, 233) 0%, rgb(121, 132, 157) 100%);
+	}
+	.has-soft-pink-to-mostly-pure-orange-gradient-background {
+		background: radial-gradient(circle at bottom, rgb(253, 79, 156) 0%, rgb(254, 132, 0) 100%);
+	}
+	.has-bright-cyan-to-soft-magenta-gradient-background {
+		background: linear-gradient( 0deg, rgb(48, 203, 247) 0%, rgb(254, 128, 254) 100%);
+	}
+	.has-light-red-to-very-light-pink-gradient-background {
+		background: linear-gradient( 90deg, rgb(255, 131, 92) 0%, rgb(255, 148, 193) 100%);
+	}
+	.has-very-soft-violet-to-very-soft-pink-gradient-background {
+		background: linear-gradient( 90deg, rgb(198, 163, 245) 0%, rgb(248, 162, 199) 100%);
+	}
+}
