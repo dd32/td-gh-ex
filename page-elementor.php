@@ -17,13 +17,7 @@ get_header(); ?>
             while ( have_posts() ) : the_post();
 
             echo '<div class="elementor-entry-content">';
-            if ( is_plugin_active( 'elementor/elementor.php' ) ) {
 			     the_content();
-            } else {
-                echo '<div style="text-align:center; padding:25px;">';
-                    esc_html_e('Use the Elementor plugin for this page template','base-wp');
-                echo '</div>';
-            }
             echo '</div>';
 
                 // If comments are open or we have at least one comment, load up the comment template.

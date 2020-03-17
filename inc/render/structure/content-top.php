@@ -22,6 +22,16 @@ if ( ! function_exists( 'igthemes_header_widget' ) ) {
 /*-----------------------------------------------------------------
  * BREADCRUMB
 -----------------------------------------------------------------*/
+add_filter( 'rank_math/frontend/breadcrumb/args', function( $args ) {
+	$args = array(
+		'delimiter'   => '',
+		'wrap_before' => '<nav class="breadcrumb"><div class="container">',
+		'wrap_after'  => '</div></nav>',
+		'before'      => '',
+		'after'       => '',
+	);
+	return $args;
+});
 if ( ! function_exists( 'igthemes_breadcrumb' ) ) {
     // start function
     function igthemes_breadcrumb() {
@@ -34,16 +44,21 @@ if ( ! function_exists( 'igthemes_breadcrumb' ) ) {
             </div>
             <?php } elseif ( function_exists('yoast_breadcrumb') ) { 
                 yoast_breadcrumb('<div class="breadcrumb"><div class="container">','</div></div>');
-            } else {
+            } 
+            elseif (function_exists('rank_math_the_breadcrumbs')){
+                rank_math_the_breadcrumbs();
+            }
+            
+            else {
                 if (!is_home()) {
                     echo '<div class="breadcrumb">';
                     echo '<a href="'. esc_url(home_url('/')) .'">';
                     echo esc_html__('Home', 'base-wp');
-                    echo '</a>';
+                    echo '</a> / ';
                     if (is_single()) {
-                        the_category('');
+                        the_category( ' / ' );
                         if (is_singular( 'post' )) {
-                            echo '<span class="current">';
+                            echo ' / <span class="current">';
                             the_title();
                             echo '</span>';
                         } 
