@@ -23,8 +23,8 @@
         <header class="entry-header">
         
 	        <?php 
-	        if( is_sticky() && is_home() ) : ?>
-	              printf( '<div class="sticky-wrapper"><span class="featured">%s</span></div>', esc_html(get_theme_mod( 'sticky_post_label' )) ? esc_html( get_theme_mod( 'sticky_post_label' ) ) : __( 'Featured', 'article-lite' ) );
+	        if( is_sticky() && is_home() ) :
+	            printf( '<div class="sticky-wrapper"><span class="featured">%s</span></div>', esc_html(get_theme_mod( 'sticky_post_label' )) ? esc_html( get_theme_mod( 'sticky_post_label' ) ) : __( 'Featured', 'article-lite' ) );
 	        endif; 
 	        ?>
 	        

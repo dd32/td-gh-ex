@@ -22,7 +22,6 @@
 </head>
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
-<?php wp_body_open(); ?>
 <div id="page" class="hfeed site fullwidth ">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'article-lite' ); ?></a>
 
