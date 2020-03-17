@@ -17,13 +17,7 @@ get_header(); ?>
             while ( have_posts() ) : the_post();
 
             echo '<div class="bb-entry-content">';
-            if ( is_plugin_active( 'beaver-builder-lite-version/fl-builder.php' ) || is_plugin_active( 'bb-plugin/fl-builder.php' ) ) {
 			     the_content();
-            } else {
-                echo '<div style="text-align:center; padding:25px;">';
-                    esc_html_e('Use the Beaver Builder plugin for this page template','base-wp');
-                echo '</div>';
-            }
             echo '</div>';
 
                 // If comments are open or we have at least one comment, load up the comment template.

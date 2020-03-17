@@ -389,7 +389,7 @@ class IGthemes_Customizer {
         'breadcrumb',
         array(
             'label'         => esc_html__('Display breadcrumb?', 'base-wp'),
-            'description'   => __( 'Yoast Breadcrumb supported<br>NavXT Breadcrumb supported', 'base-wp'),
+            'description'   => __( 'Yoast Breadcrumb supported<br>Rank Math Breadcrumb supported<br>NavXT Breadcrumb supported', 'base-wp'),
             'type'          => 'checkbox',
             'section'       => 'post-settings',
             'settings'      => 'post_breadcrumb',

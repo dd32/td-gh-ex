@@ -1,8 +1,8 @@
 === Base WP ===
 Contributors: iografica
 Requires at least: 4.5
-Tested up to: 5.0
-Version: 2.16
+Tested up to: 5.3
+Version: 2.17
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -311,3 +311,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == 2.16 ==
 * Minor fix.
+
+== 2.17 ==
+* Fixed Elementor and beaver Builder template issue
+* Added support for Rank Math breadcrumb
