@@ -207,7 +207,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.attesa-portfolio-grid .attesa-portfolio-readmore p a,
 				ul.woocommerce-thankyou-order-details li,
 				.woocommerce-MyAccount-navigation ul li,
-				.attesa-infinite-button-container .attesa-infinite-scroll-more-button {
+				.attesa-infinite-button-container .attesa-infinite-scroll-more-button,
+				.awp-ajax-search.shortcode .awp-search-results ul li img {
 					border-radius: '.intval($borderRadius).'px;
 				}
 				#wp-calendar > caption {
@@ -274,7 +275,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				textarea,
 				aside ul.menu .indicatorBar,
 				aside ul.product-categories .indicatorBar,
-				.attesa_woocommerce_mini_cart .attesa_woo_cart_quantity_item .remove {
+				.attesa_woocommerce_mini_cart .attesa_woo_cart_quantity_item .remove,
+				form.attesa-pro-ajax-search-shortocode button i {
 					font-size: '.esc_html($general_font_size).';
 				}';
 			}
@@ -673,7 +675,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.edd_downloads_list .edd_download:hover,
 			.edd_downloads_list .edd_download:focus,
 			.edd_downloads_list .edd_download:active,
-			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a {
+			.attesa-pro-sharing-box-container.style_astheme .attesa-pro-sharing-box .attesa-sharing-button a,
+			.awp-ajax-search.shortcode .awp-search-results.filled {
 				border-color: '.esc_html($generalLinkColor).';
 			}';
 			/* Choose general text color */
@@ -712,7 +715,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.woocommerce div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger,
 			#edd_checkout_form_wrap label,
 			.edd_purchase_receipt_product_name,
-			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu {
+			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
+			form.attesa-pro-ajax-search-shortocode button i {
 				color: '. esc_html($generalTextColor).';
 			}
 			.woocommerce ul.products > li .price {
@@ -789,7 +793,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-site-wrap,
 			header.site-header.menuMinor,
 			body:not(.withOverlayMenu) header.site-header,
-			header.site-header .nav-middle.fixed {
+			header.site-header .nav-middle.fixed,
+			.awp-ajax-search.shortcode .awp-search-results {
 				background-color: '.esc_html($generalBackgroundColor).';
 			}
 			button,
@@ -1004,7 +1009,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 			.attesa-main-menu-container.open_pushmenu .attesa-close-pushmenu,
 			.wp-block-image,
 			ul.woocommerce-thankyou-order-details li,
-			.woocommerce-MyAccount-navigation ul li {
+			.woocommerce-MyAccount-navigation ul li,
+			.awp-ajax-search.shortcode .awp-search-results ul li {
 				border-color: '.esc_html($generalBorderColor).';
 			}
 			.star-rating:before {
@@ -1117,7 +1123,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#secondary.widget-area input[type="datetime-local"]:focus,
 				#secondary.widget-area input[type="color"]:focus,
 				#secondary.widget-area textarea:focus,
-				#secondary.widget-area #wp-calendar tbody td#today {
+				#secondary.widget-area #wp-calendar tbody td#today,
+				#secondary.widget-area .awp-ajax-search.shortcode .awp-search-results.filled {
 					border-color: '.esc_html($classicSidebarLinkColor).';
 				}';
 				/* Choose classic sidebar text color */
@@ -1160,7 +1167,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#secondary.widget-area input[type="datetime-local"]:focus,
 				#secondary.widget-area input[type="color"]:focus,
 				#secondary.widget-area textarea:focus,
-				#secondary.widget-area .attesa-contact-info a {
+				#secondary.widget-area .attesa-contact-info a,
+				#secondary.widget-area form.attesa-pro-ajax-search-shortocode button i {
 					color: '.esc_html($classicSidebarTextColor).';
 				}
 				#secondary.widget-area .tagcloud a:hover,
@@ -1214,7 +1222,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#secondary.widget-area input[type="datetime"],
 				#secondary.widget-area input[type="datetime-local"],
 				#secondary.widget-area input[type="color"],
-				#secondary.widget-area textarea {
+				#secondary.widget-area textarea,
+				#secondary.widget-area .awp-ajax-search.shortcode .awp-search-results {
 					background-color: '.esc_html($classicSidebarBackgroundColor).';
 				}
 				#secondary.widget-area button,
@@ -1259,7 +1268,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#secondary.widget-area input[type="color"],
 				#secondary.widget-area textarea,
 				#secondary.widget-area #wp-calendar tbody td,
-				#secondary.widget-area fieldset {
+				#secondary.widget-area fieldset,
+				#secondary.widget-area .awp-ajax-search.shortcode .awp-search-results ul li {
 					border-color: '.esc_html($classicSidebarBorderColor).';
 				}
 				#secondary.widget-area ul.menu .indicatorBar,
@@ -1307,7 +1317,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#tertiary.widget-area input[type="datetime-local"]:focus,
 				#tertiary.widget-area input[type="color"]:focus,
 				#tertiary.widget-area textarea:focus,
-				#tertiary.widget-area #wp-calendar tbody td#today {
+				#tertiary.widget-area #wp-calendar tbody td#today,
+				#tertiary.widget-area .awp-ajax-search.shortcode .awp-search-results.filled {
 					border-color: '.esc_html($pushSidebarLinkColor).';
 				}';
 				/* Choose push sidebar text color */
@@ -1352,7 +1363,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#tertiary.widget-area input[type="color"]:focus,
 				#tertiary.widget-area textarea:focus,
 				#tertiary.widget-area .close-hamburger,
-				#tertiary.widget-area .attesa-contact-info a {
+				#tertiary.widget-area .attesa-contact-info a,
+				#tertiary.widget-area form.attesa-pro-ajax-search-shortocode button i {
 					color: '.esc_html($pushSidebarTextColor).';
 				}
 				#tertiary.widget-area .tagcloud a:hover,
@@ -1412,7 +1424,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#tertiary.widget-area input[type="datetime"],
 				#tertiary.widget-area input[type="datetime-local"],
 				#tertiary.widget-area input[type="color"],
-				#tertiary.widget-area textarea {
+				#tertiary.widget-area textarea,
+				#tertiary.widget-area .awp-ajax-search.shortcode .awp-search-results {
 					background-color: '.esc_html($pushSidebarBackgroundColor).';
 				}
 				#tertiary.widget-area button,
@@ -1458,7 +1471,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				#tertiary.widget-area textarea,
 				#tertiary.widget-area #wp-calendar tbody td,
 				#tertiary.widget-area,
-				#tertiary.widget-area fieldset {
+				#tertiary.widget-area fieldset,
+				#tertiary.widget-area .awp-ajax-search.shortcode .awp-search-results ul li {
 					border-color: '.esc_html($pushSidebarBorderColor).';
 				}
 				#tertiary.widget-area ul.menu .indicatorBar,
@@ -1506,7 +1520,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.footerArea input[type="datetime-local"]:focus,
 				.footerArea input[type="color"]:focus,
 				.footerArea textarea:focus,
-				.footerArea #wp-calendar tbody td#today {
+				.footerArea #wp-calendar tbody td#today,
+				.footerArea .awp-ajax-search.shortcode .awp-search-results.filled {
 					border-color: '.esc_html($footerLinkColor).';
 				}';
 				/* Choose footer text color */
@@ -1549,7 +1564,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.footerArea input[type="datetime-local"]:focus,
 				.footerArea input[type="color"]:focus,
 				.footerArea textarea:focus,
-				.footerArea .attesa-contact-info a {
+				.footerArea .attesa-contact-info a,
+				.footerArea form.attesa-pro-ajax-search-shortocode button i {
 					color: '.esc_html($footerTextColor).';
 				}
 				.footerArea .tagcloud a:hover,
@@ -1603,7 +1619,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.footerArea input[type="datetime"],
 				.footerArea input[type="datetime-local"],
 				.footerArea input[type="color"],
-				.footerArea textarea {
+				.footerArea textarea,
+				.footerArea .awp-ajax-search.shortcode .awp-search-results {
 					background-color: '.esc_html($footerBackgroundColor).';
 				}
 				.footerArea button,
@@ -1647,7 +1664,8 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 				.footerArea input[type="color"],
 				.footerArea textarea,
 				.footerArea #wp-calendar tbody td,
-				.footerArea fieldset {
+				.footerArea fieldset,
+				.footerArea .awp-ajax-search.shortcode .awp-search-results ul li {
 					border-color: '.esc_html($footerBorderColor).';
 				}
 				.footerArea ul.menu .indicatorBar,
