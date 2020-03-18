@@ -1760,7 +1760,8 @@ body.mega-menu-header-menu button.menu-toggle {
  * Content Header Area styles
  * -----------------------------------------------------------------------------
  */
-.site-content {
+.site-content,
+.give-wrap {
   padding: 28px 0;
 }
 
@@ -3966,6 +3967,10 @@ article.product .post-meta > span .avatar {
 .widget-area .widget-wrapper .custom-html-widget ul li, .footer-widgets .footer-widget .widget-wrapper .custom-html-widget ul li {
   border: none;
   margin: 0;
+  padding: 0;
+}
+
+.responsive-site-style-boxed .widget-wrapper.colophon-widget {
   padding: 0;
 }
 

@@ -1,10 +1,10 @@
-# <!=Copyright (C) 2020
+# <!=Copyright (C) 2020 CyberChimps
 # This file is distributed under the GNU General Public License v3 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 4.1.9\n"
+"Project-Id-Version: Responsive 4.2.0\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
-"POT-Creation-Date: 2020-03-16 13:50:47+00:00\n"
+"POT-Creation-Date: 2020-03-18 07:18:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1135,52 +1135,52 @@ msgid "Social Links"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:99
-#: core/includes/functions-extensions.php:354
+#: core/includes/functions-extensions.php:357
 msgid "Twitter"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:120
-#: core/includes/functions-extensions.php:355
+#: core/includes/functions-extensions.php:358
 msgid "Facebook"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:141
-#: core/includes/functions-extensions.php:356
+#: core/includes/functions-extensions.php:359
 msgid "LinkedIn"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:162
-#: core/includes/functions-extensions.php:357
+#: core/includes/functions-extensions.php:360
 msgid "YouTube"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:183
-#: core/includes/functions-extensions.php:360
+#: core/includes/functions-extensions.php:363
 msgid "Google+"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:204
-#: core/includes/functions-extensions.php:359
+#: core/includes/functions-extensions.php:362
 msgid "RSS Feed"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:225
-#: core/includes/functions-extensions.php:361
+#: core/includes/functions-extensions.php:364
 msgid "Instagram"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:246
-#: core/includes/functions-extensions.php:362
+#: core/includes/functions-extensions.php:365
 msgid "Pinterest"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:267
-#: core/includes/functions-extensions.php:358
+#: core/includes/functions-extensions.php:361
 msgid "StumbleUpon"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:288
-#: core/includes/functions-extensions.php:364
+#: core/includes/functions-extensions.php:367
 msgid "Vimeo"
 msgstr ""
 
@@ -1634,7 +1634,7 @@ msgid "Address"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:739
-#: core/includes/functions-extensions.php:366
+#: core/includes/functions-extensions.php:369
 msgid "Email"
 msgstr ""
 
@@ -2071,18 +2071,18 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: core/includes/functions-extensions.php:208
+#: core/includes/functions-extensions.php:211
 #: core/includes/functions-extras.php:190
 #. translators: %s: Page Number
 #. translators: %s: author
 msgid "Page %s"
 msgstr ""
 
-#: core/includes/functions-extensions.php:363
+#: core/includes/functions-extensions.php:366
 msgid "Yelp!"
 msgstr ""
 
-#: core/includes/functions-extensions.php:365
+#: core/includes/functions-extensions.php:368
 msgid "foursquare"
 msgstr ""
 
@@ -2498,15 +2498,21 @@ msgid ""
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://cyberchimps.com/responsive"
+msgid "https://cyberchimps.com/repsonsive/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Responsive is a full-customizable, fast and mobile-friendly WordPress theme."
+msgid ""
+"Responsive is a fully-customizable, fast, and mobile-friendly WordPress "
+"theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "CyberChimps"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://cyberchimps.com/"
+msgid "https://cyberchimps.com"
 msgstr ""
 
 #. Template Name of the plugin/theme
