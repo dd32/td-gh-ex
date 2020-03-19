@@ -29,7 +29,7 @@
               <?php if(in_array('oga',$formats)) { echo 'oga: "'.$meta['_audio_ogg_url'][0].'",'."\n"; } ?>
             });
           },
-          swfPath: "<?php echo esc_url( get_template_directory_uri() ); ?>/js",
+          swfPath: "<?php echo get_template_directory_uri() ?>/js",
           cssSelectorAncestor: "#jp-interface-<?php the_ID(); ?>",
           supplied: "<?php echo implode(',',$formats); ?>"
         });
@@ -81,8 +81,32 @@
 
   	<div class="post-format">
   		<?php $images = hu_post_images(); if ( !empty($images) ): ?>
+  		<script type="text/javascript">
+  			// Check if first slider image is loaded, and load flexslider on document ready
+  			jQuery( function($){
+  			 var firstImage = $('#flexslider-<?php echo the_ID(); ?>').find('img').filter(':first'),
+  				checkforloaded = setInterval(function() {
+  					var image = firstImage.get(0);
+  					if (image.complete || image.readyState == 'complete' || image.readyState == 4) {
+  						clearInterval(checkforloaded);
+  						$('#flexslider-<?php echo the_ID(); ?>').flexslider({
+  							animation: '<?php echo wp_is_mobile() ? "slide" : "fade"; ?>',
+                rtl: <?php echo json_encode( is_rtl() ) ?>,
+  							slideshow: true,
+  							directionNav: true,
+  							controlNav: true,
+  							pauseOnHover: true,
+  							slideshowSpeed: 7000,
+  							animationSpeed: 600,
+  							smoothHeight: true,
+  							touch: <?php echo apply_filters('hu_flexslider_touch_support' , true); ?>
+  						});
+  					}
+  				}, 20);
+  			});
+  		</script>
   		<div class="flex-container">
-  			<div class="flexslider" id="flexslider-for-gallery-post-format-<?php the_ID(); ?>">
+  			<div class="flexslider" id="flexslider-<?php the_ID(); ?>">
   				<ul class="slides">
   					<?php foreach ( $images as $image ): ?>
   						<li>

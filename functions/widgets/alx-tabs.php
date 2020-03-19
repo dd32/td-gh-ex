@@ -138,14 +138,6 @@ class AlxTabs extends WP_Widget {
         ?>
 
 			<ul id="tab-recent-<?php echo $this -> number ?>" class="alx-tab group <?php if($instance['recent_thumbs']) { echo 'thumbs-enabled'; } ?>">
-        <?php
-        // do not allow the browser to pick a size larger than 'thumb-small'
-        if( !function_exists('hu_limit_srcset_img_width_for_thumb_small') ) {
-            function hu_limit_srcset_img_width_for_thumb_small() { return '80'; }
-        }
-        // april 2020 : added for https://github.com/presscustomizr/hueman/issues/866
-        add_filter( 'max_srcset_image_width', 'hu_limit_srcset_img_width_for_thumb_small' );
-        ?>
 				<?php while ($recent->have_posts()): $recent->the_post(); ?>
 				<li>
 
@@ -169,7 +161,6 @@ class AlxTabs extends WP_Widget {
 				</li>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-        <?php remove_filter( 'max_srcset_image_width', 'hu_limit_srcset_img_width_for_thumb_small' ); ?>
 			</ul><!--/.alx-tab-->
 
 		<?php } ?>
@@ -194,14 +185,7 @@ class AlxTabs extends WP_Widget {
 				$popular = new WP_Query( is_array( $popular_query_params ) ? $popular_query_params : array() );
 			?>
 			<ul id="tab-popular-<?php echo $this -> number ?>" class="alx-tab group <?php if($instance['popular_thumbs']) { echo 'thumbs-enabled'; } ?>">
-        <?php
-        // do not allow the browser to pick a size larger than 'thumb-small'
-        if( !function_exists('hu_limit_srcset_img_width_for_thumb_small') ) {
-            function hu_limit_srcset_img_width_for_thumb_small() { return '80'; }
-        }
-        // april 2020 : added for https://github.com/presscustomizr/hueman/issues/866
-        add_filter( 'max_srcset_image_width', 'hu_limit_srcset_img_width_for_thumb_small' );
-        ?>
+
 				<?php while ( $popular->have_posts() ): $popular->the_post(); ?>
 				<li>
 
@@ -225,7 +209,6 @@ class AlxTabs extends WP_Widget {
 				</li>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
-        <?php remove_filter( 'max_srcset_image_width', 'hu_limit_srcset_img_width_for_thumb_small' ); ?>
 			</ul><!--/.alx-tab-->
 
 		<?php } ?>
@@ -249,8 +232,8 @@ class AlxTabs extends WP_Widget {
 
 						<div class="tab-item-inner group">
 							<?php $str=explode(' ',get_comment_excerpt($comment->comment_ID)); $comment_excerpt=implode(' ',array_slice($str,0,11)); if(count($str) > 11 && substr($comment_excerpt,-1)!='.') $comment_excerpt.='...' ?>
-							<div class="tab-item-name"><?php echo esc_html( $comment->comment_author ); ?> <?php _e('says:','hueman'); ?></div>
-							<div class="tab-item-comment"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>"><?php echo esc_html( $comment_excerpt ); ?></a></div>
+							<div class="tab-item-name"><?php echo esc_attr( $comment->comment_author ); ?> <?php _e('says:','hueman'); ?></div>
+							<div class="tab-item-comment"><a href="<?php echo esc_url(get_comment_link($comment->comment_ID)); ?>"><?php echo esc_attr( $comment_excerpt ); ?></a></div>
 
 						</div>
 

@@ -389,9 +389,7 @@ if ( ! function_exists( 'hu_print_social_links' ) ) {
 if ( ! function_exists( 'hu_render_header_image' ) ) {
   function hu_render_header_image( $_header_img_src = null ) {
     $attr = array(
-        //'class' => hu_user_started_before_version( '3.5.3' ) ? 'site-image' : 'new-site-image',//<= if the new CSS class breaks websites, we might use this condition
-        // introduced March 2020 for https://github.com/presscustomizr/hueman/issues/852
-        'class' => 'new-site-image'
+      'class' => 'site-image'
     );
 
     $_header_img_src = trim( $_header_img_src );
@@ -448,9 +446,7 @@ function hu_get_logo_title( $is_mobile_menu = false ) {
 
 if ( ! function_exists( 'hu_print_logo_or_title' ) ) {
     function hu_print_logo_or_title( $echo = true, $is_mobile_menu = false ) {
-        // June 2020 => never write the mobile site-title in a h1 heading to avoid multiple h1 detected by SEO analyzers
-        // @see https://github.com/presscustomizr/hueman/issues/906
-        $wrap_in_h_one = !$is_mobile_menu && hu_booleanize_checkbox_val( hu_get_option('wrap_in_h_one') );
+        $wrap_in_h_one = hu_booleanize_checkbox_val( hu_get_option('wrap_in_h_one') );
         $logo_or_title = hu_get_logo_title( $is_mobile_menu );
         // => If no logo is set and  ! hu_is_checked( 'display-header-title' ), the logo title is empty.
         ob_start();
@@ -820,7 +816,6 @@ if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_body_class' ) ) {
   function hu_body_class( $classes ) {
-    $classes = is_array( $classes ) ? $classes : array();
     $classes[] = hu_get_layout_class();
     $classes[] = hu_is_checked( 'boxed' ) ? 'boxed' : 'full-width';
     if ( hu_has_nav_menu('topbar') ) { $classes[] = 'topbar-enabled'; }
@@ -846,22 +841,33 @@ if ( ! function_exists( 'hu_body_class' ) ) {
     //Note : no stickyness implemented when 2 menus ( 'both_menus') are displayed on mobiles ( => like it was historically in the earliest version in Hueman )
     if ( 'no_stick' != $mobile_sticky && 'both_menus' != hu_get_option( 'header_mobile_menu_layout' ) ) { $classes[] = 'header-mobile-sticky'; }
 
-    // april 2020 : https://github.com/presscustomizr/hueman/issues/877
-    if ( !hu_is_checked( 'header-img-full-width' ) ) {
-        $classes[] = 'hu-header-img-full-width';
-    }
-    if ( hu_is_checked( 'header-img-natural-height' ) ) {
-        $classes[] = 'hu-header-img-natural-height';
-    }
-    // June 2020 : this class is removed once Font Awesome icons are loaded
-    if ( hu_is_checked( 'defer_font_awesome') ) {
-        $classes[] = 'hu-fa-not-loaded';
-    }
     return $classes;
   }
 }
 add_filter( 'body_class', 'hu_body_class' );
 
+
+
+/*  Custom favicon
+/* ------------------------------------ */
+if ( ! function_exists( 'hu_favicon' ) ) {
+
+  function hu_favicon() {
+    // fixes https://github.com/presscustomizr/hueman/issues/619
+    if ( has_site_icon() )
+      return;
+    // retro compat if favicon has been set before implementation of built-in WP one
+    $favicon_url = hu_get_option('favicon');
+    if ( is_string($favicon_url) && !empty($favicon_url) ) {
+      // replace http by https if needed
+      if ( is_ssl() && is_string($favicon_url) && stripos($favicon_url, 'http://') === 0 ) {
+          $favicon_url = 'https' . substr($favicon_url, 4);
+      }
+      echo '<link rel="shortcut icon" href="'.$favicon_url.'" />'."\n";
+    }
+  }
+}
+add_filter( 'wp_head', 'hu_favicon' );
 
 
 /*  Custom logo
@@ -1098,21 +1104,19 @@ if ( ! function_exists( 'hu_scripts' ) ) {
         'mobile-detect',
         get_template_directory_uri() . '/assets/front/js/libs/mobile-detect.min.js',
         array(),
-        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        '',
         false
       );
-      wp_script_add_data( 'mobile-detect', 'defer', true );
     }
 
-    if ( hu_front_needs_flexslider() ) {
+    if ( has_post_format( 'gallery' ) || ( is_home() && ! is_paged() && ( hu_is_checked('featured-posts-enabled') && hu_get_option('featured-posts-count') != '0' ) ) ) {
       wp_enqueue_script(
         'flexslider',
         get_template_directory_uri() . '/assets/front/js/libs/jquery.flexslider.min.js',
         array( 'jquery' ),
-        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        '',
         false
       );
-      wp_script_add_data( 'flexslider', 'defer', true );
     }
 
     if ( has_post_format( 'audio' ) ) {
@@ -1120,7 +1124,7 @@ if ( ! function_exists( 'hu_scripts' ) ) {
         'jplayer',
         get_template_directory_uri() . '/assets/front/js/libs/jquery.jplayer.min.js',
         array( 'jquery' ),
-        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        '',
         true
       );
     }
@@ -1245,13 +1249,6 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                   ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min',
                   ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER
                 ),
-                'flexSliderNeeded' => hu_front_needs_flexslider(),
-                'flexSliderOptions' => array(
-                    'is_rtl' => is_rtl(),
-                    'has_touch_support' => apply_filters('hu_flexslider_touch_support' , true),
-                    'is_slideshow' => hu_is_checked('featured-slideshow'),
-                    'slideshow_speed' => hu_get_option('featured-slideshow-speed', 5000)
-                )
             )
         )//end of filter
        );//wp_localize_script()
@@ -1618,9 +1615,6 @@ function hu_is_widget_zone_allowed_in_context( $_contexts, $_map_conditionals ) 
 }
 
 
-/* ------------------------------------------------------------------------- *
- *  Templates
-/* ------------------------------------------------------------------------- */
 //@return void
 //A utility to override the default tmpl from a plugin
 //falls back on get_template_part( $path )
@@ -1638,9 +1632,7 @@ function hu_get_template_part( $path ) {
 
 
 
-/* ------------------------------------------------------------------------- *
- *  Grid image sizes
-/* ------------------------------------------------------------------------- */
+
 add_filter( 'hu_masonry_grid_thumb_size',  'hu_maybe_replace_blog_thumb_size_with_full' );
 add_filter( 'hu_grid_featured_thumb_size', 'hu_maybe_replace_blog_thumb_size_with_full' );
 add_filter( 'hu_grid_standard_thumb_size', 'hu_maybe_replace_blog_thumb_size_with_full' );
@@ -1653,8 +1645,6 @@ add_filter( 'hu_grid_thumb_size',          'hu_maybe_replace_blog_thumb_size_wit
 function hu_maybe_replace_blog_thumb_size_with_full( $thumb_size ) {
   return hu_is_checked( 'blog-use-original-image-size' ) ? 'full' : $thumb_size;
 }
-
-
 
 /* ------------------------------------------------------------------------- *
  *  Page Menu
