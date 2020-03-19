@@ -135,7 +135,23 @@ if (!function_exists('anna_lite_customize_panel_function')) {
 				'priority' => '13',
 
 			),
-
+			
+			array(
+				
+				'label' => esc_html__( 'Sticky header','anna-lite'),
+				'description' => esc_html__( 'Do you want to enable the sticky header?','anna-lite'),
+				'id' => 'anna_lite_sticky_header',
+				'type' => 'select',
+				'section' => 'settings_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','anna-lite'),
+				   'on' => esc_html__( 'Yes','anna-lite'),
+				),
+				
+				'std' => 'on',
+			
+			),
+			
 			array(
 				
 				'label' => esc_html__( 'Category title','anna-lite'),
@@ -300,7 +316,24 @@ if (!function_exists('anna_lite_customize_panel_function')) {
 				'priority' => '15',
 
 			),
+
+			array(
+				
+				'label' => esc_html__('WooCommerce header cart icon','anna-lite'),
+				'description' => esc_html__('Select the icon for WooCommerce header cart (Please clear the cookies to display the new icon)','anna-lite'),
+				'id' => 'anna_lite_woocommerce_header_icon',
+				'type' => 'select',
+				'section' => 'woocommerce_section',
+				'options' => array (
+				   'fa-shopping-basket' => esc_html__( 'Icon 1','anna-lite'),
+				   'fa-shopping-cart' => esc_html__( 'Icon 2','anna-lite'),
+				   'fa-cart-plus' => esc_html__( 'Icon 3','anna-lite'),
+				),
+				
+				'std' => 'fa-shopping-cart',
 			
+			),
+
 			array(
 				
 				'label' => esc_html__( 'Cross sell products','anna-lite'),

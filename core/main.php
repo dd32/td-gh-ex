@@ -358,6 +358,28 @@ if (!function_exists('anna_lite_template')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* BODY CLASSES */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('anna_lite_body_classes_function')) {
+
+	function anna_lite_body_classes_function($classes) {
+
+		if ( anna_lite_setting('anna_lite_sticky_header') == 'on' ) :
+
+			$classes[] = 'sticky_header';
+				
+		endif;
+		
+		return $classes;
+	
+	}
+	
+	add_filter('body_class', 'anna_lite_body_classes_function');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Post class */
 /*-----------------------------------------------------------------------------------*/   
 

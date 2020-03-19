@@ -297,25 +297,30 @@ span.button:hover,
 }
 
 #header { 
-	position:fixed;
+	position:relative;
 	text-align:left;
 	padding:0;
 	color:#616161;
 	width:100%;
 	background:#fff;
-	top:0;
 	border-bottom: solid 1px #f9f9f9;
+
 }
 
-body.logged-in #header { 
+body.sticky_header #header { 
+	position:fixed;
+	top:0;
+}
+
+body.sticky_header.logged-in #header { 
 	top:32px;
 }
 
-body.woocommerce-demo-store #header { 
+body.sticky_header.woocommerce-demo-store #header { 
 	top:48px;
 }
 
-body.woocommerce-demo-store.logged-in #header { 
+body.sticky_header.woocommerce-demo-store.logged-in #header { 
 	top:80px;
 }
 
@@ -2474,11 +2479,13 @@ tr:nth-child(2n+2) {
 
 @media screen and (min-width : 0px) and (max-width : 992px)  {	
 
-	#header {
+	#header,
+	body.sticky_header #header { 
 		position:relative;
 	}
 
-	body.logged-in #header { 
+	body.logged-in #header , 
+	body.sticky_header.logged-in #header { 
 		top:0;
 	}
 

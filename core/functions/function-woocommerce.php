@@ -45,7 +45,7 @@ if ( ! function_exists( 'anna_lite_header_cart' ) ) {
             <div class="header-cart">
             
                 <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','anna-lite' ); ?>">
-                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa <?php echo esc_attr(anna_lite_setting('anna_lite_woocommerce_header_icon', 'fa-shopping-cart'));?>"></i>
 					<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'anna-lite' ), WC()->cart->cart_contents_count ); ?></span>  
                 </a>
                             
@@ -73,7 +73,7 @@ if ( ! function_exists( 'anna_lite_cart_link_fragment' ) ) {
 
 ?>
 		<a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','anna-lite' ); ?>">
-            <i class="fa fa-shopping-cart"></i>
+			<i class="fa <?php echo esc_attr(anna_lite_setting('anna_lite_woocommerce_header_icon', 'fa-shopping-cart'));?>"></i>
 			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'anna-lite' ), WC()->cart->cart_contents_count ); ?></span>  
 		</a>
         

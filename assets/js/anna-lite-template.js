@@ -27,26 +27,30 @@ jQuery.noConflict()(function($){
 	);
 	
 /* ===============================================
-   FIXED HEADER
+   STICKY HEADER
    =============================================== */
 
 	function anna_lite_header() {
-	
-		var body_width = $(window).width();
-		
-		var header = $('#header-wrapper .row').innerHeight();
-		var demostore = $('p.demo_store').innerHeight();
-		var adminbar = $('body.logged-in #wpadminbar').innerHeight();
-		
-		if ( body_width >= 992 ){
-		
-			$('#header-wrapper').css({'height': header + demostore});
-			$('#header').css({'height': header});
-			$('#header').css({'top': demostore + adminbar });
-		
-		} else {
-		
-			$('#header-wrapper, #header').css({'height':'auto'});
+
+		if( $('body').hasClass('sticky_header') ) {
+
+			var body_width = $(window).width();
+			
+			var header = $('#header-wrapper .row').innerHeight();
+			var demostore = $('p.demo_store').innerHeight();
+			var adminbar = $('body.logged-in #wpadminbar').innerHeight();
+			
+			if ( body_width >= 992 ){
+			
+				$('#header-wrapper').css({'height': header + demostore});
+				$('#header').css({'height': header});
+				$('#header').css({'top': demostore + adminbar });
+			
+			} else {
+			
+				$('#header-wrapper, #header').css({'height':'auto'});
+			
+			}
 		
 		}
 
@@ -54,6 +58,7 @@ jQuery.noConflict()(function($){
 	
 	$( window ).load(anna_lite_header);
 	$( window ).resize(anna_lite_header);
+	$( document ).ready(anna_lite_header);
 
 /* ===============================================
    SCROLL SIDEBAR
