@@ -4,7 +4,7 @@ Theme URI: https://unitedtheme.com/themes/adventure-blog/
 Author: UnitedTheme
 Author URI: http://unitedtheme.com/
 Description: A clean beautiful and minimal blog theme designed specifically for bloggers to make blogs for photography, food, fashion, lifestyle, magazines, travel, sports, technology, as well as modern newspaper websites. photography WordPress theme that comes with high-quality features and minimal design. Adventure Blog is adventure, clean, elegant and straightforward. It is ideal for creating photography websites for photographers, graphic designers, freelancers, artists, or bloggers. It comes with customizer API based features that are extremely lite and easy to handle,as it just has all to take your photoblogs to the next level.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: adventure-blog
@@ -401,7 +401,13 @@ input[type="reset"],
 input[type="submit"] {
     border: 0;
     padding: 10px 15px;
-    outline: none;
+}
+
+button:focus-within,
+input[type="button"]:focus-within,
+input[type="reset"]:focus-within,
+input[type="submit"]:focus-within{
+    outline: thin dotted;
 }
 
 input[type="text"],
@@ -442,7 +448,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
     color: #111;
-    outline: none;
+    outline: thin dotted;
 }
 
 textarea {
@@ -457,7 +463,6 @@ input, textarea, select {
 .btn-link:link,
 .btn-link:visited {
     position: relative;
-    display: inline-block;
     margin: 30px auto 0;
     min-width: 280px;
     padding: 14px 30px;
@@ -507,6 +512,7 @@ input, textarea, select {
 .btn-link {
     border: 2px solid #262626;
     color: #FFF;
+    display: inline-block;
 }
 
 .btn-link:after {
@@ -527,7 +533,8 @@ input, textarea, select {
 }
 
 .continue-link {
-    display: table !important;
+    display: block;
+    max-width: 280px;
 }
 
 /*--------------------------------------------------------------
@@ -581,11 +588,12 @@ a:active {
     display: none;
 }
 
-.icon-search {
+.site .main-navigation .icon-search {
+    background: none;
+    color: #000;
     display: inline-block;
     vertical-align: middle;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
 }
 
 .icon-search svg {
@@ -1223,6 +1231,10 @@ a:active {
 .comment-form label {
     width: 5em;
     display: inline-block;
+}
+
+.comment-form .comment-form-cookies-consent label{
+    width: 90%;
 }
 
 .comment-form textarea,
@@ -1959,6 +1971,7 @@ a:active {
 }
 
 .model-search .cross-exit {
+    background: none;
     position: fixed;
     bottom: 80px;
     right: 0;
@@ -1974,6 +1987,12 @@ a:active {
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
+}
+
+.model-search .cross-exit:hover,
+.model-search .cross-exit:focus{
+    background: none !important;
+    outline: thin dotted #000;
 }
 
 .model-search .cross-exit:after,
@@ -2187,6 +2206,7 @@ a:active {
     width: 100%;
     display: block;
     margin: 10px auto;
+    padding: 0;
 }
 
 .single .entry-meta {

@@ -35,13 +35,41 @@ jQuery(document).ready(function ($) {
         });
     });
 
+
     $(function () {
-        $('.icon-search').on('click', function() {
+        $('.icon-search').on('click', function (event) {
             $('body').toggleClass('united-model');
+            setTimeout(function () { 
+                $('.icon-search').focus();
+            }, 300);
+            
         });
-        $('.cross-exit').on('click', function() {
+        $('.cross-exit').on('click', function (event) {
             $('body').removeClass('united-model');
+            $('.icon-search').focus();
         });
+
+        $(document).keyup(function(j) {
+            if (j.key === "Escape") { // escape key maps to keycode `27`
+                $('body').removeClass('united-model');
+            }
+        });
+
+        $( 'input, a, button' ).on( 'focus', function() {   
+            if ( $( 'body' ).hasClass( 'united-model' ) ) {
+                if ( ! $( this ).parents( '.model-search' ).length ) {
+                    $('.cross-exit').focus();
+                }
+            }
+        } );
+
+        $('button, input, a' ).on('focus', function() {
+            if ( $( 'body' ).hasClass( 'united-model' ) ) {
+                if ( ! $( this ).parents( '.model-search' ).length ) {
+                   $('.model-search-wrapper .search-field').focus();
+                }
+            }
+        } );
     });
 
     $(window).scroll(function () {
