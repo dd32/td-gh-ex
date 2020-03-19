@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-17 22:16+0100\n"
-"PO-Revision-Date: 2020-01-17 22:18+0100\n"
+"POT-Creation-Date: 2020-03-19 13:01+0100\n"
+"PO-Revision-Date: 2020-03-19 13:01+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -2013,15 +2013,19 @@ msgstr "espandi il sottomenu"
 msgid "collapse submenu"
 msgstr "comprimi sottomenu"
 
-#: core/main.php:887
+#: core/main.php:846
+msgid "Select an item"
+msgstr "Seleziona un elemento"
+
+#: core/main.php:891
 msgid "Default image"
 msgstr "Immagine di default"
 
-#: core/main.php:922
+#: core/main.php:926
 msgid "Main menu"
 msgstr "Menù principale."
 
-#: core/main.php:923
+#: core/main.php:927
 msgid "One Page menu"
 msgstr "Menu One Page"
 
