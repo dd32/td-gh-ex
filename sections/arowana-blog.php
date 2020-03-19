@@ -1,22 +1,22 @@
 <!-- Start: Recent Blog
 ============================= -->
 <?php 
-	$hide_show_blog = get_theme_mod('hide_show_blog','1');
-	$startkit_blog_title = get_theme_mod('blog_title');
-	$blog_description = get_theme_mod('blog_description'); 
-	$blog_display_num = get_theme_mod('blog_display_num','3');
+	$arowana_hs_blog = get_theme_mod('hide_show_blog','1');
+	$arowana_blog_title = get_theme_mod('blog_title');
+	$arowana_blog_desc = get_theme_mod('blog_description'); 
+	$arowana_blog_display_num = get_theme_mod('blog_display_num','3');
 ?>
-<?php if($hide_show_blog == '1') {?>
+<?php if($arowana_hs_blog == '1') {?>
 <section id="recent-blog" class="section-padding">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 offset-md-3 text-center">
 				<div class="section-header">
-					<?php if($startkit_blog_title) { ?>
-						<h2><?php echo esc_html($startkit_blog_title); ?></h2>
+					<?php if($arowana_blog_title) { ?>
+						<h2><?php echo esc_html($arowana_blog_title); ?></h2>
 					<?php } ?>
-					<?php if($blog_description) { ?>
-						<p class="wow fadeInUp" data-wow-delay="0.1s"><?php echo esc_html($blog_description); ?></p>
+					<?php if($arowana_blog_desc) { ?>
+						<p class="wow fadeInUp" data-wow-delay="0.1s"><?php echo esc_html($arowana_blog_desc); ?></p>
 					<?php } ?>
 				</div>
 			</div>
@@ -24,11 +24,11 @@
 		<div class="row">
 			<?php 	
 				 if ( function_exists( 'cleverfox_activate' ) ) { 
-					$args = array( 'post_type' => 'post','posts_per_page' => $blog_display_num,'post__not_in'=>get_option("sticky_posts")) ; 	
+					$arowana_args = array( 'post_type' => 'post','posts_per_page' => $arowana_blog_display_num,'post__not_in'=>get_option("sticky_posts")) ; 	
 				}else{
-					$args = array( 'post_type' => 'post','post__not_in'=>get_option("sticky_posts")) ; 	
+					$arowana_args = array( 'post_type' => 'post','post__not_in'=>get_option("sticky_posts")) ; 	
 				}
-					 $arowana_wp_query = new WP_Query($args);
+					 $arowana_wp_query = new WP_Query($arowana_args);
 					if($arowana_wp_query->have_posts())
 					{	
 					while($arowana_wp_query->have_posts()):$arowana_wp_query->the_post(); ?>

@@ -36,8 +36,9 @@ h2.site-title::first-letter,
 }
 
 /* 03. Custom Navigation */
-.main-menu ul li.active a,
-.main-menu ul li a:hover {
+.main-menu > ul > li.focus > a,
+.main-menu > ul > li.active > a,
+.main-menu > ul > li > a:hover {
     color: #ee591f  !important;
 }
 
@@ -95,16 +96,8 @@ a.book-now {
     color: #ee591f ;
 }
 
-/* 07. Features */
-.features-item:before {    
-    background: #ee591f ;
-}
 
-.features-item:hover i {
-    color: #ee591f ;
-}
-
-/* 08. Services */
+/* 06. Services */
 #services .service-icon {
     background: #ee591f;
 }
@@ -145,7 +138,7 @@ a.book-now {
     background: #ee591f ;
 }
 
-.scrollup {
+.scrollup, .scrollup:focus {
     background-color: #ee591f ;
     border-color: #ee591f ;
 
@@ -154,15 +147,6 @@ a.book-now {
 .scrollup:hover {
     border-color: #ee591f ;
 	background: #ee591f;
-}
-
-/* Gallery */
-.gallery-popup:hover {
-    color: #ee591f ;
-}
-
-.load-btn {    
-    background: #ee591f ;
 }
 
 /*------------------------
@@ -344,10 +328,6 @@ p {
     color: #242424;
 }
 
-.member-title {
-    color: #242424;
-}
-
 .single-testimonial {
     background: #242424; 
 }
@@ -358,10 +338,6 @@ p {
 
 #recent-blog ul.meta-info li a {
     color: #233049;
-}
-
-.gallery-item figure:hover figcaption {
-    background: #242424;
 }
 
 #blog-content ul.meta-info li {
@@ -389,14 +365,6 @@ p {
 }
 
 .post-comment-area .comment-author a {
-    color: #242424;
-}
-
-.office h4 {
-    color: #242424;
-}
-
-.office ul li {
     color: #242424;
 }
 

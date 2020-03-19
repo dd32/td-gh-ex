@@ -4,8 +4,8 @@ Contributors: Nayrathemes
 Requires at least: 4.4
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.1
-Version: 2.0.1
+Stable tag: 2.0.10
+Version: 2.0.10
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio, editor-style, grid-layout
@@ -111,6 +111,33 @@ All other Images have been used in images folder, Created by Nayra Themes. Also 
 
 
 == Changelog ==
+
+@version 2.0.10
+* Prefixing Issues Resolved
+
+@version 2.0.9
+* Remove Unnecessary Styles
+
+@version 2.0.8
+* Screenshot Updated
+
+@version 2.0.7
+* Menu Active Style Added
+
+@version 2.0.6
+* Code Optimize In Navigation File
+
+@version 2.0.5
+* Code Optimize In Navigation
+
+@version 2.0.4
+* Remove Unnecessary Style
+
+@version 2.0.3
+* Remove Unnecessary Style
+
+@version 2.0.2
+* Remove Unnecessary Style
 
 @version 2.0.1
 * Code Improvement In Footer Section
