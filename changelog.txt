@@ -1,6 +1,8 @@
 == Changelog ==
+= 1.2.2 =
+*  WP Instagram Widget remove
 
- =  1.2.0 =
+=  1.2.0 =
 *  TGM separate for child theme
 *  keyboard shortcuts css add
 

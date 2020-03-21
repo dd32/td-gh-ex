@@ -46,11 +46,7 @@ function bc_business_consulting_register_required_plugins() {
 			'slug'      => 'contact-form-7',
 			'required'  => false,
 		),
-		array(
-			'name'      => 'WP Instagram Widget',
-			'slug'      => 'wp-instagram-widget',
-			'required'  => false,
-		),
+		
 		array(
 			'name'      => 'WordPress SEO Plugin – Rank Math',
 			'slug'      => 'seo-by-rank-math',
