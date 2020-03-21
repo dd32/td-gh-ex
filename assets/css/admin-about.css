@@ -35,7 +35,7 @@
 }
 
 .border-primary {
-    border: 1px solid gold !important;   
+    border: 1px solid #ac32e4 !important;   
 }
 
 .border-warning {
@@ -105,15 +105,15 @@
 .btn-primary {
     font-weight: bold;
     color: #fff;
-    background-color: gold;
-    border-color: gold;
+    background-color: #ac32e4;
+    border-color: #ac32e4;
     overflow: hidden;
 }
 
 .btn-primary:hover {
-    background: gold;
-    -webkit-box-shadow: 0 12px 18.8px 1.2px rgba(172,50,228,0.24);
-    box-shadow: 0 12px 18.8px 1.2px rgba(172,50,228,0.24);
+    background: #ac32e4;
+    -webkit-box-shadow: 0 12px 18.8px 1.2px rgba(170,50,228,0.24);
+    box-shadow: 0 12px 18.8px 1.2px rgba(170,50,228,0.24);
     color: #fff;
 }
 
@@ -122,7 +122,7 @@
 }
 
 .btn-primary::after {
-    background-color: #f3cd04;
+    background-color: #a02fd4;
     position: absolute;
     top: -20%;
     left: -43px;
@@ -313,14 +313,14 @@ select.form-control:focus::-ms-value {
     -webkit-transition: all .3s .12s;
     transition: all .3s .12s;
     border-radius: 50%;
-    background-color: rgba(255, 215, 0, 0.1);
-    color: #ffd700;
+    background-color: rgba(170,50,228,0.1);
+    color: #ac32e4;
     font-size: 28px;
     line-height: 70px;
     text-align: center;
 }
 .agama-icon-box:hover .agama-icon-box-icon {
-    background-color: gold;
+    background-color: #ac32e4;
     color: #fff;
 }
 [class*=" fe-icon-"], [class^=fe-icon-] {
@@ -350,7 +350,7 @@ select.form-control:focus::-ms-value {
 .agama-icon-box .agama-icon-box-link {
     display: inline-block;
     padding-bottom: .5rem;
-    color: #ffd700;
+    color: #ac32e4;
     font-size: .75rem;
     font-weight: bold;
     letter-spacing: .1em;
@@ -465,7 +465,7 @@ select.form-control:focus::-ms-value {
 }
 
 .agama-pricing-card:not(.agama-card):hover .agama-icon-box-icon {
-    background-color: gold;
+    background-color: #ac32e4;
     color: #fff;
 }
 
@@ -551,7 +551,7 @@ select.form-control:focus::-ms-value {
 .agama-wrap .agama-head h1 {
     font-family: Lato, sans-serif;
     font-weight: 900;
-    color: gold;
+    color: #ac32e4;
     display: table;
     font-size: 2rem;
     margin: 0;

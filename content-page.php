@@ -22,7 +22,7 @@ if( ! defined( 'ABSPATH' ) ) {
 			<?php if ( ! is_page_template( 'page-templates/front-page.php' ) ) : ?>
 			<?php the_post_thumbnail(); ?>
 			<?php endif; ?>
-			<?php if( ! is_front_page() && ! get_theme_mod( 'agama_breadcrumb', true ) ): ?>
+			<?php if( ! is_front_page() && ! get_theme_mod( 'agama_breadcrumb', false ) ): ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<?php endif; ?>
 		</header>

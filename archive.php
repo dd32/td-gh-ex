@@ -19,7 +19,7 @@ get_header(); ?>
     <?php endif; ?>
     
     <!-- Primary -->
-	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
+	<section id="primary" class="site-content <?php echo esc_attr( Agama::bs_class() ); ?>">
 		
 		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 

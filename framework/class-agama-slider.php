@@ -29,12 +29,12 @@ class Agama_Slider {
 	private static function get_options() {
 		global $button, $enabled, $visibility, $particles, $slide;
 		
-		$enabled 	= esc_attr( get_theme_mod( 'agama_slider_enable', true ) );
+		$enabled 	= esc_attr( get_theme_mod( 'agama_slider_enable', false ) );
 		$visibility	= esc_attr( get_theme_mod( 'agama_slider_visibility', 'homepage' ) );
 		$particles	= esc_attr( get_theme_mod( 'agama_slider_particles', true ) );
 		
-		$slide['1']['img']			= esc_url( get_theme_mod( 'agama_slider_image_1', AGAMA_IMG . 'header_img.jpg' ) );
-		$slide['2']['img']			= esc_url( get_theme_mod( 'agama_slider_image_2', AGAMA_IMG . 'header_img.jpg' ) );
+		$slide['1']['img']			= esc_url( get_theme_mod( 'agama_slider_image_1' ) );
+		$slide['2']['img']			= esc_url( get_theme_mod( 'agama_slider_image_2' ) );
 		$slide['1']['title']		= esc_attr( get_theme_mod( 'agama_slider_title_1', 'Welcome to Agama' ) );
 		$slide['2']['title']		= esc_attr( get_theme_mod( 'agama_slider_title_2', 'Welcome to Agama' ) );
 		$slide['1']['animate'] 		= esc_attr( get_theme_mod( 'agama_slider_title_animation_1', 'bounceInLeft' ) );

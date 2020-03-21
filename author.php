@@ -21,7 +21,7 @@ get_header(); ?>
     <?php endif; ?>
 
     <!-- Primary -->
-	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
+	<section id="primary" class="site-content <?php echo esc_attr( Agama::bs_class() ); ?>">
 	
 		
 		
@@ -60,7 +60,7 @@ get_header(); ?>
 					?>
 				</div><!-- .author-avatar -->
 				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'agama' ), get_the_author() ); ?></h2>
+					<h2><?php printf( esc_html__( 'About %s', 'agama' ), get_the_author() ); ?></h2>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->
@@ -105,7 +105,7 @@ get_header(); ?>
 					?>
 				</div><!-- .author-avatar -->
 				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'agama' ), get_the_author() ); ?></h2>
+					<h2><?php printf( esc_html__( 'About %s', 'agama' ), get_the_author() ); ?></h2>
 					<p><?php the_author_meta( 'description' ); ?></p>
 				</div><!-- .author-description	-->
 			</div><!-- .author-info -->

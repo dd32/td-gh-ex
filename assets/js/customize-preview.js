@@ -23,6 +23,18 @@
 		} );
 	} );
     
+    // Header image background overlay.
+    wp.customize( 'agama_header_image_background', function( value ) {
+        value.bind( function( color ) {
+            var header_image = wp.customize.get().header_image;
+            $('#agama-header-image .header-image').css({
+                'background': 'linear-gradient(to right, '
+                    .concat( color.left ).concat( ' 0, ' )
+                    .concat( color.right ).concat( ' 100%), url('+ header_image +')' )
+            });
+        } );
+    } );
+    
     // Layout Style
     wp.customize( 'agama_layout_style', function( value ) {
         value.bind( function( to ) {

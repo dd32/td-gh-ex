@@ -139,12 +139,6 @@ class Engine {
 
         if( ! defined( 'AGAMA_MODULES_URI' ) ) 
               define( 'AGAMA_MODULES_URI', AGAMA_URI . 'framework/admin/modules/' );
-
-        if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) )
-               define( 'ELEMENTOR_PARTNER_ID', 2132 );
-
-        if( ! defined( 'MONSTERINSIGHTS_SHAREASALE_ID' ) )
-              define( 'MONSTERINSIGHTS_SHAREASALE_ID', 69975 );
     }
     
     /**
@@ -162,6 +156,7 @@ class Engine {
         get_template_part( 'framework/agama-actions' );
         get_template_part( 'framework/agama-filters' );
         get_template_part( 'framework/agama-functions' );
+        get_template_part( 'framework/class-agama-inline-style' );
         get_template_part( 'framework/class-agama-plugin-activation' );
         get_template_part( 'framework/class-agama-helper' );
 		get_template_part( 'framework/class-agama-slider' );

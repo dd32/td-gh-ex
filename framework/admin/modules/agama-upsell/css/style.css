@@ -37,15 +37,15 @@
 .btn-primary {
     font-weight: bold;
     color: #fff;
-    background-color: gold;
-    border-color: gold;
+    background-color: #ac32e4;
+    border-color: #ac32e4;
     overflow: hidden;
 }
 
 .btn-primary:hover {
-    background: gold;
-    -webkit-box-shadow: 0 12px 18.8px 1.2px rgba(255,215,0,0.24);
-    box-shadow: 0 12px 18.8px 1.2px rgba(255,215,0,0.24);
+    background: #ac32e4;
+    -webkit-box-shadow: 0 12px 18.8px 1.2px rgba(170,50,228,0.24);
+    box-shadow: 0 12px 18.8px 1.2px rgba(170,50,228,0.24);
     color: #fff;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .btn-primary::after {
-    background-color: #f3cd04;
+    background-color: #a02fd4;
     position: absolute;
     top: -20%;
     left: -43px;
@@ -95,7 +95,7 @@
 	padding: 2px 6px 2px 7px;
 	border-radius: 3px;
 	color: #fff;
-	background: #ffd700;
+	background: #ac32e4;
 	font-size: 12px;
 	font-weight: bold;
 	letter-spacing: 0.1px;

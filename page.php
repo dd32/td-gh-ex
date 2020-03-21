@@ -18,7 +18,7 @@ get_header(); ?>
         <?php get_sidebar(); ?>
     <?php endif; ?>
     
-	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
+	<div id="primary" class="site-content <?php echo esc_attr( Agama::bs_class() ); ?>">
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); $widget = 'page-widget-' . esc_attr( get_the_ID() ); ?>

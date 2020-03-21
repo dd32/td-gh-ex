@@ -20,6 +20,71 @@ function agama_header_distance() {
 }
 add_action( 'agama/after_header_wrapper', 'agama_header_distance' );
 
+if( ! function_exists( 'agama_header_image' ) ) : 
+    /**
+     * Header Image
+     *
+     * Render the Agama theme header image.
+     *
+     * @since 1.2.9
+     * @since 1.5.3 Updated the code.
+     * @return mixed
+     */
+    function agama_header_image() {
+        $particles = esc_attr( get_theme_mod( 'agama_header_image_particles', true ) );
+        if ( get_header_image() ) : ?>
+            <div id="agama-header-image">
+                <?php if( $particles ) : ?>
+                    <div id="particles-js" class="agama-particles"></div>
+                <?php endif; ?>
+                <div class="header-image-wrapper">
+                    <div class="header-image">
+                        <div class="agama-divider divider-bottom">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 458.89" preserveAspectRatio="none">
+                                <path class="divider-fill" style="opacity:0.3" d="M394.87 433.4C488.07 402 572.38 322.71 656.53 241c-73.83 19-145.79 48.57-216.67 77.31-98.09 39.78-199.68 78.93-304.4 86.55 84.78 42.95 173.24 57.58 259.41 28.54zM656.53 241c45.78-11.75 92.27-19.4 139.69-20.19 70.57-1.16 138.4 12.7 203.78 36.37V0c-59.88 17.86-118.67 47.58-174.92 89.39C767.3 132.33 712 187.19 656.53 241zM135.46 404.86C88.86 381.25 43.38 349.08 0 310.9v82.75a378.35 378.35 0 0 0 81.63 12.23 485.13 485.13 0 0 0 53.83-1.02z"></path>
+                                <path class="divider-fill" d="M1000 458.89V257.18c-65.38-23.67-133.21-37.53-203.78-36.37-47.42.79-93.91 8.44-139.69 20.19-84.15 81.71-168.46 161-261.66 192.4-86.17 29-174.63 14.41-259.41-28.54a485.13 485.13 0 0 1-53.83 1A378.35 378.35 0 0 1 0 393.65v65.24z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- #agama-header-image --><?php
+        endif;
+    }
+endif;
+add_action( 'agama/after_header_wrapper', 'agama_header_image', 10 );
+
+if( ! function_exists( 'agama_slider' ) ) : 
+    /**
+     * Slider
+     * 
+     * Initialize the Agama slider.
+     *
+     * @since 1.2.9
+     * @since 1.5.3 Updated the code.
+     * @return mixed
+     */
+    function agama_slider() {
+        Agama_Slider::init();
+    }
+endif;
+add_action( 'agama/after_header_wrapper', 'agama_slider', 20 );
+
+if( ! function_exists( 'agama_breadcrumb' ) ) : 
+    /**
+     * Breadcrumb
+     * 
+     * Initialize the Agama breadcrumb.
+     *
+     * @since 1.2.9
+     * @since 1.5.3 Updated the code.
+     * @return mixed
+     */
+    function agama_breadcrumb() {
+        Agama_Breadcrumb::init();
+    }
+endif;
+add_action( 'agama/after_header_wrapper', 'agama_breadcrumb', 30 );
+
 /**
  * Build Page Action Start
  *
@@ -275,7 +340,7 @@ add_action( 'agama_blog_post_meta', 'agama_render_blog_post_meta', 10 );
  */
 if( ! function_exists( 'agama_render_credits' ) ) {
 	function agama_render_credits() {
-		echo html_entity_decode( get_theme_mod( 'agama_footer_copyright', sprintf( __( '2015 - 2019 &copy; Powered by %s.', 'agama' ), '<a href="http://www.theme-vision.com" target="_blank">Theme-Vision</a>' ) ) );
+		echo html_entity_decode( get_theme_mod( 'agama_footer_copyright', sprintf( __( '2015 - 2020 &copy; Powered by %s.', 'agama' ), '<a href="http://www.theme-vision.com" target="_blank">Theme Vision</a>' ) ) );
 	}
 }
 add_action( 'agama_credits', 'agama_render_credits' );

@@ -371,6 +371,7 @@ var THEMEVISION = THEMEVISION || {};
             THEMEVISION.header.contentDistance();
 			THEMEVISION.header.superfish();
 			THEMEVISION.header.mobilemenu();
+            THEMEVISION.header.mobileMenuFocusLoop();
 			THEMEVISION.header.header_image();
 			
 		},
@@ -492,6 +493,46 @@ var THEMEVISION = THEMEVISION || {};
 				}
 			});
 		},
+        
+        /**
+         * Mobile Menu Focus Loop
+         *
+         * Loop through the mobile menu with keyboard.
+         *
+         * @since 1.5.3
+         */
+        mobileMenuFocusLoop: function() {
+            var _doc = document, elements, selector, lastEl, firstEl, activeEl, tabKey, shiftKey,
+                menu = $('#masthead');
+            
+            if( ! menu ) {
+                return false;
+            }
+
+            _doc.addEventListener( 'keydown', function( event ) {
+                if( $('#agama-mobile-nav').is(':visible') ) {
+                    selector = 'a:not([rel="home"]), button';
+                    elements = $(menu).find( selector ).filter( ':visible' );
+                    elements = Array.prototype.slice.call( elements );
+
+                    lastEl      = elements[ elements.length - 1 ];
+                    firstEl     = elements[0];
+                    activeEl    = _doc.activeElement;
+                    tabKey      = event.keyCode === 9;
+                    shiftKey    = event.shiftKey;
+
+                    if ( ! shiftKey && tabKey && lastEl === activeEl ) {
+                        event.preventDefault();
+                        firstEl.focus();
+                    }
+
+                    if ( shiftKey && tabKey && firstEl === activeEl ) {
+                        event.preventDefault();
+                        lastEl.focus();
+                    }
+                }
+            } );
+        },
 		
 		header_image: function() {
 			if( agama.headerImage && agama.header_image_particles == true ) {

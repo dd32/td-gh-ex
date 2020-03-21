@@ -20,7 +20,7 @@ get_header(); ?>
     <?php get_sidebar(); ?>
 <?php endif; ?>
 
-<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
+<section id="primary" class="site-content <?php echo esc_attr( Agama::bs_class() ); ?>">
 
     <div id="content" role="main"<?php Agama_Helper::get_blog_isotope_class(); ?>>
 

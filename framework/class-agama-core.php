@@ -12,6 +12,8 @@
 
 namespace Agama;
 
+use Agama\Inline_Style;
+
 // Do not allow direct access to the file.
 if( ! defined( 'ABSPATH' ) ) {
     exit; 
@@ -105,6 +107,7 @@ class Core {
          * Agama || Child Theme Stylesheet
          */
         wp_enqueue_style( 'agama-style', get_stylesheet_uri(), $deps, Agama()->version() );
+        wp_add_inline_style( 'agama-style', Inline_Style::init() );
 
         /**
          * Dark Skin Stylesheet
@@ -117,17 +120,14 @@ class Core {
         /**
          * Agama Slider Stylesheet
          */
-        if( get_theme_mod( 'agama_slider_image_1', AGAMA_IMG . 'header_img.jpg' ) || 
-            get_theme_mod( 'agama_slider_image_2', AGAMA_IMG . 'header_img.jpg' ) ) {
-            wp_register_style( 'agama-slider', AGAMA_CSS . 'camera.min.css', [], Agama()->version() );
-            wp_enqueue_style( 'agama-slider' );
+        if( get_theme_mod( 'agama_slider_image_1' ) || get_theme_mod( 'agama_slider_image_2' ) ) {
+            wp_enqueue_style( 'agama-slider', AGAMA_CSS . 'camera.min.css', [], Agama()->version() );
         }
 
         /**
          * Animate Stylesheet
          */
-        wp_register_style( 'agama-animate', AGAMA_CSS . 'animate.min.css', [], '3.5.1' );
-        wp_enqueue_style( 'agama-animate' );
+        wp_enqueue_style( 'agama-animate', AGAMA_CSS . 'animate.min.css', [], '3.5.1' );
 
         /**
          * Particles JS
@@ -153,17 +153,17 @@ class Core {
             'headerImage'					=> esc_attr( get_header_image() ),
             'top_navigation'				=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) ),
             'background_image'				=> esc_attr( get_header_image() ),
-            'primaryColor' 					=> esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ),
+            'primaryColor' 					=> esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ),
             'header_top_margin'				=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0' ) ),
             'slider_particles'				=> esc_attr( get_theme_mod( 'agama_slider_particles', true ) ),
             'slider_enable'					=> esc_attr( get_theme_mod( 'agama_slider_enable', true ) ),
             'slider_height'					=> esc_attr( get_theme_mod( 'agama_slider_height', '0' ) ),
             'slider_time'					=> esc_attr( get_theme_mod( 'agama_slider_time', '7000' ) ),
-            'slider_particles_circle_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_circle_color', '#ffd700' ) ),
-            'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#ffd700' ) ),
+            'slider_particles_circle_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_circle_color', '#ac32e4' ) ),
+            'slider_particles_lines_color'	=> esc_attr( get_theme_mod( 'agama_slider_particles_lines_color', '#ac32e4' ) ),
             'header_image_particles'		=> esc_attr( get_theme_mod( 'agama_header_image_particles', true ) ),
-            'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#ffd700' ) ),
-            'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#ffd700' ) ),
+            'header_img_particles_c_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_circle_color', '#fff' ) ),
+            'header_img_particles_l_color'	=> esc_attr( get_theme_mod( 'agama_header_image_particles_lines_color', '#ac32e4' ) ),
             'blog_layout'                   => esc_attr( get_theme_mod( 'agama_blog_style', 'list' ) ),
             'infinite_scroll'               => esc_attr( get_theme_mod( 'agama_blog_infinite_scroll', false ) ),
             'infinite_trigger'              => esc_attr( get_theme_mod( 'agama_blog_infinite_trigger', 'button' ) )
@@ -215,17 +215,33 @@ class Core {
         register_nav_menu( 'primary', esc_html__( 'Primary Menu', 'agama' ) );
 
         $custom_header_args = [
+            'default-image'          => '%2$s/assets/img/header-image.jpg',
             'default-text-color'     => '515151',
-            'default-image'          => '',
             'height'                 => 960,
             'width'                  => 1920,
             'max-width'              => 2000,
             'flex-height'            => true,
             'flex-width'             => true,
-            'random-default'         => true,
+            'random-default'         => false,
+            'wp-head-callback'       => '',
+            'admin-head-callback'    => '',
+            'admin-preview-callback' => ''
         ];
 
         add_theme_support( 'custom-header', $custom_header_args );
+        
+        /**
+         * Register a selection of default headers to be displayed by the custom header admin UI.
+         *
+         * @link https://developer.wordpress.org/reference/functions/register_default_headers/
+         */
+        register_default_headers( [
+            'city' => [
+                'url'           => '%2$s/assets/img/header-image.jpg',
+                'thumbnail_url' => '%2$s/assets/img/header-image.jpg',
+                'description'   => esc_html__( 'Header Image', 'agama' )
+            ]
+        ] );
 
         /*
          * This theme supports custom background color and image,
@@ -412,7 +428,7 @@ class Core {
         // If current theme version is bigger than "1.2.9.1" apply next updates.
         if( version_compare( '1.2.9.1', $version, '<' ) ) {
             if( ! get_option( '_agama_1291_migrated' ) ) {
-                $nav_color 			= esc_attr( get_theme_mod( 'agama_header_nav_color', '#ffd700' ) );
+                $nav_color 			= esc_attr( get_theme_mod( 'agama_header_nav_color', '#ac32e4' ) );
                 $nav_hover_color	= esc_attr( get_theme_mod( 'agama_header_nav_hover_color', '#000' ) );
                 set_theme_mod( 'agama_nav_top_color', $nav_color );
                 set_theme_mod( 'agama_nav_top_hover_color', $nav_hover_color );

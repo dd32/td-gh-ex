@@ -19,7 +19,7 @@ get_header(); ?>
     <?php endif; ?>
 
     <!-- Primary -->
-	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
+	<section id="primary" class="site-content <?php echo esc_attr( Agama::bs_class() ); ?>">
 		
 		<?php if( have_posts() ): ?>
 		<header class="page-header">

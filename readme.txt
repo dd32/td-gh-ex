@@ -3,6 +3,14 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.5.3 - 21 March 2020 =
+* Added skip to content link.
+* Added header image background overlay feature.
+* Updated theme translation files.
+* Implemented the keyboard navigation feature.
+* Improved some parts of the code.
+* Minor design updates.
+
 = 1.5.2 - 12 March 2020 =
 * Updated the Kirki framework to the latest version.
 
@@ -458,7 +466,7 @@ Agama is distributed under the terms of the GNU GPL2
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * Pexels.com - https://www.pexels.com/photo/silver-imac-near-white-ceramic-kettle-205316/ - CC0 1.0 License
+ * Photo by Benjamin Voros on Unsplash - https://unsplash.com/photos/phIFdC6lA4E - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

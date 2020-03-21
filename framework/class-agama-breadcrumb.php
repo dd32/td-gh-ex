@@ -182,7 +182,7 @@ class Agama_Breadcrumb {
 	 * @since 1.2.9
 	 */
 	private static function html_markup( $heading = false, $title = false ) {
-		$enabled 	 = esc_attr( get_theme_mod( 'agama_breadcrumb', true ) );
+		$enabled 	 = esc_attr( get_theme_mod( 'agama_breadcrumb', false ) );
 		$on_homepage = esc_attr( get_theme_mod( 'agama_breadcrumb_homepage', true ) );
 		$style 		 = get_theme_mod( 'agama_breadcrumb_style', 'mini' ) == 'mini' ? ' class="'. esc_attr( 'page-title-mini' ) .'"' : '';
 		

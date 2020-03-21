@@ -92,7 +92,7 @@ if( ! class_exists( 'Agama' ) ) {
 			} else {
 				$class = 'tv-col-md-12';
 			}
-			return esc_attr( $class );
+			return $class;
 		}
 		
 		/**

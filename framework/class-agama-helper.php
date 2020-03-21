@@ -41,8 +41,7 @@ class Agama_Helper {
 	 * @since 1.2.9.2
 	 */
 	public static function get_mobile_menu_toggle_icon() {
-		echo '<!-- Mobile Toggle -->';
-		echo '<button class="mobile-menu-toggle toggle--elastic" type="button" aria-label="'. __( 'Menu', 'agama' ) .'" aria-controls="navigation" aria-expanded="true/false">';
+		echo '<button class="mobile-menu-toggle toggle--elastic" type="button" aria-label="'. esc_attr__( 'Menu', 'agama' ) .'" aria-controls="navigation" aria-expanded="false">';
 			echo '<span class="mobile-menu-toggle-box">';
 				echo '<span class="mobile-menu-toggle-inner"></span>';
 			echo '</span>';
@@ -51,44 +50,7 @@ class Agama_Helper {
 					echo esc_html( get_theme_mod( 'agama_nav_mobile_icon_title', false ) );
 				echo '</span>';
 			}
-		echo '</button><!-- Mobile Toggle End -->';
-	}
-	
-	/**
-	 * Render Agama Header Image
-	 *
-	 * @since 1.2.9
-	 */
-	public static function get_header_image() {
-		$particles = esc_attr( get_theme_mod( 'agama_header_image_particles', true ) );
-		if ( get_header_image() ) {
-			echo '<div id="agama-header-image">';
-				if( $particles ) {
-					echo '<div id="particles-js" class="agama-particles"></div>';
-				}
-				echo '<a href="'. esc_url( home_url( '/' ) ) .'">';
-					echo '<img src="'. esc_url( get_header_image() ) .'" class="header-image" width="'. esc_attr( get_custom_header()->width ) .'" height="'. esc_attr( get_custom_header()->height ) .'" alt="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" />';
-				echo '</a>';
-			echo '</div>';
-		}
-	}
-	
-	/**
-	 * Render Agama Slider
-	 *
-	 * @since 1.2.9
-	 */
-	public static function get_slider() {
-		Agama_Slider::init();
-	}
-	
-	/**
-	 * Render Agama Breadcrumb
-	 *
-	 * @since 1.2.9
-	 */
-	public static function get_breadcrumb() {
-		Agama_Breadcrumb::init();
+		echo '</button><!-- .mobile-menu-toggle -->';
 	}
 	
 	/**

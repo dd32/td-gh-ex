@@ -45,8 +45,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
  */
 function agama_customize_register( $wp_customize ) {
     
-    $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+    $wp_customize->get_setting( 'blogname' )->transport           = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport    = 'postMessage';
+    $wp_customize->get_setting( 'header_image' )->transport       = 'postMessage';
+    $wp_customize->get_setting( 'header_image_data'  )->transport = 'postMessage';
+    $wp_customize->selective_refresh->add_partial(
+        'header_image',
+        [
+            'selector'        => '.agama-header-image-overlay',
+            'render_callback' => [ 'Agama_Partial_Refresh', 'header_image' ]
+        ]
+    );
     
 }
 add_action( 'customize_register', 'agama_customize_register' );
@@ -99,7 +108,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_logo_color',
 		'type'			=> 'color',
         'transport'		=> 'auto',
-        'default'		=> '#ffd700',
+        'default'		=> '#fff',
 		'output'		=> [
 			[
 				'element'	=> '#masthead h1 a',
@@ -114,7 +123,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_logo_hover_color',
 		'type'			=> 'color',
         'transport'		=> 'auto',
-        'default'		=> '#000',
+        'default'		=> '#444',
 		'output'		=> [
 			[
 				'element'	=> '#masthead h1 a:hover',
@@ -137,7 +146,8 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'type'			    => 'typography',
         'transport'         => 'auto',
 		'default'			=> [
-			'font-family' 	=> 'Crete Round',
+			'font-family' 	=> 'Montserrat',
+            'variant'       => '900',
 			'font-size'		=> '35px'
 		],
         'output'			=> [
@@ -154,7 +164,8 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'type'			    => 'typography',
         'transport'         => 'auto',
         'default'		    => [
-            'font-family'   => 'Crete Round',
+            'font-family'   => 'Montserrat',
+            'variant'       => '900',
 			'font-size'	    => '28px'
 		],
 		'output'		    => [
@@ -272,7 +283,7 @@ add_action( 'customize_register', 'agama_customize_register' );
         'transport'     => 'auto',
 		'output'		=> [
 			[
-				'element'	=> 'a:hover, .mobile-menu-toggle-label, .vision-search-submit:hover, .entry-title a:hover, .entry-meta a:hover, .entry-content a:hover, .comment-content a:hover, .single-line-meta a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, .comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-meta a:hover, .entry-header header a:hover, .tagcloud a:hover, footer[role="contentinfo"] a:hover',
+				'element'	=> 'a:hover, .mobile-menu-toggle-label, .vision-search-submit:hover, .entry-title a:hover, .entry-meta a:not(.button):hover, .entry-content a:hover, .comment-content a:hover, .single-line-meta a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, .comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-header header a:hover, .tagcloud a:hover, footer[role="contentinfo"] a:hover',
 				'property'	=> 'color'
 			],
 			[
@@ -289,7 +300,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 			],
 		],
 		'transport'		=> 'auto',
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	] );
     Kirki::add_field( 'agama_options', [
         'type'        => 'custom',
@@ -784,38 +795,83 @@ add_action( 'customize_register', 'agama_customize_register' );
 	##########################################
 	# HEADER IMAGE SECTION
 	##########################################
-	Kirki::add_section( 'header_image', array(
+	Kirki::add_section( 'header_image', [
 		'title'			=> __( 'Header Image', 'agama' ),
 		'panel'			=> 'agama_header_panel',
         'capability'    => 'edit_theme_options'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Particles', 'agama' ),
-		'tooltip'	    => __( 'Enable particles ?', 'agama' ),
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			=> __( 'Enable particles?', 'agama' ),
 		'settings'		=> 'agama_header_image_particles',
 		'section'		=> 'header_image',
-		'type'			=> 'switch',
+		'type'			=> 'checkbox',
 		'default'		=> true,
 		'priority'		=> 1
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Particle Circles Color', 'agama' ),
-		'tooltip'	    => __( 'Set particles custom circles color ?', 'agama' ),
-		'settings'		=> 'agama_header_image_particles_circle_color',
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			    => __( 'Particle Circles Color', 'agama' ),
+		'tooltip'	        => __( 'Set particles custom circles color ?', 'agama' ),
+		'settings'		    => 'agama_header_image_particles_circle_color',
+		'section'		    => 'header_image',
+		'type'			    => 'color',
+		'default'		    => '#fff',
+		'priority'		    => 1,
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_image_particles',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
+	] );
+	Kirki::add_field( 'agama_options', [
+		'label'			    => __( 'Particles Lines Color', 'agama' ),
+		'tooltip'	        => __( 'Set particles custom lines color', 'agama' ),
+		'settings'		    => 'agama_header_image_particles_lines_color',
+		'section'		    => 'header_image',
+		'type'			    => 'color',
+		'default'		    => '#ac32e4',
+		'priority'		    => 1,
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_image_particles',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			=> __( 'Enable background overlay?', 'agama' ),
+		'settings'		=> 'agama_header_image_overlay',
 		'section'		=> 'header_image',
-		'type'			=> 'color',
-		'default'		=> '#ffd700',
+		'type'			=> 'checkbox',
+		'default'		=> true,
 		'priority'		=> 1
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Particles Lines Color', 'agama' ),
-		'tooltip'	    => __( 'Set particles custom lines color', 'agama' ),
-		'settings'		=> 'agama_header_image_particles_lines_color',
-		'section'		=> 'header_image',
-		'type'			=> 'color',
-		'default'		=> '#ffd700',
-		'priority'		=> 1
-	) );
+	] );
+    Kirki::add_field( 'agama_options', [
+		'label'			    => __( 'Background', 'agama' ),
+		'tooltip'	        => __( 'Select header image background overlay colors.', 'agama' ),
+		'settings'		    => 'agama_header_image_background',
+		'section'		    => 'header_image',
+		'type'			    => 'multicolor',
+        'transport'         => 'postMessage',
+        'choices'           => [
+            'left'          => __( 'Left', 'agama' ),
+            'right'         => __( 'Right', 'agama' )
+        ],
+		'default'		    => [
+            'left'          => 'rgba(160,47,212,0.8)',
+            'right'         => 'rgba(69,104,220,0.8)'
+        ],
+		'priority'		    => 1,
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_image_overlay',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
+	] );
     ##########################################################
     # HEADER STYLING SECTION
     ##########################################################
@@ -1014,7 +1070,7 @@ add_action( 'customize_register', 'agama_customize_register' );
             'variant'           => '700',
             'font-size'         => '14px',
             'letter-spacing'    => '0',
-            'color'             => '#757575',
+            'color'             => '#dbc4ff',
             'text-transform'    => 'uppercase'
         ]
     ] );
@@ -1043,7 +1099,7 @@ add_action( 'customize_register', 'agama_customize_register' );
                 'property'  => 'color'
             ]
 		],
-		'default'		    => '#333'
+		'default'		    => '#ae7dfb'
 	] );
 	######################################################
 	# NAVIGATION MOBILE SECTION
@@ -1174,7 +1230,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'section'		=> 'agama_slider_general_section',
 		'settings'		=> 'agama_slider_enable',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Overlay', 'agama' ),
@@ -1186,7 +1242,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'				=> __( 'Overlay BG Color', 'agama' ),
-		'tooltip'		=> __( 'Set custom overlay background color.', 'agama' ),
+		'tooltip'		    => __( 'Set custom overlay background color.', 'agama' ),
 		'section'			=> 'agama_slider_general_section',
 		'settings'			=> 'agama_slider_overlay_bg_color',
 		'type'				=> 'color',
@@ -1268,7 +1324,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_slider_particles_circle_color',
 		'section'		=> 'agama_slider_particles_section',
 		'type'			=> 'color',
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Particles Lines Color', 'agama' ),
@@ -1276,7 +1332,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_slider_particles_lines_color',
 		'section'		=> 'agama_slider_particles_section',
 		'type'			=> 'color',
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	###################################################
 	# SLIDE 1 SECTION
@@ -1290,8 +1346,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'label'			=> __( 'Image', 'agama' ),
 		'settings'		=> 'agama_slider_image_1',
 		'section'		=> 'agama_slide_1_section',
-		'type'			=> 'image',
-		'default'		=> AGAMA_IMG . 'header_img.jpg'
+		'type'			=> 'image'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			    => __( 'Title', 'agama' ),
@@ -1388,7 +1443,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'background-color'
 			)
 		),
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	###################################################
 	# SLIDE 2 SECTION
@@ -1402,8 +1457,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'label'			=> __( 'Image', 'agama' ),
 		'settings'		=> 'agama_slider_image_2',
 		'section'		=> 'agama_slide_2_section',
-		'type'			=> 'image',
-		'default'		=> AGAMA_IMG . 'header_img.jpg'
+		'type'			=> 'image'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Title', 'agama' ),
@@ -1500,7 +1554,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'background-color'
 			)
 		),
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 ###################################################################################
 # BREADCRUMB
@@ -1516,7 +1570,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'section'		=> 'agama_breadcrumb_section',
 		'settings'		=> 'agama_breadcrumb',
 		'type'			=> 'switch',
-		'default'		=> true
+		'default'		=> false
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Breadcrumb on Home Page', 'agama' ),
@@ -1715,7 +1769,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			    => __( 'Image', 'agama' ),
@@ -1834,7 +1888,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Image', 'agama' ),
@@ -1953,7 +2007,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Image', 'agama' ),
@@ -2072,7 +2126,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#ffd700'
+		'default'		=> '#ac32e4'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Image', 'agama' ),
@@ -2695,10 +2749,10 @@ function agama_customize_css() { ?>
 		top: <?php echo esc_attr( get_theme_mod( 'agama_slider_content_top_2', '40' ) ); ?>%;
 	}
 	#agama_slider .slide-content.slide-1 a.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_1', '#ffd700' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_1', '#ac32e4' ) ); ?> !important;
 	}
 	#agama_slider .slide-content.slide-2 a.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#ffd700' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#ac32e4' ) ); ?> !important;
 	}
 	<?php endif; ?>
         
@@ -2716,36 +2770,36 @@ function agama_customize_css() { ?>
 	<?php endif; ?>
 	
 	.sm-form-control:focus {
-		border: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?> !important;
+		border: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?> !important;
 	}
 	
 	.entry-content .more-link {
-		border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
-		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	.comment-content .comment-author cite {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
-		border: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
+		border: 1px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	#respond #submit {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	<?php if( is_rtl() ): ?>
 	blockquote {
-		border-right: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		border-right: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	<?php else: ?>
 	blockquote {
-		border-left: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		border-left: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	<?php endif; ?>
 	
-	#page-title a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>; }
+	#page-title a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>; }
 	
-	.breadcrumb a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>; }
+	.breadcrumb a:hover { color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>; }
 	
 	<?php if( get_theme_mod('agama_blog_infinite_scroll', false) && get_theme_mod('agama_blog_layout', 'list') == 'grid' ): ?>
 	#infscr-loading {
@@ -2758,27 +2812,27 @@ function agama_customize_css() { ?>
 	button,
 	.button,
 	.entry-date .date-box {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	.button-3d:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?> !important;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?> !important;
 	}
 	
 	.entry-date .format-box i {
-		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	.vision_tabs #tabs li.active a {
-		border-top: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		border-top: 3px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	#toTop:hover {
-		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	
 	.footer-widgets .widget-title:after {
-		background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ffd700' ) ); ?>;
+		background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#ac32e4' ) ); ?>;
 	}
 	</style>
 	<?php
@@ -2889,8 +2943,8 @@ function customize_styles_agama_support( $input ) { ?>
 		.menu-item-bar .item-delete:focus:before, 
 		.wp-customizer .menu-item .submitbox .submitdelete:focus, 
 		.wp-customizer button:focus .toggle-indicator:after {
-			-webkit-box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#ffd700', 0.8 ); ?>;
-			box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#ffd700', 0.8 ); ?>;
+			-webkit-box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#ac32e4', 0.8 ); ?>;
+			box-shadow: 0 0 0 1px #0085ba, 0 0 2px 1px <?php echo Agama_Helper::hex2rgba( '#ac32e4', 0.8 ); ?>;
 		}
 		#customize-controls .control-section .accordion-section-title:focus, 
 		#customize-controls .control-section .accordion-section-title:hover, 
@@ -2922,7 +2976,7 @@ function customize_styles_agama_support( $input ) { ?>
 		/* Override Kirki Default Colors */
 		.kirki-reset-section:hover, 
 		.kirki-reset-section:active {
-			background: #ffd700 !important;
+			background: #ac32e4 !important;
 		}
 		/* Theme Info */
 		ul.theme-info li {

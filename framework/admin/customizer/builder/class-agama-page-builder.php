@@ -71,7 +71,7 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
             
             wp_register_script( 
                 'agama-customize-preview', 
-                AGAMA_JS . 'min/customize-preview.min.js', 
+                AGAMA_JS . 'customize-preview.js', 
                 [ 'jquery', 'customize-preview' ], 
                 Agama()->version(), 
                 true 

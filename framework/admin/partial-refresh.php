@@ -93,6 +93,26 @@ class Agama_Partial_Refresh {
     }
     
     /**
+     * Header Image
+     *
+     * The Agama theme header image partial.
+     *
+     * @since 1.5.3
+     * @access public
+     * @return mixed
+     */
+    public function header_image() { ?>
+        <?php if( get_theme_mod( 'agama_header_image_overlay', true ) ) : ?>
+        <div class="header-image" 
+             style="background-image: linear-gradient(to right, rgba(69,104,220,0.8), rgba(176,106,179,0.8)), url(<?php echo esc_url( get_header_image() ); ?>);"></div>
+        <?php else : ?>
+        <div class="header-image" 
+             style="background-image: url(<?php echo esc_url( get_header_image() ); ?>);"></div>
+        <?php endif; ?>
+    <?php
+    }
+    
+    /**
      * Slider 1 Title
      *
      * @since 1.3.1

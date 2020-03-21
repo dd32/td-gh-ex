@@ -4,9 +4,9 @@
  *
  * Used to display archive-type pages for posts in a tag.
  *
- * @package Theme-Vision
+ * @package Theme Vision
  * @subpackage Agama
- * @since Agama 1.0
+ * @since 1.0.0
  */
 
 // Do not allow direct access to the file.

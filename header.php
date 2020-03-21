@@ -29,41 +29,39 @@ if( ! defined( 'ABSPATH' ) ) {
 
 <?php wp_body_open(); ?>
 
-<!-- Main Wrapper Start -->
 <div id="agama-main-wrapper" class="<?php Agama::main_wrapper_class(); ?>">
+    
+    <a class="screen-reader-text skip-link" href="#page">
+        <?php esc_html_e( 'Skip to content', 'agama' ); ?>
+    </a><!-- .screen-reader-text -->
     
     <?php
     /**
-     * Before Header Wrapper
+     * Hook: agama/before_header_wrapper
      *
-     * Attach custom functions before header wrapper.
+     * @hooked none
      *
      * @since 1.4.4
      */
     do_action( 'agama/before_header_wrapper' ); ?>
 	
-	<!-- Header Start -->
 	<header id="masthead" class="site-header <?php Agama::header_class(); ?>" itemscope itemtype="http://schema.org/WPHeader" role="banner">
 		
 		<?php Agama_Helper::get_header(); ?>
 		
-	</header><!-- Header End -->
+	</header><!-- #masthead -->
     
     <?php
     /**
-     * After Header Wrapper
+     * Hook: agama/after_header_wrapper
      *
-     * Attach custom functions after header wrapper.
+     * @hooked agama_header_image - 10
+     * @hooked agama_slider - 20
+     * @hooked agama_breadcrumb - 30
      *
      * @since 1.4.4
      */
     do_action( 'agama/after_header_wrapper' ); ?>
-    
-    <?php Agama_Helper::get_header_image(); ?>
-	
-	<?php Agama_Helper::get_slider(); ?>
-	
-	<?php Agama_Helper::get_breadcrumb(); ?>
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper"> 
