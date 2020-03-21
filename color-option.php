@@ -145,6 +145,7 @@
 		$custom_css .='} }';
 	}
 
+	// topbar
 	$show_header = get_theme_mod( 'aagaz_startup_show_hide_topbar', true);
 	if($show_header == true){
 		$custom_css .='.logo{';
@@ -198,3 +199,37 @@
 			$custom_css .='text-align:right;';
 		$custom_css .='}';
 	}
+
+	/*--------- Preloader Color Option -------*/
+	$aagaz_startup_loader_color_setting = get_theme_mod('aagaz_startup_loader_color_setting');
+
+	if($aagaz_startup_loader_color_setting != false){
+		$custom_css .=' .circle .inner{';
+			$custom_css .='border-color: '.esc_html($aagaz_startup_loader_color_setting).';';
+		$custom_css .='} ';
+	}
+
+	$aagaz_startup_loader_background_color = get_theme_mod('aagaz_startup_loader_background_color');
+
+	if($aagaz_startup_loader_background_color != false){
+		$custom_css .=' #pre-loader{';
+			$custom_css .='background-color: '.esc_html($aagaz_startup_loader_background_color).';';
+		$custom_css .='} ';
+	}
+
+	$theme_lay = get_theme_mod( 'aagaz_startup_preloader_types','Default');
+    if($theme_lay == 'Default'){
+		$custom_css .='{';
+			$custom_css .='';
+		$custom_css .='}';
+	}elseif($theme_lay == 'Circle'){
+		$custom_css .='.circle .inner{';
+			$custom_css .='width:unset;';
+		$custom_css .='}';
+	}elseif($theme_lay == 'Two Circle'){
+		$custom_css .='.circle .inner{';
+			$custom_css .='width:80%;
+    border-right: 5px;';
+		$custom_css .='}';
+	}
+

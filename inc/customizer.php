@@ -450,6 +450,61 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'panel' => 'aagaz_startup_panel_id'
 	) );
 
+	//Sticky Header
+	$wp_customize->add_setting( 'aagaz_startup_fixed_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('aagaz_startup_fixed_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Enable / Disable Fixed Header','aagaz-startup' ),
+        'section' => 'aagaz_startup_width_layout'
+    ));
+
+	$wp_customize->add_setting('aagaz_startup_loader_setting',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_loader_setting',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Preloader','aagaz-startup'),
+       'section' => 'aagaz_startup_width_layout'
+    ));
+
+    $wp_customize->add_setting('aagaz_startup_preloader_types',array(
+        'default' => __('Default','aagaz-startup'),
+        'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_preloader_types',array(
+        'type' => 'radio',
+        'label' => __('Preloader Option','aagaz-startup'),
+        'section' => 'aagaz_startup_width_layout',
+        'choices' => array(
+            'Default' => __('Default','aagaz-startup'),
+            'Circle' => __('Circle','aagaz-startup'),
+            'Two Circle' => __('Two Circle','aagaz-startup')
+        ),
+	) );
+
+	$wp_customize->add_setting( 'aagaz_startup_loader_color_setting', array(
+	    'default' => '#fff',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aagaz_startup_loader_color_setting', array(
+  		'label' => __('Preloader Color Option', 'aagaz-startup'),
+	    'section' => 'aagaz_startup_width_layout',
+	    'settings' => 'aagaz_startup_loader_color_setting',
+  	)));
+
+  	$wp_customize->add_setting( 'aagaz_startup_loader_background_color', array(
+	    'default' => '#000',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aagaz_startup_loader_background_color', array(
+  		'label' => __('Preloader Background Color Option', 'aagaz-startup'),
+	    'section' => 'aagaz_startup_width_layout',
+	    'settings' => 'aagaz_startup_loader_background_color',
+  	)));
+
 	$wp_customize->add_setting('aagaz_startup_theme_options',array(
     'default' => __('Default','aagaz-startup'),
         'sanitize_callback' => 'aagaz_startup_sanitize_choices'
@@ -930,6 +985,9 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	
 }
 add_action( 'customize_register', 'aagaz_startup_customize_register' );
+
+// logo resize
+load_template( trailingslashit( get_template_directory() ) . '/inc/logo/logo-resizer.php' );
 
 /**
  * Render the site title for the selective refresh partial.

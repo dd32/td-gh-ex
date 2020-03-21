@@ -18,3 +18,10 @@ input#_customize-input-aagaz_startup_slider_excerpt_number,
 input#_customize-input-aagaz_startup_slider_opacity_color {
     width: 100%;
 }
+input#_customize-input-logo_size{
+    width: 100%;
+}
+li#customize-control-logo_size {
+    background: #fff;
+    padding: 4px;
+}

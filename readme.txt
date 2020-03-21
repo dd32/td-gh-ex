@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.2
+Stable tag: 0.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,13 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 
 = 0.4.2 =
   * Added different option for blog post in customizer.
+
+= 0.4.3 =
+  * Added logo resizer setting in customizer.
+  * Added enable / disable option for fixed header in customizer.
+  * Added enable / disable option for preloader in customizer.
+  * Added preloader Color and Background Color Option in customizer.
+  * Added different types of preloader.
   
 == Resources ==
 

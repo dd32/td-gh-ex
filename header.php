@@ -13,6 +13,35 @@
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+	<?php if(get_theme_mod('aagaz_startup_loader_setting',true)){ ?>
+	    <div id="pre-loader">
+	      	<div class='demo'>
+		        <?php $theme_lay = get_theme_mod( 'aagaz_startup_preloader_types','Default');
+		        if($theme_lay == 'Default'){ ?>
+		          <div class='circle'>
+		            <div class='inner'></div>
+		          </div>
+		          <div class='circle'>
+		            <div class='inner'></div>
+		          </div>
+		          <div class='circle'>
+		            <div class='inner'></div>
+		          </div>
+		        <?php }elseif($theme_lay == 'Circle'){ ?>
+		          <div class='circle'>
+		            <div class='inner'></div>
+		          </div>
+		        <?php }elseif($theme_lay == 'Two Circle'){ ?>
+		          <div class='circle'>
+		            <div class='inner'></div>
+		          </div>
+		          <div class='circle'>
+		            <div class='inner'></div>
+		          </div>
+		        <?php } ?>
+	      	</div>
+		</div>
+	 <?php }?>
 	<a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'aagaz-startup' ); ?></a>
 	<div id="page" class="site">
 		<?php if( get_theme_mod('aagaz_startup_show_hide_topbar',true) != ''){ ?>
