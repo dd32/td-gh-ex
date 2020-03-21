@@ -3,8 +3,8 @@ Theme Name: Axis Magazine
 Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: https://zidithemes.tumblr.com/author
-Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.09
+Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
+Version: 0.0.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
@@ -343,7 +343,7 @@ ul {
 .theme-nav .logo  li{}        
 .theme-nav .logo  li a{
     box-sizing: border-box;
-    padding: 0px 20px;
+    padding: 0px 20px 0px 0px;
     margin: 0px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -2642,6 +2642,7 @@ ul {
 /* END INDEX THREE STYLE THREE COLUMNS NO SIDEBAR  */
 
 
+
 /* BEGIN INDEX SIX STYLE   */
 
     
@@ -3074,6 +3075,10 @@ ul {
     color: #2479d1 !important;
 }
 
+.axis-magazine-single .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a:hover {
+    text-decoration: underline;
+}
+
 .axis-magazine-single .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p img{
     display: block;
     max-height: 610px;
@@ -3119,6 +3124,10 @@ ul {
 .axis-magazine-single-full-width-title .items-guten .items-inner .img-box .details-box .details-box-inner p a{
    color: #2479d1 !important; 
 }
+
+.axis-magazine-single-full-width-title .items-guten .items-inner .img-box .details-box .details-box-inner p a:hover {
+   text-decoration: underline; 
+}
 /* END SINGLE FULL WIDTH */
 
 /* BEGIN SINGLE NO SIDEBAR */
@@ -3155,6 +3164,10 @@ ul {
 .axis-magazine-single-no-sidebar .items .items-inner .img-box .details-box .details-box-inner p a{
     color: #2479d1 !important;
 }
+
+.axis-magazine-single-no-sidebar .items .items-inner .img-box .details-box .details-box-inner p a:hover {
+    text-decoration: underline;
+}
 /* END SINGLE NO SIDEBAR */
 
 /* BEGIN SINGLE PAGE BUILDER NO TITLE */
@@ -3189,6 +3202,10 @@ ul {
 }
 .axis-magazine-single-page-builder-no-title .items-guten .items-inner .img-box .details-box .details-box-inner p a{
     color: #2479d1 !important;
+}
+
+.axis-magazine-single-page-builder-no-title .items-guten .items-inner .img-box .details-box .details-box-inner p a:hover{
+    text-decoration: underline;
 }
 /* END SINGLE PAGE BUILDER NO TITLE */
 
@@ -3263,6 +3280,10 @@ ul {
 
 .axis-magazine-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a{
     color: #2479d1 !important;
+}
+
+.axis-magazine-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a:hover{
+    text-decoration: underline;
 }
 
 .axis-magazine-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p img{
@@ -3348,6 +3369,10 @@ ul {
     color: #2479d1 !important;
 }
 
+.axis-magazine-page-no-sidebar-no-title .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a:hover{
+    text-decoration: underline;
+}
+
 .axis-magazine-page-no-sidebar-no-title .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p img{
     display: block;
     margin: 0px auto 15px;    
@@ -3414,6 +3439,10 @@ ul {
     color: #2479d1 !important;
 }
 
+.axis-magazine-page-no-sidebar .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a:hover {
+    text-decoration: underline;
+}
+
 .axis-magazine-page-no-sidebar .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p{
     font-size: 17px;
     font-weight: 400;
@@ -3451,7 +3480,7 @@ ul {
 .axis-magazine-page-builder .items .items-inner .img-box .details-box{}
 
 .axis-magazine-page-builder .items .items-inner .img-box .details-box a {
-    color: #2479d1 !important;
+    
 }
 
 .axis-magazine-page-builder .items .items-inner .img-box .details-box .details-box-inner{}
@@ -3464,6 +3493,14 @@ ul {
     padding-bottom: 20px;
     margin: 0px auto;
     width: 90%;
+}
+
+.axis-magazine-page-builder .items .items-inner .img-box .details-box .details-box-inner p a{
+    color: #2479d1 !important;
+}
+
+.axis-magazine-page-builder .items .items-inner .img-box .details-box .details-box-inner p a:hover {
+    text-decoration: underline;
 }
 /* END PAGE BUILDER STYLE */
 
@@ -3494,6 +3531,15 @@ ul {
     padding-bottom: 20px;
     margin: 0px auto;
     width: 90%;
+}
+
+
+.axis-magazine-page-builder-no-title .items .items-inner .img-box .details-box .details-box-inner p a{
+    color: #2479d1 !important;
+}
+
+.axis-magazine-page-builder-no-title .items .items-inner .img-box .details-box .details-box-inner p a:hover {
+    text-decoration: underline;
 }
 /* END PAGE BUILDER NO TITLE STYLE */
 
@@ -4911,6 +4957,14 @@ ul {
 .axis-magazine-woocommerce-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner{}
 
 .axis-magazine-woocommerce-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p{}
+
+.axis-magazine-woocommerce-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a {
+    color: #2479d1 !important;
+}
+
+.axis-magazine-woocommerce-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner p a:hover {
+    text-decoration: underline;
+}
 
 .axis-magazine-woocommerce-page .inner .blog-2-col-inner .items .items-inner .img-box .details-box .details-box-inner .woocommerce{}
 

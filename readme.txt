@@ -4,13 +4,13 @@ Tags: one-column, two-columns, right-sidebar footer-widgets, Blog, News, e-comme
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.2.4
-Stable tag: 0.0.09
+Stable tag: 0.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over four different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
+Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
 
 == Copyright ==
 
@@ -18,6 +18,11 @@ Axis Magazine WordPress Theme, Copyright 2020 Zidithemes
 Axis Magazine is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 0.0.10 =
+* Released: March 21, 2020
+
+added hover to links.
 
 = 0.0.09 =
 * Released: March 15, 2020
@@ -75,3 +80,7 @@ Initial release
 * https://stocksnap.io/photo/WJPTGEFNOG © 2020 Burst and Stocksnap.io, CC0
 * https://stocksnap.io/photo/HR6N4GPCRQ © 2020 Burst and Stocksnap.io, CC0
 * https://stocksnap.io/photo/UXVE8KR1TN © 2020 Humphrey Muleba and Stocksnap.io, CC0
+* https://stocksnap.io/photo/B3LJ2P1AKX © 2020 Mike Moloney and Stocksnap.io, CC0
+* https://stocksnap.io/photo/15MSMABWGU © 2020 Oriana Ortiz and Stocksnap.io, CC0
+* https://stocksnap.io/photo/7RKWHUXLMQ © 2020 Christian Mackie and Stocksnap.io, CC0
+* https://stocksnap.io/photo/ZT9SCKS111 © 2020 Travel Photographer and Stocksnap.io, CC0
