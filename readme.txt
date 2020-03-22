@@ -2,8 +2,8 @@
 Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, rtl-language-support, blog, news
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.9.9
+Tested up to: 5.4
+Stable tag: 2.0.0
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -243,4 +243,8 @@ Semplicemente includes support for Infinite Scroll in Jetpack.
 
 = Version 1.9.9 =
 * Added Twitch social icon
+* Minor bug fixes
+
+= Version 2.0.0 =
+* Improved compatibility with WordPress 5.3
 * Minor bug fixes

@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
 Description: Simple and Clean WordPress Theme created by CrestaProject.com. Compatible with Gutenberg. Live demo https://crestaproject.com/demo/semplicemente/
-Version: 1.9.9
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -1265,8 +1265,6 @@ object {
 	}
 	#secondary aside {
 		-webkit-column-break-inside: avoid;
-		-moz-column-break-inside: avoid;
-		column-break-inside: avoid;
 	}
 	.site-branding {
 		text-align: center !important;
@@ -1290,8 +1288,6 @@ object {
 	}
 	#secondary aside {
 		-webkit-column-break-inside: initial;
-		-moz-column-break-inside: initial;
-		column-break-inside: initial;
 	}
 	h1, header.entry-header h2.entry-title {font-size: 22px;line-height:2.8rem;}
 	h2 {font-size: 20px;line-height:2rem;}
