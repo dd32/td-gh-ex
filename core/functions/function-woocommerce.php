@@ -20,7 +20,6 @@ if ( ! function_exists( 'avventura_lite_woocommerce_init' ) ) {
 		if ( avventura_lite_setting ('avventura_lite_woocommerce_related_products') == "off" )
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 			
-		
 		if ( avventura_lite_setting ('avventura_lite_woocommerce_upsell_products') == "off" )
 			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
 	
@@ -47,7 +46,7 @@ if ( ! function_exists( 'avventura_lite_header_cart' ) ) {
             <div class="header-cart">
             
                 <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','avventura-lite' ); ?>">
-                    <i class="fa <?php echo avventura_lite_setting('avventura_lite_woocommerce_header_icon', 'fa-shopping-basket');?>"></i>
+                    <i class="fa <?php echo esc_attr(avventura_lite_setting('avventura_lite_woocommerce_header_icon', 'fa-shopping-basket'));?>"></i>
 					<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'avventura-lite' ), WC()->cart->cart_contents_count ); ?></span>  
                 </a>
                             
@@ -75,7 +74,7 @@ if ( ! function_exists( 'avventura_lite_cart_link_fragment' ) ) {
 
 ?>
 		<a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','avventura-lite' ); ?>">
-			<i class="fa <?php echo avventura_lite_setting('avventura_lite_woocommerce_header_icon', 'fa-shopping-basket');?>"></i>
+			<i class="fa <?php echo esc_attr(avventura_lite_setting('avventura_lite_woocommerce_header_icon', 'fa-shopping-basket'));?>"></i>
 			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'avventura-lite' ), WC()->cart->cart_contents_count ); ?></span>  
 		</a>
         
