@@ -15,6 +15,15 @@ $wp_customize->add_control(
     'section' => 'accesspress_parallax_post_settings',
 ) );
 
+// Show Featured Image
+$wp_customize->add_setting( 'accesspress_parallax[featured_image]', array( 'default' => 1, 'type' => 'option', 'sanitize_callback' => 'accesspress_parallax_sanitize_checkbox' ) );
+$wp_customize->add_control(
+        'accesspress_parallax[featured_image]', array(
+    'label' => __( 'Show Featured Image', 'accesspress-parallax' ),
+    'type' => 'checkbox',
+    'section' => 'accesspress_parallax_post_settings',
+) );
+
 // Show Post Author
 $wp_customize->add_setting( 'accesspress_parallax[post_author]', array( 'default' => 1, 'type' => 'option', 'sanitize_callback' => 'accesspress_parallax_sanitize_checkbox' ) );
 $wp_customize->add_control(

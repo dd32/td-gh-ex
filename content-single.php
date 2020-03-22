@@ -3,13 +3,16 @@
  * @package accesspress_parallax
  */
 $post_footer = accesspress_parallax_of_get_option( 'post_footer' );
+$featured_image = accesspress_parallax_of_get_option( 'featured_image' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-wrap' ); ?>>
+    <?php if ( $featured_image == 1 ) : ?>
     <?php if ( has_post_thumbnail() ) : ?>
         <div class="entry-thumb">
             <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'blog-header' ); ?>
             <img src="<?php echo esc_url( $image[ 0 ] ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>"> 
         </div>
+    <?php endif; ?>
     <?php endif; ?>
 
     <header class="entry-header">

@@ -94,6 +94,9 @@ Images
 ---------------------------------------------
 == Changelog ==
 
+= 3.7 =
+** Added Feature Image Option for Single Page
+
 = 3.6 =
 ** Fixed main slider issue
 
