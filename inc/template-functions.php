@@ -82,7 +82,17 @@ if ( ! function_exists( 'baw_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'baw_setup' );
+/**
+ * Set default header image.
+ */
+register_default_headers( array(
+    'img1' => array(
+        'url'           => get_template_directory_uri() . '/images/header.jpg',
+        'thumbnail_url' => get_template_directory_uri() . '/images/header.jpg',
+        'description'   => esc_html__( 'Default Image 1', 'baw' )
+    )
 
+));
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  */

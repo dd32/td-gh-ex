@@ -36,6 +36,9 @@ score includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.2.1 - March 22 2019 =
+* FIXED: Header Image Issue
+
 = 1.2.0 - January 16 2020 =
 * ADDED: Tested up to: 5.3.2
 * ADDED: New Translation
