@@ -4,7 +4,7 @@ Tags: one-column, two-columns, right-sidebar footer-widgets, Blog, News, e-comme
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.2.4
-Stable tag: 0.0.10
+Stable tag: 0.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,13 @@ Axis Magazine WordPress Theme, Copyright 2020 Zidithemes
 Axis Magazine is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 0.0.11 =
+* Released: March 22, 2020
+
+made changes to axis-magazine-customizer-pro-btn.php line 10.
+made changes to axis-magazine-options.php line 163, 164.
+made mobile view keyboard accessible.
 
 = 0.0.10 =
 * Released: March 21, 2020

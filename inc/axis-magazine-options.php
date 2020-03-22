@@ -26,7 +26,7 @@ function axis_magazine_theme_info_display() {
 	
 	?>
 	<div class="wrap axis-magazine-adm">
-		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.10', 'axis-magazine'); ?></h1>
+		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.11', 'axis-magazine'); ?></h1>
 		<div class="axis-magazine-adm-dsply-fl axis-magazine-adm-fl-wrap axis-magazine-adm-jc-sp-btw">
 
 			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
@@ -160,8 +160,8 @@ function axis_magazine_theme_info_display() {
 						</tr>
 						<tr>
 							<td class="feature-items-title"><h3><?php esc_html_e('Number Of Index Page Styles', 'axis-magazine'); ?></h3></td>
-							<td><span class="number-index-styles">6</span></td>
-							<td><span class="number-index-styles">14</span></td>
+							<td><span class="number-index-styles"><?php esc_html_e('6', 'axis-magazine'); ?></span></td>
+							<td><span class="number-index-styles"><?php esc_html_e('14', 'axis-magazine'); ?></span></td>
 						</tr>
 						<tr>
 							<td class="feature-items-title"><h3><?php esc_html_e('Full Width Template', 'axis-magazine'); ?></h3></td>

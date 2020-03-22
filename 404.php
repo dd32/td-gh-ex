@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages
  *
- * @version    0.0.10
+ * @version    0.0.11
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
