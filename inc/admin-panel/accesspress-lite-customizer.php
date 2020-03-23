@@ -159,6 +159,46 @@
             	'sanitize_callback'	=> 'accesspress_lite_sanitize_category_lists',
 			] );
 
+
+		Kirki::add_section( 'accesspress_lite_blog_setting', array(
+		    'priority'    => 70,
+		    'title'          => esc_html__( 'Blog Setting', 'accesspress-lite' ),
+		    'description'    => esc_html__( 'Setup Blog settings.', 'accesspress-lite' ),
+		) );
+
+			Kirki::add_field( 'accesspress_lite_config', [
+				'type'        => 'text',
+				'settings'    => 'blog_read_more',
+				'label'       => esc_html__( 'Readmore Text', 'accesspress-lite' ),
+				'description' => esc_html__( 'Enter text to change text of Read More button in Archive Pages.', 'accesspress-lite' ),
+				'section'     => 'accesspress_lite_blog_setting',
+				'priority'    => 10,
+            	'default'	=> 'Read More',
+				'sanitize_callback' => 'sanitize_text_field',
+			] );
+
+		Kirki::add_section( 'accesspress_lite_post_setting', array(
+		    'priority'    => 70,
+		    'title'          => esc_html__( 'Post Setting', 'accesspress-lite' ),
+		    'description'    => esc_html__( 'Setup Post settings.', 'accesspress-lite' ),
+		) );
+
+			Kirki::add_field( 'accesspress_lite_config', [
+				'type'        => 'switch',
+				'settings'    => 'post_meta_enable',
+				'label'       => esc_html__( 'Show Meta Data?', 'accesspress-lite' ),
+				'section'     => 'accesspress_lite_post_setting',
+				'default'     => '1',
+				'priority'    => 20,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-lite' ),
+					false => esc_html__( 'Disable', 'accesspress-lite' ),
+				],
+				'sanitize_callback'	=> 'accesspress_lite_sanitize_checkbox',
+			] );
+
+			
+
 		Kirki::add_section( 'accesspress_lite_footer_setting', array(
 		    'priority'    => 80,
 		    'title'          => esc_html__( 'Footer Setting', 'accesspress-lite' ),
@@ -169,7 +209,7 @@
 				'type'        => 'text',
 				'settings'    => 'footer_copyright',
 				'label'       => esc_html__( 'Footer Copyright Text', 'accesspress-lite' ),
-				'description' => esc_html__( 'Enter text to change text of Read More button in Archive Pages.', 'accesspress-lite' ),
+				'description' => esc_html__( 'Enter text to change text of Footer Copyright.', 'accesspress-lite' ),
 				'section'     => 'accesspress_lite_footer_setting',
 				'priority'    => 20,
             	'default'	=> '',
@@ -533,6 +573,25 @@
 				'cat_post_slider' => esc_html__( 'Category Posts as a Slider', 'accesspress-lite' ),
 			],
 			'sanitize_callback'	=> 'accesspress_lite_sanitize_slider'
+		] );
+
+		Kirki::add_field( 'accesspress_lite_config', [
+			'type'        => 'select',
+			'settings'    => 'slider_cat',
+			'label'       => esc_html__( 'Slider Category', 'accesspress-lite' ),
+        	'default'	=> '',
+			'description' => esc_html__( 'Select the category to show post in Slider Section.', 'accesspress-lite' ),
+			'section'     => 'accesspress_lite_slider_settings',
+			'priority'    => 20,
+        	'choices' => accesspress_lite_category_lists(),
+        	'sanitize_callback'	=> 'accesspress_lite_sanitize_category_lists',
+        	'active_callback' => [
+							[
+								'setting'  => 'slider_options',
+								'operator' => '==',
+								'value'    => 'cat_post_slider',
+							]
+						],
 		] );
 
 		Kirki::add_field( 'accesspress_lite_config', [

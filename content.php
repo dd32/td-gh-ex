@@ -9,8 +9,8 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 $cat_testimonial  	= isset( $accesspresslite_settings[ 'testimonial_cat' ] ) ? $accesspresslite_settings[ 'testimonial_cat' ] : '';
 $cat_event  		= isset( $accesspresslite_settings[ 'event_cat' ] ) ? $accesspresslite_settings[ 'event_cat' ] : '';
 $cat_portfolio  	= isset( $accesspresslite_settings[ 'portfolio_cat' ] ) ? $accesspresslite_settings[ 'portfolio_cat' ] : '';
+$blog_read_more  	= isset( $accesspresslite_settings[ 'blog_read_more' ] ) ? $accesspresslite_settings[ 'blog_read_more' ] : 'Read More';
 ?>
-
 
 <?php if(!empty($cat_event) && is_category() && is_category($cat_event)): ?>
 <article id="post-<?php the_ID(); ?>" class="cat-event-list">
@@ -35,7 +35,9 @@ $cat_portfolio  	= isset( $accesspresslite_settings[ 'portfolio_cat' ] ) ? $acce
 		
 		<div><?php echo esc_html(accesspresslite_excerpt( get_the_content() , 400 )); ?></div>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php esc_html_e('More','accesspress-lite');?></a>
+		<?php if($blog_read_more){ ?>
+		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php echo esc_html($blog_read_more); ?></a>
+		<?php } ?>
 	</div><!-- .entry-content -->
 </article>
 
@@ -111,7 +113,9 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<div class="short-content">
 		<?php echo esc_html(accesspresslite_excerpt( get_the_content() , 500 )); ?>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="bttn"><?php esc_html_e('More','accesspress-lite')?></a>
+		<?php if($blog_read_more){ ?>
+		<a href="<?php the_permalink(); ?>" class="bttn"><?php echo esc_html($blog_read_more); ?></a>
+		<?php } ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-lite' ),

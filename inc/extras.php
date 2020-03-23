@@ -327,7 +327,7 @@ function accesspresslite_bxslidercb(){
     ($slider_auto == 'yes3' || empty($slider_auto)) ? ($d='true') : ($d='false');
 	empty($accesspresslite_settings['slider_pause']) ? ($e ='5000') : ($e = $accesspresslite_settings['slider_pause']);
 
-	if( $show_slider !='no') { 
+	if( $show_slider =='yes') { 
 	if((isset($accesspresslite_settings['slider1']) && !empty($accesspresslite_settings['slider1'])) 
 		|| (isset($accesspresslite_settings['slider2']) && !empty($accesspresslite_settings['slider2'])) 
 		|| (isset($accesspresslite_settings['slider3']) && !empty($accesspresslite_settings['slider3']))
@@ -369,7 +369,7 @@ function accesspresslite_bxslidercb(){
 			    $sliders = array_diff($sliders, $remove); ?>
 
 			    <div class="bx-slider">
-			    <?php
+			    <?php 
 			    foreach ($sliders as $slider){
 			    	if($slider != ''):
 						$args = array (
@@ -409,7 +409,8 @@ function accesspresslite_bxslidercb(){
         	<?php
         	}
 
-        }elseif ($accesspresslite_settings['slider_options'] == 'cat_post_slider') { ?>
+        }elseif ($accesspresslite_settings['slider_options'] == 'cat_post_slider') { 
+        	?>
         	<div class="bx-slider">
 			<?php
 			$loop = new WP_Query(array(
@@ -476,16 +477,6 @@ return $classes;
 
 add_filter( 'body_class', 'accesspresslite_web_layout' );
 
-// function accesspresslite_custom_css(){
-// 	$accesspresslite_options = accesspress_default_setting_value();
-// 	$accesspresslite_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
-// 	echo '<style type="text/css">';
-// 		echo esc_html($accesspresslite_settings['custom_css']);
-// 	echo '</style>';
-// }
-
-// add_action('wp_head','accesspresslite_custom_css');
-
 function accesspresslite_call_to_action_cb()
 {
 	$accesspresslite_options = accesspress_default_setting_value();
@@ -538,19 +529,6 @@ function accesspresslite_exclude_cat_from_blog($query) {
 
 add_filter('pre_get_posts', 'accesspresslite_exclude_cat_from_blog');
 
-function accesspresslite_admin_notice() {
-    global $pagenow;
-    if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
-    ?>
-    <div class="updated">
-        <p><?php /* translators: %s : theme options page link */ echo sprintf(__( 'Go to <a href="%s">Theme Options Panel</a> to set up the website.', 'accesspress-lite' ), esc_url(admin_url('/themes.php?page=theme_options'))); ?></p>
-    </div>
-    <?php
-    }
-}
-
-add_action( 'admin_notices', 'accesspresslite_admin_notice' );
-
 // function accesspress_check_old_template(){
 //     $settings = get_option( 'accesspresslite_options');
 //     $temp_val = $settings['template_option_selected'];
@@ -592,7 +570,7 @@ function accesspress_default_setting_value(){
 		'portfolio_cat' => '',
 		'footer_copyright' => get_bloginfo('name'),
 
-		'show_slider' => 'on',
+		'show_slider' => 'yes',
 		'slider_show_pager' => 'yes1',
 		'slider_show_controls' => 'yes2',
 		'slider_mode' => 'slide',

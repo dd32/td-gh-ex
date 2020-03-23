@@ -66,6 +66,11 @@ Images
 
 == Changelog ==
 
+= 2.86 =
+** Added MetaData Option For Single Post
+** Added Read More Option for Blog Page
+** Refined functions
+
 = 2.85 =
 ** Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
 ** Added Skip to Content Link
