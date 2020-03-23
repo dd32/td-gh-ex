@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div class="container">
     <main role="main" id="maincontent" class="middle-align row">        
-        <div class="col-lg-8 col-md-8">
+        <div class="background-img-skin col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>
                 <h1><?php the_title(); ?></h1>

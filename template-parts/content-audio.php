@@ -38,22 +38,31 @@
       <?php } ?>
     </div>
   <?php }?>
-  <div class="box-image">
-    <?php
-      if ( ! is_single() ) {
-        // If not a single post, highlight the audio file.
-        if ( ! empty( $audio ) ) {
-          foreach ( $audio as $audio_html ) {
-            echo '<div class="entry-audio">';
-              echo $audio_html;
-            echo '</div><!-- .entry-audio -->';
-          }
+  <?php if(get_theme_mod('advance_ecommerce_store_blog_post_description_option') != 'Full Content'){ ?>
+    <div class="box-image">
+      <?php
+        if ( ! is_single() ) {
+          // If not a single post, highlight the audio file.
+          if ( ! empty( $audio ) ) {
+            foreach ( $audio as $audio_html ) {
+              echo '<div class="entry-audio">';
+                echo $audio_html;
+              echo '</div><!-- .entry-audio -->';
+            }
+          };
         };
-      };
-    ?>
-  </div>
+      ?>
+    </div>
+  <?php }?>
   <div class="new-text">
-    <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_excerpt_number','20')))); ?></p></div>
+    <?php if(get_theme_mod('advance_ecommerce_store_blog_post_description_option') == 'Full Content'){ ?>
+      <?php the_content(); ?>
+    <?php }
+    if(get_theme_mod('advance_ecommerce_store_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
+      <?php if(get_the_excerpt()) { ?>
+        <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_ecommerce_store_post_suffix_option','...') ); ?></p></div>
+      <?php }?>
+    <?php }?>
     <div class="second-border">
       <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-ecommerce-store' ); ?>"><?php echo esc_html(get_theme_mod('advance_ecommerce_store_button_text','Read More'));?><span class="screen-reader-text"><?php esc_html_e( 'Read More', 'advance-ecommerce-store' ); ?></span></a>
     </div>
