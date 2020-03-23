@@ -1,6 +1,6 @@
 <?php 
-	$hide_show_slider= get_theme_mod('hide_show_slider','on');
-	if( $hide_show_slider == 'on' ): 
+	$benzer_hs_slider= get_theme_mod('hide_show_slider','on');
+	if( $benzer_hs_slider == 'on' ): 
 ?>
 <?php 
 	for($slide =1; $slide<3; $slide++) 
