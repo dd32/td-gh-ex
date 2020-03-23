@@ -2,7 +2,7 @@
 /**
  * The template for displaying tag pages
  *
- * @version    0.0.11
+ * @version    0.0.12
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.

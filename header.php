@@ -2,7 +2,7 @@
 /**
  * The template for displaying code in the header section
  *
- * @version    0.0.11
+ * @version    0.0.12
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
@@ -57,9 +57,9 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 			<input type="checkbox" class="navcheck" id="navcheck" />
 			<label class="navlabel" for="navcheck" ></label>
 			<button class="panbtn" for="navcheck">
-				<div></div>
-				<div></div>
-				<div></div>
+				<div class="mob-nav-one"></div>
+				<div class="mob-nav-two"></div>
+				<div class="mob-nav-three"></div>
 			</button>
 		    <div class="site-mob-title">
 		        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-nav-title">

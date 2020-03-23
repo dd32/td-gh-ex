@@ -2,7 +2,7 @@
 /**
  * The template for functions 
  *
- * @version    0.0.11
+ * @version    0.0.12
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
@@ -56,6 +56,8 @@ function axis_magazine_load_styles_scripts(){
 		wp_enqueue_style( 'axis-magazine-google-noto-font', 'https://fonts.googleapis.com/css?family=Noto+Sans');
 
 		wp_enqueue_script('axis-magazine-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js' );
+
+		wp_enqueue_script( 'axis-magazine-onejs-script', get_template_directory_uri() . '/js/zidi-one.js', array('jquery'), '1.0.0', true );	
 		
 		if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); 
 	

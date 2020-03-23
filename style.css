@@ -4,7 +4,7 @@ Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: https://zidithemes.tumblr.com/author
 Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.11
+Version: 0.0.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
@@ -6078,8 +6078,9 @@ ul {
         display:block;
         border: 2px solid transparent;
         background: transparent;
-        z-index: 1;
+        z-index: 10;
         position: absolute;
+        cursor: pointer;
     }
 
     .panbtn > div {
@@ -6089,41 +6090,6 @@ ul {
         margin: 3px 0px;
         transition: .5s;
     }
-
-
-    .navcheck:checked  ~ .theme-nav  {
-        display: block;
-        transition: 1s;
-    }
-
-    .navcheck:checked ~ .theme-nav li a {
-        height: 50px;
-    }
-
-    /* FOCUS WITHIN MOBILE NAV */
-    .navcheck:focus-within ~ .theme-nav {
-        display: block;
-    }
-
-    .navcheck:focus-within ~ .theme-nav li a {
-        height: 50px;
-    }
-    
-    .navcheck:focus-within ~ .panbtn div:nth-child(1){
-        transform: rotate(45deg) translate(6px, 3px);
-    }
-
-    
-    .navcheck:focus-within ~ .panbtn div:nth-child(2){
-        transform: scale(0);
-    }
-    
-    
-    .navcheck:focus-within ~ .panbtn div:nth-child(3){
-        transform: rotate(-45deg) translate(6px, -4px);
-    }
-    
-    /* END */
 
 
     .navlabel {
@@ -6139,22 +6105,37 @@ ul {
         left: 0;
     }
 
-    
-    
-    .navcheck:checked ~ .panbtn div:nth-child(1){
-        transform: rotate(45deg) translate(6px, 3px);
+    .mob-nav-one {
+        transform: rotate(0deg);
+    }
+    .mob-nav-two {
+        transition: .5s;
+        transform: rotate(0deg) scale(1);
+    }
+    .mob-nav-three {
+        transform: rotate(0deg);
     }
 
-    
-    .navcheck:checked ~ .panbtn div:nth-child(2){
-        transform: scale(0);
+    .panbtn.close .mob-nav-one {
+        transform: rotate(45deg) translate(6px, 3px);
     }
     
-    
-    .navcheck:checked ~ .panbtn div:nth-child(3){
+    .panbtn.close .mob-nav-two {
+        transform: scale(0);
+        transition: .5s;
+    }
+
+    .panbtn.close .mob-nav-three {
         transform: rotate(-45deg) translate(6px, -4px);
     }
-    
+
+    .panbtn.close ~ .theme-nav{
+        display: block;
+    }
+    .panbtn.close ~ .theme-nav li a {
+        height: 50px;
+    }
+
     /* END MOBILE NAV MENU */
 
     .axis-magazine-show {
