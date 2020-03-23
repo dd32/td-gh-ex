@@ -16,7 +16,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> class="main-bodybox">
-  <?php wp_body_open(); ?>
+  <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); }?>
   
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'advance-blogging' ); ?></a>

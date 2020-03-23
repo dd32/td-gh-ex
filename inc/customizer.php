@@ -41,7 +41,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	//Layouts
 	$wp_customize->add_section( 'advance_blogging_left_right', array(
-    	'title'      => __( 'Theme Layout Settings', 'advance-blogging' ),
+    	'title' => __('Theme Layout Settings', 'advance-blogging' ),
 		'priority'   => 30,
 		'panel' => 'advance_blogging_panel_id'
 	) );
@@ -66,21 +66,19 @@ function advance_blogging_customize_register( $wp_customize ) {
         'default' => '',
         'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	)  );
-	$wp_customize->add_control('advance_blogging_theme_options',
-	    array(
-	        'type' => 'radio',
-	        'label' => __('Do you want this section','advance-blogging'),
-	        'section' => 'advance_blogging_left_right',
-	        'choices' => array(
-	            'Left Sidebar' => __('Left Sidebar','advance-blogging'),
-	            'Right Sidebar' => __('Right Sidebar','advance-blogging'),
-	            'One Column' => __('One Column','advance-blogging'),
-	            'Three Columns' => __('Three Columns','advance-blogging'),
-	            'Four Columns' => __('Four Columns','advance-blogging'),
-	            'Grid Layout' => __('Grid Layout','advance-blogging')
-	        ),
-	    )
-    );
+	$wp_customize->add_control('advance_blogging_theme_options', array(
+        'type' => 'radio',
+        'label' => __('Do you want this section','advance-blogging'),
+        'section' => 'advance_blogging_left_right',
+        'choices' => array(
+            'Left Sidebar' => __('Left Sidebar','advance-blogging'),
+            'Right Sidebar' => __('Right Sidebar','advance-blogging'),
+            'One Column' => __('One Column','advance-blogging'),
+            'Three Columns' => __('Three Columns','advance-blogging'),
+            'Four Columns' => __('Four Columns','advance-blogging'),
+            'Grid Layout' => __('Grid Layout','advance-blogging')
+        ),
+    ));
 
     $font_array = array(
         '' =>'No Fonts',
@@ -906,6 +904,153 @@ function advance_blogging_customize_register( $wp_customize ) {
        'label' => __('Enable / Disable Post Comments','advance-blogging'),
        'section' => 'advance_blogging_blog_post'
     ));
+
+    $wp_customize->add_setting('advance_blogging_post_content',array(
+    	'default' => __('Excerpt Content','advance-blogging'),
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_blogging_post_content',array(
+        'type' => 'radio',
+        'label' => __('Post Content Type','advance-blogging'),
+        'section' => 'advance_blogging_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-blogging'),
+            'Full Content' => __('Full Content','advance-blogging'),
+            'Excerpt Content' => __('Excerpt Content','advance-blogging'),
+        ),
+	) );
+
+    $wp_customize->add_setting( 'advance_blogging_post_excerpt_length', array(
+		'default'              => 20,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_post_excerpt_length', array(
+		'label' => esc_html__( 'Post Excerpt Length','advance-blogging' ),
+		'section'  => 'advance_blogging_blog_post',
+		'type'  => 'number',
+		'settings' => 'advance_blogging_post_excerpt_length',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_button_excerpt_suffix', array(
+		'default'   => '[...]',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_button_excerpt_suffix', array(
+		'label'       => esc_html__( 'Excerpt Suffix','advance-blogging' ),
+		'section'     => 'advance_blogging_blog_post',
+		'type'        => 'text',
+		'settings' => 'advance_blogging_button_excerpt_suffix'
+	) );
+
+	$wp_customize->add_setting( 'advance_blogging_post_button_text', array(
+		'default'   => 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_post_button_text', array(
+		'label' => esc_html__('Post Button Text','advance-blogging' ),
+		'section'     => 'advance_blogging_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_blogging_post_button_text'
+	) );
+
+	$wp_customize->add_setting('advance_blogging_top_button_padding',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_top_button_padding',array(
+		'label'	=> __('Top Bottom Button Padding','advance-blogging'),
+		'input_attrs' => array(
+            'step' => 1,
+			'min'  => 0,
+			'max'  => 50,
+        ),
+		'section'=> 'advance_blogging_blog_post',
+		'type'=> 'number',
+	));
+
+	$wp_customize->add_setting('advance_blogging_left_button_padding',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_left_button_padding',array(
+		'label'	=> __('Left Right Button Padding','advance-blogging'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'advance_blogging_blog_post',
+		'type'=> 'number',
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_button_border_radius', array(
+		'default'=> '0',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control('advance_blogging_button_border_radius', array(
+        'label'  => __('Button Border Radius','advance-blogging'),
+        'type'=> 'number',
+        'section'  => 'advance_blogging_blog_post',
+        'input_attrs' => array(
+        	'step' => 1,
+            'min' => 0,
+            'max' => 50,
+        ),
+    ));
+
+    $wp_customize->add_setting('advance_blogging_related_posts',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_related_posts',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Related Posts','advance-blogging'),
+       'section' => 'advance_blogging_blog_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_related_posts_title',array(
+       'default' => 'Related Posts',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_related_posts_title',array(
+       'type' => 'text',
+       'label' => __('Related Posts Title','advance-blogging'),
+       'section' => 'advance_blogging_blog_post'
+    ));
+
+    $wp_customize->add_setting( 'advance_blogging_related_post_count', array(
+		'default' => 3,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_blogging_related_post_count', array(
+		'label' => esc_html__( 'Related Posts Count','advance-blogging' ),
+		'section' => 'advance_blogging_blog_post',
+		'type' => 'number',
+		'settings' => 'advance_blogging_related_post_count',
+		'input_attrs' => array(
+			'step'             => 1,
+			'min'              => 0,
+			'max'              => 6,
+		),
+	) );
+
+    $wp_customize->add_setting( 'advance_blogging_post_order', array(
+        'default' => 'categories',
+        'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control( 'advance_blogging_post_order', array(
+        'section' => 'advance_blogging_blog_post',
+        'type' => 'radio',
+        'label' => __( 'Related Posts Order By', 'advance-blogging' ),
+        'choices' => array(
+            'categories'  => __('Categories', 'advance-blogging'),
+            'tags' => __( 'Tags', 'advance-blogging' ),
+    )));
 
 	//Footer
 	$wp_customize->add_section('advance_blogging_footer',array(

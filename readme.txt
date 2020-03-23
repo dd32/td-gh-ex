@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.7
+Stable tag: 0.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,6 +93,14 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added slider content alignement option.
 * Added slider speed option.
 * Added Show/hide option for site title & site description.
+* Updated all .po files.
+
+= 0.7.1 =
+* Added Post excerpt length and excerpt suffix settings.
+* Added Post Content type setting.
+* Added Post button text, border radius and Button padding settings.
+* Added Enable / Disable option for Related post and its title setting.
+* Added Related posts order by setting and its count setting.
 * Updated all .po files.
 
 == Resources ==

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-07 10:35+0530\n"
+"PO-Revision-Date: 2020-03-18 09:40+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -156,12 +156,12 @@ msgstr "Следущая страница"
 #: archive.php:185 archive.php:224 archive.php:260 index.php:45 index.php:77
 #: index.php:107 index.php:137 index.php:170 index.php:203 index.php:232
 #: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
-#: search.php:205 search.php:238 template-parts/single-post.php:33
+#: search.php:205 search.php:238 template-parts/single-post.php:47
 msgid "page"
 msgstr "pagina"
 
 #: image.php:36 image.php:72 image.php:107 image.php:142 image.php:180
-#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:29
+#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:43
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -175,23 +175,23 @@ msgstr "редактировать"
 msgid "Results For: %s"
 msgstr "Результаты для:% s"
 
-#: template-parts/single-post.php:43
+#: template-parts/single-post.php:57
 msgid "Parent Post Link"
 msgstr "Родительская ссылка"
 
-#: template-parts/single-post.php:48
+#: template-parts/single-post.php:62
 msgid "Next Post<i class=\"fas fa-chevron-right\"></i>"
 msgstr "Следующая запись <i class = \"fas fa-chevron-right\"> </ i>"
 
-#: template-parts/single-post.php:49
+#: template-parts/single-post.php:63
 msgid "Next post"
 msgstr "Следующий пост"
 
-#: template-parts/single-post.php:51
+#: template-parts/single-post.php:65
 msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
 msgstr "Следующий пост"
 
-#: template-parts/single-post.php:52
+#: template-parts/single-post.php:66
 msgid "Previous post"
 msgstr "Предыдущий пост"
 
@@ -227,26 +227,26 @@ msgstr "Домашняя страница Боковая панель"
 msgid "Footer Nav "
 msgstr "Нижний колонтитул"
 
-#: functions.php:511
+#: functions.php:525
 msgid "Blogging WordPress Theme"
 msgstr "Тема WordPress для блогов"
 
-#: page-template/custom-frontpage.php:128 template-parts/content-audio.php:38
-#: template-parts/content-gallery.php:28 template-parts/content-image.php:32
-#: template-parts/content-video.php:53 template-parts/content.php:37
-#: template-parts\grid-layout.php:22
+#: page-template/custom-frontpage.php:128 template-parts/content-audio.php:46
+#: template-parts/content-gallery.php:36 template-parts/content-image.php:40
+#: template-parts/content-video.php:61 template-parts/content.php:45
+#: template-parts/grid-layout.php:35
 msgid "READ MORE"
 msgstr "ПОДРОБНЕЕ"
 
-#: template-parts\single-post.php:15
+#: template-parts/single-post.php:15
 msgid "0 Comment"
 msgstr "0 комментариев"
 
-#: page-template\custom-frontpage.php:61
+#: page-template/custom-frontpage.php:61
 msgid "Previous"
 msgstr "предыдущий"
 
-#: page-template\custom-frontpage.php:64
+#: page-template/custom-frontpage.php:64
 msgid "Next"
 msgstr "следующий"
 
@@ -344,7 +344,7 @@ msgstr "Тэг шрифты \"a\""
 
 #: inc/customizer.php:265
 msgid "\"li\" Tag Color"
-msgstr "\"li\" Tag Color"
+msgstr "Цвет тега \"li\""
 
 #: inc/customizer.php:279
 msgid "\"li\" Tag Fonts"
@@ -388,7 +388,7 @@ msgstr "Размер шрифта h3"
 
 #: inc/customizer.php:401
 msgid "h4 Color"
-msgstr "цвет h4"
+msgstr "Цвет h4"
 
 #: inc/customizer.php:415
 msgid "h4 Fonts"
@@ -490,8 +490,8 @@ msgstr "Показать / Скрыть содержимое слайдера"
 msgid "Slider Excerpt length"
 msgstr "Длина выдержки слайдера"
 
-#: inc/customizer.php:702 inc/customizer.php:711 inc/customizer.php:759
-#: inc/customizer.php:954
+#: inc/customizer.php:700 inc/customizer.php:709 inc/customizer.php:757
+#: inc/customizer.php:1089
 msgid "Left"
 msgstr "Осталось"
 
@@ -499,12 +499,12 @@ msgstr "Осталось"
 msgid "Slider Content Alignment"
 msgstr "Выравнивание содержимого слайдера"
 
-#: inc/customizer.php:710 inc/customizer.php:746
+#: inc/customizer.php:708 inc/customizer.php:1091
 msgid "Center"
 msgstr "Центр"
 
-#: inc/customizer.php:712 inc/customizer.php:774 inc/customizer.php:936
-#: inc/customizer.php:945
+#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1081
+#: inc/customizer.php:1090
 msgid "Right"
 msgstr "Правильно"
 
@@ -564,27 +564,91 @@ msgstr "Включить / отключить публикацию автора"
 msgid "Enable / Disable Post Comments"
 msgstr "Включить / отключить комментарии"
 
-#: inc/customizer.php:912
+#: inc/customizer.php:909 inc/customizer.php:919
+msgid "Excerpt Content"
+msgstr "Содержание выдержки"
+
+#: inc/customizer.php:914
+msgid "Post Content Type"
+msgstr "Тип содержимого сообщения"
+
+#: inc/customizer.php:917
+msgid "No Content"
+msgstr "Без содержания"
+
+#: inc/customizer.php:918
+msgid "Full Content"
+msgstr "Полный контент"
+
+#: inc/customizer.php:928
+msgid "Post Excerpt Length"
+msgstr "Длина выдержки"
+
+#: inc/customizer.php:944
+msgid "Excerpt Suffix"
+msgstr "Выдержка Суффикс"
+
+#: inc/customizer.php:955
+msgid "Post Button Text"
+msgstr "Текст сообщения кнопки"
+
+#: inc/customizer.php:966
+msgid "Top Bottom Button Padding"
+msgstr "Верхняя нижняя кнопка"
+
+#: inc/customizer.php:981
+msgid "Left Right Button Padding"
+msgstr "Левая и правая кнопки"
+
+#: inc/customizer.php:996
+msgid "Button Border Radius"
+msgstr "Радиус границы кнопки"
+
+#: inc/customizer.php:1012
+msgid "Enable / Disable Related Posts"
+msgstr "Включить / отключить похожие сообщения"
+
+#: inc/customizer.php:1022
+msgid "Related Posts Title"
+msgstr "Заголовок похожих сообщений"
+
+#: inc/customizer.php:1031
+msgid "Related Posts Count"
+msgstr "Количество связанных сообщений"
+
+#: inc/customizer.php:1049
+msgid "Related Posts Order By"
+msgstr "Похожие сообщения Сортировать по"
+
+#: inc/customizer.php:1051
+msgid "Categories"
+msgstr "категории"
+
+#: inc/customizer.php:1052
+msgid "Tags"
+msgstr "Теги"
+
+#: inc/customizer.php:1057
 msgid "Footer Section"
 msgstr "Раздел нижнего колонтитула"
 
-#: inc/customizer.php:913
+#: inc/customizer.php:1058
 msgid "This section will appear in the footer."
 msgstr "Этот раздел появится в нижнем колонтитуле."
 
-#: inc/customizer.php:931
+#: inc/customizer.php:1076
 msgid "Show/Hide Back to Top Button"
 msgstr "Показать / Скрыть кнопку «Вверх»"
 
-#: inc/customizer.php:941
+#: inc/customizer.php:1086
 msgid "Back to Top Button Alignment"
 msgstr "Back to Top Выравнивание кнопок"
 
-#: inc/customizer.php:956
+#: inc/customizer.php:1101
 msgid "Footer widget layout"
 msgstr "Макет виджета нижнего колонтитула"
 
-#: inc/customizer.php:958
+#: inc/customizer.php:1103
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -593,30 +657,30 @@ msgstr ""
 "колонтитуле. После этого зайдите в Внешний вид> Виджеты и добавьте свои "
 "виджеты."
 
-#: inc/customizer.php:960
+#: inc/customizer.php:1105
 msgid "One"
 msgstr "Один"
 
-#: inc/customizer.php:961
+#: inc/customizer.php:1106
 msgid "Two"
 msgstr "Два"
 
-#: inc/customizer.php:962
+#: inc/customizer.php:1107
 msgid "Three"
 msgstr "Три"
 
-#: inc/customizer.php:963
+#: inc/customizer.php:1108
 msgid "Four"
 msgstr "четыре"
 
-#: inc/customizer.php:980
+#: inc/customizer.php:1125
 msgid "Text"
 msgstr "Текст"
 
-#: inc/customizer.php:1066
+#: inc/customizer.php:1211
 msgid "Advance Blogging"
 msgstr "Предварительный блог"
 
-#: inc/customizer.php:1067
+#: inc/customizer.php:1212
 msgid "Go Pro"
 msgstr "Go Pro"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-07 10:39+0530\n"
+"PO-Revision-Date: 2020-03-18 09:45+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -153,12 +153,12 @@ msgstr "下一页"
 #: archive.php:185 archive.php:224 archive.php:260 index.php:45 index.php:77
 #: index.php:107 index.php:137 index.php:170 index.php:203 index.php:232
 #: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
-#: search.php:205 search.php:238 template-parts/single-post.php:33
+#: search.php:205 search.php:238 template-parts/single-post.php:47
 msgid "page"
 msgstr "页"
 
 #: image.php:36 image.php:72 image.php:107 image.php:142 image.php:180
-#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:29
+#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:43
 msgid "Pages:"
 msgstr "页数："
 
@@ -172,23 +172,23 @@ msgstr "编辑"
 msgid "Results For: %s"
 msgstr "结果：％s"
 
-#: template-parts/single-post.php:43
+#: template-parts/single-post.php:57
 msgid "Parent Post Link"
 msgstr "家长帖子链接"
 
-#: template-parts/single-post.php:48
+#: template-parts/single-post.php:62
 msgid "Next Post<i class=\"fas fa-chevron-right\"></i>"
 msgstr "下一篇文章<i class =“ fas fa-chevron-right”> </ i>"
 
-#: template-parts/single-post.php:49
+#: template-parts/single-post.php:63
 msgid "Next post"
 msgstr "下一篇文章"
 
-#: template-parts/single-post.php:51
+#: template-parts/single-post.php:65
 msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
 msgstr "<i class =“ fas fa-chevron-left”> </ i>上一篇文章"
 
-#: template-parts/single-post.php:52
+#: template-parts/single-post.php:66
 msgid "Previous post"
 msgstr "上一篇"
 
@@ -224,26 +224,26 @@ msgstr "主页侧边栏"
 msgid "Footer Nav "
 msgstr "页脚导航"
 
-#: functions.php:511
+#: functions.php:525
 msgid "Blogging WordPress Theme"
 msgstr "博客WordPress主题"
 
-#: page-template/custom-frontpage.php:128 template-parts/content-audio.php:38
-#: template-parts/content-gallery.php:28 template-parts/content-image.php:32
-#: template-parts/content-video.php:53 template-parts/content.php:37
-#: template-parts\grid-layout.php:22
+#: page-template/custom-frontpage.php:128 template-parts/content-audio.php:46
+#: template-parts/content-gallery.php:36 template-parts/content-image.php:40
+#: template-parts/content-video.php:61 template-parts/content.php:45
+#: template-parts/grid-layout.php:35
 msgid "READ MORE"
 msgstr "阅读更多"
 
-#: template-parts\single-post.php:15
+#: template-parts/single-post.php:15
 msgid "0 Comment"
 msgstr "0条留言"
 
-#: page-template\custom-frontpage.php:61
+#: page-template/custom-frontpage.php:61
 msgid "Previous"
 msgstr "以前"
 
-#: page-template\custom-frontpage.php:64
+#: page-template/custom-frontpage.php:64
 msgid "Next"
 msgstr "下一个"
 
@@ -487,8 +487,8 @@ msgstr "显示/隐藏滑块内容"
 msgid "Slider Excerpt length"
 msgstr "滑块摘录长度"
 
-#: inc/customizer.php:702 inc/customizer.php:711 inc/customizer.php:759
-#: inc/customizer.php:954
+#: inc/customizer.php:700 inc/customizer.php:709 inc/customizer.php:757
+#: inc/customizer.php:1089
 msgid "Left"
 msgstr "剩下"
 
@@ -496,12 +496,12 @@ msgstr "剩下"
 msgid "Slider Content Alignment"
 msgstr "滑块内容对齐"
 
-#: inc/customizer.php:710 inc/customizer.php:746
+#: inc/customizer.php:708 inc/customizer.php:1091
 msgid "Center"
 msgstr "中央"
 
-#: inc/customizer.php:712 inc/customizer.php:774 inc/customizer.php:936
-#: inc/customizer.php:945
+#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1081
+#: inc/customizer.php:1090
 msgid "Right"
 msgstr "对"
 
@@ -561,57 +561,121 @@ msgstr "启用/禁用帖子作者"
 msgid "Enable / Disable Post Comments"
 msgstr "启用/禁用帖子评论"
 
-#: inc/customizer.php:912
+#: inc/customizer.php:909 inc/customizer.php:919
+msgid "Excerpt Content"
+msgstr "摘录内容"
+
+#: inc/customizer.php:914
+msgid "Post Content Type"
+msgstr "帖子内容类型"
+
+#: inc/customizer.php:917
+msgid "No Content"
+msgstr "无内容"
+
+#: inc/customizer.php:918
+msgid "Full Content"
+msgstr "全部内容"
+
+#: inc/customizer.php:928
+msgid "Post Excerpt Length"
+msgstr "摘录后的长度"
+
+#: inc/customizer.php:944
+msgid "Excerpt Suffix"
+msgstr "摘录后缀"
+
+#: inc/customizer.php:955
+msgid "Post Button Text"
+msgstr "发布按钮文字"
+
+#: inc/customizer.php:966
+msgid "Top Bottom Button Padding"
+msgstr "顶部底部按钮填充"
+
+#: inc/customizer.php:981
+msgid "Left Right Button Padding"
+msgstr "左右按钮填充"
+
+#: inc/customizer.php:996
+msgid "Button Border Radius"
+msgstr "按钮边框半径"
+
+#: inc/customizer.php:1012
+msgid "Enable / Disable Related Posts"
+msgstr "启用/禁用相关帖子"
+
+#: inc/customizer.php:1022
+msgid "Related Posts Title"
+msgstr "相关文章标题"
+
+#: inc/customizer.php:1031
+msgid "Related Posts Count"
+msgstr "相关职位数"
+
+#: inc/customizer.php:1049
+msgid "Related Posts Order By"
+msgstr "相关职位排序"
+
+#: inc/customizer.php:1051
+msgid "Categories"
+msgstr "分类目录"
+
+#: inc/customizer.php:1052
+msgid "Tags"
+msgstr "标签"
+
+#: inc/customizer.php:1057
 msgid "Footer Section"
 msgstr "页脚部分"
 
-#: inc/customizer.php:913
+#: inc/customizer.php:1058
 msgid "This section will appear in the footer."
 msgstr "此部分将显示在页脚中。"
 
-#: inc/customizer.php:931
+#: inc/customizer.php:1076
 msgid "Show/Hide Back to Top Button"
 msgstr "显示/隐藏返回顶部按钮"
 
-#: inc/customizer.php:941
+#: inc/customizer.php:1086
 msgid "Back to Top Button Alignment"
 msgstr "返回页首按钮对齐"
 
-#: inc/customizer.php:956
+#: inc/customizer.php:1101
 msgid "Footer widget layout"
 msgstr "页脚小部件布局"
 
-#: inc/customizer.php:958
+#: inc/customizer.php:1103
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
 "在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加您的小部件。"
 
-#: inc/customizer.php:960
+#: inc/customizer.php:1105
 msgid "One"
 msgstr "一"
 
-#: inc/customizer.php:961
+#: inc/customizer.php:1106
 msgid "Two"
 msgstr "二"
 
-#: inc/customizer.php:962
+#: inc/customizer.php:1107
 msgid "Three"
 msgstr "三"
 
-#: inc/customizer.php:963
+#: inc/customizer.php:1108
 msgid "Four"
 msgstr "四个"
 
-#: inc/customizer.php:980
+#: inc/customizer.php:1125
 msgid "Text"
 msgstr "文本"
 
-#: inc/customizer.php:1066
+#: inc/customizer.php:1211
 msgid "Advance Blogging"
 msgstr "高级博客"
 
-#: inc/customizer.php:1067
+#: inc/customizer.php:1212
 msgid "Go Pro"
 msgstr "专业版"

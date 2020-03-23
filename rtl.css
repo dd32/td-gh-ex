@@ -1004,15 +1004,18 @@ a.woocommerce-privacy-policy-link,
   bottom: 108px;
   left: 0;
   margin:0;
+  font-size: 18px;
+  font-weight: 600;
   transform: rotate(90deg);
+  text-shadow: -1px 1px #fff;
 }
 .scrollup.left{
   right: 0;
   left: auto;
 }
 .scrollup.center{
-  right: 45%;
-  left: 45%;
+  right: 25%;
+  left: 25%;
 }
 .scrollup:focus,
 .scrollup:hover{
@@ -1020,7 +1023,6 @@ a.woocommerce-privacy-policy-link,
 }
 .scrollup span {
   display: inline-block;
-  font-size: 16px;
 }
 .scrollup i{
   margin-right: 10px;
@@ -1165,7 +1167,7 @@ a.woocommerce-privacy-policy-link,
   margin-bottom: 25px;
   padding: 15px;
 }
-.postbox h2{
+.postbox h2, .related-posts h3{
   font-size: 20px;
   color: #000;
   text-transform: uppercase;
@@ -1179,7 +1181,7 @@ a.woocommerce-privacy-policy-link,
   font-size: 25px;
   font-weight: bold;
  }
-.postbox h2 a {
+.postbox h2 a, .related-posts h3 a {
   color: #000;
 }
 .postbox p {
@@ -1208,7 +1210,7 @@ a.woocommerce-privacy-policy-link,
 }
 .metbox {
   margin-bottom: 10px;
-  background:#f73637;
+  background:#db0607;
   padding: 5px;
   color:#fff;
   margin-bottom: 10px;
@@ -1224,6 +1226,17 @@ a.woocommerce-privacy-policy-link,
   font-weight: bold;
   padding-bottom: 7px;
   color: #fff;
+}
+
+/*---- Related post css -----*/
+.related-posts{
+  padding: 2% 0;
+  border-top: 1px solid;
+  clear: both;
+}
+.related-posts h2{
+  font-size: 28px;
+  font-weight: 600;
 }
 
 /* --------- POST --------- */

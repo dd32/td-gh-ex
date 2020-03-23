@@ -378,10 +378,10 @@ function advance_blogging_scripts() {
 			    font-family: '.esc_html($advance_blogging_h6_font_family).'!important;
 			    font-size: '.esc_html($advance_blogging_h6_font_size).'!important;
 			}
-			.menubox.nav, .footertown .tagcloud a:hover, .metabox, .cat-post::-webkit-scrollbar-thumb, .button-post a, .woocommerce span.onsale, woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .footertown input[type="submit"], #comments input[type="submit"].submit, .pagination span,.pagination a, input[type="submit"], .social-icons a:hover, .search-icon, #header .nav ul li:hover > ul li:hover, .blogbutton-mdall, #footer, #header .nav ul.sub-menu li a:hover,#sidebar .tagcloud a:hover, .primary-navigation ul, .primary-navigation ul ul a, #sidebar input[type="submit"],.sidebar,.toggle-menu, #comments a.comment-reply-link,a.button, .fixed-header, .woocommerce-product-search button[type="submit"], .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+			.menubox.nav, .footertown .tagcloud a:hover, .metabox, .cat-post::-webkit-scrollbar-thumb, .button-post a, .woocommerce span.onsale, woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .footertown input[type="submit"], #comments input[type="submit"].submit, .pagination span,.pagination a, input[type="submit"], .social-icons a:hover, .search-icon, #header .nav ul li:hover > ul li:hover, .blogbutton-mdall, #footer, #header .nav ul.sub-menu li a:hover,#sidebar .tagcloud a:hover, .primary-navigation ul, .primary-navigation ul ul a, #sidebar input[type="submit"],.sidebar,.toggle-menu, #comments a.comment-reply-link,a.button, .fixed-header, .woocommerce-product-search button[type="submit"], .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .metbox {
 			    background-color:'.esc_html($advance_blogging_theme_color).';
 			}
-			.logo h1 a, .logo p, .logo h1 a, .logo p.site-title a, .cart-box, .cart-box i, .footertown .widget h3, p.logged-in-as a, #header .cart,.primary-navigation ul ul a:hover, #main p a, a, .tags a, code, span.post-title{
+			.logo h1 a, .logo p, .logo h1 a, .logo p.site-title a, .cart-box, .cart-box i, .footertown .widget h3, p.logged-in-as a, #header .cart,.primary-navigation ul ul a:hover, #main p a, a, .tags a, code, span.post-title, .scrollup{
 			    color:'.esc_html($advance_blogging_theme_color).';
 			}
 			@media screen and (max-width:1000px){
@@ -452,6 +452,20 @@ function advance_blogging_scripts() {
 			$custom_css .='margin-top: '.esc_html($top_spacing).'px; margin-bottom: '.esc_html($bottom_spacing).'px; margin-left: '.esc_html($left_spacing).'px; margin-right: '.esc_html($right_spacing).'px;';
 		$custom_css .='}';
 	}
+
+	/*------ Button Style -------*/
+	$top_buttom_padding = get_theme_mod('advance_blogging_top_button_padding');
+	$left_right_padding = get_theme_mod('advance_blogging_left_button_padding');
+	if($top_buttom_padding != false || $left_right_padding != false ){
+		$custom_css .='.blogbutton-mdall, .button-post a, #comments input[type="submit"].submit{';
+			$custom_css .='padding-top: '.esc_html($top_buttom_padding).'px; padding-bottom: '.esc_html($top_buttom_padding).'px; padding-left: '.esc_html($left_right_padding).'px; padding-right: '.esc_html($left_right_padding).'px;';
+		$custom_css .='}';
+	}
+
+	$button_border_radius = get_theme_mod('advance_blogging_button_border_radius');
+	$custom_css .='.blogbutton-mdall, .button-post a, #comments input[type="submit"].submit{';
+		$custom_css .='border-radius: '.esc_html($button_border_radius).'px;';
+	$custom_css .='}';
 
 	wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
 	wp_enqueue_script( 'advance-blogging-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );

@@ -69,3 +69,7 @@
 	}
 	?>
 </article>
+
+<?php if (get_theme_mod('advance_blogging_related_posts',true) != '') {
+	get_template_part( 'template-parts/related-posts' );
+}

@@ -4,7 +4,7 @@ Theme URI: https://www.themescaliber.com/themes/free-blog-wordpress-theme/
 Author: ThemesCaliber
 Author URI: https://www.themescaliber.com/
 Description: Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc. You can translate this theme into different languages such as Arabic, German, Spanish, French, Italian, Russian, Turkish and Chinese. Demo: https://www.themescaliber.com/advance-blogging-pro/
-Version: 0.7
+Version: 0.7.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: advance-blogging
@@ -1184,7 +1184,7 @@ a.woocommerce-privacy-policy-link,
   margin-bottom: 25px;
   padding: 15px;
 }
-.postbox h2{
+.postbox h2, .related-posts h3{
   font-size: 20px;
   color: #000;
   text-transform: uppercase;
@@ -1198,7 +1198,7 @@ a.woocommerce-privacy-policy-link,
   font-size: 25px;
   font-weight: bold;
  }
-.postbox h2 a {
+.postbox h2 a, .related-posts h3 a {
   color: #000;
 }
 .postbox p {
@@ -1227,7 +1227,7 @@ a.woocommerce-privacy-policy-link,
 }
 .metbox {
   margin-bottom: 10px;
-  background:#f73637;
+  background:#db0607;
   padding: 5px;
   color:#fff;
   margin-bottom: 10px;
@@ -1243,6 +1243,17 @@ a.woocommerce-privacy-policy-link,
   font-weight: bold;
   padding-bottom: 7px;
   color: #fff;
+}
+
+/*---- Related post css -----*/
+.related-posts{
+  padding: 2% 0;
+  border-top: 1px solid;
+  clear: both;
+}
+.related-posts h2{
+  font-size: 28px;
+  font-weight: 600;
 }
 
 /* --------- POST --------- */
