@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages
  *
- * @package fmi
+ * @package Fmi
  */
 
 get_header(); ?>

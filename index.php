@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package fmi
+ * @package Fmi
  */
 
 // header

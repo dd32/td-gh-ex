@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package fmi
+ * @package Fmi
  */
 
 get_header(); ?>
@@ -43,7 +43,7 @@ if ($blog_layout == 'left_sidebar') {
               <?php }?>
 
               <div class="post-content">
-                <?php fmi_entry_header(); ?>
+                <?php vs_entry_header(); ?>
                 
                 <div class="entry-content clearfix">
                   <?php
@@ -56,19 +56,19 @@ if ($blog_layout == 'left_sidebar') {
                   ?>
                 </div><!-- .entry-content -->
 
-                <?php fmi_entry_footer(); ?>
+                <?php vs_entry_footer(); ?>
               </div>
             </article><!-- #post-<?php the_ID(); ?> -->
             
             <?php
               $show_about_author = get_theme_mod('single_show_about_author', 0);
               if (!post_password_required() && $show_about_author) {
-                fmi_about_the_author();
+                vs_about_the_author();
               }
 
               $show_post_nav = get_theme_mod('single_show_post_nav', 1);
               if ($show_post_nav) {
-                fmi_post_navigation();
+                vs_post_navigation();
               }
 
               if ( comments_open() || get_comments_number() ) :

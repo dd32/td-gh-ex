@@ -2,11 +2,11 @@
 /**
  * Custom template comment for this theme
  *
- * @package fmi
+ * @package Fmi
  */
 
 
-function fmi_list_comments($comment,$args,$depth){
+function vs_list_comments($comment,$args,$depth){
   if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) {
 ?>
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -42,7 +42,7 @@ function fmi_list_comments($comment,$args,$depth){
   }
 }
 
-function fmi_comment_form_default_fields( $fields ) {
+function vs_comment_form_default_fields( $fields ) {
   $req = get_option( 'require_name_email' );
   $commenter = wp_get_current_commenter();
   $aria_req = ( $req ? " aria-required='true'" : '' );
@@ -51,18 +51,18 @@ function fmi_comment_form_default_fields( $fields ) {
   $fields['url'] = '<div class="comment-item"><input id="url" type="text" aria-required="true" size="22" value="'.esc_url($commenter['comment_author_url']).'" name="url" placeholder="'.esc_attr__('Your Website','fmi').'" /></div>';
   return $fields;
 }
-add_filter( 'comment_form_default_fields', 'fmi_comment_form_default_fields' );
+add_filter( 'comment_form_default_fields', 'vs_comment_form_default_fields' );
 
-function fmi_comment_form_field_comment( $comment_field ) {
+function vs_comment_form_field_comment( $comment_field ) {
   $req = get_option( 'require_name_email' );
   $comment_field = '<div class="comment-item"><textarea id="comment" name="comment" placeholder="'.esc_attr__('Your comment','fmi').' '.($req?'*':'').'" /></textarea></div>';
   return $comment_field;
 }
-add_filter( 'comment_form_field_comment', 'fmi_comment_form_field_comment' );
+add_filter( 'comment_form_field_comment', 'vs_comment_form_field_comment' );
 
-function fmi_comment_form_defaults($defaults){
+function vs_comment_form_defaults($defaults){
   $defaults['comment_notes_before'] = '';
   $defaults['comment_notes_after'] = '';
   return $defaults;
 }
-add_filter( 'comment_form_defaults', 'fmi_comment_form_defaults' );
+add_filter( 'comment_form_defaults', 'vs_comment_form_defaults' );

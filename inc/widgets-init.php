@@ -2,10 +2,10 @@
 /**
  * Custom template widgets for this theme
  *
- * @package fmi
+ * @package Fmi
  */
  
-function fmi_widgets_init() {
+function vs_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'fmi' ),
 		'id'            => 'sidebar-1',
@@ -16,4 +16,4 @@ function fmi_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'fmi_widgets_init' );
+add_action( 'widgets_init', 'vs_widgets_init' );

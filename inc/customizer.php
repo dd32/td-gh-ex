@@ -2,13 +2,13 @@
 /**
  * Theme Customizer
  *
- * @package fmi
+ * @package Fmi
  */
 
-function fmi_customize_register( $wp_customize ) {
+function vs_customize_register( $wp_customize ) {
 
-  class fmi_customize_number_control extends WP_Customize_Control {
-    public $type = 'fmi_number_field';
+  class vs_customize_number_control extends WP_Customize_Control {
+    public $type = 'vs_number_field';
     public function render_content() {
       ?>
       <label>
@@ -74,7 +74,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_pagination',
     array(
       'default' => 'pagination',
-      'sanitize_callback' => 'fmi_sanitize_blog_pagination',
+      'sanitize_callback' => 'vs_sanitize_blog_pagination',
     )
   );
   $wp_customize->add_control(
@@ -94,7 +94,7 @@ function fmi_customize_register( $wp_customize ) {
     'header_title',
     array(
       'default' => false,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -110,7 +110,7 @@ function fmi_customize_register( $wp_customize ) {
     'header_search',
     array(
       'default' => false,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -126,7 +126,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_layout',
     array(
       'default' => 'right_sidebar',
-      'sanitize_callback' => 'fmi_sanitize_blog_layout',
+      'sanitize_callback' => 'vs_sanitize_blog_layout',
     )
   );
   $wp_customize->add_control(
@@ -146,7 +146,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_excerpt_type',
     array(
       'default' => 'excerpt',
-      'sanitize_callback' => 'fmi_sanitize_blog_excerpt_type',
+      'sanitize_callback' => 'vs_sanitize_blog_excerpt_type',
     )
   );
   $wp_customize->add_control(
@@ -165,11 +165,11 @@ function fmi_customize_register( $wp_customize ) {
     'blog_excerpt_length',
     array(
       'default' => 40,
-      'sanitize_callback' => 'fmi_sanitize_number_intval',
+      'sanitize_callback' => 'vs_sanitize_number_intval',
     )
   );
   $wp_customize->add_control(
-    new fmi_customize_number_control(
+    new vs_customize_number_control(
       $wp_customize,
       'blog_excerpt_length',
       array(
@@ -183,7 +183,7 @@ function fmi_customize_register( $wp_customize ) {
     'general_show_totop_btn',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -198,7 +198,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_images_hover_effects',
     array(
       'default' => 0,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -213,7 +213,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_show_date',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -228,7 +228,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_show_author',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -243,7 +243,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_show_comments_counter',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -258,7 +258,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_show_categories',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -273,7 +273,7 @@ function fmi_customize_register( $wp_customize ) {
     'blog_show_tags',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -288,7 +288,7 @@ function fmi_customize_register( $wp_customize ) {
     'single_show_post_nav',
     array(
       'default' => 1,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -303,7 +303,7 @@ function fmi_customize_register( $wp_customize ) {
     'single_show_about_author',
     array(
       'default' => 0,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -319,7 +319,7 @@ function fmi_customize_register( $wp_customize ) {
   // Section: Social Media Icons 
   //----------------------------------------------------------------------------------
   $wp_customize->add_section(
-    'fmi_social',
+    'vs_social',
     array(
       'title' => esc_html__('Social Links & RSS', 'fmi'),
       'panel' => 'theme_options',
@@ -330,14 +330,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_twitter',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_twitter',
     array(
       'label' => esc_html__('Twitter URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_twitter',
       'type' => 'text',
     )
@@ -346,14 +346,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_facebook',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_facebook',
     array(
       'label' => esc_html__('Facebook URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_facebook',
       'type' => 'text',
     )
@@ -362,14 +362,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_google-plus',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_google-plus',
     array(
       'label' => esc_html__('Google+ URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_google-plus',
       'type' => 'text',
     )
@@ -378,14 +378,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_pinterest',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_pinterest',
     array(
       'label' => esc_html__('Pinterest URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_pinterest',
       'type' => 'text',
     )
@@ -394,14 +394,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_vk',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_vk',
     array(
       'label' => esc_html__('VK URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_vk',
       'type' => 'text',
     )
@@ -410,14 +410,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_flickr',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_flickr',
     array(
       'label' => esc_html__('Flickr URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_flickr',
       'type' => 'text',
     )
@@ -426,14 +426,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_instagram',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_instagram',
     array(
       'label' => esc_html__('Instagram URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_instagram',
       'type' => 'text',
     )
@@ -442,14 +442,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_500px',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_500px',
     array(
       'label' => esc_html__('500px URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_500px',
       'type' => 'text',
     )
@@ -458,14 +458,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_youtube',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_youtube',
     array(
       'label' => esc_html__('YouTube URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_youtube',
       'type' => 'text',
     )
@@ -474,14 +474,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_vimeo',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_vimeo',
     array(
       'label' => esc_html__('Vimeo URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_vimeo',
       'type' => 'text',
     )
@@ -490,14 +490,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_soundcloud',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_soundcloud',
     array(
       'label' => esc_html__('SoundCloud URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_soundcloud',
       'type' => 'text',
     )
@@ -506,14 +506,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_dribbble',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_dribbble',
     array(
       'label' => esc_html__('Dribbble URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_dribbble',
       'type' => 'text',
     )
@@ -522,14 +522,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_behance',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_behance',
     array(
       'label' => esc_html__('Behance URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_behance',
       'type' => 'text',
     )
@@ -538,14 +538,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_github',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_github',
     array(
       'label' => esc_html__('GitHub URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_github',
       'type' => 'text',
     )
@@ -554,14 +554,14 @@ function fmi_customize_register( $wp_customize ) {
     'social_rss',
     array(
       'default' => '',
-      'sanitize_callback' => 'fmi_sanitize_url',
+      'sanitize_callback' => 'vs_sanitize_url',
     )
   );
   $wp_customize->add_control(
     'social_rss',
     array(
       'label' => esc_html__('RSS URL', 'fmi'),
-      'section' => 'fmi_social',
+      'section' => 'vs_social',
       'settings' => 'social_rss',
       'type' => 'text',
     )
@@ -571,7 +571,7 @@ function fmi_customize_register( $wp_customize ) {
   // Section: Slider
   //----------------------------------------------------------------------------------
   $wp_customize->add_section(
-    'fmi_slider',
+    'vs_slider',
     array(
       'title' => esc_html__('Slider', 'fmi'),
       'panel' => 'theme_options',
@@ -582,14 +582,14 @@ function fmi_customize_register( $wp_customize ) {
     'activate_slider',
     array(
       'default' => false,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
     'activate_slider',
     array(
       'label' => esc_html__('Check to activate slider', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'activate_slider',
       'type' => 'checkbox',
     )
@@ -609,7 +609,7 @@ function fmi_customize_register( $wp_customize ) {
       array(
         'label' => esc_html__('Image Upload #1', 'fmi'),
         'description' => esc_html__('Upload slider image', 'fmi'),
-        'section' => 'fmi_slider',
+        'section' => 'vs_slider',
         'settings' => 'slider_image1',
       )
     )
@@ -625,7 +625,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_title1',
     array(
       'description' => esc_html__('Enter title for your slider', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_title1',
       'type' => 'text',
     )
@@ -641,7 +641,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_text1',
     array(
       'description' => esc_html__('Enter your slider description', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_text1',
       'type' => 'text',
     )
@@ -657,7 +657,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_link1',
     array(
       'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_link1',
       'type' => 'text',
     )
@@ -677,7 +677,7 @@ function fmi_customize_register( $wp_customize ) {
       array(
         'label' => esc_html__('Image Upload #2', 'fmi'),
         'description' => esc_html__('Upload slider image', 'fmi'),
-        'section' => 'fmi_slider',
+        'section' => 'vs_slider',
         'settings' => 'slider_image2',
       )
     )
@@ -693,7 +693,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_title2',
     array(
       'description' => esc_html__('Enter title for your slider', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_title2',
       'type' => 'text',
     )
@@ -709,7 +709,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_text2',
     array(
       'description' => esc_html__('Enter your slider description', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_text2',
       'type' => 'text',
     )
@@ -725,7 +725,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_link2',
     array(
       'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_link2',
       'type' => 'text',
     )
@@ -745,7 +745,7 @@ function fmi_customize_register( $wp_customize ) {
       array(
         'label' => esc_html__('Image Upload #3', 'fmi'),
         'description' => esc_html__('Upload slider image', 'fmi'),
-        'section' => 'fmi_slider',
+        'section' => 'vs_slider',
         'settings' => 'slider_image3',
       )
     )
@@ -761,7 +761,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_title3',
     array(
       'description' => esc_html__('Enter title for your slider', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_title3',
       'type' => 'text',
     )
@@ -777,7 +777,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_text3',
     array(
       'description' => esc_html__('Enter your slider description', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_text3',
       'type' => 'text',
     )
@@ -793,7 +793,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_link3',
     array(
       'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_link3',
       'type' => 'text',
     )
@@ -813,7 +813,7 @@ function fmi_customize_register( $wp_customize ) {
       array(
         'label' => esc_html__('Image Upload #4', 'fmi'),
         'description' => esc_html__('Upload slider image', 'fmi'),
-        'section' => 'fmi_slider',
+        'section' => 'vs_slider',
         'settings' => 'slider_image4',
       )
     )
@@ -829,7 +829,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_title4',
     array(
       'description' => esc_html__('Enter title for your slider', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_title4',
       'type' => 'text',
     )
@@ -845,7 +845,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_text4',
     array(
       'description' => esc_html__('Enter your slider description', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_text4',
       'type' => 'text',
     )
@@ -861,7 +861,7 @@ function fmi_customize_register( $wp_customize ) {
     'slider_link4',
     array(
       'description' => esc_html__('Enter link to redirect slider when clicked', 'fmi'),
-      'section' => 'fmi_slider',
+      'section' => 'vs_slider',
       'settings' => 'slider_link4',
       'type' => 'text',
     )
@@ -871,7 +871,7 @@ function fmi_customize_register( $wp_customize ) {
   // Section: Footer
   //----------------------------------------------------------------------------------
   $wp_customize->add_section(
-    'fmi_footer',
+    'vs_footer',
     array(
       'title' => esc_html__('Footer', 'fmi'),
       'panel' => 'theme_options',
@@ -882,7 +882,7 @@ function fmi_customize_register( $wp_customize ) {
     'footer_show_social',
     array(
       'default' => 0,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -890,14 +890,14 @@ function fmi_customize_register( $wp_customize ) {
     array(
       'type' => 'checkbox',
       'label' => esc_html__('Show "Social Links & RSS" block', 'fmi'),
-      'section' => 'fmi_footer',
+      'section' => 'vs_footer',
     )
   );
   $wp_customize->add_setting(
     'footer_show_menu',
     array(
       'default' => 0,
-      'sanitize_callback' => 'fmi_sanitize_checkbox',
+      'sanitize_callback' => 'vs_sanitize_checkbox',
     )
   );
   $wp_customize->add_control(
@@ -905,8 +905,8 @@ function fmi_customize_register( $wp_customize ) {
     array(
       'type' => 'checkbox',
       'label' => esc_html__('Show "Footer menu" block', 'fmi'),
-      'section' => 'fmi_footer',
+      'section' => 'vs_footer',
     )
   );
 }
-add_action('customize_register', 'fmi_customize_register');
+add_action('customize_register', 'vs_customize_register');

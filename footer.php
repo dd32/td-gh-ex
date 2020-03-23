@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package fmi
+ * @package Fmi
  */
 ?>
 
@@ -56,7 +56,7 @@
   			?></a>
   			<span class="sep"> | </span>
   			<?php
-  				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="http://forrss.com/">Forrss</a>' );
+  				printf( esc_html__( 'Theme: %1$s by %2$s.', 'fmi' ), 'Fmi', '<a href="https://forrss.com/">Forrss</a>' );
   			?>
         </div>  
   		</div><!-- .site-info -->

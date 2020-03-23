@@ -2,11 +2,11 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package fmi
+ * @package Fmi
  */
 
-if (!function_exists('fmi_entry_content')) {
-  function fmi_entry_content() {
+if (!function_exists('vs_entry_content')) {
+  function vs_entry_content() {
     $excerpt_type = get_theme_mod('blog_excerpt_type', 'excerpt');
     if ($excerpt_type == 'excerpt') {
       ?>
@@ -44,34 +44,34 @@ if (!function_exists('fmi_entry_content')) {
   }
 }
 
-if (!function_exists('fmi_slider')) {
-  function fmi_slider() {
+if (!function_exists('vs_slider')) {
+  function vs_slider() {
 ?>
   <div class="slider-wrap">
     <div class="slider-cycle">
       <?php
       for( $i = 1; $i <= 4; $i++ ) {
-        $fmi_slider_title = get_theme_mod( 'slider_title'.$i , '' );
-        $fmi_slider_text  = get_theme_mod( 'slider_text'.$i  , '' );
-        $fmi_slider_image = get_theme_mod( 'slider_image'.$i , '' );
-        $fmi_slider_link  = get_theme_mod( 'slider_link'.$i  , '' );
-        if( !empty( $fmi_slider_image ) ) {
+        $vs_slider_title = get_theme_mod( 'slider_title'.$i , '' );
+        $vs_slider_text  = get_theme_mod( 'slider_text'.$i  , '' );
+        $vs_slider_image = get_theme_mod( 'slider_image'.$i , '' );
+        $vs_slider_link  = get_theme_mod( 'slider_link'.$i  , '' );
+        if( !empty( $vs_slider_image ) ) {
       ?>
           <section id="featured-slider">
             <div class="slider-image-wrap">
-              <img alt="<?php echo esc_attr( $fmi_slider_title ); ?>" src="<?php echo esc_url( $fmi_slider_image ); ?>">
+              <img alt="<?php echo esc_attr( $vs_slider_title ); ?>" src="<?php echo esc_url( $vs_slider_image ); ?>">
               </div>
-              <?php if( !empty( $fmi_slider_title ) || !empty( $fmi_slider_text ) ) { ?>
+              <?php if( !empty( $vs_slider_title ) || !empty( $vs_slider_text ) ) { ?>
                 <article class="slider-text-box">
                   <div class="inner-wrap">
                     <div class="slider-text-wrap">
-<?php if( !empty( $fmi_slider_title )  ) { ?>
+<?php if( !empty( $vs_slider_title )  ) { ?>
 <span class="slider-title clearfix">
-<a title="<?php echo esc_attr( $fmi_slider_title ); ?>" <?php if(!empty($fmi_slider_link)){ ?> href="<?php echo esc_url( $fmi_slider_link ); ?>"<?php }?>><?php echo esc_html( $fmi_slider_title ); ?></a>
+<a title="<?php echo esc_attr( $vs_slider_title ); ?>" <?php if(!empty($vs_slider_link)){ ?> href="<?php echo esc_url( $vs_slider_link ); ?>"<?php }?>><?php echo esc_html( $vs_slider_title ); ?></a>
 </span>
 <?php } ?>
-<?php if( !empty( $fmi_slider_text )  ) { ?>
-<span class="slider-content"><?php echo esc_html( $fmi_slider_text ); ?></span>
+<?php if( !empty( $vs_slider_text )  ) { ?>
+<span class="slider-content"><?php echo esc_html( $vs_slider_text ); ?></span>
 <?php } ?>
                     </div>
                   </div>
@@ -90,8 +90,8 @@ if (!function_exists('fmi_slider')) {
   }
 }
 
-if (!function_exists('fmi_page_header')) {
-  function fmi_page_header(){
+if (!function_exists('vs_page_header')) {
+  function vs_page_header(){
     // author page
     if (is_author()) {
 ?>
@@ -130,8 +130,8 @@ if (!function_exists('fmi_page_header')) {
   }
 }
 
-if (!function_exists('fmi_excerpt_length')) {
-  function fmi_excerpt_length($length) {
+if (!function_exists('vs_excerpt_length')) {
+  function vs_excerpt_length($length) {
     $excerpt_length = get_theme_mod('blog_excerpt_length', 40);
     if ($excerpt_length) {
       $excerpt_length = intval($excerpt_length);
@@ -141,10 +141,10 @@ if (!function_exists('fmi_excerpt_length')) {
     return $excerpt_length;
   }
 }
-add_filter('excerpt_length', 'fmi_excerpt_length');
+add_filter('excerpt_length', 'vs_excerpt_length');
 
-if (!function_exists('fmi_editor_style')) {
-  function fmi_editor_style() {
+if (!function_exists('vs_editor_style')) {
+  function vs_editor_style() {
 
     // add stylesheets
     add_editor_style(array(
@@ -154,4 +154,4 @@ if (!function_exists('fmi_editor_style')) {
 
   }
 }
-add_action('init', 'fmi_editor_style');
+add_action('init', 'vs_editor_style');

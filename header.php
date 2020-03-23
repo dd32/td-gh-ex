@@ -68,7 +68,7 @@ if(get_theme_mod('activate_slider',0)){
 ?>
 		<div class="site-slider">
       <div class="container">
-      <?php fmi_slider();?>
+      <?php vs_slider();?>
       </div>
     </div>
 <?php

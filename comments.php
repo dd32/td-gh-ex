@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package fmi
+ * @package Fmi
  */
 
 /*
@@ -23,12 +23,12 @@ if ( post_password_required() ) {
     <ol class="comment-list">
       <?php
         wp_list_comments( array(
-          'callback'      => 'fmi_list_comments'
+          'callback'      => 'vs_list_comments'
         ) );
       ?>
     </ol><!-- .comment-list -->
 
-    <?php fmi_comments_navigation();
+    <?php vs_comments_navigation();
 
     // If comments are closed and there are comments, let's leave a little note, shall we?
     if ( ! comments_open() ) : ?>

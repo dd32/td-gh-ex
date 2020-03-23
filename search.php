@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package fmi
+ * @package Fmi
  */
 
 // header

@@ -2,10 +2,10 @@
 /**
  * custom stylesheet
  *
- * @package fmi
+ * @package Fmi
  */
 
-function fmi_inline_styles() {
+function vs_inline_styles() {
 
   $inline_styles = '';
 
@@ -150,7 +150,7 @@ a:hover, a:focus, a:active {
     ';
   }
 
-  wp_add_inline_style('fmi-style', $inline_styles);
+  wp_add_inline_style('vs-style', $inline_styles);
 
 }
-add_action('wp_enqueue_scripts', 'fmi_inline_styles');
+add_action('wp_enqueue_scripts', 'vs_inline_styles');

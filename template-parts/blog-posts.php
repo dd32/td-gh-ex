@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @package fmi
+ * @package Fmi
  */
 ?>
 
@@ -33,7 +33,7 @@ if ($blog_layout == 'left_sidebar') {
             if ( have_posts() ) :
 
               // archive page header
-              fmi_page_header();
+              vs_page_header();
 
               /* Start the Loop */
               while ( have_posts() ) : the_post();
@@ -48,9 +48,9 @@ if ($blog_layout == 'left_sidebar') {
               endwhile;
 
               if (get_theme_mod('blog_pagination') == 'navigation') {
-                fmi_posts_navigation();
+                vs_posts_navigation();
               } else {
-                fmi_posts_pagination();
+                vs_posts_pagination();
               }
 
             else :

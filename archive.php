@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages
  *
- * @package fmi
+ * @package Fmi
  */
 
 // header

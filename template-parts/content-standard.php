@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts in the standard post format
  *
- * @package fmi
+ * @package Fmi
  */
 ?>
 
@@ -14,10 +14,10 @@
   <?php }?>
 
   <div class="post-content">
-    <?php fmi_entry_header(); ?>
+    <?php vs_entry_header(); ?>
 
-    <?php fmi_entry_content();?>
+    <?php vs_entry_content();?>
 
-    <?php fmi_entry_footer(); ?>
+    <?php vs_entry_footer(); ?>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->

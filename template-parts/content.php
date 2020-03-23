@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @package fmi
+ * @package Fmi
  */
 ?>
 
@@ -14,7 +14,7 @@
   <?php }?>
 
   <div class="post-content">
-    <?php fmi_entry_header(); ?>
+    <?php vs_entry_header(); ?>
     
     <div class="entry-content clearfix">
       <?php
@@ -27,6 +27,6 @@
       ?>
     </div><!-- .entry-content -->
 
-    <?php fmi_entry_footer(); ?>
+    <?php vs_entry_footer(); ?>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->
