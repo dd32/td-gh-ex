@@ -1,19 +1,19 @@
 <?php 
-	$hide_show_service= get_theme_mod('hide_show_service','on'); 
-	$service_title= get_theme_mod('service_title'); 
-	$service_description= get_theme_mod('service_description');
-	if($hide_show_service == 'on') :
+	$avira_hide_show_service	= get_theme_mod('hide_show_service','on'); 
+	$avira_service_title		= get_theme_mod('service_title'); 
+	$avira_service_desc			= get_theme_mod('service_description');
+	if($avira_hide_show_service == 'on') :
 ?>
 	<section id="specia-service" class="service-version-one">
 		<div class="container">
 			<div class="row text-center padding-top-60 padding-bottom-30">
 				<div class="col-sm-12">
-				<?php if ($service_title) : ?>
-					<h2 class="section-heading wow zoomIn"><?php echo wp_filter_post_kses($service_title); ?></h2>
+				<?php if ($avira_service_title) : ?>
+					<h2 class="section-heading wow zoomIn"><?php echo wp_filter_post_kses($avira_service_title); ?></h2>
 				<?php endif; ?>
 				
-				<?php if ($service_description) : ?>
-					<p class="section-description"><?php echo esc_html($service_description); ?></p>
+				<?php if ($avira_service_desc) : ?>
+					<p class="section-description"><?php echo esc_html($avira_service_desc); ?></p>
 				<?php endif; ?>
 				</div>
 			</div>
