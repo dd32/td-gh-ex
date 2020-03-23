@@ -421,6 +421,20 @@ function advance_coaching_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	$wp_customize->add_setting('advance_coaching_background_skin_mode',array(
+        'default' => __('Transparent Background','advance-coaching'),
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-coaching'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-coaching'),
+            'Transparent Background' => __('Transparent Background','advance-coaching'),
+        ),
+	) );
+
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_coaching_panel_id', array(
 		'priority'       => 10,
@@ -484,22 +498,6 @@ function advance_coaching_customize_register($wp_customize) {
 		'section' => 'advance_coaching_left_right'
     ));
 
-	$wp_customize->add_setting('advance_coaching_theme_options',array(
-        'default' => __('Default','advance-coaching'),
-        'sanitize_callback' => 'advance_coaching_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_coaching_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-coaching'),
-        'description' => __('Here you can change the Width layout. ','advance-coaching'),
-        'section' => 'advance_coaching_left_right',
-        'choices' => array(
-            'Default' => __('Default','advance-coaching'),
-            'Container' => __('Container','advance-coaching'),
-            'Box Container' => __('Box Container','advance-coaching'),
-        ),
-	) );
-		
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_coaching_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-coaching'),
@@ -518,6 +516,52 @@ function advance_coaching_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-coaching')
 		),
 	));
+
+	$wp_customize->add_setting('advance_coaching_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'advance-coaching'),
+		'sanitize_callback' => 'advance_coaching_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_coaching_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'advance-coaching'),
+		'section'        => 'advance_coaching_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-coaching'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-coaching'),
+			'One Column'    => __('One Column', 'advance-coaching'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_coaching_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'advance-coaching'),
+		'sanitize_callback' => 'advance_coaching_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_coaching_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'advance-coaching'),
+		'section'        => 'advance_coaching_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-coaching'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-coaching'),
+			'One Column'    => __('One Column', 'advance-coaching'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_coaching_theme_options',array(
+        'default' => __('Default','advance-coaching'),
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-coaching'),
+        'description' => __('Here you can change the Width layout. ','advance-coaching'),
+        'section' => 'advance_coaching_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-coaching'),
+            'Container' => __('Container','advance-coaching'),
+            'Box Container' => __('Box Container','advance-coaching'),
+        ),
+	) );
 
 	// Button
 	$wp_customize->add_section( 'advance_coaching_theme_button', array(
@@ -970,6 +1014,21 @@ function advance_coaching_customize_register($wp_customize) {
        'section' => 'advance_coaching_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_coaching_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'advance_coaching_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_coaching_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','advance-coaching'),
+        'section' => 'advance_coaching_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-coaching'),
+            'Excerpt Content' => __('Excerpt Content','advance-coaching'),
+            'Full Content' => __('Full Content','advance-coaching'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'advance_coaching_excerpt_number', array(
 		'default'              => 20,
 		'type'                 => 'theme_mod',
@@ -980,13 +1039,24 @@ function advance_coaching_customize_register($wp_customize) {
 	$wp_customize->add_control( 'advance_coaching_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-coaching' ),
 		'section'     => 'advance_coaching_blog_post',
-		'type'        => 'textfield',
+		'type'        => 'number',
 		'settings'    => 'advance_coaching_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'advance_coaching_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_coaching_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','advance-coaching' ),
+		'section'     => 'advance_coaching_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_coaching_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('advance_coaching_button_text',array(
