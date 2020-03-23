@@ -48,6 +48,20 @@ function advance_automobile_customize_register($wp_customize) {
 	    'settings' => 'advance_automobile_theme_color_second',
   	)));
 
+  	$wp_customize->add_setting('advance_automobile_background_skin_mode',array(
+        'default' => __('Transparent Background','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-automobile'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-automobile'),
+            'Transparent Background' => __('Transparent Background','advance-automobile'),
+        ),
+	) );
+
 // font array
 	$font_array = array(
         '' => 'No Fonts',
@@ -495,21 +509,6 @@ function advance_automobile_customize_register($wp_customize) {
 		'section' => 'advance_automobile_left_right'
     ));
 
-	$wp_customize->add_setting('advance_automobile_theme_options',array(
-        'default' => __('Default','advance-automobile'),
-        'sanitize_callback' => 'advance_automobile_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_automobile_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-automobile'),
-        'description' => __('Here you can change the Width layout. ','advance-automobile'),
-        'section' => 'advance_automobile_left_right',
-        'choices' => array(
-            'Default' => __('Default','advance-automobile'),
-            'Container' => __('Container','advance-automobile'),
-            'Box Container' => __('Box Container','advance-automobile'),
-        ),
-	) );
 
 	$wp_customize->add_setting('advance_automobile_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-automobile'),
@@ -526,6 +525,52 @@ function advance_automobile_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-automobile')
 		),
 	));
+
+	$wp_customize->add_setting('advance_automobile_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'advance-automobile'),
+		'sanitize_callback' => 'advance_automobile_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_automobile_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'advance-automobile'),
+		'section'        => 'advance_automobile_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-automobile'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-automobile'),
+			'One Column'    => __('One Column', 'advance-automobile'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_automobile_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'advance-automobile'),
+		'sanitize_callback' => 'advance_automobile_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_automobile_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'advance-automobile'),
+		'section'        => 'advance_automobile_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-automobile'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-automobile'),
+			'One Column'    => __('One Column', 'advance-automobile'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_automobile_theme_options',array(
+        'default' => __('Default','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-automobile'),
+        'description' => __('Here you can change the Width layout. ','advance-automobile'),
+        'section' => 'advance_automobile_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-automobile'),
+            'Container' => __('Container','advance-automobile'),
+            'Box Container' => __('Box Container','advance-automobile'),
+        ),
+	) );
 
 	// Button
 	$wp_customize->add_section( 'advance_automobile_theme_button', array(
@@ -1024,6 +1069,21 @@ function advance_automobile_customize_register($wp_customize) {
        'section' => 'advance_automobile_blog_post'
     ));
 
+	$wp_customize->add_setting('advance_automobile_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','advance-automobile'),
+        'section' => 'advance_automobile_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-automobile'),
+            'Excerpt Content' => __('Excerpt Content','advance-automobile'),
+            'Full Content' => __('Full Content','advance-automobile'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'advance_automobile_excerpt_number', array(
 		'default'              => 20,
 		'type'                 => 'theme_mod',
@@ -1034,13 +1094,24 @@ function advance_automobile_customize_register($wp_customize) {
 	$wp_customize->add_control( 'advance_automobile_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-automobile' ),
 		'section'     => 'advance_automobile_blog_post',
-		'type'        => 'input',
+		'type'        => 'number',
 		'settings'    => 'advance_automobile_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'advance_automobile_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_automobile_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','advance-automobile' ),
+		'section'     => 'advance_automobile_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_automobile_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('advance_automobile_button_text',array(
