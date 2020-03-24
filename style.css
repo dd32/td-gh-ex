@@ -4,7 +4,7 @@ Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: https://zidithemes.tumblr.com/author
 Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.12
+Version: 0.0.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
@@ -5949,10 +5949,29 @@ ul {
 
 /* BEGIN MOBILE SCREEN STYLE */
 
+@media screen and (max-width: 940px) 
+{
+
+    .axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(4){
+        width: 48.3% !important;
+    }
+
+}
+
 @media screen and (max-width: 800px) 
 {
 
     .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(3) {
+        width: 48.1% !important;
+    }
+
+}
+
+
+@media screen and (max-width: 780px) 
+{
+
+    .axis-magazine-feature .axis-magazine-show .right-side .axis-magazine-show-items:nth-child(4){
         width: 48.1% !important;
     }
 

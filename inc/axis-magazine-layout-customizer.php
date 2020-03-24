@@ -2,20 +2,6 @@
 
 //layout customizer
 
-function axis_magazine_sanitize_select( $input, $setting ) {
-	
-	// Ensure input is a slug
-	$input = sanitize_key( $input );
-	
-	// Get list of choices from the control
-	// associated with the setting
-	$choices = $setting->manager->get_control( $setting->id );
-	
-	// If the input is a valid key, return it;
-	// otherwise, return the default
-	return ( array_key_exists( $input, $choices->choices ) ? $input : $setting->default );
-}
-
 function axis_magazine_layout_customizer_settings( $wp_customize ){
 
 
@@ -37,7 +23,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 
 	$wp_customize->add_setting('axis_magazine_header_box_display_settings', array(
 	    'default' => __('none', 'axis-magazine'),
-	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	    'sanitize_callback'  => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_header_box_display_control', array(
@@ -68,7 +54,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	//AD DISPLAY
 	$wp_customize->add_setting('axis_magazine_ad_img_display_settings', array(
 	    'default' => __('block', 'axis-magazine'),
-	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	    'sanitize_callback'  => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_ad_img_display_control', array(
@@ -154,7 +140,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	
 	$wp_customize->add_setting('axis_magazine_index_class_name_settings', array(
 	    'default' => __('axis-magazine-index-six', 'axis-magazine'),
-	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	    'sanitize_callback'  => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_index_class_name_display_control', array(
@@ -182,7 +168,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 
 	$wp_customize->add_setting('axis_magazine_feature_display_settings', array(
 	    'default' => __('block', 'axis-magazine'),
-	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	    'sanitize_callback'  => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_feature_display_control', array(
@@ -206,7 +192,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 
 	$wp_customize->add_setting('axis_magazine_stack_mag_display_settings', array(
 	    'default' => __('block', 'axis-magazine'),
-	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	    'sanitize_callback'  => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_stack_mag_display_control', array(
@@ -376,7 +362,7 @@ function axis_magazine_layout_customizer_settings( $wp_customize ){
 	//FOOTER SECTION DISPLAY HEADER TITLE
 	$wp_customize->add_setting('axis_magazine_footer_display_header_text_settings', array(
 	    'default' => __('block', 'axis-magazine'),
-	    'sanitize_callback'  => 'axis_magazine_sanitize_select',
+	    'sanitize_callback'  => 'sanitize_text_field',
 	));
 
 	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'axis_magazine_footer_display_header_text_control', array(
