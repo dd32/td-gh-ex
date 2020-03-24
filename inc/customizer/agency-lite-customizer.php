@@ -808,3 +808,25 @@ $wp_customize->add_control( 'agency_lite_archive_excerpt_lenght', array(
 		'priority' => 20
 	)
 );
+
+	//for Post settings
+$wp_customize->add_section( 'agency_lite_post_section',array(
+	'title' 		 =>		 esc_html__('Post Setting','agency-lite'),
+	'capability'     => 'edit_theme_options',
+	'priority'       => 30
+
+));
+
+$wp_customize->add_setting( 'agency_lite_feat_img_enable',array(
+	'sanitize_callback' => 'agency_lite_sanitize_textarea',
+	'default'           => 'on'
+));
+
+$wp_customize->add_control( new agency_lite_Switch_Control( $wp_customize,'agency_lite_feat_img_enable',array(
+	'label'         	=> esc_html__( 'Show Featured Image', 'agency-lite' ),
+	'section'       	=> 'agency_lite_post_section',
+	'priority'		=> 1,
+	'on_off_label'  	=> array(
+		'on'          	=> esc_html__( 'Show', 'agency-lite' ),
+		'off'         	=> esc_html__( 'Hide', 'agency-lite' ),
+	))));

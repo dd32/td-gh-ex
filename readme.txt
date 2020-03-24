@@ -4,7 +4,7 @@ Contributors: Access Keys
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, two-columns, right-sidebar, custom-header, footer-widget, blog, portfolio
 Requires at least: 4.0
 Tested up to: 5.3
-Stable tag: 1.0.0
+Stable tag: 1.1.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -36,6 +36,9 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 * Screenshot banner Image, https://pixabay.com/en/wood-wooden-desktop-table-desk-3271749/, © 2018 Pixabay, [Creative Commons CC0]https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+
+= 1.1.3 - Mar 24 2020 =
+** Added Featured Image Show Hide Option for Single Post
 
 = 1.1.2 - Jan 22 2020 =
 ** Added Excerpt Option in Archive Page
