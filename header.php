@@ -28,12 +28,12 @@ if( ! defined( 'ABSPATH' ) ) {
 <body <?php body_class(); ?>>
 
 <?php wp_body_open(); ?>
+    
+<a class="screen-reader-text skip-link" href="#page">
+    <?php esc_html_e( 'Skip to content', 'agama' ); ?>
+</a><!-- .screen-reader-text -->
 
 <div id="agama-main-wrapper" class="<?php Agama::main_wrapper_class(); ?>">
-    
-    <a class="screen-reader-text skip-link" href="#page">
-        <?php esc_html_e( 'Skip to content', 'agama' ); ?>
-    </a><!-- .screen-reader-text -->
     
     <?php
     /**

@@ -154,7 +154,6 @@ class Engine {
         get_template_part( 'framework/admin/admin-init' );
         get_template_part( 'framework/class-agama-filters' );
         get_template_part( 'framework/agama-actions' );
-        get_template_part( 'framework/agama-filters' );
         get_template_part( 'framework/agama-functions' );
         get_template_part( 'framework/class-agama-inline-style' );
         get_template_part( 'framework/class-agama-plugin-activation' );

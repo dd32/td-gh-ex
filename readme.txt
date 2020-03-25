@@ -3,6 +3,10 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.5.4 - 25 March 2020 =
+* Removed the framework/agama-filters.php file.
+* Minor design updates.
+
 = 1.5.3 - 21 March 2020 =
 * Added skip to content link.
 * Added header image background overlay feature.

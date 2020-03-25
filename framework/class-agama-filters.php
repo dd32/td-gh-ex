@@ -56,12 +56,33 @@ class Filters {
      */
     public function __construct() {
         
+        add_filter( 'wp_page_menu_args', [ $this, 'page_menu_args' ] );
         add_filter( 'body_class', [ $this, 'body_class' ] );
         add_filter( 'excerpt_length', [ $this, 'excerpt_length' ], 999 );
         add_filter( 'excerpt_more', [ $this, 'excerpt_more' ] );
         add_filter( 'edit_post_link', [ $this, 'edit_post_link' ] );
+        add_filter( 'previous_posts_link_attributes', [ $this, 'previous_posts_link_attributes' ] );
+        add_filter( 'next_posts_link_attributes', [ $this, 'next_posts_link_attributes' ] );
         add_filter( 'edit_comment_link', [ $this, 'edit_comment_link' ] );
+        add_filter( 'comment_form_default_fields', [ $this, 'comment_form_default_fields' ] );
+        add_filter( 'comment_form_defaults', [ $this, 'comment_form_defaults' ] );
         
+    }
+    
+    /**
+     * Page Menu Args
+     *
+     * Filter the page menu arguments.
+     * Makes our wp_nav_menu() fallback -- wp_page_menu() -- show a home link.
+     *
+     * @since 1.0.0
+     * @access public
+     * @return array
+     */
+    public function page_menu_args( $args ) {
+        if ( ! isset( $args['show_home'] ) )
+            $args['show_home'] = true;
+        return $args;
     }
     
     /**
@@ -75,7 +96,7 @@ class Filters {
      * @since 1.5.0 Updated the code.
      * @return array Filtered class values.
      */
-    function body_class( $classes ) {
+    public function body_class( $classes ) {
         $background_color = esc_attr( get_background_color() );
         $background_image = esc_url( get_background_image() );
         $header 		  = esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
@@ -203,9 +224,35 @@ class Filters {
      * @access public
      * @return string
      */
-    function edit_post_link( $link ) {
+    public function edit_post_link( $link ) {
         $link = str_replace('class="post-edit-link"', 'class="button button-3d button-mini button-rounded"', $link );
         return $link;
+    }
+    
+    /**
+     * Previous Posts Link Attributes
+     *
+     * Filters the anchor tag attributes for the previous posts page link.
+     *
+     * @since 1.3.7
+     * @access public
+     * @return string
+     */
+    public function previous_posts_link_attributes() {
+        return 'class="prev"';
+    }
+    
+    /**
+     * Next Posts Link Attributes
+     *
+     * Filters the anchor tag attributes for the next posts page link.
+     *
+     * @since 1.3.7
+     * @access public
+     * @return string
+     */
+    public function next_posts_link_attributes() {
+        return 'class="next"';
     }
     
     /**
@@ -220,9 +267,65 @@ class Filters {
      * @access public
      * @return string
      */
-    function edit_comment_link( $link ) {
+    public function edit_comment_link( $link ) {
         $link = str_replace( 'class="comment-edit-link"', 'class="button button-3d button-mini button-rounded"', $link );
         return $link;
+    }
+    
+    /**
+     * Comment Form Default Fields
+     *
+     * Filters the default comment form fields.
+     *
+     * @param array $fields (required) Array of the default comment fields.
+     *
+     * @since 1.2.4
+     * @access public
+     * @return mixed
+     */
+    public function comment_form_default_fields( $fields ) {
+
+        // Get the current commenter if available
+        $commenter = wp_get_current_commenter();
+
+        // Core functionality
+        $req      = get_option( 'require_name_email' );
+        $aria_req = ( $req ? " aria-required='true'" : '' );
+        $html_req = ( $req ? " required='required'" : '' );
+
+        $fields['author']	= '<div class="tv-col-md-4"><label for="author">' . __( 'Name', 'agama' ) . '</label>' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" class="sm-form-control"' . $aria_req . ' /></div>';
+        $fields['email'] 	= '<div class="tv-col-md-4"><label for="email">' . __( 'Email', 'agama' ) . '</label>' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" class="sm-form-control"' . $aria_req . ' /></div>';
+        $fields['url'] 		= '<div class="tv-col-md-4"><label for="url">' . __( 'Website', 'agama' ) . '</label><input id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) . '" class="sm-form-control" /></div>';
+
+        return $fields;
+    }
+    
+    /**
+     * Comment Form Defaults
+     *
+     * Filters the comment form default arguments.
+     *
+     * @param array $defaults (required) The default comment form arguments.
+     *
+     * @since 1.2.4
+     * @access public
+     * @return mixed
+     */
+    function comment_form_defaults( $defaults ) {
+        global $current_user;
+
+        $defaults['logged_in_as'] = '<div class="tv-col-md-12 logged-in-as">' . sprintf(	'%s <a href="%s">%s</a>. <a href="%s" title="%s">%s</a>', __('Logged in as', 'agama'), admin_url( 'profile.php' ), $current_user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ), __('Log out of this account', 'agama'), __('Log out?', 'agama') ) . '</div>';
+        $defaults['comment_field'] = '<div class="tv-col-md-12"><label for="comment">' . __( 'Comment', 'agama' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="sm-form-control"></textarea></div>';
+
+        // HTML Tags Usage Suggestion
+        if( get_theme_mod( 'agama_comments_tags_suggestion', true ) ) {
+            $defaults['comment_notes_after'] = '<div class="tv-col-md-12" style="margin-top: 15px; margin-bottom: 15px;">' . sprintf( '%s <abbr title="HyperText Markup Language">HTML</abbr> %s: %s', __( 'You may use these', 'agama' ), __( 'tags and attributes', 'agama' ), '<code>' . allowed_tags() . '</code>') . '</div>';
+        }
+
+        $defaults['title_reply']	= sprintf( '%s <span>%s</span>', __( 'Leave a', 'agama' ), __( 'Comment', 'agama' ) );
+        $defaults['class_submit']	= 'button button-3d button-large button-rounded';
+
+        return $defaults;
     }
     
 }

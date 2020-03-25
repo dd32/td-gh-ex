@@ -220,7 +220,7 @@ if ( ! function_exists( 'agama_content_nav' ) ) {
 
         if ( $wp_query->max_num_pages > 1 ) : ?>
             <nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation clearfix" role="navigation">
-                <h2 class="assistive-text"><?php esc_html_e( 'Post navigation', 'agama' ); ?></h2>
+                <h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'agama' ); ?></h2>
                 <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'agama' ) ); ?></div>
                 <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'agama' ) ); ?></div>
             </nav>

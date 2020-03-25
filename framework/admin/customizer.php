@@ -108,7 +108,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_logo_color',
 		'type'			=> 'color',
         'transport'		=> 'auto',
-        'default'		=> '#fff',
+        'default'		=> '#bdbdbd',
 		'output'		=> [
 			[
 				'element'	=> '#masthead h1 a',
@@ -123,7 +123,7 @@ add_action( 'customize_register', 'agama_customize_register' );
 		'settings'		=> 'agama_header_logo_hover_color',
 		'type'			=> 'color',
         'transport'		=> 'auto',
-        'default'		=> '#444',
+        'default'		=> '#333',
 		'output'		=> [
 			[
 				'element'	=> '#masthead h1 a:hover',
@@ -1070,7 +1070,7 @@ add_action( 'customize_register', 'agama_customize_register' );
             'variant'           => '700',
             'font-size'         => '14px',
             'letter-spacing'    => '0',
-            'color'             => '#dbc4ff',
+            'color'             => '#bdbdbd',
             'text-transform'    => 'uppercase'
         ]
     ] );
@@ -1099,7 +1099,7 @@ add_action( 'customize_register', 'agama_customize_register' );
                 'property'  => 'color'
             ]
 		],
-		'default'		    => '#ae7dfb'
+		'default'		    => '#333'
 	] );
 	######################################################
 	# NAVIGATION MOBILE SECTION
