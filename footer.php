@@ -57,7 +57,7 @@
 							$icon_link = ! empty( $footer_Payment_item->link ) ? apply_filters( 'startkit_translate_single_string', $footer_Payment_item->link, 'footer section' ) : '';	
 						?>
 							<?php if ( ! empty( $icon ) ) :?>
-										<li><a href="<?php echo esc_url($icon_link); ?>"><i class="fa <?php echo esc_attr( $icon ); ?>"></i></a></li>
+									<li><a href="<?php echo esc_url($icon_link); ?>"><i class="fa <?php echo esc_attr( $icon ); ?>"></i></a></li>
 							<?php endif; ?>
 						<?php  } } ?>
 					</ul>

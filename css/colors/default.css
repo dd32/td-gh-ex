@@ -1,11 +1,6 @@
 /*=========================================
     Primary Color
 =========================================*/
-
-.preloader {
-    background: #ee591f;
-}
-
 .features-list-item {
    background: #ee591f;
 }
@@ -17,10 +12,6 @@ h2.site-title::first-letter,
     color: #ee591f ;
 }
 
-.section-header h2:after {
-    background: #ee591f ;    
-}
-
 .boxed-btn {
     background: #ee591f ;    
 }
@@ -28,11 +19,6 @@ h2.site-title::first-letter,
 .breadcrumb-nav li a:hover,
 .boxed-btn:hover {
     color: #ee591f ;    
-}
-
-/* 02. Header Top */
-#header-top {
-    background: #ee591f ;    
 }
 
 /* 03. Custom Navigation */
