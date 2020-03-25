@@ -247,9 +247,7 @@ $(document).ready(function(){
 
         var computedStyle = getComputedStyle(this);
         
-        var par_computedStyle = getComputedStyle(this.parentNode.parentNode);
-        
-        var block_top = parseInt(par_computedStyle.paddingTop);
+        var block_top = parseInt(this.parentNode.offsetTop);
         
         const width = this.getBoundingClientRect().width - parseInt(computedStyle.paddingLeft) - parseInt(computedStyle.paddingRight);
 
@@ -285,9 +283,8 @@ $(document).ready(function(){
    
     if (active) {   
         var computedStyle = getComputedStyle(active);
-        
-        var par_computedStyle = getComputedStyle(active.parentNode.parentNode);
-        var block_top = parseInt(par_computedStyle.paddingTop);
+
+        var block_top = parseInt(active.parentNode.offsetTop);
         
         const width = active.getBoundingClientRect().width - parseInt(computedStyle.paddingLeft) - parseInt(computedStyle.paddingRight);
         const left = active.getBoundingClientRect().left + parseInt(computedStyle.paddingLeft);
