@@ -41,7 +41,7 @@ function adapable_notes_custom_header_setup() {
 		'header-bg' => array(
 			'url'           => get_theme_file_uri( '/images/bg-image.jpg' ),
 			'thumbnail_url' => get_theme_file_uri( '/images/bg-image.jpg' ),
-			'description'   => _x( 'Default', 'Default header image', 'adaptables-notes' )
+			'description'   => _x( 'Default', 'Default header image', 'adaptable-notes' )
 			),	
 		) );
 
@@ -56,7 +56,6 @@ if ( ! function_exists( 'adaptable_notes_header_style' ) ) :
  */
 function adaptable_notes_header_style() {
 	$header_text_color = get_header_textcolor();
-	$header_image = get_header_image();
 
 	// If we get this far, we have custom styles. Let's do this.
 	?>
