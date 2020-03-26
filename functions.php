@@ -121,6 +121,7 @@ function semperfi_wrap_embed_with_div( $html , $url , $attr ) {
     if ( preg_match("/youtu.be/", $html) ||
         preg_match("/youtube.com/", $html) ||
         preg_match("/vimeo/", $html) ||
+        preg_match("/videopress.com/", $html) ||
         preg_match("/wordpress.tv/", $html) ||
         preg_match("/v.wordpress.com/", $html ) )
     

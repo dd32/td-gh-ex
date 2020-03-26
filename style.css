@@ -14,7 +14,7 @@ Copyright: Semper Fi Lite WordPress Theme, Copyright 2019 Eric J. Schwarz. Sempe
 
 Description: Semper Fi Lite is a handwritten WordPress theme for blogs, businesses, and can also be used as a powerful e-commerce (Woocommerce) solution. Written without JavaScript, just pure HTML5 and CSS3, Semper Fi Lite is free of any possible scripting conflicts with every WordPress Plugin out there. Fully responsive, with a built-in mobile friendly touch screen menu, adaptive font sizing, Woo Commerce integration, page-specific custom backgrounds, and 4k+ resolution ready. All of Semper Fi Lite's options are organized and controlled with WordPress's powerful Customizer for real-time customization. For support with questions, help, or issues use <a href="http://schwarttzy.com/contact-me/" target="_blank">the contact page</a> or head over to <a href="https://wordpress.org/support/theme/semper-fi-lite/" target="_blank">the forums</a>.
 
-Version: 104
+Version: 106
 
 License: GNU General Public License, version 3 (AGPLv3)
 
@@ -124,14 +124,18 @@ blockquote:before {
 }
 
 blockquote p {
-    display:inline;
+    display: inline-block;
+    text-align: center;
+    width: calc( 100% - 2.5em );
 }
 
+blockquote cite,
 blockquote p cite {
+    display: block;
 	font-weight: 300;
-    float: right;
 	letter-spacing: 0.05em;
 	margin: 1em 0 0;
+    text-align: right;
 	text-transform: uppercase;
 }
 
@@ -247,7 +251,6 @@ html {
     min-width: 100%;
     height: 100%;
     width: 100%;
-    
 }
 
 img {
@@ -433,19 +436,22 @@ a::-moz-selection {
 
 #wp-calendar td,
 #wp-calendar th {
-    text-align:center;}
+    text-align: center;
+}
 
 img#wpstats {
-    display:none;}
+    display: none;
+}
 
 
 /* HTML Elements requiring WordPress Special Classes
 ------------------------------------------------------------------*/
 
 iframe.twitter-timeline {
-	height:auto!important;
-    min-height:22em!important;
-	width:100%!important;}
+	height: auto !important;
+    min-height: 22em !important;
+	width: 100% !important;
+}
 
 body article .textaligncenter,
 body article h3.textaligncenter {
@@ -454,22 +460,27 @@ body article h3.textaligncenter {
 
 .aligncenter,
 .alignnone {
-    display: block;
-    margin: 2em auto;
+    display: block !important;
+    margin: 2em auto !important;
     max-width: 100% !important;
+    text-align: center !important;
+}
+
+.alignfull {
+    max-width: 90% !important;
 }
 
 .alignleft {
-    display: block;
+    display: block !important;
     float: left;
-    margin: 2em 2em 2em 0;
+    margin: 2em 2em 2em 0 !important;
     max-width: 75.5% !important;
 }
 
 .alignright {
-    display: block;
+    display: block !important;
     float: right;
-    margin: 2em 0 2em 2em;
+    margin: 2em 0 2em 2em !important;
     max-width: 75.5% !important;
 }
 
@@ -495,7 +506,8 @@ body article h3.textaligncenter {
     margin: 0 0 2% 0;
 }
 
-div.gallery {
+div.gallery,
+figure.wp-block-gallery {
     display: flex;
     flex-flow: row wrap;
     margin: 2em auto;
@@ -503,11 +515,14 @@ div.gallery {
 }
 
 div.gallery-columns-1,
-div.gallery-columns-2 {
+div.gallery-columns-2,
+figure.wp-block-gallery.columns-1,
+figure.wp-block-gallery.columns-2 {
 	max-width: 35em;
 }
 
-div.gallery-columns-3 {
+div.gallery-columns-3,
+figure.wp-block-gallery.columns-3 {
 	max-width: 40em;
 }
 
@@ -517,32 +532,54 @@ div.gallery-columns-3 {
     text-align: center;
 }
 
-.gallery-columns-1 figure.gallery-item {
-    width:100%;}
+main#the-article li.blocks-gallery-item {
+    margin: .5em 1em;
+}
 
-.gallery-columns-2 figure.gallery-item {
-    width:48%;}
+.gallery-columns-1 figure.gallery-item,
+.wp-block-gallery.columns-1 .blocks-gallery-item {
+    width: calc( 100% - 2em ) !important;
+}
 
-.gallery-columns-3 figure.gallery-item {
-    width:30.66667%;}
+.gallery-columns-2 figure.gallery-item,
+.wp-block-gallery.columns-2 .blocks-gallery-item {
+    width: calc( 50% - 2em ) !important;
+}
 
-.gallery-columns-4 figure.gallery-item {
-    width: calc(25% - 2em);}
+.gallery-columns-3 figure.gallery-item,
+.wp-block-gallery.columns-3 .blocks-gallery-item {
+    width: calc( 33.33333% - 2em ) !important;
+}
 
-.gallery-columns-5 figure.gallery-item {
-    width:16.8%;}
+.gallery-columns-4 figure.gallery-item,
+.wp-block-gallery.columns-4 .blocks-gallery-item {
+    width: calc( 25% - 2em ) !important;
+}
 
-.gallery-columns-6 figure.gallery-item {
-    width:13.33333%;}
+.gallery-columns-5 figure.gallery-item,
+.wp-block-gallery.columns-5 .blocks-gallery-item {
+    width: calc( 20% - 2em ) !important;
+}
 
-.gallery-columns-7 figure.gallery-item {
-    width:10.85714%;}
+.gallery-columns-6 figure.gallery-item,
+.wp-block-gallery.columns-6 .blocks-gallery-item {
+    width: calc( 16.66666% - 2em ) !important;
+}
 
-.gallery-columns-8 figure.gallery-item {
-    width:9%;}
+.gallery-columns-7 figure.gallery-item,
+.wp-block-gallery.columns-7 .blocks-gallery-item {
+    width: calc( 14.28571% - 2em ) !important;
+}
 
-.gallery-columns-9 figure.gallery-item {
-    width:7.55555%;}
+.gallery-columns-8 figure.gallery-item,
+.wp-block-gallery.columns-8 .blocks-gallery-item {
+    width: calc( 12.5% - 2em ) !important;
+}
+
+.gallery-columns-9 figure.gallery-item,
+.wp-block-gallery.columns-9 .blocks-gallery-item {
+    width: calc( 11.11111% - 2em ) !important;
+}
 
 figure.gallery-item {
     flex: auto;
@@ -573,8 +610,35 @@ figure.gallery-item img {
     margin: auto;
 }
 
+figure.wp-block-embed .wp-block-embed__wrapper {
+    display: inline-block;
+}
+
 .sticky {
     /* I really don't want the End User to know they're on a sticky page... is that so wrong? */
+}
+
+#the-article .twitter-tweet {
+    margin: 1em auto !important;
+}
+
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image.is-resized > figcaption,
+.wp-block-image .aligncenter,
+.wp-block-image .alignleft,
+.wp-block-image .alignright,
+.wp-block-image.is-resized {
+    display: block !important;
+}
+
+.blocks-gallery-grid .blocks-gallery-image figcaption,
+.blocks-gallery-grid .blocks-gallery-item figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+    font-size: .6em;
+    padding: 0 !important;
 }
 
 .wp-caption {
@@ -601,7 +665,7 @@ figure.gallery-item img {
     max-width: 80vw;
 	padding: 0 0 45vw;
 	position:relative;
-	width: 100%;}
+	width: 100vw;}
 
 .video-container iframe,
 .embed-vimeo iframe,
@@ -624,10 +688,6 @@ figure.gallery-item img {
     max-width: 50em !important;
 }
 
-footer#widgets-and-credits aside.footer_widget {
-    width: 20vw;
-}
-
 .ztb-customchatbox-logo,
 .ztb-customchatbox-logo::after,
 ._4fsi:nth-child(5),
@@ -640,7 +700,7 @@ footer#widgets-and-credits aside.footer_widget {
 
 @media screen and (max-width:600px){
     
-    .admin-bar nav#for-mobile {
+    .admin-bar nav#display-menu {
         
         top:0px;
         
@@ -665,8 +725,17 @@ footer#widgets-and-credits aside.footer_widget {
     .video-container,
     .embed-vimeo,
     .embed-youtube {
-        max-width: 40em;
+        max-width: 100%;
         padding: 0 0 22.5em;
+        width: 40em;
+    }
+    
+    .alignfull .video-container,
+    .alignfull .embed-vimeo,
+    .alignfull .embed-youtube {
+        max-width: 100%;
+        padding: 0 0 45em;
+        width: 80vw;
     }
     
 }

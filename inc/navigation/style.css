@@ -1,52 +1,80 @@
-nav#for-mobile {
+nav#display-menu {
     background: #222222;
     border-left: .0625em solid #222222;
     font-size: .8em;
-    height: 5em;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    margin-right: 0;
     position: fixed;
-    right: -3px;
+    right: 0;
     top: 0;
     width: 25em;
     z-index: 99;
 }
 
-.admin-bar nav#for-mobile {
+.admin-bar nav#display-menu {
     top: 32px;
 }
 
-nav#for-mobile:target {
-    height: 100vh;
-    overflow-y: scroll;
-    right: -20px;
-    width: calc( 25em + 17px );
+nav#display-menu #hide-menu {
+    height: 4.999em;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    overflow-y:scroll;
+    overflow-x:hidden;
 }
 
-.admin-bar nav#for-mobile:target {
+
+nav#display-menu #hide-menu::-webkit-scrollbar { 
+    display: none;  /* Chrome Safari */
+}
+
+nav#display-menu:focus-within #hide-menu {
+    height: 100vh;
+} /* Internet Explorer won't open the menu without this being seperate */
+
+nav#display-menu:target #hide-menu,
+nav#display-menu:hover #hide-menu {
+    height: 100vh;
+}
+
+.admin-bar nav#display-menu:target #hide-menu,
+.admin-bar nav#display-menu:hover #hide-menu,
+.admin-bar nav#display-menu:focus-within #hide-menu {
     height: calc(100vh - 32px);
 }
 
-nav#for-mobile:not(:target) > ul,
-nav#for-mobile:not(:target) > h3 {
+nav#display-menu:hover #hide-menu:target {
+    height: 5em;
+}
+
+nav#display-menu:not(:focus-within) #hide-menu:target > h3,
+nav#display-menu:not(:focus-within) #hide-menu:target > div ul.social,
+nav#display-menu:not(:focus-within) #hide-menu:target > ul.navigation,
+nav#display-menu:not(:focus-within) #hide-menu:target > ul.navigation-widgets,
+nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > h3,
+nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > div ul.social,
+nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > ul.navigation,
+nav#display-menu:not(:target):not(:focus-within):not(:hover) #hide-menu:not(:target) > ul.navigation-widgets {
     display: none;
 }
 
-nav#for-mobile a {
+nav#display-menu a {
     color: #ffffff;
 }
 
-nav#for-mobile a:hover {
+nav#display-menu a:focus,
+nav#display-menu a:hover {
     color: #c52b30;
 }
 
-nav#for-mobile img.nav-logo {
+nav#display-menu img.nav-logo {
     float: left;
     height: 4em;
     margin: .5em 1em .5em .5em;
 }
 
-nav#for-mobile h1 {
+nav#display-menu h1 {
     display: block;
     font-family: 'Teko', sans-serif;
     line-height: 2.25em;
@@ -55,17 +83,18 @@ nav#for-mobile h1 {
     text-transform: none;
 }
 
-nav#for-mobile h1 a:hover {
+nav#display-menu h1 a:focus,
+nav#display-menu h1 a:hover {
     color: #aaaaaa;
 }
 
-nav#for-mobile .customizer {
+nav#display-menu .customizer {
     bottom: 0;
     position: absolute;
     left: 0;
 }
 
-nav#for-mobile ul.social {
+nav#display-menu ul.social {
     background: #eeeeee;
     border-bottom: .0625em solid #cccccc;
     display: flex;
@@ -76,14 +105,14 @@ nav#for-mobile ul.social {
     width: calc( 100% - 2.5em );
 }
 
-nav#for-mobile ul.social li {
+nav#display-menu ul.social li {
     background: none;
     display: block;
     height: 3.5em;
     position: relative;
 }
 
-nav#for-mobile ul.social li a {
+nav#display-menu ul.social li a {
     background: #c52b30;
     border-radius: 50%;
     color: #efefef;
@@ -97,26 +126,27 @@ nav#for-mobile ul.social li a {
     top: .7em;
 }
 
-nav#for-mobile ul.social li a:hover {
+nav#display-menu ul.social li a:focus,
+nav#display-menu ul.social li a:hover {
     background: #333333;
 }
 
-nav#for-mobile > ul:only-child {
+nav#display-menu > ul:only-child {
     min-height: calc(100vh - 6.5em);
 }
 
-nav#for-mobile ul.navigation {
+nav#display-menu ul.navigation {
     background: #ffffff;
     display: grid;
 }
 
-nav#for-mobile ul.navigation li {
+nav#display-menu ul.navigation li {
     display: inline-block;
     float: none;
     text-align: left;
 }
 
-nav#for-mobile ul.navigation li a {
+nav#display-menu ul.navigation li a {
     border-bottom: .0625em solid #cccccc;
     color: #333333;
     display: inline-block;
@@ -127,35 +157,36 @@ nav#for-mobile ul.navigation li a {
     width: calc(100% - 3em);
 }
 
-nav#for-mobile > ul.navigation > li:nth-child(2n),
-nav#for-mobile > ul.navigation > li:nth-child(2n) li {
+nav#display-menu #hide-menu > ul.navigation > li:nth-child(2n),
+nav#display-menu #hide-menu > ul.navigation > li:nth-child(2n) li {
     background: #f8f8f8;
 }
 
-nav#for-mobile ul.navigation li li a {
+nav#display-menu ul.navigation li li a {
     margin-left: 1.5em;
     width: 19.5em;
 }
 
-nav#for-mobile ul.navigation.dontrememberwhyihavethis li li:last-of-type a {
+nav#display-menu ul.navigation.dontrememberwhyihavethis li li:last-of-type a {
     margin: 0;
     padding-left: 3em;
     text-align: center;
 }
 
-nav#for-mobile ul.navigation li a:hover {
+nav#display-menu ul.navigation li a:focus,
+nav#display-menu ul.navigation li a:hover {
     color: #c52b30;
 }
 
-nav#for-mobile .menu-trick {
+nav#display-menu .menu-trick {
     float: right;
     height: 4.5em;
     position: relative;
     width: 5em;
 }
 
-nav#for-mobile .enable-drop-down,
-nav#for-mobile .disable-drop-down {
+nav#display-menu .enable-drop-down,
+nav#display-menu .disable-drop-down {
     color: #aaaaaa;
     font-size: 1em;
     font-weight: bold;
@@ -167,77 +198,86 @@ nav#for-mobile .disable-drop-down {
     top: 0em;
 }
 
-nav#for-mobile .enable-drop-down:hover,
-nav#for-mobile .disable-drop-down:hover {
+nav#display-menu .disable-drop-down {
+    padding: 1.25em;
+}
+
+nav#display-menu .enable-drop-down:focus,
+nav#display-menu .disable-drop-down:focus,
+nav#display-menu .enable-drop-down:hover,
+nav#display-menu .disable-drop-down:hover {
     color: #c52b30;
 }
 
-nav#for-mobile .disable-drop-down {
-    width: auto;
-}
-
-nav#for-mobile:target .enable-drop-down,
-nav#for-mobile:not(:target) .disable-drop-down {
+nav#display-menu:target .enable-drop-down,
+nav#display-menu:hover #hide-menu:not(:target) .enable-drop-down,
+nav#display-menu:not(:target):not(:hover) .disable-drop-down,
+nav#display-menu:not(:target):hover #hide-menu:not(:target) .disable-drop-down,
+nav#display-menu #hide-menu:target .disable-drop-down {
     display: none;
 }
 
-nav#for-mobile h3 {
+nav#display-menu:not(:target):hover #hide-menu:not(:target) .enable-drop-down {
+    display: block;
+}
+
+nav#display-menu h3 {
     color: #ffffff;
     margin-left: .5em;
     text-align: left;
 }
 
-nav#for-mobile h3 a {
+nav#display-menu h3 a {
     color: #ffffff;
 }
 
-nav#for-mobile h3 a:hover {
+nav#display-menu h3 a:hover {
     color: #c52b30;
 }
 
-nav#for-mobile ul.navigation-widgets h3 {
+nav#display-menu ul.navigation-widgets h3 {
     border-top: #ffffff solid .3em;
     margin: .25em 0;
     text-align: center;
 }
 
-nav#for-mobile ul.navigation-widgets li {
+nav#display-menu ul.navigation-widgets li {
     border-bottom: #111111 solid .05em;
     color: #ffffff;
     display: block;
     padding: 1em 0;
 }
 
-nav#for-mobile ul.navigation-widgets > li {
+nav#display-menu ul.navigation-widgets > li {
     padding: 1em 1.5em 1em 1em;
 }
 
-nav#for-mobile ul.navigation-widgets > li:last-of-type {
+nav#display-menu ul.navigation-widgets > li:last-of-type {
     font-size: .7em;
     text-align: center;
 }
 
-nav#for-mobile ul.navigation-widgets a {
+nav#display-menu ul.navigation-widgets a {
     color: #aaaaaa;
 }
 
-nav#for-mobile ul.navigation-widgets a:hover {
+nav#display-menu ul.navigation-widgets a:hover {
     color: #c52b30;
 }
 
-nav#for-mobile .gallery figcaption.wp-caption-text {
+nav#display-menu .gallery figcaption.wp-caption-text {
     display: none;
 }
 
-nav#for-mobile li.woocommerce-mini-cart-item {
+nav#display-menu li.woocommerce-mini-cart-item {
     position: relative;
 }
 
-nav#for-mobile .widget_shopping_cart_content a {
+nav#display-menu .widget_shopping_cart_content a {
     display: block;
 }
 
-nav#for-mobile .widget_shopping_cart_content a.remove_from_cart_button {
+nav#display-menu .widget_shopping_cart_content a.remove_from_cart_button {
     color: #ffffff;
     display: block;
     font-size: 2em;
@@ -248,11 +288,12 @@ nav#for-mobile .widget_shopping_cart_content a.remove_from_cart_button {
     width: 1em;
 }
 
-nav#for-mobile .widget_shopping_cart_content a.remove_from_cart_button:hover {
+nav#display-menu .widget_shopping_cart_content a.remove_from_cart_button:focus,
+nav#display-menu .widget_shopping_cart_content a.remove_from_cart_button:hover {
     color: #333333;
 }
 
-nav#for-mobile .widget_shopping_cart_content a.remove_from_cart_button:before {
+nav#display-menu .widget_shopping_cart_content a.remove_from_cart_button:before {
     background: #c52b30;
     border-radius: 50%;
     border: .05em solid #eeeeee;
@@ -265,7 +306,7 @@ nav#for-mobile .widget_shopping_cart_content a.remove_from_cart_button:before {
     z-index: -1;
 }
 
-nav#for-mobile .widget_shopping_cart_content li.mini_cart_item img {
+nav#display-menu .widget_shopping_cart_content li.mini_cart_item img {
     border-radius: 50%;
     border: .3em solid #eeeeee;
     display: block;
@@ -274,30 +315,30 @@ nav#for-mobile .widget_shopping_cart_content li.mini_cart_item img {
     width: calc( 75% - .5em );
 }
 
-nav#for-mobile p.woocommerce-mini-cart__empty-message {
+nav#display-menu p.woocommerce-mini-cart__empty-message {
     text-align: center;
 }
 
-nav#for-mobile .woocommerce-mini-cart__total {
+nav#display-menu .woocommerce-mini-cart__total {
     font-size: 1.5em;
     padding: 1em 1em 0;
 }
 
 
-nav#for-mobile .woocommerce-mini-cart__buttons {
+nav#display-menu .woocommerce-mini-cart__buttons {
     font-size: 1.5em;
     padding: 0 1em 1em;
 }
 
 @media screen and ( max-width:782px ){
     
-    .admin-bar nav#for-mobile {
+    .admin-bar nav#display-menu {
         
         top: 46px;
         
     }
     
-    .admin-bar nav#for-mobile:target {
+    .admin-bar nav#display-menu:target #hide-menu {
         
         height: calc( 100vh - 46px );
         
@@ -307,13 +348,19 @@ nav#for-mobile .woocommerce-mini-cart__buttons {
 
 @media screen and ( max-width:600px ){
     
-    .admin-bar nav#for-mobile {
+    .nojq {
+        
+        top: -46px !important;
+        
+    }
+    
+    .admin-bar nav#display-menu {
         
         top: 0px;
         
     }
     
-    .admin-bar nav#for-mobile:target {
+    .admin-bar nav#display-menu:target #hide-menu {
         
         height: 100vh;
         

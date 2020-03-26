@@ -22,6 +22,19 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 == Changelog ==
 
+= 106 =
+* Figure text on a center image was display of to the left because WordPress CSS guys think they know better
+* .wp-block-button CSS displays same as the paragraph element
+* figcaption is fixed, WordPress added padding and hard font numbers... have you even heard of CSS3 and em font units!?!?
+* Block quote cite wasn't applying CSS sytles because of block editor differences
+* wp-block-embed will center up on the page now
+* Menu should be more accessable now, especially for users navigating with the tab key, also menu now works with hover
+* Navigation didn't work is a static page was selected, switched to pagination for a better user experience.
+
+= 104 =
+* Fixed the issues with WordPress Block editor and new gallery code
+* Changed it so the blockquotes center up on the screen, looks visually better
+
 = 103 =
 * Added content width back in, feels so pointless
 * Can't use the real "->"
@@ -51,6 +64,12 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 
 == Upgrade Notice ==
+
+= 106 =
+* Fixing minor issues, switched to pagination, making the navigation more accessable, tweaking how embedded media displays.
+
+= 104 =
+* Gallerys and Blockquotes created in Block Editor will display more visually pleasing.
 
 = 103 =
 * Theme Failed, minor changes

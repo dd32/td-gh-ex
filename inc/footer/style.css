@@ -2,17 +2,18 @@ footer#widgets-and-credits {
     background-color: #222222;
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto 23.5vw;
     color: #ffffff;
     font-size: .8em;
-    padding: 5em 2.5em 35vh;
+    padding: 5em 2.5em 21vw;
     position: relative;
 }
 
 footer#widgets-and-credits aside.footer_widget {
-    display: inline-table;
+    display: inline-grid;
+    overflow: hidden;
     margin: 2em 2em 4em;
-    width: 80vw;
+    width: calc( 100% - 4em);
     text-align: left;
 }
 
@@ -77,6 +78,14 @@ footer#widgets-and-credits .screen-reader-text {
     
     footer#widgets-and-credits aside.footer_widget {
         width: 20vw;
+    }
+    
+    footer#widgets-and-credits aside .video-container,
+    footer#widgets-and-credits aside .embed-vimeo,
+    footer#widgets-and-credits aside .embed-youtube {
+        max-width: 100%;
+        padding: 0 0 10.125vw;
+        width: 18vw;
     }
     
 }

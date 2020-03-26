@@ -61,6 +61,9 @@ main#the-article > dl {
 
 main#the-article > address,
 main#the-article > div.wp-audio-shortcode,
+main#the-article > div.wp-block-archives,
+main#the-article > div.wp-block-columns,
+main#the-article > div.wp-block-button,
 main#the-article > div.video-player,
 main#the-article > form,
 main#the-article > div > form,

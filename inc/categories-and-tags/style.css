@@ -9,29 +9,46 @@ section#categories-and-tags {
     position: relative;
 }
 
-section#categories-and-tags .older-blog-posts,
-section#categories-and-tags .newer-blog-posts {
+
+section#categories-and-tags .blog-paginate {
     background: #444444;
     border: .35em solid #eeeeee;
     display: inline-block;
-    float: left;
     font-size: 1.25em;
     margin: 7em .5em;
     padding: .65em 1.65em;
 }
 
-section#categories-and-tags .newer-blog-posts {
-    float: right;
-}
-
-section#categories-and-tags .older-blog-posts a,
-section#categories-and-tags .newer-blog-posts a {
+section#categories-and-tags .blog-paginate a {
     color: #ffffff;
 }
 
-section#categories-and-tags .older-blog-posts a:hover,
-section#categories-and-tags .newer-blog-posts a:hover {
+section#categories-and-tags .blog-paginate a:hover {
     color: #999999;
+}
+
+section#categories-and-tags .blog-paginate .page-numbers {
+    padding: .5em;
+}
+
+section#categories-and-tags .blog-paginate .prev {
+    padding-right: 2em;
+}
+
+section#categories-and-tags .blog-paginate .prev:before {
+    content: "← ";
+}
+
+section#categories-and-tags .blog-paginate .next {
+    padding-left: 2em;
+}
+
+section#categories-and-tags .blog-paginate .next:after {
+    content: " →";
+}
+
+section#categories-and-tags .blog-paginate .current {
+    color: #777777
 }
 
 section#categories-and-tags ul.post-categories,
@@ -66,31 +83,6 @@ section#categories-and-tags ul.tag-list a {
 section#categories-and-tags ul.post-categories a:hover,
 section#categories-and-tags ul.tag-list a:hover {
     color: #777777;
-}
-
-section#categories-and-tags .older-blog-posts,
-section#categories-and-tags .newer-blog-posts {
-    background: #444444;
-    border: .35em solid #eeeeee;
-    display: inline-block;
-    float: left;
-    font-size: 1.25em;
-    margin: 7em .5em;
-    padding: .65em 1.65em;
-}
-
-section#categories-and-tags .newer-blog-posts {
-    float: right;
-}
-
-section#categories-and-tags .older-blog-posts a,
-section#categories-and-tags .newer-blog-posts a {
-    color: #ffffff;
-}
-
-section#categories-and-tags .older-blog-posts a:hover,
-section#categories-and-tags .newer-blog-posts a:hover {
-    color: #999999;
 }
 
 section#categories-and-tags > h3 {

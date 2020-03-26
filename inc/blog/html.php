@@ -1,8 +1,5 @@
 <?php
 
-global $semperfi_get_paged_query;
-global $semperfi_blog_wp_query;
-
 if ( get_query_var( 'paged' ) ) :
 
     $semperfi_get_paged_query = get_query_var( 'paged' );
@@ -21,10 +18,10 @@ endif;
 $semperfi_blog_wp_query = new WP_Query( array(
     'order'             => 'DESC',
     'orderby'           => 'date',
+    'paged'             => $semperfi_get_paged_query,
     'post_status'       => 'publish',
     'post_type'         => 'post',
-    'posts_per_page'    => get_option( 'posts_per_page' ),
-    'paged'             => $semperfi_get_paged_query, ) );
+    'posts_per_page'    => get_option( 'posts_per_page' ), ) );
 
 if ( $semperfi_blog_wp_query->have_posts() ) : ?>
 

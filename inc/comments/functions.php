@@ -15,6 +15,14 @@ function semperfi_comments() {
             remove_action( 'semperfi_attachment_the_header' , 'semperfi_comments_css' );
             remove_action( 'semperfi_page_the_header' , 'semperfi_comments_css' );
             remove_action( 'semperfi_single_the_header' , 'semperfi_comments_css' );
+    
+            remove_action( 'semperfi_attachment_after_comments' , 'semperfi_video_tab_single' );
+            remove_action( 'semperfi_page_after_comments' , 'semperfi_video_tab_single' );
+            remove_action( 'semperfi_single_after_comments' , 'semperfi_video_tab_single' );
+    
+            remove_action( 'semperfi_attachment_the_header' , 'semperfi_video_tab_css' );
+            remove_action( 'semperfi_page_the_header' , 'semperfi_video_tab_css' );
+            remove_action( 'semperfi_single_the_header' , 'semperfi_video_tab_css' );
             
         }
 
