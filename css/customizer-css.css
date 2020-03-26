@@ -1,15 +1,83 @@
-/*
-Optimize Theme
-*/
 /* 
-    Author     : Sandy
+    Theme     : Promax
+    Author	  : Insertcart.com
 */
+
+li#customize-control-important_links a:before {
+   content: "\f504";
+    font-family: dashicons;
+    padding: 3px;
+	vertical-align: bottom;
+	    font-size: 17px;
+    font-weight: normal;}
+li#customize-control-important_links a{
+line-height: 16px;
+    background: #FF9800;
+    color: #fff;
+    display: block;
+    margin: 15px 0 0;
+    text-align: center;
+    font-weight: 600;
+    padding: 8px 0;
+}
+li#accordion-section-optimize_important_links > h3.accordion-section-title {
+    background: #FF9800 !important;
+    color: #ffffff !important;
+}
+li#accordion-section-optimize_important_links > h3.accordion-section-title:before {
+	content: "\f317";
+    font-family: dashicons;
+    padding: 3px;
+	vertical-align: bottom;
+    }
 li#accordion-section-optimize_responsive > h3.accordion-section-title:before {
     content: "\f472";
     font-family: dashicons;
     padding: 3px;
-	color: #0073aa;
+}	
+li#accordion-section-promax_social_section > h3.accordion-section-title:before {
+    content: "\f237";
+    font-family: dashicons;
+    padding: 3px;
 }
+li#accordion-section-promax_woo_set > h3.accordion-section-title:before {
+    content: "\f174";
+    font-family: dashicons;
+    padding: 3px;
+}
+li#accordion-section-colors > h3.accordion-section-title:before {
+    content: "\f309";
+    font-family: dashicons;
+    padding: 3px;
+}
+li#accordion-panel-nav_menus > h3.accordion-section-title:before {
+    content: "\f329";
+    font-family: dashicons;
+    padding: 3px;
+}
+li#accordion-panel-widgets > h3.accordion-section-title:before {
+    content: "\f489";
+    font-family: dashicons;
+    padding: 3px;
+}
+li#accordion-section-optimize_important_links > h3.accordion-section-title {
+    background: #ffc440 !important;
+    color: #ffffff !important;
+}
+#customize-theme-controls .accordion-section-title {
+    color: #f1f1f1 !important;
+    background: linear-gradient(to right, #09203f, #537895) !important;
+    border-bottom: 1px solid rgba(247, 247, 247, 0.65);
+    border-left: 4px solid #fff;
+    -webkit-transition: .15s color ease-in-out,.15s background-color ease-in-out,.15s border-color ease-in-out;
+    transition: .15s color ease-in-out,.15s background-color ease-in-out,.15s border-color ease-in-out;
+    }
+li#accordion-section-optimize_important_links > h3.accordion-section-title:before {
+    content: "\f317";
+    font-family: dashicons;
+    padding: 3px;
+}
+
 #accordion-panel-nav_menus > ul{
     margin-top: -290px !important;
 }

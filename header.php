@@ -1,65 +1,62 @@
 <?php
-// Header Template
-// Copyright 2014 InsertCart
-// Author: sandeep
-// Theme: Optimize
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package optimize
+ */
 
 ?>
-
-
-<!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8) ]><!-->
+<!doctype html>
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
 <head>
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> id="top">
-<div class="wrapper">
-<!-- BEGIN HEADER -->
-	<header id="header">
-    <div id="header-inner" class="clearfix">
-		<div id="logo">	  
-		  <?php if (of_get_option( 'optimize_logo' )): ?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'optimize_logo' ); ?>"alt="<?php bloginfo( 'name' ); ?>"/></a>
-      			<?php else : ?>        
-				
-					<?php optimize_site_logo();?>
-					<?php optimize_site_title(); ?>
-					<?php optimize_site_description(); ?>
-	  <?php endif; ?>	
-		  
-		  
-		  
-		</div>		
-<div id="myban"> 
-<?php if ( !dynamic_sidebar('headerwid') ) : ?>
+<body <?php body_class(); ?>>
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'optimize' ); ?></a>
+	<header id="masthead" class="site-header">
+	<div class="container">
+	<div class="row">
+	<div class="col-md-5">
+	<div class="site-branding">
+			<?php
+			the_custom_logo();
+			if ( is_front_page() && is_home() ) :
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+			?>
+			<?php $optimize_description = get_bloginfo( 'description', 'display' );
+			if ( $optimize_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $optimize_description; /* WPCS: xss ok. */ ?></p>			
+			<?php endif; ?>  
+		</div><!-- .site-branding -->
+		</div>
+		<div class="col-md-7">
+		<?php if ( !dynamic_sidebar('headerwid') ) : ?>
 			<?php endif; ?>
-<?php if ( of_get_option('optimize_ad1') <> "" ) { echo of_get_option('optimize_ad1'); } ?></div>
-    </div> <!-- end div #header-inner -->
-	</header> <!-- end div #header -->
-
-	<!-- END HEADER -->
-
-	<!-- BEGIN TOP NAVIGATION -->		
-<div id="navigation" class="nav"> 
-    <div id="navigation-inner" class="clearfix">
-		<div class="secondary">		
-		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</div><!-- end div #nav secondry -->
-	    </div> <!-- end div #navigation-inner -->
-	</div> <!-- end div #navigation -->
-	<!-- END TOP NAVIGATION -->
-	<?php if ( !dynamic_sidebar('belownavi') ) : ?>
-			<?php endif; ?>
+			</div>		
+</div>		
+</div>		
+	</header><!-- #masthead -->
+	<?php get_template_part('inc/navigation'); ?>
+	
+	<div id="content" class="site-content">
+	<div class="container">
+	<?php if (!dynamic_sidebar('belownavi') ) : endif;?>
+	<div class="row">

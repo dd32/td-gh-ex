@@ -1,37 +1,43 @@
-<?php get_header(); ?>
-	<!-- BEGIN PAGE -->
-	<div id="page">
-    <div id="page-inner" class="clearfix">
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package optimize
+ */
 
-<?php get_template_part('/includes/banner-top'); ?>
-		<div id="pagecont">
-			<?php if(have_posts()) : ?><?php while(have_posts())  : the_post(); ?>
-					<div id="pagepost-<?php the_ID(); ?>" class="pagepost clearfix">					
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-							<div class="entry" class="clearfix">
-																
-								<?php the_content(); ?>
-								<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'optimize' ), 'after' => '</div>' ) ); ?>
-							</div> <!-- end div .entry -->
-						<span class="postmeta_box">
-		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
-	</span><!-- .entry-header -->
-<div class="gap"></div><?php if (of_get_option('optimize_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
-<?php if ( !dynamic_sidebar('afterpage') ) : ?>
-			<?php endif; ?>
-							<div class="comments">
-								<?php comments_template(); ?>
-							</div> <!-- end div .comments -->
-					</div> <!-- end div .post -->
+get_header();
+?>
+<div class="col-lg-8 col-md-8 col-sm-12">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-			<?php endwhile; ?>
-			<?php else : ?>
-				<div class="post">
-					<h3><?php _e('404 Error&#58; Not Found', 'optimize'); ?></h3>
-				</div>
-			<?php endif; ?>
-			      										
-		</div> <!-- end div #content -->
-			
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div>
+<div class="col-lg-4 col-md-4 col-sm-12">
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>
+</div>
+<?php 
+get_footer();
+

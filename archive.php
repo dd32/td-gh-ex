@@ -1,41 +1,30 @@
-<?php get_header(); ?>
-	<!-- BEGIN PAGE -->
-		<div id="page">
-			<div id="page-inner" class="clearfix">
-				<?php get_template_part('/includes/banner-top'); ?>
-				
-			<div id="content">
-				<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title titlepage"><i class="fa fa-list-alt"></i> ', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-				<div id="subtitle">
-				<?php if (have_posts()) : ?>
-				<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>					
-				<?php /* If this is a category archive */ if (is_category()) { ?>				
-				<?php /* If this is a tag archive */  } elseif( is_tag() ) { ?>				
-				<?php /* If this is a daily archive */ } elseif (is_day()) { ?>		<?php _e('Archive for', 'optimize'); ?> <?php the_time('F jS, Y'); ?>
-				<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>				
-				<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>				
-				<?php /* If this is a search */ } elseif (is_search()) { ?>				
-				<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-						<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?> <?php _e('Blog Archives', 'optimize'); ?> <?php } ?>
-				</div>
-				<?php while(have_posts())  : the_post(); ?>
-				
-					<?php get_template_part('/includes/post'); ?>
-					<?php endwhile; ?>
-					<?php else : ?>
-					<div class="post">
-					<div class="posttitle">
-					<h2><?php _e('404 Error&#58; Not Found', 'optimize'); ?></h2>
-					<span class="posttime"></span>
-					</div>
-					</div>
-					<?php endif; ?>
-					<?php get_template_part('/includes/pagenav'); ?>
-					</div> <!-- end div #content -->
-			<?php get_sidebar(); ?>
-			<?php get_footer(); ?>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package optimize
+ */
+
+get_header(); ?>
+<div class="col-md-8">
+<?php 
+if ( have_posts() ) : 
+	while ( have_posts() ) :
+	the_post(); 
+	get_template_part('template-parts/post-style'); 
+	endwhile; 
+	endif;
+?>
+<div class="page-navigation"><?php optimize_pagenavigation(); ?></div>
+</div>
+<div class="col-md-4">
+	<?php get_sidebar(); ?>
+</div>
+<?php get_footer(); ?>

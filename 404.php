@@ -1,19 +1,65 @@
-<?php get_header(); ?>
-	<!-- BEGIN PAGE -->
-	<div id="page">
-		<div id="page-inner" class="clearfix">
-			<?php get_template_part('/includes/banner-top'); ?>
-			
-				<div id="content">
-					<div class="post clearfix">						
-						<h2><?php _e('404 Error&#58; Not Found', 'optimize'); ?>
-						</h2>
-						<div class="entry">
-							<p><?php _e('Sorry, but the page you are trying to reach is unavailable or does not exist.', 'optimize'); ?></p>
-							<h3><?php _e('You may interested with this', 'optimize'); ?></h3>
-							<?php get_template_part('/includes/random-posts'); ?>
-						</div>
-					</div><!-- end div .post -->
-				</div><!-- end div #content -->
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package optimize
+ */
+
+get_header();
+?>
+<div class="col-lg-8 col-md-8 col-sm-12">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'optimize' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'optimize' ); ?></p>
+
+					<?php
+					get_search_form();
+
+					the_widget( 'WP_Widget_Recent_Posts' );
+					?>
+
+					<div class="widget widget_categories">
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'optimize' ); ?></h2>
+						<ul>
+							<?php
+							wp_list_categories( array(
+								'orderby'    => 'count',
+								'order'      => 'DESC',
+								'show_count' => 1,
+								'title_li'   => '',
+								'number'     => 10,
+							) );
+							?>
+						</ul>
+					</div><!-- .widget -->
+
+					<?php
+					/* translators: %1$s: smiley */
+					$optimize_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'optimize' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$optimize_archive_content" );
+
+					the_widget( 'WP_Widget_Tag_Cloud' );
+					?>
+
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div>
+<div class="col-lg-4 col-md-4 col-sm-12">
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>
+</div>
+
+
+<?php 
+get_footer();

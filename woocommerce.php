@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 	<!-- BEGIN PAGE -->
-	<div id="page">
-    <div id="page-inner" class="clearfix">
-	<div id="pagecont">
+	<div class="col-md-8">
 		<?php woocommerce_content(); ?>
 			      		</div>						
 			      										
 			      		
-<?php get_sidebar(); ?>						
+<div class="col-md-4">
+	<?php get_sidebar(); ?>
+</div>					
 <?php get_footer(); ?>

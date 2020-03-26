@@ -1,116 +1,68 @@
---------------------------------------------------------
-Thanks for Downloading Optimize theme
---------------------------------------------------------
-I made this for free to use if you find any bug or error please
-You can directly contact us: http://forum.insertcart.com/
-also suggestion are welcome
+== optimize ==
 
+Contributors: sandy786
+Requires at least:  WordPress 4.5
+Tested up to:       WordPress 5.3.2
+Requires PHP:       5.4
+Version:            2.0
+Stable tag:         2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
---------------------------Optimize------------------------
-Features:
+A starter theme called optimize.
 
-Theme have many features like some main are listed below
+== Description ==
 
-Theme option:
--upload favicon from theme option by url
--Customize you site background color or image
--show 5 latest posts with thumbnail in right sidebar -activate from theme option > General settings
--enable search from theme option > General settings
+optimize Theme is best WordPress magazine theme for personal and business website technology news or magazine with full features and SEO Optimize theme easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, pinterest, rss, skype, vimeo, dribbble, flickr, LinkedIn, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme works also for blogging.Some features like floating menu bar with search and share options. WooCommerce eCommerce plugin supported. Working theme demo here https://www.insertcart.com/themes-demo?theme=optimize
 
-Advertise:
--Add text link below navigation
--Ads supports single post and footer best for adsense
+== Installation ==
 
-Social:
--Add you fan page or follow page of Facebook, twitter, Rss feed, Google+, Linkedin from theme option > Social Media
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-Custom Css:
--Also support for Custom Css with you have not need to change main style.css file
+== Frequently Asked Questions ==
 
+= Does this theme support any plugins? =
 
-== Change log ==
+optimize includes support for Infinite Scroll in Jetpack.
 
-= 1.7.5 =
-* Added css for tags
-* Fixed structure data to webpage
+== Changelog ==
 
-= 1.7.1 =
-* Latest post widget fix
-* Customizer links fixed
-* styling issue fixed
+= 2.0 - Feb 06 2020 =
+* Initial release
 
-= 1.7 =
-* Comment form updated
-* Header Image Support added
-* Fontawesome icons support added
-* Fixed styling issue
-* WooCommerce Support added
+== Credits ==
 
-= 1.6.1 =
-* Missing Id issue fixed in widgets
-* Other minor issue fixed
+ = Underscores =
+ 
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
-= 1.6 =
-* Updated Option Framework
-* Added Title Tag
-* Fixed other minor issue
+ = Bootstrap =
+ 
+  * Bootstrap v4.3.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
+ = Font Awesome =
+ 
+ * Font Awesome Free 5.12.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ 
+ 
+= Screenshot =
+ * All images are licensed under [CC0](http://creativecommons.org/publicdomain/zero/1.0/legalcode.txt)
+ 
+1. https://pxhere.com/en/photo/1433619
+2. https://pxhere.com/en/photo/1418586
+3. https://pxhere.com/en/photo/1418540
+4. https://pxhere.com/en/photo/1602282
+5. https://pxhere.com/en/photo/877703
+6. https://pxhere.com/en/photo/1435385
+7. https://pxhere.com/en/photo/879283
+8. https://pxhere.com/en/photo/758989
 
-= 1.5.3 =
-* Fixed minor bugs
-* Credit link change
-* Calender CSS code update
-
-= 1.5 =
-* Comment security loop removed
-* Updated theme functiions
-* Navigation Codes
-* Language Support Added
-
-= 1.4.9.1 =
-*Theme url changed
-*Removed extra function from theme header
-
-= 1.4.9 =
-*Option framework updated to new version
-*Fixed Content width issue into theme
-*Updated some codes
-
-= 1.4.7 =
-*Menu Color customize
-*favicon upload option added
-*Resize post thumb to 175px
-*Random post at 404 page update to new codes
-*Long header text fixed
-*fixed long menu issue  
-
-= 1.4.5 =
-*Fixed top banner size
-*Updated theme option to new version
-*Added site description
-*Fixed other issues
-
-= 1.4.1=
-*Option panel updated to new version
-*Premium version also available
-*Logo upload and other option now access from theme panel
-*Latest post widget added to sidebar
-*Added Arrow if drop down menu
-
-= 1.2=
-*Removed plugin territory functions
-*Bug Fixed
-
-= 1.0 =
-*Initial Release @ 1.0
-
-
-== License ==
-
-*Option Framework : Author is "Devin Price" provided at http://www.wptheming.com under License GPLv2 (All file Included in "inc" folder)
-*For Responsive Menu Public code Used as ref. for http://wordpress.stackexchange.com/questions/74633/convert-wp-menu-to-a-drop-down-for-mobile-browser/98257
-*Images into /images/ folder that's are created by me cat.png home.jpg, info.png, logo.png metaimg.png, quote.png, thumb.png are publish Under gpl v2
-*Fonts Monda: Copyright (c) 2012, vernon adams (vern@newtypography.co.uk)  This Font Software is licensed under the SIL Open Font License, Version 1.1. http://scripts.sil.org/OFL
-* Bootstrap by Twitter and the Glyphicon set are licensed under the GPL-compatible [http://www.apache.org/licenses/LICENSE-2.0 Apache License v2.0]
-* Font Awesome License: SIL OFL 1.1 URL: http://scripts.sil.org/OFL
+* screenshot.png self made and licensed under GPL.
+ 
 **This theme and file are created by me & publish under GPL
