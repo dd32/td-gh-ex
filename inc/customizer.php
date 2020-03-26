@@ -421,6 +421,20 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	$wp_customize->add_setting('advance_fitness_gym_background_skin_mode',array(
+        'default' => __('Transpert Background','advance-fitness-gym'),
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-fitness-gym'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-fitness-gym'),
+            'Transpert Background' => __('Transpert Background','advance-fitness-gym'),
+        ),
+	) );
+
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_fitness_gym_panel_id', array(
 		'priority'       => 10,
@@ -483,22 +497,6 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'section' => 'advance_fitness_gym_left_right'
     ));
 
-	$wp_customize->add_setting('advance_fitness_gym_theme_options',array(
-        'default' => __('Default','advance-fitness-gym'),
-        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_fitness_gym_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-fitness-gym'),
-        'description' => __('Here you can change the Width layout. ','advance-fitness-gym'),
-        'section' => 'advance_fitness_gym_left_right',
-        'choices' => array(
-            'Default' => __('Default','advance-fitness-gym'),
-            'Container' => __('Container','advance-fitness-gym'),
-            'Box Container' => __('Box Container','advance-fitness-gym'),
-        ),
-	) );
-		
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_fitness_gym_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-fitness-gym'),
@@ -517,6 +515,52 @@ function advance_fitness_gym_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-fitness-gym')
 		),
 	));
+
+	$wp_customize->add_setting('advance_fitness_gym_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'advance-fitness-gym'),
+		'sanitize_callback' => 'advance_fitness_gym_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_fitness_gym_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'advance-fitness-gym'),
+		'section'        => 'advance_fitness_gym_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-fitness-gym'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-fitness-gym'),
+			'One Column'    => __('One Column', 'advance-fitness-gym'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'advance-fitness-gym'),
+		'sanitize_callback' => 'advance_fitness_gym_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_fitness_gym_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'advance-fitness-gym'),
+		'section'        => 'advance_fitness_gym_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-fitness-gym'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-fitness-gym'),
+			'One Column'    => __('One Column', 'advance-fitness-gym'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_theme_options',array(
+        'default' => __('Default','advance-fitness-gym'),
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-fitness-gym'),
+        'description' => __('Here you can change the Width layout. ','advance-fitness-gym'),
+        'section' => 'advance_fitness_gym_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-fitness-gym'),
+            'Container' => __('Container','advance-fitness-gym'),
+            'Box Container' => __('Box Container','advance-fitness-gym'),
+        ),
+	) );
 
 	// Button
 	$wp_customize->add_section( 'advance_fitness_gym_theme_button', array(
@@ -945,6 +989,21 @@ function advance_fitness_gym_customize_register($wp_customize) {
        'section' => 'advance_fitness_gym_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_fitness_gym_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_fitness_gym_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','advance-fitness-gym'),
+        'section' => 'advance_fitness_gym_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-fitness-gym'),
+            'Excerpt Content' => __('Excerpt Content','advance-fitness-gym'),
+            'Full Content' => __('Full Content','advance-fitness-gym'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'advance_fitness_gym_excerpt_number', array(
 		'default'              => 20,
 		'type'                 => 'theme_mod',
@@ -955,13 +1014,24 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	$wp_customize->add_control( 'advance_fitness_gym_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-fitness-gym' ),
 		'section'     => 'advance_fitness_gym_blog_post',
-		'type'        => 'textfield',
+		'type'        => 'number',
 		'settings'    => 'advance_fitness_gym_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'advance_fitness_gym_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_fitness_gym_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','advance-fitness-gym' ),
+		'section'     => 'advance_fitness_gym_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_fitness_gym_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('advance_fitness_gym_button_text',array(

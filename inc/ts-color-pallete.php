@@ -217,3 +217,17 @@
 		$custom_css .='} }';
 	}
 
+	/*------------------ Skin Option  -------------------*/
+
+		$theme_lay = get_theme_mod( 'advance_fitness_gym_background_skin_mode','Transpert Background');
+	    if($theme_lay == 'With Background'){
+			$custom_css .='.page-box, #sidebar .widget,.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,.front-page-content,.background-img-skin,.fitness-single-post{';
+				$custom_css .='background-color: #fff;';
+			$custom_css .='}';
+		}else if($theme_lay == 'Transpert Background'){
+			$custom_css .='#sidebar aside,.page-box-single{';
+				$custom_css .='background-color: transparent;';
+			$custom_css .='}';
+		}
+
+
