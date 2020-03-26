@@ -53,6 +53,11 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+= 3.1.9 =
+** Added MetaData Show Hide Option for Single Post
+** Added Post Categories Show Hide Option for Single Post
+** Added Post Footer Text Show Hide Option for Single Post
+
 = 3.1.8 =
 ** Removed theme options and Added Customizer options
 ** Fixed Minor bugs

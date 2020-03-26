@@ -230,21 +230,6 @@
 				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
 			] );
 
-			Kirki::add_field( 'accesspress_basic_config', [
-				'type'        => 'switch',
-				'settings'    => 'enable_comments_post',
-				'label'       => esc_html__( 'Enable/Disable (Posts Comments)', 'accesspress-basic' ),
-				'description' => esc_html__( 'Show Comments in Posts', 'accesspress-basic' ),
-				'section'     => 'accesspress_basic_desg_settings',
-				'default'     => '1',
-				'priority'    => 90,
-				'choices'     => [
-					true  => esc_html__( 'Enable', 'accesspress-basic' ),
-					false => esc_html__( 'Disable', 'accesspress-basic' ),
-				],
-				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
-			] );
-
 		Kirki::add_section( 'accesspress_basic_slider_settings', array(
 		    'title'          => esc_html__( 'Slider Settings', 'accesspress-basic' ),
 		    'description'    => esc_html__( 'Setup slider template.', 'accesspress-basic' ),
@@ -685,6 +670,75 @@
             	'default'	=> '',
 				'sanitize_callback' => 'sanitize_text_field',
 			] );
+
+		//post setting
+		Kirki::add_section( 'accesspress_basic_post_setting', array(
+		    'priority'    => 50,
+		    'title'          => esc_html__( 'Post Setting', 'accesspress-basic' ),
+		    'description'    => esc_html__( 'Setup Post settings.', 'accesspress-basic' ),
+		) );
+
+			Kirki::add_field( 'accesspress_basic_config', [
+				'type'        => 'switch',
+				'settings'    => 'show_post_meta_data',
+				'label'       => esc_html__( 'Show Meta Data', 'accesspress-basic' ),
+				'description' => esc_html__( 'Show date and author in Single Post?', 'accesspress-basic' ),
+				'section'     => 'accesspress_basic_post_setting',
+				'default'     => '1',
+				'priority'    => 10,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-basic' ),
+					false => esc_html__( 'Disable', 'accesspress-basic' ),
+				],
+				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
+			] );
+
+			Kirki::add_field( 'accesspress_basic_config', [
+				'type'        => 'switch',
+				'settings'    => 'show_post_categories',
+				'label'       => esc_html__( ' Show Post Categories ', 'accesspress-basic' ),
+				'description' => esc_html__( 'Show Post Categories in Single Post?', 'accesspress-basic' ),
+				'section'     => 'accesspress_basic_post_setting',
+				'default'     => '1',
+				'priority'    => 20,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-basic' ),
+					false => esc_html__( 'Disable', 'accesspress-basic' ),
+				],
+				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
+			] );
+
+			Kirki::add_field( 'accesspress_basic_config', [
+				'type'        => 'switch',
+				'settings'    => 'enable_comments_post',
+				'label'       => esc_html__( 'Enable/Disable (Posts Comments)', 'accesspress-basic' ),
+				'description' => esc_html__( 'Show Comments in Posts', 'accesspress-basic' ),
+				'section'     => 'accesspress_basic_post_setting',
+				'default'     => '1',
+				'priority'    => 30,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-basic' ),
+					false => esc_html__( 'Disable', 'accesspress-basic' ),
+				],
+				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
+			] );
+
+			Kirki::add_field( 'accesspress_basic_config', [
+				'type'        => 'switch',
+				'settings'    => 'show_post_footer_text',
+				'label'       => esc_html__( ' Show Post Footer Text ', 'accesspress-basic' ),
+				'description' => esc_html__( 'Show Post Footer Text in Single Post?', 'accesspress-basic' ),
+				'section'     => 'accesspress_basic_post_setting',
+				'default'     => '1',
+				'priority'    => 40,
+				'choices'     => [
+					true  => esc_html__( 'Enable', 'accesspress-basic' ),
+					false => esc_html__( 'Disable', 'accesspress-basic' ),
+				],
+				'sanitize_callback'	=> 'accesspress_basic_sanitize_checkbox',
+			] );
+
+
 
 
 

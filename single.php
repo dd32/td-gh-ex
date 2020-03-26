@@ -45,6 +45,10 @@ get_header(); ?>
                 <div id="primary" class="content-area">
             
             			<?php get_template_part( 'content', 'single' ); ?>
+                        <?php 
+                        $post_footer_text = isset($apbasic_settings['show_post_footer_text'])? $apbasic_settings['show_post_footer_text'] : '';
+                        if($post_footer_text == 1){?>
+
                         <div class="clearfix">
             			<?php the_post_navigation(); ?>
                         </div>
@@ -59,6 +63,7 @@ get_header(); ?>
             				endif;
             			?>
                         <?php endif; ?>
+                        <?php } ?>
             
                 </div><!-- #primary -->
                 <?php if($default_post_layout == 'left_sidebar' || $default_post_layout == 'both_sidebar') : ?>
