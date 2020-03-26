@@ -188,3 +188,19 @@
 		$custom_css .='} }';
 	}
 
+	/*------------------ Skin Option  -------------------*/
+
+		$theme_lay = get_theme_mod( 'bb_ecommerce_store_background_skin_mode','Transparent Background');
+	    if($theme_lay == 'With Background'){
+			$custom_css .='.page-box,#sidebar .widget,.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,.front-page-content,.background-img-skin{';
+				$custom_css .='background-color: #fff;';
+			$custom_css .='}';
+			$custom_css .='#sidebar{';
+				$custom_css .='background: none;';
+			$custom_css .='}';
+		}else if($theme_lay == 'Transparent Background'){
+			$custom_css .='article.tag-sticky-2,#sidebar, .inner-service,.page-box-single{';
+				$custom_css .='background-color: transparent;';
+			$custom_css .='}';
+		}
+

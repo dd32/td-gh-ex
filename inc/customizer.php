@@ -437,6 +437,20 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'type'	=> 'text'
 	));	
 
+	$wp_customize->add_setting('bb_ecommerce_store_background_skin_mode',array(
+        'default' => __('Transparent Background','bb-ecommerce-store'),
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','bb-ecommerce-store'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','bb-ecommerce-store'),
+            'Transparent Background' => __('Transparent Background','bb-ecommerce-store'),
+        ),
+	) );
+
 	//add home page setting pannel
 	$wp_customize->add_panel( 'bb_ecommerce_store_panel_id', array(
 	    'priority' => 10,
@@ -482,25 +496,9 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'section' => 'bb_ecommerce_store_left_right'
     ));
 
-	$wp_customize->add_setting('bb_ecommerce_store_width_theme_options',array(
-        'default' => __('Default','bb-ecommerce-store'),
-        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
-	));
-	$wp_customize->add_control('bb_ecommerce_store_width_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','bb-ecommerce-store'),
-        'description' => __('Here you can change the Width layout. ','bb-ecommerce-store'),
-        'section' => 'bb_ecommerce_store_left_right',
-        'choices' => array(
-            'Default' => __('Default','bb-ecommerce-store'),
-            'Container' => __('Container','bb-ecommerce-store'),
-            'Box Container' => __('Box Container','bb-ecommerce-store'),
-        ),
-	) );
-
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_ecommerce_store_theme_options',array(
-        'default' => '',
+        'default' =>  __('Right Sidebar', 'bb-ecommerce-store'),
         'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'	        
 	) );
 	$wp_customize->add_control('bb_ecommerce_store_theme_options',
@@ -516,6 +514,52 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	            'Four Columns' => __('Four Columns','bb-ecommerce-store'),
 	            'Grid Layout' => __('Grid Layout','bb-ecommerce-store')
 	        ),
+	) );
+
+	$wp_customize->add_setting('bb_ecommerce_store_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'bb-ecommerce-store'),
+		'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices',
+	));
+	$wp_customize->add_control('bb_ecommerce_store_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'bb-ecommerce-store'),
+		'section'        => 'bb_ecommerce_store_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'bb-ecommerce-store'),
+			'Right Sidebar' => __('Right Sidebar', 'bb-ecommerce-store'),
+			'One Column'    => __('One Column', 'bb-ecommerce-store'),
+		),
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'bb-ecommerce-store'),
+		'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices',
+	));
+	$wp_customize->add_control('bb_ecommerce_store_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'bb-ecommerce-store'),
+		'section'        => 'bb_ecommerce_store_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'bb-ecommerce-store'),
+			'Right Sidebar' => __('Right Sidebar', 'bb-ecommerce-store'),
+			'One Column'    => __('One Column', 'bb-ecommerce-store'),
+		),
+	));
+
+	$wp_customize->add_setting('bb_ecommerce_store_width_theme_options',array(
+        'default' => __('Default','bb-ecommerce-store'),
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_width_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','bb-ecommerce-store'),
+        'description' => __('Here you can change the Width layout. ','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_left_right',
+        'choices' => array(
+            'Default' => __('Default','bb-ecommerce-store'),
+            'Container' => __('Container','bb-ecommerce-store'),
+            'Box Container' => __('Box Container','bb-ecommerce-store'),
+        ),
 	) );
 
 	// Button
@@ -939,6 +983,21 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
        'section' => 'bb_ecommerce_store_blog_post'
     ));
 
+    $wp_customize->add_setting('bb_ecommerce_store_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','bb-ecommerce-store'),
+        'section' => 'bb_ecommerce_store_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','bb-ecommerce-store'),
+            'Excerpt Content' => __('Excerpt Content','bb-ecommerce-store'),
+            'Full Content' => __('Full Content','bb-ecommerce-store'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'bb_ecommerce_store_excerpt_number', array(
 		'default'              => 20,
 		'type'                 => 'theme_mod',
@@ -949,13 +1008,24 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'bb_ecommerce_store_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','bb-ecommerce-store' ),
 		'section'     => 'bb_ecommerce_store_blog_post',
-		'type'        => 'textfield',
+		'type'        => 'number',
 		'settings'    => 'bb_ecommerce_store_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'bb_ecommerce_store_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'bb_ecommerce_store_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','bb-ecommerce-store' ),
+		'section'     => 'bb_ecommerce_store_blog_post',
+		'type'        => 'text',
+		'settings'    => 'bb_ecommerce_store_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('bb_ecommerce_store_button_text',array(

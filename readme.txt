@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 License: License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -153,6 +153,12 @@ E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce S
   * Added setting for 404 page title, 404 page content and 404 page button text.
   * Added responsive setting for mobile media.
   * Added show / hide option for product page and single product page sidebar.
+
+= 1.4.9 =
+  * Added option for post excerpt suffix.
+  * Added options for post description length.
+  * Added background type option for background image.
+  * Added different sidebar layout for single post and single page.
 
 == Resources ==
 
