@@ -422,6 +422,20 @@ function advance_education_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	$wp_customize->add_setting('advance_education_background_skin_mode',array(
+        'default' => __('Transpert Background','advance-education'),
+        'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_education_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-education'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-education'),
+            'Transpert Background' => __('Transpert Background','advance-education'),
+        ),
+	) );
+
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_education_panel_id', array(
 		'priority'       => 10,
@@ -485,22 +499,6 @@ function advance_education_customize_register($wp_customize) {
 		'section' => 'advance_education_left_right'
     ));
 	
-	$wp_customize->add_setting('advance_education_theme_options',array(
-        'default' => __('Default','advance-education'),
-        'sanitize_callback' => 'advance_education_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_education_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-education'),
-        'description' => __('Here you can change the Width layout. ','advance-education'),
-        'section' => 'advance_education_left_right',
-        'choices' => array(
-            'Default' => __('Default','advance-education'),
-            'Container' => __('Container','advance-education'),
-            'Box Container' => __('Box Container','advance-education'),
-        ),
-	) );
-
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_education_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-education'),
@@ -517,6 +515,52 @@ function advance_education_customize_register($wp_customize) {
 			'Grid Layout'   => __('Grid Layout', 'advance-education')
 		),
 	));
+
+	$wp_customize->add_setting('advance_education_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'advance-education'),
+		'sanitize_callback' => 'advance_education_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_education_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'advance-education'),
+		'section'        => 'advance_education_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-education'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-education'),
+			'One Column'    => __('One Column', 'advance-education'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_education_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'advance-education'),
+		'sanitize_callback' => 'advance_education_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_education_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'advance-education'),
+		'section'        => 'advance_education_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-education'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-education'),
+			'One Column'    => __('One Column', 'advance-education'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_education_theme_options',array(
+        'default' => __('Default','advance-education'),
+        'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_education_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-education'),
+        'description' => __('Here you can change the Width layout. ','advance-education'),
+        'section' => 'advance_education_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-education'),
+            'Container' => __('Container','advance-education'),
+            'Box Container' => __('Box Container','advance-education'),
+        ),
+	) );
 
 	// Button
 	$wp_customize->add_section( 'advance_education_theme_button', array(
@@ -888,6 +932,21 @@ function advance_education_customize_register($wp_customize) {
        'section' => 'advance_education_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_education_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_education_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','advance-education'),
+        'section' => 'advance_education_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-education'),
+            'Excerpt Content' => __('Excerpt Content','advance-education'),
+            'Full Content' => __('Full Content','advance-education'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'advance_education_excerpt_number', array(
 		'default'              => 20,
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -895,13 +954,24 @@ function advance_education_customize_register($wp_customize) {
 	$wp_customize->add_control( 'advance_education_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-education' ),
 		'section'     => 'advance_education_blog_post',
-		'type'        => 'text',
+		'type'        => 'number',
 		'settings'    => 'advance_education_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'advance_education_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_education_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','advance-education' ),
+		'section'     => 'advance_education_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_education_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('advance_education_button_text',array(

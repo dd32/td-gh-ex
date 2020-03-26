@@ -21,20 +21,22 @@
   }
 ?>
 <article class="page-box">
-  <div class="box-img">
-    <?php
-      if ( ! is_single() ) {
-        // If not a single post, highlight the video file.
-        if ( ! empty( $video ) ) {
-          foreach ( $video as $video_html ) {
-            echo '<div class="entry-video">';
-              echo $video_html;
-            echo '</div>';
-          }
-        };
-      }; 
-    ?>
-  </div>
+  <?php if(get_theme_mod('advance_education_blog_post_description_option') != 'Full Content'){ ?>
+    <div class="box-img">
+      <?php
+        if ( ! is_single() ) {
+          // If not a single post, highlight the video file.
+          if ( ! empty( $video ) ) {
+            foreach ( $video as $video_html ) {
+              echo '<div class="entry-video">';
+                echo $video_html;
+              echo '</div>';
+            }
+          };
+        }; 
+      ?>
+    </div>
+  <?php } ?>
   <div class="new-text">
     <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
     <?php if( get_theme_mod( 'advance_education_date_hide',true) != '' || get_theme_mod( 'advance_education_comment_hide',true) != '' || get_theme_mod( 'advance_education_author_hide',true) != '') { ?>
@@ -52,10 +54,19 @@
         <?php } ?>
       </div>
     <?php }?>
-    <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_education_excerpt_number','20')))); ?></p></div>
-    <div class="read-more-btn">
-      <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_education_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-education' );?></span></a>
-    </div>
+    <?php if(get_theme_mod('advance_education_blog_post_description_option') == 'Full Content'){ ?>
+      <?php the_content(); ?>
+    <?php }
+    if(get_theme_mod('advance_education_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
+      <?php if(get_the_excerpt()) { ?>
+        <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_education_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_education_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('advance_education_post_suffix_option','...') ); ?></p></div>
+      <?php }?>
+    <?php }?>
+    <?php if( get_theme_mod('advance_education_button_text','READ MORE') != ''){ ?>
+      <div class="read-more-btn">
+        <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_education_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-education' );?></span></a>
+      </div>
+    <?php } ?>
   </div>
   <div class="clearfix"></div>
 </article>
