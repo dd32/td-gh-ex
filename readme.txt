@@ -22,14 +22,17 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 == Changelog ==
 
+= 107 =
+* /inc/woo-commerce/style.css was accidently placed in the folder /inc/woo-commerce-content-microdata/
+
 = 106 =
-* Figure text on a center image was display of to the left because WordPress CSS guys think they know better
-* .wp-block-button CSS displays same as the paragraph element
-* figcaption is fixed, WordPress added padding and hard font numbers... have you even heard of CSS3 and em font units!?!?
-* Block quote cite wasn't applying CSS sytles because of block editor differences
+* Figure text on a center image was display off to the left because of WordPress CSS
+* .wp-block-button CSS displays same as the paragraph element now
+* figcaption is fixed, WordPress added padding and hard font numbers
+* Block quote cite wasn't applying CSS sytles because of block editor element differences
 * wp-block-embed will center up on the page now
 * Menu should be more accessable now, especially for users navigating with the tab key, also menu now works with hover
-* Navigation didn't work is a static page was selected, switched to pagination for a better user experience.
+* Navigation didn't work with a static front page, switched to pagination for a better user experience.
 
 = 104 =
 * Fixed the issues with WordPress Block editor and new gallery code
@@ -64,6 +67,9 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 
 == Upgrade Notice ==
+
+= 107 =
+* The file /inc/woo-commerce/style.css got accidently moved into the wrong folder, just putting it back in the correct folder.
 
 = 106 =
 * Fixing minor issues, switched to pagination, making the navigation more accessable, tweaking how embedded media displays.
