@@ -10,6 +10,7 @@
             if (jQuery(window).scrollTop() >= 100) {
                 jQuery('.header-sticky').addClass('header-fixed-top');
 				jQuery('.header-sticky').removeClass('not-sticky');
+				jQuery('.navbar-collapse').removeClass('show');
             }
             else {
                 jQuery('.header-sticky').removeClass('header-fixed-top');

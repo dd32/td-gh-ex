@@ -17,8 +17,11 @@
 <body <?php body_class(esc_attr($class)); ?> >
 
 <?php 
-  if ( function_exists( 'wp_body_open' ) )
-    wp_body_open();
+    if ( function_exists( 'wp_body_open' ) ) {
+        wp_body_open();
+    } else {
+        do_action( 'wp_body_open' );
+    } 
 ?>
 <a class="screen-reader-text skip-link" href="#content"><?php esc_html_e( 'Skip to content', 'arilewp' ); ?></a>
 <div id="wrapper">
