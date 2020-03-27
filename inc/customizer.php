@@ -423,6 +423,20 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'type'	=> 'text'
 	));
 
+	$wp_customize->add_setting('bb_wedding_bliss_background_skin_mode',array(
+        'default' => __('Transparent Background','bb-wedding-bliss'),
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','bb-wedding-bliss'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','bb-wedding-bliss'),
+            'Transparent Background' => __('Transparent Background','bb-wedding-bliss'),
+        ),
+	) );
+
 	//add home page setting pannel
 	$wp_customize->add_panel( 'bb_wedding_bliss_panel_id', array(
 	    'priority' => 10,
@@ -506,23 +520,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'section' => 'bb_wedding_bliss_left_right'
     ));
 
-	$wp_customize->add_setting('bb_wedding_bliss_theme_options',array(
-        'default' => __('Default','bb-wedding-bliss'),
-        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
-	));
-	$wp_customize->add_control('bb_wedding_bliss_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','bb-wedding-bliss'),
-        'description' => __('Here you can change the Width layout. ','bb-wedding-bliss'),
-        'section' => 'bb_wedding_bliss_left_right',
-        'choices' => array(
-            'Default' => __('Default','bb-wedding-bliss'),
-            'Container' => __('Container','bb-wedding-bliss'),
-            'Box Container' => __('Box Container','bb-wedding-bliss'),
-        ),
-	) );
-
-	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_wedding_bliss_layout_options',array(
 	        'default' => __('Right Sidebar','bb-wedding-bliss'),
 	        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
@@ -543,6 +540,52 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	        ),
 	    )
     );
+
+    $wp_customize->add_setting('bb_wedding_bliss_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'bb-wedding-bliss'),
+		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'bb-wedding-bliss'),
+		'section'        => 'bb_wedding_bliss_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'bb-wedding-bliss'),
+			'Right Sidebar' => __('Right Sidebar', 'bb-wedding-bliss'),
+			'One Column'    => __('One Column', 'bb-wedding-bliss'),
+		),
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'bb-wedding-bliss'),
+		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'bb-wedding-bliss'),
+		'section'        => 'bb_wedding_bliss_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'bb-wedding-bliss'),
+			'Right Sidebar' => __('Right Sidebar', 'bb-wedding-bliss'),
+			'One Column'    => __('One Column', 'bb-wedding-bliss'),
+		),
+	));
+
+	$wp_customize->add_setting('bb_wedding_bliss_theme_options',array(
+        'default' => __('Default','bb-wedding-bliss'),
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','bb-wedding-bliss'),
+        'description' => __('Here you can change the Width layout. ','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_left_right',
+        'choices' => array(
+            'Default' => __('Default','bb-wedding-bliss'),
+            'Container' => __('Container','bb-wedding-bliss'),
+            'Box Container' => __('Box Container','bb-wedding-bliss'),
+        ),
+	) );
 
     // Button
 	$wp_customize->add_section( 'bb_wedding_bliss_theme_button', array(
@@ -941,6 +984,21 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
        'section' => 'bb_wedding_bliss_blog_post'
     ));
 
+    $wp_customize->add_setting('bb_wedding_bliss_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','bb-wedding-bliss'),
+        'section' => 'bb_wedding_bliss_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','bb-wedding-bliss'),
+            'Excerpt Content' => __('Excerpt Content','bb-wedding-bliss'),
+            'Full Content' => __('Full Content','bb-wedding-bliss'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'bb_wedding_bliss_excerpt_number', array(
 		'default'              => 20,
 		'type'                 => 'theme_mod',
@@ -951,13 +1009,24 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'bb_wedding_bliss_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','bb-wedding-bliss' ),
 		'section'     => 'bb_wedding_bliss_blog_post',
-		'type'        => 'textfield',
+		'type'        => 'number',
 		'settings'    => 'bb_wedding_bliss_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'bb_wedding_bliss_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','bb-wedding-bliss' ),
+		'section'     => 'bb_wedding_bliss_blog_post',
+		'type'        => 'text',
+		'settings'    => 'bb_wedding_bliss_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('bb_wedding_bliss_button_text',array(

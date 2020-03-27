@@ -231,8 +231,15 @@
 		$custom_css .='} }';
 	}
 
+	/*------------------ Skin Option  -------------------*/
 
-
-
-		
-
+		$theme_lay = get_theme_mod( 'bb_wedding_bliss_background_skin_mode','Transparent Background');
+	    if($theme_lay == 'With Background'){
+			$custom_css .='.page-box,#sidebar .widget,.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,#love-Story, #moreevent,.front-page-content,.background-img-skin{';
+				$custom_css .='background-color: #fff;';
+			$custom_css .='}';
+		}else if($theme_lay == 'Transparent Background'){
+			$custom_css .='.our-services .page-box, .page-box-single{';
+				$custom_css .='background-color: transparent;';
+			$custom_css .='}';
+		}

@@ -34,7 +34,7 @@ get_header( 'shop' ); ?>
 <div class="container">
 	<main role="main" id="maincontent">
 		<div class="row m-0">
-			<div class="<?php echo esc_html( $colmd ); ?>">
+			<div class="<?php echo esc_html( $colmd ); ?> background-img-skin">
 				<?php
 					/**
 					 * woocommerce_before_main_content hook.
