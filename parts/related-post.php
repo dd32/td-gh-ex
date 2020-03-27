@@ -1,0 +1,25 @@
+<?php
+  $categories = get_the_category($post->ID);
+  if ($categories) {
+   $category_ids = array();
+   foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+   $args=array(
+     'category__in' => $category_ids,
+     'post__not_in' => array($post->ID),
+     'showposts'=>5, // Number of related posts that will be shown.
+    ); 
+   $my_query = new WP_Query($args);
+   if( $my_query->have_posts() ) {
+     echo '<h3>Related Posts</h3><ul>';
+     while ($my_query->have_posts()) {
+       $my_query->the_post();
+       ?>
+       <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+       <li><a href="<?php the_permalink() ?>"><?php the_post_thumbnail('thumbnail'); ?></a></li>
+       <?php
+     }
+     echo '</ul>';
+   }
+  }
+  wp_reset_postdata();
+?>
