@@ -9,7 +9,7 @@ Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-com
 Requires at least: WordPress 4.7
 Tested up to: 5.3.2
 Requires PHP: 5.4
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 
 == Description ==
 

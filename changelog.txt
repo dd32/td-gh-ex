@@ -1,3 +1,6 @@
+=== v1.2.6 ===
+- Minor refinements
+
 === v1.2.5 ===
 - Added new hooks for header
 - Fixed submenu issue on edge browser

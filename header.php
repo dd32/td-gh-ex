@@ -30,6 +30,8 @@
 //wp_body_open hook from WordPress 5.2
 if ( function_exists( 'wp_body_open' ) ) {
     wp_body_open();
+}else {
+ 	do_action( 'wp_body_open' ); 
 }
 
 $default 					= arrival_get_default_theme_options();

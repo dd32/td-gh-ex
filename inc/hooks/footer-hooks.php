@@ -124,6 +124,12 @@ if(! function_exists('arrival_footer_contents')){
 add_action('arrival_footer_contents','arrival_scroll_to_top',15);
 if( ! function_exists('arrival_scroll_to_top')){
 	function arrival_scroll_to_top(){
+
+		$scroll_enable = apply_filters('arrival_scroll_to_top','__return_true');
+
+		if( $scroll_enable == false ){
+			return;
+		}
 	?>
 	<div class="scroll-top-top">
 		<?php echo arrival_get_icon_svg('angle_up'); ?>

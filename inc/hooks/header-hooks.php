@@ -117,7 +117,7 @@ if( ! function_exists('arrival_main_nav')){
 				</div>
 			<?php }else{ ?>
 				<div class="arrival-custom-element">
-					<?php $custom_item = apply_filters('arrival_custom_item_reserve','__return_false'); ?>
+					<?php apply_filters('arrival_custom_item_reserve','__return_false'); ?>
 				</div>
 			<?php }
 
@@ -278,7 +278,7 @@ if( ! function_exists('arrival_top_header_right')){
 */
 apply_filters('arrival_after_top_header','arrival_after_top_header');
 
-add_action('arrival_after_top_header_content','arrival_after_top_header');
+add_action('arrival_after_top_header_content','arrival_after_top_header',5);
 
 if(! function_exists('arrival_after_top_header')){
 	function arrival_after_top_header(){
@@ -409,6 +409,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 			$grid_class = 'op-grid-two';
 		}
 		
+		$grid_class_filter = apply_filters('arrival_header_main_grid_filter',$grid_class);
 
 		?>
 		<header id="masthead" class="site-header <?php echo esc_attr($hdr_class.' '.$_menu_hover_styles.' '.$transparent_hdr);?>">
@@ -426,7 +427,7 @@ if( ! function_exists('arrival_main_header_wrapp')){
 			
 
 			<div class="main-header-wrapp <?php echo esc_attr($arrival_main_nav_layout.' '.$arrival_top_header_enable)?>">
-				<div class="container <?php echo esc_attr($grid_class);?>">
+				<div class="container <?php echo esc_attr($grid_class_filter);?>">
 				<?php do_action('arrival_main_nav'); ?>
 				</div>
 			</div>

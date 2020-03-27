@@ -337,6 +337,10 @@ $wp_customize->add_control( $prefix.'_blog_excerpts', array(
         
       ) );
 
+/**
+* Post Meta Options
+*@since 1.2.6
+*/
 
 /**
 * Header Options
@@ -351,12 +355,6 @@ $wp_customize->add_panel( $prefix.'_header_options_panel', array(
 /*
 * Top header
 */
-
-/*$wp_customize->add_section( $prefix.'_top_header_options', array(
-			'title'		=> esc_html__( 'Top Header', 'arrival' ),
-			'panel'		=> $prefix.'_header_options_panel'
-		)
-	);*/
 
 $wp_customize->add_setting( $prefix.'_top_header_enable', array(
         'default'             => $default[$prefix.'_top_header_enable'],

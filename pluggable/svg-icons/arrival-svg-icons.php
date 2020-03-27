@@ -262,6 +262,11 @@ style=" fill:#000000;"><g id="surface1"><path style=" " d="M 21 3 C 11.601563 3 
 'menu-bars' => 
 '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60.123 60.123" style="enable-background:new 0 0 60.123 60.123;" xml:space="preserve"><g><path d="M57.124,51.893H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,51.893,57.124,51.893z"/><path d="M57.124,33.062H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3C60.124,31.719,58.781,33.062,57.124,33.062z"/><path d="M57.124,14.231H16.92c-1.657,0-3-1.343-3-3s1.343-3,3-3h40.203c1.657,0,3,1.343,3,3S58.781,14.231,57.124,14.231z"/><circle cx="4.029" cy="11.463" r="4.029"/><circle cx="4.029" cy="30.062" r="4.029"/><circle cx="4.029" cy="48.661" r="4.029"/></g></svg>',
 
+'arrow_down' =>
+'<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490.656 490.656" style="enable-background:new 0 0 490.656 490.656;" xml:space="preserve"><g><g><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667C491.696,131.368,491.696,124.605,487.536,120.445z"/></g></g></svg>',
+
+'menu-toogle' =>
+'<svg id="Capa_1" enable-background="new 0 0 451.111 451.111" height="512" viewBox="0 0 451.111 451.111" width="512" xmlns="http://www.w3.org/2000/svg"><path id="path-1_10_" d="m0 0h451.111v64.444h-451.111z" transform="translate(1 1)"/><path id="path-1_9_" d="m0 193.333h451.111v64.444h-451.111z" transform="translate(1 7)"/><path id="path-1_8_" d="m0 386.667h451.111v64.444h-451.111z" transform="translate(1 13)"/></svg>',
 
 	);
 

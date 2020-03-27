@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
 * Mobile navigation scripts
 *
 */   
- $('body').on('click','.toggle-wrapp', function(){
+ $('body').on('click keypress','.toggle-wrapp', function(){
 
     $('.site-header').toggleClass('toggled-on');
  });
@@ -87,7 +87,7 @@ $('<div class="sub-toggle-children"></div>').insertBefore('.mob-nav-wrapp .page_
 
 
 
-$('body').on('click touchstart','.mob-nav-wrapp .sub-toggle', function()  {
+$('body').on('vclick touchstart','.mob-nav-wrapp .sub-toggle', function()  {
   
   $(this).next('ul.sub-menu').slideToggle(400);
   $(this).parent('li').toggleClass('mob-menu-toggle');
