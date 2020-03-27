@@ -39,7 +39,7 @@ function arrival_store_scripts() {
     wp_enqueue_style('arrival-store-styles', get_template_directory_uri() . '/style.css',array(), $themeVersion);
     wp_enqueue_style( 'arrival-store-fonts', arrival_store_fonts_url(), array(), null );
     
-    wp_enqueue_script( 'arrival-store-custom', get_theme_file_uri( '/assets/js/custom.js' ), ARRIVAL_VER, false );
+    wp_enqueue_script( 'arrival-store-custom', get_theme_file_uri( '/assets/js/custom.js' ), array('jquery'), ARRIVAL_VER, false );
 
 }
 
@@ -393,7 +393,7 @@ if ( ! function_exists( 'arrival_store_browse_categories_nav_menu_items' ) ) {
 
         ?>
         <div class="browse-category-wrap">
-            <div class="browse-category">
+            <div class="browse-category" tabindex="0">
                 <?php echo arrival_get_icon_svg('menu-bars'); ?>
                 <span class="cat-btn-title">
                 <?php esc_html_e('SHOP BY DEPARTMENT','arrival-store'); ?>
@@ -433,7 +433,7 @@ if( ! function_exists('arrival_store_mob_nav')){
     function arrival_store_mob_nav(){
         ?>
         <div class="mob-outer-wrapp">
-            <span class="toggle-wrapp">
+            <span class="toggle-wrapp" tabindex="0">
                 <?php esc_html_e('Mobile Menu','arrival-store');?>
                 <?php echo arrival_get_icon_svg('menu-toogle'); ?>
             </span>

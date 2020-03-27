@@ -3,7 +3,7 @@ Contributors: WPoperation
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors
 Requires at least: 4.0
 Tested up to: 5.3.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -36,10 +36,11 @@ Arrival Store is a complete eCommerce theme. The theme is extended in ecommerce 
 ----------------------
 Screenshot Images
 ----------------------
-License: CC0
-License Url : https://stocksnap.io/license
 
-https://stocksnap.io/photo/PLGCXMYH4J
+Image for theme screenshot, Copyright EVG Photos
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/PLGCXMYH4J
+
 
 
 All other images are designed by WPoperation and licenced under CC0

@@ -31,8 +31,8 @@ if( ! function_exists('arrival_store_customizer_settings')):
       ) );
 
 		$wp_customize->add_control( 'arrival_top_header_txt', array(
-	        'label'          => esc_html__( 'Info Text', 'arrival' ),
-	        'description' 	 => esc_html__('Text for top header left','arrival'),
+	        'label'          => esc_html__( 'Info Text', 'arrival-store' ),
+	        'description' 	 => esc_html__('Text for top header left','arrival-store'),
 	        'section'        => $prefix.'_main_header_options_panel',
 	        'type'			 => 'text'
 	        
@@ -44,7 +44,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
      	 ) );
 
 		$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_middle_header_separator', array(
-	        'label'         => esc_html__( 'Middle Header options', 'arrival' ),
+	        'label'         => esc_html__( 'Middle Header options', 'arrival-store' ),
 	        'section'       => $prefix.'_main_header_options_panel',
 	      ) ) );
 
@@ -57,8 +57,8 @@ if( ! function_exists('arrival_store_customizer_settings')):
       ) );
 
 		$wp_customize->add_control( $prefix.'_middle_header_phone', array(
-	        'label'          => esc_html__( 'Phone Number', 'arrival' ),
-	        'description' 	 => esc_html__('Enter phone number for middle header','arrival'),
+	        'label'          => esc_html__( 'Phone Number', 'arrival-store' ),
+	        'description' 	 => esc_html__('Enter phone number for middle header','arrival-store'),
 	        'section'        => $prefix.'_main_header_options_panel',
 	        'type'			 => 'text'
 	        
@@ -70,7 +70,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
      	 ) );
 
 		$wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_style_header_separator', array(
-	        'label'         => esc_html__( 'Header Styles', 'arrival' ),
+	        'label'         => esc_html__( 'Header Styles', 'arrival-store' ),
 	        'section'       => $prefix.'_main_header_options_panel',
 	      ) ) );
 
@@ -82,7 +82,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		    )
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_top_header_bg', array(
-		            'label'         => esc_html__( 'Top Header Background', 'arrival' ),
+		            'label'         => esc_html__( 'Top Header Background', 'arrival-store' ),
 		            'section'       => $prefix.'_main_header_options_panel',
 		)));
 
@@ -94,7 +94,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		    )
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_top_header_text_color', array(
-		            'label'         => esc_html__( 'Top Header Text', 'arrival' ),
+		            'label'         => esc_html__( 'Top Header Text', 'arrival-store' ),
 		            'section'       => $prefix.'_main_header_options_panel',
 		            
 		)));
@@ -108,7 +108,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		    )
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_middle_header_bg', array(
-		            'label'         => esc_html__( 'Middle Header Background', 'arrival' ),
+		            'label'         => esc_html__( 'Middle Header Background', 'arrival-store' ),
 		            'section'       => $prefix.'_main_header_options_panel',
 		            
 		)));
@@ -120,7 +120,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		    )
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_middle_header_text', array(
-		            'label'         => esc_html__( 'Middle Header Text', 'arrival' ),
+		            'label'         => esc_html__( 'Middle Header Text', 'arrival-store' ),
 		            'section'       => $prefix.'_main_header_options_panel',
 		            
 		)));
@@ -133,7 +133,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		    )
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_main_header_bg', array(
-		            'label'         => esc_html__( 'Main Header Background', 'arrival' ),
+		            'label'         => esc_html__( 'Main Header Background', 'arrival-store' ),
 		            'section'       => $prefix.'_main_header_options_panel',
 		            
 		)));
@@ -145,7 +145,7 @@ if( ! function_exists('arrival_store_customizer_settings')):
 		    )
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_main_header_text', array(
-		            'label'         => esc_html__( 'Main Header Text', 'arrival' ),
+		            'label'         => esc_html__( 'Main Header Text', 'arrival-store' ),
 		            'section'       => $prefix.'_main_header_options_panel',
 		            
 		)));
