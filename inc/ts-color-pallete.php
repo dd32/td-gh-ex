@@ -230,6 +230,19 @@
 		$custom_css .='} }';
 	}
 
+	/*------------------ Skin Option  -------------------*/
+
+		$theme_lay = get_theme_mod( 'advance_it_company_background_skin_mode','Transpert Background');
+	    if($theme_lay == 'With Background'){
+			$custom_css .='.page-box,#sidebar .widget,.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,.post-sec,.front-page-content,.background-img-skin{';
+				$custom_css .='background-color: #fff;';
+			$custom_css .='}';
+		}else if($theme_lay == 'Transpert Background'){
+			$custom_css .='.page-box-single{';
+				$custom_css .='background-color: transparent;';
+			$custom_css .='}';
+		}
+
 
 
 

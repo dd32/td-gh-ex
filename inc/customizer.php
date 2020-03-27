@@ -421,6 +421,20 @@ function advance_it_company_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	$wp_customize->add_setting('advance_it_company_background_skin_mode',array(
+        'default' => __('Transpert Background','advance-it-company'),
+        'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_it_company_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-it-company'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-it-company'),
+            'Transpert Background' => __('Transpert Background','advance-it-company'),
+        ),
+	) );
+
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_it_company_panel_id', array(
 		'priority'       => 10,
@@ -493,22 +507,6 @@ function advance_it_company_customize_register($wp_customize) {
 		'section' => 'advance_it_company_left_right'
     ));
 
-	$wp_customize->add_setting('advance_it_company_theme_options',array(
-        'default' => __('Default','advance-it-company'),
-        'sanitize_callback' => 'advance_it_company_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_it_company_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-it-company'),
-        'description' => __('Here you can change the Width layout. ','advance-it-company'),
-        'section' => 'advance_it_company_left_right',
-        'choices' => array(
-            'Default' => __('Default','advance-it-company'),
-            'Container' => __('Container','advance-it-company'),
-            'Box Container' => __('Box Container','advance-it-company'),
-        ),
-	));
-
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_it_company_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-it-company'),
@@ -524,6 +522,52 @@ function advance_it_company_customize_register($wp_customize) {
 			'One Column'    => __('One Column', 'advance-it-company'),
 			'Grid Layout'   => __('Grid Layout', 'advance-it-company')
 		),
+	));
+
+	$wp_customize->add_setting('advance_it_company_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'advance-it-company'),
+		'sanitize_callback' => 'advance_it_company_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_it_company_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'advance-it-company'),
+		'section'        => 'advance_it_company_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-it-company'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-it-company'),
+			'One Column'    => __('One Column', 'advance-it-company'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_it_company_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'advance-it-company'),
+		'sanitize_callback' => 'advance_it_company_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_it_company_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'advance-it-company'),
+		'section'        => 'advance_it_company_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-it-company'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-it-company'),
+			'One Column'    => __('One Column', 'advance-it-company'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_it_company_theme_options',array(
+        'default' => __('Default','advance-it-company'),
+        'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_it_company_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-it-company'),
+        'description' => __('Here you can change the Width layout. ','advance-it-company'),
+        'section' => 'advance_it_company_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-it-company'),
+            'Container' => __('Container','advance-it-company'),
+            'Box Container' => __('Box Container','advance-it-company'),
+        ),
 	));
 
 	// Button
@@ -1006,6 +1050,21 @@ function advance_it_company_customize_register($wp_customize) {
        'section' => 'advance_it_company_blog_post'
     ));
 
+    $wp_customize->add_setting('advance_it_company_blog_post_description_option',array(
+    	'default'   => 'Excerpt Content',
+        'sanitize_callback' => 'advance_it_company_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_it_company_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','advance-it-company'),
+        'section' => 'advance_it_company_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-it-company'),
+            'Excerpt Content' => __('Excerpt Content','advance-it-company'),
+            'Full Content' => __('Full Content','advance-it-company'),
+        ),
+	) );
+
     $wp_customize->add_setting( 'advance_it_company_excerpt_number', array(
 		'default'              => 20,
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -1013,13 +1072,24 @@ function advance_it_company_customize_register($wp_customize) {
 	$wp_customize->add_control( 'advance_it_company_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-it-company' ),
 		'section'     => 'advance_it_company_blog_post',
-		'type'        => 'text',
+		'type'        => 'number',
 		'settings'    => 'advance_it_company_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,
 			'min'              => 0,
 			'max'              => 50,
 		),
+	) );
+
+	$wp_customize->add_setting( 'advance_it_company_post_suffix_option', array(
+		'default'   => '...',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_it_company_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','advance-it-company' ),
+		'section'     => 'advance_it_company_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_it_company_post_suffix_option',
 	) );
 
 	$wp_customize->add_setting('advance_it_company_button_text',array(
