@@ -17,7 +17,6 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
@@ -40,7 +39,7 @@ if ( post_password_required() ) {
 						)
 					),
 					esc_html ( number_format_i18n( $comments_number ) ),
-					esc_html (get_the_title())
+					esc_html ( get_the_title() )
 				);
 			}
 			?>
@@ -72,5 +71,4 @@ if ( post_password_required() ) {
 
 	comment_form();
 	?>
-
 </div>

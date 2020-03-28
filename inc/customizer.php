@@ -427,6 +427,40 @@ function adventure_travelling_customize_register( $wp_customize ) {
 		'render_callback' => 'adventure_travelling_customize_partial_blogdescription',
 	) );
 
+	$wp_customize->add_setting('adventure_travelling_site_title',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Site Title','adventure-travelling'),
+       'section' => 'title_tagline',
+    ));
+
+    $wp_customize->add_setting('adventure_travelling_site_tagline',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('adventure_travelling_site_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Tagline','adventure-travelling'),
+       'section' => 'title_tagline',
+    ));
+
+	$wp_customize->add_setting('adventure_travelling_logo_settings',array(
+        'default' => __('Different Line','adventure-travelling'),
+        'sanitize_callback' => 'adventure_travelling_sanitize_choices'
+	));
+    $wp_customize->add_control('adventure_travelling_logo_settings',array(
+        'type' => 'radio',
+        'label'     => __('Logo Layout Settings', 'adventure-travelling'),
+        'description'   => __('Here you have two options 1. Logo and Site tite in differnt line. 2. Logo and Site title in same line.', 'adventure-travelling'),
+        'section' => 'title_tagline',
+        'choices' => array(
+            'Different Line' => __('Different Line','adventure-travelling'),
+            'Same Line' => __('Same Line','adventure-travelling')
+        ),
+	) );
 }
 add_action( 'customize_register', 'adventure_travelling_customize_register' );
 
