@@ -22,6 +22,10 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 == Changelog ==
 
+= 108 =
+* Default publisher logo image in /inc/blog/images/ wasn't named properly, changed it correct naming
+* Customizer option code went missing too, added back in
+
 = 107 =
 * /inc/woo-commerce/style.css was accidently placed in the folder /inc/woo-commerce-content-microdata/
 
@@ -67,6 +71,9 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 
 == Upgrade Notice ==
+
+= 108 =
+* Fixed issues with default publisher image logo missing and the customizer option missing.
 
 = 107 =
 * The file /inc/woo-commerce/style.css got accidently moved into the wrong folder, just putting it back in the correct folder.
