@@ -261,12 +261,11 @@ function aari_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/plugins/bootstrap.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'jam-icons', get_template_directory_uri() . '/css/plugins/jam-icons.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/plugins/animate.css', array(), '1.1', 'all' );
-	wp_enqueue_style( 'aari-main-style', get_template_directory_uri() . '/css/main-style.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'colorbox', get_template_directory_uri() . '/css/plugins/colorbox.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'responsive-nav', get_template_directory_uri() . '/css/responsive-nav.css', array(), '1.1', 'all' );
 	wp_enqueue_style( 'aari-fonts', aari_fonts_url(), array(), '1.1', 'all' );
 	wp_enqueue_style( 'Merriweather', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700,900&display=swap', array(), '1.1', 'all' );
-
+	wp_enqueue_style( 'aari-main-style', get_template_directory_uri() . '/css/main-style.css', array(), '1.1', 'all' );
 	// Load the Internet Explorer 8 specific stylesheet.
 	wp_enqueue_style( 'aari-ie8', get_template_directory_uri() . '/css/ie8.css', array(), '1.0' );
 	wp_style_add_data( 'aari-ie8', 'conditional', 'lt IE 9' );
@@ -276,6 +275,8 @@ function aari_scripts() {
 		wp_enqueue_style( 'aari-ie9', get_template_directory_uri() . '/assets/css/ie9.css', array(), '1.0' );
 		wp_style_add_data( 'aari-ie9', 'conditional', 'IE 9' );
 	}
+
+	wp_add_inline_style( 'aari-main-style', aari_theme_dynamic_style() );
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '4.0.0', true );
 	wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/js/colorbox/jquery.colorbox-min.js', array( 'jquery' ), '1.0.0', true );
@@ -354,3 +355,8 @@ require get_template_directory() . '/inc/widgets/class-aari-recentpost-widget.ph
  * Load About me widget
  */
 require get_template_directory() . '/inc/widgets/class-aari-aboutme-widget.php';
+
+/**
+ * Dynamic style
+ */
+require get_template_directory() . '/inc/dynamic-style.php';

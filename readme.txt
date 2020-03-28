@@ -1,6 +1,6 @@
 === Aari ===
 Contributors: emtiaz51921
-Author URI:
+Author URI: https://imtiazshamim.com/
 Donate link:
 Requires at least: 4.0
 Tested up to: 5.3.1
@@ -8,7 +8,7 @@ Requires PHP: 5.5
 Stable tag: 2.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-colors, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
 
 ====Copyright===
 Aari, Copyright 2020 emtiaz51921
@@ -147,6 +147,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 
 == Changelog ==
+
+= 3.0.1 - March 28 2020 =
+* Customizer color control added to change theme colors.
 
 = 3.0.0 - March 14 2020 =
 * Bug fix

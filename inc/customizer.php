@@ -73,6 +73,42 @@ function aari_customize_register( $wp_customize ) {
 	);
 	/* Header Options end */
 
+	/* Theme color options start */
+
+	$wp_customize->add_section(
+		'aari_color_setting',
+		array(
+			'capability' => 'edit_theme_options',
+			'title'      => esc_html__( 'Colors', 'aari' ),
+			'panel'      => 'aari_panel',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'aari_theme_color',
+		array(
+			'default'           => '#fd4145',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'capability'        => 'edit_theme_options',
+			'transport'         => 'refresh',
+
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'aari_theme_color_section',
+			array(
+				'label'    => __( 'Theme Color', 'aari' ),
+				'section'  => 'aari_color_setting',
+				'settings' => 'aari_theme_color',
+			)
+		)
+	);
+
+	/* Theme color options end */
+
 	/* Page options */
 	$wp_customize->add_section(
 		'aari_page_setting',

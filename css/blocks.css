@@ -385,3 +385,10 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 .has-very-dark-gray-background-color {
   background-color: #444;
 }
+
+.wp-block-button__link {
+  color: #fff !important;
+}
+.wp-block-file .wp-block-file__button:focus {
+  color: #000 !important;
+}
