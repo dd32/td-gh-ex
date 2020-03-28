@@ -8,10 +8,10 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function automobile_car_dealer_responsive_menu_open() {
 	document.getElementById("navbar-header").style.width = "250px";
 }
-function resMenu_close() {
+function automobile_car_dealer_responsive_menu_close() {
   document.getElementById("navbar-header").style.width = "0";
 }
 

@@ -59,58 +59,6 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'automobile-car-dealer' ),
 	) );
 
-	//layout setting
-	$wp_customize->add_section( 'automobile_car_dealer_option', array(
-    	'title'      => __( 'Layout Settings', 'automobile-car-dealer' ),
-		'priority'   => null,
-		'panel' => 'automobile_car_dealer_panel_id'
-	) );
-
-	$wp_customize->add_setting('automobile_car_dealer_preloader',array(
-       'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
-    ));
-    $wp_customize->add_control('automobile_car_dealer_preloader',array(
-       'type' => 'checkbox',
-       'label' => __('Show / Hide Preloader','automobile-car-dealer'),
-       'section' => 'automobile_car_dealer_option'
-    ));
-
-	$wp_customize->add_setting('automobile_car_dealer_width_layout_options',array(
-        'default' => __('Default','automobile-car-dealer'),
-        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'
-	));
-	$wp_customize->add_control('automobile_car_dealer_width_layout_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','automobile-car-dealer'),
-        'description' => __('Here you can change the Width layout. ','automobile-car-dealer'),
-        'section' => 'automobile_car_dealer_option',
-        'choices' => array(
-            'Default' => __('Default','automobile-car-dealer'),
-            'Container Layout' => __('Container Layout','automobile-car-dealer'),
-            'Box Layout' => __('Box Layout','automobile-car-dealer'),
-        ),
-	) );
-
-	// Add Settings and Controls for Layout
-	$wp_customize->add_setting('automobile_car_dealer_layout_options',array(
-        'default' => __('Right Sidebar','automobile-car-dealer'),
-        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'	        
-	) );
-	$wp_customize->add_control('automobile_car_dealer_layout_options',array(
-        'type' => 'radio',
-        'label' => __('Do you want this section','automobile-car-dealer'),
-        'section' => 'automobile_car_dealer_option',
-        'choices' => array(
-            'One Column' => __('One Column','automobile-car-dealer'),
-            'Three Columns' => __('Three Columns','automobile-car-dealer'),
-            'Four Columns' => __('Four Columns','automobile-car-dealer'),
-            'Grid Layout' => __('Grid Layout','automobile-car-dealer'),
-            'Left Sidebar' => __('Left Sidebar','automobile-car-dealer'),
-            'Right Sidebar' => __('Right Sidebar','automobile-car-dealer')
-        ),
-	)  );
-
 	$font_array = array(
 		''                       => 'No Fonts',
 		'Abril Fatface'          => 'Abril Fatface',
@@ -510,6 +458,58 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'type'    => 'text',
 	));
 
+	//layout setting
+	$wp_customize->add_section( 'automobile_car_dealer_option', array(
+    	'title'      => __( 'Layout Settings', 'automobile-car-dealer' ),
+		'priority'   => null,
+		'panel' => 'automobile_car_dealer_panel_id'
+	) );
+
+	$wp_customize->add_setting('automobile_car_dealer_preloader',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_car_dealer_preloader',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','automobile-car-dealer'),
+       'section' => 'automobile_car_dealer_option'
+    ));
+
+	$wp_customize->add_setting('automobile_car_dealer_width_layout_options',array(
+        'default' => __('Default','automobile-car-dealer'),
+        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'
+	));
+	$wp_customize->add_control('automobile_car_dealer_width_layout_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','automobile-car-dealer'),
+        'description' => __('Here you can change the Width layout. ','automobile-car-dealer'),
+        'section' => 'automobile_car_dealer_option',
+        'choices' => array(
+            'Default' => __('Default','automobile-car-dealer'),
+            'Container Layout' => __('Container Layout','automobile-car-dealer'),
+            'Box Layout' => __('Box Layout','automobile-car-dealer'),
+        ),
+	) );
+
+	// Add Settings and Controls for Layout
+	$wp_customize->add_setting('automobile_car_dealer_layout_options',array(
+        'default' => __('Right Sidebar','automobile-car-dealer'),
+        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'	        
+	) );
+	$wp_customize->add_control('automobile_car_dealer_layout_options',array(
+        'type' => 'radio',
+        'label' => __('Do you want this section','automobile-car-dealer'),
+        'section' => 'automobile_car_dealer_option',
+        'choices' => array(
+            'One Column' => __('One Column','automobile-car-dealer'),
+            'Three Columns' => __('Three Columns','automobile-car-dealer'),
+            'Four Columns' => __('Four Columns','automobile-car-dealer'),
+            'Grid Layout' => __('Grid Layout','automobile-car-dealer'),
+            'Left Sidebar' => __('Left Sidebar','automobile-car-dealer'),
+            'Right Sidebar' => __('Right Sidebar','automobile-car-dealer')
+        ),
+	)  );
+
 	//Global Color
 	$wp_customize->add_section('automobile_car_dealer_global_color', array(
 		'title'    => __('Theme Color Option', 'automobile-car-dealer'),
@@ -748,7 +748,6 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'panel' => 'automobile_car_dealer_panel_id',
 	));
 
-	//Sticky Header
 	$wp_customize->add_setting( 'automobile_car_dealer_sticky_header',array(
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
@@ -927,6 +926,16 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'section'	=> 'automobile_car_dealer_slidersettings',
 		'type'		=> 'icon'
 	)));
+
+	$wp_customize->add_setting('automobile_car_dealer_slider_button_text',array(
+		'default'	=> 'READ MORE',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('automobile_car_dealer_slider_button_text',array(
+		'label'	=> __('Slider Button Text','automobile-car-dealer'),
+		'section'	=> 'automobile_car_dealer_slidersettings',
+		'type'		=> 'text'
+	));
 
 	//content layout
     $wp_customize->add_setting('automobile_car_dealer_slider_content_layout',array(
@@ -1157,6 +1166,190 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'description'	=> __('Add some text for footer like copyright etc.','automobile-car-dealer'),
 		'type'		=> 'text'
 	));
+
+	//Woocommerce Section
+	$wp_customize->add_section( 'automobile_car_dealer_woocommerce_section' , array(
+    	'title'      => __( 'Woocommerce Settings', 'automobile-car-dealer' ),
+    	'description'=>__('The below settings are apply on woocommerce pages.','automobile-car-dealer'),
+		'priority'   => null,
+		'panel' => 'automobile_car_dealer_panel_id'
+	) );
+
+	/**
+	 * Product Columns
+	 */
+	$wp_customize->add_setting( 'automobile_car_dealer_per_columns' , array(
+		'default'           => '3',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_choices',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'automobile_car_dealer_per_columns', array(
+		'label'    => __( 'Product per columns', 'automobile-car-dealer' ),
+		'section'  => 'automobile_car_dealer_woocommerce_section',
+		'type'     => 'select',
+		'choices'  => array(
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+		),
+	) ) );
+
+	$wp_customize->add_setting('automobile_car_dealer_product_per_page',array(
+		'default'	=> '9',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('automobile_car_dealer_product_per_page',array(
+		'label'	=> __('Product per page','automobile-car-dealer'),
+		'section'	=> 'automobile_car_dealer_woocommerce_section',
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting('automobile_car_dealer_shop_sidebar_enable',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_car_dealer_shop_sidebar_enable',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable shop page sidebar','automobile-car-dealer'),
+       'section' => 'automobile_car_dealer_woocommerce_section',
+    ));
+
+    $wp_customize->add_setting('automobile_car_dealer_product_page_sidebar_enable',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_car_dealer_product_page_sidebar_enable',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable product page sidebar','automobile-car-dealer'),
+       'section' => 'automobile_car_dealer_woocommerce_section',
+    ));
+
+    $wp_customize->add_setting('automobile_car_dealer_related_product_enable',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_car_dealer_related_product_enable',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Related product','automobile-car-dealer'),
+       'section' => 'automobile_car_dealer_woocommerce_section',
+    ));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_button_padding_top',array(
+		'default' => 12,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_button_padding_top',	array(
+		'label' => esc_html__( 'Button Top Bottom Padding (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_button_padding_right',array(
+		'default' => 12,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_button_padding_right',	array(
+		'label' => esc_html__( 'Button Right Left Padding (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_button_border_radius',array(
+		'default' => 0,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_button_border_radius',array(
+		'label' => esc_html__( 'Button Border Radius (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
+
+    $wp_customize->add_setting('automobile_car_dealer_woocommerce_product_border_enable',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_car_dealer_woocommerce_product_border_enable',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable product border','automobile-car-dealer'),
+       'section' => 'automobile_car_dealer_woocommerce_section',
+    ));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_product_padding_top',array(
+		'default' => 10,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_product_padding_top',	array(
+		'label' => esc_html__( 'Product Top Bottom Padding (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_product_padding_right',array(
+		'default' => 10,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_product_padding_right',	array(
+		'label' => esc_html__( 'Product Right Left Padding (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_product_border_radius',array(
+		'default' => 0,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_product_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
+
+	$wp_customize->add_setting( 'automobile_car_dealer_woocommerce_product_box_shadow',array(
+		'default' => 0,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'automobile_car_dealer_sanitize_integer'
+	));
+	$wp_customize->add_control( new Automobile_Car_Dealer_Custom_Control( $wp_customize, 'automobile_car_dealer_woocommerce_product_box_shadow',array(
+		'label' => esc_html__( 'Product Box Shadow (px)','automobile-car-dealer' ),
+		'section' => 'automobile_car_dealer_woocommerce_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	)));
 	
 }
 

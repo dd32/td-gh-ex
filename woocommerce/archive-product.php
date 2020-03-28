@@ -22,7 +22,7 @@ get_header( 'shop' ); ?>
 <div class="container">
 	<main role="main" id="skip_content">
 		<div class="row">
-			<div class="col-lg-8 col-md-8">
+			<div class="<?php if( get_theme_mod( 'automobile_car_dealer_shop_sidebar_enable',true) != '') { ?>col-lg-8 col-md-8"<?php } else { ?>col-lg-12 col-md-12 <?php } ?>>
 				<?php
 					/**
 					 * Hook: woocommerce_before_main_content.
@@ -103,16 +103,18 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_after_main_content' );?>
 
 			</div>
-			<div class="col-lg-4 col-md-4">
-				<?php
-					/**
-					 * Hook: woocommerce_sidebar.
-					 *
-					 * @hooked woocommerce_get_sidebar - 10
-					 */
-					do_action( 'woocommerce_sidebar' );
-				?>
-			</div>
+			<?php if(get_theme_mod('automobile_car_dealer_shop_sidebar_enable',true)){ ?>
+				<div class="col-lg-4 col-md-4">
+					<?php
+						/**
+						 * Hook: woocommerce_sidebar.
+						 *
+						 * @hooked woocommerce_get_sidebar - 10
+						 */
+						do_action( 'woocommerce_sidebar' );
+					?>
+				</div>
+			<?php }?>
 		</div>
 	</main>
 </div>

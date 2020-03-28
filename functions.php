@@ -383,10 +383,18 @@ if ( ! function_exists( 'automobile_car_dealer_sanitize_integer' ) ) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'automobile_car_dealer_loop_columns');
-	if (!function_exists('automobile_car_dealer_loop_columns')) {
-		function automobile_car_dealer_loop_columns() {
-	return 3; // 3 products per row
+if (!function_exists('automobile_car_dealer_loop_columns')) {
+	function automobile_car_dealer_loop_columns() {
+		$columns = get_theme_mod( 'automobile_car_dealer_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'automobile_car_dealer_shop_per_page', 20 );
+function automobile_car_dealer_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'automobile_car_dealer_product_per_page', 9 );
+	return $cols;
 }
 
 /* Implement the Custom Header feature. */

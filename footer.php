@@ -55,7 +55,7 @@
         </aside>
     	<div class="copyright-wrapper">
             <div class="container">
-                <p><?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('Copyright 2019','automobile-car-dealer'))); ?> <?php automobile_car_dealer_credit(); ?></p>
+                <p><?php automobile_car_dealer_credit(); ?> <?php echo esc_html(get_theme_mod('automobile_car_dealer_footer_copy',__('By Buywptemplate','automobile-car-dealer'))); ?></p>
             </div>
             <div class="clear"></div>
         </div>

@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.4.6
+Stable tag: 0.4.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time.
@@ -106,6 +106,17 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 * Added logo resizer option in customizer.
 * Added enable / disable option for site title and site tagline.
 * Added font changer setting in customizer.
+
+= 0.4.7 =
+* Slider section button text change option.
+* Woocommerce product styling option.
+* Woocommerce Button styling option.
+* Product per row option.
+* product per page option.
+* Shop Page sidebar show / hide option.
+* Product Page sidebar show / hide option.
+* Related product show / hide option.
+* Updated mo and po files of different languages.
 
 == Resources ==
 

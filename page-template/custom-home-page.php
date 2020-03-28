@@ -36,8 +36,8 @@ get_header(); ?>
                   <div class="inner_carousel">
                       <h1><?php the_title();?></h1>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_slider_excerpt_number','30')))); ?></p>
-                     <div class="slide-button">
-                        <a class="read-more" href="<?php the_permalink(); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_button_icon','fas fa-long-arrow-alt-right')); ?>"></i><?php esc_html_e( 'READ MORE','automobile-car-dealer' ); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','automobile-car-dealer' );?></span></a>
+                      <div class="slide-button">
+                        <a class="read-more" href="<?php the_permalink(); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_button_icon','fas fa-long-arrow-alt-right')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?></span></a>
                       </div>              
                       
                   </div>

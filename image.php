@@ -22,7 +22,6 @@ get_header(); ?>
                                         <div class="attachment">
                                             <?php automobile_car_dealer_the_attached_image(); ?>
                                         </div>
-                
                                         <?php if ( has_excerpt() ) : ?>
                                             <div class="entry-caption">
                                                 <?php the_excerpt(); ?>
@@ -58,7 +57,6 @@ get_header(); ?>
                                         <div class="attachment">
                                             <?php automobile_car_dealer_the_attached_image(); ?>
                                         </div>
-                
                                         <?php if ( has_excerpt() ) : ?>
                                             <div class="entry-caption">
                                                 <?php the_excerpt(); ?>
@@ -127,7 +125,6 @@ get_header(); ?>
                                         <div class="attachment">
                                             <?php automobile_car_dealer_the_attached_image(); ?>
                                         </div>
-                
                                         <?php if ( has_excerpt() ) : ?>
                                             <div class="entry-caption">
                                                 <?php the_excerpt(); ?>
@@ -238,7 +235,6 @@ get_header(); ?>
                                         <div class="attachment">
                                             <?php automobile_car_dealer_the_attached_image(); ?>
                                         </div>
-                
                                         <?php if ( has_excerpt() ) : ?>
                                             <div class="entry-caption">
                                                 <?php the_excerpt(); ?>

@@ -13,8 +13,13 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
-  
+
+<?php if ( function_exists( 'wp_body_open' ) ) {
+  wp_body_open(); 
+} else { 
+  do_action( 'wp_body_open' ); 
+} ?>
+
 <?php if(get_theme_mod('automobile_car_dealer_preloader',true)){ ?>
     <div class="frame">
       <div class="loader">
@@ -56,7 +61,7 @@
             <?php endif; ?>      
           </div>
           <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'automobile_car_dealer_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-            <button role="tab" onclick="resMenu_open()"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
+            <button role="tab" onclick="automobile_car_dealer_responsive_menu_open()"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_open_icon','fas fa-bars')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','automobile-car-dealer'); ?></span>
             </button>
           </div>
         </div>
@@ -103,8 +108,7 @@
                   <div class="responsive-search">
                     <?php get_search_form();?>
                   </div>
-                  <nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'automobile-car-dealer' ); ?>">
-                    <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_close_icon','fas fa-times')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','automobile-car-dealer'); ?></span></a>
+                  <nav id="site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'automobile-car-dealer' ); ?>">                    
                     <?php 
                       wp_nav_menu( array( 
                         'theme_location' => 'primary',
@@ -135,6 +139,7 @@
                       <a href="<?php echo esc_url( get_theme_mod( 'automobile_car_dealer_tumblr','' ) ); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_tumblr_icon','fab fa-tumblr')); ?>" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr','automobile-car-dealer' );?></span></a>
                     <?php } ?>
                   </div>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="automobile_car_dealer_responsive_menu_close()"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_responsive_menu_close_icon','fas fa-times')); ?>"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','automobile-car-dealer'); ?></span></a>
                 </div>
               </div>
               <?php if( get_theme_mod( 'automobile_car_dealer_button_link','' ) != '') { ?>
