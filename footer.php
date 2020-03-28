@@ -9,9 +9,14 @@
  * @package 99fy
  */
 
-$footer_top = get_option( 'nnfy_footer_top_status', '' );
-$footer_copyright = get_option('nnfy_footer_copyright_status','');
-$footer_copyright_text = get_option('nnfy_footer_copyright_text', __('Copyright &copy; 2019 99fy All Right Reserved.','99fy') );
+$footer_top = $footer_copyright = false;
+
+if( function_exists('nnfy_get_option') ){
+    $footer_top = nnfy_get_option( 'nnfy_footer_top_status', get_the_ID(), false );
+    $footer_copyright = nnfy_get_option( 'nnfy_footer_copyright_status', get_the_ID(), false );
+}
+
+$footer_copyright_text = get_option( 'nnfy_footer_copyright_text', sprintf( __( 'Copyright &copy; %1$s %2$s All Right Reserved.','99fy'), date('Y'), '99Fy' ) );
 
 ?>
 

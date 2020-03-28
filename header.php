@@ -9,8 +9,8 @@
  * @package 99fy
  */
 
-$page_title_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_page_title_status', get_the_ID(), true ) : true;
-$breadcrumb_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_breadcrumb_status', get_the_ID(), true ) : true;
+$page_title_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_page_title_status', get_the_ID(), false ) : 1;
+$breadcrumb_status = function_exists( 'nnfy_get_option' ) ? nnfy_get_option( 'nnfy_breadcrumb_status', get_the_ID(), false ) : 1;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

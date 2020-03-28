@@ -2,15 +2,18 @@
 /*
  * NNfy Header top bar
  */
-?>
 
-<?php
+$topbar_status = $search = $myaccount = $wishlist = $cart = false;
 
-if( get_option('nnfy_topbar_status', false )  == true ):
-    $search         = get_option( 'nnfy_show_search', '' );
-    $myaccount      = get_option( 'nnfy_show_myaccount', '' );
-    $wishlist       = get_option( 'nnfy_show_wishlist', '' );
-    $cart           = get_option( 'nnfy_show_cart', '' );
+if( function_exists( 'nnfy_get_option' ) ){
+    $topbar_status  = nnfy_get_option( 'nnfy_topbar_status', get_the_ID(), false );
+    $search         = nnfy_get_option( 'nnfy_show_search', get_the_ID(), false );
+    $myaccount      = nnfy_get_option( 'nnfy_show_myaccount', get_the_ID(), false );
+    $wishlist       = nnfy_get_option( 'nnfy_show_wishlist', get_the_ID(), false );
+    $cart           = nnfy_get_option( 'nnfy_show_cart', get_the_ID(), false );
+}
+
+if( $topbar_status ):
 ?>
 
 <div class="header-top-area theme-bg ptb-15">
