@@ -379,6 +379,40 @@ function automobile_hub_customize_register( $wp_customize ) {
 		'render_callback' => 'automobile_hub_customize_partial_blogdescription',
 	) );
 
+	$wp_customize->add_setting('automobile_hub_site_title',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Site Title','automobile-hub'),
+       'section' => 'title_tagline',
+    ));
+
+    $wp_customize->add_setting('automobile_hub_site_tagline',array(
+       'default' => 'true',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_hub_site_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Tagline','automobile-hub'),
+       'section' => 'title_tagline',
+    ));
+
+	$wp_customize->add_setting('automobile_hub_logo_settings',array(
+        'default' => __('Different Line','automobile-hub'),
+        'sanitize_callback' => 'automobile_hub_sanitize_choices'
+	));
+    $wp_customize->add_control('automobile_hub_logo_settings',array(
+        'type' => 'radio',
+        'label'     => __('Logo Layout Settings', 'automobile-hub'),
+        'description'   => __('Here you have two options 1. Logo and Site tite in differnt line. 2. Logo and Site title in same line.', 'automobile-hub'),
+        'section' => 'title_tagline',
+        'choices' => array(
+            'Different Line' => __('Different Line','automobile-hub'),
+            'Same Line' => __('Same Line','automobile-hub')
+        ),
+	) );
 }
 add_action( 'customize_register', 'automobile_hub_customize_register' );
 
