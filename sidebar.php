@@ -1,5 +1,5 @@
-<?php if( is_active_sidebar('widgetscolumna') ) {
-	dynamic_sidebar('widgetscolumna');
+<?php if( is_active_sidebar('widgetscolumn') ) {
+	dynamic_sidebar('widgetscolumn');
 	} else { ?>
 		<div class="widget">
 			<h3 class="widget-title">

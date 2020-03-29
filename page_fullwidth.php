@@ -42,8 +42,7 @@
   </section><!--.slider-container-->
   <!--END EXAMPLE OF LOOP WITH JQUERY, IN SINGLE YOU HAVE ANOTHER-->
 
-  <section class="ejemplo-section-full">
-
+  <section class="esection-full">
       <?php if (have_posts()) : 
         while (have_posts()) : 
           the_post();
@@ -56,10 +55,9 @@
           </div>
 
           <div class="">
-            <h2><?php _e('Write to us', 'baena'); ?></h2>
-          </div>
-               
+            <h2><?php esc_html_e('Write to us', 'baena'); ?></h2>
+          </div>          
         </article>
       <?php endwhile; endif; ?>
-  </section><!--.ejemplo-section-full-->
+  </section><!--.esection-full-->
 <?php get_footer(); ?>

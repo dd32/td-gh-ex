@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-  <section class="ejemplo-section">
-    <div class="padre-col clearfix">
+  <section class="esection">
+    <div class="father-col clearfix">
       <?php if (have_posts()) : 
         while (have_posts()) : 
           the_post();
@@ -15,26 +15,28 @@
               </ul>
             </div>
             <div class="">
-              <?php the_post_thumbnail('large') ?>
-              <?php the_excerpt(); ?>              
+              <?php 
+              the_post_thumbnail('large');
+              the_excerpt();
+              ?>          
             </div>
           </article>  <!-- article -->
         </div><!--col-33-->
       <?php endwhile; else : ?>          
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <h1><?php _e('No content available', 'baena'); ?></h1>       
+          <h1><?php esc_html_e('No content available', 'baena'); ?></h1>       
           <div class="">
-            <p><?php _e('There is no content corresponding to this page, please do a search to find what you are looking for', 'baena'); ?></p>
+            <p><?php esc_html_e('There is no content corresponding to this page, please do a search to find what you are looking for', 'baena'); ?></p>
             <?php get_search_form(); ?>
           </div>
         </article>
       <?php endif; ?>    
-    </div><!--.padre-col clearfix-->
+    </div><!--.father-col clearfix-->
     
-    <div class="padre-col clearfix">
-      <div class="paginador">
+    <div class="father-col clearfix">
+      <div class="pager">
         <?php get_template_part( 'pagination' ); ?>    
-      </div><!--.paginador--> 
-    </div><!--.padre-col clearfix--> 
-  </section><!--.ejemplo-section-->    
+      </div><!--.pager--> 
+    </div><!--.father-col clearfix--> 
+  </section><!--.esection-->    
 <?php get_footer(); ?>

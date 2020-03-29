@@ -23,7 +23,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
-Baena Theme is an initial WordPress.
+Baena Theme is an creative theme WordPress.
 
 
 = Do you have any problem? =
@@ -31,6 +31,14 @@ Contact with holabernibernal@gmail.com
 
 
 == Changelog ==
-Version 1.0.0 (2019-06-31)
+
+Version 1.0.1 (2019-03-29)
+-------------------------
+- Updated screenshot.png 
+- Changes languages from Spanish to English
+- Uptaded string
+
+
+Version 1.0.0 (2019-03-27)
 -------------------------
 - Initial version

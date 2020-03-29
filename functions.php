@@ -104,9 +104,9 @@
   function baena_menus() {
     register_nav_menus(
       array(
-        'menut' => __( 'Menu superior', 'baena' ), 
-        'sidemenu' => __( 'Menu redes sociales', 'baena' ),
-        'menubottom' => __( 'Menu en el pie', 'baena' )
+        'menuabove' => __( 'Menu Above', 'baena' ), 
+        'sidemenu' => __( 'Menu Socials', 'baena' ),
+        'menubottom' => __( 'Menu foot', 'baena' )
       )
     );
   }
@@ -119,8 +119,8 @@
 
    function baena_widgets_baena() {
     register_sidebar( array(
-      'name'          => esc_html__( 'widget del pie', 'baena' ),
-      'id'            => 'widgetspie',
+      'name'          => esc_html__( 'widget foot', 'baena' ),
+      'id'            => 'widgetsfoot',
       'description'   => esc_html__( 'Add widgets here.', 'baena' ),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
@@ -128,8 +128,8 @@
       'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
-      'name'          => esc_html__( 'widget de la columna', 'baena' ),
-      'id'            => 'widgetscolumna',
+      'name'          => esc_html__( 'widget column', 'baena' ),
+      'id'            => 'widgetscolumn',
       'description'   => esc_html__( 'Add widgets here.', 'baena' ),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
@@ -209,7 +209,7 @@ function baena_db_filter_user_query( &$user_query ) {
   Default setup.
   --------------------------------------------------------------------------------------------------- */
 
-  function baena_display_copyright( $iYear = null, $szSeparator = " - ", $szTail = '. Porque somos molones.' )
+  function baena_display_copyright( $iYear = null, $szSeparator = " - ", $szTail = '. Because we are cool.' )
   {
     echo '<div id="copyright">' . baena_display_years( $iYear, $szSeparator, false ) . ' &copy; ' . get_bloginfo('name') . $szTail . '</div>';
   }
@@ -229,11 +229,11 @@ function baena_db_filter_user_query( &$user_query ) {
   Metabox.
   --------------------------------------------------------------------------------------------------- */
   function baena_metabox() {
-    add_meta_box( 'books-metabox', 'Info de los books', 'baena_campos_books', 'post', 'normal', 'high' );
+    add_meta_box( 'books-metabox', 'Info books', 'baena_fields_books', 'post', 'normal', 'high' );
   }
   add_action( 'add_meta_boxes', 'baena_metabox' );
    
-  function baena_campos_books($post) {
+  function baena_fields_books($post) {
     $book = get_post_meta( $post->ID, 'book', true );
     $author = get_post_meta( $post->ID, 'author', true );
     $format = get_post_meta( $post->ID, 'format', true );  
@@ -244,7 +244,7 @@ function baena_db_filter_user_query( &$user_query ) {
           'Pdf' =>'Pdf', 
           'Txt' =>'Txt', 
      );    
-    wp_nonce_field( 'baena_campos_books_metabox', 'baena_campos_books_metabox_nonce' );?>
+    wp_nonce_field( 'baena_fields_books_metabox', 'baena_fields_books_metabox_nonce' );?>
    
     <table width="100%" cellpadding="1" cellspacing="1" border="0">
       <tr>
@@ -267,14 +267,14 @@ function baena_db_filter_user_query( &$user_query ) {
   <?php }?>
       
   <?php
-  function baena_campos_books_save_data($post_id) {
+  function baena_fields_books_save_data($post_id) {
 
-    if ( ! isset( $_POST['baena_campos_books_metabox_nonce'] ) ) {
+    if ( ! isset( $_POST['baena_fields_books_metabox_nonce'] ) ) {
       return $post_id;
     }
-    $nonce = $_POST['baena_campos_books_metabox_nonce']; 
+    $nonce = $_POST['baena_fields_books_metabox_nonce']; 
 
-    if ( !wp_verify_nonce( $nonce, 'baena_campos_books_metabox' ) ) {
+    if ( !wp_verify_nonce( $nonce, 'baena_fields_books_metabox' ) ) {
       return $post_id;
     } 
 
@@ -302,12 +302,12 @@ function baena_db_filter_user_query( &$user_query ) {
     update_post_meta( $post_id, 'author', $author, $old_author );
     update_post_meta( $post_id, 'format', $format, $old_format );
   }
-  add_action( 'save_post', 'baena_campos_books_save_data' );
+  add_action( 'save_post', 'baena_fields_books_save_data' );
   add_filter( 'the_content', 'baena_add_custom_fields_to_content' );
 
   function baena_add_custom_fields_to_content( $content ) {
       $custom_fields = get_post_custom();
-      $content .= "<div class='campos'>";
+      $content .= "<div class='fields'>";
       if( isset( $custom_fields['book'] ) ) {
            $content .= '<li>book: '. $custom_fields['book'][0] . '</li>';
       }

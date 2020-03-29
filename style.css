@@ -2,8 +2,8 @@
 
     Theme Name: Baena
     Text Domain: baena
-    Version: 1.0.0
-    Description: Baena is a feature-packed WordPress starter theme that gives you full control over the fonts and colors on your site. Built from scratch with the new Block Editor in mind, it makes it easy to create attractive layouts on both posts and pages. This flexibility makes Baena suitable for almost any type of website. The fonts and colors in the theme can be easily modified within the Customizer, allowing you to create a unique look for your website.
+    Version: 1.0.1
+    Description: Baena is a feature-packed WordPress creative theme that gives you full control over the fonts and colors on your site. Built from scratch with the new Block Editor in mind, it makes it easy to create attractive layouts on both posts and pages. This flexibility makes Baena suitable for almost any type of website. The fonts and colors in the theme can be easily modified within the Customizer, allowing you to create a unique look for your website.
     Tags: blog, portfolio, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, full-width-template
     Author: Berni Bernal
     Author URI: https://www.bernibernal.com/
@@ -316,9 +316,9 @@ img, embed, object, video{max-width: 100%; display: block;height: auto;}
 }
 .main{padding-top:0px;overflow:hidden;}
 
-.ejemplo-section {padding: 20px;}
-.padre-col{margin: 0 -10px;}
-.padre-col > * > * { padding:0px 10px;}
+.esection {padding: 20px;}
+.father-col{margin: 0 -10px;}
+.father-col > * > * { padding:0px 10px;}
 
 .col-70{
 	float: left;
@@ -428,7 +428,7 @@ div#copyright {text-align: center;}
     padding: 14px 10px;
     z-index: 999999;
 }
-.uno, .dos, .tres {
+.one, .two, .three {
     width: 100%;
     height: 5px;
     background-color: #cddc39;
@@ -439,10 +439,10 @@ div#copyright {text-align: center;}
     display: none;
 }
 
-.mostrar .dos{opacity:0;}
-.mostrar .uno{transform: rotate(45deg) translate(5px, 5px);}
-.mostrar .tres{transform: rotate(-45deg) translate(6px, -6px);}
-.mostrar .mena{
+.showm .two{opacity:0;}
+.showm .one{transform: rotate(45deg) translate(5px, 5px);}
+.showm .three{transform: rotate(-45deg) translate(6px, -6px);}
+.showm .mena{
     display: block;
     height: 100%;
     width: 100%;
@@ -474,12 +474,12 @@ div#copyright {text-align: center;}
 /*End Menu Button*/
 
 /*Menu Principal---------------------------------*/
-.menu-principal li, .menu-desplegable li{display: inline-block;}
-.menu-principal li a, .menu-desplegable li a{display: block; color:black;}
+.main-menu li, .dropdown-menu li{display: inline-block;}
+.main-menu li a, .dropdown-menu li a{display: block; color:black;}
 
 
-.menu-desplegable{display: none;}
-.menu-desplegable .menu{
+.dropdown-menu{display: none;}
+.dropdown-menu .menu{
     height: 100%;
     width: auto;
     position: fixed;
@@ -492,39 +492,19 @@ div#copyright {text-align: center;}
     padding-top: 60px;
 
 }
-.menu-desplegable li{display: inline;}
-.menu-desplegable li a {
+.dropdown-menu li{display: inline;}
+.dropdown-menu li a {
     display: block;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     transition: 0.3s;
 }
-input#abrir-cerrar { visibility:hidden; position: absolute; top: -9999px; }
 
-input#abrir-cerrar:checked ~ #sidebor {width:300px;}
-input#abrir-cerrar:checked + label[for="abrir-cerrar"], 
-input#abrir-cerrar:checked ~ #contenidor {
-    margin-left:300px;
-    transition: margin-left .4s;
-}
-input#abrir-cerrar:checked + label[for="abrir-cerrar"] .cerrar {display:inline;}
-
-input#abrir-cerrar:checked + label[for="abrir-cerrar"] .abrir {display:none;}    
-
-label[for="abrir-cerrar"] {
-    cursor:pointer;
-    padding: 16px;
-    background-color:#333;
-    color:#fff;
-    display:inline-block;
-    width:100%;
-}
-.cerrar {display:none;}
 /*End Menu Principal*/
 
 /*Arrow from TOP---------------------------------*/
-.subir{
+.goup{
     position: fixed;
     bottom: 42px;
     right: 127px;
@@ -555,7 +535,7 @@ label[for="abrir-cerrar"] {
 /* --------------------------------------------------------------------------------------------- */
 /*  13. Pagination
 /* --------------------------------------------------------------------------------------------- */
-.paginador{margin-top:20px;}
+.pager{margin-top:20px;}
 
 
 /* --------------------------------------------------------------------------------------------- */
@@ -572,8 +552,8 @@ label[for="abrir-cerrar"] {
 .col-33{width: 100%;}
 
 /* Menu --------------------------- */
-    .menu-desplegable{display: block;}
-    .menu-principal{display: none;}
+    .dropdown-menu{display: block;}
+    .main-menu{display: none;}
 
     label {cursor: pointer;}
     .open-hide{
@@ -596,8 +576,8 @@ label[for="abrir-cerrar"] {
     }
 
     #menu-toggle {display: none;}
-    .contenido-submenu {display: none;}
-    #menu-toggle:checked + .contenido-submenu {display: block;}
+    .submenu-content {display: none;}
+    #menu-toggle:checked + .submenu-content {display: block;}
     .menu-menu-superior-container {background: #cc9933;}
 
     nav .menu-item {position: relative;}

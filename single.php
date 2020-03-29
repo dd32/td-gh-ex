@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-    <section class="ejemplo-section">
-        <div class="padre-col clearfix">            
+    <section class="esection">
+        <div class="father-col clearfix">            
             <div class="col-70">
                 <?php if (have_posts()) : 
                     while (have_posts()) : 
@@ -10,8 +10,11 @@
                             <h1> <?php the_title(); ?> </h1>
                             <h2><?php the_category(); ?></h2>
                             <div class="">
-                                <?php the_content(); ?>
-                                <?php the_post_thumbnail(); ?>
+                                <?php 
+                                the_content(); 
+                                the_post_thumbnail();
+                                edit_post_link();
+                                ?>
                             </div>
                             <div class="dates">
                                 <ul>
@@ -26,33 +29,30 @@
                                     <div class="">
                                       <!--TO SHOW CUSTOM FIELD GUTEN-->
                                         <h2>
-                                            <?php _e("The Meta Info. Custom Field 1", "baena"); ?>
+                                            <?php esc_html_e("The Meta Info. Custom Field 1", "baena"); ?>
                                         </h2>
-                                        <?php  
-                                        echo get_post_meta( get_the_ID(), 'campo_de_ejemplo', true );
-                                        ?>
-                                      <!--FIN TO SHOW CUSTOM FIELD GUTEN-->
+                                      <!--END TO SHOW CUSTOM FIELD GUTEN-->
 
                                       <!--SHOW ALL INFO ABOUT CUSTOM FIELDS + METABOX FUNCTIONS-->
                                         <h2>
-                                            <?php _e("The Meta Info. Custom Field 2", "baena"); ?>
+                                            <?php esc_html_e("The Meta Info. Custom Field 2", "baena"); ?>
                                         </h2>
                                         <?php the_meta(); ?>
-                                    <!--FIN SHOW ALL INFO ABOUT CUSTOM FIELDS + METABOX FUNCTIONS-->
+                                    <!--END SHOW ALL INFO ABOUT CUSTOM FIELDS + METABOX FUNCTIONS-->
                                     
                                     <!--SHOW CUSTOM FIELDS ONLY FUNCTIONS METABOX-->
                                         <h2>
-                                            <?php _e("The Meta Info. Custom Field 3", "baena"); ?>
+                                            <?php esc_html_e("The Meta Info. Custom Field 3", "baena"); ?>
                                         </h2>
                                         <ul>
                                             <li><?php echo get_post_meta( get_the_ID(), 'book', true );?></li>
                                             <li><?php echo get_post_meta( get_the_ID(), 'author', true );?></li>
                                             <li><?php echo get_post_meta( get_the_ID(), 'format', true );?></li>
                                         </ul>
-                                    <!--FIN SHOW CUSTOM FIELDS ONLY FUNCTIONS METABOX-->
+                                    <!--END SHOW CUSTOM FIELDS ONLY FUNCTIONS METABOX-->
                                     </div><!---->
                                     <div class="">
-                                        <h2>The Taxonomias</h2>
+                                        <h2>The Taxonomies</h2>
                                             <?php the_taxonomies(); ?>
                                     </div>
                                     <div class="">
@@ -68,20 +68,20 @@
                         </article>
                     <?php endwhile; endif; ?>
 
-                    <div class="post-relacionados">
+                    <div class="related-post">
                       <?php get_template_part( 'parts/related-post', get_post_format() ); ?>
-                    </div><!--.post-relacionados-->
+                    </div><!--.related-post-->
                </div><!--.col-70-->
                
                <div class="col-30">
                   <?php get_sidebar(); ?>
               </div><!--col-30-->
-         </div><!--.padre-col clearfix-->   
-         <div class="padre-col clearfix">
+         </div><!--.father-col clearfix-->   
+         <div class="father-col clearfix">
           <div>
             <?php comments_template(); ?>
           </div> 
-        </div><!--.padre-col clearfix-->    
-    </section><!--.ejemplo-section-->  
+        </div><!--.father-col clearfix-->    
+    </section><!--.esection-->  
 
 <?php get_footer(); ?>

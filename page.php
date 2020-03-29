@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-  <section class="ejemplo-section">
-    <div class="padre-col clearfix">            
+  <section class="esection">
+    <div class="father-col clearfix">            
       <div class="col-70">
         <?php if (have_posts()) : 
           while (have_posts()) : 
@@ -31,8 +31,7 @@
       <div class="col-30">
         <?php get_sidebar(); ?>
       </div><!--col-30-->
-
-    </div><!--.padre-col clearfix-->    
+    </div><!--.father-col clearfix-->    
   </section>
 
   <?php get_footer(); ?>

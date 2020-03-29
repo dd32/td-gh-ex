@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="subir" class="no-js" <?php language_attributes();?>>
+<html id="goup" class="no-js" <?php language_attributes();?>>
 <head>
     <meta http-equiv="content-type" content="<?php bloginfo( 'html_type' ); ?>" charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,8 @@
 
 <body <?php body_class(); ?>>
     <header>
-            <section class="ejemplo-section grid">    
-                <div class="padre-col clearfix">
+            <section class="esection grid">    
+                <div class="father-col clearfix">
                     <div class="col-30">
                         <div class="site-branding-text">
                             <?php the_custom_logo(); ?>
@@ -30,38 +30,38 @@
                             <?php endif; ?>
                         </div><!-- .site-branding-text -->
 
-                        <nav class="menu-principal">
-                            <?php wp_nav_menu( array( 'theme_location' => 'menut') ); ?>
-                        </nav><!--.menu-principal-->
+                        <nav class="main-menu">
+                            <?php wp_nav_menu( array( 'theme_location' => 'menuabove') ); ?>
+                        </nav><!--.main-menu-->
 
                         <!--EXAMPLE DROP-DOWN MENU-->
-                        <nav class="menu-desplegable">
+                        <nav class="dropdown-menu">
                             <label for="menu-toggle" id="open-hide" class="open-hide">
                                 <div></div>
                                 <div></div>
                                 <div></div>
                             </label>
                             <input type="checkbox" id="menu-toggle"/>
-                            <div class="contenido-submenu">
-                                <?php wp_nav_menu( array( 'theme_location' => 'menut') ); ?>
+                            <div class="submenu-content">
+                                <?php wp_nav_menu( array( 'theme_location' => 'menuabove') ); ?>
                             </div>
-                        </nav><!--.menu-desplegable-->
+                        </nav><!--.dropdown-menu-->
                         <!--END EXAMPLE MENU DROP-DOWN-->
 
                         <!--EXAMPLE MENU BUTTON-->
                         <nav id="main-nav" class="main-nav">
                             <ul class="mena">
-                                <?php wp_nav_menu( array( 'theme_location' => 'menut') ); ?>
+                                <?php wp_nav_menu( array( 'theme_location' => 'menuabove') ); ?>
                             </ul>
                             <div class="mena-bar">
-                                <div class="uno"></div>
-                                <div class="dos"></div>
-                                <div class="tres"></div>
+                                <div class="one"></div>
+                                <div class="two"></div>
+                                <div class="three"></div>
                             </div><!--.menubar-->
                         </nav>
                         <!--END EXAMPLE MENU BUTTON-->
                     </div><!--col-70-->
-                </div><!--.padre-col clearfix-->
+                </div><!--.father-col clearfix-->
             </section>
     </header>
     

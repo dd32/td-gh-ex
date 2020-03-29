@@ -11,7 +11,7 @@
 				<h2>
 					<a href="<?php the_permalink();?>"><?php the_title();?></a>
 				</h2>
-				<p class="date"><?php the_date();?> en <?php the_category();?></p>
+				<p class="date"><?php the_date();?> in <?php the_category();?></p>
 				<p class="extract"><?php the_excerpt();?></p>
 			</article>
 		</div>

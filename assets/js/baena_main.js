@@ -1,15 +1,15 @@
-//SUBIR
+//GO UP
 jQuery(document).ready(function(){ 
 			
 	jQuery(window).scroll(function(){
 		if (jQuery(this).scrollTop() > 200) {
-			jQuery('.subir').fadeIn();
+			jQuery('.goup').fadeIn();
 			} else {
-			jQuery('.subir').fadeOut();
+			jQuery('.goup').fadeOut();
 			}
 		}); 
 			
-		jQuery('.subir').click(function(){
+		jQuery('.goup').click(function(){
 			jQuery("html, body").animate({ scrollTop: 0 }, 600);
 			return false;
 		});
@@ -30,7 +30,7 @@ jQuery(function(){
 var nav = document.getElementById('main-nav');
 nav.addEventListener('click', function () {
     'use strict';
-    nav.classList.toggle('mostrar');
+    nav.classList.toggle('showm');
 });
 
 //EXAMPLE TWO DROP-DOWN MENU
