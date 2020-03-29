@@ -15,9 +15,9 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function akhada_fitness_gym_open() {
 	document.getElementById("sidelong-menu").style.width = "250px";
 }
-function resMenu_close() {
+function akhada_fitness_gym_close() {
 	document.getElementById("sidelong-menu").style.width = "0";
 }

@@ -1452,8 +1452,7 @@ nav.social-navigation :hover {
 .entry-footer {
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
-	margin-top: 2em;
-	padding: 2em 0;
+	padding: 10px 0;
 }
 
 .entry-footer .cat-links,
@@ -1541,24 +1540,12 @@ nav.social-navigation :hover {
 }
 
 /* Post Navigation */
-
-.post-navigation {
-	font-weight: 800;
-	margin: 3em 0;
-}
-
-.post-navigation .nav-links {
-	padding: 1em 0;
-}
-
 .nav-subtitle {
 	background: transparent;
 	color: #767676;
 	display: block;
-	font-size: 11px;
-	letter-spacing: 0.1818em;
-	margin-bottom: 1em;
-	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 500;
 }
 
 .nav-title {
@@ -1696,17 +1683,10 @@ nav.social-navigation :hover {
 }
 
 .comment-meta {
-	margin-bottom: 1.5em;
+	margin-bottom: 10px;
 }
 
-.comment-metadata {
-	color: #767676;
-	font-size: 10px;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	text-transform: uppercase;
-}
-
+.comment-metadata,
 .comment-metadata a {
 	color: #767676;
 }
@@ -2847,20 +2827,6 @@ object {
 
 	.format-quote blockquote .icon {
 		right: -1.5em;
-	}
-
-	/* Comments */
-
-	#comments {
-		padding-top: 5em;
-	}
-
-	.comments-title {
-		margin-bottom: 2.5em;
-	}
-
-	ol.children .children {
-		padding-right: 2em;
 	}
 
 	/* Posts pagination */

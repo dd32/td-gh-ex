@@ -9,6 +9,26 @@
 
 function akhada_fitness_gym_customize_register( $wp_customize ) {
 
+	$wp_customize->add_setting('akhada_fitness_gym_show_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('akhada_fitness_gym_show_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Site Title','akhada-fitness-gym'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('akhada_fitness_gym_show_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('akhada_fitness_gym_show_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Site Tagline','akhada-fitness-gym'),
+       'section' => 'title_tagline'
+    ));
+
 	$wp_customize->add_panel( 'akhada_fitness_gym_panel_id', array(
 	    'priority' => 10,
 	    'capability' => 'edit_theme_options',
