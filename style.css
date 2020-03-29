@@ -4,7 +4,7 @@ Theme URI: http://zidithemes.tumblr.com/post/187902110264/axis-magazine
 Author: Zidithemes
 Author URI: https://zidithemes.tumblr.com/author
 Description: Axis Magazine is an amazing magazine theme with  minimal and modern design. It is a free theme with a responsive design, over two different blog layouts. Axis Magazine is perfect for your personal blog, magazine , newspaper, publishing, review, search, photo, portfolio, photography, news , fashion , fitness , shop , education , health ,  ecommerce or any content-focused website. It is a simple blog and magazine design and multi-purpose theme compatible with elementor , divi , gutenberg page builder, easy digital downloads and woocommerce.
-Version: 0.0.14
+Version: 0.0.15
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  one-column, two-columns, right-sidebar, footer-widgets, Blog, News, e-commerce, grid-layout, featured-images, full-width-template, theme-options, three-columns, custom-colors, custom-menu
@@ -5958,6 +5958,21 @@ ul {
 
 }
 
+@media screen and (max-width: 852px) 
+{
+
+    .axis-magazine-index .blog-2-col-inner .items .items-inner .img-box .img-thumb img {
+        height: 439px;
+    }
+
+    
+    .axis-magazine-index .blog-2-col-inner .items {
+        overflow: hidden;
+    }
+
+
+}
+
 @media screen and (max-width: 800px) 
 {
 
@@ -5968,6 +5983,19 @@ ul {
 }
 
 
+@media screen and (max-width: 786px) 
+{
+
+    .axis-magazine-index .blog-2-col-inner .items .items-inner .img-box .img-thumb img{
+        height: 439px;
+    }
+
+    .axis-magazine-index .blog-2-col-inner .items {
+        overflow: hidden;
+    }
+
+}
+
 @media screen and (max-width: 780px) 
 {
 
@@ -5976,6 +6004,21 @@ ul {
     }
 
 }
+
+@media screen and (max-width: 770px) 
+{
+
+    .axis-magazine-index .blog-2-col-inner .items .items-inner .img-box .img-thumb img{
+        height: 439px;
+    }
+
+    .axis-magazine-index .blog-2-col-inner .items {
+        overflow: hidden;
+    }
+
+
+}
+
 
 @media screen and (max-width: 767px)
 {

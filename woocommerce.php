@@ -2,7 +2,7 @@
 /**
  * The template for displaying woocommerce page
  *
- * @version    0.0.14
+ * @version    0.0.15
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.

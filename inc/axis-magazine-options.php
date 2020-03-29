@@ -26,14 +26,14 @@ function axis_magazine_theme_info_display() {
 	
 	?>
 	<div class="wrap axis-magazine-adm">
-		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.14', 'axis-magazine'); ?></h1>
+		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.15', 'axis-magazine'); ?></h1>
 		<div class="axis-magazine-adm-dsply-fl axis-magazine-adm-fl-wrap axis-magazine-adm-jc-sp-btw">
 
 			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
 				<h4><?php esc_html_e('Theme Documentation','axis-magazine'); ?></h4>
 				<p><?php esc_html_e('Documentation for this theme includes all theme information that is needed to get your site up and running', 'axis-magazine'); ?></p>
 				<p>
-					<a href="<?php echo esc_url('https://zidithemes.tumblr.com/post/186052368654/axis-magazine'); ?>" class="button button-secondary" target="_blank">
+					<a href="<?php echo esc_url('https://zidithemes.tumblr.com/post/187902110264/axis-magazine'); ?>" class="button button-secondary" target="_blank">
 						<?php esc_html_e('Theme Documentation', 'axis-magazine'); ?>
 					</a>
 				</p>
