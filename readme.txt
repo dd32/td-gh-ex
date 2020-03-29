@@ -3,7 +3,7 @@
 Contributors: vedathemes
 tags: Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks, food-and-drink
 Requires at least: 4.9
-Tested up to: 5.3
+Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. Thi
 PHP 5.6+, IE11+, WordPress 4.9+
 
 == Changelog ==
+
+= 1.4.8 =
+* Compatibility with WordPress 5.4 editor.
 
 = 1.4.7 =
 * Social Navigation performance improvements.

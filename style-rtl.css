@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/bayleaf-premium/
 Author: Vedathemes
 Author URI: https://www.vedathemes.com
 Description: Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website.
-Version: 1.4.7
+Version: 1.4.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayleaf
@@ -1851,32 +1851,19 @@ body:not(.error404) .page-header-description {
 }
 
 .singular-view:not(.woocommerce-page) .entry-content a {
-	background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
 	-webkit-transition: 0.15s ease-in;
 	        transition: 0.15s ease-in;
 }
 
 .singular-view:not(.woocommerce-page) .entry-content a:hover,
 .singular-view:not(.woocommerce-page) .entry-content a:focus {
-	color: #00804D;
 	text-decoration: none;
-}
-
-.singular-view:not(.woocommerce-page) .entry-content a.wp-playlist-caption {
-	background-image: none;
-}
-
-.singular-view:not(.woocommerce-page) .entry-content a.wp-block-button__link,
-.singular-view:not(.woocommerce-page) .entry-content a.wp-block-button__link:not(.has-text-color) {
-	background-image: none;
 }
 
 .singular-view:not(.woocommerce-page) .entry-content a.wp-block-button__link:hover,
 .singular-view:not(.woocommerce-page) .entry-content a.wp-block-button__link:focus,
 .singular-view:not(.woocommerce-page) .entry-content a.wp-block-button__link:not(.has-text-color):hover,
 .singular-view:not(.woocommerce-page) .entry-content a.wp-block-button__link:not(.has-text-color):focus {
-	background-color: #363636;
-	color: #FFFFFF;
 	text-decoration: none;
 }
 
