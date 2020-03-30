@@ -35,7 +35,9 @@
         <?php } ?> 
         <div class="entry-content">
             <?php the_content(); ?>
-            <div class="tags"><?php the_tags(); ?></div>    
+            <?php if(get_theme_mod('automotive_centre_toggle_tags',true)==1){ ?>
+                <div class="tags"><?php the_tags(); ?></div> 
+            <?php } ?>   
         </div> 
         <?php
             // If comments are open or we have at least one comment, load up the comment template
@@ -60,4 +62,5 @@
             }
         ?>
     </div>
+    <?php get_template_part('template-parts/related-posts'); ?>
 </article>

@@ -31,6 +31,28 @@ function automotive_centre_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting( 'automotive_centre_logo_title_hide_show',array(
+          'default' => 1,
+          'transport' => 'refresh',
+          'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_logo_title_hide_show',array(
+          'label' => esc_html__( 'Show / Hide Site Title','automotive-centre' ),
+          'priority'    => 10,
+          'section' => 'title_tagline'
+    )));
+
+    $wp_customize->add_setting( 'automotive_centre_tagline_hide_show',array(
+          'default' => 1,
+          'transport' => 'refresh',
+          'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_tagline_hide_show',array(
+          'label' => esc_html__( 'Show / Hide Site Tagline','automotive-centre' ),
+          'priority'    => 11,
+          'section' => 'title_tagline'
+    )));
 }
 add_action( 'customize_register', 'automotive_centre_logo_customize_register' );
 

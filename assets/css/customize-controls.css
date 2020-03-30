@@ -175,3 +175,6 @@ input#_customize-input-automotive_centre_slider_opacity_color {
   padding: 10px;
   font-size: 16px;
 }
+input[type="range"] {
+  width: 100%;
+}

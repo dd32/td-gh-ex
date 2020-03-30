@@ -122,21 +122,18 @@
 			$custom_css .='';
 		$custom_css .='}';
 	}else if($theme_lay == 'Center'){
-		$custom_css .='.post-main-box, .post-main-box h2, .post-info, .new-text p, .content-bttn{';
+		$custom_css .='.post-main-box, .post-main-box h2, .post-info, .new-text p, .post-main-box .more-btn{';
 			$custom_css .='text-align:center;';
 		$custom_css .='}';
-		$custom_css .='.post-info, .content-bttn{';
+		$custom_css .='.post-info{';
 			$custom_css .='margin-top:10px;';
 		$custom_css .='}';
 		$custom_css .='.post-info hr{';
 			$custom_css .='margin:10px auto;';
 		$custom_css .='}';
 	}else if($theme_lay == 'Left'){
-		$custom_css .='.post-main-box, .post-main-box h2, .post-info, .new-text p, .content-bttn, #our-services p{';
+		$custom_css .='.post-main-box, .post-main-box h2, .post-info, .new-text p, .post-main-box .more-btn, #our-services p{';
 			$custom_css .='text-align:Left;';
-		$custom_css .='}';
-		$custom_css .='.content-bttn{';
-			$custom_css .='margin:20px 0;';
 		$custom_css .='}';
 		$custom_css .='.post-info hr{';
 			$custom_css .='margin-bottom:10px;';
@@ -199,3 +196,49 @@
 			$custom_css .='display:none;';
 		$custom_css .='} }';
 	}
+
+	/*------------------ Search Settings -----------------*/
+	
+	$automotive_centre_search_padding_top_bottom = get_theme_mod('automotive_centre_search_padding_top_bottom');
+	$automotive_centre_search_padding_left_right = get_theme_mod('automotive_centre_search_padding_left_right');
+	$automotive_centre_search_font_size = get_theme_mod('automotive_centre_search_font_size');
+	$automotive_centre_search_border_radius = get_theme_mod('automotive_centre_search_border_radius');
+	if($automotive_centre_search_padding_top_bottom != false || $automotive_centre_search_padding_left_right != false || $automotive_centre_search_font_size != false || $automotive_centre_search_border_radius != false){
+		$custom_css .='.search-box i{';
+			$custom_css .='padding-top: '.esc_html($automotive_centre_search_padding_top_bottom).'; padding-bottom: '.esc_html($automotive_centre_search_padding_top_bottom).';padding-left: '.esc_html($automotive_centre_search_padding_left_right).';padding-right: '.esc_html($automotive_centre_search_padding_left_right).';font-size: '.esc_html($automotive_centre_search_font_size).';border-radius: '.esc_html($automotive_centre_search_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+	/*---------------- Button Settings ------------------*/
+
+	$automotive_centre_button_padding_top_bottom = get_theme_mod('automotive_centre_button_padding_top_bottom');
+	$automotive_centre_button_padding_left_right = get_theme_mod('automotive_centre_button_padding_left_right');
+	if($automotive_centre_button_padding_top_bottom != false || $automotive_centre_button_padding_left_right != false){
+		$custom_css .='.post-main-box .more-btn a{';
+			$custom_css .='padding-top: '.esc_html($automotive_centre_button_padding_top_bottom).'; padding-bottom: '.esc_html($automotive_centre_button_padding_top_bottom).';padding-left: '.esc_html($automotive_centre_button_padding_left_right).';padding-right: '.esc_html($automotive_centre_button_padding_left_right).';';
+		$custom_css .='}';
+	}
+
+	$automotive_centre_button_border_radius = get_theme_mod('automotive_centre_button_border_radius');
+	if($automotive_centre_button_border_radius != false){
+		$custom_css .='.post-main-box .more-btn a{';
+			$custom_css .='border-radius: '.esc_html($automotive_centre_button_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+	/*-------------- Copyright Alignment ----------------*/
+
+	$automotive_centre_copyright_alingment = get_theme_mod('automotive_centre_copyright_alingment');
+	if($automotive_centre_copyright_alingment != false){
+		$custom_css .='.copyright p{';
+			$custom_css .='text-align: '.esc_html($automotive_centre_copyright_alingment).';';
+		$custom_css .='}';
+	}
+
+	$automotive_centre_copyright_padding_top_bottom = get_theme_mod('automotive_centre_copyright_padding_top_bottom');
+	if($automotive_centre_copyright_padding_top_bottom != false){
+		$custom_css .='#footer-2{';
+			$custom_css .='padding-top: '.esc_html($automotive_centre_copyright_padding_top_bottom).'; padding-bottom: '.esc_html($automotive_centre_copyright_padding_top_bottom).';';
+		$custom_css .='}';
+	}
+

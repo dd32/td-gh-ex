@@ -19,7 +19,11 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-	<?php wp_body_open(); ?>
+	<?php if ( function_exists( 'wp_body_open' ) ) 
+		{
+			wp_body_open();
+		} 
+	?>
 
 		<header role="banner">
     		<a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'automotive-centre' ); ?></a> 

@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.3.2
 Requires PHP: 7.2.14
-Stable tag: 0.3.8
+Stable tag: 0.3.9
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -75,6 +75,14 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 * Added fontawesome icon option for the icons in customizer.
 * Resolved theme sniffer errors.
 * Updated language folder.
+
+= 0.3.9 =
+* Customizable theme button option.
+* Added Copyright alignment and padding option in customizer.
+* Added search font size, padding & border radius option in customizer.
+* Added related post option in customizer.
+* Added show/hide option for logo title and tagline.
+* Added show/hide option for tags in customizer.
 
 == Resources ==
 
