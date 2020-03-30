@@ -602,44 +602,35 @@ msgstr ""
 msgid "Your comment"
 msgstr ""
 
-#: inc/template-tags.php:18
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:25
-msgctxt "list item separator"
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:40
+#: inc/template-tags.php:11
 msgid "Older posts"
 msgstr ""
 
-#: inc/template-tags.php:41
+#: inc/template-tags.php:12
 msgid "Newer posts"
 msgstr ""
 
-#: inc/template-tags.php:49
+#: inc/template-tags.php:20
 msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:50
+#: inc/template-tags.php:21
 msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:29
 msgid "Older comments"
 msgstr ""
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:30
 msgid "Newer comments"
 msgstr ""
 
-#: inc/template-tags.php:89
+#: inc/template-tags.php:60
 msgid " Posts"
 msgstr ""
 
-#: inc/template-tags.php:95
+#: inc/template-tags.php:66
 msgid "View all author&rsquo;s posts"
 msgstr ""
 
@@ -835,18 +826,6 @@ msgstr ""
 msgid "RSS URL"
 msgstr ""
 
-#: inc/theme-mods/typography.php:10
-msgid "Typography"
-msgstr ""
-
-#: inc/theme-mods/typography.php:18
-msgid "Base Font"
-msgstr ""
-
-#: inc/theme-mods/typography.php:19
-msgid "Default font: Open Sans."
-msgstr ""
-
 #: inc/widgets-init.php:12
 msgid "Add widgets here."
 msgstr ""
@@ -905,6 +884,17 @@ msgstr ""
 #: template-parts/content-archive.php:96 template-parts/content-homepage.php:93
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content-archive.php:121
+#: template-parts/content-homepage.php:117 template-parts/content-post.php:100
+msgid ", "
+msgstr ""
+
+#: template-parts/content-archive.php:128
+#: template-parts/content-homepage.php:124 template-parts/content-post.php:107
+msgctxt "list item separator"
+msgid ", "
 msgstr ""
 
 #: template-parts/content-page.php:51 template-parts/content-post.php:85

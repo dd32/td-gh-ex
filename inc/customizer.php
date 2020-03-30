@@ -603,11 +603,6 @@ Kirki::add_config(
 require get_template_directory() . '/inc/theme-mods/design.php';
 
 /**
- * Typography.
- */
-require get_template_directory() . '/inc/theme-mods/typography.php';
-
-/**
  * Homepage Settings.
  */
 require get_template_directory() . '/inc/theme-mods/homepage-settings.php';

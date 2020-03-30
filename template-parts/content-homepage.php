@@ -105,6 +105,31 @@
       }
       ?>
 
-    <?php vs_entry_footer(); ?>
+    <?php
+    $show_categories = get_theme_mod('blog_show_categories', 1);
+    $show_tags = get_theme_mod('blog_show_tags', 1);
+
+    if ($show_categories || $show_tags) {
+      if ( 'post' === get_post_type() ) {
+        echo '<footer class="entry-footer clearfix">';
+
+        if ($show_categories) {
+          $categories_list = get_the_category_list( esc_html__( ', ', 'fmi' ) );
+          if ( $categories_list ) {
+            echo '<span class="cat-links"><i class="fa fa-list"></i> ' . $categories_list . '</span>';
+          }
+        }
+
+        if ($show_tags) {
+          $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'fmi' ) );
+          if ( $tags_list ) {
+            echo '<span class="tags-links"><i class="fa fa-tags"></i> ' . $tags_list . '</span>';
+          }
+        }
+        
+        echo '</footer><!-- .entry-footer -->';
+      }
+    }
+    ?>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->
