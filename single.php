@@ -5,28 +5,16 @@
  * @package Fmi
  */
 
-get_header(); ?>
+// header
+get_header();
 
-<div id="content" class="site-content">
-  <div class="container">
-    <div class="site-content-area">
+$post_sidebar = get_theme_mod( 'post_sidebar', 'right' );
+?>
+<div class="site-content sidebar-<?php echo esc_attr( $post_sidebar ); ?>">
+  <div class="vs-container">
+    <div id="content" class="main-content">
 
-<?php
-$blog_layout = get_theme_mod('blog_layout', 'right_sidebar');
 
-if ($blog_layout == 'right_sidebar') {
-?>
-      <div class="row">
-        <div class="col-md-8 sidebar-right">
-<?php
-}
-if ($blog_layout == 'left_sidebar') {
-?>
-      <div class="row">
-        <div class="col-md-8 col-md-push-4 sidebar-left">
-<?php
-}
-?>
 
           <div id="primary" class="content-area">
             <main id="main" class="site-main">
@@ -35,30 +23,7 @@ if ($blog_layout == 'left_sidebar') {
             while ( have_posts() ) : the_post();
             ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-              <?php if (has_post_thumbnail()) {?> 
-                <div class="post-media">
-                  <?php the_post_thumbnail();?>
-                </div>
-              <?php }?>
-
-              <div class="post-content">
-                <?php vs_entry_header(); ?>
-                
-                <div class="entry-content clearfix">
-                  <?php
-                  the_content();
-
-                  wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),
-                    'after' => '</div>',
-                  ));
-                  ?>
-                </div><!-- .entry-content -->
-
-                <?php vs_entry_footer(); ?>
-              </div>
-            </article><!-- #post-<?php the_ID(); ?> -->
+            <?php get_template_part( 'template-parts/content-post' ); ?>
             
             <?php
               $show_about_author = get_theme_mod('single_show_about_author', 0);
@@ -78,33 +43,19 @@ if ($blog_layout == 'left_sidebar') {
             endwhile; // End of the loop.
             ?>
 
-            </main><!-- #main -->
-          </div><!-- #primary -->
+            </main>
+          </div>
 
-<?php
-if ($blog_layout == 'right_sidebar') {
-?>
-        </div>
-        <div class="col-md-4 sidebar-right">
-          <?php get_sidebar();?>
-        </div>
-      </div>
-<?php
-}
-if ($blog_layout == 'left_sidebar') {
-?>
-        </div>
-        <div class="col-md-4 col-md-pull-8 sidebar-left">
-          <?php get_sidebar();?>
-        </div>
-      </div>
-<?php
-}
-?>
+      <?php
+      if ( 'disabled' !== $post_sidebar ) {
+        get_sidebar(); 
+      }
+      ?>
 
     </div>
   </div>
-</div><!-- #content -->
+</div>
 
 <?php
+// footer
 get_footer();

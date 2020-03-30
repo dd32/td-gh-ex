@@ -2,18 +2,28 @@
 Theme Name: Fmi
 Theme URI: https://forrss.com/themes/fmi/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.24
+Version: 1.3.25
 Author: Forrss
 Author URI: https://forrss.com/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column,two-columns,left-sidebar,right-sidebar,custom-background,custom-colors,custom-logo,custom-menu,editor-style,featured-images,post-formats,sticky-post,theme-options,threaded-comments,translation-ready,blog,news
+Tags: one-column,two-columns,left-sidebar,right-sidebar,custom-background,custom-colors,custom-logo,custom-menu,editor-style,featured-images,sticky-post,theme-options,threaded-comments,translation-ready,blog,news
 Text Domain: fmi
 Requires at least: 5.0
 Tested up to: 5.3
 
 
 === License ===
+- TGM-Plugin-Activation
+  http://tgmpluginactivation.com
+  Copyright (c) 2011, Thomas Griffin
+  GPL-2.0+
+
+- Kirki Customizer Framework
+  https://kirki.org
+  Copyright (c) 2019, Ari Stathopoulos (@aristath)
+  https://opensource.org/licenses/MIT
+
 - Bootstrap
   http://getbootstrap.com
   Copyright 2011-2016 Twitter, Inc.
@@ -27,21 +37,6 @@ Tested up to: 5.3
 - Font Awesome
   By @davegandy - http://fontawesome.io - @fontawesome
   License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-
-- Open Sans(Font) 
-  https://www.google.com/fonts/specimen/Open+Sans Apache License, version 2.0
-
-- HTML5 Shiv
-  @afarkas @jdalton @jon_neal @rem
-  MIT/GPL2 Licensed
-
-- Respond.js
-  Copyright 2013 Scott Jehl
-  Licensed under https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
-
-- IE10 viewport hack for Surface/desktop Windows 8 bug
-  Copyright 2014-2015 Twitter, Inc.
-  Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 - Photos
   https://www.pexels.com Creative Commons Zero (CC0) license.

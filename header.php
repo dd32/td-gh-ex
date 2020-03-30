@@ -13,61 +13,37 @@
 
 <body <?php body_class(); ?>>
 
+<?php do_action( 'vs_site_before' ); ?>
+
 <div id="page" class="site">
+  <div class="site-inner">
 
 	<header id="masthead" class="site-header">
-    <div class="container">
-  		<div class="site-branding clearfix">
-  			
-        <div class="site-branding-logo">
-          <?php the_custom_logo();?>
-          <?php if ( !get_theme_mod( 'header_title' )):?>
-          <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-          <?php endif;?>
-        </div>
-
-  			<?php if ( !get_theme_mod( 'header_search' )):?>
-        <div class="site-branding-search">
-            <?php get_search_form(); ?>
-        </div>
-        <?php endif;?>	
-
-        <button class="menu-toggle navbar-toggle" data-toggle="collapse" data-target="#main-navigation-collapse"><i class="fa fa-bars"></i></button>
-  		</div><!-- .site-branding -->
-    </div>
-	</header><!-- #masthead -->
+      <?php
+      get_template_part( 'template-parts/header' );
+      ?>
+	</header>
     
   <div id="site-navigation" class="main-navigation">
-    <div class="container">
-      <div id="main-navigation-collapse" class="collapse navbar-collapse">
-        <?php
-          if (has_nav_menu('menu-1')) {
-            wp_nav_menu( array(
-              'theme_location' => 'menu-1',
-              'container' => 'nav',
-              'menu_class' => 'nav navbar-nav responsive-nav hidden-md hidden-lg',
-            ) );
-          }
-        ?>
-      </div>
+    <div class="vs-container">
       <?php
-        if (has_nav_menu('menu-1')) {
+        if (has_nav_menu('primary')) {
           wp_nav_menu( array(
-            'theme_location' => 'menu-1',
+            'theme_location' => 'primary',
             'container' => 'nav',
             'menu_class' => 'menu clearfix hidden-sm hidden-xs',
           ) );
         }
       ?>
     </div>
-  </div><!-- #site-navigation -->
+  </div>
 
 <?php
 if(get_theme_mod('activate_slider',0)){
 	if(is_front_page()){
 ?>
 		<div class="site-slider">
-      <div class="container">
+      <div class="vs-container">
       <?php vs_slider();?>
       </div>
     </div>
@@ -75,3 +51,5 @@ if(get_theme_mod('activate_slider',0)){
 	}
 }
 ?>
+
+    <div class="site-primary">

@@ -33,8 +33,8 @@ if (!function_exists('vs_setup')) {
 
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-      'menu-1' => esc_html__('Main menu', 'fmi'),
-      'menu-2' => esc_html__('Footer menu', 'fmi')
+      'primary' => esc_html__('Primary', 'fmi'),
+      'footer' => esc_html__('Footer', 'fmi')
     ));
 
     /*
@@ -43,11 +43,6 @@ if (!function_exists('vs_setup')) {
      */
     add_theme_support('html5', array(
       'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-    ));
-
-    // Enable support for Post Formats.
-    add_theme_support('post-formats', array(
-      'image', 'gallery', 'video', 'audio', 'aside', 'link', 'quote', 'status', 'chat'
     ));
 
     // Set up the WordPress core custom background feature.
@@ -105,3 +100,18 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/sanitize.php';
 require get_template_directory() . '/inc/inline-styles.php';
+
+/**
+ * Actions.
+ */
+require get_template_directory() . '/inc/actions.php';
+
+/**
+ * Partials.
+ */
+require get_template_directory() . '/inc/partials.php';
+
+/**
+ * Plugins.
+ */
+require get_template_directory() . '/inc/plugins.php';

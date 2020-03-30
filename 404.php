@@ -1,29 +1,15 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * The template for displaying 404 page (Not Found)
  *
  * @package Fmi
  */
 
-get_header(); ?>
+// header
+get_header();
 
-<div id="content" class="site-content">
-  <div class="container">
-    <div class="site-content-area">
-      <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+// page 404
+get_template_part( 'template-parts/archive' );
 
-          <section class="error-404 not-found">
-            <header class="page-header">
-              <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'fmi' ); ?></h1>
-            </header><!-- .page-header -->                
-          </section><!-- .error-404 -->
-
-        </main><!-- #main -->
-      </div><!-- #primary -->
-    </div>
-  </div>
-</div><!-- #content -->
-
-<?php
+// footer
 get_footer();

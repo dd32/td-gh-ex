@@ -8,8 +8,8 @@
 // header
 get_header();
 
-// blog posts
-get_template_part('template-parts/blog-posts');
+// archive heading (search query and number of found posts), blog posts with pagination, and sidebar
+get_template_part( 'template-parts/archive' );
 
 // footer
 get_footer();

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying Archive pages
  *
  * @package Fmi
  */
@@ -8,8 +8,8 @@
 // header
 get_header();
 
-// blog posts
-get_template_part('template-parts/blog-posts');
+// archive heading (year, month, day, etc), blog posts with pagination, and sidebar
+get_template_part( 'template-parts/archive' );
 
 // footer
 get_footer();
