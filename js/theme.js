@@ -154,7 +154,7 @@ $(document).ready(function(){
     $('.header-menu-row .navbar-nav a').focus( function(e){
         if ( $(window).width() > 991 ) {
             var par = $(this).parent();
-            $(par).siblings('li').trigger('mouseout');
+            $(par).siblings('li').find('ul li').trigger('mouseout');
             $(par).trigger('mouseover');
         }
     });

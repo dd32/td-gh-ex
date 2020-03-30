@@ -3,8 +3,8 @@ Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Version: 1.0.12
-Stable tag: 1.0.12
+Version: 1.0.13
+Stable tag: 1.0.13
 License: GNU GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -39,6 +39,13 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/VIWIBCR4L9
 
 == Changelog ==
+
+= 1.0.13 =
+* Added license for tgm plugin activation
+* Added load_theme_textdomain() to translated strings
+* Added wp_body_open hook for fallback, since the theme supports WordPress at least 4.6.1
+* Removed source map error in Browser console for theme files
+* Fixed issue "Some menu are left are left open"
 
 = 1.0.12 =
 * Fixed issue with site logo and site title when both logo and title are active title moves below navbar and hide behind it
@@ -141,3 +148,8 @@ Underscores
   Source: https://underscores.me
   License: GNU GPL v2 or later, © 2012-2020 Automattic, Inc.
   license Url : https://underscores.me
+
+TGM Plugin Activation - 2.6.1
+  Source: http://tgmpluginactivation.com
+  License: GNU GPL v2 or later, © 2011 Thomas Griffin
+  license Url : https://opensource.org/licenses/GPL-2.0
