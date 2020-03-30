@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  *
  * @package     Anarcho Notepad
- * @since       2.41
+ * @since       2.44
  * @author      Space X-Chimp
  * @copyright   Copyright (c) 2013-2020, Space X-Chimp
  * @link        https://www.spacexchimp.com/themes/anarcho-notepad.html
@@ -170,16 +170,6 @@ add_action ( 'wp_before_admin_bar_render', 'spacexchimp_theme_add_help_button' )
 
 /* Add the Upgrade notice */
 require get_template_directory() . '/inc/upgrade_notice.php';
-
-/* Add IE conditional HTML5 shim to header */
-function spacexchimp_theme_add_ie_html5_shiv () {
-    global $is_IE;
-    if ( $is_IE )
-        echo '<!--[if lt IE 9]>';
-        echo '<script src="', get_template_directory_uri() .'/js/html5shiv.min.js"></script>';
-        echo '<![endif]-->';
-}
-add_action( 'wp_head', 'spacexchimp_theme_add_ie_html5_shiv' );
 
 /**
  * Enqueue scripts and styles on the admin pages.
