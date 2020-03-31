@@ -6,22 +6,24 @@
  */
 
 // Add new section
-Kirki::add_section( 'page_section', array(
-  'title'      => esc_html__( 'Page Settings', 'fmi' ),
-  'priority'   => 29,
+$wp_customize->add_section( 'page_section', array(
+  'title'                => esc_html__( 'Page Settings', 'fmi' ),
+  'priority'             => 29,
 ) );
 
 // Sidebar
-Kirki::add_field( 'vs_theme_mod', array(
-  'type'       => 'radio',
-  'settings'   => 'page_sidebar',
-  'label'      => esc_html__( 'Sidebar', 'fmi' ),
-  'section'    => 'page_section',
-  'default'    => 'right',
-  'priority'   => 10,
-  'choices'    => array(
-    'right'    => esc_attr__( 'Right Sidebar', 'fmi' ),
-    'left'     => esc_attr__( 'Left Sidebar', 'fmi' ),
-    'disabled' => esc_attr__( 'No Sidebar', 'fmi' ),
+$wp_customize->add_setting( 'page_sidebar', array(
+  'default'              => 'right',
+  'sanitize_callback'    => 'vs_sanitize_sidebar',
+) );
+$wp_customize->add_control( 'page_sidebar', array(
+  'label'                => esc_html__( 'Sidebar', 'fmi' ),
+  'section'              => 'page_section',
+  'settings'             => 'page_sidebar',
+  'type'                 => 'radio',
+  'choices'              => array(
+    'right'              => esc_html__( 'Right Sidebar', 'fmi' ),
+    'left'               => esc_html__( 'Left Sidebar', 'fmi' ),
+    'disabled'           => esc_html__( 'No Sidebar', 'fmi' ),
   ),
 ) );

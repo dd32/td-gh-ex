@@ -2,7 +2,7 @@
 Theme Name: Fmi
 Theme URI: https://forrss.com/themes/fmi/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.26
+Version: 1.3.27
 Author: Forrss
 Author URI: https://forrss.com/
 License: GNU General Public License v2 or later
@@ -24,9 +24,9 @@ Text Domain: fmi
 # Navigation
 # Search
 # Footer
-# Slider
 # Responsive
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -336,6 +336,7 @@ embed, iframe, object, video {
   overflow: hidden;
   word-wrap: normal !important;
 }
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -395,6 +396,7 @@ embed, iframe, object, video {
   min-height: 60px;
   padding:20px 0 0;
 }
+
 /*--------------------------------------------------------------
 ## Icons
 --------------------------------------------------------------*/
@@ -591,6 +593,7 @@ embed, iframe, object, video {
 .vs-icon-caret-right:before {
   content: "\e953";
 }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -691,6 +694,7 @@ embed, iframe, object, video {
   color: #777777;
   font-size:30px;
 }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -754,6 +758,7 @@ embed, iframe, object, video {
   position: relative;
   top: 1px;
 }
+
 /*--------------------------------------------------------------
 # Layout
 --------------------------------------------------------------*/
@@ -881,6 +886,7 @@ body {
     padding-right: 0;
   }
 }
+
 /*--------------------------------------------------------------
 ## Off-Canvas Area
 --------------------------------------------------------------*/
@@ -1053,6 +1059,7 @@ body {
     opacity: 1;
   }
 }
+
 /*--------------------------------------------------------------
 ## Post Archive
 --------------------------------------------------------------*/
@@ -1060,6 +1067,7 @@ body {
 .archive-wrap .entry-content {
   padding: 20px 0;
 }
+
 /*--------------------------------------------------------------
 ## Not Found
 --------------------------------------------------------------*/
@@ -1067,6 +1075,7 @@ body {
 .content-not-found.page-404 {
   text-align: center;
 }
+
 /*--------------------------------------------------------------
 # Post
 --------------------------------------------------------------*/
@@ -1090,32 +1099,7 @@ body {
   overflow: hidden;
 }
 .post-content{}
-.entry-meta{
-  padding: 15px 0 0;
-  line-height:1.2;
-  font-size:12px;
-  color:#808080;
-}
-.entry-meta a{
-  color:#808080;
-}
-.entry-meta a:hover,
-.entry-meta a:focus{
-  color:#23b2dd;
-}
-.entry-meta >span{
-  margin:0 10px 0 0;
-}
-.entry-meta >span a{
-  margin:0 2px 0 0;
-}
-.entry-meta .comments-link{
-  float:right;
-  margin:0;
-}
-.entry-meta .comments-link span a{
-  padding:0;
-}
+
 .entry-content{
   padding: 20px 0;
 }
@@ -1125,25 +1109,7 @@ body {
 .entry-content p:last-of-type{
   margin-bottom:0;
 }
-.entry-footer{
-  padding: 0 0 20px;
-  line-height:1.2;
-  font-size:12px;
-  color:#808080;
-}
-.entry-footer a{
-  color:#808080;
-}
-.entry-footer a:hover,
-.entry-footer a:focus{
-  color:#23b2dd;
-}
-.entry-footer >span{
-  margin:0 10px 0 0;
-}
-.entry-footer >span a{
-  margin:0 2px 0 0;
-}
+
 .more-link{
   display:inline-block;
   padding:20px 0 0;
@@ -1153,6 +1119,7 @@ body {
 .error-404{
   min-height:400px;
 }
+
 /*--------------------------------------------------------------
 ## Post Header
 --------------------------------------------------------------*/
@@ -1179,6 +1146,7 @@ body {
   font-family: 'vs-icons';
   content: "\e931";
 }
+
 /*--------------------------------------------------------------
 ## Post Meta
 --------------------------------------------------------------*/
@@ -1190,6 +1158,54 @@ body {
   margin:0;
   padding: 20px 0 0;
 }
+
+.entry-meta{
+  padding: 15px 0 0;
+  line-height:1.2;
+  font-size:12px;
+  color:#808080;
+}
+.entry-meta a{
+  color:#808080;
+}
+.entry-meta a:hover,
+.entry-meta a:focus{
+  color:#23b2dd;
+}
+.entry-meta >span{
+  margin:0 10px 0 0;
+}
+.entry-meta >span a{
+  margin:0 2px 0 0;
+}
+.entry-meta .comments-link{
+  float:right;
+  margin:0;
+}
+.entry-meta .comments-link span a{
+  padding:0;
+}
+
+.entry-footer{
+  padding: 0 0 20px;
+  line-height:1.2;
+  font-size:12px;
+  color:#808080;
+}
+.entry-footer a{
+  color:#808080;
+}
+.entry-footer a:hover,
+.entry-footer a:focus{
+  color:#23b2dd;
+}
+.entry-footer >span{
+  margin:0 10px 0 0;
+}
+.entry-footer >span a{
+  margin:0 2px 0 0;
+}
+
 /*--------------------------------------------------------------
 ## Page Header
 --------------------------------------------------------------*/
@@ -1218,6 +1234,7 @@ body {
 .page-header .archive-description p {
   margin: 0;
 }
+
 /*--------------------------------------------------------------
 ## Scroll To Top
 --------------------------------------------------------------*/
@@ -1254,6 +1271,7 @@ body {
     display: block;
   }
 }
+
 /*--------------------------------------------------------------
 # Widget
 --------------------------------------------------------------*/
@@ -1311,6 +1329,7 @@ body {
   color: #ffffff !important;
   background-color: #23b2dd;
 }
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -1413,6 +1432,7 @@ body {
 .widget_nav_menu .submenu-visible {
   display: block;
 }
+
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
@@ -1568,6 +1588,7 @@ body {
 .comment-form .form-submit{
   margin:0;
 }
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
@@ -1713,6 +1734,7 @@ body {
 .gallery-caption {
   display: block;
 }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -1862,6 +1884,7 @@ body {
 .pagination .nav-links .current {
   color:#23b2dd;
 }
+
 /*--------------------------------------------------------------
 # Search
 --------------------------------------------------------------*/
@@ -1892,6 +1915,7 @@ body {
   -moz-border-radius:0 3px 3px 0;
   border-radius:0 3px 3px 0;
 }
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1967,6 +1991,7 @@ body {
   float: left;
   padding: 0 20px 0 0;
 }
+
 /*--------------------------------------------------------------
 # Slider
 --------------------------------------------------------------*/
@@ -2104,6 +2129,7 @@ body {
   position: relative;
   top: 1px;
 }
+
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/

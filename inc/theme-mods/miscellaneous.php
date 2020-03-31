@@ -6,17 +6,19 @@
  */
 
 // Add new section
-Kirki::add_section( 'miscellaneous_section', array(
-  'title'        => esc_html__( 'Miscellaneous', 'fmi' ),
-  'priority'     => 30,
+$wp_customize->add_section( 'miscellaneous_section', array(
+  'title'                => esc_html__( 'Miscellaneous', 'fmi' ),
+  'priority'             => 30,
 ) );
 
 // Scroll To Top Button
-Kirki::add_field( 'vs_theme_mod', array(
-  'type'       => 'checkbox',
-  'settings'   => 'misc_scroll_to_top',
-  'label'      => esc_html__( 'Scroll To Top Button', 'fmi' ),
-  'section'    => 'miscellaneous_section',
-  'default'    => true,
-  'priority'   => 10,
+$wp_customize->add_setting( 'misc_scroll_to_top', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'misc_scroll_to_top', array(
+  'label'                => esc_html__('Scroll To Top Button', 'fmi' ),
+  'section'              => 'miscellaneous_section',
+  'settings'             => 'misc_scroll_to_top',
+  'type'                 => 'checkbox',
 ) );

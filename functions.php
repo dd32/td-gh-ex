@@ -85,14 +85,19 @@ require get_template_directory() . '/inc/filters.php';
 require get_template_directory() . '/inc/template-comments.php';
 
 /**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * Custom post meta function.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/post-meta.php';
 
 /**
  * Customizer additions.
@@ -110,8 +115,3 @@ require get_template_directory() . '/inc/actions.php';
  * Partials.
  */
 require get_template_directory() . '/inc/partials.php';
-
-/**
- * Plugins.
- */
-require get_template_directory() . '/inc/plugins.php';

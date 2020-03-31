@@ -28,6 +28,7 @@ $( document ).ready( function() {
     initHomepageSlider();
   } );
 } );
+
 /**
  * Navigation Sidebar
  */
@@ -63,6 +64,7 @@ function navigation_sidebar( e ) {
 $( document ).ready( function( e ) {
   navigation_sidebar( e );
 } );
+
 /**
  * Offcanvas
  */
@@ -79,6 +81,7 @@ $( '.toggle-offcanvas, .site-overlay' ).on( 'click', function( e ) {
 
   $( 'body' ).toggleClass( 'offcanvas-active' );
 } );
+
 /**
  * Scroll To Top
  */
@@ -105,4 +108,3 @@ $( document ).ready( function() {
 } );
 
 } )( jQuery );
-

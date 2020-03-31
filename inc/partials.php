@@ -70,8 +70,8 @@ if ( ! function_exists( 'vs_scroll_to_top' ) ) {
    * Scroll To Top
    */
   function vs_scroll_to_top() {
-    $misc_scroll_to_top = get_theme_mod( 'misc_scroll_to_top', true );
-    if ( true === $misc_scroll_to_top ) {
+    $misc_scroll_to_top = get_theme_mod( 'misc_scroll_to_top', 1 );
+    if ( 1 === $misc_scroll_to_top ) {
       ?>
       <a href="#top" class="vs-scroll-to-top">
         <i class="vs-icon vs-icon-chevron-up"></i>

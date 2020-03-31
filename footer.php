@@ -10,13 +10,15 @@
   <div class="vs-container">
 		<div class="site-info clearfix">            
       <?php
-      $show_social = get_theme_mod('footer_show_social', 0);
-      $show_menu = get_theme_mod('footer_show_menu', 0);
+      $show_social = get_theme_mod('footer_social_display', 0);
+      $show_menu = get_theme_mod('footer_menu_display', 0);
 
       if (($show_social && !$social_url_empty) || ($show_menu && has_nav_menu('footer'))){
         echo '<div class="site-info-nav hidden-sm hidden-xs">';
 
-        vs_social_links();
+        if($show_social && !$social_url_empty){
+          vs_social_links();
+        }
 
         if ($show_menu && has_nav_menu('footer')) {
           echo '<div class="site-info-menu">';
