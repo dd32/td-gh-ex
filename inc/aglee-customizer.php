@@ -432,7 +432,43 @@ $wp_customize -> add_control(
             'no_sidebar_narrow' => __('No Sidebar Narrow','aglee-lite')
         )
     )
-);   
+);
+
+$wp_customize->add_setting(
+    'aglee_post_feat_img_enable',
+    array(
+        'default' => 1,
+        'transport'=>'refresh',
+        'sanitize_callback' => 'aglee_lite_sanitize_checkbox'
+    )
+);
+
+$wp_customize->add_control(
+    'aglee_post_feat_img_enable',
+    array(
+        'label' => __('Enable/Disable (Post Featured Images)','aglee-lite'),
+        'section'=>'layout_default_post_section',
+        'type'=>'checkbox'
+    )
+);
+
+$wp_customize->add_setting(
+    'aglee_post_meta_data_enable',
+    array(
+        'default' => 1,
+        'transport'=>'refresh',
+        'sanitize_callback' => 'aglee_lite_sanitize_checkbox'
+    )
+);
+
+$wp_customize->add_control(
+    'aglee_post_meta_data_enable',
+    array(
+        'label' => __('Enable/Disable (Post MetaData)','aglee-lite'),
+        'section'=>'layout_default_post_section',
+        'type'=>'checkbox'
+    )
+);  
 
 // function to get webpage sanitize
 function aglee_lite_webpage_sanitize_category_blog($input) {

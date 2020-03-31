@@ -62,6 +62,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.1.2 - 31st March, 2020 =
+** Added Feature Image Show Hide Options for Single Post
+** Added MetaData Show Hide Options for Single Post
 
 = 1.1.1 - 19th February, 2020 =
 ** Removed git url as recommended by the @trtmessenger.
