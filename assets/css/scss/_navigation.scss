@@ -36,7 +36,7 @@ nav a {
     >li {
         float: left;
 
-        a {
+        >a {
             color: $dark-color;
             display: block;
             padding: 2.4rem 1.6rem;
@@ -44,6 +44,9 @@ nav a {
         a:hover {
             color: $primary-color;
         }
+    }
+    >li a {
+        color: #2b3948;
     }
 
     .menu-item-has-children {
