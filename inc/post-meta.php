@@ -10,7 +10,7 @@ if ( ! function_exists( 'vs_get_meta_categorys' ) ) {
    * Сategory
    */
   function vs_get_meta_categorys() {
-    $category_list = get_the_category_list();
+    $category_list = get_the_category_list(' ');
     if ( $category_list ) {
       ?>
       <span class="meta-category"><i class="vs-icon vs-icon-list"></i><?php echo $category_list; ?></span>
@@ -24,14 +24,8 @@ if ( ! function_exists( 'vs_get_meta_date' ) ) {
    * Date
    */
   function vs_get_meta_date() {
-    $time_string = get_the_date();
-    if ( get_the_time( 'd.m.Y H:i' ) !== get_the_modified_time( 'd.m.Y H:i' ) ) {
-      if ( ! get_theme_mod( 'misc_published_date', true ) ) {
-        $time_string = get_the_modified_date();
-      }
-    }
     ?>
-    <span class="meta-date"><i class="vs-icon vs-icon-calendar"></i><?php echo apply_filters( 'vs_post_meta_date_output', $time_string ); ?></span>
+    <span class="meta-date"><i class="vs-icon vs-icon-calendar"></i><?php echo get_the_date(); ?></span>
     <?php
   }
 }
@@ -56,7 +50,7 @@ if ( ! function_exists( 'vs_get_meta_comments' ) ) {
       return;
     }
     ?>
-    <span class="meta-comments"><i class="vs-icon vs-icon-comments"></i><?php comments_popup_link( esc_html__( '0 Comments', 'fmi' ), esc_html__( '1 Comment', 'fmi' ), '% ' . esc_html__( 'Comments', 'fmi' ), 'comments-link', '' ); ?></span>
+    <span class="meta-comments"><i class="vs-icon vs-icon-comments"></i><?php comments_popup_link( esc_html__( 'No Comments', 'fmi' ), esc_html__( '1 Comment', 'fmi' ), '% ' . esc_html__( 'Comments', 'fmi' ), 'comments-link', '' ); ?></span>
     <?php
   }
 }

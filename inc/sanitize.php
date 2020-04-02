@@ -5,11 +5,6 @@
  * @package Fmi
  */
 
-// Sanitize url
-function vs_sanitize_url( $input ) {
-  return esc_url_raw( $input );
-}
-
 // Sanitize number
 function vs_sanitize_number( $input ) {
   if ( is_numeric( $input ) && $input >= 1 ) {

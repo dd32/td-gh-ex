@@ -1,6 +1,6 @@
 <?php
 /**
- * custom stylesheet
+ * Custom stylesheet
  *
  * @package Fmi
  */
@@ -12,15 +12,77 @@ function vs_inline_styles() {
   $design_primary_color = get_theme_mod( 'design_primary_color', '#23b2dd' );
   if ( '#23b2dd' !== $design_primary_color ) {
     $inline_styles .= '
-blockquote{
-  border-left: 4px solid '.$design_primary_color.';
+a,
+
+a:hover, a:focus, a:active,
+
+.site-title a,
+
+.site-title a:hover,
+.site-title a:focus,
+.site-title a:active,
+
+.main-navigation .menu >li >a:hover,
+.main-navigation .menu >li >a:focus,
+
+.main-navigation .menu >li ul li a:hover,
+.main-navigation .menu >li ul li a:focus,
+
+.responsive-nav >li a:hover,
+.responsive-nav >li a:focus,
+
+.about-author-name a:hover,
+
+.archive-wrap .entry-header .entry-title a:hover,
+
+.entry-meta-inner a:hover,
+.entry-meta-inner a:focus,
+
+.entry-footer a:hover,
+.entry-footer a:focus,
+
+.widget a:hover,
+.widget a:focus,
+
+.comment-meta a:hover,
+.comment-meta a:focus,
+
+.comment-meta .fn a:hover,
+.comment-meta .fn a:focus,
+
+.pagination .nav-links a:hover,
+.pagination .nav-links a:focus,
+
+.pagination .nav-links .current,
+
+.site-info a:hover,
+.site-info a:focus,
+
+.owl-theme .owl-controls .owl-page:hover span, 
+.owl-theme .owl-controls .owl-page:focus span, 
+.owl-theme .owl-controls .active span,
+
+.slider-wrap .owl-theme .owl-controls .owl-buttons div {
+  color: '.$design_primary_color.';
 }
+
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"]{
-  background: '.$design_primary_color.';
+input[type="submit"],
+
+.widget_tag_cloud a:hover,
+
+.slider-title a,
+
+.owl-theme .owl-controls .owl-page:hover span, 
+.owl-theme .owl-controls .owl-page:focus span, 
+.owl-theme .owl-controls .active span {
+  background-color: '.$design_primary_color.';
 }
+
+blockquote,
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -37,94 +99,15 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus{
-  border:1px solid '.$design_primary_color.';
-}
-a{
-  color:'.$design_primary_color.';
-}
-a:hover, a:focus, a:active {
-  color: '.$design_primary_color.';
-}
-.site-title a{
-  color:'.$design_primary_color.';
-}
-.site-title a:hover,
-.site-title a:focus,
-.site-title a:active{
-  color:'.$design_primary_color.';
-}
-.main-navigation .menu >li >a:hover,
-.main-navigation .menu >li >a:focus{
-  color: '.$design_primary_color.';
-}
-.main-navigation .menu >li ul li a:hover,
-.main-navigation .menu >li ul li a:focus{
-  color: '.$design_primary_color.';
-}
-.responsive-nav >li a:hover,
-.responsive-nav >li a:focus{
-  color: '.$design_primary_color.';
-}
-.about-author-name a:hover{
-  color: '.$design_primary_color.';
-}
-.archive-wrap .entry-header .entry-title a:hover {
-  color:'.$design_primary_color.';
-}
-.entry-meta a:hover,
-.entry-meta a:focus{
-  color:'.$design_primary_color.';
-}
-.entry-footer a:hover,
-.entry-footer a:focus{
-  color:'.$design_primary_color.';
-}
-.widget a:hover,
-.widget a:focus{
-  color:'.$design_primary_color.';
-}
-.widget_tag_cloud a:hover {
-  background-color: '.$design_primary_color.';
-}
-
-.comment-meta a:hover,
-.comment-meta a:focus{
-  color:'.$design_primary_color.';
-}
-.comment-meta .fn a:hover,
-.comment-meta .fn a:focus{
-  color:'.$design_primary_color.';
-} 
-.pagination .nav-links a:hover,
-.pagination .nav-links a:focus{
-  color:'.$design_primary_color.';
-}
-.pagination .nav-links .current {
-  color:'.$design_primary_color.';
-}
-.site-info a:hover,
-.site-info a:focus{
-  color:'.$design_primary_color.';
-}
-.slider-title a {
-  background: '.$design_primary_color.';
-}
-.owl-theme .owl-controls .owl-page:hover span, 
-.owl-theme .owl-controls .owl-page:focus span, 
-.owl-theme .owl-controls .active span{
-  color: '.$design_primary_color.';
-  background-color: '.$design_primary_color.';
-}
-.slider-wrap .owl-theme .owl-controls .owl-buttons div {
-  color: '.$design_primary_color.';
+  border-color: '.$design_primary_color.';
 }
     ';
   }
 
-  $blog_images_hover_effects = get_theme_mod('blog_images_hover_effects', 0);
-  if ($blog_images_hover_effects&&!is_singular()) {
+  $blog_images_hover_effects = get_theme_mod( 'blog_images_hover_effects', 0 );
+  if ( $blog_images_hover_effects&&!is_singular() ) {
     $inline_styles .= '
-.post-media img{
+.post-media img {
   display: block;
   max-width: 100%;
   width: auto;
@@ -146,7 +129,7 @@ a:hover, a:focus, a:active {
     ';
   }
 
-  wp_add_inline_style('vs-style', $inline_styles);
+  wp_add_inline_style( 'vs-style', $inline_styles );
 
 }
-add_action('wp_enqueue_scripts', 'vs_inline_styles');
+add_action( 'wp_enqueue_scripts', 'vs_inline_styles' );

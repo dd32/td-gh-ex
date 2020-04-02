@@ -26,7 +26,7 @@ if ( post_password_required() ) {
           'callback'      => 'vs_list_comments'
         ) );
       ?>
-    </ol><!-- .comment-list -->
+    </ol>
 
     <?php vs_comments_navigation();
 

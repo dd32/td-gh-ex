@@ -100,10 +100,18 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/post-meta.php';
 
 /**
- * Customizer additions.
+ * Customizer functions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Sanitize functions.
+ */
 require get_template_directory() . '/inc/sanitize.php';
+
+/**
+ * Inline styles.
+ */
 require get_template_directory() . '/inc/inline-styles.php';
 
 /**

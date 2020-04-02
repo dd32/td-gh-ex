@@ -2,7 +2,7 @@
 Theme Name: Fmi
 Theme URI: https://forrss.com/themes/fmi/
 Description: Fmi is an elegant blog theme with responsive and easily customizable.
-Version: 1.3.27
+Version: 1.3.28
 Author: Forrss
 Author URI: https://forrss.com/
 License: GNU General Public License v2 or later
@@ -545,12 +545,6 @@ embed, iframe, object, video {
 .vs-icon-chevrons-right:before {
   content: "\e925";
 }
-.vs-icon-menu:before {
-  content: "\e92d";
-}
-.vs-icon-search:before {
-  content: "\e92e";
-}
 .vs-icon-bookmark:before {
   content: "\e931";
 }
@@ -559,9 +553,6 @@ embed, iframe, object, video {
 }
 .vs-icon-website:before {
   content: "\e933";
-}
-.vs-icon-edit:before {
-  content: "\e942";
 }
 .vs-icon-user:before {
   content: "\e944";
@@ -592,6 +583,15 @@ embed, iframe, object, video {
 }
 .vs-icon-caret-right:before {
   content: "\e953";
+}
+.vs-icon-bars:before {
+  content: "\e954";
+}
+.vs-icon-search:before {
+  content: "\e955";
+}
+.vs-icon-edit:before {
+  content: "\e956";
 }
 
 /*--------------------------------------------------------------
@@ -1159,33 +1159,6 @@ body {
   padding: 20px 0 0;
 }
 
-.entry-meta{
-  padding: 15px 0 0;
-  line-height:1.2;
-  font-size:12px;
-  color:#808080;
-}
-.entry-meta a{
-  color:#808080;
-}
-.entry-meta a:hover,
-.entry-meta a:focus{
-  color:#23b2dd;
-}
-.entry-meta >span{
-  margin:0 10px 0 0;
-}
-.entry-meta >span a{
-  margin:0 2px 0 0;
-}
-.entry-meta .comments-link{
-  float:right;
-  margin:0;
-}
-.entry-meta .comments-link span a{
-  padding:0;
-}
-
 .entry-footer{
   padding: 0 0 20px;
   line-height:1.2;
@@ -1204,6 +1177,60 @@ body {
 }
 .entry-footer >span a{
   margin:0 2px 0 0;
+}
+
+/*post-full*/
+.entry-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  font-size: 0;
+  padding-top: 15px;
+}
+.entry-meta-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  color: #808080;
+}
+.entry-meta-inner:not(:last-child) {
+  padding-right: 12px;
+}
+.entry-meta-inner a {
+  color: #808080;
+}
+.entry-meta-inner a:hover,
+.entry-meta-inner a:focus {
+  color: #23b2dd;
+}
+.entry-meta-inner > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  font-size: 12px;
+  line-height: 1.2;
+}
+.entry-meta-inner > span:not(:last-child) {
+  padding-right: 12px;
+}
+.entry-meta-inner > span i {
+  margin-top: 1px;
+  margin-right: 3px;
 }
 
 /*--------------------------------------------------------------

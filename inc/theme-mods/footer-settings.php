@@ -19,7 +19,6 @@ $wp_customize->add_setting( 'footer_menu_display', array(
 $wp_customize->add_control( 'footer_menu_display', array(
   'label'                => esc_html__( 'Display footer menu', 'fmi' ),
   'section'              => 'footer_section',
-  'settings'             => 'footer_menu_display',
   'type'                 => 'checkbox',
 ) );
 
@@ -31,6 +30,5 @@ $wp_customize->add_setting( 'footer_social_display', array(
 $wp_customize->add_control( 'footer_social_display', array(
   'label'                => esc_html__( 'Display social links', 'fmi' ),
   'section'              => 'footer_section',
-  'settings'             => 'footer_social_display',
   'type'                 => 'checkbox',
 ) );

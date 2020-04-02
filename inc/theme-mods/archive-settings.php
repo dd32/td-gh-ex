@@ -19,7 +19,6 @@ $wp_customize->add_setting( 'archive_sidebar', array(
 $wp_customize->add_control( 'archive_sidebar', array(
   'label'                => esc_html__( 'Sidebar', 'fmi' ),
   'section'              => 'archive_section',
-  'settings'             => 'archive_sidebar',
   'type'                 => 'radio',
   'choices'              => array(
     'right'              => esc_html__( 'Right Sidebar', 'fmi' ),
@@ -36,7 +35,6 @@ $wp_customize->add_setting( 'archive_summary', array(
 $wp_customize->add_control( 'archive_summary', array(
   'label'                => esc_html__( 'Post Summary', 'fmi' ),
   'section'              => 'archive_section',
-  'settings'             => 'archive_summary',
   'type'                 => 'radio',
   'choices'              => array(
     'excerpt'            => esc_html__( 'Use Excerpts', 'fmi' ),
@@ -52,5 +50,68 @@ $wp_customize->add_setting( 'archive_excerpt_length', array(
 $wp_customize->add_control( new vs_customize_number_control( $wp_customize, 'archive_excerpt_length', array(
   'label'                => esc_html__( 'Excerpt Length (Number of Words)', 'fmi' ),
   'section'              => 'archive_section',
-  'settings'             => 'archive_excerpt_length',
 ) ) );
+
+// Heading
+$wp_customize->add_setting( 'archive_heading_post_meta', array(
+  'sanitize_callback'    => 'esc_html',
+) );
+$wp_customize->add_control( new vs_customize_control_heading( $wp_customize, 'archive_heading_post_meta', array(
+  'label'                => esc_html__( 'Post Meta', 'fmi' ),
+  'section'              => 'archive_section',
+) ) );
+
+// Display Author
+$wp_customize->add_setting( 'archive_author', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'archive_author', array(
+  'label'                => esc_html__( 'Display Author', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'checkbox',
+) );
+
+// Display Date
+$wp_customize->add_setting( 'archive_date', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'archive_date', array(
+  'label'                => esc_html__( 'Display Date', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'checkbox',
+) );
+
+// Display Categorys
+$wp_customize->add_setting( 'archive_categorys', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'archive_categorys', array(
+  'label'                => esc_html__( 'Display Categorys', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'checkbox',
+) );
+
+// Display Comments
+$wp_customize->add_setting( 'archive_comments', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'archive_comments', array(
+  'label'                => esc_html__( 'Display Comments', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'checkbox',
+) );
+
+// Display Tags
+$wp_customize->add_setting( 'archive_tags', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'archive_tags', array(
+  'label'                => esc_html__( 'Display Tags', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'checkbox',
+) );

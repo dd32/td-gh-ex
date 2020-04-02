@@ -5,6 +5,19 @@
  * @package Fmi
  */
 
+if ( ! function_exists( 'vs_get_theme_data' ) ) {
+  /**
+   * Get data about the theme.
+   *
+   * @param mixed $name The name of param.
+   */
+  function vs_get_theme_data( $name ) {
+    $theme = wp_get_theme( get_template() );
+
+    return $theme->get( $name );
+  }
+}
+
 if (!function_exists('vs_slider')) {
   function vs_slider() {
 ?>
