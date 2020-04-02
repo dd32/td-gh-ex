@@ -108,6 +108,10 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+= 2.02 =
+** Added Feature Image Show Hide Options for Single Post
+** Added MetaData Show Hide Options for Single Post
+
 = 2.01 =
 ** Fixed logo option in backend
 

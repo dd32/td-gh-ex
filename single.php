@@ -12,9 +12,13 @@ $single_post_layout = esc_attr(of_get_option('single_post_layout')); ?>
 		<div class="ak-container">
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			<?php 
+		    $show_meta = of_get_option('post_metadata',1);
+		    if($show_meta) { ?>
 			<div class="entry-meta">
 			<?php accesspress_root_posted_on(); ?>
 			</div>
+			<?php } ?>
 		</header><!-- .entry-header -->
 
 		<?php accesspress_breadcrumbs() ?>

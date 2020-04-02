@@ -1246,3 +1246,43 @@
 				'sanitize_callback' => 'sanitize_text_field',
 			)
 		);
+
+	Kirki::add_section( 'accesspress_root_post_setting', array(
+	    'priority'    => 90,
+	    'title'          => esc_html__( 'Post Setting', 'accesspress-root' ),
+	    'description'    => esc_html__( 'Setup Single Post settings.', 'accesspress-root' ),
+	) );
+
+		Kirki::add_field( 'accesspress_root_config', 
+				array(
+					'type'        => 'switch',
+					'settings'    => 'featured_image',
+					'label'       => esc_html__( 'Enable Featured Image', 'accesspress-root' ),
+					'section'     => 'accesspress_root_post_setting',
+					'default'     => '1',
+					'priority'    => 10,
+					'choices'     => 
+					array(
+						true  => esc_html__( 'Enable', 'accesspress-root' ),
+						false => esc_html__( 'Disable', 'accesspress-root' ),
+						),					
+					'sanitize_callback'	=> 'accesspress_root_sanitize_checkbox',
+					)
+				);
+
+		Kirki::add_field( 'accesspress_root_config', 
+				array(
+					'type'        => 'switch',
+					'settings'    => 'post_metadata',
+					'label'       => esc_html__( 'Enable MetaData', 'accesspress-root' ),
+					'section'     => 'accesspress_root_post_setting',
+					'default'     => '1',
+					'priority'    => 20,
+					'choices'     => 
+					array(
+						true  => esc_html__( 'Enable', 'accesspress-root' ),
+						false => esc_html__( 'Disable', 'accesspress-root' ),
+						),					
+					'sanitize_callback'	=> 'accesspress_root_sanitize_checkbox',
+					)
+				);
