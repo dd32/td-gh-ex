@@ -85,7 +85,7 @@
 		bard_customizer_label( 'background_image', 'Body Background', '' );
 
 		// General Layouts
-		bard_customizer_label( 'general_sidebar_width', 'General', '' );
+		bard_customizer_label( 'general_sidebar_width', 'General', 'https://www.youtube.com/watch?v=8rvjmsWy_Ok' );
 		bard_customizer_label( 'general_home_layout', 'Page Layouts', '' );
 		bard_customizer_label( 'general_header_width', 'Boxed Controls', '' );
 
