@@ -9,18 +9,20 @@
 <?php if($arowana_hs_blog == '1') {?>
 <section id="recent-blog" class="section-padding">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-6 offset-md-3 text-center">
-				<div class="section-header">
-					<?php if($arowana_blog_title) { ?>
-						<h2><?php echo esc_html($arowana_blog_title); ?></h2>
-					<?php } ?>
-					<?php if($arowana_blog_desc) { ?>
-						<p class="wow fadeInUp" data-wow-delay="0.1s"><?php echo esc_html($arowana_blog_desc); ?></p>
-					<?php } ?>
+		<?php if ( ! empty( $arowana_blog_title ) || ! empty( $arowana_blog_desc )) :?>
+			<div class="row">
+				<div class="col-md-6 offset-md-3 text-center">
+					<div class="section-header">
+						<?php if($arowana_blog_title) { ?>
+							<h2><?php echo esc_html($arowana_blog_title); ?></h2>
+						<?php } ?>
+						<?php if($arowana_blog_desc) { ?>
+							<p class="wow fadeInUp" data-wow-delay="0.1s"><?php echo esc_html($arowana_blog_desc); ?></p>
+						<?php } ?>
+					</div>
 				</div>
 			</div>
-		</div>
+		<?php endif; ?>	
 		<div class="row">
 			<?php 	
 				 if ( function_exists( 'cleverfox_activate' ) ) { 
