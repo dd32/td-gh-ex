@@ -2193,6 +2193,11 @@ function apex_business_typography_settings_setup( $wp_customize ) {
         new WP_Customize_Control(
             $wp_customize, 'apex_business_link_text_transform_control', array(
                 'label'       => __( 'Text Transform', 'apex-business' ),
+                /* translators: %1$s: Anchor link start %2$s: Anchor link end */
+                'description'       =>  sprintf( __( 'Goto %1$sColor%2$s Section to set link color.', 'apex-business' ),
+                                            '<a href="javascript:wp.customize.section( \'colors\' ).focus();">',
+                                            '</a>'
+                                        ),
                 'section'     => 'apex_business_typography_settings_section',
                 'settings'    => 'apex_business_link_text_transform_setting',
                 'type'        =>  'select',

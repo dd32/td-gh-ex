@@ -8,7 +8,7 @@ get_header();
 
 $apex_business_fullwidth_stats = 'col-md-8 ct-content-area';
 if ( !is_active_sidebar( 'apex_business_main_sidebar' )
-    || ( get_theme_mod( 'apex_business_single_sidebar_layout_control' ) == 'no-sidebar' ) ) {
+    && ( get_theme_mod( 'apex_business_single_sidebar_layout_control' ) == 'no-sidebar' ) ) {
     $apex_business_fullwidth_stats = 'col-md-12';
 }
 

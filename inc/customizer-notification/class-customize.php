@@ -77,7 +77,7 @@ final class Apex_Business_Customize_Notification {
 				array(
 					'title'    => esc_html__( 'Get Started with Apex Business', 'apex-business' ),
 					'get_started_text' => esc_html__( 'Get Started with Apex Business',  'apex-business' ),
-					'get_started_title' => esc_html__( 'Take the full advantage of Apex Business theme',  'apex-business' ),
+					'get_started_title' => esc_html__( 'Checkout our 19+ Pre-Made Demos',  'apex-business' ),
 					'get_started_desc' => esc_html__( 'Clicking the button below will install and activate the Crafthemes demo import plugin.',  'apex-business' ),
 					'priority' => 0
 				)

@@ -731,3 +731,9 @@ body {
     visibility: hidden;
   }
 }
+
+.ct-button.nav-button {
+  > span {
+    top: 0;
+  }
+}

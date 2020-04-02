@@ -274,6 +274,20 @@ function apex_business_footer_settings_setup( $wp_customize ) {
         )
     );
 
+    $wp_customize->add_setting( 'apex_business_f_menu_ul_switch_setting', array(
+       'capability'        => 'edit_theme_options',
+       'sanitize_callback' => 'absint',
+       'default'           => true
+    ) );
+    $wp_customize->add_control( new Apex_Business_Customizer_Toggle_Control( $wp_customize, '
+        apex_business_f_menu_ul_switch_control', array(
+       'label'       => __( 'Enable Footer Menu Underline?', 'apex-business' ),
+       'section'     => 'apex_business_footer_settings_section',
+       'settings'    => 'apex_business_f_menu_ul_switch_setting',
+       'priority'    => 25,
+       'type'        => 'ios',
+    ) ) );
+
     $wp_customize->add_setting(
         'apex_business_footer_widget_title_bottom_margin_control', array(
             'capability'        => 'edit_theme_options',

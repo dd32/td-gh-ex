@@ -26,13 +26,8 @@
             li {
                 color: #fff;
             }
-
             ul  {
                 li{
-                    margin-bottom: 15px;
-                    border-bottom: 1px solid #424242;
-                    padding-bottom: 15px;
-
                     &:before{
                         content: "\f105";
                         font-family: FontAwesome;
@@ -84,6 +79,15 @@
                 }
             }
 
+        }
+        .menu-underline{
+            ul  {
+                li{
+                    margin-bottom: 15px;
+                    border-bottom: 1px solid #424242;
+                    padding-bottom: 15px;
+                }
+            }
         }
 
         .footer-widget {

@@ -471,6 +471,11 @@
     range_live_media_load( 'apex_business_footer_widget_title_font_size_control', '#theme-footer .footer-widget .widget-title', [ 'font-size' ], 'px' );
 
     /***************************************************************************
+    * Woo settings
+    ***************************************************************************/
+    ct_customizer_live_load( 'apex_business_woo_single_bg_color_setting', 'body.single-product .hentry .entry-container', [ 'background-color' ] );
+
+    /***************************************************************************
     * Blog Meta
     ***************************************************************************/
     /** Blog : Social Share Color**/

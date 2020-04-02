@@ -37,6 +37,7 @@
                 }
         ?>
 
+
         <?php if ( is_active_sidebar( 'apex_business_footer_widget_1' )
                     || is_active_sidebar( 'apex_business_footer_widget_2' )
                     || is_active_sidebar( 'apex_business_footer_widget_3' )
@@ -47,8 +48,13 @@
 
                         <?php for ( $apex_business_i = 1; $apex_business_i <= $apex_business_footer_columns; $apex_business_i++ ) : ?>
                             <div class="col-md-<?php echo esc_attr( $apex_business_footer_grid ); ?>">
+                                <?php $apex_business_underline = '';
+                                    if ( get_theme_mod( 'apex_business_f_menu_ul_switch_setting' ) ) {
+                                        $apex_business_underline = 'menu-underline';
+                                    }
+                                ?>
                                 <div class="footer-block">
-                                    <div class="widget footer-widget clearfix">
+                                    <div class="widget footer-widget clearfix <?php echo esc_attr( $apex_business_underline ); ?>">
                                         <?php
                                             if ( is_active_sidebar( "apex_business_footer_widget_$apex_business_i" ) ) {
                                                 dynamic_sidebar( "apex_business_footer_widget_$apex_business_i" );

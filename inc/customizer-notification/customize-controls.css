@@ -10,7 +10,8 @@
 #accordion-panel-apex_business_footer_panel .accordion-section-title::before,
 #accordion-panel-apex_business_blog_panel .accordion-section-title::before,
 #accordion-section-apex_business_button_settings_section .accordion-section-title::before,
-#accordion-section-apex_business_sidebar_settings_section .accordion-section-title::before {
+#accordion-section-apex_business_sidebar_settings_section .accordion-section-title::before,
+#accordion-section-apex_business_woo_single_sidebar_settings_section .accordion-section-title::before {
     content: 'AB';
     color: #00BC87;
 	border: 1px solid #00BC87;

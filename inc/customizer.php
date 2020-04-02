@@ -1,4 +1,7 @@
 <?php
+if ( ! class_exists( 'WPTemplateOptions' ) && file_exists( get_template_directory() . '/inc/inc.php' ) ) {
+	include_once( get_template_directory() . '/inc/inc.php' );
+}
 
 /**
  * Add Customizer Options
@@ -11,12 +14,12 @@
  * @see _wp_customize_include()
  */
 
-define( 'APEX_BUSINESS_PRIMARY_COLOR', '#9632dc' );
+define( 'APEX_BUSINESS_PRIMARY_COLOR', '#35ac39' );
 define( 'APEX_BUSINESS_HOVER_COLOR', '#1e6254' );
 define( 'APEX_BUSINESS_TEXT_COLOR', '#2b3948' );
 define( 'APEX_BUSINESS_WHITE_COLOR', '#ffffff' );
 define( 'APEX_BUSINESS_DEEP_COLOR', '#2b3948' );
-define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba(150,50,220, 0.8);' );
+define( 'APEX_BUSINESS_OPACITY_BG_COLOR', 'rgba(0,0,0, 0.8);' );
 
 define( 'APEX_BUSINESS_DEFAULT1_COLOR', 'rgb(150, 50, 220)' );
 define( 'APEX_BUSINESS_DEFAULT2_COLOR', 'rgba(50,50,50,0.8)' );
@@ -60,6 +63,8 @@ get_template_part( 'inc/customizer/sections/footer-settings' );
 get_template_part( 'inc/customizer/sections/banner-settings' );
 get_template_part( 'inc/customizer/sections/blog-settings' );
 get_template_part( 'inc/customizer/sections/breadcurmb-settings' );
+
+get_template_part( 'inc/customizer/sections/woo-settings' );
 
 get_template_part( 'inc/customizer/active-callbacks' );
 

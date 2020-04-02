@@ -42,10 +42,17 @@
     }
 }
 
+
 .topbar-content {
     display: inline-block;
     margin-left: 10px;
     margin-right: 10px;
+    .textwidget {
+        display: inline-block;
+        p{
+            margin-bottom:0;
+        }
+    }
 }
 
 .topbar-widgets {

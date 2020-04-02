@@ -2,9 +2,9 @@
 Contributors: aruphash
 Tags: blog, news, two-columns, one-column, right-sidebar, left-sidebar, custom-menu, custom-colors, custom-background, custom-logo, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, full-width-template, portfolio
 Requires at least: 4.0
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 5.6
-Stable tag: 0.1.4
+Stable tag: 0.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,10 @@ Demo data Installation
 https://www.crafthemes.com/docs/apex-business-documentation/demo-content-installation/
 
 == Changelog ==
+
+= 0.1.4 - April 2 2020 =
+* Added Woocommerce Options
+* Fixed bugs
 
 = 0.1.3 - February 6 2020 =
 * Fixed bugs

@@ -367,6 +367,11 @@ function apex_business_enqueue_inline_css() {
 
     $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_back_to_top_icon_color_setting', '.back-to-top span', 'color', array( APEX_BUSINESS_WHITE_COLOR ));
 
+    /***************************************************************************
+    * Woo settings
+    ***************************************************************************/
+    $apex_business_custom_css   .= apex_business_customizer_value( 'apex_business_woo_single_bg_color_setting', 'body.single-product .hentry .entry-container', 'background-color', array( APEX_BUSINESS_WHITE_COLOR ));
+
     // If Premium Setup
     if ( function_exists( 'apex_business_customizer_inline_premium' ) ) {
         $apex_business_custom_css   .= apex_business_customizer_inline_premium( $apex_business_custom_css );

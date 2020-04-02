@@ -178,6 +178,12 @@ function apex_business_header_navigation_settings_setup( $wp_customize ) {
         )
     );
 
+    $wp_customize->selective_refresh->add_partial( 'apex_business_navigation_last_button_text_partial', array(
+        'selector'            => '.ct-button.nav-button',
+        'container_inclusive' => true,
+        'settings'            => 'apex_business_navigation_last_button_text_setting',
+    ) );
+
     $wp_customize->add_setting( 'apex_business_navigation_last_button_link_setting', array(
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field',
