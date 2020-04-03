@@ -257,7 +257,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 		
 		// Content area
 		$colours = array(
-			'content_wrapper_bg' 	=> '#content, #header {background-color: %s}',
+			'content_wrapper_bg' 	=> '#content, body > .container > .panel-layout, #header {background-color: %s}',
 			'content_bg' 			=> '.post, .singular .post, .singular .posts-list .post, .homepage_pane {background-color: %s;}',
 			'meta_border'			=> '.entry-footer {border-color: %s;}',
 			'content_font_colour' 	=> 'body, blockquote p {color: %s}',

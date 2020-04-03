@@ -10,7 +10,7 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 	
 	if ( ! $post_id && isset( $post ) ) $post_id = $post->ID;
 	if ( ! $post_id ) $header_img = get_header_image();
-	
+
 	if ( ! $header_img && is_singular() && has_post_thumbnail( $post_id ) ) {
 		$image_id = get_post_thumbnail_id( $post_id );
 		$image_meta = wp_get_attachment_metadata( $image_id );
@@ -19,9 +19,13 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 		if ( isset( $image_meta['width'] ) && $image_meta['width'] >= $header_image_width && ! $graphene_settings['featured_img_header'] ) {
 			$image = wp_get_attachment_image_src( $image_id, $size );
 			if ( $return_url ) $header_img = $image[0];
+			else {
+				$header_img = $image;
+				$header_img['attachment_id'] = $image_id;
+			}
 		}
 	}
-	
+
 	if ( ! $header_img ) $header_img = get_header_image();
 
 	if ( ! $return_url && ! is_array( $header_img ) ) {
@@ -35,6 +39,8 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 				$dimension = getimagesize( $header_img );
 				$header_img = array( $header_img, $dimension[0], $dimension[1] );
 			}
+
+			$header_img['attachment_id'] = $image_id;
 		}
 	}
 	
@@ -60,18 +66,53 @@ function graphene_get_attachment_id_from_src( $image_src ) {
 
 
 /**
- * Get the alt text for the header image
+ * Get the alt text for an attachment image
  *
  * @package Graphene
  * @since 1.9
  */
-function graphene_get_header_image_alt( $image_src ){
+function graphene_get_attachment_image_alt( $image_src_or_id ){
 	
-	$image_id = graphene_get_attachment_id_from_src( $image_src );
+	if ( ! is_numeric( $image_src_or_id ) ) $image_id = attachment_url_to_postid( $image_src_or_id );
+	else $image_id = $image_src_or_id;
+
 	if ( ! $image_id ) return;
 	
 	$alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 	return $alt;
+}
+
+
+/**
+ * Get the alt text for custom header image
+ */
+function graphene_get_header_image_alt( $image_src_or_id ) {
+
+	if ( ! is_numeric( $image_src_or_id ) ) $image_id = graphene_get_attachment_id_from_src( $image_src_or_id );
+	else $image_id = $image_src_or_id;
+
+	$alt = '';
+
+    if ( $image_id ) {
+        $alt = trim( strip_tags( get_post_meta( $image_id, '_wp_attachment_image_alt', true ) ) );
+
+        // Get the parent's alt text if this is a cropped image
+        if ( ! $alt ) { 
+
+        	$header_url = wp_get_attachment_url( $image_id );
+        	if ( stripos( $header_url, '/cropped-' ) !== false ) {
+        		$attachment_metadata = wp_get_attachment_metadata( $image_id );
+        		$alt = graphene_get_attachment_image_alt( $attachment_metadata['attachment_parent'] );
+        	}
+        }
+
+        // Fallback to caption (excerpt)
+        if ( ! $alt ) $alt = trim( strip_tags( get_post_field( 'post_excerpt', $image_id ) ) );
+        // Fallback to title
+        if ( ! $alt ) $alt = trim( strip_tags( get_post_field( 'post_title', $image_id ) ) );
+    }
+
+    return $alt;
 }
 
 
@@ -88,13 +129,30 @@ function graphene_get_image_html( $image_src_or_id, $size = '', $alt = '' ){
 		$image_id = graphene_get_attachment_id_from_src( $image_src_or_id );
 
 		if ( ! $image_id ) {
-			$html = '<img src="' . $image_src_or_id . '" alt="' . $alt . '" title="' . $alt . '" />';
+			if ( ! $alt ) $alt = get_bloginfo( 'name' );
+
+			$height = '';
+			$width = '';
+
+			$image_size = getimagesize( $image_src_or_id );
+			if ( $image_size && isset( $image_size[0] ) && isset( $image_size[1] ) ) {
+				if ( $image_size[0] && is_numeric( $image_size[0] ) ) $width = $image_size[0];
+				if ( $image_size[1] && is_numeric( $image_size[1] ) ) $height = $image_size[1];
+			}
+
+			$html = '<img src="' . $image_src_or_id . '" alt="' . $alt . '" title="' . $alt . '" width="' . $width . '" height="' . $height . '" />';
 			return $html;
 		}
 	
 	} else $image_id = $image_src_or_id;
 
-	$image = wp_get_attachment_image( $image_id, $size, false, array( 'alt' => $alt, 'title' => $alt ) );
+	$args = array();
+	if ( $alt ) {
+		$args['alt'] = $alt;
+		$args['title'] = $alt;
+	}
+
+	$image = wp_get_attachment_image( $image_id, $size, false, $args );
 	return $image;
 }
 

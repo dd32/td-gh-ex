@@ -15,6 +15,9 @@ body {
 /* =Header
 -------------------------------------------------------------- */
 
+.navbar-header {
+	float: none;
+}
 #profiles a {
 	float: none;
 	margin: 0 5px;
@@ -33,10 +36,6 @@ body {
 
 .navbar .nav > li {
 	border-width: 0 0 0 1px;
-}
-.navbar .nav .fa {
-	margin-right: 0;
-	margin-left: 2px;
 }
 .dropdown-submenu > .dropdown-menu {
 	left: auto;
@@ -70,6 +69,12 @@ body {
 	right: 0;
 	text-align: right;
 }
+.carousel .post-meta .fa {
+	margin-left: 3px;
+}
+.carousel.style-banner .carousel-caption {
+	background: linear-gradient(to left, rgba(0,0,0,0.7) 10%, transparent);
+}
 
 
 /* =Content Area
@@ -96,8 +101,8 @@ body {
 	float: right;
 }
 .post-meta li {
-	margin-right: 5px;
-	margin-left: 0;
+	margin-right: 0;
+	margin-left: 5px;
 }
 .post-meta .post-author,
 .post-meta .edit-post,
@@ -119,12 +124,6 @@ body {
 .post-format .comment-link {
 	margin-right: 0;
 	margin-left: 5px;
-}
-.post-meta .post-date-inline {
-	border-right: 1px solid #ccc;
-	border-left: none;
-	padding-right: 5px;
-	padding-left: 0;
 }
 .post-avatar-wrap {
 	float: left;
@@ -325,6 +324,12 @@ h3#reply-title .fa {
 /* =Footer
 -------------------------------------------------------------- */
 
+.footer-right {
+    float: left;
+}
+.copyright-developer {
+    float: right;
+}
 .footer-menu-wrap {
 	text-align: left;
 }

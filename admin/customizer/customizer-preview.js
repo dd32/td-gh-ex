@@ -79,6 +79,7 @@ jQuery(document).ready(function($) {
 	/* Container width */
 	wp.customize('graphene_settings[container_width]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('@media (min-width: 1200px) {.container {width:' + to + 'px}}');
+		$('.boxed-wrapper .navbar').css('width', to + 'px');
 	});	});
 
 	/* Columns width */
@@ -203,7 +204,7 @@ jQuery(document).ready(function($) {
 
 	/* Content Area */
 	wp.customize('graphene_settings[content_wrapper_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('#content, #header {background-color: ' + to + '}');
+		$('#graphene-preview-css').append('#content, body > .container > .panel-layout, #header {background-color: ' + to + '}');
 	});	});
 	wp.customize('graphene_settings[content_bg]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.post, .singular .post {background-color: ' + to + ';}');

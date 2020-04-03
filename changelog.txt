@@ -4,19 +4,31 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
-Version 2.7.2
+Version 2.7.3
+	* Added: Google Fonts are now loaded asynchronously using Webfont Loader
+	* Added: Optimized images
+	* Added: Parse shortcode and formatting in taxonomy description
+	* Updated: Expand container width range to 400px - 2000px
+	* Fixed: No H1 tag on the front page
+	* Fixed: A few styling issues on RTL sites
+	* Fixed: Header image may have missing alt, width, and height attributes
+	* Fixed: JS error may occur after switching from Graphene Plus to Graphene
+	* Fixed: Navbar width stay fixed when adjusting container width in Customizer
+	* Fixed: RTL CSS not automatically loaded when using a child theme
+
+Version 2.7.2 [24-2-2020]
 	* Added: Responsive embed in block editor
 	* Added: Ensure text are visible before webfonts are loaded
 	* Fixed: Background colour for homepage panes
 	* Fixed: Images in gallery block overflows the content area in Microsoft Edge
 	* Changed: Site title and description no longer use heading elements
 
-Version 2.7.1
+Version 2.7.1 [14-11-2019]
 	* Fixed: Error when checking for theme updates in certain multisite configurations
 	* Fixed: Ads appear in front page when using Static Front Page, when it should be disabled
 	* Fixed: PHP warnings when creating new posts in WordPress 5.3
 
-Version 2.7
+Version 2.7 [10-10-2019]
 	* Updated: Bootstrap 3.4.1
 	* Fixed: Homepage panes image not linked to post when Featured Image is set
 	* Fixed: Read More button in home page panes may not link to post due to conflict with certain plugins
@@ -24,10 +36,10 @@ Version 2.7
 	* Fixed: Long content occasionally not wrapping in post content
 	* Fixed: Error importing theme options in non-multisite installs due to different returned mime type
 	
-Version 2.6.5
+Version 2.6.5 [27-8-2019]
 	* Fixed: Custom Google Fonts not loaded if not hosting the fonts locally
 
-Version 2.6.4
+Version 2.6.4 [23-8-2019]
 	* Added: Option to host Google Fonts locally
 	* Fixed: Description text for custom social profile icon ignored when the custom profile is first added
 	* Fixed: HTML tags and continue reading button appearing in links shared on Facebook
@@ -35,7 +47,7 @@ Version 2.6.4
 	* Fixed: Error importing theme options due to WP recognizing the import file as text/html
 	* Fixed: Division by zero error in loop.php
 
-Version 2.6.3
+Version 2.6.3 [9-5-2019]
 	* Added: append.infinitescroll event 
 	* Added: wp_body_open() function call
 	* Fixed: Compatibility issue with Elementor
@@ -44,7 +56,7 @@ Version 2.6.3
 	* Fixed: Search results count sometimes show incorrect value when formatted
 	* Fixed: PHP warnings related to custom header image
 
-Version 2.6.2
+Version 2.6.2 [22-3-2019]
 	* Fixed: Multi-level menu not opening when using hover and on tablet devices
 	* Fixed: Custom social profile icon not working when using custom icon URL
 	* Fixed: PHP warnings when customizing social profiles

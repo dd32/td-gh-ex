@@ -231,8 +231,8 @@ function graphene_add_customizer_controls( $wp_customize ) {
 	            	<input type="text" class="code" size="8" <?php $this->link(); ?> id="container_width" value="<?php echo $graphene_settings['container_width']; ?>" /> px
 	            	<div class="input-slider">
 	                	<div id="container_width-slider"></div>
-	                    <span class="alignleft slider-legend">800 px</span>
-	                    <span class="alignright slider-legend">1400 px</span>
+	                    <span class="alignleft slider-legend">400 px</span>
+	                    <span class="alignright slider-legend">2000 px</span>
 	                </div>
 	            <?php else : ?>
 

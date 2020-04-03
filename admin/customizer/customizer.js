@@ -1,18 +1,19 @@
 jQuery(document).ready(function ($) {
 
 	/* Highlight new features */
-	$('#accordion-panel-graphene-general .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#accordion-panel-graphene-display .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-panel-graphene-general .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-panel-graphene-display .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	$('#accordion-panel-graphene-utilities .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#accordion-panel-graphene-stacks .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#accordion-section-title_tagline .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#accordion-section-graphene-general-header .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#accordion-section-graphene-general-slider .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-section-graphene-general-slider .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#accordion-section-graphene-general-social-profiles .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#accordion-section-graphene-general-mentions-bar .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#accordion-section-graphene-general-live-search .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#accordion-section-graphene-general-adsense .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#accordion-section-graphene-display-posts .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#accordion-section-graphene-display-columns-layout .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-section-graphene-general-live-search .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-section-graphene-general-adsense .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-section-graphene-display-posts .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#accordion-section-graphene-display-columns-layout .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#customize-control-graphene_settings-slider_disable_caption label').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#customize-control-graphene_settings-slider_exclude_posts .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#customize-control-graphene_settings-slider_exclude_posts_cats .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
@@ -23,12 +24,13 @@ jQuery(document).ready(function ($) {
 	// $('#customize-control-graphene_settings-social_media_location label').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#customize-control-graphene_settings-slider_as_header label').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	// $('#customize-control-graphene_settings-adsense_max_count .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#customize-control-graphene_settings-slider_post_types .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#customize-control-graphene_settings-home_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#customize-control-graphene_settings-blog_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#customize-control-graphene_settings-pages_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#customize-control-graphene_settings-hide_reading_time label').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
-	$('#customize-control-graphene_settings-adsense_max_count .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#customize-control-graphene_settings-slider_post_types .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#customize-control-graphene_settings-home_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#customize-control-graphene_settings-blog_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#customize-control-graphene_settings-pages_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#customize-control-graphene_settings-hide_reading_time label').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	// $('#customize-control-graphene_settings-adsense_max_count .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	$('#accordion-section-graphene-utilities-child-theme .accordion-section-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 
 	/* Confirm click */
 	$(document).on( 'click', '.confirm-click', function(e){
@@ -145,8 +147,8 @@ jQuery(document).ready(function ($) {
 
 	/* Container */
 	$('#container_width-slider').slider({
-		min: 800,
-		max: 1400,
+		min: 400,
+		max: 2000,
 		step: 10,
 		value: container_width,
 		slide: function (event, ui) {

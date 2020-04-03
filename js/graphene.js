@@ -48,6 +48,7 @@ jQuery(document).ready(function($) {
 		/* Adjust the width of the navbar to match the parent container */
 		adjustNavbarWidth();
 		$(window).resize(function(){adjustNavbarWidth();});
+		$('body > .container').resize(function(){adjustNavbarWidth();});
 	}
 
 	function adjustNavbarWidth(){

@@ -67,10 +67,10 @@ function graphene_inf_posts_stack_nav_args( $args, $posts ){
 	global $graphene_settings;
 	$args = array_merge( $args, array(
 		'infinite-scroll'	=> array(
-			'container'		=> '.posts-list .row',
+			'container'		=> '.posts-list .entries-wrapper',
 			'nav-selector'	=> '.posts-list .pagination',
 			'next-selector'	=> '.posts-list .pagination .next',
-			'item-selector'	=> '.posts-list .row .item-wrap',
+			'item-selector'	=> '.posts-list .item-wrap',
 			'total-posts'	=> $posts->found_posts,
 			'posts-per-page'=> $posts->query_vars['posts_per_page'],
 			'method'		=> $graphene_settings['inf_scroll_method']

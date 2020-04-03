@@ -666,14 +666,17 @@ endif;
  * are added by filtering the WordPress post_class() function.
 */
 function graphene_post_class( $classes ){
-    global $post;
+    global $post, $graphene_settings;
     
 	if ( in_array( graphene_post_date_setting( $post->ID ), array( 'hidden', 'text' ) ) || ! graphene_should_show_date() ) {
 		$classes[] = 'nodate';
 	}
 
-	// Class for infinite scroll
-	$classes[] = 'item-wrap';
+	// Infinite scroll
+	if ( ! isset( $graphene_settings['posts_layout'] ) ) $graphene_settings['posts_layout'] = 'standard';
+	if ( $graphene_settings['posts_layout'] == 'standard' ) {
+		$classes[] = 'item-wrap';
+	}
 		
     // Prints the body class
     return $classes;
@@ -803,7 +806,7 @@ function graphene_tax_description(){
 	if ( $term->description ) : 
 	?>
         <div id="term-desc-<?php echo $term->term_id; ?>" class="<?php echo $tax; ?>-desc term-desc">
-            <?php echo $term->description; ?>
+            <?php echo do_shortcode( wpautop( $term->description ) ); ?>
         </div>
 	<?php endif;
 }
@@ -1153,24 +1156,27 @@ function graphene_get_template_part( $slug, $name = null ) {
 function graphene_header_image(){
 	global $post, $graphene_settings;
 	$post_id = ( $post ) ? $post->ID : false;
-
 	$alt = '';
 
 	if ( ! $graphene_settings['slider_as_header'] ) {
-		$header_img = graphene_get_header_image( $post_id );
+		$header_img = graphene_get_header_image( $post_id, 'post-thumbnail', false );
 		if ( ! $header_img ) return;
+
+		$alt = graphene_get_header_image_alt( $header_img['attachment_id'] );
+		$header_img = $header_img[0];
+		
 	} else {
 		$header_img = get_header_image();
 		if ( ! $header_img ) return;
 
-		$alt = get_bloginfo( 'name' );
+		$alt = graphene_get_header_image_alt( $header_img );
 	}
 
 	/* Check if the page uses SSL and change HTTP to HTTPS if true */
     if ( is_ssl() && stripos( $header_img, 'https' ) === false ) {
         $header_img = str_replace( 'http', 'https', $header_img );
     }
-    
+
     echo graphene_get_image_html( $header_img, array( HEADER_IMAGE_WIDTH, $graphene_settings['header_img_height'] ), $alt );
 }
 
