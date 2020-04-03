@@ -359,7 +359,6 @@ if ( ! function_exists( 'ct_apex_social_array' ) ) {
 			'foursquare'    => 'apex_foursquare_profile',
 			'github'        => 'apex_github_profile',
 			'goodreads'			=> 'apex_goodreads_profile',
-			'google-plus'   => 'apex_googleplus_profile',
 			'google-wallet' => 'apex_google_wallet_profile',
 			'hacker-news'   => 'apex_hacker-news_profile',
 			'medium'        => 'apex_medium_profile',
@@ -368,6 +367,7 @@ if ( ! function_exists( 'ct_apex_social_array' ) ) {
 			'ok-ru'         => 'apex_ok_ru_profile',
 			'patreon'       => 'apex_patreon_profile',
 			'paypal'        => 'apex_paypal_profile',
+			'pocket'        => 'apex_pocket_profile',
 			'podcast'       => 'apex_podcast_profile',
 			'qq'            => 'apex_qq_profile',
 			'quora'         => 'apex_quora_profile',
@@ -449,6 +449,8 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 						$class = 'fab fa-weixin';
 					} elseif ( $active_site == 'phone' ) {
 						$class = 'fas fa-phone';
+					} elseif ( $active_site == 'pocket' ) {
+						$class = 'fab fa-get-pocket';
 					} else {
 						$class = 'fab fa-' . $active_site;
 					}
@@ -457,7 +459,7 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 						<li>
 							<a class="email" target="_blank"
 							   href="mailto:<?php echo antispambot( is_email( get_theme_mod( $key ) ) ); ?>">
-								<i class="fas fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'apex' ); ?>"></i>
+								<i class="fas fa-envelope" title="<?php echo antispambot( is_email( get_theme_mod( $key ) ) ); ?>"></i>
 								<span class="screen-reader-text"><?php echo esc_html_x('email', 'noun', 'apex'); ?></span>
 							</a>
 						</li>
@@ -473,7 +475,7 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 						<li>
 							<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
 									href="<?php echo esc_url( get_theme_mod( $active_site ), array( 'tel' ) ); ?>">
-								<i class="<?php echo esc_attr( $class ); ?>"></i>
+								<i class="<?php echo esc_attr( $class ); ?>" title="<?php echo str_replace( 'tel:', '', esc_url( get_theme_mod( $active_site ), array( 'tel' ) ) ); ?>"></i>
 								<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
 							</a>
 						</li>
@@ -782,3 +784,12 @@ function ct_apex_output_last_updated_date() {
 			}
 	}
 }
+
+//----------------------------------------------------------------------------------
+// Add support for Elementor headers & footers
+//----------------------------------------------------------------------------------
+function ct_apex_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_location( 'header' );
+	$elementor_theme_manager->register_location( 'footer' );
+}
+add_action( 'elementor/theme/register_locations', 'ct_apex_register_elementor_locations' ); 
