@@ -89,3 +89,45 @@ if ( ! function_exists( 'vs_offcanvas' ) ) {
     get_template_part( 'template-parts/offcanvas' );
   }
 }
+
+if ( ! function_exists( 'vs_single_author' ) ) {
+  /**
+   * Single Author
+   */
+  function vs_single_author() {
+    if ( ! is_singular( 'post' ) ) {
+      return;
+    }
+    if ( get_theme_mod( 'single_show_about_author', 0 ) ) {
+      get_template_part( 'template-parts/post-author' );
+    }
+  }
+}
+
+if ( ! function_exists( 'vs_single_prev_nex' ) ) {
+  /**
+   * Single Prev Next
+   */
+  function vs_single_prev_nex() {
+    if ( ! is_singular( 'post' ) ) {
+      return;
+    }
+    if ( get_theme_mod( 'single_show_post_nav', 1 ) ) {
+      get_template_part( 'template-parts/post-prev-next' );
+    }
+  }
+}
+
+if ( ! function_exists( 'vs_comments' ) ) {
+  /**
+   * Comments
+   */
+  function vs_comments() {
+    if ( post_password_required() ) {
+      return;
+    }
+    if ( comments_open() || get_comments_number() ) {
+      comments_template();
+    }
+  }
+}

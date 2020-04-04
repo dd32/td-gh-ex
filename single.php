@@ -20,27 +20,16 @@ $post_sidebar = get_theme_mod( 'post_sidebar', 'right' );
             <main id="main" class="site-main">
 
             <?php
-            while ( have_posts() ) : the_post();
+            while ( have_posts() ) {
+              the_post();
             ?>
 
             <?php get_template_part( 'template-parts/content-post' ); ?>
-            
+
+            <?php do_action( 'vs_post_after' ); ?>
+
             <?php
-              $show_about_author = get_theme_mod('single_show_about_author', 0);
-              if (!post_password_required() && $show_about_author) {
-                vs_about_the_author();
-              }
-
-              $show_post_nav = get_theme_mod('single_show_post_nav', 1);
-              if ($show_post_nav) {
-                vs_post_navigation();
-              }
-
-              if ( comments_open() || get_comments_number() ) :
-                comments_template();
-              endif;
-
-            endwhile; // End of the loop.
+            }
             ?>
 
             </main>

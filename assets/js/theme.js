@@ -9,17 +9,17 @@
  * Homepage Slider
  */
 function initHomepageSlider() {
-    $('.slider-cycle').owlCarousel({
-      singleItem: true,
-      slideSpeed : 600,
-      paginationSpeed: 600,
-      rewindSpeed: 1000,
-      autoPlay: 5000,
-      stopOnHover: true,
-      navigation : true,
-      navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
-      pagination: true,
-    });
+  $('.slider-cycle').owlCarousel({
+    singleItem: true,
+    slideSpeed : 600,
+    paginationSpeed: 600,
+    rewindSpeed: 1000,
+    autoPlay: 5000,
+    stopOnHover: true,
+    navigation : true,
+    navigationText: ["<i class='vs-icon vs-icon-chevron-left'></i>","<i class='vs-icon vs-icon-chevron-right'></i>"],
+    pagination: true,
+  });
 }
 
 $( document ).ready( function() {

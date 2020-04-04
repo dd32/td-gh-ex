@@ -64,15 +64,15 @@ if (!function_exists('vs_slider')) {
   }
 }
 
-if (!function_exists('vs_editor_style')) {
-  function vs_editor_style() {
-
-    // add stylesheets
-    add_editor_style(array(
-      'assets/css/editor-style.css',
-      'assets/font-awesome/css/font-awesome.min.css'
-    ));
-
+if ( ! function_exists( 'vs_site_info_center' ) ) {
+  /**
+   * Centers the text
+   */
+  function vs_site_info_center() {
+    $footer_menu_display = get_theme_mod( 'footer_menu_display', 0 );
+    $footer_social_display = get_theme_mod( 'footer_social_display', 0 );
+    if ( 0 === $footer_menu_display && 0 === $footer_social_display ) {
+      return 'site-info-center';
+    }
   }
 }
-add_action('init', 'vs_editor_style');

@@ -7,18 +7,22 @@
 
 ?>
 <article <?php post_class( 'entry' ); ?>>
-<?php if (has_post_thumbnail()) {?> 
+
+    <?php
+    if ( has_post_thumbnail() ) {
+    ?>
   <div class="post-media">
     <?php the_post_thumbnail();?>
   </div>
-<?php }?>
+    <?php
+    }
+    ?>
 
   <div class="post-content">
-    <div class="entry-header">
-      <div class="entry-header-inner">
-      <?php the_title( '<h1 class="entry-title">', '</h1>' );?>
+
+      <div class="entry-header">
+        <h1 class="entry-title"><?php the_title(); ?></h1>
       </div>
-    </div>
     
       <?php
       $page_comments = get_theme_mod( 'page_comments', 1 );

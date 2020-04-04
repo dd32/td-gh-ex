@@ -22,6 +22,6 @@
     </div>
     <?php endif;?>  
 
-    <button class="menu-toggle navbar-toggle toggle-offcanvas" data-toggle="collapse" data-target="#main-navigation-collapse"><i class="fa fa-bars"></i></button>
+    <button class="menu-toggle navbar-toggle toggle-offcanvas" data-toggle="collapse" data-target="#main-navigation-collapse"><i class="vs-icon vs-icon-bars"></i></button>
   </div>
 </div>

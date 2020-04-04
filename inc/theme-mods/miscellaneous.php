@@ -11,6 +11,28 @@ $wp_customize->add_section( 'miscellaneous_section', array(
   'priority'             => 30,
 ) );
 
+// Search Form Placeholder
+$wp_customize->add_setting( 'misc_search_placeholder', array(
+  'default'              => esc_html__( 'Search ...', 'fmi' ),
+  'sanitize_callback'    => 'esc_attr',
+) );
+$wp_customize->add_control( 'misc_search_placeholder', array(
+  'label'                => esc_html__( 'Search Form Placeholder', 'fmi' ),
+  'section'              => 'miscellaneous_section',
+  'type'                 => 'text',
+) );
+
+// "Read More" Button Label
+$wp_customize->add_setting( 'misc_label_readmore', array(
+  'default'              => esc_html__( 'Read More', 'fmi' ),
+  'sanitize_callback'    => 'esc_html',
+) );
+$wp_customize->add_control( 'misc_label_readmore', array(
+  'label'                => esc_html__( '"Read More" Button Label', 'fmi' ),
+  'section'              => 'miscellaneous_section',
+  'type'                 => 'text',
+) );
+
 // Scroll To Top Button
 $wp_customize->add_setting( 'misc_scroll_to_top', array(
   'default'              => 1,

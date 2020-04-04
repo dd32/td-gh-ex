@@ -317,6 +317,17 @@ $wp_customize->add_control( 'homepage_tags', array(
   'type'                 => 'checkbox',
 ) );
 
+// Display Read More
+$wp_customize->add_setting( 'homepage_read_more', array(
+  'default'              => 0,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'homepage_read_more', array(
+  'label'                => esc_html__( 'Display Read More', 'fmi' ),
+  'section'              => 'homepage_section',
+  'type'                 => 'checkbox',
+) );
+
 // Static Front Page
 $static_front_page = $wp_customize->get_section( 'static_front_page' );
 $wp_customize->remove_section( 'static_front_page' );

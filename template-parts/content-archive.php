@@ -1,30 +1,42 @@
 <?php
 /**
- * Template part for displaying posts in the standard post format
+ * Template part for displaying posts
  *
  * @package Fmi
  */
 
+$blog_images_hover_effects = get_theme_mod( 'blog_images_hover_effects', 0 );
+
+$orientation = "";
+if( $blog_images_hover_effects ){
+  $orientation = "vs-overlay-hover";
+}
 ?>
 <article <?php post_class( 'post-full' ); ?>>
-  <?php if (has_post_thumbnail()) {?> 
-  <div class="post-media">
-    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"><?php the_post_thumbnail();?></a>
-  </div>
-  <?php }?>
+  <div class="post-outer">
 
-  <div class="post-content">
     <?php
-    echo '<header class="entry-header">';
-
-    if ( is_singular() ) {
-      the_title( '<h1 class="entry-title">', '</h1>' );
-    } else {
-      the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-    }
-
-    echo '</header>';
+    if ( has_post_thumbnail() ) {
     ?>
+    <div class="post-inner">
+      <div class="post-media">
+        <div class="vs-overlay <?php echo esc_attr( $orientation ); ?>">
+          <div class="vs-overlay-background">
+            <?php the_post_thumbnail(); ?>
+          </div>
+          <a href="<?php the_permalink(); ?>" class="vs-overlay-link"></a>
+        </div>
+      </div>
+    </div>
+    <?php
+    }
+    ?>
+
+    <div class="post-inner">
+
+      <header class="entry-header">
+        <h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+      </header>
 
       <?php
       $archive_date = get_theme_mod( 'archive_date', 1 );
@@ -33,17 +45,27 @@
       if ( $archive_date || $archive_author || $archive_comments ) {
       ?>
       <div class="entry-meta">
+        <?php
+        if ( $archive_date || $archive_author ) {
+        ?>
         <div class="entry-meta-inner">
           <?php
           if ( $archive_date ) { vs_get_meta_date(); }
           if ( $archive_author ) { vs_get_meta_author(); }
           ?>
         </div>
+        <?php
+        }
+        if ( $archive_comments ) {
+        ?>
         <div class="entry-meta-inner">
           <?php
           if ( $archive_comments ) { vs_get_meta_comments(); }
           ?>
         </div>
+        <?php
+        }
+        ?>
       </div>
       <?php
       }
@@ -51,65 +73,57 @@
 
       <?php
       $archive_summary = get_theme_mod( 'archive_summary', 'excerpt' );
+      $archive_read_more = get_theme_mod( 'archive_read_more', 0 );
       if ( 'excerpt' === $archive_summary ) {
         ?>
-        
         <div class="entry-excerpt">
-          <?php
-          $post_excerpt = get_the_excerpt();
-          echo wp_kses( $post_excerpt, 'post' );
-          ?>
+          <?php echo wp_kses( get_the_excerpt(), 'post' ); ?>
         </div>
-        
         <?php
+        if ( $archive_read_more ) {
+        ?>
+        <div class="entry-more">
+          <a href="<?php echo esc_url( get_permalink() ); ?>">
+            <?php echo esc_html( get_theme_mod( 'misc_label_readmore', __( 'Read More', 'fmi' ) ) ); ?>
+          </a>
+        </div>
+        <?php
+        }
       } else {
         ?>
-        
         <div class="entry-content">
           <?php
-          the_content( sprintf(
-            wp_kses(
+          $more_link_text = false;
+          if ( $archive_read_more ) {
+            $more_link_text = sprintf(
               __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'fmi' ),
-              array(
-                'span' => array(
-                  'class' => array(),
-                ),
-              )
-            ),
-            get_the_title()
-          ) );
+              get_the_title()
+            );
+          }
+          the_content( $more_link_text );
           ?>
         </div>
-        
         <?php
       }
       ?>
 
-    <?php
-    $archive_categorys = get_theme_mod('archive_categorys', 1);
-    $archive_tags = get_theme_mod('archive_tags', 1);
-
-    if ($archive_categorys || $archive_tags) {
-      if ( 'post' === get_post_type() ) {
-        echo '<footer class="entry-footer clearfix">';
-
-        if ($archive_categorys) {
-          $categories_list = get_the_category_list( esc_html__( ', ', 'fmi' ) );
-          if ( $categories_list ) {
-            echo '<span class="cat-links"><i class="fa fa-list"></i> ' . $categories_list . '</span>';
-          }
-        }
-
-        if ($archive_tags) {
-          $tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'fmi' ) );
-          if ( $tags_list ) {
-            echo '<span class="tags-links"><i class="fa fa-tags"></i> ' . $tags_list . '</span>';
-          }
-        }
-        
-        echo '</footer>';
+      <?php
+      $archive_categorys = get_theme_mod( 'archive_categorys', 1 );
+      $archive_tags = get_theme_mod( 'archive_tags', 1 );
+      if ( $archive_categorys || $archive_tags ) {
+      ?>
+      <div class="entry-details">
+        <div class="entry-details-inner">
+          <?php
+          if ( $archive_categorys ) { vs_get_meta_categorys(); }
+          if ( $archive_tags ) { vs_get_meta_tags(); }
+          ?>
+        </div>
+      </div>
+      <?php
       }
-    }
-    ?>
+      ?>
+
+    </div>
   </div>
 </article>

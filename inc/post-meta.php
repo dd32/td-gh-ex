@@ -36,7 +36,7 @@ if ( ! function_exists( 'vs_get_meta_author' ) ) {
    */
   function vs_get_meta_author() {
     ?>
-    <span class="meta-author"><i class="vs-icon vs-icon-user"></i><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></span>
+    <span class="meta-author"><i class="vs-icon vs-icon-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></span>
     <?php
   }
 }

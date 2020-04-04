@@ -115,3 +115,14 @@ $wp_customize->add_control( 'archive_tags', array(
   'section'              => 'archive_section',
   'type'                 => 'checkbox',
 ) );
+
+// Display Read More
+$wp_customize->add_setting( 'archive_read_more', array(
+  'default'              => 0,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'archive_read_more', array(
+  'label'                => esc_html__( 'Display Read More', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'checkbox',
+) );

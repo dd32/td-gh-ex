@@ -123,3 +123,8 @@ require get_template_directory() . '/inc/actions.php';
  * Partials.
  */
 require get_template_directory() . '/inc/partials.php';
+
+/**
+ * Meta Boxes.
+ */
+require get_template_directory() . '/inc/meta-box.php';

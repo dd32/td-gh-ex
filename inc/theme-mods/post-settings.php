@@ -27,17 +27,6 @@ $wp_customize->add_control( 'post_sidebar', array(
   ),
 ) );
 
-// Show post navigation (single post page)
-$wp_customize->add_setting( 'single_show_post_nav', array(
-  'default'              => 1,
-  'sanitize_callback'    => 'vs_sanitize_checkbox',
-) );
-$wp_customize->add_control( 'single_show_post_nav', array(
-  'label'                => esc_html__( 'Show post navigation (single post page)', 'fmi' ),
-  'section'              => 'post_section',
-  'type'                 => 'checkbox',
-) );
-
 // Show "About the author" block (single post page)
 $wp_customize->add_setting( 'single_show_about_author', array(
   'default'              => 0,
@@ -45,6 +34,17 @@ $wp_customize->add_setting( 'single_show_about_author', array(
 ) );
 $wp_customize->add_control( 'single_show_about_author', array(
   'label'                => esc_html__( 'Show "About the author" block (single post page)', 'fmi' ),
+  'section'              => 'post_section',
+  'type'                 => 'checkbox',
+) );
+
+// Show post navigation (single post page)
+$wp_customize->add_setting( 'single_show_post_nav', array(
+  'default'              => 1,
+  'sanitize_callback'    => 'vs_sanitize_checkbox',
+) );
+$wp_customize->add_control( 'single_show_post_nav', array(
+  'label'                => esc_html__( 'Show post navigation (single post page)', 'fmi' ),
   'section'              => 'post_section',
   'type'                 => 'checkbox',
 ) );
