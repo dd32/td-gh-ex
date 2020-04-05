@@ -5,8 +5,7 @@
  * @package Catch Evolution
  */
 
-global $catchevolution_options_settings;
-$options = $catchevolution_options_settings;
+$options = catchevolution_get_options();
 
 $catchevolution_search_display_text = $options['search_display_text'];
 

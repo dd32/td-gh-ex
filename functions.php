@@ -235,8 +235,7 @@ if ( ! function_exists( 'catchevolution_get_theme_layout' ) ) :
 		}
 
 		//Load options data
-		global $catchevolution_options_settings;
-   		$options = $catchevolution_options_settings;
+   		$options = catchevolution_get_options();
 
    		//check empty and load default
 		if ( empty( $layout ) || 'default' == $layout ) {
@@ -305,8 +304,7 @@ function catchevolution_logo_migrate() {
 	/**
 	 * Get Theme Options Values
 	 */
-	global $catchevolution_options_settings;
-   	$options = $catchevolution_options_settings;
+   	$options = catchevolution_get_options();
 
    	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
 	if ( function_exists( 'the_custom_logo' ) ) {
@@ -348,8 +346,7 @@ function catchevolution_custom_css_migrate(){
 	    /**
 		 * Get Theme Options Values
 		 */
-		global $catchevolution_options_settings;
-	   	$options = $catchevolution_options_settings;
+	   	$options = catchevolution_get_options();
 
 	    if ( '' != $options['custom_css'] ) {
 			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.

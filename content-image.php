@@ -18,8 +18,7 @@
 
 		<div class="entry-content">
 			<?php 
-			global $catchevolution_options_settings;
-			$options = $catchevolution_options_settings;
+			$options = catchevolution_get_options();
 			$more_tag_text = $options['more_tag_text'];
 			the_content( $more_tag_text ); ?>
 			<?php wp_link_pages( array( 

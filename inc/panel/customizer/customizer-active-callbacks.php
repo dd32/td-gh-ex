@@ -11,9 +11,7 @@ if( ! function_exists( 'catchevolution_is_feed_url_present' ) ) :
 	* @since Catch Evolution 2.6
 	*/
 	function catchevolution_is_feed_url_present( $control ) {
-		global $catchevolution_options_settings;
-
-    	$options = $catchevolution_options_settings;
+		$options = catchevolution_get_options();
 
 		return ( isset( $options['feed_url'] ) && '' != $options['feed_url'] );
 	}
@@ -27,9 +25,8 @@ if( ! function_exists( 'catchevolution_is_header_code_present' ) ) :
 	* @since Catch Evolution 2.6
 	*/
 	function catchevolution_is_header_code_present( $control ) {
-		global $catchevolution_options_settings;
 
-    	$options = $catchevolution_options_settings;
+	    $options = catchevolution_get_options();
 
 		return ( isset( $options['analytic_header'] ) && '' != $options['analytic_header'] );
 	}
@@ -43,9 +40,8 @@ if( ! function_exists( 'catchevolution_is_footer_code_present' ) ) :
 	* @since Catch Evolution 2.6
 	*/
 	function catchevolution_is_footer_code_present( $control ) {
-		global $catchevolution_options_settings;
 
-    	$options = $catchevolution_options_settings;
+   	    $options = catchevolution_get_options();
 
 		return ( isset( $options['analytic_footer'] ) && '' != $options['analytic_footer'] );
 	}

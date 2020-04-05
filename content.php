@@ -6,9 +6,7 @@
  */
 ?>
 <?php
-	// get data value from theme options
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 	$layout = $options['sidebar_layout'];
 	if ( 'no-sidebar-full-width' == $layout ) {
 		$imagesize = "featured-slider-larger";
@@ -39,8 +37,7 @@
 		</header><!-- .entry-header -->
 
 		 <?php
-			global $catchevolution_options_settings;
-    		$options = $catchevolution_options_settings;
+    		$options = catchevolution_get_options();
 			$current_content_layout = $options['content_layout'];
 			$catchevolution_excerpt = get_the_excerpt();
 		if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -63,8 +60,6 @@
 		<?php else : ?>
 		<div class="entry-content">
 			<?php
-			global $catchevolution_options_settings;
-			$options = $catchevolution_options_settings;
 			$more_tag_text = $options['more_tag_text'];
 			the_content( $more_tag_text ); ?>
 			<?php wp_link_pages( array(

@@ -66,8 +66,7 @@ if ( ! function_exists( 'catchevolution_header_menu' ) ) :
  */
 function catchevolution_header_menu() {
     //Getting Ready to load options data
-    global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
     $header_menu = $options['disable_header_menu'];
 
     //Check Disable Primary and has Secondary menu
@@ -159,8 +158,7 @@ if ( ! function_exists( 'catchevolution_header_top_menu' ) ) :
  */
 function catchevolution_header_top_menu() {
     // Getting data from Theme Options
-    global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 
     $classes = 'full-menu';
     $headerimage = '';
@@ -206,8 +204,7 @@ if ( ! function_exists( 'catchevolution_footer_menu' ) ) :
 function catchevolution_footer_menu() {
     if ( has_nav_menu( 'footer' ) ) {
         // Check is footer menu is enable or not
-        global $catchevolution_options_settings;
-        $options = $catchevolution_options_settings;
+        $options = catchevolution_get_options();
 
         $menuclass = "mobile-disable";
 

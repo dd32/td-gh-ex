@@ -57,9 +57,8 @@ if ( ! function_exists( 'catchevolution_header_style' ) ) :
  * @since Catch Evolution 1.0
  */
 function catchevolution_header_style() {
-	global $catchevolution_options_settings, $catchevolution_options_defaults;
-    $options = $catchevolution_options_settings;
-	$defaults = $catchevolution_options_defaults;
+    $options = catchevolution_get_options();
+	$defaults = catchevolution_get_defaults();
 
 	$text_color = get_header_textcolor();
 
@@ -101,9 +100,8 @@ if ( ! function_exists( 'catchevolution_admin_header_style' ) ) :
  * @since Catch Evolution 1.0
  */
 function catchevolution_admin_header_style() {
-	global $catchevolution_options_settings, $catchevolution_options_defaults;
-    $options = $catchevolution_options_settings;
-	$defaults = $catchevolution_options_defaults;
+    $options = catchevolution_get_options();
+	$defaults = catchevolution_get_defaults();
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -198,9 +196,8 @@ function catchevolution_logo() {
 	delete_transient( 'catchevolution_logo' );
 
 	// Getting data from Theme Options
-	global $catchevolution_options_settings, $catchevolution_options_defaults;
-    $options = $catchevolution_options_settings;
-	$defaults = $catchevolution_options_defaults;
+    $options = catchevolution_get_options();
+	$defaults = catchevolution_get_defaults();
 	$sitedetails = $options['site_title_above'];
 	$text_color = get_header_textcolor();
 	$seperatelogo = $options['seperate_logo'];
@@ -215,8 +212,8 @@ function catchevolution_logo() {
 		echo '<!-- refreshing transient cache -->';
 
 		// Getting data from Theme Options
-		global $catchevolution_options_settings;
-		$options      = $catchevolution_options_settings;
+	    $options = catchevolution_get_options();
+		$defaults = catchevolution_get_defaults();
 		$sitedetails  = $options['site_title_above'];
 		$seperatelogo = $options['seperate_logo'];
 		$removetitle  = $options['remove_site_title'];
@@ -298,8 +295,8 @@ if ( ! function_exists( 'catchevolution_site_details' ) ) :
  */
 function catchevolution_site_details() {
 	// Getting data from Theme Options
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
+	$defaults = catchevolution_get_defaults();
 	$removetitle = $options['remove_site_title'];
 	$removedesc = $options['remove_site_description'];
 	$seperatelogo = $options['seperate_logo'];
@@ -340,8 +337,8 @@ if ( ! function_exists( 'catchevolution_headerdetails' ) ) :
 function catchevolution_headerdetails() {
 
 	// Getting data from Theme Options
-	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
+	$defaults = catchevolution_get_defaults();
 	$sitedetails = $options['site_title_above'];
 
 	echo '<div id="logo-wrap" class="clearfix">';

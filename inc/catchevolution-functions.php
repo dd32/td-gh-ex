@@ -7,8 +7,8 @@
  * hooks action wp_enqueue_scripts
  */
 function catchevolution_scripts_method() {
-	global $post, $wp_query, $catchevolution_options_settings;
-   	$options = $catchevolution_options_settings;
+	    global $post, $wp_query;
+   	$options = catchevolution_get_options();
 
 	// Get value from Theme Options panel
 	$enableslider = $options['enable_slider'];
@@ -108,8 +108,7 @@ add_filter( 'wp_head', 'catchevolution_responsive', 1 );
  * @since Catch Evolution 1.0
  */
 function catchevolution_enqueue_color_scheme() {
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 	$color_scheme = $options['color_scheme'];
 
 	if ( 'dark' == $color_scheme )
@@ -128,14 +127,10 @@ add_action( 'wp_enqueue_scripts', 'catchevolution_enqueue_color_scheme' );
 function catchevolution_inline_css() {
 	//delete_transient( 'catchevolution_inline_css' );
 
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 
 	if ( ( !$output = get_transient( 'catchevolution_inline_css' ) ) && ( !empty( $options['disable_header'] ) || !empty( $options['custom_css'] ) ) ) {
 		echo '<!-- refreshing cache -->' . "\n";
-
-		global $catchevolution_options_settings, $catchevolution_options_defaults;
-		$options = $catchevolution_options_settings;
 
 		$output = '<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n";
 		$output	.= '<style type="text/css" media="screen">' . "\n";
@@ -166,11 +161,10 @@ add_action('wp_head', 'catchevolution_inline_css');
  * function tied to the excerpt_length filter hook.
  */
 function catchevolution_excerpt_length( $length ) {
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+	$options = catchevolution_get_options();
 
 	if ( empty( $options['excerpt_length'] ) )
-		$options = catchevolution_get_default_theme_options();
+		$options = catchevolution_get_defaults();
 
 	$length = $options['excerpt_length'];
 	return $length;
@@ -182,8 +176,7 @@ add_filter( 'excerpt_length', 'catchevolution_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function catchevolution_continue_reading_link() {
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 	$more_tag_text = $options['more_tag_text'];
 
 	return ' <a class="more-link" href="'. esc_url( get_permalink() ) . '">' . $more_tag_text . '</a>';
@@ -509,8 +502,7 @@ add_action( 'admin_head-edit.php', 'catchevolution_posts_id_column_css' );
 
 function catchevolution_pass_slider_value() {
 
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 
 	$transition_effect = $options['transition_effect'];
 
@@ -545,8 +537,7 @@ if ( ! function_exists( 'catchevolution_sliders' ) ) :
  */
 function catchevolution_sliders() {
 
-	global $post, $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
+    $options = catchevolution_get_options();
 	$postperpage = $options['slider_qty'];
 	$layout = $options['sidebar_layout'];
 
@@ -644,8 +635,8 @@ if ( ! function_exists( 'catchevolution_slider_display' ) ) :
  * Display slider
  */
 function catchevolution_slider_display() {
-	global $post, $wp_query, $catchevolution_options_settings;
-   	$options = $catchevolution_options_settings;
+	global $post, $wp_query;
+   	$options = catchevolution_get_options();
 	$enableslider = $options['enable_slider'];
 	$featuredslider = $options['featured_slider'];
 
@@ -680,8 +671,8 @@ add_action( 'catchevolution_content', 'catchevolution_slider_display', 10 );
  */
 function catchevolution_alter_home( $query ){
 	if ( $query->is_main_query() && $query->is_home() ) {
-		global $post, $catchevolution_options_settings;
-	    $options = $catchevolution_options_settings;
+
+	    $options = catchevolution_get_options();
 		$cats = $options['front_page_category'];
 
 	    if ( $options['exclude_slider_post'] != "0" && !empty( $options['featured_slider'] ) ) {
@@ -738,9 +729,8 @@ add_filter( 'comment_form_default_fields', 'catchevolution_comment_form_fields' 
  * Redirect WordPress Feeds To FeedBurner
  */
 function catchevolution_rss_redirect() {
-	global $catchevolution_options_settings;
-    $options = $catchevolution_options_settings;
 
+    $options = catchevolution_get_options();
 
     if ($options['feed_url']) {
 		$url = 'Location: '.$options['feed_url'];
@@ -784,8 +774,7 @@ function catchevolution_social_networks() {
 	//delete_transient( 'catchevolution_social_networks' );
 
 	// get the data value from theme options
-	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;
+	$options = catchevolution_get_options();
 
     $elements = array();
 
@@ -966,8 +955,7 @@ endif; //catchevolution_social_networks
  *
  */
 function catchevolution_footer_social() {
-	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;
+	$options = catchevolution_get_options();
 
 	if ( !empty( $options['disable_footer_social'] ) ) :
 		return catchevolution_social_networks();
@@ -988,8 +976,7 @@ function catchevolution_social_search() {
 	//delete_transient( 'catchevolution_social_search' );
 
 	// get the data value from theme options
-	global $catchevolution_options_settings;
-	$options = $catchevolution_options_settings;
+	$options = catchevolution_get_options();
 
     $elements = array();
 
@@ -1181,8 +1168,7 @@ function catchevolution_site_verification() {
 	if ( ( !$catchevolution_site_verification = get_transient( 'catchevolution_site_verification' ) ) )  {
 
 		// get the data value from theme options
-		global $catchevolution_options_settings;
-		$options = $catchevolution_options_settings;
+		$options = catchevolution_get_options();
 		echo '<!-- refreshing cache -->';
 
 		$catchevolution_site_verification = '';
@@ -1213,8 +1199,7 @@ function catchevolution_footercode() {
 	if ( ( !$catchevolution_footercode = get_transient( 'catchevolution_footercode' ) ) ) {
 
 		// get the data value from theme options
-		global $catchevolution_options_settings;
-   	 	$options = $catchevolution_options_settings;
+   	 	$options = catchevolution_get_options();
 		echo '<!-- refreshing cache -->';
 
 		//site stats, analytics header code

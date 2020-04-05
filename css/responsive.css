@@ -282,7 +282,7 @@ and (orientation : landscape) {
 	}
 	.one-column.no-sidebar .site,
 	.one-column.no-sidebar #fixed-header-top {
-		width: 754px;
+		max-width: 754px;
 	}
 	.one-column.no-sidebar #header-menu .wrapper,
 	.one-column.no-sidebar #access-footer .wrapper {

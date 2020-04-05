@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
 Requires at least: 4.8
-Tested up to: 5.1
-Stable tag: 3.0.6
+Tested up to: 5.5
+Stable tag: 3.0.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -64,6 +64,12 @@ There are 4 Menus registered in this theme. Fixed Header Top, Primary, Secondary
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 3.0.7 (Released: April 05, 2020) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Responsive issue for one column layout
+* Updated: Reset checkboxes to buttons
+
 = 3.0.6 (Released: February 22, 2019) =
 * Updated: Header image slider size from 1190px by 500px to 1920px by 480px to match with header image size
 
