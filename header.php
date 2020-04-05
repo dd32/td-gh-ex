@@ -11,10 +11,12 @@
     <div id="page">
 
         <header id="header">
+			
             <div class="searchform header-search">
                 <!-- Search -->
                 <?php get_search_form(); ?>
             </div>
+			
             <div class="blog-top">
                 <?php if (is_home()) { ?>
                 <h1>
@@ -29,6 +31,12 @@
                     <?php bloginfo('description'); ?>
                 </div>
             </div>
+			
+			 <div class="searchform header-search-mobile">
+                <!-- Search -->
+                <?php get_search_form(); ?>
+            </div>
+			
         </header>
 
         <nav id="menu-header">

@@ -1,8 +1,8 @@
 /*
 Theme Name: QuickPress
-Theme URI: https://www.quickonlinetips.com/projects/quickpress-wordpress-theme/
+Theme URI: https://www.quickonlinetips.com/archives/quickpress-wordpress-theme/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.8.11
+Version: 1.8.12
 Author: QuickOnlineTips
 Author URI: https://www.quickonlinetips.com/
 Tags: two-columns, three-columns, right-sidebar, threaded-comments, sticky-post, custom-background
@@ -18,7 +18,7 @@ QuickPress is distributed under the terms of the GNU GPL
 ------------------------------------- */
 
 body {
-    font-size: 75%;
+    font-size: 80%;
     font-family: Arial, Sans-Serif;
     background: #EDE8E2;
     color: #333;
@@ -183,7 +183,7 @@ cite {
 
 .commentlist li .avatar {
     float: left;
-    padding: 0 7px 0 0;
+    padding: 0 12px 0 0;
 }
 
 .commentlist cite,
@@ -306,7 +306,7 @@ body {
 }
 
 #header {
-    padding: 15px 30px;
+    padding: 25px 30px;
 }
 
 #header a {
@@ -431,7 +431,7 @@ h2.pagetitle {
 }
 
 #sidebar h4 {
-    margin: 10px 0 5px 0;
+    margin: 20px 0 5px 0;
     padding: 3px;
     color: #C32364;
     border-bottom: 1px solid #C32364;
@@ -458,7 +458,7 @@ h3.comments {
     font-weight: bold;
     margin: 0 auto 15px;
     overflow: hidden;
-    padding: 0 10px;
+    padding: 0 20px;
     text-transform: uppercase;
     color: #333;
     background: #D1E5EE;
@@ -604,7 +604,12 @@ ol li,
 
 .header-search {
     float: right;
+	
 }
+.header-search-mobile {
+		display:none;
+    }
+
 
 input {
     border-radius: 5px;
@@ -614,9 +619,10 @@ input {
 
 #searchform #s {
     border: 1px solid #999;
-    padding: 5px;
-    margin: 15px 0;
-	width: 200px;
+    padding: 7px;
+    margin: 15px 0; 
+    min-width: 200px;
+    max-width: 90%;
 }
 
 #searchsubmit {
@@ -625,7 +631,7 @@ input {
     border: 1px solid #C32364;
     color: #fff;
     font-weight: bold;
-    padding: 5px;
+    padding: 7px;
     text-transform: uppercase;
 }
 
@@ -685,6 +691,9 @@ select {
 
 /* Begin Comments
 ------------------------------------- */
+.comments {
+    clear: both;
+}
 
 .alt {
     margin: 0;
@@ -839,6 +848,12 @@ ol.commentlist li ul.children li.depth-4 {
     margin: 0 0 .25em .25em;
 }
 
+ol.commentlist li ul.children li.depth-5 {
+    list-style: none;
+    border-left: 1px solid #ccc;
+    margin: 0 0 .25em .25em;
+}
+
 .commentlist table td {
     background: #FFF;
     border: 1px solid #CCC;
@@ -964,7 +979,7 @@ a img {
     display: block;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     font-weight: bold;
     font-size: 1em;
 }
@@ -1108,7 +1123,11 @@ div.aligncenter {
 
 @media screen and (max-width: 600px) {
     .header-search {
-        float: none;
-        display: block;
+        display:none;
     }
+	.header-search-mobile {
+        float: none; 
+		display:block;
+		margin: 5px 0;
+    } 
 }

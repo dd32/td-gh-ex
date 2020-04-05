@@ -79,7 +79,7 @@ function quickpress_excerpt_more( $more ) {
 // credits
 function quickpress_credits() {
     echo '<div class="center">
-	<a href="https://wordpress.org/themes/quickpress/" target="_blank" rel="nofollow">QuickPress Theme</a> &bull; Powered by WordPress
+	<a href="https://wordpress.org/themes/quickpress/" target="_blank" rel="nofollow noopener noreferrer">QuickPress Theme</a> &bull; Powered by WordPress
 	</div>';
 	}
 	add_action('wp_footer', 'quickpress_credits');
@@ -97,7 +97,7 @@ function quickpress_credits() {
 	wp_enqueue_style( 'quickpress', 
 					 get_stylesheet_uri(),
 					 array(), 
-			         '1.8.11'
+			         '1.8.12'
 					);
 		
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){

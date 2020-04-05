@@ -7,9 +7,7 @@
                 <li>
                     <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
                     <?php dynamic_sidebar( 'sidebar-1' ); ?>
-					    <?php else : ?>
-        				<p class="emptybox">Add Widgets Here</p>
-					    	
+					    <?php else : ?> 					    	
                     <?php endif; ?>
                 </li>
             </ul>
