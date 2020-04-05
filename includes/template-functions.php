@@ -952,7 +952,7 @@ if ( ! function_exists( 'bahotel_l_wp_nav_menu_primary_items' ) ):
     function bahotel_l_wp_nav_menu_primary_items($items, $args) {
 
         if ( $args->theme_location == 'primary' ){
-            $items .= '<div class="mobile-menu-close text-center"><a class="mobile-menu-close-link" href="#" tabindex="0"><i class="far fa-times-circle"></i></a></div>';
+            $items .= '<div class="mobile-menu-close text-center"><a class="mobile-menu-close-link" href="#" tabindex="0"><span class="eleganticon icon_close_alt2"></span></a></div>';
         }
 
         return $items;

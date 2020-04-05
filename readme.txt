@@ -1,10 +1,10 @@
 === BA Hotel light ===
 Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 5.6
-Version: 1.0.13
-Stable tag: 1.0.13
+Version: 1.0.14
+Stable tag: 1.0.14
 License: GNU GPL v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -39,6 +39,10 @@ License: CC0 1.0 Universal (CC0 1.0)
 Source: https://stocksnap.io/photo/VIWIBCR4L9
 
 == Changelog ==
+
+= 1.0.14 =
+* Fixed issue "the close button doesn't show in the mobile menu"
+* Fixed issue "the site title is hidden when the theme is activate at beginning"
 
 = 1.0.13 =
 * Added license for tgm plugin activation

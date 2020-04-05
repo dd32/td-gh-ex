@@ -16,7 +16,7 @@
 				<?php $image = wp_get_attachment_image_src( $custom_logo_id, 'full' ); ?>
 				<img class="site-logo" src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_bloginfo( 'name' )); ?>" />
 			<?php endif;
-			    if ( get_theme_mod('header_text') ) : ?>
+			    if ( get_theme_mod('header_text', true) ) : ?>
                 <div class="brand_text_wrapper">
 				   <h1><?php echo esc_html(get_bloginfo( 'name' )); ?></h1>
                     <?php if ( $tagline = get_bloginfo('description') ) : ?>
