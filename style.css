@@ -1,11 +1,11 @@
 /*
 Theme Name: QuickPic
-Theme URI: https://www.quickonlinetips/projects/quickpic-wordpress-theme/
+Theme URI: https://www.quickonlinetips.com/archives/quickpic-wordpress-theme/
 Description: 1-column, lightweight, widget ready, fast loading, SEO optimized, easy to customize theme, useful for photoblogging.
-Version: 1.5.7
+Version: 1.5.8
 Author: QuickOnlineTips
 Author URI: https://www.quickonlinetips.com/
-Tags: one-column, threaded-comments, sticky-post, custom-background
+Tags: one-column, threaded-comments, sticky-post, custom-background, footer-widgets
 Text Domain: quickpic
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,10 +18,10 @@ QuickPic is distributed under the terms of the GNU GPL
 ------------------------------------- */
 
 body {
-    font-size: 75%;
+    font-size: 80%;
     font-family: arial, sans-serif;
     background: #444;
-    color: #000;
+    color: #333;
 }
 
 #navbar {
@@ -279,7 +279,6 @@ a:hover {
     color: #DDD;
     font-weight: bold;
     text-decoration: none;
-    text-shadow: black 0.1em 0.1em;
 }
 
 #bottombox a:hover {
@@ -299,7 +298,7 @@ body {
     background-color: #fff;
     margin: 20px auto 20px auto;
     padding: 0;
-    width: 650px;
+    width: 740px;
     border: 20px #333 solid;
     border-radius: 15px;
     -moz-border-radius: 15px;
@@ -321,9 +320,9 @@ body {
 }
 
 .narrowcolumn {
-    padding: 0 0 20px 0px;
+    padding: 10px 0 20px 0px;
     margin: 30px auto;
-    width: 540px;
+    width: 630px;
     background: #fff;
 }
 
@@ -354,7 +353,7 @@ body {
 
 #footer {
     font-family: Arial, Helvetica, Sans-Serif;
-    padding: 0;
+    padding: 10px;
     color: #f3f3f3; 
     line-height: 1.5em;
     margin: 0 auto;
@@ -373,9 +372,8 @@ body {
 
 #footer p {
     margin: 0 0;
-    padding: 10px 0;
-    text-align: center;
-    line-height: 2em;
+    padding: 5px 0;
+    text-align: center; 
 }
 
 
@@ -424,11 +422,11 @@ h3.comments {
 
 #menu-header {
     clear: both;
-    font-size: 14px;
+    font-size: 1.1em;
     line-height: 1.5em;
     font-weight: bold;
     margin: 0 auto 15px auto;
-    padding: 0px 10px;
+    padding: 0px 20px;
     overflow: hidden;
     width: auto;
     text-transform: uppercase;
@@ -584,7 +582,7 @@ select {
 
 #searchform #s {
     width: 70%;
-    padding: 2px;
+    padding: 6px;
     margin: 15px 0;
     background: #f3f3f3;
     border: 1px solid #999;
@@ -596,9 +594,9 @@ select {
     background: #000;
     color: #fff;
     font-weight: bold;
-    padding: 7px;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 .screen-reader-text {
@@ -620,19 +618,21 @@ select {
 
 #commentform #submit {
     background: #005500;
-    padding: 10px;
+    padding: 6px;
     font-size: 0.9em;
     color: #fff;
     margin: 0;
-    border: 0px;
-    text-transform: uppercase;
-    border-radius: 8px;
-    -moz-border-radius: 8px;
+     border: 0px; 
+    border-radius: 5px;
+    -moz-border-radius: 5px;
 }
 
 
 /* Begin Comments
 ------------------------------------- */
+.comments {
+	clear:both;
+}
 
 .alt {
     margin: 0;
@@ -673,7 +673,7 @@ select {
 
 img.avatar {
     float: left;
-    margin: 0;
+    margin: 0 10px 0 0;
     padding: 0 4px 0 0;
     vertical-align: middle;
 }
@@ -781,6 +781,12 @@ ol.commentlist li ul.children li.depth-4 {
     margin: 0 0 .25em .25em;
 }
 
+ol.commentlist li ul.children li.depth-5 {
+    list-style: none;
+    border-left: 1px solid #ccc;
+    margin: 0 0 .25em .25em;
+}
+
 .commentlist table td {
     background: #FFF;
     border: 1px solid #CCC;
@@ -812,7 +818,7 @@ dd {
 
 #bottombox {
     font-family: Arial, Helvetica, Sans-Serif;
-    padding: 10px;
+    padding: 20px;
     margin: 15px 0 0 0;
     background: #005500;
     color: #ddd;
@@ -822,10 +828,10 @@ dd {
 
 #adbox {
     text-align: left;
-    padding: 5px;
+    padding: 10px 5px;
     background: #333;
-    margin: 15px 0 15px 0;
-    text-align: center;
+    text-align: center; 
+    border-radius: 5px;
 }
 
 #boxes {
@@ -839,17 +845,16 @@ dd {
     border: 0px solid #333;
     overflow: hidden;
     float: left;
-    width: 400px;
+    width: 425px;
     background: #005500;
 }
 
 #box2 {
     padding: 5px 5px 5px 10px;
-    margin: 5px;
-    border-left: 1px dotted #333;
+    margin: 5px; 
     overflow: hidden;
     float: right;
-    width: 180px;
+    width: 205px;
     background: #005500;
 }
 
@@ -915,8 +920,8 @@ a img {
     display: block;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 60px;
-    font-size: 1em;
+    margin-bottom: 10px;
+	padding: 10px 0;
 }
 
 .mainnav a {

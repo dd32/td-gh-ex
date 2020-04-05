@@ -71,7 +71,7 @@ function quickpic_excerpt_more( $more ) {
 // credits
 function quickpic_credits() {
     echo '<div class="center">
-	<a href="https://wordpress.org/themes/quickpic/" target="_blank" rel="nofollow">QuickPic Theme</a> &bull; Powered by WordPress 
+	<a href="https://wordpress.org/themes/quickpic/" target="_blank" rel="nofollow  noopener noreferrer">QuickPic Theme</a> &bull; Powered by WordPress 
 	</div>';
 	}
 	add_action('wp_footer', 'quickpic_credits');
@@ -89,7 +89,7 @@ function quickpic_credits() {
 			wp_enqueue_style( 'quickpic', 
 					 get_stylesheet_uri(),
 					 array(), 
-			         '1.5.7'
+			         '1.5.8'
 					);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
