@@ -1,7 +1,7 @@
 === QuickChic Theme ===
 
 Theme Name: QuickChic
-Theme URI: https://www.quickonlinetips.com/projects/quickchic-wordpress-theme/
+Theme URI: https://www.quickonlinetips.com/archives/quickchic-wordpress-theme/
 Description: 2-columns clean, lightweight, minimalistic, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
 
 Author: QuickOnlineTips

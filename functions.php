@@ -58,12 +58,11 @@ function quickchic_excerpt_more( $more ) {
 // credits
 function quickchic_credits() {
     echo '<p class="center">
-	<a href="https://wordpress.org/themes/quickchic/" target="_blank" rel="nofollow">QuickChic Theme</a> &bull; Powered by WordPress
+	<a href="https://wordpress.org/themes/quickchic/" target="_blank" rel="nofollow noopener noreferrer">QuickChic Theme</a> &bull; Powered by WordPress
 	</p>';
 	}
 	add_action('wp_footer', 'quickchic_credits');
-
-
+ 
 // load javascript
 	function quickchic_scripts() {
 
@@ -76,7 +75,7 @@ function quickchic_credits() {
 		wp_enqueue_style( 'quickchic', 
 					 get_stylesheet_uri(),
 					 array(), 
-			         '1.5.7'
+			         '1.5.8'
 					);
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){

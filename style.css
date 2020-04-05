@@ -1,8 +1,8 @@
 /*
 Theme Name: QuickChic
-Theme URI: https://www.quickonlinetips.com/projects/quickchic-wordpress-theme/
+Theme URI: https://www.quickonlinetips.com/archives/quickchic-wordpress-theme/
 Description: 2-columns clean, lightweight, minimalistic, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.5.7
+Version: 1.5.8
 Author: QuickOnlineTips
 Author URI: https://www.quickonlinetips.com/
 Tags: two-columns, right-sidebar, threaded-comments, sticky-post, custom-background
@@ -19,7 +19,7 @@ QuickChic is distributed under the terms of the GNU GPL
 ------------------------------------- */
 
 body {
-    font-size: 75%;
+    font-size: 80%;
     font-family: arial, sans serif;
     background: #fff;
     color: #333;
@@ -241,8 +241,8 @@ pre {
 }
 
 code {
-    font: 1.1em 'Courier New', Courier, Fixed;
-    color: #666;
+    font: 1em 'Courier New', Courier, Fixed;
+    color: #333;
     padding: 0 2px;
     background: #fff;
     line-height: 1.5em;
@@ -301,7 +301,7 @@ body {
 
 #header {
     margin: 0 0 15px;
-    padding: 5px;
+    padding: 5px 5px 10px;
 }
 
 #header a {
@@ -317,7 +317,7 @@ body {
 .narrowcolumn {
     float: left;
     padding: 0 0 20px 20px;
-    margin: 0px 0 0;
+    margin: 0 0 20px;
     width: 540px;
     background: #fff;
 }
@@ -352,7 +352,7 @@ body {
     margin: 20px auto 10px auto;
     width: 100%;
     clear: both;
-    border-top: 1px dotted #C32364;
+    border-top: 2px dotted #C32364;
 }
 
 #footer p {
@@ -385,7 +385,7 @@ h2.pagetitle {
 }
 
 #sidebar h4 {
-    margin: 25px 0 0;
+    margin: 35px 0 0;
     padding: 0;
 }
 
@@ -517,18 +517,16 @@ ol li,
 ------------------------------------- */
 
 #searchform {
-    margin: 5px 0;
+    margin: 25px 0 !important;
     padding: 5px 3px;
     text-align: left;
 }
 
-#searchform input {
-    border: 1px solid #CCC;
+#searchform input { 
 }
 
-#searchform #s {
-    width: 200px;
-    padding: 2px;
+#searchform #s { 
+    padding: 4px;
 }
 
 #searchsubmit {
@@ -536,8 +534,7 @@ ol li,
     background: #C32364;
     color: #fff;
     padding: 4px 7px;
-    border-radius: 5px;
-    text-transform: uppercase;
+    border-radius: 5px; 
     -moz-border-radius: 5px;
 }
 
@@ -585,6 +582,9 @@ select {
 
 /* Begin Comments
 ------------------------------------- */
+.comments {
+    clear: both;
+}
 
 .alt {
     margin: 0;
@@ -625,7 +625,7 @@ select {
 
 img.avatar {
     float: left;
-    margin: 0;
+    margin: 0 10px 0 0;
     padding: 0 4px 0 0;
     vertical-align: middle;
 }
@@ -728,6 +728,12 @@ ol.commentlist li ul.children li.depth-3 {
 }
 
 ol.commentlist li ul.children li.depth-4 {
+    list-style: none;
+    border-left: 1px solid #ccc;
+    margin: 0 0 .25em .25em;
+}
+
+ol.commentlist li ul.children li.depth-5 {
     list-style: none;
     border-left: 1px solid #ccc;
     margin: 0 0 .25em .25em;
@@ -855,7 +861,7 @@ a img {
     display: block;
     text-align: center;
     margin-top: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     font-size: 1em;
 }
 
