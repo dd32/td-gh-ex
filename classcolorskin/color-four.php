@@ -480,7 +480,7 @@ color: #fff;
 /* Accessibility */
 
 input[type="search"]{
-  border: 2px solid #82B541;
+  border: 1px solid #82B541;
 }
 
 input[type="text"]:focus,
@@ -502,7 +502,7 @@ textarea:focus {
 }
 
 input[type="search"]:focus{
-	border: 3px solid #82B541!important;
+	border: 1px solid #82B541!important;
 }
 
 select {
@@ -511,8 +511,8 @@ select {
 
 
 a:focus {
-	outline: 2px solid #82B541;
-	color:#82B541!important
+	outline: 1px solid #82B541;
+	color:#82B541!important;
 }
 
 a:hover, a:active {

@@ -35,12 +35,10 @@
         <p><?php the_content()?></p>
       </div>
         <!-- Image Right -->
-      <div class="col-md-4 at-two-image-right">
+        <div class="col-md-4 at-two-image-right">
         <?php $atomy_image_attributes_twoImage =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),'atomy_card_4')?>
 	       <img src="<?php if ( $atomy_image_attributes_twoImage[0] ) :
-             echo esc_url($atomy_image_attributes_twoImage[0]); else :?>"/>
-              <img src="<?php echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; ?>"/>
-             <?php  endif;?>
+             echo esc_url($atomy_image_attributes_twoImage[0]);  endif ?>"/>
       </div>
    </div>
    <?php

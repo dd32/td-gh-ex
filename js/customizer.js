@@ -549,6 +549,13 @@ wp.customize('at_color_parallax_text', function(control) {
 	});
 });
 
+// Title Parallax
+wp.customize( 'at_title_parallax', function( value ) {
+	value.bind( function( newval ) {
+		$( '.at-text-parallax h1' ).html( newval );
+	} );
+} );
+
 // Title Call-to-action button Static
 wp.customize( 'at_title_action_static', function( value ) {
 	value.bind( function( newval ) {
@@ -827,6 +834,20 @@ wp.customize('at_background_color_product', function(control) {
 wp.customize('at_margin_top_site', function(control) {
 	control.bind(function( controlValue ) {
 		$('#page').css('margin-top', controlValue + 'em' );
+	});
+});
+
+// Font Size Menu
+wp.customize('at_font_size_menu', function(control) {
+	control.bind(function( controlValue ) {
+		$('.shop_header_area .navbar .navbar-nav li a').css('font-size', controlValue + 'px' );
+	});
+});
+
+// Padding Menu
+wp.customize('at_padding_menu', function(control) {
+	control.bind(function( controlValue ) {
+		$('.shop_header_area .navbar .navbar-nav li').css('margin-right', controlValue + 'px' );
 	});
 });
 

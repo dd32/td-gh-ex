@@ -172,6 +172,44 @@ array(
 	'priority'   => 30,
 )) );
 
+// Font Size Menu
+$wp_customize->add_setting('at_font_size_menu',
+   array(
+      'default'           => 12,
+      'transport'         => 'postMessage',
+      'sanitize_callback' => 'atomy_sanitize_integer'
+));
+ 
+$wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_font_size_menu',
+   array(
+      'label'       => esc_html__('Font Size Menu (Pixel Unit)','atomy'),
+	  'section'     => 'atomy_menu_setting',
+	  'priority'    => 40,
+      'input_attrs' => array(
+                'min'  => 1, 
+                'max'  => 50, 
+                'step' => 1, 
+),)) );
+
+// Padding Menu
+$wp_customize->add_setting('at_padding_menu',
+   array(
+      'default'           => 14,
+      'transport'         => 'postMessage',
+      'sanitize_callback' => 'atomy_sanitize_integer'
+));
+ 
+$wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_padding_menu',
+   array(
+      'label'       => esc_html__('Padding Menu (Pixel Unit)','atomy'),
+	  'section'     => 'atomy_menu_setting',
+	  'priority'    => 50,
+      'input_attrs' => array(
+                'min'  => 6, 
+                'max'  => 50, 
+                'step' => 1, 
+),)) );
+
 /* Header Image ( Static or Video)
 ========================================================================== */
 
@@ -2127,25 +2165,21 @@ array(
 	'priority'   => 1,
 )) );
 
-// Post 
-$wp_customize->add_setting( 'at_post_parallax',
-array(
-	 'default'           => '',
-	 'sanitize_callback' => 'absint'
+// Primary Image upload
+$wp_customize->add_setting('at_upload_primary_img_parallax',
+	 array(
+	   'capability'        => 'edit_theme_options',
+	   'sanitize_callback' => 'atomy_sanitize_file'	
 ));
-
-$wp_customize->add_control(new Atomy_Dropdown_Posts_Custom_Control($wp_customize,'at_post_parallax',
-array(
-	 'label'       => __('Post', 'atomy' ),
-	 'description' => __('Select Post for Parallax', 'atomy' ),
-	 'section'     => 'atomy_section_parallax',
-	 'priority'       => 2,
-	 'input_attrs' => array(
-			'posts_per_page' => -1,
-			'orderby'        => 'name',
-			'order'          => 'ASC',
-			'post_type'      => 'post',		
-),)));
+  
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'at_upload_primary_img_parallax',
+	  array(
+		'label'       => __('Select Image for Primary Image Parallax','atomy' ),
+		'description' => __('Upload Image','atomy' ),
+		'section'     => 'atomy_section_parallax',
+		'priority'    => 3,
+		'settings'    => 'at_upload_primary_img_parallax',
+)));
 
 // Height Image Parallax	
 $wp_customize->add_setting('at_height_parallax_image',
@@ -2276,6 +2310,23 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_bor
 	   'max'  => 50, 
 	   'step' => 1, 
 ),)) );
+
+// Title Text 
+$wp_customize->add_setting('at_title_parallax',
+   array(
+	  'default'           => __('Parallax','atomy'),
+	  'capability'        => 'edit_theme_options',
+      'transport'         => 'postMessage',
+      'sanitize_callback' => 'wp_filter_nohtml_kses'
+));
+
+$wp_customize->add_control('at_title_parallax',
+   array(
+	     'type'      => 'textarea',
+         'label'     => __('Title Parallax','atomy'),
+	     'section'   => 'atomy_section_parallax',
+	     'priority'  => 75,
+) );
 
 // Enable/Disable Call-to-action button Parallax
 $wp_customize->add_setting('atomy_enable_button_action_parallax',
@@ -5979,7 +6030,7 @@ array(
  /* Background Color second Banner */
  $wp_customize->add_setting('at_background_color_second_banner_slide',
  array(
-	 'default'           => '#f40101',
+	 'default'           => '#82B541',
 	 'transport'         => 'postMessage',
 	 'sanitize_callback' => 'atomy_sanitize_rgba',
  ));

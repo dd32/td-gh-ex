@@ -462,7 +462,7 @@ function atomy_custom_breadcrumbs() {
 	
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
         if (is_category() || is_single() ){
-            the_category('title_li=');
+            the_category($sep);
         } elseif (is_archive() || is_single()){
             if ( is_day() ) {
                 printf( __( '%s', 'atomy' ), get_the_date() );
@@ -538,6 +538,12 @@ function atomy_register_required_plugins() {
 		array(
 			'name'      => __('Contact Form 7','atomy'),
 			'slug'      => 'contact-form-7',
+			'required'  => false,
+		),
+		// On Click Demo Import
+		array(
+			'name'      => __('One Click Demo Import','atomy'),
+			'slug'      => 'one-click-demo-import',
 			'required'  => false,
 		),
 		// WooCommerce
@@ -669,7 +675,6 @@ function atomy_register_required_plugins() {
 
  require get_template_directory() . '/atomy-admin/atomy-support.php';
  
-
 //Include Admin Style
 function atomy_load_admin_style($hook) {
 	if( $hook == 'appearance_page_atomy_page' ) {
@@ -697,8 +702,116 @@ define('atomy_url_faq_2_support','https://www.denisfranchi.com/community/index.p
 define('atomy_url_faq_3_support','https://www.denisfranchi.com/community/index.php?threads/atomy-customize.17/');// Faq 3 Support
 define('atomy_url_faq_4_support','https://www.denisfranchi.com/community/index.php?threads/image-size.20/');// Faq 4 Support
 define('atomy_url_copyright_theme','https://www.denisfranchi.com/');// Franchi Design Copyright
+define('atomy_url_demos_theme','https://www.denisfranchi.com/atomy-demos/');// Franchi Design Demo   
+define('atomy_url_basic_documentation','https://www.denisfranchi.com/community/index.php?threads/initial-settings-atomy-free.29/');// Basic Documentation    
+define('atomy_review_theme','https://wordpress.org/support/theme/atomy/reviews/');// Review Theme    
 
 
+/* Notice Admin Area
+-------------------------------------------------------- */
 
+add_action( 'admin_enqueue_scripts', 'atomy_add_script' );
+function atomy_add_script() {
+		wp_register_script( 'notice-update',  get_theme_file_uri( '/atomy-admin/js/notice-update.js'),'','1.0', false );
+		wp_enqueue_style( 'atomy-notice-style', get_theme_file_uri( '/atomy-admin/css/notice.css' ), array(), '1.0' );
+		wp_localize_script( 'notice-update', 'notice_params', array(
+			'ajax_url' => get_admin_url() . 'admin-ajax.php', 
+		));
+		
+		wp_enqueue_script(  'notice-update' );
+}
 
+if( get_option( 'atomy_1_dismiss_notice' ) != true ) {
+
+add_action( 'admin_notices', 'atomy_add_dismissible' );
+}
+function atomy_add_dismissible() {
+  ?>
+   <div class='notice notice-success atomy-1-dismiss-notice atomy-class-update is-dismissible'>
+	   <div class="df-logo">
+		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
+	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
+	   <span><?php _e('Franchi Design','atomy')?></span>
+	   </a>
+	   <h2><?php _e('Welcome to Atomy!','atomy')?></h2>
+	   <p><?php _e('Important links to get you started with Atomy','atomy')?></p>
+	  </div>
+	  <div class="container">
+		  <div class="row">
+		  <div class="col-md-4">
+		    <h3><?php _e('Get Started','atomy')?></h3>
+		    <button class="at-button-dem"><a target="_blank" href="<?php echo esc_url(atomy_url_basic_documentation);?>"><?php _e('Learn Basics','atomy')?></a></button>
+		  </div>
+		  <div class="col-md-4">
+			<h3><?php _e('Next Steps','atomy')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-media-document"></span><a target="_blank" href="<?php echo esc_url(atomy_url_documentation_theme);?>"><?php _e('Documentation','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-layout"></span><a target="_blank" href="<?php echo esc_url(atomy_url_demos_theme);?>"><?php _e('Starter Demos','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-migrate"></span><a target="_blank" href="<?php echo esc_url(atomy_url_go_pro_theme);?>"><?php _e('Premium Version','atomy')?></a></li>
+			</ul>
+		</div>
+		  <div class="col-md-4">
+		    <h3><?php _e('Further Actions','atomy')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-businessperson"></span><a target="_blank" href="<?php echo esc_url(atomy_url_support_theme);?>"><?php _e('Got theme support question?','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-thumbs-up"></span><a target="_blank" href="<?php echo esc_url(atomy_review_theme);?>"><?php _e('Leave a review','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-admin-appearance"></span><a target="_blank" href="<?php echo esc_url(atomy_url_updates_theme);?>"><?php _e('Changelog','atomy')?></a></li>
+			</ul>
+		  </div>
+         </div>
+		</div>
+    </div>
+  <?php
+}
+
+add_action( 'wp_ajax_atomy_1_dismiss_notice', 'atomy_1_dismiss_notice' );
+function atomy_1_dismiss_notice() {
+update_option( 'atomy_1_dismiss_notice', true );
+}
+
+/*  Demo Import
+========================================================================== */
+
+// Menu and Page
+function atomy_after_import_setup() {
+	// Assign menus to their locations.
+	$menu_1 = get_term_by( 'name', 'Primary', 'nav_menu' );
+	$menu_2 = get_term_by( 'name', 'Language', 'nav_menu' );
+	
+	set_theme_mod( 'nav_menu_locations', array(
+			'menu-1' => $menu_1->term_id, 
+			'menu-2' => $menu_2->term_id,
+		)
+	);
+
+	// Assign front page and posts page (blog page).
+	$front_page_id = get_page_by_title( 'Store' );
+	$blog_page_id  = get_page_by_title( 'Blog' );
+
+	update_option( 'show_on_front', 'page' );
+	update_option( 'page_on_front', $front_page_id->ID );
+	update_option( 'page_for_posts', $blog_page_id->ID );
+
+}
+add_action( 'pt-ocdi/after_import', 'atomy_after_import_setup' );
+
+// Custim Text Plugin
+function atomy_plugin_intro_text( $default_text ) {
+	$default_text .= '<div class="ocdi__intro-text" style="margin-bottom:3em; text-align:center;background-color:#fff;height:100px;padding-top:50px;font-size:20px"><a target="_blank" style="margin-left:10px;text-decoration:none;" href="'.esc_url(atomy_url_demos_theme).'"><span class="dashicons dashicons-download"></span>'.__('Atomy Starter Demos','atomy').'</a><br><p>'.__('*Important! Before importing the demo install all the recommended plugins!','atomy').'</p></div>';
+	
+	return $default_text;
+}
+add_filter( 'pt-ocdi/plugin_intro_text', 'atomy_plugin_intro_text' );
+
+// Custom Title Plugin
+function atomy_plugin_page_setup( $default_settings ) {
+	$default_settings['parent_slug'] = 'themes.php';
+	$default_settings['page_title']  = esc_html__( 'One Click Demo Import' , 'atomy' );
+	$default_settings['menu_title']  = esc_html__( 'ATOMY Import Demo' , 'atomy' );
+	$default_settings['capability']  = 'import';
+	$default_settings['menu_slug']   = 'pt-one-click-demo-import';
+
+	return $default_settings;
+}
+add_filter( 'pt-ocdi/plugin_page_setup', 'atomy_plugin_page_setup' );
 

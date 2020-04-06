@@ -14,7 +14,7 @@ function atomy_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html__('Atomy','atomy');?></h2>
-		  	<span><?php echo esc_html__('V 1.0.8','atomy');?></span>
+		  	<span><?php echo esc_html__('V 1.0.9','atomy');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
@@ -27,11 +27,12 @@ function atomy_page_display() {
 		<button class="tablinks" onclick="atomyopenGuide(event, 'Help')"><?php esc_html_e('Help','atomy'); ?></button>
 		<button class="tablinks" onclick="atomyopenGuide(event, 'Options')"><?php esc_html_e('Pro Version','atomy'); ?></button>
 		<button class="tablinks" onclick="atomyopenGuide(event, 'Changelog')"><a class="at-nav-link" href="<?php echo esc_url(atomy_url_updates_theme); ?>" target="_blank"><?php echo esc_html('Changelog','atomy')?></a></button>
+		<button class="tablinks" onclick="atomyopenGuide(event, 'Starter Demos')"><a class="at-nav-link" href="<?php echo esc_url(atomy_url_demos_theme); ?>" target="_blank"><?php echo esc_html('Starter Demos','atomy')?></a></button>
 	</div>
 	<!-- Tab content -->
 	<!-- Welcome -->
 	<div id="Welcome" class="tabcontent">
-		<h3 class="atomy-welkome-support-title"><?php esc_html_e('Welcome','atomy' ); ?></h3>
+		<h3 class="atomy-welkome-support-title"><?php esc_html_e('Welcome to Atomy!','atomy' ); ?></h3>
 		<p class="atomy-welkome-support"><?php esc_html_e('Thank you for choosing Atomy.','atomy');?><br>
 			<?php esc_html_e('The theme is ready to be used. You can customize everything you want in a few simple clicks directly from the front end.','atomy'); ?><br>
 			<?php esc_html_e('This theme was created to be used with the WooCommerce plugin to fully exploit its potential.','atomy');?><br>
@@ -39,6 +40,31 @@ function atomy_page_display() {
 			<?php esc_html_e('The code of this theme was designed to create a multilingual site in a very simple and fast way.','atomy');?><br>
 			<?php esc_html_e('Only one demo is available in the free version!','atomy')?>
 		  </p>
+		  <div class="container">
+		  <h2><?php _e('Important links to get you started with Atomy','atomy')?></h2>
+		  <div class="row">
+		  <div class="col-md-4">
+		    <h3><?php _e('Get Started','atomy')?></h3>
+		    <button class="at-button-dem"><a target="_blank" href="<?php echo esc_url(atomy_url_basic_documentation);?>"><?php _e('Learn Basics','atomy')?></a></button>
+		  </div>
+		  <div class="col-md-4">
+			<h3><?php _e('Next Steps','atomy')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-media-document"></span><a target="_blank" href="<?php echo esc_url(atomy_url_documentation_theme);?>"><?php _e('Documentation','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-layout"></span><a target="_blank" href="<?php echo esc_url(atomy_url_demos_theme);?>"><?php _e('Starter Demos','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-migrate"></span><a target="_blank" href="<?php echo esc_url(atomy_url_go_pro_theme);?>"><?php _e('Premium Version','atomy')?></a></li>
+			</ul>
+		</div>
+		  <div class="col-md-4">
+		    <h3><?php _e('Further Actions','atomy')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-businessperson"></span><a target="_blank" href="<?php echo esc_url(atomy_url_support_theme);?>"><?php _e('Got theme support question?','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-thumbs-up"></span><a target="_blank" href="<?php echo esc_url(atomy_review_theme);?>"><?php _e('Leave a review','atomy')?></a></li>
+			  <li><span class="dashicons dashicons-admin-appearance"></span><a target="_blank" href="<?php echo esc_url(atomy_url_updates_theme);?>"><?php _e('Changelog','atomy')?></a></li>
+			</ul>
+		  </div>
+         </div>
+		</div>
 	</div>
 	<!-- Help -->
 	<div id="Help" class="tabcontent">
@@ -401,7 +427,7 @@ function atomy_page_display() {
  					</tr>
  					<tr class="compare-row">
 						<td><?php esc_html_e('Demos Included','atomy');?></td>
-						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
+						<td><span><?php esc_html_e('1','atomy');?></span></td>
 						<td><span><?php esc_html_e('4','atomy');?></span></td>
  					</tr>
 						<!-- Shotcode -->

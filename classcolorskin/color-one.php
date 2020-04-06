@@ -483,7 +483,7 @@ color: #fff;
 /* Accessibility */
 
 input[type="search"]{
-  border: 2px solid  #f40101;
+  border: 1px solid  #f40101;
 }
 
 input[type="text"]:focus,
@@ -505,7 +505,7 @@ textarea:focus {
 }
 
 input[type="search"]:focus{
-	border: 3px solid #f40101!important;
+	border: 1px solid #f40101!important;
 }
 
 select {
@@ -514,8 +514,8 @@ select {
 
 
 a:focus {
-	outline: 2px solid #f40101;
-	color:#f40101!important
+	outline: 1px solid #f40101;
+	color:#f40101!important;
 }
 
 a:hover, a:active {

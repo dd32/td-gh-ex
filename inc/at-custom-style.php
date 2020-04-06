@@ -323,6 +323,10 @@ if (false == get_theme_mod('atomy_enable_auto_image_single', true)) : ?>
     border-radius:<?php echo esc_attr(get_theme_mod('at_border_radius_parallax_image',0));?>%;
 }
 
+.at-box-parallax{
+    background-image: url("<?php echo esc_url( get_theme_mod( 'at_upload_primary_img_parallax' ) ); ?>");
+}
+
 </style>
 
 <!-- Sidebar Blog -->
@@ -430,7 +434,7 @@ h2.at_contr_title_category_shop{
 }
 
 .at-banner-slide{
-    background-color:<?php echo esc_attr(get_theme_mod('at_background_color_second_banner_slide','#f40101'))?>;
+    background-color:<?php echo esc_attr(get_theme_mod('at_background_color_second_banner_slide','#82B541'))?>;
 }
 
 .at-banner-slide h2,.at-banner-slide h5,a.at-banner-slide:hover,.at-banner-slide{
@@ -538,6 +542,17 @@ figure.snip1418{
 
 #secondary a:hover{
     color:<?php echo esc_attr(get_theme_mod('at_color_sidebar_blog_a_hover','#ccc'))?>!important ;
+}
+
+
+/* Menu */
+
+.shop_header_area .navbar .navbar-nav li a{
+    font-size:<?php echo esc_attr(get_theme_mod('at_font_size_menu',12))?>px; 
+}
+
+.shop_header_area .navbar .navbar-nav li {
+  margin-right: <?php echo esc_attr(get_theme_mod('at_padding_menu',14))?>px; 
 }
 
 </style>

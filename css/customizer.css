@@ -607,7 +607,7 @@ input[type="number"]:focus {
 
 .customize-control-color .wp-color-result .wp-color-result-text,
 .customize-control-alpha-color .wp-color-result .wp-color-result-text {
-	line-height: 28px;
+	line-height: 22px;
 	border-left: none;
 }
 

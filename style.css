@@ -3,7 +3,7 @@ Theme Name:  Atomy
 Theme URI:   https://www.denisfranchi.com/atomy-baby/demo-atomy/
 Author:      Franchi Design
 Author URI:  https://www.denisfranchi.com/
-Version:     1.0.8
+Version:     1.0.9
 License:     GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: atomy
@@ -326,7 +326,7 @@ textarea {
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	border: 2px solid #82B541;
+	border: 1px solid #82B541;
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -339,7 +339,7 @@ textarea {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px #82B541;
+	box-shadow: 0 0 1px 1px #82B541;
 	clip: auto !important;
 	clip-path: none;
 	color: #82B541;
@@ -1868,14 +1868,9 @@ ul.top_right{
   color: #000;
 }
 
-.shop_header_area .navbar .navbar-nav li {
-  margin-right: 25px;
-}
-
 .shop_header_area .navbar .navbar-nav li a {
   padding: 0px;
   line-height: 70px;
-  font-size: 13px;
   text-transform: uppercase;
   font-weight: bold;
   -webkit-transition: all 400ms linear 0s;
