@@ -8,38 +8,38 @@
  */
 
 // Generate the CSS to be inlined
-$semperfi_customizer_generated_css_modifiers = '';        
+$semper_fi_lite_customizer_generated_css_modifiers = '';        
         
-foreach( $semperfi_customizer_inline_this_css as $semperfi_customizer_option => $semperfi_customizer_values ) {
+foreach( $semper_fi_lite_customizer_inline_this_css as $semper_fi_lite_customizer_option => $semper_fi_lite_customizer_values ) {
 
-    $semperfi_generate_css_count = 1;
+    $semper_fi_lite_generate_css_count = 1;
 
-    while ( $semperfi_generate_css_count <=  count( $semperfi_customizer_values[ 'default_options' ] ) ) {
+    while ( $semper_fi_lite_generate_css_count <=  count( $semper_fi_lite_customizer_values[ 'default_options' ] ) ) {
 
-        $semperfi_customizer_multi_option_retrieved_theme_mod = esc_html( get_theme_mod( $semperfi_customizer_option . '_' . $semperfi_generate_css_count ) );
+        $semper_fi_lite_customizer_multi_option_retrieved_theme_mod = esc_html( get_theme_mod( $semper_fi_lite_customizer_option . '_' . $semper_fi_lite_generate_css_count ) );
 
-        if ( ( $semperfi_customizer_multi_option_retrieved_theme_mod != $semperfi_customizer_values[ 'default_options' ][ $semperfi_generate_css_count ] ) && ( $semperfi_customizer_multi_option_retrieved_theme_mod != '' ) ) {
+        if ( ( $semper_fi_lite_customizer_multi_option_retrieved_theme_mod != $semper_fi_lite_customizer_values[ 'default_options' ][ $semper_fi_lite_generate_css_count ] ) && ( $semper_fi_lite_customizer_multi_option_retrieved_theme_mod != '' ) ) {
 
-            if ( $semperfi_customizer_values[ 'type' ] == 'font' ) {
+            if ( $semper_fi_lite_customizer_values[ 'type' ] == 'font' ) {
 
-                $semperfi_customizer_multi_option_retrieved_theme_mod = preg_replace( '/[^a-zA-Z0-9]+/' , ' ' , $semperfi_customizer_multi_option_retrieved_theme_mod );
+                $semper_fi_lite_customizer_multi_option_retrieved_theme_mod = preg_replace( '/[^a-zA-Z0-9]+/' , ' ' , $semper_fi_lite_customizer_multi_option_retrieved_theme_mod );
 
             }
 
-            $semperfi_css_customizer_selectors = $semperfi_customizer_values[ 'input_attrs' ][ 'css' ];
+            $semper_fi_lite_css_customizer_selectors = $semper_fi_lite_customizer_values[ 'input_attrs' ][ 'css' ];
 
-            $semperfi_customizer_generated_css_modifiers .= str_replace( "$" , $semperfi_customizer_multi_option_retrieved_theme_mod , $semperfi_css_customizer_selectors );
+            $semper_fi_lite_customizer_generated_css_modifiers .= str_replace( "$" , $semper_fi_lite_customizer_multi_option_retrieved_theme_mod , $semper_fi_lite_css_customizer_selectors );
 
-            $semperfi_customizer_generated_css_modifiers = str_replace( "@" , abs( $semperfi_customizer_multi_option_retrieved_theme_mod ) , $semperfi_customizer_generated_css_modifiers );
+            $semper_fi_lite_customizer_generated_css_modifiers = str_replace( "@" , abs( $semper_fi_lite_customizer_multi_option_retrieved_theme_mod ) , $semper_fi_lite_customizer_generated_css_modifiers );
 
-            $semperfi_customizer_generated_css_modifiers .= "; }\n";
+            $semper_fi_lite_customizer_generated_css_modifiers .= "; }\n";
 
         }
 
-        $semperfi_generate_css_count++;
+        $semper_fi_lite_generate_css_count++;
 
     }
 
 }
 
-$semperfi_customizer_generated_css_modifiers = substr( $semperfi_customizer_generated_css_modifiers , 0 , -1 );
+$semper_fi_lite_customizer_generated_css_modifiers = substr( $semper_fi_lite_customizer_generated_css_modifiers , 0 , -1 );

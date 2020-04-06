@@ -16,9 +16,9 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
                     <meta itemprop="url" content="<?php echo the_post_thumbnail_url( '1920x1080' ); ?>">
 
-                    <meta itemprop="width" content="<?php $semperfi_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '850x478' ); $semperfi_featured_image_width = $semperfi_featured_image_data[1]; echo absint( $semperfi_featured_image_width ); ?>">
+                    <meta itemprop="width" content="<?php $semper_fi_lite_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), '850x478' ); $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[1]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
 
-                    <meta itemprop="height" content="<?php $semperfi_featured_image_width = $semperfi_featured_image_data[2]; echo absint( $semperfi_featured_image_width ); ?>">
+                    <meta itemprop="height" content="<?php $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[2]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
                     
                 </div>
 <?php endif; ?>
@@ -26,9 +26,9 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             
             </header>
             
-            <main id="the-article" itemprop="articleBody" style="background-image:url(<?php echo get_theme_mod( 'main_background_img_1' , get_template_directory_uri() . '/inc/single/images/eeeeee-mouse-chocolate-lab-tennis-ball-300x300.jpg' ); ?>);" >
+            <main id="the-article" itemprop="articleBody" style="background-image:url(<?php semper_fi_lite_image( 'main_background_img_1' , '/inc/single/images/eeeeee-mouse-chocolate-lab-tennis-ball-300x300.jpg' , 300 , 300 ); ?>);" >
                 
-                <?php do_action( 'semperfi_content_data' ); ?>
+                <?php do_action( 'semper_fi_lite_content_data' ); ?>
                 
                 <?php the_content(); ?>
 
@@ -36,7 +36,7 @@ if( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             
             </main>
     
-<?php do_action('semperfi-categories-and-tags-single');
+<?php do_action('semper_fi_lite-categories-and-tags-single');
 
 comments_template();
     

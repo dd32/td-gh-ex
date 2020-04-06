@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_blog_customizer_options_array = array(
+$semper_fi_lite_blog_customizer_options_array = array(
 
 
     'blog_background_img' => array(
@@ -10,29 +10,29 @@ $semperfi_blog_customizer_options_array = array(
             1                   => '',  ),
         'input_attrs'       => array(
             'img_size'          => '1920x1080', ),
-        'label'             => __('Image Displayed Before Blog', 'semper-fi-lite'),
-        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 106,
-        'priority'          => 10,
-        'section_title'     => __('Blog', 'semper-fi-lite'),
-        'section_priority'  => 11,
-        'selector'          => 'header#blog-title-and-image .customizer-tite-image',
+        'label'             => __( 'Image Displayed Before Blog - 1920x1080' , 'semper-fi-lite' ),
+        'panel_title'       => __( 'Semper Fi &#8594; Customizer Options', 'semper-fi-lite' ),
+        'panel_priority'    => 1,
+        'priority'          => 9,
+        'section_title'     => __( 'Blog' , 'semper-fi-lite' ),
+        'section_priority'  => 9,
+        'selector'          => 'header#blog-title-and-image .customizer-title-image',
         'type'              => 'img'),
 
 
     'blog_title_text' => array(
         'default_options'  => array(
-            1                   => 'Blog', ),
+            1                   => __( 'Blog' , 'semper-fi-lite' ), ),
         'description'       => array(
             1                   => '', ),
-        'label'             => __('Title of the Blog', 'semper-fi-lite'),
-        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 106,
-        'priority'          => 10,
-        'section_title'     => __('Blog', 'semper-fi-lite'),
-        'section_priority'  => 11,
+        'label'             => __( 'Title of the Blog', 'semper-fi-lite' ),
+        'panel_title'       => __( 'Semper Fi &#8594; Customizer Options' , 'semper-fi-lite' ),
+        'panel_priority'    => 1,
+        'priority'          => 9,
+        'section_title'     => __( 'Blog' , 'semper-fi-lite' ),
+        'section_priority'  => 9,
         'selector'          => 'header#blog-title-and-image h2',
-        'type'              => 'text'),
+        'type'              => 'text' ),
 
 
     'publisher_logo_img' => array(
@@ -42,16 +42,16 @@ $semperfi_blog_customizer_options_array = array(
             1                   => '',  ),
         'input_attrs'       => array(
             'img_size'          => '600x60', ),
-        'label'             => __('Publisher Logo', 'semper-fi-lite'),
-        'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 106,
-        'priority'          => 10,
-        'section_title'     => __('Blog', 'semper-fi-lite'),
-        'section_priority'  => 11,
-        'selector'          => 'header#blog-title-and-image .customizer-tite-image',
-        'type'              => 'img'),
+        'label'             => __( 'Publisher Logo' , 'semper-fi-lite'),
+        'panel_title'       => __( 'Semper Fi &#8594; Customizer Options' , 'semper-fi-lite' ),
+        'panel_priority'    => 1,
+        'priority'          => 9,
+        'section_title'     => __( 'Blog' , 'semper-fi-lite' ),
+        'section_priority'  => 9,
+        'selector'          => 'header#blog-title-and-image .customizer-title-image',
+        'type'              => 'img' ),
 
 
 );
 
-return $semperfi_blog_customizer_options_array;
+return $semper_fi_lite_blog_customizer_options_array;

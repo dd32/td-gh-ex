@@ -8,7 +8,7 @@ if ( !is_paged() ) : while ( have_posts() ) : the_post(); ?>
             
             <header id="title-and-image">
             
-            <?php if (is_customize_preview()) echo '<div class="customizer-tite-image"></div><div class="customizer-tite-image-2"></div><div class="customizer-tite-image-3"></div>'; ?>
+            <?php if (is_customize_preview()) echo '<div class="customizer-title-image"></div><div class="customizer-title-image-2"></div><div class="customizer-title-image-3"></div>'; ?>
 
 <?php if ( has_post_thumbnail() ) : ?>
                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -18,9 +18,9 @@ if ( !is_paged() ) : while ( have_posts() ) : the_post(); ?>
 
                     <meta itemprop="url" content="<?php echo esc_url( the_post_thumbnail_url( '1920x1080' ) ); ?>">
 
-                    <meta itemprop="width" content="<?php $semperfi_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '850x478' ); $semperfi_featured_image_width = $semperfi_featured_image_data[1]; echo absint( $semperfi_featured_image_width ); ?>">
+                    <meta itemprop="width" content="<?php $semper_fi_lite_featured_image_data = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), '850x478' ); $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[1]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
 
-                    <meta itemprop="height" content="<?php $semperfi_featured_image_width = $semperfi_featured_image_data[2]; echo absint( $semperfi_featured_image_width ); ?>">
+                    <meta itemprop="height" content="<?php $semper_fi_lite_featured_image_width = $semper_fi_lite_featured_image_data[2]; echo absint( $semper_fi_lite_featured_image_width ); ?>">
                     
                 </div>
 
@@ -29,11 +29,11 @@ if ( !is_paged() ) : while ( have_posts() ) : the_post(); ?>
             
             </header>
             
-            <main id="the-article" itemprop="articleBody" style="background-image:url(<?php echo esc_url( get_theme_mod( 'main_background_img_1' , get_template_directory_uri() . '/inc/single/images/eeeeee-mouse-chocolate-lab-tennis-ball-300x300.jpg' ) ); ?>);" >
+            <main id="the-article" itemprop="articleBody" style="background-image:url(<?php semper_fi_lite_image( 'main_background_img_1' , '/inc/single/images/eeeeee-mouse-chocolate-lab-tennis-ball-300x300.jpg' , 300 , 300 ); ?>);" >
             
                 <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); endif; elseif ( !function_exists( 'is_cart' ) ) : edit_post_link( __( 'Edit this Post' , 'semper-fi-lite' ) ); endif; ?>
                 
-                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : ?><?php do_action( 'semperfi_content_data' ); ?><?php endif; elseif ( !function_exists( 'is_cart' ) ) : do_action( 'semperfi_content_data' ); endif; ?>
+                <?php if ( function_exists( 'is_cart' ) ) : if ( !is_cart() && !is_checkout() && !is_account_page() ) : ?><?php do_action( 'semper_fi_lite_content_data' ); ?><?php endif; elseif ( !function_exists( 'is_cart' ) ) : do_action( 'semper_fi_lite_content_data' ); endif; ?>
                 
                 <?php the_content(); ?>
 
@@ -41,7 +41,7 @@ if ( !is_paged() ) : while ( have_posts() ) : the_post(); ?>
             
             </main>
             
-<?php do_action( 'semperfi-categories-and-tags-single' );
+<?php do_action( 'semper_fi_lite-categories-and-tags-single' );
 
 comments_template(); ?>
 

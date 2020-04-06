@@ -1,26 +1,101 @@
-=== Theme Name ===
+=== Semper Fi Lite ===
+
+Theme Name: Semper Fi Lite
 Contributors: Schwarttzy
+Version: 109
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 5.6
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Stable tag: 109
+Tags: blog, custom-colors, custom-logo, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, portfolio, theme-options, threaded-comments, translation-ready
+Text Domain: semper-fi-lite
 
 Semper Fi Lite Wordpress Theme written for my personal use and freely shared with everyone else.
 
 
 == Description ==
+
 Semper Fi Lite is a handwritten WordPress theme for blogs, businesses, and can also be used as a powerful e-commerce (Woocommerce) solution. Written without JavaScript, just pure HTML5 and CSS3, Semper Fi Lite is free of any possible scripting conflicts with every WordPress Plugin out there. Fully responsive, with a built-in mobile friendly touch screen menu, adaptive font sizing, Woo Commerce integration, page-specific custom backgrounds, and 4k+ resolution ready. All of Semper Fi Lite's options are organized and controlled with WordPress's powerful Customizer for real-time customization. For support with questions, help, or issues use http://schwarttzy.com/contact-me/ or head over to https://wordpress.org/support/theme/semper-fi-lite/
 
 
-== Frequently Asked Questions ==
+== Copyright ==
 
-= How do I contact the Theme Author? =
+Semper Fi Lite WordPress Theme, Copyright 2020 Schwarttzy
+Semper Fi Lite is distributed under the terms of the GNU GPL
 
-Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or head to https://wordpress.org/support/theme/semper-fi-lite/ to ask on the forums.
+
+== Screenshots ==
+
+1. Main screenshot for the theme
+
+
+== Image Licensing ==
+
+All images in "Semper Fi Lite" are the author "Schwarttzy" and are licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+https://creativecommons.org/licenses/by-sa/4.0/
+
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+
+== Social Media Icon Licensing ==
+
+The font "schwarttzy" is a dirivative work of "Font Awesome" and is licensed under a Creative Commons Attribution 4.0 International License.
+
+https://creativecommons.org/licenses/by/4.0/
+
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Font Awesome Free is free, open source, and GPL friendly. You can use it for
+commercial projects, open source projects, or really almost whatever you want.
+Full Font Awesome Free license: https://fontawesome.com/license/free.
+
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OLF license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
+
+# Attribution
+Attribution is required by MIT, SIL OLF, and CC BY licenses. Downloaded Font
+Awesome Free files already contain embedded comments with sufficient
+attribution, so you shouldn't need to do anything additional when using these
+files normally.
+
+We've kept attribution comments terse, so we ask that you do not actively work
+to remove them from files, especially code. They're a great way for folks to
+learn about Font Awesome.
+
+# Brand Icons
+All brand icons are trademarks of their respective owners. The use of these
+trademarks does not indicate endorsement of the trademark holder by Font
+Awesome, nor vice versa. **Please do not use brand logos for any purpose except
+to represent the company, product, or service to which they refer.**
 
 
 == Changelog ==
+
+= 109 =
+* All prefixes changed from "semperfi" to "semper_fi_lite"
+* Fixed none escaped echo on /categories-and-tags/html.php:53
+* Fixed a bunch of missed Translatable text
+* Found couple of un-sanitized data in /theme-info/html.php
+* Added the copyright to the readme.txt file
+* The "WordPress Plugin readme.txt Validator" required me to add a screenshot section
+* Added information about the copyright information of all the photos
+* Fixed some hidden PHP "Undefined variable" & "Trying to get property of non-object" errors I wasn't aware of
+* Added "Skip Content" to improve the accessablity of the theme
+* Fixed issues where "Background Color" wouldn't work because of the theme's default background overlaying the color
+* Fixed issues with images that were changed from default in customizer wouldn't display upon revisiting
+* Fixed linking icons in Customizer, among some other issues
 
 = 108 =
 * Default publisher logo image in /inc/blog/images/ wasn't named properly, changed it correct naming
@@ -71,6 +146,9 @@ Head to http://schwarttzy.com/contact-me/ send Schwarttzy an email directly, or 
 
 
 == Upgrade Notice ==
+
+= 109 =
+* Fixes for odd configurations, proper licensing for photos and fonts, and some more tweaks. 
 
 = 108 =
 * Fixed issues with default publisher image logo missing and the customizer option missing.

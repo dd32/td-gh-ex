@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_404_customizer_options_array = array(
+$semper_fi_lite_404_customizer_options_array = array(
 
     '404_video' => array(
         'default_options'  => array(
@@ -9,14 +9,14 @@ $semperfi_404_customizer_options_array = array(
             1                   => '', ),
         'label'             => __('Video', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 106,
-        'priority'          => 10,
+        'panel_priority'    => 1,
+        'priority'          => 9,
         'section_title'     => __('404 Error', 'semper-fi-lite'),
-        'section_priority'  => 11,
+        'section_priority'  => 9,
         'selector'          => 'article#square-boxes .square-~ h3',
         'type'              => 'video', ),
 
 
 );
 
-return $semperfi_404_customizer_options_array;
+return $semper_fi_lite_404_customizer_options_array;

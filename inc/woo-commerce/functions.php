@@ -1,9 +1,9 @@
 <?php
 
-function semperfi_woo_commerce() {
+function semper_fi_lite_woo_commerce() {
     
     
-    function semperfi_woo_commerce_html() {
+    function semper_fi_lite_woo_commerce_html() {
     
         if ( !is_shop() ) {
 
@@ -13,35 +13,35 @@ function semperfi_woo_commerce() {
         
     }
 
-    add_action( 'semperfi_woo_commerce_the_content' , 'semperfi_woo_commerce_html' );
+    add_action( 'semper_fi_lite_woo_commerce_the_content' , 'semper_fi_lite_woo_commerce_html' );
             
-    add_action( 'semperfi_woo_commerce_after_header' , 'semperfi_page_css' );
+    add_action( 'semper_fi_lite_woo_commerce_after_header' , 'semper_fi_lite_page_css' );
     
     
-    function semperfi_woo_commerce_css() {
+    function semper_fi_lite_woo_commerce_css() {
         
-        wp_enqueue_style( 'semperfi-woo-commerce' , get_theme_file_uri( '/inc/woo-commerce/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+        wp_enqueue_style( 'semper_fi_lite-woo-commerce' , get_theme_file_uri( '/inc/woo-commerce/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
 
     }
     
-    add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_woo_commerce_css', 9 );
+    add_action( 'semper_fi_lite_woo_commerce_the_header' , 'semper_fi_lite_woo_commerce_css', 9 );
     
     
-    function semperfi_woo_commerce_customizer_setup( $semperfi_customizer_customizer_options_array ) {
+    function semper_fi_lite_woo_commerce_customizer_setup( $semper_fi_lite_customizer_customizer_options_array ) {
         
         require get_parent_theme_file_path( '/inc/woo-commerce/customizer.php' );
         
-        $semperfi_customizer_customizer_options_array = array_merge_recursive( $semperfi_customizer_customizer_options_array , $semperfi_woo_commerce_customizer_options_array );
+        $semper_fi_lite_customizer_customizer_options_array = array_merge_recursive( $semper_fi_lite_customizer_customizer_options_array , $semper_fi_lite_woo_commerce_customizer_options_array );
         
-        return $semperfi_customizer_customizer_options_array;
+        return $semper_fi_lite_customizer_customizer_options_array;
     
     }
     
-    add_filter( 'semperfi_add_to_customizer_options_array' , 'semperfi_woo_commerce_customizer_setup' );
+    add_filter( 'semper_fi_lite_add_to_customizer_options_array' , 'semper_fi_lite_woo_commerce_customizer_setup' );
     
 
     // Remove the WooCommerce Tabs
-    function semperfi_woo_remove_product_tabs( $tabs ) {
+    function semper_fi_lite_woo_remove_product_tabs( $tabs ) {
         
         // Remove the description tab
         unset( $tabs['description'] );
@@ -56,10 +56,10 @@ function semperfi_woo_commerce() {
     
     }
     
-    add_filter( 'woocommerce_product_tabs', 'semperfi_woo_remove_product_tabs', 98 );
+    add_filter( 'woocommerce_product_tabs', 'semper_fi_lite_woo_remove_product_tabs', 98 );
 
     
-    function semperfi_new_loop_shop_per_page( $cols ) {
+    function semper_fi_lite_new_loop_shop_per_page( $cols ) {
 
         // $cols contains the current number of products per page based on the value stored on Options -> Reading
         $cols = 16;
@@ -69,27 +69,27 @@ function semperfi_woo_commerce() {
 
     }
 
-    add_filter( 'loop_shop_per_page', 'semperfi_new_loop_shop_per_page', 20 );
+    add_filter( 'loop_shop_per_page', 'semper_fi_lite_new_loop_shop_per_page', 20 );
 
 
-    function semperfi_override_page_title() {
+    function semper_fi_lite_override_page_title() {
         
         return false;
         
     }
     
-    add_filter('woocommerce_show_page_title', 'semperfi_override_page_title');
+    add_filter('woocommerce_show_page_title', 'semper_fi_lite_override_page_title');
 
 
 
-    function semperfi_woocommerce_support() {
+    function semper_fi_lite_woocommerce_support() {
         
         add_theme_support( 'woocommerce' );
         
     }
     
-    add_action( 'semperfi_woo_commerce_add_to_cart', 'woocommerce_template_loop_add_to_cart' );
-    add_action( 'after_setup_theme', 'semperfi_woocommerce_support' );
+    add_action( 'semper_fi_lite_woo_commerce_add_to_cart', 'woocommerce_template_loop_add_to_cart' );
+    add_action( 'after_setup_theme', 'semper_fi_lite_woocommerce_support' );
     
     // Remove title & price in small discription
     remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
@@ -114,11 +114,11 @@ function semperfi_woo_commerce() {
     
 }
 
-add_action( 'semperfi-functions-hook', 'semperfi_woo_commerce' );
+add_action( 'semper_fi_lite-functions-hook', 'semper_fi_lite_woo_commerce' );
 
 
 //remove customizer inline styles from parent theme as I don't need it.
-function semperfi_remove_storefront_standard_functionality() {
+function semper_fi_lite_remove_storefront_standard_functionality() {
 
 	set_theme_mod('storefront_styles', '');
 	set_theme_mod('storefront_woocommerce_styles', '');  
@@ -127,11 +127,11 @@ function semperfi_remove_storefront_standard_functionality() {
     
 }
 
-add_action( 'init', 'semperfi_remove_storefront_standard_functionality' );
+add_action( 'init', 'semper_fi_lite_remove_storefront_standard_functionality' );
 
 
 // Remove Woocomerce Styles, because I don't need their styles... I wrote this theme
-function semperfi_remove_woocommerce_styles() {
+function semper_fi_lite_remove_woocommerce_styles() {
     
     wp_dequeue_style( 'woocommerce-general' );
     wp_dequeue_style( 'woocommerce-layout' );
@@ -146,23 +146,26 @@ function semperfi_remove_woocommerce_styles() {
     wp_deregister_style( 'wc-gateway-ppec-frontend-cart' );
     wp_deregister_style( 'woocommerce-inline' );
     wp_deregister_style( 'wc-gateway-ppec-frontend-cart' );
+    wp_deregister_style( 'wc-block-style' );
+    wp_deregister_style( 'wc-gateway-ppec-frontend' );
+    wp_deregister_style( 'woocommerce-shipping-debug-viewer-style' );
     
 }
 
-add_action( 'wp_enqueue_scripts' , 'semperfi_remove_woocommerce_styles' );
+add_action( 'wp_enqueue_scripts' , 'semper_fi_lite_remove_woocommerce_styles' );
 
 
 remove_action( 'wp_head', 'wc_gallery_noscript', 1 );
 
 
-function semperfi_woocommerce_add_css_page() {
+function semper_fi_lite_woocommerce_add_css_page() {
     
     if ( is_cart() || is_checkout() || is_woocommerce() ) {
         
-        add_action( 'semperfi_page_after_header' , 'semperfi_woo_commerce_css' );
+        add_action( 'semper_fi_lite_page_after_header' , 'semper_fi_lite_woo_commerce_css' );
         
     }
 
 }
 
-add_action( 'semperfi_page_the_header', 'semperfi_woocommerce_add_css_page' );
+add_action( 'semper_fi_lite_page_the_header', 'semper_fi_lite_woocommerce_add_css_page' );

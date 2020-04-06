@@ -8,30 +8,16 @@
  */
 
 
-// SemperFi image sanitize to the correct dimentions
-function semperfi_sanitize_image( $input , $setting ) {
+// semper_fi_lite image sanitize to the correct dimentions
+function semper_fi_lite_sanitize_image( $input , $setting ) {
     
     $input = esc_url( $input );
     
     if ( $input != $setting->default ) {
-    
-        $attrs = $setting->manager->get_control( $setting->id )->input_attrs;
 
         $extension = pathinfo( $input , PATHINFO_EXTENSION );
     
-        if ( $extension == 'jpg' ) {
-
-            return wp_get_attachment_image_src( attachment_url_to_postid( $input ) , $attrs['img_size'] )[0];
-
-        } elseif ( $extension == 'jpeg' ) {
-
-            return wp_get_attachment_image_src( attachment_url_to_postid( $input ) , $attrs['img_size'] )[0];
-
-        } elseif ( $extension == 'png' ) {
-
-            return wp_get_attachment_image_src( attachment_url_to_postid( $input ) , $attrs['img_size'] )[0];
-
-        } elseif ( $extension == 'gif' ) {
+        if ( $extension == 'jpg' || $extension == 'jpeg' || $extension == 'png' || $extension == 'gif' ) {
 
             return $input;
 
@@ -50,8 +36,8 @@ function semperfi_sanitize_image( $input , $setting ) {
 }
 
 
-// SemperFi select sanitize to only options in the select
-function semperfi_sanitize_select( $input, $setting ) {
+// semper_fi_lite select sanitize to only options in the select
+function semper_fi_lite_sanitize_select( $input, $setting ) {
 
     // Remove all HTML
     $input = wp_filter_nohtml_kses( $input );
@@ -64,8 +50,8 @@ function semperfi_sanitize_select( $input, $setting ) {
 
 }
 
-// SemperFi radio box sanitization
-function semperfi_sanitize_radio( $input, $setting ){
+// semper_fi_lite radio box sanitization
+function semper_fi_lite_sanitize_radio( $input, $setting ){
 
     // Remove all HTML
     $input = wp_filter_nohtml_kses( $input );

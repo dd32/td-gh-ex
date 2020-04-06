@@ -6,7 +6,7 @@
 
                 <a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     
-                    <img itemprop="logo" src="<?php echo esc_url( get_theme_mod( 'nav_main_img_1' , get_template_directory_uri() . '/inc/navigation/images/navigation-semperfi-mousse-chocolate-lab-duck-schwarttzy.png' ) ); ?>" class="nav-logo" />
+                    <img itemprop="logo" src="<?php semper_fi_lite_image( 'nav_main_img_1' , '/inc/navigation/images/navigation-semperfi-mousse-chocolate-lab-duck-schwarttzy-250x250.png' , 350 , 100 ); ?>" class="nav-logo" />
                 
                 </a>
 
@@ -17,7 +17,7 @@
                     <a class="disable-drop-down" href="#hide-menu"><?php _e( 'Close' , 'semper-fi-lite' ); ?><br><?php _e( 'Menu' , 'semper-fi-lite' ); ?></a>
 
                 </div>
-    <?php do_action( 'semperfi_navigation_social_icons' ); ?>
+    <?php do_action( 'semper_fi_lite_navigation_social_icons' ); ?>
 
             </div>
             <?php if ( has_nav_menu( 'touch_menu' ) ) :
@@ -32,15 +32,19 @@
 
             else :
 
-                ?><ul class="navigation">
+                ?>
+            
+            <ul class="navigation">
+                
                 <?php wp_list_pages(array('title_li' => '', 'depth' => '3')); ?>
+                
             </ul><?php endif; ?>
 
+            
             <ul class="navigation-widgets">
-
                 <?php if (!dynamic_sidebar('menu widgets')) : ?><?php endif; ?>
 
-                <li><?php $semperfi_them_info = wp_get_theme(); echo __( 'Good Old Fashioned Hand Written Code by ' , 'semper-fi-lite' ) . '<a href="' . $semperfi_them_info->get( 'AuthorURI' ) . '" title="Eric J Schwarz">' . $semperfi_them_info->get( 'Author' ) . '</a>'; ?></li>
+                <li><?php $semper_fi_lite_them_info = wp_get_theme(); echo __( 'Good Old Fashioned Hand Written Code by ' , 'semper-fi-lite' ) . '<a href="' . $semper_fi_lite_them_info->get( 'AuthorURI' ) . '" title="' . __( 'Eric J Schwarz' , 'semper-fi-lite' ) . '">' . $semper_fi_lite_them_info->get( 'Author' ) . '</a>'; ?></li>
 
             </ul>   
         

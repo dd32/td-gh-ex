@@ -1,6 +1,24 @@
 <?php
 
-$semperfi_woo_commerce_customizer_options_array = array(
+$semper_fi_lite_woo_commerce_customizer_options_array = array(
+
+
+    'woocommerce_store_front_enable' => array(
+        'default_options'  => array(
+            1                   => false, ),
+        'description'       => array(
+            1                   => '', ),
+        'label'             => __('Enable WooCommerce Store Front', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; WooCommerce' , 'semper-fi-lite'),
+        'panel_priority'    => 4,
+        'priority'          => 10,
+        'section_title'     => __('Shop', 'semper-fi-lite'),
+        'section_priority'  => 10,
+        'selector'          => '.store-front:nth-of-type(~) .customizer-store-front h2',
+        'type'              => 'radio',
+        'choices' => array(
+            true             => 'Yes',
+            false            => 'No', ) ),
 
 
     'woocommerce_shop_title' => array(
@@ -9,8 +27,8 @@ $semperfi_woo_commerce_customizer_options_array = array(
         'description'       => array(
             1                   => '', ),
         'label'             => __('Title', 'semper-fi-lite'),
-        'panel_title'       => __('WooCommerce', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_title'       => __('Semper Fi &#8594; WooCommerce', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('Shop', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -35,16 +53,16 @@ $semperfi_woo_commerce_customizer_options_array = array(
             6                   => '', ),
         'input_attrs'       => array(
             'img_size'          => '1920x1080', ),
-        'label'             => __('Image', 'semper-fi-lite'),
-        'panel_title'       => __('WooCommerce', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'label'             => __('Image - 1920x1080', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; WooCommerce', 'semper-fi-lite'),
+        'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Shop', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => '.store-front:nth-of-type(~) .customizer-store-front',
+        'selector'          => '.store-front-number-~ .customizer-store-front',
         'type'              => 'img'),
 
 
 );
 
-return $semperfi_woo_commerce_customizer_options_array;
+return $semper_fi_lite_woo_commerce_customizer_options_array;

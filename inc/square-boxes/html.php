@@ -1,4 +1,5 @@
-<?php if ( absint ( get_theme_mod( 'square_boxes_enable_1' , true ) ) ): ?>
+<?php if ( absint ( get_theme_mod( 'square_boxes_enable_1' , false ) ) ): ?>
+
 
     <article id="square-boxes">
 
@@ -8,7 +9,7 @@
 <?php if ( absint ( get_theme_mod( 'square_boxes_display_1' , true ) ) ) : ?>
         <section class="square-1">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_1' , get_template_directory_uri() . '/inc/square-boxes/images/Chris-Tandem-Skydive-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_1' , '/inc/square-boxes/images/Chris-Tandem-Skydive-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -23,7 +24,7 @@
 if ( absint ( get_theme_mod( 'square_boxes_display_2' , true ) ) ) : ?>
         <section class="square-2">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_2' , get_template_directory_uri() . '/inc/square-boxes/images/Kara_Skydiving_Sitfly-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_2' , '/inc/square-boxes/images/Kara_Skydiving_Sitfly-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -38,7 +39,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_2' , true ) ) ) : ?>
 if ( absint ( get_theme_mod( 'square_boxes_display_3' , true ) ) ) : ?>
         <section class="square-3">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_3' , get_template_directory_uri() . '/inc/square-boxes/images/HALO-Skydives-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_3' , '/inc/square-boxes/images/HALO-Skydives-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -53,7 +54,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_3' , true ) ) ) : ?>
 if ( absint ( get_theme_mod( 'square_boxes_display_4' , true ) ) ) : ?>
         <section class="square-4">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_4' , get_template_directory_uri() . '/inc/square-boxes/images/Head-Down-Freeflying-Casey-Heather-Paul-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_4' , '/inc/square-boxes/images/Head-Down-Freeflying-Casey-Heather-Paul-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -67,7 +68,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_4' , true ) ) ) : ?>
 if ( absint ( get_theme_mod( 'square_boxes_display_5' , false ) ) ) : ?>
         <section class="square-5">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_5' , get_template_directory_uri() . '/inc/square-boxes/images/Chris-Tandem-Skydive-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_5' , '/inc/square-boxes/images/Chris-Tandem-Skydive-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -82,7 +83,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_5' , false ) ) ) : ?>
 if ( absint ( get_theme_mod( 'square_boxes_display_6' , false ) ) ) : ?>
         <section class="square-6">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_6' , get_template_directory_uri() . '/inc/square-boxes/images/Kara_Skydiving_Sitfly-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_6' , '/inc/square-boxes/images/Kara_Skydiving_Sitfly-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -97,7 +98,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_6' , false ) ) ) : ?>
 if ( absint ( get_theme_mod( 'square_boxes_display_7' , false ) ) ) : ?>
         <section class="square-7">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_7' , get_template_directory_uri() . '/inc/square-boxes/images/HALO-Skydives-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_7' , '/inc/square-boxes/images/HALO-Skydives-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 
@@ -112,7 +113,7 @@ if ( absint ( get_theme_mod( 'square_boxes_display_7' , false ) ) ) : ?>
 if ( absint ( get_theme_mod( 'square_boxes_display_8' , false ) ) ) : ?>
         <section class="square-8">
 
-            <img src="<?php echo esc_url( get_theme_mod( 'square_boxes_img_8' , get_template_directory_uri() . '/inc/square-boxes/images/Head-Down-Freeflying-Casey-Heather-Paul-850x478.jpg' ) ); ?>" class="store-front-image"/>
+            <img src="<?php semper_fi_lite_image( 'square_boxes_img_8' , '/inc/square-boxes/images/Head-Down-Freeflying-Casey-Heather-Paul-850x478.jpg' , 850 , 478 ); ?>" class="store-front-image"/>
 
             <h3>
                 

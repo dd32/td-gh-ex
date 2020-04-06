@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_navigation_social_customizer_options_array = array(
+$semper_fi_lite_navigation_social_customizer_options_array = array(
 
 
     'social_icon_display' => array(
@@ -195,4 +195,4 @@ $semperfi_navigation_social_customizer_options_array = array(
 
 );
 
-return $semperfi_navigation_social_customizer_options_array;
+return $semper_fi_lite_navigation_social_customizer_options_array;

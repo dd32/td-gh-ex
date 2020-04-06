@@ -1,0 +1,23 @@
+a#skip-link {
+    background: #777777;
+    border: .125em solid #222222;
+    border-radius: .25em;
+    box-shadow: 0 .25em .25em .25em rgba( 0 , 0 , 0 , .24 );
+    color: #ffffff;
+    font-weight: bold;
+    left: 1em;
+    padding: 1em 2em;
+    position: absolute;
+    opacity: .01;
+    font-size: .8em;
+    top: 1em;
+    transition: opacity 300ms linear;
+    z-index: 9999;
+}
+
+a#skip-link:hover,
+a#skip-link:focus,
+a#skip-link:focus-within {
+    color: #dddddd;
+    opacity: .9;
+}

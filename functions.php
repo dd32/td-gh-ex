@@ -4,11 +4,11 @@
 if ( !defined('ABSPATH')) exit; ?><?php
 
 // Ladies, Gentalmen, boys and girls let's start our engines
-add_action( 'after_setup_theme' , 'semperfi_setup_theme' );
+add_action( 'after_setup_theme' , 'semper_fi_lite_setup_theme' );
 
-if ( !function_exists( 'semperfi_setup_theme' ) ):
+if ( !function_exists( 'semper_fi_lite_setup_theme' ) ):
 
-function semperfi_setup_theme() {
+function semper_fi_lite_setup_theme() {
 			
 // Add Callback for Custom TinyMCE editor stylesheets.
 //add_editor_style( $stylesheet = 'style.css' );
@@ -25,8 +25,8 @@ register_nav_menus( array(
     'content_menu'  => __( 'Menu Bar Below Title' , 'semper-fi-lite' ) ) );
 
 /* 
-*   This enables featured image on posts, pages, and customizer and
-*   while I would like to name Semperfi-300x300, without it I can't
+*   This enables featured image on posts, pages, and customizer.
+*   While I would like to name semper_fi_lite-300x300, without it I can't
 *   select the correct image size and would be forced to use whatever
 *   the user uploads, so if the image the user uploads is a 2mb 4k
 *   photo that what everone sees, so in the interest of not killing
@@ -36,6 +36,7 @@ register_nav_menus( array(
 add_theme_support( 'post-thumbnails' );
 add_image_size( '24x24' , 24 , 24 , true );
 add_image_size( '600x60' , 600 , 60 , true );
+add_image_size( '600x60' , 350 , 100 , true );
 add_image_size( '100x100' , 100 , 100 , true );
 add_image_size( '150x150' , 150 , 150 , true );
 add_image_size( '300x300' , 300 , 300 , true );
@@ -46,8 +47,8 @@ add_image_size( '1920x450' , 1920 , 450 , false );
 add_image_size( '1920x1080' , 1920 , 1080 , false );
 
 // Add Custom Sizes to options
-add_filter( 'image_size_names_choose', 'semperfi_custom_image_sizes' );
-function semperfi_custom_image_sizes( $sizes ) {
+add_filter( 'image_size_names_choose', 'semper_fi_lite_custom_image_sizes' );
+function semper_fi_lite_custom_image_sizes( $sizes ) {
     
     return array_merge( $sizes, array(
         '300x300'   => __( 'Semper Fi 300 By 300', 'semper-fi-lite' ),
@@ -90,32 +91,31 @@ if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_en
 
 
 // Set the length of the excerpt to 100
-function semperfi_custom_excerpt_length( $length ) {
+function semper_fi_lite_custom_excerpt_length( $length ) {
    return 100;
 }
-add_filter( 'excerpt_length', 'semperfi_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'semper_fi_lite_custom_excerpt_length', 999 );
 
 
 // add more link to excerpt
-function semperfi_custom_excerpt_more($more) {
-   global $post;
-   return ' <a class="continue-reading" href="'. get_permalink($post->ID) . '">'. __('Continue Reading', 'semper-fi-lite') .'</a>';
+function semper_fi_lite_custom_excerpt_more($more) {
+   return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading' , 'semper-fi-lite' ) .'</a>';
 }
-add_filter('excerpt_more', 'semperfi_custom_excerpt_more');
+add_filter('excerpt_more', 'semper_fi_lite_custom_excerpt_more');
 
 
 // Doesn't look right to have the textbox on top
-function semperfi_move_comment_field_to_bottom( $fields ) {
+function semper_fi_lite_move_comment_field_to_bottom( $fields ) {
     $comment_field = $fields['comment'];
     unset( $fields['comment'] );
     $fields['comment'] = $comment_field;
     return $fields;
 }
-add_filter( 'comment_form_fields', 'semperfi_move_comment_field_to_bottom' );
+add_filter( 'comment_form_fields' , 'semper_fi_lite_move_comment_field_to_bottom' );
 
 
 // Wrap Video in a DIV so that a videos width and height can be made reponsive using CSS
-function semperfi_wrap_embed_with_div( $html , $url , $attr ) {
+function semper_fi_lite_wrap_embed_with_div( $html , $url , $attr ) {
 	
     // Don't see your video host in here? Just add it in, make sure you have the forward slash marks
     if ( preg_match("/youtu.be/", $html) ||
@@ -130,23 +130,23 @@ function semperfi_wrap_embed_with_div( $html , $url , $attr ) {
         return $html;
     
 }
-add_filter('embed_oembed_html', 'semperfi_wrap_embed_with_div', 10, 3);
+add_filter( 'embed_oembed_html' , 'semper_fi_lite_wrap_embed_with_div' , 10 , 3 );
 
 
 // WordPress Widgets start right here.
-function semperfi_widgets_init() {
+function semper_fi_lite_widgets_init() {
 
 	register_sidebar( array(
-		'name'            => 'Footer Widgets',
+		'name'            => __( 'Footer Widgets' , 'semper-fi-lite' ),
 		'id'              => 'footer_widget',
-		'description'     => 'Widgets in this area will be shown below the the content of every page.',
+		'description'     => __( 'Widgets in this area will be shown below the the content of every page.' , 'semper-fi-lite' ),
 		'before_widget'   => '<aside class="footer_widget">',
 		'after_widget'    => '</aside>',
 		'before_title'    => '<h4>',
 		'after_title'     => '</h4>', ));
 
     register_sidebar( array(
-		'name'            => 'Menu Widgets',
+		'name'            => __( 'Menu Widgets' , 'semper-fi-lite' ),
 		'id'              => 'menu_widgets',
 		'before_widget'   => '<li>',
 		'after_widget'    => '</li>',
@@ -154,33 +154,33 @@ function semperfi_widgets_init() {
 		'after_title'     => '</h3>', ) );
     
 }
-add_action('widgets_init', 'semperfi_widgets_init');
+add_action('widgets_init', 'semper_fi_lite_widgets_init');
 
 // Add quick filter because I don't need these wrapped having needless css or html5 elements
-add_filter('next_post_link', 'semperfi_next_post_link_attributes');
-function semperfi_next_post_link_attributes($output) {
+add_filter('next_post_link', 'semper_fi_lite_next_post_link_attributes');
+function semper_fi_lite_next_post_link_attributes($output) {
     $code = 'class="next_post_link"';
     return str_replace('<a href=', '<a '.$code.' href=', $output);}
 
-add_filter('previous_post_link', 'semperfi_post_link_attributes');
-function semperfi_post_link_attributes($output) {
+add_filter('previous_post_link', 'semper_fi_lite_post_link_attributes');
+function semper_fi_lite_post_link_attributes($output) {
     $code = 'class="previous_post_link"';
     return str_replace('<a href=', '<a '.$code.' href=', $output);}
 
-add_filter( 'next_posts_link_attributes' , 'semperfi_previous_posts_link_attributes' );
-function semperfi_previous_posts_link_attributes() { return 'class="previous_post_link"'; }
+add_filter( 'next_posts_link_attributes' , 'semper_fi_lite_previous_posts_link_attributes' );
+function semper_fi_lite_previous_posts_link_attributes() { return 'class="previous_post_link"'; }
 
-add_filter( 'previous_posts_link_attributes' , 'semperfi_next_posts_link_attributes' );
-function semperfi_next_posts_link_attributes() { return 'class="next_post_link"'; }
+add_filter( 'previous_posts_link_attributes' , 'semper_fi_lite_next_posts_link_attributes' );
+function semper_fi_lite_next_posts_link_attributes() { return 'class="next_post_link"'; }
 
 // Make images float properly
-function semperfi_filter_ptags_on_images($content){
+add_filter( 'the_content' , 'semper_fi_lite_filter_ptags_on_images' );
+function semper_fi_lite_filter_ptags_on_images($content){
     return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU' , '\1\2\3' , $content );
 }
-add_filter('the_content' , 'semperfi_filter_ptags_on_images' );
 
 // Checks if the Widgets are active
-function semperfi_is_sidebar_active($index) {
+function semper_fi_lite_is_sidebar_active($index) {
 	global $wp_registered_sidebars;
 	$widgetcolums = wp_get_sidebars_widgets();
 	if ($widgetcolums[$index]) {
@@ -188,17 +188,18 @@ function semperfi_is_sidebar_active($index) {
 		return false; }
 
 // Load up the Localizer so that the theme can be translated
-load_theme_textdomain( 'semperfi_localizer', get_template_directory() . '/language' );
+load_theme_textdomain( 'semper_fi_lite_localizer', get_template_directory() . '/language' );
 
 
 // List of the sections to be loaded in
-$semperfi_load_in_all_sections = array(
+$semper_fi_lite_load_in_all_sections = array(
     
     'customizer',
     'theme-info',
     'google-fonts',
     'footer',
     'header',
+    'skip-link',
     'navigation',
     'the-end',
     '404',
@@ -218,16 +219,19 @@ $semperfi_load_in_all_sections = array(
     'video-tab', );
 
 // Loop through and load in all the different sections
-foreach( $semperfi_load_in_all_sections as $semperfi_one_loaded_section ){
+foreach( $semper_fi_lite_load_in_all_sections as $semper_fi_lite_one_loaded_section ){
     
-    // Load up '$semperfi_one_loaded_section' Functions page
-    require get_parent_theme_file_path( '/inc/' . $semperfi_one_loaded_section . '/functions.php' );
+    // Load up '$semper_fi_lite_one_loaded_section' Functions page
+    require get_parent_theme_file_path( '/inc/' . $semper_fi_lite_one_loaded_section . '/functions.php' );
                                        
 }
 
 
 // Only load if have WooCommerce Plugin Installed
 if ( class_exists( 'WooCommerce' ) ) {
+    
+    // Remove simple shopping cart
+    remove_action( 'semper_fi_lite-functions-hook', 'semper_fi_lite_store_front' );
 
     // Woo-Commerce, Customize
     require get_parent_theme_file_path( '/inc/woo-commerce/functions.php' );
@@ -240,5 +244,22 @@ if ( class_exists( 'WooCommerce' ) ) {
     
 }
 
+
 // Generate the modular content
-do_action( 'semperfi-functions-hook' );
+do_action( 'semper_fi_lite-functions-hook' );
+
+
+// Let's not display needlessly big images
+function semper_fi_lite_image( $semper_fi_lite_get_theme_mod_image , $semper_fi_lite_theme_mod_default , $semper_fi_lite_image_width , $semper_fi_lite_image_height ) {
+    
+    if ( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) != get_template_directory_uri() . $semper_fi_lite_theme_mod_default ) {
+        
+        echo esc_url( wp_get_attachment_image_src( attachment_url_to_postid( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) ) , $semper_fi_lite_image_width . 'x' . $semper_fi_lite_image_height )[0] );
+        
+    } else {
+        
+        echo esc_url( get_template_directory_uri() . $semper_fi_lite_theme_mod_default );
+        
+    }
+    
+}

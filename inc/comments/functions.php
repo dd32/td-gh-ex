@@ -1,8 +1,8 @@
 <?php
 
-function semperfi_comments() {
+function semper_fi_lite_comments() {
     
-    function semperfi_comments_html() {
+    function semper_fi_lite_comments_html() {
         
         if ( comments_open() ) {
         
@@ -12,36 +12,36 @@ function semperfi_comments() {
         
         else {
             
-            remove_action( 'semperfi_attachment_the_header' , 'semperfi_comments_css' );
-            remove_action( 'semperfi_page_the_header' , 'semperfi_comments_css' );
-            remove_action( 'semperfi_single_the_header' , 'semperfi_comments_css' );
+            remove_action( 'semper_fi_lite_attachment_the_header' , 'semper_fi_lite_comments_css' );
+            remove_action( 'semper_fi_lite_page_the_header' , 'semper_fi_lite_comments_css' );
+            remove_action( 'semper_fi_lite_single_the_header' , 'semper_fi_lite_comments_css' );
     
-            remove_action( 'semperfi_attachment_after_comments' , 'semperfi_video_tab_single' );
-            remove_action( 'semperfi_page_after_comments' , 'semperfi_video_tab_single' );
-            remove_action( 'semperfi_single_after_comments' , 'semperfi_video_tab_single' );
+            remove_action( 'semper_fi_lite_attachment_after_comments' , 'semper_fi_lite_video_tab_single' );
+            remove_action( 'semper_fi_lite_page_after_comments' , 'semper_fi_lite_video_tab_single' );
+            remove_action( 'semper_fi_lite_single_after_comments' , 'semper_fi_lite_video_tab_single' );
     
-            remove_action( 'semperfi_attachment_the_header' , 'semperfi_video_tab_css' );
-            remove_action( 'semperfi_page_the_header' , 'semperfi_video_tab_css' );
-            remove_action( 'semperfi_single_the_header' , 'semperfi_video_tab_css' );
+            remove_action( 'semper_fi_lite_attachment_the_header' , 'semper_fi_lite_video_tab_css' );
+            remove_action( 'semper_fi_lite_page_the_header' , 'semper_fi_lite_video_tab_css' );
+            remove_action( 'semper_fi_lite_single_the_header' , 'semper_fi_lite_video_tab_css' );
             
         }
 
     }
     
-    add_action( 'semperfi_display_comments' , 'semperfi_comments_html' );
+    add_action( 'semper_fi_lite_display_comments' , 'semper_fi_lite_comments_html' );
     
     
-    function semperfi_comments_css() {
+    function semper_fi_lite_comments_css() {
         
-        wp_enqueue_style( 'semperfi-comments' , get_theme_file_uri( '/inc/comments/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+        wp_enqueue_style( 'semper_fi_lite-comments' , get_theme_file_uri( '/inc/comments/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
 
     }
     
-    add_action( 'semperfi_attachment_the_header' , 'semperfi_comments_css', 9 );
-    add_action( 'semperfi_page_the_header' , 'semperfi_comments_css', 9 );
-    add_action( 'semperfi_single_the_header' , 'semperfi_comments_css', 9 );
+    add_action( 'semper_fi_lite_attachment_the_header' , 'semper_fi_lite_comments_css', 9 );
+    add_action( 'semper_fi_lite_page_the_header' , 'semper_fi_lite_comments_css', 9 );
+    add_action( 'semper_fi_lite_single_the_header' , 'semper_fi_lite_comments_css', 9 );
     
     
 }
 
-add_action( 'semperfi-functions-hook' , 'semperfi_comments' );
+add_action( 'semper_fi_lite-functions-hook' , 'semper_fi_lite_comments' );

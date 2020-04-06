@@ -1,16 +1,16 @@
 <?php
 
-function semperfi_google_fonts() {
+function semper_fi_lite_google_fonts() {
     
     
-    function semperfi_google_fonts_css() {
+    function semper_fi_lite_google_fonts_css() {
         
         // Generate CSS Code for wp_add_inline_stye
         require get_parent_theme_file_path( '/inc/customizer/customizer-options.php' );
         
-        $semperfi_default_fonts = 'Open+Sans|Teko:500';
+        $semper_fi_lite_default_fonts = 'Open+Sans|Teko:500';
         
-        foreach( $semperfi_customizer_customizer_options_array as $option => $values ) {
+        foreach( $semper_fi_lite_customizer_customizer_options_array as $option => $values ) {
             
             $i = 1;
 
@@ -24,7 +24,7 @@ function semperfi_google_fonts() {
 
                             if ( ( $input != $values[ 'default_options' ][ $i ] ) && ( $input != '' ) ) {
 
-                                $semperfi_default_fonts .= '|' . $input;
+                                $semper_fi_lite_default_fonts .= '|' . $input;
 
                             }
                             
@@ -38,19 +38,19 @@ function semperfi_google_fonts() {
             
         }
         
-        wp_enqueue_style( 'semperfi-google-font' , 'https://fonts.googleapis.com/css?family=' . $semperfi_default_fonts . '&amp;subset=latin-ext' , false , '' , 'all' );
+        wp_enqueue_style( 'semper_fi_lite-google-font' , 'https://fonts.googleapis.com/css?family=' . $semper_fi_lite_default_fonts . '&amp;subset=latin-ext' , false , '' , 'all' );
 
     }
     
-    add_action( 'semperfi_404_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_attachment_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_front_page_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_index_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_page_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_search_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_single_the_header' , 'semperfi_google_fonts_css', 9 );
-    add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_404_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_attachment_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_front_page_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_index_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_page_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_search_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_single_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
+    add_action( 'semper_fi_lite_woo_commerce_the_header' , 'semper_fi_lite_google_fonts_css', 9 );
     
 }
 
-add_action( 'semperfi-functions-hook', 'semperfi_google_fonts' );
+add_action( 'semper_fi_lite-functions-hook', 'semper_fi_lite_google_fonts' );

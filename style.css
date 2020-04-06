@@ -2,7 +2,7 @@
 
 Theme Name: Semper Fi Lite
 
-Text Domain: semperfi
+Text Domain: semper_fi_lite
 
 Theme URI: http://schwarttzy.com/product/wordpress-theme-semper-fi/
 
@@ -14,13 +14,13 @@ Copyright: Semper Fi Lite WordPress Theme, Copyright 2019 Eric J. Schwarz. Sempe
 
 Description: Semper Fi Lite is a handwritten WordPress theme for blogs, businesses, and can also be used as a powerful e-commerce (Woocommerce) solution. Written without JavaScript, just pure HTML5 and CSS3, Semper Fi Lite is free of any possible scripting conflicts with every WordPress Plugin out there. Fully responsive, with a built-in mobile friendly touch screen menu, adaptive font sizing, Woo Commerce integration, page-specific custom backgrounds, and 4k+ resolution ready. All of Semper Fi Lite's options are organized and controlled with WordPress's powerful Customizer for real-time customization. For support with questions, help, or issues use <a href="http://schwarttzy.com/contact-me/" target="_blank">the contact page</a> or head over to <a href="https://wordpress.org/support/theme/semper-fi-lite/" target="_blank">the forums</a>.
 
-Version: 108
+Version: 109
 
 License: GNU General Public License, version 3 (AGPLv3)
 
 License URI: http://opensource.org/licenses/AGPL-3.0
 
-Text Domain: text-domain_semperfi
+Text Domain: text-domain_semper_fi_lite
 
 Tags: blog, custom-background, custom-colors, custom-header, custom-menu, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, microformats, news, one-column, right-sidebar, sticky-post, theme-options, translation-ready, threaded-comments
 
@@ -114,13 +114,25 @@ blockquote blockquote {
     background:none;
 }
 
+blockquote:after {
+    color: #000;
+    content: close-quote;
+    float: right;
+    font-size: 4em;
+    line-height: .1em;
+    opacity: .25;
+    padding: .15em 0 .25em .25em;
+    z-index: -1;
+}
+
 blockquote:before {
     color: #000;
     content: open-quote;
+    float: left;
     font-size: 4em;
     line-height: .1em;
-    margin-right: .25em;
-    vertical-align: -.4em;
+    opacity: .3;
+    padding: .25em .25em .25em 0;
 }
 
 blockquote p {
@@ -144,19 +156,23 @@ blockquote cite:before {
 }
 
 body {
-    background: #ffffff;
+    background: #333333;
     background-attachment: fixed;
     background-image: url(images/semper-fi-lite-top-of-world-H3-hummer-1920x1080.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 	color: #333333;
-    font:normal 16px 'Open Sans', sans-serif;
+    font: normal 16px 'Open Sans', sans-serif;
     line-height: 32px;
     position: relative;
 	text-align: center;
     word-wrap: break-word;
     z-index: 1;
+}
+
+body.custom-background {
+    background-image: none;
 }
 
 cite {

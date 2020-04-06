@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_categories_and_tags_customizer_options_array = array(
+$semper_fi_lite_categories_and_tags_customizer_options_array = array(
 
 
     'categories_and_tags_img' => array(
@@ -10,9 +10,9 @@ $semperfi_categories_and_tags_customizer_options_array = array(
             1                   => '', ),
         'input_attrs'       => array(
             'img_size'          => '1920x1080', ),
-        'label'             => __('Background - Categories & Tags', 'semper-fi-lite'),
+        'label'             => __('Categories & Tags - 1920x1080', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_priority'    => 1,
         'priority'          => 10,
         'section_title'     => __('Categories & Tags', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -22,4 +22,4 @@ $semperfi_categories_and_tags_customizer_options_array = array(
 
 );
 
-return $semperfi_categories_and_tags_customizer_options_array;
+return $semper_fi_lite_categories_and_tags_customizer_options_array;

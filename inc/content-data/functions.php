@@ -1,33 +1,33 @@
 <?php
 
-function semperfi_content_data() {
+function semper_fi_lite_content_data() {
     
     
-    function semperfi_content_data_html() {
+    function semper_fi_lite_content_data_html() {
         
         require get_parent_theme_file_path( '/inc/content-data/html.php' );
 
     }
     
-    add_action( 'semperfi_content_data' , 'semperfi_content_data_html' );
+    add_action( 'semper_fi_lite_content_data' , 'semper_fi_lite_content_data_html' );
     
     
-    function semperfi_content_data_css() {
+    function semper_fi_lite_content_data_css() {
         
-        wp_enqueue_style( 'semperfi-content-data' , get_theme_file_uri( '/inc/content-data/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
+        wp_enqueue_style( 'semper_fi_lite-content-data' , get_theme_file_uri( '/inc/content-data/style.css' ) , false , wp_get_theme()->get( 'Version' ) , 'all' );
 
     }
     
-    add_action( 'semperfi_404_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_attachment_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_front_page_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_index_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_page_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_search_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_single_the_header' , 'semperfi_content_data_css', 9 );
-    add_action( 'semperfi_woo_commerce_the_header' , 'semperfi_content_data_css', 9 );
+    add_action( 'semper_fi_lite_404_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_attachment_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_front_page_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_index_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_page_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_search_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_single_the_header' , 'semper_fi_lite_content_data_css', 9 );
+    add_action( 'semper_fi_lite_woo_commerce_the_header' , 'semper_fi_lite_content_data_css', 9 );
     
     
 }
 
-add_action( 'semperfi-functions-hook' , 'semperfi_content_data' );
+add_action( 'semper_fi_lite-functions-hook' , 'semper_fi_lite_content_data' );

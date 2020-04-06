@@ -8,7 +8,7 @@
  */
 
 // An Array containing every font to be used as choices for theme options
-$semperfi_google_font_array = array(
+$semper_fi_lite_google_font_array = array(
     'default',
     'Abel',
     'Abril+Fatface',
@@ -304,6 +304,6 @@ $semperfi_google_font_array = array(
 );
 
 // Set Array Key the same as Value so array will work with Customizer
-$semperfi_finalized_google_font_array = array_combine($semperfi_google_font_array, $semperfi_google_font_array);
+$semper_fi_lite_finalized_google_font_array = array_combine($semper_fi_lite_google_font_array, $semper_fi_lite_google_font_array);
 
-return $semperfi_finalized_google_font_array;
+return $semper_fi_lite_finalized_google_font_array;

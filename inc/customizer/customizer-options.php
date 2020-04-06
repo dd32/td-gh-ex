@@ -8,11 +8,11 @@
  */
 
 // Just the default array to get the ball rolling
-$semperfi_customizer_customizer_options_array = array();
+$semper_fi_lite_customizer_customizer_options_array = array();
 
 // All Customizer Options Hook into this Filter so that they can be added into the theme
-if( has_filter('semperfi_add_to_customizer_options_array') ) {
+if( has_filter('semper_fi_lite_add_to_customizer_options_array') ) {
 
-    $semperfi_customizer_customizer_options_array = apply_filters( 'semperfi_add_to_customizer_options_array' , $semperfi_customizer_customizer_options_array );
+    $semper_fi_lite_customizer_customizer_options_array = apply_filters( 'semper_fi_lite_add_to_customizer_options_array' , $semper_fi_lite_customizer_customizer_options_array );
     
 }

@@ -1,18 +1,18 @@
 <?php
 
-$semperfi_square_boxes_customizer_options_array = array(
+$semper_fi_lite_square_boxes_customizer_options_array = array(
 
 
     'square_boxes_enable' => array(
         'default_options'  => array(
-            1                   => true, ),
+            1                   => false, ),
         'description'       => array(
             1                   => '', ),
         'label'             => __('Enable Square Boxes', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi  &#8594; Square Boxes', 'semper-fi-lite'),
         'panel_priority'    => 3,
         'priority'          => 10,
-        'section_title'     => __('Container Options', 'semper-fi-lite'),
+        'section_title'     => __('Enable Square Boxes', 'semper-fi-lite'),
         'section_priority'  => 10,
         'selector'          => 'article#square-boxes',
         'type'              => 'radio',
@@ -42,9 +42,9 @@ $semperfi_square_boxes_customizer_options_array = array(
             8                   => '', ),
         'input_attrs'       => array(
             'img_size'          => '850x478', ),
-        'label'             => __('Image', 'semper-fi-lite'),
+        'label'             => __('Image - 850x478', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi  &#8594; Square Boxes', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_priority'    => 3,
         'priority'          => 10,
         'section_title'     => __('~ Box', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -144,4 +144,4 @@ $semperfi_square_boxes_customizer_options_array = array(
 
 );
 
-return $semperfi_square_boxes_customizer_options_array;
+return $semper_fi_lite_square_boxes_customizer_options_array;

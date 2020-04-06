@@ -10,14 +10,14 @@
 
 
 // Bind JS handlers to instantly live-preview changes.
-function semperfi_customize_preview_js() {
+function semper_fi_lite_customize_preview_js() {
     wp_enqueue_script( 'sempperfi-customize-preview', get_theme_file_uri( '/inc/customizer/customize-preview.js' ), array( 'customize-preview' ), wp_get_theme()->get( 'Version' ) , true );
 }
-add_action( 'customize_preview_init', 'semperfi_customize_preview_js' );
+add_action( 'customize_preview_init', 'semper_fi_lite_customize_preview_js' );
 
 
 // The following is "Schwarttzy's Customizer", an array generated customzier
-function semperfi_customize_register( $wp_customize ) {
+function semper_fi_lite_customize_register( $wp_customize ) {
     
     
     // Get all the Theme Customizer Options that theme currently supports
@@ -49,7 +49,7 @@ function semperfi_customize_register( $wp_customize ) {
     $check_for_duplicate_selectors = array('Default');
     
     // Create an Array for Multi-dimensional Theme Options Naming
-    $semperfi_customizer_multi_dimensional_array = array(
+    $semper_fi_lite_customizer_multi_dimensional_array = array(
         1   => '1st',
         2   => '2nd',
         3   => '3rd',
@@ -83,7 +83,7 @@ function semperfi_customize_register( $wp_customize ) {
     
     
     // Here's the special code that make it all happen
-    foreach( $semperfi_customizer_customizer_options_array as $option => $values ) {
+    foreach( $semper_fi_lite_customizer_customizer_options_array as $option => $values ) {
             
         $i = 1;
         
@@ -127,7 +127,7 @@ function semperfi_customize_register( $wp_customize ) {
                             'stylesheet_handle' => $values[ 'input_attrs' ][ 'stylesheet_handle' ],
                             'css'               => $values[ 'input_attrs' ][ 'css' ], ),
                     'label'         => $values['label'],
-                    'section'       => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'       => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'      => $option . '_' . $i, ) ) );
 
             }
@@ -140,14 +140,14 @@ function semperfi_customize_register( $wp_customize ) {
                     'sanitize_callback' => 'wp_filter_nohtml_kses', ) );
 
                 $wp_customize->add_control( $option . '_' . $i , array(
-                    'choices'           => $semperfi_finalized_google_font_array,
+                    'choices'           => $semper_fi_lite_finalized_google_font_array,
                     'description'       => $values['description'][$i],
                     'input_attrs'       => array(
                             'stylesheet_handle' => $values[ 'input_attrs' ][ 'stylesheet_handle' ],
                             'css'               => $values[ 'input_attrs' ][ 'css' ], ),
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,
                     'type'              => 'select', ) );
 
@@ -158,7 +158,7 @@ function semperfi_customize_register( $wp_customize ) {
                 
                 $wp_customize -> add_setting ( $option . '_' . $i, array(
                     'default'           => $values['default_options'][$i],
-                    'sanitize_callback' => 'semperfi_sanitize_image', ) );
+                    'sanitize_callback' => 'semper_fi_lite_sanitize_image', ) );
                 
                 $wp_customize -> add_control ( new WP_Customize_Image_Control ( $wp_customize , $option . '_' . $i , array(
                     'description'       => $values['description'][$i],
@@ -166,7 +166,7 @@ function semperfi_customize_register( $wp_customize ) {
                             'img_size'          => $values[ 'input_attrs' ][ 'img_size' ], ),
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed  ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed  ),
                     'settings'          => $option . '_' . $i, ) ) );
 
             }
@@ -176,14 +176,14 @@ function semperfi_customize_register( $wp_customize ) {
 
                 $wp_customize->add_setting( $option . '_' . $i , array(
                     'default'           => $values['default_options'][$i],
-                    'sanitize_callback' => 'semperfi_sanitize_radio', ) );
+                    'sanitize_callback' => 'semper_fi_lite_sanitize_radio', ) );
                 
                 $wp_customize->add_control( $option . '_' . $i, array(
                     'choices'           => $values['choices'],
                     'description'       => $values['description'][$i],
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'type'              => 'radio', ));
 
             }
@@ -199,7 +199,7 @@ function semperfi_customize_register( $wp_customize ) {
 
                 $wp_customize->add_setting( $option . '_' . $i, array(
                     'default'           => $values['default_options'][$i],
-                    'sanitize_callback' => 'semperfi_sanitize_select', ) );
+                    'sanitize_callback' => 'semper_fi_lite_sanitize_select', ) );
 
                 $wp_customize->add_control( $option . '_' . $i, array(
                     'choices'           => $array_choices,
@@ -209,7 +209,7 @@ function semperfi_customize_register( $wp_customize ) {
                             'css'               => $values[ 'input_attrs' ][ 'css' ], ),
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,
                     'type'              => 'select', ) );
 
@@ -223,14 +223,14 @@ function semperfi_customize_register( $wp_customize ) {
 
                 $wp_customize->add_setting( $option . '_' . $i, array(
                     'default'           => $values['default_options'][$i],
-                    'sanitize_callback' => 'semperfi_sanitize_select', ) );
+                    'sanitize_callback' => 'semper_fi_lite_sanitize_select', ) );
 
                 $wp_customize->add_control( $option . '_' . $i, array(
                     'choices'           => $values['choices'],
                     'description'       => $values['description'][$i],
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,
                     'type'              => 'select', ) );
             }
@@ -246,7 +246,7 @@ function semperfi_customize_register( $wp_customize ) {
                     'description'       => $values['description'][$i],
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,
                     'type'              => 'text', ) );
 
@@ -263,7 +263,7 @@ function semperfi_customize_register( $wp_customize ) {
                     'description'       => $values['description'][$i],
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,
                     'type'              => 'textarea', ) );
 
@@ -280,7 +280,7 @@ function semperfi_customize_register( $wp_customize ) {
                     'description'       => $values['description'][$i],
                     'label'             => $values['label'],
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,
                     'type'              => 'url', ) );
 
@@ -297,7 +297,7 @@ function semperfi_customize_register( $wp_customize ) {
                     'label'             => $values['label'],
                     'mime_type'         => 'video',
                     'priority'          => $values['priority'],
-                    'section'           => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$i], $section_title_transformed ),
+                    'section'           => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$i], $section_title_transformed ),
                     'settings'          => $option . '_' . $i,  ) ) );
 
             }
@@ -318,4 +318,4 @@ function semperfi_customize_register( $wp_customize ) {
     
     }
 
-} add_action( 'customize_register', 'semperfi_customize_register' );
+} add_action( 'customize_register', 'semper_fi_lite_customize_register' );

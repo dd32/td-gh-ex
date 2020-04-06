@@ -1,6 +1,24 @@
 <?php
 
-$semperfi_store_front_customizer_options_array = array(
+$semper_fi_lite_store_front_customizer_options_array = array(
+
+
+    'store_front_enable' => array(
+        'default_options'  => array(
+            1                   => false, ),
+        'description'       => array(
+            1                   => '', ),
+        'label'             => __('Enable Simple Store Front', 'semper-fi-lite'),
+        'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
+        'panel_priority'    => 4,
+        'priority'          => 10,
+        'section_title'     => __('Enable Simple Store Front', 'semper-fi-lite'),
+        'section_priority'  => 10,
+        'selector'          => 'article.store-front .customizer',
+        'type'              => 'radio',
+        'choices' => array(
+            true             => 'Yes',
+            false            => 'No', ) ),
 
 
     'store_front_front_img' => array(
@@ -10,13 +28,13 @@ $semperfi_store_front_customizer_options_array = array(
             1                   => '',  ),
         'input_attrs'       => array(
             'img_size'          => '1920x1080', ),
-        'label'             => __('Image', 'semper-fi-lite'),
+        'label'             => __('Image - 1920x1080', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
         'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('Store Front Background', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'article#store-front .customizer',
+        'selector'          => 'article.store-front .customizer',
         'type'              => 'img'),
 
     'store_front_img' => array(
@@ -44,14 +62,14 @@ $semperfi_store_front_customizer_options_array = array(
             10                  => '', ),
         'input_attrs'       => array(
             'img_size'          => '576x324', ),
-        'label'             => __('Image', 'semper-fi-lite'),
+        'label'             => __('Image - 576x324', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
         'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'article#store-front section:nth-of-type(~) img',
-        'type'              => 'img'),
+        'selector'          => 'article.store-front section section:nth-of-type(~) a img',
+        'type'              => 'img' ),
 
     'store_front_title' => array(
         'default_options'  => array(
@@ -82,7 +100,7 @@ $semperfi_store_front_customizer_options_array = array(
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'article#store-front section:nth-of-type(~) h5',
+        'selector'          => 'article.store-front section section:nth-of-type(~) h5',
         'type'              => 'text'),
 
     'store_front_text' => array(
@@ -114,7 +132,7 @@ $semperfi_store_front_customizer_options_array = array(
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'article#store-front section:nth-of-type(~) p',
+        'selector'          => 'article.store-front section section:nth-of-type(~) p',
         'type'              => 'text'),
 
     'store_front_price' => array(
@@ -140,13 +158,13 @@ $semperfi_store_front_customizer_options_array = array(
             8                   => '',
             9                   => '',
             10                  => '', ),
-        'label'             => __('Paragraph', 'semper-fi-lite'),
+        'label'             => __('Price', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Store Front', 'semper-fi-lite'),
         'panel_priority'    => 4,
         'priority'          => 10,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'article#store-front section:nth-of-type(~) div.price',
+        'selector'          => 'article.store-front section section:nth-of-type(~) div.price',
         'type'              => 'text'),
 
     'store_front_url' => array(
@@ -178,10 +196,10 @@ $semperfi_store_front_customizer_options_array = array(
         'priority'          => 11,
         'section_title'     => __('~ Product', 'semper-fi-lite'),
         'section_priority'  => 11,
-        'selector'          => 'article#store-front section:nth-of-type(1) p a',
+        'selector'          => 'article.store-front section section:nth-of-type(~) a.button',
         'type'              => 'url'),
 
 
 );
 
-return $semperfi_store_front_customizer_options_array;
+return $semper_fi_lite_store_front_customizer_options_array;

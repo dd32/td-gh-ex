@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_above_the_fold_customizer_options_array = array(
+$semper_fi_lite_above_the_fold_customizer_options_array = array(
 
 
     'above_the_fold_title' => array(
@@ -9,11 +9,11 @@ $semperfi_above_the_fold_customizer_options_array = array(
         'description'       => array(
             1                   => '', ),
         'input_attrs'       => array(
-            'stylesheet_handle' => 'semperfi-above-the-fold',
+            'stylesheet_handle' => 'semper_fi_lite-above-the-fold',
             'css'               => "    header > h2.header-text { font-family: $", ),
         'label'             => __('Font', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 2,
+        'panel_priority'    => 1,
         'priority'          => 10,
         'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -27,11 +27,11 @@ $semperfi_above_the_fold_customizer_options_array = array(
         'description'       => array(
             1                   => '', ),
         'input_attrs'       => array(
-            'stylesheet_handle' => 'semperfi-above-the-fold',
+            'stylesheet_handle' => 'semper_fi_lite-above-the-fold',
             'css'               => '    header > h2.header-text { font-size: $em', ),
         'label'             => __('Font Size', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 2,
+        'panel_priority'    => 1,
         'priority'          => 10,
         'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
@@ -50,11 +50,11 @@ $semperfi_above_the_fold_customizer_options_array = array(
         'description'       => array(
             1                   => '', ),
         'input_attrs'       => array(
-            'stylesheet_handle' => 'semperfi-above-the-fold',
+            'stylesheet_handle' => 'semper_fi_lite-above-the-fold',
             'css'               => '    header > h2.header-text { bottom: $em', ),
         'label'             => __('Postion of the Title From Bottom', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 2,
+        'panel_priority'    => 1,
         'priority'          => 10,
         'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
@@ -73,11 +73,11 @@ $semperfi_above_the_fold_customizer_options_array = array(
         'description'       => array(
             1                   => '', ),
         'input_attrs'       => array(
-            'stylesheet_handle' => 'semperfi-above-the-fold',
+            'stylesheet_handle' => 'semper_fi_lite-above-the-fold',
             'css'               => '    header > h2.header-text { color: $', ),
         'label'             => __('Color', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 2,
+        'panel_priority'    => 1,
         'priority'          => 10,
         'section_title'     => __('Above the Fold', 'semper-fi-lite'),
         'section_priority'  => 12,
@@ -87,4 +87,4 @@ $semperfi_above_the_fold_customizer_options_array = array(
 
         );
 
-return $semperfi_above_the_fold_customizer_options_array;
+return $semper_fi_lite_above_the_fold_customizer_options_array;

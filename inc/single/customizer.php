@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_single_customizer_options_array = array(
+$semper_fi_lite_single_customizer_options_array = array(
 
 
     'main_background_img' => array(
@@ -12,7 +12,7 @@ $semperfi_single_customizer_options_array = array(
             'img_size'          => '300x300', ),
         'label'             => __('Article Emboss - Image', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
-        'panel_priority'    => 106,
+        'panel_priority'    => 1,
         'priority'          => 10,
         'section_title'     => __('Single and Page', 'semper-fi-lite'),
         'section_priority'  => 11,
@@ -22,4 +22,4 @@ $semperfi_single_customizer_options_array = array(
 
 );
 
-return $semperfi_single_customizer_options_array;
+return $semper_fi_lite_single_customizer_options_array;

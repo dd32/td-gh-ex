@@ -29,7 +29,7 @@
 
             <aside class="footer_widget">
 
-                <h4>WordPress</h4>
+                <h4><?php __( 'WordPress' , 'semper-fi-lite' ); ?></h4>
 
                 <ul>
                     <li>
@@ -56,7 +56,7 @@
 
             <aside class="footer_widget">
                 
-                <h4>Schwarttzy</h4>
+                <h4><?php __( 'Schwarttzy' , 'semper-fi-lite' ); ?></h4>
 
                 <ul>
                     <li>

@@ -26,8 +26,8 @@
 <?php endif; ?>       
             
 <?php 
-$semperfi_current_user = wp_get_current_user();
-$semperfi_user_identity = $semperfi_current_user->user_login;
+$semper_fi_lite_current_user = wp_get_current_user();
+$semper_fi_lite_user_identity = $semper_fi_lite_current_user->user_login;
                                                           
 comment_form(
     array(
@@ -38,11 +38,11 @@ comment_form(
         'comment_notes_after'   => '',
         'comment_notes_before'  => '',
         'format'                => 'html5',
-        'label_submit'          => 'Submit Reply',
+        'label_submit'          => __( 'Submit Reply' , 'semper-fi-lite' ),
         'logged_in_as'          => '
             <p>' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>.
 
-                <a class="log-out-link" href="%3$s" title="Log out of this account">Log out?</a>', 'semper-fi-lite' ), admin_url( 'profile.php' ), $semperfi_user_identity, wp_logout_url( apply_filters( 'semperfi_the_permalink', get_permalink( ) ) ) ) . '
+                <a class="log-out-link" href="%3$s" title="Log out of this account">Log out?</a>', 'semper-fi-lite' ), admin_url( 'profile.php' ), $semper_fi_lite_user_identity, wp_logout_url( apply_filters( 'semper_fi_lite_the_permalink', get_permalink( ) ) ) ) . '
 
             </p>
 ',

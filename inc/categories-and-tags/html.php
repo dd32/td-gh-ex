@@ -10,7 +10,7 @@
 
 ?>
 
-            <section id="categories-and-tags" style="background-image:url(<?php echo esc_url( get_theme_mod( 'categories_and_tags_img_1' , get_template_directory_uri() . '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg' ) ); ?>);">
+            <section id="categories-and-tags" style="background-image:url(<?php semper_fi_lite_image( 'categories_and_tags_img_1' , '/inc/categories-and-tags/images/Clinton-Skydive-Sunset-Flocking-1920x1080.jpg' , 1920 , 1080 ); ?>);">
 
                 <?php if ( is_customize_preview() ) echo '<div class="customizer-categories-and-tags"></div>';
                 
@@ -20,23 +20,23 @@
 
                 <ul class="post-categories" >
 
-                    <?php wp_list_pages(array('title_li' => '', 'depth' => '1')); ?>
+                    <?php wp_list_pages( array( 'title_li' => '' , 'depth' => '1' ) ); ?>
 
                 </ul>
                 
-                <?php } elseif ( is_front_page() || is_home() ) {?>
+                <?php } elseif ( ( is_front_page() || is_home() ) && ( $semper_fi_lite_blog_wp_query->max_num_pages > 1) ) {?>
                 
                 <h3 class="blog-paginate"><?php
                     
-                    $semperfi_big_number = 999999999; // need an unlikely integer
+                    $semper_fi_lite_big_number = 999999999; // need an unlikely integer
                     
-                    echo paginate_links( array(
-                        'base'          => str_replace( $semperfi_big_number, '%#%', esc_url( get_pagenum_link( $semperfi_big_number ) ) ),
+                    echo paginate_links ( array(
+                        'base'          => str_replace( $semper_fi_lite_big_number, '%#%', esc_url( get_pagenum_link( $semper_fi_lite_big_number ) ) ),
                         'format'        => '?paged=%#%',
                         'current'       => max( 1, get_query_var('page') ),
-                        'prev_text'     => 'Newer News',
-                        'next_text'     =>  'Older News',
-                        'total'         => $semperfi_blog_wp_query->max_num_pages, ) ); ?></h3>
+                        'prev_text'     => __( 'Newer News' , 'semper-fi-lite' ),
+                        'next_text'     => __( 'Older News' , 'semper-fi-lite' ),
+                        'total'         => $semper_fi_lite_blog_wp_query->max_num_pages, ) ); ?></h3>
                                                             
                 <?php } elseif ( is_singular() ) {
                 
@@ -44,13 +44,17 @@
     
                 <ul class="post-categories" itemprop="about">
 
-                    <li><?php echo get_the_category_list( __( '</li>
+                    <li><?php the_category(
+                    
+                        '</li>
 
-                    <li>', 'semper-fi-lite' ) ); ?></li>
+                        <li>'); ?></li>
 
                 </ul>
 
-                <?php if( get_the_tag_list() ) { echo get_the_tag_list('<ul class="tag-list" itemprop="keywords">
+                <?php if ( get_the_tag_list() ) {
+                    
+                    the_tags( '<ul class="tag-list" itemprop="keywords">
 
                     <li>',' </li>
 

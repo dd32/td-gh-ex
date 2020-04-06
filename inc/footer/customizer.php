@@ -1,6 +1,6 @@
 <?php
 
-$semperfi_footer_customizer_options_array = array(
+$semper_fi_lite_footer_customizer_options_array = array(
 
 
     'footer_and_widgets_img' => array(
@@ -10,16 +10,16 @@ $semperfi_footer_customizer_options_array = array(
             1                   => '', ),
         'input_attrs'       => array(
             'img_size'          => '1920x450', ),
-        'label'             => __('Footer Background Image', 'semper-fi-lite'),
+        'label'             => __('Footer Background Image - 1920x450', 'semper-fi-lite'),
         'panel_title'       => __('Semper Fi &#8594; Customizer Options', 'semper-fi-lite'),
         'panel_priority'    => 1,
         'priority'          => 11,
         'section_title'     => __('Footer', 'semper-fi-lite'),
         'section_priority'  => 25,
-        'selector'          => 'section#categories-and-tags div.customizer-categories-and-tags',
+        'selector'          => '#credit-to-schwarttzy p',
         'type'              => 'img'),
 
 
 );
 
-return $semperfi_footer_customizer_options_array;
+return $semper_fi_lite_footer_customizer_options_array;

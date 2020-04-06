@@ -1,6 +1,6 @@
 <?php
 
-        $semperfi_product_categories = array_reverse(
+        $semper_fi_lite_product_categories = array_reverse(
             get_terms( 
                 array(
                     'taxonomy'   => "product_cat",
@@ -8,53 +8,51 @@
                     'orderby'    => $orderby,
                     'order'      => $order,
                     'hide_empty' => $hide_empty,
-                    'include'    => $semperfi_woocommerce_category_countds , ) ) , true );
+                    'include'    => $semper_fi_lite_woocommerce_category_counts , ) ) , true );
 
-    $semperfi_woocommerce_category_count = 1;
+    foreach( $semper_fi_lite_product_categories as $semper_fi_lite_single_category ) {
 
-    foreach( $semperfi_product_categories as $semperfi_single_category ) { 
-
-        if ( ( $semperfi_single_category->name != '' ) && ( $semperfi_single_category->name != 'Uncategorized' ) ) {
+        if ( ( $semper_fi_lite_single_category->name != '' ) && ( $semper_fi_lite_single_category->name != 'Uncategorized' ) ) {
 
             //Lower case everything
-            $semperfi_product_seo_id = strtolower( $semperfi_single_category->name );
+            $semper_fi_lite_product_seo_id = strtolower( $semper_fi_lite_single_category->name );
 
             //Make alphanumeric (removes all other characters)
-            $semperfi_product_seo_id = preg_replace( "/[^a-z0-9_\s-]/" , "" , $semperfi_product_seo_id );
+            $semper_fi_lite_product_seo_id = preg_replace( "/[^a-z0-9_\s-]/" , "" , $semper_fi_lite_product_seo_id );
 
             //Clean up multiple dashes or whitespaces
-            $semperfi_product_seo_id = preg_replace( "/[\s-]+/" , " " , $semperfi_product_seo_id );
+            $semper_fi_lite_product_seo_id = preg_replace( "/[\s-]+/" , " " , $semper_fi_lite_product_seo_id );
 
             //Convert whitespaces and underscore to dash
-            $semperfi_product_seo_id = preg_replace( "/[\s_]/" , "-" , $semperfi_product_seo_id );
+            $semper_fi_lite_product_seo_id = preg_replace( "/[\s_]/" , "-" , $semper_fi_lite_product_seo_id );
 
             // Add Shopping cart
-            $semperfi_product_seo_id .= '-store'; ?>
+            $semper_fi_lite_product_seo_id .= '-store'; ?>
     
-    <article id="<?php echo $semperfi_product_seo_id; ?>" class="store-front" style="background-image:url(<?php echo esc_url( get_theme_mod( 'woocommerce_shop_img_' . $semperfi_woocommerce_category_count , get_template_directory_uri() . '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg' ) ); ?>);">
+    <article id="<?php echo $semper_fi_lite_product_seo_id; ?>" class="store-front store-front-number-<?php echo $semper_fi_lite_woocommerce_category_count; ?>" style="background-image:url(<?php semper_fi_lite_image( 'woocommerce_shop_img_' . $semper_fi_lite_woocommerce_category_count , '/images/schwarttzy-skyvan-chicago-lake-front-michigan-1920x1080.jpg' , 1920 , 1080 ); ?>);">
         
-        <header id="h3-hummer" class="store-header">
+        <header class="store-header">
 
-            <h2 class='header-text' itemprop="headline"><?php echo $semperfi_single_category->name; ?></h2>
+            <h2 class='header-text' itemprop="headline"><?php echo $semper_fi_lite_single_category->name; ?></h2>
             <?php if ( is_customize_preview() ) echo '<div class="customizer-store-front"></div>'; ?>
 
         </header>
         
         <section>
         
-            <?php $semperfi_product_posts = new WP_Query(
+            <?php $semper_fi_lite_product_posts = new WP_Query(
 
                 array(
                     'post_type'         => array('product'),
-                    'product_cat'       => $semperfi_single_category->name,
+                    'product_cat'       => $semper_fi_lite_single_category->name,
                     'orderby'           => 'title',
                     'posts_per_page'    => 1000, ) );
 
-            if ( $semperfi_product_posts->have_posts() ) {
+            if ( $semper_fi_lite_product_posts->have_posts() ) {
 
-                while ( $semperfi_product_posts->have_posts() ) {
+                while ( $semper_fi_lite_product_posts->have_posts() ) {
 
-                    $semperfi_product_posts->the_post();
+                    $semper_fi_lite_product_posts->the_post();
 
                     wc_get_template_part( 'content', 'product' );
 
@@ -64,7 +62,7 @@
         </section>
 
     </article>
-    <?php } $semperfi_woocommerce_category_count++;
+    <?php } $semper_fi_lite_woocommerce_category_count++;
     
     } ?>
 

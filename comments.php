@@ -1,3 +1,3 @@
 <?php
 
-do_action('semperfi_display_comments');
+do_action('semper_fi_lite_display_comments');

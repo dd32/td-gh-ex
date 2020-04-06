@@ -13,13 +13,13 @@ $wp_customize->add_section( 'background_image', array(
     'priority'  => '9', ) );
 
 // Array for duplicate Paneles
-$semperfi_check_for_duplicate_panels = array('Default');
+$semper_fi_lite_check_for_duplicate_panels = array('Default');
 
 // Array for duplicate Sections
-$semperfi_check_for_duplicate_sections = array('Default');
+$semper_fi_lite_check_for_duplicate_sections = array('Default');
 
 // Create an Array for Multi-dimensional Theme Options Naming
-$semperfi_customizer_multi_dimensional_array = array(
+$semper_fi_lite_customizer_multi_dimensional_array = array(
     1   => '1st',
     2   => '2nd',
     3   => '3rd',
@@ -53,51 +53,51 @@ $semperfi_customizer_multi_dimensional_array = array(
 
 
 // Loop through and create the sections
-foreach($semperfi_customizer_customizer_options_array as $semperfi_panels_section_key => $semperfi_panels_section_value) {
+foreach($semper_fi_lite_customizer_customizer_options_array as $semper_fi_lite_panels_section_key => $semper_fi_lite_panels_section_value) {
     
-    $semperfi_count_out_panels_sections = 1;
+    $semper_fi_lite_count_out_panels_sections = 1;
     
-    while ( $semperfi_count_out_panels_sections <=  count( $semperfi_panels_section_value['default_options'] ) ) {
+    while ( $semper_fi_lite_count_out_panels_sections <=  count( $semper_fi_lite_panels_section_value['default_options'] ) ) {
     
-        foreach( $semperfi_panels_section_value as $semperfi_panels_section_values => $semperfi_panels_sections_name ) {
+        foreach( $semper_fi_lite_panels_section_value as $semper_fi_lite_panels_section_values => $semper_fi_lite_panels_sections_name ) {
 
-            // Check if $semperfi_panels_section_values is at a "panel_title"
-            if ( ( $semperfi_panels_section_values == 'panel_title' ) && ( !in_array( $semperfi_panels_sections_name , $semperfi_check_for_duplicate_panels ) ) ) {
+            // Check if $semper_fi_lite_panels_section_values is at a "panel_title"
+            if ( ( $semper_fi_lite_panels_section_values == 'panel_title' ) && ( !in_array( $semper_fi_lite_panels_sections_name , $semper_fi_lite_check_for_duplicate_panels ) ) ) {
                 
                 // Create the Panel
                 $wp_customize->add_panel(
-                    $semperfi_panels_sections_name, array(
-                        'priority'  => $semperfi_panels_section_value['panel_priority'],
-                        'title'     => $semperfi_panels_sections_name));
+                    $semper_fi_lite_panels_sections_name, array(
+                        'priority'  => $semper_fi_lite_panels_section_value['panel_priority'],
+                        'title'     => $semper_fi_lite_panels_sections_name));
 
                 // Add to Array and Stop future duplicate panels
-                array_push( $semperfi_check_for_duplicate_panels , $semperfi_panels_sections_name );
+                array_push( $semper_fi_lite_check_for_duplicate_panels , $semper_fi_lite_panels_sections_name );
 
             }
             
             
-            // Check if $semperfi_panels_section_values is at a "section_title"
-            if ( $semperfi_panels_section_values == 'section_title' ) {
+            // Check if $semper_fi_lite_panels_section_values is at a "section_title"
+            if ( $semper_fi_lite_panels_section_values == 'section_title' ) {
                 
                 // has multiple default options but only one 'section_title' for all those options
-                if ( !is_array ( $semperfi_panels_sections_name ) ) {
+                if ( !is_array ( $semper_fi_lite_panels_sections_name ) ) {
                     
                     // Need to create the 'section_title' now to check for duplicates
-                    $semperfi_modified_section_title = str_replace( "~", $semperfi_customizer_multi_dimensional_array[$semperfi_count_out_panels_sections], $semperfi_panels_section_value['section_title'] );
+                    $semper_fi_lite_modified_section_title = str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$semper_fi_lite_count_out_panels_sections], $semper_fi_lite_panels_section_value['section_title'] );
                     
-                    if ( !in_array( $semperfi_modified_section_title , $semperfi_check_for_duplicate_sections ) ) {
+                    if ( !in_array( $semper_fi_lite_modified_section_title , $semper_fi_lite_check_for_duplicate_sections ) ) {
                         
-                        //echo $semperfi_modified_section_title . "\n";
+                        //echo $semper_fi_lite_modified_section_title . "\n";
 
                         // Create the Section
                         $wp_customize->add_section(
-                             $semperfi_modified_section_title, array(
-                                'panel'         => $semperfi_panels_section_value['panel_title'],
-                                'priority'      => $semperfi_panels_section_value['section_priority'],
-                                'title'         => $semperfi_modified_section_title, ) );
+                             $semper_fi_lite_modified_section_title, array(
+                                'panel'         => $semper_fi_lite_panels_section_value['panel_title'],
+                                'priority'      => $semper_fi_lite_panels_section_value['section_priority'],
+                                'title'         => $semper_fi_lite_modified_section_title, ) );
 
                         // Add to Array and Stop future duplicate sections
-                        array_push( $semperfi_check_for_duplicate_sections , $semperfi_modified_section_title );
+                        array_push( $semper_fi_lite_check_for_duplicate_sections , $semper_fi_lite_modified_section_title );
                         
                     }
                     
@@ -108,19 +108,19 @@ foreach($semperfi_customizer_customizer_options_array as $semperfi_panels_sectio
                 else {
                     
                     // Double checking for duplicates
-                    if ( !in_array( $semperfi_panels_sections_name[$semperfi_count_out_panels_sections] , $semperfi_check_for_duplicate_sections ) ) {
+                    if ( !in_array( $semper_fi_lite_panels_sections_name[$semper_fi_lite_count_out_panels_sections] , $semper_fi_lite_check_for_duplicate_sections ) ) {
                         
-                        //echo $semperfi_panels_section_value['section_title'][$semperfi_count_out_panels_sections] . "\n";
+                        //echo $semper_fi_lite_panels_section_value['section_title'][$semper_fi_lite_count_out_panels_sections] . "\n";
 
                         // Create the Section
                         $wp_customize->add_section(
-                            $semperfi_panels_sections_name[$semperfi_count_out_panels_sections], array(
-                                'panel'         => $semperfi_panels_section_value['panel_title'],
-                                'priority'      => $semperfi_panels_section_value['section_priority'],
-                                'title'         => str_replace( "~", $semperfi_customizer_multi_dimensional_array[$semperfi_count_out_panels_sections], $semperfi_panels_section_value['section_title'][$semperfi_count_out_panels_sections] ) ));
+                            $semper_fi_lite_panels_sections_name[$semper_fi_lite_count_out_panels_sections], array(
+                                'panel'         => $semper_fi_lite_panels_section_value['panel_title'],
+                                'priority'      => $semper_fi_lite_panels_section_value['section_priority'],
+                                'title'         => str_replace( "~", $semper_fi_lite_customizer_multi_dimensional_array[$semper_fi_lite_count_out_panels_sections], $semper_fi_lite_panels_section_value['section_title'][$semper_fi_lite_count_out_panels_sections] ) ));
 
                         // Add to Array and Stop future duplicate sections
-                        array_push( $semperfi_check_for_duplicate_sections , $semperfi_panels_sections_name[$semperfi_count_out_panels_sections] );
+                        array_push( $semper_fi_lite_check_for_duplicate_sections , $semper_fi_lite_panels_sections_name[$semper_fi_lite_count_out_panels_sections] );
 
                     }
                     
@@ -130,7 +130,7 @@ foreach($semperfi_customizer_customizer_options_array as $semperfi_panels_sectio
             
         }
         
-        $semperfi_count_out_panels_sections++;
+        $semper_fi_lite_count_out_panels_sections++;
         
     }
     
