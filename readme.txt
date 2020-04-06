@@ -83,6 +83,9 @@ to represent the company, product, or service to which they refer.**
 
 == Changelog ==
 
+= 111 =
+* change arrow right in functions file to &rarr;
+
 = 110 =
 * Text domain had issue, no sure how got there
 * Found some missing Translatable text in /inc/store-front/customizer.php
@@ -152,6 +155,9 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 111 =
+* Changed arrow right to &rarr; in the Continue Reading link for blog
 
 = 110 =
 * Further tweaks to maybe some day get approved by the WordPress repository

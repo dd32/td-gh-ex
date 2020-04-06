@@ -99,7 +99,7 @@ add_filter( 'excerpt_length', 'semper_fi_lite_custom_excerpt_length', 999 );
 
 // add more link to excerpt
 function semper_fi_lite_custom_excerpt_more($more) {
-   return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading  →' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
+   return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading  &rarr;' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
 }
 add_filter('excerpt_more', 'semper_fi_lite_custom_excerpt_more');
 
