@@ -24,6 +24,10 @@ footer#widgets-and-credits  > a {
     top: 1em;
 }
 
+footer#widgets-and-credits  > a:focus {
+    color: #ffffff;
+}
+
 footer#widgets-and-credits aside.footer_widget a {
     color: #aaaaaa;
 }
@@ -37,6 +41,7 @@ footer#widgets-and-credits aside.footer_widget h6 a {
     color: #ffffff;
 }
 
+footer#widgets-and-credits aside.footer_widget a:focus,
 footer#widgets-and-credits aside.footer_widget a:hover {
     color: #c52b30;
 }

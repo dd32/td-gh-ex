@@ -188,7 +188,7 @@
                         <ul class="unmarked-list">
                             <li>
                                 <a href="//themes.trac.wordpress.org/log/<?php echo strtolower( str_replace( ' ' , '-' , $semper_fi_lite_name) ) ; ?>?limit=100&amp;mode=stop_on_copy&amp;format=rss" target="_blank">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info/images/feedicon.png' ; ?>"><?php _e( 'Development Log' , 'semper-fi-lite' ); ?>
+                                    <img src="<?php echo esc_url( get_template_directory_uri() . '/inc/theme-info/images/feedicon.png' ); ?>"><?php _e( 'Development Log' , 'semper-fi-lite' ); ?>
                                 </a>
                             </li>
                         </ul>

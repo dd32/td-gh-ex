@@ -47,6 +47,7 @@ article#square-boxes section:before {
     z-index: 1;
 }
 
+article#square-boxes section:focus-within:before,
 article#square-boxes section:hover:before {
     background: rgba(0,0,0, .1);
 }
@@ -67,6 +68,10 @@ article#square-boxes section a {
     justify-content: center;
     text-align: center;
     width: 100%;
+}
+
+article#square-boxes section a:focus {
+    color: #c52b30;
 }
 
 article#square-boxes section:nth-of-type(n + 5) a {

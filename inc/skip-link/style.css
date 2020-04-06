@@ -18,6 +18,6 @@ a#skip-link {
 a#skip-link:hover,
 a#skip-link:focus,
 a#skip-link:focus-within {
-    color: #dddddd;
-    opacity: .9;
+    background: #333333;
+    opacity: 1;
 }

@@ -23,6 +23,10 @@ section#categories-and-tags .blog-paginate a {
     color: #ffffff;
 }
 
+section#categories-and-tags .blog-paginate a:focus {
+    color: #c52b30;
+}
+
 section#categories-and-tags .blog-paginate a:hover {
     color: #999999;
 }
@@ -78,6 +82,11 @@ section#categories-and-tags ul.tag-list a {
     display: block;
     color: #ffffff;
     padding: .65em 1.65em;
+}
+
+section#categories-and-tags ul.post-categories a:focus,
+section#categories-and-tags ul.tag-list a:focus {
+    color: #c52b30;
 }
 
 section#categories-and-tags ul.post-categories a:hover,

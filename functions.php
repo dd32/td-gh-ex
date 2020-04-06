@@ -99,7 +99,7 @@ add_filter( 'excerpt_length', 'semper_fi_lite_custom_excerpt_length', 999 );
 
 // add more link to excerpt
 function semper_fi_lite_custom_excerpt_more($more) {
-   return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading' , 'semper-fi-lite' ) .'</a>';
+   return ' <a class="continue-reading" href="'. get_permalink( get_the_ID() ) . '">'. __( 'Continue Reading  →' , 'semper-fi-lite' ) . ' <span class="screen-reader-text">  ' . get_the_title() . '</span></a>';
 }
 add_filter('excerpt_more', 'semper_fi_lite_custom_excerpt_more');
 
@@ -260,6 +260,56 @@ function semper_fi_lite_image( $semper_fi_lite_get_theme_mod_image , $semper_fi_
         
         echo esc_url( get_template_directory_uri() . $semper_fi_lite_theme_mod_default );
         
+    }
+    
+}
+
+
+// Get the image alt text if it has it and apply it
+function semper_fi_lite_image_alt( $semper_fi_lite_get_theme_mod_image , $semper_fi_lite_backup_alt_text ) {
+    
+    // grab the alt if it has it
+    $semper_fi_lite_get_theme_mod_image_modified = get_post_meta( attachment_url_to_postid( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) ) , '_wp_attachment_image_alt', true );
+    
+    if ( $semper_fi_lite_get_theme_mod_image_modified != '' ) {
+        
+        echo ' alt="' . esc_attr( $semper_fi_lite_get_theme_mod_image_modified ) . '"';
+        
+    } else {
+        
+        if ( attachment_url_to_postid( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) ) != 0 ) {
+        
+            // Grab the title of the image if the alt was blank
+            $semper_fi_lite_get_theme_mod_image_modified = get_the_title( attachment_url_to_postid( get_theme_mod( $semper_fi_lite_get_theme_mod_image ) ) );
+
+            if ( $semper_fi_lite_get_theme_mod_image_modified != '' ) {
+
+                echo ' alt="' . esc_attr(  $semper_fi_lite_get_theme_mod_image_modified ) . '"';
+
+            } else {
+
+                // Grab the back up text if the title was blank too
+                $semper_fi_lite_backup_alt_text = get_theme_mod( $semper_fi_lite_backup_alt_text );
+
+                if ( $semper_fi_lite_backup_alt_text != '' ) {
+
+                    echo ' alt="' . esc_attr( $semper_fi_lite_backup_alt_text ) . '"';
+
+                } else {
+
+                    //quess we got nothing to work with, lets just return nothing
+                    return;
+
+                }
+
+            }
+            
+        } else {
+            
+            return;
+            
+        }
+    
     }
     
 }

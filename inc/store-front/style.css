@@ -98,6 +98,7 @@ article.store-front section h5 a {
     text-align: center;
 }
 
+article.store-front section h5 a:focus,
 article.store-front section h5 a:hover {
     color: #c52b30;
 }
@@ -126,6 +127,7 @@ article.store-front section div.price a {
     z-index: 3;
 }
 
+article.store-front section div.price a:focus,
 article.store-front section div.price a:hover {
     color: #aaaaaa;
 }
@@ -190,6 +192,9 @@ article.store-front section a.product_type_variable {
     vertical-align: top;
 }
 
+article.store-front section a.add_to_cart_button:focus,
+article.store-front section a.product_type_simple:focus,
+article.store-front section a.product_type_variable:focus,
 article.store-front section a.add_to_cart_button:hover,
 article.store-front section a.product_type_simple:hover,
 article.store-front section a.product_type_variable:hover {

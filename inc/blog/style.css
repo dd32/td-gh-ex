@@ -30,6 +30,7 @@ article.the-blog h4 a {
     color: #333333;
 }
 
+article.the-blog h4 a:focus,
 article.the-blog h4 a:hover {
     color: #c52b30;
 }
@@ -62,8 +63,12 @@ article.the-blog a.continue-reading {
     text-align: left;
 }
 
-article.the-blog a.continue-reading::after {
-    content: " →";
+article.the-blog a.continue-reading .screen-reader-text {
+    opacity: 0;
+}
+
+article.the-blog a.continue-reading:focus-within .screen-reader-text {
+    opacity: 1;
 }
 
 article.the-blog a.post-edit-link {
@@ -145,6 +150,7 @@ img.microdata-publisher-logo {
         text-align: center;
     }
 
+    /* This code got scrapped because of blind people
     article.the-blog:nth-of-type(2n+1) a.continue-reading {
         text-align: right;
     }
@@ -167,7 +173,7 @@ img.microdata-publisher-logo {
 
     article.the-blog.no-post-thumbnail:nth-of-type(2n+2) a.continue-reading::after {
         content: " →";
-    }
+    }*/
     
     article.the-blog:nth-of-type(2n+1) a.post-edit-link {
         left: 1em;

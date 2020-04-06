@@ -33,7 +33,7 @@ Semper Fi Lite is distributed under the terms of the GNU GPL
 
 == Image Licensing ==
 
-All images in "Semper Fi Lite" are the author "Schwarttzy" and are licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+All images and video in "Semper Fi Lite" are the author "Schwarttzy" and are licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 
 https://creativecommons.org/licenses/by-sa/4.0/
 
@@ -82,6 +82,12 @@ to represent the company, product, or service to which they refer.**
 
 
 == Changelog ==
+
+= 110 =
+* Text domain had issue, no sure how got there
+* Found some missing Translatable text in /inc/store-front/customizer.php
+* Added in alt text for customized photos if they have it
+* Theme Info doesn't error out from missing bit of code
 
 = 109 =
 * All prefixes changed from "semperfi" to "semper_fi_lite"
@@ -146,6 +152,9 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 110 =
+* Further tweaks to maybe some day get approved by the WordPress repository
 
 = 109 =
 * Fixes for odd configurations, proper licensing for photos and fonts, and some more tweaks. 

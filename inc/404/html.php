@@ -4,8 +4,6 @@
             
             <video autoplay loop muted><source src="<?php $semper_fi_lite_404_video = absint ( get_theme_mod( '404_video_1' ) ); if ( $semper_fi_lite_404_video != '' ) { echo  esc_url( wp_get_attachment_url( $semper_fi_lite_404_video ) ); } else { echo esc_url( get_template_directory_uri() ) . '/inc/404/images/bradley-and-mousse-are-thirsty.mp4'; } ?>" type="video/mp4" /></video>
             
-            <?php echo attachment_url_to_postid( get_template_directory_uri() . '/inc/404/images/bradley-and-mousse-are-thirsty.mp4' ); ?>
-            
             <h2 class='header-text' itemprop="headline"><?php _e( '404 Error - Page Not Found' , 'semper-fi-lite' ); ?></h2>
             
         </header>

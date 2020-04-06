@@ -108,22 +108,112 @@ nav#display-menu ul.social {
 nav#display-menu ul.social li {
     background: none;
     display: block;
-    height: 3.5em;
     position: relative;
 }
 
 nav#display-menu ul.social li a {
     background: #c52b30;
     border-radius: 50%;
-    color: #efefef;
+    display: inline-block;
+    height: 3em;
+    margin: .3em .1em 0;
+    position: relative;
+    width: 3em;
+}
+
+nav#display-menu ul.social li a .for-screen-reader {
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    right: -100em;
+    top: auto;
+    width: 1px;
+}
+
+nav#display-menu ul.social li a::before {
     font-family: 'schwarttzy';
+    color: #efefef;
+    display: inline-block;
     font-size: 1.5em;
     font-weight: normal;
-    margin: .1em;
     padding: .5em;
-    position: relative;
     text-transform: none;
-    top: .7em;
+}
+
+nav#display-menu ul.social li.beer a::before {
+    content: 'x';
+}
+
+nav#display-menu ul.social li.bitcoin a::before {
+    content: 'a';
+}
+
+nav#display-menu ul.social li.compass a::before {
+    content: 'c';
+}
+
+nav#display-menu ul.social li.facebook a::before {
+    content: 'd';
+}
+
+nav#display-menu ul.social li.facebook a::before {
+    content: 'd';
+}
+
+nav#display-menu ul.social li.facebook-messenger a::before {
+    content: 'A';
+}
+
+nav#display-menu ul.social li.instagram a::before {
+    content: 'f';
+}
+
+nav#display-menu ul.social li.linkedin a::before {
+    content: 'i';
+}
+
+nav#display-menu ul.social li.maps a::before {
+    content: 'j';
+}
+
+nav#display-menu ul.social li.phone a::before {
+    content: 'm';
+}
+
+nav#display-menu ul.social li.reddit a::before {
+    content: 'o';
+}
+
+nav#display-menu ul.social li.rocket a::before {
+    content: 'p';
+}
+
+nav#display-menu ul.social li.soundcloud a::before {
+    content: 'r';
+}
+
+nav#display-menu ul.social li.steam a::before {
+    content: 's';
+}
+
+nav#display-menu ul.social li.tachometer a::before {
+    content: 't';
+}
+
+nav#display-menu ul.social li.twitter a::before {
+    content: 'u';
+}
+
+nav#display-menu ul.social li.wordpress a::before {
+    content: 'v';
+}
+
+nav#display-menu ul.social li.yelp a::before {
+    content: 'y';
+}
+
+nav#display-menu ul.social li.youtube a::before {
+    content: 'w';
 }
 
 nav#display-menu ul.social li a:focus,
@@ -176,6 +266,10 @@ nav#display-menu ul.navigation.dontrememberwhyihavethis li li:last-of-type a {
 nav#display-menu ul.navigation li a:focus,
 nav#display-menu ul.navigation li a:hover {
     color: #c52b30;
+}
+
+nav#display-menu ul.navigation li a:focus {
+    text-decoration: underline;
 }
 
 nav#display-menu .menu-trick {
@@ -231,6 +325,7 @@ nav#display-menu h3 a {
     color: #ffffff;
 }
 
+nav#display-menu h3 a:focus,
 nav#display-menu h3 a:hover {
     color: #c52b30;
 }
@@ -261,6 +356,7 @@ nav#display-menu ul.navigation-widgets a {
     color: #aaaaaa;
 }
 
+nav#display-menu ul.navigation-widgets a:focus,
 nav#display-menu ul.navigation-widgets a:hover {
     color: #c52b30;
 }
