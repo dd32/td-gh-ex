@@ -68,7 +68,13 @@ nav#display-menu a:hover {
     color: #c52b30;
 }
 
-nav#display-menu img.nav-logo {
+nav#display-menu a.nav-logo {
+    display: inline-block;
+    float: left;
+    margin: .125em;
+}
+
+nav#display-menu a.nav-logo img {
     float: left;
     height: 4em;
     margin: .5em 1em .5em .5em;
@@ -119,15 +125,6 @@ nav#display-menu ul.social li a {
     margin: .3em .1em 0;
     position: relative;
     width: 3em;
-}
-
-nav#display-menu ul.social li a .for-screen-reader {
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    right: -100em;
-    top: auto;
-    width: 1px;
 }
 
 nav#display-menu ul.social li a::before {
@@ -242,6 +239,7 @@ nav#display-menu ul.navigation li a {
     display: inline-block;
     font-weight: bold;
     line-height: 1em;
+    margin: 0 .125em .125em .125em;
     padding: 1em 1.5em;
     text-transform: uppercase;
     width: calc(100% - 3em);
@@ -268,13 +266,10 @@ nav#display-menu ul.navigation li a:hover {
     color: #c52b30;
 }
 
-nav#display-menu ul.navigation li a:focus {
-    text-decoration: underline;
-}
-
 nav#display-menu .menu-trick {
     float: right;
     height: 4.5em;
+    margin-top: .125em;
     position: relative;
     width: 5em;
 }

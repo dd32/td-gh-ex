@@ -56,6 +56,11 @@ footer#widgets-and-credits aside.footer_widget ul {
     list-style: none;
 }
 
+footer#widgets-and-credits aside.footer_widget ul li {
+    padding-left: .125em;
+}
+
+
 footer#widgets-and-credits section#credit-to-schwarttzy {
     border-top: #555555 solid .04em;
     clear: both;

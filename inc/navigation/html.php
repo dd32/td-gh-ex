@@ -4,9 +4,9 @@
 
             <div itemscope itemtype="http://schema.org/Organization">
 
-                <a aria-label="<?php _e( 'Link to home page of ' , 'semper-fi-lite' ); ?> <?php bloginfo('name'); ?>" itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <a aria-label="<?php _e( 'Link to home page of ' , 'semper-fi-lite' ); ?> <?php bloginfo('name'); ?>" itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-logo">
                     
-                    <img itemprop="logo" src="<?php semper_fi_lite_image( 'nav_main_img_1' , '/inc/navigation/images/navigation-semperfi-mousse-chocolate-lab-duck-schwarttzy-250x250.png' , 350 , 100 ); ?>" alt="<?php _e( 'Website Image Logo for' , 'semper-fi-lite' ); ?> <?php bloginfo('name'); ?>" class="nav-logo" />
+                    <img itemprop="logo" src="<?php semper_fi_lite_image( 'nav_main_img_1' , '/inc/navigation/images/navigation-semperfi-mousse-chocolate-lab-duck-schwarttzy-250x250.png' , 350 , 100 ); ?>" alt="<?php _e( 'Website Image Logo for' , 'semper-fi-lite' ); ?> <?php bloginfo('name'); ?>" />
                 
                 </a>
 

@@ -8,7 +8,7 @@ Tested up to: 5.4
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Stable tag: 109
+Stable tag: 112
 Tags: blog, custom-colors, custom-logo, e-commerce, editor-style, featured-images, footer-widgets, full-width-template, portfolio, theme-options, threaded-comments, translation-ready
 Text Domain: semper-fi-lite
 
@@ -83,6 +83,10 @@ to represent the company, product, or service to which they refer.**
 
 == Changelog ==
 
+= 112 =
+* Had a second Text domain in style.css
+* Remove old keyboard accessibility, change it red box that outlines current focus
+
 = 111 =
 * change arrow right in functions file to &rarr;
 
@@ -155,6 +159,9 @@ to represent the company, product, or service to which they refer.**
 
 
 == Upgrade Notice ==
+
+= 112 =
+* Worked to improve keyboard accessibility
 
 = 111 =
 * Changed arrow right to &rarr; in the Continue Reading link for blog

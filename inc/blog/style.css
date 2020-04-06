@@ -10,6 +10,10 @@ article.the-blog:nth-of-type(2n) {
     background: #cccccc;
 }
 
+article.the-blog .post-image a {
+    display: flex;
+}
+
 article.the-blog img.wp-post-image {
     max-height: 44em;
     max-width: 60vw;
@@ -143,6 +147,14 @@ img.microdata-publisher-logo {
 
     article.the-blog:nth-of-type(2n+2) h4 {
         text-align: left;
+    }
+
+    article.the-blog.has-post-thumbnail:nth-of-type(2n+1) h4 {
+        padding-right: .125em;
+    }
+
+    article.the-blog.has-post-thumbnail:nth-of-type(2n+2) h4 {
+        padding-left: .125em;
     }
 
     article.the-blog.no-post-thumbnail:nth-of-type(2n+1) h4,

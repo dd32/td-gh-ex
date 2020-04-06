@@ -64,10 +64,11 @@ article#square-boxes section a {
     color: #ffffff;
     display: flex;
     flex-direction: column;
-    height: 13.6364em;
+    height: 13.5114em;
     justify-content: center;
+    margin: .125em;
     text-align: center;
-    width: 100%;
+    width: calc( 100% - .25em);
 }
 
 article#square-boxes section a:focus {
@@ -75,7 +76,7 @@ article#square-boxes section a:focus {
 }
 
 article#square-boxes section:nth-of-type(n + 5) a {
-    height: 6em;
+    height: 5.75em;
 }
 
 article#square-boxes > a {
@@ -124,11 +125,11 @@ article#square-boxes > a {
     }
     
     article#square-boxes section a {
-        height: 9.09091em;
+        height: 8.84091em;
     }
     
     article#square-boxes section:nth-of-type(n + 5) a {
-        height: 4em;
+        height: 3.75em;
     }
     
 }

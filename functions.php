@@ -298,7 +298,7 @@ function semper_fi_lite_image_alt( $semper_fi_lite_get_theme_mod_image , $semper
                 } else {
 
                     //quess we got nothing to work with, lets just return nothing
-                    return;
+                    echo ' alt=""';
 
                 }
 
@@ -306,7 +306,7 @@ function semper_fi_lite_image_alt( $semper_fi_lite_get_theme_mod_image , $semper
             
         } else {
             
-            return;
+            echo ' alt=""';
             
         }
     

@@ -127,13 +127,18 @@ article.store-front section div.price a {
     z-index: 3;
 }
 
-article.store-front section div.price a:focus,
 article.store-front section div.price a:hover {
     color: #aaaaaa;
 }
 
+
+article.store-front section div.price a:focus {
+    background: #222222;
+}
+
 article.store-front section div.price a:before,
 article.store-front section div.price a:after {
+    background: #c52b30;
     content: "";
     position: absolute;
     top: 0em;
@@ -141,8 +146,12 @@ article.store-front section div.price a:after {
     margin: 0em;
     height: 2em;
     width: 2em;
-    background: #c52b30;
     z-index: -1;
+}
+
+article.store-front section div.price a:focus:before,
+article.store-front section div.price a:focus:after {
+    background: #222222;
 }
 
 article.store-front section div.price:before,

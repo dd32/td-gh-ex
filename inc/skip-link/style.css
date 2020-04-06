@@ -20,4 +20,5 @@ a#skip-link:focus,
 a#skip-link:focus-within {
     background: #333333;
     opacity: 1;
+    outline: none !important;
 }
