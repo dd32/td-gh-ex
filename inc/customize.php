@@ -133,6 +133,23 @@ function associationx_customize_register($wp_customize){
 		'type' 		 => 'checkbox'
     ));
 	
+	//  Show Site Title in One Line
+    $wp_customize->add_setting('associationx[sitettloneline]', array(
+        'default'        	=> '',
+    	'sanitize_callback' => 'associationx_sanitize_checkbox',
+        'capability'     	=> 'edit_theme_options',
+        'type'           	=> 'option'
+
+    ));
+
+    $wp_customize->add_control('associationx_sitettloneline', array(
+        'label'      => esc_html__('Show Site Title in One Line', 'associationx'),
+        'section'    => 'associationx_top',
+        'settings'   => 'associationx[sitettloneline]',
+		'description' => esc_html__('Check it if you want to Show the Site Title in One Lined','associationx'),
+		'type' 		 => 'checkbox'
+    ));
+	
 	//  Show This Section in Front Page
     $wp_customize->add_setting('associationx[show_fp_wpblog]', array(
         'default'        	=> '1',

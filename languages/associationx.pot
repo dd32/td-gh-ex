@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: AssociationX\n"
-"POT-Creation-Date: 2020-03-15 11:50+0600\n"
+"POT-Creation-Date: 2020-04-07 18:15+0600\n"
 "PO-Revision-Date: 2020-02-14 23:17+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Sweet Words from our <b>Proud Members</b> Worldwide"
 msgstr ""
 
-#: front-page.php:12 functions.php:18 inc/customize.php:270
+#: front-page.php:12 functions.php:18 inc/customize.php:287
 msgid "Featured Links"
 msgstr ""
 
@@ -377,266 +377,274 @@ msgid "Unchecked"
 msgstr ""
 
 #: inc/customize.php:146
-msgid "Show Posts/Page Section in Front Page"
+msgid "Show Site Title in One Line"
 msgstr ""
 
 #: inc/customize.php:149
+msgid "Check it if you want to Show the Site Title in One Lined"
+msgstr ""
+
+#: inc/customize.php:163
+msgid "Show Posts/Page Section in Front Page"
+msgstr ""
+
+#: inc/customize.php:166
 msgid "Check This to Show Posts/Page Section in Front Page"
 msgstr ""
 
-#: inc/customize.php:162
+#: inc/customize.php:179
 msgid "404 Not Found Error Page Image"
 msgstr ""
 
-#: inc/customize.php:165
+#: inc/customize.php:182
 msgid ""
 "Upload an image for the 404 Not Found Error Page. You can Remove this Image "
 "for No Image"
 msgstr ""
 
-#: inc/customize.php:174
+#: inc/customize.php:191
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Slider"
 msgstr ""
 
-#: inc/customize.php:188
+#: inc/customize.php:205
 msgid "Show the Slider"
 msgstr ""
 
-#: inc/customize.php:206
+#: inc/customize.php:223
 msgid "Slide Image"
 msgstr ""
 
-#: inc/customize.php:209
+#: inc/customize.php:226
 msgid "Upload or Set any Slide Image Here. Recommended Size: 1500px X 675px"
 msgstr ""
 
-#: inc/customize.php:222
+#: inc/customize.php:239
 msgid "Automatically Add Image Title, Caption and Links"
 msgstr ""
 
-#: inc/customize.php:236
+#: inc/customize.php:253
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Featured Links"
 msgstr ""
 
-#: inc/customize.php:250
+#: inc/customize.php:267
 msgid "Show the Featured Links"
 msgstr ""
 
-#: inc/customize.php:267
+#: inc/customize.php:284
 msgid "Show the Featured Links from Featured Links Navigation Menu"
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "Check this if you want to Show the Featured Links from the "
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "Navigation Menu. You can use"
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "Description"
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "and Use any"
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "FontAwesome 5 Icon Name"
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "like"
 msgstr ""
 
-#: inc/customize.php:270
+#: inc/customize.php:287
 msgid "as a Menu Class in Custom Menu"
 msgstr ""
 
-#: inc/customize.php:280
+#: inc/customize.php:297
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page About Us"
 msgstr ""
 
-#: inc/customize.php:295
+#: inc/customize.php:312
 msgid "Show the About Us Section"
 msgstr ""
 
-#: inc/customize.php:312
+#: inc/customize.php:329
 msgid "About Us Section from a Page"
 msgstr ""
 
-#: inc/customize.php:315
+#: inc/customize.php:332
 msgid "Check this if You want to Show the About Us Part from a Page Content"
 msgstr ""
 
-#: inc/customize.php:329
+#: inc/customize.php:346
 msgid "Select a Page to Show the Content in About Us Part"
 msgstr ""
 
-#: inc/customize.php:332
+#: inc/customize.php:349
 msgid "You can Select a Page to Show the Content in About Us Part"
 msgstr ""
 
-#: inc/customize.php:342
+#: inc/customize.php:359
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Featured Boxes"
 msgstr ""
 
-#: inc/customize.php:356
+#: inc/customize.php:373
 msgid "Show the Featured Boxes"
 msgstr ""
 
-#: inc/customize.php:373
+#: inc/customize.php:390
 msgid "Show the Featured Boxes from the Sticky Posts"
 msgstr ""
 
-#: inc/customize.php:376
+#: inc/customize.php:393
 msgid "This will show the latest 04 Sticky Posts as Featured Boxes"
 msgstr ""
 
-#: inc/customize.php:386
+#: inc/customize.php:403
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Noticeboard and News"
 msgstr ""
 
-#: inc/customize.php:401
+#: inc/customize.php:418
 msgid "Show the Noticeboard"
 msgstr ""
 
-#: inc/customize.php:418
+#: inc/customize.php:435
 msgid "Select the Desired Category for the Noticeboard"
 msgstr ""
 
-#: inc/customize.php:436
+#: inc/customize.php:453
 msgid "Show the News Box"
 msgstr ""
 
-#: inc/customize.php:454
+#: inc/customize.php:471
 msgid "Select the Category for News"
 msgstr ""
 
-#: inc/customize.php:469
+#: inc/customize.php:486
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - E-Commerce by WooCommerce"
 msgstr ""
 
-#: inc/customize.php:483
+#: inc/customize.php:500
 msgid "Show the E-Commerce/WooCommerce Box in Front Page"
 msgstr ""
 
-#: inc/customize.php:500
+#: inc/customize.php:517
 msgid ""
 "Select a E-Commerce/WooCommerce Page to Show the Content in this Section"
 msgstr ""
 
-#: inc/customize.php:503
+#: inc/customize.php:520
 msgid ""
 "You can Select a Page to Show the Content as E-Commerce/WooCommerce Part"
 msgstr ""
 
-#: inc/customize.php:517
+#: inc/customize.php:534
 msgid "Set Transparent Background of the Product Items"
 msgstr ""
 
-#: inc/customize.php:534
+#: inc/customize.php:551
 msgid "Show Border of the Product Items"
 msgstr ""
 
-#: inc/customize.php:551
+#: inc/customize.php:568
 msgid "Show Box Shadow of the Product Items"
 msgstr ""
 
-#: inc/customize.php:568
+#: inc/customize.php:585
 msgid "Show No Padding Space of the Product Items"
 msgstr ""
 
-#: inc/customize.php:585
+#: inc/customize.php:602
 msgid "Show Product Items Image Border"
 msgstr ""
 
-#: inc/customize.php:598
+#: inc/customize.php:615
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Events"
 msgstr ""
 
-#: inc/customize.php:612
+#: inc/customize.php:629
 msgid "Show the Event Boxes"
 msgstr ""
 
-#: inc/customize.php:630
+#: inc/customize.php:647
 msgid "Event Image"
 msgstr ""
 
-#: inc/customize.php:633
+#: inc/customize.php:650
 msgid "Uoload the Event Image. Recommended Size is 400px X 300px"
 msgstr ""
 
-#: inc/customize.php:646 inc/customize.php:709
+#: inc/customize.php:663 inc/customize.php:726
 msgid "Collect Image Title, Caption and Link Automatically"
 msgstr ""
 
-#: inc/customize.php:661
+#: inc/customize.php:678
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Members"
 msgstr ""
 
-#: inc/customize.php:675
+#: inc/customize.php:692
 msgid "Show the Member Boxes"
 msgstr ""
 
-#: inc/customize.php:693
+#: inc/customize.php:710
 msgid "Member Image"
 msgstr ""
 
-#: inc/customize.php:696
+#: inc/customize.php:713
 msgid ""
 "Uoload the Member Image. You must use 300px X 200px or Higher Ratio Imag"
 msgstr ""
 
-#: inc/customize.php:723
+#: inc/customize.php:740
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Specific Page Content"
 msgstr ""
 
-#: inc/customize.php:738
+#: inc/customize.php:755
 msgid "Show a Page Content in Front Page"
 msgstr ""
 
-#: inc/customize.php:755
+#: inc/customize.php:772
 msgid "Select a Page to Show the Content"
 msgstr ""
 
-#: inc/customize.php:758
+#: inc/customize.php:775
 msgid ""
 "You can Select a Page to Show the Content. This is ideal for Page Builder "
 "Page Contents"
 msgstr ""
 
-#: inc/customize.php:768
+#: inc/customize.php:785
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Testimonials"
 msgstr ""
 
-#: inc/customize.php:782
+#: inc/customize.php:799
 msgid "Show the Members Testimonials"
 msgstr ""
 
-#: inc/customize.php:799
+#: inc/customize.php:816
 msgid "Show the Testimonials from the Latest Comments"
 msgstr ""
 
-#: inc/customize.php:802
+#: inc/customize.php:819
 msgid ""
 "Check this if you want to Show the Testimonials from the Latest Comments"
 msgstr ""
 
-#: inc/customize.php:812
+#: inc/customize.php:829
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
 msgstr ""
 
-#: inc/customize.php:813
+#: inc/customize.php:830
 msgid "Input Your Social Page Links. Example:"
 msgstr ""
 
-#: inc/customize.php:813
+#: inc/customize.php:830
 msgid "If you do not want to show anything here leave the box blank"
 msgstr ""
 
-#: inc/customize.php:827
+#: inc/customize.php:844
 msgid "Social Link"
 msgstr ""
 

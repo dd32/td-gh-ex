@@ -32,6 +32,9 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 == Changelog ==
 
+= 1.17 =
+* New Feature Added
+
 = 1.16 =
 * Review Findings Fix
 
