@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 
 weaverx_per_post_style();
-$do_excerpt = weaverx_do_excerpt();
+$do_excerpt = weaverx_use_excerpt();
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-aside post-format ' . weaverx_post_class() ); echo weaverx_schema( 'post' );?>>
 <?php

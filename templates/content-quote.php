@@ -25,7 +25,7 @@ echo weaverx_schema( 'post' ); ?>>
 			return;
 		}
 	}
-	if ( weaverx_do_excerpt() && ! weaverx_compact_post() ) { // Only display Excerpts for Search
+	if ( weaverx_use_excerpt() && ! weaverx_compact_post() ) { // Only display Excerpts for Search
 		weaverx_post_div( 'summary' );
 		weaverx_the_post_excerpt(); ?>
 		</div><!-- .entry-summary -->

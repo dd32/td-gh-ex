@@ -21,8 +21,8 @@ function weaverx_disable_visual_editor() {
 		return;
 	}
 	$post_id = $_GET['post'];
-	$value   = get_post_meta( $post_id, '_pp_hide_visual_editor', true );
-	$raw     = get_post_meta( $post_id, '_pp_raw_html', true );
+	$value = get_post_meta( $post_id, '_pp_hide_visual_editor', true );
+	$raw = get_post_meta( $post_id, '_pp_raw_html', true );
 	if ( $value == 'on' || $raw == 'on' ) {
 		$wp_rich_edit = false;
 	}

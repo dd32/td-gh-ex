@@ -13,10 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 
 weaverx_per_post_style();
-$do_excerpt = weaverx_do_excerpt();
+$do_excerpt = weaverx_use_excerpt();
 
 $me = ( $do_excerpt ) ? 'post_excerpt' : 'post_full';
-
 
 weaverx_fi( $me, 'post-pre' );
 

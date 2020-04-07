@@ -1497,8 +1497,9 @@ img.fi-aligncenter-pb {
 	box-sizing:            border-box;
 }
 
+.is-ios .parallax,
 .is-ios .wvrx-parallax {
-	background-attachment: scroll;
+	background-attachment: scroll !important;
 }
 
 
@@ -5396,7 +5397,7 @@ code {
  * changes cover images to scroll instead of fixed which has much nicer display.
  */
 .is-ios .wp-block-cover-image.has-parallax {
-	background-attachment: scroll;
+	background-attachment: scroll !important;
 }
 
 

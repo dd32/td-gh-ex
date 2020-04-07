@@ -6,10 +6,10 @@ Theme URI: http://weavertheme.com
 Tags: custom-header, custom-colors, custom-background, custom-menu, theme-options, left-sidebar, right-sidebar,
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
-Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
+Copyright: Weaver Xtreme Theme - Copyright 2014-2020 Bruce E Wampler
 Requires at least: 5.1
-Tested up to: 5.3
-Stable tag: 4.3.3
+Tested up to: 5.4
+Stable tag: 4.3.4
 
 == Description ==
 
@@ -638,6 +638,7 @@ Fix: typo in alignfull rule
 Update: WP 5.3 compatibility
 Tweak: added shortcode processing the Weaver Xtreme's Header Logo/HTML option
 
-= Version 4.3.4 *
-= Fix: no longer need custom excerpt filter
-= Update/fix: recognize iPad for iOS 13.3
+= Version 4.3.4 =
+Tweak: no longer need custom excerpt filter
+Fix: Continue Reading for short text before <!-- more -->
+Update/fix: recognize iPad for iOS 13.3

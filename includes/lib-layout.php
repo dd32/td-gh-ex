@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // determine classes for areas
 function weaverx_inject_area( $name, $extra_class = '' ) {
-	$area_name  = '' . $name . '_insert';
+	$area_name = '' . $name . '_insert';
 	$hide_front = 'hide_front_' . $name;
-	$hide_rest  = 'hide_rest_' . $name;
+	$hide_rest = 'hide_rest_' . $name;
 
 	if ( weaverx_getopt_checked( $hide_front ) && is_front_page() ) {
 		return;
@@ -22,15 +22,15 @@ function weaverx_inject_area( $name, $extra_class = '' ) {
 		return;
 	}
 
-	$idinj      = 'inject_' . $name;
-	$add_class  = "weaverx_inject_area {$extra_class}";        // give them all this wrapping class
+	$idinj = 'inject_' . $name;
+	$add_class = "weaverx_inject_area {$extra_class}";        // give them all this wrapping class
 	$more_class = weaverx_getopt( 'inject_add_class_' . $name );
 	if ( $more_class ) {
 		$add_class .= " {$more_class}";
 	}
 	$add_class = rtrim( $add_class );
 
-	$html          = apply_filters( 'weaverx_inject_area', weaverx_getopt( $area_name ), $name );
+	$html = apply_filters( 'weaverx_inject_area', weaverx_getopt( $area_name ), $name );
 	$per_page_code = apply_filters( 'weaverx_inject_area', weaverx_get_per_page_value( $name ), $name );    /* per page values */
 
 	if ( ! empty( $html ) || ! empty( $per_page_code ) ) {
@@ -296,7 +296,7 @@ function weaverx_container_div( $who ) {
 function weaverx_content_class( $sb_layout, $who, $echo = true ) {
 
 	$c_class = weaverx_area_class( 'content', 'pad', '-rbl', '' );
-	$smart   = '';
+	$smart = '';
 	if ( weaverx_getopt( 'content_smartmargin' ) ) {
 		$smart = '-m';
 	}
@@ -306,28 +306,28 @@ function weaverx_content_class( $sb_layout, $who, $echo = true ) {
 		case 'right':
 		case 'right-top':
 			$l_content = 'l-content-rsb' . $smart;
-			$class     .= $l_content . ' m-full s-full ' . $c_class;
+			$class .= $l_content . ' m-full s-full ' . $c_class;
 			break;
 
 		case 'left':
 		case 'left-top':
 			$l_content = 'l-content-lsb' . $smart;
-			$class     .= $l_content . ' m-full s-full sb-float-right ' . $c_class;
+			$class .= $l_content . ' m-full s-full sb-float-right ' . $c_class;
 			break;
 
 		case 'split':
 			$l_content = 'l-content-ssb' . $smart;
-			$class     .= $l_content . ' m-full s-full ' . $c_class;
+			$class .= $l_content . ' m-full s-full ' . $c_class;
 			break;
 
 		case 'split-top':
 			$l_content = 'l-content-ssbs' . $smart;
-			$class     .= $l_content . ' m-full s-full ' . $c_class;
+			$class .= $l_content . ' m-full s-full ' . $c_class;
 			break;
 
 		case 'one-column':
 			$l_content = 'l-content' . $smart;
-			$class     .= $l_content . ' ' . $c_class;
+			$class .= $l_content . ' ' . $c_class;
 			break;
 	}
 
@@ -425,7 +425,7 @@ function weaverx_menu_class( $who, $no_hide = false ) {
 function weaverx_page_lead( $who, $archive = false ) {
 	// common lead in for all pages with infobar and top widget area
 
-	$GLOBALS['weaverx_page_who']        = $who;
+	$GLOBALS['weaverx_page_who'] = $who;
 	$GLOBALS['weaverx_page_is_archive'] = $archive;
 
 	get_header( $who );
@@ -808,8 +808,8 @@ add_filter( 'dynamic_sidebar_params', 'weaverx_add_widget_classes' );
 function weaverx_add_widget_classes( $params ) {
 
 	$arr_registered_widgets = wp_get_sidebars_widgets();    // Get an array of ALL registered widgets
-	$sb_id                  = $params[0]['id'];                              // Get the id for the current sidebar we're processing
-	$widget_id              = $params[0]['widget_id'];
+	$sb_id = $params[0]['id'];                              // Get the id for the current sidebar we're processing
+	$widget_id = $params[0]['widget_id'];
 
 	// add first, last, even, and odd, and widget classes
 
@@ -859,7 +859,7 @@ function weaverx_add_widget_classes( $params ) {
 		$cols = 8;
 	}     // sanity check
 
-	$show_number  = true;
+	$show_number = true;
 	$show_evenodd = true;
 
 
@@ -878,7 +878,7 @@ function weaverx_add_widget_classes( $params ) {
 
 	$is_sidebar = in_array( $sb_id,
 		array( 'primary-widget-area', 'secondary-widget-area' ) );        // this is a vertical widget
-	$no_smart   = weaverx_getopt( $opt_name . '_no_widget_margins' );
+	$no_smart = weaverx_getopt( $opt_name . '_no_widget_margins' );
 
 	$is_vert = ( $cols == 1 );
 
@@ -888,11 +888,11 @@ function weaverx_add_widget_classes( $params ) {
 
 	$sides = ( $is_sidebar ) ? '-b' : '-rb';
 
-	$cur_widget   = $GLOBALS['wvr_widget_number'][ $sb_id ];
+	$cur_widget = $GLOBALS['wvr_widget_number'][ $sb_id ];
 	$widget_count = count( $arr_registered_widgets[ $sb_id ] );
 
 	$first = ( $cur_widget == 1 );
-	$last  = ( $cur_widget == $widget_count );
+	$last = ( $cur_widget == $widget_count );
 
 	$def_bottom = 'margin-bottom';
 	if ( $opt_name == 'header_sb' ) {
@@ -929,10 +929,10 @@ function weaverx_add_widget_classes( $params ) {
 
 	if ( $is_vert ) {
 		$widget_first = 'widget-first widget-first-vert ';
-		$widget_last  = 'widget-last widget-last-vert ';
+		$widget_last = 'widget-last widget-last-vert ';
 	} else {
 		$widget_first = 'widget-first ';
-		$widget_last  = 'widget-last ';
+		$widget_last = 'widget-last ';
 	}
 
 	if ( $first ) {
@@ -945,8 +945,8 @@ function weaverx_add_widget_classes( $params ) {
 
 	if ( $show_evenodd ) {
 		$widget_even = 'widget-even ';
-		$widget_odd  = 'widget-odd ';
-		$class       .= ( ( $cur_widget % 2 ) ? $widget_odd : $widget_even );
+		$widget_odd = 'widget-odd ';
+		$class .= ( ( $cur_widget % 2 ) ? $widget_odd : $widget_even );
 	}
 
 	// need no-margin-bottom if $cols > 1
@@ -979,7 +979,7 @@ function weaverx_no_sidebars( $class ) {
 					<?php echo weaverx_filter_text( __( '<strong>Add Some Widgets!</strong><br /><small>This theme has been designed to be used with sidebars. <span style="color:red">This message will no longer be displayed after
 you add at least one widget to one of the Sidebar Widget Areas using the Appearance &rarr; Widgets control panel.</span>
 <br />You can also change the sidebar layout for this page using theme options.
-<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>', 'weaver-xtreme') ); ?></li>
+<br />Note: If you have added widgets, be sure you\'ve not hidden all sidebars on the Per Page options. You could switch this page to One Column.</small>', 'weaver-xtreme' ) ); ?></li>
 				<li>
 					<?php wp_loginout(); ?>
 				</li>
