@@ -25,14 +25,10 @@ if ( ! class_exists( 'Bam_Gutenberg' ) ) {
             $body_font = get_theme_mod( 'bam_body_font_family', 'Source Sans Pro' );
             if( ! empty( $body_font ) && 'Source Sans Pro' != $body_font ) {
                 $css .= '
-                    body, 
-                    button, 
-                    input, 
-                    select, 
-                    optgroup, 
-                    textarea, 
                     .editor-post-title__block .editor-post-title__input,
+                    .editor-default-block-appender textarea.block-editor-default-block-appender__content,
                     .editor-default-block-appender textarea.editor-default-block-appender__content, 
+                    .edit-post-visual-editor .block-editor-block-list__block,
                     .edit-post-visual-editor .editor-block-list__block { 
                         font-family: '. $body_font .'; 
                     }
@@ -92,14 +88,10 @@ if ( ! class_exists( 'Bam_Gutenberg' ) ) {
             $single_post_body_font = get_theme_mod( 'bam_single_post_body_font_family', '' );
             if( ! empty( $single_post_body_font ) ) {
                 $css .= '
-                    body, 
-                    button, 
-                    input, 
-                    select, 
-                    optgroup, 
-                    textarea, 
                     .editor-post-title__block .editor-post-title__input,
+                    .editor-default-block-appender textarea.block-editor-default-block-appender__content,
                     .editor-default-block-appender textarea.editor-default-block-appender__content, 
+                    .edit-post-visual-editor .block-editor-block-list__block,
                     .edit-post-visual-editor .editor-block-list__block { 
                         font-family: '. $single_post_body_font .'; 
                     }

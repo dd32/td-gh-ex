@@ -956,7 +956,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if ( '#ffffff' != $default_header_bg_color && ! empty( $default_header_bg_color ) ) {
                     $css .= '
-                        .site-header.default-style { background: '. $default_header_bg_color .'; }
+                        .site-header.default-style { background-color: '. $default_header_bg_color .'; }
                     ';
                 }
 
@@ -968,7 +968,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if ( ! empty( $link_color ) && '#ffffff' != $link_color ) {
                     $css .= '
-                        .site-header.default-style .main-navigation ul li a { color: '. $link_color .'; }
+                        .site-header.default-style .main-navigation ul li a, .bam-search-button-icon { color: '. $link_color .'; }
                     ';
                 }
 
@@ -1066,7 +1066,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if ( '#141414' != $horizontal_header_bg_color && ! empty( $horizontal_header_bg_color ) ) {
                     $css .= '
-                        .site-header.horizontal-style #site-header-inner-wrap { background: '. $horizontal_header_bg_color .'; }
+                        .site-header.horizontal-style #site-header-inner-wrap { background-color: '. $horizontal_header_bg_color .'; }
                     ';
                 }
 
@@ -1078,7 +1078,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if ( ! empty( $link_color ) && '#ffffff' != $link_color ) {
                     $css .= '
-                        .site-header.horizontal-style .main-navigation ul li a { color: '. $link_color .'; }
+                        .site-header.horizontal-style .main-navigation ul li a, .bam-search-button-icon { color: '. $link_color .'; }
                     ';
                 }
 

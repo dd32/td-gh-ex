@@ -170,10 +170,14 @@ body.separate-containers {
 		padding: 25px;
 		background: #ffffff;
 	}
+	
+	background-color: #eeeeee;    
 
-	.site-content {
-		background: #eeeeee; 
-	}
+}
+
+body.boxed-layout.custom-background.separate-containers .site-content,
+body.boxed-layout.separate-containers .site-content {
+	background-color: #eeeeee;    
 }
 
 body.separate-containers.single .site-main,

@@ -4,7 +4,7 @@ Theme URI: https://themezhut.com/themes/bam/
 Author: ThemezHut
 Author URI: https://themezhut.com/
 Description: Bam WordPress theme is a great flexible theme for blogging sites. Even this is a free theme you will find most of the advanced theme customizer options that you may find only on premium themes like, typography options, header layout options, advanced color options, blog layout options, social media options, etc. Just install the theme and customize it as you like. Check the demo at: https://themezhut.com/demo/bam/
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bam
@@ -2305,13 +2305,18 @@ body.center-content #secondary {
   margin-bottom: 10px;
 }
 
+body.separate-containers {
+  background-color: #eeeeee;
+}
+
 body.separate-containers .blog-entry-inner {
   padding: 25px;
   background: #ffffff;
 }
 
-body.separate-containers .site-content {
-  background: #eeeeee;
+body.boxed-layout.custom-background.separate-containers .site-content,
+body.boxed-layout.separate-containers .site-content {
+  background-color: #eeeeee;
 }
 
 body.separate-containers.single .site-main,
@@ -2794,8 +2799,8 @@ footer.comment-meta {
   font-family: Inconsolata, monospace;
 }
 
-.form-submit {
-  margin-bottom: 0;
+.comment-respond .form-submit {
+  margin-bottom: 2em;
 }
 
 .required {
@@ -2833,6 +2838,14 @@ footer.comment-meta {
 .comment-form .comment-form-cookies-consent label {
   display: inline;
   margin-left: 1em;
+}
+
+@media (max-width: 480px) {
+  .comment-form input[type="text"],
+  .comment-form input[type="email"],
+  .comment-form input[type="url"] {
+    width: 100%;
+  }
 }
 
 /*--------------------------------------------------------------

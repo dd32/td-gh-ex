@@ -2,9 +2,9 @@
 
 Contributors: pubudu-malalasekara
 Requires at least: 4.5
-Tested up to: 5.2.3
+Tested up to: 5.4
 Requires PHP: 5.2
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,13 @@ Bam is a great flexible theme for blogging sites.
 Bam supports all the major plugins.
 
 == Changelog ==
+
+= 1.1.1 =
+* Few updates to ready for WordPress 5.4.
+* Fix: Background image now can be applied without deleting the background color. 
+* Fixed the archive title not aligning issue.
+* Fixed the navigation search icon color not applying issue.
+* Fix: Header background image can be applied without deleting the header background color now.
 
 = 1.1.0 =
 * Modified related posts layout for mobiles.

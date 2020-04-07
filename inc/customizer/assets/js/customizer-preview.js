@@ -152,7 +152,7 @@
 	api( 'bam_menu_link_color', function( value ) {
 		value.bind( function( to ) {
 			if( 'blank' !== to ) {
-				$( '.site-header.default-style .main-navigation ul li a' ).css( {
+				$( '.site-header.default-style .main-navigation ul li a, .bam-search-button-icon' ).css( {
 					'color': to,
 				} );
 			}
@@ -161,7 +161,7 @@
 	api( 'bam_menu_link_color', function( value ) {
 		value.bind( function( to ) {
 			if( 'blank' !== to ) {
-				$( '.site-header.horizontal-style .main-navigation ul li a' ).css( {
+				$( '.site-header.horizontal-style .main-navigation ul li a, .bam-search-button-icon' ).css( {
 					'color': to,
 				} );
 			}

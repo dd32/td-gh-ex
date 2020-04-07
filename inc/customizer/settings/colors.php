@@ -656,7 +656,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                 $css .= '
                     body.boxed-layout.custom-background,
                     body.boxed-layout {
-                        background: '. $boxed_outer_bg_color .';
+                        background-color: '. $boxed_outer_bg_color .';
                     }
                 ';
             }
@@ -675,7 +675,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                 $css .= '
                     body.boxed-layout.custom-background.separate-containers,
                     body.boxed-layout.separate-containers {
-                        background: '. $boxed_separate_outer_bg_color .';
+                        background-color: '. $boxed_separate_outer_bg_color .';
                     }
                 ';
             }
@@ -692,9 +692,9 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
             // wide layout separate containers background color.
             if ( ! empty( $wide_separate_bg_color ) ) {
                 $css .= '
-                    body.wide-layout.custom-background.separate-containers .site-content,
-                    body.wide-layout.separate-containers .site-content {
-                        background: '. $wide_separate_bg_color .';
+                    body.wide-layout.custom-background.separate-containers,
+                    body.wide-layout.separate-containers {
+                        background-color: '. $wide_separate_bg_color .';
                     }
                 ';
             }
