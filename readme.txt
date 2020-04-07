@@ -53,6 +53,10 @@ Article Lite is a mimimal WordPress Theme design specially for bloggers. Providi
 = 1.0.6 - March 17 2020 =
 * Fixed php errors in content.php
 
+= 1.0.7 - April 07 2020 =
+* Fixed credit of theme.
+
+
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
@@ -99,3 +103,4 @@ theia-sticky-sidebar:
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Based on Easy Mart https://wordpress.org/themes/easy-mart/, for plugin activation function.
