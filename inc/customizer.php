@@ -1,26 +1,98 @@
 <?php
 /**
- * fmi Theme Customizer
+ * Customizer Functions
  *
- * @package fmi
+ * @package Fmi
  */
 
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
-function fmi_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-}
-add_action( 'customize_register', 'fmi_customize_register' );
+function vs_customize_register( $wp_customize ) {
+
+  // Customize control: Heading
+  class vs_customize_control_heading extends WP_Customize_Control {
+    public $type = 'vs_heading';
+    public function render_content() {
+      ?>
+      <div class="customize-control-heading">
+        <?php echo esc_html( $this->label ); ?>
+      </div>
+      <?php
+    }
+  }
+  
+  // Customize control: Number field (input type = number; min=1, max=10000)
+  class vs_customize_number_control extends WP_Customize_Control {
+    public $type = 'vs_number_field';
+    public function render_content() {
+      ?>
+      <label>
+        <span class="customize-control-title">
+          <?php echo esc_html($this->label); ?>
+        </span>
+        <input type="number" min="1" max="10000" value="<?php echo esc_attr($this->value()); ?>" <?php $this->link(); ?> />
+      </label>
+      <?php
+    }
+  }
 
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * Design.
  */
-function fmi_customize_preview_js() {
-	wp_enqueue_script( 'fmi_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+require get_template_directory() . '/inc/theme-mods/design.php';
+
+/**
+ * Header Settings.
+ */
+require get_template_directory() . '/inc/theme-mods/header-settings.php';
+
+/**
+ * Footer Settings.
+ */
+require get_template_directory() . '/inc/theme-mods/footer-settings.php';
+
+/**
+ * Homepage Settings.
+ */
+require get_template_directory() . '/inc/theme-mods/homepage-settings.php';
+
+/**
+ * Archive Settings.
+ */
+require get_template_directory() . '/inc/theme-mods/archive-settings.php';
+
+/**
+ * Posts Settings.
+ */
+require get_template_directory() . '/inc/theme-mods/post-settings.php';
+
+/**
+ * Pages Settings.
+ */
+require get_template_directory() . '/inc/theme-mods/page-settings.php';
+
+/**
+ * Miscellaneous.
+ */
+require get_template_directory() . '/inc/theme-mods/miscellaneous.php';
+
+/**
+ * Social Links.
+ */
+require get_template_directory() . '/inc/theme-mods/social-links.php';
+
 }
-add_action( 'customize_preview_init', 'fmi_customize_preview_js' );
+add_action( 'customize_register', 'vs_customize_register' );
+
+// Load custom customizer styles
+function vs_customize_controls_print_styles() {
+  wp_enqueue_style( 'vs_customize_css', get_template_directory_uri() . '/assets/css/customizer.css', array(), false );
+}
+add_action( 'customize_controls_print_styles', 'vs_customize_controls_print_styles', 100 );
+
+// Load Google AdSense scripts
+function vs_adsense_enqueue_scripts() {
+  if ( get_theme_mod( 'misc_adsense', 0 ) ) {
+    wp_register_script( 'vs_adsense', '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' );
+    wp_enqueue_script( 'vs_adsense' );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'vs_adsense_enqueue_scripts' );

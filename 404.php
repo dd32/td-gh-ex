@@ -1,41 +1,15 @@
 <?php
 /**
- * The template for displaying 404 pages (not found).
+ * The template for displaying 404 page (Not Found)
  *
- * @package fmi
+ * @package Fmi
  */
 
-get_header(); ?>
+// header
+get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+// page 404
+get_template_part( 'template-parts/archive' );
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php echo esc_attr(fmi_theme_option('vs-website-error-head'));?></h1>
-				</header><!-- .page-header -->
-
-				<div class="post">
-				<div class="page-content">
-					<p><?php echo esc_attr(fmi_theme_option('vs-website-error-msg'));?></p>
-
-					<?php get_search_form(); ?>
-
-
-
-				</div><!-- .page-content -->
-                </div>
-                
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-        
-
-        
-	</div><!-- #primary -->
-    
-	<?php get_sidebar();?>
-
-	<div class="clear"></div>
-
-<?php get_footer(); ?>
+// footer
+get_footer();

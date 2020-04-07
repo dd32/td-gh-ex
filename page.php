@@ -1,35 +1,53 @@
 <?php
 /**
- * The template for displaying all pages.
+ * The template for displaying all pages
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package fmi
+ * @package Fmi
  */
 
-get_header(); ?>
+// header
+get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+$page_id = $post->ID;
+$page_sidebar = get_post_meta( $page_id, 'vs_singular_sidebar', true );
+if ( ! $page_sidebar || 'default' === $page_sidebar ) {
+  $page_sidebar = get_theme_mod( 'page_sidebar', 'right' );
+}
+?>
+<div class="site-content sidebar-<?php echo esc_attr( $page_sidebar ); ?>">
+  <div class="vs-container">
+    <div id="content" class="main-content">
 
-			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+          <div id="primary" class="content-area">
+            <main id="main" class="site-main">
 
-			<?php endwhile; // end of the loop. ?>
+              <?php
+              while ( have_posts() ) {
+                the_post();
+              ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            <?php get_template_part( 'template-parts/content-page' ); ?>
+            
+            <?php do_action( 'vs_page_after' ); ?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+              <?php
+              }
+              ?>
+
+            </main>
+          </div>
+
+      <?php
+      if ( 'disabled' !== $page_sidebar ) {
+        get_sidebar(); 
+      }
+      ?>
+    </div>
+  </div>
+</div>
+
+<?php
+// footer
+get_footer();
