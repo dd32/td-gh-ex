@@ -4,7 +4,7 @@ Theme URI: https://www.thinkupthemes.com/free/minamaze-free/
 Author: ThinkUpThemes
 Author URI: https://www.thinkupthemes.com
 Description: Minamaze the free version of the multi-purpose professional theme (Minamaze Pro) ideal for a business or blog website. The theme has a responsive layout, HD retina ready and comes with a powerful theme options panel with can be used to make awesome changes without touching any code. The theme also comes with a full width easy to use slider. Easily add a logo to your site and create a beautiful homepage using the built-in homepage layout.
-Version: 1.7.3
+Version: 1.7.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-logo, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -722,12 +722,17 @@ li.pag-next {
 
 /* Site-header */
 #site-header {
-	line-height: 1.5;
+	position: relative;
+	z-index: 99999;
 }
 
 /* Pre-header */
 #pre-header {
 	background: #1C1C1C;
+}
+#pre-header:hover,
+#pre-header:focus-within {
+	z-index: 99991;
 }
 #pre-header li {
 	float: left;
@@ -903,6 +908,9 @@ color: #FFF;
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 }
+#header {
+	z-index: 9999;
+}
 #header-links {
 	float: right;
 }
@@ -1000,7 +1008,9 @@ color: #FFF;
 .main-navigation ul ul :hover > a {
 }
 #pre-header .main-navigation ul li:hover > ul,
-#header .main-navigation ul li:hover > ul {
+#pre-header .main-navigation ul li:focus-within > ul,
+#header .main-navigation ul li:hover > ul,
+#header .main-navigation ul li:focus-within > ul {
 	display: block;
 }
 
@@ -1853,6 +1863,14 @@ html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	background: #333;
+}
+a:focus,
+.themebutton:focus,
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+	outline: 1px dotted #9fc1f7;
 }
 
 /* =Breadcrumbs

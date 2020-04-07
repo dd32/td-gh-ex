@@ -3,7 +3,7 @@ Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 5.2.3
 Requires PHP: 5.2.4
-Version: 1.7.3
+Version: 1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, custom-header, custom-logo, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, photography, rtl-language-support
@@ -78,6 +78,13 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.7.4
+- New:     wp_body_open added to header.php alond with fallback support.
+- Updated: Outline with hex #9fc1f7 displayed on focus to all relevant elements.
+- Updated: Responsive navigation menu can be toggled with "Enter" button when focused.
+- Updated: Responsive dropdown menu fully accessible with keyboard navigation.
+- Updated: Improved keyboard navigation support added.
 
 = 1.7.3
 - Updated: Responsive dropdown menu fully accessible with keyboard navigation.
