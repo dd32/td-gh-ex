@@ -4,7 +4,7 @@ Theme URI: https://www.themeseye.com/wordpress/free-startup-wordpress-theme/
 Author: ThemesEye
 Author URI: https://www.themeseye.com/
 Description: Aagaz Startup is a smart, stylish, innovative and professional looking startup WordPress theme for startups, entrepreneurs, joint ventures, IT companies, web development agencies, digital marketing agencies, business startups, corporate business, online business and all such businesses that are starting out new to establish themselves in the market and want to be known for their innovative business ideas. It is a multipurpose theme which can be used for various websites just by customizing its colour, background, images and text and these changes can be done by anyone without requiring prerequisite coding knowledge. Aagaz Startup is fully responsive, all-browser compatible and translation ready. It has a bold homepage slider whose width can be changed from boxed to full width to full screen. The theme offers multiple options in most of the elements be it header and footer layout, menu style, blog formats or gallery layout. It comes with several premium features that make the website modern and put you on front seat in handling the website. This startup WordPress theme has super performing SEO and its pages load brilliantly everywhere. It has several predesigned inner pages, many sections, unlimited colours and numerous Google fonts which make this theme a complete package of awesomeness. Demo: https://themeseye.com/demo/aagaz-startup-pro/
-Version: 0.4.3
+Version: 0.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aagaz-startup
@@ -249,6 +249,12 @@ label {
 	display: inline-block;
 	font-weight: 800;
 	margin: 0;
+	width: 100%;
+}
+.page-content label{
+	width: 50%;
+}
+.page-content .search-field{
 	width: 100%;
 }
 fieldset {
@@ -644,6 +650,9 @@ a:active {
 }
 
 /*preloader*/
+.elementor-html #pre-loader{
+	display: none;
+}
 #pre-loader{
   position: fixed;
   top: 0;
@@ -1511,11 +1520,6 @@ body {
 	position: relative;
 	word-wrap: break-word;
 }
-.wrap {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 700px;
-}
 .wrap:after {
 	clear: both;
 	content: "";
@@ -1790,6 +1794,39 @@ body.page:not(.aagaz-startup-front-page) .entry-title {
 .entry-meta a {
 	color: #767676;
 }
+
+/*post pagination*/
+.nav-links .nav-previous a {
+    font-size: 14px;
+    font-weight: 600;
+    color:#323c47;
+    display: inline-block;
+    background: #9fcd55;
+    padding: 10px 15px 10px 20px;
+    margin-right: 10px;
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%, 0% 50%);
+    border: none;
+}
+.nav-links .nav-next a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #323c47;
+    display: inline-block;
+    background: #9fcd55;
+    padding: 10px 23px 10px 10px;
+    margin-right: 10px;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 51%, 75% 100%, 0% 100%);
+    border: none;
+}
+.nav-previous {
+    float: left;
+    width: 50%;
+    font-size: 15px;
+}
+.nav-next {
+    float: right;
+    font-size: 15px;
+}
 .pagination,
 .comments-pagination {
 	border-top: 1px solid #eee;
@@ -1937,8 +1974,6 @@ body:not(.aagaz-startup-front-page) .entry-header {
 }
 /* Entry footer */
 .scrollup i {
-  width: 50px;
-  height: 50px;
   position: fixed;
   bottom: 50px;
   right: 50px;
@@ -1953,7 +1988,8 @@ body:not(.aagaz-startup-front-page) .entry-header {
 	display: none;
 }
 .scrollup.left i{
-  left: 50px;
+  	left: 50px;
+	right: 89%;
 }
 .scrollup.center i{
   left: 50%;

@@ -41,14 +41,7 @@ get_header(); ?>
 					endif;
 					?>
 					<div class="navigation">
-		                <?php
-		                    
-		                    the_posts_pagination( array(
-		                        'prev_text'          => __( 'Previous page', 'aagaz-startup' ),
-		                        'next_text'          => __( 'Next page', 'aagaz-startup' ),
-		                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'aagaz-startup' ) . ' </span>',
-		                    ) );
-		                ?>
+		                <?php aagaz_startup_pagination_type(); ?>
 	       	 		</div>
 				</div>
 			<?php }else if($layout_setting == 'Right Sidebar'){ ?>
@@ -72,14 +65,7 @@ get_header(); ?>
 					endif;
 					?>
 					<div class="navigation">
-		                <?php
-		                    
-		                    the_posts_pagination( array(
-		                        'prev_text'          => __( 'Previous page', 'aagaz-startup' ),
-		                        'next_text'          => __( 'Next page', 'aagaz-startup' ),
-		                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'aagaz-startup' ) . ' </span>',
-		                    ) );
-		                ?>
+		                <?php aagaz_startup_pagination_type(); ?>
 	       	 		</div>
 				</div>
 				<div id="sidebox" class="col-lg-4 col-md-4">
@@ -106,14 +92,7 @@ get_header(); ?>
 					endif;
 					?>
 					<div class="navigation">
-		                <?php
-		                    
-		                    the_posts_pagination( array(
-		                        'prev_text'          => __( 'Previous page', 'aagaz-startup' ),
-		                        'next_text'          => __( 'Next page', 'aagaz-startup' ),
-		                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'aagaz-startup' ) . ' </span>',
-		                    ) );
-		                ?>
+		                <?php aagaz_startup_pagination_type(); ?>
 	       	 		</div>
 				</div>
 			<?php }else if($layout_setting == 'Grid Layout'){ ?>
@@ -138,14 +117,7 @@ get_header(); ?>
 						endif;
 						?>
 						<div class="navigation">
-			                <?php
-			                    
-			                    the_posts_pagination( array(
-			                        'prev_text'          => __( 'Previous page', 'aagaz-startup' ),
-			                        'next_text'          => __( 'Next page', 'aagaz-startup' ),
-			                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'aagaz-startup' ) . ' </span>',
-			                    ) );
-			                ?>
+			                <?php aagaz_startup_pagination_type(); ?>
 		       	 		</div>
 		       	 	</div>
 				</div>
@@ -173,14 +145,7 @@ get_header(); ?>
 					endif;
 					?>
 					<div class="navigation">
-		                <?php
-		                    
-		                    the_posts_pagination( array(
-		                        'prev_text'          => __( 'Previous page', 'aagaz-startup' ),
-		                        'next_text'          => __( 'Next page', 'aagaz-startup' ),
-		                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'aagaz-startup' ) . ' </span>',
-		                    ) );
-		                ?>
+		                <?php aagaz_startup_pagination_type(); ?>
 	       	 		</div>
 				</div>
 				<div id="sidebox" class="col-lg-4 col-md-4">

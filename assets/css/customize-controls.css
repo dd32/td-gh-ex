@@ -15,7 +15,9 @@
 /* ---------Excerpt & Logo --------- */
 input#_customize-input-aagaz_startup_excerpt_number,
 input#_customize-input-aagaz_startup_slider_excerpt_number,
-input#_customize-input-aagaz_startup_slider_opacity_color {
+input#_customize-input-aagaz_startup_slider_opacity_color,
+input#_customize-input-aagaz_startup_slider_speed,
+input#_customize-input-aagaz_startup_scroll_top_fontsize {
     width: 100%;
 }
 input#_customize-input-logo_size{

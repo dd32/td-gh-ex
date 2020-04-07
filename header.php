@@ -12,7 +12,11 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<?php wp_body_open(); ?>
+	<?php if ( function_exists( 'wp_body_open' ) ) {
+	  wp_body_open(); 
+	} else { 
+	  do_action( 'wp_body_open' ); 
+	} ?>
 	<?php if(get_theme_mod('aagaz_startup_loader_setting',true)){ ?>
 	    <div id="pre-loader">
 	      	<div class='demo'>
@@ -44,7 +48,7 @@
 	 <?php }?>
 	<a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'aagaz-startup' ); ?></a>
 	<div id="page" class="site">
-		<?php if( get_theme_mod('aagaz_startup_show_hide_topbar',true) != ''){ ?>
+		<?php if( get_theme_mod('aagaz_startup_show_hide_topbar',true) != '' || get_theme_mod('aagaz_startup_enable_disable_topbar',true) != ''){ ?>
 			<div class="topbar">
 				<div class="container">
 					<div class="row">
@@ -99,19 +103,23 @@
 					              <?php else: ?>
 					              <?php $blog_info = get_bloginfo( 'name' ); ?>
 					              <?php if ( ! empty( $blog_info ) ) : ?>
-					                <?php if ( is_front_page() && is_home() ) : ?>
-					                  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					                <?php else : ?>
-					                  <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					                <?php endif; ?>
+					              	<?php if( get_theme_mod('aagaz_startup_show_site_title',true) != ''){ ?>
+						                <?php if ( is_front_page() && is_home() ) : ?>
+						                  <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						                <?php else : ?>
+						                  <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+						                <?php endif; ?>
+						            <?php }?>
 					              <?php endif; ?>
 					              <?php
 					              $description = get_bloginfo( 'description', 'display' );
 					              if ( $description || is_customize_preview() ) :
 					                ?>
-					              <p class="site-description">
-					                <?php echo esc_html($description); ?>
-					              </p>
+					                <?php if( get_theme_mod('aagaz_startup_show_tagline',true) != ''){ ?>
+					              		<p class="site-description">
+					                		<?php echo esc_html($description); ?>
+					              		</p>
+					              	<?php }?>
 					            <?php endif; ?>
 					            <?php endif; ?>
 					        </div>

@@ -31,6 +31,26 @@ function aagaz_startup_logo_customize_register( $wp_customize ) {
 			'aria-orientation' => 'horizontal',
 		),
 	) );
+
+	$wp_customize->add_setting('aagaz_startup_show_site_title',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_show_site_title',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Logo Site Title','aagaz-startup'),
+       'section' => 'title_tagline'
+    ));
+
+    $wp_customize->add_setting('aagaz_startup_show_tagline',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('aagaz_startup_show_tagline',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Logo Site Tagline','aagaz-startup'),
+       'section' => 'title_tagline'
+    ));
 }
 add_action( 'customize_register', 'aagaz_startup_logo_customize_register' );
 

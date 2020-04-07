@@ -3,7 +3,7 @@
  * Displays top navigation
  */
 ?>
-<div class="header-menu <?php if( get_theme_mod( 'aagaz_startup_fixed_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+<div class="header-menu <?php if( get_theme_mod( 'aagaz_startup_fixed_header') != '' || get_theme_mod( 'aagaz_startup_enable_disable_fixed_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
 	<div class="row m-0">
 		<div class="col-lg-11 col-md-10">
 			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'aagaz-startup' ); ?>">
@@ -21,16 +21,16 @@
 		</div>
 		<div class="col-lg-1 col-md-2">
 			<div class="search-box">
-				<a href="#" onclick="search_open()" ><i class="fas fa-search"></i>
+				<a href="#"><i class="fas fa-search"></i>
 		     		<span class="screen-reader-text"><?php esc_html_e( 'Search','aagaz-startup' );?></span>
 		     	</a>
 		    </div>
 		</div>
 	</div>
 	<div class="serach_outer">
-	    <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','aagaz-startup' );?></span></a>
 	    <div class="serach_inner">
 	      <?php get_search_form(); ?>
 	    </div>
+	    <a href="#" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','aagaz-startup' );?></span></a>
 	</div>
 </div>

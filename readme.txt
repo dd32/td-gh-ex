@@ -2,9 +2,9 @@
 Contributors: ThemesEye
 Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 7.2.14
-Stable tag: 0.4.3
+Stable tag: 0.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,19 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
   * Added enable / disable option for preloader in customizer.
   * Added preloader Color and Background Color Option in customizer.
   * Added different types of preloader.
+
+= 0.4.4 =
+  * Added settings for page not found page.
+  * Added enable / disable sidebar, fixed header, top header, scroll to top, slider and slider button options for mobile media in customizer.
+  * Added show and hide option for slider title, slider content and slider button.
+  * Added top and bottom padding option for copyright in customizer.
+  * Added show / hide options for Logo Site Title and Logo Site Tagline.
+  * Added border radius, padding and font size settings for scroll to top.
+  * Added slider speed, slider height and slider button text settings.
+  * Added post excerpt indicator options.
+  * Added post description options.
+  * Added post pagination options.
+  * Resolved theme errors.
   
 == Resources ==
 

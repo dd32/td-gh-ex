@@ -98,7 +98,7 @@
 		$custom_css .='}';
 		}
 
-	/*---------------------------Slider Content Layout -------------------*/
+	/*----------------- Slider Content Layout ---------------*/
 
 	$slider_layout = get_theme_mod( 'aagaz_startup_slider_content_option','Left');
     if($slider_layout == 'Left'){
@@ -230,6 +230,149 @@
 		$custom_css .='.circle .inner{';
 			$custom_css .='width:80%;
     border-right: 5px;';
+		$custom_css .='}';
+	}
+
+	// Responsive Media
+	$sidebar = get_theme_mod( 'aagaz_startup_enable_disable_sidebar',true);
+    if($sidebar == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebox{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sidebar == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebox{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$stickyheader = get_theme_mod( 'aagaz_startup_enable_disable_topbar',true);
+	if($stickyheader == true && get_theme_mod( 'aagaz_startup_show_hide_topbar') == false){
+    	$custom_css .='.topbar{';
+			$custom_css .='display:none;';
+		$custom_css .='} ';
+	}
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.topbar{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.topbar{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$stickyheader = get_theme_mod( 'aagaz_startup_enable_disable_fixed_header',true);
+	if($stickyheader == true && get_theme_mod( 'aagaz_startup_fixed_header') == false){
+    	$custom_css .='.fixed-header{';
+			$custom_css .='position:static;';
+		$custom_css .='} ';
+	}
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.fixed-header{';
+			$custom_css .='position:fixed;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.fixed-header{';
+			$custom_css .='position:static;';
+		$custom_css .='} }';
+	}
+
+	$sliderbutton = get_theme_mod( 'aagaz_startup_enable_disable_slider',true);
+	if($sliderbutton == true && get_theme_mod( 'aagaz_startup_slider_arrows') == false){
+    	$custom_css .='#slider{';
+			$custom_css .='display:none;';
+		$custom_css .='} ';
+	}
+    if($sliderbutton == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sliderbutton == false){
+		$custom_css .='@media screen and (max-width:575px){';
+		$custom_css .='#slider{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$sliderbutton = get_theme_mod( 'aagaz_startup_show_hide_slider_button',true);
+	if($sliderbutton == true && get_theme_mod( 'aagaz_startup_slider_button',true) != true){
+    	$custom_css .='#slider .readbutton{';
+			$custom_css .='display:none;';
+		$custom_css .='} ';
+	}
+    if($sliderbutton == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider .readbutton{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sliderbutton == false){
+		$custom_css .='@media screen and (max-width:575px){';
+		$custom_css .='#slider .readbutton{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$sliderbutton = get_theme_mod( 'aagaz_startup_enable_disable_scrolltop',true);
+	if($sliderbutton == true && get_theme_mod( 'aagaz_startup_hide_show_scroll',true) != true){
+    	$custom_css .='.scrollup i{';
+			$custom_css .='display:none;';
+		$custom_css .='} ';
+	}
+    if($sliderbutton == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.scrollup i{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sliderbutton == false){
+		$custom_css .='@media screen and (max-width:575px){';
+		$custom_css .='.scrollup i{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	// Slider Height 
+	$aagaz_startup_slider_height_option = get_theme_mod('aagaz_startup_slider_height_option');
+	if($aagaz_startup_slider_height_option != false){
+		$custom_css .='#slider img{';
+			$custom_css .='height: '.esc_html($aagaz_startup_slider_height_option).'px;';
+		$custom_css .='}';
+	}
+
+	// scroll to top setting
+	$aagaz_startup_scroll_border_radius = get_theme_mod('aagaz_startup_scroll_border_radius');
+	if($aagaz_startup_scroll_border_radius != false){
+		$custom_css .='.scrollup i{';
+			$custom_css .='border-radius: '.esc_html($aagaz_startup_scroll_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+	$aagaz_startup_scroll_top_fontsize = get_theme_mod('aagaz_startup_scroll_top_fontsize');
+	if($aagaz_startup_scroll_top_fontsize != false){
+		$custom_css .='.scrollup i{';
+			$custom_css .='font-size: '.esc_html($aagaz_startup_scroll_top_fontsize).'px;';
+		$custom_css .='}';
+	}
+
+	$aagaz_startup_scroll_top_bottom_padding = get_theme_mod('aagaz_startup_scroll_top_bottom_padding');
+	$aagaz_startup_scroll_left_right_padding = get_theme_mod('aagaz_startup_scroll_left_right_padding');
+	if($aagaz_startup_scroll_top_bottom_padding != false || $aagaz_startup_scroll_left_right_padding != false){
+		$custom_css .='.scrollup i{';
+			$custom_css .='padding-top: '.esc_html($aagaz_startup_scroll_top_bottom_padding).'px; padding-bottom: '.esc_html($aagaz_startup_scroll_top_bottom_padding).'px; padding-left: '.esc_html($aagaz_startup_scroll_left_right_padding).'px; padding-right: '.esc_html($aagaz_startup_scroll_left_right_padding).'px;';
+		$custom_css .='}';
+	}
+
+	// Copyright top-bottom padding setting 
+	$aagaz_startup_copyright_top_bottom_padding = get_theme_mod('aagaz_startup_copyright_top_bottom_padding');
+	if($aagaz_startup_copyright_top_bottom_padding != false){
+		$custom_css .='.copyright{';
+			$custom_css .='padding-top: '.esc_html($aagaz_startup_copyright_top_bottom_padding).'px; padding-bottom: '.esc_html($aagaz_startup_copyright_top_bottom_padding).'px;';
 		$custom_css .='}';
 	}
 

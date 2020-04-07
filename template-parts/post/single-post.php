@@ -25,17 +25,15 @@
 				<?php if( get_theme_mod( 'aagaz_startup_date_hide',true) != '') { ?>
 					<i class="fa fa-calendar"></i><span class="entry-date"><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
 				<?php } ?>
-
 				<?php if( get_theme_mod( 'aagaz_startup_author_hide',true) != '') { ?>
-					<i class="fa fa-user"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
+					<i class="fa fa-user"></i><span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
 				<?php } ?>
-
 				<?php if( get_theme_mod( 'aagaz_startup_comment_hide',true) != '') { ?>
 					<i class="fas fa-comments"></i><span class="entry-comments"><?php comments_number( __('0 Comments','aagaz-startup'), __('0 Comments','aagaz-startup'), __('% Comments','aagaz-startup') ); ?></span>
 				<?php } ?>
 			</div>
 		<?php } ?>
-		<h1><?php the_title();?></h1>
+		<h1><?php esc_html(the_title()); ?></h1>
 		<div class="text">
 	    	<?php the_content();?>
 	  	</div>

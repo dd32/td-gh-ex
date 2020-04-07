@@ -4,7 +4,7 @@
  */
 
 ?>
-<?php if( get_theme_mod( 'aagaz_startup_hide_show_scroll',true) != '') { ?>
+<?php if( get_theme_mod( 'aagaz_startup_hide_show_scroll',true) != '' || get_theme_mod( 'aagaz_startup_enable_disable_scrolltop',true) != '') { ?>
     <?php $theme_lay = get_theme_mod( 'aagaz_startup_footer_options','Right');
         if($theme_lay == 'Left align'){ ?>
             <a href="#" class="scrollup left"><i class="fas fa-long-arrow-alt-up"></i><span class="screen-reader-text"><?php esc_html_e( 'Scroll Up', 'aagaz-startup' ); ?></span></a>
