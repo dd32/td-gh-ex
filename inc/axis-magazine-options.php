@@ -26,7 +26,7 @@ function axis_magazine_theme_info_display() {
 	
 	?>
 	<div class="wrap axis-magazine-adm">
-		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.15', 'axis-magazine'); ?></h1>
+		<h1 class="header-welcome"><?php esc_html_e('Welcome to Axis Magazine - 0.0.16', 'axis-magazine'); ?></h1>
 		<div class="axis-magazine-adm-dsply-fl axis-magazine-adm-fl-wrap axis-magazine-adm-jc-sp-btw">
 
 			<div class="axis-magazine-adm-wid-49 theme-para theme-doc axis-magazine-adm-mobwid-100">
@@ -132,6 +132,11 @@ function axis_magazine_theme_info_display() {
 							<td class="feature-items-title"><h3><?php esc_html_e('Responsive Design', 'axis-magazine'); ?></h3></td>
 							<td><span class="dashicons dashicons-yes"></span></td>
 							<td><span class="dashicons dashicons-yes"></span></td>
+						</tr>
+						<tr>
+							<td class="feature-items-title"><h3><?php esc_html_e('Number Of Feature Section Styles', 'axis-magazine'); ?></h3></td>
+							<td><span class="number-index-styles"><?php esc_html_e('1', 'axis-magazine'); ?></span></td>
+							<td><span class="number-index-styles"><?php esc_html_e('7', 'axis-magazine'); ?></span></td>
 						</tr>
 						<tr>
 							<td class="feature-items-title"><h3><?php esc_html_e('Portfolio Page Template', 'axis-magazine'); ?></h3></td>

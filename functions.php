@@ -2,7 +2,7 @@
 /**
  * The template for functions 
  *
- * @version    0.0.15
+ * @version    0.0.16
  * @package    axis-magazine
  * @author     Zidithemes
  * @copyright  Copyright (C) 2020 zidithemes.tumblr.com. All Rights Reserved.
