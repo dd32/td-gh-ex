@@ -30,7 +30,7 @@
 					<?php 
 						 }else{
 						?>	 
-							 <p><?php esc_html_e('© 2019 All Right Reserved | Arowana WordPress Theme','arowana'); ?></p>
+							 <p><?php esc_html_e('&copy; 2019 All Right Reserved | Arowana WordPress Theme','arowana'); ?></p>
 						<?php 	 
 							 } 
 						 } 

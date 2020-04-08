@@ -29,9 +29,11 @@
 				<div class="header-right-bar">                            
 					<ul>
 						<?php if($arowana_cart_hdr_setting == '1') { ?>
-						<li class="search-button search-cart-se">
-							<a class="" href="#search"><i class="fa <?php echo esc_attr( $arowana_hdr_search ); ?>"></i></a>                                
-						</li>
+							<?php if ( ! empty( $arowana_hdr_search ) ) { ?>
+								<li class="search-button search-cart-se">
+									<a id="search-popup" href="javascript:void(0);"><i class="fa <?php echo esc_attr( $arowana_hdr_search ); ?>"></i></a>                                
+								</li>
+							<?php } ?>	
 						<?php } ?>
 						<?php if($arowana_booknow_setting == '1') { ?>
 							<li class="book-now-btn">
@@ -62,6 +64,19 @@
 	</div>
 </div>	
 <!-- Navigation End -->
+ <!-- Start: Search
+    ============================= -->
+	<div id="search">
+		<a href="javascript:void(0);" id="close-btn"><i class="fa fa-times"></i></a>      
+		<div>        
+		<form method="get" id="searchform" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<input id="searchbox" class="search-field" type="search" type="text" value="" name="s" id="s" placeholder="<?php esc_attr_e('type here','arowana'); ?>" />
+			<button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+		</form>
+		</div>        
+	</div>	
+<!-- End: Search
+============================= -->
 <?php 
 if ( !is_page_template( 'templates/template-homepage.php' ) ) {
 		startkit_breadcrumbs_style(); 
