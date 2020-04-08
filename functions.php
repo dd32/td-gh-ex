@@ -304,11 +304,6 @@ if ( class_exists( 'LearnPress' ) ) {
 }
 
 /**
- * Demo content
- */
-require_once dirname( __FILE__ ) . '/inc/demo-content/setup.php';
-
-/**
  * TGMPA
  */
 require_once get_template_directory() . '/inc/tgmpa/class-tgm-plugin-activation.php';
@@ -337,6 +332,11 @@ function airi_register_required_plugins() {
 			'slug'      => 'kirki',
 			'required'  => false,
 		),
+		array(
+			'name'      => 'Demo interface',
+			'slug'      => 'airi-demo-importer',
+			'required'  => false,
+		),		
 		array(
 			'name'      => 'Demo content import',
 			'slug'      => 'one-click-demo-import',
@@ -368,5 +368,28 @@ require get_template_directory() . '/inc/customizer/upsell/class-customize.php';
  * Onboarding
  */
 if ( current_user_can( 'manage_options' ) ) {
-	require get_template_directory() . '/inc/onboarding/class-airi-onboarding.php';
+	require get_template_directory() . '/inc/onboarding/theme-info.php';
 }
+
+
+/**
+ * Admin notice
+ */
+require get_template_directory() . '/inc/notices/persist-admin-notices-dismissal.php';
+
+function airi_welcome_admin_notice() {
+	if ( ! PAnD::is_admin_notice_active( 'airi-welcome-forever' ) ) {
+		return;
+	}
+	
+	?>
+	<div data-dismissible="airi-welcome-forever" class="airi-admin-notice updated notice notice-success is-dismissible">
+
+		<p><?php echo sprintf( __( 'Welcome to Airi. To get started please make sure to visit our <a href="%s">welcome page</a>.', 'airi' ), admin_url( 'themes.php?page=airi-info.php' ) ); ?></p>
+		<a class="button" href="<?php echo admin_url( 'themes.php?page=airi-info.php' ); ?>"><?php esc_html_e( 'Get started with Airi', 'airi' ); ?></a>
+
+	</div>
+	<?php
+}
+add_action( 'admin_init', array( 'PAnD', 'init' ) );
+add_action( 'admin_notices', 'airi_welcome_admin_notice' );

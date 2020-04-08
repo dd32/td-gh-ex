@@ -1,9 +1,7 @@
 .info-container {
-	background-color: #fff;
 	margin-right: 20px;
 	padding: 30px;
 	margin-top: 20px;
-	border: 1px solid #e5e5e5;
 }
 .info-container::before,
 .info-container::after {
@@ -14,19 +12,25 @@
 .info-title {
 	margin: 0 0 45px;
 }
+.info-version {
+	background: #e5e5e5;
+    font-size: 14px;
+    display: inline-block;
+    padding: 2px 4px;
+	margin-left: 12px;
+	border: 1px solid #ccc;
+	vertical-align: top;
+}
 
 .hello-user {
 	font-size: 18px;
-	color: #bcbfc4;	
 }
 .hello-user span {
 }
 .welcome-desc {
 	font-size: 16px;
-    max-width: 600px;
-}
-.airi-theme-tabs {
-	margin-top: 45px;
+	max-width: 660px;
+	margin-bottom: 40px;
 }
 .airi-tab {
 	display: none;
@@ -36,7 +40,12 @@
 	display: block;
 }
 .airi-tab-nav .nav-button {
-	font-size: 18px;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.airi-tab-nav .nav-tab {
+	padding: 10px 14px;
 }
 .airi-tab-nav a:active,
 .airi-tab-nav a:focus {
@@ -86,4 +95,54 @@
     font-size: 28px;
     height: auto;
     width: auto;	
+}
+.airi-theme-tabs {
+	width: calc(70% - 30px);
+	float: left;
+	margin-right: 30px;
+	box-sizing: border-box;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	padding: 30px;
+}
+.airi-theme-sidebar {
+	width: 30%;
+	float: left;
+	box-sizing: border-box;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	padding: 30px;
+}
+.airi-sidebar-widget {
+	margin-bottom: 30px;
+}
+.airi-sidebar-widget:last-of-type {
+	margin-bottom: 0;
+}
+.plugins-row {
+	box-sizing: border-box;
+}
+.plugin-block {
+	padding: 0 15px;
+	width: 33.33333%;
+	float: left;
+	box-sizing: border-box;
+	position: relative;
+	padding-bottom: 40px;
+}
+.airi-notice {
+	background-color: #fff2c3;
+    padding: 10px;
+    border-left: 2px solid #ffb100;
+}
+.step-number {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: #dddddd;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
 }

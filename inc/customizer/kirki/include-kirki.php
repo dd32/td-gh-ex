@@ -91,3 +91,6 @@ if ( ! class_exists( 'Kirki' ) ) {
 		add_action( 'customize_register', 'kirki_installer_register' );
 	}
 }
+
+//Disable Kirki telemetry module
+add_filter( 'kirki_telemetry', '__return_false' );
