@@ -166,14 +166,13 @@ require_once( trailingslashit( get_template_directory() ) . '/inc/custom-header.
 require_once( trailingslashit( get_template_directory() ) . '/inc/customizer.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/customize/bellini-customizer-choices.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/customize/customizer-sanitization.php' );
-
 require_once( trailingslashit( get_template_directory() ) . '/inc/comments.php' );
-require_once( trailingslashit( get_template_directory() ) . '/inc/dashboard/bellini-info-dashboard.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hooks.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-footer.php' );
 require_once( trailingslashit( get_template_directory() ) . '/inc/widget-native-customize.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/persist-admin-notices-dismissal/persist-admin-notices-dismissal.php' );
 
 /**
  * Support for Jetpack
@@ -198,8 +197,50 @@ add_action( 'widgets_init', 'pangolin_register_bellini_widgets');
 if ( ! function_exists( 'pangolin_register_bellini_widgets' ) ) {
 	function pangolin_register_bellini_widgets(){
 	    unregister_widget( 'WP_Widget_Recent_Posts' );
-	    register_widget( 'Bellini_Recent_Posts_Widget' );
 	    unregister_widget( 'WP_Widget_Recent_Comments' );
+	    register_widget( 'Bellini_Recent_Posts_Widget' );
 	    register_widget( 'Bellini_Recent_Comments_Widget' );
 	}
+}
+
+/**
+ * Admin Support and Upgrade Link
+ */
+add_action( 'admin_menu', 'bellini_lite_support_link' );
+add_action( 'admin_menu', 'bellini_lite_upgrade_link' );
+
+function bellini_lite_support_link() {
+	global $submenu;
+	$menu_link = esc_url( 'https://atlantisthemes.com/contact/' );
+	$submenu['themes.php'][] = array( __( 'Theme Support', 'bellini' ), 'manage_options', $menu_link, '', 1 );
+}
+
+function bellini_lite_upgrade_link() {
+	global $submenu;
+	$upgrade_link = esc_url( 'https://atlantisthemes.com/bellini-woocommerce-theme/?utm_source=lite_upgrade' );
+	$submenu['themes.php'][] = array( __( 'Theme Upgrade', 'bellini' ), 'manage_options', $upgrade_link );
+}
+
+/**
+ * Admin Notice
+ */
+add_action( 'admin_init', array( 'PAnD', 'init' ) );
+add_action( 'admin_notices', 'bellini_lite_admin_notice_sale', 10 );
+
+/** Function bellini_lite_admin_notice_sale */
+function bellini_lite_admin_notice_sale() {
+	if ( ! PAnD::is_admin_notice_active( 'notice-bellini-lite-sale-forever' ) ) {
+		return;
+	}
+	?>
+
+	<div data-dismissible="notice-bellini-lite-sale-forever" class="notice updated is-dismissible">
+
+		<h2 style="margin-bottom:0px;"><?php esc_html_e( 'More options available with Bellini PRO', 'bellini' ); ?></h2>
+		<p><?php printf( wp_kses_post( 'Take advantage of this opportunity to <a href="%1$s" target="_blank">upgrade your theme</a>, and launch a online shop with exciting product layouts.', 'bellini' ), 'https://atlantisthemes.com/bellini-woocommerce-theme/'); ?></p>
+		<p><a class="button button-primary" href="https://atlantisthemes.com/bellini-woocommerce-theme/" target="_blank"><?php esc_html_e( 'Buy Pro', 'bellini' ); ?></a></p>
+
+	</div>
+
+	<?php
 }
