@@ -715,6 +715,24 @@ Kirki::add_field( 'accesspress_mag_config',
 	)
 );
 
+
+Kirki::add_field( 'accesspress_mag_config', 
+	array(
+		'type'        => 'switch',
+		'settings'    => 'featured_image',
+		'label'       => esc_html__( 'Show/Hide Featured Images', 'accesspress-mag' ),
+		'description' => esc_html__( 'Show or hide featured image in post`s single post.', 'accesspress-mag' ),
+		'section'     => 'accesspress_mag_add_settings',
+		'default'     => true,
+		'priority'    => 10,
+		'choices'     => array(
+			true   => esc_html__( 'Enable', 'accesspress-mag' ),
+			false => esc_html__( 'Disable', 'accesspress-mag' ),
+		),					
+		'sanitize_callback'	=> 'accesspress_mag_sanitize_checkbox'
+	)
+);
+
 Kirki::add_field( 'accesspress_mag_config', 
 	array(
 		'type'        => 'switch',
@@ -834,7 +852,7 @@ Kirki::add_field( 'accesspress_mag_config',
 		'label'       => esc_html__( 'Default Post Template', 'accesspress-mag' ),
 		'description' => esc_html__( 'Setting this option will make all post pages, that don\'t have a post template associated to them,to be displayed using this template. This option is OVERWRITTEN by the Post template option from the backend - post add / edit page.', 'accesspress-mag' ),
 		'section'     => 'accesspress_mag_post_lay_settings',
-		'default'     => 'slider_default',
+		'default'     => 'single',
 		'choices'     => array(
 			'single' => $imagepath.'post-templates-icons-0.png',
 			'single-style1' => $imagepath.'post-templates-icons-1.png'
@@ -921,30 +939,6 @@ Kirki::add_field( 'accesspress_mag_config',
 	)
 );
 
-Kirki::add_section( 'accesspress_mag_ft_img_settings', array(
-	'title'          => esc_html__( 'FEATURED IMAGES', 'accesspress-mag' ),
-	'priority'       => 30,
-	'panel'			=> 'accesspress_mag_post',
-) 
-);
-
-Kirki::add_field( 'accesspress_mag_config', 
-	array(
-		'type'        => 'switch',
-		'settings'    => 'featured_image',
-		'label'       => esc_html__( 'Show/Hide Featured Images', 'accesspress-mag' ),
-		'description' => esc_html__( 'Show or hide featured image in post`s single page.', 'accesspress-mag' ),
-		'section'     => 'accesspress_mag_ft_img_settings',
-		'default'     => true,
-		'priority'    => 10,
-		'choices'     => array(
-			true   => esc_html__( 'Enable', 'accesspress-mag' ),
-			false => esc_html__( 'Disable', 'accesspress-mag' ),
-		),					
-		'sanitize_callback'	=> 'accesspress_mag_sanitize_checkbox'
-	)
-);
-
 Kirki::add_section( 'accesspress_mag_archive_style', array(
 	'title'          => esc_html__( 'Archive Style', 'accesspress-mag' ),
 	'priority'       => 40,
@@ -985,6 +979,23 @@ Kirki::add_field( 'accesspress_mag_config',
 		),					
 		'priority'    => 20,
 		'sanitize_callback'	=> 'accesspress_mag_sanitize_post_sidebar',
+	)
+);
+
+Kirki::add_field( 'accesspress_mag_config', 
+	array(
+		'type'        => 'switch',
+		'settings'    => 'archive_cat',
+		'label'       => esc_html__( 'Show/Hide Category', 'accesspress-mag' ),
+		'description' => esc_html__( 'Show or hide category in archive page.', 'accesspress-mag' ),
+		'section'     => 'accesspress_mag_archive_style',
+		'default'     => true,
+		'priority'    => 10,
+		'choices'     => array(
+			true   => esc_html__( 'Enable', 'accesspress-mag' ),
+			false => esc_html__( 'Disable', 'accesspress-mag' ),
+		),					
+		'sanitize_callback'	=> 'accesspress_mag_sanitize_checkbox'
 	)
 );
 

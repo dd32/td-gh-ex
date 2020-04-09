@@ -11,7 +11,10 @@
 		<?php if ( 'post' == get_post_type() ) { ?>
     		<div class="entry-meta">
                 <?php
+                 $show_cat = of_get_option( 'archive_cat', '1' );
+                if($show_cat){
                     do_action( 'accesspress_mag_post_categories' );
+                }
                     accesspress_mag_posted_on();
                     do_action( 'accesspress_mag_post_meta' )
                 ;?>

@@ -82,6 +82,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+= 2.6.1 =
+ ** Fixed Minor Issues
+ ** Added Post Category Show Hide Option 
+
 = 2.6.0 =
  ** Fixed Double Date Issues
 

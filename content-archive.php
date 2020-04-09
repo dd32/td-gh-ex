@@ -10,7 +10,7 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
     		<div class="entry-meta">
-                <?php 
+                <?php
                     do_action( 'accesspress_mag_post_categories' );
                     accesspress_mag_posted_on();
                     do_action( 'accesspress_mag_post_meta' );
