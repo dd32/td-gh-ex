@@ -1,10 +1,10 @@
 === Artblog ===
 
-Contributors: maneshtimilsina
-Requires at least: 5.1
+Contributors: wpconcern
+Requires at least: 5.2
 Requires PHP: 5.6.20
 Tested up to: 5.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,10 @@ Artblog is a minimalist WordPress theme for personal, travel, fashion and all ty
 
 == Changelog ==
 
+= 2.0.1 - Apr 9 2020 =
+* Fix minor issues
+* Few CSS tweaks
+
 = 2.0.0 - Mar 12 2020 =
 * Major update
 
@@ -30,6 +34,7 @@ Artblog is a minimalist WordPress theme for personal, travel, fashion and all ty
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * Font Awesome: http://fontawesome.io/, (c) Dave Gandy, CSS - [MIT](http://opensource.org/licenses/MIT) ; Fonts - [SIL OFL 1.1](http://scripts.sil.org/OFL)
+* TRT Customizer Pro https://github.com/justintadlock/trt-customizer-pro, (c) 2016 Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Slick JS https://kenwheeler.github.io/slick/, (C) 2017 Ken Wheeler, [MIT](https://opensource.org/licenses/MIT)
 
 == Images ==

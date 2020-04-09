@@ -26,7 +26,7 @@
 				}
 			}
 			.search-submit {
-				box-shadow: 0 0 20px lighten($color_screen, 20%);
+				box-shadow: 0 0 8px lighten($color_screen, 20%);
 				@include for-size(phone-only) {
 					width: 100%;
 				}

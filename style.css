@@ -1,10 +1,10 @@
 /*!
 Theme Name: Artblog
-Theme URI: https://www.wpmanesh.com/free-wordpress-themes/artblog
-Author: Manesh Timilsina
-Author URI: https://www.wpmanesh.com/
+Theme URI: https://www.wpconcern.com/downloads/artblog/
+Author: WP Concern
+Author URI: https://www.wpconcern.com/
 Description: Artblog is a minimalist WordPress theme for personal, travel, fashion and all type of blogging websites. Additionally, it is a perfect feminine WordPress theme that comes with color options, slider and more. This simple blog theme is SEO ready and speed optimized which helps you to rank your website at the top of search engines. Artblog is the best responsive theme for bloggers, it has a perfect layout for all types of devices including desktop, smartphones, tablets, iPads, etc.
-Version: 2.0.0
+Version: 2.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: artblog
@@ -345,11 +345,14 @@ h5, h6 {
   font-size: 14px;
   color: #4d4d4d; }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   margin: 0;
   padding: 0;
   clear: both; }
+
+span {
+  font-weight: 400; }
 
 p {
   font-size: 16px;
@@ -619,7 +622,7 @@ a {
       margin-bottom: 4px; } }
 
 .search #primary .search-form .search-submit {
-  box-shadow: 0 0 20px #f8ac93; }
+  box-shadow: 0 0 8px #f8ac93; }
   @media (max-width: 767px) {
     .search #primary .search-form .search-submit {
       width: 100%; } }
@@ -804,64 +807,40 @@ p.has-drop-cap:not(:focus)::first-letter {
     max-width: 1200px; } }
 
 /* col-width*/
-.col-1 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  grid-gap: 30px; }
+.col-1 .widget-column {
+  float: left;
+  width: 100%;
+  padding: 0 15px; }
 
-.col-2 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px; }
+.col-2 .widget-column {
+  float: left;
+  width: 50%;
+  padding: 0 15px; }
   @media (max-width: 767px) {
-    .col-2 {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr; } }
+    .col-2 .widget-column {
+      width: 100%; } }
 
-.col-3 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px; }
-  @media (max-width: 767px) {
-    .col-3 {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr; } }
-
-.col-4 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: repeat(4, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px; }
+.col-3 .widget-column {
+  float: left;
+  width: 33.33%;
+  padding: 0 15px; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .col-4 {
-      -ms-grid-columns: repeat(2, 1fr);
-      grid-template-columns: repeat(2, 1fr); } }
+    .col-3 .widget-column {
+      width: 50%; } }
   @media (max-width: 767px) {
-    .col-4 {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr; } }
+    .col-3 .widget-column {
+      width: 100%; } }
 
-.col-5 {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: repeat(5, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 30px; }
+.col-4 .widget-column {
+  float: left;
+  width: 25%;
+  padding: 0 15px; }
   @media (min-width: 768px) and (max-width: 1023px) {
-    .col-5 {
-      -ms-grid-columns: repeat(1, 1fr);
-      grid-template-columns: repeat(1, 1fr); } }
+    .col-4 .widget-column {
+      width: 50%; } }
   @media (max-width: 767px) {
-    .col-5 {
-      -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr; } }
+    .col-4 .widget-column {
+      width: 100%; } }
 
 .sticky {
   display: block; }
@@ -877,6 +856,24 @@ body.single .navigation {
 
 body.single .entry-footer {
   margin-top: 20px; }
+
+body.sticky-header-enabled .site-header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  -ms-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  -o-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06); }
+  @media (max-width: 767px) {
+    body.sticky-header-enabled .site-header {
+      position: static; } }
+
+body.sidebar-layout-left-sidebar #primary {
+  float: right;
+  margin-right: 0;
+  margin-left: 30px; }
 
 .post {
   margin: 0 0 50px; }
@@ -954,33 +951,29 @@ body.single .entry-footer {
 
 .artblog-slider {
   position: relative;
-  margin-bottom: -40px; }
+  margin-bottom: 50px; }
   .artblog-slider .carousel-arrow {
     cursor: pointer; }
     .artblog-slider .carousel-arrow:focus {
       outline: 1px dotted #ffffff; }
   .artblog-slider .left-arrow {
     position: absolute;
-    top: 44%;
+    top: 50%;
     transform: translate(0, -50%);
     left: 20px;
-    z-index: 9999;
+    z-index: 1;
     font-size: 35px;
     color: #ffffff; }
-    @media (max-width: 767px) {
-      .artblog-slider .left-arrow {
-        top: 36%; } }
   .artblog-slider .right-arrow {
     position: absolute;
-    top: 44%;
+    top: 50%;
     transform: translate(0, -50%);
     right: 20px;
-    z-index: 9999;
+    z-index: 1;
     font-size: 35px;
     color: #ffffff; }
-    @media (max-width: 767px) {
-      .artblog-slider .right-arrow {
-        top: 36%; } }
+  .artblog-slider .slide-item-inner {
+    position: relative; }
   .artblog-slider .slide-item-thumb {
     position: relative; }
     .artblog-slider .slide-item-thumb::before {
@@ -999,8 +992,10 @@ body.single .entry-footer {
         object-fit: cover; } }
 
 .slide-item-content-wrap {
-  position: relative;
-  transform: translate(0px, -135px);
+  position: absolute;
+  width: 100%;
+  bottom: 40px;
+  padding: 0 20px;
   text-align: center; }
   .slide-item-content-wrap .title {
     margin-bottom: 10px; }
@@ -1179,7 +1174,7 @@ span.tags-links {
       color: #f16334; }
 
 .entry-cat-meta {
-  margin-bottom: 10px; }
+  margin-bottom: 5px; }
 
 span.cat-links .artblog-cat {
   position: relative;
@@ -1188,7 +1183,8 @@ span.cat-links .artblog-cat {
   padding: 6px 10px;
   margin-right: 5px;
   color: #ffffff;
-  font-size: 14px; }
+  font-size: 14px;
+  margin-bottom: 5px; }
   span.cat-links .artblog-cat::before {
     content: "#"; }
   span.cat-links .artblog-cat:hover {
@@ -1236,6 +1232,7 @@ span.cat-links .artblog-cat {
   margin: 15px 0 0; }
   .entry-content ul, .entry-content ol {
     margin: 0;
+    margin-bottom: 15px;
     padding: 0 18px; }
   .entry-content ul ul, .entry-content ul ol, .entry-content ol ul, .entry-content ol ol {
     padding-left: 25px; }
@@ -1301,13 +1298,17 @@ span.cat-links .artblog-cat {
     content: "\f30b"; }
 
 #footer-widgets {
+  width: 100%;
+  float: left;
   background: #333;
   padding: 50px 0 30px;
   margin-top: 50px; }
   #footer-widgets .widget {
     margin-bottom: 20px; }
     #footer-widgets .widget .search-form .search-submit {
-      box-shadow: 0 0 20px #e24410; }
+      box-shadow: 0 0 8px #e24410; }
+    #footer-widgets .widget figcaption {
+      color: #ffffff; }
   #footer-widgets .widget-title {
     color: #ffffff; }
   #footer-widgets ul li {
@@ -1317,22 +1318,26 @@ span.cat-links .artblog-cat {
       color: #ffffff; }
       #footer-widgets ul li a:focus {
         outline: 1px dotted #ffffff; }
+    #footer-widgets ul li::before {
+      color: #ffffff; }
   #footer-widgets .textwidget p {
     color: #ffffff; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    #footer-widgets .inner-wrapper .widget-column {
-      grid-column: auto; } }
-  @media (max-width: 767px) {
-    #footer-widgets .inner-wrapper .widget-column {
-      grid-column: auto; } }
   #footer-widgets .artblog_widget_social ul li a {
     color: #ffffff; }
   #footer-widgets .widget_categories ul li::before,
   #footer-widgets .widget_recent_entries ul li::before,
   #footer-widgets .widget_recent_comments ul li::before {
     color: #ffffff; }
+  #footer-widgets .widget_calendar .widget-title,
+  #footer-widgets .widget_calendar table caption,
+  #footer-widgets .widget_calendar table tr,
+  #footer-widgets .widget_calendar table td,
+  #footer-widgets .widget_calendar table th {
+    color: #ffffff; }
 
 .site-footer {
+  float: left;
+  width: 100%;
   background: #1a1919;
   padding: 20px 0;
   font-size: 16px;
@@ -1340,12 +1345,18 @@ span.cat-links .artblog-cat {
   @media (max-width: 767px) {
     .site-footer {
       text-align: center; } }
+  .site-footer .copyright {
+    float: left; }
+    @media (max-width: 767px) {
+      .site-footer .copyright {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px; } }
   .site-footer .site-info {
-    width: 100%;
-    display: block;
-    text-align: right; }
+    float: right; }
     @media (max-width: 767px) {
       .site-footer .site-info {
+        float: none;
         text-align: center; } }
     .site-footer .site-info a {
       color: #ffffff; }
@@ -1488,6 +1499,9 @@ textarea {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px; }
+  @media (max-width: 767px) {
+    .site-content {
+      margin-top: 0 !important; } }
 
 .site-header {
   margin-bottom: 50px;
@@ -1516,8 +1530,9 @@ textarea {
         position: relative; } }
     .site-header .site-branding .site-title {
       font-family: "Muli";
+      font-weight: 600;
       font-size: 34px;
-      margin-bottom: 0;
+      margin: 0;
       line-height: 1; }
       @media (max-width: 767px) {
         .site-header .site-branding .site-title {
@@ -1552,6 +1567,62 @@ textarea {
       -moz-flex-direction: row;
       -o-flex-direction: row;
       flex-direction: row; }
+
+.center-aligned .site-branding {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-direction: column;
+  -moz-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column; }
+  @media (max-width: 1199px) {
+    .center-aligned .site-branding {
+      flex-direction: row;
+      justify-content: space-between; } }
+  .center-aligned .site-branding .site-identity-wrap-outer {
+    margin-bottom: 10px; }
+
+.right-aligned .site-branding .site-identity-wrap-outer {
+  -webkit-order: 2;
+  -ms-order: 2;
+  order: 2; }
+  .right-aligned .site-branding .site-identity-wrap-outer .custom-logo-link {
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+    margin-right: 0;
+    margin-left: 10px; }
+  .right-aligned .site-branding .site-identity-wrap-outer .site-identity-wrapper {
+    -webkit-order: 1;
+    -ms-order: 1;
+    order: 1;
+    text-align: right; }
+
+.right-aligned .site-branding .main-navigation-wrap {
+  -webkit-order: 1;
+  -ms-order: 1;
+  order: 1; }
+  .right-aligned .site-branding .main-navigation-wrap .menu-toggle::before {
+    left: 12px; }
+  .right-aligned .site-branding .main-navigation-wrap .site-navigation .menu {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start; }
+  .right-aligned .site-branding .main-navigation-wrap .site-navigation a {
+    padding: 8px 50px 8px 0; }
+    @media (max-width: 1199px) {
+      .right-aligned .site-branding .main-navigation-wrap .site-navigation a {
+        padding: 8px 25px; } }
 
 .wp-caption {
   margin-bottom: 1.5em;
@@ -1853,7 +1924,7 @@ textarea {
         width: 100%;
         margin-bottom: 4px; } }
   .error404 .error-404.not-found .search-form .search-submit {
-    box-shadow: 0 0 20px #f8ac93; }
+    box-shadow: 0 0 8px #f8ac93; }
     @media (max-width: 767px) {
       .error404 .error-404.not-found .search-form .search-submit {
         width: 100%; } }
@@ -2003,6 +2074,9 @@ textarea {
 .widget select {
   max-width: 100%;
   padding: 3px; }
+  @media (max-width: 767px) {
+    .widget select {
+      width: 100%; } }
 
 #secondary {
   float: left;
@@ -2042,58 +2116,13 @@ textarea {
       .widget-area .widget ul li a:hover, .widget-area .widget ul li a:focus {
         color: #f16334; }
 
-.artblog_widget_social ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; }
-  .artblog_widget_social ul li {
-    margin-right: 20px; }
-    .artblog_widget_social ul li a {
-      position: relative;
-      color: #4d4d4d;
-      line-height: 1;
-      -webkit-transition: all, linear, 0.3s;
-      -moz-transition: all, linear, 0.3s;
-      -ms-transition: all, linear, 0.3s;
-      -o-transition: all, linear, 0.3s;
-      transition: all, linear, 0.3s; }
-      .artblog_widget_social ul li a::before {
-        font-family: "Font Awesome 5 Brands";
-        font-weight: 900; }
-      .artblog_widget_social ul li a:hover, .artblog_widget_social ul li a:focus {
-        color: #f16334; }
-    .artblog_widget_social ul li a[href*="twitter.com"]::before {
-      content: "\f099"; }
-    .artblog_widget_social ul li a[href*="facebook.com"]::before {
-      content: "\f39e"; }
-    .artblog_widget_social ul li a[href*="github.com"]::before {
-      content: "\f09b"; }
-    .artblog_widget_social ul li a[href*="linkedin.com"]::before {
-      content: "\f0e1"; }
-    .artblog_widget_social ul li a[href*="instagram.com"]::before {
-      content: "\f16d"; }
-
-.widget-area .artblog_widget_social ul {
-  padding: 0; }
-
-.widget-area .widget_categories ul,
-.widget-area .widget_recent_entries ul,
-.widget-area .widget_recent_comments ul {
+.widget-area .widget ul {
   padding: 0;
   list-style-type: none; }
-  .widget-area .widget_categories ul li,
-  .widget-area .widget_recent_entries ul li,
-  .widget-area .widget_recent_comments ul li {
+  .widget-area .widget ul li {
     position: relative;
     margin-left: 15px; }
-    .widget-area .widget_categories ul li::before,
-    .widget-area .widget_recent_entries ul li::before,
-    .widget-area .widget_recent_comments ul li::before {
+    .widget-area .widget ul li::before {
       font-family: "Font Awesome 5 Free";
       font-size: 9px;
       color: #4d4d4d;
@@ -2102,6 +2131,129 @@ textarea {
       top: 0;
       left: -15px;
       content: "\f054"; }
+
+.widget-area .widget_recent_entries ul li .post-date::before {
+  content: "/";
+  margin: 0 6px 0 3px; }
+
+.widget-area .artblog_widget_social ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .widget-area .artblog_widget_social ul li {
+    margin-left: 0; }
+    .widget-area .artblog_widget_social ul li::before {
+      display: none; }
+    .widget-area .artblog_widget_social ul li a {
+      position: relative;
+      color: #4d4d4d;
+      line-height: 1;
+      -webkit-transition: all, linear, 0.3s;
+      -moz-transition: all, linear, 0.3s;
+      -ms-transition: all, linear, 0.3s;
+      -o-transition: all, linear, 0.3s;
+      transition: all, linear, 0.3s; }
+      .widget-area .artblog_widget_social ul li a::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f0c1"; }
+      .widget-area .artblog_widget_social ul li a:hover, .widget-area .artblog_widget_social ul li a:focus {
+        color: #f16334; }
+    .widget-area .artblog_widget_social ul li a[href*="twitter.com"]::before {
+      content: "\f099";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="facebook.com"]::before {
+      content: "\f39e";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="linkedin.com"]::before {
+      content: "\f0e1";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="google.com"]::before {
+      content: "\f1a0";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="youtube.com"]::before {
+      content: "\f167";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="dribbble.com"]::before {
+      content: "\f17d";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="pinterest.com"]::before {
+      content: "\f0d2";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="bitbucket.org"]::before {
+      content: "\f171";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="github.com"]::before {
+      content: "\f113";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="codepen.io"]::before {
+      content: "\f1cb";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="flickr.com"]::before {
+      content: "\f16e";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href$="/feed/"]::before {
+      content: "\f09e"; }
+    .widget-area .artblog_widget_social ul li a[href*="foursquare.com"]::before {
+      content: "\f180";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="instagram.com"]::before {
+      content: "\f16d";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="tumblr.com"]::before {
+      content: "\f173";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="reddit.com"]::before {
+      content: "\f1a1";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="vimeo.com"]::before {
+      content: "\f194";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="digg.com"]::before {
+      content: "\f1a6";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="twitch.tv"]::before {
+      content: "\f1e8";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="stumbleupon.com"]::before {
+      content: "\f1a4";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="delicious.com"]::before {
+      content: "\f1a5";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="mailto:"]::before {
+      content: "\f0e0"; }
+    .widget-area .artblog_widget_social ul li a[href*="soundcloud.com"]::before {
+      content: "\f1be";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="wordpress.org"]::before {
+      content: "\f19a";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="wordpress.com"]::before {
+      content: "\f19a";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="jsfiddle.net"]::before {
+      content: "\f1cc";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="tripadvisor.com"]::before {
+      content: "\f262";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="angel.co"]::before {
+      content: "\f209";
+      font-family: "Font Awesome 5 Brands"; }
+    .widget-area .artblog_widget_social ul li a[href*="slack.com"]::before {
+      content: "\f198";
+      font-family: "Font Awesome 5 Brands"; }
+  .widget-area .artblog_widget_social ul li:not(:last-child) {
+    margin-right: 20px; }
 
 .widget-title {
   position: relative;
@@ -2129,6 +2281,7 @@ textarea {
   .widget_search .search-form .search-submit {
     position: absolute;
     right: 0;
+    top: 0;
     border: 1px solid #f16334;
     box-shadow: 0 0 20px white; }
 
@@ -2187,8 +2340,10 @@ textarea {
       color: #4d4d4d; }
       .artblog_widget_author .author-details .author-social-links li a:hover, .artblog_widget_author .author-details .author-social-links li a:focus {
         color: #f16334; }
+    .artblog_widget_author .author-details .author-social-links li::before {
+      display: none; }
     .artblog_widget_author .author-details .author-social-links li:not(:last-child) {
-      margin-right: 20px; }
+      margin-right: 10px; }
 
 .artblog_widget_recent_posts_advanced .recent-posts-wrapper .recent-posts-item {
   margin-bottom: 30px;

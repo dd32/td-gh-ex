@@ -155,10 +155,10 @@ function artblog_scripts() {
 	$fonts_url = artblog_fonts_url();
 
 	if ( ! empty( $fonts_url ) ) {
-		wp_enqueue_style( 'artblog-google-fonts', $fonts_url, array(), '1.0.0' );
+		wp_enqueue_style( 'artblog-google-fonts', $fonts_url, array(), '2.0.0' );
 	}
 
-	wp_enqueue_style( 'artblog-style', get_stylesheet_uri(), array(), '1.0.0' );
+	wp_enqueue_style( 'artblog-style', get_stylesheet_uri(), array(), '2.0.1' );
 
 	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/third-party/slick/slick' . $min . '.js', array( 'jquery' ), '1.8.1', true );
 

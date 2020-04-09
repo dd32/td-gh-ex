@@ -17,6 +17,27 @@ body.single {
 		margin-top: 20px;
 	}
 } 
+
+body.sticky-header-enabled {
+	.site-header {
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+		@include box-shadow(0px 1px 10px 0px rgba(0,0,0,0.06));
+		@include for-size(phone-only) {
+			position: static;
+		}
+	}
+}
+
+body.sidebar-layout-left-sidebar {
+	#primary {
+		float: right;
+		margin-right: 0;
+		margin-left: 30px;
+	}
+}
+
 .post {
 	margin: 0 0 50px;
 }
@@ -95,7 +116,8 @@ body.single {
 
 .artblog-slider {
 	position: relative;
-	margin-bottom: -40px;
+	margin-bottom: 50px;
+	
 	.carousel-arrow {
 		cursor: pointer;
 		&:focus {
@@ -104,29 +126,25 @@ body.single {
 	}
 	.left-arrow {
 		position: absolute;
-	    top: 44%;
+	    top: 50%;
 	    transform: translate(0, -50%);
 	    left: 20px;
-	    // background: $color_cat_bg;
-	    z-index: 9999;
+	    z-index: 1;
 	    font-size: 35px;
 	    color: $color_body;
-	    @include for-size(phone-only) {
-	    	top: 36%;
-	    }
 	}
 	.right-arrow {
 		position: absolute;
-	    top: 44%;
+	    top: 50%;
 		transform: translate(0, -50%);
 	    right: 20px;
-	    // background: $color_cat_bg;
-	    z-index: 9999;
+	    z-index: 1;
 	    font-size: 35px;
 	    color: $color_body;
-	    @include for-size(phone-only) {
-	    	top: 36%;
-	    }
+	}
+
+	.slide-item-inner {
+		position: relative;
 	}
 
 	.slide-item-thumb {
@@ -151,8 +169,10 @@ body.single {
 	}
 }
 .slide-item-content-wrap {
-	position: relative;
-	transform: translate(0px, -135px);
+	position: absolute;
+	width: 100%;
+	bottom: 40px;
+	padding: 0 20px;
     text-align: center;
     .title {
     	margin-bottom: 10px;
@@ -349,32 +369,8 @@ span.tags-links {
 	}
 }
 
-// span.cat-links {
-// 	position: relative;
-// 	color: $color_link;
-// 	font-size: $font_size_meta;
-// 	@include transition(all, linear, 0.3s);
-// 	&:hover,
-// 	&:focus {
-// 		color: $color_screen;
-// 	}
-// 	&::before {
-// 		margin-right: 6px;
-// 		font-family: "Font Awesome 5 Free";
-// 		font-weight: 900;
-// 		content: "\f07b";
-// 	}
-// 	a {
-// 		color: $color_link;
-// 		@include transition(all, linear, 0.3s);
-// 		&:hover,
-// 		&:focus {
-// 			color: $color_screen;
-// 		}
-// 	}
-// }
 .entry-cat-meta {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 span.cat-links .artblog-cat {
@@ -385,6 +381,7 @@ span.cat-links .artblog-cat {
 	margin-right: 5px;
 	color: $color_body;
 	font-size: $font_size_meta;
+	margin-bottom: 5px;
 	&::before {
 		content: "#";
 
@@ -444,6 +441,7 @@ span.cat-links .artblog-cat {
 	margin: 15px 0 0;
 	ul,ol {
 		margin: 0;
+		margin-bottom: 15px;
 		padding: 0 18px;
 	}
 	ul,ol {

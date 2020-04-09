@@ -33,11 +33,14 @@ h5,h6 {
 	color: $color_title;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	margin: 0;
 	padding: 0;
 	clear: both;
+}
+span {
+	font-weight: 400;
 }
 
 p {

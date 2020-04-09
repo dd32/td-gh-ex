@@ -21,6 +21,7 @@ function artblog_customize_register( $wp_customize ) {
 
 	// Register controls.
 	$wp_customize->register_control_type( 'Artblog_Control_DropDown_Taxonomies' );
+	$wp_customize->register_section_type( 'Artblog_Customize_Section_Upsell' );
 
 	$wp_customize->get_setting( 'blogname' )->transport        = 'refresh';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'refresh';
@@ -47,6 +48,20 @@ function artblog_customize_register( $wp_customize ) {
 
 	// Load theme options.
 	require get_template_directory() . '/inc/options.php';
+
+	// Register sections.
+	$wp_customize->add_section(
+		new Artblog_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell',
+			array(
+				'title'    => esc_html__( 'Artblog Pro', 'artblog' ),
+				'pro_text' => esc_html__( 'Buy Pro', 'artblog' ),
+				'pro_url'  => 'https://www.wpconcern.com/downloads/artblog/',
+				'priority'  => 1,
+			)
+		)
+	);
 }
 
 add_action( 'customize_register', 'artblog_customize_register' );
@@ -78,6 +93,7 @@ function artblog_customize_scripts() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	wp_enqueue_script( 'artblog-controls', get_template_directory_uri() . '/js/controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '2.0.0', true );
+	wp_enqueue_style( 'artblog-controls-style', get_template_directory_uri() . '/css/controls' . $min . '.css', array(), '2.0.0' );
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'artblog_customize_scripts', 0 );
