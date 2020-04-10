@@ -3,7 +3,7 @@
 
 	function __construct() {
 		$widget_ops = array( 'description' => __('Add your social profile.', 'solon') );
-		parent::__construct( 'nav_menu', __('Solon: Social Profile', 'solon'), $widget_ops );
+		parent::__construct( 'solon_social_widget', __('Solon: Social Profile', 'solon'), $widget_ops );
 	}
 
 	function widget($args, $instance) {
