@@ -36,7 +36,6 @@
           <div class="col-lg-8">  
             <div id="menu-sidebar" class="nav sidebar">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-education' ); ?>">
-                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-education'); ?></span></a>
                 <?php 
                   wp_nav_menu( array( 
                     'theme_location' => 'primary',
@@ -67,20 +66,21 @@
                     <a href="<?php the_permalink((get_option('woocommerce_myaccount_page_id'))); ?>"><?php echo esc_html_e('MY ACCOUNT','advance-education'); ?><span class="screen-reader-text"><?php esc_attr_e( 'MY ACCOUNT','advance-education' );?></span></a>
                   </div>
                 </div>
+                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_education_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-education'); ?></span></a>
               </nav>
             </div>
           </div>
           <div class="col-lg-1">
-            <a href="#" onclick="search_open()" class="search-box">
+            <a href="#" onclick="advance_education_search_open()" class="search-box">
               <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-education' );?></span>
             </a>
           </div>
         </div>
         <div class="serach_outer">
-          <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-education' );?></span></a>
           <div class="serach_inner">
             <?php get_search_form(); ?>
           </div>
+          <a href="#" onclick="advance_education_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-education' );?></span></a>
         </div>
       </div>
     </div>

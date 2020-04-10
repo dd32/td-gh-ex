@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('Copyright 2019', 'advance-education')));?> <?php advance_education_credit();?></p>
+        <p><?php advance_education_credit();?> <?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('By Themeshopy', 'advance-education')));?></p>
     </div>
 </footer>
 

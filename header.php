@@ -17,8 +17,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
-  
+<?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+  do_action( 'wp_body_open' );
+} ?>
 <header role="banner">
   <?php if(get_theme_mod('advance_education_preloader_option',true)){ ?>
     <div id="loader-wrapper">
@@ -66,7 +69,7 @@
 
 <div class="<?php if( get_theme_mod( 'advance_education_sticky_header') != '' || get_theme_mod( 'advance_education_responsive_sticky_header') != '') { ?> logo-sticky-header"<?php } else { ?>close-sticky <?php } ?>">
   <div class="toggle-menu responsive-menu">
-    <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
+    <button role="tab" onclick="advance_education_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-education'); ?></span></button>
   </div>
 </div>
 
