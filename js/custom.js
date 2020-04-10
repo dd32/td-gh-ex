@@ -8,10 +8,10 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function bb_ecommerce_store_resmenu_open() {
   document.getElementById("menu-sidebar").style.width = "100%";
 }
-function resMenu_close() {
+function bb_ecommerce_store_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 

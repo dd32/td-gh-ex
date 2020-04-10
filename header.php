@@ -16,7 +16,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+  do_action( 'wp_body_open' );
+} ?>
 <header role="banner">
   <?php if(get_theme_mod('bb_ecommerce_store_preloader_option',true)){ ?>
     <div id="loader-wrapper">
@@ -62,9 +66,6 @@
       <div class="clearfix"></div>
     </div>
   <?php } ?>
-  <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',true) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
-    <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
-  </div>
   <div class="header">
     <div class="container">
       <div class="row">
@@ -100,6 +101,9 @@
         </div>
       </div>
     </div>
+  <div class="toggle-menu responsive-menu <?php if( get_theme_mod( 'bb_ecommerce_store_responsive_sticky_header',true) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+    <button role="tab" onclick="bb_ecommerce_store_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-ecommerce-store'); ?></span></button>
+  </div>
     <div class="top-header">
       <div class="container">
         <div class="row">
@@ -108,7 +112,6 @@
           <div class=" col-lg-9 col-md-9">
             <div id="menu-sidebar" class="nav sidebar <?php if( get_theme_mod( 'bb_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-ecommerce-store' ); ?>">
-                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-ecommerce-store'); ?></span></a>
                 <?php 
                   wp_nav_menu( array( 
                     'theme_location' => 'primary',
@@ -148,6 +151,7 @@
                   </div>
                   <?php get_search_form();?>
                 </div>
+                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_ecommerce_store_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-ecommerce-store'); ?></span></a>
               </nav>
             </div>
           </div>

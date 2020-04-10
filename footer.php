@@ -48,7 +48,7 @@
   </div>
   <div class="inner">
     <div class="copyright">
-      <p><?php echo esc_html(get_theme_mod('bb_ecommerce_store_footer_copy',__('Copyright 2017','bb-ecommerce-store'))); ?> <?php bb_ecommerce_store_credit(); ?></p>
+      <p><?php bb_ecommerce_store_credit(); ?> <?php echo esc_html(get_theme_mod('bb_ecommerce_store_footer_copy',__('By Themeshopy','bb-ecommerce-store'))); ?></p>
     </div>
     <div class="clear"></div>
   </div>

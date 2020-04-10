@@ -37,7 +37,7 @@ get_header(); ?>
 		                   <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
 		                    <?php
 		                   if ( $image ) {
-		                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php the_title(); ?>" role="img" />';
+		                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="<?php esc_html(the_title()); ?>" role="img" />';
 		                }
 		                  echo esc_html( $product_category->name ); ?><span class="screen-reader-text"><?php esc_html_e( 'Product Category','bb-ecommerce-store' );?></span></a></li>
 		                   <?php
@@ -80,9 +80,9 @@ get_header(); ?>
 						          	<?php the_post_thumbnail(); ?>
 						          	<div class="carousel-caption">
 							            <div class="inner_carousel">
-							              	<h1><?php the_title();?></h1>
+							              	<h1><?php esc_html(the_title());?></h1>
 							              	<div class="more-btn">            
-					                        	<a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?></span></a>
+					                        	<a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('READ MORE','bb-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-ecommerce-store' );?></span></a>
 					                        </div>		            
 							            </div>
 						          	</div>
@@ -119,7 +119,7 @@ get_header(); ?>
 					     	<?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
 					     		<div class="col-lg-4 col-md-4">
 					     			<div class="service">
-					          			<strong><a href="<?php the_permalink(); ?>"><?php the_title(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a></strong>
+					          			<strong><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></strong>
 					          			<p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_ecommerce_store_string_limit_words( $excerpt,10 ) ); ?></p>
 					          		</div>
 					        	</div>
