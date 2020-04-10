@@ -48,10 +48,9 @@
     </div>
   </div>
   <div class="copyright">
-      <p><?php echo esc_html(get_theme_mod('advance_automobile_footer_copy', __('Copyright 2018', 'advance-automobile')));?> <?php advance_automobile_credit();?></p>
+    <p><?php advance_automobile_credit(); ?> <?php echo esc_html(get_theme_mod('advance_automobile_footer_copy', __('By Themeshopy', 'advance-automobile')));?></p>
   </div>
 </footer>
-
 <?php if( get_theme_mod( 'advance_automobile_enable_disable_scroll',true) != '') { ?>
   <?php $theme_lay = get_theme_mod( 'advance_automobile_scroll_setting','Right');
     if($theme_lay == 'Left'){ ?>

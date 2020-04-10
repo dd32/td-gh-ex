@@ -7,7 +7,6 @@
  * @package Advance Automobile
  */
 ?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -17,8 +16,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-
+<?php if ( function_exists( 'wp_body_open' ) ) {
+  wp_body_open();
+} else {
+  do_action( 'wp_body_open' );
+} ?>
 <header role="banner">
   <?php if(get_theme_mod('advance_automobile_preloader_option',true) || get_theme_mod('advance_automobile_responsive_preloader',true)){ ?>
     <div id="loader-wrapper">
@@ -99,11 +101,10 @@
             </div>
             <div class="col-lg-8 col-md-8 col-3">
               <div class="toggle-menu mobile-menu">
-                <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
+                <button onclick="advance_automobile_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-automobile'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-automobile' ); ?>">
-                  <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-automobile'); ?></span></a>
                   <?php 
                     wp_nav_menu( array( 
                       'theme_location' => 'primary',
@@ -143,20 +144,21 @@
                       <?php } ?>
                     </div>
                   </div>
+                  <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="advance_automobile_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-automobile'); ?></span></a>
                 </nav>
               </div>
             </div>
             <div class="col-lg-1">
-              <a href="#" onclick="search_open()" class="search-box">
+              <a href="#" onclick="advance_automobile_search_open()" class="search-box">
                 <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-automobile' );?></span>
               </a>
             </div>
           </div>
           <div class="serach_outer">
-            <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-automobile' );?></span></a>
             <div class="serach_inner">
               <?php get_search_form(); ?>
             </div>
+            <a href="#" onclick="advance_automobile_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-automobile' );?></span></a>
           </div>
         </div>
       </div>

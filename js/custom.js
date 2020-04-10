@@ -8,22 +8,21 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function advance_automobile_resmenu_open() {
   document.getElementById("menu-sidebar").style.width = "100%";
 }
-function resMenu_close() {
+function advance_automobile_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 
 
 /**** Hidden search box ***/
-
-	function search_open() {
-	  jQuery(".serach_outer").slideDown(100);
-	}
-	function search_close() {
-	  jQuery(".serach_outer").slideUp(100);
-	}
+function advance_automobile_search_open() {
+  jQuery(".serach_outer").slideDown(100);
+}
+function advance_automobile_search_close() {
+  jQuery(".serach_outer").slideUp(100);
+}
 
 (function( $ ) {
 

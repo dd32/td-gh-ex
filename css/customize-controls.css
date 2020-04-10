@@ -11,8 +11,12 @@ a.button.button-secondary.alignright:hover {
 }
 
 /* ---------Excerpt & Logo --------- */
-input#_customize-input-logo_size,input#_customize-input-advance_automobile_excerpt_number{
-    width: 100%;
+input#_customize-input-logo_size,
+input#_customize-input-advance_automobile_excerpt_number,
+input#_customize-input-advance_automobile_wooproducts_border_radius,
+input#_customize-input-advance_automobile_wooproducts_box_shadow,
+input#_customize-input-advance_automobile_product_button_border_radius{
+  width: 100%;
 }
 li#customize-control-logo_size {
     background: #fff;
@@ -25,6 +29,9 @@ input#_customize-input-advance_automobile_button_border_radius{
 }
 .customize-control-title{
 	display: inline-block;
+}
+ul#sub-accordion-section-advance_automobile_product_button_section{
+  border: none !important;
 }
 
 

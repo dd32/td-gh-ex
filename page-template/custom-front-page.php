@@ -34,10 +34,10 @@ get_header(); ?>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php the_title(); ?></h1>
+                  <h1><?php esc_html(the_title()); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_automobile_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_automobile_slider_excerpt_length','20')))); ?></p>
                   <div class="read-btn">
-                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-automobile' );?></span></a>
+                    <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-automobile' );?></span></a>
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@ get_header(); ?>
             <div class="row">
               <div class="col-lg-6 col-md-6">
                 <div class="text-content">
-                  <h3><?php the_title(); ?></h3>
+                  <h3><?php esc_html(the_title()); ?></h3>
                   <p><?php the_excerpt(); ?></p>
                   <div class="explore-btn">
                     <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html_e('EXPLORE MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'EXPLORE MORE','advance-automobile' );?></span></a>
