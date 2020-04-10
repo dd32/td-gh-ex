@@ -4,7 +4,6 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
 /* TABLE OF CONTENT
@@ -13,6 +12,7 @@
 
 1.1 - Class Toggle Switchs
 1.2 - Class Category Control
+1.2/B - Dropdown Posts Custom Control
 1.3 - Class add panel
 1.4 - Class TinyMCE
 1.6 - Class Alpha Color
@@ -93,8 +93,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 }
 
-
-
 /* ------------------------------------*
 ##  1.2 Class Category Control */
 /* ----------------------------------- */
@@ -108,7 +106,7 @@ if (class_exists('WP_Customize_Control')) {
           'echo'              => 0,
           'show_count'        => 1,
           'show_option_none'  => __( '&mdash; Select &mdash;','avik' ),
-          'option_none_value' => 1,
+          'option_none_value' => 0,
           'selected'          => $this->value(),
         )
       );
@@ -123,6 +121,61 @@ if (class_exists('WP_Customize_Control')) {
   }
 }
 
+/* ------------------------------------*
+##  1.2/B Dropdown Posts Custom Control */
+/* ----------------------------------- */
+
+if (class_exists('WP_Customize_Control')) {
+class Avik_Dropdown_Posts_Custom_Control extends WP_Customize_Control {
+  /**
+   * The type of control being rendered
+   */
+  public $type = 'dropdown_posts';
+  /**
+   * Posts
+   */
+  private $posts = array();
+  /**
+   * Constructor
+   */
+  public function __construct( $manager, $id, $args = array(), $options = array() ) {
+    parent::__construct( $manager, $id, $args );
+    // Get our Posts
+    $this->posts = get_posts( $this->input_attrs );
+  }
+
+  /**
+   * Render the control in the customizer
+   */
+  public function render_content() {
+  ?>
+    <div class="dropdown_posts_control">
+      <?php if( !empty( $this->label ) ) { ?>
+        <label for="<?php echo esc_attr( $this->id ); ?>" class="customize-control-title">
+          <?php echo esc_html( $this->label ); ?>
+        </label>
+      <?php } ?>
+      <?php if( !empty( $this->description ) ) { ?>
+        <span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+      <?php } ?>
+      <select name="<?php echo $this->id; ?>" id="<?php echo $this->id; ?>" <?php $this->link(); ?>>
+        <?php
+          if( !empty( $this->posts ) ) {
+            foreach ( $this->posts as $post ) {
+              printf( '<option value="%s" %s>%s</option>',
+                $post->ID,
+                selected( $this->value(), $post->ID, false ),
+                $post->post_title
+              );
+            }
+          }
+        ?>
+      </select>
+    </div>
+  <?php
+  }
+}
+}
 /* ------------------------------------*
 ##  1.3 Class add panel */
 /* ----------------------------------- */
@@ -404,11 +457,58 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
 }
 }
 
+/** Simple Notice Custom Control */
+
+if (class_exists('WP_Customize_Control')) {
+
+  class Avik_Simple_Notice_s_Custom_Control extends WP_Customize_Control {
+  /**
+   * The type of control being rendered
+   */
+  public $type = 'simple_notice';
+  /**
+   * Render the control in the customizer
+   */
+  public function render_content() {
+    $allowed_html = array(
+      'a' => array(
+        'href' => array(),
+        'title' => array(),
+        'class' => array(),
+        'target' => array(),
+      ),
+      'br' => array(),
+      'em' => array(),
+      'strong' => array(),
+      'i' => array(
+        'class' => array()
+      ),
+      'span' => array(
+        'class' => array(),
+      ),
+      'code' => array(),
+    );
+  ?>
+    <div class="simple-notice-custom-control-s">
+      <?php if( !empty( $this->label ) ) { ?>
+        <span class="customize-control-title-s"><b><?php echo esc_html( $this->label ); ?></b></span>
+      <?php } ?>
+      <?php if( !empty( $this->description ) ) { ?>
+        <span class="customize-control-description-s"><b><?php echo wp_kses( $this->description, $allowed_html ); ?></b></span>
+      <?php } ?>
+    </div>
+  <?php
+  }
+}
+}
+
 /* ------------------------------------------------------------------------- *
 ##  2 CSS Customize */
 /* ------------------------------------------------------------------------- */
 
 function avik_customizer_css() {
+
+   if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :
   ?>
 
   <style>
@@ -421,18 +521,24 @@ function avik_customizer_css() {
     background-color:<?php echo esc_attr( get_theme_mod('avik_color_filter_header', 'rgba(122,122,122,0.05)')); ?>;
   }
 
+  </style>
+
+<?php endif;?>
+
+<style>
+
   /* ------------------------------------------------------------------------- *
   ## 2.3 Font Size Logo */
   /* ------------------------------------------------------------------------- */
 
-  .avik-logo img{width:<?php echo esc_attr( get_theme_mod('avik_font_size_logo', '80')); ?>px ;}
+  .avik-custom-logo-body{width:<?php echo esc_attr( get_theme_mod('avik_font_size_logo', '160')); ?>px ;}
 
   </style>
 
 <!-- 2.4 Responsive Enable Style  -->
 
 <!-- Scroll to top -->
-<?php if ( true == esc_html( get_theme_mod( 'avik_position_top', false) )) : ?>
+<?php if ( true == esc_html( get_theme_mod( 'avik_position_top', true) )) : ?>
 <style>
 #avik-scrol-to-top{
   right: 40px;
@@ -440,7 +546,7 @@ function avik_customizer_css() {
 
 </style>
 <?php endif; ?>
-<?php if ( false == esc_html( get_theme_mod( 'avik_position_top', false) )) : ?>
+<?php if ( false == esc_html( get_theme_mod( 'avik_position_top', true) )) : ?>
 <style>
 #avik-scrol-to-top{
   left: 40px;
@@ -498,8 +604,247 @@ function avik_customizer_css() {
 
 
 </style>
+<?php 
+
+/* ------------------------------------------------------------------------- *
+##  Text Header automatic */
+/* ------------------------------------------------------------------------- */
+
+?>
+
+<style>
+
+.text-image-static{
+  padding-top: <?php echo esc_attr( get_theme_mod('avik_padding_top_text_static', 5)); ?>em;
+  padding-left: <?php echo esc_attr( get_theme_mod('avik_padding_left_text_static', 5)); ?>em;
+}
+
+span#avikservices{
+  font-size: <?php echo esc_attr( get_theme_mod('avik_font_size_text_static', 32)); ?>px;
+}
+
+.typed-cursor{
+  font-size: <?php echo esc_attr( get_theme_mod('avik_font_size_cursor_static', 40)); ?>px;
+}
+
+</style>
+
+<?php if ( true == esc_html( get_theme_mod( 'avik_enable_text_static_bold', false) )) : ?>
+
+<style>
+
+span#avikservices,.typed-cursor{
+  font-weight: 300;
+}
+
+</style>
+
+<?php endif; ?>
+
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_text_static_bold', false) )) : ?>
+
+<style>
+
+span#avikservices,.typed-cursor{
+  font-weight: bold;
+}
+
+</style>
+
+<?php endif; 
+
+/* ------------------------------------------------------------------------- *
+##  Who we are */
+/* ------------------------------------------------------------------------- */
+
+?>
+
+<style>
+
+img.img-who-we-are{
+  max-width: <?php echo esc_attr( get_theme_mod('avik_with_image_p_who_we', 350)); ?>px!important;
+  height: <?php echo esc_attr( get_theme_mod('avik_height_image_p_who_we', 400)); ?>px!important;
+  margin-left:<?php echo esc_attr( get_theme_mod('avik_margin_left_image_p_who_we', 0)); ?>em;
+}
+
+.second-image-who-we-are{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_image_p_who_we', 5)); ?>em;
+}
+
+.first-image-who-we-are img{
+  max-width: <?php echo esc_attr( get_theme_mod('avik_with_image_s_who_we', 350)); ?>px!important;
+  height: <?php echo esc_attr( get_theme_mod('avik_height_image_s_who_we', 400)); ?>px!important;
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_image_s_who_we', 0)); ?>em;
+  margin-left:<?php echo esc_attr( get_theme_mod('avik_margin_left_image_s_who_we', 0)); ?>em;
+}
+
+</style>
 
 <?php
+
+/* ------------------------------------------------------------------------- *
+##  Services */
+/* ------------------------------------------------------------------------- */
+?>
+<style>
+
+.img-avic-services-default{
+  width:  <?php echo esc_attr( get_theme_mod('avik_with_image_s_services', 80)); ?>px!important;
+  height: <?php echo esc_attr( get_theme_mod('avik_height_image_s_services', 80)); ?>px!important;
+}
+
+/* Contact */
+
+.widget-contact-contact h3{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_padding_top_widget_contact', 1)); ?>em;
+}
+
+.contact img{
+  max-height: <?php echo esc_attr( get_theme_mod('avik_height_img_contact', 500)); ?>px;
+}
+
+</style>
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_effect_image_contact', false) )) : ?>
+
+<style>
+.contact img:hover{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: all .4s ease-in-out;
+}
+</style>
+<?php endif;?>
+
+<style>
+/* Who we are Page */
+
+.header-image-whoweare img{
+  max-height:<?php echo esc_attr( get_theme_mod('avik_height_image_whowearepage', 500)); ?>px;
+}
+
+.second-image-who-we-are-page img{
+  max-height:<?php echo esc_attr( get_theme_mod('avik_height_image_s_whowearepage', 500)); ?>px;
+}
+
+.text-image-whoweare{
+  padding-top:<?php echo esc_attr( get_theme_mod('avik_padding_cursor_image_whowearepage', 5)); ?>em;
+}
+</style>
+
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_ob_img_whoweare', true) )) : ?>
+
+<style>
+.header-image-whoweare img{
+  object-fit: cover;
+}
+
+</style>
+<?php endif;?>
+
+<style>
+
+/* Swervices Page */
+
+.header-image-services img{
+  max-height:<?php echo esc_attr( get_theme_mod('avik_height_image_services_page', 500)); ?>px;
+}
+
+
+.text-image-services{
+  padding-top:<?php echo esc_attr( get_theme_mod('avik_padding_cursor_image_services_page', 5)); ?>em;
+}
+</style>
+
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_ob_img_services_page', true) )) : ?>
+
+<style>
+.header-image-services img{
+  object-fit: cover;
+}
+
+</style>
+<?php endif;?>
+
+<style>
+/* Nav Menu */
+
+.navbar a{
+  font-size:<?php echo esc_attr( get_theme_mod('avik_font_size_menu', 13)); ?>px;
+}
+
+.navbar-collapse li {
+  padding: 0 <?php echo esc_attr( get_theme_mod('avik_padding_menu', 10)); ?>px;
+}
+
+.navbar,.dropdown-menu {
+  background-color:<?php echo esc_attr( get_theme_mod('avik_background_color_menu', '#000')); ?>;
+}
+
+@media (max-width: 988px) {
+.navbar.hide-menu{
+  background-color: <?php echo esc_attr( get_theme_mod('avik_background_color_menu', '#000'))?>!important;
+}
+
+.navbar.hide-menu a,.navbar.hide-menu .avik-logo p{
+  color:<?php echo esc_attr( get_theme_mod('avik_color_menu', '#000')); ?>!important;
+}
+}
+
+.navbar a:hover,.navbar.hide-menu:hover,.navbar a.active{
+  color:<?php echo esc_attr( get_theme_mod('avik_color_menu_active', '#777777')); ?>;
+}
+
+.navbar.hide-menu,.navbar.hide-menu .dropdown-menu,.navbar.hide-menu .dropdown-menu a:hover{
+  background-color: <?php echo esc_attr( get_theme_mod('avik_background_color_menu_hide', 'rgba(0,32,122,0)')); ?>;
+}
+
+.navbar.hide-menu a,.navbar.hide-menu .avik-logo p{
+  color:<?php echo esc_attr( get_theme_mod('avik_color_menu_hide', '#fff')); ?>;
+}
+
+.navbar a,.avik-logo p,span.close.denis-x,.navbar-toggler-icon i{
+  color:<?php echo esc_attr( get_theme_mod('avik_color_menu', '#fff')); ?>;
+}
+
+.dropdown-item:hover{
+  background-color:<?php echo esc_attr( get_theme_mod('avik_background_color_menu_item', '#ccc')); ?>!important;
+}
+
+</style>
+
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_shadow_menu', false) )) : ?>
+
+<style>
+.navbar {
+  -webkit-box-shadow: 1px -4px 12px 1px #000000;
+  box-shadow: 1px -4px 12px 1px #000000;
+}
+</style>
+<?php endif;?>
+
+<style>
+
+/* 404 Page */
+
+.image-404 img{
+  max-height:<?php echo esc_attr( get_theme_mod('avik_height_image_404', 400)); ?>px;
+}
+
+</style>
+
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_ob_img_404', false) )) : ?>
+
+<style>
+.image-404 img{
+  object-fit: cover;
+}
+
+</style>
+<?php endif;?>
+
+<?php
+
 }
 add_action( 'wp_footer', 'avik_customizer_css' );
 

@@ -4,14 +4,13 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.9
  */
  ?>
 <div class="avik-article">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 	</header><!-- .entry-header -->
-	<?php the_post_thumbnail('avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() )); ?>
+	<?php the_post_thumbnail('avik_single_article_av', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() )); ?>
 	 <div class="info-post">
 	   <h1><?php the_title(); ?></h1>
 	    <ul class="info-ul-blog">
@@ -37,7 +36,7 @@
 			  'after'  => '</div>', ) );
 		?>
 	    <div class="button-archive text-right">
-		<a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php esc_html_e('Read more...','avik'); ?></a>
+		<a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php echo esc_html(get_theme_mod('avik_title_button_services',__('Read more...','avik'))); ?></a>
 	     </div>
 	 </div><!-- .entry-content -->
 	<footer class="entry-footer text-right">

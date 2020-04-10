@@ -1,12 +1,13 @@
 <?php
 /**
-* header.php
+* header-av.php
 *
 * @author    Denis Franchi
 * @package   Avik
 */
 
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -24,9 +25,9 @@
 		<div class="loader"></div>
 	</div>
 	<?php endif;?>
-	<div id="page" class="site">
+	<div id="page" class="site site-av">
 		<header>
-			<nav class="navbar navbar-expand-lg avik-nav-front-page hide-menu fixed-top">
+			<nav class="navbar navbar-expand-lg fixed-top">
 				<div class="avik-logo <?php if ( false == get_theme_mod( 'avik_enable_rotate_logo', true ) ) : ?> rotate <?php endif; ?>">
 					<div class="avik-custom-logo-body">
 						<?php the_custom_logo();?>
@@ -47,19 +48,20 @@
 			</button>
 			<?php
 			wp_nav_menu(array(
-				'menu'            => 'menu-1',
-				'theme_location'  => 'menu-1',
-				'container'       => 'div',
-				'container_id'    => 'bs4navbar',
-				'container_class' => 'collapse navbar-collapse',
-				'menu_id'         => true,
-				'menu_class'      => 'navbar-nav ml-auto',
-				'depth'           => 2,
-				'fallback_cb'     => 'bs4navwalker::fallback',
-				'walker'          => new bs4navwalker() ));
+        'menu'            => 'menu-2',
+        'theme_location'  => 'menu-2',
+        'container'       => 'div',
+        'container_id'    => 'bs4navbar',
+        'container_class' => 'collapse navbar-collapse',
+        'menu_id'         => true,
+        'menu_class'      => 'navbar-nav ml-auto',
+        'depth'           => 2,
+        'fallback_cb'     => 'bs4navwalker::fallback',
+        'walker'          => new bs4navwalker() ));
 				?>
 			</nav>
 		</header>
 		<div id="content" class="site-content">
 
-	
+
+

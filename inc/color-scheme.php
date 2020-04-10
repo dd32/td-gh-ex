@@ -4,7 +4,6 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
 class Avik_Color_Scheme {
@@ -33,7 +32,7 @@ class Avik_Color_Scheme {
 
 		$wp_customize->add_control( 'avik_color_scheme', array(
 			'label'   => __( 'Skins', 'avik' ),
-			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish.Note :the Avik skin can not be changed!','avik'),
+			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish.Note:If you customize the colors of a Skin, and subsequently decide to change this Skin, the set colors will not be saved!','avik'),
 			'section' => 'colors',
 			'type'    => 'select',
 			'priority'=> 2,
@@ -129,6 +128,8 @@ class Avik_Color_Scheme {
 		.title-price span,
 		.separator-price::after,
 		.avik-social-icons-footer i,
+		nav.navigation a,
+		.footer-widget p a,
 		p.color-title-static,
 		.avik-social-icons-video i,
 		.down-video a,
@@ -215,6 +216,9 @@ class Avik_Color_Scheme {
 
 		.avik-social-icons-header i:hover,
 		.avik-social-icons-video i:hover,
+		.footer-widget p a:hover,
+		nav.navigation a:hover,
+		.widget_tag_cloud .tagcloud a:hover,
 		.avik-social-icons-footer i:hover{
 			color:%16$s;
 		}

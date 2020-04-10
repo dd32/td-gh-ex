@@ -3,7 +3,6 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.3.9
  */
 
 /* TABLE OF CONTENT
@@ -15,6 +14,7 @@
   5 - Blog
   6 - Footer
   7 - Color Filter Header Home
+  8 - Padding Text Cursot Automatic
 */
 
 ( function( $ ) {
@@ -58,7 +58,7 @@ wp.customize( 'header_textcolor', function( value ) {
 // Font-size logo
 wp.customize('avik_font_size_logo', function(control) {
 	control.bind(function( controlValue ) {
-		$('.avik-logo img').css('width', controlValue + 'px');
+		$('.avik-custom-logo-body').css('width', controlValue + 'px');
 	});
 });
 
@@ -277,6 +277,137 @@ wp.customize( 'avik_color_filter_header', function( value ) {
 
 	} );
 } );
+
+/* ------------------------------------------------------------------------- *
+## 8 Padding Text Cursot Automatic */
+/* ------------------------------------------------------------------------- */
+
+// Padding Top
+wp.customize('avik_padding_top_text_static', function(control) {
+	control.bind(function( controlValue ) {
+		$('.text-image-static').css('padding-top', controlValue + 'em');
+	});
+});
+
+// Padding Left
+wp.customize('avik_padding_left_text_static', function(control) {
+	control.bind(function( controlValue ) {
+		$('.text-image-static').css('padding-left', controlValue + 'em');
+	});
+});
+
+// Font Size Text
+wp.customize('avik_font_size_text_static', function(control) {
+	control.bind(function( controlValue ) {
+		$('span#avikservices').css('font-size', controlValue + 'px');
+	});
+});
+
+// Font Size Cursor
+wp.customize('avik_font_size_cursor_static', function(control) {
+	control.bind(function( controlValue ) {
+		$('.typed-cursor').css('font-size', controlValue + 'px');
+	});
+});
+
+// Margin Top Image Primary Who we are
+wp.customize('avik_margin_top_image_p_who_we', function(control) {
+	control.bind(function( controlValue ) {
+		$('.second-image-who-we-are').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Margin Left Image Primary Who we are
+wp.customize('avik_margin_left_image_p_who_we', function(control) {
+	control.bind(function( controlValue ) {
+		$('img.img-who-we-are').css('margin-left', controlValue + 'em');
+	});
+});
+
+// Margin Top Image Primary Who we are 2
+wp.customize('avik_margin_top_image_s_who_we', function(control) {
+	control.bind(function( controlValue ) {
+		$('.first-image-who-we-are img').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Margin Left Image Primary Who we are 2
+wp.customize('avik_margin_left_image_s_who_we', function(control) {
+	control.bind(function( controlValue ) {
+		$('.first-image-who-we-are img').css('margin-left', controlValue + 'em');
+	});
+});
+
+// Margin Top Text Widget Contact
+wp.customize('avik_padding_top_widget_contact', function(control) {
+	control.bind(function( controlValue ) {
+		$('.widget-contact-contact h3').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Height Image Contact
+wp.customize('avik_height_img_contact', function(control) {
+	control.bind(function( controlValue ) {
+		$('.contact img').css('max-height', controlValue + 'px');
+	});
+});
+
+// Height Image Who we are page header
+wp.customize('avik_height_image_whowearepage', function(control) {
+	control.bind(function( controlValue ) {
+		$('.header-image-whoweare img').css('max-height', controlValue + 'px');
+	});
+});
+
+// Padding Top Cursor who we are
+wp.customize('avik_padding_cursor_image_whowearepage', function(control) {
+	control.bind(function( controlValue ) {
+		$('.text-image-whoweare').css('padding-top', controlValue + 'em');
+	});
+});
+
+// Height Image Who we are page secondary
+wp.customize('avik_height_image_s_whowearepage', function(control) {
+	control.bind(function( controlValue ) {
+		$('.second-image-who-we-are-page img').css('max-height', controlValue + 'px');
+	});
+});
+
+// Height Image Services page header
+wp.customize('avik_height_image_services_page', function(control) {
+	control.bind(function( controlValue ) {
+		$('.header-image-services img').css('max-height', controlValue + 'px');
+	});
+});
+
+// Padding Top Cursor Services
+wp.customize('avik_padding_cursor_image_services_page', function(control) {
+	control.bind(function( controlValue ) {
+		$('.text-image-services').css('padding-top', controlValue + 'em');
+	});
+});
+
+// Font Size Menu
+wp.customize('avik_font_size_menu', function(control) {
+	control.bind(function( controlValue ) {
+		$('.navbar a').css('font-size', controlValue + 'px');
+	});
+});
+
+// Padding Menu
+wp.customize('avik_padding_menu', function(control) {
+	control.bind(function( controlValue ) {
+		$('.navbar-collapse li').css('padding', controlValue + 'px');
+	});
+});
+
+// Height Image 404 
+wp.customize('avik_height_image_404', function(control) {
+	control.bind(function( controlValue ) {
+		$('.image-404 img').css('max-height', controlValue + 'px');
+	});
+});
+
 
 
 

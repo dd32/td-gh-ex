@@ -2,7 +2,7 @@
 Theme Name:   Avik
 Theme URI:   	https://www.denisfranchi.com/avik-pro-10-0-0/
 Description:  Avik Portfolio is perfect for anyone who wants an easy theme to use and with a clean code. You can use this portfolio theme for: freelancer, photography studios, sound and music, musican, agency, architect agency, painter portfolio, artworks, art, trainer, projects, artist portfolio,personal portfolio, web design works, illustrators, freelance designer.
-Version:     	1.3.9
+Version:     	1.4.0
 Author:     	Denis Franchi
 Author URI:   https://www.denisfranchi.com/
 Site:         https://www.denisfranchi.com
@@ -781,14 +781,15 @@ a{
   width: 100%;
   height: 100%;
   background-color: #000;
-  z-index: 9999999999;
+  z-index: 999999999999999999;
+  top:0;
 }
 
 .loader {
   height: 3px;
   background-color: #fff;
   position: absolute;
-  z-index: 9999999999;
+  z-index: 999999999999999999;
 }
 
 /*-----------------------
@@ -808,10 +809,19 @@ a{
   color: #fff;
   cursor: pointer;
   font-size: 13px;
+  width: 30%;
+  padding-left: 2px;
+}
+
+@media (max-width: 690px) {
+  .search-submit{
+  top:2px;
+  }
 }
 
 input#s{
   font-size: 13px;
+  width: 70%;
 }
 
 /*-----------------------
@@ -872,7 +882,7 @@ input#s{
 }
 
 h3.comment-reply-title{
-  font-size: 24px!important;
+  font-size: 20px!important;
   font-weight: 600!important;
   line-height: 1!important;
   margin: 0!important;
@@ -881,11 +891,16 @@ h3.comment-reply-title{
   letter-spacing: 3px;
 }
 
+p.comment-form-comment{
+  margin-top: 2em;
+}
+
 input#author{
   border-bottom: 1px solid #ccc;
   border-top: none;
   border-left: none;
   border-right: none;
+  width: 100%;
 }
 
 input#email{
@@ -893,6 +908,7 @@ input#email{
   border-top: none;
   border-left: none;
   border-right: none;
+  width: 100%;
 }
 
 textarea#comment{
@@ -901,11 +917,17 @@ textarea#comment{
   border-left: none;
   border-right: none;
   height: 80px;
+  width: 100%;
 }
 
-p.comment-form-comment{
-  padding-top: 5em;
+input#url{
+  border-bottom: 1px solid #ccc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
 }
+
 
 .comment-respond{
   margin-top: 4em;
@@ -938,6 +960,12 @@ border-color: transparent;
 
 .comment-author a{
   color: #888888;
+}
+
+h2.comments-title{
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  border-bottom-style: dotted;
 }
 
 
@@ -978,10 +1006,10 @@ h2.widget-title{
 
 aside .widget{
   border-bottom: 1px solid #ececec;
-  padding-bottom: 45px;
+  padding-bottom: 40px;
   float: left;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 /*-----------------------
@@ -1298,35 +1326,14 @@ object {
 -----------------------*/
 
 .navbar a{
-  color:#000;
   display: inherit;
 	margin-bottom: 10px;
 
 }
 
-.navbar a:hover{
-  color:#777777;
-}
-
-.navbar a.active{
-  color: #777777!important;
-}
-
-.navbar.hide-menu{
-  background-color: transparent;
-}
-
-.navbar {
-  background-color: #fff;
-  -webkit-box-shadow: 1px -4px 12px 1px #000000;
-  box-shadow: 1px -4px 12px 1px #000000;
-}
-
 .dropdown-menu{
   border: none!important;
-  text-align: center !important;
 }
-
 
 .navbar-toggler.navbar-toggler-right{
   color: #d5f83e;
@@ -1336,7 +1343,6 @@ object {
   padding:15px;
   padding-left: 5em;
   padding-right: 5em;
-
 }
 
 .navbar-toggler-icon{
@@ -1346,13 +1352,7 @@ object {
 
 .nav-link{
   padding: .1rem .1rem!important;
-  text-align: center!important;
 }
-
-.navbar-collapse li{
-  padding: 0 19px;
-}
-
 
 /*-----------------------
 ## 2.2 Social Icon menu
@@ -1399,8 +1399,7 @@ object {
   transform: rotate(180deg);
 }
 
-.avik-logo h1{
-  color:#fff;
+.avik-logo h1 a{
   font-size: 24px;
  padding-top: 10px;
 }
@@ -1412,18 +1411,6 @@ object {
 
 .avik-logo a:hover{
   color:#b3b3b3;
-}
-
-.avik-logo p{
-  color:#000;
-}
-
-.avik-custom-logo-header.logo1{
-  display: none;
-}
-
-.avik-custom-logo-body.logo2{
-  display: none;
 }
 
 .navbar-nav.ml-auto.tom{
@@ -1442,6 +1429,16 @@ position: fixed;
   width: 100%;
   height: 100%;
   position: absolute;
+}
+
+/* Header Post-page */
+
+.site-post-page{
+  margin-top: 8em;
+}
+
+.site-av{
+  margin-top: 2em;
 }
 
 
@@ -1999,13 +1996,6 @@ video {
   width: 100%;
 }
 
-.text-image-static{
-  padding-top: 5em;
-  padding-left: 5em;
-
-}
-
-
 
 /*--------------------------------------------------------------
 	## 4 Who we are
@@ -2015,25 +2005,15 @@ video {
   background-color: #f9f9f9;
 }
 
-
 .avik-who-we-are{
   margin-top: 2em;
 }
 
 .avik-who-we-are h3{
-  padding-left: 50%;
-  padding-bottom:2em;
+  text-align: center;
+  padding-bottom:1em;
   font-weight: bold;
-}
-
-.avik-who-we-are p{
-  padding-left: 50%;
-  text-align: justify;
-}
-
-.img-who-we-are{
-  max-width: 350px;
-  height: 400px;
+  margin-top: 1em;
 }
 
 .who-we-are-image-frame{
@@ -2045,11 +2025,6 @@ video {
 
 .img-whoweare-header{
   width: 100%;
-
-}
-
-.second-image-who-we-are{
-  padding-top: 5em;
 }
 
 .btn.btn-avik{
@@ -2076,10 +2051,6 @@ video {
   text-decoration: none;
 }
 
-.avik-btn-who-we-are{
-  margin-left: 50%;
-}
-
 .header-image-whoweare img{
 	background-position: center center;
 	background-size: cover;
@@ -2093,7 +2064,6 @@ video {
 
 .text-image-whoweare{
   position: absolute;
-  padding-top: 5em;
   padding-left: 5em;
   max-width: 100%;
   z-index: 999;
@@ -2172,7 +2142,6 @@ video {
 
 .typed-cursor {
   opacity: 1;
-  font-weight: bold;
   -webkit-animation: blink 0.7s infinite;
   -moz-animation: blink 0.7s infinite;
   -ms-animation: blink 0.7s infinite;
@@ -2180,6 +2149,13 @@ video {
   animation: blink 0.7s infinite;
   color: #fff;
   font-size: 5em;
+}
+
+@media (max-width: 699px) {
+.text-image-static{
+  padding-top: 8em!important;
+  padding-left: 1em!important;
+}
 }
 
 /* Team */
@@ -2195,6 +2171,7 @@ video {
 
 .social-team i{
   font-size: 14px;
+  color:#5d5d5d;
 }
 
 .social-team i:hover{
@@ -2203,7 +2180,7 @@ video {
 }
 
 .social-team a{
-  color:#fff;
+  color:#5d5d5d;
 }
 
 .frame {
@@ -2449,13 +2426,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .tab__title {
-  font-size: 23px;
+  font-size: 1.75rem;
   font-weight: bold;
   margin: 0 0 30px 12px;
 }
 
 .tabs__list {
-  margin: 90px 0 20px;
+  margin: 40px 0 20px;
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -2498,13 +2475,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   position: relative;
 }
 
-.img-avic-services-default{
-  width: 80px!important;
-  height: 80px!important;
-}
-
 .tab__development:hover img {
   -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
   opacity: 1;
 }
 
@@ -2535,10 +2508,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   position: relative;
 }
 
-.tab__development-img {
-  height: 120px;
-}
-
 .tab__development-img img{
   transition: all 0.3s ease-in-out;
   display: block;
@@ -2547,15 +2516,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin: auto;
    /* Firefox 10+ */
    -webkit-backface-visibility: hidden;
+   backface-visibility: hidden;
    filter: grayscale(100%) ;
    -webkit-filter: grayscale(100%);
 }
 
-
-
 .tab__development-title {
   color: #000;
-  margin: 0 0 50px;
+  margin-top: 18px;
+  margin-bottom: 18px;
   text-align: center;
   font-size: 18px;
 }
@@ -2599,11 +2568,13 @@ h2.enter-title-services{
   filter: gray;
   -webkit-filter: grayscale(100%);
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   opacity: .5;
 }
 
 .gray-effect-partenrs img:hover{
   -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
   opacity: 1;
 }
 
@@ -2694,11 +2665,9 @@ h2.enter-title-services{
 /* Writing text Services */
 
 #avikservices {
-  font-size: 2em;
   text-transform: capitalize;
   line-height: 1.5em;
   letter-spacing: 7px;
-  font-weight: 300;
   text-shadow: 1px 1px 2px #000;
   color:#d5f83e;
   margin: 0.5em 0 0.5em;
@@ -2725,7 +2694,6 @@ h2.enter-title-services{
 
 .text-image-services{
   position: absolute;
-  padding-top: 5em;
   padding-left: 5em;
   max-width: 100%;
 }
@@ -2763,7 +2731,6 @@ h2.enter-title-services{
 }
 
 .portfolio h3{
-  font-size: 23px;
   font-weight: bold;
   padding-bottom: 5px;
   padding-left: 20px;
@@ -2864,7 +2831,7 @@ ul.list-portfolio{
 }
 
 .avik-blog h2{
-  font-size: 23px;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 
@@ -2889,6 +2856,7 @@ h2.blog-title{
 
 .blog-image img{
   -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
   opacity: 1;
 }
 
@@ -2896,7 +2864,9 @@ h2.blog-title{
   /* Firefox 10+ */
   filter: gray;
   -webkit-filter: grayscale(35%);
+  filter: grayscale(35%);
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   opacity: .5;
   -webkit-box-shadow:0px 0px 10px 1px #000000 ;
   -moz-box-shadow:0px 0px 10px 1px #000000 ;
@@ -2914,6 +2884,7 @@ h2.blog-title{
 
 span.blog-info{
   padding-right: 8px;
+  font-size: 12px;
 }
 
 /*-----------------------
@@ -2981,13 +2952,6 @@ span.blog-info{
   color:#0079b5;
 }
 
-.page h1{
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  padding-bottom: 2em;
-}
-
 .title-page{
   height: 60px;
 }
@@ -3036,14 +3000,6 @@ span.blog-info{
   color: #fff;
 }
 
-/*-----------------------
-## 7.8 Article
------------------------*/
-
-article{
-  padding-bottom: 4em;
-}
-
 /*--------------------------------------------------------------
 	8 ## Contact
 --------------------------------------------------------------*/
@@ -3063,15 +3019,23 @@ article{
 
 }
 
-.widget-contact{
-  padding:2em;
-}
-
 .widget-contact h3{
   font-weight: 200;
   letter-spacing: 4px;
-  padding-bottom: 3em;
-  padding-top: 2.3em;
+  padding-bottom: 2em;
+  margin-top: 6em;
+}
+
+@media (max-width: 699px) {
+  .widget-contact h3{
+    margin-top: 2em!important;
+  }
+}
+
+.widget-contact-contact h3{
+  font-weight: 200;
+  letter-spacing: 4px;
+  padding-bottom: 2em;
 }
 
 .paddong-contact{
@@ -3180,14 +3144,7 @@ ul.avik-social-icons-contact-ul{
   width: 100%;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
-  max-height:600px;
-}
-
-.contact img:hover{
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  transition: all .4s ease-in-out;
+  transition: all 0.3s;
 }
 
 .avik-map{
@@ -3197,6 +3154,10 @@ ul.avik-social-icons-contact-ul{
   background-color: #000;
 }
 
+.address a{
+  color:#000;
+}
+
 /*-----------------------
 ## 9 Footer
 -----------------------*/
@@ -3204,7 +3165,6 @@ ul.avik-social-icons-contact-ul{
 .jumbotron{
   margin-bottom: 0!important;
   border-radius: 0%!important;
-  text-align: center;
   background-color: #000;
 }
 
@@ -3214,7 +3174,7 @@ hr.avik-footer{
 
 .jumbotron p{
   color:#fff;
-  font-size: 15px;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 200;
   padding-bottom: 1em;
@@ -3228,6 +3188,24 @@ hr.avik-footer{
 	color: #fff;
 }
 
+.footer-widget{
+  color: #fff;
+}
+
+.footer-widget h3{
+  font-size: 22px;
+}
+
+.footer-widget p a{
+  padding-bottom: 0!important;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.footer-widget p{
+  padding-bottom: 0!important;
+  font-size: 12px;
+}
 
 /*-----------------------
 ## 9.1 Social Icons Footer
@@ -3413,12 +3391,14 @@ ul.info-ul-blog{
 	display: none;
 	position: relative;
 	width: 100%;
-	-ms-touch-action: pan-y;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
 }
 .owl-carousel .owl-wrapper{
 	display: none;
 	position: relative;
-	-webkit-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
 }
 .owl-carousel .owl-wrapper-outer{
 	overflow: hidden;
@@ -3452,9 +3432,11 @@ ul.info-ul-blog{
 /* fix */
 .owl-carousel  .owl-wrapper,
 .owl-carousel  .owl-item{
+  backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility:    hidden;
-	-ms-backface-visibility:     hidden;
+  -ms-backface-visibility:     hidden;
+  transform: translate3d(0,0,0);
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   -ms-transform: translate3d(0,0,0);
@@ -3485,11 +3467,8 @@ h2.bold-text-404{
 
 .image-404 img{
   background-position: center center;
-  background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 650px;
-
 }
 
 /* ------------------------------------------------------------------------- *
@@ -3524,19 +3503,11 @@ h2.bold-text-404{
   .btn.btn-avik{
     margin-top: 0;
   }
-
   }
 
   /* ------------------------- *
   ##  13.2  Menu */
   /* ------------------------- */
-
-  @media (max-width: 988px) {
-
-  .navbar.hide-menu{
-    background-color: #fff;
-  }
-}
 
   @media (max-width: 699px) {
   .navbar-nav{
@@ -3549,7 +3520,6 @@ h2.bold-text-404{
   }
 
   .navbar-nav li{
-    text-align: center;
     width: 100%;
     font-size: 24px;
     border-top: 1px solid #ccc;
@@ -3563,14 +3533,40 @@ h2.bold-text-404{
     }
 
     .navbar-nav li{
-      text-align: center;
       width: 100%;
       font-size: 16px;
       border-top: 1px solid #f7f7f7;
-      padding: 10px;
+      padding-top: 10px!important;
+      padding-bottom: 10px!important;
     }
     }
 
+  @media (max-width: 985px) {
+ .navbar-nav li{
+      width: 100%;
+      font-size: 16px;
+      border-top: 1px solid #f7f7f7;
+      padding-top: 12px!important;
+      padding-bottom: 12px!important;
+    }
+}
+
+  /* Menu Responsive */
+
+.navbar-toggler>.close {
+  display:inline;
+}
+.navbar-toggler.collapsed>.close, .navbar-toggler:not(.collapsed)>.navbar-toggler-icon {
+  display:none;
+}
+
+.navbar-toggler-icon i{
+  font-size: 30px;
+}
+
+span.close.denis-x{
+  opacity: 0.8;
+}
   /* ------------------------- *
   ##  13.3  Logo */
   /* ------------------------- */
@@ -3937,7 +3933,7 @@ h2.bold-text-404{
     }
 
     .tabs__list {
-      margin: 90px 0 40px;
+      margin: 40px 0 40px;
     }
 
     .tabs__list-item--third {
@@ -4150,10 +4146,7 @@ h2.bold-text-404{
   /* ------------------------- */
 
   @media (max-width: 699px) {
-  .blog-image img{
-    max-height: 250px;
-  }
-
+  
   h2.blog{
     padding-right: 18px!important;
   }
@@ -4209,11 +4202,6 @@ h2.bold-text-404{
   ul.avik-social-icons-contact-ul{
     padding-left: 0!important;
   }
-
-  .widget-contact{
-    padding: 5px!important;
-  }
-
   .contact-info li{
     padding-left: 3px!important;
   }
@@ -4361,4 +4349,128 @@ img{
 
 .filter-header.avik-static-filter{
 	height: 85vh;
+}
+
+
+/* Portfolio post */
+
+h1.title-portfolio-post{
+  font-size: 2rem;
+}
+
+
+/* Widegt Calendar */
+
+#wp-calendar {
+  width: 100%; 
+}
+
+#wp-calendar a{
+ color:#0079b5
+}
+
+#wp-calendar caption { 
+  text-align: right; 
+  font-size: 12px; 
+  margin-top: -12px; 
+  caption-side: top;
+  text-transform: uppercase;
+}
+
+#wp-calendar thead { 
+  font-size: 12px; 
+  text-align: center;
+}
+
+#wp-calendar thead th { 
+  padding-bottom: 10px; 
+}
+
+#wp-calendar tbody td { 
+  text-align: center; 
+  padding:8px;
+  font-size: 12px;
+}
+
+#wp-calendar tbody .pad { 
+  background: none; 
+}
+
+#wp-calendar tfoot #next { 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  text-align: right; 
+}
+#wp-calendar tfoot #prev { 
+  font-size: 12px; 
+  text-transform: uppercase; 
+  padding-top: 10px; 
+}
+
+#wp-calendar tfoot #next a:hover,#wp-calendar tfoot #prev a:hover{
+  text-decoration: none;
+}
+
+#wp-calendar tbody td a:hover{
+  text-decoration: none;
+}
+
+/* In Responsive */
+@media (max-width: 1196px) {
+  #wp-calendar tbody td { 
+    padding: 7px;
+  }
+}
+
+@media (max-width: 989px) {
+  #wp-calendar tbody td { 
+    padding: 2px;
+  }
+}
+@media (max-width: 760px) {
+  #wp-calendar tbody td { 
+    padding: 8px;
+  } 
+}
+
+/* Widget Tags */
+
+.widget_tag_cloud .tagcloud a:hover{
+  text-decoration: none;
+}
+
+.widget_tag_cloud a{
+  font-size: 8pt!important;
+  padding: 4px 6px!important;
+}
+
+.widget_tag_cloud .tagcloud a{
+  background-color: #717171;
+  color: #fff;
+}
+
+/* Navigation */
+
+nav.navigation{
+  margin-top:2em;
+  margin-bottom: 2em;
+}
+
+.nav-links{
+  display: flex;
+}
+
+.nav-previous{
+  width: 100%;
+}
+
+.nav-next{
+  width: 100%;
+  text-align: right;
+}
+
+/* Index */
+
+.index-content-area{
+  margin-top: 8em;;
 }

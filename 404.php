@@ -4,14 +4,15 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
-if(is_404()) { get_header('post'); } else { get_header(); }
-
+get_header('av'); 
+$avik_name_post_404 = esc_attr(get_theme_mod('avik_category_page_404'));
 $args = array(
-  'cat' => esc_html(get_theme_mod('avik_category_page_404',9999999999999999 )),
   'posts_per_page' =>1,
+  'post_type'      => 'post',
+  'order'          => 'ASC',
+  'post__in'       => array( $avik_name_post_404),
 );
 $loop = new WP_Query( $args );
 if( $loop->have_posts() ) :

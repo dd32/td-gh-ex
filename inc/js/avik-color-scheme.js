@@ -3,7 +3,6 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.3.9
  */
 
 (function(api) {

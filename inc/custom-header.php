@@ -4,7 +4,6 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 <?php the_header_image_tag(); ?>
 *
 */

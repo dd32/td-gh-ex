@@ -1,16 +1,16 @@
-=== Avik ===
+=== Avikstatic ===
 
 Theme Name: Avik
 Contributors: franchidesign
 Theme URI: http://denisfranchi.com/
 Author: http://denisfranchi.com/
 Author URI: http://denisfranchi.com/
-Version: 1.3.8
-Stable tag: 1.3.8
+Version: 1.4.0
+Stable tag: 1.4.0
 Tested up to: 5.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Text Domain: avik
+Text Domain: avikstatic
 Tags: responsive-layout,custom-menu, featured-images, fluid-layout, full-width-template, one-column,rtl-language-support,translation-ready,custom-logo, editor-style,two-columns, right-sidebar, theme-options,flexible-header, accessibility-ready, custom-colors, custom-header
 
 == Description ==
@@ -299,3 +299,39 @@ Avik is distributed under the terms of the GNU GPL
 # Fixed some bug
 # Changed the main navigation menu design for accessibility
 # Changed name of three templates for theme security,please see the details to reset these templates
+
+== Changelog ==
+
+1.4.0
+
+# Section Header Static: improved graphics, fixed color filter bug
+# Section Services: added ability to adjust image size in Homepage, added ability to enable / disable image and button effect.
+# Section Who We Are: improved graphics, added ability to add second image, possibility of size adjustments and image padding.
+# Section Blog: added ability to adjust expert length
+# Section Contact: improved graphics, added link in the title, added ability to enable / disable social icons, added control for padding Widgetà
+# Footer: Added 2 Widget Areas,improved design, added ability to enable / disable social icons
+# Page Who We Are: improved design, added control to adjust Header image size and enable Object Fit, possibility to adjust the cursor.In Team section added possibility to enable / disable excpert and solved social icons problem.
+# Page Servics: improved design, fixed Patner section, improved Quote section and added text padding, Possibility to adjust image size in the Header, possibility to adjust padding Cursor
+# Menu: improved design, fixed navigation problems in pages and posts, added possibility to adjust color, size and padding, added "X" to close menu in Responsive.
+# Logo: fixed the design and expanded the ability to adjust the size.
+# Fixed bug in search results
+# Fixed Widget Search design
+# Added design for Tag Widget and Calendar Widget
+# Fixed Preloader bug and added ability to enable or disable it
+# Speeded up the code, it is now much more fluid
+# Completely revisited the Customizer, it is now much more intuitive and easier to use
+# Added ability to order section blocks on the Homepage
+# Added the ability to change the Read More text from the buttons
+# Post Portfolio Template: added the title, and added the ability to disable or disable comments and tags.
+# Improved comment form in posts
+# Improved and standardized section titles on the Homepage
+# Improved text alignment.
+# Improved Responsive design
+# Added the ability to import Demos.
+# Added support for Free versions too.
+# Completely redesigned the administration page.
+# Redone a guide for complete customization.
+
+
+
+

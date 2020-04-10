@@ -4,7 +4,6 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.9
  */
 
 /* TABLE OF CONTENT
@@ -30,6 +29,8 @@
 19 - Google Font
 20 - Notice Upload
 21 - Url Admin Upload 
+22 - The Excpert
+23 - Demo Import
 */
 
 /* 1 Dependecies
@@ -61,10 +62,12 @@ if ( ! function_exists( 'avik_setup' ) ) :
 		// create custom size images
 		add_image_size('avik_big', 1920, 1080, true);
 		add_image_size('avik_single', 750, 450, true);
+		add_image_size('avik_single_article_av', 2000, 1000, true);
 		add_image_size('avik_brand', 115, 100, true);
 		add_image_size('avik_services', 80, 80, true);
         add_image_size('avik_team',250, 310, true);
-        add_image_size('avik_news',300, 220, true);
+		add_image_size('avik_news',300, 220, true);
+		add_image_size('avik_news_av',600, 400, true);
 		// create custom menus
 		register_nav_menus( array(
 			'menu-1' => esc_html__('Primary (Home)', 'avik'),
@@ -97,8 +100,8 @@ if ( ! function_exists( 'avik_setup' ) ) :
 
 		// Add support for core custom logo.
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 200,
+			'width'       => 200,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -119,7 +122,7 @@ if(! function_exists('avik_widget_contact_form') ) {
 
 	function avik_widget_contact_form(){
 	  register_sidebar(array(
-		'name' => esc_html__('Area Widget Contact Form','avik'),
+		'name' => esc_html__('Area Widget Contact Form Homepage','avik'),
 		'id' => 'widget_contact_form',
 		'description' => esc_html__('Area Widget Contact Form','avik'),
 		'before_title' => '<h3>' ,
@@ -153,6 +156,46 @@ if(! function_exists('avik_widget_contact_form_services') ) {
   }
 
 add_action('widgets_init','avik_widget_contact_form_services');
+
+/* 4 Register Area Widget Footer 1
+-------------------------------------------------------- */
+
+if(! function_exists('avik_widget_footer_one') ) {
+
+	function avik_widget_footer_one(){
+	  register_sidebar(array(
+		'name' => esc_html__('Area Widget Footer One','avik'),
+		'id' => 'widget_footer_one',
+		'before_title' => '<h3>' ,
+		'after_title' => '</h3>',
+		'before_widget' => '<div class="widget avik-contact %2$s clearfix">',
+		'after_widget' => '</div>',
+		)
+	  );
+	}
+  }
+
+add_action('widgets_init','avik_widget_footer_one');
+
+/* 5 Register Area Widget Footer 2
+-------------------------------------------------------- */
+
+if(! function_exists('avik_widget_footer_two') ) {
+
+	function avik_widget_footer_two(){
+	  register_sidebar(array(
+		'name' => esc_html__('Area Widget Footer Two','avik'),
+		'id' => 'widget_footer_two',
+		'before_title' => '<h3>' ,
+		'after_title' => '</h3>',
+		'before_widget' => '<div class="widget avik-contact %2$s clearfix">',
+		'after_widget' => '</div>',
+		)
+	  );
+	}
+  }
+
+add_action('widgets_init','avik_widget_footer_two');
 
 
 
@@ -318,7 +361,7 @@ function avik_the_breadcrumb_search() {
 		echo '<div class="container">';
 		echo '<div class="row breadcrumbs">';
 		echo '<div class="text-breadcrumbs avikSearch text-left col-sm-4">';
-		printf( esc_html__( 'Results for: "s"', 'avik' ), '<span>' . get_search_query() . '</span>' );
+		printf( esc_html__( 'Results for: "%s"', 'avik' ), '<span>' . get_search_query() . '</span>' );
 		echo '</div>';
 		echo '<div class="menu-breadcrumbs col-sm-8">';
 		echo esc_html__( 'You are here:&nbsp;&nbsp;', 'avik' );
@@ -456,25 +499,26 @@ add_image_size( 'carousel-pic', 480, 320, true );
 /* 11 Avik Support Page
 ------------------------------------------------------------*/
 
+function avik_page_create() {
+	add_theme_page('Avik', 'AVIK', 'edit_theme_options', 'avik_page', 'avik_page_display',1);
+
+}
+
 add_action('admin_menu', 'avik_page_create');
 
-function avik_page_create() {
-    add_theme_page('Avik', 'AVIK', 'edit_theme_options', 'avik_page', 'avik_page_display',null);
+require get_template_directory() . '/avik-support.php';
 
+//Include Admin Style
+function avik_load_admin_style($hook) {
+   if( $hook == 'appearance_page_avik_page' ) {
+	wp_enqueue_style( 'avik-admin-css', get_template_directory_uri() . '/css/avik-admin-style.css', false, '1.0.0' );
+	wp_enqueue_script( 'avik-admin-script', get_template_directory_uri() . '/js/avik-admin-script.js', false, '1.0.0' );
+	wp_enqueue_style( 'avik-font-awesome-admin', get_template_directory_uri() . '/css/fontawesome-all.min.css' );
+
+   }
 }
-
-function avik_page_display() {
-    include 'avik-support.php';
-}
-
-  //Include Admin Style
-
 add_action( 'admin_enqueue_scripts', 'avik_load_admin_style' );
-function avik_load_admin_style() {
-    wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/avik-admin-style.css', false, '1.0.0' );
-    wp_enqueue_script( 'admin_script', get_template_directory_uri() . '/js/avik-admin-script.js', false, '1.0.0' );
-    wp_enqueue_style( 'wp-bootstrap-avik-font-awesome-admin', get_template_directory_uri() . '/css/fontawesome-all.css' );
-}
+
 
 /* 12 Lightbox popup image
 -------------------------------------------------------- */
@@ -634,17 +678,17 @@ function avik_register_required_plugins() {
 			'required'  => false,
 		),
 
-		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		// On Click Demo Import
 		array(
-			'name'      => 'Multiple Post Thumbnails',
-			'slug'      => 'multiple-post-thumbnails',
+			'name'      => __('One Click Demo Import','avik'),
+			'slug'      => 'one-click-demo-import',
 			'required'  => false,
 		),
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
-			'name'      => 'Featured Video Plus',
-			'slug'      => 'featured-video-plus',
+			'name'      => 'Multiple Post Thumbnails',
+			'slug'      => 'multiple-post-thumbnails',
 			'required'  => false,
 		),
 
@@ -825,29 +869,36 @@ function avik_add_dismissible() {
 	   <div class="df-logo">
 		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
 	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
-	   <span><?php echo esc_html('Franchi Design','atomy')?></span>
+	   <span><?php echo esc_html('Franchi Design','avik')?></span>
 	   </a>
 	   <h2><?php echo esc_html('Welcome to Avik','avik')?></h2>
-      </div>
-		  <p style="font-weight:bold;font-size:18px ;"><?php echo esc_html('Changelog Avik v 1.3.9','avik')?></p>
-		    <ul class="avik-ul-update">
-		          <li>
-					  <?php echo esc_html('Fixed some bugs','avik')?>
-				  </li>
-				  <li>
-					  <?php echo esc_html('Added keyboard accessibility','avik')?>
-				  </li>
-				  <li>
-					  <?php echo esc_html('Changed the main navigation menu design for accessibility','avik')?>
-				  </li>
-				  <li>
-					  <?php echo esc_html('Changed name of three templates for theme security,please see the details to reset these templates','avik')?>
-				  </li>
-		    </ul>
-		 <div style="text-align:center;margin-bottom:2em">
-		 <a target="_blank" class="avik-detail-update-a" href="<?php echo esc_url(avik_url_update_details); ?>"><?php echo esc_html('View Details','avik')?></a>
-	   </div>
+	   <p><?php _e('Important links to get you started with Avik','avik')?></p>
 	  </div>
+	  <div class="container">
+		  <div class="row">
+		  <div class="col-md-4">
+		    <h3><?php _e('Get Started','avik')?></h3>
+		    <button class="at-button-dem"><a target="_blank" href="<?php echo esc_url(avik_url_basic_documentation);?>"><?php _e('Learn Basics','avik')?></a></button>
+		  </div>
+		  <div class="col-md-4">
+			<h3><?php _e('Next Steps','avik')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-media-document"></span><a target="_blank" href="<?php echo esc_url(avik_url_documentation_theme);?>"><?php _e('Documentation','avik')?></a></li>
+			  <li><span class="dashicons dashicons-layout"></span><a target="_blank" href="<?php echo esc_url(avik_url_demos_theme);?>"><?php _e('Starter Demos','avik')?></a></li>
+			  <li><span class="dashicons dashicons-migrate"></span><a target="_blank" href="<?php echo esc_url(avik_url_promotion);?>"><?php _e('Premium Version','avik')?></a></li>
+			</ul>
+		</div>
+		  <div class="col-md-4">
+		    <h3><?php _e('Further Actions','avik')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-businessperson"></span><a target="_blank" href="<?php echo esc_url(avik_url_support_theme);?>"><?php _e('Got theme support question?','avik')?></a></li>
+			  <li><span class="dashicons dashicons-thumbs-up"></span><a target="_blank" href="<?php echo esc_url(avik_review_theme);?>"><?php _e('Leave a review','avik')?></a></li>
+			  <li><span class="dashicons dashicons-admin-appearance"></span><a target="_blank" href="<?php echo esc_url(avik_url_updates_theme);?>"><?php _e('Changelog','avik')?></a></li>
+			</ul>
+		  </div>
+         </div>
+		</div>
+    </div>
   <?php
 }
 
@@ -856,18 +907,80 @@ function avik_4_dismiss_notice() {
 update_option( 'avik_4_dismiss_notice', true );
 }
 
-
 /* 21 Url Admin Upload 
 ========================================================================== */
 	
 if ( ! defined( 'ABSPATH' ) ) {
 		exit; // Exit if accessed directly.
 }
+define('avik_url_basic_documentation','https://www.denisfranchi.com/community/index.php?threads/quick-customization-guide-avik.32/');// Starte Documentation
 define('avik_url_promotion','https://www.denisfranchi.com/avik-pro-10-0-0/');// Go Pro
-define('avik_url_update_details','https://www.denisfranchi.com/blog/2018/11/28/avik-1-2-7/');// Update Details
+define('avik_url_updates_theme','https://www.denisfranchi.com/updates/');// Update Theme
 define('franchi_design_url','https://www.denisfranchi.com/');// Franchi Design
-	
+define('avik_url_documentation_theme','https://www.denisfranchi.com/community/index.php?forums/documentation.11/');// Documentation Theme
+define('avik_url_demos_theme','https://www.denisfranchi.com/avik-demos/');// Franchi Design Demo   
+define('avik_url_support_theme','https://www.denisfranchi.com/community/index.php?forums/support.13/');// Support Theme
+define('avik_review_theme','https://wordpress.org/support/theme/avik/reviews/');// Review Theme   
+define('avik_forum_theme','https://www.denisfranchi.com/community/index.php');// Forum Theme  
+define('avik_url_faq_1_support','https://www.denisfranchi.com/community/index.php?threads/guide-to-add-id-sections-in-the-menu.6/');// Faq 1
+define('avik_url_faq_2_support','https://www.denisfranchi.com/community/index.php?threads/guide-for-the-section-who-we-are.7/');// Faq 2	
+define('avik_url_faq_3_support','https://www.denisfranchi.com/community/index.php?threads/quick-customization-guide-avik.32');// Faq 3	
+define('avik_url_faq_4_support','https://www.denisfranchi.com/community/index.php?threads/quick-customization-guide-avik.32');// Faq 4	    
 
+/* 22 The Excpert
+========================================================================== */
+
+function avik_custom_excerpt_length( $length ) {
+	$avik_excpert=(esc_attr( get_theme_mod('avik_excerpt_length', 18)));
+    return $avik_excpert;
+}
+add_filter( 'excerpt_length', 'avik_custom_excerpt_length', 999 );
+
+function avik_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'avik_excerpt_more' );
+
+/* 23 Demo Import
+========================================================================== */
+
+// Menu and Page
+function avik_after_import_setup() {
+	// Assign menus to their locations.
+	$menu_1 = get_term_by( 'name', 'Primary', 'nav_menu' );
+	$menu_2 = get_term_by( 'name', 'Secondary', 'nav_menu' );
+	
+	set_theme_mod( 'nav_menu_locations', array(
+			'menu-1' => $menu_1->term_id, 
+			'menu-2' => $menu_2->term_id,
+		)
+	);
+
+}
+add_action( 'pt-ocdi/after_import', 'avik_after_import_setup' );
+
+// Custim Text Plugin
+function avik_plugin_intro_text( $default_text ) {
+	$default_text .= '<div class="ocdi__intro-text" style="margin-bottom:3em; text-align:center;background-color:#fff;height:100px;padding-top:50px;font-size:20px"><a target="_blank" style="margin-left:10px;text-decoration:none;" href="'.esc_url(avik_url_demos_theme).'"><span class="dashicons dashicons-download"></span>'.__('Avik Starter Demos','avik').'</a><br><p>'.__('*Important! Before importing the demo install all the recommended plugins!','avik').'</p></div>';
+	
+	return $default_text;
+}
+add_filter( 'pt-ocdi/plugin_intro_text', 'avik_plugin_intro_text' );
+
+// Custom Title Plugin
+function avik_plugin_page_setup( $default_settings ) {
+	$default_settings['parent_slug'] = 'themes.php';
+	$default_settings['page_title']  = esc_html__( 'One Click Demo Import' , 'avik' );
+	$default_settings['menu_title']  = esc_html__( 'AVIK Import Demo' , 'avik' );
+	$default_settings['capability']  = 'import';
+	$default_settings['menu_slug']   = 'pt-one-click-demo-import';
+
+	return $default_settings;
+}
+add_filter( 'pt-ocdi/plugin_page_setup', 'avik_plugin_page_setup' );
+
+// No Banner 
+add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 
 

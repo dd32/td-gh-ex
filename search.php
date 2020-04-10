@@ -4,7 +4,6 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
 if(is_search()) { get_header('post'); } else { get_header(); }
@@ -15,7 +14,7 @@ avik_the_breadcrumb_search(); ?>
   <main id="main" class="site-main">
     <div class="container mt-5 mb-5">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-md-9">
           <?php if ( have_posts() ) : ?>
             <header class="page-header">
             </header><!-- .page-header -->

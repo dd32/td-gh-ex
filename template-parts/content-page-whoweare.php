@@ -4,18 +4,19 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.9
  */
  ?>
 
  <div class="enter-whoweare">
      <div class="header-image-whoweare" >
+     <?php if ( false == esc_html( get_theme_mod( 'avik_enable_cursor_whoweare', false) )) : ?>
         <div class="text-image-whoweare">
 			     <div id="typed-strings">
 				       <p><?php the_title(); ?> <i> <?php the_excerpt();?></i></p>
 			     </div>
 			      <span id="typed"></span>
         </div>
+        <?php endif?>
         <?php
              $avik_whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
              $avik_whoweare_count = 1;
@@ -39,7 +40,7 @@
                   </div>
                    <div class="col-sm-6 ">
                      <!-- Image 2 who we are -->
-                     <div class="second-image-who-we-are image-enter-whoweare" data-aos="zoom-in">
+                     <div class="second-image-who-we-are-page image-enter-whoweare" data-aos="zoom-in">
                      <?php if ( class_exists( 'MultiPostThumbnails')) :
                          MultiPostThumbnails::the_post_thumbnail(
                          get_post_type(),
@@ -123,7 +124,9 @@
                            echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                       <div class="name-title one">
                          <h4><?php the_title();?></h4>
+                         <?php if ( false == esc_html( get_theme_mod( 'avik_enable_excpert_team_whoweare', false) )) :?>
                          <h5><?php the_excerpt();?></h5>
+                         <?php endif;?>
                          </div>
                      </a>
                     <?php endwhile;
@@ -173,7 +176,9 @@
                          echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                     <div class="name-title one">
                        <h4><?php the_title();?></h4>
-                       <h5><?php the_excerpt();?></h5>
+                       <?php if ( false == esc_html( get_theme_mod( 'avik_enable_excpert_team_whoweare', false) )) :?>
+                         <h5><?php the_excerpt();?></h5>
+                         <?php endif;?>
                        </div>
                    </a>
                   <?php endwhile;
@@ -223,7 +228,9 @@
                          echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                     <div class="name-title one">
                        <h4><?php the_title();?></h4>
-                       <h5><?php the_excerpt();?></h5>
+                       <?php if ( false == esc_html( get_theme_mod( 'avik_enable_excpert_team_whoweare', false) )) :?>
+                         <h5><?php the_excerpt();?></h5>
+                         <?php endif;?>
                        </div>
                    </a>
                   <?php endwhile;

@@ -4,7 +4,6 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -12,6 +11,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area col-sm-3">
+<aside id="secondary" class="widget-area col-md-3">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

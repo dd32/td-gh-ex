@@ -4,14 +4,14 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
 get_header('post');
 ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main">
+<div id="primary" class="content-area container index-content-area">
+<dvi class="row mt-5">
+	<main id="main" class="site-main col-md-9">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) :
@@ -32,8 +32,8 @@ get_header('post');
 			endif;
 			?>
 		</main>
+	   <?php get_sidebar(); ?>
+	</div>
 	</div>
 	<?php
-
-	get_sidebar();
 	get_footer();

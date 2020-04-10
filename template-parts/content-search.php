@@ -4,7 +4,6 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.9
  */
  ?>
 
@@ -14,7 +13,7 @@
 	  <?php endif; ?>
 	</header><!-- .entry-header -->
 	<div class="avik-img-search">
-		<?php the_post_thumbnail('avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() )); ?>
+		<?php the_post_thumbnail('avik_single_article_av', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() )); ?>
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
       </div>
 		   <div class="info-post">
@@ -30,9 +29,10 @@
 		  <?php the_excerpt(); ?>
 		 </div><!-- .entry-summary -->
 		 <div class="button-archive text-right">
-		  <a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php esc_html_e('Read more...','avik'); ?></a>
+		  <a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php echo esc_html(get_theme_mod('avik_title_button_services',__('Read more...','avik'))); ?></a>
 	   </div>
 	<footer class="entry-footer text-right">
 		<?php avik_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+<hr class="mt-3 mb-5">

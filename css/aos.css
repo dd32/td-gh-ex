@@ -585,7 +585,7 @@ body[data-aos-delay="1950"] [data-aos].aos-animate {
 
 [data-aos][data-aos][data-aos-duration="2000"],
 body[data-aos-duration="2000"] [data-aos] {
-    transition-duration: 2s
+    transition-duration: 1s
 }
 
 [data-aos][data-aos][data-aos-delay="2000"],

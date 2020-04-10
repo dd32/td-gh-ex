@@ -4,7 +4,6 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.9
  */
  ?>
 
@@ -12,15 +11,17 @@
 
 <section class="slideshow" id="slider">
      <!-- Social Icons -->
+     <?php if ( false == esc_html( get_theme_mod( 'avik_enable_social_header', false) )) :?>
      <div class="avik-social-icons-header">
 		    <ul class="avik-social-icons" data-aos="zoom-in">
         <?php get_template_part( 'inc/social' ); ?>
 		    </ul>
      </div>
+     <?php endif?>
     <!-- Slider 1 -->
     <div class="slideshow__slide js-slider-home-slide is-current" data-slide="1">
     <?php
-     $avik_slider_cat = esc_url( get_theme_mod('avik_category_slider_1'));
+     $avik_slider_cat = intval( get_theme_mod( 'avik_category_slider_1', 1 ) );
      $avik_slider_count = 1;
 	   $avik_new_query = new WP_Query( array( 'cat' => $avik_slider_cat ,'showposts' => $avik_slider_count ));
      while ( $avik_new_query->have_posts() ) : $avik_new_query->the_post(); ?>
@@ -51,7 +52,7 @@
             <!-- Subtitle slider 1 -->
             <div class="slideshow__slide-caption-content"><?php the_excerpt(); ?></div>
               <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="<?php the_permalink();?>">
-               <span class="slideshow__slide-caption-subtitle-label"><?php esc_html_e('Read more...','avik'); ?></span>
+               <span class="slideshow__slide-caption-subtitle-label"><?php echo esc_html(get_theme_mod('avik_title_button_services',__('Read more...','avik'))); ?></span>
               </a>
           </div>
         </div>
@@ -93,7 +94,7 @@
             <!-- Subtitle slider 2 -->
             <div class="slideshow__slide-caption-content"><?php the_excerpt(); ?></div>
               <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="<?php the_permalink();?>">
-                <span class="slideshow__slide-caption-subtitle-label"><?php esc_html__('Read more...','avik'); ?></span>
+                <span class="slideshow__slide-caption-subtitle-label"><?php echo esc_html(get_theme_mod('avik_title_button_services',__('Read more...','avik'))); ?></span>
               </a>
           </div>
           <?php endwhile;
@@ -135,7 +136,7 @@
             <!-- Subtitle slider 3 -->
             <div class="slideshow__slide-caption-content"><?php the_excerpt(); ?></div>
               <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="<?php the_permalink();?>">
-                <span class="slideshow__slide-caption-subtitle-label"><?php esc_html_e('Read more...','avik'); ?></span>
+                <span class="slideshow__slide-caption-subtitle-label"><?php echo esc_html(get_theme_mod('avik_title_button_services',__('Read more...','avik'))); ?></span>
               </a>
           </div>
         </div>

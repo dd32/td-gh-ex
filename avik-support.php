@@ -5,50 +5,125 @@
 *
 * @package Avik
 *
-*  @version   1.3.9
 */
+
+function avik_page_display() {
 ?>
 
-<div class="avik-image-background-support container" style="background: url('<?php echo esc_url(get_template_directory_uri()).'/img/static.jpg';  ?>'); background-repeat: no-repeat;
-background-position: center center;background-size: cover;" >
-
-<div class="text-support">
-	<h1><?php esc_html_e( 'Welcome to Avik!', 'avik' ); ?></h1>
-	<h5><?php esc_html_e( 'You can customize with one click', 'avik' ); ?></h5>
-</div>
-</div>
+ <div class="at-header-admin">
+      <div class="at-logo-admin">
+		   	<h2><?php echo esc_html__('Avik','avik');?></h2>
+		  	<span><?php echo esc_html__('V 1.4.0','avik');?></span>
+		  </div>
+		   <div class="at-logo-icon-admin">
+		   	<span class="dashicons dashicons-screenoptions"></span>
+	     </div>
+   </div>
 <!-- Tab links -->
 <div class="avik-tab-support">
 	<div class="tab">
-		<button class="tablinks" onclick="avikopenGuide(event, 'WELCOME')"id="defaultOpen"><?php esc_html_e( 'WELCOME', 'avik' ); ?></button>
-		<button class="tablinks" onclick="avikopenGuide(event, 'DOCUMENTATION')"><?php esc_html_e( 'DOCUMENTATION', 'avik' ); ?></button>
-		<button class="tablinks" onclick="avikopenGuide(event, 'PRO')"><?php esc_html_e( 'PRO VERSION', 'avik' ); ?></button>
-		<button class="tablinks" onclick="avikopenGuide(event, 'SUPPORT')"><?php esc_html_e( 'SUPPORT PRO', 'avik' ); ?></button>
+		<button class="tablinks" onclick="avikopenGuide(event, 'Welcome')"id="defaultOpen"><?php esc_html_e('Welcome','avik'); ?></button>
+		<button class="tablinks" onclick="avikopenGuide(event, 'Help')"><?php esc_html_e('Help','avik'); ?></button>
+		<button class="tablinks" onclick="avikopenGuide(event, 'Options')"><?php esc_html_e('Pro Version','avik'); ?></button>
+		<button class="tablinks" onclick="avikopenGuide(event, 'Changelog')"><a class="at-nav-link" href="<?php echo esc_url(avik_url_updates_theme); ?>" target="_blank"><?php echo esc_html('Changelog','avik')?></a></button>
+		<button class="tablinks" onclick="avikopenGuide(event, 'Starter Demos')"><a class="at-nav-link" href="<?php echo esc_url(avik_url_demos_theme); ?>" target="_blank"><?php echo esc_html('Starter Demos','avik')?></a></button>
 	</div>
 	<!-- Tab content -->
-
 	<!-- Welcome -->
-	<div id="WELCOME" class="tabcontent">
-		<h3 class="avik-welkome-support-title"><?php esc_html_e( 'Welcome!', 'avik' ); ?></h3>
-		<p class="avik-welkome-support"><?php esc_html_e( 'Thank you for choosing Avik.','avik');?><br>
-			<?php esc_html_e('The theme is ready to be used. You can customize everything you want in a few simple clicks directly from the front end.', 'avik' ); ?>
-			<br>
-			<?php esc_html_e('For a complete experience, go to the','avik');?>
-		<button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url('https://www.denisfranchi.com/avik-pro-10-0-0/' ); ?>"><?php esc_html_e('Pro Version', 'avik'); ?></a></button></p>
-			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.9','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
+	<div id="Welcome" class="tabcontent">
+		<h3 class="avik-welkome-support-title"><?php esc_html_e('Welcome to Avik!','avik' ); ?></h3>
+		<p class="avik-welkome-support"><?php esc_html_e('Thank you for choosing Avik.','avik');?><br>
+		    <?php esc_html_e('The theme is ready to be used. You can customize everything you want in a few simple clicks directly from the front end.', 'avik' ); ?><br>
+			<?php esc_html_e('In this new version, many improvements have been made, and many controls have been added to personalize your site to the maximum.','avik')?><br>
+			<?php esc_html_e('If you have problems with this new version, do not hesitate to ask for support in our','avik')?><a class="av-link-news" target="_blank" href="<?php echo esc_url(avik_forum_theme)?>"><?php esc_html_e('Forum.','avik')?></a><?php esc_html_e('Now we also offer support for the Free version.','avik')?><br>
+			<?php esc_html_e('A big news is that you can import demos with a few simple steps. For the moment you have the possibility to import a single demo with the Free version, but we are already working to create others.','avik')?><br>
+			<?php esc_html_e('Here you can view the demos and see the previews:','avik')?><a class="av-link-news" target="_blank" href="<?php echo esc_url(avik_url_demos_theme)?>"><?php esc_html_e('Demos Avik','avik')?></a>
+		  </p>
+		  <div class="container">
+		  <h2><?php _e('Important links to get you started with Avik','avik')?></h2>
+		  <div class="row">
+		  <div class="col-md-4">
+		    <h3><?php _e('Get Started','avik')?></h3>
+		    <button class="at-button-dem"><a target="_blank" href="<?php echo esc_url(avik_url_basic_documentation);?>"><?php _e('Learn Basics','avik')?></a></button>
+		  </div>
+		  <div class="col-md-4">
+			<h3><?php _e('Next Steps','avik')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-media-document"></span><a target="_blank" href="<?php echo esc_url(avik_url_documentation_theme);?>"><?php _e('Documentation','avik')?></a></li>
+			  <li><span class="dashicons dashicons-layout"></span><a target="_blank" href="<?php echo esc_url(avik_url_demos_theme);?>"><?php _e('Starter Demos','avik')?></a></li>
+			  <li><span class="dashicons dashicons-migrate"></span><a target="_blank" href="<?php echo esc_url(avik_url_promotion);?>"><?php _e('Premium Version','avik')?></a></li>
+			</ul>
+		</div>
+		  <div class="col-md-4">
+		    <h3><?php _e('Further Actions','avik')?></h3>
+			<ul>
+			  <li><span class="dashicons dashicons-businessperson"></span><a target="_blank" href="<?php echo esc_url(avik_url_support_theme);?>"><?php _e('Got theme support question?','avik')?></a></li>
+			  <li><span class="dashicons dashicons-thumbs-up"></span><a target="_blank" href="<?php echo esc_url(avik_review_theme);?>"><?php _e('Leave a review','avik')?></a></li>
+			  <li><span class="dashicons dashicons-admin-appearance"></span><a target="_blank" href="<?php echo esc_url(avik_url_updates_theme);?>"><?php _e('Changelog','avik')?></a></li>
+			</ul>
+		  </div>
+         </div>
+		</div>
 	</div>
-	<!-- Guides -->
-	<div id="DOCUMENTATION" class="tabcontent">
-
-		<h3 class="avik-welkome-support-title"><?php esc_html_e( 'Documentation', 'avik' ); ?></h3>
-		<p class="avik-welkome-support">
-			<?php esc_html_e( 'Complete documentation to use Avik.', 'avik' ); ?></p>
-				<button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/community/index.php?forums/guides.11/' ); ?>"><?php esc_html_e('Documentation', 'avik'); ?></a></button>
-		
-	
+	<!-- Help -->
+	<div id="Help" class="tabcontent">
+		<div class="at-documentation">
+	<div class="at-header-help">
+	  <h2><?php echo esc_html__('Documentation','avik');?></h2>
+	</div>
+	<div class="at-header-help-p">
+	   <p><?php echo esc_html__('In this page you can view general frequently asked questions to help you get started.','avik')?>
+	      <?php echo esc_html__('For more, refer to our documentation site or click the links below:','avik')?></p>
+          <div class="at-button-documentation">
+		   	<a class="at-read-documentation" target="_blank" href="<?php echo esc_url(avik_url_documentation_theme); ?>"><?php echo esc_html('Read Documentation','avik');?></a>
+		   <a class="at-theme-support" target="_blank" href="<?php echo esc_url(avik_url_support_theme); ?>"><?php echo esc_html('Theme Support','avik');?></a>
+	     </div>
+       </div>
+    </div>
+		<h3 class="avik-welkome-support-title"><?php esc_html_e('Frequently Asked Questions','avik' ); ?></h3>
+		<a href="#" class="togglefaq"><span class="dashicons dashicons-plus at-plus"></span>
+		  <?php esc_html_e('I want to configure the menu to scroll the various sections on the home page, what can I do?','avik')?>
+		  <p class="at-number"><?php esc_html_e('1','avik')?></p>
+		</a>
+          <div class="faqanswer">
+            <p><?php esc_html_e('To add a section of the Avik site to the main menu,with effect to scroll, you need to proceed like this:','avik')?></p>
+            <div class="at-full-article">
+              <a target="_blank" href="<?php echo esc_url(avik_url_faq_1_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','avik')?></a>
+         </div>
+    </div>
+	   <a href="#" class="togglefaq"><span class="dashicons dashicons-plus"></span>
+		<?php esc_html_e('How do I create a Who we are page?','avik')?>
+		  <p class="at-number"><?php esc_html_e('2','avik')?></p></a>
+          <div class="faqanswer">
+			 <p><?php esc_html_e('The section Who we are in addition to the various customizations of the page, has the ability to create a dedicated page.
+                                 To create it you have to proceed in this way:','avik')?></p>
+			 <div class="at-full-article">
+               <a target="_blank" href="<?php echo esc_url(avik_url_faq_2_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','avik')?></a>
+             </div>
+          </div>
+		<a href="#" class="togglefaq"><span class="dashicons dashicons-plus"></span>
+		<?php esc_html_e('There are many customizations, how do you make us orient myself?','avik')?>
+		 <p class="at-number"><?php esc_html_e('3','avik')?></p></a>
+          <div class="faqanswer">
+			 <p><?php esc_html_e('With Avik you have the possibility to customize your site, let see how to do it step by step.','avik')?></p>
+			 <div class="at-full-article">
+              <a target="_blank" href="<?php echo esc_url(avik_url_faq_3_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','avik')?></a>
+            </div>
+         </div>    
+		   <a href="#" class="togglefaq"><span class="dashicons dashicons-plus"></span>
+			<?php esc_html_e('Why are there 2 menus?','avik')?>
+			 <p class="at-number"><?php esc_html_e('4','avik')?></p></a>
+          <div class="faqanswer">
+			 <p><?php esc_html_e('In Avik there are 2 menus, 1 for the Homepage and 1 for posts and pages ...','avik')?></p>
+			 <div class="at-full-article">
+              <a target="_blank" href="<?php echo esc_url(avik_url_faq_4_support); ?>"><?php esc_html_e('VIEW FULL ARTICLE','avik')?></a>
+            </div>
+		  </div>
+		  <div class="at-margin-bottom-tab"></div>
+		<div class="avik-clear-guide-support-admin"></div>
 	</div>
 	<!-- PRO VERSION -->
-	<div id="PRO" class="tabcontent">
+	<div id="Options" class="tabcontent">
 		<h3 class="avik-welkome-support-title"><?php esc_html_e( 'PRO VERSION', 'avik' ); ?></h3>
 		<p class="avik-welkome-support">
 			<?php esc_html_e( 'Specifications Avik theme','avik');?>
@@ -153,7 +228,7 @@ background-position: center center;background-size: cover;" >
 						<td><?php esc_html_e('Font Family','avik');?></td>
 						<td><span><?php esc_html_e('15+5','avik');?></span>
 						</td>
-						<td><span><?php esc_html_e('15+Coming soon','avik');?></span></td>
+						<td><span><?php esc_html_e('20+ Custom Font','avik');?></span></td>
 					</tr>
 					<!-- Layou setting -->
 					<tr>
@@ -162,7 +237,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<tr>
 						<td><?php esc_html_e('Layout Settings','avik');?></td>
-						<td><span><i class="fas fa-times avik-icon-free"></i></span>
+						<td><span><i class="fa fa-check"></i></span>
 						</td>
 						<td><span><i class="fa fa-check"></i></span></td>
 					</tr>
@@ -193,7 +268,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<tr class="compare-row">
 						<td><?php esc_html_e('More Areas Widgets','avik');?></td>
-						<td><span><?php esc_html_e('3','avik');?></span></td>
+						<td><span><?php esc_html_e('5','avik');?></span></td>
 						<td><span><?php esc_html_e('12','avik');?></span></td>
 					</tr>
 					<!-- Menu types -->
@@ -353,7 +428,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<tr>
 						<td><?php esc_html_e('Dropdown Menu','avik');?></td>
-						<td><span><i class="fas fa-times avik-icon-free"></i></span></td>
+						<td><span><i class="fa fa-check"></i></span></td>
 						<td><span><i class="fa fa-check"></i></span></td>
 					</tr>
 					<!-- Child-Theme Included -->
@@ -400,6 +475,30 @@ background-position: center center;background-size: cover;" >
 						<td></td>
 					</tr>
 					<tr>
+						<!-- Support -->
+					<tr>
+						<td></td>
+						<td colspan="3"><?php esc_html_e('Support','avik');?></td>
+					</tr>
+					<tr>
+						<td><?php esc_html_e('Support','avik');?></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+					</tr>
+					<!-- Color Navmenu -->
+					<tr>
+						<td></td>
+						<td colspan="3"><?php esc_html_e('Color Nav Menu','avik');?></td>
+					</tr>
+					<tr class="compare-row">
+						<td><?php esc_html_e('Color Nav Menu','avik');?></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+						<td><span><i class="fa fa-check"></i></span></td>
+					</tr>
+					<tr>
+						<td></td>
+					</tr>
+					<tr>
 						<td></td>
 						<td><div class="avik-no-button-free"></div></td>
 						<td><a href="<?php echo esc_url('https://www.denisfranchi.com/avik-pro-10-0-0/');?>" class="price-buy" target="_blank"><?php esc_html_e('GO PRO','avik');?><span class="hide-mobile"></span></a></td>
@@ -410,23 +509,14 @@ background-position: center center;background-size: cover;" >
 	</div>
 	<div class="avik-clear-guide-support-admin"></div>
 </div>
-<!-- Support -->
-<div id="SUPPORT" class="tabcontent">
-	<h3 class="avik-welkome-support-title"><?php esc_html_e('Support for Pro Version', 'avik'); ?></h3>
-	<p class="avik-welkome-support"><?php esc_html_e('We offer full support for our theme, taking care of our customers and making sure we solve all the problem. Every time an update will be released you will be notified via a back-end notification, where you will be able to see the changes made and any bugs fixed.', 'avik'); ?>
-	</p>
-	<h3 class="avik-welkome-support-title"><?php esc_html_e('Support', 'avik'); ?></h3>
-	<p class="avik-welkome-support"><?php esc_html_e('We offer outstanding support through our forum.','avik');?><br>
-		<?php esc_html_e('To get support first have the','avik');?>
-		<a class="avik-link-pro-version" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-pro-10-0-0/' ); ?>" target="_blank">
-			<?php esc_html_e( 'Pro Version', 'avik' ); ?></a>
-			<?php esc_html_e(', and you need to register (create an account) and open a ticket in the Avik Section.', 'avik'); ?><br>
-			<?php esc_html_e('Support mail available 24 hour a day, 7 day a week to held you with whatever you need.','avik');?></p>
 
-		<button class="avik-button-admin-support"><a class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/community/index.php' ); ?>" target="_blank"><?php esc_html_e('Support Center', 'avik'); ?></a></button>
-	</div>
-</div>
-<script>
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
+<?php
+/* And Settings Page */
+}
+
+
+
+
+
+
+

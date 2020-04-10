@@ -3,7 +3,6 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.3.9
  */
 
 /* TABLE OF CONTENT
@@ -131,28 +130,6 @@ $(function() {
     $('.navbar a').removeClass('active');
     $(this).addClass('active');
 });
-});
-
-
-/* ------------------------------------------------------------------------- *
-##  4 Switch custom logo */
-/* ------------------------------------------------------------------------- */
-
-
-jQuery(window).scroll(function() {
-    if (jQuery(document).scrollTop() > 720) {
-    jQuery('.avik-custom-logo-body').removeClass('logo2');
-    } else {
-    jQuery('.avik-custom-logo-body').addClass('logo2 ');
-}
-});
-
-jQuery(window).scroll(function() {
-    if (jQuery(document).scrollTop() > 720) {
-    jQuery('.avik-custom-logo-header').addClass('logo1');
-    } else {
-    jQuery('.avik-custom-logo-header').removeClass('logo1 ');
-}
 });
 
 /* ------------------------------------------------------------------------- *
@@ -505,3 +482,5 @@ jQuery(document).ready(function($) {
 });
 
 });
+
+

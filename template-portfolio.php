@@ -7,10 +7,9 @@ Template Post Type: post
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.9
 */
 
-if(is_single()) { get_header('post'); } else { get_header(); }
+get_header('post');
 avik_the_breadcrumb(); ?>
 <div id="primary" class="content-area main">
   <main id="main" class="site-main">
@@ -38,7 +37,8 @@ avik_the_breadcrumb(); ?>
             <p class="subtitle-category-portfolio-1-c-1"><i class="fas fa-angle-right"></i><?php the_category(', ') ?></p>
             <h3 class="title-name-portfolio-1-c-1"><?php echo esc_html( 'NAME','avik'); ?></h3>
             <p class="subtitle-name-portfolio-1-c-1"><i class="fas fa-angle-right "></i><?php the_title(); ?></p>
-
+            <h3 class="title-name-portfolio-1-c-1"><?php echo esc_html( 'TAGS','avik'); ?></h3>
+            <p class="subtitle-name-portfolio-1-c-1"><i class="fas fa-angle-right "></i><?php the_tags('', ', ', '<br />'); ?></p>
           </div>
         </div>
       </div>
