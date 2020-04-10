@@ -75,11 +75,11 @@ get_header(); ?>
                     <?php the_post_thumbnail(); ?>
                     <div class="carousel-caption">
                       <div class="inner_carousel">
-                        <h1><?php the_title(); ?></h1>
+                        <h1><?php esc_html(the_title()); ?></h1>
                         <hr class="slidehr">
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','20')))); ?></p>
                         <div class="more-btn">              
-                          <a href="<?php the_permalink(); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-ecommerce-store' ); ?></span></a>
+                          <a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-ecommerce-store' ); ?></span></a>
                         </div>
                       </div>
                     </div>
@@ -112,7 +112,7 @@ get_header(); ?>
                 <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>                
                     <div class="col-lg-4 col-md-4">
                       <div class="service-border">
-                        <a href="<?php the_permalink(); ?>"><strong><?php the_title(); ?></strong><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                        <a href="<?php esc_url(the_permalink()); ?>"><strong><?php esc_html(the_title()); ?></strong><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
                         <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,5 ) ); ?></p>
                       </div>
                     </div>

@@ -416,10 +416,18 @@ if (!function_exists('advance_ecommerce_store_credit')) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'advance_ecommerce_store_loop_columns');
-	if (!function_exists('advance_ecommerce_store_loop_columns')) {
-		function advance_ecommerce_store_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('advance_ecommerce_store_loop_columns')) {
+	function advance_ecommerce_store_loop_columns() {
+		$columns = get_theme_mod( 'advance_ecommerce_store_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'advance_ecommerce_store_shop_per_page', 20 );
+function advance_ecommerce_store_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'advance_ecommerce_store_wooproducts_per_page', 9 );
+	return $cols;
 }
 
 /* Custom header additions. */

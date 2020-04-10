@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 7.2.14
-Stable tag: 0.5.5
+Stable tag: 0.5.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -103,6 +103,17 @@ Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress t
 * Added options for post description length.
 * Added background type option for background image.
 * Added different sidebar layout for single post and single page.
+
+= 0.5.6 =
+* Added show and hide option for related products.
+* Added show and hide option for product border.
+* Added option to display product per columns.
+* Added option to display product per Page.
+* Added padding setting for products.
+* Added border radius option for products.
+* Added box shadow option for products.
+* Added padding setting for products buttons.
+* Added border radius option for products buttons.
 
 == Resources ==
 

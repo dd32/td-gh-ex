@@ -17,7 +17,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
+  <?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+  } else {
+    do_action( 'wp_body_open' );
+  } ?>
   <header role="banner">
     <?php if(get_theme_mod('advance_ecommerce_store_preloader_option',true)){ ?>
       <div id="loader-wrapper">
@@ -30,11 +34,10 @@
       <div id="responsive-navbar" class="<?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '' || get_theme_mod( 'advance_ecommerce_store_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
         <div class="container">
           <div class="toggle-menu mobile-menu">
-            <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
+            <button onclick="advance_ecommerce_store_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-ecommerce-store'); ?></span></button>
           </div>
           <div id="res-sidebar" class="nav sidebar">
             <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Responsive Menu', 'advance-ecommerce-store' ); ?>">
-              <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
               <?php 
                 wp_nav_menu( array( 
                   'theme_location' => 'resposive-menu',
@@ -48,6 +51,7 @@
                 <?php get_search_form();?>
                 <?php dynamic_sidebar('social'); ?>
               </div>
+              <a href="javascript:void(0)" class="closebtn mobile-menu" onclick="advance_ecommerce_store_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-ecommerce-store'); ?></span></a>
             </nav>
           </div>
         </div>
@@ -112,7 +116,7 @@
                 <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt"></i><span class="screen-reader-text"><?php esc_html_e('My Account','advance-ecommerce-store'); ?></span></a>
               <?php } 
               else { ?>
-                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
+                <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
               <?php } ?>
             </div>
             <div class="col-lg-2 col-md-2 col-6 cart_icon ">
@@ -129,21 +133,21 @@
         </div>
       </div>
       </div>
-        <div class="main-menu <?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>" >
-          <div class="container">
-            <div id="menu-sidebar" class="nav sidebar">
-              <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
-                <?php 
-                  wp_nav_menu( array( 
-                    'theme_location' => 'primary',
-                    'container_class' => 'main-menu-navigation clearfix' ,
-                    'menu_class' => 'clearfix',
-                    'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
-                    'fallback_cb' => 'wp_page_menu',
-                  ) ); 
-                ?>
-              </nav>
-            </div>
+      <div class="main-menu <?php if( get_theme_mod( 'advance_ecommerce_store_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>" >
+        <div class="container">
+          <div id="menu-sidebar" class="nav sidebar">
+            <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-ecommerce-store' ); ?>">
+              <?php 
+                wp_nav_menu( array( 
+                  'theme_location' => 'primary',
+                  'container_class' => 'main-menu-navigation clearfix' ,
+                  'menu_class' => 'clearfix',
+                  'items_wrap' => '<ul id="%1$s" class="%2$s mobile_nav">%3$s</ul>',
+                  'fallback_cb' => 'wp_page_menu',
+                ) ); 
+              ?>
+            </nav>
           </div>
         </div>
+      </div>
   </header>

@@ -12,6 +12,32 @@
  */
 function advance_ecommerce_store_customize_register($wp_customize) {
 
+	//add home page setting pannel
+	$wp_customize->add_panel('advance_ecommerce_store_panel_id', array(
+		'priority'       => 10,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '',
+		'title'          => __('Theme Settings', 'advance-ecommerce-store'),
+		'description'    => __('Description of what this panel does.', 'advance-ecommerce-store'),
+	));
+
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_ecommerce_store_theme_color_option', array( 
+		'panel' => 'advance_ecommerce_store_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-ecommerce-store' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_ecommerce_store_theme_color', array(
+	    'default' => '#cb4f00',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_ecommerce_store_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-ecommerce-store'),
+	    'section' => 'advance_ecommerce_store_theme_color_option',
+	    'settings' => 'advance_ecommerce_store_theme_color',
+  	)));
+
 	$font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
@@ -421,6 +447,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+// background image
 	$wp_customize->add_setting('advance_ecommerce_store_background_skin_mode',array(
         'default' => __('Transparent Background','advance-ecommerce-store'),
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
@@ -435,31 +462,186 @@ function advance_ecommerce_store_customize_register($wp_customize) {
         ),
 	) );
 
-	//add home page setting pannel
-	$wp_customize->add_panel('advance_ecommerce_store_panel_id', array(
-		'priority'       => 10,
-		'capability'     => 'edit_theme_options',
-		'theme_supports' => '',
-		'title'          => __('Theme Settings', 'advance-ecommerce-store'),
-		'description'    => __('Description of what this panel does.', 'advance-ecommerce-store'),
+  	// woocommerce section
+	$wp_customize->add_setting('advance_ecommerce_store_show_related_products',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_ecommerce_store_show_related_products',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Related Product','advance-ecommerce-store'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+	$wp_customize->add_setting('advance_ecommerce_store_show_wooproducts_border',array(
+       'default' => false,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_ecommerce_store_show_wooproducts_border',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Product Border','advance-ecommerce-store'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+    $wp_customize->add_setting( 'advance_ecommerce_store_wooproducts_per_columns' , array(
+		'default'           => 3,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices',
+	) );
+	$wp_customize->add_control( 'advance_ecommerce_store_wooproducts_per_columns', array(
+		'label'    => __( 'Display Product Per Columns', 'advance-ecommerce-store' ),
+		'section'  => 'woocommerce_product_catalog',
+		'type'     => 'select',
+		'choices'  => array(
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+		),
+	)  );
+
+	$wp_customize->add_setting('advance_ecommerce_store_wooproducts_per_page',array(
+		'default'	=> 9,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('advance_ecommerce_store_wooproducts_per_page',array(
+		'label'	=> __('Display Product Per Page','advance-ecommerce-store'),
+		'section'	=> 'woocommerce_product_catalog',
+		'type'		=> 'number'
 	));
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_ecommerce_store_theme_color_option', array( 
-		'panel' => 'advance_ecommerce_store_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'advance-ecommerce-store' ) 
-	) );
+	$wp_customize->add_setting( 'advance_ecommerce_store_top_bottom_wooproducts_padding',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'advance_ecommerce_store_top_bottom_wooproducts_padding',	array(
+		'label' => esc_html__( 'Top Bottom Product Padding','advance-ecommerce-store' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
 
-  	$wp_customize->add_setting( 'advance_ecommerce_store_theme_color', array(
-	    'default' => '#cb4f00',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_ecommerce_store_theme_color', array(
-  		'label' => 'Color Option',
-	    'description' => __('One can change complete theme color on just one click.', 'advance-ecommerce-store'),
-	    'section' => 'advance_ecommerce_store_theme_color_option',
-	    'settings' => 'advance_ecommerce_store_theme_color',
-  	)));
+	$wp_customize->add_setting( 'advance_ecommerce_store_left_right_wooproducts_padding',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'advance_ecommerce_store_left_right_wooproducts_padding',	array(
+		'label' => esc_html__( 'Right Left Product Padding','advance-ecommerce-store' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_ecommerce_store_wooproducts_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_ecommerce_store_wooproducts_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius','advance-ecommerce-store' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_setting( 'advance_ecommerce_store_wooproducts_box_shadow',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_ecommerce_store_wooproducts_box_shadow',array(
+		'label' => esc_html__( 'Product Box Shadow','advance-ecommerce-store' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_section('advance_ecommerce_store_product_button_section', array(
+		'title'    => __('Product Button Settings', 'advance-ecommerce-store'),
+		'priority' => null,
+		'panel'    => 'woocommerce',
+	));
+
+	$wp_customize->add_setting( 'advance_ecommerce_store_top_bottom_product_button_padding',array(
+		'default' => 10,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_ecommerce_store_top_bottom_product_button_padding',	array(
+		'label' => esc_html__( 'Product Button Top Bottom Padding','advance-ecommerce-store' ),
+		'section' => 'advance_ecommerce_store_product_button_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number',
+
+	));
+
+	$wp_customize->add_setting( 'advance_ecommerce_store_left_right_product_button_padding',array(
+		'default' => 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_ecommerce_store_left_right_product_button_padding',array(
+		'label' => esc_html__( 'Product Button Right Left Padding','advance-ecommerce-store' ),
+		'section' => 'advance_ecommerce_store_product_button_section',
+		'type'		=> 'number',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_ecommerce_store_product_button_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_ecommerce_store_product_button_border_radius',array(
+		'label' => esc_html__( 'Product Button Border Radius','advance-ecommerce-store' ),
+		'section' => 'advance_ecommerce_store_product_button_section',
+		'type'		=> 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
 
 	//Layouts
 	$wp_customize->add_section('advance_ecommerce_store_left_right', array(
@@ -505,7 +687,6 @@ function advance_ecommerce_store_customize_register($wp_customize) {
        	'label' => __('Show / Hide Single Product Page Sidebar','advance-ecommerce-store'),
 		'section' => 'advance_ecommerce_store_left_right'
     ));
-
 
 	$wp_customize->add_setting('advance_ecommerce_store_layout_options', array(
 		'default'           => __('Right Sidebar', 'advance-ecommerce-store'),
@@ -557,7 +738,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 
 	$wp_customize->add_setting('advance_ecommerce_store_theme_options',array(
         'default' => __('Default','advance-ecommerce-store'),
-	        'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
+	    'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_theme_options',array(
         'type' => 'radio',
@@ -630,7 +811,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_ecommerce_store_slider_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_slider_hide',array(
@@ -777,7 +958,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_ecommerce_store_title_404_page',array(
-		'default'=> '404 Not Found',
+		'default'=> __('404 Not Found', 'advance-ecommerce-store'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_title_404_page',array(
@@ -787,7 +968,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_content_404_page',array(
-		'default'=> 'Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.',
+		'default'=> __('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.', 'advance-ecommerce-store'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_content_404_page',array(
@@ -797,7 +978,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_button_404_page',array(
-		'default'=> 'Back to Home Page',
+		'default'=> __('Back to Home Page','advance-ecommerce-store'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_button_404_page',array(
@@ -859,7 +1040,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_ecommerce_store_date_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_date_hide',array(
@@ -869,7 +1050,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_comment_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_comment_hide',array(
@@ -879,7 +1060,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_author_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_author_hide',array(
@@ -889,7 +1070,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_tags_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_tags_hide',array(
@@ -933,7 +1114,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting( 'advance_ecommerce_store_post_suffix_option', array(
-		'default'   => '...',
+		'default'   => __('...','advance-ecommerce-store'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
 	$wp_customize->add_control( 'advance_ecommerce_store_post_suffix_option', array(
@@ -944,7 +1125,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_ecommerce_store_button_text',array(
-		'default'=> 'Read More',
+		'default'=> __('Read More','advance-ecommerce-store'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_button_text',array(
@@ -961,7 +1142,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_footer_widget_areas',array(
-        'default'           => '4',
+        'default'           => 4,
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices',
     ));
     $wp_customize->add_control('advance_ecommerce_store_footer_widget_areas',array(
@@ -988,7 +1169,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_enable_disable_scroll',array(
-        'default' => 'true',
+        'default' => true,
         'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_ecommerce_store_enable_disable_scroll',array(

@@ -47,7 +47,7 @@
     </div>
   </div>
   <div class="copyright">
-    <p><?php echo esc_html(get_theme_mod('advance_ecommerce_store_footer_copy', __('Copyright 2018', 'advance-ecommerce-store')));?> <?php advance_ecommerce_store_credit();?></p>
+    <p><?php advance_ecommerce_store_credit();?> <?php echo esc_html(get_theme_mod('advance_ecommerce_store_footer_copy', __('By Themeshopy', 'advance-ecommerce-store')));?></p>
   </div>
 </footer>
 

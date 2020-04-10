@@ -8,20 +8,20 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function advance_ecommerce_store_resmenu_open() {
   document.getElementById("res-sidebar").style.width = "100%";
 }
-function resMenu_close() {
+function advance_ecommerce_store_resmenu_close() {
   document.getElementById("res-sidebar").style.width = "0";
 }
 
 // scroll
-  jQuery(document).ready(function () {
+jQuery(document).ready(function () {
   jQuery(window).scroll(function () {
     if (jQuery(this).scrollTop() > 0) {
-        jQuery('#scroll-top').fadeIn();
+      jQuery('#scroll-top').fadeIn();
     } else {
-        jQuery('#scroll-top').fadeOut();
+      jQuery('#scroll-top').fadeOut();
     }
   });
   jQuery(window).on("scroll", function () {
@@ -29,7 +29,7 @@ function resMenu_close() {
   });
   jQuery('#scroll-top').click(function () {
     jQuery("html, body").animate({
-        scrollTop: 0
+      scrollTop: 0
     }, 600);
     return false;
   });
