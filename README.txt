@@ -47,6 +47,9 @@ Images
 
 
 == Changelog ==
+= 2.4.3 =
+** Added Featured Image Show Hide Option for Single Post
+** Added Post Categories Show Hide Option for Single Post
 
 = 2.4.2 =
 ** Added `wp_body_open` function to support WordPress 5.2 `wp_body_open` hook.
