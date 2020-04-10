@@ -626,7 +626,10 @@ if($settings['bevro-agency']['hide_branding']==''){
                 }elseif($plugin_slug=='elementor'){
                 	 echo'<img src="'.esc_url( BEVRO_THEME_URI . 'lib/theme-option/assets/images/elementor.png' ).'" />'; 
                 $detail='The most advanced frontend drag & drop page builder. Create high-end, pixel perfect websites at record speeds. Any theme, any page, any design.';
-                }
+                }elseif($plugin_slug=='business-popup'){
+                	echo'<img src="'.esc_url( BEVRO_THEME_URI . 'lib/theme-option/assets/images/business-popup.png' ).'" />'; 
+				$detail='Business Popup plugin comes with easy to use layouts, You can simply select and add your original content using live editor. Plugin contain layouts for sale, Discount offers, Deals, shop ad etc. You can popup at your desired page, post, Between post and in the widget areas as a banner ad.';
+				}	
 			    echo '<p class="rcp-detail">'.esc_html($detail).' </p>';
                 echo '<p class="action-btn plugin-card-'.esc_attr( $plugin_slug ).'">
                         <span>Version:'.esc_html($version).'</span>

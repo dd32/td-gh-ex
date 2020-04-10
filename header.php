@@ -74,6 +74,7 @@ if ((is_single() || is_page()) || ((class_exists( 'WooCommerce' ))&&(is_woocomme
 }?> <?php if(function_exists('bevro_sticky_bottom_header_class')){
 	echo esc_attr(bevro_sticky_bottom_header_class($bevro_sticky_header_dyn));
 }?> <?php if(function_exists('bevro_stick_animation_class')){ echo esc_attr(bevro_stick_animation_class());} ?> <?php echo esc_attr(bevro_header_transparent_class($bevro_transparent_header_dyn));?>">
+<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'bevro' ); ?></a>
 	<?php if($bevro_main_header_layout=='mhdrrightpan' || $bevro_main_header_layout=='mhdrleftpan'):?>
 		<div class="header-pan-icon">
 		<span class="pan-icon">

@@ -16,7 +16,7 @@ function removeLoader(){
 }
  // close-button-active
         if(jQuery('body').hasClass('mobile-menu-active','mobile-above-menu-active','mobile-bottom-menu-active').length!=''){
-            jQuery('body').find('.sider').prepend('<div class="menu-close"><a href="#" class="menu-close-btn"></a></div>');
+            jQuery('body').find('.sider').append('<div class="menu-close"><a href="#" class="menu-close-btn" tabindex="0"></a></div>');
             jQuery('.menu-close-btn').removeAttr("href");
             //Menu close
             jQuery('.menu-close-btn').click(function(){
@@ -24,6 +24,34 @@ function removeLoader(){
             jQuery('body').removeClass('mobile-above-menu-active');
             jQuery('body').removeClass('mobile-bottom-menu-active');
             });
+
+            //Menu close on keypress
+            jQuery('.menu-close-btn').keypress(function(){
+            jQuery('body').removeClass('mobile-menu-active');
+            jQuery('body').removeClass('mobile-above-menu-active');
+            jQuery('body').removeClass('mobile-bottom-menu-active');
+            });
+
+            jQuery('#bevro-above-menu,#bevro-menu,#gogo-bottom-menu,#menu-btn,#menu-btn-abv,#menu-btn-btm,#menu-all-pages').click(function(event){
+            event.stopPropagation();
+            });
+
+            // Esc key close menu
+            document.addEventListener( 'keydown', function( event ) {
+            if ( event.keyCode === 27 ) {
+              event.preventDefault();
+              document.querySelectorAll( '.mobile-menu-active' ).forEach( function( element ) {
+                jQuery('body').removeClass('mobile-menu-active');
+              }.bind( this ) );
+              document.querySelectorAll( '.mobile-above-menu-active' ).forEach( function( element ) {
+                jQuery('body').removeClass('mobile-above-menu-active');
+              }.bind( this ) );
+              document.querySelectorAll( '.mobile-bottom-menu-active' ).forEach( function( element ) {
+                jQuery('body').removeClass('mobile-bottom-menu-active');
+              }.bind( this ) );
+            }
+          }.bind( this ) );
+
         //ToggleBtn above Click
         jQuery('#menu-btn-abv').click(function (e){
            e.preventDefault();

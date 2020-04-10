@@ -167,9 +167,6 @@
 .menu-close-btn:hover{
     cursor:pointer;
 }
-.menu-toggle .menu-btn:focus,.bar-menu-toggle .menu-btn:focus{
-outline:0;
-}
 /*min-bar hamburger menu*/
 .bar-menu-toggle{
     vertical-align: middle;

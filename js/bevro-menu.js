@@ -31,18 +31,21 @@ bevro Responsive Menu script
         $('body').removeClass('mobile-menu-active');
         $('body').removeClass('mobile-above-menu-active');
         $('body').removeClass('mobile-bottom-menu-active');
+        $('body').removeClass('mobile-pan-active');
         });
-        $('#menu-btn,#menu-btn-abv,#menu-btn-btm').click(function(e){ 
+             
+        $('#menu-btn,#menu-btn-abv,#menu-btn-btm,#bar-menu-btn').click(function(e){ 
             e.stopPropagation();
          });
         $('body').click(function(evt){    
-        if(evt.target.class == ".sider")
+        if(evt.target.class == ".sider" || evt.target.class == "header.mhdminbarbtm")
           return;
-        if($(evt.target).closest('.sider').length)
+        if($(evt.target).closest('.sider').length || $(evt.target).closest('header.mhdminbarbtm').length)
           return;             
           $('body').removeClass('mobile-menu-active'); 
           $('body').removeClass('mobile-above-menu-active');
           $('body').removeClass('mobile-bottom-menu-active');
+          $('body.mhdminbarbtm').removeClass('mobile-pan-active');
         });
         // Menu Toggle
         function menuCollapse(){
@@ -51,8 +54,11 @@ bevro Responsive Menu script
                 $aceMenu.find('li.menu-active').removeClass('menu-active');
                 $aceMenu.find('ul.slide').removeClass('slide').removeAttr('style');
                 $aceMenu.addClass('collapse hide-menu');
+                $('.arrow').attr("tabindex","0");
                 $('.menu-toggle').show();
                 }else{
+                $('.mobile-menu-active #zita-menu a').attr("tabindex","0");
+                $('.arrow').attr("tabindex","");
                 $aceMenu.attr('data-menu-style', $menuStyle);
                 $aceMenu.removeClass('collapse hide-menu').removeAttr('style');
                 $('.menu-toggle').hide();
@@ -68,6 +74,15 @@ bevro Responsive Menu script
         return this.each(function (){
             // Function for Horizontal menu on mouseenter
             $aceMenu.on('mouseover', '> li a', function (){
+                if ($aceMenu.hasClass('collapse') === true){
+                    return false;
+                }
+                $(this).off('click', '> li a');
+                $(this).parent('li').siblings().children('.sub-menu').stop(true, true).slideUp($animationSpeed).removeClass('slide').removeAttr('style').stop();
+                $(this).parent().addClass('menu-active').children('.sub-menu').slideDown($animationSpeed).addClass('slide');
+                return;
+            });
+            $aceMenu.on('focus', '> li a', function (){
                 if ($aceMenu.hasClass('collapse') === true){
                     return false;
                 }
@@ -103,11 +118,28 @@ bevro Responsive Menu script
                     }
                 }
             });
+            //keyboard navigation
+            $aceMenu.on('keypress', 'li span.arrow', function (e){
+            var w = $(window).innerWidth();
+            if (w <= $resizeWidth){
+                 e.preventDefault();
+                if ($aceMenu.hasClass('collapse')==false){
+                   // return true;
+                }
+                $(this).off('mouseover', '> li a');
+                if ($(this).parent().parent().hasClass('menu-active')){
+                    $(this).parent().parent().children('.sub-menu').slideUp().removeClass('slide');
+                    $(this).parent().parent().removeClass('menu-active');
+                }else{ 
+                    if ($expandAll == true){
+                        $(this).parent().parent().addClass('menu-active').children('.sub-menu').slideDown($animationSpeed).addClass('slide');
+                        return;
+                    }
+                }
+            }
+            });
             //End of responsive menu function
         });
         //End of Main function
     }
 })(jQuery);
-
-
-

@@ -113,6 +113,10 @@ define( 'BEVRO_THEME_SETTINGS', 'bevro-settings' );
                 'name' => esc_html__( 'One Click Demo Import', 'bevro' ),
                 'active_filename' => 'one-click-demo-import/one-click-demo-import.php',
             ),
+            'business-popup' => array(
+                'name' => esc_html__( 'Business Popup', 'gogo' ),
+                'active_filename' => 'business-popup/business-popup.php',
+            )
         ) );
 	}
 endif;
@@ -275,6 +279,7 @@ add_action( 'widgets_init', 'bevro_widgets_init' );
  */
 function bevro_scripts(){
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	wp_enqueue_style( 'font-awesome-new', get_template_directory_uri() . '/third-party/font-awesome/css/fontawesome-all.css', '', '1.0.0' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/third-party/font-awesome/css/font-awesome.css', '', '4.7.0' );
 	wp_enqueue_style('bevro-menu-style', get_template_directory_uri() . '/css/bevro-menu.css', '', '4.7.0' );
 	wp_enqueue_style('bevro-style', get_stylesheet_uri(), array(), '1.0.2' );
@@ -290,6 +295,23 @@ function bevro_scripts(){
     wp_enqueue_script( 'bevro-custom-js', get_parent_theme_file_uri().'/js/custom.js', array( 'jquery' ), '', true );
 }
 add_action( 'wp_enqueue_scripts', 'bevro_scripts' );
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function bevro_skip_link_focus_fix() {
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'bevro_skip_link_focus_fix' );
 /**
  * Load init.
  */

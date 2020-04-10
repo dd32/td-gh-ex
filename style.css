@@ -5,7 +5,7 @@ Theme URI: https://themehunk.com/product/bevro-wordpress-theme/
 Author URI: https://www.themehunk.com
 Description: Bevro is a best multipurpose theme for your project. Best suitable for creating Small Business, Agency, eCommerce, Portfolio sites. It is best Base theme you have ever used. It is compatible with Elementor, Brizy, Beaver, Visual compser etc. Bervo provide full control over header, footer, blog, color& background, Typography, woocommerce and much more. Theme comes with one click Demo import. Facing any difficulty in using theme just contact our support forum: https://www.themehunk.com/support , Check our Demos of Bevro: https://themehunk.com/bevro-wordpress-theme/
 For more information about Bevro please go to : https://themehunk.com
-Version: 1.0.1
+Version: 1.0.2
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: two-columns, right-sidebar, custom-menu, custom-background, editor-style, translation-ready, full-width-template, flexible-header, sticky-post, theme-options, one-column, e-commerce, blog, photography, threaded-comments, custom-colors
@@ -217,6 +217,12 @@ pre {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+}
+a:focus,span:focus,
+button:focus{
+    outline: thin dotted;
+    text-decoration: underline;
+    outline-color: #20211f;
 }
 a:active,
 a:hover {
@@ -5821,6 +5827,47 @@ padding: 0;
 .search-no-results.contentbox .brv-three-colm .main-content-row,
 .search-no-results.contentbox .brv-four-colm .main-content-row{
 margin:0;
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+.screen-reader-text:focus {
+  background-color:#006799;
+  border-radius:0;
+  box-shadow: none;
+  clip: auto !important;
+  clip-path: none;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 8px 25px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
 }
 @media screen and (max-width:1024px){
 .mhdrleftpan .sider.left{
