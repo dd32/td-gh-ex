@@ -17,7 +17,16 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
+  
 <header role="banner">
+  <?php if(get_theme_mod('advance_pet_care_preloader_option',true)){ ?>
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  <?php }?>
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-pet-care' ); ?></a>
   <div id="header">
     <?php if( get_theme_mod('advance_pet_care_display_topbar',true) != ''){ ?>
@@ -48,9 +57,6 @@
                   <?php } ?>
                   <?php if( get_theme_mod( 'advance_pet_care_youtube_url') != '') { ?>
                   <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-pet-care' );?></span></a>
-                  <?php } ?>
-                  <?php if( get_theme_mod( 'advance_pet_care_google_plus_url') != '') { ?>
-                  <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-pet-care' );?></span></a>
                   <?php } ?>
                   <?php if( get_theme_mod( 'advance_pet_care_insta_url') != '') { ?>
                   <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-pet-care' );?></span></a>
@@ -129,7 +135,7 @@
         </div>
       </div>
     </div>
-    <div class="main-menu <?php if( get_theme_mod( 'advance_pet_care_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+    <div class="main-menu <?php if( get_theme_mod( 'advance_pet_care_sticky_header') != '' || get_theme_mod( 'advance_pet_care_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
       <div class="container">
         <div class="row">
           <div class="col-lg-10 col-md-7 col-4">
@@ -169,9 +175,6 @@
                       <?php } ?>
                       <?php if( get_theme_mod( 'advance_pet_care_youtube_url') != '') { ?>
                       <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i><span class="screen-reader-text"><?php esc_attr_e( 'Youtube','advance-pet-care' );?></span></a>
-                      <?php } ?>
-                      <?php if( get_theme_mod( 'advance_pet_care_google_plus_url') != '') { ?>
-                      <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-pet-care' );?></span></a>
                       <?php } ?>
                       <?php if( get_theme_mod( 'advance_pet_care_insta_url') != '') { ?>
                       <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-pet-care' );?></span></a>

@@ -10,12 +10,13 @@ get_header(); ?>
 <main role="main" id="maincontent" class="content-ts">
 	<div class="container">
         <div class="middle-align">
-			<h1><?php printf( '<strong>%s</strong> %s', esc_html__( '404', 'advance-pet-care' ), esc_html__( 'Not Found', 'advance-pet-care' ) ) ?></h1>
-			<p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn&hellip', 'advance-pet-care' ); ?></p>
-			<p class="text-404"><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-pet-care' ); ?></p>
-			<div class="read-moresec">
-        		<a href="<?php echo esc_url(home_url() ) ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-pet-care' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-pet-care' ); ?></span></a>
-        	</div>
+			<h1><?php echo esc_html(get_theme_mod('advance_pet_care_title_404_page',__('404 Not Found','advance-pet-care')));?></h1>
+			<p class="text-404"><?php echo esc_html(get_theme_mod('advance_pet_care_content_404_page',__('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','advance-pet-care')));?></p>
+			<?php if( get_theme_mod('advance_pet_care_button_404_page','Back to Home Page') != ''){ ?>
+				<div class="read-moresec">
+	        		<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php echo esc_html(get_theme_mod('advance_pet_care_button_404_page',__('Back to Home Page','advance-pet-care')));?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-pet-care' ); ?></span></a>
+	        	</div>
+        	<?php } ?>
 			<div class="clearfix"></div>
         </div>
 	</div>

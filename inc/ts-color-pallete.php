@@ -176,3 +176,96 @@
 		$custom_css .='left: 40%; right: 15%;';
 		$custom_css .='} }';
 	}
+
+	/*------------------------------ Button Settings option-----------------------*/
+
+	$advance_pet_care_button_padding_top_bottom = get_theme_mod('advance_pet_care_button_padding_top_bottom');
+	$advance_pet_care_button_padding_left_right = get_theme_mod('advance_pet_care_button_padding_left_right');
+	if($advance_pet_care_button_padding_top_bottom != false || $advance_pet_care_button_padding_left_right != false){
+		$custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .get-apt-btn a, #comments .form-submit input[type="submit"], #welcome .discover-btn a{';
+			$custom_css .='padding-top: '.esc_html($advance_pet_care_button_padding_top_bottom).'px; padding-bottom: '.esc_html($advance_pet_care_button_padding_top_bottom).'px; padding-left: '.esc_html($advance_pet_care_button_padding_left_right).'px; padding-right: '.esc_html($advance_pet_care_button_padding_left_right).'px; display:inline-block;';
+		$custom_css .='}';
+	}
+
+	$advance_pet_care_button_border_radius = get_theme_mod('advance_pet_care_button_border_radius');
+	if($advance_pet_care_button_border_radius != false){
+		$custom_css .='.new-text .read-more-btn a, #slider .inner_carousel .get-apt-btn a, #comments .form-submit input[type="submit"], #welcome .discover-btn a{';
+			$custom_css .='border-radius: '.esc_html($advance_pet_care_button_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+	/*-----------------------------Responsive Setting --------------------*/
+
+	$stickyheader = get_theme_mod( 'advance_pet_care_responsive_sticky_header',true);
+	if($stickyheader == true && get_theme_mod( 'advance_pet_care_sticky_header') == false){
+    	$custom_css .='.fixed-header{';
+			$custom_css .='position:static;';
+		$custom_css .='} ';
+	}
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.fixed-header{';
+			$custom_css .='position:fixed;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.fixed-header{';
+			$custom_css .='position:static;';
+		$custom_css .='} }';
+	}
+
+	$stickyheader = get_theme_mod( 'advance_pet_care_responsive_slider',true);
+    if($stickyheader == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($stickyheader == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#slider{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$metabox = get_theme_mod( 'advance_pet_care_responsive_metabox',true);
+    if($metabox == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.metabox{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($metabox == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='.metabox{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	$sidebar = get_theme_mod( 'advance_pet_care_responsive_sidebar',true);
+    if($sidebar == true){
+    	$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:block;';
+		$custom_css .='} }';
+	}else if($sidebar == false){
+		$custom_css .='@media screen and (max-width:575px) {';
+		$custom_css .='#sidebar{';
+			$custom_css .='display:none;';
+		$custom_css .='} }';
+	}
+
+	/*------------------ Skin Option  -------------------*/
+
+		$theme_lay = get_theme_mod( 'advance_pet_care_background_skin_mode','Transpert Background');
+	    if($theme_lay == 'With Background'){
+			$custom_css .='#sidebar .widget,.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,.content-sec,.front-page-content,.background-img-skin{';
+				$custom_css .='background-color: #fff; ';
+			$custom_css .='}';
+			$custom_css .='.background-img-skin{';
+				$custom_css .='margin: 2% 0; ';
+			$custom_css .='}';
+		}else if($theme_lay == 'Transpert Background'){
+			$custom_css .='#sidebar aside,.page-box .new-text, .page-box-single .new-text,.page-box-single{';
+				$custom_css .='background-color: transparent;';
+			$custom_css .='}';
+		}
+
