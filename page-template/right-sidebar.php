@@ -10,10 +10,10 @@ get_header(); ?>
 <main id="maincontent" role="main">
     <div class="container">
         <div class="middle-align row">
-            <div class="col-lg-8 col-md-8">
+            <div class="col-lg-8 col-md-8 background-img-skin">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php the_post_thumbnail(); ?>
-                    <h1><?php the_title(); ?></h1>
+                    <h1><?php esc_html(the_title()); ?></h1>
                     <div class="entry-content"><?php the_content();?></div>
                 <?php endwhile; // end of the loop. ?>
                 <?php

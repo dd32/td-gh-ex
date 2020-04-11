@@ -48,7 +48,7 @@
   </div>
 </footer>
 <div class="copyright">
-  <p><?php echo esc_html(get_theme_mod('advance_business_footer_copy', __('Copyright 2018 -', 'advance-business')));?> <?php advance_business_credit();?></p>
+  <p><?php advance_business_credit();?> <?php echo esc_html(get_theme_mod('advance_business_footer_copy', __('By Themeshopy', 'advance-business')));?></p>
 </div>
 
 <?php if( get_theme_mod( 'advance_business_enable_disable_scroll',true) != '') { ?>

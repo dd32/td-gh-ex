@@ -17,8 +17,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>> 
-<?php wp_body_open(); ?>
-
+<?php if ( function_exists( 'wp_body_open' ) ) {
+  wp_body_open();
+} else {
+  do_action( 'wp_body_open' );
+} ?>
 <header role="banner">  
   <?php if(get_theme_mod('advance_business_preloader_option',true)){ ?>
     <div id="loader-wrapper">
@@ -57,11 +60,10 @@
             </div>
             <div class="col-lg-8 col-md-7 col-3">
               <div class="toggle-menu responsive-menu">
-                <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-business'); ?></span></button>
+                <button onclick="advance_business_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-business'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-business' ); ?>">
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-business'); ?></span></a>
                   <?php 
                     wp_nav_menu( array( 
                       'theme_location' => 'primary',
@@ -74,20 +76,21 @@
                   <div id="contact-info">
                     <?php get_search_form(); ?>
                   </div>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_business_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-business'); ?></span></a>
                 </nav>
               </div>
             </div>
             <div class="col-lg-1 search-box">
-              <a href="#" onclick="search_open()">
+              <a href="#" onclick="advance_business_search_open()">
                 <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-business' );?></span>
               </a>
             </div>
           </div>
           <div class="serach_outer">
-            <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-business' );?></span></a>
             <div class="serach_inner">
               <?php get_search_form(); ?>
             </div>
+            <a href="#" onclick="advance_business_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-business' );?></span></a>
           </div>
         </div>
       </div> 

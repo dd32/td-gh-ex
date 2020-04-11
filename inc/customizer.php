@@ -38,85 +38,19 @@ function advance_business_customize_register($wp_customize) {
 	    'settings' => 'advance_business_theme_color',
   	)));
 
-	//Layouts
-	$wp_customize->add_section('advance_business_left_right', array(
-		'title'    => __('Layout Settings', 'advance-business'),
-		'priority' => 10,
-		'panel'    => 'advance_business_panel_id',
-	));
-
-	$wp_customize->add_setting('advance_business_preloader_option',array(
-       'default' => 'true',
-       'sanitize_callback'	=> 'sanitize_text_field'
-    ));
-    $wp_customize->add_control('advance_business_preloader_option',array(
-       'type' => 'checkbox',
-       'label' => __('Show / Hide Preloader','advance-business'),
-       'section' => 'advance_business_left_right'
-    ));
-
-	$wp_customize->add_setting( 'advance_business_sticky_header',array(
-      	'sanitize_callback'	=> 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control('advance_business_sticky_header',array(
-    	'type' => 'checkbox',
-        'label' => __( 'Show / Hide Sticky Header','advance-business' ),
-        'section' => 'advance_business_left_right'
-    ));
-
-    $wp_customize->add_setting( 'advance_business_shop_page_sidebar',array(
-		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control('advance_business_shop_page_sidebar',array(
-    	'type' => 'checkbox',
-       	'label' => __('Show / Hide Shop Page Sidebar','advance-business'),
-		'section' => 'advance_business_left_right'
-    ));
-
-	$wp_customize->add_setting( 'advance_business_wocommerce_single_page_sidebar',array(
-		'default' => true,
-		'sanitize_callback'	=> 'sanitize_text_field'
-    ) );
-    $wp_customize->add_control('advance_business_wocommerce_single_page_sidebar',array(
-    	'type' => 'checkbox',
-       	'label' => __('Show / Hide Single Product Page Sidebar','advance-business'),
-		'section' => 'advance_business_left_right'
-    ));
-
-	$wp_customize->add_setting('advance_business_theme_options',array(
-        'default' => __('Default','advance-business'),
+  	$wp_customize->add_setting('advance_business_background_skin_mode',array(
+        'default' => __('Transparent Background','advance-business'),
         'sanitize_callback' => 'advance_business_sanitize_choices'
 	));
-	$wp_customize->add_control('advance_business_theme_options',array(
-        'type' => 'radio',
-        'label' => __('Container Box','advance-business'),
-        'description' => __('Here you can change the Width layout. ','advance-business'),
-        'section' => 'advance_business_left_right',
+	$wp_customize->add_control('advance_business_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-business'),
+        'section' => 'background_image',
         'choices' => array(
-            'Default' => __('Default','advance-business'),
-            'Container' => __('Container','advance-business'),
-            'Box Container' => __('Box Container','advance-business'),
+            'With Background' => __('With Background','advance-business'),
+            'Transparent Background' => __('Transparent Background','advance-business'),
         ),
 	) );
-
-	$wp_customize->add_setting('advance_business_layout_options', array(
-		'default'           => __('Right Sidebar', 'advance-business'),
-		'sanitize_callback' => 'advance_business_sanitize_choices',
-	));
-	$wp_customize->add_control('advance_business_layout_options',array(
-		'type'           => 'radio',
-		'label'          => __('Change Layouts', 'advance-business'),
-		'section'        => 'advance_business_left_right',
-		'choices'        => array(
-			'Left Sidebar'  => __('Left Sidebar', 'advance-business'),
-			'Right Sidebar' => __('Right Sidebar', 'advance-business'),
-			'One Column'    => __('One Column', 'advance-business'),
-			'Three Columns' => __('Three Columns', 'advance-business'),
-			'Four Columns'  => __('Four Columns', 'advance-business'),
-			'Grid Layout'   => __('Grid Layout', 'advance-business')
-		),
-	));
 
 	$font_array = array(
         '' => 'No Fonts',
@@ -527,6 +461,297 @@ function advance_business_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
+	// woocommerce section
+	$wp_customize->add_setting('advance_business_show_related_products',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_show_related_products',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Related Product','advance-business'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+	$wp_customize->add_setting('advance_business_show_wooproducts_border',array(
+       'default' => false,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_show_wooproducts_border',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Product Border','advance-business'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+    $wp_customize->add_setting( 'advance_business_wooproducts_per_columns' , array(
+		'default'           => 3,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'advance_business_sanitize_choices',
+	) );
+	$wp_customize->add_control( 'advance_business_wooproducts_per_columns', array(
+		'label'    => __( 'Display Product Per Columns', 'advance-business' ),
+		'section'  => 'woocommerce_product_catalog',
+		'type'     => 'select',
+		'choices'  => array(
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+		),
+	)  );
+
+	$wp_customize->add_setting('advance_business_wooproducts_per_page',array(
+		'default'	=> 9,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('advance_business_wooproducts_per_page',array(
+		'label'	=> __('Display Product Per Page','advance-business'),
+		'section'	=> 'woocommerce_product_catalog',
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_business_top_bottom_wooproducts_padding',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'advance_business_top_bottom_wooproducts_padding',	array(
+		'label' => esc_html__( 'Top Bottom Product Padding','advance-business' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_business_left_right_wooproducts_padding',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'advance_business_left_right_wooproducts_padding',	array(
+		'label' => esc_html__( 'Right Left Product Padding','advance-business' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_business_wooproducts_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_wooproducts_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius','advance-business' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_setting( 'advance_business_wooproducts_box_shadow',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_wooproducts_box_shadow',array(
+		'label' => esc_html__( 'Product Box Shadow','advance-business' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_section('advance_business_product_button_section', array(
+		'title'    => __('Product Button Settings', 'advance-business'),
+		'priority' => null,
+		'panel'    => 'woocommerce',
+	));
+
+	$wp_customize->add_setting( 'advance_business_top_bottom_product_button_padding',array(
+		'default' => 10,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_top_bottom_product_button_padding',	array(
+		'label' => esc_html__( 'Product Button Top Bottom Padding','advance-business' ),
+		'section' => 'advance_business_product_button_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number',
+
+	));
+
+	$wp_customize->add_setting( 'advance_business_left_right_product_button_padding',array(
+		'default' => 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_left_right_product_button_padding',array(
+		'label' => esc_html__( 'Product Button Right Left Padding','advance-business' ),
+		'section' => 'advance_business_product_button_section',
+		'type'		=> 'number',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_business_product_button_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_business_product_button_border_radius',array(
+		'label' => esc_html__( 'Product Button Border Radius','advance-business' ),
+		'section' => 'advance_business_product_button_section',
+		'type'		=> 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	//Layouts
+	$wp_customize->add_section('advance_business_left_right', array(
+		'title'    => __('Layout Settings', 'advance-business'),
+		'priority' => 10,
+		'panel'    => 'advance_business_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_business_preloader_option',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_business_preloader_option',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Preloader','advance-business'),
+       'section' => 'advance_business_left_right'
+    ));
+
+	$wp_customize->add_setting( 'advance_business_sticky_header',array(
+      	'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_business_sticky_header',array(
+    	'type' => 'checkbox',
+        'label' => __( 'Show / Hide Sticky Header','advance-business' ),
+        'section' => 'advance_business_left_right'
+    ));
+
+    $wp_customize->add_setting( 'advance_business_shop_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_business_shop_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Shop Page Sidebar','advance-business'),
+		'section' => 'advance_business_left_right'
+    ));
+
+	$wp_customize->add_setting( 'advance_business_wocommerce_single_page_sidebar',array(
+		'default' => true,
+		'sanitize_callback'	=> 'sanitize_text_field'
+    ) );
+    $wp_customize->add_control('advance_business_wocommerce_single_page_sidebar',array(
+    	'type' => 'checkbox',
+       	'label' => __('Show / Hide Single Product Page Sidebar','advance-business'),
+		'section' => 'advance_business_left_right'
+    ));
+
+	$wp_customize->add_setting('advance_business_layout_options', array(
+		'default'           => __('Right Sidebar', 'advance-business'),
+		'sanitize_callback' => 'advance_business_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_business_layout_options',array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-business'),
+		'section'        => 'advance_business_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-business'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-business'),
+			'One Column'    => __('One Column', 'advance-business'),
+			'Three Columns' => __('Three Columns', 'advance-business'),
+			'Four Columns'  => __('Four Columns', 'advance-business'),
+			'Grid Layout'   => __('Grid Layout', 'advance-business')
+		),
+	));
+
+	$wp_customize->add_setting('advance_business_single_page_sidebar_layout', array(
+		'default'           => __('One Column', 'advance-business'),
+		'sanitize_callback' => 'advance_business_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_business_single_page_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Page Layouts', 'advance-business'),
+		'section'        => 'advance_business_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-business'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-business'),
+			'One Column'    => __('One Column', 'advance-business'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_business_single_post_sidebar_layout', array(
+		'default'           => __('Right Sidebar', 'advance-business'),
+		'sanitize_callback' => 'advance_business_sanitize_choices',
+	));
+	$wp_customize->add_control('advance_business_single_post_sidebar_layout',array(
+		'type'           => 'radio',
+		'label'          => __('Single Post Layouts', 'advance-business'),
+		'section'        => 'advance_business_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-business'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-business'),
+			'One Column'    => __('One Column', 'advance-business'),
+		),
+	));
+
+	$wp_customize->add_setting('advance_business_theme_options',array(
+        'default' => __('Default','advance-business'),
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_theme_options',array(
+        'type' => 'radio',
+        'label' => __('Container Box','advance-business'),
+        'description' => __('Here you can change the Width layout. ','advance-business'),
+        'section' => 'advance_business_left_right',
+        'choices' => array(
+            'Default' => __('Default','advance-business'),
+            'Container' => __('Container','advance-business'),
+            'Box Container' => __('Box Container','advance-business'),
+        ),
+	) );
+
     // Button
 	$wp_customize->add_section( 'advance_business_theme_button', array(
 		'title' => __('Button Option','advance-business'),
@@ -586,7 +811,7 @@ function advance_business_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_business_slider_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_slider_hide',array(
@@ -786,7 +1011,7 @@ function advance_business_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_business_title_404_page',array(
-		'default'=> '404 Not Found',
+		'default'=> __('404 Not Found','advance-business'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_title_404_page',array(
@@ -796,7 +1021,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_content_404_page',array(
-		'default'=> 'Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.',
+		'default'=> __('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.', 'advance-business'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_content_404_page',array(
@@ -806,7 +1031,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_button_404_page',array(
-		'default'=> 'Back to Home Page',
+		'default'=> __('Back to Home Page','advance-business'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_button_404_page',array(
@@ -868,7 +1093,7 @@ function advance_business_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_business_date_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_date_hide',array(
@@ -878,7 +1103,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_comment_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_comment_hide',array(
@@ -888,7 +1113,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_author_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_author_hide',array(
@@ -898,7 +1123,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_tags_hide',array(
-       'default' => 'false',
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_tags_hide',array(
@@ -906,6 +1131,21 @@ function advance_business_customize_register($wp_customize) {
        'label' => __('Single Post Tags','advance-business'),
        'section' => 'advance_business_blog_post'
     ));
+
+    $wp_customize->add_setting('advance_business_blog_post_description_option',array(
+    	'default'   => __('Excerpt Content','advance-business'), 
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_blog_post_description_option',array(
+        'type' => 'radio',
+        'label' => __('Post Description Length','advance-business'),
+        'section' => 'advance_business_blog_post',
+        'choices' => array(
+            'No Content' => __('No Content','advance-business'),
+            'Excerpt Content' => __('Excerpt Content','advance-business'),
+            'Full Content' => __('Full Content','advance-business'),
+        ),
+	) );
 
     $wp_customize->add_setting( 'advance_business_excerpt_number', array(
 		'default'              => 20,
@@ -923,8 +1163,19 @@ function advance_business_customize_register($wp_customize) {
 		),
 	) );
 
+	$wp_customize->add_setting( 'advance_business_post_suffix_option', array(
+		'default'   => __('...','advance-business'), 
+		'sanitize_callback'	=> 'sanitize_text_field'
+	) );
+	$wp_customize->add_control( 'advance_business_post_suffix_option', array(
+		'label'       => esc_html__( 'Post Excerpt Indicator Option','advance-business' ),
+		'section'     => 'advance_business_blog_post',
+		'type'        => 'text',
+		'settings'    => 'advance_business_post_suffix_option',
+	) );
+
 	$wp_customize->add_setting('advance_business_button_text',array(
-		'default'=> 'Read More',
+		'default'=> __('Read More','advance-business'), 
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_button_text',array(
@@ -941,7 +1192,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_business_footer_widget_areas',array(
-        'default'           => '4',
+        'default'           => 4,
         'sanitize_callback' => 'advance_business_sanitize_choices',
     ));
     $wp_customize->add_control('advance_business_footer_widget_areas',array(
@@ -968,7 +1219,7 @@ function advance_business_customize_register($wp_customize) {
 	));
 	
 	$wp_customize->add_setting('advance_business_enable_disable_scroll',array(
-        'default' => 'true',
+        'default' => true,
         'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_business_enable_disable_scroll',array(
