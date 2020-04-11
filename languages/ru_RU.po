@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-18 09:40+0530\n"
+"PO-Revision-Date: 2020-04-01 15:44+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -52,51 +52,51 @@ msgstr "Авторское право 2018"
 msgid "Back to Top"
 msgstr "Вернуться к началу"
 
-#: header.php:22
+#: header.php:26
 msgid "Skip to content"
 msgstr "перейти к содержанию"
 
-#: header.php:29
+#: header.php:33
 msgid "Facebook"
 msgstr "facebook"
 
-#: header.php:32
+#: header.php:36
 msgid "Twitter"
 msgstr "щебет"
 
-#: header.php:35
+#: header.php:39
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:38
+#: header.php:42
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:41
+#: header.php:45
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: header.php:44
+#: header.php:48
 msgid "Instagram"
 msgstr "Instagram"
 
-#: header.php:47
+#: header.php:51
 msgid "Youtube"
 msgstr "YouTube"
 
-#: header.php:94
+#: header.php:98
 msgid "Open Menu"
 msgstr "Открытое меню"
 
-#: header.php:97
+#: header.php:101
 msgid "Top Menu"
 msgstr "Верхнее меню"
 
-#: header.php:98
+#: header.php:111
 msgid "Close Menu"
 msgstr "Закрыть меню"
 
-#: header.php:114
+#: header.php:118
 msgid "CART"
 msgstr "КОРЗИНА"
 
@@ -115,6 +115,10 @@ msgid ""
 msgstr ""
 "Извините, но ничего не соответствует вашим условиям поиска. Пожалуйста, "
 "попытайтесь снова с другими ключевыми словами."
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr "Искать:"
 
 #: searchform.php:11 searchform.php:13
 msgid "Search"
@@ -227,7 +231,7 @@ msgstr "Домашняя страница Боковая панель"
 msgid "Footer Nav "
 msgstr "Нижний колонтитул"
 
-#: functions.php:525
+#: functions.php:472
 msgid "Blogging WordPress Theme"
 msgstr "Тема WordPress для блогов"
 
@@ -388,7 +392,7 @@ msgstr "Размер шрифта h3"
 
 #: inc/customizer.php:401
 msgid "h4 Color"
-msgstr "Цвет h4"
+msgstr "цвет h4"
 
 #: inc/customizer.php:415
 msgid "h4 Fonts"
@@ -472,7 +476,7 @@ msgstr "Настройки слайдера."
 
 #: inc/customizer.php:641
 msgid "Show / Hide slider"
-msgstr "Mostra / Nascondi cursore"
+msgstr "Показать / Скрыть слайдер"
 
 #: inc/customizer.php:653
 msgid "Select Slide Image Page"
@@ -600,7 +604,7 @@ msgstr "Верхняя нижняя кнопка"
 msgid "Left Right Button Padding"
 msgstr "Левая и правая кнопки"
 
-#: inc/customizer.php:996
+#: inc/customizer.php:996 inc/customizer.php:1231
 msgid "Button Border Radius"
 msgstr "Радиус границы кнопки"
 
@@ -677,10 +681,62 @@ msgstr "четыре"
 msgid "Text"
 msgstr "Текст"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1133
+msgid "Additional WooCommerce Options"
+msgstr "Дополнительные параметры WooCommerce"
+
+#: inc/customizer.php:1146
+msgid "Product per row"
+msgstr "Продукт в ряду"
+
+#: inc/customizer.php:1161
+msgid "Product per page"
+msgstr "Продукт на странице"
+
+#: inc/customizer.php:1172
+msgid "Enable / Disable Shop page sidebar"
+msgstr "Включить / выключить боковую панель страницы магазина"
+
+#: inc/customizer.php:1182
+msgid "Enable / Disable Product page sidebar"
+msgstr "Включить / выключить боковую панель страницы продукта"
+
+#: inc/customizer.php:1192
+msgid "Enable / Disable Related product"
+msgstr "Включить / отключить связанный продукт"
+
+#: inc/customizer.php:1201
+msgid "Button Top Bottom Padding"
+msgstr "Пуговица сверху внизу"
+
+#: inc/customizer.php:1216
+msgid "Button Right Left Padding"
+msgstr "Кнопка справа налево"
+
+#: inc/customizer.php:1247
+msgid "Enable / Disable product border"
+msgstr "Включить / отключить границы продукта"
+
+#: inc/customizer.php:1256
+msgid "Product Top Bottom Padding"
+msgstr "Верхняя нижняя часть продукта"
+
+#: inc/customizer.php:1271
+msgid "Product Right Left Padding"
+msgstr "Товар справа налево"
+
+#: inc/customizer.php:1286
+msgid "Product Border Radius"
+msgstr "Граница продукта Радиус"
+
+#: inc/customizer.php:1301
+msgid "Product Box Shadow"
+msgstr "Продукт Коробка Тень"
+
+#: inc/customizer.php:1391
 msgid "Advance Blogging"
 msgstr "Предварительный блог"
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1392
 msgid "Go Pro"
 msgstr "Go Pro"

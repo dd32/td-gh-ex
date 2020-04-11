@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-18 09:32+0530\n"
+"PO-Revision-Date: 2020-04-01 14:59+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,51 +51,51 @@ msgstr "Copyright 2018"
 msgid "Back to Top"
 msgstr "Zurück nach oben"
 
-#: header.php:22
+#: header.php:26
 msgid "Skip to content"
 msgstr "Zum Inhalt springen"
 
-#: header.php:29
+#: header.php:33
 msgid "Facebook"
 msgstr "Facebook"
 
-#: header.php:32
+#: header.php:36
 msgid "Twitter"
 msgstr "Twitter"
 
-#: header.php:35
+#: header.php:39
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:38
+#: header.php:42
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:41
+#: header.php:45
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: header.php:44
+#: header.php:48
 msgid "Instagram"
 msgstr "Instagram"
 
-#: header.php:47
+#: header.php:51
 msgid "Youtube"
 msgstr "Youtube"
 
-#: header.php:94
+#: header.php:98
 msgid "Open Menu"
 msgstr "Menü öffnen"
 
-#: header.php:97
+#: header.php:101
 msgid "Top Menu"
 msgstr "Hauptmenü"
 
-#: header.php:98
+#: header.php:111
 msgid "Close Menu"
 msgstr "Menü schließen"
 
-#: header.php:114
+#: header.php:118
 msgid "CART"
 msgstr "WAGEN"
 
@@ -114,6 +114,10 @@ msgid ""
 msgstr ""
 "Es tut uns leid, aber es stimmt nichts mit Ihren Suchbegriffen überein. "
 "Bitte versuchen Sie es mit anderen Suchbegriffen erneut."
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr "Suchen nach:"
 
 #: searchform.php:11 searchform.php:13
 msgid "Search"
@@ -184,7 +188,7 @@ msgstr "Nächster Beitrag <i class = \"fas fa-chevron-right\"> </ i>"
 
 #: template-parts/single-post.php:63
 msgid "Next post"
-msgstr "Nächster Beitrag"
+msgstr "المشاركة التالية"
 
 #: template-parts/single-post.php:65
 msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
@@ -226,7 +230,7 @@ msgstr "Seitenleiste der Startseite"
 msgid "Footer Nav "
 msgstr "Fußzeile Nav"
 
-#: functions.php:525
+#: functions.php:472
 msgid "Blogging WordPress Theme"
 msgstr "Bloggen WordPress Theme"
 
@@ -339,7 +343,7 @@ msgstr "\"a\" Tag Farbe"
 
 #: inc/customizer.php:254
 msgid "\"a\" Tag Fonts"
-msgstr "\"a\" -Tag-Schriftarten"
+msgstr "\"a\" Tag-Schriftarten"
 
 #: inc/customizer.php:265
 msgid "\"li\" Tag Color"
@@ -599,7 +603,7 @@ msgstr "Polsterung der oberen unteren Tasten"
 msgid "Left Right Button Padding"
 msgstr "Links Rechts Knopfpolsterung"
 
-#: inc/customizer.php:996
+#: inc/customizer.php:996 inc/customizer.php:1231
 msgid "Button Border Radius"
 msgstr "Schaltflächenrandradius"
 
@@ -675,10 +679,62 @@ msgstr "Vier"
 msgid "Text"
 msgstr "Text"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1133
+msgid "Additional WooCommerce Options"
+msgstr "Zusätzliche WooCommerce-Optionen"
+
+#: inc/customizer.php:1146
+msgid "Product per row"
+msgstr "Produkt pro Reihe"
+
+#: inc/customizer.php:1161
+msgid "Product per page"
+msgstr "Produkt pro Seite"
+
+#: inc/customizer.php:1172
+msgid "Enable / Disable Shop page sidebar"
+msgstr "Aktivieren / Deaktivieren der Seitenleiste der Shop-Seite"
+
+#: inc/customizer.php:1182
+msgid "Enable / Disable Product page sidebar"
+msgstr "Aktivieren / Deaktivieren der Seitenleiste der Produktseite"
+
+#: inc/customizer.php:1192
+msgid "Enable / Disable Related product"
+msgstr "Aktivieren / Deaktivieren des zugehörigen Produkts"
+
+#: inc/customizer.php:1201
+msgid "Button Top Bottom Padding"
+msgstr "Knopf oben unten Polsterung"
+
+#: inc/customizer.php:1216
+msgid "Button Right Left Padding"
+msgstr "Taste Rechts Links Polsterung"
+
+#: inc/customizer.php:1247
+msgid "Enable / Disable product border"
+msgstr "Produktgrenze aktivieren / deaktivieren"
+
+#: inc/customizer.php:1256
+msgid "Product Top Bottom Padding"
+msgstr "Produkt oben unten Polsterung"
+
+#: inc/customizer.php:1271
+msgid "Product Right Left Padding"
+msgstr "Produkt rechts links Polsterung"
+
+#: inc/customizer.php:1286
+msgid "Product Border Radius"
+msgstr "Produktrandradius"
+
+#: inc/customizer.php:1301
+msgid "Product Box Shadow"
+msgstr "Produktbox Schatten"
+
+#: inc/customizer.php:1391
 msgid "Advance Blogging"
 msgstr "Fortschrittliches Bloggen"
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1392
 msgid "Go Pro"
 msgstr "Gehen Sie Pro"

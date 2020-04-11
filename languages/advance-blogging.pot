@@ -57,51 +57,51 @@ msgstr ""
 msgid "Back to Top"
 msgstr ""
 
-#: header.php:22
+#: header.php:26
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:29
+#: header.php:33
 msgid "Facebook"
 msgstr ""
 
-#: header.php:32
+#: header.php:36
 msgid "Twitter"
 msgstr ""
 
-#: header.php:35
+#: header.php:39
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:38
+#: header.php:42
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:41
+#: header.php:45
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:44
+#: header.php:48
 msgid "Instagram"
 msgstr ""
 
-#: header.php:47
+#: header.php:51
 msgid "Youtube"
 msgstr ""
 
-#: header.php:94
+#: header.php:98
 msgid "Open Menu"
 msgstr ""
 
-#: header.php:97
+#: header.php:101
 msgid "Top Menu"
 msgstr ""
 
-#: header.php:98
+#: header.php:111
 msgid "Close Menu"
 msgstr ""
 
-#: header.php:114
+#: header.php:118
 msgid "CART"
 msgstr ""
 
@@ -115,6 +115,10 @@ msgstr ""
 
 #: no-results.php:19
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: searchform.php:10
+msgid "Search for:"
 msgstr ""
 
 #: searchform.php:11
@@ -298,7 +302,7 @@ msgstr ""
 msgid "Footer Nav "
 msgstr ""
 
-#: functions.php:525
+#: functions.php:472
 msgid "Blogging WordPress Theme"
 msgstr ""
 
@@ -754,10 +758,66 @@ msgstr ""
 msgid "Text"
 msgstr ""
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1133
+msgid "Additional WooCommerce Options"
+msgstr ""
+
+#: inc/customizer.php:1146
+msgid "Product per row"
+msgstr ""
+
+#: inc/customizer.php:1161
+msgid "Product per page"
+msgstr ""
+
+#: inc/customizer.php:1172
+msgid "Enable / Disable Shop page sidebar"
+msgstr ""
+
+#: inc/customizer.php:1182
+msgid "Enable / Disable Product page sidebar"
+msgstr ""
+
+#: inc/customizer.php:1192
+msgid "Enable / Disable Related product"
+msgstr ""
+
+#: inc/customizer.php:1201
+msgid "Button Top Bottom Padding"
+msgstr ""
+
+#: inc/customizer.php:1216
+msgid "Button Right Left Padding"
+msgstr ""
+
+#: inc/customizer.php:1231
+msgid "Button Border Radius"
+msgstr ""
+
+#: inc/customizer.php:1247
+msgid "Enable / Disable product border"
+msgstr ""
+
+#: inc/customizer.php:1256
+msgid "Product Top Bottom Padding"
+msgstr ""
+
+#: inc/customizer.php:1271
+msgid "Product Right Left Padding"
+msgstr ""
+
+#: inc/customizer.php:1286
+msgid "Product Border Radius"
+msgstr ""
+
+#: inc/customizer.php:1301
+msgid "Product Box Shadow"
+msgstr ""
+
+#: inc/customizer.php:1391
 msgid "Advance Blogging"
 msgstr ""
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1392
 msgid "Go Pro"
 msgstr "" 

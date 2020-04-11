@@ -16,7 +16,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> class="main-bodybox">
-  <?php if ( function_exists( 'wp_body_open' ) ) { wp_body_open(); }?>
+  <?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+  } else {
+    do_action( 'wp_body_open' );
+  }?>
   
   <header role="banner">
     <a class="screen-reader-text skip-link" href="#main"><?php esc_html_e( 'Skip to content', 'advance-blogging' ); ?></a>
@@ -48,14 +52,14 @@
               <?php } ?>
             </div>
             <div class="search-box col-lg-1 col-md-2 col-4">
-              <span class="search-icon"><a href="#" onclick="search_open()"><i class="fas fa-search"></i><span class="screen-reader-text"><?php the_title(); ?></span></a></span>
+              <span class="search-icon"><a href="#" onclick="advance_blogging_search_open()"><i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></span>
             </div>
           </div>  
           <div class="serach_outer">
-            <div class="closepop"><a href="#" onclick="search_close()"><i class="far fa-window-close"></i><span class="screen-reader-text"><?php the_title(); ?></span></a></div>
             <div class="serach_inner">
               <?php get_search_form(); ?>
             </div>
+            <div class="closepop"><a href="#" onclick="advance_blogging_search_close()"><i class="far fa-window-close"></i><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></div>
           </div>
         </div>
       </div>
@@ -91,11 +95,10 @@
           <div class="row menu-cart">
             <div class="col-lg-10 col-md-10 col-6 p-0">
               <div class="toggle-menu responsive-menu">
-                <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-blogging'); ?></span></button>
+                <button role="tab" onclick="advance_blogging_menu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-blogging'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-blogging' ); ?>">
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-blogging'); ?></span></a>
                   <?php 
                     wp_nav_menu( array( 
                       'theme_location' => 'primary',
@@ -105,6 +108,7 @@
                       'fallback_cb' => 'wp_page_menu',
                     ) ); 
                   ?>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_blogging_menu_close()"><i class="fas fa-times"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-blogging'); ?></span></a>
               </nav>
             </div>
               <div class="clear"></div>

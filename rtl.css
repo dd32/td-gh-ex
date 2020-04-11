@@ -941,6 +941,26 @@ a.woocommerce-privacy-policy-link,
   width: 270px;
 }
 
+.woocommerce nav.woocommerce-pagination ul li a, 
+.woocommerce nav.woocommerce-pagination ul li span{
+  padding: 10px;
+  border: 1px solid #000;
+  margin-right: 10px;
+  color: #000;
+  font-weight: 500;
+}
+.woocommerce nav.woocommerce-pagination ul,
+.woocommerce nav.woocommerce-pagination ul li{
+  border: 0;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover, 
+.woocommerce nav.woocommerce-pagination ul li span.current{
+  background: #db0607;
+  color: #fff;
+  border-color: #db0607;
+}
+
 /*---- Wocommerce widget css ----*/
 #sidebar .widget_shopping_cart_content,
 .footertown .widget_shopping_cart_content{

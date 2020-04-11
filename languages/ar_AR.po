@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-18 09:28+0530\n"
+"PO-Revision-Date: 2020-04-01 14:58+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr "404 غير موجود"
 
 #: 404.php:13
 msgid "Looks like you have taken a wrong turn"
-msgstr "يبدو أنك قد اتخذت منعطفا خاطئا"
+msgstr "يبدو أنك اتخذت منعطفا خاطئا"
 
 #: 404.php:14 no-results.php:22
 msgid "Dont worry it happens to the best of us"
@@ -34,7 +34,7 @@ msgstr "العودة إلى الصفحة الرئيسية"
 
 #: comments.php:22
 msgid "One thought on &ldquo;%s&rdquo;"
-msgstr "فكر في & ldquo؛٪ s & rdquo؛"
+msgstr "فكرة واحدة عن \"٪ s\""
 
 #: comments.php:31
 msgid "comments title"
@@ -50,71 +50,75 @@ msgstr "حقوق الطبع والنشر 2018"
 
 #: footer.php:62 footer.php:64 footer.php:66
 msgid "Back to Top"
-msgstr "العودة إلى الأعلى"
+msgstr "العودة للأعلى"
 
-#: header.php:22
+#: header.php:26
 msgid "Skip to content"
 msgstr "تخطى الى المحتوى"
 
-#: header.php:29
+#: header.php:33
 msgid "Facebook"
 msgstr "موقع التواصل الاجتماعي الفيسبوك"
 
-#: header.php:32
+#: header.php:36
 msgid "Twitter"
 msgstr "تويتر"
 
-#: header.php:35
+#: header.php:39
 msgid "Tumblr"
 msgstr "نعرفكم"
 
-#: header.php:38
+#: header.php:42
 msgid "Pinterest"
 msgstr "موقع Pinterest"
 
-#: header.php:41
+#: header.php:45
 msgid "Linkedin"
 msgstr "تابعني على"
 
-#: header.php:44
+#: header.php:48
 msgid "Instagram"
 msgstr "إينستاجرام"
 
-#: header.php:47
+#: header.php:51
 msgid "Youtube"
 msgstr "موقع يوتيوب"
 
-#: header.php:94
+#: header.php:98
 msgid "Open Menu"
 msgstr "افتح القائمة"
 
-#: header.php:97
+#: header.php:101
 msgid "Top Menu"
 msgstr "القائمة العلوية"
 
-#: header.php:98
+#: header.php:111
 msgid "Close Menu"
-msgstr "إغلاق القائمة"
+msgstr "أغلق القائمة"
 
-#: header.php:114
+#: header.php:118
 msgid "CART"
 msgstr "عربة التسوق"
 
 #: no-results.php:12
 msgid "Nothing Found"
-msgstr "لم يتم العثور على شيء"
+msgstr "العثور على أي شيء"
 
 #: no-results.php:17
 msgid "Ready to publish your first post? Get started here."
-msgstr "مستعد لنشر أول منشوراتك؟ ابدأ هنا"
+msgstr "مستعد لنشر أول منشوراتك؟ ابدأ هنا."
 
 #: no-results.php:19
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"آسف ، ولكن لا شيء يطابق مصطلحات البحث. أرجو المحاولة مرة أخرى بإستخدام "
-"كلمات أخرى."
+"عذرا ، لكن لا شيء يطابق شروط البحث الخاصة بك. أرجو المحاولة مرة أخرى "
+"بإستخدام كلمات أخرى."
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr "يبحث عن:"
 
 #: searchform.php:11 searchform.php:13
 msgid "Search"
@@ -122,7 +126,7 @@ msgstr "بحث"
 
 #: searchform.php:11
 msgid "Placeholder"
-msgstr "عنصر نائب"
+msgstr "نائب"
 
 #: searchform.php:13
 msgid "Submit Button"
@@ -158,7 +162,7 @@ msgstr "الصفحة التالية"
 #: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
 #: search.php:205 search.php:238 template-parts/single-post.php:47
 msgid "page"
-msgstr "صفحة"
+msgstr "الصفحة"
 
 #: image.php:36 image.php:72 image.php:107 image.php:142 image.php:180
 #: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:43
@@ -177,7 +181,7 @@ msgstr "نتائج لـ:٪ s"
 
 #: template-parts/single-post.php:57
 msgid "Parent Post Link"
-msgstr "الوالد بوست رابط"
+msgstr "رابط المشاركة الأصل"
 
 #: template-parts/single-post.php:62
 msgid "Next Post<i class=\"fas fa-chevron-right\"></i>"
@@ -189,7 +193,7 @@ msgstr "المشاركة التالية"
 
 #: template-parts/single-post.php:65
 msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
-msgstr "<i class = \"fas fa-chevron-left\"> </i> المشاركة السابقة"
+msgstr "<i class=\"fas fa-chevron-left\"></i>Previous Post"
 
 #: template-parts/single-post.php:66
 msgid "Previous post"
@@ -201,7 +205,7 @@ msgstr "القائمة الأساسية"
 
 #: functions.php:127
 msgid "Blog Sidebar"
-msgstr "مدونة الشريط الجانبي"
+msgstr "الشريط الجانبي للمدونة"
 
 #: functions.php:128
 msgid "Appears on blog page sidebar"
@@ -217,7 +221,7 @@ msgstr "يظهر على الشريط الجانبي للصفحة"
 
 #: functions.php:147
 msgid "Third Column Sidebar"
-msgstr "العمود الثالث الشريط الجانبي"
+msgstr "الشريط الجانبي للعمود الثالث"
 
 #: functions.php:157
 msgid "Home Page Sidebar"
@@ -227,7 +231,7 @@ msgstr "الصفحة الرئيسية الشريط الجانبي"
 msgid "Footer Nav "
 msgstr "تذييل التنقل"
 
-#: functions.php:525
+#: functions.php:472
 msgid "Blogging WordPress Theme"
 msgstr "التدوين وورد الموضوع"
 
@@ -264,11 +268,11 @@ msgstr "إظهار / إخفاء وصف الموقع"
 
 #: inc/customizer.php:38
 msgid "Theme Settings"
-msgstr "إعدادات الموضوع"
+msgstr "إعدادات السمة"
 
 #: inc/customizer.php:39
 msgid "Description of what this panel does."
-msgstr "وصف ما تفعله هذه اللوحة."
+msgstr "وصف ما تقوم به هذه اللوحة."
 
 #: inc/customizer.php:44
 msgid "Theme Layout Settings"
@@ -284,7 +288,7 @@ msgstr "حدد تخطيط الموقع"
 
 #: inc/customizer.php:59
 msgid "Contained Layout"
-msgstr "يحتوي على تخطيط"
+msgstr "تخطيط احتواء"
 
 #: inc/customizer.php:60
 msgid "Boxed Layout"
@@ -424,15 +428,15 @@ msgstr "حجم الخط h6"
 
 #: inc/customizer.php:508
 msgid "Top Header"
-msgstr "رأس رأس"
+msgstr "رأس علوي"
 
 #: inc/customizer.php:509
 msgid "Add Header Content here"
-msgstr "إضافة محتوى رأس هنا"
+msgstr "أضف محتوى الرأس هنا"
 
 #: inc/customizer.php:521
 msgid "Show / Hide Topbar"
-msgstr "إظهار / إخفاء Topbar"
+msgstr "إظهار / إخفاء الشريط العلوي"
 
 #: inc/customizer.php:531
 msgid "Sticky Header"
@@ -440,11 +444,11 @@ msgstr "رأس مثبت"
 
 #: inc/customizer.php:548
 msgid "Add Facebook link"
-msgstr "إضافة رابط الفيسبوك"
+msgstr "أضف رابط Facebook"
 
 #: inc/customizer.php:559
 msgid "Add Twitter link"
-msgstr "أضف رابط Twitter"
+msgstr "أضف رابط on Twitter"
 
 #: inc/customizer.php:570
 msgid "Add Tumblr link"
@@ -464,11 +468,11 @@ msgstr "إضافة رابط Instagram"
 
 #: inc/customizer.php:614
 msgid "Add Youtube link"
-msgstr "إضافة رابط يوتيوب"
+msgstr "أضف رابط يوتيوب"
 
 #: inc/customizer.php:622
 msgid "Slider Settings."
-msgstr "إعدادات شريط التمرير."
+msgstr "إعدادات المنزلق."
 
 #: inc/customizer.php:641
 msgid "Show / Hide slider"
@@ -488,7 +492,7 @@ msgstr "إظهار / إخفاء محتوى شريط التمرير"
 
 #: inc/customizer.php:689
 msgid "Slider Excerpt length"
-msgstr "شريط التمرير مقتطف الطول"
+msgstr "طول مقتطف المنزلق"
 
 #: inc/customizer.php:700 inc/customizer.php:709 inc/customizer.php:757
 #: inc/customizer.php:1089
@@ -497,7 +501,7 @@ msgstr "اليسار"
 
 #: inc/customizer.php:707
 msgid "Slider Content Alignment"
-msgstr "شريط تمرير محاذاة المحتوى"
+msgstr "محاذاة محتوى شريط التمرير"
 
 #: inc/customizer.php:708 inc/customizer.php:1091
 msgid "Center"
@@ -510,7 +514,7 @@ msgstr "حق"
 
 #: inc/customizer.php:720
 msgid "Slider Content Spacing"
-msgstr "تباعد محتوى المنزلق"
+msgstr "تباعد محتوى شريط التمرير"
 
 #: inc/customizer.php:729
 msgid "Top"
@@ -522,7 +526,7 @@ msgstr "الأسفل"
 
 #: inc/customizer.php:789
 msgid "Slider Speed"
-msgstr "سرعة التمرير"
+msgstr "سرعة المنزلق"
 
 #: inc/customizer.php:801
 msgid "Category Post"
@@ -558,15 +562,15 @@ msgstr "تمكين / تعطيل تاريخ النشر"
 
 #: inc/customizer.php:896
 msgid "Enable / Disable Post Author"
-msgstr "تمكين / تعطيل مؤلف النشر"
+msgstr "تمكين / تعطيل كاتب النشر"
 
 #: inc/customizer.php:906
 msgid "Enable / Disable Post Comments"
-msgstr "تمكين / تعطيل نشر التعليقات"
+msgstr "تمكين / تعطيل التعليقات المنشورة"
 
 #: inc/customizer.php:909 inc/customizer.php:919
 msgid "Excerpt Content"
-msgstr "مقتطفات المحتوى"
+msgstr "محتوى مقتطف"
 
 #: inc/customizer.php:914
 msgid "Post Content Type"
@@ -600,7 +604,7 @@ msgstr "حشو الزر السفلي العلوي"
 msgid "Left Right Button Padding"
 msgstr "زر ترك الزر الأيمن لليسار"
 
-#: inc/customizer.php:996
+#: inc/customizer.php:996 inc/customizer.php:1231
 msgid "Button Border Radius"
 msgstr "نصف قطر حد الزر"
 
@@ -622,7 +626,7 @@ msgstr "الوظائف ذات الصلة ترتيب بواسطة"
 
 #: inc/customizer.php:1051
 msgid "Categories"
-msgstr "التصنيفات"
+msgstr "Categories"
 
 #: inc/customizer.php:1052
 msgid "Tags"
@@ -634,15 +638,15 @@ msgstr "قسم التذييل"
 
 #: inc/customizer.php:1058
 msgid "This section will appear in the footer."
-msgstr "سيظهر هذا القسم في تذييل الصفحة."
+msgstr "سيظهر هذا القسم في التذييل."
 
 #: inc/customizer.php:1076
 msgid "Show/Hide Back to Top Button"
-msgstr "إظهار / إخفاء الرجوع إلى الزر العلوي"
+msgstr "إظهار / إخفاء عودة إلى أعلى الزر"
 
 #: inc/customizer.php:1086
 msgid "Back to Top Button Alignment"
-msgstr "العودة إلى الأعلى محاذاة الزر"
+msgstr "العودة إلى أعلى محاذاة الزر"
 
 #: inc/customizer.php:1101
 msgid "Footer widget layout"
@@ -653,8 +657,8 @@ msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
-"حدد عدد مناطق عنصر واجهة التعامل التي تريدها في التذييل. بعد ذلك ، انتقل "
-"إلى Appearance> Widgets وقم بإضافة الحاجيات الخاصة بك."
+"حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى "
+"Appearance> Widgets وأضف Widgets."
 
 #: inc/customizer.php:1105
 msgid "One"
@@ -676,10 +680,62 @@ msgstr "أربعة"
 msgid "Text"
 msgstr "نص"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1133
+msgid "Additional WooCommerce Options"
+msgstr "خيارات WooCommerce إضافية"
+
+#: inc/customizer.php:1146
+msgid "Product per row"
+msgstr "المنتج لكل صف"
+
+#: inc/customizer.php:1161
+msgid "Product per page"
+msgstr "المنتج لكل صفحة"
+
+#: inc/customizer.php:1172
+msgid "Enable / Disable Shop page sidebar"
+msgstr "تمكين / تعطيل الشريط الجانبي لصفحة المتجر"
+
+#: inc/customizer.php:1182
+msgid "Enable / Disable Product page sidebar"
+msgstr "تمكين / تعطيل الشريط الجانبي لصفحة المنتج"
+
+#: inc/customizer.php:1192
+msgid "Enable / Disable Related product"
+msgstr "تمكين / تعطيل المنتج ذي الصلة"
+
+#: inc/customizer.php:1201
+msgid "Button Top Bottom Padding"
+msgstr "حشو الزر العلوي السفلي"
+
+#: inc/customizer.php:1216
+msgid "Button Right Left Padding"
+msgstr "زر اليسار الأيمن الحشو"
+
+#: inc/customizer.php:1247
+msgid "Enable / Disable product border"
+msgstr "تمكين / تعطيل حدود المنتج"
+
+#: inc/customizer.php:1256
+msgid "Product Top Bottom Padding"
+msgstr "حشو أسفل المنتج العلوي"
+
+#: inc/customizer.php:1271
+msgid "Product Right Left Padding"
+msgstr "الحشو الأيمن المنتج اليسار"
+
+#: inc/customizer.php:1286
+msgid "Product Border Radius"
+msgstr "نصف قطر حدود المنتج"
+
+#: inc/customizer.php:1301
+msgid "Product Box Shadow"
+msgstr "ظل صندوق المنتج"
+
+#: inc/customizer.php:1391
 msgid "Advance Blogging"
 msgstr "مقدما التدوين"
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1392
 msgid "Go Pro"
 msgstr "جو برو"

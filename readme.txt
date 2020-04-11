@@ -2,9 +2,9 @@
 Contributors: ThemesCaliber
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout,custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, front-page-post-form, translation-ready, rtl-language-support, blog, e-commerce, news
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 7.2.14
-Stable tag: 0.7.1
+Stable tag: 0.7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,6 +101,15 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added Post button text, border radius and Button padding settings.
 * Added Enable / Disable option for Related post and its title setting.
 * Added Related posts order by setting and its count setting.
+* Updated all .po files.
+
+= 0.7.2 =
+* Added Show/Hide Shop page and Single Product page sidebar options.
+* Added Show/hide Related products option in single product page.
+* Added Products per row and Products per page options.
+* Added Woocommerce button padding and border radius options.
+* Added Show/Hide Product border and Product border radius option.
+* Added Products padding and product box shadow options.
 * Updated all .po files.
 
 == Resources ==

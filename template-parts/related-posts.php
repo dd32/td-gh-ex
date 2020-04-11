@@ -68,7 +68,7 @@ $related_posts = advance_blogging_related_posts_function(); ?>
 				                <?php } ?>
 				            </div>
 				            <div class="box-content">
-				                <h3><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h3>
+				                <h3><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h3>
 				                <?php if(get_theme_mod('advance_blogging_post_content') == 'Full Content'){ ?>
 				                    <?php the_content(); ?>
 				                <?php }

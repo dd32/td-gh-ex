@@ -50,7 +50,7 @@
     <div id="footer">
     	<div class="container">
             <div class="copyright">
-                <p><?php echo esc_html(get_theme_mod('advance_blogging_footer_copy',__('Copyright 2018','advance-blogging'))); ?> <?php advance_blogging_credit_link(); ?></p>
+                <p><?php advance_blogging_credit_link(); ?> <?php echo esc_html(get_theme_mod('advance_blogging_footer_copy',__('By ThemesCaliber','advance-blogging'))); ?></p>
             </div>
             <div class="clear"></div>  
         </div>

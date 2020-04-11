@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-18 09:35+0530\n"
+"PO-Revision-Date: 2020-04-01 15:35+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +37,7 @@ msgstr "Une réflexion sur & ldquo;% s & rdquo;"
 
 #: comments.php:31
 msgid "comments title"
-msgstr "titre des commentaires"
+msgstr "comments title"
 
 #: comments.php:57
 msgid "Comments are closed."
@@ -51,51 +51,51 @@ msgstr "Copyright 2018"
 msgid "Back to Top"
 msgstr "Retour au sommet"
 
-#: header.php:22
+#: header.php:26
 msgid "Skip to content"
 msgstr "Aller au contenu"
 
-#: header.php:29
+#: header.php:33
 msgid "Facebook"
 msgstr "Facebook"
 
-#: header.php:32
+#: header.php:36
 msgid "Twitter"
 msgstr "Twitter"
 
-#: header.php:35
+#: header.php:39
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:38
+#: header.php:42
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:41
+#: header.php:45
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: header.php:44
+#: header.php:48
 msgid "Instagram"
 msgstr "Instagram"
 
-#: header.php:47
+#: header.php:51
 msgid "Youtube"
 msgstr "Youtube"
 
-#: header.php:94
+#: header.php:98
 msgid "Open Menu"
 msgstr "Ouvrir le menu"
 
-#: header.php:97
+#: header.php:101
 msgid "Top Menu"
 msgstr "Menu principal"
 
-#: header.php:98
+#: header.php:111
 msgid "Close Menu"
 msgstr "Fermer le menu"
 
-#: header.php:114
+#: header.php:118
 msgid "CART"
 msgstr "CHARIOT"
 
@@ -114,6 +114,10 @@ msgid ""
 msgstr ""
 "Désolé, mais rien ne correspond à vos termes de recherche. Veuillez "
 "réessayer avec d'autres mots-clés."
+
+#: searchform.php:10
+msgid "Search for:"
+msgstr "Rechercher:"
 
 #: searchform.php:11 searchform.php:13
 msgid "Search"
@@ -184,7 +188,7 @@ msgstr "Article suivant <i class = \"fas fa-chevron-right\"> </i>"
 
 #: template-parts/single-post.php:63
 msgid "Next post"
-msgstr "Article suivant"
+msgstr "Prochain article"
 
 #: template-parts/single-post.php:65
 msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
@@ -226,7 +230,7 @@ msgstr "Page d'accueil Sidebar"
 msgid "Footer Nav "
 msgstr "Footer Nav"
 
-#: functions.php:525
+#: functions.php:472
 msgid "Blogging WordPress Theme"
 msgstr "Thème WordPress pour blogs"
 
@@ -243,11 +247,11 @@ msgstr "0 Commentaire"
 
 #: page-template/custom-frontpage.php:61
 msgid "Previous"
-msgstr "Précédente"
+msgstr "Previous"
 
 #: page-template/custom-frontpage.php:64
 msgid "Next"
-msgstr "Prochain"
+msgstr "Next"
 
 #: inc/logo/logo-width.php:19
 msgid "Logo Width"
@@ -275,7 +279,7 @@ msgstr "Paramètres de disposition du thème"
 
 #: inc/customizer.php:50 inc/customizer.php:58
 msgid "Full Layout"
-msgstr "Disposition complète"
+msgstr "Full Layout"
 
 #: inc/customizer.php:55
 msgid "Select Site Layout"
@@ -463,7 +467,7 @@ msgstr "Ajouter un lien Instagram"
 
 #: inc/customizer.php:614
 msgid "Add Youtube link"
-msgstr "Ajouter un lien Youtube"
+msgstr "Add Youtube link"
 
 #: inc/customizer.php:622
 msgid "Slider Settings."
@@ -475,7 +479,7 @@ msgstr "Afficher / masquer le curseur"
 
 #: inc/customizer.php:653
 msgid "Select Slide Image Page"
-msgstr "Afficher / masquer le curseur"
+msgstr "Sélectionner la page de diapositive"
 
 #: inc/customizer.php:666
 msgid "Show / Hide slider Title"
@@ -599,7 +603,7 @@ msgstr "Rembourrage des boutons en haut en bas"
 msgid "Left Right Button Padding"
 msgstr "Rembourrage du bouton gauche droite"
 
-#: inc/customizer.php:996
+#: inc/customizer.php:996 inc/customizer.php:1231
 msgid "Button Border Radius"
 msgstr "Rayon de bordure du bouton"
 
@@ -675,10 +679,62 @@ msgstr "Quatre"
 msgid "Text"
 msgstr "Texte"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1133
+msgid "Additional WooCommerce Options"
+msgstr "Options WooCommerce supplémentaires"
+
+#: inc/customizer.php:1146
+msgid "Product per row"
+msgstr "Produit par ligne"
+
+#: inc/customizer.php:1161
+msgid "Product per page"
+msgstr "Produit par page"
+
+#: inc/customizer.php:1172
+msgid "Enable / Disable Shop page sidebar"
+msgstr "Activer / désactiver la barre latérale de la page Boutique"
+
+#: inc/customizer.php:1182
+msgid "Enable / Disable Product page sidebar"
+msgstr "Activer / désactiver la barre latérale de la page produit"
+
+#: inc/customizer.php:1192
+msgid "Enable / Disable Related product"
+msgstr "Activer / désactiver le produit associé"
+
+#: inc/customizer.php:1201
+msgid "Button Top Bottom Padding"
+msgstr "Rembourrage en bas en haut des boutons"
+
+#: inc/customizer.php:1216
+msgid "Button Right Left Padding"
+msgstr "Bouton Rembourrage Droite Gauche"
+
+#: inc/customizer.php:1247
+msgid "Enable / Disable product border"
+msgstr "Activer / désactiver la bordure du produit"
+
+#: inc/customizer.php:1256
+msgid "Product Top Bottom Padding"
+msgstr "Produit Rembourrage inférieur supérieur"
+
+#: inc/customizer.php:1271
+msgid "Product Right Left Padding"
+msgstr "Produit Rembourrage Droite Gauche"
+
+#: inc/customizer.php:1286
+msgid "Product Border Radius"
+msgstr "Rayon de bordure du produit"
+
+#: inc/customizer.php:1301
+msgid "Product Box Shadow"
+msgstr "Produit Box Shadow"
+
+#: inc/customizer.php:1391
 msgid "Advance Blogging"
 msgstr "Blogs avancés"
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1392
 msgid "Go Pro"
 msgstr "Go Pro"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-03-18 09:38+0530\n"
+"PO-Revision-Date: 2020-04-01 15:37+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,51 +51,51 @@ msgstr "Copyright 2018"
 msgid "Back to Top"
 msgstr "Torna in cima"
 
-#: header.php:22
+#: header.php:26
 msgid "Skip to content"
 msgstr "Salta al contenuto"
 
-#: header.php:29
+#: header.php:33
 msgid "Facebook"
 msgstr "Facebook"
 
-#: header.php:32
+#: header.php:36
 msgid "Twitter"
 msgstr "cinguettio"
 
-#: header.php:35
+#: header.php:39
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: header.php:38
+#: header.php:42
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: header.php:41
+#: header.php:45
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: header.php:44
+#: header.php:48
 msgid "Instagram"
 msgstr "Instagram"
 
-#: header.php:47
+#: header.php:51
 msgid "Youtube"
 msgstr "Youtube"
 
-#: header.php:94
+#: header.php:98
 msgid "Open Menu"
 msgstr "Apri il menu"
 
-#: header.php:97
+#: header.php:101
 msgid "Top Menu"
 msgstr "Menu principale"
 
-#: header.php:98
+#: header.php:111
 msgid "Close Menu"
 msgstr "Chiudi menu"
 
-#: header.php:114
+#: header.php:118
 msgid "CART"
 msgstr "CARRELLO"
 
@@ -115,13 +115,17 @@ msgstr ""
 "Siamo spiacenti, ma nulla corrisponde ai tuoi termini di ricerca. Riprova "
 "con alcune parole chiave diverse."
 
+#: searchform.php:10
+msgid "Search for:"
+msgstr "Cercare:"
+
 #: searchform.php:11 searchform.php:13
 msgid "Search"
 msgstr "Ricerca"
 
 #: searchform.php:11
 msgid "Placeholder"
-msgstr "segnaposto"
+msgstr "Espace réservé"
 
 #: searchform.php:13
 msgid "Submit Button"
@@ -204,7 +208,7 @@ msgstr "Blog Sidebar"
 
 #: functions.php:128
 msgid "Appears on blog page sidebar"
-msgstr "Появляется на боковой панели страницы блога"
+msgstr "Appare nella barra laterale della pagina del blog"
 
 #: functions.php:137
 msgid "Page Sidebar"
@@ -212,7 +216,7 @@ msgstr "Barra laterale della pagina"
 
 #: functions.php:138 functions.php:148 functions.php:158
 msgid "Appears on Page sidebar"
-msgstr "Появляется на боковой панели страницы"
+msgstr "Appare nella barra laterale della pagina"
 
 #: functions.php:147
 msgid "Third Column Sidebar"
@@ -226,7 +230,7 @@ msgstr "Barra laterale della home page"
 msgid "Footer Nav "
 msgstr "Footer Nav"
 
-#: functions.php:525
+#: functions.php:472
 msgid "Blogging WordPress Theme"
 msgstr "Tema WordPress per blog"
 
@@ -599,7 +603,7 @@ msgstr "Imbottitura pulsante superiore inferiore"
 msgid "Left Right Button Padding"
 msgstr "Imbottitura pulsante sinistro destro"
 
-#: inc/customizer.php:996
+#: inc/customizer.php:996 inc/customizer.php:1231
 msgid "Button Border Radius"
 msgstr "Raggio bordo pulsante"
 
@@ -675,10 +679,62 @@ msgstr "quattro"
 msgid "Text"
 msgstr "Testo"
 
-#: inc/customizer.php:1211
+#: inc/customizer.php:1133
+msgid "Additional WooCommerce Options"
+msgstr "Opzioni aggiuntive di WooCommerce"
+
+#: inc/customizer.php:1146
+msgid "Product per row"
+msgstr "Prodotto per riga"
+
+#: inc/customizer.php:1161
+msgid "Product per page"
+msgstr "Prodotto per pagina"
+
+#: inc/customizer.php:1172
+msgid "Enable / Disable Shop page sidebar"
+msgstr "Abilita / disabilita la barra laterale della pagina Negozio"
+
+#: inc/customizer.php:1182
+msgid "Enable / Disable Product page sidebar"
+msgstr "Abilita / disabilita la barra laterale della pagina del prodotto"
+
+#: inc/customizer.php:1192
+msgid "Enable / Disable Related product"
+msgstr "Abilita / Disabilita prodotto correlato"
+
+#: inc/customizer.php:1201
+msgid "Button Top Bottom Padding"
+msgstr "Imbottitura inferiore superiore pulsante"
+
+#: inc/customizer.php:1216
+msgid "Button Right Left Padding"
+msgstr "Pulsante imbottitura destra sinistra"
+
+#: inc/customizer.php:1247
+msgid "Enable / Disable product border"
+msgstr "Abilita / disabilita il bordo del prodotto"
+
+#: inc/customizer.php:1256
+msgid "Product Top Bottom Padding"
+msgstr "Imbottitura inferiore superiore del prodotto"
+
+#: inc/customizer.php:1271
+msgid "Product Right Left Padding"
+msgstr "Imbottitura destra del prodotto sinistra"
+
+#: inc/customizer.php:1286
+msgid "Product Border Radius"
+msgstr "Raggio del bordo del prodotto"
+
+#: inc/customizer.php:1301
+msgid "Product Box Shadow"
+msgstr "Scatola del prodotto Shadow"
+
+#: inc/customizer.php:1391
 msgid "Advance Blogging"
 msgstr "Advance Blogging"
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1392
 msgid "Go Pro"
 msgstr "Go Pro"

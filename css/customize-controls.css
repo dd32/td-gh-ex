@@ -28,3 +28,9 @@ li#customize-control-advance_blogging_slider_right_spacing {
     clear: none;
     margin-right: 10px;
 }
+
+li#customize-control-advance_blogging_related_product,
+li#customize-control-advance_blogging_woocommerce_button_border_radius {
+  border-bottom: 1px solid #b2b1b1;
+  padding-bottom: 10px;
+}

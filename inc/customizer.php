@@ -1127,6 +1127,186 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'setting'=> 'advance_blogging_footer_copy',
 		'type'=> 'text'
 	));	
+
+	//Woocommerce Section
+	$wp_customize->add_section( 'advance_blogging_woocommerce_options' , array(
+    	'title'      => __( 'Additional WooCommerce Options', 'advance-blogging' ),
+		'priority'   => null,
+		'panel' => 'advance_blogging_panel_id'
+	) );
+
+	// Product Columns
+	$wp_customize->add_setting( 'advance_blogging_products_per_row' , array(
+		'default'           => '3',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'advance_blogging_sanitize_choices',
+	) );
+
+	$wp_customize->add_control('advance_blogging_products_per_row', array(
+		'label' => __( 'Product per row', 'advance-blogging' ),
+		'section'  => 'advance_blogging_woocommerce_options',
+		'type'     => 'select',
+		'choices'  => array(
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+		),
+	) );
+
+	$wp_customize->add_setting('advance_blogging_product_per_page',array(
+		'default'	=> '9',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('advance_blogging_product_per_page',array(
+		'label'	=> __('Product per page','advance-blogging'),
+		'section'	=> 'advance_blogging_woocommerce_options',
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting('advance_blogging_shop_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_shop_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Shop page sidebar','advance-blogging'),
+       'section' => 'advance_blogging_woocommerce_options',
+    ));
+
+    $wp_customize->add_setting('advance_blogging_product_page_sidebar',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_product_page_sidebar',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Product page sidebar','advance-blogging'),
+       'section' => 'advance_blogging_woocommerce_options',
+    ));
+
+    $wp_customize->add_setting('advance_blogging_related_product',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_related_product',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Related product','advance-blogging'),
+       'section' => 'advance_blogging_woocommerce_options',
+    ));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_button_padding_top',array(
+		'default' => 10,
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 'advance_blogging_woocommerce_button_padding_top',	array(
+		'label' => esc_html__( 'Button Top Bottom Padding','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_button_padding_right',array(
+	 	'default' => 20,
+	 	'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_button_padding_right',	array(
+	 	'label' => esc_html__( 'Button Right Left Padding','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+	 	'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+	 		'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_button_border_radius',array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_button_border_radius',array(
+		'label' => esc_html__( 'Button Border Radius','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+    $wp_customize->add_setting('advance_blogging_woocommerce_product_border',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_woocommerce_product_border',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable product border','advance-blogging'),
+       'section' => 'advance_blogging_woocommerce_options',
+    ));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_padding_top',array(
+		'default' => 10,
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_product_padding_top', array(
+		'label' => esc_html__( 'Product Top Bottom Padding','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_padding_right',array(
+		'default' => 10,
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_product_padding_right', array(
+		'label' => esc_html__( 'Product Right Left Padding','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_border_radius',array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('advance_blogging_woocommerce_product_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_blogging_woocommerce_product_box_shadow',array(
+		'default' => 0,
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+	$wp_customize->add_control( 'advance_blogging_woocommerce_product_box_shadow',array(
+		'label' => esc_html__( 'Product Box Shadow','advance-blogging' ),
+		'type' => 'number',
+		'section' => 'advance_blogging_woocommerce_options',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
 }
 add_action( 'customize_register', 'advance_blogging_customize_register' );
 

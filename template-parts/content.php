@@ -32,7 +32,7 @@
         </div>
         <div class="new-text">
             <div class="box-content">
-                <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+                <h2><a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
                 <?php if(get_theme_mod('advance_blogging_post_content') == 'Full Content'){ ?>
                     <?php the_content(); ?>
                 <?php }

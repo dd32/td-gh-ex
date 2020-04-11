@@ -8,17 +8,17 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function advance_blogging_menu_open() {
 	document.getElementById("menu-sidebar").style.width = "250px";
 }
-function resMenu_close() {
+function advance_blogging_menu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 
-function search_open() {
+function advance_blogging_search_open() {
 	jQuery(".serach_outer").animate({width: '100%'});
 }
-function search_close() {
+function advance_blogging_search_close() {
 	jQuery(".serach_outer").animate({width: '0'});
 }
 
