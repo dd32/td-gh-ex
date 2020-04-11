@@ -47,10 +47,9 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_portfolio_footer_copy', __('Copyright 2018 -', 'advance-portfolio')));?> <?php advance_portfolio_credit();?></p>
+        <p><?php advance_portfolio_credit();?> <?php echo esc_html(get_theme_mod('advance_portfolio_footer_copy', __('By Themeshopy', 'advance-portfolio')));?></p>
     </div>
 </footer>
-
 <?php if( get_theme_mod( 'advance_portfolio_enable_disable_scroll',true) != '') { ?>
     <?php $theme_lay = get_theme_mod( 'advance_portfolio_scroll_setting','Right');
       if($theme_lay == 'Left'){ ?>

@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-portfolio-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Portfolio is a clean, sleek and creative WordPress theme for building a portfolio website in the easiest possible way. It is made keeping in mind blogs, portfolios, photography sites, design studios, graphic designers, artists, painters, web designers, digital agencies, content creators and other artistic purposes. It is the perfect way to display creativity in your respective field with minimum efforts. It has various post formats like image, gallery, video, link to display posts in different styles. The theme is fully responsive and cross-browser compatible to adapt seamlessly on several devices and browsers. With numerous design elements, you can give personalized touch to your site. The theme is customizable without requiring anyone’s help. As documentation is provided with the theme, tweaking anything becomes even easier. To enhance the look of the theme, it is made with banners and sliders. It is made SEO-friendly for getting better user response. Also, it is made light-weight for faster loading of the site. The Advance Portfolio theme has gallery which will speak for your skills. The testimonial section is important to build visitors’ trust on you. Being built on Bootstrap framework, it is easy to use the theme. It is written in clean and secure code to maintain the coding standards. Demo: https://www.themeshopy.com/advance-portfolio-pro/
-Version: 0.4
+Version: 0.4.1
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-portfolio
@@ -257,6 +257,12 @@ iframe{
 .innerlightbox {
     padding: 2% 0 0;
 }
+/*elementor*/
+.elementor-html #loader, 
+.elementor-html #loader-wrapper{ 
+  display: none; 
+}
+
 /* ---------Buttons--------- */
 .read-moresec a.button{
 	background:#f54ea2;
@@ -1121,7 +1127,7 @@ a.showcoupon,
 }
 .products li {
   border: solid 1px #dcdcdc;
-  padding: 10px !important;
+  padding: 10px;
   text-align: center;
 }
 h2.woocommerce-loop-product__title,
@@ -1154,6 +1160,9 @@ h2.woocommerce-loop-product__title,
   border-radius: 0;
   border: solid 1px #000;
   color: #000;
+}
+.single-product .background-img-skin {
+  margin: 36px 0;
 }
 span.woocommerce-input-wrapper{
   width: 100%;
@@ -1321,7 +1330,15 @@ header.woocommerce-products-header {
 .woocommerce form.login{
   display: inline-block;
 }
-
+/*woocommerce pagination*/
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+  background: #f54ea2;
+  color: #000;
+}
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{
+  padding: 10px 15px;
+  font-size: 18px;
+}
 /* Sidebar */
 #sidebar caption{
 	color: #202020;
@@ -1785,7 +1802,7 @@ h1.page-title {
     padding: 10px;
     background-color: #f54ea2;
     color: #000;
-    font-size: 15px;
+    font-size: 14px;
   }
   #menu-sidebar input.search-field{
     background: #fff;
@@ -1800,7 +1817,7 @@ h1.page-title {
   }
   #contact-info label{
     margin: 0 auto;
-    width: 76%;
+    width: 75%;
     float: left;
   }
   .main-menu-navigation{

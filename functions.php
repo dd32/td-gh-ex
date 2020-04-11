@@ -289,13 +289,23 @@ function advance_portfolio_sanitize_choices($input, $setting) {
 		return $setting->default;
 	}
 }
+
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'advance_portfolio_loop_columns');
-	if (!function_exists('advance_portfolio_loop_columns')) {
-		function advance_portfolio_loop_columns() {
-	return 3; // 3 products per row
+if (!function_exists('advance_portfolio_loop_columns')) {
+	function advance_portfolio_loop_columns() {
+		$columns = get_theme_mod( 'advance_portfolio_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
 }
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'advance_portfolio_shop_per_page', 20 );
+function advance_portfolio_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'advance_portfolio_wooproducts_per_page', 9 );
+	return $cols;
+}
+
 define('ADVANCE_PORTFOLIO_BUY_NOW',__('https://www.themeshopy.com/themes/wordpress-portfolio-theme/','advance-portfolio'));
 define('ADVANCE_PORTFOLIO_LIVE_DEMO',__('https://themeshopy.com/advance-portfolio-pro/','advance-portfolio'));
 define('ADVANCE_PORTFOLIO_PRO_DOC',__('https://themeshopy.com/demo/docs/advance-portfolio-pro/','advance-portfolio'));
