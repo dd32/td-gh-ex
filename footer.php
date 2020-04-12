@@ -11,7 +11,7 @@
 </aside>
 <?php endif; ?>
 <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
-<div id="fmenu"><?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1' ) ); ?></div>
+<nav id="fmenu" role="navigation"><?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'depth' => '1' ) ); ?></nav>
 <?php endif; ?>
 <div id="copyright">
 &copy; <?php echo esc_html( date_i18n( __( 'Y', 'bands' ) ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>

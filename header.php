@@ -26,11 +26,9 @@ if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1
 ?>
 </div>
 <nav id="menu" role="navigation">
-<div id="search">
-<?php get_search_form(); ?>
-</div>
 <button type="button" class="menu-toggle"><span class="menu-icon">&#9776;</span><span class="menu-text screen-reader-text"><?php esc_html_e( ' Menu', 'bands' ); ?></span></button>
 <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+<div id="search"><?php get_search_form(); ?></div>
 </nav>
 </div>
 <div id="site-description"><?php bloginfo( 'description' ); ?></div>

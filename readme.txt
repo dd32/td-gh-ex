@@ -2,8 +2,8 @@
 
 Contributors: bandswp, bhadaway
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
-Requires at least: 5.3
-Tested up to: 5.3
+Requires at least: 5.4
+Tested up to: 5.4
 Stable tag: trunk
 License: GNU General Public License v3 or Later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -28,7 +28,7 @@ Dedicated theme for bands.
 
 === License ===
 
-Bands WordPress Theme © 2019 BandsWP
+Bands WordPress Theme © 2019-2020 BandsWP
 Bands is distributed under the terms of the GNU GPL
 
 The Bands theme package and all files contained within are distributed under the terms of the GNU GPL v3 or Later (https://www.gnu.org/licenses/gpl.html).

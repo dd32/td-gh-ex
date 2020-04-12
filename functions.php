@@ -1,7 +1,6 @@
 <?php
 add_action( 'after_setup_theme', 'bands_setup' );
-function bands_setup()
-{
+function bands_setup() {
 load_theme_textdomain( 'services', get_template_directory() . '/languages' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
@@ -23,8 +22,7 @@ add_theme_support( 'woocommerce' );
 }
 require_once ( get_template_directory() . '/about.php' );
 add_action( 'wp_enqueue_scripts', 'bands_load_scripts' );
-function bands_load_scripts()
-{
+function bands_load_scripts() {
 wp_enqueue_style( 'bands-style', get_stylesheet_uri() );
 wp_enqueue_script( 'jquery' );
 wp_register_script( 'bands-videos', get_template_directory_uri() . '/js/videos.js' );
@@ -35,11 +33,10 @@ add_action( 'wp_footer', 'bands_footer_scripts' );
 function bands_footer_scripts() {
 ?>
 <script>
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
 var deviceAgent = navigator.userAgent.toLowerCase();
 if (deviceAgent.match(/(iphone|ipod|ipad)/)) {
 $("html").addClass("ios");
-$("html").addClass("mobile");
 }
 if (navigator.userAgent.search("MSIE") >= 0) {
 $("html").addClass("ie");
@@ -118,8 +115,7 @@ return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-lin
 }
 add_filter( 'excerpt_more', 'bands_excerpt_read_more_link' );
 add_action( 'widgets_init', 'bands_widgets_init' );
-function bands_widgets_init()
-{
+function bands_widgets_init() {
 register_sidebar( array (
 'name' => esc_html__( 'Header Widget Area', 'bands' ),
 'id' => 'header-widget-area',
@@ -153,12 +149,10 @@ printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'ping
 }
 }
 add_action( 'comment_form_before', 'bands_enqueue_comment_reply_script' );
-function bands_enqueue_comment_reply_script()
-{
+function bands_enqueue_comment_reply_script() {
 if ( get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 }
-function bands_custom_pings( $comment )
-{
+function bands_custom_pings( $comment ) {
 ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php
@@ -263,7 +257,7 @@ array(
 add_action( 'customize_register', 'bands_customizer', 20 );
 function bands_customizer_css() {
 ?>
-<style type="text/css">
+<style>
 a, h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, pre, code{color:<?php echo esc_html( get_theme_mod( 'bands_accent_color' ) ); ?>}
 hr, .button, button, input[type="submit"], .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{background-color:<?php echo esc_html( get_theme_mod( 'bands_accent_color' ) ); ?>}
 blockquote, #content .gallery img, .box, .box-2, .box-3, .box-4, .box-5, .box-6, .box-1-3, .box-2-3{border-color:<?php echo esc_html( get_theme_mod( 'bands_accent_color' ) ); ?>}
