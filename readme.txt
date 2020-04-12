@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.4.1 | 12th April 2020 =
+* Fix: Issue with PHP 7.4
+
 = Version 3.4.0 | 10th March 2020 =
 * Update: Front page title logic to allow page meta to override theme options.
 * Update: Menu Classes, fixes issues with elementor nav widget.
