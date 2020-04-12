@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencewp.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.4.5 | 22nd January 2020 =
+* Update: Social Widget with aria-label
+* Update: Header Search with aria-label
+* Fix: Issue with PHP7.4
+
 = Version 1.4.4 | 22nd January 2020 =
 * Add: option to have background colors effect Gutenberg editor.
 * Update: Remove woocommerce notice about out of date template.

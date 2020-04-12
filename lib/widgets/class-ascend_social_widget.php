@@ -54,64 +54,61 @@ class ascend_social_widget extends WP_Widget {
 	    echo '<div class="kadence_social_widget clearfix">';
 
 	    if(!empty($instance['facebook'])):
-	        echo '<a href="'.esc_url($instance['facebook']).'" class="facebook_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Facebook"><i class="kt-icon-facebook"></i></a>';
+	        echo '<a href="'.esc_url($instance['facebook']).'" class="facebook_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Facebook" aria-label="Facebook"><i class="kt-icon-facebook"></i></a>';
 	    endif;
 	    if(!empty($instance['twitter'])):
-	        echo '<a href="'.esc_url($instance['twitter']).'" class="twitter_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Twitter"><i class="kt-icon-twitter"></i></a>';
+	        echo '<a href="'.esc_url($instance['twitter']).'" class="twitter_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Twitter" aria-label="Twitter"><i class="kt-icon-twitter"></i></a>';
 	    endif;
 	    if(!empty($instance['instagram'])):
-	        echo '<a href="'.esc_url($instance['instagram']).'" class="instagram_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Instagram"><i class="kt-icon-instagram"></i></a>';
-	    endif;
-	    if(!empty($instance['googleplus'])):
-	        echo '<a href="'.esc_url($instance['googleplus']).'" class="googleplus_link" rel="publisher" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="GooglePlus"><i class="kt-icon-google-plus"></i></a>';
+	        echo '<a href="'.esc_url($instance['instagram']).'" class="instagram_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Instagram" aria-label="Instagram"><i class="kt-icon-instagram"></i></a>';
 	    endif;
 	    if(!empty($instance['flickr'])):
-	        echo '<a href="'.esc_url($instance['flickr']).'" class="flickr_link" data-toggle="'.esc_attr($instance['tooltip']).'" target="_blank" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Flickr"><i class="kt-icon-flickr"></i></a>';
+	        echo '<a href="'.esc_url($instance['flickr']).'" class="flickr_link" data-toggle="'.esc_attr($instance['tooltip']).'" target="_blank" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Flickr" aria-label="Flickr"><i class="kt-icon-flickr"></i></a>';
 	    endif;
 	    if(!empty($instance['vimeo'])):
-	        echo '<a href="'.esc_url($instance['vimeo']).'" class="vimeo_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Vimeo"><i class="kt-icon-vimeo"></i></a>';
+	        echo '<a href="'.esc_url($instance['vimeo']).'" class="vimeo_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Vimeo" aria-label="Vimeo"><i class="kt-icon-vimeo"></i></a>';
 	    endif;
 	    if(!empty($instance['youtube'])):
-	        echo '<a href="'.esc_url($instance['youtube']).'" class="youtube_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="YouTube"><i class="kt-icon-youtube"></i></a>';
+	        echo '<a href="'.esc_url($instance['youtube']).'" class="youtube_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="YouTube" aria-label="YouTube"><i class="kt-icon-youtube"></i></a>';
 	    endif;
 	    if(!empty($instance['pinterest'])):
-	        echo '<a href="'.esc_url($instance['pinterest']).'" class="pinterest_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Pinterest"><i class="kt-icon-pinterest"></i></a>';
+	        echo '<a href="'.esc_url($instance['pinterest']).'" class="pinterest_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Pinterest" aria-label="Pinterest"><i class="kt-icon-pinterest"></i></a>';
 	    endif;
 	    if(!empty($instance['dribbble'])):
-	        echo '<a href="'.esc_url($instance['dribbble']).'" class="dribbble_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Dribbble"><i class="kt-icon-dribbble"></i></a>';
+	        echo '<a href="'.esc_url($instance['dribbble']).'" class="dribbble_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Dribbble" aria-label="Dribbble"><i class="kt-icon-dribbble"></i></a>';
 	    endif;
 	    if(!empty($instance['linkedin'])):
-	        echo '<a href="'.esc_url($instance['linkedin']).'" class="linkedin_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="LinkedIn"><i class="kt-icon-linkedin"></i></a>';
+	        echo '<a href="'.esc_url($instance['linkedin']).'" class="linkedin_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="LinkedIn" aria-label="LinkedIn"><i class="kt-icon-linkedin"></i></a>';
 	    endif;
 	    if(!empty($instance['tumblr'])):
-	        echo '<a href="'.esc_url($instance['tumblr']).'" class="tumblr_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Tumblr"><i class="kt-icon-tumblr"></i></a>';
+	        echo '<a href="'.esc_url($instance['tumblr']).'" class="tumblr_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Tumblr" aria-label="Tumblr"><i class="kt-icon-tumblr"></i></a>';
 	    endif;
 	    if(!empty($instance['stumbleupon'])):
-	        echo '<a href="'.esc_url($instance['stumbleupon']).'" class="stumbleupon_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="StumbleUpon"><i class="kt-icon-stumbleupon"></i></a>';
+	        echo '<a href="'.esc_url($instance['stumbleupon']).'" class="stumbleupon_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="StumbleUpon" aria-label="StumbleUpon"><i class="kt-icon-stumbleupon"></i></a>';
 	    endif;
 	    if(!empty($instance['vk'])):
-	        echo '<a href="'.esc_url($instance['vk']).'" class="vk_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="VK"><i class="kt-icon-vk"></i></a>';
+	        echo '<a href="'.esc_url($instance['vk']).'" class="vk_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="VK" aria-label="VK"><i class="kt-icon-vk"></i></a>';
 	    endif;
 	    if(!empty($instance['viadeo'])):
-	        echo '<a href="'.esc_url($instance['viadeo']).'" class="viadeo_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Viadeo"><i class="kt-icon-viadeo"></i></a>';
+	        echo '<a href="'.esc_url($instance['viadeo']).'" class="viadeo_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Viadeo" aria-label="Viadeo"><i class="kt-icon-viadeo"></i></a>';
 	    endif;
 	    if(!empty($instance['xing'])):
-	        echo '<a href="'.esc_url($instance['xing']).'" class="xing_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Xing"><i class="kt-icon-xing"></i></a>';
+	        echo '<a href="'.esc_url($instance['xing']).'" class="xing_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Xing" aria-label="Xing"><i class="kt-icon-xing"></i></a>';
 	    endif;
 	    if(!empty($instance['soundcloud'])):
-	        echo '<a href="'.esc_url($instance['soundcloud']).'" class="soundcloud_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Soundcloud"><i class="kt-icon-soundcloud"></i></a>';
+	        echo '<a href="'.esc_url($instance['soundcloud']).'" class="soundcloud_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Soundcloud" aria-label="Soundcloud"><i class="kt-icon-soundcloud"></i></a>';
 	    endif;
 	    if(!empty($instance['yelp'])):
-	        echo '<a href="'.esc_url($instance['yelp']).'" class="yelp_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Yelp"><i class="kt-icon-yelp"></i></a>';
+	        echo '<a href="'.esc_url($instance['yelp']).'" class="yelp_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Yelp" aria-label="Yelp"><i class="kt-icon-yelp"></i></a>';
 	    endif;
 	    if(!empty($instance['snapchat'])):
-	        echo '<a href="'.esc_url($instance['snapchat']).'" class="snapchat_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Snapchat"><i class="kt-icon-snapchat-ghost"></i></a>';
+	        echo '<a href="'.esc_url($instance['snapchat']).'" class="snapchat_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Snapchat" aria-label="Snapchat"><i class="kt-icon-snapchat-ghost"></i></a>';
 	    endif;
 	    if(!empty($instance['behance'])):
-	        echo '<a href="'.esc_url($instance['behance']).'" class="behance_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Behance"><i class="kt-icon-behance"></i></a>';
+	        echo '<a href="'.esc_url($instance['behance']).'" class="behance_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="Behance" aria-label="Behance"><i class="kt-icon-behance"></i></a>';
 	    endif;
 	    if(!empty($instance['rss'])):
-	        echo '<a href="'.esc_url($instance['rss']).'" class="rss_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="RSS"><i class="kt-icon-feed"></i></a>';
+	        echo '<a href="'.esc_url($instance['rss']).'" class="rss_link" target="_blank" data-toggle="'.esc_attr($instance['tooltip']).'" data-placement="'.esc_attr($instance['tooltip_dir']).'" data-original-title="RSS" aria-label="RSS"><i class="kt-icon-feed"></i></a>';
 	    endif;
 
 	    echo '</div>';
@@ -125,7 +122,6 @@ class ascend_social_widget extends WP_Widget {
 	    $instance['facebook'] 		= esc_url_raw($new_instance['facebook']);
 	    $instance['twitter'] 		= esc_url_raw($new_instance['twitter']);
 	    $instance['instagram'] 		= esc_url_raw($new_instance['instagram']);
-	    $instance['googleplus'] 	= esc_url_raw($new_instance['googleplus']);
 	    $instance['flickr'] 		= esc_url_raw($new_instance['flickr']);
 	    $instance['vimeo'] 			= esc_url_raw($new_instance['vimeo']);
 	    $instance['youtube'] 		= esc_url_raw($new_instance['youtube']);
@@ -153,7 +149,6 @@ class ascend_social_widget extends WP_Widget {
 	    $facebook = isset($instance['facebook']) ? esc_attr($instance['facebook']) : '';
 	    $twitter = isset($instance['twitter']) ? esc_attr($instance['twitter']) : '';
 	    $instagram = isset($instance['instagram']) ? esc_attr($instance['instagram']) : '';
-	    $googleplus = isset($instance['googleplus']) ? esc_attr($instance['googleplus']) : '';
 	    $flickr = isset($instance['flickr']) ? esc_attr($instance['flickr']) : '';
 	    $vimeo = isset($instance['vimeo']) ? esc_attr($instance['vimeo']) : '';
 	    $youtube = isset($instance['youtube']) ? esc_attr($instance['youtube']) : '';
@@ -200,10 +195,6 @@ class ascend_social_widget extends WP_Widget {
 	    <p>
 	      	<label for="<?php echo esc_attr($this->get_field_id('instagram')); ?>"><?php _e('Instagram:', 'ascend'); ?></label>
 	      	<input class="widefat" id="<?php echo esc_attr($this->get_field_id('instagram')); ?>" name="<?php echo esc_attr($this->get_field_name('instagram')); ?>" type="text" value="<?php echo esc_attr($instagram); ?>" />
-	    </p>
-	    <p>
-	      	<label for="<?php echo esc_attr($this->get_field_id('googleplus')); ?>"><?php _e('GooglePlus:', 'ascend'); ?></label>
-	      	<input class="widefat" id="<?php echo esc_attr($this->get_field_id('googleplus')); ?>" name="<?php echo esc_attr($this->get_field_name('googleplus')); ?>" type="text" value="<?php echo esc_attr($googleplus); ?>" />
 	    </p>
 	    <p>
 	      	<label for="<?php echo esc_attr($this->get_field_id('flickr')); ?>"><?php _e('Flickr:', 'ascend'); ?></label>

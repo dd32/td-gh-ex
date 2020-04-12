@@ -193,7 +193,7 @@ function ascend_header_extras($class = 'sf-menu-normal', $side = null) {
 					case 'search':
 						if($value == '1') { ?>
 				        	 <li class="menu-search-icon-kt">
-								<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" href="<?php echo esc_url(home_url().'/?s='); ?>">
+								<a class="kt-menu-search-btn kt-pop-modal" data-mfp-src="#kt-extras-modal-search" aria-label="<?php echo esc_attr__( 'Search', 'ascend' ); ?>" href="<?php echo esc_url(home_url().'/?s='); ?>">
 									<span class="kt-extras-label"><i class="kt-icon-search"></i></span>
 								</a>
 				        	</li>
