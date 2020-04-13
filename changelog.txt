@@ -4,7 +4,12 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
-Version 2.7.3
+Version 2.7.4 [12-04-2020]
+	* Fixed: The option "Show full content in archive pages" is not working
+	* Fixed: Styling for Read More button when using Block Editor
+	* Fixed: Warning message if allow_url_fopen is disabled in the server
+
+Version 2.7.3 [24-2-2020]
 	* Added: Google Fonts are now loaded asynchronously using Webfont Loader
 	* Added: Optimized images
 	* Added: Parse shortcode and formatting in taxonomy description

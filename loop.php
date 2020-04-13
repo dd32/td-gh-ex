@@ -54,7 +54,12 @@
 				<?php if ( stripos( $graphene_settings['addthis_location'], 'top' ) !== false && $graphene_settings['show_addthis_archive'] ) { graphene_addthis( get_the_ID() ); } ?>
                 
 				<?php /* The excerpt */ ?>
-				<?php the_excerpt(); ?>
+				<?php 
+					if ( ! is_singular() && $graphene_settings['archive_full_content'] ) 
+						the_content();
+					else 
+						the_excerpt(); 
+				?>
 
 			<?php endif; ?>
 			

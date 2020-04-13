@@ -112,6 +112,17 @@ endif;
 
 
 /**
+ * Modify the output of WordPress More link
+ */
+function graphene_the_content_more_link( $output ) {
+	$output = str_replace( 'more-link', 'more-link btn', $output );
+
+	return $output;
+}
+add_filter( 'the_content_more_link', 'graphene_the_content_more_link' );
+
+
+/**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and graphene_continue_reading_link().
  * Based on the function from Twenty Ten theme.
  *

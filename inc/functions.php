@@ -36,7 +36,9 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 
 			if ( $image ) $header_img = $image;
 			elseif ( $header_img ) {
-				$dimension = getimagesize( $header_img );
+				if ( ini_get( 'allow_url_fopen' ) ) $dimension = getimagesize( $header_img );
+				else $dimension = array( '', '' );
+				
 				$header_img = array( $header_img, $dimension[0], $dimension[1] );
 			}
 
@@ -134,7 +136,10 @@ function graphene_get_image_html( $image_src_or_id, $size = '', $alt = '' ){
 			$height = '';
 			$width = '';
 
-			$image_size = getimagesize( $image_src_or_id );
+			
+			if ( ini_get( 'allow_url_fopen' ) ) $image_size = getimagesize( $image_src_or_id );
+			else $image_size = array( '', '' );
+
 			if ( $image_size && isset( $image_size[0] ) && isset( $image_size[1] ) ) {
 				if ( $image_size[0] && is_numeric( $image_size[0] ) ) $width = $image_size[0];
 				if ( $image_size[1] && is_numeric( $image_size[1] ) ) $height = $image_size[1];
