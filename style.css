@@ -1,10 +1,10 @@
 /*!
 Theme Name: Agency Plus
-Theme URI: https://www.wpmanesh.com/free-wordpress-themes/agency-plus/
-Author: Manesh Timilsina
-Author URI: https://www.wpmanesh.com/
+Theme URI: https://www.wpconcern.com/downloads/agency-plus/
+Author: WP Concern
+Author URI: https://www.wpconcern.com/
 Description: Agency Plus is a secure, speed optimized and fully customizable multi-purpose WordPress theme. It works perfectly with Gutenberg, Elementor, Beaver Builder, Brizy, KingComposer and most of the page builder plugins. Agency Plus is the perfect theme for agency, blogs, small business, startups, portfolio, law firm, university, school, college, medical and WooCommerce storefront with a beautiful & professional design. 
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: agency-plus
@@ -975,7 +975,7 @@ a:hover, a:active {
 .post-meta > span:before {
 	content: "";
     display: inline-block;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     height: 15px;
     margin-right: 10px;
     color: #404040;
@@ -1535,8 +1535,8 @@ object {
     color: #fff;
     content: "\f0c1";
     display: block;
-    font-family: FontAwesome;
-    font-weight: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     color: #383737;
 }
 
@@ -1552,124 +1552,155 @@ object {
 }
 
 .menu-social-menu-container ul li a[href*="facebook.com"]::before {
-    content: "\f09a";
+    content: "\f39e";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="twitter.com"]::before {
     content: "\f099";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="linkedin.com"]::before {
     content: "\f0e1";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="plus.google.com"]::before {
     content: "\f0d5";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="youtube.com"]::before {
     content: "\f167";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="dribbble.com"]::before {
     content: "\f17d";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="pinterest.com"]::before {
     content: "\f0d2";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="bitbucket.org"]::before {
     content: "\f171";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="github.com"]::before {
     content: "\f113";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="codepen.io"]::before {
     content: "\f1cb";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="flickr.com"]::before {
     content: "\f16e";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href$="/feed/"]::before {
     content: "\f09e";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="foursquare.com"]::before {
     content: "\f180";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="instagram.com"]::before {
     content: "\f16d";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="tumblr.com"]::before {
     content: "\f173";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="reddit.com"]::before {
     content: "\f1a1";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="vimeo.com"]::before {
     content: "\f194";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="digg.com"]::before {
     content: "\f1a6";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="twitch.tv"]::before {
     content: "\f1e8";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="stumbleupon.com"]::before {
     content: "\f1a4";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="delicious.com"]::before {
     content: "\f1a5";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="mailto:"]::before {
     content: "\f0e0";
+    font-family: "Font Awesome 5 Brands";
 }
 .menu-social-menu-container ul li a[href*="soundcloud.com"]::before {
     content: "\f1be";
+    font-family: "Font Awesome 5 Brands";
 }
 .menu-social-menu-container ul li a[href*="wordpress.org"]::before {
     content: "\f19a";
+    font-family: "Font Awesome 5 Brands";
 }
 .menu-social-menu-container ul li a[href*="wordpress.com"]::before {
     content: "\f19a";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="jsfiddle.net"]::before {
     content: "\f1cc";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="tripadvisor.com"]::before {
     content: "\f262";
+    font-family: "Font Awesome 5 Brands";
 }
 
-.menu-social-menu-container ul li a[href*="foursquare.com"]::before {
-    content: "\f180";
+.menu-social-menu-container ul li a[href*="xing.com"]::before {
+    content: "\f168";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="angel.co"]::before {
     content: "\f209";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="vk.com"]::before {
     content: "\f189";
+    font-family: "Font Awesome 5 Brands";
 }
 
 .menu-social-menu-container ul li a[href*="slack.com"]::before {
     content: "\f198";
+    font-family: "Font Awesome 5 Brands";
 }
 
 /*--------------------------------------------------------------
@@ -1719,6 +1750,22 @@ object {
 .site-branding  img {
 	height: 50px;
 	width: auto;
+}
+
+body.sticky-header-enabled .site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  -ms-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  -o-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.06); 
+}
+
+body.admin-bar.sticky-header-enabled .site-header{
+	top: 32px;
 }
 
 /*--------------------------------------------------------------
@@ -2017,7 +2064,7 @@ object {
 --------------------------------------------------------------*/
 .additional-btn .nav-additional-btn {
 	float: right;
-	padding: 7px 12px;
+	padding: 5px 25px;
 	background: transparent;
 	color: #a86500;
 	border: 1px solid #a86500;
@@ -2232,8 +2279,8 @@ object {
     color: #fff;
     content: "\f0c1";
     display: block;
-    font-family: FontAwesome;
-    font-weight: normal;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     line-height: 45px;
 }
 
@@ -2324,7 +2371,8 @@ object {
 
 #secondary ul li:before {
 	content: "\f105";
-	font-family: "FontAwesome";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	font-size: 12px;
 	color: #404040;
 	position: absolute;
@@ -2511,7 +2559,8 @@ h2.entry-title a:hover{
 
   .error-404.not-found:after {
   	content: "\f119";
-  	font-family: "FontAwesome";
+  	font-family: "Font Awesome 5 Free";
+  	font-weight: 900;
   	font-size: 145px;
   	color: #ff0000;
   	opacity: 0.3;
@@ -3298,8 +3347,9 @@ a.button.add_to_cart_button,
 }
 
 .scrollup:before {
-    content:"\f176";
-    font-family: "FontAwesome";
+    content:"\f30c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     font-size: 18px;
     color: #adadad;
     line-height: 35px;
@@ -3439,6 +3489,14 @@ p.eddr-notice.eddr-cart-item-notice em {
 }
 
 @media screen and (max-width: 767px) {
+
+	body.sticky-header-enabled .site-header {
+		position: static; 
+	}
+
+	.sticky-header-enabled #content{
+		margin-top: 0!important;
+	}
 
 	#primary,
 	#secondary {

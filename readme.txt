@@ -1,14 +1,12 @@
 === Agency Plus ===
 
-Contributors: maneshtimilsina
-Tags: custom-background, custom-menu, custom-logo, featured-images, full-width-template, one-column, two-columns, theme-options, threaded-comments, translation-ready, footer-widgets, left-sidebar, right-sidebar, blog, education, e-commerce
-
-Requires at least: 4.7
-Requires PHP: 5.2
-Tested up to: 5.3.2
-Stable tag: 1.0.2
+Contributors: wpconcern
+Requires at least: 5.2
+Requires PHP: 5.6.20
+Tested up to: 5.4
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
@@ -22,7 +20,7 @@ Agency Plus is a secure, speed optimized and fully customizable multi-purpose Wo
 
 == License ==
 
-Agency Plus WordPress Theme, Copyright (C) 2019, Manesh Timilsina
+Agency Plus WordPress Theme, Copyright (C) 2020, WP Concern
 Agency Plus is distributed under the terms of the GNU GPL
 
 == Frequently Asked Questions ==
@@ -32,6 +30,12 @@ Agency Plus is distributed under the terms of the GNU GPL
 Agency Plus includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.3 - Apr 13 2020 =
+* Fix minor issues
+* Few CSS tweaks
+* FontAwesome updated
+* Theme info page updated
 
 = 1.0.2 - January 14 2020 =
 * Theme URL, Demo URL and Author URL updated
