@@ -64,7 +64,7 @@ function digital_hdmenu() {
 		echo '<ul>';
 		if ('page' != get_option('show_on_front')) {
 		if (is_front_page())
-		$class = 'class="current_page_item home-icon"';
+		$class = 'class="current-menu-item home-icon"';
 		else
 		$class = 'class="home-icon"';
 		echo '<li ' . $class . ' ><a href="'.esc_url(home_url()) . '/"><i class="fa fa-home"></i></a></li>';
@@ -76,7 +76,7 @@ add_filter( 'wp_nav_menu_items', 'digital_home_link', 10, 2 );
 
 function digital_home_link($items, $args) {
 	if (is_front_page())
-	$class = 'class="current_page_item home-icon"';
+	$class = 'class="current-menu-item home-icon"';
 	else
 	$class = 'class="home-icon"';
 	$homeMenuItem =
@@ -145,7 +145,7 @@ $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s<
 function digital_theme_setup() { 
 	 
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'defaultthumb', 390, 210, true);
+		add_image_size( 'digital_defaultthumb', 350, 230, true);
 		add_image_size( 'popularpost', 75, 75, true );
 		add_image_size( 'latestpost', 125, 120, true );
 		set_post_thumbnail_size( 390, 210, true  );
@@ -440,10 +440,9 @@ function digital_site_description() {
 }
 endif;
 
-
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
-
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
+if ( class_exists( 'WooCommerce' ) ) {
+add_filter( 'woocommerce_add_to_cart_fragments', 'digital_woocommerce_header_add_to_cart_fragment' );
+function digital_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
 
 	ob_start();
@@ -453,5 +452,6 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	<?php
 	$fragments['a.cart-flotingcarte'] = ob_get_clean();
 	return $fragments;
+}
 }
 ?>

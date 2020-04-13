@@ -2,7 +2,7 @@
 Theme Name: Digital
 Theme URI: https://www.insertcart.com/product/digital-wp-theme/
 Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support WooCommerce plugin supported with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products. Demo https://www.insertcart.com/themes-demo?theme=Digital
-Version: 2.1
+Version: 2.2
 Author: insertcart.com
 Author URI: https://www.insertcart.com/
 Tags: custom-logo, custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, sticky-post, blog, photography, news, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress 
@@ -2200,6 +2200,9 @@ a.cart-flotingcarte i {
     font-size: 20px;
     border-radius: 5px 0px 0px 0px;
     border: 1px solid #ddd;
+}
+a.cart-flotingcarte:hover {
+    color: #dfd7d7;
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {

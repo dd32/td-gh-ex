@@ -26,6 +26,7 @@ function optionscheck_display_sidebar() { ?>
 				</li>
 			</ol>
                     <p><?php _e('Here are some more option related to basic theme setup.','digital'); ?></p>
+					<p><b>Get android app for your website only at $30 <a href="https://www.insertcart.com/product/android-app-for-your-website/">Here</a></b></p>
                 </div>
         </div>
     </div>
