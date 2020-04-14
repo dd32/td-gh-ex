@@ -1,9 +1,9 @@
 === Annina ===
-Contributors: CrestaProject
+Contributors: crestaproject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, blog, news
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.7.4
+Tested up to: 5.4
+Stable tag: 1.7.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,13 +31,17 @@ Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry 
 * Images used in Theme Screenshot
 	1. PxHere https://pxhere.com/en/photo/106481 licensed under CC0
 	2. PxHere https://pxhere.com/en/photo/1333672 licensed under CC0
-	3. Pixabay (http://pixabay.com/it/servizio-computer-riparazione-428540/) Free photos for commercial and personal works
+	3. Pixabay http://pixabay.com/it/servizio-computer-riparazione-428540/ Free photos for commercial and personal works
 	4. PxHere https://pxhere.com/en/photo/949610 licensed under CC0
 	5. PxHere https://pxhere.com/en/photo/970472 licensed under CC0
 	6. PxHere https://pxhere.com/en/photo/941491 licensed under CC0
 	7. PxHere https://pxhere.com/en/photo/1476815 licensed under CC0
 
 == Changelog ==
+= Version 1.7.5 =
+* Added compatibility with WPML for String Translation
+* Minor bug fixes
+
 = Version 1.7.4 =
 * Added Twitch social icon
 * Minor bug fixes
