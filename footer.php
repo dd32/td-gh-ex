@@ -7,7 +7,7 @@
 */
 ?>
 </div> <!--Content -->
-<footer>
+<footer class="title-power-df">
   <div class="jumbotron">
     <!-- Social Icons Contact -->
 <div class="container-fluid">
@@ -38,7 +38,7 @@
         &copy; <?php echo esc_html(date("Y")); echo " "; echo bloginfo('name'); ?>
       </p>
     <?php endif; ?>
-    <p class="title-power">
+    <p class="title-power-df">
       <?php
       $avik_theme_author = esc_url(franchi_design_url );
       printf( esc_html__( 'Avik by %1$s', 'avik' ), '<a href="'.$avik_theme_author.'" rel="designer">Franchi Design</a>' );

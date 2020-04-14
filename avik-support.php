@@ -13,7 +13,7 @@ function avik_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html__('Avik','avik');?></h2>
-		  	<span><?php echo esc_html__('V 1.4.0','avik');?></span>
+		  	<span><?php echo esc_html__('V 1.4.1','avik');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>

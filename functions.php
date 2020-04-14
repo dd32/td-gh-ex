@@ -859,13 +859,13 @@ function avik_add_script() {
 }
 
 
-if( get_option( 'avik_4_dismiss_notice' ) != true ) {
+if( get_option( 'avik_6_dismiss_notice' ) != true ) {
 
 add_action( 'admin_notices', 'avik_add_dismissible' );
 }
 function avik_add_dismissible() {
   ?>
-   <div class='notice notice-success avik-4-dismiss-notice avik-class-update is-dismissible'>
+   <div class='notice notice-success avik-6-dismiss-notice avik-class-update is-dismissible'>
 	   <div class="df-logo">
 		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
 	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
@@ -902,9 +902,9 @@ function avik_add_dismissible() {
   <?php
 }
 
-add_action( 'wp_ajax_avik_4_dismiss_notice', 'avik_4_dismiss_notice' );
-function avik_4_dismiss_notice() {
-update_option( 'avik_4_dismiss_notice', true );
+add_action( 'wp_ajax_avik_6_dismiss_notice', 'avik_6_dismiss_notice' );
+function avik_6_dismiss_notice() {
+update_option( 'avik_6_dismiss_notice', true );
 }
 
 /* 21 Url Admin Upload 
@@ -981,6 +981,10 @@ add_filter( 'pt-ocdi/plugin_page_setup', 'avik_plugin_page_setup' );
 
 // No Banner 
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
+
+
+
+
 
 
 

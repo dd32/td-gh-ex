@@ -29,3 +29,4 @@ get_template_part( 'sections/section',esc_html( get_theme_mod('avik_order_sect_4
 get_template_part( 'sections/section',esc_html( get_theme_mod('avik_order_sect_5','contact') )); 
 
  get_footer(); ?>
+

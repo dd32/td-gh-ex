@@ -1719,7 +1719,7 @@ array(
 				'priority'=> 10,
 )));
 		// Social Team 2
-		// Notice
+// Notice
 $wp_customize->add_setting( 'avik_team_2_notice',
 array(
    'sanitize_callback' => 'avik_text_sanitization'
