@@ -2,9 +2,9 @@
 Contributors: VWthemes
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, translation-ready, threaded-comments, post-formats, rtl-language-support, blog, portfolio, e-commerce
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.4
 Requires PHP: 7.2.14
-Stable tag: 0.3.9
+Stable tag: 0.4
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -83,6 +83,15 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 * Added related post option in customizer.
 * Added show/hide option for logo title and tagline.
 * Added show/hide option for tags in customizer.
+
+= 0.4 =
+* Added post content options in customizer.
+* Added post content excerpt suffix option in customizer. 
+* Added about us widgets in widgets options.
+* Added contact us widgets in widgets options.
+* Added selective refresh. 
+* Resolved errors.
+* Done the css customization.
 
 == Resources ==
 

@@ -36,6 +36,9 @@ function automotive_centre_setup() {
 		'default-color' => 'ffffff'
 	) );
 
+	//selective refresh for sidebar and widgets
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
@@ -320,6 +323,12 @@ function automotive_centre_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
+/* admin bar */
+function automotive_centre_my_filter_head(){
+	remove_action('wp_head','_admin_bar_bump_cb');
+}
+add_action('get_header','automotive_centre_my_filter_head');
+
 //define
 define('AUTOMOTIVE_FREE_THEME_DOC',__('https://www.vwthemesdemo.com/docs/free-automotive/','automotive-centre'));
 define('AUTOMOTIVE_SUPPORT',__('https://wordpress.org/support/theme/automotive-centre/','automotive-centre'));
@@ -356,7 +365,13 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /* Customizer additions. */
-require get_template_directory() . '/inc/social-widgets/social-icon.php';
+require get_template_directory() . '/inc/themes-widgets/social-icon.php';
+
+/* Customizer additions. */
+require get_template_directory() . '/inc/themes-widgets/about-us-widget.php';
+
+/* Customizer additions. */
+require get_template_directory() . '/inc/themes-widgets/contact-us-widget.php';
 
 /* Typography */
 require get_template_directory() . '/inc/typography/ctypo.php';

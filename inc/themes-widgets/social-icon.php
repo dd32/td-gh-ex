@@ -6,11 +6,8 @@
 class Automotive_Centre_Social_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
-		// Base ID of your widget
 			'Automotive_Centre_Social_Widget', 
-			// Widget name will appear in UI
-			__('Social Icon', 'automotive-centre'),
-			// Widget description
+			__('VW Social Icon', 'automotive-centre'),
 			array( 'description' => __( 'Widget for Social icons section', 'automotive-centre' ), ) 
 		);
 	}

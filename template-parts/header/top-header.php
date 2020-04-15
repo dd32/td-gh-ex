@@ -44,7 +44,7 @@
         <div class="row info-box">
           <?php if( get_theme_mod( 'automotive_centre_phone_text') != '' || get_theme_mod( 'automotive_centre_phone_number') != '') { ?>
             <div class="col-lg-2 col-md-12 col-3">
-              <i class="<?php echo esc_html(get_theme_mod('automotive_centre_phone_icon','fas fa-phone')); ?>"></i>
+              <i class="<?php echo esc_attr(get_theme_mod('automotive_centre_phone_icon','fas fa-phone')); ?>"></i>
             </div>
             <div class="col-lg-10 col-md-12 col-9">
               <h6><?php echo esc_html(get_theme_mod('automotive_centre_phone_text',''));?></h6>
@@ -57,7 +57,7 @@
         <div class="row info-box">
           <?php if( get_theme_mod( 'automotive_centre_email_text') != '' || get_theme_mod( 'automotive_centre_email_address') != '') { ?>
             <div class="col-lg-2 col-md-12 col-3">
-              <i class="<?php echo esc_html(get_theme_mod('automotive_centre_email_icon','fas fa-envelope-open')); ?>"></i>
+              <i class="<?php echo esc_attr(get_theme_mod('automotive_centre_email_icon','fas fa-envelope-open')); ?>"></i>
             </div>
             <div class="col-lg-10 col-md-12 col-9">
               <h6><?php echo esc_html(get_theme_mod('automotive_centre_email_text',''));?></h6>

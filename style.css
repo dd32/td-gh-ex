@@ -4,7 +4,7 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version: 0.3.9
+Version: 0.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -85,7 +85,7 @@ select{
   border-bottom: 1px solid #000;
   text-decoration:none !important;
 } 
-.serach_inner input.search-field:focus, .serach_inner input.search-submit:focus, .closepop a:focus{
+.serach_inner input.search-field:focus, .serach_inner input.search-submit:focus, a.closepop:focus{
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
   text-decoration:none !important;
@@ -336,7 +336,6 @@ p.site-description {
   position: absolute;
   top: 20%;
   transform: translateY(-50%);
-  width: 100%;
   right: 0;
   text-align: right;
   margin-right: 28px;
@@ -1561,6 +1560,64 @@ h2#reply-title {
 .post-navigation .post-title {
   display:none;
 }
+/*------------- About us widgets --------------*/
+#footer .more-button, #sidebar .more-button {
+  margin: 20px 0px 10px 0px;
+}
+#footer a.custom_read_more, #sidebar a.custom_read_more {
+  padding: 12px 18px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  background: #88d055;
+  border-radius: 25px;
+  letter-spacing: 1px;
+}
+#footer p.custom_author, #sidebar p.custom_author {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px 0 4px;
+}
+#footer p.custom_designation, #sidebar p.custom_designation {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+#sidebar a.custom_read_more:hover{
+  background: #010203;
+  color: #fff;
+}
+#footer a.custom_read_more:hover {
+  background: #fff;
+  color: #88d055;
+}
+.custom-about-us h3.custom_title {
+  text-align: left;
+}
+.custom-about-us {
+  text-align: center;
+}
+/*------------- Contact us widgets --------------*/
+.custom_details {
+  font-size: 15px;
+  font-weight: bold;
+}
+.custom-social-icons input[type="text"], .custom-social-icons input[type="email"], .custom-social-icons textarea {
+  margin: 0;
+  background: transparent;
+}
+form.wpcf7-form {
+  margin-top: 20px;
+}
+#sidebar .custom-contact-us form {
+  text-align: left;
+}
+#sidebar .custom-contact-us label{
+  width: 100%;
+}
+#sidebar .custom-contact-us input[type="submit"]{
+  width: 100%;
+}
 /*------------- WOOCOMMERCE CSS --------------*/
 .woocommerce ul.products li.product .button,
 a.checkout-button.button.alt.wc-forward {
@@ -1712,7 +1769,18 @@ section.related.products h2 {
 .woocommerce .star-rating{
   font-size: 15px;
 }
+.admin-bar .home-page-header{
+  margin-top: 32px;
+}
 /*------------------RESPONSIVE MEIDA-------------------*/
+@media screen and (max-width:600px) {
+  .admin-bar .home-page-header{
+    margin-top: 46px;
+  }
+  .admin-bar .header-fixed{
+    margin-top:0px;
+  }
+}
 @media screen and (max-width:720px) {
   #slider .inner_carousel,.logo,
   #topbar .custom-social-icons{
@@ -1821,6 +1889,7 @@ section.related.products h2 {
     display: block !important;
     color: #000;
     padding: 0;
+    top:0;
   }
   .sidenav #site-navigation {
     width: 100%;
