@@ -6,8 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '3cb25d838d17e888ff9c0f436747c1e2' => $baseDir . '/framework/framework.php',
-    'ed4956e90d7e1912f5ab226c42f5d3c4' => $baseDir . '/framework/functions-filters.php',
-    '60881509ffb29491cf7dc93690a16d46' => $baseDir . '/framework/functions-scripts.php',
-    'f6f746805878a2137e61200cb750c785' => $baseDir . '/framework/functions-setup.php',
+    '868a5cd0efed56b65e005f13e5739e9a' => $vendorDir . '/benlumia007/backdrop-core/src/Entry/functions-entry.php',
+    'b8432723926523252eb75b0483e178bd' => $vendorDir . '/benlumia007/backdrop-core/src/Site/functions-site.php',
+    '09a21c473123f913191bf7fd35a8307c' => $vendorDir . '/benlumia007/backdrop-core/src/Template/functions-template.php',
+    '056745047aa0d77a8a8e5c4f3564175c' => $vendorDir . '/benlumia007/backdrop-core/src/View/functions-view.php',
+    '8529d1016f8c7d8f6b0c86687d7e5d82' => $baseDir . '/app/framework.php',
+    '674ec1a8f15c3b2d84fbf0cd9581d8a7' => $baseDir . '/app/functions-filters.php',
+    '9f1cf439ec51bb88a4ab577e81d20e8c' => $baseDir . '/app/functions-scripts.php',
+    '29b495954338b38a23952821b092bc5e' => $baseDir . '/app/functions-setup.php',
 );

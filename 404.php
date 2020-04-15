@@ -3,21 +3,19 @@
  * Silver Quantum ( 404.php )
  *
  * @package     Silver Quantum
- * @copyright   Copyright (C) 2014-2019. Benjamin Lu
+ * @copyright   Copyright (C) 2014-2020. Benjamin Lu
  * @license     GNU General Public License v2 or later ( https://www.gnu.org/licenses/gpl-2.0.html )
  * @author      Benjamin Lu ( https://benjlu.com )
  */
-
-use Benlumia007\Backdrop\View\View as sidebar;
 ?>
 
 <?php get_header(); ?>
 	<section id="content" class="site-content">
-		<div id="global-layout" class="<?php echo esc_attr( get_theme_mod( 'global_layout', 'left-sidebar' ) ); ?>">
+		<div id="global-layout" class="no-sidebar">
 			<main id="main" class="content-area">
-				<?php get_template_part( 'views/content/content', '404'); ?>
+				<?php Benlumia007\Backdrop\Template\get_template_part( 'content/content', '404' ); ?>
 			</main>
-			<?php sidebar::display( 'sidebar', [ 'primary' ] ); ?>
+			<?php Benlumia007\Backdrop\View\display( 'sidebar', [ 'primary' ] ); ?>
 		</div>
 	</section>
 <?php get_footer(); ?>

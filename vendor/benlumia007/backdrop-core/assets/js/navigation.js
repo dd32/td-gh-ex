@@ -100,7 +100,7 @@
 
 	function initMainNavigation(container) {
 		// Add dropdown toggle that display child menu items.
-		container.find('.menu-item-has-children > a, .page_item_has_children > a').after('<button class="dropdown-toggle" aria-expanded="false">' + backdropScreenReaderText.expand + '</button>');
+		container.find('.menu-item-has-children > a, .page_item_has_children > a').after('<button class="dropdown-toggle" aria-expanded="false">' + backdropCoreScreenReaderText.expand + '</button>');
 
 		container.find('.dropdown-toggle').click(function(e) {
 			var _this = $(this);
@@ -108,7 +108,7 @@
 			_this.toggleClass('toggle-on');
 			_this.next('.children, .sub-menu').toggleClass('toggled-on');
 			_this.attr('aria-expanded', _this.attr('aria-expanded') === 'false' ? 'true' : 'false');
-			_this.html(_this.html() === backdropScreenReaderText.expand ? backdropScreenReaderText.collapse : backdropScreenReaderText.expand);
+			_this.html(_this.html() === backdropCoreScreenReaderText.expand ? backdropCoreScreenReaderText.collapse : backdropCoreScreenReaderText.expand);
 		});
 	}
 	initMainNavigation( $('.primary-navigation'));

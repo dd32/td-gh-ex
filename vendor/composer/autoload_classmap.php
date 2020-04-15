@@ -6,19 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Benlumia007\\Backdrop\\Contracts\\Admin\\Admin' => $vendorDir . '/benlumia007/backdrop-core/src/Contracts/Admin/Admin.php',
-    'Benlumia007\\Backdrop\\Contracts\\Customize\\Customize' => $vendorDir . '/benlumia007/backdrop-core/src/Contracts/Customize/Customize.php',
-    'Benlumia007\\Backdrop\\Contracts\\Displayable' => $vendorDir . '/benlumia007/backdrop-core/src/Contracts/Displayable.php',
-    'Benlumia007\\Backdrop\\Contracts\\Renderable' => $vendorDir . '/benlumia007/backdrop-core/src/Contracts/Renderable.php',
-    'Benlumia007\\Backdrop\\Contracts\\Viewable' => $vendorDir . '/benlumia007/backdrop-core/src/Contracts/Viewable.php',
-    'Benlumia007\\Backdrop\\Entry\\Entry' => $vendorDir . '/benlumia007/backdrop-core/src/Entry/Entry.php',
-    'Benlumia007\\Backdrop\\Framework' => $vendorDir . '/benlumia007/backdrop-core/src/Framework.php',
-    'Benlumia007\\Backdrop\\Helpers\\Sanitize' => $vendorDir . '/benlumia007/backdrop-core/src/Helpers/Sanitize.php',
-    'Benlumia007\\Backdrop\\Menu\\Menu' => $vendorDir . '/benlumia007/backdrop-core/src/Menu/Menu.php',
-    'Benlumia007\\Backdrop\\Sidebar\\Sidebar' => $vendorDir . '/benlumia007/backdrop-core/src/Sidebar/Sidebar.php',
-    'Benlumia007\\Backdrop\\Site\\Site' => $vendorDir . '/benlumia007/backdrop-core/src/Site/Site.php',
-    'Benlumia007\\Backdrop\\View\\View' => $vendorDir . '/benlumia007/backdrop-core/src/View/View.php',
-    'SilverQuantum\\Component\\Admin' => $baseDir . '/framework/Component/Admin.php',
-    'SilverQuantum\\Component\\Customize' => $baseDir . '/framework/Component/Customize.php',
-    'SilverQuantum\\Control\\ImageRadio' => $baseDir . '/framework/Control/ImageRadio.php',
 );

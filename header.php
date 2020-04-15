@@ -3,13 +3,10 @@
  * Silver Quantum ( header.php )
  *
  * @package     Silver Quantum
- * @copyright   Copyright (C) 2014-2019. Benjamin Lu
+ * @copyright   Copyright (C) 2014-2020. Benjamin Lu
  * @license     GNU General Public License v2 or later ( https://www.gnu.org/licenses/gpl-2.0.html )
- * @author      Benjamin Lu ( https://luthemes.com )
+ * @author      Benjamin Lu ( https://benjlu.com )
  */
-
-use Benlumia007\Backdrop\Site\Site as site;
-use Benlumia007\Backdrop\View\View as menu;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -20,11 +17,13 @@ use Benlumia007\Backdrop\View\View as menu;
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php menu::display( 'menu', [ 'primary' ] ); ?>
+<?php wp_body_open(); ?>
+<?php Benlumia007\Backdrop\View\display( 'menu', [ 'primary' ] ); ?>
 <div id="container" class="site-container">
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'silver-quantum' ) ?></a>
 	<header id="header" class="site-header header-image">
 		<div class="site-branding">
-			<?php site::display( 'site-title' ); ?>
-			<?php site::display( 'site-description' ); ?>
+			<?php Benlumia007\Backdrop\Site\display_site_title(); ?>
+			<?php Benlumia007\Backdrop\Site\display_site_description(); ?>
 		</div>
 	</header>
