@@ -48,7 +48,7 @@
     </div>
   </div>
   <div class="copyright">
-    <p><?php echo esc_html(get_theme_mod('advance_startup_footer_copy', __('Copyright 2019 -', 'advance-startup')));?> <?php advance_startup_credit();?></p>
+    <p><?php advance_startup_credit();?> <?php echo esc_html(get_theme_mod('advance_startup_footer_copy', __('By Themeshopy', 'advance-startup')));?></p>
   </div>
 </footer>
 

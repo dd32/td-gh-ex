@@ -17,8 +17,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-
+<?php if ( function_exists( 'wp_body_open' ) ) {
+  wp_body_open();
+} else {
+  do_action( 'wp_body_open' );
+} ?>
 <header role="banner">
   <?php if(get_theme_mod('advance_startup_preloader_option',true)){ ?>
     <div id="loader-wrapper">

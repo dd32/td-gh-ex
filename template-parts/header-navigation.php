@@ -13,11 +13,10 @@
         <div class="row ">
           <div class="col-lg-11 col-md-12">
             <div class="toggle-menu responsive-menu">
-              <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-startup'); ?></span></button>
+              <button role="tab" onclick="advance_startup_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-startup'); ?></span></button>
             </div>
             <div id="menu-sidebar" class="nav side-menu">
               <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-startup' ); ?>">
-                <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-startup'); ?></span></a>
                 <?php 
                   wp_nav_menu( array( 
                     'theme_location' => 'primary',
@@ -63,19 +62,20 @@
                   <?php } ?>
                 </div>
               </div>
+              <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_startup_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-startup'); ?></span></a>
             </div>
           </div>
           <div class="col-lg-1 col-md-1">
-            <a href="#" onclick="search_open()" class="search-box">
+            <a href="#" onclick="advance_startup_search_open()" class="search-box">
               <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-startup' );?></span>
             </a>
           </div>
         </div>
         <div class="serach_outer">
-          <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-startup' );?></span></a>
           <div class="serach_inner">
             <?php get_search_form(); ?>
           </div>
+          <a href="#" onclick="advance_startup_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-startup' );?></span></a>
         </div>
     </div>
   </div>

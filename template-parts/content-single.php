@@ -13,7 +13,7 @@
   $archive_day   = get_the_time('d'); 
 ?>  
 <article class="page-box-single">
-    <h1><?php the_title(); ?></h1>
+    <h1><?php esc_html(the_title()); ?></h1>
     <div class="box-img">
         <?php the_post_thumbnail(); ?>
     </div>
@@ -29,7 +29,7 @@
             <?php } ?>
 
             <?php if( get_theme_mod( 'advance_startup_author_hide',true) != '') { ?>
-              <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
+              <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
             <?php } ?>
           </div>
         <?php }?>
