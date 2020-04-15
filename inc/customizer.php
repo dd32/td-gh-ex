@@ -12,6 +12,15 @@
  */
 function advance_coaching_customize_register($wp_customize) {
 
+	//add home page setting pannel
+	$wp_customize->add_panel('advance_coaching_panel_id', array(
+		'priority'       => 10,
+		'capability'     => 'edit_theme_options',
+		'theme_supports' => '',
+		'title'          => __('Theme Settings', 'advance-coaching'),
+		'description'    => __('Description of what this panel does.', 'advance-coaching'),
+	));
+
 	$font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
@@ -435,13 +444,185 @@ function advance_coaching_customize_register($wp_customize) {
         ),
 	) );
 
-	//add home page setting pannel
-	$wp_customize->add_panel('advance_coaching_panel_id', array(
-		'priority'       => 10,
-		'capability'     => 'edit_theme_options',
-		'theme_supports' => '',
-		'title'          => __('Theme Settings', 'advance-coaching'),
-		'description'    => __('Description of what this panel does.', 'advance-coaching'),
+	// woocommerce section
+	$wp_customize->add_setting('advance_coaching_show_related_products',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_coaching_show_related_products',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Related Product','advance-coaching'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+	$wp_customize->add_setting('advance_coaching_show_wooproducts_border',array(
+       'default' => false,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_coaching_show_wooproducts_border',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Product Border','advance-coaching'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+    $wp_customize->add_setting( 'advance_coaching_wooproducts_per_columns' , array(
+		'default'           => 3,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'advance_coaching_sanitize_choices',
+	) );
+	$wp_customize->add_control( 'advance_coaching_wooproducts_per_columns', array(
+		'label'    => __( 'Display Product Per Columns', 'advance-coaching' ),
+		'section'  => 'woocommerce_product_catalog',
+		'type'     => 'select',
+		'choices'  => array(
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+		),
+	)  );
+
+	$wp_customize->add_setting('advance_coaching_wooproducts_per_page',array(
+		'default'	=> 9,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('advance_coaching_wooproducts_per_page',array(
+		'label'	=> __('Display Product Per Page','advance-coaching'),
+		'section'	=> 'woocommerce_product_catalog',
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_top_bottom_wooproducts_padding',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'advance_coaching_top_bottom_wooproducts_padding',	array(
+		'label' => esc_html__( 'Top Bottom Product Padding','advance-coaching' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_left_right_wooproducts_padding',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'advance_coaching_left_right_wooproducts_padding',	array(
+		'label' => esc_html__( 'Right Left Product Padding','advance-coaching' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_wooproducts_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_coaching_wooproducts_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius','advance-coaching' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_wooproducts_box_shadow',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_coaching_wooproducts_box_shadow',array(
+		'label' => esc_html__( 'Product Box Shadow','advance-coaching' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_section('advance_coaching_product_button_section', array(
+		'title'    => __('Product Button Settings', 'advance-coaching'),
+		'priority' => null,
+		'panel'    => 'woocommerce',
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_top_bottom_product_button_padding',array(
+		'default' => 10,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_coaching_top_bottom_product_button_padding',	array(
+		'label' => esc_html__( 'Product Button Top Bottom Padding','advance-coaching' ),
+		'section' => 'advance_coaching_product_button_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number',
+
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_left_right_product_button_padding',array(
+		'default' => 16,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_coaching_left_right_product_button_padding',array(
+		'label' => esc_html__( 'Product Button Right Left Padding','advance-coaching' ),
+		'section' => 'advance_coaching_product_button_section',
+		'type'		=> 'number',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'advance_coaching_product_button_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('advance_coaching_product_button_border_radius',array(
+		'label' => esc_html__( 'Product Button Border Radius','advance-coaching' ),
+		'section' => 'advance_coaching_product_button_section',
+		'type'		=> 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
 	));
 
 	// Add the Theme Color Option section.
@@ -893,7 +1074,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_coaching_title_404_page',array(
-		'default'=> '404 Not Found',
+		'default'=> __('404 Not Found','advance-coaching'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_coaching_title_404_page',array(
@@ -903,7 +1084,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_content_404_page',array(
-		'default'=> 'Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.',
+		'default'=> __('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','advance-coaching'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_coaching_content_404_page',array(
@@ -913,7 +1094,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_button_404_page',array(
-		'default'=> 'Back to Home Page',
+		'default'=> __('Back to Home Page','advance-coaching'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_coaching_button_404_page',array(
@@ -1049,7 +1230,7 @@ function advance_coaching_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting( 'advance_coaching_post_suffix_option', array(
-		'default'   => '...',
+		'default'   =>  __('...','advance-coaching'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
 	$wp_customize->add_control( 'advance_coaching_post_suffix_option', array(
@@ -1060,7 +1241,7 @@ function advance_coaching_customize_register($wp_customize) {
 	) );
 
 	$wp_customize->add_setting('advance_coaching_button_text',array(
-		'default'=> 'READ MORE',
+		'default'=>  __('READ MORE','advance-coaching'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_coaching_button_text',array(
@@ -1077,7 +1258,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_coaching_footer_widget_areas',array(
-        'default'           => '4',
+        'default'           => 4,
         'sanitize_callback' => 'advance_coaching_sanitize_choices',
     ));
     $wp_customize->add_control('advance_coaching_footer_widget_areas',array(

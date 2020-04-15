@@ -390,11 +390,20 @@ if (!function_exists('advance_coaching_credit')) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'advance_coaching_loop_columns');
-	if (!function_exists('advance_coaching_loop_columns')) {
-		function advance_coaching_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('advance_coaching_loop_columns')) {
+	function advance_coaching_loop_columns() {
+		$columns = get_theme_mod( 'advance_coaching_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
 }
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'advance_coaching_shop_per_page', 20 );
+function advance_coaching_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'advance_coaching_wooproducts_per_page', 9 );
+	return $cols;
+}
+
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';

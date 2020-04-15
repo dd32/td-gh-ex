@@ -47,7 +47,7 @@
       </div>
     </div>
     <div class="copyright">
-      <p><?php echo esc_html(get_theme_mod('advance_coaching_footer_copy', __('Copyright 2018', 'advance-coaching')));?> <?php advance_coaching_credit();?></p>
+      <p><?php advance_coaching_credit();?> <?php echo esc_html(get_theme_mod('advance_coaching_footer_copy', __('By Themeshopy', 'advance-coaching')));?></p>
     </div>
 </footer>
 

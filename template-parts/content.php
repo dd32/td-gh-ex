@@ -14,7 +14,7 @@
 ?>
 
 <article class="page-box">
-  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
+  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
   <?php 
     if(has_post_thumbnail()) {?>
       <div class="box-image">
@@ -32,7 +32,7 @@
     <?php }?>
     <?php if( get_theme_mod('advance_coaching_button_text','READ MORE') != ''){ ?>
       <div class="read-more-btn">
-        <a href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_button_text','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span></a>
+        <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_button_text','READ MORE'));?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_coaching_button_text','READ MORE'));?></span></a>
       </div>
     <?php } ?>
   </div>
@@ -43,7 +43,7 @@
       <?php } ?>
 
       <?php if( get_theme_mod( 'advance_coaching_author_hide',true) != '') { ?>
-        <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?><span class="screen-reader-text"><?php the_author(); ?></span></a></span>
+        <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
       <?php } ?>
 
       <?php if( get_theme_mod( 'advance_coaching_comment_hide',true) != '') { ?>

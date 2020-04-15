@@ -17,7 +17,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  
+<?php if ( function_exists( 'wp_body_open' ) ) {
+  wp_body_open();
+} else {
+  do_action( 'wp_body_open' );
+} ?>
 <header role="banner">
   <?php if(get_theme_mod('advance_coaching_preloader_option',true)){ ?>
     <div id="loader-wrapper">
@@ -98,7 +102,7 @@
 
                 <div class="<?php if( get_theme_mod( 'advance_coaching_sticky_header') != '' || get_theme_mod( 'advance_coaching_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
                   <div class="toggle-menu responsive-menu">
-                    <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
+                    <button role="tab" onclick="advance_coaching_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','advance-coaching'); ?></span></button>
                   </div>
                   <div class="row m-0">
                     <div class="col-lg-11 col-md-11 padding0">
@@ -106,7 +110,6 @@
                         <div class="container">
                           <div id="menu-sidebar" class="nav sidebar">
                             <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'advance-coaching' ); ?>">
-                              <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-coaching'); ?></span></a>
                               <?php 
                                 wp_nav_menu( array( 
                                   'theme_location' => 'primary',
@@ -122,13 +125,14 @@
                                 <?php }?>
                               </div>
                               <?php get_search_form();?>
+                              <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="advance_coaching_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','advance-coaching'); ?></span></a>
                             </nav>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col-lg-1 col-md-1">
-                      <a href="#" onclick="search_open()" class="search-box">
+                      <a href="#" onclick="advance_coaching_search_open()" class="search-box">
                         <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','advance-coaching' );?></span>
                       </a>
                     </div>
@@ -136,10 +140,10 @@
                 </div>
 
                 <div class="serach_outer">
-                  <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-coaching' );?></span></a>
                   <div class="serach_inner">
                     <?php get_search_form(); ?>
                   </div>
+                  <a href="#" onclick="advance_coaching_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-coaching' );?></span></a>
                 </div>
                 <div class="contact_data row m-0">
                   <div class="col-lg-4 col-md-4">
