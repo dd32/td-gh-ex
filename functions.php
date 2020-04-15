@@ -258,13 +258,13 @@ function aeonblog_scripts() {
 	wp_style_add_data( 'aeonblog-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'aeonblog-print-css', get_template_directory_uri() . '/css/print.css', 'print' );
 
-	wp_enqueue_script( 'aeonblog-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '4.6.0', true );
-	wp_enqueue_script( 'aeonblog-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '4.5.0', true );
-	wp_enqueue_script( 'aeonblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'aeonblog-navigation', get_template_directory_uri() . '/js/navigation.min.js', array( 'jquery' ), '4.6.0', true );
+	wp_enqueue_script( 'aeonblog-main', get_template_directory_uri() . '/js/main.min.js', array( 'jquery' ), '4.5.0', true );
+	wp_enqueue_script( 'aeonblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 
 	if ( get_theme_mod( 'aeonblog-sticky-sidebar', 1 ) === 1 ) {
-		wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array(), '20151215', true );
-		wp_enqueue_script( 'aeonblog-sticky-sidebar', get_template_directory_uri() . '/js/sticky-sidebar.js', array(), '20151215', true );
+		wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.min.js', array(), '20151215', true );
+		wp_enqueue_script( 'aeonblog-sticky-sidebar', get_template_directory_uri() . '/js/sticky-sidebar.min.js', array(), '20151215', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -332,6 +332,11 @@ if ( ! function_exists( 'aeonblog_breadcrumb_trail' ) ) {
 }
 
 /**
- * Load dynamic css file
+ * Load dynamic css file.
 */
 require get_template_directory() . '/inc/functions/dynamic-css.php';
+
+/**
+ * Add theme page.
+ */
+require get_template_directory() . '/inc/admin.php';
