@@ -22,14 +22,11 @@ a:hover, a:focus, a:active,
 .site-title a:focus,
 .site-title a:active,
 
-.main-navigation .menu >li >a:hover,
-.main-navigation .menu >li >a:focus,
+.navbar .navbar-nav a:hover,
+.navbar .navbar-nav a:focus,
 
-.main-navigation .menu >li ul li a:hover,
-.main-navigation .menu >li ul li a:focus,
-
-.responsive-nav >li a:hover,
-.responsive-nav >li a:focus,
+.navbar .navbar-nav .current-menu-ancestor > a,
+.navbar .navbar-nav .current-menu-item > a,
 
 .post-author .author-name a:hover,
 .post-author .author-name a:focus,
@@ -76,7 +73,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 
-.widget_tag_cloud a:hover,
+.widget_tag_cloud .tagcloud a:hover,
+.widget_tag_cloud .tagcloud a:focus,
 
 .slider-title a,
 

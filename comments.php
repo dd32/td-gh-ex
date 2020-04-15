@@ -6,12 +6,12 @@
  */
 
 ?>
-
+<div id="comments" class="post-comments">
   <?php
-  // You can start editing here -- including this comment!
-  if ( have_comments() ) : 
+
+  if ( have_comments() ) {
   ?>
-    <div id="comments" class="comments-area">
+    <div class="comments-area">
     <ol class="comment-list">
       <?php
         wp_list_comments( array(
@@ -20,9 +20,9 @@
       ?>
     </ol>
 
-    <?php vs_comments_navigation();
+    <?php the_comments_navigation(); ?>
 
-    // If comments are closed and there are comments, let's leave a little note, shall we?
+    <?php
     if ( ! comments_open() ) : ?>
       <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'fmi' ); ?></p>
     <?php
@@ -30,8 +30,13 @@
   ?>
     </div>
   <?php
-  endif; // Check for have_comments().
-  ?>
+  }
 
-<?php
-comment_form();
+  comment_form(
+    array(
+      'title_reply_before' => '<h5 id="reply-title" class="comment-reply-title">',
+      'title_reply_after'  => '</h5>',
+    )
+  );
+  ?>
+</div>

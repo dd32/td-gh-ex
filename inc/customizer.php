@@ -34,49 +34,34 @@ function vs_customize_register( $wp_customize ) {
     }
   }
 
-/**
- * Design.
- */
+// Site Identity
+require get_template_directory() . '/inc/theme-mods/site-identity.php';
+
+// Design
 require get_template_directory() . '/inc/theme-mods/design.php';
 
-/**
- * Header Settings.
- */
+// Header Settings
 require get_template_directory() . '/inc/theme-mods/header-settings.php';
 
-/**
- * Footer Settings.
- */
+// Footer Settings
 require get_template_directory() . '/inc/theme-mods/footer-settings.php';
 
-/**
- * Homepage Settings.
- */
+// Homepage Settings
 require get_template_directory() . '/inc/theme-mods/homepage-settings.php';
 
-/**
- * Archive Settings.
- */
+// Archive Settings
 require get_template_directory() . '/inc/theme-mods/archive-settings.php';
 
-/**
- * Posts Settings.
- */
+// Posts Settings
 require get_template_directory() . '/inc/theme-mods/post-settings.php';
 
-/**
- * Pages Settings.
- */
+// Pages Settings
 require get_template_directory() . '/inc/theme-mods/page-settings.php';
 
-/**
- * Miscellaneous.
- */
+// Miscellaneous
 require get_template_directory() . '/inc/theme-mods/miscellaneous.php';
 
-/**
- * Social Links.
- */
+// Social Links
 require get_template_directory() . '/inc/theme-mods/social-links.php';
 
 }

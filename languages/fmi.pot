@@ -36,120 +36,12 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: functions.php:36
+#: functions.php:40
 msgid "Primary"
 msgstr ""
 
-#: functions.php:37
+#: functions.php:41
 msgid "Footer"
-msgstr ""
-
-#: inc/author-social.php:13
-msgid "Facebook Profile URL"
-msgstr ""
-
-#: inc/author-social.php:14
-msgid "Twitter Profile URL"
-msgstr ""
-
-#: inc/author-social.php:15
-msgid "Instagram Profile URL"
-msgstr ""
-
-#: inc/author-social.php:16
-msgid "Pinterest Profile URL"
-msgstr ""
-
-#: inc/author-social.php:17
-msgid "YouTube Profile URL"
-msgstr ""
-
-#: inc/author-social.php:18
-msgid "Telegram Profile URL"
-msgstr ""
-
-#: inc/author-social.php:19
-msgid "Vimeo Profile URL"
-msgstr ""
-
-#: inc/author-social.php:20
-msgid "SoundCloud Profile URL"
-msgstr ""
-
-#: inc/author-social.php:21
-msgid "Spotify Profile URL"
-msgstr ""
-
-#: inc/author-social.php:22
-msgid "Dribbble Profile URL"
-msgstr ""
-
-#: inc/author-social.php:23
-msgid "Behance Profile URL"
-msgstr ""
-
-#: inc/author-social.php:24
-msgid "GitHub Profile URL"
-msgstr ""
-
-#: inc/author-social.php:25
-msgid "Odnoklassniki Profile URL"
-msgstr ""
-
-#: inc/author-social.php:26
-msgid "VK Profile URL"
-msgstr ""
-
-#: inc/author-social.php:27
-msgid "Xing Profile URL"
-msgstr ""
-
-#: inc/author-social.php:28
-msgid "LinkedIn Profile URL"
-msgstr ""
-
-#: inc/author-social.php:29
-msgid "Twitch Profile URL"
-msgstr ""
-
-#: inc/author-social.php:30
-msgid "Flickr Profile URL"
-msgstr ""
-
-#: inc/author-social.php:31
-msgid "Snapchat Profile URL"
-msgstr ""
-
-#: inc/author-social.php:32
-msgid "Medium Profile URL"
-msgstr ""
-
-#: inc/author-social.php:33
-msgid "Weibo Profile URL"
-msgstr ""
-
-#: inc/author-social.php:34
-msgid "WeChat Profile URL"
-msgstr ""
-
-#: inc/author-social.php:35
-msgid "Tumblr Profile URL"
-msgstr ""
-
-#: inc/author-social.php:36
-msgid "Reddit Profile URL"
-msgstr ""
-
-#: inc/author-social.php:37
-msgid "Bloglovin Profile URL"
-msgstr ""
-
-#: inc/author-social.php:38
-msgid "RSS Profile URL"
-msgstr ""
-
-#: inc/author-social.php:52
-msgid "Website"
 msgstr ""
 
 #: inc/meta-box.php:15
@@ -184,66 +76,158 @@ msgstr ""
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/post-meta.php:53
+#: inc/post-meta.php:45
 msgid "No Comments"
 msgstr ""
 
-#: inc/post-meta.php:53
+#: inc/post-meta.php:45
 msgid "1 Comment"
 msgstr ""
 
-#: inc/post-meta.php:53
+#: inc/post-meta.php:45
 msgid "Comments"
 msgstr ""
 
-#: inc/template-comments.php:14
+#: inc/social-links.php:71
+msgid "Facebook Profile URL"
+msgstr ""
+
+#: inc/social-links.php:72
+msgid "Twitter Profile URL"
+msgstr ""
+
+#: inc/social-links.php:73
+msgid "Instagram Profile URL"
+msgstr ""
+
+#: inc/social-links.php:74
+msgid "Pinterest Profile URL"
+msgstr ""
+
+#: inc/social-links.php:75
+msgid "YouTube Profile URL"
+msgstr ""
+
+#: inc/social-links.php:76
+msgid "Telegram Profile URL"
+msgstr ""
+
+#: inc/social-links.php:77
+msgid "Vimeo Profile URL"
+msgstr ""
+
+#: inc/social-links.php:78
+msgid "SoundCloud Profile URL"
+msgstr ""
+
+#: inc/social-links.php:79
+msgid "Spotify Profile URL"
+msgstr ""
+
+#: inc/social-links.php:80
+msgid "Dribbble Profile URL"
+msgstr ""
+
+#: inc/social-links.php:81
+msgid "Behance Profile URL"
+msgstr ""
+
+#: inc/social-links.php:82
+msgid "GitHub Profile URL"
+msgstr ""
+
+#: inc/social-links.php:83
+msgid "Odnoklassniki Profile URL"
+msgstr ""
+
+#: inc/social-links.php:84
+msgid "VK Profile URL"
+msgstr ""
+
+#: inc/social-links.php:85
+msgid "Xing Profile URL"
+msgstr ""
+
+#: inc/social-links.php:86
+msgid "LinkedIn Profile URL"
+msgstr ""
+
+#: inc/social-links.php:87
+msgid "Twitch Profile URL"
+msgstr ""
+
+#: inc/social-links.php:88
+msgid "Flickr Profile URL"
+msgstr ""
+
+#: inc/social-links.php:89
+msgid "Snapchat Profile URL"
+msgstr ""
+
+#: inc/social-links.php:90
+msgid "Medium Profile URL"
+msgstr ""
+
+#: inc/social-links.php:91
+msgid "Weibo Profile URL"
+msgstr ""
+
+#: inc/social-links.php:92
+msgid "WeChat Profile URL"
+msgstr ""
+
+#: inc/social-links.php:93
+msgid "Tumblr Profile URL"
+msgstr ""
+
+#: inc/social-links.php:94
+msgid "Reddit Profile URL"
+msgstr ""
+
+#: inc/social-links.php:95
+msgid "Bloglovin Profile URL"
+msgstr ""
+
+#: inc/social-links.php:96
+msgid "RSS Profile URL"
+msgstr ""
+
+#: inc/social-links.php:108 inc/template-comments.php:55
+msgid "Website"
+msgstr ""
+
+#: inc/template-comments.php:15
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-comments.php:14 inc/template-comments.php:28
+#: inc/template-comments.php:15 inc/template-comments.php:29
 msgid "Edit"
 msgstr ""
 
-#: inc/template-comments.php:27
+#: inc/template-comments.php:28
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-comments.php:31
+#: inc/template-comments.php:32
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-comments.php:49
-msgid "Your Name"
+#: inc/template-comments.php:53
+msgid "Name"
 msgstr ""
 
-#: inc/template-comments.php:50
-msgid "Your Email"
+#: inc/template-comments.php:54
+msgid "Email"
 msgstr ""
 
-#: inc/template-comments.php:51
-msgid "Your Website"
+#: inc/template-comments.php:65
+msgid "Comment"
 msgstr ""
 
-#: inc/template-comments.php:58
-msgid "Your comment"
-msgstr ""
-
-#: inc/template-tags.php:11
-msgid "Older posts"
-msgstr ""
-
-#: inc/template-tags.php:12
-msgid "Newer posts"
-msgstr ""
-
-#: inc/template-tags.php:20
-msgid "Older comments"
-msgstr ""
-
-#: inc/template-tags.php:21
-msgid "Newer comments"
+#: inc/template-tags.php:16
+msgid "Pages:"
 msgstr ""
 
 #: inc/theme-mods/archive-settings.php:10
@@ -275,40 +259,52 @@ msgstr ""
 msgid "Excerpt Length (Number of Words)"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:71
-#: inc/theme-mods/homepage-settings.php:272 inc/theme-mods/post-settings.php:57
+#: inc/theme-mods/archive-settings.php:72
+#: inc/theme-mods/archive-settings.php:76
+#: inc/theme-mods/homepage-settings.php:273
+#: inc/theme-mods/homepage-settings.php:277
+msgid "Pagination"
+msgstr ""
+
+#: inc/theme-mods/archive-settings.php:77
+#: inc/theme-mods/homepage-settings.php:278
+msgid "Navigation"
+msgstr ""
+
+#: inc/theme-mods/archive-settings.php:86
+#: inc/theme-mods/homepage-settings.php:287 inc/theme-mods/post-settings.php:57
 msgid "Post Meta"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:81
-#: inc/theme-mods/homepage-settings.php:282 inc/theme-mods/post-settings.php:67
+#: inc/theme-mods/archive-settings.php:96
+#: inc/theme-mods/homepage-settings.php:297 inc/theme-mods/post-settings.php:67
 msgid "Display Author"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:92
-#: inc/theme-mods/homepage-settings.php:293 inc/theme-mods/post-settings.php:78
+#: inc/theme-mods/archive-settings.php:107
+#: inc/theme-mods/homepage-settings.php:308 inc/theme-mods/post-settings.php:78
 msgid "Display Date"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:103
-#: inc/theme-mods/homepage-settings.php:304 inc/theme-mods/post-settings.php:89
+#: inc/theme-mods/archive-settings.php:118
+#: inc/theme-mods/homepage-settings.php:319 inc/theme-mods/post-settings.php:89
 msgid "Display Categorys"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:114
-#: inc/theme-mods/homepage-settings.php:315 inc/theme-mods/page-settings.php:45
+#: inc/theme-mods/archive-settings.php:129
+#: inc/theme-mods/homepage-settings.php:330 inc/theme-mods/page-settings.php:45
 #: inc/theme-mods/post-settings.php:100
 msgid "Display Comments"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:125
-#: inc/theme-mods/homepage-settings.php:326
+#: inc/theme-mods/archive-settings.php:140
+#: inc/theme-mods/homepage-settings.php:341
 #: inc/theme-mods/post-settings.php:111
 msgid "Display Tags"
 msgstr ""
 
-#: inc/theme-mods/archive-settings.php:136
-#: inc/theme-mods/homepage-settings.php:337
+#: inc/theme-mods/archive-settings.php:151
+#: inc/theme-mods/homepage-settings.php:352
 msgid "Display Read More"
 msgstr ""
 
@@ -416,7 +412,7 @@ msgstr ""
 msgid "Homepage Layout"
 msgstr ""
 
-#: inc/theme-mods/homepage-settings.php:346
+#: inc/theme-mods/homepage-settings.php:361
 msgid "Static Front Page"
 msgstr ""
 
@@ -446,26 +442,14 @@ msgid "Scroll To Top Button"
 msgstr ""
 
 #: inc/theme-mods/miscellaneous.php:53
-msgid "Blog Pagination or Navigation"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:57
-msgid "Pagination"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:58
-msgid "Navigation"
-msgstr ""
-
-#: inc/theme-mods/miscellaneous.php:68
 msgid "Enable hover effects when you hover on featured images"
 msgstr ""
 
-#: inc/theme-mods/miscellaneous.php:79
+#: inc/theme-mods/miscellaneous.php:64
 msgid "Load Google AdSense Scripts"
 msgstr ""
 
-#: inc/theme-mods/miscellaneous.php:80
+#: inc/theme-mods/miscellaneous.php:65
 msgid "Enable this if you're using Google AdSense."
 msgstr ""
 
@@ -482,11 +466,11 @@ msgid "Post Settings"
 msgstr ""
 
 #: inc/theme-mods/post-settings.php:36
-msgid "Show \"About the author\" block (single post page)"
+msgid "Display about the author"
 msgstr ""
 
 #: inc/theme-mods/post-settings.php:47
-msgid "Show post navigation (single post page)"
+msgid "Display prev next links"
 msgstr ""
 
 #: inc/theme-mods/social-links.php:10
@@ -605,25 +589,33 @@ msgstr ""
 msgid "Search for:"
 msgstr ""
 
-#: template-parts/archive.php:48 template-parts/homepage.php:51
+#: template-parts/archive.php:41 template-parts/homepage.php:45
+msgid "Older posts"
+msgstr ""
+
+#: template-parts/archive.php:42 template-parts/homepage.php:46
+msgid "Newer posts"
+msgstr ""
+
+#: template-parts/archive.php:54 template-parts/homepage.php:57
 msgid "Nothing found"
 msgstr ""
 
-#: template-parts/archive.php:49
+#: template-parts/archive.php:55
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/archive.php:55
+#: template-parts/archive.php:61
 msgid "Oops... Error 404"
 msgstr ""
 
-#: template-parts/archive.php:56
+#: template-parts/archive.php:62
 msgid "We are sorry, but the page you are looking for does not exist."
 msgstr ""
 
-#: template-parts/archive.php:57
+#: template-parts/archive.php:63
 #, php-format
 msgid ""
 "Please check entered address and try again or go to <a href=\"%1$s\" rel="
@@ -635,17 +627,13 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content-page.php:47 template-parts/content-post.php:65
-msgid "Pages:"
-msgstr ""
-
-#: template-parts/homepage.php:53
+#: template-parts/homepage.php:59
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/homepage.php:55
+#: template-parts/homepage.php:61
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr ""
 

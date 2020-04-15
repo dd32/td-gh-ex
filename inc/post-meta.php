@@ -5,10 +5,8 @@
  * @package Fmi
  */
 
+// Сategory
 if ( ! function_exists( 'vs_get_meta_categorys' ) ) {
-  /**
-   * Сategory
-   */
   function vs_get_meta_categorys() {
     $category_list = get_the_category_list(' ');
     if ( $category_list ) {
@@ -19,10 +17,8 @@ if ( ! function_exists( 'vs_get_meta_categorys' ) ) {
   }
 }
 
+// Date
 if ( ! function_exists( 'vs_get_meta_date' ) ) {
-  /**
-   * Date
-   */
   function vs_get_meta_date() {
     ?>
     <span class="meta-date"><i class="vs-icon vs-icon-calendar"></i><?php echo get_the_date(); ?></span>
@@ -30,10 +26,8 @@ if ( ! function_exists( 'vs_get_meta_date' ) ) {
   }
 }
 
+// Author
 if ( ! function_exists( 'vs_get_meta_author' ) ) {
-  /**
-   * Author
-   */
   function vs_get_meta_author() {
     ?>
     <span class="meta-author"><i class="vs-icon vs-icon-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></span>
@@ -41,10 +35,8 @@ if ( ! function_exists( 'vs_get_meta_author' ) ) {
   }
 }
 
+// Comments
 if ( ! function_exists( 'vs_get_meta_comments' ) ) {
-  /**
-   * Comments
-   */
   function vs_get_meta_comments() {
     if ( ! comments_open() ) {
       return;
@@ -55,10 +47,8 @@ if ( ! function_exists( 'vs_get_meta_comments' ) ) {
   }
 }
 
+// Tags
 if ( ! function_exists( 'vs_get_meta_tags' ) ) {
-  /**
-   * Tags
-   */
   function vs_get_meta_tags() {
     $tags_list = get_the_tag_list();
     if ( $tags_list ) {

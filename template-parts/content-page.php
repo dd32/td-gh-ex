@@ -39,16 +39,13 @@
       }
       ?>
 
-    <div class="entry-content">
-      <?php
+      <?php do_action( 'vs_page_content_start' ); ?>
+      <div class="entry-content">
+        <?php
         the_content();
-
-        wp_link_pages( array(
-          'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),
-          'after'  => '</div>',
-        ) );
-      ?>
-    </div>
+        ?>
+      </div>
+      <?php do_action( 'vs_page_content_end' ); ?>
 
   </div>
 </article>

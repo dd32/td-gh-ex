@@ -5,10 +5,8 @@
  * @package Fmi
  */
 
+// Header Offcanvas Button
 if ( ! function_exists( 'vs_header_offcanvas_button' ) ) {
-  /**
-   * Header Offcanvas Button
-   */
   function vs_header_offcanvas_button() {
     ?>
     <a class="navbar-toggle-offcanvas toggle-offcanvas" href="javascript:void(0)">
@@ -18,70 +16,49 @@ if ( ! function_exists( 'vs_header_offcanvas_button' ) ) {
   }
 }
 
-if ( ! function_exists( 'vs_social_links' ) ) {
-  /**
-   * Social Links
-   */
-  function vs_social_links() {
-    $social_url = array();
-    $social_list = array(
-'facebook',
-'twitter',
-'instagram',
-'pinterest',
-'youtube',
-'telegram',
-'vimeo',
-'soundcloud',
-'spotify',
-'dribbble',
-'behance',
-'github',
-'ok',
-'vk',
-'xing',
-'linkedin',
-'twitch',
-'flickr',
-'snapchat',
-'medium',
-'weibo',
-'wechat',
-'tumblr',
-'reddit',
-'bloglovin',
-'rss'
-    );
-    foreach ($social_list as $social_list_value) {
-      $social_url[$social_list_value] = get_theme_mod( 'social_'.$social_list_value);
-    }
-    $social_url_empty = true;
-    foreach ($social_url as $social_url_key => $social_url_value) {
-      if ($social_url_value) {
-        $social_url_empty = false;
-        break;
-      }
-    }
-    if ( ! $social_url_empty ) {
+// Header Logo
+if ( ! function_exists( 'vs_header_logo' ) ) {
+  function vs_header_logo() {
+    ?>
+    <div class="site-branding-logo">
+      <?php the_custom_logo();?>
+      <?php if ( ! get_theme_mod( 'header_title', 0 )):?>
+      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+      <?php endif;?>
+    </div>
+    <?php
+  }
+}
+
+// Header Search
+if ( ! function_exists( 'vs_header_search' ) ) {
+  function vs_header_search() {
+    if ( ! get_theme_mod( 'header_search', 0 )) {
       ?>
-      <div class="social-links-wrap">
-      <?php
-      foreach ($social_url as $social_url_key => $social_url_value) {
-        if ( $social_url_value ) {
-          echo '<a href="'.esc_url( $social_url_value ).'" target="_blank"><i class="vs-icon vs-icon-'.esc_attr( $social_url_key ).'"></i></a>';
-        }
-      }
-      ?>
+      <div class="site-branding-search">
+          <?php get_search_form(); ?>
       </div>
       <?php
     }
   }
 }
 
+// Navbar Nav Menu
+if ( ! function_exists( 'vs_navbar_nav_menu' ) ) {
+  function vs_navbar_nav_menu() {
+    if ( has_nav_menu( 'primary' ) ) {
+      wp_nav_menu( array(
+        'menu_class'      => 'navbar-nav',
+        'theme_location'  => 'primary',
+        'container'       => '',
+        'container_class' => '',
+      ) );
+    }
+  }
+}
+
+// Scroll To Top
 if ( ! function_exists( 'vs_scroll_to_top' ) ) {
-  /**
-   * Scroll To Top
-   */
   function vs_scroll_to_top() {
     $misc_scroll_to_top = get_theme_mod( 'misc_scroll_to_top', 1 );
     if ( 1 === $misc_scroll_to_top ) {
@@ -94,47 +71,39 @@ if ( ! function_exists( 'vs_scroll_to_top' ) ) {
   }
 }
 
+// Off-canvas
 if ( ! function_exists( 'vs_offcanvas' ) ) {
-  /**
-   * Off-canvas
-   */
   function vs_offcanvas() {
     get_template_part( 'template-parts/offcanvas' );
   }
 }
 
+// Single Author
 if ( ! function_exists( 'vs_single_author' ) ) {
-  /**
-   * Single Author
-   */
   function vs_single_author() {
     if ( ! is_singular( 'post' ) ) {
       return;
     }
-    if ( get_theme_mod( 'single_show_about_author', 0 ) ) {
+    if ( get_theme_mod( 'post_about_author', 0 ) ) {
       get_template_part( 'template-parts/post-author' );
     }
   }
 }
 
+// Single Prev Next
 if ( ! function_exists( 'vs_single_prev_nex' ) ) {
-  /**
-   * Single Prev Next
-   */
   function vs_single_prev_nex() {
     if ( ! is_singular( 'post' ) ) {
       return;
     }
-    if ( get_theme_mod( 'single_show_post_nav', 1 ) ) {
+    if ( get_theme_mod( 'post_prev_next', 1 ) ) {
       get_template_part( 'template-parts/post-prev-next' );
     }
   }
 }
 
+// Comments
 if ( ! function_exists( 'vs_comments' ) ) {
-  /**
-   * Comments
-   */
   function vs_comments() {
     if ( post_password_required() ) {
       return;

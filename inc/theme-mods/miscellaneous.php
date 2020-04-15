@@ -44,21 +44,6 @@ $wp_customize->add_control( 'misc_scroll_to_top', array(
   'type'                 => 'checkbox',
 ) );
 
-// Blog Pagination or Navigation
-$wp_customize->add_setting( 'blog_pagination', array(
-  'default'              => 'pagination',
-  'sanitize_callback'    => 'vs_sanitize_blog_pagination',
-) );
-$wp_customize->add_control( 'blog_pagination', array(
-  'label'                => esc_html__( 'Blog Pagination or Navigation', 'fmi' ),
-  'section'              => 'miscellaneous_section',
-  'type'                 => 'radio',
-  'choices'              => array(
-    'pagination'         => esc_html__( 'Pagination', 'fmi' ),
-    'navigation'         => esc_html__( 'Navigation', 'fmi' ),
-  ),
-) );
-
 // Enable hover effects when you hover on featured images
 $wp_customize->add_setting( 'blog_images_hover_effects', array(
   'default'              => 0,

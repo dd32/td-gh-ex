@@ -27,24 +27,24 @@ $wp_customize->add_control( 'post_sidebar', array(
   ),
 ) );
 
-// Show "About the author" block (single post page)
-$wp_customize->add_setting( 'single_show_about_author', array(
+// Display about the author
+$wp_customize->add_setting( 'post_about_author', array(
   'default'              => 0,
   'sanitize_callback'    => 'vs_sanitize_checkbox',
 ) );
-$wp_customize->add_control( 'single_show_about_author', array(
-  'label'                => esc_html__( 'Show "About the author" block (single post page)', 'fmi' ),
+$wp_customize->add_control( 'post_about_author', array(
+  'label'                => esc_html__( 'Display about the author', 'fmi' ),
   'section'              => 'post_section',
   'type'                 => 'checkbox',
 ) );
 
-// Show post navigation (single post page)
-$wp_customize->add_setting( 'single_show_post_nav', array(
+// Display prev next links
+$wp_customize->add_setting( 'post_prev_next', array(
   'default'              => 1,
   'sanitize_callback'    => 'vs_sanitize_checkbox',
 ) );
-$wp_customize->add_control( 'single_show_post_nav', array(
-  'label'                => esc_html__( 'Show post navigation (single post page)', 'fmi' ),
+$wp_customize->add_control( 'post_prev_next', array(
+  'label'                => esc_html__( 'Display prev next links', 'fmi' ),
   'section'              => 'post_section',
   'type'                 => 'checkbox',
 ) );

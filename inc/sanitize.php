@@ -23,14 +23,6 @@ function vs_sanitize_checkbox( $input ){
   }
 }
 
-// Sanitize pagination
-function vs_sanitize_blog_pagination( $input ) {
-  if ( ! in_array( $input, array( 'pagination', 'navigation' ) ) ) {
-    $input = 'pagination';
-  }
-  return $input;
-}
-
 // Sanitize sidebar
 function vs_sanitize_sidebar( $input ) {
   if ( ! in_array( $input, array( 'right', 'left', 'disabled' ) ) ) {
@@ -43,6 +35,22 @@ function vs_sanitize_sidebar( $input ) {
 function vs_sanitize_summary( $input ) {
   if ( ! in_array( $input, array( 'excerpt', 'content' ) ) ) {
     $input = 'excerpt';
+  }
+  return $input;
+}
+
+// Sanitize pagination type
+function vs_sanitize_pagination_type( $input ) {
+  if ( ! in_array( $input, array( 'pagination', 'navigation' ) ) ) {
+    $input = 'pagination';
+  }
+  return $input;
+}
+
+// Sanitize link target
+function vs_sanitize_link_target( $input ) {
+  if ( ! in_array( $input, array( 'same', 'new' ) ) ) {
+    $input = 'new';
   }
   return $input;
 }

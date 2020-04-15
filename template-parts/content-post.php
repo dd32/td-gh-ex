@@ -57,16 +57,13 @@
       }
       ?>
 
-    <div class="entry-content">
-      <?php
-      the_content();
-
-      wp_link_pages(array(
-        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'fmi' ),
-        'after' => '</div>',
-      ));
-      ?>
-    </div>
+      <?php do_action( 'vs_post_content_start' ); ?>
+      <div class="entry-content">
+        <?php
+        the_content();
+        ?>
+      </div>
+      <?php do_action( 'vs_post_content_end' ); ?>
 
       <?php
       $post_categorys = get_theme_mod( 'post_categorys', 1 );

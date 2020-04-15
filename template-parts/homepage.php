@@ -33,13 +33,19 @@ if ( ! have_posts() ) { $homepage_sidebar = 'disabled'; }
               ?>
               </div>
             </div>
+            
             <?php
-
-              if (get_theme_mod('blog_pagination') == 'navigation') {
-                vs_posts_navigation();
-              } else {
-                vs_posts_pagination();
-              }
+            if ( 'pagination' === get_theme_mod( 'homepage_pagination_type', 'pagination' ) ) {
+              the_posts_pagination( array(
+                'prev_text'      => '<i class="vs-icon vs-icon-caret-left"></i>',
+                'next_text'      => '<i class="vs-icon vs-icon-caret-right"></i>',
+              ) );
+            } else {
+              the_posts_navigation( array(
+                'prev_text'      => '<i class="vs-icon vs-icon-caret-left"></i> ' . esc_html__('Older posts','fmi'),
+                'next_text'      => esc_html__('Newer posts','fmi') . ' <i class="vs-icon vs-icon-caret-right"></i>',
+              ) );
+            }
             ?>
           </div>
 

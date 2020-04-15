@@ -63,6 +63,21 @@ $wp_customize->add_control( new vs_customize_number_control( $wp_customize, 'arc
   'section'              => 'archive_section',
 ) ) );
 
+// Pagination
+$wp_customize->add_setting( 'archive_pagination_type', array(
+  'default'              => 'pagination',
+  'sanitize_callback'    => 'vs_sanitize_pagination_type',
+) );
+$wp_customize->add_control( 'archive_pagination_type', array(
+  'label'                => esc_html__( 'Pagination', 'fmi' ),
+  'section'              => 'archive_section',
+  'type'                 => 'radio',
+  'choices'              => array(
+    'pagination'         => esc_html__( 'Pagination', 'fmi' ),
+    'navigation'         => esc_html__( 'Navigation', 'fmi' ),
+  ),
+) );
+
 // Heading
 $wp_customize->add_setting( 'archive_heading_post_meta', array(
   'sanitize_callback'    => 'esc_html',

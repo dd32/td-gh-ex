@@ -1,13 +1,71 @@
 <?php
 /**
- * Author social
+ * Social links
  *
  * @package Fmi
  */
 
-/**
- * Author social fields
- */
+// Social Links
+if ( ! function_exists( 'vs_social_links' ) ) {
+  function vs_social_links() {
+    $social_url = array();
+    $social_list = array(
+'facebook',
+'twitter',
+'instagram',
+'pinterest',
+'youtube',
+'telegram',
+'vimeo',
+'soundcloud',
+'spotify',
+'dribbble',
+'behance',
+'github',
+'ok',
+'vk',
+'xing',
+'linkedin',
+'twitch',
+'flickr',
+'snapchat',
+'medium',
+'weibo',
+'wechat',
+'tumblr',
+'reddit',
+'bloglovin',
+'rss'
+    );
+    foreach ( $social_list as $social_list_value ) {
+      $social_url[$social_list_value] = get_theme_mod( 'social_' . $social_list_value );
+    }
+    $social_url_empty = true;
+    foreach ( $social_url as $social_url_key => $social_url_value ) {
+      if ( $social_url_value ) {
+        $social_url_empty = false;
+        break;
+      }
+    }
+    if ( ! $social_url_empty ) {
+      ?>
+      <div class="social-links-wrap">
+      <?php
+      foreach ( $social_url as $social_url_key => $social_url_value ) {
+        if ( $social_url_value ) {
+          ?>
+          <a href="<?php echo esc_url( $social_url_value ); ?>" target="_blank" rel="nofollow"><i class="vs-icon vs-icon-<?php echo esc_attr( $social_url_key ); ?>"></i></a>
+          <?php
+        }
+      }
+      ?>
+      </div>
+      <?php
+    }
+  }
+}
+
+// Author social fields
 function vs_get_author_fields() {
   return array(
     'facebook'   => esc_html__( 'Facebook Profile URL', 'fmi' ),
@@ -40,9 +98,7 @@ function vs_get_author_fields() {
 }
 add_filter( 'user_contactmethods', 'vs_get_author_fields', 1000, 1 );
 
-/**
- * Author Social Links
- */
+// Author Social Links
 function vs_author_social_links( $author ) {
   $links = vs_get_author_fields();
   $list = array();

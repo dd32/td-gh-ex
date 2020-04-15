@@ -27,7 +27,7 @@ if ( ! function_exists( 'vs_editor_styles' ) ) {
     add_editor_style( array(
       
       // Google fonts
-      '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic',
+      '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i',
 
       // editor styles
       'assets/css/editor-style.css',
@@ -45,7 +45,7 @@ if ( ! function_exists( 'vs_gutenberg_editor_styles' ) ) {
     $version = vs_get_theme_data( 'Version' );
 
     // Google fonts
-    wp_enqueue_style( 'vs-gutenberg-editor-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array(), $version );
+    wp_enqueue_style( 'vs-gutenberg-editor-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i', array(), $version );
 
     // general editor styles
     wp_enqueue_style( 'vs-gutenberg-editor-style', get_template_directory_uri() . '/assets/css/gutenberg-editor-style.css', array(), $version );
@@ -82,7 +82,7 @@ if ( ! function_exists( 'vs_enqueue_scripts' ) ) {
     }
 
     // google fonts
-    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic', array(), $version );
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i', array(), $version );
 
     // owl carousel
     wp_enqueue_style('owl-carousel', get_template_directory_uri().'/assets/owl-carousel/owl.carousel.css', array(), '1.3.3');

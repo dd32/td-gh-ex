@@ -13,7 +13,7 @@ $wp_customize->add_section( 'header_section', array(
 
 // Hide Header Title Text
 $wp_customize->add_setting( 'header_title', array(
-  'default'              => false,
+  'default'              => 0,
   'sanitize_callback'    => 'vs_sanitize_checkbox',
 ) );
 $wp_customize->add_control( 'header_title', array(
@@ -24,7 +24,7 @@ $wp_customize->add_control( 'header_title', array(
 
 // Hide Header Search
 $wp_customize->add_setting( 'header_search', array(
-  'default'              => false,
+  'default'              => 0,
   'sanitize_callback'    => 'vs_sanitize_checkbox',
 ) );
 $wp_customize->add_control( 'header_search', array(
