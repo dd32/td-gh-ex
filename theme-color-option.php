@@ -185,3 +185,51 @@
 				$custom_css .='box-shadow: '.esc_html($automobile_car_dealer_woocommerce_product_box_shadow).'px '.esc_html($automobile_car_dealer_woocommerce_product_box_shadow).'px '.esc_html($automobile_car_dealer_woocommerce_product_box_shadow).'px #eee;';
 			$custom_css .='}';
 		}
+
+	// footer setting
+
+	$automobile_car_dealer_footer_bg_color = get_theme_mod('automobile_car_dealer_footer_bg_color');
+	if($automobile_car_dealer_footer_bg_color != false){
+		$custom_css .='.footer-wp{';
+			$custom_css .='background-color: '.esc_html($automobile_car_dealer_footer_bg_color).';';
+		$custom_css .='}';
+	}
+
+	$automobile_car_dealer_footer_bg_image = get_theme_mod('automobile_car_dealer_footer_bg_image');
+	if($automobile_car_dealer_footer_bg_image != false){
+		$custom_css .='.footer-wp{';
+			$custom_css .='background: url('.esc_html($automobile_car_dealer_footer_bg_image).');';
+		$custom_css .='}';
+	}
+
+	/*------------- Back to Top  -------------------*/
+
+	$automobile_car_dealer_back_to_top_border_radius = get_theme_mod('automobile_car_dealer_back_to_top_border_radius');
+	if($automobile_car_dealer_back_to_top_border_radius == true){
+		$custom_css .='#scrollbutton i{';
+			$custom_css .='border-radius: '.esc_html($automobile_car_dealer_back_to_top_border_radius).'px;';
+		$custom_css .='}';
+	}
+
+	$automobile_car_dealer_scroll_icon_font_size = get_theme_mod('automobile_car_dealer_scroll_icon_font_size', 22);
+	if($automobile_car_dealer_scroll_icon_font_size != false){
+		$custom_css .='#scrollbutton i{';
+			$custom_css .='font-size: '.esc_html($automobile_car_dealer_scroll_icon_font_size).'px;';
+		$custom_css .='}';
+	}
+
+	$automobile_car_dealer_top_bottom_scroll_padding = get_theme_mod('automobile_car_dealer_top_bottom_scroll_padding', 12);
+	if($automobile_car_dealer_top_bottom_scroll_padding != false){
+		$custom_css .='#scrollbutton i{';
+			$custom_css .='padding-top: '.esc_html($automobile_car_dealer_top_bottom_scroll_padding).'px; padding-bottom: '.esc_html($automobile_car_dealer_top_bottom_scroll_padding).'px;';
+		$custom_css .='}';
+	}
+
+	$automobile_car_dealer_left_right_scroll_padding = get_theme_mod('automobile_car_dealer_left_right_scroll_padding', 17);
+	if($automobile_car_dealer_left_right_scroll_padding != false){
+		$custom_css .='#scrollbutton i{';
+			$custom_css .='padding-left: '.esc_html($automobile_car_dealer_left_right_scroll_padding).'px; padding-right: '.esc_html($automobile_car_dealer_left_right_scroll_padding).'px;';
+		$custom_css .='}';
+	}
+
+
