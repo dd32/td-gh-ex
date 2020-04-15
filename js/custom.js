@@ -8,10 +8,10 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function advance_it_company_resmenu_open() {
   document.getElementById("menu-sidebar").style.width = "100%";
 }
-function resMenu_close() {
+function advance_it_company_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 

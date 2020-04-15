@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_it_company_footer_copy', __('Copyright 2019 -', 'advance-it-company')));?> <?php advance_it_company_credit();?></p>
+        <p><?php advance_it_company_credit();?> <?php echo esc_html(get_theme_mod('advance_it_company_footer_copy', __('By Themeshopy', 'advance-it-company')));?></p>
     </div>
 </footer>
 

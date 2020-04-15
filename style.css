@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-it-company-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advanced IT company theme crafted by the experts at Themeshopy, is highly applicable for the corporates as well as the IT companies apart from the digital marketing agencies as well as certain startups in the IT industry. Known for its SEO optimization and well as its mobile responsiveness, it is also a good bet for the small scale businesses and works well with the various web design companies as well as certain technical businesses. One of the specialities associated with this theme is that it is not only multipurpose but other than that you do not require an experience of coding. No doubt Advanced IT company theme is clean imbibed with professionalism but it is also accompanied by the highly advanced features responsible for increasing your customer base globally. CTA [call to action button] is one important advantage and with this, you visitors have the subscription option. Based on the Bootstrap technology, it comes with the stunning animations and possesses a secure and clean code. All these features are responsible for its credibility with the international clients. Above all, you are flabbergasted with its eye catching design and it is also accompanied with a WordPress customizer. It is active, possesses optimised codes and provides faster page load time. Demo: https://www.themeshopy.com/advance-it-company-pro/
-Version: 0.4.4
+Version: 0.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-it-company
@@ -268,6 +268,10 @@ input[type="submit"] {
   border: 2px solid #179cd7;
 }
 /*preloader*/
+.elementor-html #loader,
+.elementor-html #loader-wrapper{
+  display: none;
+}
 #loader-wrapper {
   position: fixed;
   top: 0;
@@ -1305,6 +1309,17 @@ ol.comment-list{
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover, 
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: #abda37;
+  color: #fff;
+}
+.woocommerce nav.woocommerce-pagination ul li a, 
+.woocommerce nav.woocommerce-pagination ul li span{
+  padding: 10px 15px;
+  font-size: 18px;
+}
 .woocommerce .woocommerce-breadcrumb,
 .woocommerce ul.products li.product .button{
   margin:1em 0;
