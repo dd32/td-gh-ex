@@ -17,9 +17,18 @@
       ?>
     </div>
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
-  	  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>
-      <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt, esc_attr(get_theme_mod('bb_mobile_application_excerpt_number','20')))); ?></p></div>
-  	  <a href="<?php the_permalink(); ?>" class="read-more-box" title="<?php esc_attr_e('Read More','bb-mobile-application'); ?>"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?><span class="screen-reader-text"><?php esc_html_e( 'Read More','bb-mobile-application' );?></span></a> 
+  	  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
+      <?php if(get_theme_mod('bb_mobile_application_blog_post_description_option') == 'Full Content'){ ?>
+        <?php the_content(); ?>
+      <?php }
+      if(get_theme_mod('bb_mobile_application_blog_post_description_option', 'Excerpt Content') == 'Excerpt Content'){ ?>
+        <?php if(get_the_excerpt()) { ?>
+          <div class="entry-content"><p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt, esc_attr(get_theme_mod('bb_mobile_application_excerpt_number','20')))); ?><?php echo esc_html( get_theme_mod('bb_mobile_application_post_suffix_option','...') ); ?></p></div>
+        <?php }?>
+      <?php }?>
+      <?php if( get_theme_mod('bb_mobile_application_button_text','Read More') != ''){ ?>
+        <a href="<?php esc_url(the_permalink()); ?>" class="read-more-box" title="<?php esc_attr_e('Read More','bb-mobile-application'); ?>"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('bb_mobile_application_button_text','Read More'));?></span></a> 
+      <?php }?>
     </div>
     <div class="clearfix"></div>
   </article>

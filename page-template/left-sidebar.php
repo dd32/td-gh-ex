@@ -12,10 +12,10 @@ get_header(); ?>
     	<div class="col-lg-4 col-md-4" id="sidebar">
     		<?php dynamic_sidebar('sidebar-2'); ?>
     	</div>		 
-    	<div class="col-lg-8 col-md-8" class="content-ts" >
+    	<div class="col-lg-8 col-md-8 background-img-skin" class="content-ts" >
     		<?php while ( have_posts() ) : the_post(); ?>
                 <?php the_post_thumbnail(); ?>
-                <h1><?php the_title();?></h1>
+                <h1><?php esc_html(the_title());?></h1>
                 <div class="entry-content"><?php the_content();?></div>
                 
                 <?php

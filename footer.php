@@ -47,13 +47,12 @@
     </div>
     <div class="inner">
       <div class="copyright text-center">
-        <p><?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('Copyright 2016','bb-mobile-application'))); ?> <?php bb_mobile_application_credit(); ?></p>
+        <p><?php bb_mobile_application_credit(); ?> <?php echo esc_html(get_theme_mod('bb_mobile_application_footer_copy',__('By Themeshopy','bb-mobile-application'))); ?></p>
       </div>
       <div class="clear"></div>
     </div>
   </div>
 </footer>
-
 <?php if( get_theme_mod( 'bb_mobile_application_enable_disable_scroll',true) != '') { ?>
   <?php $theme_lay = get_theme_mod( 'bb_mobile_application_scroll_setting','Right');
     if($theme_lay == 'Left'){ ?>

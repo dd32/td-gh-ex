@@ -394,10 +394,18 @@ function bb_mobile_application_sanitize_dropdown_pages( $page_id, $setting ) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'bb_mobile_application_loop_columns');
-	if (!function_exists('bb_mobile_application_loop_columns')) {
-		function bb_mobile_application_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('bb_mobile_application_loop_columns')) {
+	function bb_mobile_application_loop_columns() {
+		$columns = get_theme_mod( 'bb_mobile_application_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'bb_mobile_application_shop_per_page', 20 );
+function bb_mobile_application_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'bb_mobile_application_wooproducts_per_page', 9 );
+	return $cols;
 }
 
 /* Custom template tags for this theme. */

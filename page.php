@@ -14,37 +14,68 @@ get_header(); ?>
 
 <?php do_action( 'bb_mobile_application_page_header' ); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-    <div class="title-box">
-    	<div class="container">
-    		<h1><?php the_title();?></h1>
-    	</div>
-    </div>
-    <main role="main" id="maincontent">
-        <div class="container">
-            <div class="middle-align">
-                    <?php the_post_thumbnail(); ?>
-                    <div class="entry-content"><?php the_content();?></div>
-                    <?php 
-                    wp_link_pages( array(
-                        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-mobile-application' ) . '</span>',
-                        'after'       => '</div>',
-                        'link_before' => '<span>',
-                        'link_after'  => '</span>',
-                        'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>%',
-                        'separator'   => '<span class="screen-reader-text">, </span>',
-                    ) ); ?>
-                <div class="clear"></div>    
+<main role="main" id="maincontent" class="middle-align">
+    <div class="container">
+        <?php
+        $left_right = get_theme_mod( 'bb_mobile_application_single_page_sidebar_layout','One Column');
+        if($left_right == 'Left Sidebar'){ ?>
+            <div class="row">
+                <div id="sidebar" class="col-lg-4 col-md-4">
+                    <?php dynamic_sidebar('sidebar-1'); ?>
+                </div>
+                <div class="col-lg-8 col-md-8 background-img-skin">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php the_post_thumbnail(); ?>
+                        <h1><?php esc_html(the_title()); ?></h1>
+                        <div class="entry-content"><?php the_content();?></div>
+                    <?php endwhile; // end of the loop. ?>
+                    <?php
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+                    ?>
+                    <div class="clear"></div>
+                </div>
             </div>
-            <?php
-                // If comments are open or we have at least one comment, load up the comment template.
-                if ( comments_open() || get_comments_number() ) {
-                    comments_template();
-                }
-            ?>
-        </div>
-    </main>
-<?php endwhile; // end of the loop. ?>
+        <?php }else if($left_right == 'Right Sidebar'){ ?>
+            <div class="row">
+                <div class="col-lg-8 col-md-8 background-img-skin">
+                    <?php while ( have_posts() ) : the_post(); ?>
+                        <?php the_post_thumbnail(); ?>
+                        <h1><?php esc_html(the_title()); ?></h1>
+                        <div class="entry-content"><?php the_content();?></div>
+                    <?php endwhile; // end of the loop. ?>
+                    <?php
+                        // If comments are open or we have at least one comment, load up the comment template.
+                        if ( comments_open() || get_comments_number() ) :
+                            comments_template();
+                        endif;
+                    ?>
+                    <div class="clear"></div>
+                </div>
+                <div id="sidebar" class="col-lg-4 col-md-4">
+                    <?php dynamic_sidebar('sidebar-1'); ?>
+                </div>
+            </div>
+        <?php }else if($left_right == 'One Column'){ ?>
+            <div class="container background-img-skin">
+                <?php while ( have_posts() ) : the_post(); ?>
+                    <?php the_post_thumbnail(); ?>
+                    <h1><?php esc_html(the_title()); ?></h1>
+                    <div class="entry-content"><?php the_content();?></div>
+                <?php endwhile; // end of the loop. ?>
+                <?php
+                    // If comments are open or we have at least one comment, load up the comment template.
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                ?>
+                <div class="clear"></div>
+            </div>
+        <?php }?>
+    </div>
+</main>
 
 <?php do_action( 'bb_mobile_application_page_footer' ); ?>
 

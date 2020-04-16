@@ -17,7 +17,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
+  <?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+  } else {
+    do_action( 'wp_body_open' );
+  } ?>
   <header role="banner">
     <?php if(get_theme_mod('bb_mobile_application_preloader_option',true)){ ?>
       <div id="loader-wrapper">
@@ -55,11 +59,10 @@
             </div>
             <div class="menubox col-lg-8 col-md-3 col-3">
               <div class="toggle-menu responsive-menu">
-                <button role="tab" onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-mobile-application'); ?></span></button>
+                <button role="tab" onclick="bb_mobile_application_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-mobile-application'); ?></span></button>
               </div>
               <div id="menu-sidebar" class="nav sidebar">
                 <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-mobile-application' ); ?>">
-                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-mobile-application'); ?></span></a>
                   <?php 
                     wp_nav_menu( array( 
                       'theme_location' => 'primary',
@@ -72,6 +75,7 @@
                   <div id="contact-info">
                     <?php get_search_form();?>
                   </div>
+                  <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_mobile_application_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-mobile-application'); ?></span></a>
                 </nav>
               </div>
             </div>        

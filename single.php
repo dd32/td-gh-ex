@@ -10,7 +10,7 @@ get_header(); ?>
 <div class="container">
     <main id="maincontent" role="main" class="middle-align">
     	<?php
-            $left_right = get_theme_mod( 'bb_mobile_application_theme_options','Right Sidebar');
+            $left_right = get_theme_mod( 'bb_mobile_application_single_post_sidebar_layout','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>
             <div class="row">
 		    	<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
