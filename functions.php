@@ -461,6 +461,17 @@ function astrid_remove_page_template() {
 }
 add_action('admin_footer', 'astrid_remove_page_template', 10);
 
+/*
+ * Disable Elementor globals
+ */
+function astrid_disable_elementor_globals() {
+
+	update_option( 'elementor_disable_color_schemes', 'yes' );
+	update_option( 'elementor_disable_typography_schemes', 'yes' );	
+
+}
+add_action('after_switch_theme', 'astrid_disable_elementor_globals');
+
 /**
  * Implement the Custom Header feature.
  */

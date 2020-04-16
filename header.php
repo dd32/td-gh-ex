@@ -71,7 +71,7 @@
 	<div class="header-clone"></div>
 	<?php endif; ?>	
 
-	<?php if ( !is_page_template('page-templates/page_widgetized.php') ) : ?>
+	<?php if ( !is_page_template('page-templates/page_widgetized.php') && !is_page_template('page-templates/page_builder.php') ) : ?>
 		<?php $container = 'container'; ?>
 	<?php else : ?>
 		<?php $container = 'home-wrapper'; ?>
