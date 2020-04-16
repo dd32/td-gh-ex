@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 4.3.0\n"
+"Project-Id-Version: Responsive 4.3.1\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
-"POT-Creation-Date: 2020-04-15 10:28:47+00:00\n"
+"POT-Creation-Date: 2020-04-16 12:38:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2629,29 +2629,38 @@ msgstr ""
 msgid "Fermentum"
 msgstr ""
 
-#: sidebar-home.php:39
+#: sidebar-home.php:40
 msgid ""
 "This is your first home widget box. To edit please go to Appearance > "
 "Widgets and choose 6th widget from the top in area 6 called Home Widget 1. "
 "Title is also manageable from widgets as well."
 msgstr ""
 
-#: sidebar-home.php:53
-msgid "Elementum"
+#: sidebar-home.php:42 sidebar-home.php:70 sidebar-home.php:96
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+"Lorem Ipsum has been the industry's standard dummy text ever since the "
+"1500s, when an unknown printer took a galley of type and scrambled it to "
+"make a type specimen book. It has survived not only five centuries, but "
+"also the leap into electronic typesetting, remaining essentially unchanged."
 msgstr ""
 
 #: sidebar-home.php:59
+msgid "Elementum"
+msgstr ""
+
+#: sidebar-home.php:68
 msgid ""
 "This is your second home widget box. To edit please go to Appearance > "
 "Widgets and choose 7th widget from the top in area 7 called Home Widget 2. "
 "Title is also manageable from widgets as well."
 msgstr ""
 
-#: sidebar-home.php:73
+#: sidebar-home.php:87
 msgid "Interdum"
 msgstr ""
 
-#: sidebar-home.php:77
+#: sidebar-home.php:94
 msgid ""
 "This is your third home widget box. To edit please go to Appearance > "
 "Widgets and choose 8th widget from the top in area 8 called Home Widget 3. "
