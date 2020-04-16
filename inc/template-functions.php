@@ -82,3 +82,14 @@ function bam_tag_cloud_sizes($args) {
 	return $args; 
 }
 add_filter('widget_tag_cloud_args','bam_tag_cloud_sizes');
+
+/*
+ * Add support for responsive videos using fitvids jquery library.
+ */
+if ( ! function_exists( 'bam_responsive_video' ) ) :
+	function bam_responsive_video( $html, $url, $attr, $post_ID ) {
+		return '<div class="fitvids-video">' . $html . '</div>';
+	}
+
+	add_filter( 'embed_oembed_html', 'bam_responsive_video', 10, 4 );
+endif;

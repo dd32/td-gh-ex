@@ -259,6 +259,8 @@ final class Bam_Theme {
 
 		wp_enqueue_script( 'bam-skip-link-focus-fix', $dir_uri . 'js/skip-link-focus-fix.js', array(), '20151215', true );
 
+		wp_enqueue_script( 'jquery-fitvids', $dir_uri . 'js/jquery.fitvids.js', array( 'jquery' ), '', true );
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}

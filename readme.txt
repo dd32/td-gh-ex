@@ -4,7 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 4.5
 Tested up to: 5.4
 Requires PHP: 5.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,10 @@ Bam is a great flexible theme for blogging sites.
 Bam supports all the major plugins.
 
 == Changelog ==
+
+= 1.1.2 =
+* Added FitVids jquery library to support responsive videos.
+* Fixed header background color issue.
 
 = 1.1.1 =
 * Few updates to ready for WordPress 5.4.
@@ -103,7 +107,8 @@ Bam supports all the major plugins.
 * Font Awesome Fonts, (C) 2018 Dave Gandy, SIL OFL 1.1
 * main-navigation.js based on Twenty Seventeen theme, (C) 2016 WordPress.org, GPLv2 or later
 * Slider Control slider.js based on Kirki Customizer Framework, (C) 2019 Ari Stathopoulos, MIT
-* TRT Customizer Pro (C) 2016 Justin Tadlock, GPLv2 or later
+* TRT Customizer Pro (C) 2016 Justin Tadlock, GPLv2 or later.
+* FitVids (C) 2013 Chris Coyier and Dave Rupert, WTFPL License.
 
 Image 1 shown in screenshot.png, Copyright Bruce Mars
 License: CC0 1.0 Universal (CC0 1.0)
