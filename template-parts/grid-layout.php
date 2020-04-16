@@ -14,7 +14,7 @@
 ?>
 <div class="col-lg-4 col-md-4">
     <article class="page-box">
-        <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h2>
+        <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?></a></h2>
         <div class="box-image">
             <?php the_post_thumbnail();?>
         </div>
@@ -29,7 +29,7 @@
             <?php }?>
             <?php if( get_theme_mod('advance_fitness_gym_button_text','READ MORE') != ''){ ?>
               <div class="second-border">
-                <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span></a>
+                <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?></span></a>
               </div>
             <?php } ?>
         </div>

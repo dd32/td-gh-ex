@@ -25,10 +25,7 @@ a.button.button-secondary.alignright:hover {
 	background: #0073aa;
 }
 
-
 /* ---------Customizer--------- */
-/* ---------Customizer--------- */
-
 
 #advance-fitness-gym-img-container .advance-fitness-gym-radio-img-img {
     border: 3px solid #DEDEDE;
@@ -50,7 +47,11 @@ input[type=checkbox]:before {
 }
 
 /* ---------Excerpt & Logo --------- */
-input#_customize-input-logo_size,input#_customize-input-advance_fitness_gym_excerpt_number{
+input#_customize-input-logo_size,
+input#_customize-input-advance_fitness_gym_excerpt_number,
+input#_customize-input-advance_fitness_gym_wooproducts_border_radius,
+input#_customize-input-advance_fitness_gym_wooproducts_box_shadow,
+input#_customize-input-advance_fitness_gym_product_button_border_radius{
     width: 100%;
 }
 li#customize-control-logo_size {
@@ -64,4 +65,7 @@ input#_customize-input-advance_fitness_gym_button_border_radius{
 }
 .customize-control-title{
   display: inline-block;
+}
+ul#sub-accordion-section-advance_fitness_gym_product_button_section{
+  border: none !important;
 }

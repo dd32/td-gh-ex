@@ -14,7 +14,7 @@ if (!function_exists('advance_fitness_gym_setup')):
 function advance_fitness_gym_setup() {
 
 	$GLOBALS['content_width'] = apply_filters('advance_fitness_gym_content_width', 640);
-
+	load_theme_textdomain( 'advance-fitness-gym', get_template_directory() . '/languages' );
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
 	add_theme_support('woocommerce');
@@ -400,10 +400,18 @@ if (!function_exists('advance_fitness_gym_credit')) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'advance_fitness_gym_loop_columns');
-	if (!function_exists('advance_fitness_gym_loop_columns')) {
-		function advance_fitness_gym_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('advance_fitness_gym_loop_columns')) {
+	function advance_fitness_gym_loop_columns() {
+		$columns = get_theme_mod( 'advance_fitness_gym_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'advance_fitness_gym_shop_per_page', 20 );
+function advance_fitness_gym_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'advance_fitness_gym_wooproducts_per_page', 9 );
+	return $cols;
 }
 
 /* Custom header additions. */

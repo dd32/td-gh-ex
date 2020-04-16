@@ -8,10 +8,10 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function advance_fitness_gym_resmenu_open() {
   document.getElementById("menu-sidebar").style.width = "100%";
 }
-function resMenu_close() {
+function advance_fitness_gym_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 

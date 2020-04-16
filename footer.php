@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_fitness_gym_footer_copy', __('Copyright 2018 ', 'advance-fitness-gym')));?> <?php advance_fitness_gym_credit();?></p>
+        <p><?php advance_fitness_gym_credit();?> <?php echo esc_html(get_theme_mod('advance_fitness_gym_footer_copy', __('By Themeshopy ', 'advance-fitness-gym')));?></p>
     </div>
 </footer>
 

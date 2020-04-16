@@ -13,17 +13,15 @@
   $archive_day   = get_the_time('d'); 
 ?> 
 <article class="page-box">
-  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h2>
+  <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?></a></h2>
   <?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '' || get_theme_mod( 'advance_fitness_gym_date_hide',true) != '' || get_theme_mod( 'advance_fitness_gym_comment_hide',true) != '') { ?>
     <div class="metabox">
       <?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '') { ?>
-        <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+        <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?></a></span>
       <?php } ?>
-
       <?php if( get_theme_mod( 'advance_fitness_gym_date_hide',true) != '') { ?>
         <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
       <?php } ?>  
-
       <?php if( get_theme_mod( 'advance_fitness_gym_comment_hide',true) != '') { ?>  
         <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'advance-fitness-gym'), __('0 Comments', 'advance-fitness-gym'), __('% Comments', 'advance-fitness-gym') ); ?> </span>
       <?php } ?>
@@ -43,7 +41,7 @@
     <?php }?>
     <?php if( get_theme_mod('advance_fitness_gym_button_text','READ MORE') != ''){ ?>
       <div class="second-border">
-        <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span></a>
+        <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('advance_fitness_gym_button_text','READ MORE'));?></span></a>
       </div>
     <?php } ?>
   </div>

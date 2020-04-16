@@ -30,10 +30,10 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
             <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-              <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
+              <a href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail('full'); ?></a>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php the_title(); ?></h1>
+                  <h1><?php esc_html(the_title()); ?></h1>
                   <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_fitness_gym_slider_excerpt_length','20')))); ?></p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ get_header(); ?>
                 <div class="col-lg-3 col-md-3">
                   <div class="service-border">
                     <?php the_post_thumbnail('full'); ?>
-                    <a href="<?php the_permalink(); ?>"><strong><?php the_title(); ?></strong></a>
+                    <a href="<?php esc_url(the_permalink()); ?>"><strong><?php esc_html(the_title()); ?></strong></a>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,10 ) ); ?></p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ get_header(); ?>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <div class="single-content">
-                    <h2><a href="<?php the_permalink(); ?>" ><?php the_title(); ?></a></h2>
+                    <h2><a href="<?php esc_url(the_permalink()); ?>" ><?php esc_html(the_title()); ?></a></h2>
                     <hr class="wlcm-hr">
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,70 ) ); ?></p>
                     <div class="know-btn">
