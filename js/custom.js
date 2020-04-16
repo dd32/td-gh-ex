@@ -8,20 +8,20 @@ jQuery(function($){
 
 });
 
-function resMenu_open() {
+function bb_wedding_bliss_resmenu_open() {
   document.getElementById("menu-sidebar").style.width = "100%";
 }
-function resMenu_close() {
+function bb_wedding_bliss_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 
 
 /**** Hidden search box ***/
 
-	function search_open() {
+	function bb_wedding_bliss_search_open() {
 	  jQuery(".serach_outer").slideDown(100);
 	}
-	function search_close() {
+	function bb_wedding_bliss_search_close() {
 	  jQuery(".serach_outer").slideUp(100);
 	}
 

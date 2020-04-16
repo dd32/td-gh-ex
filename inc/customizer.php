@@ -12,6 +12,43 @@
  */
 function bb_wedding_bliss_customize_register( $wp_customize ) {	
 
+	//add home page setting pannel
+	$wp_customize->add_panel( 'bb_wedding_bliss_panel_id', array(
+	    'priority' => 10,
+	    'capability' => 'edit_theme_options',
+	    'theme_supports' => '',
+	    'title' => __( 'Theme Settings', 'bb-wedding-bliss' ),
+	    'description' => __( 'Description of what this panel does.', 'bb-wedding-bliss' ),
+	) );
+
+    // Add the Theme Color Option section.
+	$wp_customize->add_section('bb_wedding_bliss_theme_color_option', array( 
+		'panel' => 'bb_wedding_bliss_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
+	);
+
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
+	    'default' => '#b79338',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_first',
+  	)));
+
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
+	    'default' => '#151c27',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_second',
+  	)));
+
 	$font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
@@ -437,42 +474,186 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
         ),
 	) );
 
-	//add home page setting pannel
-	$wp_customize->add_panel( 'bb_wedding_bliss_panel_id', array(
-	    'priority' => 10,
-	    'capability' => 'edit_theme_options',
-	    'theme_supports' => '',
-	    'title' => __( 'Theme Settings', 'bb-wedding-bliss' ),
-	    'description' => __( 'Description of what this panel does.', 'bb-wedding-bliss' ),
+	// woocommerce section
+	$wp_customize->add_setting('bb_wedding_bliss_show_related_products',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_show_related_products',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Related Product','bb-wedding-bliss'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+	$wp_customize->add_setting('bb_wedding_bliss_show_wooproducts_border',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('bb_wedding_bliss_show_wooproducts_border',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide Product Border','bb-wedding-bliss'),
+       'section' => 'woocommerce_product_catalog',
+    ));
+
+    $wp_customize->add_setting( 'bb_wedding_bliss_wooproducts_per_columns' , array(
+		'default'           => 3,
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
 	) );
+	$wp_customize->add_control( 'bb_wedding_bliss_wooproducts_per_columns', array(
+		'label'    => __( 'Display Product Per Columns', 'bb-wedding-bliss' ),
+		'section'  => 'woocommerce_product_catalog',
+		'type'     => 'select',
+		'choices'  => array(
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+		),
+	)  );
 
-    // Add the Theme Color Option section.
-	$wp_customize->add_section('bb_wedding_bliss_theme_color_option', array( 
-		'panel' => 'bb_wedding_bliss_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
-	);
+	$wp_customize->add_setting('bb_wedding_bliss_wooproducts_per_page',array(
+		'default'	=> 9,
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));	
+	$wp_customize->add_control('bb_wedding_bliss_wooproducts_per_page',array(
+		'label'	=> __('Display Product Per Page','bb-wedding-bliss'),
+		'section'	=> 'woocommerce_product_catalog',
+		'type'		=> 'number'
+	));
 
-  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
-	    'default' => '#b79338',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
-  		'label' => 'First Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_theme_color_option',
-	    'settings' => 'bb_wedding_bliss_theme_color_first',
-  	)));
+	$wp_customize->add_setting( 'bb_wedding_bliss_top_bottom_wooproducts_padding',array(
+		'default' => 10,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'bb_wedding_bliss_top_bottom_wooproducts_padding',	array(
+		'label' => esc_html__( 'Top Bottom Product Padding','bb-wedding-bliss' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
 
-  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
-	    'default' => '#151c27',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
-  		'label' => 'Second Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
-	    'section' => 'bb_wedding_bliss_theme_color_option',
-	    'settings' => 'bb_wedding_bliss_theme_color_second',
-  	)));
+	$wp_customize->add_setting( 'bb_wedding_bliss_left_right_wooproducts_padding',array(
+		'default' => 10,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control( 'bb_wedding_bliss_left_right_wooproducts_padding',	array(
+		'label' => esc_html__( 'Right Left Product Padding','bb-wedding-bliss' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number'
+	));
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_wooproducts_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_wooproducts_border_radius',array(
+		'label' => esc_html__( 'Product Border Radius','bb-wedding-bliss' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_wooproducts_box_shadow',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_wooproducts_box_shadow',array(
+		'label' => esc_html__( 'Product Box Shadow','bb-wedding-bliss' ),
+		'section' => 'woocommerce_product_catalog',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'range'
+	));
+
+	$wp_customize->add_section('bb_wedding_bliss_product_button_section', array(
+		'title'    => __('Product Button Settings', 'bb-wedding-bliss'),
+		'priority' => null,
+		'panel'    => 'woocommerce',
+	));
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_top_bottom_product_button_padding',array(
+		'default' => 14,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_top_bottom_product_button_padding',	array(
+		'label' => esc_html__( 'Product Button Top Bottom Padding','bb-wedding-bliss' ),
+		'section' => 'bb_wedding_bliss_product_button_section',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+		'type'		=> 'number',
+
+	));
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_left_right_product_button_padding',array(
+		'default' => 26,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_left_right_product_button_padding',array(
+		'label' => esc_html__( 'Product Button Right Left Padding','bb-wedding-bliss' ),
+		'section' => 'bb_wedding_bliss_product_button_section',
+		'type'		=> 'number',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
+
+	$wp_customize->add_setting( 'bb_wedding_bliss_product_button_border_radius',array(
+		'default' => 0,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	));
+	$wp_customize->add_control('bb_wedding_bliss_product_button_border_radius',array(
+		'label' => esc_html__( 'Product Button Border Radius','bb-wedding-bliss' ),
+		'section' => 'bb_wedding_bliss_product_button_section',
+		'type'		=> 'range',
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 50,
+			'step' => 1,
+		),
+	));
   	
 	//Layouts
 	$wp_customize->add_section( 'bb_wedding_bliss_left_right', array(
@@ -863,7 +1044,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_wedding_bliss_title_404_page',array(
-		'default'=> '404 Not Found',
+		'default'=> __('404 Not Found','bb-wedding-bliss'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_title_404_page',array(
@@ -873,7 +1054,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_content_404_page',array(
-		'default'=> 'Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.',
+		'default'=> __('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','bb-wedding-bliss'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_content_404_page',array(
@@ -883,7 +1064,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_button_404_page',array(
-		'default'=> 'Back to Home Page',
+		'default'=> __('Back to Home Page','bb-wedding-bliss'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_button_404_page',array(
@@ -1019,7 +1200,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'bb_wedding_bliss_post_suffix_option', array(
-		'default'   => '...',
+		'default'   => __('...','bb-wedding-bliss' ),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	) );
 	$wp_customize->add_control( 'bb_wedding_bliss_post_suffix_option', array(
@@ -1030,7 +1211,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('bb_wedding_bliss_button_text',array(
-		'default'=> 'READ MORE',
+		'default'=> __('READ MORE','bb-wedding-bliss' ),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_wedding_bliss_button_text',array(
@@ -1046,7 +1227,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('bb_wedding_bliss_footer_widget_areas',array(
-        'default'           => '4',
+        'default'           => 4,
         'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
     ));
     $wp_customize->add_control('bb_wedding_bliss_footer_widget_areas',array(

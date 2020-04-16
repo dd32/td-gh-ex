@@ -16,10 +16,12 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-wedding-bliss' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
-  
+  <?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+  } else {
+    do_action( 'wp_body_open' );
+  } ?>
   <div class="<?php if( get_theme_mod( 'bb_wedding_bliss_sticky_header') != '' || get_theme_mod( 'bb_wedding_bliss_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <header role="banner">
       <?php if(get_theme_mod('bb_wedding_bliss_preloader_option',true)){ ?>
@@ -61,11 +63,10 @@
                 </div>
                   <div class="col-lg-8 col-md-3 col-3">
                     <div class="toggle-menu responsive-menu">
-                      <button onclick="resMenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-wedding-bliss'); ?></span></button>
+                      <button onclick="bb_wedding_bliss_resmenu_open()"><i class="fas fa-bars"></i><span class="screen-reader-text"><?php esc_html_e('Open Menu','bb-wedding-bliss'); ?></span></button>
                     </div>
                     <div id="menu-sidebar" class="nav sidebar">
                       <nav id="primary-site-navigation" class="primary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'bb-wedding-bliss' ); ?>">
-                          <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="resMenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-wedding-bliss'); ?></span></a>
                           <?php 
                             wp_nav_menu( array( 
                               'theme_location' => 'primary',
@@ -98,20 +99,21 @@
                           </div>
                           <?php get_search_form();?>
                         </div>
+                        <a href="javascript:void(0)" class="closebtn responsive-menu" onclick="bb_wedding_bliss_resmenu_close()"><i class="far fa-times-circle"></i><span class="screen-reader-text"><?php esc_html_e('Close Menu','bb-wedding-bliss'); ?></span></a>
                       </nav>
                     </div>
                   </div>
                   <div class="col-lg-1 col-md-1">
-                    <a href="#" onclick="search_open()" class="search-box">
+                    <a href="#" onclick="bb_wedding_bliss_search_open()" class="search-box">
                       <i class="fas fa-search"></i><span class="screen-reader-text"><?php esc_html_e( 'Search','bb-wedding-bliss' );?></span>
                     </a>
                   </div>
               </div>
               <div class="serach_outer">
-                <a href="#" onclick="search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','bb-wedding-bliss' );?></span></a>
                 <div class="serach_inner">
                   <?php get_search_form(); ?>
                 </div>
+                <a href="#" onclick="bb_wedding_bliss_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','bb-wedding-bliss' );?></span></a>
               </div>
             </div>
           </div>

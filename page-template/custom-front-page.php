@@ -30,10 +30,10 @@ get_header(); ?>
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php the_title(); ?></span></a>
+            <a href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
             <div class="carousel-caption">
               <div class="inner_carousel">
-                <h1><a href="<?php the_permalink();?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h1>                     
+                <h1><a href="<?php esc_url(the_permalink());?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h1>                     
               </div>
             </div>
           </div>
@@ -78,7 +78,7 @@ get_header(); ?>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 lscontent">
-                    <h2><?php the_title(); ?></h2>
+                    <h2><?php esc_html(the_title()); ?></h2>
                     <img src="<?php echo esc_url( get_theme_mod('',get_template_directory_uri().'/images/border-image.png') ); ?>" alt="<?php esc_html_e( 'Border Image','bb-wedding-bliss' );?>">
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_wedding_bliss_string_limit_words( $excerpt,20 ) ); ?></p>     
                     <div class="clearfix"></div>
@@ -116,7 +116,7 @@ get_header(); ?>
                               <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
                             </div>
                             <div class="contentbox">
-                              <h4><?php the_title(); ?></h4>
+                              <h4><?php esc_html(the_title()); ?></h4>
                             </div>
                           </div>
                           <?php endwhile;

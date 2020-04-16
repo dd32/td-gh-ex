@@ -9,7 +9,7 @@
 ?>	
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="entry-content">
-        <h2><?php the_title();?></h2>    
+        <h2><?php esc_html(the_title()); ?></h2>    
         <div class="entry-attachment">
             <div class="attachment">
                 <?php bb_wedding_bliss_the_attached_image(); ?>

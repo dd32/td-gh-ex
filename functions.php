@@ -366,8 +366,16 @@ if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 add_filter('loop_shop_columns', 'bb_wedding_bliss_loop_columns');
 if (!function_exists('bb_wedding_bliss_loop_columns')) {
 	function bb_wedding_bliss_loop_columns() {
-		return 3; // 3 products per row
+		$columns = get_theme_mod( 'bb_wedding_bliss_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'bb_wedding_bliss_shop_per_page', 20 );
+function bb_wedding_bliss_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'bb_wedding_bliss_wooproducts_per_page', 9 );
+	return $cols;
 }
 
 /* Excerpt Limit Begin */

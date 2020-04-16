@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
         <div class="copyright col-lg-6 col-md-12 col-10">
-          <p><?php echo esc_html(get_theme_mod('bb_wedding_bliss_footer_copy',__('Copyright 2017','bb-wedding-bliss'))); ?> <?php bb_wedding_bliss_credit(); ?> </p>
+          <p><?php bb_wedding_bliss_credit(); ?> <?php echo esc_html(get_theme_mod('bb_wedding_bliss_footer_copy',__('By Themeshopy','bb-wedding-bliss'))); ?> </p>
         </div>
         <div class="social-media col-lg-6 col-md-1 col-1">
           <?php if( get_theme_mod( 'bb_wedding_bliss_youtube_url' ) != '') { ?>

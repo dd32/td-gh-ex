@@ -17,7 +17,7 @@
     <?php } ?>
     <div class="new-text <?php 
       if(has_post_thumbnail()) { ?>col-lg-6 col-md-6 "<?php } else { ?>col-lg-12 col-md-12"<?php } ?>>
-      <h2><a href="<?php echo esc_url( get_permalink() );?>" title="<?php the_title_attribute(); ?>"><?php the_title();?><span class="screen-reader-text"><?php the_title(); ?></span></a></h2>   
+      <h2><a href="<?php echo esc_url( get_permalink() );?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>   
       <?php if(get_theme_mod('bb_wedding_bliss_blog_post_description_option') == 'Full Content'){ ?>
         <?php the_content(); ?>
       <?php }
@@ -28,7 +28,7 @@
       <?php }?>
       <?php if( get_theme_mod('bb_wedding_bliss_button_text','Read More') != ''){ ?>
         <div class="content-bttn">
-          <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read More', 'bb-wedding-bliss' ); ?>"><?php echo esc_html(get_theme_mod('bb_wedding_bliss_button_text','Read More'));?><span class="screen-reader-text"><?php esc_html_e( 'Read More','bb-wedding-bliss' );?></span></a>
+          <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small hvr-sweep-to-right" title="<?php esc_attr_e( 'Read More', 'bb-wedding-bliss' ); ?>"><?php echo esc_html(get_theme_mod('bb_wedding_bliss_button_text','Read More'));?><span class="screen-reader-text"><?php echo esc_html(get_theme_mod('bb_wedding_bliss_button_text','Read More'));?></span></a>
         </div>
       <?php } ?>
     </div>

@@ -12,7 +12,7 @@ get_header(); ?>
         <div class="middle-align row">       
             <div class="background-img-skin col-lg-8 col-md-8" class="content-ts" >
                 <?php while ( have_posts() ) : the_post(); ?>        
-                    <h1><?php the_title();?></h1>
+                    <h1><?php esc_html(the_title()); ?></h1>
                     <?php the_post_thumbnail(); ?>
                     <?php the_content();
                     
