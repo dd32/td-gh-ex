@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BAHOTEL_L', __FILE__ );
-define( 'BAHOTEL_L_VERSION', '1.0.14' );
+define( 'BAHOTEL_L_VERSION', '1.0.15' );
 define( 'BAHOTEL_L_NAME', 'BA Hotel light' );
 define( 'BAHOTEL_L_URI', get_template_directory_uri() );
 define( 'BAHOTEL_L_STYLESHEET_URI', get_stylesheet_directory_uri() );
@@ -265,19 +265,6 @@ function bahotel_l_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 
 	return $attr;
 }
-
-/////////////////////////////
-
-if ( ! function_exists( 'wp_body_open' ) ) {
-
-    /**
-     * Shim for wp_body_open, ensuring backwards compatibility with versions of WordPress older than 5.2.
-     */
-    function wp_body_open() {
-        do_action( 'wp_body_open' );
-    }
-}
-
 
 //////////////////////////////////////////////////
 
