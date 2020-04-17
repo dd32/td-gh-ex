@@ -44,10 +44,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 				<?php
 				printf( __( '<time class="col posted-on genericon-day" datetime="2011-09-28">%2$s</time> ', 'sampression-lite' ), 'meta-prep meta-prep-author',
 					sprintf( '<a href="%4$s" title="%2$s" rel="bookmark">%3$s</a>',
-						get_permalink(),
+						esc_url( get_permalink() ),
 						esc_attr( get_the_time() ),
-						get_the_date( 'M d, Y' ),
-						get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) )
+						get_the_date( get_option( 'date_format' ) ),
+						esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) )
 					) );
 				?>
 				<?php if ( comments_open() && get_comments_number() > 0 ) : ?>
@@ -62,14 +62,14 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 				); ?>
 
 				<div class="cats genericon-category">
-                    <?php printf( __( '%s', 'sampression-lite' ), get_the_category_list( ', ' ) ); ?>
+                    <?php printf( '%s', get_the_category_list( ', ' ) ); ?>
                 </div>
 
 				<?php if ( has_tag() ) { ?>
 					<div class="tags genericon-tag"><?php the_tags( ' ', ', ' ); ?> </div>
 				<?php } ?>
 
-				<?php if ( is_user_logged_in() ) { ?>
+				<?php if ( current_user_can( 'edit_post', get_the_ID() ) ) { ?>
 
 					<div class="edit genericon-edit"><?php edit_post_link( __( 'Edit', 'sampression-lite' ) ); ?> </div>
 

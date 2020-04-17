@@ -30,7 +30,7 @@ foreach ( ( get_the_category() ) as $category ) {
 } ?>]'>
 
 	<h3 class="post-title">
-		<a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>"
+		<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"
 		   rel="bookmark"><?php the_title(); ?>
 		</a>
 	</h3>
@@ -38,8 +38,8 @@ foreach ( ( get_the_category() ) as $category ) {
 	<?php if ( has_post_thumbnail() ) {
 		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'featured-thumbnail' );
 		?>
-		<div class="featured-img" style="height: <?php echo $thumbnail[2] ?>px;">
-			<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>">
+		<div class="featured-img" style="height: <?php echo esc_attr( $thumbnail[2] ); ?>px;">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<?php the_post_thumbnail( 'featured-thumbnail', '', true ); ?>
 			</a>
 		</div>
@@ -47,12 +47,6 @@ foreach ( ( get_the_category() ) as $category ) {
 	<?php } ?>
 	<div class="entry clearfix">
 		<?php the_excerpt(); ?>
-		<?php wp_link_pages( array(
-				'before' => '<div class="page-link"><span>' . __( 'Pages:', 'sampression-lite' ) . '</span>',
-				'after'  => '</div>',
-			)
-		);
-		?>
 	</div>
 	<!-- .entry -->
 
@@ -60,10 +54,10 @@ foreach ( ( get_the_category() ) as $category ) {
 		<?php
 		printf( __( '<time class="col posted-on genericon-day" datetime="2011-09-28">%2$s</time> ', 'sampression-lite' ), 'meta-prep meta-prep-author',
 			sprintf( '<a href="%4$s" title="%2$s" rel="bookmark">%3$s</a>',
-				get_permalink(),
+				esc_url( get_permalink() ),
 				esc_attr( get_the_time() ),
-				get_the_date( 'M d, Y' ),
-				get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) )
+				get_the_date( get_option( 'date_format' ) ),
+				esc_url( get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) )
 			) );
 		?>
 		<?php if ( comments_open() && get_comments_number() > 0 ) : ?>
@@ -74,7 +68,7 @@ foreach ( ( get_the_category() ) as $category ) {
 	</div>
 	<div class="meta clearfix">
 		<?php printf( '<div class="post-author genericon-user col"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></div>',
-			get_author_posts_url( get_the_author_meta( 'ID' ) ),
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			sprintf( esc_attr__( 'View all posts by %s', 'sampression-lite' ), get_the_author() ),
 			get_the_author()
 		); ?>
@@ -93,7 +87,7 @@ foreach ( ( get_the_category() ) as $category ) {
 		</div>
 	<?php } ?>
 
-	<?php if ( is_user_logged_in() ) { ?>
+	<?php if ( current_user_can( 'edit_post', get_the_ID() ) ) { ?>
 		<div class="meta">
 			<div class="edit genericon-edit"><?php edit_post_link( __( 'Edit this post', 'sampression-lite' ) ); ?> </div>
 		</div>

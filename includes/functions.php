@@ -76,7 +76,6 @@ if ( ! function_exists( 'sampression_setup' ) ):
 		/**
 		 * This feature enables custom header color and image support for a theme
 		 */
-		//define( 'NO_HEADER_TEXT', true );
 		add_theme_support( 'custom-header', array(
 			// Text color and image (empty to use none).
 			'default-text-color' => 'FE6E41',
@@ -92,7 +91,6 @@ if ( ! function_exists( 'sampression_setup' ) ):
 			'flex-width'         => true,
 			'header-text'        => false
 		) );
-		//define( 'NO_HEADER_TEXT', true );
 
 		/*
 		 * Enable support for custom logo.
@@ -117,27 +115,13 @@ if ( ! function_exists( 'sampression_setup' ) ):
 endif;
 
 /**
- * Redirect to About Theme page after Sampression Lite activation.
- */
-global $pagenow;
-if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == 'themes.php' ) {
-	wp_redirect( admin_url( 'themes.php?page=about-sampression' ) );
-	exit;
-}
-
-/**
- * Add shortcode support in widget_text
- */
-add_filter( 'widget_text', 'do_shortcode' );
-
-/**
  * Sampression theme background image css callback
  */
 if ( ! function_exists( 'sampression_custom_background_cb' ) ):
 
 	function sampression_custom_background_cb() {
-		$background = get_background_image();
-		$color      = get_background_color();
+		$background = esc_url( get_background_image() );
+		$color      = esc_attr( get_background_color() );
 
 		if ( ! $background && ! $color ) {
 			return;
@@ -200,7 +184,7 @@ if ( ! function_exists( 'sampression_footer' ) ) {
 			<?php
 			if ( get_theme_mod( 'sampression_remove_copyright_text' ) != 1 ) {
 				if ( get_theme_mod( 'sampression_copyright_text' ) ) {
-					echo get_theme_mod( 'sampression_copyright_text' ) . ' ';
+					echo wp_kses_post( get_theme_mod( 'sampression_copyright_text' ) ) . ' ';
 				} else {
 					?>
                     <div class="alignleft copyright"><?php bloginfo( 'name' ); ?> &copy; <?php echo date( 'Y' ); ?>. All
@@ -217,15 +201,13 @@ if ( ! function_exists( 'sampression_footer' ) ) {
 			?>
         </div>
         <div class="alignright credit">
-			<?php esc_html_e( 'A theme by', 'sampression-lite' ); ?> <a
-                    href="<?php echo esc_url( __( 'https://www.sampression.com/', 'sampression-lite' ) ); ?>"
-                    target="_blank"
-                    title="<?php esc_attr_e( 'Sampression', 'sampression-lite' ); ?>"><?php esc_html_e( 'Sampression', 'sampression-lite' ); ?></a>
+			<?php esc_html_e( 'A theme by', 'sampression-lite' ); ?> <a href="<?php echo esc_url( __( 'https://www.sampression.com/', 'sampression-lite' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Sampression', 'sampression-lite' ); ?>"><?php esc_html_e( 'Sampression', 'sampression-lite' ); ?></a>
         </div>
 		<?php
 	}
 }
-add_filter( 'sampression_credits', 'sampression_footer' );
+
+add_action( 'sampression_credits', 'sampression_footer' );
 
 /*=======================================================================
  * A safe way of adding JavaScripts to a WordPress generated page.
@@ -234,16 +216,15 @@ add_filter( 'sampression_credits', 'sampression_footer' );
 if ( ! function_exists( 'sampression_js' ) ) {
 
 	function sampression_js() {
-		// JS at the bottom for fast page loading. 
+		// JS at the bottom for fast page loading.
 		wp_enqueue_script( 'sampression-modernizer', get_template_directory_uri() . '/lib/js/modernizr.custom.min.js', '', '2.6.2', false );
+        wp_enqueue_script( 'superfish', get_template_directory_uri() . '/lib/js/superfish.js', array( 'jquery' ), '1.4.8', true );
 		wp_enqueue_script( 'sampression-script', get_template_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '1.1', true );
-		wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/lib/js/jquery.3.3.1.js', '', '3.3.1', false );
 		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/lib/js/isotope.pkgd.min.js', '', '', false );
 		wp_enqueue_script( 'isotope-init', get_template_directory_uri() . '/lib/js/isotope.js', '', '', false );
-
 	}
-
 }
+
 add_action( 'wp_enqueue_scripts', 'sampression_js' );
 
 /*=======================================================================
@@ -303,7 +284,6 @@ endif;
  * Pings (Trackbacks/Pingbacks)
  */
 function sampression_comment_list_pings( $comment ) {
-	$GLOBALS['comment'] = $comment;
 	?>
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
 <?php }
@@ -325,7 +305,7 @@ add_filter( 'excerpt_length', 'sampression_excerpt_length' );
  * Returns a "Read more" link for excerpts
  */
 function sampression_read_more() {
-	return ' <span class="read-more"><a href="' . get_permalink() . '">' . __( 'Read more &#8250;', 'sampression-lite' ) . '</a></span>';
+	return ' <span class="read-more"><a href="' . esc_url( get_permalink() ) . '">' . __( 'Read more &#8250;', 'sampression-lite' ) . '</a></span>';
 }
 
 /**
@@ -394,23 +374,6 @@ if ( ! function_exists( 'sampression_cat_count' ) ) {
 }
 
 /*=======================================================================
- * Run function during a themes initialization. It clear all widgets
- *=======================================================================*/
-
-function sampression_widget_reset() {
-	if ( isset( $_GET['activated'] ) ) {
-		add_filter( 'sidebars_widgets', 'disable_all_widgets' );
-		function disable_all_widgets( $sidebars_widgets ) {
-			$sidebars_widgets = array( false );
-
-			return $sidebars_widgets;
-		}
-	}
-}
-
-add_action( 'setup_theme', 'sampression_widget_reset' );
-
-/*=======================================================================
  * WordPress Widgets start right here.
  *=======================================================================*/
 if ( ! function_exists( 'sampression_widgets_init' ) ) :
@@ -459,30 +422,6 @@ if ( ! function_exists( 'sampression_widgets_init' ) ) :
 endif;
 add_action( 'widgets_init', 'sampression_widgets_init' );
 
-function sampression_default_widgets() {
-	$sidebars_widgets = get_option( 'sidebars_widgets' );
-	if ( ! get_option( 'samp_auto_widget_installed', false ) ) {
-
-		if ( empty( $sidebars_widgets['bottom-widget-3'] ) ) {    //if there are no widgets on the 'bottom-widget-3'
-
-			$id                                  = count( $sidebars_widgets ) + 1;
-			$sidebars_widgets['bottom-widget-3'] = array( "text-" . $id );
-
-			$ops        = get_option( 'widget_text' );
-			$ops[ $id ] = array(
-				'title' => 'About me automatic widget',
-				'text'  => 'This is an automatic widget added on Third Bottom Widget box (Bottom Widget 3). To edit please go to Appearance > Widgets and choose 3rd widget from the top in area second called Bottom Widget 3. Title is also manageable from widgets as well.',
-			);
-			update_option( 'widget_text', $ops );
-			update_option( 'sidebars_widgets', $sidebars_widgets );
-		}
-		update_option( 'samp_auto_widget_installed', true );
-
-	}
-}
-
-add_action( 'widgets_init', 'sampression_default_widgets', 11 );
-
 /*=======================================================================
  * Template for comments and pingbacks.
  *
@@ -495,7 +434,7 @@ add_action( 'widgets_init', 'sampression_default_widgets', 11 );
 if ( ! function_exists( 'sampression_comment' ) ) :
 
 	function sampression_comment( $comment, $args, $depth ) {
-		$GLOBALS['comment'] = $comment;
+		// $GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
 			case 'trackback' :
@@ -584,9 +523,9 @@ function sampression_show_logo() {
 	} elseif ( get_theme_mod( 'sampression_logo', get_option( 'opt_sam_logo' ) ) ) {
 		$logo = get_theme_mod( 'sampression_logo', get_option( 'opt_sam_logo' ) )
 		?>
-        <a href="<?php echo home_url( '/' ); ?>"
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
            title="<?php echo esc_attr( ucwords( get_bloginfo( 'name', 'display' ) ) ); ?>" rel="home" id="logo-area">
-            <img class="logo-img" src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>">
+            <img class="logo-img" src="<?php echo esc_url( $logo ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
         </a>
 		<?php
 	}
@@ -608,17 +547,23 @@ function sampression_filter_cat_callback() {
 	$slug    = $_POST['category'];
 	$exc     = $_POST['exclude'];
 	$exclude = explode( '~', $exc );
-	query_posts( array( 'category_name' => $slug, 'post__not_in' => $exclude, 'post_status' => 'publish' ) );
-	while ( have_posts() ) : the_post();
+
+	$qargs = array(
+		'category_name' => $slug,
+		'post__not_in'  => $exclude,
+		'post_status'   => 'publish',
+	);
+
+	$custom_query = new WP_Query( $qargs );
+
+	while ( $custom_query->have_posts() ) : $custom_query->the_post();
 		?>
         <article id="post-<?php the_ID(); ?>" class="post item columns four <?php echo sampression_cat_slug(); ?> ">
-            <h3 class="post-title"><a href="<?php the_permalink() ?>" title="<?php echo esc_attr( get_the_title() ); ?>"
-                                      rel="bookmark"><?php the_title(); ?></a></h3>
+            <h3 class="post-title"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 
 			<?php if ( has_post_thumbnail() ) { ?>
                 <div class="featured-img">
-                    <a href="<?php the_permalink(); ?>"
-                       title="<?php echo esc_attr( the_title_attribute( 'echo=0' ) ); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
                 </div>
                 <!-- .featured-img -->
 			<?php } ?>
@@ -632,12 +577,12 @@ function sampression_filter_cat_callback() {
 				<?php
 				printf( __( '%3$s <time class="col" datetime="2011-09-28"><span class="ico">Published on</span>%2$s</time> ', 'sampression-lite' ), 'meta-prep meta-prep-author',
 					sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-						get_permalink(),
+						esc_url( get_permalink() ),
 						esc_attr( get_the_time() ),
-						get_the_date( 'd M Y' )
+						get_the_date( get_option( 'date_format' ) )
 					),
 					sprintf( '<div class="post-author col"><span class="ico hello">Author</span><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></div>',
-						get_author_posts_url( get_the_author_meta( 'ID' ) ),
+						esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 						sprintf( esc_attr__( 'View all posts by %s', 'sampression-lite' ), get_the_author() ),
 						get_the_author()
 					)
@@ -650,16 +595,15 @@ function sampression_filter_cat_callback() {
 						<?php comments_popup_link( __( '0', 'sampression-lite' ), __( '1', 'sampression-lite' ), __( '%', 'sampression-lite' ) ); ?>
             </span>
 				<?php endif; ?>
-
-
             </div>
+
             <div class="meta">
                 <div class="cats"><?php printf( __( '<span class="ico">Categories</span><div class="overflow-hidden cat-listing">%s</div>', 'sampression-lite' ), get_the_category_list( ', ' ) ); ?></div>
             </div>
         </article>
 	<?php
 	endwhile;
-	wp_reset_query();
+	wp_reset_postdata();
 	die();
 }
 
@@ -736,7 +680,7 @@ function sampression_custom_header_style() {
         if ( $text_color = get_theme_mod('title_textcolor') ) {
         ?>
         #site-title a, article.post .post-title a, body.single article.post .post-title, body.page article.post .post-title, h1, h2, h3, h4, h5, h6 {
-            color: <?php echo $text_color; ?>;
+            color: <?php echo esc_attr( $text_color ); ?>;
         }
 
         #site-title a:hover,
@@ -744,7 +688,7 @@ function sampression_custom_header_style() {
         .meta a:hover,
         #top-nav ul a:link,
         .overflow-hidden.cat-listing > a:hover, .url.fn.n:hover, .col > a:hover {
-            color: <?php echo get_theme_mod('body_textcolor') ?>;
+            color: <?php echo esc_attr(get_theme_mod('body_textcolor') ) ?>;
         }
 
         <?php
@@ -773,7 +717,7 @@ function sampression_custom_header_style() {
 	if(get_theme_mod('body_textcolor')) {
 	?>
         body, #site-description {
-            color: <?php echo get_theme_mod('body_textcolor') ?>;
+            color: <?php echo esc_attr( get_theme_mod('body_textcolor') ); ?>;
         }
 
         <?php
@@ -784,25 +728,25 @@ function sampression_custom_header_style() {
         .meta, .meta a,
         #top-nav ul a:link, #top-nav ul a:visited,
         #primary-nav ul.nav-listing li a {
-            color: <?php echo get_theme_mod('link_color') ?>;
+            color: <?php echo esc_attr( get_theme_mod('link_color') ); ?>;
         }
 
         .button, button, input[type="submit"],
         input[type="reset"], input[type="button"] {
-            background-color: <?php echo get_theme_mod('link_color') ?>;
+            background-color: <?php echo esc_attr( get_theme_mod('link_color') ); ?>;
         }
 
         .button:hover, button:hover, input[type="submit"]:hover,
         input[type="reset"]:hover, input[type="button"]:hover {
-            background-color: <?php echo get_theme_mod('body_textcolor') ?>;
+            background-color: <?php echo esc_attr( get_theme_mod('body_textcolor') ); ?>;
         }
 
         #primary-nav ul.nav-listing li a span {
-            background-color: <?php echo get_theme_mod('link_color') ?>;
+            background-color: <?php echo esc_attr( get_theme_mod('link_color') ); ?>;
         }
 
         a:hover {
-            color: <?php echo get_theme_mod('body_textcolor') ?>;
+            color: <?php echo esc_attr( get_theme_mod('body_textcolor') ); ?>;
         }
 
         #top-nav ul li li a,
@@ -817,7 +761,7 @@ function sampression_custom_header_style() {
         #top-nav .sub-menu li:last-child > .sub-menu li a,
         #top-nav .sub-menu li:last-child > .sub-menu li:last-child > .sub-menu li a,
         #top-nav .sub-menu li:last-child > .sub-menu li:last-child > .sub-menu li:last-child > .sub-menu li a {
-            color: <?php echo get_theme_mod('link_color') ?>;
+            color: <?php echo esc_attr( get_theme_mod('link_color') ); ?>;
         }
 
         <?php
@@ -853,15 +797,13 @@ function sampression_register_required_plugins() {
 	$plugins = array(
 
 		array(
-			'name'     => esc_html__( 'Contact Form 7', 'sampression-lite' ),
-			'slug'     => 'contact-form-7',
-			'required' => false,
+			'name' => esc_html__( 'Contact Form 7', 'sampression-lite' ),
+			'slug' => 'contact-form-7',
 		),
 
 		array(
-			'name'     => esc_html__( 'One click demo import', 'sampression-lite' ),
-			'slug'     => 'one-click-demo-import',
-			'required' => false,
+			'name' => esc_html__( 'One Click Demo Import', 'sampression-lite' ),
+			'slug' => 'one-click-demo-import',
 		),
 	);
 	tgmpa( $plugins );
@@ -894,14 +836,25 @@ require_once trailingslashit( get_template_directory() ) . '/demo/demo.php';
  */
 require_once trailingslashit( get_template_directory() ) . '/includes/customizer-theme-info.php';
 
-
 if ( ! function_exists( 'sampression_admin_enqueue_styles' ) ):
 	function sampression_admin_enqueue_styles() {
 		// Add custom styles for customizer.
-		wp_register_style( 'sampression-customizer-style', get_template_directory_uri() . '/lib/css/admin-style.css', array(), null);
-		wp_enqueue_style( 'sampression-customizer-style' );
+		wp_enqueue_style( 'sampression-customizer-style', get_template_directory_uri() . '/lib/css/admin-style.css', array(), null);
 	}
 endif;
-add_action( 'admin_enqueue_scripts', 'sampression_admin_enqueue_styles' );
 
+add_action( 'customize_controls_enqueue_scripts', 'sampression_admin_enqueue_styles' );
 
+/**
+ * Fix skip link focus in IE11.
+ *
+ * @link https://git.io/vWdr2
+ */
+function sampression_skip_link_focus_fix() {
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'sampression_skip_link_focus_fix' );
