@@ -1,27 +1,23 @@
 <?php
 /**
- * Metro Magazine Theme Customizer.
+ * Theme Customizer.
  *
  * @package Sampression theme
  */
 
-//Create your-option.php inside customizer-parts folder .Add your new option-name below.
+// Create your-option.php inside customizer-parts folder .Add your new option-name below.
 $sampression_customizer_settings = array(
-    'defaults',
-    'custom-code',
-    'typography',
-    'social-options',
-    'blog-options',
-    'footer-options',
-    'prev-custom-css',
-    'theme-info', //new feature ->shows theme update docs url etc
-    'sidebar-layout'
+	'defaults',
+	'typography',
+	'color',
+	'social-options',
+	'footer-options',
+	'sidebar-layout',
 );
 
 /**
  * Sanitization control and helper Functions
  */
-//require get_template_directory() . '/sampression-customizer/inc/selective-part.php';
 require get_template_directory() . '/sampression-customizer/inc/sanitization-functions.php';
 require get_template_directory() . '/sampression-customizer/inc/customizer-controls.php';
 require get_template_directory() . '/sampression-customizer/inc/helper-functions.php';
@@ -30,58 +26,82 @@ require get_template_directory() . '/sampression-customizer/inc/default-options.
 
 /**
  * Include required customizer
+ */
+foreach ( $sampression_customizer_settings as $customizer_setting ) {
+	require get_template_directory() . '/sampression-customizer/customizer-parts/' . $customizer_setting . '.php';
+
+}
+
+/**
+ * Enqueue Scripts for customize controls.
+ */
+function sampression_customize_scripts() {
+	wp_enqueue_script( 'sampression-customize-control', get_template_directory_uri() . '/sampression-customizer/js/customizer-control.js', array( 'jquery' ), '', true );
+	wp_enqueue_style( 'sampression-admin-style', get_template_directory_uri() . '/sampression-customizer/css/customizer-admin.css', '1.0', 'screen' );
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'sampression_customize_scripts' );
+
+/**
+ * Get theme option.
  *
- */
-foreach ($sampression_customizer_settings as $customizer_setting) {
-    require get_template_directory() . '/sampression-customizer/customizer-parts/' . $customizer_setting . '.php';
-
-}
-
-/**
+ * @since 1.0.0
  *
- * Theme option settings
- **/
-function sampression_options_theme_option($option_name)
-{
-    $sampression_options_settings = get_option('sampression_theme_options');
-    if (isset($sampression_options_settings[$option_name])) {
-        $all_option = $sampression_options_settings[$option_name];
-        return $all_option;
-    }
+ * @param string $key Option key.
+ * @return mixed Option value.
+ */
+function sampression_get_option( $key ) {
+	$default_options = sampression_get_default_options_value();
 
+	$current_default_value = isset( $default_options[ $key ] ) ? $default_options[ $key ] : null;
+
+	return get_theme_mod( $key, $current_default_value );
 }
-
 
 /**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ * Add postMessage support for site title and description for the Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function sampression_customize_preview_js()
-{
-    wp_enqueue_script('sampression_customizer', get_template_directory_uri() . '/sampression-customizer/js/customizer.js', array('jquery'), '1.0', true);
-}
+function sampression_customize_core_register( $wp_customize ) {
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-add_action('customize_preview_init', 'sampression_customize_preview_js');
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial(
+			'blogname',
+			array(
+				'selector'        => '.site-title a',
+				'render_callback' => 'sampression_customize_partial_blogname',
+			)
+		);
+		$wp_customize->selective_refresh->add_partial(
+			'blogdescription',
+			array(
+				'selector'        => '.site-description',
+				'render_callback' => 'sampression_customize_partial_blogdescription',
+			)
+		);
+	}
+}
+add_action( 'customize_register', 'sampression_customize_core_register' );
 
 /**
- * Enqueue Scripts for customize controls
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
  */
-function sampression_customize_scripts()
-{
-
-    wp_enqueue_script('Sampression_Customize_control', get_template_directory_uri() . '/sampression-customizer/js/customizer-control.js', array('jquery'), '', true);
-    wp_enqueue_script('Sampression_Customize_preview', get_template_directory_uri() . '/sampression-customizer/js/customizer-preview.js', array('jquery'), '', true);
-    wp_enqueue_style('metro_magazine-admin-style', get_template_directory_uri() . '/sampression-customizer/css/customizer-admin.css', '1.0', 'screen');
-    wp_enqueue_script('metro_magazine-admin-js', get_template_directory_uri() . '/sampression-customizer/js/customizer-admin.js', array('jquery'), '', true);
+function sampression_customize_partial_blogname() {
+	bloginfo( 'name' );
 }
 
-add_action('customize_controls_enqueue_scripts', 'sampression_customize_scripts');
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function sampression_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
 
-
-//end of customizer
-
-
- 
-			
-		
-
-
+require get_template_directory() . '/sampression-customizer/inc/dynamic-css.php';

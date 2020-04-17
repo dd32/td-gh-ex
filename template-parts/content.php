@@ -19,10 +19,7 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-			<?php //naya_lite_posted_on();
-			sampression_post_meta_content();
-			//sampression_post_entry_meta_single();?>
-		<!-- .entry-meta -->
+			<?php sampression_post_meta_content(); ?>
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
@@ -49,7 +46,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php //naya_lite_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

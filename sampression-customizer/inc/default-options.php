@@ -1,49 +1,50 @@
 <?php
 /**
- * Default theme options.
+ * Default theme options
  *
- * @package Online_News
+ * @package Naya_Lite
  */
 
-if ( ! function_exists( 'sampression_get_default_options_value' ) ) :
+/**
+ * Get default theme options.
+ *
+ * @since 1.0.0
+ *
+ * @return array Default theme options.
+ */
+function sampression_get_default_options_value() {
+	$defaults = array();
 
-	/**
-	 * Get default theme options.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return array Default theme options.
-	 */
-	function sampression_get_default_options_value() {
+	// Header.
+	$defaults['sampression_remove_logo']    = true; // Show Site Title?
+	$defaults['sampression_remove_tagline'] = false; // Remove Tagline?
 
-		$defaults = array();
+	// Footer.
+	$defaults['sampression_copyright_text'] = '';
 
-		//font setting
-		$defaults['font']                       = 'Kreon, serif';
-		$defaults['font_size']                  = '14px';
-		$defaults['font_size_large']            = '21px';
-		$defaults['font_color']                 = '#000';
-		$defaults['font_style']                 = 'normal';
+	// Sidebar.
+	$defaults['sampression_sidebar_layout'] = 'right';
 
-		//color settings
-		$defaults['social_color']               ='#eee';
-		$defaults['background_color']           ='#fff';
-		$defaults['hover_color']                ='#0085ba';
-		$defaults['link_color']                 ='#006799';
+	// Social.
+	$defaults['sampression_socials_facebook']   = '';
+	$defaults['sampression_socials_twitter']    = '';
+	$defaults['sampression_socials_youtube']    = '';
+	$defaults['sampression_socials_googleplus'] = '';
+	$defaults['sampression_socials_linkedin']   = '';
+	$defaults['sampression_socials_flickr']     = '';
+	$defaults['sampression_socials_vimeo']      = '';
+	$defaults['sampression_socials_github']     = '';
+	$defaults['sampression_socials_instagram']  = '';
+	$defaults['sampression_socials_tumblr']     = '';
+	$defaults['sampression_socials_pinterest']  = '';
 
-		//checkbox setting
-		$defaults['checkbox']		            = false;
+	// Fonts.
+	$defaults['primary_font_family']   = 'Kreon';
+	$defaults['secondary_font_family'] = 'Kreon';
 
-		//website-layout setting
-		$defaults['website_layout']		        = 'right';
-		$defaults['inner_sidebar_position']		= 'right';
+	// Color Options.
+	$defaults['primary_color']   = '#000000';
+	$defaults['secondary_color'] = '#333333';
 
-		//Home layout
-		$defaults['home_column']		         = 1;//1,2,3
-		$defaults['home_sidebar']		         = 'right';//left or right or none
-
-		// Pass through filter.
-		return $defaults;
-	}
-
-endif;
+	return $defaults;
+}
