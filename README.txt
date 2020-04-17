@@ -68,6 +68,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.39
+* Style tweaks/fixes
+* Mobile CSS fixes/tweaks
+* Improved accessibility / keyboard navigation for desktop sites
+* Improved accessibility / mobile keyboard navigation - trap focus to mobile menu
+* fix excluding default slider category from single post page if set to be excluded
+* Updated the language .pot file
+* PREMIUM: NEW FEATURE: Avant Premium now includes a FREE shortcode slider plugin
+
 #### 1.1.38
 * Removed TGM enternal link
 * Added extra config strings to prevent conflict with SiteOrigin page builder TGM
@@ -80,7 +89,7 @@ View the theme settings under "Appearance" -> Customize.
 * Added support & backwards compatibility for new wp_body_open hook
 * Change Skip Link Focus js to functions file, too small to load own file
 * Updated the language .pot file
-* PREMIUM: NEW: Added Full Site Loader to Vogue - Customize -> Vogue Theme Settings -> Site Layout
+* PREMIUM: NEW: Added Full Site Loader to Avant - Customize -> Avant Theme Settings -> Site Layout
 * PREMIUM: NEW: Customize design and loader icon of new Site Loader feature
 
 #### 1.1.36

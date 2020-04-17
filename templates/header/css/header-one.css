@@ -254,7 +254,7 @@ Avant - Default Header
 }
 
 #primary-menu,
-#main-menu > div {
+.menu-main-menu-container {
     display: inline-block;
     vertical-align: top;
 }

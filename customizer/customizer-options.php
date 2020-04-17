@@ -352,6 +352,13 @@ function customizer_library_avant_options() {
         'type'    => 'text',
         'description' => __( 'Enter the shortcode give by the slider.', 'avant' )
     );
+    $options['avant-noteon-free-slider'] = array(
+        'id' => 'avant-noteon-free-slider',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( 'Avant Premium now includes a FREE Shortcode Slider plugin to use on any/all pages', 'avant' )
+    );
+
     $options['avant-slider-full-width'] = array(
         'id' => 'avant-slider-full-width',
         'label'   => __( 'Set slider to full width', 'avant' ),
@@ -428,6 +435,12 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,
+    );
+    $options['avant-noteon-slider'] = array(
+        'id' => 'avant-noteon-slider',
+        'section' => $section,
+        'type'    => 'note',
+        'description' => __( '<b>Premium Extra Features:</b><br />- Avant Premium now includes a FREE Shortcode Slider plugin to use on any/all pages', 'avant' )
     );
     
     $choices = array(
@@ -561,7 +574,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-blog',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change Blog Pagination to Numberic Pagination<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & archives to use post summary<br />- Extra summary settings<br />- Set custom Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling (Image or Post layouts)', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Avant Proemium now includes a FREE slider plugin<br />- Change Blog Pagination to Numberic Pagination<br />- Set Blog, Archives and Post pages to Left Sidebar<br />- Set Blog, Archives and Single pages to Full Width<br />- Set Blog list & archives to use post summary<br />- Extra summary settings<br />- Set custom Blocks layout columns<br />- Set spacing of Blocks layout<br />- Change Blocks styling (Image or Post layouts)', 'avant' )
     );
 
     $section = 'avant-blog-section-post';

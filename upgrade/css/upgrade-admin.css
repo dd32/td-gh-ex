@@ -305,6 +305,24 @@ a.upgrade-page-link:hover {
 .upgrade-rating-slider-wrap:hover .upgrade-rating-slider-next {
 	opacity: 1;
 }
+
+.avant-upgrade-block-sliderimg-top {
+    text-align: center;
+}
+.avant-upgrade-block-sliderimg-top h4 {
+    font-size: 15px;
+    margin: 0 0 8px;
+}
+.avant-upgrade-block-sliderimg {
+    margin: 20px 0 0;
+    text-align: center;
+}
+.avant-upgrade-block-sliderimg img {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.12);
+    max-width: 100%;
+    height: auto;
+}
+
 .avant-upgrade-footer {
 	background-color: #72777c;
     padding: 6px 10px 7px;

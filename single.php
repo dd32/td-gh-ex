@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php get_template_part( 'templates/contents/content', 'single' ); ?>
 
 			<?php if ( ! get_theme_mod( 'avant-remove-single-pag' ) ) : ?>
-				<?php the_post_navigation(); ?>
+				<?php avant_post_nav(); ?>
 			<?php endif; ?>
 
 			<?php

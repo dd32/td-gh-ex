@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.38' );
+define( 'AVANT_THEME_VERSION' , '1.1.39' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -489,6 +489,39 @@ function avant_cat_columns_array_push_after( $src, $avant_cat_in, $pos ) {
     return $R;
 }
 
+if ( ! function_exists( 'avant_post_nav' ) ) :
+/**
+ * Display navigation to next/previous post when applicable / Excludes slider posts IF set.
+ */
+function avant_post_nav() {
+    // Don't print empty markup if there's nowhere to navigate.
+    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+    $next     = get_adjacent_post( false, '', false );
+
+    if ( ! $next && ! $previous ) {
+        return;
+    } ?>
+    <nav class="navigation post-navigation" role="navigation">
+        <span class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'avant' ); ?></span>
+        <div class="nav-links">
+            <?php
+            $slider_categories 	= get_theme_mod( 'avant-blog-cats' );
+            $slider_type 		= get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
+            $exclude_categories = '';
+
+            if ( $slider_type == 'avant-slider-default' && $slider_categories ) {
+                $exclude_categories = ( '-' == $slider_categories[0] ) ? substr( get_theme_mod( 'avant-blog-cats' ), 1 ) : get_theme_mod( 'avant-blog-cats' );;
+            }
+
+            previous_post_link( '<div class="nav-previous">%link</div>', _x( '%title', 'Previous post link', 'avant' ), false, $exclude_categories );
+            next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title', 'Next post link',     'avant' ), false, $exclude_categories );
+            ?>
+        </div><!-- .nav-links -->
+    </nav><!-- .navigation -->
+    <?php
+}
+endif;
+
 /**
  * Adjust the Recent Posts widget query if avant-blog-cats is set
  */
@@ -554,7 +587,12 @@ function avant_add_license_notice() {
 			<h4>
 				<?php esc_html_e( 'Thank you for using Avant!', 'avant' ); ?>
 			</h4>
-			<p><?php printf( __( 'We pride ourselves on <a href="%1$s" target="_blank">good products and 5 Star Support</a>! Please read through our <a href="%2$s" class="avant-admin-notice-topbtn">About Avant</a> page for more help on using the Avant theme, or for theme support - <a href="%2$s" class="avant-admin-notice-topbtn">Get In Contact</a>', 'avant' ), 'https://wordpress.org/support/theme/avant/reviews/?filter=5', admin_url( 'themes.php?page=avant_theme_info' ) ); ?></p>
+            <p><?php printf( __( 'We pride ourselves on <a href="%1$s" target="_blank">good products and 5 Star Support</a>! Please read through our <a href="%2$s" class="avant-admin-notice-topbtn">About Avant</a> page for more help on using the Avant theme, or for theme support - <a href="%2$s" class="avant-admin-notice-topbtn">Get In Contact</a>', 'avant' ), 'https://wordpress.org/support/theme/avant/reviews/?filter=5', admin_url( 'themes.php?page=avant_theme_info' ) ); ?></p>
+            <p>
+                <?php
+                /* translators: 1: 'Read More here'. */
+                printf( esc_html__( '%1$s on the Shortcode slider included FREE with Avant Premium!', 'avant' ), wp_kses( '<a href="' . admin_url( 'themes.php?page=avant_theme_info' ) . '">' . __( 'Read More here', 'avant' ) . '</a>', array( 'a' => array( 'href' => array() ) ) ) ); ?>
+            </p>
 			<?php if ( $avantpage == 'themes.php?page=avant_theme_info' ) : ?>
 				<div class="avant-admin-notice-blocks">
 					<div class="avant-admin-notice-block">
@@ -591,7 +629,7 @@ function avant_add_license_notice() {
 				<h5>
 					<?php
 					/* translators: %s: 'Recommended Resources' */
-					printf( esc_html__( 'Avant Premium is %1$s for all the extra %2$s', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">currently selling for only $25</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank">Avant Premium features</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					printf( esc_html__( 'Avant Premium is %1$s for all the extra %2$s and a FREE shortcode slider plugin', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#purchase-premium" target="_blank">currently selling for only $25</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/avant/#premium-features" target="_blank">Avant Premium features</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
 					?>
 				</h5>
 			<?php endif; ?>

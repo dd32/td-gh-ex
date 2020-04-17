@@ -42,6 +42,16 @@
                     </div>
                 </div>
 
+                <div class="avant-upgrade-block avant-upgrade-block-alt">
+                    <div class="avant-upgrade-block-sliderimg-top">
+                        <h4><?php esc_html_e( 'Avant Premium now includes a FREE shortcode Slider plugin', 'avant' ); ?></h4>
+                        <?php esc_html_e( 'Create unlimited sliders  for your website and easily add them to all or any site pages you choose', 'avant' ); ?>
+                    </div>
+                    <div class="avant-upgrade-block-sliderimg">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/upgrade/images/free-slider.png' ); ?>" alt="<?php esc_attr_e( 'Avant shortcode slider', 'avant' ); ?>" />
+                    </div>
+                </div>
+
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
                         <?php esc_html_e( 'View the Avant Premium Demo, and try out all the settings neatly built into the Customizer', 'avant' ); ?>
@@ -187,7 +197,7 @@
                 <li>Added support & backwards compatibility for new wp_body_open hook</li>
                 <li>Change Skip Link Focus js to functions file, too small to load own file</li>
                 <li>Updated language .pot file</li>
-                <li><span>Premium: NEW</span> Added Full Site Loader to Vogue - Customize -> Vogue Theme Settings -> Site Layout</li>
+                <li><span>Premium: NEW</span> Added Full Site Loader to Avant - Customize -> Avant Theme Settings -> Site Layout</li>
                 <li><span>Premium: NEW</span> Customize design and loader icon of new Site Loader feature</li>
             </ul>
 
