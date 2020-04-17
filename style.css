@@ -4,7 +4,7 @@ Theme URI: https://www.insertcart.com/product/optimize-wp-theme/
 Author: sandy786
 Author URI: https://www.insertcart.com
 Description: optimize Theme is best WordPress magazine theme for personal and business website technology news or magazine with full features and SEO Optimize theme easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, pinterest, rss, skype, vimeo, dribbble, flickr, LinkedIn, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme works also for blogging.Some features like floating menu bar with search and share options. WooCommerce eCommerce plugin supported. Working theme demo here https://www.insertcart.com/themes-demo?theme=optimize
-Version: 2.0
+Version: 2.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: optimize
@@ -1065,54 +1065,54 @@ div#crumbs {
 --------------------------------------------------------------*/
 span.comments-link:before {
     content: "\f27a";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 span.posted-on:before {
     content: "\f017";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
 }
 span.cat-links:before {
     content: "\f009";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 a.post-edit-link:before {
     content: "\f14b";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 span.tags-links:before {
     content: "\f02c";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 span.author.vcard:before {
     content: "\f007";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 .readmore a:after {
     content: "\f105";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 .nav-next a:after{
-    content: "\f324";
-    font-family: 'Font Awesome 5 Pro';
+    content: "\f061";
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
 .nav-previous a:before{
-    content: "\f323";
-    font-family: 'Font Awesome 5 Pro';
+    content: "\f060";
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
@@ -1129,7 +1129,7 @@ span.author.vcard:before {
 }
 span.timestamp:before{
 	content: "\f017";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
     font-weight: 900;
 }
@@ -1157,7 +1157,7 @@ span.timestamp:before{
 
 p.comment-form-comment > label:before {
 	content: "\f4ad";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
 	padding: 5px;
 	color: #9B9B9B;
 	font-size: 1rem;   
@@ -1215,7 +1215,7 @@ ol.comment-list .comment{
 }	
 .reply a:before {
     content: "\f3e5";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 5px;
 }
 .reply a:hover {
@@ -1470,7 +1470,7 @@ h4.featured {
 }
 h4.featured:before{
     content: "\f02b";
-    font-family: 'Font Awesome 5 Pro';
+    font-family: FontAwesome;
     padding: 8px;
 }
 @media (max-width: 575.98px) {
@@ -1510,7 +1510,15 @@ header#masthead {
 	.col-md-4.thumbnail {
 		padding: 0;
 	}
+	.post-desc {
+    margin: 0 auto !important;
+	}
 }
+
 .post-desc {
     margin-left: -20px;
+	padding: 6px 10px;
+}
+h2.mb-0 a.text-dark {
+    font-size: 1.6rem;
 }

@@ -33,10 +33,10 @@
 	<?php optimize_socialprofiles(); ?>
 	<?php wp_nav_menu( array( 'theme_location' => 'footer-menu','container_class' => '','menu_id' => 'footerhorizontal',    'echo' => true,'depth' =>'1','fallback_cb' => false ) ); ?>	
 		<div class="site-info">
-		<?php _e('Copyright &#169;', 'optimize'); ?>  <?php echo date('Y');?> <a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a>
-			<span class="sep"> | </span>
+		<a href="<?php echo esc_url(home_url('/'));?>" title="<?php bloginfo('name');?>" ><?php bloginfo('name');?></a> <?php _e('Copyright &#169;', 'optimizepro'); ?>  <?php echo date('Y');?> 
+			<span class="sep"> / </span>
 				<?php				
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'optimize' ), 'optimize', '<a href="http://www.insertcart.com/product/optimize-wp-theme/">Insertcart.com</a>' );
+				printf( esc_html__( '%2$s.', 'optimizepro' ), 'optimizepro', '<a href="https://www.insertcart.com/product/optimize-wp-theme/">Theme by InsertCart.com</a>' );
 				?>
 		</div><!-- .site-info -->
 		

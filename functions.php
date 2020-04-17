@@ -89,10 +89,10 @@ if ( ! function_exists( 'optimize_setup' ) ) :
 		) );
 	}
 	
-	function wpdocs_custom_excerpt_length( $length ) {
+	function optimizepro_custom_excerpt_length( $length ) {
     return 15;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'optimizepro_custom_excerpt_length', 999 );
 function wpdocs_excerpt_more( $more ) {
     return '<a class="readmore btn btn-info" href="'.get_the_permalink().'" rel="nofollow">Read More...</a>';
 }
@@ -190,7 +190,7 @@ function optimize_scripts() {
 	wp_enqueue_style( 'optimize-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bootstrap-min-css', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-grid-min-css', get_stylesheet_directory_uri() . '/css/bootstrap-grid.min.css' );
-	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/all.min.css' );
+	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'optimize-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '431', true );
@@ -285,7 +285,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 function optimize_backtotop_function() {
-    echo '<a href="#" class="scrollup backtoup"><i class="fas fa-angle-up"></i></a>';
+    echo '<a href="#" class="scrollup backtoup"><i class="fa fa-angle-up"></i></a>';
     
 }
 add_action( 'wp_footer', 'optimize_backtotop_function' );
@@ -453,7 +453,7 @@ if ( ! function_exists( 'optimize_socialprofiles' ) ) :
 				for ($i = 1; $i < 8; $i++) : 
 				$social = esc_attr(get_theme_mod('optimize_social_'.$i));
 				if ( ($social != 'none') && ($social != '') ) : ?>
-				<a class="hvr-ripple-out" href="<?php echo esc_url( get_theme_mod('optimize_social_url'.$i) ); ?>"><i class="fab fa-<?php echo esc_attr($social); ?>"></i></a>
+				<a class="hvr-ripple-out" href="<?php echo esc_url( get_theme_mod('optimize_social_url'.$i) ); ?>"><i class="fa fa-<?php echo esc_attr($social); ?>"></i></a>
 				<?php endif; endfor;
 				echo '</div>';
 	}
