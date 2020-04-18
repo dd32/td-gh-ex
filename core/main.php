@@ -115,25 +115,29 @@ if (!function_exists('novalite_template')) {
 
 	function novalite_template($id) {
 	
-		$template = array ("full" => "span12" , "left-sidebar" => "span8" , "right-sidebar" => "span8" );
+		$template = array(
+			"full" => "span12",
+			"left-sidebar" => "span8",
+			"right-sidebar" => "span8"
+		);
 	
 		$span = $template["full"];
 		$sidebar =  "full";
 	
 		if ( ( is_search() ) && ( novalite_setting('novalite_search_layout')) ) {
 			
-			$span = $template[novalite_setting('novalite_search_layout')];
-			$sidebar =  novalite_setting('novalite_search_layout');
+			$span = $template[esc_attr(novalite_setting('novalite_search_layout'))];
+			$sidebar =  esc_attr(novalite_setting('novalite_search_layout'));
 				
 		} else if ( ( (is_category()) || (is_tag()) || (is_tax()) || (is_month()) ) && ( novalite_setting('novalite_category_layout')) ) {
 			
-			$span = $template[novalite_setting('novalite_category_layout')];
-			$sidebar =  novalite_setting('novalite_category_layout');
+			$span = $template[esc_attr(novalite_setting('novalite_category_layout'))];
+			$sidebar =  esc_attr(novalite_setting('novalite_category_layout'));
 				
 		} else if ( ( is_home() ) && ( novalite_setting('novalite_home')) ) {
 			
-			$span = $template[novalite_setting('novalite_home')];
-			$sidebar =  novalite_setting('novalite_home');
+			$span = $template[esc_attr(novalite_setting('novalite_home'))];
+			$sidebar =  esc_attr(novalite_setting('novalite_home'));
 				
 		} else if ( ( is_home() ) && ( !novalite_setting('novalite_home')) ) {
 			
@@ -142,8 +146,8 @@ if (!function_exists('novalite_template')) {
 				
 		} else if (novalite_postmeta('novalite_template')) {
 			
-			$span = $template[novalite_postmeta('novalite_template')];
-			$sidebar =  novalite_postmeta('novalite_template');
+			$span = $template[esc_attr(novalite_postmeta('novalite_template'))];
+			$sidebar =  esc_attr(novalite_postmeta('novalite_template'));
 				
 		}
 	
@@ -202,7 +206,7 @@ if (!function_exists('novalite_new_excerpt_more')) {
 	function novalite_new_excerpt_more() {
 		
 		global $post;
-		return '<p><a class="button" href="'.get_permalink($post->ID).'" title="More">  ' . esc_html__( "Read More","nova-lite") . ' →</a></p>';
+		return '<p><a class="button" href="'.esc_url(get_permalink($post->ID)).'" title="More">  ' . esc_html__( "Read More","nova-lite") . ' →</a></p>';
 	
 	}
 	

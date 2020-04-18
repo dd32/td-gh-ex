@@ -1,18 +1,26 @@
 <?php get_header(); ?>
 
 <section id="subheader">
-	<div class="container">
+	
+    <div class="container">
+    
     	<div class="row">
+    
             <div class="span12">
-				<h1><?php esc_html_e( 'Not found','nova-lite'); ?> </h1>
+	
+    			<h1><?php esc_html_e( 'Not found','nova-lite'); ?> </h1>
+    
             </div>        
-		</div>
+	
+    	</div>
+
     </div>
+
 </section>
 
 <div id="content" class="container" style="position:relative">
-	<div class="row" id="portfolio" >
-		
+	
+    <div class="row" id="portfolio" >
 		
         <div class="pin-article span12">
 
@@ -26,6 +34,7 @@
 		
            
     </div>
+    
 </div>
 
 <?php get_footer(); ?>
