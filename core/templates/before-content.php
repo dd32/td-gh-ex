@@ -44,7 +44,7 @@ if (!function_exists('anna_lite_before_content_function')) {
 
 		if ( $type == "post" ) :
 			
-			echo '<span class="entry-date">' . esc_html__('On ','anna-lite') . get_the_date() . esc_html__(' by ','anna-lite') . wp_kses_post(get_the_author_posts_link()) . '</span>';
+			echo '<span class="entry-date">' . esc_html__('On ','anna-lite') . esc_html(get_the_date()) . esc_html__(' by ','anna-lite') . wp_kses_post(get_the_author_posts_link()) . '</span>';
 		
 		endif;
 
