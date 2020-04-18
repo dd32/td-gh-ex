@@ -24,24 +24,30 @@ Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurp
 
 ### Changelog
 
-#### 1.3.0 - 2019.11.27 =
+#### 1.3.2 - 2020.04.18
+* Updated search option
+
+#### 1.3.1 -  2020.02.02
+* Updated internal api
+
+#### 1.3.0 - 2019.11.27
 * Updated fontawesome library
 
-#### 1.2.9 - 2019.11.15 =
+#### 1.2.9 - 2019.11.15
 * CSS file moved from style.css to /css/attire.css
 
-#### 1.2.7 - 2019.10.18 =
+#### 1.2.7 - 2019.10.18
 * Improved woocommerce templates
 
-#### 1.2.6 - 2019.10.07 =
+#### 1.2.6 - 2019.10.07
 * Added additional page specific option to control individual page header and site header
 
-#### 1.2.5 - 2019.09.29 =
+#### 1.2.5 - 2019.09.29
 * Improved mobile menu
 * Improved header styles
 
-#### 1.2.4 - 2019.09.27 =
+#### 1.2.4 - 2019.09.27
 *   Improved dropdown menu styles
 
-#### 1.2.3 - 2019.09.15 =
+#### 1.2.3 - 2019.09.15
 *   Adjusted some minor css issues

@@ -270,7 +270,7 @@ class AttireThemeEngine {
 		$body_font_weight = $body_font_weight != '' ? "font-weight:{$body_font_weight};" : "";
 		$body_bg          = esc_attr( $theme_mod['body_bg_color'] );
 		$css              .= "body {background-color:{$body_bg}}";
-
+        $color_vars['body-bg-color'] = $body_bg;
 		$body_font_size  = intval( $theme_mod['body_font_size'] );
 		$body_font_color = esc_attr( $theme_mod['body_color'] );
 		$body_font       = esc_attr( $theme_mod['body_font'] );
@@ -469,14 +469,16 @@ class AttireThemeEngine {
 		 * Main nav color css
 		 *
 		 */
-
+        $color_vars['menu-top-font-color'] =  esc_attr( $theme_mod['menu_top_font_color'] );
 		$color = "color:" . esc_attr( $theme_mod['menu_top_font_color'] ) . ";";
 		$css   .= "header .mainmenu > .menu-item:not(.active) > a, header .nav i.fa.fa-search, header .dropdown-toggler, header .mobile-menu-toggle,.attire-mbl-menu li.nav-item a, input.gn-search,.attire-mbl-menu-main a.gn-icon-search,.attire-mbl-menu .dropdown-toggler i:before{{$color}}";
 
+        $color_vars['main-nav-bg'] =  esc_attr( $theme_mod['main_nav_bg'] );
 		$main_nav_bg = 'background-color:' . esc_attr( $theme_mod['main_nav_bg'] );
 		$css         .= "#header-style-3 nav.navbar, #header-style-2 nav.navbar, .short-nav .collapse.navbar-collapse,.long-nav,#attire-mbl-menu{ {$main_nav_bg};}";
 
-		$main_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
+        $color_vars['menuhbg-color'] =  esc_attr( $theme_mod['menuhbg_color'] );
+        $main_nav_hover_active_bg = 'background-color:' . esc_attr( $theme_mod['menuhbg_color'] );
 		$css                      .= "header .mainmenu > .menu-item:hover, header .mainmenu > .menu-item.active,.attire-mbl-menu li.active{ {$main_nav_hover_active_bg};}";
 
 
@@ -558,20 +560,27 @@ class AttireThemeEngine {
 		 * Link (<a>) color
 		 *
 		 */
+        $color_vars['a-color'] =  esc_attr( $theme_mod['a_color'] );
 		$a_color = 'color:' . esc_attr( $theme_mod['a_color'] );
 		$css     .= ".attire-content a:not(.btn),.small-menu a:not(.btn){{$a_color};}";
 
+        $color_vars['ah-color'] =  esc_attr( $theme_mod['ah_color'] );
 		$a_hover_color = 'color:' . esc_attr( $theme_mod['ah_color'] );
 		$css           .= ".attire-content a:not(.btn):hover,.small-menu a:not(.btn):hover{{$a_hover_color};}";
 
-		return apply_filters( ATTIRE_THEME_PREFIX . 'customisation_css', $css );
+        $vars = ":root{\r\n";
+		foreach ($color_vars as $var => $val){
+            $vars .= "--color-{$var}: {$val};\r\n";
+        }
+		$vars .= "}";
+
+		return apply_filters( ATTIRE_THEME_PREFIX . 'customisation_css', $vars.$css );
 	}
 
 	/**
 	 * @usage Generate custom css
 	 */
 	function CustomCSS() {
-
 		$font_css = self::ThemeCustomizerCSS();
 		echo "<style type='text/css'> {$font_css}</style>";
 
@@ -718,5 +727,5 @@ class AttireThemeEngine {
 }
 
 new AttireThemeEngine();
- 
+
 

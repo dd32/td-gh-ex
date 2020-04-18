@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 $theme_mod      = get_option( 'attire_options' );
 $content_layout = $theme_mod['header_content_layout_type'];
+$search_form_visibility = isset( $theme_mod['attire_search_form_visibility'] ) ? $theme_mod['attire_search_form_visibility'] : 'show';
 $nav_width      = isset( $theme_mod['main_layout_type'] ) ? $theme_mod['main_layout_type'] : 'container-fluid'; // For sticky menu to match site width
 
 $stickable = '';
@@ -103,6 +104,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                         <div class="media">
                             <div class="media-body">
                                 <div id="header-search-field">
+                                    <?php if($search_form_visibility === 'hide'){ ?>
                                     <form class="p-0 m-0" method="get" action="<?php echo home_url('/') ?>">
                                         <?php if(function_exists('WC')){ ?>
                                             <input type="hidden" name="post_type" value="product" />
@@ -111,6 +113,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                                         <?php } ?>
                                         <input type="search" value="<?php echo wpdm_query_var('s', 'txt'); ?>" name="s" placeholder="Search<?php if(function_exists('WC')) echo ' Product' ?>..." class="form-control input-lg" />
                                     </form>
+                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="ml-3">

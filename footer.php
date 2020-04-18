@@ -41,6 +41,46 @@ if ($num_widget !== 0) {
 do_action(ATTIRE_THEME_PREFIX . "before_footer");
 
 ?>
+<div class="modal fade" id="attire-search-modal" tabindex="-1" role="dialog" aria-labelledby="attire-search-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered border-0" role="document">
+        <div class="modal-content bg-transparent border-0">
+
+            <form action="<?php echo home_url('/') ?>">
+                <div class="form-group text-white">
+                    <div class="custom-control custom-switch custom-control-inline">
+                        <input checked="checked" type="checkbox" id="spost" name="post_type[]" value="post" class="custom-control-input">
+                        <label class="custom-control-label" for="spost"><?php _e('Post', 'attire'); ?></label>
+                    </div>
+                    <div class="custom-control custom-switch custom-control-inline">
+                        <input type="checkbox" id="spage" name="post_types[]" value="page" class="custom-control-input">
+                        <label class="custom-control-label" for="spage"><?php _e('Page', 'attire'); ?></label>
+                    </div>
+                    <?php if(post_type_exists('wpdmpro')){ ?>
+                    <div class="custom-control custom-switch custom-control-inline">
+                        <input type="checkbox" id="wpdmpro" name="post_type[]" value="wpdmpro" class="custom-control-input">
+                        <label class="custom-control-label" for="wpdmpro"><?php _e('Downloads', 'attire'); ?></label>
+                    </div>
+                    <?php } ?>
+                    <?php if(post_type_exists('product')){ ?>
+                        <div class="custom-control custom-switch custom-control-inline">
+                            <input type="checkbox" id="product" name="post_type[]" value="product" class="custom-control-input">
+                            <label class="custom-control-label" for="product"><?php _e('Products', 'attire'); ?></label>
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="form-group">
+                    <div class="input-group input-group-lg">
+                        <input type="search" class="form-control input-lg input-search p-4" placeholder="<?php _e('Search...', 'attire'); ?>" name="s" value="<?php echo wpdm_query_var('s'); ?>" />
+                        <div class="input-group-append">
+                            <button type="submit" class="btn bg-white text-primary"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
 
 <div class="footer-div">
     <?php AttireThemeEngine::FooterStyle(); ?>
