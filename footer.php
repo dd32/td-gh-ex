@@ -70,7 +70,7 @@ do_action(ATTIRE_THEME_PREFIX . "before_footer");
                 </div>
                 <div class="form-group">
                     <div class="input-group input-group-lg">
-                        <input type="search" class="form-control input-lg input-search p-4" placeholder="<?php _e('Search...', 'attire'); ?>" name="s" value="<?php echo wpdm_query_var('s'); ?>" />
+                        <input type="search" class="form-control input-lg input-search p-4" placeholder="<?php _e('Search...', 'attire'); ?>" name="s" value="" />
                         <div class="input-group-append">
                             <button type="submit" class="btn bg-white text-primary"><i class="fa fa-search"></i></button>
                         </div>
