@@ -1,13 +1,13 @@
 === Star ===
 Contributors: poena
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.4
 Requires PHP: 5.6
 Tags: threaded-comments, custom-menu, translation-ready, editor-style, two-columns, featured-images, accessibility-ready, custom-header, blog, custom-logo
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2011-2019 Carolina Nymark
+Copyright 2011-2020 Carolina Nymark
 
 Important
 The header area with the Site title, Slogan, logo, header image or icon is only visible on your front page.
@@ -18,6 +18,9 @@ The category list only shows parent categories, not child categories.
 At 1100px width, the sidebar widgets will display in 3 columns below your post content.
 
 == Change log ==
+
+Version: 1.15 2020-04-19.
+Updated author URI. For real this time. Sorry.
 
 Version: 1.14 2019-07-26
 Updated author URI.
