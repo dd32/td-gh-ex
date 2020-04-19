@@ -212,6 +212,10 @@ if ( ! function_exists( 'cherish_fonts_url' ) ) {
 		$subsets   = 'latin,latin-ext';
 
 		$fonts[] = get_theme_mod( 'cherish_font', 'Lily Script One' );
+		if ( get_theme_mod( 'cherish_site_title_font', 'Lily Script One' ) !== get_theme_mod( 'cherish_font', 'Lily Script One' ) ) {
+			$fonts[] = get_theme_mod( 'cherish_site_title_font', 'Lily Script One' );
+		}
+
 		$fonts[] = 'Noto Serif';
 
 		/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
@@ -561,6 +565,11 @@ function cherish_customize_css() {
 			echo '#action{font-size:' . esc_attr( get_theme_mod( 'cherish_action_size' ) ) . 'em;}';
 		}
 	}
+
+	if ( get_theme_mod( 'cherish_center_menu', 0 ) !== 0 ) {
+		echo '.main-navigation {text-align: center}';
+	}
+
 	echo 'a:focus, #footer a:focus, #header-menu a:focus{text-decoration:underline;}';
 	echo ".post-title,
 		.archive-title,
@@ -574,12 +583,51 @@ function cherish_customize_css() {
 		.paged-comments,
 		.widgettitle,
 		#wp-calendar caption,
-		#bbpress-forums  fieldset.bbp-form legend,
-		.site-title,
-		.site-title a {
-			font-family: '" . esc_attr( get_theme_mod( 'cherish_font', 'Lily Script One' ) ) . "', serif;	
+		#bbpress-forums  fieldset.bbp-form legend {
+			font-family: '" . esc_attr( get_theme_mod( 'cherish_font', 'Lily Script One' ) ) . "', serif;
 		}\n";
-
+	echo ".site-title,
+		.site-title a {
+			font-family: '" . esc_attr( get_theme_mod( 'cherish_site_title_font', 'Lily Script One' ) ) . "', serif;
+		}\n";
 	echo '</style>';
 }
 add_action( 'wp_head', 'cherish_customize_css' );
+
+
+function cherish_logo_link() {
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$html           = '';
+
+	$custom_logo_attr = array(
+		'class' => 'custom-logo',
+	);
+
+	/*
+	* If the logo alt attribute is empty, get the site title and explicitly
+	* pass it to the attributes used by wp_get_attachment_image().
+	*/
+	$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+	if ( empty( $image_alt ) ) {
+		$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
+	}
+
+	if ( get_theme_mod( 'cherish_logo_link', esc_url( home_url( '/' ) ) ) === '' ) {
+		$html = wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr );
+	} elseif ( get_theme_mod( 'cherish_logo_link', esc_url( home_url( '/' ) ) ) === esc_url( home_url( '/' ) ) ) {
+		$html = sprintf(
+			'<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
+			esc_url( home_url( '/' ) ),
+			wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+		);
+	} else {
+		$html = sprintf(
+			'<a href="%1$s" class="custom-logo-link">%2$s</a>',
+			esc_url( get_theme_mod( 'cherish_logo_link' ) ),
+			wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr )
+		);
+	}
+	return $html;
+
+}
+add_filter( 'get_custom_logo', 'cherish_logo_link' );

@@ -38,11 +38,10 @@ function cherish_customizer( $wp_customize ) {
 	$wp_customize->add_section(
 		'cherish_section_four',
 		array(
-			'title'    => __( 'Footer settings', 'cherish' ),
+			'title'    => __( 'Extra settings', 'cherish' ),
 			'priority' => 100,
 		)
 	);
-
 
 	/** Accent color */
 	$wp_customize->add_setting(
@@ -103,6 +102,41 @@ function cherish_customizer( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'cherish_site_title_font',
+		array(
+			'default'           => 'Lily Script One',
+			'sanitize_callback' => 'cherish_sanitize_select',
+		)
+	);
+
+	$font_choices = array(
+		'Lily Script One'        => 'Lily Script One ' . __( '(Default)', 'cherish' ),
+		'Oleo Script Swash Caps' => 'Oleo Script Swash Caps',
+		'Pacifico'               => 'Pacifico',
+		'Lobster'                => 'Lobster',
+		'Norican'                => 'Norican',
+		'Merriweather'           => 'Merriweather',
+		'Poppins'                => 'Poppins',
+		'Lora'                   => 'Lora',
+		'Karla'                  => 'Karla',
+		'Roboto'                 => 'Roboto',
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'cherish_site_title_font',
+			array(
+				'label'    => __( 'Choose a font for the site title.', 'cherish' ),
+				'section'  => 'cherish_section_six',
+				'settings' => 'cherish_site_title_font',
+				'type'     => 'select',
+				'choices'  => $font_choices,
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'cherish_font',
 		array(
 			'default'           => 'Lily Script One',
@@ -115,17 +149,11 @@ function cherish_customizer( $wp_customize ) {
 			$wp_customize,
 			'cherish_font',
 			array(
-				'label'    => __( 'Choose a font for the site title and post titles.', 'cherish' ),
+				'label'    => __( 'Choose a font for the post titles.', 'cherish' ),
 				'section'  => 'cherish_section_six',
 				'settings' => 'cherish_font',
 				'type'     => 'select',
-				'choices'  => array(
-					'Lily Script One'        => 'Lily Script One ' . __( '(Default)', 'cherish' ),
-					'Oleo Script Swash Caps' => 'Oleo Script Swash Caps',
-					'Pacifico'               => 'Pacifico',
-					'Lobster'                => 'Lobster',
-					'Norican'                => 'Norican',
-				),
+				'choices'  => $font_choices,
 			)
 		)
 	);
@@ -222,6 +250,25 @@ function cherish_customizer( $wp_customize ) {
 		)
 	);
 
+	/* Logo link **/
+	$wp_customize->add_setting(
+		'cherish_logo_link',
+		array(
+			'default'           => esc_url( home_url( '/' ) ),
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control(
+		'cherish_logo_link',
+		array(
+			'type'        => 'text',
+			'label'       => __( 'Add a custom link to the logo:', 'cherish' ),
+			'description' => __( 'Leave this option blank to disable the link', 'cherish' ),
+			'section'     => 'title_tagline',
+		)
+	);
+
 	/* Call to action link **/
 	$wp_customize->add_setting(
 		'cherish_action_link',
@@ -281,7 +328,25 @@ function cherish_customizer( $wp_customize ) {
 		)
 	);
 
-	/* Footer */
+	/* Extras */
+
+	$wp_customize->add_setting(
+		'cherish_center_menu',
+		array(
+			'sanitize_callback' => 'cherish_sanitize_checkbox',
+			'default'           => 0,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cherish_center_menu',
+		array(
+			'type'    => 'checkbox',
+			'label'   => __( 'Center the main menu', 'cherish' ),
+			'section' => 'cherish_section_four',
+		)
+	);
+
 	$wp_customize->add_setting(
 		'cherish_hide_credits',
 		array(

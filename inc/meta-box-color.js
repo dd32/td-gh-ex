@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
     
     $(window).on("load", function () {
         $('.editor-post-title__block .editor-post-title__input').css('color', cherish_colors.cherish_text_color);
-        $('.editor-writing-flow a').css('color', cherish_colors.cherish_text_color);
+        $('a', '.editor-writing-flow a', '.block-editor-writing-flow a').css('color', cherish_colors.cherish_text_color);
     });
 
     $('.block-editor__container').css('background-color', cherish_colors.cherish_background);
@@ -29,7 +29,7 @@ jQuery(document).ready(function($){
         'change',
         function (event, ui) {
             $('.editor-post-title__input').css('color', this.value);
-            $('.editor-writing-flow a').css('color', this.value);
+            $('a', '.editor-writing-flow a', '.block-editor-writing-flow a').css('color', this.value);
 
         }
     );

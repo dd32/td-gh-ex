@@ -4,11 +4,16 @@ Theme URI:
 Author: Carolina Nymark
 Author URI: https://themesbycarolina.com
 Description: Cherish is an accessible, full width, responsive theme with a fixed top menu. It has 3 widget areas in the footer and you can change the background color, title and link color of your posts and pages. Edit or disable your Call to Action area in the customizer, where you can also change colors, fonts, hide your post meta and upload your own logo.
-Version: 1.6
+Version: 1.7
 Tags: custom-colors, threaded-comments, custom-menu, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, accessibility-ready, blog
 Text Domain: cherish
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+This theme has a dual license.
+GNU General Public License v2 or later, and MIT License
+https://www.gnu.org/licenses/gpl-2.0.html, https://opensource.org/licenses/MIT
+
 */
 
 *,
@@ -94,18 +99,24 @@ td, th {
 	vertical-align: top;
 }
 
+#header:not(.custom-logo-link) > .custom-logo {
+	margin: 1.5em auto 0 auto;
+}
+
 .custom-logo-link {
 	margin: 1.5em auto 0 auto;
 	display: inline-block;
-	border: 1px solid transparent;
-	border-radius:3px;
-	padding: 4px 4px 0 4px;
 	transition: all 1.1s ease;
+	border: none;
+	outline-offset: 5px;
+	padding: 5px;
 }
 
-.custom-logo-link:hover {
-	transition: all 1.1s ease;
-	border: 1px solid #000;
+.custom-logo-link .custom-logo:hover,
+a img:hover {
+	outline: 1px dotted;
+	outline-offset: 5px;
+	border: none;
 }
 
 .custom-logo-link:after {
@@ -314,11 +325,6 @@ td, th {
 	margin-right: calc(50% - 50vw);
 	width: auto;
 	max-width: 1000%;
-}
-
-.wp-block-image img {
-    display: block;
-    max-width: 100%;
 }
 
 @media (min-width: 750px) {
@@ -619,23 +625,13 @@ pre.wp-block-verse,
 @media \0screen {
 	img, object{
 		width: auto; /* for ie 8 */
-  }
+	}
 }
 
 img,
 object {
 	max-width: 100%;
 	height: auto;
-}
-
-a img {
-	padding: 4px;
-}
-
-a:hover img,
-a:focus img {
-	padding: 0; 
-	border: 4px solid #000;
 }
 
 p img {
@@ -648,11 +644,13 @@ img.size-large,
 img.size-medium,
 .attachment img,
 .widget-area img {
-	max-width: 100%; 
+	max-width: 100%;
 	height: auto;
 }
 
-.attachment-thumbnail{}
+.attachment-post-thumbnail {
+	margin-bottom: 1.5em;
+}
 
 .type-attachment .attachment-thumbnail{
 	margin: 8px;

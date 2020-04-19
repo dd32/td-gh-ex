@@ -3,7 +3,6 @@ a {
 	text-decoration: underline;
 }
 
-.wp-block-freeform.block-library-rich-text__tinymce a,
 a,
 a:visited {
 	color: #000;
@@ -31,7 +30,7 @@ a img {
 
 /* Matches entry-title in style.css. */
 .editor-post-title__block .editor-post-title__input {
-	font-family: 'Lily Script One', 'Oleo Script Swash Caps', 'Pacifico', 'Lobster', 'Norican', serif;
+	font-family: 'Lily Script One', 'Oleo Script Swash Caps', 'Pacifico', 'Lobster', 'Norican', 'Merriweather', 'Poppins', 'Lora', 'Karla', 'Roboto', serif;
 	font-size: 4em;
 	letter-spacing: 3px; 
 }

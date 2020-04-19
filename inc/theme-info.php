@@ -29,17 +29,20 @@ function cherish_docs() {
 	<div class="welcome-panel-content">
 	<h1><?php esc_html_e( 'Cherish Setup Help', 'cherish' ); ?></h1>
 	<br>
-	<p class="about-description">
+	<span class="about-description">
 	<?php
 	esc_html_e( 'Thank you for downloading and trying out Cherish.', 'cherish' );
+	echo '<br><br>	<b>';
+	esc_html_e( 'Important upgrade information', 'cherish' );
+	echo '</b><br>';
+	_e( '-Because the two color options in the editor causes a delay when using the latest version of the block editor,<br> the options will be <b>removed</b> from the theme in the next update.', 'cherish' );
 	echo '<br>';
-	printf(
-		/* translators: %s: A link to the themes support page on WordPress.org  */
-		__( 'If you like the theme, please review it on <a href="%s">WordPress.org</a>', 'cherish' ),
-		esc_url( 'https://wordpress.org/support/view/theme-reviews/cherish' )
-	);
+	_e( 'It is most unfortunate, because the colors is one of the main features of the theme. But I wanted to notify you in advance. ', 'cherish' );
+	echo '<br>';
+	_e( '<b>You can optionally choose to not upgrade to the latest version, but you will then miss out on any new features that are added.<b>', 'cherish' );
+	echo '<br><br>';
 	?>
-	</p><br>
+	</span><br>
 	<div class="welcome-panel-column-container">
 	<div>
 	<h2><?php esc_html_e( 'Personalize your theme:', 'cherish' ); ?></h2>
@@ -139,14 +142,7 @@ function cherish_docs() {
 	<br>
 	<a class="button button-medium load-customize" href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=cherish_details' ) ); ?>">
 	<?php esc_html_e( 'Hide the image', 'cherish' ); ?></a>
-	<br><br>
-	<?php esc_html_e( 'When editing posts or pages you can also change the background color and title color.', 'cherish' ); ?>
 	<br>
-	<?php esc_html_e( 'These two options are available under the headline Custom colors in the editors sidebar panel.', 'cherish' ); ?>
-	<br>
-	<img style="margin:6px 0;" src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-colors.png' ); ?>" alt="">
-	<br>
-	<div class="notice notice-info inline"><?php esc_html_e( 'Troubleshooting: If nothing happens when you change the colors, save the post or reset the color and add it again.', 'cherish' ); ?></div>
 	<h3 id="footer"><?php esc_html_e( 'Footer', 'cherish' ); ?></h3>
 	<?php esc_html_e( 'In the footer panel in the customizer you can:', 'cherish' ); ?>
 	<br>

@@ -1,12 +1,11 @@
-
 === Cherish ===
 Contributors: Poena
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 5.6
 License: Dual license: GNU General Public License v2 or later, and MIT License
 License URI: https://www.gnu.org/licenses/gpl-2.0.html, https://opensource.org/licenses/MIT
-Requires at least: 5.0
-Tested up to: 5.2
-Requires PHP: 5.6
-Copyright 2014-2019 Carolina Nymark
+Copyright 2014-2020 Carolina Nymark
 
 Cherish is an accessibility ready, full width responsive theme with a fixed top menu. 
 
@@ -24,7 +23,26 @@ where you can also change colors, fonts, hide your post meta and upload your own
 -A one line menu is strongly recommended, instead of using long menus, use submenus.
 -It's recommended not to use a font-size larger than 4em for the Call to Action area.
 
+
+== Important upgrade information ==
+-Because the two color options in the editor causes a delay
+when using the latest version of the block editor,
+the options will be removed from the theme in the next update, version 1.8.
+It is unfortunate, but I wanted to notify you in advance.
+You can optionally choose to not upgrade to the latest version, 
+but you will then miss out on any new features that are added.
+
 == Changelog ==
+
+=1.7 2020-04-19=
+Added an option to add a custom link for the logo.
+Softened the hover style for linked images.
+Increased the spacing below featured images.
+Added more font family options.
+Separated site title and post title font options, so that you
+can use different fonts for your site title.
+Renamed the Footer customizer section to Extra.
+Added an option to center the main menu.
 
 =1.6 2019-08-10=
 Added support for wp_body_open
