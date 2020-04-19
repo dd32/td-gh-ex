@@ -54,7 +54,7 @@
 				?>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'miranda' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'miranda' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<a href="<?php echo esc_url( 'https://theme.tips' ); ?>" rel="nofollow">
+				<a href="<?php echo esc_url( 'https://themesbycarolina.com/' ); ?>" rel="nofollow">
 				<?php
 				/* translators: %1$s: Theme name */
 				printf( esc_html__( 'Theme: %1$s by Carolina', 'miranda' ), 'Miranda' );
