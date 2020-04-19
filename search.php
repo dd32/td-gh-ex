@@ -1,6 +1,6 @@
 <?php 
 /* 	Searchlight Theme's Search Page
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2014-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Searchlight 1.0
 */
@@ -9,13 +9,13 @@ get_header(); ?>
 <div id="container" >
 	<?php if (have_posts()) : ?>
 	<div id="content" class="searchinfo">
-        <h1 class="page-title fa-search-plus"><?php echo __('SEARCH RESULTS', 'searchlight'); ?></h1>
+        <h1 class="page-title fa-search-plus"><?php echo esc_html__('SEARCH RESULTS', 'searchlight'); ?></h1>
 		<?php $counter = 0; global $more; $more = 0; ?>
 		<?php while (have_posts()) : the_post();
 			if($counter == 0) { 
 				$numposts = $wp_query->found_posts; // count # of SEARCH RESULTS ?>
-				<h3 class="arc-src"><span><?php echo __('Search Term:', 'searchlight');?> </span><?php the_search_query(); ?></h3>
-				<h3 class="arc-src"><span><?php echo __('Number of Results:', 'searchlight');?> </span><?php echo $numposts; ?></h3><br />
+				<h3 class="arc-src"><span><?php echo esc_html__('Search Term:', 'searchlight');?> </span><?php the_search_query(); ?></h3>
+				<h3 class="arc-src"><span><?php echo esc_html__('Number of Results:', 'searchlight');?> </span><?php echo $numposts; ?></h3><br />
 				<?php } //endif ?>
 			
             	<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -29,7 +29,7 @@ get_header(); ?>
             
         				<div class="clear"> </div>
             			<div class="up-bottom-border">
-            				<?php  wp_link_pages( array( 'before' => '<div class="page-link genericon-document"><span>' . '' . '</span>', 'after' => '</div><br/>' ) ); 
+            				<?php  wp_link_pages( array( 'before' => '<div class="page-link fa-file"><span>' . '' . '</span>', 'after' => '</div><br/>' ) ); 
             				searchlight_post_meta();
 						?>
 						</div>

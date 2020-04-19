@@ -1,12 +1,13 @@
 <?php 
 /* 	Searchlight Theme's Slide Part
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2014-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Searchlight 1.9
 */
+
+$sliderbox = searchlight_get_option('sliderbox', ''); if (!$sliderbox) return;
 ?>
 <!--- ============  SLIDER BOX  =========== ------------>
-<?php if ( searchlight_get_option('sliderbox', '1') == '1' ):  ?>
 <div class="clear"></div>
 <div class="box100">
 	<div class="box90">
@@ -35,6 +36,4 @@
      
     </div>
 </div>
-<?php endif; ?>
 <!--- ============  END OF SLIDER BOX  =========== ------------>
-

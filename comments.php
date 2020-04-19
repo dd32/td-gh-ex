@@ -11,7 +11,7 @@
 
 <div id="comments">
 <?php if ( have_comments() ) : ?>
-	<h2 class="commentsbox"><?php comments_number( __('No Comments', 'searchlight'), __('One Comment', 'searchlight'),  __('% Comments', 'searchlight') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="commentsbox"><?php comments_number( esc_html__('No Comments', 'searchlight'), esc_html__('One Comment', 'searchlight'),  esc_html__('% Comments', 'searchlight') );?>to  <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
 		<?php wp_list_comments( array( 'avatar_size' => '200' )  ); ?>
 	</ol>
@@ -25,7 +25,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark"><?php __('Comments are Closed', 'searchlight'); ?></p>
+		<p class="watermark"><?php esc_html__('Comments are Closed', 'searchlight'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

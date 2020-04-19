@@ -4,75 +4,72 @@
 
 /* Responsive Styles */
 
-
 @media screen and (max-width: 1279px) {
-	body { min-width: 1000px; }
-	#header.smallheader #header-content img.site-logo, #header.smallheader #header-content h1.page-title { display: none; }
-	#main-menu-con { float: none; max-width: 100%; text-align: center; }
-	#main-menu-con ul { display: inline-block; margin: 0; }
-	#main-menu-con.gobottom { position: relative; right:auto; }
-	#main-menu-con a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
-	#top-menu-con input#s:focus { width: 100px; }
+	body { min-width: 100%; }
+	.box90, #header-content, #container {width: 95%;}
+	
+	#header-content { display: flex; align-items: center; justify-content:center; flex-direction: column; }
+	#logotitlecon { width: auto; max-width: none; text-align: center; position: relative; left: auto; right: auto; flex-direction: column; order: 2; }
+	#logotitlecon .logotitle {float: none; margin: 0 auto; max-width: 100%; }
+	#logotitlecon .logotitle.site-logo { max-width: 400px; }
+	#main-menu-con {position: relative; top: auto; right: auto; max-width: 100%; order: 3; }
+	#header.smallheader { position: relative; }
+	#topadjust {height: 0px !important;}
+	#top-menu-con {justify-content: center; order: 1;}
+	#main-menu-con a { font-size: 13px; font-weight: 300; padding: 10px; }
 	.fslidertitle { font-size: 23px; }
 	.fslidersubtitle { font-size: 19px; }
-	.fslidedescription { font-size: 13px; }
+	.fslidedescription { font-size: 15px;}
 	h1, .boxtoptitle, .tesheading, .entrytext h1.page-title {font-size:27px;}
-	h2, .featured-box h3.ftitle, h2.post-title, h2.commentsbox, h3#reply-title, h2.post-title-color{font-size:23px;}
 	h3{font-size:19px;}
-	h4{font-size:17px;}
-	.clntback .clientslider ul li img { padding: 0 10px; }
-	.sti-menu li a h2 { top: 100px; }
-	.sti-icon:before { font-size: 45px; }
+	h4{font-size:17px;}	
+		
+	#footer-sidebar{ margin: 0 -10px; }
+	#footer-sidebar .footer-widgets{ width: calc(25% - 20px); margin: 0 10px; min-width: 250px; }
 }
 
 @media screen and (max-width: 1023px) {
-	body { min-width: 775px; }
-	#header.smallheader { position:relative; }
-	#main-menu-con a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
-	#top-menu-con input#s:focus { width: 100px; }
-	#top-menu-con { display: block; float: left; width: 100%; }
-	img.site-logo,.site-title { float: none; width: 45%; margin: 0 auto; display: block; }
-	#top-menu-con ul.menu { display: block; float: left; margin: 0; }
+	#resmwdt { width: 9px; }
+	#logotitlecon{ padding: 3px 0 3px 70px; max-width: 500px; }	
+	#top-menu-con input#s:focus { width: 100px; }	
 	.main-slider  .flex-control-nav {width: 100%; position: absolute; bottom: 15px; text-align: right; top: auto;}
-	.main-slider  .flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
-	.featured-box, .bqpcontainer .featured-box { width: 42%; }
-	.bqpcontainer .fpthumb { max-height: 30vw; }
-	.fslidertitle { display: none; }
-	.sti-menu li { height: 350px; }
-	.sti-menu li{ min-width: 200px; }
-
-}
-
-@media screen and (max-width: 799px) {
-	body { min-width: 575px; }
-	.mobile-menu { display: block; }
+	.main-slider  .flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1;}
+	
+	#main-menu-con a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
+	#mobile-menu { display: block; }
 	#main-menu-con, .headerheight { display: none; }
 	#main-menu-con { position: absolute; left: 0; top: 100%; width: 100%; }
 	#main-menu-con.gobottom { position: relative; right:auto; }
 	#main-menu-con a { margin: 1px auto; border-bottom: 1px solid #f6f6f6; padding: 10px; width: 100%; border-radius:0 !important; }
 	#main-menu-con li { float: none; width: 220px; margin: 0 auto; }
-	#main-menu-con ul { display: table; margin: 0 auto; background: #ffffff; box-shadow: 0 1px 3px 0 #aaaaaa; padding: 5px; border-radius: 0 0 3px 3px; }
+	#main-menu-con ul { display: table; background: #ffffff; box-shadow: 0 1px 3px 0 #aaaaaa; padding: 5px; }
 	#main-menu-con ul ul a { margin: 0 auto; width: 100%; }
-	img.site-logo,.site-title { width: 85%; max-width: 300px; }
 	#main-menu-con ul ul ul { left: 15px;; top: 20px; }
-	#top-menu-con, #top-menu-con #searchform, .connumber, #header .social, #top-menu-con ul.menu { display: table; float: none; width: auto; margin: 0 auto; }
-	.bqpcontainer .featured-boxs { margin: 0 auto; }
-	.bqpcontainer .tesheading .read-more { position: relative; }
-	#filter-gallery a { margin: 5px;  }
-	#content, #right-sidebar { width: 100%; float: left; }
-	#right-sidebar .widget { width: 44%; float: left; margin-right: 5%; }
-	.post-container .fpthumb { max-height: 40vw; }
-	.sti-menu li a h2 { top: 80px; font-size: 19px;}
-	.fslidersubtitle { display: none; }
-	
+	#content, .d5woocontent { width: 100%; float: none; }
+	#right-sidebar { width: 100%; float: none; text-align: center; }
+	#right-sidebar .widget {display: inline-block;vertical-align: top;margin: 10px;text-align: left;}	
+	.slide-text-container{ width: auto; text-align: left; margin-right: 15px; }
+	.fslidertitle{ float: left; margin: 11px 0 7px 15px; font-size: 19px; }
+	.fslidersubtitle{ font-size: 17px; }
+	.main-slider .fslidelink{ float: left; clear: both; margin: 7px 0 7px 15px; padding: 3px 5px; font-size: 11px; }	
+	.main-slider .flex-control-paging li a{ height: 9px; widows: 9px; }
+	#footer-sidebar .footer-widgets{ width: calc(40% - 20px); }
+}
+
+@media screen and (max-width: 799px) {
+	#footer-sidebar .first-footer-widget, #footer-sidebar .footer-widgets {width:calc(50% - 20px);}
+	#footer-sidebar .footer-widgets{ width: calc(50% - 20px); }
 }
 
 @media screen and (max-width: 599px) {
-	body { min-width: 300px; }
-	.featured-box, .bqpcontainer .featured-box { max-width: 100%; width: auto; }
-	.bqpcontainer .tesheading .read-more { position: relative; right: 0; }
-	.floatleft, .floatright { width: 100%; }
-	.bqpcontainer .fpthumb { max-height: 50vw; }
-	#right-sidebar .widget { width: 90%; float: none; margin: 10px auto; min-width: 200px; } 
-	.fslidelink, .main-slider  .flex-control-nav { display: none; }
+	#logotitlecon{ max-width: 100%; }
+	#logotitlecon .logotitle.site-logo {max-width: 100%; }
+	.floatleft, .floatright { width: 100%; }	
+	.fslidedescription {display: none;}
+	.main-slider .flex-control-paging li a { height: 15px; width: 15px; }
+}
+
+@media screen and (max-width: 499px) {
+	.fslidersubtitle{display: none;} 
+	#footer-sidebar .footer-widgets{ width: calc(100% - 20px); }
 }

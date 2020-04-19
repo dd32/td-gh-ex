@@ -1,0 +1,9 @@
+/* 	Searchlight  Theme's Admin Style
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
+	Based on the Simplest D5 Framework for WordPress
+	Since Searchlight 1.0
+*/
+
+.infohead { background:#ffffff; border: 5px solid #14AAFD;  color: #555555; padding: 10px; transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
+.infohead a { color: #ff3a05; text-decoration: none; }
+.infohead:hover { transform: scale(1.01)}

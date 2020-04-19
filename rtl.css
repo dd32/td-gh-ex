@@ -7,9 +7,9 @@ Author URI: https://d5creation.com/
 
 Description: Searchlight is a CSS3 Powered and  WordPress Latest Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can show Slide Images with Captions, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
-Version: 2.3
+Version: 2.5
 
-Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio, education, food-and-drink
+Tags: two-columns, right-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,7 +20,6 @@ Searchlight is distributed under the terms of the GNU GPL
 Text Domain: searchlight
 
 */
-
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
 
@@ -82,16 +81,13 @@ img.site-logo,.site-title {
 	left: auto;
 }
 
-#content {
+#content, .d5woocontent {
 	float:right;
 }
 
-#left-sidebar {
-	float:left;
-}
-
 #main-menu-con {
-	float:left;
+	left: 0;
+	right: auto;
 }
 
 #main-menu-con li {
@@ -123,81 +119,54 @@ img.site-logo,.site-title {
 	padding-right: 0;
 }
 
-#main-menu-con li.menu-item-has-children a:after, #main-menu-con li.page_item_has_children a:after {
-	margin-right: 5px;
-	padding-right: 5px;
-	left: 3px;
+#main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after {
+	left:5px;
 	right: auto;
-	padding-left: 0;
-	margin-left: auto;
 }
 
-.mobile-menu::before {
-	padding-left: 10px;
-	padding-right: 0;
+#mobile-menu {
+	right: 0;
+	left: auto;
 }
 
 #top-menu-con {
+	text-align: left;
 	float: left;
-}
-
-#top-menu-con ul.menu {
-	float: left;
-}
-
-#top-menu-con .menu li {
-	float:right;
-}
-
-#top-menu-con .menu a:before {
-	padding: 0 0 0 5px;
-}
-
-#top-menu-con #searchform {
-	float: left;
-}
-
-#top-menu-con #searchsubmit {
-	margin-right: -5px;
+	margin-right: -3px;
 	margin-left: auto;
 }
 
-.connumber {
-	float: left;
+#top-menu-con .menu a::before {
+	padding: 0 0 0 5px;
 }
 
-.connumber:before {
-	padding-left: 5px;
-	float: right;
-	padding-right: 0;
+/* Search Box 
+------------------------------------------------------------- */
+
+#searchsubmit, .woocommerce-product-search button[type="submit"], input[type="submit"].search-submit, #bbp_search_submit, .woocommerce-product-search button[type="submit"]:hover, input[type="submit"].search-submit:hover, #bbp_search_submit:hover {
+	margin: 0 -5px 0 0;
 }
 
-.up-bottom-border span:before {
-	padding-left: 5px;
-	padding-right: 0;
+.connumber::before {
+	margin-left: 7px;
+	margin-right: auto;
 }
 
-.post-meta span {
-	padding-left: 20px;
-	padding-right: 0;
+.extranumber::before {
+	margin-left: 7px;
+	margin-right: auto;
+}
+
+#left-sidebar {
+	float:left;
 }
 
 .widget {
 	text-align: right;
 }
 
-#left-sidebar .widget ul, #left-sidebar .widget ul {
+#left-sidebar .widget ul {
 	margin: 0 15px 10px 0;
-}
-
-#footer-sidebar .first-footer-widget {
-	float:right;
-}
-
-#footer-sidebar .footer-widgets {
-	margin-right: 4%;
-	float:right;
-	margin-left: auto;
 }
 
 #footer-sidebar .widget ul, #footer-sidebar .widget ul {
@@ -212,9 +181,11 @@ address {
 	text-align:left;
 }
 
-textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select {
-	border-right:1px solid #AAAAAA;
-	border-left:1px solid #FFFFFF;
+/* ================ Gallery Post ============== */
+
+.wp-video, .wp-audio {
+	margin-right: auto;
+	margin-left: auto;
 }
 
 #fpblog-box-item.bqpcontainer .featured-box {
@@ -224,6 +195,11 @@ textarea, input[type="text"], input[type="password"], input[type="email"], input
 
 .bqpcontainer .tesheading .read-more {
 	left: 5%;
+	right: auto;
+}
+
+.fpost-box-ind .read-more {
+	left: 7px;
 	right: auto;
 }
 
@@ -261,9 +237,19 @@ h2.commentsbox:before {
 	float: left;
 }
 
-.read-more:after {
+.read-more::after {
 	padding-right: 5px;
 	padding-left: 0;
+}
+
+.post-meta span:before {
+	padding-left: 5px;
+	padding-right: 0;
+}
+
+.post-meta span {
+	padding-left: 20px;
+	padding-right: 0;
 }
 
 .page-link:before {
@@ -287,11 +273,16 @@ h2.commentsbox:before {
 	text-align: left;
 }
 
-#page-nav .alignleft {
+.page-link::before {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.page-nav .alignleft {
 	text-align:left;
 }
 
-#page-nav .alignright {
+.page-nav .alignright {
 	text-align:right;
 }
 
@@ -331,8 +322,9 @@ h2.commentsbox:before {
 	left: auto;
 }
 
-.social a {
-	float: right;
+/* ================ Social Links ============== */
+
+.social-link span {
+	right: 0 !important;
+	left: auto !important;
 }
-
-

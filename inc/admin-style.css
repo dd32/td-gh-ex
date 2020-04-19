@@ -1,11 +1,11 @@
-/* 	Innovation Theme's Admin Style
-	Copyright: 2012-2017, D5 Creation, www.d5creation.com
+/* 	Searchlight Theme's Admin Style
+	Copyright: 2012-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
-	Since Innovation 3.0
+	Since Searchlight 1.0
 */
 
 #about-page { width:90%; min-width: 950px; display: block; margin: 10px 0; border-radius: 5px; background: #DDDDDD; border: 1px solid #cccccc; border-bottom: 15px solid #555555; padding: 10px 15px; line-height: 1.7; overflow: hidden; }
-.about-title { background: #555555 url("images/d5logo.png") no-repeat scroll 10px center / auto 70%; text-align: right; font-size: 35px; padding: 10px 15px; margin: -10px -15px 10px; color: #06add7; font-weight: 100; }
+.about-title { background: #555555 url("images/d5logo.png") no-repeat scroll 10px center / auto 70%; text-align: right; font-size: 35px; padding: 10px; margin: -10px -15px 10px; color: #06add7; font-weight: 100; }
 .about-title span { font-size: 45px; font-weight: 400; }
 #about-page a, .infohead a { color: #ff3a05; text-decoration: none; }
 .impspe { color: #06add7; }
@@ -15,6 +15,7 @@
 .floatlt { float: left; }
 .floatrt { float: right; }
 .floatcntr { text-align: center; }
+.aboutdes{ font-size: 15px; }
 #about-page .specialbutton { background: #00aeef; border: none; box-shadow: 0 2px 0 0 #0089bc, 0 1px 0 0 rgba(225, 225, 225, 0.2) inset; color: #ffffff; text-shadow: 0 1px rgba(0, 0, 0, 0.1); border-radius: 3px; cursor: pointer; display: block; font-size: 15px; font-weight: bold; height: auto; margin: 5px; padding: 13px; text-align: center; text-decoration: none; text-transform: uppercase; width: auto;}
 #about-page .inblk { display: inline-block; vertical-align: top; margin: 5px 10px; }
 #about-page .specialbutton:hover { background: #0098d0 ; box-shadow: none; }
@@ -22,7 +23,7 @@
 .heading-des { font-size: 17px; }
 .infohead { background:#ffffff; border: 5px solid #14AAFD;  color: #555555; padding: 10px; transition:all .75s; -moz-transition:all .75s; -o-transition:all .75s; -webkit-transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
 .infohead:hover { transform: scale(1.01)}
-a.extendlink { float: right;height: 50px;width: 290px;background: url("images/extendlogo.png") no-repeat scroll center center / 100% auto transparent;padding: 5px;margin-top: -15px;}
+a.extendlink { float: right; height: 50px; width: 290px; margin-top: -15px; background: url("images/extendlogo.png") no-repeat scroll 0 0 / 100% auto transparent; }
 .spetitle { font-size: 35px; text-align: center; color: #06add7; text-shadow: 1px 1px 0 #eeeeee; }
 
 .tftable {font-size:12px;color:#333333;width:auto; margin:0 auto; border-width: 1px;border-color: #729ea5;border-collapse: collapse;}
@@ -56,5 +57,3 @@ a.extendlink { float: right;height: 50px;width: 290px;background: url("images/ex
 #about-page .view-sixth:hover h2 { opacity: 1; transform: scale(1); transition-delay: 0.1s; }
 #about-page .view-sixth:hover p { opacity: 1; transform: scale(1); transition-delay: 0.2s; }
 #about-page .view-sixth:hover span.info { opacity: 1; transform: translateY(0px); transition-delay: 0.3s; }
-.extraemp { padding: 10px; font-size: 19px; background:#14aafd; margin: 30px -10px; color: #ffffff; }
-.extraemp a { color: #ffffff !important; text-decoration: underline !important; font-weight: bold; }

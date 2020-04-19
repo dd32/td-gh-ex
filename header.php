@@ -1,7 +1,7 @@
 <?php
 
 /* 	Searchlight Theme's Header
-	Copyright: 2014-2016, D5 Creation, www.d5creation.com
+	Copyright: 2014-2020, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Searchlight 1.0
 */
@@ -17,20 +17,23 @@
 </head>
 
 <body <?php body_class(); ?> >
+      <div id="resmwdt"></div>
       <div id ="header">
       <div id ="header-content">
 		<!-- Site Titele and Description Goes Here -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo esc_attr(bloginfo( 'name' )); ?></h1><?php endif; ?></a>
+        <a id="logotitlecon" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo logotitle" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title logotitle"><?php echo esc_attr(bloginfo( 'name' )); ?></h1><?php endif; ?></a>
                 
 		<h2 class="site-title-hidden"><?php echo esc_attr( bloginfo( 'description' )); ?></h2>
-	    <nav id="top-menu-con">
-		<?php get_search_form();			
-		if (esc_textarea(searchlight_get_option ('contactnumber', '(000) 111-222')) != ''):echo '<div class="connumber">'.  esc_textarea(searchlight_get_option ('contactnumber', '(000) 111-222')). '</div>';  endif; ?>
-		<div class="social social-link"><?php foreach (range(1, 5 ) as $searchlight_sll) { if ( searchlight_get_option('sl' .$searchlight_sll, '#') != '' ): echo '<a href="'. esc_url(searchlight_get_option('sl' . $searchlight_sll, '#')) .'"target="_blank"> </a>'; endif; } ?> </div>
-		<?php if ( has_nav_menu( 'top-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'top-menu' )); endif; ?>
-        </nav>
+	    <div id="top-menu-con">
+	    <?php if ( has_nav_menu( 'top-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'top-menu' )); endif; ?>
+	    <div class="social social-link"><?php foreach (range(1, 5 ) as $searchlight_sll) { $scolink = '#'; $scolink = searchlight_get_option('sl' . $searchlight_sll, '#');  if ( $scolink ): echo '<a href="'. esc_url($scolink) .'"target="_blank"> </a>'; endif; } ?> </div>
+		<?php $phonenumber = searchlight_get_option ('contactnumber', '(000) 111-222');
+		if ($phonenumber):echo '<div class="connumber">'.  wp_kses_post($phonenumber). '</div>';  endif; 
+		get_search_form(); ?>
+       		
+        </div>
         <!-- Site Main Menu Goes Here -->
-         <div class="mobile-menu"><?php _e('Main Menu', 'searchlight'); ?></div>
+         <div id="mobile-menu"></div>
         <nav id="main-menu-con">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
         </nav>
@@ -38,7 +41,4 @@
       </div><!-- header-content -->
       </div><!-- header -->
       <div class="headerheight"> </div>
-      
-
- 
-	  
+      <div id="topadjust"></div>

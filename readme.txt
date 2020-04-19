@@ -1,64 +1,115 @@
-----------------------------------
-Searchlight
-----------------------------------
-Version: 	2.3
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== Searchlight ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: d5creation
+Tags: two-columns, right-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio
+Requires at least: 5.0
+Tested up to: 5.4
+Requires PHP: 5.4
+Stable tag: 2.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Searchlight Responsive Corporate and Blog Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
+== Description ==
 
+Searchlight is a CSS3 Powered and  WordPress Latest Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can show Slide Images with Captions, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
-Source, Photographer and License of the Images used 
-screenshot.png and
-			https://pixabay.com/en/book-reading-read-relaxation-791824
-			https://pixabay.com/en/macbook-laptop-computer-technology-925614
-1.jpg:			https://pixabay.com/en/woman-posing-female-girl-young-1149475
-2.jpg:			https://pixabay.com/en/call-center-headset-woman-human-2537390
-3.jpg:			https://pixabay.com/en/pretty-woman-traffic-young-vintage-635245
+== Frequently Asked Questions ==
 
-Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com
-FontAwesome		: GPL Friendly Licenses, Source -  http://fortawesome.github.io/Font-Awesome
- jQuery FlexSlider		: License: GPLv2, Copyright: WooThemes,  Author: Tyler Smith, Source: https://github.com/woothemes/FlexSlider
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Slide Images, Contact Number, Social Links etc. there. 
 
+= Why is Searchlight? =
+Searchlight is for Personal, Corporate, Company, Community, Blog, Forum and Multipurpose Websites
 
-All other images and Scripts, Files are Lincenced Under GNU GPL and Copyrighted to D5 Creation
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites and Even for Smart Blogs
 
-NB: No Sub Menus will be shown in the Top Menu
-
-================================================================
-
-You can set Site Logo from Appearance > Header
-
-You can use the Appearance > Customize to set the following:
--	Slide Images
--	Header Contact Number
--	Social Links
-
-================================================================
-
-You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight 
-You can use the Searchlight Extend for more Features and Options. If you like this Theme you are requested for a positive review at WordPress Theme Page.
-
-You can visit the Demo at http://demo.d5creation.com/themes/?theme=Searchlight
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
-Limitation: The width of the Main Menu is fixed. You should use the menu items within the box for better visualization.
+== Changelog ==
 
-Changelog 2.1
-=============
-- Some Styling Issues Fixed
+= 2.5 =
+* Code Cleanup
+* Some Images Change
+* Style Improvement
 
-Changelog 1.9
-=============
-- This is a Major Version
-- Code Cleanup
-- Featues Added
-- Searchlight Options Removed and Customizer Added
-- Slide Images Added
+= 2.3 =
+* Code Cleanup
 
+= 2.1 =
+* Some Styling Issues Fixed
+
+= 1.9 =
+* This is a Major Version
+* Code Cleanup
+* Featues Added
+* Searchlight Options Removed and Customizer Added
+* Slide Images Added
+
+= 1.0 =
+* Initial Release
+
+== Resources ==
+
+* html5.js:
+Source: https://github.com/aFarkas/html5shiv
+License: MIT/GPL2, Copyright (c) @afarkas @jdalton @jon_neal @rem
+License Url : https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
+
+* FontAwesome5 Free Fonts (webfonts):
+Source: https://fontawesome.com/
+License:  SIL OFL 1.1, Copyright (c) @fontawesome
+License Url : https://fontawesome.com/license/free
+
+* fawsome-all.css:
+Source: https://fontawesome.com/
+License:  MIT, Copyright (c) @fontawesome
+License Url : https://fontawesome.com/license/free
+
+* jquery.flexslider.js:
+Source: https://github.com/woothemes/FlexSlider
+License:  GPL2, Copyright (c) 2012 WooThemes
+License Url : https://github.com/woocommerce/FlexSlider/blob/master/LICENSE.md
+
+* flexslider.css:
+Source: https://github.com/woothemes/FlexSlider
+License:  GPL2, Copyright (c) 2012 WooThemes
+License Url : https://github.com/woocommerce/FlexSlider/blob/master/LICENSE.md
+
+* 1.jpg:
+Source: https://pxhere.com/en/photo/1431119
+License: CC0, Copyright (c) rawpixel.com
+License Url : https://pxhere.com/en/license
+
+Source: https://pxhere.com/en/photo/1573331
+License: CC0, Copyright (c) tejipta
+License Url : https://pxhere.com/en/license
+
+* 2.jpg:
+Source: https://stocksnap.io/photo/servers-woman-ZYGIOUX4QU
+License: CC0, Copyright (c) Christina Morillo
+License Url : https://stocksnap.io/license
+
+* 3.jpg:
+Source: https://pxhere.com/en/photo/1456015
+License: CC0, Copyright (c) ands.0120
+License Url : https://pxhere.com/en/license
+
+* f1.jpg:
+Source: https://pxhere.com/en/photo/901809
+License: CC0
+License Url : https://pxhere.com/en/license
+
+* f2.jpg:
+Source: https://pxhere.com/en/photo/757423
+License: CC0
+License Url : https://pxhere.com/en/license
+
+* personal.jpg:
+Source: https://pxhere.com/en/photo/1130922
+License: CC0
+License Url : https://pxhere.com/en/license

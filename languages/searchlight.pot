@@ -2,15 +2,15 @@
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-10-12 00:51+0600\n"
-"PO-Revision-Date: 2015-10-29 02:02+0600\n"
+"Project-Id-Version: Searchlight\n"
+"POT-Creation-Date: 2020-04-20 02:48+0600\n"
+"PO-Revision-Date: 2020-04-18 23:59+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -19,38 +19,6 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-
-#: archive.php:14
-msgid "now browsing by category"
-msgstr ""
-
-#: archive.php:20
-msgid "now browsing by tag"
-msgstr ""
-
-#: archive.php:25
-msgid "now browsing by day"
-msgstr ""
-
-#: archive.php:28
-msgid "now browsing by month"
-msgstr ""
-
-#: archive.php:31
-msgid "now browsing by year"
-msgstr ""
-
-#: archive.php:34 archive.php:37 sidebar.php:12
-msgid "Archives"
-msgstr ""
-
-#: archive.php:34
-msgid "now browsing by author"
-msgstr ""
-
-#: archive.php:37
-msgid "now browsing the general archives"
-msgstr ""
 
 #: comments.php:14
 msgid "No Comments"
@@ -68,193 +36,195 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: fpslide.php:25 functions.php:103 functions.php:109
+#: fpslide.php:26 functions.php:123 functions.php:129
 msgid "Read More"
 msgstr ""
 
-#: functions.php:21 header.php:34
+#: functions.php:11
+msgid "Searchlight Options"
+msgstr ""
+
+#: functions.php:32
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:21
+#: functions.php:32
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:107
 msgid "Theme by:"
 msgstr ""
 
-#: functions.php:87
+#: functions.php:107
 msgid "Powered by:"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:143
 msgid "Edit"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:153
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:154
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:136
+#: functions.php:156
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:146
-msgid "NEWER ENTRIES"
-msgstr ""
-
-#: functions.php:147
-msgid "OLDER ENTRIES"
-msgstr ""
-
-#: functions.php:156
+#: functions.php:179
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:165
-msgid "Secondary Sidebar"
+#: functions.php:188
+msgid "WooCommerce Sidebar"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:197
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:183
+#: functions.php:206
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:215
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:225
 msgid "Footer Area Four"
 msgstr ""
 
-#: inc/customize.php:9
+#: inc/customize.php:33
 msgid "SEARCHLIGHT OPTIONS"
 msgstr ""
 
-#: inc/customize.php:10
+#: inc/customize.php:34
 msgid "We appreciate an"
 msgstr ""
 
-#: inc/customize.php:10
+#: inc/customize.php:34
 msgid "Honest Review"
 msgstr ""
 
-#: inc/customize.php:10
+#: inc/customize.php:34
 msgid "of this Theme if you Love our Work"
 msgstr ""
 
-#: inc/customize.php:12
+#: inc/customize.php:36
 msgid ""
-"Need More Features and Options including Exciting Slide and 100+ Advanced "
-"Features? Try "
+"Need More Features and Options including Exciting Unlimited Slide, E-"
+"Commerce, Drag and Drop Page Building, Useful ShortCodes, Unlimited Colors, "
+"Portfolio/Gallery, Featured Boxes, Clients List, Testimonial, Layout Options "
+"and 100+ Advanced Features? Try "
 msgstr ""
 
-#: inc/customize.php:13
+#: inc/customize.php:37
 msgid "Searchlight Extend"
 msgstr ""
 
-#: inc/customize.php:16
+#: inc/customize.php:40
 msgid "You can Visit the Searchlight Extend "
 msgstr ""
 
-#: inc/customize.php:16
+#: inc/customize.php:40
 msgid "Demo Here"
 msgstr ""
 
-#: inc/customize.php:23
+#: inc/customize.php:47
 msgid "(000) 111-222"
 msgstr ""
 
-#: inc/customize.php:31
+#: inc/customize.php:55
 msgid "Contact Number"
 msgstr ""
 
-#: inc/customize.php:34
+#: inc/customize.php:58
 msgid "Input your Contact Number"
 msgstr ""
 
-#: inc/customize.php:44
+#: inc/customize.php:71
+msgid "Fixed Header?"
+msgstr ""
+
+#: inc/customize.php:74
+msgid "Check the Box if you want the Header Fixed during Scrolling"
+msgstr ""
+
+#: inc/customize.php:85
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Slide"
 msgstr ""
 
-#: inc/customize.php:60
+#: inc/customize.php:100
+msgid "Show The Slider Box in Front Page"
+msgstr ""
+
+#: inc/customize.php:103
+msgid "Check this if you want to show the Slider Box in Front Page"
+msgstr ""
+
+#: inc/customize.php:119
 msgid "Slide Image "
 msgstr ""
 
-#: inc/customize.php:63
+#: inc/customize.php:122
 msgid ""
 "Upload an image for the Front Page Banner. 1400px X 530px image is "
 "recommended"
 msgstr ""
 
-#: inc/customize.php:68
+#: inc/customize.php:127
 msgid "Searchlight Theme"
 msgstr ""
 
-#: inc/customize.php:76
+#: inc/customize.php:135
 msgid "Slide Title"
 msgstr ""
 
-#: inc/customize.php:83
+#: inc/customize.php:142
 msgid "Innovative Professional and Responsive Theme"
 msgstr ""
 
-#: inc/customize.php:91
+#: inc/customize.php:150
 msgid "Slide Sub Title"
 msgstr ""
 
-#: inc/customize.php:98
+#: inc/customize.php:157
 msgid ""
 "This is a Test Image Text for Searchlight Theme. You can change this text "
 "from Customizer"
 msgstr ""
 
-#: inc/customize.php:106
+#: inc/customize.php:165
 msgid "Slide Caption"
 msgstr ""
 
-#: inc/customize.php:113
+#: inc/customize.php:172
 msgid "#"
 msgstr ""
 
-#: inc/customize.php:121
+#: inc/customize.php:180
 msgid "Slide Link"
 msgstr ""
 
-#: inc/customize.php:135
+#: inc/customize.php:194
 msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
 msgstr ""
 
-#: inc/customize.php:151
+#: inc/customize.php:210
 msgid "Social Link"
 msgstr ""
 
-#: options.php:18
-msgid "Searchlight Options"
-msgstr ""
-
-#: options.php:19
-msgid "Here You can Set Some Specific Options of Searchlight Theme"
-msgstr ""
-
-#: options.php:31
-msgid "Fixed Header?"
-msgstr ""
-
-#: post-content.php:35
+#: post-content.php:36
 msgid "Previous Image"
 msgstr ""
 
-#: post-content.php:36
+#: post-content.php:37
 msgid "Next Image"
 msgstr ""
 
@@ -270,24 +240,12 @@ msgstr ""
 msgid "Number of Results:"
 msgstr ""
 
-#: searchform.php:11
-msgid "Search..."
-msgstr ""
-
-#: searchform.php:12
-msgid "Search"
-msgstr ""
-
-#: sidebar.php:19
-msgid "Meta"
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Searchlight"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/theme/searchlight"
+msgid "https://d5creation.com/theme/searchlight"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -305,5 +263,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "https://d5creation.com/"
 msgstr ""
