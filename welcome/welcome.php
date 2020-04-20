@@ -24,8 +24,6 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 				$this->theme_description = $theme->description;
 
 				/** Plugins **/
-				$this->free_plugins = $plugins['recommended_plugins']['free_plugins'];
-				$this->pro_plugins = $plugins['recommended_plugins']['pro_plugins'];
 				$this->req_plugins = $plugins['required_plugins'];
 				$this->actions_req = $plugins['req_plugins'];
 				$this->companion_plugins = $plugins['companion_plugins'];
@@ -33,8 +31,7 @@ if(!class_exists('Accesspress_Parallax_Welcome')) :
 				/** Tabs **/
 				$this->tab_sections = array(
 					'getting_started' => esc_html__('Getting Started', 'accesspress-parallax'),
-					'actions_required' => esc_html__('Required Plugins', 'accesspress-parallax'),
-					'recommended_plugins' => esc_html__('Recommended Plugins', 'accesspress-parallax'),
+					'actions_required' => esc_html__('Recommended Plugins', 'accesspress-parallax'),
 					'demo_import' => esc_html__('Import Demo', 'accesspress-parallax'),
 					'free_vs_pro' => esc_html__('Free Vs Pro', 'accesspress-parallax'),
 					'changelog' => esc_html__('ChangeLog', 'accesspress-parallax'),
