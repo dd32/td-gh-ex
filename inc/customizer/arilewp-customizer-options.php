@@ -185,7 +185,7 @@ function arilewp_recommended_plugin_section( $manager ) {
  
 $activate_theme_data = wp_get_theme(); // getting current theme data
 $activate_theme = $activate_theme_data->name; 
-if( 'StrangerWP' != $activate_theme && 'NewYork City' != $activate_theme){ 
+if( 'NewYork City' != $activate_theme){ 
 require get_template_directory() . '/inc/customizer/customizer-notice/class-customizer-notice.php';
 
 $config_customizer = array(
