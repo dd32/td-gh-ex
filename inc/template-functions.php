@@ -388,6 +388,13 @@ if( ! function_exists('attesa_register_all_social_network')){
 				'name' => __('WordPress', 'attesa'),
 				'icon' => $iconPrefix .' fa-wordpress',
 			),
+			'spotify' => array (
+				'slug' => '_spotifyurl',
+				'default' => '',
+				'label' => __('Spotify URL', 'attesa'),
+				'name' => __('Spotify', 'attesa'),
+				'icon' => $iconPrefix .' fa-spotify',
+			),
 		);
 		return apply_filters('attesa_social_network_register', $social);
 	}

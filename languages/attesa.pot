@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2020-03-17 19:08+0100\n"
-"PO-Revision-Date: 2020-03-17 19:08+0100\n"
+"POT-Creation-Date: 2020-04-20 10:31+0100\n"
+"PO-Revision-Date: 2020-04-20 10:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -2044,297 +2044,305 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: inc/template-functions.php:416
-msgid "Playfair Display"
+#: inc/template-functions.php:394
+msgid "Spotify URL"
 msgstr ""
 
-#: inc/template-functions.php:417 inc/template-functions.php:476
-msgid "Poppins"
-msgstr ""
-
-#: inc/template-functions.php:418
-msgid "Oswald"
-msgstr ""
-
-#: inc/template-functions.php:419
-msgid "Merriweather"
-msgstr ""
-
-#: inc/template-functions.php:420
-msgid "Nunito"
-msgstr ""
-
-#: inc/template-functions.php:421 inc/template-functions.php:468
-msgid "Quicksand"
-msgstr ""
-
-#: inc/template-functions.php:422
-msgid "Exo"
+#: inc/template-functions.php:395
+msgid "Spotify"
 msgstr ""
 
 #: inc/template-functions.php:423
-msgid "Josefin Slab"
+msgid "Playfair Display"
 msgstr ""
 
-#: inc/template-functions.php:424
-msgid "Lobster Two"
+#: inc/template-functions.php:424 inc/template-functions.php:483
+msgid "Poppins"
 msgstr ""
 
 #: inc/template-functions.php:425
-msgid "Philosopher"
+msgid "Oswald"
 msgstr ""
 
 #: inc/template-functions.php:426
-msgid "Kalam"
+msgid "Merriweather"
 msgstr ""
 
 #: inc/template-functions.php:427
-msgid "Khand"
+msgid "Nunito"
 msgstr ""
 
-#: inc/template-functions.php:428
-msgid "Nobile"
+#: inc/template-functions.php:428 inc/template-functions.php:475
+msgid "Quicksand"
 msgstr ""
 
 #: inc/template-functions.php:429
-msgid "Cormorant Upright"
+msgid "Exo"
 msgstr ""
 
 #: inc/template-functions.php:430
-msgid "Atma"
+msgid "Josefin Slab"
 msgstr ""
 
 #: inc/template-functions.php:431
-msgid "Dancing Script"
+msgid "Lobster Two"
 msgstr ""
 
 #: inc/template-functions.php:432
-msgid "Amatic SC"
+msgid "Philosopher"
 msgstr ""
 
 #: inc/template-functions.php:433
-msgid "Cabin Sketch"
+msgid "Kalam"
 msgstr ""
 
 #: inc/template-functions.php:434
-msgid "Merienda"
+msgid "Khand"
 msgstr ""
 
 #: inc/template-functions.php:435
-msgid "Unkempt"
+msgid "Nobile"
 msgstr ""
 
-#: inc/template-functions.php:436 inc/template-functions.php:487
-msgid "Lato"
+#: inc/template-functions.php:436
+msgid "Cormorant Upright"
 msgstr ""
 
 #: inc/template-functions.php:437
-msgid "Life Savers"
+msgid "Atma"
 msgstr ""
 
 #: inc/template-functions.php:438
-msgid "Caveat"
+msgid "Dancing Script"
 msgstr ""
 
 #: inc/template-functions.php:439
-msgid "Oregano"
+msgid "Amatic SC"
 msgstr ""
 
 #: inc/template-functions.php:440
-msgid "Skranji"
+msgid "Cabin Sketch"
 msgstr ""
 
 #: inc/template-functions.php:441
-msgid "Stardos Stencil"
+msgid "Merienda"
 msgstr ""
 
 #: inc/template-functions.php:442
-msgid "Oleo Script Swash Caps"
+msgid "Unkempt"
 msgstr ""
 
-#: inc/template-functions.php:443
-msgid "Cherry Swash"
+#: inc/template-functions.php:443 inc/template-functions.php:494
+msgid "Lato"
 msgstr ""
 
 #: inc/template-functions.php:444
-msgid "Tangerine"
+msgid "Life Savers"
 msgstr ""
 
 #: inc/template-functions.php:445
-msgid "Allan"
+msgid "Caveat"
 msgstr ""
 
 #: inc/template-functions.php:446
-msgid "Almendra"
+msgid "Oregano"
 msgstr ""
 
-#: inc/template-functions.php:447 inc/template-functions.php:475
-msgid "Dosis"
+#: inc/template-functions.php:447
+msgid "Skranji"
 msgstr ""
 
 #: inc/template-functions.php:448
-msgid "Nanum Myeongjo"
+msgid "Stardos Stencil"
 msgstr ""
 
 #: inc/template-functions.php:449
-msgid "Expletus Sans"
+msgid "Oleo Script Swash Caps"
 msgstr ""
 
 #: inc/template-functions.php:450
-msgid "Sansita"
+msgid "Cherry Swash"
 msgstr ""
 
 #: inc/template-functions.php:451
-msgid "Montserrat Alternates"
+msgid "Tangerine"
 msgstr ""
 
 #: inc/template-functions.php:452
-msgid "Teko"
+msgid "Allan"
 msgstr ""
 
 #: inc/template-functions.php:453
-msgid "Passion One"
+msgid "Almendra"
 msgstr ""
 
-#: inc/template-functions.php:454
-msgid "Srisakdi"
+#: inc/template-functions.php:454 inc/template-functions.php:482
+msgid "Dosis"
 msgstr ""
 
 #: inc/template-functions.php:455
+msgid "Nanum Myeongjo"
+msgstr ""
+
+#: inc/template-functions.php:456
+msgid "Expletus Sans"
+msgstr ""
+
+#: inc/template-functions.php:457
+msgid "Sansita"
+msgstr ""
+
+#: inc/template-functions.php:458
+msgid "Montserrat Alternates"
+msgstr ""
+
+#: inc/template-functions.php:459
+msgid "Teko"
+msgstr ""
+
+#: inc/template-functions.php:460
+msgid "Passion One"
+msgstr ""
+
+#: inc/template-functions.php:461
+msgid "Srisakdi"
+msgstr ""
+
+#: inc/template-functions.php:462
 msgid "Zilla Slab Highlight"
 msgstr ""
 
-#: inc/template-functions.php:456 inc/template-functions.php:499
+#: inc/template-functions.php:463 inc/template-functions.php:506
 msgid "Thasadith"
 msgstr ""
 
-#: inc/template-functions.php:466
+#: inc/template-functions.php:473
 msgid "Muli"
 msgstr ""
 
-#: inc/template-functions.php:467
+#: inc/template-functions.php:474
 msgid "Montserrat"
 msgstr ""
 
-#: inc/template-functions.php:469
+#: inc/template-functions.php:476
 msgid "Roboto"
 msgstr ""
 
-#: inc/template-functions.php:470
+#: inc/template-functions.php:477
 msgid "Open Sans"
 msgstr ""
 
-#: inc/template-functions.php:471
+#: inc/template-functions.php:478
 msgid "Roboto Slab"
 msgstr ""
 
-#: inc/template-functions.php:472
+#: inc/template-functions.php:479
 msgid "Arimo"
 msgstr ""
 
-#: inc/template-functions.php:473
+#: inc/template-functions.php:480
 msgid "Rubik"
 msgstr ""
 
-#: inc/template-functions.php:474
+#: inc/template-functions.php:481
 msgid "Cabin"
 msgstr ""
 
-#: inc/template-functions.php:477
+#: inc/template-functions.php:484
 msgid "Catamaran"
 msgstr ""
 
-#: inc/template-functions.php:478
+#: inc/template-functions.php:485
 msgid "Karla"
 msgstr ""
 
-#: inc/template-functions.php:479
+#: inc/template-functions.php:486
 msgid "Comfortaa"
 msgstr ""
 
-#: inc/template-functions.php:480
+#: inc/template-functions.php:487
 msgid "Cabin Condensed"
 msgstr ""
 
-#: inc/template-functions.php:481
+#: inc/template-functions.php:488
 msgid "Rambla"
 msgstr ""
 
-#: inc/template-functions.php:482
+#: inc/template-functions.php:489
 msgid "Rasa"
 msgstr ""
 
-#: inc/template-functions.php:483
+#: inc/template-functions.php:490
 msgid "Hind Vadodara"
 msgstr ""
 
-#: inc/template-functions.php:484
+#: inc/template-functions.php:491
 msgid "Droid Sans"
 msgstr ""
 
-#: inc/template-functions.php:485
+#: inc/template-functions.php:492
 msgid "Oxygen"
 msgstr ""
 
-#: inc/template-functions.php:486
+#: inc/template-functions.php:493
 msgid "Judson"
 msgstr ""
 
-#: inc/template-functions.php:488
+#: inc/template-functions.php:495
 msgid "Sura"
 msgstr ""
 
-#: inc/template-functions.php:489
+#: inc/template-functions.php:496
 msgid "Maven Pro"
 msgstr ""
 
-#: inc/template-functions.php:490
+#: inc/template-functions.php:497
 msgid "Quattrocento Sans"
 msgstr ""
 
-#: inc/template-functions.php:491
+#: inc/template-functions.php:498
 msgid "Rajdhani"
 msgstr ""
 
-#: inc/template-functions.php:492
+#: inc/template-functions.php:499
 msgid "Vollkorn"
 msgstr ""
 
-#: inc/template-functions.php:493
+#: inc/template-functions.php:500
 msgid "Advent Pro"
 msgstr ""
 
-#: inc/template-functions.php:494
+#: inc/template-functions.php:501
 msgid "Livvic"
 msgstr ""
 
-#: inc/template-functions.php:495
+#: inc/template-functions.php:502
 msgid "Fira Sans"
 msgstr ""
 
-#: inc/template-functions.php:496
+#: inc/template-functions.php:503
 msgid "Red Hat Display"
 msgstr ""
 
-#: inc/template-functions.php:497
+#: inc/template-functions.php:504
 msgid "ABeeZee"
 msgstr ""
 
-#: inc/template-functions.php:498
+#: inc/template-functions.php:505
 msgid "Turret Road"
 msgstr ""
 
 #. translators: 1: Theme name, 2: Theme author.
-#: inc/template-functions.php:773
+#: inc/template-functions.php:780
 #, php-format
 msgid "WordPress Theme: %1$s by %2$s"
 msgstr ""
 
-#: inc/template-functions.php:795
+#: inc/template-functions.php:802
 msgid "Previous"
 msgstr ""
 
-#: inc/template-functions.php:796
+#: inc/template-functions.php:803
 msgid "Next"
 msgstr ""
 
