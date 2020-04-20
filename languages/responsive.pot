@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 4.3.1\n"
+"Project-Id-Version: Responsive 4.3.2\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
-"POT-Creation-Date: 2020-04-16 12:38:06+00:00\n"
+"POT-Creation-Date: 2020-04-20 13:47:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -939,7 +939,7 @@ msgstr ""
 msgid "Site Branding"
 msgstr ""
 
-#: core/includes/customizer/helper.php:174 functions.php:564
+#: core/includes/customizer/helper.php:174 functions.php:574
 #: partials/header/main-navigation.php:15
 msgid "Main Navigation"
 msgstr ""
@@ -1243,47 +1243,47 @@ msgid "Social Links"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:144
-#: core/includes/functions-extensions.php:358
+#: core/includes/functions-extensions.php:356
 msgid "Twitter"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:165
-#: core/includes/functions-extensions.php:359
+#: core/includes/functions-extensions.php:357
 msgid "Facebook"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:186
-#: core/includes/functions-extensions.php:360
+#: core/includes/functions-extensions.php:358
 msgid "LinkedIn"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:207
-#: core/includes/functions-extensions.php:361
+#: core/includes/functions-extensions.php:359
 msgid "YouTube"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:228
-#: core/includes/functions-extensions.php:363
+#: core/includes/functions-extensions.php:361
 msgid "RSS Feed"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:249
-#: core/includes/functions-extensions.php:364
+#: core/includes/functions-extensions.php:362
 msgid "Instagram"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:270
-#: core/includes/functions-extensions.php:365
+#: core/includes/functions-extensions.php:363
 msgid "Pinterest"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:291
-#: core/includes/functions-extensions.php:362
+#: core/includes/functions-extensions.php:360
 msgid "StumbleUpon"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-footer-layout-customizer.php:312
-#: core/includes/functions-extensions.php:367
+#: core/includes/functions-extensions.php:365
 msgid "Vimeo"
 msgstr ""
 
@@ -1532,7 +1532,7 @@ msgid "Disable Hero Area"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:105
-#: core/includes/functions.php:89 functions.php:619
+#: core/includes/functions.php:89 functions.php:629
 msgid "HAPPINESS"
 msgstr ""
 
@@ -1541,7 +1541,7 @@ msgid "Headline"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:124
-#: core/includes/functions.php:90 functions.php:622
+#: core/includes/functions.php:90 functions.php:632
 msgid "IS A WARM CUP"
 msgstr ""
 
@@ -1550,7 +1550,7 @@ msgid "Subheadline"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:142
-#: core/includes/functions.php:91 functions.php:625
+#: core/includes/functions.php:91 functions.php:635
 msgid ""
 "Your title, subtitle and this very content is editable from Theme Option. "
 "Call to Action button and its destination link as well. Image on your right "
@@ -1747,7 +1747,7 @@ msgid "Address"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-home-page-customizer.php:767
-#: core/includes/functions-extensions.php:369
+#: core/includes/functions-extensions.php:367
 msgid "Email"
 msgstr ""
 
@@ -1799,7 +1799,7 @@ msgid "Header"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-panel.php:58
-#: functions.php:563 partials/header/main-navigation.php:14
+#: functions.php:573 partials/header/main-navigation.php:14
 msgid "Main Menu"
 msgstr ""
 
@@ -2203,57 +2203,21 @@ msgstr ""
 msgid "I already did"
 msgstr ""
 
-#: core/includes/functions-extensions.php:58 loop-no-posts.php:42
-#. translators: %s: link
-msgid "Home"
-msgstr ""
-
-#: core/includes/functions-extensions.php:60
-#. translators: %s: Categories
-msgid "Archive for %s"
-msgstr ""
-
-#: core/includes/functions-extensions.php:62 loop-header.php:33
-#. translators: %s: Search result page
-#. translators: %s is for search query.
-msgid "Search results for: %s"
-msgstr ""
-
-#: core/includes/functions-extensions.php:64
-#. translators: %s: Post Pages
-msgid "Posts tagged %s"
-msgstr ""
-
-#: core/includes/functions-extensions.php:66 core/includes/functions.php:719
-#: partials/entry/meta.php:54 partials/single/meta.php:49
-#. translators: %s: Author pages
-#. translators: %s: view post by
-#. translators: view all posts by author
-#. translators: %s view posts by
-msgid "View all posts by %s"
-msgstr ""
-
-#: core/includes/functions-extensions.php:67
-msgid "Error 404"
-msgstr ""
-
-#: core/includes/functions-extensions.php:211
-#: core/includes/functions-extras.php:203
-#. translators: %s: Page Number
-msgid "Page %s"
-msgstr ""
-
-#: core/includes/functions-extensions.php:366
+#: core/includes/functions-extensions.php:364
 msgid "Yelp!"
 msgstr ""
 
-#: core/includes/functions-extensions.php:368
+#: core/includes/functions-extensions.php:366
 msgid "foursquare"
 msgstr ""
 
 #: core/includes/functions-extras.php:132 gutenberg-fullwidth.php:46
 #: image.php:59 partials/page/content.php:15
 msgid "Read more &#8250;"
+msgstr ""
+
+#: core/includes/functions-extras.php:203
+msgid "Page %s"
 msgstr ""
 
 #: core/includes/functions-sidebar.php:28
@@ -2344,7 +2308,7 @@ msgstr ""
 msgid "Area 15 - sidebar-footer.php"
 msgstr ""
 
-#: core/includes/functions.php:92 functions.php:628
+#: core/includes/functions.php:92 functions.php:638
 msgid "Call to Action"
 msgstr ""
 
@@ -2393,6 +2357,14 @@ msgstr ""
 msgid "By"
 msgstr ""
 
+#: core/includes/functions.php:719 partials/entry/meta.php:54
+#: partials/single/meta.php:49
+#. translators: %s: view post by
+#. translators: view all posts by author
+#. translators: %s view posts by
+msgid "View all posts by %s"
+msgstr ""
+
 #: core/includes/functions.php:730 image.php:82 partials/entry/meta.php:104
 #: partials/single/meta.php:96
 #. translators: %s: category list
@@ -2438,26 +2410,35 @@ msgstr ""
 msgid "Blog 4 Column"
 msgstr ""
 
+#: core/includes/starter-content.php:32 loop-no-posts.php:42
+#. translators: %s: link
+msgid "Home"
+msgstr ""
+
+#: core/includes/starter-content.php:240
+msgid "Primary"
+msgstr ""
+
 #: footer.php:89
 msgid "Scroll to Top"
 msgstr ""
 
-#: functions.php:480
+#: functions.php:490
 msgid "Permalink to %s"
 msgstr ""
 
-#: functions.php:545
+#: functions.php:555
 #. translators: %s Link to 5 star rating
 msgid ""
 "If you like <strong>Responsive Theme</strong> please leave us a %s rating. "
 "It takes a minute and helps a lot. Thanks in advance!"
 msgstr ""
 
-#: functions.php:546
+#: functions.php:556
 msgid "Thanks :)"
 msgstr ""
 
-#: functions.php:631
+#: functions.php:641
 msgid "#"
 msgstr ""
 
@@ -2467,13 +2448,8 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: gutenberg-fullwidth.php:57 image.php:79 partials/entry/layout.php:64
-#: partials/page/layout.php:53 partials/single/layout.php:68
-msgid "Tagged with:"
-msgstr ""
-
-#: gutenberg-fullwidth.php:60 image.php:87 partials/entry/layout.php:66
-#: partials/page/layout.php:55 partials/single/layout.php:70
+#: gutenberg-fullwidth.php:57 image.php:87 partials/entry/layout.php:69
+#: partials/page/layout.php:53 partials/single/layout.php:73
 msgid "<span class=\"post-edit\">Edit</span>"
 msgstr ""
 
@@ -2497,6 +2473,15 @@ msgstr ""
 #: image.php:46 partials/entry/meta.php:90
 #: partials/entry/thumbnail-style/comments.php:16 partials/single/meta.php:84
 msgid "% Comments"
+msgstr ""
+
+#: image.php:79 partials/entry/layout.php:65 partials/single/layout.php:69
+msgid "Tagged with:"
+msgstr ""
+
+#: loop-header.php:33
+#. translators: %s is for search query.
+msgid "Search results for: %s"
 msgstr ""
 
 #: loop-nav.php:28
@@ -2569,11 +2554,11 @@ msgstr ""
 msgid "About"
 msgstr ""
 
-#: partials/single/layout.php:77
+#: partials/single/layout.php:83
 msgid "Previous Post is "
 msgstr ""
 
-#: partials/single/layout.php:78
+#: partials/single/layout.php:84
 msgid "Next Post is"
 msgstr ""
 
@@ -2808,6 +2793,46 @@ msgid "%1$s Comment on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s Comments on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
+
+#: core/includes/functions-extensions.php:58
+msgctxt "responsive"
+msgid "Home"
+msgstr ""
+
+#: core/includes/functions-extensions.php:60
+#. translators: %s: Categories
+msgctxt "responsive"
+msgid "Archive for %s"
+msgstr ""
+
+#: core/includes/functions-extensions.php:62
+#. translators: %s: Search result page
+msgctxt "responsive"
+msgid "Search results for: %s"
+msgstr ""
+
+#: core/includes/functions-extensions.php:64
+#. translators: %s: Post Pages
+msgctxt "responsive"
+msgid "Posts tagged %s"
+msgstr ""
+
+#: core/includes/functions-extensions.php:66
+#. translators: %s: Author pages
+msgctxt "responsive"
+msgid "View all posts by %s"
+msgstr ""
+
+#: core/includes/functions-extensions.php:67
+msgctxt "responsive"
+msgid "Error 404"
+msgstr ""
+
+#: core/includes/functions-extensions.php:211
+#. translators: %s: Page Number
+msgctxt "responsive"
+msgid "Page %s"
+msgstr ""
 
 #: functions.php:214
 msgctxt "Name of the small font size in the block editor"
