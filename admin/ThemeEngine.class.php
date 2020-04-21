@@ -568,11 +568,14 @@ class AttireThemeEngine {
 		$a_hover_color = 'color:' . esc_attr( $theme_mod['ah_color'] );
 		$css           .= ".attire-content a:not(.btn):hover,.small-menu a:not(.btn):hover{{$a_hover_color};}";
 
+        $css .= self::menuAnimations($theme_mod['dropdown_menu_animation']);
+
         $vars = ":root{\r\n";
 		foreach ($color_vars as $var => $val){
             $vars .= "--color-{$var}: {$val};\r\n";
         }
 		$vars .= "}";
+
 
 		return apply_filters( ATTIRE_THEME_PREFIX . 'customisation_css', $vars.$css );
 	}
@@ -702,6 +705,18 @@ class AttireThemeEngine {
 		wp_reset_postdata();
 
 	}
+
+    public static function menuAnimations($animation){
+        $animations = array(
+            'fadein' => '@keyframes menu-animation{0%{transform:translateY(50px);opacity:0}100%{transform:translateY(0);opacity:1}}',
+            'swingin' => '@keyframes menu-animation{0%{transform:rotateX(-100deg);transform-origin:top;opacity:0}100%{transform:rotateX(0deg);transform-origin:top;opacity:1}}',
+            'slidein' => '@keyframes menu-animation{0%{transform:translateZ(200px) translateY(100px);opacity:0}100%{transform:translateZ(0) translateY(0);opacity:1}}',
+            'scalein' => '@keyframes menu-animation{0%{transform:scale(0);transform-origin:50% 0;opacity:1}100%{transform:scale(1);transform-origin:50% 0;opacity:1}}',
+            'blurin' => '@keyframes menu-animation{0%{transform:scale(0);transform-origin:50% 0;opacity:1}100%{transform:scale(1);transform-origin:50% 0;opacity:1}}',
+            'puffin' => '@keyframes menu-animation{0%{transform:scaleX(2);filter:blur(4px);opacity:0}100%{transform:scaleX(1);filter:blur(0);opacity:1}}',
+        );
+        return isset($animations[$animation]) ? $animations[$animation] : '';
+    }
 
 
 	public static function FooterStyle() {

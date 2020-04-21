@@ -481,6 +481,23 @@ $attire_options = array(
 		),
 	),
 
+    'dropdown_menu_animation'   => array(
+        'label'     => __( 'Dropdown Menu Animation', 'attire' ),
+        'transport' => 'postMessage',
+        'type'      => 'select',
+        'section'   => 'attire_header_options',
+        'default'   => 'none',
+        'choices'   => array(
+            'none' => __( 'No Animation', 'attire' ),
+            'fadein' => __( 'Fade In', 'attire' ),
+            'swingin' => __( 'Swing In', 'attire' ),
+            'slidein' => __( 'Slide In', 'attire' ),
+            'scalein' => __( 'Scale In', 'attire' ),
+            'blurin' => __( 'Blur In', 'attire' ),
+            'puffin' => __( 'Puff In', 'attire' ),
+        ),
+    ),
+
 	'footer_style' => array(
 		'label'     => __( 'Footer Style', 'attire' ),
 		'transport' => 'postMessage',
@@ -1174,7 +1191,7 @@ $attire_options = array(
 		'label'     => __( 'Show Page Header', 'attire' ),
 		'transport' => 'postMessage',
 		'type'      => 'checkbox',
-		'default'   => true,
+		'default'   => false,
 		'section'   => 'header_image'
 	),
 	'ph_show_on_fp' => array(

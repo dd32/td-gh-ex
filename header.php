@@ -37,6 +37,7 @@ $theme_default_page_width = AttireThemeEngine::NextGetOption( 'body_content_layo
 $site_width               = AttireThemeEngine::NextGetOption( 'main_layout_type', 'container-fluid' );
 
 $ph_active                = AttireThemeEngine::NextGetOption( 'ph_active', false );
+
 $meta = get_post_meta( get_the_ID(), 'attire_post_meta', true );
 // For page specific settings
 $ph_active = !isset($meta['page_header']) || (int)$meta['page_header'] === -1 ? $ph_active : (int)$meta['page_header'];

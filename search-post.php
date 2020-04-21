@@ -14,18 +14,19 @@ if ( ! defined( 'ABSPATH' ) ) {
         <?php
         if ( have_posts() ) {
             ?>
-
-
             <div class="archive-div post">
                 <?php
                 while ( have_posts() ): the_post();
+                if($post->post_type === 'post'):
                     ?>
                     <div class="archive-item">
                         <?php get_template_part( "content", get_post_format() ); ?>
                         <div class="clear"></div>
                     </div>
                 <?php
-                endwhile; ?>
+                endif;
+                endwhile;
+                ?>
             </div>
             <?php
             global $wp_query;

@@ -52,7 +52,7 @@ do_action(ATTIRE_THEME_PREFIX . "before_footer");
                         <label class="custom-control-label" for="spost"><?php _e('Post', 'attire'); ?></label>
                     </div>
                     <div class="custom-control custom-switch custom-control-inline">
-                        <input type="checkbox" id="spage" name="post_types[]" value="page" class="custom-control-input">
+                        <input type="checkbox" id="spage" name="post_type[]" value="page" class="custom-control-input">
                         <label class="custom-control-label" for="spage"><?php _e('Page', 'attire'); ?></label>
                     </div>
                     <?php if(post_type_exists('wpdmpro')){ ?>
