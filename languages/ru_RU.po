@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-04-01 15:44+0530\n"
+"PO-Revision-Date: 2020-04-13 16:16+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,19 +16,17 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "Language: ru\n"
 
-#: 404.php:12
+#: 404.php:13
 msgid "404 Not Found"
 msgstr "404 Не Найдено"
 
-#: 404.php:13
-msgid "Looks like you have taken a wrong turn"
-msgstr "Похоже, вы сделали неправильный поворот"
+#: 404.php:16
+msgid ""
+"Looks like you have taken a wrong turn. Dont worry it happens to the best of "
+"us."
+msgstr "Похоже, вы ошиблись. Не волнуйтесь, это случается с лучшими из нас."
 
-#: 404.php:14 no-results.php:22
-msgid "Dont worry it happens to the best of us"
-msgstr "Не волнуйтесь, это случается с лучшими из нас"
-
-#: 404.php:16 no-results.php:24
+#: 404.php:20 no-results.php:24
 msgid "Back to Home Page"
 msgstr "Вернуться на главную страницу"
 
@@ -44,9 +42,9 @@ msgstr "заголовок комментария"
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
-#: footer.php:53
-msgid "Copyright 2018"
-msgstr "Авторское право 2018"
+#: footer.php:53 functions.php:99
+msgid "By ThemesCaliber"
+msgstr "По темамКалибр"
 
 #: footer.php:62 footer.php:64 footer.php:66
 msgid "Back to Top"
@@ -160,12 +158,12 @@ msgstr "Следущая страница"
 #: archive.php:185 archive.php:224 archive.php:260 index.php:45 index.php:77
 #: index.php:107 index.php:137 index.php:170 index.php:203 index.php:232
 #: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
-#: search.php:205 search.php:238 template-parts/single-post.php:47
+#: search.php:205 search.php:238 template-parts/single-post.php:51
 msgid "page"
 msgstr "pagina"
 
 #: image.php:36 image.php:72 image.php:107 image.php:142 image.php:180
-#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:43
+#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:47
 msgid "Pages:"
 msgstr "Страницы:"
 
@@ -179,23 +177,15 @@ msgstr "редактировать"
 msgid "Results For: %s"
 msgstr "Результаты для:% s"
 
-#: template-parts/single-post.php:57
+#: template-parts/single-post.php:64
 msgid "Parent Post Link"
 msgstr "Родительская ссылка"
 
-#: template-parts/single-post.php:62
-msgid "Next Post<i class=\"fas fa-chevron-right\"></i>"
-msgstr "Следующая запись <i class = \"fas fa-chevron-right\"> </ i>"
-
-#: template-parts/single-post.php:63
+#: template-parts/single-post.php:70 template-parts/single-post.php:71
 msgid "Next post"
 msgstr "Следующий пост"
 
-#: template-parts/single-post.php:65
-msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
-msgstr "Следующий пост"
-
-#: template-parts/single-post.php:66
+#: template-parts/single-post.php:73 template-parts/single-post.php:74
 msgid "Previous post"
 msgstr "Предыдущий пост"
 
@@ -476,7 +466,7 @@ msgstr "Настройки слайдера."
 
 #: inc/customizer.php:641
 msgid "Show / Hide slider"
-msgstr "Показать / Скрыть слайдер"
+msgstr "Mostra / Nascondi cursore"
 
 #: inc/customizer.php:653
 msgid "Select Slide Image Page"
@@ -495,7 +485,7 @@ msgid "Slider Excerpt length"
 msgstr "Длина выдержки слайдера"
 
 #: inc/customizer.php:700 inc/customizer.php:709 inc/customizer.php:757
-#: inc/customizer.php:1089
+#: inc/customizer.php:1192
 msgid "Left"
 msgstr "Осталось"
 
@@ -503,12 +493,12 @@ msgstr "Осталось"
 msgid "Slider Content Alignment"
 msgstr "Выравнивание содержимого слайдера"
 
-#: inc/customizer.php:708 inc/customizer.php:1091
+#: inc/customizer.php:708 inc/customizer.php:1194
 msgid "Center"
 msgstr "Центр"
 
-#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1081
-#: inc/customizer.php:1090
+#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1184
+#: inc/customizer.php:1193
 msgid "Right"
 msgstr "Правильно"
 
@@ -604,55 +594,99 @@ msgstr "Верхняя нижняя кнопка"
 msgid "Left Right Button Padding"
 msgstr "Левая и правая кнопки"
 
-#: inc/customizer.php:996 inc/customizer.php:1231
+#: inc/customizer.php:996 inc/customizer.php:1334
 msgid "Button Border Radius"
 msgstr "Радиус границы кнопки"
 
-#: inc/customizer.php:1012
+#: inc/customizer.php:1008
+msgid "Single Post Settings"
+msgstr "Настройки одного сообщения"
+
+#: inc/customizer.php:1018
+msgid "Enable / Disable Feature Image"
+msgstr "Включить / отключить функцию изображения"
+
+#: inc/customizer.php:1028
+msgid "Enable / Disable Tags"
+msgstr "Включить / отключить теги"
+
+#: inc/customizer.php:1038
+msgid "Enable / Disable Comment"
+msgstr "Включить / отключить комментарий"
+
+#: inc/customizer.php:1048
+msgid "Enable / Disable Nav Links"
+msgstr "Включить / отключить навигационные ссылки"
+
+#: inc/customizer.php:1058
+msgid "Previous Navigation Text"
+msgstr "Предыдущий текст навигации"
+
+#: inc/customizer.php:1068
+msgid "Next Navigation Text"
+msgstr "Следующий текст навигации"
+
+#: inc/customizer.php:1078
 msgid "Enable / Disable Related Posts"
 msgstr "Включить / отключить похожие сообщения"
 
-#: inc/customizer.php:1022
+#: inc/customizer.php:1088
 msgid "Related Posts Title"
 msgstr "Заголовок похожих сообщений"
 
-#: inc/customizer.php:1031
+#: inc/customizer.php:1097
 msgid "Related Posts Count"
 msgstr "Количество связанных сообщений"
 
-#: inc/customizer.php:1049
+#: inc/customizer.php:1115
 msgid "Related Posts Order By"
 msgstr "Похожие сообщения Сортировать по"
 
-#: inc/customizer.php:1051
+#: inc/customizer.php:1117
 msgid "Categories"
 msgstr "категории"
 
-#: inc/customizer.php:1052
+#: inc/customizer.php:1118
 msgid "Tags"
 msgstr "Теги"
 
-#: inc/customizer.php:1057
+#: inc/customizer.php:1123
+msgid "404 Page Settings"
+msgstr "Настройки страницы 404"
+
+#: inc/customizer.php:1134
+msgid "404 Page Title"
+msgstr "404 Заголовок страницы"
+
+#: inc/customizer.php:1144
+msgid "404 Page Text"
+msgstr "404 Текст страницы"
+
+#: inc/customizer.php:1154
+msgid "404 Page Button Text"
+msgstr "404 Страница Кнопка Текст"
+
+#: inc/customizer.php:1160
 msgid "Footer Section"
 msgstr "Раздел нижнего колонтитула"
 
-#: inc/customizer.php:1058
+#: inc/customizer.php:1161
 msgid "This section will appear in the footer."
 msgstr "Этот раздел появится в нижнем колонтитуле."
 
-#: inc/customizer.php:1076
+#: inc/customizer.php:1179
 msgid "Show/Hide Back to Top Button"
 msgstr "Показать / Скрыть кнопку «Вверх»"
 
-#: inc/customizer.php:1086
+#: inc/customizer.php:1189
 msgid "Back to Top Button Alignment"
 msgstr "Back to Top Выравнивание кнопок"
 
-#: inc/customizer.php:1101
+#: inc/customizer.php:1204
 msgid "Footer widget layout"
 msgstr "Макет виджета нижнего колонтитула"
 
-#: inc/customizer.php:1103
+#: inc/customizer.php:1206
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -661,82 +695,82 @@ msgstr ""
 "колонтитуле. После этого зайдите в Внешний вид> Виджеты и добавьте свои "
 "виджеты."
 
-#: inc/customizer.php:1105
+#: inc/customizer.php:1208
 msgid "One"
 msgstr "Один"
 
-#: inc/customizer.php:1106
+#: inc/customizer.php:1209
 msgid "Two"
 msgstr "Два"
 
-#: inc/customizer.php:1107
+#: inc/customizer.php:1210
 msgid "Three"
 msgstr "Три"
 
-#: inc/customizer.php:1108
+#: inc/customizer.php:1211
 msgid "Four"
 msgstr "четыре"
 
-#: inc/customizer.php:1125
+#: inc/customizer.php:1228
 msgid "Text"
 msgstr "Текст"
 
-#: inc/customizer.php:1133
+#: inc/customizer.php:1236
 msgid "Additional WooCommerce Options"
 msgstr "Дополнительные параметры WooCommerce"
 
-#: inc/customizer.php:1146
+#: inc/customizer.php:1249
 msgid "Product per row"
 msgstr "Продукт в ряду"
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1264
 msgid "Product per page"
 msgstr "Продукт на странице"
 
-#: inc/customizer.php:1172
+#: inc/customizer.php:1275
 msgid "Enable / Disable Shop page sidebar"
 msgstr "Включить / выключить боковую панель страницы магазина"
 
-#: inc/customizer.php:1182
+#: inc/customizer.php:1285
 msgid "Enable / Disable Product page sidebar"
 msgstr "Включить / выключить боковую панель страницы продукта"
 
-#: inc/customizer.php:1192
+#: inc/customizer.php:1295
 msgid "Enable / Disable Related product"
 msgstr "Включить / отключить связанный продукт"
 
-#: inc/customizer.php:1201
+#: inc/customizer.php:1304
 msgid "Button Top Bottom Padding"
 msgstr "Пуговица сверху внизу"
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1319
 msgid "Button Right Left Padding"
 msgstr "Кнопка справа налево"
 
-#: inc/customizer.php:1247
+#: inc/customizer.php:1350
 msgid "Enable / Disable product border"
 msgstr "Включить / отключить границы продукта"
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1359
 msgid "Product Top Bottom Padding"
 msgstr "Верхняя нижняя часть продукта"
 
-#: inc/customizer.php:1271
+#: inc/customizer.php:1374
 msgid "Product Right Left Padding"
 msgstr "Товар справа налево"
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1389
 msgid "Product Border Radius"
 msgstr "Граница продукта Радиус"
 
-#: inc/customizer.php:1301
+#: inc/customizer.php:1404
 msgid "Product Box Shadow"
 msgstr "Продукт Коробка Тень"
 
-#: inc/customizer.php:1391
+#: inc/customizer.php:1494
 msgid "Advance Blogging"
 msgstr "Предварительный блог"
 
-#: inc/customizer.php:1392
+#: inc/customizer.php:1495
 msgid "Go Pro"
 msgstr "Go Pro"

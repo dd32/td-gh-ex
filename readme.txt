@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 7.2.14
-Stable tag: 0.7.2
+Stable tag: 0.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -110,6 +110,14 @@ Advance Blogging is a clean and minimal multipurpose WordPress blog theme for wr
 * Added Woocommerce button padding and border radius options.
 * Added Show/Hide Product border and Product border radius option.
 * Added Products padding and product box shadow options.
+* Updated all .po files.
+
+= 0.7.3 =
+* Added Enable/ Disable Single post feature image and Tags options.
+* Added Enable/ Disable Single post comment and nav links options.
+* Added Single post Previous navigation text option.
+* Added Single post Next navigation text option.
+* Added 404 page setttings.
 * Updated all .po files.
 
 == Resources ==

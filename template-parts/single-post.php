@@ -28,15 +28,19 @@
 			<?php } ?>
 	    </div><!-- metabox -->
     <?php } ?>
-	<?php if(has_post_thumbnail()) { ?>
-		<hr>
-		<div class="feature-box">	
-			<?php the_post_thumbnail(); ?>
-		</div>
-		<hr>					
-	<?php }?> 
-		<div class="entry-content"><?php the_content();?></div>
+    <?php if( get_theme_mod( 'advance_blogging_feature_image',true) != '') { ?>
+		<?php if(has_post_thumbnail()) { ?>
+			<hr>
+			<div class="feature-box">	
+				<?php the_post_thumbnail(); ?>
+			</div>
+			<hr>					
+		<?php }?> 
+	<?php }?>
+	<div class="entry-content"><?php the_content();?></div>
+	<?php if( get_theme_mod( 'advance_blogging_tags',true) != '') { ?>
 		<div class="tags"><?php the_tags(); ?></div>
+	<?php }?>
 	<div class="clearfix"></div>	             
 	<?php
 	 wp_link_pages( array(
@@ -47,9 +51,12 @@
 	    'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>%',
 	    'separator'   => '<span class="screen-reader-text">, </span>',
 	) );
-	// If comments are open or we have at least one comment, load up the comment template
-	if ( comments_open() || '0' != get_comments_number() )
-	    comments_template();
+	 
+	if( get_theme_mod( 'advance_blogging_comment',true) != '') {
+		// If comments are open or we have at least one comment, load up the comment template
+		if ( comments_open() || '0' != get_comments_number() )
+		comments_template();
+	}
 
 	if ( is_singular( 'attachment' ) ) {
 		// Parent post navigation.
@@ -57,15 +64,17 @@
 			'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'advance-blogging' ),
 		) );
 	} elseif ( is_singular( 'post' ) ) {
-		// Previous/next post navigation.
-		the_post_navigation( array(
-			'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next Post<i class="fas fa-chevron-right"></i>', 'advance-blogging' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Next post', 'advance-blogging' ) . '</span> ' .
-				'',
-			'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( '<i class="fas fa-chevron-left"></i>Previous Post', 'advance-blogging' ) . '</span> ' .
-				'<span class="screen-reader-text">' . __( 'Previous post', 'advance-blogging' ) . '</span> ' .
-				'',
-		) );
+		if( get_theme_mod( 'advance_blogging_nav_links',true) != '') {
+			// Previous/next post navigation.
+			the_post_navigation( array(
+				'next_text' => '<span class="meta-nav" aria-hidden="true">' . esc_html(get_theme_mod('advance_blogging_next_text',__( 'Next Post', 'advance-blogging' ))) . '<i class="fas fa-chevron-right"></i></span> ' .
+					'<span class="screen-reader-text">' . __( 'Next Post', 'advance-blogging' ) . '</span> ' .
+					'',
+				'prev_text' => '<span class="meta-nav" aria-hidden="true"><i class="fas fa-chevron-left"></i>' . esc_html(get_theme_mod('advance_blogging_prev_text',__( 'Previous Post', 'advance-blogging' ))) . '</span> ' .
+					'<span class="screen-reader-text">' . __( 'Previous Post', 'advance-blogging' ) . '</span> ' .
+					'',
+			) );
+		}
 	}
 	?>
 </article>

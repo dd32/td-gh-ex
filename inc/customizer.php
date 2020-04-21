@@ -1003,6 +1003,72 @@ function advance_blogging_customize_register( $wp_customize ) {
         ),
     ));
 
+    //Single Post Settings
+	$wp_customize->add_section('advance_blogging_single_post',array(
+		'title'	=> __('Single Post Settings','advance-blogging'),
+		'panel' => 'advance_blogging_panel_id',
+	));	
+
+	$wp_customize->add_setting('advance_blogging_feature_image',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_feature_image',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Feature Image','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_tags',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_tags',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Tags','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_comment',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_comment',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Comment','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_nav_links',array(
+       'default' => true,
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_nav_links',array(
+       'type' => 'checkbox',
+       'label' => __('Enable / Disable Nav Links','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_prev_text',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_prev_text',array(
+       'type' => 'text',
+       'label' => __('Previous Navigation Text','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_next_text',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_next_text',array(
+       'type' => 'text',
+       'label' => __('Next Navigation Text','advance-blogging'),
+       'section' => 'advance_blogging_single_post'
+    ));
+
     $wp_customize->add_setting('advance_blogging_related_posts',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
@@ -1010,17 +1076,17 @@ function advance_blogging_customize_register( $wp_customize ) {
     $wp_customize->add_control('advance_blogging_related_posts',array(
        'type' => 'checkbox',
        'label' => __('Enable / Disable Related Posts','advance-blogging'),
-       'section' => 'advance_blogging_blog_post'
+       'section' => 'advance_blogging_single_post'
     ));
 
     $wp_customize->add_setting('advance_blogging_related_posts_title',array(
-       'default' => 'Related Posts',
+       'default' => '',
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_blogging_related_posts_title',array(
        'type' => 'text',
        'label' => __('Related Posts Title','advance-blogging'),
-       'section' => 'advance_blogging_blog_post'
+       'section' => 'advance_blogging_single_post'
     ));
 
     $wp_customize->add_setting( 'advance_blogging_related_post_count', array(
@@ -1029,7 +1095,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( 'advance_blogging_related_post_count', array(
 		'label' => esc_html__( 'Related Posts Count','advance-blogging' ),
-		'section' => 'advance_blogging_blog_post',
+		'section' => 'advance_blogging_single_post',
 		'type' => 'number',
 		'settings' => 'advance_blogging_related_post_count',
 		'input_attrs' => array(
@@ -1044,13 +1110,50 @@ function advance_blogging_customize_register( $wp_customize ) {
         'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control( 'advance_blogging_post_order', array(
-        'section' => 'advance_blogging_blog_post',
+        'section' => 'advance_blogging_single_post',
         'type' => 'radio',
         'label' => __( 'Related Posts Order By', 'advance-blogging' ),
         'choices' => array(
             'categories'  => __('Categories', 'advance-blogging'),
             'tags' => __( 'Tags', 'advance-blogging' ),
     )));
+
+    //404 page settings
+	$wp_customize->add_section('advance_blogging_404_page',array(
+		'title'	=> __('404 Page Settings','advance-blogging'),
+		'priority'	=> null,
+		'panel' => 'advance_blogging_panel_id',
+	));
+
+	$wp_customize->add_setting('advance_blogging_404_title',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_404_title',array(
+       'type' => 'text',
+       'label' => __('404 Page Title','advance-blogging'),
+       'section' => 'advance_blogging_404_page'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_404_text',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_404_text',array(
+       'type' => 'text',
+       'label' => __('404 Page Text','advance-blogging'),
+       'section' => 'advance_blogging_404_page'
+    ));
+
+    $wp_customize->add_setting('advance_blogging_404_button_text',array(
+       'default' => '',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('advance_blogging_404_button_text',array(
+       'type' => 'text',
+       'label' => __('404 Page Button Text','advance-blogging'),
+       'section' => 'advance_blogging_404_page'
+    ));
 
 	//Footer
 	$wp_customize->add_section('advance_blogging_footer',array(

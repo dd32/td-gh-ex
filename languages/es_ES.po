@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-04-01 15:01+0530\n"
+"PO-Revision-Date: 2020-04-13 16:07+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,19 +15,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: es\n"
 
-#: 404.php:12
+#: 404.php:13
 msgid "404 Not Found"
 msgstr "404 no encontrada"
 
-#: 404.php:13
-msgid "Looks like you have taken a wrong turn"
-msgstr "Parece que has tomado un giro equivocado"
+#: 404.php:16
+msgid ""
+"Looks like you have taken a wrong turn. Dont worry it happens to the best of "
+"us."
+msgstr ""
+"Parece que has tomado un giro equivocado. No te preocupes, nos pasa a los "
+"mejores."
 
-#: 404.php:14 no-results.php:22
-msgid "Dont worry it happens to the best of us"
-msgstr "No te preocupes, nos pasa a los mejores"
-
-#: 404.php:16 no-results.php:24
+#: 404.php:20 no-results.php:24
 msgid "Back to Home Page"
 msgstr "Volver a la página de inicio"
 
@@ -43,9 +43,9 @@ msgstr "título de comentarios"
 msgid "Comments are closed."
 msgstr "Los comentarios están cerrados."
 
-#: footer.php:53
-msgid "Copyright 2018"
-msgstr "Copyright 2018"
+#: footer.php:53 functions.php:99
+msgid "By ThemesCaliber"
+msgstr "Por temas Calibre"
 
 #: footer.php:62 footer.php:64 footer.php:66
 msgid "Back to Top"
@@ -159,12 +159,12 @@ msgstr "Siguiente página"
 #: archive.php:185 archive.php:224 archive.php:260 index.php:45 index.php:77
 #: index.php:107 index.php:137 index.php:170 index.php:203 index.php:232
 #: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
-#: search.php:205 search.php:238 template-parts/single-post.php:47
+#: search.php:205 search.php:238 template-parts/single-post.php:51
 msgid "page"
 msgstr "página"
 
 #: image.php:36 image.php:72 image.php:107 image.php:142 image.php:180
-#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:43
+#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:47
 msgid "Pages:"
 msgstr "Páginas:"
 
@@ -178,23 +178,15 @@ msgstr "Editar"
 msgid "Results For: %s"
 msgstr "Resultados para:% s"
 
-#: template-parts/single-post.php:57
+#: template-parts/single-post.php:64
 msgid "Parent Post Link"
 msgstr "Enlace de publicación principal"
 
-#: template-parts/single-post.php:62
-msgid "Next Post<i class=\"fas fa-chevron-right\"></i>"
-msgstr "Siguiente publicación <i class = \"fas fa-chevron-right\"> </i>"
-
-#: template-parts/single-post.php:63
+#: template-parts/single-post.php:70 template-parts/single-post.php:71
 msgid "Next post"
 msgstr "Siguiente post"
 
-#: template-parts/single-post.php:65
-msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
-msgstr "<i class = \"fas fa-chevron-left\"> </i> Publicación anterior"
-
-#: template-parts/single-post.php:66
+#: template-parts/single-post.php:73 template-parts/single-post.php:74
 msgid "Previous post"
 msgstr "Publicación anterior"
 
@@ -494,7 +486,7 @@ msgid "Slider Excerpt length"
 msgstr "Longitud del extracto del deslizador"
 
 #: inc/customizer.php:700 inc/customizer.php:709 inc/customizer.php:757
-#: inc/customizer.php:1089
+#: inc/customizer.php:1192
 msgid "Left"
 msgstr "Izquierda"
 
@@ -502,12 +494,12 @@ msgstr "Izquierda"
 msgid "Slider Content Alignment"
 msgstr "Alineación de contenido del control deslizante"
 
-#: inc/customizer.php:708 inc/customizer.php:1091
+#: inc/customizer.php:708 inc/customizer.php:1194
 msgid "Center"
 msgstr "Centrar"
 
-#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1081
-#: inc/customizer.php:1090
+#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1184
+#: inc/customizer.php:1193
 msgid "Right"
 msgstr "Derecha"
 
@@ -603,55 +595,99 @@ msgstr "Acolchado del botón superior inferior"
 msgid "Left Right Button Padding"
 msgstr "Acolchado botón izquierdo derecho"
 
-#: inc/customizer.php:996 inc/customizer.php:1231
+#: inc/customizer.php:996 inc/customizer.php:1334
 msgid "Button Border Radius"
 msgstr "Radio del borde del botón"
 
-#: inc/customizer.php:1012
+#: inc/customizer.php:1008
+msgid "Single Post Settings"
+msgstr "Configuración de publicación única"
+
+#: inc/customizer.php:1018
+msgid "Enable / Disable Feature Image"
+msgstr "Habilitar / deshabilitar imagen de función"
+
+#: inc/customizer.php:1028
+msgid "Enable / Disable Tags"
+msgstr "Habilitar / deshabilitar etiquetas"
+
+#: inc/customizer.php:1038
+msgid "Enable / Disable Comment"
+msgstr "Habilitar / deshabilitar comentario"
+
+#: inc/customizer.php:1048
+msgid "Enable / Disable Nav Links"
+msgstr "Habilitar / deshabilitar enlaces de navegación"
+
+#: inc/customizer.php:1058
+msgid "Previous Navigation Text"
+msgstr "Texto de navegación anterior"
+
+#: inc/customizer.php:1068
+msgid "Next Navigation Text"
+msgstr "Siguiente texto de navegación"
+
+#: inc/customizer.php:1078
 msgid "Enable / Disable Related Posts"
 msgstr "Habilitar / deshabilitar publicaciones relacionadas"
 
-#: inc/customizer.php:1022
+#: inc/customizer.php:1088
 msgid "Related Posts Title"
 msgstr "Título de publicaciones relacionadas"
 
-#: inc/customizer.php:1031
+#: inc/customizer.php:1097
 msgid "Related Posts Count"
 msgstr "Conteo de publicaciones relacionadas"
 
-#: inc/customizer.php:1049
+#: inc/customizer.php:1115
 msgid "Related Posts Order By"
 msgstr "Publicaciones relacionadas Ordenar por"
 
-#: inc/customizer.php:1051
+#: inc/customizer.php:1117
 msgid "Categories"
 msgstr "Categorias"
 
-#: inc/customizer.php:1052
+#: inc/customizer.php:1118
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: inc/customizer.php:1057
+#: inc/customizer.php:1123
+msgid "404 Page Settings"
+msgstr "404 configuraciones de página"
+
+#: inc/customizer.php:1134
+msgid "404 Page Title"
+msgstr "Título de la página 404"
+
+#: inc/customizer.php:1144
+msgid "404 Page Text"
+msgstr "Texto de 404 páginas"
+
+#: inc/customizer.php:1154
+msgid "404 Page Button Text"
+msgstr "Texto de botón de página 404"
+
+#: inc/customizer.php:1160
 msgid "Footer Section"
 msgstr "Sección de pie de página"
 
-#: inc/customizer.php:1058
+#: inc/customizer.php:1161
 msgid "This section will appear in the footer."
 msgstr "Esta sección aparecerá en el pie de página."
 
-#: inc/customizer.php:1076
+#: inc/customizer.php:1179
 msgid "Show/Hide Back to Top Button"
 msgstr "Mostrar / Ocultar Volver al botón superior"
 
-#: inc/customizer.php:1086
+#: inc/customizer.php:1189
 msgid "Back to Top Button Alignment"
 msgstr "Volver al principio Alineación de botones"
 
-#: inc/customizer.php:1101
+#: inc/customizer.php:1204
 msgid "Footer widget layout"
 msgstr "Diseño de widget de pie de página"
 
-#: inc/customizer.php:1103
+#: inc/customizer.php:1206
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
@@ -659,82 +695,82 @@ msgstr ""
 "Seleccione el número de áreas de widgets que desea en el pie de página. "
 "Después de eso, ve a Apariencia> Widgets y agrega tus widgets."
 
-#: inc/customizer.php:1105
+#: inc/customizer.php:1208
 msgid "One"
 msgstr "Una"
 
-#: inc/customizer.php:1106
+#: inc/customizer.php:1209
 msgid "Two"
 msgstr "Dos"
 
-#: inc/customizer.php:1107
+#: inc/customizer.php:1210
 msgid "Three"
 msgstr "Tres"
 
-#: inc/customizer.php:1108
+#: inc/customizer.php:1211
 msgid "Four"
 msgstr "Cuatro"
 
-#: inc/customizer.php:1125
+#: inc/customizer.php:1228
 msgid "Text"
 msgstr "Texto"
 
-#: inc/customizer.php:1133
+#: inc/customizer.php:1236
 msgid "Additional WooCommerce Options"
 msgstr "Enlace de publicación principal"
 
-#: inc/customizer.php:1146
+#: inc/customizer.php:1249
 msgid "Product per row"
 msgstr "Producto por fila"
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1264
 msgid "Product per page"
 msgstr "Producto por página"
 
-#: inc/customizer.php:1172
+#: inc/customizer.php:1275
 msgid "Enable / Disable Shop page sidebar"
 msgstr "Habilitar / deshabilitar la barra lateral de la página Comprar"
 
-#: inc/customizer.php:1182
+#: inc/customizer.php:1285
 msgid "Enable / Disable Product page sidebar"
 msgstr "Habilitar / deshabilitar la barra lateral de la página del producto"
 
-#: inc/customizer.php:1192
+#: inc/customizer.php:1295
 msgid "Enable / Disable Related product"
 msgstr "Activar / desactivar producto relacionado"
 
-#: inc/customizer.php:1201
+#: inc/customizer.php:1304
 msgid "Button Top Bottom Padding"
 msgstr "Botón superior acolchado inferior"
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1319
 msgid "Button Right Left Padding"
 msgstr "Botón Derecha Izquierda Acolchado"
 
-#: inc/customizer.php:1247
+#: inc/customizer.php:1350
 msgid "Enable / Disable product border"
 msgstr "Habilitar / deshabilitar borde de producto"
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1359
 msgid "Product Top Bottom Padding"
 msgstr "Producto Acolchado superior inferior"
 
-#: inc/customizer.php:1271
+#: inc/customizer.php:1374
 msgid "Product Right Left Padding"
 msgstr "Producto Acolchado Izquierdo Derecho"
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1389
 msgid "Product Border Radius"
 msgstr "Radio del borde del producto"
 
-#: inc/customizer.php:1301
+#: inc/customizer.php:1404
 msgid "Product Box Shadow"
 msgstr "Caja de producto Shadow"
 
-#: inc/customizer.php:1391
+#: inc/customizer.php:1494
 msgid "Advance Blogging"
 msgstr "Blogging avanzado"
 
-#: inc/customizer.php:1392
+#: inc/customizer.php:1495
 msgid "Go Pro"
 msgstr "Go Pro"

@@ -9,13 +9,18 @@ get_header(); ?>
 <main id="main" role="main" class="content-aa">
 	<div class="container">
         <div class="page-content">
-			<h1><?php esc_html_e( '404 Not Found', 'advance-blogging' ); ?></h1>
-			<p class="text-404"><?php esc_html_e( 'Looks like you have taken a wrong turn', 'advance-blogging' ); ?></p>
-			<p class="text-404"><?php esc_html_e( 'Dont worry it happens to the best of us.', 'advance-blogging' ); ?></p>
-			<div class="read-moresec">
-        		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page','advance-blogging' );?></span></a>
-			</div>
-			<div class="clearfix"></div>
+			<?php if(get_theme_mod('advance_blogging_404_title','404 Not Found')){ ?>	
+				<h1><?php echo esc_html( get_theme_mod('advance_blogging_404_title',__('404 Not Found', 'advance-blogging' )) ); ?></h1>
+			<?php }?>
+			<?php if(get_theme_mod('advance_blogging_404_text','Looks like you have taken a wrong turn. Dont worry it happens to the best of us.')){ ?>
+				<p class="text-404"><?php echo esc_html( get_theme_mod('advance_blogging_404_text',__('Looks like you have taken a wrong turn. Dont worry it happens to the best of us.', 'advance-blogging' )) ); ?></p>
+			<?php }?>
+			<?php if(get_theme_mod('advance_blogging_404_button_text','Back to Home Page')){ ?>
+				<div class="read-moresec">
+	           		<a href="<?php echo esc_url( home_url() ); ?>" class="button hvr-sweep-to-right"><?php echo esc_html( get_theme_mod('advance_blogging_404_button_text',__('Back to Home Page', 'advance-blogging' )) ); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('advance_blogging_404_button_text',__('Back to Home Page', 'advance-blogging' )) ); ?></span></a>
+				</div>
+				<div class="clearfix"></div>
+			<?php }?>
         </div>
 	</div>
 </main>

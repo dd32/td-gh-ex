@@ -14,20 +14,15 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: 404.php:12
+#: 404.php:13
 msgid "404 Not Found"
 msgstr ""
 
-#: 404.php:13
-msgid "Looks like you have taken a wrong turn"
-msgstr ""
-
-#: 404.php:14
-#: no-results.php:22
-msgid "Dont worry it happens to the best of us"
-msgstr ""
-
 #: 404.php:16
+msgid "Looks like you have taken a wrong turn. Dont worry it happens to the best of us."
+msgstr ""
+
+#: 404.php:20
 #: no-results.php:24
 msgid "Back to Home Page"
 msgstr ""
@@ -45,7 +40,8 @@ msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:53
-msgid "Copyright 2018"
+#: functions.php:99
+msgid "By ThemesCaliber"
 msgstr ""
 
 #: footer.php:62
@@ -211,7 +207,7 @@ msgstr ""
 #: search.php:169
 #: search.php:205
 #: search.php:238
-#: template-parts/single-post.php:47
+#: template-parts/single-post.php:51
 msgid "page"
 msgstr ""
 
@@ -223,7 +219,7 @@ msgstr ""
 #: image.php:218
 #: image.php:256
 #: page.php:24
-#: template-parts/single-post.php:43
+#: template-parts/single-post.php:47
 msgid "Pages:"
 msgstr ""
 
@@ -247,23 +243,17 @@ msgstr ""
 msgid "Results For: %s"
 msgstr ""
 
-#: template-parts/single-post.php:57
+#: template-parts/single-post.php:64
 msgid "Parent Post Link"
 msgstr ""
 
-#: template-parts/single-post.php:62
-msgid "Next Post<i class="fas fa-chevron-right"></i>"
-msgstr ""
-
-#: template-parts/single-post.php:63
+#: template-parts/single-post.php:70
+#: template-parts/single-post.php:71
 msgid "Next post"
 msgstr ""
 
-#: template-parts/single-post.php:65
-msgid "<i class="fas fa-chevron-left"></i>Previous Post"
-msgstr ""
-
-#: template-parts/single-post.php:66
+#: template-parts/single-post.php:73
+#: template-parts/single-post.php:74
 msgid "Previous post"
 msgstr ""
 
@@ -569,10 +559,10 @@ msgstr ""
 msgid "Slider Excerpt length"
 msgstr ""
 
-#: inc/customizer.php:700
+#: inc/customizer.php:700 
 #: inc/customizer.php:709
 #: inc/customizer.php:757
-#: inc/customizer.php:1089
+#: inc/customizer.php:1192
 msgid "Left"
 msgstr ""
 
@@ -581,14 +571,14 @@ msgid "Slider Content Alignment"
 msgstr ""
 
 #: inc/customizer.php:708
-#: inc/customizer.php:1091
+#: inc/customizer.php:1194
 msgid "Center"
 msgstr ""
 
 #: inc/customizer.php:710
 #: inc/customizer.php:772
-#: inc/customizer.php:1081
-#: inc/customizer.php:1090
+#: inc/customizer.php:1184
+#: inc/customizer.php:1193
 msgid "Right"
 msgstr ""
 
@@ -690,134 +680,178 @@ msgstr ""
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1012
-msgid "Enable / Disable Related Posts"
+#: inc/customizer.php:1008
+msgid "Single Post Settings"
 msgstr ""
 
-#: inc/customizer.php:1022
-msgid "Related Posts Title"
+#: inc/customizer.php:1018
+msgid "Enable / Disable Feature Image"
 msgstr ""
 
-#: inc/customizer.php:1031
-msgid "Related Posts Count"
+#: inc/customizer.php:1028
+msgid "Enable / Disable Tags"
 msgstr ""
 
-#: inc/customizer.php:1049
-msgid "Related Posts Order By"
+#: inc/customizer.php:1038
+msgid "Enable / Disable Comment"
 msgstr ""
 
-#: inc/customizer.php:1051
-msgid "Categories"
-msgstr ""
-
-#: inc/customizer.php:1052
-msgid "Tags"
-msgstr ""
-
-#: inc/customizer.php:1057
-msgid "Footer Section"
+#: inc/customizer.php:1048
+msgid "Enable / Disable Nav Links"
 msgstr ""
 
 #: inc/customizer.php:1058
-msgid "This section will appear in the footer."
+msgid "Previous Navigation Text"
 msgstr ""
 
-#: inc/customizer.php:1076
-msgid "Show/Hide Back to Top Button"
+#: inc/customizer.php:1068
+msgid "Next Navigation Text"
 msgstr ""
 
-#: inc/customizer.php:1086
-msgid "Back to Top Button Alignment"
+#: inc/customizer.php:1078
+msgid "Enable / Disable Related Posts"
 msgstr ""
 
-#: inc/customizer.php:1101
-msgid "Footer widget layout"
+#: inc/customizer.php:1088
+msgid "Related Posts Title"
 msgstr ""
 
-#: inc/customizer.php:1103
-msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
+#: inc/customizer.php:1097
+msgid "Related Posts Count"
 msgstr ""
 
-#: inc/customizer.php:1105
-msgid "One"
+#: inc/customizer.php:1115
+msgid "Related Posts Order By"
 msgstr ""
 
-#: inc/customizer.php:1106
-msgid "Two"
+#: inc/customizer.php:1117
+msgid "Categories"
 msgstr ""
 
-#: inc/customizer.php:1107
-msgid "Three"
+#: inc/customizer.php:1118
+msgid "Tags"
 msgstr ""
 
-#: inc/customizer.php:1108
-msgid "Four"
+#: inc/customizer.php:1123
+msgid "404 Page Settings"
 msgstr ""
 
-#: inc/customizer.php:1125
-msgid "Text"
+#: inc/customizer.php:1134
+msgid "404 Page Title"
 msgstr ""
 
-#: inc/customizer.php:1133
-msgid "Additional WooCommerce Options"
+#: inc/customizer.php:1144
+msgid "404 Page Text"
 msgstr ""
 
-#: inc/customizer.php:1146
-msgid "Product per row"
+#: inc/customizer.php:1154
+msgid "404 Page Button Text"
+msgstr ""
+
+#: inc/customizer.php:1160
+msgid "Footer Section"
 msgstr ""
 
 #: inc/customizer.php:1161
+msgid "This section will appear in the footer."
+msgstr ""
+
+#: inc/customizer.php:1179
+msgid "Show/Hide Back to Top Button"
+msgstr ""
+
+#: inc/customizer.php:1189
+msgid "Back to Top Button Alignment"
+msgstr ""
+
+#: inc/customizer.php:1204
+msgid "Footer widget layout"
+msgstr ""
+
+#: inc/customizer.php:1206
+msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets."
+msgstr ""
+
+#: inc/customizer.php:1208
+msgid "One"
+msgstr ""
+
+#: inc/customizer.php:1209
+msgid "Two"
+msgstr ""
+
+#: inc/customizer.php:1210
+msgid "Three"
+msgstr ""
+
+#: inc/customizer.php:1211
+msgid "Four"
+msgstr ""
+
+#: inc/customizer.php:1228
+msgid "Text"
+msgstr ""
+
+#: inc/customizer.php:1236
+msgid "Additional WooCommerce Options"
+msgstr ""
+
+#: inc/customizer.php:1249
+msgid "Product per row"
+msgstr ""
+
+#: inc/customizer.php:1264
 msgid "Product per page"
 msgstr ""
 
-#: inc/customizer.php:1172
+#: inc/customizer.php:1275
 msgid "Enable / Disable Shop page sidebar"
 msgstr ""
 
-#: inc/customizer.php:1182
+#: inc/customizer.php:1285
 msgid "Enable / Disable Product page sidebar"
 msgstr ""
 
-#: inc/customizer.php:1192
+#: inc/customizer.php:1295
 msgid "Enable / Disable Related product"
 msgstr ""
 
-#: inc/customizer.php:1201
+#: inc/customizer.php:1304
 msgid "Button Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1319
 msgid "Button Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1231
+#: inc/customizer.php:1334
 msgid "Button Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1247
+#: inc/customizer.php:1350
 msgid "Enable / Disable product border"
 msgstr ""
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1359
 msgid "Product Top Bottom Padding"
 msgstr ""
 
-#: inc/customizer.php:1271
+#: inc/customizer.php:1374
 msgid "Product Right Left Padding"
 msgstr ""
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1389
 msgid "Product Border Radius"
 msgstr ""
 
-#: inc/customizer.php:1301
+#: inc/customizer.php:1404
 msgid "Product Box Shadow"
 msgstr ""
 
-#: inc/customizer.php:1391
+#: inc/customizer.php:1494
 msgid "Advance Blogging"
 msgstr ""
 
-#: inc/customizer.php:1392
+#: inc/customizer.php:1495
 msgid "Go Pro"
 msgstr "" 

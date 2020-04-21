@@ -15,7 +15,8 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-blogging' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?> class="main-bodybox">
+<body <?php body_class(); ?> >
+
   <?php if ( function_exists( 'wp_body_open' ) ) {
     wp_body_open();
   } else {

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advance Blogging\n"
 "POT-Creation-Date: 2016-02-11 19:00+0530\n"
-"PO-Revision-Date: 2020-04-01 14:58+0530\n"
+"PO-Revision-Date: 2020-04-13 16:04+0530\n"
 "Language-Team: ThemesCaliber <support@themescaliber.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,19 +16,17 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "Language: ar\n"
 
-#: 404.php:12
+#: 404.php:13
 msgid "404 Not Found"
 msgstr "404 غير موجود"
 
-#: 404.php:13
-msgid "Looks like you have taken a wrong turn"
-msgstr "يبدو أنك اتخذت منعطفا خاطئا"
+#: 404.php:16
+msgid ""
+"Looks like you have taken a wrong turn. Dont worry it happens to the best of "
+"us."
+msgstr "يبدو أنك اتخذت منعطفا خاطئا. لا تقلق ان ذلك يحدث لأفضل منا."
 
-#: 404.php:14 no-results.php:22
-msgid "Dont worry it happens to the best of us"
-msgstr "لا تقلق أنه يحدث لأفضل منا"
-
-#: 404.php:16 no-results.php:24
+#: 404.php:20 no-results.php:24
 msgid "Back to Home Page"
 msgstr "العودة إلى الصفحة الرئيسية"
 
@@ -44,9 +42,9 @@ msgstr "عنوان التعليقات"
 msgid "Comments are closed."
 msgstr "التعليقات مغلقة."
 
-#: footer.php:53
-msgid "Copyright 2018"
-msgstr "حقوق الطبع والنشر 2018"
+#: footer.php:53 functions.php:99
+msgid "By ThemesCaliber"
+msgstr "بواسطة ThemesCaliber"
 
 #: footer.php:62 footer.php:64 footer.php:66
 msgid "Back to Top"
@@ -160,12 +158,12 @@ msgstr "الصفحة التالية"
 #: archive.php:185 archive.php:224 archive.php:260 index.php:45 index.php:77
 #: index.php:107 index.php:137 index.php:170 index.php:203 index.php:232
 #: search.php:40 search.php:73 search.php:104 search.php:135 search.php:169
-#: search.php:205 search.php:238 template-parts/single-post.php:47
+#: search.php:205 search.php:238 template-parts/single-post.php:51
 msgid "page"
 msgstr "الصفحة"
 
 #: image.php:36 image.php:72 image.php:107 image.php:142 image.php:180
-#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:43
+#: image.php:218 image.php:256 page.php:24 template-parts/single-post.php:47
 msgid "Pages:"
 msgstr "الصفحات:"
 
@@ -179,23 +177,15 @@ msgstr "تعديل"
 msgid "Results For: %s"
 msgstr "نتائج لـ:٪ s"
 
-#: template-parts/single-post.php:57
+#: template-parts/single-post.php:64
 msgid "Parent Post Link"
 msgstr "رابط المشاركة الأصل"
 
-#: template-parts/single-post.php:62
-msgid "Next Post<i class=\"fas fa-chevron-right\"></i>"
-msgstr "المشاركة التالية <i class = \"fas fa-chevron-right\"> </i>"
-
-#: template-parts/single-post.php:63
+#: template-parts/single-post.php:70 template-parts/single-post.php:71
 msgid "Next post"
 msgstr "المشاركة التالية"
 
-#: template-parts/single-post.php:65
-msgid "<i class=\"fas fa-chevron-left\"></i>Previous Post"
-msgstr "<i class=\"fas fa-chevron-left\"></i>Previous Post"
-
-#: template-parts/single-post.php:66
+#: template-parts/single-post.php:73 template-parts/single-post.php:74
 msgid "Previous post"
 msgstr "المنشور السابق"
 
@@ -296,7 +286,7 @@ msgstr "تخطيط محاصر"
 
 #: inc/customizer.php:72
 msgid "Do you want this section."
-msgstr "هل تريد هذا القسم"
+msgstr "هل تريد هذا القسم."
 
 #: inc/customizer.php:75
 msgid "Left Sidebar"
@@ -316,7 +306,7 @@ msgstr "ثلاثة أعمدة"
 
 #: inc/customizer.php:79
 msgid "Four Columns"
-msgstr "أربعة أعمدة"
+msgstr "أربعة أعمدة "
 
 #: inc/customizer.php:80
 msgid "Grid Layout"
@@ -495,7 +485,7 @@ msgid "Slider Excerpt length"
 msgstr "طول مقتطف المنزلق"
 
 #: inc/customizer.php:700 inc/customizer.php:709 inc/customizer.php:757
-#: inc/customizer.php:1089
+#: inc/customizer.php:1192
 msgid "Left"
 msgstr "اليسار"
 
@@ -503,12 +493,12 @@ msgstr "اليسار"
 msgid "Slider Content Alignment"
 msgstr "محاذاة محتوى شريط التمرير"
 
-#: inc/customizer.php:708 inc/customizer.php:1091
+#: inc/customizer.php:708 inc/customizer.php:1194
 msgid "Center"
 msgstr "مركز"
 
-#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1081
-#: inc/customizer.php:1090
+#: inc/customizer.php:710 inc/customizer.php:772 inc/customizer.php:1184
+#: inc/customizer.php:1193
 msgid "Right"
 msgstr "حق"
 
@@ -604,138 +594,182 @@ msgstr "حشو الزر السفلي العلوي"
 msgid "Left Right Button Padding"
 msgstr "زر ترك الزر الأيمن لليسار"
 
-#: inc/customizer.php:996 inc/customizer.php:1231
+#: inc/customizer.php:996 inc/customizer.php:1334
 msgid "Button Border Radius"
 msgstr "نصف قطر حد الزر"
 
-#: inc/customizer.php:1012
+#: inc/customizer.php:1008
+msgid "Single Post Settings"
+msgstr "إعدادات المشاركة الواحدة"
+
+#: inc/customizer.php:1018
+msgid "Enable / Disable Feature Image"
+msgstr "تمكين / تعطيل صورة الميزة"
+
+#: inc/customizer.php:1028
+msgid "Enable / Disable Tags"
+msgstr "تمكين / تعطيل العلامات"
+
+#: inc/customizer.php:1038
+msgid "Enable / Disable Comment"
+msgstr "تمكين / تعطيل التعليق"
+
+#: inc/customizer.php:1048
+msgid "Enable / Disable Nav Links"
+msgstr "تمكين / تعطيل ارتباطات التنقل"
+
+#: inc/customizer.php:1058
+msgid "Previous Navigation Text"
+msgstr "نص التنقل السابق"
+
+#: inc/customizer.php:1068
+msgid "Next Navigation Text"
+msgstr "نص التنقل التالي"
+
+#: inc/customizer.php:1078
 msgid "Enable / Disable Related Posts"
 msgstr "تمكين / تعطيل الوظائف ذات الصلة"
 
-#: inc/customizer.php:1022
+#: inc/customizer.php:1088
 msgid "Related Posts Title"
 msgstr "عنوان الوظائف ذات الصلة"
 
-#: inc/customizer.php:1031
+#: inc/customizer.php:1097
 msgid "Related Posts Count"
 msgstr "عدد الوظائف ذات الصلة"
 
-#: inc/customizer.php:1049
+#: inc/customizer.php:1115
 msgid "Related Posts Order By"
 msgstr "الوظائف ذات الصلة ترتيب بواسطة"
 
-#: inc/customizer.php:1051
+#: inc/customizer.php:1117
 msgid "Categories"
-msgstr "Categories"
+msgstr "التصنيفات"
 
-#: inc/customizer.php:1052
+#: inc/customizer.php:1118
 msgid "Tags"
 msgstr "العلامات"
 
-#: inc/customizer.php:1057
+#: inc/customizer.php:1123
+msgid "404 Page Settings"
+msgstr "404 إعدادات الصفحة"
+
+#: inc/customizer.php:1134
+msgid "404 Page Title"
+msgstr "404 عنوان الصفحة"
+
+#: inc/customizer.php:1144
+msgid "404 Page Text"
+msgstr "404 نص الصفحة"
+
+#: inc/customizer.php:1154
+msgid "404 Page Button Text"
+msgstr "404 نص زر الصفحة"
+
+#: inc/customizer.php:1160
 msgid "Footer Section"
 msgstr "قسم التذييل"
 
-#: inc/customizer.php:1058
+#: inc/customizer.php:1161
 msgid "This section will appear in the footer."
 msgstr "سيظهر هذا القسم في التذييل."
 
-#: inc/customizer.php:1076
+#: inc/customizer.php:1179
 msgid "Show/Hide Back to Top Button"
 msgstr "إظهار / إخفاء عودة إلى أعلى الزر"
 
-#: inc/customizer.php:1086
+#: inc/customizer.php:1189
 msgid "Back to Top Button Alignment"
 msgstr "العودة إلى أعلى محاذاة الزر"
 
-#: inc/customizer.php:1101
+#: inc/customizer.php:1204
 msgid "Footer widget layout"
 msgstr "تخطيط القطعة تذييل"
 
-#: inc/customizer.php:1103
+#: inc/customizer.php:1206
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
-"حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى "
-"Appearance> Widgets وأضف Widgets."
+"حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى Appearance> "
+"Widgets وأضف Widgets."
 
-#: inc/customizer.php:1105
+#: inc/customizer.php:1208
 msgid "One"
 msgstr "واحد"
 
-#: inc/customizer.php:1106
+#: inc/customizer.php:1209
 msgid "Two"
 msgstr "اثنان"
 
-#: inc/customizer.php:1107
+#: inc/customizer.php:1210
 msgid "Three"
 msgstr "ثلاثة"
 
-#: inc/customizer.php:1108
+#: inc/customizer.php:1211
 msgid "Four"
 msgstr "أربعة"
 
-#: inc/customizer.php:1125
+#: inc/customizer.php:1228
 msgid "Text"
 msgstr "نص"
 
-#: inc/customizer.php:1133
+#: inc/customizer.php:1236
 msgid "Additional WooCommerce Options"
 msgstr "خيارات WooCommerce إضافية"
 
-#: inc/customizer.php:1146
+#: inc/customizer.php:1249
 msgid "Product per row"
 msgstr "المنتج لكل صف"
 
-#: inc/customizer.php:1161
+#: inc/customizer.php:1264
 msgid "Product per page"
 msgstr "المنتج لكل صفحة"
 
-#: inc/customizer.php:1172
+#: inc/customizer.php:1275
 msgid "Enable / Disable Shop page sidebar"
 msgstr "تمكين / تعطيل الشريط الجانبي لصفحة المتجر"
 
-#: inc/customizer.php:1182
+#: inc/customizer.php:1285
 msgid "Enable / Disable Product page sidebar"
 msgstr "تمكين / تعطيل الشريط الجانبي لصفحة المنتج"
 
-#: inc/customizer.php:1192
+#: inc/customizer.php:1295
 msgid "Enable / Disable Related product"
 msgstr "تمكين / تعطيل المنتج ذي الصلة"
 
-#: inc/customizer.php:1201
+#: inc/customizer.php:1304
 msgid "Button Top Bottom Padding"
 msgstr "حشو الزر العلوي السفلي"
 
-#: inc/customizer.php:1216
+#: inc/customizer.php:1319
 msgid "Button Right Left Padding"
 msgstr "زر اليسار الأيمن الحشو"
 
-#: inc/customizer.php:1247
+#: inc/customizer.php:1350
 msgid "Enable / Disable product border"
 msgstr "تمكين / تعطيل حدود المنتج"
 
-#: inc/customizer.php:1256
+#: inc/customizer.php:1359
 msgid "Product Top Bottom Padding"
 msgstr "حشو أسفل المنتج العلوي"
 
-#: inc/customizer.php:1271
+#: inc/customizer.php:1374
 msgid "Product Right Left Padding"
 msgstr "الحشو الأيمن المنتج اليسار"
 
-#: inc/customizer.php:1286
+#: inc/customizer.php:1389
 msgid "Product Border Radius"
 msgstr "نصف قطر حدود المنتج"
 
-#: inc/customizer.php:1301
+#: inc/customizer.php:1404
 msgid "Product Box Shadow"
 msgstr "ظل صندوق المنتج"
 
-#: inc/customizer.php:1391
+#: inc/customizer.php:1494
 msgid "Advance Blogging"
 msgstr "مقدما التدوين"
 
-#: inc/customizer.php:1392
+#: inc/customizer.php:1495
 msgid "Go Pro"
 msgstr "جو برو"
