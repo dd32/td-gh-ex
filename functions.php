@@ -102,12 +102,6 @@ function harmonux_setup(){
 
 	add_theme_support( 'wp-block-styles' );
 
-	if( function_exists( 'has_blocks' ) ){
-
-		wp_register_style( 'smartlib_gutenberg',  get_template_directory_uri() . '/css/gutenberg.css', array( 'wp-block-library') );
-		wp_enqueue_style( 'smartlib_gutenberg' );
-
-	}
 
 }
 endif; // harmonux_setup
