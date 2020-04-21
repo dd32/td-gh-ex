@@ -355,6 +355,11 @@ function ansia_custom_settings_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('Twitch URL', 'ansia')
 	);
+	$socialmedia[] = array(
+	'slug'=>'_spotifyurl', 
+	'default' => '',
+	'label' => __('Spotify URL', 'ansia')
+	);
 	foreach( $socialmedia as $ansia_theme_options ) {
 		// SETTINGS
 		$wp_customize->add_setting(
@@ -644,6 +649,7 @@ if( ! function_exists('ansia_show_social_network')){
 		$xingURL = ansia_options('_xingurl', '');
 		$redditURL = ansia_options('_redditurl', '');
 		$twitchURL = ansia_options('_twitchurl', '');
+		$spotifyURL = ansia_options('_spotifyurl', '');
 		?>
 		<div class="ansia-social-button <?php echo $position == 'sidebar' ? 'inSidebar' : 'inFooter' ?>">
 			<?php if ($position == 'float') : ?>
@@ -687,6 +693,9 @@ if( ! function_exists('ansia_show_social_network')){
 			<?php if ($twitchURL) : ?>
 				<a class="ansia-social" href="<?php echo esc_url($twitchURL); ?>" target="<?php echo esc_attr($openLinks); ?>" <?php echo esc_attr($attribute); ?> title="<?php esc_attr_e( 'Twitch', 'ansia' ); ?>"><i class="fa fa-twitch spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Twitch', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
+			<?php if ($spotifyURL) : ?>
+				<a class="ansia-social" href="<?php echo esc_url($spotifyURL); ?>" target="<?php echo esc_attr($openLinks); ?>" <?php echo esc_attr($attribute); ?> title="<?php esc_attr_e( 'Spotify', 'ansia' ); ?>"><i class="fa fa-spotify spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Spotify', 'ansia' ); ?></span></i></a>
+			<?php endif; ?>
 		</div>
 		<?php
 	}
@@ -728,7 +737,11 @@ function ansia_custom_css_styles() {
 		.nav-links .post-title,
 		.entry-meta span i,
 		.woocommerce ul.products > li .price,
-		.woocommerce div.product .summary .price {
+		.woocommerce div.product .summary .price,
+		.woocommerce-store-notice .woocommerce-store-notice__dismiss-link,
+		.woocommerce-store-notice .woocommerce-store-notice__dismiss-link:hover,
+		.woocommerce-store-notice a,
+		.woocommerce-store-notice a:hover {
 			color: <?php echo esc_html($accentColor); ?>;
 		}
 		.crestaMenuButton,
@@ -861,7 +874,8 @@ function ansia_custom_css_styles() {
 		.wc-proceed-to-checkout .button.checkout-button:hover,
 		.widget_shopping_cart p.buttons a:hover,
 		.widget_price_filter .price_slider_amount .button,
-		.woocommerce div.product form.cart .button {
+		.woocommerce div.product form.cart .button,
+		.woocommerce-store-notice {
 			color: <?php echo esc_html($backgroundColor); ?>;
 		}
 		.search-container ::-webkit-input-placeholder {
@@ -992,7 +1006,8 @@ function ansia_custom_css_styles() {
 		.woocommerce-message a:hover,
 		.return-to-shop a:hover,
 		.wc-proceed-to-checkout .button.checkout-button:hover,
-		.widget_shopping_cart p.buttons a:hover {
+		.widget_shopping_cart p.buttons a:hover,
+		.woocommerce-store-notice {
 			background-color: <?php echo esc_html($textColor); ?>;
 		}
 		button:hover,button:active, button:focus,

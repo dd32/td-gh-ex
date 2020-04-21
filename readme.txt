@@ -1,9 +1,9 @@
 === Ansia ===
-Contributors: CrestaProject
+Contributors: crestaproject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, custom-header, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo, custom-background
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.1.3
+Tested up to: 5.4
+Stable tag: 1.1.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,12 @@ Ansia includes support for Infinite Scroll in Jetpack and WooCommerce.
 * Image used in Theme Screenshot by Piqsels https://www.piqsels.com/en/public-domain-photo-frzdk licensed under CC0
 
 == Changelog ==
+= Version 1.1.4 =
+* Added compatibility with WPML for String Translation
+* Added Spotify social button
+* Added style to the WooCommerce store notice
+* Minor bug fixes
+
 = Version 1.1.3 =
 * Added Twitch social button
 * Minor bug fixes

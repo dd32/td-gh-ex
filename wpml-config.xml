@@ -1,0 +1,7 @@
+<wpml-config>
+	<admin-texts>
+		<key name="ansia_theme_options">
+			<key name="_copyright_text"/>
+		</key>
+	</admin-texts>
+</wpml-config>
