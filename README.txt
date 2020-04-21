@@ -70,8 +70,17 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.27
+* Styling fixes/tweaks
+* Updated Font Awesome to version 5.9.0
+* Added Ship To Content link for better Accessibility
+* Added better accessibility / keyboard navigation for mobile
+* Trap Focus to mobile navigation for better navigating experience
+* Updated the language .pot file
+* PREMIUM: NEW FEATURE: Now includes a shortcode slider - Dashboard -> TopShop Sliders
+
 #### 1.3.26
-* Removed TGM enternal link
+* Removed TGM external link
 * Added extra config strings to prevent conflict with SiteOrigin page builder TGM
 * Updated the language .pot file
 
@@ -85,28 +94,28 @@ View the theme settings under "Appearance" -> Customize.
 * Remove old deprecated code
 * Fixed editor CSS load issue
 * Updated language .pot file
-Premium: Added settings to show Uploaded logo with Site Title & tagline
+* PREMIUM: Added settings to show Uploaded logo with Site Title & tagline
 
 #### 1.3.23
 * Styling fixes/tweaks
 * Fix js customizer issue
 * Updated broken help links
 * Updated language .pot file
-Premium: Updated Page Layouts import section
+* PREMIUM: Updated Page Layouts import section
 
 #### 1.3.22
 * Styling fixes/tweaks
 * Added WooCustomizer as a recommended plugin in TGM
 * Fixed broken help link
 * Updated language .pot file
-Premium: Added functionlaity to Elementor Layouts import section
+* PREMIUM: Added functionlaity to Elementor Layouts import section
 
 #### 1.3.21
 * Styling fixes/tweaks
 * Updated Theme URI
 * Removed old/deprecated code
 * Updated language .pot file
-Premium: Added functionlaity to import Elementor Layouts
+* PREMIUM: Added functionlaity to import Elementor Layouts
 
 #### 1.3.20
 * Styling fixes/tweaks
@@ -116,8 +125,8 @@ Premium: Added functionlaity to import Elementor Layouts
 * Removed old/deprecated code
 * Neatened up code/comments
 * Updated language .pot file
-Premium: Added setting to select custom font for site navigation
-Premium: Added setting to adjust main navigation font size
+* PREMIUM: Added setting to select custom font for site navigation
+* PREMIUM: Added setting to adjust main navigation font size
 
 #### 1.3.18
 * Styling fixes/tweaks
@@ -128,8 +137,8 @@ Premium: Added setting to adjust main navigation font size
 * Added a selection of web-safe fonts
 * Remove old deprecated code
 * Updated language .pot file
-Premium: Added setting to increase Social Footer icon size
-Premium: Added setting to adjust Social Footer icon spacing
+* PREMIUM: Added setting to increase Social Footer icon size
+* PREMIUM: Added setting to adjust Social Footer icon spacing
 
 #### 1.3.17
 * Updated Theme Tags
@@ -149,7 +158,7 @@ Premium: Added setting to adjust Social Footer icon spacing
 * Added 2 new header layouts into Customizer settings
 * Added a bunch of Social Link settings to the header - Customize -> Social Links
 * Updated language .pot file
-Premium: Added option to change search to use WooCommerce Product Search Plugin - shortcode
+* PREMIUM: Added option to change search to use WooCommerce Product Search Plugin - shortcode
 
 #### 1.3.14
 * WooCommerce & TopShop CSS tweaks/fixes
@@ -172,7 +181,7 @@ Premium: Added option to change search to use WooCommerce Product Search Plugin 
 #### 1.3.11
 * Added admin help links/styling
 * Updated language .pot file
-Premium: Added setting to add/enable WooCommerce drop down basket in the Header
+* PREMIUM: Added setting to add/enable WooCommerce drop down basket in the Header
 
 #### 1.3.10
 * Styling fixes/tweaks
@@ -186,18 +195,18 @@ Premium: Added setting to add/enable WooCommerce drop down basket in the Header
 
 #### 1.3.08
 * Style tweaks/fixes
-Premium: Added setting to set WooCommerce products amount shown per page
+* PREMIUM: Added setting to set WooCommerce products amount shown per page
 
 #### 1.3.07
 * Neatened up Customizer Settings
 * Added setting to set max-width for Site Logo
 * Updated language .pot file
-Premium: Added setting to change Slider scroll effect
-Premium: Option to add an Author block on Blog single pages
-Premium: Added a bunch of extra settings for Blog List & Single Pages
-Premium: Added setting to remove pre text from Archive/Category list
-Premium: Added setting to select how many WooCommerce products to show per row
-Premium: Added setting to remove WooCommerce product borders
+* PREMIUM: Added setting to change Slider scroll effect
+* PREMIUM: Option to add an Author block on Blog single pages
+* PREMIUM: Added a bunch of extra settings for Blog List & Single Pages
+* PREMIUM: Added setting to remove pre text from Archive/Category list
+* PREMIUM: Added setting to select how many WooCommerce products to show per row
+* PREMIUM: Added setting to remove WooCommerce product borders
 
 #### 1.3.06
 * Updated/fixed compatibility with new WooCommerce Gallery
@@ -206,25 +215,25 @@ Premium: Added setting to remove WooCommerce product borders
 * Styling tweaks
 * Neatened up Customizer Settings
 * Updated language .pot file
-Premium: Added a bunch of color settings - Customize -> Layout Colors
-Premium: Added settings to adjust Side Container & Sidebar widths
-Premium: Added and updated over 20 social icons + added custom social icon setting
-Premium: Added 2 new footer layouts + advanced custom footer layout
-Premium: Added the option to add custom links to the default slider posts
+* PREMIUM: Added a bunch of color settings - Customize -> Layout Colors
+* PREMIUM: Added settings to adjust Side Container & Sidebar widths
+* PREMIUM: Added and updated over 20 social icons + added custom social icon setting
+* PREMIUM: Added 2 new footer layouts + advanced custom footer layout
+* PREMIUM: Added the option to add custom links to the default slider posts
 
 #### 1.3.04
 * Added help for setting up Default Slider
 * Styling tweaks/fixes
 * Updated language .pot file
-Premium: Added settings to change site title font and size
-Premium: Added settings to change site tagline size and spacing
-Premium: Added settings to change Blog list, Archives and single pages to left sidebar
+* PREMIUM: Added settings to change site title font and size
+* PREMIUM: Added settings to change site tagline size and spacing
+* PREMIUM: Added settings to change Blog list, Archives and single pages to left sidebar
 
 #### 1.3.03
 * Fixed 404 message bug
 * Added setting to remove Account link next to the cart
 * Updated language .pot file
-Premium: Added setting to change cart icon - Cart / Basket / Bag icons
+* PREMIUM: Added setting to change cart icon - Cart / Basket / Bag icons
 
 #### 1.3.02
 * Added missin sanitization - improving security
@@ -234,8 +243,8 @@ Premium: Added setting to change cart icon - Cart / Basket / Bag icons
 * WooCommerce styling fixes - My Account
 * Default slider now uses Excerpt/Content text
 * Updated language .pot file
-Premium: Added setting to remove Page Titles
-Premium: Added setting to remove Single Post Titles
+* PREMIUM: Added setting to remove Page Titles
+* PREMIUM: Added setting to remove Single Post Titles
 
 #### 1.3.00
 * Header styling fixes
@@ -243,9 +252,9 @@ Premium: Added setting to remove Single Post Titles
 * Changed blog list to show Excerpt is exists, otherwise show full content
 * Added setting to remove cart from header
 * Updated language .pot file
-Premium: Added new leader layout
-Premium: Added setting to make blog archive pages full width
-Premium: Added setting to make blog single pages full width
+* PREMIUM: Added new leader layout
+* PREMIUM: Added setting to make blog archive pages full width
+* PREMIUM: Added setting to make blog single pages full width
 
 #### 1.2.9
 * Update Font Awesome
@@ -253,10 +262,10 @@ Premium: Added setting to make blog single pages full width
 * Added TGM Plugin Activation class
 * Remove old update system & link out to premium
 * Updated language .pot file
-Premium: Added WooCommerce shop full width settings
-Premium: Added a bunch of extra settings
-Premium: Added social link for Behance
-Premium: Added social link for Medium
+* PREMIUM: Added WooCommerce shop full width settings
+* PREMIUM: Added a bunch of extra settings
+* PREMIUM: Added social link for Behance
+* PREMIUM: Added social link for Medium
 
 #### 1.2.8
 * Styling tweaks

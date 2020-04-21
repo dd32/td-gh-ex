@@ -771,6 +771,23 @@ function customizer_library_topshop_options() {
         'description' => __( '<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
     );
     
+    // Plugin Support
+    $section = 'topshop-plugin-support';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Plugin Support', 'topshop' ),
+        'priority' => '120',
+        'description' => __( 'TopShop offers support for certain plugin by integrating extra functionality or styling for these plugins', 'topshop' ),
+    );
+    
+    $options['topshop-psupport-mega-menu'] = array(
+        'id' => 'topshop-psupport-mega-menu',
+        'label'   => __( 'Mega Menu', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;

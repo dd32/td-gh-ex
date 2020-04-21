@@ -18,7 +18,11 @@ global $woocommerce;
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'topshop' ); ?></a>
+
 <div id="page">
+
 <header id="masthead" class="site-header border-bottom <?php echo sanitize_html_class( get_theme_mod( 'topshop-header-layout', customizer_library_get_default( 'topshop-header-layout' ) ) ); ?>" role="banner">
     
     <?php get_template_part( '/templates/header/header' ); ?>

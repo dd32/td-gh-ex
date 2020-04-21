@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/wordpress-theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>TopShop Premium </span><em>$22</em>', 'topshop' ) ); ?>
+                    <?php printf( __( '<span>TopShop Premium </span><em>$25</em>', 'topshop' ) ); ?>
                 </a>
                 <p><?php _e( 'Once-Off Payment, No Subscription', 'topshop' ); ?></p>
             </div>
@@ -34,6 +34,16 @@
                         <h4><?php _e( 'Page Layouts', 'topshop' ); ?></h4>
                         <?php _e( 'TopShop Premium offers a bunch on Elementor Page layouts built into the theme<br />so you can simply import page layouts to use.', 'topshop' ); ?>
                         <div class="upgrade-page-right-box-image"></div>
+                    </div>
+                </div>
+
+                <div class="topshop-upgrade-block">
+                    <div class="topshop-upgrade-block-sliderimg-top">
+                        <h4><?php esc_html_e( 'TopShop Premium now includes a FREE shortcode Slider plugin', 'topshop' ); ?></h4>
+                        <?php esc_html_e( 'Create sliders and add them to all or any pages you choose', 'topshop' ); ?>
+                    </div>
+                    <div class="topshop-upgrade-block-sliderimg">
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/upgrade/images/free-slider.png' ); ?>" alt="<?php esc_attr_e( 'TopShop shortcode slider', 'topshop' ); ?>" />
                     </div>
                 </div>
                 

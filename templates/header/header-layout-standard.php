@@ -101,13 +101,21 @@
     
 </div>
 
-<nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'topshop-sticky-header' ) ) ? sanitize_html_class( 'header-stick' ) : ''; ?>" role="navigation">
-    <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'topshop' ); ?></span></span>
-    <div id="main-menu" class="main-menu-container">
-        <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
-        <div class="site-container">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-            <div class="clearboth"></div>
+<?php if ( get_theme_mod( 'topshop-psupport-mega-menu', customizer_library_get_default( 'topshop-psupport-mega-menu' ) ) ) : ?>
+    <nav id="site-navigation" class="main-navigation-mm" role="navigation">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    </nav><!-- #site-navigation -->
+<?php else : ?>
+    <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'topshop-sticky-header' ) ) ? sanitize_html_class( 'header-stick' ) : ''; ?>" role="navigation">
+        <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'topshop' ); ?></span></button>
+        <div id="main-menu" class="main-menu-container">
+            <div class="main-menu-inner">
+                <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                <div class="site-container">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
         </div>
-    </div>
-</nav><!-- #site-navigation -->
+    </nav><!-- #site-navigation -->
+<?php endif; ?>

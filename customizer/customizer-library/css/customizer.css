@@ -4,7 +4,8 @@
 #customize-theme-controls #accordion-panel-topshop-panel-layout-colors h3:hover,
 #customize-theme-controls #accordion-section-colors h3:hover,
 #customize-theme-controls #accordion-section-topshop-social h3:hover,
-#customize-theme-controls #accordion-section-topshop-website h3:hover {
+#customize-theme-controls #accordion-section-topshop-website h3:hover,
+#customize-theme-controls #accordion-section-topshop-plugin-support h3:hover {
     background-color: #006CC9;
     color: #FFF;
 }
@@ -75,7 +76,8 @@
 }
 
 #customize-control-topshop-slider-cats,
-#customize-control-topshop-meta-slider-shortcode {
+#customize-control-topshop-meta-slider-shortcode,
+#customize-control-topshop-psupport-mega-menu {
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding: 25px 0 0;
     margin-top: 20px;

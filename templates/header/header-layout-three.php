@@ -62,35 +62,43 @@
     
 </div>
 
-<nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'topshop-sticky-header', false ) ) ? sanitize_html_class( 'header-stick' ) : ''; ?>" role="navigation">
-    <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'topshop' ); ?></span></span>
-    <div id="main-menu" class="main-menu-container">
-        <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
-        <div class="site-container">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-            
-            <?php if ( topshop_is_woocommerce_activated() ) : ?>
-                <?php if ( !get_theme_mod( 'topshop-header-remove-cart', false ) ) : ?>
-                    <div class="header-cart">
-                        <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'topshop' ); ?>">
-                            <span class="header-cart-amount">
-                                <?php echo sprintf( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count(), 'topshop' ), WC()->cart->get_cart_contents_count() ); ?><span> - <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
-                            </span>
-                            <span class="header-cart-checkout <?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
-                                <i class="fa <?php echo ( get_theme_mod( 'topshop-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'topshop-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
-                            </span>
-                        </a>
-                        
-                        <?php if ( get_theme_mod( 'topshop-header-add-drop-cart' ) ) : ?>
-                            <div class="site-header-cart">
-                                <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+<?php if ( get_theme_mod( 'topshop-psupport-mega-menu', customizer_library_get_default( 'topshop-psupport-mega-menu' ) ) ) : ?>
+    <nav id="site-navigation" class="main-navigation-mm" role="navigation">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    </nav><!-- #site-navigation -->
+<?php else : ?>
+    <nav id="site-navigation" class="main-navigation <?php echo ( get_theme_mod( 'topshop-sticky-header', false ) ) ? sanitize_html_class( 'header-stick' ) : ''; ?>" role="navigation">
+        <button class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'topshop' ); ?></span></button>
+        <div id="main-menu" class="main-menu-container">
+            <div class="main-menu-inner">
+                <button class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></button>
+                <div class="site-container">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                    
+                    <?php if ( topshop_is_woocommerce_activated() ) : ?>
+                        <?php if ( !get_theme_mod( 'topshop-header-remove-cart', false ) ) : ?>
+                            <div class="header-cart">
+                                <a class="header-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'topshop' ); ?>">
+                                    <span class="header-cart-amount">
+                                        <?php echo sprintf( _n( '(%d)', '(%d)', WC()->cart->get_cart_contents_count(), 'topshop' ), WC()->cart->get_cart_contents_count() ); ?><span> - <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+                                    </span>
+                                    <span class="header-cart-checkout <?php echo ( WC()->cart->get_cart_contents_count() > 0 ) ? sanitize_html_class( 'cart-has-items' ) : ''; ?>">
+                                        <i class="fa <?php echo ( get_theme_mod( 'topshop-cart-icon' ) ) ? sanitize_html_class( get_theme_mod( 'topshop-cart-icon' ) ) : sanitize_html_class( 'fa-shopping-cart' ); ?>"></i>
+                                    </span>
+                                </a>
+                                
+                                <?php if ( get_theme_mod( 'topshop-header-add-drop-cart' ) ) : ?>
+                                    <div class="site-header-cart">
+                                        <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
-                    </div>
-                <?php endif; ?>
-            <?php endif; ?>
-            
-            <div class="clearboth"></div>
+                    <?php endif; ?>
+                    
+                    <div class="clearboth"></div>
+                </div>
+            </div>
         </div>
-    </div>
-</nav><!-- #site-navigation -->
+    </nav><!-- #site-navigation -->
+<?php endif; ?>
