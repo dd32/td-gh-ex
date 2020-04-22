@@ -16,8 +16,8 @@ get_header(); ?>
   <div class="innerlightbox">
 	  <div class="container">
       <?php
-        $left_right = get_theme_mod( 'advance_automobile_layout_options','Right Sidebar');
-        if($left_right == 'Left Sidebar'){ ?>
+        $advance_automobile_left_right = get_theme_mod( 'advance_automobile_layout_options','Right Sidebar');
+        if($advance_automobile_left_right == 'Left Sidebar'){ ?>
         <div class="row">
           <div class="col-lg-4 col-md-4">
             <?php get_sidebar();?>
@@ -44,7 +44,7 @@ get_header(); ?>
             </div> 
     	    </div>
         </div>
-      <?php }else if($left_right == 'Right Sidebar'){ ?>
+      <?php }else if($advance_automobile_left_right == 'Right Sidebar'){ ?>
         <div class="row">
           <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
             <?php if ( have_posts() ) :
@@ -71,7 +71,7 @@ get_header(); ?>
       			<?php get_sidebar();?>
       	  </div>
         </div>
-      <?php }else if($left_right == 'One Column'){ ?>
+      <?php }else if($advance_automobile_left_right == 'One Column'){ ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php if ( have_posts() ) :
             /* Start the Loop */
@@ -93,7 +93,7 @@ get_header(); ?>
             ?>
           </div> 
         </div>
-      <?php }else if($left_right == 'Grid Layout'){ ?>
+      <?php }else if($advance_automobile_left_right == 'Grid Layout'){ ?>
         <div id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
           <?php if ( have_posts() ) :
             /* Start the Loop */

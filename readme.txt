@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 7.2.14
-Stable tag: 0.4.4
+Stable tag: 0.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,10 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added box shadow option for products.
 * Added padding setting for products buttons.
 * Added border radius option for products buttons.
+
+= 0.4.5 =
+* Updated POT file.
+* Resolved errors.
 
 == Resources ==
 

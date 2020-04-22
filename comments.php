@@ -39,14 +39,14 @@ if ( post_password_required() )
 					       	)
 					   	),
 						esc_html (number_format_i18n( $comments_number ) ),
-		            	esc_html(get_the_title())
+		            	esc_html (get_the_title())
 					);
 				}
 			?>
 		</h2>
 
 		<?php the_comments_navigation(); ?>
-
+		
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(

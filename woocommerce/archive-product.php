@@ -27,7 +27,6 @@ get_header( 'shop' ); ?>
    $colmd = 'col-lg-8 col-md-8';
  } 
 ?>
-
 <div class="container">
 	<main role="main" id="maincontent">
 		<div class="row m-0">

@@ -11,7 +11,7 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function advance_automobile_customize_register($wp_customize) {
-
+	
 	//add home page setting pannel
 	$wp_customize->add_panel('advance_automobile_panel_id', array(
 		'priority'       => 10,
@@ -21,49 +21,8 @@ function advance_automobile_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-automobile'),
 	));	
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_automobile_theme_color_option', 
-		array( 'panel' => 'advance_automobile_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-automobile' ) )
-	);
-
-  	$wp_customize->add_setting( 'advance_automobile_theme_color_first', array(
-	    'default' => '#1a8129',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_first', array(
-  		'label' => __( 'First Color Option', 'advance-automobile' ),
-  		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
-	    'section' => 'advance_automobile_theme_color_option',
-	    'settings' => 'advance_automobile_theme_color_first',
-  	)));
-
-  	$wp_customize->add_setting( 'advance_automobile_theme_color_second', array(
-	    'default' => '#06393a',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_second', array(
-  		'label' => __( 'Second Color Option', 'advance-automobile' ),
-  		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
-	    'section' => 'advance_automobile_theme_color_option',
-	    'settings' => 'advance_automobile_theme_color_second',
-  	)));
-
-  	$wp_customize->add_setting('advance_automobile_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-automobile'),
-        'sanitize_callback' => 'advance_automobile_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_automobile_background_skin_mode',array(
-        'type' => 'select',
-        'label' => __('Background Type','advance-automobile'),
-        'section' => 'background_image',
-        'choices' => array(
-            'With Background' => __('With Background','advance-automobile'),
-            'Transparent Background' => __('Transparent Background','advance-automobile'),
-        ),
-	) );
-
-// font array
-	$font_array = array(
+	// font array
+	$advance_automobile_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -186,7 +145,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	$wp_customize->add_setting('advance_automobile_paragraph_font_size',array(
@@ -222,7 +181,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -247,7 +206,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -272,7 +231,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'H1 Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -309,7 +268,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'h2 Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -346,7 +305,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'h3 Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -383,7 +342,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'h4 Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -420,7 +379,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'h5 Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -457,7 +416,7 @@ function advance_automobile_customize_register($wp_customize) {
 	    'section'  => 'advance_automobile_typography',
 	    'label'    => __( 'h6 Fonts','advance-automobile'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_automobile_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -471,6 +430,20 @@ function advance_automobile_customize_register($wp_customize) {
 		'setting'	=> 'advance_automobile_h6_font_size',
 		'type'	=> 'text'
 	));
+
+  	$wp_customize->add_setting('advance_automobile_background_skin_mode',array(
+        'default' => __('Transparent Background','advance-automobile'),
+        'sanitize_callback' => 'advance_automobile_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_automobile_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-automobile'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-automobile'),
+            'Transparent Background' => __('Transparent Background','advance-automobile'),
+        ),
+	) );
 
 	// woocommerce section
 	$wp_customize->add_setting('advance_automobile_show_related_products',array(
@@ -653,6 +626,33 @@ function advance_automobile_customize_register($wp_customize) {
 		),
 	));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_automobile_theme_color_option', 
+		array( 'panel' => 'advance_automobile_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-automobile' ) )
+	);
+
+  	$wp_customize->add_setting( 'advance_automobile_theme_color_first', array(
+	    'default' => '#1a8129',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_first', array(
+  		'label' => __( 'First Color Option', 'advance-automobile' ),
+  		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
+	    'section' => 'advance_automobile_theme_color_option',
+	    'settings' => 'advance_automobile_theme_color_first',
+  	)));
+
+  	$wp_customize->add_setting( 'advance_automobile_theme_color_second', array(
+	    'default' => '#06393a',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_second', array(
+  		'label' => __( 'Second Color Option', 'advance-automobile' ),
+  		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
+	    'section' => 'advance_automobile_theme_color_option',
+	    'settings' => 'advance_automobile_theme_color_second',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_automobile_left_right', array(
 		'title'    => __('Layout Settings', 'advance-automobile'),
@@ -813,7 +813,7 @@ function advance_automobile_customize_register($wp_customize) {
 
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_automobile_display_topbar',array(
-		'default' => true,
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_automobile_display_topbar',array(
@@ -872,17 +872,6 @@ function advance_automobile_customize_register($wp_customize) {
 		'label'	=> __('Add Youtube link','advance-automobile'),
 		'section'	=> 'advance_automobile_topbar',
 		'setting'	=> 'advance_automobile_youtube_url',
-		'type'	=> 'url'
-	));
-
-	$wp_customize->add_setting('advance_automobile_google_plus_url',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'esc_url_raw'
-	));
-	$wp_customize->add_control('advance_automobile_google_plus_url',array(
-		'label'	=> __('Add Google Plus link','advance-automobile'),
-		'section'	=> 'advance_automobile_topbar',
-		'setting'	=> 'advance_automobile_google_plus_url',
 		'type'	=> 'url'
 	));
 
@@ -1138,7 +1127,7 @@ function advance_automobile_customize_register($wp_customize) {
 	));
 
 	$wp_customize->add_setting('advance_automobile_content_404_page',array(
-		'default'=>  __('Dont worry&hellip it happens to the best of us.','advance-automobile'),
+		'default'=>  __('Looks like you have taken a wrong turn&hellip. Dont worry&hellip it happens to the best of us.','advance-automobile'),
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('advance_automobile_content_404_page',array(
@@ -1164,7 +1153,7 @@ function advance_automobile_customize_register($wp_customize) {
 	));
 
     $wp_customize->add_setting('advance_automobile_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_automobile_responsive_sticky_header',array(
@@ -1174,7 +1163,7 @@ function advance_automobile_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_automobile_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_automobile_responsive_slider',array(
@@ -1183,13 +1172,13 @@ function advance_automobile_customize_register($wp_customize) {
        'section' => 'advance_automobile_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_automobile_responsive_metabox',array(
+    $wp_customize->add_setting('advance_automobile_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_automobile_responsive_metabox',array(
+    $wp_customize->add_control('advance_automobile_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-automobile'),
+       'label' => __('Scroll To Top','advance-automobile'),
        'section' => 'advance_automobile_responsive_setting'
     ));
 
@@ -1210,7 +1199,7 @@ function advance_automobile_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_automobile_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_automobile_date_hide',array(
@@ -1220,7 +1209,7 @@ function advance_automobile_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_automobile_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_automobile_comment_hide',array(
@@ -1230,7 +1219,7 @@ function advance_automobile_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_automobile_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_automobile_author_hide',array(
@@ -1240,7 +1229,7 @@ function advance_automobile_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_automobile_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_automobile_tags_hide',array(
