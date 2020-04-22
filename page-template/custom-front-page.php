@@ -2,31 +2,31 @@
 /**
  * Template Name: Custom home
  */
-
 get_header(); ?>
 
 <main role="main" id="maincontent">
+
   <?php do_action( 'advance_education_above_slider' ); ?>
 
-  <?php if( get_theme_mod( 'advance_education_slider_hide') != '') { ?>    
+  <?php if( get_theme_mod( 'advance_education_slider_hide', false) != '' || get_theme_mod( 'advance_education_responsive_slider', false) != '') { ?>    
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_pages = array();
+        <?php $advance_education_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_education_slider_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_pages[] = $mod;
+              $advance_education_slider_pages[] = $mod;
             }
           }
-          if( !empty($slider_pages) ) :
+          if( !empty($advance_education_slider_pages) ) :
             $args = array(
               'post_type' => 'page',
-              'post__in' => $slider_pages,
+              'post__in' => $advance_education_slider_pages,
               'orderby' => 'post__in'
             );
             $query = new WP_Query( $args );
-            if ( $query->have_posts() ) :
-              $i = 1;
+          if ( $query->have_posts() ) :
+            $i = 1;
         ?>     
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -80,9 +80,9 @@ get_header(); ?>
         <?php } ?>
         <div class="row">
           <?php 
-           $catData =  get_theme_mod('advance_education_popular_courses_category');
-           if($catData){
-            $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'advance-education')));?>
+            $advance_education_catData =  get_theme_mod('advance_education_popular_courses_category');
+            if($advance_education_catData){
+              $page_query = new WP_Query(array( 'category_name' => esc_html($advance_education_catData,'advance-education')));?>
               <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                 <div class=" col-lg-4 col-md-6">
                   <div class="cat_content">
@@ -104,8 +104,8 @@ get_header(); ?>
                 </div> 
               <?php endwhile;
               wp_reset_postdata();
-              }
-           ?>
+            }
+          ?>
         </div>
       </div>
     </section>

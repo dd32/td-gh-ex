@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-education-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Education is a fresh, engaging, visually appealing and elegant education WordPress theme for all classes from preschools and kindergartens to schools, colleges and universities. It suits all LMSs, training academies, online education portals, distance learning, coaching centres, mentors, online library, educational websites and everything related to education, learning and teaching. It offers various layout options to change the look and feel of the website from modern to bold and vice versa. This education WordPress theme is adaptable to changing screen size of mobiles, tabs and desktops. It is compatible with all the leading browsers and can be translated into 70+ different languages. It is readily customizable to change its various elements to make it represent your brand. To keep visitors engaged, there are several sections like gallery, testimonial, faculty, contact form etc. Advance Education is made to score good rank in search engine results and its social media icons give the needed exposure to reach maximum people in minimum time. It is based on the latest WordPress version and hence yields a bug-free website. Its interface is simple to understand so any person with no previous coding skills can also use it to design a high performing and professional looking website. Demo: https://www.themeshopy.com/advance-education-pro/
-Version: 0.4.5
+Version: 0.4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-education
@@ -494,7 +494,7 @@ input[type="submit"] {
 .mail,
 .phone{
   color: #232323;
-  padding:18px; 
+  padding:18px 0; 
   font-size: 14px;
 }
 .time {
@@ -1264,7 +1264,6 @@ table#wp-calendar td a {
   right: 50%;
 }
 /* Comments BOX */
-
 #comments {
   display: block;
   margin-top: 10px;
@@ -1423,18 +1422,15 @@ h2.woocommerce-loop-product__title{
   border: solid 1px #cc3333;
   color: #cc3333;
 }
-.col-1,.col-2 {
-  max-width: 100%;
-}
-nav.woocommerce-MyAccount-navigation ul {
+.woocommerce-MyAccount-navigation ul {
   list-style: none;
 }
-nav.woocommerce-MyAccount-navigation ul li {
+.woocommerce-MyAccount-navigation ul li {
   background: #cc3333 !important;
   padding: 12px!important;
   margin-bottom: 10px;
 }
-nav.woocommerce-MyAccount-navigation ul li a{
+.woocommerce-MyAccount-navigation ul li a{
   color: #fff;
   font-weight: bold;
 }
@@ -1448,7 +1444,7 @@ nav.woocommerce-MyAccount-navigation ul li a{
 .woocommerce .woocommerce-ordering select{
   padding: 10px;
 }
-span.woocommerce-input-wrapper{
+.woocommerce-input-wrapper{
  width: 100%;
 }
 .woocommerce-product-gallery__image{
@@ -1457,23 +1453,15 @@ span.woocommerce-input-wrapper{
 .woocommerce form .form-row .required{
   color: #df0000;
 }
-.woocommerce #add_payment_method .cart-collaterals .cart_totals table td, #add_payment_method .cart-collaterals .cart_totals table th, .woocommerce-cart .cart-collaterals .cart_totals table td, .woocommerce-cart .cart-collaterals .cart_totals table th, .woocommerce-checkout .cart-collaterals .cart_totals table td, .woocommerce-checkout .cart-collaterals .cart_totals table th{
-  color: #3a4d5e;
-}
-.woocommerce #add_payment_method table.cart td, #add_payment_method table.cart th, .woocommerce-cart table.cart td, .woocommerce-cart table.cart th, .woocommerce-checkout table.cart td, .woocommerce-checkout table.cart th{
+.woocommerce #add_payment_method .cart-collaterals .cart_totals table td, #add_payment_method .cart-collaterals .cart_totals table th, .woocommerce-cart .cart-collaterals .cart_totals table td, .woocommerce-cart .cart-collaterals .cart_totals table th, .woocommerce-checkout .cart-collaterals .cart_totals table td, .woocommerce-checkout .cart-collaterals .cart_totals table th,
+.woocommerce #add_payment_method table.cart td, #add_payment_method table.cart th, .woocommerce-cart table.cart td, .woocommerce-cart table.cart th, .woocommerce-checkout table.cart td, .woocommerce-checkout table.cart th, .woocommerce table.shop_table td, .woocommerce table.shop_table th,.woocommerce .woocommerce-result-count, .woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb {
   color: #3a4d5e;
 }
 .woocommerce td.actions {
   color: #fff !important;
 }
-.woocommerce table.shop_table td, .woocommerce table.shop_table th{
-  color: #3a4d5e;
-}
 .woocommerce a.woocommerce-privacy-policy-link{
   color: #000;
-}
-.woocommerce .woocommerce-result-count, .woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb{
-  color: #3a4d5e;
 }
 .woocommerce .woocommerce-breadcrumb {
   margin-top: 15px;
@@ -1534,7 +1522,7 @@ span.woocommerce-input-wrapper{
   font-size: 14px;
 }
 .woocommerce .star-rating {
-    float: left;
+  float: left;
 }
 .news-item.layout-two .news-text-wrap{
   font-size: 14px;

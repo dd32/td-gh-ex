@@ -16,14 +16,14 @@
   <?php if(get_theme_mod('advance_education_blog_post_description_option') != 'Full Content'){ ?>
     <div class="box-img">
       <?php
-          if ( ! is_single() ) {
-            // If not a single post, highlight the gallery.
-            if ( get_post_gallery() ) {
-              echo '<div class="entry-gallery">';
-                echo ( get_post_gallery() );
-              echo '</div>';
-            };
+        if ( ! is_single() ) {
+          // If not a single post, highlight the gallery.
+          if ( get_post_gallery() ) {
+            echo '<div class="entry-gallery">';
+              echo ( get_post_gallery() );
+            echo '</div>';
           };
+        };
       ?>
     </div>
   <?php } ?>
