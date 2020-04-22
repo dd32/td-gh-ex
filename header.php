@@ -31,7 +31,7 @@
     </div>
   <?php }?>
   <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-business' ); ?></a>
-  <div class="<?php if( get_theme_mod( 'advance_business_sticky_header') != '' || get_theme_mod( 'advance_business_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+  <div class="<?php if( get_theme_mod( 'advance_business_sticky_header', false) != '' || get_theme_mod( 'advance_business_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
     <div id="header">
       <div class="container">
         <div class="main-header">
@@ -90,7 +90,7 @@
             <div class="serach_inner">
               <?php get_search_form(); ?>
             </div>
-            <a href="#" onclick="advance_business_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-business' );?></span></a>
+            <a href="#maincontent" onclick="advance_business_search_close()" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','advance-business' );?></span></a>
           </div>
         </div>
       </div> 

@@ -1,11 +1,10 @@
 jQuery(function($){
- "use strict";
-   jQuery('.main-menu-navigation > ul').superfish({
-     delay:       0,                            
-     animation:   {opacity:'show',height:'show'},  
-     speed:       'fast'                        
-   });
-
+  "use strict";
+  jQuery('.main-menu-navigation > ul').superfish({
+    delay:       0,                            
+    animation:   {opacity:'show',height:'show'},  
+    speed:       'fast'                        
+  });
 });
 
 function advance_business_resmenu_open() {
@@ -16,7 +15,6 @@ function advance_business_resmenu_close() {
 }
 
 /**** Hidden search box ***/
-
 function advance_business_search_open() {
   jQuery(".serach_outer").slideDown(100);
 }
@@ -59,6 +57,6 @@ jQuery(document).ready(function () {
 jQuery(function($){
   $(window).load(function() {
     $("#loader-wrapper").delay(1000).fadeOut("slow");
-      $("#loader").delay(1000).fadeOut("slow");
+    $("#loader").delay(1000).fadeOut("slow");
   })
 });

@@ -21,38 +21,8 @@ function advance_business_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-business'),
 	));
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_business_theme_color_option', array( 
-		'panel' => 'advance_business_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'advance-business' ) 
-	) );
-
-  	$wp_customize->add_setting( 'advance_business_theme_color', array(
-	    'default' => '#ffaa56',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_business_theme_color', array(
-  		'label' => 'Color Option',
-  		'description' => __('One can change complete theme color on just one click.', 'advance-business'),
-	    'section' => 'advance_business_theme_color_option',
-	    'settings' => 'advance_business_theme_color',
-  	)));
-
-  	$wp_customize->add_setting('advance_business_background_skin_mode',array(
-        'default' => __('Transparent Background','advance-business'),
-        'sanitize_callback' => 'advance_business_sanitize_choices'
-	));
-	$wp_customize->add_control('advance_business_background_skin_mode',array(
-        'type' => 'select',
-        'label' => __('Background Type','advance-business'),
-        'section' => 'background_image',
-        'choices' => array(
-            'With Background' => __('With Background','advance-business'),
-            'Transparent Background' => __('Transparent Background','advance-business'),
-        ),
-	) );
-
-	$font_array = array(
+	// font array
+	$advance_business_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -175,7 +145,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	$wp_customize->add_setting('advance_business_paragraph_font_size',array(
@@ -211,7 +181,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -236,7 +206,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -261,7 +231,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'H1 Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -298,7 +268,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'h2 Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -335,7 +305,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'h3 Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -372,7 +342,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'h4 Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -409,7 +379,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'h5 Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -446,7 +416,7 @@ function advance_business_customize_register($wp_customize) {
 	    'section'  => 'advance_business_typography',
 	    'label'    => __( 'h6 Fonts','advance-business'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_business_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -460,6 +430,20 @@ function advance_business_customize_register($wp_customize) {
 		'setting'	=> 'advance_business_h6_font_size',
 		'type'	=> 'text'
 	));
+
+  	$wp_customize->add_setting('advance_business_background_skin_mode',array(
+        'default' => __('Transparent Background','advance-business'),
+        'sanitize_callback' => 'advance_business_sanitize_choices'
+	));
+	$wp_customize->add_control('advance_business_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','advance-business'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','advance-business'),
+            'Transparent Background' => __('Transparent Background','advance-business'),
+        ),
+	) );
 
 	// woocommerce section
 	$wp_customize->add_setting('advance_business_show_related_products',array(
@@ -641,6 +625,23 @@ function advance_business_customize_register($wp_customize) {
 			'step' => 1,
 		),
 	));
+
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_business_theme_color_option', array( 
+		'panel' => 'advance_business_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-business' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_business_theme_color', array(
+	    'default' => '#ffaa56',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_business_theme_color', array(
+  		'label' => 'Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-business'),
+	    'section' => 'advance_business_theme_color_option',
+	    'settings' => 'advance_business_theme_color',
+  	)));
 
 	//Layouts
 	$wp_customize->add_section('advance_business_left_right', array(
@@ -1042,12 +1043,12 @@ function advance_business_customize_register($wp_customize) {
 
 	//Responsive Media Settings
 	$wp_customize->add_section('advance_business_responsive_setting',array(
-		'title'	=> __('Responsive Setting','advance-business'),
+		'title'	=> __('Responsive Settings','advance-business'),
 		'panel' => 'advance_business_panel_id',
 	));
 
     $wp_customize->add_setting('advance_business_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_responsive_sticky_header',array(
@@ -1057,7 +1058,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_responsive_slider',array(
@@ -1066,13 +1067,13 @@ function advance_business_customize_register($wp_customize) {
        'section' => 'advance_business_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_business_responsive_metabox',array(
+    $wp_customize->add_setting('advance_business_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_business_responsive_metabox',array(
+    $wp_customize->add_control('advance_business_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-business'),
+       'label' => __('Scroll To Top','advance-business'),
        'section' => 'advance_business_responsive_setting'
     ));
 
@@ -1093,7 +1094,7 @@ function advance_business_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_business_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_date_hide',array(
@@ -1103,7 +1104,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_comment_hide',array(
@@ -1113,7 +1114,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_author_hide',array(
@@ -1123,7 +1124,7 @@ function advance_business_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_business_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_business_tags_hide',array(
@@ -1154,7 +1155,7 @@ function advance_business_customize_register($wp_customize) {
 	$wp_customize->add_control( 'advance_business_excerpt_number', array(
 		'label'       => esc_html__( 'Excerpt length','advance-business' ),
 		'section'     => 'advance_business_blog_post',
-		'type'        => 'text',
+		'type'        => 'number',
 		'settings'    => 'advance_business_excerpt_number',
 		'input_attrs' => array(
 			'step'             => 2,

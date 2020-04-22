@@ -99,8 +99,8 @@ function advance_business_widgets_init() {
 	));
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('advance_business_footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$advance_business_widget_areas = get_theme_mod('advance_business_footer_widget_areas', '4');
+	for ($i=1; $i<=$advance_business_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'advance-business' ) . $i,
 			'id'            => 'footer-' . $i,
