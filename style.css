@@ -4,7 +4,7 @@ Theme URI:
 Author: Mapro Collins
 Author URI: https://profiles.wordpress.org/ratinatemplates/
 Description: Appdetail  is a simple and easy to use, modern and creative, user friendly and elegant, WordPress theme for blog, news and magazine sites. It is responsive, cross browser compatible, SEO friendly theme with lots of highly created features. Theme have 2 images in slider section as well as video option make theme attractive in looking. Theme customization is very easy in use. Theme comes with beautiful slider section, featured post column, footer options, sidebar options, site design options and many more. It is very light weighted theme based on customizer. Added custom widgets for author information and advertisement will make your site awesome. Try Product today and blog away. Our dedicated support team will guide you in every steps while using theme.
-Version: 1.9
+Version: 2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: appdetail
@@ -2971,7 +2971,7 @@ font-size: 12px;
 #wp-calendar tbody td:hover,#wp-calendar tbody td:focus {border-color:#8224e3;}
 .footer-widget #wp-calendar tbody td:hover,.footer-widget #wp-calendar tbody td:focus {border-color:#b015c8;}
 #wp-calendar tbody td.pad {border:0;}
-#wp-calendar tbody td#today {color:#fff;background-color:#b015c8;}
+#wp-calendar tbody td#today {color:#fff;background-color: #5424bf;}
 #wp-calendar tfoot td#prev a,#wp-calendar tfoot td#next a {color:#b0b0b0;font-size:12px;font-weight:400;position:relative;text-transform:uppercase;bottom:-9px;margin-bottom:1px;}
 #wp-calendar tfoot td#prev {text-align:left;}
 #wp-calendar tfoot td#next {text-align:right;}
@@ -3062,17 +3062,18 @@ margin-top: 5px;
 
  .post-template-default .blog-detail-area ul li{
     list-style: disc;
-        color: #858585;
+        color: #000;
 }
 
 .post-template-default .blog-detail-area ol {
     list-style: decimal;
-    color: #858585;
+    color: #000;
 }
 
 .post-template-default .blog-detail-area ol > li{
 
     list-style: decimal;
+	margin-top:15px;
 }
 
  .post-template-default .blog-detail-area li > ul,
@@ -3197,4 +3198,8 @@ margin-bottom: 30px;
 
     padding-top: 5px;
     padding-bottom: 5px;
+}
+.hpttile
+{
+	color:#fff;
 }

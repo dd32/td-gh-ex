@@ -251,38 +251,6 @@ if ( ! function_exists( 'appdetail_header_service_action' ) ) :
 endif;
 add_action( 'appdetail_header_service_section_action', 'appdetail_header_service_action', 10 );
 
-
-
-if ( ! function_exists( 'appdetail_content_action' ) ) :
-    /**
-     * Header section hook of the theme.
-     *
-     * @since 1.0.0
-     */
-    function appdetail_content_action() {
-        global $appdetail_theme_options;
-        $appdetail_theme_options  = appdetail_get_theme_options();
-
-if(have_posts()) : 
-while(have_posts()) : the_post();
-if(get_the_content()!= "")
-{
-?>
-<section>
-  <div class="container">
-    <div class="row">
-    <?php the_content(); ?> 
-    </div>
-  </div> 
-</section>  
-<?php 
-} 
-endwhile;
-endif;     
-    }
-endif;
-add_action( 'appdetail_content_section_action', 'appdetail_content_action', 10 );
-
 /* -----------------------
 * Header Lower section hook of the theme.
 * @since 1.0.0
@@ -388,9 +356,19 @@ if ( ! function_exists( 'appdetail_header_blog_action' ) ) :
         $appdetail_theme_options  = appdetail_get_theme_options();
         $appdetail_category_cat   = $appdetail_theme_options['appdetail-blog-cat'];
         if( $appdetail_category_cat > 0 ){ ?>
-            <section id="blog" class="blog s-pad">
-                    <?php if(!is_home() || !is_front_page () ) {
-                        appdetail_home_blog();
+            <section id="blog" class="s-pad inner-banner-area">
+                    <?php if(is_home() && is_front_page () ) { ?>
+                       <div class="container">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="all-title">
+										<h3 class="t-border hpttile"><?php
+											echo esc_html__('Blog','appdetail');
+										?></h3>
+									 
+									</div>
+								</div>
+							</div> <?php
                     }
                    
                     ?>
