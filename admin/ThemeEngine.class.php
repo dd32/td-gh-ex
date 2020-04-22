@@ -568,7 +568,7 @@ class AttireThemeEngine {
 		$a_hover_color = 'color:' . esc_attr( $theme_mod['ah_color'] );
 		$css           .= ".attire-content a:not(.btn):hover,.small-menu a:not(.btn):hover{{$a_hover_color};}";
 
-        $css .= self::menuAnimations($theme_mod['dropdown_menu_animation']);
+        $css .= isset($theme_mod['dropdown_menu_animation']) ? self::menuAnimations($theme_mod['dropdown_menu_animation']) : self::menuAnimations('swingin');
 
         $vars = ":root{\r\n";
 		foreach ($color_vars as $var => $val){
