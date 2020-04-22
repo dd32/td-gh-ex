@@ -40,7 +40,7 @@ function best_classifieds_change_logo_class($html)
 add_filter('get_search_form', 'best_classifieds_search_form');
 function best_classifieds_search_form($html) {
 	if(is_front_page()):
-		$html='<form action="<?php echo esc_url(home_url()); ?>" role="search" method="get" id="searchformtop">
+		$html='<form action="'.esc_url(home_url()).'" role="search" method="get" id="searchformtop">
             <div class="filter-category">
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">                           
                     <input type="search"  placeholder="'.esc_attr(get_theme_mod('search_area_placeholder',esc_attr__('What are you looking for?','best-classifieds'))).'" name="s" id="s" required="">                        
