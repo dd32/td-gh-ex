@@ -14,7 +14,7 @@ if (!function_exists('advance_pet_care_setup')):
 function advance_pet_care_setup() {
 
 	$GLOBALS['content_width'] = apply_filters('advance_pet_care_content_width', 640);
-
+	load_theme_textdomain( 'advance-pet-care', get_template_directory() . '/languages' );
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
 	add_theme_support('woocommerce');
@@ -95,8 +95,8 @@ function advance_pet_care_widgets_init() {
 	));
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('advance_pet_care_footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$advance_pet_care_widget_areas = get_theme_mod('advance_pet_care_footer_widget_areas', '4');
+	for ($i=1; $i<=$advance_pet_care_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'advance-pet-care' ) . $i,
 			'id'            => 'footer-' . $i,
@@ -280,10 +280,18 @@ if (!function_exists('advance_pet_care_credit')) {
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'advance_pet_care_loop_columns');
-	if (!function_exists('advance_pet_care_loop_columns')) {
-		function advance_pet_care_loop_columns() {
-		return 3; // 3 products per row
+if (!function_exists('advance_pet_care_loop_columns')) {
+	function advance_pet_care_loop_columns() {
+		$columns = get_theme_mod( 'advance_pet_care_wooproducts_per_columns', 3 );
+		return $columns; // 3 products per row
 	}
+}
+
+//Change number of products that are displayed per page (shop page)
+add_filter( 'loop_shop_per_page', 'advance_pet_care_shop_per_page', 20 );
+function advance_pet_care_shop_per_page( $cols ) {
+  	$cols = get_theme_mod( 'advance_pet_care_wooproducts_per_page', 9 );
+	return $cols;
 }
 
 // Theme enqueue scripts

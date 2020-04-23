@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-21 17:42+0530\n"
+"PO-Revision-Date: 2020-04-17 13:24+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: es\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: 404.php:13
 msgid "Not Found"
-msgstr "Extraviado"
+msgstr "No encontrado"
 
 #: 404.php:14
 msgid "Looks like you have taken a wrong turn&hellip"
@@ -115,8 +115,7 @@ msgstr "Footer Nav"
 msgid "Shop Page Sidebar"
 msgstr "Barra lateral de la página de compras"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "Aparece en la página de la tienda"
 
@@ -222,7 +221,7 @@ msgstr "Siguiente post:"
 #: single.php:34 single.php:59 single.php:86 single.php:110 single.php:138
 #: template-parts/image-layout.php:50
 msgid "Previous"
-msgstr "Anterior"
+msgstr "Previo"
 
 #: single.php:35 single.php:60 single.php:87 single.php:111 single.php:139
 #: template-parts/image-layout.php:51
@@ -437,7 +436,7 @@ msgstr "Agregar contenido de la barra superior"
 msgid "Show / Hide Topbar"
 msgstr "Mostrar / Ocultar barra superior"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "Encabezado pegajoso"
 
@@ -455,7 +454,7 @@ msgstr "Texto de tiempo"
 
 #: inc/customizer.php:645
 msgid "Open at"
-msgstr "Abierto a las"
+msgstr "Abierto a"
 
 #: inc/customizer.php:655
 msgid "Address Text"
@@ -505,8 +504,7 @@ msgstr "Seleccionar página de imagen de diapositiva"
 msgid "Size of image should be 1600 x 633"
 msgstr "El tamaño de la imagen debe ser 1600 x 633."
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "Izquierdo"
 
@@ -514,11 +512,11 @@ msgstr "Izquierdo"
 msgid "Slider Content Alignment"
 msgstr "Alineación de contenido del control deslizante"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "Centrar"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "Derecho"
 
@@ -561,10 +559,6 @@ msgstr "404 Botón de página"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "Ambiente receptivo"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "Encabezado pegajoso"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -646,21 +640,9 @@ msgstr "Texto de copyright"
 msgid "Show / Hide Scroll Top Button"
 msgstr "Mostrar / Ocultar botón de desplazamiento superior"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "Derecho"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
 msgstr "Desplazarse hacia atrás a la posición superior"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "Izquierda"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "Centrar"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

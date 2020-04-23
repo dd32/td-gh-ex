@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-22 16:44+0530\n"
+"PO-Revision-Date: 2020-04-17 13:37+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: it\n"
@@ -25,7 +25,7 @@ msgstr "Non trovato"
 
 #: 404.php:14
 msgid "Looks like you have taken a wrong turn&hellip"
-msgstr "Sembra che tu abbia preso una svolta sbagliata & hellip"
+msgstr "Sembra che tu abbia preso una svolta sbagliata e hellip"
 
 #: 404.php:15 no-results.php:21
 msgid "Dont worry&hellip it happens to the best of us"
@@ -115,14 +115,13 @@ msgstr "Footer Nav"
 msgid "Shop Page Sidebar"
 msgstr "Barra laterale della pagina del negozio"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "Compare sulla pagina del negozio"
 
 #: functions.php:122
 msgid "Single Product Page Sidebar"
-msgstr "Barra laterale della pagina del singolo prodotto"
+msgstr "Barra laterale della pagina di un singolo prodotto"
 
 #: functions.php:277
 msgid "Pet WordPress Theme"
@@ -255,7 +254,7 @@ msgstr "\"a\" Colore etichetta"
 
 #: inc/customizer.php:172
 msgid "\"a\" Tag Fonts"
-msgstr "Caratteri tag \"a\""
+msgstr "Font \"a\""
 
 #: inc/customizer.php:183
 msgid "\"li\" Tag Color"
@@ -263,7 +262,7 @@ msgstr "Colore etichetta \"li\""
 
 #: inc/customizer.php:197
 msgid "\"li\" Tag Fonts"
-msgstr "Caratteri tag \"li\""
+msgstr "Colore etichetta \"li\""
 
 #: inc/customizer.php:208
 msgid "H1 Color"
@@ -437,7 +436,7 @@ msgstr "Aggiungi il contenuto della barra superiore"
 msgid "Show / Hide Topbar"
 msgstr "Mostra / Nascondi barra superiore"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "Testata appiccicosa"
 
@@ -483,7 +482,7 @@ msgstr "Aggiungi link Twitter"
 
 #: inc/customizer.php:705
 msgid "Add Youtube link"
-msgstr "Aggiungi link Youtube"
+msgstr "Aggiungi il link Youtube"
 
 #: inc/customizer.php:716
 msgid "Add Instagram link"
@@ -505,8 +504,7 @@ msgstr "Seleziona Pagina immagine diapositiva"
 msgid "Size of image should be 1600 x 633"
 msgstr "Le dimensioni dell'immagine dovrebbero essere 1600 x 633"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "Sinistra"
 
@@ -514,11 +512,11 @@ msgstr "Sinistra"
 msgid "Slider Content Alignment"
 msgstr "Allineamento del contenuto del dispositivo di scorrimento"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "Centro"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "Destro"
 
@@ -561,10 +559,6 @@ msgstr "404 pulsante pagina"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "Impostazione reattiva"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "Testata appiccicosa"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -646,21 +640,9 @@ msgstr "Testo sul copyright"
 msgid "Show / Hide Scroll Top Button"
 msgstr "Mostra / Nascondi pulsante di scorrimento superiore"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "Destro"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
 msgstr "Scorri indietro alla posizione più alta"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "Sinistra"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "Centro"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

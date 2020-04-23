@@ -7,14 +7,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-21 15:43+0530\n"
+"PO-Revision-Date: 2020-04-17 13:09+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: ar\n"
@@ -26,15 +26,15 @@ msgstr "لم يتم العثور على"
 
 #: 404.php:14
 msgid "Looks like you have taken a wrong turn&hellip"
-msgstr "يبدو أنك قد اتخذت منعطفًا خاطئًا & hellip"
+msgstr "يبدو أنك اتخذت منعطفا وهليبا خاطئين"
 
 #: 404.php:15 no-results.php:21
 msgid "Dont worry&hellip it happens to the best of us"
-msgstr "لا تقلق & hellip يحدث لأفضل منا"
+msgstr "لا تقلق و hellip يحدث لأفضل منا"
 
 #: 404.php:17
 msgid "Back to Home Page"
-msgstr "العودة إلى الصفحة الرئيسية"
+msgstr "يبدو أنك اتخذت منعطفا وهليبا خاطئين. لا تقلق و hellip يحدث لأفضل منا."
 
 #: archive.php:38 archive.php:67 archive.php:98 archive.php:134 archive.php:166
 #: image.php:38 image.php:66 image.php:96 image.php:123 image.php:154
@@ -56,7 +56,7 @@ msgstr "الصفحة التالية"
 #: index.php:136 search.php:38 search.php:64 search.php:92 search.php:117
 #: search.php:146
 msgid "page"
-msgstr "صفحة"
+msgstr "الصفحة"
 
 #: comments.php:28 comments.php:38
 msgid "comments title"
@@ -80,8 +80,8 @@ msgid ""
 "best services to you. Please proceed towards welcome page and give us the "
 "privilege to serve you."
 msgstr ""
-"شكرا لاختيارك ThemeShopy. نحن ملتزمون بإخلاص بتقديم أفضل الخدمات لك. يرجى "
-"المتابعة نحو صفحة الترحيب ومنحنا الامتياز لخدمتك."
+"شكرا لك على اختيار ThemeShopy. نحن ملزمون بصدق بتقديم أفضل خدماتنا لك. يرجى "
+"المضي قدما نحو صفحة الترحيب وتعطينا امتياز خدمتكم."
 
 #: functions.php:61
 msgid "Click here..."
@@ -93,7 +93,7 @@ msgstr "مدونة الشريط الجانبي"
 
 #: functions.php:69
 msgid "Appears on blog page sidebar"
-msgstr "يظهر على الشريط الجانبي لصفحة المدونة"
+msgstr "القائمة المستجيبة"
 
 #: functions.php:78
 msgid "page sidebar"
@@ -105,7 +105,7 @@ msgstr "يظهر على الشريط الجانبي للصفحة"
 
 #: functions.php:88
 msgid "Third Column Sidebar"
-msgstr "العمود الثالث الشريط الجانبي"
+msgstr "الشريط الجانبي للعمود الثالث"
 
 #: functions.php:101
 msgid "Footer Nav"
@@ -113,10 +113,9 @@ msgstr "تذييل التنقل"
 
 #: functions.php:112
 msgid "Shop Page Sidebar"
-msgstr "تسوق صفحة الشريط الجانبي"
+msgstr "متجر الشريط الجانبي للصفحة"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "يظهر على صفحة المتجر"
 
@@ -126,7 +125,7 @@ msgstr "الشريط الجانبي لصفحة منتج واحد"
 
 #: functions.php:277
 msgid "Pet WordPress Theme"
-msgstr "الحيوانات الأليفة وورد الموضوع"
+msgstr "وورد موضوع الحيوانات الأليفة"
 
 #: header.php:135
 msgid "Open Menu"
@@ -138,15 +137,15 @@ msgstr "القائمة العلوية"
 
 #: header.php:139
 msgid "Close Menu"
-msgstr "إغلاق القائمة"
+msgstr "أغلق القائمة"
 
 #: header.php:184 searchform.php:12 searchform.php:14
 msgid "Search"
-msgstr "بحث"
+msgstr "بحثبحث"
 
 #: header.php:194
 msgid "serach-outer"
-msgstr "بحث الناخبين"
+msgstr "ناخب البحث"
 
 #: no-results.php:12
 msgid "Nothing Found"
@@ -154,14 +153,14 @@ msgstr "لم يتم العثور على شيء"
 
 #: no-results.php:17
 msgid "Ready to publish your first post? Get started here"
-msgstr "مستعد لنشر أول منشوراتك؟ ابدأ هنا"
+msgstr "جاهز لنشر أول منشوراتك؟ ابدأ هنا"
 
 #: no-results.php:19
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords"
 msgstr ""
-"آسف ، ولكن لا شيء يطابق مصطلحات البحث الخاصة بك. أرجو المحاولة مرة أخرى "
+"عذرا ، ولكن لا شيء يطابق شروط البحث الخاصة بك. أرجو المحاولة مرة أخرى "
 "بإستخدام كلمات أخرى"
 
 #: no-results.php:24
@@ -207,7 +206,7 @@ msgstr "الصفحات:"
 
 #: template-parts/image-layout.php:43
 msgid "Parent post link"
-msgstr "رابط مشاركة الوالد"
+msgstr "رابط مشاركة الوالدين"
 
 #: single.php:32 single.php:57 single.php:84 single.php:108 single.php:136
 #: template-parts/image-layout.php:47
@@ -217,7 +216,7 @@ msgstr "التالى"
 #: single.php:33 single.php:58 single.php:85 single.php:109 single.php:137
 #: template-parts/image-layout.php:48
 msgid "Next post:"
-msgstr "المنشور التالي:"
+msgstr "الوظيفة التالية:"
 
 #: single.php:34 single.php:59 single.php:86 single.php:110 single.php:138
 #: template-parts/image-layout.php:50
@@ -235,7 +234,7 @@ msgstr "تعديل"
 
 #: inc/customizer.php:111
 msgid "Typography"
-msgstr "طباعة"
+msgstr "الطباعة"
 
 #: inc/customizer.php:122
 msgid "Paragraph Color"
@@ -267,11 +266,11 @@ msgstr "\"li\" علامة الخطوط"
 
 #: inc/customizer.php:208
 msgid "H1 Color"
-msgstr "H1 اللون"
+msgstr "لون H1"
 
 #: inc/customizer.php:222
 msgid "H1 Fonts"
-msgstr "الخطوط H1"
+msgstr "خطوط H1"
 
 #: inc/customizer.php:233
 msgid "H1 Font Size"
@@ -279,11 +278,11 @@ msgstr "حجم الخط H1"
 
 #: inc/customizer.php:245
 msgid "H2 Color"
-msgstr "H2 اللون"
+msgstr "لون H2"
 
 #: inc/customizer.php:259
 msgid "H2 Fonts"
-msgstr "الخطوط H2"
+msgstr "خطوط H2"
 
 #: inc/customizer.php:270
 msgid "H2 Font Size"
@@ -291,11 +290,11 @@ msgstr "حجم الخط H2"
 
 #: inc/customizer.php:282
 msgid "H3 Color"
-msgstr "H3 اللون"
+msgstr "لون H3"
 
 #: inc/customizer.php:296
 msgid "H3 Fonts"
-msgstr "الخطوط H3"
+msgstr "H3 الخطوط"
 
 #: inc/customizer.php:307
 msgid "H3 Font Size"
@@ -303,11 +302,11 @@ msgstr "حجم الخط H3"
 
 #: inc/customizer.php:319
 msgid "H4 Color"
-msgstr "H4 اللون"
+msgstr "لون H4"
 
 #: inc/customizer.php:333
 msgid "H4 Fonts"
-msgstr "الخطوط H4"
+msgstr "H4 الخطوط"
 
 #: inc/customizer.php:344
 msgid "H4 Font Size"
@@ -319,7 +318,7 @@ msgstr "H5 اللون"
 
 #: inc/customizer.php:370
 msgid "H5 Fonts"
-msgstr "الخطوط H5"
+msgstr "H5 الخطوط"
 
 #: inc/customizer.php:381
 msgid "H5 Font Size"
@@ -327,11 +326,11 @@ msgstr "حجم الخط H5"
 
 #: inc/customizer.php:393
 msgid "H6 Color"
-msgstr "H6 اللون"
+msgstr "لون H6"
 
 #: inc/customizer.php:407
 msgid "H6 Fonts"
-msgstr "الخطوط H6"
+msgstr "H6 الخطوط"
 
 #: inc/customizer.php:418
 msgid "H6 Font Size"
@@ -347,7 +346,7 @@ msgstr "وصف ما تفعله هذه اللوحة."
 
 #: inc/customizer.php:435
 msgid "Theme Color Option"
-msgstr "خيار لون الموضوع"
+msgstr "خيار لون الموضوعخيار لون السمة"
 
 #: inc/customizer.php:444 inc/customizer.php:455
 msgid "One can change complete theme color on just one click."
@@ -359,11 +358,11 @@ msgstr "إعدادات الشكل الظاهري"
 
 #: inc/customizer.php:473
 msgid "Show / Hide Preloader"
-msgstr "إظهار / إخفاء Preloader"
+msgstr "إظهار / إخفاء التحميل المسبق"
 
 #: inc/customizer.php:483
 msgid "Show / Hide Woocommerce Page Sidebar"
-msgstr "إظهار / إخفاء Woocommerce صفحة الشريط الجانبي"
+msgstr "إظهار / إخفاء الشريط الجانبي لصفحة Woocommerce"
 
 #: inc/customizer.php:493
 msgid "Show / Hide Single Product Page Sidebar"
@@ -387,7 +386,7 @@ msgstr "حاوية"
 
 #: inc/customizer.php:509
 msgid "Box Container"
-msgstr "صندوق الحاوية"
+msgstr "حاوية صندوق"
 
 #: inc/customizer.php:515 inc/customizer.php:524
 msgid "Right Sidebar"
@@ -395,7 +394,7 @@ msgstr "الشريط الجانبي الأيمن"
 
 #: inc/customizer.php:520
 msgid "Change Layouts"
-msgstr "تغيير المخططات"
+msgstr "تغيير التخطيطات"
 
 #: inc/customizer.php:523
 msgid "Left Sidebar"
@@ -411,7 +410,7 @@ msgstr "تخطيط الشبكة"
 
 #: inc/customizer.php:532
 msgid "Button Option"
-msgstr "زر الخيار"
+msgstr "خيار الزر"
 
 #: inc/customizer.php:541
 msgid "Top and Bottom Padding"
@@ -427,17 +426,17 @@ msgstr "زر الحدود نصف قطرها"
 
 #: inc/customizer.php:583
 msgid "Topbar Section"
-msgstr "قسم توببار"
+msgstr "قسم Topbar"
 
 #: inc/customizer.php:584
 msgid "Add topbar content"
-msgstr "إضافة محتوى topbar"
+msgstr "أضف محتوى الشريط العلوي"
 
 #: inc/customizer.php:596
 msgid "Show / Hide Topbar"
-msgstr "إظهار / إخفاء Topbar"
+msgstr "إظهار / إخفاء الشريط العلوي"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "رأس مثبت"
 
@@ -451,7 +450,7 @@ msgstr "رقم الهاتف"
 
 #: inc/customizer.php:635
 msgid "Timing Text"
-msgstr "توقيت النص"
+msgstr "نص التوقيت"
 
 #: inc/customizer.php:645
 msgid "Open at"
@@ -471,7 +470,7 @@ msgstr "الرموز الاجتماعية"
 
 #: inc/customizer.php:673
 msgid "Add social links"
-msgstr "إضافة الروابط الاجتماعية"
+msgstr "أضف روابط اجتماعية"
 
 #: inc/customizer.php:683
 msgid "Add Facebook link"
@@ -487,7 +486,7 @@ msgstr "إضافة رابط يوتيوب"
 
 #: inc/customizer.php:716
 msgid "Add Instagram link"
-msgstr "إضافة رابط Instagram"
+msgstr "أضف رابط Instagram"
 
 #: inc/customizer.php:724
 msgid "Slider Settings"
@@ -505,20 +504,19 @@ msgstr "حدد صفحة صورة الشريحة"
 msgid "Size of image should be 1600 x 633"
 msgstr "يجب أن يكون حجم الصورة 1600 × 633"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "اليسار"
 
 #: inc/customizer.php:762
 msgid "Slider Content Alignment"
-msgstr "شريط تمرير محاذاة المحتوى"
+msgstr "محاذاة محتوى شريط التمرير"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "مركز"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "حق"
 
@@ -536,7 +534,7 @@ msgstr "قسم الترحيب"
 
 #: inc/customizer.php:817
 msgid "Add Welcome sections below."
-msgstr "إضافة أقسام الترحيب أدناه."
+msgstr "أضف أقسام الترحيب أدناه."
 
 #: inc/customizer.php:835
 msgid "Select post"
@@ -548,7 +546,7 @@ msgstr "404 صفحة"
 
 #: inc/customizer.php:850
 msgid "404 Page Title"
-msgstr "404 صفحة العنوان"
+msgstr "404 عنوان الصفحة"
 
 #: inc/customizer.php:860
 msgid "404 Page Content"
@@ -556,15 +554,11 @@ msgstr "404 محتوى الصفحة"
 
 #: inc/customizer.php:870
 msgid "404 Page Button"
-msgstr "404 صفحة زر"
+msgstr "404 زر الصفحة"
 
 #: inc/customizer.php:877
 msgid "Responsive Setting"
-msgstr "إعداد استجابة"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "رأس مثبت"
+msgstr "إعداد متجاوب"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -572,7 +566,7 @@ msgstr "المنزلق"
 
 #: inc/customizer.php:907
 msgid "Metabox"
-msgstr "Metabox"
+msgstr "ميتابوكس"
 
 #: inc/customizer.php:917
 msgid "Sidebar"
@@ -584,7 +578,7 @@ msgstr "إعدادات صفحة المدونة"
 
 #: inc/customizer.php:933
 msgid "Post Date"
-msgstr "تاريخ آخر"
+msgstr "تاريخ آخرتاريخ آخر"
 
 #: inc/customizer.php:943
 msgid "Comments"
@@ -596,7 +590,7 @@ msgstr "مؤلف"
 
 #: inc/customizer.php:963
 msgid "Single Post Tags"
-msgstr "وظيفة واحدة العلامات"
+msgstr "علامات مشاركة واحدة"
 
 #: inc/customizer.php:972
 msgid "Excerpt length"
@@ -608,19 +602,19 @@ msgstr "إضافة نص الزر"
 
 #: inc/customizer.php:995
 msgid "Footer Text"
-msgstr "نص تذييل الصفحة"
+msgstr "نص التذييل"
 
 #: inc/customizer.php:1006
 msgid "Footer widget area"
-msgstr "منطقة تذييل القطعة"
+msgstr "منطقة القطعة تذييل"
 
 #: inc/customizer.php:1008
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
-"حدد عدد مناطق عنصر واجهة التعامل التي تريدها في التذييل. بعد ذلك ، انتقل إلى "
-"Appearance> Widgets وقم بإضافة الحاجيات الخاصة بك."
+"حدد عدد مناطق القطعة التي تريدها في التذييل. بعد ذلك ، انتقل إلى Appearance> "
+"Widgets وأضف Widgets."
 
 #: inc/customizer.php:1010
 msgid "One"
@@ -646,25 +640,13 @@ msgstr "نص حقوق النشر"
 msgid "Show / Hide Scroll Top Button"
 msgstr "إظهار / إخفاء زر التمرير العلوي"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "حق"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
-msgstr "انتقل مرة أخرى إلى أعلى منصب"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "اليسار"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "مركز"
+msgstr "قم بالتمرير إلى أعلى الموضع"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"
-msgstr "رعاية الحيوانات الأليفة الموضوع"
+msgstr "موضوع رعاية الحيوانات الأليفة"
 
 #: inc/customizer.php:1133
 msgid "Go Pro"

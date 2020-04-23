@@ -7,25 +7,25 @@ get_header(); ?>
 <main role="main" id="maincontent">
   <?php do_action( 'advance_pet_care_above_slider' ); ?>
 
-  <?php if( get_theme_mod( 'advance_pet_care_slider_hide') != '') { ?>
+  <?php if( get_theme_mod( 'advance_pet_care_slider_hide', false) != '' || get_theme_mod( 'advance_pet_care_responsive_slider', false) != '') { ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_pages = array();
+        <?php $advance_pet_care_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_pet_care_slider_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_pages[] = $mod;
+              $advance_pet_care_slider_pages[] = $mod;
             }
           }
-          if( !empty($slider_pages) ) :
+          if( !empty($advance_pet_care_slider_pages) ) :
             $args = array(
               'post_type' => 'page',
-              'post__in' => $slider_pages,
+              'post__in' => $advance_pet_care_slider_pages,
               'orderby' => 'post__in'
             );
             $query = new WP_Query( $args );
-            if ( $query->have_posts() ) :
-              $i = 1;
+          if ( $query->have_posts() ) :
+            $i = 1;
         ?>     
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -33,10 +33,10 @@ get_header(); ?>
               <?php the_post_thumbnail(); ?>
               <div class="carousel-caption">
                 <div class="inner_carousel">
-                  <h1><?php the_title(); ?></h1>
-                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_pet_care_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_pet_care_slider_excerpt_length','20')))); ?></p>
+                  <h1><?php esc_html(the_title()); ?></h1>
+                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_pet_care_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_pet_care_slider_excerpt_length','15')))); ?></p>
                   <div class="get-apt-btn">
-                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('GET APPOINTMENT','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'GET APPOINTMENT','advance-pet-care' );?></span></a>
+                    <a href="<?php esc_url(the_permalink()); ?>"><?php echo esc_html_e('GET APPOINTMENT','advance-pet-care'); ?><span class="screen-reader-text"><?php esc_html_e( 'GET APPOINTMENT','advance-pet-care' );?></span></a>
                   </div>
                 </div>
               </div>
@@ -78,10 +78,10 @@ get_header(); ?>
                 <?php the_post_thumbnail(); ?>              
               </div>
               <div class="col-lg-7 col-md-7">
-                <h2><?php the_title(); ?></h2>
+                <h2><?php esc_html(the_title()); ?></h2>
                 <p><?php the_excerpt(); ?></p>            
                 <div class ="discover-btn">
-                  <a href="<?php the_permalink(); ?>"><span><?php echo esc_html('DISCOVER MORE','advance-pet-care'); ?></span><span class="screen-reader-text"><?php esc_html_e( 'DISCOVER MORE','advance-pet-care' );?></span></a>
+                  <a href="<?php esc_url(the_permalink()); ?>"><span><?php echo esc_html('DISCOVER MORE','advance-pet-care'); ?></span><span class="screen-reader-text"><?php esc_html_e( 'DISCOVER MORE','advance-pet-care' );?></span></a>
                 </div>                
               </div>
             <?php endwhile; 

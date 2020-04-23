@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-22 18:13+0530\n"
+"PO-Revision-Date: 2020-04-17 14:26+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: tr\n"
@@ -115,8 +115,7 @@ msgstr "Altbilgi Gezintisi"
 msgid "Shop Page Sidebar"
 msgstr "Mağaza Sayfası Kenar Çubuğu"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "Mağaza sayfasında görünüyor"
 
@@ -295,7 +294,7 @@ msgstr "H3 Renk"
 
 #: inc/customizer.php:296
 msgid "H3 Fonts"
-msgstr "H3 Yazı Tipleri"
+msgstr "H3 Fonts"
 
 #: inc/customizer.php:307
 msgid "H3 Font Size"
@@ -437,7 +436,7 @@ msgstr "Üst çubuk içeriği ekle"
 msgid "Show / Hide Topbar"
 msgstr "Üst Çubuğu Göster / Gizle"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "Yapışkan Başlık"
 
@@ -505,8 +504,7 @@ msgstr "Slayt Görüntüsü Sayfasını Seçin"
 msgid "Size of image should be 1600 x 633"
 msgstr "Resmin boyutu 1600 x 633 olmalıdır"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "Ayrıldı"
 
@@ -514,11 +512,11 @@ msgstr "Ayrıldı"
 msgid "Slider Content Alignment"
 msgstr "Kaydırıcı İçeriği Hizalaması"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "merkez"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "Sağ"
 
@@ -561,10 +559,6 @@ msgstr "404 Sayfa Düğmesi"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "Duyarlı Ortam"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "Yapışkan Başlık"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -624,7 +618,7 @@ msgstr ""
 
 #: inc/customizer.php:1010
 msgid "One"
-msgstr "One"
+msgstr "Bir"
 
 #: inc/customizer.php:1011
 msgid "Two"
@@ -646,21 +640,9 @@ msgstr "Telif Hakkı Metni"
 msgid "Show / Hide Scroll Top Button"
 msgstr "Kaydırma Üst Düğmesini Göster / Gizle"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "Sağ"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
-msgstr "Üst Konuma Geri Dön"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "Ayrıldı"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "merkez"
+msgstr "Üst Pozisyona Geri Dön"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

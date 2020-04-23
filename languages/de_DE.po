@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-21 16:35+0530\n"
+"PO-Revision-Date: 2020-04-17 13:16+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -25,11 +25,12 @@ msgstr "Nicht gefunden"
 
 #: 404.php:14
 msgid "Looks like you have taken a wrong turn&hellip"
-msgstr "Sieht so aus, als hättest du einen falschen Weg eingeschlagen"
+msgstr "Sieht so aus, als hättest du eine falsche Wendung genommen"
 
 #: 404.php:15 no-results.php:21
 msgid "Dont worry&hellip it happens to the best of us"
-msgstr "Mach dir keine Sorgen und verdammt, es passiert den Besten von uns"
+msgstr ""
+"Mach dir keine Sorgen und verdammt noch mal, es passiert den Besten von uns"
 
 #: 404.php:17
 msgid "Back to Home Page"
@@ -59,7 +60,7 @@ msgstr "Seite"
 
 #: comments.php:28 comments.php:38
 msgid "comments title"
-msgstr "Kommentartitel"
+msgstr "Kommentar Titel"
 
 #: comments.php:68
 msgid "Comments are closed"
@@ -81,8 +82,8 @@ msgid ""
 msgstr ""
 "Vielen Dank, dass Sie sich für ThemeShopy entschieden haben. Wir sind "
 "aufrichtig verpflichtet, Ihnen unseren besten Service anzubieten. Bitte "
-"fahren Sie mit der Begrüßungsseite fort und geben Sie uns das Privileg, "
-"Ihnen zu dienen."
+"gehen Sie zur Begrüßungsseite und geben Sie uns das Privileg, Ihnen zu "
+"dienen."
 
 #: functions.php:61
 msgid "Click here..."
@@ -90,11 +91,11 @@ msgstr "Klicke hier..."
 
 #: functions.php:68
 msgid "Blog Sidebar"
-msgstr "Blog-Sidebar"
+msgstr "Blog-Seitenleiste"
 
 #: functions.php:69
 msgid "Appears on blog page sidebar"
-msgstr "Erscheint auf der Blog-Seitenleiste"
+msgstr "Erscheint in der Seitenleiste der Blog-Seite"
 
 #: functions.php:78
 msgid "page sidebar"
@@ -102,7 +103,7 @@ msgstr "Seitenleiste"
 
 #: functions.php:79 functions.php:89
 msgid "Appears on page sidebar"
-msgstr "Erscheint auf der Seitenleiste"
+msgstr "Erscheint in der Seitenleiste"
 
 #: functions.php:88
 msgid "Third Column Sidebar"
@@ -110,14 +111,13 @@ msgstr "Seitenleiste der dritten Spalte"
 
 #: functions.php:101
 msgid "Footer Nav"
-msgstr "Footer Nav"
+msgstr "Fußzeile Nav"
 
 #: functions.php:112
 msgid "Shop Page Sidebar"
 msgstr "Seitenleiste der Shop-Seite"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "Erscheint auf der Shop-Seite"
 
@@ -127,7 +127,7 @@ msgstr "Seitenleiste für einzelne Produktseiten"
 
 #: functions.php:277
 msgid "Pet WordPress Theme"
-msgstr "Haustier WordPress Theme"
+msgstr "Pet WordPress Theme"
 
 #: header.php:135
 msgid "Open Menu"
@@ -162,8 +162,8 @@ msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords"
 msgstr ""
-"Es tut uns leid, aber es stimmt nichts mit Ihren Suchbegriffen überein. "
-"Bitte versuchen Sie es mit anderen Suchbegriffen erneut"
+"Entschuldigung, aber nichts stimmte mit Ihren Suchbegriffen überein. Bitte "
+"versuchen Sie es erneut mit verschiedenen Schlüsselwörtern"
 
 #: no-results.php:24
 msgid "Return to Home Page"
@@ -179,7 +179,7 @@ msgstr "Platzhalter"
 
 #: searchform.php:14
 msgid "submit button"
-msgstr "Schaltfläche \"Senden\""
+msgstr "Senden-Schaltfläche"
 
 #: sidebar.php:11
 msgid "Archives"
@@ -208,7 +208,7 @@ msgstr "Seiten:"
 
 #: template-parts/image-layout.php:43
 msgid "Parent post link"
-msgstr "Übergeordneter Beitragslink"
+msgstr "Link zum übergeordneten Beitrag"
 
 #: single.php:32 single.php:57 single.php:84 single.php:108 single.php:136
 #: template-parts/image-layout.php:47
@@ -348,15 +348,15 @@ msgstr "Beschreibung der Funktionen dieses Panels."
 
 #: inc/customizer.php:435
 msgid "Theme Color Option"
-msgstr "Theme Farboption"
+msgstr "Themenfarboption"
 
 #: inc/customizer.php:444 inc/customizer.php:455
 msgid "One can change complete theme color on just one click."
-msgstr "Man kann die komplette Themenfarbe mit nur einem Klick ändern."
+msgstr "Mit nur einem Klick kann die komplette Themenfarbe geändert werden."
 
 #: inc/customizer.php:462
 msgid "Layout Settings"
-msgstr "Layout-Einstellungen"
+msgstr "Layouteinstellungen"
 
 #: inc/customizer.php:473
 msgid "Show / Hide Preloader"
@@ -376,7 +376,7 @@ msgstr "Standard"
 
 #: inc/customizer.php:503
 msgid "Container Box"
-msgstr "Behälterkasten"
+msgstr "Behälterbox"
 
 #: inc/customizer.php:504
 msgid "Here you can change the Width layout."
@@ -388,7 +388,7 @@ msgstr "Container"
 
 #: inc/customizer.php:509
 msgid "Box Container"
-msgstr "Box Container"
+msgstr "Kastenbehälter"
 
 #: inc/customizer.php:515 inc/customizer.php:524
 msgid "Right Sidebar"
@@ -428,17 +428,17 @@ msgstr "Schaltflächenrandradius"
 
 #: inc/customizer.php:583
 msgid "Topbar Section"
-msgstr "Topbar-Bereich"
+msgstr "Abschnitt der oberen Leiste"
 
 #: inc/customizer.php:584
 msgid "Add topbar content"
-msgstr "Fügen Sie den Inhalt der oberen Leiste hinzu"
+msgstr "Fügen Sie Inhalte der oberen Leiste hinzu"
 
 #: inc/customizer.php:596
 msgid "Show / Hide Topbar"
 msgstr "Topbar ein- / ausblenden"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "Sticky Header"
 
@@ -456,11 +456,11 @@ msgstr "Timing-Text"
 
 #: inc/customizer.php:645
 msgid "Open at"
-msgstr "Geöffnet um"
+msgstr "Öffnen um"
 
 #: inc/customizer.php:655
 msgid "Address Text"
-msgstr "Adressentext"
+msgstr "Adresstext"
 
 #: inc/customizer.php:665
 msgid "Address"
@@ -468,7 +468,7 @@ msgstr "Adresse"
 
 #: inc/customizer.php:672
 msgid "Social Icons"
-msgstr "Soziale Symbole"
+msgstr "Soziale Ikonen"
 
 #: inc/customizer.php:673
 msgid "Add social links"
@@ -500,14 +500,13 @@ msgstr "Schieberegler ein- / ausblenden"
 
 #: inc/customizer.php:747
 msgid "Select Slide Image Page"
-msgstr "Wählen Sie Slide Image Page"
+msgstr "Wählen Sie Folienbildseite"
 
 #: inc/customizer.php:748
 msgid "Size of image should be 1600 x 633"
-msgstr "Die Bildgröße sollte 1600 x 633 sein"
+msgstr "Die Bildgröße sollte 1600 x 633 betragen"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "Links"
 
@@ -515,11 +514,11 @@ msgstr "Links"
 msgid "Slider Content Alignment"
 msgstr "Ausrichtung des Schiebereglerinhalts"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "Center"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "Richtig"
 
@@ -533,7 +532,7 @@ msgstr "Deckkraft des Schiebereglers"
 
 #: inc/customizer.php:816
 msgid "Welcome Section"
-msgstr "Willkommensbereich"
+msgstr "Begrüßungsabschnitt"
 
 #: inc/customizer.php:817
 msgid "Add Welcome sections below."
@@ -562,10 +561,6 @@ msgstr "404 Seitentaste"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "Reaktionsschnelle Einstellung"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "Sticky Header"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -597,11 +592,11 @@ msgstr "Autor"
 
 #: inc/customizer.php:963
 msgid "Single Post Tags"
-msgstr "Einzelne Post Tags"
+msgstr "Einzelne Post-Tags"
 
 #: inc/customizer.php:972
 msgid "Excerpt length"
-msgstr "Auszug Länge"
+msgstr "Auszugslänge"
 
 #: inc/customizer.php:988
 msgid "Add Button Text"
@@ -613,16 +608,15 @@ msgstr "Fusszeile"
 
 #: inc/customizer.php:1006
 msgid "Footer widget area"
-msgstr "Footer-Widget-Bereich"
+msgstr "Fußzeilen-Widget-Bereich"
 
 #: inc/customizer.php:1008
 msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
-"Wählen Sie die Anzahl der Widgetbereiche aus, die in der Fußzeile angezeigt "
-"werden sollen. Gehen Sie danach zu Darstellung> Widgets und fügen Sie Ihre "
-"Widgets hinzu."
+"Wählen Sie die Anzahl der gewünschten Widget-Bereiche in der Fußzeile aus. "
+"Gehen Sie danach zu Darstellung> Widgets und fügen Sie Ihre Widgets hinzu."
 
 #: inc/customizer.php:1010
 msgid "One"
@@ -646,23 +640,11 @@ msgstr "Copyright-Text"
 
 #: inc/customizer.php:1033
 msgid "Show / Hide Scroll Top Button"
-msgstr "Scroll Top Button einblenden / ausblenden"
-
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "Richtig"
+msgstr "Scroll Top Button ein- / ausblenden"
 
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
 msgstr "Scrollen Sie zurück zur obersten Position"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "Links"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "Center"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-22 17:52+0530\n"
+"PO-Revision-Date: 2020-04-17 14:38+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: zh\n"
@@ -29,7 +29,7 @@ msgstr "看来您走错了弯"
 
 #: 404.php:15 no-results.php:21
 msgid "Dont worry&hellip it happens to the best of us"
-msgstr "别担心，这对我们所有人来说都是好事"
+msgstr "不要担心，这会发生在我们所有人身上"
 
 #: 404.php:17
 msgid "Back to Home Page"
@@ -79,8 +79,8 @@ msgid ""
 "best services to you. Please proceed towards welcome page and give us the "
 "privilege to serve you."
 msgstr ""
-"感谢您选择ThemeShopy。 我们真诚地有义务为您提供最好的服务。 请进入欢迎页面，"
-"并赋予我们为您服务的特权。"
+"感谢您选择ThemeShopy。我们真诚地有义务为您提供最好的服务。请进入欢迎页面，并"
+"赋予我们为您服务的特权。"
 
 #: functions.php:61
 msgid "Click here..."
@@ -114,8 +114,7 @@ msgstr "页脚导航"
 msgid "Shop Page Sidebar"
 msgstr "商店页面侧栏"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "出现在商店页面上"
 
@@ -153,13 +152,13 @@ msgstr "没有发现"
 
 #: no-results.php:17
 msgid "Ready to publish your first post? Get started here"
-msgstr "准备发布您的第一篇文章吗？ 从这里开始"
+msgstr "准备发布您的第一篇文章吗？从这里开始"
 
 #: no-results.php:19
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords"
-msgstr "抱歉，没有符合您的搜索条件。 请使用一些其他关键字再试一次"
+msgstr "抱歉，没有符合您的搜索条件。请使用一些其他关键字再试一次"
 
 #: no-results.php:24
 msgid "Return to Home Page"
@@ -376,7 +375,7 @@ msgstr "货柜箱"
 
 #: inc/customizer.php:504
 msgid "Here you can change the Width layout."
-msgstr "您可以在此处更改宽度布局。"
+msgstr "在这里，您可以更改宽度布局。"
 
 #: inc/customizer.php:508
 msgid "Container"
@@ -434,7 +433,7 @@ msgstr "添加顶部栏内容"
 msgid "Show / Hide Topbar"
 msgstr "显示/隐藏顶部栏"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "粘页眉"
 
@@ -502,8 +501,7 @@ msgstr "选择幻灯片图像页面"
 msgid "Size of image should be 1600 x 633"
 msgstr "图片大小应为1600 x 633"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "剩下"
 
@@ -511,11 +509,11 @@ msgstr "剩下"
 msgid "Slider Content Alignment"
 msgstr "滑块内容对齐"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "中央"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "对"
 
@@ -558,10 +556,6 @@ msgstr "404页面按钮"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "响应式设置"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "粘页眉"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -616,7 +610,7 @@ msgid ""
 "Select the number of widget areas you want in the footer. After that, go to "
 "Appearance > Widgets and add your widgets."
 msgstr ""
-"在页脚中选择所需的小部件区域数。 之后，转到外观>小部件并添加您的小部件。"
+"在页脚中选择所需的小部件区域数。之后，转到外观>小部件并添加您的小部件。"
 
 #: inc/customizer.php:1010
 msgid "One"
@@ -642,21 +636,9 @@ msgstr "版权文字"
 msgid "Show / Hide Scroll Top Button"
 msgstr "显示/隐藏滚动顶部按钮"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "对"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
 msgstr "滚动回到顶部位置"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "剩下"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "中央"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

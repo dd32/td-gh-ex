@@ -7,13 +7,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-21 18:14+0530\n"
+"PO-Revision-Date: 2020-04-17 13:30+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -29,7 +29,7 @@ msgstr "On dirait que vous avez pris un mauvais virage et hellip"
 
 #: 404.php:15 no-results.php:21
 msgid "Dont worry&hellip it happens to the best of us"
-msgstr "Ne vous inquiétez pas & hellip ça arrive au meilleur d'entre nous"
+msgstr "Ne vous inquiétez pas & hellip ça arrive au meilleur de nous"
 
 #: 404.php:17
 msgid "Back to Home Page"
@@ -115,8 +115,7 @@ msgstr "Footer Nav"
 msgid "Shop Page Sidebar"
 msgstr "Page latérale de la boutique"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
 msgstr "Apparaît sur la page boutique"
 
@@ -154,7 +153,7 @@ msgstr "rien n'a été trouvé"
 
 #: no-results.php:17
 msgid "Ready to publish your first post? Get started here"
-msgstr "Prêt à publier votre première publication? Commencez ici"
+msgstr "Prêt à publier votre premier poste? Commencez ici"
 
 #: no-results.php:19
 msgid ""
@@ -437,7 +436,7 @@ msgstr "Ajouter du contenu dans la barre supérieure"
 msgid "Show / Hide Topbar"
 msgstr "Afficher / masquer la barre supérieure"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "En-tête collant"
 
@@ -499,14 +498,13 @@ msgstr "Afficher / masquer le curseur"
 
 #: inc/customizer.php:747
 msgid "Select Slide Image Page"
-msgstr "Sélectionner la page de diapositive"
+msgstr "Sélectionnez la page Image de diapositive"
 
 #: inc/customizer.php:748
 msgid "Size of image should be 1600 x 633"
 msgstr "La taille de l'image doit être de 1600 x 633"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "La gauche"
 
@@ -514,11 +512,11 @@ msgstr "La gauche"
 msgid "Slider Content Alignment"
 msgstr "Alignement du contenu du curseur"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "Centre"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "Droit"
 
@@ -536,7 +534,7 @@ msgstr "Section d'accueil"
 
 #: inc/customizer.php:817
 msgid "Add Welcome sections below."
-msgstr "Ajoutez les sections de bienvenue ci-dessous."
+msgstr "Ajoutez les sections Bienvenue ci-dessous."
 
 #: inc/customizer.php:835
 msgid "Select post"
@@ -561,10 +559,6 @@ msgstr "Bouton de page 404"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "Cadre réactif"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "En-tête collant"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -646,21 +640,9 @@ msgstr "Texte de copyright"
 msgid "Show / Hide Scroll Top Button"
 msgstr "Afficher / Masquer le bouton de défilement supérieur"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "Droit"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
 msgstr "Revenir en haut de la page"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "La gauche"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "Centre"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

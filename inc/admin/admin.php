@@ -17,7 +17,7 @@ function advance_pet_care_mostrar_guide() {
 	$return = add_query_arg( array()) ;
 ?>
  <div class="wrapper-info">
-	 <div class="header">
+	<div class="header">
 	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png"  />
 	 	<h2><?php esc_html_e('Welcome to Advance Pet Care Theme', 'advance-pet-care'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-pet-care'); ?></p>
@@ -60,7 +60,6 @@ function advance_pet_care_mostrar_guide() {
 			</div>
 		</div>
 	</div>
-
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'advance-pet-care'); ?></h3>
 	  	<div class="sec-button">

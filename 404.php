@@ -4,7 +4,6 @@
  *
  * @package advance-pet-care
  */
-
 get_header(); ?>
 
 <main role="main" id="maincontent" class="content-ts">

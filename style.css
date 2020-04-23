@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, deeply customizable and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages.
-Version: 0.5.2
+Version: 0.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
@@ -132,6 +132,10 @@ input[type='submit']:hover{
 	position: absolute;
 	top:-9999em;
 	left:-9999em;
+}
+/*elementor*/
+.elementor-html #loader, .elementor-html #loader-wrapper{ 
+  display: none; 
 }
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -987,7 +991,7 @@ article.page-box .box-img {
 .page-box-single .box-image img{
   width: 100%;
 }
-span.post-title {
+.post-title {
   color: #3a4d5e;
 }
 .entry-content a , #comments p a{
@@ -997,7 +1001,10 @@ span.post-title {
 #footer .entry-content a{
   color: #fff;
 }
-article.page-box-single .box-img {
+.wp-calendar-nav-prev a {
+  color: #fff;
+}
+.page-box-single .box-img {
   margin-top: 20px;
 }
 /* Headings */
@@ -1295,7 +1302,11 @@ table#wp-calendar td a {
   display: inline-block;
 } 
 /*------------- Woocommerce --------------*/
-.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb {
+.woocommerce nav.woocommerce-pagination {
+  margin-bottom: 16px;
+}
+.woocommerce .woocommerce-breadcrumb a, 
+.woocommerce .woocommerce-breadcrumb {
   color: #000
 }
 .woocommerce #sidebar {
@@ -1538,6 +1549,15 @@ span.posted_in a{
 }
 .woocommerce-Address {
     max-width: 100%;
+}
+/*woocommerce pagination*/
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+  background: #0d7f71;
+  color: #fff;
+}
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span{
+  padding: 10px 15px;
+  font-size: 18px;
 }
 /*------------- Sidebar -------------*/
 #sidebar caption{
@@ -1875,6 +1895,9 @@ iframe {
     left: 40%;
     right: 50%;
   }
+  #slider .inner_carousel .get-apt-btn a{
+    font-size: 10px;
+  }
 }
 @media screen and (min-width:720px){
 	#footer input[type="submit"]{
@@ -1985,7 +2008,7 @@ iframe {
     color: #fff;
   }
   .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus{
+  a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
     outline: 1px dotted #fff;
     border-bottom: 1px solid #fff;
   }
@@ -2169,8 +2192,8 @@ iframe {
   .social-icons i{
     font-size: 17px;
   }
-  .phone, .mail{
-    background: none;
+  .phone, .mail, .primary-navigation a:focus{
+    background: none !important;
   }
   .woocommerce-cart table.cart td.actions .coupon .input-text{
     font-size: 15px;

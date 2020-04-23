@@ -7,14 +7,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-22 17:29+0530\n"
+"PO-Revision-Date: 2020-04-17 14:13+0530\n"
 "Language-Team: \n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "POT-Creation-Date: \n"
 "Last-Translator: \n"
 "Language: ru\n"
@@ -114,18 +114,17 @@ msgstr "Нижний колонтитул"
 
 #: functions.php:112
 msgid "Shop Page Sidebar"
-msgstr ""
+msgstr "Боковая панель страницы магазина"
 
-#: functions.php:113
-#: functions.php:123
+#: functions.php:113 functions.php:123
 msgid "Appears on shop page"
-msgstr ""
+msgstr "Появляется на странице магазина"
 
 #: functions.php:122
 msgid "Single Product Page Sidebar"
-msgstr ""
+msgstr "Боковая панель одной страницы продукта"
 
-#: functions.php:257
+#: functions.php:277
 msgid "Pet WordPress Theme"
 msgstr "Pet WordPress Theme"
 
@@ -135,7 +134,7 @@ msgstr "Открытое меню"
 
 #: header.php:138
 msgid "Top Menu"
-msgstr "Верхнее меню"
+msgstr "Главное меню"
 
 #: header.php:139
 msgid "Close Menu"
@@ -256,7 +255,7 @@ msgstr "Цвет метки \"а\""
 
 #: inc/customizer.php:172
 msgid "\"a\" Tag Fonts"
-msgstr "Тэг шрифты \"a\""
+msgstr "\"a\" Tag Fonts"
 
 #: inc/customizer.php:183
 msgid "\"li\" Tag Color"
@@ -320,7 +319,7 @@ msgstr "H5 Color"
 
 #: inc/customizer.php:370
 msgid "H5 Fonts"
-msgstr "H5 шрифты"
+msgstr "H5 Шрифты"
 
 #: inc/customizer.php:381
 msgid "H5 Font Size"
@@ -358,7 +357,7 @@ msgstr "Можно полностью изменить цвет темы все�
 msgid "Layout Settings"
 msgstr "Настройки макета"
 
-: inc/customizer.php:473
+#: inc/customizer.php:473
 msgid "Show / Hide Preloader"
 msgstr "Показать / Скрыть Preloader"
 
@@ -368,7 +367,7 @@ msgstr "Показать / скрыть боковую панель страни
 
 #: inc/customizer.php:493
 msgid "Show / Hide Single Product Page Sidebar"
-msgstr "Показать / скрыть боковую панель страницы одного продукта"
+msgstr "Показать / скрыть одну боковую панель страницы продукта"
 
 #: inc/customizer.php:498 inc/customizer.php:477
 msgid "Default"
@@ -438,7 +437,7 @@ msgstr "Добавить содержимое верхней панели"
 msgid "Show / Hide Topbar"
 msgstr "Показать / Скрыть Topbar"
 
-#: inc/customizer.php:606
+#: inc/customizer.php:606 inc/customizer.php:887
 msgid "Sticky Header"
 msgstr "Липкий Заголовок"
 
@@ -448,7 +447,7 @@ msgstr "Почта Адрес"
 
 #: inc/customizer.php:625
 msgid "Phone Number"
-msgstr "Телефонный номер"
+msgstr "Номер телефона"
 
 #: inc/customizer.php:635
 msgid "Timing Text"
@@ -487,22 +486,18 @@ msgid "Add Youtube link"
 msgstr "Добавить ссылку на Youtube"
 
 #: inc/customizer.php:716
-msgid "Add Google Plus link"
-msgstr "Добавить ссылку Google Plus"
-
-#: inc/customizer.php:724
 msgid "Add Instagram link"
 msgstr "Добавить ссылку в Instagram"
 
-#: inc/customizer.php:735
+#: inc/customizer.php:724
 msgid "Slider Settings"
 msgstr "Настройки слайдера"
 
-#: inc/customizer.php:747
+#: inc/customizer.php:735
 msgid "Show / Hide slider"
 msgstr "Показать / Скрыть слайдер"
 
-#: inc/customizer.php:748
+#: inc/customizer.php:747
 msgid "Select Slide Image Page"
 msgstr "Выберите страницу слайд-изображения"
 
@@ -510,8 +505,7 @@ msgstr "Выберите страницу слайд-изображения"
 msgid "Size of image should be 1600 x 633"
 msgstr "Размер изображения должен быть 1600 х 633"
 
-#: inc/customizer.php:757
-#: inc/customizer.php:766
+#: inc/customizer.php:757 inc/customizer.php:766 inc/customizer.php:1046
 msgid "Left"
 msgstr "Осталось"
 
@@ -519,11 +513,11 @@ msgstr "Осталось"
 msgid "Slider Content Alignment"
 msgstr "Выравнивание содержимого слайдера"
 
-#: inc/customizer.php:765
+#: inc/customizer.php:765 inc/customizer.php:1048
 msgid "Center"
 msgstr "Центр"
 
-#: inc/customizer.php:767
+#: inc/customizer.php:767 inc/customizer.php:1038 inc/customizer.php:1047
 msgid "Right"
 msgstr "Правильно"
 
@@ -557,7 +551,7 @@ msgstr "404 Заголовок страницы"
 
 #: inc/customizer.php:860
 msgid "404 Page Content"
-msgstr "404 Контент страницы"
+msgstr "Содержание страницы 404"
 
 #: inc/customizer.php:870
 msgid "404 Page Button"
@@ -566,10 +560,6 @@ msgstr "Кнопка 404 страницы"
 #: inc/customizer.php:877
 msgid "Responsive Setting"
 msgstr "Отзывчивая настройка"
-
-#: inc/customizer.php:887
-msgid "Sticky Header"
-msgstr "Липкий Заголовок"
 
 #: inc/customizer.php:897
 msgid "Slider"
@@ -652,21 +642,9 @@ msgstr "Авторский текст"
 msgid "Show / Hide Scroll Top Button"
 msgstr "Показать / Скрыть кнопку прокрутки сверху"
 
-#: inc/customizer.php:1038 inc/customizer.php:1047
-msgid "Right"
-msgstr "Правильно"
-
 #: inc/customizer.php:1043
 msgid "Scroll Back to Top Position"
 msgstr "Прокрутите назад к верхней позиции"
-
-#: inc/customizer.php:1046
-msgid "Left"
-msgstr "Осталось"
-
-#: inc/customizer.php:1048
-msgid "Center"
-msgstr "Центр"
 
 #: inc/customizer.php:1132
 msgid "Pet Care Theme"

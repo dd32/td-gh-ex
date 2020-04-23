@@ -10,12 +10,12 @@
 
 <footer role="contentinfo">
     <?php //Set widget areas classes based on user choice
-        $widget_areas = get_theme_mod('advance_pet_care_footer_widget_areas', '4');
-        if ($widget_areas == '3') {
+        $advance_pet_care_widget_areas = get_theme_mod('advance_pet_care_footer_widget_areas', '4');
+        if ($advance_pet_care_widget_areas == '3') {
             $cols = 'col-lg-4 col-md-4';
-        } elseif ($widget_areas == '4') {
+        } elseif ($advance_pet_care_widget_areas == '4') {
             $cols = 'col-lg-3 col-md-3';
-        } elseif ($widget_areas == '2') {
+        } elseif ($advance_pet_care_widget_areas == '2') {
             $cols = 'col-lg-6 col-md-6';
         } else {
             $cols = 'col-lg-12 col-md-12';
@@ -25,22 +25,22 @@
         <div class="container">
             <div class="row">
                 <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-                    <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                    <div class="sidebar-column <?php echo ( $cols ); ?>">
                         <?php dynamic_sidebar( 'footer-1'); ?>
                     </div>
                 <?php endif; ?> 
                 <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-                    <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                    <div class="sidebar-column <?php echo ( $cols ); ?>">
                         <?php dynamic_sidebar( 'footer-2'); ?>
                     </div>
                 <?php endif; ?> 
                 <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-                    <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                    <div class="sidebar-column <?php echo ( $cols ); ?>">
                         <?php dynamic_sidebar( 'footer-3'); ?>
                     </div>
                 <?php endif; ?> 
                 <?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-                    <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                    <div class="sidebar-column <?php echo ( $cols ); ?>">
                         <?php dynamic_sidebar( 'footer-4'); ?>
                     </div>
                 <?php endif; ?>
@@ -48,17 +48,16 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('Copyright 2018', 'advance-pet-care')));?> <?php advance_pet_care_credit();?></p>
+        <p><?php advance_pet_care_credit();?> <?php echo esc_html(get_theme_mod('advance_pet_care_footer_copy', __('By Themeshopy', 'advance-pet-care')));?></p>
     </div>
 </footer>
-
-<?php if( get_theme_mod( 'advance_pet_care_enable_disable_scroll',true) != '') { ?>
-    <?php $theme_lay = get_theme_mod( 'advance_pet_care_scroll_setting','Right');
-      if($theme_lay == 'Left'){ ?>
+<?php if( get_theme_mod( 'advance_pet_care_enable_disable_scroll',true) != '' || get_theme_mod( 'advance_pet_care_responsive_scroll',true) != '') { ?>
+    <?php $advance_pet_care_theme_lay = get_theme_mod( 'advance_pet_care_scroll_setting','Right');
+      if($advance_pet_care_theme_lay == 'Left'){ ?>
         <button id="scroll-top" class="left-align" title="<?php esc_attr_e('Scroll to Top','advance-pet-care'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-pet-care'); ?></span></button>
-      <?php }else if($theme_lay == 'Center'){ ?>
+    <?php }else if($advance_pet_care_theme_lay == 'Center'){ ?>
         <button id="scroll-top" class="center-align" title="<?php esc_attr_e('Scroll to Top','advance-pet-care'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-pet-care'); ?></span></button>
-      <?php }else{ ?>
+    <?php }else{ ?>
         <button id="scroll-top" title="<?php esc_attr_e('Scroll to Top','advance-pet-care'); ?>"><span class="fas fa-chevron-up" aria-hidden="true"></span><span class="screen-reader-text"><?php esc_html_e('Scroll to Top', 'advance-pet-care'); ?></span></button>
     <?php }?>
 <?php }?>
