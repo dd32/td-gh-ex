@@ -7,7 +7,7 @@
 
 get_header(); ?>
 <div id="container">
-<?php get_template_part( 'post-content' ); ?>
-<?php get_sidebar(); ?>
+	<?php get_template_part( 'post-content' ); ?>
+	<?php get_sidebar(); ?>
 </div>
 <?php get_footer(); ?>

@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, footer-widgets, rtl-language-support, featured
 Requires at least: 5.0
 Tested up to: 5.4
 Requires PHP: 5.4
-Stable tag: 2.5
+Stable tag: 2.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ No, It is for Blogs, Company, Personal, Community, Forum Websites etc.
 
 
 == Changelog ==
+
+= 2.5.1 =
+* Code Cleanup
+* Some Images Change
 
 = 2.5 =
 * Code Cleanup
@@ -100,12 +104,12 @@ License: CC0, Copyright (c) ands.0120
 License Url : https://pxhere.com/en/license
 
 * f1.jpg:
-Source: https://pxhere.com/en/photo/901809
+Source: https://pxhere.com/en/photo/723046
 License: CC0
 License Url : https://pxhere.com/en/license
 
 * f2.jpg:
-Source: https://pxhere.com/en/photo/757423
+Source: https://pxhere.com/en/photo/1325885
 License: CC0
 License Url : https://pxhere.com/en/license
 

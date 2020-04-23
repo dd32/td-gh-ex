@@ -7,7 +7,5 @@
 */
 
 get_header(); ?>
-<div id="container">
-		<?php searchlight_not_found(); ?>
-</div> 
+<div id="container"><?php searchlight_not_found(); ?></div> 
 <?php get_footer(); ?>

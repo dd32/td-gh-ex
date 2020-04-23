@@ -17,16 +17,16 @@ $sliderbox = searchlight_get_option('sliderbox', ''); if (!$sliderbox) return;
         	<div class="flexslider">
             	
           		<ul class="slides">
-                <?php foreach (range(1, 3 ) as $searchlight_opsinumber) { if ( esc_url(searchlight_get_option('slide-image' . $searchlight_opsinumber, get_template_directory_uri() . '/images/slide/' . $searchlight_opsinumber . '.jpg')) != '' ):   ?>
+                <?php foreach (range(1, 3 ) as $searchlight_sldnumber) { if ( esc_url(searchlight_get_option('slide-image' . $searchlight_sldnumber, get_template_directory_uri() . '/images/slide/' . $searchlight_sldnumber . '.jpg')) != '' ):   ?>
                 	<li>
                     <div class="slide-text-container">
-                    <h2 class="fslidertitle captionDelay1 FromTop"><?php echo esc_textarea(searchlight_get_option('slide-image' . $searchlight_opsinumber . '-title', 'Searchlight Theme')); ?></h2>
-                    <h3 class="fslidersubtitle captionDelay2 FromTop"><?php echo esc_textarea(searchlight_get_option('slide-image' . $searchlight_opsinumber . '-sub-title', 'Innovative Professional and Responsive Theme')); ?></h3>
-                    <p class="fslidedescription captionDelay3 FromTop"><?php echo esc_textarea(searchlight_get_option('slide-image' . $searchlight_opsinumber . '-caption', 'This is a Test Image Text for Searchlight Theme. You can change this text from Customizer')); ?></p>
-                    <a href="<?php echo esc_url(searchlight_get_option('slide-image' . $searchlight_opsinumber . '-link', '#')); ?>" class="read-more fslidelink captionDelay4 FromTop"><?php _e('Read More', 'searchlight'); ?></a>
+                    <h2 class="fslidertitle captionDelay1 FromTop"><?php echo esc_textarea(searchlight_get_option('slide-image' . $searchlight_sldnumber . '-title', 'Searchlight Theme')); ?></h2>
+                    <h3 class="fslidersubtitle captionDelay2 FromTop"><?php echo esc_textarea(searchlight_get_option('slide-image' . $searchlight_sldnumber . '-sub-title', 'Innovative Professional and Responsive Theme')); ?></h3>
+                    <p class="fslidedescription captionDelay3 FromTop"><?php echo esc_textarea(searchlight_get_option('slide-image' . $searchlight_sldnumber . '-caption', 'This is a Test Image Text for Searchlight Theme. You can change this text from Customizer')); ?></p>
+                    <a href="<?php echo esc_url(searchlight_get_option('slide-image' . $searchlight_sldnumber . '-link', '#')); ?>" class="read-more fslidelink captionDelay4 FromTop"><?php _e('Read More', 'searchlight'); ?></a>
                     </div>
                     <div class="triangle"></div>
-                    <img src="<?php echo esc_url(searchlight_get_option('slide-image' . $searchlight_opsinumber, get_template_directory_uri() . '/images/slide/' . $searchlight_opsinumber . '.jpg')); ?>" />
+                    <img src="<?php echo esc_url(searchlight_get_option('slide-image' . $searchlight_sldnumber, get_template_directory_uri() . '/images/slide/' . $searchlight_sldnumber . '.jpg')); ?>" />
                     </li>
   
   				<?php endif; } ?>
