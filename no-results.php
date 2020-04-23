@@ -10,7 +10,6 @@
 <header role="banner">
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'bb-mobile-application' ); ?></h1>
 </header>
-
 <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 	<p><?php printf(esc_html__( 'Ready to publish your first post? Get started here.','bb-mobile-application'), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 	<?php elseif ( is_search() ) : ?>

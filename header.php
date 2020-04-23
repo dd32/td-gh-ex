@@ -31,7 +31,7 @@
       </div>
     <?php }?>
     <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'bb-mobile-application' ); ?></a>
-    <div class="<?php if( get_theme_mod( 'bb_mobile_application_sticky_header') != '' || get_theme_mod( 'bb_mobile_application_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+    <div class="<?php if( get_theme_mod( 'bb_mobile_application_sticky_header', false) != '' || get_theme_mod( 'bb_mobile_application_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
       <div id="header">
         <div class="container">
           <div class="row">

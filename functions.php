@@ -101,8 +101,8 @@ function bb_mobile_application_widgets_init() {
 	) );
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('bb_mobile_application_footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$bb_mobile_application_widget_areas = get_theme_mod('bb_mobile_application_footer_widget_areas', '4');
+	for ($i=1; $i<=$bb_mobile_application_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'bb-mobile-application' ) . $i,
 			'id'            => 'footer-' . $i,

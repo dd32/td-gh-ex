@@ -8,21 +8,20 @@ get_header(); ?>
 
   <?php do_action( 'bb_mobile_application_before_slider' ); ?>
 
-  <?php if( get_theme_mod('bb_mobile_application_slider_hide_show') != ''){ ?> 
-
+  <?php if( get_theme_mod('bb_mobile_application_slider_hide_show', false) != '' || get_theme_mod('bb_mobile_application_responsive_slider', false) != ''){ ?> 
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_pages = array();
+        <?php $bb_mobile_application_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'bb_mobile_application_slider' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_pages[] = $mod;
+              $bb_mobile_application_slider_pages[] = $mod;
             }
           }
-          if( !empty($slider_pages) ) :
+          if( !empty($bb_mobile_application_slider_pages) ) :
           $args = array(
               'post_type' => 'page',
-              'post__in' => $slider_pages,
+              'post__in' => $bb_mobile_application_slider_pages,
               'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
@@ -61,7 +60,6 @@ get_header(); ?>
       </div>
       <div class="clearfix"></div>
     </section>
- 
   <?php }?>
 
   <?php do_action( 'bb_mobile_application_after_slider' ); ?>
@@ -79,9 +77,9 @@ get_header(); ?>
           <div class="col-lg-4 col-md-4 p-0">
             <div id="about" class="darkbox" >
               <?php 
-               $catData=  get_theme_mod('bb_mobile_application_blogcategory_left_setting');
-               if($catData){
-                $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'bb-mobile-application')));?>
+                $bb_mobile_application_catData=  get_theme_mod('bb_mobile_application_blogcategory_left_setting');
+                if($bb_mobile_application_catData){
+                  $page_query = new WP_Query(array( 'category_name' => esc_html($bb_mobile_application_catData,'bb-mobile-application')));?>
                   <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                     <div class="left-part">
                       <div class="row m-0"> 
@@ -93,7 +91,7 @@ get_header(); ?>
                           <h3><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a> </h3>  
                         </div>
                       </div>
-                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>    
+                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>
                     </div>
                 <?php endwhile;
               wp_reset_postdata();
@@ -125,9 +123,9 @@ get_header(); ?>
           <div class="col-lg-4 col-md-4 p-0">
             <div id="about" class="darkbox" >
               <?php 
-               $catData=  get_theme_mod('bb_mobile_application_blogcategory_right_setting');
-               if($catData){
-                $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'bb-mobile-application')));?>
+                $bb_mobile_application_catData=  get_theme_mod('bb_mobile_application_blogcategory_right_setting');
+                if($bb_mobile_application_catData){
+                  $page_query = new WP_Query(array( 'category_name' => esc_html($bb_mobile_application_catData,'bb-mobile-application')));?>
                   <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                     <div class="right-part">
                       <div class="row m-0">
@@ -140,9 +138,9 @@ get_header(); ?>
                       </div>
                       <p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_mobile_application_string_limit_words( $excerpt,10 ) ); ?></p>
                     </div>
-                <?php endwhile;
-              wp_reset_postdata();
-               }
+                  <?php endwhile;
+                  wp_reset_postdata();
+                }
               ?>
               <div class="clearfix"></div>
             </div>

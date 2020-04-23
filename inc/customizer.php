@@ -21,44 +21,8 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-mobile-application' ),
 	) );
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'bb_mobile_application_theme_color_option', array( 
-		'panel' => 'bb_mobile_application_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'bb-mobile-application' ) 
-	) );
-
-  	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
-	    'default' => '#3ae0bf',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(
-  		'label' => 'Color Option',
-	    'description' => __('One can change complete theme color on just one click.', 'bb-mobile-application'),
-	    'section' => 'bb_mobile_application_theme_color_option',
-	    'settings' => 'bb_mobile_application_theme_color',
-  	)));
-
-  	$wp_customize->add_setting('bb_mobile_application_background_skin_mode',array(
-        'default' => __('Transparent Background','bb-mobile-application'),
-        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
-	));
-	$wp_customize->add_control('bb_mobile_application_background_skin_mode',array(
-        'type' => 'select',
-        'label' => __('Background Type','bb-mobile-application'),
-        'section' => 'background_image',
-        'choices' => array(
-            'With Background' => __('With Background','bb-mobile-application'),
-            'Transparent Background' => __('Transparent Background','bb-mobile-application'),
-        ),
-	) );
-
-	//Typography
-	$wp_customize->add_section( 'bb_mobile_application_typography', array(
-    	'title'      => __( 'Typography', 'bb-mobile-application' ),
-		'panel' => 'bb_mobile_application_panel_id'
-	) );
-
-	$font_array = array(
+	// font array
+	$bb_mobile_application_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -152,6 +116,12 @@ function bb_mobile_application_customize_register( $wp_customize ) {
         'Yanone Kaffeesatz' => 'Yanone Kaffeesatz',
     );
 
+	//Typography
+	$wp_customize->add_section( 'bb_mobile_application_typography', array(
+    	'title' => __( 'Typography', 'bb-mobile-application' ),
+		'panel' => 'bb_mobile_application_panel_id'
+	) );
+
 	// This is Paragraph Color picker setting
 	$wp_customize->add_setting( 'bb_mobile_application_paragraph_color', array(
 		'default' => '',
@@ -174,9 +144,10 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'Paragraph Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
+	// paragraph font size
 	$wp_customize->add_setting('bb_mobile_application_paragraph_font_size',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'sanitize_text_field'
@@ -210,7 +181,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( '"a" Tag Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -235,7 +206,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( '"li" Tag Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -260,7 +231,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'H1 Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -297,7 +268,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'h2 Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -334,7 +305,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'h3 Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -371,7 +342,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'h4 Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -408,7 +379,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'h5 Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -445,7 +416,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'section'  => 'bb_mobile_application_typography',
 	    'label'    => __( 'h6 Fonts','bb-mobile-application'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $bb_mobile_application_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -459,6 +430,20 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'setting'	=> 'bb_mobile_application_h6_font_size',
 		'type'	=> 'text'
 	));	
+
+	$wp_customize->add_setting('bb_mobile_application_background_skin_mode',array(
+        'default' => __('Transparent Background','bb-mobile-application'),
+        'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
+	));
+	$wp_customize->add_control('bb_mobile_application_background_skin_mode',array(
+        'type' => 'select',
+        'label' => __('Background Type','bb-mobile-application'),
+        'section' => 'background_image',
+        'choices' => array(
+            'With Background' => __('With Background','bb-mobile-application'),
+            'Transparent Background' => __('Transparent Background','bb-mobile-application'),
+        ),
+	) );
 
 	// woocommerce section
 	$wp_customize->add_setting('bb_mobile_application_show_related_products',array(
@@ -491,10 +476,10 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'section'  => 'woocommerce_product_catalog',
 		'type'     => 'select',
 		'choices'  => array(
-						'2' => '2',
-						'3' => '3',
-						'4' => '4',
-						'5' => '5',
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+			'5' => '5',
 		),
 	)  );
 
@@ -601,8 +586,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 			'max' => 50,
 			'step' => 1,
 		),
-		'type'		=> 'number',
-
+		'type' => 'number',
 	));
 
 	$wp_customize->add_setting( 'bb_mobile_application_left_right_product_button_padding',array(
@@ -640,6 +624,23 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 			'step' => 1,
 		),
 	));
+
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_mobile_application_theme_color_option', array( 
+		'panel' => 'bb_mobile_application_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-mobile-application' ) 
+	) );
+
+  	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
+	    'default' => '#3ae0bf',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'bb-mobile-application'),
+	    'section' => 'bb_mobile_application_theme_color_option',
+	    'settings' => 'bb_mobile_application_theme_color',
+  	)));
 
 	//Layouts
 	$wp_customize->add_section( 'bb_mobile_application_left_right', array(
@@ -688,24 +689,22 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_mobile_application_theme_options',array(
-        'default' => '',
+        'default'           => __('Right Sidebar', 'bb-mobile-application'),
         'sanitize_callback' => 'bb_mobile_application_sanitize_choices'
 	));
-	$wp_customize->add_control('bb_mobile_application_theme_options',
-	    array(
-	        'type' => 'radio',
-	        'label' => __( 'Sidebar Layouts', 'bb-mobile-application' ),
-	        'section' => 'bb_mobile_application_left_right',
-	        'choices' => array(
-	            'Left Sidebar' => __('Left Sidebar','bb-mobile-application'),
-	            'Right Sidebar' => __('Right Sidebar','bb-mobile-application'),
-	            'One Column' => __('One Column','bb-mobile-application'),
-	            'Three Columns' => __('Three Columns','bb-mobile-application'),
-	            'Four Columns' => __('Four Columns','bb-mobile-application'),
-	            'Grid Layout' => __('Grid Layout','bb-mobile-application')
-	        ),
-	    )
-    );
+	$wp_customize->add_control('bb_mobile_application_theme_options',array(
+	    'type' => 'radio',
+	    'label' => __( 'Sidebar Layouts', 'bb-mobile-application' ),
+	    'section' => 'bb_mobile_application_left_right',
+	    'choices' => array(
+	        'Left Sidebar' => __('Left Sidebar','bb-mobile-application'),
+	        'Right Sidebar' => __('Right Sidebar','bb-mobile-application'),
+	        'One Column' => __('One Column','bb-mobile-application'),
+	        'Three Columns' => __('Three Columns','bb-mobile-application'),
+	        'Four Columns' => __('Four Columns','bb-mobile-application'),
+	        'Grid Layout' => __('Grid Layout','bb-mobile-application')
+	    ),
+	));
 
     $wp_customize->add_setting('bb_mobile_application_single_page_sidebar_layout', array(
 		'default'           => __('One Column', 'bb-mobile-application'),
@@ -811,7 +810,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('bb_mobile_application_slider_hide_show',array(
-      'default' => true,
+      'default' => false,
       'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('bb_mobile_application_slider_hide_show',array(
@@ -1021,7 +1020,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 
     $wp_customize->add_setting('bb_mobile_application_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_sticky_header',array(
@@ -1031,7 +1030,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_mobile_application_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_mobile_application_responsive_slider',array(
@@ -1040,13 +1039,13 @@ function bb_mobile_application_customize_register( $wp_customize ) {
        'section' => 'bb_mobile_application_responsive_setting'
     ));
 
-    $wp_customize->add_setting('bb_mobile_application_responsive_metabox',array(
+    $wp_customize->add_setting('bb_mobile_application_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('bb_mobile_application_responsive_metabox',array(
+    $wp_customize->add_control('bb_mobile_application_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','bb-mobile-application'),
+       'label' => __('Scroll To Top','bb-mobile-application'),
        'section' => 'bb_mobile_application_responsive_setting'
     ));
 
@@ -1067,7 +1066,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('bb_mobile_application_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_mobile_application_date_hide',array(
@@ -1077,7 +1076,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_mobile_application_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_mobile_application_comment_hide',array(
@@ -1087,7 +1086,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_mobile_application_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_mobile_application_author_hide',array(
@@ -1097,7 +1096,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('bb_mobile_application_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('bb_mobile_application_tags_hide',array(
