@@ -114,7 +114,7 @@ define( 'BEVRO_THEME_SETTINGS', 'bevro-settings' );
                 'active_filename' => 'one-click-demo-import/one-click-demo-import.php',
             ),
             'business-popup' => array(
-                'name' => esc_html__( 'Business Popup', 'gogo' ),
+                'name' => esc_html__( 'Business Popup', 'bevro' ),
                 'active_filename' => 'business-popup/business-popup.php',
             )
         ) );
@@ -316,4 +316,3 @@ add_action( 'wp_print_footer_scripts', 'bevro_skip_link_focus_fix' );
  * Load init.
  */
 require_once trailingslashit( get_template_directory()).'inc/init.php';
-require_once trailingslashit( get_template_directory()).'demo/import-data.php';
