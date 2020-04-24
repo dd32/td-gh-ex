@@ -20,35 +20,36 @@ get_header(); ?>
           }
           if( !empty($slider_page) ) :
           $args = array(
-              'post_type' => 'page',
-              'post__in' => $slider_page,
-              'orderby' => 'post__in'
+            'post_type' => 'page',
+            'post__in' => $slider_page,
+            'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
           if ( $query->have_posts() ) :
             $i = 1;
         ?>     
-        <div class="carousel-inner" role="listbox">
+          <div class="carousel-inner" role="listbox">
             <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-            <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
+              <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
                 <?php the_post_thumbnail(); ?>
                 <div class="carousel-caption">
                   <div class="inner_carousel">
-                      <h1><?php esc_html(the_title()); ?></h1>
-                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_slider_excerpt_number','30')))); ?></p>
+                    <h1><?php esc_html(the_title()); ?></h1>
+                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_slider_excerpt_number','30')))); ?></p>
+                    <?php if( get_theme_mod('automobile_car_dealer_slider_button_text','READ MORE') != ''){ ?>
                       <div class="slide-button">
                         <a class="read-more" href="<?php esc_url(the_permalink()); ?>"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_button_icon','fas fa-long-arrow-alt-right')); ?>"></i><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?><span class="screen-reader-text"><?php echo esc_html( get_theme_mod('automobile_car_dealer_slider_button_text',__('READ MORE','automobile-car-dealer'))); ?></span></a>
-                      </div>              
-                      
+                      </div> 
+                    <?php }?>   
                   </div>
                 </div>
-            </div>
+              </div>
             <?php $i++; endwhile; 
             wp_reset_postdata();?>
-        </div>
+          </div>
         <?php else : ?>
-        <div class="no-postfound"></div>
-          <?php endif;
+          <div class="no-postfound"></div>
+        <?php endif;
         endif;?>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_slider_previous_icon','fas fa-chevron-left')); ?>" ></i></span>
@@ -71,32 +72,32 @@ get_header(); ?>
         <?php if( get_theme_mod('automobile_car_dealer_sec_title') != ''){ ?>
           <h2><i class="fas fa-car"></i><?php echo esc_html(get_theme_mod('automobile_car_dealer_sec_title','')); ?></h2>
         <?php }?>
-        <div class="row">
+        <div class="row m-0">
           <div class="col-md-7 col-sm-7">
             <?php
-              $postData =  get_theme_mod('automobile_car_dealer_project_single_post');
-                if($postData){
-                  $args = array( 'name' => esc_html($postData ,'automobile-car-dealer'));
+            $postData =  get_theme_mod('automobile_car_dealer_project_single_post');
+            if($postData){
+              $args = array( 'name' => esc_html($postData ,'automobile-car-dealer'));
             $query = new WP_Query( $args );
             if ( $query->have_posts() ) :
               while ( $query->have_posts() ) : $query->the_post(); ?>
                 <div class="mainbox">
-                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_about_excerpt_number','30')))); ?></p>
+                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_about_excerpt_number','25')))); ?></p>
                   <a href="<?php esc_url(the_permalink()); ?>"><?php the_post_thumbnail(); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
                 </div>
               <?php endwhile; 
-              wp_reset_postdata();?>
-              <?php else : ?>
-                 <div class="no-postfound"></div>
-               <?php
-              endif;} ?>
-              <div class="clearfix"></div>
+            wp_reset_postdata();?>
+            <?php else : ?>
+              <div class="no-postfound"></div>
+            <?php
+            endif;} ?>
+            <div class="clearfix"></div>
           </div>
           <div class="col-md-5 col-sm-5">
             <?php 
               $catData=  get_theme_mod('automobile_car_dealer_project_category');
               if($catData){
-                  $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'automobile-car-dealer')));?>
+                $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'automobile-car-dealer')));?>
               <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                 <div class="categorybox row">
                   <div class="col-md-4 col-sm-4">
@@ -104,12 +105,12 @@ get_header(); ?>
                   </div>
                   <div class="col-md-8 col-sm-8">
                     <h3><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h3>
-                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_category_excerpt_number','30')))); ?></p>
+                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_category_excerpt_number','15')))); ?></p>
                   </div>
                 </div>
               <?php endwhile;
-              wp_reset_postdata();}
-            ?>
+              wp_reset_postdata();
+            }?>
           </div>
         </div>
       </div> 

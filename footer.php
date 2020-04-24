@@ -5,18 +5,18 @@
  */
 ?>
     <?php if( get_theme_mod( 'automobile_car_dealer_hide_show_scroll',true) != '') { ?>
-    <?php $theme_lay = get_theme_mod( 'automobile_car_dealer_footer_options','Right');
+        <?php $theme_lay = get_theme_mod( 'automobile_car_dealer_footer_options','Right');
         if($theme_lay == 'Left align'){ ?>
             <a href="#" id="scrollbutton" class="left"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>
         <?php }else if($theme_lay == 'Center align'){ ?>
             <a href="#" id="scrollbutton" class="center"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>
         <?php }else{ ?>
             <a href="#" id="scrollbutton"><i class="<?php echo esc_attr(get_theme_mod('automobile_car_dealer_back_to_top_icon','fas fa-long-arrow-alt-up')); ?>"></i><span class="screen-reader-text"><?php esc_html_e( 'Back to Top', 'automobile-car-dealer' ); ?></span></a>
+        <?php }?>
     <?php }?>
-<?php }?>
     <footer role="contentinfo">
         <?php //Set widget areas classes based on user choice
-            $widget_areas = get_theme_mod('footer_widget_areas', '3');
+            $widget_areas = get_theme_mod('footer_widget_areas', '4');
             if ($widget_areas == '3') {
                 $cols = 'col-md-4';
             } elseif ($widget_areas == '4') {
@@ -31,22 +31,22 @@
             <div class="container">
                 <div class="row">
                     <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-                        <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                        <div class="sidebar-column <?php echo ( $cols ); ?>">
                             <?php dynamic_sidebar( 'footer-1'); ?>
                         </div>
                     <?php endif; ?> 
                     <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-                        <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                        <div class="sidebar-column <?php echo ( $cols ); ?>">
                             <?php dynamic_sidebar( 'footer-2'); ?>
                         </div>
                     <?php endif; ?> 
                     <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-                        <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                        <div class="sidebar-column <?php echo ( $cols ); ?>">
                             <?php dynamic_sidebar( 'footer-3'); ?>
                         </div>
                     <?php endif; ?> 
                     <?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
-                        <div class="sidebar-column <?php echo esc_attr( $cols ); ?>">
+                        <div class="sidebar-column <?php echo ( $cols ); ?>">
                             <?php dynamic_sidebar( 'footer-4'); ?>
                         </div>
                     <?php endif; ?>

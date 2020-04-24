@@ -16,11 +16,11 @@ function automobile_car_dealer_responsive_menu_close() {
 }
 
 /**** Hidden search box ***/
-	jQuery(document).ready(function(){
+jQuery(document).ready(function(){
 	jQuery('a[href="#search"]').on('click', function(event) {
 		jQuery('#search').addClass('open');
 	});            
-	jQuery('#search, #search button.close').on('click keyup', function(event) {
+	jQuery('#search, #search button.close').on('click', function(event) {
 		if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
 			jQuery(this).removeClass('open');
 		}

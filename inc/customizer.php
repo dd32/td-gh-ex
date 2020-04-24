@@ -979,22 +979,22 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
       'sanitize_callback' => 'automobile_car_dealer_sanitize_choices'
 	));
 	$wp_customize->add_control( 'automobile_car_dealer_slider_opacity', array(
-	'label'       => esc_html__( 'Slider Image Opacity','automobile-car-dealer' ),
-	'section'     => 'automobile_car_dealer_slidersettings',
-	'type'        => 'select',
-	'settings'    => 'automobile_car_dealer_slider_opacity',
-	'choices' => array(
-		'0' =>  esc_attr('0','automobile-car-dealer'),
-		'0.1' =>  esc_attr('0.1','automobile-car-dealer'),
-		'0.2' =>  esc_attr('0.2','automobile-car-dealer'),
-		'0.3' =>  esc_attr('0.3','automobile-car-dealer'),
-		'0.4' =>  esc_attr('0.4','automobile-car-dealer'),
-		'0.5' =>  esc_attr('0.5','automobile-car-dealer'),
-		'0.6' =>  esc_attr('0.6','automobile-car-dealer'),
-		'0.7' =>  esc_attr('0.7','automobile-car-dealer'),
-		'0.8' =>  esc_attr('0.8','automobile-car-dealer'),
-		'0.9' =>  esc_attr('0.9','automobile-car-dealer')
-	),
+		'label'       => esc_html__( 'Slider Image Opacity','automobile-car-dealer' ),
+		'section'     => 'automobile_car_dealer_slidersettings',
+		'type'        => 'select',
+		'settings'    => 'automobile_car_dealer_slider_opacity',
+		'choices' => array(
+			'0' =>  esc_attr('0','automobile-car-dealer'),
+			'0.1' =>  esc_attr('0.1','automobile-car-dealer'),
+			'0.2' =>  esc_attr('0.2','automobile-car-dealer'),
+			'0.3' =>  esc_attr('0.3','automobile-car-dealer'),
+			'0.4' =>  esc_attr('0.4','automobile-car-dealer'),
+			'0.5' =>  esc_attr('0.5','automobile-car-dealer'),
+			'0.6' =>  esc_attr('0.6','automobile-car-dealer'),
+			'0.7' =>  esc_attr('0.7','automobile-car-dealer'),
+			'0.8' =>  esc_attr('0.8','automobile-car-dealer'),
+			'0.9' =>  esc_attr('0.9','automobile-car-dealer')
+		),
 	));
 
 	//About
@@ -1058,7 +1058,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 
 	//About excerpt
 	$wp_customize->add_setting( 'automobile_car_dealer_about_excerpt_number', array(
-		'default'              => 30,
+		'default'              => 25,
 		'type'                 => 'theme_mod',
 		'transport' 		   => 'refresh',
 		'sanitize_callback'    => 'absint',
@@ -1078,7 +1078,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 
 	//Category excerpt
 	$wp_customize->add_setting( 'automobile_car_dealer_category_excerpt_number', array(
-		'default'              => 30,
+		'default'              => 15,
 		'type'                 => 'theme_mod',
 		'transport' 		   => 'refresh',
 		'sanitize_callback'    => 'absint',
@@ -1121,7 +1121,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	)));
 
 	$wp_customize->add_setting('footer_widget_areas',array(
-        'default'           => 3,
+        'default'           => 4,
         'sanitize_callback' => 'automobile_car_dealer_sanitize_choices',
     ));
     $wp_customize->add_control('footer_widget_areas',array(
@@ -1289,24 +1289,20 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'panel' => 'automobile_car_dealer_panel_id'
 	) );
 
-	/**
-	 * Product Columns
-	 */
 	$wp_customize->add_setting( 'automobile_car_dealer_per_columns' , array(
 		'default'           => 3,
 		'transport'         => 'refresh',
 		'sanitize_callback' => 'automobile_car_dealer_sanitize_choices',
 	) );
-
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'automobile_car_dealer_per_columns', array(
 		'label'    => __( 'Product per columns', 'automobile-car-dealer' ),
 		'section'  => 'automobile_car_dealer_woocommerce_section',
 		'type'     => 'select',
 		'choices'  => array(
-						'2' => '2',
-						'3' => '3',
-						'4' => '4',
-						'5' => '5',
+			'2' => '2',
+			'3' => '3',
+			'4' => '4',
+			'5' => '5',
 		),
 	) ) );
 
@@ -1567,19 +1563,19 @@ final class Automobile_Car_Dealer_Customize {
 	}
 
 	//Footer widget areas
-		function automobile_car_dealer_sanitize_choices( $input ) {
-		    $valid = array(
-		        '1'     => __('One', 'automobile-car-dealer'),
-		        '2'     => __('Two', 'automobile-car-dealer'),
-		        '3'     => __('Three', 'automobile-car-dealer'),
-		        '4'     => __('Four', 'automobile-car-dealer')
-		    );
-		    if ( array_key_exists( $input, $valid ) ) {
-		        return $input;
-		    } else {
-		        return '';
-		    }
-		}
+	function automobile_car_dealer_sanitize_choices( $input ) {
+	    $valid = array(
+	        '1'     => __('One', 'automobile-car-dealer'),
+	        '2'     => __('Two', 'automobile-car-dealer'),
+	        '3'     => __('Three', 'automobile-car-dealer'),
+	        '4'     => __('Four', 'automobile-car-dealer')
+	    );
+	    if ( array_key_exists( $input, $valid ) ) {
+	        return $input;
+	    } else {
+	        return '';
+	    }
+	}
 }
 
 // Doing this customizer thang!

@@ -96,7 +96,7 @@ function automobile_car_dealer_widgets_init() {
 	) );
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('footer_widget_areas', '3');
+	$widget_areas = get_theme_mod('footer_widget_areas', '4');
 	for ($i=1; $i<=$widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Widget ', 'automobile-car-dealer' ) . $i,
@@ -108,7 +108,6 @@ function automobile_car_dealer_widgets_init() {
 			'after_title'   => '</h3>',
 		) );
 	}
-
 }
 add_action( 'widgets_init', 'automobile_car_dealer_widgets_init' );
 /* Theme Font URL */
@@ -305,7 +304,7 @@ function automobile_car_dealer_scripts() {
 		    font-family: '.esc_html($automobile_car_dealer_h6_font_family).'!important;
 		    font-size: '.esc_html($automobile_car_dealer_h6_font_size).'!important;
 		}
-		';
+	';
 	wp_add_inline_style('automobile-car-dealer-basic-style', $custom_css);
 
 	/* Theme Color sheet */
@@ -327,8 +326,8 @@ function automobile_car_dealer_ie_stylesheet(){
 	wp_enqueue_style('automobile-car-dealer-ie', get_template_directory_uri().'/css/ie.css', array('automobile-car-dealer-style'));
 	wp_style_add_data( 'automobile-car-dealer-ie', 'conditional', 'IE' );
 }
-
 add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
+
 define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO',__('https://buywptemplates.com/automobile-car-dealer-pro/', 'automobile-car-dealer'));
 define('AUTOMOBILE_CAR_DEALER_BUY_PRO',__('https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/', 'automobile-car-dealer'));
 define('AUTOMOBILE_CAR_DEALER_PRO_DOC',__('https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/', 'automobile-car-dealer'));
@@ -372,9 +371,7 @@ if ( ! function_exists( 'automobile_car_dealer_switch_sanitization' ) ) {
 	}
 }
 
-/**
- * Integer sanitization
- */
+// Integer sanitization
 if ( ! function_exists( 'automobile_car_dealer_sanitize_integer' ) ) {
 	function automobile_car_dealer_sanitize_integer( $input ) {
 		return (int) $input;
@@ -405,5 +402,6 @@ require get_template_directory() . '/inc/template-tags.php';
 
 /* Load Jetpack compatibility file. */
 require get_template_directory() . '/inc/customizer.php';
-/** Load welcome message.*/
+
+/* Load welcome message.*/
 require get_template_directory() . '/inc/dashboard/get_started_info.php';

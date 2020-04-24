@@ -4,7 +4,7 @@ Theme URI: https://www.buywptemplates.com/themes/free-car-dealer-wordpress-theme
 Author: Buywptemplates
 Author URI: https://www.buywptemplates.com
 Description: Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time. This SEO friendly, robust WordPress theme by Buywptemplates is perfect for dealers of new or used cars, motorbikes, and motorcycles. Its Mega Menu allows showcasing the portfolio of products in best possible ways. Simple and adaptable car Dealer WordPress Theme is clean, user-friendly, and responsive. It is professional in both looks and functionalities. It is flexible enough and allows customizing via personalization options. Right from publishing automotive news or blogs on the website or sharing it on different social media platforms; everything becomes easy and hassle-free with Automobile car dealer themes. With clean code, this multi-purpose mobile-friendly WordPress theme is ideal for motorhome and car dealers. From an effective call to action button to amazingly designed landing page, this theme is well-equipped with all the functionalities and functions to streamline the entire automobile business process right from browsing till purchase. It supports different languages such as ARABIC, GERMAN, SPANISH, FRENCH, ITALIAN, RUSSIAN, CHINESE, and TURKISH. Demo: https://www.buywptemplates.com/automobile-car-dealer-pro
-Version: 0.4.8
+Version: 0.4.9
 License: GNU General Public License
 License URI: license.txt
 Text Domain: automobile-car-dealer
@@ -68,9 +68,9 @@ a:focus,.woocommerce form .form-row input:focus.input-text,
   outline: 1px dotted #000 !important;
   border-bottom: 1px solid #000;
 }
-#search a.close:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
+#search .close:focus, .footer-wp a:focus, .footer-wp button:focus,
+.copyright-wrapper a:focus { 
+  outline: 1px dotted #fff !important;
 }
 ul,
 ol{ 
@@ -427,6 +427,10 @@ input.search-field {
   box-shadow: 2px 2px 10px 0px #2d2d2d;
   z-index: 999999;
 }
+.fixed-header .appointbtn a{
+  padding: 12px 0;
+  display: inline-block;
+}
 /*--------------header-------------*/
 .page-template-custom-home-page #header {
   position: absolute;
@@ -520,8 +524,8 @@ input.search-field {
   display: none;
 }
 .primary-navigation a:focus{
-  outline: 1px dotted #fff;
-  border-bottom: 1px solid #fff;
+  outline: 1px dotted #fff !important;
+  border-bottom: 1px solid #fff !important;
 }
 .main-navigation .sub-menu > li > a:focus,
 .search-box i:focus{
@@ -1282,7 +1286,7 @@ a.button {
 }
 .center i{
   left: 50%;
-  right: 50%;
+  right: auto !important;
 }
 .copyright-wrapper { 
   background-color: #dd3333;
@@ -1767,9 +1771,6 @@ h2.woocommerce-loop-product__title{
   border: solid 1px #000;
   color: #000;
 }
-.col-1,.col-2 {
-  max-width: 100%;
-}
 .woocommerce-MyAccount-navigation ul {
   list-style: none;
 }
@@ -1852,9 +1853,6 @@ td.product-name a,a.shipping-calculator-button, .woocommerce-info a,.posted_in a
 .woocommerce #reply-title {
   font-size: 18px;
   font-weight: 600;
-}
-#sidebar .woocommerce a.remove, .footer-wp .woocommerce a.remove{
-  display: none;
 }
 .woocommerce .star-rating::before{
   color: #6a6666;
