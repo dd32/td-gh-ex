@@ -600,4 +600,5 @@ function attesa_get_big_featured_image_style() {
 		</div>
 		<?php
 	}
+	do_action( 'attesa_additional_cases_big_featured_images' );
 }

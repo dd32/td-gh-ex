@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2020-04-20 10:31+0100\n"
-"PO-Revision-Date: 2020-04-20 10:31+0100\n"
+"POT-Creation-Date: 2020-04-24 16:19+0100\n"
+"PO-Revision-Date: 2020-04-24 16:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -157,32 +157,32 @@ msgstr ""
 msgid "Footer menu"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:162
 msgid "Classic Sidebar"
 msgstr ""
 
-#: functions.php:161 functions.php:170 functions.php:179 functions.php:188
-#: functions.php:197 functions.php:206
+#: functions.php:164 functions.php:173 functions.php:182 functions.php:191
+#: functions.php:200 functions.php:209
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:168
+#: functions.php:171
 msgid "Push Sidebar"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:180
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:189
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:198
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:207
 msgid "Footer 4"
 msgstr ""
 

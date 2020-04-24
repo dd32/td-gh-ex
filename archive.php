@@ -15,14 +15,16 @@ get_header();
 				<?php if ( have_posts() ) : ?>
 				
 					<?php if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'archive' ) ) : ?>
-
+						<?php do_action('attesa_before_archive_header'); ?>
 						<header class="page-header">
 							<?php
+							do_action('attesa_before_archive_inside_header');
 							the_archive_title( '<h1 class="page-title" '. attesa_get_schema_markup('headline') .'>', '</h1>' );
 							the_archive_description( '<div class="archive-description">', '</div>' );
-							do_action('attesa_after_archive_header');
+							do_action('attesa_after_archive_inside_header');
 							?>
 						</header><!-- .page-header -->
+						<?php do_action('attesa_after_archive_header'); ?>
 						<div class="blog-entries">
 						<?php
 						/* Start the Loop */

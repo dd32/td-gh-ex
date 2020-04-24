@@ -95,7 +95,10 @@ if ( ! function_exists( 'attesa_setup' ) ) :
 			'caption',
 			'script',
 			'style',
-		) );		
+		) );
+
+		// Add support for responsive embedded content.
+		add_theme_support( 'responsive-embeds' );		
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -218,13 +221,22 @@ add_action( 'widgets_init', 'attesa_widgets_init' );
 function attesa_scripts() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	wp_enqueue_style( 'attesa-style', get_stylesheet_uri(), array(), wp_get_theme()->get('Version') );
+	if ( class_exists( 'WooCommerce' ) ) {
+		wp_enqueue_style( 'attesa-woocommerce', get_template_directory_uri() .'/css/third/woocommerce'.$min.'.css', array(), wp_get_theme()->get('Version'));
+	}
+	if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+		wp_enqueue_style( 'attesa-edd', get_template_directory_uri() .'/css/third/edd'.$min.'.css', array(), wp_get_theme()->get('Version'));
+	}
+	// Remove FontAwesome style from plugins
+	wp_deregister_style( 'font-awesome' );
+	wp_deregister_style( 'fontawesome' );
 	if (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_four') {
 		wp_enqueue_style( 'font-awesome-4', get_template_directory_uri() .'/css/font-awesome'.$min.'.css', array(), '4.7.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.11.1');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.13.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_five') == 'font_awesome_five_comp') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.11.1');
-		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.11.1');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.13.0');
+		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.13.0');
 	}
 	
 	$disableGoogleFonts = attesa_options('_disable_google_fonts', '');
@@ -256,7 +268,6 @@ function attesa_scripts() {
 	if ( is_active_sidebar( attesa_get_push_sidebar() ) && attesa_check_bar('push') ) {
 		wp_enqueue_script( 'attesa-nanoScroll', get_template_directory_uri() . '/js/jquery.nanoscroller'.$min.'.js', array('jquery'), '0.8.7', true );
 	}
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -343,7 +354,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/pro-button/class-customize.php';
 
-/* Calling the welcome notice only if user is admin and Attesa Extra plugin is not installed */
+/**
+ * Calling the welcome notice only if user is admin and Attesa Extra plugin is not installed 
+ */
 if ( is_admin() && !class_exists( 'Attesa_extra' ) ) {
 	require get_template_directory() . '/inc/attesa-notice.php';
 }
