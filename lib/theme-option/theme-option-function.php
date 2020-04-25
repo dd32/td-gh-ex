@@ -69,7 +69,7 @@ function bevro_admin_notice(){
         ?>
       </p>
       <p>
-        <a href="<?php echo esc_url( admin_url( 'themes.php?page=bevro' ) ) ?>" class="button button-primary button-hero" style="text-decoration: none;">
+        <a href="<?php echo esc_url( admin_url( 'themes.php?page=bevro' ) ) ?>"  style="text-decoration: none;">
           <?php
           if(!$bevro_icon){
           /* translators: %s theme name */

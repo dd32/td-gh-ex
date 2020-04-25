@@ -98,12 +98,8 @@
 }
 /*theme notice */
 .notice.bevro-notice{
-    background:rgba(239, 247, 251, 0.8);
-text-align:center;
-    padding: 25px 10px !important;
-	border: 8px solid #fff;
-	position: relative;
-	 box-shadow: none;
+position:relative;
+border-left: 4px solid #f7a53e;
 }
 .notice.bevro-notice .button-hero{
 background:#0073aa;

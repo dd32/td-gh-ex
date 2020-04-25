@@ -59,6 +59,7 @@ if ((is_single() || is_page()) || ((class_exists( 'WooCommerce' ))&&(is_woocomme
 ?>
 <!-- layout class call -->
 <body <?php body_class(array(esc_attr($bevro_default_container), esc_attr($bevro_main_header_layout), esc_attr($bevro_above_header_layout),esc_attr($bevro_container_site_layout))); ?>>
+<?php wp_body_open();?>
 <?php if(get_theme_mod('bevro_scroll_to_top_disable')==false):?>	
 <input type="hidden" id="back-to-top" value="on"/>
 <?php endif;?>
