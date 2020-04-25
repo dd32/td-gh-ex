@@ -8,8 +8,11 @@ Template Name: Home Page Template
 ?>
 <?php 
 get_header();
+$page = get_query_var('page');
+if (empty($page)) {
     get_template_part('components/banner/banner', 'slider');
     get_template_part('components/banner/featured', 'category');
+}
 ?>
 
 	<div id="primary" class="content-area">

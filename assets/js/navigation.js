@@ -8,13 +8,6 @@
     "use strict";
     var n = window.NAV_JS || {};
 
-    n.stickyMenu = function () {
-        if (e(window).scrollTop() > 350) {
-            e("body").addClass("nav-affix");
-        } else {
-            e("body").removeClass("nav-affix");
-        }
-    };
     n.mobileMenu = {
         init: function () {
             this.toggleMenu();
@@ -74,9 +67,6 @@
     };
     e(document).ready(function () {
         n.mobileMenu.init();
-    });
-    e(window).scroll(function () {
-        n.stickyMenu();
     });
     e(window).resize(function () {
         n.mobileMenu.menuMobile();

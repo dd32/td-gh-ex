@@ -64,7 +64,8 @@
     <div id="content" class="site-content">
         <div class="wrapper">
             <?php if (! is_page_template( 'home-page-template.php' )) {
-                if (is_front_page() && !is_home ()) {
+                $page = get_query_var('paged');
+                if (is_front_page() &&  ($page == 0) ) {
                     get_template_part('components/banner/banner', 'slider');
                     get_template_part('components/banner/featured', 'category');
                 }

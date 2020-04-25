@@ -26,21 +26,21 @@
     </div>
 
     <div class="nav-icon">
-        <div class="search-icon">
+        <button type="button" class="search-icon">
             <i class="ion-ios-search-strong"></i>
-        </div>
+        </button>
     </div>
 
 </nav>
 
-<div class="popup-search">
+<div id="popup-search" class="popup-search">
     <div class="popup-search-wrapper">
         <div class="popup-search-align">
             <?php get_search_form(); ?>
         </div>
     </div>
-    <div class="esc-search">
+    <button type="button" class="esc-search">
         <span></span>
         <span></span>
-    </div>
+    </button>
 </div>

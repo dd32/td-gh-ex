@@ -4,7 +4,7 @@ Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a perfect, modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a color options, a magazine homepage template, and a two columned layout that makes your site in flash. A clean and elegant design helps you to deliever or present your content in a stilish way. Easy customization options with use of customizer API can give you an advance features to obtain a perfect looking site.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -716,8 +716,11 @@ body .jetpack-social-navigation-genericons a:before {
     background: #333;
 }
 .search-icon {
+    background: none;
+    color: inherit;
     cursor: pointer;
     font-size: 18px;
+    padding: 0;
 }
 .popup-search-wrapper {
     display: table;
@@ -755,6 +758,23 @@ body .jetpack-social-navigation-genericons a:before {
     padding: 0 15px;
     width: 100%;
 }
+
+@media (max-width: 767px) {
+    .popup-search .search-form{
+        padding: 20px;
+    }
+
+    .popup-search .search-form label,
+    .popup-search .search-form .search-submit{
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .popup-search .search-form label .search-field{
+        border-width: 1px;
+    }
+}
+
 .main-navigation .menu ul {
     display: inline-block;
     margin: 0 auto;
@@ -985,6 +1005,7 @@ body .jetpack-social-navigation-genericons a:before {
     height: 3px;
 }
 .esc-search {
+    background: none;
     cursor: pointer;
     position: absolute;
     height: 60px;
@@ -1076,10 +1097,6 @@ body .jetpack-social-navigation-genericons a:before {
 a {
     color: #000;
     text-decoration: none;
-}
-a:active,
-a:visited {
-    color: #000;
 }
 a:hover,
 a:focus {
@@ -1737,34 +1754,46 @@ input[type="submit"],
 Comments
 ========================================
 **/
-ul.comment-list {
-    margin-left: -40px;
+.comments-area .comment-list {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
 }
-ul.comment-list li {
+
+.comment-list li {
     list-style-type: none;
-}
-.comment-list .comment-body {
-    position: relative;
-    margin-bottom: 70px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    margin-bottom: 30px;
     padding-bottom: 20px;
 }
+
+.comment-list .comment-body {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+}
+
 .comment-list .comment-body .avatar {
+    background-color: #efe9dd;
+    border-radius: 100%;
     position: absolute;
     top: 0;
     left: 0;
     width: 80px;
     height: 80px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
 }
+
 .comment-list .comment-body .reply {
     position: absolute;
     bottom: 0;
     right: 0;
 }
+
 .comment-body p {
     margin-top: 10px;
     margin-left: 80px;
-    font-size: 14px;
-    line-height: 20px;
     color: #595959;
     font-weight: 300;
     -ms-word-wrap: break-word;
@@ -2436,4 +2465,14 @@ object {
         display: block;
         margin: 0 auto;
     }
+}
+.style-archive a:not(.btn-main){
+    color: inherit;
+}
+.style-archive a:not(.btn-main):hover{
+    text-decoration: underline;
+}
+section.error-404.not-found {
+    max-width: 720px;
+    margin: 100px auto;
 }
