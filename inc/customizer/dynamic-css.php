@@ -270,7 +270,7 @@ $css = '';
 		
 	
 		/* Accent */
-		.page-content a,
+		a,
 		.post-categories,
 		#page-wrap .bard-widget.widget_text a,
 		.scrolltop,
@@ -290,7 +290,7 @@ $css = '';
 			background: '. esc_html(bard_options( 'colors_content_accent' )) .';
 		}
 
-		.page-content a:hover,
+		a:hover,
 		.scrolltop:hover {
 			color: '. esc_html(bard_hex2rgba( bard_options( 'colors_content_accent' ), 0.8 )) .';
 		}
@@ -929,7 +929,6 @@ $css = '';
 				line-height: 65px;
 				text-align: center;
 				text-transform: uppercase;
-				color: #030303;
 			}
 
 			@-moz-document url-prefix() {
