@@ -17,57 +17,57 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php if ( function_exists( 'wp_body_open' ) ) {
-  wp_body_open();
-} else {
-  do_action( 'wp_body_open' );
-} ?>
-<header role="banner">
-  <?php if(get_theme_mod('advance_fitness_gym_preloader_option',true)){ ?>
-    <div id="loader-wrapper">
-      <div id="loader"></div>
-      <div class="loader-section section-left"></div>
-      <div class="loader-section section-right"></div>
-    </div>
-  <?php }?>
-  <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-fitness-gym' ); ?></a>
-  <div id="header"> 
-    <?php if( get_theme_mod('advance_fitness_gym_display_topbar',true) != ''){ ?>
-      <div class="top_headbar">
-        <div class="container">  
-          <div class="row">
-            <div class="top-contact col-lg-6 col-md-8 p-0">
-              <span class="contact">
-                <?php if( get_theme_mod( 'advance_fitness_gym_contact','' ) != '') { ?>
-                <i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?>
-               <?php } ?>
-              </span>
-              <span class="mail">
-                <?php if( get_theme_mod( 'advance_fitness_gym_email','' ) != '') { ?>
-                <i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?>
+  <?php if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+  } else {
+    do_action( 'wp_body_open' );
+  } ?>
+  <header role="banner">
+    <?php if(get_theme_mod('advance_fitness_gym_preloader_option',true)){ ?>
+      <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
+    <?php }?>
+    <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-fitness-gym' ); ?></a>
+    <div id="header"> 
+      <?php if( get_theme_mod('advance_fitness_gym_display_topbar') != ''){ ?>
+        <div class="top_headbar">
+          <div class="container">  
+            <div class="row">
+              <div class="top-contact col-lg-6 col-md-8 p-0">
+                <span class="contact">
+                  <?php if( get_theme_mod( 'advance_fitness_gym_contact','' ) != '') { ?>
+                  <i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?>
+                 <?php } ?>
+                </span>
+                <span class="mail">
+                  <?php if( get_theme_mod( 'advance_fitness_gym_email','' ) != '') { ?>
+                  <i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?>
+                  <?php } ?>
+                </span>
+              </div>
+              <div class="col-lg-6 col-md-4 socialbox">
+                <?php if( get_theme_mod( 'advance_fitness_gym_cont_facebook' ) != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_facebook','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-fitness-gym' );?></span></a>
                 <?php } ?>
-              </span>
+                <?php if( get_theme_mod( 'advance_fitness_gym_cont_twitter' ) != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_twitter','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-fitness-gym' );?></span></a>
+                <?php } ?>
+                <?php if( get_theme_mod( 'advance_fitness_gym_instagram') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_instagram','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-fitness-gym' );?></span></a>
+                <?php } ?>
+                <?php if( get_theme_mod( 'advance_fitness_gym_linkedin') != '') { ?>
+                  <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_linkedin','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkdin','advance-fitness-gym' );?></span></a>
+                <?php } ?>
+              </div>
+              <div class="clearfix"></div>  
             </div>
-            <div class="col-lg-6 col-md-4 socialbox">
-              <?php if( get_theme_mod( 'advance_fitness_gym_cont_facebook' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_facebook','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-fitness-gym' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_fitness_gym_cont_twitter' ) != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_cont_twitter','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-fitness-gym' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_fitness_gym_instagram') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_instagram','' ) ); ?>"><i class="fab fa-instagram"></i><span class="screen-reader-text"><?php esc_attr_e( 'Instagram','advance-fitness-gym' );?></span></a>
-              <?php } ?>
-              <?php if( get_theme_mod( 'advance_fitness_gym_linkedin') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_fitness_gym_linkedin','' ) ); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkdin','advance-fitness-gym' );?></span></a>
-              <?php } ?>
-            </div>
-            <div class="clearfix"></div>  
           </div>
         </div>
-      </div>
-    <?php } ?>
-      <div class="middle-header <?php if( get_theme_mod( 'advance_fitness_gym_sticky_header') != '' || get_theme_mod( 'advance_fitness_gym_responsive_sticky_header') != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
+      <?php } ?>
+      <div class="middle-header <?php if( get_theme_mod( 'advance_fitness_gym_sticky_header', false) != '' || get_theme_mod( 'advance_fitness_gym_responsive_sticky_header', false) != '') { ?> sticky-header"<?php } else { ?>close-sticky <?php } ?>">
         <div class="container">
           <div class="row">
             <div class="logo col-lg-3 col-md-9 col-9">
@@ -143,5 +143,5 @@
           </div>
         </div>
       </div>
-  </div>
-</header>
+    </div>
+  </header>

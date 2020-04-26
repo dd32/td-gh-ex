@@ -19,11 +19,9 @@
 	      <?php if( get_theme_mod( 'advance_fitness_gym_author_hide',true) != '') { ?>
 	        <span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?></a></span>
 	      <?php } ?>
-
 	      <?php if( get_theme_mod( 'advance_fitness_gym_date_hide',true) != '') { ?>
 	        <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
 	      <?php } ?>  
-
 	      <?php if( get_theme_mod( 'advance_fitness_gym_comment_hide',true) != '') { ?>  
 	        <span class="entry-comments"><i class="fas fa-comments"></i> <?php comments_number( __('0 Comment', 'advance-fitness-gym'), __('0 Comments', 'advance-fitness-gym'), __('% Comments', 'advance-fitness-gym') ); ?> </span>
 	      <?php } ?>

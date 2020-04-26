@@ -21,24 +21,8 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-fitness-gym'),
 	));
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_fitness_gym_theme_color_option', array( 
-		'panel' => 'advance_fitness_gym_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'advance-fitness-gym' ) 
-	) );
-
-  	$wp_customize->add_setting( 'advance_fitness_gym_theme_color', array(
-	    'default' => '#fe5e24',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_theme_color', array(
-  		'label' => 'Color Option',
-	    'description' => __('One can change complete theme color on just one click.', 'advance-fitness-gym'),
-	    'section' => 'advance_fitness_gym_theme_color_option',
-	    'settings' => 'advance_fitness_gym_theme_color',
-  	)));
-
-	$font_array = array(
+	//font array
+	$advance_fitness_gym_font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' =>'Acme', 
@@ -161,7 +145,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	$wp_customize->add_setting('advance_fitness_gym_paragraph_font_size',array(
@@ -197,7 +181,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -222,7 +206,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -247,7 +231,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'H1 Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -284,7 +268,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'H2 Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -321,7 +305,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'H3 Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -358,7 +342,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'H4 Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -395,7 +379,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'H5 Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -432,7 +416,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	    'section'  => 'advance_fitness_gym_typography',
 	    'label'    => __( 'H6 Fonts','advance-fitness-gym'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_fitness_gym_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -641,6 +625,23 @@ function advance_fitness_gym_customize_register($wp_customize) {
 			'step' => 1,
 		),
 	));
+
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_fitness_gym_theme_color_option', array( 
+		'panel' => 'advance_fitness_gym_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-fitness-gym' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_fitness_gym_theme_color', array(
+	    'default' => '#fe5e24',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-fitness-gym'),
+	    'section' => 'advance_fitness_gym_theme_color_option',
+	    'settings' => 'advance_fitness_gym_theme_color',
+  	)));
 	
 	//Layouts
 	$wp_customize->add_section('advance_fitness_gym_left_right', array(
@@ -805,7 +806,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_fitness_gym_display_topbar',array(
-		'default' => true,
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_fitness_gym_display_topbar',array(
@@ -1086,7 +1087,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	));
 
     $wp_customize->add_setting('advance_fitness_gym_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_fitness_gym_responsive_sticky_header',array(
@@ -1096,7 +1097,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_fitness_gym_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_fitness_gym_responsive_slider',array(
@@ -1105,13 +1106,13 @@ function advance_fitness_gym_customize_register($wp_customize) {
        'section' => 'advance_fitness_gym_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_fitness_gym_responsive_metabox',array(
+    $wp_customize->add_setting('advance_fitness_gym_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_fitness_gym_responsive_metabox',array(
+    $wp_customize->add_control('advance_fitness_gym_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-fitness-gym'),
+       'label' => __('Scroll To Top','advance-fitness-gym'),
        'section' => 'advance_fitness_gym_responsive_setting'
     ));
 
@@ -1132,7 +1133,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_fitness_gym_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_fitness_gym_date_hide',array(
@@ -1142,7 +1143,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_fitness_gym_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_fitness_gym_comment_hide',array(
@@ -1152,7 +1153,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_fitness_gym_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_fitness_gym_author_hide',array(
@@ -1162,7 +1163,7 @@ function advance_fitness_gym_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_fitness_gym_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_fitness_gym_tags_hide',array(

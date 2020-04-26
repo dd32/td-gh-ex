@@ -7,25 +7,25 @@ get_header(); ?>
 <main role="main" id="maincontent">
   <?php do_action( 'advance_fitness_gym_above_slider' ); ?>
   
-  <?php if( get_theme_mod( 'advance_fitness_gym_slider_hide') != '') { ?>
+  <?php if( get_theme_mod( 'advance_fitness_gym_slider_hide', false) != '' || get_theme_mod( 'advance_fitness_gym_responsive_slider', false) != '') { ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_pages = array();
+        <?php $advance_fitness_gym_slider_pages = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_fitness_gym_slider_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_pages[] = $mod;
+              $advance_fitness_gym_slider_pages[] = $mod;
             }
           }
-          if( !empty($slider_pages) ) :
+          if( !empty($advance_fitness_gym_slider_pages) ) :
             $args = array(
               'post_type' => 'page',
-              'post__in' => $slider_pages,
+              'post__in' => $advance_fitness_gym_slider_pages,
               'orderby' => 'post__in'
             );
             $query = new WP_Query( $args );
-            if ( $query->have_posts() ) :
-              $i = 1;
+          if ( $query->have_posts() ) :
+            $i = 1;
         ?>     
         <div class="carousel-inner" role="listbox">
           <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -66,10 +66,10 @@ get_header(); ?>
         <div class="fitnes-post">      
           <div class="row">
             <?php 
-              $catData = get_theme_mod('advance_fitness_gym_product_service');
-              if($catData){              
-              $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'advance-fitness-gym')));?>
-              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>                
+              $advance_fitness_gym_catData = get_theme_mod('advance_fitness_gym_product_service');
+              if($advance_fitness_gym_catData){              
+              $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_fitness_gym_catData ,'advance-fitness-gym')));?>
+              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
                 <div class="col-lg-3 col-md-3">
                   <div class="service-border">
                     <?php the_post_thumbnail('full'); ?>
@@ -94,31 +94,31 @@ get_header(); ?>
       <div class="container">
         <div class="fitness-single-post">      
           <?php
-           $args = array( 'name' => get_theme_mod('advance_fitness_gym_single_post',''));
-           $query = new WP_Query( $args );
-           if ( $query->have_posts() ) :
-            while ( $query->have_posts() ) : $query->the_post(); ?>
-              <div class="row">
-                <div class="col-lg-6 col-md-6">
-                  <div class="img-box">
-                    <?php the_post_thumbnail('full'); ?>
+            $args = array( 'name' => get_theme_mod('advance_fitness_gym_single_post',''));
+            $query = new WP_Query( $args );
+            if ( $query->have_posts() ) :
+              while ( $query->have_posts() ) : $query->the_post(); ?>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6">
+                    <div class="img-box">
+                      <?php the_post_thumbnail('full'); ?>
+                    </div>
                   </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                  <div class="single-content">
-                    <h2><a href="<?php esc_url(the_permalink()); ?>" ><?php esc_html(the_title()); ?></a></h2>
-                    <hr class="wlcm-hr">
-                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,70 ) ); ?></p>
-                    <div class="know-btn">
-                      <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','advance-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span>
-                      </a>
+                  <div class="col-lg-6 col-md-6">
+                    <div class="single-content">
+                      <h2><a href="<?php esc_url(the_permalink()); ?>" ><?php esc_html(the_title()); ?></a></h2>
+                      <hr class="wlcm-hr">
+                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_fitness_gym_string_limit_words( $excerpt,70 ) ); ?></p>
+                      <div class="know-btn">
+                        <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'READ MORE', 'advance-fitness-gym' ); ?>"><?php esc_html_e('READ MORE','advance-fitness-gym'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-fitness-gym' );?></span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-             <?php endwhile; 
-             wp_reset_postdata();?>
-             <?php else : ?>
+              <?php endwhile; 
+              wp_reset_postdata();?>
+            <?php else : ?>
               <div class="no-postfound"></div>
             <?php
           endif; ?>
