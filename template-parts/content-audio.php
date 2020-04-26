@@ -28,7 +28,6 @@
       <?php if( get_theme_mod( 'advance_ecommerce_store_author_hide',true) != '') { ?>
         <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
       <?php } ?>
-
       <?php if( get_theme_mod( 'advance_ecommerce_store_date_hide',true) != '') { ?>
         <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
       <?php } ?>     

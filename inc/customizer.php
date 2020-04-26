@@ -21,24 +21,8 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-ecommerce-store'),
 	));
 
-	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'advance_ecommerce_store_theme_color_option', array( 
-		'panel' => 'advance_ecommerce_store_panel_id', 
-		'title' => esc_html__( 'Theme Color Option', 'advance-ecommerce-store' ) 
-	) );
-
-  	$wp_customize->add_setting( 'advance_ecommerce_store_theme_color', array(
-	    'default' => '#cb4f00',
-	    'sanitize_callback' => 'sanitize_hex_color'
-  	));
-  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_ecommerce_store_theme_color', array(
-  		'label' => 'Color Option',
-	    'description' => __('One can change complete theme color on just one click.', 'advance-ecommerce-store'),
-	    'section' => 'advance_ecommerce_store_theme_color_option',
-	    'settings' => 'advance_ecommerce_store_theme_color',
-  	)));
-
-	$font_array = array(
+	// font array
+	$advance_ecommerce_store_font_array = array(
         '' =>'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' =>'Acme', 
@@ -161,7 +145,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	$wp_customize->add_setting('advance_ecommerce_store_paragraph_font_size',array(
@@ -197,7 +181,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -222,7 +206,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -247,7 +231,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'H1 Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -284,7 +268,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'H2 Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -321,7 +305,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'H3 Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -358,7 +342,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'H4 Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -395,7 +379,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'H5 Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -432,7 +416,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	    'section'  => 'advance_ecommerce_store_typography',
 	    'label'    => __( 'H6 Fonts','advance-ecommerce-store'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_ecommerce_store_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -447,7 +431,6 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'type'	=> 'text'
 	));
 
-// background image
 	$wp_customize->add_setting('advance_ecommerce_store_background_skin_mode',array(
         'default' => __('Transparent Background','advance-ecommerce-store'),
         'sanitize_callback' => 'advance_ecommerce_store_sanitize_choices'
@@ -643,6 +626,23 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		),
 	));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_ecommerce_store_theme_color_option', array( 
+		'panel' => 'advance_ecommerce_store_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-ecommerce-store' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_ecommerce_store_theme_color', array(
+	    'default' => '#cb4f00',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_ecommerce_store_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-ecommerce-store'),
+	    'section' => 'advance_ecommerce_store_theme_color_option',
+	    'settings' => 'advance_ecommerce_store_theme_color',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_ecommerce_store_left_right', array(
 		'title'    => __('Layout Settings', 'advance-ecommerce-store'),
@@ -660,6 +660,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
 	$wp_customize->add_setting( 'advance_ecommerce_store_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_ecommerce_store_sticky_header',array(
@@ -994,7 +995,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));
 
     $wp_customize->add_setting('advance_ecommerce_store_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_responsive_sticky_header',array(
@@ -1004,7 +1005,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_responsive_slider',array(
@@ -1013,13 +1014,13 @@ function advance_ecommerce_store_customize_register($wp_customize) {
        'section' => 'advance_ecommerce_store_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_ecommerce_store_responsive_metabox',array(
+    $wp_customize->add_setting('advance_ecommerce_store_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_ecommerce_store_responsive_metabox',array(
+    $wp_customize->add_control('advance_ecommerce_store_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-ecommerce-store'),
+       'label' => __('Scroll To Top','advance-ecommerce-store'),
        'section' => 'advance_ecommerce_store_responsive_setting'
     ));
 
@@ -1040,7 +1041,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_ecommerce_store_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_date_hide',array(
@@ -1050,7 +1051,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_comment_hide',array(
@@ -1060,7 +1061,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_author_hide',array(
@@ -1070,7 +1071,7 @@ function advance_ecommerce_store_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_ecommerce_store_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_ecommerce_store_tags_hide',array(

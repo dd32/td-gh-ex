@@ -26,19 +26,19 @@ get_header(); ?>
                 $product_categories = get_terms( 'product_cat', $args );
                 $count = count($product_categories);
                 if ( $count > 0 ){
-                    foreach ( $product_categories as $product_category ) {
-                        $cats_id   = $product_category->term_id;
-                      $cat_link = get_category_link( $cats_id );
-                      $thumbnail_id = get_woocommerce_term_meta( $product_category->term_id, 'thumbnail_id', true ); // Get Category Thumbnail
-                      $image = wp_get_attachment_url( $thumbnail_id );
-                      if ($product_category->category_parent == 0) {
-                        ?>
-                     <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
-                      <?php
-                     if ( $image ) {
-                    echo '<img class="thulg_img" src="' . esc_url( $image ) . '" alt="" />';
-                  }
-                    echo esc_html( $product_category->name ); ?></a></li>
+                  foreach ( $product_categories as $product_category ) {
+                    $cats_id   = $product_category->term_id;
+                    $cat_link = get_category_link( $cats_id );
+                    $thumbnail_id = get_term_meta( $product_category->term_id, 'thumbnail_id', true ); // Get Category Thumbnail
+                    $image = wp_get_attachment_url( $thumbnail_id );
+                    if ($product_category->category_parent == 0) {
+                      ?>
+                      <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
+                        <?php
+                        if ( $image ) {
+                          echo '<img class="thulg_img" src="' . esc_url( $image ) . '" alt="" />';
+                        }
+                      echo esc_html( $product_category->name ); ?></a></li>
                      <?php
                     }
                   }
@@ -49,25 +49,25 @@ get_header(); ?>
         </div>
         <div class="col-lg-9 col-md-9">
           <?php do_action( 'advance_ecommerce_store_before_slider' ); ?>
-          <?php if( get_theme_mod( 'advance_ecommerce_store_slider_hide') != '') { ?>
+          <?php if( get_theme_mod( 'advance_ecommerce_store_slider_hide', false) != '' || get_theme_mod( 'advance_ecommerce_store_responsive_slider', false) != '') { ?>
           <div id="slider">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-              <?php $slider_pages = array();
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <?php $advance_ecommerce_store_slider_pages = array();
                 for ( $count = 1; $count <= 4; $count++ ) {
                   $mod = intval( get_theme_mod( 'advance_ecommerce_store_slider_page' . $count ));
                   if ( 'page-none-selected' != $mod ) {
-                    $slider_pages[] = $mod;
+                    $advance_ecommerce_store_slider_pages[] = $mod;
                   }
                 }
-                if( !empty($slider_pages) ) :
+                if( !empty($advance_ecommerce_store_slider_pages) ) :
                   $args = array(
                     'post_type' => 'page',
-                    'post__in' => $slider_pages,
+                    'post__in' => $advance_ecommerce_store_slider_pages,
                     'orderby' => 'post__in'
                   );
                   $query = new WP_Query( $args );
-                  if ( $query->have_posts() ) :
-                    $i = 1;
+                if ( $query->have_posts() ) :
+                  $i = 1;
               ?>     
               <div class="carousel-inner" role="listbox">
                 <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
@@ -77,7 +77,7 @@ get_header(); ?>
                       <div class="inner_carousel">
                         <h1><?php esc_html(the_title()); ?></h1>
                         <hr class="slidehr">
-                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','20')))); ?></p>
+                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt, esc_attr(get_theme_mod('advance_ecommerce_store_slider_excerpt_length','15')))); ?></p>
                         <div class="more-btn">              
                           <a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('READ MORE','advance-ecommerce-store'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE', 'advance-ecommerce-store' ); ?></span></a>
                         </div>
@@ -88,7 +88,7 @@ get_header(); ?>
                 wp_reset_postdata();?>
               </div>
               <?php else : ?>
-                  <div class="no-postfound"></div>
+                <div class="no-postfound"></div>
               <?php endif;
               endif;?>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -106,19 +106,19 @@ get_header(); ?>
           <div class="product-service">
             <div class="row">
               <?php 
-                $catData = get_theme_mod('advance_ecommerce_store_product_service');
-                if($catData){              
-                $page_query = new WP_Query(array( 'category_name' => esc_html( $catData ,'advance-ecommerce-store')));?>
-                <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>                
-                    <div class="col-lg-4 col-md-4">
-                      <div class="service-border">
-                        <a href="<?php esc_url(the_permalink()); ?>"><strong><?php esc_html(the_title()); ?></strong><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
-                        <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,5 ) ); ?></p>
-                      </div>
+                $advance_ecommerce_store_catData = get_theme_mod('advance_ecommerce_store_product_service');
+                if($advance_ecommerce_store_catData){              
+                $page_query = new WP_Query(array( 'category_name' => esc_html( $advance_ecommerce_store_catData ,'advance-ecommerce-store')));?>
+                <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+                  <div class="col-lg-4 col-md-4">
+                    <div class="service-border">
+                      <a href="<?php esc_url(the_permalink()); ?>"><strong><?php esc_html(the_title()); ?></strong><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a>
+                      <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_ecommerce_store_string_limit_words( $excerpt,5 ) ); ?></p>
                     </div>
+                  </div>
                 <?php endwhile;
                 wp_reset_postdata();
-              }
+                }
               ?>
             </div>
           </div>
@@ -140,15 +140,15 @@ get_header(); ?>
               <?php if( get_theme_mod('advance_ecommerce_store_section_title') != ''){ ?>
                 <strong><?php echo esc_html(get_theme_mod('advance_ecommerce_store_section_title')); ?></strong>
               <?php }?>
-              <?php $slider_pages = array();
+              <?php $advance_ecommerce_store_slider_pages = array();
                 $mod = absint( get_theme_mod( 'advance_ecommerce_store_product_page','advance-ecommerce-store'));
                 if ( 'page-none-selected' != $mod ) {
-                  $slider_pages[] = $mod;
+                  $advance_ecommerce_store_slider_pages[] = $mod;
                 }
-                if( !empty($slider_pages) ) :
+                if( !empty($advance_ecommerce_store_slider_pages) ) :
                   $args = array(
                     'post_type' => 'page',
-                    'post__in' => $slider_pages,
+                    'post__in' => $advance_ecommerce_store_slider_pages,
                     'orderby' => 'post__in'
                   );
                   $query = new WP_Query( $args );

@@ -11,8 +11,8 @@ get_header(); ?>
     <div class="innerlightbox">
         <div class="container">
             <?php
-            $left_right = get_theme_mod( 'advance_ecommerce_store_layout_options','Right Sidebar');
-            if($left_right == 'Left Sidebar'){ ?>
+            $advance_ecommerce_store_left_right = get_theme_mod( 'advance_ecommerce_store_layout_options','Right Sidebar');
+            if($advance_ecommerce_store_left_right == 'Left Sidebar'){ ?>
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
@@ -41,7 +41,7 @@ get_header(); ?>
                         </div> 
                     </div>
                 </div>
-            <?php }else if($left_right == 'Right Sidebar'){ ?>
+            <?php }else if($advance_ecommerce_store_left_right == 'Right Sidebar'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                        <h1 class="entry-title"><?php /* translators: %s: search term */
@@ -70,7 +70,7 @@ get_header(); ?>
                         <?php get_sidebar();?>
                     </div>
                 </div>
-            <?php }else if($left_right == 'One Column'){ ?>
+            <?php }else if($advance_ecommerce_store_left_right == 'One Column'){ ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h1 class="entry-title"><?php /* translators: %s: search term */
                         printf( esc_html__( 'Results For: %s','advance-ecommerce-store'), esc_html( get_search_query() ) ); ?></h1>
@@ -94,7 +94,7 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>
-            <?php }else if($left_right == 'Three Columns'){ ?>
+            <?php }else if($advance_ecommerce_store_left_right == 'Three Columns'){ ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
@@ -122,7 +122,7 @@ get_header(); ?>
                     </div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
                 </div>
-            <?php }else if($left_right == 'Four Columns'){ ?>
+            <?php }else if($advance_ecommerce_store_left_right == 'Four Columns'){ ?>
                 <div class="row">
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
@@ -151,7 +151,7 @@ get_header(); ?>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
                     <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
                 </div>
-            <?php }else if($left_right == 'Grid Layout'){ ?>
+            <?php }else if($advance_ecommerce_store_left_right == 'Grid Layout'){ ?>
                 <div class="row">
                     <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9 row'); ?>>
                        <h1 class="entry-title"><?php /* translators: %s: search term */

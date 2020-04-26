@@ -20,11 +20,10 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 		?>
 		<div class="social_widget">
 		<?php
-		$facebook = ''; $twitter = '';$google = ''; $linkedin = '';  $pinterest = '';$tumblr = ''; $instagram = ''; $youtube = '';
+		$facebook = ''; $twitter = '';$linkedin = '';  $pinterest = '';$tumblr = ''; $instagram = ''; $youtube = '';
 		
 		$facebook = $instance['facebook'];
         $twitter = $instance['twitter'];
-        $google = $instance['google'];
         $linkedin = $instance['linkedin'];
         $pinterest = $instance['pinterest'];
         $tumblr = $instance['tumblr'];
@@ -35,8 +34,6 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
         if(!empty($facebook) ){ ?><a class="custom_facebook fff" href=" <?php echo esc_url($instance['facebook']); ?>"><i class="fab fa-facebook-f"></i><span class="screen-reader-text"><?php esc_attr_e( 'Facebook','advance-ecommerce-store' );?></span></a><?php } ?>
 
         <?php if(!empty($twitter) ){ ?><a class="custom_twitter" href="<?php echo esc_url($instance['twitter']); ?>"><i class="fab fa-twitter"></i><span class="screen-reader-text"><?php esc_attr_e( 'Twitter','advance-ecommerce-store' );?></span></a><?php } ?>
-
-        <?php if(!empty($google) ){ ?><a class="custom_google" href="<?php echo esc_url($instance['google']); ?>"><i class="fab fa-google-plus-g"></i><span class="screen-reader-text"><?php esc_attr_e( 'Google','advance-ecommerce-store' );?></span></a><?php } ?>
 
         <?php if(!empty($linkedin) ){ ?><a class="custom_linkedin" href="<?php echo esc_url($instance['linkedin']); ?>"><i class="fab fa-linkedin-in"></i><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin','advance-ecommerce-store' );?></span></a><?php } ?>
 
@@ -60,7 +57,6 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 		isset($instance['facebook']) ? $facebook = $instance['facebook'] : null;
 		isset($instance['instagram']) ? $instagram = $instance['instagram'] : null;
         isset($instance['twitter']) ? $twitter = $instance['twitter'] : null;
-        isset($instance['google']) ? $google = $instance['google'] : null;
         isset($instance['linkedin']) ? $linkedin = $instance['linkedin'] : null;
         isset($instance['pinterest']) ? $pinterest = $instance['pinterest'] : null;
         isset($instance['tumblr']) ? $tumblr = $instance['tumblr'] : null;
@@ -73,10 +69,6 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 			<p>
 			<label for="<?php echo esc_attr($this->get_field_id('twitter')); ?>"><?php esc_html_e('Twitter:','advance-ecommerce-store'); ?></label>
 			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('twitter')); ?>" name="<?php echo esc_attr($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_attr($twitter); ?>">
-			</p>
-			<p>
-			<label for="<?php echo esc_attr($this->get_field_id('google')); ?>"><?php esc_html_e('Google+:','advance-ecommerce-store'); ?></label>
-			<input class="widefat" id="<?php echo esc_attr($this->get_field_id('google')); ?>" name="<?php echo esc_attr($this->get_field_name('google')); ?>" type="text" value="<?php echo esc_attr($google); ?>">
 			</p>
 			<p>
 			<label for="<?php echo esc_attr($this->get_field_id('linkedin')); ?>"><?php esc_html_e('Linkedin:','advance-ecommerce-store'); ?></label>
@@ -106,7 +98,6 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 		$instance = array();
         $instance['facebook'] = (!empty($new_instance['facebook']) ) ? strip_tags($new_instance['facebook']) : '';
         $instance['twitter'] = (!empty($new_instance['twitter']) ) ? strip_tags($new_instance['twitter']) : '';
-        $instance['google'] = (!empty($new_instance['google']) ) ? strip_tags($new_instance['google']) : '';
         $instance['instagram'] = (!empty($new_instance['instagram']) ) ? strip_tags($new_instance['instagram']) : '';
         $instance['linkedin'] = (!empty($new_instance['linkedin']) ) ? strip_tags($new_instance['linkedin']) : '';
         $instance['pinterest'] = (!empty($new_instance['pinterest']) ) ? strip_tags($new_instance['pinterest']) : '';

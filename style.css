@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet and compatibility of this theme lets you translate the web page into ar_Arabic, zh_Chinese,  fr_French, de_German, es_Spanish, it_Italian, ja_Japanese, ru_Russian, tr_Turkish languages. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Version: 0.5.6
+Version: 0.5.7
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -245,7 +245,6 @@ input[type="submit"] {
   font-weight:bold;
   color:#fff;
 }
-
 /* ---------Buttons--------- */
 .read-moresec a.button{
   background:#cb4f00;
@@ -292,7 +291,6 @@ input[type="submit"] {
 .no-js #loader-wrapper {
   display: none;
 }
-
 #loader {
   display: block;
   position: relative;
@@ -409,7 +407,6 @@ input[type="submit"] {
   -webkit-transition: all 0.3s 1s ease-out;
   transition: all 0.3s 1s ease-out;
 }
-
 /*----------Sticky Header------*/
 .fixed-header {
   position: fixed;
@@ -421,7 +418,6 @@ input[type="submit"] {
 .page-template-custom-front-page .fixed-header .primary-navigation ul{
   margin: 0;
 }
-
 /* ---------Middle Header--------- */
 .logo{
   margin:0;
@@ -496,7 +492,6 @@ span.cart-value {
   position: relative;
   color: #fff;
 }
-
 /* --------- Main Menu--------- */
 .woocommerce form .form-row .required{
   color: #df0000;
@@ -509,7 +504,6 @@ span.cart-value {
   outline: 1px dotted #fff;
   border-bottom: 1px solid #fff;
 }
-
 /* --------- MENUS CSS --------- */
 #menu-sidebar .primary-navigation li {
   border-right: 1px solid #fff;
@@ -561,9 +555,6 @@ ul.list_nav {
 }
 #woomenu-sidebar .primary-navigation ul ul ul{
   top:10px;
-}
-#woomenu-sidebar .primary-navigation ul ul{
-
 }
 .primary-navigation a{
   display: block;
@@ -620,7 +611,6 @@ ul.list_nav {
 .primary-navigation .menu > ul > li.highlight:hover{
   background: transparent;
 }
-
 /*--------------- SUPERFISH MENU ---------------------------*/
 .sf-arrows .sf-with-ul:after{
   content: '\f067';
@@ -672,7 +662,6 @@ ul.list_nav {
   overflow-y: scroll;
   height: 500px;
 }
-
 /* width */
 .product-category::-webkit-scrollbar {
   width: 8px;
@@ -702,7 +691,6 @@ ul.list_nav {
   font-weight: bold;
   font-size: 12px;
 }
-
 /* --------- Slider --------- */
 #slider{ 
   max-width:100%; 
@@ -772,7 +760,6 @@ hr.slidehr {
 .more-btn{
   margin-top: 35px;
 }
-
 /*---------- Product Services -----------*/
 .product-service {
   background: #cb4f00;
@@ -794,7 +781,6 @@ hr.slidehr {
   padding: 10px;
   border-left: solid 1px #e1e1e1;
 }
-
 /*---------- Product section -----------*/
 .sidebar-products{
   padding: 3% 0;
@@ -850,7 +836,6 @@ hr.slidehr {
   text-align: right;
   margin: 25px 0; 
 }
-
 /* --------- Blog Page ------- */
 .metabox{
   color:#000;
@@ -1154,7 +1139,6 @@ table#wp-calendar {
   color:#000;
   padding:5px 15px;
 }
-
 /* Comments BOX */
 #comments {
   display: block;
@@ -1857,7 +1841,7 @@ iframe{
 
 @media screen and (max-width: 1000px){
   .menubar .nav ul li a:focus,
-  a.closebtn.mobile-menu:focus{
+  a.closebtn.mobile-menu:focus, .primary-navigation a:focus{
     outline: 1px dotted #fff;
     border-bottom: 1px solid #fff;
   }
@@ -1913,7 +1897,7 @@ iframe{
   .primary-navigation ul ul a,.primary-navigation li a:hover, .primary-navigation li:hover a{
     background-image: linear-gradient(-90deg, #000 0%, #cb4f00 120% );
   }
-  .primary-navigation li a:hover, .primary-navigation li:hover a{
+  .primary-navigation li a:hover, .primary-navigation li:hover a, .primary-navigation a:focus{
     background: none !important;
   }
   .primary-navigation ul li a{
