@@ -97,8 +97,8 @@ function advance_coaching_widgets_init() {
 	));
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('advance_coaching_footer_widget_areas', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$advance_coaching_widget_areas = get_theme_mod('advance_coaching_footer_widget_areas', '4');
+	for ($i=1; $i<=$advance_coaching_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer Nav ', 'advance-coaching' ) . $i,
 			'id'            => 'footer-' . $i,
@@ -403,7 +403,6 @@ function advance_coaching_shop_per_page( $cols ) {
   	$cols = get_theme_mod( 'advance_coaching_wooproducts_per_page', 9 );
 	return $cols;
 }
-
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';

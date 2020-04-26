@@ -21,7 +21,7 @@ function advance_coaching_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-coaching'),
 	));
 
-	$font_array = array(
+	$advance_coaching_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -144,7 +144,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	$wp_customize->add_setting('advance_coaching_paragraph_font_size',array(
@@ -180,7 +180,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -205,7 +205,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -230,7 +230,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'H1 Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -267,7 +267,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'h2 Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -304,7 +304,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'h3 Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -341,7 +341,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'h4 Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -378,7 +378,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'h5 Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -415,7 +415,7 @@ function advance_coaching_customize_register($wp_customize) {
 	    'section'  => 'advance_coaching_typography',
 	    'label'    => __( 'h6 Fonts','advance-coaching'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $advance_coaching_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -805,7 +805,7 @@ function advance_coaching_customize_register($wp_customize) {
 
 	//Show /Hide Topbar
 	$wp_customize->add_setting( 'advance_coaching_display_topbar',array(
-		'default' => true,
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_coaching_display_topbar',array(
@@ -816,6 +816,7 @@ function advance_coaching_customize_register($wp_customize) {
 
     //Sticky Header
 	$wp_customize->add_setting( 'advance_coaching_sticky_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('advance_coaching_sticky_header',array(
@@ -1110,7 +1111,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));
 
     $wp_customize->add_setting('advance_coaching_responsive_sticky_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_coaching_responsive_sticky_header',array(
@@ -1120,7 +1121,7 @@ function advance_coaching_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_coaching_responsive_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_coaching_responsive_slider',array(
@@ -1129,13 +1130,13 @@ function advance_coaching_customize_register($wp_customize) {
        'section' => 'advance_coaching_responsive_setting'
     ));
 
-    $wp_customize->add_setting('advance_coaching_responsive_metabox',array(
+    $wp_customize->add_setting('advance_coaching_responsive_scroll',array(
        'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
-    $wp_customize->add_control('advance_coaching_responsive_metabox',array(
+    $wp_customize->add_control('advance_coaching_responsive_scroll',array(
        'type' => 'checkbox',
-       'label' => __('Metabox','advance-coaching'),
+       'label' => __('Scroll To Top','advance-coaching'),
        'section' => 'advance_coaching_responsive_setting'
     ));
 
@@ -1156,7 +1157,7 @@ function advance_coaching_customize_register($wp_customize) {
 	));	
 
 	$wp_customize->add_setting('advance_coaching_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_coaching_date_hide',array(
@@ -1166,7 +1167,7 @@ function advance_coaching_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_coaching_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_coaching_comment_hide',array(
@@ -1176,7 +1177,7 @@ function advance_coaching_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_coaching_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_coaching_author_hide',array(
@@ -1186,7 +1187,7 @@ function advance_coaching_customize_register($wp_customize) {
     ));
 
     $wp_customize->add_setting('advance_coaching_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('advance_coaching_tags_hide',array(

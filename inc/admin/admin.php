@@ -16,8 +16,8 @@ function advance_coaching_mostrar_guide() {
 	//custom function about theme customizer
 	$return = add_query_arg( array()) ;
 ?>
- <div class="wrapper-info">
-	 <div class="header">
+<div class="wrapper-info">
+	<div class="header">
 	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
 	 	<h2><?php esc_html_e('Welcome to Advance Coaching Theme', 'advance-coaching'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-coaching'); ?></p>
@@ -28,8 +28,8 @@ function advance_coaching_mostrar_guide() {
 		</div>
 	</div>
 	<div class="button-bg">
-	<button  role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-coaching'); ?></button>
-	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-coaching'); ?></button>
+		<button  role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-coaching'); ?></button>
+		<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-coaching'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'advance-coaching'); ?></h3>
@@ -60,7 +60,6 @@ function advance_coaching_mostrar_guide() {
 			</div>
 		</div>
 	</div>
-
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'advance-coaching'); ?></h3>
 	  	<div class="sec-button">
@@ -107,7 +106,6 @@ function advance_coaching_mostrar_guide() {
 			</div>
 		</div>
 	</div>
-
 <script>
 	function openPage(pageName,elmnt,color) {
 	    var i, tabcontent, tablinks;

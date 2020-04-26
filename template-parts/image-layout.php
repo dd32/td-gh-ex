@@ -14,7 +14,6 @@
             <div class="attachment">
                 <?php advance_coaching_the_attached_image(); ?>
             </div>
-
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
                     <div class="entry-content">
@@ -32,7 +31,6 @@
         ?>
     </div>    
     <?php edit_post_link( __( 'Edit', 'advance-coaching' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
- 
     <?php
         // If comments are open or we have at least one comment, load up the comment template
         if ( comments_open() || '0' != get_comments_number() )

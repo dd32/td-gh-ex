@@ -15,7 +15,6 @@ function advance_coaching_resmenu_close() {
   document.getElementById("menu-sidebar").style.width = "0";
 }
 
-
 /**** Hidden search box ***/
 function advance_coaching_search_open() {
   jQuery(".serach_outer").slideDown(100);

@@ -2,26 +2,24 @@
 /**
  * Template Name: Custom home
  */
-
 get_header(); ?>
 
 <main role="main" id="maincontent">
   <?php do_action( 'advance_coaching_above_slider' ); ?>
-
-  <?php if( get_theme_mod( 'advance_coaching_slider_hide') != '') { ?>
+  <?php if( get_theme_mod( 'advance_coaching_slider_hide', false) != '' || get_theme_mod( 'advance_coaching_responsive_slider', false) != '') { ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-        <?php $slider_page = array();
+        <?php $advance_coaching_slider_page = array();
           for ( $count = 1; $count <= 4; $count++ ) {
             $mod = intval( get_theme_mod( 'advance_coaching_slider_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_page[] = $mod;
+              $advance_coaching_slider_page[] = $mod;
             }
           }
-          if( !empty($slider_page) ) :
+          if( !empty($advance_coaching_slider_page) ) :
             $args = array(
               'post_type' => 'page',
-              'post__in' => $slider_page,
+              'post__in' => $advance_coaching_slider_page,
               'orderby' => 'post__in'
             );
             $query = new WP_Query( $args );
@@ -63,9 +61,7 @@ get_header(); ?>
       <div class="clearfix"></div>
     </section>
   <?php } ?>
-
   <?php do_action( 'advance_coaching_below_slider' ); ?>
-
   <?php if( get_theme_mod( 'advance_coaching_title') != '' || get_theme_mod( 'advance_coaching_projects_category_category') != '') { ?>
     <section id="coaching">
       <div class="container">
@@ -77,36 +73,33 @@ get_header(); ?>
         <?php } ?>
         <div class="row">
           <?php 
-           $catData =  get_theme_mod('advance_coaching_projects_category_category');
-           if($catData){
-            $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'advance-coaching')));?>
-              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-                <div class="col-lg-4 col-md-4">
-                  <div class="box">
-                    <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
-                    <div class="box-content">
-                      <h4 class="title"><?php esc_html(the_title()); ?></h4>
-                      <p class="description">
-                        <?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt,12 ) ); ?>
-                      </p> 
-                    </div>
+          $advance_coaching_catData =  get_theme_mod('advance_coaching_projects_category_category');
+          if($advance_coaching_catData){
+            $page_query = new WP_Query(array( 'category_name' => esc_html($advance_coaching_catData,'advance-coaching')));?>
+            <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+              <div class="col-lg-4 col-md-4">
+                <div class="box">
+                  <?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?>
+                  <div class="box-content">
+                    <h4 class="title"><?php esc_html(the_title()); ?></h4>
+                    <p class="description">
+                      <?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt,15 ) ); ?>
+                    </p> 
                   </div>
-                  <div class="read-more">
-                    <a href="<?php esc_url(the_permalink()); ?>" class="blogbutton-small"><?php esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i>
-                    <span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span>
-                    </a>
-                  </div>
-                </div> 
-              <?php endwhile;
-              wp_reset_postdata();
-              }
-           ?>
+                </div>
+                <div class="read-more">
+                  <a href="<?php esc_url(the_permalink()); ?>" class="blogbutton-small"><?php esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-coaching' );?></span>
+                  </a>
+                </div>
+              </div> 
+            <?php endwhile;
+            wp_reset_postdata();
+          }?>
         </div>
       </div>
     </section>
   <?php }?>
   <?php do_action( 'advance_coaching_below_coaching_section' ); ?>
-
   <div id="content">
     <div class="container">
       <?php while ( have_posts() ) : the_post(); ?>

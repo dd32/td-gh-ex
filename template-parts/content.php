@@ -12,7 +12,6 @@
   $archive_month = get_the_time('m'); 
   $archive_day   = get_the_time('d'); 
 ?>
-
 <article class="page-box">
   <h2><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php esc_html(the_title());?><span class="screen-reader-text"><?php esc_html(the_title()); ?></span></a></h2>
   <?php 
@@ -41,11 +40,9 @@
       <?php if( get_theme_mod( 'advance_coaching_date_hide',true) != '') { ?>
         <span class="entry-date"><i class="fa fa-calendar"></i><a href="<?php echo esc_url( get_day_link( $archive_year, $archive_month, $archive_day)); ?>"><?php echo esc_html( get_the_date() ); ?><span class="screen-reader-text"><?php echo esc_html( get_the_date() ); ?></span></a></span>
       <?php } ?>
-
       <?php if( get_theme_mod( 'advance_coaching_author_hide',true) != '') { ?>
         <span class="entry-author"><i class="fa fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php esc_html(the_author()); ?><span class="screen-reader-text"><?php esc_html(the_author()); ?></span></a></span>
       <?php } ?>
-
       <?php if( get_theme_mod( 'advance_coaching_comment_hide',true) != '') { ?>
         <span class="entry-comments"><i class="fas fa-comments"></i><?php comments_number( __('0 Comments','advance-coaching'), __('0 Comments','advance-coaching'), __('% Comments','advance-coaching') ); ?></span>
       <?php } ?>
