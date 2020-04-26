@@ -6,6 +6,7 @@ import Styling from './styling';
 import ResVid from './resvid';
 import Hwidget from './hwidget';
 import Comments from './comments';
+import Toggle from './toggle';
 
 class Main {
 
@@ -41,6 +42,9 @@ class Main {
 
 		// Add comments toggle functionality.
 		this.commentsToggle();
+
+		// Add other unspecified toggle functionality.
+		this.randomToggle()
 
 		// Add responsive styling functionality.
 		this.responsiveStyling();
@@ -102,6 +106,16 @@ class Main {
 	commentsToggle() {
 
 		new Comments();
+	}
+
+	/**
+	 * Random Toggle functionality.
+	 * 
+	 * @since 1.4.9
+	 */
+	randomToggle() {
+
+		new Toggle();
 	}
 
 	/**

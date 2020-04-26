@@ -1372,14 +1372,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 		font-size: 2.315rem;
 		line-height: 1.51188;
 	}
-	body.block-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
-	body.block-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .is-block-content,
-	body.block-editor-page #editor .block-editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
-	body.block-editor-page #editor .block-editor-block-list__block[data-align="left"][data-type="core/image"] .is-block-content,
-	body.block-editor-page #editor .wp-block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
-	body.block-editor-page #editor .wp-block[data-align="left"][data-type="core/image"] .is-block-content {
-		margin-right: -5.984em;
-	}
 	body.block-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit,
 	body.block-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .is-block-content,
 	body.block-editor-page #editor .block-editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit,
@@ -1387,14 +1379,6 @@ p.has-drop-cap:not(:focus)::first-letter {
 	body.block-editor-page #editor .wp-block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit,
 	body.block-editor-page #editor .wp-block[data-align="left"][data-type="core/pullquote"] .is-block-content {
 		margin-right: -5.984em;
-	}
-	body.block-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit,
-	body.block-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/image"] .is-block-content,
-	body.block-editor-page #editor .block-editor-block-list__block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit,
-	body.block-editor-page #editor .block-editor-block-list__block[data-align="right"][data-type="core/image"] .is-block-content,
-	body.block-editor-page #editor .wp-block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit,
-	body.block-editor-page #editor .wp-block[data-align="right"][data-type="core/image"] .is-block-content {
-		margin-left: -95px;
 	}
 	body.block-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit,
 	body.block-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .is-block-content,

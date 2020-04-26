@@ -460,3 +460,24 @@ function bayleaf_hex_to_rgb( $hex_color, $as_string, $sep = ',' ) {
 	}
 	return $as_string ? implode( $sep, $rgb_array ) : $rgb_array;
 }
+
+/**
+ * Toggle button for Bayleaf archive description.
+ *
+ * @since 1.4.9
+ *
+ * @return string
+ */
+function bayleaf_archive_description_toggle() {
+	$desc = get_the_archive_description();
+	if ( $desc ) {
+		return sprintf(
+			'<button class="archive-desc-toggle"><span class="screen-reader-text">%1$s</span><span aria-hidden="true"><span class="archive-topen">%2$s</span><span class="archive-tclose">%3$s</span></span></button>',
+			esc_html__( 'Archive description toggle', 'bayleaf' ),
+			esc_html__( '+', 'bayleaf' ),
+			esc_html__( '-', 'bayleaf' )
+		);
+	} else {
+		return '';
+	}
+}

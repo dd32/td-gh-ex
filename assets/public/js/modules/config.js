@@ -20,6 +20,8 @@ let config = {
 		scrlTop      : '.scrl-to-top',
 		comments     : '.comments-area',
 		cToggle      : '.comments-toggle',
+		dToggle      : '.archive-desc-toggle',
+		dContent     : '.page-header-description',
 		widthStyle   : '.has-featured-img, .slider2, .dp-wrapper',
 	},
 	cls: { /* HTML Classes */

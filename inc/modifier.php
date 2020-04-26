@@ -69,6 +69,10 @@ function bayleaf_post_classes( $classes ) {
 		$classes[] = 'fw-tab-6 fw-tabr-4';
 	}
 
+	if ( has_post_thumbnail() && bayleaf_get_mod( 'bayleaf_show_featured', 'none' ) ) {
+		$classes[] = 'has-featured-image';
+	}
+
 	return $classes;
 }
 add_filter( 'post_class', 'bayleaf_post_classes' );
@@ -168,99 +172,97 @@ add_filter( 'image_size_names_choose', 'bayleaf_custom_image_sizes_to_admin' );
 function bayleaf_inline_dynamic_css( $css ) {
 
 	$color = bayleaf_get_mod( 'bayleaf_color_scheme', 'color' ); // Escaped by bayleaf_escape function.
-	if ( ! $color ) {
-		return $css;
-	}
-
-	$rgb_color = bayleaf_hex_to_rgb( $color, true );
-	$brad      = bayleaf_get_mod( 'bayleaf_border_radius', 'integer' );
-
-	$css .= sprintf(
-		'
-		a,
-		.social-navigation ul.nav-menu--social a:hover,
-		.social-navigation ul.nav-menu--social a:focus,
-		.site-navigation ul ul a:hover,
-		.site-navigation ul ul a:focus,
-		.comment-metadata a:hover,
-		.comment-metadata a:focus,
-		.comment-author a:hover,
-		.comment-author a:focus,
-		.woocommerce div.product .star-rating,
-		.dp-categories a:hover,
-		.dp-categories a:focus,
-		ul.products .button,
-		ul.products a.added_to_cart,
-		.woocommerce-tabs .wc-tabs li a:hover,
-		.woocommerce-tabs .wc-tabs li a:focus {
-			color: %1$s;
-		}
-		a.button,
-		button,
-		input[type="button"],
-		input[type="reset"],
-		input[type="submit"],
-		.fc-style .fc-buttons .fc-secondary:hover,
-		.fc-style .fc-buttons .fc-secondary:focus,
-		.ui-slider .ui-slider-range.ui-slider-range,
-		.ui-slider .ui-slider-handle.ui-slider-handle,
-		.ui-widget-content {
-			background-color: %1$s;
-		}
-		a.button:hover,
-		button:hover,
-		input[type="button"]:hover,
-		input[type="reset"]:hover,
-		input[type="submit"]:hover,
-		a.button:focus,
-		button:focus,
-		input[type="button"]:focus,
-		input[type="reset"]:focus,
-		input[type="submit"]:focus,
-		.fc-style .fc-buttons .fc-secondary {
-			background-color: transparent;
-			color: %1$s;
-			border-color: %1$s;
-		}
-		input[type="date"]:focus,
-		input[type="time"]:focus,
-		input[type="datetime-local"]:focus,
-		input[type="week"]:focus,
-		input[type="month"]:focus,
-		input[type="text"]:focus,
-		input[type="email"]:focus,
-		input[type="url"]:focus,
-		input[type="password"]:focus,
-		input[type="search"]:focus,
-		input[type="tel"]:focus,
-		input[type="number"]:focus,
-		textarea:focus,
-		select:focus {
-			-webkit-box-shadow: inset 0 0 1px %1$s;
-	        		box-shadow: inset 0 0 1px %1$s;
-		}
-		.site-footer {
-			background-color: rgba( %2$s, 0.05 );
-		}
-		a.button,
-		button,
-		input[type="button"],
-		input[type="reset"],
-		input[type="submit"],
-		.bp-slider3-nav .is-selected.dp-slider-nav-title {
-			border-color: %1$s;
-		}
-		@media only screen and (min-width: 768px) {
-			.fc-style.txt-light .fc-buttons .fc-primary,
-			.fc-style.txt-light .fc-buttons .fc-secondary:hover,
-			.fc-style.txt-light .fc-buttons .fc-secondary:focus {
+	if ( $color ) {
+		$rgb_color = bayleaf_hex_to_rgb( $color, true );
+		$css      .= sprintf(
+			'
+			a,
+			.social-navigation ul.nav-menu--social a:hover,
+			.social-navigation ul.nav-menu--social a:focus,
+			.site-navigation ul ul a:hover,
+			.site-navigation ul ul a:focus,
+			.comment-metadata a:hover,
+			.comment-metadata a:focus,
+			.comment-author a:hover,
+			.comment-author a:focus,
+			.woocommerce div.product .star-rating,
+			.dp-categories a:hover,
+			.dp-categories a:focus,
+			ul.products .button,
+			ul.products a.added_to_cart,
+			.woocommerce-tabs .wc-tabs li a:hover,
+			.woocommerce-tabs .wc-tabs li a:focus {
 				color: %1$s;
 			}
-		}
-		',
-		$color,
-		$rgb_color
-	);
+			a.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"],
+			.fc-style .fc-buttons .fc-secondary:hover,
+			.fc-style .fc-buttons .fc-secondary:focus,
+			.ui-slider .ui-slider-range.ui-slider-range,
+			.ui-slider .ui-slider-handle.ui-slider-handle,
+			.ui-widget-content {
+				background-color: %1$s;
+			}
+			a.button:hover,
+			button:hover,
+			input[type="button"]:hover,
+			input[type="reset"]:hover,
+			input[type="submit"]:hover,
+			a.button:focus,
+			button:focus,
+			input[type="button"]:focus,
+			input[type="reset"]:focus,
+			input[type="submit"]:focus,
+			.fc-style .fc-buttons .fc-secondary {
+				background-color: transparent;
+				color: %1$s;
+				border-color: %1$s;
+			}
+			input[type="date"]:focus,
+			input[type="time"]:focus,
+			input[type="datetime-local"]:focus,
+			input[type="week"]:focus,
+			input[type="month"]:focus,
+			input[type="text"]:focus,
+			input[type="email"]:focus,
+			input[type="url"]:focus,
+			input[type="password"]:focus,
+			input[type="search"]:focus,
+			input[type="tel"]:focus,
+			input[type="number"]:focus,
+			textarea:focus,
+			select:focus {
+				-webkit-box-shadow: inset 0 0 1px %1$s;
+						box-shadow: inset 0 0 1px %1$s;
+			}
+			.site-footer {
+				background-color: rgba( %2$s, 0.05 );
+			}
+			a.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"],
+			.bp-slider3-nav .is-selected.dp-slider-nav-title {
+				border-color: %1$s;
+			}
+			@media only screen and (min-width: 768px) {
+				.fc-style.txt-light .fc-buttons .fc-primary,
+				.fc-style.txt-light .fc-buttons .fc-secondary:hover,
+				.fc-style.txt-light .fc-buttons .fc-secondary:focus {
+					color: %1$s;
+				}
+			}
+			',
+			$color,
+			$rgb_color
+		);
+	}
+
+	$brad = bayleaf_get_mod( 'bayleaf_border_radius', 'integer' );
 
 	if ( 8 !== $brad ) {
 		$css .= sprintf(
@@ -302,6 +304,18 @@ function bayleaf_inline_dynamic_css( $css ) {
 			@media only screen and (min-width: 1024px) {
 				.sidebar-widget-area .widget {
 					border-radius: %1$spx;
+				}
+			}
+
+			@media only screen and (min-width: 1200px) {
+				.singular-view:not(.no-sidebar) .page-entry-header .entry-thumbnail img {
+					border-radius: %1$spx %1$spx 0 0;
+				}
+				.singular-view:not(.no-sidebar) .hentry {
+					border-radius: %1$spx;
+					&.has-featured-image {
+						border-radius: 0 0 %1$spx %1$spx;
+					}
 				}
 			}
 			',

@@ -25,6 +25,7 @@
 // Display site header items.
 bayleaf_add_markup_for( 'skip_link', 'inside_header', 0 );
 bayleaf_add_markup_for( 'header_items', 'inside_header' );
+bayleaf_add_markup_for( 'breadcrumbs', 'inside_header' );
 bayleaf_add_markup_for( 'header_image_area', 'after_header' );
 bayleaf_add_markup_for( 'home_above_content_area', 'after_header' );
 
@@ -356,6 +357,10 @@ function bayleaf_page_entry_thumbnail() {
 
 	if ( is_singular( [ 'post', 'page' ] ) ) {
 
+		if ( ! bayleaf_get_mod( 'bayleaf_show_featured', 'none' ) ) {
+			return;
+		}
+
 		if ( is_page_template( 'page-templates/full-width.php' ) ) {
 			return;
 		}
@@ -395,6 +400,35 @@ function bayleaf_page_entry_header_items() {
  */
 function bayleaf_page_header() {
 	bayleaf_get_template_partial( 'template-parts/page', 'page-header' );
+}
+
+/**
+ * Breadcrumbs display support.
+ *
+ * @since 1.0.0
+ */
+function bayleaf_breadcrumbs() {
+	if ( ! is_singular( [ 'post', 'page' ] ) && ! is_archive() ) {
+		return;
+	}
+
+	if ( function_exists( 'bcn_display' ) ) {
+		echo '<div id="bayleaf-breadcrumbs" class="wrapper">';
+		bcn_display();
+		echo '</div>';
+		return;
+	}
+
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb( '<div id="bayleaf-breadcrumbs" class="wrapper">', '</div>' );
+		return;
+	}
+
+	if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+		echo '<div id="bayleaf-breadcrumbs" class="wrapper">';
+		rank_math_the_breadcrumbs();
+		echo '</div>';
+	}
 }
 
 /**

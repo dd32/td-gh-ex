@@ -104,6 +104,12 @@ function bayleaf_get_theme_controls( $controls = [] ) {
 				),
 			],
 			[
+				'label'   => esc_html__( 'Show Thumbnail (Featured Image) on Single Posts', 'bayleaf' ),
+				'section' => 'bayleaf_general_section',
+				'setting' => 'bayleaf_show_featured',
+				'type'    => 'checkbox',
+			],
+			[
 				'label'   => esc_html__( 'Use Google Fonts', 'bayleaf' ),
 				'section' => 'bayleaf_general_section',
 				'setting' => 'bayleaf_use_google_fonts',
@@ -193,9 +199,10 @@ function bayleaf_get_theme_defaults( $defaults = [] ) {
 			'bayleaf_header_search'         => 1,
 			'bayleaf_related_posts'         => 1,
 			'bayleaf_thumbnail_placeholder' => 1,
+			'bayleaf_show_featured'         => 1,
 			'bayleaf_page_sidebar'          => 'sidebar-right',
 			'bayleaf_post_sidebar'          => 'sidebar-right',
-			'bayleaf_blog_title'            => esc_html__( 'Latest from - The Blog', 'bayleaf' ),
+			'bayleaf_blog_title'            => '',
 			'bayleaf_footer_text'           => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'bayleaf' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
 		]
 	);

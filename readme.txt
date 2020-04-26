@@ -12,13 +12,21 @@ Bayleaf is a multipurpose WordPress theme with elegant visual look and feel.
 
 == Description ==
 
-Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website..
+Bayleaf is designed for cooking, recipe and food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website.
 
 == Frequently Asked Questions ==
 = What are the minimum requirments for using this theme? =
 PHP 5.6+, IE11+, WordPress 4.9+
 
 == Changelog ==
+
+= 1.4.9 =
+* Error Fix: Sub Menu toggle button displaced on click
+* Add: Option to remove featured image from single post
+* Modify: Remove "Latest From - The Blog" title by default
+* Modify: Thumbnail & alignment styling improvement
+* Modify: Archive header styling improvement
+* Modify: Other minor styling improvements
 
 = 1.4.8 =
 * Compatibility with WordPress 5.4 editor.

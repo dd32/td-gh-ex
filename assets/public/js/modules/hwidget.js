@@ -14,6 +14,7 @@ class HeaderWidgetToggle {
 	constructor() {
 
 		const elem    = conf.elems;
+		this.header   = lib.get(elem.header);
 		this.widget   = lib.get(elem.headWid);
 		this.toggler  = lib.get(elem.headWidToggle, this.header);
 		this.search   = lib.get(elem.headSearch);

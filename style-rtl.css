@@ -3,8 +3,8 @@ Theme Name: Bayleaf
 Theme URI: https://vedathemes.com/blog/vedaitems/bayleaf-premium/
 Author: Vedathemes
 Author URI: https://www.vedathemes.com
-Description: Bayleaf is a multipurpose WordPress theme with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website.
-Version: 1.4.8
+Description: Bayleaf is designed for cooking, recipe and food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme provides a clean design that gets out of the way but with enough features to create a beautiful website.
+Version: 1.4.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayleaf
@@ -1048,9 +1048,10 @@ button.search-submit:focus {
 	position: relative;
 	display: -webkit-box;
 	display: flex;
+	padding-top: 1.3125rem;
+	padding-bottom: 1.3125rem;
 	width: 100%;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	background-color: #FFFFFF;
 
 	flex-basis: 100%;
 	-webkit-box-align: center;
@@ -1058,6 +1059,11 @@ button.search-submit:focus {
 	-webkit-box-pack: justify;
 	justify-content: space-between;
 	flex-wrap: wrap;
+}
+
+.home .header-items,
+.widgetlayer-page .header-items {
+	border-bottom-width: 0;
 }
 
 .header-image {
@@ -1105,6 +1111,18 @@ button.search-submit:focus {
 	line-height: 1.32275;
 	-webkit-transform: translateY(-50%);
 	        transform: translateY(-50%);
+}
+
+#bayleaf-breadcrumbs {
+	padding-top: 0.4375rem;
+	padding-bottom: 0.4375rem;
+	background-color: #FFFFFF;
+	letter-spacing: 1px;
+	font-size: 14px;
+}
+
+#bayleaf-breadcrumbs p {
+	margin-bottom: 0;
 }
 
 .site-branding {
@@ -1547,11 +1565,6 @@ button.search-submit:focus {
 	        transform: translate(50%, -50%);
 }
 
-.sub-menu-toggle .icon.icon-angle-up {
-	-webkit-transform: translate(50%, -100%);
-	        transform: translate(50%, -100%);
-}
-
 /**
 * #.# Site Content Area
 *
@@ -1612,6 +1625,29 @@ body:not(.error404) .page-header-description {
 
 .page-header:not(.screen-reader-text) {
 	width: 100%;
+}
+
+.archive-page-header .page-header-description {
+	display: none;
+}
+
+.archive-page-header .page-header-description.toggled-on {
+	display: block;
+}
+
+.archive-page-header .page-header-title-text {
+	position: relative;
+	z-index: 10;
+	display: inline-block;
+	padding: 0 0 0 10px;
+	background-color: #FCFCFC;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 1rem;
+}
+
+.archive-page-header button.archive-desc-toggle {
+	display: none;
 }
 
 .blog-title {
@@ -3461,6 +3497,7 @@ h3.related-posts-title {
 		padding-right: 0.875rem;
 	}
 	.site-header + .widgetlayer {
+		margin-top: -1.75rem;
 		padding-top: 0.875rem;
 	}
 	.header-image {
@@ -3501,6 +3538,51 @@ h3.related-posts-title {
 	}
 	body:not(.error404) .page-header {
 		padding: 0 0.875rem;
+	}
+	.archive-page-header .page-header-title {
+		position: relative;
+		display: -webkit-box;
+		display: flex;
+		-webkit-box-pack: justify;
+		justify-content: space-between;
+		-webkit-box-align: center;
+		align-items: center;
+	}
+	.archive-page-header .page-header-title:after {
+		position: absolute;
+		top: 50%;
+		display: block;
+		width: 100%;
+		height: 1px;
+		border-radius: 3px;
+		background-color: #999999;
+		content: '';
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	.archive-page-header button.archive-desc-toggle {
+		position: relative;
+		z-index: 10;
+		display: block;
+		margin-left: 1.75rem;
+		padding: 0 !important;
+		width: 35px;
+		height: 35px;
+		border: 1px solid currentColor !important;
+		background-color: #FCFCFC !important;
+		color: #363636 !important;
+		font-weight: bold;
+		font-size: 1rem;
+		line-height: 1 !important;
+	}
+	.archive-page-header button.archive-desc-toggle .archive-tclose {
+		display: none;
+	}
+	.archive-page-header button.archive-desc-toggle.toggled-btn .archive-tclose {
+		display: inline;
+	}
+	.archive-page-header button.archive-desc-toggle.toggled-btn .archive-topen {
+		display: none;
 	}
 	.index-view .entry:not(.product),
 	.search .entry {
@@ -3749,12 +3831,9 @@ h3.related-posts-title {
 	.dpfw-lap-4,
 	.dpfw-lap-5,
 	.dpfw-lap-6 {
-		max-width: 33%;
-		width: 33%;
-		flex-basis: 33% !important;
-	}
-	.singular-view .site-header {
-		margin-bottom: 5.25rem;
+		max-width: 33.3333%;
+		width: 33.3333%;
+		flex-basis: 33.3333% !important;
 	}
 	.singular-view.fw-builder .site-header {
 		margin-bottom: 1.75rem;
@@ -3767,11 +3846,6 @@ h3.related-posts-title {
 	.home.has-header-image .site-header,
 	.widgetlayer-page.has-header-image .site-header {
 		margin-bottom: 1.75rem;
-	}
-	.header-items {
-		margin-top: 1.75rem;
-		border-bottom-width: 0;
-		background-color: transparent;
 	}
 	.site-branding {
 		margin-left: 0;
@@ -3914,6 +3988,9 @@ h3.related-posts-title {
 		display: flex;
 		justify-content: space-around;
 		flex-wrap: wrap;
+	}
+	.site-header + .site-content {
+		margin-top: 0;
 	}
 	.sidebar-left .page-entry-header-main-title {
 		-webkit-box-ordinal-group: -1;
@@ -4152,11 +4229,51 @@ h3.related-posts-title {
 }
 
 @media only screen and (min-width: 1200px) {
+	.dpfw-lap-3 {
+		max-width: 33.3333%;
+		width: 33.3333%;
+		flex-basis: 33.3333% !important;
+	}
+	.dpfw-lap-4 {
+		max-width: 25%;
+		width: 25%;
+		flex-basis: 25% !important;
+	}
+	.dpfw-lap-5 {
+		max-width: 20%;
+		width: 20%;
+		flex-basis: 20% !important;
+	}
+	.dpfw-lap-6 {
+		max-width: 16.666%;
+		width: 16.666%;
+		flex-basis: 16.666% !important;
+	}
+	.singular-view:not(.no-sidebar) .hentry {
+		padding: 1.75rem;
+		border: 1px solid #E6E6E6;
+		background-color: #FFFFFF;
+	}
+	.singular-view:not(.no-sidebar) .hentry.has-featured-image {
+		border-top-width: 0;
+	}
+	.singular-view:not(.no-sidebar) .page-entry-header {
+		margin-bottom: 0;
+	}
 	.post-navigation {
 		margin-right: 0;
 	}
 	.comments-list .children {
 		padding-right: 3.5em;
+	}
+	.singular-view:not(.no-sidebar) .page-entry-header .entry-thumbnail img {
+		border-radius: 8px 8px 0 0;
+	}
+	.singular-view:not(.no-sidebar) .hentry {
+		border-radius: 8px;
+	}
+	.singular-view:not(.no-sidebar) .hentry.has-featured-image {
+		border-radius: 0 0 8px 8px;
 	}
 }
 
@@ -4221,26 +4338,6 @@ h3.related-posts-title {
 		width: 100%;
 		flex-basis: 100%;
 	}
-	.dpfw-lap-3 {
-		max-width: 33.3333%;
-		width: 33.3333%;
-		flex-basis: 33.3333%;
-	}
-	.dpfw-lap-4 {
-		max-width: 25%;
-		width: 25%;
-		flex-basis: 25%;
-	}
-	.dpfw-lap-5 {
-		max-width: 20%;
-		width: 20%;
-		flex-basis: 20%;
-	}
-	.dpfw-lap-6 {
-		max-width: 16.666%;
-		width: 16.666%;
-		flex-basis: 16.666%;
-	}
 	.site-description {
 		font-size: 2.315rem;
 	}
@@ -4253,9 +4350,6 @@ h3.related-posts-title {
 	.no-sidebar .singular-view .content-area {
 		flex-basis: 100%;
 	}
-	.singular-view:not(.woocommerce-page) .site-main {
-		width: 87.72%;
-	}
 	.singular-view.fw-builder:not(.woocommerce-page) .site-main,
 	.no-sidebar.singular-view.fw-builder:not(.woocommerce-page) .site-main {
 		width: 100%;
@@ -4266,12 +4360,6 @@ h3.related-posts-title {
 	.sidebar-left .sidebar-widget-area {
 		margin-left: 3.5rem;
 		margin-right: 0;
-	}
-	.entry-header-title-area .entry-thumbnail {
-		width: 114%;
-	}
-	.page-entry-header .entry-thumbnail {
-		width: 114%;
 	}
 	.scrl-to-top {
 		left: 60px;

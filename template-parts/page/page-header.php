@@ -18,7 +18,7 @@ elseif ( is_archive() ) :
 
 	<header<?php bayleaf_attr( 'page-header', [ 'class' => 'archive-page-header' ] ); ?>>
 		<?php
-		the_archive_title( sprintf( '<h1%1$s><span>%2$s</span>', bayleaf_get_attr( 'page-header-title' ), esc_html__( 'Showing posts from ', 'bayleaf' ) ), '</h1>' );
+		the_archive_title( sprintf( '<h1%1$s><span%2$s>', bayleaf_get_attr( 'page-header-title' ), bayleaf_get_attr( 'page-header-title-text' ) ), sprintf( '</span>%1$s</h1>', bayleaf_archive_description_toggle() ) );
 		the_archive_description( sprintf( '<div%1$s>', bayleaf_get_attr( 'page-header-description' ) ), '</div>' );
 		?>
 	</header><!-- .page-header -->
