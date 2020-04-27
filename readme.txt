@@ -4,8 +4,8 @@ Author: ThemeArile
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.4
 Requires PHP: 5.6
-Stable tag: 2.1.3
-Version: 2.1.3
+Stable tag: 2.1.4
+Version: 2.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
@@ -52,6 +52,9 @@ License: MIT (http://opensource.org/licenses/MIT)
 License: CC0 Public Domain
 
 == Changelog ==
+
+= Version 2.1.4
+* Fixed css issue for rss widgets.
 
 = Version 2.1.3
 * Fixed issue for StrangerWP child theme.
