@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v3 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Responsive 4.3.3\n"
+"Project-Id-Version: Responsive 4.3.4\n"
 "Report-Msgid-Bugs-To: https://cyberchimps.com/forum/free/responsive/\n"
-"POT-Creation-Date: 2020-04-25 10:08:49+00:00\n"
+"POT-Creation-Date: 2020-04-27 16:14:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -695,10 +695,10 @@ msgstr ""
 #: core/includes/customizer/settings/class-responsive-blog-content-customizer.php:94
 #: core/includes/customizer/settings/class-responsive-page-content-customizer.php:92
 #: core/includes/customizer/settings/class-responsive-single-blog-content-customizer.php:93
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:385
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:418
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:424
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:498
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:395
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:428
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:434
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:508
 #: core/includes/post-custom-meta.php:136
 msgid "Default"
 msgstr ""
@@ -791,47 +791,47 @@ msgid "Inherit"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:72
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:425
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:435
 msgid "Thin: 100"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:73
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:426
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:436
 msgid "Light: 200"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:74
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:427
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:437
 msgid "Book: 300"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:75
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:428
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:438
 msgid "Normal: 400"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:76
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:429
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:439
 msgid "Medium: 500"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:77
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:430
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:440
 msgid "Semibold: 600"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:78
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:431
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:441
 msgid "Bold: 700"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:79
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:432
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:442
 msgid "Extra Bold: 800"
 msgstr ""
 
 #: core/includes/customizer/controls/typography/class-responsive-customizer-typography-control.php:80
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:433
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:443
 msgid "Black: 900"
 msgstr ""
 
@@ -1145,12 +1145,12 @@ msgstr ""
 #: core/includes/customizer/settings/class-responsive-content-header-typography-customizer.php:39
 #: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:39
 #: core/includes/customizer/settings/class-responsive-site-typography-customizer.php:44
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:209
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:221
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:219
 #: core/includes/customizer/settings/class-responsive-typography-customizer.php:231
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:242
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:253
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:264
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:241
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:252
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:263
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:274
 msgid "Typography"
 msgstr ""
 
@@ -1393,6 +1393,8 @@ msgid "Disable on WooCommerce Pages?"
 msgstr ""
 
 #: core/includes/customizer/settings/class-responsive-header-layout-customizer.php:144
+#: core/includes/customizer/settings/class-responsive-header-typography-customizer.php:60
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:209
 #: core/includes/functions-sidebar.php:100
 msgid "Header Widgets"
 msgstr ""
@@ -2117,67 +2119,67 @@ msgstr ""
 msgid "All Headings"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:297
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:307
 msgid "General Typography"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:378
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:388
 msgid "Font Family"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:413
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:423
 msgid "Font Weight"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:414
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:424
 msgid "Important: Not all fonts support every font-weight."
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:458
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:468
 msgid "Font Style"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:465
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:475
 msgid "Normal"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:466
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:476
 msgid "Italic"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:491
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:501
 msgid "Text Transform"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:499
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:509
 msgid "Capitalize"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:500
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:510
 msgid "Lowercase"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:501
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:511
 msgid "Uppercase"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:545
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:555
 msgid "Font Size"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:546
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:556
 msgid "You can add: px-em-%"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:599
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:609
 msgid "Line Height"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:635
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:645
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: core/includes/customizer/settings/class-responsive-typography-customizer.php:673
+#: core/includes/customizer/settings/class-responsive-typography-customizer.php:683
 msgid "Font Color"
 msgstr ""
 
@@ -2457,6 +2459,14 @@ msgstr ""
 msgid "&darr; Skip to Main Content"
 msgstr ""
 
+#: home.php:69
+msgid "Previous"
+msgstr ""
+
+#: home.php:70
+msgid "Next"
+msgstr ""
+
 #: image.php:37
 msgid "&#8249; Return to"
 msgstr ""
@@ -2537,7 +2547,7 @@ msgstr ""
 msgid "&copy; "
 msgstr ""
 
-#: partials/footer/copy-right.php:29
+#: partials/footer/copy-right.php:40
 msgid " | Powered by Responsive Theme"
 msgstr ""
 
@@ -2568,10 +2578,6 @@ msgstr ""
 
 #: searchform.php:23
 msgid "Search here &hellip;"
-msgstr ""
-
-#: searchform.php:24
-msgid "Go"
 msgstr ""
 
 #: sidebar-gallery.php:25
@@ -2795,42 +2801,42 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: core/includes/functions-extensions.php:58
-msgctxt "responsive"
+msgctxt "Text for Home link Breadcrumb"
 msgid "Home"
 msgstr ""
 
 #: core/includes/functions-extensions.php:60
 #. translators: %s: Categories
-msgctxt "responsive"
+msgctxt "Text for a Category page Breadcrumb"
 msgid "Archive for %s"
 msgstr ""
 
 #: core/includes/functions-extensions.php:62
 #. translators: %s: Search result page
-msgctxt "responsive"
+msgctxt "Text for a Serch Results Breadcrumb"
 msgid "Search results for: %s"
 msgstr ""
 
 #: core/includes/functions-extensions.php:64
 #. translators: %s: Post Pages
-msgctxt "responsive"
+msgctxt "Text for a Tag page Breadcrumb"
 msgid "Posts tagged %s"
 msgstr ""
 
 #: core/includes/functions-extensions.php:66
 #. translators: %s: Author pages
-msgctxt "responsive"
+msgctxt "Text for an Author page Breadcrumb"
 msgid "View all posts by %s"
 msgstr ""
 
 #: core/includes/functions-extensions.php:67
-msgctxt "responsive"
+msgctxt "Text for a 404 page Breadcrumb"
 msgid "Error 404"
 msgstr ""
 
 #: core/includes/functions-extensions.php:211
 #. translators: %s: Page Number
-msgctxt "responsive"
+msgctxt "Text for a page Breadcrumb"
 msgid "Page %s"
 msgstr ""
 

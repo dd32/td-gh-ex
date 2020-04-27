@@ -64,4 +64,8 @@ Used to render fonts in typography settings
 
 = Screenshot Licenses =
 Screenshot images are licensed under Creative Commons Zero (CC0) ( https://stocksnap.io/license )
-https://stocksnap.io/photo/woman-smartphone-MLEPUKHYUU
+https://stocksnap.io/photo/female-model-KQECHSBAOC
+https://stocksnap.io/photo/woman-astronomy-J1MROX4QIN
+https://stocksnap.io/photo/people-woman-AOOC3CJARN
+https://stocksnap.io/photo/blue-denim-UMLWILXWPK
+https://stocksnap.io/photo/red-heels-OTIRIRP4UR
