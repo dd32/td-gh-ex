@@ -94,7 +94,7 @@
             //on DOM ready
             this._maybe_trigger_load( 'dom-ready');
 
-            // April 2020 : flag so we can check wether his element has been lazyloaded
+            // April 2020 : flag so we can check whether his element has been lazyloaded
             // implemented for https://github.com/presscustomizr/hueman/issues/880
             $(this.element).data('smartLoadDone', true );
       };
