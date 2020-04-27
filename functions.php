@@ -137,6 +137,37 @@ $my_theme = wp_get_theme();
 		.notice.updated.is-dismissible.review-page {
 			border-left: 1px solid #ccd0d4 !important;
 		}
+		.corona-msg {
+			padding: 17px 0 0 !important;
+		}
+		.corona-msg span {
+		    font-style: oblique;
+		    font-size: 19px;
+		    font-weight: 600;
+		    color: #ffbc00;
+		}
+		a.astra-pro {
+		    font-weight: 600;
+		    font-size: 18px;
+		}
+		a.rainbow2 {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f2f), color-stop(0.15, #f2f), color-stop(0.3, #f2f), color-stop(0.45, #22f), color-stop(0.6, #22f),color-stop(0.75, #22f), color-stop(0.9, #22f), color-stop(1, #22f) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.blinking{
+    animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: transparent;    }
+    49%{    color: transparent; }
+    60%{    color: #ff0000; }
+    99%{    color:#ff0000;  }
+    100%{   color: #ff0000;    }
+}
 	</style>
 
     <div class="notice updated is-dismissible review-page">
@@ -152,6 +183,8 @@ $my_theme = wp_get_theme();
 				<a target="_blank" class="reply-btn" href="https://wordpress.org/support/theme/astral/reviews/#new-post"> <?php _e('Submit a review','astral'); ?> </a>
 				
 				<a target="_blank" class="reply-btn" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Welcome Page','astral'); ?> </a>
+
+				<a target="_blank" class="astra-pro rainbow2" style="margin-left: 18px;" href="<?php echo admin_url('/themes.php?page=astral'); ?>" > <?php _e('Astral Pro','astral'); ?> </a><sup class="blinking"> <?php _e('Coming Soon','astral'); ?> </sup>
 				
 			</div>
 		</div>

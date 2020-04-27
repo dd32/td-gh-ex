@@ -1,12 +1,21 @@
 .about-wrap h2 {
-    text-align: center;
+    text-align: left;
 }
 .about-wrap img {
     box-shadow: 0px 0px 32px 14px #ccccccbf;
 }
+p.pro-feature {
+    font-size: 15px !important;
+}
 /* .row.astral-pro {
     border-bottom: 1px solid #cccccc85;
 } */
+p.desc {
+    padding-top: 35px;
+    color: #fff;
+    text-align: right;
+    margin-right: 20px;
+}
 section#tabs {
     padding-top: 10px;
 }
@@ -15,27 +24,28 @@ section#tabs {
 	max-width: 98% !important;
 }
 span.astral-title {
-	color: #fff;
+    color: #fff;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 26px;
+    margin-left: 15px;
 }
 .row.astral-pro {
-    background: #0e6ec4;
+    background: #153e4d;
 }
 .about-wrap h2 {
-    margin: 24px 0;
+    margin: 21px 0;
 }
 .info-box {
     padding: 100px;
 }
 .info-box p {
-    font-size: 20px;
-    text-align: center;
+    font-size: 17px;
+    text-align: left;
 }
 .info-box {
     background: rgba(221, 240, 249, 0.8);
     border: 1px solid #ccc9;
-    padding: 100px;
+    padding: 12px;
 }
 .row.intro-section {
     margin-top: 30px;
@@ -56,7 +66,7 @@ a.support-btn {
     margin: 0 auto;
 	border-radius: 4px;
     color: #fff;
-    background: #0e6ec4;
+    background: #153e4d;
     padding: 10px;
     text-decoration: none;
 }
@@ -69,7 +79,7 @@ h3.support {
     padding: 10px;
     margin-top: 0;
     color: #fff;
-    background: #0e6ec4;
+    background: #153e4d;
     text-align: center;
     font-size: 17px;
     font-weight: 400;
@@ -96,7 +106,7 @@ a.mywebapp-btn {
     margin: 0 auto;
 	border-radius: 4px;
     color: #fff;
-    background: #0e6ec4;
+    background: #153e4d;
     padding: 10px;
     text-decoration: none;
 }

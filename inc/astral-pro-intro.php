@@ -22,10 +22,13 @@ if (!function_exists('astral_display_theme')) {
 	<div class="wrap elw-page-welcome about-wrap seting-page">
 
 	    <div class="row astral-pro">
-	        <div class=" col-md-12">
+	        <div class=" col-md-6">
 	            <?php $wl_th_info = wp_get_theme(); ?>
-					<h2><span class="astral-title"><?php esc_html_e('Astral - Version','astral'); ?> <?php echo esc_html( $wl_th_info->get('Version') ); ?> </span></h2>						
+					<h2><span class="astral-title"><?php esc_html_e('Astral - ','astral'); ?> <?php echo esc_html( $wl_th_info->get('Version') ); ?> </span></h2>						
 				</p>
+			</div>
+			<div class=" col-md-6">
+	            <p class="desc"><?php esc_html_e('Light and Easy to Customize WordPress Theme','astral'); ?></p>
 			</div>
 		</div> 
 		
@@ -33,9 +36,24 @@ if (!function_exists('astral_display_theme')) {
 			<div class="row intro-section">
 				<div class="col-md-8">
 					<div class="info-box">
-						<p><?php esc_html_e('Thanks For Choosing Astral - Version','astral') ?> <?php echo esc_html( $wl_th_info->get('Version') ); ?> </p>
-						<p><?php esc_html_e('Visit Astral page to take full advantage of theme.','astral'); ?></p>
-						<a class="customize-btn" href="<?php echo admin_url('/customize.php') ?>"><?php esc_html_e('Get started with Astral','astral'); ?></a>
+						<p><?php esc_html_e('More Options with Astral Pro!','astral') ?> </p>
+						<div class="row">
+							<div class="col-md-6">
+								<p class="pro-feature"><span>Typography</span></p>
+								<p class="pro-feature"><span>Header Layout</span></p>
+								<p class="pro-feature"><span>Footer Layout</span></p>
+								<p class="pro-feature"><span>Blog Layout</span></p>
+								<p class="pro-feature"><span>Site Layout</span></p>
+								<p class="pro-feature"><span>Responsive Layout</span></p>
+							</div>
+							<div class="col-md-6">
+								<p class="pro-feature"><span>Sticky Header</span></p>
+								<p class="pro-feature"><span>Scroll to Top</span></p>
+								<p class="pro-feature"><span>Footer Widget Area</span></p>
+								<p class="pro-feature"><span>Multiple Home Page</span></p>
+								<p class="pro-feature"><span>Gallery Template</span></p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
