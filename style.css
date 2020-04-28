@@ -8,7 +8,7 @@ Template: customizable-blogily
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
-Version: 1.2
+Version: 1.3
 Text Domain: adaptable-notes
 */
 
@@ -593,6 +593,9 @@ a#pull {
 	width: 100%;
 	font-size: 13px;
 	margin: 0 auto;
+}
+.wp-block-media-text {
+    display: block;
 }
 .primary-navigation a:hover {
 	color: #fff
