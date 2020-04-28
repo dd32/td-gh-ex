@@ -19,7 +19,7 @@ if ( get_theme_mod( 'edd_single_sidebar' ) && is_active_sidebar( 'azuma-sidebar-
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'content', 'download' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.

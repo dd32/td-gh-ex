@@ -44,7 +44,7 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 		}
 
 		if ( $font_headings ) {
-			$css[] = 'h1:not(.site-title),h2,h3,h4,h5,h6{' . azuma_css_font_family( $font_headings ) . ';}';
+			$css[] = 'h1:not(.site-title),h2,h3,h4,h5,h6,.wp-block-latest-posts.is-grid li > a,.wc-block-grid__product .wc-block-grid__product-title{' . azuma_css_font_family( $font_headings ) . ';}';
 		}
 
 		if ( $font_site_title && $font_site_title_on == 0 ) {
@@ -123,13 +123,15 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			
 			$css[] = '.button,a.button,button,input[type="button"],input[type="reset"],input[type="submit"],#infinite-handle span button,#infinite-handle span button:hover,#infinite-handle span button:focus,#infinite-handle span button:active,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce #respond input#submit.alt,.woocommerce a.button.alt,.woocommerce button.button.alt,.woocommerce input.button.alt,.woocommerce a.added_to_cart,.woocommerce #respond input#submit.alt.disabled,.woocommerce #respond input#submit.alt.disabled:hover,.woocommerce #respond input#submit.alt:disabled,.woocommerce #respond input#submit.alt:disabled:hover,.woocommerce #respond input#submit.alt:disabled[disabled],.woocommerce #respond input#submit.alt:disabled[disabled]:hover,.woocommerce a.button.alt.disabled,.woocommerce a.button.alt.disabled:hover,.woocommerce a.button.alt:disabled,.woocommerce a.button.alt:disabled:hover,.woocommerce a.button.alt:disabled[disabled],.woocommerce a.button.alt:disabled[disabled]:hover,.woocommerce button.button.alt.disabled,.woocommerce button.button.alt.disabled:hover,.woocommerce button.button.alt:disabled,.woocommerce button.button.alt:disabled:hover,.woocommerce button.button.alt:disabled[disabled],.woocommerce button.button.alt:disabled[disabled]:hover,.woocommerce input.button.alt.disabled,.woocommerce input.button.alt.disabled:hover,.woocommerce input.button.alt:disabled,.woocommerce input.button.alt:disabled:hover,.woocommerce input.button.alt:disabled[disabled],.woocommerce input.button.alt:disabled[disabled]:hover,.edd-submit.button.azuma,.mini-account .edd-submit,.mini-account [type="submit"].edd-submit,.bx-wrapper .bx-controls-direction a:hover,#primary-menu li.highlight > a,.featured-post:hover .featured-icon,#footer-menu a[href^="mailto:"]:before,.widget_nav_menu a[href^="mailto:"]:before,#footer-menu a[href^="tel:"]:before,.widget_nav_menu a[href^="tel:"]:before,.bx-wrapper .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active,#masthead .top-cart .mini-cart .edd-cart .edd_checkout a,ul.archive-sub-cats li{background:' . $hi_color . ';}';
 			
-			$css[] = '.woocommerce .sale-flash,.woocommerce ul.products li.product .sale-flash,#yith-quick-view-content .onsale,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{background-color:' . $hi_color . ';}';
+			$css[] = '.woocommerce .sale-flash,.woocommerce ul.products li.product .sale-flash,#yith-quick-view-content .onsale,.woocommerce .widget_price_filter .ui-slider .ui-slider-range,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,.wp-block-button__link,.has-custom-color-1-background-color,.wc-block-price-filter .wc-block-price-filter__range-input::-webkit-slider-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-moz-range-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-webkit-slider-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-moz-range-thumb,.wc-block-grid__product-onsale{background-color:' . $hi_color . ';}';
 			
-			$css[] = 'a,#masthead a.azuma-cart.items .azuma-icon-shopping-cart,#masthead a.azuma-cart.items .item-count,.site-title a,.site-title a:hover,.site-title a:active,.site-title a:focus,#primary-menu li.current-menu-item > a,.pagination a:hover,.pagination .current,.woocommerce nav.woocommerce-pagination ul li a:focus,.woocommerce nav.woocommerce-pagination ul li a:hover,.woocommerce nav.woocommerce-pagination ul li span.current,#wc-sticky-addtocart .options-button,#add_payment_method .cart-collaterals .cart_totals .discount td,.woocommerce-cart .cart-collaterals .cart_totals .discount td,.woocommerce-checkout .cart-collaterals .cart_totals .discount td,.infinite-loader{color:' . $hi_color . ';}';
+			$css[] = 'a,#masthead a.azuma-cart.items .azuma-icon-shopping-cart,#masthead a.azuma-cart.items .item-count,.site-title a,.site-title a:hover,.site-title a:active,.site-title a:focus,#primary-menu li.current-menu-item > a,.pagination a:hover,.pagination .current,.woocommerce nav.woocommerce-pagination ul li a:focus,.woocommerce nav.woocommerce-pagination ul li a:hover,.woocommerce nav.woocommerce-pagination ul li span.current,#wc-sticky-addtocart .options-button,#add_payment_method .cart-collaterals .cart_totals .discount td,.woocommerce-cart .cart-collaterals .cart_totals .discount td,.woocommerce-checkout .cart-collaterals .cart_totals .discount td,.infinite-loader,.has-custom-color-1-color,.woocommerce .star-rating span::before,.wc-block-grid__product-rating .star-rating span::before,.wc-block-grid__product-rating .wc-block-grid__product-rating__stars span::before{color:' . $hi_color . ';}';
 			
 			$css[] = '.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#primary-menu ul,.woocommerce-info,.woocommerce-message,.bx-wrapper .bx-pager.bx-default-pager a:hover,.bx-wrapper .bx-pager.bx-default-pager a.active{border-color:' . $hi_color . ';}';
 
 			$css[] = '.featured-post:hover .featured-icon{box-shadow: 0px 0px 0px 4px rgba('.$hi_color_rgb['r'].','.$hi_color_rgb['g'].','.$hi_color_rgb['b'].',.5);}';
+
+			$css[] = '.wc-block-price-filter .wc-block-price-filter__range-input-wrapper .wc-block-price-filter__range-input-progress,.rtl .wc-block-price-filter .wc-block-price-filter__range-input-wrapper .wc-block-price-filter__range-input-progress{--range-color:' . $hi_color . ';}';
 
 		}
 
@@ -138,11 +140,11 @@ if ( !function_exists( 'azuma_dynamic_style' ) ) {
 			$hi_color2 = esc_attr($hi_color2);
 			$hi_color2_rgb = azuma_hex2RGB($hi_color2);
 			
-			$css[] = '.button:hover,a.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,#infinite-handle span button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce a.added_to_cart,.woocommerce a.added_to_cart:hover,.edd-submit.button.azuma:hover,#grid-loop article:hover,#main.infinite-grid .infinite-wrap article:hover,.woocommerce ul.products li.product:hover,.woocommerce-page ul.products li.product:hover,.edd_download:hover,.single:not(.single-download) .entry-footer,aside,#shop-filters,.comment-navigation .nav-previous a,.comment-navigation .nav-next a,.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#home-hero-section .widget_media_image:before,#primary-menu ul,.posts-navigation,.post-navigation,.featured-post:hover,.featured-post .featured-icon{background:' . $hi_color2 . ';}';
+			$css[] = '.button:hover,a.button:hover,button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,#infinite-handle span button:hover,.woocommerce #respond input#submit:hover,.woocommerce a.button:hover,.woocommerce button.button:hover,.woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover,.woocommerce a.button.alt:hover,.woocommerce button.button.alt:hover,.woocommerce input.button.alt:hover,.woocommerce a.added_to_cart,.woocommerce a.added_to_cart:hover,.edd-submit.button.azuma:hover,#grid-loop article:hover,#main.infinite-grid .infinite-wrap article:hover,.woocommerce ul.products li.product:hover,.woocommerce-page ul.products li.product:hover,.edd_download:hover,.single:not(.single-download) .entry-footer,aside,#shop-filters,.comment-navigation .nav-previous a,.comment-navigation .nav-next a,.top-search .mini-search,#masthead .top-account .mini-account,#masthead .top-cart .mini-cart,#home-hero-section .widget_media_image:before,#primary-menu ul,.posts-navigation,.post-navigation,.featured-post:hover,.featured-post .featured-icon,.wp-block-latest-posts.is-grid li:hover,.wc-block-grid__product:hover,.wc-block-grid__product .wc-block-grid__product-add-to-cart a.added_to_cart{background:' . $hi_color2 . ';}';
 			
-			$css[] = '#masthead.not-full,#masthead.full.scrolled,#colophon{background-color:' . $hi_color2 . ';}';
+			$css[] = '#masthead.not-full,#masthead.full.scrolled,#masthead.transparent.scrolled,#colophon,.has-custom-color-2-background-color{background-color:' . $hi_color2 . ';}';
 			
-			$css[] = '#grid-loop article:hover a.button:hover,#main.infinite-grid .infinite-wrap article:hover a.button:hover,.woocommerce ul.products li.product:hover a.button:hover,.woocommerce ul.products li.product:hover button.button:hover,.woocommerce ul.products li.product:hover input.button:hover,.woocommerce ul.products li.product:hover a.button.alt:hover,.woocommerce ul.products li.product:hover button.button.alt:hover,.woocommerce ul.products li.product:hover input.button.alt:hover,.woocommerce ul.products li.product:hover a.added_to_cart,.woocommerce ul.products li.product:hover a.added_to_cart:hover,.edd_download:hover .edd-submit.button.azuma:hover{color:' . $hi_color2 . ';}';
+			$css[] = '#grid-loop article:hover a.button:hover,#main.infinite-grid .infinite-wrap article:hover a.button:hover,.woocommerce ul.products li.product:hover a.button:hover,.woocommerce ul.products li.product:hover button.button:hover,.woocommerce ul.products li.product:hover input.button:hover,.woocommerce ul.products li.product:hover a.button.alt:hover,.woocommerce ul.products li.product:hover button.button.alt:hover,.woocommerce ul.products li.product:hover input.button.alt:hover,.woocommerce ul.products li.product:hover a.added_to_cart,.woocommerce ul.products li.product:hover a.added_to_cart:hover,.edd_download:hover .edd-submit.button.azuma:hover,.has-custom-color-2-color{color:' . $hi_color2 . ';}';
 			
 			$css[] = '.top-account p.mini-account-footer,#wc-sticky-addtocart{border-color:' . $hi_color2 . ';}';
 
@@ -210,17 +212,26 @@ function azuma_block_editor_dynamic_style( $css = array() ) {
 
 	$font_content = get_theme_mod( 'font_content', 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' );
 	if ($font_content && $font_content != 'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' ) {
-		$css[] = '.editor-default-block-appender textarea.editor-default-block-appender__content,.editor-styles-wrapper p,.editor-styles-wrapper ul,.editor-styles-wrapper li{' . azuma_css_font_family( $font_content ) . ';}';
+		$css[] = '.editor-default-block-appender textarea.editor-default-block-appender__content,.editor-styles-wrapper div,.editor-styles-wrapper p,.editor-styles-wrapper ul,.editor-styles-wrapper li{' . azuma_css_font_family( $font_content ) . ';}';
 	}
 
 	$font_headings = get_theme_mod( 'font_headings', 'Rajdhani:300,400,500,600,700' );
 	if ($font_headings && $font_headings != 'Rajdhani:300,400,500,600,700' ) {
-		$css[] = '.editor-post-title__block .editor-post-title__input,.editor-styles-wrapper h1,.editor-styles-wrapper h2,.editor-styles-wrapper h3,.editor-styles-wrapper h4,.editor-styles-wrapper h5,.editor-styles-wrapper h6{' . azuma_css_font_family( $font_headings ) . ';}';
+		$css[] = '.editor-post-title__block .editor-post-title__input,.editor-styles-wrapper h1,.editor-styles-wrapper h2,.editor-styles-wrapper h3,.editor-styles-wrapper h4,.editor-styles-wrapper h5,.editor-styles-wrapper h6,.wp-block-latest-posts.is-grid li > a,.wp-block-latest-posts.is-grid li > a > div,.wc-block-grid__product .wc-block-grid__product-title{' . azuma_css_font_family( $font_headings ) . ';}';
 	}
 
 	$hi_color = get_theme_mod( 'hi_color' );
 	if ($hi_color && $hi_color != "#ff7800") {		
-		$css[] = '.editor-rich-text__tinymce a,.editor-rich-text__tinymce a:hover,.editor-rich-text__tinymce a:focus,.editor-rich-text__tinymce a:active{color:'.esc_attr($hi_color).'}';
+		$css[] = '.editor-rich-text__tinymce a,.block-editor-rich-text__editable a{color:'.esc_attr($hi_color).'}';
+
+		$css[] = '.wp-block-button__link,.wc-block-price-filter .wc-block-price-filter__range-input::-webkit-slider-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-moz-range-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-webkit-slider-thumb,.wc-block-price-filter .wc-block-price-filter__range-input::-moz-range-thumb,.editor-styles-wrapper .wc-block-grid__products .wc-block-grid__product .wc-block-grid__product-onsale,.wc-block-grid__product-onsale{background-color:'.esc_attr($hi_color).'}';
+
+		$css[] = '.wc-block-price-filter .wc-block-price-filter__range-input-wrapper .wc-block-price-filter__range-input-progress,.rtl .wc-block-price-filter .wc-block-price-filter__range-input-wrapper .wc-block-price-filter__range-input-progress{--range-color:' . $hi_color . ';}';
+	}
+
+	$hi_color2 = get_theme_mod( 'hi_color2' );
+	if ($hi_color2 && $hi_color2 != "#2d364c") {
+		$css[] = '.wp-block-latest-posts.is-grid li:hover{background:'.esc_attr($hi_color2).'}';
 	}
 
 	return implode( '', $css );

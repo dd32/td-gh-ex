@@ -997,6 +997,108 @@ if ( !function_exists( 'azuma_google_fonts_array' ) ) {
 }
 
 
+
+
+
+
+/*
+if ( !function_exists( 'azuma_edd_supports' ) ) {
+	function azuma_edd_supports( $supports ) {
+		$supports[] = 'comments';
+		return $supports;	
+	}
+}
+add_filter('edd_download_supports', 'azuma_edd_supports');
+*/
+
+
+
+
+
+
+
+
+/**
+ * Remove the purchase link at the bottom of the single download page.
+ */
+remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+
+
+if ( !function_exists( 'azuma_edd_thumbnail' ) ) {
+	function azuma_edd_thumbnail( $download_id ) {
+		if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $download_id ) ) : ?>
+			<div class="edd_download_image">
+				<a href="<?php the_permalink(); ?>">
+					<?php echo get_the_post_thumbnail( $download_id, get_theme_mod( 'edd_archive_img_size', 'medium' ) ); ?>
+					<?php edd_get_template_part( 'shortcode', 'content-excerpt' ); ?>
+				</a>
+			</div>
+		<?php else : 
+			$placeholder_img = get_theme_mod( 'edd_placeholder', get_template_directory_uri() . '/images/edd-placeholder.png' );
+			if ( $placeholder_img ) { ?>
+				<div class="edd_download_image">
+					<a href="<?php the_permalink(); ?>">
+						<img src="<?php echo esc_url( $placeholder_img ) ?>" />
+						<?php edd_get_template_part( 'shortcode', 'content-excerpt' ); ?>
+					</a>
+				</div>
+			<?php }
+		endif;
+	}
+}
+
+
+if ( !function_exists( 'azuma_edd_purchase_form' ) ) {
+	function azuma_edd_purchase_form( $download_id, $attr = NULL ) {
+		if ( edd_is_free_download( $download_id ) ) {
+			$price = '<span id="edd_price_' . $download_id . '" class="edd_price">' . esc_html__( 'Free', 'azuma' ) . '</span>';
+			$buy_button = '<div class="edd_download_buy_button">' . edd_get_purchase_link( array( 'download_id' => $download_id, 'price' => '0' ) ) . '</div>';
+		} elseif ( edd_has_variable_prices( $download_id ) ) {
+			$price = '<span id="edd_price_' . $download_id . '" class="edd_price">' . esc_html__( 'From', 'azuma' ) . '&nbsp;' . edd_currency_filter( edd_format_amount( edd_get_lowest_price_option( $download_id ) ) ) . '</span>';
+			$buy_button = '<div class="edd_download_buy_button variable-prices"><a href="' . get_the_permalink() . '" class="button ' . edd_get_option( 'checkout_color', 'blue' ) . ' edd-submit">' . esc_html__( 'Select Options', 'azuma' ) . '</a></div>';
+		} else {
+			$price = edd_price( $download_id, false );
+			$buy_button = '<div class="edd_download_buy_button">' . edd_get_purchase_link( array( 'download_id' => $download_id, 'price' => '0' ) ) . '</div>';
+		}
+
+		if ( $attr == 'price' ) {
+			echo $price;
+			do_action( 'edd_download_after_price' );
+		} elseif ( $attr == 'buy-button' ) {
+			echo $buy_button;
+		} else {
+			echo $price;
+			do_action( 'edd_download_after_price' );
+			echo $buy_button;
+		}
+	
+	}
+}
+
+
+if ( !function_exists( 'azuma_edd_single_purchase_form' ) ) {
+	function azuma_edd_single_purchase_form( $download_id ) {
+		if ( edd_is_free_download( $download_id ) ) {
+			$price = '<span id="edd_price_' . $download_id . '" class="edd_price">' . esc_html__( 'Free', 'azuma' ) . '</span>';
+		} elseif ( edd_has_variable_prices( $download_id ) ) {
+			$price = '<span id="edd_price_' . $download_id . '" class="edd_price">' . esc_html__( 'From', 'azuma' ) . '&nbsp;' . edd_currency_filter( edd_format_amount( edd_get_lowest_price_option( $download_id ) ) ) . '</span>';
+		} else {
+			$price = edd_price( $download_id, false );
+		}
+
+		echo $price;
+
+		if ( !get_post_meta( $download_id, '_edd_hide_purchase_link', true ) ) {
+		?>
+			<div class="edd_download_buy_button">
+				<?php echo edd_get_purchase_link( array( 'download_id' => $download_id, 'price' => '0' ) ); ?>
+			</div>
+		<?php
+		}
+	}
+}
+
+
 if ( !function_exists( 'azuma_edd_button_colors' ) ) {
 	function azuma_edd_button_colors( $colors ) {
 		$azuma_colors = array(

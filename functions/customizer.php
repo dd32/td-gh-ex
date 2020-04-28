@@ -32,6 +32,100 @@ function azuma_customize_register( $wp_customize ) {
 		)
 	);
 
+
+
+
+
+
+	$wp_customize->add_setting(
+		'header_img_post',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'header_img_post',
+		array(
+			'label'		=> esc_html__( 'Posts should display...', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'header_image',
+			'choices'	=> array(
+				''	=> esc_html__( 'Featured Image', 'azuma' ),
+				'main'	=> esc_html__( 'Default Header Image', 'azuma' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_img_page',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'header_img_page',
+		array(
+			'label'		=> esc_html__( 'Pages should display...', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'header_image',
+			'choices'	=> array(
+				''	=> esc_html__( 'Featured Image', 'azuma' ),
+				'main'	=> esc_html__( 'Default Header Image', 'azuma' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_img_product',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'header_img_product',
+		array(
+			'label'		=> esc_html__( 'Products should display...', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'header_image',
+			'choices'	=> array(
+				''	=> esc_html__( 'Product Image', 'azuma' ),
+				'main'	=> esc_html__( 'Default Header Image', 'azuma' ),
+			),
+		)
+	);
+
+	$wp_customize->add_setting(
+		'header_img_product_cat',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'azuma_sanitize_choices',
+		)
+	);
+	$wp_customize->add_control(
+		'header_img_product_cat',
+		array(
+			'label'		=> esc_html__( 'Product categories should display...', 'azuma' ),
+			'type'		=> 'select',
+			'section'	=> 'header_image',
+			'choices'	=> array(
+				''	=> esc_html__( 'Category Image', 'azuma' ),
+				'main'	=> esc_html__( 'Default Header Image', 'azuma' ),
+			),
+		)
+	);
+
+
+
+
+
+
+
+
+
+
 	$wp_customize->add_setting(
 		'hi_color',
 		array(

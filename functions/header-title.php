@@ -56,8 +56,24 @@ if ( !function_exists( 'azuma_header_title' ) ) {
 if ( !function_exists( 'azuma_header_title_singular' ) ) {
 	function azuma_header_title_singular() {
 
-		if ( has_post_thumbnail() ) {
-			$bg_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+		if ( 'post' === get_post_type() ) {
+			$theme_mod = 'header_img_post';
+		} elseif ( 'page' === get_post_type() ) {
+			$theme_mod = 'header_img_page';
+		} else {
+			$theme_mod = '';
+		}
+
+		if ( $theme_mod != '' ) {
+			if ( get_theme_mod( $theme_mod ) === 'main' ) {
+				$bg_image_url = get_header_image();
+			} else {
+				if ( has_post_thumbnail() ) {
+					$bg_image_url = esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) );
+				} else {
+					$bg_image_url = get_header_image();
+				}		
+			}
 		} else {
 			$bg_image_url = get_header_image();
 		}
@@ -216,10 +232,13 @@ if ( !function_exists( 'azuma_header_title_archive_wc' ) ) {
 		add_action( 'azuma_woocommerce_archive_description', 'woocommerce_taxonomy_archive_description', 10);
 		add_action( 'azuma_woocommerce_archive_description', 'woocommerce_product_archive_description', 10);
 
-		$bg_image_url = azuma_wc_archive_image_url();
-
-		if ( !$bg_image_url ) {
+		if ( get_theme_mod( 'header_img_product_cat' ) === 'main' ) {
 			$bg_image_url = get_header_image();
+		} else {
+			$bg_image_url = azuma_wc_archive_image_url();			
+			if ( !$bg_image_url ) {
+				$bg_image_url = get_header_image();
+			}
 		}
 		?>
 		<header class="archive-header with-image full" style="background-image: url('<?php echo $bg_image_url; ?>')">
@@ -260,10 +279,14 @@ if ( !function_exists( 'azuma_header_title_product' ) ) {
 
 		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 
-		if ( has_post_thumbnail() ) {
-			$bg_image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-		} else {
+		if ( get_theme_mod( 'header_img_product' ) === 'main' ) {
 			$bg_image_url = get_header_image();
+		} else {
+			if ( has_post_thumbnail() ) {
+				$bg_image_url = esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) );
+			} else {
+				$bg_image_url = get_header_image();
+			}			
 		}
 		?>
 		<header class="entry-header with-image full" style="background-image: url('<?php echo $bg_image_url; ?>')">

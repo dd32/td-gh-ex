@@ -1,6 +1,6 @@
 <?php
 /**
- * The theme header.
+ * The header used by template-landing-page.php.
  *
  * @package Azuma
  */

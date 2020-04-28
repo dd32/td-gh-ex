@@ -19,6 +19,11 @@ jQuery(document).ready(function($){
             $('.entry-header.full .title-meta-wrapper, .archive-header.full .title-meta-wrapper').css({'padding-top' : mastfullheight + 'px'});
         }
 
+        if ( $('#masthead.transparent').length ) {
+            var mastfullheight = parseInt( $('#masthead').outerHeight() );
+            $('article > .entry-content *:not(.wp-block-group,.wp-block-group__inner-container):first').css({'padding-top' : mastfullheight + 'px'});
+        }
+
         var footerheight = parseInt( $('#colophon').height() );
         footerheight = footerheight - 1;
         $('#page.sticky-footer').css({'padding-bottom' : footerheight + 'px'});
@@ -212,6 +217,11 @@ jQuery(function($){
 
     $( '.top-search .azuma-icon-search' ).on( 'click', function(e) {
         $( '.top-search' ).toggleClass( 'search-open' );
+    });
+
+    $( '.entry-details .version-changelog' ).on( 'click', function(e) {
+        $( 'body' ).toggleClass( 'changelog-open' );
+        $( '.entry-details .changelog' ).toggleClass( 'changelog-open' );
     });
 
     // Mobile Menu

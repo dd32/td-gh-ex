@@ -24,7 +24,11 @@ if ( ! function_exists( 'azuma_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		echo '<span class="posted-on">' . $time_string . '</span>';
+		if ( 'download' === get_post_type() ) {
+			echo '<span class="posted-on"><i class="azuma-icon-calendar"></i> ' . $time_string . '</span>';
+		} else {
+			echo '<span class="posted-on">' . $time_string . '</span>';
+		}
 
 	}
 endif;
@@ -36,7 +40,11 @@ if ( ! function_exists( 'azuma_posted_by' ) ) :
 	function azuma_posted_by() {
 
 		if ( in_the_loop() ) {
-			echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span></span> ';
+			if ( 'download' === get_post_type() ) {
+				echo '<span class="byline"><i class="azuma-icon-author"></i> <span class="author vcard">' . esc_html( get_the_author() ) . '</span></span> ';
+			} else {
+				echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span></span> ';
+			}
 		} else {
 			global $post;
 			echo '<span class="byline"><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $post->post_author ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $post->post_author ) ) . '</a></span></span> ';

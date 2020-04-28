@@ -3,9 +3,15 @@
 get_header();
 
 if ( 'page' == get_option( 'show_on_front' ) ) {
+
+	if ( ! is_active_sidebar( 'azuma-sidebar-homepage' ) ) {
+		$page_full_width = ' full-width';
+	} else {
+		$page_full_width = '';
+	}
 ?>
 
-	<div id="primary" class="content-area full-width">
+	<div id="primary" class="content-area<?php echo $page_full_width;?>">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -22,6 +28,8 @@ if ( 'page' == get_option( 'show_on_front' ) ) {
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+<?php get_sidebar( 'homepage' ); ?>
 
 <?php get_footer(); ?>
 

@@ -1,23 +1,21 @@
 <?php
 /**
- * Template Name: No Sidebar
- * Template Post Type: page
+ * Template Name: Transparent Header
  *
- * A page template with no sidebar.
+ * A page template with a transparent header, with no page title or sidebars, containing only the site title/logo, main menu and footer.
  *
  * @package Azuma
  */
 
-get_header();
+get_header( 'transparent' );
 
 ?>
-
 	<div id="primary" class="content-area full-width">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php get_template_part( 'content', 'page-blank-canvas' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
@@ -31,4 +29,4 @@ get_header();
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php get_footer( 'blank-canvas' ); ?>

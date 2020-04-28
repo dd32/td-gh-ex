@@ -79,6 +79,7 @@ function azuma_setup() {
 
 	// Support for Gutenberg (5.0+ block editor)
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'editor-color-palette', azuma_custom_color_palette() );
 
 	// https://jetpack.com/support/infinite-scroll/
 	add_theme_support( 'infinite-scroll', array(
@@ -137,6 +138,15 @@ function azuma_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="sidebar-widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Homepage Sidebar', 'azuma' ),
+		'id'            => 'azuma-sidebar-homepage',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="page-sidebar-widget-title">',
 		'after_title'   => '</h4>',
 	) );
 
@@ -422,6 +432,96 @@ function azuma_enqueue_gutenberg_block_editor_assets() {
 	wp_add_inline_style( 'azuma-block-editor-style', azuma_block_editor_dynamic_style() );
 }
 add_action( 'enqueue_block_editor_assets', 'azuma_enqueue_gutenberg_block_editor_assets' );
+
+/**
+ * Custom block editor color palette.
+ */
+if ( !function_exists( 'azuma_custom_color_palette' ) ) {
+	function azuma_custom_color_palette() {
+		return array(
+			array(
+				'name' => __( 'Custom primary color', 'azuma' ),
+				'slug' => 'custom-color-1',
+				'color' => get_theme_mod( 'hi_color', '#ff7800' ),
+			),
+			array(
+				'name' => __( 'Custom secondary color', 'azuma' ),
+				'slug' => 'custom-color-2',
+				'color' => get_theme_mod( 'hi_color2', '#2d364c' ),
+			),
+			array(
+				'name' => __( 'Default text - very dark grey', 'azuma' ),
+				'slug' => 'very-dark-grey',
+				'color' => '#2f3032',
+			),
+			array(
+				'name' => __( 'Very light grey', 'azuma' ),
+				'slug' => 'very-light-grey',
+				'color' => '#f9f9f9',
+			),
+			array(
+				'name' => __( 'Pale pink', 'azuma' ),
+				'slug' => 'pale-pink',
+				'color' => '#f78da7'
+			),
+			array(
+				'name' => __( 'Vivid red', 'azuma' ),
+				'slug' => 'vivid-red',
+				'color' => '#cf2e2e',
+			),
+			array(
+				'name' => __( 'Luminous vivid orange', 'azuma' ),
+				'slug' => 'luminous-vivid-orange',
+				'color' => '#ff6900',
+			),
+			array(
+				'name' => __( 'Luminous vivid amber', 'azuma' ),
+				'slug' => 'luminous-vivid-amber',
+				'color' => '#fcb900',
+			),
+			array(
+				'name' => __( 'Light green cyan', 'azuma' ),
+				'slug' => 'light-green-cyan',
+				'color' => '#7bdcb5',
+			),
+			array(
+				'name' => __( 'Vivid green cyan', 'azuma' ),
+				'slug' => 'vivid-green-cyan',
+				'color' => '#00d084',
+			),
+			array(
+				'name' => __( 'Pale cyan blue', 'azuma' ),
+				'slug' => 'pale-cyan-blue',
+				'color' => '#8ed1fc',
+			),
+			array(
+				'name' => __( 'Vivid cyan blue', 'azuma' ),
+				'slug' => 'vivid-cyan-blue',
+				'color' => '#0693e3',
+			),
+			array(
+				'name' => __( 'Vivid purple', 'azuma' ),
+				'slug' => 'vivid-purple',
+				'color' => '#9b51e0',
+			),
+			array(
+				'name' => __( 'Very light gray', 'azuma' ),
+				'slug' => 'very-light-gray',
+				'color' => '#eeeeee',
+			),
+			array(
+				'name' => __( 'Cyan bluish gray', 'azuma' ),
+				'slug' => 'cyan-bluish-gray',
+				'color' => '#abb8c3',
+			),
+			array(
+				'name' => __( 'Very dark gray', 'azuma' ),
+				'slug' => 'very-dark-gray',
+				'color' => '#313131',
+			),
+		);
+	}
+}
 
 /**
  * Custom template tags for this theme.

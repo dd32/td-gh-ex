@@ -3,7 +3,7 @@ Azuma WordPress Theme, Copyright UXL Themes 2019
 Azuma is distributed under the terms of the GNU GPL (http://www.gnu.org/licenses/gpl-2.0.html)
 Contributors: uxl
 Requires at least: WordPress 4.5
-Tested up to: WordPress 5.3.2
+Tested up to: WordPress 5.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +18,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.2 - April 27, 2020
+Updated styling compatibility with block editor
+Added optional homepage sidebar
+Added extra header image options
+Added Transparent Header page template
+Fixes for Blank Canvas and Landing Page templates
+
 1.1.3 - February 18, 2020
 Minor CSS update for product quantity text field
 

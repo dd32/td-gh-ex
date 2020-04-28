@@ -1,6 +1,6 @@
 <?php
 /**
- * The header used by template-blank-canvas.php.
+ * The header used by template-transparent-header.php.
  *
  * @package Azuma
  */
@@ -31,7 +31,7 @@
 ?>
 <div id="page"<?php echo $page_class; ?>>
 
-	<header id="masthead" class="site-header not-full">
+	<header id="masthead" class="site-header transparent">
 
 		<div class="container">
 		<?php azuma_header_content(); ?>
