@@ -4,7 +4,7 @@ Contributors: blazethemes
 Requires at least: 4.7.0
 Stable tag: 1.0.3
 Tested up to: 5.3.2
-Required Php version: 5.2.4  
+Requires Php version: 5.2.4  
 Tags: right-sidebar, custom-background, custom-header, custom-logo, portfolio, blog, education, custom-colors,featured-images, footer-widgets, theme-options, threaded-comments, post-formats
 
 A starter theme called Article.
@@ -103,4 +103,5 @@ theia-sticky-sidebar:
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-* Based on Easy Mart https://wordpress.org/themes/easy-mart/, for plugin activation function.
+* Based on Easy Mart https://wordpress.org/themes/easy-mart/, for plugin activation function. (https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on Sydney WordPress Theme https://wordpress.org/themes/sydney/, for plugin skip link function. (https://www.gnu.org/licenses/gpl-2.0.html)

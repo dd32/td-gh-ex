@@ -139,10 +139,10 @@ function article_lite_scripts() {
 	wp_enqueue_style( 'article-fonts', article_lite_fonts_url(), array(), null );
 
 	// Add Font Awesome Icons. Unminified version included.
-	wp_enqueue_style('fontAwesome', get_template_directory_uri() . '/inc/font-awesome/css/fontawesome-all.min.css', array(), '5.0.12' );
+	wp_enqueue_style('fontAwesome', get_template_directory_uri() . '/inc/font-awesome/css/fontawesome-all.css', false, '5.0.12' );
 
 	// Load our responsive stylesheet based on Bootstrap. Unminified version included.
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array( ), '3.3.5' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.5' );
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'article-style', get_stylesheet_uri() );
@@ -152,9 +152,6 @@ function article_lite_scripts() {
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.3.5', true );
 	wp_enqueue_script( 'article-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	//stickey sidebar js
-	wp_enqueue_script( 'article-stickey-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array('jquery'), '1.7.0', true );
-	// customjs
 	wp_enqueue_script( 'article-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
 
 

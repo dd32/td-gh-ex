@@ -35,7 +35,7 @@
 /* Go back to the top of the page
  * Special thanks to the Sydney WordPress theme for this awesome function.
  */
-		var backTop = function() {
+	var backTop = function() {
 		$(window).scroll(function() {
 			if ( $(this).scrollTop() > 800 ) {
 				$('.back-to-top').addClass('show');

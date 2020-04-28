@@ -27,6 +27,9 @@
 
 	<header id="masthead" class="site-header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 		<div class="site-header">
+			<?php if( get_header_image() ){ ?>
+				<img src="<?php echo esc_url(( get_header_image()) ); ?>" class="article-header-image" alt="<?php echo esc_attr(( get_bloginfo( 'title' )) ); ?>" />
+		<?php } ?>
 			<div class="site-branding">
 				<div class="site-logo">
 					<?php the_custom_logo(); ?>
@@ -44,8 +47,6 @@
 			</div><!-- .site-branding -->
 
 			<!-- social navigation -->
-	
-
 			<nav id="site-navigation" class="main-navigation">
 				<div class="toggle-container visible-xs visible-sm hidden-md hidden-lg">
                     <button class="menu-toggle"><?php esc_html_e( 'Menu', 'article-lite' ); ?></button>

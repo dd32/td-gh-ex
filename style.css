@@ -4,7 +4,7 @@ Theme URI: https://blazethemes.com/theme/article-lite
 Author: Blaze Themes
 Author URI: https://blazethemes.com/
 Description: Article Lite is a mimimal WordPress Theme design specially for bloggers. Providing all the loved featured by bloggers like stiky post, post formats like audio, video, gallary, Easy access to social share, simple layout for blog. You can check demo at http://demo.blazethemes.com/article-lite.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: article-lite
@@ -84,7 +84,7 @@ body {
 	font-size: 1.0rem; 
 	line-height: 1.6;
 	color: #fff;
-	background-color: #303030; /* Fallback for when there is no custom background color defined. */
+	background-color: #f3f3f3;; /* Fallback for when there is no custom background color defined. */
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	-ms-word-wrap: break-word;
@@ -157,7 +157,6 @@ summary {
 #page {
 	width: 100%;
 	margin: 0 auto;
-	background-color: #f3f3f3;
 	color: #656565;
 }
 #page.boxed1920 {
@@ -1702,7 +1701,7 @@ Banner Captions
 	height: 24px;
 	position: relative;
 	width: 24px;
-	font-family: "FontAwesome";
+	font-family: 'Font Awesome 5 Free';
 	background-color: #bfbfbf;
 	color: #fff;
 	text-align: center;
@@ -2633,21 +2632,25 @@ a.more-link:hover {
 	}
 
 	.main-navigation li.menu-item-has-children > a:after{
-		font-family: 'FontAwesome';
+		font-family: 'Font Awesome 5 Free';
 		content: "\f107";
 		margin-left: 4px;
 		margin-top: 0;
 		position: relative;
+		font-weight: 900;
+		font-style: normal;
 	}	
 	/* Submenus */	
 	.main-navigation ul.sub-menu li.menu-item-has-children > a:after {
 		font-size: 11px;
 		margin-left: 0.5rem;
-		font-family: 'FontAwesome';
+		font-family: 'Font Awesome 5 Free';
 		content: "\f105";
 		float: right;
 		margin-top: 3px;
 		position: relative;
+		font-weight: 900;
+		font-style: normal;
 	}
 	.main-navigation li li > a {		
 		text-transform: initial;
@@ -2780,7 +2783,8 @@ a.more-link:hover {
 	height: 32px;
 	position: relative;
 	width: 32px;
-	font-family: "FontAwesome";
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
 	background-color: #444;
 	color: #fff;
 	text-align: center;
@@ -2898,7 +2902,8 @@ font-size: 11px;
 }
 .post-nav-older:after,
 .post-nav-newer:before {
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
 	font-size: 0.813rem;
 	content: "\f101";
 	margin-left: 5px;
@@ -3732,7 +3737,8 @@ form.search-form:after, .woocommerce-product-search:after {
   right: 42px;
   top: 50%;
   color: #dee2e6;
-  font-family: FontAwesome;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
@@ -4052,7 +4058,7 @@ form.search-form:after, .woocommerce-product-search:after {
 }
 
 /** dynamic added **/
-body {background-color:#303030}
+body {background-color:#f3f3f3}
 #masthead {background-color:#ffffff}
 .site-branding {margin-top:20px; margin-bottom:20px;}
 #masthead:before { background-color: #ffffff; opacity: 0.5}
@@ -4076,7 +4082,7 @@ body {background-color:#303030}
 .main-navigation li li > a { color: #727679;}
 .main-navigation ul ul { border-color: #919d74;}
 #banner-wrapper {background-color:#303030}
-#page { color: #656565; background-color:#f3f3f3}
+#page { color: #656565;}
 	.post-navigation .meta-nav { color: #656565}
 a, a:visited { color: #af9870;}
 a:hover, a:focus, a:active { color: #a76526;}
@@ -4139,4 +4145,13 @@ outline: #ff0000 4px solid !important;
 
 .nav-menu ul.sub-menu li a.focused{
 	outline: 1px solid #8e8b8b;;
+}
+
+.article-header-image{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -25;
+	height: 100%;
+	width: 100%;
 }
