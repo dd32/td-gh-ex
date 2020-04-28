@@ -205,6 +205,11 @@ function graphene_google_fonts_local( $fonts ){
 	global $graphene_settings;
 	if ( ! $graphene_settings['host_scripts_locally'] ) return $fonts;
 
+	/* Do not run this on AMP pages */
+	if ( function_exists( 'is_amp_endpoint' ) ) {
+		if ( is_amp_endpoint() ) return $fonts;
+	}
+
 	/* Get supplied local fonts */
 	$local_fonts = apply_filters( 'graphene_local_fonts', array(
 		'Lato' => '400,400i,700,700i',

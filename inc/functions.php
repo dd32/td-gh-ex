@@ -29,20 +29,22 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 	if ( ! $header_img ) $header_img = get_header_image();
 
 	if ( ! $return_url && ! is_array( $header_img ) ) {
-		if ( isset( $image ) && $image ) $header_img = $image;
-		else {
-			$image_id = graphene_get_attachment_id_from_src( $header_img );
-			$image = wp_get_attachment_image_src( $image_id, $size );
+		if ( isset( $image ) && $image ) {
 
-			if ( $image ) $header_img = $image;
-			elseif ( $header_img ) {
-				if ( ini_get( 'allow_url_fopen' ) ) $dimension = getimagesize( $header_img );
-				else $dimension = array( '', '' );
-				
-				$header_img = array( $header_img, $dimension[0], $dimension[1] );
+			$header_img = $image;
+			if ( ini_get( 'allow_url_fopen' ) ) $dimension = getimagesize( $header_img );
+			else $dimension = array( '', '' );
+			
+			$header_img = array( $header_img, $dimension[0], $dimension[1] );
+
+		} else {
+			if ( $image_id = graphene_get_attachment_id_from_src( $header_img ) ) {
+				$image = wp_get_attachment_image_src( $image_id, $size );
+				if ( $image ) {
+					$header_img = $image;
+					$header_img['attachment_id'] = $image_id;
+				}
 			}
-
-			$header_img['attachment_id'] = $image_id;
 		}
 	}
 	
@@ -136,7 +138,6 @@ function graphene_get_image_html( $image_src_or_id, $size = '', $alt = '' ){
 			$height = '';
 			$width = '';
 
-			
 			if ( ini_get( 'allow_url_fopen' ) ) $image_size = getimagesize( $image_src_or_id );
 			else $image_size = array( '', '' );
 

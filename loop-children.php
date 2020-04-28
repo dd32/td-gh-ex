@@ -33,10 +33,10 @@ if ( $graphene_settings['child_page_listing'] == 'show_always' ||
                     <?php /* The post thumbnail */
                         if ( has_post_thumbnail( get_the_ID() ) ) {
                             echo '<div class="excerpt-thumb"><a href="' . get_permalink( get_the_ID() ) . '">';
-                            echo get_the_post_thumbnail( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'thumbnail' ) );
+                            echo get_the_post_thumbnail( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'medium' ) );
                             echo '</a></div>';
                         } else {
-                            echo graphene_get_post_image( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'thumbnail' ), 'excerpt' );	
+                            echo graphene_get_post_image( get_the_ID(), apply_filters( 'graphene_excerpt_thumbnail_size', 'medium' ), 'excerpt' );	
                         }
                     ?>
 

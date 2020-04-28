@@ -4,6 +4,13 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.7.5 [28-04-2020]
+	* Added: Native support for Yoast SEO breadcrumbs
+	* Fixed: Option to display excerpt in front page not applied if option to show full content in archive pages is enabled
+	* Fixed: Block editor width no longer follows the theme's content width
+	* Fixed: Child pages listing thumbnail has low resolution on mobile devices
+	* Fixed: Empty header image tag sometimes shown for certain configurations
+
 Version 2.7.4 [12-04-2020]
 	* Fixed: The option "Show full content in archive pages" is not working
 	* Fixed: Styling for Read More button when using Block Editor

@@ -1173,8 +1173,12 @@ function graphene_header_image(){
 		$header_img = graphene_get_header_image( $post_id, 'post-thumbnail', false );
 		if ( ! $header_img ) return;
 
-		$alt = graphene_get_header_image_alt( $header_img['attachment_id'] );
-		$header_img = $header_img[0];
+		if ( isset( $header_img['attachment_id'] ) ) 
+			$alt = graphene_get_header_image_alt( $header_img['attachment_id'] );
+		else
+			$alt = '';
+
+		if ( is_array( $header_img ) ) $header_img = $header_img[0];
 		
 	} else {
 		$header_img = get_header_image();

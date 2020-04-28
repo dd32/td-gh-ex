@@ -16,11 +16,31 @@ function graphene_breadcrumb_navxt( $in_custom_layout = false ){
 	}
 	?>
 	<div class="breadcrumb breadcrumb-navxt breadcrumbs-wrapper row">
-        <div class="container breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#"><?php bcn_display(); ?></div>
+        <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#"><?php bcn_display(); ?></div>
     </div>
     <?php
 }
 add_action( 'graphene_before_content', 'graphene_breadcrumb_navxt' );
+
+
+/**
+ * Add breadcrumbs to the top of the content area. Uses the Yoast SEO plugin.
+*/
+function graphene_breadcrumb_yoast( $in_custom_layout = false ){
+	if ( ! function_exists( 'yoast_breadcrumb' ) ) return;
+
+	if ( graphene_has_custom_layout() && ! $in_custom_layout ) return;
+	else {
+		if ( ! is_singular() && ! is_archive() && ! is_search() ) return;
+		if ( is_front_page() || is_author() ) return;
+	}
+	?>
+	<div class="breadcrumb breadcrumb-yoast breadcrumbs-wrapper row">
+		<?php yoast_breadcrumb( '<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">', '</div>' ); ?>
+    </div>
+    <?php
+}
+add_action( 'graphene_before_content', 'graphene_breadcrumb_yoast' );
 
 
 /**

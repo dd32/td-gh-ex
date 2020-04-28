@@ -6,20 +6,23 @@ function graphene_blocks_dynamic_css(){
 	global $pagenow, $graphene_settings;
 	if ( $pagenow != 'post.php' ) return;
 
-	$content_width = graphene_get_content_width() + 45;
+	$content_width = graphene_get_content_width();
 	$wide_width = floor( $content_width * 1.25 );
 
 	/* Basic editor style */
 	$style = '
 		body.block-editor-page .editor-post-title__block,
 		body.block-editor-page .editor-default-block-appender,
-		body.block-editor-page .editor-block-list__block {
+		body.block-editor-page .editor-block-list__block,
+		.wp-block {
 		    max-width: ' . $content_width . 'px !important;
 		}
-		body.block-editor-page .editor-block-list__block[data-align="wide"] {
+		body.block-editor-page .editor-block-list__block[data-align="wide"],
+		.wp-block[data-align="wide"] {
 		    max-width: ' . $wide_width . 'px !important;
 		}
-		.edit-post-visual-editor .editor-block-list__block[data-align=full] {
+		.edit-post-visual-editor .editor-block-list__block[data-align=full],
+		.wp-block[data-align="full"] {
 			max-width: none !important;
 		}
 		.edit-post-layout__metaboxes:not(:empty) {

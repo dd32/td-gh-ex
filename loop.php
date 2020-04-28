@@ -55,7 +55,7 @@
                 
 				<?php /* The excerpt */ ?>
 				<?php 
-					if ( ! is_singular() && $graphene_settings['archive_full_content'] ) 
+					if ( ! is_singular() && $graphene_settings['archive_full_content'] && ( ! is_home() && ! $graphene_settings['posts_show_excerpt'] ) ) 
 						the_content();
 					else 
 						the_excerpt(); 
