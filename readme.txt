@@ -5,7 +5,7 @@ Tags: education, translation-ready, custom-background, theme-options, custom-men
 Requires at least: 4.5
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 2.3
+Stable tag: 2.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -126,6 +126,9 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 2.4 - Apr 29, 2020
+* Updated accessibility css
 
 = 2.3 - Jan 30, 2020
 * Updated tagcloud widget design
