@@ -27,12 +27,12 @@ add_action( 'wp_enqueue_scripts', 'aagaz_startup_header_style' );
 function aagaz_startup_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
-	$custom_css = "
+	$aagaz_startup_custom_css = "
         #masthead .main-header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
-	   	wp_add_inline_style( 'aagaz-startup-basic-style', $custom_css );
+	   	wp_add_inline_style( 'aagaz-startup-basic-style', $aagaz_startup_custom_css );
 	endif;
 }
 endif; // aagaz_startup_header_style

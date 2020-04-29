@@ -1,5 +1,4 @@
 (function( $ ) {
-
 	/**** Hidden search box ***/
 	jQuery('document').ready(function($){
 		jQuery('.search-box ').click(function(){
@@ -32,18 +31,18 @@ jQuery(document).ready(function () {
 (function( $ ) {
 
 	$(window).scroll(function(){
-	  var sticky = $('.sticky-header'),
-	      scroll = $(window).scrollTop();
+		var sticky = $('.sticky-header'),
+		scroll = $(window).scrollTop();
 
-	  if (scroll >= 100) sticky.addClass('fixed-header');
-	  else sticky.removeClass('fixed-header');
+		if (scroll >= 100) sticky.addClass('fixed-header');
+		else sticky.removeClass('fixed-header');
 	});
 
 })( jQuery );
 
 jQuery(function($){
-  $(window).load(function() {
-    $("#pre-loader").delay(1000).fadeOut("slow");
-      $(".circle").delay(1000).fadeOut("slow");
-  })
+	$(window).load(function() {
+		$("#pre-loader").delay(1000).fadeOut("slow");
+		$(".circle").delay(1000).fadeOut("slow");
+	})
 });

@@ -31,6 +31,6 @@
 	    <div class="serach_inner">
 	      <?php get_search_form(); ?>
 	    </div>
-	    <a href="#" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','aagaz-startup' );?></span></a>
+	    <a href="#main" class="closepop">X<span class="screen-reader-text"><?php esc_html_e( 'serach-outer','aagaz-startup' );?></span></a>
 	</div>
 </div>

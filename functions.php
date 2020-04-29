@@ -186,8 +186,8 @@ function aagaz_startup_widgets_init() {
 	) );
 
 	//Footer widget areas
-	$widget_areas = get_theme_mod('aagaz_startup_footer_widget', '4');
-	for ($i=1; $i<=$widget_areas; $i++) {
+	$aagaz_startup_widget_areas = get_theme_mod('aagaz_startup_footer_widget', '4');
+	for ($i=1; $i<=$aagaz_startup_widget_areas; $i++) {
 		register_sidebar( array(
 			'name'          => __( 'Footer ', 'aagaz-startup' ) . $i,
 			'id'            => 'footer-' . $i,
@@ -253,7 +253,7 @@ function aagaz_startup_scripts() {
 	    $aagaz_startup_h6_font_family = get_theme_mod('aagaz_startup_h6_font_family', '');
 	    $aagaz_startup_h6_font_size = get_theme_mod('aagaz_startup_h6_font_size', '');
 
-		$custom_css ='
+		$aagaz_startup_custom_css ='
 			p,span{
 			    color:'.esc_html($aagaz_startup_paragraph_color).'!important;
 			    font-family: '.esc_html($aagaz_startup_paragraph_font_family).';
@@ -299,7 +299,7 @@ function aagaz_startup_scripts() {
 			}
 			';
 	
-	wp_add_inline_style( 'aagaz-startup-basic-style',$custom_css );
+	wp_add_inline_style( 'aagaz-startup-basic-style',$aagaz_startup_custom_css );
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
@@ -322,7 +322,7 @@ function aagaz_startup_scripts() {
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array( 'jquery' ), true );
 
 	require get_parent_theme_file_path( '/color-option.php' );
-	wp_add_inline_style( 'aagaz-startup-basic-style',$custom_css );
+	wp_add_inline_style( 'aagaz-startup-basic-style',$aagaz_startup_custom_css );
 
 	wp_localize_script( 'aagaz-startup-skip-link-focus-fix', 'aagaz_startupScreenReaderText', $aagaz_startupScreenReaderText );
 

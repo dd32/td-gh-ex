@@ -7,20 +7,20 @@ get_header(); ?>
 <main id="main" role="main">
   <?php do_action( 'aagaz_startup_before_slider' ); ?>
 
-  <?php if( get_theme_mod('aagaz_startup_slider_arrows') != '' || get_theme_mod('aagaz_startup_enable_disable_slider') != ''){ ?>
+  <?php if( get_theme_mod('aagaz_startup_slider_arrows', false) != '' || get_theme_mod('aagaz_startup_enable_disable_slider', false) != ''){ ?>
     <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="<?php echo esc_attr(get_theme_mod('aagaz_startup_slider_speed', 3000)); ?>"> 
-        <?php $slider_pages = array();
+        <?php $aagaz_startup_slider_pages = array();
           for ( $count = 0; $count <= 3; $count++ ) {
             $mod = intval( get_theme_mod( 'aagaz_startup_slide_page' . $count ));
             if ( 'page-none-selected' != $mod ) {
-              $slider_pages[] = $mod;
+              $aagaz_startup_slider_pages[] = $mod;
             }
           }
-          if( !empty($slider_pages) ) :
+          if( !empty($aagaz_startup_slider_pages) ) :
           $args = array(
             'post_type' => 'page',
-            'post__in' => $slider_pages,
+            'post__in' => $aagaz_startup_slider_pages,
             'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
@@ -74,47 +74,47 @@ get_header(); ?>
   <?php if( get_theme_mod('aagaz_startup_about_page') != ''){ ?>
     <section id="about">
       <div class="container">
-        <?php $slider_pages = array();
+        <?php $aagaz_startup_slider_pages = array();
           $mod = absint( get_theme_mod( 'aagaz_startup_about_page'));
           if ( 'page-none-selected' != $mod ) {
-            $slider_pages[] = $mod;
+            $aagaz_startup_slider_pages[] = $mod;
           }
-        if( !empty($slider_pages) ) :
+        if( !empty($aagaz_startup_slider_pages) ) :
           $args = array(
             'post_type' => 'page',
-            'post__in' => $slider_pages,
+            'post__in' => $aagaz_startup_slider_pages,
             'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
-          if ( $query->have_posts() ) :
-            while ( $query->have_posts() ) : $query->the_post(); ?>
-              <div class="about-text">
-                <?php if( get_theme_mod('aagaz_startup_title') != ''){ ?>     
-                  <h2><?php echo esc_html(get_theme_mod('aagaz_startup_title','')); ?></h2>
-                  <hr>
-                <?php }?>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                    <h3><?php esc_html(the_title()); ?></h3>
-                    <p><?php the_excerpt();  ?></p>
-                    <div class ="aboutbtn">
-                      <a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('READ MORE','aagaz-startup'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','aagaz-startup' );?></span></a>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <div class="abt-image">
-                      <?php the_post_thumbnail(); ?>
-                    </div>
-                  </div>
+        if ( $query->have_posts() ) :
+          while ( $query->have_posts() ) : $query->the_post(); ?>
+          <div class="about-text">
+            <?php if( get_theme_mod('aagaz_startup_title') != ''){ ?>     
+              <h2><?php echo esc_html(get_theme_mod('aagaz_startup_title','')); ?></h2>
+              <hr>
+            <?php }?>
+            <div class="row">
+              <div class="col-lg-6 col-md-6">
+                <h3><?php esc_html(the_title()); ?></h3>
+                <p><?php the_excerpt();  ?></p>
+                <div class ="aboutbtn">
+                  <a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('READ MORE','aagaz-startup'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','aagaz-startup' );?></span></a>
                 </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <div class="abt-image">
+                  <?php the_post_thumbnail(); ?>
+                </div>
+              </div>
+            </div>
             <?php endwhile; ?>
-          <?php else : ?>
-              <div class="no-postfound"></div>
-          <?php endif;
-        endif;
-        wp_reset_postdata()?>
-          <div class="clearfix"></div> 
-        </div>
+            <?php else : ?>
+                <div class="no-postfound"></div>
+            <?php endif;
+            endif;
+            wp_reset_postdata()?>
+            <div class="clearfix"></div> 
+          </div>
       </div>
     </section>
   <?php }?>

@@ -19,7 +19,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	// font array
-	$font_array = array(
+	$aagaz_startup_font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',
         'Acme' => 'Acme',
@@ -114,6 +114,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     );
     
 	//Typography
+
 	$wp_customize->add_section( 'aagaz_startup_typography', array(
     	'title'      => __( 'Color / Fonts Settings', 'aagaz-startup' ),
 		'panel' => 'aagaz_startup_panel_id'
@@ -141,7 +142,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'Paragraph Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	$wp_customize->add_setting('aagaz_startup_paragraph_font_size',array(
@@ -177,7 +178,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( '"a" Tag Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	// This is "a" Tag Color picker setting
@@ -202,7 +203,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( '"li" Tag Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	// This is H1 Color picker setting
@@ -227,7 +228,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'H1 Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	//This is H1 FontSize setting
@@ -264,7 +265,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'h2 Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	//This is H2 FontSize setting
@@ -301,7 +302,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'h3 Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	//This is H3 FontSize setting
@@ -338,7 +339,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'h4 Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	//This is H4 FontSize setting
@@ -375,7 +376,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'h5 Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	//This is H5 FontSize setting
@@ -412,7 +413,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'section'  => 'aagaz_startup_typography',
 	    'label'    => __( 'h6 Fonts','aagaz-startup'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => $aagaz_startup_font_array,
 	));
 
 	//This is H6 FontSize setting
@@ -428,8 +429,9 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));
 
 	// Add the Theme Color Option section.
-	$wp_customize->add_section( 'aagaz_startup_theme_color_option', 
-		array( 'panel' => 'aagaz_startup_panel_id', 'title' => esc_html__( 'Theme Color Option', 'aagaz-startup' ) )
+	$wp_customize->add_section( 'aagaz_startup_theme_color_option', array( 
+		'panel' => 'aagaz_startup_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'aagaz-startup' ) )
 	);
 
   	$wp_customize->add_setting( 'aagaz_startup_theme_color', array(
@@ -451,6 +453,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 
 	//Sticky Header
 	$wp_customize->add_setting( 'aagaz_startup_fixed_header',array(
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('aagaz_startup_fixed_header',array(
@@ -571,6 +574,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		),
 	) );
 
+	// sidebar setting
 	$wp_customize->add_section( 'aagaz_startup_general_option', array(
     	'title'      => __( 'Sidebar Settings', 'aagaz-startup' ),
 		'panel' => 'aagaz_startup_panel_id'
@@ -602,7 +606,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting( 'aagaz_startup_show_hide_topbar',array(
-		'default' => true,
+		'default' => false,
       	'sanitize_callback'	=> 'sanitize_text_field'
     ) );
     $wp_customize->add_control('aagaz_startup_show_hide_topbar',array(
@@ -707,7 +711,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_slider_arrows',array(
-        'default' => true,
+        'default' => false,
         'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	$wp_customize->add_control('aagaz_startup_slider_arrows',array(
@@ -935,7 +939,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('aagaz_startup_enable_disable_fixed_header',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_fixed_header',array(
@@ -945,7 +949,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('aagaz_startup_enable_disable_slider',array(
-       'default' => true,
+       'default' => false,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('aagaz_startup_enable_disable_slider',array(
@@ -981,7 +985,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	));	
 
 	$wp_customize->add_setting('aagaz_startup_date_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('aagaz_startup_date_hide',array(
@@ -991,7 +995,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('aagaz_startup_comment_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('aagaz_startup_comment_hide',array(
@@ -1001,7 +1005,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('aagaz_startup_author_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('aagaz_startup_author_hide',array(
@@ -1011,7 +1015,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_setting('aagaz_startup_tags_hide',array(
-       'default' => false,
+       'default' => true,
        'sanitize_callback'	=> 'sanitize_text_field'
     ));
     $wp_customize->add_control('aagaz_startup_tags_hide',array(
@@ -1111,7 +1115,7 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting('aagaz_startup_footer_widget',array(
-        'default'           => '4',
+        'default'           => 4,
         'sanitize_callback' => 'aagaz_startup_sanitize_choices',
     ));
     $wp_customize->add_control('aagaz_startup_footer_widget',array(
@@ -1126,6 +1130,21 @@ function aagaz_startup_customize_register( $wp_customize ) {
             '4'     => __('Four', 'aagaz-startup')
         ),
     )); 
+
+	$wp_customize->add_setting('aagaz_startup_copyright_top_bottom_padding',array(
+		'default'=> '',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('aagaz_startup_copyright_top_bottom_padding',array(
+		'label'	=> __('Copyright Top and Bottom Padding','aagaz-startup'),
+		'input_attrs' => array(
+            'step'             => 1,
+			'min'              => 0,
+			'max'              => 50,
+        ),
+		'section'=> 'aagaz_startup_footer',
+		'type'=> 'number'
+	));
 
 	$wp_customize->add_setting('aagaz_startup_hide_show_scroll',array(
         'default' => true,
@@ -1222,21 +1241,6 @@ function aagaz_startup_customize_register( $wp_customize ) {
 		'section'	=> 'aagaz_startup_footer',
 		'setting'	=> 'aagaz_startup_footer_text',
 		'type'		=> 'text'
-	));
-
-	$wp_customize->add_setting('aagaz_startup_copyright_top_bottom_padding',array(
-		'default'=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	$wp_customize->add_control('aagaz_startup_copyright_top_bottom_padding',array(
-		'label'	=> __('Copyright Top and Bottom Padding','aagaz-startup'),
-		'input_attrs' => array(
-            'step'             => 1,
-			'min'              => 0,
-			'max'              => 50,
-        ),
-		'section'=> 'aagaz_startup_footer',
-		'type'=> 'number'
 	));
 
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';

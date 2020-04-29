@@ -16,21 +16,21 @@ get_header(); ?>
 		<?php endif; ?>
 		<div class="row">
 			<?php
-			    $layout_setting = get_theme_mod( 'aagaz_startup_layout_settings', __('Right Sidebar','aagaz-startup') );
-		    if($layout_setting == 'Left Sidebar'){ ?>
+		    $aagaz_startup_layout_setting = get_theme_mod( 'aagaz_startup_layout_settings', __('Right Sidebar','aagaz-startup') );
+		    if($aagaz_startup_layout_setting == 'Left Sidebar'){ ?>
 			    <div id="sidebox" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebox-1'); ?>
 				</div>
 				<div class="col-lg-8 col-md-8">
 					<?php
-					if ( have_posts() ) :
+						if ( have_posts() ) :
 
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
-							
-							get_template_part( 'template-parts/post/content' , get_post_format() );
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+								
+								get_template_part( 'template-parts/post/content' , get_post_format() );
 
-						endwhile;
+							endwhile;
 
 						else :
 
@@ -42,17 +42,17 @@ get_header(); ?>
 		                <?php aagaz_startup_pagination_type(); ?>
 	       	 		</div>
 				</div>
-			<?php }else if($layout_setting == 'Right Sidebar'){ ?>
+			<?php }else if($aagaz_startup_layout_setting == 'Right Sidebar'){ ?>
 				<div class="col-lg-8 col-md-8">
 					<?php
-					if ( have_posts() ) :
+						if ( have_posts() ) :
 
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
-							
-							get_template_part( 'template-parts/post/content' , get_post_format() );
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+								
+								get_template_part( 'template-parts/post/content' , get_post_format() );
 
-						endwhile;
+							endwhile;
 
 						else :
 
@@ -67,17 +67,17 @@ get_header(); ?>
 				<div id="sidebox" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebox-1'); ?>
 				</div>
-			<?php }else if($layout_setting == 'One Column'){ ?>
+			<?php }else if($aagaz_startup_layout_setting == 'One Column'){ ?>
 				<div class="col-lg-12 col-md-12">
 					<?php
-					if ( have_posts() ) :
+						if ( have_posts() ) :
 
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
-							
-							get_template_part( 'template-parts/post/content' , get_post_format());
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+								
+								get_template_part( 'template-parts/post/content' , get_post_format());
 
-						endwhile;
+							endwhile;
 
 						else :
 
@@ -89,18 +89,18 @@ get_header(); ?>
 		                <?php aagaz_startup_pagination_type(); ?>
 	       	 		</div>
 				</div>
-			<?php }else if($layout_setting == 'Grid Layout'){ ?>
+			<?php }else if($aagaz_startup_layout_setting == 'Grid Layout'){ ?>
 				<div class="col-lg-9 col-md-9">
 					<div class="row">
 						<?php
-						if ( have_posts() ) :
+							if ( have_posts() ) :
 
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
-								
-								get_template_part( 'template-parts/post/gridlayout' );
+								/* Start the Loop */
+								while ( have_posts() ) : the_post();
+									
+									get_template_part( 'template-parts/post/gridlayout' );
 
-							endwhile;
+								endwhile;
 
 							else :
 
@@ -119,14 +119,14 @@ get_header(); ?>
 			<?php }else {?>
 				<div class="col-lg-8 col-md-8">
 					<?php
-					if ( have_posts() ) :
+						if ( have_posts() ) :
 
-						/* Start the Loop */
-						while ( have_posts() ) : the_post();
-							
-							get_template_part( 'template-parts/post/content' , get_post_format() );
+							/* Start the Loop */
+							while ( have_posts() ) : the_post();
+								
+								get_template_part( 'template-parts/post/content' , get_post_format() );
 
-						endwhile;
+							endwhile;
 
 						else :
 
