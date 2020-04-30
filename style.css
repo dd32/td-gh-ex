@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.2.2
+Version: 1.2.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -664,16 +664,6 @@ textarea {
 form textarea {
 	min-height: 150px;
 }
-.woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single {
-    height: 40px;
-    border-style: solid;
-    border-width: 1px;
-    outline: none;
-    padding: 6px 9px;
-}
-.woocommerce .woocommerce-checkout .select2-container--default .select2-selection--single .select2-selection__arrow {
-    height: 40px;
-}
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -1187,8 +1177,6 @@ body.yesOpenPopupMenu .menu-full-screen-icon .icon-full-screen .square-full-scre
 	.menu-toggle, .menu-toggle-top,
 	.attesa-social-header-mobile,
 	.attesa-search-button-mobile,
-	.cartwoo-button-mobile,
-	.cartedd-button-mobile,
 	.attesa-close-pushmenu {
 		display: none;
 	}
@@ -1656,127 +1644,6 @@ aside ul.product-categories .indicatorBar.yesOpenBar:before {
     border-top-left-radius: 0 !important;
 	float: right;
 	height: 40px;
-}
-/* WooCommerce Mini Cart */
-.cartwoo-button {
-	float: right;
-	padding: 0 0.5em;
-	position: relative;
-}
-.attesa_woocommerce_mini_cart {
-	visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 0.2s,opacity 0.2s linear, transform 0.2s linear;
-    -webkit-transform: translate3d(0,50px,0);
-    transform: translate3d(0,50px,0);
-    z-index: 10000;
-    position: absolute;
-    width: 330px;
-    right: 0;
-	padding-top: 12px;
-}
-.nav-top .top-block-right.invert .attesa_woocommerce_mini_cart {
-	left: 0;
-	right: inherit;
-}
-.cartwoo-button:hover .attesa_woocommerce_mini_cart,
-.cartwoo-button:focus .attesa_woocommerce_mini_cart,
-.cartwoo-button:active .attesa_woocommerce_mini_cart {
-	visibility: visible;
-    opacity: 1;
-    transition-delay: 0s;
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-}
-.attesa_woocommerce_mini_cart .widget_shopping_cart_content {
-	border-width: 1px;
-	border-top-width: 5px;
-    border-style: solid;
-}
-.attesa_woocommerce_mini_cart ul.product_list_widget {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	max-height: 370px;
-    overflow-y: auto;
-}
-.attesa_woocommerce_mini_cart ul.product_list_widget li {
-	padding: 1em;
-	border-bottom-width: 1px;
-    border-bottom-style: solid;
-}
-.attesa_woocommerce_mini_cart ul.product_list_widget li img {
-	display: block;
-    width: 70px;
-}
-.attesa_woo_cart_image_item {
-	float: left;
-	width: 25%;
-}
-.attesa_woo_cart_quantity_item {
-	float: left;
-	width: 75%;
-	position: relative;
-	padding: 0 2em 0 1em;
-}
-.attesa_woo_cart_quantity_item h3 {
-	margin: 0;
-	font-weight: 400;
-}
-.attesa_woocommerce_mini_cart .attesa_woo_cart_quantity_item h3 a {
-    font-weight: 700;
-}
-.attesa_woocommerce_mini_cart .attesa_woo_cart_quantity_item .remove {
-	position: absolute;
-    right: 0;
-    width: 25px;
-    height: 25px;
-    line-height: 23px;
-    text-align: center;
-	border-style: solid;
-	border-width: 1px;
-    font-size: 16px;
-	font-weight: 700;
-	-o-transition: border-color .3s ease-in-out;
-    -moz-transition: border-color .3s ease-in-out;
-    -webkit-transition: border-color .3s ease-in-out;
-    transition: border-color .3s ease-in-out;
-}
-.attesa_woocommerce_mini_cart .woocommerce-mini-cart__total {
-	padding: 1em;
-    font-size: initial;
-	margin: 0;
-}
-.attesa_woocommerce_mini_cart .woocommerce-mini-cart__total span.amount {
-	float: right;
-}
-.attesa_woocommerce_mini_cart .woocommerce-mini-cart__buttons {
-	padding: 1em;
-    margin: 0;
-}
-.attesa_woocommerce_mini_cart .woocommerce-mini-cart__buttons a {
-	padding: 0.5em 1em;
-    border-width: 1px;
-    border-style: solid;
-    display: inline-block;
-	font-weight: 700;
-	-o-transition: border-color .3s ease-in-out;
-    -moz-transition: border-color .3s ease-in-out;
-    -webkit-transition: border-color .3s ease-in-out;
-    transition: border-color .3s ease-in-out;
-}
-.attesa_woocommerce_mini_cart .woocommerce-mini-cart__buttons a.checkout {
-    border-color: transparent !important;
-	float: right;
-	-o-transition: background-color .3s ease-in-out;
-    -moz-transition: background-color .3s ease-in-out;
-    -webkit-transition: background-color .3s ease-in-out;
-    transition: background-color .3s ease-in-out;
-}
-.attesa_woocommerce_mini_cart p.woocommerce-mini-cart__empty-message {
-	margin: 0;
-    padding: 1em;
-    text-align: center;
 }
 /*--------------------------------------------------------------
 # Content
@@ -3508,8 +3375,7 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	.main-navigation > div > ul > li > a::before {
 		display: none !important;
 	}
-	.attesa-social-header-desktop,
-	.attesa_woocommerce_mini_cart {
+	.attesa-social-header-desktop {
 		display: none;
 	}
 	.attesa-social-header-mobile {
@@ -3540,17 +3406,11 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	}
 	.third-navigation,
 	.search-icon,
-	.search-container,
-	.cartwoo-button,
-	.cartedd-button {
+	.search-container {
 		display: none;
 	}
 	.nav-middle.format_compat .container .mainHead {
 		float: right !important;
-	}
-	.cartwoo-button-mobile,
-	.cartedd-button-mobile {
-		margin-left: 1em;
 	}
 	.hamburger-menu {
 		overflow: hidden;
@@ -3562,8 +3422,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 		border-top-style: solid;
 		border-top-width: 1px;
 	}
-	.nav-middle-top-title .cartwoo-button-mobile,
-	.nav-middle-top-title .cartedd-button-mobile,
 	.nav-middle-top-title .hamburger-menu {
 		display: inline-block;
 	}
@@ -3646,27 +3504,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	#content.site-content {
 		padding: 3em 0;
 	}
-	.woocommerce-store-notice a.woocommerce-store-notice__dismiss-link {
-		display: block;
-		padding: 0;
-		position: relative;
-		background-color: transparent;
-		text-align: center;
-	}
-	.woocommerce-ordering, .woocommerce-result-count {
-		width: 100%;
-		text-align: center;
-	}
-	#customer_details,
-	#order_review,
-	#order_review_heading {
-		width: 100%;
-		float: left;
-	}
-	ul.products li.product .tinvwl_add_to_wishlist_button,
-	.woocommerce ul.products li.product a.compare {
-		opacity: 1;
-	}
 	.nav-middle-top-title .container .mainSoc,
 	.nav-middle-top-title .container .mainLogo,
 	.nav-middle-top-title .container .mainFunc {
@@ -3698,7 +3535,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	.attesaFeatBox .attesaFeatBoxContainer,
 	.mainFooter .site-copy-down,
 	.second-navigation,
-	.attesa-woocommerce-sticky-product .container,
 	.attesapro-footer-callout-container {
 		max-width: 100% !important;
 	}
@@ -3777,8 +3613,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 	.comment-respond .comment-form-email {
 		padding: 0;
 	}
-	ul.products.columns-3 > li, ul.products.columns-4 > li, ul.products.columns-5 > li, .related.products .products > li,
-	.edd_download_columns_3 .edd_download, .edd_download_columns_5 .edd_download, .edd_download_columns_5 .edd_download,
 	body.attesa-blog-grid.threecolblog .hentry, body.attesa-blog-grid.fourcolblog .hentry {
 		width: 100%;
 	}
@@ -3791,15 +3625,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 		border-bottom-width: 1px;
 		border-bottom-style: solid;
 		border-radius: 0px;
-	}
-	.entry-content .woocommerce .form-row-first,
-	.entry-content .woocommerce .form-row-last {
-		width: 100%;
-		float: left;
-		padding: 0;
-	}
-	.edd-payment-icons {
-		margin-bottom: 15px;
 	}
 	body.yesOpenPopupMenu .menu-full-screen-icon {
 		position: fixed;
@@ -3874,12 +3699,10 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 		font-size: 13px;
 	}
 	.navigation.pagination .nav-links a,
-	.woocommerce-pagination > ul.page-numbers li a,
 	.page-links a {
 		padding: 1px 8px;
 	}
 	.navigation.pagination .nav-links span.current,
-	.woocommerce-pagination > ul.page-numbers li span,
 	.page-links .current {
 		padding: 0px 8px;
 	}
@@ -3893,54 +3716,6 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 		left: 0;
 		margin-bottom: 1.5em;
 	}
-	.woocommerce .content-area .images, .woocommerce .content-area .summary {
-		width: 100%;
-		float: left;
-	}
-	.woocommerce div.product form.cart .variations td.label {
-		padding: 8px;
-	}
-	.woocommerce p.stars a {
-		display: block;
-		border-right: none !important;
-	}
-	.woocommerce .woocommerce-tabs {
-		margin: 1.5em 0;
-	}
-	.cart-collaterals .cart_totals, .cart-collaterals .shipping_calculator {
-		width: 100%;
-	}
-	table.cart .product-thumbnail,
-	#edd_checkout_cart_wrap .edd_cart_item_image{
-		display: none;
-	}
-	.woocommerce-page table.cart td.actions .coupon {
-		display: block;
-		float: none;
-		margin: 1em 0;
-		text-align: center;
-	}
-	.woocommerce-page table.cart td.actions > input {
-		margin: 0 auto;
-		display: block;
-	}
-	.woocommerce-page table.cart td.actions {
-		text-align: left;
-	}
-	.woocommerce .content-area .woocommerce-tabs .tabs li a {
-		margin: 2px;
-	}
-	.woocommerce #reviews .commentlist li .avatar {
-		position: relative;
-	}
-	.woocommerce #reviews #comments ol.commentlist li .comment-text {
-		margin-left: 0;
-	}
-	.woocommerce-page .entry-content table {
-		font-size: 80%;
-	}
-	ul.products.columns-2 > li,
-	.edd_download_columns_2 .edd_download,
 	body.attesa-blog-grid.twocolblog .hentry {
 		width: 100%;
 	}
@@ -3954,29 +3729,13 @@ body.with_fa4 aside ul.product-categories li.current-cat a:before {
 		border-bottom-style: solid;
 		border-radius: 0px;
 	}
-	.attesa-woocommerce-sticky-product {
-		font-size: 80%;
-	}
-	#edd_checkout_form_wrap #edd-payment-mode-wrap label {
-		display: block;
-		margin: 8px 0 0 0;
-	}
 	fieldset {
 		margin-bottom: 25px;
 		padding: 20px 10px;
 	}
-	body.edd-page form {
-		font-size: 80%;
-	}
 	#primary.content-area,
 	#secondary.widget-area {
 		padding: 0 0.5em;
-	}
-	.woocommerce-page table.cart td.actions .coupon #coupon_code {
-		width: 40%;
-	}
-	.woocommerce-page table.cart td.actions button[name="update_cart"] {
-		width: 100%;
 	}
 	header.page-header {
 		padding: 1.5em 1em;
