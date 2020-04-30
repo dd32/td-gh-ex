@@ -3,7 +3,6 @@
 * at-custom-controls.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 
 /* ------------------------------------------------------------------------- *
@@ -266,6 +265,112 @@ if (class_exists('WP_Customize_Control')) {
 	}
 
 }
+
+//  Class Simple Notice for Pro
+if (class_exists('WP_Customize_Control')) {
+
+	class Atomy_Simple_Notice_Custom_Control_Pro extends WP_Customize_Control {
+		/**
+		 * The type of control being rendered
+		 */
+		public $type = 'simple_notice';
+		/**
+		 * Render the control in the customizer
+		 */
+		public function render_content() {
+			$allowed_html = array(
+				'a' => array(
+					'href' => array(),
+					'title' => array(),
+					'class' => array(),
+					'target' => array(),
+				),
+				'br' => array(),
+				'em' => array(),
+				'strong' => array(),
+				'i' => array(
+					'class' => array()
+				),
+				'button' => array(
+					'class' => array()
+				  ),
+				  'div' => array(
+					'style' => array()
+				  ),
+				  'p' => array(
+					'style' => array()
+				  ),
+				'span' => array(
+					'class' => array(),
+				),
+				'code' => array(),
+			);
+		?>
+			<div class="simple-notice-custom-control-pr">
+				<?php if( !empty( $this->label ) ) { ?>
+					<span class="customize-control-title"><?php echo esc_attr( $this->label ); ?></span>
+				<?php } ?>
+				<?php if( !empty( $this->description ) ) { ?>
+					<span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>
+				<?php } ?>
+			</div>
+	<!-- Style for Custom Simple Notices -->
+	<style>
+	
+	.simple-notice-custom-control-pr{
+		padding-top: 2em;
+		border: 1px solid #ccc;
+	  background-color: #fff;
+	}
+	
+	.simple-notice-custom-control-pr span{
+	  padding: 1em;
+	}
+	
+	.simple-notice-custom-control-pr{
+	  font-family: 'Montserrat', sans-serif;
+	  transition-duration: 0.7s;
+	  transition-timing-function: ease;
+	}
+	
+	.customize-control-description{
+	  font-style: normal!important;
+	}
+	
+	.simple-notice-custom-control-pr button {
+		background: transparent;
+		color: #000;
+	  padding-top: 16px;
+	  padding-left: 10px;
+	  padding-right: 10px;
+		font-size: 14px;
+		position: relative;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	  border-radius: 4px;
+	  border:1px solid #ccc!important;
+	  margin-left:5px;
+	}
+	
+	.simple-notice-custom-control-pr a{
+	  color: #666;
+	  text-decoration: none;
+	}
+	
+	.simple-notice-custom-control-pr a:hover{
+	color: #fff!important;
+	}
+	
+	.simple-notice-custom-control-pr button:hover {
+	background-color: gray;
+	}
+	
+	</style>
+	
+		<?php
+		}
+	}
+	}
 
 /* ------------------------------------*
 ## Simple Advise Custom Control */

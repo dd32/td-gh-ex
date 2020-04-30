@@ -4,7 +4,6 @@
 * Template Post Type: page
 * @author    Denis Franchi
 * @package   Atomy
-* @version   1.0.8
 *
 */
 

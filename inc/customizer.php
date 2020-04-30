@@ -4,7 +4,6 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 
 function atomy_customize_register( $wp_customize ) {
@@ -848,37 +847,6 @@ $wp_customize->add_control(new Atomy_Slider_Custom_Control($wp_customize,'at_blo
 			 'step' => 1, 
 ),)) );
 
-// Notice Blog Media Devices
-$wp_customize->add_setting('at_entry_meta_notice_blog_media',
-   array(
-      'default'           => '',
-      'transport'         => 'postMessage',
-      'sanitize_callback' => 'atomy_text_sanitization'
-));
- 
-$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_entry_meta_notice_blog_media',
-    array(
-	  'label'           => __('Mobile Devices','atomy'),
-	  'section'         => 'atomy_blog_section',
-	  'priority'        => 60,
-)) );
-
-// Enable Sidebar Blog in Media Device
-$wp_customize->add_setting('at_enable_sidebar_media',
-array(
- 'default'           => 0,
- 'transport'         => 'refresh',
- 'sanitize_callback' => 'atomy_switch_sanitization'
-));
-
-$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'at_enable_sidebar_media',
-array(
-  'label'      => __('Enable or disable Sidebar in mobile devices','atomy'),
-  'description'=>__('If the sidebar has been activated','atomy'),
-  'section'    => 'atomy_blog_section',
-  'priority'   => 70,
-)) );
-
 /*  Pages
 ========================================================================== */
 
@@ -1012,20 +980,12 @@ $wp_customize->add_panel($atomySection);
 /* Category/Product Section
 ========================================================================== */
 
-$atomyCategoryProduct =new Atomy_WP_Customize_Panel($wp_customize,'atomyCategoryProduct',array(
-	'title'    => __('Category/Product','atomy'),
-	'priority' => 4,
-	'panel'    => 'atomySection',
-));
-
-$wp_customize->add_panel( $atomyCategoryProduct );
-
 $wp_customize->add_section('atomy_section_category_shop',
 		array(
-			'title'      => __('Settings','atomy'),
-			'priority'   => 10,
+			'title'      => __('Category/Product','atomy'),
+			'priority'   => 1,
 			'capability' => 'edit_theme_options',
-			'panel'      => 'atomyCategoryProduct',
+			'panel'      => 'atomySection',
 ));
 
 // Notice Woocommerce
@@ -4604,34 +4564,6 @@ $wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,
 	'priority'=> 70,
 )) );
 
-// Mobile Devices
-$wp_customize->add_setting('at_entry_meta_notice_other_mobile',
-   array(
-      'sanitize_callback' => 'atomy_text_sanitization'
-));
- 
-$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_entry_meta_notice_other_mobile',
-    array(
-	  'label'           => __('Mobile Devices','atomy'),
-	  'section'         => 'atomy_settings_section',
-	  'priority'        => 510,
-)) );
-
-// Enable/ Disable back to top in device
-$wp_customize->add_setting('atomy_enable_back_to_top_device',
-   array(
-	'default'           => 1,
-	'transport'         => 'refresh',
-	'sanitize_callback' => 'atomy_switch_sanitization'
-));
-
-$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'atomy_enable_back_to_top_device',
-   array(
-	'label'   => __('Enable or disable Go to Top button','atomy'),
-	'section' => 'atomy_settings_section',
-	'priority'=> 520,
-)) );
-
 /* Typography
 ========================================================================== */
 
@@ -6520,6 +6452,97 @@ $wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,
 	'section' => 'atomy_section_settings_social',
 	'priority'=> 7,
 	)) );
+
+// Settings Go Pro
+$wp_customize->add_section(
+	'atomy_section_settings_go_pro',
+		array(
+			'title'      => __('Go Pro','atomy'),
+			'priority'   => 1,
+			'capability' => 'edit_theme_options',
+));
+
+$wp_customize->add_setting( 'atomy_go_pro_version',
+	array(
+		'default'           => '',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'atomy_text_sanitization'
+)); 
+
+$wp_customize->add_control( new Atomy_Simple_Notice_Custom_Control_Pro( $wp_customize, 'atomy_go_pro_version',
+			array(
+				'label'       => __( 'ATOMY PRO V 10','atomy' ),
+				'description' => ('<p style="text-align:center">'.__('FOR COMPLETE EXPERIENCE','atomy').'<br><hr><div style="text-align:center"><button class="wl-bt-pro"> <a href="' . esc_url(atomy_url_go_pro_theme) .'"  target="_blank">' . __( 'PRO VERSION', 'atomy' ) . '</a> </p></button></div>'),
+				'section'     => 'atomy_section_settings_go_pro'
+)) );
+
+
+// Smartphone
+$wp_customize->add_section(
+	'atomy_device_section',
+	array(
+		'title'      => __('Mobile Devices','atomy'),
+		'priority'   => 11000,
+		'capability' => 'edit_theme_options',
+) );
+
+// Notice Blog Media Devices
+$wp_customize->add_setting('at_entry_meta_notice_blog_media',
+   array(
+      'sanitize_callback' => 'atomy_text_sanitization'
+));
+ 
+$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_entry_meta_notice_blog_media',
+    array(
+	  'label'           => __('Blog','atomy'),
+	  'section'         => 'atomy_device_section',
+	  'priority'        => 10,
+)) );
+
+// Enable Sidebar Blog in Media Device
+$wp_customize->add_setting('at_enable_sidebar_media',
+array(
+ 'default'           => 0,
+ 'transport'         => 'refresh',
+ 'sanitize_callback' => 'atomy_switch_sanitization'
+));
+
+$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'at_enable_sidebar_media',
+array(
+  'label'      => __('Enable or disable Sidebar in mobile devices','atomy'),
+  'description'=>__('If the sidebar has been activated','atomy'),
+  'section'    => 'atomy_device_section',
+  'priority'   => 20,
+)) );
+
+// Mobile Devices
+$wp_customize->add_setting('at_entry_meta_notice_other_mobile',
+   array(
+      'sanitize_callback' => 'atomy_text_sanitization'
+));
+ 
+$wp_customize->add_control(new Atomy_Simple_Notice_Custom_control($wp_customize,'at_entry_meta_notice_other_mobile',
+    array(
+	  'label'           => __('Go To Top','atomy'),
+	  'section'         => 'atomy_device_section',
+	  'priority'        => 30,
+)) );
+
+// Enable/ Disable back to top in device
+$wp_customize->add_setting('atomy_enable_back_to_top_device',
+   array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'atomy_switch_sanitization'
+));
+
+$wp_customize->add_control(new Atomy_Toggle_Switch_Custom_control($wp_customize,'atomy_enable_back_to_top_device',
+   array(
+	'label'   => __('Enable or disable Go to Top button in mobile devices','atomy'),
+	'section' => 'atomy_device_section',
+	'priority'=> 40,
+)) );
+
 
 }
 add_action( 'customize_register', 'atomy_customize_register' );

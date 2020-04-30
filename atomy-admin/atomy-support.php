@@ -5,7 +5,6 @@
 *
 * @package Atomy
 *
-*  @version 1.0.8
 */
 
 function atomy_page_display() {
@@ -14,7 +13,7 @@ function atomy_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html__('Atomy','atomy');?></h2>
-		  	<span><?php echo esc_html__('V 1.0.9','atomy');?></span>
+		  	<span><?php echo esc_html__('V 1.1.0','atomy');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
@@ -36,9 +35,9 @@ function atomy_page_display() {
 		<p class="atomy-welkome-support"><?php esc_html_e('Thank you for choosing Atomy.','atomy');?><br>
 			<?php esc_html_e('The theme is ready to be used. You can customize everything you want in a few simple clicks directly from the front end.','atomy'); ?><br>
 			<?php esc_html_e('This theme was created to be used with the WooCommerce plugin to fully exploit its potential.','atomy');?><br>
-			<?php esc_html_e('You can choose from 4 available demos by importing them in a few minutes, or you can create your site by customizing it as you prefer.','atomy');?><br>
+			<?php esc_html_e('You can choose the demo you prefer and import it in a few minutes, or you can create your site by customizing it as you prefer.','atomy');?><br>
 			<?php esc_html_e('The code of this theme was designed to create a multilingual site in a very simple and fast way.','atomy');?><br>
-			<?php esc_html_e('Only one demo is available in the free version!','atomy')?>
+			<?php esc_html_e('The demos of our themes are always in development, so we always release new ones!','atomy')?>
 		  </p>
 		  <div class="container">
 		  <h2><?php _e('Important links to get you started with Atomy','atomy')?></h2>
@@ -73,7 +72,7 @@ function atomy_page_display() {
 	  <h2><?php echo esc_html__('Documentation','atomy');?></h2>
 	</div>
 	<div class="at-header-help-p">
-	   <p><?php echo esc_html__('In this page you can view general frequently asked questions to help you get started. Support is only available for the','atomy')?> <a target="_blank" href="<?php echo esc_url(atomy_url_go_pro_theme);?>"><?php echo esc_html('PRO version!','atomy')?></a>
+	   <p><?php echo esc_html__('In this page you can view general frequently asked questions to help you get started.','atomy')?> 
 	      <?php echo esc_html__('For more, refer to our documentation site or click the links below:','atomy')?></p>
           <div class="at-button-documentation">
 		   	<a class="at-read-documentation" target="_blank" href="<?php echo esc_url(atomy_url_documentation_theme); ?>"><?php echo esc_html('Read Documentation','atomy');?></a>

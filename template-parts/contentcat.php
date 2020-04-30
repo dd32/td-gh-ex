@@ -3,7 +3,6 @@
 * contentcat.php
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 ?>
 

@@ -4,7 +4,6 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 
 
@@ -721,13 +720,13 @@ function atomy_add_script() {
 		wp_enqueue_script(  'notice-update' );
 }
 
-if( get_option( 'atomy_1_dismiss_notice' ) != true ) {
+if( get_option( 'atomy_2_dismiss_notice' ) != true ) {
 
 add_action( 'admin_notices', 'atomy_add_dismissible' );
 }
 function atomy_add_dismissible() {
   ?>
-   <div class='notice notice-success atomy-1-dismiss-notice atomy-class-update is-dismissible'>
+   <div class='notice notice-success atomy-2-dismiss-notice atomy-class-update is-dismissible'>
 	   <div class="df-logo">
 		   <a target="_blank" href="<?php echo esc_url(franchi_design_url); ?>">
 	        <img src="<?php echo esc_url(get_template_directory_uri()).'/images/franchi-design.png';?>">
@@ -764,9 +763,9 @@ function atomy_add_dismissible() {
   <?php
 }
 
-add_action( 'wp_ajax_atomy_1_dismiss_notice', 'atomy_1_dismiss_notice' );
-function atomy_1_dismiss_notice() {
-update_option( 'atomy_1_dismiss_notice', true );
+add_action( 'wp_ajax_atomy_2_dismiss_notice', 'atomy_2_dismiss_notice' );
+function atomy_2_dismiss_notice() {
+update_option( 'atomy_2_dismiss_notice', true );
 }
 
 /*  Demo Import
@@ -814,4 +813,7 @@ function atomy_plugin_page_setup( $default_settings ) {
 	return $default_settings;
 }
 add_filter( 'pt-ocdi/plugin_page_setup', 'atomy_plugin_page_setup' );
+
+// No Banner 
+add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 

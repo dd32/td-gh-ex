@@ -4,7 +4,6 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 
 if ( ! function_exists( 'atomy_posted_on' ) ) :

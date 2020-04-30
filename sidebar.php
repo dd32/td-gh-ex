@@ -4,7 +4,6 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

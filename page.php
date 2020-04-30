@@ -4,7 +4,6 @@
 *
 * @author    Franchi Design
 * @package   Atomy
-* @version   1.0.8
 */
 get_header('portfolio');
 if ( false == get_theme_mod('atomy_enable_breadcrumbs_page',false)) :?>

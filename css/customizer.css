@@ -664,3 +664,34 @@ span.customize-advise-description-shortcode{
 .wp-picker-container .wp-color-result.button{
 	padding: 1px 1px 1px 30px;
 }
+
+/* Go Pro */
+
+#accordion-section-atomy_section_settings_go_pro h3{
+	background-color: #82B541!important;
+	color: #fff!important;
+	border-left-color: #5b7f2d!important;
+}
+
+#accordion-section-atomy_section_settings_go_pro h3:after{
+	color:  #fff!important;
+}
+
+#customize-control-atomy_go_pro_version span{
+	text-align: center!important;
+}
+
+button.wl-bt-pro{
+	background-color:#82B541!important;
+}
+
+button.wl-bt-pro a{
+	color: #fff!important;
+	letter-spacing: 2px;
+	font-weight: bold;
+    font-size: 12px;
+}
+
+button.wl-bt-pro:hover{
+	background-color:#5b7f2d!important;
+}

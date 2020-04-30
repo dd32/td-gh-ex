@@ -2,11 +2,11 @@
 
 Thema Name: Atomy
 Contributors: franchidesign
-Version: 1.0.9
+Version: 1.1.0
 Requires at least: 4.7
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 Text Domain: atomy
 License:  GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -278,3 +278,7 @@ Atomy is distributed under the terms of the GNU GPL
 * Added 2 controls for the navigation menu
 * Parallax section improved
 * Fixed issues with Parallax section
+
+= 1.1.0 =
+* Fixed some bugs
+* Improved the Customizer
