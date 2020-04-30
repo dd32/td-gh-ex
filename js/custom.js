@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
             $('.entry-header.full .title-meta-wrapper, .archive-header.full .title-meta-wrapper').css({'padding-top' : mastfullheight + 'px'});
         }
 
-        if ( $('#masthead.transparent').length ) {
+        if ( $('#masthead.transparent').length && ! $('#home-hero-section').length ) {
             var mastfullheight = parseInt( $('#masthead').outerHeight() );
             $('article > .entry-content *:not(.wp-block-group,.wp-block-group__inner-container):first').css({'padding-top' : mastfullheight + 'px'});
         }

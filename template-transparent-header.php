@@ -2,7 +2,7 @@
 /**
  * Template Name: Transparent Header
  *
- * A page template with a transparent header, with no page title or sidebars, containing only the site title/logo, main menu and footer.
+ * A page template with a transparent header, with no page title or sidebar, containing only the site title/logo, main menu and footer.
  *
  * @package Azuma
  */
@@ -29,4 +29,4 @@ get_header( 'transparent' );
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_footer( 'blank-canvas' ); ?>
+<?php get_footer(); ?>

@@ -18,6 +18,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 2. Customize the style of your website by adding a logo, setting your preferred layout, activating the Homepage Sections, changing the fonts and selecting custom colors.
 
 == Changelog ==
+1.2.3 - April 30, 2020
+Added new hompage section - Extra Page Content
+Updated page templates when used with static homepage
+
 1.2.2 - April 29, 2020
 Fix for page templates when used on static homepage
 

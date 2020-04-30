@@ -667,6 +667,12 @@ if ( !function_exists( 'azuma_woo_home_tabs' ) ) {
 			'callback' => 'azuma_pagecontent',
 			'shortcode'=> 'page_content',
 		);
+		$tabs['extrapagecontent'] = array(
+			'id'	   => 'extrapagecontent',
+			'label'	=> esc_html__( 'Extra Page Content', 'azuma' ),
+			'callback' => 'azuma_extrapagecontent',
+			'shortcode'=> 'extra_page_content',
+		);
 
 if ( class_exists( 'WooCommerce' ) ) {
 		$tabs['categories'] = array(
@@ -747,6 +753,8 @@ if ( !function_exists('azuma_home_nonwoo_section') ) {
 								azuma_homepage_features();
 							} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'page_content' ) {
 								azuma_homepage_content();
+							} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'extra_page_content' ) {
+								azuma_extra_page_content();
 							}
 						echo '</div>';
 					}
@@ -795,6 +803,8 @@ if ( !function_exists('azuma_home_woo_section') ) {
 							azuma_homepage_features();
 						} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'page_content' ) {
 							azuma_homepage_content();
+						} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'extra_page_content' ) {
+							azuma_extra_page_content();
 						} elseif ( $woo_tabs[$tab_id]['shortcode'] == 'product_categories' ) {
 							echo '<h2 class="section-title">' . $woo_tabs[$tab_id]['label'] . '</h2>';
 							echo do_shortcode('[product_categories number="0" parent="0" columns="' . $woo_column_option . '"]');
@@ -810,6 +820,22 @@ if ( !function_exists('azuma_home_woo_section') ) {
 			echo '</div>';
 
 		}
+	}
+}
+
+
+if ( !function_exists('azuma_extra_page_content') ) {
+	function azuma_extra_page_content() {
+		$extra_page_id = get_theme_mod( 'homepage_extra_page' );
+		if ( $extra_page_id ) { ?>
+			<article id="post-<?php echo $extra_page_id; ?>" <?php post_class( '', $extra_page_id); ?>>
+				<div class="entry-content single-entry-content">
+				<?php
+					echo apply_filters( 'the_content', get_the_content( '', '', $extra_page_id ) );
+				?>
+				</div><!-- .entry-content -->
+			</article><!-- #post-<?php echo $extra_page_id; ?> -->
+		<?php }
 	}
 }
 

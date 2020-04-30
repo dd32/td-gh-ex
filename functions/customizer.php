@@ -462,6 +462,45 @@ function azuma_customize_register( $wp_customize ) {
 		);
 	}
 
+
+	$wp_customize->add_setting(
+		'heading_extra_page',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'azuma_sanitize_text'
+		)
+	);
+	$wp_customize->add_control(
+		new Azuma_Customize_Heading_Large(
+			$wp_customize,
+			'heading_extra_page',
+			array(
+				'settings'		=> 'heading_extra_page',
+				'section'		=> 'homepage_options',
+				'label'			=> esc_html__( 'Extra Page Content', 'azuma' )
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'homepage_extra_page',
+		array(
+			'default'			=> '',
+			'sanitize_callback' => 'absint'
+		)
+	);
+	$wp_customize->add_control(
+		'homepage_extra_page',
+		array(
+			'settings'		=> 'homepage_extra_page',
+			'section'		=> 'homepage_options',
+			'type'			=> 'dropdown-pages',
+			'label'			=> esc_html__( 'Select Page', 'azuma' ),
+			'description'	=> esc_html__( 'Choose which extra page content to display on homepage.', 'azuma' )
+		)
+	);
+
+
 	// SECTION - Typography
 	$wp_customize->add_section(
 		'typography',

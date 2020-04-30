@@ -33,13 +33,36 @@
 
 	<header id="masthead" class="site-header transparent">
 
+		<?php if ( is_active_sidebar( 'azuma-top-bar' ) ) : ?>
+		<div id="top-bar">
+			<div class="container">
+				<?php dynamic_sidebar( 'azuma-top-bar' ); ?>
+			</div>
+		</div>
+		<?php endif; ?>
+
 		<div class="container">
 		<?php azuma_header_content(); ?>
 		<?php azuma_header_menu(); ?>
 		<?php azuma_header_content_extra(); ?>
 		</div>
 
+		<?php if ( is_active_sidebar( 'azuma-offers-bar' ) ) : ?>
+		<div id="site-usp" class="clearfix">
+			<div class="container">
+				<?php dynamic_sidebar( 'azuma-offers-bar' ); ?>
+			</div>
+		</div>
+		<?php endif; ?>
+
 	</header><!-- #masthead -->
+
+<?php if ( is_front_page() && 'page' == get_option( 'show_on_front' ) && is_active_sidebar( 'azuma-homepage-large-area' ) ) { ?>
+	<div id="hero-above-wrapper"></div>
+	<div id="home-hero-section" class="clearfix">
+		<?php dynamic_sidebar( 'azuma-homepage-large-area' ); ?>
+	</div>
+<?php } ?>
 
 	<div id="content" class="site-content clearfix">
 		<div class="container clearfix">
