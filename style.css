@@ -2,7 +2,7 @@
 Theme Name:   Avik
 Theme URI:   	https://www.denisfranchi.com/avik-pro-10-0-0/
 Description:  Avik Portfolio is perfect for anyone who wants an easy theme to use and with a clean code. You can use this portfolio theme for: freelancer, photography studios, sound and music, musican, agency, architect agency, painter portfolio, artworks, art, trainer, projects, artist portfolio,personal portfolio, web design works, illustrators, freelance designer.
-Version:     	1.4.1
+Version:     	1.4.2
 Author:     	Denis Franchi
 Author URI:   https://www.denisfranchi.com/
 Site:         https://www.denisfranchi.com
@@ -1444,17 +1444,6 @@ position: fixed;
   position: absolute;
 }
 
-/* Header Post-page */
-
-.site-post-page{
-  margin-top: 8em;
-}
-
-.site-av{
-  margin-top: 2em;
-}
-
-
 /*-----------------------
 ## 3.1 Slider
 -----------------------*/
@@ -2001,7 +1990,6 @@ video {
   overflow: hidden;
   padding: 0;
   max-width: 100%;
-  margin-bottom: 8em;
 }
 
 .header-static img{
@@ -2030,12 +2018,7 @@ img.img-who-we-are{
   background-color: #f9f9f9;
 }
 
-.avik-who-we-are{
-  margin-top: 2em;
-}
-
 .avik-who-we-are h3{
-  text-align: center;
   padding-bottom:1em;
   font-weight: bold;
   margin-top: 1em;
@@ -2098,7 +2081,7 @@ img.img-who-we-are{
   font-weight: bold;
   letter-spacing: 3px;
   margin-bottom: 90px;
-  text-transform: uppercase;
+  padding-top: 2em;
 }
 
 .image-enter-whoweare{
@@ -2435,7 +2418,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .tabs {
   padding: 100px 0 10px;
-  margin-top: 8em;
 }
 
 .tab {
@@ -2451,7 +2433,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .tab__title {
-  font-size: 1.75rem;
   font-weight: bold;
   margin: 0 0 30px 12px;
 }
@@ -2734,8 +2715,6 @@ h2.enter-title-services{
 }
 
 .portfolio{
-  padding-bottom: 5em;
-  margin-top: 5em;
   width: 100%;
   display: inline-block;
 }
@@ -2850,14 +2829,13 @@ ul.list-portfolio{
 }
 
 .avik-blog{
-  padding-top: 3em;
-  padding-bottom: 5em;
   background-color: #f6f6f6;
+  padding-top: 2em;
 }
 
 .avik-blog h2{
-  font-size: 1.75rem;
   font-weight: bold;
+  margin-right: 15px;
 }
 
 a.link-blog{
@@ -3028,10 +3006,6 @@ span.blog-info{
 /*--------------------------------------------------------------
 	8 ## Contact
 --------------------------------------------------------------*/
-
-.contact {
-  margin-top: 6em;
-}
 
 .address h3{
   font-weight: bold;

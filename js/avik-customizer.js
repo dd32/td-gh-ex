@@ -408,8 +408,103 @@ wp.customize('avik_height_image_404', function(control) {
 	});
 });
 
+// Margin Top Section Who We Are
+wp.customize('avik_margin_top_section_whoweare', function(control) {
+	control.bind(function( controlValue ) {
+		$('#who-we-are').css('margin-top', controlValue + 'em');
+	});
+});
 
+// Margin Bottom Section Who We Are
+wp.customize('avik_margin_bottom_section_whoweare', function(control) {
+	control.bind(function( controlValue ) {
+		$('#who-we-are').css('margin-bottom', controlValue + 'em');
+	});
+});
 
+// Margin Top Section Services
+wp.customize('avik_margin_top_section_services', function(control) {
+	control.bind(function( controlValue ) {
+		$('#services').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Margin Bottom Section Services
+wp.customize('avik_margin_bottom_section_services', function(control) {
+	control.bind(function( controlValue ) {
+		$('#services').css('margin-bottom', controlValue + 'em');
+	});
+});
+
+// Padding Bottom Section Services
+wp.customize('avik_padding_bottom_section_services', function(control) {
+	control.bind(function( controlValue ) {
+		$('#services').css('padding-bottom', controlValue + 'em');
+	});
+});
+
+// Margin Top Section Portfolio
+wp.customize('avik_margin_top_section_portfolio', function(control) {
+	control.bind(function( controlValue ) {
+		$('#portfolio').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Margin Bottom Section Portfolio
+wp.customize('avik_margin_bottom_section_portfolio', function(control) {
+	control.bind(function( controlValue ) {
+		$('#portfolio').css('margin-bottom', controlValue + 'em');
+	});
+});
+
+// Margin Top Section Blog
+wp.customize('avik_margin_top_section_avik-blog', function(control) {
+	control.bind(function( controlValue ) {
+		$('#avik-blog').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Margin Bottom Section Blog
+wp.customize('avik_margin_bottom_section_avik-blog', function(control) {
+	control.bind(function( controlValue ) {
+		$('#avik-blog').css('margin-bottom', controlValue + 'em');
+	});
+});
+
+// Padding Bottom Section Blog
+wp.customize('avik_padding_bottom_section_avik-blog', function(control) {
+	control.bind(function( controlValue ) {
+		$('#avik-blog').css('padding-bottom', controlValue + 'em');
+	});
+});
+
+// Margin Top Section Contact
+wp.customize('avik_margin_top_section_contact', function(control) {
+	control.bind(function( controlValue ) {
+		$('#contact').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Margin Bottom Section Contact
+wp.customize('avik_margin_bottom_section_contact', function(control) {
+	control.bind(function( controlValue ) {
+		$('#contact').css('margin-bottom', controlValue + 'em');
+	});
+});
+
+// Margin Top Site Av
+wp.customize('avik_margin_top_site-av', function(control) {
+	control.bind(function( controlValue ) {
+		$('.site-post-page').css('margin-top', controlValue + 'em');
+	});
+});
+
+// Font Size Title General
+wp.customize('avik_font_size_title_general', function(control) {
+	control.bind(function( controlValue ) {
+		$('h3.tit-who,.portfolio h3,h2.font-tit-blog,.address h3,.tabs h1.tab__title,.avik-who-we-are h3,.title-partenrs h2,.title-whoweare h3,.title-team h3,.brands h3,.avik-info-img-page-contact h1').css('font-size', controlValue + 'px');
+	});
+});
 
 
 } )( jQuery );

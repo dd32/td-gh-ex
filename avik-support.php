@@ -13,7 +13,7 @@ function avik_page_display() {
  <div class="at-header-admin">
       <div class="at-logo-admin">
 		   	<h2><?php echo esc_html__('Avik','avik');?></h2>
-		  	<span><?php echo esc_html__('V 1.4.1','avik');?></span>
+		  	<span><?php echo esc_html__('V 1.4.2','avik');?></span>
 		  </div>
 		   <div class="at-logo-icon-admin">
 		   	<span class="dashicons dashicons-screenoptions"></span>
@@ -36,7 +36,7 @@ function avik_page_display() {
 		    <?php esc_html_e('The theme is ready to be used. You can customize everything you want in a few simple clicks directly from the front end.', 'avik' ); ?><br>
 			<?php esc_html_e('In this new version, many improvements have been made, and many controls have been added to personalize your site to the maximum.','avik')?><br>
 			<?php esc_html_e('If you have problems with this new version, do not hesitate to ask for support in our','avik')?><a class="av-link-news" target="_blank" href="<?php echo esc_url(avik_forum_theme)?>"><?php esc_html_e('Forum.','avik')?></a><?php esc_html_e('Now we also offer support for the Free version.','avik')?><br>
-			<?php esc_html_e('A big news is that you can import demos with a few simple steps. For the moment you have the possibility to import a single demo with the Free version, but we are already working to create others.','avik')?><br>
+			<?php esc_html_e('A big news is that you can import demos with a few simple steps.Our demos are always in development, so new ones will always come out!','avik')?><br>
 			<?php esc_html_e('Here you can view the demos and see the previews:','avik')?><a class="av-link-news" target="_blank" href="<?php echo esc_url(avik_url_demos_theme)?>"><?php esc_html_e('Demos Avik','avik')?></a>
 		  </p>
 		  <div class="container">
@@ -206,7 +206,7 @@ function avik_page_display() {
 						<td><?php esc_html_e('Color Change','avik');?></td>
 						<td><span><i class="fa fa-check"></i></span>
 						</td>
-						<td><span><?php esc_html_e('Live','avik');?></span></td>
+						<td><span><?php esc_html_e('Live + 10 Skins','avik');?></span></td>
 					</tr>
 					<!-- Color Title -->
 					<tr>
@@ -226,7 +226,7 @@ function avik_page_display() {
 					</tr>
 					<tr class="compare-row">
 						<td><?php esc_html_e('Font Family','avik');?></td>
-						<td><span><?php esc_html_e('15+5','avik');?></span>
+						<td><span><?php esc_html_e('20','avik');?></span>
 						</td>
 						<td><span><?php esc_html_e('20+ Custom Font','avik');?></span></td>
 					</tr>
@@ -269,7 +269,7 @@ function avik_page_display() {
 					<tr class="compare-row">
 						<td><?php esc_html_e('More Areas Widgets','avik');?></td>
 						<td><span><?php esc_html_e('5','avik');?></span></td>
-						<td><span><?php esc_html_e('12','avik');?></span></td>
+						<td><span><?php esc_html_e('13','avik');?></span></td>
 					</tr>
 					<!-- Menu types -->
 					<tr>

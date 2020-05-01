@@ -26,7 +26,6 @@
         <img class="img-whoweare-header" src="<?php if ( $avik_image_attributes[0] ) :
            echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/img/whoweare.jpg'; endif; ?>"/>
 	   </div>
-     <?php avik_the_breadcrumb(); ?>
       <div class="title-whoweare text-center pt-4">
         <h3><?php the_title();?></h3>
       </div>

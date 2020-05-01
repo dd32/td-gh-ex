@@ -9,8 +9,7 @@ Template Post Type: post
 * @package   Avik
 */
 
-get_header('post');
-avik_the_breadcrumb(); ?>
+get_header('post'); ?>
 <div id="primary" class="content-area main">
   <main id="main" class="site-main">
     <div class="container mt-5">

@@ -7,7 +7,7 @@
 */
 ?>
 
-<div class="container">
+<div class="container mt-5">
   <div id="avik-slider">
     <?php
     $avik_carousel_cat = esc_html( get_theme_mod('avik_carousel_setting'));

@@ -46,7 +46,6 @@
 
 */
 
-
 /* ------------------------------------------------------------------------- *
 ##  1 General additional classes */
 /* ------------------------------------------------------------------------- */
@@ -90,7 +89,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
       <?php
     }
   }
-
 }
 
 /* ------------------------------------*
@@ -397,51 +395,50 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
       <?php } ?>
     </div>
 
-    <!-- Style for Custom Simple Notices -->
-    <style>
+<!-- Style for Custom Simple Notices -->
+<style>
 
-    .simple-notice-custom-control{
-    	padding-top: 2em;
-    	border: 1px solid #ccc;
-      background-color: #fff;
-    }
+.simple-notice-custom-control{
+  padding-top: 2em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
 
-    .simple-notice-custom-control span{
-      padding:0 5px 0 5px;
-    }
+.simple-notice-custom-control span{
+  padding:0 5px 0 5px;
+}
 
-    .simple-notice-custom-control{
-      font-family: 'Montserrat', sans-serif;
-      transition-duration: 0.7s;
-      transition-timing-function: ease;
-    }
+.simple-notice-custom-control{
+  font-family: 'Montserrat', sans-serif;
+  transition-duration: 0.7s;
+  transition-timing-function: ease;
+}
 
-    
-    .customize-control-description{
-      font-style: normal!important;
-    }
 
-    .simple-notice-custom-control button {
-    	background: transparent;
-    	color: #fff;
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom:10px;
-    	font-size: 14px;
-    	position: relative;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border-radius: 4px;
-      border:1px solid #ccc!important;
-      background-color:#82B541!important
-    }
+.customize-control-description{
+  font-style: normal!important;
+}
 
-    .simple-notice-custom-control a{
-      color: #fff;
-      text-decoration: none;
-    }
+.simple-notice-custom-control button {
+  background: transparent;
+  color: #fff;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom:10px;
+  font-size: 14px;
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border:1px solid #ccc!important;
+  background-color:#82B541!important
+}
 
+.simple-notice-custom-control a{
+  color: #fff;
+  text-decoration: none;
+}
 
 .simple-notice-custom-control a:hover{
    color: #fff!important;
@@ -451,9 +448,9 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
    background-color: gray;
 }
 
-    </style>
-  <?php
-  }
+</style>
+<?php
+}
 }
 }
 
@@ -497,6 +494,15 @@ if (class_exists('WP_Customize_Control')) {
         <span class="customize-control-description-s"><b><?php echo wp_kses( $this->description, $allowed_html ); ?></b></span>
       <?php } ?>
     </div>
+    <!-- Style for Custom Simple Notices -->
+			<style>
+				.simple-notice-custom-control-s{
+				border-bottom: 1px solid #2885bb;
+			}
+			.simple-notice-custom-control-s span{
+				font-weight:bold;
+			}
+			</style>
   <?php
   }
 }
@@ -511,29 +517,29 @@ function avik_customizer_css() {
    if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :
   ?>
 
-  <style>
+<style>
 
-  /* ------------------------------------------------------------------------- *
-  ## 2.2 Color Filter Header Home */
-  /* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *
+## 2.2 Color Filter Header Home */
+/* ------------------------------------------------------------------------- */
 
-  .filter-header{
-    background-color:<?php echo esc_attr( get_theme_mod('avik_color_filter_header', 'rgba(122,122,122,0.05)')); ?>;
-  }
+.filter-header{
+  background-color:<?php echo esc_attr( get_theme_mod('avik_color_filter_header', 'rgba(122,122,122,0.05)')); ?>;
+}
 
-  </style>
+</style>
 
 <?php endif;?>
 
 <style>
 
-  /* ------------------------------------------------------------------------- *
-  ## 2.3 Font Size Logo */
-  /* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- *
+## 2.3 Font Size Logo */
+/* ------------------------------------------------------------------------- */
 
-  .avik-custom-logo-body{width:<?php echo esc_attr( get_theme_mod('avik_font_size_logo', '160')); ?>px ;}
+.avik-custom-logo-body{width:<?php echo esc_attr( get_theme_mod('avik_font_size_logo', '160')); ?>px ;}
 
-  </style>
+</style>
 
 <!-- 2.4 Responsive Enable Style  -->
 
@@ -556,15 +562,16 @@ function avik_customizer_css() {
 <?php endif; ?>
 <?php if ( true == esc_html( get_theme_mod( 'avik_enable_to_top_media', false) )) : ?>
 
-  <style>
+<style>
 
-  @media (max-width: 699px) {
+@media (max-width: 699px) {
 
     #avik-scrol-to-top{
       display: none!important;
     }
 
-  }
+}
+
 </style>
 <?php endif; ?>
 
@@ -579,9 +586,10 @@ function avik_customizer_css() {
     #secondary{
       display: none!important;
     }
-
   }
+
 </style>
+
 <?php endif; 
 
 /* ------------------------------------------------------------------------- *
@@ -600,8 +608,6 @@ function avik_customizer_css() {
  p,span,li{
 	font-family:'<?php echo esc_html(get_theme_mod('avik_subtitle_font','Montserrat')); ?>';
  }
-
-
 
 </style>
 <?php 
@@ -651,15 +657,52 @@ span#avikservices,.typed-cursor{
 
 </style>
 
-<?php endif; 
+<?php endif; ?>
+
+<!-- Margin Section -->
+<style>
+#who-we-are{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_section_whoweare', 4)); ?>em;
+  margin-bottom:<?php echo esc_attr( get_theme_mod('avik_margin_bottom_section_whoweare', 0)); ?>em;
+}
+
+#services{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_section_services', 8)); ?>em;
+  margin-bottom:<?php echo esc_attr( get_theme_mod('avik_margin_bottom_section_services', 4)); ?>em;
+  padding-bottom:<?php echo esc_attr( get_theme_mod('avik_padding_bottom_section_services', 0)); ?>em;
+}
+
+#portfolio{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_section_portfolio', 0)); ?>em;
+  margin-bottom:<?php echo esc_attr( get_theme_mod('avik_margin_bottom_section_portfolio', 5)); ?>em;
+}
+
+#avik-blog{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_section_avik-blog', 3)); ?>em;
+  margin-bottom:<?php echo esc_attr( get_theme_mod('avik_margin_bottom_section_avik-blog', 5)); ?>em;
+  padding-bottom:<?php echo esc_attr( get_theme_mod('avik_padding_bottom_section_avik-blog', 2)); ?>em;
+}
+
+#contact{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_section_contact', 6)); ?>em;
+  margin-bottom:<?php echo esc_attr( get_theme_mod('avik_margin_bottom_section_contact', 0)); ?>em;
+}
+
+.site-post-page{
+  margin-top:<?php echo esc_attr( get_theme_mod('avik_margin_top_site-av', 10)); ?>em;
+}
+
+/* Font Size Title in Homepage */
+
+h3.tit-who,.portfolio h3,h2.font-tit-blog,.address h3,.tabs h1.tab__title,.avik-who-we-are h3,.title-partenrs h2,.title-whoweare h3,
+.title-team h3,.brands h3,.avik-info-img-page-contact h1{
+  font-size:<?php echo esc_attr( get_theme_mod('avik_font_size_title_general', 32)); ?>px;
+}
+
 
 /* ------------------------------------------------------------------------- *
 ##  Who we are */
 /* ------------------------------------------------------------------------- */
-
-?>
-
-<style>
 
 img.img-who-we-are{
   max-width: <?php echo esc_attr( get_theme_mod('avik_with_image_p_who_we', 350)); ?>px!important;
@@ -846,7 +889,7 @@ img.img-who-we-are{
 <?php
 
 }
-add_action( 'wp_footer', 'avik_customizer_css' );
+add_action( 'wp_head', 'avik_customizer_css' );
 
 
 /* ------------------------------------------------------------------------- *

@@ -28,6 +28,7 @@
 *
 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 */
+
 function avik_customize_register( $wp_customize ) {
 /* ------------------------------------------------------------------------- *
 ## 1 General postMessage support */
@@ -45,12 +46,15 @@ if ( isset( $wp_customize->selective_refresh ) ) {
 		'render_callback' => 'avik_customize_partial_blogdescription',
 	) );
 }
+
 /* ------------------------------------------------------------------------- *
 ## 2 General Customize */
 /* ------------------------------------------------------------------------- */
+
 /* ------------------------------------------------------------------------------------------------------------------------------*
 ##  2.1 Logo
 /* ------------------------------------------------------------------------------------------------------------------------------*/
+
 // Enable Effect Rotate Logo
 $wp_customize->add_setting( 'avik_enable_rotate_logo',
 array(
@@ -58,18 +62,21 @@ array(
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_rotate_logo',
 array(
 	'label'    => __( 'Enable/Disable rotation logo','avik' ),
 	'section'  => 'title_tagline',
 	'priority' => 51,
 )) );
+
 $wp_customize->add_setting( 'avik_font_size_logo',
 array(
 	'default' => 160,
 	'transport' => 'postMessage',
 	'sanitize_callback' => 'avik_sanitize_integer'
 ));
+
 $wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_font_size_logo',
 array(
 	'label' => __( 'Font size Logo (px)','avik' ),
@@ -79,16 +86,19 @@ array(
 			'min' => 30,
 			'max' => 500,
 			'step' => 1,
-		), )) );
+), )) );
+
 /* ------------------------------------------------------------------------------------------------------------------------*
 ##  2.2 Header Media
 /* ------------------------------------------------------------------------------------------------------------------------*/
+
 // Order section for Header
 $wp_customize->add_setting( 'avik_order_header_home' , array(
 	'default'           => 'page-static',
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'avik_sanitize_select',
 ) );
+
 $wp_customize->add_control(
 	'avik_order_header_home' ,
 	array(
@@ -100,7 +110,8 @@ $wp_customize->add_control(
 		'choices'    => array(
 			'page-slider'=> __('Slider','avik'),
 			'page-static'=> __('Static/Video','avik'),
-		) ) );
+) ) );
+
 // Enable Filter Header Home
 $wp_customize->add_setting( 'avik_enable_filter_home',
 array(
@@ -108,12 +119,14 @@ array(
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_filter_home',
 array(
 	'label'    => __( 'Enable/Disable filter color Header','avik' ),
 	'section'  => 'header_image',
 	'priority' => 20,
 )) );
+
 // Color Filter Header Home
 $wp_customize->add_setting( 'avik_color_filter_header',
 array(
@@ -121,6 +134,7 @@ array(
 	'transport' => 'postMessage',
 	'sanitize_callback' => 'avik_hex_rgba_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Customize_Alpha_Color_Control( $wp_customize, 'avik_color_filter_header',
 array(
 	'label' => __( 'Color filter Heder','avik' ),
@@ -129,6 +143,7 @@ array(
 	'priority' => 30,
 	'show_opacity' => true,
 )) );
+
 /* ------------------------------------------------------------------------------------------------------------------------*
 ##  2.3 Slider
 /* ------------------------------------------------------------------------------------------------------------------------*/
@@ -136,16 +151,18 @@ array(
 $avikSection = new Avik_WP_Customize_Panel( $wp_customize, 'avik_section', array(
 	'title'    => __('Sections','avik'),
 	'priority' => 28,
-	));
-	$wp_customize->add_panel( $avikSection );
+));
 
+$wp_customize->add_panel( $avikSection );
 
 $avikSlider = new Avik_WP_Customize_Panel( $wp_customize, 'avik_slider', array(
 'title'    => __('Slider','avik'),
 'panel'   => 'avik_section',
 'priority' => 10,
 ));
+
 $wp_customize->add_panel( $avikSlider );
+
 // Slider 1
 $wp_customize->add_section(
 	'avik_section_slider_1',
@@ -154,8 +171,7 @@ $wp_customize->add_section(
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_slider',
-	)
-);
+));
 // create an empty array
 $cats = array();
  
@@ -180,6 +196,7 @@ $wp_customize->add_control( 'cat_contlr', array(
 	'priority'=> 15,
     'section' => 'avik_section_slider_1',  // depending on where you want it to be
 ) );
+
 // Slider 2
 $wp_customize->add_section(
 		'avik_section_slider_2',
@@ -188,15 +205,15 @@ $wp_customize->add_section(
 			'priority'   => 20,
 			'capability' => 'edit_theme_options',
 			'panel'      => 'avik_slider',
-	)
-);
+));
+
 $wp_customize->add_setting(
 		'avik_category_slider_2',
 		array(
 			'default'           => '',
 			'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 		new Avik_Customize_category_Control(
 			$wp_customize,
@@ -206,26 +223,25 @@ $wp_customize->add_control(
 				'settings'    => 'avik_category_slider_2',
 				'priority'   => 25,
 				'section'     => 'avik_section_slider_2'
-	)
-)
-);
+)));
+
 // Slider 3
 $wp_customize->add_section(
 	'avik_section_slider_3',
-	array(
+	    array(
 				'title'      => __('Slider 3','avik'),
 				'priority'   => 30,
 				'capability' => 'edit_theme_options',
 				'panel'      => 'avik_slider',
-	)
-);
+));
+
 $wp_customize->add_setting(
   'avik_category_slider_3',
 	array(
 		'default'           => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -235,12 +251,12 @@ $wp_customize->add_control(
 			'settings'    => 'avik_category_slider_3',
 			'priority'   => 35,
 			'section'     => 'avik_section_slider_3'
-)
-)
-);
+)));
+
 /* ------------------------------------------------------------------------------------------------------------------------*
 ##  2.4 B Static/Video
 /* ------------------------------------------------------------------------------------------------------------------------*/
+
 $wp_customize->add_setting(
 	'avik_category_static',
 	array(
@@ -342,6 +358,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_text_static_bold',
 array(
 	'label' => __( 'Enable/Disable Bold Tex automatic cursor','avik' ),
@@ -356,6 +373,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_angle_scroll',
 array(
 	'label' => __( 'Enable/Disable Angle Scroll','avik' ),
@@ -377,65 +395,63 @@ array(
 	'priority'=> 18,
 )) );
 
+/* ------------------------------------------------------------------------------------------------------------------------*
+##  2.5 Who we are
+/* ------------------------------------------------------------------------------------------------------------------------*/
 
-	/* ------------------------------------------------------------------------------------------------------------------------*
-	##  2.5 Who we are
-	/* ------------------------------------------------------------------------------------------------------------------------*/
-	$avikwhoweare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_whoweare', array(
-		'title'    => __('Who we are','avik'),
-		'panel'   => 'avik_section',
-		'priority' => 20,
-	));
-	$wp_customize->add_panel( $avikwhoweare );
+$avikPage = new Avik_WP_Customize_Panel( $wp_customize, 'avik_page', array(
+	'title'    => __('Pages','avik'),
+	'priority' => 30,
+));
 
-	$avikPage = new Avik_WP_Customize_Panel( $wp_customize, 'avik_page', array(
-		'title'    => __('Pages','avik'),
-		'priority' => 30,
-	));
-	$wp_customize->add_panel( $avikPage );
+$wp_customize->add_panel( $avikPage );
 
-	$avikPagewhoweare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_pagewhoweare', array(
-		'title'    => __('Who we are','avik'),
-		'priority' => 10,
-		'panel'=>'avik_page'
-	));
-	$wp_customize->add_panel( $avikPagewhoweare );
+$avikPagewhoweare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_pagewhoweare', array(
+	'title'    => __('Who we are','avik'),
+	'priority' => 10,
+	'panel'=>'avik_page'
+));
 
-	// Enable Whoweare
-	$wp_customize->add_setting( 'avik_enable_whoweare',
+$wp_customize->add_panel( $avikPagewhoweare );
+
+// Enable Whoweare
+$wp_customize->add_setting( 'avik_enable_whoweare',
+array(
+	'default' => 0,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization',
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_whoweare',
+array(
+	'label' => __( 'Enable/Disable Who we  are Section','avik' ),
+	'section' => 'avik_section_whoweare',
+	'priority'=> 5,
+)) );
+
+/* Page Who we are */
+$wp_customize->add_section(
+	'avik_section_whoweare',
 	array(
-		'default' => 0,
-		'transport' => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization',
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_whoweare',
-	array(
-		'label' => __( 'Enable/Disable Who we  are Section','avik' ),
-		'section' => 'avik_section_whoweare',
-		'priority'=> 5,
-	)) );
-	/* Page Who we are */
-	$wp_customize->add_section(
-		'avik_section_whoweare',
-		array(
-			'title'      => __('Settings','avik'),
-			'priority'   => 10,
-			'capability' => 'edit_theme_options',
-			'panel'      => 'avik_whoweare',
-		)
-	);
-	// Page ID Who we are
-	$wp_customize->add_setting( 'avik_page_id_whoweare', array(
+		'title'      => __('Who We Are','avik'),
+		'priority'   => 1,
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'avik_sanitize_dropdown_pages',
-	) );
-	$wp_customize->add_control( 'avik_page_id_whoweare', array(
-		'type' => 'dropdown-pages',
-		'section' => 'avik_section_whoweare',
-		'label' => __( 'Page id Who we are','avik' ),
-		'description' => __( 'Select your page for section Who we are.','avik' ),
-		'priority'   => 5,
-	) );
+		'panel'      => 'avik_section',
+));
+
+// Page ID Who we are
+$wp_customize->add_setting( 'avik_page_id_whoweare', array(
+	'capability' => 'edit_theme_options',
+	'sanitize_callback' => 'avik_sanitize_dropdown_pages',
+) );
+
+$wp_customize->add_control( 'avik_page_id_whoweare', array(
+	'type' => 'dropdown-pages',
+	'section' => 'avik_section_whoweare',
+	'label' => __( 'Page id Who we are','avik' ),
+	'description' => __( 'Select your page for section Who we are.','avik' ),
+	'priority'   => 5,
+) );
 
 // With Image Who we are
 $wp_customize->add_setting( 'avik_with_image_p_who_we',
@@ -518,6 +534,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_second_image_whoweare',
 array(
 	'label' => __( 'Enable/Disable second image','avik' ),
@@ -599,14 +616,51 @@ array(
 			'step' => 1,
 ), )) );
 
+// Margin Top Section Who we are
+$wp_customize->add_setting( 'avik_margin_top_section_whoweare',
+array(
+	'default' => 4,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	 'transport'=> 'postMessage'
+));
 
-	/* Statistics Who we are */
-	$avikStatisticswhoweare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_statistics_whoweare', array(
-		'title'    => __('Statistics Who we are','avik'),
-		'priority' => 10,
-		'panel'    => 'avik_pagewhoweare',
-	));
-	$wp_customize->add_panel( $avikStatisticswhoweare );
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_top_section_whoweare',
+array(
+	'label' => __( 'Margin Top Section (em Unit)','avik' ),
+	'section' => 'avik_section_whoweare',
+		'priority'    => 120,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Margin Bottom Section Who We Are
+$wp_customize->add_setting( 'avik_margin_bottom_section_whoweare',
+array(
+	'default' => 0,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_bottom_section_whoweare',
+array(
+	'label' => __( 'Margin Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_whoweare',
+		'priority'    => 130,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+/* Statistics Who we are */
+$avikStatisticswhoweare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_statistics_whoweare', array(
+	'title'    => __('Statistics Who we are','avik'),
+	'priority' => 10,
+	'panel'    => 'avik_pagewhoweare',
+));
+$wp_customize->add_panel( $avikStatisticswhoweare );
 
 // Settings
 $wp_customize->add_section(
@@ -644,6 +698,7 @@ array(
 		'transport' => 'refresh',
 		'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_ob_img_whoweare',
 array(
 		'label'   => __( 'Enable/Disable Object fit Image','avik' ),
@@ -658,6 +713,7 @@ array(
 		'transport' => 'refresh',
 		'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_cursor_whoweare',
 array(
 		'label'   => __( 'Enable/Disable Cursor Text','avik' ),
@@ -703,46 +759,48 @@ array(
 			'step' => 1,
 ), )) );
 
+// General Statistics
+$wp_customize->add_section(
+	'avik_section_general_statistics_whoweare',
+	array(
+		'title'      => __('General Statistics','avik'),
+		'priority'   => 5,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'avik_statistics_whoweare',
+));
 
-	// General Statistics
-	$wp_customize->add_section(
-		'avik_section_general_statistics_whoweare',
-		array(
-			'title'      => __('General Statistics','avik'),
-			'priority'   => 5,
-			'capability' => 'edit_theme_options',
-			'panel'      => 'avik_statistics_whoweare',
-		)
-	);
-	// Enable/Disable Section Statistics
-	$wp_customize->add_setting( 'avik_enable_statistics_whoweare',
+// Enable/Disable Section Statistics
+$wp_customize->add_setting( 'avik_enable_statistics_whoweare',
+array(
+	'default'   => 0,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_statistics_whoweare',
+array(
+	'label'   => __( 'Enable/Disable Section Statistics.','avik' ),
+	'section' => 'avik_section_general_statistics_whoweare',
+	'priority'=> 10,
+)) );
+
+// Statistics 1
+$wp_customize->add_section(
+	'avik_section_statistics_1_whoweare',
 	array(
-		'default'   => 0,
-		'transport' => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_statistics_whoweare',
-	array(
-		'label'   => __( 'Enable/Disable Section Statistics.','avik' ),
-		'section' => 'avik_section_general_statistics_whoweare',
-		'priority'=> 10,
-	)) );
-	// Statistics 1
-	$wp_customize->add_section(
-		'avik_section_statistics_1_whoweare',
-		array(
-			'title'      => __('Statistics 1','avik'),
-			'priority'   => 10,
-			'capability' => 'edit_theme_options',
-			'panel'      => 'avik_statistics_whoweare',
-		)
-	);
+		'title'      => __('Statistics 1','avik'),
+		'priority'   => 10,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'avik_statistics_whoweare',
+));
+
 // Icon 1 statistics
 $wp_customize->add_setting( 'avik_icon_1_statistics' , array(
 	'default'   => 'far fa-flag',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'wp_strip_all_tags',
 ) );
+
 $wp_customize->add_control(
 	'avik_icon_1_statistics' ,
 	array(
@@ -750,7 +808,7 @@ $wp_customize->add_control(
 		'section'    => 'avik_section_statistics_1_whoweare',
 		'settings'   => 'avik_icon_1_statistics',
 		'type'       => 'select',
-	'choices'    => array(
+	    'choices'    => array(
 		'fas fa-anchor'                => __('anchor','avik'),
 		'far fa-address-book'          => __('address-book','avik'),
 		'far fa-address-card'          => __('address-card','avik'),
@@ -874,49 +932,55 @@ $wp_customize->add_control(
 		'fas fa-volume-up'             => __('volume-up','avik'),
 		'fas fa-wifi'                  => __('wifi','avik'),
 		'fas fa-wrench'                => __('wrench','avik'),
-	) ) );
-	// Number statistcs 1
-	$wp_customize->add_setting( 'avik_max_numbers_1_statistics', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
-		'default' => 2500,
-	) );
-	$wp_customize->add_control( 'avik_max_numbers_1_statistics', array(
-		'type'        => 'number',
-		'section'     => 'avik_section_statistics_1_whoweare',
-		'priority'    => 20,
-		'label'       => __( 'Max numbers for statistics 1','avik' ),
-		'description' => __( 'Insert a custom number.','avik' ),
-	) );
-	// Title 1 statistics
-	$wp_customize->add_setting( 'avik_title_1_statistics_whoweare', array(
-		'capability'        => 'edit_theme_options',
-		'default'           => '',
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'wp_filter_nohtml_kses',
-	) );
-	$wp_customize->add_control( 'avik_title_1_statistics_whoweare', array(
-		'type'    => 'text',
-		'section' => 'avik_section_statistics_1_whoweare',
-		'priority'=> 30,
-		'label'   => __( 'Title for statistics 1','avik' ),
-	) );
-	// Statistics 2
-	$wp_customize->add_section(
-		'avik_section_statistics_2_whoweare',
-		array(
-			'title'      => __('Statistics 2','avik'),
-			'priority'   => 20,
-			'capability' => 'edit_theme_options',
-			'panel'      => 'avik_statistics_whoweare',
-		)
-	);
-	// Icon 2 statistics
-	$wp_customize->add_setting( 'avik_icon_2_statistics' , array(
-		'default'   => 'far fa-smile',
-		'transport' => 'refresh',
-		'sanitize_callback' => 'wp_strip_all_tags',
-	) );
+) ) );
+
+// Number statistcs 1
+$wp_customize->add_setting( 'avik_max_numbers_1_statistics', array(
+	'capability'        => 'edit_theme_options',
+	'sanitize_callback' => 'absint',
+	'default' => 2500,
+) );
+
+$wp_customize->add_control( 'avik_max_numbers_1_statistics', array(
+	'type'        => 'number',
+	'section'     => 'avik_section_statistics_1_whoweare',
+	'priority'    => 20,
+	'label'       => __( 'Max numbers for statistics 1','avik' ),
+	'description' => __( 'Insert a custom number.','avik' ),
+) );
+
+// Title 1 statistics
+$wp_customize->add_setting( 'avik_title_1_statistics_whoweare', array(
+	'capability'        => 'edit_theme_options',
+	'default'           => '',
+	'transport'         => 'postMessage',
+	'sanitize_callback' => 'wp_filter_nohtml_kses',
+) );
+
+$wp_customize->add_control( 'avik_title_1_statistics_whoweare', array(
+	'type'    => 'text',
+	'section' => 'avik_section_statistics_1_whoweare',
+	'priority'=> 30,
+	'label'   => __( 'Title for statistics 1','avik' ),
+) );
+
+// Statistics 2
+$wp_customize->add_section(
+	'avik_section_statistics_2_whoweare',
+	array(
+		'title'      => __('Statistics 2','avik'),
+		'priority'   => 20,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'avik_statistics_whoweare',
+));
+
+// Icon 2 statistics
+$wp_customize->add_setting( 'avik_icon_2_statistics' , array(
+	'default'   => 'far fa-smile',
+	'transport' => 'refresh',
+	'sanitize_callback' => 'wp_strip_all_tags',
+) );
+
 $wp_customize->add_control(
 	'avik_icon_2_statistics' ,
 	array(
@@ -1048,34 +1112,39 @@ $wp_customize->add_control(
 			'fas fa-volume-up'             => __('volume-up','avik'),
 			'fas fa-wifi'                  => __('wifi','avik'),
 			'fas fa-wrench'                => __('wrench','avik'),
-		) ) );
-		// Number statistics 2
-		$wp_customize->add_setting( 'avik_max_numbers_2_statistics', array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'absint',
-			'default' => 700,
-		) );
-		$wp_customize->add_control( 'avik_max_numbers_2_statistics', array(
-			'type'        => 'number',
-			'section'     => 'avik_section_statistics_2_whoweare',
-			'priority'    => 20,
-			'label'       => __( 'Max numbers for statistics 2','avik' ),
-			'description' => __( 'Insert a custom number.','avik' ),
-		) );
-		// Title 2 statistics
-		$wp_customize->add_setting( 'avik_title_2_statistics_whoweare', array(
-			'capability'        => 'edit_theme_options',
-			'default'           => '',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
-		) );
-		$wp_customize->add_control( 'avik_title_2_statistics_whoweare', array(
-			'type'    => 'text',
-			'section' => 'avik_section_statistics_2_whoweare',
-			'priority'=> 30,
-			'label'   => __( 'Title for statistics 2','avik' ),
-		) );
-		// Statistics 3
+) ) );
+
+// Number statistcs 2
+$wp_customize->add_setting( 'avik_max_numbers_2_statistics', array(
+	'capability'        => 'edit_theme_options',
+	'sanitize_callback' => 'absint',
+	'default' => 2500,
+) );
+
+$wp_customize->add_control( 'avik_max_numbers_2_statistics', array(
+	'type'        => 'number',
+	'section'     => 'avik_section_statistics_2_whoweare',
+	'priority'    => 20,
+	'label'       => __( 'Max numbers for statistics 2','avik' ),
+	'description' => __( 'Insert a custom number.','avik' ),
+) );
+
+// Title 2 statistics
+$wp_customize->add_setting( 'avik_title_2_statistics_whoweare', array(
+	'capability'        => 'edit_theme_options',
+	'default'           => '',
+	'transport'         => 'postMessage',
+	'sanitize_callback' => 'wp_filter_nohtml_kses',
+) );
+
+$wp_customize->add_control( 'avik_title_2_statistics_whoweare', array(
+	'type'    => 'text',
+	'section' => 'avik_section_statistics_2_whoweare',
+	'priority'=> 30,
+	'label'   => __( 'Title for statistics 2','avik' ),
+) );
+
+// Statistics 3
 $wp_customize->add_section(
 	'avik_section_statistics_3_whoweare',
 	array(
@@ -1083,14 +1152,15 @@ $wp_customize->add_section(
 		'priority'   => 30,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_statistics_whoweare',
-	)
-);
+));
+
 // Icon 3 statistics
 $wp_customize->add_setting( 'avik_icon_3_statistics' , array(
 	'default'   => 'fas fa-thumbtack',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'wp_strip_all_tags',
 ) );
+
 $wp_customize->add_control(
 	'avik_icon_3_statistics' ,
 	array(
@@ -1222,57 +1292,62 @@ $wp_customize->add_control(
 			'fas fa-volume-up'             => __('volume-up','avik'),
 			'fas fa-wifi'                  => __('wifi','avik'),
 			'fas fa-wrench'                => __('wrench','avik'),
-		) ) );
-		// Number statistics 3
-		$wp_customize->add_setting( 'avik_max_numbers_3_statistics', array(
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'absint',
-			'default' => 1550,
-		) );
-		$wp_customize->add_control( 'avik_max_numbers_3_statistics', array(
-			'type'        => 'number',
-			'section'     => 'avik_section_statistics_3_whoweare',
-			'priority'    => 20,
-			'label'       => __( 'Max numbers for statistics 3','avik' ),
-			'description' => __( 'Insert a custom number.','avik' ),
-		) );
-		// Title 3 statistics
-		$wp_customize->add_setting( 'avik_title_3_statistics_whoweare', array(
-			'capability'        => 'edit_theme_options',
-			'default'           => '',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
-		) );
-		$wp_customize->add_control( 'avik_title_3_statistics_whoweare', array(
-			'type'    => 'text',
-			'section' => 'avik_section_statistics_3_whoweare',
-			'priority'=> 30,
-			'label'   => __( 'Title for statistics 3','avik' ),
-		) );
-		// Statistics 4
-		$wp_customize->add_section(
-			'avik_section_statistics_4_whoweare',
-			array(
-				'title'      => __('Statistics 4','avik'),
-				'priority'   => 40,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'avik_statistics_whoweare',
-			)
-		);
-		// Icon 4 statistics
-		$wp_customize->add_setting( 'avik_icon_4_statistics' , array(
-			'default'   => 'fas fa-globe',
-			'transport' => 'refresh',
-			'sanitize_callback' => 'wp_strip_all_tags',
-		) );
-		$wp_customize->add_control(
-			'avik_icon_4_statistics' ,
-			array(
-				'label'      => __( 'Icon 4', 'avik' ),
-				'section'    => 'avik_section_statistics_4_whoweare',
-				'settings'   => 'avik_icon_4_statistics',
-				'type'       => 'select',
-				'choices'    => array(
+) ) );
+// Number statistics 3
+$wp_customize->add_setting( 'avik_max_numbers_3_statistics', array(
+	'capability'        => 'edit_theme_options',
+	'sanitize_callback' => 'absint',
+	'default' => 1550,
+) );
+
+$wp_customize->add_control( 'avik_max_numbers_3_statistics', array(
+	'type'        => 'number',
+	'section'     => 'avik_section_statistics_3_whoweare',
+	'priority'    => 20,
+	'label'       => __( 'Max numbers for statistics 3','avik' ),
+	'description' => __( 'Insert a custom number.','avik' ),
+) );
+
+// Title 3 statistics
+$wp_customize->add_setting( 'avik_title_3_statistics_whoweare', array(
+	'capability'        => 'edit_theme_options',
+	'default'           => '',
+	'transport'         => 'postMessage',
+	'sanitize_callback' => 'wp_filter_nohtml_kses',
+) );
+
+$wp_customize->add_control( 'avik_title_3_statistics_whoweare', array(
+	'type'    => 'text',
+	'section' => 'avik_section_statistics_3_whoweare',
+	'priority'=> 30,
+	'label'   => __( 'Title for statistics 3','avik' ),
+) );
+
+// Statistics 4
+$wp_customize->add_section(
+	'avik_section_statistics_4_whoweare',
+	array(
+		'title'      => __('Statistics 4','avik'),
+		'priority'   => 40,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'avik_statistics_whoweare',
+));
+
+// Icon 4 statistics
+$wp_customize->add_setting( 'avik_icon_4_statistics' , array(
+	'default'   => 'fas fa-globe',
+	'transport' => 'refresh',
+	'sanitize_callback' => 'wp_strip_all_tags',
+) );
+
+$wp_customize->add_control(
+	'avik_icon_4_statistics' ,
+	array(
+		'label'      => __( 'Icon 4', 'avik' ),
+		'section'    => 'avik_section_statistics_4_whoweare',
+		'settings'   => 'avik_icon_4_statistics',
+		'type'       => 'select',
+		'choices'    => array(
 					'fas fa-anchor'                => __('anchor','avik'),
 					'far fa-address-book'          => __('address-book','avik'),
 					'far fa-address-card'          => __('address-card','avik'),
@@ -1396,13 +1471,15 @@ $wp_customize->add_control(
 					'fas fa-volume-up'             => __('volume-up','avik'),
 					'fas fa-wifi'                  => __('wifi','avik'),
 					'fas fa-wrench'                => __('wrench','avik'),
-				) ) );
+) ) );
+
 // Number statistics 4
 $wp_customize->add_setting( 'avik_max_numbers_4_statistics', array(
 	'capability'        => 'edit_theme_options',
 	'sanitize_callback' => 'absint',
 	'default' => 480,
 ) );
+
 $wp_customize->add_control( 'avik_max_numbers_4_statistics', array(
 	'type'        => 'number',
 	'section'     => 'avik_section_statistics_4_whoweare',
@@ -1410,6 +1487,7 @@ $wp_customize->add_control( 'avik_max_numbers_4_statistics', array(
 	'label'       => __( 'Max numbers for statistics 4','avik' ),
 	'description' => __( 'Insert a custom number.','avik' ),
 ) );
+
 // Title 4 statistics
 $wp_customize->add_setting( 'avik_title_4_statistics_whoweare', array(
 	'capability'        => 'edit_theme_options',
@@ -1417,19 +1495,23 @@ $wp_customize->add_setting( 'avik_title_4_statistics_whoweare', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_4_statistics_whoweare', array(
 	'type'    => 'text',
 	'section' => 'avik_section_statistics_4_whoweare',
 	'priority'=> 30,
 	'label'   => __( 'Title for statistics 4','avik' ),
 ) );
+
 /* Team Who we are */
 $avikTeamwhoweare = new Avik_WP_Customize_Panel( $wp_customize, 'avik_team_whoweare', array(
 	'title'    => __('Team Who we are','avik'),
 	'priority' => 20,
 	'panel'    => 'avik_pagewhoweare',
 ));
+
 $wp_customize->add_panel( $avikTeamwhoweare );
+
 // General Team Who we are
 $wp_customize->add_section(
 	'avik_section_general_team_whoweare',
@@ -1438,8 +1520,8 @@ $wp_customize->add_section(
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_team_whoweare',
-	)
-);
+));
+
 // Enable/Disable Section Team
 $wp_customize->add_setting( 'avik_enable_team_whoweare',
 array(
@@ -1447,6 +1529,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_team_whoweare',
 array(
 	'label'   => __( 'Enable/Disable Section Team.','avik' ),
@@ -1461,6 +1544,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_excpert_team_whoweare',
 array(
 	'label'   => __( 'Enable/Disable Excpert Team.','avik' ),
@@ -1482,6 +1566,7 @@ $wp_customize->add_control( 'avik_title_general_team_whoweare', array(
 	'priority'        => 10,
 	'label'           => __( 'Title general Team','avik' ),
 ) );
+
 // Team 1 Who we are
 $wp_customize->add_section(
 	'avik_section_team_1_whoweare',
@@ -1490,16 +1575,16 @@ $wp_customize->add_section(
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_team_whoweare',
-	)
-);
+));
+
 // Category post Team 1
 $wp_customize->add_setting(
 	'avik_team_1_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -1524,27 +1609,30 @@ $wp_customize->add_control( new Avik_Simple_Notice_s_Custom_control( $wp_customi
       'section'  => 'avik_section_team_1_whoweare',
       'priority' => 15,
 )) );
-	// Facebook
-	$wp_customize->add_setting( 'avik_enable_facebook_icon_team_1',
-	array(
-		'default'   => 1,
-		'transport' => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_icon_team_1',
-	array(
-		'label'   => __( 'Enable/Disable Facebook.','avik' ),
-		'section' => 'avik_section_team_1_whoweare',
-		'priority'=> 30,
-	)) );
-	// Url Facebook
-	$wp_customize->add_setting( 'avik_link_facebook_icon_team_1',
-	array(
-		'default'          => '',
-		'transport'        => 'refresh',
-		'sanitize_callback'=> 'esc_url_raw'
-	)
-);
+
+// Facebook
+$wp_customize->add_setting( 'avik_enable_facebook_icon_team_1',
+array(
+	'default'   => 1,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_icon_team_1',
+array(
+	'label'   => __( 'Enable/Disable Facebook.','avik' ),
+	'section' => 'avik_section_team_1_whoweare',
+	'priority'=> 30,
+)) );
+
+// Url Facebook
+$wp_customize->add_setting( 'avik_link_facebook_icon_team_1',
+array(
+	'default'          => '',
+	'transport'        => 'refresh',
+	'sanitize_callback'=> 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_facebook_icon_team_1',
 array(
 	'label'           => __( 'Link Facebook','avik' ),
@@ -1556,28 +1644,31 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Twitter
-	$wp_customize->add_setting( 'avik_enable_twitter_icon_team_1',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_icon_team_1',
-	array(
-		'label'   => __( 'Enable/Disable Twitter.','avik' ),
-		'section' => 'avik_section_team_1_whoweare',
-		'priority'=> 40,
-	)) );
-	// Url Twitter
-	$wp_customize->add_setting( 'avik_link_twitter_icon_team_1',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Twitter
+$wp_customize->add_setting( 'avik_enable_twitter_icon_team_1',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_icon_team_1',
+array(
+	'label'   => __( 'Enable/Disable Twitter.','avik' ),
+	'section' => 'avik_section_team_1_whoweare',
+	'priority'=> 40,
+)) );
+
+// Url Twitter
+$wp_customize->add_setting( 'avik_link_twitter_icon_team_1',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_twitter_icon_team_1',
 array(
 	'label'           => __( 'Link Twitter','avik' ),
@@ -1589,28 +1680,31 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Instagram
-	$wp_customize->add_setting( 'avik_enable_instagram_icon_team_1',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_icon_team_1',
-	array(
-		'label'   => __( 'Enable/Disable Instagram.','avik' ),
-		'section' => 'avik_section_team_1_whoweare',
-		'priority'=> 50,
-	)) );
-	// Url Instagram
-	$wp_customize->add_setting( 'avik_link_instagram_icon_team_1',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Instagram
+$wp_customize->add_setting( 'avik_enable_instagram_icon_team_1',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_icon_team_1',
+array(
+	'label'   => __( 'Enable/Disable Instagram.','avik' ),
+	'section' => 'avik_section_team_1_whoweare',
+	'priority'=> 50,
+)) );
+
+// Url Instagram
+$wp_customize->add_setting( 'avik_link_instagram_icon_team_1',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_instagram_icon_team_1',
 array(
 	'label'           => __( 'Link Instagram','avik' ),
@@ -1622,28 +1716,31 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Linkedin
-	$wp_customize->add_setting( 'avik_enable_linkedin_icon_team_1',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_icon_team_1',
-	array(
-		'label'   => __( 'Enable/Disable Linkedin.','avik' ),
-		'section' => 'avik_section_team_1_whoweare',
-		'priority'=> 60,
-	)) );
-	// Url Linkedin
-	$wp_customize->add_setting( 'avik_link_linkedin_icon_team_1',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Linkedin
+$wp_customize->add_setting( 'avik_enable_linkedin_icon_team_1',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_icon_team_1',
+array(
+	'label'   => __( 'Enable/Disable Linkedin.','avik' ),
+	'section' => 'avik_section_team_1_whoweare',
+	'priority'=> 60,
+)) );
+
+// Url Linkedin
+$wp_customize->add_setting( 'avik_link_linkedin_icon_team_1',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_linkedin_icon_team_1',
 array(
 	'label'           => __( 'Link Linkedin','avik' ),
@@ -1655,28 +1752,31 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Google Plus
-	$wp_customize->add_setting( 'avik_enable_google_plus_icon_team_1',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_icon_team_1',
-	array(
-		'label'   => __( 'Enable/Disable Google Plus.','avik' ),
-		'section' => 'avik_section_team_1_whoweare',
-		'priority'=> 70,
-	)) );
-	// Url Google Plus
-	$wp_customize->add_setting( 'avik_link_google_plus_icon_team_1',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Google Plus
+$wp_customize->add_setting( 'avik_enable_google_plus_icon_team_1',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_icon_team_1',
+array(
+	'label'   => __( 'Enable/Disable Google Plus.','avik' ),
+	'section' => 'avik_section_team_1_whoweare',
+	'priority'=> 70,
+)) );
+
+// Url Google Plus
+$wp_customize->add_setting( 'avik_link_google_plus_icon_team_1',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_google_plus_icon_team_1',
 array(
 	'label'           => __( 'Link Google Plus','avik' ),
@@ -1688,37 +1788,40 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Team 2 Who we are
-	$wp_customize->add_section(
-		'avik_section_team_2_whoweare',
-		array(
-			'title'      => __('Team 2','avik'),
-			'priority'   => 30,
-			'capability' => 'edit_theme_options',
-			'panel'      => 'avik_team_whoweare',
-		)
-	);
-	// Category post Team 2
-	$wp_customize->add_setting(
+), ));
+
+// Team 2 Who we are
+$wp_customize->add_section(
+	'avik_section_team_2_whoweare',
+	array(
+		'title'      => __('Team 2','avik'),
+		'priority'   => 30,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'avik_team_whoweare',
+));
+
+// Category post Team 2
+$wp_customize->add_setting(
+	'avik_team_2_category',
+	array(
+		'default'   => '',
+		'sanitize_callback' => 'avik_sanitize_category_select',
+));
+
+$wp_customize->add_control(
+	new Avik_Customize_category_Control(
+		$wp_customize,
 		'avik_team_2_category',
 		array(
-			'default'   => '',
-			'sanitize_callback' => 'avik_sanitize_category_select',
-		)
-	);
-	$wp_customize->add_control(
-		new Avik_Customize_category_Control(
-			$wp_customize,
-			'avik_team_2_category',
-			array(
-				'label'    => __('Select Category Post for Team 2','avik'),
-				'description' => __( 'Select the category to show the posts for Team 2.','avik' ),
-				'settings' => 'avik_team_2_category',
-				'section'  => 'avik_section_team_2_whoweare',
-				'priority'=> 10,
+			'label'    => __('Select Category Post for Team 2','avik'),
+			'description' => __( 'Select the category to show the posts for Team 2.','avik' ),
+			'settings' => 'avik_team_2_category',
+			'section'  => 'avik_section_team_2_whoweare',
+			'priority'=> 10,
 )));
-		// Social Team 2
+
+// Social Team 2
+
 // Notice
 $wp_customize->add_setting( 'avik_team_2_notice',
 array(
@@ -1731,236 +1834,258 @@ array(
    'section'  => 'avik_section_team_2_whoweare',
    'priority' => 15,
 )) );
-		// Facebook
-		$wp_customize->add_setting( 'avik_enable_facebook_icon_team_2',
-		array(
-			'default'   => 1,
-			'transport' => 'refresh',
-			'sanitize_callback' => 'avik_switch_sanitization'
-		));
-		$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_icon_team_2',
-		array(
-			'label'   => __( 'Enable/Disable Facebook.','avik' ),
-			'section' => 'avik_section_team_2_whoweare',
-			'priority'=> 30,
-		)) );
-		// Url Facebook
-		$wp_customize->add_setting( 'avik_link_facebook_icon_team_2',
-		array(
-			'default'          => '',
-			'transport'        => 'refresh',
-			'sanitize_callback'=> 'esc_url_raw'
-		)
-	);
-	$wp_customize->add_control( 'avik_link_facebook_icon_team_2',
-	array(
-		'label'           => __( 'Link Facebook','avik' ),
-		'section'         => 'avik_section_team_2_whoweare',
-		'type'            => 'url',
-		'priority'        => 35,
-		'active_callback' => 'avik_enable_facebook_icon_team_2',
-		'input_attrs'     => array(
-			'class'        => 'my-custom-class',
-			'style'        => 'border: 1px solid #2885bb',
-			'placeholder'  => __( 'Enter link...','avik' ),
-		), ));
-		// Twitter
-		$wp_customize->add_setting( 'avik_enable_twitter_icon_team_2',
-		array(
-			'default'           => 1,
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'avik_switch_sanitization'
-		));
-		$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_icon_team_2',
-		array(
-			'label'   => __( 'Enable/Disable Twitter.','avik' ),
-			'section' => 'avik_section_team_2_whoweare',
-			'priority'=> 40,
-		)) );
-		// Url Twitter
-		$wp_customize->add_setting( 'avik_link_twitter_icon_team_2',
-		array(
-			'default'           => '',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'esc_url_raw'
-		)
-	);
-	$wp_customize->add_control( 'avik_link_twitter_icon_team_2',
-	array(
-		'label'           => __( 'Link Twitter','avik' ),
-		'section'         => 'avik_section_team_2_whoweare',
-		'type'            => 'url',
-		'priority'        => 45,
-		'active_callback' => 'avik_enable_twitter_icon_team_2',
-		'input_attrs'     => array(
-			'class'        => 'my-custom-class',
-			'style'        => 'border: 1px solid #2885bb',
-			'placeholder'  => __( 'Enter link...','avik' ),
-		), ));
-		// Instagram
-		$wp_customize->add_setting( 'avik_enable_instagram_icon_team_2',
-		array(
-			'default'           => 1,
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'avik_switch_sanitization'
-		));
-		$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_icon_team_2',
-		array(
-			'label'   => __( 'Enable/Disable Instagram.','avik' ),
-			'section' => 'avik_section_team_2_whoweare',
-			'priority'=> 50,
-		)) );
-		// Url Instagram
-		$wp_customize->add_setting( 'avik_link_instagram_icon_team_2',
-		array(
-			'default'           => '',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'esc_url_raw'
-		)
-	);
-	$wp_customize->add_control( 'avik_link_instagram_icon_team_2',
-	array(
-		'label'           => __( 'Link Instagram','avik' ),
-		'section'         => 'avik_section_team_2_whoweare',
-		'type'            => 'url',
-		'priority'        => 55,
-		'active_callback' => 'avik_enable_instagram_icon_team_2',
-		'input_attrs'     => array(
-			'class'        => 'my-custom-class',
-			'style'        => 'border: 1px solid #2885bb',
-			'placeholder'  => __( 'Enter link...','avik' ),
-		), ));
-		// Linkedin
-		$wp_customize->add_setting( 'avik_enable_linkedin_icon_team_2',
-		array(
-			'default'           => 1,
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'avik_switch_sanitization'
-		));
-		$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_icon_team_2',
-		array(
-			'label'   => __( 'Enable/Disable Linkedin.','avik' ),
-			'section' => 'avik_section_team_2_whoweare',
-			'priority'=> 60,
-		)) );
-		// Url Linkedin
-		$wp_customize->add_setting( 'avik_link_linkedin_icon_team_2',
-		array(
-			'default'           => '',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'esc_url_raw'
-		)
-	);
-	$wp_customize->add_control( 'avik_link_linkedin_icon_team_2',
-	array(
-		'label'           => __( 'Link Linkedin','avik' ),
-		'section'         => 'avik_section_team_2_whoweare',
-		'type'            => 'url',
-		'priority'        =>  65,
-		'active_callback' => 'avik_enable_linkedin_icon_team_2',
-		'input_attrs'     => array(
-			'class'        => 'my-custom-class',
-			'style'        => 'border: 1px solid #2885bb',
-			'placeholder'  => __( 'Enter link...','avik' ),
-		), ));
-		// Google Plus
-		$wp_customize->add_setting( 'avik_enable_google_plus_icon_team_2',
-		array(
-			'default'           => 1,
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'avik_switch_sanitization'
-		));
-		$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_icon_team_2',
-		array(
-			'label'   => __( 'Enable/Disable Google Plus.','avik' ),
-			'section' => 'avik_section_team_2_whoweare',
-			'priority'=> 70,
-		)) );
-		// Url Google Plus
-		$wp_customize->add_setting( 'avik_link_google_plus_icon_team_2',
-		array(
-			'default'           => '',
-			'transport'         => 'refresh',
-			'sanitize_callback' => 'esc_url_raw'
-		)
-	);
-	$wp_customize->add_control( 'avik_link_google_plus_icon_team_2',
-	array(
-		'label'           => __( 'Link Google Plus','avik' ),
-		'section'         => 'avik_section_team_2_whoweare',
-		'type'            => 'url',
-		'priority'        => 75,
-		'active_callback' => 'avik_enable_google_plus_icon_team_2',
-		'input_attrs'     => array(
-			'class'        => 'my-custom-class',
-			'style'        => 'border: 1px solid #2885bb',
-			'placeholder'  => __( 'Enter link...','avik' ),
-		), ));
-		// Team 3 Who we are
-		$wp_customize->add_section(
-			'avik_section_team_3_whoweare',
-			array(
-				'title'      => __('Team 3','avik'),
-				'priority'   => 40,
-				'capability' => 'edit_theme_options',
-				'panel'      => 'avik_team_whoweare',
-			)
-		);
-		// Category post Team 3
-		$wp_customize->add_setting(
-			'avik_team_3_category',
-			array(
-				'default'   => '',
-				'sanitize_callback' => 'avik_sanitize_category_select',
-			)
-		);
-		$wp_customize->add_control(
-			new Avik_Customize_category_Control(
-				$wp_customize,
-				'avik_team_3_category',
-				array(
-					'label'    => __('Select Category Post for Team 3','avik'),
-					'description' => __( 'Select the category to show the posts for Team 3.','avik' ),
-					'settings' => 'avik_team_3_category',
-					'section'  => 'avik_section_team_3_whoweare',
-					'priority'=> 10,
-)));
-			// Social Team 3
-			// Notice
-$wp_customize->add_setting( 'avik_team_3_notice',
+
+// Facebook
+$wp_customize->add_setting( 'avik_enable_facebook_icon_team_2',
 array(
+	'default'   => 1,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_icon_team_2',
+array(
+	'label'   => __( 'Enable/Disable Facebook.','avik' ),
+	'section' => 'avik_section_team_2_whoweare',
+	'priority'=> 30,
+)) );
+
+// Url Facebook
+$wp_customize->add_setting( 'avik_link_facebook_icon_team_2',
+array(
+	'default'          => '',
+	'transport'        => 'refresh',
+	'sanitize_callback'=> 'esc_url_raw'
+));
+
+$wp_customize->add_control( 'avik_link_facebook_icon_team_2',
+array(
+	'label'           => __( 'Link Facebook','avik' ),
+	'section'         => 'avik_section_team_2_whoweare',
+	'type'            => 'url',
+	'priority'        => 35,
+	'active_callback' => 'avik_enable_facebook_icon_team_2',
+	'input_attrs'     => array(
+		'class'        => 'my-custom-class',
+		'style'        => 'border: 1px solid #2885bb',
+		'placeholder'  => __( 'Enter link...','avik' ),
+), ));
+
+// Twitter
+$wp_customize->add_setting( 'avik_enable_twitter_icon_team_2',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_icon_team_2',
+array(
+	'label'   => __( 'Enable/Disable Twitter.','avik' ),
+	'section' => 'avik_section_team_2_whoweare',
+	'priority'=> 40,
+)) );
+
+// Url Twitter
+$wp_customize->add_setting( 'avik_link_twitter_icon_team_2',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
+$wp_customize->add_control( 'avik_link_twitter_icon_team_2',
+array(
+	'label'           => __( 'Link Twitter','avik' ),
+	'section'         => 'avik_section_team_2_whoweare',
+	'type'            => 'url',
+	'priority'        => 45,
+	'active_callback' => 'avik_enable_twitter_icon_team_2',
+	'input_attrs'     => array(
+		'class'        => 'my-custom-class',
+		'style'        => 'border: 1px solid #2885bb',
+		'placeholder'  => __( 'Enter link...','avik' ),
+), ));
+
+// Instagram
+$wp_customize->add_setting( 'avik_enable_instagram_icon_team_2',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_icon_team_2',
+array(
+	'label'   => __( 'Enable/Disable Instagram.','avik' ),
+	'section' => 'avik_section_team_2_whoweare',
+	'priority'=> 50,
+)) );
+
+// Url Instagram
+$wp_customize->add_setting( 'avik_link_instagram_icon_team_2',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
+$wp_customize->add_control( 'avik_link_instagram_icon_team_2',
+array(
+	'label'           => __( 'Link Instagram','avik' ),
+	'section'         => 'avik_section_team_2_whoweare',
+	'type'            => 'url',
+	'priority'        => 55,
+	'active_callback' => 'avik_enable_instagram_icon_team_2',
+	'input_attrs'     => array(
+		'class'        => 'my-custom-class',
+		'style'        => 'border: 1px solid #2885bb',
+		'placeholder'  => __( 'Enter link...','avik' ),
+), ));
+
+// Linkedin
+$wp_customize->add_setting( 'avik_enable_linkedin_icon_team_2',
+	array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+	));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_icon_team_2',
+	array(
+	'label'   => __( 'Enable/Disable Linkedin.','avik' ),
+	'section' => 'avik_section_team_2_whoweare',
+	'priority'=> 60,
+)) );
+
+// Url Linkedin
+$wp_customize->add_setting( 'avik_link_linkedin_icon_team_2',
+	array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
+$wp_customize->add_control( 'avik_link_linkedin_icon_team_2',
+array(
+'label'           => __( 'Link Linkedin','avik' ),
+'section'         => 'avik_section_team_2_whoweare',
+'type'            => 'url',
+'priority'        =>  65,
+'active_callback' => 'avik_enable_linkedin_icon_team_2',
+'input_attrs'     => array(
+	'class'        => 'my-custom-class',
+	'style'        => 'border: 1px solid #2885bb',
+	'placeholder'  => __( 'Enter link...','avik' ),
+), ));
+
+// Google Plus
+$wp_customize->add_setting( 'avik_enable_google_plus_icon_team_2',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_icon_team_2',
+  array(
+	'label'   => __( 'Enable/Disable Google Plus.','avik' ),
+	'section' => 'avik_section_team_2_whoweare',
+	'priority'=> 70,
+)) );
+
+// Url Google Plus
+$wp_customize->add_setting( 'avik_link_google_plus_icon_team_2',
+  array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
+$wp_customize->add_control( 'avik_link_google_plus_icon_team_2',
+array(
+	'label'           => __( 'Link Google Plus','avik' ),
+	'section'         => 'avik_section_team_2_whoweare',
+	'type'            => 'url',
+	'priority'        => 75,
+	'active_callback' => 'avik_enable_google_plus_icon_team_2',
+	'input_attrs'     => array(
+	'class'        => 'my-custom-class',
+	'style'        => 'border: 1px solid #2885bb',
+	'placeholder'  => __( 'Enter link...','avik' ),
+), ));
+
+// Team 3 Who we are
+$wp_customize->add_section(
+	'avik_section_team_3_whoweare',
+	array(
+	'title'      => __('Team 3','avik'),
+	'priority'   => 40,
+	'capability' => 'edit_theme_options',
+	'panel'      => 'avik_team_whoweare',
+));
+
+// Category post Team 3
+$wp_customize->add_setting(
+	'avik_team_3_category',
+	array(
+		'default'   => '',
+		'sanitize_callback' => 'avik_sanitize_category_select',
+));
+
+$wp_customize->add_control(
+	new Avik_Customize_category_Control(
+		$wp_customize,
+		'avik_team_3_category',
+		array(
+			'label'    => __('Select Category Post for Team 3','avik'),
+			'description' => __( 'Select the category to show the posts for Team 3.','avik' ),
+			'settings' => 'avik_team_3_category',
+			'section'  => 'avik_section_team_3_whoweare',
+			'priority'=> 10,
+)));
+
+// Social Team 3
+
+// Notice
+
+$wp_customize->add_setting( 'avik_team_3_notice',
+ array(
    'sanitize_callback' => 'avik_text_sanitization'
 ));
 
 $wp_customize->add_control( new Avik_Simple_Notice_s_Custom_control( $wp_customize, 'avik_team_3_notice',
-array(
+ array(
    'label'    => __( 'ICONS ARE ONLY SEEN IN HOVER!','avik'),
    'section'  => 'avik_section_team_3_whoweare',
    'priority' => 15,
 )) );
-			// Facebook
-			$wp_customize->add_setting( 'avik_enable_facebook_icon_team_3',
-			array(
-				'default'   => 1,
-				'transport' => 'refresh',
-				'sanitize_callback' => 'avik_switch_sanitization'
-			));
-			$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_icon_team_3',
-			array(
-				'label'   => __( 'Enable/Disable Facebook.','avik' ),
-				'section' => 'avik_section_team_3_whoweare',
-				'priority'=> 30,
-			)) );
-			// Url Facebook
-			$wp_customize->add_setting( 'avik_link_facebook_icon_team_3',
-			array(
-				'default'          => '',
-				'transport'        => 'refresh',
-				'sanitize_callback'=> 'esc_url_raw'
-			)
-		);
+
+// Facebook
+$wp_customize->add_setting( 'avik_enable_facebook_icon_team_3',
+  array(
+	'default'   => 1,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_icon_team_3',
+  array(
+	'label'   => __( 'Enable/Disable Facebook.','avik' ),
+	'section' => 'avik_section_team_3_whoweare',
+	'priority'=> 30,
+)) );
+
+// Url Facebook
+$wp_customize->add_setting( 'avik_link_facebook_icon_team_3',
+  array(
+	'default'          => '',
+	'transport'        => 'refresh',
+	'sanitize_callback'=> 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_facebook_icon_team_3',
-array(
+  array(
 	'label'           => __( 'Link Facebook','avik' ),
 	'section'         => 'avik_section_team_3_whoweare',
 	'type'            => 'url',
@@ -1970,30 +2095,33 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Twitter
-	$wp_customize->add_setting( 'avik_enable_twitter_icon_team_3',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_icon_team_3',
-	array(
-		'label'   => __( 'Enable/Disable Twitter.','avik' ),
-		'section' => 'avik_section_team_3_whoweare',
-		'priority'=> 40,
-	)) );
-	// Url Twitter
-	$wp_customize->add_setting( 'avik_link_twitter_icon_team_3',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Twitter
+$wp_customize->add_setting( 'avik_enable_twitter_icon_team_3',
+ array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_icon_team_3',
+ array(
+	'label'   => __( 'Enable/Disable Twitter.','avik' ),
+	'section' => 'avik_section_team_3_whoweare',
+	'priority'=> 40,
+)) );
+
+// Url Twitter
+$wp_customize->add_setting( 'avik_link_twitter_icon_team_3',
+ array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_twitter_icon_team_3',
-array(
+ array(
 	'label'           => __( 'Link Twitter','avik' ),
 	'section'         => 'avik_section_team_3_whoweare',
 	'type'            => 'url',
@@ -2003,28 +2131,31 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Instagram
-	$wp_customize->add_setting( 'avik_enable_instagram_icon_team_3',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_icon_team_3',
-	array(
-		'label'   => __( 'Enable/Disable Instagram.','avik' ),
-		'section' => 'avik_section_team_3_whoweare',
-		'priority'=> 50,
-	)) );
-	// Url Instagram
-	$wp_customize->add_setting( 'avik_link_instagram_icon_team_3',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Instagram
+$wp_customize->add_setting( 'avik_enable_instagram_icon_team_3',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_icon_team_3',
+array(
+	'label'   => __( 'Enable/Disable Instagram.','avik' ),
+	'section' => 'avik_section_team_3_whoweare',
+	'priority'=> 50,
+)) );
+
+// Url Instagram
+$wp_customize->add_setting( 'avik_link_instagram_icon_team_3',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_instagram_icon_team_3',
 array(
 	'label'           => __( 'Link Instagram','avik' ),
@@ -2036,28 +2167,31 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Linkedin
-	$wp_customize->add_setting( 'avik_enable_linkedin_icon_team_3',
-	array(
-		'default'           => 1,
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'avik_switch_sanitization'
-	));
-	$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_icon_team_3',
-	array(
-		'label'   => __( 'Enable/Disable Linkedin.','avik' ),
-		'section' => 'avik_section_team_3_whoweare',
-		'priority'=> 60,
-	)) );
-	// Url Linkedin
-	$wp_customize->add_setting( 'avik_link_linkedin_icon_team_3',
-	array(
-		'default'           => '',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	)
-);
+), ));
+
+// Linkedin
+$wp_customize->add_setting( 'avik_enable_linkedin_icon_team_3',
+array(
+	'default'           => 1,
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_icon_team_3',
+array(
+	'label'   => __( 'Enable/Disable Linkedin.','avik' ),
+	'section' => 'avik_section_team_3_whoweare',
+	'priority'=> 60,
+)) );
+
+// Url Linkedin
+$wp_customize->add_setting( 'avik_link_linkedin_icon_team_3',
+array(
+	'default'           => '',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'esc_url_raw'
+));
+
 $wp_customize->add_control( 'avik_link_linkedin_icon_team_3',
 array(
 	'label'           => __( 'Link Linkedin','avik' ),
@@ -2070,6 +2204,7 @@ array(
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
 ), ));
+
 // Google Plus
 $wp_customize->add_setting( 'avik_enable_google_plus_icon_team_3',
 array(
@@ -2077,20 +2212,22 @@ array(
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_icon_team_3',
 array(
 	'label'   => __( 'Enable/Disable Google Plus.','avik' ),
 	'section' => 'avik_section_team_3_whoweare',
 	'priority'=> 70,
 )) );
+
 // Url Google Plus
 $wp_customize->add_setting( 'avik_link_google_plus_icon_team_3',
 array(
 	'default'           => '',
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'esc_url_raw'
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_google_plus_icon_team_3',
 array(
 	'label'           => __( 'Link Google Plus','avik' ),
@@ -2102,8 +2239,9 @@ array(
 		'class'        => 'my-custom-class',
 		'style'        => 'border: 1px solid #2885bb',
 		'placeholder'  => __( 'Enter link...','avik' ),
-	), ));
-	// Partenr Who we are
+), ));
+
+// Partenr Who we are
 $wp_customize->add_section(
 	'avik_section_partner_whoweare',
 	array(
@@ -2111,8 +2249,8 @@ $wp_customize->add_section(
 		'priority'   => 30,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_pagewhoweare',
-	)
-);
+));
+
 // Enable Section Partner
 $wp_customize->add_setting( 'avik_enable_partner_whoweare',
 array(
@@ -2120,12 +2258,14 @@ array(
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_partner_whoweare',
 array(
 	'label'   => __( 'Enable/Disable Section Partenr.','avik' ),
 	'section' => 'avik_section_partner_whoweare',
 	'priority'=> 10,
 )) );
+
 // Title Partner
 $wp_customize->add_setting( 'avik_title_partner_whoweare', array(
 	'capability'        => 'edit_theme_options',
@@ -2133,12 +2273,14 @@ $wp_customize->add_setting( 'avik_title_partner_whoweare', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_partner_whoweare', array(
 	'type'            => 'text',
 	'section'         => 'avik_section_partner_whoweare',
 	'priority'        => 20,
 	'label'           => __( 'Title Partner','avik' ),
 ) );
+
 // Subtitle Partner
 $wp_customize->add_setting( 'avik_subtitle_partner_whoweare', array(
 	'capability'        => 'edit_theme_options',
@@ -2146,20 +2288,22 @@ $wp_customize->add_setting( 'avik_subtitle_partner_whoweare', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_subtitle_partner_whoweare', array(
 	'type'            => 'text',
 	'section'         => 'avik_section_partner_whoweare',
 	'priority'        => 30,
 	'label'           => __( 'Subtitle Partner','avik' ),
 ) );
+
 // Category post Partner
 $wp_customize->add_setting(
 	'avik_brands_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2170,18 +2314,11 @@ $wp_customize->add_control(
 			'settings' => 'avik_brands_category',
 			'section'  => 'avik_section_partner_whoweare',
 			'priority'=> 40,
-	)
-	)
-);
+)));
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.6 Services
 /* ------------------------------------------------------------------------------------------------------------*/
-$avikServices = new Avik_WP_Customize_Panel( $wp_customize, 'avik_services', array(
-	'title'    => __('Services','avik'),
-	'priority' => 30,
-	'panel'=>'avik_section'
-));
-$wp_customize->add_panel( $avikServices );
 
 $avikServicespage = new Avik_WP_Customize_Panel( $wp_customize, 'avik_servicespage', array(
 	'title'    => __('Services','avik'),
@@ -2189,16 +2326,17 @@ $avikServicespage = new Avik_WP_Customize_Panel( $wp_customize, 'avik_servicespa
 	'panel'=>'avik_page'
 ));
 $wp_customize->add_panel( $avikServicespage );
+
 // Settings Services
 $wp_customize->add_section(
 	'avik_section_settings_services',
 	array(
-		'title'      => __('Settings','avik'),
-		'priority'   => 10,
+		'title'      => __('Services','avik'),
+		'priority'   => 54,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_services',
-	)
-	);
+		'panel'=>'avik_section'
+));
+
 // Enable Services
 $wp_customize->add_setting( 'avik_enable_services',
 array(
@@ -2206,12 +2344,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_services',
 array(
 	'label' => __( 'Enable/Disable Services Section','avik' ),
 	'section' => 'avik_section_settings_services',
 	'priority'=> 3,
 )) );
+
 // Title Services
 $wp_customize->add_setting( 'avik_title_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2219,12 +2359,14 @@ $wp_customize->add_setting( 'avik_title_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_settings_services',
 	'priority'=> 4,
 	'label'   => __( 'Title Services','avik' ),
 ) );
+
 // Subtitle Services
 $wp_customize->add_setting( 'avik_subtitle_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2232,20 +2374,22 @@ $wp_customize->add_setting( 'avik_subtitle_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_subtitle_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_settings_services',
 	'priority'=> 6,
 	'label'   => __( 'Subtitle Services','avik' ),
 ) );
+
 // Category Services
 $wp_customize->add_setting(
 	'avik_services_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2307,6 +2451,63 @@ array(
 	'section' => 'avik_section_settings_services',
 	'priority'=> 40,
 )) );
+
+// Margin Top Section Services
+$wp_customize->add_setting( 'avik_margin_top_section_services',
+array(
+	'default' => 8,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	 'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_top_section_services',
+array(
+	'label' => __( 'Margin Top Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_services',
+		'priority'    => 50,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Margin Bottom Section Servicese
+$wp_customize->add_setting( 'avik_margin_bottom_section_services',
+array(
+	'default' => 4,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_bottom_section_services',
+array(
+	'label' => __( 'Margin Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_services',
+		'priority'    => 60,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Padding Bottom Section Services
+$wp_customize->add_setting( 'avik_padding_bottom_section_services',
+array(
+	'default' => 0,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_padding_bottom_section_services',
+array(
+	'label' => __( 'Padding Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_services',
+		'priority'    => 70,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
 
 // Title Button Read More
 $wp_customize->add_section(
@@ -2407,7 +2608,6 @@ array(
 			'step' => 1,
 ), )) );
 
-
 /* Partners */
 $wp_customize->add_section(
 	'avik_section_partners_services',
@@ -2416,8 +2616,8 @@ $wp_customize->add_section(
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_servicespage',
-	)
-);
+));
+
 // Enable/Disable Section Partenrs
 $wp_customize->add_setting( 'avik_enable_partners_services',
 array(
@@ -2425,12 +2625,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_partners_services',
 array(
 	'label'   => __( 'Enable/Disable Section Partners Services.','avik' ),
 	'section' => 'avik_section_partners_services',
 	'priority'=> 5,
 )) );
+
 // Title Patners
 $wp_customize->add_setting( 'avik_title_partners_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2438,12 +2640,14 @@ $wp_customize->add_setting( 'avik_title_partners_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_partners_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_partners_services',
 	'priority'=> 20,
 	'label'   => __( 'Title Partners','avik' ),
 ) );
+
 // Subtitle Patners
 $wp_customize->add_setting( 'avik_subtitle_partners_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2451,20 +2655,22 @@ $wp_customize->add_setting( 'avik_subtitle_partners_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_subtitle_partners_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_partners_services',
 	'priority'=> 30,
 	'label'   => __( 'Subtitle Partners','avik' ),
 ) );
+
 // Category post Partners Services
 $wp_customize->add_setting(
 	'avik_partners_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2475,9 +2681,8 @@ $wp_customize->add_control(
 			'settings' => 'avik_partners_category',
 			'section'  => 'avik_section_partners_services',
 			'priority'=> 40,
-	)
-)
-);
+)));
+
 /* Price quotation*/
 $wp_customize->add_section(
 	'avik_section_quotation_services',
@@ -2486,8 +2691,8 @@ $wp_customize->add_section(
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_servicespage',
-	)
-);
+));
+
 // Enable/Disable Section Price quotation
 $wp_customize->add_setting( 'avik_enable_quotation_services',
 array(
@@ -2495,6 +2700,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_quotation_services',
 	array(
 		'label'   => __( 'Enable/Disable Section Quotation.','avik' ),
@@ -2514,6 +2720,7 @@ array(
 		   'section'  => 'avik_section_quotation_services',
    'priority' => 6,
 )) );
+
 // Title 1 Price quotation
 $wp_customize->add_setting( 'avik_title_1_quotation_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2521,12 +2728,14 @@ $wp_customize->add_setting( 'avik_title_1_quotation_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_1_quotation_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_quotation_services',
 	'priority'=> 10,
 	'label'   => __( 'Title 1 for quotation','avik' ),
 ) );
+
 // Subtitle 1 Price quotation
 $wp_customize->add_setting( 'avik_subtitle_1_quotation_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2534,12 +2743,14 @@ $wp_customize->add_setting( 'avik_subtitle_1_quotation_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_subtitle_1_quotation_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_quotation_services',
 	'priority'=> 20,
 	'label'   => __( 'Subtitle 1 for quotation','avik' ),
 ) );
+
 // Title 2 Price quotation
 $wp_customize->add_setting( 'avik_title_2_quotation_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2547,12 +2758,14 @@ $wp_customize->add_setting( 'avik_title_2_quotation_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_2_quotation_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_quotation_services',
 	'priority'=> 30,
 	'label'   => __( 'Title 2 for quotation','avik' ),
 ) );
+
 // Subtitle 2 Price quotation
 $wp_customize->add_setting( 'avik_subtitle_2_quotation_services', array(
 	'capability'        => 'edit_theme_options',
@@ -2560,12 +2773,14 @@ $wp_customize->add_setting( 'avik_subtitle_2_quotation_services', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_subtitle_2_quotation_services', array(
 	'type'    => 'text',
 	'section' => 'avik_section_quotation_services',
 	'priority'=> 40,
 	'label'   => __( 'Subtitle 2 for quotation','avik' ),
 ) );
+
 // Enable/Disable Arrow Price quotation
 $wp_customize->add_setting( 'avik_enable_arrow_quotation_services',
 array(
@@ -2573,21 +2788,25 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_arrow_quotation_services',
 array(
 	'label'   => __( 'Enable/Disable Arrow quotation.','avik' ),
 	'section' => 'avik_section_quotation_services',
 	'priority'=> 50,
 )) );
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.7 Portfolio
 /* ------------------------------------------------------------------------------------------------------------*/
+
 $avikPortfolio = new Avik_WP_Customize_Panel( $wp_customize, 'avik_portfolio', array(
 	'title'    => __('Portfolio','avik'),
 	'priority' => 40,
 	'panel'=> 'avik_section'
 ));
 $wp_customize->add_panel( $avikPortfolio );
+
 // Settings Portfolio
 $wp_customize->add_section(
 	'avik_section_settings_portfolio',
@@ -2596,8 +2815,8 @@ $wp_customize->add_section(
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_portfolio',
-	)
-);
+));
+
 // Enable Portfolio
 $wp_customize->add_setting( 'avik_enable_portfolio',
 array(
@@ -2605,12 +2824,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio',
 array(
 	'label' => __( 'Enable/Disable Portfolio Section','avik' ),
 	'section' => 'avik_section_settings_portfolio',
 	'priority'=> 12,
 )) );
+
 // Title Portfolio
 $wp_customize->add_setting( 'avik_title_portfolio', array(
 	'capability'        => 'edit_theme_options',
@@ -2618,12 +2839,52 @@ $wp_customize->add_setting( 'avik_title_portfolio', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_portfolio', array(
 	'type'    => 'text',
 	'section' => 'avik_section_settings_portfolio',
 	'priority'=> 10,
 	'label'   => __( 'Title Portfolio','avik' ),
 ) );
+
+// Margin Top Section Portoflio
+$wp_customize->add_setting( 'avik_margin_top_section_portfolio',
+array(
+	'default' => 0,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	 'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_top_section_portfolio',
+array(
+	'label' => __( 'Margin Top Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_portfolio',
+		'priority'    => 20,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Margin Bottom Section Portoflio
+$wp_customize->add_setting( 'avik_margin_bottom_section_portfolio',
+array(
+	'default' => 5,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_bottom_section_portfolio',
+array(
+	'label' => __( 'Margin Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_portfolio',
+		'priority'    => 30,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
 // Nav Portfolio
 $wp_customize->add_section(
 	'avik_section_nav_portfolio',
@@ -2632,8 +2893,8 @@ $wp_customize->add_section(
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_portfolio',
-	)
-);
+));
+
 // Title All Portfolio
 $wp_customize->add_setting( 'avik_title_nav_all_portfolio', array(
 	'capability'        => 'edit_theme_options',
@@ -2641,12 +2902,14 @@ $wp_customize->add_setting( 'avik_title_nav_all_portfolio', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_nav_all_portfolio', array(
 	'type'    => 'text',
 	'section' => 'avik_section_nav_portfolio',
 	'priority'=> 10,
 	'label'   => __( 'Title Nav all Portfolio','avik' ),
 ) );
+
 // Enable Column 1 Portoflio
 $wp_customize->add_setting( 'avik_enable_portfolio_1',
 array(
@@ -2654,12 +2917,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio_1',
 array(
 	'label' => __( 'Enable/Disable Column 1 Portoflio','avik' ),
 	'section' => 'avik_section_settings_portfolio',
 	'priority'=> 15,
 )) );
+
 // Title Column 1 Portfolio
 $wp_customize->add_setting( 'avik_title_nav_1_portfolio', array(
 	'capability'        => 'edit_theme_options',
@@ -2667,12 +2932,14 @@ $wp_customize->add_setting( 'avik_title_nav_1_portfolio', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_nav_1_portfolio', array(
 	'type'    => 'text',
 	'section' => 'avik_section_nav_portfolio',
 	'priority'=> 20,
 	'label'   => __( 'Title Nav column 1 Portfolio','avik' ),
 ) );
+
 // Enable Column 2 Portoflio
 $wp_customize->add_setting( 'avik_enable_portfolio_2',
 array(
@@ -2680,12 +2947,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio_2',
 array(
 	'label' => __( 'Enable/Disable Column 2 Portoflio','avik' ),
 	'section' => 'avik_section_settings_portfolio',
 	'priority'=> 25,
 )) );
+
 // Title Column 2 Portfolio
 $wp_customize->add_setting( 'avik_title_nav_2_portfolio', array(
 	'capability'        => 'edit_theme_options',
@@ -2693,12 +2962,14 @@ $wp_customize->add_setting( 'avik_title_nav_2_portfolio', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_nav_2_portfolio', array(
 	'type'    => 'text',
 	'section' => 'avik_section_nav_portfolio',
 	'priority'=> 30,
 	'label'   => __( 'Title Nav column 2 Portfolio','avik' ),
 ) );
+
 // Enable Column 3 Portoflio
 $wp_customize->add_setting( 'avik_enable_portfolio_3',
 array(
@@ -2706,12 +2977,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio_3',
 array(
 	'label' => __( 'Enable/Disable Column 3 Portoflio','avik' ),
 	'section' => 'avik_section_settings_portfolio',
 	'priority'=> 35,
 )) );
+
 // Title Column 3 Portfolio
 $wp_customize->add_setting( 'avik_title_nav_3_portfolio', array(
 	'capability'        => 'edit_theme_options',
@@ -2719,12 +2992,14 @@ $wp_customize->add_setting( 'avik_title_nav_3_portfolio', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_nav_3_portfolio', array(
 	'type'    => 'text',
 	'section' => 'avik_section_nav_portfolio',
 	'priority'=> 40,
 	'label'   => __( 'Title Nav column 3 Portfolio','avik' ),
 ) );
+
 // Column 1 Portfolio
 $wp_customize->add_section(
 	'avik_section_column_1_portfolio',
@@ -2733,16 +3008,16 @@ $wp_customize->add_section(
 		'priority'   => 20,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_portfolio',
-	)
-);
+));
+
 // Category for Portfolio column 1
 $wp_customize->add_setting(
 	'avik_portfolio_c_1_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2753,9 +3028,8 @@ $wp_customize->add_control(
 			'settings' => 'avik_portfolio_c_1_category',
 			'section'  => 'avik_section_column_1_portfolio',
 			'priority'=> 12,
-		)
-	)
-);
+)));
+
 // Column 2 Portfolio
 $wp_customize->add_section(
 	'avik_section_column_2_portfolio',
@@ -2764,16 +3038,16 @@ $wp_customize->add_section(
 		'priority'   => 40,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_portfolio',
-	)
-);
+));
+
 // Category for Portfolio column 2
 $wp_customize->add_setting(
 	'avik_portfolio_c_2_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2784,9 +3058,8 @@ $wp_customize->add_control(
 			'settings' => 'avik_portfolio_c_2_category',
 			'section'  => 'avik_section_column_2_portfolio',
 			'priority'=> 50,
-		)
-	)
-);
+)));
+
 // Column 3 Portfolio
 $wp_customize->add_section(
 	'avik_section_column_3_portfolio',
@@ -2795,16 +3068,16 @@ $wp_customize->add_section(
 		'priority'   => 50,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_portfolio',
-	)
-);
+));
+
 // Category for Portfolio column 3
 $wp_customize->add_setting(
 	'avik_portfolio_c_3_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2815,28 +3088,22 @@ $wp_customize->add_control(
 			'settings' => 'avik_portfolio_c_3_category',
 			'section'  => 'avik_section_column_3_portfolio',
 			'priority'=> 52,
-		)
-		)
-);
+)));
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.8 Blog
 /* ------------------------------------------------------------------------------------------------------------*/
-$avikBlog = new Avik_WP_Customize_Panel( $wp_customize, 'avik_blog', array(
-	'title'    => __('Blog','avik'),
-	'priority' => 55,
-	'panel'=> 'avik_section'
-));
-$wp_customize->add_panel( $avikBlog );
+
 // Settings Blog
 $wp_customize->add_section(
 	'avik_section_settings_blog',
 	array(
-		'title'      => __('Settings','avik'),
-		'priority'   => 10,
+		'title'      => __('Blog','avik'),
+		'priority'   => 55,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_blog',
-	)
-);
+		'panel'=> 'avik_section'
+));
+
 // Enable Blog
 $wp_customize->add_setting( 'avik_enable_blog',
 array(
@@ -2844,12 +3111,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_blog',
 array(
 	'label' => __( 'Enable/Disable Blog Section in Homepage','avik' ),
 	'section' => 'avik_section_settings_blog',
 	'priority'=> 12,
 )) );
+
 // Title Blog
 $wp_customize->add_setting( 'avik_title_blog', array(
 	'capability'        => 'edit_theme_options',
@@ -2857,20 +3126,22 @@ $wp_customize->add_setting( 'avik_title_blog', array(
 	'transport'         => 'postMessage',
 	'sanitize_callback' => 'wp_filter_nohtml_kses',
 ) );
+
 $wp_customize->add_control( 'avik_title_blog', array(
 	'type'    => 'text',
 	'section' => 'avik_section_settings_blog',
 	'priority'=> 10,
 	'label'   => __( 'Title Blog in Homepage','avik' ),
 ) );
+
 // Post Blog for Category
 $wp_customize->add_setting(
 	'avik_blog_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2881,9 +3152,8 @@ $wp_customize->add_control(
 			'settings' => 'avik_blog_category',
 			'section'  => 'avik_section_settings_blog',
 			'priority'=> 12,
-		)
-	)
-);
+)));
+
 // Enable/Disable time end comment Blog home
 $wp_customize->add_setting( 'avik_enable_time_comment_blog_home',
 array(
@@ -2891,12 +3161,70 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_time_comment_blog_home',
 array(
 	'label'   => __( 'Enable/Disable time end comments Blog Homepage.','avik' ),
 	'section' => 'avik_section_settings_blog',
 	'priority'=> 20,
 )) );
+
+// Margin Top Section Blog
+$wp_customize->add_setting( 'avik_margin_top_section_avik-blog',
+array(
+	'default' => 3,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	 'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_top_section_avik-blog',
+array(
+	'label' => __( 'Margin Top Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_blog',
+		'priority'    => 19,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Margin Bottom Section Blog
+$wp_customize->add_setting( 'avik_margin_bottom_section_avik-blog',
+array(
+	'default' => 5,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_bottom_section_avik-blog',
+array(
+	'label' => __( 'Margin Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_blog',
+		'priority'    => 20,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Padding Bottom Section Blog
+$wp_customize->add_setting( 'avik_padding_bottom_section_avik-blog',
+array(
+	'default' => 2,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_padding_bottom_section_avik-blog',
+array(
+	'label' => __( 'Padding Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_blog',
+		'priority'    => 21,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
 
 // Enable/Disable tags end comment Post
 $wp_customize->add_setting( 'avik_enable_tags_comment_post',
@@ -2930,7 +3258,6 @@ array(
 			'step' => 1,
 ), )) );
 
-
 // Enable/Disable carousel  Blog
 $wp_customize->add_setting( 'avik_enable_carousel',
 array(
@@ -2938,20 +3265,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_carousel',
 array(
 	'label'   => __( 'Enable/Disable carousel in Blog.','avik' ),
 	'section' => 'avik_section_settings_blog',
 	'priority'=> 30,
 )) );
+
 // Carousel Blog for Category
 $wp_customize->add_setting(
 	'avik_carousel_setting',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -2963,17 +3292,16 @@ $wp_customize->add_control(
 			'active_callback' => 'avik_enable_carousel',
 			'section'  => 'avik_section_settings_blog',
 			'priority'=> 40,
-		)
-		)
-);
+)));
+
 // Carousel Blog for count number Post
 $wp_customize->add_setting(
 		'avik_count_setting',
 		array(
 			'default'   => '6',
 			'sanitize_callback' => 'absint',
-	)
-);
+));
+
 $wp_customize->add_control(
 new WP_Customize_Control(
 	$wp_customize,
@@ -2986,41 +3314,21 @@ new WP_Customize_Control(
 		'active_callback' => 'avik_enable_carousel',
 		'priority'=> 50,
 		'type'           => 'number',
-	)
-	)
-);
-// Enable/Disable sidebar smartphone
-$wp_customize->add_setting( 'avik_enable_sidebar_media',
-array(
-	'default'   => 0,
-	'transport' => 'refresh',
-	'sanitize_callback' => 'avik_switch_sanitization'
-));
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_sidebar_media',
-array(
-	'label'   => __( 'Enable/Disable sidebar for Smartphone in Blog.','avik' ),
-	'section' => 'avik_section_settings_blog',
-	'priority'=> 60,
-)) );
+)));
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.9 Contact
 /* ------------------------------------------------------------------------------------------------------------*/
-$avikFooter = new Avik_WP_Customize_Panel( $wp_customize, 'avik_contact', array(
-	'title'    => __('Contact','avik'),
-	'priority' => 60,
-	'panel'=> 'avik_section'
-));
-$wp_customize->add_panel( $avikFooter );
-// Settings Contact
+
 $wp_customize->add_section(
 	'avik_section_settings_contact',
 	array(
-		'title'      => __('Settings','avik'),
-		'priority'   => 10,
+		'title'      => __('Contact','avik'),
+		'priority'   => 60,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_contact',
-	)
-);
+		'panel'=> 'avik_section'
+));
+
 // Enable Contact
 $wp_customize->add_setting( 'avik_enable_contact',
 array(
@@ -3028,20 +3336,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_contact',
 array(
 	'label' => __( 'Enable/Disable Contact Section','avik' ),
 	'section' => 'avik_section_settings_contact',
 	'priority'=> 12,
 )) );
+
 // Category for Contact
 $wp_customize->add_setting(
 	'avik_contact_category',
 	array(
 		'default'   => '',
 		'sanitize_callback' => 'avik_sanitize_category_select',
-	)
-);
+));
+
 $wp_customize->add_control(
 	new Avik_Customize_category_Control(
 		$wp_customize,
@@ -3061,6 +3371,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_social_contact',
 array(
 	'label'   => __( 'Enable/Disable Social in Contact','avik' ),
@@ -3134,24 +3445,55 @@ array(
 	'priority'=> 40,
 )) );
 
+// Margin Top Section Contact
+$wp_customize->add_setting( 'avik_margin_top_section_contact',
+array(
+	'default' => 6,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	 'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_top_section_contact',
+array(
+	'label' => __( 'Margin Top Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_contact',
+		'priority'    => 70,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
+// Margin Bottom Section Contact
+$wp_customize->add_setting( 'avik_margin_bottom_section_contact',
+array(
+	'default' => 0,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_bottom_section_contact',
+array(
+	'label' => __( 'Margin Bottom Section (em Unit)','avik' ),
+	'section' => 'avik_section_settings_contact',
+		'priority'    => 80,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.10 Footer
 /* ------------------------------------------------------------------------------------------------------------*/
-$avikFooter = new Avik_WP_Customize_Panel( $wp_customize, 'avik_footer', array(
-	'title'    => __('Footer','avik'),
-	'priority' => 270,
-));
-$wp_customize->add_panel( $avikFooter );
-// Foter
+
 $wp_customize->add_section(
 	'avik_section_settings_footer',
 	array(
-		'title'      => __('Settings','avik'),
-		'priority'   => 10,
+		'title'      => __('Footer','avik'),
+		'priority'   => 270,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_footer',
-	)
-);
+));
 
 // Enable/Disable Social In Footer
 $wp_customize->add_setting( 'avik_enable_social_footer',
@@ -3160,12 +3502,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_social_footer',
 array(
 	'label'   => __( 'Enable/Disable Social in Footer','avik' ),
 	'section' => 'avik_section_settings_footer',
 	'priority'=> 5,
 )) );
+
 // Enable/Disable copyright Footer
 $wp_customize->add_setting( 'avik_enable_copyright_footer',
 array(
@@ -3173,19 +3517,21 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_copyright_footer',
 array(
 	'label'   => __( 'Enable/Disable copyright Site.','avik' ),
 	'section' => 'avik_section_settings_footer',
 	'priority'=> 10,
 )) );
+
 $wp_customize->add_setting( 'avik_copyright_pro_only',
 	array(
 			'default' => '',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'avik_text_sanitization'
-	)
-);
+));
+
 $wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_copyright_pro_only',
 	array(
 		    $avik_pro=esc_url(avik_url_promotion),
@@ -3194,30 +3540,21 @@ $wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize
 								'<button>'.'<a href="'.$avik_pro.'" target="_blank">'.__('PRO VERSION','avik').'</a>'.'</button>'.'<br>'.
 								__('IT CAN BE REMOVED','avik').'</p>' ),
 			'section' => 'avik_section_settings_footer'
-	)
-) );
-/* ------------------------------------------------------------------------------------------------------------*
-##  Pro Version
-/* ------------------------------------------------------------------------------------------------------------*/
+)) );
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.11 Page 404
 /* ------------------------------------------------------------------------------------------------------------*/
-$avikPage404 = new Avik_WP_Customize_Panel( $wp_customize, 'avik_page_404', array(
-	'title'    => __('Page 404','avik'),
-	'priority' => 30,
-	'panel'=> 'avik_page'
-));
-$wp_customize->add_panel( $avikPage404 );
-// Settings page 404
+
 $wp_customize->add_section(
 	'avik_section_settings_page_404',
 	array(
-		'title'      => __('Settings','avik'),
-		'priority'   => 10,
+		'title'      => __('404 Page','avik'),
+		'priority'   => 30,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_page_404',
-	)
-);
+		'panel'=> 'avik_page'
+));
+
 // Category for page 404
 $wp_customize->add_setting( 'avik_category_page_404',
    array(
@@ -3262,22 +3599,13 @@ array(
 		'transport' => 'refresh',
 		'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_ob_img_404',
 array(
 		'label'   => __( 'Enable/Disable Object fit Image','avik' ),
 		'section' => 'avik_section_settings_page_404',
 		'priority'=> 30,
 )) );
-
-/* ------------------------------------------------------------------------------------------------------------*
-##  2.12 Back to top
-/* ------------------------------------------------------------------------------------------------------------*/
-$avikTotop = new Avik_WP_Customize_Panel( $wp_customize, 'avik_totop', array(
-	'title'    => __('Back To Top','avik'),
-	'priority' => 10,
-	'panel'=>'avik_osetting'
-));
-$wp_customize->add_panel( $avikTotop );
 
 // Settings Menu
 $wp_customize->add_section(
@@ -3287,8 +3615,7 @@ $wp_customize->add_section(
 		'priority'   => 1,
 		'capability' => 'edit_theme_options',
 		'panel'      => 'avik_osetting',
-	)
-);
+));
 
 // Font size menu
 $wp_customize->add_setting( 'avik_font_size_menu',
@@ -3426,17 +3753,35 @@ array(
 	'show_opacity' => true,
 )) );
 
+// Margin Bottom Navbar
+$wp_customize->add_setting( 'avik_margin_top_site-av',
+array(
+	'default' => 10,
+	'sanitize_callback' => 'avik_sanitize_integer',
+	'transport'=> 'postMessage'
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_margin_top_site-av',
+array(
+	'label' => __( 'Margin Bottom Navbar In Sigle Post (em Unit)','avik' ),
+	'section' => 'avik_section_settings_navmenu',
+		'priority'    => 90,
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 20,
+			'step' => 1,
+), )) );
 
 // Settings Back to top
 $wp_customize->add_section(
 	'avik_section_settings_totop',
 	array(
-		'title'      => __('Settings','avik'),
+		'title'      => __('Back To Top','avik'),
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_totop',
-	)
-);
+		'panel'      =>'avik_osetting'
+));
+
 // Enable/Disable Back To top
 $wp_customize->add_setting( 'avik_enable_to_top',
 array(
@@ -3444,12 +3789,14 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_to_top',
 array(
 	'label'   => __( 'Enable/Disable Back To Top.','avik' ),
 	'section' => 'avik_section_settings_totop',
 	'priority'=> 10,
 )) );
+
 //Position Back To top
 $wp_customize->add_setting( 'avik_position_top',
 array(
@@ -3457,44 +3804,27 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_position_top',
 array(
 	'label'   => __( 'Enable Position Back To Top Left','avik' ),
 	'section' => 'avik_section_settings_totop',
 	'priority'=> 11,
 )) );
-// Enable/Disable Back To top Smartphone
-$wp_customize->add_setting( 'avik_enable_to_top_media',
-array(
-	'default'   => 0,
-	'transport' => 'refresh',
-	'sanitize_callback' => 'avik_switch_sanitization'
-));
-$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_to_top_media',
-array(
-	'label'   => __( 'Enable/Disable Back To Top for Smartphone.','avik' ),
-	'section' => 'avik_section_settings_totop',
-	'priority'=> 20,
-)) );
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.13 Social
 /* ------------------------------------------------------------------------------------------------------------*/
-$avikSocial = new Avik_WP_Customize_Panel( $wp_customize, 'avik_social', array(
-	'title'    => __('Social','avik'),
-	'priority' => 30,
-	'panel'=>'avik_osetting'
-));
-$wp_customize->add_panel( $avikSocial );
-// Settings Social
+
 $wp_customize->add_section(
 	'avik_section_settings_social',
 	array(
-		'title'      => __('Settings','avik'),
+		'title'      => __('Social Media','avik'),
 		'priority'   => 10,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_social',
-	)
-);
+		'panel'=>'avik_osetting'
+));
+
 // Facebook
 $wp_customize->add_setting( 'avik_enable_facebook_social',
 array(
@@ -3502,20 +3832,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization'
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_facebook_social',
 array(
 	'label' => __( 'Enable/Disable Facebook.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 10,
 )) );
+
 // Url Facebook
 $wp_customize->add_setting( 'avik_link_facebook_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-	)
-);
+));
+
 $wp_customize->add_control( 'avik_link_facebook_social',
 array(
 	'label' => __( 'Link Facebook','avik' ),
@@ -3528,6 +3860,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Twitter
 $wp_customize->add_setting( 'avik_enable_twitter_social',
 array(
@@ -3535,20 +3868,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_twitter_social',
 array(
 	'label' => __( 'Enable/Disable Twitter.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 30,
 )) );
+
 // Url Twitter
 $wp_customize->add_setting( 'avik_link_twitter_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_twitter_social',
 array(
 	'label' => __( 'Link Twitter','avik' ),
@@ -3561,6 +3896,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Google Plus
 $wp_customize->add_setting( 'avik_enable_google_plus_social',
 array(
@@ -3568,20 +3904,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_google_plus_social',
 array(
 	'label' => __( 'Enable/Disable Google Plus.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 50,
 )) );
+
 // Url Google Plus
 $wp_customize->add_setting( 'avik_link_google_plus_social',
 array(
 		'default' => '',
 		'transport' => 'refresh',
 		'sanitize_callback' => 'esc_url_raw',
-	)
-);
+));
+
 $wp_customize->add_control( 'avik_link_google_plus_social',
 array(
 	'label' => __( 'Link Google Plus','avik' ),
@@ -3594,6 +3932,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Dribbble
 $wp_customize->add_setting( 'avik_enable_dribbble_social',
 array(
@@ -3601,20 +3940,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_dribbble_social',
 array(
 	'label' => __( 'Enable/Disable Dribbble.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 70,
 )) );
+
 // Url Dribbble
 $wp_customize->add_setting( 'avik_link_dribbble_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_dribbble_social',
 array(
 	'label' => __( 'Link Dribbble','avik' ),
@@ -3627,6 +3968,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Tumblr
 $wp_customize->add_setting( 'avik_enable_tumblr_social',
 array(
@@ -3634,20 +3976,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_tumblr_social',
 array(
 	'label' => __( 'Enable/Disable Tumblr.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 90,
 )) );
+
 // Url Tumblr
 $wp_customize->add_setting( 'avik_link_tumblr_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_tumblr_social',
 array(
 	'label' => __( 'Link Tumblr','avik' ),
@@ -3660,6 +4004,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Instagram
 $wp_customize->add_setting( 'avik_enable_instagram_social',
 array(
@@ -3667,20 +4012,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_instagram_social',
 array(
 	'label' => __( 'Enable/Disable Instagram.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 110,
 )) );
+
 // Url Instagram
 $wp_customize->add_setting( 'avik_link_instagram_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_instagram_social',
 array(
 	'label' => __( 'Link Instagram','avik' ),
@@ -3693,6 +4040,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Linkedin
 $wp_customize->add_setting( 'avik_enable_linkedin_social',
 array(
@@ -3700,20 +4048,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_linkedin_social',
 array(
 	'label' => __( 'Enable/Disable Linkedin.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 130,
 )) );
+
 // Url Linkedin
 $wp_customize->add_setting( 'avik_link_linkedin_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_linkedin_social',
 array(
 	'label' => __( 'Link Linkedin','avik' ),
@@ -3726,6 +4076,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Youtube
 $wp_customize->add_setting( 'avik_enable_youtube_social',
 array(
@@ -3733,20 +4084,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_youtube_social',
 array(
 	'label' => __( 'Enable/Disable Youtube.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 150,
 )) );
+
 // Url Youtube
 $wp_customize->add_setting( 'avik_link_youtube_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_youtube_social',
 array(
 	'label' => __( 'Link Youtube','avik' ),
@@ -3759,6 +4112,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Pinterest
 $wp_customize->add_setting( 'avik_enable_pinterest_social',
 array(
@@ -3766,20 +4120,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_pinterest_social',
 array(
 	'label' => __( 'Enable/Disable Pinterest.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 170,
 )) );
+
 // Url Pinterest
 $wp_customize->add_setting( 'avik_link_pinterest_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_pinterest_social',
 array(
 	'label' => __( 'Link Pinterest','avik' ),
@@ -3792,6 +4148,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Flickr
 $wp_customize->add_setting( 'avik_enable_flickr_social',
 array(
@@ -3799,20 +4156,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_flickr_social',
 array(
 	'label' => __( 'Enable/Disable Flickr.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 190,
 )) );
+
 // Url Flickr
 $wp_customize->add_setting( 'avik_link_flickr_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_flickr_social',
 array(
 	'label' => __( 'Link Flickr','avik' ),
@@ -3825,6 +4184,7 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 // Github
 $wp_customize->add_setting( 'avik_enable_github_social',
 array(
@@ -3832,20 +4192,22 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_github_social',
 array(
 	'label' => __( 'Enable/Disable Github.','avik' ),
 	'section' => 'avik_section_settings_social',
 	'priority'=> 210,
 )) );
+
 // Url Github
 $wp_customize->add_setting( 'avik_link_github_social',
 array(
 	'default' => '',
 	'transport' => 'refresh',
 	'sanitize_callback' => 'esc_url_raw',
-)
-);
+));
+
 $wp_customize->add_control( 'avik_link_github_social',
 array(
 	'label' => __( 'Link Github','avik' ),
@@ -3858,46 +4220,41 @@ array(
 		'style' => 'border: 1px solid #2885bb',
 		'placeholder' => __( 'Enter link...','avik' ),
 ), ));
+
 /* ------------------------------------------------------------------------------------------------------------*
 ##  2.14 Go Pro
 /* ------------------------------------------------------------------------------------------------------------*/
-// Settings Go Pro
+
 $wp_customize->add_section(
 		'avik_section_settings_go_pro',
 		array(
 			'title'      => __('Go Pro','avik'),
 			'priority'   => 1,
 			'capability' => 'edit_theme_options',
-	)
-);
+));
+
 $wp_customize->add_setting( 'avik_go_pro_version',
 array(
 	'default' => '',
 	'transport' => 'postMessage',
 	'sanitize_callback' => 'avik_text_sanitization'
-)
-); 
+)); 
+
 $wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_go_pro_version',
 array(
 	$avik_pro_update = esc_url(avik_url_promotion ),
 	'label' => __( 'AVIK PRO V 10','avik' ),
 	'description' => ( '<p style="text-align:center">'.__('FOR COMPLETE EXPERIENCE','avik').'<br>'.'<hr>'.'<div style="text-align:center">'.'<button class="av-bt-pro">'.'<a href="'.$avik_pro_update.'" target="_blank">'.__('PRO VERSION','avik').'</a>'.'</p>'.'</button>'.'</div>' ),
 	'section' => 'avik_section_settings_go_pro',
-)
-) );
+)) );
 
 $avikosetting = new Avik_WP_Customize_Panel( $wp_customize, 'avik_osetting', array(
 	'title'    => __('Other Settings','avik'),
 	'priority' => 2,
 ));
+
 $wp_customize->add_panel( $avikosetting );
 
-$avikFont = new Avik_WP_Customize_Panel( $wp_customize, 'avik_font', array(
-	'title'    => __('Font Family','avik'),
-	'priority' => 2,
-	'panel'=>'avik_osetting'
-));
-$wp_customize->add_panel( $avikFont );
 
 // Preloader
 $wp_customize->add_section(
@@ -3916,6 +4273,7 @@ array(
 	'transport' => 'refresh',
 	'sanitize_callback' => 'avik_switch_sanitization',
 ));
+
 $wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_preloader',
 array(
 	'label' => __( 'Enable/Disable Preloader','avik' ),
@@ -3939,6 +4297,7 @@ $wp_customize->add_setting( 'avik_order_sect_1' , array(
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'wp_strip_all_tags',
 ) );
+
 $wp_customize->add_control(
 	'avik_order_sect_1' ,
 	array(
@@ -4048,22 +4407,23 @@ $wp_customize->add_control(
 				'contact'        => __('Contact','avik'),
 ) ) );
 
-
 // Font Family
 $wp_customize->add_section(
 	'avik_font_family_section',
 	array(
-		'title'      => __('Settings','avik'),
+		'title'      => __('Font Family','avik'),
 		'priority'   => 560,
 		'capability' => 'edit_theme_options',
-		'panel'      => 'avik_font',
+		'panel'      =>'avik_osetting'
 ));
+
 // Title
 $wp_customize->add_setting( 'avik_title_font' , array(
 	'default'           => 'Montserrat',
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'wp_strip_all_tags',
 ) );
+
 $wp_customize->add_control(
 	'avik_title_font' ,
 	array(
@@ -4090,12 +4450,14 @@ $wp_customize->add_control(
 				'Nanum Gothic Coding'  => __('Nanum Gothic Coding','avik'),
 				'Carme'                => __('Carme','avik'),'Courier Prime' => __('Courier Prime','avik'),'Orbitron'=>__('Orbitron','avik'),'Amatic SC'=>__('Amatic','avik'),'Permanent Marker'=>__('Permanent Marker','avik'),'Kalam'=>__('Kalam','avik')
 ) ) );
+
 // Subtitle
 $wp_customize->add_setting( 'avik_subtitle_font' , array(
 	'default'           => 'Montserrat',
 	'transport'         => 'refresh',
 	'sanitize_callback' => 'wp_strip_all_tags',
 ) );
+
 $wp_customize->add_control(
 	'avik_subtitle_font' ,
 	array(
@@ -4122,6 +4484,90 @@ $wp_customize->add_control(
 			'Nanum Gothic Coding'  => __('Nanum Gothic Coding','avik'),
 			'Carme'                => __('Carme','avik'),'Courier Prime' => __('Courier Prime','avik'),'Orbitron'=>__('Orbitron','avik'),'Amatic SC'=>__('Amatic','avik'),'Permanent Marker'=>__('Permanent Marker','avik'),'Kalam'=>__('Kalam','avik')
 ) ) );
+
+// Font Size Title
+$wp_customize->add_setting( 'avik_font_size_title_general',
+array(
+	'default' => 32,
+	'transport'=>'postMessage',
+	'sanitize_callback' => 'avik_sanitize_integer',
+));
+
+$wp_customize->add_control( new Avik_Slider_Custom_Control( $wp_customize, 'avik_font_size_title_general',
+array(
+	'label' => __( 'Font Size Title Section in Homepage (px Unit)','avik' ),
+	'section' => 'avik_font_family_section',
+		'priority'    => 200,
+		'input_attrs' => array(
+			'min' => 10,
+			'max' => 120,
+			'step' => 1,
+), )) );
+
+// Mobile Devices
+$wp_customize->add_section(
+	'avik_device_section',
+	array(
+		'title'      => __('Mobile Devices','avik'),
+		'priority'   => 11000,
+		'capability' => 'edit_theme_options',
+) );
+
+// Notice Back To Top
+$wp_customize->add_setting( 'avik_back_to_top_notice',
+	array(
+		'sanitize_callback' => 'avik_text_sanitization'
+)); 
+
+$wp_customize->add_control( new Avik_Simple_Notice_s_Custom_Control( $wp_customize, 'avik_back_to_top_notice',
+			array(
+				'label'       => __( 'Back To Top','avik' ),
+				'section'     => 'avik_device_section',
+				'priority'   => 10,
+)) );
+
+// Enable/Disable Back To top Smartphone
+$wp_customize->add_setting( 'avik_enable_to_top_media',
+array(
+	'default'   => 0,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_to_top_media',
+array(
+	'label'   => __( 'Enable/Disable Back To Top in mobile devices','avik' ),
+	'section' => 'avik_device_section',
+	'priority'=> 20,
+)) );
+
+// Notice Back To Top
+$wp_customize->add_setting( 'avik_blog_devices_notice',
+	array(
+		'sanitize_callback' => 'avik_text_sanitization'
+)); 
+
+$wp_customize->add_control( new Avik_Simple_Notice_s_Custom_Control( $wp_customize, 'avik_blog_devices_notice',
+			array(
+				'label'       => __( 'Blog','avik' ),
+				'section'     => 'avik_device_section',
+				'priority'   => 30,
+)) );
+
+// Enable/Disable sidebar smartphone
+$wp_customize->add_setting( 'avik_enable_sidebar_media',
+array(
+	'default'   => 0,
+	'transport' => 'refresh',
+	'sanitize_callback' => 'avik_switch_sanitization'
+));
+
+$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_sidebar_media',
+array(
+	'label'   => __( 'Enable/Disable sidebar Blog in mobile devices','avik' ),
+	'section' => 'avik_device_section',
+	'priority'=> 40,
+)) );
+
 }
 add_action( 'customize_register', 'avik_customize_register' );
 /**

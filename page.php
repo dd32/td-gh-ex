@@ -6,8 +6,7 @@
 * @package   Avik
 */
 
-if(is_page()) { get_header('post'); } else { get_header(); }
-avik_the_breadcrumb(); ?>
+if(is_page()) { get_header('post'); } else { get_header(); } ?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main">
     <div class="container mt-5">

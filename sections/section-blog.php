@@ -13,7 +13,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12">
-                <h2 class="text-right blog pb-5" data-aos="zoom-in"><?php echo esc_html( get_theme_mod( 'avik_title_blog',__('Latest News','avik'))); ?></h2>
+                <h2 class="text-right blog pb-5 font-tit-blog" data-aos="zoom-in"><?php echo esc_html( get_theme_mod( 'avik_title_blog',__('Latest News','avik'))); ?></h2>
                 <div class="row">
                   <?php
                   $avik_blog_cat = esc_url( get_theme_mod('avik_blog_category'));

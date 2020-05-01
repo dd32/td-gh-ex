@@ -5,8 +5,8 @@ Contributors: franchidesign
 Theme URI: http://denisfranchi.com/
 Author: http://denisfranchi.com/
 Author URI: http://denisfranchi.com/
-Version: 1.4.1
-Stable tag: 1.4.1
+Version: 1.4.2
+Stable tag: 1.4.2
 Tested up to: 5.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -335,10 +335,17 @@ Avik is distributed under the terms of the GNU GPL
 
 == Changelog ==
 
-1.4.1
+V 1.4.1
 
 # Fixed some bug
 # Fixed bug in responsive
+
+V 1.4.2
+
+# Fixed some bug
+# Added control for Section margins
+# Added control for Section title size
+# Improved the Customizer
 
 
 

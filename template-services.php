@@ -26,7 +26,6 @@ get_header('av');?>
 				<div class="header-image-services">
 					<?php the_post_thumbnail('avik_single_article_av', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() ))?>
 				</div>
-				<?php avik_the_breadcrumb(); ?>
 				<div class="container">
 					<article <?php post_class(); ?>>
 						<div class="content-post pt-5">
