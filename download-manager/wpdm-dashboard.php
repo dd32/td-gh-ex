@@ -39,7 +39,7 @@ $store = get_user_meta(get_current_user_id(), '__wpdm_public_profile', true);
         <div class="media-body" id="wpdm-dashboard-contents">
 
 
-            <?php echo $dashboard_contents; ?>
+            <?php echo isset($dashboard_contents) ? $dashboard_contents : ''; ?>
 
 
         </div>
@@ -53,4 +53,3 @@ $store = get_user_meta(get_current_user_id(), '__wpdm_public_profile', true);
 
 
 
- 

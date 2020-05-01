@@ -246,7 +246,7 @@ blockquote cite {
 }
 
 .list-group-item, .card, .card-header, .card-footer, .form-control, .input-group-text {
-    border-color: #e5e5e5;
+    border-color: rgba(0,0,0,.07);
 }
 
 .input-group-text,
@@ -1579,7 +1579,10 @@ a.footer-logo {
 }
 
 /* END : WooCommerce*/
-
+.dropdown.nav-item.desktop-search {
+    width: 48px;
+    text-align: center;
+}
 .desktop-search .list-search {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
@@ -1701,7 +1704,7 @@ article.post.product {
 
 article.post.product:before {
     padding: 0 10px;
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     content: "\f07a";
     position: absolute;
     top: 10px;

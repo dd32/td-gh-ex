@@ -20,6 +20,9 @@ Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurp
 
 == Changelog ==
 
+= 1.3.7 - 2020.05.01 =
+* Fixed a premium packages requirement issue
+
 = 1.3.5 - 2020.04.21 =
 * Improved search result page
 * Add dropdown menu entrance animation option

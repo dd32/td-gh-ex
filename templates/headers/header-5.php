@@ -125,7 +125,7 @@ if ( isset( $theme_mod['attire_nav_behavior'] ) && $theme_mod['attire_nav_behavi
                                 else { ?>
                                     <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="btn btn-outline-gray attire-tip" title="<?php _e('Login / Register','attire'); ?>"><i class="fas fa-user-circle"></i></a>
                                 <?php } ?>
-                                <?php } else if(function_exists('WPDM')){ ?>
+                                <?php } else if(function_exists('WPDM') && function_exists('wpdmpp_cart_page')){ ?>
                                     <a href="<?php echo wpdmpp_cart_page(); ?>" class="btn btn-outline-gray attire-tip"><i class="fas fa-shopping-bag"></i></a>
                                     <?php if ( is_user_logged_in() ) { ?>
                                         <a href="<?php echo wpdm_user_dashboard_url(); ?>" class="btn btn-outline-gray attire-tip" title="<?php _e('Account','attire'); ?>"><i class="fas fa-user-circle"></i></a>

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Attire\n"
-"POT-Creation-Date: 2020-04-18 14:36+0600\n"
+"POT-Creation-Date: 2020-04-23 18:54+0600\n"
 "PO-Revision-Date: 2018-03-08 01:18+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -60,16 +60,16 @@ msgid "Theme Default"
 msgstr ""
 
 #: admin/ThemeEngine.class.php:134 admin/ThemeEngine.class.php:136
-#: admin/customizer-config.php:713 admin/customizer-config.php:758
-#: admin/customizer-config.php:803 admin/customizer-config.php:848
+#: admin/customizer-config.php:730 admin/customizer-config.php:775
+#: admin/customizer-config.php:820 admin/customizer-config.php:865
 #: admin/customizer.php:61 admin/customizer.php:62
 #: libs/MetaBoxes.class.php:119 libs/MetaBoxes.class.php:120
 msgid "Left Sidebar"
 msgstr ""
 
 #: admin/ThemeEngine.class.php:144 admin/ThemeEngine.class.php:146
-#: admin/customizer-config.php:732 admin/customizer-config.php:777
-#: admin/customizer-config.php:822 admin/customizer-config.php:867
+#: admin/customizer-config.php:749 admin/customizer-config.php:794
+#: admin/customizer-config.php:839 admin/customizer-config.php:884
 #: admin/customizer.php:68 admin/customizer.php:69
 #: libs/MetaBoxes.class.php:126 libs/MetaBoxes.class.php:127
 msgid "Right Sidebar"
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Header Style"
 msgstr ""
 
-#: admin/customizer-config.php:91 admin/customizer-config.php:485
+#: admin/customizer-config.php:91 admin/customizer-config.php:502
 msgid "Footer Style"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "Contact Info"
 msgstr ""
 
-#: admin/customizer-config.php:138 admin/customizer-config.php:1158
+#: admin/customizer-config.php:138 admin/customizer-config.php:1175
 msgid "Copyright Info"
 msgstr ""
 
@@ -248,13 +248,13 @@ msgid "Previous/Next Post Button"
 msgstr ""
 
 #: admin/customizer-config.php:231 admin/customizer-config.php:407
-#: admin/customizer-config.php:429 admin/customizer-config.php:1170
+#: admin/customizer-config.php:429 admin/customizer-config.php:1187
 #: libs/MetaBoxes.class.php:166
 msgid "Show"
 msgstr ""
 
 #: admin/customizer-config.php:232 admin/customizer-config.php:408
-#: admin/customizer-config.php:430 admin/customizer-config.php:1170
+#: admin/customizer-config.php:430 admin/customizer-config.php:1187
 #: libs/MetaBoxes.class.php:167
 msgid "Hide"
 msgstr ""
@@ -387,279 +387,311 @@ msgstr ""
 msgid "Nav Style 5"
 msgstr ""
 
+#: admin/customizer-config.php:485
+msgid "Dropdown Menu Animation"
+msgstr ""
+
+#: admin/customizer-config.php:491
+msgid "No Animation"
+msgstr ""
+
+#: admin/customizer-config.php:492
+msgid "Fade In"
+msgstr ""
+
 #: admin/customizer-config.php:493
+msgid "Swing In"
+msgstr ""
+
+#: admin/customizer-config.php:494
+msgid "Slide In"
+msgstr ""
+
+#: admin/customizer-config.php:495
+msgid "Scale In"
+msgstr ""
+
+#: admin/customizer-config.php:496
+msgid "Blur In"
+msgstr ""
+
+#: admin/customizer-config.php:497
+msgid "Puff In"
+msgstr ""
+
+#: admin/customizer-config.php:510
 msgid "Narrow"
 msgstr ""
 
-#: admin/customizer-config.php:498
+#: admin/customizer-config.php:515
 msgid "Large Centered"
 msgstr ""
 
-#: admin/customizer-config.php:503
+#: admin/customizer-config.php:520
 msgid "Large Left"
 msgstr ""
 
-#: admin/customizer-config.php:508
+#: admin/customizer-config.php:525
 msgid "Large Right"
 msgstr ""
 
-#: admin/customizer-config.php:517 admin/customizer-config.php:569
+#: admin/customizer-config.php:534 admin/customizer-config.php:586
 msgid "Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:524 admin/customizer-config.php:576
-#: admin/customizer-config.php:621 admin/customizer-config.php:673
-#: admin/customizer-config.php:697
+#: admin/customizer-config.php:541 admin/customizer-config.php:593
+#: admin/customizer-config.php:638 admin/customizer-config.php:690
+#: admin/customizer-config.php:714
 msgid "Background Color"
 msgstr ""
 
-#: admin/customizer-config.php:531 admin/customizer-config.php:583
+#: admin/customizer-config.php:548 admin/customizer-config.php:600
 msgid "Hover/Active Background Color"
 msgstr ""
 
-#: admin/customizer-config.php:538 admin/customizer-config.php:590
+#: admin/customizer-config.php:555 admin/customizer-config.php:607
 msgid "Hover/Active Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:545 admin/customizer-config.php:597
+#: admin/customizer-config.php:562 admin/customizer-config.php:614
 msgid "Dropdown Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:552 admin/customizer-config.php:604
+#: admin/customizer-config.php:569 admin/customizer-config.php:621
 msgid "Dropdown Hover Background Color"
 msgstr ""
 
-#: admin/customizer-config.php:559 admin/customizer-config.php:611
+#: admin/customizer-config.php:576 admin/customizer-config.php:628
 msgid "Dropdown Hover Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:628
+#: admin/customizer-config.php:645
 msgid "Link Color"
 msgstr ""
 
-#: admin/customizer-config.php:635
+#: admin/customizer-config.php:652
 msgid "Link Hover Color"
 msgstr ""
 
-#: admin/customizer-config.php:642
+#: admin/customizer-config.php:659
 msgid "Heading Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:649
+#: admin/customizer-config.php:666
 msgid "Regular Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:659 admin/customizer-config.php:683
+#: admin/customizer-config.php:676 admin/customizer-config.php:700
 msgid "Title Color"
 msgstr ""
 
-#: admin/customizer-config.php:666 admin/customizer-config.php:690
+#: admin/customizer-config.php:683 admin/customizer-config.php:707
 msgid "Content Color"
 msgstr ""
 
-#: admin/customizer-config.php:706 admin/customizer-config.php:751
-#: admin/customizer-config.php:796 admin/customizer-config.php:841
+#: admin/customizer-config.php:723 admin/customizer-config.php:768
+#: admin/customizer-config.php:813 admin/customizer-config.php:858
 #: libs/MetaBoxes.class.php:33
 msgid "Sidebar Layout"
 msgstr ""
 
-#: admin/customizer-config.php:720 admin/customizer-config.php:765
-#: admin/customizer-config.php:810 admin/customizer-config.php:855
+#: admin/customizer-config.php:737 admin/customizer-config.php:782
+#: admin/customizer-config.php:827 admin/customizer-config.php:872
 msgid "Left Sidebar Width"
 msgstr ""
 
-#: admin/customizer-config.php:726 admin/customizer-config.php:745
-#: admin/customizer-config.php:771 admin/customizer-config.php:790
-#: admin/customizer-config.php:816 admin/customizer-config.php:835
-#: admin/customizer-config.php:861 admin/customizer-config.php:880
+#: admin/customizer-config.php:743 admin/customizer-config.php:762
+#: admin/customizer-config.php:788 admin/customizer-config.php:807
+#: admin/customizer-config.php:833 admin/customizer-config.php:852
+#: admin/customizer-config.php:878 admin/customizer-config.php:897
 msgid "2 Columns"
 msgstr ""
 
-#: admin/customizer-config.php:727 admin/customizer-config.php:746
-#: admin/customizer-config.php:772 admin/customizer-config.php:791
-#: admin/customizer-config.php:817 admin/customizer-config.php:836
-#: admin/customizer-config.php:862 admin/customizer-config.php:881
+#: admin/customizer-config.php:744 admin/customizer-config.php:763
+#: admin/customizer-config.php:789 admin/customizer-config.php:808
+#: admin/customizer-config.php:834 admin/customizer-config.php:853
+#: admin/customizer-config.php:879 admin/customizer-config.php:898
 msgid "3 Columns"
 msgstr ""
 
-#: admin/customizer-config.php:728 admin/customizer-config.php:747
-#: admin/customizer-config.php:773 admin/customizer-config.php:792
-#: admin/customizer-config.php:818 admin/customizer-config.php:837
-#: admin/customizer-config.php:863 admin/customizer-config.php:882
+#: admin/customizer-config.php:745 admin/customizer-config.php:764
+#: admin/customizer-config.php:790 admin/customizer-config.php:809
+#: admin/customizer-config.php:835 admin/customizer-config.php:854
+#: admin/customizer-config.php:880 admin/customizer-config.php:899
 msgid "4 Columns"
 msgstr ""
 
-#: admin/customizer-config.php:739 admin/customizer-config.php:784
-#: admin/customizer-config.php:829 admin/customizer-config.php:874
+#: admin/customizer-config.php:756 admin/customizer-config.php:801
+#: admin/customizer-config.php:846 admin/customizer-config.php:891
 msgid "Right Sidebar Width"
 msgstr ""
 
-#: admin/customizer-config.php:887
+#: admin/customizer-config.php:904
 msgid "Heading Font"
 msgstr ""
 
-#: admin/customizer-config.php:892
+#: admin/customizer-config.php:909
 msgid "Font family for H1...H6 html tags"
 msgstr ""
 
-#: admin/customizer-config.php:895
+#: admin/customizer-config.php:912
 msgid "Heading Font Size"
 msgstr ""
 
-#: admin/customizer-config.php:896
+#: admin/customizer-config.php:913
 msgid "For H tags (h1...h6)"
 msgstr ""
 
-#: admin/customizer-config.php:908
+#: admin/customizer-config.php:925
 msgid "Header Font Weight"
 msgstr ""
 
-#: admin/customizer-config.php:921
+#: admin/customizer-config.php:938
 msgid "Body Font"
 msgstr ""
 
-#: admin/customizer-config.php:929
+#: admin/customizer-config.php:946
 msgid "Body Font Size"
 msgstr ""
 
-#: admin/customizer-config.php:941
+#: admin/customizer-config.php:958
 msgid "Body Font Weight"
 msgstr ""
 
-#: admin/customizer-config.php:953
+#: admin/customizer-config.php:970
 msgid "Widget Title Font"
 msgstr ""
 
-#: admin/customizer-config.php:960
+#: admin/customizer-config.php:977
 msgid "Widget Title Font Size"
 msgstr ""
 
-#: admin/customizer-config.php:972
+#: admin/customizer-config.php:989
 msgid "Widget Title Font Weight"
 msgstr ""
 
-#: admin/customizer-config.php:985
+#: admin/customizer-config.php:1002
 msgid "Widget Content Font"
 msgstr ""
 
-#: admin/customizer-config.php:992
+#: admin/customizer-config.php:1009
 msgid "Widget Content Font Size"
 msgstr ""
 
-#: admin/customizer-config.php:1004
+#: admin/customizer-config.php:1021
 msgid "Widget Content Font Weight"
 msgstr ""
 
-#: admin/customizer-config.php:1016
+#: admin/customizer-config.php:1033
 msgid "Menu Top Level Font"
 msgstr ""
 
-#: admin/customizer-config.php:1023
+#: admin/customizer-config.php:1040
 msgid "Menu Top Font Size"
 msgstr ""
 
-#: admin/customizer-config.php:1035
+#: admin/customizer-config.php:1052
 msgid "Menu Top Font Weight"
 msgstr ""
 
-#: admin/customizer-config.php:1049
+#: admin/customizer-config.php:1066
 msgid "Menu Dropdown Font"
 msgstr ""
 
-#: admin/customizer-config.php:1056
+#: admin/customizer-config.php:1073
 msgid "Menu Dropdown Font Size"
 msgstr ""
 
-#: admin/customizer-config.php:1068
+#: admin/customizer-config.php:1085
 msgid "Menu Dropdown Font Weight"
 msgstr ""
 
-#: admin/customizer-config.php:1081
+#: admin/customizer-config.php:1098
 msgid "Facebook Profile / Page URL"
 msgstr ""
 
-#: admin/customizer-config.php:1088
+#: admin/customizer-config.php:1105
 msgid "Instagram Profile URL"
 msgstr ""
 
-#: admin/customizer-config.php:1095
+#: admin/customizer-config.php:1112
 msgid "Twitter Profile URL"
 msgstr ""
 
-#: admin/customizer-config.php:1102
+#: admin/customizer-config.php:1119
 msgid "YouTube Channel URL"
 msgstr ""
 
-#: admin/customizer-config.php:1109
+#: admin/customizer-config.php:1126
 msgid "Pinterest Profile URL"
 msgstr ""
 
-#: admin/customizer-config.php:1116
+#: admin/customizer-config.php:1133
 msgid "Linked In Profile URL"
 msgstr ""
 
-#: admin/customizer-config.php:1123
+#: admin/customizer-config.php:1140
 msgid "Google Map Address"
 msgstr ""
 
-#: admin/customizer-config.php:1130
+#: admin/customizer-config.php:1147
 msgid "Contact Address"
 msgstr ""
 
-#: admin/customizer-config.php:1137
+#: admin/customizer-config.php:1154
 msgid "Phone"
 msgstr ""
 
-#: admin/customizer-config.php:1144 comments.php:50
+#: admin/customizer-config.php:1161 comments.php:50
 #: templates/headers/header-2.php:27 templates/headers/header-5.php:29
 msgid "Email"
 msgstr ""
 
-#: admin/customizer-config.php:1151
+#: admin/customizer-config.php:1168
 msgid "Thank you message"
 msgstr ""
 
-#: admin/customizer-config.php:1162 libs/Attire.class.php:245
+#: admin/customizer-config.php:1179 libs/Attire.class.php:245
 msgid "Copyright "
 msgstr ""
 
-#: admin/customizer-config.php:1165
+#: admin/customizer-config.php:1182
 msgid "Show Copyright Visibility"
 msgstr ""
 
-#: admin/customizer-config.php:1174
+#: admin/customizer-config.php:1191
 msgid "Show Page Header"
 msgstr ""
 
-#: admin/customizer-config.php:1181
+#: admin/customizer-config.php:1198
 msgid "Show On Front Page"
 msgstr ""
 
-#: admin/customizer-config.php:1188
+#: admin/customizer-config.php:1205
 msgid "Page Header Background Color"
 msgstr ""
 
-#: admin/customizer-config.php:1195
+#: admin/customizer-config.php:1212
 msgid "Page Header Text Color"
 msgstr ""
 
-#: admin/customizer-config.php:1202
+#: admin/customizer-config.php:1219
 msgid "Page Header Text Alignment"
 msgstr ""
 
-#: admin/customizer-config.php:1207
+#: admin/customizer-config.php:1224
 msgid "Center"
 msgstr ""
 
-#: admin/customizer-config.php:1208
+#: admin/customizer-config.php:1225
 msgid "Left"
 msgstr ""
 
-#: admin/customizer-config.php:1209
+#: admin/customizer-config.php:1226
 msgid "Right"
 msgstr ""
 
-#: admin/customizer-config.php:1215
+#: admin/customizer-config.php:1232
 msgid "Page Header Height"
 msgstr ""
 
@@ -840,23 +872,23 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: footer.php:52
+#: footer.php:52 search.php:30
 msgid "Post"
 msgstr ""
 
-#: footer.php:56
+#: footer.php:56 search.php:34
 msgid "Page"
 msgstr ""
 
-#: footer.php:61
+#: footer.php:61 search.php:39
 msgid "Downloads"
 msgstr ""
 
-#: footer.php:67
+#: footer.php:67 search.php:45
 msgid "Products"
 msgstr ""
 
-#: footer.php:73 templates/parts/mobile-search.php:13
+#: footer.php:73 search.php:51 templates/parts/mobile-search.php:13
 msgid "Search..."
 msgstr ""
 
@@ -940,20 +972,25 @@ msgstr ""
 msgid "Add a menu"
 msgstr ""
 
-#: search-post.php:12 search-wpdmpro.php:17
+#: search-post.php:12 search-wpdmpro.php:17 search.php:23
 msgid "Search result for: "
 msgstr ""
 
-#: search-post.php:45 search-wpdmpro.php:52
+#: search-post.php:46 search-wpdmpro.php:52 search.php:113
 msgid "Nothing Found!"
 msgstr ""
 
-#: search-post.php:46 search-wpdmpro.php:53
+#: search-post.php:47 search-wpdmpro.php:53 search.php:114
 msgid "Try Different Search Term"
 msgstr ""
 
 #: search-result-wpdmpro.php:16
 msgid "Last updated on "
+msgstr ""
+
+#: search.php:21
+#, php-format
+msgid "%d results found"
 msgstr ""
 
 #: searchform.php:20
