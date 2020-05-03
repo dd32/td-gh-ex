@@ -10,12 +10,12 @@
 	    	<div class="menubox col-lg-8 col-md-6 col-2">
 	      		<div class="innermenubox">
 		          	<div class="toggle-nav mobile-menu">
-		            	<span onclick="openNav()"><i class="fas fa-bars"></i></span>
+		            	<span onclick="automobile_hub_open_nav()"><i class="fas fa-bars"></i></span>
 		          	</div>
 		         	<div id="mySidenav" class="nav sidenav">
 			            <nav id="site-navigation" class="main-navigation" role="navigation">
-			              	<a href="javascript:void(0)" class="closebtn mobile-menu" onclick="closeNav()"><i class="fas fa-times"></i></a>
-			              	<?php 
+			              	<a href="javascript:void(0)" class="closebtn mobile-menu" onclick="automobile_hub_close_nav()"><i class="fas fa-times"></i></a>
+			              	<?php
 			                	wp_nav_menu( array( 
 			                  	'theme_location' => 'primary-menu',
 			                  	'container_class' => 'menu clearfix' ,
