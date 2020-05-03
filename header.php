@@ -16,9 +16,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
 
-<header role="banner" id="testing">
+<?php if ( function_exists( 'wp_body_open' ) )
+	{
+		wp_body_open();
+	}else{
+		do_action('wp_body_open');
+	}
+?>
+
+<header role="banner">
 	<a class="screen-reader-text skip-link" href="#tp_content"><?php esc_html_e( 'Skip to content', 'adventure-travelling' ); ?></a>
 	<?php
 		get_template_part( 'template-parts/header/top', 'bar' );

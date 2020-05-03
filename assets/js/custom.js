@@ -1,21 +1,20 @@
 jQuery(function($){
   "use strict";
   $('.menu > ul').superfish({
-    delay:       500,                            
+    delay:       500,
     animation:   {opacity:'show',height:'show'},  
-    speed:       'fast'                         
+    speed:       'fast'
   });
-
   $('.search-box span a').click(function(){
     $(".serach_outer").toggle();
   });
 });
 
 /* Mobile responsive Menu*/
-function openNav() {
+function adventure_travelling_open_nav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
-function closeNav() {
+function adventure_travelling_close_nav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
