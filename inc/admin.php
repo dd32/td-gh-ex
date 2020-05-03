@@ -81,7 +81,7 @@ function aeonblog_page() {
 			<div class="welcome-panel-content">
 				<h2><?php esc_html_e( 'More themes', 'aeonblog' ); ?></h2><br>
 				<a href="https://www.templatesell.com/item/aeonaccess-plus/"><?php esc_html_e( 'AeonAccess is available in a premium and free version.', 'aeonblog' ); ?></a><br><br>
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/access.jpg' ); ?>" alt="" height="300">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/access.jpg' ); ?>" alt="" height="300px">
 				<br><br>
 			</div>
 		</div>

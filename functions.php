@@ -340,3 +340,9 @@ require get_template_directory() . '/inc/functions/dynamic-css.php';
  * Add theme page.
  */
 require get_template_directory() . '/inc/admin.php';
+
+/**
+ * Add upgrade notice.
+ */
+require get_template_directory() . '/inc/upgrade-pro.php';
+

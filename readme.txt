@@ -1,7 +1,7 @@
 === Aeon Blog ===
 Contributors: aeontheme
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.4.1
 Requires PHP: 5.6
 Stable tag: 1.1.2
 License:      GNU General Public License v2 or later
@@ -51,12 +51,14 @@ We would love to hear your ideas.
 You can use email us at support@aeonwp.com
 
 == Changelog ==
+= 1.1.3 - May 03 2020 =
+Added Upgrade notice 
+Tested with latest WP version
 
 = 1.1.3 - April 14 2020 =
 Fixed Google Search Concole Issues on Breadcrumb
 Added minified version of the JavaScript files.
-Added theme page.
-Tested with latest WP version.
+Tested with latest WP version
 
 = 1.1.2 - January 28 2020 =
 Fixed typos.
@@ -153,11 +155,9 @@ AeonBlog is distributed under the terms of the GNU General Public License v2 or 
 * Sanitization Copyright (c) 2015, WordPress Theme Review Team, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html) https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php 
 * Keyboard Accessible Dropdown Menus Copyright 2013 Amy Hendrix, Graham Armfield [MIT](https://opensource.org/licenses/MIT) 
   https://github.com/sabreuse/accessible-menus
+* Upgrade Pro notice - ThemeGrill demo Importer plugin - GPL License
 
 == Image License == 
 https://pxhere.com/en/photo/1445341 [Creative Commons Zero (CC0) License]
 https://pxhere.com/en/photo/1427193 [Creative Commons Zero (CC0) License]
 https://pxhere.com/en/photo/1560073 [Creative Commons Zero (CC0) License]
-https://pxhere.com/en/photo/80036 [Creative Commons Zero (CC0) License]
-
-The red panda wapuu logo for AeonWP was created by Carolina Nymark. [Creative Commons Zero (CC0)]
