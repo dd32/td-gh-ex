@@ -1,3 +1,7 @@
+=== v1.0.5 ===
+- Added default values from parent theme
+
+
 === v1.0.4 ===
 - Added default value for social ions new tabs
 

@@ -110,6 +110,19 @@ function arrival_me_get_default_theme_options() {
     $defaults[$prefix.'_social_icons_new_tab']              = false;
     $defaults[$prefix.'_breadcrumb_enable']                = 'yes';
    
+    $defaults[$prefix.'_main_logo_width']                   = 100;
+    $defaults[$prefix.'_single_page_sidebars']              = 'no_sidebar';
+    $defaults[$prefix.'_post_featured_image_enable']        = 'yes';
+    $defaults[$prefix.'_blog_page_sidebars']                = 'no_sidebar';
+    $defaults[$prefix.'_post_meta_enable']                  = 'yes';
+    $defaults[$prefix.'_post_author_enable']                = 'yes';
+    $defaults[$prefix.'_post_date_enable']                  = 'yes';
+    $defaults[$prefix.'_post_comment_enable']               = 'yes';
+
+if( class_exists('woocommerce')):
+    $defaults[$prefix.'_archive_shop_sidebars']             = 'no_sidebar';
+    $defaults[$prefix.'_single_shop_sidebars']              = 'no_sidebar';
+endif;
 
 	return $defaults;
 
